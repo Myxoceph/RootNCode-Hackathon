@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-reyhanli-mustafa-sevki-pasa-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Banî, mimar ve vakıf bilgisi kitapta yok.",
+      "Yapım tarihi yalnızca tahmin (kitabesiz); probable işaretlendi.",
+      "Hücrelerin kullanım amacı kitapta yok."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Mustafa Şevki Paşa Medresesi",
+    "en": "Mustafa Şevki Pasha Madrasa"
+  },
+  "subtitle": {
+    "tr": "Mustafa Şevki Paşa Külliyesi'nin medresesi",
+    "en": "The madrasa of the Mustafa Şevki Pasha complex"
+  },
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": "hatay-reyhanli-mustafa-sevki-pasa-kulliyesi",
+  "era": "gec-osmanli",
+  "tags": [
+    "medrese",
+    "reyhanlı",
+    "mustafa-şevki-paşa",
+    "hücre"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Reyhanlı",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "189"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.268419,
+      "lng": 36.564378,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (hatay-reyhanli-mustafa-sevki-pasa-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1910 (tahmini)",
+      "en": "1910 (estimated)"
+    },
+    "start_year": 1910,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Medresenin kitabesi yoktur; cami ile 1910'da inşa edildiği tahmin edilmektedir.",
+      "en": "The madrasa has no inscription; it is estimated to have been built in 1910 together with the mosque."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "189"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Avlunun doğusunda yan yana sıralanmış beş hücreli, içten düz tavanlı, dıştan kırma çatılı medrese. Kitabesi yoktur; cami ile birlikte 1910'da yapıldığı tahmin edilir.",
+    "en": "A madrasa of five cells side by side in the east of the courtyard, with a flat ceiling inside and a hipped roof outside. It has no inscription and is estimated to have been built with the mosque in 1910."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Avlunun doğusunda yan yana sıralanmış beş hücreden meydana gelen medrese, içten düz tavan, dıştan kırma çatı ile örtülüdür. Avluya bakan cephesini hücrelerin düz atkı taşlı, dikdörtgen çerçeveli kapı ve pencereleri şekillendirir. Tüm hücreler bir kapı ve pencereyle, kuzeyden ikinci bölüm ise yalnızca bir kapı aracılığıyla avluya açılır. Kitabesi bulunmayan medresenin cami ile 1910 yılında inşa edildiği tahmin edilmektedir.",
+        "en": "The madrasa, of five cells side by side in the east of the courtyard, is covered with a flat ceiling inside and a hipped roof outside. Its courtyard facade is shaped by the rectangular-framed doors and windows of the cells with flat lintels. All cells open to the courtyard with a door and a window, while the second section from the north opens only with a door. The madrasa, which has no inscription, is estimated to have been built with the mosque in 1910."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "189"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hucre_sayisi",
+      "label": {
+        "tr": "Hücre sayısı",
+        "en": "Number of cells"
+      },
+      "value": 5,
+      "unit": "hücre",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "189"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1910-tahmini",
+      "year": 1910,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Camiyle birlikte inşa edildiği tahmin ediliyor (1910)",
+        "en": "Estimated to be built with the mosque (1910)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "189"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-reyhanli-mustafa-sevki-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Mustafa Şevki Paşa Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Mustafa Şevki Pasha Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "180"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese, avlunun doğusunda yan yana sıralanmış beş hücreden oluşur ve camiye diktir. Hücrelerin avluya bakan yüzünde düz lentolu, dikdörtgen çerçeveli kapı ve pencereler görülür; kuzeyden ikinci bölümün yalnızca kapısı vardır. İçeriden düz tavanlı, dışarıdan kırma çatılıdır.",
+      "en": "The madrasa is a row of five cells side by side in the east of the courtyard, perpendicular to the mosque. On the courtyard side the cells have rectangular-framed doors and windows with flat lintels; the second section from the north has only a door. It has a flat ceiling inside and a hipped roof outside."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p095-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "188-189"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Medrese hücreleri ve taş döşeli avlu",
+        "en": "Madrasa cells and stone-paved courtyard"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı, turuncu taşlı tek katlı hücre sırası avluya açılır. Önde mavi bir bank, arkada minare gövdesi ve mavi gökyüzü vardır.",
+        "en": "A single-storey row of cells in orange stone with a tiled roof opens onto the courtyard. A blue bench is in front, with a minaret shaft and blue sky behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

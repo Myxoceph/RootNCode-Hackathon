@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "bursa-mudanya-sinan-bey-cesmesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Mudanya",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
       "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
       "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
       "Sinan Bey'in kimliği kitapta açıklanmamış."
@@ -49,7 +48,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "579"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.377925,
+      "lng": 28.883042,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q139421497 ('Sinan Bey Çeşmesi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -266,8 +272,41 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MSAPwPYfleCJID7tsM2Cex8h9sx8r_PW",
+    "book_layout_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+    "book_pdf_name": "8-Mudanya.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-sinan-bey-cesmesi/p010-1.jpg",
+        "original_name": "01 ERD05592 kopya.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "579"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Sinan Bey Çeşmesi",
+        "en": "Sinan Bey Fountain"
+      },
+      "alt": {
+        "tr": "Açık renkli sıvalı duvarda iki sivri kemerli niş ve her birinde taş bir kurna yüzü vardır. Üstte dikdörtgen bir kitabe levhası, altta uzun bir taş yalak bulunur; yanlarda tuğla ve taş duvar görünür.",
+        "en": "Two pointed-arch niches in a pale plastered wall, each with a carved stone spout panel. A rectangular inscription plaque sits above and a long stone trough below, flanked by brick and stone walling."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

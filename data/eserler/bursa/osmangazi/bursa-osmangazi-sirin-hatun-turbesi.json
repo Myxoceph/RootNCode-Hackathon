@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sirin-hatun-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Yapım tarihi ve mimar kitapta yok; vefat tarihi bilinmiyor.",
+      "Aynışah Sultan'ın kimin kızı olduğu Türkçe metinde belirsiz (İngilizce: Ferahşah Hatun'un kızı).",
+      "Sayfa 165 yalnızca sayfa numarası içeriyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap türbenin yapım tarihini vermez; 'dating' boş bırakıldı. Kalem işleri 16. yüzyıla tarihlenir ancak bu yapının tarihi olarak alınmadı."
+      },
+      {
+        "field": "people[Aynışah Sultan]",
+        "note": "Türkçe metin 'Şehzade Abdullah'ın eşi Ferahşah Hatun ve kızı Aynışah Sultan' der (kızı kimin?); İngilizce metin 'and her daughter' ile Ferahşah'ın kızı olarak okur."
+      },
+      {
+        "field": "address",
+        "note": "Adres 'Kaplıca Caddesi, No: 62' Sultan II. Murad Türbesi ile aynıdır; kitap iki yapıya aynı numarayı verir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şirin Hatun Türbesi",
+    "en": "Şirin Hatun Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": null,
+  "tags": [
+    "türbe",
+    "kalem işi",
+    "Esmâ-i hüsnâ",
+    "küfeki taşı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "Kaplıca Caddesi, No: 62",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "166"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.190754,
+      "lng": 29.045423,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/2796344229 ('Şirin Hatun Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Şirin Hatun",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "166"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Şirin Hatun'un vakıfları (Trabzon mescidi, Bursa ve Mihaliç mektepleri)",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "166"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "II. Bayezid'in eşi ve Şehzade Abdullah'ın annesi Şirin Hatun'un hayattayken yaptırdığı, kare planlı ve yüksek sekizgen kasnaklı tromplu kubbeli türbe. 16. yüzyıla ait kalem işi süslemeleri 2013 restorasyonunda raspayla yeniden ortaya çıkarılmıştır.",
+    "en": "A square tomb with a squinch dome on a high octagonal drum that Şirin Hatun, wife of Bayezid II and mother of Şehzade Abdullah, had built while alive. Its original 16th-century hand-painted motifs were revealed again by scraping in the 2013 restoration."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banî",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Şirin Hatun Türbesi, Kaplıca Caddesi No: 62'de yer alır. II. Bayezid'in eşi ve Şehzade Abdullah'ın annesi Şirin Hatun Trabzon'da bir mescit, Bursa ve Mihaliç'te (Karacabey) birer mektep inşa ettirmiş, bu yapılar için vakıflar kurmuştur. Oğlu Abdullah'ın vefatının ardından Bursa'ya yerleşmiş, türbesini hayattayken inşa ettirmiştir; vefat tarihi bilinmemektedir. Türbede Şirin Hatun, Şehzade Abdullah'ın eşi Ferahşah Hatun ve kızı Aynışah Sultan'a ait üç sanduka bulunur.",
+        "en": "The Şirin Hatun Tomb is on Kaplıca Street No. 62. Şirin Hatun, wife of Bayezid II and mother of Şehzade Abdullah, had a small mosque built in Trabzon and a school each in Bursa and Mihaliç (Karacabey), and established foundations for them. After her son Abdullah's death she settled in Bursa and had her tomb built while alive; the date of her death is unknown. The tomb holds three sarcophagi: Şirin Hatun, Ferahşah Hatun (wife of Şehzade Abdullah) and her daughter Aynışah Sultan."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "166"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe kare planlıdır ve yüksek sekizgen kasnağa oturan tromplu kubbeyle örtülüdür; kubbe geçiş elemanları dışarıdan da belirgindir. Kasnaklarda bir dolu bir boş olarak sivri kemerli sağır pencereler sıralanmıştır. Duvarlar bir sıra kesme küfeki taşı ve iki sıra tuğla ile örülmüş, kesme taşların arasına dikey tuğlalar yerleştirilerek daha düzgün bir görünüm sağlanmıştır. Taç kapı eyvanının iki yanında mihrap nişleri vardır; kavsaranın tuğla dolgu üzerine mukarnas kaplamalı olduğu belirlenmiştir. Pencereler sivri kemer içindedir, mermer söveli ve demir şebekelidir. Giriş, basık kemerli, çift kanatlı sade bir ahşap kapıdandır.",
+        "en": "The tomb has a square plan and is covered by a squinch dome on a high octagonal drum; the transition elements are clearly emphasised from outside. On the drum, blind pointed-arched windows alternate solid and void. The walls use one row of cut limestone and two rows of bricks, with vertical bricks placed between the cut stones for a more regular look. There are mihrab niches on both sides of the portal iwan; the hood, originally thought to be wooden, is muqarnas cladding over brick infill. Windows are in pointed arches with marble sills and iron grilles. The entrance is a depressed-arched, double-leafed, very simple wooden door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "166-168"
+        }
+      ]
+    },
+    {
+      "id": "susleme",
+      "order": 3,
+      "title": {
+        "tr": "Kalem İşi ve Yazılar",
+        "en": "Hand-Painted Work and Inscriptions"
+      },
+      "body": {
+        "tr": "Kalem işi süslemeler ve yazı frizi Mükrime Hatun Türbesi ile birebir aynıdır. Kubbe göbeğindeki 19. yüzyılda eklenmiş Barok tarzı uyumsuz süslemeler 2013 restorasyonunda raspalanarak altındaki 16. yüzyıla ait özgün motifler ortaya çıkarılmıştır. Kubbe kasnağının altında Esmâ-i hüsnâ frizleri, kubbe eteğindeki üçgen göğüslerde ve mukarnaslı tromplarda 16. yüzyıla ait özgün kalem işleri vardır. Güneydoğu duvarında kelime-i tevhid madalyonu ve yanlarında bitkisel motifler, kuzeydoğu duvarında \"Ya Tevvab\" yazılı madalyon bulunur. Batı duvarında, mukarnaslı trompların altından kuzeydoğu duvarında biten kitabe kuşağında sülyen zemin üzerine beyaz sülüsle Âyetü'l-kürsî yazılıdır; kuşağın altında salbekli şemse motifleri içinde Rahman suresi 26. ayet \"Küllü men aleyhâ fânin\" yer alır, üzerinde küçük kûfî harflerle Fatiha suresi işlenmiştir.",
+        "en": "The hand-painted ornamentation and inscription frieze are exactly the same as those of the Mükrime Hatun Tomb. The incongruous 19th-century Baroque decorations at the dome's centre were scraped off in the 2013 restoration, revealing the original 16th-century motifs. Under the dome drum are friezes of the Asma'ul-Husna, and original 16th-century painted patterns are on the pendentives and muqarnas squinches. On the southeast wall is a Kalima al-Tawhid medallion with vegetal motifs, and on the northeast wall a medallion reading \"Ya Tawwab\". On the west wall, in an inscription band ending on the northeast wall, the Ayat al-Kursi is in white Thuluth on a red-lead ground; below it, verse 26 of Surah ar-Rahman is within sunburst motifs and above it the Fatiha in small Kufic letters."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "168-169"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "order": 4,
+      "title": {
+        "tr": "Restorasyon",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Geç dönem müdahalelerinde özgün Horasan harçlı derzler yerine çimento harcı kullanılmış, kavsaranın mukarnasları dökülmüş, tuğla dolgular açığa çıkmış, kesme taş yüzeyler sıvanarak cephe özgünlüğünü yitirmiştir. 2013'teki restorasyonla bu unsurlar düzeltilmiş ve türbe özgün hâline kavuşturulmuştur.",
+        "en": "In later interventions cement mortar replaced the original Khorasan mortar joints, the hood's muqarnas fell off, brick fillings were exposed and the cut stone surfaces were plastered, so the façade lost its originality. The 2013 restoration corrected these and returned the tomb to its original state."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "169"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "166"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şirin Hatun",
+      "role": {
+        "tr": "II. Bayezid'in eşi, Şehzade Abdullah'ın annesi; türbeyi yaptıran",
+        "en": "Wife of Bayezid II, mother of Şehzade Abdullah; had the tomb built"
+      }
+    },
+    {
+      "name": "Ferahşah Hatun",
+      "role": {
+        "tr": "Şehzade Abdullah'ın eşi; türbede yatar",
+        "en": "Wife of Şehzade Abdullah; buried here"
+      }
+    },
+    {
+      "name": "Aynışah Sultan",
+      "role": {
+        "tr": "Ferahşah Hatun'un kızı (Türkçe metinde 'kızı'); türbede yatar",
+        "en": "Daughter of Ferahşah Hatun; buried here"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "rahman-26",
+      "location": {
+        "tr": "Batı duvarındaki kitabe kuşağının altında, şemse motifleri içinde",
+        "en": "Below the inscription band on the west wall, within sunburst motifs"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "Küllü men aleyhâ fânin",
+      "translation": {
+        "tr": "Yeryüzünde olan her canlı yok olacaktır. (Rahman, 26)",
+        "en": "Every living creature on earth will perish. (Ar-Rahman, 26)"
+      },
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "169"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "restorasyon-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon: raspa, özgün 16. yüzyıl motifleri ve cephe özgünlüğü geri kazanıldı",
+        "en": "Restoration: scraping revealed 16th-century motifs; façade authenticity restored"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "168-169"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "166"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-mukrime-hatun-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kalem işi süslemeler ve yazı frizi Mükrime Hatun Türbesi ile birebir aynıdır.",
+        "en": "The hand-painted decoration and inscription frieze are exactly the same as in the Mükrime Hatun Tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "168"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe kare planlıdır; duvarları bir sıra kesme küfeki taşı ve iki sıra tuğla ile örülmüştür. Yüksek sekizgen kasnağın üzerinde bir kubbe yükselir; kasnakta sivri kemerli sağır pencereler bir dolu bir boş sıralanır. Taç kapı eyvanının iki yanında mihrap nişleri vardır. Giriş sade, çift kanatlı ahşap bir kapıdandır. İçeride kalem işleri ve Âyetü'l-kürsî yazı kuşağı bulunur.",
+      "en": "The tomb is square, with walls of one row of cut limestone and two of brick. A dome rises over a high octagonal drum whose pointed-arched blind windows alternate solid and void. Mihrab niches flank the portal iwan. The entrance is a plain double-leaf wooden door. Inside are hand-painted decoration and an Ayat al-Kursi inscription band."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sirin-hatun-turbesi/p059-1.jpg",
+        "original_name": "ERD03194 kopya-4.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "168"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Türbede yazı bandı ve madalyon",
+        "en": "Calligraphy band and medallion in the tomb"
+      },
+      "alt": {
+        "tr": "Turuncu zeminde yazı bandı, altında gri-yeşil duvar üzerinde turkuaz ve turuncu renkli madalyon biçimli bir yazı bezemesi var. Yazılar Arap harfleriyle.",
+        "en": "A band of calligraphy on an orange ground, with a turquoise and orange medallion of Arabic lettering on a grey-green wall below."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    }
+  ],
+  "archive_media": []
+}

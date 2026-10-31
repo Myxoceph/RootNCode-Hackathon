@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-nilufer-golyazi-sur-duvarlari",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Nilüfer",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Nilüfer bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -14,12 +14,11 @@
       "Hadrianus kitabesinin metni ve dili kitapta verilmemiş.",
       "Era alanı: enums.json'da antik/Bizans dönemi kodu yok; era boş bırakıldı.",
       "Tür 'sivil' (bölüm Sivil Mimari altında); 'savunma yapısı' için uygun bir kod yok, gerekirse enum eklenmeli.",
-      "Bölüm sayfa 640-641'de metin yok (muhtemelen görsel).",
       "Koordinat kitapta yok; sahada ya da güvenilir bir kaynaktan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraflar (media[]) ve arşiv fotoğrafları (archive_media[]) henüz eklenmedi; Drive klasörü bilinmiyor (media_folder: null).",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok; eklenmedi.",
-      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): Dış kale (Taş Kapı) stadion taşlarıyla Bizans döneminde kule olarak yeniden değerlendirildi"
+      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): Dış kale (Taş Kapı) stadion taşlarıyla Bizans döneminde kule olarak yeniden değerlendirildi",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -76,7 +75,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "643"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.165398,
+      "lng": 28.677551,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Gölyazı, Nilüfer, Bursa, Marmara Bölgesi, Türkiye'); binanın kendisi değil."
+    }
   },
   "dating": {
     "display": {
@@ -371,8 +377,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden (Bursa Vakıf Eserleri III. Cilt) yalnızca metne dayanarak yazıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MaFDs8805U-GChT4qXjf_KyaXW3wgUnz",
+    "book_layout_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+    "book_pdf_name": "10-Nilüfer.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-golyazi-sur-duvarlari/p021-1.jpg",
+        "original_name": "09 ERD05173 kopya.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "644"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Sur kalıntısı ve yıkık kemer",
+        "en": "Ruined wall section with an arch"
+      },
+      "alt": {
+        "tr": "Büyük taş bloklardan örülmüş, yer yer yıkılmış bir sur parçası ile kısmen ayakta kalan bir kemer görülür. Önünde otlar ve çalılar vardır.",
+        "en": "A section of wall built of large stone blocks, partly collapsed, with a surviving arch. Grass and bushes grow in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-golyazi-sur-duvarlari/p023-1.jpg",
+        "original_name": "12 ERD05166 kopya.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "646"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Göl kıyısında taş set ve tekne",
+        "en": "Lakeshore with a boat"
+      },
+      "alt": {
+        "tr": "Taş bir set kıyıdan göle uzanır; yanında mavi-beyaz, kırmızı püsküllü küçük bir tekne durur. Üstte söğüt dalları, uzakta düz bir kıyı vardır.",
+        "en": "A stone embankment extends into the lake, with a small blue-and-white boat beside it. Willow branches hang above and a flat shoreline lies in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

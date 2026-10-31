@@ -2,24 +2,23 @@
   "schema_version": "1.0",
   "id": "bursa-keles-yakub-bey-hamami",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Keles",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabındaki Keles bölümünden (Yakub Bey Hamamı, s. 540-541) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahadan/haritadan doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: media [] ve media_folder null; envanter fotoğrafları bulunup eklenmeli (alt metin ve credit zorunlu).",
-      "Arşiv medyası (archive_media) bulunmadı.",
       "Erişilebilirlik bilgileri sahada teyit edilmeli.",
       "Hamamın tam yapım tarihi kitapta yok; I. Murad dönemi (1380-1385 aralığı kitapta külliye için verilmiş) olarak bırakıldı, kaynaklarla teyit edilmeli.",
       "Vakfiye ve Mudanya zeytin bahçelerinin konumu/ayrıntısı kitapta yok; vakıf belgesi bulunmalı.",
       "İlişkilerde geçen Mudanya zeytin bahçeleri ve Yakub Bey Camii (2017, Keles Ertuğrulgazi Mahallesi) için hedef kayıt kimlikleri tahminidir; ilçe Keles metninde Yakub Bey Camii için Keles, Mudanya bahçeleri için Mudanya olarak verilmiştir.",
       "Kitapta mimar bilgisi yok.",
       "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok.",
-      "İlişki eklenecekse: Yakub Bey Camii (2017) bu yapının külliyesinin parçası değildir, Bursa Büyükşehir Belediyesi'nce adı yaşatılmak için yaptırılmıştır; 'same_founder' yazılmamalı. Mudanya zeytin bahçeleri bir eser kaydı değil, vakıf bilgisi olarak 'waqf' alanında duruyor."
+      "İlişki eklenecekse: Yakub Bey Camii (2017) bu yapının külliyesinin parçası değildir, Bursa Büyükşehir Belediyesi'nce adı yaşatılmak için yaptırılmıştır; 'same_founder' yazılmamalı. Mudanya zeytin bahçeleri bir eser kaydı değil, vakıf bilgisi olarak 'waqf' alanında duruyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -62,7 +61,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "540"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 39.913843,
+      "lng": 29.234072,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Cuma, Küçük Kovacık, Keles, Bursa, Marmara Bölgesi, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -351,8 +357,69 @@
     },
     "audio_description_source": "Kitap metninden yazıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HLt8AMJpXNWPZqyUMTXrRQgIL8hwgoaF",
+    "book_layout_pdf_file_id": "1rfLHONlZ8eRkvnqIFqrnltld3eP5QFml",
+    "book_pdf_name": "6-Keles.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-keles-yakub-bey-hamami/p003-1.jpg",
+        "original_name": "01 DJI_20241023180734_0042_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1rfLHONlZ8eRkvnqIFqrnltld3eP5QFml",
+        "book_pdf_name": "6-Keles.pdf",
+        "book_page": "540"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hamamın kubbeleri ve çarşı caddesi",
+        "en": "Bath domes and the market street"
+      },
+      "alt": {
+        "tr": "Karla kaplı kubbeler ve çatılar uzun bir sıra hâlinde caddenin ortasında uzanır. Yanlarda renkli evler ve uzakta bir cami vardır.",
+        "en": "Snow-covered domes and roofs run in a row along the middle of a street. Coloured houses line the sides and a mosque is in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-keles-yakub-bey-hamami/p003-3.jpg",
+        "original_name": "03 ERD02012 kopya.jpg",
+        "book_pdf_file_id": "1rfLHONlZ8eRkvnqIFqrnltld3eP5QFml",
+        "book_pdf_name": "6-Keles.pdf",
+        "book_page": "540"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamamın içi, oturma alanı",
+        "en": "Seating area inside the bath"
+      },
+      "alt": {
+        "tr": "Kubbeli mekânda ahşap bölmeler, bir masa ile iki plastik sandalye ve soba borusu görülür. Duvarda bayrak asılıdır.",
+        "en": "A domed room with wooden partitions, a table with two plastic chairs and a stove pipe. A flag hangs on the wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-25"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

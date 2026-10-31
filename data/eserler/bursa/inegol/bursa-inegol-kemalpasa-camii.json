@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-inegol-kemalpasa-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "İnegöl",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -51,7 +51,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "376"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.07847,
+      "lng": 29.506275,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir. OSM way/744828322 ile arası 33 m."
+    }
   },
   "dating": {
     "display": {

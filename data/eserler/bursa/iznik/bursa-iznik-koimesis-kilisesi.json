@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-iznik-koimesis-kilisesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-22",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "İznik",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -34,7 +34,7 @@
   },
   "subtitle": null,
   "alternate_names": [],
-  "type": "diger",
+  "type": "kilise",
   "secondary_types": [],
   "parent_id": null,
   "era": null,
@@ -57,7 +57,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "494"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.426452,
+      "lng": 29.72444,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": {
     "display": {

@@ -1,0 +1,366 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-selimzade-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Yapının kesin inşa yılı kitapta yok; dating yıl alanları boş bırakıldı.",
+      "Kapı üstündeki 1906 onarım yazısının metni kitapta verilmiyor; yalnızca içeriği özetleniyor.",
+      "Eski türbenin (yarı kâgir) ne zaman ortadan kalktığı kitapta yok.",
+      "Lojman, gasilhane ve şadırvanın yapım tarihleri kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[hazire]",
+        "note": "Metin 'Selimzade Mahallesi, Eski Sokak, No: 4' adresini cami ve hazire için tekrarlar; hazire cami bahçesindedir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Selimzade Camii",
+    "en": "Selimzade Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Selimzâde Mehmed Efendi",
+    "hazire",
+    "ahşap tavan",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Selimzade",
+    "address": "Selimzade Mahallesi, Eski Sokak, No: 4",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "262"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185444,
+      "lng": 29.077747,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q127788065 ('Selimzade Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XVI. yüzyıl sonu – XVII. yüzyıl başı",
+      "en": "Late 16th – early 17th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yıl vermeden 'XVI. yüzyıl sonu ile XVII. yüzyıl başları' der; banî H. 1020 / M. 1611'de vefat etmiştir. Yıl aralığı bu ifadeden doldurulmadı.",
+      "en": "The book gives no year, only 'between the end of the 16th and the beginning of the 17th centuries'; the founder died in AH 1020 / AD 1611. No year range is filled in from this."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "262"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Selimzâde Mehmed Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "262-263"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Müderris Selimzâde Mehmed Efendi'nin XVI. yüzyıl sonu – XVII. yüzyıl başında yaptırdığı, ahşap tavanlı enine dikdörtgen planlı cami. Mihrabındaki mukarnas özgün öğedir; bahçesinde banisinin mezarının bulunduğu hazire vardır.",
+    "en": "A transversely rectangular, wooden-ceilinged mosque built by Müderris Selimzâde Mehmed Efendi at the end of the 16th or start of the 17th century. The mihrab muqarnas is an original element; its garden holds a graveyard with the founder's grave."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yıldırım ilçesi, Selimzade Mahallesi, Eski Sokak, No: 4'te yer alan cami, XVI. yüzyıl sonu ile XVII. yüzyıl başlarında Selimzâde Mehmed Efendi tarafından inşa ettirilmiştir. İnşa kitabesi günümüze ulaşmamıştır; ancak kapı üzerindeki yağlı boya bir yazıdan H. 1324 / M. 1906'da fabrikatör Osman Efendi tarafından mükemmel şekilde onarıldığı anlaşılmaktadır.",
+        "en": "The mosque at Eski Street, No. 4, Selimzade Neighborhood, Yıldırım was built by Selimzâde Mehmed Efendi between the end of the 16th and the beginning of the 17th centuries. Its construction inscription has not survived, but an oil-paint inscription on the door indicates that it was meticulously restored by the fabricator Osman Efendi in AH 1324 / AD 1906."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mimari",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Cami, harim ve son cemaat mahallinden oluşur. Doğu-batı yönünde enine dikdörtgen planlı yapının harimi 8,10 × 13,60 m'dir. Harim ahşap tavanla örtülüdür ve mihrap üstündeki küçük bağdadi kubbeyle vurgulanmıştır; sekiz pencereyle aydınlanır. Kadınlar mahfili sonradan eklenmiştir. Yaklaşık 3 m derinlikteki son cemaat yeri zamanla harime eklenmiştir. Birçok bölümü onarım geçirmiş; günümüze ulaşan özgün unsurlardan biri mihraptaki mukarnas süslemelerdir. Moloz taş ve tuğla örgülü beden duvarları geç dönem onarımlarıyla tamamen kaygan taşıyla kaplanmıştır. Ahşap tavanlı yapının kırma çatısı kiremit kaplıdır.",
+        "en": "The mosque consists of a prayer hall and a narthex. The east-west rectangular prayer hall measures 8.10 × 13.60 m, is covered with a wooden ceiling accented by a small lath-and-plaster dome above the mihrab, and is lit by eight windows. The women's gallery was added later. The narthex, about 3 m deep, was added to the prayer hall over time. Many parts have been altered; the mihrab muqarnas retain some original form. The walls, originally rubble stone and brick, were completely covered with slate during restoration. The hipped roof is tiled."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "id": "minare-ve-mustemilat",
+      "order": 3,
+      "title": {
+        "tr": "Minare ve Müştemilat",
+        "en": "Minaret and Outbuildings"
+      },
+      "body": {
+        "tr": "Minare kuzeybatı köşededir ve son cemaat mahallinden bir kapıyla ulaşılır. Taş ve tuğla kaidesi sonradan kaygan taşıyla kaplanmıştır. Şerefe altında beş sıra kirpi saçak vardır; petek kısmı sıvalı, miğfer biçimli külahı kurşun kaplıdır. Avluda tarihî bir çınar ağacı, müştemilat içinde lojman, gasilhane ve bir şadırvan bulunur; bahçede hazire de vardır. Cami sağlam ve ibadete açıktır; cemaat kapasitesi 340 kişidir.",
+        "en": "The minaret is in the northwest corner, reached through a door from the narthex. Its stone and brick base was covered with slate during restoration. Five rows of sawteeth line the area under the balcony; the neck is plastered and the helmet-shaped spire is lead-lined. A monumental plane tree stands in the courtyard; the outbuildings include a lodging, a washing station and a shadirvan, and there is a graveyard in the garden. The mosque is in excellent condition, open for worship, with a capacity of 340."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "263"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Hazirede, H. 1020 / M. 1611'de vefat eden caminin banisi Müderris Selimzâde Mehmed Efendi'ye ait bir mezar bulunur; mezar taşı günümüze ulaşmamıştır. Öncesinde yarı kâgir bir türbenin var olduğu bilinmekte, ancak yapı tamamen ortadan kalkmıştır. Bugün hazirede yalnızca sarık kısmı ayakta kalabilmiş beş kırık mezar taşı vardır; arşiv kayıtlarına göre bazıları Mehmed Efendi'nin ailesine aittir. Kimya ilmindeki maharetiyle tanınan Mehmed Efendi, yaptırdığı caminin bitişiğine defnedilmiştir.",
+        "en": "In the graveyard is a grave belonging to the mosque's founder, Müderris Selimzâde Mehmed Efendi, who died in AH 1020 / AD 1611, but his gravestone has not survived. A semi-masonry tomb once existed but has disappeared completely. Today there are only five broken gravestones with their turbans still standing; archive records say some belong to Mehmed Efendi's family. Known for his proficiency in chemistry, Mehmed Efendi was buried next to the mosque he commissioned."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "263"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Selimzade Mahallesi, Eski Sokak, No: 4",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcusu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall size"
+      },
+      "value": "8,10 × 13,60",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinligi",
+      "label": {
+        "tr": "Son cemaat yeri derinliği (yaklaşık)",
+        "en": "Narthex depth (approx.)"
+      },
+      "value": 3,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 8,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "key": "cemaat_kapasitesi",
+      "label": {
+        "tr": "Cemaat kapasitesi",
+        "en": "Congregation capacity"
+      },
+      "value": 340,
+      "unit": "kişi",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "263"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Selimzâde Mehmed Efendi",
+      "role": {
+        "tr": "Müderris; caminin banisi (v. H. 1020 / M. 1611)",
+        "en": "Lecturer; founder of the mosque (d. AH 1020 / AD 1611)"
+      }
+    },
+    {
+      "name": "Osman Efendi",
+      "role": {
+        "tr": "Fabrikatör; 1906 onarımını yaptıran",
+        "en": "Fabricator who carried out the 1906 restoration"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-onarim-yazisi",
+      "location": {
+        "tr": "Kapı üzerindeki yağlı boya yazı",
+        "en": "Oil-paint inscription above the door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1324,
+        "gregorian": "1906"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "262"
+        }
+      ],
+      "note": {
+        "tr": "Yazının metni kitapta verilmiyor; dili belirtilmediği için 'other' yazıldı. Kitap bu yazıdan 1906 onarımının anlaşıldığını söyler.",
+        "en": "The text is not printed in the book and its language is not stated, hence 'other'. The book says it shows a 1906 repair."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1906",
+      "year": 1906,
+      "date": null,
+      "hijri": "1324",
+      "type": "repair",
+      "title": {
+        "tr": "Fabrikatör Osman Efendi tarafından mükemmel şekilde onarıldı",
+        "en": "Meticulously restored by fabricator Osman Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "id": "banisi-vefat",
+      "year": 1611,
+      "date": null,
+      "hijri": "1020",
+      "type": "record",
+      "title": {
+        "tr": "Banî Müderris Selimzâde Mehmed Efendi vefat etti, caminin bitişiğine defnedildi",
+        "en": "Founder Müderris Selimzâde Mehmed Efendi died and was buried next to the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "263"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Selimzade Camii, Selimzade Mahallesi'nde Eski Sokak üzerindedir. Doğu-batı yönünde enine dikdörtgen planlı yapının harimi ahşap tavanlı, mihrabın üzerinde küçük bir bağdadi kubbeyle vurgulanmıştır. Duvarlar kaygan taşıyla kaplanmış, kırma çatı kiremitle örtülmüştür. Kuzeybatı köşesinde, kaidesi taşla kaplı, miğfer külahlı bir minare vardır. Avluda tarihî bir çınar ağacı, bir şadırvan ve bahçede bir hazire bulunur.",
+      "en": "Selimzade Mosque stands on Eski Street in Selimzade Neighborhood. The east-west transversely rectangular building has a wooden-ceilinged prayer hall accented by a small lath-and-plaster dome above the mihrab. Walls are covered with slate and the hipped roof with tiles. In the northwest corner is a minaret with a slate-covered base and a helmet-shaped spire. The courtyard has a historic plane tree and a shadirvan, and the garden holds a graveyard."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

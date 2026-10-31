@@ -1,0 +1,298 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-rifat-aga-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Rıfat Ağa Mescidi bölümünden (s. 306-309) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Yapım tarihi kaynakta yok; era bu yüzden null bırakıldı.",
+      "Aynı adı taşıyan Güllübahçe Mahallesi, Gazi Paşa Caddesi'ndeki çeşme (1922) kitapta ayrı bir eser olarak kayıtlı değil; ilişki kurulmadı.",
+      "Eser 'sonradan tadilat görmüş'; tadilat tarihi kaynakta yok.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "alternate_names",
+        "note": "Kaynak eserin 'Rafet Ağa Camii veya Rafet Ağa Mescidi' adlarıyla da bilindiğini söyler; başlıkta 'Rıfat Ağa'; İngilizce metin 'Rifat Ağa' ile 'Rafet Aga' kullanır."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Kaynak, çeşmenin 1922 tarihini mescidin tarihi için kanıt olarak sunmaz; cümle bağlamı belirsizdir. Yapım tarihi 'unknown' bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Rıfat Ağa Mescidi",
+    "en": "Rifat Agha Masjid"
+  },
+  "subtitle": {
+    "tr": "Etrafı binalarla çevrili, evden dönüştürülmüş küçük mescit",
+    "en": "A small masjid converted from a house and hemmed in by buildings"
+  },
+  "alternate_names": [
+    {
+      "tr": "Rafet Ağa Camii",
+      "en": "Rafet Aga Mosque",
+      "note": "Kaynak bu adı da verir."
+    },
+    {
+      "tr": "Rafet Ağa Mescidi",
+      "en": "Rafet Aga Masjid",
+      "note": "Kaynak bu adı da verir."
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "evden dönüştürülmüş",
+    "minaresiz",
+    "Rafet Ağa"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "5. Mıntıka, 1242 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "308"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi bilinmiyor",
+      "en": "Construction date unknown"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap eserin banisi ve yapım tarihine ilişkin kayıt bulunmadığını söylüyor. Aynı adla bilinen çeşmenin 1922 tarihli olması caminin tarihi olarak alınmadı.",
+      "en": "The book says there is no record of the builder or construction date. The 1922 date of the fountain known by the same name is not taken as the mosque's date."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "308"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sokak arasında binalarla çevrili olduğu için dışarıdan pek belli olmayan, mütevazı bir mescittir. Biri mihraplı, diğeri mihrapsız yan yana iki odadan oluşur; bu da evden mescide dönüştürüldüğü izlenimini verir. Minaresi yoktur.",
+    "en": "A small, modest masjid whose existence is hardly obvious from outside as it is surrounded by buildings between streets. It consists of two rooms side by side, one with a mihrab and one without, giving the impression of conversion from a dwelling. It has no minaret."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Rıfat Ağa Mescidi, küçük ve mütevazı mimarisine ek olarak, sokak arasında etrafı binalarla çevrili olduğu için varlığı dışarıdan pek belli olmayan mescitlerdendir. Rafet Ağa Camii veya Rafet Ağa Mescidi adıyla da bilinir. Biri mihraplı, diğeri mihrapsız yan yana iki odadan oluşması, mesken olarak kullanılırken sonradan mescide dönüştürüldüğü izlenimini verir. Avlunun kuzeybatısında sac örtüyle kapatılan bölümün mahalle sakinlerinin bir araya geldiği mekân olarak kullanılması bu kanaati güçlendirir.",
+        "en": "Rifat Agha Masjid is one of the small and modest masjids in Antakya whose existence is not obvious from outside because it is surrounded by buildings between streets. It is also known as Rafet Aga Mosque or Rafet Aga Masjid. The fact that it consists of two rooms side by side, one with a mihrab and the other without, gives the impression that it was converted into a masjid while being used as a residence. The sheet-covered section in the northwest of the courtyard, used as a gathering place for neighborhood residents, further strengthens this opinion."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "308"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kaba yonu taştan yapılan düz örtülü mescidin kuzey duvarında bir kapı, bir mihrabiye ve iki pencere bulunur; güney cephesinde bir mihrap ve iki pencere vardır. Pencereler içeriden düz atkılı, dışarıdan yuvarlak kemerlidir. Minaresi olmayan mescidin mihrabı oldukça sadedir.",
+        "en": "The flat-covered masjid, built of rough-hewn stone, has a door, a mihrabiye and two windows on its north wall and a mihrab and two windows on its south façade. The windows have flat lintels inside and round arches outside. The masjid has no minaret and its mihrab is very plain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "308"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 3,
+      "title": {
+        "tr": "Tarihçe ve Çeşme",
+        "en": "History and Fountain"
+      },
+      "body": {
+        "tr": "Sonradan tadilat gören eserin banisi ve yapım tarihine ilişkin herhangi bir kayıt yoktur. Güllübahçe Mahallesi, Gazi Paşa Caddesi'nde aynı adla bilinen çeşmenin 1922 tarihli olduğu kitabesinden anlaşılmaktadır.",
+        "en": "There is no record of the builder and construction date of the work, which was later renovated. It is understood from its inscription that the fountain known by the same name on Gazi Paşa Caddesi in Güllübahçe Neighborhood is dated 1922."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "308"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "oda_sayisi",
+      "label": {
+        "tr": "Yan yana oda sayısı",
+        "en": "Rooms side by side"
+      },
+      "value": 2,
+      "unit": null,
+      "note": {
+        "tr": "Biri mihraplı, diğeri mihrapsız.",
+        "en": "One with a mihrab, one without."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "308"
+        }
+      ]
+    },
+    {
+      "key": "minare",
+      "label": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "value": "Yok",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "308"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Rıfat Ağa Mescidi, sokak arasında binalarla çevrili küçük bir mescittir ve dışarıdan pek belli olmaz. Kaba yonu taştan yapılmış, düz örtülüdür. Yan yana iki odadan oluşur; birinde mihrap vardır, diğerinde yoktur. Kuzey duvarında bir kapı, bir mihrabiye ve iki pencere, güney cephesinde bir mihrap ve iki pencere yer alır. Pencereler içeriden düz atkılı, dışarıdan yuvarlak kemerlidir. Mescidin minaresi yoktur. Avlunun kuzeybatısında sac örtüyle kapatılmış bir buluşma yeri bulunur.",
+      "en": "The Rifat Agha Masjid is a small masjid between streets, surrounded by buildings, hardly noticeable from outside. It is built of rough-hewn stone with a flat cover. It consists of two rooms side by side, one with a mihrab and one without. The north wall has a door, a mihrabiye and two windows; the south façade has a mihrab and two windows. The windows have flat lintels inside and round arches outside. There is no minaret. In the northwest of the courtyard is a gathering place covered with sheet metal."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 308) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-rifat-aga-mescidi/p155-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "308-309"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Mescit avlusu",
+        "en": "The masjid courtyard"
+      },
+      "alt": {
+        "tr": "Taş döşeli avlu; ortada ağaç ve alçak taş blok, sağda ahşap banklar, solda ahşap kapılı kiremit çatılı revaklı yapı.",
+        "en": "A stone-paved courtyard with a tree and a low stone block in the middle, wooden benches on the right and a tiled-roof building with a portico and wooden doors on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-rifat-aga-mescidi/p154-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "306-307"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Avlu ve mescidin girişi",
+        "en": "Courtyard and entrance of the masjid"
+      },
+      "alt": {
+        "tr": "Tente altındaki avluda mavi bank; arka planda taş ve sıvalı alçak yapı, kemerli girişi, Türk bayrağı ve ahşap kapıları. Solda küçük musluklar.",
+        "en": "A blue bench in a courtyard under an awning; behind it a low stone and plastered building with an arched entrance, a Turkish flag and wooden doors. Small taps on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-rifat-aga-mescidi/p155-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "309"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Sokak kapısındaki kemerli geçit",
+        "en": "Arched passage at the street gate"
+      },
+      "alt": {
+        "tr": "Taş duvarda kemerli bir geçit; üstünde \"Rıfat Ağa Mescidi\" yazılı levha, içeride basamaklar ve avluya açılan kapılar.",
+        "en": "An arched passage in a stone wall with a sign above it reading Rıfat Ağa Mescidi; inside, steps and doors opening onto the courtyard."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

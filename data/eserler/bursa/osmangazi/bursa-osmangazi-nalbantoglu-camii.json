@@ -1,0 +1,574 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-nalbantoglu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Yapım yılı kitapta yok (yalnızca II. Murad dönemi); 'dating' yılları null.",
+      "Nalbantbaşı'nın kişisel adı kitapta yok; 'founder.name' unvanla girildi.",
+      "Vakıf bilgisi kitapta yok; 'waqf' null. Mimar bilgisi yok.",
+      "Mektebin tam yeri ve günümüzdeki durumu kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[minber-1777]",
+        "note": "S. 403 yapının 1777'de minber eklenerek camiye dönüştürüldüğünü kesin biçimde, s. 405 ise ahşap minberin H. 1191 / M. 1777'de eklendiğinin 'düşünüldüğünü' yazıyor. H. 1191 yılı M. 1777 ile uyumludur. Minber bölümü 'probable' işaretlendi."
+      },
+      {
+        "field": "inscriptions[son-cemaat-kapi-kitabesi]",
+        "note": "Aynı ayetin Türkçe metindeki okunuşu 'kânet … mü’minîne', İngilizce metinde 'kanet … mü’minine' biçiminde; Türkçe yazım esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Nalbantoğlu Camii",
+    "en": "Nalbantoğlu Mosque"
+  },
+  "subtitle": {
+    "tr": "II. Murad dönemi mahalle mescidinden camiye dönüşen yapı",
+    "en": "A neighborhood masjid of Murad II's reign converted into a mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Nalbantbaşı",
+    "kalkan duvarlı son cemaat",
+    "tuğla bezeme",
+    "yaba motifi",
+    "kalem işi",
+    "sıbyan mektebi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu Mahallesi",
+    "address": "Nalbantoğlu Sokak No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "403"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.182323,
+      "lng": 29.063877,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/407487313 ('Nalbantoğlu Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Murad dönemi; 1777'de camiye dönüştürüldü",
+      "en": "Reign of Murad II; converted to a mosque in 1777"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapının II. Murad döneminde mahalle mescidi olarak yapıldığını yazar; yıl vermez. 1777'de minber eklenerek camiye dönüştürülmüştür.",
+      "en": "The book says it was built as a neighborhood masjid in the reign of Murad II without giving a year; it became a mosque in 1777 when a minbar was added."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "403"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Nalbantbaşı",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "403"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sultan II. Murad döneminde Nalbantbaşı'nın mahalle mescidi olarak yaptırdığı, 1777'de minber eklenerek camiye dönüştürülen yapı. Kalkan duvarlı üç gözlü son cemaat yeri, kubbeli kare harimi, tuğla bezemeleri ve estetik açıdan öne çıkan minaresiyle dikkat çeker.",
+    "en": "Built as a neighborhood masjid by Nalbantbaşı in the reign of Murad II and converted into a mosque in 1777 with the addition of a minbar. It stands out for its parapet-walled three-bay narthex, domed square prayer hall, brick ornament and an aesthetically notable minaret."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yapı, Sultan II. Murad döneminde Nalbantbaşı tarafından mahalle mescidi olarak yaptırılmış, 1777'de minber eklenerek camiye dönüştürülmüştür. Yaklaşık 11,00 × 8,00 m ölçülerinde dikdörtgen planlıdır.",
+        "en": "The building was built as a neighborhood masjid by Nalbantbaşı in the reign of Sultan Murad II and converted into a mosque in 1777 by adding a minbar. It has a rectangular plan of about 11.00 × 8.00 m."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "403"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 2,
+      "title": {
+        "tr": "Son Cemaat Yeri ve Cephe",
+        "en": "Narthex and Facade"
+      },
+      "body": {
+        "tr": "Kuzeydeki 3,50 × 8,12 m'lik kalkan duvarlı son cemaat yeri yan duvarlarla çevrilidir; yanlarda geniş, ortada dar üç sivri kemerli açıklıkla sonlanır, orta kemerin altında bir Bursa kemeri daha vardır. Orta bölme kubbeyle, yan bölümler aynalı tonozla örtülüdür. Orta giriş kapısı birbirine geçme iki renk mermerden, basık kemerli ve sövelidir; alınlığındaki zülfe taç motifli mermer yüzeyde rumi bezemeli sülüs hatla Nisâ suresi 103. ayeti kabartma yazılıdır. Kapı kemeri alınlığı tuğlayla bezelidir. Beden duvarları kuzey cephesi dışında alt pencere kemerlerinin üst seviyesine değin üç sıra tuğla ve iki sıra moloz taşla, daha yukarısı üç sıra yaba motifli tuğla bezeme ve bir sıra küfeki taşla örülmüştür; kuzey cephesi üç sıra tuğla ve bir sıra moloz taşla, birbirine geçme tekniğinde tuğla yaba motifleriyle zenginleştirilmiştir.",
+        "en": "The parapet-walled narthex on the north measures 3.50 × 8.12 m and is enclosed by side walls, ending in three pointed-arched openings (wide at the sides, narrow in the middle) with a further Bursa arch under the middle one. The middle bay has a dome and the side bays flattened barrel vaults. The central doorway is of interlocking two-colored marble with a depressed arch; on its crown-motif marble pediment, Surah an-Nisa 103 is carved in relief in thuluth with rumi ornament. Walls are three rows of brick and two of rubble stone up to the lower window arches, then three rows of pitchfork-motif brick and one row of limestone; the north facade uses three rows of brick and one of rubble stone with interlocking brick pitchfork motifs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "403-404"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 3,
+      "title": {
+        "tr": "Harim",
+        "en": "Prayer Hall"
+      },
+      "body": {
+        "tr": "Harim 7,50 × 7,50 m iç ölçülerinde kare planlıdır. Üzeri dıştan sekizgen kasnaklı, içeride Türk üçgenleri ve büyük baklava motifli kuşakla geçiş sağlanan kurşun kaplı kubbeyle örtülüdür. Kasnak ve kalkan duvarı saçakları üç sıra testere dişli tuğladır. Alt ve üst sırada toplam altı pencere ve kasnakta üç pencere ile aydınlanır; mermer söveli alt pencereler dikdörtgen ve sivri kemer alınlıklı, üst pencereler sivri kemerli, alçı şebekeli ve vitraylıdır. Dışta tuğla bezeme, içte kalem işi süslemeler dikkat çeker. Mihrap nişi dikdörtgen çerçeveli, yarım beşgen planlı ve altı sıra stalaktitli kavsaralıdır; çerçevesiyle birlikte yağlı boyayla boyanmıştır. Mihrabın üstünde Âl-i İmrân 37. ayet yazılıdır; duvarlarda dört halifenin isimleri yer alır.",
+        "en": "The prayer hall is square, 7.50 × 7.50 m inside, covered by a lead-covered dome on an octagonal drum, with a transition belt of Turkish triangles and large lozenges inside. Drum and parapet eaves have three rows of sawtooth brick. It is lit by six windows in two rows plus three in the drum; the lower windows have marble frames and pointed-arch pediments, the upper ones plaster grilles and stained glass. Brick decoration outside and hand-drawn decoration inside stand out. The mihrab niche is half-pentagonal with a six-row stalactite hood and frame, painted in oil paint. Surah Al-Imran 37 is written above the mihrab and the names of the four caliphs appear on the walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "404-405"
+        }
+      ]
+    },
+    {
+      "id": "minber-minare",
+      "order": 4,
+      "title": {
+        "tr": "Minber, Mahfiller ve Minare",
+        "en": "Minbar, Galleries and Minaret"
+      },
+      "body": {
+        "tr": "Dikdörtgen parçalardan geçme tekniğiyle yapılmış ahşap minberin H. 1191 / M. 1777'de yapıya eklendiği düşünülmektedir. Cümle kapısının üzerinde sonradan eklenmiş kadınlar mahfili, girişin sağında müezzin mahfili vardır. Estetik açıdan öne çıkan minare harimin kuzeydoğusundadır ve iç mekândaki bir kapıdan ulaşılır. Almaşık örgü minarenin çokgen planlı kaidesinde de görülür; tuğla silindirik gövdenin bitiminde on iki köşeli geometrik motiflerden oluşan bir bilezik, şerefe altında beş sıra stalaktitli tuğla işçiliği vardır; konik külah kurşunla kaplıdır.",
+        "en": "The wooden minbar, built by interlocking rectangular pieces, is thought to have been added in AH 1191 / AD 1777. A women's gallery added later is above the main door and a muezzin's gallery is on the right of the entrance. The aesthetically notable minaret stands northeast of the prayer hall and is reached through an interior door. The alternating masonry also appears on its polygonal base; the brick shaft ends in a band of interlocking twelve-sided geometric motifs, the underside of the balcony has five rows of stalactite brickwork, and the conical spire is lead-covered."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "405"
+        }
+      ]
+    },
+    {
+      "id": "mektep-ve-mezarlar",
+      "order": 5,
+      "title": {
+        "tr": "Sıbyan Mektebi ve Mezarlar",
+        "en": "Primary School and Graves"
+      },
+      "body": {
+        "tr": "Tarihî kaynaklar caminin doğusunda aynı adla anılan bir sıbyan mektebi bulunduğunu belirtir. Mektebin haziresinde caminin imamı ve mektep hocası Palancı Hoca Ömer Hulusi Efendi (v. H. 1293 / M. 1876), Bursa Kadısı Şâmîzâde Mustafa Efendi (v. H. 1194 / M. 1780) ve Nakibüleşraf Yörükzâde Mehmed Efendi (ö. H. 1217 / M. 1802) ile başka kişilerin mezarları bulunduğu ifade edilir. Uzun süre okul olarak kullanılan mektep yıkıldıktan sonra mezarlardan kalan birkaç taşın Emir Sultan Mezarlığı'na götürüldüğü kayıtlarda geçer.",
+        "en": "Historical sources mention a primary school with the same name east of the mosque. Its graveyard is said to contain the graves of the mosque's imam and school teacher Palancı Hoca Ömer Hulusi Efendi (d. AH 1293 / 1876), the Qadi of Bursa Şâmîzâde Mustafa Efendi (d. AH 1194 / 1780), Nakibüleşraf Yörükzâde Mehmed Efendi (d. AH 1217 / 1802) and others. Records say that after the school, long used as a school, was demolished, a few remaining gravestones were taken to the Emir Sultan Cemetery."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "405"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 6,
+      "title": {
+        "tr": "Hasar ve Onarım",
+        "en": "Damage and Repairs"
+      },
+      "body": {
+        "tr": "Cami yapımından itibaren çeşitli doğal afetlerden zarar görmüş; 1518'deki yangında ve 1855 depreminde ağır hasar almıştır. Son olarak 1957'de Bursa Eski Eserleri Sevenler Derneği tarafından onarılarak yeniden ibadete açılmıştır.",
+        "en": "The mosque was damaged by various natural disasters; it was severely damaged in the fire of 1518 and the earthquake of 1855. Finally it was repaired and reopened for worship in 1957 by the Bursa Association for the Appreciation of Antiquities."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "405"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_olcu",
+      "label": {
+        "tr": "Yaklaşık dış plan ölçüsü",
+        "en": "Approximate plan size"
+      },
+      "value": "11,00 × 8,00",
+      "unit": "m",
+      "note": {
+        "tr": "Kitap 'yaklaşık' diyor.",
+        "en": null
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "403"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat yeri",
+        "en": "Narthex"
+      },
+      "value": "3,50 × 8,12",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "403"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim iç ölçüsü",
+        "en": "Prayer hall interior"
+      },
+      "value": "7,50 × 7,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "404"
+        }
+      ]
+    },
+    {
+      "key": "pencere_harim",
+      "label": {
+        "tr": "Harim pencereleri (alt+üst)",
+        "en": "Prayer hall windows (lower+upper)"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "404"
+        }
+      ]
+    },
+    {
+      "key": "pencere_kasnak",
+      "label": {
+        "tr": "Kubbe kasnağı pencereleri",
+        "en": "Drum windows"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "404"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "405"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Nalbantbaşı",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Palancı Hoca Ömer Hulusi Efendi",
+      "role": {
+        "tr": "Caminin imamı ve mektep hocası (v. 1876)",
+        "en": "Imam of the mosque and teacher of the school (d. 1876)"
+      }
+    },
+    {
+      "name": "Şâmîzâde Mustafa Efendi",
+      "role": {
+        "tr": "Bursa Kadısı (v. 1780); mektep haziresinde medfun",
+        "en": "Qadi of Bursa (d. 1780); buried in the school graveyard"
+      }
+    },
+    {
+      "name": "Yörükzâde Mehmed Efendi",
+      "role": {
+        "tr": "Nakibüleşraf (ö. 1802); mektep haziresinde medfun",
+        "en": "Nakibüleşraf (d. 1802); buried in the school graveyard"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "son-cemaat-kapi-kitabesi",
+      "location": {
+        "tr": "Son cemaat yeri orta giriş kapısı alınlığı, mermer üzerine kabartma",
+        "en": "Pediment of the central narthex doorway, relief on marble"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "İnne’s-salâte kânet ale’l-mü’minîne kitâben mevkuten",
+      "translation": {
+        "tr": "Muhakkak ki namaz, inananlara vakit vakit farz kılınmıştır.",
+        "en": "Prayer is indeed made obligatory for the believers from time to time."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "404"
+        }
+      ],
+      "note": {
+        "tr": "Nisâ suresi 103. ayet; rumi bezemeli.",
+        "en": "Surah an-Nisa 103; with rumi decoration."
+      }
+    },
+    {
+      "id": "mihrap-ustu-yazisi",
+      "location": {
+        "tr": "Mihrabın üst kısmı, duvar yüzeyi",
+        "en": "Upper part of the mihrab, wall surface"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Küllemâ dehale aleyhâ Zekeriyya’l-mihrâb",
+      "translation": {
+        "tr": "Zekeriya ne zaman mihraba girse",
+        "en": "Whenever Zechariah enters the mihrab"
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "404-405"
+        }
+      ],
+      "note": {
+        "tr": "Âl-i İmrân suresi 37. ayet.",
+        "en": "Surah Al-Imran 37."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yangin-1518",
+      "year": 1518,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yangında ağır hasar aldı",
+        "en": "Severely damaged in a fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "405"
+        }
+      ]
+    },
+    {
+      "id": "minber-1777",
+      "year": 1777,
+      "date": null,
+      "hijri": "1191",
+      "type": "addition",
+      "title": {
+        "tr": "Minber eklenerek mescit camiye dönüştürüldü",
+        "en": "A minbar was added and the masjid became a mosque"
+      },
+      "note": {
+        "tr": "Sayfa 403'te dönüşüm kesin, sayfa 405'te minberin bu tarihte eklendiği 'düşünülmektedir'.",
+        "en": "Page 403 states the conversion plainly; page 405 says the minbar is 'thought' to have been added then."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "403"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde ağır hasar aldı",
+        "en": "Severely damaged in the earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "405"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1957",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Derneği onarımı; yeniden ibadete açıldı",
+        "en": "Repaired by the Bursa Association for the Appreciation of Antiquities and reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "405"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kuzeyinde kalkan duvarlı, üç sivri kemerli ve orta bölümü kubbeli bir son cemaat yeri bulunan, kare planlı, kurşun kaplı kubbeli bir camidir. Duvarlar tuğla ve moloz taş sıralarıyla örülmüş, tuğladan yaba motifleriyle süslenmiştir. Orta kapı iki renk mermerden yapılmış, üstünde sülüs hatla bir ayet kabartmadır. İçeride mihrap yağlı boyayla boyanmıştır, duvarlarda kalem işi süsleme ve dört halife adı vardır; kapı üstünde kadınlar mahfili bulunur. Harimin kuzeydoğusunda tuğla gövdeli, stalaktitli şerefe altlı ve kurşun külahlı bir minare yükselir.",
+      "en": "A square mosque with a lead-covered dome and, on the north, a parapet-walled narthex of three pointed arches with a domed middle bay. The walls are laid in brick and rubble stone courses ornamented with brick pitchfork motifs. The middle doorway is of two-colored marble with a verse in thuluth relief above it. Inside, the mihrab is painted in oil paint, the walls carry hand-drawn decoration and the names of the four caliphs, and a women's gallery is above the door. A brick minaret with a stalactite balcony underside and a lead spire rises northeast of the prayer hall."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nalbantoglu-camii/p012-2.jpg",
+        "original_name": "01 Kapak.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "405"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Nalbantoğlu Camii ve minaresi şehir içinde",
+        "en": "Nalbantoğlu Mosque and its minaret in the city"
+      },
+      "alt": {
+        "tr": "Yüksekten bakıldığında uzun tuğla gövdeli minare, gri kurşun kubbeli ve taş-tuğla duvarlı caminin yanında yükselir. Çevrede apartmanlar, ağaçlar, kiremit çatılar ve arkada dağlar yer alır.",
+        "en": "From above, a tall brick minaret rises beside the grey lead dome and stone-and-brick walls of the mosque. Apartment blocks, trees, tiled roofs and mountains surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-nalbantoglu-camii/p011-1.jpg",
+        "original_name": "02.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "404"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Nalbantoğlu Camii'nin harimi, mihrap ve minber",
+        "en": "Prayer hall of Nalbantoğlu Mosque with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Turuncu mukarnaslı mihrap mavi ve sarı bir çerçeve içindedir; sağında yeşil ve altın yazılı bezemeli ahşap minber durur. Avize ve kırmızı, mavi desenli halı salonu tamamlar.",
+        "en": "An orange stalactite-vaulted mihrab in a blue and yellow frame, with a wooden minbar decorated in green and gold on its right. A chandelier and a red and blue patterned carpet complete the hall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

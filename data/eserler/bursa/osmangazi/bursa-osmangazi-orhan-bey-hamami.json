@@ -2,17 +2,15 @@
   "schema_version": "1.0",
   "id": "bursa-osmangazi-orhan-bey-hamami",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-14",
-    "updated_at": "2026-10-14",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Orhan Bey Külliyesi",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Orhan Bey Külliyesi bölümünden (s. 187-213) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
-      "Fotoğraf seçimi yapılmadı (media boş); Drive'daki Orhan Bey Külliyesi klasöründen seçilecek, alt metinleri yazılacak.",
-      "media_folder bilgisi (Drive klasörü) eklenecek.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
       "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
       "Hamamın tam yapım yılı 'H.' karşılığıyla kitapta yok (yalnızca 1340); hicri yıl boş bırakıldı.",
@@ -104,7 +102,14 @@
         "source_id": "vk-bursa-c1",
         "pages": "203"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.184506,
+      "lng": 29.062328,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-osmangazi-orhan-bey-kulliyesi) noktası kullanıldı."
+    }
   },
   "dating": {
     "display": {
@@ -852,6 +857,9 @@
     },
     {
       "target_id": "bursa-osmangazi-orhan-gazi-imareti",
+      "target_name": {
+        "tr": "Orhan Gazi İmareti"
+      },
       "type": "waqf_income",
       "description": {
         "tr": "Vakfiyeye göre Bıçakçılar Hamamı (Orhan Hamamı) Orhan Gazi İmareti'ne vakfedilmiştir.",
@@ -881,7 +889,7 @@
       ]
     },
     {
-      "target_id": "bursa-osmangazi-koza-han",
+      "target_id": "bursa-osmangazi-koza-hani",
       "type": "urban_context",
       "description": {
         "tr": "Hamam, Emir Hanı ile Kozahan'ın arasında bulunur; Koza Hanı 1505'te cami ile hamam arasındaki alana yapılmıştır.",
@@ -924,7 +932,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1szYG4K01kG96L2sZgOvZlw1JJC6PQevi",
+    "book_layout_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+    "book_pdf_name": "6-Orhan Bey Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-orhan-bey-hamami/p020-3.jpg",
+        "original_name": "08 ERD08282 kopya.jpg",
+        "book_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+        "book_pdf_name": "6-Orhan Bey Külliyesi.pdf",
+        "book_page": "205"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamamın içindeki modern bölüm",
+        "en": "Modern fitted area inside the bathhouse"
+      },
+      "alt": {
+        "tr": "Kubbeli tonozlu mekânda cam bölmeler, bir tezgâh ve sandalyeler sıralanıyor. Tavan sıcak turuncu ışıkla aydınlanıyor, zemin gri halıyla kaplı.",
+        "en": "In a vaulted space, glass partitions, a long counter and chairs line a corridor. The ceiling is lit with warm orange light, and the floor is covered with grey carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-06"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-orhan-bey-hamami/p022-1.jpg",
+        "original_name": "14 ERD08271 kopya.jpg",
+        "book_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+        "book_pdf_name": "6-Orhan Bey Külliyesi.pdf",
+        "book_page": "207"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Vitrinde porselen ve takılar",
+        "en": "Porcelain and jewellery in a display case"
+      },
+      "alt": {
+        "tr": "Vitrinde çiçek desenli beyaz bir porselen ibrik, rengârenk giysili bir porselen figür ve küçük gümüş takılar duruyor. Arkada çerçeveli bir yazı levhası var.",
+        "en": "A display case holds a white porcelain jug with flowers, a porcelain figure in colourful dress and small silver pieces. A framed calligraphic panel is behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-06"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-orhan-bey-hamami/p022-3.jpg",
+        "original_name": "ERD07986 kopya.jpg",
+        "book_pdf_file_id": "1c55S4809wRdRPNV9ClTcdJw0yILZcGZm",
+        "book_pdf_name": "6-Orhan Bey Külliyesi.pdf",
+        "book_page": "207"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Renkli boncuk ve oya süslemeleri",
+        "en": "Colourful bead and needle-lace ornaments"
+      },
+      "alt": {
+        "tr": "İpe dizili rengârenk boncuklar ve oyalar yukarıdan aşağı sarkıyor. Arka plan bulanık, çeşitli renkli el işleriyle dolu.",
+        "en": "Strings of colourful beads and needle-lace flowers hang down. The background is blurred, full of other crafts."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-06"
+    }
+  ],
   "archive_media": []
 }

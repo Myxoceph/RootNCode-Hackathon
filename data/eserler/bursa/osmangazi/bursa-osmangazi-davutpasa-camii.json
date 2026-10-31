@@ -1,0 +1,487 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-davutpasa-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 292-293) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Mescidin ilk yapım yılı kitapta yok (yalnızca II. Bayezid dönemi).",
+      "Hamam ilişkisinde hedef id (bursa-osmangazi-davutpasa-hamami) ve 'Yeni Tahtakale Hanı' hedefi (bursa-osmangazi-yeni-tahtakale-hani) varsayımdır; hamamın ilçesi/adı kitapta 'Davutpaşa Hamamı' dışında verilmiyor.",
+      "Mektep ve kahvehane için ayrı kayıt yok; yapıları bugün var mı belirtilmiyor.",
+      "Kitap mimari detay (kubbe, mihrap, minber vb.) vermiyor; yalnızca iç ölçü ve duvar kalınlığı var.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[tarihce]",
+        "note": "1893'te yeniden harap olduğu ve 'bölge sakinlerinin desteğiyle kâgir hale getirildiği' söylenir; tarih ve onarım sırası bu iki cümle arasında kesin değildir (yeniden yapım yılı verilmez)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Davutpaşa (Batpazarı) Camii",
+    "en": "Davut Paşa (Batpazarı) Mosque"
+  },
+  "subtitle": {
+    "tr": "Sadrazam Davut Paşa'nın mescit olarak yaptırdığı, 1760'ta camiye çevrilen sade yapı",
+    "en": "Plain masjid built by Grand Vizier Davut Paşa, converted to a mosque in 1760"
+  },
+  "alternate_names": [
+    {
+      "tr": "Batpazarı Camii",
+      "en": "Batpazarı Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Batpazarı",
+    "Demirciler Çarşısı",
+    "sade yapı",
+    "2014 restorasyon"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kayhan",
+    "address": "Kayhan Mahallesi, Demirciler Çarşısı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "292"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.184631,
+      "lng": 29.06995,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Bayezid dönemi",
+      "en": "Reign of Bayezid II"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap mescidin Sultan II. Bayezid'in sadrazamı Davut Paşa tarafından yaptırıldığını söyler; yıl vermez.",
+      "en": "The book says the masjid was built by Davut Paşa, Grand Vizier of Sultan Bayezid II; no year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "292"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Davut Paşa",
+    "role": "banî; Sultan II. Bayezid'in sadrazamı (mescit olarak)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "292"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Davut Paşa mescide akar olarak bir han ve bir hamam yaptırıp vakfetmiştir. Hamam günümüze ulaşmıştır; 'Yeni Tahtakale Hanı' olarak bilinen han günümüze gelememiştir. Çevresindeki kahvehane de camiye gelir sağlamak amacıyla yapılmıştır.",
+      "en": "Davut Paşa built and endowed a han and a bathhouse as revenue for the masjid. The bathhouse has survived; the han known as 'Yeni Tahtakale Hanı' has not. A coffeehouse nearby was also built to provide income for the mosque."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "292-293"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Davutpaşa Hamamı'nın doğusunda, Demirciler Çarşısı'ndaki cami, Sultan II. Bayezid'in sadrazamı Davut Paşa tarafından son derece sade bir mescit olarak yaptırılmıştır. Harap durumdayken Şiblizâde Ahmed Bey tarafından yenilenmiş, 1760'ta minber eklenerek camiye çevrilmiştir. 1762 Kaygan yangınında ve 1893'te zarar görmüş, 2014'te kapsamlı restore edilmiştir.",
+    "en": "The mosque in the Demirciler Bazaar, east of Davutpaşa Bath, was built as an extremely plain masjid by Davut Paşa, Grand Vizier of Sultan Bayezid II. Renovated by Şiblizâde Ahmed Bey when dilapidated, it was converted into a mosque in 1760 by adding a minbar. It was damaged in the Kaygan Fire of 1762 and in 1893, and was comprehensively restored in 2014."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banî",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Kayhan Mahallesi, Demirciler Çarşısı'nda yer almaktadır. Davutpaşa Hamamı'nın doğusundaki cami, Sultan II. Bayezid'in sadrazamı Davut Paşa tarafından mescit olarak inşa ettirilmiş son derece sade bir yapıdır. Davut Paşa bu mescide akar olarak bir han ve bir de hamam yaptırarak vakfetmiştir. Hamam günümüze ulaşmış olsa da \"Yeni Tahtakale Hanı\" olarak bilinen han günümüze gelememiştir. Davut Paşa farklı bölgelerde medrese ve hamam gibi hayratlar inşa ettirmiştir; İstanbul'daki Davutpaşa Kışlası da onun adıyla anılmaktadır.",
+        "en": "The mosque is located in Osmangazi District, Kayhan Neighborhood, Demirciler Bazaar. Located to the east of Davutpaşa Bath, the mosque is an extremely plain building built as a masjid by Davut Paşa, the Grand Vizier of Sultan Bayezid II. Davut Paşa provided revenue for this mosque by building and endowing an han and a bathhouse. Although the bathhouse has survived to the present day, the han known as the \"Yeni Tahtakale Hanı\" has not survived. Davut Paşa had charitable works such as madrasas and baths built in different regions. Davutpaşa Barracks in Istanbul is also named after him."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "292-293"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe ve Onarımlar",
+        "en": "History and Repairs"
+      },
+      "body": {
+        "tr": "Harap durumdaki mescit, Mahkeme-i Kübrâ Başkâtibi Şiblizâde Ahmed Bey adında bir hayırsever tarafından tamamen tamir ettirilerek yenilenmiş, 1760 yılında minber eklenmesiyle camiye çevrilmiştir. 1762 Kaygan yangınında Batpazarı'ndaki dükkânlarla birlikte cami de yanmış, 1893 yılında yeniden harap olmuştur. İlk inşasında ahşap çatılı ve kiremit kaplı olan cami, bölge sakinlerinin desteğiyle tekrar ayağa kaldırılarak kâgir hale getirilmiştir. Çevresinde bir mektep ile camiye gelir sağlamak amacıyla inşa edilen bir kahvehane de bulunan yapı zamanla harap olmuş, 2014'te kapsamlı bir restorasyondan geçirilerek harimi ve son cemaat yeri çatılı olarak yeniden düzenlenmiş, güdük minaresi de onarılarak ibadete açılmıştır.",
+        "en": "The mosque, which was in a dilapidated state, was completely repaired and renovated by a philanthropist named Şiblizâde Ahmed Bey, the Chief Secretary of the Imperial Court, and was converted into a mosque with the addition of a minbar in 1760. In the Kaygan Fire of 1762, the mosque and the shops in Batpazarı were burned down, and it was devastated again in 1893. The mosque, which was originally built with a wooden roof covered with tiles, was rebuilt and converted into masonry with the support of the local residents. The building, which also had a school, and a coffeehouse built to provide income for the mosque, fell into disrepair over time. In 2014, it underwent a comprehensive restoration and its prayer hall and narthex were restored with a roof, its stubby minaret was repaired, and the mosque was opened for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "292-293"
+        }
+      ]
+    },
+    {
+      "id": "olculer",
+      "order": 3,
+      "title": {
+        "tr": "Ölçüler",
+        "en": "Dimensions"
+      },
+      "body": {
+        "tr": "Caminin iç ölçüleri 6,40 × 9 m, duvar kalınlığı 90 cm'dir.",
+        "en": "The mosque has interior dimensions of 6.40 × 9 m and its wall thickness is 90 cm."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "292"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "6,40 × 9",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "292"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 0.9,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "292"
+        }
+      ]
+    },
+    {
+      "key": "camiye_donusum",
+      "label": {
+        "tr": "Camiye dönüştürülme yılı (minber eklendi)",
+        "en": "Year converted to a mosque (minbar added)"
+      },
+      "value": 1760,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "292"
+        }
+      ]
+    },
+    {
+      "key": "restorasyon",
+      "label": {
+        "tr": "Kapsamlı restorasyon yılı",
+        "en": "Year of comprehensive restoration"
+      },
+      "value": 2014,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "293"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Davut Paşa",
+      "role": {
+        "tr": "Banî; Sultan II. Bayezid'in sadrazamı",
+        "en": "Founder; Grand Vizier of Sultan Bayezid II"
+      }
+    },
+    {
+      "name": "Şiblizâde Ahmed Bey",
+      "role": {
+        "tr": "Mahkeme-i Kübrâ Başkâtibi; mescidi yeniletip camiye çeviren hayırsever",
+        "en": "Chief Secretary of the Imperial Court; philanthropist who renovated and converted the masjid"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "camiye-donusum-1760",
+      "year": 1760,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Şiblizâde Ahmed Bey'in tamiri; minber eklenerek camiye çevrildi",
+        "en": "Repaired by Şiblizâde Ahmed Bey; converted into a mosque with a minbar"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "292"
+        }
+      ]
+    },
+    {
+      "id": "kaygan-yangini-1762",
+      "year": 1762,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Kaygan yangınında Batpazarı dükkânlarıyla birlikte yandı",
+        "en": "Burned with the Batpazarı shops in the Kaygan Fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "292-293"
+        }
+      ]
+    },
+    {
+      "id": "harap-1893",
+      "year": 1893,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yeniden harap oldu; sonra kâgir olarak yeniden yapıldı",
+        "en": "Devastated again; later rebuilt in masonry"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "293"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon; harim ve son cemaat yeri çatılı olarak yeniden düzenlendi",
+        "en": "Comprehensive restoration; prayer hall and narthex restored with a roof"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "293"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-davutpasa-hamami",
+      "target_name": {
+        "tr": "Davut Paşa Hamamı"
+      },
+      "type": "waqf_income",
+      "description": {
+        "tr": "Davut Paşa'nın mescide akar olarak yaptırıp vakfettiği hamam (günümüze ulaşmıştır; caminin batısında yer alır).",
+        "en": "The bathhouse Davut Paşa built and endowed as revenue for the masjid (survives today; the mosque lies to its east)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "292"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-yeni-tahtakale-hani",
+      "target_name": {
+        "tr": "Yeni Tahtakale Hanı"
+      },
+      "type": "waqf_income",
+      "description": {
+        "tr": "Davut Paşa'nın mescide akar olarak yaptırıp vakfettiği han (günümüze ulaşmamıştır).",
+        "en": "The han Davut Paşa built and endowed as revenue for the masjid (not surviving)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "292"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Davutpaşa Camii, Kayhan Mahallesi'nde Demirciler Çarşısı içinde, 6,40 × 9 metre iç ölçülü, duvarları 90 santimetre kalınlıkta, son derece sade bir yapıdır. 2014 restorasyonunda harimi ve son cemaat yeri çatılı olarak yeniden düzenlenmiş, güdük minaresi onarılmıştır. Davutpaşa Hamamı'nın doğusundadır.",
+      "en": "Davutpaşa Mosque in Demirciler Bazaar, Kayhan Neighborhood, is an extremely plain building with interior dimensions of 6.40 × 9 metres and 90 cm thick walls. In the 2014 restoration its prayer hall and narthex were roofed again and its stubby minaret repaired. It lies east of Davutpaşa Bath."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-davutpasa-camii/p024-1.jpg",
+        "original_name": "DJI_20241005130159_0521_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "293"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin çatısı ve minaresi, havadan",
+        "en": "Mosque roof and minaret from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan, kırmızı kiremitli dört eğimli çatı ve sol üstte minare külahı görünür. Yanında sarı yapraklı bir ağaç ve çevrede çatılar vardır.",
+        "en": "From above, a red-tiled hipped roof and the minaret cap at upper left. A tree with yellow leaves stands beside it, with roofs all around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-davutpasa-camii/p023-2.jpg",
+        "original_name": "3_1.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "292"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harim, mihrap ve kırmızı halı",
+        "en": "Prayer hall, mihrab and red carpet"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı, pembe duvarlı harimde mihrap mavi çerçevelidir; sağda ahşap minber ve kırmızı örtülü kürsü var. Zeminde kırmızı halı serilidir.",
+        "en": "A prayer hall with a wooden ceiling and pink walls; the mihrab has a blue frame, with a wooden minbar and a red-draped pulpit on the right. A red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-davutpasa-camii/p023-3.jpg",
+        "original_name": "ERD08037 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "292"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mahfil ve giriş duvarı",
+        "en": "Gallery and entrance wall"
+      },
+      "alt": {
+        "tr": "Ahşap korkuluklu mahfil, altında ahşap sütunlar ve ortada çift kanatlı ahşap kapı görünür. Yanlarda yazılı hat levhaları ve kırmızı halı vardır.",
+        "en": "A wooden gallery with a railing, wooden columns beneath and a double wooden door in the middle. Framed calligraphy panels hang on the sides and a red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-04"
+    }
+  ],
+  "archive_media": []
+}

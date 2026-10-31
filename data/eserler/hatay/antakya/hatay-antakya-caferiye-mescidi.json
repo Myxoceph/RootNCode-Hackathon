@@ -1,0 +1,362 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-caferiye-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Camiler ve Mescitler bölümündeki ilgili eser sayfalarından ve bölüm özeti sayfasından (s. 398-401) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi, yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Yapının dönemi (era) kaynakta belirtilmediği için boş bırakıldı.",
+      "Zemin kattaki dükkânların vakıf geliri olup olmadığı kaynakta yok.",
+      "Kitap yakındaki Katolik Kilisesi ve Sinagog'dan söz eder ama adlarını vermez; bu yüzden onlara ilişki yazılmadı.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Adres bölüm özeti sayfasından (kitap s. 398-399) alındı; mahalle adı kaynakta yok ya da belirsiz.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.address",
+        "note": "İngilizce metin parseli 'District 4-2' olarak yazar; Türkçe metin ve bölüm özeti '4. mıntıka 240 parsel' der. Türkçe değer korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Caferiye Mescidi",
+    "en": "Caferiye Masjid"
+  },
+  "subtitle": {
+    "tr": "Zemin katında dükkânlar bulunan iki katlı mescit",
+    "en": "A two-storey masjid with shops on the ground floor"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "dükkânlı zemin kat",
+    "iki katlı",
+    "Marsilya kiremit"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "Kurtuluş ve Oğuzlar Caddesi'nin köşesi; 4. Mıntıka, 240 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "349, 399"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.199963,
+      "lng": 36.164169,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q135582553 ('Caferiye Mescidi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya'da Kurtuluş ve Oğuzlar Caddesi'nin köşesinde, Sarımiye Camii, Katolik Kilisesi ve Sinagog'a yakın duran iki katlı mescit; zemin katında asma katlı üç dükkân vardır, mescit mekânları üst kattadır. Kitap onu Hatay'daki cami ve medreseler içinde kendine özgü bir örnek olarak niteler.",
+    "en": "A two-storey masjid on the corner of Kurtuluş and Oğuzlar Street in Antakya, near Sarımiye Mosque, the Catholic Church and the Synagogue. Three shops with mezzanines occupy the ground floor, and the masjid spaces are above. The book calls it a unique example among the mosques and madrasas of Hatay."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-plan",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Plan",
+        "en": "Location and Plan"
+      },
+      "body": {
+        "tr": "Mescit, Antakya ilçesinde Kurtuluş ve Oğuzlar Caddesi'nin köşesinde, 4. mıntıka 240 parsel üzerindedir. Yakınında Sarımiye Camii, Katolik Kilisesi ve Sinagog gibi üç farklı dine ait ibadet yapıları bulunur. Mescit kuzeydoğu-güneybatı yönünde konuşlanmış, düzgün olmayan enine dikdörtgen plana sahiptir. Yapı iki katlıdır; zemin katta her biri asma katlı üç dükkân vardır. Kuzeybatı yönündeki üst katlar yaklaşık 100 cm kadar çıkma yapmıştır; bu katta mescit mekânları ve üst kata erişimi sağlayan merdivenler bulunur.",
+        "en": "The masjid stands on plot 240 of District 4 at the corner of Kurtuluş and Oğuzlar Street in Antakya. Nearby are places of worship of three different religions: Sarımiye Mosque, the Catholic Church and the Synagogue. The masjid lies in a northeast-southwest direction on an irregular transverse rectangular plan. The building has two floors, with three shops, each with a mezzanine, on the ground floor. The upper floors on the northwest project by about 100 cm; this floor holds the masjid spaces and the stairs to the upper level."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "id": "zemin-kat-ve-ust-kat",
+      "order": 2,
+      "title": {
+        "tr": "Zemin Kat ve Üst Kat",
+        "en": "Ground and Upper Floors"
+      },
+      "body": {
+        "tr": "Zemin kat 9,70 m x 7,06 m ölçülerindedir. Caddeye bakan kuzeydoğu tarafında merdiven ve bu duvara bitişik L planlı 1 no'lu dükkân yer alır. Üst katın güney köşesi pahlandırılarak burada bir mihrap, doğu köşesinde de abdest alma yeri oluşturulmuştur. Kuzeydoğu dış duvar sağır tutulmuştur. Kuzeybatı duvarda dört, güneybatı duvarda iki ve güneydoğu duvarda biri alt, ikisi üst olmak üzere üç pencere (üst pencereler halen kapalı) vardır; kuzeydoğu duvarda altta ve üstte ikişer pencere bulunur. Güneydoğu duvarda altta iki niş ve güney köşede mihrap yer alır.",
+        "en": "The ground floor measures 9.70 m x 7.06 m. On the northeast side facing the street there is a staircase and the L-planned shop no. 1 adjoining that wall. The south corner of the upper floor was chamfered to create a mihrab, and a place for ablution was made in the east corner. The northeast outer wall is blind. There are four windows on the northwest wall, two on the southwest wall and, on the southeast wall, one lower and two upper windows (the upper ones still closed); the northeast wall has two windows at the bottom and two at the top. The southeast wall has two niches at the bottom, and the mihrab is in the south corner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "id": "ortu-ve-degerlendirme",
+      "order": 3,
+      "title": {
+        "tr": "Örtü ve Değerlendirme",
+        "en": "Covering and Assessment"
+      },
+      "body": {
+        "tr": "Zemin kat şap, tavan ahşap kaplamadır; üst örtü Marsilya tipi kiremit kaplı kırma çatıdır. Kitap Caferiye Mescidi'ni Hatay'da cami ve medreseler içinde kendine özgü kabul edilebilecek bir örnek olarak tanımlar.",
+        "en": "The ground floor is screed and the ceiling is wood cladding; the roof is a hipped roof covered with Marseille-type tiles. The book describes Caferiye Masjid as a unique example among the mosques and madrasas of Hatay."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "349"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "key": "dukkan_sayisi",
+      "label": {
+        "tr": "Zemin kattaki dükkân sayısı",
+        "en": "Shops on the ground floor"
+      },
+      "value": 3,
+      "unit": null,
+      "note": {
+        "tr": "Her biri asma katlıdır.",
+        "en": "Each has a mezzanine."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "key": "zemin_kat_olcusu",
+      "label": {
+        "tr": "Zemin kat ölçüsü",
+        "en": "Ground floor dimensions"
+      },
+      "value": "9,70 x 7,06",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "key": "cikma",
+      "label": {
+        "tr": "Üst katın çıkması (kuzeybatı)",
+        "en": "Overhang of upper floor (northwest)"
+      },
+      "value": 100,
+      "unit": "cm",
+      "note": {
+        "tr": "Kaynak 'yaklaşık' der.",
+        "en": "The source says 'approximately'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "349"
+        }
+      ]
+    },
+    {
+      "key": "ust_ortu",
+      "label": {
+        "tr": "Üst örtü",
+        "en": "Roof"
+      },
+      "value": "Marsilya tipi kiremit kaplı kırma çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "349"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-sarimiye-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Kitap, mescidin yakınında Sarımiye Camii'nin bulunduğunu söyler.",
+        "en": "The book says Sarımiye Mosque stands near the masjid."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "349"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Caferiye Mescidi, Antakya'da Kurtuluş ve Oğuzlar Caddesi'nin köşesindeki iki katlı bir yapıdır. Zemin katta asma katlı üç dükkân bulunur; mescit mekânları üst kattadır. Plan düzgün olmayan bir enine dikdörtgendir. Üst katın güney köşesi pahlanarak mihrap yapılmış, doğu köşesine abdest alma yeri konmuştur. Kuzeydoğudaki dış duvar sağırdır. Üst örtü kiremit kaplı kırma çatıdır.",
+      "en": "Caferiye Masjid is a two-storey building at the corner of Kurtuluş and Oğuzlar Street in Antakya. Three shops with mezzanines occupy the ground floor, and the masjid spaces are on the upper floor. The plan is an irregular transverse rectangle. The south corner of the upper floor is chamfered to hold the mihrab, and a place for ablution is in the east corner. The outer wall on the northeast is blind. The roof is a hipped roof covered with tiles."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-caferiye-mescidi/p174-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "346-347"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caferiye Mescidi'nin sokak cephesi",
+        "en": "Street façade of Caferiye Mescidi"
+      },
+      "alt": {
+        "tr": "Alt katında dükkânların bulunduğu, beyaz sıvalı iki katlı yapının üst katında kepenkli ahşap pencereler var. Cephede kırmızı bir flama ve mescit tabelası görülüyor.",
+        "en": "A two-storey white-plastered building with shops on the ground floor and shuttered wooden windows above. A red banner and the masjid sign are on the façade."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-caferiye-mescidi/p175-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "348"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mescit içi, mihrap ve ahşap minber",
+        "en": "Masjid interior, mihrab and wooden minbar"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı odada sivri kemerli bir mihrap nişi ve ahşap korkuluklu bir minber var. Tavan ahşap kaplı, avize sarkıyor; zemin koyu mavi halıyla kaplı.",
+        "en": "A white-walled room with a pointed mihrab niche and a minbar with a wooden railing. The ceiling is wood-clad with a chandelier and the floor has dark blue carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-caferiye-mescidi/p175-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "349"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap nişi ve minber merdiveni",
+        "en": "Mihrab niche and minbar stairs"
+      },
+      "alt": {
+        "tr": "Sivri kemerli sade bir mihrap nişinin sağında ahşap minber merdiveni yükseliyor. Sağda ahşap çerçeveli bir pencere ve üstte ahşap tavan görülüyor.",
+        "en": "A plain pointed mihrab niche with the stairs of a wooden minbar rising on its right. A wooden-framed window is on the right and a wooden ceiling above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-caferiye-mescidi/p175-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "349"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Namaz salonunun genel görünümü",
+        "en": "General view of the prayer hall"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, ahşap tavanlı dikdörtgen salonda ahşap çerçeveli pencereler ve solda minber var. Zemin koyu mavi halıyla kaplı.",
+        "en": "A rectangular hall with white walls and a wooden ceiling, wooden-framed windows and a minbar on the left. The floor is covered with dark blue carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

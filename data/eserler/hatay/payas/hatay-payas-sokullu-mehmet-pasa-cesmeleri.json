@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-payas-sokullu-mehmet-pasa-cesmeleri",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kitapta bu yapıya ait ayrı bir fotoğraf yok; fotoğraf sahada çekilmeli ya da başka bir kaynaktan eklenmeli.",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Arasta kaydında anılan kuzey ve güney taç kapı yanındaki çeşmelerle bu çeşmelerin aynı olup olmadığı belirsiz.",
+      "Kitap çeşmelerin kitabe veya tarihini vermiyor."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Sokullu Mehmet Paşa Külliyesi Çeşmeleri",
+    "en": "Sokullu Mehmet Pasha Complex Fountains"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": "hatay-payas-sokullu-mehmet-pasa-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "çeşme",
+    "payas",
+    "sokullu-mehmet-pasa"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Payas",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "110"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.754246,
+      "lng": 36.2033,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Külliyenin parçası; OSM'deki Sokullu Mehmet Paşa Külliyesi noktası kullanıldı. Kaynak: https://www.openstreetmap.org/relation/7325781"
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapıya özgü tarih verilmiyor; külliye kitabesi 1574",
+      "en": "No building-specific date is given; the complex inscription bears 1574"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap yalnızca külliyenin kitabesinin 1574 tarihini taşıdığını söyler; bu yapı için ayrı tarih yok, start_year null bırakıldı.",
+      "en": "The book only says the complex inscription bears 1574; there is no separate date for this building."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "98-99"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Külliyenin güneydoğu köşesinde ve arastanın kuzeybatı köşesinde bulunan iki çeşme.",
+    "en": "Two fountains at the southeast corner of the complex and the northwest corner of the arasta."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Çeşmeler",
+        "en": "Fountains"
+      },
+      "body": {
+        "tr": "Ordu ve kervanların konakladığı bu mekânlarda insanların ve hayvanların su ihtiyacı da düşünülmüş; camiler, hamamlar, hanlar ve imaretlerdeki su tesislerinden başka çeşmeler de yapılmıştır. Bunlardan ilki, bedestenin imaretle birleştiği güneydoğu köşede, güneye ve dışarıya bakar durumdadır ve derin sivri kemerle çerçevelenmiş bir musluk aynasından ibarettir. Benzeri ikinci çeşme, kuzeyden gelen yolcuları karşılamak için arastanın kuzeybatı köşesinde yapılmıştır.",
+        "en": "In these places where armies and caravans lodged, the water needs of people and animals were also considered; besides the water facilities in mosques, baths, inns and imarats there are fountains. The first is at the southeast corner where the bedesten meets the imarat, facing south and outward; it consists of a tap mirror framed by a deep pointed arch. A similar fountain was built at the northwest corner of the arasta to welcome travellers from the north."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "110"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "cesme_sayisi",
+      "label": {
+        "tr": "Anlatılan çeşme sayısı",
+        "en": "Number of fountains described"
+      },
+      "value": 2,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "110"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-payas-sokullu-mehmet-pasa-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Sokullu Mehmet Paşa Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Sokullu Mehmet Pasha Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "98-101"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İki çeşmeden biri, bedestenin imaretle birleştiği güneydoğu köşede, güneye ve dışarıya bakar; derin sivri kemerli bir musluk aynasıdır. Diğeri arastanın kuzeybatı köşesindedir.",
+      "en": "Of two fountains, one at the southeast corner where the bedesten meets the imarat faces south and outward; it is a tap mirror under a deep pointed arch. The other is at the northwest corner of the arasta."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Sokullu Mehmet Paşa Külliyesi Çeşmeleri bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

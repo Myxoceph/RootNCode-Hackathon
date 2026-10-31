@@ -1,0 +1,592 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-il-kultur-ve-turizm-mudurlugu-konagi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Sivil Mimari",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Sivil Mimari (Osmangazi) bölümünden (s. 723-743) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir. İngilizce alanlar kitabın İngilizce çevirisinden kısaltılmıştır.",
+    "todos": [
+      "Okçubaba Türbesi, Saltanat Kapısı, Osman Gazi ve Orhan Gazi türbesi hedef kayıtlarının ilçesi metinde belirtilmiyor; Osmangazi varsayıldı, doğrulanmalı. Bu hedeflerin kayıtları henüz yok.",
+      "Baldırzade Vakfı ile ilişki için hedef yapı kaydı yok; vakıf bilgisi waqf alanında.",
+      "timeline[insa] ve [devir] için yıllar yaklaşıktır (kitap kesin yıl vermiyor); Osman Gazi/Orhan Gazi türbelerinin id'leri doğrulanmalı.",
+      "Konağın yaptıranı, mimarı ve inşa amacı kitapta yok.",
+      "Koordinat kitapta yok; sahadan veya haritadan doğrulanmış koordinat eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (giriş ücreti, süre) kitapta yok; teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap 'XIX. yüzyılın son çeyreği' der; start_year 1875 ve end_year 1900 bu aralığın yaklaşık sayısal karşılığıdır, kaynağın kendi yılı değildir."
+      },
+      {
+        "field": "sections[giris-ve-ic-mekan]",
+        "note": "'Taşlık' ve 'fıskiyeli mekân' aynı alan olarak anlaşıldı; Türkçe metinde 'kuzey köşesindeki ahşap merdiven' ifadesi geçer, İngilizcede aynı. Mutfak yapısının 'günümüzde farklı işlevlerle' kullanıldığı belirtilir, ayrıntı yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İl Kültür ve Turizm Müdürlüğü Konağı",
+    "en": "Bursa Provincial Directorate of Culture and Tourism Mansion"
+  },
+  "subtitle": {
+    "tr": "Sarı Konak",
+    "en": "Yellow Mansion"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sarı Konak",
+      "en": "Sarı Konak (Yellow Mansion)",
+      "note": "Halk arasındaki ad"
+    }
+  ],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "konak",
+    "Sarı Konak",
+    "Bursa evi",
+    "şehir surları",
+    "habiye-i mâ",
+    "Baldırzade Vakfı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kuruçeşme",
+    "address": "Osmangazi Caddesi No: 18",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "740"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185342,
+      "lng": 29.058717,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Büyük ihtimalle XIX. yüzyılın son çeyreği",
+      "en": "Most likely the last quarter of the 19th century"
+    },
+    "start_year": 1875,
+    "end_year": 1900,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Yapının tarihi ve amacı kesin bilinmemektedir; 1862 tarihli Suphi Bey haritasında yer almadığından büyük ihtimalle XIX. yüzyılın son çeyreğinde inşa edildiği düşünülmektedir.",
+      "en": "The date and purpose are not definitely known; since it is absent from the 1862 Suphi Bey map it is thought most likely built in the last quarter of the 19th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "740"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": "Baldırzade Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "1980'lerden sonra bulunduğu alan Baldırzade Vakfı mülkiyetinde olduğundan takas yoluyla Vakıflar Genel Müdürlüğü'ne devredilmiştir.",
+      "en": "After the 1980s, because the area belonged to the Baldırzade Foundation, the building was transferred to the General Directorate of Foundations through barter."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "741"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Saltanat Kapısı'nın karşısında, Okçubaba Türbesi'nin kuzeyinde, halk arasında 'Sarı Konak' denen konak; XIX. yüzyılın son çeyreğinde yapıldığı düşünülmektedir. Bursa şehir surlarının güney ve doğu sınırını oluşturduğu avlulu yapı, Bursa'nın nitelikli sivil mimarlık örneklerindendir; bugün İl Kültür ve Turizm Müdürlüğü olarak kullanılmaktadır.",
+    "en": "Known popularly as the 'Sarı Konak' (Yellow Mansion), it stands opposite the Saltanat Gate and north of Okçubaba Tomb and is thought to date to the last quarter of the 19th century. Set in a courtyard bounded to the south and east by Bursa's city walls, it is among Bursa's best surviving civil buildings and now houses the Provincial Directorate of Culture and Tourism."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-tarih",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve tarih",
+        "en": "Location and date"
+      },
+      "body": {
+        "tr": "Konak Kuruçeşme Mahallesi'nde Osmangazi Caddesi No: 18'dedir; Saltanat Kapısı'nın karşısında, Okçubaba Türbesi'nin kuzeyinde yer alır ve halk arasında 'Sarı Konak' diye anılır. Hangi tarihte ve hangi amaçla yapıldığı kesin bilinmemektedir; 1862 tarihli Suphi Bey haritasında yer almadığından büyük ihtimalle XIX. yüzyılın son çeyreğinde inşa edildiği düşünülmektedir.",
+        "en": "The mansion is at Osmangazi Street No: 18, Kuruçeşme Neighborhood, opposite the Saltanat Gate and north of Okçubaba Tomb, known popularly as the 'Sarı Konak'. Its date and purpose are not definitely known; as it is absent from the 1862 Suphi Bey map it is thought most likely built in the last quarter of the 19th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "740"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-ve-mulkiyet",
+      "order": 2,
+      "title": {
+        "tr": "Kullanım ve mülkiyet",
+        "en": "Use and ownership"
+      },
+      "body": {
+        "tr": "Yapı uzun yıllar konut olarak kullanılmış ve büyük ölçüde yıpranmıştır. 1980'lerden sonra bulunduğu alan Baldırzade Vakfı mülkiyetinde olduğundan takas yoluyla Vakıflar Genel Müdürlüğü'ne devredilmiştir. Kapsamlı bakım ve onarımın ardından İl Kültür ve Turizm Müdürlüğü ile Rölöve ve Anıtlar Müdürlüğü tarafından kullanılmaya başlanmıştır.",
+        "en": "The building was a residence for many years and deteriorated considerably. After the 1980s it was transferred to the General Directorate of Foundations through barter since its area belonged to the Baldırzade Foundation. After comprehensive repairs it began to be used by the Provincial Directorate of Culture and Tourism and the Directorate of Surveying and Monuments."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "741"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-surlar",
+      "order": 3,
+      "title": {
+        "tr": "Avlu ve şehir surları",
+        "en": "Courtyard and city walls"
+      },
+      "body": {
+        "tr": "Konak, yüksek taş duvarlarla çevrili geniş bir avlu içindedir; güney ve doğu sınırlarını Bursa şehir surları oluşturur. 1855 büyük depreminden sonraki düzenlemelerde surların bir bölümü açılmış; bu bölüm bugün Osman Gazi ve Orhan Gazi türbelerine ulaşımı sağlayan cadde üzerindedir. Saltanat (Hisar) Kapısı'na bağlanan doğu yönündeki sur duvarları kısmen yıkılmış, konağın köşelerindeki duvarlarda surlara ait kesme taşların izleri korunmuştur. Avlu kayrak taşlarla döşenmiş ve peyzajlanmıştır; mutfak olarak kullanıldığı anlaşılan tek katlı bir yapı, daha küçük bir odunluk, köşeleri pahlı dikdörtgen mermer bir havuz ve yetişkin ağaçlar vardır; batı duvarında dışa açılan küçük bir kapı bulunur.",
+        "en": "The mansion stands in a large courtyard within high stone walls, bounded on the south and east by Bursa's city walls. In the renovations after the great earthquake of 1855 part of the walls was opened, on the street that today leads to the tombs of Osman Gazi and Orhan Gazi. The eastern walls joining the Saltanat (Hisar) Gate were partly demolished and traces of the wall's cut stones remain at the mansion's corners. The flagstone-paved, landscaped courtyard has a single-storey former kitchen, a smaller woodshed, a rectangular marble pool with beveled corners, mature trees and a small door in the west wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "741-743"
+        }
+      ]
+    },
+    {
+      "id": "yapi-ve-malzeme",
+      "order": 4,
+      "title": {
+        "tr": "Yapı sistemi ve malzeme",
+        "en": "Structure and materials"
+      },
+      "body": {
+        "tr": "Konak kısmi bodrum, zemin, birinci ve çatı katından oluşur. Beden duvarları zemin kotuna kadar kesme taş ve moloz taşla, üst bölümlerinde bağdadi teknikle yapılmıştır. Kırma çatı kiremit kaplıdır; üst katın kuzeybatı köşesindeki çıkma cepheye hareketlilik katar. Tavan ve zemin döşemeleri bütünüyle ahşaptır. Kuzey cephede on bir, güney cephede yedi, doğu cephede (çatı katı dâhil) yirmi bir, batı cephede on bir dikdörtgen ahşap pencere vardır.",
+        "en": "The mansion has a partial basement, ground, first and attic floors. Main walls are cut and rubble stone up to a certain height and lath-and-plaster (bağdadi) above. The hipped roof is tiled; a projection at the northwest corner of the upper floor enlivens the façade. Ceilings and floors are entirely wooden. There are eleven windows on the north façade, seven on the south, twenty-one on the east (including the attic) and eleven on the west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "741-743"
+        }
+      ]
+    },
+    {
+      "id": "giris-ve-ic-mekan",
+      "order": 5,
+      "title": {
+        "tr": "Girişler ve iç mekân",
+        "en": "Entrances and interior"
+      },
+      "body": {
+        "tr": "Giriş başlangıçta güney cephede Okçubaba Türbesi'ne bakan yuvarlak kemerli çift kanatlı ahşap kapıdan sağlanırdı; bu kapı artık kullanılmaz. Bugün aynı cephede sur duvarının bir bölümünde açılmış bahçe kapısıyla avluya geçilir; konağa batı cephesindeki birkaç basamaklı çift kanatlı ahşap kapıdan girilir. Özgün planda giriş holünden ulaşılan, kapalı sofa işlevli geniş dikdörtgen bir taşlık vardır; ortasında Bursa evlerinin karakteristik öğesi oval mermer fıskiyeli havuz yer alır. Pınarbaşı çarşaf suyuyla beslenen bu havuzlar, halk arasında 'habiye-i mâ' denen sistemin parçasıdır. Üst katta ahşap merdivenle çıkılan bir sofa, baş oda ve diğer odalar; dar ikinci merdivenle ulaşılan çatı katında iki oda ve Bursa tarihî çarşısı ile Ulucami manzaralı kurşun kaplı bir teras vardır. Eski fotoğraflarda terasta yuvarlak kemerli pencereli bir oda daha görülür.",
+        "en": "The entrance was originally a round-arched double-leafed wooden door on the south side facing Okçubaba Tomb, now unused. Today a garden gate opened in the walls on the same side leads to the courtyard, and the building is entered by a double-leafed wooden door on the west reached by a few steps. The original plan has a large rectangular stone-floored area serving as covered central hall, with an oval marble fountain pool, a characteristic element of Bursa houses, fed by Pınarbaşı open-channel water in the system popularly called 'habiye-i mâ'. Upstairs are a hall, a main room and other rooms; on the attic floor, reached by a narrow second staircase, are two rooms and a lead-floored terrace overlooking the Bursa bazaar and the Ulucami. Old photographs show another room with round-arched windows on the terrace."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "742-743"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "order": 6,
+      "title": {
+        "tr": "Değişiklikler ve restorasyon",
+        "en": "Changes and restoration"
+      },
+      "body": {
+        "tr": "Zaman içindeki onarımlar konağın özgün formunda değişikliklere yol açmıştır. Yakın dönemde kapsamlı bir restorasyondan geçen yapı bugün 'İl Kültür ve Turizm Müdürlüğü' olarak işlev görmektedir. Konak, Bursa'nın günümüze ulaşmış nitelikli sivil mimarlık örneklerinden biri kabul edilir.",
+        "en": "Repairs over time changed the original form. Having recently undergone comprehensive restoration, the building functions as the 'Provincial Directorate of Culture and Tourism'. It is considered one of the best quality surviving examples of civil architecture in Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "742-743"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_kuzey",
+      "label": {
+        "tr": "Kuzey cephe pencere sayısı",
+        "en": "North façade windows"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "742"
+        }
+      ]
+    },
+    {
+      "key": "pencere_guney",
+      "label": {
+        "tr": "Güney cephe pencere sayısı",
+        "en": "South façade windows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "742"
+        }
+      ]
+    },
+    {
+      "key": "pencere_dogu",
+      "label": {
+        "tr": "Doğu cephe pencere sayısı (çatı katı dâhil)",
+        "en": "East façade windows (incl. attic)"
+      },
+      "value": 21,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "742"
+        }
+      ]
+    },
+    {
+      "key": "pencere_bati",
+      "label": {
+        "tr": "Batı cephe pencere sayısı",
+        "en": "West façade windows"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "742"
+        }
+      ]
+    },
+    {
+      "key": "harita_1862",
+      "label": {
+        "tr": "1862 Suphi Bey haritasında yer almıyor",
+        "en": "Absent from the 1862 Suphi Bey map"
+      },
+      "value": "evet",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "740"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-19yy-son-ceyrek",
+      "year": 1875,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Büyük ihtimalle XIX. yüzyılın son çeyreğinde inşa edildi (yaklaşık)",
+        "en": "Most likely built in the last quarter of the 19th century (approximate)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "740"
+        }
+      ],
+      "note": {
+        "tr": "Kesin yıl bilinmiyor; 1875 yaklaşık başlangıç değeridir.",
+        "en": "Exact year unknown; 1875 is an approximate placeholder."
+      }
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük deprem sonrası surların bir bölümü açıldı",
+        "en": "Part of the walls opened after the great earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "741"
+        }
+      ],
+      "note": {
+        "tr": "Bu düzenleme yapıdan önce gerçekleşmiş olabilir; konağın tarihiyle ilişkisi kitapta kurulmaz.",
+        "en": "This may predate the mansion; the book does not tie it to the mansion's date."
+      }
+    },
+    {
+      "id": "devir-1980ler",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1980'lerden sonra takas yoluyla Vakıflar Genel Müdürlüğü'ne devredildi",
+        "en": "Transferred by barter to the General Directorate of Foundations after the 1980s"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "741"
+        }
+      ],
+      "note": {
+        "tr": "Kesin yıl belirtilmemiştir; 1980 yaklaşık değerdir.",
+        "en": "No exact year given; 1980 is approximate."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "fountain-pool",
+      "title": {
+        "tr": "Taşlıktaki oval mermer fıskiyeli havuz",
+        "en": "The oval marble fountain pool in the stone hall"
+      },
+      "hint": {
+        "tr": "Pınarbaşı çarşaf suyuyla beslenen 'habiye-i mâ' sisteminin bir parçası.",
+        "en": "Part of the 'habiye-i mâ' water distribution network fed by Pınarbaşı open-channel water."
+      },
+      "section_id": "giris-ve-ic-mekan"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-okcu-baba-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Konak Okçubaba Türbesi'nin kuzeyindedir; eski güney girişi türbeye bakar.",
+        "en": "The mansion lies north of Okçubaba Tomb; its old south entrance faces the tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "740-742"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-saltanat-kapisi",
+      "target_name": {
+        "tr": "Saltanat (Hisar) Kapısı"
+      },
+      "type": "urban_context",
+      "description": {
+        "tr": "Konak Saltanat (Hisar) Kapısı'nın karşısındadır; doğu sur duvarları bu kapıya bağlanır.",
+        "en": "The mansion is opposite the Saltanat (Hisar) Gate; the eastern walls join this gate."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "740-741"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-osman-gazi-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Surlardan açılan bölüm, Osman Gazi ve Orhan Gazi türbelerine ulaşan cadde üzerindedir.",
+        "en": "The opened wall section lies on the street leading to the Osman Gazi and Orhan Gazi tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "741"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-gazi-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Surlardan açılan bölüm, Osman Gazi ve Orhan Gazi türbelerine ulaşan cadde üzerindedir.",
+        "en": "The opened wall section lies on the street leading to the Osman Gazi and Orhan Gazi tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "741"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ulucami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Çatı katı terasından Bursa tarihî çarşısı ve Ulucami manzarası vardır.",
+        "en": "The attic terrace overlooks the Bursa historical bazaar and the Ulucami."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "742"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Konak, yüksek taş duvarlı geniş bir avlu içindedir; güney ve doğu sınırı Bursa şehir surlarıdır. Kısmi bodrum, zemin, birinci kat ve çatı katından oluşur. Alt kısım kesme ve moloz taş, üst kısım bağdadi tekniğindedir; kırma çatı kiremit kaplıdır ve üst katın kuzeybatı köşesinde bir çıkma vardır. İçeride ortasında oval mermer fıskiyeli havuz bulunan geniş taşlık, üst katta sofa ve baş oda, çatı katında iki oda ve Ulucami ile tarihî çarşıya bakan kurşun kaplı bir teras vardır.",
+      "en": "The mansion stands in a large courtyard with high stone walls, bounded to the south and east by Bursa's city walls. It has a partial basement, ground floor, first floor and attic. The lower part is cut and rubble stone and the upper part lath and plaster; the hipped roof is tiled with a projection at the northwest corner of the upper floor. Inside is a large stone hall with an oval marble fountain pool, a hall and main room upstairs, and in the attic two rooms and a lead-floored terrace overlooking the Ulucami and the historical bazaar."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesi (vk-bursa-c1, s. 741-743)"
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1C_DxmRm7tS_2mJUgiSLEM4k4jQUxTen3",
+    "book_layout_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+    "book_pdf_name": "3-Sivil Mimari.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-il-kultur-ve-turizm-mudurlugu-konagi/p022-1.jpg",
+        "original_name": "DJI_20241026210155_0146_D_ODAK kopya.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "741"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Konağın giriş cephesi",
+        "en": "Entrance facade of the mansion"
+      },
+      "alt": {
+        "tr": "Sarı sıvalı, kahverengi ahşap doğramalı iki katlı konak; kemerli kapı, taş temel ve geniş saçaklı kiremit çatı görülür.",
+        "en": "A two-storey yellow mansion with brown timber windows, an arched door, stone foundation and a wide-eaved tiled roof."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-il-kultur-ve-turizm-mudurlugu-konagi/p021-1.jpg",
+        "original_name": "DJI_20241026205449_0116_D_ODAK kopya.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "740"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Konak ve yanındaki sur duvarı",
+        "en": "The mansion and adjacent city wall"
+      },
+      "alt": {
+        "tr": "Sarı konak, önündeki taş sur duvarı ve merdivenli yürüyüş yolu. Çevresi ağaçlıdır, gökyüzü bulutludur.",
+        "en": "The yellow mansion with a stone city wall and stepped path in front, among trees under a cloudy sky."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-il-kultur-ve-turizm-mudurlugu-konagi/p022-2.jpg",
+        "original_name": "ERD02645 kopya.jpg",
+        "book_pdf_file_id": "1TE5ESMU8ZWbO2f8jn9HwFPJREuA1nT7Z",
+        "book_pdf_name": "3-Sivil Mimari.pdf",
+        "book_page": "741"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Konağın yeşil boyalı odası",
+        "en": "Green-painted room in the mansion"
+      },
+      "alt": {
+        "tr": "Yeşil duvarlı, ahşap tavanlı ve parkeli geniş oda. Üç pencere, çalışma masası, koltuklar ve duvarda iki tablo bulunur.",
+        "en": "A large room with green walls, wooden ceiling and parquet floor, three windows, a desk, armchairs and two framed paintings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-28"
+    }
+  ],
+  "archive_media": []
+}

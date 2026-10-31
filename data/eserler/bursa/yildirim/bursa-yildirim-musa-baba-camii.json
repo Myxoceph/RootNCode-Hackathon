@@ -1,0 +1,732 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-musa-baba-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden (s. 243-248) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir. Hazire kitapta cami bölümüyle birlikte (Musa Baba Camii ve Haziresi) ele alındığı için bu kayıtta bir bölüm olarak yer alır.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kesin inşa yılı kitapta yok; kitap 'rivayete göre XVI. yüzyıl başı' diyor.",
+      "Mimar bilgisi kitapta yok.",
+      "Giriş kemerindeki mermer Türkçe kitabenin metni kitapta verilmiyor; kitabe kaydı açılmadı.",
+      "Musa Baba Türbesi, medresesi ve hamamı için kayıt id'leri tahmini (bursa-yildirim-musa-baba-turbesi/medresesi/hamami); bu eserler başka bölümlerde/kayıtlarda varsa id'ler eşlenmeli, yoksa ilişkiler kaldırılmalı.",
+      "Hançerli Fatma Sultan vakfiyesinin metni / şartları kitapta yok; bulunursa waqf.conditions doldurulacak.",
+      "Hazire ayrı kayıt olarak açılıp açılmayacağına veri ekibi karar vermeli (kitapta ayrı alt başlık)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[abdulkadir-efendi]",
+        "note": "Kitap Abdülkadir Efendi'nin şeyhülislam olduğu yılı 1583 (İngilizce metinde de 1583), emekli olduğu yılı 1541 olarak verir; 1583 yılı 1541'de emeklilik ve 1548'deki ölümle çelişir. Kitaba sadık kalınarak çelişki saklandı, 1583 yılı bölüme yazılmadı."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Kitabın Türkçe ve İngilizce metninde 'türbe yaptıran' özne belirsizdir: Türkçede Hançerli Fatma Sultan, İngilizcede cümle öznesi Abdal Mûsâ olarak okunabilir. Türkçe metin esas alındı."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Kitap 'kitabesi bulunmayan cami' der, ancak aynı sayfa dizisinde (s. 245) giriş kemerinde Kanûnî devrini belirten mermer bir kitabeden söz eder. İkisi de saklandı."
+      },
+      {
+        "field": "founder",
+        "note": "Caminin Abdülkadir Efendi tarafından yaptırıldığı kitapta 'rivayete göre' denilerek aktarılıyor; bu yüzden founder güveni probable."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Musa Baba Camii",
+    "en": "Musa Baba Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Yıkık Minare",
+      "en": "The Ruined Minaret",
+      "note": "Yapı terk edilip yalnızca yarım minaresiyle ayakta kaldığı dönemde halk arasında bu adla anılmıştır."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Musa Baba",
+    "Abdal Mûsâ",
+    "Abdülkadir Efendi",
+    "Hançerli Fatma Sultan",
+    "hazire",
+    "Yıkık Minare",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Musababa",
+    "address": "Musababa Mahallesi, Musababa Caddesi, No: 74",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "243"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.177756,
+      "lng": 29.085825,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XVI. yüzyıl başı (rivayete göre); Kanûnî devri (kitabe)",
+      "en": "Early 16th century (according to legend); reign of Kanûnî (inscription)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap, rivayete göre XVI. yüzyıl başında Şeyhülislam Abdülkadir Efendi tarafından yaptırıldığını söyler; giriş kemerindeki kitabe Kanûnî devrini belirtir. Kesin yıl verilmediği için yıllar boş bırakıldı.",
+      "en": "The book says that according to legend it was built in the early 16th century by Shaykh al-Islam Abdülkadir Efendi; the inscription in the entrance arch indicates the reign of Kanûnî. No exact year is given, so the years are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "243, 245"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şeyhülislam Abdülkadir Efendi",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "243-244"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Şeyhülislam Abdülkadir Efendi ve Hançerli Fatma Sultan vakıfları",
+    "deed": {
+      "date_display": "H. 938 / M. 1531 (Hançerli Fatma Sultan Vakfiyesi)",
+      "excerpt": {
+        "tr": "Vakfiyenin başında Kanûnî Sultan Süleyman'ın tuğrası, altında Anadolu Kazaskeri Mehmed Bey, Rumeli Kazaskeri Mehmed bin Ali el-Fenârî, Rumeli Vilayeti Kazaskeri Ebussuûd Efendi ve Bursa Kadısı Sadi Çelebi'nin tasdikleri yer alır.",
+        "en": "The charter bears the tughra of Kanûnî Sultan Süleyman at the top, with the attestations below of Mehmed Bey (Kazasker of Anatolia), Mehmed bin Ali el-Fenârî (Kazasker of Rumelia), Ebussuûd Efendi (Kazasker of Rumelia Province) and Sadi Çelebi (Qadi of Bursa)."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "244-245"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Caminin yeri 'Fıstıklı Mevkii' olarak anılır; dönemin kaynaklarında bağlık ve bahçelik bir alandır. Sonraki dönemlerde Emir Sultan Vakfı dergâh dervişleri için bağlar arasında odalar yaptırmıştır.",
+      "en": "The site is called 'Fıstıklı Mevkii' (Pistachio Quarter) and was an area of vineyards and gardens in contemporary sources. Later the Emir Sultan Foundation built rooms among the vineyards for the dervishes of the lodge."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "244-245"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Rivayete göre XVI. yüzyıl başında Şeyhülislam Abdülkadir Efendi'nin, Abdal Mûsâ (Musa Baba) adına eski zaviye yerine yaptırdığı, 16 × 10,30 m planlı, kalkan duvarlı cami. Terk edilip yalnızca yarım minaresiyle kalarak 'Yıkık Minare' adını almış, 1979'da yeniden ibadete açılmış, 2017-2020'de restore edilmiştir.",
+    "en": "A parapet-walled mosque of about 16 × 10.30 m which, according to legend, Shaykh al-Islam Abdülkadir Efendi built in the early 16th century in honor of Abdal Mûsâ (Musa Baba) on the site of a former hermitage. Abandoned and left with half a minaret, it was called 'The Ruined Minaret', reopened in 1979 and restored in 2017-2020."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Yıldırım ilçesi Musababa Mahallesi, Musababa Caddesi, No: 74'te, geniş ve bakımlı bir avlu içindedir; kitabesi yoktur. Rivayete göre Bursa'nın fethine katılan ve şehrin manevi kurucu şahsiyetlerinden Abdal Mûsâ (Mûsâ Baba) adına, XVI. yüzyıl başlarında Şeyhülislam Abdülkadir Efendi tarafından, daha önce zaviye olarak kullanılan mekânın yerine yaptırılmıştır. Abdal Mûsâ'nın kabri yapının doğusundadır. Giriş kemerinin iç aynasında, yapının Kanûnî devrinde yapıldığını belirten mermer bir Türkçe kitabe bulunur.",
+        "en": "The mosque is at No. 74 Musababa Street, Musababa Neighborhood, Yıldırım, in a spacious well-kept courtyard, and has no (original) inscription. According to legend it was built in the early 16th century by Shaykh al-Islam Abdülkadir Efendi in honor of Abdal Mûsâ (Mûsâ Baba), a participant in the conquest of Bursa and one of the city's spiritual founders, on the site of a former hermitage. Abdal Mûsâ's tomb is on the east side. A Turkish marble inscription in the inner face of the entrance arch states that the building was built in the reign of Kanûnî."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "243, 245"
+        }
+      ]
+    },
+    {
+      "id": "abdulkadir-efendi",
+      "order": 2,
+      "title": {
+        "tr": "Şeyhülislam Abdülkadir Efendi",
+        "en": "Shaykh al-Islam Abdülkadir Efendi"
+      },
+      "body": {
+        "tr": "Abdülkadir Efendi Bursa ve İstanbul kadılıklarının yanı sıra 14 yıl Anadolu kazaskerliği yapmış, şeyhülislam olmuş ve bu görevde yalnızca üç ay kalıp 1541'de emekli edilmiştir. Emeklilikten sonra Musa Baba Türbesi yakınındaki bir bağ evinde yaşamış, 1548'de vefat etmiş, yaptırdığı caminin haziresine Abdal Mûsâ'nın yanına defnedilmiştir; mezarı günümüze ulaşmamıştır.",
+        "en": "Besides serving as qadi in Bursa and Istanbul, Abdülkadir Efendi was Kazasker of Anatolia for 14 years and became Shaykh al-Islam, holding the post only three months before retiring in 1541. After retirement he lived in a vineyard house near the Musa Baba Mausoleum and died in 1548; he was buried in the graveyard of the mosque he built, near Abdal Mûsâ, but his grave has not survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "id": "vakiflar",
+      "order": 3,
+      "title": {
+        "tr": "Vakıflar ve Çevre",
+        "en": "Foundations and Setting"
+      },
+      "body": {
+        "tr": "Şeyhülislam Abdülkadir Efendi ile Hançerli Fatma Sultan yapının yaşatılması için çeşitli vakıflar kurmuştur. H. 938 / M. 1531 tarihli Hançerli Fatma Sultan Vakfiyesi'nin başında Kanûnî'nin tuğrası, altında dönemin kazaskerleri ve Bursa Kadısı Sadi Çelebi'nin tasdikleri yer alır. Caminin yeri 'Fıstıklı Mevkii' diye anılır ve dönemin kaynaklarında bağlık-bahçelik bir alandır; sonraki dönemde Emir Sultan Vakfı dervişler için bağlar arasında odalar yaptırmıştır.",
+        "en": "Shaykh al-Islam Abdülkadir Efendi and Hançerli Fatma Sultan established various foundations to keep the building alive. The Hançerli Fatma Sultan charter of AH 938 / AD 1531 bears Kanûnî's tughra with the attestations of the kazaskers of the time and Sadi Çelebi, Qadi of Bursa. The site is called 'Fıstıklı Mevkii' and was vineyard and garden land; later the Emir Sultan Foundation built rooms among the vineyards for dervishes."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "244-245"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mimari",
+      "order": 4,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Yaklaşık 16 × 10,30 m ölçülerinde dikdörtgen planlı yapının duvarları iki sıra tuğla ve bir sıra moloz taşla örülmüştür; kalkan duvarlı, 3 m derinliğindeki son cemaat yerinin yan duvarları da aynı düzendedir. Üç sivri kemerli ön cephenin ortadaki giriş bölmesi Bursa kemeriyle sonlanır ve kubbeyle örtülüdür; yan bölmeler kurşun kaplı tonozludur, tümü ahşap doğrama ve camla kapatılmıştır. Giriş kemerinin iç aynasında Kanûnî devrini belirten mermer bir Türkçe kitabe vardır. Harim 8,30 × 8,30 m kare planlıdır; küfeki taşlı altıgen kasnaktaki kurşun kaplı kubbeyle örtülüdür ve her cephede alt ve üstte ikişer, kasnakta dört pencere ışık verir. Beden duvarlarında iki, kasnakta üç sıra kirpi saçak vardır; cephelerde kuş yuvası oyukları ve doğu cephede küçük bir kuş evi bulunur.",
+        "en": "The building is rectangular at roughly 16 × 10.30 m, its walls two courses of brick to one of rubble; the side walls of the parapet-walled narthex, 3 m deep, use the same pattern. The three-pointed-arch front has a central entrance bay ending in a Bursa arch and topped with a dome, flanked by lead-covered vaulted bays, all enclosed with woodwork and glass. A Turkish marble inscription in the inner face of the entrance arch indicates the reign of Kanûnî. The prayer hall is a square of 8.30 × 8.30 m under a lead-covered dome on a hexagonal limestone drum, lit by two windows in the lower and upper rows on each façade and four in the drum. There are two rows of sawteeth at the eaves of the walls and three on the drum; the façades have bird-nest recesses and a small birdhouse on the east."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "244-247"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan-ve-minare",
+      "order": 5,
+      "title": {
+        "tr": "İç Mekân ve Minare",
+        "en": "Interior and Minaret"
+      },
+      "body": {
+        "tr": "Harim girişinin üzerindeki ahşap hanımlar bölümüne harim içinden merdivenle çıkılır; girişin sağında müezzin mahfili vardır. Minber ve kürsü ahşaptır, mihrap tamamen çini kaplıdır. Bursa'daki en zarif örneklerden sayılan minare harimin kuzeybatı köşesindedir: çatı seviyesine kadar iki sıra tuğla ve iki sıra moloz taşla örülmüş sekizgen bir kaide üzerinde, Türk üçgenleriyle silindirik gövdeye geçer; tek şerefesinin altı beş sıra testere dişi tuğla ve geometrik tuğla bezemeyle süslüdür, sivri külahı kurşun kaplıdır.",
+        "en": "The wooden women's gallery above the prayer-hall entrance is reached by a staircase from inside; the muezzin's platform is to the right of the entrance. The minbar and pulpit are wooden and the mihrab is entirely tile-covered. The minaret, one of the most elegant in Bursa, is in the northwest corner of the hall: an octagonal base of two rows of brick and two of rubble rises to roof level, brick Turkish triangles lead to the cylindrical shaft, the single balcony is decorated below with five rows of sawtooth brick and geometric brickwork, and the pointed spire is lead-covered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "246-247"
+        }
+      ]
+    },
+    {
+      "id": "yikik-minare-ve-restorasyon",
+      "order": 6,
+      "title": {
+        "tr": "Terk, Yeniden Açılış ve Restorasyon",
+        "en": "Abandonment, Reopening and Restoration"
+      },
+      "body": {
+        "tr": "Zamanla terk edilen ve vakıf evlatlarının ilgisizliğiyle harap olan cami ve müştemilatı yalnızca yarım minaresiyle ayakta kaldığı için halk arasında 'Yıkık Minare' adıyla anılmıştır. 1950'lerden itibaren bölgeye gelen göçmenlerle mahalle canlanmış, caminin yeniden inşası gündeme gelmiştir. Toprakla örtülü Mûsâ Baba kabri merhum Mimar Hüsrev Tayla'nın katkılarıyla gün yüzüne çıkarılmış; cami yaptırma derneği ve Bursa Eski Eserleri Sevenler Kurumu desteğiyle 13 Nisan 1979'da yeniden ibadete açılmıştır. 1997'de son cemaat mahalline yapılan eklentiler 2017-2020 Vakıflar Bölge Müdürlüğü restorasyonunda kaldırılmış, avlunun kuzeyindeki kiremit örtülü dikdörtgen müştemilatın bir bölümü kadınlara ayrılmış, kalanı çay ocağı ve sosyal etkinliklere düzenlenmiştir. Abdestlikler avlunun doğusundadır.",
+        "en": "Abandoned and ruined through the neglect of the foundation's descendants, the mosque and its annexes survived only with half a minaret and were nicknamed 'The Ruined Minaret'. From the 1950s immigrants revived the neighborhood and reconstruction came up. The buried tomb of Mûsâ Baba was uncovered with the help of the late architect Hüsrev Tayla; the mosque reopened for worship on 13 April 1979 through the neighborhood mosque association and the Bursa Association for the Appreciation of Antiquities. The 1997 additions to the narthex were removed in the 2017-2020 restoration by the Regional Directorate of Foundations, and the rectangular tile-roofed annex north of the courtyard was partly set aside for women and partly arranged as a teahouse and social space. Ablution facilities are on the east of the courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "247"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 7,
+      "title": {
+        "tr": "Musa Baba Hazire Alanı",
+        "en": "Musa Baba Graveyard Area"
+      },
+      "body": {
+        "tr": "Camiye adını veren Abdal Mûsâ'nın mezarı, yapının doğusundaki hazirededir. Abdal Mûsâ, Abdal Murad ve Abdal Mehmed gibi Anadolu'dan Bursa'ya gelen ve kaynaklarda 'Abdalân-ı Rûm' denen sufi dervişlerdendir; yaşamına dair ayrıntılı bilgi yoktur. Hançerli Fatma Sultan (II. Bayezid'in torunu, Şehzade Mahmud'un 'Hanzade' denen kızı) mezarın bulunduğu alana bir türbe, zaviyenin doğusuna bir medrese ve hamam yaptırmış, vakıf düzenlemeleriyle yapılar topluluğunun uzun süre yaşamasını sağlamıştır. Afetler ve vakıf yöneticilerinin ilgisizliği yüzünden yapıların hemen hepsi harap olmuş, türbe de bundan payını almış, mezar taşlarının yerleri bile bilinemez olmuştur. 1979'dan sonra ihya hızlanmış; hamam 2000'lerin başında, Mûsâ Baba kabri ve hazire 2010'da elden geçirilmiş, medrese 2014-2016'da yeniden işlevsel hale getirilmiştir. Tarihî kaynaklara göre hazirede Mûsâ Baba'nın yanı sıra Şeyhülislam Abdülkadir Efendi, Sultanzâde Kasım Bey bin Mehmed Bey, Abdullah bin Kasım Bey ve Hançerli Fatma Sultan'ın babası Sultanzâde Ubeyd Bey bin Kasım'ın mezarları da bulunur. 2009'dan beri her yıl Mûsâ Baba anma etkinlikleri düzenlenir.",
+        "en": "The tomb of Abdal Mûsâ, for whom the mosque is named, is in the graveyard east of the building. Like Abdal Murad and Abdal Mehmed, he was one of the Sufi dervishes who came from Anatolia to Bursa and are called 'Abdalân-ı Rûm' in the sources; detailed information on his life is lacking. Hançerli Fatma Sultan (granddaughter of Bayezid II, daughter of Şehzade Mahmud, known as 'Hanzade') built a tomb on the grave site and a madrasa and bath east of the lodge, and ensured through foundation arrangements that the group of buildings lasted long. Because of disasters and the negligence of the foundation's administrators almost all the buildings fell into disrepair, including the tomb, and even the places of the gravestones became unknown. Revival sped up after 1979; the bath was renovated in the early 2000s, the Musa Baba tomb and graveyard in 2010, and the madrasa was made functional again in 2014-2016. Historical sources say the graveyard also holds the graves of Shaykh al-Islam Abdülkadir Efendi, Sultanzâde Kasım Bey bin Mehmed Bey, Abdullah bin Kasım Bey and Hançerli Fatma Sultan's father Sultanzâde Ubeyd Bey bin Kasım. Commemorative events have been held for Mûsâ Baba every year since 2009."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "abdal-musa-zaviye",
+      "title": {
+        "tr": "Abdal Mûsâ ve fetih öncesi zaviye",
+        "en": "Abdal Mûsâ and the pre-conquest lodge"
+      },
+      "body": {
+        "tr": "Rivayet edildiğine göre Abdal Mûsâ, Bursa'nın fethinden önce bağlık-bahçelik Fıstıklık Mevkii'ne gelmiş, burada bir zaviye kurmuş ve irşat faaliyetlerinde bulunmuştur. Fetih sırasında dervişleriyle Orhan Gazi'ye maddi ve manevi destek vermiş, ölünce aynı yere defnedilmiştir. Kitap ayrıca camiyi onun adına Abdülkadir Efendi'nin yaptırdığını 'rivayete göre' aktarır.",
+        "en": "It is reported that before the conquest of Bursa, Abdal Mûsâ came to the Fıstıklık area, then vineyards and gardens, set up a lodge there and carried out religious guidance. During the conquest he and his dervishes gave material and spiritual support to Orhan Gazi, and he was buried at the same place. The book also reports 'according to legend' that Abdülkadir Efendi built the mosque in his name."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "243, 248"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Musababa Mahallesi, Musababa Caddesi, No: 74",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "243"
+        }
+      ]
+    },
+    {
+      "key": "plan_olcusu",
+      "label": {
+        "tr": "Plan ölçüsü (yaklaşık)",
+        "en": "Plan dimensions (approx.)"
+      },
+      "value": "16 × 10,30",
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcusu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "8,30 × 8,30",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "246"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinligi",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 3,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "245"
+        }
+      ]
+    },
+    {
+      "key": "duvar_orgusu",
+      "label": {
+        "tr": "Duvar örgüsü",
+        "en": "Wall masonry"
+      },
+      "value": "İki sıra tuğla, bir sıra moloz taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "key": "kasnak",
+      "label": {
+        "tr": "Kubbe kasnağı",
+        "en": "Dome drum"
+      },
+      "value": "Küfeki taşından altıgen kasnak; kurşun kaplı kubbe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "246"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_ibadete_acilis",
+      "label": {
+        "tr": "Yeniden ibadete açılış",
+        "en": "Reopened for worship"
+      },
+      "value": "13 Nisan 1979",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "247"
+        }
+      ]
+    },
+    {
+      "key": "hazire_anma",
+      "label": {
+        "tr": "Yıllık anma etkinlikleri",
+        "en": "Annual commemorations"
+      },
+      "value": "2009'dan beri",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Abdal Mûsâ (Mûsâ Baba)",
+      "role": {
+        "tr": "Camiye adını veren sufi derviş; kabri doğudaki hazirede",
+        "en": "Sufi dervish for whom the mosque is named; tomb in the east graveyard"
+      }
+    },
+    {
+      "name": "Şeyhülislam Abdülkadir Efendi",
+      "role": {
+        "tr": "Rivayete göre camiyi yaptıran; 1548'de vefat",
+        "en": "Reputed builder of the mosque; died 1548"
+      }
+    },
+    {
+      "name": "Hançerli Fatma Sultan",
+      "role": {
+        "tr": "Vakıf kuran; türbe, medrese ve hamam yaptıran (II. Bayezid'in torunu)",
+        "en": "Founded endowments; built tomb, madrasa and bath (granddaughter of Bayezid II)"
+      }
+    },
+    {
+      "name": "Sultanzâde Ubeyd Bey bin Kasım",
+      "role": {
+        "tr": "Hançerli Fatma Sultan'ın babası; hazirede mezarı olduğu belirtilir",
+        "en": "Father of Hançerli Fatma Sultan; reported to be buried in the graveyard"
+      }
+    },
+    {
+      "name": "Sultanzâde Kasım Bey bin Mehmed Bey",
+      "role": {
+        "tr": "Hazirede mezarı olduğu belirtilir",
+        "en": "Reported to be buried in the graveyard"
+      }
+    },
+    {
+      "name": "Abdullah bin Kasım Bey",
+      "role": {
+        "tr": "Hazirede mezarı olduğu belirtilir",
+        "en": "Reported to be buried in the graveyard"
+      }
+    },
+    {
+      "name": "Mimar Hüsrev Tayla",
+      "role": {
+        "tr": "Mûsâ Baba kabrinin gün yüzüne çıkarılmasına katkıda bulunan",
+        "en": "Contributed to uncovering the tomb of Mûsâ Baba"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1531",
+      "year": 1531,
+      "date": null,
+      "hijri": "938",
+      "type": "record",
+      "title": {
+        "tr": "Hançerli Fatma Sultan Vakfiyesi düzenlendi",
+        "en": "Hançerli Fatma Sultan endowment charter issued"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "244-245"
+        }
+      ]
+    },
+    {
+      "id": "emeklilik-1541",
+      "year": 1541,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Abdülkadir Efendi şeyhülislamlıktan emekli edildi",
+        "en": "Abdülkadir Efendi retired as Shaykh al-Islam"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "244"
+        }
+      ],
+      "note": {
+        "tr": "Metinde şeyhülislamlık yılı 1583 olarak yazılıdır; bkz. data_quality_notes.",
+        "en": "The text gives 1583 as the year he became Shaykh al-Islam; see data_quality_notes."
+      }
+    },
+    {
+      "id": "vefat-abdulkadir-1548",
+      "year": 1548,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Abdülkadir Efendi vefat etti; caminin haziresine defnedildi",
+        "en": "Abdülkadir Efendi died and was buried in the mosque's graveyard"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "244"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-acilis-1979",
+      "year": 1979,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Cami 13 Nisan 1979'da yeniden ibadete açıldı",
+        "en": "Mosque reopened for worship on 13 April 1979"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "247"
+        }
+      ]
+    },
+    {
+      "id": "ekler-1997",
+      "year": 1997,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Son cemaat mahalline eklentiler yapıldı (2017-2020 restorasyonunda kaldırıldı)",
+        "en": "Additions built to the narthex (removed in 2017-2020 restoration)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "247"
+        }
+      ]
+    },
+    {
+      "id": "hazire-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Mûsâ Baba kabri ve hazire kapsamlı elden geçirildi",
+        "en": "Musa Baba tomb and graveyard extensively renovated"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü kapsamlı restorasyonu (2017-2020)",
+        "en": "Comprehensive restoration by the Regional Directorate of Foundations (2017-2020)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "247"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı gösterilir; süre 2017-2020.",
+        "en": "Start year shown; duration 2017-2020."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-musa-baba-turbesi",
+      "target_name": {
+        "tr": "Abdal Mûsâ Türbesi"
+      },
+      "type": "same_complex",
+      "description": {
+        "tr": "Kitap, Hançerli Fatma Sultan'ın Abdal Mûsâ'nın mezarı üzerine türbe yaptırdığını ve bunun zaviye çevresindeki yapılar topluluğunun parçası olduğunu söyler.",
+        "en": "The book says Hançerli Fatma Sultan built a tomb over Abdal Mûsâ's grave as part of the group of buildings around the lodge."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-musa-baba-medresesi",
+      "target_name": {
+        "tr": "Musa Baba Medresesi"
+      },
+      "type": "same_complex",
+      "description": {
+        "tr": "Medrese zaviyenin doğusuna yaptırılmış, 2014-2016'da yeniden işlevsel hale getirilmiştir.",
+        "en": "The madrasa was built east of the lodge and made functional again in 2014-2016."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-musa-baba-hamami",
+      "target_name": {
+        "tr": "Musa Baba Hamamı"
+      },
+      "type": "same_complex",
+      "description": {
+        "tr": "Hamam zaviyenin doğusuna yaptırılmış, 2000'lerin başında elden geçirilmiştir.",
+        "en": "The bath was built east of the lodge and renovated in the early 2000s."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Musa Baba Camii, Musababa Mahallesi'nde geniş ve bakımlı bir avlunun içinde yer alan, dikdörtgen planlı bir camidir. Duvarları iki sıra tuğla ve bir sıra moloz taştan örülmüştür. Önünde üç sivri kemerli bölümden oluşan, ortası kubbeli, yanları kurşun kaplı tonozlu bir son cemaat yeri vardır. Kare planlı harim, küfeki taşlı altıgen bir kasnak üzerinde kurşun kaplı bir kubbeyle örtülüdür. Kuzeybatı köşede sekizgen kaideli, tuğladan, tek şerefeli ve kurşun külahlı zarif bir minare yükselir. Yapının doğusundaki hazirede, caminin adını veren Abdal Mûsâ'nın kabri bulunur.",
+      "en": "The Musa Baba Mosque is a rectangular mosque in a spacious well-kept courtyard in Musababa Neighborhood. Its walls are two rows of brick to one of rubble stone. In front is a narthex of three pointed arches, domed in the middle with lead-covered vaults on the sides. The square prayer hall is covered by a lead-covered dome on a hexagonal limestone drum. In the northwest corner rises an elegant brick minaret with an octagonal base, a single balcony and a lead-covered spire. In the graveyard east of the building lies the tomb of Abdal Mûsâ, for whom the mosque is named."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-musa-baba-camii/p032-1.jpg",
+        "original_name": "01 DJI_20240926145257_0019_D-Edit.jpeg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "243"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Musa Baba Camii, kubbe ve minare",
+        "en": "Musa Baba Mosque, dome and minaret"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla ve taş sıralı küçük bir cami, gri kubbesi ve yanındaki ince kırmızı tuğlalı minaresiyle görünür. Arkada apartmanlar ve dağ vardır.",
+        "en": "A small mosque of red brick and stone courses with a grey dome and a slim red brick minaret beside it. Apartment blocks and a mountain are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    }
+  ],
+  "archive_media": []
+}

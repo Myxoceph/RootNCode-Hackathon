@@ -1,0 +1,433 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-duhteri-seref-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 298-299) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Kitap vakfın kapsamını belirtmiyor (waqf null); Şâhî Hatun 'vâkıfe' olarak geçiyor.",
+      "Yapım yılı kitapta yok; end_year 1492 sicil kaydından çıkarıldı (probable).",
+      "Mevlânâ Şerefüddin'in İstanbul'daki camisi için kayıt/hedef yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap, vakıf sahibi kadının 1492'de vefat ettiği bilgisinden yapının Fatih Sultan Mehmed devrine ait olduğunu çıkarır; vefat yılı ile Fatih dönemi arasındaki ilişki kitapta açıklanmaz. Kitaba sadık kalındı, tarih 'probable' işaretlendi."
+      },
+      {
+        "field": "founder",
+        "note": "Banî adı giriş bölümünde yalnızca 'Molla Şerefüddin Kırımî'nin kız kardeşi' diye geçer; 'Şâhî' adı 1504 tarihli vesikadan çıkarılmıştır. Kardeş adı 'Molla Şerefüddin Kırımî' ve 'Hoca Şeref / Mevlânâ Şerefüddin bin Kemal el-Kırımî' olarak farklı biçimlerde geçer."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Duhteri Şeref (Fışkırık) Camii",
+    "en": "Duhteri Şeref (Fışkırık) Mosque"
+  },
+  "subtitle": {
+    "tr": "Molla Şerefüddin Kırımî'nin kız kardeşi Şâhî Hatun'un yaptırdığı mahalle camisi",
+    "en": "Neighborhood mosque built by Şâhî Hatun, sister of Molla Şerefüddin Kırımî"
+  },
+  "alternate_names": [
+    {
+      "tr": "Fışkırık Camii",
+      "en": "Fışkırık Mosque",
+      "note": "halk arasında; adın kaynağı hakkında kesin bilgi yok"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Duhter-i Şeref",
+    "Fışkırık",
+    "Türk üçgenleri",
+    "kuş gagası derz",
+    "Tahtakale"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tahtakale",
+    "address": "Okul Çıkmazı, No: 19",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "298"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.181653,
+      "lng": 29.059653,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1492'den önce (Fatih dönemi olduğu belirtilir)",
+      "en": "Before 1492 (stated to date to the Fâtih period)"
+    },
+    "start_year": null,
+    "end_year": 1492,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Bir sicil, vâkıfe kadının 1492'de vefat ettiğini kaydeder; kitap bundan yapının Fatih Sultan Mehmed devrine ait olduğu sonucunu çıkarır. Kesin yapım yılı verilmez.",
+      "en": "A register records that the woman founder died in 1492; the book infers from this that the building dates from the period of Fâtih Sultan Mehmed. No exact construction year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "298"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şâhî Hatun (Molla Şerefüddin Kırımî'nin kız kardeşi)",
+    "role": "banî / vâkıfe",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "298"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Duhter-i Şeref Mahallesi'ndeki cami, kayıtlara göre Hoca Şeref (Mevlânâ Şerefüddin bin Kemal el-Kırımî) ile kardeş olan Şâhî Hatun tarafından yaptırılmıştır. Kareye yakın harimi 7,67 × 7,91 m'dir; ahşap sundurmalı son cemaat yeri, Türk üçgenli kubbesi ve kuzeybatıdaki taş-tuğla minaresiyle bilinir. 1974'te Bursa Eski Eserleri Sevenler Kurumu onarmıştır.",
+    "en": "The mosque in the Duhter-i Şeref Neighborhood was built, according to records, by Şâhî Hatun, sister of Hoca Şeref (Mevlânâ Şerefüddin bin Kemal el-Kırımî). It has a 7.67 × 7.91 m prayer hall, a narthex with a wooden porch, a Turkish-triangle dome and a stone-and-brick minaret in the northwest. It was restored in 1974 by the Bursa Association for the Appreciation of Antiquities."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banî",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Tahtakale Mahallesi, Okul Çıkmazı, No: 19'da yer almaktadır. Duhter-i Şeref, Bursa'nın eski mahallelerinden biridir. Camiyi, Molla Şerefüddin Kırımî'nin kız kardeşi inşa ettirmiştir. Halk arasında aynı isimle anılan mahallenin adına telmihen \"Fışkırık Camii\" olarak da bilinmektedir; bu ismin kaynağı hakkında kesin bilgi yoktur.",
+        "en": "The mosque is located in Osmangazi District, Tahtakale Neighborhood, Okul Cul-de-Sac, No. 19. Duhter-i Şeref is one of the oldest neighborhoods of Bursa. The mosque was built by the sister of Molla Şerefüddin Kırımî. It is also known among the public as the \"Fışkırık Mosque\", a reference to the neighborhood with the same name, but there is no definite information about the origin of this name."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "298"
+        }
+      ]
+    },
+    {
+      "id": "kayitlar",
+      "order": 2,
+      "title": {
+        "tr": "Arşiv Kayıtları",
+        "en": "Archival Records"
+      },
+      "body": {
+        "tr": "H. Cemâziyelâhir 897 / M. Mart-Nisan 1492 tarihli bir sicilde vakıf sahibi kadının 1492 yılında vefat ettiği belirtilmekte, bu bilgi yapının Fatih Sultan Mehmed devrine ait olduğunu göstermektedir. H. 910 / M. 1504 tarihli bir diğer vesikada Hoca Şeref hakkında şu kayıt yer alır: \"Vâkıfetü’l-merhûme Şâhî bint-i el-Hâc Kemal el-ma‘rûf bi ahtü’l-Hâce Şeref.\" Bu kayıttan Şâhî Hatun ile Hoca Şeref'in kardeş oldukları ve babalarının adının Kemal olduğu anlaşılmaktadır. Aynı zamanda Hoca Şeref'in İstanbul'da da camisi bulunan Mevlânâ Şerefüddin bin Kemal el-Kırımî olduğu ortaya çıkmaktadır.",
+        "en": "In a record dated Jumada al-Thani AH 897 / March-April AD 1492, it is stated that the woman owner of the foundation died in 1492, and this information shows that the structure dates back to the Fâtih period. In another document dated AH 910 / AD 1504, the following record is included about Hoca Şeref: \"Vâkıfetü’l-merhûme Şâhî bint-i el-Hâc Kemal el-ma’rûf bi ahtü’l-Hâce Şeref.\" It is understood from this record that Şâhî Hatun and Hoca Şeref were siblings and that their father's name was Kemal. At the same time, it is revealed that Hoca Şeref was Mevlânâ Şerefüddin bin Kemal el-Kırımî, who also has a mosque in Istanbul."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "298"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami içten 7.67 × 7.91 m ölçülerindedir. Son cemaat yeri revakı 3.48 m derinliğindedir; duvar kalınlığı 0.80 m'dir. Sekizgen kasnaklı kubbeye geçiş Türk üçgenleriyle sağlanmıştır; kasnakta üç pencere vardır. Revak başlangıçta tonozluyken yıkılmış, yerine ahşap sundurma eklenmiştir. Duvarlar bir sıra kesme taş ve üçlü tuğla sıralarıyla örülmüş, derzler birçok Bursa yapısında görülen kuş gagası ve üç çatallı süslemeyle bezenmiştir.",
+        "en": "The interior of the mosque measures 7.67 × 7.91 m. The portico of the narthex is 3.48 meters deep. The wall thickness is 0.80 meters. The transition to the octagonal drum dome is provided by Turkish triangles. There are three windows on the dome drum. The portico, which was originally vaulted, was demolished and replaced by a wooden porch. The walls are built with a single row of cut stone and three rows of bricks; the joints are decorated with bird beak and trident decorations seen in many Bursa buildings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "298-299"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber-minare",
+      "order": 4,
+      "title": {
+        "tr": "Mihrap, Minber ve Minare",
+        "en": "Mihrab, Minbar and Minaret"
+      },
+      "body": {
+        "tr": "Mihrap 1951 yılına kadar stalaktitli (sarkıtlı) formunu korumuş, bu tarihten sonra Nakkaş ve Restoratör İsmail Sönmez tarafından dokuz sıra stalaktitli olarak yenilenmiş ve üzeri yağlı boya ile kapatılmıştır; etrafındaki rumi ve sekiz köşeli süslemeler de boyanmıştır. Minber nispeten dikkat çekici bir özelliğe sahiptir. Kuzeybatıdaki minarenin sekizgen kaidesi ve küpü ana bina duvarlarındaki taş-tuğla örgü yöntemiyle yapılmıştır; kubbe hizasında üçgenlerle silindirik gövdeye geçilir. Eski kaidedeki derzler özgün hâlini korumuş, gövde, şerefe ve petek sıvanmıştır.",
+        "en": "The mihrab preserved its stalactite form until 1951, after which time it was renewed with nine rows of stalactites by Miniaturist and Restorer İsmail Sönmez and covered with oil paint. The rumi and octagonal decorations around it are also painted. The minbar has a relatively striking feature. The octagonal base and transition segment of the minaret located in the northwest are built with the stone and brick masonry method seen on the walls of the main building. At the dome level, the transition to the cylindrical shaft is provided by Turkish triangles. The joints on the old base of the minaret have preserved their original state, but the shaft section, the balcony and the neck have been plastered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "299"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 5,
+      "title": {
+        "tr": "Onarım",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Yapı 1974 yılında Bursa Eski Eserleri Sevenler Kurumu tarafından onarılmıştır.",
+        "en": "The building was restored by the Bursa Association for the Appreciation of Antiquities in 1974."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "299"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "7,67 × 7,91",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "298"
+        }
+      ]
+    },
+    {
+      "key": "revak_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri revakı derinliği",
+        "en": "Narthex portico depth"
+      },
+      "value": 3.48,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "298"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 0.8,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "298"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kubbe kasnağındaki pencere sayısı",
+        "en": "Windows on the dome drum"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "298"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şâhî Hatun",
+      "role": {
+        "tr": "Banî / vâkıfe; Hoca Şeref'in kız kardeşi, babası Kemal",
+        "en": "Founder / waqf-founder; sister of Hoca Şeref, daughter of Kemal"
+      }
+    },
+    {
+      "name": "Molla Şerefüddin Kırımî (Hoca Şeref, Mevlânâ Şerefüddin bin Kemal el-Kırımî)",
+      "role": {
+        "tr": "Banînin erkek kardeşi; İstanbul'da da camisi var",
+        "en": "Brother of the founder; also has a mosque in Istanbul"
+      }
+    },
+    {
+      "name": "İsmail Sönmez",
+      "role": {
+        "tr": "Mihrabı 1951'den sonra yenileyen nakkaş ve restoratör",
+        "en": "Miniaturist and restorer who renewed the mihrab after 1951"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1492",
+      "year": 1492,
+      "date": null,
+      "hijri": "Cemâziyelâhir 897",
+      "type": "record",
+      "title": {
+        "tr": "Sicile göre vâkıfe kadının vefatı (H. Cemâziyelâhir 897)",
+        "en": "According to a register, death of the woman founder (Jumada al-Thani AH 897)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "298"
+        }
+      ]
+    },
+    {
+      "id": "vesika-1504",
+      "year": 1504,
+      "date": null,
+      "hijri": "910",
+      "type": "record",
+      "title": {
+        "tr": "Şâhî ile Hoca Şeref'in kardeş olduğunu gösteren vesika (H. 910)",
+        "en": "Document showing Şâhî and Hoca Şeref were siblings (AH 910)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "298"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-1951",
+      "year": 1951,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Mihrap İsmail Sönmez tarafından dokuz sıra stalaktitli olarak yenilendi",
+        "en": "Mihrab renewed with nine rows of stalactites by İsmail Sönmez"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "299"
+        }
+      ],
+      "note": {
+        "tr": "Kitap '1951 yılına kadar ... bu tarihten sonra' der; yenileme yılı tam verilmez.",
+        "en": "The book says 'until 1951 ... after this date'; the exact year of renewal is not given."
+      }
+    },
+    {
+      "id": "onarim-1974",
+      "year": 1974,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu onarımı",
+        "en": "Restoration by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "299"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Duhteri Şeref Camii, Tahtakale Mahallesi'nde kareye yakın, tek kubbeli bir camidir. Kubbe sekizgen bir kasnağa oturur ve kasnakta üç pencere vardır. Önünde ahşap sundurmalı bir son cemaat yeri bulunur. Duvarlar bir sıra kesme taş ve üç sıra tuğladan örülmüş, derzleri kuş gagası ve üç çatallı süslemelidir. Kuzeybatıda taş-tuğla kaideli bir minare yükselir.",
+      "en": "Duhteri Şeref Mosque in Tahtakale Neighborhood is a nearly square, single-domed mosque. The dome sits on an octagonal drum with three windows. In front is a narthex with a wooden porch. The walls are one row of cut stone and three rows of brick, with joints decorated in bird-beak and trident patterns. A minaret with a stone-and-brick base rises in the northwest."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-duhteri-seref-camii/p029-1.jpg",
+        "original_name": "kapak DJI_20241017192527_0183_D-Edit.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "298"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami, kubbe ve taş-tuğla minare",
+        "en": "Mosque, dome and stone-brick minaret"
+      },
+      "alt": {
+        "tr": "Gri kurşun kaplı kubbe, taş ve tuğla örgülü duvarlar ve solda uzun minare görünür. Çevresinde ağaçlar ve şehrin çatıları yer alır.",
+        "en": "A grey lead dome, walls of stone and brick, and a tall minaret on the left. Trees and the city roofs are around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    }
+  ],
+  "archive_media": []
+}

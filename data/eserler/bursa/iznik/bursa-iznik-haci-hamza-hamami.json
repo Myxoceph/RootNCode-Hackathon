@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-iznik-haci-hamza-hamami",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "İznik",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -61,7 +61,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "489"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.428329,
+      "lng": 29.720272,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": {
     "display": {
@@ -346,6 +353,9 @@
   "relations": [
     {
       "target_id": "bursa-iznik-haci-hamza-bey-mescidi",
+      "target_name": {
+        "tr": "Hacı Hamza Bey Mescidi (İznik)"
+      },
       "type": "waqf_income",
       "description": {
         "tr": "Hamamın Hacı Hamza Bey Mescidi evkafına ait olduğu ileri sürülmektedir.",
@@ -376,6 +386,9 @@
     },
     {
       "target_id": "bursa-iznik-eski-kaplica",
+      "target_name": {
+        "tr": "Eski Kaplıca (İznik)"
+      },
       "type": "architectural_lineage",
       "description": {
         "tr": "Soğukluk bölümündeki kubbe kasnağı Eski Kaplıca'ya benzer.",

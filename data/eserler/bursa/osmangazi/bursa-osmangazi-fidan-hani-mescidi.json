@@ -1,0 +1,360 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-fidan-hani-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
+      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Orijinal yapım tarihi ve Mahmud Paşa'nın kimliği kitapta yok; dating null, founder 'probable'.",
+      "Fidan Hanı ile ilişki 'same_complex' olarak kuruldu; mescit hanın avlusunda."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap mescidin 'yapının banisine ithafen' Mahmut Paşa Mescidi adıyla da anıldığını söylüyor; Mahmud Paşa'nın kim olduğu, hanı mı mescidi mi yaptırdığı ve kimliği belirtilmiyor. Bu yüzden 'probable'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Fidan (Mahmudpaşa) Hanı Mescidi",
+    "en": "Fidan (Mahmudpaşa) Han Masjid"
+  },
+  "alternate_names": [
+    {
+      "tr": "Mahmut Paşa Mescidi",
+      "en": "Mahmut Paşa Masjid",
+      "note": "Yapının banisine ithafen"
+    },
+    {
+      "tr": "Fidan Hanı Mescidi",
+      "en": "Fidan Han Masjid"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "han mescidi",
+    "şadırvan üstünde mescit",
+    "çini",
+    "Uzunçarşı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu",
+    "address": "Uzunçarşı Caddesi, No: 28",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "309"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.18405,
+      "lng": 29.062888,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Nalbantoğlu, Nalbantoğlu Mahallesi, Osmangazi, Bursa, Marmara Bölgesi, 16010, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Mahmud Paşa",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "309"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Uzunçarşı'da Fidan Hanı'nın avlusunun ortasında, on iki köşeli şadırvan üzerinde on iki mermer sütunla yükselen han mescidi.",
+    "en": "A han masjid in the middle of the courtyard of the Fidan Han in Uzunçarşı, raised on twelve marble columns over a dodecagonal fountain."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Mescit, Uzunçarşı'da Fidan Hanı'nın avlusunun ortasındadır. Yapının banisine ithafen \"Mahmut Paşa Mescidi\" olarak da bilinir. Koza Hanı ve Geyve Hanı'ndan sonra günümüze ulaşan han mescitleri arasında önemli bir örnektir. Hana gelen, konaklayan tüccarların vakit namazlarını kılmaları için yapılmıştır.",
+        "en": "The masjid stands in the middle of the Fidan Han courtyard in Uzunçarşı. It is also known as the \"Mahmut Paşa Masjid\" after the founder of the building. After the Koza Han and Geyve Han it is an important surviving han masjid, built so that merchants lodging at the han could perform their daily prayers."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "309"
+        }
+      ]
+    },
+    {
+      "id": "yenileme",
+      "order": 2,
+      "title": {
+        "tr": "Yenileme",
+        "en": "Renovation"
+      },
+      "body": {
+        "tr": "1964 yılına kadar sekiz direk, havuz kenarları ve sağlam bir temele oturan mermer merdivenler mevcuttu. Bursa Eski Eserleri Sevenler Kurumu tarafından 1965'te Ekrem Hakkı Ayverdi'nin çizimleri doğrultusunda mescit, 1966'da çiniler, 1967'de kalan eksikler tamamlanmıştır. Giderleri han esnafı kendi imkânlarıyla karşılamıştır. Direkler üzerinde ağır bir yapı yükselemeyeceğinden aslının ahşap olduğu düşünülmektedir; yenileme sırasında meşe kerestesi temini güçlüğü nedeniyle ahşap yerine kâgir malzeme kullanılmıştır.",
+        "en": "Until 1964 there were eight posts, pool edges and marble stairs on a solid foundation. The masjid was completed in 1965 by the Bursa Association for the Appreciation of Antiquities following Ekrem Hakkı Ayverdi's drawings, the tiles in 1966 and the remaining parts in 1967, paid for by the han tradesmen. Since a heavy structure could not rise on posts, the original is thought to have been wooden; masonry was used in the renovation because of difficulty obtaining oak timber."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "309-310"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Duvar örgüsü hanın duvar sistemine uyumlu olarak iki sıra tuğla ve bir sıra taştan oluşur; iki sıra kirpi saçakla tamamlanmıştır. Çatı kurşun kaplıdır ve altı pencere vardır. Dış cephede pencere üstlerinde sivri kemer, pencere alınlıklarında beşgen petekler kullanılmıştır. Giriş ahşap çift kanatlı kapıdandır.",
+        "en": "The walls, matching the han's wall system, are two rows of brick and one of stone, finished with a two-row sawtooth cornice. The roof is lead-covered with six windows. On the exterior, pointed arches top the windows and pentagonal honeycombs are used on the pediments. Entry is through a double-leafed wooden door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "310"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan",
+      "order": 4,
+      "title": {
+        "tr": "Şadırvan ve Merdiven",
+        "en": "Shadirvan and Stairs"
+      },
+      "body": {
+        "tr": "Mescit, on iki köşeli bir şadırvan üzerine on iki mermer sütunla taşıtılarak inşa edilmiştir. Havuzda su yoktur; musluklardan su yalnızca abdest için akar. Mescide kuzeyde yer alan on bir basamaklı merdivenle çıkılır. Merdiven boşluklarına her iki yanda üçer musluk eklenerek abdest alanı oluşturulmuş, ahşap sundurma ve kiremit çatıyla örtülmüştür. Güneybatıda sonradan eklendiği anlaşılan iki kurnalı bir çeşme vardır. Şadırvanın ortasındaki mermer selsebil iki katlıdır ve her biri altı musluk deliğine sahip on iki demir tapadan oluşur.",
+        "en": "The masjid is built on a dodecagonal shadirvan carried by twelve marble columns. The pool holds no water; water flows from the taps only for ablution. An eleven-step staircase on the north side leads up to it. Three taps were added on each side of the stairwells to create an ablution area under a wooden porch and tile roof. To the southwest is a later two-basin fountain. The two-tiered marble salsabil in the middle has twelve iron spouts, each with six tap openings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "310"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 5,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "İç mekâna hâkim turkuaz çiniler Yeşil Külliye'yi anımsatır. Mihrap çiniden yapılmış, kavsarası farklı bir malzemeyle işlenmiştir. Lacivert tonların hâkim olduğu mihrabın ayeti de çini üzerine yazılmıştır; bir kısmının diğer bölümlerden daha eski olduğu dikkati çeker. İsm-i Celâl, İsm-i Nebî ve dört halifenin isimleri yuvarlak çini levhalara yazılıp duvarlara asılmıştır.",
+        "en": "The turquoise tiles dominating the interior recall the Yeşil Complex. The mihrab is of tile with the hood in a different material; its verse, in dark blue tones, is also on tile, though part of it appears older than the rest. The names of Allah, the Prophet and the four caliphs are written on round tile panels hung on the walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "310"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sutun_sayisi",
+      "label": {
+        "tr": "Mermer sütun sayısı",
+        "en": "Marble columns"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "310"
+        }
+      ]
+    },
+    {
+      "key": "basamak",
+      "label": {
+        "tr": "Merdiven basamağı",
+        "en": "Steps"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "310"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "310"
+        }
+      ]
+    },
+    {
+      "key": "direk_1964",
+      "label": {
+        "tr": "1964'e kadar direk sayısı",
+        "en": "Posts until 1964"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "309"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mahmud Paşa",
+      "role": {
+        "tr": "Banî (adına ithaf edilmiş)",
+        "en": "Founder (name given to the masjid)"
+      }
+    },
+    {
+      "name": "Ekrem Hakkı Ayverdi",
+      "role": {
+        "tr": "1965 yenilemesinin çizimlerini hazırlayan",
+        "en": "Author of the drawings for the 1965 renovation"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yenileme-1965",
+      "year": 1965,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Mescit Ayverdi'nin çizimleriyle Bursa Eski Eserleri Sevenler Kurumu tarafından tamamlandı",
+        "en": "Masjid completed by the Bursa Association for the Appreciation of Antiquities after Ayverdi's drawings"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "309"
+        }
+      ]
+    },
+    {
+      "id": "cini-1966",
+      "year": 1966,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Çiniler tamamlandı",
+        "en": "Tiles completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "309"
+        }
+      ]
+    },
+    {
+      "id": "tamam-1967",
+      "year": 1967,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kalan eksikler tamamlandı",
+        "en": "Remaining parts completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "309"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-fidan-hani",
+      "type": "same_complex",
+      "description": {
+        "tr": "Mescit Fidan Hanı'nın avlusunun ortasındadır.",
+        "en": "The masjid stands in the middle of the Fidan Han courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "309"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Fidan Hanı Mescidi, hanın avlusunun ortasında, on iki köşeli bir şadırvanın üzerinde on iki mermer sütunla yükselen küçük bir yapıdır. Kuzeydeki on bir basamaklı merdivenle çıkılır; merdiven yanlarında abdest muslukları vardır. Duvarlar tuğla ve taş sıralarından örülmüş, çatı kurşun kaplıdır. İçeride turkuaz ve lacivert çiniler, çiniden bir mihrap ve duvarlara asılı yuvarlak çini levhalar bulunur.",
+      "en": "Fidan Han Masjid is a small building in the middle of the han courtyard, raised on twelve marble columns over a twelve-sided shadirvan. An eleven-step staircase on the north side leads up, with ablution taps beside the stairs. The walls are of brick and stone courses and the roof is lead-covered. Inside are turquoise and dark blue tiles, a tile mihrab and round tile panels on the walls."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-osmangazi-ordekli-hamam",
   "meta": {
-    "status": "in_review",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "veri-ekibi",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Su Yapıları",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Su Yapıları bölümünden, Ördekli Hamam kaydından (s. 711-716) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -698,6 +698,9 @@
   "relations": [
     {
       "target_id": "bursa-osmangazi-nalincilar-hamami",
+      "target_name": {
+        "tr": "Nalıncılar Hamamı"
+      },
       "type": "urban_context",
       "description": {
         "tr": "Sultan I. Murad döneminde çarşı içinde yapılan Nalıncılar Hamamı'ndan sonra yapıldığı için 'Yeni Hamam' adını almıştır.",

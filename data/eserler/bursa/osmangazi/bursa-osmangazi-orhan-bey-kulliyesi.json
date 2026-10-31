@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-osmangazi-orhan-bey-kulliyesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-14",
-    "updated_at": "2026-10-14",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Orhan Bey Külliyesi",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Orhan Bey Külliyesi bölümünden (s. 187-213) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -61,7 +61,14 @@
         "source_id": "vk-bursa-c1",
         "pages": "187"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.184506,
+      "lng": 29.062328,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-osmangazi-emir-hani) noktası kullanıldı."
+    }
   },
   "dating": {
     "display": {
@@ -470,6 +477,9 @@
     },
     {
       "target_id": "bursa-osmangazi-orhan-gazi-imareti",
+      "target_name": {
+        "tr": "Orhan Gazi İmareti"
+      },
       "type": "waqf_income",
       "description": {
         "tr": "Vakfiyeye göre bazı köyler, Eski Bedesten, dükkânlar, odalar, evler ve Bıçakçılar Hamamı Orhan Gazi İmareti'ne vakfedilmiştir; imaret yok olmuştur.",
@@ -484,7 +494,7 @@
       ]
     },
     {
-      "target_id": "bursa-osmangazi-koza-han",
+      "target_id": "bursa-osmangazi-koza-hani",
       "type": "urban_context",
       "description": {
         "tr": "Koza Hanı, cami ile hamam arasında bırakılan bahçelik alana 1505'te yapılmıştır.",

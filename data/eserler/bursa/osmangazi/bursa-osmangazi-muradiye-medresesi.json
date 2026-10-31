@@ -1,0 +1,539 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-muradiye-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Medresenin kendi inşa tarihi ve müderrisleri bu bölümde yok.",
+      "Müzenin ziyaret saatleri/ücreti kitapta yok.",
+      "1940'lar ve 2014-2016 arasındaki çalışmalar ile 2012-2015 külliye restorasyonu arasındaki ilişki açıklanmamış."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Medresenin inşa tarihi bölümde belirtilmemiştir; külliyenin tarihi (H. 828-830 / M. 1425-1426) 'probable' olarak alınmıştır."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Bölüm 'batı ucunda' der; hamam 'medresenin batısında' konumlanır (Muradiye Hamamı kaydı). Çelişki değil, ama hamam da külliyenin en batısında olabilir; sahada teyit edilmeli."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Muradiye Medresesi",
+    "en": "Muradiye Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "medrese",
+    "revaklı avlu",
+    "tek eyvan",
+    "Muradiye El Yazmaları Müzesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "Prof. Dr. Halil İnalcık Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "120"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.190916,
+      "lng": 29.045744,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/472072850 ('Muradiye Medresesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 828-830 / M. 1425-1426 (külliye ile birlikte)",
+      "en": "AH 828-830 / AD 1425-1426 (with the complex)"
+    },
+    "start_year": 1425,
+    "end_year": 1426,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Medresenin kendi tarihi bu bölümde verilmemiştir; külliyenin parçası olarak külliye tarihi alınmıştır.",
+      "en": "The madrasa's own date is not given in its section; the complex's date is used as it is part of the complex."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "111-113"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan II. Murad",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "111"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Muradiye Külliyesi'nin batı ucundaki, 17 × 17 m revaklı avlulu, tek eyvanlı ve on altı hücreli Erken Osmanlı medresesi. Bugün Muradiye El Yazmaları Müzesi olarak ziyarete açıktır.",
+    "en": "An Early Ottoman madrasa at the western end of the Muradiye Complex, with a 17 × 17 m arcaded courtyard, a single iwan and sixteen cells. It is today open as the Muradiye Manuscripts Museum."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Muradiye Medresesi, Osmangazi ilçesi, Muradiye Mahallesi, Prof. Dr. Halil İnalcık Sokak'ta, Muradiye Külliyesi'nin batı ucunda yer alır. 17 × 17 m ölçülerinde revaklı iç avlusuyla, tek eyvanlı ve on altı hücreli bir Erken Osmanlı Dönemi medresesidir. Beden duvarları üç sıra tuğla ve bir sıra taşla almaşık örülmüş, saçaklar üç sıra kirpi dizilimiyle son bulmuştur.",
+        "en": "The madrasa is located at the western end of the Muradiye Social Complex, on Prof. Dr. Halil İnalcık Street. It has the characteristics of the Early Ottoman Period with a 17 × 17 m inner courtyard with an arcade, a single iwan and sixteen cells. The main walls are built in an alternating pattern of three rows of bricks and one row of stones, and the eaves end with a three-row sawtooth brick cornice."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "120"
+        }
+      ]
+    },
+    {
+      "id": "tac-kapi-avlu",
+      "order": 2,
+      "title": {
+        "tr": "Taç Kapı ve Avlu",
+        "en": "Portal and Courtyard"
+      },
+      "body": {
+        "tr": "Kuzey cephedeki taç kapı sivri kemerli bir eyvan biçimindedir ve Türk üçgenli, mukarnaslı tromplu kubbeyle örtülüdür; yüzeyi tuğla dizilerinin oluşturduğu geometrik motiflerle süslüdür ve üstte üç sıra kirpi saçak vardır. Avluya girişte devşirme iki Korinth başlıklı sütun kaidesi dikkat çeker; revakın diğer bölümlerini tuğla payeler taşır. Avlunun ortasında mermerden sekizgen bir havuz vardır. Açık avlunun üstü son restorasyonda çelik konstrüksiyonlu cam örtüyle kapatılmıştır.",
+        "en": "The portal on the north façade is a pointed-arched iwan covered with a dome with Turkish triangles and muqarnas squinches; its surface is decorated with geometric brick motifs and a three-row sawtooth cornice. At the courtyard entrance two spolia Corinthian column bases stand out; the rest of the arcade rests on brick piers. In the middle of the courtyard is an octagonal marble pool. The open courtyard was covered with a steel-framed glass cover in the last restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "120-121"
+        }
+      ]
+    },
+    {
+      "id": "hucreler",
+      "order": 3,
+      "title": {
+        "tr": "Revak ve Hücreler",
+        "en": "Arcade and Cells"
+      },
+      "body": {
+        "tr": "Öğrenci hücrelerinin önünde doğu ve batıda kubbeli, kuzeyde tonoz örtülü bir revak sırası uzanır. Avluyu çevreleyen ayaklar kare planlı, kesme taş örgülü ve tuğla kemerlerle birbirine bağlıdır. Dikdörtgen planlı öğrenci odaları tonozla örtülüdür; her odada pencere, niş ve ocak vardır. Güney köşelerdeki hücreler diğerlerinden geniştir ve müderris ile muid odaları olarak kullanıldığı düşünülmektedir.",
+        "en": "In front of the student cells runs a row of domed arcades on the east and west sides and a vaulted arcade on the north. The courtyard piers are square, built of cut stone and connected with brick arches. The rectangular student rooms are vaulted, each with a window, a niche and a hearth. The cells in the southern corners are larger and are thought to have been rooms for the teachers and their assistants."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "121-122"
+        }
+      ]
+    },
+    {
+      "id": "dershane",
+      "order": 4,
+      "title": {
+        "tr": "Dershane Eyvanı",
+        "en": "The Classroom Iwan"
+      },
+      "body": {
+        "tr": "Dershane olarak kullanılan ana eyvana taş basamaklı merdivenle ulaşılır. Giriş eyvanı gibi kubbeli ve tromplu olan dershanenin kubbeye geçişteki köşeleri süslemelerle zenginleştirilmiştir. Eyvanın kemer başlangıcına kadar olan bölümü almaşık örgülüdür; diğer yüzeylerde geometrik motifli tuğla işçiliğinin en güzel örnekleri vardır. Zemin tuğla döşemelidir; duvarlar pencere kemer üzengi seviyesine kadar çini panolarla süslüdür.",
+        "en": "The main iwan, used as a classroom, is reached by a stone-stepped staircase. Domed with squinches like the entrance iwan, its corners at the transition to the dome are enriched with decoration. The part up to the arch springing is in alternating masonry; elsewhere are the finest examples of geometric brickwork. The floor is brick and the walls are decorated with tile panels up to the window-arch springer level."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "122"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-onarim",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar ve Kullanım",
+        "en": "Repairs and Use"
+      },
+      "body": {
+        "tr": "Medrese 1623, 1781 ve 1844'te onarılmıştır. 1855 depreminde dershane duvarlarında çatlaklar oluşmuş, sıvalar dökülmüş ve ocak bacaları yıkılmıştır. 1940'lı yıllardaki onarımın ardından 1951'de Sağlık Bakanlığına devredilmiş ve Verem Savaş Dispanseri olarak kullanılmıştır; 2005-2010 arasında Bursa sağlık tarihine ait objelerin sergilendiği müze olmuştur. 2014-2016 arasında külliyenin diğer unsurlarıyla birlikte kapsamlı restorasyon geçirmiş, duvarlardaki ahşap kaplama sökülmüş, çinilerin alt kısımlarının eksik olduğu görülmüş ve bu bölümler tamamlanmadan yalnızca sıvanmıştır. Bursa Büyükşehir Belediyesine bağlı Muradiye El Yazmaları Müzesi olarak ziyarete açılmıştır.",
+        "en": "The madrasa was repaired in 1623, 1781 and 1844. In the 1855 earthquake cracks appeared in the classroom walls, plaster fell and the hearth chimneys collapsed. After a restoration in the 1940s it was transferred to the Ministry of Health in 1951 and used as a Tuberculosis Treatment Dispensary; in 2005-2010 it was a museum of Bursa's health history. In 2014-2016 it underwent a comprehensive restoration with the rest of the complex; the wooden covering on the walls was removed, the lower parts of the tiles were found missing and the surface was only plastered. It opened as the Muradiye Manuscripts Museum of Bursa Metropolitan Municipality."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "122"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "avlu_olcusu",
+      "label": {
+        "tr": "Avlu ölçüsü",
+        "en": "Courtyard size"
+      },
+      "value": "17 × 17",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "120"
+        }
+      ]
+    },
+    {
+      "key": "hucre_sayisi",
+      "label": {
+        "tr": "Hücre sayısı",
+        "en": "Number of cells"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "120"
+        }
+      ]
+    },
+    {
+      "key": "eyvan_sayisi",
+      "label": {
+        "tr": "Eyvan sayısı",
+        "en": "Number of iwans"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "120"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1425,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Külliye ile birlikte inşa edildiği kabul edilir (Receb 828 - Muharrem 830)",
+        "en": "Considered built with the complex (Rajab 828 - Muharram 830)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111-113"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1623",
+      "year": 1623,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "122"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1781",
+      "year": 1781,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "122"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "122"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde dershane duvarları çatladı, sıvalar döküldü, ocak bacaları yıkıldı",
+        "en": "Earthquake cracked the classroom walls, plaster fell and hearth chimneys collapsed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "122"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1940lar",
+      "year": 1940,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "1940'lı yıllarda onarım",
+        "en": "Repair in the 1940s"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "122"
+        }
+      ]
+    },
+    {
+      "id": "dispanser-1951",
+      "year": 1951,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Sağlık Bakanlığına devredildi; Verem Savaş Dispanseri",
+        "en": "Transferred to the Ministry of Health; Tuberculosis Treatment Dispensary"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "122"
+        }
+      ]
+    },
+    {
+      "id": "muze-2005",
+      "year": 2005,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Bursa sağlık tarihi müzesi (2005-2010)",
+        "en": "Museum of Bursa health history (2005-2010)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "122"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kapsamlı restorasyon (2014-2016); Muradiye El Yazmaları Müzesi",
+        "en": "Comprehensive restoration (2014-2016); Muradiye Manuscripts Museum"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "122"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "120"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Muradiye Medresesi, tuğla ve taş almaşık duvarlı, kareye yakın planlı bir yapıdır. Kuzeydeki sivri kemerli taç kapıdan, ortasında sekizgen mermer havuzu olan 17 × 17 metrelik revaklı bir avluya girilir. Avlunun üstü cam örtülüdür. Üç yanında tonoz örtülü öğrenci hücreleri, güneyde kubbeli dershane eyvanı bulunur; eyvanın duvarları alt kısımda çini panolarla kaplıdır.",
+      "en": "The Muradiye Madrasa is a near-square building of alternating brick and stone walls. A pointed-arched portal on the north leads into a 17 × 17 metre arcaded courtyard with an octagonal marble pool at its centre, roofed with glass. Vaulted student cells line three sides and a domed classroom iwan lies to the south; the lower walls of the iwan are covered with tile panels."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-medresesi/p003-1.jpg",
+        "original_name": "DJI_20241025141037_0007_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "112"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliyenin kuşbakışı görünümü",
+        "en": "Aerial view of the complex"
+      },
+      "alt": {
+        "tr": "Ağaçlar arasında gri kubbeli, iki minareli tuğla yapı ve önünde kurşun çatılı revak görülüyor. Arkada tepeye doğru yükselen kent uzanıyor.",
+        "en": "A brick building with grey domes and two minarets among trees, with a lead-roofed portico in front. The city climbs the hillside behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-medresesi/p011-1.jpg",
+        "original_name": "Kapak.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "120"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Medresenin üstten görünümü",
+        "en": "The madrasa seen from above"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı çatılı, kubbeli hücreleri ve bacaları olan tuğla yapı bir avluyu çeviriyor. Ortada camla kaplı bir bölüm, ön tarafta dalga desenli taş döşeme var.",
+        "en": "A brick building with lead roofs, domed cells and chimneys surrounds a courtyard. A glazed section stands in the middle, and wave-patterned paving lies in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-medresesi/p012-4.jpg",
+        "original_name": "ERD03320 kopya.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "121"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Medrese yanındaki bahçe ve kubbeli yapı",
+        "en": "Garden beside a domed madrasa building"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş duvarlı, kubbeli yapı taş döşeli bir yolun yanında duruyor. Önde çimenlik ve büyük ağaçlar var.",
+        "en": "A domed building of brick and stone beside a paved path. A lawn and large trees lie in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": []
+}

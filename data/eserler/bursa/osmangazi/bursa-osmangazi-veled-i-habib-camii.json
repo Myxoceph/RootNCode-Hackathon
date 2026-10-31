@@ -1,0 +1,656 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-veled-i-habib-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 462-464) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Camiin vakfiyesi ve mimarı kitapta yok; 1484 vakıf bilgisi tarihî bir kaynaktan aktarılıyor ama kaynağın adı verilmiyor.",
+      "Yanındaki türbe (Şeyh Mehmed Emin Kerkükî) ayrı kayıt olarak başka bir ajanda/kayıtta (bursa-osmangazi-veled-i-habib-turbesi) olabilir; ilişki bu kayıttan yazılmadı, ters yönlü ilişki üretmemek için.",
+      "1990'lı yıllarda hazırlanan restitüsyon projesinin yılı kesin değil; zaman çizgisine eklenmedi.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap inşa yılını vermiyor; 15. yüzyıl, 1484 tarihli vakıf bilgisinden çıkarım olarak veriliyor. Veled-i Habib adının kaynağı metinde açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Veled-i Habib Camii",
+    "en": "Veled-i Habib Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Eminiyye Dergâhı",
+      "en": "Eminiyye Sufi Lodge",
+      "note": "Yapı Şeyh Mehmed Emin Kerkükî döneminde dergâh olarak kullanıldı."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "tekke"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mahalle mescidi",
+    "kalkan duvarlı",
+    "Eminiyye Dergâhı",
+    "Nakşibendi",
+    "Alipaşa"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Alipaşa",
+    "address": "İnebey Caddesi'nin Maksem Caddesi ile birleştiği yer",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "462"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.179424,
+      "lng": 29.061672,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/343400751 ('Veled-i Habib Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "15. yüzyıl",
+      "en": "15th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, H. 889 / M. 1484'te baninin kardeşi Hoca Hibetullah'ın mescide vakıf yaptığı bilgisinden yapının 15. yüzyılda inşa edildiğini “anlaşıldığını” söylüyor; inşa yılı verilmiyor. 1484 vakıf tarihidir, inşa tarihi değil.",
+      "en": "From the waqf by the founder's brother Hoca Hibetullah in AH 889 / AD 1484 the book “understands” a 15th-century construction; no construction year is given. 1484 is the waqf date, not the construction date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "462"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Habiboğlu Hacı Şücâ",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "462"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 889 / M. 1484",
+      "excerpt": {
+        "tr": "Baninin kardeşi Hoca Hibetullah mescide 32.500 akçe vakfetmiştir.",
+        "en": "Hoca Hibetullah, brother of the founder, donated 32,500 silver coins to the mosque."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "462"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "462"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Alipaşa Mahallesi'nde, Habiboğlu Hacı Şücâ'nın yaptırdığı kabul edilen 15. yüzyıl mahalle camisi. 1801'de Şeyh Mehmed Emin Kerkükî tarafından Nakşibendi dergâhı (Eminiyye Dergâhı) olarak kullanılmış; yanında türbe, kütüphane bölümü ve Demirli Mektep bulunur.",
+    "en": "A 15th-century neighbourhood mosque in the Alipaşa Neighborhood, whose founder is agreed to be Habiboğlu Hacı Şuca. In 1801 it was used as the Naqshbandi Eminiyye lodge by Shaykh Mehmed Emin Kerküki; a tomb, a library section and the Demirli School stand beside it."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Alipaşa Mahallesi'nde, İnebey Caddesi'nin Maksem Caddesi ile birleştiği yerdedir. Araştırmacılar yapının banisinin Habiboğlu Hacı Şücâ olduğu konusunda hemfikirdir. Tarihî bir kaynakta mescide H. 889 / M. 1484 yılında, baninin kardeşi Hoca Hibetullah tarafından 32.500 akçe vakfedildiği belirtilmiştir; bu bilgiden yapının 15. yüzyılda inşa edildiği anlaşılmaktadır.",
+        "en": "The mosque is located in Osmangazi District, Alipaşa Neighborhood, where İnebey Street meets Maksem Street. Researchers agree that the founder was Habiboğlu Hacı Şuca. In one historical source it is stated that 32,500 silver coins were donated to the mosque by Hoca Hibetullah, the founder's brother, in AH 889 / AD 1484; from this it is understood that the structure was built in the 15th century."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "462"
+        }
+      ]
+    },
+    {
+      "id": "dergah",
+      "order": 2,
+      "title": {
+        "tr": "Eminiyye Dergâhı",
+        "en": "The Eminiyye Lodge"
+      },
+      "body": {
+        "tr": "Yapı, H. 1216 / M. 1801'de Mehmed Emin Efendi tarafından Nakşibendi dergâhı olarak kullanılmış, kurucusu nedeniyle “Eminiyye Dergâhı” da denilmiştir. Kerkük'te doğduğu için Şeyh Mehmed Emin Kerkükî olarak tanınan şeyh, III. Selim döneminin önemli isimleri arasındadır. Camiin yanındaki Hacı Abdullah Ağa Konağı'nı satın alıp dergâha dönüştürmüş ve bir kütüphane ekletmiştir. H. 1228 / M. 1813'te vefat etmiş, cami yanındaki türbeye defnedilmiştir. Tekke 1848'de ibadethane ve kütüphaneyle birlikte Sultan Abdülmecid tarafından tamir ettirilmiştir. 1925'e kadar aktif olan dergâh, Gökçen Ailesi tarafından kültür merkezi ve müze olarak kullanılmaktadır.",
+        "en": "The building was used as a Naqshbandi Sufi lodge by Mehmed Emin Efendi in AH 1216 / AD 1801 and was also called the “Eminiyye Sufi Lodge” after its founder. Born in Kirkuk, he was known as Shaykh Mehmed Emin Kerküki and was among the important names of the reign of Selim III. He bought the Hacı Abdullah Ağa Mansion next to the mosque, converted it into a lodge and added a library. He died in AH 1228 / AD 1813 and was buried in the tomb next to the mosque. The lodge was repaired in 1848 by Sultan Abdulmecid together with the place of worship and the library. Active until 1925, it is now used as a Cultural Center and museum by the Gökçen Family."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami yaklaşık 11.00 × 15.00 m dış ölçülerindedir, duvar kalınlığı bir metredir. Beden duvarları iki sıra tuğla ve bir sıra taşla almaşık düzende örülmüş, bazı bölümlerde dikey tuğlalarla bezenmiştir. İbadet mekânı 8.75 × 8.75 m ölçülerinde kare planlıdır; Bursa tipi kare planlı, kalkan duvarlı mahalle mescitlerindendir. Kubbe zeminden 10.5 m yüksekliğindedir; kasnak beden duvarlarındaki almaşık yapıdadır, geçiş üçgenlerle sağlanır. Mekân sekiz alt, altı üst ve dört kasnak penceresiyle aydınlanır; dıştan sivri kemerli pencere kemerleri içten yarım daire biçimine dönüştürülmüştür. Kubbe ve pencere çevreleri Geç Osmanlı dönemi kalem işleriyle süslenmişse de badanalar nedeniyle bezemeler günümüze ulaşmamıştır. 8.75 × 4.00 m ölçülerindeki son cemaat yeri üç bölümlüdür ve tonoz örtülüdür. Girişteki sivri kemerler eşit yüksekliktedir; revak ayakları 140 × 60 cm'dir, revak kemerleri arasındaki açıklıklar sonradan kapatılmış, orta revak eşit ölçülere bölünerek özgün yapısı bozulmuştur.",
+        "en": "The mosque has external dimensions of approximately 11.00 x 15.00 m and a wall thickness of one meter. The walls are built of two rows of brick and one row of stone in alternation, with vertically placed bricks in places. The place of worship is square (8.75 x 8.75 m), an example of Bursa-type square-planned, parapet-walled neighbourhood masjids. The dome is 10.5 m high; the drum has the same alternating masonry and the transition is by triangles. The space is lit by eight lower, six upper and four drum windows; the window arches, pointed on the outside, were made semicircular on the inside. Late Ottoman hand-painted ornament on the dome and around the windows has not survived because of whitewashing. The narthex (8.75 x 4.00 m) is divided into three vaulted sections. The entrance arches are of equal height; the portico piers measure 140 x 60 cm, the openings between the arches were later closed and the originally wider central bay was divided into equal sections."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan-ve-minare",
+      "order": 4,
+      "title": {
+        "tr": "Mihrap, Minber ve Minare",
+        "en": "Mihrab, Minbar and Minaret"
+      },
+      "body": {
+        "tr": "Mihrap özgün yapısından uzaklaştırılarak yarım daire kesitli bir niş haline getirilmiştir; beyaza boyanmış dikdörtgen çerçevesi altın rengi sütunlarla çevrilidir, iç bölümü bitkisel motiflerle süslüdür. Minber Şeyh Emin Efendi tarafından eklenmiş, böylece cuma namazları kılınmaya başlanmıştır. Doğu cephesinde sekizgen kaideye oturan minareye ana ibadet alanından çıkılır. Kaide almaşık duvar örgülüdür; gövde tuğla silindirik, külah sivridir, tek şerefenin altındaki tuğla süslemeler dikkat çekicidir.",
+        "en": "The mihrab was transformed from its original structure into a semicircular niche; its white-painted rectangular frame is surrounded by gold-colored colonettes and its interior is decorated with vegetal motifs. The minbar was added by Shaykh Emin Efendi, and Friday prayers began to be held. The minaret on the east side sits on an octagonal base and is reached from the main prayer area; its base has alternating masonry, its shaft is brick and cylindrical with a pointed spire, and the brick decorations under the single balcony are striking."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463-464"
+        }
+      ]
+    },
+    {
+      "id": "kutuphane-ve-mektep",
+      "order": 5,
+      "title": {
+        "tr": "Kütüphane Bölümü ve Demirli Mektep",
+        "en": "Library Section and Demirli School"
+      },
+      "body": {
+        "tr": "Tarihî kayıtlarda “kütüphane” olarak geçen bölüm, cami ile türbe arasında yer alan kare planlı, tonoz örtülü küçük bir yapıdır. Son restorasyonda bu bölüme mihrap eklenmiş, cemaat yoğunluğu fazla olan cuma ve bayram namazları için ek ibadet alanı olarak kullanılmaya başlanmıştır. Kesme taş-tuğla almaşık düzende inşa edildiği bilinen, pencereleri parmaklıklı Demirli Mektep, caminin biraz altında yer alır; içinde bazı mezar taşları bulunur.",
+        "en": "The section referred to as the “library” in historical records is a small square, vaulted building between the mosque and the tomb. In the last restoration a mihrab was added to it and it began to be used as an additional prayer area for the crowded Friday and Eid prayers. Demirli Primary School, built of alternating cut stone and brick with grilled windows, stands slightly below the mosque; some gravestones are inside it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "464"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 6,
+      "title": {
+        "tr": "Kullanım ve Onarımlar",
+        "en": "Use and Repairs"
+      },
+      "body": {
+        "tr": "Yapı 1930-1968 arasında depo olarak kullanılmış, bakımsız ve harap durumdayken 1968'de Bursa Eski Eserleri Sevenler Kurumu tarafından kapsamlı olmayan bir onarım geçirmiştir. 1990'lı yıllarda hazırlanan restitüsyon projesine göre tamir edilerek revak bölümü ve kalkan duvarı yenilenmiş, son olarak 2013'te Vakıflar Bölge Müdürlüğü tarafından onarılmıştır.",
+        "en": "The mosque was used as a warehouse between 1930 and 1968 and, while neglected and dilapidated, received a non-comprehensive restoration by the Bursa Association for the Appreciation of Antiquities in 1968. It was repaired according to a restitution project prepared in the 1990s, the portico and parapet wall were renewed, and it was finally repaired by the Regional Directorate of Foundations in 2013."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "464"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "dis_olcu",
+      "label": {
+        "tr": "Dış ölçü",
+        "en": "External dimensions"
+      },
+      "value": "11.00 × 15.00",
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ],
+      "note": {
+        "tr": "Kitap “yaklaşık” diyor.",
+        "en": "The book says “approximately”."
+      }
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "key": "ibadet_mekani",
+      "label": {
+        "tr": "İbadet mekânı",
+        "en": "Prayer space"
+      },
+      "value": "8.75 × 8.75",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_yuksekligi",
+      "label": {
+        "tr": "Kubbe yüksekliği (zeminden)",
+        "en": "Dome height (from ground)"
+      },
+      "value": 10.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 18,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ],
+      "note": {
+        "tr": "Sekiz alt, altı üst ve dört kasnak penceresi.",
+        "en": "Eight lower, six upper and four drum windows."
+      }
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat yeri",
+        "en": "Narthex"
+      },
+      "value": "8.75 × 4.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "key": "revak_ayagi",
+      "label": {
+        "tr": "Revak ayağı ölçüsü",
+        "en": "Portico pier size"
+      },
+      "value": "140 × 60",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Habiboğlu Hacı Şücâ",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Hoca Hibetullah",
+      "role": {
+        "tr": "Baninin kardeşi; 1484'te mescide vakıf yaptı",
+        "en": "Founder's brother; endowed the mosque in 1484"
+      }
+    },
+    {
+      "name": "Şeyh Mehmed Emin Kerkükî (Mehmed Emin Efendi)",
+      "role": {
+        "tr": "Eminiyye Dergâhı'nın kurucusu; cami yanındaki türbeye defnedildi",
+        "en": "Founder of the Eminiyye Lodge; buried in the tomb beside the mosque"
+      }
+    },
+    {
+      "name": "Sultan Abdülmecid",
+      "role": {
+        "tr": "1848'de tekkeyi, ibadethaneyi ve kütüphaneyi tamir ettirdi",
+        "en": "Had the lodge, place of worship and library repaired in 1848"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakif-1484",
+      "year": 1484,
+      "date": null,
+      "hijri": "889",
+      "type": "record",
+      "title": {
+        "tr": "Hoca Hibetullah mescide 32.500 akçe vakfetti",
+        "en": "Hoca Hibetullah endowed 32,500 silver coins to the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "462"
+        }
+      ]
+    },
+    {
+      "id": "dergah-1801",
+      "year": 1801,
+      "date": null,
+      "hijri": "1216",
+      "type": "record",
+      "title": {
+        "tr": "Mehmed Emin Efendi yapıyı Nakşibendi dergâhı olarak kullandı (Eminiyye Dergâhı)",
+        "en": "Mehmed Emin Efendi used the building as a Naqshbandi lodge (Eminiyye Lodge)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1813",
+      "year": 1813,
+      "date": null,
+      "hijri": "1228",
+      "type": "record",
+      "title": {
+        "tr": "Şeyh Mehmed Emin Kerkükî vefat etti, cami yanındaki türbeye defnedildi",
+        "en": "Shaykh Mehmed Emin Kerküki died and was buried in the tomb beside the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1848",
+      "year": 1848,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Sultan Abdülmecid tekkeyi, ibadethaneyi ve kütüphaneyi tamir ettirdi",
+        "en": "Sultan Abdulmecid had the lodge, place of worship and library repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "id": "dergah-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Dergâhın aktif kullanımı sona erdi (1925'e kadar aktifti)",
+        "en": "The lodge's active use ended (active until 1925)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "id": "depo-1930",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1930-1968 arasında depo olarak kullanıldı",
+        "en": "Used as a warehouse between 1930 and 1968"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "464"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1968",
+      "year": 1968,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu kapsamlı olmayan bir onarım yaptı",
+        "en": "Non-comprehensive repair by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "464"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı",
+        "en": "Repair by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "464"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Veled-i Habib Camii, Bursa tipi kare planlı, kalkan duvarlı bir mahalle mescididir. Taş ve tuğlanın almaşık dizildiği kare planlı yapının üzerinde bir kubbe yükselir; iç mekân sekiz alt, altı üst ve dört kasnak penceresiyle aydınlanır. Önde, üç bölümlü ve tonoz örtülü bir son cemaat yeri vardır. Doğu cephesinde, sekizgen kaideli, tuğla gövdeli, tek şerefeli bir minare bulunur. Camiin yanında türbe, küçük bir kütüphane bölümü ve Demirli Mektep yer alır.",
+      "en": "Veled-i Habib Mosque is a Bursa-type square-planned neighbourhood masjid with a parapet wall. Its square-planned walls are built in alternating courses of stone and brick, and a dome rises over the hall, which is lit by eight lower, six upper and four drum windows. In front is a three-part vaulted narthex. On the east side stands a brick minaret on an octagonal base with a single balcony. A tomb, a small library section and the Demirli School stand beside the mosque."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-habib-camii/p069-1.jpg",
+        "original_name": "01.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "462"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, sokaktan",
+        "en": "The mosque dome and minaret from the street"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla örgülü duvarlı, kurşun kaplı kubbeli cami ve ince minaresi. Önünde sokak, yanında kırmızı bir ev, arkada yamaca yayılan kent var.",
+        "en": "A stone-and-brick mosque with a lead-covered dome and a slender minaret. A street runs in front, a red house stands beside it, and the city climbs the hill behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-habib-camii/p071-1.jpg",
+        "original_name": "ERD00242 kopya.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "464"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin yan cephesi ve kubbesi",
+        "en": "Side facade and dome of the mosque"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla almaşık duvarlı caminin yan cephesi, kurşun kaplı kubbesi ve minaresi. Önünde yeşillikler arasında taş döşeli bir yürüyüş yolu uzanır.",
+        "en": "The side of the mosque in alternating stone and brick, with a lead dome and minaret. A paved walkway runs beside it between green bushes and trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-veled-i-habib-camii/p070-2.jpg",
+        "original_name": "ERD00181 kopya.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "463"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Cami içi, ahşap mahfil ve kütüphane",
+        "en": "Interior with wooden gallery and bookcase"
+      },
+      "alt": {
+        "tr": "Giriş duvarının üzerinde, korkuluklu ve merdivenli ahşap bir mahfil. Ortada çift kanatlı ahşap kapı, solda kitap dolu bir kitaplık, zeminde çiçek motifli halı var.",
+        "en": "A wooden gallery with a balustrade and staircase above the entrance wall. A double wooden door is in the centre, a bookcase full of books on the left, and a floral-patterned carpet on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-10"
+    }
+  ],
+  "archive_media": []
+}

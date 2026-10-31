@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-iznik-yakup-celebi-turbesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "İznik",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -51,7 +51,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "479"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.425895,
+      "lng": 29.723107,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": null,
   "founder": null,
@@ -187,6 +194,9 @@
     },
     {
       "target_id": "bursa-osmangazi-umur-bey-turbesi",
+      "target_name": {
+        "tr": "Umur Bey Türbesi"
+      },
       "type": "architectural_lineage",
       "description": {
         "tr": "Açık türbe formu bakımından Muradiye'deki Umur Bey Türbesi ile benzer tipolojidedir.",

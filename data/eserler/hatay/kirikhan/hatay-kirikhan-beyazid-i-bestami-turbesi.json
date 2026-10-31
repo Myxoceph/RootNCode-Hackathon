@@ -1,0 +1,430 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-kirikhan-beyazid-i-bestami-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Beyazıd-ı Bestami’nin vefat yılı kitapta M. 848 veya 875 olarak veriliyor; aktarımda 800 doğum + 74 yaş ise 874’e denk gelir.",
+      "Mustafa Şevki Paşa’nın Reyhanlı’daki Mustafa Şevki Paşa Camii ve Külliyesi’nin banisi olup olmadığı bu bölümde belirtilmiyor; ilişki yazılmadı.",
+      "Darbısak Kalesi için kitapta ayrı kayıt/id yok.",
+      "Medrese ve tekke işlevleri bu kayıtta ikincil tür olarak verildi; ayrı kayıt gerekip gerekmediği veri ekibince değerlendirilmeli.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating/legends",
+        "note": "Beyazıd-ı Bestami’nin vefatı s. 420’de 'M. 848 veya 875' olarak veriliyor, aktarımda ise 800’de doğup 74 yaşında vefat ettiği söyleniyor (yaklaşık 874); yıllar kendi içinde tutarlı değil. Kaynağa sadık kalındı."
+      },
+      {
+        "field": "sections[bestami-anlatisi]",
+        "note": "Tırnak içi aktarımın kaynağı gösterilmiyor; hagiyografik anlatı niteliğinde, 'disputed' işaretlendi."
+      },
+      {
+        "field": "relations",
+        "note": "Cami-türbe, tekke ve medrese bir arada anlatıldığı için tek kayıt yazıldı; külliye kaydı açılmadı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Beyazıd-ı Bestami Türbesi",
+    "en": "Beyazid al-Bestami Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Beyazıd-ı Bestami Cami-Türbesi",
+      "en": "Beyazid al-Bestami Mosque-Mausoleum"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [
+    "tekke",
+    "medrese"
+  ],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "türbe",
+    "cami-türbe",
+    "tekke",
+    "çilehane",
+    "Beyazıd-ı Bestami",
+    "Mustafa Şevki Paşa",
+    "Darbısak Kalesi",
+    "Alaybeyli"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Kırıkhan",
+    "neighborhood": "Alaybeyli",
+    "address": "Alaybeyli Köyü, 860 parsel (bölüm özeti); tarihi Darbısak Kalesi tepesinin güney yamacı",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "420, 422-423"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.531845,
+      "lng": 36.365009,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/9551838476 ('Beyazıd-ı Bestami Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1890 (H. 1308)",
+      "en": "1890 (AH 1308)"
+    },
+    "start_year": 1890,
+    "end_year": 1890,
+    "hijri_year": 1308,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap yapıyı Mustafa Şevki Paşa’nın 1890’da inşa ettirdiğini söyler; İngilizce metin kapı alınlığındaki kitabenin H.1308/M.1890 tarihli olduğunu ekler.",
+      "en": "The book says Mustafa Şevki Pasha had it built in 1890; the English text adds that the door-pediment inscription is dated 1308 H/1890 AD."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "420, 422-423"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mustafa Şevki Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "420, 422-423"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kırıkhan’ın Alaybeyli köyünde, Darbısak Kalesi tepesinin ovaya bakan yamacında, mutasavvıf Beyazıd-ı Bestami adına 1890’da Mustafa Şevki Paşa’nın yaptırdığı cami-türbe. Çilehanesi ve beş hücreli medresesiyle Antakya çevresinde en çok bilgi bulunan tekke olarak anılır.",
+    "en": "A mosque-mausoleum in Alaybeyli village, Kırıkhan, on the plain-facing slope of the hill of the historical Darbısak castle, built in 1890 by Mustafa Şevki Pasha in the name of the Sufi Beyazid al-Bestami. With its chilehane and five-cell madrasa it is the best-documented lodge in and around Antakya."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Vahdet-i vücutçu mutasavvıf Beyazıd-ı Bestami adına yapılmış türbe, Alaybeyli köyünde tarihi Darbısak Kalesi’nin bulunduğu tepenin ovaya bakan güney yamacındadır ve bölge halkının en çok ziyaret ettiği mekânlardan biridir. Eski Rumeli Beylerbeyi Mustafa Şevki Paşa (Hatay Devleti’nin ilk ve tek Cumhurbaşkanı Tayfur Sökmen’in babası) türbeyi 1890’da yaptırmıştır.",
+        "en": "The tomb, made in the name of the Vahdat al-Wujud Sufi Beyazid al-Bestami, is on the southern, plain-facing slope of the hill with the historical Darbisak castle in Alaybeyli village and is one of the most visited places in the region. Former Rumeli Beylerbeyi Mustafa Şevki Pasha (father of Tayfur Sökmen, first and only President of the Hatay State) had it built in 1890."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ]
+    },
+    {
+      "id": "yapi",
+      "order": 2,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Cami-türbenin güneye bakan kapı alınlığında beş beyitlik, talik hatla yazılmış bir kitabe vardır. Dikdörtgen bir alanın beşik tonozla örtülmesiyle elde edilen harim, mihrap duvarına paralel tek sahından oluşur. Doğu duvarındaki iki yuvarlak kemerli özgün pencere ve çeyrek daire biçimli sonradan açılmış pencere basık mekânı aydınlatır. Mihrap, onarımdan sonra yapıldığı belli olan mavi fayans kaplamalı at nalı kemerlidir. Dışa kapalı bir çilehanesi vardır; yapı, Antakya ve çevresinde günümüze ulaşan, hakkında en çok bilgi bulunan tekke olma özelliğini taşır.",
+        "en": "A five-couplet inscription in ta’liq script is on the south-facing door pediment of the mosque-mausoleum. The sanctuary, a rectangular area covered by a barrel vault, is a single nave parallel to the mihrab wall. Two round-arched original windows on the east wall and a newly made quarter-circle window light the low space. The mihrab has a horseshoe arch with blue tile covering, evidently made after repair. It has a closed chilehane, and is the most informative lodge surviving in and around Antakya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ]
+    },
+    {
+      "id": "sandukalar",
+      "order": 3,
+      "title": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı giriş mekânındaki iki sandukadan biri Mustafa Şevki Paşa’ya aittir. Harimin kuzeydoğu köşesindeki diğer sanduka Beyazıd-ı Bestami’ye atfedilir ancak gerçekte onun makamı konumundadır.",
+        "en": "Of the two sarcophagi in the rectangular entrance space, one belongs to Mustafa Şevki Pasha. The other, in the northeast corner of the sanctuary, is attributed to Beyazid al-Bestami but is in reality his maqam."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ]
+    },
+    {
+      "id": "medrese",
+      "order": 4,
+      "title": {
+        "tr": "Medrese hücreleri",
+        "en": "Madrasa cells"
+      },
+      "body": {
+        "tr": "Yan yana beş hücreden oluşan medresenin üç hücresi ikişer pencereli, ikisi tek pencerelidir. Beşik tonoz örtülü hücrelerden batıdakine eyvan türü bir taç kapıdan girilir; bu yöndeki iki hücre günümüzde konut olarak kullanılmaktadır.",
+        "en": "The madrasa consists of five cells side by side; three have two windows each and two have one. The westernmost barrel-vaulted cell is entered through an iwan-type portal; two cells on this side are used as residences today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ]
+    },
+    {
+      "id": "bestami-anlatisi",
+      "order": 5,
+      "title": {
+        "tr": "Beyazıd-ı Bestami’nin hayatı (kitaptaki aktarım)",
+        "en": "Life of Beyazid al-Bestami (as quoted in the book)"
+      },
+      "body": {
+        "tr": "Kitap tırnak içinde bir aktarım verir: asıl adı Ebu Yezid Tayfur İbni İsa Sarahan’dır, Taberistan’daki Bestam’da 800’de doğmuş, Horasanlıdır; annesine sevgisiyle bilinir, ömrünü ibadetle geçirmiş ve 74 yaşında vefat etmiştir. Aktarım kaynak göstermez; kitaptaki başka bir yerde vefatı M. 848 veya 875 olarak verilir.",
+        "en": "The book quotes an account: his real name was Abu Yazid Tayfur Ibn Isa Sarahan, born in Bestam, Tabaristan, in 800, from Khorasan; known for love of his mother, he spent his life in worship and died aged 74. The quotation gives no source; elsewhere the book gives his death as 848 or 875 AD."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "gercek-kabir-inanci",
+      "title": {
+        "tr": "Gerçek kabir inancı ve torunlar",
+        "en": "Belief that this is the real tomb, and the grandchildren"
+      },
+      "body": {
+        "tr": "Bölge halkı türbenin mutasavvıfın gerçek kabri olduğuna inanır. Kitap ise onun doğduğu şehirde vefat edip orada defnedildiğinin sabit olduğunu söyler. İnanışa göre torunlarından bazı Horasan erenleri Hatay civarına gelip yerleşmiş, bir kardeşi de Kırıkhan’dan Zile’ye giderek orada kalmıştır.",
+        "en": "The local people believe the tomb is the mystic’s real grave, but the book says it is certain he died and was buried in the city of his birth. According to belief, some Khorasan saints, his grandchildren, came and settled around Hatay, and another brother went from Kırıkhan to Zile and stayed there."
+      },
+      "source_verdict": "refuted_by_source",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ],
+      "note": {
+        "tr": "Biri Mustafa Şevki Paşa’ya ait, diğeri Bestami’ye atfedilen makam sandukası",
+        "en": null
+      }
+    },
+    {
+      "key": "medrese_hucre",
+      "label": {
+        "tr": "Medrese hücre sayısı",
+        "en": "Madrasa cells"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_beyit",
+      "label": {
+        "tr": "Kitabe beyit sayısı",
+        "en": "Couplets in inscription"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mustafa Şevki Paşa",
+      "role": {
+        "tr": "Banî; eski Rumeli Beylerbeyi, Tayfur Sökmen’in babası",
+        "en": "Founder; former Rumeli Beylerbeyi, father of Tayfur Sökmen"
+      }
+    },
+    {
+      "name": "Beyazıd-ı Bestami",
+      "role": {
+        "tr": "Adına türbe yapılan mutasavvıf",
+        "en": "Sufi in whose name the tomb was made"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-alinligi-kitabesi",
+      "location": {
+        "tr": "Güneye bakan kapı alınlığı",
+        "en": "South-facing door pediment"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "note": {
+        "tr": "Beş beyitlik, talik hatla yazılmış kitabe; metin ve dil kitapta verilmiyor. İngilizce metin tarihini H.1308/M.1890 olarak veriyor.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ],
+      "date": {
+        "hijri_year": 1308,
+        "gregorian": "1890"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1890",
+      "year": 1890,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Türbenin Mustafa Şevki Paşa tarafından yaptırılması",
+        "en": "Tomb built by Mustafa Şevki Pasha"
+      },
+      "note": {
+        "tr": "Kitabe tarihi H.1308/M.1890.",
+        "en": "Inscription dated 1308 H/1890 AD."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "420, 422-423"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami-türbe, Alaybeyli köyünde bir tepenin güney yamacındadır. Güneye bakan kapı alınlığında beş beyitlik bir kitabe vardır. Beşik tonozlu, tek sahınlı harimde mavi fayans kaplı at nalı kemerli bir mihrap bulunur. Giriş mekânında iki, harimin kuzeydoğu köşesinde bir sanduka vardır. Yanında yan yana beş hücreli bir medrese ve dışa kapalı bir çilehane yer alır.",
+      "en": "The mosque-mausoleum stands on the southern slope of a hill in Alaybeyli village. A five-couplet inscription is on the south-facing door pediment. The barrel-vaulted, single-nave sanctuary has a horseshoe-arched mihrab covered in blue tiles. Two sarcophagi stand in the entrance space and one in the sanctuary’s northeast corner. A five-cell madrasa and a closed chilehane adjoin it."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-kirikhan-beyazid-i-bestami-turbesi/p211-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "421"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbe alanı ve taş yapılar",
+        "en": "The tomb area and stone buildings"
+      },
+      "alt": {
+        "tr": "Taş döşeli geniş bir teras; arkasında kesme taş duvarlı uzun, alçak bir yapı, kapıları kırmızı-kahverengi ahşap; solda sıralı banklar, sokak lambaları ve iki küçük ağaç.",
+        "en": "A wide stone-paved terrace; behind it a long low cut-stone building with red-brown wooden doors; benches, street lamps and two small trees on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-kirikhan-beyazid-i-bestami-turbesi/p212-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "423"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Taş yapıda sivri kemerli giriş ve merdiven",
+        "en": "Arched entrance and staircase of the stone building"
+      },
+      "alt": {
+        "tr": "Kesme taş duvarda geniş, sivri kemerli bir giriş nişi; içinde kapı ve küçük kovalar, üstte yazılı levha, sağda demir korkuluklu taş merdiven, solda cam cepheli modern bir yapı.",
+        "en": "A wide pointed-arch entrance niche in a cut-stone wall with a door and small buckets inside and a plaque above; on the right a stone stair with iron railings, on the left a modern glass-fronted structure."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

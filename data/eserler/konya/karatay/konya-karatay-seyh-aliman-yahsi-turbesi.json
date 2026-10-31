@@ -1,0 +1,490 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-seyh-aliman-yahsi-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Dönem (era) kitapta belirtilmiyor; yalnızca zaviye kitabesindeki H. 687 / M. 1288 tarihi var.",
+      "Fakih Ahmet ve Şeyh Alaman'ın kimlikleri kitapta belirsiz; veri ekibi gözden geçirmeli.",
+      "Zaviye kitabesinin bulunduğu İnce Minareli Medrese ile (konya-selcuklu-ince-minareli-medrese) mimari bir ilişki yok, yalnızca kitabenin müzede saklanması; ilişki yazılmadı.",
+      "Onarım yılı kitapta verilmiyor.",
+      "Kitabenin Arapça orijinal okunuşu eklenmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Türbenin kendi kitabesinde tarih yoktur; H. 687 / M. 1288 başka bir yapıya (zaviye) ait kitabeden alınmıştır, bu yüzden 'probable'."
+      },
+      {
+        "field": "name",
+        "note": "Başlıkta 'Aliman', metinde 'Alaman' ve 'İşgalaman' biçimleri geçiyor; kitap adları tutarlı değil."
+      },
+      {
+        "field": "founder",
+        "note": "Kitabe çevirisinde 'yaptırdı' parantez içinde ve eksik tümleç olarak verilmiş; banilik 'probable'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Aliman (Alaman – İşgalaman) Yahşi Türbesi",
+    "en": "Şeyh Aliman (Alaman – İşgalaman) Yahşi Tomb"
+  },
+  "subtitle": {
+    "tr": "Mescit olarak yapılıp türbeye dönüşen yapı",
+    "en": "A masjid later converted into a tomb"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şeyh Alaman Türbesi",
+      "en": "Şeyh Alaman Tomb"
+    },
+    {
+      "tr": "Şeyh Alaman (İşgalaman) Zaviyesi",
+      "en": "Şeyh Alaman (İşgalaman) Zawiya"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "mescitten türbeye",
+    "zaviye",
+    "Şeyh Alaman",
+    "Fakih Ahmet",
+    "çini",
+    "kubbe"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Çelebi Mahallesi",
+    "address": "Şeyh Ulema Recep Ağa Caddesi üzerinde; Şeyh Alaman (İşgalaman) Mezarlığı'nın kuzeydoğusunda",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "149"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.874575,
+      "lng": 32.51277,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: OpenStreetMap (© OSM katkıcıları, ODbL) 'Şeyh Ulema İşgalaman Mezarlığı'nın merkezi; kitaba göre türbe mezarlığın kuzeydoğusunda, binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 687 / M. 1288 (zaviye kitabesine göre)",
+      "en": "AH 687 / AD 1288 (per the zawiya inscription)"
+    },
+    "start_year": 1288,
+    "end_year": 1288,
+    "hijri_year": 687,
+    "century": 13,
+    "basis": {
+      "tr": "Türbenin kendi kitabesinde yapım tarihi yoktur; İnce Minareli Medrese'deki Taş ve Ahşap Eserler Müzesi'nde bulunan Şeyh Alaman Zaviyesi kitabesinde yapım tarihi H. 687 / M. 1288 yazılıdır.",
+      "en": "The tomb's own inscription carries no date; the Şeyh Alaman Zawiya inscription in the Stone and Wooden Works Museum in İnce Minareli Madrasa gives the construction date as 687 AH / 1288 AD."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "149"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şeyh Alaman",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "150"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kitabesine göre Fakih Ahmet adına Şeyh Alaman'ın yaptırdığı, önce mescit olarak inşa edilip sonradan türbeye çevrildiği anlaşılan kubbeli, kare planlı yapı. Yapım tarihi, zaviye kitabesindeki H. 687 / M. 1288 kaydından alınmıştır.",
+    "en": "A square, domed building which, according to its inscription, Şeyh Alaman had built in the name of Fakih Ahmet; it seems to have been built as a masjid and later converted into a tomb. Its date comes from the zawiya inscription (687 AH / 1288 AD)."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Şeyh Alaman (İşgalaman) Mezarlığı'nın kuzeydoğusundaki türbenin kitabesinde inşa tarihi yazmaz; İnce Minareli Medrese, Taş ve Ahşap Eserler Müzesi'ndeki Şeyh Alaman Zaviyesi kitabesi yapım tarihi olarak H. 687 / M. 1288'i verir. Türbenin bitişiğindeki, sonradan yerine mektep açıldığı düşünülen zaviyeden hiçbir iz kalmamıştır. Konya Büyükşehir Belediyesi tarafından onarılan yapı daha önce mescit olarak kullanılmış, yakın zamanda yeniden türbeye dönüştürülmüştür.",
+        "en": "The inscription of the tomb northeast of Şeyh Alaman (İşgalaman) Cemetery carries no construction date; the Şeyh Alaman Zawiya inscription in the Stone and Wooden Works Museum in İnce Minareli Madrasa gives 687 AH / 1288 AD. No trace remains of the adjoining zawiya, which is thought to have been replaced by a school. Repaired by Konya Metropolitan Municipality, the building had been used as a masjid and was recently converted into a tomb again."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "149"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-kisiler",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe ve Kişiler",
+        "en": "Inscription and Persons"
+      },
+      "body": {
+        "tr": "Zaviye ve türbe kitabesinde 'Şeyhlerin Sultanı' ve 'Âlemlerin Kutbu' olarak anılan Fakih Ahmet ile onun önde gelen müritlerinden olduğu düşünülen Şeyh Alaman'ın kim oldukları belli değildir. Âlim ve dönemin meşhur şeyhlerinden Şeyh Ulemâ'nın Fakih Ahmet'in talebelerinden olduğu rivayet edilir. Kitabeye göre türbe ilk dönemde mescit olarak yapılmış, sonradan türbeye dönüştürülmüş olmalıdır; içindeki mihrabın Ulvi Sultan Mescidi mihrabına benzer olduğu tahmin edilmektedir.",
+        "en": "It is not clear who Fakih Ahmet, called the 'Sultan of Sheikhs' and 'Pole of the Worlds' in the inscription, and Şeyh Alaman, thought to be one of his leading disciples, were. Şeyh Ulemâ, a scholar and famous sheikh, is rumored to have been a student of Fakih Ahmet. According to the inscription the tomb must have been built as a masjid and converted later; its mihrab is thought to resemble that of the Ulvi Sultan Masjid."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "150"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari ve Malzeme",
+        "en": "Architecture and Materials"
+      },
+      "body": {
+        "tr": "Kare planlı yapıda üst örtüye geçiş köşelerdeki üçgenlerle sağlanır ve kubbe son onarımda kurşunla kaplanmıştır. Ana malzeme moloz-kaba yonu taş ve tuğladır; kapı ve pencere çerçeveleri kesme taş ya da mermerdir. Cepheler üst örtüye yakın yerde tuğla, diğer yerlerde taş görünümlüdür. Doğu cephenin ortasındaki sivri kemerli kapıdan girilir; kuzey ve güneyde ikişer, batıda bir dikdörtgen pencere vardır. Devşirme malzemeli giriş cephesi dekoratiftir; kubbede altı köşeli yıldızdan gelişen çiniler kullanılmıştır, iç duvarların eskiden mihrap seviyesinde çini kaplı olduğu düşünülmektedir.",
+        "en": "The square building makes the transition to its dome with corner triangles, and the dome was lead-covered in the latest repair. The main materials are rubble and rough-hewn stone and brick; door and window frames are cut stone or marble. Facades look like brick near the top and stone elsewhere. The pointed-arch door is in the middle of the east facade; there are two rectangular windows each to the north and south and one to the west. The entrance facade is of spolia and decorative; tiles developed from a six-pointed star were used on the dome, and the interior walls are thought to have been tiled up to mihrab level."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "150-151"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 4,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Türbenin ortasında bir sanduka vardır; ayak taşında sivri kemer nişi içinde kandil ve iki yanında şamdanlar yer alır. Güney duvarında mermerden oyulmuş dikdörtgen bir mihrap bulunur; sivri kemerli ana nişin içinde yarım daire kemerli ikinci bir niş tasarlanmış, bu nişte kandil ve şamdan motifleri görülür.",
+        "en": "There is a sarcophagus in the middle of the tomb; its footstone has a pointed-arch niche with an oil lamp and candlesticks on either side. On the south wall is a rectangular mihrab carved from marble; within its pointed-arch main niche a second semicircular-arched niche holds oil lamp and candlestick motifs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "151"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "seyh-ulema-talebe",
+      "title": {
+        "tr": "Şeyh Ulemâ, Fakih Ahmet'in talebesi",
+        "en": "Şeyh Ulemâ as a student of Fakih Ahmet"
+      },
+      "body": {
+        "tr": "Âlim, fazıl ve döneminin meşhur şeyhlerinden biri olan Şeyh Ulemâ'nın, meşhur Fakih Ahmet'in talebelerinden olduğu rivayet edilir.",
+        "en": "It is rumored that Şeyh Ulemâ, a scholar, a virtuous man and one of the famous sheikhs of his time, was a student of the famous Fakih Ahmet."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "150"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "150"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Roof"
+      },
+      "value": "Kubbe (kurşun kaplı)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "150"
+        }
+      ]
+    },
+    {
+      "key": "pencere",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "150"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Ana malzeme",
+        "en": "Main material"
+      },
+      "value": "Moloz-kaba yonu taş ve tuğla",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "150"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Alaman",
+      "role": {
+        "tr": "Kitabeye göre yaptıran; Fakih Ahmet'in müridi olduğu düşünülür",
+        "en": "Builder per the inscription; thought to be a disciple of Fakih Ahmet"
+      }
+    },
+    {
+      "name": "Fakih Ahmet",
+      "role": {
+        "tr": "Kitabede 'Şeyhlerin Sultanı', 'Âlemlerin Kutbu'; kimliği belli değil",
+        "en": "Called 'Sultan of Sheikhs' and 'Pole of the Worlds'; identity unclear"
+      }
+    },
+    {
+      "name": "Şeyh Ulemâ",
+      "role": {
+        "tr": "Fakih Ahmet'in talebesi olduğu rivayet edilir",
+        "en": "Rumored student of Fakih Ahmet"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kapisi-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde, altı satır sülüs",
+        "en": "Above the entrance door, six lines in thuluth"
+      },
+      "language": "other",
+      "script": "sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Mescitler şüphesiz Allah'ındır. Öyleyse oralarda Allah'a yalvarırken başkasını katmayın. Âlemlerin Kutbu Fakih Ahmet adına fakih kul, Tanrı'nın abdalı ve O'nun tevfikine muhtaç Şeyh Alaman (yaptırdı)",
+        "en": "The mosques undoubtedly belong to Allah. So do not include anyone else when you pray to Allah there. Built by Şeyh Alaman, the servant of jurisprudence, the servant of God and the one in need of His support, in the name of Fakih Ahmet, the pole of the worlds."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "150"
+        }
+      ],
+      "note": {
+        "tr": "Kitabe Cin Suresi 18. ayetle başlar; kitabenin dili metinde açıkça söylenmiyor, bu yüzden 'other' yazıldı. Okunuş (transliterasyon) kitapta verilmiyor.",
+        "en": "The inscription opens with verse 18 of Surah al-Jinn; the language is not stated in the text, so 'other' was entered. No transliteration is given in the book."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1288",
+      "year": 1288,
+      "date": null,
+      "hijri": "687",
+      "type": "construction",
+      "title": {
+        "tr": "Zaviye kitabesine göre yapım tarihi (H. 687 / M. 1288)",
+        "en": "Construction date per the zawiya inscription (687 AH / 1288 AD)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "149"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kitabe",
+      "title": {
+        "tr": "Altı satırlık sülüs kitabe",
+        "en": "Six-line thuluth inscription"
+      },
+      "hint": {
+        "tr": "Giriş kapısının üzerinde Cin Suresi 18. ayet ve yaptıranın adı okunur.",
+        "en": "Above the entrance door: verse 18 of Surah al-Jinn and the builder's name."
+      },
+      "section_id": "kitabe-kisiler"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, mezarlığın kuzeydoğusunda, kare planlı ve kubbeli bir yapıdır. Kubbe kurşunla kaplıdır. Duvarlar alt kısımda taş, üst kısımda tuğla görünümlüdür. Sivri kemerli giriş kapısı doğu cephenin ortasındadır ve kapının üzerinde altı satırlık yazılı bir kitabe vardır. İçeride ortada bir sanduka, güney duvarında mermerden oyulmuş bir mihrap bulunur.",
+      "en": "The tomb is a square, domed building northeast of the cemetery. The dome is lead-covered. The walls look like stone in the lower part and brick in the upper part. The pointed-arch entrance is in the middle of the east facade and carries a six-line inscription above it. Inside there is a sarcophagus in the middle and a marble-carved mihrab on the south wall."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyh-aliman-yahsi-turbesi/p076-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "149"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Türbenin giriş cephesi",
+        "en": "Entrance front of the tomb"
+      },
+      "alt": {
+        "tr": "Kırmızımsı kesme taştan, kare planlı küçük yapının üzeri koyu gri kubbeyle örtülü. Ortada kemerli ahşap kapı var; iki yanda alçak taş duvarlar ve banklar yer alıyor.",
+        "en": "A small square building of reddish cut stone topped with a dark grey dome. A wooden arched door is in the centre, with low stone walls and benches on both sides."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyh-aliman-yahsi-turbesi/p077-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "151"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mezarlık içinde türbe",
+        "en": "The tomb inside the cemetery"
+      },
+      "alt": {
+        "tr": "Ağaçların arasındaki mezarlıkta, taş duvarlı küçük türbenin gri kubbesi görülüyor. Ön planda sıra sıra modern mezar taşları, arkada apartmanlar var.",
+        "en": "The grey dome and stone walls of the small tomb stand among trees in a cemetery. Rows of modern gravestones fill the foreground and apartment blocks rise behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyh-aliman-yahsi-turbesi/p077-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "150"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Cephedeki kitabe nişi",
+        "en": "Inscription niche on the wall"
+      },
+      "alt": {
+        "tr": "Kırmızımsı taş duvarda sivri kemerli bir niş var. Nişin içindeki taş levhada çok satırlı Arapça yazı işlenmiş; üstte profilli bir silme uzanıyor.",
+        "en": "A pointed-arched niche in a reddish stone wall. Inside is a stone panel carved with several lines of Arabic script, with a moulded cornice above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-seyh-aliman-yahsi-turbesi/p077-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "150"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi, örtülü sanduka",
+        "en": "Inside the tomb, covered sarcophagus"
+      },
+      "alt": {
+        "tr": "Taş duvarlı odada, arkası dönük durumdaki sanduka yeşil kadife örtü ve sarıklı başlıkla görülüyor. İki yanda ahşap pencere söveleri ve taş zemin var.",
+        "en": "In a stone-walled room, a sarcophagus seen from behind is draped in green velvet with a turban at its head. Window recesses flank it and the floor is stone."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

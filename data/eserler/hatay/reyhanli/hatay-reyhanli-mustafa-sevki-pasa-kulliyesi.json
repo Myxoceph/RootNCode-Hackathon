@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-reyhanli-mustafa-sevki-pasa-kulliyesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Konum bilgisi (parsel) kitabın bölüm özeti sayfasından; o sayfanın basılı numarası metin dosyasında yok, sayfa numarası eklenmeli ve doğrulanmalı.",
+      "Külliyenin banîsi kitapta verilmiyor; Mustafa Şevki Paşa'nın kimliği ve külliyedeki rolü kitapta açıklanmıyor; founder null.",
+      "Kitap bölüm başlığındaki 'PAŞACAMİİ' yazımı hatalıdır; kayıtta 'Paşa Camii' yazıldı.",
+      "Vakıf/vakfiye ve mimar bilgisi kitapta yok.",
+      "Konumdaki 'Bayır' (mahalle/köy olabilir) kitapta ayrıca açıklanmıyor; neighborhood doldurulmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Cami kitabelerle 1910'a tarihlenir; medrese kitabesiz olup 1910'da camiyle yapıldığı yalnızca tahmin edilir, bu yüzden külliye tarihi probable."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mustafa Şevki Paşa Camii ve Külliyesi",
+    "en": "Mustafa Şevki Pasha Mosque and Complex"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "külliye",
+    "reyhanlı",
+    "mustafa-şevki-paşa",
+    "cami",
+    "medrese"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Reyhanlı",
+    "neighborhood": null,
+    "address": "HATAY - REYHANLI BAYIR 471 PARSEL",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "180"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.268419,
+      "lng": 36.564378,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1141071717 ('Mustafa Şevki Paşa Külliyesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1910 (cami; medrese ile birlikte yapıldığı tahmin edilir)",
+      "en": "1910 (mosque; the madrasa is estimated to be built with it)"
+    },
+    "start_year": 1910,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Külliyedeki kitabelerden caminin inşa tarihinin 1910 olduğu anlaşılır; kitabesiz medresenin cami ile 1910'da yapıldığı tahmin edilir.",
+      "en": "The inscriptions in the complex show the mosque was built in 1910; the madrasa, without an inscription, is estimated to have been built with it in 1910."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "187-189"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Reyhanlı'da, geniş taş döşemeli bir avluya sahip; iki sahınlı cami ve camiye dik, doğuda yan yana sıralanmış beş hücreli medreseden oluşan külliye. Avluya kuzeydeki taç kapıdan ve doğudaki tali kapıdan girilir; taç kapıdan yalnızca taşıyıcı öğeler günümüze ulaşmıştır. Doğuda kübik kaideli çifte şerefeli bir minare yükselir. Külliye kitabelerine göre 1910 tarihlidir.",
+    "en": "A complex in Reyhanlı with a wide stone-paved courtyard, consisting of a two-nave mosque and a madrasa of five cells side by side to the east, perpendicular to the mosque. The courtyard is entered by the portal in the north and a secondary gate in the east; only the bearing elements of the portal survive. A minaret with double balconies on a cubic pedestal rises in the east. The complex dates from 1910 according to its inscriptions."
+  },
+  "sections": [
+    {
+      "id": "avlu-giris",
+      "order": 1,
+      "title": {
+        "tr": "Avlu ve girişler",
+        "en": "Courtyard and entrances"
+      },
+      "body": {
+        "tr": "Geniş avlulu külliye, iki sahınlı cami ile doğu yönünde camiye dik olarak yan yana sıralanmış beş hücreli medreseden oluşur. Külliyenin yerleşim birimleriyle irtibatını avlunun kuzeyindeki taç kapı ile doğudaki tali giriş kapısı sağlar. Dışa ve içe doğru sivri kemerli eyvan şeklinde açılan taç kapıdan günümüze maalesef yalnızca taşıyıcı öğeler ulaşabilmiştir; kapının üstünde her iki yanda ters piramidal süs öğeleri, eyvanın iki köşesinde sütun başlığı benzeri süsleme ve seki bulunur. Taç kapı eyvanındaki basık kemerli kapıyla taş döşemeli avluya girilir. Avlunun doğusunda ve medrese hücrelerinin güney ucunda, kübik kaide üzerinde yükselen çifte şerefeli minarenin yanında avlunun tali kapısı bulunur.",
+        "en": "The complex with a wide courtyard consists of a two-nave mosque and a madrasa of five cells side by side to the east, perpendicular to the mosque. The connection with the residential units is provided by the portal in the north of the courtyard and the secondary gate in the east. Unfortunately only the bearing elements survive of the portal, which opens outward and inward as a pointed-arched iwan; above the portal are inverted pyramidal ornaments on both sides and at the two corners of the iwan a column-capital-like ornament and a bench. The stone-paved courtyard is entered through the low-arched door in the portal iwan. East of the courtyard, at the southern end of the madrasa cells, next to the minaret with double balconies on a cubic pedestal, is the secondary gate."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "180"
+        }
+      ]
+    },
+    {
+      "id": "cepheler",
+      "order": 2,
+      "title": {
+        "tr": "Cepheler",
+        "en": "Facades"
+      },
+      "body": {
+        "tr": "Doğu cephesinde minare, doğu kapısı ve biri son cemaat yerine, ikisi harime açılan üç altlık ve iki üstlük pencere yer alır. Güney cepheyi dışa taşan mihrap çıkıntısı ve iki yanındaki üçer altlık, iki üstlük pencere biçimlendirir. Avlu duvarıyla sınırlanan batı cephesinde harimin iki altlık ve iki üstlük penceresi ile son cemaat yerinin bir altlık penceresi vardır.",
+        "en": "The east facade has the minaret, the east door and windows (three lower, two upper), one opening to the narthex and two to the sanctuary. The south facade is shaped by the protruding mihrab projection with three lower and two upper windows on each side. The west facade, bounded by the courtyard wall, has two lower and two upper windows of the sanctuary and one lower window of the narthex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "180"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliye, taş döşemeli geniş bir avlunun çevresindedir. Avluya kuzeydeki sivri kemerli eyvan biçimli taç kapıdan ve doğudaki ikinci bir kapıdan girilir. Güneyde iki sahınlı kırma çatılı cami, doğuda ona dik beş hücreli medrese ve medresenin güney ucunda kübik kaideli çifte şerefeli bir minare yer alır.",
+      "en": "The complex is gathered around a wide stone-paved courtyard, entered through the pointed-arched iwan-like portal in the north and a second gate in the east. A two-nave hipped-roof mosque stands in the south, a five-cell madrasa perpendicular to it in the east, and a double-balcony minaret on a cubic pedestal at the south end of the madrasa."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p090-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "178-179"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Külliyenin sivri kemerli taç kapısı",
+        "en": "Pointed-arched portal of the complex"
+      },
+      "alt": {
+        "tr": "Taş taç kapının geniş sivri kemerinden avluya giden yol görünür. Yanında bir minare gövdesi ve sıvalı bir bina vardır.",
+        "en": "A stone portal with a wide pointed arch showing the path into the courtyard. A minaret shaft and a plastered building are beside it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "drawing",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-mustafa-sevki-pasacamii-ve-kulliyesi/p089-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "176"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Eski gravürde bir avlu ve insanlar",
+        "en": "Old engraving of a courtyard with people"
+      },
+      "alt": {
+        "tr": "Sepya tonlu gravürde ağaç altında sivri kemerli taş bir cephe görünür. Önünde çocuklar, yetişkinler ve büyük bir küp vardır.",
+        "en": "A sepia engraving of a stone façade with arched openings under a tree. Children, adults and a large jar are in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

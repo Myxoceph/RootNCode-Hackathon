@@ -1,5 +1,6 @@
 import type { FastifyError, FastifyInstance } from "fastify";
 import { z } from "zod";
+import { HttpError } from "../lib/http-error.ts";
 
 /** Every error response has this shape, so clients handle failures in one place. */
 export const ErrorResponseSchema = z.strictObject({
@@ -10,6 +11,12 @@ export const ErrorResponseSchema = z.strictObject({
 });
 
 export type ErrorResponse = z.infer<typeof ErrorResponseSchema>;
+
+/** Fastify's own client errors under names like the API's (e.g. a photo over 5 MB). */
+const FRAMEWORK_CODES: Record<string, string> = {
+  FST_ERR_CTP_BODY_TOO_LARGE: "PAYLOAD_TOO_LARGE",
+  FST_ERR_CTP_INVALID_MEDIA_TYPE: "UNSUPPORTED_MEDIA_TYPE",
+};
 
 export function registerErrorHandlers(app: FastifyInstance): void {
   app.setNotFoundHandler((request, reply) => {
@@ -28,7 +35,8 @@ export function registerErrorHandlers(app: FastifyInstance): void {
     const statusCode = error.statusCode ?? 500;
 
     // Server errors are logged in full but never leak internals to the client.
-    if (statusCode >= 500) {
+    // An HttpError is expected and safe to show, e.g. 503 when the assistant is unavailable.
+    if (statusCode >= 500 && !(error instanceof HttpError)) {
       request.log.error({ err: error }, "Unhandled error");
       const body: ErrorResponse = {
         error: { code: "INTERNAL_ERROR", message: "An unexpected error occurred" },
@@ -36,7 +44,8 @@ export function registerErrorHandlers(app: FastifyInstance): void {
       return reply.code(500).send(body);
     }
 
-    const body: ErrorResponse = { error: { code: error.code ?? "REQUEST_ERROR", message: error.message } };
+    const code = FRAMEWORK_CODES[error.code] ?? error.code ?? "REQUEST_ERROR";
+    const body: ErrorResponse = { error: { code, message: error.message } };
     return reply.code(statusCode).send(body);
   });
 }

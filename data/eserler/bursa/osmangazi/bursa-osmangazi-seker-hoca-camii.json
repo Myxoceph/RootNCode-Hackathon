@@ -1,0 +1,341 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-seker-hoca-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 430) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Mahalledeki Şeker Hoca türbesi için hedef kayıt/id bilinmiyor.",
+      "Çelebi Sultan Mehmed'in saltanat yılları kitapta yok; dating.start_year/end_year boş bırakıldı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[turbe-tas-kitabesi]",
+        "note": "Kitap tarihi 'Hicrî 878 yılı Zilhicce (M. 1473)' olarak verir. Zilhicce yılın son ayı olduğundan standart çevrimle 878 Zilhicce'si M. 1474'e düşmesi muhtemeldir; kaynağa sadık kalınarak M. 1473 korundu, çevrim doğrulanmalı."
+      },
+      {
+        "field": "inscriptions[turbe-tas-kitabesi]",
+        "note": "Kitap, taşın metnini ve meal'ini aynı paragrafta verir; Türkçe metindeki 'Mealen' bölümü İngilizce metinde 'Meaning' olarak ayrılmıştır. Türkçe meal kullanıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeker Hoca Camii",
+    "en": "Şeker Hoca Mosque"
+  },
+  "subtitle": {
+    "tr": "Kitabesiz, tek kubbeli kare planlı mahalle camisi",
+    "en": "Small single-domed, square-plan neighborhood mosque without an inscription"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tek kubbeli",
+    "kare plan",
+    "Bursa kemerli kapı",
+    "kitabesiz"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu",
+    "address": "Şeker Hoca Caddesi, Cami Aralığı 2. Sokak, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "430"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.182877,
+      "lng": 29.061933,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q127788152 ('Şeker Hoca Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Çelebi Sultan Mehmed dönemi (tahmini)",
+      "en": "Reign of Çelebi Sultan Mehmed (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitabesi yoktur; tarih kayıtlarına ve basit inşa biçimine bakılarak Çelebi Sultan Mehmed devrinde yapıldığı düşünülmektedir. Kitap padişahın saltanat yıllarını vermez.",
+      "en": "It has no inscription; judging from historical records and its simple construction it is thought to date from the reign of Çelebi Sultan Mehmed. The book does not give the reign's years."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "430"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kitabesi olmayan cami kare planlıdır (8,20 × 8,20 m) ve kasnaksız, kurşun kaplı tek kubbeyle örtülüdür. Çelebi Sultan Mehmed devrinde yapıldığı düşünülmektedir. Aynı adlı mahallede bir türbe de bulunur.",
+    "en": "The mosque, which has no inscription, has a square plan (8.20 × 8.20 m) and a single drumless, lead-covered dome. It is thought to have been built in the reign of Çelebi Sultan Mehmed. A tomb stands in the neighborhood of the same name."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Caminin kitabesi yoktur, bu nedenle inşa tarihi kesin olarak bilinmemektedir. Tarih kayıtlarına ve caminin basit inşa biçimine bakıldığında Çelebi Sultan Mehmed devrinde inşa edildiği düşünülmektedir. Cami bakımlıdır ve ibadete açıktır.",
+        "en": "The mosque has no inscription, so its exact construction date is unknown. Considering historical records and its simple construction style, it is thought to have been built in the reign of Çelebi Sultan Mehmed. It is maintained and open for worship."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "430"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "İç mekân 8,20 × 8,20 m ölçülerinde kare planlıdır; üzeri kasnaksız, kurşun kaplı tek kubbeyle örtülüdür. Bursa kemerli bir kapıyla girilen harim, her duvarda ikişer olmak üzere sekiz sivri kemerli pencereyle aydınlanır. Son cemaat yerinin doğu-batı yanları kapalı, üstü ahşap çatılıdır; cephesi üç kemerli ahşap parmaklıklarla örtülüyken onarım sırasında camekânla kapatılmıştır. Duvarlar moloz taştan, minare ve pencere kemerleri tuğladandır; duvar kalınlığı 91 cm'dir.",
+        "en": "The interior is square, 8.20 × 8.20 m, covered by a single drumless lead-covered dome. The prayer hall, entered through a Bursa-arched door, is lit by eight pointed-arch windows, two on each wall. The east and west sides of the narthex are closed and it has a wooden roof; its façade, originally covered by three-arched wooden railings, was enclosed with glass during restoration. The walls are of rubble stone, the minaret and window arches of brick; wall thickness is 91 cm."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "430"
+        }
+      ]
+    },
+    {
+      "id": "mahalledeki-turbe",
+      "order": 3,
+      "title": {
+        "tr": "Mahalledeki Türbe",
+        "en": "Tomb in the Neighborhood"
+      },
+      "body": {
+        "tr": "Aynı adla anılan mahallede kâgir bir türbe de bulunmaktadır. Türbenin niyaz penceresi üstündeki taşta Mehmed bin Seyyid Ali'nin Hicrî 878 yılı Zilhicce ayının başlarında (M. 1473) vefat ettiği yazılıdır.",
+        "en": "A masonry tomb also stands in the neighborhood of the same name. A stone above the tomb's prayer window states that Mehmed, son of Seyyid Ali, died at the beginning of Zilhicce, AH 878 (AD 1473)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "8,20 × 8,20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "430"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "430"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 91,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "turbe-tas-kitabesi",
+      "location": {
+        "tr": "Mahalledeki türbenin niyaz penceresi üstündeki taş (camiye ait değil)",
+        "en": "Stone above the prayer window of the tomb in the neighborhood (not on the mosque)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Mehmed bin Seyyid Ali hicrî evâil-i Zilhicce 878 (M. 1473)",
+      "translation": {
+        "tr": "Seyyid Ali'nin oğlu Mehmed, Hicrî 878 yılı Zilhicce ayının başlarında (M. 1473) vefat etti.",
+        "en": "Mehmed, the son of Seyyid Ali, passed away at the beginning of the month of Zilhicce in the year 878 AH (1473 AD)."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 878,
+        "gregorian": "1473"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap yazı dilini belirtmiyor; Türkçe metin Arapça-Osmanlıca karışık görünüyor. Bu kitabe camiye değil, mahalledeki türbeye aittir.",
+        "en": "The book does not name the language. This inscription belongs to the tomb in the neighborhood, not to the mosque."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "turbe-vefat-1473",
+      "year": 1473,
+      "date": null,
+      "hijri": "878",
+      "type": "record",
+      "title": {
+        "tr": "Mahalledeki türbede anılan Mehmed bin Seyyid Ali'nin vefatı",
+        "en": "Death of Mehmed bin Seyyid Ali, commemorated at the tomb in the neighborhood"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şeker Hoca Camii kare planlı, tek kubbeli küçük bir camidir. Kubbe kasnaksız ve kurşun kaplıdır. Bursa kemerli kapıdan girilir; duvarlarda sekiz sivri kemerli pencere vardır. Son cemaat yeri camekânla kapatılmıştır. Duvarlar moloz taş, minare ve pencere kemerleri tuğladır.",
+      "en": "Şeker Hoca Mosque is a small square-plan, single-domed mosque. The dome is drumless and lead-covered. It is entered through a Bursa-arched door and has eight pointed-arch windows. The narthex is closed with glass. Walls are rubble stone; the minaret and window arches are brick."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seker-hoca-camii/p037-1.jpg",
+        "original_name": "01 Kapak_2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "430"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şeker Hoca Camii'nin camlı giriş bölümü",
+        "en": "Glazed entrance section of Şeker Hoca Mosque"
+      },
+      "alt": {
+        "tr": "Koyu ahşap saçaklı, üç büyük kemerli camekânla kapalı cephe taş zeminli bir avluya bakar. Önde yeşil bir gölgelik ve altıgen taş döşeli yol görünür.",
+        "en": "A dark timber-eaved facade closed by a glass screen with three large arches, facing a stone-paved yard. A green awning and hexagonal paving are in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seker-hoca-camii/p037-2.jpg",
+        "original_name": "03_7.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "430"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeker Hoca Camii'nin kubbeli iç mekânı",
+        "en": "Domed interior of Şeker Hoca Mosque"
+      },
+      "alt": {
+        "tr": "Beyaz kubbeli salonda yeşil çinili mihrap, sağda oyma ahşap minber ve ortada avize bulunur. Alt duvarlar yeşil, zeminde kırmızı halı serilidir; kubbe eteğinde yuvarlak yazı levhaları vardır.",
+        "en": "A white-domed hall with a green-tiled mihrab, a carved wooden minbar on the right and a chandelier. Lower walls are green, the carpet is red, and round inscription plaques ring the dome base."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
+  "archive_media": []
+}

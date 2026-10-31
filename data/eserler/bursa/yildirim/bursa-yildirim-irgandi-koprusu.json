@@ -1,0 +1,470 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-irgandi-koprusu",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 307-310) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Mimar kitapta belirtilmiyor.",
+      "Köprü için uygun 'type' kodu yok; 'diger' kullanıldı, tür listesine 'köprü' eklenmesi değerlendirilmeli.",
+      "Setbaşı ve Boyacıkulluğu köprüleri için ilçe kitapta belirtilmiyor; ilişki yazılmadı.",
+      "Vakıf (vakfiye) bilgisi kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.neighborhood",
+        "note": "Kitap bu köprü için 'Kurdoğlu Mahallesi' yazar; Hacı Şevki Efendi Tekkesi bölümünde 'Kurtoğlu Mahallesi' yazılmıştır. İki yazım kaynakta olduğu gibi korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Irgandı Köprüsü",
+    "en": "Irgandı Bridge"
+  },
+  "alternate_names": [
+    {
+      "tr": "Irgandı Çarşılı Köprüsü",
+      "en": "Irgandı Bazaar Bridge"
+    }
+  ],
+  "type": "kopru",
+  "secondary_types": ["bedesten"],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "köprü",
+    "çarşılı köprü",
+    "arasta",
+    "Gökdere",
+    "Irgandı",
+    "sanat köprüsü",
+    "Ponte Vecchio benzerliği"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Kurdoğlu Mahallesi",
+    "address": "Gökdere Bulvarı, No: 14",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "307"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.18189,
+      "lng": 29.070777,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 846 / M. 1442",
+      "en": "AH 846 / AD 1442"
+    },
+    "start_year": 1442,
+    "end_year": null,
+    "hijri_year": 846,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, kaynaklardaki bilgilere göre köprünün H. 846 / M. 1442'de yaptırıldığını yazar.",
+      "en": "The book states that, according to the sources, the bridge was built in AH 846 / AD 1442."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "307"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Tüccar Hoca Muslihittin bin Ali Irgandı",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "307"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Gökdere üzerinde Osmangazi ve Yıldırım ilçeleri arasında, 1442'de tüccar Hoca Muslihittin bin Ali Irgandı'nın yaptırdığı, Türkiye'nin tek çarşılı köprüsü. 32 dükkânı ve mescidiyle bir arasta olarak tasarlanmış, 1922'de bombalanıp 1949 ve 2004 onarımlarıyla bugün el sanatları sergileyen \"sanat köprüsü\"ne dönüşmüştür.",
+    "en": "Built in 1442 by the merchant Hoca Muslihittin bin Ali Irgandı over the Gökdere between the Osmangazi and Yıldırım districts, the only bridge with a bazaar in Türkiye. Designed as an arasta with 32 shops and a small mosque, it was bombed in 1922 and, after repairs in 1949 and 2004, is now an \"art bridge\" displaying handicrafts."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Irgandı Çarşılı Köprüsü, Bursa'nın özgün simgelerinden biridir. Kenti doğu ve batı yönünde ikiye ayıran Gökdere üzerinde, Osmangazi ve Yıldırım ilçeleri arasında yer alır; Setbaşı Köprüsü'nün kuzeyinde, Boyacıkulluğu Köprüsü'nün güneyindedir ve Türkiye'deki tek çarşılı köprüdür. İtalya'daki Ponte Vecchio ve Ponte Rialto ile Bulgaristan'daki Osma köprülerine benzer, bu tipolojinin Anadolu'daki nadir örneklerindendir. Köprü, 16 m açıklığında ve 11 m genişliğindeki bir kemerle Gökdere vadisinin iki yakasını birbirine bağlar.",
+        "en": "The Irgandı Çarşılı Bridge is one of the unique symbols of Bursa. It lies on the Gökdere Stream, which divides the city east and west, between the Osmangazi and Yıldırım districts, north of Setbaşı Bridge and south of Boyacıkulluğu Bridge, and is the only bridge with a bazaar in Türkiye. Similar to the Ponte Vecchio and Ponte Rialto in Italy and the Osma bridges in Bulgaria, it is one of the rare examples of this typology in Anatolia. It connects the two sides of the Gökdere valley with an arch of 16 m span and 11 m width."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "id": "dukkanlar",
+      "order": 2,
+      "title": {
+        "tr": "Dükkânlar ve İşlev",
+        "en": "Shops and Function"
+      },
+      "body": {
+        "tr": "Köprünün her iki tarafında on altışar, toplam 32 dükkân, bir mescit ve ayaklarında iki depo (muhtemelen ahır) vardır. Her iki ucunda kapıları bulunan yapı başlangıçta bir arasta olarak düzenlenmiştir. Kemer içlerindeki odaların köprünün muhafızları ve binekleri için tasarlandığı, Bursa'ya gelen tüccarların konaklamasında da kullanılmış olabileceği düşünülebilir. Günümüzde çeşitli el sanatı ürünleri sergilenip satıldığı için \"sanat köprüsü\" olarak nitelendirilir.",
+        "en": "There are 32 shops in total, sixteen on each side, a small mosque and two warehouses (probably barns) at its feet. Gated at both ends, it was originally designed as an arasta (row of shops). The rooms inside the arch may have housed the guards of the bridge and their mounts as well as merchants who came to Bursa. Today handicrafts are exhibited and sold, and it is described as the \"art bridge\"."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "310"
+        }
+      ]
+    },
+    {
+      "id": "hasar-ve-onarim",
+      "order": 3,
+      "title": {
+        "tr": "Hasar ve Onarımlar",
+        "en": "Damage and Repairs"
+      },
+      "body": {
+        "tr": "1922'de Yunan işgalinin sona ermesiyle işgal kuvvetleri Bursa'dan çekilirken köprüyü bombalamış, yapı ağır hasar görerek yaklaşık 27 yıl harabe kalmıştır. 1949'da Bursa Belediyesi'nin başlattığı onarımda ana tonoz betonarme olarak yeniden yapılmış, iki yanına taş kemerler eklenmiş ve mazgallar doldurularak özgün ölçüler değiştirilmiştir. 1989'da özgün yapıya uygun restorasyon için bilimsel çalışmalar başlatılmış, onarım 2004'te tamamlanmış ve köprü yeniden kullanıma açılmıştır.",
+        "en": "When the Greek occupation ended in 1922, retreating forces bombed the bridge; heavily damaged, it remained in ruins for about 27 years. In the repair started by Bursa Municipality in 1949 the main vault was rebuilt in reinforced concrete, stone arches were added on both sides and the original dimensions were changed by filling the gratings. Scientific studies for restoring the original structure began in 1989 and the work was completed and the bridge reopened in 2004."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "310"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kemer_acikligi",
+      "label": {
+        "tr": "Kemer açıklığı",
+        "en": "Arch span"
+      },
+      "value": 16,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "key": "kemer_genisligi",
+      "label": {
+        "tr": "Kemer genişliği",
+        "en": "Arch width"
+      },
+      "value": 11,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "key": "dukkan_sayisi",
+      "label": {
+        "tr": "Dükkân sayısı",
+        "en": "Number of shops"
+      },
+      "value": 32,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "310"
+        }
+      ],
+      "note": {
+        "tr": "Her iki yanda 16'şar.",
+        "en": "Sixteen on each side."
+      }
+    },
+    {
+      "key": "mescit_sayisi",
+      "label": {
+        "tr": "Mescit sayısı",
+        "en": "Number of mosques"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "310"
+        }
+      ]
+    },
+    {
+      "key": "depo_sayisi",
+      "label": {
+        "tr": "Ayaklardaki depo sayısı",
+        "en": "Warehouses at the piers"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "310"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'muhtemelen ahır' diyor.",
+        "en": "The book says 'probably barns'."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Tüccar Hoca Muslihittin bin Ali Irgandı",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1442",
+      "year": 1442,
+      "date": null,
+      "hijri": "846",
+      "type": "construction",
+      "title": {
+        "tr": "Köprü yaptırıldı",
+        "en": "Bridge built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "id": "bombalama-1922",
+      "year": 1922,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "İşgal kuvvetleri çekilirken bombalandı; ağır hasar",
+        "en": "Bombed by retreating occupation forces; heavy damage"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "310"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1949",
+      "year": 1949,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Belediyesi onarımı: ana tonoz betonarme, iki yana taş kemer, mazgallar dolduruldu",
+        "en": "Bursa Municipality repair: main vault in reinforced concrete, stone arches added, gratings filled"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "310"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1989",
+      "year": 1989,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Özgün yapıya uygun restorasyon için bilimsel çalışmalar başladı",
+        "en": "Scientific studies for a restoration true to the original began"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "310"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarım tamamlandı, köprü yeniden kullanıma açıldı",
+        "en": "Repair completed; bridge reopened"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "310"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Köprü, Gökdere vadisinin iki yakasını 16 m açıklığında ve 11 m genişliğindeki bir kemerle birleştirir. Üzerinde iki yanda on altışar dükkân bulunur; iki ucunda kapılar, ayaklarında bir mescit ve iki depo vardır. Bir arasta gibi düzenlenmiştir ve bugün el sanatı ürünleri sergilenip satılır.",
+      "en": "The bridge joins the two sides of the Gökdere valley with a 16 m span, 11 m wide arch. It carries sixteen shops on each side, with gates at both ends and a small mosque and two warehouses at its feet. Laid out like an arasta, it now displays and sells handicrafts."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-irgandi-koprusu/p031-2.jpg",
+        "original_name": "11 ERD01569ai kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "310"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Irgandı Köprüsü, taş kemer ve üzerindeki yapı",
+        "en": "Irgandı Bridge, stone arch and building above"
+      },
+      "alt": {
+        "tr": "Dere yatağı üzerinde tek taş kemerli köprü ve üzerinde sarı renkli, ahşap pencereli çarşı yapısı görünür. Çevre ağaçlarla çevrilidir.",
+        "en": "A single stone arch spans a stream bed, with a yellow building with wooden windows on top. Trees surround the scene."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-irgandi-koprusu/p031-1.jpg",
+        "original_name": "05 DJI_20241015135759_0718_D-Edit.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "310"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Köprü ve çarşının kuşbakışı görünümü",
+        "en": "Bridge and market from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan, dere üzerinden geçen köprünün iki yanında uzun, kiremit çatılı iki sıra çarşı yapısı uzanır. Çevresinde ağaçlar ve dere yatağı bulunur.",
+        "en": "From above, two long tile-roofed rows of market buildings run along the bridge over the stream. Trees and the stream bed surround them."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-irgandi-koprusu/p031-3.jpg",
+        "original_name": "08 ERD01524 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "310"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Köprüdeki çarşı sokağı",
+        "en": "Market street on the bridge"
+      },
+      "alt": {
+        "tr": "Taş döşeli dar sokağın iki yanında sarı boyalı, koyu ahşap kepenkli dükkânlar sıralanır. Üstte demir levhalı bir tabela asılıdır; sağda bilgi levhası vardır.",
+        "en": "A narrow stone-paved street lined with yellow shops with dark wooden shutters. An iron sign arches overhead and an information board is on the right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-15"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

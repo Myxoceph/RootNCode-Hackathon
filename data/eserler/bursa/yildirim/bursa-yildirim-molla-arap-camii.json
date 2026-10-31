@@ -1,0 +1,670 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-molla-arap-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden (s. 239-242) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kesin inşa yılı kitapta yok; 'XVI. yüzyılın ilk yarısı' banînin ölüm tarihinden çıkarım olarak kitapta geçiyor.",
+      "Mimar ve vakıf (vakfiye) bilgisi kitapta yok.",
+      "Edirne Eski Camii (1424) ile mimari benzerlik anılıyor; Edirne bu veri setinde olmadığı için ilişki kaydı açılmadı.",
+      "Molla Arap'ın Saraybosna ve Üsküp'te yaptırdığı mescitler veri setinin dışında; ilişki açılmadı.",
+      "Haziredeki Molla Arap kabri hakkında ek bilgi kitapta yok; hazire ayrı bölüm olarak anlatılmıyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[onarim-1876]",
+        "note": "Kitap 'Plevne Savaşı sonrası' 1876'yı verir; savaşın tarihiyle yıl uyumu veri ekibince kontrol edilmeli. Kitaptaki değer saklandı."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Anlatı sırası kesin değildir: 1722'den sonra mahallenin terk edilip caminin harabeye döndüğü, 1747'de ise dokuz kubbenin onarıldığı söylenir; kitap bu iki bilgiyi birbirine bağlamaz."
+      },
+      {
+        "field": "sections[bani]",
+        "note": "Kitap Molla Arap'ın doğumunu yaş hesabıyla H. 864 / M. 1460'lara dayandırır ('olabilir'); kesin doğum tarihi verilmez."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Molla Arap Camii",
+    "en": "Molla Arap Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Balabancık Camii",
+      "en": "Balabancık Mosque",
+      "note": "Başlıkta parantez içinde; cami Balabancık Caddesi üzerindedir."
+    },
+    {
+      "tr": "Mollaarap Camii",
+      "en": "Mollaarap Mosque",
+      "note": "Kitap metninde bu yazımla da geçer."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Molla Arap",
+    "Balabancık",
+    "dokuz kubbeli",
+    "Edirne Eski Camii planı",
+    "1855 depremi",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Mollaarap",
+    "address": "Mollaarap Mahallesi, Balabancık Caddesi, No: 35",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "239"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.174421,
+      "lng": 29.074212,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/673094659 ('Molla Arap Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XVI. yüzyılın ilk yarısı (banînin ölüm tarihine göre)",
+      "en": "First half of the 16th century (judged from the founder's death date)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap, yaptıranın vefat tarihi (H. 938 / M. 1531) göz önüne alınarak caminin XVI. yüzyılın ilk yarısında inşa edildiğinin kabul edildiğini söyler; inşa yılı verilmez.",
+      "en": "The book says that, given the founder's death date (AH 938 / AD 1531), the mosque is believed to have been built in the first half of the 16th century; no construction year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "241"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mevlânâ Mehmed bin Ömer bin Hamza (Molla Arap)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "239"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Molla Arap olarak bilinen âlim Mevlânâ Mehmed bin Ömer bin Hamza'nın yaptırdığı, dört paye üzerine dokuz kubbeli kare planlı cami. 1855 depreminde büyük hasar görmüş, sonraki onarımlarla özgün dokuz kubbeli biçimine kavuşturulmuş ve bugün ibadete açıktır.",
+    "en": "A square-plan, nine-domed mosque on four piers built by the scholar Mevlânâ Mehmed bin Ömer bin Hamza, known as Molla Arap. Badly damaged in the 1855 earthquake, it was returned to its nine-domed form by later repairs and is open for worship today."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Yıldırım ilçesi Mollaarap Mahallesi, Balabancık Caddesi, No: 35'te, Bursa'nın fethi sırasında şehrin kontrol altına alınmasında stratejik öneme sahip Balabancık Kalesi'nin bulunduğu cadde üzerindedir.",
+        "en": "The mosque is at No. 35 Balabancık Street, Mollaarap Neighborhood, Yıldırım, on the street where Balabancık Castle, strategically important for controlling Bursa during its conquest, stands."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "239"
+        }
+      ]
+    },
+    {
+      "id": "bani",
+      "order": 2,
+      "title": {
+        "tr": "Banî: Molla Arap",
+        "en": "The Founder: Molla Arap"
+      },
+      "body": {
+        "tr": "Yapının banisi halk arasında 'Molla Arap' olarak tanınan Mevlânâ Mehmed bin Ömer bin Hamza'dır; bazı kaynaklarda 'Mehmed Molla', asıl adı Muhyiddin Mehmed'dir. Dedesi ve babasının göç ettiği Antakya'da doğmuş, H. 938 / M. 1531'de yetmiş yaşında vefat ettiğine göre H. 864 / M. 1460'larda doğmuş olabilir. İlk eğitimini babası ve amcaları Şeyh Hüseyin ile Şeyh Ahmed'den almış, dedesiyle gittiği Mısır'da sürdürmüş, Kayıtbay'ın vefatından sonra H. 903 / M. 1497'de Bursa'ya yerleşmiştir. Sonra İstanbul'a geçip II. Bayezid, Yavuz Sultan Selim ve Kanûnî Sultan Süleyman'ın çevresinde yer almış, seferlere katılıp askerlere vaaz vermiştir. Şiiliğe karşı sert vaazlar vermiş, Yavuz'u Şah İsmail üzerine sefere teşvik edenlerden olmuştur. Rumeli'de on yıl Üsküp'te tefsir okutmuş, H. 932 / M. 1526'da Macaristan seferinden sonra Bursa'ya dönmüş ve H. 4 Muharrem 938 / M. 18 Ağustos 1531'de vefat edene dek burada yaşamıştır. İnşaatı henüz tamamlanmamış caminin haziresine defnedilmiştir. Hadis ilmi üzerine eserler yazmış, Saraybosna ve Üsküp'te birer mescit yaptırmıştır.",
+        "en": "The founder is Mevlânâ Mehmed bin Ömer bin Hamza, known as 'Molla Arap' (also 'Mehmed Molla' in some sources; real name Muhyiddin Mehmed). Born in Antakya, where his grandfather and father had emigrated, he may have been born around AH 864 / AD 1460, since he died in AH 938 / AD 1531 aged seventy. He studied with his father and uncles Shaykh Hüseyin and Shaykh Ahmed, then in Egypt with his grandfather, and settled in Bursa in AH 903 / AD 1497 after Qaitbay's death. He later moved to Istanbul, was in the circle of Bayezid II, Yavuz Sultan Selim and Kanûnî Sultan Süleyman, joined campaigns and preached to soldiers, spoke harshly against Shiism and urged Yavuz to campaign against Shah İsmail. He taught tafsir in Skopje for ten years, returned to Bursa after the 1526 Hungarian campaign and lived there until his death on 4 Muharram AH 938 / 18 August AD 1531. He was buried in the graveyard of the then unfinished mosque. He wrote on hadith and built masjids in Sarajevo and Skopje."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "239-241"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "1424 tarihli Edirne Eski Camii'ni andıran planıyla cami kare formda inşa edilmiş, dört büyük paye üzerine pandantiflerle oturan altıgen kasnaklı dokuz kubbeyle örtülmüştür. Beden duvarları üç sıra tuğla, bir sıra taştan almaşık örgülüdür. Sivri kemerli beş gözlü son cemaat yeri de pandantiflerle taşınır, her bölümü küçük bir kubbe örter. Eğimli arazi nedeniyle ana girişe dört basamaklı iki ayrı merdivenle çıkılır. Pencereler dikdörtgen kesitli, demir şebekeli, kemerli alınlıklıdır; kuzey cephesinde beş, yan cephelerde karşılıklı beşer pencere vardır. Giriş alınlığında kitabe yoktur. İç mekân badanalı, mihrap nişi sadedir.",
+        "en": "With a plan reminiscent of the 1424 Edirne Eski Mosque, the mosque is square and covered by nine domes on hexagonal drums, carried on pendentives over four large piers. The walls use three rows of brick to one of stone. The pointed-arched five-bay narthex is also carried on pendentives with a small dome over each bay. Because the site slopes, the main entrance is reached by two separate four-step staircases. Windows are rectangular with iron grilles and arched pediments; there are five on the north façade and five on each side. There is no inscription on the entrance pediment. The interior is whitewashed and the mihrab niche plain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240-242"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Kuzeybatı köşedeki minare sekizgen taş kaide üzerindedir; Türk üçgenli pabuçtan tuğla silindirik gövdeye geçilir. Gövdenin alt ve üstünde süslemesiz iki bilezik, şerefe altında altı sıra kirpi saçak vardır. Petekten sonraki külah giderek daralan dört boğumlu yapısıyla alışılmış kalıpların dışındadır.",
+        "en": "The minaret in the northwest corner stands on an octagonal stone base; a section with Turkish triangles leads to the cylindrical brick shaft. There are two undecorated bands at the top and bottom of the shaft and six rows of sawteeth below the balcony. The spire after the neck is unusual, with a tapering four-node form."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240-241"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 5,
+      "title": {
+        "tr": "Tarihçe ve Onarımlar",
+        "en": "History and Repairs"
+      },
+      "body": {
+        "tr": "Doğudaki kubbeli bölüm 1614'te mahalle sakini Mustafa oğlu Hasan Dede tarafından ahşap döşeme yapılarak tevhidhaneye çevrilmiştir. 1645'te kubbelerin kurşunları çalınmış olsa da yapı 1722'ye kadar ibadete açık kalmış, sonra mahalle terk edilince harabeye dönmüş ve çevresi bağ ve bahçelerle dolmuştur. 1747'de mütevelli Çavuşzade Hacı Mehmet Ağa dokuz kubbeyi onarmış, ardından aynı kişinin kurşunları söküp sattığı aktarılır. 1855 depreminde yedi kubbe ve beden duvarları yıkılmış, yalnızca mihrap duvarının bir kısmı, dört paye ve üzerlerindeki iki kubbe ayakta kalmıştır. 1876 Plevne Savaşı sonrası bölgeye yerleştirilen Tatar (Kazan) muhacirleri için Ahmet Vefik Paşa'nın öncülüğünde sade biçimde onarılıp ibadete açılmış; 1888'de Bursalı fabrikatör Osman Efendi iki kubbeli, tek çatılı, kiremit örtülü olarak yeniden inşa ettirmiştir. 1951'de Bursa Eski Eserleri Sevenler Kurumu ve 1988'de Vakıflar Bölge Müdürlüğü onarımlarıyla özgün dokuz kubbeli biçime kavuşmuş, 1997'de Yıldırım Belediyesi'nin son onarımıyla cami ibadete açık durumdadır. 1930'larda cuma namazı kılındığı ve minberin bundan önce yapıldığı bilinir.",
+        "en": "In 1614 the domed section on the east was converted into a tevhidhane with a wooden floor by Hasan Dede, son of Mustafa, a neighborhood resident. The domes' lead was stolen in 1645 but the mosque stayed open for worship until 1722, after which the neighborhood was abandoned, the mosque fell into ruin and its surroundings filled with vineyards and gardens. In 1747 the trustee Çavuşzade Hacı Mehmet Ağa repaired the nine domes, but the same person reportedly later removed and sold the lead. In the 1855 earthquake seven domes and the main walls collapsed, leaving part of the mihrab wall, four piers and two domes. After the 1876 Battle of Pleven, Tatar (Kazan) immigrants were settled in the area and the mosque was simply restored and opened under Ahmet Vefik Paşa; in 1888 the Bursa manufacturer Osman Efendi rebuilt it with two domes, a single roof and tiles. Repairs by the Bursa Association for the Appreciation of Antiquities in 1951 and the Regional Directorate of Foundations in 1988 restored the nine-domed form, and after the Yıldırım Municipality's final repair in 1997 it is open for worship. Friday prayers were held in the 1930s, and the minbar predates that."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240-242"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Mollaarap Mahallesi, Balabancık Caddesi, No: 35",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "239"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Kubbe sayısı",
+        "en": "Number of domes"
+      },
+      "value": 9,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240"
+        }
+      ],
+      "note": {
+        "tr": "Dört büyük paye üzerinde altıgen kasnaklı dokuz kubbe; son cemaat yeri bölümleri ayrıca küçük kubbelidir.",
+        "en": "Nine domes on hexagonal drums over four large piers; the narthex bays also have small domes."
+      }
+    },
+    {
+      "key": "paye_sayisi",
+      "label": {
+        "tr": "Paye sayısı",
+        "en": "Number of piers"
+      },
+      "value": 4,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz_sayisi",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bays"
+      },
+      "value": 5,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "key": "pencere_kuzey",
+      "label": {
+        "tr": "Kuzey cephe pencere sayısı",
+        "en": "Windows on north façade"
+      },
+      "value": 5,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "key": "pencere_yan",
+      "label": {
+        "tr": "Yan cephe pencere sayısı (her yanda)",
+        "en": "Windows on each side façade"
+      },
+      "value": 5,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "key": "duvar_orgusu",
+      "label": {
+        "tr": "Duvar örgüsü",
+        "en": "Wall masonry"
+      },
+      "value": "Üç sıra tuğla, bir sıra taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "key": "minare_kaide",
+      "label": {
+        "tr": "Minare kaidesi",
+        "en": "Minaret base"
+      },
+      "value": "Sekizgen taş kaide; kuzeybatı köşe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "key": "giris_merdiven",
+      "label": {
+        "tr": "Ana giriş merdivenleri",
+        "en": "Main entrance staircases"
+      },
+      "value": "Dört basamaklı iki ayrı merdiven (eğimli arazi)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Molla Arap (Mevlânâ Mehmed bin Ömer bin Hamza)",
+      "role": {
+        "tr": "Banî; âlim ve vaiz; caminin haziresine defnedildi",
+        "en": "Founder; scholar and preacher; buried in the mosque's graveyard"
+      }
+    },
+    {
+      "name": "Hasan Dede",
+      "role": {
+        "tr": "1614'te doğudaki kubbeli bölümü tevhidhaneye çeviren mahalle sakini (Mustafa oğlu)",
+        "en": "Neighborhood resident (son of Mustafa) who converted the east domed section into a tevhidhane in 1614"
+      }
+    },
+    {
+      "name": "Çavuşzade Hacı Mehmet Ağa",
+      "role": {
+        "tr": "Mütevelli; 1747'de dokuz kubbeyi onardı",
+        "en": "Trustee; repaired the nine domes in 1747"
+      }
+    },
+    {
+      "name": "Ahmet Vefik Paşa",
+      "role": {
+        "tr": "Tatar muhacirler için camiyi sade biçimde onarıp ibadete açtıran",
+        "en": "Led the simple restoration and reopening for Tatar immigrants"
+      }
+    },
+    {
+      "name": "Osman Efendi",
+      "role": {
+        "tr": "Bursalı fabrikatör; 1888'de camiyi iki kubbeli olarak yeniden inşa ettirdi",
+        "en": "Bursa manufacturer; rebuilt the mosque with two domes in 1888"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "banii-vefat-1531",
+      "year": 1531,
+      "date": null,
+      "hijri": "938",
+      "type": "record",
+      "title": {
+        "tr": "Banî Molla Arap vefat etti; henüz tamamlanmamış caminin haziresine defnedildi",
+        "en": "Founder Molla Arap died and was buried in the graveyard of the unfinished mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "239-240"
+        }
+      ],
+      "note": {
+        "tr": "H. 4 Muharrem 938 / M. 18 Ağustos 1531.",
+        "en": "4 Muharram AH 938 / 18 August AD 1531."
+      }
+    },
+    {
+      "id": "tevhidhane-1614",
+      "year": 1614,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Doğudaki kubbeli bölüm ahşap döşemeyle tevhidhaneye çevrildi",
+        "en": "East domed section converted into a tevhidhane with a wooden floor"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "id": "kursun-1645",
+      "year": 1645,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Kubbelerin kurşun kaplamaları çalındı",
+        "en": "Lead coverings of the domes stolen"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "id": "terk-1722",
+      "year": 1722,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1722'ye kadar ibadete açık kaldı; sonra mahalle terk edilince harabeye döndü",
+        "en": "Open for worship until 1722; then fell into ruin as the neighborhood was abandoned"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1747",
+      "year": 1747,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Mütevelli Çavuşzade Hacı Mehmet Ağa dokuz kubbeyi onardı",
+        "en": "Trustee Çavuşzade Hacı Mehmet Ağa repaired the nine domes"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "242"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük Bursa depreminde yedi kubbe ve beden duvarları yıkıldı",
+        "en": "Seven domes and main walls destroyed in the great Bursa earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "242"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1876",
+      "year": 1876,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tatar muhacirler için sade onarım yapılıp ibadete açıldı",
+        "en": "Simply restored and opened for worship for Tatar immigrants"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "242"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'Plevne Savaşı sonrası' 1876 der.",
+        "en": "The book says 1876, 'after the Battle of Pleven'."
+      }
+    },
+    {
+      "id": "yeniden-insa-1888",
+      "year": 1888,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Osman Efendi tarafından iki kubbeli, tek çatılı olarak yeniden inşa edildi",
+        "en": "Rebuilt by Osman Efendi with two domes and a single roof"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "242"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1951",
+      "year": 1951,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu onarımı",
+        "en": "Repair by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "242"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1988",
+      "year": 1988,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı; özgün dokuz kubbeli forma kavuştu",
+        "en": "Repair by the Regional Directorate of Foundations; nine-domed form regained"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "242"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1997",
+      "year": 1997,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yıldırım Belediyesi'nin son onarımı",
+        "en": "Final repair by Yıldırım Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "242"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Molla Arap Camii, Mollaarap Mahallesi'nde Balabancık Caddesi üzerinde, eğimli bir arazide yükselen kare planlı bir camidir. Duvarları üç sıra tuğla ile bir sıra taşın dönüşümlü dizilmesiyle örülmüştür. Dört büyük paye üzerinde dokuz kubbe taşır; önünde sivri kemerli, beş gözlü ve küçük kubbelerle örtülü bir son cemaat yeri vardır. Ana girişe dört basamaklı iki ayrı merdivenle çıkılır. Kuzeybatı köşedeki minare sekizgen taş bir kaideye oturur, tuğla silindirik gövdesi dört boğumlu, daralan bir külahla biter. Pencereler demir şebekeli ve kemerli alınlıklıdır; içeri bütünüyle badanalıdır.",
+      "en": "Molla Arap Mosque is a square-plan mosque on Balabancık Street in Mollaarap Neighborhood, on sloping ground. Its walls alternate three rows of brick with one of stone. Nine domes rest on four large piers; in front is a pointed-arched, five-bay narthex covered by small domes. The main entrance is reached by two separate four-step staircases. The minaret in the northwest corner sits on an octagonal stone base, its cylindrical brick shaft ending in a tapering four-node spire. The windows have iron grilles and arched pediments; the interior is entirely whitewashed."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-molla-arap-camii/p031-1.jpg",
+        "original_name": "DJI_20240926175147_0099_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "242"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Dokuz kubbeli çatı ve minare",
+        "en": "Nine-domed roof and minaret"
+      },
+      "alt": {
+        "tr": "Taş duvarlı yapının üzerinde, gri kurşun kaplı dokuz kubbe üç sıra halinde dizilmiştir. Solda ince bir minare, arkada Bursa şehri ve ova görünür.",
+        "en": "Nine grey lead-covered domes in three rows rise above a stone-walled building. A slim minaret stands on the left, with the city of Bursa and plain beyond."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    }
+  ],
+  "archive_media": []
+}

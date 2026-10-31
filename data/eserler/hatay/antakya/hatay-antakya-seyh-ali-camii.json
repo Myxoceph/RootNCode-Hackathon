@@ -1,0 +1,631 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-seyh-ali-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Eserin dönemi (era) yapım tarihi belirsiz olduğu için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Banî ve mimar kitapta verilmiyor; founder ve architect null.",
+      "Vakıf/vakfiye bilgisi kitapta yok.",
+      "Kuzey taç kapı kitabesinin metni ve tarihi kitapta yok; kitabeden banî/tarih bilgisi çıkarılabilir mi kontrol edilmeli.",
+      "Habib-i Neccar Camii bu camiyi mimari öncül olarak anıyor (ilişki Habib-i Neccar tarafında yazıldı); bu kayıtta karşı yönlü ilişki yazılmadı.",
+      "Minaredeki şerefe sayısının değiştiği tarih (2001 'e kadar iki, sonrasında tek şerefe') kesin değil; zaman çizelgesine yazılmadı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap hem 'inşa tarihi 15. yüzyılın ikinci yarısına kadar gidebileceği tahmin edilen' hem de 'varlığı 1580'de ortaya çıkmış' der; 1580 ile mihrap kornişlerinin 19. yüzyıl sonu/20. yüzyıl başı Batı etkisi olarak değerlendirilmesi caminin birden çok evresi olabileceğini düşündürür, kitap bunu açıklamıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Ali Camii",
+    "en": "Sheikh Ali Mosque"
+  },
+  "subtitle": {
+    "tr": "Şeyh Ali Külliyesi'nin camisi",
+    "en": "The mosque of the Sheikh Ali complex"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-seyh-ali-kulliyesi",
+  "era": null,
+  "tags": [
+    "cami",
+    "antakya",
+    "şeyh-ali",
+    "beyaz-kalker",
+    "taç-kapı"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "163-173"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.202157,
+      "lng": 36.167577,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/311093519 ('Şeyh Ali Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi 15. yüzyılın ikinci yarısına kadar gidebileceği tahmin ediliyor; varlığı 1580'de ortaya çıkmış",
+      "en": "Construction estimated to go back to the second half of the 15th century; its existence revealed in 1580"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap 'inşa tarihi 15. yüzyılın ikinci yarısına kadar gidebileceği tahmin edilen, fakat varlığı 1580'de ortaya çıkmış' der; 1580 yapım yılı olarak verilmediği için yıllar boş bırakıldı.",
+      "en": "The book says 'construction date estimated to go back to the second half of the 15th century, but whose existence was revealed in 1580'; 1580 is not given as a construction year, so years are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "163"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Avlunun güneyinde, tamamı beyaz kalker taşla düzgün işçilikle yapılmış cami; kuzey duvarına bitişik, ahşap sundurmayla örtülü son cemaat yeri ve siyah-beyaz taş işçilikli, altı satırlık kitabeli taç kapısı vardır. Kare mekân taş kaplı sivri bir kubbeyle örtülüdür. Kitaba göre plan, anıtsal mimari ve Antakya'daki en zengin tezyinattan biri sayesinde şehir mimarisinde saygın bir yere sahiptir.",
+    "en": "The mosque south of the courtyard is built very neatly entirely of white limestone; it has a narthex adjoining its north wall covered by a wooden porch and a portal of black-and-white stonework with a six-line inscription. The square space is covered by a stone-coated pointed dome. According to the book it has a respectable place in the city's architecture owing to its plan, monumental architecture and one of Antakya's richest decorations."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve genel değerlendirme",
+        "en": "History and overview"
+      },
+      "body": {
+        "tr": "İnşa tarihi 15. yüzyılın ikinci yarısına kadar gidebileceği tahmin edilen, fakat varlığı 1580'de ortaya çıkmış Şeyh Ali Camii, gelenekçi bölgesel mimarinin dar sınırlarını aşarak daha geniş coğrafyalardan nasiplenmiş bir eserdir. Kitap, Türkmenistan'daki Talhatan Baba Camii'nde (11. veya 12. yüzyıl) değerlendirilmiş planın asırlar sonra Antakya'da ortaya çıkmasını hayret verici bulur. Cami planı, anıtsal mimarisi ve Antakya'daki en zengin tezyinata sahip eserlerden biri olması sebebiyle şehrin mimarisinde saygın bir yere sahiptir.",
+        "en": "The Sheikh Ali Mosque, whose construction date is estimated to go back to the second half of the 15th century but whose existence was revealed in 1580, went beyond the narrow limits of traditional regional architecture and benefited from wider geographies. The book finds it astonishing that the plan used in the Talhatan Baba Mosque in Turkmenistan (11th or 12th century) appeared in Antakya centuries later. Owing to its plan, monumental architecture and being one of Antakya's richest decorated works, it has a respectable place in the city's architecture."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "163"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 2,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Caminin kuzeydoğu köşesinde 2001 yılına kadar iki şerefeli, sonrasında tek şerefeli hale getirilen bir minare bulunur. Tek şerefeden sonra yüksek petek ve sivri külahla devam eden minare bu haliyle de klasik Osmanlı devri minareleriyle boy ölçüşecek kadar göz alıcıdır.",
+        "en": "In the northeast corner of the mosque there is a minaret that had two balconies until 2001 and a single balcony afterwards. Continuing with a high honeycomb and pointed cone after the single balcony, it is eye-catching even now, competing with the minarets of the classical Ottoman period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "163"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-tac-kapi",
+      "order": 3,
+      "title": {
+        "tr": "Son cemaat yeri ve taç kapı",
+        "en": "Narthex and portal"
+      },
+      "body": {
+        "tr": "Cami, kuzey duvarına bitişik son cemaat yeriyle birlikte avlunun güneyinde yer alır ve tamamı beyaz kalker taş malzemeyle düzgün işçilikle yapılmıştır. Köşelerde 'L' şeklindeki ayaklara ve aralarında ince mermer sütunlara oturan sivri kemerli son cemaat yeri, diğer Antakya cami ve mescitleri gibi ahşap sundurmayla örtülüdür; bu örtü kuzeydeki heybetli taç kapıyı ikiye bölerek alınlıktaki ikiz pencereyi önemli ölçüde işlevsiz bırakır. Kapının iki yanında birer zarif sütuna oturan baş kemerle kuşatılan siyah beyaz taş işçiliği, üstteki ikiz pencere ve aralarındaki gemi çarkı biçimli yuvarlak pencere taç kapının özenle yapıldığını gösterir. Kapı açıklığıyla baş kemer arasında altı satırlık bir kitabe vardır.",
+        "en": "The mosque, built very neatly entirely of white limestone, stands in the south of the courtyard with the narthex adjoining the north wall. The narthex, of pointed arches on 'L'-shaped corner piers and thin marble columns, is covered with a wooden porch like other Antakya mosques and masjids; this cover divides the majestic portal in the north in two, leaving the twin window in the pediment largely dysfunctional. The black-and-white stonework surrounded by a head arch on an elegant column at each side of the door, the twin window above and the ship's-wheel-like round window between them show the care taken in the portal. A six-line inscription sits between the door opening and the head arch."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "164"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 4,
+      "title": {
+        "tr": "Harim",
+        "en": "Sanctuary"
+      },
+      "body": {
+        "tr": "Harim son cemaat yerinden daha yüksek tutularak vurgulanmıştır; minare önündeki taş kaplamalı sivri kubbe yapıya hâkim bir görünüş verir. Kare plandan kubbeye geçişte köşelerde üçgen yelpazeler kullanılmıştır. Kubbenin doğu ve batısındaki alanlar kalın gömme ayaklara oturan çapraz tonozlarla örtülüdür. Doğuda ve batıda dörder, kuzeyde ve güneyde altışar olmak üzere toplam yirmi altlık pencere; ayrıca doğu ve batıda birer çift, kuzey ve güneyde üçer çift olmak üzere ikiz kemer görünüşlü on altı pencere daha vardır, bu yüzden içeri aydınlık ve ferahtır.",
+        "en": "The sanctuary is emphasised by being higher than the narthex; the stone-coated pointed dome in front of the minaret dominates the building. Triangular fans are used at the corners in the transition from the square plan to the dome. The areas east and west of the dome are covered by cross vaults on thick built-in piers. There are twenty lower windows in total, four each in the east and west and six each in the north and south, plus sixteen more twin-arch-looking windows, a pair each in the east and west and three pairs each in the north and south, making the interior bright and spacious."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "167-171"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber",
+      "order": 5,
+      "title": {
+        "tr": "Mihrap, minber ve müezzin mahfili",
+        "en": "Mihrab, minbar and muezzin's gallery"
+      },
+      "body": {
+        "tr": "Mihrap sivri kemerli bir nişten ibarettir; iki yanında, sütun başlığı görünümlü tablalarla zenginleştirilmiş kornişler mihrabın üstünde birleşerek düz bir alınlık oluşturur. Kitap bu kornişleri Türk mimarisinde 19. yüzyıl sonu ve 20. yüzyıl başında Batı etkisi olarak değerlendirildiğini belirtir. Oranları başarılı mermer minberin kapısı aynı tarz süslemeye sahiptir; iki yandaki süpürgelikler gotik üslubun izini taşır. Kuzeydeki ana kapının üstündeki müezzin mahfili, ince sütunlar üzerinde üç sepet kulpu kemere oturur ve iki renkli taş işçiliğiyle zenginleştirilmiştir.",
+        "en": "The mihrab is a pointed-arched niche; cornices on either side, enriched with column-head-like tables, meet above it in a flat pediment. The book notes such cornices are considered Western influence in Turkish architecture in the late 19th and early 20th centuries. The door of the marble minbar, of very successful proportions, has the same decoration; the skirting boards on both sides bear traces of the Gothic style. The muezzin's gallery above the main door in the north rests on three basket-handle arches on thin columns and is enriched with two-colour stonework."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "171-173"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "alt_pencere",
+      "label": {
+        "tr": "Alt pencere sayısı",
+        "en": "Lower windows"
+      },
+      "value": 20,
+      "unit": "pencere",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "167"
+        }
+      ]
+    },
+    {
+      "key": "ust_pencere_cift",
+      "label": {
+        "tr": "Üst ikiz pencere çifti sayısı",
+        "en": "Upper twin window pairs"
+      },
+      "value": 8,
+      "unit": "çift",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "171"
+        }
+      ],
+      "note": {
+        "tr": "Doğu ve batıda birer, kuzey ve güneyde üçer çift; kitap toplam on altı pencere der.",
+        "en": "One pair each east and west, three each north and south; the book states sixteen windows in total."
+      }
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "tac-kapi-kitabesi",
+      "location": {
+        "tr": "Kuzey taç kapı, kapı açıklığı ile baş kemer arası",
+        "en": "North portal, between the door opening and the head arch"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Altı satırlık kitabe; metin, tarih ve dil kitapta verilmiyor.",
+        "en": "Six-line inscription; the book gives no text, date or language."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "164"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "varlik-1580",
+      "year": 1580,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Caminin varlığı belgelerde ortaya çıkıyor",
+        "en": "The mosque's existence is first revealed"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "163"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca 'varlığı 1580'de ortaya çıkmış' der; kaynağın türü belirtilmez.",
+        "en": "The book only says 'its existence was revealed in 1580'; the type of source is not stated."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-seyh-ali-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Şeyh Ali Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Sheikh Ali Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "163"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, düzensiz avlunun güneyinde, tamamı beyaz kalker taştan yapılmış bir yapıdır. Kuzey yüzüne bitişik son cemaat yeri, köşelerde L biçimli ayaklara ve aralarında ince mermer sütunlara oturan sivri kemerlerden oluşur ve ahşap sundurmayla örtülüdür. Bunun ardında siyah beyaz taş işçilikli, üstünde ikiz pencere ve gemi çarkı biçimli yuvarlak pencere bulunan, altı satırlık kitabeli taç kapı yükselir. Harim son cemaat yerinden yüksektir ve taş kaplı sivri bir kubbeyle örtülüdür; kuzeydoğu köşede tek şerefeli, petekli ve sivri külahlı minare durur.",
+      "en": "The mosque stands south of the irregular courtyard, built entirely of white limestone. The narthex on its north face has pointed arches on L-shaped corner piers and thin marble columns, covered by a wooden porch. Behind it rises the portal of black-and-white stonework with a twin window and a ship's-wheel-like round window above and a six-line inscription. The sanctuary is higher than the narthex and covered by a stone-coated pointed dome; the minaret with a single balcony, honeycomb and pointed cone stands at the northeast corner."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Külliyeler ve Kervansaraylar bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p081-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "160-161"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin son cemaat yeri, minaresi ve şadırvanı",
+        "en": "Mosque porch, minaret and shadirvan"
+      },
+      "alt": {
+        "tr": "Beyaz kalker taşlı caminin önünde sivri kemerli son cemaat yeri ve eğimli ahşap sundurma uzanır. Arkada kubbe ve minare, sağda ağaçlar ve küçük bir şadırvan görülür.",
+        "en": "In front of the white limestone mosque stretch a pointed-arch porch and a sloped wooden roof. A dome and minaret rise behind, with trees and a small shadirvan on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p082-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "162-163"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Son cemaat yeri ve siyah beyaz taşlı taç kapı",
+        "en": "Porch and black-and-white stone portal"
+      },
+      "alt": {
+        "tr": "Sivri kemerlerin arasında siyah beyaz taş işçiliğiyle çerçevelenmiş ahşap kapı vardır. Kapının iki yanında ince sütunlar, yanlarda ahşap korkuluklar bulunur.",
+        "en": "Between pointed arches, a wooden door is framed by black-and-white stonework. Slender columns flank the door, with wooden railings on the sides."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p083-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "165"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Taç kapı üzerindeki kitabe",
+        "en": "Inscription above the portal"
+      },
+      "alt": {
+        "tr": "Siyah, gri ve beyaz taşların dönüşümlü dizildiği kemerin altında dikdörtgen bir mermer kitabe yer alır. Üstünde küçük yuvarlak bir madalyon, altında ahşap kapı görünür.",
+        "en": "A rectangular marble inscription sits under an arch of alternating black, grey and white stones. A small round medallion is above and the wooden door below."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p083-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "164"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Tek şerefeli minare",
+        "en": "Minaret with a single balcony"
+      },
+      "alt": {
+        "tr": "Taş, silindirik gövdeli minare koyu mavi gökyüzüne yükselir. Tek şerefenin üstünde sivri bir külah vardır; gövde kısmen çok kenarlı ve işlemelidir.",
+        "en": "A stone cylindrical minaret rises against a deep blue sky. A single balcony supports a pointed cone, and the shaft carries some carved detail."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p085-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "169"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yerinde sütunlar ve kapı",
+        "en": "Columns and door in the porch"
+      },
+      "alt": {
+        "tr": "Gölgeli son cemaat yerinde işlemeli başlıklı mermer sütunlar ve siyah beyaz taşlı kemerli ahşap kapı görülür. Üstte ahşap örtü, uzakta yeşillik ve dağ vardır.",
+        "en": "In the shaded porch are marble columns with carved capitals and an arched wooden door with black-and-white stone. A wooden roof is overhead, with greenery and a mountain far off."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p087-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "173"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sütun başlığının yakın görünümü",
+        "en": "Close view of a column capital"
+      },
+      "alt": {
+        "tr": "Mermer sütunun üstünde oyma yaprak motifli taş başlık yakından görülür. Arkada turuncu ağaçlar ve uzakta bir dağ seçilir.",
+        "en": "A stone capital with carved leaf motifs atop a marble column, seen close up. Orange trees and a distant mountain are behind it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p087-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "172-173"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Cami duvarındaki yazılı levha",
+        "en": "Inscribed plaque on the mosque wall"
+      },
+      "alt": {
+        "tr": "Taş duvarda ahşap çerçeveli, sivri kemerli, üstünde hilal bulunan beyaz bir yazı levhası vardır. Yanında kafesli bir pencere görülür.",
+        "en": "A white inscribed plaque in a pointed wooden frame topped by a crescent hangs on the stone wall. A latticed window is beside it."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p087-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "173"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Duvarda sivri kemerli niş ve kafesli pencereler",
+        "en": "Pointed-arch niche between latticed windows"
+      },
+      "alt": {
+        "tr": "Taş duvarda sivri kemerli sığ bir niş yer alır. İki yanında koyu parmaklıklı pencereler bulunur.",
+        "en": "A shallow pointed-arch niche in the stone wall, with dark barred windows on either side."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p084-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "166-167"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harimde kubbe, mahfil ve kırmızı halı",
+        "en": "Dome, gallery and red carpet in the sanctuary"
+      },
+      "alt": {
+        "tr": "Pencereli kasnağa oturan kubbenin altında kırmızı desenli halı serilidir. Kuzey duvarında siyah beyaz kemerli bir mahfil, yanda minber merdiveni ve avizeler görülür.",
+        "en": "Beneath a dome on a windowed drum the floor is covered with red patterned carpet. A black-and-white arched gallery on the north wall, a minbar stair and chandeliers are visible."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p085-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "168"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbenin içten görünümü",
+        "en": "Interior view of the dome"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında dairesel kubbe, çevresindeki küçük pencereler ve ortada tekerlek biçimli bir avize görülür. Köşelerde tonozlar kubbeye birleşir.",
+        "en": "Looking up, the circular dome with a ring of small windows and a wheel-shaped chandelier at its center. Vaults meet the dome at the corners."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m11",
+      "type": "photo",
+      "is_cover": false,
+      "order": 11,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p085-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "168"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Mermer mihrap ve merdivenli minber",
+        "en": "Marble mihrab and staircase minbar"
+      },
+      "alt": {
+        "tr": "Beyaz ve gri mermerden süslü bir mihrap ile korkuluklu taş merdivenli minber yan yanadır. Önünde kırmızı halı, yanında kemerli pencereler görülür.",
+        "en": "A decorated white-and-grey marble mihrab and a minbar with a balustraded stair stand side by side. Red carpet lies in front, with arched windows beside."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m12",
+      "type": "photo",
+      "is_cover": false,
+      "order": 12,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p085-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "169"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Giriş duvarının üstündeki müezzin mahfili",
+        "en": "Muezzin gallery above the entrance wall"
+      },
+      "alt": {
+        "tr": "Siyah beyaz taş kemerlerin üstünde ahşap korkuluklu bir mahfil uzanır. Altında camlı kapı, iki yanda pencereler, zeminde kırmızı halı vardır.",
+        "en": "A gallery with a wooden balustrade runs above black-and-white stone arches. Below are a glazed door, windows on both sides and red carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m13",
+      "type": "photo",
+      "is_cover": false,
+      "order": 13,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-seyh-ali-camii-ve-kulliyesi/p086-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "170-171"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harimde kıbleye doğru geniş görünüm",
+        "en": "Wide view of the sanctuary toward the qibla"
+      },
+      "alt": {
+        "tr": "Beyaz boyalı duvarlı geniş mekânda kırmızı halılar kıbleye doğru uzanır. Sağda mahfil, ortada kubbe ve avize, sol uçta minber görünür.",
+        "en": "A broad white-walled hall with red carpets stretching toward the qibla. The gallery is on the right, the dome and chandelier in the center, and the minbar at the far left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

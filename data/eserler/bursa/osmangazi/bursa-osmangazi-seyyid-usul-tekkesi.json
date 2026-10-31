@@ -1,0 +1,821 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-seyyid-usul-tekkesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Tekke ve Zaviyeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Tekkeler ve Zaviyeler (Osmangazi) bölümünden yapay zekâ ile özetlenerek taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; saha/GPS ile eklenip doğrulanmalı (in_review öncesi zorunlu).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgisi (ücret, saat, süre) kitapta yok.",
+      "Kuruluş tarihi bilinmiyor (inşa kitabesi yok); kitap 15. yüzyıl kabul ediyor.",
+      "Bahçe duvarına yerleştirilen, toprak altından çıkan parçalı kitabenin metni/içeriği kitapta yok; dergâhla bağı kesin değil.",
+      "İbrahim Dede (1856) ve Süleyman Rûhî (1847) mezar taşı metinlerinin 'Mealen' çevirisi kitapta verilmemiş; translation boş bırakıldı.",
+      "Hoca Hasan Sincânî (H. 920) ve Hoca Mahmud (H. 919) mezar taşlarının Farsça metni kitapta aktarılmamış.",
+      "Hazirede mezar taşı olmayan 14 kişinin adları kitapta yok.",
+      "Peripeyker Câfer Çelebi ve Emîr Sultan, Seyyid Nâsır, Seyyid Nimetullah, Baba Zakir için ayrı eser kayıtları varsa ilişki eklenebilir (kitap bu eserleri bağlamıyor).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[ahmed-efendi-vefat]",
+        "note": "Kitap şeyh Ahmed Efendi Kâdirî'nin vefatını 'H. 1225 / M. 1801' veriyor. H. 1225 yılı M. 1810'a denk gelir; M. 1801 için H. 1215-1216 olmalı (aynı sayfada 1801 yangını H. 1216 olarak geçiyor). Hicri ve miladi değerlerden biri hatalı; ikisi de saklandı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Medrese ile dergâhın ilişkisi tutarsız: bir anlatımda medrese dergâhın bitişiğinde yeni bir yapı (H. 962 / M. 1555), kitap ayrıca 'bazı kaynaklarda dergâh binasının doğrudan medreseye dönüştürüldüğü' bilgisini de veriyor. İkisi de aktarıldı, bölüm 'disputed'."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Seyyid Usûl'e ait olduğu 'tahmin edilen' mezar taşının yalnızca ayak taşı günümüze ulaşmış ve H. 894 / M. 1489 tarihi taşıyor; 'baş taşı' kitabesi ise ayrıca aktarılıyor (s. 616-617). Baş taşının sağlam mı yoksa kayıp mı olduğu belirsiz; kitap bu iki bilgiyi birlikte veriyor."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Kitap 'Zeyniyye tarikatına ait mezar taşları' cümlesinden hemen sonra Kadiri-Eşrefî ve Uşşâkî taçlı taşları sayıyor; bu taşların Zeyniyye ile ilişkisi netleştirilmemiş, kaynağa sadık bırakıldı."
+      },
+      {
+        "field": "inscriptions[ibrahim-dede-mezar]",
+        "note": "İbrahim Dede (v. 19 Rebiülahir 1273 / 17 Aralık 1856) ile 'Şeyh İbrahim Efendi' (Kadiri-Eşrefî tacı, Kadiriyye şeyhi) aynı kişi mi, kitap belirtmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Seyyid Usûl Tekkesi",
+    "en": "Seyyid Usûl Sufi Lodge"
+  },
+  "subtitle": {
+    "tr": "Seyyid Usûl Tekkesi ve Haziresi",
+    "en": "Seyyid Usûl Sufi Lodge and Graveyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Seydi Usûl Tekkesi",
+      "en": "Seydi Usûl Lodge",
+      "note": "halk arasındaki telaffuz"
+    },
+    {
+      "tr": "Seyyid Usûl Kültür Merkezi",
+      "en": "Seyyid Usûl Cultural Center",
+      "note": "2008'den itibaren işlevi"
+    }
+  ],
+  "type": "tekke",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tekke",
+    "hazire",
+    "mezar taşı",
+    "Buharalı Seyyid Usûl",
+    "Kadiriyye",
+    "kültür merkezi",
+    "Bursalı Şairler Kütüphanesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kuruçeşme",
+    "address": "Gelin Sokak No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "611"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.188927,
+      "lng": 29.053415,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q134615587 ('Seyyid Usul Tekkesi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "15. yüzyıl (kesin tarih bilinmiyor); mevcut yapı 2008",
+      "en": "15th century (exact date unknown); current building 2008"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "İnşa kitabesi yoktur; mimari özellikler ve tarihî kaynaklara göre 15. yüzyılda kurulduğu kabul edilir. Kurucunun vefatı H. 894 / M. 1489.",
+      "en": "There is no construction inscription; on architectural features and historical sources it is accepted as founded in the 15th century. The founder died AH 894 / AD 1489."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "611"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Seyyid Usûl",
+    "role": "kurucu (Buharalı)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "611"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kuruçeşme'de, Buhara'dan gelen Seyyid Usûl'ün 15. yüzyılda kurduğu kabul edilen tekke. 1801 yangını ve 1925 kapanışı sonrası yıkılan yapılar yeniden inşa edilerek 2008'de Seyyid Usûl Kültür Merkezi olarak açıldı. Bahçesindeki hazire, Osmanlı dönemine ait en eski ve nitelikli mezar taşlarını barındırır.",
+    "en": "A lodge in Kuruçeşme accepted as founded in the 15th century by Seyyid Usûl, who came from Bukhara. After destruction by the 1801 fire and abandonment after 1925, it was rebuilt and opened in 2008 as the Seyyid Usûl Cultural Center. Its graveyard holds some of the oldest and finest Ottoman-period gravestones."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Kurucu",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Tekke Osmangazi, Kuruçeşme Mahallesi, Gelin Sokak No: 1'dedir. Seyyid Usûl tarafından kurulduğu için kendi adıyla anılır; halk arasında 'Seydi Usûl Tekkesi' de denir. Aslen Buharalı olan Seyyid Usûl, Emîr Sultan, Seyyid Nâsır, Seyyid Nimetullah ve Baba Zakir ile birlikte Buhara'dan Bursa'ya gelmiştir. İnşa kitabesi bulunmadığından kesin kuruluş tarihi belirlenememiş, mimari özellikler ve tarihî kaynaklara göre 15. yüzyılda kurulduğu kabul edilmiştir. Seyyid Usûl H. 894 / M. 1489'da vefat etmiş ve dergâhın haziresine defnedilmiştir.",
+        "en": "The lodge is in Osmangazi District, Kuruçeşme Neighborhood, Gelin Street No. 1. Named after its founder Seyyid Usûl, it is also pronounced 'Seydi Usûl Tekke' among the public. Originally from Bukhara, Seyyid Usûl came to Bursa with Emîr Sultan, Seyyid Nâsır, Seyyid Nimetullah and Baba Zakir. Since there is no construction inscription, the exact founding date could not be determined; considering its architecture and historical sources it is accepted as founded in the 15th century. Seyyid Usûl died in AH 894 / AD 1489 and was buried in the lodge's graveyard."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "611"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Onarımlar sırasında toprak altından çıkan parçalı bir kitabe bahçe duvarına yerleştirilmiş, ancak dergâhla doğrudan bağı kesinleşmemiştir. Zamanla harap olan dergâhın bitişiğine H. 962 / M. 1555'te Peripeyker Câfer Çelebi bir medrese yaptırmış ve dergâh bir süre medrese olarak hizmet vermiştir; bazı kaynaklara göre dergâh binası doğrudan medreseye dönüştürülmüştür. H. 1216 / M. 1801'deki büyük yangında yanmış, yeniden inşa edilirken birkaç oda eklenmiş ve Kadiriyye tarikatının Eşrefiyye koluna bağlı dergâh olarak kullanılmıştır. Şeyh Ahmed Efendi Kâdirî'nin vefatından sonra (kitapta H. 1225 / M. 1801) kendi haline terk edilmiş; Sa'diyye şeyhi Mehmed Emin Zuhûrî Efendi (v. H. 1260 / M. 1844) H. 1251 / M. 1836'da arsada bir tevhidhane ve birkaç derviş odası yaptırarak dergâhı esasen yeniden kurmuştur. Ardından Kadiriyye'den Şeyh İbrahim Efendi, sonra Şeyh Muhibbullah, Şeyh Fazlî, Şeyh Abdurrahman ve Şeyh Abdi Efendi şeyhlik yapmıştır.",
+        "en": "During repairs an inscription broken into pieces was removed from underground and placed on the garden wall, but its direct connection with the lodge is not certain. A madrasa was built next to the ruined lodge by Peripeyker Câfer Çelebi in AH 962 / AD 1555, and the lodge served as a madrasa for a time; some sources say the lodge building itself was converted. It burned in the great fire of AH 1216 / AD 1801 and, rebuilt with a few more rooms, served again as a lodge of the Eşrefiyye branch of the Qadiriyya. After the death of Shaykh Ahmed Efendi Qadiri (given as AH 1225 / AD 1801) it was abandoned; Mehmed Emin Zuhûrî Efendi (d. AH 1260 / AD 1844) of the Sa'diyye built a prayer hall and a few dervish rooms in AH 1251 / AD 1836, essentially re-establishing the lodge. Shaykh İbrahim Efendi of the Qadiriyya followed, then Shaykh Muhibbullah, Fazlî, Abdurrahman and Abdi Efendi."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "612-613"
+        }
+      ]
+    },
+    {
+      "id": "kapanis-ve-yeniden-insa",
+      "order": 3,
+      "title": {
+        "tr": "Kapanış ve Yeniden İnşa",
+        "en": "Closure and Reconstruction"
+      },
+      "body": {
+        "tr": "1925'te dergâhların kapatılmasının ardından tevhidhane bakımsızlıktan harap olmuş ve tamamen yıkılmıştır. Harem bölümü son şeyhin ailesine, şeyhin vefatından sonra Vakıflar Genel Müdürlüğü mensuplarına lojman olarak tahsis edilmiştir. Osmangazi Belediyesi mevcut harem binasını kaldırıp eski temelleri esas alarak tevhidhanesiyle birlikte yeniden inşa ettirmiş; bina 2008'de Seyyid Usûl Kültür Merkezi olarak hizmete açılmıştır.",
+        "en": "After the lodges were closed in 1925 the prayer hall fell into disrepair and was completely demolished. The harem section housed the last shaykh's family and, after his death, staff of the General Directorate of Foundations. Osmangazi Municipality demolished the harem building and rebuilt it with its prayer hall on the old foundations; it opened as the Seyyid Usûl Cultural Center in 2008."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "613"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Mevcut Yapılar",
+        "en": "Present Buildings"
+      },
+      "body": {
+        "tr": "Dergâha sokak kapısından sonra birkaç basamaklı merdivenle geçilen bir avlu aracılığıyla ulaşılır; solda hazire, sağda boş bahçe, ortada binalar yer alır. Harem bölümü biri bodrum olmak üzere üç kattır: bodrum depo, giriş katına batıdan kapıyla girilir (solda iki küçük oda, sağda mutfak ve hela, ortada eyvan); üst katta eyvana açılan iki oda vardır. Arkada bağımsız bir mutfak bulunur. Haremin batısındaki tevhidhane kare planlı ve iki katlıdır; alt katı bir salon ve küçük bir mekândan oluşur, üst kata doğu ve batıdan iki merdivenle çıkılır. Ana girişin üzerindeki çıkmayla oluşan asma katta üç pencere ve küçük bir balkon vardır. Mihrap güney yönündedir; batı cephesi altta üç büyük, üstte üç küçük pencerelidir. Ana mekân ahşap çatılı ve kiremitlidir. Üç binanın duvarları yığma taş ve harçtır; tevhidhanenin batısında alt katta abdesthane, üst katta şadırvan yapılmıştır.",
+        "en": "The lodge is reached through a courtyard up a few steps from the street door: graveyard on the left, empty garden on the right, buildings in the middle. The harem has three floors, one a basement: the basement is storage; the ground floor (entered from the west) has two small rooms on the left, a kitchen and toilet on the right and a central iwan; the upper floor has two rooms around an iwan. A kitchen stands independently behind. The square two-storey prayer hall west of the harem has a hall and small space on the ground floor, with two staircases (east and west) to the upper floor. A projection over the main entrance forms a mezzanine with three windows and a small balcony. The mihrab is on the south; the west facade has three large windows below and three small above. The main space has a tiled wooden roof. The walls of all three buildings are masonry stone and mortar; a washroom was built on the lower floor and a fountain on the upper floor west of the prayer hall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "613-615"
+        }
+      ]
+    },
+    {
+      "id": "gunumuz",
+      "order": 5,
+      "title": {
+        "tr": "Günümüzde",
+        "en": "Today"
+      },
+      "body": {
+        "tr": "Mülkiyeti Vakıflar Genel Müdürlüğü'ne ait bina, Osmangazi Belediyesi ve Türkiye Yazarlar Birliği Bursa Şubesi tarafından kültür merkezi olarak kullanılmaktadır. Tevhidhanenin bulunduğu bölüm konferans salonu olarak düzenlenmiş, aynı alanda 'Bursalı Şairler Kütüphanesi' yer almaktadır.",
+        "en": "Owned by the General Directorate of Foundations, the building is used as a cultural center by Osmangazi Municipality and the Bursa Branch of the Turkish Writers Union. The prayer hall section is a conference hall, and the same area houses a library called 'Bursa Poets Library'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "615"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 6,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Bahçedeki geniş hazirede Seyyid Usûl'ün yanı sıra 19. yüzyıldan itibaren görev yapmış meşâyih ve yakınlarına ait mezarlar, ayrıca dergâhla bağı kesin bilinmeyen bazı kişilerin mezarları bulunur. Son onarımda toprak altından çıkarılan taşlar düzenli biçimde yeniden yerleştirilmiştir. Hazirede Osmanlı dönemine ait en eski ve en nitelikli mezar taşı örnekleri vardır: tüccar Hoca Hasan Sincânî'nin (v. H. 920 / M. 1514) süsleme ve görkemiyle öne çıkan, baş, ayak ve yan taşları Farsça yazılı, sülüs hatlı hadis ve özlü sözler taşıyan mezar taşı ve tüccar Hoca Mahmud'un (v. H. 919 / M. 1513) benzer süslü taşı. Seyyid Usûl'e ait olduğu tahmin edilen mezar taşının yalnızca ayak taşı ulaşmış, geometrik motiflidir ve H. 894 / M. 1489 tarihini taşır. Zeyniyye tarikatına ait seçkin taşlar ile Şeyh İbrahim Efendi'nin Kadiri-Eşrefî taçlı ve Şeyh Yunus Dede'nin Uşşâkî taçlı mezar taşları da vardır. H. 956 / M. 1549'da vefat eden Hacı Ahmed bin Emir Bey'in baş ve ayak taşları son onarımda bahçe kapısı önünden hazireye taşınmıştır. Yaklaşık 60 mezar taşı günümüze ulaşmış, taşı kalmamış 14 kişi daha buraya defnedildiği bilinmektedir.",
+        "en": "The large graveyard in the garden holds the graves of Seyyid Usûl, shaykhs who served from the 19th century and their relatives, and some people whose connection to the lodge is not known for sure. Gravestones unearthed in the last restoration were repositioned in order. It has the oldest and finest Ottoman-period gravestones: that of the merchant Hoca Hasan Sincânî (d. AH 920 / AD 1514), notable for ornament and magnificence, written in Persian with hadiths and sayings in Thuluth, and that of the merchant Hoca Mahmud (d. AH 919 / AD 1513). Only the footstone of the stone thought to be Seyyid Usûl's survives, with geometric motifs and the date AH 894 / AD 1489. There are also distinguished stones of the Zeyniyye order, Shaykh İbrahim Efendi's with a Qadiri-Eşrefî crown, and Shaykh Yunus Dede's with an Uşşâkî crown. The head and foot stones of Hacı Ahmed bin Emir Bey (d. AH 956 / AD 1549) were moved from in front of the garden gate to the graveyard. About 60 gravestones survive; 14 more people are known to be buried here without surviving stones."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "615-619"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hazire_mezar_tasi",
+      "label": {
+        "tr": "Günümüze ulaşan mezar taşı",
+        "en": "Surviving gravestones"
+      },
+      "value": 60,
+      "unit": "adet",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "619"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'yaklaşık 60' diyor.",
+        "en": "The book says 'approximately 60'."
+      }
+    },
+    {
+      "key": "tassiz_gomulu",
+      "label": {
+        "tr": "Taşı kalmamış ama gömülü olduğu bilinen kişi",
+        "en": "People known to be buried without surviving stone"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "619"
+        }
+      ]
+    },
+    {
+      "key": "kat_sayisi_harem",
+      "label": {
+        "tr": "Harem bölümü kat sayısı",
+        "en": "Harem floors"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "613-614"
+        }
+      ],
+      "note": {
+        "tr": "Biri bodrum.",
+        "en": "One is a basement."
+      }
+    },
+    {
+      "key": "ana_mekan_sayisi",
+      "label": {
+        "tr": "Ana mekân/bina sayısı",
+        "en": "Number of main buildings"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "613-615"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Seyyid Usûl",
+      "role": {
+        "tr": "Buharalı kurucu (v. H. 894 / M. 1489)",
+        "en": "Founder from Bukhara (d. AH 894 / AD 1489)"
+      }
+    },
+    {
+      "name": "Peripeyker Câfer Çelebi",
+      "role": {
+        "tr": "H. 962 / M. 1555'te bitişik medreseyi yaptıran",
+        "en": "Built the adjacent madrasa in AH 962 / AD 1555"
+      }
+    },
+    {
+      "name": "Ahmed Efendi Kâdirî",
+      "role": {
+        "tr": "Yangın sonrası dönemin Kadiriyye şeyhi",
+        "en": "Qadiriyya shaykh of the post-fire period"
+      }
+    },
+    {
+      "name": "Mehmed Emin Zuhûrî Efendi",
+      "role": {
+        "tr": "Sa'diyye şeyhi; 1836'da dergâhı yeniden kuran (v. 1844)",
+        "en": "Sa'diyye shaykh who re-established the lodge in 1836 (d. 1844)"
+      }
+    },
+    {
+      "name": "İbrahim Dede (Şeyh İbrahim Efendi)",
+      "role": {
+        "tr": "Dergâh şeyhi (v. 17 Aralık 1856)",
+        "en": "Lodge shaykh (d. 17 December 1856)"
+      }
+    },
+    {
+      "name": "Şeyh Süleyman Rûhî Efendi",
+      "role": {
+        "tr": "Dergâh şeyhi (v. 1847)",
+        "en": "Lodge shaykh (d. 1847)"
+      }
+    },
+    {
+      "name": "Bursalı Ahmed Hamdi Baba",
+      "role": {
+        "tr": "Uşşâkî şeyhi (v. 1902, 85 yaşında)",
+        "en": "Uşşâkî shaykh (d. 1902, aged 85)"
+      }
+    },
+    {
+      "name": "Hoca Hasan Sincânî",
+      "role": {
+        "tr": "Tüccar; süslü mezar taşı (v. 1514)",
+        "en": "Merchant; ornate gravestone (d. 1514)"
+      }
+    },
+    {
+      "name": "Hoca Mahmud",
+      "role": {
+        "tr": "Tüccar; süslü mezar taşı (v. 1513)",
+        "en": "Merchant; ornate gravestone (d. 1513)"
+      }
+    },
+    {
+      "name": "Hacı Ahmed bin Emir Bey",
+      "role": {
+        "tr": "Baş ve ayak taşları hazireye taşınan kişi (v. 1549)",
+        "en": "Person whose head and foot stones were moved to the graveyard (d. 1549)"
+      }
+    },
+    {
+      "name": "Şeyh Yunus Dede",
+      "role": {
+        "tr": "Uşşâkî tarikatı şeyhi",
+        "en": "Shaykh of the Uşşâkî order"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "seyyid-usul-bas-tasi-on",
+      "location": {
+        "tr": "Seyyid Usûl'e ait olduğu düşünülen mezar baş taşı, ön yüz",
+        "en": "Headstone thought to be Seyyid Usûl's, front"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Fî târîhi seneti erbaa ve tisîn ve semânemie / Yâ vâkıfen bi-kabrî mütefekkiren bi-emrî / Bi’l-emsi küntü mislek ğaden tasîru mislî",
+      "translation": {
+        "tr": "H. 894 senesinde vefat etmiştir. Ey benim kabrime bakan ve benim halimi düşünen kişi! Dün ben senin gibiydim, yarın sen de benim gibi olacaksın.",
+        "en": "He passed away in AH 894. O you who look at my grave and think about my condition! Yesterday I was like you, tomorrow you will be like me."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 894,
+        "gregorian": "1489"
+      },
+      "note": {
+        "tr": "Mezarın Seyyid Usûl'e ait olduğu 'düşünülmektedir'.",
+        "en": "The grave is only 'thought' to be Seyyid Usûl's."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "616-617"
+        }
+      ]
+    },
+    {
+      "id": "seyyid-usul-bas-tasi-arka",
+      "location": {
+        "tr": "Aynı baş taşı, arka yüz",
+        "en": "Same headstone, back"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Hudâ’nın rahmı birle oldu mağfur / Olur nefsiyle Burusa içre meşhur / Şehîd oldı anunçün masûm-i pâk / Kaza sengi serinden olmadı dûr",
+      "translation": {
+        "tr": "Allah’ın mağfiretine sığındı ve Bursa içinde meşhur oldu. Temiz bir kişi iken şehit oldu, Kaza taşı her daim onun başından eksik olmadı",
+        "en": "He sought refuge in God’s forgiveness and became famous in Bursa. He was a pure person but became a martyr, the Kaza (Judgment) stone was always on his head."
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Türkçe metinde 'ma’sûm-i' ve 'masûm-i' yazımları sayfalar arasında farklı; Türkçe s. 616 yazımı alındı.",
+        "en": "Spelling 'masûm-i' on the Turkish page was kept (the English page prints 'ma’sûm-i')."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "616-617"
+        }
+      ]
+    },
+    {
+      "id": "ibrahim-dede-mezar",
+      "location": {
+        "tr": "Dergâh şeyhi İbrahim Dede'nin mezar taşı",
+        "en": "Gravestone of the lodge shaykh İbrahim Dede"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Hüve’l-Hayyü’l-Bâkî. Tarîkat-ı Aliyye-i Kâdiriyye ve Eşrefiyye’den kutbü’l-ârifîn Seyyid Usûl Dergâhı’nın postnişîni, İrşâdı cennet-mekân el-Hâc İbrahim Dede Efendi’nin Rûh-ı pür-fütûh-ı şerîfiyçün el-Fâtiha. 19 R 1273",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1273,
+        "gregorian": "1856-12-17"
+      },
+      "note": {
+        "tr": "Vefat: 19 Rebiülahir 1273 / 17 Aralık 1856. Kitap bu taş için meal vermiyor.",
+        "en": "Death: 19 Rabi' al-Thani 1273 / 17 December 1856. The book gives no translation for this stone."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "616-617"
+        }
+      ]
+    },
+    {
+      "id": "suleyman-ruhi-mezar",
+      "location": {
+        "tr": "Şeyh Süleyman Rûhî Efendi'nin mezar taşı",
+        "en": "Gravestone of Shaykh Süleyman Rûhî Efendi"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Merhûm ve mağfûrun leh Tarîk-i Eşrefiyyetü’l-Kâdiriyye’den eş-Şeyh Süleymân Rûhî Efendi rûhiyçün el-Fâtiha. Sene 1263 ZA",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1263,
+        "gregorian": "1847"
+      },
+      "note": {
+        "tr": "Kitap bu taş için meal vermiyor.",
+        "en": "The book gives no translation for this stone."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "616-617"
+        }
+      ]
+    },
+    {
+      "id": "ahmed-hamdi-baba-mezar",
+      "location": {
+        "tr": "Bursalı Ahmed Hamdi Baba'nın mezar taşı",
+        "en": "Gravestone of Bursalı Ahmed Hamdi Baba"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Hüve’l-Hallâku’l-Bâkî\nBu makberde, Tarîkat-ı Aliyye-i Uşşâkiyye meşâyıh-ı kirâmından, ârif-i billâh, mürşid-i ilâ’llâh, câmi-i müsemmâ-yı esmâ-i isnâ aşer, Burusalı Ahmed Hamdi Baba’nın cism-i mahfîsi medfundur.\nMenba-ı mâü’l-hayât-ı marifet-i İlâhiyye olan bu şeyh-i kâmil,\nneş’e-i dünyevîyesinde otuzyedi sene kadar teşnegân-ı maârif-i\nfüyûzât-ı mâneviyye ile sîrâb etmiş idi.\nSeksenbeş sinninde âzim-i dârü’n-naîm oldu.\nSene H. 1320 / M. 1902.",
+      "translation": {
+        "tr": "Ebedî olan, her şeyi yaratan Allah’tır. Bu türbede, Uşşâkî tarikatının yüce şeyhlerinden, Allah’ı hakkıyla tanıyan, insanları Allah’a ulaştıran bir mürşit, on iki esmanın isimlerini kendisinde toplamış olan Bursalı Ahmed Hamdi Baba’nın mübarek bedeni defnedilmiştir. İlahi marifetlerin hayat suyunun kaynağı olan bu kâmil şeyh, dünyevi hayatı süresince yaklaşık otuz yedi yıl boyunca manevi feyizlere susamış olan gönülleri doyurmuştur. Seksen beş yaşında iken sonsuz saadet yurduna göçmüştür.",
+        "en": "The eternal one is Allah, who created everything. In this tomb is buried the blessed body of Bursalı Ahmed Hamdi Baba, one of the great shaykhs of the Uşşâkî order, a guide who truly knew Allah and led people to Allah, who had gathered the twelve names in himself. This perfect shaykh, source of the life water of divine knowledge, satisfied hearts thirsting for spiritual blessings for approximately thirty-seven years. He passed away to the abode of eternal happiness at eighty-five."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1320,
+        "gregorian": "1902"
+      },
+      "note": {
+        "tr": "Vefat: H. 1320 / M. 1902.",
+        "en": "Death: AH 1320 / AD 1902."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "618-619"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "seyyid-usul-vefat",
+      "year": 1489,
+      "date": null,
+      "hijri": "894",
+      "type": "record",
+      "title": {
+        "tr": "Kurucu Seyyid Usûl'ün vefatı",
+        "en": "Death of the founder Seyyid Usûl"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "611"
+        }
+      ]
+    },
+    {
+      "id": "medrese-1555",
+      "year": 1555,
+      "date": null,
+      "hijri": "962",
+      "type": "addition",
+      "title": {
+        "tr": "Peripeyker Câfer Çelebi bitişiğe medrese yaptırdı",
+        "en": "Peripeyker Câfer Çelebi built an adjacent madrasa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "612-613"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1801",
+      "year": 1801,
+      "date": null,
+      "hijri": "1216",
+      "type": "damage",
+      "title": {
+        "tr": "Büyük yangında yandı; sonra yeniden inşa edilip dergâh olarak kullanıldı",
+        "en": "Burned in the great fire; later rebuilt and used again as a lodge"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "612-613"
+        }
+      ]
+    },
+    {
+      "id": "ahmed-efendi-vefat",
+      "year": 1801,
+      "date": null,
+      "hijri": "1225",
+      "type": "record",
+      "title": {
+        "tr": "Şeyh Ahmed Efendi Kâdirî'nin vefatı; yapı kendi haline terk edildi",
+        "en": "Death of Shaykh Ahmed Efendi Qadiri; building abandoned"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "612-613"
+        }
+      ],
+      "note": {
+        "tr": "Hicri ve miladi tarih uyuşmuyor (bkz. data_quality_notes).",
+        "en": "Hijri and Gregorian dates do not match (see data_quality_notes)."
+      }
+    },
+    {
+      "id": "tevhidhane-1836",
+      "year": 1836,
+      "date": null,
+      "hijri": "1251",
+      "type": "construction",
+      "title": {
+        "tr": "Mehmed Emin Zuhûrî Efendi tevhidhane ve derviş odaları yaptırdı",
+        "en": "Mehmed Emin Zuhûrî Efendi built a prayer hall and dervish rooms"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "612-613"
+        }
+      ]
+    },
+    {
+      "id": "mehmed-emin-vefat",
+      "year": 1844,
+      "date": null,
+      "hijri": "1260",
+      "type": "record",
+      "title": {
+        "tr": "Şeyh Mehmed Emin Zuhûrî Efendi'nin vefatı",
+        "en": "Death of Shaykh Mehmed Emin Zuhûrî Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "612-613"
+        }
+      ]
+    },
+    {
+      "id": "kapatilma-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Dergâhların kapatılması; tevhidhane zamanla yıkıldı",
+        "en": "Lodges closed; the prayer hall was later demolished"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "613"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Osmangazi Belediyesi eski temeller üzerinde yeniden inşa etti; Seyyid Usûl Kültür Merkezi olarak açıldı",
+        "en": "Rebuilt by Osmangazi Municipality on old foundations; opened as the Seyyid Usûl Cultural Center"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "613"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Seyyid Usûl Tekkesi, sokak kapısından birkaç basamakla çıkılan bir avlunun ortasında duran, yığma taş duvarlı üç binadan oluşur. Solda geniş bir hazire, sağda boş bir bahçe vardır. Haremin ortasında bir eyvan ve üst kata çıkan iç merdiven bulunur. Batısındaki kare planlı, iki katlı tevhidhanenin ana girişi üzerinde küçük bir balkonlu asma kat yer alır; batı cephesi altta üç büyük, üstte üç küçük pencerelidir. Hazirede yaklaşık altmış mezar taşı vardır; bazıları hat ve geometrik motiflerle bezeli, bazıları başlarında tarikat tacı taşır.",
+      "en": "The Seyyid Usûl Lodge consists of three masonry stone buildings in the middle of a courtyard reached by a few steps from the street door. A large graveyard is on the left and an empty garden on the right. The harem has a central iwan and an inner staircase to the upper floor. The square two-storey prayer hall to its west has a mezzanine with a small balcony above the main entrance, and a west facade with three large windows below and three small above. The graveyard has about sixty gravestones, some decorated with calligraphy and geometric motifs, some bearing an order's crown."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt'teki mimari anlatımdan derlendi; yalnızca kitapta yazanlar."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1U0yA31gBwZKBr6PdCLJ0f0rbibji23rF",
+    "book_layout_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+    "book_pdf_name": "5-Tekke ve Zaviyeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyyid-usul-tekkesi/p029-4.jpg",
+        "original_name": "7 seyyid usul.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "614"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Konferans düzenindeki ahşap tavanlı salon",
+        "en": "Hall with wooden ceiling set for events"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı ve beyaz duvarlı salonda sıralanmış ahşap sandalyeler, ortada kırmızı bir yolluk vardır. Karşıda beyaz bir niş, iki yanında kitap dolapları ve kafesli pencereler görünür.",
+        "en": "A white-walled hall with a wooden ceiling, rows of wooden chairs and a red runner down the middle. A white niche flanked by bookcases and lattice windows is at the far end."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyyid-usul-tekkesi/p029-1.jpg",
+        "original_name": "6.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "614"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Taş duvarlı oturma odası",
+        "en": "Sitting room with stone walls"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, koyu ahşap kirişli bir odada kırmızı desenli yer minderleri L biçiminde dizilidir. Ortada bir halı ve alçak masalar; duvar raflarında bakır eşyalar ve fotoğraflar durur.",
+        "en": "A stone-walled room with dark wooden beams and red patterned cushions arranged in an L shape. A rug and low tables are in the middle, with copperware and photographs on wall shelves."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyyid-usul-tekkesi/p029-3.jpg",
+        "original_name": "10 seyyid usul.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "614"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Oturma köşesi ve ahşap kapılar",
+        "en": "Seating corner and wooden doors"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı odada kırmızı çiçek desenli minderli bir köşe oturak ve üstünde raf var. Sağda iki büyük kahverengi ahşap kapı, tavan ve zemin ahşaptır.",
+        "en": "In a white-walled room, a corner bench with red floral cushions has a shelf above it. Two large brown wooden doors are on the right, and the ceiling and floor are wood."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-02"
+    }
+  ],
+  "archive_media": [],
+  "visit": {
+    "setting": "mixed",
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Bina kültür merkezi olarak kullanılıyor; tevhidhane bölümü konferans salonu ve 'Bursalı Şairler Kütüphanesi'.",
+      "en": "The building is a cultural center; the prayer hall is a conference hall and the 'Bursa Poets Library'."
+    },
+    "notes_source": "source",
+    "visitor_tips": []
+  }
+}

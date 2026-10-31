@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-elmalik-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
+      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Yapım tarihi ve banisi kitapta yok (yalnızca 1573 Tahrir Defteri'nde mahalle olarak geçtiği belirtiliyor); founder null bırakıldı. Era kodlanamadı (null).",
+      "Hoca Yunus, Tavukçu Reis ve Zağferanlık mescitlerinin ilçesi metinde belirtilmiyor; ilişki id'leri 'osmangazi' varsayımıyla yazıldı, doğrulanmalı.",
+      "'Son yıllarda ihya' edilme yılı kitapta verilmiyor."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Elmalık Camii",
+    "en": "Elmalık Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mahalle mescidi",
+    "kiralık ev olarak kullanılmış",
+    "ihya"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tuzpazarı",
+    "address": "Elmalık Caddesi, No: 8",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "303"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.18668,
+      "lng": 29.065797,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1107656412 ('Elmalık Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Tuzpazarı'nda, 1573 tarihli Tahrir Defteri'nde mahalle olarak geçen; uzun süre kiralık ev olarak kullanılıp son yıllarda yeniden ibadete açılan, ahşap çatılı dikdörtgen cami.",
+    "en": "A rectangular mosque with a wooden roof in Tuzpazarı; recorded as a neighborhood in the 1573 Tahrir Register, used as a rented house for a long time and revived as a place of worship in recent years."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Caminin yeri Osmangazi ilçesi, Tuzpazarı Mahallesi, Elmalık Caddesi No: 8'dir. 1573 tarihli Tahrir Defteri'nde mahalle olarak geçmesi yapının daha önce mevcut olduğunu gösterir. Satılan birçok cami gibi uzun süre kiralık ev olarak kullanılmış, son yıllarda ihya edilerek yeniden ibadethane hâline getirilmiştir.",
+        "en": "It lies on Elmalık Street No. 8, Tuzpazarı Neighborhood. Its mention as a neighborhood in the 1573 Tahrir Register shows that the building existed earlier. Like many mosques that were sold, it was used as a rented house for a long time and was revived as a place of worship in recent years."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "303"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dikdörtgen hacimli, üstü kırma ahşap çatılı ve kiremitle örtülüdür. Duvarlarda moloz taş ve düzensiz tuğla sıraları kullanılmıştır. Yanları kapalı, Bursa kemerli iki ahşap direkle taşınan ve ahşap saçağı bulunan bir son cemaat yeri vardır. Çift kanatlı ahşap kapıdan girilen harim, her cephede ikişer olmak üzere sekiz pencere ile aydınlatılmıştır.",
+        "en": "It has a rectangular volume with a hipped wooden roof covered with tiles. Rubble stone and irregular brick rows are used in the masonry. The narthex has closed sides and is carried by two wooden posts with Bursa arches under a wooden eave. The prayer hall, entered through a double-leafed wooden door, is lit by eight windows, two on each side."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "303"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minare kesme taş kaide üzerine inşa edilmiş, Türk üçgenli küp kısmının üzerinde tuğladan örülen silindirik gövdeyle yükselir. Kaide üzerinde ve şerefe altında birer bilezik, şerefe altında tuğladan dolgular bulunur. Petek tuğladandır, külah kurşun kaplıdır.",
+        "en": "The minaret rises on a cut-stone base with a cylindrical brick shaft above a Turkish-triangle transitional section. There is a band on the base and under the balcony, and brick fillings under the balcony. The neck is of brick and the spire is lead-covered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "303"
+        }
+      ]
+    },
+    {
+      "id": "benzer-yapilar",
+      "order": 4,
+      "title": {
+        "tr": "Benzer Yapılar",
+        "en": "Similar Buildings"
+      },
+      "body": {
+        "tr": "Cami, son yıllarda yeniden cami olarak ihya edilen Hoca Yunus, Tavukçu Reis ve Zağferanlık mescitleriyle aynı tarzda ve aynı malzemeyle yapılmış ibadethaneler arasındadır.",
+        "en": "The mosque is among the places of worship built in the same style and with the same materials as the Hoca Yunus, Tavukçu Reis and Zağferanlık masjids, which were revived as mosques in recent years."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "303"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "303"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_direk",
+      "label": {
+        "tr": "Son cemaat direk sayısı",
+        "en": "Narthex posts"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "303"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "tahrir-1573",
+      "year": 1573,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1573 Tahrir Defteri'nde mahalle olarak geçer",
+        "en": "Recorded as a neighborhood in the 1573 Tahrir Register"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "303"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-hoca-yunus-mescidi",
+      "target_name": {
+        "tr": "Hoca Yunus Mescidi"
+      },
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Aynı tarz ve malzemeyle yapılmış, yeniden cami olarak ihya edilen mescitlerden biri.",
+        "en": "One of the masjids built in the same style and material and revived as mosques."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "303"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-tavukcu-reis-mescidi",
+      "target_name": {
+        "tr": "Tavukçu Reis Mescidi"
+      },
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Aynı tarz ve malzemeyle yapılmış, yeniden cami olarak ihya edilen mescitlerden biri.",
+        "en": "One of the masjids built in the same style and material and revived as mosques."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "303"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-zagferanlik-mescidi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Aynı tarz ve malzemeyle yapılmış, yeniden cami olarak ihya edilen mescitlerden biri.",
+        "en": "One of the masjids built in the same style and material and revived as mosques."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "303"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Elmalık Camii, dikdörtgen planlı, kırma ahşap çatılı ve kiremit kaplı küçük bir yapıdır. Duvarları moloz taş ve düzensiz tuğla sıralarından örülmüştür. Önde, yanları kapalı, iki ahşap direkle taşınan bir son cemaat yeri bulunur. Minare, taş kaide üzerinde tuğla gövdeyle yükselir ve kurşun kaplı bir külahla biter.",
+      "en": "Elmalık Mosque is a small rectangular building with a hipped wooden roof covered in tiles. Its walls are laid in rubble stone and irregular rows of brick. At the front is a narthex with closed sides carried by two wooden posts. The minaret rises from a stone base with a brick shaft and ends in a lead-covered spire."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

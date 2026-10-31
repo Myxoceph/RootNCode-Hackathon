@@ -1,0 +1,502 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-yusuf-aga-kutuphanesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Sivil Mimari",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "\"Abit Çelebi\" adı kitapta açıklanmıyor (yalnızca başlıkta geçiyor); alternate_names'e eklendi, kimliği gözden geçirilmeli.",
+      "Sultan Selim Camii Konya'daki cami olup ids.md'de yok (tabloda yalnızca Karapınar II. Selim kayıtları var); ilişki yazılmadı, kayıt eklenirse urban_context ilişkisi düşünülmeli.",
+      "Yusuf Ağa'nın Konya'da yaptırdığı medrese ids.md'de yok; ilişki yazılmadı.",
+      "Mevlevî tarikatına bağlılık bilgisi kitapta \"kaynaklarda ifade edilmektedir\" ile aktarılıyor (people/sections içinde not olarak)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metin \"kasnak\" için \"pulley\" yazıyor (çeviri hatası, \"drum\" olmalı); Türkçe esas alındı."
+      },
+      {
+        "field": "dating",
+        "note": "Banî Yusuf Ağa'nın dönemi Türkçe metinde \"XVIII. yüzyılın sonu XIX. yüzyılın başları\" olarak veriliyor; yapı tarihi kitâbeden 1796."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yusuf Ağa Kütüphanesi",
+    "en": "Yusuf Ağa Library"
+  },
+  "subtitle": {
+    "tr": "Sultan Selim Camii'nin yanında 1796 tarihli kubbeli kütüphane; bugün Yazma Eserler Kütüphanesi",
+    "en": "A domed library of 1796 beside the Sultan Selim Mosque, now the Manuscripts Library"
+  },
+  "alternate_names": [
+    {
+      "tr": "Abit Çelebi Kütüphanesi",
+      "en": "Abit Çelebi Library"
+    },
+    {
+      "tr": "Yusuf Ağa Yazma Eserler Kütüphanesi",
+      "en": "Yusuf Ağa Manuscripts Library",
+      "note": "Bugünkü kullanım adı"
+    }
+  ],
+  "type": "kutuphane",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kütüphane",
+    "Yusuf Ağa",
+    "Mihrimah Valide Sultan",
+    "Mevlevi",
+    "kubbeli",
+    "ağırlık kuleleri",
+    "Şair Rıfat kitabesi",
+    "Gödene taşı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Müze Alanı Caddesi No: 5, Sultan Selim Camii'nin güney batı köşesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "288"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.870277,
+      "lng": 32.50388,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Adıyla OpenStreetMap Nominatim'de bulundu ('Yusuf Ağa Yazma Eser Kütüphanesi, Mevlâna Meydanı, Aziziye Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, 42040, Türkiye'); sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1210 / M. 1796",
+      "en": "AH 1210 / AD 1796"
+    },
+    "start_year": 1796,
+    "end_year": 1796,
+    "hijri_year": 1210,
+    "century": 18,
+    "basis": {
+      "tr": "Pencerenin üzerindeki, Şair Rıfat'ın yazdığı inşa kitâbesine göre.",
+      "en": "According to the construction inscription by the poet Rıfat above the window."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "288"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yusuf Ağa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "289"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "288"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Karatay'da Sultan Selim Camii'nin güney batı köşesinde, H. 1210 / M. 1796 tarihli, kubbeli ve köşeleri pahlı kare planlı kütüphane. Mihrimah Valide Sultan'ın kethüdası Yusuf Ağa yaptırmıştır; bugün Yusuf Ağa Yazma Eserler Kütüphanesi olarak kullanılır.",
+    "en": "A domed library of square plan with chamfered corners, dated AH 1210 / AD 1796, at the southwest corner of the Sultan Selim Mosque in Karatay. Built by Yusuf Ağa, kethüda of Mihrimah Valide Sultan; used today as the Yusuf Ağa Manuscripts Library."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Kütüphane Karatay'da, Müze Alanı Caddesi No: 5 adresinde, Sultan Selim Camii'nin güney batı köşesindedir. İlk girişi Sultan Selim Camii'nin batıya bakan penceresinden sağlanıyordu. Pencerenin üstündeki, Şair Rıfat'ın yazdığı inşa kitâbesine göre H. 1210 / M. 1796'da yaptırılmıştır. İç mekânın yapıldığı yıllarda süslemeli olduğu, süslemeler bozulunca 1978-1979'da iç sıvaların kazındığı ve yapının bugünkü şeklini aldığı bilinmektedir. Yapı günümüzde Yusuf Ağa Yazma Eserler Kütüphanesi olarak kullanılmaktadır.",
+        "en": "The library is at Müze Alanı Street No: 5 in Karatay, at the southwest corner of Sultan Selim Mosque. Its first entrance was from the west-facing window of the mosque. According to the construction inscription by the poet Rıfat above the window, it was built in AH 1210 / AD 1796. The interior was decorated when built; as the decoration deteriorated, the interior plasters were scraped off in 1978-1979 and it took its present form. Today it is used as the Yusuf Ağa Manuscripts Library."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "288-290"
+        }
+      ]
+    },
+    {
+      "id": "bani",
+      "order": 2,
+      "title": {
+        "tr": "Yusuf Ağa",
+        "en": "Yusuf Ağa"
+      },
+      "body": {
+        "tr": "Yusuf Ağa, Osmanlı döneminde XVIII. yüzyılın sonu ve XIX. yüzyılın başlarında Mihrimah Valide Sultan'ın kethüdalığını yapmış devlet adamlarından biridir. Konya'da yaşamamış, ancak şehre bir kütüphane ve medrese yaptırmıştır. Kaynaklarda Konya'da eser yaptırma sebebinin Mevlevî tarikatına bağlılığı olduğu belirtilir.",
+        "en": "Yusuf Ağa was a statesman who served as kethuda of Mihrimah Valide Sultan at the end of the 18th and beginning of the 19th century. He did not live in Konya but had a library and a madrasa built in the city. The sources state his devotion to the Mevlevi order as the reason for having works built in Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "289"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kütüphane iki kademeli bir kaide üzerinde, köşeleri pahlanarak yuvarlatılmış kare planlıdır; beden duvarı üzerine kasnak, kasnağın üzerine kubbe oturur. Her köşeye silindirik ağırlık kuleleri yerleştirilmiştir. Yapı Gödene kesme taşından, bazı yerlerde sille taşından kâgir (yığma) teknikle yapılmış; kasnak eteklerinde, kubbe ve ağırlık kuleleri üzerinde kurşun kullanılmıştır. Cepheler dikdörtgen formlu kemerli pencerelerden oluşur, kemerlerde renkli taş görülür; pahlı köşelerde de pencere vardır ve pencereler demir parmaklıklıdır. Giriş ilk yapımında cami içine açılıyordu; içeri doğru genişleyen kapının yan yüzeylerinde yarım daire nişler vardır, girişin solunda bir dolap, sağ köşesinde duvar açıklığı bulunur. Kubbeye geçiş tromplarla sağlanır; trompların kuzeydoğu ve güneydoğu köşelerinde püsküller vardır. Alt pencereler kapaklı, üst pencereler barok süslemelidir.",
+        "en": "The library has a square plan with chamfered, rounded corners on a two-tiered plinth; a drum sits on the body wall and a dome on the drum. Cylindrical weight towers stand at each corner. It is built of Gödene cut stone, in places Sille stone, in masonry technique, with lead on the drum skirts, dome and weight towers. The facades have rectangular arched windows with colored stone in the arches; windows are also on the chamfered corners and are covered with iron bars. The entrance originally opened into the mosque; the door, widening inward, has semicircular niches on its sides, a cabinet to the left and a wall opening in the right corner. The transition to the dome is by squinches with tassels at the northeast and southeast corners. The lower windows have shutters and the upper windows baroque decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "289-290"
+        }
+      ]
+    },
+    {
+      "id": "uslup",
+      "order": 4,
+      "title": {
+        "tr": "Üslup",
+        "en": "Style"
+      },
+      "body": {
+        "tr": "Yusuf Ağa Kütüphanesi XVIII. yüzyılda inşa edilmiş olmasına rağmen cephe anlayışı bakımından klasik üslup kullanılarak Sultan Selim Camii cephe anlayışına benzetilmeye çalışılmış önemli eserlerden biridir.",
+        "en": "Although built in the 18th century, the Yusuf Ağa Library is one of the important works that tried to resemble the facade of the Sultan Selim Mosque by using the classical style."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "290"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Köşeleri pahlı kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "289"
+        }
+      ]
+    },
+    {
+      "key": "tas",
+      "label": {
+        "tr": "Yapı taşı",
+        "en": "Building stone"
+      },
+      "value": "Gödene kesme taş; yer yer sille taşı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "290"
+        }
+      ]
+    },
+    {
+      "key": "agirlik_kulesi",
+      "label": {
+        "tr": "Ağırlık kuleleri",
+        "en": "Weight towers"
+      },
+      "value": "Her köşede silindirik kule",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "290"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_gecisi",
+      "label": {
+        "tr": "Kubbeye geçiş",
+        "en": "Transition to the dome"
+      },
+      "value": "Tromp",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "290"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Yusuf Ağa",
+      "role": {
+        "tr": "Mihrimah Valide Sultan'ın kethüdası, banî",
+        "en": "Kethuda of Mihrimah Valide Sultan, founder"
+      }
+    },
+    {
+      "name": "Şair Rıfat",
+      "role": {
+        "tr": "İnşa kitâbesini yazan şair",
+        "en": "Poet who wrote the construction inscription"
+      }
+    },
+    {
+      "name": "Mehmet Sadık",
+      "role": {
+        "tr": "Kitâbe panelinde \"Mehmet Sadık H. 1210\" ibaresiyle anılan kişi",
+        "en": "Person named in the phrase \"Mehmet Sadık H 1210\" on an inscription panel"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Sultan Selim Camii'ne açılan pencerenin üstü (dış cephe)",
+        "en": "Above the window facing the Sultan Selim Mosque (exterior)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": "Şair Rıfat",
+      "date": {
+        "hijri_year": 1210,
+        "gregorian": "1796"
+      },
+      "note": {
+        "tr": "Kitap metni vermiyor, yalnızca inşa tarihini H. 1210 / M. 1796 olarak aktarıyor; dili belirtilmemiş.",
+        "en": "The book does not give the text, only the construction date AH 1210 / AD 1796; language not stated."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "288, 289"
+        }
+      ]
+    },
+    {
+      "id": "pano-kitabeleri",
+      "location": {
+        "tr": "Kuzey köşede iki pencere arasındaki paneller; iç güney duvarında iki panel daha",
+        "en": "Panels between two windows at the north corner; two more panels on the interior south wall"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1210,
+        "gregorian": null
+      },
+      "note": {
+        "tr": "Paneller Besmele-i Şerif, Beyyine Suresi'nden ayet ve \"Mehmet Sadık H. 1210\", \"Maşallah 1210\" ibarelerini içerir; iç güney duvardaki paneller dış cephedekilerle aynı ifadeleri taşır. Kitap metin/meal vermiyor.",
+        "en": "The panels contain the Besmele-i Şerif, a verse from the Surah Al-Bayyina and the phrases \"Mehmet Sadık H 1210\" and \"Maşallah 1210\"; the interior south wall panels carry the same expressions as the exterior ones. The book gives no text or translation."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "289"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1796,
+      "date": null,
+      "hijri": "1210",
+      "type": "construction",
+      "title": {
+        "tr": "Yusuf Ağa tarafından yaptırıldı",
+        "en": "Built by Yusuf Ağa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "288"
+        }
+      ]
+    },
+    {
+      "id": "siva-1978",
+      "year": 1978,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bozulan süslemeler nedeniyle iç sıvalar kazındı (1978-1979)",
+        "en": "Interior plasters scraped off after the decoration deteriorated (1978-1979)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "289"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 1978-1979 yıllarını verir.",
+        "en": "The book gives the years 1978-1979."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "agirlik-kuleleri",
+      "title": {
+        "tr": "Köşelerdeki ağırlık kuleleri",
+        "en": "Corner weight towers"
+      },
+      "hint": {
+        "tr": "Pahlı köşeli kare gövdeyi çevreleyen silindirik kuleler.",
+        "en": "Cylindrical towers around the square body with chamfered corners."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kütüphane, Sultan Selim Camii'nin güney batı köşesine bitişik, köşeleri pahlanıp yuvarlatılmış kare planlı, kubbeli küçük bir taş yapıdır. İki kademeli bir kaide üzerinde yükselir; her köşesinde kurşun kaplı silindirik bir ağırlık kulesi vardır. Cephelerinde demir parmaklıklı, kemerli dikdörtgen pencereler ve kemerlerde renkli taş bulunur. İçeride kubbeye trompla geçilir, üst pencereler barok süslemelidir.",
+      "en": "The library is a small domed stone building attached to the southwest corner of the Sultan Selim Mosque, with a square plan and chamfered, rounded corners. It rises on a two-tiered plinth, with a lead-covered cylindrical weight tower at each corner. Its facades have arched rectangular windows with iron bars and colored stone in the arches. Inside, squinches lead to the dome and the upper windows have baroque decoration."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-yusuf-aga-kutuphanesi/p146-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "288"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Yusuf Ağa Kütüphanesi'nin ön cephesi",
+        "en": "Front façade of Yusuf Ağa Library"
+      },
+      "alt": {
+        "tr": "Açık renkli kesme taştan, kubbeli bir yapı; köşelerinde küçük kubbecikler var. Kapıya merdivenle çıkılıyor, pencereler demir parmaklıklı ve kemerli.",
+        "en": "A dome-topped building of light cut stone with small domed corner turrets. Steps lead to a door, and the arched windows have iron grilles."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-yusuf-aga-kutuphanesi/p147-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "290"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Cephede iki sıra pencere",
+        "en": "Two rows of windows on the façade"
+      },
+      "alt": {
+        "tr": "Açık renkli taş duvarda iki sıra halinde demir parmaklıklı pencereler var. Üst sıradakiler kemerli, alt sıradakiler dikdörtgen çerçeveli; kemer taşları iki renkli.",
+        "en": "Two rows of iron-grilled windows in a pale stone wall. The upper ones are arched with two-tone voussoirs, the lower ones are set in rectangular frames."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-yusuf-aga-kutuphanesi/p146-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "289"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kütüphanenin okuma ve çalışma salonu",
+        "en": "Reading and work hall of the library"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kubbeli bir salonda ahşap dolaplar, çalışma masaları ve kitap sergileyen bir raf var. Üstte kemerli pencerelerden ışık giriyor, zemin parkelidir.",
+        "en": "A stone-walled domed hall with wooden bookcases, desks and a display rack of books. Light comes in through arched windows above, and the floor is parquet."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

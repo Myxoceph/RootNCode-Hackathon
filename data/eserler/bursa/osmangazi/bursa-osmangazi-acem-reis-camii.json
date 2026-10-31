@@ -1,0 +1,666 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-acem-reis-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 228-231) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) alanı kitapta belirtilmiyor; takım sınıflandırması olarak 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Hazirede anılan Elmas Dede mezarı için ayrı kayıt yok; varsa bağlanmalı.",
+      "Mahmud Efendi'nin yaptırdığı Geredeli Köprüsü civarındaki odalar için hedef kayıt yok.",
+      "Hazirede anılan 'üstü açık türbe' bugün yok; kayıtlar araştırılabilir.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap kurucuyu 'Fatih döneminde yaşayan' Hoca Bedreddin Mahmud bin Mehmed Acemî (Acem Reis) olarak verir ve camiyi 1493'te tamamlanmış gösterir; Fatih dönemi ile 1493 tamamlanma tarihi arasındaki ilişki kitapta açıklanmıyor. Kitaba sadık kalındı."
+      },
+      {
+        "field": "dating",
+        "note": "1493 tamamlanma yılı kitapta kesin dille veriliyor, ancak inşa kitabesi yok; kaynağı belirtilmiyor."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Mahmud'un ölümü ana metinde 'Mart 1509', hazire bölümünde 'H. Şevval 914 / M. Mart 1509' olarak verilir; iki ifade tutarlıdır. Mezar taşının tarih kısmı betona gömülü olduğundan taşın Mahmud'a ait olması yalnızca 'yüksek ihtimal'dir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Acem Reis (Arap Dede) Camii",
+    "en": "Acem Reis (Arap Dede) Mosque"
+  },
+  "subtitle": {
+    "tr": "Hoca Bedreddin Mahmud'un yaptırdığı, hazireli cami",
+    "en": "Mosque built by Hoca Bedreddin Mahmud, with its graveyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Arap Dede Camii",
+      "en": "Arap Dede Mosque"
+    },
+    {
+      "tr": "Arap Camii",
+      "en": "Arap Mosque",
+      "note": "Bursa halkının verdiği ad"
+    },
+    {
+      "tr": "Akminare Camii",
+      "en": "Akminare Mosque",
+      "note": "Kadı sicillerinde geçen ad"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tek kubbeli",
+    "tuğla süsleme",
+    "Bursa kemeri",
+    "hazire",
+    "Türk üçgenleri",
+    "Atpazarı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Ebu İshak",
+    "address": "Kemal Bengü Caddesi, No: 26",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "228"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.18745,
+      "lng": 29.073538,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/343625585 ('Acem Reis Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1493'te tamamlandı",
+      "en": "Completed in 1493"
+    },
+    "start_year": null,
+    "end_year": 1493,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap inşasının 1493 yılında tamamlandığını belirtir; caminin kitabesi yoktur.",
+      "en": "The book states construction was completed in 1493; the mosque has no inscription."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "228"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Bedreddin Mahmud bin Mehmed Acemî (Acem Reis)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "228-229"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Mahmud Efendi vakfı",
+    "deed": null,
+    "conditions": {
+      "tr": "Burada Kur'an-ı Kerim okunması; Beraat ve Regaip Kandili gecelerinde yemek pişirilmesi. Kardeşi Seyyid Ahmed mütevelli tayin edilmiştir.",
+      "en": "The Quran is to be read; meals are to be cooked on the nights of Baraat and Raghaib. His brother Seyyid Ahmed was appointed trustee."
+    },
+    "land_note": {
+      "tr": "Mahmud Efendi, Geredeli Köprüsü civarında odalar yaptırmış ve gelirini cami masraflarına vakfetmiştir.",
+      "en": "Mahmud Efendi had rooms built around the Geredeli Bridge and donated their income to the mosque's expenses."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "229"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Fatih döneminde yaşamış Tebrizli tüccar Hoca Bedreddin Mahmud (Acem Reis) tarafından Atpazarı civarında yaptırılan, 1493'te tamamlanan tek kubbeli cami. 1950'lerde harap hâldeyken restore edilerek 1958'de yeniden ibadete açıldı; bahçesindeki hazirede bugün tek mezar taşı kalmıştır.",
+    "en": "A single-domed mosque built near Atpazarı by Hoca Bedreddin Mahmud (Acem Reis), a Tabriz merchant who lived in Fâtih's time, and completed in 1493. Ruined in the 1950s, it was restored and reopened for worship in 1958; only one gravestone remains in its garden graveyard."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Acem Reis (Arap Dede) Camii, Osmangazi İlçesi, Ebu İshak Mahallesi, Kemal Bengü Caddesi, No: 26'da yer almaktadır. Yapı, Fatih döneminde yaşayan ve Acem Reis olarak bilinen Hoca Bedreddin Mahmud bin Mehmed Acemî tarafından, Bursa'nın kuzeyinde, Atpazarı civarında, daha önce \"Akminare Mahallesi\" olarak adlandırılan bölgede inşa ettirilmiştir. Caminin kitabesi yoktur. 1493 yılında inşası tamamlanan mescide Bursa halkı \"Arap Camii\" adını da vermiştir.",
+        "en": "The mosque is located in Osmangazi District, Ebu İshak Neighborhood, on Kemal Bengü Street, No. 26. It was built by Hoca Bedreddin Mahmud bin Mehmed Acemî, known as Acem Reis, who lived during the reign of Fâtih, in the north of Bursa around Atpazarı, in the area previously called \"Akminare Neighborhood\". The mosque has no inscription. The people of Bursa also named the mosque, completed in 1493, \"Arap Mosque\"."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "228"
+        }
+      ]
+    },
+    {
+      "id": "banisi",
+      "order": 2,
+      "title": {
+        "tr": "Banisi ve Adları",
+        "en": "Founder and Names"
+      },
+      "body": {
+        "tr": "Tebrizli bir tüccar olduğu bilinen Mahmud Efendi'nin hayatı hakkında fazla bilgi bulunmamaktadır. Yapının \"Arap Camii\", \"Acem Reis Camii\" ve \"Akminare Camii\" adlarıyla da anıldığı kadı sicillerinde kayıtlıdır. Şemseddin Mısrî Efendi, caminin 1913 yılında mahallenin bahçesi hâline geldiğini ve minaresinin yıkık olduğunu belirtmektedir.",
+        "en": "Little is known about the life of Mahmud Efendi, a merchant from Tabriz. The qadi records show the building was also known as the \"Arap Mosque\", \"Acem Reis Mosque\" and \"Akminare Mosque\". Şemseddin Mısrî Efendi states that by 1913 the mosque had become the neighborhood's garden and its minaret was demolished."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Duvarları üç sıra tuğla ve bir sıra kesme taşla örülmüş, üzeri tek kubbe ile örtülüdür. İç ölçüleri 7,25 × 7,30 m, duvar kalınlığı 1 m'dir. Kuzeyde 2,71 m derinliğinde bir son cemaat mahalli vardır; ortada dar, yanlarda geniş üç bölümden oluşur. Orta göz sivri kemer altında Bursa kemeriyle, yan gözler sivri kemerlerle bağlanmıştır. Orta bölme beşik tonozla, yan bölmeler kurşun kaplı aynalı tonozla örtülüdür. Son cemaat yerinin doğu-batı duvarlarında altlı üstlü sivri kemer nişleri bulunur. Duvardan kubbeye geçiş, yerden 6,40 m yükseklikte başlayan ve 1,50 m genişliğindeki Türk üçgenleriyle sağlanmıştır.",
+        "en": "The walls are built of three rows of brick and one row of cut stone and covered by a single dome. Interior dimensions are 7.25 × 7.30 m, wall thickness 1 m. To the north is a 2.71 m deep narthex of three sections, narrow in the middle and wide at the sides. The middle bay is joined with a Bursa arch under a pointed arch, the side bays with pointed arches. The middle is covered by a barrel vault and the sides by lead-covered flattened barrel vaults. The east and west walls of the narthex have stacked pointed-arch niches. The transition to the dome is by Turkish triangles starting 6.40 m above the ground, in a band 1.50 m wide."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "id": "pencere-suslemeler",
+      "order": 4,
+      "title": {
+        "tr": "Pencereler ve Süslemeler",
+        "en": "Windows and Decoration"
+      },
+      "body": {
+        "tr": "Alt sıra pencereler, Orhan Gazi dönemi örneklerinde olduğu gibi 10 cm içeri doğru bir derinliğe yerleştirilmiştir; demir parmaklıklı, mermer söveli ve sivri kemerlidir. Mihrap tarafındaki dar aralığa arsa elverişsiz olduğu için pencere açılmamıştır. Pencere aynalarında ve son cemaat yerindeki sağır hücrelerde tuğla süslemeler, zarif tuğla rozetler vardır. Bazı kemerler testere dişlidir, saçaklarda iki-üç sıra tuğladan kirpi dizisi bulunur. Yapının içinde hiçbir orijinal süsleme kalmamıştır.",
+        "en": "The lower row of windows is set 10 cm inward, as in examples of the Orhan Gazi period; they have iron grilles, marble frames and pointed arches. No window was opened in the narrow space on the mihrab side because the plot did not allow it. There are brick decorations on the window panels and the blind niches of the narthex, with elegant brick rosettes. Some arches are saw-toothed and the eaves have a two- or three-row sawtooth brick cornice. No original decoration remains inside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229-230"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 5,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Son cemaat yerinin batı tarafında girişi bulunan minare, kubbe hizasına kadar üç sıra tuğla ve bir sıra kesme taşla inşa edilmiştir. Gövdesi, peteği ve külahı tamamen beyaz renkli taştan yapılmıştır.",
+        "en": "The minaret, entered from the west side of the narthex, is built of three rows of brick and one row of cut stone up to the dome level. Its shaft, neck and spire are made entirely of white stone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "230"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 6,
+      "title": {
+        "tr": "Onarımlar ve Günümüz",
+        "en": "Repairs and Present Condition"
+      },
+      "body": {
+        "tr": "1950'li yıllarda minaresi yıkık, kubbesi çökmüş, harap durumda ve ibadete kapalı olan yapı, Bursa Eski Eserleri Sevenler Kurumu tarafından restore edilerek 1958 yılında yeniden ibadete açılmıştır. Pek çok kez onarım gören yapı son yıllarda esaslı şekilde restore edilmiştir. Daha önce mahalle arasında, bahçeler içinde yer alan cami, günümüzde gayet bakımlı bir halde ibadete açıktır.",
+        "en": "In the 1950s the building, with its minaret destroyed and dome collapsed, was closed for worship; it was restored by the Bursa Association for the Appreciation of Antiquities and reopened in 1958. Repaired many times, it was thoroughly restored in recent years. Once among neighborhood gardens, the mosque is now open for worship in a very well-maintained state."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229-230"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 7,
+      "title": {
+        "tr": "Vakıf",
+        "en": "Endowment"
+      },
+      "body": {
+        "tr": "Mahmud Efendi, Geredeli Köprüsü civarında odalar yaptırmış, bu odaların gelirini cami masraflarına vakfetmiştir. Burada Kur'an-ı Kerim okunmasını, Beraat ve Regaip Kandili gecelerinde yemek pişirilmesini şart koşmuş, kardeşi Seyyid Ahmed'i mütevelli tayin etmiştir. Mahmud Efendi Mart 1509'da vefat etmiştir.",
+        "en": "Mahmud Efendi had rooms built around the Geredeli Bridge and donated their income to the mosque's expenses. He stipulated that the Quran be read here and that meals be cooked on the nights of Baraat and Raghaib, and appointed his brother Seyyid Ahmed as trustee. He died in March 1509."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 8,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Hazire, caminin bahçesinde yer almaktadır. Geçmişte burada banisi Hoca Bedreddin Mahmud bin Mehmed Acemî ve başka şahısların medfun olduğu bir hazire varken, zaman içindeki düzenlemeler sonucunda yalnızca tek bir mezar taşı kalmıştır. Elmas Dede'nin mezarının yanında Mahmud bin Mehmed'e ait olduğu düşünülen bir mezar taşı bulunmaktadır; tarih kısmı betona gömülü olan bu taşın, H. Şevval 914 / M. Mart 1509'da vefat eden bani Hoca Bedreddin Mahmud'a ait olma ihtimali yüksektir. Kayıtlardan Abdülgani bin Ahmed Çelebi, Şah Münevver bint Pir Çelebi ve Molla Salih'in (v. H. 1135 / M. 1723) hazirede medfun olduğu tespit edilmiştir. Hazire son zamanlarda elden geçirilmiştir; mevcut tek mezarın ayak taşı H. 959 / M. 1552 tarihlidir.",
+        "en": "The graveyard is in the mosque garden. In the past it held the founder Hoca Bedreddin Mahmud bin Mehmed Acemî and others, but after arrangements over time only a single tombstone remains. Next to the grave of Elmas Dede is a tombstone thought to belong to Mahmud bin Mehmed; its date is embedded in concrete, and it most probably belongs to the founder, who died in Shawwal AH 914 / March AD 1509. Records show that Abdulgani bin Ahmed Çelebi, Şah Münevver bint Pir Çelebi and Molla Salih (d. AH 1135 / AD 1723) were buried here. The graveyard was recently renovated; the footstone of the only existing grave is dated AH 959 / AD 1552."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "231"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "arap-dede-mezari",
+      "title": {
+        "tr": "Arap Dede'nin mezarı",
+        "en": "The grave of Arap Dede"
+      },
+      "body": {
+        "tr": "Hazirede bir dönem var olan, bugüne ulaşmayan üstü açık türbede Arap Dede'ye ait olduğu düşünülen bir mezar bulunduğu rivayet edilmektedir. Türbe ve mezar bugün yoktur; ancak tarihî kaynaklarda varlığına dair kayıtlar yer almaktadır.",
+        "en": "According to accounts, an open-topped tomb in the graveyard, which has not survived, held a grave thought to belong to Arap Dede. The tomb and grave have disappeared, but historical sources record their existence."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "231"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "7,25 × 7,30",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 2.71,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "key": "turk_ucgeni_yukseklik",
+      "label": {
+        "tr": "Türk üçgenlerinin başladığı yükseklik",
+        "en": "Height where Turkish triangles begin"
+      },
+      "value": 6.4,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "key": "turk_ucgeni_genislik",
+      "label": {
+        "tr": "Türk üçgeni kuşağı genişliği",
+        "en": "Width of the Turkish-triangle band"
+      },
+      "value": 1.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Kubbe sayısı",
+        "en": "Number of domes"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "key": "tamamlanma_yili",
+      "label": {
+        "tr": "Tamamlanma yılı",
+        "en": "Year of completion"
+      },
+      "value": 1493,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "228"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_ibadete_acilis",
+      "label": {
+        "tr": "Yeniden ibadete açılış yılı",
+        "en": "Year reopened for worship"
+      },
+      "value": 1958,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Bedreddin Mahmud bin Mehmed Acemî (Acem Reis, Mahmud Efendi)",
+      "role": {
+        "tr": "Banî; Tebrizli tüccar",
+        "en": "Founder; merchant from Tabriz"
+      }
+    },
+    {
+      "name": "Seyyid Ahmed",
+      "role": {
+        "tr": "Mahmud Efendi'nin kardeşi, mütevelli",
+        "en": "Mahmud Efendi's brother, trustee"
+      }
+    },
+    {
+      "name": "Şemseddin Mısrî Efendi",
+      "role": {
+        "tr": "Bursa camileri hakkında yazma eser bırakan müellif",
+        "en": "Author of a manuscript on Bursa's mosques"
+      }
+    },
+    {
+      "name": "Arap Dede",
+      "role": {
+        "tr": "Hazirede mezarı olduğu rivayet edilen kişi",
+        "en": "Person said to be buried in the graveyard"
+      }
+    },
+    {
+      "name": "Elmas Dede",
+      "role": {
+        "tr": "Mezarı hazireye yakın",
+        "en": "Grave near the graveyard"
+      }
+    },
+    {
+      "name": "Abdülgani bin Ahmed Çelebi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Şah Münevver bint Pir Çelebi",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Molla Salih",
+      "role": {
+        "tr": "Hazirede medfun (v. H. 1135 / M. 1723)",
+        "en": "Buried in the graveyard (d. AH 1135 / AD 1723)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1493",
+      "year": 1493,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "İnşası tamamlandı",
+        "en": "Construction completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "228"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1509",
+      "year": 1509,
+      "date": null,
+      "hijri": "Şevval 914",
+      "type": "record",
+      "title": {
+        "tr": "Banî Mahmud Efendi vefat etti",
+        "en": "Founder Mahmud Efendi died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "id": "mahalle-bahcesi-1913",
+      "year": 1913,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Şemseddin Mısrî'ye göre cami mahallenin bahçesi hâline gelmiş, minaresi yıkık",
+        "en": "According to Şemseddin Mısrî, mosque had become a neighborhood garden with a demolished minaret"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu restorasyonu; yeniden ibadete açıldı",
+        "en": "Restored by the Bursa Association for the Appreciation of Antiquities; reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "229"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Acem Reis Camii, Ebu İshak Mahallesi'nde, tek kubbeli, kare planlıya yakın küçük bir yapıdır. Duvarları üç sıra tuğla ve bir sıra kesme taştan örülmüştür; pencere aynalarında ve kemerlerde tuğla rozetler ve testere dişi süslemeler görülür. Kuzeyde üç bölümlü bir son cemaat yeri, batısında tamamen beyaz taştan yapılmış bir minare vardır. Bahçesinde tek bir mezar taşı kalan küçük bir hazire bulunur.",
+      "en": "Acem Reis Mosque in Ebu İshak Neighborhood is a small single-domed building on a nearly square plan. Its walls are of three rows of brick and one of cut stone, with brick rosettes and sawtooth decoration on window panels and arches. To the north is a three-bay narthex, and to the west a minaret built entirely of white stone. Its garden holds a small graveyard with a single remaining gravestone."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ShRIPJC0gllBUdhhNaR3-qc-Ohh3w3rY",
+    "book_layout_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+    "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-acem-reis-camii/p005-1.jpg",
+        "original_name": "01_1.jpeg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "228"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Acem Reis Camii ve yol kavşağı",
+        "en": "Acem Reis Mosque at the road junction"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kubbeli küçük cami iki yolun ayrıldığı köşede, demir korkuluklu bir bahçede duruyor. Yanında taş bir minare yükseliyor.",
+        "en": "A small stone mosque with a dome on a corner where two roads split, inside a garden with iron railings. A stone minaret rises beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-acem-reis-camii/p006-2.jpg",
+        "original_name": "03-3.jpg",
+        "book_pdf_file_id": "1YH0yIds0rngrFmxDJbpLuEX7KEjb9X-q",
+        "book_pdf_name": "8-Osmangazi Camiler ve Hazireler.pdf",
+        "book_page": "229"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, minber ve kadınlar mahfili",
+        "en": "Interior with the minber and gallery"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kırmızı halı döşeli salonda sağda ahşap korkuluklu bir mahfil, solda ahşap minber var. Tavanda üçgen biçimli taş süslemeler ve bir avize görünüyor.",
+        "en": "In a white hall with red carpet, a wooden-railed gallery is on the right and a wooden minber on the left. Triangular stone ornaments and a chandelier hang above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    }
+  ],
+  "archive_media": []
+}

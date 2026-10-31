@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "bursa-mudanya-mutareke-evi-muzesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Mudanya",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Mudanya bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' ve 'archive_media' boş; 'media_folder' tanımlanmadı. Drive klasöründen fotoğraflar seçilip eklenmeli.",
       "Erişilebilirlik bilgileri kitapta yok (ya da doğrulanmadı); sahada teyit edilmeli.",
       "Dönem (era) kodu kitaptaki bilgiyle açıkça desteklenmediği için null bırakıldı.",
       "Yapının kesin yapım yılı kitapta yok (yalnızca XIX. yüzyıl sonları).",
@@ -51,7 +50,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "600"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.37957,
+      "lng": 28.881453,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": {
     "display": {
@@ -378,8 +384,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MSAPwPYfleCJID7tsM2Cex8h9sx8r_PW",
+    "book_layout_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+    "book_pdf_name": "8-Mudanya.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-mutareke-evi-muzesi/p031-1.jpg",
+        "original_name": "01 DJI_20241031193033_0872_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "600"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mütareke Evi'nin deniz kıyısı cephesi",
+        "en": "Armistice House on the seafront"
+      },
+      "alt": {
+        "tr": "Beyaz boyalı, kırmızı kiremitli ahşap yalı beyaz bir demir parmaklıkla çevrilidir. Cephesine büyük bir Türk bayrağı asılı, arkasında deniz ve mavi gökyüzü uzanır.",
+        "en": "A white wooden mansion with a red-tiled roof, surrounded by a white railing. A large Turkish flag hangs on its facade, with the sea and blue sky behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-31"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-mutareke-evi-muzesi/p033-1.jpg",
+        "original_name": "08 ERD05644 kopya.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "602"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap korkuluklu kıvrımlı merdiven",
+        "en": "Curved staircase with wooden handrail"
+      },
+      "alt": {
+        "tr": "Beyaz boyalı korkulukları ve siyah tutamağı olan kıvrımlı ahşap merdiven yukarı çıkar. Solda camlı, açık renkli kapılar görünüyor.",
+        "en": "A curving wooden staircase rises with white balusters and a black handrail. Pale glazed doors are visible on the left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-31"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mudanya-mutareke-evi-muzesi/p033-2.jpg",
+        "original_name": "04 ERD05619 kopya.jpg",
+        "book_pdf_file_id": "1n-3R1E2IfWOOzlXoy0M9YRqNSgxX0qml",
+        "book_pdf_name": "8-Mudanya.pdf",
+        "book_page": "602"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Çalışma masası ve aynalı konsol",
+        "en": "Writing desk and mirrored console"
+      },
+      "alt": {
+        "tr": "Cilalı parkeli odada koyu ahşap bir çalışma masası, bir sandalye ve oymalı aynalı bir konsol durur. Duvarda çerçeveli bir portre ve bir kılıç asılıdır; yerde halı vardır.",
+        "en": "In a room with polished parquet, a dark wooden desk, a chair and a carved console with a mirror stand. A framed portrait and a sword hang on the wall, and a rug lies on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-31"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

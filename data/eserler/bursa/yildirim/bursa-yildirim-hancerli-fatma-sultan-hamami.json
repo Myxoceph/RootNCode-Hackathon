@@ -1,0 +1,522 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-hancerli-fatma-sultan-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 304-306) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Hamamın inşa yılı kitapta yok; yalnızca külliye vakfiyesi (H. 938 / M. 1531) var. Kesin inşa tarihi VGM arşivinden bulunmalı.",
+      "Vakfedilen 'Çekirge Sultan Adak Hamamı' için ilçe kitapta belirtilmiyor; relations[].target_id 'bursa-yildirim-...' varsayılan ilçeyle yazıldı, gerçek ilçe teyit edilip id düzeltilmeli.",
+      "Külliyenin medresesi (yeniden yapılmış) ve türbesi için ayrı kayıt/id yok; varsa same_complex ilişkisi eklenmeli.",
+      "Mimar kitapta belirtilmiyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf.land_note",
+        "note": "Kitap, Fatma Sultan'ın külliyeye 'Hançerli Hamamı'nı vakfettiğini yazar; oysa bu hamam külliyenin kendi birimidir. Kaynağa sadık kalındı; ifadenin başka bir hamamı mı kastettiği belirsiz."
+      },
+      {
+        "field": "facts[iliklik_olcu]",
+        "note": "Ilıklık 2,25 x 2,25 m olarak verilmiş (Türkçe ve İngilizce aynı); soyunmalık (9,12 x 13,90) ve sıcaklık (5,60 x 6,70) yanında çok küçük. Kitaptaki gibi saklandı, olası ölçü hatası."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hançerli Fatma Sultan Hamamı",
+    "en": "Hançerli Fatma Sultan Bath"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hanzade Hamamı",
+      "en": "Hanzade Bath"
+    },
+    {
+      "tr": "Hançerli Hamamı",
+      "en": "Hançerli Bath"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "hamam",
+    "Hançerli Fatma Sultan",
+    "külliye hamamı",
+    "yeniden inşa",
+    "Kültür ve Sanat Merkezi",
+    "tek hamam"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Davutkadı Mahallesi",
+    "address": "Musababa Caddesi, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "304"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Vakfiye tarihi: H. 938 / M. 1531",
+      "en": "Endowment charter date: AH 938 / AD 1531"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yalnızca külliyenin H. 938 / M. 1531 tarihli vakfiyesini verir; hamamın inşa yılı belirtilmez.",
+      "en": "The book gives only the complex's endowment charter dated AH 938 / AD 1531; the construction year of the bath is not stated."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "304-305"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hançerli Fatma Sultan",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "304"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Hançerli Fatma Sultan Külliyesi vakfı",
+    "deed": {
+      "date_display": "H. 938 / M. 1531",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "304-305"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Fatma Sultan külliyeye İstanbul At Meydanı'nda bir han, Hançerli Hamamı, Çekirge Sultan Adak Hamamı ile İstanbul, Yalova ve Edirne'de çeşitli arazi, değirmen ve dükkânlar vakfetmiştir.",
+      "en": "Fatma Sultan endowed to the complex a han in Istanbul At Meydanı, the Hançerli Bath, the Çekirge Sultan Adak Bath, and various lands, mills and shops in Istanbul, Yalova and Edirne."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "304-305"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hançerli Fatma Sultan'ın hamam, medrese, sıbyan mektebi ve türbeden oluşan külliyesinin ayakta kalan birimi. Soyunmalık, ılıklık, sıcaklık ve halvetten oluşan hamam 2007'de özgün planına sadık kalınarak yeniden inşa edilmiş, bugün Yıldırım Belediyesi tarafından Kültür ve Sanat Merkezi olarak kullanılmaktadır.",
+    "en": "The surviving unit of Hançerli Fatma Sultan's complex of bath, madrasa, primary school and tomb. Consisting of changing room, tepidarium, caldarium and cells, the bath was rebuilt in 2007 faithful to its original plan and is used today by Yıldırım Municipality as a Culture and Art Center."
+  },
+  "sections": [
+    {
+      "id": "kulliye-ve-vakif",
+      "order": 1,
+      "title": {
+        "tr": "Külliye ve Vakıf",
+        "en": "Complex and Endowment"
+      },
+      "body": {
+        "tr": "Kayıtlarda \"Hanzade Hamamı\" veya \"Hançerli Hamamı\" adıyla geçen yapı, Hançerli Fatma Sultan tarafından külliyenin bir birimi olarak yaptırılmıştır. H. 938 / M. 1531 tarihli vakfiyeye göre külliye hamam, medrese, sıbyan mektebi ve türbeden oluşuyordu; zamanla yalnızca hamam ayakta kalmış, temelleri günümüze gelen medrese yeniden yapılmış, sıbyan mektebi tamamen yok olmuştur. Fatma Sultan bu külliyeye İstanbul At Meydanı'nda bir han, Hançerli Hamamı, Çekirge Sultan Adak Hamamı, İstanbul, Yalova ve Edirne'de çeşitli arazi, değirmen ve dükkânlar vakfetmiştir.",
+        "en": "Recorded as \"Hanzade Bath\" or \"Hançerli Bath\", the building was built by Hançerli Fatma Sultan as a unit of the complex. According to the endowment charter dated AH 938 / AD 1531, the complex consisted of a bath, a madrasa, a primary school and a tomb; over time only the bath remained standing, the madrasa, whose foundations survive, was rebuilt and the primary school was completely destroyed. Fatma Sultan endowed to this complex a han in Istanbul At Meydanı, the Hançerli Bath, the Çekirge Sultan Adak Bath, and various lands, mills and shops in Istanbul, Yalova and Edirne."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "304-305"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Hamam soyunmalık, ılıklık, sıcaklık ve halvet bölümlerinden oluşur. Soyunmalığın iç ölçüsü 9,12 x 13,90 m'dir ve sivri kemerli bir kapıyla ılıklığa geçilir. Ilıklığın doğusunda 2,05 x 2,25 m'lik küçük bir oda vardır; kare planlı ılıklık 2,25 x 2,25 m olup sivri hafifletme kemerli pandantifler üzerine oturan, on iki aydınlık delikli bir kubbeyle örtülüdür. 70 cm genişliğinde sivri kemerli kapıyla geçilen sıcaklık 5,60 x 6,70 m'dir; doğu, batı ve güneydeki çift merkezli kemerlerle taşınan büyük bir kubbeyle örtülüdür, kubbenin ortasında daire, çevresinde altıgen aydınlık pencereleri vardır. Sıcaklıktan kuzeybatıda 2,15 x 2,20 m'lik bir hücreye geçilir. Güneyde 2,54 x 7,07 m iç ölçülü, tuğla örgülü beşik tonozlu bir su deposu bulunur. Beden duvarları moloz taş, kubbe tuğladır.",
+        "en": "The bath consists of changing room, tepidarium, caldarium and bathing cells. The changing room measures 9.12 x 13.90 m inside and a pointed arched door leads to the tepidarium. East of the tepidarium is a small room of 2.05 x 2.25 m; the square tepidarium, 2.25 x 2.25 m, is covered by a dome with twelve oculi on pendentives supported by pointed relieving arches. The caldarium, entered through a 70 cm wide pointed arched door, measures 5.60 x 6.70 m and is covered by a large dome carried by double-centered arches on the east, west and south, with a circular window in the middle and hexagonal oculi around it. A 2.15 x 2.20 m cell lies northwest of the caldarium. To the south is a 2.54 x 7.07 m water tank under a brick barrel vault. The walls are rubble stone, the dome brick."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "305-306"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa",
+      "order": 3,
+      "title": {
+        "tr": "Yeniden İnşa ve Bugünkü Kullanım",
+        "en": "Reconstruction and Present Use"
+      },
+      "body": {
+        "tr": "Uzun yıllar harap kalan hamam, 2007'de Bursa Büyükşehir Belediyesi tarafından orijinal planlara sadık kalınarak yeniden inşa edilmiştir. Girişin solunda tuvaletler, sağında kubbeyle örtülü ve bireysel çalışmalara ayrılmış küçük bir mekân vardır; giriş koridorunun sonundaki geniş salonda güzel sanatlar faaliyetleri yürütülür. Özgün planda sıcaklık olan bölüm restorasyon sonrası mutfak olarak işlevlendirilmiş, eski su deposu sıradan bir iç hacim olarak kullanılmaktadır. Yapı bugün Yıldırım Belediyesi tarafından Kültür ve Sanat Merkezi olarak kullanılmaktadır.",
+        "en": "The bath, left in ruins for many years, was rebuilt in 2007 by Bursa Metropolitan Municipality faithful to the original plans. To the left of the entrance are toilets and to the right a small domed space allocated to individual activities; the large hall at the end of the entrance corridor hosts fine-arts activities. The part that was the caldarium in the original plan became a kitchen after the restoration and the old water tank is an ordinary interior space. Today Yıldırım Municipality uses it as a Culture and Art Center."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "306"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "soyunmalik_ic_olcu",
+      "label": {
+        "tr": "Soyunmalık iç ölçüsü",
+        "en": "Changing room interior size"
+      },
+      "value": "9,12 × 13,90",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "305"
+        }
+      ]
+    },
+    {
+      "key": "iliklik_olcu",
+      "label": {
+        "tr": "Ilıklık ölçüsü (kare)",
+        "en": "Tepidarium size (square)"
+      },
+      "value": "2,25 × 2,25",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "305"
+        }
+      ],
+      "note": {
+        "tr": "Kitaptaki değer; diğer bölümlere göre çok küçük, olası yazım hatası.",
+        "en": "Value as printed; very small relative to other rooms, possible typo."
+      }
+    },
+    {
+      "key": "iliklik_dogu_oda",
+      "label": {
+        "tr": "Ilıklığın doğusundaki oda",
+        "en": "Room east of tepidarium"
+      },
+      "value": "2,05 × 2,25",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "305"
+        }
+      ]
+    },
+    {
+      "key": "iliklik_kubbe_aydinlik",
+      "label": {
+        "tr": "Ilıklık kubbesindeki aydınlatma deliği",
+        "en": "Oculi in tepidarium dome"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "305"
+        }
+      ]
+    },
+    {
+      "key": "sicaklik_olcu",
+      "label": {
+        "tr": "Sıcaklık ölçüsü",
+        "en": "Caldarium size"
+      },
+      "value": "5,60 × 6,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "305"
+        }
+      ]
+    },
+    {
+      "key": "sicaklik_kapi_genislik",
+      "label": {
+        "tr": "Sıcaklık kapısı genişliği",
+        "en": "Caldarium door width"
+      },
+      "value": 70,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "305"
+        }
+      ]
+    },
+    {
+      "key": "hucre_olcu",
+      "label": {
+        "tr": "Kuzeybatı hücre ölçüsü",
+        "en": "Northwest cell size"
+      },
+      "value": "2,15 × 2,20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "305"
+        }
+      ]
+    },
+    {
+      "key": "su_deposu_olcu",
+      "label": {
+        "tr": "Su deposu iç ölçüsü",
+        "en": "Water tank interior size"
+      },
+      "value": "2,54 × 7,07",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "305-306"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_insa_yili",
+      "label": {
+        "tr": "Yeniden inşa yılı",
+        "en": "Year of reconstruction"
+      },
+      "value": 2007,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "306"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hançerli Fatma Sultan",
+      "role": {
+        "tr": "Banî (yaptıran); külliyenin vakfedeni",
+        "en": "Founder; endower of the complex"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1531",
+      "year": 1531,
+      "date": null,
+      "hijri": "938",
+      "type": "record",
+      "title": {
+        "tr": "Külliye vakfiyesi düzenlendi",
+        "en": "Endowment charter of the complex issued"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "304-305"
+        }
+      ],
+      "note": {
+        "tr": "Hamam, medrese, sıbyan mektebi ve türbeden oluşan külliye.",
+        "en": "Complex of bath, madrasa, primary school and tomb."
+      }
+    },
+    {
+      "id": "yeniden-insa-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Büyükşehir Belediyesi tarafından özgün plana sadık kalınarak yeniden inşa edildi",
+        "en": "Rebuilt by the Metropolitan Municipality faithful to the original plan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "306"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-cekirge-sultan-adak-hamami",
+      "target_name": {
+        "tr": "Çekirge Sultan Adak Hamamı"
+      },
+      "type": "waqf_income",
+      "description": {
+        "tr": "Fatma Sultan, Çekirge Sultan Adak Hamamı'nı külliyeye vakfetmiştir.",
+        "en": "Fatma Sultan endowed the Çekirge Sultan Adak Bath to the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "305"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, Musababa Caddesi'nde, beden duvarları moloz taş, kubbeleri tuğla olan bir yapıdır. Soyunmalıktan sivri kemerli kapıyla kubbeli ılıklığa, oradan büyük kubbeli, ortasında yuvarlak ve çevresinde altıgen aydınlık pencereleri olan sıcaklığa geçilir. Güneyde tuğla beşik tonozlu bir su deposu vardır. Bugün kültür ve sanat merkezidir.",
+      "en": "The bath stands on Musababa Street with rubble-stone walls and brick domes. From the changing room a pointed arched door leads to the domed tepidarium and then to the caldarium under a large dome with a circular window and hexagonal oculi around it. To the south is a brick barrel-vaulted water tank. Today it is a culture and art center."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-hancerli-fatma-sultan-hamami/p026-1.jpg",
+        "original_name": "02 ERD05856 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "305"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hançerli Fatma Sultan Hamamı, dış cephe",
+        "en": "Hançerli Fatma Sultan Bath, exterior"
+      },
+      "alt": {
+        "tr": "Kısmen taş, kısmen beyaz sıvalı alçak yapı bir yol kenarında durur. Duvarlarda bilgi levhaları ve kapı vardır; çevresinde ağaçlar ve kaldırım bulunur.",
+        "en": "A low building, partly stone and partly white-plastered, beside a paved path. Information panels and a door are on the walls, with trees around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-01"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-hancerli-fatma-sultan-hamami/p027-2.jpg",
+        "original_name": "05 ERD05825 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "306"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Hamamın kubbesi ve yıldız biçimli ışıklıkları",
+        "en": "Bath dome with star-shaped skylights"
+      },
+      "alt": {
+        "tr": "Beyaz kubbede yıldız biçimli küçük ışık delikleri düzenli halkalar oluşturur. Merkezde daha büyük bir açıklık, kenarda süslemeli bir kuşak vardır.",
+        "en": "A white dome with small star-shaped light openings arranged in rings. A larger opening is at the centre and a decorated band runs around the edge."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-01"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-hancerli-fatma-sultan-hamami/p027-3.jpg",
+        "original_name": "06 ERD05837 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "306"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sarkıtlı niş ve kemerli geçit",
+        "en": "Muqarnas niche and arched passage"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı duvarda kademeli sarkıtlı bir niş ve altında kemerli bir geçit vardır. Alt kısımda mermer kaplama görünür.",
+        "en": "A white plastered wall has a stepped muqarnas niche above an arched passage. Marble cladding is visible at the bottom."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-01"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

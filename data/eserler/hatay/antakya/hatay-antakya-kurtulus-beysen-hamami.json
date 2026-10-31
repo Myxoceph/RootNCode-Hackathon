@@ -1,0 +1,322 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-kurtulus-beysen-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – İş Yeri ve Diğerleri",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Kurtuluş (Beysen) Hamamı bölümünden (s. 466-467) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitabedeki '1364' tarihinin takvimi (Hicri/Miladi) kaynakta belirtilmiyor; tarihleme netleştirilmeli.",
+      "Dönem (era) için uygun kod yok (Memlûk); null bırakıldı.",
+      "Metindeki 'Yeni Hamam' ifadesinin hangi yapıya işaret ettiği açık değil.",
+      "Bani Bî'seri yalnızca varsayım; vakıf kaydı/ vakfiye bilgisi kaynakta yok.",
+      "Hamamın vakıf bilgisi kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Bölüm özeti sayfası (s. 476) hamamı Türkçe 'KURTULUŞ (BEYHAN) HAMAMI' (İngilizce 'KURTULUŞ (BEYHAN) BATHROOM') diye listeler; eserin kendi başlığı 'KURTULUŞ (BEYSEN) HAMAMI'. Metin ise 'Beyseri Hamamı' da diyor. Kitapta hem Beysen hem Beyhan yazımı geçer; başlıktaki 'Beysen' kullanıldı."
+      },
+      {
+        "field": "inscriptions[kitabe]",
+        "note": "Kitabe 'Beyseri 1364' olarak aktarılıyor; takvim belirtilmiyor. 1364 Miladi ise Memlûk dönemine, Hicri ise 1944-45'e denk gelir; kitap 1551 kayıtlarına ve Baybars (13. yüzyıl) bağlantısına da değiniyor. Kaynak değerleri korundu, tarihleme tartışmalı işaretlendi."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Metinde 'Yeni Hamam'da da aynı gerekçelerle dalma havuzuna yer verilmişken' deniyor; 'Yeni Hamam' kitapta başka bir yerde tanıtılmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kurtuluş (Beysen) Hamamı",
+    "en": "Kurtuluş (Beysen) Bath"
+  },
+  "subtitle": {
+    "tr": "Kurtuluş Caddesi'nde binalar arasına sıkışmış, Memlûk üslubu mukarnaslı geçişlere sahip hamam",
+    "en": "A bath squeezed between buildings on Kurtuluş Street, with Mamluk-style muqarnas transitions"
+  },
+  "alternate_names": [
+    {
+      "tr": "Beyseri Hamamı",
+      "en": "Beyseri Bath",
+      "note": "Kitabedeki ve metindeki ad."
+    },
+    {
+      "tr": "Kurtuluş (Beyhan) Hamamı",
+      "en": "Kurtuluş (Beyhan) Bath",
+      "note": "Bölüm özeti sayfasındaki yazım."
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "hamam",
+    "Antakya",
+    "Memlûk",
+    "mukarnas",
+    "Kurtuluş Caddesi"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "Antakya, Kurtuluş Caddesi'nin kuzeyi; 4. Mıntıka, 2479 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "467"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.200184,
+      "lng": 36.164127,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q131738938 ('Beyseri Hamamı'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Kitabede 'Beyseri 1364'; 1551 kayıtlarında mevcut",
+      "en": "'Beyseri 1364' on the inscription; recorded in 1551"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitabedeki 1364 tarihinin takvimi belirtilmiyor ve kitap bu tarihin hamamın önüne eklenen binalara ait olabileceğini söylüyor; hamamın 1551 kayıtlarında geçtiği belirtiliyor. Yıl alanları bu nedenle boş.",
+      "en": "The calendar of the inscribed 1364 is not stated and the book says it may date buildings added in front of the bath; the bath appears in 1551 records. Year fields are therefore empty."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "467"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Bî'seri (Beyseri)",
+    "role": "banî (muhtemel)",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "467"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Soyunmalık, ılıklık, sıcaklık ve külhan bölümlerinden oluşan hamam üç yanından çevre binalarla kuşatılmıştır. Kitabesinde ad ve tarih 'Beyseri 1364' diye yazılıdır; kitap, 1551 kayıtlarına ve Sultan Baybars'ın süt kardeşi Bî'seri'ye dayanarak banisinin Bî'seri olabileceğini düşünür.",
+    "en": "The bath of changing room, warm room, hot room and furnace is hemmed in by buildings on three sides. Its inscription gives name and date as 'Beyseri 1364'; the book, drawing on 1551 records and Sultan Baybars' foster brother Bî'seri, suggests Bî'seri may be its patron."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Bölümler ve Mimari",
+        "en": "Parts and Architecture"
+      },
+      "body": {
+        "tr": "Kurtuluş Caddesi'nin kuzeyinde binalar arasına sıkışmış olan yapı soyunmalık, ılıklık, sıcaklık ve külhan bölümlerinden oluşur. Üç yanı çevre binalarla çevrili olduğundan dış cepheleri hakkında bilgi sahibi olmak mümkün değildir; girişi caddeyle irtibatı sağlayan bir kapıdan yapılır. Aydınlatma üst örtüdeki ışıklıklarla sağlanır; ılıklık kubbesinin altındaki beşik tonoza açılan ışıklıklar ana kubbenin ışıklıklarından gelen gün ışığından yararlanmak içindir. Hamam üslup olarak mukarnaslı kubbe geçişlerinde Memlûk mimarisi özellikleri gösterir. Dini inanç gereği yapılmış dalma havuzu vardır; bugün ihtiyaç kalmadığı için bu bölüm yıkanma hücresine dönüştürülmüştür.",
+        "en": "Squeezed between buildings north of Kurtuluş Street, the building consists of a dressing room, warm room, hot room and furnace. Surrounded on three sides by buildings, nothing can be known of its exterior; it is entered by a door linking it to the street. Lighting comes from skylights in the upper cover; skylights on the barrel vault beneath the warm room's dome use daylight from the main dome's skylights. In style the bath shows Mamluk characteristics in its muqarnas dome transitions. A diving pool made for religious reasons exists; today the section has probably been converted into a bathing cell as the need disappeared."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "467"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-ve-bani",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe, Tarih ve Banisi",
+        "en": "Inscription, Date and Patron"
+      },
+      "body": {
+        "tr": "Yapı üzerindeki kitabede hamamın adı ve tarihi 'Beyseri 1364' olarak yazılıdır; bu tarihin hamamın önüne eklenen diğer binaların yapım tarihi olabilmesi ihtimal dahilindedir. Hamamın 1551 yılı kayıtlarında mevcut olduğu belirtilmiştir ve bu kayıtlar ad, bani ve inşa tarihi hakkında fikir verebilecek niteliktedir. Sultan Baybars'ın süt kardeşinin adı Bî'seri olduğundan hamam banisinin de Bî'seri olabileceği ve Baybars'ın Antakya'da başlattığı imar faaliyetine kardeşinin de katılmış olduğu söylenebilir.",
+        "en": "On the building's inscription the name and date of the bath are written as 'Beyseri 1364'; this date may be the construction date of other buildings added in front of the bath. The bath is stated to exist in the records of 1551, which could give an idea about its name, patron and date. Since Sultan Baybars' foster brother was named Bî'seri, the bath's patron could also be Bî'seri, who may have taken part in the reconstruction Baybars began in Antakya."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "467"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "bolumler",
+      "label": {
+        "tr": "Bölümler",
+        "en": "Parts"
+      },
+      "value": "Soyunmalık, ılıklık, sıcaklık, külhan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "467"
+        }
+      ]
+    },
+    {
+      "key": "dalma_havuzu",
+      "label": {
+        "tr": "Dalma havuzu",
+        "en": "Plunge pool"
+      },
+      "value": "Vardı; yıkanma hücresine dönüştürüldü",
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "467"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Bî'seri (Beyseri)",
+      "role": {
+        "tr": "Sultan Baybars'ın süt kardeşi; hamamın muhtemel banisi",
+        "en": "Foster brother of Sultan Baybars; probable patron of the bath"
+      }
+    },
+    {
+      "name": "Sultan Baybars",
+      "role": {
+        "tr": "Antakya'da imar faaliyeti başlatan hükümdar (metinde anılıyor)",
+        "en": "Ruler who began reconstruction in Antakya (mentioned in the text)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "yapi-kitabesi",
+      "location": {
+        "tr": "Yapı üzerindeki kitabe",
+        "en": "Inscription on the building"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Beyseri 1364",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "467"
+        }
+      ],
+      "note": {
+        "tr": "Kitabın dili/yazısı ve takvimi kaynakta belirtilmiyor.",
+        "en": "Language, script and calendar are not stated in the source."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kayit-1551",
+      "year": 1551,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hamam 1551 yılı kayıtlarında geçiyor",
+        "en": "The bath appears in the records of 1551"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "467"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mukarnas",
+      "title": {
+        "tr": "Mukarnaslı kubbe geçişleri",
+        "en": "Muqarnas dome transitions"
+      },
+      "hint": {
+        "tr": "Memlûk üslubunu gösteren mukarnaslı kubbe geçişlerine bakın.",
+        "en": "Look at the muqarnas dome transitions showing Mamluk style."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kurtuluş (Beysen) Hamamı, Kurtuluş Caddesi'nin kuzeyinde, binalar arasına sıkışmış durumdadır; üç yanı çevre yapılarla kuşatıldığı için dış cepheleri görünmez. Cadde ile bağlantısı tek bir kapıdır. İçeride soyunmalık, ılıklık, sıcaklık ve külhan bölümleri sıralanır. Gün ışığı üst örtüdeki ışıklıklardan girer. Kubbe geçişlerinde, Memlûk üslubunu gösteren mukarnaslar vardır.",
+      "en": "Kurtuluş (Beysen) Bath is squeezed between buildings north of Kurtuluş Street; surrounded on three sides, its exterior walls cannot be seen. A single door links it to the street. Inside are the dressing room, warm room, hot room and furnace. Daylight enters through skylights in the upper cover. The dome transitions have muqarnas in the Mamluk style."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 467) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kurtulus-beysen-hamami/p234-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "466"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın sokak cephesi ve kemerli girişi",
+        "en": "Street front and arched entrance of the bath"
+      },
+      "alt": {
+        "tr": "Çevre binalar arasında taş kemerli, siyah kapılı bir giriş; yanında kepenkli dükkânlar, üstte sarı ve pembe sıvalı katlar, önde park halinde iki araç.",
+        "en": "A stone-arched entrance with a black door among neighbouring buildings; shuttered shops beside it, yellow and pink plastered storeys above and two parked cars in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

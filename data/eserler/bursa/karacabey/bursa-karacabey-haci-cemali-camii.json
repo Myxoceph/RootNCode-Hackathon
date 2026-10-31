@@ -2,21 +2,20 @@
   "schema_version": "1.0",
   "id": "bursa-karacabey-haci-cemali-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Karacabey",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Karacabey bölümünden (s. 512) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
-      "Arşiv fotoğrafı (archive_media) elimizde yok.",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
       "Mimarı kitapta yok.",
-      "Hacı Cemali Yenişar'ın mahalle ya da başka yapılarla bağı kitapta yok; ilişki kurulmadı."
+      "Hacı Cemali Yenişar'ın mahalle ya da başka yapılarla bağı kitapta yok; ilişki kurulmadı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": []
   },
@@ -62,7 +61,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "512"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.217422,
+      "lng": 28.360687,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/379322059 ('Nasrullah Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -264,7 +270,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-haci-cemali-camii/p003-3.jpg",
+        "original_name": "03 DJI_20241105193610_0347_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "512"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin çatısı ve minaresi, şehir manzarası",
+        "en": "Roof and minaret among city buildings"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı pembe boyalı cami, çevresindeki apartmanların arasında kalır. Ahşap görünümlü ince bir minare yükselir.",
+        "en": "A pink-painted mosque with a tiled roof stands among apartment blocks. A slender minaret rises beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-haci-cemali-camii/p003-2.jpg",
+        "original_name": "04 ERD06579 kopya.jpg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "512"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Prayer hall with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı, krem duvarlı salonda yeşil çerçeveli mihrap ve sağda minber bulunur. Pencereler süslü kemerlerle çevrilidir; zemin kırmızı halıyla kaplıdır.",
+        "en": "A hall with a wooden ceiling and cream walls. A green-framed mihrab and a minber at right are visible, and arched windows have decorated surrounds. The floor is red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    }
+  ],
   "archive_media": [],
-  "exhibitions": []
+  "exhibitions": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "19dW7EV_S0PPnXV1zTfP2jbB3e7m3UIQ0",
+    "book_layout_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+    "book_pdf_name": "5-Karacabey.pdf"
+  }
 }

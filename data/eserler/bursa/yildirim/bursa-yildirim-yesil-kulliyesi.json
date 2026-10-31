@@ -1,0 +1,680 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-yesil-kulliyesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yeşil Çelebi Mehmed Külliyesi",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Külliyenin imaret, medrese, Yeşil Türbe ve Devlet Hatun Türbesi kayıtları ayrı bir ajan/bölükte yazılıyor; han, hamam ve çarşı birimleri bu bölükte anlatılmıyor, gerekirse eklenmeli.",
+      "Vakfiyede geçen İvaz Paşa Hanı (Lonca Hanı) ve İpek Hanı'nın ilçesi metinde belirtilmiyor; relation hedef id'leri tahmin (İpek Hanı mevcut kayıtla eşleştirildi, İvaz Paşa Hanı henüz yok).",
+      "Vakfiyenin tam metni kitapta yok; VGM arşivinden bulunursa waqf.deed.excerpt eklenecek.",
+      "Mimar/ustalar için kaynak: kitap Hacı İvaz Paşa ile Bursalı mimar Abdullah oğlu Timurtaş'ın birlikte çalıştığını belirtiyor; kesin mimar adı verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[banisi]",
+        "note": "Kitap Sultan Çelebi Mehmed'in H. 789 / M. 1387'de doğduğunu ve 42 yaşında (H. 824 / M. 1421) öldüğünü yazıyor; 1387 ile 1421 arası 34 yıldır. Kaynağa sadık kalındı, kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "dating",
+        "note": "Giriş metni inşaatın başlangıcı (H. 817 / M. 1414) ve bitişini (H. 822 / M. 1419) 'cami taç kapısındaki kitabeye göre' veriyor; ancak kitabenin aktarılan metninde yalnızca tamamlanma tarihi (Zilhicce 822) geçiyor, 1414 geçmiyor. Vakfiye tarihi H. Rebiyülevvel 822 / M. Nisan 1419'dur. Süsleme/nakış işleri ise 1424'e kadar sürmüştür."
+      },
+      {
+        "field": "sections[kitabeler]",
+        "note": "Giriş metni külliyede altı ayrı kitabede banî, mimar, nakkaş başı, çini ve ahşap ustalarının kayıtlı olduğunu söylüyor; bu bölükte altı kitabenin tamamı tek tek sayılmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yeşil Çelebi Mehmed Külliyesi",
+    "en": "Yeşil Çelebi Mehmed Complex"
+  },
+  "subtitle": {
+    "tr": "Çok renkli sır altı çininin Osmanlı mimarisinde ilk kez uygulandığı külliye",
+    "en": "The complex where polychrome underglaze first appears in Ottoman architecture"
+  },
+  "alternate_names": [
+    {
+      "tr": "Yeşil Külliye",
+      "en": "Yeşil Complex"
+    },
+    {
+      "tr": "Yeşil Cami Külliyesi",
+      "en": "Yeşil (Green) Mosque Complex",
+      "note": "Çinilerin rengi nedeniyle halk arasındaki ad"
+    },
+    {
+      "tr": "İmâret-i Sultân",
+      "en": "İmâret-i Sultân",
+      "note": "Tarihî kaynaklardaki ad"
+    },
+    {
+      "tr": "İmâret-i Sultân Çelebi Mehmed Han",
+      "en": "İmâret-i Sultân Çelebi Mehmed Han",
+      "note": "Tarihî kaynaklardaki ad"
+    }
+  ],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Çelebi Mehmed",
+    "sır altı çini",
+    "Tebrizli ustalar",
+    "UNESCO",
+    "vakfiye",
+    "Yeşil",
+    "külliye"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Yeşil Mahallesi",
+    "address": "Akyokuş Sokak No: 8",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "83"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.181698,
+      "lng": 29.074368,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/11808210851 ('SULTAN ÇELEBİ MEHMED (YEŞİL) KÜLLİYESİ'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 817-822 / M. 1414-1419 (süsleme 1424'e kadar)",
+      "en": "AH 817-822 / AD 1414-1419 (decoration until 1424)"
+    },
+    "start_year": 1414,
+    "end_year": 1419,
+    "hijri_year": 817,
+    "century": 15,
+    "basis": {
+      "tr": "Giriş metni, cami taç kapı kitabesine dayanarak inşaatın 1414'te başladığını ve 1419'da bittiğini söyler; tezyinat ve boya işleri II. Murad döneminde 1424'e kadar sürmüştür.",
+      "en": "The introduction states, citing the portal inscription, that construction began in 1414 and ended in 1419; decoration and painting continued under Murad II until 1424."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "83"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Çelebi Mehmed",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "83, 85"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [
+      {
+        "name": "Hacı İvaz Paşa (Ahi Bayezid oğlu Hacı İvaz)",
+        "note": "Kitabeye göre yapının planlanması ve uygulanmasında görev almıştır"
+      },
+      {
+        "name": "Timurtaş (Abdullah oğlu), Bursalı mimar",
+        "note": "Tarihî kaynaklara göre Hacı İvaz Paşa ile birlikte çalışmıştır"
+      }
+    ],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "98"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Sultan Mehmed bin Bayezid bin Murad Han Vakfı",
+    "deed": {
+      "date_display": "H. Rebiyülevvel 822 / M. Nisan 1419",
+      "excerpt": {
+        "tr": "259 satırlık, sülüs hatla yazılmış vakfiye; Bursa kadısı Molla Fenârî (Mehmed b. Hamza b. Mehmed) tarafından tasdik edilmiştir.",
+        "en": "259-line endowment charter in Thuluth script, authenticated by Molla Fenârî (Mehmed b. Hamza b. Mehmed), Qadi of Bursa."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Gelirler önce zaviye, medrese ve diğer vakıf birimlerinin düzenli bakım ve onarımına ayrılır; imarette her gün iki öğün sıcak yemek hazırlanır ve sosyal ya da ekonomik ayrım gözetilmeksizin tüm misafirlere sunulur.",
+      "en": "Income is first allocated to the regular maintenance of the zawiya, madrasa and other units; two hot meals are prepared daily in the imaret and served to all guests without social or economic discrimination."
+    },
+    "land_note": {
+      "tr": "Gelir kaynakları: İpek Hanı, Kazzazlar Çarşısı'nda 41, Sofçular (Yüncüler) Çarşısı'nda 16, Dellâllar Çarşısı'nda 14, Boyacılar Çarşısı'nda 6, Bakkallar ve Bakırcılar çarşılarında toplam 20 dükkân; İvaz Paşa (Lonca) Hanı ile Bursa ve Balıkesir'deki çok sayıda han, hamam, mesken ve tarımsal arazi.",
+      "en": "Income sources: İpek Han; 41 shops in the Kazzazlar, 16 in the Sofçular (Yüncüler), 14 in the Dellâllar, 6 in the Boyacılar bazaars and 20 in the Bakkallar and Bakırcılar bazaars; İvaz Paşa (Lonca) Han; numerous hans, baths, residences and agricultural lands in Bursa and Balıkesir."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "86"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan Çelebi Mehmed'in 1414-1419 arasında yaptırdığı; cami, türbe, medrese, imaret, han, hamam ve çarşıdan oluşan külliye. Osmanlı mimarisinde çok renkli sır altı tekniğinin ilk kez uygulandığı yapı topluluğudur ve 2014'te UNESCO Dünya Mirası alanına dahil edilmiştir.",
+    "en": "The complex built by Sultan Çelebi Mehmed between 1414 and 1419, comprising a mosque, tomb, madrasa, imaret, inn, bath and bazaar. It is the first building group to use the polychrome underglaze technique in Ottoman architecture and was inscribed on the UNESCO World Heritage List in 2014."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Külliye Yıldırım ilçesi, Yeşil Mahallesi, Akyokuş Sokak No: 8 adresindedir ve iki yanında derin yarlarla çevrili doğal bir yükselti üzerinde konumlanmıştır. Cami taç kapısındaki kitabeye göre Sultan Çelebi Mehmed döneminde H. 817 / M. 1414'te başlanmış, H. 822 / M. 1419'da tamamlanmıştır. Tezyinat, nakış ve boya işleri II. Murad döneminde bitmiş ve bu süreç 1424'e kadar sürmüştür. Cami, türbe, medrese, imaret, han, hamam ve çarşıdan oluşan külliye, dönemin sosyal, kültürel ve dinî ihtiyaçlarına yönelik kapsamlı bir yaşam alanı olarak kurgulanmıştır.",
+        "en": "The complex stands at Akyokuş Street No. 8, Yeşil Neighborhood, Yıldırım District, on a natural elevation surrounded by deep ravines. According to the inscription on the mosque portal, construction began in AH 817 / AD 1414 under Sultan Çelebi Mehmed and was completed in AH 822 / AD 1419; decoration and painting were completed under Murad II and lasted until 1424. Consisting of a mosque, tomb, madrasa, imaret, inn, bath and bazaar, it was conceived as a comprehensive living space for the social, cultural and religious needs of its time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "83"
+        }
+      ]
+    },
+    {
+      "id": "adlandirma",
+      "order": 2,
+      "title": {
+        "tr": "Adı ve Önemi",
+        "en": "Name and Significance"
+      },
+      "body": {
+        "tr": "Tarihî kaynaklarda \"İmâret-i Sultân\" ve \"İmâret-i Sultân Çelebi Mehmed Han\" adlarıyla kayda geçen külliye, yapımında kullanılan çinilerin rengi ve etkisi nedeniyle halk arasında \"Yeşil Cami Külliyesi\" diye anılagelmiştir. Osmanlı mimarisinde çok renkli sır altı tekniğinin ilk kez uygulandığı yapı topluluğu olduğu için hem mimari hem sanat tarihi açısından öncü bir örnektir.",
+        "en": "Recorded in historical sources as \"İmâret-i Sultân\" and \"İmâret-i Sultân Çelebi Mehmed Han\", it is known among the public as the \"Yeşil (Green) Mosque Complex\" because of the colour and aesthetic effect of its tiles. As the first building group to feature polychrome underglaze in Ottoman architecture, it is a pioneering example in architecture and art history."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "83"
+        }
+      ]
+    },
+    {
+      "id": "kitabeler",
+      "order": 3,
+      "title": {
+        "tr": "Altı Kitabe ve Ustalar",
+        "en": "Six Inscriptions and the Masters"
+      },
+      "body": {
+        "tr": "Banînin yanı sıra mimarın, nakkaş başının, çini ve ahşap ustalarının adları altı ayrı kitabe aracılığıyla kayda geçirilmiştir. Bu durum külliyeyi mimarlık tarihinin belge temelli sürekliliği bakımından da özgün kılar; kitap onu Osmanlı klasik dönemine uzanan mimari geleneğin kurucu yapı taşlarından biri olarak değerlendirir.",
+        "en": "The names of the architect, head ornamenter, tile and woodwork masters as well as the benefactor are recorded in six separate inscriptions, making the complex unique also for the document-based continuity of architectural history. The book regards it as one of the founding building blocks of the architectural tradition reaching the Ottoman classical period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "84"
+        }
+      ]
+    },
+    {
+      "id": "banisi",
+      "order": 4,
+      "title": {
+        "tr": "Banisi Sultan Çelebi Mehmed",
+        "en": "The Founder, Sultan Çelebi Mehmed"
+      },
+      "body": {
+        "tr": "Banî Sultan Çelebi Mehmed, Yıldırım Bayezid ile Devlet Hatun'un oğludur. H. 789 / M. 1387'de doğmuş, genç yaşta Amasya sancağında valilik yapmıştır. Babasının Ankara Savaşı'nda yenilmesiyle başlayan Fetret Devri'nde kardeşleriyle uzun mücadelelerin ardından Anadolu'da siyasi birliği yeniden kurmuş, Osmanlı tarih yazımında \"devletin ikinci kurucusu\" olarak anılmıştır. H. 23 Cemaziyelahir 824 / M. 25 Haziran 1421'de, 42 yaşında Edirne'de vefat etmiş; naaşı Bursa'ya getirilerek külliyenin türbesine defnedilmiştir.",
+        "en": "Sultan Çelebi Mehmed was the son of Yıldırım Bayezid and Devlet Hatun. Born in AH 789 / AD 1387, he served young as governor of Amasya. During the Interregnum that began with his father's defeat at Ankara he re-established political unity in Anatolia after long struggles with his brothers and is called the \"second founder of the state\" in Ottoman historiography. He died in Edirne on 23 Jumada al-Thani AH 824 / 25 June AD 1421 aged 42; his body was brought to Bursa and buried in the tomb of the complex."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "85-87"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye",
+      "order": 5,
+      "title": {
+        "tr": "Vakfiye ve Gelirler",
+        "en": "Endowment Charter and Income"
+      },
+      "body": {
+        "tr": "Sultan Mehmed bin Bayezid bin Murad Han adına düzenlenen, sülüs hatla yazılmış 259 satırlık vakfiye H. Rebiyülevvel 822 / M. Nisan 1419 tarihlidir ve Bursa kadısı Molla Fenârî (Mehmed b. Hamza b. Mehmed) tarafından tasdik edilmiştir. İpek Hanı'nın yanı sıra Kazzazlar Çarşısı'nda 41, Sofçular (Yüncüler) Çarşısı'nda 16, Dellâllar Çarşısı'nda 14, Boyacılar Çarşısı'nda 6, Bakkallar ve Bakırcılar çarşılarında toplam 20 dükkân vakfa gelir olarak ayrılmıştır; ayrıca \"Lonca Hanı\" olarak da bilinen İvaz Paşa Hanı ile Bursa ve Balıkesir'de çok sayıda han, hamam, mesken ve tarım arazisi vakıf gelirleri arasındadır. Gelirler öncelikle zaviye, medrese ve diğer birimlerin bakım ve onarımına ayrılır; imarette her gün iki öğün sıcak yemek, ayrım gözetilmeksizin tüm misafirlere sunulur.",
+        "en": "The 259-line charter in Thuluth script, drawn up in the name of Sultan Mehmed bin Bayezid bin Murad Han, is dated Rabi al-Awwal AH 822 / April AD 1419 and was authenticated by Molla Fenârî, Qadi of Bursa. Besides the İpek Han, 41 shops in the Kazzazlar, 16 in the Sofçular (Yüncüler), 14 in the Dellâllar, 6 in the Boyacılar bazaars and 20 in the Bakkallar and Bakırcılar bazaars, the İvaz Paşa Han (\"Lonca Han\") and numerous hans, baths, residences and agricultural lands in Bursa and Balıkesir provided income. Income first goes to maintenance of the zawiya, madrasa and other units; two hot meals are served daily in the imaret to all guests without discrimination."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86-87"
+        }
+      ]
+    },
+    {
+      "id": "unesco",
+      "order": 6,
+      "title": {
+        "tr": "UNESCO Dünya Mirası",
+        "en": "UNESCO World Heritage"
+      },
+      "body": {
+        "tr": "Yeşil Camii'nin de içinde yer aldığı külliye, 2014 yılında Bursa Tarihi Hanlar Bölgesi, Sultan Külliyeleri ve Cumalıkızık köyü ile birlikte UNESCO Dünya Mirası Alanı olarak tescillenmiştir.",
+        "en": "The complex, including the Green Mosque, was registered as a UNESCO World Heritage Site in 2014 together with the Bursa Historical Hans District, the Sultan Complexes and Cumalıkızık village."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "116-117"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "vakfiye_satir_sayisi",
+      "label": {
+        "tr": "Vakfiye satır sayısı",
+        "en": "Endowment charter lines"
+      },
+      "value": 259,
+      "unit": "satır",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86"
+        }
+      ]
+    },
+    {
+      "key": "vakif_dukkan_kazzazlar",
+      "label": {
+        "tr": "Kazzazlar Çarşısı'ndaki vakıf dükkânı",
+        "en": "Shops in Kazzazlar Bazaar"
+      },
+      "value": 41,
+      "unit": "dükkân",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86"
+        }
+      ]
+    },
+    {
+      "key": "vakif_dukkan_sofcular",
+      "label": {
+        "tr": "Sofçular (Yüncüler) Çarşısı'ndaki vakıf dükkânı",
+        "en": "Shops in Sofçular (Yüncüler) Bazaar"
+      },
+      "value": 16,
+      "unit": "dükkân",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86"
+        }
+      ]
+    },
+    {
+      "key": "vakif_dukkan_dellallar",
+      "label": {
+        "tr": "Dellâllar Çarşısı'ndaki vakıf dükkânı",
+        "en": "Shops in Dellâllar Bazaar"
+      },
+      "value": 14,
+      "unit": "dükkân",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86"
+        }
+      ]
+    },
+    {
+      "key": "vakif_dukkan_boyacilar",
+      "label": {
+        "tr": "Boyacılar Çarşısı'ndaki vakıf dükkânı",
+        "en": "Shops in Boyacılar Bazaar"
+      },
+      "value": 6,
+      "unit": "dükkân",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86"
+        }
+      ]
+    },
+    {
+      "key": "vakif_dukkan_bakkal_bakirci",
+      "label": {
+        "tr": "Bakkallar ve Bakırcılar çarşılarındaki vakıf dükkânı (toplam)",
+        "en": "Shops in Bakkallar and Bakırcılar bazaars (total)"
+      },
+      "value": 20,
+      "unit": "dükkân",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_sayisi",
+      "label": {
+        "tr": "Usta ve banî adlarını kaydeden kitabe sayısı",
+        "en": "Inscriptions recording patron and masters"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "84"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Çelebi Mehmed",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Hacı İvaz Paşa (Ahi Bayezid oğlu)",
+      "role": {
+        "tr": "Yapının planlanmasında ve uygulanmasında görevli",
+        "en": "Took part in planning and implementation"
+      }
+    },
+    {
+      "name": "Timurtaş (Abdullah oğlu)",
+      "role": {
+        "tr": "Bursalı mimar",
+        "en": "Architect from Bursa"
+      }
+    },
+    {
+      "name": "Molla Fenârî (Mehmed b. Hamza b. Mehmed)",
+      "role": {
+        "tr": "Vakfiyeyi tasdik eden Bursa kadısı",
+        "en": "Qadi of Bursa who authenticated the charter"
+      }
+    },
+    {
+      "name": "II. Murad",
+      "role": {
+        "tr": "Tezyinat ve boya işlerinin tamamlandığı dönemin padişahı",
+        "en": "Sultan under whom decoration was completed"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insaat-baslangic",
+      "year": 1414,
+      "date": null,
+      "hijri": "817",
+      "type": "construction",
+      "title": {
+        "tr": "İnşaata başlandı",
+        "en": "Construction began"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "83"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye",
+      "year": 1419,
+      "date": null,
+      "hijri": "Rebiyülevvel 822",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi",
+        "en": "Endowment charter drawn up"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86"
+        }
+      ],
+      "note": {
+        "tr": "Miladi karşılığı kitapta Nisan 1419",
+        "en": "Gregorian equivalent given as April 1419"
+      }
+    },
+    {
+      "id": "insaat-tamam",
+      "year": 1419,
+      "date": null,
+      "hijri": "822",
+      "type": "construction",
+      "title": {
+        "tr": "İnşaat tamamlandı",
+        "en": "Construction completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "83"
+        }
+      ]
+    },
+    {
+      "id": "banisi-vefat",
+      "year": 1421,
+      "date": "1421-06-25",
+      "hijri": "23 Cemaziyelahir 824",
+      "type": "record",
+      "title": {
+        "tr": "Sultan Çelebi Mehmed Edirne'de vefat etti; türbesine defnedildi",
+        "en": "Sultan Çelebi Mehmed died in Edirne and was buried in the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "85-87"
+        }
+      ]
+    },
+    {
+      "id": "tezyinat-1424",
+      "year": 1424,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Tezyinat, nakış ve boya işleri tamamlandı (II. Murad dönemi)",
+        "en": "Decoration, embroidery and painting completed (Murad II period)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "83"
+        }
+      ],
+      "note": {
+        "tr": "Bu sürecin 1424'e kadar sürdüğü bilinmektedir.",
+        "en": "The process is known to have lasted until 1424."
+      }
+    },
+    {
+      "id": "unesco-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "UNESCO Dünya Mirası Alanı olarak tescil edildi",
+        "en": "Registered as UNESCO World Heritage Site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "116-117"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "polikrom-cini",
+      "title": {
+        "tr": "Çok renkli sır altı çini",
+        "en": "Polychrome underglaze tiles"
+      },
+      "hint": {
+        "tr": "Osmanlı mimarisinde bu tekniğin ilk uygulandığı külliye.",
+        "en": "The first complex to use this technique in Ottoman architecture."
+      },
+      "section_id": "adlandirma"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-ipek-hani",
+      "type": "waqf_income",
+      "description": {
+        "tr": "İpek Hanı külliye vakfına gelir sağlamak üzere vakfedilmiştir.",
+        "en": "The İpek Han was endowed to provide income to the complex foundation."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ivaz-pasa-hani",
+      "target_name": {
+        "tr": "İvaz Paşa Hanı (Lonca Hanı)"
+      },
+      "type": "waqf_income",
+      "description": {
+        "tr": "\"Lonca Hanı\" olarak da bilinen İvaz Paşa Hanı vakıf gelirleri arasındadır (ilçesi metinde belirtilmiyor).",
+        "en": "The İvaz Paşa Han, also known as the \"Lonca Han\", is among the foundation's income sources (district not stated in the text)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "86"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": 60,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliye, iki yanında derin yarlarla çevrili doğal bir yükselti üzerinde yer alır. Cami, türbe, medrese ve imaretten oluşan yapılar topluluğunun merkezinde, yeşil çinileriyle tanınan Yeşil Camii bulunur.",
+      "en": "The complex stands on a natural elevation with deep ravines on both sides. At the centre of the group of mosque, tomb, madrasa and imaret is the Green Mosque, known for its green tiles."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; incelenmeli."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1ya5DSM5reasFmWdGEd8OJoIBgacL8QtC",
+    "book_layout_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+    "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-yesil-kulliyesi/p005-1.jpg",
+        "original_name": "DJI_20240920124544_0161_D-Edit.jpg",
+        "book_pdf_file_id": "1F8LHR3PRw20dFVW5p8rwKcU9aOPSsG13",
+        "book_pdf_name": "9-Yeşil Çelebi Mehmed Külliyesi.pdf",
+        "book_page": "84"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kurşun kaplı kubbeler ve şehir manzarası",
+        "en": "Lead-covered domes and city view"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı ana kubbe ve çevresinde küçük kubbeler görünür. Arkada Bursa evleri ve dağ silueti uzanır.",
+        "en": "A lead-covered main dome with smaller domes around it. Houses of Bursa and a mountain ridge extend behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-20"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

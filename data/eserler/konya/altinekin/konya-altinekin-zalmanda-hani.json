@@ -1,0 +1,287 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-altinekin-zalmanda-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi/bânisi bilinmiyor; XV. yüzyıl ilk yarısı bilgisi yalnızca vakfiyeden çıkarım (probable).",
+      "Era (beylikler/erken Osmanlı) kitapta belirtilmediği için null bırakıldı.",
+      "Sultan Hatun kimliği: ids.md'de Seydişehir'de 'Sultan Hatun Türbesi' var, ancak kitap bu kişiyle bağ kurmuyor; ilişki yazılmadı, gözden geçirilmeli.",
+      "Kitabın 272. sayfası metin içermiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Vakfiyede yer adı \"Su-ulmandan (Zulmanda veya Zalmanda)\" biçiminde veriliyor; kaynak hanın adını bu yer adıyla ilişkilendiriyor ama yapıdan vakfiyede açıkça söz edilmediği belirtiliyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Zalmanda Hanı",
+    "en": "Zalmanda Inn"
+  },
+  "subtitle": {
+    "tr": "Koçkaya Köyü'nün güneyinde, XV. yüzyıl ilk yarısına ait olabilecek han",
+    "en": "An inn south of Koçkaya Village, possibly from the first half of the 15th century"
+  },
+  "alternate_names": [],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "han",
+    "Turgutoğulları",
+    "devşirme malzeme",
+    "VGM restorasyonu"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Altınekin",
+    "neighborhood": null,
+    "address": "Koçkaya Köyü'nün yaklaşık 10 km güneyi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "271"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.193169,
+      "lng": 32.929508,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q132752841 ('Zalmanda Hanı'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyılın ilk yarısı (olasılıkla)",
+      "en": "First half of the 15th century (possibly)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitâbe ve kayıt yoktur; 1446 tarihli Sultan Hatun vakfiyesinde Su-ulmandan'ın (Zulmanda/Zalmanda) tamamının vakıf gösterilmesinden hareketle XV. yüzyılın ilk yarısında yapılmış olabileceği düşünülmektedir.",
+      "en": "There is no inscription or record; because the 1446 charter of Sultan Hatun lists the whole of Su-ulman (Zulmanda/Zalmanda) as a waqf, it is thought the building may date to the first half of the 15th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "271"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "271"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Sultan Hatun vakfı (1446 tarihli vakfiye)",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Turgutoğullarından Yusuf Şah Bey'in kızı Sultan Hatun'un M. 1446 tarihli vakfiyesinde Su-ulmandan'ın (Zulmanda veya Zalmanda) tamamı vakıf gösterilmiştir. Vakfiye hanın kendisinden söz etmez; yer vakıf arazisi olarak anılır.",
+      "en": "In the 1446 charter of Sultan Hatun, daughter of Yusuf Şah Bey of the Turgutoğulları, the whole of Su-ulman (Zulmanda or Zalmanda) is shown as a waqf. The charter does not mention the inn itself, only the place."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "271"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Altınekin'e bağlı Koçkaya Köyü'nün yaklaşık 10 km güneyindeki, kuzey-güney doğrultulu dikdörtgen planlı, üç sahınlı han. Yapıldığı zaman ve yaptıran bilinmez; VGM tarafından onarılmıştır.",
+    "en": "A rectangular, three-nave inn about 10 km south of Koçkaya Village in Altınekin district. Its builder and date are unknown; it was repaired by the General Directorate of Foundations."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Yapının üzerinde kitâbe yoktur; kayıtlarda da adı geçmediği için ne zaman ve kim tarafından yaptırıldığı bilinmemektedir. Turgutoğullarından Yusuf Şah Bey'in kızı Sultan Hatun'un M. 1446 tarihli vakfiyesinde Su-ulmandan'ın (Zulmanda veya Zalmanda) tamamının vakıf gösterilmesi, yapının XV. yüzyılın ilk yarısında yapılmış olabileceğini düşündürmektedir. Han 2000'li yıllara kadar harap durumdayken Vakıflar Genel Müdürlüğü tarafından onarılmış, restorasyon sonrası kiremit döşeli kırma çatıyla örtülmüştür.",
+        "en": "The building has no inscription and is not named in records, so when and by whom it was built is unknown. The 1446 charter of Sultan Hatun, daughter of Yusuf Şah Bey of the Turgutoğulları, listing the whole of Su-ulman (Zulmanda or Zalmanda) as a waqf suggests it may have been built in the first half of the 15th century. The inn was in ruins until the 2000s and was repaired by the General Directorate of Foundations; after restoration it was covered with a tiled hipped roof."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Han kuzey-güney doğrultusunda dikdörtgen planlıdır ve iki yöne eğimli çatıyla örtülüdür. Cephe düzeni sadedir; beden duvarlarının alt kısmında düzgün kesme taş, üstte kaba yonu taş ve yer yer devşirme malzeme kullanılmıştır. Giriş, güney cephenin ortasında eyvan biçiminde dışa taşan kapı açıklığındandır. Taç kapı kemer ayakları iç kısma seki biçiminde taşan kaide tarzı bir bölüme oturur; açıklığın iki yanında sütunceler vardır. Mekân dörderli iki sıra destekle üç sahına bölünmüştür; ayaklar sivri kemerlerle birbirine bağlıdır. Orta sahın diğerlerinden yüksek ve geniştir. Batı duvarının ortasındaki bir mazgal pencere içeriyi aydınlatır.",
+        "en": "The inn has a rectangular plan in the north-south direction and a roof sloping in two directions. The facade is simple; smooth cut stone is used at the bottom of the walls, rough-cut stone and some spolia at the top. Entrance is through a door opening in the middle of the south facade projecting outward like an iwan. The crown gate arch legs sit on a pedestal-style section extending inward like a terrace, with colonnettes on both sides. The space is divided into three naves by two rows of four supports joined by pointed arches. The middle nave is higher and wider. A loophole window in the middle of the west wall lights the interior."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "key": "ayak_duzeni",
+      "label": {
+        "tr": "Ayak düzeni",
+        "en": "Support arrangement"
+      },
+      "value": "2 sıra × 4 ayak",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "key": "koy_uzaklik",
+      "label": {
+        "tr": "Koçkaya Köyü'ne uzaklık (güneyde)",
+        "en": "Distance south of Koçkaya Village"
+      },
+      "value": 10,
+      "unit": "km",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "271"
+        }
+      ],
+      "note": {
+        "tr": "Kitap \"yaklaşık\" der.",
+        "en": "The book says \"approximately\"."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan Hatun (Turgutoğullarından Yusuf Şah Bey'in kızı)",
+      "role": {
+        "tr": "1446 vakfiyesinde Su-ulman'ı vakfeden",
+        "en": "Endowed Su-ulman in the 1446 charter"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1446",
+      "year": 1446,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Sultan Hatun vakfiyesinde Su-ulman vakıf gösterildi",
+        "en": "Su-ulman shown as waqf in Sultan Hatun's charter"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, kuzey-güney doğrultulu dikdörtgen, kiremit kırma çatılı bir yapıdır. Duvarların altı düzgün kesme taş, üstü kaba taş ve devşirme parçalardan örülmüştür. Güney yüzün ortasındaki eyvan biçimli kapıdan girilir; içeride iki sıra dörder ayak, sivri kemerlerle mekânı üç bölüme ayırır ve ortadaki bölüm daha yüksektir.",
+      "en": "The inn is a rectangular building running north-south with a tiled hipped roof. The lower walls are smooth cut stone, the upper parts rough stone and reused pieces. It is entered through an iwan-like door in the middle of the south side; inside, two rows of four pillars joined by pointed arches divide the space into three, the middle one higher."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-altinekin-zalmanda-hani/p137-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "271"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Zalmanda Hanı'nın dıştan görünüşü",
+        "en": "Exterior of Zalmanda Han"
+      },
+      "alt": {
+        "tr": "Kuru bozkırda duran, kırmızı kiremitli çatılı küçük taş yapı. Öne çıkan kemerli bir giriş bölümü ve altında ahşap bir kapı var; arkada tepeler görülüyor.",
+        "en": "A small stone building with a red tiled roof on a dry steppe. A projecting arched entrance with a wooden door stands at the front, with hills behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

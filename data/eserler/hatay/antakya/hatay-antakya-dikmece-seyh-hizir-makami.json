@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-dikmece-seyh-hizir-makami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Yapım tarihi, banî ve sandukanın sahibi kitapta yok.",
+      "Başlıkta 'makam', bölüm özetinde Antakya Dikmece 126 ada 5 parsel; İngilizce içindekilerde 'Arsuz Dikmece, 126 / plot 29' yazıyor (ilçe ve parsel çelişkisi).",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location",
+        "note": "Kitabın İngilizce içindekiler sayfasında (s. 441) 'ARSUZ DİKMECE DISTRICT 126 PLOT 29' yazıyor; Türkçe içindekiler, bölüm özeti ve metin Antakya Dikmece Köyü / 126 ada 5 parsel veriyor. Türkçe değerler esas alındı. Ayrıca 126 ada 5 parsel Şeyh Kasım Türbesi (Defne Koçören) için de yazılmış."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Dikmece Şeyh Hızır Makamı",
+    "en": "Dikmece Maqam of Sheikh Hızır"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "makam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "makam",
+    "Hızır",
+    "Dikmece",
+    "hazire"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": "Dikmece",
+    "address": "Dikmece Köyü, 126 ada 5 parsel (bölüm özeti)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "410"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.291804,
+      "lng": 36.150952,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Dikmece, Antakya, Hatay, Akdeniz Bölgesi, 31027, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Antakya’ya bağlı Dikmece Köyü sınırlarında, yalnızca türbe bölümünden oluşan mütevazı ve sade bir makam. Kare planlı, kubbesiz yapının yakınında bir hazire vardır.",
+    "en": "A modest, plain maqam within Dikmece Village of Antakya, consisting only of the tomb. The square-plan, domeless building has a burial ground nearby."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Türbeler için genel olan kare plan bu yapıda da görülür. Kubbesi olmayan, tavanlı yapının geniş saçakları dışa taşkındır. Cephe pencerelerle hareketlendirilmiştir; sundurmalı giriş yönünde bir kapısı vardır. Duvar yönüne yerleştirilmiş sanduka mermer kaplıdır ve üzerinde türbe sahibine dair yazılı kayıt yoktur. Türbenin hemen yakınında bir hazire bulunur.",
+        "en": "The square plan typical of tombs is seen here too. The domeless building has a ceiling and wide eaves that project outward. The façade is animated by windows and has a door on the porch entrance side. The marble-covered sarcophagus is placed along the wall and bears no written record of the owner. A burial ground lies right next to the tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "410"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "410"
+        }
+      ]
+    },
+    {
+      "key": "kubbe",
+      "label": {
+        "tr": "Kubbe",
+        "en": "Dome"
+      },
+      "value": "Yok",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "410"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Makam, kare planlı, kubbesiz ve geniş saçaklı sade bir yapıdır. Cephesinde pencereler, sundurmalı girişinde bir kapı vardır. İçinde duvar yönünde mermer kaplı bir sanduka bulunur; yapının hemen yanında bir hazire vardır.",
+      "en": "The maqam is a plain, square-plan building without a dome and with wide eaves. Its façade has windows and its porch entrance has a door. Inside, a marble-covered sarcophagus stands along the wall; a burial ground lies right beside it."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-dikmece-seyh-hizir-makami/p206-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "411"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Makam yapısı ve çevresindeki mezarlar",
+        "en": "The maqam building and surrounding graves"
+      },
+      "alt": {
+        "tr": "Çam ağaçları altında beyaz sıvalı, düz çatılı küçük bir yapı; önünde mermer kaplı iki modern mezar, arkada zeytinlik ve açık bir manzara.",
+        "en": "A small white plastered building with a flat roof under pine trees; two modern marble-covered graves in front, with olive groves and open landscape behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

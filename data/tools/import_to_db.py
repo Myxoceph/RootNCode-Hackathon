@@ -22,10 +22,10 @@ import sys
 import psycopg
 from psycopg.types.json import Jsonb
 
-from db_rows import (ASSET_TABLES, DATA, GENERATED, SHARED_TABLES, TABLES, asset_rows, load_all, shared_rows)
+from db_rows import (ASSET_TABLES, DATA, GENERATED, SHARED_TABLES, TABLES, asset_rows_processed_media, load_all, shared_rows)
 
 PK = {"region": ["code"], "city": ["code"], "asset_type": ["code"], "era": ["code"], "relation_type": ["code"],
-      "timeline_event_type": ["code"], "source": ["id"]}
+      "timeline_event_type": ["code"], "source": ["id"], "city_dish": ["id"], "sound": ["key"]}
 # Bir eser yeniden içe aktarılınca silinip yeniden yazılan alt tablolar (FK sırasına göre silme sırası)
 DB_GENERATED = {"asset": {"created_at", "updated_at"}, "media": {"id", "created_at", "updated_at"},
                 "media_variant": {"media_id"}, "asset_media": {"media_id"}, "source_citation": {"id"},
@@ -76,9 +76,14 @@ def import_all(con):
     for table, rows in shared_rows().items():
         for row in rows:
             insert(cur, types, table, row, conflict=PK[table])
+    # Dosyadan çıkarılan lezzet ve ses DB'de de kalmasın (başka tablo onlara bağlı değil).
+    cur.execute("DELETE FROM city_dish WHERE NOT (id = ANY(%s))", ([r["id"] for r in shared_rows()["city_dish"]],))
+    cur.execute("DELETE FROM sound WHERE NOT (key = ANY(%s))", ([r["key"] for r in shared_rows()["sound"]],))
 
+    skipped_media = 0
     for a in assets:
-        rows = asset_rows(a, manifest.get(a["id"], {}))
+        rows, skipped = asset_rows_processed_media(a, manifest.get(a["id"], {}))
+        skipped_media += len(skipped)
         aid = a["id"]
         insert(cur, types, "asset", rows["asset"][0], conflict=["id"])
         cur.execute("UPDATE asset SET updated_at = now() WHERE id = %s", (aid,))
@@ -108,6 +113,8 @@ def import_all(con):
                         (aid, (last[0] + 1) if last else 1, Jsonb(a)))
         print(f"  ✓ {aid}: " + ", ".join(f"{t} {len(r)}" for t, r in rows.items() if r))
     con.commit()
+    if skipped_media:
+        print(f"  ! {skipped_media} görsel manifestte yok, atlandı (önce media_pipeline.py çalıştırılmalı)")
 
 
 def norm(v):
@@ -148,11 +155,12 @@ def verify(con):
             problems.append(f"{table}: satır sayısı farklı")
     assets, manifest = load_all()
     for a in assets:
-        rows = asset_rows(a, manifest.get(a["id"], {}))
+        rows, _ = asset_rows_processed_media(a, manifest.get(a["id"], {}))
         aid = (a["id"],)
         compare("asset", rows["asset"], "id = %s", aid)
         for t in ASSET_TABLES:
-            if t in ("asset", "media", "media_variant", "asset_relation", "asset_revision"):
+            # contribution: API'nin yazdığı ziyaretçi katkıları; JSON'da yoktur, satırları karşılaştırılmaz
+            if t in ("asset", "media", "media_variant", "asset_relation", "asset_revision", "contribution"):
                 continue
             compare(t, rows[t], "asset_id = %s", aid)
         compare("asset_relation", rows["asset_relation"], "source_asset_id = %s", aid)

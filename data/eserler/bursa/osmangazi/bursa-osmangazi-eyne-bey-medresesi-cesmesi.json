@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-eyne-bey-medresesi-cesmesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Su Yapıları bölümünden (s. 686) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Yapım tarihi, banisi ve vakfı bu çeşme için kaynakta yok; 'dating', 'founder' boş.",
+      "Medrese kaydı ('bursa-osmangazi-eyne-bey-subasi-medresesi') henüz yoksa oluşturulmalı; kaynak medreseyi hamam bölümünde 'Eyne Bey Subaşı Medresesi' diye anıyor, id eşleşmesi kontrol edilmeli.",
+      "'era' bilinmediği için boş bırakıldı.",
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Eyne Bey Medresesi Çeşmesi",
+    "en": "Eyne Bey Madrasa Fountain"
+  },
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "çeşme",
+    "medrese çeşmesi",
+    "duvar nişi",
+    "yuvarlak kemer"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tahtakale Mahallesi",
+    "address": "İnebey Caddesi, İnebey Sokak, No: 7",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "686"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.182797,
+      "lng": 29.0612,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Eyne Bey Medresesi'nin doğu cephesi beden duvarındaki, yuvarlak kemerli duvar nişi biçimindeki çeşme. Kitabesizdir, özgün yapısını tamamen kaybetmiştir ve suyu akmamaktadır.",
+    "en": "The fountain on the main wall of the eastern façade of the Eyne Bey Madrasa, in the form of a round arched wall niche. It has no inscription, has completely lost its original structure and no longer runs."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Durum",
+        "en": "Location and Condition"
+      },
+      "body": {
+        "tr": "Çeşme, Bursa ili Osmangazi ilçesi Tahtakale Mahallesi'nde, İnebey Caddesi İnebey Sokak No: 7'de yer alan Eyne Bey Medresesi'nin doğu cephesi beden duvarındadır ve yuvarlak kemerli duvar nişi şeklindedir. Günümüzde özgün yapısını tamamen kaybeden kitabesiz çeşmenin suyu da akmamaktadır.",
+        "en": "The madrasa is in Osmangazi, Tahtakale Neighborhood, İnebey Avenue, İnebey Street No. 7. The fountain on the main wall of its eastern façade is in the form of a round arched wall niche. Today the fountain, which has no inscription, has completely lost its original structure and water no longer flows."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "686"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-eyne-bey-subasi-medresesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Çeşme, Eyne Bey Medresesi'nin doğu cephesi beden duvarında yer alır.",
+        "en": "The fountain is located on the main wall of the eastern façade of the Eyne Bey Madrasa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "686"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-eyne-bey-hamami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Aynı adreste (İnebey Sokak No: 7) bulunan, medreseye bitişik hamamla aynı yapı grubundadır.",
+        "en": "It belongs to the same group of buildings as the neighbouring bath at the same address (İnebey Street No: 7)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684, 686"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çeşme, bir medrese binasının doğu yüzündeki duvarda, yuvarlak kemerli sığ bir niş biçimindedir. Üzerinde kitabe yoktur; özgün biçimini yitirmiştir ve su akmamaktadır.",
+      "en": "The fountain is a shallow round-arched niche in the east wall of a madrasa building. It carries no inscription, has lost its original form and no water runs from it."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eyne-bey-medresesi-cesmesi/p007-2.jpg",
+        "original_name": "DJI_20241021221124_0067_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "686"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Eyne Bey Medresesi'nin sokak cephesi",
+        "en": "Street front of the Eyne Bey Madrasa"
+      },
+      "alt": {
+        "tr": "Kırmızımsı tuğla ve kesme taş örgülü uzun bir duvar; ortada küçük bir kapı, yanında kule gibi yükselen kare bir bölüm ve önde merdivenli, kıvrılan bir sokak var. Arkada mavi kubbeli bir çatı ve renkli evler görünür.",
+        "en": "A long wall of reddish brick and cut stone with a small door in the middle and a square tower-like block beside it. A stepped street curves in front; a blue dome and colourful houses rise behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eyne-bey-medresesi-cesmesi/p007-1.jpg",
+        "original_name": "ERD03692 kopya 2.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "686"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Duvar nişindeki çeşme",
+        "en": "The fountain in the wall niche"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş duvarda yuvarlak kemerli bir niş var. Nişin içinde küçük bir kemerli oyuk, altında kabartmalı beyaz bir mermer yalak ve en altta kalın bir taş kaide bulunur.",
+        "en": "A round-arched niche set in a brick and stone wall. Inside is a small arched recess, a white marble trough with relief carving below it, and a thick stone base at the bottom."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    }
+  ],
+  "archive_media": []
+}

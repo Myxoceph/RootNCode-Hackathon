@@ -1,0 +1,733 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hz-uftade-tekkesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Tekke ve Zaviyeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Tekkeler ve Zaviyeler (Osmangazi) bölümünden yapay zekâ ile özetlenerek taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; saha/GPS ile eklenip doğrulanmalı (in_review öncesi zorunlu).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgisi (ücret, saat, süre) kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Vakıf/vakfiye bilgisi kitapta yok.",
+      "Selamlığın yeri 'düşünülmektedir' diye veriliyor; yol altında kaldığı için doğrulanamaz.",
+      "Üftâde Hazretleri'nin ölüm tarihi kitapta verilmiyor.",
+      "İlişki hedefleri: Emîr Sultan Camii ve Doğanbey Mescidi'nin ilçesi bu metinde belirtilmiyor; 'Osmangazi' varsayımı doğrulanmalı (hedef kayıtlar henüz yok).",
+      "Ziyaret: kitap 'kontrollü ziyaret' diyor, saat/koşul yok. Cami ibadete açık.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[isim-1550]",
+        "note": "Üftâde 1489'da doğmuş ve 'Üftâde' adını 1550'de aldığı 'yaygın olarak kabul edilmektedir' deniyor (yaklaşık 61 yaşında); Hüdâyî'nin intisabı 1576. Kitap bu tarihleri birbiriyle uzlaştırmıyor; olduğu gibi aktarıldı."
+      },
+      {
+        "field": "dating",
+        "note": "Tekkenin yapım tarihi kitapta kesin verilmiyor: Hu Çeşmesi'nin H. 974 / M. 1566 tarihinden '16. yüzyılın ikinci yarısında inşa edildiği' çıkarılıyor. Kitap ayrıca Üftâde'nin tekkeyi kendi gelirleriyle yaptırdığını söylüyor; iki bilgi birlikte verildi."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "s. 623-624'teki yapı sistemi anlatımı 'zemin üzerinde yükselen taş duvarlar… birinci kat' diye devam ediyor; semahane II. Mahmud dönemine, 19. yüzyıl ampir eklentileri III. Selim ve II. Mahmud dönemlerine bağlanıyor. Semahanenin dönemi 'izlerinden tespit edilmiştir'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hz. Üftâde Tekkesi",
+    "en": "Hazrat Üftâde Sufi Lodge"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Üftâde Tekkesi",
+      "en": "Üftâde Lodge"
+    }
+  ],
+  "type": "tekke",
+  "secondary_types": [
+    "mescit"
+  ],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "tekke",
+    "Celvetiyye",
+    "Üftâde",
+    "Aziz Mahmud Hüdâyî",
+    "çilehane",
+    "Hu Çeşmesi",
+    "kündekâri",
+    "kalem işi",
+    "Uludağ"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Molla Fenari",
+    "address": "Derman Caddesi No: 28",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "621"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.178021,
+      "lng": 29.054342,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q134615539 ('Üftade Tekkesi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 974 / M. 1566 (Hu Çeşmesi); 16. yüzyılın ikinci yarısı",
+      "en": "AH 974 / AD 1566 (Hu Fountain); second half of the 16th century"
+    },
+    "start_year": 1566,
+    "end_year": null,
+    "hijri_year": 974,
+    "century": 16,
+    "basis": {
+      "tr": "Semahane önündeki Hu Çeşmesi'nin ayna taşındaki tarih, tekkenin 16. yüzyılın ikinci yarısında inşa edildiğini gösterir.",
+      "en": "The date on the back panel of the Hu Fountain in front of the semahane indicates the lodge was built in the second half of the 16th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "622-623"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Üftâde Hazretleri (Mehmet Muhyiddin)",
+    "role": "kurucu (kendi gelirleriyle yaptıran)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "621-622"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Uludağ'ın güney yamacında, Bursa evliyasından Üftâde Hazretleri'nin kendi gelirleriyle yaptırdığı cami ve tekke. Mescit, semahane, çilehane, çeşme, harem ve selamlıktan oluşan külliye; Celvetiyye usulüyle ayin yapılır. Mescit ibadete açıktır, tekke bölümü öğrenci eğitiminde kullanılır.",
+    "en": "A mosque and lodge on the southern slope of Uludağ built by Hazrat Üftâde, a leading Bursa saint, with his own income. A complex of masjid, semahane, ascetic cell, fountain, harem and selamlik; rituals are performed in the Celvetiyye manner. The masjid is open for worship; the lodge section is used for student education."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami ve tekke Osmangazi, Molla Fenari Mahallesi, Derman Caddesi No: 28'dedir. Asıl adı Mehmet Muhyiddin olan Üftâde Hazretleri Bursa evliyasının önde gelenlerindendir; 1489'da Bursa'da doğmuştur. Ulucami'de müezzinlik, Doğanbey Mescidi'nde müezzinlik ve imamlık yapmıştır. 1576'da Üsküdar'da dergâhı bulunan Aziz Mahmud Hüdâyî, Bursa kadılığı sırasında ona intisap etmiştir.",
+        "en": "The mosque and lodge are in Osmangazi District, Molla Fenari Neighborhood, Derman Street No. 28. Hazrat Üftâde, whose real name was Mehmet Muhyiddin, was a leading Bursa saint, born in Bursa in 1489. He served as muezzin in the Ulucami and as muezzin and imam at the Doğanbey Masjid. In 1576 the famous Sufi Aziz Mahmud Hüdâyî, who had a lodge in Üsküdar, became his disciple while qadi of Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "621"
+        }
+      ]
+    },
+    {
+      "id": "kurucu-ve-faaliyet",
+      "order": 2,
+      "title": {
+        "tr": "Kurucu ve Faaliyetleri",
+        "en": "The Founder and His Work"
+      },
+      "body": {
+        "tr": "Hem âlim hem şair olan Üftâde Hazretleri, kendi gelirleriyle Uludağ'ın güney yamaçlarında bir cami ve tekke yaptırmış, burada derviş yetiştirmiştir. Cuma günleri Emîr Sultan Camii'nde hatiplik yapmış, Sultan III. Murad tekkesinde kendisini ziyaret etmiştir. Tekkede Celvetiyye usulüne uygun ayin-i şerif icra edilir; tekke aynı zamanda misafir ve yoksulların doyurulduğu, Bursa ve çevresinde önemli bir mekân olmuştur.",
+        "en": "A scholar and poet, Hazrat Üftâde had a mosque and lodge built on the southern slopes of Uludağ with his own income and trained dervishes there. He preached on Fridays at the Emîr Sultan Mosque, and Sultan Murad III visited him in his lodge. The sacred ritual is performed in the Celvetiyye manner; the lodge was also an important place in Bursa and its surroundings where guests and the poor were fed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "622"
+        }
+      ]
+    },
+    {
+      "id": "tarihce-ve-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Tarihçe ve Mimari",
+        "en": "History and Architecture"
+      },
+      "body": {
+        "tr": "Kuzey-güney doğrultusunda eğimli ve dik bir arazide mescit, semahane, çilehane, çeşme, harem ve selamlık bölümlerinden oluşan bir külliye olarak kurulmuştur. 1925'te kapatılan tekke işlevsiz kalmış; son şeyhin soyundan gelenlerin konut olarak kullanması sayesinde mescit, semahane, harem ve çilehane günümüze ulaşmıştır. Semahane önündeki Hu Çeşmesi'nin ayna taşında H. 974 / M. 1566 tarihi ve Enbiyâ suresinden 'Biz su ile her canlı şeyi hayat sahibi kıldık' ayeti işlidir. Tekkenin dördüncü şeyhi, Üftâde'nin torunu Kutub İbrahim Efendi H. 1081 / M. 1670'te yeni yapılar eklemiş ve alanı korunaklı duvarlarla çevirmiştir. Klasik mimari tarzda bir iskelet üzerine kurulan yapı, 19. yüzyılda ampir eklentileriyle yeniden düzenlenmiş; bu dönemde mali açıdan güçlü olan tekke III. Selim (1789-1807) ve II. Mahmud (1808-1839) dönemlerinin özelliklerini yansıtır.",
+        "en": "Built on steep ground sloping north-south, the lodge is a complex of masjid, semahane, ascetic cell, fountain, harem and selamlik. It fell out of use when lodges closed in 1925, but thanks to the last shaykh's descendants living there, the masjid, semahane, harem and ascetic cell survive. The back panel of the Hu Fountain in front of the semahane bears the date AH 974 / AD 1566 and the verse 'We gave life to every living thing with water' from Surah al-Anbiya. Kutub İbrahim Efendi, the fourth shaykh and Üftâde's grandson, added new structures in AH 1081 / AD 1670 and enclosed the area with protective walls. Built on a classical-style frame, it was remodeled with empire-style additions in the 19th century, when the lodge was financially strong, reflecting the periods of Selim III (1789-1807) and Mahmud II (1808-1839)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "622-623"
+        }
+      ]
+    },
+    {
+      "id": "yapim-teknigi",
+      "order": 4,
+      "title": {
+        "tr": "Yapım Tekniği",
+        "en": "Construction"
+      },
+      "body": {
+        "tr": "Zemin üzerinde yükselen taş duvarların üstündeki birinci katta meşe ve kestane dikme payandaların aralarına çam ağacı yerleştirilmiştir; bazı bölümlerde ince tuğla ve kerpiç kullanılmıştır, geç dönemde bağdadi teknik tercih edilmiştir. Dış yüzeyler çoğunlukla sıvalıdır. Kapı, pencere, pervaz ve tavanlar çam, çatı meşe ağacından yapılmış; mertek ve kaplama çamdır, üst örtü alaturka kiremittir.",
+        "en": "On the first floor above stone walls, pine is placed between oak and chestnut buttresses; thin brick and adobe appear in some parts, and the lath-and-plaster technique was used in the late period. Exterior surfaces are mostly plastered. Doors, windows, frames and ceilings are pine, the roof is oak, rafters and cladding pine, with Turkish-style tile cover."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "623-624"
+        }
+      ]
+    },
+    {
+      "id": "mescit-semahane-harem",
+      "order": 5,
+      "title": {
+        "tr": "Mescit, Semahane, Harem ve Çilehane",
+        "en": "Masjid, Semahane, Harem and Ascetic Cell"
+      },
+      "body": {
+        "tr": "Mescit bugün aktif kullanılmaktadır. 9,80 × 9,70 m ölçüsündeki ve izlerinden II. Mahmud dönemine ait olduğu tespit edilen semahane, çatıları birleştirilerek mescidin son cemaat yeri olarak işlev görür. Semahanenin doğu cephesine bitişik, iki katlı harem kısmında hamam, mutfak, soğukluk, külhan, sofa ve çeşitli odalar vardır. En ünlü oda, Üftâde'nin zikir sırasında keramet gösterdiği rivayet edilen 'Kubbeli Oda'dır; tavanındaki ahşap kubbe klasik dönem kündekâri işçiliği ve nitelikli kalem işleriyle süslüdür. Renginden adını alan 'Pembe Oda' da haremdedir. Mescit ve semahanenin batısında olduğu düşünülen selamlık zamanla ortadan kalkmış, üzerinden yol geçirilmiştir. Kare planlı, iki katlı çilehanenin zemin katı moloz taş örgülü, üst katı tuğladan örülüp sıvanmıştır.",
+        "en": "The masjid is actively used. The semahane (9.80 × 9.70 m), dated by its traces to Mahmud II's period, serves as the masjid's narthex with joined roofs. The two-storey harem, adjoining the semahane's east facade, has a bath, kitchen, frigidarium, furnace, hall and rooms. The most famous, the 'Domed Room', is said to be where Üftâde performed miracles during dhikr; its wooden ceiling dome has classical kündekâri work and fine hand-painted ornament. The 'Pink Room', named for its color, is also in the harem. The selamlik, thought to have been west of the masjid and semahane, vanished and a road was built over the area. The square two-storey ascetic cell has rubble-stone ground floor and plastered brick upper floor."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "624-626"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar-ve-gunumuz",
+      "order": 6,
+      "title": {
+        "tr": "Onarımlar ve Günümüz",
+        "en": "Repairs and Today"
+      },
+      "body": {
+        "tr": "Yapılar topluluğu 1670'ler ve 1800'lerdeki müdahalelerin yanı sıra 1975-1977, 1980-1982 ve 2009-2014 yıllarında onarılmıştır. Son restorasyonda tekkede sergilenen, Üftâde ve Aziz Mahmud Hüdâyî'ye atfedilen bazı şahsi eşyalar koruma amacıyla depoya alınmıştır. Cami ibadete açıktır; tekke bölümü bir vakıf tarafından öğrenci eğitimi amacıyla kullanılmakta ve kontrollü şekilde ziyarete açılmaktadır.",
+        "en": "Besides the 1670s and 1800s interventions, the complex was repaired in 1975-1977, 1980-1982 and 2009-2014. In the last restoration some personal belongings attributed to Üftâde and Aziz Mahmud Hüdâyî were put into storage for preservation. The mosque is open for worship; the lodge section is used by a foundation for student education and opened to visits in a controlled manner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "626"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "uftade-isim-ruyasi",
+      "title": {
+        "tr": "'Üftâde' adının rüya anlatımı",
+        "en": "The dream story of the name 'Üftâde'"
+      },
+      "body": {
+        "tr": "Anlatıya göre Üftâde, Ulucami ve Doğanbey Mescidi hizmetleri karşılığı aldığı iki akçe nedeniyle şeyhi Hızır Dede'yi rüyasında görmüş, 'Mertebenden üftâde oldun (düştün)' ikazı üzerine görevlerini bırakmıştır. Bu sebeple 1550'de 'Üftâde' adını aldığı yaygın olarak kabul edilir.",
+        "en": "According to the account, because of the two silver coins he received for his service, Üftâde saw his shaykh Hızır Dede in a dream and, on the warning 'You have fallen from your spiritual rank', abandoned his duties; for this reason it is widely accepted that he took the name 'Üftâde' in 1550."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "621"
+        }
+      ]
+    },
+    {
+      "id": "kubbeli-oda-keramet",
+      "title": {
+        "tr": "Kubbeli Oda'da keramet",
+        "en": "Miracle in the Domed Room"
+      },
+      "body": {
+        "tr": "Kubbeli Oda, Üftâde Hazretleri'nin zikir sırasında keramet gösterdiği rivayet edilen mekândır.",
+        "en": "The Domed Room is said to be the place where Hazrat Üftâde performed miracles during dhikr."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "624"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "semahane_olcu",
+      "label": {
+        "tr": "Semahane ölçüsü",
+        "en": "Semahane dimensions"
+      },
+      "value": "9,80 × 9,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "624"
+        }
+      ]
+    },
+    {
+      "key": "cesme_tarihi_hicri",
+      "label": {
+        "tr": "Hu Çeşmesi tarihi (hicri)",
+        "en": "Hu Fountain date (hijri)"
+      },
+      "value": 974,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "622-623"
+        }
+      ]
+    },
+    {
+      "key": "seyh_sirasi_kutub_ibrahim",
+      "label": {
+        "tr": "Tekkenin şeyh sırası (Kutub İbrahim)",
+        "en": "Shaykh order of Kutub İbrahim Efendi"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "623"
+        }
+      ],
+      "note": {
+        "tr": "Dördüncü şeyh, Üftâde'nin torunu.",
+        "en": "Fourth shaykh, Üftâde's grandson."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Üftâde Hazretleri (Mehmet Muhyiddin)",
+      "role": {
+        "tr": "Kurucu; âlim ve şair (d. 1489)",
+        "en": "Founder; scholar and poet (b. 1489)"
+      }
+    },
+    {
+      "name": "Aziz Mahmud Hüdâyî",
+      "role": {
+        "tr": "1576'da Bursa kadısıyken Üftâde'ye intisap eden mutasavvıf",
+        "en": "Sufi who became Üftâde's disciple in 1576 while qadi of Bursa"
+      }
+    },
+    {
+      "name": "Hızır Dede",
+      "role": {
+        "tr": "Üftâde'nin şeyhi (rüya anlatısında)",
+        "en": "Üftâde's shaykh (in the dream account)"
+      }
+    },
+    {
+      "name": "Kutub İbrahim Efendi",
+      "role": {
+        "tr": "Dördüncü şeyh, Üftâde'nin torunu; 1670'te yeni yapılar ekletti",
+        "en": "Fourth shaykh, Üftâde's grandson; added structures in 1670"
+      }
+    },
+    {
+      "name": "Sultan III. Murad",
+      "role": {
+        "tr": "Üftâde'yi tekkesinde ziyaret eden padişah",
+        "en": "Sultan who visited Üftâde in his lodge"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "hu-cesmesi-ayet",
+      "location": {
+        "tr": "Hu Çeşmesi ayna taşı, semahane önünde",
+        "en": "Back panel of the Hu Fountain in front of the semahane"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Biz su ile her canlı şeyi hayat sahibi kıldık. (Enbiyâ suresi)",
+        "en": "We gave life to every living thing with water. (Surah al-Anbiya)"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 974,
+        "gregorian": "1566"
+      },
+      "note": {
+        "tr": "Arapça metin kitapta verilmiyor; yalnızca Türkçe meal ve tarih aktarılmış.",
+        "en": "The Arabic text is not given in the book; only the Turkish rendering and the date."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "622-623"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "dogum-1489",
+      "year": 1489,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Üftâde Hazretleri'nin Bursa'da doğumu",
+        "en": "Birth of Hazrat Üftâde in Bursa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "621"
+        }
+      ]
+    },
+    {
+      "id": "isim-1550",
+      "year": 1550,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "'Üftâde' adını aldığı yıl (yaygın kabul)",
+        "en": "Year he took the name 'Üftâde' (widely accepted)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "621"
+        }
+      ]
+    },
+    {
+      "id": "cesme-1566",
+      "year": 1566,
+      "date": null,
+      "hijri": "974",
+      "type": "construction",
+      "title": {
+        "tr": "Hu Çeşmesi'nin tarihi",
+        "en": "Date of the Hu Fountain"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "622-623"
+        }
+      ]
+    },
+    {
+      "id": "hudayi-1576",
+      "year": 1576,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Aziz Mahmud Hüdâyî Bursa kadısıyken Üftâde'ye intisap etti",
+        "en": "Aziz Mahmud Hüdâyî became Üftâde's disciple while qadi of Bursa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "621"
+        }
+      ]
+    },
+    {
+      "id": "ek-yapilar-1670",
+      "year": 1670,
+      "date": null,
+      "hijri": "1081",
+      "type": "addition",
+      "title": {
+        "tr": "Kutub İbrahim Efendi yeni yapılar ekletti, alanı duvarla çevirdi",
+        "en": "Kutub İbrahim Efendi added structures and walled the site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "623"
+        }
+      ]
+    },
+    {
+      "id": "kapatilma-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Tekkelerin kapatılması; tekke işlevsiz kaldı",
+        "en": "Lodges closed; the lodge fell out of use"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "622"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1975",
+      "year": 1975,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarım (1975-1977)",
+        "en": "Repair (1975-1977)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "626"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1980",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarım (1980-1982)",
+        "en": "Repair (1980-1982)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "626"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2009",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son restorasyon (2009-2014)",
+        "en": "Latest restoration (2009-2014)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "626"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-ulucami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Üftâde burada müezzinlik yapmıştır.",
+        "en": "Üftâde served here as muezzin."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "621"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-emir-sultan-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Üftâde cuma günleri bu camide hatiplik yapmıştır.",
+        "en": "Üftâde preached here on Fridays."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "622"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-doganbey-mescidi",
+      "target_name": {
+        "tr": "Doğan Bey Mescidi"
+      },
+      "type": "urban_context",
+      "description": {
+        "tr": "Üftâde burada müezzinlik ve imamlık yapmıştır.",
+        "en": "Üftâde served here as muezzin and imam."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "621"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hz. Üftâde Tekkesi, Uludağ'ın güney yamacında, kuzey-güney yönünde dik ve eğimli bir arazide yükselen, sıvalı ve kiremit çatılı ahşap-taş karışımı bir yapı topluluğudur. Semahanenin önünde Hu Çeşmesi durur; ayna taşında 1566 tarihi ve bir ayet işlidir. Semahane, çatıları birleştirilerek mescidin son cemaat yeri olmuştur. Bitişikteki iki katlı haremde hamam, mutfak ve odalar bulunur; Kubbeli Oda'nın tavanında kündekâri ve kalem işi süslü ahşap bir kubbe vardır. Kare planlı iki katlı çilehanenin alt katı moloz taş, üst katı sıvalı tuğladır.",
+      "en": "The Hazrat Üftâde Lodge is a group of plastered, tile-roofed timber-and-stone buildings on a steep north-south slope on Uludağ's southern side. The Hu Fountain stands in front of the semahane; its back panel bears the date 1566 and a verse. The semahane, with joined roofs, serves as the masjid's narthex. The adjoining two-storey harem holds a bath, kitchen and rooms; the Domed Room has a wooden ceiling dome with kündekâri and hand-painted ornament. The square two-storey ascetic cell has a rubble-stone ground floor and plastered brick upper floor."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt'teki mimari anlatımdan derlendi; yalnızca kitapta yazanlar."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1U0yA31gBwZKBr6PdCLJ0f0rbibji23rF",
+    "book_layout_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+    "book_pdf_name": "5-Tekke ve Zaviyeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-tekkesi/p039-2.jpg",
+        "original_name": "ERD01193 kopya.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "624"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Tekkenin ahşap saçaklı ve taş duvarlı cephesi",
+        "en": "Lodge front with wooden eaves and stone wall"
+      },
+      "alt": {
+        "tr": "Krem renkli sıvalı, ahşap pencereli ve ahşap saçaklı iki katlı bir yapı. Önünde taş duvarlı bir merdiven ve demir korkuluk aşağıya iner; üst köşede kafesli küçük pencereler vardır.",
+        "en": "A two-storey cream-plastered building with wooden windows and wooden eaves. A stone-walled stair with an iron railing descends in front of it, and small lattice windows sit at the top corner."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-tekkesi/p039-1.jpg",
+        "original_name": "14.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "624"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Ahşap direkli sundurma",
+        "en": "Wooden-pillared veranda"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı uzun bir sundurma, taş kaideli koyu ahşap direkler ve demir korkuluklarla sınırlanır. Dışarıda ağaçlar ve uzakta şehir görünür.",
+        "en": "A long veranda with a wooden ceiling, dark wooden posts on stone bases and an iron railing. Trees and the city in the distance are visible outside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hz-uftade-tekkesi/p037-1.jpg",
+        "original_name": "04.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "622"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap tavanlı oturma odası",
+        "en": "Sitting room with a wooden ceiling"
+      },
+      "alt": {
+        "tr": "Petek desenli ahşap tavanı ve kenarında bitkisel bezemeli bir bordürü olan oda. Duvar boyunca turkuaz renkli minderler ve zemin döşemesi, pencerelerde dantel perdeler, solda çerçeveli hat levhası var.",
+        "en": "A room with a honeycomb-patterned wooden ceiling and a floral border. Turquoise cushions and floor covering run along the walls, lace curtains hang at the windows and a framed calligraphy panel is on the left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-14"
+    }
+  ],
+  "archive_media": [],
+  "visit": {
+    "setting": "mixed",
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Cami ibadete açık; tekke bölümü kontrollü ziyarete açık, öğrenci eğitimi için kullanılıyor.",
+      "en": "The mosque is open for worship; the lodge section is open to controlled visits and used for student education."
+    },
+    "notes_source": "source",
+    "visitor_tips": []
+  }
+}

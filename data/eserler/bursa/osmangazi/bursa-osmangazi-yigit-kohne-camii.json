@@ -1,0 +1,590 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-yigit-kohne-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 483-487) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Galle Hanı'nın ilçesi metinde belirtilmiyor; ilişki hedef id'si (bursa-osmangazi-galle-hani) tahmindir, doğrulanmalı.",
+      "Vakfiye ve mimar kitapta yok.",
+      "Haziredeki üç mezardan yalnızca ikisinin sahibi (Hacı Ali bin Pir Mengi, Mahmud bin Hacı Ahmed) belirtiliyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.address",
+        "note": "Kitap s. 483'te camiyi 'Kayhan Mahallesi, Cumhuriyet Caddesi No: 29' olarak, haziresini ise s. 487'de 'Kayıhan Mahallesi, Yeni Cumhuriyet Caddesi, No: 35' olarak veriyor. Mahalle adı yazımı (Kayhan/Kayıhan) ve cadde/numara farklı; kayıtta caminin adresi (s. 483) esas alındı."
+      },
+      {
+        "field": "name",
+        "note": "Metin, banisini s. 483'te 'Yiğit Oğlu Hacı Ali', s. 485 ve 487'de 'Hacı Ali bin Pir Mengi (İbn-i Yiğit)' olarak veriyor; aynı kişi olarak değerlendirildi."
+      },
+      {
+        "field": "inscriptions[ibn-i-yigit-mezar-kitabesi]",
+        "note": "Kitabe transliterasyonu Türkçe ve İngilizce sayfalarda küçük imla farklarıyla veriliyor (örn. 'es-sa‘îd' / 'es-Sa’îd', 'türce‘ûn' / 'türca’ûn'); Türkçe sayfadaki yazım esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yiğit Köhne Camii",
+    "en": "Yiğit Köhne Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "kalkan duvarlı",
+    "hazire",
+    "İbn-i Yiğit",
+    "mezar kitabesi",
+    "Galle Hanı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kayhan",
+    "address": "Cumhuriyet Caddesi No: 29",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "483"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185073,
+      "lng": 29.069263,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/343619241 ('Yiğit Köhne Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "15. yüzyılın ilk yarısı",
+      "en": "First half of the 15th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, caminin XV. yüzyılın ilk yarısında yaptırıldığını söylüyor; kesin yıl yok. Baninin 1449 tarihli mezar taşı ölüm tarihidir, inşa tarihi değil.",
+      "en": "The book says the mosque was built in the first half of the 15th century; no exact year. The founder's 1449 gravestone gives his death, not the construction date."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "483"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yiğit Oğlu Hacı Ali (Hacı Ali bin Pir Mengi, İbn-i Yiğit)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "483, 485, 487"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "İnönü ve Cumhuriyet caddelerinin kesiştiği yerde, 15. yüzyılın ilk yarısında Yiğit Oğlu Hacı Ali tarafından yaptırılan kitabesiz, kubbeli cami. Batısındaki haziresinde banisinin H. 853 / M. 1449 tarihli, süslü kitabeli mezar taşı bulunur; cami yol seviyesinin altında kalmış, 2006 ve 2020'de restore edilmiştir.",
+    "en": "A domed mosque without an inscription at the intersection of İnönü and Cumhuriyet streets, built in the first half of the 15th century by Yiğit Oğlu Hacı Ali. Its western graveyard holds the founder's ornate, inscribed gravestone dated AH 853 / AD 1449; the mosque lies below road level and was restored in 2006 and 2020."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Kayhan Mahallesi, Cumhuriyet Caddesi No: 29'da, İnönü ve Cumhuriyet caddelerinin kesiştiği dört yol ağzında, Galle Hanı'nın güneydoğu çaprazında yer alır. Caminin kitabesi yoktur. XV. yüzyılın ilk yarısında Yiğit Oğlu Hacı Ali tarafından yaptırılmıştır. Banisine ait 1449 tarihli mezar, caminin batı bitişiğindeki hazire alanında bulunur.",
+        "en": "The mosque is on Cumhuriyet Street No. 29, Kayhan Neighborhood, Osmangazi District, at the intersection of İnönü and Cumhuriyet streets, southeast of the Galle Han. It has no inscription. It was built by Yiğit Oğlu Hacı Ali in the first half of the 15th century. The tomb of its founder, dated 1449, is in the graveyard area adjacent to the west of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "483"
+        }
+      ]
+    },
+    {
+      "id": "dis-mimari",
+      "order": 2,
+      "title": {
+        "tr": "Dış Mimari ve Son Cemaat Yeri",
+        "en": "Exterior and Narthex"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı caminin beden duvarları iki sıra moloz taş ve üç sıra tuğlayla örülmüştür. Kuzey cephesindeki 3.40 × 8.40 m ölçülerinde kalkan duvarlı son cemaat mahallinin iki yan kenarı örülerek dışa kapatılmıştır. Kuzey cephe, sivri kemerli üç bölümle sonlanır ve metal doğramalı camekân içine alınmıştır; son cemaat mahallinin sağ ve sol bölümleri hanımlara ayrılmıştır. Taç kapı üzerindeki kalkan duvarın ön cephesi on yedi adet kör mihrapçıkla hareketlendirilmiştir.",
+        "en": "The main walls of the rectangular mosque are built with two rows of rubble stone and three rows of brick. The two side edges of the 3.40 x 8.40 m parapet-walled narthex on the north façade are closed to the outside by brickwork. The north façade ends in three pointed-arched sections enclosed in a metal-framed glass casement; the right and left sections of the narthex are reserved for women. The front of the parapet wall above the portal is enlivened with seventeen blind mihrab-like niches."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "484"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 3,
+      "title": {
+        "tr": "Harim ve Mihrap",
+        "en": "Prayer Hall and Mihrab"
+      },
+      "body": {
+        "tr": "Harim 8.40 × 8.30 m ölçülerindedir; beş sıra stalaktitli yaşmakla süslü çift kanatlı ahşap kapıdan girilir. Üzeri, Türk üçgenleri ve badem motifleriyle geçiş yapılan sekizgen kasnağa oturan kurşun kaplı bir kubbeyle örtülüdür; kubbe eteklerinde stalaktitli geçişler vardır, yan tonozlar da kurşunla kaplıdır. Kubbe altı iki sıra, kalkan duvar tek sıra kirpi saçakla çevrilidir. İçten sivri kemer çerçeveli ve altı sıra stalaktitli yaşmaklı mihrabın dış cephesi sadedir; stalaktitli alanın iki yanında kabartma gülçeler bulunur. Mihrap dışındaki duvar yüzeylerinde boya ve kalem işleri uygulanmıştır. İç duvarlar beyaz sıvalı ve oldukça sadedir; ahşap minber ve kürsü yenidir.",
+        "en": "The prayer hall measures 8.40 x 8.30 m and is entered through a double-leafed wooden door with an arched surround of five rows of stalactites. It is covered by a lead-coated dome on an octagonal drum with Turkish triangles and almond motifs, with stalactite transitions at the dome's foot; the side vaults are lead-covered too. Two rows of sawteeth surround the underside of the dome and one row the parapet wall. The mihrab has a pointed-arch frame and a six-row stalactite hood, its exterior plain, with relief roses on both sides of the stalactite area. Hand-painted designs cover the wall surfaces outside the mihrab. The interior walls are white-plastered and very plain; the wooden minbar and pulpit are new."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "484-485"
+        }
+      ]
+    },
+    {
+      "id": "pencereler-ve-kot",
+      "order": 4,
+      "title": {
+        "tr": "Pencereler ve Zemin Kotu",
+        "en": "Windows and Ground Level"
+      },
+      "body": {
+        "tr": "Harim, her cephedeki altlı üstlü ikişer pencere (toplam on iki) ve kubbe kasnağındaki üç pencereyle aydınlanır. Üst pencereler alçı şebekeli ve vitraylıdır; kuzey ve güney alt pencereleri sağırlaştırılarak dolap olarak kullanılır. İç mekânda önceden bulunduğu bilinen, Hattat Şerif Efendi'ye ait H. 1276 / M. 1859 tarihli celi sülüs “Ve hüve’s-semîu’l-alîm” levhası günümüzde yoktur. Caminin kotu batı cephesinde yaklaşık iki, güney cephesinde yaklaşık bir metre yol seviyesinin altındadır; bu yüzden bazı alt pencereler tamamen, bazıları kısmen kapanmıştır.",
+        "en": "The hall is lit by a total of twelve windows (two lower and two upper on each side of the main walls) and three windows on the drum. The upper windows have plaster grilles and stained glass; two of the north and south lower windows have been blinded and are used as cupboards. A plaque once inside, “Ve hüve’s-semîu’l-alîm”, in Jeli Thuluth by the calligrapher Şerif Efendi, dated AH 1276 / AD 1859, no longer exists. The mosque lies about two meters below road level on the west and one meter on the south, so some lower windows are completely closed and others partially."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "485"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 5,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Kuzeybatı cephedeki minarenin sekizgen kaidesi camide olduğu gibi iki sıra moloz taş ve üç sıra tuğladan örülmüştür; kaide ve pabuç kısmının kaba görüntüsü tuğladan kör mihrapçıklarla estetik hale getirilmiştir. Silindirik tuğla minarenin mermer kaideye geçişi Türk üçgenleriyle sağlanır. Şerefe altı dört sıra testere dişi tuğla ile bezenmiş, prizmatik konik külahı kurşunla kaplanmıştır. Cami Vakıflar Müdürlüğü tarafından 2006 ve 2020'de kapsamlı restorasyonlardan geçirilmiştir.",
+        "en": "The octagonal base of the minaret on the northwest façade is built, like the mosque, of two rows of rubble stone and three of brick; its rough appearance is given an aesthetic look with brick blind niches. The cylindrical brick minaret passes to its marble base through Turkish triangles. The part under the balcony is decorated with four rows of sawtooth bricks and the prismatic conical spire is lead-covered. The mosque was extensively restored by the Directorate of Foundations in 2006 and 2020."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "485"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 6,
+      "title": {
+        "tr": "Hazire (İbn-i Yiğit Haziresi)",
+        "en": "Graveyard (İbn-i Yiğit Graveyard)"
+      },
+      "body": {
+        "tr": "Caminin batısında, yol seviyesinin oldukça altında kalan ve içinde yaşlı bir çitlembik ağacı bulunan hazirede üç mezar vardır. Birisi caminin banisi Hacı Ali bin Pir Mengi'ye (İbn-i Yiğit / Yiğitoğlu) aittir; mezar taşları yüksek sanat değeri taşıyan oymalı bir işçiliğe sahiptir. Taşta H. 853 / M. 1449 tarihi ve ayrıntılı bir Arapça kitabe yer alır. Hazirede ayrıca “Mahmud bin Hacı Ahmed” yazan bir mezar taşı vardır.",
+        "en": "West of the mosque, well below road level, is a graveyard with an old terebinth tree and three graves. One belongs to the founder Hacı Ali bin Pir Mengi (İbn-i Yiğit / Yiğitoğlu); its gravestones have carved workmanship of high artistic value, with the date AH 853 / AD 1449 and a detailed Arabic inscription. Another stone in the graveyard bears the name “Mahmud bin Hacı Ahmed”."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "485, 487"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat mahalli",
+        "en": "Narthex"
+      },
+      "value": "3.40 × 8.40",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "484"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall"
+      },
+      "value": "8.40 × 8.30",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "484"
+        }
+      ]
+    },
+    {
+      "key": "kor_mihrapcik",
+      "label": {
+        "tr": "Kalkan duvarındaki kör mihrapçık sayısı",
+        "en": "Blind niches on the parapet wall"
+      },
+      "value": 17,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "484"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "485"
+        }
+      ],
+      "note": {
+        "tr": "Bunlara kasnaktaki üç pencere eklenir.",
+        "en": "Plus three drum windows."
+      }
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnak pencere sayısı",
+        "en": "Drum windows"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "485"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar",
+      "label": {
+        "tr": "Hazirede mezar sayısı",
+        "en": "Graves in the graveyard"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "485"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Ali bin Pir Mengi (İbn-i Yiğit / Yiğitoğlu)",
+      "role": {
+        "tr": "Banî; ö. H. 853 / M. Kasım 1449",
+        "en": "Founder; d. AH 853 / Nov AD 1449"
+      }
+    },
+    {
+      "name": "Mahmud bin Hacı Ahmed",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan kişi",
+        "en": "Person with a gravestone in the graveyard"
+      }
+    },
+    {
+      "name": "Hattat Şerif Efendi",
+      "role": {
+        "tr": "H. 1276 / M. 1859 tarihli levhanın hattatı",
+        "en": "Calligrapher of the plaque dated AH 1276 / AD 1859"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "ibn-i-yigit-mezar-kitabesi",
+      "location": {
+        "tr": "Hazirede Hacı Ali bin Pir Mengi'nin (İbn-i Yiğit) mezar taşı",
+        "en": "Gravestone of Hacı Ali bin Pir Mengi (İbn-i Yiğit) in the graveyard"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Kad intekale min dâri’l-fenâ ve’l-ğurûr / İlâ dâri’l-bekâ ve’s-sürûr el-merhûm / el-mağfûr es-sa‘îd eş-şehîd el-muhtâc. / Kâle’n-Nebiyyü sallallâhu aleyhi ve sellem: / el-mü’minûn lâ yemûtûn bel yünkalûn / min dâri’l-fenâ ilâ dâri’l-bekâ. / Kâle’llâhu Tebâreke ve Teâlâ celle celâlüh: / küllü şey’in hâlikün illâ vecheh. / lehü’l-hükmü ve ileyhi türce‘ûn. / Ve eskenehû fî ferâdisi’l-cinân. / Hacı Ali bin Pîr Mengi eş-şehîr bi-İbni Yiğid. / Fî evâsıtı Şevvâl li-seneti selâse ve hamsîn ve semâne mi’e.",
+      "translation": {
+        "tr": "Fânilik ve aldanış yurdundan, bekâ ve sevinç diyarına göçmüştür merhum, Allah’ın affına ve rahmetine kavuşmuş, saadetli ve şehit kul. Peygamber (Sallallahu aleyhi ve Sellem) şöyle buyurmuştur: ‘Müminler ölmez; sadece fânî yurttan bekâ diyarına nakledilirler.’ Yüce Allah (celâl sahibi) şöyle buyurmuştur: ‘Her şey yok olacaktır, yalnızca O’nun veçhi (zatı) bâkîdir. Hüküm yalnızca O’nundur; dönüş de ancak O’nadır.’ (Kur’ân-ı Kerîm, 28/88) Allah onu cennet bahçelerinin en güzellerine yerleştirsin. Bu, Pîr Mengi’nin oğlu, İbn-i Yiğid diye tanınan Hacı Ali’dir. Vefatı, Hicrî 853 yılının Şevval ayının ortalarında (M. Kasım 1449) gerçekleşmiştir.",
+        "en": "The deceased has migrated from the abode of mortality and deception to the abode of eternity and joy, a happy and martyred servant who has attained Allah’s forgiveness and mercy. The Prophet (PBUH) said: ‘The believers do not die; they are only transferred from the abode of mortality to the abode of eternity.’ The Almighty Allah said: ‘Everything will perish, only His face (self) is everlasting. The judgment is only His, and to Him is the return.’ May Allah place him in the most beautiful gardens of Paradise. This is Hacı Ali, known as İbn-i Yiğid, the son of Pir Mengi. His death occurred in the middle of the month of Shawwal in the year AH 853."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 853,
+        "gregorian": "1449 Kasım"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "487"
+        }
+      ],
+      "note": {
+        "tr": "Metin kitabın Türkçe sayfasındaki yazımıdır; İngilizce sayfadaki yazımda küçük yazım farkları vardır.",
+        "en": "Text is as printed on the Turkish page; the English page has minor spelling differences."
+      }
+    },
+    {
+      "id": "celi-suls-levha-1859",
+      "location": {
+        "tr": "Caminin içinde, günümüzde mevcut olmayan levha",
+        "en": "Plaque formerly inside the mosque, no longer present"
+      },
+      "language": "ar",
+      "script": "celi sülüs",
+      "transliteration": "Ve hüve’s-semîu’l-alîm",
+      "translation": {
+        "tr": "O, her şeyi işiten ve bilendir.",
+        "en": "He is the One who hears and knows everything."
+      },
+      "author": "Hattat Şerif Efendi",
+      "date": {
+        "hijri_year": 1276,
+        "gregorian": "1859"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "485"
+        }
+      ],
+      "note": {
+        "tr": "Kitap levhanın günümüzde mevcut olmadığını belirtiyor.",
+        "en": "The book states the plaque no longer exists."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "mezar-1449",
+      "year": 1449,
+      "date": null,
+      "hijri": "Şevval 853",
+      "type": "record",
+      "title": {
+        "tr": "Baninin (Hacı Ali bin Pir Mengi) ölümü; mezar taşı tarihi",
+        "en": "Death of the founder (Hacı Ali bin Pir Mengi); gravestone date"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "483, 487"
+        }
+      ],
+      "note": {
+        "tr": "Kitap tarihi M. Kasım 1449 olarak veriyor.",
+        "en": "The book gives the date as November 1449."
+      }
+    },
+    {
+      "id": "levha-1859",
+      "year": 1859,
+      "date": null,
+      "hijri": "1276",
+      "type": "record",
+      "title": {
+        "tr": "Hattat Şerif Efendi'nin celi sülüs levhası (günümüzde yok)",
+        "en": "Calligrapher Şerif Efendi's Jeli Thuluth plaque (no longer present)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "485"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Müdürlüğü kapsamlı restorasyonu",
+        "en": "Extensive restoration by the Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "485"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2020",
+      "year": 2020,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Müdürlüğü kapsamlı restorasyonu",
+        "en": "Extensive restoration by the Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "485"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-galle-hani",
+      "target_name": {
+        "tr": "Galle Hanı"
+      },
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami, Galle Hanı'nın güneydoğu çaprazında yer alır.",
+        "en": "The mosque stands diagonally southeast of the Galle Han."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "483"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yiğit Köhne Camii, iki yol arasında bir köşede, yol seviyesinin altında kalan kalkan duvarlı bir camidir. Duvarlar moloz taş ve tuğla sıralarından oluşur; kuzey cephedeki taç kapının üzerindeki kalkan duvarda on yedi kör niş vardır. Kurşun kaplı kubbe sekizgen bir kasnağa oturur. Kuzeybatı köşede, tuğla gövdeli, mermer kaideli bir minare yükselir. Caminin batısındaki hazirede yaşlı bir çitlembik ağacı ve üç mezar bulunur.",
+      "en": "Yiğit Köhne Mosque is a parapet-walled mosque at a corner between two roads, lying below road level. Its walls are rows of rubble stone and brick; the parapet wall above the north portal has seventeen blind niches. A lead-covered dome sits on an octagonal drum. A brick minaret on a marble base rises at the northwest corner. In the graveyard west of the mosque are an old terebinth tree and three graves."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yigit-kohne-camii/p090-1.jpg",
+        "original_name": "01 Kapak_21.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "483"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami ve çevresi, kavşaktan havadan",
+        "en": "Mosque and its junction from the air"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı kubbeli, tuğla ve taş cami ve sivri külahlı minare; geniş bir caddenin kavşağında, ağaçlarla çevrili. Arkada dağ ve kent görünür.",
+        "en": "A brick-and-stone mosque with a lead dome and pointed minaret at a wide road junction among trees, with mountains and the city behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yigit-kohne-camii/p091-1.jpg",
+        "original_name": "03_13-4.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "484"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı, mihrap ve minber",
+        "en": "Mosque interior with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı salonda taç kapılı, süslü mihrap, sağında ahşap minber; vitraylı pencereler, tavandan sarkan avize ve kırmızı halı görülür.",
+        "en": "An ornate mihrab on a white wall with a wooden minbar to its right, stained-glass windows, a chandelier and a red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-05"
+    }
+  ],
+  "archive_media": []
+}

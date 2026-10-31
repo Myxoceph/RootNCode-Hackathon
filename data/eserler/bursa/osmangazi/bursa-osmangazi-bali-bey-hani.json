@@ -1,0 +1,697 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-bali-bey-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Ticari Yapılar",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 676-679) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
+      "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
+      "Yapım yılı kitapta yok (Bâli Bey v. 1493 dışında tarih verilmiyor); 'dating' null.",
+      "Hanın mimari ayrıntıları (malzeme, örtü, avlu boyutu) kitapta yok.",
+      "İlişki hedefi 'bursa-yenisehir-bali-bey-camii': kitap caminin/külliyenin adını vermiyor ('Yenişehir'deki külliye/cami'); ilçe adı olarak 'yenisehir' metindeki 'Yenişehir'den alındı, gerçek id ve kayıt adı belirlenmeli.",
+      "Bölümdeki iki farklı konum bilgisi (Osmangazi Mahallesi adresi ve 'Balıkpazarı semti') uzlaştırılmalı.",
+      "Ziyaret saatleri, giriş ücreti ve bugünkü işlev ('geleneksel kültürel değerlerin yaşatıldığı' ifadesinin somut karşılığı) kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[kat_sayisi]",
+        "note": "Kitap hanı 'üç katlı' olarak tanıtır, ancak gravürdeki revak kemerlerine dayanarak yapının 'aslında dört katlı olabileceği' değerlendirmesini aktarır; 'disputed' işaretlendi."
+      },
+      {
+        "field": "timeline[sicil-1793]",
+        "note": "Kitapta '29 Cemaziyelevvel 1207 / 29 Mart 1793' yazıyor. H. 1207 yılında Cemaziyelevvel ayı standart çevrimle yaklaşık Aralık 1792-Ocak 1793'e denk gelir; 29 Mart 1793 yaklaşık Şaban ayına rastlar. Hicri ya da miladi tarihten biri hatalı olabilir; kaynaktaki değerler korundu (doğrulama gerekli)."
+      },
+      {
+        "field": "location",
+        "note": "Adres 'Osmangazi Mahallesi, Osmangazi Caddesi No: 1' iken 1546 belgesi hanı 'Balıkpazarı semtinde' anar; ikisi kitapta uzlaştırılmamıştır."
+      },
+      {
+        "field": "waqf",
+        "note": "Kitap bir yerde 'külliye', bir yerde 'cami' der (Yenişehir'de inşa ettirdiği külliye / cami); vakıf hedefi iki ifadeyle de korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Bali Bey Hanı",
+    "en": "Bali Bey Han"
+  },
+  "subtitle": {
+    "tr": "Osmanlı'nın ilk çok katlı hanlarından biri",
+    "en": "One of the first multi-storey hans of the Ottoman period"
+  },
+  "alternate_names": [],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "han",
+    "Bâli Bey",
+    "çok katlı han",
+    "Balıkpazarı",
+    "Hommaire de Hell",
+    "2009 restorasyonu",
+    "Yenişehir vakfı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Osmangazi",
+    "address": "Osmangazi Caddesi No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "676"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185031,
+      "lng": 29.059225,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Bâli Bey (v. 1493)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "676"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "676-679"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Bâli Bey'in Yenişehir'deki cami/külliye vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Bâli Bey vakıf için padişahın kendisine mülk verdiği İnegöl'e bağlı Edebey köyünü, İnegöl Yenice köyünü ve Edebey köyündeki bir değirmeni tahsis etmiştir. H. 17 Safer 953 / 19 Nisan 1546 tarihli belge Balıkpazarı'ndaki hanın bu caminin vakfı olduğunu açıkça belirtir.",
+      "en": "Bâli Bey allocated the village of Edebey in İnegöl, the village of Yenice in İnegöl and a mill in Edebey, given to him as property by the sultan, to the foundation. A document of 17 Safer AH 953 / 19 April AD 1546 states clearly that the han in Balıkpazarı is the foundation of this mosque."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "676-677"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Fâtih devri ileri gelenlerinden Hamza Bey'in torunu Bâli Bey'in Yenişehir'deki külliyesine gelir sağlamak için yaptırdığı, eğimli arazide kurulu, üç (belki dört) katlı ve altmış dört odalı han. Zamanla harap olup toprak altında kalmış, 2006-2008 projeleri ve 2009'da tamamlanan restorasyonla ziyarete açılmıştır.",
+    "en": "A three-storey (possibly four), sixty-four-room han on sloping land built by Bâli Bey, grandson of Hamza Bey, a notable of Fâtih's time, to provide income to the complex he built in Yenişehir. It decayed and was partly buried, and was restored through projects of 2006-2008 and opened to visitors on completion in 2009."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banî",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Han Osmangazi ilçesi, Osmangazi Mahallesi, Osmangazi Caddesi No: 1'dedir. Fâtih Sultan Mehmed devri ileri gelenlerinden Hamza Bey'in torunu Bâli Bey (v. 1493) tarafından Yenişehir'de yaptırdığı külliyeye gelir sağlamak için yaptırılmıştır. Hamza Bey'in oğlu Mehmed Bey'in oğlu olan Bâli Bey, dedesine ait vakıfların mütevelliliğini üstlenmiştir.",
+        "en": "The han is at Osmangazi Street No. 1, Osmangazi Neighborhood, Osmangazi District. It was built by Bâli Bey (d. 1493), grandson of Hamza Bey, a prominent figure of Fâtih Sultan Mehmed's era, to provide income to the complex he built in Yenişehir. Bâli Bey, son of Hamza Bey's son Mehmed Bey, took over the trusteeship of his grandfather's foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "676"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 2,
+      "title": {
+        "tr": "Vakıf Bağlantısı",
+        "en": "Endowment Link"
+      },
+      "body": {
+        "tr": "Bâli Bey, Yenişehir'de yaptırdığı caminin vakfı olarak padişahın kendisine mülk verdiği İnegöl'e bağlı Edebey köyü, İnegöl Yenice köyü ve Edebey köyündeki bir değirmeni tahsis etmiştir. H. 17 Safer 953 / M. 19 Nisan 1546 tarihli bir belge, Balıkpazarı semtindeki hanın bu caminin vakfı olduğunu açıkça belirtir.",
+        "en": "Bâli Bey allocated the village of Edebey in İnegöl, the village of Yenice in İnegöl and a mill in Edebey village, given to him as property by the sultan, as the foundation of the mosque he built in Yenişehir. A document dated 17 Safer AH 953 / 19 April AD 1546 clearly states that the han in the Balıkpazarı district is the foundation of that mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "677"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Üç katlı han, Osmanlı ticaret yapıları arasında dikkat çekici bir konumdadır; Hisar bölgesine çıkan yol üzerinde, eğimli arazide kurulmuş olması özgünlüğünü pekiştirir. Tarihî kaynaklarda \"Osmanlı dönemine ait ilk çok katlı hanlardan\" biri olduğu belirtilir. Arşiv belgelerine göre toplam altmış dört odası vardır. 1847'de Bursa'yı ziyaret eden Fransız seyyah Xavier Hommaire de Hell, beraberindeki ressama hanın bir gravürünü çizdirmiştir; gravürde bazı revakların tamamen, bazılarının kısmen yıkıldığı, orta avlunun toprakla dolduğu görülür. Gravürdeki revak kemerlerinin ayrıntılarından hareketle yapının aslında dört katlı olabileceği değerlendirilmiştir.",
+        "en": "The three-storey han holds a remarkable position among Ottoman trade structures; its sloping site on the road to the Hisar reinforces its originality. Historical sources call it one of the \"first multi-storey hans of the Ottoman period\". Archive documents say it has sixty-four rooms in all. The French traveller Xavier Hommaire de Hell, visiting Bursa in 1847, had the painter with him draw an engraving of it, showing some arcades fully and some partly collapsed and the central courtyard filled with soil. From the engraving's arcade-arch details it has been judged that the building may actually have had four floors."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "677-678"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Çöküş",
+        "en": "Repairs and Decline"
+      },
+      "body": {
+        "tr": "1629'da kurşunlar satılınca çatının bir kısmı kiremitle kaplanmış, 1634'te çatı ve kapılar başta olmak üzere kapsamlı onarım yapılmıştır. XVIII. yüzyıl başında harap olmaya başlayan yapının 1730'da kurşunlarının bile onarılamadığı kayıtlıdır. 1748'de konumu nedeniyle atıl kalıp daha da harap olmuş, aynı yıl mütevellisine 1 yük 46.000 akçelik onarım izni verilmiş, 1749'da 345.000 akçelik bütçeyle onarılmıştır. H. 29 Cemaziyelevvel 1207 / M. 29 Mart 1793 tarihli şer'iyye sicili hanın 64 odası olduğunu, bitişikteki dört evden ikisinin harap olduğunu, dükkânlar ve \"sundurma\" denen odaların bulunduğunu ve yıkılmaya yüz tuttuğunu kaydeder. 23 Ağustos 1799'a kadar Rum cemaatine mensup hastalar için sağlık kurumu bulunmadığından handa kiralanan sekiz oda bu amaçla tahsis edilmiştir. 1855 depremi durumu daha da kötüleştirmiş, birçok bölümü toprak altında kalmıştır; 1950'lerde ayakta kalan kısımlar sığınak, 1970'lerde kahvehane olarak kullanılmıştır.",
+        "en": "In 1629, after its lead was sold, parts of the roof were covered with tiles; in 1634 extensive repairs were made, especially to the roof and doors. Falling into disrepair in the early 18th century, in 1730 even its lead could not be repaired. In 1748 it stood unused owing to its location and decayed further; that year its trustee was permitted a repair of 1 load 46,000 akçe, and in 1749 it was repaired with a budget of 345,000 akçe. A sharia record of 29 Jumada al-Awwal AH 1207 / 29 March AD 1793 states the han had sixty-four rooms, that two of the four adjacent houses were dilapidated, that it contained shops and rooms called \"sheds\", and that it was on the verge of collapse. Until 23 August 1799, eight rooms rented in the han were allocated for patients of the Greek community, who had no health institution. The 1855 earthquake worsened its state, with many parts buried over time; in the 1950s surviving parts served as shelters and in the 1970s as a coffeehouse."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "678-679"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "order": 5,
+      "title": {
+        "tr": "Restorasyon ve Bugün",
+        "en": "Restoration and Today"
+      },
+      "body": {
+        "tr": "1984-1985'te Bursa Belediyesi'nin Tophane ve Okçubaba Türbesi çevresindeki düzenlemeleri kapsamında yapılan kazılarla hanın kemer yapıları ortaya çıkarılmış, ancak yapı uzun süre yalnızca kafeterya ve çay bahçesi olarak kullanılmış, ayakta kalan kısımlar yeterli bakım görmediği için ihmal edilmiştir. 2006-2008'de Vakıflar Genel Müdürlüğü ile Bursa Büyükşehir Belediyesi iş birliğinde hazırlanan projelerle yapının tüm unsurları ortaya çıkarılmış ve kapsamlı restorasyon başlatılmıştır. 2009'da tamamlanan çalışmalarla han, geleneksel kültürel değerlerin yaşatıldığı ve üretildiği bir işlevle yeniden yapılandırılıp ziyarete açılmış, bu işlevini sürdürmektedir.",
+        "en": "In 1984-1985 excavations during Bursa Municipality's works around Tophane and the Okçubaba Tomb brought the han's arches to light, but it was long used only as a cafeteria and tea garden and the surviving parts were neglected. Between 2006 and 2008, under projects prepared by the General Directorate of Foundations and Bursa Metropolitan Municipality, all structural elements were revealed and a comprehensive restoration begun. With the works completed in 2009 the han was restructured with a function that keeps traditional cultural values alive and opened to visitors, and continues so today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "679"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kat_sayisi",
+      "label": {
+        "tr": "Kat sayısı",
+        "en": "Number of floors"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "677-678"
+        }
+      ],
+      "note": {
+        "tr": "Gravür incelemesi dört kat olabileceğini düşündürür.",
+        "en": "Study of the engraving suggests it may have had four floors."
+      }
+    },
+    {
+      "key": "oda_sayisi",
+      "label": {
+        "tr": "Oda sayısı (arşiv belgeleri)",
+        "en": "Number of rooms (archive documents)"
+      },
+      "value": 64,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "677-678"
+        }
+      ]
+    },
+    {
+      "key": "onarim_1749",
+      "label": {
+        "tr": "1749 onarım bütçesi",
+        "en": "1749 repair budget"
+      },
+      "value": 345000,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "678"
+        }
+      ]
+    },
+    {
+      "key": "rum_hasta_odalari",
+      "label": {
+        "tr": "Rum cemaati hastaları için tahsis edilen oda",
+        "en": "Rooms allocated for Greek community patients"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "679"
+        }
+      ],
+      "note": {
+        "tr": "23 Ağustos 1799'a kadar.",
+        "en": "Until 23 August 1799."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Bâli Bey",
+      "role": {
+        "tr": "Hanı yaptıran; dedesinin vakıflarının mütevellisi",
+        "en": "Builder of the han; trustee of his grandfather's foundations"
+      }
+    },
+    {
+      "name": "Hamza Bey",
+      "role": {
+        "tr": "Bâli Bey'in dedesi; Fâtih devri ileri gelenlerinden",
+        "en": "Bâli Bey's grandfather; a notable of Fâtih's era"
+      }
+    },
+    {
+      "name": "Xavier Hommaire de Hell",
+      "role": {
+        "tr": "1847'de hanı belgeleyen Fransız seyyah",
+        "en": "French traveller who documented the han in 1847"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakif-belgesi-1546",
+      "year": 1546,
+      "date": "1546-04-19",
+      "hijri": "17 Safer 953",
+      "type": "record",
+      "title": {
+        "tr": "Belge, Balıkpazarı'ndaki hanın Yenişehir camisinin vakfı olduğunu açıkça belirtir",
+        "en": "Document states the Balıkpazarı han is the foundation of the Yenişehir mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "677"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1629",
+      "year": 1629,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kurşunlar satılınca çatının bir kısmı kiremitle kaplandı",
+        "en": "After the lead was sold, part of the roof was tiled"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "678"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1634",
+      "year": 1634,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Çatı ve kapılar başta olmak üzere kapsamlı onarım",
+        "en": "Extensive repair, especially roof and doors"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "678"
+        }
+      ]
+    },
+    {
+      "id": "kayit-1730",
+      "year": 1730,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kurşunlarının bile onarılamadığı kayıtlı",
+        "en": "Records state even its lead could not be repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "678"
+        }
+      ]
+    },
+    {
+      "id": "izin-1748",
+      "year": 1748,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mütevelliye 1 yük 46.000 akçelik onarım izni verildi",
+        "en": "Trustee given repair permit of 1 load 46,000 akçe"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "678"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1749",
+      "year": 1749,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "345.000 akçelik bütçeyle onarıldı",
+        "en": "Repaired with a budget of 345,000 akçe"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "678"
+        }
+      ]
+    },
+    {
+      "id": "sicil-1793",
+      "year": 1793,
+      "date": "1793-03-29",
+      "hijri": "29 Cemaziyelevvel 1207",
+      "type": "record",
+      "title": {
+        "tr": "Şer'iyye sicili hanın yıkılmaya yüz tuttuğunu kaydeder",
+        "en": "Sharia record notes the han on the verge of collapse"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "678"
+        }
+      ],
+      "note": {
+        "tr": "Hicri ve miladi tarih uyuşmuyor olabilir (bkz. data_quality_notes).",
+        "en": "Hijri and Gregorian dates may not match (see data_quality_notes)."
+      }
+    },
+    {
+      "id": "hasta-odalari-1799",
+      "year": 1799,
+      "date": "1799-08-23",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Rum cemaati hastaları için handa sekiz oda tahsis edildi (23 Ağustos 1799'a kadar)",
+        "en": "Eight rooms in the han allocated for Greek community patients (until 23 August 1799)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "679"
+        }
+      ]
+    },
+    {
+      "id": "gravur-1847",
+      "year": 1847,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Hommaire de Hell hanı gravürle belgeledi",
+        "en": "Hommaire de Hell documented the han with an engraving"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "677"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük Bursa depremi yapıyı daha da kötüleştirdi",
+        "en": "The great Bursa earthquake worsened its condition"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "679"
+        }
+      ]
+    },
+    {
+      "id": "kazi-1984",
+      "year": 1984,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Tophane ve Okçubaba Türbesi çevresi düzenlemelerinde (1984-1985) kazıyla kemerler ortaya çıkarıldı",
+        "en": "Arches uncovered by excavation during works around Tophane and Okçubaba Tomb (1984-1985)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "679"
+        }
+      ]
+    },
+    {
+      "id": "proje-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM ve Bursa Büyükşehir Belediyesi projeleriyle kapsamlı restorasyon başladı (2006-2008)",
+        "en": "Comprehensive restoration began under GDF and Bursa Metropolitan Municipality projects (2006-2008)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "679"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2009",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Çalışmalar tamamlandı; han ziyarete açıldı",
+        "en": "Works completed; the han opened to visitors"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "679"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yenisehir-bali-bey-camii",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Han, Bâli Bey'in Yenişehir'de yaptırdığı caminin/külliyenin vakfıdır.",
+        "en": "The han is the foundation of the mosque/complex Bâli Bey built in Yenişehir."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "676-677"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Bali Bey Hanı, Hisar yönüne çıkan yolda, eğimli bir arazide yükselen çok katlı bir handır; belgelere göre altmış dört odası vardır. Orta avlunun çevresinde revaklar yer alır. Han, uzun süre toprak altında kalmış ve 2009'da tamamlanan restorasyonla geleneksel kültürel değerlerin yaşatıldığı bir işlevle ziyarete açılmıştır.",
+      "en": "The Bali Bey Han is a multi-storey han rising on sloping land along the road to the Hisar; documents record sixty-four rooms. Arcades surround a central courtyard. Long partly buried, it was opened to visitors after a restoration completed in 2009 with a function that keeps traditional cultural values alive."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bali-bey-hani/p047-1.jpg",
+        "original_name": "01 Kapak Bali.jpeg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "676"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Bali Bey Hanı ve eğimli arazideki yapısı",
+        "en": "Bali Bey Han on its sloping site"
+      },
+      "alt": {
+        "tr": "Eğimli arazide kademeli yükselen, kemerli revaklı krem renkli taş bir han. Arkasında şehir surları ve yukarıda evler, çevresinde yeşil ağaçlar vardır.",
+        "en": "A cream stone han rising in tiers up a slope, with arched galleries. City walls and houses stand behind it, with green trees around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-17"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bali-bey-hani/p048-1.jpg",
+        "original_name": "06  Bali.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "677"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Tuğla tonozlu revak ve dükkânlar",
+        "en": "Brick-vaulted gallery and shops"
+      },
+      "alt": {
+        "tr": "Tuğla tonozlu uzun bir revakta ahşap kapılı dükkânlar, çok sayıda saksı bitkisi ve duvarlarda levhalar vardır. Zemin taş döşelidir; 13 numaralı turuncu bir kapı seçilir.",
+        "en": "A long brick-vaulted gallery lined with wooden-doored shops, many potted plants and wall signs. The floor is stone, and a door numbered 13 stands out."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-bali-bey-hani/p048-2.jpg",
+        "original_name": "balibey04.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "677"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Revaktaki ahşap merdiven ve oturma yeri",
+        "en": "Wooden stair and seating in the gallery"
+      },
+      "alt": {
+        "tr": "Tuğla tonozlu revakta ahşap bir merdiven üst kata çıkar. Sağda bir masa ve iki sandalye; ardında çok katlı revaklı avlu görünür.",
+        "en": "In the brick-vaulted gallery, a wooden stair leads to the upper floor. A table and two chairs stand on the right, with a multi-level arcaded courtyard beyond."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

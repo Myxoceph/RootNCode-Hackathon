@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-iznik-candarli-ibrahim-pasa-turbesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "İznik",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -50,7 +50,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "472"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.428975,
+      "lng": 29.728471,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir. OSM way/408816899 ile arası 9 m."
+    }
   },
   "dating": null,
   "founder": null,

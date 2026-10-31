@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-iznik-esrefzade-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "İznik",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının İznik bölümünden özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -64,7 +64,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "425"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.430452,
+      "lng": 29.723737,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir. OSM way/310138771 ile arası 76 m."
+    }
   },
   "dating": {
     "display": {

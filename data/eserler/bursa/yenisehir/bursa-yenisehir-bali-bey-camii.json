@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-yenisehir-bali-bey-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Yenişehir",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Yenişehir bölümünden (s. 684-685) özetlenerek derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -47,7 +47,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "684"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.262203,
+      "lng": 29.650192,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q139422494 ('Bali Bey Camii (Yenişehir)'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -244,6 +251,9 @@
   "relations": [
     {
       "target_id": "bursa-bali-bey-hani",
+      "target_name": {
+        "tr": "Bali Bey Hanı"
+      },
       "type": "waqf_income",
       "description": {
         "tr": "Bursa'daki Bali Bey Hanı, bölgedeki eserlerine gelir sağlamak üzere yaptırılmıştır.",

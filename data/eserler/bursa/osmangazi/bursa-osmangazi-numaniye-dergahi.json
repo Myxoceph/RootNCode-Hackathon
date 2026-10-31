@@ -1,0 +1,873 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-numaniye-dergahi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Tekke ve Zaviyeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Tekkeler ve Zaviyeler (Osmangazi) bölümünden yapay zekâ ile özetlenerek taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; saha/GPS ile eklenip doğrulanmalı (in_review öncesi zorunlu).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgisi (ücret, saat, süre) kitapta yok.",
+      "Dergâhın ilk kuruluş (hanikah) tarihi ve 1734 vakfiyesinin metni kitapta yok; vakfiye VGM arşivinden bulunursa waqf.deed'e eklenmeli.",
+      "Mimar kitapta belirtilmiyor.",
+      "'Yusuf Ziya Paşa' ve 'Sıdkî' imzası dışında kitabe sahibi/hattatı kitapta ayrıca belirtilmiyor.",
+      "Ana giriş kapısı kanatlarındaki III. Selim dönemi kalem işi ayetlerin metni kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kaynak banî konusunda tutarsız: (1) s. 597 'Hekimoğlu Ali Paşa (1689-1758)' diyor; (2) selamlık tavan panosu 'Hekimbaşı Nuh Efendizâde Ali Paşa'yı vakfeden olarak gösteriyor (s. 599); (3) 1802 tarihli onarım kitabesi 'bu dergâhın banisi' olarak III. Selim'in sadrazamı Yusuf Ziya Paşa'yı anıyor (s. 600-604). 1801 yangınından sonra yeniden inşa ettiren Yusuf Ziya Paşa olduğundan kitabe onarımı/yeniden inşayı öne çıkarıyor olabilir; kitap bunu açıklamıyor. Üç değer de saklandı, kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "timeline[yangin-1801]",
+        "note": "s. 599'da büyük yangın 'H. 16 Şaban 1216 / M. 22 Aralık 1801', s. 600'de ise 'H. 1217 / M. 1802 tarihli büyük yangın' olarak geçiyor. 1802 aslında kitabenin tarihi. İngilizce metin ayrıca '22 December AD 801' yazıyor (açık baskı hatası). Türkçe s. 599 tarihi esas alındı."
+      },
+      {
+        "field": "facts[vakif_mulk]",
+        "note": "Türkçe metin '1060 zira mülk' diyor; İngilizce metin 'zira'yı 'acres' diye çevirmiş. Zira bir uzunluk/alan ölçüsüdür, dönüştürme kitapta yok; kaynaktaki 'zira' saklandı."
+      },
+      {
+        "field": "sections[cesme]",
+        "note": "s. 600'de yaşayan tek çeşme 'harem batı duvarında' deniyor; s. 606'da ise 'kuzey duvarına bitişik' çeşme tevhidhane/harem anlatımında yer alıyor. İkisinin aynı çeşme olup olmadığı belirsiz; kaynak tutarsızlığı olarak işaretlendi."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Hazire s. 600'de harem ve selamlığın 'kesişim noktasında', s. 608'de harem ve tevhidhane kısmının 'kıble tarafında' olarak tarif ediliyor; ikisi bağdaştırılabilir ama tek anlatım yok."
+      },
+      {
+        "field": "sections[harem]",
+        "note": "Türkçe s. 605'te harem alt katı işlevini anlatan cümle satır kesilmesiyle yarım kalmış ('konut işlevi'); eksik kısım İngilizce metinden (alt kat şeyh ve ailesi konutu, üst kat ibadet mekânı) tamamlandı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Nûmâniye Dergâhı",
+    "en": "Nûmâniye Sufi Lodge"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "tekke",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "dergah",
+    "Kadiriyye-Eşrefiyye",
+    "tevhidhane",
+    "harem",
+    "selamlık",
+    "kalem işi",
+    "bağdadi",
+    "çeşme",
+    "hazire",
+    "sivil mimari"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Aktarhüssam",
+    "address": "Tekke Çıkmazı No: 5",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "597"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.188858,
+      "lng": 29.058285,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q134615505 ('Numaniye Tekkesi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Vakıf: 20 Ağustos 1734; 1801 yangını sonrası yeniden inşa",
+      "en": "Endowed 20 August 1734; rebuilt after the 1801 fire"
+    },
+    "start_year": 1734,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 18,
+    "basis": {
+      "tr": "Tarihî kaynaklardan aktarılan vakıf tarihi (20 Ağustos 1734); mevcut yapılar büyük yangın sonrası Yusuf Ziya Paşa tarafından yeniden inşa edilmiş.",
+      "en": "Endowment date quoted from historical sources (20 August 1734); present structures were rebuilt by Yusuf Ziya Paşa after the great fire."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "597-599"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hekimoğlu Ali Paşa (1689-1758)",
+    "role": "banî / vakfeden",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "597-604"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "20 Ağustos 1734",
+      "excerpt": {
+        "tr": "Hekimoğlu Ali Paşa, üç tarafı İmam Seyyid Ali Çelebi ve Seyyid Halil Ağa evleri ve yol ile çevrilmiş, 1060 zira mülk ve birçok odaları ile bir mutfağı havi olan zaviyeyi inşa ederek, 20 Ağustos 1734 tarihinde Allah rızası için vakfetmiştir.",
+        "en": "Hekimoğlu Ali Paşa built the zawiya, surrounded on three sides by the houses of the Imam Seyyid Ali Çelebi and Seyyid Halil Ağa and a road, containing 1060 'zira' of property, many rooms and a kitchen, and dedicated it for the sake of Allah on 20 August 1734."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "599"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Zaviye üç tarafı İmam Seyyid Ali Çelebi ve Seyyid Halil Ağa evleri ve yol ile çevrili, 1060 zira mülktür.",
+      "en": "The zawiya is surrounded on three sides by houses and a road and comprises 1060 zira of property."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "599"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Aktarhüssam'da, Hekimoğlu Ali Paşa'nın mevcut bir hanikahı yeniden inşa ederek Nûman Efendi adına kurduğu dergâh. Harem, selamlık, tevhidhane ve hazireden oluşan 19. yüzyıl sivil mimarisinin özgün örneği; Eşrefzâde ailesi hâlâ burada yaşıyor.",
+    "en": "A lodge in Aktarhüssam established by Hekimoğlu Ali Paşa on behalf of Nûmân Efendi by rebuilding an existing khanqah. An intact example of 19th-century civil architecture with harem, selamlik, prayer hall and graveyard; the Eşrefzâde family still lives here."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Dergâh Osmangazi, Aktarhüssam Mahallesi, Tekke Çıkmazı No: 5'te yer alır ve özgün yapısını koruyarak günümüze ulaşmış önemli bir örnektir. Nûman Efendi adına, I. Mahmud ve III. Osman dönemlerinde sadrazamlık yapmış, Kadiriyye-Eşrefiyye tarikatı mensubu hayırsever Hekimoğlu Ali Paşa (1689-1758) tarafından mevcut bir hanikahın yeniden inşa edilmesiyle oluşturulmuştur. İsmini ilk postnişin Şeyh Nûman Efendi'den almıştır.",
+        "en": "The lodge is in Osmangazi District, Aktarhüssam Neighborhood, Tekke Cul-de-Sac No. 5, and has survived preserving its original structure. It was established on behalf of Nûman Efendi by the philanthropist Hekimoğlu Ali Paşa (1689-1758), grand vizier under Mahmud I and Osman III and a member of the Qadiriyya-Eşrefiyya order, by rebuilding an existing khanqah. It takes its name from its first shaykh, Shaykh Nûmân Efendi."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "597,600"
+        }
+      ]
+    },
+    {
+      "id": "vakif-ve-onarimlar",
+      "order": 2,
+      "title": {
+        "tr": "Vakıf ve Onarımlar",
+        "en": "Endowment and Repairs"
+      },
+      "body": {
+        "tr": "Dergâhı vakfedenin Hekimbaşı Nuh Efendizâde Ali Paşa olduğu bilgisi selamlık tavan eteğindeki bir panoda yer alır. Tarihî kaynaklara göre Hekimoğlu Ali Paşa, 1060 zira mülk, birçok oda ve bir mutfak içeren zaviyeyi inşa ederek 20 Ağustos 1734'te vakfetmiştir. H. 16 Şaban 1216 / M. 22 Aralık 1801'deki büyük yangında ağır hasar gören yapılar Sadrazam Yusuf Ziya Paşa tarafından yeniden inşa ve ihya edilmiştir. H. 1251 / M. 1835'te Bursa âyanından Hacı Ahmed Ağa kapsamlı onarım yaptırmış ve bir ilave hane eklemiştir. 1844'te Sultan Abdülmecid'in Bursa ziyareti vesilesiyle Evkaf Nazırı Kânî Bey'in girişimiyle diğer tekkelerle birlikte bakım ve onarımdan geçmiştir. 1855 depreminde zarar gören kısımlar onarılmıştır. 1925'te tekkelerin kapatılmasının ardından bazı sıkıntılara rağmen Eşrefzâde ailesi dergâhta ikamet etmeye devam etmiştir.",
+        "en": "The founder of the lodge is named on a ceiling-skirt panel of the selamlik as Hekimbaşı Nuh Efendizâde Ali Paşa. Historical sources say Hekimoğlu Ali Paşa built the zawiya with 1060 zira of property, many rooms and a kitchen, and endowed it on 20 August 1734. The buildings, severely damaged in the great fire of 16 Sha'ban AH 1216 / 22 December AD 1801, were rebuilt by Grand Vizier Yusuf Ziya Paşa. In AH 1251 / AD 1835 Hacı Ahmed Ağa, a Bursa notable, carried out a comprehensive repair and added a house. In 1844, on Sultan Abdülmecid's visit to Bursa, the lodge was repaired with other lodges at the initiative of the Minister of Foundations Kânî Bey. Parts damaged in the great earthquake of 1855 were repaired. After the lodges were closed in 1925 the Eşrefzâde family continued to reside here."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "599"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-yerlesim",
+      "order": 3,
+      "title": {
+        "tr": "Avlu ve Yerleşim",
+        "en": "Courtyard and Layout"
+      },
+      "body": {
+        "tr": "Dergâh, taş duvarlarla çevrili 1.357 m²'lik geniş bir avlu içindedir. Avluda harem, selamlık, hazire, hamam ve mutfak birimleri bulunur. Harem güneydoğu-kuzeybatı, selamlık haremin doğusunda kuzey-güney eksenindedir; hazire bu yapıların kesişim noktasındadır. Bugün kullanılmayan hamam ve mutfağa haremin güneyindeki bir bahçe kapısıyla geçilir. Tarihî kaynaklardaki üç çeşmeden yalnızca biri haremin batı duvarında durmaktadır. Avlu duvarlarının doğu ve batı cephelerinde geniş saçaklı çift kanatlı ahşap kapılar vardır; bugün yalnızca Tekke Çıkmazı'na açılan kapı kullanılır.",
+        "en": "The lodge stands in a 1,357 m² courtyard surrounded by stone walls containing harem, selamlik, graveyard, bathhouse and kitchen units. The harem lies on a southeast-northwest axis, the selamlik east of it on a north-south axis, and the graveyard at their intersection. The unused bathhouse and kitchen are reached via a garden gate south of the harem. Of three fountains in historical sources only one survives, on the harem's west wall. The east and west courtyard walls have double-leaf wooden doors with wide eaves; only the door onto Tekke Cul-de-Sac is used today."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "600"
+        }
+      ]
+    },
+    {
+      "id": "cumle-kapisi-kitabesi",
+      "order": 4,
+      "title": {
+        "tr": "Cümle Kapısı Kitabesi",
+        "en": "Main Gate Inscription"
+      },
+      "body": {
+        "tr": "Kuzeybatı eksenindeki cümle kapısının üzerinde, büyük yangın sonrası kapsamlı onarımlar sırasında yerleştirilmiş, H. 1217 / M. 1802 tarihli bir onarım kitabesi vardır. 70 × 100 cm ölçüsündeki kitabe mermer üzerine kabartma tekniğiyle ve sülüs hatla yazılmıştır. Kitabeye göre dergâhın banisi III. Selim'in sadrazamı Yusuf Ziya Paşa'dır; metni Tahsin adlı müellif kaleme almıştır.",
+        "en": "Above the main gate on the northwest axis is a repair inscription dated AH 1217 / AD 1802, placed during the extensive repairs after the great fire. The 70 × 100 cm inscription is in relief on marble in Thuluth calligraphy. According to it, the founder of the lodge is Yusuf Ziya Paşa, grand vizier of Selim III; the text was written by an author named Tahsin."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "600-604"
+        }
+      ]
+    },
+    {
+      "id": "genel-mimari",
+      "order": 5,
+      "title": {
+        "tr": "Genel Mimari Nitelik",
+        "en": "General Architectural Character"
+      },
+      "body": {
+        "tr": "Dergâh, plan şeması, kullanılan malzeme ve yapım tekniği açısından 19. yüzyıl sivil mimari üslubuna örnektir.",
+        "en": "The lodge is an example of the 19th-century civil architectural style in its plan scheme, materials and construction techniques."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "604-605"
+        }
+      ]
+    },
+    {
+      "id": "harem",
+      "order": 6,
+      "title": {
+        "tr": "Harem Binası",
+        "en": "Harem Building"
+      },
+      "body": {
+        "tr": "Harem binası 15,54 × 14,70 m ölçülerindedir. Alt kat şeyh ve ailesinin konutu, üst kat ibadet mekânı olarak düzenlenmiştir. Ahşap karkas sistem üzerine bağdadi sıva uygulanmış, üstü geniş saçaklı kırma çatıyla örtülmüştür; çatı kiremitli, 1,20 m genişliğindeki saçak altları ahşap kaplıdır. Harem ve tevhidhaneye girişler ayrı kapılardandır; haremden bir merdivenle tevhidhaneye de geçilir. Harem katı, iki yanda ikişer odanın sıralandığı 'T' biçimli planlıdır ve 3,00 × 12,00 m'lik sofa ile son bulur; sofanın sonundaki dikdörtgen salonun bitiminde birkaç basamakla inilen mutfak vardır.",
+        "en": "The harem building measures 15.54 × 14.70 m. Its ground floor is a residence for the shaykh and his family and the upper floor a place of worship. Lath and plaster is applied on a wooden frame, under a hipped roof with wide eaves; the roof is tiled and the 1.20 m eaves are clad in wood. The harem and prayer hall have separate entrances, and a staircase links them from inside the harem. The harem floor is T-shaped with two rooms on each side and ends in a 3.00 × 12.00 m hall; at its end a few steps lead down to the kitchen."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "605-607"
+        }
+      ]
+    },
+    {
+      "id": "tevhidhane",
+      "order": 7,
+      "title": {
+        "tr": "Tevhidhane",
+        "en": "Prayer Hall (Tevhidhane)"
+      },
+      "body": {
+        "tr": "Tevhidhane bölümünde batı cephesindeki kapıdan girilen 2,77 × 3,00 m'lik bir hol ile iki yanında karşılıklı kare planlı iki oda bulunur; bu bölümün sonradan eklendiği anlaşılmaktadır. İki ayrı mekândan (3,05 × 5,24 m ve 3,05 × 4,26 m) oluşan kadınlar mahfiline biri haremden, biri doğu cephesindeki kapıdan merdivenle geçilir. Dışarıdan gelen misafirler için doğu cephesindeki kapıdan ayrı bir merdiven bağlantısı vardır. Ana giriş kapısı kanatlarında III. Selim dönemine tarihlenen kalem işi ayetler yer alır. Ana ibadet mekânı 11,37 × 9,50 m, iç tavan yüksekliği 4 m'dir. Kıble duvarındaki sade mihrap sonradan eklenmiştir; iki yanındaki tarihî şamdanlar günümüze ulaşmıştır. Eski yayınlar mihrabı beş dilimli ve mukarnaslı olarak tarif eder. Mihrabın solundaki ahşap kürsünün bulunduğu duvarda yarım daire biçimli bir niş vardır. Mekân doğu duvarında altı, kıble duvarında iki pencereyle aydınlanır ve çok sayıda hat levhasıyla bezelidir. Ahşap tavanda altı köşeli yıldız ve bitkisel bezemeli, kalem işli bir tavan göbeği vardır.",
+        "en": "The prayer hall section has a 2.77 × 3.00 m hall entered from the west door, with two square rooms facing each other on either side; this part was evidently added later. The women's gallery, two spaces (3.05 × 5.24 m and 3.05 × 4.26 m), is reached by stairs from the harem floor and from the east-facade door. A separate staircase from the east door serves outside guests. The main entrance door wings bear hand-painted verses dating to Selim III's reign. The main worship area measures 11.37 × 9.50 m with a 4 m ceiling. The simple mihrab on the qibla wall was added later; the historical candlesticks beside it survive. Old publications describe the mihrab as five-segmented with muqarnas. A semicircular niche is on the wall with the wooden pulpit left of the mihrab. Eight windows (six east, two qibla) light the hall, which holds many calligraphy panels. The wooden ceiling has a hand-painted medallion of a six-pointed star and vegetal ornament."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "606-607"
+        }
+      ]
+    },
+    {
+      "id": "cesme",
+      "order": 8,
+      "title": {
+        "tr": "Çeşme",
+        "en": "Fountain"
+      },
+      "body": {
+        "tr": "Kuzey duvarına bitişik çeşme, kaynaklarda anılan üç çeşmeden günümüze ulaşan tek yapıdır. Yarım daire planlı, 1,35 m genişliğinde ve 3,43 m yüksekliğindedir; iç bükey nişinde kurdele desenli süslemeler, ayna kısmında iki gülce motifi ve gösterişli bir yalak bulunur.",
+        "en": "The fountain adjacent to the north wall is the only survivor of three mentioned in the sources. Semicircular in plan, 1.35 m wide and 3.43 m high, it has ribbon-patterned decoration in its concave niche, two rose motifs on its back panel and an ornate basin."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "606-607"
+        }
+      ]
+    },
+    {
+      "id": "selamlik",
+      "order": 9,
+      "title": {
+        "tr": "Selamlık",
+        "en": "Selamlık"
+      },
+      "body": {
+        "tr": "Selamlık, tekkeye gelen erkek misafirlerin sohbet ve meşk toplantılarını yaptığı mekânların bütünüdür; tek katlıdır. Ahşap karkas üzerine bağdadi sıvalı, kırma çatılı ve geniş saçaklıdır; haremin doğu çaprazında kuzey-güney doğrultusundadır. Sofaya batı duvarındaki çift kanatlı kapıdan girilir; yaklaşık 15 m uzunluğundaki sofanın iki ucunda doğuya bakan birer eyvan vardır. Kuzeydeki 4,49 × 7,22 m baş oda dokuz pencerelidir (ikisi sofaya açılır); doğu duvarında sabit ahşap dolaplar, ortalarındaki nişte manzara tasviri, tavanda elips biçimli süslemeli göbek bulunur. Bitişikte iki küçük oda depodur. Sofanın güney ucunda 4,24 × 4,83 m ve 5,31 × 6,28 m iki oda vardır; büyük odada ocak nişi ve yedi pencere, batıdaki küçük odada beş pencere bulunur. Odaların tavan ve saçak altı bezemeleri zengindir ve her odada farklıdır; büyük odanın tavan kenarlarındaki şehir tasvirli süslemeler özellikle dikkat çeker.",
+        "en": "The selamlik comprises the spaces where male guests held conversations and meşk (training) meetings; it is single-storey, lath-and-plaster on a wooden frame with a hipped roof and wide eaves, lying north-south east of the harem. The hall is entered by a double-leaf door on the west wall and, about 15 m long, has an east-facing iwan at each end. The 4.49 × 7.22 m main room to the north has nine windows (two to the hall), fixed wooden cabinets on the east wall, a landscape depiction in a niche, and an elliptical ceiling medallion. Two small interconnected rooms next to it are storage. At the south end are two rooms (4.24 × 4.83 m and 5.31 × 6.28 m); the large one has a fireplace niche and seven windows, the smaller western one five. Ceiling and eave decoration is rich and differs in each room; city depictions on the large room's ceiling edges are particularly striking."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "606-609"
+        }
+      ]
+    },
+    {
+      "id": "gunumuz",
+      "order": 10,
+      "title": {
+        "tr": "Günümüzde Yaşayan Dergâh",
+        "en": "A Living Lodge Today"
+      },
+      "body": {
+        "tr": "Dergâh, hâlen Eşrefzâde ailesinin ikametiyle yaşamın sürmesi sayesinde yapıların bütünlüğünü korumuştur. Bunda en büyük pay, Eşrefoğlu ailesinden burada oturan Mehmed Safiyüddin Erhan'ındır; 1970'te başlattığı kapsamlı bakım ve onarım çalışmaları dergâhı önemli bir kültürel miras olarak günümüze ulaştırmıştır. Özellikle Ramazan aylarında, bayramlarda ve mübarek gün ve gecelerde program düzenlenerek geleneklerin yaşatılması sürmektedir.",
+        "en": "Thanks to the continued life within it, with the Eşrefzâde family still resident, the lodge preserved the integrity of its structures. The largest share belongs to Mehmed Safiyüddin Erhan of the Eşrefoğlu family, whose comprehensive maintenance and repairs begun in 1970 carried it to the present. Programs are held especially during Ramadan, religious holidays and holy days and nights."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "608-609"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 11,
+      "title": {
+        "tr": "Dergâhın Hazire Alanı",
+        "en": "Graveyard of the Lodge"
+      },
+      "body": {
+        "tr": "Hazire, harem dairesi ile tevhidhane kısmının kıble tarafındadır ve dergâhta şeyhlik yapmış kişilerle aile fertlerine ait mezarları içerir. Burada Şeyh Nûman Efendi, Şeyh Mehmed Arif Efendi, Hattat Seyyid Şeyh Hacı Ahmed Raşid Efendi, Şeyh Mehmed Safiyüddin Efendi, Şeyh Necmeddin Efendi, Şeyh İzzeddin Efendi bin Safiyüddin Efendi ve Şeyh Arif Efendi bin İzzeddin Efendi medfundur.",
+        "en": "The graveyard lies on the qibla side of the harem and prayer hall and holds the graves of those who served as shaykhs and their family. Buried here are Shaykh Nûman Efendi, Shaykh Mehmed Arif Efendi, the calligrapher Seyyid Shaykh Hacı Ahmed Raşid Efendi, Shaykh Mehmed Safiyüddin Efendi, Shaykh Necmeddin Efendi, Shaykh İzzeddin Efendi bin Safiyüddin Efendi and Shaykh Arif Efendi bin İzzeddin Efendi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "608-609"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "avlu_alani",
+      "label": {
+        "tr": "Avlu alanı",
+        "en": "Courtyard area"
+      },
+      "value": 1357,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "600"
+        }
+      ]
+    },
+    {
+      "key": "vakif_mulk",
+      "label": {
+        "tr": "Vakfedilen mülk",
+        "en": "Endowed property"
+      },
+      "value": 1060,
+      "unit": "zira",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "599"
+        }
+      ],
+      "note": {
+        "tr": "İngilizce metin 'acres' diyor; bkz. data_quality_notes.",
+        "en": "English text says 'acres'; see data_quality_notes."
+      }
+    },
+    {
+      "key": "harem_olcu",
+      "label": {
+        "tr": "Harem binası ölçüsü",
+        "en": "Harem building dimensions"
+      },
+      "value": "15,54 × 14,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "605-607"
+        }
+      ]
+    },
+    {
+      "key": "tevhidhane_olcu",
+      "label": {
+        "tr": "Ana ibadet mekânı ölçüsü",
+        "en": "Main worship area dimensions"
+      },
+      "value": "11,37 × 9,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "606-607"
+        }
+      ]
+    },
+    {
+      "key": "tevhidhane_yukseklik",
+      "label": {
+        "tr": "İbadet mekânı iç tavan yüksekliği",
+        "en": "Worship area interior ceiling height"
+      },
+      "value": 4,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "606-607"
+        }
+      ]
+    },
+    {
+      "key": "tevhidhane_pencere",
+      "label": {
+        "tr": "Tevhidhane pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "606-607"
+        }
+      ],
+      "note": {
+        "tr": "Doğu duvarında 6, kıble duvarında 2.",
+        "en": "Six on the east wall, two on the qibla wall."
+      }
+    },
+    {
+      "key": "cesme_olcu",
+      "label": {
+        "tr": "Çeşme ölçüsü (genişlik × yükseklik)",
+        "en": "Fountain dimensions (width × height)"
+      },
+      "value": "1,35 × 3,43",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "606-607"
+        }
+      ]
+    },
+    {
+      "key": "selamlik_baslik_oda",
+      "label": {
+        "tr": "Selamlık baş oda ölçüsü",
+        "en": "Selamlık main room dimensions"
+      },
+      "value": "4,49 × 7,22",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "606-609"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcu",
+      "label": {
+        "tr": "Cümle kapısı kitabe ölçüsü",
+        "en": "Main gate inscription size"
+      },
+      "value": "70 × 100",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "600-601"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hekimoğlu Ali Paşa (1689-1758)",
+      "role": {
+        "tr": "Vakfeden/kuran; sadrazam, Kadiriyye-Eşrefiyye mensubu",
+        "en": "Founder/endower; grand vizier, Qadiriyya-Eşrefiyya member"
+      }
+    },
+    {
+      "name": "Yusuf Ziya Paşa",
+      "role": {
+        "tr": "1801 yangını sonrası yeniden inşa ettiren sadrazam; kitabede 'bani'",
+        "en": "Grand vizier who rebuilt after the 1801 fire; named 'founder' in the inscription"
+      }
+    },
+    {
+      "name": "Şeyh Nûman Efendi",
+      "role": {
+        "tr": "İlk postnişin; dergâhın adı ondan gelir",
+        "en": "First shaykh; the lodge is named after him"
+      }
+    },
+    {
+      "name": "Hacı Ahmed Ağa",
+      "role": {
+        "tr": "1835 onarımını yaptıran Bursa âyanı",
+        "en": "Bursa notable who had the 1835 repair done"
+      }
+    },
+    {
+      "name": "Kânî Bey",
+      "role": {
+        "tr": "1844'te onarımı başlatan Evkaf Nazırı",
+        "en": "Minister of Foundations who initiated the 1844 repairs"
+      }
+    },
+    {
+      "name": "Tahsin",
+      "role": {
+        "tr": "Kitabe metninin müellifi",
+        "en": "Author of the inscription text"
+      }
+    },
+    {
+      "name": "Mehmed Safiyüddin Erhan",
+      "role": {
+        "tr": "1970'te bakım-onarım başlatan Eşrefoğlu ailesinden sakin",
+        "en": "Eşrefoğlu family resident who began repairs in 1970"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cumle-kapisi-onarim-kitabesi",
+      "location": {
+        "tr": "Cümle kapısının üzerinde, mermer üzerine kabartma",
+        "en": "Above the main gate, relief on marble"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs",
+      "transliteration": "Vezîr-i a’zam-ı Sultân Selîm-i Sâlis-i Gâzî,\nCenâb-ı Âsaf-ı Yûsuf Ziyâ Paşa-yı Îsâ-cû,\nKi ihyâ-yı dil ü dîn eylemektir dâimâ kasdı;\nAzîz-i Mısr-ı dâreyn olmasında sırr-ı hikmet şu:\nUlüvv-i himmeti âsârıdır ma’nâ-yı hayru’n-nâs,\nBiri de işte ez-cümle bu zîbâ tekke-i dil-cû.\nHele ben bildiğimse gelmemiştir, bir dahî gelmez\nReh-i ikbâl-i tevfîk-i Hudâda böyle devletlû.\nHemîşe mesnedinde ömr ü ikbâli mezîd olsun,\nBu zîbâ tekkede vird-i zebân oldukça Allah Hû.\nDil-i pür-cevher-i Tahsîn’i irşâd etti bu târîh:\nBu dergâhdan yürü kim, câ-yı Hakk’a doğru yoldur bu.\nH. 1217 / M. 1802\nHâk-i reh-i Âl-i Muhammed Sıdkî gufira zunûbuhû.",
+      "translation": {
+        "tr": "Sultan III. Selim Gazi’nin sadrazamı,\nÂsaf ve Yusuf gibi yüce vezir sıfatlarına layık Ziyâ Paşa’dır bu dergâhın banisi.\nO ki her zaman gönülleri ve dini ihya etmek arzusundadır.\nİki cihanın azizi olan Hazret-i Yusuf’un Mısır’da yaptığı gibi,\nonun da hikmet sırrı işte budur.\nYüksek gayretleriyle ortaya koyduğu eserler,\n“İnsanların en hayırlısı, insanlara faydalı olandır” sözünün birer yansımasıdır.\nİşte bu güzel gönül çekici tekke de o anlamlı eserlerden biridir.\nBenim bildiğim, böylesi devletli biri ne gelmiştir ne de bir daha gelir,\nAllah’ın tevfik ve ikbal yolunda bu kadar başarılı bir kişi görülmemiştir.\nDilerim ki onun ömrü ve bahtı hep artarak sürsün;\nBu güzel tekkede “Allah Hu” zikri sürdükçe, o yüce makamı baki kalsın.\nBu maneviyatla dolu sözleri Tahsin adlı müellif kaleme aldı.\nTarih olarak da şunu söyledi:\n‘Bu dergâhtan yürü; çünkü bu yol Allah’a varan yoldur.”",
+        "en": "The founder of this lodge is Ziya Paşa, the grand vizier of Sultan Selim Gazi III, who is worthy of the titles of a great vizier like Asaf and Yusuf.\nHe always desires to revive hearts and religion.\nJust like Hazrat Yusuf, the saint of both worlds, did in Egypt, this is his secret of wisdom.\nThe works he has produced with his great efforts are a reflection of the saying, 'The best of people are those who are beneficial to people.'\nThis beautiful heart-appealing lodge is one of those meaningful works.\nAs far as I know, such a stately person has never come before, nor will he come again.\nNo one has been seen as successful as he has been on the path of Allah's help and fortune.\nI wish his life and fortune to continue to increase; as long as the remembrance of 'Allah Hu' continues in this beautiful lodge, may his exalted position remain.\nTahsin the author wrote these words full of spirituality. He also stated the following as a date: 'Walk from this lodge; for this path is the path leading to Allah.'"
+      },
+      "author": "Tahsin",
+      "date": {
+        "hijri_year": 1217,
+        "gregorian": "1802"
+      },
+      "note": {
+        "tr": "70 × 100 cm; 1801 yangını sonrası onarımda yerleştirilmiş. Metin kronogram içerir. Kitabedeki 'Sıdkî' imzasının rolü kitapta belirtilmiyor.",
+        "en": "70 × 100 cm; placed during repairs after the 1801 fire. The text includes a chronogram. The role of the signature 'Sıdkî' is not stated in the book."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "600-604"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vakif-1734",
+      "year": 1734,
+      "date": "1734-08-20",
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Zaviyenin vakfedilmesi",
+        "en": "Endowment of the zawiya"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "599"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1801",
+      "year": 1801,
+      "date": "1801-12-22",
+      "hijri": "16 Şaban 1216",
+      "type": "damage",
+      "title": {
+        "tr": "Büyük yangın; yapılar ağır hasar gördü",
+        "en": "Great fire severely damaged the buildings"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "599-600"
+        }
+      ],
+      "note": {
+        "tr": "s. 600'de yangın 1217/1802 olarak da geçiyor (bkz. data_quality_notes).",
+        "en": "p. 600 also dates the fire 1217/1802 (see data_quality_notes)."
+      }
+    },
+    {
+      "id": "yeniden-insa-1802",
+      "year": 1802,
+      "date": null,
+      "hijri": "1217",
+      "type": "repair",
+      "title": {
+        "tr": "Yusuf Ziya Paşa tarafından yeniden inşa; cümle kapısı kitabesi",
+        "en": "Rebuilt by Yusuf Ziya Paşa; main gate inscription"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "599-601"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1835",
+      "year": 1835,
+      "date": null,
+      "hijri": "1251",
+      "type": "repair",
+      "title": {
+        "tr": "Hacı Ahmed Ağa'nın kapsamlı onarımı, bir hane eklendi",
+        "en": "Comprehensive repair by Hacı Ahmed Ağa; a house added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "599"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Abdülmecid'in Bursa ziyareti vesilesiyle bakım ve onarım",
+        "en": "Maintenance and repair on Abdülmecid's visit to Bursa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "599"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük deprem; hasarlı kısımlar sonra onarıldı",
+        "en": "Great earthquake; damaged parts later repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "599"
+        }
+      ]
+    },
+    {
+      "id": "kapatilma-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Tekkelerin kapatılması; Eşrefzâde ailesi ikamete devam etti",
+        "en": "Lodges closed; the Eşrefzâde family continued to reside"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "599"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1970",
+      "year": 1970,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Mehmed Safiyüddin Erhan'ın kapsamlı bakım-onarımı başladı",
+        "en": "Mehmed Safiyüddin Erhan began comprehensive maintenance and repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "608-609"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Nûmâniye Dergâhı, taş duvarlarla çevrili geniş bir avlunun içinde duran, ahşap karkas üzerine sıvalı, geniş saçaklı kırma çatılı bir yapı topluluğudur. Avluda harem, selamlık, hamam, mutfak ve hazire bulunur. Haremin alt katı konut, üst katı tevhidhane olarak kullanılır; tevhidhanenin tavanında altı köşeli yıldız motifli kalem işi bir göbek, duvarlarında çok sayıda hat levhası vardır. Selamlıkta uzun bir sofanın iki ucunda eyvanlar ve tavanları şehir tasvirleriyle süslü odalar yer alır. Cümle kapısının üzerinde mermer üzerine kabartma, sülüs hatlı büyük bir kitabe bulunur.",
+      "en": "The Nûmâniye Lodge is a group of plastered timber-frame buildings with wide-eaved hipped roofs, set in a large courtyard enclosed by stone walls. The courtyard holds the harem, selamlik, bathhouse, kitchen and graveyard. The harem's ground floor is a residence and its upper floor the prayer hall, whose ceiling has a hand-painted medallion with a six-pointed star and whose walls carry many calligraphy panels. The selamlik has a long hall with an iwan at each end and rooms with ceilings decorated with city depictions. Above the main gate is a large Thuluth inscription in relief on marble."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt'teki mimari anlatımdan derlendi; yalnızca kitapta yazanlar."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1U0yA31gBwZKBr6PdCLJ0f0rbibji23rF",
+    "book_layout_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+    "book_pdf_name": "5-Tekke ve Zaviyeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-numaniye-dergahi/p016-2.jpg",
+        "original_name": "18.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "601"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Dergâhın taş döşeli sokağı ve evleri",
+        "en": "Cobbled lane and houses of the lodge"
+      },
+      "alt": {
+        "tr": "Bazalt taş döşeli dar bir sokak, solda taş duvar ve sağda yeşil boyalı ahşap bir ev. Ortada açık mavi renkli, geniş saçaklı iki katlı bir konak yükselir.",
+        "en": "A narrow basalt-cobbled lane with a stone wall on the left and a green-painted wooden house on the right. A pale blue two-storey house with wide eaves stands in the middle."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-27"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-numaniye-dergahi/p015-1.jpg",
+        "original_name": "5_1.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "600"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tevhidhane salonu ve halılar",
+        "en": "The prayer-and-ritual hall with carpets"
+      },
+      "alt": {
+        "tr": "Sarı duvarlı geniş salon; yeşil boyalı ahşap tavanın ortasında bezemeli bir göbek var. Zeminde çok sayıda halı serilidir, duvarlarda hat levhaları asılıdır, sağda minber benzeri beyaz bir merdivenli kürsü görülür.",
+        "en": "A wide yellow-walled hall with a green-painted wooden ceiling and a decorated central medallion. Many carpets cover the floor, calligraphy panels hang on the walls and a white stepped pulpit stands on the right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-numaniye-dergahi/p016-1.jpg",
+        "original_name": "7.jpg",
+        "book_pdf_file_id": "19Bk3R8IsVVgYqLjCnl9p2s0Vn_QJeiQg",
+        "book_pdf_name": "5-Tekke ve Zaviyeler.pdf",
+        "book_page": "601"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Salonun minber köşesi",
+        "en": "The pulpit corner of the hall"
+      },
+      "alt": {
+        "tr": "Sarı duvarın önünde yeşil kapılı beyaz bir minber ve çevresinde hat levhaları var. Önde balüstrat korkuluk ve renkli halılar görünür, tavan yeşil ahşaptır.",
+        "en": "A white pulpit with a green door stands before a yellow wall, surrounded by calligraphy panels. A balustrade and colourful carpets are in front, and the ceiling is green wood."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    }
+  ],
+  "archive_media": [],
+  "visit": {
+    "setting": "mixed",
+    "entrance_fee": "unknown",
+    "notes": {
+      "tr": "Dergâh hâlen konut olarak kullanılıyor (Eşrefzâde ailesi); Ramazan, bayram ve mübarek gün ve gecelerde programlar düzenleniyor. Ziyaret koşulları kitapta yok.",
+      "en": "The lodge is still a residence (Eşrefzâde family); programs are held in Ramadan, on holidays and holy days and nights. Visiting conditions are not given."
+    },
+    "notes_source": "source",
+    "visitor_tips": []
+  }
+}

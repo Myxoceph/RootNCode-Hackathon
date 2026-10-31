@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Expo (also created at the root when expo is started from here by mistake)
+.expo/
+
 # Build output
 dist/
 build/
@@ -26,3 +29,8 @@ apps/api/src/generated/
 
 # Source PDFs (inventory books and their chapters are hundreds of MB; keep them outside git)
 *.pdf
+# Database dumps from deploy/demo.sh backup: visitors' accounts and photos
+deploy/backups/
+
+# OpenTripPlanner inputs and graph (deploy/otp/prepare.sh)
+deploy/otp/data/

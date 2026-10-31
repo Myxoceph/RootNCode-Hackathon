@@ -1,0 +1,362 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-sahip-ata-sultan-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Su Yapıları",
+    "todos": [
+      "Fotoğraflar sonra eklenecek (media boş, media_folder null).",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Hamamı yaptıran kişi (banî) kitapta açıkça yazmıyor; founder boş bırakıldı (külliyenin banisi bu metinde adlandırılmıyor).",
+      "Sahip Ata Hanikahı ve Türbesi kaydıyla ilişki 'probable' yazıldı; külliye ana kaydı tabloda bulunmadığı için parent_id boş."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[plan]",
+        "note": "Türkçe metin 'dört köşe halvetli' diyor; İngilizce metin 'rectangular halvet rooms' (dikdörtgen halvet) yazıyor. Türkçe esas alındı."
+      },
+      {
+        "field": "sections[plan]",
+        "note": "İngilizce 'arranged as a cedar' ifadesi Türkçe 'sedir' (oturma sekisi) sözcüğünün yanlış çevirisidir; 'bench-seat' olarak verildi."
+      },
+      {
+        "field": "sections[plan]",
+        "note": "Kadınlar bölümü girişi Türkçede 'sokağının içinden', İngilizcede 'from the street' diye geçiyor; küçük anlatım farkı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sahip Ata (Sultan) Hamamı",
+    "en": "Sahip Ata (Sultan) Bath"
+  },
+  "subtitle": {
+    "tr": "Anadolu Selçuklu döneminin bilinen en büyük çifte hamamı",
+    "en": "The largest known double bath of the Anatolian Seljuk period"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hamam-ı Sultanî",
+      "en": "Hamam-ı Sultanî"
+    },
+    {
+      "tr": "Sahip Ata Hamamı",
+      "en": "Sahip Ata Bath"
+    },
+    {
+      "tr": "Sultan Hamamı",
+      "en": "Sultan Bath"
+    },
+    {
+      "tr": "Larende Kapısı Hamamı",
+      "en": "Larende Kapısı Bath"
+    },
+    {
+      "tr": "Larende Hamamı",
+      "en": "Larende Bath"
+    },
+    {
+      "tr": "Şifa Sultan Hamamı",
+      "en": "Şifa Sultan Bath"
+    },
+    {
+      "tr": "Keçeciler Hamamı",
+      "en": "Keçeciler Bath"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "çifte hamam",
+    "dört eyvanlı sıcaklık",
+    "köşe halvetli",
+    "Selçuklu hamamı",
+    "keçelik"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Şükran Mahallesi",
+    "address": "Taşcami Uzunharmanlar Caddesi üzerinde, Sahip Ata yapılar grubunun doğu tarafında; 881 ada, 42 parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "212"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.867371,
+      "lng": 32.494745,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/287702172 ('Şifa Sultan Hamamı'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 656-678 / M. 1258-1279/80 arasında olmalı",
+      "en": "Must date between H. 656-678 / 1258-1279/80"
+    },
+    "start_year": 1258,
+    "end_year": 1280,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Yapıda kitabe yok ve kaynaklarda doğrudan yapım tarihi yok; külliyenin cami ve türbesine gelir getirmek için yapıldığından 656-678 / 1258-1279-80 arasında inşa edilmiş olmalı.",
+      "en": "There is no inscription and no direct construction date in the sources; since it was built to bring income to the complex's mosque and tomb, it must have been built between 656-678 / 1258-1279-80."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "212"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": "Kelûk b. Abdullah",
+    "candidates": [],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "212"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "Hamam, külliyenin cami ve türbesine gelir getirmesi için inşa edilmiştir.",
+      "en": "The bath was built to bring income to the complex's mosque and tomb."
+    },
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "212"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sahip Ata yapılar grubunun doğusunda, dört eyvanlı ve dört köşe halvetli sıcaklığa sahip çifte hamam. Anadolu Selçuklu döneminin bilinen en büyük hamamıdır; 1960-62'de esaslı onarılmış, bugün her iki bölümü de kullanılmaktadır.",
+    "en": "A double bath east of the Sahip Ata group of buildings, with a hot room of four iwans and four corner halvets. It is the largest known bath of the Anatolian Seljuk period; it was thoroughly repaired in 1960-62 and both sections are in use today."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Adlar ve Tarihçe",
+        "en": "Location, Names and History"
+      },
+      "body": {
+        "tr": "Hamam Meram'da, Şükran Mahallesi'nde, Taşcami Uzunharmanlar Caddesi üzerinde, Sahip Ata yapılar grubunun doğusunda (881 ada, 42 parsel) bulunur. Hamam-ı Sultanî, Sahip Ata Hamamı, Sultan Hamamı, Larende Kapısı Hamamı, Larende Hamamı ve Şifa Sultan Hamamı adlarıyla da anılır; halk arasında en çok 'Sultan Hamamı' denir. Osmanlı döneminde planda yapılan değişiklikle bir bölüm keçelik olarak kullanıldığından 'Keçeciler Hamamı' da denmiştir. Üzerinde kitabe yoktur; külliyenin cami ve türbesine gelir getirmek için yapıldığından 656-678 / 1258-1279-80 arasında inşa edilmiş olmalıdır. Mimarı muhtemelen külliyenin de mimarı olan Kelûk b. Abdullah'tır. Vakıflar Genel Müdürlüğü 1960-62'de esaslı bir onarım yaptırmıştır.",
+        "en": "The bath is in Meram, Şükran District, on Taşcami Uzunharmanlar Street, east of the Sahip Ata group of buildings (island 881, parcel 42). It is also called Hamam-ı Sultanî, Sahip Ata Bath, Sultan Bath, Larende Kapısı Bath, Larende Bath and Şifa Sultan Bath; the public mostly calls it 'Sultan Bath'. Because a section was used for felt-making after an Ottoman-period plan change, it was also called 'Keçeciler Bath'. It has no inscription; as it was built to bring income to the complex's mosque and tomb it must have been built between 656-678 / 1258-1279-80. Its architect was probably Kelûk b. Abdullah, who was also the complex's architect. The General Directorate of Foundations had it thoroughly repaired in 1960-62."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "212"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Erkekler Bölümü",
+        "en": "Plan and Men's Section"
+      },
+      "body": {
+        "tr": "Doğu-batı yönünde uzanan çifte hamamda kuzeydeki bölüm erkekler, güneydeki kadınlar içindir. Hamam 'dört eyvanlı ve dört köşe halvetli sıcaklığa sahip hamamlar' grubundandır; kesme, moloz taş ve tuğla kullanılmıştır, simetrik kurgu egemendir. Erkekler bölümüne batıdaki kapıdan girilir. Soyunmalığın ortasındaki kare şadırvan son onarımda iptal edilmiş, bölüm sedir olarak düzenlenmiştir; iki katlı soyunmalığın üzeri 1962 onarımında betonarmeyle yenilenip ahşapla kaplanmıştır. Kuzeydoğu köşedeki sivri kemerli kapıdan, elips kubbeli aralığa, oradan kubbeli ılıklığa ve tuvalet-tıraşlık bölümüne geçilir. Sıcaklıkta dört eyvan beşik tonozlu, dört köşe halvet kubbelidir; sıcaklık kubbesinde biri yuvarlak, dördü kare beş ışıklık vardır. Doğu eyvanındaki küçük pencere su deposuna açılır.",
+        "en": "In the east-west double bath the northern part is for men and the southern for women. The bath belongs to the group of 'hot baths with four iwans and four corner halvets'; cut and rubble stone and brick were used, and symmetry dominates. The men's section is entered from a door in the west. The square fountain in the middle of the dressing room was cancelled in the last repair and the area arranged as a bench-seat; the two-storey dressing room's cover was renewed in reinforced concrete and clad in wood in the 1962 repair. A pointed-arched door in the northeast corner leads to the passage with an elliptical dome, then to the domed tepidarium and the toilet-shaving room. In the hot room the four iwans are barrel-vaulted and the four corner halvets domed; the dome has five skylights, one round and four square. A small window in the east iwan opens to the water tank."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "212-213"
+        }
+      ]
+    },
+    {
+      "id": "kadinlar-su-deposu",
+      "order": 3,
+      "title": {
+        "tr": "Kadınlar Bölümü ve Su Deposu",
+        "en": "Women's Section and Water Tank"
+      },
+      "body": {
+        "tr": "Kadınlar bölümü erkekler bölümünün planını çok küçük ölçü farklarıyla aynen tekrar eder ve güneydeki bir kapıdan girilir; aralık mekânı farklı ölçüdedir ve ortasında ışıklığı olan prizmatik üçgen geçişli kubbeyle örtülüdür. Her iki bölümü kapsayan dikdörtgen su deposu beşik tonozludur; arkasında külhan vardır.",
+        "en": "The women's section repeats the men's plan almost exactly with very small size differences and is entered from a door in the south; its passage space differs in size and has a prismatic-triangle-transition dome with a central skylight. The rectangular water tank serving both sections is barrel-vaulted, with the furnace behind it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "213"
+        }
+      ]
+    },
+    {
+      "id": "kecelik",
+      "order": 4,
+      "title": {
+        "tr": "Keçelik ve Önemi",
+        "en": "Felt-Making Area and Significance"
+      },
+      "body": {
+        "tr": "Özgün planda olmadığı halde Osmanlı döneminde bir bölüm keçelik olarak kullanılmış; kaynaklara göre Cumhuriyet'in ilk yıllarına kadar sürmüştür. Hangi kısımlarda değişiklik yapıldığı bilinmez; kadınlar bölümünün kullanım dışı kalıp bazı kısımlarının erkekler bölümüne katılmış olması muhtemeldir. 1960-62 onarımında bu kısım kaldırılmış ve hamam asıl planına kavuşturulmuştur. Hamam, Osmanlı döneminde klasikleşen Türk hamam mimarisinin en erken temsilcilerinden biridir.",
+        "en": "Although absent from the original plan, a section was used for felt-making in the Ottoman period, according to sources until the first years of the Republic. It is not known which parts were altered; it is likely that the women's section fell out of use and some parts were added to the men's section. The 1960-62 repair removed this and restored the original plan. The bath is one of the earliest representatives of the Turkish bath architecture that became classical in the Ottoman period."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "213"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sicaklik_kubbe_isiklik",
+      "label": {
+        "tr": "Sıcaklık kubbesindeki ışıklık sayısı",
+        "en": "Skylights in the hot-room dome"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "213"
+        }
+      ],
+      "note": {
+        "tr": "Biri yuvarlak, dördü kare.",
+        "en": "One round, four square."
+      }
+    },
+    {
+      "key": "ada",
+      "label": {
+        "tr": "Ada",
+        "en": "Block (ada)"
+      },
+      "value": 881,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "212"
+        }
+      ]
+    },
+    {
+      "key": "parsel",
+      "label": {
+        "tr": "Parsel",
+        "en": "Parcel"
+      },
+      "value": 42,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "212"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1960-62",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü'nce esaslı onarım (1960-62); keçelik bölümü kaldırıldı, özgün plana kavuşturuldu",
+        "en": "Thorough repair by the General Directorate of Foundations (1960-62); felt area removed, original plan restored"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "212-213"
+        }
+      ],
+      "note": {
+        "tr": "Yıl aralığın son yılıdır (1960-62). Soyunmalığın üstü 1962 onarımında betonarmeyle yenilenmiştir.",
+        "en": "The year is the end of the range (1960-62). The dressing room cover was renewed in concrete in the 1962 repair."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "sicaklik",
+      "title": {
+        "tr": "Sıcaklık bölümü",
+        "en": "Hot room"
+      },
+      "hint": {
+        "tr": "Dört eyvan, dört köşe halvet ve beş ışıklıklı kubbe.",
+        "en": "Four iwans, four corner halvets and a dome with five skylights."
+      },
+      "section_id": "plan"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-meram-sahip-ata-hanikahi-ve-turbesi",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Kitap hamamın Sahip Ata külliyesinin cami ve türbesine gelir getirmek için yapıldığını söyler; ids.md'deki en yakın kayıt Sahip Ata Hanikahı ve Türbesi'dir.",
+        "en": "The book says the bath was built to bring income to the complex's mosque and tomb; the nearest record in ids.md is the Sahip Ata Hanikah and Tomb."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "212"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, doğu-batı doğrultusunda uzanan çifte hamamdır; kuzeyde erkekler, güneyde kadınlar bölümü vardır. Erkekler bölümüne batıdaki kapıdan girilir; önce iki katlı soyunmalık, sonra elips kubbeli aralık ve ılıklık gelir. Sıcaklıkta dört eyvan ve dört köşede kubbeli halvet bulunur; kubbede beş ışıklık vardır. Doğuda su deposu ve külhan yer alır.",
+      "en": "The bath is a double bath running east to west, with the men's section in the north and the women's in the south. The men's section is entered from the west door; first comes a two-storey dressing room, then a passage with an elliptical dome and the tepidarium. The hot room has four iwans and domed halvets in the four corners, with five skylights in the dome. The water tank and furnace lie to the east."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-kantara-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Kantara Medresesi bölümünden (s. 266, 270) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi, banî, mimar ve vakıf bilgisi kaynakta yok; era null bırakıldı.",
+      "Medresenin kaç hücreden oluştuğu ve diğer odaların ne zaman yok olduğu kaynakta belirtilmiyor.",
+      "Odaların bugünkü kullanımı kaynakta belirtilmiyor.",
+      "Kitap yapıyı bağımsız bir medrese olarak değil, Kantara Camii Manzumesi'nin bir bölümü olarak anlatır; kitapta medresenin adı geçmiyor (kayıt adı 'Kantara Medresesi' başlıktan türetildi).",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Kitapta bu yapıya ait ayrı bir fotoğraf yok; fotoğraf sahada çekilmeli ya da başka bir kaynaktan eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kantara Medresesi",
+    "en": "Kantara Madrasa"
+  },
+  "subtitle": {
+    "tr": "Kantara Camii avlusunun kuzeyindeki medrese hücreleri",
+    "en": "Madrasa cells on the north of the Kantara Mosque courtyard"
+  },
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "medrese",
+    "hücre",
+    "Kantara",
+    "kırma çatı",
+    "ahşap düz tavan"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 414 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "266, 270"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Avlunun kuzeyinde yan yana sıralanan medrese hücrelerinden yalnızca batı bölümündeki üç oda günümüze kalmıştır. Basık kemerli kapıyla girilen odaların ahşap düz tavanı ve dıştan boydan boya kiremit kaplı kırma çatısı vardır.",
+    "en": "Of the madrasa cells lined up side by side on the north of the courtyard, only three rooms in the western part survive. The rooms, entered through low-arched doors, have flat wooden ceilings and a tiled hipped roof running along their whole length."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum",
+        "en": "Location"
+      },
+      "body": {
+        "tr": "Kantara Camii'nin yamuk planlı avlusunun kuzeyinde medrese odaları bulunmaktadır.",
+        "en": "To the north of the Kantara Mosque's trapezoidal courtyard are the madrasa rooms."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Avlunun kuzeyinde yan yana sıralanan medrese hücrelerinden sadece batı bölümünde bulunan odaların üç tanesi mevcuttur. Basık kemerli kapıyla girilen odalar aynı tarzdaki pencerelerle avluya hareketlilik kazandırır. Hepsi ahşap düz tavanlı olan bu mekânlar dıştan kiremit kaplı, kuzeye ve güneye meyilli, boydan boya devam eden kırma çatıyla örtülüdür.",
+        "en": "Of the madrasa cells lined up side by side on the north of the courtyard, only three of the rooms in the western part survive. The rooms, entered through a low-arched door, bring liveliness to the courtyard with windows in the same style. All these spaces have flat wooden ceilings and are covered externally with a tiled hipped roof sloping north and south and running throughout."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "270"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kalan_oda_sayisi",
+      "label": {
+        "tr": "Günümüze kalan oda sayısı",
+        "en": "Number of surviving rooms"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "270"
+        }
+      ]
+    },
+    {
+      "key": "tavan",
+      "label": {
+        "tr": "Tavan",
+        "en": "Ceiling"
+      },
+      "value": "Ahşap düz tavan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "270"
+        }
+      ]
+    },
+    {
+      "key": "kapi",
+      "label": {
+        "tr": "Kapı",
+        "en": "Door"
+      },
+      "value": "Basık kemerli",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "270"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "medrese-hucreleri",
+      "title": {
+        "tr": "Üç kalan medrese odası",
+        "en": "Three surviving madrasa rooms"
+      },
+      "hint": {
+        "tr": "Avlunun kuzeyinde basık kemerli kapılı odaları arayın.",
+        "en": "Look for the rooms with low-arched doors on the north of the courtyard."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-kantara-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Kantara Camii Manzumesi'nin bir yapısıdır; avlunun kuzeyinde yer alır.",
+        "en": "A building of the Kantara Mosque ensemble; it lies on the north of the courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "266, 270"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kantara Camii avlusunun kuzeyinde, yan yana sıralanmış medrese hücrelerinden üçü günümüze kalmıştır. Odalara basık kemerli bir kapıyla girilir ve avluya aynı üslupta pencereler açılır. Odaların tavanı ahşap ve düzdür; dışarıdan kuzeye ve güneye meyilli, kiremit kaplı bir kırma çatı bunların hepsini örter.",
+      "en": "Three of the madrasa cells lined up side by side on the north of the Kantara Mosque courtyard survive. The rooms are entered through a low-arched door and have windows of the same style opening onto the courtyard. Their ceilings are flat and wooden; a tiled hipped roof sloping north and south covers them all from outside."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 266, 270) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

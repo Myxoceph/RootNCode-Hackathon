@@ -1,0 +1,424 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-kadinhani-raziye-sultan-kervansarayi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Râziye Hatun'un I. İzzeddin Keykavus ile ilişkisi kitapta \"muhtemelen\" ile veriliyor; teyit edilmeli.",
+      "Mimar bilgisi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlıkta \"Râziye\", Türkçe metinde \"Raziye\", İngilizce içindekilerde \"RAZİYE\" yazımı karışık kullanılıyor; id değiştirilmedi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Râziye (Hatun) Sultan Kervansarayı",
+    "en": "Râziye (Hatun) Sultan Caravanserai"
+  },
+  "subtitle": {
+    "tr": "1223-24 tarihli, Konya'da hanım sultanın yaptırdığı tek han",
+    "en": "Dated 1223-24, the only inn in Konya built by a lady sultan"
+  },
+  "alternate_names": [
+    {
+      "tr": "Raziye Sultan Hanı",
+      "en": "Raziye Sultan Inn"
+    },
+    {
+      "tr": "Kadınhanı Râziye (Hatun) Sultan Kervansarayı",
+      "en": "Kadınhanı Râziye (Hatun) Sultan Caravanserai"
+    }
+  ],
+  "type": "kervansaray",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "kervansaray",
+    "Selçuklu",
+    "kadın banî",
+    "devşirme malzeme",
+    "Roma dönemi stelleri",
+    "kitabeli taç kapı",
+    "karma plan"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Kadınhanı",
+    "neighborhood": null,
+    "address": "Kadınhanı ilçe merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "282"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.240234,
+      "lng": 32.209986,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q132752964 ('Raziye Sultan Hanı'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 620 / M. 1223-24",
+      "en": "AH 620 / AD 1223-24"
+    },
+    "start_year": 1223,
+    "end_year": 1224,
+    "hijri_year": 620,
+    "century": 13,
+    "basis": {
+      "tr": "Taç kapı üzerindeki kitâbeye göre.",
+      "en": "According to the inscription on the crown gate."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "282"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Râziye Hatun (Mahmut kızı)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "282"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "282"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Kadınhanı ilçe merkezindeki, taç kapı kitâbesine göre H. 620 / M. 1223-24'te Mahmut kızı Râziye Hatun tarafından yaptırılan Selçuklu hanı. Avlusu yıkılmış, üç sahınlı kapalı bölümü kalmıştır; yerleşime adını vermiştir.",
+    "en": "A Seljuk inn in the Kadınhanı district center, built in AH 620 / AD 1223-24 by Râziye Hatun, daughter of Mahmut, according to the crown gate inscription. Its courtyard is lost; the three-nave closed section survives. It gave its name to the settlement."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Banî",
+        "en": "History and Founder"
+      },
+      "body": {
+        "tr": "Kervansaray Kadınhanı ilçe merkezindedir ve Kadınhanı Râziye (Hatun) Sultan Kervansarayı olarak da bilinir. Taç kapısı üzerindeki kitâbeye göre H. 620 / M. 1223-24'te Mahmut kızı Râziye Hatun tarafından yaptırılmıştır. Mimarı hakkında bilgi yoktur. Banisi Raziye Hatun, Danişmendoğulları'ndan Muzafferüddin Mahmut Bey'in kızıdır; muhtemelen I. İzzeddin Keykavus'un hanımıdır. 1987'de Vakıflar Genel Müdürlüğü tarafından restore edilmiş, bugün de kapsamlı çalışmalar sürmektedir.",
+        "en": "The caravanserai is in the Kadınhanı district center and is also known as Kadınhanı Râziye (Hatun) Sultan Caravanserai. According to the inscription on its crown gate, it was built in AH 620 / AD 1223-24 by Râziye Hatun, Mahmut's daughter. There is no information on its architect. The founder Raziye Hatun is the daughter of Muzafferüddin Mahmut Bey of the Danişmendoğulları and is probably the wife of Izzeddin Keykavus I. It was restored by the General Directorate of Foundations in 1987 and extensive work continues today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Han doğu-batı doğrultusunda kapalı ve açık kısımlardan oluşan karma tipte Selçuklu hanıdır; ancak avlu kısmı günümüze ulaşamamıştır. Günümüze gelen kapalı kısım doğu-batı yönde uzanan derinlemesine dikdörtgen planlı ve beşik tonozludur. Düzgün kesme taş ve çok sayıda devşirme malzeme kullanılmıştır; beden duvarlarında Roma dönemine ait mezar stelleri, lahit kapakları, sütun parçaları ve figürlü mermer taşlar görülür. Giriş doğu cephedeki taç kapıdandır; taç kapı Selçuklu kervansaraylarındaki gelenek üzere beden duvarlarından yüksek ve dışa taşıntılıdır. Dikdörtgen eyvan içinde yuvarlak kemerli kapı açıklığı yer alır; alınlıkta dikey dikdörtgen biçimli kitâbe bulunur. İç mekân beşerli iki sıra ayakla üç sahına ayrılmıştır; orta sahın yüksek ve geniştir, klasik Selçuklu plan tipindedir. Ayaklar devşirmedir, sahınlar sivri tonozla örtülüdür. Batı duvarında üç mazgal pencere vardır.",
+        "en": "It is a mixed-type Seljuk inn of closed and open parts in the east-west direction, but its courtyard has not survived. The surviving closed part has a deeply rectangular plan extending east-west and is barrel-vaulted. Smooth cut stone and many spolia were used; Roman-period grave steles, sarcophagus covers, column fragments and figured marble stones appear in the walls. Access is through the crown gate on the east facade, higher than the walls and projecting outward as in Seljuk caravanserais. A round-arched door opening sits in a rectangular iwan, with a vertical rectangular inscription on the pediment. The interior is divided into three naves by two rows of five pillars; the middle nave is high and wide, of the classical Seljuk plan type. The pillars are spolia and the naves have pointed vaults. There are three loophole windows on the west wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "id": "ozellik",
+      "order": 3,
+      "title": {
+        "tr": "Önemi",
+        "en": "Significance"
+      },
+      "body": {
+        "tr": "Yerleşim yerine adını veren Râziye Sultan Kervansarayı, Konya'da hanım sultanların yaptırdığı tek handır.",
+        "en": "The Raziye Sultan Caravanserai, which gave its name to the settlement, is the only inn built by lady sultans in Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "283"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "ayak_duzeni",
+      "label": {
+        "tr": "Ayak düzeni",
+        "en": "Pillar arrangement"
+      },
+      "value": "2 sıra × 5 ayak",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "mazgal_pencere",
+      "label": {
+        "tr": "Batı duvarındaki mazgal pencere",
+        "en": "Loophole windows on the west wall"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "key": "kadin_banili_tek_han",
+      "label": {
+        "tr": "Konya'da hanım sultanların yaptırdığı han sayısı",
+        "en": "Number of inns in Konya built by lady sultans"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "283"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Râziye Hatun",
+      "role": {
+        "tr": "Banî; Mahmut kızı, Muzafferüddin Mahmut Bey'in kızı",
+        "en": "Founder; daughter of Mahmut / of Muzafferüddin Mahmut Bey"
+      }
+    },
+    {
+      "name": "Muzafferüddin Mahmut Bey",
+      "role": {
+        "tr": "Danişmendoğullarından, Râziye Hatun'un babası",
+        "en": "Of the Danişmendoğulları, father of Râziye Hatun"
+      }
+    },
+    {
+      "name": "I. İzzeddin Keykavus",
+      "role": {
+        "tr": "Râziye Hatun'un muhtemelen eşi",
+        "en": "Probable husband of Râziye Hatun"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "tac-kapi-kitabesi",
+      "location": {
+        "tr": "Taç kapı alınlığı, dikey dikdörtgen levha",
+        "en": "Crown gate pediment, vertical rectangular panel"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 620,
+        "gregorian": "1223-24"
+      },
+      "note": {
+        "tr": "Kitap kitâbenin metnini ve dilini vermiyor; yalnızca içeriğini (H. 620 / M. 1223-24, banî Mahmut kızı Râziye Hatun) aktarıyor.",
+        "en": "The book does not give the inscription's text or language, only its content (AH 620 / AD 1223-24, founder Râziye Hatun, daughter of Mahmut)."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "282-283"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1223,
+      "date": null,
+      "hijri": "620",
+      "type": "construction",
+      "title": {
+        "tr": "Râziye Hatun tarafından yaptırıldı",
+        "en": "Built by Râziye Hatun"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "282"
+        }
+      ],
+      "note": {
+        "tr": "Kitâbe H. 620 / M. 1223-24 verir.",
+        "en": "The inscription gives AH 620 / AD 1223-24."
+      }
+    },
+    {
+      "id": "restorasyon-1987",
+      "year": 1987,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü restorasyonu; kapsamlı çalışmalar sürüyor",
+        "en": "Restoration by the General Directorate of Foundations; extensive work continues"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "282"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "devsirme",
+      "title": {
+        "tr": "Roma dönemi devşirme taşlar",
+        "en": "Roman-period spolia"
+      },
+      "hint": {
+        "tr": "Duvarlarda mezar stelleri, lahit kapakları ve figürlü mermerler arayın.",
+        "en": "Look for grave steles, sarcophagus covers and figured marble in the walls."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kervansaray, Kadınhanı'nın merkezinde, doğu-batı yönünde uzanan derin dikdörtgen taş bir salondur; avlusu yok olmuştur. Doğudaki taç kapı duvarlardan yüksektir ve öne çıkar; kapının üstünde dikey dikdörtgen bir kitâbe levhası vardır. Duvarlarda eski Roma mezar taşları ve figürlü mermer parçaları görülür. İçeride beşer ayaklı iki sıra, mekânı üç bölüme ayırır; ortadaki yüksek ve geniştir, sivri tonozla örtülüdür.",
+      "en": "The caravanserai is a deep rectangular stone hall extending east-west in the center of Kadınhanı; its courtyard is lost. The crown gate on the east is higher than the walls and projects forward, with a vertical rectangular inscription panel above the door. The walls contain old Roman gravestones and figured marble pieces. Inside, two rows of five pillars divide the space into three; the middle one is high and wide, with a pointed vault."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-kadinhani-raziye-sultan-kervansarayi/p143-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "282"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kervansarayın kuşbakışı görünüşü",
+        "en": "Aerial view of the caravanserai"
+      },
+      "alt": {
+        "tr": "Yerleşim içinde duran, çatısı kısmen açık dikdörtgen taş yapı. Ön cephede kemerli bir giriş çıkıntısı var; çevresinde evler ve ağaçlar görülüyor.",
+        "en": "A rectangular stone building with a partly open roof standing among houses and trees. An arched entrance projects from its front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-kadinhani-raziye-sultan-kervansarayi/p143-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "283"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kervansarayın taç kapısı",
+        "en": "The caravanserai's main portal"
+      },
+      "alt": {
+        "tr": "Kahverengi ve gri taşlardan örülmüş duvarın ortasında, yüksek bir kemerle çerçevelenen, çıkıntılı giriş bölümü var. İçerisi karanlık, üstünde ise basit bir silme uzanıyor.",
+        "en": "A projecting entrance in the middle of a wall of brown and grey stone, framed by a tall arch. The interior is dark and a plain moulding runs along the top."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

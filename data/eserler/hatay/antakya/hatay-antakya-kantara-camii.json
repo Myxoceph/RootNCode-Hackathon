@@ -1,0 +1,586 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-kantara-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabının Kantara Camii bölümünden (s. 266-269) özetlenmiştir; adres bölüm özeti sayfasından alınmıştır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Medrese odaları ve çeşme ayrı kayıtlar olarak yazıldı (hatay-antakya-kantara-medresesi, hatay-antakya-kantara-cesmesi); kitap yapıları 'Kantara Camii Manzumesi' diye anar, külliye demez.",
+      "Mimar, banî, kesin yapım tarihi ve vakıf bilgisi kaynakta yok; era null bırakıldı.",
+      "Avlu girişindeki 'Maşallah 1264' yazısının dili ve yazı biçimi kaynakta belirtilmiyor; sahada okunmalı.",
+      "Camiye bitişik küçük hazirenin kime ait olduğu kaynakta belirtilmiyor.",
+      "Camideki kandil konsollarının ve eski çatının ne zaman yenilendiği kaynakta yok ('yeni yapılan kırma ahşap çatı' deniyor).",
+      "Kitapta anılan Ulu, Habib-i Neccar ve Meydan Camii'ne yalnızca avlu biçimi karşılaştırması için atıf var; mimari köken ilişkisi kurulmadı.",
+      "Adres yalnızca mıntıka/parsel numarasıyla verildi (bölüm özeti sayfasından); mahalle ve sokak adı kaynakta yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilmeli.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap 'Maşallah 1264' yazısını yapının '1864 yılında' ciddi onarım gördüğünün delili sayar. Yazıdaki 1264 sayısının hangi takvime ait olduğu belirtilmiyor; 1264 ile 1864 doğrudan örtüşmüyor (Hicri bir yıl olsaydı Miladi karşılığı farklı olurdu). Kaynaktaki iki değer de korundu ve kayıt 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kantara Camii",
+    "en": "Kantara Mosque"
+  },
+  "subtitle": {
+    "tr": "Yamuk avlulu, şemsiyeli minareli ve medrese odalı mahalle camii manzumesi",
+    "en": "A neighbourhood mosque ensemble with a trapezoidal courtyard, umbrella minaret and madrasa cells"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "şemsiyeli minare",
+    "yamuk avlu",
+    "medrese odaları",
+    "1864 onarımı",
+    "ajur minber"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "4. Mıntıka, 414 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "266-269"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.198555,
+      "lng": 36.166103,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q127786875 ('Kantara Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi bilinmiyor; 1864'te ciddi onarım gördü",
+      "en": "Construction date unknown; underwent a serious repair in 1864"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Mimar, banî ve inşa tarihini bildiren bir kitabe yoktur. Avlu girişindeki 'Maşallah 1264' yazısı kitapta yapının 1864'te ciddi bir onarım gördüğünün delili sayılır. İlk yapım yılı bilinmediği için yıllar boş bırakıldı.",
+      "en": "There is no inscription giving information about the architect, builder or date of construction. The 'Maşallah 1264' writing at the courtyard entrance is taken by the book as proof of a serious repair in 1864. No original construction year is known, so the years are left empty."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "266"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kantara Camii, yamuk planlı bir avlunun güneyinde yer alır; avlunun kuzeyinde medrese odaları bulunur. Beyaz kalker taştan yapılmıştır. Kapı üstündeki minaresi, çeşmesi ve kuyusuyla Antakya'daki bölgesel mimari geleneğin sadık bir örneği olarak tanıtılır. Mimarı, bânisi ve yapım tarihi bilinmez; 'Maşallah 1264' yazısı kitaba göre 1864'teki ciddi bir onarımın kanıtıdır.",
+    "en": "Kantara Mosque stands south of a trapezoidal courtyard with madrasa cells on its north. It is built of white limestone. With its minaret, fountain and well it is presented as an epitome of loyalty to the regional architectural tradition in Antakya. Its architect, builder and construction date are unknown; the 'Maşallah 1264' writing is, according to the book, proof of a serious repair in 1864."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Cami yamuk planlı avlunun güneyindedir. Avlunun kuzeyinde ise medrese odaları bulunmaktadır. Eser; kapı üstündeki minaresi, çeşmesi, kuyusu ve camideki mimari ayrıntılarıyla adeta Antakya'daki bölgesel mimari geleneğin sadakat timsalidir. Eserin mimarı, bânisi ve inşa tarihi hakkında bilgi veren kitabe yoktur. Avlu girişindeki \"Maşallah 1264\" yazısından ibaret kitabe ise yapının 1864 yılında ciddi bir onarım görmüş olduğunun delilidir.",
+        "en": "The mosque is in the south of the trapezoidal courtyard, and the madrasa rooms are to the north of the courtyard. With its minaret above the gate, fountain, well and architectural details, the mosque is the epitome of loyalty to the regional architectural tradition in Antakya. There is no inscription giving information about the architect, builder or date of construction. The inscription consisting of the writing 'Maşallah 1264' at the courtyard entrance is proof that the building underwent a serious repair in 1864."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "id": "avlu",
+      "order": 2,
+      "title": {
+        "tr": "Avlu ve Son Cemaat Yeri",
+        "en": "Courtyard and Narthex"
+      },
+      "body": {
+        "tr": "Kantara Camii Manzumesi'nin yamuk ve doğuya doğru genişleyen avlusu, Antakya'da Ulu, Habib-i Neccar ve Meydan Camii gibi eserlerde de görülür. Etrafı sivil yapılarla çevrili avluya biri doğu, diğeri batı tarafında iki kapıdan girilir. Beyaz kalker taştan yapılan cami avlunun güneyine yerleştirilmiştir. Son cemaat yeri, ahşap direklere oturan, hafif meyilli, kiremit kaplı bir sundurmayla örtülüdür; bu sundurma batıdaki minarenin yanından kuzeye devam ederek avlunun batısında gölgelik halini alır.",
+        "en": "The trapezoidal courtyard of the Kantara Mosque ensemble (manzume), which widens toward the east, is also seen in works such as the Ulu, Habib-i Neccar and Meydan Mosques in Antakya. The courtyard, surrounded by civil buildings, is entered through two doors, one on the east and one on the west. The mosque, of white limestone, is placed in the south of the courtyard. The narthex is covered by a slightly sloping, tiled porch resting on wooden pillars, which continues north beside the minaret in the west and becomes a canopy on the west of the courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minare sekiz kenarlı, kısa gövdeli ve ahşap şemsiye örtülüdür. Minarenin kaidesi altında sokağa açılan ve beşik tonozla son cemaat yerine ulaşan geçit 1906'da kapatılmış ve çeşme haline getirilmiştir. Minarenin kaidesi üst kısmındaki kapısına ulaşmak için batı duvarı boyunca güneye devam eden bir merdiven yapılmıştır. Bu kısımdan sonra içerideki kapalı merdivenle çıkılan ahşap direkli şerefe, yüksek sivri külahıyla dikkati çeker.",
+        "en": "The minaret has eight sides, a short body and a wooden umbrella cover. The passage under its pedestal, opening to the street and reaching the narthex with a barrel vault, was closed in 1906 and turned into a fountain. To reach the minaret's door at the upper part of the pedestal, a staircase was built along the west wall continuing south. Beyond this section, the wooden-post balcony, reached by an indoor staircase, is notable for its high pointed cone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 4,
+      "title": {
+        "tr": "Harim",
+        "en": "Sanctuary"
+      },
+      "body": {
+        "tr": "Harime son cemaat yerinden açılan yuvarlak kemerli sade bir kapıyla girilir. Harim, ortada bir sütun üzerine oturan ve doğu-batı yönünde uzanan iki sivri kemerle kıbleye paralel iki sahına bölünmüştür. Her iki yandaki duvarlardan daha yüksek tutulan bu kemerler, yeni yapılan kırma ahşap çatının omurgasını oluşturur.",
+        "en": "The sanctuary is entered through a simple round-arched door opening from the narthex. It is divided into two naves parallel to the qibla by two pointed arches sitting on a central column and extending east-west. These arches, held higher than the walls on both sides, form the backbone of the newly built hipped wooden roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267, 269"
+        }
+      ]
+    },
+    {
+      "id": "pencere-mihrap-minber",
+      "order": 5,
+      "title": {
+        "tr": "Pencereler, Mihrap ve Minber",
+        "en": "Windows, Mihrab and Minbar"
+      },
+      "body": {
+        "tr": "Cami batıda dört, doğuda ve kuzeyde üç, güneyde ikişer pencereden ışık alır. Güneydeki iki pencere mihrabın sağ tarafındadır; diğer tarafta yapıya bitişik küçük bir hazire bulunduğu için bu yöne pencere açılmamıştır. Mihrap sivri kemerli bir nişten ibaret olup oldukça sadedir; üst iki yanında eskiden kandillerin asılmasına yarayan birer konsol vardır. Yeni ahşap minber, korkuluklarına ve üçgen yan aynalarındaki yuvarlak göbeğe ajur tekniğiyle işlenmiş bitkisel süslemeleriyle zarif bir görünüşe sahiptir.",
+        "en": "The mosque receives light from four windows in the west, three in the east and north, and two in the south. Both southern windows are on the right of the mihrab; since a small burial ground adjoins the building on the other side, no window was opened there. The mihrab, a pointed-arch niche, is very plain; on its two upper sides there used to be consoles for hanging oil lamps. The new wooden minbar is elegant, with vegetal ornaments worked in openwork (ajour) technique on its balustrades and on the round centre of its triangular side panels."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "269"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Toplam pencere sayısı",
+        "en": "Total number of windows"
+      },
+      "value": 12,
+      "unit": null,
+      "note": {
+        "tr": "Batı 4, doğu 3, kuzey 3, güney 2.",
+        "en": "West 4, east 3, north 3, south 2."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267"
+        }
+      ]
+    },
+    {
+      "key": "avlu_kapi_sayisi",
+      "label": {
+        "tr": "Avlu kapı sayısı",
+        "en": "Number of courtyard doors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267"
+        }
+      ]
+    },
+    {
+      "key": "minare_kenar",
+      "label": {
+        "tr": "Minare kenar sayısı",
+        "en": "Minaret number of sides"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267"
+        }
+      ]
+    },
+    {
+      "key": "onarim_yili",
+      "label": {
+        "tr": "'Maşallah 1264' yazısına dayanan onarım yılı (kitaba göre)",
+        "en": "Repair year based on the 'Maşallah 1264' writing (per the book)"
+      },
+      "value": 1864,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Beyaz kalker taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "avlu-girisi-yazisi",
+      "location": {
+        "tr": "Avlu girişi",
+        "en": "Courtyard entrance"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Maşallah 1264",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1864"
+      },
+      "note": {
+        "tr": "Kaynak yazının yalnızca bu kısa metnini verir; dili belirtilmiyor. Kitap bunu 1864 onarımının delili sayıyor.",
+        "en": "The source gives only this short text; its language is not named. The book takes it as proof of the 1864 repair."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "266"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-1864",
+      "year": 1864,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Ciddi onarım ('Maşallah 1264' yazısına dayanarak)",
+        "en": "Serious repair (based on the 'Maşallah 1264' writing)"
+      },
+      "note": {
+        "tr": "1264 sayısı ile 1864 arasındaki ilişki kitapta açıklanmıyor.",
+        "en": "The relationship between 1264 and 1864 is not explained in the book."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "id": "gecit-1906",
+      "year": 1906,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Minare altındaki geçit kapatılıp çeşmeye dönüştürüldü",
+        "en": "Passage under the minaret closed and turned into a fountain"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "semsiyeli-minare",
+      "title": {
+        "tr": "Sekiz kenarlı şemsiyeli minare",
+        "en": "Eight-sided umbrella minaret"
+      },
+      "hint": {
+        "tr": "Kaidesinin altında kapatılmış geçit ve çeşmeye dönüşmüş nişe bakın.",
+        "en": "Look for the closed passage under its base, now a fountain niche."
+      },
+      "section_id": "minare"
+    },
+    {
+      "feature": "ajur-minber",
+      "title": {
+        "tr": "Ajur işlemeli minber",
+        "en": "Openwork minbar"
+      },
+      "hint": {
+        "tr": "Minberin korkuluklarındaki ve yan aynalarındaki bitkisel ajur süslemeleri arayın.",
+        "en": "Look for the vegetal openwork on the minbar's balustrades and side panels."
+      },
+      "section_id": "pencere-mihrap-minber"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kantara Camii, yamuk planlı ve doğuya doğru genişleyen bir avlunun güneyinde, beyaz kalker taştan yapılmıştır. Avluya doğu ve batıdaki iki kapıdan girilir; kuzeyinde medrese odaları vardır. Camiyi ahşap direkler üzerinde kiremit kaplı bir sundurma ile örtülü son cemaat yeri önler. Sekiz kenarlı, kısa gövdeli, ahşap şemsiye örtülü minare batı tarafındadır; kaidesinin altındaki kapatılmış geçit bugün çeşmedir. Yuvarlak kemerli sade bir kapıdan girilen harim, ortadaki bir sütunun taşıdığı iki sivri kemerle iki sahına ayrılır. Sivri kemerli sade mihrabın yanındaki ahşap minber ajur tekniğiyle işlenmiş bitkisel süslemelere sahiptir.",
+      "en": "Kantara Mosque is built of white limestone south of a trapezoidal courtyard that widens toward the east. Two doors, east and west, lead into the courtyard, which has madrasa cells on its north. A narthex covered by a tiled porch on wooden posts fronts the mosque. The eight-sided minaret, with a short body and a wooden umbrella cover, is on the west; the closed passage under its base is now a fountain. Through a simple round-arched door one enters the sanctuary, divided into two naves by two pointed arches carried by a central column. The wooden minbar next to the plain pointed-arch mihrab has vegetal ornaments worked in openwork technique."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 266-269) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p133-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "264-265"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin taş cephesi ve sivri kemerli girişi",
+        "en": "Stone façade and pointed-arch entrance of the mosque"
+      },
+      "alt": {
+        "tr": "Kesme taştan cephede ortada sivri kemerli girişte ahşap kapı ve sarkan bir fener; solda iki demir parmaklıklı kemerli pencere, sağda dar küçük açıklıklar.",
+        "en": "On a cut-stone façade, a wooden door in a pointed-arch entrance with a hanging lantern; two barred arched windows on the left and small narrow openings on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p134-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "266"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avlu ve minare",
+        "en": "Courtyard and minaret"
+      },
+      "alt": {
+        "tr": "Taş döşeli avlunun çevresinde ahşap saçaklı taş yapılar; arkada ahşap şerefeli, ince bir taş minare. Solda ağaç, sağda bank.",
+        "en": "A stone-paved courtyard surrounded by stone buildings with wooden eaves; behind them a slender stone minaret with a wooden balcony. A tree on the left and a bench on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p135-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "268-269"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Cami girişinin önündeki sundurma",
+        "en": "Covered area in front of the mosque"
+      },
+      "alt": {
+        "tr": "Taş cephenin önünde ahşap direkli bir sundurma; cephede kemerli bir pencere ve camlı ahşap kapı, solda ahşap ayakkabılık rafları, zeminde hasır döşeme.",
+        "en": "A covered area on wooden posts before a stone façade with an arched window and a glazed wooden door; wooden shoe racks on the left and matting on the floor."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p135-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "268"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kapı ve kemerli niş",
+        "en": "Doorway and arched recess"
+      },
+      "alt": {
+        "tr": "Kesme taş, sivri kemerli derin bir nişin içinde kemerli ahşap kapı; üstte sarkan fener ve \"Kantara Camii\" yazılı levha.",
+        "en": "An arched wooden door set in a deep pointed-arch stone recess; a lantern hangs above and a sign reads Kantara Camii."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p135-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "268-269"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Ahşap minber ve ibadet salonu",
+        "en": "Wooden minbar and prayer hall"
+      },
+      "alt": {
+        "tr": "Oyma ahşap minber, solda kalın taş ayak ve ahşap kirişli tavandan sarkan avize; beyaz duvarlar, mavi halı ve kemerli pencereler.",
+        "en": "A carved wooden minbar, a thick stone pier on the left and a chandelier hanging from the timber-beamed ceiling; white walls, blue carpet and arched windows."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p135-4.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "269"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kemer ve ahşap mahfil",
+        "en": "Arch and wooden gallery"
+      },
+      "alt": {
+        "tr": "Geniş taş bir kemerin ardında ahşap korkuluklu mahfil, ahşap tavan ve avize; beyaz duvarlarda pencereler, zeminde mavi halı.",
+        "en": "Through a broad stone arch, a gallery with a wooden balustrade, a wooden ceiling and a chandelier; windows in white walls and a blue carpet below."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kantara-camii/p136-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "270"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İç mekân, ayak ve mahfil",
+        "en": "Interior with pier and gallery"
+      },
+      "alt": {
+        "tr": "Ortada taş bir ayak, solda mihrap nişi ve ahşap minber, sağda ahşap korkuluklu mahfil; ahşap kirişli tavan ve mavi halı.",
+        "en": "A stone pier in the middle, a mihrab niche and wooden minbar on the left and a wooden-railed gallery on the right; timber-beamed ceiling and a blue carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

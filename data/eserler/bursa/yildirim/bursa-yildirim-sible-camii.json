@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-sible-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Kitap 'Şıblizâde Mahmud Çelebi'nin oğlu' dışında Şıblizâde ailesi hakkında bilgi vermiyor.",
+      "Mihrabın yaşmak dışındaki malzemesi, minber ve diğer iç mekân öğeleri kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[minare]",
+        "note": "Metin önce 'doğu cephesindeki özgün, alçak minare yıkılarak kuzeyde yeniden inşa edilmiştir' der, sonra 1901 onarımında 'ahşap minaresinin kâgir olarak yeniden inşa edildiğini' söyler. Özgün minarenin ahşap olup olmadığı ve iki ifadenin ilişkisi kitapta açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şible Camii",
+    "en": "Şible Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Şıblizâde ailesi",
+    "sütunceli mihrap",
+    "1901 onarımı",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Yeşil",
+    "address": "Yeşil Mahallesi, Şible Sokak, No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "267"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.180378,
+      "lng": 29.076387,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q127788189 ('Şible Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1457",
+      "en": "1457"
+    },
+    "start_year": 1457,
+    "end_year": 1457,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap inşa yılını 1457 olarak verir.",
+      "en": "The book gives the construction year as 1457."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "267"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mevlânâ Bayezid Çelebi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "267"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1457'de Şıblizâde ailesinden Mevlânâ Bayezid Çelebi'nin yaptırdığı cami. Zaman içindeki onarımlarla özgün karakterini büyük ölçüde yitirmiş; beş sıra stalaktitli yaşmakla çevrili sütunceli mihrabı dikkat çeker.",
+    "en": "A mosque built in 1457 by Mevlânâ Bayezid Çelebi of the Şıblizâde family. Repairs over time removed much of its original character; its columned mihrab with a five-row stalactite surround is its main feature."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yeşil Mahallesi, Şible Sokak, No: 2'de, Yeşil'den Emîr Sultan'a uzanan caddenin sağ tarafında yer alır. 1457'de Bursalı Şıblizâde ailesinden Şıblizâde Mahmud Çelebi'nin oğlu Mevlânâ Bayezid Çelebi tarafından inşa ettirilmiştir.",
+        "en": "It is at Şible Street, No. 2, Yeşil Neighborhood, on the right side of the street from Yeşil to Emir Sultan. It was built in 1457 by Mevlana Bayezid Çelebi, son of Şıblizade Mahmud Çelebi of the Bursa family Şıblizade."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "267"
+        }
+      ]
+    },
+    {
+      "id": "mimari-ve-onarimlar",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Onarımlar",
+        "en": "Architecture and Repairs"
+      },
+      "body": {
+        "tr": "Yapı ahşap kırma çatıyla örtülmüş ve kiremit kaplamayla tamamlanmıştır. Zamanla geçirdiği onarımlarla özgün mimari karakterini büyük ölçüde kaybetmiştir. Doğu cephesindeki özgün, alçak minare yıkılarak kuzeyde yeniden inşa edilmiş, cephede çeşitli tadilatlar yapılmıştır. Harim 9,85 × 8,25 m'dir. İç mekânda dikkat çeken başlıca unsur beş sıra stalaktitli yaşmakla çevrelenmiş sütunceli mihraptır. Yapı 1901'de harap durumdayken kapsamlı bir onarım geçirmiş, ahşap minaresi bu süreçte kâgir olarak yeniden inşa edilmiştir.",
+        "en": "The building has a wooden hipped roof finished with tiles. Repairs over time have largely erased its original architectural character. The original low minaret on the east façade was demolished and rebuilt on the north, and various alterations were made to the façade. The prayer hall measures 9.85 × 8.25 m. The main interior feature is the columned mihrab with an arched surround of five rows of stalactites. In a dilapidated state, the building underwent extensive restoration in 1901, and its wooden minaret was rebuilt in masonry then."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Yeşil Mahallesi, Şible Sokak, No: 2",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "267"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcusu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall size"
+      },
+      "value": "9,85 × 8,25",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mevlânâ Bayezid Çelebi",
+      "role": {
+        "tr": "Caminin banisi, Şıblizâde Mahmud Çelebi'nin oğlu",
+        "en": "Founder of the mosque, son of Şıblizade Mahmud Çelebi"
+      }
+    },
+    {
+      "name": "Şıblizâde Mahmud Çelebi",
+      "role": {
+        "tr": "Bani Bayezid Çelebi'nin babası (Bursalı Şıblizâde ailesinden)",
+        "en": "Father of the founder (of the Bursa Şıblizade family)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1457",
+      "year": 1457,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Mevlânâ Bayezid Çelebi tarafından inşa ettirildi",
+        "en": "Built by Mevlana Bayezid Çelebi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "267"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1901",
+      "year": 1901,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Harap durumda kapsamlı onarım geçirdi; ahşap minare kâgir olarak yeniden yapıldı",
+        "en": "Extensive restoration in a dilapidated state; wooden minaret rebuilt in masonry"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "267"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şible Camii, Yeşil Mahallesi'nde Şible Sokak üzerinde, Yeşil'den Emîr Sultan'a uzanan caddenin sağ tarafındadır. Yapı kiremit kaplı ahşap kırma çatıyla örtülüdür. Harim 9,85 × 8,25 m ölçüsündedir; iç mekânın başlıca öğesi beş sıra stalaktitli yaşmakla çevrelenmiş sütunceli mihraptır. Minare kuzeyde, kâgir olarak yeniden yapılmıştır.",
+      "en": "Şible Mosque stands on Şible Street in Yeşil Neighborhood, on the right side of the road from Yeşil to Emir Sultan. It has a tiled wooden hipped roof. The prayer hall measures 9.85 × 8.25 m; its main feature is the columned mihrab with a surround of five rows of stalactites. The minaret, rebuilt in masonry, stands on the north side."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-sible-camii/p056-1.jpg",
+        "original_name": "01 DJI_20240920172053_0201_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "267"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şible Camii ve minaresi, yüksekten görünüm",
+        "en": "Şible Mosque and minaret from above"
+      },
+      "alt": {
+        "tr": "Dar bir sokağın köşesinde, kiremit çatılı hardal renkli bir cami ve yanında açık renkli, sivri külahlı minare görünür. Çevresinde yüksek apartmanlar ve dağ eteğine yayılan mahalle yer alır.",
+        "en": "On a street corner, a mustard-coloured mosque with a tiled roof and a pale pointed-cap minaret. Tall apartment blocks and a neighbourhood spreading up the hillside surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    }
+  ],
+  "archive_media": []
+}

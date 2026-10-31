@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-nakip-kutuphanesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Nakip Camii bölümünün 'Kütüphane' alt başlığından (s. 297) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Kitapta bu yapıya ait ayrı bir fotoğraf yok; fotoğraf sahada çekilmeli ya da başka bir kaynaktan eklenmeli.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Yapı tipi 'diger' olarak girildi (enums.json'da kütüphane türü yok); tür eklenmesi gerekiyorsa karar verilmeli.",
+      "Mimari betimleme kaynakta yok; yalnızca konum, kullanım ve tarihlendirme bilgisi var. Bugünkü kullanımı kaynakta belirtilmiyor.",
+      "Kitaptaki bölüm başlığı 'Kütüphane'; metin kısa olduğundan sınırda bir ayrı kayıt olarak açıldı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "1872 sonrası tarihlendirme 'bir kısım sanat tarihçisi'ne aittir; kaynak başka görüş vermez. 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Nakip Kütüphanesi",
+    "en": "Nakip Library"
+  },
+  "subtitle": {
+    "tr": "Antakya'nın günümüze ulaşan tek bilinen kütüphanesi",
+    "en": "The only known surviving library of Antakya"
+  },
+  "alternate_names": [],
+  "type": "kutuphane",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kütüphane",
+    "Nakip Camii",
+    "1872 depremi sonrası"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "3. Mıntıka, 493 Parsel; Nakip Camii avlusunun batı kısmı",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "297"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Bazı sanat tarihçilerine göre 1872 depremini izleyen yıllar",
+      "en": "According to some art historians, the years following the 1872 earthquake"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap, bazı sanat tarihçilerinin yapıyı mimari üslubuna bakarak 1872 depremini izleyen yıllara tarihlendirdiğini söylüyor; kesin yıl verilmiyor.",
+      "en": "The book says some art historians date the building to the years following the 1872 earthquake from its architectural style; no exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "297"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Nakip Camii avlusunun batı kısmında yer alan, eskiden kütüphane olarak bilinen ve kısmen bağımsız görünümlü yapıdır. Bugün amacı dışında kullanılmaktadır; Antakya'nın bilinen ve günümüze ulaşan tek kütüphanesi olması bakımından önemlidir.",
+    "en": "Located in the western part of the Nakip Mosque courtyard and formerly known as the library, the building looks partially independent. It is used outside its purpose today; it is important as the only known library of Antakya to have survived."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Avlunun batı kısmına yerleştirilmiş ve eskiden kütüphane olarak bilinen yapı kısmen bağımsız bir görünüme sahiptir; bugün amacı dışında kullanılmaktadır. Bir kısım sanat tarihçisi, Nakip Camii yapılar topluluğunun mimari üslubundan hareketle yapıyı 1872 depremini takip eden yıllara tarihlendirmektedir. Eser, Antakya'nın bilinen ve günümüze değin ulaşan tek kütüphanesi olması açısından önemlidir.",
+        "en": "Located in the western part of the courtyard and formerly known as the library, the building has a partially independent appearance, but is used outside its purpose today. Some art historians date it to the years following the 1872 earthquake, based on the architectural style of the Nakip Mosque group of buildings. It is important as the only known library of Antakya that has survived to the present day."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "297"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-nakip-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Nakip Camii avlusundaki yapılar topluluğunun bir parçasıdır.",
+        "en": "Part of the group of buildings in the courtyard of the Nakip Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "291, 297"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Nakip Kütüphanesi, Nakip Camii avlusunun batı kısmında, kısmen bağımsız görünümlü bir yapıdır. Eskiden kütüphane olarak bilinmektedir; bugün amacı dışında kullanılmaktadır. Kitap yapının iç ve dış mimarisini ayrıntılı anlatmaz.",
+      "en": "The Nakip Library is a partially independent-looking building in the western part of the Nakip Mosque courtyard. It was formerly known as the library and is used outside its purpose today. The book does not describe its interior or exterior architecture in detail."
+    },
+    "audio_description_source": "Kitabın kısa tarifinden (vk-hatay, s. 297) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

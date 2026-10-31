@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "bursa-mustafakemalpasa-seyh-muftu-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Mustafakemalpaşa",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının Mustafakemalpaşa bölümünden (s. 608-623) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahadan ya da güvenilir kaynaktan eklenmeli (location.coordinates eklenmedi).",
-      "Fotoğraf / medya yok; Drive klasörü ve dosya kimlikleri belirlenmeli (media, archive_media boş, media_folder null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
       "Caminin adresi (sokak) kitapta yok.",
       "'Geçtiğimiz yıl' yapılan kapsamlı onarımın yılı kitapta verilmiyor (zaman çizelgesine eklenmedi).",
@@ -57,7 +56,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "613"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.035135,
+      "lng": 28.410341,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1014260549 ('Şeyh Müftü Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -375,8 +381,98 @@
     },
     "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri III. Cilt) esas alınarak yazılmıştır."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1Co-_wqwe7yGgPGkFAccDYCTl-mXIKy49",
+    "book_layout_pdf_file_id": "1Fg0-pL7Gn8Jxlo_AXAr-ve6C8TMIJWx6",
+    "book_pdf_name": "9-Mustafakemalpaşa.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mustafakemalpasa-seyh-muftu-camii/p008-1.jpg",
+        "original_name": "01 DJI_20241106183402_0455_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1Fg0-pL7Gn8Jxlo_AXAr-ve6C8TMIJWx6",
+        "book_pdf_name": "9-Mustafakemalpaşa.pdf",
+        "book_page": "613"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şeyh Müftü Camii ve minaresi kuşbakışı",
+        "en": "Şeyh Müftü Mosque and minaret from above"
+      },
+      "alt": {
+        "tr": "Yeşilimsi gövdeli ince minare ağaçların arasından yükselir. Yanında gri örtülü çatı ve kubbe, arkada şehir ile dağlar görünür.",
+        "en": "A slender greenish minaret rises among trees. A grey-covered roof and dome stand beside it, with the town and mountains in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-06"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mustafakemalpasa-seyh-muftu-camii/p010-1.jpg",
+        "original_name": "03 ERD06830 kopya.jpg",
+        "book_pdf_file_id": "1Fg0-pL7Gn8Jxlo_AXAr-ve6C8TMIJWx6",
+        "book_pdf_name": "9-Mustafakemalpaşa.pdf",
+        "book_page": "615"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeyh Müftü Camii harimi ve mihrabı",
+        "en": "Prayer hall and mihrab"
+      },
+      "alt": {
+        "tr": "Ahşap direkler ve oymalı ahşap tavan kırmızı halılı geniş salonu taşır. Karşı duvarda süslü mihrap, yanında minber; yanlarda sivri kemerli pencereler vardır.",
+        "en": "Wooden columns and a carved timber ceiling frame a wide hall with red carpets. An ornate mihrab and a minber stand on the far wall, with pointed-arch windows on the sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-06"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mustafakemalpasa-seyh-muftu-camii/p011-1.jpg",
+        "original_name": "07 ERD06861 kopya.jpg",
+        "book_pdf_file_id": "1Fg0-pL7Gn8Jxlo_AXAr-ve6C8TMIJWx6",
+        "book_pdf_name": "9-Mustafakemalpaşa.pdf",
+        "book_page": "616"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Ahşap kubbe geçişi ve harim üst kattan",
+        "en": "Wooden dome transition seen from the gallery"
+      },
+      "alt": {
+        "tr": "Üst kattan görülen salonda süslemeli ahşap kubbe eteği ve turkuaz renkli kubbe iç yüzü vardır. Aşağıda kırmızı halı, karşıda mihrap ve minber bulunur.",
+        "en": "Seen from the gallery, a decorated wooden dome base and a turquoise dome interior. Below are the red carpet, the mihrab and the minber."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-06"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

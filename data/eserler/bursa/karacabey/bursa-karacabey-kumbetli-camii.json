@@ -2,24 +2,23 @@
   "schema_version": "1.0",
   "id": "bursa-karacabey-kumbetli-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Karacabey",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Karacabey bölümünden (s. 521-524) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
-      "Arşiv fotoğrafı (archive_media) elimizde yok.",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
       "Yapım tarihi ve banî kitapta bilinmiyor.",
       "Havra/kilise görüşleri için kaynak belirtilmemiş; tarih ve ayrıntılar kitapta yok.",
       "Mihrap alınlığı yazısının Mealen'i kitapta yok; translation boş.",
       "Minare konumu (kuzey/batı) TR-EN arası tutarsız; kontrol edilmeli.",
-      "XVIII/XIX. yüzyıl minare yapımı için kesin yıl yok."
+      "XVIII/XIX. yüzyıl minare yapımı için kesin yıl yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -65,7 +64,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "521"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.220355,
+      "lng": 28.363328,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/326349451 ('Kümbetli Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -356,7 +362,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-kumbetli-camii/p015-1.jpg",
+        "original_name": "02 DJI_20241105164025_0300_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "524"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi ve minaresi, şehir manzarası",
+        "en": "Dome and minaret above the town"
+      },
+      "alt": {
+        "tr": "Kiremit renkli kubbe ve tuğla gövdeli uzun minare yukarıdan görülür. Çevrede kırmızı çatılı evler ve ova uzanır.",
+        "en": "A tile-coloured dome and a tall brick minaret seen from above. Red-roofed houses and the plain extend around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-kumbetli-camii/p013-2.jpg",
+        "original_name": "09 ERD06466 kopya.jpg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "522"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kubbe, taş duvar ve minare",
+        "en": "Dome, stone wall and minaret"
+      },
+      "alt": {
+        "tr": "Taş duvarlı yapının üzerinde küçük bir kubbe ve arkada tuğla minare yükselir. Servi ağaçları ve kiremit çatı ön plandadır.",
+        "en": "A small dome above a stone wall with a brick minaret behind. Cypress trees and a tiled roof are in the foreground."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-kumbetli-camii/p013-1.jpg",
+        "original_name": "05 ERD06415 kopya.jpg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "522"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harim, mihrap, minber ve mermer sütun",
+        "en": "Prayer hall with mihrab, minber and marble column"
+      },
+      "alt": {
+        "tr": "Beyaz kubbe geçişli mekânda mermer kaplı mihrap, sağda ahşap minber ve mermer sütun görülür. Zemin turkuaz halıyla kaplıdır; solda taş bir kurna vardır.",
+        "en": "A white domed hall with a marble-clad mihrab, a wooden minber and a marble column at right. The floor has a turquoise carpet and a stone basin is at left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    }
+  ],
   "archive_media": [],
-  "exhibitions": []
+  "exhibitions": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "19dW7EV_S0PPnXV1zTfP2jbB3e7m3UIQ0",
+    "book_layout_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+    "book_pdf_name": "5-Karacabey.pdf"
+  }
 }

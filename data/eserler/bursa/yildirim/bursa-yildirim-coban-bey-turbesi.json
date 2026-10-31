@@ -1,0 +1,260 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-coban-bey-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
+      "Türbeyi yaptıran ve yapım tarihi kaynakta yok; Çoban Bey'in türbede yatıp yatmadığı kitapta açıkça söylenmiyor.",
+      "Çoban Bey'in dönemi ve kimliği kaynakta yok.",
+      "Türbede yatan sekiz kişinin kimlikleri kaynakta yok.",
+      "Çoban Bey'in İznik'teki mescidi için hedef kayıt id'si bilinmiyor; ilişki kurulmadı.",
+      "Mimar kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Çoban Bey Türbesi",
+    "en": "Tomb of Çoban Bey"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "Çoban Bey"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Mollaarap",
+    "address": "Mollaarap Mahallesi, 6. Park Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "284"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.175639,
+      "lng": 29.072889,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q20476815 ('Çoban Bey Türbesi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi belirtilmemiş; kitap 'Osmanlı'nın kuruluş devri' ifadesini kullanıyor",
+      "en": "Construction date not given; the book refers to 'the founding period of the Ottomans'"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapım yılı vermiyor; yalnızca mescit/türbenin Osmanlı'nın kuruluş devrine ait mekânsal sürekliliğini hatırlatacağını söylüyor.",
+      "en": "The book gives no year; it only says rebuilding the masjid would recall the spatial continuity of the Ottoman founding period."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "284"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "İçinde sekiz kabir bulunan, moloz taştan ve tuğla hatıllı inşa edilmiş türbe; Çoban Bey'e ait mescit günümüze ulaşmamış, yalnızca türbe ayaktadır.",
+    "en": "A tomb containing eight graves, built of rubble stone with brick beams; Çoban Bey's masjid has not survived and only the tomb stands."
+  },
+  "sections": [
+    {
+      "id": "mimari-ve-durum",
+      "order": 1,
+      "title": {
+        "tr": "Mimari ve Durum",
+        "en": "Architecture and Condition"
+      },
+      "body": {
+        "tr": "Yıldırım ilçesi, Mollaarap Mahallesi, 6. Park Sokak'ta yer alır. İçinde sekiz kabir bulunan türbe 8,30 × 8,45 m boyutlarındadır; moloz taştan inşa edilmiş, tuğla hatıllarla desteklenmiştir. Kaynaklarda Çoban Bey'e ait kubbeli, tonoz örtülü ve son cemaat revaklı bir mescidin de bulunduğu aktarılır; bu yapı günümüze ulaşmamış, yalnızca türbe ayaktadır. Uzun yıllar kapısı ve pencereleri örülmüş, bakımsız kalan türbe 1997'de onarılarak koruma altına alınmıştır. Etrafı yeşilliklerle çevrilidir; kaybolan mescidin yanına yeniden inşa edilmesi önerilmektedir.",
+        "en": "Located in Yıldırım District, Mollaarap Neighborhood, 6th Park Street. The tomb, containing eight graves, measures 8.30 × 8.45 m; it is built of rubble stone supported by brick beams. Sources state that Çoban Bey also had a domed, vaulted masjid with a narthex porch, but it has not survived; only the tomb stands. Neglected for many years with its doors and windows blocked up, it was repaired and taken under protection in 1997. It is surrounded by greenery and rebuilding the lost masjid next to it is suggested."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "284"
+        }
+      ]
+    },
+    {
+      "id": "cevre-ve-diger-eser",
+      "order": 2,
+      "title": {
+        "tr": "Çoban Bey'in Diğer Eseri",
+        "en": "Another Work of Çoban Bey"
+      },
+      "body": {
+        "tr": "Çoban Bey'in İznik'te Tabakhane mevkiinde de bir mescit yaptırdığı ve bu yapıya çeşitli vakıflar bağladığı bilinmektedir.",
+        "en": "It is known that Çoban Bey also built a small mosque in the Tabakhane area of İznik and endowed various properties to it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "284"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan size"
+      },
+      "value": "8,30 × 8,45",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "284"
+        }
+      ]
+    },
+    {
+      "key": "kabir_sayisi",
+      "label": {
+        "tr": "Kabir sayısı",
+        "en": "Number of graves"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "284"
+        }
+      ]
+    },
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Moloz taş, tuğla hatıllı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "284"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Çoban Bey",
+      "role": {
+        "tr": "Mescit sahibi; türbenin adını aldığı kişi",
+        "en": "Owner of the masjid; the tomb's namesake"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1997",
+      "year": 1997,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Türbe onarılıp koruma altına alındı",
+        "en": "Tomb repaired and taken under protection"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "284"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çoban Bey Türbesi 8,30 × 8,45 m ölçüsünde, moloz taştan ve tuğla hatıllı bir yapıdır; içinde sekiz kabir vardır. Etrafı yeşilliklerle çevrilidir.",
+      "en": "The Tomb of Çoban Bey is a 8.30 × 8.45 m building of rubble stone with brick beams, containing eight graves, surrounded by greenery."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-coban-bey-turbesi/p005-3.jpg",
+        "original_name": "03 ERD03958 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "284"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Çoban Bey Türbesi ve çevresindeki bahçe",
+        "en": "Tomb of Çoban Bey and its garden"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kırmızımsı kubbeli küçük türbe çimenlik bahçede durur. Önünde iki mezar taşı ve yaprağı dökülmüş ağaçlar, arkada tepeler görünür.",
+        "en": "A small stone-walled tomb with a reddish dome stands in a grassy garden. Two gravestones and bare trees are in front, with hills behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    }
+  ],
+  "archive_media": []
+}

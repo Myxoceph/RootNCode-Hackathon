@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-iskenderun-seyh-turhan-reyhani-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Şeyh Turhan Reyhani’nin kimliği ve banî kitapta yok.",
+      "Yakın dönemdeki yenilemenin yılı ve kapsamı kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Şeyh Turhan Reyhani Türbesi",
+    "en": "Sheikh Turhan Reyhani Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Şeyh Turhan Reyhaniye Türbesi",
+      "en": "Sheikh Turhan Reyhaniye Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "türbe",
+    "ziyaretgâh",
+    "tütsülük",
+    "Mustafa Kemal Mahallesi",
+    "Vakıflar Genel Müdürlüğü"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "İskenderun",
+    "neighborhood": "Mustafa Kemal Mahallesi",
+    "address": "Şevre İmar 2625 ada 1 parsel (bölüm özeti); Mustafa Kemal Mahallesi",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "424"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.563739,
+      "lng": 36.149549,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Mustafa Kemal Mahallesi, İskenderun, Hatay, Akdeniz Bölgesi, 31230, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1320 / M. 1902-1903",
+      "en": "AH 1320 / AD 1902-1903"
+    },
+    "start_year": 1902,
+    "end_year": 1903,
+    "hijri_year": 1320,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap türbenin H.1320 (M.1902/1903) yılında inşa edildiğini söylüyor.",
+      "en": "The book states the tomb was built in 1320 AH (1902/1903 AD)."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "424"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "İskenderun Mustafa Kemal Mahallesi’nde, Vakıflar Genel Müdürlüğü mülkiyetinde, H.1320 (M.1902/1903) yılında yapılmış sade, kare biçimli türbe. Nişlerinde tütsülükler bulunur; yakın dönemde yenilenmiştir.",
+    "en": "A plain, square tomb in Mustafa Kemal neighborhood, İskenderun, owned by the General Directorate of Foundations and built in 1320 AH (1902/1903). Its niches hold incense holders; it was recently renovated."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Hatay ve ilçelerinde yaygın ziyaretgâh örneklerinden olan türbe Vakıflar Genel Müdürlüğü’nün mülkiyetindedir. Avludaki türbe kare biçimli ve basit mimarisiyle sade görünümlüdür. Her duvarda küçük bir ya da iki pencere vardır. Kenarlardaki nişlerde ibadetlerde kullanılan tütsülükler bulunur; içindeki sandukalar duvarlara paralel yerleştirilmiştir.",
+        "en": "One of the visiting sites common in Hatay and its districts, the tomb is owned by the General Directorate of Foundations. The tomb in the courtyard is plain, with a simple architecture and square form. Each wall has one or two small windows. Niches at the sides hold incense holders used in worship, and the sarcophagi inside are parallel to the walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "424"
+        }
+      ]
+    },
+    {
+      "id": "yenileme",
+      "order": 2,
+      "title": {
+        "tr": "Yenileme ve ziyaret geleneği",
+        "en": "Renovation and visiting tradition"
+      },
+      "body": {
+        "tr": "Yakın dönemde yenilenen türbenin, bölgede ziyaret ve ibadet geleneğinin yaşatıldığı bir mekân olarak korunması sağlanmaktadır.",
+        "en": "The recently renovated tomb is preserved as a place where the region’s tradition of visiting and worship is kept alive."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "424"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "424"
+        }
+      ]
+    },
+    {
+      "key": "mulkiyet",
+      "label": {
+        "tr": "Mülkiyet",
+        "en": "Ownership"
+      },
+      "value": "Vakıflar Genel Müdürlüğü",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "424"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1902",
+      "year": 1902,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Türbenin inşası (H.1320)",
+        "en": "Construction of the tomb (1320 AH)"
+      },
+      "note": {
+        "tr": "Kitap M.1902/1903 yazıyor; olay yılı olarak ilk yıl alındı.",
+        "en": "The book gives 1902/1903; the first year is used as the event year."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "424"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, bir avlunun içinde kare biçimli, sade bir yapıdır. Her duvarında bir ya da iki küçük pencere vardır. Yan nişlerinde tütsülükler bulunur; içindeki sandukalar duvarlara paralel durur.",
+      "en": "The tomb is a plain, square building inside a courtyard. Each wall has one or two small windows. Incense holders sit in the side niches, and the sarcophagi inside lie parallel to the walls."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-seyh-turhan-reyhani-turbesi/p213-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "425"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Türbenin yeşil çerçeveli girişi ve kitabeleri",
+        "en": "Green-framed entrance of the tomb with its inscriptions"
+      },
+      "alt": {
+        "tr": "Yeşil boyalı çerçeveli kapı; üstünde Arapça yazılı levhalar, duvarın alt yarısı açık yeşil fayans, üst yarısı beyaz; kapının ardında yeşil örtülü sanduka görünüyor.",
+        "en": "A green-painted doorframe with Arabic-inscribed panels above; the lower wall is light green tile and the upper part white; a green-draped tomb chest is visible through the door."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

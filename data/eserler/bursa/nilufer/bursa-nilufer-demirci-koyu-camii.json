@@ -2,24 +2,23 @@
   "schema_version": "1.0",
   "id": "bursa-nilufer-demirci-koyu-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Nilüfer",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Nilüfer bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Kesin yapım tarihi ve banisi kitapta yok; Vakıflar arşivinden araştırılmalı.",
       "Yeni cami / çocuk kütüphanesi dönüşümünün ve geri dönüşün kesin yılları kitapta yok.",
       "Alâaddin Bey ile ilgili bir kayıt (hedef id) kitapta verilmediği için ilişki eklenmedi.",
-      "Mermer kitabenin cami ile ilişkisi belirsiz; kitabenin fotoğrafı bulunmalı.",
       "Duvar yazılarının kendi konumları (hangi duvar) kitapta belirtilmemiş; yalnızca 'son cemaat yeri'.",
       "Koordinat kitapta yok; sahada ya da güvenilir bir kaynaktan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraflar (media[]) ve arşiv fotoğrafları (archive_media[]) henüz eklenmedi; Drive klasörü bilinmiyor (media_folder: null).",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok; eklenmedi.",
-      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): Eski bina yeniden cami olarak kullanıma döndü"
+      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): Eski bina yeniden cami olarak kullanıma döndü",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -72,7 +71,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "626"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.1764,
+      "lng": 28.938952,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": {
     "display": {
@@ -651,8 +657,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden (Bursa Vakıf Eserleri III. Cilt) yalnızca metne dayanarak yazıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MaFDs8805U-GChT4qXjf_KyaXW3wgUnz",
+    "book_layout_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+    "book_pdf_name": "10-Nilüfer.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-demirci-koyu-camii/p003-1.jpg",
+        "original_name": "01 DJI_20241029152156_0575_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "626"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin dışı ve minaresi",
+        "en": "The mosque and its minaret from above"
+      },
+      "alt": {
+        "tr": "Kırma çatısı kiremit kaplı, duvarları beyaz boyalı tek katlı cami; yanında beyaz gövdeli, sivri külahlı ince bir minare yükselir. Çevresinde ağaçlar ve apartmanlar vardır.",
+        "en": "A single-storey mosque with a tiled hipped roof and white walls. A slender white minaret with a pointed cap rises beside it, surrounded by trees and apartment blocks."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-demirci-koyu-camii/p007-1.jpg",
+        "original_name": "06 ERD05047 kopya.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "630"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Son cemaat yerindeki duvar resmi",
+        "en": "Wall painting in the narthex"
+      },
+      "alt": {
+        "tr": "Sıvalı duvarda iki uzun servi, nar dalları, bir karpuz ve dilimlenmiş nar ile bıçak resmedilmiş. Renkler pembe, turkuaz ve yeşildir.",
+        "en": "A painted wall panel with two tall cypress trees, pomegranate branches, a watermelon and a cut pomegranate with a knife. The colours are pink, turquoise and green."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

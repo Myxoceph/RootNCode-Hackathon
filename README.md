@@ -69,6 +69,14 @@ Veri modeli, içe aktarma kuralları ve görsel depolama için esas belge: [`dat
 
 > **`dev`'i çektikten sonra:** [`docs/upgrade-notes.md`](docs/upgrade-notes.md) dosyasında senin için yeni bir kurulum adımı olup olmadığına bak.
 
+### Uygulamayı çalıştırma
+
+```bash
+npm run app                                     # Expo: telefonda Expo Go ile QR kodu okut, tarayıcı için `w`
+```
+
+Ayrıntılar: [`apps/app/README.md`](apps/app/README.md).
+
 ### API'yi çalıştırma
 
 ```bash
@@ -82,13 +90,35 @@ curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
 |---|---|
 | `GET /health` | Sunucu ve veritabanı durumu (veritabanına ulaşılamazsa `503`) |
 | `GET /docs` | Swagger UI: etkileşimli API dokümantasyonu (OpenAPI 3.1 belgesi: `/docs/json`) |
+| `GET /assets`, `GET /assets/:id` | Eser listesi (filtre, arama, harita kutusu) ve detayı |
+| `GET /assets/:id/relations`, `GET /assets/:id/nearby` | Eserler arası bağlar ve yakındaki eserler |
+| `GET /meta/enums` | Filtre ve rozet kod listeleri |
+| `GET /routes/plan`, `GET /weather` | Vakıf Travel Planner: tematik yürüyüş rotası, anlık hava durumu ve 3 günlük tahmin (Open-Meteo) |
+| `GET /routes/trip` | Yarım, bir ya da iki günlük gezi: önemli eserler önce, hava tahminine göre sıralı, öğle ve tatlı molalarında yöresel lezzetlerle |
+| `GET /meta/sounds` | Sesli Zaman Kapsülü: yayındaki ortam sesi kayıtları (altyazı ve lisansla); eser detayında `ambientSound.recording` |
+| `GET /cities/:code/dishes` | Yöresel Kültür & Gastronomi: ilin coğrafi işaret tescilli yöresel lezzetleri, kaynaklı |
+| `POST /auth/anonymous`, `GET /me` | Takma adla anonim oturum (token) |
+| `POST /auth/register`, `/auth/login`, `/auth/logout`, `/auth/upgrade` | Kullanıcı adı + parolayla hesap; anonim ziyaretçi hesap açınca notları kendisinde kalır |
+| `POST /assets/:id/contributions`, `GET /assets/:id/pulse` | Ziyaretçi Nabzı: katkı gönderme ve onaylanmış katkılar |
+| `POST /assets/:id/photos`, `GET /assets/:id/photos`, `GET /photos/:id` | Ziyaretçi fotoğraf önerileri: yükleme (meta verisi silinir), onaylananların listesi ve dosyası |
+| `POST /assets/:id/visit`, `GET /achievements`, `GET /me/achievements`, `GET /me/visits` | Ziyaretler ve başarımlar: rozet ve puan; liste [`docs/achievements.md`](docs/achievements.md) |
+| `GET /rewards`, `GET /me/wallet`, `POST /rewards/:code/redeem`, `POST /assets/:id/visit/proof` | Ödül kataloğu ve cüzdan, Zaman Perdesi ile kanıtlanmış ziyaret; anlatım [`docs/rewards.md`](docs/rewards.md) |
+| `GET /admin/summary`, `/admin/users`, `/admin/assets` | Yönetim paneli: özet, kullanıcılar ve roller, panelden eser ekleme |
+| `GET /admin/contributions`, `POST /admin/contributions/:id/approve` | Moderasyon kuyruğu (moderatör ya da admin hesabı: `npm run account:create --workspace @vagabonds/api -- <kullanıcı-adı> <moderator\|admin>`) |
 
-Eser uçları (`/assets`) yeni veri modeli üzerine kuruluyor.
+Yanıt şemaları ve istemci örnekleri: [`packages/contracts/README.md`](packages/contracts/README.md).
 
 Tüm hatalar tek biçimde döner: `{ "error": { "code": "NOT_FOUND", "message": "..." } }`.
 `5xx` hataların ayrıntısı yalnızca sunucu loglarında tutulur.
 
+İstemci IP'si başına dakikada 120 istek sınırı vardır (`RATE_LIMIT_MAX`; `/health` hariç). Aşılınca
+`429 RATE_LIMITED` döner.
+
 Web istemcisinin API'ye erişebilmesi için adresi `CORS_ORIGINS` içinde olmalıdır (varsayılan: `http://localhost:8081`).
+
+### Demo sunucusu
+
+VDS'e kurulum, güncelleme ve yedekleme: [`docs/deploy.md`](docs/deploy.md) (Docker Compose: PostgreSQL + API + Caddy ile web uygulaması).
 
 ## Ekip
 

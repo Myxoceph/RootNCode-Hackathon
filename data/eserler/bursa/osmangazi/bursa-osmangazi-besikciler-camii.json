@@ -1,0 +1,496 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-besikciler-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 279-281) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Kitap 'Sufi Hacı Sinan' ve 'Sufi Sinan Efendi (Paşa)' adlarını kullanıyor; aynı kişi olduğu varsayıldı, teyit edilmeli.",
+      "Mevcut bursa-osmangazi-besikciler-sinan-dede-camii-cesmesi kaydı ile bu cami arasındaki ilişki kitapta belirtilmiyor; ilişki eklenmedi.",
+      "Camiye ait vakıf bilgisi kitapta yok (waqf null).",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap yapıyı bir yerde 'mescit' (revaklı ve tek kubbeli bir mescit olan cami), başlıkta 'Camii' diye anar; kayıt türü cami olarak girildi."
+      },
+      {
+        "field": "founder",
+        "note": "Banî için iki ad biçimi var: 'Sufi Hacı Sinan' (yapım bölümü) ve 'Sufi Sinan Efendi (Paşa)' (hazire bölümü); 'Sufizâde Seyyid Mehmed Efendi bin Hacı Sinan' oğlu olabilir ancak kitap bunu söylemez."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Beşikçiler (Sinan Dede) Camii",
+    "en": "Beşikçiler (Sinan Dede) Mosque"
+  },
+  "subtitle": {
+    "tr": "1455'te Sufi Hacı Sinan'ın yaptırdığı, Sufi tacı külahlı minareli mescit-cami",
+    "en": "Mosque built in 1455 by Sufi Hacı Sinan, with a Sufi-crown minaret"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sinan Dede Camii",
+      "en": "Sinan Dede Mosque"
+    },
+    {
+      "tr": "Beşikçiler Camii",
+      "en": "Beşikçiler Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "tek kubbeli",
+    "Sufi tacı külah",
+    "tuğla stalaktit",
+    "hazire",
+    "Beşikçiler"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "Muradiye Mahallesi, Beşikçiler Caddesi, No: 23",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "279"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.19214,
+      "lng": 29.04486,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1000781255 ('Beşikciler Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1455",
+      "en": "1455"
+    },
+    "start_year": 1455,
+    "end_year": 1455,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, camiyi 1455 yılında Sufi Hacı Sinan'ın inşa ettirdiğini belirtir.",
+      "en": "The book states the mosque was built in 1455 by Sufi Hacı Sinan."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "279"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sufi Hacı Sinan",
+    "role": "banî; Sadrazam Amasyalı İshak Paşa'nın kethüdası",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "279"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sadrazam Amasyalı İshak Paşa'nın kethüdası Sufi Hacı Sinan'ın 1455'te yaptırdığı, revaklı ve tek kubbeli cami. Bursa tipi cami formundan ayrılır; en dikkat çekici ögesi, Sufi tacı biçimli külahı bozulmadan günümüze ulaşan tuğla minaresidir. Bahçedeki hazireden bugün yalnızca üç mezar taşı kalmıştır.",
+    "en": "A porticoed single-domed mosque built in 1455 by Sufi Hacı Sinan, chamberlain of Grand Vizier Ishak Paşa of Amasya. It differs from the Bursa-type mosque form; its most striking element is a brick minaret whose Sufi-crown spire has survived undamaged. Only three gravestones remain in the garden graveyard."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Muradiye Mahallesi, Beşikçiler Caddesi, No: 23'te yer almaktadır. Sadrazam Amasyalı İshak Paşa'nın kethüdası Sufi Hacı Sinan tarafından 1455 yılında inşa ettirilmiştir. Yapının bina ve inşa tarzı benzerlerinden farklıdır: son cemaat yeri revakının yanları açık bırakılmış, cephede kubbe seviyesine kadar yükselen kalkan duvar yoktur; bu özellikler yapıyı Bursa tipi cami formundan ayırır. Yan kat kornişinde alçalıp yükselme yapılmamış, bu nedenle kasnak sağır kalmıştır. Revakın üstü uzunlamasına tek tonozla örtülmüş, bu bölüm ile revakın saçak silmeleri iç içe geçmiş bir görünüm sergilemiştir.",
+        "en": "It is located in Osmangazi District, Muradiye Neighborhood, on Beşikçiler Street, No. 23. The mosque was built in 1455 by the Sufi Hacı Sinan, the chamberlain of Grand Vizier Ishak Paşa of Amasya. The building and construction style of the structure is different from its counterparts. The fact that the sides of the portico of the narthex are left open and that there is no parapet wall rising up to the dome level on the façade distinguishes the building from the Bursa type mosque form. There was no elevation or lowering of the side floor cornice, thus the drum was left blind. The top of the portico is covered with a single longitudinal vault, and this section and the eaves moldings of the portico present an intertwined appearance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "279"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Revaklı ve tek kubbeli bir mescit olan cami içte 5.80 × 6.35 m, dışta 7.50 × 8.07 m ölçülerine sahiptir; duvar kalınlığı 85 cm'dir. Son cemaat yeri revakı 4.10 × 8.07 m'dir. Kubbe, Türk üçgenli geçişle duvarlara oturtulmuştur. Üç gözlü revak beşik tonozlarla örtülmüş, ayakları bir sıra kesme taş ve üç sıra tuğladan yapılmıştır. Duvarlar moloz taşla örülmüştür. Sekiz altlık ve altı üstlük pencere caminin aydınlatılmasını sağlar; mihrap duvarında da alt sırada pencereler vardır. Mihrap yeniden inşa edilirken orijinal formundan uzaklaşılmıştır. Cami içinde orijinal sanat unsuru yoktur.",
+        "en": "The mosque, which is a single-domed masjid with portico, has interior dimensions of 5.80 × 6.35 m and exterior dimensions of 7.50 × 8.07 m. The wall thickness is 85 cm. The dimensions of the portico of the narthex were determined as 4.10 × 8.07 m. The dome of the mosque is placed on the walls with a Turkish triangle transition element. The three-bay narthex portico is covered with barrel vaults, and the piers of the portico are constructed of one row of cut stone and three rows of brick. The walls are built with rubble stone material. Eight lower and six upper windows provide illumination to the mosque. There are windows in the lower row of the mihrab wall. While the mihrab was being rebuilt, it deviated from its original form. There are no original artistic elements inside the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Yapının en dikkat çekici ögesi minaresidir. 1951 yılında mescit harap bir halde olmasına rağmen minarenin Sufi tacı formundaki külahı hiç bozulmadan günümüze ulaşmıştır. Tuğladan inşa edilen çokgen gövdeli minare; bilezikleri, şerefe altındaki altı sıra tuğla stalaktitleri ve külahıyla dengeli ve uyumlu bir görünüm sergiler. Şerefe korkulukları daha sonra yenilenmiştir.",
+        "en": "The most striking element of the structure is its minaret. Although the mosque was in ruins in 1951, the spire of the minaret in the form of a Sufi crown has survived to the present day without any damage. The polygonal minaret, built of bricks, exhibits a balanced and harmonious appearance with its decorative bands, six rows of brick stalactites under the balcony and its spire. The balcony railings were later renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Caminin bahçesinde bir hazire bulunmaktadır; bugün hazirede yalnızca üç mezar taşı mevcuttur. Beşikçiler Mezarlığı 1930'lu yıllarda park yapılmak amacıyla ortadan kaldırılmış, mezar taşlarının bir kısmı civardaki hazirelere nakledilmiş, büyük bir bölümü yok edilmiştir. Taşı günümüze ulaşanlar arasında Mehmed, İbrahim Bey ve Ali Çelebi bin İsmail Bey yer alır. Mezarı ve taşı kaybolmuş önemli kişiler arasında cami banisi Sufi Sinan Efendi (Paşa), imam Muhyiddin Efendi, Halvetî Şeyhi Kebapçızâde Şeyh Bostan Efendi, Kebapçızâde Derviş Ali Esved bin Bostan Efendi, Sufizâde Seyyid Mehmed Efendi bin Hacı Sinan, Ulucami Hatibi Hatib Mehmed Efendi bin el-Hac Zekeriya, Dağıstanlı Mehmed Efendi ve Üryânîzâde Abdullah Efendi bulunur. Cami bakımlı bir haldedir ve günümüzde ibadete açıktır.",
+        "en": "There is a graveyard in the garden of the mosque. Today, there are only three gravestones in the graveyard. Beşikçiler Graveyard was demolished in the 1930s to make way for a park, some of the gravestones were moved to nearby cemeteries, and a large portion was destroyed. Among the people whose stones have survived to this day are Mehmed, İbrahim Bey and Ali Çelebi bin İsmail Bey. Some important people buried in Beşikçiler Graveyard, but whose graves and stones have been lost, include the founder of Beşikçiler Mosque, Sufi Sinan Efendi (Paşa), the mosque imam Mühyiddin Efendi, the Halveti Shaykh Kebapçızâde Shaykh Bostan Efendi, the musician Kebapçızâde Dervish Ali Esved bin Bostan Efendi, the Sufi Seyyid Mehmed Efendi bin Hacı Sinan, the preacher of the Ulucami Hatib Mehmed Efendi bin el-Hac Zekeriya, Dağıstanlı Mehmed Efendi and Üryânîzâde Abdullah Efendi. The mosque is well-maintained and is open for worship today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "281"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ic_olcu",
+      "label": {
+        "tr": "İç ölçüler",
+        "en": "Interior dimensions"
+      },
+      "value": "5,80 × 6,35",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "key": "dis_olcu",
+      "label": {
+        "tr": "Dış ölçüler",
+        "en": "Exterior dimensions"
+      },
+      "value": "7,50 × 8,07",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 0.85,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "key": "revak_olcu",
+      "label": {
+        "tr": "Son cemaat yeri revakı ölçüleri",
+        "en": "Narthex portico dimensions"
+      },
+      "value": "4,10 × 8,07",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "key": "pencere_alt",
+      "label": {
+        "tr": "Alt sıra pencere sayısı",
+        "en": "Lower windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "key": "pencere_ust",
+      "label": {
+        "tr": "Üst sıra pencere sayısı",
+        "en": "Upper windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar_tasi",
+      "label": {
+        "tr": "Hazirede kalan mezar taşı sayısı",
+        "en": "Gravestones remaining in the graveyard"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "281"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sufi Hacı Sinan (Sufi Sinan Efendi, Paşa)",
+      "role": {
+        "tr": "Banî; İshak Paşa'nın kethüdası",
+        "en": "Founder; chamberlain of Ishak Paşa"
+      }
+    },
+    {
+      "name": "Amasyalı İshak Paşa",
+      "role": {
+        "tr": "Sadrazam; banînin efendisi",
+        "en": "Grand Vizier; the founder's master"
+      }
+    },
+    {
+      "name": "Muhyiddin Efendi",
+      "role": {
+        "tr": "Cami imamı; kabri yok olmuş",
+        "en": "Mosque imam; grave lost"
+      }
+    },
+    {
+      "name": "Kebapçızâde Şeyh Bostan Efendi",
+      "role": {
+        "tr": "Halvetî şeyhi; kabri yok olmuş",
+        "en": "Halveti shaykh; grave lost"
+      }
+    },
+    {
+      "name": "Kebapçızâde Derviş Ali Esved bin Bostan Efendi",
+      "role": {
+        "tr": "Musikişinas; kabri yok olmuş",
+        "en": "Musician; grave lost"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1455",
+      "year": 1455,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami, Sufi Hacı Sinan tarafından inşa ettirildi",
+        "en": "Mosque built by Sufi Hacı Sinan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "279"
+        }
+      ]
+    },
+    {
+      "id": "mescit-harap-1951",
+      "year": 1951,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mescit harap durumda; minare külahı bozulmadan kalmış",
+        "en": "Mosque in ruins; minaret spire intact"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "280"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Beşikçiler Camii, Muradiye Mahallesi'nde küçük, tek kubbeli, üç gözlü revaklı bir mescit-camidir. Duvarlar moloz taştır; revak ayakları bir sıra kesme taş ve üç sıra tuğladandır. Kalkan duvarı yoktur. En dikkat çekici ögesi, tuğladan çokgen gövdeli, şerefe altında altı sıra tuğla stalaktitli ve Sufi tacı biçimli külahlı minaresidir. Bahçede üç mezar taşı kalmış bir hazire vardır.",
+      "en": "Beşikçiler Mosque in Muradiye Neighborhood is a small single-domed mosque with a three-bay portico. The walls are rubble stone; the portico piers are one row of cut stone and three rows of brick. It has no parapet wall. Its most striking feature is a polygonal brick minaret with six rows of brick stalactites under the balcony and a Sufi-crown spire. The garden holds a graveyard with three remaining gravestones."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-besikciler-camii/p012-1.jpg",
+        "original_name": "02-5.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "281"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin havadan görünümü",
+        "en": "Aerial view of the mosque"
+      },
+      "alt": {
+        "tr": "Yukarıdan, dilimli kubbe ve kurşun kaplı çatısı olan küçük cami ile yanındaki minare gövdesi görünür. Yan taraftan bir cadde geçer.",
+        "en": "From above, a small mosque with a ribbed dome and lead-covered roof, and the minaret beside it. A road runs along one side."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-besikciler-camii/p012-2.jpg",
+        "original_name": "ERD06262 kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "281"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yerinde giriş kapısı",
+        "en": "Entrance door in the narthex"
+      },
+      "alt": {
+        "tr": "Mavi ve beyaz boyalı duvarın ortasında mor renkli çift kanatlı kapı, iki yanında kafesli pencereler ve ahşap banklar vardır. Kapının önünde ahşap bir rampa uzanır.",
+        "en": "A purple double door in a blue and white wall, flanked by lattice windows and wooden benches. A wooden ramp leads up to the door."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-besikciler-camii/p012-3.jpg",
+        "original_name": "ERD06266 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "281"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Revaklı son cemaat yeri",
+        "en": "Arcaded narthex"
+      },
+      "alt": {
+        "tr": "Beyaz sivri kemerli ve kalın dikmeli açık revakta altıgen taş döşemeli zemin ile ahşap kirişler görünür. Sağda demir korkuluk ve yeşil bahçe vardır.",
+        "en": "An open portico with white pointed arches and thick piers, a hexagonal stone-paved floor and wooden beams. An iron railing and green garden are on the right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-01"
+    }
+  ],
+  "archive_media": []
+}

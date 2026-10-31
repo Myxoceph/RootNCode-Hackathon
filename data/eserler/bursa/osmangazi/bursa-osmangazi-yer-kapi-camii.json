@@ -1,0 +1,407 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-yer-kapi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Bursa Vakıf Eserleri I. Cilt, Osmangazi Camiler ve Hazireler 3 bölümünden (basılı s. 480-482) yapay zekâ ile taslak olarak derlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli: kitapta koordinat yok, uydurulmadı (location.coordinates alanı bilinçli olarak boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "İnşa tarihi kitapta yok; dating boş bırakıldı. Kara Ali Bey'in 14. yüzyıl emiri olması yapının 14. yüzyılda yapıldığı anlamına gelmez, kitap bunu belirtmiyor. era bu yüzden boş.",
+      "Kara Timurtaş Paşa'nın bu kayıtla aynı kişi olup olmadığı veri setindeki bursa-osmangazi-timurtas-pasa-kulliyesi ile kitapta bağlanmıyor; ilişki yazılmadı.",
+      "Vakfiye ve mimar kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap 'Kara Ali Bey tarafından yaptırıldığına dair görüşler bulunmaktadır' diyor; kesin bir ifade değil. Banî güveni 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yer Kapı Camii",
+    "en": "Yer Kapı Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Kara Ali Camii",
+      "en": "Kara Ali Mosque"
+    },
+    {
+      "tr": "Kara Ali Paşa Camii",
+      "en": "Kara Ali Paşa Mosque"
+    },
+    {
+      "tr": "Bab-ı Zemin Camii",
+      "en": "Bâb-ı Zemîn Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kalkan duvarlı",
+    "Hisar",
+    "Yer Kapı",
+    "Kara Ali Bey",
+    "1855 depremi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kavaklı",
+    "address": "Yerkapı Caddesi, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "480"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.182731,
+      "lng": 29.056278,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "3 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Kara Ali Bey",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "480-481"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Hisar içinde, kale kapılarından “Yer Kapı” (Bab-ı Zemin) yakınında bulunan kalkan duvarlı, kubbeli cami. Vakıf kayıtlarına göre 14. yüzyılda yaşamış Kara Ali Bey tarafından yaptırıldığına dair görüşler vardır; bu yüzden Kara Ali Camii de denir. 1855 depreminde kubbesi çökmüş, 2015-2016'da restore edilmiştir.",
+    "en": "A parapet-walled, domed mosque inside the Hisar (fortress) area near the “Yer Kapı” (Bâb-ı Zemîn) castle gate. There are views, based on foundation records, that it was built by Kara Ali Bey of the 14th century, hence it is also called Kara Ali Mosque. Its dome collapsed in the 1855 earthquake and it was restored in 2015-2016."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Adı",
+        "en": "Overview and Name"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Kavaklı Mahallesi, Yerkapı Caddesi No: 1'de, Hisar içinde yer alır. Kale kapılarından biri olan “Yer Kapı” (Bab-ı Zemin) yakınında bulunduğu için bu adla anılmıştır. Vakıf kayıtlarına göre, 14. yüzyılda Osman Gazi ve Orhan Gazi dönemlerinde yaşamış ünlü emirlerden Kara Timurtaş Paşa'nın babası Kara Ali Bey tarafından yaptırıldığına dair görüşler bulunmaktadır; bu nedenle cami “Kara Ali Camii” olarak da bilinir.",
+        "en": "The mosque is at Yerkapı Street No. 1, Kavaklı Neighborhood, within the Hisar (fortress) area. It is named after the “Yer Kapı” (Bâb-ı Zemîn), one of the castle gates. According to foundation records there are opinions that it was built by Kara Ali Bey, father of Kara Timurtaş Paşa, one of the famous emirs who lived in the reigns of Osman Gazi and Orhan Gazi in the 14th century. For this reason it is also known as the “Kara Ali Mosque”."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "480-481"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Beden duvarları üç sıra moloz taş ve bir sıra tuğlayla almaşık teknikte örülmüştür; kubbe kasnakları, kalkan duvarlar ve beden duvarlarının çatı hizaları kirpi saçakla sonlandırılmış, saçakların altında tuğla bezemeler dikkat çeker. Caminin doğusunda 5 m derinliğinde, ahşap tavanlı ve kalkan duvarlarla çevrili son cemaat mahalli vardır; yuvarlak kemerli dört ahşap açıklıkla sonlanır, giriş en doğudaki kemerin altından sağlanır ve içinde hanımlara ayrılmış bir bölüm bulunur. 8.00 × 8.00 m iç ölçülerindeki kare planlı harim, Türk üçgenleriyle geçiş sağlanan sekizgen kasnağa oturan kurşun kaplı kubbeyle örtülüdür; kubbe ve duvarlar beyaz sıvalıdır. Batı duvarında sivri kemerli alınlıklı iki alt pencere, mihrabın iki yanında alçı şebekeli iki küçük nefeslik penceresi, doğu duvarında son cemaat mahalline açılan daha geniş bir pencere vardır; kuzey duvarındaki alt pencere sağırlaştırılıp dolap yapılmıştır. Kasnaktaki geniş üst pencereler sivri kemerli ve alçı şebekelidir.",
+        "en": "The main walls are built with three rows of rubble stone and one row of brick in an alternating technique; the dome drums, parapet wall and roof lines of the main walls end in a sawtooth cornice, with notable brick decoration beneath. East of the mosque is a 5 m deep narthex with a wooden ceiling, surrounded by parapet walls and ending in four round-arched wooden openings; entry is under the easternmost arch and a section is reserved for women. The square prayer hall (8.00 x 8.00 m interior) is covered by a lead-coated dome on an octagonal drum with Turkish triangles; dome and walls are white-plastered. The west wall has two rectangular lower windows with pointed-arched pediments, two small plaster-grilled ventilation windows flank the mihrab, the east wall has a wider window opening to the narthex, and the lower north window has been blinded and made into a cupboard. The large drum windows are pointed-arched with plaster grilles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "481"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-ve-minare",
+      "order": 3,
+      "title": {
+        "tr": "Mihrap ve Minare",
+        "en": "Mihrab and Minaret"
+      },
+      "body": {
+        "tr": "Mihrap ve kürsü ahşaptır; dikdörtgen çerçeve içinde altı sıra mukarnasla süslü mihrap nişi bezemesiz ve beyaz sıvalıdır. Kuzeydoğu köşedeki minareye son cemaat mahallinden geçilerek ulaşılır. Minare, üç sıra tuğla ve bir sıra küfeki taşla örülmüş kaide üzerindedir; silindirik gövdesi tuğladır, şerefe altı sekiz sıra tuğla dizisiyle bezenmiştir, sivri konik külahı kurşun kaplıdır.",
+        "en": "The mihrab and the minbar are made of wood; the mihrab niche, adorned with six rows of muqarnas within a rectangular frame, is plain and white-plastered. The minaret in the northeast corner is reached through the narthex. It stands on a base of three rows of brick and one row of limestone; its cylindrical shaft is brick, the part under the balcony is decorated with eight rows of bricks and the pointed conical spire is lead-covered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "481"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "1855'teki büyük depremde kubbesi çöken cami bir süre ahşap kırma çatılı ve kiremit örtülü olarak onarılmış ve depo olarak kullanılmıştır; sonraki onarımlarla yeniden mescit olarak kullanılmaya başlanmıştır. 1967'de Bursa Eski Eserleri Sevenler Kurumu, 2015-2016'da Vakıflar Müdürlüğü tarafından kapsamlı restorasyon geçirmiş ve bugünkü görünümüne kavuşmuştur.",
+        "en": "The mosque, whose dome collapsed in the great earthquake of 1855, was repaired with a wooden hipped tiled roof and used as a warehouse for a period; after later repairs it began to be used as a mosque again. It was comprehensively restored in 1967 by the Bursa Association for the Appreciation of Antiquities and in 2015-2016 by the Foundations Directorate, giving its present appearance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "482"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim iç ölçüsü",
+        "en": "Prayer hall interior"
+      },
+      "value": "8.00 × 8.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "481"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat mahalli derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "481"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas",
+      "label": {
+        "tr": "Mihrap mukarnas sırası",
+        "en": "Mihrab muqarnas rows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "481"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kara Ali Bey",
+      "role": {
+        "tr": "Görüşlere göre camiyi yaptıran; Kara Timurtaş Paşa'nın babası",
+        "en": "Said to have built the mosque; father of Kara Timurtaş Paşa"
+      }
+    },
+    {
+      "name": "Kara Timurtaş Paşa",
+      "role": {
+        "tr": "Osman Gazi ve Orhan Gazi dönemlerinde yaşamış ünlü emir",
+        "en": "Famous emir of the reigns of Osman Gazi and Orhan Gazi"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük depremde kubbe çöktü; ahşap kırma çatı yapıldı, bir süre depo olarak kullanıldı",
+        "en": "The dome collapsed in the great earthquake; a wooden hipped roof was built and it was used as a warehouse for a while"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "482"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1967",
+      "year": 1967,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu kapsamlı restorasyonu",
+        "en": "Comprehensive restoration by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "482"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Müdürlüğü kapsamlı restorasyonu (2015-2016)",
+        "en": "Comprehensive restoration by the Foundations Directorate (2015-2016)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "482"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 2015-2016 yıllarını veriyor.",
+        "en": "The book gives 2015-2016."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yer Kapı Camii, Hisar içinde kale kapısının yakınında, moloz taş ve tuğla almaşık duvarlı, kalkan duvarlı bir camidir. Camiin doğusunda ahşap tavanlı, dört yuvarlak kemerli ahşap açıklığı olan bir son cemaat yeri vardır. Kare planlı harim, kurşun kaplı, sekizgen kasnaklı bir kubbeyle örtülüdür; duvar ve kubbe beyaz sıvalıdır. Kuzeydoğu köşesinde tuğla gövdeli, tek şerefeli bir minare yükselir.",
+      "en": "Yer Kapı Mosque is a parapet-walled mosque of alternating rubble stone and brick inside the Hisar near a castle gate. East of the prayer hall is a wooden-ceilinged narthex with four round-arched wooden openings. The square hall is covered by a lead-coated dome on an octagonal drum, with white-plastered walls and dome. A brick minaret with a single balcony rises at the northeast corner."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile derlendi; yalnızca kaynakta geçen bilgiyi içerir."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yer-kapi-camii/p087-1.jpg",
+        "original_name": "02 (1) yer kapı.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "480"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami ve kubbeli ana mekân, sokaktan",
+        "en": "Mosque with its dome seen from the street"
+      },
+      "alt": {
+        "tr": "Kurşun kaplı kubbeli cami; önünde kemerli, saçaklı son cemaat yeri, yanında tuğla örgülü minare. Çevresinde apartmanlar ve kiremit çatılı evler vardır.",
+        "en": "A lead-domed mosque with an arched porch under a sloping roof and a brick minaret beside it, surrounded by apartment blocks and tiled houses."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-19"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yer-kapi-camii/p088-2.jpg",
+        "original_name": "ERD03293 kopya 2.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "481"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı, mihrap ve minber",
+        "en": "Mosque interior with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kubbeli salon. Ortada sade taş mihrap, sağda ahşap minber ve Türk bayrağı; solda kitaplık, zeminde kırmızı halı var.",
+        "en": "A white domed hall with a plain stone mihrab in the centre, a wooden minbar and a Turkish flag on the right, a bookshelf on the left and red carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-19"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-yer-kapi-camii/p088-1.jpg",
+        "original_name": "03_3.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "481"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kubbe ve çatı, kuşbakışı",
+        "en": "Dome and roof from directly above"
+      },
+      "alt": {
+        "tr": "Tam tepeden görülen gri kurşun kaplı kubbe ve çevresindeki düz kurşun çatılar. Sol üstte minare başı, çevrede kiremit çatılı evler görünür.",
+        "en": "A grey lead dome and flat lead roofs seen from straight above, with a minaret top at upper left and tiled houses around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-19"
+    }
+  ],
+  "archive_media": []
+}

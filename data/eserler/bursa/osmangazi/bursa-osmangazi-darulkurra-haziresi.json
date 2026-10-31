@@ -1,0 +1,483 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-darulkurra-haziresi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 289-290) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Çağ (era) kitapta açıkça belirtilmiyor; kitaptaki tarih/dönem bilgisine göre 'erken-osmanli' girildi, gözden geçirilmeli.",
+      "Mahalle adı kitapta verilmiyor (yalnızca Kavaklı Caddesi, No: 39); neighborhood null bırakıldı.",
+      "Bina (dârulkurrâ) ve hazire tek kayıtta toplandı; türü 'hazire', ikincil tür 'diger' (dârulkurrâ için enum karşılığı yok). Gerekirse ayrı kayıt açılabilir.",
+      "Zencîrî Ali Efendi Dergâhı ve Haziresi için ayrı kayıt/hedef yok.",
+      "Dârulkurrâ'nın kitabesinin metni kitapta verilmiyor; inscriptions'a yalnızca Zencîrî Ali Efendi taşı eklendi.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[medfunlar]",
+        "note": "Türkçe metinde 'müderris Mehmed Râsih Efendi' ve 'Râsih Efendi'nin annesi', İngilizce metinde ise 'the lecturer Mehmed Râşid Efendi' ve 'Râsih Efendi's mother' geçer; Râşid/Râsih ayrımı kitapta çelişkilidir. Türkçe metin esas alındı ancak bölümlerde İngilizce, kitap metnini koruyacak şekilde bırakıldı."
+      },
+      {
+        "field": "people / sections",
+        "note": "Abdülkâdir Geylânî'nin torunu bir yerde 'Ca‘fer Çelebi', başka yerde 'Seyyid Ca‘fer bin Seyyid Ahmed' diye geçer; aynı kişi olduğu kitapta söylenmez."
+      },
+      {
+        "field": "dating",
+        "note": "1492-93 tarihi dârulkurrâ binasının kitabesinden alınmıştır; hazirenin tarihi kitapta verilmez."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Darülkurra (Haraççıoğlu) Haziresi",
+    "en": "Darülkurra (Haraççıoğlu) Graveyard"
+  },
+  "subtitle": {
+    "tr": "İlk dârulkurrâ binasının yanındaki, açık hava mezar taşı müzesi gibi hazire",
+    "en": "Graveyard beside the first dar al-kurra building, like an open-air gravestone museum"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hoca Yakup Darülkurrası",
+      "en": "Hoca Yakup Dar al-Kurra"
+    },
+    {
+      "tr": "Haraççıoğlu Haziresi",
+      "en": "Haraççıoğlu Graveyard"
+    }
+  ],
+  "type": "hazire",
+  "secondary_types": [
+    "diger"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "dârulkurrâ",
+    "hazire",
+    "mezar taşları",
+    "Zencîrî Ali Efendi",
+    "Cizyedârzâde"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": "Kavaklı Caddesi, No: 39",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "289"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.239738,
+      "lng": 28.973738,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('1. Kavaklı Caddesi, Akpınar Mahallesi, Bursa, Osmangazi, Bursa, Marmara Bölgesi, 16220, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1492-93",
+      "en": "1492-93"
+    },
+    "start_year": 1492,
+    "end_year": 1493,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Dârulkurrâ binası, kitabesinden 1492-93'te Hoca Yakup tarafından yaptırıldığı anlaşılmaktadır; bu tarih hazireyi değil bina için verilmiştir.",
+      "en": "According to its inscription, the dar al-kurra building was built in 1492-93 by Hoca Yakup; this date is for the building, not the graveyard."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "289"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hoca Yakup",
+    "role": "banî (dârulkurrâ binasını yaptıran)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "289"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hoca Yakup'un 1492-93'te yaptırdığı, Osmanlı'da hafızlara kıraat eğitimi vermek için yapılan ilk bina olan dârulkurrâ'nın yanındaki hazire. Haraççıoğlu (Cizyedârzâde) Medresesi kurucusu Hüseyin Ağa ve ailesi burada medfundur; çevredeki hazire ve dergâhlardan getirilen taşlarla bir açık hava mezar taşı müzesi gibidir. Zencîrî Ali Efendi'nin süslü taşı H. 950 tarihlidir.",
+    "en": "A graveyard beside the dar al-kurra built by Hoca Yakup in 1492-93, the first building in the Ottoman period for Quran recitation training of memorizers. Hüseyin Ağa, founder of the Haraççıoğlu (Cizyedârzâde) Madrasa, and his family are buried here; with stones brought from nearby lodges and cemeteries it is like an open-air gravestone museum. The ornate stone of Zencîrî Ali Efendi bears the year 950."
+  },
+  "sections": [
+    {
+      "id": "darulkurra",
+      "order": 1,
+      "title": {
+        "tr": "Hoca Yakup Dârulkurrâsı",
+        "en": "Hoca Yakup Dar al-Kurra"
+      },
+      "body": {
+        "tr": "Hazire, Osmangazi ilçesi, Kavaklı Caddesi, No: 39'da yer almaktadır. Hoca Yakup Dârulkurrâsı, biri kışlık, diğeri yazlık ve dışa açık olmak üzere kubbeli iki mekândan oluşur. Hafızların kıraat ilmini öğrendikleri yer anlamına gelen \"dârulkurrâ\", Osmanlı Devleti döneminde hafızlara Kur'ân-ı Kerim kıraati eğitimi vermek amacıyla inşa edilmiş ilk bina olması sebebiyle önemlidir. Kitabesinden 1492-93 yılında Hoca Yakup tarafından yaptırıldığı anlaşılan binanın duvar işçiliğinde kesme küfeki taşı, tuğla ve horasan harcı kullanılmıştır. Bir dönem muallimhâne olarak kullanılan yapı, 1966'dan itibaren Bursa Eski Eserleri Sevenler Kurumu binası olarak hizmet vermiş, yakın zamanda Üftâde Kur'ân Kursu'na tahsis edilmiştir.",
+        "en": "The graveyard is located in Osmangazi District, on Kavaklı Street, No. 39. Hoca Yakup Dar al-Kurra consists of two domed spaces, one for winter and the other for summer and open to the outside. \"Dar al-Kurra\", the place where Quran memorizers learn the science of recitation, is important because it is the first building built during the Ottoman Empire to provide Quran recitation training to memorizers. According to its inscription, the building was built by Hoca Yakup in 1492-93 and its walls were made of cut stone, brick and khorasan mortar. The building, which was used as a schoolroom for a period, has served as the Bursa Association of the Appreciation of Antiquities building since 1966, and was recently allocated to the Üftâde Qur'an School."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "289"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 2,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Binanın hemen yanında \"küçük kabristan\" anlamına gelen bir hazire bulunmaktadır; burada Abdülkâdir-i Geylânî hazretlerinin torunlarından Ca‘fer Çelebi'nin de medfun olduğu bilinmektedir. Hazire, Bursa'nın çeşitli hazirelerinden nakledilen mezar taşları ve kitâbelerle zenginleşmiştir. Bursa Büyükşehir Belediyesi tarafından onarılan ve haziresi düzenlenen yapı, ilk dârulkurrâ binası olmasıyla tarihî ve kültürel açıdan önemlidir.",
+        "en": "Right next to the building, there is a \"hazire\", which means \"small graveyard\". It is known that Câfer Çelebi, one of the grandsons of Abdülkâdir-i Geylanî, is also buried in this graveyard. The graveyard has been enriched with gravestones and inscriptions transferred from various graveyards of Bursa. This building, which was restored by the Bursa Metropolitan Municipality and whose graveyard was reorganized, is also historically and culturally important as it is the first Dar al-Kurra building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "289-290"
+        }
+      ]
+    },
+    {
+      "id": "medfunlar",
+      "order": 3,
+      "title": {
+        "tr": "Medfun Önemli Kişiler",
+        "en": "Notable People Buried Here"
+      },
+      "body": {
+        "tr": "Hazirede Haraççıoğlu (Cizyedârzâde) Medresesi'nin kurucusu Hüseyin Ağa ve ailesinden bazı kişiler medfundur. Civardaki dergâhlardan ve yakın çevrede kaldırılan mezarlıklardan getirilen taşlarla burası âdeta açık hava mezar taşı müzesine dönüşmüştür. Önemli kişiler arasında Kumandan Cizyedârzâde Hacı Süleyman Ağa, Bursa Ayânı Cizyedârzâde Hacı Hüseyin Ağa, Halep Kadısı Cizyedârzâde Şeyh Ahmed Bahâeddîn Efendi ve Abdülkâdir Geylânî'nin torunlarından Seyyid Ca‘fer bin Seyyid Ahmed vardır. En görkemli taşlar Cizyedârzâde Hüseyin Ağa ve eşi Münevvere Kadın'a aittir. Zencîrî Ali Efendi Dergâhı Haziresi'nden nakledilenler arasında dergâh kurucusu Şeyh Zencîrî Ali Efendi, Halep Kadısı Seyyid Mehmed Râşid Efendi, Bursa Defterdârı Seyyid Şeyh Mustafa Ârif Efendi Sa‘dî ve müderris Mehmed Râsih Efendi bulunur; Râsih Efendi'nin annesi Ayşe Hanım da buradadır.",
+        "en": "In the graveyard, Hüseyin Ağa, the founder of the Haraççıoğlu (Cizyedârzâde) Madrasa, and some members of his family are buried. The place has been turned into an open-air gravestone museum with stones brought from nearby Sufi lodges and other cemeteries nearby. Among the important people are the Commander Cizyedarzâde Hacı Süleyman Ağa, Bursa Notable Cizyedarzâde Hacı Hüseyin Ağa, Aleppo Qadi Cizyedarzâde Shaykh Ahmed Bahaeddin Efendi, and one of the grandsons of Abdulkâdir Geylanî, Seyyid Câfer bin Seyyid Ahmed. The most magnificent stones belong to Cizyedârzâde Hüseyin Ağa and his wife Münevvere Kadın. Among those transferred from the Zencîrî Ali Efendi Sufi Lodge Graveyard are the founder of the lodge, Shaykh Zencîrî Ali Efendi, the Qadi of Aleppo, Seyyid Mehmed Râşid Efendi, the Treasurer of Bursa, Seyyid Shaykh Mustafa Arif Efendi Sa'di, and the lecturer Mehmed Râşid Efendi; Râsih Efendi's mother, Ayşe Hanım, is also buried here."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "290"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "darulkurra_mekan",
+      "label": {
+        "tr": "Dârulkurrâ'daki kubbeli mekân sayısı (biri kışlık, biri yazlık)",
+        "en": "Domed spaces in the dar al-kurra (one winter, one summer)"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "289"
+        }
+      ]
+    },
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Dârulkurrâ'nın kitabeye göre yapım yılı",
+        "en": "Construction year of the dar al-kurra per its inscription"
+      },
+      "value": "1492-93",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "289"
+        }
+      ]
+    },
+    {
+      "key": "kurum_binasi_yili",
+      "label": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu binası olduğu yıl",
+        "en": "Year it became the headquarters of the Bursa Association for the Appreciation of Antiquities"
+      },
+      "value": 1966,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "289"
+        }
+      ]
+    },
+    {
+      "key": "zenci_tas_tarihi",
+      "label": {
+        "tr": "Zencîrî Ali Efendi taşındaki yıl (sene)",
+        "en": "Year on Zencîrî Ali Efendi's stone"
+      },
+      "value": 950,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "290"
+        }
+      ],
+      "note": {
+        "tr": "Taşta 'sene 950' yazar; hicrî olduğu kitapta belirtilmez.",
+        "en": "The stone reads 'year 950'; the book does not state it is Hijri."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Hoca Yakup",
+      "role": {
+        "tr": "Dârulkurrâ'yı yaptıran",
+        "en": "Had the dar al-kurra built"
+      }
+    },
+    {
+      "name": "Cizyedârzâde Hüseyin Ağa",
+      "role": {
+        "tr": "Haraççıoğlu (Cizyedârzâde) Medresesi kurucusu; hazirede",
+        "en": "Founder of the Haraççıoğlu (Cizyedârzâde) Madrasa; buried here"
+      }
+    },
+    {
+      "name": "Münevvere Kadın",
+      "role": {
+        "tr": "Hüseyin Ağa'nın eşi",
+        "en": "Wife of Hüseyin Ağa"
+      }
+    },
+    {
+      "name": "Şeyh Zencîrî Ali Efendi",
+      "role": {
+        "tr": "Zencîrî Ali Efendi Dergâhı kurucusu; taşı nakledilmiş",
+        "en": "Founder of the Zencîrî Ali Efendi Lodge; his stone was transferred here"
+      }
+    },
+    {
+      "name": "Ca‘fer Çelebi (Seyyid Ca‘fer bin Seyyid Ahmed)",
+      "role": {
+        "tr": "Abdülkâdir-i Geylânî'nin torunlarından; hazirede medfun",
+        "en": "One of the grandsons of Abdülkâdir-i Geylânî; buried here"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "zenciri-ali-efendi-mezar-tasi",
+      "location": {
+        "tr": "Zencîrî Ali Efendi'nin Sa‘dî tarikatı tacı taşıyan mezar taşı",
+        "en": "Gravestone of Zencîrî Ali Efendi, bearing the Sa‘dî Order crown"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Yâ Hû\nKutbu’l-ârifîn\nes-Seyyid eş-Şeyh Zencîrî Ali\nEfendi Hazretlerinin\nkabr-i şerîfleridir.\nsene 950",
+      "translation": {
+        "tr": "Yâ Hû\nKutbu’l-ârifîn es-Seyyid eş-Şeyh Zencîrî Ali Efendi Hazretlerinin kabr-i şerîfleridir.\nsene 950",
+        "en": "Yâ Hû\nThis is the sacred grave of Kutbu’l-ârifîn es-Seyyid eş-Şeyh Zencîrî Ali Efendi Hazretleri.\nYear 950"
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "290"
+        }
+      ],
+      "note": {
+        "tr": "Kitap taşın dilini belirtmez; metin Türkçe harflerle verilmiştir ve ayrı bir meal yoktur (yukarıdaki 'translation' kitaptaki Türkçe/İngilizce satırlardır). Tarihin hicrî olduğu belirtilmez.",
+        "en": "The book does not name the language of the stone; the text is given in Turkish letters with no separate meal. The date is not stated to be Hijri."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "darulkurra-1492",
+      "year": 1492,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Dârulkurrâ binası Hoca Yakup tarafından yaptırıldı (1492-93)",
+        "en": "Dar al-kurra building built by Hoca Yakup (1492-93)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "289"
+        }
+      ]
+    },
+    {
+      "id": "kurum-binasi-1966",
+      "year": 1966,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bina Bursa Eski Eserleri Sevenler Kurumu binası olarak hizmet vermeye başladı",
+        "en": "Building began serving as the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "289"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-haraccioglu-medresesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Haraççıoğlu (Cizyedârzâde) Medresesi'nin kurucusu Hüseyin Ağa ve ailesi bu hazirede medfundur.",
+        "en": "Hüseyin Ağa, founder of the Haraççıoğlu (Cizyedârzâde) Madrasa, and his family are buried in this graveyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "290"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Darülkurra Haziresi, Kavaklı Caddesi'nde, kesme küfeki taşı, tuğla ve horasan harçlı iki kubbeli mekândan oluşan Hoca Yakup Dârulkurrâsı'nın hemen yanındadır. Biri kışlık, diğeri yazlık ve dışa açık olan bu mekânların yanındaki hazire, çevre hazirelerden ve dergâhlardan getirilen çok sayıda mezar taşıyla açık hava mezar taşı müzesi gibidir.",
+      "en": "Darülkurra Graveyard on Kavaklı Street lies right beside the Hoca Yakup Dar al-Kurra, two domed spaces of cut küfeki stone, brick and khorasan mortar, one for winter and one for summer and open to the outside. With many gravestones brought from nearby graveyards and lodges, the graveyard is like an open-air gravestone museum."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-darulkurra-haziresi/p021-2.jpg",
+        "original_name": "ERD04049 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "290"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Süslü başlıklı mezar taşı",
+        "en": "Gravestone with ornate crest"
+      },
+      "alt": {
+        "tr": "Yivli yelpaze biçimli tepeliği ve kabartma yazılı gövdesi olan ayakta duran beyaz mezar taşı. Arkada taş duvar ve başka mezar taşları görünür.",
+        "en": "A standing white gravestone with a fan-shaped crest and an inscribed body. A stone wall and more gravestones are behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-darulkurra-haziresi/p021-3.jpg",
+        "original_name": "ERD04063 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "290"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Ağaç kabartmalı mezar taşı",
+        "en": "Gravestone with tree relief"
+      },
+      "alt": {
+        "tr": "Gövdesinde saksıdan çıkan, meyveli ağaç kabartması bulunan, kıvrımlı tepeliği süslü mezar taşı. Arkasında başka taşlar ve tuğla duvar vardır.",
+        "en": "A gravestone with a relief of a fruiting tree growing from a vase and a scrolled crest. Other stones and a brick wall are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-darulkurra-haziresi/p021-1.jpg",
+        "original_name": "ERD04047 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "290"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Yazılı sivri başlıklı mezar taşı",
+        "en": "Inscribed gravestone with pointed top"
+      },
+      "alt": {
+        "tr": "Gövdesi baştan sona el yazısı biçimli kitabeyle dolu, sivri başlıklı gri mezar taşı. Arkada taş duvar ve çim vardır.",
+        "en": "A grey gravestone with a pointed top, its body covered with lines of carved script. A stone wall and grass are behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-05"
+    }
+  ],
+  "archive_media": []
+}

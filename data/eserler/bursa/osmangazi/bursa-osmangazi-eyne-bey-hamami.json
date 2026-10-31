@@ -1,0 +1,585 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-eyne-bey-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Su Yapıları bölümünden (s. 684-685) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Medrese kaydı ('bursa-osmangazi-eyne-bey-subasi-medresesi') henüz yoksa oluşturulmalı; hamam bölümü medreseyi 'Eyne Bey Subaşı Medresesi' diye anıyor, id eşleşmesi kontrol edilmeli.",
+      "Hamamın kesin yapım tarihi kaynakta yok (vakfiye 1402'de anıyor).",
+      "Hamamın bugünkü işlevi (restorasyon sonrası) kaynakta kesinleşmemiş: 'kütüphane ile bütüncül kullanım için çalışmalar yürütülüyor'.",
+      "Vakfın adı kaynakta verilmemiş; 'waqf.name' boş.",
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Başlıkta 'Eyne Bey', metinde banî 'İne Bey' (ve cadde 'İnebey') olarak geçiyor; ad yazımı tutarsız. Kaynağa sadık kalındı, başlıktaki yazım kayıt adında kullanıldı."
+      },
+      {
+        "field": "founder",
+        "note": "Literatürdeki 'Ahmet Çavuş' bilgisini kitap vakfiyeye dayanarak reddediyor; çelişki kitap içinde çözümlenmiş olduğu için banî 'certain' bırakıldı."
+      },
+      {
+        "field": "timeline[onarim-1683]",
+        "note": "Kitap 'H. 1093 / M. 1683' yazıyor. H. 1093 yılı büyük ölçüde M. 1682'ye denk gelir (M. 1683'e yalnızca son haftaları sarkar); iki değer de kaynağa sadık kalınarak saklandı, olay 'disputed' işaretlendi."
+      },
+      {
+        "field": "timeline[vakfiye-1402]",
+        "note": "Hicri 3 Şaban 804 ile miladi 8 Mart 1402 kitapta birlikte veriliyor; tutarlı görünüyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Eyne Bey Hamamı",
+    "en": "Eyne Bey Bath"
+  },
+  "alternate_names": [
+    {
+      "tr": "Medrese Hamamı",
+      "en": "Madrasa Bath",
+      "note": "Eyne Bey Subaşı Medresesi'ne bitişik olduğu için"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "tek hamam",
+    "medrese hamamı",
+    "vakfiye",
+    "1402",
+    "Yazma Eserler Kütüphanesi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tahtakale Mahallesi",
+    "address": "İnebey Caddesi, İnebey Sokak, No: 7",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "684"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.182819,
+      "lng": 29.060819,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 804 / M. 1402'den önce (vakfiye tarihi)",
+      "en": "Before AH 804 / AD 1402 (date of the endowment charter)"
+    },
+    "start_year": null,
+    "end_year": 1402,
+    "hijri_year": 804,
+    "century": 15,
+    "basis": {
+      "tr": "Hamamın H. 3 Şaban 804 / M. 8 Mart 1402 tarihli vakfiyede anılması; inşa tarihi kaynakta açıkça verilmiyor.",
+      "en": "The bath is mentioned in the endowment charter of 3 Sha'ban AH 804 / 8 March AD 1402; the construction date itself is not stated."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "684"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Subaşı İne Bey bin Feleküddin",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "684"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 3 Şaban 804 / M. 8 Mart 1402",
+      "excerpt": {
+        "tr": "“Bursa'daki medresenin müderrisine, hamamdan 10 dirhem yevmiye maaş verilecektir, medresenin on iki odasında kalan öğrencilere ise birer buçuk dirhem yevmiye ödenecektir.”",
+        "en": "“The teacher of the madrasa in Bursa will be paid a daily salary of 10 dirhams from the bath, and the students staying in the twelve rooms of the madrasa will be paid a daily salary of one and a half dirhams each.”"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684"
+        }
+      ]
+    },
+    "conditions": {
+      "tr": "Hamam gelirinden medrese müderrisine günlük 10 dirhem, medresenin on iki odasındaki öğrencilere kişi başı günlük bir buçuk dirhem ödenir.",
+      "en": "From the bath's income the madrasa teacher receives 10 dirhams a day and each student in the madrasa's twelve rooms one and a half dirhams a day."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "684"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Subaşı İne Bey bin Feleküddin tarafından yaptırılan, Eyne Bey Subaşı Medresesi'nin batısına bitişik tek hamam. H. 804 / M. 1402 tarihli vakfiye hamam gelirinin medreseye ayrıldığını gösterir; 2017'de kamulaştırılmış, 2022-2023'te restorasyona alınmıştır.",
+    "en": "A single bath adjoining the west of the Eyne Bey Subaşı Madrasa, built by Subaşı İne Bey bin Feleküddin. The endowment charter of AH 804 / AD 1402 shows its revenue was assigned to the madrasa; it was expropriated in 2017 and restored in 2022-2023."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-banisi",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banisi",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Hamam, Osmangazi ilçesi Tahtakale Mahallesi İnebey Caddesi İnebey Sokak No: 7'de, Eyne Bey Subaşı Medresesi'nin batısında yapıya bitişik konumdadır; yakınlığı nedeniyle “Medrese Hamamı” olarak anılır. Literatürde hamamın Ahmet Çavuş adlı bir hayırsever tarafından yaptırıldığına dair bilgi bulunsa da Bursa Kadısı Mehmed bin Hamza bin Mehmed (Molla Fenârî) tarafından tasdik edilen H. 3 Şaban 804 / M. 8 Mart 1402 tarihli vakfiye bu bilginin doğru olmadığını ortaya koyar. Vakfiyedeki “medresenin müderrisine hamamdan 10 dirhem yevmiye maaş verilecek, medresenin on iki odasındaki öğrencilere birer buçuk dirhem yevmiye ödenecek” ifadesi yapının Subaşı İne Bey bin Feleküddin tarafından yaptırıldığını açıkça gösterir.",
+        "en": "The bath is in Osmangazi, Tahtakale Neighborhood, İnebey Avenue, İnebey Street No. 7, adjoining the west of the Eyne Bey Subaşı Madrasa, and is called the “Madrasa Bath” for its proximity. Although the literature says it was built by a philanthropist named Ahmet Çavuş, the endowment charter dated 3 Sha'ban AH 804 / 8 March AD 1402, approved by Bursa Qadi Mehmed bin Hamza bin Mehmed (Molla Fenârî), shows this to be incorrect. The charter's statement that the madrasa teacher will be paid 10 dirhams daily from the bath, and students in the madrasa's twelve rooms one and a half dirhams each, clearly shows it was built by Subaşı İne Bey bin Feleküddin."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-soguklik",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Soğukluk",
+        "en": "Plan and Frigidarium"
+      },
+      "body": {
+        "tr": "Hamam tek hamam plan tipindedir; duvarları küfeki taşı, moloz taş ve tuğla ile örülmüştür. 10,00 × 12,00 m ölçülerindeki, ahşap karkas özellikleri gösteren soğukluk bölümüne kuzey cephedeki çift kanatlı ahşap kapıdan girilir. Kırma çatılı ve alaturka kiremit örtülü bu bölüm kuzey cephede kapının iki yanında birer ve üst kotta beş olmak üzere yedi, batı cephede dört pencereyle aydınlanır. İç mekân ahşap tavanlı ve mermer döşelidir; soyunmalık birimleri giriş aksının iki yanında sıralanır. Üst katın büyük ölçüde kurutmalık olarak kullanıldığı anlaşılmaktadır.",
+        "en": "The bath is of the single-bath plan type, its walls of limestone, rubble stone and brick. The frigidarium, 10.00 × 12.00 m with timber-frame features, is entered through a double-leafed wooden door on the north façade. With a hipped roof and Turkish-style tiles, it is lit by seven windows on the north (one on each side of the door, five above) and four on the west. The interior has a wooden ceiling and marble floors, with changing rooms on both sides of the entrance axis. The upper floor appears to have been used largely for drying."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684"
+        }
+      ]
+    },
+    {
+      "id": "sicaklik-ve-kulhan",
+      "order": 3,
+      "title": {
+        "tr": "Ilıklık, Sıcaklık ve Külhan",
+        "en": "Tepidarium, Caldarium and Furnace"
+      },
+      "body": {
+        "tr": "Ilıklığa soğukluğun güney cephesindeki kapıdan geçilir; 5,70 × 4,00 m ölçülerindeki dikdörtgen bölüm altıgen baklava dilimli kasnak üzerine oturan kubbeyle örtülüdür ve doğusunda 2,03 × 2,43 m ölçülerinde bir halvet odası vardır. Güney cepheden girilen sıcaklık, 6,31 × 6,17 m iç ölçülerinde, kareye yakın planlıdır; ortasında göbek taşı bulunur, yanlardaki kurnalar özgün biçimini korur. Baklava motifli geçiş kuşağıyla sekizgen kasnağa oturan kubbeyle örtülüdür; kuzeydoğusunda 1,64 × 2,00 m ölçülerinde bir halvet vardır. Külhan yapının güneyindedir. Hamam ile doğudaki medrese arasındaki 75 cm genişliğindeki boşluğun, medreseyi nemden korumak için H. 1093 / M. 1683'teki kapsamlı onarımda bırakıldığı anlaşılmaktadır.",
+        "en": "The tepidarium is entered from the south of the frigidarium; this 5.70 × 4.00 m rectangular room is covered by a dome on a hexagonal diamond-shaped drum, with a 2.03 × 2.43 m bathing cell to its east. The caldarium, entered from the south, is almost square (6.31 × 6.17 m), with a central slab and original basins along the sides; its dome sits on an octagonal drum with a diamond-motif transition band, and a 1.64 × 2.00 m bathing cell lies to the northeast. The furnace is at the south. The 75 cm gap between the bath and the madrasa to the east is understood to have been left during the extensive repairs of AH 1093 / AD 1683 to protect the madrasa from moisture."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684-685"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-kullanim",
+      "order": 4,
+      "title": {
+        "tr": "Onarım ve Kullanım",
+        "en": "Repairs and Use"
+      },
+      "body": {
+        "tr": "Yapı uzun süre özel mülkiyette hamam olarak işletilmiştir. Bitişikteki ve bugün “Yazma Eserler Kütüphanesi” olarak kullanılan medresedeki eserlerin zarar görmesi nedeniyle 2017'de Bursa Valiliği tarafından kamulaştırılmıştır. 2022-2023'te restorasyon sürecine alınan hamamın kütüphane ile birlikte bütüncül bir işlev doğrultusunda kullanılması için çalışmalar yürütülmektedir.",
+        "en": "The building was long operated as a privately owned bathhouse. Because the works in the adjoining madrasa, now the “Manuscripts Library”, were being damaged, it was expropriated by the Bursa Governorship in 2017. Work is under way for the bath, which was taken into restoration in 2022-2023, to be used together with the library as an integrated whole."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "685"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sogukluk_olcusu",
+      "label": {
+        "tr": "Soğukluk ölçüsü",
+        "en": "Frigidarium size"
+      },
+      "value": "10,00 × 12,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi_kuzey",
+      "label": {
+        "tr": "Soğukluk kuzey cephe pencere sayısı",
+        "en": "Frigidarium north façade windows"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684"
+        }
+      ],
+      "note": {
+        "tr": "Kapının iki yanında birer, üst kotta beş; ayrıca batı cephede dört pencere.",
+        "en": "One on each side of the door and five above; plus four on the west façade."
+      }
+    },
+    {
+      "key": "iklik_olcusu",
+      "label": {
+        "tr": "Ilıklık ölçüsü",
+        "en": "Tepidarium size"
+      },
+      "value": "5,70 × 4,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684-685"
+        }
+      ]
+    },
+    {
+      "key": "sicaklik_olcusu",
+      "label": {
+        "tr": "Sıcaklık iç ölçüsü",
+        "en": "Caldarium interior size"
+      },
+      "value": "6,31 × 6,17",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "685"
+        }
+      ]
+    },
+    {
+      "key": "halvet_olcusu_ilik",
+      "label": {
+        "tr": "Ilıklık yanındaki halvet",
+        "en": "Bathing cell beside tepidarium"
+      },
+      "value": "2,03 × 2,43",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684-685"
+        }
+      ]
+    },
+    {
+      "key": "halvet_olcusu_sicaklik",
+      "label": {
+        "tr": "Sıcaklık yanındaki halvet",
+        "en": "Bathing cell beside caldarium"
+      },
+      "value": "1,64 × 2,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "685"
+        }
+      ]
+    },
+    {
+      "key": "medrese_bosluk",
+      "label": {
+        "tr": "Hamam-medrese arası boşluk",
+        "en": "Gap between bath and madrasa"
+      },
+      "value": 75,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "685"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Subaşı İne Bey bin Feleküddin",
+      "role": {
+        "tr": "Hamamı yaptıran",
+        "en": "Founder of the bath"
+      }
+    },
+    {
+      "name": "Ahmet Çavuş",
+      "role": {
+        "tr": "Literatürde banî olarak anılan, vakfiyeyle çürütülen isim",
+        "en": "Named as founder in the literature; contradicted by the charter"
+      }
+    },
+    {
+      "name": "Mehmed bin Hamza bin Mehmed (Molla Fenârî)",
+      "role": {
+        "tr": "Vakfiyeyi tasdik eden Bursa Kadısı",
+        "en": "Bursa Qadi who approved the endowment charter"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1402",
+      "year": 1402,
+      "date": "1402-03-08",
+      "hijri": "3 Şaban 804",
+      "type": "record",
+      "title": {
+        "tr": "Hamamın anıldığı vakfiye düzenlendi",
+        "en": "Endowment charter mentioning the bath issued"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1683",
+      "year": 1683,
+      "date": null,
+      "hijri": "1093",
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım; hamam ile medrese arasında nemden korunmak için boşluk bırakıldı",
+        "en": "Extensive repairs; gap left between bath and madrasa as moisture protection"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "685"
+        }
+      ],
+      "note": {
+        "tr": "Hicri ve miladi yıl tam örtüşmüyor (bkz. meta.data_quality_notes).",
+        "en": "Hijri and Gregorian years do not fully match (see meta.data_quality_notes)."
+      }
+    },
+    {
+      "id": "kamulastirma-2017",
+      "year": 2017,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bursa Valiliği tarafından kamulaştırıldı",
+        "en": "Expropriated by the Bursa Governorship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "685"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2022",
+      "year": 2022,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon süreci (2022-2023)",
+        "en": "Restoration process (2022-2023)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "685"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-eyne-bey-subasi-medresesi",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Hamam gelirinden medrese müderrisine ve öğrencilere günlük ücret ödenmesi vakfiyede şart koşulmuştur.",
+        "en": "The charter stipulates daily payments to the madrasa teacher and students from the bath's income."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-eyne-bey-subasi-medresesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Hamam, medresenin batısına bitişiktir; aralarında 75 cm'lik boşluk vardır.",
+        "en": "The bath adjoins the west of the madrasa with a 75 cm gap between them."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "684-685"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, bir medrese binasının batısına bitişik, taş ve tuğla duvarlı, kırma çatılı ve alaturka kiremit örtülü bir yapıdır. Kuzey cephedeki çift kanatlı ahşap kapıdan, ahşap tavanlı ve mermer döşeli, yaklaşık on iki metre uzunluğunda bir soğukluk bölümüne girilir. Buradan sırasıyla kubbeli ılıklık ve sekizgen kasnaklı kubbeli sıcaklık bölümüne geçilir; sıcaklığın ortasında göbek taşı, yanlarında kurnalar vardır. Külhan yapının güneyindedir.",
+      "en": "The bath is a stone-and-brick building with a hipped, Turkish-tiled roof, adjoining the west side of a madrasa. A double-leafed wooden door on the north leads into a frigidarium about twelve metres long, with a wooden ceiling and marble floor. From there one passes to a domed tepidarium and a caldarium with a dome on an octagonal drum, which has a central slab and basins along its sides. The furnace is at the south end."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eyne-bey-hamami/p005-2.jpg",
+        "original_name": "5.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "684"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamamın sıcaklık bölümü",
+        "en": "Bath hot room"
+      },
+      "alt": {
+        "tr": "Sivri kemerli, sıvalı duvarlarla çevrili taş döşemeli oda; asılı lambalar ve yerde iki taş kurna görülür.",
+        "en": "A room with pointed arches, plastered walls and stone paving, lit by hanging lamps, with two stone basins on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eyne-bey-hamami/p006-2.jpg",
+        "original_name": "2.jpeg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "685"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Hamamın çatısı, kuşbakışı",
+        "en": "Bath roof from directly above"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremitli kırma çatı ortasında gri sekizgen bir ışıklık ile komşu yapılar tepeden görülür.",
+        "en": "A red-tiled hipped roof with a grey octagonal skylight at its centre, seen from above next to neighbouring buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eyne-bey-hamami/p005-1.jpg",
+        "original_name": "4.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "684"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap sütunlu üst kat salonu",
+        "en": "Upper hall with timber columns"
+      },
+      "alt": {
+        "tr": "Ahşap sütunlu, ahşap tavan ve zeminli salon; küçük pencereler, ahşap kapılar ve balüstrad korkuluklu merdiven vardır.",
+        "en": "A hall with timber columns, ceiling and floor, small windows, wooden doors and a stair with a balustrade."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-21"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-arsuz-gokmeydan-seyh-hizir-makami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Türbeler / Ziyaretler",
+    "todos": [
+      "Makamın yapım tarihi, banîsi ve kime ait olduğu kitapta yok (sandukada kimlik kaydı bulunmuyor).",
+      "Bölüm özeti sayfasında başlığın yanında 'LİSTEDE TURBE BURDA MAKAM' notu var; liste adlandırması (türbe/makam) netleştirilmeli. enums.json’da makam türü olmadığı için type 'turbe' seçildi.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak location.coordinates eklenecek.",
+      "Adres bilgisi kitabın bölüm özeti sayfasından alındı; eserin kendi sayfalarında verilmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "enums.json'da makam/ziyaret kodu olmadığı için type 'turbe' seçildi.",
+      "Dönem (era) metinde belirtilmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Kitap yapıyı bazı yerlerde 'türbe', başlıkta 'makam' diye adlandırıyor; enums.json'da makam kodu olmadığından 'turbe' kullanıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Gökmeydan Şeyh Hızır Makamı",
+    "en": "Gökmeydan Maqam of Sheikh Hızır"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Şeyh Hızır Ziyaret Makamı",
+      "en": "Maqam of Sheikh Hızır"
+    }
+  ],
+  "type": "makam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "makam",
+    "ziyaretgâh",
+    "Hızır",
+    "çınar",
+    "Gökmeydan"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Arsuz",
+    "neighborhood": "Gökmeydan",
+    "address": "Gökmeydan Mahallesi, 29 parsel (bölüm özeti)",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "408"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.432627,
+      "lng": 35.921346,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Gökmeydan, Gökmeydan Mahallesi, Arsuz, Hatay, Akdeniz Bölgesi, 31245, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Arsuz Gökmeydan Mahallesi’nde, büyük bir çınarın yanındaki avluda yer alan sade makam. Mermer kaplı sandukanın üzerinde türbe sahibinin kimliğini belirten bir kitabe yoktur.",
+    "en": "A plain maqam in a courtyard next to a very large plane tree in Arsuz’s Gökmeydan neighborhood. No inscription on the marble-covered sarcophagus identifies its owner."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Türbe düz arazideki avluda, çok büyük bir çınar ağacının yanında, kareye yakın dikdörtgen planlı olarak yapılmıştır. Tüm cephelerdeki pencerelerle aydınlanır; kapı açıklığı sivri kemerli bir niş içindedir. Taş örgülü cepheler mermerle kaplıdır; sundurmalı girişi ve geniş saçaklı beton çatı üzerinde yuvarlak bir kubbesi vardır. Sanduka mermer kaplı olup duvar kenarına yerleştirilmiştir; üzerinde türbe sahibinin kimliğine dair kitabe yoktur.",
+        "en": "The tomb was built on a rectangular plan close to a square in a courtyard on flat land, beside a very large plane tree. It is lit by windows on all façades; the door opening sits in a pointed-arched niche. The stone façades are marble-clad; it has a porch entrance and a round dome on a wide-eaved concrete roof. The marble-covered sarcophagus is set against the wall and carries no inscription about the owner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "408"
+        }
+      ]
+    },
+    {
+      "id": "avlu",
+      "order": 2,
+      "title": {
+        "tr": "Avlu yapıları",
+        "en": "Courtyard structures"
+      },
+      "body": {
+        "tr": "Diğer türbelere göre oldukça sade olan makamın yakınında ibadet ve toplantı için kullanılan bir betonarme yapı vardır. Avluda kurbanlık ve adak kesimi ile pişirme için kullanılabilecek yapılar da bulunur.",
+        "en": "Near the maqam, rather plain compared with other tombs, is a reinforced-concrete building used for worship and meetings. The courtyard also has structures for sacrificial and votive slaughter and cooking."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "408"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kareye yakın dikdörtgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "408"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Makam, büyük bir çınar ağacının yanındaki avluda, kareye yakın dikdörtgen planlı küçük bir yapıdır. Cepheleri mermer kaplı, girişi sundurmalıdır; geniş saçaklı çatısı üzerinde yuvarlak bir kubbe vardır. İçinde duvar kenarında mermer kaplı bir sanduka bulunur.",
+      "en": "The maqam is a small building on a rectangular plan close to a square, in a courtyard beside a large plane tree. Its façades are marble-clad and the entrance has a porch; a round dome rises on a wide-eaved roof. Inside, a marble-covered sarcophagus stands by the wall."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Türbeler / Ziyaretler bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-arsuz-gokmeydan-seyh-hizir-makami/p205-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "409"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Makamın mermer kaplı cephesi ve girişi",
+        "en": "Marble-clad front and entrance of the maqam"
+      },
+      "alt": {
+        "tr": "Beyaz ve bal rengi mermer şeritlerle kaplı alçak bir cephe; ortada sivri kemerli bir niş ve açık duran kapı, sağda yazılı bir levha, üstte oluklu metal sundurma.",
+        "en": "A low façade clad in alternating white and honey-coloured marble bands; a pointed-arch niche with an open door in the middle, an inscribed plaque on the right and a corrugated metal canopy above."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

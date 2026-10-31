@@ -1,0 +1,594 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-maksem-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Türkçe metinde adres numarası yok; 'No. 2' yalnızca İngilizce metinden alındı (s. 389).",
+      "Kitabedeki Sultan Mehmed bin Murad'ın hangi padişah olduğu kitapta açıkça belirtilmiyor.",
+      "Mahalle, Maksem su kaynağı ve künkler için ayrı kayıt yok; varsa su ağı ilişkisi (water_supply) eklenebilir.",
+      "Minberin yapım tarihi ve mihrap boyası onarımı kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Arapça kitabe metni (transliterasyon) 'Yahyâ bin Yahyâ Hüseyin' der; kitabın Türkçe 'Mealen' metni 'Yahya Hüseyin oğlu Yahya' biçimindedir. Baba/dede adlarının sırası iki metinde farklı görünüyor; kitap bunu açıklamıyor."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap Muharrem 884'ü 'Mart-Nisan 1479' olarak verir; kaynağın değeri korundu."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Türkçe metin adres numarası vermezken İngilizce metin 'Maksem Street, No. 2' der."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Maksem (Düsturhan) Camii",
+    "en": "Maksem (Düsturhan) Mosque"
+  },
+  "subtitle": {
+    "tr": "H. 884 / M. 1479 tarihli kitabesi olan, Maksem Mahallesi'ndeki kubbeli cami",
+    "en": "Domed mosque in Maksem Neighborhood with an inscription dated AH 884 / AD 1479"
+  },
+  "alternate_names": [
+    {
+      "tr": "Düsturhan Camii",
+      "en": "Düsturhan Mosque",
+      "note": "Banî Düstur Han adıyla bilinen Yahya'dır"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Bursa tipi",
+    "kurşun kubbe",
+    "kitabe",
+    "Maksem",
+    "çınar",
+    "şadırvan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Maksem",
+    "address": "Maksem Caddesi, No. 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "389"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.177176,
+      "lng": 29.062166,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/360467973 ('Maksem (Düstürhan) camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. Muharrem 884 / M. Mart-Nisan 1479",
+      "en": "AH Muharram 884 / AD March-April 1479"
+    },
+    "start_year": 1479,
+    "end_year": 1479,
+    "hijri_year": 884,
+    "century": 15,
+    "basis": {
+      "tr": "Yapım tarihi Arapça kitabeden alınmıştır.",
+      "en": "The date is taken from the Arabic inscription."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "390"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Yahya bin Yahya Hüseyin, Düstur Han (Düsturhan) olarak bilinen",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "390"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kitabesine göre H. Muharrem 884 / M. Mart-Nisan 1479'da 'Düsturhan' olarak bilinen Yahya tarafından yaptırılan, taş ve tuğla almaşık duvarlı, sekizgen kasnaklı kurşun kubbeli cami. Kitaba göre Bursa tipi mimarinin birçok özelliğini taşır; yalnızca kalkan duvarı yoktur. 1855 depreminde hasar görmüş, 1955'te onarılmış, bahçesinde 1980'de yapılan şadırvan ve Bursa'nın en yaşlı çınarlarından biri bulunur.",
+    "en": "A domed mosque with alternating stone and brick walls and a lead-covered dome on an octagonal drum, built, according to its inscription, in AH Muharram 884 / AD March-April 1479 by Yahya, known as 'Düstur Han'. The book says it combines many features of the Bursa type of architecture, lacking only a parapet wall. Damaged in the 1855 earthquake and repaired in 1955, it has a shadirvan built in 1980 and one of Bursa's oldest plane trees in its courtyard."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Ad",
+        "en": "Location and Name"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Maksem Mahallesi, Maksem Caddesi üzerinde yer alır. Eski adı Mecidiye Caddesi olan Maksem Caddesi'nin sonundaki küçük meydandadır. Mahalle, büyük bir su kaynağının bulunması ve şehre kırktan fazla künkle su dağıtımı yapılması nedeniyle \"Maksem Mahallesi\" olarak anılmakta, cami de zamanla bu isimle anılmaya başlanmıştır.",
+        "en": "The mosque is in Osmangazi District, Maksem Neighborhood, on Maksem Street. It stands in the small square at the end of Maksem Street, formerly known as Mecidiye Street. The neighborhood is called 'Maksem' (Water Depot) because of a large water source and the distribution of water to the city through more than forty pipes; the mosque came to be called by this name over time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "389"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe ve Banisi",
+        "en": "Inscription and Founder"
+      },
+      "body": {
+        "tr": "Caminin 57 × 117 cm boyutlarındaki, nispeten güzel fakat girift bir sülüsle yazılmış üç satırlık Arapça kitabesinden, yapının H. Muharrem 884 / M. Mart-Nisan 1479 tarihinde \"Düsturhan\" olarak bilinen Yahya Hüseyin oğlu Yahya tarafından inşa ettirildiği anlaşılmaktadır. Kitabede Sultan Mehmed bin Murâd Han'ın saltanatı anılır.",
+        "en": "From the mosque's three-line Arabic inscription, 57 × 117 cm, written in a relatively beautiful but intricate thuluth, it is understood that the building was built in AH Muharram 884 / AD March-April 1479 by Yahya, son of Yahya Hüseyin, known as 'Düstur Han'. The inscription mentions the reign of Sultan Mehmed, son of Murad Khan."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami 7,10 × 8,00 m ölçülerindedir; üzeri kubbeli, son cemaat yeri tonozludur. Beden duvarları taş ve tuğlanın almaşık düzeniyle örülmüştür. Duvarların üstünde, kesme küfeki taşıyla örülmüş, Türk üçgenleriyle geçiş sağlanmış sekizgen kasnağa oturan, kurşun kaplı 7,5 m'lik bir kubbe yer alır; kubbe altında iki sıra kirpi saçak vardır. Yaklaşık 4 m derinliğindeki son cemaat yeri ahşap karkaslı, üç bölümlü ve sivri kemerle çevrilidir; yan cepheleri dahil camekânla kapatılmıştır. Pencereler girintiler içine yerleştirilmiş, mermer söveli ve demir parmaklıklıdır; alt sırada sekiz, üst sırada altı, kasnakta dört pencere vardır. Güney cephedeki pencere kemerleri yalnızca tuğladandır.",
+        "en": "The mosque measures 7.10 × 8.00 m; it is domed with a vaulted narthex. The main walls alternate stone and brick. Above them a 7.5 m lead-covered dome sits on an octagonal drum of cut limestone with a Turkish-triangle transition; two rows of sawtooth cornice run under the dome. The narthex, about 4 m deep, has three bays with a wooden frame and a pointed arch, enclosed with glass including its side façades. Windows are set in recesses with marble frames and iron grilles; eight lower, six upper and four drum windows light the interior. Window arches on the south façade are of brick only."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "390-391"
+        }
+      ]
+    },
+    {
+      "id": "bursa-tipi",
+      "order": 4,
+      "title": {
+        "tr": "Bursa Tipi Özellikler",
+        "en": "Bursa-Type Features"
+      },
+      "body": {
+        "tr": "Bu yapıda, Osmanlı mimarisinin başlangıcı kabul edilen Bursa tipi mimarinin birçok özelliği bir araya gelmiştir: moloz taş ve kesme köfeki taşın birlikte kullanıldığı, alt kesimde iki, üst kesimde üç sıra tuğlalı duvar örgüsü. Cephede yanlarda iki geniş ve yüksek kemer, ortada daha yüksek, dar ve sivri kemerli bir giriş vardır. Bursa geleneğine uymayan tek özellik kalkan duvarın bulunmamasıdır; bu nedenle giriş kemeri kirpi saçağa kadar yükselmiş ve nispetler bozulmasın diye kemerin içine Doğu sanatına özgü ikinci bir kırma kemer eklenmiştir.",
+        "en": "The building combines many features of the Bursa type of architecture, considered the beginning of Ottoman architecture: walls using rubble stone with cut limestone, with two rows of brick in the lower section and three in the upper. The façade has two wide, high arches on the sides and a narrower, higher pointed-arch entrance in the middle. The only feature that does not comply with Bursa tradition is the lack of a parapet wall; the entrance arch therefore rises to the sawtooth cornice and a second broken arch, typical of Eastern art, was added inside it to keep the proportions."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "391"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan-minare",
+      "order": 5,
+      "title": {
+        "tr": "Mihrap, Minber ve Minare",
+        "en": "Mihrab, Minbar and Minaret"
+      },
+      "body": {
+        "tr": "Mihrabın beş sıra mukarnaslı kavsarası yağlı boyayla kötü biçimde boyanmıştır. 1930'lu yıllarda camide cuma namazlarının kılınması minberin bu tarihten önce var olduğuna işaret eder. Doğu duvarına bitişik tek minare tuğla gövdeli ve tek şerefelidir; düzgün moloz taş ve tuğla almaşık düzeniyle sekizgen kaide üzerine inşa edilmiş, gövdeye geçiş tuğla örgülü Türk üçgenleriyle sağlanmıştır.",
+        "en": "The five-row muqarnas hood of the mihrab is poorly painted with oil paint. Friday prayers being held in the mosque in the 1930s indicates that the minbar existed before then. The single minaret adjacent to the east wall has a brick shaft and one balcony; it stands on an octagonal base of alternating regular rubble stone and brick, with a brick Turkish-triangle transition to the shaft."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "391"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 6,
+      "title": {
+        "tr": "Onarımlar ve Bahçe",
+        "en": "Repairs and Courtyard"
+      },
+      "body": {
+        "tr": "1855 depreminde son cemaat bölümü, kubbeleri ve minaresi hasar görmüştür. Giriş cephesi bir dönem sıvanmış ve profilli saçak silmesi eklenmiştir; güney cephenin tamamına yakını bilinmeyen bir tarihte yenilenmiş ve duvardaki almaşık örgü bozulmuştur. Cami 1955'te onarılmıştır. Bahçesindeki altı ayaklı, beton kubbeli şadırvan 1980'de yapılmıştır. Avluda Bursa'nın en yaşlı çınarlarından biri bulunur.",
+        "en": "In the 1855 earthquake the narthex, domes and minaret were damaged. The entrance façade was plastered for a time and a profiled eaves molding added; almost the whole south façade was renewed at an unknown date, damaging the alternating masonry. The mosque was repaired in 1955. The concrete-domed shadirvan on six piers in the garden was built in 1980. In the courtyard is one of the oldest plane trees in Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "390-391"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "cami_olcu",
+      "label": {
+        "tr": "Cami ölçüsü",
+        "en": "Mosque size"
+      },
+      "value": "7,10 × 8,00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_olcu",
+      "label": {
+        "tr": "Kubbe ölçüsü",
+        "en": "Dome measure"
+      },
+      "value": 7.5,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "390"
+        }
+      ],
+      "note": {
+        "tr": "Türkçe metin '7,5 m'lik bir kubbe', İngilizce metin '7.5 m high lead-covered dome' der; ölçünün yükseklik mi çap mı olduğu açık değil.",
+        "en": "Turkish says a '7.5 m' dome, English says '7.5 m high'; unclear whether height or diameter."
+      }
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": "yaklaşık 4",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_olcu",
+      "label": {
+        "tr": "Kitabe ölçüsü",
+        "en": "Inscription size"
+      },
+      "value": "57 × 117",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "alt_pencere",
+      "label": {
+        "tr": "Alt sıra pencere",
+        "en": "Lower-row windows"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "391"
+        }
+      ]
+    },
+    {
+      "key": "ust_pencere",
+      "label": {
+        "tr": "Üst sıra pencere",
+        "en": "Upper-row windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "391"
+        }
+      ]
+    },
+    {
+      "key": "kasnak_pencere",
+      "label": {
+        "tr": "Kasnaktaki pencere",
+        "en": "Windows in the drum"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "391"
+        }
+      ]
+    },
+    {
+      "key": "sadirvan_ayak",
+      "label": {
+        "tr": "Şadırvan ayak sayısı",
+        "en": "Shadirvan piers"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "391"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Yahya bin Yahya Hüseyin (Düstur Han)",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kitabe-884",
+      "location": {
+        "tr": "Cami kitabesi (üç satır; 57 × 117 cm)",
+        "en": "Mosque inscription (three lines; 57 × 117 cm)"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "Kad benâ hâzihi’l-mescidi’l-mubârek fî eyyâmi’s-saltanatihî’s-sultânu’l-berreyn ve hâkânu’l-bahreyn es-sultân ibnu’s-sultân Sultân Mehmed bin Murâd Hân halleda’llâhu mülkehû ve sultânehû el-abdu’l-muhtâc ila’llâhi’l-meliki’l-muhyî Yahyâ bin Yahyâ Hüseyin eş-şehîr bi-Düstûrhân gaffara’llâhu lehû ve li-vâlideyhi fî şehri Muharremu’l-harâm sene erba’a ve semânîne ve semâne mi’e mine’l-hicriyyeti’n-nebeviyyeti’l-Mustafaviyye.",
+      "translation": {
+        "tr": "Bu mübarek mescidi karalar Sultanı denizlerin Hakanı Padişah oğlu Padişah Murad oğlu Sultan Mehmed (Allah mülkünü ve saltanatını daim eylesin) zamanında; hayat veren, mülk sahibi olan Allah’ın rahmetine muhtaç Düstur Han adı ile meşhur, Yahya Hüseyin oğlu Yahya (Allah kendisini affetsin) anne ve babasına da mağfiret dileyerek Hicrî 884 senesi Muharrem ayında inşa etti.",
+        "en": "This blessed mosque was built during the reign of Sultan Mehmed, son of Sultan Murad, son of the Sultan of the lands, the ruler of the seas (May Allah perpetuate his dominion and reign); known by the name of Düstur Han, who is in need of the mercy of Allah, the giver of life and owner of property, by Yahya, son of Yahya Huseyin (May Allah forgive him), in the month of Muharram, 884 Hijri."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 884,
+        "gregorian": "Mart-Nisan 1479"
+      },
+      "note": {
+        "tr": "Çeviri kitabın 'Mealen' metnidir.",
+        "en": "Translation is the book's 'Mealen' text."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "390"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1479",
+      "year": 1479,
+      "date": null,
+      "hijri": "Muharrem 884",
+      "type": "construction",
+      "title": {
+        "tr": "Cami Düsturhan olarak bilinen Yahya tarafından inşa ettirildi (kitabe)",
+        "en": "Mosque built by Yahya, known as Düsturhan (inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Deprem: son cemaat yeri, kubbeler ve minare hasar gördü",
+        "en": "Earthquake damaged the narthex, domes and minaret"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1955",
+      "year": 1955,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami onarıldı",
+        "en": "The mosque was repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "391"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan-1980",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Bahçedeki beton kubbeli şadırvan yapıldı",
+        "en": "Concrete-domed shadirvan built in the garden"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "391"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Maksem Camii, Maksem Caddesi'nin sonundaki küçük meydanda yer alan, kubbeli bir yapıdır. Taş ve tuğla almaşık örgülü duvarların üstünde, sekizgen kasnağa oturan kurşun kaplı bir kubbe yükselir; kubbe altında iki sıra kirpi saçak vardır. Önünde ahşap karkaslı, camekânla kapatılmış üç bölümlü bir son cemaat yeri bulunur. Doğu duvarına bitişik, tuğla gövdeli, tek şerefeli bir minaresi vardır. Bahçesinde altı ayaklı, beton kubbeli bir şadırvan ve Bursa'nın en yaşlı çınarlarından biri yer alır.",
+      "en": "Maksem Mosque is a domed building in the small square at the end of Maksem Street. Over walls of alternating stone and brick rises a lead-covered dome on an octagonal drum, with two rows of sawtooth cornice below it. In front is a three-bay narthex with a wooden frame, enclosed in glass. A brick-shafted, single-balcony minaret adjoins the east wall. The garden holds a concrete-domed shadirvan on six piers and one of Bursa's oldest plane trees."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-maksem-camii/p120-1.jpg",
+        "original_name": "DJI_20241011155647_0380_D-Edit.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "389"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin kubbesi, minaresi ve sokak görünümü",
+        "en": "The mosque's dome, minaret and street view"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla almaşık duvarlı cami; gri kubbe ve ince tuğla minare var. Önünde ağaç, çevrede renkli apartmanlar ile dağ yamacı görünüyor.",
+        "en": "A mosque of alternating stone and brick with a grey dome and a slender brick minaret. A tree stands in front, with colourful apartment blocks and a mountain slope around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-maksem-camii/p121-1.jpg",
+        "original_name": "Maksem Camii 3-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "390"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Mavi ve yeşil süslü mihrap ortada, sağda ahşap minber yer alıyor. Üstte avize, yanlarda vitraylar ve zeminde mavi-beyaz madalyonlu kırmızı halı var.",
+        "en": "A mihrab with blue and green decoration at the centre and a wooden minber on the right. A chandelier hangs above, stained glass on the sides and a red carpet with a blue-white medallion on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-maksem-camii/p122-1.jpg",
+        "original_name": "Maksem Camii 5-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "391"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap mahfil ve giriş tarafı",
+        "en": "Wooden gallery and entrance side"
+      },
+      "alt": {
+        "tr": "Girişin üstünde korkuluklu ahşap mahfil var; altında kapılar ve kafesli bölmeler görünüyor. Duvarlarda hat levhaları, ortada avize ve kırmızı halı yer alıyor.",
+        "en": "A railed wooden gallery above the entrance, with doors and lattice partitions beneath. Calligraphy panels hang on the walls, with a chandelier and a red carpet at the centre."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
+  "archive_media": []
+}

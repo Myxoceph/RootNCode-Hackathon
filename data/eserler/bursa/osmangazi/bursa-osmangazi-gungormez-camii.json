@@ -1,0 +1,375 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-gungormez-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
+      "Fotoğraflar match_photos.py ile eklenecek (media, media_folder boş).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Mezar taşlarındaki yazıların transkripsiyonu kitapta verilmiyor; inscriptions boş.",
+      "Mahalle bilgisi çelişkili (Şehreküstü / Tahtakale)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location",
+        "note": "Başlık satırı Şehreküstü Mahallesi, Cemal Nadir Caddesi No. 94 diyor; devam eden metin Tahtakale Mahallesi'nde Atatürk Caddesi üzerinde diyor (s. 314). Başlık adresi esas alındı, çelişki işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Güngörmez Camii ve Haziresi",
+    "en": "Güngörmez Mosque and Graveyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Güngörmez",
+      "en": "Güngörmez (Sunless)",
+      "note": "Güneş almadığı için halk arasındaki ad"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "tek kubbeli",
+    "hazire",
+    "Ulucami karşısı",
+    "çınar"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Şehreküstü",
+    "address": "Cemal Nadir Caddesi, No. 94",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "314"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.183456,
+      "lng": 29.060427,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q132134565 ('Güngörmez Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 970-971 / M. 1562-1563'ten önce",
+      "en": "Before AH 970-971 / AD 1562-1563"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapının bu tarihten önce Abdullah Efendi tarafından mescit olarak yaptırıldığını söylüyor; kesin yıl yok.",
+      "en": "The book says it was built as a masjid by Abdullah Efendi before this date; no exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "314"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Abdullah Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "314-316"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Ulucami'nin tam karşısında, Tahtakale Hanı'nın kuzeyine bitişik tek kubbeli cami; Abdullah Efendi tarafından H. 970-971 / M. 1562-1563'ten önce mescit olarak yaptırılmıştır. Bahçesinde hazire vardır.",
+    "en": "A single-domed mosque across from the Ulucami and adjoining the north of the Tahtakale Han; built as a masjid by Abdullah Efendi before AH 970-971 / AD 1562-1563. Its garden holds a graveyard."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami, H. 970-971 / M. 1562-1563 yılından önce Abdullah Efendi tarafından mescit olarak yaptırılmıştır. Geçmişte uzun süre harap hâlde bulunan, şahsa ait ve depo olarak kullanılan yapı 1965'te Bursa Eski Eserleri Sevenler Kurumu tarafından ibadete açılmış, 1978'de Vakıflar Genel Müdürlüğü tarafından kamulaştırılmıştır. Çok kez onarım gördüğünden aslı oldukça bozulmuştur.",
+        "en": "The mosque was built as a masjid by Abdullah Efendi before AH 970-971 / AD 1562-1563. Long in ruins, privately owned and used as a warehouse, it was opened for worship by the Bursa Association for the Appreciation of Antiquities in 1965 and expropriated by the General Directorate of Foundations in 1978. Repeated repairs have considerably altered its original form."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "314-315"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Tek kubbeli, mütevazı bir yapıdır; beden duvarları moloz taştandır. Kıble duvarı Tahtakale Hanı'nın kuzeyine bitişiktir. Doğu ve batı cepheleri de kapalı olduğu için güneş almadığından halk arasında Güngörmez adını almıştır. Dıştan sekizgen kasnaklı kubbeye içeriden Türk üçgenleriyle geçilir; kubbe çatı üzerinden bir yükseltiyle öne çıkarılmıştır. Çatı ve kubbe eteklerinde iki sıra kirpi saçak vardır.",
+        "en": "A modest single-domed building with rubble-stone walls. The qibla wall adjoins the north of the Tahtakale Han. Because its east and west sides are also closed it gets no sunlight, hence the popular name Güngörmez (Sunless). The dome has an octagonal drum outside and Turkish triangles inside, and rises above the roof. Two-row sawtooth cornices run at the roof and dome skirts."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "315"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 3,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "Narthex"
+      },
+      "body": {
+        "tr": "Son restorasyonda aslıyla ilgisi olmayan ahşap bir son cemaat yeri bulunan camiye, 2023'te Vakıflar Bölge Müdürlüğü restorasyonuyla üç gözlü sivri kemerli bir son cemaat yeri eklenmiştir. Bu bölüm Bursa camilerinin genel özelliği olan üç sıra tuğla bir sıra taşla inşa edilmiştir.",
+        "en": "In the last restoration the mosque had a wooden narthex unrelated to the original; in 2023 the Regional Directorate of Foundations added a three-bay pointed-arch narthex, built of three rows of brick and one of stone, typical of Bursa mosques."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "315"
+        }
+      ]
+    },
+    {
+      "id": "cevre",
+      "order": 4,
+      "title": {
+        "tr": "Çevre",
+        "en": "Surroundings"
+      },
+      "body": {
+        "tr": "Önünde anıtsal tarihî bir çınar, dış duvarının sonunda bir çeşme ve bahçesinde hazire bulunur.",
+        "en": "In front stands a monumental historic plane tree, with a fountain at the end of the outer wall and a graveyard in the garden."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "315"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 5,
+      "title": {
+        "tr": "Hazire",
+        "en": "Graveyard"
+      },
+      "body": {
+        "tr": "Caminin kuzeyinde ve batısındaki hazire alanında, kuzeydeki mezar taşı eskiden kalmadır; H. 970 / M. 1563'te vefat eden banisi Abdullah Efendi'ye aittir. Avluda daha önce bulunan mezarlar 1965 onarımında kaldırılmış, yerine Bursa Din Görevlileri Lokali yapılmıştır. Son onarımda lokal yıktırılarak yerine hazire düzenlenmiş; burada medfun olanlardan bazıları için mezar taşları yazılıp dikilmiştir. Bunlar arasında Sinan Bey bin Mehmed Bey, Zeyneb bint-i Ahmed bin Yusuf ve Mahmud Çelebi bin Ahmed de vardır.",
+        "en": "In the graveyard north and west of the mosque, the northern gravestone is old and belongs to the founder Abdullah Efendi, who died in AH 970 / AD 1563. The graves formerly in the courtyard were removed in the 1965 repair and the Bursa Religious Officials' Club was built there. In the last renovation the club was demolished and a graveyard laid out; gravestones were inscribed and erected for some of those buried, among them Sinan Bey bin Mehmed Bey, Zeyneb bint-i Ahmed bin Yusuf and Mahmud Çelebi bin Ahmed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "315-316"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Kubbe sayısı",
+        "en": "Number of domes"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "315"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat göz sayısı",
+        "en": "Narthex bays"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "315"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Abdullah Efendi",
+      "role": {
+        "tr": "Banî (ö. H. 970 / M. 1563)",
+        "en": "Founder (d. AH 970 / AD 1563)"
+      }
+    },
+    {
+      "name": "Sinan Bey bin Mehmed Bey",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Zeyneb bint-i Ahmed bin Yusuf",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    },
+    {
+      "name": "Mahmud Çelebi bin Ahmed",
+      "role": {
+        "tr": "Hazirede medfun",
+        "en": "Buried in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kamulastirma-1978",
+      "year": 1978,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü tarafından kamulaştırıldı",
+        "en": "Expropriated by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "315"
+        }
+      ]
+    },
+    {
+      "id": "ibadete-1965",
+      "year": 1965,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından ibadete açıldı; avludaki mezarlar kaldırıldı",
+        "en": "Opened for worship by the Bursa Association for the Appreciation of Antiquities; courtyard graves removed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "315"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-2023",
+      "year": 2023,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü restorasyonunda üç gözlü sivri kemerli son cemaat yeri eklendi",
+        "en": "Three-bay pointed-arch narthex added in the Regional Directorate of Foundations restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "315"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-ulucami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami Ulucami'nin tam karşısında yer alır.",
+        "en": "The mosque stands directly opposite the Ulucami."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "314"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-tahtakale-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Kıble duvarı Tahtakale Hanı'nın kuzeyine bitişiktir.",
+        "en": "The qibla wall adjoins the north of the Tahtakale Han."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "315"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Güngörmez Camii, Tahtakale Hanı'nın kuzeyine bitişik, tek kubbeli ve moloz taş duvarlı mütevazı bir yapıdır. Dıştan sekizgen kasnaklı kubbe çatının üzerinden yükselir. Önünde 2023'te eklenmiş, üç gözlü sivri kemerli tuğla-taş bir son cemaat yeri bulunur. Önünde anıtsal bir çınar, dış duvarının sonunda bir çeşme ve bahçesinde mezar taşlarının olduğu bir hazire vardır.",
+      "en": "Güngörmez Mosque is a modest single-domed building with rubble-stone walls, adjoining the north of the Tahtakale Han. The dome, on an octagonal drum, rises above the roof. In front is a brick-and-stone narthex of three pointed arches added in 2023. A monumental plane tree stands before it, a fountain at the end of its outer wall, and a graveyard with gravestones in the garden."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

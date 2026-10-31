@@ -1,0 +1,557 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-zazadin-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kitâbelerin asıl metni, dili ve okunuşu kitapta verilmiyor.",
+      "Kubadabad Sarayı için ids.md'de kayıt yok; ilişki yazılmadı.",
+      "Hanın mimarı kitapta belirtilmiyor; Sadeddin Köpek'in mimarlığı yalnızca Kubadabad için aktarılıyor (architect: null).",
+      "Tömek Köyü'ne uzaklık kitapta verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Dosya başlığında 'Zazadin (Saadettin Köpek)', sayfa başlığında 'Zazadin (Sadeddin Köpek)', metinde 'Sâdeddin/Sadeddin Köpek' yazıyor; metin yazımı esas alındı."
+      },
+      {
+        "field": "sections[banisi]",
+        "note": "Türkçe metin Ahidnâme'yi İbn Bîbî'nin yazdığını ve Köpek'ten 'emîr-i şikâr, nakkaş ve mimar' diye söz ettiğini belirtir; İngilizce metinde özne belirsizdir ('he ... refers to himself as ... miniaturist and architect'). Türkçe esas alındı."
+      },
+      {
+        "field": "dating",
+        "note": "İki kitâbe iki ayrı sultanı anar: 633'te 'Keyhüsrev oğlu Keykubad' (I. Alâeddin Keykubad), 634'te 'Keykubad oğlu Keyhüsrev' (II. Gıyaseddin Keyhüsrev). Metin 'ikisinin dönemlerinde tamamlandı' der; çelişki görülmedi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Zazadin Hanı",
+    "en": "Zazadin Inn"
+  },
+  "subtitle": {
+    "tr": "Konya'da Anadolu Selçuklu Devleti'nin yaptırdığı en büyük kervansaray",
+    "en": "The largest caravanserai built by the Anatolian Seljuk State in Konya"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sadeddin Köpek Hanı",
+      "en": "Sadeddin Köpek Inn",
+      "note": "Başlıkta \"Zazadin (Sadeddin Köpek)\"; içindekilerde \"Saadettin Köpek\""
+    }
+  ],
+  "type": "han",
+  "secondary_types": [
+    "kervansaray"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "han",
+    "kervansaray",
+    "Selçuklu hanı",
+    "kalevâri",
+    "iki renkli taş",
+    "payandalı",
+    "mescit",
+    "Konya-Aksaray yolu",
+    "Sadeddin Köpek"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Tömek Köyü yakını",
+    "address": "Konya-Aksaray yolunun 22. km'si",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "262"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.00396,
+      "lng": 32.677702,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap relation/3203038 ('Zazadin Han'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Kapalı bölüm H. 633 / M. 1235-36; açık avlulu bölüm H. 634 / M. 1236-37",
+      "en": "Closed section 633 AH / 1235-36 AD; open-courtyard section 634 AH / 1236-37 AD"
+    },
+    "start_year": 1235,
+    "end_year": 1237,
+    "hijri_year": 633,
+    "century": 13,
+    "basis": {
+      "tr": "İki inşa kitâbesi: kapalı avlulu bölüm girişindeki H. 633 / M. 1235-36 ve açık avlulu bölüm taç kapısındaki H. 634 / M. 1236-37.",
+      "en": "Two construction inscriptions: 633 AH / 1235-36 AD at the entrance of the closed-courtyard section and 634 AH / 1236-37 AD on the crown gate of the open-courtyard section."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "262-263"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sadeddin Köpek",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "262-263"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Konya-Aksaray yolunun 22. km'sinde Tömek Köyü yakınında, Sadeddin Köpek'in iki aşamada (H. 633 ve 634) yaptırdığı, kalevâri görünümlü, kapalı ve açık avlulu Selçuklu kervansarayı. Anadolu Selçuklu Devleti'nin Konya'da yaptırdığı en büyük kervansaray sayılır; 2007'de Selçuklu Belediyesi tamir etmiştir.",
+    "en": "A fortress-like Seljuk caravanserai with closed and open courtyards, built by Sadeddin Köpek in two stages (633 and 634 AH) at the 22nd km of the Konya-Aksaray road near Tömek Village. It is the largest caravanserai the Anatolian Seljuk State built in Konya; the Selçuklu Municipality repaired it in 2007."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Kitâbeler",
+        "en": "Location and Inscriptions"
+      },
+      "body": {
+        "tr": "Han, Konya-Aksaray yolunun 22. km'sinde, Tömek Köyü'ne yakındır. İnşasına ait iki kitâbe vardır: biri güneydeki açık avlulu bölümün taç kapısında, diğeri kapalı avlulu (barınak) bölümün giriş kapısı üzerindedir. En erken tarihli olan, kapalı avlulu bölüm girişindeki H. 633 / M. 1235-36 tarihli kitâbedir; kapalı bölümün Keyhüsrev oğlu Keykubad döneminde Muhammed oğlu Köpek tarafından yaptırıldığını bildirir ve hanın ilk yapılan bölümünün burası olduğunu gösterir. İkinci kitâbe, açık avlulu bölümün yine Muhammed oğlu Köpek tarafından Keykubad oğlu Keyhüsrev döneminde H. 634 / M. 1236-37'de yapıldığını yazar. Bunlardan hanın önce kapalı bölümünün yaptırıldığı, banisinin Sadeddin Köpek olduğu ve Sultan Alâeddin Keykubad ile II. Gıyaseddin Keyhüsrev dönemlerinde tamamlandığı anlaşılır. Han 2007'de Selçuklu Belediyesi tarafından tamir edilmiştir.",
+        "en": "The inn is at the 22nd km of the Konya-Aksaray road near Tömek Village. There are two construction inscriptions: one on the crown gate of the open-courtyard section in the south, the other above the entrance of the closed-courtyard (shelter) section. The earliest, at the closed-courtyard entrance, is dated 633 AH / 1235-36 AD and states that the closed section was built by Köpek son of Muhammad in the time of Keykubad son of Keyhusrev; it shows this was the first part built. The second inscription says the open-courtyard section was built by the same Köpek son of Muhammad in 634 AH / 1236-37 AD in the time of Keyhusrev son of Keykubad. It is understood that the closed section was built first, that its patron was Sadeddin Köpek, and that it was completed in the reigns of Sultan Alâeddin Keykubad and Gıyaseddin Keyhüsrev II. The Selçuklu Municipality repaired the inn in 2007."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "262-263"
+        }
+      ]
+    },
+    {
+      "id": "banisi",
+      "order": 2,
+      "title": {
+        "tr": "Banisi Sadeddin Köpek",
+        "en": "The Patron Sadeddin Köpek"
+      },
+      "body": {
+        "tr": "Sâdeddin Köpek'in ilk yılları ve Anadolu Selçuklu Devleti'ne nasıl girdiği hakkında bilgi yoktur. İlk bilgiler İbn Bîbî'nin kayıtlarındadır; İbn Bîbî M. 1225-28 arasında kaleme aldığı Ahidnâme'de ondan \"emîr-i şikâr, nakkaş ve mimar\" olarak söz eder. Köpek'in, I. Alâeddin Keykubad'ın M. 1226-1236 arasında Beyşehir Gölü yakınında yaptırdığı Kubadabad Sarayı'nın da mimarı olduğu bilinir. Taht mücadelelerine karışan Köpek, bir ziyafette Hüsâmeddin Karaca tarafından öldürülmeye teşebbüs edilmiş, Emîr-i alem Togan'ın kılıç darbesiyle yaralanmış, sultanın şaraphanesine saklanmış; burada şarabdâr ve adamları tarafından Cemâziye'l-evvel 636 / Aralık 1238'de öldürülmüştür.",
+        "en": "Nothing is known of Sadeddin Köpek's early years or how he entered Anatolian Seljuk service. The first information is in Ibn Bibi's records; in the Ahidnâme written between 1225-28 AD he is referred to as \"emir-i şikâr, miniaturist and architect\". Köpek is also known to have been the architect of the Kubadabad Palace that Alâeddin Keykubad built near Lake Beyşehir between 1226-1236 AD. Involved in throne struggles, Köpek was targeted for assassination by Hüsâmeddin Karaca at a banquet, wounded by a sword blow from Emîr-i alem Togan, and hid in the sultan's winery, where he was killed by the cupbearer and his men in Jumada I 636 / December 1238."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "263-265"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Mimari Özellikler",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Han, doğu-batı yönünde uzanan dikdörtgen planlı, kapalı ve açık kısımlardan oluşur. Düzgün kesme taştan yapılmıştır; renkli taş işçiliği ve devşirme malzeme görülür. Yapı kalevâri (kale gibi) görünümlüdür; beden duvarlarında belirli aralıklarla kare, altıgen, sekizgen ve dairesel payandalar vardır. Hana giriş, güney cephedeki ve açık avluya açılan taç kapıdan olur; taç kapı dışa taşıntılı, dikdörtgen planlı, iki renkli taş işçiliğindedir, ortada sivri kemerli bir eyvana eklenmiş basık kemerli kapı açıklığı vardır ve düz tepelikle biter; kapı açıklığı üzerinde ikinci inşa kitâbesi yer alır. Taç kapının iki yanında görevli odaları, üstünde mescit bulunur. Açık avlu kapalı bölümden büyüktür; kuzey bölümü normal hizadan kuzeye taşar. Avlu çevresinde çeşitli büyüklükte kapalı odalar ve açık eyvanlar vardır; güneydoğu köşedeki büyük oda çapraz tonozlu tuğladır. Kapalı avlulu bölüme geçiş doğu cephedeki taç kapıdan sağlanır; bu bölüm beşerli dört sıra ayakla beş sahına bölünür, taç kapı ekseninde uzanan beşik tonozla örtülüdür; orta bölüm içten kubbe, dıştan külahla sonlanır. Yan sahınlar orta sahına dik uzanır ve beşik tonozludur; burada hayvanların bağlanacağı alanlar ve yolcuların oturacağı sekiler vardır.",
+        "en": "The inn has a rectangular plan extending east-west, with closed and open parts. It is built of smooth cut stone with coloured stonework and spolia. It has a fortress-like appearance, with square, hexagonal, octagonal and circular buttresses at intervals on the walls. Entry is through the crown gate on the south façade, which opens to the open courtyard; the gate projects outward, is rectangular and in two-tone stonework, has a low-arched door opening set in a pointed-arch iwan and ends in a flat cap; the second construction inscription is above the door opening. Staff rooms flank the gate and a masjid is above it. The open courtyard is larger than the closed section; its north part projects northward from the normal alignment. Around the courtyard are closed rooms of various sizes and open iwans; the large room at the southeast corner is cross-vaulted brick. The closed-courtyard section is entered through the crown gate on the east façade; it is divided into five aisles by four rows of five piers and covered by a barrel vault on the axis of the crown gate; the middle part ends in a dome inside and a cone outside. The side aisles run perpendicular to the middle aisle, are barrel-vaulted and hold places to tie animals and benches for travellers."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "264-265"
+        }
+      ]
+    },
+    {
+      "id": "onem",
+      "order": 4,
+      "title": {
+        "tr": "Önemi",
+        "en": "Significance"
+      },
+      "body": {
+        "tr": "Zazadin Hanı kalevâri görünümü, plan tipi ve büyüklüğüyle Anadolu Selçuklu kervansarayları içinde önemli bir yere sahiptir; Anadolu Selçuklu Devleti'nin Konya'da yaptırdığı en büyük kervansaraydır.",
+        "en": "With its fortress-like appearance, plan type and size, Zazadin Inn holds an important place among Anatolian Seljuk caravanserais; it is the largest caravanserai built by the Anatolian Seljuk State in Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "264-265"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "konum_km",
+      "label": {
+        "tr": "Konya-Aksaray yolunda konum",
+        "en": "Position on Konya-Aksaray road"
+      },
+      "value": "22. km",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "262"
+        }
+      ]
+    },
+    {
+      "key": "kapali_bolum_sahin",
+      "label": {
+        "tr": "Kapalı bölümde sahın sayısı",
+        "en": "Number of aisles in the closed section"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "264-265"
+        }
+      ],
+      "note": {
+        "tr": "Beşerli dört sıra ayak.",
+        "en": "Four rows of five piers."
+      }
+    },
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Kapalı bölümde ayak",
+        "en": "Pillars in the closed section"
+      },
+      "value": 20,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "264-265"
+        }
+      ]
+    },
+    {
+      "key": "onarim_yili",
+      "label": {
+        "tr": "Selçuklu Belediyesi onarımı",
+        "en": "Repair by Selçuklu Municipality"
+      },
+      "value": 2007,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "262"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sadeddin Köpek",
+      "role": {
+        "tr": "Banî; emîr-i şikâr, nakkaş ve mimar olarak anılır; Kubadabad Sarayı'nın mimarı",
+        "en": "Patron; described as emir-i şikâr, painter and architect; architect of Kubadabad Palace"
+      }
+    },
+    {
+      "name": "Hüsâmeddin Karaca",
+      "role": {
+        "tr": "Köpek'e ziyafette suikast girişiminde bulunan kişi",
+        "en": "Person who attempted to kill Köpek at a banquet"
+      }
+    },
+    {
+      "name": "Togan",
+      "role": {
+        "tr": "Emîr-i alem; Köpek'i kılıçla yaralayan kişi",
+        "en": "Emir-i alem; wounded Köpek with a sword"
+      }
+    },
+    {
+      "name": "İbn Bîbî",
+      "role": {
+        "tr": "Köpek hakkındaki ilk bilgilerin kayıtlarında bulunduğu tarihçi",
+        "en": "Chronicler whose records hold the first information on Köpek"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapali-bolum-kitabesi",
+      "location": {
+        "tr": "Kapalı avlulu (barınak) bölümün giriş kapısı üzeri",
+        "en": "Above the entrance gate of the closed-courtyard (shelter) section"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 633,
+        "gregorian": "1235-36"
+      },
+      "note": {
+        "tr": "Metin ve dil kitapta verilmiyor; içeriğin özeti aktarılıyor (Keyhüsrev oğlu Keykubad dönemi, Muhammed oğlu Köpek).",
+        "en": "Text and language not given; the book only summarises it (reign of Keykubad son of Keyhusrev; Köpek son of Muhammad)."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "262-263"
+        }
+      ]
+    },
+    {
+      "id": "acik-avlu-kitabesi",
+      "location": {
+        "tr": "Açık avlulu bölümün güney taç kapısı, kapı açıklığının üzeri",
+        "en": "Above the door opening of the south crown gate of the open-courtyard section"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 634,
+        "gregorian": "1236-37"
+      },
+      "note": {
+        "tr": "Metin ve dil kitapta verilmiyor; içeriğin özeti aktarılıyor (Keykubad oğlu Keyhüsrev dönemi, Muhammed oğlu Köpek).",
+        "en": "Text and language not given; the book only summarises it (reign of Keyhusrev son of Keykubad; Köpek son of Muhammad)."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "263-264"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kapali-bolum-1235",
+      "year": 1235,
+      "date": null,
+      "hijri": "633",
+      "type": "construction",
+      "title": {
+        "tr": "Kapalı avlulu bölüm Sadeddin Köpek tarafından yaptırıldı (H. 633 / M. 1235-36)",
+        "en": "Closed-courtyard section built by Sadeddin Köpek (633 AH / 1235-36 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "262-263"
+        }
+      ],
+      "note": {
+        "tr": "Kitâbe M. 1235-36 verir; yıl olarak 1235 alındı.",
+        "en": "The inscription gives 1235-36; 1235 is used."
+      }
+    },
+    {
+      "id": "acik-bolum-1236",
+      "year": 1236,
+      "date": null,
+      "hijri": "634",
+      "type": "construction",
+      "title": {
+        "tr": "Açık avlulu bölüm yaptırıldı (H. 634 / M. 1236-37)",
+        "en": "Open-courtyard section built (634 AH / 1236-37 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "263"
+        }
+      ],
+      "note": {
+        "tr": "Kitâbe M. 1236-1237 verir; yıl olarak 1236 alındı.",
+        "en": "The inscription gives 1236-1237; 1236 is used."
+      }
+    },
+    {
+      "id": "kopek-olumu-1238",
+      "year": 1238,
+      "date": null,
+      "hijri": "Cemâziye'l-evvel 636",
+      "type": "record",
+      "title": {
+        "tr": "Banî Sadeddin Köpek öldürüldü (Cemâziye'l-evvel 636 / Aralık 1238)",
+        "en": "Patron Sadeddin Köpek killed (Jumada I 636 / December 1238)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "264-265"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Selçuklu Belediyesi han'ı tamir etti",
+        "en": "The Selçuklu Municipality repaired the inn"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "262"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, kale gibi görünen, düzgün kesme taştan yapılmış büyük bir yapıdır. Dış duvarlarında kare, altıgen, sekizgen ve yuvarlak payandalar sıralanır. Güneydeki iki renkli taştan taç kapının iki yanında görevli odaları, üstünde mescit bulunur. Bu kapı büyük, açık bir avluya açılır; avlunun çevresinde odalar ve eyvanlar vardır. Doğudaki taç kapıdan girilen kapalı bölümde dört sıra ayak mekânı beş koridora ayırır; ortadaki bölümün üzerinde bir kubbe yükselir.",
+      "en": "The inn is a large, fortress-like building of smooth cut stone with square, hexagonal, octagonal and round buttresses along its outer walls. The two-tone stone crown gate on the south is flanked by staff rooms with a masjid above it. It opens into a large open courtyard ringed by rooms and iwans. In the closed section, entered through the crown gate on the east, four rows of piers divide the space into five aisles, and a dome rises over the middle part."
+    },
+    "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-zazadin-hani/p133-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "262"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Zazadin Hanı'nın kuşbakışı görünüşü",
+        "en": "Aerial view of Zazadin Han"
+      },
+      "alt": {
+        "tr": "Ovada duran büyük taş han, akşam ışığında aydınlatılmış. Avlunun etrafında kapalı bölümler uzanıyor; girişteki yüksek kısmın üstünde küçük bir külah yükseliyor.",
+        "en": "A large stone han on a wide plain, lit at dusk. Covered sections wrap around an open courtyard, and a small cone rises over the taller entrance part."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-zazadin-hani/p133-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "263"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kapalı bölümün sütunlu uzun mekânı",
+        "en": "Long aisle of the covered hall"
+      },
+      "alt": {
+        "tr": "Taş kemerlerle ayrılmış uzun, tonozlu bir mekân; iki yanda sekiler ve uzaktaki kısımda aydınlık bir pencere var. Sol tarafta duvar renkli ışıkla aydınlanmış.",
+        "en": "A long vaulted hall divided by stone arches, with raised platforms on both sides and a bright window at the far end. The left wall is lit with coloured light."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-zazadin-hani/p134-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "264-265"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Hanın açık avlusu",
+        "en": "The han's open courtyard"
+      },
+      "alt": {
+        "tr": "Taş döşeli geniş bir avlu; iki yanda sivri kemerli girişleri olan revaklar uzanıyor. Karşıda düz bir duvar, üstte açık gökyüzü görülüyor.",
+        "en": "A wide stone-paved courtyard with arcades of pointed arches along both sides. A plain wall closes the far end under an open sky."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-zazadin-hani/p135-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "266-267"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kubbe ve geçiş bölgesi",
+        "en": "Dome and transition zone"
+      },
+      "alt": {
+        "tr": "Aşağıdan bakılan taş bir kubbe; altında kabartmalı, kemerli nişler ve ortada küçük bir pencere var. Taş yüzey sarımsı ve kahverengi tonlarda.",
+        "en": "A stone dome seen from below, with arched niches and carved details beneath it and a small window in the middle. The stone is yellowish and brown."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

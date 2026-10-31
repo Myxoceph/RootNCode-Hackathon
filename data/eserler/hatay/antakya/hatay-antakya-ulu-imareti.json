@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-ulu-imareti",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Mimar kitapta verilmiyor.",
+      "Banî kitapta verilmiyor; founder null bırakıldı.",
+      "Vakıf/vakfiye bilgisi kitapta yok; waqf null.",
+      "Kitap imaretin işleyişi, tarihi ve banîsi hakkında bilgi vermiyor; yalnızca planını anlatıyor."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Ulu Camii İmareti",
+    "en": "Ulu Mosque Imarat"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "imaret",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-ulu-kulliyesi",
+  "era": null,
+  "tags": [
+    "imaret",
+    "antakya",
+    "ulu-camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "92-93"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.201913,
+      "lng": 36.161998,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (hatay-antakya-ulu-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Caminin güneydoğusunda, iki ayrı bina halinde düzenlenmiş aşevi.",
+    "en": "The soup kitchen southeast of the mosque, arranged as two separate buildings."
+  },
+  "sections": [
+    {
+      "id": "yapi",
+      "order": 1,
+      "title": {
+        "tr": "Yapı",
+        "en": "Structure"
+      },
+      "body": {
+        "tr": "Caminin güneydoğusundaki aşevi iki ayrı bina halinde düzenlenmiştir. Güneyde doğu-batı doğrultusunda konumlanmış iki mekân ile batıda diğerine zıt doğrultuda konumlanmış üç mekândan oluşur.",
+        "en": "The soup kitchen southeast of the mosque is arranged in two separate buildings. It consists of two spaces in the south running east-west and three spaces in the west running in the opposite direction."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "92-93"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "mekan_guney",
+      "label": {
+        "tr": "Güneydeki mekân sayısı",
+        "en": "Spaces in the south building"
+      },
+      "value": 2,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "92"
+        }
+      ]
+    },
+    {
+      "key": "mekan_bati",
+      "label": {
+        "tr": "Batıdaki mekân sayısı",
+        "en": "Spaces in the west building"
+      },
+      "value": 3,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "92"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-ulu-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Ulu Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Ulu Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "76-77"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İmaret caminin güneydoğusundadır ve iki ayrı binadan oluşur: güneyde doğu-batı doğrultulu iki mekân, batıda buna zıt doğrultuda üç mekân.",
+      "en": "The imarat lies southeast of the mosque in two separate buildings: two spaces running east-west in the south and three spaces running in the opposite direction in the west."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Ulu Camii İmareti bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-ulu-camii-ve-kulliyesi/p047-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "92-93"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "İmaretin bulunduğu ikinci avlu",
+        "en": "Second courtyard with the soup kitchen"
+      },
+      "alt": {
+        "tr": "Ağaçlı, kaldırım taşlı küçük avluda çalılıklarla çevrili bir yeşil alan vardır. Sağda kiremit çatılı, sundurmalı uzun bir yapı, arkada başka bir yapı ve minare görülür.",
+        "en": "A small tree-lined courtyard with cobbles and a planted green patch. On the right is a long tiled-roof building with a porch, and another building and a minaret behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

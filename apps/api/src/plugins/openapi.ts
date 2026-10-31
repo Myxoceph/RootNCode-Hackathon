@@ -25,6 +25,8 @@ export function registerOpenApi(app: FastifyInstance): void {
   app.setSerializerCompiler(() => (data) => JSON.stringify(data));
 
   app.register(swagger, {
+    // Routes have no base path to strip, and stripping would parse the relative server URL below as absolute.
+    stripBasePath: false,
     openapi: {
       openapi: "3.1.0",
       info: {
@@ -36,12 +38,46 @@ export function registerOpenApi(app: FastifyInstance): void {
           "Yanıtlar `@vagabonds/contracts` sözleşmesiyle doğrulanır. " +
           "Hatalar her zaman `{ error: { code, message } }` biçimindedir.",
       },
+      // Relative to this document (`<api root>/docs/json`), so "Try it out" also works
+      // when a proxy serves the API under a prefix (`/api` on the demo server).
+      servers: [{ url: "..", description: "Bu API" }],
       tags: [
         { name: "assets", description: "Vakıf eserleri" },
+        { name: "meta", description: "Kod listeleri ve etiketler" },
+        { name: "planner", description: "Vakıf Travel Planner: tematik yürüyüş rotası ve hava durumu" },
+        { name: "gastronomy", description: "Yöresel Kültür & Gastronomi: ilin coğrafi işaretli yöresel lezzetleri" },
+        { name: "community", description: "Ziyaretçi Nabzı: anonim oturum, katkılar, nabız akışı" },
+        { name: "assistant", description: "AI asistan: veri setinden, kaynaklı cevaplar" },
+        { name: "moderation", description: "Katkı moderasyonu (moderatör token'ı gerekir)" },
         { name: "system", description: "Sunucu durumu" },
       ],
+      components: {
+        securitySchemes: {
+          bearerAuth: {
+            type: "http",
+            scheme: "bearer",
+            description: "`POST /auth/anonymous`, `/auth/register` ya da `/auth/login` ile alınan token",
+          },
+        },
+      },
     },
   });
 
-  app.register(swaggerUi, { routePrefix: "/docs" });
+  // Replaces the API's `default-src 'none'` policy on the /docs routes with one Swagger UI loads under.
+  // Based on the plugin's `staticCSP: true` policy, minus `upgrade-insecure-requests` (it would break the
+  // docs on a demo server served over plain HTTP) and plus inline styles, which Swagger UI's bundle sets.
+  app.register(swaggerUi, {
+    routePrefix: "/docs",
+    staticCSP: {
+      "default-src": "'self'",
+      "base-uri": "'self'",
+      "font-src": "'self' https: data:",
+      "frame-ancestors": "'self'",
+      "img-src": "'self' data: validator.swagger.io",
+      "object-src": "'none'",
+      "script-src": "'self'",
+      "script-src-attr": "'none'",
+      "style-src": "'self' 'unsafe-inline' https:",
+    },
+  });
 }

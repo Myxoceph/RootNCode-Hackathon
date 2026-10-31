@@ -1,0 +1,455 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-ibn-i-bezzaz-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' Yıldırım Camiler bölümünden yapay zekâ ile özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı kitapta yok; dating.start_year null.",
+      "Depremin tarihi bilinmiyor.",
+      "Hazirede adı geçen ancak taşı kalmamış kişinin kimliği kitapta verilmiyor.",
+      "Mimar ve vakıf bilgisi yok.",
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[olum-1423]",
+        "note": "Kitap 'H. 826 / M. 1423-1424' yazıyor. H. 826 yılı yaklaşık Aralık 1422 - Aralık 1423 arasına denk gelir; miladi 1424 buna uymuyor. İki değer kaynağa sadık kalınarak saklandı, kayıt 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İbn-i Bezzaz Camii",
+    "en": "İbn-i Bezzaz Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "İbn-i Bezzaz Camii ve Haziresi",
+      "en": "İbn-i Bezzaz Mosque and Graveyard"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Çelebi Mehmed",
+    "Bezzâziye",
+    "fetva",
+    "hazire",
+    "deprem",
+    "ahşap çatı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Hoca Taşkın",
+    "address": "İncirli Caddesi, No: 58",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "229"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.183544,
+      "lng": 29.07918,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q127786793 ('İbn-i Bezzaz Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyılın başları (Çelebi Mehmed dönemi)",
+      "en": "Early 15th century (reign of Çelebi Mehmed)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap 'Sultan Çelebi Mehmed döneminde' ve 'XV. yüzyılın başlarında' diyor; yıl yok.",
+      "en": "The book says 'during the reign of Sultan Çelebi Mehmed' and 'early 15th century'; no year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "229,231"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hâfızüddin Efendi (İbn Bezzâz)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "229"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Çelebi Mehmed döneminde 'Bezzâziye' fetva mecmuasının yazarı Hâfızüddin Efendi (İbn Bezzâz) tarafından yaptırılan cami; depremde kubbesi çökmüş, ahşap çatıyla kapatılmıştır. Doğusunda üç mezar taşlı bir hazire vardır.",
+    "en": "A mosque built in Çelebi Mehmed's reign by Hâfızüddin Efendi (İbn Bezzâz), author of the fatwa collection 'Bezzâziye'; its dome collapsed in an earthquake and was replaced by a wooden roof. A graveyard with three tombstones lies to its east."
+  },
+  "sections": [
+    {
+      "id": "banisi",
+      "order": 1,
+      "title": {
+        "tr": "Banisi",
+        "en": "Founder"
+      },
+      "body": {
+        "tr": "Cami, Sultan Çelebi Mehmed döneminde 'İbn Bezzâz' unvanıyla tanınan Hâfızüddin Efendi tarafından inşa ettirilmiştir. 'Bezzâziye' isimli fetva mecmuasının sahibi olan Hâfızüddin Efendi, Bursa'ya taşınarak Molla Fenârî'nin sohbetlerine katılmış ve kendisinden istifade etmiştir. H. 826 / M. 1423-1424'te vefat etmiştir.",
+        "en": "The mosque was built during the reign of Sultan Çelebi Mehmed by Hâfızüddin Efendi, known by the title 'İbn Bezzâz'. The author of the fatwa collection 'Bezzâziye', he moved to Bursa and attended Molla Fenârî's lectures. He died in AH 826 / AD 1423-1424."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "229"
+        }
+      ]
+    },
+    {
+      "id": "deprem-ve-onarim",
+      "order": 2,
+      "title": {
+        "tr": "Deprem ve Onarımlar",
+        "en": "Earthquake and Repairs"
+      },
+      "body": {
+        "tr": "Bilinmeyen bir tarihte meydana gelen depremde minarenin şerefe ve petek kısmı yapının üzerine düşmüş, harim kubbesi ile mihrap duvarının büyük bölümü yıkılmıştır. Son cemaat yerinin kemer ve tonozları tamamen çökmüştür. Yıkılan kısımlar mahalle sakinleri tarafından onarılmış, çöken kubbe ve tonozların üzeri ahşap çatı ile kapatılmıştır. Yapı en son 1986'da Vakıflar Genel Müdürlüğü ile Eski Eserleri Sevenler Kurumu tarafından onarılmıştır.",
+        "en": "In an earthquake of unknown date the minaret's balcony and neck fell onto the structure, destroying the prayer hall dome and much of the mihrab wall; the arches and vaults of the narthex collapsed completely. The neighbourhood residents repaired the damage and covered the collapsed dome and vaults with a wooden roof. It was last repaired in 1986 by the General Directorate of Foundations and the Association for the Appreciation of Antiquities."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "229-230"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı yapının harim mekânı 7,89 × 7,94 m, son cemaat yeri 3,40 × 7,89 m ölçüsündedir. Farklı dönemlerdeki onarımlarda, iki katlı ve çatılı son cemaat yerinin üzerindeki belirgin kemer izleri bu kısmın ortada dar, yanlarda geniş üç bölmeli düzenlendiğini göstermektedir. Orta bölmede mermer söveler üzerine geçmeli taşlardan basık kemerli bir giriş vardır; kapı üstünde bir yazı levhası, hemen üzerinde sekiz mermer dendan motifi bulunur. Motiflerin ortaları koyu renk taş kakmalı helezonik kabaralarla, araları bitkisel bezemelerle süslüdür. Batı cephesine bitişik minare ongen kaide üzerindedir; silindirik gövde saçağa kadar yükselir ve iki sıra tuğla bir sıra kesme taş dizilimiyle örülmüştür.",
+        "en": "The rectangular-plan building's prayer hall measures 7.89 × 7.94 m and the narthex 3.40 × 7.89 m. Traces of arches above the two-story roofed narthex reveal it was originally three sections, narrow in the middle and wide at the sides. The central section has a depressed-arched entrance of interlocking stones on marble jambs, an inscription plaque above the door and eight marble tooth motifs above that, their centres decorated with small helical bosses with dark stone inlay and vegetal ornament between. The minaret, adjacent to the west façade, sits on a decagonal base; its cylindrical shaft rises to eaves level, built with two rows of brick and one of cut stone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "230"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "İbn-i Bezzaz Camii Haziresi",
+        "en": "Graveyard of the İbn-i Bezzaz Mosque"
+      },
+      "body": {
+        "tr": "Yapının doğusundaki hazirede üç mezar taşı bulunmaktadır. Bu taşlardan biri Mehmed Çelebi bin Mahmud Çelebi adınadır. Kaynaklarda adı geçen ancak mezar taşı günümüze ulaşmayan bir kişinin de buraya defnedildiği anlaşılmaktadır.",
+        "en": "There are three tombstones in the graveyard east of the structure. One belongs to Mehmed Çelebi bin Mahmud Çelebi. A person mentioned in sources, whose tombstone has not survived, was also buried here."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "231"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall size"
+      },
+      "value": "7,89 × 7,94",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "230"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat yeri ölçüsü",
+        "en": "Narthex size"
+      },
+      "value": "3,40 × 7,89",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "230"
+        }
+      ]
+    },
+    {
+      "key": "hazire_mezar_tasi",
+      "label": {
+        "tr": "Hazirede mezar taşı",
+        "en": "Tombstones in graveyard"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "231"
+        }
+      ]
+    },
+    {
+      "key": "dendan_motifi",
+      "label": {
+        "tr": "Girişin üstündeki mermer dendan motifi",
+        "en": "Marble tooth motifs above entrance"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "230"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hâfızüddin Efendi (İbn Bezzâz)",
+      "role": {
+        "tr": "Banî, 'Bezzâziye' fetva mecmuasının yazarı; H. 826 / M. 1423-1424'te vefat etti",
+        "en": "Founder, author of the 'Bezzâziye' fatwa collection; died AH 826 / AD 1423-1424"
+      }
+    },
+    {
+      "name": "Molla Fenârî",
+      "role": {
+        "tr": "Hâfızüddin Efendi'nin sohbetlerine katıldığı âlim",
+        "en": "Scholar whose lectures Hâfızüddin Efendi attended"
+      }
+    },
+    {
+      "name": "Mehmed Çelebi bin Mahmud Çelebi",
+      "role": {
+        "tr": "Hazirede mezar taşı bulunan kişi",
+        "en": "Person with a tombstone in the graveyard"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-yazi-levhasi",
+      "location": {
+        "tr": "Giriş kapısının üstündeki yazı levhası",
+        "en": "Inscription plaque above the entrance door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Levhanın varlığı belirtiliyor; metni, dili ve tarihi kitapta verilmemiş.",
+        "en": "The plaque is mentioned; its text, language and date are not given in the book."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "230"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "olum-1423",
+      "year": 1423,
+      "date": null,
+      "hijri": "826",
+      "type": "record",
+      "title": {
+        "tr": "Banî Hâfızüddin Efendi (İbn Bezzâz) vefat etti",
+        "en": "Founder Hâfızüddin Efendi (İbn Bezzâz) died"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "229"
+        }
+      ],
+      "note": {
+        "tr": "Hicri 826 ile verilen miladi 1423-1424 aralığı tam örtüşmüyor (bkz. data_quality_notes).",
+        "en": "AH 826 and the given AD 1423-1424 do not fully match (see data_quality_notes)."
+      }
+    },
+    {
+      "id": "onarim-1986",
+      "year": 1986,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü ve Eski Eserleri Sevenler Kurumu tarafından onarıldı",
+        "en": "Repaired by the General Directorate of Foundations and the Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "230"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, kubbesi çöktüğü için ahşap çatıyla örtülü bir camidir. Önünde mermer söveli, basık kemerli girişi olan son cemaat yeri vardır; kapı üstünde bir yazı levhası ve sekiz mermer dendan motifi görülür. Batıya bitişik minare ongen kaide üzerindedir. Doğusunda üç mezar taşlı bir hazire bulunur.",
+      "en": "A rectangular-plan mosque whose collapsed dome was replaced by a wooden roof. The narthex has a depressed-arched entrance on marble jambs, with an inscription plaque and eight marble tooth motifs above the door. The minaret adjoins the west side on a decagonal base. A graveyard with three tombstones lies to the east."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-ibn-i-bezzaz-camii/p018-1.jpg",
+        "original_name": "01 ERD03662 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "229"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "İbn-i Bezzaz Camii, cephe ve minare",
+        "en": "İbn-i Bezzaz Mosque, facade and minaret"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla sıralı cephede sivri kemerli üç büyük pencere ve ortada küçük bir kapı vardır. Arkasında kırmızı tuğlalı, sivri külahlı bir minare yükselir.",
+        "en": "The stone and brick facade has three large pointed-arch windows and a small central door. A red brick minaret with a pointed cap rises behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-ibn-i-bezzaz-camii/p019-3.jpg",
+        "original_name": "05 ERD03621 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "230"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Ahşap kapı ve üzerindeki kitabelik",
+        "en": "Wooden door and inscription panel above it"
+      },
+      "alt": {
+        "tr": "Çift kanatlı koyu renkli ahşap kapının üstünde sivri kemerli, yaldızlı bir kitabe levhası vardır. Kapı, taş çerçeveli ve beyaz duvara oturur.",
+        "en": "A dark double-leaf wooden door with a gilded, pointed-arch inscription panel above it. The door has a stone frame set in a white wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-ibn-i-bezzaz-camii/p019-2.jpg",
+        "original_name": "04 ERD03614 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "230"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap mahfilli ibadet alanı",
+        "en": "Prayer hall with wooden gallery"
+      },
+      "alt": {
+        "tr": "İç mekânda ahşap korkuluklu bir mahfil, ince direklere oturan kemerlerle taşınır. Arka duvarda ahşap bir kapı, zeminde sarı ve kırmızı desenli halı görünür.",
+        "en": "Inside, a wooden-railed gallery is carried on slender posts with arches. A wooden door is on the back wall and the floor has a yellow and red patterned carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-24"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,689 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-koza-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Ticari Yapılar",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Ticari Yapılar bölümünden (s. 649-659) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta koordinat yok; uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Vakfiye metni / şartı kitapta yok; bulunursa 'waqf.deed' alanına eklenecek.",
+      "'era' alanı kitapta ifade edilmeyen bir sınıflandırmadır; veri ekibi doğrulamalı.",
+      "Adres ve mahalle kitapta yok (yalnızca 'Orhan Camii ile Ulucami arasında').",
+      "'İç Koza Hanı' ayrı bir başlıkla anlatılıyor (s. 659) ama han ile bitişik tek yapı olduğu için ayrı kayıt değil bölüm olarak eklendi; ekip isterse ayrı kayıt yapabilir.",
+      "Hicri tarih kitapta yalnızca 1630 belgesi için verilmiş (H. 1040).",
+      "İlişki hedefi 'istanbul-ii-bayezid-kulliyesi': İstanbul ilçesi ve külliyenin adı kitapta yok; id ve ilçe belirlenmeli.",
+      "1950'lerdeki onarımın yılı kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "facts[ahir_avlusu_boyut]",
+        "note": "Ahır avlusu s. 652'de 'yaklaşık 22 × 30 m', s. 659'da (İç Koza Hanı) 'yaklaşık 28 × 30 m' olarak veriliyor. İkisi de korundu, 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[ic-koza-hani]",
+        "note": "Doğu cephesindeki kemerlerin duvarla kapatılma nedeni s. 652'de belirtilmez; s. 659 bunu istimlak sürecinden kaynaklanan nedenlere bağlar."
+      },
+      {
+        "field": "sections[ic-koza-hani]",
+        "note": "S. 659'un Türkçe ve İngilizce sürümleri bu sayfada sıra bakımından yer değiştirmiş (İngilizce önce); içerik tutarlı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Koza Hanı",
+    "en": "Koza Han"
+  },
+  "subtitle": {
+    "tr": "II. Bayezid'in yaptırdığı, Orhan Camii ile Ulucami arasındaki han",
+    "en": "Bayezid II's han between the Orhan Mosque and the Ulucami"
+  },
+  "alternate_names": [
+    {
+      "tr": "Yeni Han",
+      "en": "Yeni Han"
+    },
+    {
+      "tr": "Beylik Han",
+      "en": "Beylik Han"
+    },
+    {
+      "tr": "Hân-ı Cedîd-i Âmire",
+      "en": "Hân-ı Cedîd-i Âmire"
+    },
+    {
+      "tr": "Hân-ı Cedîd-i Evvel",
+      "en": "Hân-ı Cedîd-i Evvel"
+    },
+    {
+      "tr": "Simkeş Han",
+      "en": "Simkeş Han"
+    },
+    {
+      "tr": "Sırmakeş Han",
+      "en": "Sırmakeş Han"
+    },
+    {
+      "tr": "Beylik Kârbansaray",
+      "en": "Beylik Caravanserai"
+    },
+    {
+      "tr": "Eski Yeni Han",
+      "en": "Eski Yeni (Old New) Han",
+      "note": "Pirinç Hanı'nın inşasından sonra bu adla tanındı"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "han",
+    "II. Bayezid",
+    "ipek ticareti",
+    "ahır",
+    "köşk mescit",
+    "çay bahçesi",
+    "Orhan Camii ile Ulucami arası"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "649"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.184379,
+      "lng": 29.063538,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap relation/1018973 ('Koza Han'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Mart 1489 - 30 Eylül 1491",
+      "en": "March 1489 - 30 September 1491"
+    },
+    "start_year": 1489,
+    "end_year": 1491,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "İnşaat 1489 mart ayında başlamış, 30 Eylül 1491'de tamamlanıp hizmete açılmıştır.",
+      "en": "Construction began in March 1489 and was completed and opened on 30 September 1491."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "649"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan II. Bayezid",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "649"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Abdülûlâ bin Pulad Şah",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "649"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "II. Bayezid'in İstanbul'daki külliyesinin vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "649"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan II. Bayezid'in İstanbul'daki külliyesine gelir sağlamak için 1489-1491 arasında yaptırdığı han. Orhan Camii ile Ulucami arasında yer alır; doğusuna bitişik tek katlı ahır-depo bölümü (İç Koza Hanı) Osmanlı'dan kalan nadir ahırlardandır. Bugün Bursa Çarşısı'nın en yoğun ticaret alanlarından biridir.",
+    "en": "A han built by Sultan Bayezid II between 1489 and 1491 to provide income to his complex in Istanbul. It stands between the Orhan Mosque and the Ulucami; the single-storey stable-storage section attached to its east (Inner Koza Han) is one of the rare surviving Ottoman stables. Today it is one of the busiest commercial areas of the Bursa Bazaar."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Adlar ve Yapımı",
+        "en": "Location, Names and Construction"
+      },
+      "body": {
+        "tr": "Koza Han, Osmangazi ilçesinde, Çarşı ve Hanlar Bölgesi'nde Orhan Camii ile Ulucami arasında yer alır. Tarih boyunca \"Yeni Han\", \"Beylik Han\", \"Hân-ı Cedîd-i Âmire\", \"Hân-ı Cedîd-i Evvel\", \"Simkeş Han\", \"Sırmakeş Han\", \"Beylik Kârbansaray\" ve \"Eski Yeni Han\" adlarıyla anılmış; Pirinç Hanı'nın inşasından sonra Eski Yeni Han adıyla tanınmaya başlamıştır. Sultan II. Bayezid tarafından İstanbul'daki külliyesine gelir sağlamak için yaptırılmıştır. İnşaat 1489 martında başlamış, 30 Eylül 1491'de tamamlanıp hizmete açılmıştır. Mimarı Abdülûlâ bin Pulad Şah, bina emini Şücâ bin Karaca, kâtipleri Hacı Yusuf bin Abdullah, Hayreddin bin Hamza ve Kemal Bey'dir.",
+        "en": "The Koza Han lies in Osmangazi District, in the Bazaar and Hans District between the Orhan Mosque and the Ulucami. It has been called \"Yeni Han\", \"Beylik Han\", \"Hân-ı Cedîd-i Âmire\", \"Hân-ı Cedîd-i Evvel\", \"Simkeş Han\", \"Sırmakeş Han\", \"Beylik Caravanserai\" and \"Eski Yeni (Old New) Han\", the last after the Pirinç Han was built. Sultan Bayezid II built it to provide income to his Istanbul complex. Construction began in March 1489 and it opened on 30 September 1491. The architect was Abdülûlâ bin Pulad Şah, the building supervisor Şücâ bin Karaca, and the clerks Hacı Yusuf bin Abdullah, Hayreddin bin Hamza and Kemal Bey."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "649"
+        }
+      ]
+    },
+    {
+      "id": "kentsel-konum-ve-plan",
+      "order": 2,
+      "title": {
+        "tr": "Kentsel Konum ve Plan",
+        "en": "Urban Position and Plan"
+      },
+      "body": {
+        "tr": "Koza Han, Orhan Camii, Emir Hanı ve Ulucami ile aynı aks üzerinde yer alarak şehirdeki ticaret odaklı yerleşim anlayışının sürdüğünü gösterir. Klasik Osmanlı han planına uygun olarak bir avlu çevresinde altlı üstlü odalardan ve doğu cephesine bitişik bir ahır-depo bölümünden oluşur. Tek katlı ahır yapısına, hanın doğu duvarındaki 3,66 m genişliğinde bir geçişle ulaşılır.",
+        "en": "The Koza Han lies on the same axis as the Orhan Mosque, Emir Han and Ulucami, showing the continuity of the city's trade-oriented layout. In line with the classical Ottoman han plan it has rooms above and below around a courtyard and a stable-storage section adjoining the east façade, reached through a 3.66 m wide passage in the east wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "650"
+        }
+      ]
+    },
+    {
+      "id": "ic-koza-hani",
+      "order": 3,
+      "title": {
+        "tr": "İç Koza Hanı (Ahırlar Bölümü)",
+        "en": "Inner Koza Han (Stables Section)"
+      },
+      "body": {
+        "tr": "İç Koza Hanı, hanın doğu cephesine bitişik tek katlı ahır-depo yapısıdır. Belgelerde 1490 itibarıyla bu alanın yapımı için dört evin 21.600 akçeye istimlak edildiği kayıtlıdır. Ahırların dikdörtgen avlusu kemerlerle çevrilidir; doğu cephesindeki kemerler sonradan duvarla kapatılmıştır. Kemerler farklı boyutlarda on sekiz paye üzerine oturur, ahır mekânının tamamı kırk beş paye ile taşınır. Üç kapısı sırasıyla Koza Han'a, Orhan Camii'ne ve çarşıya açılır. Avlunun ortasında bazı Selçuklu kervansaraylarındaki gibi köşk mescit denen müstakil bir mescit vardır; cemaate yetmeyince yanına ahşap ikinci bir mescit yapıldığı arşiv belgesinden anlaşılır ama bu yapı günümüze ulaşmamıştır. Ahşap çatılı ve kiremit örtülü kemerler 1950'lerde Bursa Eski Eserleri Sevenler Kurumu'nca onarılmış, yapı büyük oranda kâgir hale getirilmiştir. Kahvehane ve büfe olarak kullanılan bu bölüm, Pirinç Hanı'nın ahır bölümüyle birlikte Osmanlı'dan kalan nadir ahırlardandır.",
+        "en": "The Inner Koza Han is a single-storey stable-storage structure adjoining the han's east façade. Documents record that as of 1490 four houses were expropriated for 21,600 akçe to build it. The stables' rectangular courtyard is ringed by arches, those on the east later walled up. The arches rest on eighteen piers of different sizes and the whole stable area is carried by forty-five piers. Its three doors open directly to the Koza Han, the Orhan Mosque and the bazaar. In the middle of the courtyard stands a detached masjid called the Köşk (Pavilion) Masjid, as seen in some Seljuk caravanserais; an archive document shows a second wooden masjid was added beside it because it was too small, but that structure has not survived. The wooden-roofed, tile-covered arches were repaired in the 1950s by the Bursa Association for the Appreciation of Antiquities, which made the building largely masonry. Now a coffeehouse and buffet, it is, with the Pirinç Han's stable section, one of the rare Ottoman stables to survive."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "650, 652, 659"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-bugun",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Bugünkü Kullanım",
+        "en": "Repairs and Present Use"
+      },
+      "body": {
+        "tr": "H. 1040 / M. 1630 tarihli bir belge hanın suyollarının onarımını ve üst katta altı tuvalet bulunduğunu kaydeder; bu tuvaletler günümüze ulaşmamıştır. Ahşap üst kat revakı 1950'lerde Bursa Eski Eserleri Sevenler Kurumu'nca onarılmış, ahırlar da elden geçirilmiştir. Koza Han bugün Bursa Çarşısı'nın en yoğun kullanılan ticaret alanlarından biridir: üst katta ipek ticareti yapan işletmeler, alt katta çeşitli ürünler satan esnaf bulunur; avlu çay bahçesi olarak kullanılır ve halkın yoğun ilgisini görür.",
+        "en": "A document dated AH 1040 / AD 1630 records the repair of the han's water channels and six toilets on the upper floor, which have not survived. The wooden upper-floor arcade was repaired in the 1950s by the Bursa Association for the Appreciation of Antiquities, which also overhauled the stables. Today the Koza Han is one of the busiest commercial areas of the Bursa Bazaar: silk businesses on the upper floor, shopkeepers selling various goods below, and a courtyard tea garden that draws great public interest."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "655"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kapi_acikligi",
+      "label": {
+        "tr": "Ahırlara geçiş açıklığı",
+        "en": "Passage width to stables"
+      },
+      "value": 3.66,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "650, 659"
+        }
+      ]
+    },
+    {
+      "key": "ahir_avlusu_boyut",
+      "label": {
+        "tr": "Ahır avlusu boyutu",
+        "en": "Stable courtyard dimensions"
+      },
+      "value": "22 × 30",
+      "unit": "m",
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "652, 659"
+        }
+      ],
+      "note": {
+        "tr": "Kitap s. 652'de yaklaşık 22 × 30 m, s. 659'da yaklaşık 28 × 30 m verir.",
+        "en": "The book gives about 22 × 30 m on p. 652 and about 28 × 30 m on p. 659."
+      }
+    },
+    {
+      "key": "avlu_paye_sayisi",
+      "label": {
+        "tr": "Ahır avlusunu çeviren paye sayısı",
+        "en": "Piers around the stable courtyard"
+      },
+      "value": 18,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "652, 659"
+        }
+      ]
+    },
+    {
+      "key": "ahir_toplam_paye",
+      "label": {
+        "tr": "Ahır mekânının toplam paye sayısı",
+        "en": "Total piers of the stable area"
+      },
+      "value": 45,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "652, 659"
+        }
+      ]
+    },
+    {
+      "key": "ahir_kapi_sayisi",
+      "label": {
+        "tr": "Ahırların kapı sayısı",
+        "en": "Doors of the stables"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "652, 659"
+        }
+      ],
+      "note": {
+        "tr": "Koza Han'a, Orhan Camii'ne ve çarşıya.",
+        "en": "To the Koza Han, the Orhan Mosque and the bazaar."
+      }
+    },
+    {
+      "key": "istimlak_bedeli",
+      "label": {
+        "tr": "Ahır için istimlak bedeli (4 ev, 1490)",
+        "en": "Expropriation cost for the stables (4 houses, 1490)"
+      },
+      "value": 21600,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "659"
+        }
+      ]
+    },
+    {
+      "key": "ust_kat_tuvalet",
+      "label": {
+        "tr": "Üst kattaki tuvalet sayısı (1630 belgesi)",
+        "en": "Upper-floor toilets (1630 document)"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "655"
+        }
+      ],
+      "note": {
+        "tr": "Günümüze ulaşmamıştır.",
+        "en": "Not surviving."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan II. Bayezid",
+      "role": {
+        "tr": "Hanı yaptıran",
+        "en": "Commissioner"
+      }
+    },
+    {
+      "name": "Abdülûlâ bin Pulad Şah",
+      "role": {
+        "tr": "Mimar",
+        "en": "Architect"
+      }
+    },
+    {
+      "name": "Şücâ bin Karaca",
+      "role": {
+        "tr": "Bina emini",
+        "en": "Building supervisor"
+      }
+    },
+    {
+      "name": "Hacı Yusuf bin Abdullah",
+      "role": {
+        "tr": "Kâtip",
+        "en": "Clerk"
+      }
+    },
+    {
+      "name": "Hayreddin bin Hamza",
+      "role": {
+        "tr": "Kâtip",
+        "en": "Clerk"
+      }
+    },
+    {
+      "name": "Kemal Bey",
+      "role": {
+        "tr": "Kâtip",
+        "en": "Clerk"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-baslangic-1489",
+      "year": 1489,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "İnşaat mart ayında başladı",
+        "en": "Construction began in March"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "649"
+        }
+      ]
+    },
+    {
+      "id": "istimlak-1490",
+      "year": 1490,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Ahırlar bölümü için dört ev 21.600 akçeye istimlak edildi",
+        "en": "Four houses expropriated for the stables for 21,600 akçe"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "659"
+        }
+      ]
+    },
+    {
+      "id": "acilis-1491",
+      "year": 1491,
+      "date": "1491-09-30",
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Tamamlanıp hizmete açıldı",
+        "en": "Completed and opened"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "649"
+        }
+      ]
+    },
+    {
+      "id": "belge-1630",
+      "year": 1630,
+      "date": null,
+      "hijri": "1040",
+      "type": "repair",
+      "title": {
+        "tr": "Suyollarının onarımı kaydedildi; üst katta altı tuvalet",
+        "en": "Repair of water channels recorded; six toilets on the upper floor"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "655"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1950ler",
+      "year": 1950,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Ahşap üst kat revakı ve ahırlar Bursa Eski Eserleri Sevenler Kurumu'nca onarıldı (1950'ler)",
+        "en": "Wooden upper-floor arcade and stables repaired by the Bursa Association for the Appreciation of Antiquities (1950s)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "655"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca '1950'li yıllar' der; yıl yaklaşık.",
+        "en": "The book says only 'the 1950s'; the year is approximate."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-pirinc-hani",
+      "type": "same_founder",
+      "description": {
+        "tr": "İkisini de II. Bayezid yaptırmıştır; Pirinç Hanı Koza Hanı'ndan sonra yapılan ikinci büyük handır.",
+        "en": "Both were commissioned by Bayezid II; the Pirinç Han is the second large han built after the Koza Han."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "649, 661"
+        }
+      ]
+    },
+    {
+      "target_id": "istanbul-ii-bayezid-kulliyesi",
+      "target_name": {
+        "tr": "II. Bayezid Külliyesi (İstanbul)"
+      },
+      "type": "waqf_income",
+      "description": {
+        "tr": "Han, II. Bayezid'in İstanbul'daki külliyesine gelir sağlamak için yaptırılmıştır.",
+        "en": "The han was built to provide income to Bayezid II's complex in Istanbul."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "649"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Han Orhan Camii ile Ulucami arasında yer alır; ahırların bir kapısı Orhan Camii'ne açılır.",
+        "en": "The han stands between the Orhan Mosque and the Ulucami; one door of the stables opens to the Orhan Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "649, 652"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ulucami",
+      "type": "urban_context",
+      "description": {
+        "tr": "Ulucami ile Orhan Camii arasında, aynı kentsel aks üzerindedir.",
+        "en": "It lies on the same urban axis, between the Ulucami and the Orhan Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "649-650"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-emir-hani",
+      "type": "urban_context",
+      "description": {
+        "tr": "Emir Hanı, Orhan Camii ve Ulucami ile aynı aks üzerindedir.",
+        "en": "It is on the same axis as the Emir Han, Orhan Mosque and Ulucami."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "650"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Koza Hanı, Orhan Camii ile Ulucami arasında, klasik Osmanlı han planında, avlu çevresinde altlı üstlü odalardan oluşan bir yapıdır. Ahşap üst kat revakı vardır; avlu çay bahçesidir. Doğu duvarındaki 3,66 metrelik bir geçişten, kemerli bir avlunun çevrelendiği tek katlı ahır bölümüne geçilir; avlunun ortasında müstakil bir köşk mescit durur. Üst katta ipek, alt katta çeşitli ürünler satılır.",
+      "en": "The Koza Han lies between the Orhan Mosque and the Ulucami, built to the classical Ottoman plan with rooms above and below around a courtyard. It has a wooden upper-floor arcade and a tea-garden courtyard. A 3.66 m passage in the east wall leads to a single-storey stable section around an arched courtyard, in the middle of which stands a detached pavilion masjid. Silk is sold upstairs and various goods downstairs."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ taslağı olarak yazıldı; yalnızca kitaptaki bilgiler kullanıldı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1SMmqsvxUx98p6AyGGohUMOoNQHDZKqTa",
+    "book_layout_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+    "book_pdf_name": "1-Ticari Yapılar.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-koza-hani/p023-1.jpg",
+        "original_name": "ERD04128 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "652"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Koza Han'ın tuğla giriş cephesi",
+        "en": "Brick entrance front of Koza Han"
+      },
+      "alt": {
+        "tr": "Tuğla ve taştan uzun tek katlı bir cephe; üzerinde “KOZA HAN” yazısı, kemerli demir parmaklıklı pencereler ve çok sayıda küçük bacalar var. Önde taş döşeli bir meydan ve basamaklar uzanır.",
+        "en": "A long single-storey front of brick and stone with the words 'KOZA HAN', arched windows with iron grilles and many small chimneys. A paved square with steps lies in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-koza-hani/p026-2.jpg",
+        "original_name": "ERD04161 kopya.jpg",
+        "book_pdf_file_id": "1FbU6yNqgC9RqZEp4STI9-_roAshHUf-a",
+        "book_pdf_name": "1-Ticari Yapılar.pdf",
+        "book_page": "655"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Sivri kemerli revaktan avluya bakış",
+        "en": "View to the courtyard through a pointed arch"
+      },
+      "alt": {
+        "tr": "Taş ve tuğladan sivri bir kemer, içindeki küçük masa ve sandalyelerle birlikte çerçeve oluşturur. Kemerin ardında yeşil ağaçlı avlu görünür; zemin kırmızı fayanstır.",
+        "en": "A pointed arch of stone and brick frames a small table and chairs. Beyond it is a courtyard with green trees; the floor is red tile."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-23"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

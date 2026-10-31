@@ -1,0 +1,567 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-mahfel",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden (s. 317-319) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Yapının mimari betimlemesi (plan, malzeme, ölçü) kitapta yok; sahadan ya da başka kaynaktan eklenmeli.",
+      "İlk kurucu Ermeni girişimcinin adı kitapta verilmiyor; 'founder' null bırakıldı.",
+      "Mahfel'in bugünkü mülkiyet/kira durumu (2018 özelleştirme sonrası) güncel kaynaktan teyit edilmeli.",
+      "Setbaşı Köprüsü için ilçe kitapta belirtilmiyor; ilişki yazılmadı.",
+      "Kitabın Mahfel metni PDF s. 40'ta (basılı s. 319) cümle ortasında bitiyor gibi görünüyor (İngilizce kısım 'meeting point of the people of Bursa' ile bitiyor); Türkçe metin tam olduğundan eksik sayılmadı, ama teyit edilmeli.",
+      "Zaman çizelgesinde yıl zorunlu olduğundan 'yapının 1870'lerin sonlarında inşa edildiği' bilgisi olay olarak eklenmedi; yalnızca dating ve 'kurulus' bölümünde yer alıyor.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[cumhuriyet-donemi]",
+        "note": "Kitap, Mahfel'in 'Kurtuluş Savaşı'na kadar gayrimüslim işletmesi' olduğunu, ancak Türklerin yönetimine geçtikten sonra 12 Kasım 1913'te 'Türk Ocağı Merkezi' olarak kullanıldığını yazar. Bu iki bilgi kronolojik olarak çelişir görünür (1913 Kurtuluş Savaşı'ndan önce); ikisi de kaynakta yazıldığı gibi korundu."
+      },
+      {
+        "field": "name",
+        "note": "Türkçe metin ilk işletmeye 'Vorpahnam Gazinosu', İngilizce metin 'Vorpahnam Club' der."
+      },
+      {
+        "field": "sections[cumhuriyet-donemi]",
+        "note": "Ekim 1922 ziyaret cümlesinde 'Hamdullah Suphi, Türk Ocağı Bursa şube başkanı ve Bursa milletvekili Muhittin Baha Pars' ifadesi virgüllerle belirsizdir (Türk Ocağı Bursa şube başkanı kimdir). Unvanlar atanmadan, adlar yalnızca ziyaretçi olarak korundu."
+      },
+      {
+        "field": "timeline[turk-ocagi-1913]",
+        "note": "Atatürk'ün ziyareti 'Ekim 1922'de 17-28 Ekim' aralığı olarak veriliyor; aralık kaynakta yazıldığı gibi korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mahfel",
+    "en": "Mahfel"
+  },
+  "alternate_names": [
+    {
+      "tr": "Mahfel Lounge",
+      "en": "Mahfel Lounge"
+    },
+    {
+      "tr": "Cumhuriyet Aile Çay Bahçesi",
+      "en": "Republic Family Tea Garden"
+    },
+    {
+      "tr": "Rıdvan Bey'in Kahvesi",
+      "en": "Rıdvan Bey's Coffee House"
+    },
+    {
+      "tr": "Vorpahnam Gazinosu",
+      "en": "Vorpahnam Club"
+    }
+  ],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Mahfel",
+    "çay bahçesi",
+    "kahvehane",
+    "Setbaşı",
+    "Türk Ocağı",
+    "Halkevi",
+    "Mahfel Lounge",
+    "Atatürk ziyareti"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Karaağaç Mahallesi",
+    "address": "Namazgah Caddesi (Setbaşı Köprüsü'nün bitiminde)",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "317"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.180853,
+      "lng": 29.069702,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Adıyla OpenStreetMap Nominatim'de bulundu ('Mahfel Lounge, Setbaşı Köprüsü, Kurtoğlu, Kurtoğlu Mahallesi, Yıldırım, Bursa, Marmara Bölgesi, 16360, Türkiye'); sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1870'lerin sonu (kesin tarih bilinmiyor)",
+      "en": "Late 1870s (exact date unknown)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kahvehanenin kesin inşa tarihi bilinmez; 1862 tarihli Suphi Bey Haritası'nda alan boş arsa olarak görünür, 1870'lerin sonlarında burada bir yapı inşa edildiği ve 1887 gezgin fotoğraflarında Mahfel'de çekilmiş pozlar bulunduğu tespit edilmektedir.",
+      "en": "The exact construction date of the coffeehouse is unknown; the 1862 Suphi Bey Map shows an empty plot, a building was built here in the late 1870s, and 1887 traveler photographs include poses taken in Mahfel."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "318"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Setbaşı Köprüsü'nün bitiminde, Namazgah Caddesi üzerindeki, 1870'lerin sonlarında yapıldığı anlaşılan tarihî çay bahçesi ve kahvehane. İlk hâli bir Ermeni girişimcinin kurduğu dört masalı \"Vorpahnam Gazinosu\"dur; sonra Türk Ocağı, Halkevi, \"Cumhuriyet Aile Çay Bahçesi\" ve kahvehane olarak kullanılmış, bugün \"Mahfel Lounge\" adıyla işletilmektedir.",
+    "en": "A historic tea garden and coffeehouse on Namazgah Street at the end of Setbaşı Bridge, built in the late 1870s. It started as the four-table \"Vorpahnam Club\" of an Armenian entrepreneur, and later served as Türk Ocağı, Halkevi, \"Republic Family Tea Garden\" and coffeehouse; today it operates as \"Mahfel Lounge\"."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Ad",
+        "en": "Overview and Name"
+      },
+      "body": {
+        "tr": "Mahfel, Setbaşı Köprüsü'nün bitiminde yer alan, Osmanlı döneminden günümüze ulaşan ve hâlâ işlevini sürdüren nadir yapılardan biridir. Merkezî konumu ve uzun geçmişi nedeniyle Bursa'daki hemen her kuşağın hafızasında yer eden bir çay bahçesi olarak bilinir. \"Mahfel\" Arapça kökenlidir ve \"toplanılan yer\" anlamına gelir; kamuya açık ve askerî alanlardaki, genellikle tek katlı, geniş ve bölümlendirilmemiş toplantı salonlu, seyir imkânı tanıyan yapılara verilen addır. 1950'lerde emekli subayların uğrak yeri olunca askerî gazinoyu çağrıştırdığı için \"Mahfel\" adı türetilmiş ve kullanılmaya başlanmıştır.",
+        "en": "Mahfel at the end of Setbaşı Bridge is one of the rare structures to survive from the Ottoman period and still operate. Owing to its central location and long history it is known as a tea garden in the memory of almost every generation in Bursa. \"Mahfel\" is of Arabic origin meaning \"gathering place\", the name for generally single-storey buildings with large undivided meeting rooms in public and military areas that allow viewing. In the 1950s, when retired officers frequented it, the name \"Mahfel\" was derived because it recalled a military mess."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "317, 319"
+        }
+      ]
+    },
+    {
+      "id": "kurulus",
+      "order": 2,
+      "title": {
+        "tr": "Kuruluş",
+        "en": "Origins"
+      },
+      "body": {
+        "tr": "Kesin inşa tarihi bilinmemektedir. 1855 Bursa depremi sonrası hazırlanan 1862 tarihli Suphi Bey Haritası'nda alan L biçiminde boş bir arsa ve batısında bir bahçe olarak gösterilir. 1870'lerin sonlarında burada bir yapı inşa edildiği, 1887 tarihli bazı gezgin fotoğraflarında Mahfel'de çekilmiş pozlar bulunduğu tespit edilmektedir. Osmanlı döneminde gayrimüslimlere, özellikle Ermenilere açık bir bölge olan Setbaşı'nda ilk hâli, bir Ermeni girişimcinin kurduğu yalnızca dört masalı \"Vorpahnam Gazinosu\" adıyla faaliyete geçmiştir; girişi cadde yönünde değil yandandı. Kurtuluş Savaşı'na kadar gayrimüslim işletmesi olan Mahfel'in kapısı, yol genişletme çalışmaları nedeniyle bugünkü cadde yönüne çevrilmiştir.",
+        "en": "The exact construction date is unknown. The 1862 Suphi Bey Map, prepared after the 1855 Bursa earthquake, shows the area as an L-shaped empty plot with a garden to the west. A building was built here in the late 1870s and some 1887 traveler photographs include poses taken in Mahfel. In Setbaşı, an area open to non-Muslims especially Armenians, the first version was established by an Armenian entrepreneur as the four-table \"Vorpahnam Club\", entered from the side rather than the street. A non-Muslim business until the War of Independence, its gate was turned to the present street side because of road widening."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "318-319"
+        }
+      ]
+    },
+    {
+      "id": "cumhuriyet-donemi",
+      "order": 3,
+      "title": {
+        "tr": "Türk Ocağı, Kurtuluş Savaşı ve Cumhuriyet Dönemi",
+        "en": "Turkish Hearth, War of Independence and Republic"
+      },
+      "body": {
+        "tr": "Türklerin yönetimine geçtikten sonra 12 Kasım 1913'te \"Türk Ocağı Merkezi\" olarak kullanılmış, İttihat ve Terakki Cemiyeti'nin Bursa toplantılarına mekân olmuştur. Bursa'nın işgaliyle iki yıldan fazla kapalı kalan Mahfel, Ekim 1922'de İsmet İnönü Paşa, Hamdullah Suphi, Muhittin Baha Pars ve Yahya Kemal Beyatlı'nın katıldığı bir ziyaretle törenle yeniden faaliyete geçmiştir. Mustafa Kemal Atatürk'ün 17-28 Ekim 1922 ve 25 Ekim 1925 ziyaretlerinde Mahfel'e uğradığı bilinir. Harf Devrimi'nin ardından yeni alfabe Bursa halkına burada öğretilmiştir. Mülkiyeti Türk vatandaşlarına geçince adı \"Cumhuriyet Aile Çay Bahçesi\" olmuş, işletmeci Rıdvan Akçalı'nın adıyla halk arasında \"Rıdvan Bey'in Kahvesi\" diye anılmıştır. 1932'de Halkevleri tarafından kullanılmaya başlanmıştır.",
+        "en": "Once under Turkish administration it was used as the \"Turkish Hearth Center\" on 12 November 1913 and hosted the Bursa meetings of the Committee of Union and Progress. Closed for more than two years by the occupation of Bursa, it reopened with a ceremony in October 1922 during a visit attended by İsmet İnönü Paşa, Hamdullah Suphi, Muhittin Baha Pars and Yahya Kemal Beyatlı. Mustafa Kemal Atatürk is known to have called at Mahfel during his visits of 17-28 October 1922 and 25 October 1925. After the adoption of the Latin alphabet, the new alphabet was taught to the people of Bursa here. When ownership passed to Turkish citizens it was renamed \"Republic Family Tea Garden\" and was widely known as \"Rıdvan Bey's Coffee House\" after its manager Rıdvan Akçalı. In 1932 the Halkevleri began to use it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "318-319"
+        }
+      ]
+    },
+    {
+      "id": "yakin-donem",
+      "order": 4,
+      "title": {
+        "tr": "Yakın Dönem",
+        "en": "Recent Period"
+      },
+      "body": {
+        "tr": "1956'daki yasal düzenlemelerle yapı ve eklentileri İşçi Sigortaları Kurumu'nun (bugün SGK) mülkiyetine geçmiş, 1967'de işletmeciliği Osman Enver Özer devralmıştır. 1970'lerde tamamen kahvehaneye dönüşen yapı, 12 Eylül 1980 darbesinden sonra bir süre askerî lise öğrencilerine tahsis edilmiştir. 1980'de tescil edilmiş, 1984'te yoğun kardan sol kısmından zarar görmüş, Ocak 1999'da kapalı alanın sağ tarafındaki yangınla kısmen tahrip olmuştur. 2007'de İl Özel İdaresi'ne devredilmiş, il özel idarelerinin kapatılmasıyla yönetimi Burfaş'a geçmiştir. 2018'de özelleştirilmiş ve hâlen \"Mahfel Lounge\" adıyla işletilmektedir. Bursalıların uzun yıllar sosyalleşme ve buluşma noktası olmuş, tarihsel işleviyle hizmet vermeyi sürdürmektedir.",
+        "en": "Under the 1956 legal regulations the building and its annexes passed to the Workers' Insurance Institution (now SGK), and Osman Enver Özer took over management in 1967. Fully a coffeehouse in the 1970s, it was allocated for a time to military high school students after the 12 September 1980 coup. Registered in 1980, it was damaged on its left side by heavy snow in 1984 and partially destroyed by a fire on the right side of the covered area in January 1999. Transferred to the Special Provincial Administration in 2007, its management passed to Burfaş after the administrations were closed. It was privatized in 2018 and is still known as \"Mahfel Lounge\". It has long been a socializing and meeting point for the people of Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "319"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "tescil_yili",
+      "label": {
+        "tr": "Tescil yılı",
+        "en": "Year of registration"
+      },
+      "value": 1980,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "319"
+        }
+      ]
+    },
+    {
+      "key": "ilk_masa_sayisi",
+      "label": {
+        "tr": "İlk hâlinde masa sayısı",
+        "en": "Tables in the first version"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "318-319"
+        }
+      ]
+    },
+    {
+      "key": "ilk_ad",
+      "label": {
+        "tr": "İlk işletme adı",
+        "en": "First business name"
+      },
+      "value": "Vorpahnam Gazinosu",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "318-319"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ermeni girişimci (adı verilmemiş)",
+      "role": {
+        "tr": "Mahfel'in ilk hâlini (Vorpahnam Gazinosu) kuran",
+        "en": "Established the first version (Vorpahnam Club)"
+      }
+    },
+    {
+      "name": "Rıdvan Akçalı",
+      "role": {
+        "tr": "Cumhuriyet Aile Çay Bahçesi dönemi işletmecisi",
+        "en": "Manager in the Republic Family Tea Garden period"
+      }
+    },
+    {
+      "name": "Osman Enver Özer",
+      "role": {
+        "tr": "1967'de işletmeciliği devraldı",
+        "en": "Took over management in 1967"
+      }
+    },
+    {
+      "name": "Mustafa Kemal Atatürk",
+      "role": {
+        "tr": "17-28 Ekim 1922 ve 25 Ekim 1925 ziyaretlerinde uğradı",
+        "en": "Called at Mahfel in his visits of 17-28 October 1922 and 25 October 1925"
+      }
+    },
+    {
+      "name": "İsmet İnönü Paşa",
+      "role": {
+        "tr": "Ekim 1922'de yeniden açılış ziyaretine katıldı",
+        "en": "Attended the October 1922 reopening visit"
+      }
+    },
+    {
+      "name": "Hamdullah Suphi",
+      "role": {
+        "tr": "Ekim 1922'de yeniden açılış ziyaretine katıldı",
+        "en": "Attended the October 1922 reopening visit"
+      }
+    },
+    {
+      "name": "Muhittin Baha Pars",
+      "role": {
+        "tr": "Bursa milletvekili; Ekim 1922 ziyaretine katıldı",
+        "en": "Bursa deputy; attended the October 1922 visit"
+      }
+    },
+    {
+      "name": "Yahya Kemal Beyatlı",
+      "role": {
+        "tr": "Ekim 1922 ziyaretine katıldı",
+        "en": "Attended the October 1922 visit"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "harita-1862",
+      "year": 1862,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Suphi Bey Haritası'nda alan L biçimli boş arsa ve batısında bahçe olarak görünür",
+        "en": "Shown on the Suphi Bey Map as an L-shaped empty plot with a garden to the west"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "318"
+        }
+      ]
+    },
+    {
+      "id": "fotograf-1887",
+      "year": 1887,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Gezgin fotoğraflarında Mahfel'de çekilmiş pozlar",
+        "en": "Traveler photographs with poses taken in Mahfel"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "318"
+        }
+      ]
+    },
+    {
+      "id": "turk-ocagi-1913",
+      "year": 1913,
+      "date": "1913-11-12",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "\"Türk Ocağı Merkezi\" olarak kullanıldı (12 Kasım)",
+        "en": "Used as the \"Turkish Hearth Center\" (12 November)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "318-319"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-acilis-1922",
+      "year": 1922,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Ekim'de tören ve ziyaretle yeniden faaliyete geçti",
+        "en": "Reopened with a ceremony and visit in October"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "318-319"
+        }
+      ]
+    },
+    {
+      "id": "halkevi-1932",
+      "year": 1932,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Halkevleri tarafından kullanılmaya başlandı",
+        "en": "Began to be used by the Halkevleri"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "318-319"
+        }
+      ]
+    },
+    {
+      "id": "sgk-1956",
+      "year": 1956,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Yapı ve eklentileri İşçi Sigortaları Kurumu mülkiyetine geçti",
+        "en": "Building and annexes passed to the Workers' Insurance Institution"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "319"
+        }
+      ]
+    },
+    {
+      "id": "tescil-1980",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tescil edildi",
+        "en": "Registered"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "319"
+        }
+      ]
+    },
+    {
+      "id": "kar-hasari-1984",
+      "year": 1984,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yoğun kardan sol kısmı zarar gördü",
+        "en": "Left side damaged by heavy snowfall"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "319"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1999",
+      "year": 1999,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Ocak'ta kapalı alanın sağ tarafındaki yangınla kısmen tahrip oldu",
+        "en": "Partially destroyed by a January fire on the right side of the covered area"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "319"
+        }
+      ]
+    },
+    {
+      "id": "devir-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "İl Özel İdaresi'ne devredildi; sonra yönetimi Burfaş'a geçti",
+        "en": "Transferred to the Special Provincial Administration; management later passed to Burfaş"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "319"
+        }
+      ]
+    },
+    {
+      "id": "ozellestirme-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Özelleştirildi; \"Mahfel Lounge\" adıyla işletiliyor",
+        "en": "Privatized; operated as \"Mahfel Lounge\""
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "319"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mahfel, Namazgah Caddesi üzerinde, Setbaşı Köprüsü'nün bitiminde yer alan tarihî bir çay bahçesi ve kahvehanedir. Kapalı bir bölümü ve girişi bugün cadde yönündedir; ilk hâlinde giriş yandan idi. Kitap yapının mimari ayrıntılarını (ölçü, malzeme, plan) vermez.",
+      "en": "Mahfel is a historic tea garden and coffeehouse on Namazgah Street at the end of Setbaşı Bridge. It has a covered section and its entrance now faces the street; originally the entrance was from the side. The book gives no architectural details (size, material, plan)."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Bursa Vakıf Eserleri II. Cilt); yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1etozHuYRmrayBdRiicfs3zRHYAY03-ZI",
+    "book_layout_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+    "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-mahfel/p038-1.jpg",
+        "original_name": "04 ERD04565 kopya.jpg",
+        "book_pdf_file_id": "185tr1f216ombL0es3KbSw49E3Qx6QWJC",
+        "book_pdf_name": "12-Yıldırım Kalan Bölümler.pdf",
+        "book_page": "317"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Mahfel çay bahçesi ve havuz",
+        "en": "Mahfel tea garden and pool"
+      },
+      "alt": {
+        "tr": "Ağaçlı bahçede masalar, sandalyeler ve mavi havuzlu küçük bir fıskiye bulunur. Arkada uzun, camlı kahvehane yapısı görünür.",
+        "en": "A tree-shaded garden with tables, chairs and a small tiered fountain in a blue pool. The long glazed café building is behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-07"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

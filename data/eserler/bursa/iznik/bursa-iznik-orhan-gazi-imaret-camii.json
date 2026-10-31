@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-iznik-orhan-gazi-imaret-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "İznik",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İznik bölümünden (vk-bursa-c3) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -62,7 +62,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "444-445"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.420395,
+      "lng": 29.719883,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": {
     "display": {
@@ -348,6 +355,9 @@
   "relations": [
     {
       "target_id": "bursa-iznik-orhan-gazi-hamami",
+      "target_name": {
+        "tr": "Orhan Gazi Hamamı kalıntısı (İznik)"
+      },
       "type": "urban_context",
       "description": {
         "tr": "Aynı dönemde yapıldığı kabul edilen Orhan Gazi Hamamı kalıntısı caminin güneydoğusundadır.",

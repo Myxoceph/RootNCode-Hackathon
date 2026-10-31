@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-mehmet-bin-seyit-ali-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banisinin kimliği ve yapım tarihi netleştirilmeli (kitap iki farklı dönem veriyor).",
+      "Kitabenin özgün yazısı ve dili kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitabe H. 878'i M. 1493 ile eşleştiriyor; H. 878 aslında M. 1473-74'e denk gelir (M. 1493 için H. 898 beklenir). Üstelik bani Şeker Hoca, Murad Hudâvendigâr ya da Yıldırım Bayezid dönemi kişisi olarak anılıyor; bu da 1493 ile çelişir. Kaynağa sadık kalındı, 'disputed'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mehmet Bin Seyit Ali (Şeker Hoca) Türbesi",
+    "en": "Mehmet Bin Seyit Ali (Şeker Hoca) Tomb"
+  },
+  "subtitle": {
+    "tr": "Pencere alınlığındaki 1493 tarihli kitabeyle bilinen küçük türbe",
+    "en": "Small tomb known by the 1493 inscription on its window pediment"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şeker Hoca Türbesi",
+      "en": "Şeker Hoca Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Şeker Hoca",
+    "kitabe",
+    "halk hekimliği"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu Mahallesi",
+    "address": "Cami Aralığı 2. Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "508"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.182789,
+      "lng": 29.061894,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q131391704 ('Şeker Hoca Türbesi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 878 / M. 1493 (kitabe)",
+      "en": "AH 878 / AD 1493 (inscription)"
+    },
+    "start_year": 1493,
+    "end_year": 1493,
+    "hijri_year": 878,
+    "century": 15,
+    "basis": {
+      "tr": "Doğu cephesindeki pencere alınlığında yazılı kitabe; ancak bani Murad Hudâvendigâr/Yıldırım Bayezid döneminde yaşamış sayılıyor.",
+      "en": "The inscription on the east-façade window pediment; but the builder is said to have lived under Murad Hudâvendigâr or Yıldırım Bayezid."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "508"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şeker Hoca",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "508"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Nalbantoğlu'nda, 2,86 × 3,22 m ölçülerinde, kubbeli ve kiremit çatılı küçük türbe. Şeker Hoca'nın kendi yaptırdığı anlatılır; doğu cephesindeki kitabe 'Mehmet bin Seyyid Ali H. 878 / M. 1493' der. İçinde tek sanduka vardır.",
+    "en": "A small domed, tile-roofed tomb of 2.86 × 3.22 m in Nalbantoğlu, said to have been built by Şeker Hoca himself. The inscription on the east façade reads 'Mehmet bin Seyyid Ali AH 878 / AD 1493'. It holds a single sarcophagus."
+  },
+  "sections": [
+    {
+      "id": "kisi",
+      "order": 1,
+      "title": {
+        "tr": "Şeker Hoca",
+        "en": "Şeker Hoca"
+      },
+      "body": {
+        "tr": "Türbe, Murad Hudâvendigâr ya da Yıldırım Bayezid döneminde yaşamış olan Şeker Hoca tarafından yaptırılmıştır. Hakkında ayrıntılı bilgi yoktur.",
+        "en": "The tomb was built by Şeker Hoca, who lived in the reign of Murad Hudâvendigâr or Yıldırım Bayezid. There is no detailed information about him."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "508"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe 1930'larda kâgir bir yapı iken bugün taş ve tuğla almaşık duvar tekniğiyle örülüdür. 2,86 × 3,22 m ölçülerindeki yapının içi kubbeyle, dışı kiremit çatıyla örtülüdür. Sivri kemer alınlıklı, demir parmaklıklı pencereleri vardır; içinde bir sanduka bulunur.",
+        "en": "The tomb was a masonry structure in the 1930s; today it is built in alternating stone and brick. Measuring 2.86 × 3.22 m, its interior is domed and its exterior has a tile roof. It has windows with pointed-arch pediments and iron bars, and contains one sarcophagus."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "508"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 3,
+      "title": {
+        "tr": "Kitabe",
+        "en": "Inscription"
+      },
+      "body": {
+        "tr": "Doğu cephesindeki pencere alınlığında yer alan kitabede 'Mehmet bin Seyyid Ali H. 878 / M. 1493' yazılıdır.",
+        "en": "The inscription on the window pediment of the east façade reads 'Mehmet bin Seyyid Ali AH 878 / AD 1493'."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "508"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "seker-hoca",
+      "title": {
+        "tr": "'Şeker Hoca' adı",
+        "en": "The name 'Şeker Hoca'"
+      },
+      "body": {
+        "tr": "Halk arasında, hastalıklara şifa amacıyla şekerli bitkisel karışımlar hazırladığı ve bu yüzden 'Şeker Hoca' diye anıldığı rivayet edilir.",
+        "en": "It is rumored among the public that he prepared sugary herbal mixtures to cure illnesses and was therefore called 'Şeker (Sugar) Hoca'."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "508"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Ölçüler",
+        "en": "Dimensions"
+      },
+      "value": "2,86 × 3,22",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "508"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "508"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeker Hoca (Mehmet bin Seyit Ali)",
+      "role": {
+        "tr": "Türbeyi yaptıran, türbenin sahibi",
+        "en": "Builder and occupant of the tomb"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "pencere-kitabesi",
+      "location": {
+        "tr": "Doğu cephesi, pencere alınlığı",
+        "en": "East façade, window pediment"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Mehmet bin Seyyid Ali H. 878 / M. 1493",
+      "translation": {
+        "tr": "Mehmet bin Seyyid Ali H. 878 / M. 1493",
+        "en": "Mehmet bin Seyyid Ali AH 878 / AD 1493"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 878,
+        "gregorian": "1493"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "508"
+        }
+      ],
+      "note": {
+        "tr": "Kitap kitabenin dilini ve özgün yazısını vermiyor; ifade kitaptaki biçimiyle kaydedildi.",
+        "en": "The book gives neither the language nor the original text of the inscription; recorded as printed."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kitabe-tarihi",
+      "year": 1493,
+      "date": null,
+      "hijri": "878",
+      "type": "record",
+      "title": {
+        "tr": "Kitabedeki tarih",
+        "en": "Date on the inscription"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "508"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şeker Hoca Türbesi küçük, kubbeli bir yapıdır; dışı kiremit çatılıdır. Duvarlarında taş ve tuğla dönüşümlü örülmüştür. Sivri kemer alınlıklı pencereleri demir parmaklıklıdır ve doğu cephesindeki pencere alınlığında bir kitabe vardır. İçeride tek sanduka bulunur.",
+      "en": "Şeker Hoca Tomb is a small domed building with a tile-roofed exterior. Its walls alternate stone and brick. Its windows have pointed-arch pediments and iron bars, and an inscription is on the east-façade window pediment. A single sarcophagus stands inside."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mehmet-bin-seyit-ali-turbesi/p019-2.jpg",
+        "original_name": "02_2.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "508"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeker Hoca Türbesinin içi",
+        "en": "Inside Şeker Hoca Tomb"
+      },
+      "alt": {
+        "tr": "Yeşil ışıkla aydınlanmış küçük kubbeli odada yeşil örtülü bir sanduka ve başucunda yeşil sarık var. Yanında yeşil kafesli bir pencere görünür.",
+        "en": "In a small domed room lit with a green tint, a sarcophagus under a green cover has a green turban at its head. A green grilled window is beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

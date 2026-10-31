@@ -1,0 +1,398 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-umurbey-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Umurbey Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Umurbey Külliyesi bölümünden (s. 77-78) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Fotoğraf seçimi yapılmadı (media: [], archive_media: []); fotoğraflar sonradan match_photos.py ile eklenecek.",
+      "media_folder (Drive klasörü) bilgisi eklenecek (şimdilik null).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Mimar adı kitapta verilmiyor; kaynak taranırsa architect alanı doldurulacak.",
+      "Türbenin yapım tarihi ve yaptıranı kitapta belirtilmiyor (founder: null, dating.start_year: null).",
+      "Kitabelerin Arapça metinlerinde kitap '...' ile kısaltma/eksik bırakmış (baş taşı ön yüz ve ayak taşı arka yüz); tam metin kaynaktan teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[turbe-bas-tasi-on].transliteration",
+        "note": "Kitap bu metni iki kez basıyor; biri 'mezra’atü’l-âhire', diğeri 'mezraatü’l-âhire' yazıyor. Sayfa 77'deki İngilizce bölümde yer alan 'mezra’atü’l-âhire' yazımı esas alındı."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap vefat tarihini baş şahidesinden (H. Zilkade 865 / M. Ağustos 1461) çıkarıyor. Türbenin kendisinin ne zaman yapıldığı belirtilmediğinden bu tarih yapım tarihi olarak yazılmadı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Umurbey Türbesi",
+    "en": "Umurbey Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-umurbey-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "Umur Bey",
+    "türbe",
+    "baldaken plan",
+    "tuğla",
+    "sanduka",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Umurbey",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "77"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.177755,
+      "lng": 29.071353,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-yildirim-umurbey-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapım tarihi belirtilmemiş; Umur Bey H. Zilkade 865 / M. Ağustos 1461'de vefat etti",
+      "en": "Construction date not given; Umur Bey died in Dhu al-Qa'dah AH 865 / August AD 1461"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap yapım yılı vermiyor; yalnızca baş şahidedeki kitabeden Umur Bey'in vefat tarihini çıkarıyor. Yapı tarihi o tarihe bağlanmadı.",
+      "en": "The book gives no construction year; it only derives Umur Bey's death date from the headstone inscription. The building date is not tied to it."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "77"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "77"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Caminin güneydeki haziresinde Umur Bey için yapılmış, dört ayağa oturan baldaken planlı, tamamen tuğladan türbe. İçindeki taş sandukanın baş şahidesi Umur Bey'in H. 865 / M. 1461'de öldüğünü gösterir.",
+    "en": "A brick baldachin-plan tomb on four piers in the mosque's graveyard, belonging to Umur Bey. The headstone of the stone sarcophagus inside shows he died in AH 865 / AD 1461."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Caminin haziresinde, 4,60 × 4,60 m ölçülerinde Umur Bey'e ait bir türbe vardır. Dört ayağa oturan, baldaken planlı ve pandantifli kubbeyle örtülü yapı tamamen tuğladandır; duvarlarda taş kullanılmamıştır. Kemer araları ahşap gergilerle desteklenmiştir. Kirpi saçaklı kubbenin üzeri kiremitle kaplıdır. İçindeki son derece gösterişli taş sanduka yapının anıtsal niteliğini pekiştirir.",
+        "en": "In the mosque's graveyard is a 4.60 × 4.60 m tomb belonging to Umur Bey. Standing on four piers, it has a baldachin plan and is covered by a pendentive dome; it is built entirely of brick and no stone is used in the walls. The spaces between the arches are reinforced with wooden tie beams. The dome, with a sawtooth cornice at the eaves, is covered with tiles. The extremely ornate stone sarcophagus inside reinforces the monumental character of the building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "77"
+        }
+      ]
+    },
+    {
+      "id": "sanduka-kitabeleri",
+      "order": 2,
+      "title": {
+        "tr": "Sanduka Kitabeleri",
+        "en": "Sarcophagus Inscriptions"
+      },
+      "body": {
+        "tr": "Sandukanın baş şahidesindeki kitabeden Umur Bey'in H. Zilkade 865 / M. Ağustos 1461'de vefat ettiği anlaşılır. Baş taşının ön yüzünde dünyanın geçiciliğine dair Arapça sözler, arka yüzünde 'bin yıl hüküm sürdüm…' ile başlayan bir yazı bulunur. Ayak taşının ön yüzünde Umur Bey'in adı ve vefat tarihi, arka yüzünde padişahların ve saraylarının kalmadığını anlatan bir yazı vardır.",
+        "en": "The headstone inscription shows that Umur Bey died in Dhu al-Qa'dah AH 865 / August AD 1461. The front of the headstone carries Arabic sayings on the transience of the world; the back has a text beginning 'I reigned for a thousand years…'. The front of the footstone names Umur Bey and gives his death date; its back speaks of sultans and palaces that did not remain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "77-78"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Plan ölçüsü",
+        "en": "Plan size"
+      },
+      "value": "4,60 × 4,60",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "77"
+        }
+      ]
+    },
+    {
+      "key": "plan_tipi",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "Dört ayağa oturan baldaken plan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "77"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Cover"
+      },
+      "value": "Pandantifli kubbe, kirpi saçaklı, kiremit kaplı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "77"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Malzeme",
+        "en": "Material"
+      },
+      "value": "Tamamen tuğla; duvarlarda taş yok; kemer araları ahşap gergili",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "77"
+        }
+      ]
+    },
+    {
+      "key": "vefat",
+      "label": {
+        "tr": "Umur Bey'in vefatı (baş şahide kitabesi)",
+        "en": "Umur Bey's death (headstone inscription)"
+      },
+      "value": "H. Zilkade 865 / M. Ağustos 1461",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "77-78"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Umur Bey",
+      "role": {
+        "tr": "Türbede yatan kişi",
+        "en": "Person buried in the tomb"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "turbe-bas-tasi-on",
+      "location": {
+        "tr": "Sandukanın baş taşı, ön yüz",
+        "en": "Sarcophagus headstone, front"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "El-mü’minûne lâ yemûtûne bel yunkalûne min dâri’l-fenâi ilâ dâri’l-bekâi\nEd-dünyâ evveluhâ bukâun, evsatuhâ anâün ve âhiruhâ fenâün\nEd-dünyâ mezra’atü’l-âhire\nLev bekiye sâkinuhâ mâ kharabet mesâkinuhâ. Fe-in kunte lâ tedrî metâ el-mevtü, falem bi-enneke lâ tebkâ ilâ âkhiri’d-dehri\nRuviye enne Dâvûd aleyhi’s-selâm ra’â alâ re’si’l-kabri...",
+      "translation": {
+        "tr": "Müminler ölmez; sadece fâni yurttan, beka yurduna nakledilirler.\nDünya başlangıcı gözyaşı, ortası zahmet, sonu yokluktur.\nDünya, ahiretin tarlasıdır...\nEğer sakinleri burada kalıcı olsaydı, konakları harap olmazdı. Ne zaman öleceğini bilmiyorsan, şunu bil ki sen de ebediyen kalmayacaksın.\nRivayet olunur ki Davud Aleyhisselam bir mezar taşının başında şöyle yazılı olduğunu gördü...",
+        "en": "Believers do not die; they are merely transferred from the mortal homeland to the abode of eternity.\nThe beginning of the world is tears, the middle is hardship, and the end is nothingness.\nThe world is the field of the hereafter...\nIf the inhabitants had been here permanently, their mansions would not have been ruined. If you don’t know when you will die, know that you won’t stay forever either.\nIt is narrated that David saw the following written on a tombstone..."
+      },
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "77-78"
+        }
+      ],
+      "note": {
+        "tr": "Kitap metni '...' ile yarım bırakmıştır.",
+        "en": "The book leaves the text unfinished with '...'."
+      }
+    },
+    {
+      "id": "turbe-bas-tasi-arka",
+      "location": {
+        "tr": "Sandukanın baş taşı, arka yüz",
+        "en": "Sarcophagus headstone, back"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Mektûbun fîhi: melektü elfe senetin ve fetahtü elfe medînetin ve hezemtü elfe ceyşin, ve’ftedadtü elfe bikrin, sümme sirrtü ilâ Rabbî. Mâ raeytü’d-dehre muhtelifen yedûr, lâ huznen yedûmu ve lâ sürûren.",
+      "translation": {
+        "tr": "Bin yıl hüküm sürdüm, bin şehir fethettim.\nBin orduyu bozguna uğrattım, bin bakireyle evlendim.\nSonunda Rabbime döndüm.\nZamanın hep dönüp durduğunu gördüm;\nNe bir hüzün kalıcıymış ne de bir sevinç.",
+        "en": "I reigned for a thousand years and conquered a thousand cities.\nI defeated a thousand armies, I married a thousand virgins\nFinally, I turned to my Lord\nI saw that time always turns around;\nNeither sadness nor joy lasts forever."
+      },
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "78"
+        }
+      ]
+    },
+    {
+      "id": "turbe-ayak-tasi-on",
+      "location": {
+        "tr": "Sandukanın ayak taşı, ön yüz",
+        "en": "Sarcophagus footstone, front"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "E’izzeten zü’l-ihsân Umur Beg bin Timurtaş Beg sekâllahu serâhu bi’r-rahmeti ve’r-rıdvân ve kesâhu hulele’l-mağfireti ve’l-gufrân kad tüvüffiye Hicrete’n-Nebiyyi aleyhi’s-selâm fî evâili şehri Zi’l-ka’de sene hamse ve sittîne ve semâne mi’e",
+      "translation": {
+        "tr": "İhsan ve hayrın ehlinden,\nTimurtaş oğlu Umur Bey’e rahmetler olsun.\nRuhu rahmetle yıkansın,\nRabbi ona bağışlanma kaftanları giydirsin.\nHicretin sekiz yüz altmış beşinci yılında,\nZilkade’nin başlarında vefat etti.\nAğustos 1461",
+        "en": "Of the people of goodness and benevolence,\nMay God bless Umur Bey, son of Timurtaş.\nMay his soul be washed with mercy,\nMay his Lord clothe him with the robe of forgiveness.\nIn the eight hundred and sixty-fifth year of the Hijra,\nhe passed away at the beginning of Dhu al-Qa’dah.\nAugust 1461."
+      },
+      "date": {
+        "hijri_year": 865,
+        "gregorian": "Ağustos 1461"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "78"
+        }
+      ]
+    },
+    {
+      "id": "turbe-ayak-tasi-arka",
+      "location": {
+        "tr": "Sandukanın ayak taşı, arka yüz",
+        "en": "Sarcophagus footstone, back"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Şeyyedet bihâ’l-mülûke kusûran, fe-mâ bakiye’l-mülûk ve lâ’l-kusûr. Leyse fî zikri men illâ zelefen, fe illâ verâ... ve ehli’l-ebrâri ve tâatin. Bi zâlike’l-cevâhir ez-zamânu fevâhir.",
+      "translation": {
+        "tr": "Bu dünya, padişahlar için saraylar kurdu.\nAncak ne padişahlar kaldı geriye ne de saraylar.\nİnsanları hatırlamak, sadece bir yakarış ve yakınlaşma vesilesidir.\nSonra kalan iyiler ve iyiliklerdir.\nZaman bu cevherlerle övünür.",
+        "en": "This world has built palaces for sultans.\nBut neither the sultans nor the palaces remained.\nRemembering people is simply a means of supplication and closeness.\nWhat remains at the end are the virtuous and their good deeds.\nTime is proud of these gems."
+      },
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "78"
+        }
+      ],
+      "note": {
+        "tr": "Kitap metni 'fe illâ verâ...' ile eksik bırakmıştır.",
+        "en": "The book leaves the text incomplete at 'fe illâ verâ...'."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "umur-bey-vefat",
+      "year": 1461,
+      "date": null,
+      "hijri": "865",
+      "type": "record",
+      "title": {
+        "tr": "Umur Bey H. Zilkade 865 / M. Ağustos 1461'de vefat etti (baş şahide kitabesi)",
+        "en": "Umur Bey died in Dhu al-Qa'dah AH 865 / August AD 1461 (headstone inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "77-78"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-umurbey-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Türbe, külliyenin parçası olan caminin haziresinde yer alır.",
+        "en": "The tomb is in the graveyard of the mosque, which is part of the complex."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "77"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Umurbey Türbesi, caminin haziresinde duran, kenarları yaklaşık 4,6 metre olan kare planlı, tamamen tuğladan bir yapıdır. Duvarlar yerine dört ayak ve aralarındaki kemerler taşır; kemerlerin arası ahşap gergilerle bağlanmıştır. Üstte, saçak altında kirpi dişi sıralı kiremit kaplı bir kubbe vardır. İçeride, çok süslü taş bir sanduka bulunur; baş ve ayak taşlarının her iki yüzünde Arapça yazılar vardır.",
+      "en": "The Umurbey Tomb stands in the mosque's graveyard: a square, entirely brick building about 4.6 metres on each side. Instead of walls, four piers and the arches between them carry the structure, with wooden tie beams across the arches. Above, under a sawtooth eave, is a dome covered with tiles. Inside is an extremely ornate stone sarcophagus whose head and foot stones carry Arabic inscriptions on both faces."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

@@ -3,6 +3,7 @@
   "$id": "https://kok-kod.local/schema/eser.schema.json",
   "title": "Vakıf Eseri",
   "description": "Tek bir vakıf eserinin kaydı. Kod alanlarının (type, region, confidence...) geçerli değerleri enums.json'da; çapraz kontroller tools/validate.py'de.",
+  "$comment": "Koordinat ve fotoğraf her durumda isteğe bağlıdır: koordinatı olmayan eser haritada ve yakındaki eserlerde görünmez, fotoğrafı olmayan eser yer tutucu görselle gösterilir. validate.py eksikleri uyarı olarak raporlar.",
   "type": "object",
   "required": [
     "schema_version",
@@ -16,37 +17,6 @@
     "media"
   ],
   "additionalProperties": false,
-  "allOf": [
-    {
-      "$comment": "Taslaklar (meta.status = draft) koordinatsız ve fotoğrafsız olabilir; in_review ve published kayıtlarda ikisi de zorunlu.",
-      "if": {
-        "required": [
-          "meta"
-        ],
-        "properties": {
-          "meta": {
-            "properties": {
-              "status": {
-                "const": "draft"
-              }
-            }
-          }
-        }
-      },
-      "else": {
-        "properties": {
-          "location": {
-            "required": [
-              "coordinates"
-            ]
-          },
-          "media": {
-            "minItems": 1
-          }
-        }
-      }
-    }
-  ],
   "$defs": {
     "slug": {
       "type": "string",
@@ -479,6 +449,8 @@
                 "gps_field",
                 "photo_exif",
                 "osm",
+                "wikidata",
+                "osm_area",
                 "google_maps",
                 "official"
               ]
@@ -1010,6 +982,10 @@
         "properties": {
           "target_id": {
             "$ref": "#/$defs/slug"
+          },
+          "target_name": {
+            "$ref": "#/$defs/i18n",
+            "description": "Hedef veri setinde yoksa adı, kaynaktaki gibi (ör. 'II. Bayezid Külliyesi (İstanbul)'); uygulama bağı bu adla gösterir."
           },
           "type": {
             "type": "string"

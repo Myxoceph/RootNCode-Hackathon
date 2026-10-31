@@ -1,0 +1,595 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-mahkeme-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Su Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Su Yapıları bölümünden (s. 697-699) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "İznik'teki imaretin adı ve konumu kaynakta yok; 'bursa-iznik-ibrahim-pasa-imareti' hedefi ('bursa' ili kitap kapsamından varsayıldı) tahminidir, doğrulanmalı.",
+      "Hamamın kesin yapım tarihi bilinmiyor (vakfiye 1421'de anıyor).",
+      "Kadınlar bölümünün bugünkü işleticisi ve çalışma saatleri kaynakta yok.",
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kaynak 'H. 825 / M. 1421' yazıyor. H. 825 yılı Aralık 1421'de başlar ve ağırlıklı olarak M. 1422'ye denk gelir. İki değer kaynağa sadık kalınarak saklandı, kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "name",
+        "note": "Başlıkta hamamın parantez içi adı 'İbrahim Paşa'; yakınlardaki 'İbrahim Paşa (Hatice Hatun) Hamamı' ayrı bir yapıdır. Kayıt kimliği halk adı olan 'mahkeme' ile ayrıştırıldı."
+      },
+      {
+        "field": "legends[mahkeme-adi]",
+        "note": "Ad açıklaması 'rivayet edilir' diye aktarıldığı için legends altında tutuldu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mahkeme (İbrahim Paşa) Hamamı",
+    "en": "Mahkeme (İbrahim Paşa) Bath"
+  },
+  "alternate_names": [
+    {
+      "tr": "İbrahim Paşa Hamamı",
+      "en": "İbrahim Paşa Bath",
+      "note": "Kaynaktaki parantez içi ad; Mahkeme Hamamı halk arasındaki addır"
+    },
+    {
+      "tr": "İbrahim Paşa Kültür Merkezi",
+      "en": "İbrahim Paşa Cultural Center",
+      "note": "Erkekler bölümünün bugünkü adı"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "çifte hamam",
+    "Çandarlı",
+    "vakfiye 1421",
+    "malakâri",
+    "kültür merkezi",
+    "çınar"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "İbrahim Paşa Mahallesi",
+    "address": "İbrahimpaşa Caddesi üzerinde, Kız Lisesi'ne çıkan Başak Caddesi güzergâhı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "697"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.180666,
+      "lng": 29.065071,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q131738463 ('Mahkeme Hamamı'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 825 / M. 1421 tarihli vakfiyede anılır (daha önce yapılmış olabilir)",
+      "en": "Named in the endowment charter of AH 825 / AD 1421 (may have been built earlier)"
+    },
+    "start_year": null,
+    "end_year": 1421,
+    "hijri_year": 825,
+    "century": 15,
+    "basis": {
+      "tr": "Vakfiyede hamamın adıyla anılması; yapının bu tarihten önce inşa edilmiş olabileceği düşünülüyor.",
+      "en": "The bath is named in the charter; the building may predate it."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "697"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Çandarlı İbrâhim Paşa (Halil Hayreddin Paşa'nın oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "697"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 825 / M. 1421",
+      "excerpt": {
+        "tr": "Hamamın, Paşa'nın İznik'teki imaretine yedi köyle birlikte vakfedildiği belirtilir.",
+        "en": "The bath is stated to have been endowed to the Paşa's imaret in İznik together with seven villages."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "697"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "697"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Çandarlı İbrâhim Paşa'nın yaptırdığı, H. 825 / M. 1421 vakfiyesinde adı geçen çifte hamam. Erkekler bölümü 2011'de restore edilip “İbrahim Paşa Kültür Merkezi” olmuş, kadınlar bölümü geleneksel işlevini sürdürmektedir.",
+    "en": "A double bath built by Çandarlı İbrâhim Paşa and named in the endowment charter of AH 825 / AD 1421. The men's section was restored in 2011 and became the “İbrahim Paşa Cultural Center”, while the women's section continues its traditional function."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-banisi",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Ad ve Banisi",
+        "en": "Location, Name and Founder"
+      },
+      "body": {
+        "tr": "Hamam, Osmangazi ilçesi İbrahim Paşa Mahallesi'nde İbrahimpaşa Caddesi üzerinde, Kız Lisesi'ne çıkan Başak Caddesi güzergâhında yer alır. Halk arasında “Mahkeme Hamamı” da denir; bu adın bölgede bir dönem Kadı Konağı bulunmasına dayandığı rivayet edilir. Ön cephedeki büyük çınar ağacı yapının çevresel belleğinde ayırt edici bir unsurdur. Yapı, Çandarlılar ailesinden Halil Hayreddin Paşa'nın oğlu Çandarlı İbrâhim Paşa tarafından yaptırılmıştır ve H. 825 / M. 1421 tarihli vakfiyede açıkça anılır. Belgeye göre hamam, Paşa'nın İznik'teki imaretine yedi köyle birlikte vakfedilmiştir; vakfiyede adıyla anılması yapının bu tarihten önce inşa edilmiş olabileceğini düşündürür.",
+        "en": "The bath is on İbrahimpaşa Street in the İbrahim Paşa Neighborhood of Osmangazi, on the route of Başak Avenue leading to the Girls' High School. It is also known as the “Mahkeme (Court) Bath”; this name is rumoured to come from a Qadi's Mansion once standing in the area. The large plane tree on the front façade is a distinctive element in the building's environmental memory. It was built by Çandarlı İbrâhim Paşa, son of Halil Hayreddin Paşa of the Çandarlı family, and is clearly mentioned in the endowment charter dated AH 825 / AD 1421, which says the bath was endowed to the Paşa's imaret in İznik together with seven villages. Being named in this record suggests it may have been built before that date."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "697"
+        }
+      ]
+    },
+    {
+      "id": "erkekler-bolumu",
+      "order": 2,
+      "title": {
+        "tr": "Erkekler Bölümü",
+        "en": "Men's Section"
+      },
+      "body": {
+        "tr": "Hamam, kadınlar ve erkekler için ayrı girişleri ve bölümleri olduğundan çifte hamam tipolojisindedir. Erkekler bölümünün girişi altı sıralı stalaktit bezemeli anıtsal bir taç kapıdır. Soğukluk 10,90 × 10,95 m kare planlıdır ve kubbeyle örtülüdür; kubbe geçişi tromp sistemiyle sağlanmıştır, merkezde sekiz köşeli mermer bir havuz vardır. Soğukluktan doğrudan kubbeli sıcaklığa geçilir; sıcaklık güney ve doğu duvarlarındaki eyvanlarla genişler, kuzey cephesinden yardımcı mekânlara geçilir.",
+        "en": "As it has separate entrances and sections for men and women, the bath is a double bath. The men's entrance is a monumental crown portal with six rows of stalactite decoration. The frigidarium is square (10.90 × 10.95 m) and domed on squinches, with an eight-sided marble pool at its centre. From it one goes directly to the domed caldarium, extended by iwans on the south and east walls, with access to auxiliary spaces from the north."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "698"
+        }
+      ]
+    },
+    {
+      "id": "kadinlar-bolumu",
+      "order": 3,
+      "title": {
+        "tr": "Kadınlar Bölümü",
+        "en": "Women's Section"
+      },
+      "body": {
+        "tr": "Kadınlar bölümünün girişi güney cephededir. Soğukluk 10,70 × 11,20 m ölçülerindedir ve kubbeyle örtülüdür; doğu duvarında Bursa hamamlarında nadir görülen, lale motifli malakâri (alçı üzerine kabartma) süslemeler yer alır. Sıcaklığa küçük bir geçiş mekânıyla ulaşılır; sıcaklık kuzey ve doğu duvarlarındaki eyvanlarla genişletilmiştir.",
+        "en": "The women's entrance is on the south façade. The frigidarium measures 10.70 × 11.20 m and is domed; its east wall carries malakari (relief on plaster) decoration with tulip motifs, rarely seen in Bursa baths. The caldarium is reached through a small passage and extended by iwans on the north and east walls."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "698-699"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-kullanim",
+      "order": 4,
+      "title": {
+        "tr": "Onarım ve Kullanım",
+        "en": "Repairs and Use"
+      },
+      "body": {
+        "tr": "Yapı zaman içinde çeşitli yangınlara uğramış, bu nedenle birçok kez onarılmıştır; özellikle 1490 ve 1593'te kapsamlı onarım görmüştür. 1930'larda kadınlar kısmı kullanılamaz haldeyken erkekler bölümü hamam işlevini sürdürmüş, yapı 1968'de geçici olarak depo olarak kullanılmıştır. 2011'de Bursa Büyükşehir Belediyesi tarafından restore edilen hamamın erkekler kısmı bugün “İbrahim Paşa Kültür Merkezi” olarak kullanılır; kadınlar kısmı “Mahkeme Hamamı” adıyla geleneksel işlevini sürdüren nadir yapılardan biridir.",
+        "en": "Over time the building suffered several fires and was repaired many times, with extensive repairs especially in 1490 and 1593. In the 1930s the women's section was unusable while the men's section continued as a bath; in 1968 it was used as a temporary warehouse. The men's section, restored by the Bursa Metropolitan Municipality in 2011, is now the “İbrahim Paşa Cultural Center”; the women's section, called the “Mahkeme Bath”, is one of the rare structures keeping its traditional function."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "699"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "mahkeme-adi",
+      "title": {
+        "tr": "“Mahkeme” Adının Kökeni",
+        "en": "Origin of the “Mahkeme” Name"
+      },
+      "body": {
+        "tr": "Halk arasındaki “Mahkeme Hamamı” adının, bölgede bir dönem Kadı Konağı bulunmasına dayandığı rivayet edilir.",
+        "en": "The popular name “Mahkeme (Court) Bath” is rumoured to derive from a Qadi's Mansion that once stood in the area."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "697"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "erkek_soguklik_olcusu",
+      "label": {
+        "tr": "Erkekler soğukluğu",
+        "en": "Men's frigidarium"
+      },
+      "value": "10,90 × 10,95",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "698"
+        }
+      ]
+    },
+    {
+      "key": "kadin_soguklik_olcusu",
+      "label": {
+        "tr": "Kadınlar soğukluğu",
+        "en": "Women's frigidarium"
+      },
+      "value": "10,70 × 11,20",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "698-699"
+        }
+      ]
+    },
+    {
+      "key": "tac_kapi_stalaktit",
+      "label": {
+        "tr": "Erkekler taç kapısı stalaktit sırası",
+        "en": "Stalactite rows on men's portal"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "698"
+        }
+      ]
+    },
+    {
+      "key": "havuz",
+      "label": {
+        "tr": "Erkekler soğukluk havuzu",
+        "en": "Men's frigidarium pool"
+      },
+      "value": "sekiz köşeli mermer havuz",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "698"
+        }
+      ]
+    },
+    {
+      "key": "vakif_koy_sayisi",
+      "label": {
+        "tr": "Vakfedilen köy sayısı",
+        "en": "Villages endowed"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "697"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Çandarlı İbrâhim Paşa",
+      "role": {
+        "tr": "Hamamı yaptıran; Halil Hayreddin Paşa'nın oğlu",
+        "en": "Founder; son of Halil Hayreddin Paşa"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1421",
+      "year": 1421,
+      "date": null,
+      "hijri": "825",
+      "type": "record",
+      "title": {
+        "tr": "Hamamın adıyla anıldığı vakfiye",
+        "en": "Endowment charter naming the bath"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "697"
+        }
+      ],
+      "note": {
+        "tr": "H. 825 yılı ağırlıklı olarak M. 1421/22'ye denk gelir (bkz. meta.data_quality_notes).",
+        "en": "AH 825 corresponds mainly to AD 1421/22 (see meta.data_quality_notes)."
+      }
+    },
+    {
+      "id": "onarim-1490",
+      "year": 1490,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım (yangınlar sonrası)",
+        "en": "Extensive repair (after fires)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "699"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1593",
+      "year": 1593,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım (yangınlar sonrası)",
+        "en": "Extensive repair (after fires)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "699"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-1930lar",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Kadınlar kısmı kullanılamaz haldeyken erkekler bölümü hamam olarak işlev gördü",
+        "en": "Women's section unusable while the men's section kept working as a bath"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "699"
+        }
+      ],
+      "note": {
+        "tr": "Kaynak yalnızca '1930'lu yıllar' diyor.",
+        "en": "The source only says 'the 1930s'."
+      }
+    },
+    {
+      "id": "depo-1968",
+      "year": 1968,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Yapı geçici olarak depo olarak kullanıldı",
+        "en": "Used as a temporary warehouse"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "699"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi tarafından restore edildi; erkekler kısmı İbrahim Paşa Kültür Merkezi oldu",
+        "en": "Restored by the Bursa Metropolitan Municipality; men's section became the İbrahim Paşa Cultural Center"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "699"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-iznik-ibrahim-pasa-imareti",
+      "target_name": {
+        "tr": "İbrahim Paşa İmareti (İznik)"
+      },
+      "type": "waqf_income",
+      "description": {
+        "tr": "Hamam, yedi köyle birlikte Paşa'nın İznik'teki imaretine vakfedilmiştir.",
+        "en": "The bath was endowed, with seven villages, to the Paşa's imaret in İznik."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "697"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ibrahim-pasa-hamami",
+      "type": "same_founder",
+      "description": {
+        "tr": "İki hamam da 'Çandarlı Halil Paşa/Halil Hayreddin Paşa'nın oğlu İbrâhim Paşa' ile ilişkilendirilir; kitap aynı kişi olup olmadığını belirtmez.",
+        "en": "Both baths are linked to 'İbrâhim Paşa, son of Çandarlı Halil Paşa/Halil Hayreddin Paşa'; the book does not state whether he is the same person."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "693, 697"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, çifte hamam olarak kadınlar ve erkekler için iki ayrı girişe sahiptir. Erkekler girişi, altı sıra stalaktit süslemeli anıtsal bir taç kapıdır; içeride yaklaşık on bir metre kenarlı, kubbeli ve ortasında sekiz köşeli mermer havuzu olan bir soğukluk bulunur. Kadınlar girişi güney yüzdedir; soğukluğun doğu duvarında lale desenli alçı kabartmalar vardır. Ön cephede büyük bir çınar ağacı yükselir.",
+      "en": "As a double bath, the building has two separate entrances for women and men. The men's entrance is a monumental portal with six rows of stalactite decoration; inside is a domed frigidarium about eleven metres on each side with an eight-sided marble pool at its centre. The women's entrance is on the south side; the east wall of its frigidarium carries plaster reliefs with tulip patterns. A large plane tree stands in front of the façade."
+    },
+    "audio_description_source": "Kitabın mimari betimlemesinden (Su Yapıları bölümü) yapay zekâ ile yazıldı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1hElpr3nux_yFnPqxPh3WRwzodAELwyo1",
+    "book_layout_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+    "book_pdf_name": "4-Su Yapıları.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mahkeme-hamami/p020-1.jpg",
+        "original_name": "6_1.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "699"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamamın kafe olarak kullanılan bölümü",
+        "en": "Bath section used as a café"
+      },
+      "alt": {
+        "tr": "Tuğla sivri kemerlerin altında ahşap masalar ve sandalyeler dizilidir. Zemin gri damarlı mermerdir; arkada kitap dolapları ve beyaz duvarlı bir geçit görünür, kemer üstlerinde beyaz mukarnaslar yer alır.",
+        "en": "Wooden tables and chairs stand beneath pointed brick arches on a grey-veined marble floor. Bookcases and a white-walled passage are visible behind, with white muqarnas above the arches."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mahkeme-hamami/p020-2.jpg",
+        "original_name": "ERD09843 kopya.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "699"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Konferans düzenindeki tuğla duvarlı salon",
+        "en": "Brick-walled hall arranged for events"
+      },
+      "alt": {
+        "tr": "Kırmızı kadife kaplı sandalyeler sıra sıra dizilmiştir. Karşıdaki tuğla duvarda bir niş ve masa var; üstte beyaz, köşeli kubbe ve avize görünür.",
+        "en": "Rows of red velvet chairs face a brick wall with a niche and a small table. Above is a white faceted dome with a chandelier."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-mahkeme-hamami/p020-3.jpg",
+        "original_name": "8.jpg",
+        "book_pdf_file_id": "1ho5nPUYtQwnq80ByJQg5XEbGpuOuw2Bp",
+        "book_pdf_name": "4-Su Yapıları.pdf",
+        "book_page": "699"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Mukarnaslı kubbe ve ışık delikleri",
+        "en": "Muqarnas dome with light openings"
+      },
+      "alt": {
+        "tr": "Aşağıdan bakıldığında ortada yuvarlak bir kubbe ve üzerinde küçük yıldız biçimli ışık delikleri görünür. Çevresinde beyaz mukarnaslar ile tuğla kemerler yer alır.",
+        "en": "Looking up: a round white dome pierced by small star-shaped light openings. White muqarnas and brick arches frame it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-09"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,0 +1,676 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-seyit-mahmut-hayrani-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Hayrani'nin Mevlâna Türbesi'ne benzerliği anılıyor ancak Mevlâna Türbesi'nin kaydı ids.md'de yok; ilişki yazılmadı.",
+      "Dönem kodu: ilk yapı Hayrani'nin 1268'deki vefatından öncedir (Selçuklu), ikinci aşama 1420'dir (kitap dönem adı vermiyor); selcuklu olarak işaretlendi, gözden geçirilmeli.",
+      "Türbe külliyesinin diğer yapıları (günümüze ulaşmamış) kitapta adlandırılmıyor.",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Türkçe ve İngilizce metin aynı: Hayrani H. 667 / M. 1268'de ölmüş ama sandukası H. 649 / M. 1251 tarihli Ahmet bin Mesut türbededir; bu yüzden yapım Hayrani'nin vefatından öncedir. Kesin yıl kitapta yok."
+      },
+      {
+        "field": "facts[govde_dilim_sayisi]",
+        "note": "Türkçe metin \"on altıgen\" yazarken İngilizce metin \"hexagonal segmented body\" (altıgen) yazıyor; Türkçe esas alındı (16)."
+      },
+      {
+        "field": "name",
+        "note": "Metinde Seyit/Seyyid/Seyyit ve \"Hayrani/Hayrini\" yazımları karışık kullanılıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Seyit Mahmut Hayrani Türbesi",
+    "en": "Seyit Mahmut Hayrani Tomb"
+  },
+  "subtitle": {
+    "tr": "Dilimli gövdesiyle nadir örneklerden biri olan iki aşamalı türbe",
+    "en": "A two-stage tomb, one of the rare examples with a segmented body"
+  },
+  "alternate_names": [
+    {
+      "tr": "Seyyid Mahmut Hayrani Türbesi",
+      "en": "Seyyid Mahmut Hayrani Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "türbe",
+    "dilimli gövde",
+    "on altıgen",
+    "baldaken",
+    "sırlı tuğla",
+    "çini",
+    "külliye kalıntısı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "address": "Anıt Mahallesi, Seyyid Mahmut Hayrani Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "189"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.355344,
+      "lng": 31.40734,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/437424934 ('Seyyid Mahmud Hayrani Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk yapı H. 667 / M. 1268'den önce; ikinci aşama 1420",
+      "en": "First building before AH 667 / AD 1268; second phase 1420"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "İlk inşa kitâbesi yok. Sandukadaki kitâbeye göre Mahmut Hayrani H. 667 / M. 1268'de ölmüş; türbedeki Ahmet bin Mesut'un sandukası H. 649 / M. 1251 tarihli olduğundan yapım tarihi Hayrani'nin vefatından önce kabul edilmelidir. İkinci aşama 1420'dedir.",
+      "en": "No inscription for the first construction. The sarcophagus inscription gives Mahmut Hayrani's death as AH 667 / AD 1268, but the sarcophagus of Ahmet bin Mesut in the tomb is dated AH 649 / AD 1251, so the construction must be dated before Hayrani's death. The second phase is in 1420."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "189, 192"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": "Ahmet oğlu Abdullah oğlu Asli",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "192-193"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Akşehir'de, önce baldaken tarzında yapılmış, 1420'de yanları kapatılıp kare kaide üzerinde on altıgen dilimli gövde ve konik külah kazanmış türbe. Dilimli gövdenin nadir örneklerindendir ve Mevlâna Türbesi'ne benzerliğiyle önem kazanır.",
+    "en": "A tomb in Akşehir first built in baldachin style; in 1420 its sides were closed and it gained a sixteen-sided segmented body and conical cone on a square base. One of the rare examples with a segmented body, notable for its similarity to the Tomb of Mevlâna."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Türbe Anıt Mahallesi, Seyyid Mahmut Hayrani Sokak'tadır. Külliye şeklinde inşa edildiği ve çevresinde farklı yapılar bulunduğu bilinir; türbe dışında külliyeden hiçbir yapı günümüze gelmemiştir. İlk inşasına ait kitâbe yoktur. Yapı iki aşamalı yapılmıştır: ilk aşamada türbe baldaken tarzında inşa edilmiştir. Sandukadaki kitâbeye göre Seyyid Mahmut Hayrani H. 667 / M. 1268'de ölmüş ve bugünkü türbesine gömülmüştür; ancak türbede sandukası bulunan Ahmet bin Mesut'un sandukası H. 649 / M. 1251 tarihlidir, bu nedenle yapım tarihi Hayrani'nin vefatından önce kabul edilmelidir. Giriş açıklığı üzerindeki tamir kitâbesi, yapının H. 812 / M. 1409-10'da Seyyid Mahmud'un torunu Seydi Muhyi'nin emriyle yenilendiğini bildirir. İkinci aşama 1420'de Ahmet oğlu Abdullah oğlu Asli tarafından yapılmış; yanlar kapatılıp kare kaide üzerinde on altıgen dilimli gövde ve konik külah oluşturulmuştur. Yapı 1964 ve 2005'te onarılmıştır.",
+        "en": "The tomb is at Anıt Neighborhood, Seyyid Mahmut Hayrani Street. It is known to have been built as a social complex with other structures around it; apart from the tomb nothing of the complex survives. There is no inscription from the first construction. It was built in two stages: first as a baldachin-style tomb. According to the inscription on his sarcophagus Seyyid Mahmut Hayrani died in AH 667 / AD 1268 and was buried in his present tomb, but the sarcophagus of Ahmet bin Mesut in the tomb is dated AH 649 / AD 1251, so the construction must be dated before Hayrani's death. The repair inscription over the entrance states the building was renovated in AH 812 / AD 1409-10 by order of Seydi Muhyi, grandson of Seyyid Mahmud. The second phase was built in 1420 by Asli, son of Abdullah, son of Ahmet: the sides were closed and a sixteen-sided segmented body and conical cone on a square base were formed. The building was repaired in 1964 and 2005."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "189, 192"
+        }
+      ]
+    },
+    {
+      "id": "kisi",
+      "order": 2,
+      "title": {
+        "tr": "Seyit Mahmut Hayrani",
+        "en": "Seyit Mahmut Hayrani"
+      },
+      "body": {
+        "tr": "Seyit Mahmut Hayrani Anadolu Selçuklu döneminde yaşamış, Harran'dan Konya'ya gelmiş, Mevlâna ile münasebetleri olmuş ve ondan feyiz almış bir şahsiyettir. Daha sonra Akşehir'e gidip inzivaya çekilmiş ve meczup hâle gelmiştir.",
+        "en": "Seyit Mahmut Hayrani lived in the Anatolian Seljuk period, came to Konya from Harran, had relations with Mevlâna and was enlightened by him. He later went to Akşehir, went into seclusion and became a mystic 'majzub'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "192-193"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe kare planlı bir kaide üzerinde yükselen on altıgen dilimli bir gövde ve konik külahla örtülüdür. Alt gövdede devşirme, taş ve tuğla, üst gövdede yalnızca tuğla kullanılmıştır. İkinci kısmı oluşturan on altıgen gövdenin doğu cephesinde sırlı tuğla ve çinilerle bezeli sivri kemerli nişler ve tuğla, sırlı tuğla, çiniden geometrik kompozisyonlar vardır; burada ayrıca sanatkâr kitâbesi bulunur. Girişe doğu cephe ortasındaki düz atkılı bir kapıdan geçilir. Ceviz ağacından, bir kuşakla çevrili, geometrik ve bitkisel süslemeli ahşap giriş kapısı Akşehir Müzesi'ndedir. İçerisi pandantiflerle geçilen bir kubbeyle örtülü kare mekândır. Bugün içeride sonradan yapılmış üç sanduka vardır; özgün sandukalar İstanbul Türk ve İslam Eserleri Müzesi'nde sergilenmektedir.",
+        "en": "The tomb is covered with a segmented sixteen-sided body and a conical cone rising on a square pedestal. Reused stone and brick are used in the lower body and only brick in the upper body. The east facade of the second-stage body has pointed-arch niches decorated with glazed bricks and tiles and geometric compositions of brick, glazed brick and tile; the artist's inscription is also here. The entrance is a flat-lintelled door in the middle of the east facade. The walnut wooden entrance door, with a surrounding belt and geometric and floral decoration, is in the Akşehir Museum. The interior is a square space covered by a dome on pendentives. Today there are three later sarcophagi inside; the original sarcophagi are exhibited in the Istanbul Museum of Turkish and Islamic Arts."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "193-194"
+        }
+      ]
+    },
+    {
+      "id": "onem",
+      "order": 4,
+      "title": {
+        "tr": "Önemi",
+        "en": "Significance"
+      },
+      "body": {
+        "tr": "Türbeyi diğerlerinden ayıran en önemli özellik, dilimli gövdenin kullanıldığı nadir örneklerden olmasıdır. Mevlâna Türbesi'ne benzer özellikler taşıması da önem katar.",
+        "en": "Its most distinguishing feature is that it is one of the rare examples with a segmented body. Its similarity to the Tomb of Mevlâna adds to its importance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "194"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "meclis-sohbetleri",
+      "title": {
+        "tr": "Büyük şahsiyetlerin sohbetleri",
+        "en": "Conversations with great figures"
+      },
+      "body": {
+        "tr": "Seyyid Mahmut Hayrani'nin Mevlâna, Şems, Hacı Bektaş-ı Veli, Sadrettin Konevi ve Sultan Veled gibi önemli şahsiyetlerin sohbetlerine katıldığı söylenmektedir.",
+        "en": "It is said that Seyyid Mahmut Hayrani attended the conversations of important figures such as Mevlâna, Şems, Hacı Bektaş-ı Veli, Sadrettin Konevi and Sultan Veled."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "192-193"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "govde_dilim_sayisi",
+      "label": {
+        "tr": "Gövde kenar sayısı (ikinci aşama)",
+        "en": "Sides of the body (second phase)"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "192-193"
+        }
+      ]
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Bugünkü sanduka sayısı (sonradan yapılmış)",
+        "en": "Number of sarcophagi today (later made)"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "194"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Seyyid Mahmut Hayrani",
+      "role": {
+        "tr": "Türbenin sahibi; H. 667 / M. 1268'de öldüğü sandukadaki kitâbeden anlaşılır",
+        "en": "Occupant of the tomb; died AH 667 / AD 1268 per the sarcophagus inscription"
+      }
+    },
+    {
+      "name": "Ahmet bin Mesut",
+      "role": {
+        "tr": "Türbede sandukası bulunan kişi; sanduka tarihi H. 649 / M. 1251",
+        "en": "Person with a sarcophagus in the tomb, dated AH 649 / AD 1251"
+      }
+    },
+    {
+      "name": "Seydi Muhyi",
+      "role": {
+        "tr": "Seyyid Mahmud'un torunu; 1409-10 tamirini emretti",
+        "en": "Grandson of Seyyid Mahmud; ordered the 1409-10 repair"
+      }
+    },
+    {
+      "name": "Asli (Ahmet oğlu Abdullah oğlu)",
+      "role": {
+        "tr": "1420'deki ikinci aşamanın sanatkârı",
+        "en": "Craftsman of the second phase in 1420"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "tamir-kitabesi",
+      "location": {
+        "tr": "Giriş açıklığı üzerinde",
+        "en": "Above the entrance opening"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "H. 812 / M. 1409-10 yılında Seyyid Mahmud'un torunu Seydi Muhyi'nin emriyle yenilendi (kitabın aktarımıdır; kitâbenin metni verilmiyor)",
+        "en": "Renovated in AH 812 / AD 1409-10 by order of Seydi Muhyi, grandson of Seyyid Mahmud (as reported by the book; the inscription text is not given)"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 812,
+        "gregorian": "1409-10"
+      },
+      "note": {
+        "tr": "Dili ve metni kitapta verilmiyor; çeviri alanı kitabın özetini içerir.",
+        "en": "Language and text are not given; the translation field holds the book's summary."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "192"
+        }
+      ]
+    },
+    {
+      "id": "sanatkar-kitabesi",
+      "location": {
+        "tr": "On altıgen gövdenin doğu cephesinde",
+        "en": "On the east facade of the sixteen-sided body"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Ahmet oğlu Abdullah oğlu Asli’nin işidir",
+        "en": "It is the work of Asli, son of Abdullah, son of Ahmet."
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Dili kitapta belirtilmiyor; metin kitabın Türkçe aktarımıdır.",
+        "en": "The language is not stated; the text is the book's Turkish rendering."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "193"
+        }
+      ]
+    },
+    {
+      "id": "sanduka-kitabesi",
+      "location": {
+        "tr": "Seyyid Mahmut Hayrani'nin sandukasında",
+        "en": "On the sarcophagus of Seyyid Mahmut Hayrani"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 667,
+        "gregorian": "1268"
+      },
+      "note": {
+        "tr": "Kitâbe, ölüm tarihi H. 667 / M. 1268 olarak aktarılır; metin verilmiyor. Özgün sandukalar İstanbul'dadır.",
+        "en": "Reported as giving the death date AH 667 / AD 1268; the text is not given. The original sarcophagi are in Istanbul."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "189"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "sanduka-1251",
+      "year": 1251,
+      "date": null,
+      "hijri": "649",
+      "type": "record",
+      "title": {
+        "tr": "Türbedeki Ahmet bin Mesut sandukası bu tarihli",
+        "en": "Sarcophagus of Ahmet bin Mesut in the tomb is dated to this year"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "189"
+        }
+      ]
+    },
+    {
+      "id": "hayrani-vefat-1268",
+      "year": 1268,
+      "date": null,
+      "hijri": "667",
+      "type": "record",
+      "title": {
+        "tr": "Seyyid Mahmut Hayrani vefat etti",
+        "en": "Seyyid Mahmut Hayrani died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "189"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1409",
+      "year": 1409,
+      "date": null,
+      "hijri": "812",
+      "type": "restoration",
+      "title": {
+        "tr": "Seydi Muhyi'nin emriyle yenilendi (1409-10)",
+        "en": "Renovated by order of Seydi Muhyi (1409-10)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "192"
+        }
+      ]
+    },
+    {
+      "id": "ikinci-asama-1420",
+      "year": 1420,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "İkinci aşama: yanlar kapatıldı, on altıgen dilimli gövde ve külah yapıldı",
+        "en": "Second phase: sides closed, sixteen-sided segmented body and cone built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "192"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1964",
+      "year": 1964,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "192"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2005",
+      "year": 2005,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "192"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "govde",
+      "title": {
+        "tr": "Dilimli gövde",
+        "en": "Segmented body"
+      },
+      "hint": {
+        "tr": "Dilimli gövdenin kullanıldığı nadir örneklerden biri.",
+        "en": "One of the rare examples with a segmented body."
+      },
+      "section_id": "onem"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, kare bir kaide üzerinde yükselen on altı dilimli bir gövde ve konik bir külahla örtülüdür. Alt kısım taş ve tuğla, üst kısım tuğladır; doğu cephedeki sivri kemerli nişler sırlı tuğla ve çinilerle süslüdür. Giriş doğu cephenin ortasındadır. İç mekân kare planlıdır ve pandantifli bir kubbe ile örtülüdür.",
+      "en": "The tomb has a sixteen-segmented body and a conical cone rising on a square base. The lower part is of stone and brick, the upper part of brick; pointed-arch niches on the east facade are decorated with glazed bricks and tiles. The entrance is in the middle of the east facade. The interior is square, covered with a dome on pendentives."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p096-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "189"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Türbe ve çevresi, havadan",
+        "en": "The tomb and its surroundings from above"
+      },
+      "alt": {
+        "tr": "Çam ağaçlarının arasında, tuğla örgülü dilimli sivri külahlı türbe taş bir kaide üzerinde yükseliyor. Solda mezar taşlarının olduğu bir alan, arkada evler görülüyor.",
+        "en": "Among pine trees, a tomb with a ribbed brick cone rises from a stone base. A graveyard area is on the left and houses lie in the distance."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p098-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "192"
+      },
+      "subject": "roof",
+      "caption": {
+        "tr": "Dilimli külah",
+        "en": "Ribbed conical roof"
+      },
+      "alt": {
+        "tr": "Mavi gökyüzü önünde, tuğla örgülü dilimli külah yukarı doğru daralıyor. Alt kısımda küçük sivri kemerli nişler sıralanıyor.",
+        "en": "A ribbed brick cone narrows upward against a blue sky. Small pointed-arched niches run along its lower part."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p098-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "192"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Çatı, havadan",
+        "en": "Roof from above"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında külah, yaprak biçimli dilimlerden oluşan bir çiçeğe benziyor. Etrafında kare bir çatı, yanında merdiven ve çam ağaçları var.",
+        "en": "Seen from above, the cone looks like a flower made of leaf-shaped segments. A square roof surrounds it, with a staircase and pine trees beside it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p097-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "190-191"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Tuğla duvarda çini süslemeler",
+        "en": "Tile details on the brick wall"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla duvarda sivri kemerli sığ nişler sıralanıyor. Bazı nişlerin içinde turkuaz ve beyaz çini parçaları görülüyor.",
+        "en": "A red brick wall with a row of shallow pointed-arched niches. Some niches hold turquoise and white tile fragments."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p098-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "193"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbenin içi ve sandukalar",
+        "en": "Inside the tomb with the sarcophagi"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı odada yeşil örtülü sandukalar halıların üzerinde yan yana duruyor. Tavan tuğla kemerli; duvarlarda ahşap çerçeveli pencereler var.",
+        "en": "In a white room, sarcophagi under green covers stand side by side on rugs. The ceiling is brick-vaulted and the walls have wooden-framed windows."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p099-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "194"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Mihrap nişi ve pencereler",
+        "en": "Mihrab niche and windows"
+      },
+      "alt": {
+        "tr": "Beyaz boyalı duvarda kemerli bir mihrap nişi var. İki yanda sivri kemerli pencereler, üstte hat levhası ve yuvarlak levhalar görülüyor.",
+        "en": "A white wall with an arched mihrab niche. Pointed-arched windows flank it, with a calligraphy panel and round plaques above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-aksehir-seyit-mahmut-hayrani-turbesi/p099-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "195"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kitabe",
+        "en": "Inscription panel"
+      },
+      "alt": {
+        "tr": "Açık renkli taşa oyulmuş, sivri kemerli çerçeveli kitabede birkaç satır Arapça yazı var. Köşelerde geometrik kabartmalar görülüyor.",
+        "en": "A pale stone panel with a pointed-arch frame, carved with several lines of Arabic script and geometric reliefs in the corners."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

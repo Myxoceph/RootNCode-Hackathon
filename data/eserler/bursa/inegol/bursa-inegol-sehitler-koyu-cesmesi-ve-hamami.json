@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "bursa-inegol-sehitler-koyu-cesmesi-ve-hamami",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "İnegöl",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' İnegöl bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -72,7 +72,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "400"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.144402,
+      "lng": 29.41836,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 fotoğrafın EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": null,
   "founder": null,
@@ -230,6 +237,9 @@
   "relations": [
     {
       "target_id": "bursa-inegol-sehitler-koyu-camii",
+      "target_name": {
+        "tr": "Şehitler Köyü Camii (İnegöl)"
+      },
       "type": "waqf_income",
       "description": {
         "tr": "Köy camisinin vakfiyesine ilişkin belgelere dayanarak hamamın da vakıf yapısı olduğu sonucuna varılmıştır.",

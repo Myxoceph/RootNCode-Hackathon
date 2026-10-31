@@ -2,18 +2,17 @@
   "schema_version": "1.0",
   "id": "bursa-kestel-aksu-koyu-hamami",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Kestel",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Banisi bilinmiyor (founder: null).",
       "Tabeladaki 1460 tarihinin kaynağı kitapta yok; confidence 'probable' verildi.",
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
-      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
     ],
     "data_quality_notes": [
@@ -49,7 +48,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "564-566"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.167112,
+      "lng": 29.316532,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": {
     "display": {
@@ -157,7 +163,97 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1cxeDobWd9zo-NOT3PQQ4p-OdJNj-7SA2",
+    "book_layout_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+    "book_pdf_name": "7-Kestel.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-aksu-koyu-hamami/p025-2.jpg",
+        "original_name": "02 DJI_20241107185144_0051_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "566"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın dışı ve minare",
+        "en": "Exterior of the bath with a minaret"
+      },
+      "alt": {
+        "tr": "Geniş kiremit çatılı, beyaz duvarlı yapının arkasında bir minare ve dağlar görülür. Sokak kaldırım taşıyla döşelidir.",
+        "en": "A white building with a wide tiled roof, a minaret and mountains behind it. The street is paved with stone."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-07"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-aksu-koyu-hamami/p025-1.jpg",
+        "original_name": "08 ERD07556 kopya.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "566"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamamın içinde sergilenen kurna ve elbise",
+        "en": "Basin and dress displayed in the bath"
+      },
+      "alt": {
+        "tr": "Mermer kaplı nişte taş bir kurna, musluklar ve yeşil bir elbise sergilenmektedir. Duvarlarda bilgi panoları vardır.",
+        "en": "A niche in marble-clad walls holds a stone basin, taps and a green dress on display. Information panels hang on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-07"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-aksu-koyu-hamami/p025-3.jpg",
+        "original_name": "05 ERD07537 kopya.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "566"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Köy müzesinde sergilenen eşyalar",
+        "en": "Items displayed in the village museum"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı odada halılar, eski eşyalar ve duvarda siyah beyaz fotoğraflar görülür. Mekân sergi alanı olarak düzenlenmiştir.",
+        "en": "A room with a wooden ceiling holds rugs, old objects and black-and-white photographs on the wall, arranged as an exhibition."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-07"
+    }
+  ],
   "archive_media": []
 }

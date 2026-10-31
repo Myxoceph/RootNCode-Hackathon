@@ -1,0 +1,483 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-sarimiye-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Sarımiye Camii bölümünden (s. 310-315) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Kaynak parantez içinde 'H. 1200 / M. 1786' tarihini ilk yapılış tarihi bağlamında yazıyor; ne anlama geldiği kesin değil, teyit edilmeli.",
+      "Kitabenin metni, dili ve çevirisi kaynakta yok; yerinde okunup eklenmeli.",
+      "Adın kökeniyle ilgili kişiler (Melik Nasır, Sarımüddin vb.) banî olarak değil, yalnızca sanat tarihçilerinin tarihleme denemeleri olarak aktarıldı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Taç kapıdaki kitabe H. 1131 / M. 1718 tarihli ve 'yeniden imar'ı gösteriyor; metin ayrıca '(H. 1200 / M. 1786)' tarihini 'ilk yapılış tarihi bilinmese de' ifadesinin hemen yanında veriyor. Bu tarihin neyi gösterdiği anlaşılmıyor. İkisi de korundu, 'disputed' işaretlendi (H. 1131 = M. 1718/19, H. 1200 = M. 1785/86)."
+      },
+      {
+        "field": "alternate_names",
+        "note": "Halk arasında 'Sermaye Camii' adı kullanılır; kitap bunu hatalı (galat) bir kullanım sayar."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sarımiye Camii",
+    "en": "Sarimiye Mosque"
+  },
+  "subtitle": {
+    "tr": "Minareli taç kapısı ve mukarnaslı korniş süslemesiyle bilinen cami",
+    "en": "A mosque known for its minaret portal and muqarnas cornice decoration"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sermaye Camii",
+      "en": "Sermaye Mosque",
+      "note": "Kitaba göre halk arasında yanlış (galat) olarak kullanılan ad."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "taç kapı-minare",
+    "mukarnas",
+    "1718 kitabesi",
+    "2004 onarımı",
+    "Sermaye Camii"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "3. Mıntıka, 438 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "313"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.19975,
+      "lng": 36.163722,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q116771744 ('Sarımiye Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk yapılış tarihi bilinmiyor; H. 1131 / M. 1718 tarihli kitabe yeniden imarı gösteriyor",
+      "en": "First construction date unknown; the 1131 H / 1718 A.D. inscription shows a reconstruction"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 1131,
+    "century": null,
+    "basis": {
+      "tr": "Yapım tarihini gösteren kitabe yok. Taç kapıdaki H. 1131 / M. 1718 tarihli kitabe 'Sarimi' adıyla bilinen eserin yeniden imar edildiğini gösteriyor. Kitap ayrıca parantez içinde 'H. 1200 / M. 1786' verir, anlamı belirsizdir.",
+      "en": "There is no inscription showing the construction date. An inscription dated 1131 H / 1718 A.D. on the portal shows the work known as 'Sarimi' was reconstructed. The book also gives '1200 H / 1786 A.D.' in parentheses, whose meaning is unclear."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "313-314"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bölgesel Antakya üslubunun yanı sıra klasik Osmanlı zevkinin de kısmen görüldüğü cami; minareli taç kapısı, şemsiye örtülü şerefesi ve minare şerefesi altındaki ince mukarnaslarıyla bölgesel tarzı en iyi temsil eder. 2004'te Vakıflar Genel Müdürlüğü tarafından esaslı onarım görmüştür.",
+    "en": "A mosque showing the regional Antakya style together with partial classical Ottoman taste; its portal-minaret, umbrella-covered balcony and delicate muqarnas under the minaret balcony represent the regional style best. It was thoroughly repaired in 2004 by the General Directorate of Foundations."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Halk arasında yanlışlıkla Sermaye Camii adıyla da anılan cami, Antakya'nın bölgesel mimari üslubuna sahip olmasının yanı sıra klasik Osmanlı zevkinin de kısmen görüldüğü bir eserdir. Harim düzenlemesi, örtüsü, taç kapı-minare bütünleşmesi ve şemsiye örtülü şerefesi bölgesel tarzı en iyi şekilde temsil eder. Minarenin zarif görüntüsü ve şerefe altındaki narin mukarnaslar çok ince bir zevkin ürünüdür.",
+        "en": "The mosque, also called the Sermaye Mosque among the people, shows the regional architectural style of Antakya and also partly classical Ottoman taste. The arrangement of the sanctuary, its cover, the portal-minaret integration and the umbrella-covered balcony represent the regional style best. The elegant minaret and the delicate muqarnas under the balcony are the product of a refined taste."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "313"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe ve Onarımlar",
+        "en": "History and Repairs"
+      },
+      "body": {
+        "tr": "Eserin yapılış tarihini gösteren bir kitabe yoktur. Minareli taç kapıdaki H. 1131 / M. 1718 tarihli kitabe, 'Sarimi' adıyla bilinen eserin yeniden imar edildiğini gösterir. Caminin ilk yapılış tarihi bilinmese de (H. 1200 / M. 1786) Vakıflar Genel Müdürlüğü aracılığıyla 2004'te esaslı biçimde onarılmıştır. Onarımda çatı, mahfil ve minber gibi ahşap kısımlar yenilenmiş, mihrabın kaplama taşları değiştirilmiş, duvarların sıva ve badanası yeniden yapılmıştır.",
+        "en": "There is no inscription showing the construction date. An inscription dated 1131 H / 1718 A.D. on the minaret portal shows the work known as 'Sarimi' was reconstructed. Although the first construction date is not known (1200 H / 1786 A.D.), it was thoroughly repaired in 2004 through the General Directorate of Foundations. In the repairs the wooden parts such as the roof, mahfil and minbar were renewed, the mihrab's covering stones were changed, and the plaster and whitewash of the walls were redone."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "313-314"
+        }
+      ]
+    },
+    {
+      "id": "isim-kokeni",
+      "order": 3,
+      "title": {
+        "tr": "Ad Üzerine Görüşler",
+        "en": "Views on the Name"
+      },
+      "body": {
+        "tr": "Sanat tarihçileri 'Sarimi' veya 'Sarimiye' adından yola çıkarak eseri tarihlemek isterken Memlüklü Sultanı Melik Nasır (1299-1341), Bagras emiri Sarımüddin bin Şeybani, Ramazanoğulları beylerinden Sarimeddin İbrahim veya Dulkadirli beylerinden Sarımüddin İbrahim (1386'lar) gibi kişilerle karşılaşır; ancak bu kişilerin camiyle ilişkisi hakkında kesin bir şey söylenememektedir.",
+        "en": "While art historians try to date the work from the name 'Sarimi' or 'Sarimiye', they meet figures such as the Mamluk Sultan Melik Nasır (1299-1341), Emir of Bagras Sarimuddin bin Shaybani, Sarimeddin İbrahim of the Ramazanoğulları beys or Sarımüddin İbrahim (1386s) of the Dulkadirli beys; but nothing definite can be said about their relation to the mosque."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "314"
+        }
+      ]
+    },
+    {
+      "id": "avlu-harim",
+      "order": 4,
+      "title": {
+        "tr": "Avlu, Taç Kapı ve Harim",
+        "en": "Courtyard, Portal and Sanctuary"
+      },
+      "body": {
+        "tr": "Düzgün olmayan planlı avlunun kuzeydoğu köşesindeki oda, avlunun kuzey tarafının eskiden medrese olarak düzenlenmiş olabileceğini düşündürür. Camiye batıdaki avlunun güneybatı köşesine yerleştirilmiş, üstünde zarif minarenin yükseldiği taç kapıdan girilir; kitap bu tür minareli taç kapıların Antakya için klasikleşmiş bir form olduğunu belirtir. Hafif çarpık dikdörtgen harim, ortada bir sütun üzerinde yükselen iki kemeri, kıbleye paralel iki sahını, yüksek omurgası ve kırma çatısıyla bölgenin cami ve mescit üslubunu yansıtır. Caddeye doğru hafif çıkıntılı mihrap bloğu, gösterişsiz ahşap minber ve kuzeydeki ahşap mahfil de bölgede yaygın tarzdadır. Avlu kapısındaki kitabeyi çevreleyen üçgen alınlığın etrafındaki kornişin mukarnas bezemeleri ise Antakya'da yalnızca bu esere özgüdür.",
+        "en": "The room in the northeast corner of the irregular courtyard suggests that its north side may once have been arranged as a madrasa. The mosque is entered through the portal in the southwest corner of the western courtyard, on which the elegant minaret rises; the book says such minaret portals are a classic form for Antakya. The slightly distorted rectangular sanctuary, with two arches rising on a middle column, two naves parallel to the qibla, a high spine and a hipped roof, reflects the Antakya mosque style. The mihrab block slightly protruding towards the street, the modest wooden minbar and the wooden mahfil in the north are also regional. However, the muqarnas decoration of the cornice around the triangular pediment enclosing the inscription at the courtyard gate is unique to this work in Antakya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "313-314"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minareli_tac_kapi",
+      "label": {
+        "tr": "Minareli taç kapı",
+        "en": "Portal with minaret"
+      },
+      "value": "Avlunun güneybatı köşesinde",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "314"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "314"
+        }
+      ]
+    },
+    {
+      "key": "onarim_2004",
+      "label": {
+        "tr": "Esaslı onarım yılı",
+        "en": "Year of thorough repair"
+      },
+      "value": 2004,
+      "unit": "yıl",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "314"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "tac-kapi-kitabesi",
+      "location": {
+        "tr": "Minareli taç kapı",
+        "en": "Minaret portal"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1131,
+        "gregorian": "1718"
+      },
+      "note": {
+        "tr": "Kitap kitabenin H. 1131 / M. 1718 tarihli olduğunu ve eserin yeniden imarını gösterdiğini söyler; metin, dil ve çeviri verilmez.",
+        "en": "The book says the inscription is dated 1131 H / 1718 A.D. and shows the work's reconstruction; text, language and translation are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "313-314"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "imar-1718",
+      "year": 1718,
+      "date": null,
+      "hijri": "1131",
+      "type": "repair",
+      "title": {
+        "tr": "Yeniden imar (taç kapı kitabesine göre H. 1131)",
+        "en": "Reconstruction (1131 H per the portal inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "313"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü eliyle esaslı onarım",
+        "en": "Thorough repair through the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "314"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mukarnas-kornis",
+      "title": {
+        "tr": "Antakya'da tek: mukarnaslı korniş",
+        "en": "Unique in Antakya: muqarnas cornice"
+      },
+      "hint": {
+        "tr": "Avlu kapısındaki üçgen alınlığın çevresindeki mukarnaslı kornişe bakın.",
+        "en": "Look at the muqarnas cornice around the triangular pediment of the courtyard gate."
+      },
+      "section_id": "avlu-harim"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sarımiye Camii'ne, batıdaki avlunun güneybatı köşesinde bulunan taç kapıdan girilir; kapının tam üstünde zarif bir minare yükselir. Şerefenin altında ince mukarnaslar ve şemsiye biçimli bir örtü vardır. Kapıdaki kitabeyi çevreleyen üçgen alınlığın kornişi de mukarnaslıdır. Harim hafif çarpık bir dikdörtgendir; ortada tek bir sütun üzerinde iki kemer onu kıbleye paralel iki sahına böler. Üstü yüksek omurgalı kırma çatıyla örtülüdür. Mihrap bloğu caddeye doğru hafifçe çıkıntı yapar; sade ahşap bir minber ve kuzeyde ahşap bir mahfil vardır.",
+      "en": "The Sarimiye Mosque is entered through the portal in the southwest corner of the western courtyard, with an elegant minaret rising directly above it. Under the balcony are delicate muqarnas and an umbrella-shaped cover. The cornice around the triangular pediment enclosing the inscription on the gate is also decorated with muqarnas. The sanctuary is a slightly distorted rectangle; two arches on a single middle column divide it into two naves parallel to the qibla. It is covered by a hipped roof with a high spine. The mihrab block protrudes slightly toward the street; there is a plain wooden minbar and a wooden mahfil in the north."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 313-314) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p156-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "311"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Minare ve caminin çevresi",
+        "en": "Minaret and surroundings of the mosque"
+      },
+      "alt": {
+        "tr": "Taş gövdeli, sivri külahlı yüksek bir minare; yanında iki servi, arkada kiremit çatılı yapılar ve bir bilgi panosu. Gökyüzü bulutlu.",
+        "en": "A tall stone minaret with a pointed cap; two cypress trees beside it, tiled-roof buildings and an information board behind. Cloudy sky."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p156-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "310"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Taş geçit ve cami tabelası",
+        "en": "Stone passage and mosque sign"
+      },
+      "alt": {
+        "tr": "Kemerli taş geçidin üstünde yazılı levha ve altında \"Sarımiye Camii\" tabelası; içeride basamaklar ve ahşap kapı.",
+        "en": "Above a stone arched passage an inscribed panel and a \"Sarımiye Camii\" sign; steps and a wooden door lead inside."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p156-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "310"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Minare kaidesindeki kitabeler",
+        "en": "Inscriptions on the minaret base"
+      },
+      "alt": {
+        "tr": "Taş minare kaidesinin üstünde sıralı yuvarlak ve dikdörtgen kitabe panelleri; kesme taş örgü.",
+        "en": "Rows of round and rectangular inscription panels above a stone minaret base, in cut-stone masonry."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p157-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "312-313"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İbadet salonu ve mahfil",
+        "en": "Prayer hall and gallery"
+      },
+      "alt": {
+        "tr": "Ahşap kirişli tavan, sağda ahşap mahfil, ortada taş ayak ve minber; tavandan top şekilli lambalı büyük bir avize, zeminde turkuaz halı.",
+        "en": "A timber-beamed ceiling, a wooden gallery on the right, a stone pier and minbar in the middle and a large chandelier with globe lamps; turquoise carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p157-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "313"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Taş mihrap nişi",
+        "en": "Stone mihrab niche"
+      },
+      "alt": {
+        "tr": "Sivri kemerli taş mihrap nişi, solda kırmızı çerçeveli iki pencere; sağda ahşap minber kenarı, zeminde turkuaz halı.",
+        "en": "A pointed-arch stone mihrab niche with two red-framed windows on its left; the edge of the wooden minbar on the right and turquoise carpet."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-sarimiye-camii/p158-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "315"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Ağaçlı avlu ve revak",
+        "en": "Tree-shaded courtyard and portico"
+      },
+      "alt": {
+        "tr": "Taş döşeli, ağaçlı avluda sol tarafta korkuluklu taş merdiven; arka planda direkli revak ve ahşap kapılar. Zeminde gölgeler var.",
+        "en": "A stone-paved courtyard with trees and a railed stone stair on the left; a colonnaded portico and wooden doors behind. Shadows fall on the ground."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -2,23 +2,22 @@
   "schema_version": "1.0",
   "id": "bursa-orhangazi-gurle-koyu-hamami",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Orhangazi",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Orhangazi bölümünden (s. 661-663) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
-      "Arşiv fotoğrafı (archive_media) elimizde yok.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
       "Kitapta fethin ve yapımın kesin yılı verilmemiş (yalnızca XIV. yüzyıl).",
       "Vakfiye bilgisi kitapta yok; Gürle'nin Orhan Gazi ve I. Murad vakıfları arasında olduğu belirtilmiş.",
       "Aynı bölgedeki cami/han/tekke yapılarının adları kitapta yok; ilişki kurulmadı (Orhan Gazi Camii Gürle ile bağ 'probable').",
-      "Zaman çizelgesinde yılsız olay atlandı (metinde bölümlerde var): Orhan Gazi tarafından bölgenin fethinden sonra yaptırıldı (XIV. yy.)"
+      "Zaman çizelgesinde yılsız olay atlandı (metinde bölümlerde var): Orhan Gazi tarafından bölgenin fethinden sonra yaptırıldı (XIV. yy.)",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -52,7 +51,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "661"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.405365,
+      "lng": 29.300835,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": {
     "display": {
@@ -356,8 +362,70 @@
       "en": "[Bath ambience: dripping water]"
     }
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1jfZN3gLZw8W1gg7IrHHts71FRqZVg6h9",
+    "book_layout_pdf_file_id": "13rTzgbDo1Idz44uNj89f9YeBMs-xVv8P",
+    "book_pdf_name": "11-Orhangazi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-orhangazi-gurle-koyu-hamami/p014-1.jpg",
+        "original_name": "03 ERD07699 kopya.jpg",
+        "book_pdf_file_id": "13rTzgbDo1Idz44uNj89f9YeBMs-xVv8P",
+        "book_pdf_name": "11-Orhangazi.pdf",
+        "book_page": "663"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın taş cephesi ve meydanı",
+        "en": "Stone façade of the bath and square"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kiremit kubbeli hamamın önünde büyük bir çınar ve taş döşeli bir meydan vardır. Sağda ahşap bir kapı görülür.",
+        "en": "A stone bath with a tiled dome. A large plane tree and a cobbled square are in front, with a wooden gate at right."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-orhangazi-gurle-koyu-hamami/p013-2.jpg",
+        "original_name": "05 ERD07710 kopya.jpg",
+        "book_pdf_file_id": "13rTzgbDo1Idz44uNj89f9YeBMs-xVv8P",
+        "book_pdf_name": "11-Orhangazi.pdf",
+        "book_page": "662"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Soğukluk bölümünde sekizgen mermer taban",
+        "en": "Octagonal marble platform in the cooling room"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı bölümde, nişli bir duvarın önünde sekizgen mermer bir kaide vardır. Üzerinde kırmızı desenli bir örtü, solda gri mermer kaplı duvar ve kapı görülür.",
+        "en": "In a white-walled room with a niche, an octagonal marble platform is covered with a red patterned cloth. Grey marble panelling and a doorway are at left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

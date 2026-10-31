@@ -2,23 +2,22 @@
   "schema_version": "1.0",
   "id": "bursa-nilufer-golyazi-hamami",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Nilüfer",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Nilüfer bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Banisi ve kesin yapım yılı kitapta yok.",
       "Vakıf bilgisi kitapta verilmemiş.",
       "Hamamın içindeki bölümlerin ölçüleri kitapta yok.",
-      "Kitabın 640-641. sayfaları metin içermiyor (muhtemelen görsel); kontrol edilmeli.",
       "Koordinat kitapta yok; sahada ya da güvenilir bir kaynaktan doğrulanıp 'location.coordinates' eklenmeli.",
-      "Fotoğraflar (media[]) ve arşiv fotoğrafları (archive_media[]) henüz eklenmedi; Drive klasörü bilinmiyor (media_folder: null).",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret, ipuçları) kitapta yok; eklenmedi.",
-      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): Kısa süre 'hamam-kafe' olarak kullanıldı; sürdürülemedi"
+      "Tarihsiz olay zaman çizelgesine eklenemedi (yıl yok): Kısa süre 'hamam-kafe' olarak kullanıldı; sürdürülemedi",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -55,7 +54,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "638"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.166107,
+      "lng": 28.679659,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": {
     "display": {
@@ -233,8 +239,98 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden (Bursa Vakıf Eserleri III. Cilt) yalnızca metne dayanarak yazıldı."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1MaFDs8805U-GChT4qXjf_KyaXW3wgUnz",
+    "book_layout_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+    "book_pdf_name": "10-Nilüfer.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-golyazi-hamami/p015-1.jpg",
+        "original_name": "01 DJI_20241029173805_0653_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "638"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın taş duvarları ve kiremit çatısı",
+        "en": "Stone walls and tiled roofs of the bath"
+      },
+      "alt": {
+        "tr": "Kaba kesme taşla örülmüş alçak hamam yapısının kiremit kaplı çatıları ve bir bacası vardır. Arkada ahşap katlı evler ve taş kaplı bir sokak görülür.",
+        "en": "A low bath building of rough stone with tiled roofs and a chimney. Timber-framed houses and a cobbled street are behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-golyazi-hamami/p016-3.jpg",
+        "original_name": "03 ERD05185 kopya.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "639"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın taş cephesi ve kırmızı kapı",
+        "en": "Stone façade of the bath with a red door"
+      },
+      "alt": {
+        "tr": "Taş duvarlı yapının sağ ucunda kırmızı bir kapı bulunur. Çatıda kiremit ve tuğla bir baca, sokakta kaldırım taşları vardır.",
+        "en": "A stone-walled building with a red door at its right end. A brick chimney rises from the tiled roof and the street is paved with stone."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-nilufer-golyazi-hamami/p016-1.jpg",
+        "original_name": "02 DJI_20241029173651_0647_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1N1it6WhOKkHJgnxXdG3O7-fOYwWJr0Y7",
+        "book_pdf_name": "10-Nilüfer.pdf",
+        "book_page": "639"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hamamın kuşbakışı çatıları",
+        "en": "Aerial view of the bath roofs"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında kiremit kaplı çatıda, merkezden açılan dilimli yapıya sahip küçük kubbeler görülür. Yanlarda ağaçlar ve kayalık zemin vardır.",
+        "en": "From above, the tiled roof has small domes with segmented, fan-like patterns. Trees and rocky ground are at the sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-29"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

@@ -1,0 +1,588 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-habib-i-neccar-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "İlişki hedef id'leri (hatay-antakya-seyh-ali-camii, hatay-antakya-ulu-camii) kitaptan çıkarılamadı; ilçe ve yazım teyit edilmeli.",
+      "Kitabelerin metni, dili ve tarihi kitapta yok; taç kapı kitabesi ile Baybars kitabesinin aynı olup olmadığı netleştirilmeli.",
+      "Mimar kitapta verilmiyor.",
+      "Bugünkü yapının inşa tarihi kitapta verilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "'M.S 636'da inşa ettirilmiştir' ile 'inşa ettirdiği varsayılan eserden herhangi bir buluntu kalmasa da' ifadeleri birbiriyle çelişiyor; kitabın değerleri korunup disputed işaretlendi."
+      },
+      {
+        "field": "founder",
+        "note": "Kitap Ebu Ubeyde bin Cerrah'ı 'inşa ettirmiştir' diye anar, başka bir yerde eseri 'varsayılan' diye niteler; güven düzeyi disputed."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Habib-i Neccar Camii",
+    "en": "Habib-i Neccar Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-habib-i-neccar-kulliyesi",
+  "era": null,
+  "tags": [
+    "cami",
+    "antakya",
+    "habib-i-neccar",
+    "kubbe",
+    "mukarnas"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "59-63"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.201547,
+      "lng": 36.165527,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/102165117 ('Habib-i Neccar Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Geleneksel olarak M.S. 636; 1474, 1721, 1858 ve 1863'te onarım",
+      "en": "Traditionally 636 A.D.; repaired in 1474, 1721, 1858 and 1863"
+    },
+    "start_year": 636,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 7,
+    "basis": {
+      "tr": "Kitap 636'yı veriyor ama o yapıdan bir buluntu kalmadığını söylüyor; bugünkü yapının tarihi belirtilmiyor.",
+      "en": "The book gives 636 but says nothing remains of that building; the present building's date is not stated."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "59-61"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ebu Ubeyde bin Cerrah",
+    "role": "banî (rivayete göre; Hz. Ömer'in komutanı)",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "59"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Avlunun güneyindeki, altı gözlü son cemaat yeri ve yüksek kubbeli harimi olan cami. Kitaba göre klasik Osmanlı mimari zevkinin Antakya'daki temsilcisidir; avlusu, planı ve minaresiyle Şeyh Ali Camii'ne benzer. Rivayete göre M.S. 636'da Ebu Ubeyde bin Cerrah'a yaptırılmıştır, ancak bundan bir buluntu kalmamıştır.",
+    "en": "The mosque south of the courtyard, with a six-bay narthex and a high-domed sanctuary. The book calls it the representative of classical Ottoman taste in Antakya; it resembles the Sheikh Ali Mosque in courtyard, plan and minaret. Said to have been built by Abu Ubeyde bin Jarrah in 636, though nothing of that building remains."
+  },
+  "sections": [
+    {
+      "id": "tac-kapi-ve-son-cemaat",
+      "title": {
+        "tr": "Taç kapı ve son cemaat yeri",
+        "en": "Crown gate and narthex"
+      },
+      "body": {
+        "tr": "Avlunun doğusundaki taç kapı abidevi bir görünüşe sahiptir. Kemer kavsinin başlama seviyesinde başlayan mukarnaslı korniş kavsaranın içini üç taraftan kuşatır; biraz yukarısında kitabe yer alır. Avlunun güneyindeki yüksek kubbeli harime göre biraz alçak tutulan altı gözlü son cemaat yeri esere dinamik bir ritim kazandırır. Revakın doğu ucunda kare kaide üzerine yirmi dört kenarlı, yuvarlak hatlı gövde ve şemsiye külahlı minare yükselir; bu, bölgesel mimarinin izlerini sürdürmesi bakımından önemlidir.",
+        "en": "The crown gate east of the courtyard is monumental. A muqarnas cornice surrounds the inside of the arch recess on three sides, with the inscription a little above. The six-bay narthex, slightly lower than the high-domed sanctuary, gives the work a dynamic rhythm. At the east end of the portico, a twenty-four-sided round shaft with an umbrella cone stands on a square base, keeping the traces of regional architecture."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "62"
+        }
+      ],
+      "order": 1
+    },
+    {
+      "id": "benzerlik",
+      "title": {
+        "tr": "Şeyh Ali Camii ile benzerlik",
+        "en": "Similarity to the Sheikh Ali Mosque"
+      },
+      "body": {
+        "tr": "Eser bu haliyle klasik Osmanlı mimari zevkinin Antakya'daki temsilcisi olmuştur. Habib-i Neccar Camii sadece avlusunun şekli ve düzenlemesi yönünden değil, hariminin planı, mimarisi, minaresinin yeri ve şekli itibarıyla da Şeyh Ali Camii'nin emsali gibidir.",
+        "en": "In its current condition the work represents classical Ottoman architectural taste in Antakya. It is similar to the Sheikh Ali Mosque in courtyard shape and arrangement, in the plan and architecture of its sanctuary, and in the location and shape of its minaret."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "62"
+        }
+      ],
+      "order": 2
+    },
+    {
+      "id": "harim",
+      "title": {
+        "tr": "Harim ve iç mekân",
+        "en": "Sanctuary and interior"
+      },
+      "body": {
+        "tr": "Beyaz kesme taşlarla inşa edilen harimin siyah ve beyaz taşlardan oluşan kapısı sivri kemerli yüksek bir kavsara ile içeri alınmıştır. Cami doğu-batı yönünde uzatılmış dikdörtgen planlıdır. Mihrap önü yüksek çokgen kasnak üzerinde bir kubbeyle örtülüdür; mihrap önünün doğu ve batısındaki alanlar birer çapraz tonozla kaplanmıştır. Kubbe, yan duvarlar, son cemaat yeri ve revak tamamen metal levha ile örtülüdür. Kıble duvarından hafif taşan mihrap sivri kemerli bir nişten ibarettir ve nişin içine bir pencere yerleştirilmiştir. Mihrabın hemen sağındaki mermer minber kapısı, mukarnas başlıklı bodur sütuncelere basan kemerlerin taşıdığı kubbeyle örtülüdür; minber köşk ve köşk altı bölümleriyle klasik bir minberin tüm unsurlarına sahiptir. Mahfil, harimin kuzey iç cephesindedir ve girişin hemen sağındaki pencereye açılan kapıdan, beden duvarı içindeki helezonik merdivenle çıkılır.",
+        "en": "The sanctuary is built of white cut stone; its door of alternating black and white stones sits in a high pointed-arch recess. The mosque has a rectangular plan extending east-west. The mihrab front is covered by a dome on a high polygonal drum, with a cross vault on each side. The dome, side walls, narthex and portico are completely covered with metal plates. The mihrab, slightly protruding from the qibla wall, is a pointed-arch niche with a window inside. The marble minbar door to the right of the mihrab is covered with a dome on arches resting on squat colonnettes with muqarnas capitals; the minbar has all classical elements. The mahfil is on the north interior facade, reached by spiral stairs inside the wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "63"
+        }
+      ],
+      "order": 3
+    }
+  ],
+  "legends": [
+    {
+      "id": "ilk-cami-rivayeti",
+      "title": {
+        "tr": "Anadolu'nun ilk camii rivayeti",
+        "en": "Tradition of the first mosque in Anatolia"
+      },
+      "body": {
+        "tr": "Bir rivayete göre Müslümanlığın Anadolu'da yayılmaya başladığı yer Antakya'dır ve Anadolu'da ilk inşa edilen cami de Antakya'dadır. Kitap bu rivayeti kanıtlamaz.",
+        "en": "According to a narration, Islam began to spread in Anatolia at Antakya and the first mosque in Anatolia is also there. The book gives no proof."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "59"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "plan_tipi",
+      "label": {
+        "tr": "Plan tipi",
+        "en": "Plan type"
+      },
+      "value": "Doğu-batı yönünde uzanan dikdörtgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "63"
+        }
+      ],
+      "note": {
+        "tr": "Doğu-batı yönünde uzanan dikdörtgen",
+        "en": "Rectangular, extending east-west"
+      }
+    },
+    {
+      "key": "son_cemaat_goz_sayisi",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bays"
+      },
+      "value": 6,
+      "unit": "göz",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "62"
+        }
+      ]
+    },
+    {
+      "key": "minare_govde_kenar",
+      "label": {
+        "tr": "Minare gövdesi kenar sayısı",
+        "en": "Minaret shaft sides"
+      },
+      "value": 24,
+      "unit": "kenar",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "62"
+        }
+      ]
+    },
+    {
+      "key": "ortu_malzemesi",
+      "label": {
+        "tr": "Kubbe, yan duvar, son cemaat yeri ve revak örtüsü",
+        "en": "Covering of dome, side walls, narthex and portico"
+      },
+      "value": "Metal levha",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "63"
+        }
+      ],
+      "note": {
+        "tr": "Metal levha",
+        "en": "Metal plate"
+      }
+    },
+    {
+      "key": "harim_malzemesi",
+      "label": {
+        "tr": "Harim yapı malzemesi",
+        "en": "Sanctuary material"
+      },
+      "value": "Beyaz kesme taş; kapı siyah-beyaz taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "63"
+        }
+      ],
+      "note": {
+        "tr": "Beyaz kesme taş; kapı siyah-beyaz taş",
+        "en": "White cut stone; door in black and white stone"
+      }
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "tac-kapi-kitabesi",
+      "location": {
+        "tr": "Doğudaki taç kapının üstü",
+        "en": "Above the east crown gate"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap kitabenin varlığını belirtir; metnini, dilini ve tarihini vermez.",
+        "en": "The book mentions the inscription but gives no text, language or date."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "62"
+        }
+      ]
+    },
+    {
+      "id": "baybars-kitabesi",
+      "location": {
+        "tr": "Caminin mevcut en eski kitabesi (yeri belirtilmiyor)",
+        "en": "Oldest existing inscription of the mosque (location not stated)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Memlük sultanı Baybars'ın 'El-Melikü'z Zâhir' unvanını taşır. Kitap metin, dil ve tarih vermez; taç kapıdaki kitabeyle aynı olup olmadığı belirtilmiyor.",
+        "en": "Bears the title 'El-Meliku'z Zahir' of the Mamluk Sultan Baybars. The book gives no text, language or date, nor whether it is the crown-gate inscription."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "59"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-636",
+      "year": 636,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Ebu Ubeyde bin Cerrah'a atfedilen ilk inşa",
+        "en": "First construction attributed to Abu Ubeyde bin Jarrah"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "59"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'inşa ettirilmiştir' der, ama yapıdan buluntu kalmadığını da söyler.",
+        "en": "The book says 'was built' but also that nothing of it remains."
+      }
+    },
+    {
+      "id": "onarim-1474",
+      "year": 1474,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Memlükler döneminde tamirat ve tadilat",
+        "en": "Repairs and alterations under the Mamluks"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1721",
+      "year": 1721,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Osmanlılar döneminde tamirat ve tadilat",
+        "en": "Repairs and alterations under the Ottomans"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1858",
+      "year": 1858,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Osmanlılar döneminde tamirat ve tadilat",
+        "en": "Repairs and alterations under the Ottomans"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Osmanlılar döneminde tamirat ve tadilat",
+        "en": "Repairs and alterations under the Ottomans"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-habib-i-neccar-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Habib-i Neccar Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Habib-i Neccar Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ]
+    },
+    {
+      "target_id": "hatay-antakya-seyh-ali-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Avlusu, harim planı, minaresinin yeri ve şekli Şeyh Ali Camii'nin emsali gibidir; kitap hangisinin öncül olduğunu söylemez.",
+        "en": "Similar to the Sheikh Ali Mosque in courtyard, sanctuary plan and minaret; the book does not say which came first."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "62"
+        }
+      ]
+    },
+    {
+      "target_id": "hatay-antakya-ulu-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Kitap camiyi boyut, şöhret ve tarih olarak Ulu Cami'nin çağdaşı sayar.",
+        "en": "The book calls the mosque contemporary of the Great Mosque in size, fame and history."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "59"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, doğu-batı yönünde uzanan dikdörtgen planlı ve beyaz kesme taştan yapılmıştır. Avlunun doğusundaki taç kapının kemer kavsarası mukarnaslı bir kornişle çevrilidir. Güneydeki yüksek kubbeli harimin önünde altı gözlü bir son cemaat yeri vardır. Kubbe, yan duvarlar, son cemaat yeri ve revak metal levhayla kaplıdır. Revakın doğu ucunda, kare kaide üzerinde yirmi dört kenarlı gövdeli, şemsiye külahlı minare yükselir. İçeride sivri kemerli bir mihrap nişi, mermer bir minber ve kuzey duvarında merdivenle çıkılan bir mahfil bulunur.",
+      "en": "The mosque is rectangular, extends east-west and is built of white cut stone. The arch recess of the crown gate east of the courtyard is framed by a muqarnas cornice. A six-bay narthex fronts the high-domed sanctuary to the south. The dome, side walls, narthex and portico are covered with metal plate. At the east end of the portico stands a minaret with a twenty-four-sided shaft and an umbrella cone on a square base. Inside are a pointed-arch mihrab niche, a marble minbar and a mahfil on the north wall reached by stairs."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Habib-i Neccar Camii ve Külliyesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p031-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "60-61"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı",
+        "en": "Interior of the mosque"
+      },
+      "alt": {
+        "tr": "Kırmızı halılı geniş bir harim; sivri kemerler ve kubbe kırmızı-yeşil kalem işi şeritlerle bezeli, tavandan halka avizeler sarkıyor; sağda taş minber, solda ahşap bir mahfil.",
+        "en": "A wide prayer hall with red carpet; pointed arches and the dome are decorated with red and green painted bands, ring chandeliers hang from the ceiling; a stone minbar on the right, a wooden gallery on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p032-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "62"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Mihrap ve minber",
+        "en": "Mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Kırmızı halılı harimde taş mihrap ve yanında taş minber; iki yanda yeşil camlı pencereler, üstte vitray bir pencere ve kalem işi kemerler; ortada büyük bir halka avize.",
+        "en": "A stone mihrab and a stone minbar beside it in a red-carpeted hall; green-glazed windows on both sides, a stained-glass window above and painted arches; a large ring chandelier in the middle."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p032-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "63"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Son cemaat yerinden caminin giriş kapısı",
+        "en": "The mosque's entrance door from the portico"
+      },
+      "alt": {
+        "tr": "Sivri kemerli revakın altından görülen, siyah-beyaz taş şeritli çerçeve içinde ahşap oymalı bir kapı; iki yanda ahşap kepenkli pencereler ve banklar, tavandan asılı fenerler.",
+        "en": "A carved wooden door within a black-and-white striped stone frame, seen through a pointed arch of the portico; windows with wooden shutters and benches on both sides, lanterns hanging from the ceiling."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p032-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "63"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Revak",
+        "en": "Portico"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı, taş sütunlu uzun bir revak; zemine kırmızı halı serili, tavandan avizeler sarkıyor; sağda kemerler arasından avlu ve evler görünüyor.",
+        "en": "A long portico with a wooden ceiling and stone columns; red carpet on the floor, chandeliers hanging from the ceiling; the courtyard and houses visible between the arches on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

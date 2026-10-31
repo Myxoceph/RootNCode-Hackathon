@@ -71,10 +71,16 @@ data/
 ├── enums.json                 # sabit listeler → lookup tabloları
 ├── sources.json               # kaynaklar (kitaplar, foto arşivi) → source tablosu
 ├── schema/eser.schema.json    # eser JSON'unun JSON Schema tanımı
+├── schema/sehir.schema.json   # şehir dosyasının (yöresel lezzetler) JSON Schema tanımı
+├── schema/sound.schema.json   # sounds.json'un JSON Schema tanımı
 ├── eserler/<il>/<ilçe>/<id>.json   # her eser bir dosya → asset + alt tablolar
+├── sehirler/<il>.json         # ilin yöresel lezzetleri, coğrafi işaret tesciliyle → city_dish
+├── sounds.json                # ortam sesi kayıtları (Sesli Zaman Kapsülü) → sound
 ├── tools/
 │   ├── validate.py            # şema + çapraz kontrol (veri ekibi her değişiklikte çalıştırır)
 │   ├── media_pipeline.py      # fotoğrafları indirir, sürümlerini üretir, manifesti yazar
+│   ├── drive_photo_map.py     # Drive fotoğraflarını kitap sayfası üzerinden eserlere eşler, EXIF GPS'ini okur
+│   ├── geocode.py             # koordinat önerir/yazar: fotoğraf EXIF'i, OpenStreetMap, parent
 │   ├── db_rows.py             # JSON + manifest → DB satırları (TEK eşleme kaynağı)
 │   ├── import_to_db.py        # referans içe aktarma + doğrulama (db_rows.py'yi kullanır)
 │   └── build_viewer.py        # görüntüleyici verisi (db_rows.py'yi kullanır)
@@ -82,7 +88,7 @@ data/
 └── build/
     ├── media-manifest.json    # her görselin hash, boyut ve sürüm bilgisi   ← git'e GİRER
     ├── media/                 # yüklemeye hazır görsel sürümleri           ← git'e girmez
-    └── cache/                 # Drive'dan indirilen orijinaller            ← git'e girmez
+    └── cache/                 # Drive orijinalleri, bölük PDF'leri, OSM ve Drive eşleşmeleri ← git'e girmez
 ```
 
 Referans kayıt: [eserler/bursa/osmangazi/bursa-osmangazi-ulucami.json](eserler/bursa/osmangazi/bursa-osmangazi-ulucami.json)
@@ -253,6 +259,48 @@ CREATE TABLE source (
   extra       jsonb   NOT NULL DEFAULT '{}' -- yazarlar, fotoğrafçılar vb.
 );
 
+-- ─────────────────────────────── Yöresel lezzetler (sehirler/<il>.json)
+CREATE TABLE city_dish (
+  id                     text PRIMARY KEY CHECK (id ~ '^[a-z]+-[a-z0-9]+(-[a-z0-9]+)*$'),  -- 'bursa-pideli-kofte'
+  city_code              text NOT NULL REFERENCES city(code),
+  sort_order             smallint NOT NULL,          -- dosyadaki sıra
+  kind                   text NOT NULL CHECK (kind IN ('main','meze','dessert','street')),
+  name_tr                text NOT NULL,
+  name_en                text,
+  description_tr         text NOT NULL,
+  description_en         text,
+  story_tr               text,                       -- geçmişi / hangi günlerde yapıldığı
+  story_en               text,
+  district               text,                       -- coğrafi sınırı bir ilçeyse
+  gi_portal_id           integer NOT NULL,           -- ci.turkpatent.gov.tr/cografi-isaretler/detay/<id>
+  gi_registration_number text NOT NULL,
+  gi_registered_on       date NOT NULL,
+  gi_type                text NOT NULL CHECK (gi_type IN ('mense','mahrec')),
+  gi_registrant          text NOT NULL,
+  gi_document_url        text NOT NULL,              -- sicil belgesi (PDF)
+  source_id              text NOT NULL REFERENCES source(id),
+  source_url             text,
+  confidence             confidence NOT NULL,
+  status                 text NOT NULL CHECK (status IN ('draft','in_review','published'))
+);
+CREATE INDEX city_dish_city_idx ON city_dish (city_code, sort_order);
+
+-- ─────────────────────────────── Ortam sesleri (sounds.json)
+CREATE TABLE sound (
+  key              text PRIMARY KEY CHECK (key ~ '^[a-z]+(-[a-z]+)*$'),  -- ambient_sound anahtarı, ör. 'hamam'
+  sort_order       smallint NOT NULL,
+  title_tr         text NOT NULL,
+  title_en         text,
+  file_key         text NOT NULL,              -- bucket'taki yol: 'sounds/hamam.mp3'
+  duration_seconds real NOT NULL CHECK (duration_seconds > 0),
+  captions         jsonb NOT NULL DEFAULT '[]', -- [{ "at": 3, "text_tr": "[...]", "text_en": "[...]" }]
+  license          text NOT NULL CHECK (license IN ('CC0-1.0','CC-BY-4.0')),
+  author           text,
+  source_url       text NOT NULL,
+  status           text NOT NULL CHECK (status IN ('draft','in_review','published')),
+  CHECK (license <> 'CC-BY-4.0' OR author IS NOT NULL)
+);
+
 -- ─────────────────────────────── Eser
 CREATE TABLE asset (
   id               text PRIMARY KEY CHECK (id ~ '^[a-z0-9]+(-[a-z0-9]+)*$'),
@@ -276,8 +324,8 @@ CREATE TABLE asset (
   district         text NOT NULL,
   neighborhood     text,
   address          text,
-  lat              double precision NOT NULL CHECK (lat BETWEEN 35.5 AND 42.5),
-  lng              double precision NOT NULL CHECK (lng BETWEEN 25.5 AND 45.0),
+  lat              double precision CHECK (lat BETWEEN 35.5 AND 42.5),   -- isteğe bağlı: NULL ise eser haritada görünmez
+  lng              double precision CHECK (lng BETWEEN 25.5 AND 45.0),   -- lat ile birlikte dolu ya da boş (asset_coordinates_pair)
   coord_source     text,
   coord_verified   boolean NOT NULL DEFAULT false,
 
@@ -439,6 +487,9 @@ CREATE TABLE asset_relation (
   description_tr   text NOT NULL,
   description_en   text,
   confidence       confidence NOT NULL,
+  -- Hedef veri setinde yoksa adı (kaynaktaki gibi); uygulama bu bağı haritasız, adıyla gösterir.
+  target_name_tr   text,
+  target_name_en   text,
   UNIQUE (source_asset_id, target_asset_id, type_code),
   CHECK (source_asset_id <> target_asset_id)
 );
@@ -573,22 +624,51 @@ CREATE TABLE inscription (
 );
 
 -- ─────────────────────────────── Topluluk katkısı ve moderasyon
+-- Bu tabloları yalnızca API yazar; içe aktarma bunlara dokunmaz.
+CREATE TABLE app_user (                               -- ziyaretçi (anonim ya da hesaplı), moderatör, admin
+  id             uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  nickname       text NOT NULL CHECK (char_length(nickname) BETWEEN 2 AND 32),
+  role           text NOT NULL DEFAULT 'visitor' CHECK (role IN ('visitor','moderator','admin')),
+  created_at     timestamptz NOT NULL DEFAULT now(),
+  banned_at      timestamptz,
+  username       text UNIQUE CHECK (username ~ '^[a-z0-9][a-z0-9_.]{2,31}$'),  -- anonimde NULL
+  password_hash  text CHECK (password_hash LIKE 'scrypt$%'),
+  CHECK ((username IS NULL) = (password_hash IS NULL))
+);
+
+CREATE TABLE user_session (                           -- cihaz başına oturum; çıkış yalnızca onu siler
+  token_hash  text PRIMARY KEY CHECK (token_hash ~ '^[0-9a-f]{64}$'),  -- token'ın SHA-256'sı
+  user_id     uuid NOT NULL REFERENCES app_user(id) ON DELETE CASCADE,
+  created_at  timestamptz NOT NULL DEFAULT now()
+);
+
 CREATE TABLE contribution (
   id             uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   asset_id       text NOT NULL REFERENCES asset(id) ON DELETE CASCADE,
-  user_id        uuid NOT NULL,                        -- kullanıcı tablosu backend'e ait (FK eklenir)
+  user_id        uuid NOT NULL REFERENCES app_user(id) ON DELETE CASCADE,
   kind           text NOT NULL CHECK (kind IN ('photo','memory','tip','correction')),
-  media_id       uuid REFERENCES media(id),            -- kind = photo ise
+  media_id       uuid REFERENCES media(id),            -- kullanılmıyor; fotoğraf photo_upload'da
   body           text,
   status         text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected')),
-  reviewed_by    uuid,
+  reviewed_by    uuid REFERENCES app_user(id),         -- moderatör
   reviewed_at    timestamptz,
   reject_reason  text,
   created_at     timestamptz NOT NULL DEFAULT now(),
-  CHECK (kind <> 'photo' OR media_id IS NOT NULL),
   CHECK (status = 'pending' OR (reviewed_by IS NOT NULL AND reviewed_at IS NOT NULL))
 );
 CREATE INDEX contribution_queue_idx ON contribution (created_at) WHERE status = 'pending';
+CREATE INDEX contribution_approved_idx ON contribution (asset_id, created_at DESC) WHERE status = 'approved';
+
+CREATE TABLE photo_upload (                           -- ziyaretçi fotoğrafı (kind = photo), meta verisi silinmiş
+  contribution_id  uuid PRIMARY KEY REFERENCES contribution(id) ON DELETE CASCADE,
+  content_type     text NOT NULL CHECK (content_type IN ('image/jpeg', 'image/png')),
+  bytes            bytea NOT NULL CHECK (octet_length(bytes) BETWEEN 1 AND 5242880),
+  width            integer NOT NULL CHECK (width > 0),
+  height           integer NOT NULL CHECK (height > 0),
+  sha256           text NOT NULL CHECK (sha256 ~ '^[0-9a-f]{64}$'),
+  created_at       timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX contribution_user_idx ON contribution (user_id, created_at DESC);
 
 -- ─────────────────────────────── Değişiklik geçmişi (admin panelde her kayıt)
 CREATE TABLE asset_revision (
@@ -601,6 +681,25 @@ CREATE TABLE asset_revision (
 );
 ```
 
+### Şemanın esas kaynağı ve tablo değişikliği
+
+Yukarıdaki DDL tasarımı anlatmak içindir. **Çalışan şemanın esas kaynağı Prisma migration'larıdır**
+([`apps/api/prisma/migrations/`](../apps/api/prisma/migrations/)); bu bölümle bir migration çelişirse
+migration geçerlidir. `schema.prisma` elle yazılmaz, migration'ların kurduğu veritabanından üretilir.
+
+Bir tabloya sütun eklemek ya da yeni tablo açmak için:
+
+1. `apps/api/prisma/migrations/<zaman>_<ad>/migration.sql` olarak yeni bir migration yazılır. Prisma'nın
+   ifade edemediği yapılar (domain, CHECK, görünüm, DEFERRABLE FK, ifade indeksi) yalnızca bu SQL'de yer alır.
+   Birleşmiş bir migration asla değiştirilmez.
+2. `npm run db:migrate -w apps/api` ile uygulanır, ardından `apps/api` içinde `npx prisma db pull` ile `schema.prisma` yenilenir.
+   Prisma'nın önerdiği `DROP` ifadeleri gözden geçirilir.
+3. İçe aktarılan bir tablo değiştiyse [`tools/db_rows.py`](tools/db_rows.py) içindeki `TABLES` ve eşleme
+   güncellenir (Bölüm 7); `import_to_db.py --verify` bunu CI'da denetler.
+4. Bu bölümdeki DDL ve Bölüm 6'daki eşleme aynı PR'da güncellenir.
+5. [`docs/upgrade-notes.md`](../docs/upgrade-notes.md) dosyasına "migration uygula" maddesi eklenir ve veri
+   ekibine haber verilir.
+
 ---
 
 ## 6. JSON → tablo eşlemesi
@@ -609,6 +708,8 @@ CREATE TABLE asset_revision (
 |---|---|
 | `enums.json` → `regions`, `cities`, `asset_types`, `eras`, `relation_types`, `timeline_event_types` | aynı adlı lookup tabloları (`code`, `label.tr` → `label_tr`…) |
 | `sources.json` → `sources[]` | `source` (tanımsız alanlar `extra` jsonb'ye) |
+| `sounds.json` → `sounds[]` | `sound` (`file` → `file_key`, dizideki sıra → `sort_order`, `captions[]` → jsonb `[{at, text_tr, text_en}]`). Dosyadan çıkarılan ses DB'den silinir. |
+| `sehirler/<il>.json` → `dishes[]` | `city_dish` (`city` → `city_code`, dizideki sıra → `sort_order`, `geographical_indication.*` → `gi_*`, `source_refs[0]` → `source_id`, `source_url`). Taslaklar da içe aktarılır; dosyadan çıkarılan lezzet DB'den silinir. |
 | `id`, `meta.status`, `type`, `era`, `parent_id`, `tags`, `secondary_types` | `asset.id`, `status`, `type_code`, `era_code`, `parent_id`, `tags`, `secondary_types` |
 | `name`, `subtitle`, `summary` | `asset.name_tr/en`, `subtitle_tr/en`, `summary_tr/en` |
 | `alternate_names` | `asset.alternate_names` (jsonb, olduğu gibi) |
@@ -666,7 +767,7 @@ Notlar:
 
 `--verify` seçeneği içe aktarmadan sonra iki şeyi kontrol eder:
 - DB'deki her tablonun sütunları `db_rows.TABLES` ile aynı mı? (Şemaya sütun eklenip eşleme unutulursa yakalar.)
-- Her eserin DB'deki satırları `db_rows` çıktısıyla birebir aynı mı? (Görüntüleyicide görünen = DB'de olan.)
+- Her eserin DB'deki satırları `db_rows` çıktısıyla birebir aynı mı? (Görüntüleyicide görünen = DB'de olan.) API'nin yazdığı `contribution` satırları bu karşılaştırmaya girmez; `app_user` ve `user_session` hiç denetlenmez.
 
 PostgreSQL 16'da test edildi: iki kez üst üste içe aktarma aynı sonucu verdi. Elle değiştirilmiş bir metin, silinmiş bir satır ve fazladan eklenmiş bir sütun `--verify` ile yakalandı.
 
@@ -680,7 +781,7 @@ PostgreSQL 16'da test edildi: iki kez üst üste içe aktarma aynı sonucu verdi
 
 1. **Veritabanında dosya tutulmaz.** Görselin kendisi (BLOB/base64) DB'ye girmez. Dosyalar nesne depolamasında (S3 uyumlu) durur; DB yalnızca **depolama anahtarını ve metadata'yı** tutar.
 2. **DB'de tam URL değil, anahtar (key) tutulur.** Örnek: `assets/bursa-osmangazi-ulucami/m02-e06842fd8d/1280.webp`. Tam adres, yapılandırmadaki `MEDIA_BASE_URL` ile çalışma anında birleştirilir. CDN ya da sağlayıcı değişirse DB'de hiçbir şey değişmez.
-3. **Orijinal dosya korunur, kullanıcıya hiç gönderilmez.** Envanter fotoğrafları 4-22 MB ve 50 MP'ye kadar büyüklükte. Orijinaller **özel (private)** bir alanda durur; uygulamaya yalnızca küçültülmüş sürümler gider.
+3. **Orijinal dosya kaynağında kalır, kullanıcıya hiç gönderilmez.** Envanter fotoğrafları 4-22 MB ve 50 MP'ye kadar büyüklükte. Orijinaller depolamaya yüklenmez: Bursa'nınkiler Drive'da, Konya ve Hatay'ınkiler kitap PDF'inde durur. Manifestteki `source` ve `sha256` aynı dosyanın her zaman yeniden alınıp doğrulanmasını sağlar. Uygulamaya yalnızca küçültülmüş sürümler gider. (Ölçüm: Drive orijinali ortalama 17,9 MB, sürümlerinin toplamı 2,7 MB; orijinaller R2'nin 10 GB'lık ücretsiz kotasını tek başına aşardı.)
 4. **Her görselin birden çok sürümü vardır.** 480 / 1280 / 2560 px genişlikte, WebP ve JPEG olarak. Telefon küçük sürümü, tablet ve masaüstü büyüğünü indirir.
 5. **Dosya yolu içerik özetini içerir, bu yüzden önbellek kalıcıdır.** Yoldaki `e06842fd8d`, dosyanın sha256 özetinin başıdır. Fotoğraf değişirse yol da değişir. Bu sayede CDN'de `Cache-Control: public, max-age=31536000, immutable` güvenle kullanılır.
 6. **Yayınlanan dosyalarda metadata yoktur.** EXIF (GPS, kamera) üretilen sürümlerden silinir. Envanter fotoğraflarının bir kısmında GPS kayıtlı (Ulucami'de 10 fotoğrafın 3'ünde). Kullanıcı yüklemelerinde bu silme işlemi **KVKK açısından zorunludur**.
@@ -691,7 +792,6 @@ PostgreSQL 16'da test edildi: iki kez üst üste içe aktarma aynı sonucu verdi
 
 ```
 kok-kod-media-private                     ← herkese kapalı
-  originals/<sha256>.jpg                   orijinal dosya
   uploads/pending/<uuid>                   kullanıcı yüklemeleri (onay bekleyen)
 
 kok-kod-media-public  (+ CDN)             ← herkese açık, salt okunur
@@ -743,12 +843,23 @@ Manifest kaydı (`manifest[asset_id][media_key]`):
 ```
 
 Depolamaya yükleme:
-- Sürümler: `rclone sync data/build/media r2:kok-kod-media-public`
-- Orijinaller: `build/cache/originals/<drive-id>` dosyaları `originals/<sha256>.<ext>` adıyla private bucket'a yüklenir.
+- Sürümler (`r2` remote'u Object Read & Write yetkili, bucket'a özel bir token ile kurulur):
+  ```bash
+  rclone copy data/build/media r2:kok-kod-media-public --checksum --transfers 16 \
+    --header-upload "Cache-Control: public, max-age=31536000, immutable"
+  ```
+  `sync` değil `copy`: yerelde eksik dosya varsa `sync` onları bucket'tan da siler.
+- Orijinaller yüklenmez (İlke 3). Manifestteki `original.key` yalnızca dosyanın özetini ve biçimini kaydeder.
+- **AR hedefleri (Taşın Dili):** Bir kitabenin `ar_target_media_id`'si dolduysa, fotoğraf `media_pipeline.py`'den geçtikten sonra `.mind` dosyası derlenir; yukarıdaki `rclone copy` onu da yükler:
+  ```bash
+  npm run data:ar-targets
+  ```
+  Betik (`tools/compile_ar_targets.mts`, Chrome gerekir) fotoğrafın 1280 px JPEG sürümünden `target-mindar-<sürüm>.mind` dosyasını sürümlerin yanına yazar ve `build/ar-targets.json`'u günceller. Hedef fotoğraf önden, net ve kitabeyi dolduracak biçimde çekilmiş olmalı; MindAR kitabenin desenini tanır. İçe aktarma, derlenmemiş (ya da fotoğrafı değişmiş) hedefi boş bırakır.
+- Kontrol ederken tarayıcı user-agent'ı kullanın: `r2.dev` adresi Python'un varsayılan istemcisine (`Python-urllib`) 403 döner, tarayıcı ve uygulama etkilenmez.
 
 **Git'e ne girer?**
-- **Girer:** `build/media-manifest.json`. Küçük bir metin dosyasıdır (görsel başına ~1 KB) ve hangi görselin hangi yolda, hangi boyutta olduğunun kaydıdır. Backend içe aktarmayı bununla yapar.
-- **Girmez:** `build/media/` (sürümler) ve `build/cache/` (orijinaller). Bunlar büyüktür (Ulucami tek başına 133 MB orijinal + 27 MB sürüm) ve yeniden üretilebilir.
+- **Girer:** `build/media-manifest.json` ve `build/ar-targets.json` (derlenmiş AR hedefleri). Manifest küçük bir metin dosyasıdır (görsel başına ~1 KB) ve hangi görselin hangi yolda, hangi boyutta olduğunun kaydıdır. Backend içe aktarmayı bununla yapar.
+- **Girmez:** `build/media/` (sürümler ve `.mind` dosyaları) ve `build/cache/` (orijinaller). Bunlar büyüktür (Ulucami tek başına 133 MB orijinal + 27 MB sürüm) ve yeniden üretilebilir.
 
 Repoyu yeni çeken biri `media_pipeline.py` çalıştırınca, manifestte kayıtlı görseller Drive'dan indirilip **manifestteki yollarla aynı adlarla** yeniden üretilir; manifest değişmez. Bu senaryo test edildi: dosyalar birebir aynı üretildi. Depolama (R2) kurulduktan sonra görseller oradan da çekilebilir: `rclone sync r2:kok-kod-media-public data/build/media`.
 
@@ -861,7 +972,7 @@ Detay yanıtı örneği (kısaltılmış, `lang=tr`):
 
 ## 11. Veri ekibi için: yeni eser ekleme
 
-> Kitap bölüklerinden yapay zekâ destekli taslak üretmek için: [`tools/extract/README.md`](tools/extract/README.md). Aşağıdaki kurallar taslakların kontrolünde de geçerlidir. Taslaklar (`meta.status = "draft"`) koordinatsız ve fotoğrafsız olabilir ve içe aktarılmaz; `in_review` öncesi ikisi de eklenir.
+> Kitap bölüklerinden yapay zekâ destekli taslak üretmek için: [`tools/extract/README.md`](tools/extract/README.md). Aşağıdaki kurallar taslakların kontrolünde de geçerlidir. Taslaklar (`meta.status = "draft"`) içe aktarılmaz. Koordinat ve fotoğraf her durumda isteğe bağlıdır: koordinatı olmayan eser haritada ve yakındaki eserlerde görünmez, fotoğrafı olmayan eser yer tutucu görselle gösterilir. `validate.py` eksikleri uyarı olarak raporlar.
 
 Kurallar:
 1. Her metin bir kaynağa (`source_refs`) bağlanır. Sayfa numarası kitabın **basılı** sayfa numarasıdır.
@@ -880,10 +991,13 @@ Adımlar:
    pip install jsonschema pillow certifi
    python3 data/tools/validate.py                  # ✗ varsa düzeltin; uyarılar engel değil
    python3 data/tools/media_pipeline.py <id>       # EXIF'te GPS varsa koordinatı onunla doğrulayın
+   python3 data/tools/geocode.py --write            # koordinatı olmayan kayıtlara önerilen noktayı yazar
    python3 data/tools/build_viewer.py               # görüntüleyicide kontrol edin
    ```
 5. Manifesti (`build/media-manifest.json`) eser JSON'uyla birlikte commit edin.
 6. `meta.status = "in_review"` yapın. İkinci kişi kontrol edince `reviewed_by` doldurulur ve durum `published` olur.
+
+**Koordinatlar.** `geocode.py` koordinatı olmayan kayda sırasıyla şunları dener: eserin fotoğraflarındaki EXIF GPS'in medyanı (`source: photo_exif`; kayda bağlı fotoğraf yoksa `drive_photo_map.py`'nin kitap sayfası eşleşmesiyle esere bağladığı Drive fotoğrafları kullanılır; GPS'ler 500 m'den fazla dağılıyorsa nokta yazılmaz; drone konumu olabilir, binadan birkaç on metre sapar), OpenStreetMap'te aynı ilçede adı ve türü tutan tek aday (`source: osm`; Hatay'da 2023 depremleri öncesi OSM verisi de sorgulanır) ve son olarak bağlı olduğu yapının noktası. Elle girilmiş koordinata dokunmaz; yazdığı her nokta `verified: false`'tur ve `verification_note` nereden geldiğini söyler. Ad tam tutmadığı için elle teyit edilen eşleşmeler araçtaki `OSM_PICK` listesindedir. `drive_photo_map.py` her bölüğün Drive "Links" klasöründeki fotoğrafların yalnızca ilk 64 KB'ını (EXIF) indirir, küçük resimlerini bölük PDF'indeki sayfa görselleriyle karşılaştırır (`match_photos.py` yöntemi, skor ≥ 0,90) ve basılı sayfayı kaydın `source_refs` sayfalarıyla eşler; sonuç `build/cache/drive/photo-map.json`'dadır. Bölük PDF'leri (~6 GB) ilk çalıştırmada `build/cache/pdf/` altına indirilir. OSM'den gelen noktalar © OpenStreetMap katkıcıları, ODbL lisanslıdır; uygulamada atıf gösterilmelidir.
 
 ---
 

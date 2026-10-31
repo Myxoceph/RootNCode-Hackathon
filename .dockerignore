@@ -1,0 +1,21 @@
+# Build context for deploy/compose.yml (context: repository root).
+# Secrets and local installs must never reach an image.
+.git
+**/node_modules
+**/.env
+**/.env.*
+!**/.env.example
+**/.DS_Store
+**/dist
+**/*.tsbuildinfo
+*.pdf
+
+# Regenerated inside the image
+apps/api/src/generated
+
+# Not needed at runtime
+docs
+data/build/cache
+data/build/media
+data/viewer
+apps/app/.expo

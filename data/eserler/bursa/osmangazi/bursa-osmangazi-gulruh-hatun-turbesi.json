@@ -1,0 +1,355 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-gulruh-hatun-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Mimar kitapta belirtilmemiş.",
+      "Gülruh Hatun'un vefat tarihi kitapta yok.",
+      "Timeline'daki 1890 yılı '19. yüzyıl sonları' ifadesi için yaklaşık yer tutucudur."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel-bakis]",
+        "note": "'Muradiye türbelerinin en batısında' denir; Ebe Hatun ve Şehzade Mahmut türbeleri için de 'en batıda' ifadesi geçer. Kaynağa sadık kalındı, sahada teyit edilmeli."
+      },
+      {
+        "field": "name",
+        "note": "Başlıkta 'Hatun', metinde 'Sultan' unvanı kullanılır; ikisi de saklandı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Gülruh Hatun Türbesi",
+    "en": "Gülruh Hatun Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": "klasik-osmanli",
+  "tags": [
+    "türbe",
+    "kündekâri",
+    "kalem işi",
+    "Âyetü'l-kürsî"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "148"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.190647,
+      "lng": 29.045407,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/2796344230 ('Gülruh Hatun Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1527",
+      "en": "1527"
+    },
+    "start_year": 1527,
+    "end_year": 1527,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Gülruh Sultan'ın hayattayken yaptırdığı türbenin yapım tarihi 1527 olarak bilinir.",
+      "en": "The tomb, which Gülruh Sultan had built while alive, is known to date to 1527."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "148-149"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Gülruh Sultan (Gülruh Hatun)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "148-149"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Gülruh Sultan'ın hayır eserleri ve vakıfları (dükkân, hamam, han, değirmen)",
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "148"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "II. Bayezid'in eşi Gülruh Hatun'un hayattayken, 1527'de yaptırdığı, kare planlı ve mukarnaslı tromplu kubbeli türbe. Dört mermer mezar içerir; kündekâri ahşap kapıları 2014'te aslına uygun yenilenmiştir.",
+    "en": "The square tomb with a muqarnas-squinch dome that Gülruh Hatun, wife of Bayezid II, had built in 1527 while alive. It has four marble graves; its kündekâri wooden doors were restored to their original form in 2014."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banî",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Muradiye türbelerinin en batısında, hazireyi çevreleyen duvarın dibinde yer alır. Gülruh Sultan, II. Bayezid'in eşi, Şehzade Alemşah ile Kamer Sultan'ın annesidir; Şehzade Alemşah ile birlikte şehzade sancağında bulunmuştur. Hayırsever kişiliğiyle tanınan Gülruh Sultan Akhisar'da bir mescit, Bursa'da bir mektep inşa ettirmiş, çok sayıda dükkân, hamam, han ve değirmen vakfetmiştir. Henüz hayattayken kendi türbesini de yaptıran Gülruh Sultan'ın türbesinin yapım tarihi 1527 olarak bilinir; vefatı türbenin inşasından birkaç yıl sonradır.",
+        "en": "It is located at the westernmost point of the Muradiye tombs, at the foot of the wall surrounding the cemetery. Gülruh Sultan was the wife of Bayezid II and mother of Şehzade Alemşah and Kamer Sultan, and resided in the prince's sanjak with Şehzade Alemşah. Known for her philanthropy, she had a masjid built in Akhisar and a primary school in Bursa and endowed numerous shops, bathhouses, hans and mills. She had her own tomb built while alive; its construction date is known as 1527, and she died a few years later."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "148-149"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kare planlı türbe, yüksek sekizgen kasnağa oturan mukarnaslı tromplu kubbeyle örtülüdür; duvarları bir sıra kesme taş ve iki sıra tuğla ile örülmüştür. Mermer bir revakla girilen mekân alt sırada sekiz, üst sırada dört olmak üzere on iki pencereyle aydınlanır. Güney duvarında mihrap nişi, diğer iki duvarda ahşap kapaklı dolaplar vardır.",
+        "en": "The square tomb is covered by a muqarnas-squinch dome on a high octagonal drum; its walls are one row of cut stone and two rows of brick. The square space, entered through a marble portico, is lit by twelve windows (eight lower, four upper). There is a mihrab niche on the south wall and wooden-doored cabinets on the other two."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "149"
+        }
+      ]
+    },
+    {
+      "id": "susleme",
+      "order": 3,
+      "title": {
+        "tr": "Süsleme ve Restorasyon",
+        "en": "Decoration and Restoration"
+      },
+      "body": {
+        "tr": "Türbenin içini dolaşan Âyetü'l-kürsî yazı frizi rumi ve palmet motifli bitkisel süslemelerle donatılmıştır. Süslemeler 19. yüzyılın sonlarında sıvanarak Barok-Rokoko üslubundaki bezemelerle kaplanmış; son restorasyonda yapılan sıva raspasıyla özgün süslemeler saptanmıştır. Kündekâri teknikli ahşap kapılar çok kötü durumda bulunmuş, 2014 restorasyonunda aslına uygun yeniden ihya edilmiştir.",
+        "en": "The Ayat al-Kursi inscription frieze around the interior is decorated with vegetal ornament, rumi and palmettes. The decorations were plastered over and covered with Baroque and Rococo ornaments at the end of the 19th century; original decorations were identified by scraping off the plaster in the last restoration. The kündekâri wooden doors, found in very bad condition, were restored in 2014."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "149"
+        }
+      ]
+    },
+    {
+      "id": "mezarlar",
+      "order": 4,
+      "title": {
+        "tr": "Mezarlar",
+        "en": "Graves"
+      },
+      "body": {
+        "tr": "Kitabesi bulunmayan türbede dört mermer mezar vardır: II. Bayezid'in eşi Gülruh Hatun, kızı Kamer Sultan, Şehzade Alemşah'ın kızı Fatma Sultan ve Kamer Sultan'ın oğlu Osman.",
+        "en": "The tomb, which has no inscription, contains four marble graves: Bayezid II's wife Gülruh Hatun, her daughter Kamer Sultan, Şehzade Alemşah's daughter Fatma Sultan and Kamer Sultan's son Osman."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "149"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "149"
+        }
+      ],
+      "note": {
+        "tr": "Alt sırada 8, üst sırada 4.",
+        "en": "8 lower row, 4 upper row."
+      }
+    },
+    {
+      "key": "mezar_sayisi",
+      "label": {
+        "tr": "Mermer mezar sayısı",
+        "en": "Number of marble graves"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "149"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Gülruh Sultan (Hatun)",
+      "role": {
+        "tr": "II. Bayezid'in eşi; türbenin banisi",
+        "en": "Wife of Bayezid II; founder of the tomb"
+      }
+    },
+    {
+      "name": "Kamer Sultan",
+      "role": {
+        "tr": "Gülruh Hatun'un kızı; türbede yatar",
+        "en": "Gülruh Hatun's daughter; buried here"
+      }
+    },
+    {
+      "name": "Fatma Sultan",
+      "role": {
+        "tr": "Şehzade Alemşah'ın kızı; türbede yatar",
+        "en": "Daughter of Şehzade Alemşah; buried here"
+      }
+    },
+    {
+      "name": "Osman",
+      "role": {
+        "tr": "Kamer Sultan'ın oğlu; türbede yatar",
+        "en": "Son of Kamer Sultan; buried here"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1527",
+      "year": 1527,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Gülruh Sultan hayattayken türbesini yaptırdı",
+        "en": "Gülruh Sultan had her tomb built while alive"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "148-149"
+        }
+      ]
+    },
+    {
+      "id": "sivalama-19yy",
+      "year": 1890,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "19. yüzyıl sonlarında süslemeler sıvanıp Barok-Rokoko bezemeyle kaplandı (yaklaşık)",
+        "en": "Decorations plastered and covered with Baroque-Rococo ornament at the end of the 19th century (approx.)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "149"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon: raspa, kündekâri kapıların ihyası",
+        "en": "Restoration: plaster scraping, revival of the kündekâri doors"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "149"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "148"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe kare planlıdır; duvarları bir sıra kesme taş ve iki sıra tuğla ile örülmüştür. Mermer bir revaktan girilir. Yüksek sekizgen bir kasnağa oturan kubbe, mukarnaslı tromplarla taşınır. İç mekânı sekiz alt ve dört üst pencere aydınlatır; duvarları dolaşan Âyetü'l-kürsî yazı frizi bitkisel motiflerle çevrelidir.",
+      "en": "The tomb has a square plan with walls of one row of cut stone and two of brick. It is entered through a marble portico. The dome rises from a high octagonal drum on muqarnas squinches. Eight lower and four upper windows light the interior, where an Ayat al-Kursi inscription frieze framed by vegetal motifs runs around the walls."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

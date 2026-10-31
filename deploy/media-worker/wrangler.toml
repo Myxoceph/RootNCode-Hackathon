@@ -1,0 +1,16 @@
+# Media Worker (Y14): serves the R2 media bucket under our own domain.
+# Deploy: docs/deploy.md, "Görsellerin alan adı".
+name = "vagabonds-media"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# The address the app uses (MEDIA_BASE_URL). The zone is in Yiğit's Cloudflare account;
+# deploying creates the DNS record and the certificate, the rest of the zone is untouched.
+routes = [{ pattern = "media.allbytech.com", custom_domain = true }]
+
+# Also reachable at vagabonds-media.yigit-toq.workers.dev, as a fallback and for testing.
+workers_dev = true
+
+[vars]
+# Public URL of the bucket (Ahmet's Cloudflare account). Without a trailing slash.
+ORIGIN = "https://pub-6463f7311d7d4a26b43c3099db98b8e3.r2.dev"

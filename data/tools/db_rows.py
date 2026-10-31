@@ -8,6 +8,8 @@ TABLES: her tablonun sütunları, DDL'deki sırayla. DB'nin kendisinin ürettiğ
 sütunlar (identity id, uuid, now()) satırlarda GENERATED değeriyle gelir.
 """
 import json
+import re
+from functools import lru_cache
 from pathlib import Path
 
 DATA = Path(__file__).resolve().parent.parent
@@ -22,6 +24,15 @@ TABLES = {
     "relation_type": ["code", "label_tr", "label_en"],
     "timeline_event_type": ["code", "label_tr", "label_en"],
     "source": ["id", "type", "title_tr", "title_en", "publisher", "year", "isbn", "url", "is_official", "extra"],
+    "city_dish": [
+        "id", "city_code", "sort_order", "kind", "name_tr", "name_en", "description_tr", "description_en", "story_tr", "story_en",
+        "district", "gi_portal_id", "gi_registration_number", "gi_registered_on", "gi_type", "gi_registrant", "gi_document_url",
+        "source_id", "source_url", "confidence", "status",
+    ],
+    "sound": [
+        "key", "sort_order", "title_tr", "title_en", "file_key", "duration_seconds", "captions", "license", "author",
+        "source_url", "status",
+    ],
     # eser
     "asset": [
         "id", "status", "type_code", "secondary_types", "parent_id", "era_code", "tags",
@@ -46,7 +57,8 @@ TABLES = {
     "asset_person": ["asset_id", "sort_order", "name", "role_tr", "role_en"],
     "timeline_event": ["asset_id", "slug", "year", "date", "hijri", "type_code", "title_tr", "title_en", "note_tr", "note_en", "confidence"],
     "asset_highlight": ["asset_id", "sort_order", "feature", "title_tr", "title_en", "hint_tr", "hint_en", "section_slug"],
-    "asset_relation": ["id", "source_asset_id", "target_asset_id", "type_code", "description_tr", "description_en", "confidence"],
+    "asset_relation": ["id", "source_asset_id", "target_asset_id", "type_code", "description_tr", "description_en", "confidence",
+                       "target_name_tr", "target_name_en"],
     "visitor_tip": ["id", "asset_id", "text_tr", "text_en", "origin", "collected_at"],
     "exhibition": ["id", "asset_id", "name_tr", "name_en", "venue", "start_date", "end_date"],
     "source_citation": ["id", "asset_id", "entity", "entity_key", "source_id", "pages"],
@@ -77,7 +89,7 @@ ASSET_TABLES = [
     "asset_highlight", "asset_relation", "visitor_tip", "exhibition", "source_citation",
     "media", "media_variant", "asset_media", "inscription", "contribution", "asset_revision",
 ]
-SHARED_TABLES = ["region", "city", "asset_type", "era", "relation_type", "timeline_event_type", "source"]
+SHARED_TABLES = ["region", "city", "asset_type", "era", "relation_type", "timeline_event_type", "source", "city_dish", "sound"]
 
 ENUM_TABLES = {
     "region": "regions", "era": "eras", "relation_type": "relation_types", "timeline_event_type": "timeline_event_types",
@@ -116,7 +128,69 @@ def shared_rows():
         }
         for s in sources
     ]
+    rows["city_dish"] = city_dish_rows()
+    rows["sound"] = sound_rows()
     return {t: rows[t] for t in SHARED_TABLES}
+
+
+def sound_rows():
+    """sounds.json → sound. Altyazılar jsonb'de [{at, text_tr, text_en}] olarak durur."""
+    sounds = json.loads((DATA / "sounds.json").read_text(encoding="utf-8"))["sounds"]
+    return [
+        {
+            "key": s["key"], "sort_order": order, "title_tr": s["title"]["tr"], "title_en": s["title"].get("en"),
+            "file_key": s["file"], "duration_seconds": s["duration_seconds"],
+            "captions": [{"at": c["at"], "text_tr": c["text"]["tr"], "text_en": c["text"].get("en")} for c in s["captions"]],
+            "license": s["license"], "author": s["author"], "source_url": s["source_url"], "status": s["status"],
+        }
+        for order, s in enumerate(sounds)
+    ]
+
+
+def city_dish_rows():
+    """sehirler/<il>.json → city_dish. Taslaklar da girer; API yalnızca görünür durumdakileri verir."""
+    rows = []
+    for path in sorted((DATA / "sehirler").glob("*.json")):
+        city = json.loads(path.read_text(encoding="utf-8"))
+        for order, d in enumerate(city["dishes"]):
+            gi, ref = d["geographical_indication"], d["source_refs"][0]
+            rows.append({
+                "id": d["id"], "city_code": city["city"], "sort_order": order, "kind": d["kind"],
+                "name_tr": d["name"]["tr"], "name_en": d["name"].get("en"),
+                "description_tr": d["description"]["tr"], "description_en": d["description"].get("en"),
+                "story_tr": _t(d["story"], "tr"), "story_en": _t(d["story"], "en"), "district": d["district"],
+                "gi_portal_id": gi["portal_id"], "gi_registration_number": gi["registration_number"],
+                "gi_registered_on": gi["registered_on"], "gi_type": gi["type"], "gi_registrant": gi["registrant"],
+                "gi_document_url": gi["document_url"], "source_id": ref["source_id"], "source_url": ref.get("url"),
+                "confidence": d["confidence"], "status": d["status"],
+            })
+    return rows
+
+
+@lru_cache(maxsize=None)
+def _ar_targets():
+    """build/ar-targets.json (compile_ar_targets.mts) ve sözleşmedeki MindAR sürümü."""
+    path = DATA / "build" / "ar-targets.json"
+    compiled = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"mindar_version": None, "targets": {}}
+    contract = (DATA.parent / "packages" / "contracts" / "src" / "asset.schema.ts").read_text(encoding="utf-8")
+    return compiled, re.search(r'AR_MINDAR_VERSION = "([^"]+)"', contract).group(1)
+
+
+def ar_target(asset_id, media_id, manifest):
+    """Kitabenin AR hedefi; `.mind` dosyası henüz derlenmemişse None.
+
+    API `.mind` adresini fotoğrafın klasöründen kendisi kurar (`arTargetMindKey`); bu yüzden
+    yalnızca bu fotoğraftan, sözleşmedeki MindAR sürümüyle derlenmiş hedef DB'ye girer.
+    Fotoğraf değiştiyse ya da sürüm yükseldiyse önce `npm run data:ar-targets`.
+    """
+    if not media_id:
+        return None
+    compiled, version = _ar_targets()
+    entry = compiled["targets"].get(asset_id, {}).get(media_id)
+    photo = manifest.get(media_id)
+    if not entry or not photo or compiled["mindar_version"] != version or entry["sha256"] != photo["sha256"]:
+        return None
+    return media_id
 
 
 def asset_rows(a, manifest):
@@ -125,7 +199,7 @@ def asset_rows(a, manifest):
     M, L = a["meta"], a["location"]
     D, F, AR, W = (a.get(k) or {} for k in ("dating", "founder", "architect", "waqf"))
     V, X, S = (a.get(k) or {} for k in ("visit", "accessibility", "ambient_sound"))
-    coords = L.get("coordinates") or {}  # taslaklarda olmayabilir (yalnızca viewer; DB'ye taslak girmez)
+    coords = L.get("coordinates") or {}  # isteğe bağlı: yoksa lat/lng NULL, eser haritada görünmez
     rows = {t: [] for t in ASSET_TABLES}
 
     rows["asset"].append({
@@ -136,7 +210,7 @@ def asset_rows(a, manifest):
         "alternate_names": a.get("alternate_names", []),
         "summary_tr": a["summary"]["tr"], "summary_en": a["summary"].get("en"),
         "city_code": L["city"], "district": L["district"], "neighborhood": L.get("neighborhood"), "address": L.get("address"),
-        "lat": coords.get("lat"), "lng": coords.get("lng"), "coord_source": coords.get("source"), "coord_verified": coords.get("verified"),
+        "lat": coords.get("lat"), "lng": coords.get("lng"), "coord_source": coords.get("source"), "coord_verified": coords.get("verified", False),
         "dating_display_tr": _t(D.get("display"), "tr"), "dating_display_en": _t(D.get("display"), "en"),
         "start_year": D.get("start_year"), "end_year": D.get("end_year"), "hijri_year": D.get("hijri_year"), "century": D.get("century"),
         "dating_basis_tr": _t(D.get("basis"), "tr"), "dating_basis_en": _t(D.get("basis"), "en"), "dating_confidence": D.get("confidence"),
@@ -208,6 +282,7 @@ def asset_rows(a, manifest):
         rows["asset_relation"].append({
             "id": GENERATED, "source_asset_id": aid, "target_asset_id": r["target_id"], "type_code": r["type"],
             "description_tr": r["description"]["tr"], "description_en": r["description"].get("en"), "confidence": r["confidence"],
+            "target_name_tr": r.get("target_name", {}).get("tr"), "target_name_en": r.get("target_name", {}).get("en"),
         })
         cite("relation", f"{r['target_id']}:{r['type']}", r["source_refs"])
     for tip in V.get("visitor_tips", []):
@@ -257,7 +332,7 @@ def asset_rows(a, manifest):
             "language": n["language"], "script": n.get("script"), "transliteration": n.get("transliteration"),
             "translation_tr": _t(n.get("translation"), "tr"), "translation_en": _t(n.get("translation"), "en"),
             "author": n.get("author"), "hijri_year": d.get("hijri_year"), "gregorian": d.get("gregorian"),
-            "note_tr": _t(n.get("note"), "tr"), "note_en": _t(n.get("note"), "en"), "ar_target_media_key": n.get("ar_target_media_id"),
+            "note_tr": _t(n.get("note"), "tr"), "note_en": _t(n.get("note"), "en"), "ar_target_media_key": ar_target(aid, n.get("ar_target_media_id"), manifest),
         })
         cite("inscription", n["id"], n["source_refs"])
 
@@ -270,12 +345,38 @@ def asset_rows(a, manifest):
     return rows
 
 
+def asset_rows_processed_media(a, manifest):
+    """asset_rows gibi, ama media_pipeline.py'den henüz geçmemiş (manifestte olmayan) görselleri atlar.
+
+    Döner: (rows, atlanan medya id'leri). Atlanan görsele bağlı kitabe AR hedefi boşaltılır.
+    source_json ve asset_revision.data yine kaydın tamamını taşır; görseller işlenip yeniden
+    içe aktarılınca kendiliğinden eklenir.
+    """
+    all_media = a["media"] + a.get("archive_media", [])
+    skipped = [m["id"] for m in all_media if m["id"] not in manifest]
+    if not skipped:
+        return asset_rows(a, manifest), []
+    trimmed = {
+        **a,
+        "media": [m for m in a["media"] if m["id"] in manifest],
+        "archive_media": [m for m in a.get("archive_media", []) if m["id"] in manifest],
+        "inscriptions": [
+            {**n, "ar_target_media_id": n["ar_target_media_id"] if n.get("ar_target_media_id") in manifest else None}
+            for n in a.get("inscriptions", [])
+        ],
+    }
+    rows = asset_rows(trimmed, manifest)
+    rows["asset"][0]["source_json"] = a
+    rows["asset_revision"][0]["data"] = a
+    return rows, skipped
+
+
 def load_all(include_drafts=False):
     """Tüm eserleri ve manifesti okur.
 
-    Varsayılan: taslaklar (meta.status = draft) atlanır; koordinatsız/fotoğrafsız olabilirler ve
-    uygulamada görünmezler, in_review'a geçince içe aktarmaya girerler. Görüntüleyici
-    (build_viewer.py) include_drafts=True ile hepsini gösterir.
+    Varsayılan: taslaklar (meta.status = draft) atlanır; uygulamada görünmezler, in_review'a
+    geçince içe aktarmaya girerler. Görüntüleyici (build_viewer.py) include_drafts=True ile
+    hepsini gösterir. Koordinatsız ve fotoğrafsız kayıtlar her durumda içe aktarılır.
     """
     manifest_path = DATA / "build" / "media-manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}

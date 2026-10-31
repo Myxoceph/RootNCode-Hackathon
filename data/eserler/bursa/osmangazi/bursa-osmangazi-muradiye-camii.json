@@ -1,0 +1,997 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-muradiye-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Caminin mimarı kitapta belirtilmemiş.",
+      "Kitabedeki 'imaret' sözcüğünün külliyenin tamamını mı camiyi mi kasteden olduğu kitapta açıklanmamış.",
+      "'bursa-yildirim-yesil-camii' ilişki hedefinin ilçesi metinde yok (Yeşil Cami'nin ilçesi bu bölümde geçmiyor); Ulucami kaydındaki id kullanıldı, doğrulanmalı.",
+      "Caminin hazire/haziresi bu bölümde ayrı anlatılmamıştır; türbeler ayrı kayıtlardır."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Giriş bölümü caminin 'H. 829 / M. 1426' yılında yaptırıldığını söyler; kitabe ise emri Receb 828 / M. 1425, tamamlanmayı Muharrem 830 / M. 1426 olarak verir. Kitabe esas alındı."
+      },
+      {
+        "field": "sections[mihrap-minber]",
+        "note": "Kitap, minberin 1790 onarımıyla 'aynı dönemde' yandığını söyler, ancak yerine getirilen minber H. 1315 / M. 1897 tarihlidir. Bu iki bilgi birbirini tutmuyor; kaynağa sadık kalındı."
+      },
+      {
+        "field": "sections[kitabe]",
+        "note": "Kitabe tarihleri (Receb 828 = M. Mayıs-Haziran 1425; Muharrem 830 = M. Kasım-Aralık 1426) kitabın değerleridir ve olduğu gibi saklanmıştır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Muradiye Camii",
+    "en": "Muradiye Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "tabhaneli cami",
+    "selatin camii",
+    "Muradiye",
+    "Tebrizli ustalar",
+    "İznik çinisi",
+    "UNESCO"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "II. Murad Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "111"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.191015,
+      "lng": 29.046501,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/397551853 ('Muradiye Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 828-830 / M. 1425-1426",
+      "en": "AH 828-830 / AD 1425-1426"
+    },
+    "start_year": 1425,
+    "end_year": 1426,
+    "hijri_year": 828,
+    "century": 15,
+    "basis": {
+      "tr": "Ana giriş kapısı üzerindeki inşa kitabesi.",
+      "en": "Construction inscription over the main entrance."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "111-113"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan II. Murad",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "111-113"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bursa'daki sultan camilerinin sonuncusu. Sultan II. Murad'ın 1425-1426'da yaptırdığı, iki yanında tabhane/zaviyeleri olan cami; Tebrizli ustaların çinileriyle ve 1897'de eyvana çevrilen tabhaneleriyle bilinir.",
+    "en": "The last of the imperial mosques in Bursa. Built by Sultan Murad II in 1425-1426 with hospices/zawiyas on both sides, it is known for the tiles of the Tabriz masters and for the hospices turned into iwans in 1897."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Muradiye Camii, Muradiye Külliyesi'nin ana yapısıdır ve Bursa'daki son selatin külliyesinin merkezini oluşturur. Sultan II. Murad tarafından, her iki yanındaki tabhane/zaviyelerle birlikte H. 829 / M. 1426 yılında yaptırılmıştır. Caminin kitabeye göre yapımı H. 828 / M. 1425'te başlamış, H. 830 / M. 1426'da tamamlanmıştır.",
+        "en": "The mosque is the main structure of the last imperial complex in Bursa. It was built by Sultan Murad II in AH 829 / AD 1426 together with the hospices/zawiyas on both sides. According to the inscription, construction began in AH 828 / AD 1425 and was completed in AH 830 / AD 1426."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111, 113"
+        }
+      ]
+    },
+    {
+      "id": "insa-kitabesi",
+      "order": 2,
+      "title": {
+        "tr": "İnşa Kitabesi",
+        "en": "Construction Inscription"
+      },
+      "body": {
+        "tr": "İnşa kitabesi caminin ana giriş kapısı üzerindedir. Mealen: \"Bu şerefli ve mübarek imaretin inşasını, Arap ve Acem'in sultanı, Allah'ın yeryüzündeki gölgesi, padişah oğlu padişah, Bayezid Han oğlu Mehmed oğlu Sultan Murad Hicri 828 yılının Recep ayında (M. Mayıs-Haziran 1425) emretmiştir. Yapının tamamlanması ise Hicri 830 yılının Muharrem ayında (M. Kasım-Aralık 1426) gerçekleşmiştir.\" Kitabe bu yönüyle külliyeyi Osmanlı mimarisinde en kısa sürede tamamlanan sultan külliyelerinden biri yapar.",
+        "en": "The inscription over the main entrance states that Sultan Murad II ordered the construction in Rajab AH 828 (May-June AD 1425) and that it was completed in Muharram AH 830 (Nov-Dec AD 1426); the complex stands out as one of the imperial complexes completed in the shortest time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "112-113"
+        }
+      ]
+    },
+    {
+      "id": "duvar",
+      "order": 3,
+      "title": {
+        "tr": "Duvar Örgüsü",
+        "en": "Masonry"
+      },
+      "body": {
+        "tr": "Caminin beden duvarları Erken Osmanlı Dönemi Bursa yapılarında olduğu gibi üç sıra tuğla ve bir sıra moloz taşla örülmüştür. Taşların ebatları farklı olduğundan, aralarına düşey tuğlalar yerleştirilerek daha düzenli bir görünüm elde edilmeye çalışılmıştır.",
+        "en": "The main walls are built with three rows of bricks and one row of rubble stone, as in Early Ottoman Bursa buildings. Since the stones differ in size, vertical bricks were placed between them for a more regular appearance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "113"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 4,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "The Narthex"
+      },
+      "body": {
+        "tr": "Yapı, Bursa'daki bazı selatin camilerinde olduğu gibi beş bölümlü bir son cemaat yerine sahiptir. Dört mermer paye üzerine oturan revakların arasında silindirik iki granit sütun vardır. Orta giriş bölümü mukarnas dolgulu ve mukarnas tromplu kubbeyle, iki yanındaki bölümler prizmatik üçgenli tromplu kubbeyle, uçtakiler aynalı tonozla örtülmüştür. Dört basamakla çıkılan son cemaat yerinde, doğudaki iç koridora ve batıdaki asma kata açılan iki kapı vardır; bu girişler 1855 onarımından sonra pencerelerin kapıya çevrilmesiyle oluşturulmuştur. Revak cephesi, on beş değişik geometrik düzende örülen tuğlalarla hareketlendirilmiş; kuzey cephede saçak silmesinin altına firuze sırlı tuğlalar eklenmiştir.",
+        "en": "The building has a five-part narthex. Two cylindrical granite columns stand between the arcades resting on four marble piers. The middle section is covered with a muqarnas-filled dome with muqarnas squinches, the sides with prismatic triangle squinch domes and the end bays with flattened barrel vaults. The narthex is reached by four steps and has two doors opening to the inner corridor in the east and the mezzanine in the west, created after the 1855 restoration by converting windows into doors. The arcade façade is enlivened by bricks laid in fifteen geometric patterns, with turquoise glazed bricks added on the north façade under the cornice."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "114-115"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 5,
+      "title": {
+        "tr": "Plan ve Kubbeler",
+        "en": "Plan and Domes"
+      },
+      "body": {
+        "tr": "Muradiye Camii'nde tabhaneli/zaviyeli plan şeması uygulanmıştır. Giriş sofasının açıldığı kubbeli iç avlunun iki yanında art arda iki kubbe yükselir; kubbeler Türk üçgenli kasnaklara oturur, geçiş mukarnaslı tromplarla sağlanır. Giriş kubbesi dıştan sekizgen kasnaklıdır. Kubbeli, minber ve mihraplı harim bölümüne birkaç basamakla çıkılır. Mihrap önü kubbesi prizmatik Türk üçgenlerine oturur, dıştan sekizgen kasnaklı, içeriden üçgen tromplu yapıdadır.",
+        "en": "The architectural plan scheme with hospices/zawiyas was applied in the Muradiye Mosque. Two domes rise one after the other on both sides of the domed inner courtyard onto which the entrance hall opens, sitting on Turkish triangles with muqarnas squinches. The main prayer hall with its dome, minbar and mihrab is reached by a few steps. The dome in front of the mihrab sits on prismatic Turkish triangles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "115"
+        }
+      ]
+    },
+    {
+      "id": "tabhaneler",
+      "order": 6,
+      "title": {
+        "tr": "Tabhanelerin Eyvana Dönüştürülmesi",
+        "en": "Hospices Turned into Iwans"
+      },
+      "body": {
+        "tr": "Sultan II. Abdülhamid'in iradesiyle 1897'de tabhanelerin duvarları kaldırılmış, tabhaneler camiye dahil edilerek eyvan şekline dönüştürülmüştür. Bu tarihten önce çekilmiş dış görünüm fotoğraflarında tabhanelerin ocak bacaları açıkça görülebilmektedir.",
+        "en": "By the will of Sultan Abdülhamid II the walls of the hospices were removed in 1897 and they were incorporated into the mosque and transformed into an iwan. In exterior photographs from before that date the stove chimneys of the hospices can be clearly seen."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "115"
+        }
+      ]
+    },
+    {
+      "id": "hat",
+      "order": 7,
+      "title": {
+        "tr": "Hat Yazıları",
+        "en": "Calligraphy"
+      },
+      "body": {
+        "tr": "Eyvan kemer ayaklarının her ikisinde celi sülüs hatla yazılmış besmele-i şerif dikkat çeker. Batı eyvanının kıble duvarında besmelenin altında sülüs hatla Bakara suresi 149. ayet yazılıdır. H. 1320 / M. 1902 tarihli bu yazılar hattat Ömer Vasfi Efendi'nin eseridir. Mihrabın batısındaki levhada aynı ayet Şeyh Sırrî Efendi'nin celi talik hattıyla yazılmıştır; tam karşısında aynı ölçüde bir Kâbe örtüsü asılıdır.",
+        "en": "The Basmala al-Sharif in Jeli Thuluth draws attention on both iwan arch piers. On the qibla wall of the western iwan, below it, is Surah Al-Baqarah 149 in Thuluth, dated AH 1320 / AD 1902, the work of calligrapher Ömer Vasfi Efendi. On the plaque west of the mihrab the same verse is in the Jeli Ta'liq of Shaykh Sırrî Efendi, with a Kaaba cover of the same size hung directly opposite."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "116"
+        }
+      ]
+    },
+    {
+      "id": "cini",
+      "order": 8,
+      "title": {
+        "tr": "Çiniler",
+        "en": "Tiles"
+      },
+      "body": {
+        "tr": "Mihrap önü mekânının duvarları, araları üçgen firuze sırlı tuğlalarla doldurulmuş altıgen zümrüt yeşili çinilerle kaplıdır. Girişin iki yanındaki duvarlar, maksurelerin duvarları, mihrap duvarının minber arkasına düşen köşesi ve pencere altlıkları firuze altıgen çinilerle süslüdür. Zümrüt yeşili çiniler ve panoları çevreleyen bordürler daha önce Yeşil Cami'de de kullanıldığı için, orada çalışan Tebrizli usta grubunun Muradiye'de de görev aldığı anlaşılmaktadır.",
+        "en": "The walls of the area in front of the mihrab are covered with hexagonal emerald green tiles with triangular turquoise glazed bricks between them. The walls beside the entrance, the maqsura walls, the corner of the mihrab wall behind the minbar and the window bases carry turquoise hexagonal tiles. Because the emerald green tiles and borders were previously used in the Yeşil Mosque, the group of masters from Tabriz who worked there evidently also worked at Muradiye."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "116-117"
+        }
+      ]
+    },
+    {
+      "id": "minareler",
+      "order": 9,
+      "title": {
+        "tr": "Minareler",
+        "en": "Minarets"
+      },
+      "body": {
+        "tr": "İki tuğla minareden doğudaki daha eski bir yapıdır; hem camiden hem asma kattan girilebilir. Batı minarenin kaidesindeki H. Muharrem 1322 / M. Nisan 1904 tarihi, bu minarenin doğudakinden sonra yapıldığını gösterir.",
+        "en": "Of the two brick minarets the eastern one is older and can be entered from both the mosque and the mezzanine. The date Muharram AH 1322 / April AD 1904 on the base of the western minaret shows it was built after the eastern one."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber",
+      "order": 10,
+      "title": {
+        "tr": "Mihrap ve Minber",
+        "en": "Mihrab and Minbar"
+      },
+      "body": {
+        "tr": "1790 onarımından sonra caminin mihrabı tamamen alçıdan, Rokoko üslubunda yenilenmiştir. Aynı dönemde minber yanmış; yerine Bursa köylerindeki bir camiden getirilen, birkaç basamaklı, H. 1315 / M. 1897 tarihli sade ahşap bir minber konmuştur. 2014 restorasyonunda bu minber kaldırılıp günümüzdeki minber yerleştirilmiştir. Farklı üsluplarda yapılan mihrap ve minber mimari bütünlükten uzaktır.",
+        "en": "After the repair in 1790 the mihrab was renovated entirely in plaster in the Rococo style. During the same period the minbar burned down and a simple wooden minbar with a few steps, dated AH 1315 / AD 1897, was brought from a village mosque in Bursa; it was replaced by the current minbar in the 2014 restoration. The mihrab and minbar, built in different styles, lack architectural integrity."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117-118"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 11,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Cami 1594, 1623, 1628, 1715, 1781, 1790, 1844 ve 1849'da çeşitli onarımlar geçirmiştir. 1855 depreminde ciddi yıkım olmamış ama cami zedelenmiş, minaresi yarılmış, türbe kubbesi ayrılmış, medresenin dershanesi ve duvarları hasar görmüş; kapsamlı bir onarım süreci başlamıştır. 1863'te vali Ahmet Vefik Paşa'nın yürüttüğü restorasyonda mimar Léon Parvillée onarımla görevlendirilmiş, 1866'da kubbe kurşunları yenilenmiştir. Son restorasyon 2012-2014 arasında yapılmıştır.",
+        "en": "The mosque was repaired in 1594, 1623, 1628, 1715, 1781, 1790, 1844 and 1849. In the 1855 earthquake there was no serious destruction, but the mosque was damaged, its minaret split, the tomb dome cracked and the madrasa's classroom and walls damaged. In the 1863 restoration led by governor Ahmet Vefik Paşa, architect Léon Parvillée was put in charge, and the lead on the dome was renewed in 1866. The final restoration was carried out in 2012-2014."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117-118"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_goz_sayisi",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Number of narthex bays"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "114-115"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_basamak",
+      "label": {
+        "tr": "Son cemaat yeri basamak sayısı",
+        "en": "Narthex steps"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "key": "revak_tugla_duzeni",
+      "label": {
+        "tr": "Revak cephesi tuğla düzeni",
+        "en": "Arcade brick patterns"
+      },
+      "value": 15,
+      "unit": "düzen",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "114"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan II. Murad",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Sultan II. Abdülhamid",
+      "role": {
+        "tr": "1897'de tabhanelerin eyvana çevrilmesini irade etti",
+        "en": "Willed the conversion of the hospices into iwans (1897)"
+      }
+    },
+    {
+      "name": "Ömer Vasfi Efendi",
+      "role": {
+        "tr": "Hattat; 1902 tarihli yazıların sahibi",
+        "en": "Calligrapher; author of the 1902 inscriptions"
+      }
+    },
+    {
+      "name": "Şeyh Sırrî Efendi",
+      "role": {
+        "tr": "Mihrap yanındaki celi talik levhanın hattatı",
+        "en": "Calligrapher of the Jeli Ta'liq plaque beside the mihrab"
+      }
+    },
+    {
+      "name": "Ahmet Vefik Paşa",
+      "role": {
+        "tr": "1863 restorasyonunu yürüten vali",
+        "en": "Governor who led the 1863 restoration"
+      }
+    },
+    {
+      "name": "Léon Parvillée",
+      "role": {
+        "tr": "1863'te onarımla görevlendirilen mimar",
+        "en": "Architect put in charge of the 1863 repair"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Ana giriş kapısının üzerinde",
+        "en": "Above the main entrance"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Emera bi-binâi hâzihi’l-imâreti’ş-şerîfeti’l-mübâreketi, Sultânu’l-Arab ve’l-Acem zıllu’llâhi fi’l-âlem es-Sultân İbnu’s-Sultân es-Sultân Murâd bin Mehmed bin Bâyezîd Hân halledallâhu mülkehû fî şehri Receb sene semâne ve işrîne ve semâne-mie. Ve vaka’a’l-itmâm fî şehr-i Muharremu’l-harâm sene selâsîne ve semânemie.",
+      "translation": {
+        "tr": "Bu şerefli ve mübarek imaretin inşasını, Arap ve Acem’in sultanı, Allah’ın yeryüzündeki gölgesi, padişah oğlu padişah, Bayezid Han oğlu Mehmed oğlu Sultan Murad —Allah mülkünü daim kılsın— Hicri 828 yılının Recep ayında (M. Mayıs–Haziran 1425) emretmiştir. Yapının tamamlanması ise Hicri 830 yılının Muharrem ayında (M. Kasım–Aralık 1426) gerçekleşmiştir.",
+        "en": "The construction of this honorable and blessed imaret was ordered by the sultan of the Arabs and Persians, the shadow of Allah on earth, the sultan, the son of the sultan, the son of Mehmed, the son of Bayezid Han, Sultan Murad, may Allah make his dominion permanent, in the month of Rajab, AH 828 (May-June AD 1425). The completion took place in the month of Muharram in AH 830 (November-December AD 1426)."
+      },
+      "date": {
+        "hijri_year": 828,
+        "gregorian": "Mayıs-Haziran 1425 (emir); Kasım-Aralık 1426 (tamamlanma)"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111-113"
+        }
+      ]
+    },
+    {
+      "id": "besmele-bakara-149",
+      "location": {
+        "tr": "Batı eyvanının kıble duvarı",
+        "en": "Qibla wall of the western iwan"
+      },
+      "language": "ar",
+      "script": "sülüs; besmele celi sülüs",
+      "transliteration": "Fevelli vecheke şatra’l-Mescidi’l-Harâm",
+      "translation": {
+        "tr": "Öyleyse yüzünü Mescid-i Harâm’a çevir. (Bakara suresi, 149)",
+        "en": "Then turn your face towards the Masjid al-Haram. (Al-Baqarah, 149)"
+      },
+      "date": {
+        "hijri_year": 1320,
+        "gregorian": "1902"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "116"
+        }
+      ],
+      "author": "Hattat Ömer Vasfi Efendi"
+    },
+    {
+      "id": "bakara-149-levha",
+      "location": {
+        "tr": "Mihrabın batısındaki duvarda levha",
+        "en": "Plaque on the wall west of the mihrab"
+      },
+      "language": "ar",
+      "script": "celi talik",
+      "transliteration": null,
+      "translation": {
+        "tr": "Aynı ayet (Bakara 149); metni kitapta ayrıca verilmemiştir.",
+        "en": "The same verse (Al-Baqarah 149); text not given separately in the book."
+      },
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "116"
+        }
+      ],
+      "author": "Şeyh Sırrî Efendi"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-emri",
+      "year": 1425,
+      "date": null,
+      "hijri": "Receb 828",
+      "type": "construction",
+      "title": {
+        "tr": "İnşa emri verildi (Receb 828)",
+        "en": "Construction ordered (Rajab 828)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "112-113"
+        }
+      ]
+    },
+    {
+      "id": "tamamlanma",
+      "year": 1426,
+      "date": null,
+      "hijri": "Muharrem 830",
+      "type": "opening",
+      "title": {
+        "tr": "Cami tamamlandı (Muharrem 830)",
+        "en": "Mosque completed (Muharram 830)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "112-113"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1594",
+      "year": 1594,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1623",
+      "year": 1623,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1628",
+      "year": 1628,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1715",
+      "year": 1715,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1781",
+      "year": 1781,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1790",
+      "year": 1790,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım; mihrap alçıdan Rokoko üslubunda yenilendi",
+        "en": "Repair; mihrab renovated in plaster in the Rococo style"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117-118"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1849",
+      "year": 1849,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Büyük deprem; cami zedelendi, minare yarıldı; kapsamlı onarım ve pencerelerin kapıya çevrilmesi",
+        "en": "Earthquake; mosque damaged, minaret split; comprehensive repair and windows converted into doors"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "114, 118"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vali Ahmet Vefik Paşa'nın yürüttüğü restorasyon; mimar Léon Parvillée",
+        "en": "Restoration led by governor Ahmet Vefik Paşa; architect Léon Parvillée"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    },
+    {
+      "id": "kursun-1866",
+      "year": 1866,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kubbe kurşunları yenilendi",
+        "en": "Dome lead renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    },
+    {
+      "id": "tabhane-1897",
+      "year": 1897,
+      "date": null,
+      "hijri": "1315 (minber)",
+      "type": "removal",
+      "title": {
+        "tr": "Tabhanelerin duvarları kaldırıldı, eyvana dönüştürüldü",
+        "en": "Walls of the hospices removed; converted into an iwan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "115"
+        }
+      ],
+      "note": {
+        "tr": "Aynı yıl H. 1315 / M. 1897 tarihli ahşap minber de getirilmiştir.",
+        "en": "A wooden minbar dated AH 1315 / AD 1897 is also from this year."
+      }
+    },
+    {
+      "id": "hat-1902",
+      "year": 1902,
+      "date": null,
+      "hijri": "1320",
+      "type": "addition",
+      "title": {
+        "tr": "Ömer Vasfi Efendi'nin hat yazıları",
+        "en": "Calligraphy by Ömer Vasfi Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "116"
+        }
+      ]
+    },
+    {
+      "id": "minare-1904",
+      "year": 1904,
+      "date": null,
+      "hijri": "Muharrem 1322",
+      "type": "addition",
+      "title": {
+        "tr": "Batı minare tarihi (Muharrem 1322 / Nisan 1904)",
+        "en": "Western minaret dated Muharram 1322 / April 1904"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    },
+    {
+      "id": "yunan-1920",
+      "year": 1920,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Yunan askerleri camiyi depo olarak kullandı (1920-1922)",
+        "en": "Used as a warehouse by Greek soldiers (1920-1922)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son kapsamlı restorasyon (2012-2014)",
+        "en": "Latest comprehensive restoration (2012-2014)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    },
+    {
+      "id": "minber-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "1897 tarihli minber kaldırılıp yeni minber yerleştirildi",
+        "en": "1897 minbar removed and the current minbar installed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin ana yapısıdır.",
+        "en": "It is the main structure of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-muradiye-medresesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Aynı külliye; kitap 1863 ve 1855 hasarlarını cami ve medrese için birlikte anlatır.",
+        "en": "Same complex; the book discusses damage and repairs to the mosque and madrasa together."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ii-murad-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Caminin güneybatısındaki Sultan II. Murad Türbesi aynı külliyededir.",
+        "en": "The tomb of Sultan Murad II southwest of the mosque is in the same complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "130"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-yesil-camii",
+      "type": "same_craftsman",
+      "description": {
+        "tr": "Zümrüt yeşili çiniler ve bordürler Yeşil Cami'de de kullanılmıştır; Tebrizli usta grubu her iki yapıda da çalışmıştır.",
+        "en": "The emerald green tiles and borders were also used in the Yeşil Mosque; the Tabriz masters worked on both."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "117"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Muradiye Camii, kuzeyde beş gözlü bir son cemaat yeriyle açılan, tuğla ve moloz taş almaşık duvarlı bir yapıdır. Revakları dört mermer paye ve iki granit sütun taşır; cephe tuğlaların on beş farklı geometrik düzende örülmesiyle hareketlenmiştir. İçeride iki kubbeli bir giriş avlusunun yanlarında, eyvana çevrilmiş iki tabhane bulunur. Mihrap önü mekânının duvarları altıgen zümrüt yeşili ve firuze çinilerle kaplıdır. İki tuğla minarenin biri doğuda, biri batıdadır.",
+      "en": "The Muradiye Mosque is a building of alternating brick and rubble stone with a five-bay narthex on its north side. The arcades rest on four marble piers and two granite columns, and the façade is enlivened by bricks laid in fifteen geometric patterns. Inside, on the sides of a two-domed entrance courtyard, are two hospices converted into iwans. The walls in front of the mihrab are covered with hexagonal emerald green and turquoise tiles. Two brick minarets stand, one to the east and one to the west."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-camii/p005-2.jpg",
+        "original_name": "ERD00715 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "114"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Son cemaat yerinden şadırvan avlusu",
+        "en": "The fountain courtyard seen from the portico"
+      },
+      "alt": {
+        "tr": "Kemerli revaktan bakılan avluda ortada kubbeli, ahşap sütunlu bir şadırvan duruyor. Revağın kubbesi kırmızı, yeşil ve kahverengi kalem işi motiflerle süslü.",
+        "en": "From the arched portico, a domed fountain on timber columns stands in the courtyard. The portico dome is decorated with red, green and brown painted motifs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-camii/p008-1.jpg",
+        "original_name": "ERD04525 kopya.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "117"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı ve halı döşeli zemin",
+        "en": "Prayer hall with its patterned carpet"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, geniş kemerli salonun zemini kırmızı desenli halıyla kaplı. Solda ahşap bir korkuluklu galeri, uzakta mihrap yönü ve mavi çini panolar görünüyor.",
+        "en": "A white hall with wide arches and a floor covered in red patterned carpet. A wooden-railed gallery is on the left, and blue tile panels and the mihrab side are in the distance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-25"
+    }
+  ],
+  "archive_media": []
+}

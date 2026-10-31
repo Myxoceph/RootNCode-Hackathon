@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sivasiler-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabının Osmangazi Camiler ve Hazireler 3 bölüğünden (s. 394-416) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahada veya haritadan doğrulanıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi ve banî bilinmiyor (kitabe/belge yok); 'founder' null, yıllar null.",
+      "Son restorasyonun yılı ve kurumu kitapta yok ('son yıllarda' deniyor).",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Kitap Kiremitçi, Tavukçu Reis, Hoca Hasan ve Nakkaş Ali Mescitlerinden söz ediyor; Nakkaş Ali Mescidi bu bölükte ayrı kayıtta, diğerleriyle ilişki yazılmadı (mimari öncül/ardıl değil, yalnızca benzer yenileme)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "alternate_names",
+        "note": "Başlık 'Sivasiler (Tahtalı) Camii'; parantez içi ad alternatif ad olarak kaydedildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sivasiler Camii",
+    "en": "Sivasiler Mosque"
+  },
+  "subtitle": {
+    "tr": "Kitabesiz, XV. yüzyıl izlenimi veren mahalle camii",
+    "en": "An inscription-less neighborhood mosque with a 15th-century look"
+  },
+  "alternate_names": [
+    {
+      "tr": "Tahtalı Camii",
+      "en": "Tahtalı Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Sivasiler",
+    "Tahtalı",
+    "kitabesiz",
+    "çıtakârî",
+    "ahşap kadınlar mahfili",
+    "restorasyon"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "İbrahim Paşa Mahallesi",
+    "address": "Çinkolu Sokak, No:11",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "416"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.178783,
+      "lng": 29.064854,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/360467910 ('Sivasiler Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Belirsiz (XV. yüzyıl olabileceği izlenimi)",
+      "en": "Uncertain (impression of the 15th century)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitabe ve belge yoktur; kitap mimari tarzın XV. yüzyıla ait olabileceği izlenimini verdiğini yazar.",
+      "en": "There is no inscription or document; the book says the architectural style gives the impression it may date to the 15th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "416"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Ne zaman ve kim tarafından yaptırıldığını bildiren kitabesi ya da belgesi olmayan, mimari tarzıyla XV. yüzyılı düşündüren moloz taş cami. Kapalı son cemaat yerindeki çıtakârî tavan ve ahşap kadınlar mahfili dikkat çeker; yakın zamanda esaslı restore edilmiştir ve ibadete açıktır.",
+    "en": "A rubble-stone mosque with no inscription or document saying when or by whom it was built; its style suggests the 15th century. The çıtakârî ceiling and wooden women's gallery of the enclosed narthex are notable; it was thoroughly restored in recent years and is open for worship."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Caminin hangi tarihte ve kim tarafından yaptırıldığına dair kitabesi yoktur; inşa tarihini belirleyecek bir belgeye de rastlanmamıştır. Mimari tarzı XV. yüzyıla ait olabileceği izlenimini vermektedir.",
+        "en": "There is no inscription indicating when and by whom the mosque was built, and no document has been found to determine its date. Its architectural style gives the impression it might date to the 15th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "416"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Moloz taş örgülü beden duvarlarının güneydoğu köşesi ustaca pahlanmıştır. Harim iç ölçüleri 6,75 × 6,75 m'dir. Batı cephesinde üç altlık ve iki üstlük, kıble tarafında bir, doğuda iki, son cemaat yerinde iki olmak üzere toplam on pencere vardır; üstlük pencere kemerleri tuğla örgülüdür. Kırma ahşap çatılı ve alaturka kiremit kaplı caminin son cemaat yeri duvarlarla içeri alındığı için dıştan dikdörtgen form gösterir. Son cemaat yerindeki ahşap işlemeli çıtakârî tavan, ahşap pencere korkulukları ve tek sıra cemaatin namaz kılabileceği derinlikteki ahşap kadınlar mahfili dikkat çekicidir. Tavanı taşıyan ahşap direkler ve korkuluklar, Bursa'da son dönemde yeniden ayağa kaldırılan Kiremitçi, Tavukçu Reis, Hoca Hasan ve Nakkaş Ali Mescitleri ile aynı tarzda yenilenmiştir.",
+        "en": "The southeast corner of the rubble-masonry walls is skillfully chamfered. The prayer hall measures 6.75 × 6.75 m inside. Ten windows light it: three lower and two upper on the west facade, one on the qibla side, two on the east and two in the narthex; the upper window arches are brick. The hipped wooden roof is covered with Turkish-style tiles and the narthex, enclosed by walls, appears rectangular from outside. The decorated wooden çıtakârî ceiling, wooden window railings and a wooden women's gallery deep enough for one row of worshippers are notable in the narthex. The ceiling posts and railings were renewed in the same style as the recently rebuilt Kiremitçi, Tavukçu Reis, Hoca Hasan and Nakkaş Ali Masjids in Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "416"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 3,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Minarenin çatıya kadar yükselen kaidesi moloz taştandır. Kısa, silindirik gövdenin üzerinde ahşap korkuluklu, ahşap çatılı ve alaturka kiremit kaplı basit bir şerefe yapılmıştır.",
+        "en": "The minaret base up to the roof is of rubble stone. Above its short cylindrical shaft is a simple balcony with wooden railings and a tiled wooden roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "416"
+        }
+      ]
+    },
+    {
+      "id": "durum",
+      "order": 4,
+      "title": {
+        "tr": "Günümüzdeki Durum",
+        "en": "Present Condition"
+      },
+      "body": {
+        "tr": "Son yıllarda esaslı bir restorasyondan geçen cami bakımlı durumdadır ve ibadete açıktır.",
+        "en": "Having undergone a thorough restoration in recent years, the mosque is well maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "416"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim iç ölçüsü",
+        "en": "Prayer hall interior"
+      },
+      "value": "6,75 × 6,75",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "416"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Toplam pencere",
+        "en": "Total windows"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "416"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "416"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Moloz taş duvarlı, kare harimli, kırma çatılı ve alaturka kiremit kaplı bir camidir; güneydoğu köşesi pahlıdır. Duvarlarla kapatılmış son cemaat yerinde işlemeli ahşap çıtakârî tavan, ahşap pencere korkulukları ve tek sıra cemaate yetecek derinlikte ahşap bir kadınlar mahfili vardır. Kısa silindirik gövdeli minarenin ahşap korkuluklu, ahşap çatılı basit bir şerefesi bulunur.",
+      "en": "A rubble-stone mosque with a square prayer hall under a hipped roof of Turkish-style tiles; its southeast corner is chamfered. The walled-in narthex has a carved wooden çıtakârî ceiling, wooden window railings and a wooden women's gallery deep enough for one row of worshippers. The short cylindrical minaret has a simple balcony with wooden railings and a wooden roof."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri I. Cilt) esas alınarak yapay zekâ taslağı; sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-sivasiler-camii/p023-2.jpg",
+        "original_name": "04_1.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "416"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin iç mekânı, mihrap ve minber",
+        "en": "Mosque interior with mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, ahşap tavanlı mescit içi. Ortada altın renkli, sivri kavisli mihrap; sağında turkuaz tahta panelli ahşap minber. Zemin turkuaz halıyla kaplı, duvarlarda petek desenli pencereler var.",
+        "en": "A whitewashed prayer hall with a wooden ceiling. A gilded stepped mihrab sits at the centre and a timber minbar with turquoise panels stands to its right. The floor has a turquoise carpet and the windows have honeycomb grilles."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-11"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

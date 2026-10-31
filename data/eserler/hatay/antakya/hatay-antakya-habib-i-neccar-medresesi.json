@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-habib-i-neccar-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Külliyeler ve Kervansaraylar",
+    "todos": [
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı.",
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Eserin dönemi (era) enums.json'daki kodlara uymadığı ya da metinde tarihlenmediği için null bırakıldı; uzman değerlendirmesi gerekir.",
+      "Halil Ağa hakkında kitapta başka bilgi yok.",
+      "Kitabelerin metni, dili ve yeri kitapta yok; tamir kitabelerinin tarihleri belirtilmemiş.",
+      "Kitap medresenin 1863'ten önce var olup olmadığını söylemiyor; era yalnızca 1863 tarihine dayanıyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[hucreler]",
+        "note": "S. 61 medrese odalarını avlunun 'doğusuna, kuzeydoğusuna ve kuzeybatısına' yerleştirir; s. 65 ise kuzeyde yedi, batıda dört, doğuda bir hücre sayar. Yön adlandırmaları uyuşmuyor; s. 65'teki sayım esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Habib-i Neccar Medresesi",
+    "en": "Habib-i Neccar Madrasa"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "medrese",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-habib-i-neccar-kulliyesi",
+  "era": "gec-osmanli",
+  "tags": [
+    "medrese",
+    "antakya",
+    "habib-i-neccar"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "65"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.201547,
+      "lng": 36.165527,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (hatay-antakya-habib-i-neccar-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1863",
+      "en": "1863"
+    },
+    "start_year": 1863,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Medresedeki çok sayıdaki kitabeden biri yapım yılını 1863 olarak gösterir.",
+      "en": "One of the madrasa's many inscriptions gives 1863 as the building year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "65"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Halil Ağa",
+    "role": "banî (kitabeye göre)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "65"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Cami avlusunu kuzeyde, batıda ve doğuda çevreleyen on iki hücreli, süssüz medrese. Bir kitabeye göre Halil Ağa tarafından 1863'te yaptırılmıştır.",
+    "en": "A plain madrasa of twelve cells bordering the mosque courtyard on the north, west and east. An inscription shows it was built by Halil Agha in 1863."
+  },
+  "sections": [
+    {
+      "id": "hucreler",
+      "title": {
+        "tr": "Hücreler ve düzen",
+        "en": "Cells and arrangement"
+      },
+      "body": {
+        "tr": "Medrese, cami avlusunun kuzeyinde yedi hücre, batısında dört hücre ve hemen doğusunda, imam odasının altında yer alan bir hücreden oluşur. Avluyu sınırlandıran hücreler kırma çatıyla örtülüdür; kuzey ve batı cephedeki odaların her biri avluya birer kapı ve pencereyle açılır. Doğu kanattaki tek hücrenin sokağa açılan iki penceresi vardır ve diğerlerinden daha geniştir; bu, müderris odası olduğunun bir işareti sayılabilir. Medresede tezyinat görülmez.",
+        "en": "The madrasa has seven cells north of the courtyard, four in the west and one in the east below the imam's room. Cells are hipped-roofed; each room on the north and west opens to the courtyard with a door and window. The single east cell has two windows to the street and is larger, which can be taken as a sign it was the teacher's room. No ornament is seen."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "65"
+        }
+      ],
+      "order": 1
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "hucre_kuzey",
+      "label": {
+        "tr": "Kuzey kanat hücre sayısı",
+        "en": "Cells on north side"
+      },
+      "value": 7,
+      "unit": "hücre",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "65"
+        }
+      ]
+    },
+    {
+      "key": "hucre_bati",
+      "label": {
+        "tr": "Batı kanat hücre sayısı",
+        "en": "Cells on west side"
+      },
+      "value": 4,
+      "unit": "hücre",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "65"
+        }
+      ]
+    },
+    {
+      "key": "hucre_dogu",
+      "label": {
+        "tr": "Doğu kanat hücre sayısı",
+        "en": "Cells on east side"
+      },
+      "value": 1,
+      "unit": "hücre",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "65"
+        }
+      ]
+    },
+    {
+      "key": "cati_tipi",
+      "label": {
+        "tr": "Hücrelerin çatısı",
+        "en": "Roof of cells"
+      },
+      "value": "Kırma çatı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "65"
+        }
+      ],
+      "note": {
+        "tr": "Kırma çatı",
+        "en": "Hipped roof"
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Halil Ağa",
+      "role": {
+        "tr": "Medreseyi 1863'te yaptıran kişi",
+        "en": "Person who had the madrasa built in 1863"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi-1863",
+      "location": {
+        "tr": "Medrese (yeri belirtilmiyor)",
+        "en": "Madrasa (location not stated)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1863"
+      },
+      "note": {
+        "tr": "Kitap, medresenin Halil Ağa tarafından 1863'te yaptırıldığını gösteren kitabeden söz eder; metin ve dil verilmez. Diğer kitabeler tamir kitabeleridir.",
+        "en": "The book says an inscription shows Halil Agha had it built in 1863; no text or language is given. The others are repair inscriptions."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "65"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Halil Ağa tarafından yaptırıldı",
+        "en": "Built by Halil Agha"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "65"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-habib-i-neccar-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Habib-i Neccar Camii ve Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Habib-i Neccar Mosque and Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "61"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Medrese, cami avlusunun kuzey, batı ve doğu kenarlarını çevreleyen tek katlı hücrelerden oluşur: kuzeyde yedi, batıda dört, doğuda bir hücre. Hücreler kırma çatıyla örtülüdür ve süslemesizdir. Kuzey ve batıdaki odalar avluya birer kapı ve pencereyle açılır. Doğudaki hücre diğerlerinden geniştir ve sokağa bakan iki penceresi vardır.",
+      "en": "The madrasa is made of single-storey cells around the north, west and east sides of the mosque courtyard: seven in the north, four in the west and one in the east. The cells have hipped roofs and no ornament. Rooms on the north and west open to the courtyard with a door and window each. The east cell is larger and has two windows facing the street."
+    },
+    "audio_description_source": "Hatay Vakıf Eserleri, Habib-i Neccar Camii ve Külliyesi bölümü; yalnızca kitaptaki mimari betimlemeden."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-habib-i-neccar-camii-ve-kulliyesi/p033-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "64-65"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Külliye avlusu ve minare",
+        "en": "The complex courtyard and the minaret"
+      },
+      "alt": {
+        "tr": "Ağaçlarla gölgelenen geniş, taş döşeli bir avlu; ortada yüksek taş minare, solda ahşap balkonlu iki katlı yapılar, arkada dağ; avluda banklar.",
+        "en": "A wide stone-paved courtyard shaded by trees; a tall stone minaret in the middle, two-storey buildings with wooden balconies on the left, a mountain behind; benches in the courtyard."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": []
+}

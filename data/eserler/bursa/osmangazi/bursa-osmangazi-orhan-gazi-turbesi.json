@@ -1,0 +1,775 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-orhan-gazi-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mimar kitapta belirtilmiyor (architect: null).",
+      "Müstakil vakıfların adı/gelirleri kitapta yok.",
+      "Son restorasyonun yılı ve kurumu (sundurma ve giriş holünün yeniden inşası) kitapta verilmiyor.",
+      "Yeniden inşa yılı çelişkisi (1863 / 1868) için başka kaynakla doğrulama gerekli.",
+      "bursa-osmangazi-orhan-bey-camii bağı çıkarımdır; kitap camiyi adlandırmıyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Fotoğraflar yok: media[] boş, Drive klasörü (media_folder) bilinmiyor; Zaman Perdesi için arşiv görseli bulunmalı.",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap s. 516’da türbenin Osman Gazi Türbesi ile birlikte H. 1280 / M. 1863’te Sultan Abdülaziz tarafından yeniden yaptırıldığını söyler; s. 519’da ise 'en son 1868 yılında yeniden inşa ettirilmiştir' der. Kaynağa sadık kalınarak iki değer de saklandı; kayıt 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[1855-depremi]",
+        "note": "Orhan Gazi Türbesi için belge 'tamamen yıkılmış' derken, Osman Gazi Türbesi için kitap 'tamamen yıkılmamış, çok zedelenmiş' der; iki türbe farklı belgelerle anlatılıyor."
+      },
+      {
+        "field": "sections[eski-yapidan-kalanlar]",
+        "note": "Türkçe metindeki 'antrolak' İngilizce metinde 'anthemion' diye çevrilmiş; Türkçe terim aynen korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Orhan Gazi Türbesi",
+    "en": "Orhan Gazi Tomb"
+  },
+  "subtitle": {
+    "tr": "Osmanlı’nın ikinci sultanı ve Bursa’nın fâtihi Orhan Gazi’nin türbesi",
+    "en": "Tomb of Orhan Gazi, the second Ottoman sultan and conqueror of Bursa"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Orhan Gazi",
+    "Gümüşlü Kümbet",
+    "Hisariçi",
+    "Osmangazi Meydanı",
+    "Sultan Abdülaziz",
+    "UNESCO",
+    "dört sütunlu kubbe"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Osmangazi Mahallesi",
+    "address": "Yiğitler Caddesi No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "515"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.186771,
+      "lng": 29.057694,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/325992024 ('Orhan Gazi Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1280 / M. 1863 (yeniden inşa; kitap ayrıca 1868 veriyor)",
+      "en": "AH 1280 / AD 1863 (rebuilt; the book also gives 1868)"
+    },
+    "start_year": 1863,
+    "end_year": 1863,
+    "hijri_year": 1280,
+    "century": 19,
+    "basis": {
+      "tr": "Bugünkü yapı Osman Gazi Türbesi ile birlikte H. 1280 / M. 1863’te Sultan Abdülaziz tarafından yeniden inşa ettirilmiştir (s. 516); kitap başka bir yerde son yeniden inşa yılını 1868 olarak verir (s. 519). Yapının kitabesi günümüze ulaşmamıştır.",
+      "en": "The present building was rebuilt together with the Osman Gazi Tomb by Sultan Abdülaziz in AH 1280 / AD 1863 (p. 516); elsewhere the book gives 1868 as the last rebuilding (p. 519). The building’s inscription has not survived."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "516, 519"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan Abdülaziz",
+    "role": "bugünkü yapıyı yeniden yaptıran",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "516, 519"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Bu türbe için de Osman Gazi Türbesi’nde olduğu gibi müstakil vakıflar tahsis edilmiştir. Vakıfların adı ve gelirleri kitapta verilmiyor.",
+      "en": "Independent foundations have been allocated for this tomb, as in the case of the Osman Gazi Tomb. The names and revenues of the foundations are not given in the book."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "515"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hisariçi’nde, Osmangazi Meydanı’nda yer alan; eski bir manastır yapısı olan “Gümüşlü Kümbet” kompleksinde defnedilen Orhan Gazi’ye ait türbe. Bugünkü kare planlı, tek kubbeli yapı 1855 depreminden sonra Sultan Abdülaziz tarafından yeniden yaptırılmış, içinde Orhan Gazi dahil 21 sanduka bulunur.",
+    "en": "The tomb of Orhan Gazi, buried in the “Gümüşlü Kümbet” complex, a former monastery building, in the Osmangazi Square area of Hisariçi. The present square-plan, single-domed building was rebuilt by Sultan Abdülaziz after the 1855 earthquake and holds 21 sarcophagi including Orhan Gazi’s."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-kimlik",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve kimlik",
+        "en": "Location and identity"
+      },
+      "body": {
+        "tr": "Türbe, Osmangazi ilçesi, Osmangazi Mahallesi, Yiğitler Caddesi No: 2 adresindedir. Hisariçi olarak bilinen ve günümüzde “Osmangazi Meydanı” adıyla anılan tarihî alan içinde yer alır. Türbe, Osmanlı Devleti’nin ikinci sultanı ve Bursa’nın fâtihi Orhan Gazi’ye aittir.",
+        "en": "The tomb is located at Yiğitler Street No. 2, Osmangazi Neighborhood, Osmangazi District, within the historical area known as Hisariçi and today called “Osmangazi Square”. It belongs to Orhan Gazi, the second sultan of the Ottoman Empire and the conqueror of Bursa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "515"
+        }
+      ]
+    },
+    {
+      "id": "defin-ve-gumuslu-kumbet",
+      "order": 2,
+      "title": {
+        "tr": "Defin yeri ve Gümüşlü Kümbet",
+        "en": "Burial place and the Gümüşlü Kümbet"
+      },
+      "body": {
+        "tr": "Orhan Bey’in, babası Osman Gazi’nin vasiyetini yerine getirerek onu sur içindeki eski manastır yapılarından biri olan ve sonradan “Gümüşlü Kümbet” adıyla anılan yapıya defnettirdiği bilinmektedir. Orhan Gazi’nin de vefatının ardından aynı yapı kompleksine, muhtemelen camiye dönüştürülen bölüme defnedildiği anlaşılmaktadır. Bursa kadı sicillerindeki bazı inşaat ve onarım kayıtları türbe ile caminin bitişik olduğunu göstermektedir.",
+        "en": "It is known that Orhan Bey, fulfilling the will of his father Osman Gazi, buried him in one of the old monastery buildings within the city walls, later known as the “Gümüşlü Kümbet”. It is understood that Orhan Gazi was buried after his death in the same building complex, probably in the section converted into a mosque. Some construction and repair records in the Bursa qadi records show that the tomb and the mosque were adjacent."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "515"
+        }
+      ]
+    },
+    {
+      "id": "1855-depremi",
+      "order": 3,
+      "title": {
+        "tr": "1855 depremi",
+        "en": "The 1855 earthquake"
+      },
+      "body": {
+        "tr": "Bir belgedeki “…derûn-ı kal‘ada kâin an-asl manastır olup şimdi türbe-i şerifeleri bulunan mahal ve civarında medreseleri külliyen münhedim” ifadesinden (mealen: kalede yer alan, aslında manastır olan ve şimdi türbe olarak kullanılan mekân ile çevresindeki medreselerin tamamen yıkıldığı), türbenin 1855’teki büyük Bursa depreminde tamamen yıkıldığı anlaşılmaktadır. Belge hem yapının hem de çevresindeki medrese birimlerinin ciddi biçimde zarar gördüğünü ortaya koyar.",
+        "en": "From a statement in a document (meaning: the place in the castle, originally a monastery and now used as a tomb, and the surrounding madrasas have been completely destroyed), it is understood that the tomb was completely destroyed in the great Bursa earthquake of 1855. The document shows that both the building and the surrounding madrasa units were seriously damaged."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "516"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa",
+      "order": 4,
+      "title": {
+        "tr": "Yeniden inşa",
+        "en": "Rebuilding"
+      },
+      "body": {
+        "tr": "Bugünkü yapının kitabesi günümüze ulaşmamıştır. Ancak Osman Gazi Türbesi ile birlikte H. 1280 / M. 1863 yılında Sultan Abdülaziz tarafından yeniden inşa ettirildiği konusunda herhangi bir şüphe bulunmamaktadır (s. 516). Ancak s. 519’da yapının yeniden yapılış sürecine kadar 1615, 1791, 1808, 1813 ve 1816-1818’de kısmi ya da kapsamlı onarımlar geçirdiği ve en son Sultan Abdülaziz tarafından 1868 yılında yeniden inşa ettirildiği yazılır. Önceki yapının birden çok kubbeli olduğu kadı sicillerinden anlaşılmaktadır; yeni bina tek kubbeli yapılmıştır.",
+        "en": "The inscription of the current building has not survived. However, there is no doubt that it was rebuilt together with the Osman Gazi Tomb in AH 1280 / AD 1863 by Sultan Abdulaziz (p. 516). On p. 519, however, the book says that before the reconstruction the building underwent partial or comprehensive repairs in 1615, 1791, 1808, 1813 and 1816-1818 and was last rebuilt by Sultan Abdülaziz in 1868. The previous building was covered with multiple domes according to the qadi records; the new building has a single dome."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "516, 518-519"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 5,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kare planlı ve tek kubbeyle örtülü türbe binası 16,80 × 16,80 m ölçülerindedir; duvar kalınlığı 1,30 m’dir. Mermer söveli ve dilimli kemerli kapıdan girilir. Yapı, Bursa’daki I. Murad Hudâvendigâr ve II. Murad türbelerinde olduğu gibi dört sütun üzerine oturtulmuş küçük bir kubbeyle merkezlenmiştir; kubbenin çevresi beşik tonozlarla örtülü dehlizli bir düzenlemeyle kuşatılmıştır. Sütun başlıklarında Osman Gazi Türbesi’ndeki barok tarzlı volüt süslemeler sıralar halinde kullanılmıştır. Pencereler yuvarlak kemerli, mermer söveli ve soğuk demir şebekelidir. Mimari bezemelerde geç Osmanlı süsleme anlayışı ile klasik mimari formlar birlikte değerlendirilmiştir.",
+        "en": "The tomb building, with a square plan and covered with a single dome, measures 16.80 × 16.80 m; wall thickness is 1.30 m. It is entered through a marble-framed door with a segmented arch. As in the tombs of Murad I Hudâvendigâr and Murad II in Bursa, it is centered on a small dome supported by four columns, surrounded by a corridor covered with barrel vaults. The Baroque-style volute decorations of the Osman Gazi Tomb are used in series on the column capitals. Windows have round arches, marble frames and wrought iron grilles. Late Ottoman ornamentation and classical architectural forms are used together."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "517"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 6,
+      "title": {
+        "tr": "İç mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Yapı her cephede üçer, giriş cephesinde ise ikişer pencere ile ışık alır. Hereke kumaşından perdeler oldukça sade iç mekâna hafif bir saray etkisi kazandırır. Sivri kemerlere oturan pandantifli kubbenin içi kartuş düzeninde kalem işleriyle süslenmiş, pandantifler ve pencere alınlıkları iri barok motiflerle bezenmiştir.",
+        "en": "The building receives light from three windows on each façade and two on the entrance façade. Curtains of Hereke fabric give the very plain interior a light palace feel. The interior of the pendentive dome resting on pointed arches is decorated with hand-painted work in a cartouche pattern; the pendentives and window pediments have large Baroque motifs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "517"
+        }
+      ]
+    },
+    {
+      "id": "sanduka-ve-mezarlar",
+      "order": 7,
+      "title": {
+        "tr": "Sandukalar",
+        "en": "Sarcophagi"
+      },
+      "body": {
+        "tr": "Orhan Gazi’ye ait, yeşil çuha kaplı puşideyle örtülü sanduka mermer kaide üzerinde, pirinç şebeke içinde ortada yer alır; üzerinde beyaz kandilli mavi kristal bir avize asılıdır. Türbede Orhan Gazi’nin sandukası dışında yirmi sanduka daha vardır; bunlar tuğladan örülmüş, mermer görünümlü setler üzerindedir. Orhan Gazi, eşi Nilüfer Hatun, oğlu Şehzade Kasım, Yıldırım Bayezid’in kızı Fatma Sultan, Cem Sultan’ın oğlu Abdullah ve II. Bayezid’in oğlu Şehzade Korkut’a ait sandukalar tanımlanabilmiştir; diğerlerinin kime ait olduğu bilinmemektedir.",
+        "en": "The sarcophagus of Orhan Gazi, covered with a green broadcloth pall, stands in the middle on a marble base inside a brass grille, with a blue crystal chandelier with white lamps above it. Apart from Orhan Gazi’s, there are twenty more sarcophagi, placed on brick platforms finished to resemble marble. Those of Orhan Gazi, his wife Nilüfer Hatun, his son Şehzade Kasım, Yıldırım Bayezid’s daughter Fatma Sultan, Cem Sultan’s son Abdullah and Bayezid II’s son Şehzade Korkut have been identified; the others are unknown."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "518"
+        }
+      ]
+    },
+    {
+      "id": "puside-yenileme",
+      "order": 8,
+      "title": {
+        "tr": "Sanduka örtüsünün yenilenmesi",
+        "en": "Renewal of the sarcophagus cover"
+      },
+      "body": {
+        "tr": "Zamanla yıpranan puşidenin yerine yeni bir örtü hazırlama görevi Bursa Olgunlaşma Enstitüsü’ne verilmiş; 2018’de başlatılan çalışma 2023’te tamamlanmıştır. Yeni örtü, özgün puşide yerinden kaldırılmadan üzerine serilmiştir.",
+        "en": "The task of preparing a new cover to replace the worn pall was given to the Bursa Maturation Institute; the work started in 2018 and was completed in 2023. The new cover was laid on the original pall without removing it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "518"
+        }
+      ]
+    },
+    {
+      "id": "sadelik-ve-giris",
+      "order": 9,
+      "title": {
+        "tr": "Sadelik ve giriş bölümü",
+        "en": "Simplicity and entrance section"
+      },
+      "body": {
+        "tr": "Türbedar odasının bulunmaması, pencere şebekelerinin sadeliği, sanduka örtüsünün bezemesiz oluşu, küçük avizesi ve kitabesinin olmayışı yapının Osman Gazi Türbesi’ne kıyasla çok daha sade bir anlayışla düzenlendiğini gösterir. Osman Gazi Türbesi’nde olduğu gibi girişinde iki sütunçeli bir sundurma ve dikdörtgen planlı bir giriş holü olduğu bilinmektedir; son yıllardaki restorasyonda bu unsurlar özgün yapıya uygun biçimde yeniden inşa edilmiştir.",
+        "en": "The absence of a custodian room, the simple window grilles, the plain sarcophagus cover, the small chandelier and the lack of an inscription show that the building was designed much more simply than the Osman Gazi Tomb. Like the Osman Gazi Tomb, it is known to have had a porch with two colonettes and a rectangular entrance hall; these elements were rebuilt in accordance with the original in the recent restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "518"
+        }
+      ]
+    },
+    {
+      "id": "eski-yapidan-kalanlar",
+      "order": 10,
+      "title": {
+        "tr": "Eski yapıdan kalanlar",
+        "en": "Remains of the old building"
+      },
+      "body": {
+        "tr": "Eski yapıdan yalnızca antrolak motifleri ve pano bordürleri gibi döşeme mozaik parçaları görülmektedir.",
+        "en": "Only floor mosaic pieces such as anthemion motifs and panel borders can be seen from the old building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "518-519"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 11,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Yapı zaman içinde birçok kez onarım geçirmiştir; yeniden yapılış sürecine gelinceye değin 1615, 1791, 1808, 1813 ve 1816-1818 yıllarında kısmi ya da kapsamlı onarımlar yapılmıştır.",
+        "en": "The building was repaired many times; before the reconstruction it underwent partial or comprehensive repairs in 1615, 1791, 1808, 1813 and 1816-1818."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "519"
+        }
+      ]
+    },
+    {
+      "id": "unesco",
+      "order": 12,
+      "title": {
+        "tr": "UNESCO Dünya Mirası",
+        "en": "UNESCO World Heritage"
+      },
+      "body": {
+        "tr": "Türbenin içinde yer aldığı alan, 2014 yılında Hanlar Bölgesi, Sultan Külliyeleri ve Cumalıkızık köyü ile birlikte UNESCO Dünya Miras alanı olarak ilan edilmiştir.",
+        "en": "The area where the tomb is located was declared a UNESCO World Heritage Site in 2014, together with the Hanlar District, the Sultan Complexes and Cumalıkızık village."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "519"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Dış ölçüler (kare plan)",
+        "en": "Dimensions (square plan)"
+      },
+      "value": "16,80 × 16,80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "517"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Duvar kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 1.3,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "517"
+        }
+      ]
+    },
+    {
+      "key": "pencere_cephe",
+      "label": {
+        "tr": "Her cephedeki pencere sayısı",
+        "en": "Windows per façade"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "517"
+        }
+      ],
+      "note": {
+        "tr": "Giriş cephesinde 2 pencere.",
+        "en": "Two windows on the entrance façade."
+      }
+    },
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 21,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "518"
+        }
+      ],
+      "note": {
+        "tr": "Orhan Gazi’nin sandukası + yirmi sanduka.",
+        "en": "Orhan Gazi’s sarcophagus plus twenty more."
+      }
+    },
+    {
+      "key": "taninan_sanduka",
+      "label": {
+        "tr": "Sahibi bilinen sanduka sayısı",
+        "en": "Sarcophagi with known owners"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "518"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Orhan Gazi",
+      "role": {
+        "tr": "Türbede medfun ikinci Osmanlı sultanı",
+        "en": "Second Ottoman sultan, buried in the tomb"
+      }
+    },
+    {
+      "name": "Osman Gazi",
+      "role": {
+        "tr": "Orhan Gazi’nin babası; vasiyetini yerine getirmiştir",
+        "en": "Father of Orhan Gazi; his will was carried out by Orhan"
+      }
+    },
+    {
+      "name": "Nilüfer Hatun",
+      "role": {
+        "tr": "Orhan Gazi’nin eşi; sandukası tanımlanmıştır",
+        "en": "Wife of Orhan Gazi; sarcophagus identified"
+      }
+    },
+    {
+      "name": "Şehzade Kasım",
+      "role": {
+        "tr": "Orhan Gazi’nin oğlu; sandukası tanımlanmıştır",
+        "en": "Son of Orhan Gazi; sarcophagus identified"
+      }
+    },
+    {
+      "name": "Fatma Sultan",
+      "role": {
+        "tr": "Yıldırım Bayezid’in kızı; sandukası tanımlanmıştır",
+        "en": "Daughter of Yıldırım Bayezid; sarcophagus identified"
+      }
+    },
+    {
+      "name": "Abdullah",
+      "role": {
+        "tr": "Cem Sultan’ın oğlu; sandukası tanımlanmıştır",
+        "en": "Son of Cem Sultan; sarcophagus identified"
+      }
+    },
+    {
+      "name": "Şehzade Korkut",
+      "role": {
+        "tr": "II. Bayezid’in oğlu; sandukası tanımlanmıştır",
+        "en": "Son of Bayezid II; sarcophagus identified"
+      }
+    },
+    {
+      "name": "Sultan Abdülaziz",
+      "role": {
+        "tr": "Türbeyi yeniden yaptıran sultan",
+        "en": "Sultan who had the tomb rebuilt"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1615",
+      "year": 1615,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "519"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1791",
+      "year": 1791,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "519"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1808",
+      "year": 1808,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "519"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1813",
+      "year": 1813,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım",
+        "en": "Partial or comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "519"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1816-1818",
+      "year": 1816,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kısmi ya da kapsamlı onarım (1816-1818)",
+        "en": "Partial or comprehensive repair (1816-1818)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "519"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Bursa depreminde türbe yıkıldı",
+        "en": "Tomb destroyed in the Bursa earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "516"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": "1280",
+      "type": "construction",
+      "title": {
+        "tr": "Sultan Abdülaziz tarafından yeniden inşa ettirildi",
+        "en": "Rebuilt by Sultan Abdülaziz"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "516, 519"
+        }
+      ],
+      "note": {
+        "tr": "Kitap s. 516’da H. 1280 / M. 1863, s. 519’da 1868 verir.",
+        "en": "The book gives AH 1280 / AD 1863 on p. 516 and 1868 on p. 519."
+      }
+    },
+    {
+      "id": "unesco-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Çevresiyle birlikte UNESCO Dünya Miras alanı ilan edildi",
+        "en": "Declared UNESCO World Heritage Site with its surroundings"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "519"
+        }
+      ]
+    },
+    {
+      "id": "puside-2018-2023",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Sanduka örtüsünün yenilenmesi çalışması (2018-2023)",
+        "en": "Renewal of the sarcophagus cover (2018-2023)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "518"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-osman-gazi-turbesi",
+      "type": "same_founder",
+      "description": {
+        "tr": "İki türbe H. 1280 / M. 1863’te Sultan Abdülaziz tarafından birlikte yeniden inşa ettirilmiştir.",
+        "en": "The two tombs were rebuilt together by Sultan Abdülaziz in AH 1280 / AD 1863."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "516"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-osman-gazi-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Sütun başlıklarındaki barok volüt süslemeler, iki sütunçeli sundurma ve giriş holü Osman Gazi Türbesi’yle aynıdır; Orhan Gazi Türbesi ona kıyasla daha sadedir. Her iki türbe için müstakil vakıflar tahsis edilmiştir.",
+        "en": "The Baroque volute decoration on the capitals, the two-colonette porch and the entrance hall are as in the Osman Gazi Tomb; this tomb is simpler. Independent foundations were allocated to both tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "515, 517-518"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-i-murad-hudavendigar-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Dört sütun üzerine oturtulmuş küçük kubbe düzeni I. Murad Hudâvendigâr Türbesi’ndeki gibidir.",
+        "en": "The small dome on four columns follows the arrangement of the Murad I Hudâvendigâr Tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "517"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ii-murad-turbesi",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Dört sütun üzerine oturtulmuş küçük kubbe düzeni II. Murad Türbesi’ndeki gibidir.",
+        "en": "The small dome on four columns follows the arrangement of the Murad II Tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "517"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-orhan-bey-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Kadı sicillerindeki inşaat ve onarım kayıtları türbe ile caminin bitişik olduğunu gösterir; Orhan Gazi muhtemelen camiye dönüştürülen bölüme defnedilmiştir. Kitap camiyi adıyla anmaz; Orhan Bey Camii olduğu bir çıkarımdır.",
+        "en": "Construction and repair entries in the qadi records show the tomb and the mosque were adjacent; Orhan Gazi was probably buried in the section converted into a mosque. The book does not name the mosque; identification as the Orhan Bey Mosque is an inference."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "515"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Orhan Gazi Türbesi kare planlıdır ve tek kubbeyle örtülüdür. Mermer söveli, dilimli kemerli kapıdan girilir; girişte iki sütunçeli bir sundurma ve dikdörtgen bir giriş holü bulunur. İçeride dört sütunun taşıdığı küçük bir kubbe, çevresinde beşik tonozlu bir dehliz vardır. Ortada, pirinç şebeke içinde, yeşil çuha kaplı Orhan Gazi sandukası durur; çevresinde yirmi sanduka daha yer alır. İç mekân sadedir, Hereke kumaşı perdeler vardır.",
+      "en": "Orhan Gazi Tomb is square in plan and covered by a single dome. It is entered through a marble-framed door with a segmented arch; the entrance has a porch with two colonettes and a rectangular hall. Inside, a small dome on four columns is surrounded by a barrel-vaulted corridor. In the middle, inside a brass grille, stands Orhan Gazi’s sarcophagus under a green broadcloth pall, with twenty more sarcophagi around it. The interior is plain, with Hereke fabric curtains."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

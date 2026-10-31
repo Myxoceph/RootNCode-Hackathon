@@ -1,0 +1,399 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-nakip-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Camiler ve Mescitler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Nakip Camii bölümünden (s. 288-297) özetlenmiştir. Adres bölüm özeti sayfasındandır. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Mahalle adı kaynakta yok; adres bölüm özeti sayfasından (mıntıka/parsel) alındı, eserin kendi sayfalarında yer almıyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Yaptıran (banî), mimar ve vakıf bilgisi kaynakta yok; vakıf kayıtlarından araştırılmalı.",
+      "Caminin kendi yapım yılı kaynakta yok; yalnızca topluluk için 1762-1872 aralığı veriliyor.",
+      "Medrese ve kütüphane ayrı kayıtlarda (hatay-antakya-nakip-medresesi, hatay-antakya-nakip-kutuphanesi) işlendi; kitap topluluğa 'külliye' değil 'manzume' diyor, bu yüzden üst kayıt açılmadı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap 1762-1872 aralığını tüm yapılar topluluğu için veriyor; caminin kendi tarihi ayrı belirtilmiyor. Aralık topluluğa ait olarak 'probable' işaretlendi."
+      },
+      {
+        "field": "name",
+        "note": "İngilizce metin 'Nakip Mosque Poem' ifadesini kullanır; bu 'manzume' (yapılar topluluğu) sözcüğünün hatalı çevirisidir. Kayıtta 'group of buildings' denildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Nakip Camii",
+    "en": "Nakip Mosque"
+  },
+  "subtitle": {
+    "tr": "Medrese ve kütüphanesiyle bir yapılar topluluğunun camisi",
+    "en": "The mosque of a group of buildings with a madrasa and a library"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "manzume",
+    "medrese",
+    "kütüphane",
+    "minare",
+    "Kırk Asırlık Türk Yurdu Caddesi"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "3. Mıntıka, 493 Parsel; Kırk Asırlık Türk Yurdu Caddesi'ne bakar",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "291"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.200703,
+      "lng": 36.163048,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q127787153 ('Nakip Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Yapılar topluluğu 1762-1872 arasında farklı zamanlarda",
+      "en": "The group of buildings between 1762 and 1872, at different times"
+    },
+    "start_year": 1762,
+    "end_year": 1872,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap, yapılar topluluğunun '1762 ile 1872 yılları arasında farklı zamanlarda inşa edilmesiyle oluştuğunu' söylüyor. Aralık tüm topluluğa ilişkindir; caminin kendi yapım yılı verilmiyor.",
+      "en": "The book says the group of structures was built between 1762 and 1872 at different times. The range concerns the whole group; the mosque's own construction year is not given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "291"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meyilli bir arazide, dikdörtgen planlı, iki sahınlı, kiremit çatılı cami; avlusundaki medrese ve kütüphaneyle birlikte bir 'manzume' oluşturur. Yuvarlak gövdeli, şemsiye külahlı minaresi avlunun kuzey köşesinde, harimden ayrı yükselir.",
+    "en": "Built on sloping land, the mosque has a rectangular plan with two naves and a tiled roof; together with the madrasa and library in its courtyard it forms a group of buildings. Its round-bodied minaret with an umbrella cone rises in the north corner of the courtyard, apart from the sanctuary."
+  },
+  "sections": [
+    {
+      "id": "manzume",
+      "order": 1,
+      "title": {
+        "tr": "Yapılar Topluluğu",
+        "en": "The Group of Buildings"
+      },
+      "body": {
+        "tr": "İki tarafı sivil yapılarla çevrili bu topluluk, medrese ve kütüphanesiyle ilim-ibadet bütünlüğünü işaret eder. Kuzeybatı köşesi topluluğun en hareketli kısmıdır: kare kaideli minare, üç kenarlı avlu ve medrese hücreleri burada yer alır ve Kırk Asırlık Türk Yurdu Caddesi'ne bakar. Yapılar topluluğunun 1762 ile 1872 arasında farklı zamanlarda inşa edilerek oluştuğu anlaşılmaktadır.",
+        "en": "Surrounded by civil buildings on both sides, this group indicates the unity of learning and worship with its madrasa and library. The northwest corner is its most dynamic side, with a square-based minaret, a triangular courtyard and madrasa cells, overlooking the Kırk Asırlık Türk Yurdu Street. It is understood that the group was built between 1762 and 1872 at different times."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "291"
+        }
+      ]
+    },
+    {
+      "id": "cami-plan",
+      "order": 2,
+      "title": {
+        "tr": "Cami",
+        "en": "The Mosque"
+      },
+      "body": {
+        "tr": "Cami meyilli arazide yapıldığı için dıştan iki katlı görünür, ancak avluda kot farkı yalnızca altı basamaktır. Son cemaat yeri yoktur; kıbleye paralel dikdörtgen planlıdır. İki yanda gömme ayaklara ve ortada devşirme korent başlıklı bir sütuna oturan iki sivri kemerle kuzey ve güney olmak üzere iki sahına bölünür. Ahşap kirişler üzerindeki kiremit kaplı örtünün omurgası bu kemerlerin üzerine bindirilmiştir. Cami kıble tarafında altı, kuzeyde beş, doğu ve batıda dörderden sekiz olmak üzere toplam on dokuz alt pencereye sahiptir.",
+        "en": "As the mosque is built on sloping land it looks two-storeyed from outside, but the level difference in the courtyard is only six steps. It has no narthex and a rectangular plan parallel to the qibla. Two pointed arches on buried piers at the sides and a column with a reused Corinthian capital in the middle divide it into north and south naves. The spine of the tiled roof on wooden beams rests on these arches. It has nineteen windows in total: six on the qibla side, five on the north, eight on the east and west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "293"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber-minare",
+      "order": 3,
+      "title": {
+        "tr": "Mihrap, Minber ve Minare",
+        "en": "Mihrab, Minbar and Minaret"
+      },
+      "body": {
+        "tr": "Mihrabın dairesel nişinin üst bölümünde yaprak biçiminde hafif oymalı mukarnaslar görülür; ahşap minber oldukça sadedir. Caminin en dikkat çeken unsuru olan minare, harimden uzakta avlunun kuzey köşesinde yuvarlak gövdeyle yükselir ve ahşap dikmeler üzerine oturtulmuş şemsiye biçimli külahla örtülüdür.",
+        "en": "On the upper part of the circular mihrab niche lightly carved muqarnas in leaf form are seen; the wooden minbar is quite plain. The minaret, the most striking element of the mosque, rises with a round body in the north corner of the courtyard away from the sanctuary and is covered by an umbrella-shaped cone on wooden posts."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "294"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_toplam",
+      "label": {
+        "tr": "Toplam pencere sayısı",
+        "en": "Total windows"
+      },
+      "value": 19,
+      "unit": "adet",
+      "note": {
+        "tr": "Kıble altı, kuzey beş, doğu ve batı sekiz.",
+        "en": "Six qibla, five north, eight east and west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "293"
+        }
+      ]
+    },
+    {
+      "key": "avlu_kot_farki",
+      "label": {
+        "tr": "Avludaki kot farkı",
+        "en": "Level difference in the courtyard"
+      },
+      "value": 6,
+      "unit": "basamak",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "293"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "293"
+        }
+      ]
+    },
+    {
+      "key": "minare_konumu",
+      "label": {
+        "tr": "Minare konumu",
+        "en": "Minaret position"
+      },
+      "value": "Avlunun kuzey köşesinde, harimden ayrı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "294"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Nakip Camii, meyilli bir arazide, avlulu bir yapılar topluluğunun içindedir. Dışarıdan iki katlı görünür; avluda ise kot farkı yalnızca altı basamaktır. Caminin son cemaat yeri yoktur. İç mekân kıbleye paralel dikdörtgendir ve iki sivri kemerle kuzey ve güney sahınlarına ayrılır; ortadaki sütunun başlığı devşirme korent tipindedir. Mihrabın dairesel nişinin üstünde yaprak biçimli hafif mukarnaslar, yanında sade ahşap bir minber vardır. Yuvarlak gövdeli minare avlunun kuzey köşesinde, harimden uzakta yükselir ve şemsiye biçimli bir külahla örtülüdür.",
+      "en": "The Nakip Mosque stands on sloping land within a courtyard group of buildings. From outside it seems two-storeyed, but the level difference in the courtyard is only six steps. The mosque has no narthex. The interior is a rectangle parallel to the qibla, divided into north and south naves by two pointed arches; the capital of the middle column is a reused Corinthian type. Above the circular mihrab niche are lightly carved leaf-shaped muqarnas, and beside it a plain wooden minbar. The round-bodied minaret rises in the north corner of the courtyard, away from the sanctuary, with an umbrella-shaped cone."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 291-294) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-nakip-camii/p145-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "288-289"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Yapı topluluğunun sokak cephesi",
+        "en": "Street façade of the complex"
+      },
+      "alt": {
+        "tr": "Kesme taş ve beyaz sıvalı, kırmızı saçaklı iki kütleli yapı; ahşap pencereler ve alt katta metal kapılar. Sağ arkada ahşap şerefeli minare.",
+        "en": "A two-part building of cut stone and white plaster with red eaves, wooden windows and metal doors on the ground floor. A minaret with a wooden balcony rises behind on the right."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-nakip-camii/p146-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "290-291"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Minare ve ağaçlı avlu",
+        "en": "Minaret and the tree-filled courtyard"
+      },
+      "alt": {
+        "tr": "Ağaçların arasından görünen ahşap şerefeli minare; yanında beyaz sıvalı, kırmızı çerçeveli pencereli ve balkonlu iki katlı yapı.",
+        "en": "A minaret with a wooden balcony seen through trees, beside a two-storey white plastered building with red-framed windows and a balcony."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-nakip-camii/p148-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "294-295"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İbadet salonu ve minber",
+        "en": "Prayer hall and minbar"
+      },
+      "alt": {
+        "tr": "Uzun salonda bordo halı, ortada mermer bir sütun, ahşap minber ve büyük bir avize; ahşap kirişli tavan, beyaz duvarlarda ahşap pencereler.",
+        "en": "A long hall with red carpet, a marble column, a wooden minbar and a large chandelier; a timber-beamed ceiling and wooden windows in white walls."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-nakip-camii/p148-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "295"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Taş mihrap ve ahşap minber",
+        "en": "Stone mihrab and wooden minbar"
+      },
+      "alt": {
+        "tr": "Açık renk taş mihrap nişi, üstünde yazılı bir levha; sağında oyma ahşap minber, önde mermer sütun, solda saat ve pencereler.",
+        "en": "A pale stone mihrab niche with an inscribed panel above; a carved wooden minbar to its right, a marble column in front, and a clock and windows on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-nakip-camii/p148-3.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "295"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Minber ve mihrap yönü",
+        "en": "Minbar and the mihrab wall"
+      },
+      "alt": {
+        "tr": "Mihrap nişi ve yanındaki ahşap minber; önde başlıklı mermer sütun, bordo halı, solda saat ve ahşap pencere.",
+        "en": "The mihrab niche and the wooden minbar beside it; a marble column with a capital in front, red carpet, a clock and a wooden window on the left."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-nakip-camii/p149-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "296"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sütun başlığı",
+        "en": "Column capital"
+      },
+      "alt": {
+        "tr": "Mermer sütunun akantus yapraklı, oymalı beyaz başlığı; üstünde kemer, arkada ahşap kirişli tavan.",
+        "en": "The white carved capital of a marble column with acanthus leaves, with an arch above and a timber-beamed ceiling behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

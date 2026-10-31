@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-baba-zakir-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Kalan Bölümler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Yıldırım Kalan Bölümler bölümünden yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media' ve 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada teyit edilmeli.",
+      "Dergâh/türbenin kuruluş ve vefat tarihleri kaynakta yok; 'dating' null.",
+      "Mezar taşlarının kitabeleri kitapta verilmiyor.",
+      "Hatice Hatun ve diğer gömülü kişilerin tarihleri kaynakta yok.",
+      "Mimar kaynakta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "'founder' dergâhın kurucusudur (Baba Zâkir Alâaddin); türbeyi kimin yaptırdığı kaynakta yok ve türbe zamanla yok olmuştur."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Baba Zâkir Türbesi",
+    "en": "Tomb of Baba Zâkir"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "dergâh",
+    "Baba Zâkir",
+    "Emîr Sultan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Namazgâh",
+    "address": "Namazgâh Mahallesi, Dereboyu Sokak, No: 32",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "283"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.178311,
+      "lng": 29.0752,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Namazgah, Namazgah Mahallesi, Yıldırım, Bursa, Marmara Bölgesi, 16360, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Baba Zâkir Alâaddin",
+    "role": "dergâh kurucusu",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "283"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Emîr Sultan'dan ders alan Baba Zâkir'in kurduğu dergâhın yerindeki mezar; türbe ve dergâh yok olmuş, mezara bir apartmanın zemin katındaki küçük pencereden ulaşılmaktadır.",
+    "en": "The grave on the site of the lodge founded by Baba Zâkir, a student of Emîr Sultan; the tomb and lodge have vanished and the grave is reached through a small window on the ground floor of an apartment building."
+  },
+  "sections": [
+    {
+      "id": "baba-zakir-ve-dergah",
+      "order": 1,
+      "title": {
+        "tr": "Baba Zâkir ve Dergâhı",
+        "en": "Baba Zâkir and His Lodge"
+      },
+      "body": {
+        "tr": "Yıldırım, Namazgâh Mahallesi, Dereboyu Sokak, No: 32'de yer alır. Baba Zâkir Efendi, Emîr Sultan'dan ders aldıktan sonra bugün mezarının bulunduğu noktada bir dergâh kurmuştur. Vefatının ardından aynı yere defnedilmiş, türbesi zamanla yok olmuştur. Dergâh bir dönem mahalle mescidi olarak da işlev görmüştür; ne mescitten ne dergâhtan günümüze yapı kalmamıştır.",
+        "en": "Located at No. 32 Dereboyu Street, Namazgâh Neighborhood, Yıldırım. After receiving lessons from Emîr Sultan, Baba Zâkir Efendi established a lodge on the spot where his grave stands today. After his death he was buried in the same place; his tomb has since vanished. The lodge also functioned as a neighborhood masjid for a time; no structure remains from either."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "283"
+        }
+      ]
+    },
+    {
+      "id": "mezar-ve-hazire",
+      "order": 2,
+      "title": {
+        "tr": "Mezar ve Hazire",
+        "en": "Grave and Graveyard"
+      },
+      "body": {
+        "tr": "Günümüzde mezara bir apartmanın zemin katındaki küçük bir pencereden ulaşılabilmektedir. Mezarın hemen alt yamacındaki binanın bahçesinde iki farklı kabre ait taşlar kısmen okunabilmektedir. Hazirenin geçmişte daha fazla defin içerdiği bilinmektedir. Kaynaklarda dergâhın kurucusu Baba Zâkir Alâaddin dışında Hatice Hatun bint Hüseyin, Hindî Mehmed Efendi, Celvetî Şeyhi Sebbâğ Hacı Ahmed Dede, Ahıskalı Fazıl Hasan Efendi, Seyyid Hafız Mehmed Tahir Efendi ve Tekfurdağlı Şeyh Said Efendi'nin de burada medfun olduğu belirtilir.",
+        "en": "Today the grave can be accessed through a small window on the ground floor of an apartment building. The stones of two different graves in the garden of the building just below the grave are partially legible. The graveyard is known to have held more burials in the past. Sources state that besides the lodge founder Baba Zâkir Alâaddin, Hatice Hatun bint Hüseyin, Hindî Mehmed Efendi, Celvetî Shaykh Sebbâğ Hacı Ahmed Dede, Ahıskalı Fazıl Hasan Efendi, Seyyid Hafız Mehmed Tahir Efendi and Tekfurdağlı Shaykh Said Efendi are also buried here."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "283"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Baba Zâkir Alâaddin",
+      "role": {
+        "tr": "Dergâhın kurucusu, burada medfun",
+        "en": "Founder of the lodge, buried here"
+      }
+    },
+    {
+      "name": "Hatice Hatun bint Hüseyin",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Hindî Mehmed Efendi",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Sebbâğ Hacı Ahmed Dede",
+      "role": {
+        "tr": "Celvetî şeyhi, burada medfun",
+        "en": "Celvetî shaykh, buried here"
+      }
+    },
+    {
+      "name": "Ahıskalı Fazıl Hasan Efendi",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Seyyid Hafız Mehmed Tahir Efendi",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    },
+    {
+      "name": "Tekfurdağlı Şeyh Said Efendi",
+      "role": {
+        "tr": "Burada medfun",
+        "en": "Buried here"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-emir-sultan-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Baba Zâkir, Emîr Sultan'dan ders aldıktan sonra dergâhını kurmuştur.",
+        "en": "Baba Zâkir founded his lodge after studying with Emîr Sultan."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "283"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Baba Zâkir Türbesi günümüzde ayakta bir yapı değildir. Mezara bir apartmanın zemin katındaki küçük bir pencereden bakılabilir; alt yamaçtaki bina bahçesinde iki kabre ait kısmen okunabilen taşlar bulunur.",
+      "en": "The Tomb of Baba Zâkir no longer exists as a standing building. The grave is reached through a small window on the ground floor of an apartment building; in the garden of the building on the slope below are the partly legible stones of two graves."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni); sahada doğrulanmadı."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

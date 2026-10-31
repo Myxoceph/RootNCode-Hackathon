@@ -2,16 +2,15 @@
   "schema_version": "1.0",
   "id": "bursa-mustafakemalpasa-lala-sahin-pasa-kulliyesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Mustafakemalpaşa",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' kitabının Mustafakemalpaşa bölümünden (s. 608-623) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahadan ya da güvenilir kaynaktan eklenmeli (location.coordinates eklenmedi).",
-      "Fotoğraf / medya yok; Drive klasörü ve dosya kimlikleri belirlenmeli (media, archive_media boş, media_folder null).",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
       "Külliyenin inşa tarihi ve diğer yapıları (cami, hamam vb.) kitapta anlatılmıyor.",
       "Vakıf adı ve şartları kitapta yok.",
@@ -55,7 +54,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "610, 620"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.03381,
+      "lng": 28.411965,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": null,
   "founder": {
@@ -186,8 +192,42 @@
     },
     "audio_description_source": "Kitaptaki mimari tarif (Bursa Vakıf Eserleri III. Cilt) esas alınarak yazılmıştır."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1Co-_wqwe7yGgPGkFAccDYCTl-mXIKy49",
+    "book_layout_pdf_file_id": "1Fg0-pL7Gn8Jxlo_AXAr-ve6C8TMIJWx6",
+    "book_pdf_name": "9-Mustafakemalpaşa.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-mustafakemalpasa-lala-sahin-pasa-kulliyesi/p015-1.jpg",
+        "original_name": "01 DJI_20241106165602_0427_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "1Fg0-pL7Gn8Jxlo_AXAr-ve6C8TMIJWx6",
+        "book_pdf_name": "9-Mustafakemalpaşa.pdf",
+        "book_page": "620"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Lala Şahin Paşa Türbesi",
+        "en": "Lala Şahin Paşa Tomb"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş sıralı duvarlı, gri sivri külahlı küçük yapının yeşil boyalı kapısı ve iki parmaklıklı penceresi vardır. Solda kemerli açık bir bölüm, çevrede kazılmış toprak ve moloz görünür.",
+        "en": "A small building of alternating brick and stone with a grey pointed roof, a green door and two barred windows. An open arched section stands on the left, with excavated earth and rubble around."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-06"
+    }
+  ],
   "archive_media": [],
   "exhibitions": []
 }

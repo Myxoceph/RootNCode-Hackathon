@@ -1,0 +1,480 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-huma-hatun-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Mimar kitapta belirtilmemiş.",
+      "İkinci sandukanın sahibi bilinmiyor.",
+      "Kitabe tarihindeki Miladi yıl (1849/1449) çelişkisi uzman tarafından çözülmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[turbe-kitabesi]",
+        "note": "Kitabe çevirisi hem Türkçe hem İngilizce 'H. Receb 853 / M. Ağustos-Eylül 1849' yazar; oysa yapı H. 853 / M. 1449 olarak tarihlenir (bölüm girişi). Hicri 853 ile Miladi 1849 uyuşmaz; kaynağa sadık kalındı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Kitabe 'Sultan Mehmed Çelebi' adını verir; kitap bunu II. Mehmed (Fâtih) olarak yorumlar."
+      },
+      {
+        "field": "dating",
+        "note": "Türbe 'II. Murad döneminde' yapıldığı için banî II. Mehmed'dir; kitabın yorumu esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hüma Hatun Türbesi",
+    "en": "Hüma Hatun Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Hatuniye Türbesi",
+      "en": "Hatuniye Tomb"
+    },
+    {
+      "tr": "Ak Türbe",
+      "en": "Ak Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "türbe",
+    "altıgen plan",
+    "Ak Türbe",
+    "Hatuniye",
+    "kalem işi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "152"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.190802,
+      "lng": 29.047015,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/2796344236 ('Hüma Hatun Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 853 / M. 1449",
+      "en": "AH 853 / AD 1449"
+    },
+    "start_year": 1449,
+    "end_year": 1449,
+    "hijri_year": 853,
+    "century": 15,
+    "basis": {
+      "tr": "Kapı üzerindeki kitabe H. 853 Receb tarihini verir; Türkçe ve İngilizce kitabe çevirisinde Miladi karşılığı 1849 yazılmıştır, metin ise 1449 der.",
+      "en": "The inscription over the door gives Rajab AH 853; the printed Gregorian equivalent in the translation reads AD 1849 while the text says 1449."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "152-153"
+      }
+    ]
+  },
+  "founder": {
+    "name": "II. Mehmed (Sultan Mehmed Çelebi)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "152-153"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Halk arasında \"Hatuniye\" veya \"Ak Türbe\" olarak da bilinen, II. Murad döneminde oğlu II. Mehmed'in annesi için yaptırdığı altıgen planlı kubbeli türbe. Kapı kitabesi Fâtih'in annesini \"Hatunların Efendisi\" unvanıyla anar.",
+    "en": "A hexagonal domed tomb, also known among the public as \"Hatuniye\" or \"Ak Türbe\", built by Mehmed II for his mother in the reign of Murad II. The door inscription calls Fâtih's mother \"Master of the Ladies\"."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Halk arasında \"Hatuniye\" veya \"Ak Türbe\" olarak da bilinen yapı, daha yaygın ve doğru adıyla \"Hüma Hatun Türbesi\" olarak anılır. Muradiye Camii'nin doğusunda konumlanan türbenin, kapı üzerindeki kitabesinden anlaşıldığı üzere, II. Murad döneminde oğlu II. Mehmed tarafından annesi için H. 853 / M. 1449'da inşa ettirildiği belirlenmiştir. Kitabede Fâtih Sultan Mehmed'in annesi \"Seyyidetü'l-havâtîn\", yani \"Hatunların Efendisi\" unvanıyla anılmıştır.",
+        "en": "Also known among the public as \"Hatuniye\" or \"Ak Tomb\", it is more commonly and correctly called the \"Hüma Hatun Tomb\". Located east of the Muradiye Mosque, it was determined from the door inscription to have been built by Mehmed II for his mother in AH 853 / AD 1449, during Murad II's reign. In the inscription Fâtih Sultan Mehmed's mother is called \"Seyyidetü'l-havâtîn\", meaning \"Master of the Ladies\"."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "152"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe altı köşeli bir plana sahiptir ve kubbe ile örtülüdür; duvar örgüsü tuğla ve taştandır. Her cephede köşelerden başlayan çıkıntılar yükselerek birer kemer meydana getirir. Kasnaksız kubbesi kurşun kaplıdır. Girişi, sivri kemerli küçük eyvan biçimindeki bölümden basık kemerli bir kapıyla sağlanır; kapı üzerindeki stalaktitlerden yalnızca tuğla olanlar günümüze ulaşmıştır. İç mekân alt sırada sivri kemer alınlıklı beş, üst sırada sivri kemerli beş pencereyle aydınlanır.",
+        "en": "The tomb has a hexagonal plan and is covered with a dome; the wall system is brick and stone. On each façade protrusions starting from the corners rise to form arches. Its drumless dome is covered with lead. Entry is through a depressed-arched doorway from a small pointed-arch iwan-shaped section; of the stalactites over the door only the brick ones survive. The interior is lit by five windows with pointed-arch pediments in the lower row and five pointed-arch windows in the upper row."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "153-154"
+        }
+      ]
+    },
+    {
+      "id": "mezarlar-onarim",
+      "order": 3,
+      "title": {
+        "tr": "Sandukalar ve Onarımlar",
+        "en": "Sarcophagi and Repairs"
+      },
+      "body": {
+        "tr": "Türbede iki sanduka vardır; biri Fâtih Sultan Mehmed'in annesi Hüma Hatun'a aittir, ikincisinin sahibi bilinmemektedir. Bina 1601'de ve sonrasında birçok kez onarılmıştır. 1844 onarımında iç, dış, kapılar, saçaklar ve avlu kaldırımları yenilenmiştir. 2011'de Bursa Büyükşehir Belediyesi'nin başlattığı Muradiye türbeleri restorasyonlarında Hüma Hatun Türbesi de restore edilmiş, klasik dönem kalem işi desenler gün yüzüne çıkarılmıştır.",
+        "en": "There are two sarcophagi in the tomb; one belongs to Hüma Hatun, mother of Fâtih Sultan Mehmed, and the owner of the second is not known. The building was repaired many times, in 1601 and later. In 1844 the interior, exterior, doors, eaves and courtyard pavements were renewed. In 2011, during the comprehensive restoration of the Muradiye tombs by Bursa Metropolitan Municipality, the tomb was restored and classical-period hand-painted patterns were revived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "154"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "154"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "154"
+        }
+      ],
+      "note": {
+        "tr": "Alt sırada 5, üst sırada 5.",
+        "en": "5 lower row, 5 upper row."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Hüma Hatun",
+      "role": {
+        "tr": "Fâtih Sultan Mehmed'in annesi; türbede yatar",
+        "en": "Mother of Fâtih Sultan Mehmed; buried here"
+      }
+    },
+    {
+      "name": "II. Mehmed",
+      "role": {
+        "tr": "Türbeyi annesi için yaptıran",
+        "en": "Had the tomb built for his mother"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "turbe-kitabesi",
+      "location": {
+        "tr": "Türbenin kapısı üzerinde",
+        "en": "Above the tomb door"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Elhamdülillâh büniyet hâzihi’t-türbetü’l-münevveretü fî eyyâmi es-Sultâni’l-a’zam ve’l-Hâkâni’l-mu’azzam es-Sultân bin es-Sultân Murâd bin Mehmed bin Bâyezîd Hân halledellâhü mülkehû bi-emri veledihî ve kurreti aynihî semmiye Resûlullah sallâlahü aleyhi ve sellem es-saîdü’n-necîb es-Sultân Mehmed Çelebi Sultân erbeta’llâhü itnâbe devletihî bi-evtâdi’l-hulûd ve şevvede erkâne izzeti ilâ yevmi’l-mev’ûd li-vâlidetihi’l-merhûme seyyideti’l-havâtîn tâbet serâhâ ve vefeka’l-firâğ fî Recebi’l-ferd min şühûri seneti selâse ve hamsîne ve semânemie",
+      "translation": {
+        "tr": "Allaha hamdolsun. Efendimiz büyük sultan ve yüce hakan Sultanoğlu Sultan Murad bin Mehmed bin Bayezid Han zamanında, Allah O’nun saltanatını daim etsin, göz bebeği Peygamberin adı ile isimlendirilen, asil necip Sultan Mehmed Çelebi’nin annesi kadınların asili (Allah makamını güzelleştirsin) için emri üzerine bu nurlu türbe yapılmıştır. Allah o Padişahın saltanatını ve devletini uzun zaman sağlam temellerle bağlasın ve izzetinin unsurlarını Kıyamet gününe kadar sağlam etsin. Türbe binası 853 Hicri yılının. Recep / M. Ağustos-Eylül 1849 tarihinde yapılmıştır.",
+        "en": "Praise be to Allah. During the reign of our master, the great sultan and sublime ruler, Sultanoğlu Sultan Murad bin Mehmed bin Bayezid Han, may Allah perpetuate his reign, this luminous tomb was built upon the order of the noble Sultan Mehmed Çelebi for his mother, the noblest of women (may Allah beautify her position). May Allah establish that Sultan's reign on solid foundations for a long time. The tomb was built in the year 853 Hijri, Rajab / August-September AD 1849."
+      },
+      "date": {
+        "hijri_year": 853,
+        "gregorian": "Ağustos-Eylül 1849 (kitaptaki baskı; H. 853 için 1449 beklenir)"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "152-153"
+        }
+      ],
+      "note": {
+        "tr": "Basılı Miladi karşılık 1849'dur; metnin kalanı 1449 der. Kaynağa sadık kalındı.",
+        "en": "The printed Gregorian equivalent reads 1849 while the rest of the text says 1449; kept as in the source."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1449",
+      "year": 1449,
+      "date": null,
+      "hijri": "Receb 853",
+      "type": "construction",
+      "title": {
+        "tr": "II. Mehmed annesi için türbeyi yaptırdı (Receb 853)",
+        "en": "Mehmed II had the tomb built for his mother (Rajab 853)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "152-153"
+        }
+      ],
+      "note": {
+        "tr": "Kitabe çevirisinde Miladi yıl 1849 yazılmıştır.",
+        "en": "The inscription translation prints the Gregorian year as 1849."
+      }
+    },
+    {
+      "id": "onarim-1601",
+      "year": 1601,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (1601 ve sonrası birçok kez)",
+        "en": "Repair (1601 and many times later)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "154"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1844",
+      "year": 1844,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "İç, dış, kapılar, saçaklar ve avlu kaldırımları yenilendi",
+        "en": "Interior, exterior, doors, eaves and courtyard pavements renewed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "154"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Büyükşehir Belediyesi restorasyonu; kalem işleri ihya edildi",
+        "en": "Restoration by Bursa Metropolitan Municipality; hand-painted patterns revived"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "154"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "152"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ii-murad-turbesi",
+      "type": "same_founder",
+      "description": {
+        "tr": "İkisini de II. Mehmed yaptırmıştır (biri annesi, biri babası için).",
+        "en": "Both were built by Mehmed II (one for his mother, one for his father)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "131, 152"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe altı köşeli planlı, tuğla ve taş örgülü bir yapıdır. Her cephesinde köşelerden yükselen çıkıntılar birer kemer oluşturur. Kasnaksız, kurşun kaplı bir kubbeyle örtülüdür. Giriş, sivri kemerli küçük bir eyvandan basık kemerli bir kapıyla sağlanır. İçeride alt ve üst sıralarda beşer pencere vardır ve iki sanduka bulunur.",
+      "en": "The tomb has a six-sided plan of brick and stone masonry. On each façade protrusions rising from the corners form arches. It is covered by a drumless, lead-clad dome. Entry is through a small pointed-arched iwan and a depressed-arched door. Inside are five windows in each of the lower and upper rows and two sarcophagi."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-huma-hatun-turbesi/p022-1.jpg",
+        "original_name": "ERD00820 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "131"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Türbe içinde sanduka ve sütunlar",
+        "en": "Sarcophagus and columns inside the tomb"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı iç mekânda mermer zemin üzerinde açık renkli bir sanduka duruyor. Arkada kırmızı bir sütun, mermer sütunlar, avize ve boyalı kemerler görünüyor.",
+        "en": "In a white-walled interior a pale sarcophagus rests on a marble floor. Behind it are a red pillar, marble columns, a chandelier and painted arches."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-18"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-huma-hatun-turbesi/p044-1.jpg",
+        "original_name": "ERD02596 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "153"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Kırmızı ve siyah örtülü sandukalar",
+        "en": "Sarcophagi with red and black covers"
+      },
+      "alt": {
+        "tr": "Yükseltilmiş beyaz platformda kırmızı ve siyah işlemeli örtülü iki sanduka yan yana duruyor. Arkada renkli bezemeli kemerler, vitraylı pencere ve bir kapı var.",
+        "en": "Two sarcophagi with red and black embroidered covers stand on a raised white platform. Behind them are arches with coloured decoration, a stained-glass window and a doorway."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-22"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-huma-hatun-turbesi/p045-1.jpg",
+        "original_name": "ERD02606 kopya-2.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "154"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kalem işi süslemeli kubbe",
+        "en": "The painted dome"
+      },
+      "alt": {
+        "tr": "Tepeden bakılan kubbenin ortasında altın ve kırmızı renkli daire biçimli bezeme var. Çevresinde renkli yaprak motifleri ve vitraylı pencereler sıralanıyor.",
+        "en": "Looking up into the dome, a circular gold and red ornament fills the centre. Coloured leaf motifs and stained-glass windows are arranged around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-22"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,0 +1,395 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-darussaade-agasi-besir-aga-cesmesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Emir Sultan",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Emir Sultan Külliyesi bölümünden (s. 19-59) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Çeşmenin dönem kodu: 1743 tarihi 'gec-osmanli' olarak işaretlendi; 'enums.json' sınıflamasıyla ekip teyit etmeli.",
+      "Mimar/usta kaynakta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location",
+        "note": "Kitap çeşmeyi hem 'kıble tarafındaki dış avlu duvarına gömülü' hem de 'camiin güneydoğu köşesinde avlu duvarına bitişik' olarak tarif eder (s. 58); iki tarif birlikte korundu."
+      },
+      {
+        "field": "name",
+        "note": "Bölüm başlığı 'Darüssaade Ağası Beşir Ağa Çeşmesi'; metinde 'Dârüssaâde Ağası Çeşmesi' ve 'Hacı Beşir Ağa Çeşmesi' (s. 46) adları da geçer; alternatif ad olarak eklendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Darüssaade Ağası Beşir Ağa Çeşmesi",
+    "en": "Darüssaade Ağası Beşir Ağa Fountain"
+  },
+  "alternate_names": [
+    {
+      "tr": "Dârüssaâde Ağası Çeşmesi",
+      "en": "Dârüssaâde Ağası Fountain"
+    },
+    {
+      "tr": "Hacı Beşir Ağa Çeşmesi",
+      "en": "Hacı Beşir Ağa Fountain"
+    }
+  ],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-emir-sultan-kulliyesi",
+  "era": "gec-osmanli",
+  "tags": [
+    "çeşme",
+    "Beşir Ağa",
+    "Dârüssaâde Ağası",
+    "kitabe",
+    "sülüs",
+    "1743"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Emirsultan Mahallesi",
+    "address": "Emir Sultan Camii'nin kıble tarafındaki dış avlu duvarı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "58"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.18114,
+      "lng": 29.081031,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-yildirim-emir-sultan-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1156 / M. 1743",
+      "en": "AH 1156 / AD 1743"
+    },
+    "start_year": 1743,
+    "end_year": 1743,
+    "hijri_year": 1156,
+    "century": 18,
+    "basis": {
+      "tr": "Çeşme kitabesi ve kitabın çeşme için verdiği tarih.",
+      "en": "The fountain inscription and the date the book gives for the fountain."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "58-59"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Moralı (Hacı) Beşir Ağa",
+    "role": "banî (Dârüssaâde Nazırı)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "58"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Dârüssaâde Ağası Moralı Beşir Ağa'nın H. 1156 / M. 1743'te caminin kıble tarafındaki dış avlu duvarına yaptırdığı, şiirli sülüs kitabeli mermer çeşme.",
+    "en": "A marble fountain with a Thuluth verse inscription, built in AH 1156 / AD 1743 by the Chief Eunuch Moralı Beşir Ağa in the outer courtyard wall on the qibla side of the mosque."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banisi",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Çeşme, caminin kıble tarafındaki dış avlu duvarına gömülü konumdadır; kitap güneydoğu köşede avlu duvarına bitişik olduğunu da belirtir. H. 1156 / M. 1743 tarihli çeşmenin banisi, aynı zamanda caminin tamiratını da gerçekleştiren Dârüssaâde Nazırı Moralı Beşir Ağa'dır. Bilginleri koruyan hayırsever kişiliğiyle tanınan Hacı Beşir Ağa önce musahib-i şehriyârî, 1707'de hazinedar-ı şehriyârî, sonra Şeyhü'l-Harem ve 1717'de Dârüssaâde Ağası olmuş, 1746'da vefat etmiştir; İstanbul'da birçok cami, medrese, tekke, sebil, kütüphane ve ondan fazla çeşme yaptırmıştır. Kitabeye göre Beşir Ağa yalnızca bu çeşmeyi değil, cami ile türbeyi de tamir ettirmiştir.",
+        "en": "The fountain is embedded in the outer courtyard wall on the qibla side of the mosque; the book also says it is adjacent to the courtyard wall at the southeast corner. Dated AH 1156 / AD 1743, it was built by the Dârüssaâde Minister Moralı Beşir Ağa, who also repaired the mosque. Known as a charitable patron of scholars, Hacı Beşir Ağa was first royal companion, then royal treasurer in 1707, then Guardian of the Holy Sanctuaries and finally Chief Eunuch of the Imperial Harem in 1717; he died in 1746 and had many mosques, madrasas, lodges, sabils, libraries and more than ten fountains built in Istanbul. According to the inscription he repaired not only the fountain but also the mosque and the tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "58"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dikdörtgen formlu çeşme 1,20 × 2,80 m ölçülerindedir ve dikkat çekici mermer işçiliği sergiler. Kabartma rozetlerle süslü teknenin iki yanında mermer oturma setleri (peykeler) vardır. Dikdörtgen panoya yerleştirilmiş, istiridye kemerli ayna taşının üst ve yan yüzeyleri rumi motifleriyle bezelidir; aynanın iki yanında kabartma selvi ağacı motifleri, tek kurnalı ayna taşının iki yanında birer hayat ağacı motifi yer alır. Bugün kurna kaldırılmış, yerine bir musluk ve tas yuvası konmuştur. Çeşmenin arkasındaki izler, abdest için kullanılan muslukların bulunduğunu gösterir.",
+        "en": "The rectangular fountain measures 1.20 × 2.80 m and shows remarkable marble work. Marble seats flank the trough, which is decorated with relief rosettes. The oyster-arched back panel set in a rectangular frame has rumi motifs on its upper and side surfaces; relief cypress motifs flank the panel and a tree-of-life motif stands on each side of the single-basin back panel. Today the basin has been removed and replaced by a tap with a bowl holder. Traces behind the fountain show there were taps for ablution."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "58-59"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 3,
+      "title": {
+        "tr": "Kitabe",
+        "en": "Inscription"
+      },
+      "body": {
+        "tr": "Kitabe 100 × 120 cm ölçüsünde, on altı mısralık sülüs hatlıdır; kabartma ayet (Enbiya, 30) kitabeyi çeşme aynasından ayıran mermer blok üzerindedir. Manzum metin \"Ni'met\" mahlasını kullanan şair Ni'metullah Efendi'ye (v. H. 1186 / M. 1773) aittir. Çeşmenin yanında sonradan eklenmiş başka bir kitabe daha bulunur; ancak bu kitabe çeşmeye değil, Emir Sultan Türbesi'nin H. 1261 / M. 1845'te Sultan Abdülmecid tarafından yapılan onarımına aittir ve şairi Zîver Paşa'dır (türbe kaydına bakınız).",
+        "en": "The inscription measures 100 × 120 cm and is in sixteen lines of Thuluth script; the relief verse (Anbiya, 30) is on the marble block separating the inscription from the back panel. The verse text belongs to the poet Ni'metullâh Efendi (d. AH 1186 / AD 1773), pen name \"Ni'met\". Another, later inscription stands by the fountain, but it belongs not to the fountain but to Sultan Abdülmecid's AH 1261 / AD 1845 repair of the Emir Sultan Tomb; its poet is Zîver Paşa (see the tomb record)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "58-59"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "boyut",
+      "label": {
+        "tr": "Çeşme boyutu",
+        "en": "Fountain size"
+      },
+      "value": "1,20 × 2,80",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "59"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_boyutu",
+      "label": {
+        "tr": "Kitabe boyutu",
+        "en": "Inscription size"
+      },
+      "value": "100 × 120",
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "59"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_misra_sayisi",
+      "label": {
+        "tr": "Kitabe mısra sayısı",
+        "en": "Inscription lines"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "58"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Moralı (Hacı) Beşir Ağa",
+      "role": {
+        "tr": "Banî; Dârüssaâde Ağası (1717), v. 1746",
+        "en": "Founder; Chief Eunuch of the Imperial Harem (1717), d. 1746"
+      }
+    },
+    {
+      "name": "Ni'metullâh Efendi (Ni'met, v. H. 1186 / M. 1773)",
+      "role": {
+        "tr": "Kitabenin şairi",
+        "en": "Poet of the inscription"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "ayet-enbiya-30",
+      "location": {
+        "tr": "Kitabeyi çeşme aynasından ayıran mermer blok, kabartma",
+        "en": "Marble block separating the inscription from the back panel, relief"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Bismillahirrahmânirrahîm. Ve mine’l-mâi külle şey’in hayyin.",
+      "translation": {
+        "tr": "Biz her canlı şeyi sudan yarattık. (Enbiya, 30)",
+        "en": "We created every living thing from water. (Surah al-Anbiya, 30)"
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "58"
+        }
+      ]
+    },
+    {
+      "id": "cesme-kitabesi-1743",
+      "location": {
+        "tr": "Çeşme kitabesi, 100 × 120 cm, sülüs hatla on altı mısra",
+        "en": "Fountain inscription, 100 × 120 cm, sixteen lines in Thuluth script"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs",
+      "transliteration": "Nâzır-ı Dârü’s-saâde Hazret-i Ağa ki anın\nÂb-ı ihsânıyla seylâb oldı el-hakk şeş cihât\nİşte ez-cümle Burûsa şehrini tenvîr iden\nÂrif-i billâh Emîr Sultân-ı kerrûbî’s-sıfât\nOl velînin câmiiyle türbe-i pür-nûrını\nKıldı ta’mîr ile ihyâ ol kerîm-i pâk zât\nLutf-ı Hakk ta’mîri zeylîde bu âb-ı hoşgüvâr\nOldı zâhir kim anın evsâfıdır azb-i Fürât\nGûş idince ol keremcû çeşme bünyâd eyledi\nCûy-ı cûd ü lutfın icrâ itdi çün kand-i nebât\nOl mekârim-pîşe sâhib, hayr-ı vâlâ himmetin\nDevlet ü ikbâl ü bahtı haşre dek bulsun sebât\nNimetâ vasfında yaz târîh içün bu beyti kim\nTeşne-lebler itmesün hiç âb-ı Hızr’a iltifât\nAl Beşir kâmkârın ayn-ı cûdından gel iç\nMâ Emîr Sultân rûh-ı pâkine âb-ı hayât",
+      "translation": {
+        "tr": "Dârüssaâde Nazırı Hazreti Beşir Ağa’nın bağış suyu ile doğrusu altı yön sel oldu. İşte bu cümleden olarak Bursa şehrini aydınlatan büyük melek gibi arif-i billah Emîr Sultan hazretleri, O temiz, cömert kişi Emîr Sultan’ın camii ve nurlu türbesini onararak yeniden kuvvetlendirdi. Hakk’ın lütfuyla yapılan bu son onarım esnasında, bu içimi hoş suyun, gerçekten de Kur’an’da övülen tatlı Fırat suyu gibi özelliklere sahip olduğu anlaşılmıştır. O cömert kişi, bunu duyunca, ırmak gibi bir çeşme inşa etti. Lütuf ve cömertliğinin ırmağı, nöbet şekeri gibi durmadan aktı. Himmeti yüksek, hayır hasenatı huy edinmiş kişinin yaptırdığı bu mekân, ta Kıyamete kadar yerinde dursun, devam etsin. Ey Nimet, tarih için bu beyti yaz ki övgüdür; çok susamışlar, bu suyun yanında Hızır suyuna, âb-ı hayata yüzünü çevirip bakmasın. Al, bahtiyar Beşir Ağa’nın cömertlik pınarından, gel sen de iç! Emîr Sultan’ın suyu onun pak ruhuna âb-ı hayat olsun. H. 1156 / M.1743",
+        "en": "With the donation of water from the Minister of Dârüssaâde, Beşir Ağa, it became a flood in six directions. Here is Hazrat Emir Sultan, the wise man like the great angel who enlightened the city of Bursa, That pure and generous person repaired and strengthened the mosque and the luminous tomb of Emir Sultan. During this final restoration it was understood that this pleasant water indeed had properties like the sweet Euphrates water praised in the Quran. When that generous person heard this, he built a fountain like a river. The river of his kindness and generosity flowed continuously like a sugar candy. May this place, built by a person who is highly devoted and has adopted the habit of doing good deeds, remain until the Day of Judgment. Oh Nimet, write this verse for history so that it is a praise; the very thirsty will not turn their faces away from the water of Khidr, the water of life, when beside this fountain. Here, come and drink from the fountain of generosity of the lucky Beşir Ağa! May Emîr Sultan’s water be the water of life for his pure soul. (AH1156 / AD 1743)"
+      },
+      "author": "Ni’metullâh Efendi (mahlas: Ni’met)",
+      "date": {
+        "hijri_year": 1156,
+        "gregorian": "1743"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "58-59"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1743",
+      "year": 1743,
+      "date": null,
+      "hijri": "1156",
+      "type": "construction",
+      "title": {
+        "tr": "Çeşme yaptırıldı; cami ve türbe onarıldı",
+        "en": "Fountain built; mosque and tomb repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "58"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-emir-sultan-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Emir Sultan Külliyesi'nin avlu duvarındaki çeşmesidir.",
+        "en": "The fountain in the courtyard wall of the Emir Sultan Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "19, 58"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-emir-sultan-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Çeşme caminin dış avlu duvarında yer alır; banisi cami ve türbeyi de onartmıştır.",
+        "en": "The fountain is in the mosque's outer courtyard wall; its founder also had the mosque and tomb repaired."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "58"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çeşme, caminin kıble tarafındaki dış avlu duvarına gömülü, 1,20 × 2,80 m boyutlarında dikdörtgen bir mermer çeşmedir. Teknenin iki yanında mermer oturma setleri, ortada istiridye kemerli bir ayna taşı vardır; ayna taşının iki yanında hayat ağacı ve selvi motifleri kabartma olarak işlenmiştir. Bugün kurnanın yerinde bir musluk ve tas yuvası bulunur. Üzerindeki kitabe sülüs hatla yazılmıştır.",
+      "en": "The fountain is a rectangular marble fountain, 1.20 × 2.80 m, set in the outer courtyard wall on the qibla side of the mosque. Marble seats flank the trough, and an oyster-arched back panel stands in the middle, flanked by relief tree-of-life and cypress motifs. Today a tap and bowl holder replace the basin. The inscription above is in Thuluth script."
+    },
+    "audio_description_source": "Kitap metnindeki mimari anlatımdan (yalnızca kaynakta yazanlar) yapay zekâ taslağı olarak yazıldı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1szziOwS-QhLsMDMpFHb1JfpzFsmkCDr-",
+    "book_layout_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+    "book_pdf_name": "7-Emir Sultan.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-darussaade-agasi-besir-aga-cesmesi/p046-1.jpg",
+        "original_name": "00 Kapak_1.jpg",
+        "book_pdf_file_id": "1wegxy80z7jW5TTs3UwZsEhKr1TAI3KG1",
+        "book_pdf_name": "7-Emir Sultan.pdf",
+        "book_page": "58"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Beşir Ağa Çeşmesi ve avlu kapısı",
+        "en": "Beşir Ağa Fountain and courtyard gate"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş sıralı duvarda süslemeli beyaz mermer bir çeşme ve önünde mermer yalak durur. Yanında kemerli bir geçit, ardında pencereli avlu duvarı görünür.",
+        "en": "A decorated white marble fountain with a marble basin set into a wall of alternating brick and stone. Beside it a brick arched passage opens to a courtyard wall with a window."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-19"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -2,24 +2,23 @@
   "schema_version": "1.0",
   "id": "bursa-karacabey-ulu-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Karacabey",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri' 3. cilt Karacabey bölümünden (s. 529-533) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Koordinat kitapta yok; sahada ya da harita kaynağından doğrulanarak 'location.coordinates' eklenmeli.",
-      "Fotoğraf yok: 'media' boş; Drive klasöründen fotoğraflar seçilip eklenmeli, 'media_folder' tanımlanmalı.",
-      "Arşiv fotoğrafı (archive_media) elimizde yok.",
       "Erişilebilirlik bilgileri kitapta yok; sahada teyit edilmeli.",
       "Ziyaret bilgileri (süre, ücret) kitapta yok; ziyaret alanı eklenmedi.",
       "Yapım tarihi ve banî kesin değil.",
       "I. Abdülhamid onarımının yılı kitapta yalnızca saltanat aralığı (1774-1789) olarak verilmiş; olay eklenmedi.",
       "Kurtuluş Savaşı'ndaki yangının yılı kitapta yok; olay eklenmedi.",
       "Kitabenin dili/yazı türü belirtilmemiş; language 'ar' çıkarıma dayanır.",
-      "Restorasyon sonrası yeniden açılış yılı (2012 sonrası) kitapta yok."
+      "Restorasyon sonrası yeniden açılış yılı (2012 sonrası) kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
     ],
     "data_quality_notes": [
       {
@@ -61,7 +60,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "529"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.21911,
+      "lng": 28.359366,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/326349450 ('Ulu Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -365,7 +371,70 @@
     },
     "audio_description_source": "Kitap metnindeki mimari tarifinden ekip taslağı (yalnızca metne dayanır)."
   },
-  "media": [],
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-ulu-camii/p021-1.jpg",
+        "original_name": "10 DJI_20241105183920_0328_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "530"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin dışı ve taş minaresi",
+        "en": "Mosque exterior and its stone minaret"
+      },
+      "alt": {
+        "tr": "Kiremit çatılı beyaz ve taş duvarlı cami, kavşaktaki sokakta yer alır. Yanında yüksek, ince bir minare yükselir.",
+        "en": "A white and stone mosque with a tiled roof at a street junction. A tall slender minaret rises beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-karacabey-ulu-camii/p022-2.jpg",
+        "original_name": "03 DJI_20241105183453_0321_D_ODAK-Edit.jpeg",
+        "book_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+        "book_pdf_name": "5-Karacabey.pdf",
+        "book_page": "531"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Caminin kuşbakışı çatısı",
+        "en": "Aerial view of the mosque roof"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında dört yöne inen kiremit çatı, yanındaki minare ve çevredeki sokaklar ile apartmanlar görülür.",
+        "en": "From above, a tiled roof slopes in four directions with a minaret beside it, surrounded by streets and apartment blocks."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-05"
+    }
+  ],
   "archive_media": [],
-  "exhibitions": []
+  "exhibitions": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "19dW7EV_S0PPnXV1zTfP2jbB3e7m3UIQ0",
+    "book_layout_pdf_file_id": "1KKGht6TKQTYiH1cWF_SMxGzuvtuDCrb2",
+    "book_pdf_name": "5-Karacabey.pdf"
+  }
 }

@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-reyhanli-yenisehir-degirmeni",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – İş Yeri ve Diğerleri",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Reyhanlı Yenişehir Değirmeni bölümünden (s. 464-465) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi, yaptıran ve vakıf bilgisi kaynakta yok; yalnızca 1930 tarihli kadastral paftaya dayanıyor.",
+      "1970'lerdeki restorasyonun tam yılı belli değil.",
+      "Değirmenin vakıf eseri olma bağı kaynakta açıklanmıyor.",
+      "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
+      "Dönem (era) ve tarihleme için kaynakta bilgi yok.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin 'orta asklarına birer adet gömme paye' diyor; İngilizce çeviri 'each of the central pillars' diye anlaşılmaz bir ifade kullanıyor. Türkçe anlam esas alındı."
+      },
+      {
+        "field": "sections[su-kanallari]",
+        "note": "Türkçe metin su kanallarının 'girişin sağındaki' pencerelere denk geldiğini, pencerelerin ise girişin güneybatısında olduğunu söylüyor; yön bütünlüğü belirsiz. Kaynaktaki ifade korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Reyhanlı Yenişehir Değirmeni",
+    "en": "Reyhanlı Yenişehir Mill"
+  },
+  "subtitle": {
+    "tr": "Yenişehir Gölü'nün kuzeybatısında, beşik tonozlu taş su değirmeni",
+    "en": "A barrel-vaulted stone mill northwest of Yenişehir Lake"
+  },
+  "alternate_names": [],
+  "type": "degirmen",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "değirmen",
+    "Reyhanlı",
+    "Yenişehir Gölü",
+    "beşik tonoz",
+    "su yapısı"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Reyhanlı",
+    "neighborhood": "Yenişehir Mahallesi",
+    "address": "Reyhanlı, Yenişehir Mahallesi, 541 Parsel; Yenişehir Gölü'nün kuzeybatısında",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "465"
+      }
+    ]
+  },
+  "dating": null,
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Taş duvarlı, beşik tonozlu, dikdörtgene yakın planlı değirmen; özgün kullanımda Yenişehir Gölü sularıyla beslenen dört değirmen taşı vardır. 1970'lerdeki restorasyonla güneydoğusuna gazino olarak işlevlendirilen bir bölüm eklenmiş, su kanalları doldurulmuştur.",
+    "en": "A mill of stone walls and barrel vault on a nearly rectangular plan; in its original use it had four millstones fed by Yenişehir Lake. A 1970s restoration added a casino section to the southeast and the water channels have been filled."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Reyhanlı ilçesi, Yenişehir Mahallesi, 541 parselde, Yenişehir Gölü'nün kuzeybatısında, kuzeydoğu-güneybatı doğrultusunda bulunur. Birbirine paralel iki uzun duvarı ile dikdörtgene yakın plan gösterir; taş duvarlarla sınırlanır ve beşik tonozla örtülüdür. Ana yapıya kuzeydoğudaki basık kemerli, iki kanatlı kapıdan girilir. Aynı duvarda girişin güneybatısında eşit aralıklı dört mazgal pencere vardır; duvarlar pencereler arasında birer gömme payeyle güçlendirilmiştir. Kapının solunda yeni bir gömme paye ve kuzeydoğu duvarına kadar süren tonozlu bir açıklık bulunur. Dış duvardaki kaba yonu taşlar sıvasızdır, zemin şap kaplıdır.",
+        "en": "It lies northwest of Yenişehir Lake in the northeast-southwest direction, plot 541, Yenişehir Neighborhood, Reyhanlı. It shows a nearly rectangular plan with two long parallel walls, bounded by stone walls and covered with a barrel vault. The main building is entered through a low-arched double-winged door on the northeast. On the same wall, southwest of the entrance, are four equally spaced crenellated windows; walls are strengthened with a recessed pillar between windows. Left of the door are a new built-in pier and a vaulted opening continuing to the northeast wall. Rough cut stones on the outer wall are unplastered; the floor is covered with screed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "465"
+        }
+      ]
+    },
+    {
+      "id": "su-kanallari-ve-degisiklikler",
+      "order": 2,
+      "title": {
+        "tr": "Su Kanalları ve Değişiklikler",
+        "en": "Water Channels and Changes"
+      },
+      "body": {
+        "tr": "Ana mekân zemininin alt kotunda, girişin sağındaki her mazgal pencere aralığına denk gelen tonozlu kanallar yapının tabanı boyunca sürer ve suyun tahliyesini sağlar. Değirmene su giriş ve çıkışını sağlayan kanallar belli bir yüksekliğe kadar doldurulmuş ve kullanılamaz durumdadır. Yapının güneydoğu kısmına 1970'li yıllardaki restorasyonla gazino olarak işlevlendirilen bir bölüm eklenmiştir. 1930 tarihli kadastral paftadan başka tescilli taşınmaza ait belge bulunamamıştır. Özgün kullanımda dört değirmen taşı yer alan ana hacim zamanla değişikliğe uğramıştır; olumsuz kullanımın yol açtığı tahribata rağmen geçmişinin izlerini taşır.",
+        "en": "At the lower level of the main floor, vaulted channels corresponding to each crenellated window bay to the right of the entrance run along the base and discharge water. The channels for water inlet and outlet are filled to a certain height and unusable. A section used as a casino was added to the southeast during the 1970s restoration. Apart from a cadastral map of 1930, no document on the registered property was found. In its original use the main volume held four millstones; it has changed over time but still bears traces of its past despite damage from negative use."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "465"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "degirmen_tasi",
+      "label": {
+        "tr": "Özgün kullanımda değirmen taşı",
+        "en": "Millstones in original use"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "465"
+        }
+      ]
+    },
+    {
+      "key": "mazgal_pencere",
+      "label": {
+        "tr": "Mazgal pencere",
+        "en": "Crenellated windows"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "465"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Cover"
+      },
+      "value": "Beşik tonoz",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "465"
+        }
+      ]
+    },
+    {
+      "key": "duvar",
+      "label": {
+        "tr": "Duvar",
+        "en": "Walls"
+      },
+      "value": "Taş, dış yüzde sıvasız kaba yonu taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "465"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "pafta-1930",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Eser 1930 tarihli kadastral paftada görünür",
+        "en": "The building appears on a cadastral map of 1930"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "465"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "su-kanallari",
+      "title": {
+        "tr": "Tabanda tonozlu su kanalları",
+        "en": "Vaulted water channels under the floor"
+      },
+      "hint": {
+        "tr": "Zemin altında suyu tahliye eden tonozlu kanallar vardır; bugün doldurulmuştur.",
+        "en": "Vaulted channels under the floor drained the water; they are now filled."
+      },
+      "section_id": "su-kanallari-ve-degisiklikler"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yenişehir Değirmeni, Reyhanlı'da Yenişehir Gölü'nün kuzeybatısında, kuzeydoğu-güneybatı doğrultusunda uzanan taş bir yapıdır. Birbirine paralel iki uzun duvarı vardır ve beşik tonozla örtülüdür. Kuzeydoğudaki basık kemerli, iki kanatlı kapıdan girilir; aynı duvarda eşit aralıklı dört mazgal pencere sıralanır. Dış yüzde kaba yonu taşlar sıvasızdır. Zeminin altında, suyu boşaltan tonozlu kanallar yer alır. Özgün kullanımda göl suyuyla işleyen dört değirmen taşı vardı.",
+      "en": "Yenişehir Mill is a stone building northwest of Yenişehir Lake in Reyhanlı, running northeast-southwest. It has two long parallel walls and a barrel vault. It is entered through a low-arched, double-winged door on the northeast, and four equally spaced crenellated windows line the same wall. The rough stones on the outside are unplastered. Below the floor are vaulted channels that drained the water. In original use four millstones were driven by the lake's water."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 465) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-reyhanli-yenisehir-degirmeni/p233-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "464"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Taş değirmen yapısı ve çevresi",
+        "en": "The stone mill building and its surroundings"
+      },
+      "alt": {
+        "tr": "Ağaçların arasında, sarmaşık kaplı, uzun, alçak taş duvarlı yapı; solda kemerli bir kapı açıklığı, önünde geniş, düz toprak bir alan.",
+        "en": "A long low stone-walled building covered with ivy among trees, with an arched doorway on the left and a wide flat dirt area in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

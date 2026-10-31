@@ -2,18 +2,17 @@
   "schema_version": "1.0",
   "id": "bursa-kestel-geyikli-baba-cesmesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Kestel",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Yapım tarihi ve banisi kitapta yok.",
       "Besmele'nin metni basılı değil; kitabe kaydı oluşturulmadı.",
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
-      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
     ],
     "data_quality_notes": []
@@ -44,7 +43,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "569"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.108583,
+      "lng": 29.371525,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-kestel-geyikli-babasultan-kulliyesi) noktası kullanıldı."
+    }
   },
   "dating": null,
   "founder": null,
@@ -144,7 +150,41 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1cxeDobWd9zo-NOT3PQQ4p-OdJNj-7SA2",
+    "book_layout_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+    "book_pdf_name": "7-Kestel.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-geyikli-baba-cesmesi/p028-2.jpg",
+        "original_name": "02 ERD07353 kopya.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "569"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Çeşmenin aslan başı lüleli yalağı",
+        "en": "Fountain with a lion-head spout and basin"
+      },
+      "alt": {
+        "tr": "Beyaz mermer duvarda hat levhası, bir kabartma ve oyuk bir lüle bulunur. Önünde yonca biçimli taş bir yalak, içinde su ve düşmüş yapraklar görülür.",
+        "en": "A white marble wall with a calligraphy plate, a relief and a carved spout. A trefoil-shaped stone basin below holds water and fallen leaves."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-07"
+    }
+  ],
   "archive_media": []
 }

@@ -1,0 +1,416 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-karaseyh-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 364-366) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Son onarımın (yeni minber ve kadınlar mahfili) tarihi kitapta verilmiyor.",
+      "Çağ (era): 1533 öncesi tarih nedeniyle 'klasik-osmanli' girildi (enums'ta tanımlı sınır yok), veri ekibi gözden geçirmeli.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap tek bir yıl değil 'H. 940 / M. 1533 senesinden evvel' der; bu nedenle yalnızca end_year girildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Karaşeyh Camii",
+    "en": "Karaşeyh Mosque"
+  },
+  "subtitle": {
+    "tr": "Kara Şeyh Abdullah Efendi'nin H. 940 / M. 1533'ten önce yaptırdığı cami",
+    "en": "Mosque built by Kara Shaykh Abdullah Efendi before AH 940 / AD 1533"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "almaşık duvar",
+    "kalkan duvar",
+    "üç gözlü son cemaat",
+    "tuğla minare",
+    "mukarnaslı mihrap"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Orhanbey",
+    "address": "Albay Bekir Sami Caddesi ile Ressam Şefik Bursalı Caddesi'nin kesiştiği köşe",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "364"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.182675,
+      "lng": 29.065399,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1112993670 ('Karaşeyh Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 940 / M. 1533'ten önce",
+      "en": "Before AH 940 / AD 1533"
+    },
+    "start_year": null,
+    "end_year": 1533,
+    "hijri_year": 940,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap, Kara Şeyh Abdullah Efendi'nin yapıyı H. 940 / M. 1533 senesinden evvel inşa ettirdiğini belirtir; kesin yıl verilmez.",
+      "en": "The book says Kara Shaykh Abdullah Efendi built it before AH 940 / AD 1533; no exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "364"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kara Şeyh Abdullah Efendi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "364"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kara Şeyh Abdullah Efendi'nin H. 940 / M. 1533'ten önce yaptırdığı, 8,20 × 8,25 m kare harimli, üç gözlü son cemaat yerli, almaşık duvar örgülü cami. Tuğla minaresi dışarıdan değil içeriden çıkılır; 1892'de Bursalı Süleyman Bey kendi imkânlarıyla onarmıştır.",
+    "en": "A mosque with an 8.20 × 8.25 m square prayer hall, three-bay narthex and alternating masonry, built by Kara Shaykh Abdullah Efendi before AH 940 / AD 1533. Its brick minaret is entered from inside; Süleyman Bey of Bursa repaired it at his own expense in 1892."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, Orhanbey Mahallesi'nde Albay Bekir Sami Caddesi ile Ressam Şefik Bursalı Caddesi'nin kesiştiği köşede yer almaktadır. Kara Şeyh Abdullah Efendi'nin H. 940 / M. 1533 senesinden evvel inşa ettirdiği yapı, almaşık duvar örgüsüyle işlenmiştir: beden duvarları moloz taş, son cemaat yeri üç sıra kesme taş ve bir sıra tuğladır, taşların aralarına düşey tuğla yerleştirilmiştir.",
+        "en": "The mosque is at the intersection of Albay Bekir Sami Street and Ressam Şefik Bursalı Street in Orhanbey Neighborhood. The structure, built by Kara Shaykh Abdullah Efendi before AH 940 / AD 1533, uses alternating masonry: the main walls are rubble stone, the narthex is three rows of cut stone and one row of brick, with vertical bricks between the stones."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "364"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Harim 8,20 × 8,25 m ölçülerinde kare mekânlıdır ve sekizgen kasnağa oturan, Türk üçgenleriyle geçilen bir kubbeyle örtülüdür. Orta bölüm daha dar beşik tonozla, yan bölümler aynalı tonozlarla örtülüdür. Üç gözlü son cemaat yerinin derinliği 4,30 m'dir; yan cepheler kapalı olduğu için yapı dikdörtgen plana benzer görünür. Kalkan duvarın kütle görüntüsünü hafifletmek için cephedeki kemerlerin üzerine küçük nişler açılmıştır. Sekizgen kasnak iki sıra kesme taş ve aralarında dikey tuğla örgüdür; kubbe dıştan kurşunla kaplanmış, iki sıra kirpi saçakla bitmektedir. Doğu ve batıdaki pencereler arasında küçük birer niş vardır; üst sıra ve kasnak pencereleri sivri kemerli, alçı şebekelidir. Harim toplam 16 pencereyle aydınlanır.",
+        "en": "The prayer hall is square at 8.20 × 8.25 m and covered with a dome on an octagonal drum with Turkish-triangle transition. The middle section is covered with a narrower barrel vault and the side sections with flattened barrel vaults. The three-bay narthex is 4.30 m deep; since the side façades are closed the building looks rectangular. Small niches above each façade arch lighten the mass of the parapet wall. The octagonal drum is two rows of cut stone with vertical brickwork between them; the dome is lead-covered with a two-row sawtooth cornice. There is a small niche between the east and west windows; the upper-row and drum windows are pointed-arched with plaster grilles. The hall is lit by 16 windows in total."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "364-365"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minare",
+      "order": 3,
+      "title": {
+        "tr": "Mihrap ve Minare",
+        "en": "Mihrab and Minaret"
+      },
+      "body": {
+        "tr": "Dikdörtgen çerçeveli ve beş köşeli mihrap nişi 66 cm derinliğindedir; kavsarasında beş sıra mukarnas vardır, kavsara koltukları kabartma bitkisel motiflidir. Son onarımda ahşaptan yeni bir minber ve yenilenmiş ahşap kadınlar mahfili yapılmıştır. Minare caminin doğu duvarında, son cemaat yeriyle birleştiği noktada yükselir ve içeriden çıkılır; moloz taş ve tuğla örgülü sekizgen kaideden gövdeye geçiş tuğla ve mermerden Türk üçgenleriyle sağlanır. Silindirik gövdeli tuğla minare iki bilezikle desteklenmiş, şerefe altında dört sıra kirpi saçak taşır; kurşun kaplı sivri külahı yenilenmiştir.",
+        "en": "The mihrab niche, with a rectangular frame and five corners, is 66 cm deep; the hood has five rows of muqarnas and its shoulders have relief floral motifs. In the last renovation a new wooden minbar was built and the wooden women's gallery renewed. The minaret rises from the east wall where it meets the narthex and is entered from inside; the transition from the octagonal base of rubble stone and brick to the shaft is by Turkish triangles of brick and marble. The brick minaret with a cylindrical shaft is supported by two bands and has four rows of sawteeth under the balcony; its lead-coated pointed spire has been renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "365-366"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "body": {
+        "tr": "1892'de Bursa Evkaf muhasebecisi Bursalı Süleyman Bey camiyi kendi imkânlarıyla tamir ettirmiştir.",
+        "en": "In 1892, Süleyman Bey of Bursa, accountant of the Bursa Foundations, had the mosque repaired with his own means."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "366"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim ölçüsü",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "8,20 × 8,25",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "364"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinlik",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 4.3,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "364"
+        }
+      ]
+    },
+    {
+      "key": "pencere_toplam",
+      "label": {
+        "tr": "Harim pencere sayısı",
+        "en": "Prayer hall windows"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "365"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_derinlik",
+      "label": {
+        "tr": "Mihrap nişi derinliği",
+        "en": "Mihrab niche depth"
+      },
+      "value": 0.66,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "365"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas_sirasi",
+      "label": {
+        "tr": "Mihrap kavsarası mukarnas sırası",
+        "en": "Mihrab hood muqarnas rows"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "365"
+        }
+      ]
+    },
+    {
+      "key": "minare_kirpi_sira",
+      "label": {
+        "tr": "Şerefe altı kirpi saçak sırası",
+        "en": "Sawtooth rows beneath balcony"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "366"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kara Şeyh Abdullah Efendi",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Bursalı Süleyman Bey",
+      "role": {
+        "tr": "Bursa Evkaf muhasebecisi; 1892'de camiyi kendi imkânlarıyla tamir ettirdi",
+        "en": "Accountant of the Bursa Foundations; had the mosque repaired at his own expense in 1892"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1533-oncesi",
+      "year": 1533,
+      "date": null,
+      "hijri": "940",
+      "type": "construction",
+      "title": {
+        "tr": "H. 940 / M. 1533'ten önce inşa ettirildi (kesin yıl belirtilmemiş)",
+        "en": "Built before AH 940 / AD 1533 (exact year not stated)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "364"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1892",
+      "year": 1892,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursalı Süleyman Bey camiyi kendi imkânlarıyla tamir ettirdi",
+        "en": "Süleyman Bey of Bursa had the mosque repaired at his own expense"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "366"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Karaşeyh Camii, Orhanbey Mahallesi'nde iki cadde kesişiminde, kare harimli, kurşun kaplı kubbeli bir yapıdır. Üç gözlü son cemaat yerinin kalkan duvarlı cephesindeki kemerlerin üzerinde küçük nişler vardır; yan cepheler kapalı olduğundan yapı dikdörtgen görünür. Silindirik gövdeli tuğla minare caminin doğu duvarından yükselir ve içeriden çıkılır. Mihrap beş köşeli bir niştir ve beş sıra mukarnaslıdır.",
+      "en": "Karaşeyh Mosque stands at a street intersection in Orhanbey Neighborhood, a building with a square prayer hall and a lead-covered dome. Small niches above the arches on the parapet-walled façade of its three-bay narthex lighten its mass; with the side façades closed it looks rectangular. A brick minaret with a cylindrical shaft rises from the east wall and is entered from inside. The mihrab is a five-cornered niche with five rows of muqarnas."
+    }
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-karaseyh-camii/p096-1.jpg",
+        "original_name": "ERD09618 kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "365"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Ahşap minber ve vitray pencereler",
+        "en": "Wooden minber and stained-glass windows"
+      },
+      "alt": {
+        "tr": "Köşede kırmızı kumaş süslemeli, oymalı ahşap minber; yanında bir ayaklı saat var. Üstte renkli sivri kemerli vitray pencereler ve madalyonlar görünüyor.",
+        "en": "A carved wooden minber with red fabric trim in a corner, with a standing clock beside it. Coloured pointed-arch stained-glass windows and medallions are above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-08"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-karaseyh-camii/p096-2.jpg",
+        "original_name": "ERD09619 kopya-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "365"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin köşesi, kürsü ve kitaplık",
+        "en": "Corner with pulpit and bookcase"
+      },
+      "alt": {
+        "tr": "Gri-bej duvarlı iç mekânda alçak kürsü ile kitaplarla dolu ahşap bir dolap var. Yukarıda iki vitray pencere, aşağıda ahşap çerçeveli bir pencere görünüyor.",
+        "en": "A grey-beige interior corner with a low pulpit and a wooden bookcase full of books. Two stained-glass windows are above and a wood-framed window below."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-08"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

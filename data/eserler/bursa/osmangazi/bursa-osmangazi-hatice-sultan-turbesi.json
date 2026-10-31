@@ -1,0 +1,355 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hatice-sultan-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım yılı kitapta yok; XVI. yüzyıl başı yaklaşık kabul edildi (start/end_year tahmini).",
+      "Kükürtlü Hamamı'nın kayıt id'si tahmini.",
+      "Mehmed Bey'in Subaşı olarak görev yılları verilmiyor.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "start_year/end_year (1500-1520) kitapta yok; 'XVI. yüzyılın başları' ifadesinden ekip tahminidir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hatice Sultan Türbesi",
+    "en": "Hatice Sultan Tomb"
+  },
+  "subtitle": {
+    "tr": "II. Bayezid'in kızı Hatice Sultan ve ailesinin türbesi",
+    "en": "Tomb of Hatice Sultan, daughter of Bayezid II, and her family"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Hatice Sultan",
+    "II. Bayezid",
+    "Kükürtlü",
+    "mihrap",
+    "çini"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Kükürtlü Mahallesi",
+    "address": "3. Kaynak Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "504"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.19849,
+      "lng": 29.036888,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q131391242 ('Hatice Sultan Türbesi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XVI. yüzyılın başları",
+      "en": "Early 16th century"
+    },
+    "start_year": 1500,
+    "end_year": 1520,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap 'XVI. yüzyılın başlarında inşa edilen türbe' diyor; yıl verilmiyor.",
+      "en": "The book says the tomb was built in the early 16th century; no year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "504"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Bursa Subaşısı Mehmed Bey",
+    "role": "banî (Hatice Sultan adına yaptıran)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "504"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Çekirge yolu üzerindeki Kükürtlü Hamamı'nın güneydoğusunda, II. Bayezid'in kızı ve Kara Mustafa Paşa'nın eşi Hatice Sultan adına Bursa Subaşısı Mehmed Bey'in yaptırdığı kare planlı, kubbeli türbe. İçinde Hatice Sultan ve ailesinden dokuz kişinin sandukası vardır.",
+    "en": "A square, domed tomb southeast of the Kükürtlü Bath on the Çekirge Road, built by Bursa Subaşı Mehmed Bey in the name of Hatice Sultan, daughter of Bayezid II and wife of Kara Mustafa Paşa. It holds the sarcophagi of Hatice Sultan and nine of her family."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Yaptıran ve kimin adına",
+        "en": "Builder and dedicatee"
+      },
+      "body": {
+        "tr": "Türbe, II. Bayezid'in kızı ve Kara Mustafa Paşa'nın eşi Hatice Sultan adına Bursa Subaşısı Mehmed Bey tarafından yaptırılmıştır. XVI. yüzyılın başlarında inşa edilmiştir. Çekirge yolundaki Kükürtlü Hamamı'nın güneydoğusundadır.",
+        "en": "The tomb was built by Bursa Subashi Mehmed Bey in the name of Hatice Sultan, daughter of Bayezid II and wife of Kara Mustafa Paşa, in the early 16th century. It lies southeast of the Kükürtlü Bath on the Çekirge Road."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "504"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve örtü",
+        "en": "Plan and covering"
+      },
+      "body": {
+        "tr": "Türbe kare planlıdır; üst örtü, üçgen geçişli sekizgen kasnak üzerine oturan, dışı kurşun kaplı bir kubbedir. Güneyindeki tonoz örtülü revaklı bölümle birlikte boyuna gelişen dikdörtgen bir plana sahiptir.",
+        "en": "The tomb is square; the upper covering is a lead-covered dome on an octagonal drum with triangular transitions. With the vaulted arcaded section on its south side it has a lengthwise rectangular plan."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "504"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Sandukaların bulunduğu ana mekân kare planlıdır, iç yüzeyleri badanalıdır. Mihrap nişinin bir bölümü sonradan ahşapla kapatılmıştır; günümüze ulaşan çini parçaları mihrabın geçmişte geometrik ve bitkisel motiflerle bezeli olduğunu gösterir. Mekân kasnaktaki üç ve doğu ile batı duvarlarındaki ikişer pencereyle aydınlanır. İçeride Hatice Sultan'a ve ailesinden dokuz kişiye ait sandukalar vardır.",
+        "en": "The main room with the sarcophagi is square with whitewashed walls. Part of the mihrab niche was later covered with wood; surviving tile fragments show it was once decorated with geometric and vegetal motifs. It is lit by three drum windows and two windows each on the east and west walls. Inside are the sarcophagi of Hatice Sultan and nine members of her family."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "506"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 4,
+      "title": {
+        "tr": "Onarım",
+        "en": "Restoration"
+      },
+      "body": {
+        "tr": "Yapı 1959'da Bursa Eski Eserleri Sevenler Kurumu tarafından onarılmıştır.",
+        "en": "The building was restored in 1959 by the Bursa Association for the Appreciation of Antiquities."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "506"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "506"
+        }
+      ],
+      "note": {
+        "tr": "Hatice Sultan ve ailesinden dokuz kişi.",
+        "en": "Hatice Sultan and nine members of her family."
+      }
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": "3 kasnak + 2 doğu + 2 batı",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "506"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hatice Sultan",
+      "role": {
+        "tr": "II. Bayezid'in kızı, Kara Mustafa Paşa'nın eşi; türbede medfun",
+        "en": "Daughter of Bayezid II, wife of Kara Mustafa Paşa; buried in the tomb"
+      }
+    },
+    {
+      "name": "Bursa Subaşısı Mehmed Bey",
+      "role": {
+        "tr": "Türbeyi yaptıran",
+        "en": "Builder of the tomb"
+      }
+    },
+    {
+      "name": "Kara Mustafa Paşa",
+      "role": {
+        "tr": "Hatice Sultan'ın eşi",
+        "en": "Husband of Hatice Sultan"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1500,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "XVI. yüzyıl başlarında inşa edildi",
+        "en": "Built in the early 16th century"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "504"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1959",
+      "year": 1959,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu tarafından onarıldı",
+        "en": "Repaired by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "506"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-kukurtlu-hamami",
+      "target_name": {
+        "tr": "Kükürtlü Hamamı"
+      },
+      "type": "urban_context",
+      "description": {
+        "tr": "Türbe, Çekirge yolu üzerindeki Kükürtlü Hamamı'nın güneydoğusunda yer alır.",
+        "en": "The tomb is southeast of the Kükürtlü Bath on the Çekirge Road."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "504"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hatice Sultan Türbesi kare planlıdır ve kurşun kaplı bir kubbeyle örtülüdür; kubbe sekizgen bir kasnağa oturur. Güneyinde tonoz örtülü bir revak bulunur. İçeride badanalı duvarlar, kısmen ahşapla kapatılmış bir mihrap nişi ve on sanduka vardır.",
+      "en": "Hatice Sultan Tomb is square with a lead-covered dome on an octagonal drum. On its south side is a vaulted portico. Inside are whitewashed walls, a mihrab niche partly covered with wood, and ten sarcophagi."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hatice-sultan-turbesi/p017-3.jpg",
+        "original_name": "3.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "506"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hatice Sultan Türbesi iç mekânı ve sandukalar",
+        "en": "Interior of Hatice Sultan Tomb with sarcophagi"
+      },
+      "alt": {
+        "tr": "Beyaz boyalı kubbeli mekânda çatı biçimli kapaklı beyaz sandukalar sıralanmış; sağda yeşil çerçeveli sivri kemerli bir niş var. Zemin altıgen kiremit kaplıdır.",
+        "en": "In a white-walled domed room, white gabled sarcophagi stand in a row. On the right is a pointed-arch niche in a green frame, and the floor has hexagonal tiles."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-29"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

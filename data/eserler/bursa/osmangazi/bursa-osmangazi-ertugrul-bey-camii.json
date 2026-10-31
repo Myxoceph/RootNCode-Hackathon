@@ -1,0 +1,654 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-ertugrul-bey-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Caminin yapım yılı kitapta verilmiyor; dating null bırakıldı (era erken-osmanli, banisinin ölüm tarihlerinden çıkarım - kontrol edilmeli).",
+      "Mihrap yanındaki ayetler (Ayete'l-Kürsî, Bakara 149) kitapta kitabe olarak ayrı transkripsiyonla verilmiş, yalnızca Bakara 149 ibaresi eklendi.",
+      "Kabrin ayrı bir kayıt olarak çıkarılıp çıkarılmayacağına veri ekibi karar vermeli; şimdilik sections[kabir] altında."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder/dating",
+        "note": "Kitap Ertuğrul Çelebi'nin naaşının H. 791-792 / M. 1392-1393'te getirildiğini yazıyor (s. 305); aynı kitap kabir bölümünde ölümünü H. 800 / M. 1398 ya da H. 803 / M. 1400-1401 olarak veriyor (s. 308). Naaş, ölümden önceki bir tarihte getirilmiş olamaz; çelişki kaynağa sadık kalınarak korundu."
+      },
+      {
+        "field": "facts[pencere_sayisi]",
+        "note": "Metin 'her duvarda altta ve üstte ikişer, toplam on sekiz pencere' diyor; bu 16 eder. Kitaptaki sayı korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ertuğrul Bey Camii ve Kabri",
+    "en": "Ertuğrul Bey Mosque and Grave"
+  },
+  "alternate_names": [
+    {
+      "tr": "Tekecikoğlu Mescidi",
+      "en": "Tekecikoğlu Masjid",
+      "note": "Mahalle adından dolayı"
+    },
+    {
+      "tr": "Çarşı Camii",
+      "en": "Bazaar Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "şehzade camii",
+    "çarşı camii",
+    "kabir",
+    "Yıldırım Bayezid"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu",
+    "address": "Cumhuriyet Caddesi, No: 115",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "305, 308"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185687,
+      "lng": 29.062894,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/999333753 ('Ertuğrul Bey Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Şehzade Ertuğrul Çelebi",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "305, 308"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Yıldırım Bayezid'in oğlu Şehzade Ertuğrul Çelebi'nin yaptırdığı, doğusunda Çelebi'nin kabrinin bulunduğu, çarşı içindeki cami. Eski adı Tekecikoğlu Mescidi.",
+    "en": "A bazaar mosque built by Şehzade Ertuğrul Çelebi, son of Yıldırım Bayezid; his grave lies on its east side. Formerly known as the Tekecikoğlu Masjid."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Banisi",
+        "en": "History and Founder"
+      },
+      "body": {
+        "tr": "Cami, Kadı Burhaneddin ile Çorum'da yaptığı savaşta yaşamını yitiren Yıldırım Bayezid'in oğlu Şehzade Ertuğrul Çelebi tarafından inşa ettirilmiştir. Bulunduğu mahallenin isminden ötürü uzun süre \"Tekecikoğlu Mescidi\" adıyla da anılmıştır. Ertuğrul Çelebi'nin H. 791-792 / M. 1392-1393 tarihinde getirilen naaşı caminin doğu tarafına defnedilmiştir.",
+        "en": "The mosque was built by Şehzade Ertuğrul Çelebi, son of Yıldırım Bayezid, who lost his life in the war with Qadi Burhâneddin in Çorum. It was long also known as the \"Tekecikoğlu Mosque\" after its neighborhood. The body of Ertuğrul Çelebi, brought in AH 791-792 / AD 1392-1393, was buried on the east side of the mosque."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "305"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 2,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "Narthex"
+      },
+      "body": {
+        "tr": "Yapının kuzeyinde, Cumhuriyet Caddesi'ne cepheli, sonradan yapılan küçük bir avludan geçilerek doğu-batı istikametinde dikdörtgen planlı, 5.00 × 10.00 m ölçülerindeki son cemaat mahalline ulaşılır. Sonradan yapılan eklemelerle iki yanı düz duvarla örülen mekân, kaş kemerli, ortada dar, yanlarda geniş üç açıklıkla sonlandırılmıştır. Ahşap bölmeler camla kapatılmıştır.",
+        "en": "North of the building, a small later courtyard facing Cumhuriyet Street leads to the east-west rectangular narthex measuring 5.00 × 10.00 m. Closed with straight walls on two sides by later additions, it ends in three ogee-arched openings, a narrow one in the middle and wide ones at the sides. The wooden partitions are glazed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "305"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 3,
+      "title": {
+        "tr": "Harim",
+        "en": "Prayer Hall"
+      },
+      "body": {
+        "tr": "Bir metre genişliğindeki beden duvarları moloz taşla örülen caminin harim mekânı 10.40 × 9.95 m iç ölçülerindedir. Son cemaat mahalliyle birlikte ahşap kırma çatıyla kapatılmış ve kiremitle örtülmüştür. Mukarnaslı bir kapıdan girilen harimin zemini ve tavanı ahşaptır. Alt ve üstte ikişer olmak üzere toplam on sekiz pencere vardır; sivri kemerli alt sıra pencerelerin üst kısmında kalem işleri, üst sıra pencerelerde alçı şebeke bulunur.",
+        "en": "The one-meter-thick rubble-stone walls enclose a prayer hall of 10.40 × 9.95 m. Together with the narthex it is covered by a tiled wooden hipped roof. The hall, entered through a muqarnas door, has a wooden floor and ceiling. There are eighteen windows in two rows; the lower pointed-arch windows have hand-painted decoration above and the upper ones have plaster grilles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "306"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber",
+      "order": 4,
+      "title": {
+        "tr": "Mihrap, Minber ve Kürsü",
+        "en": "Mihrab, Minbar and Pulpit"
+      },
+      "body": {
+        "tr": "Küçük ölçekli kürsü mermerden, minber ahşaptan yapılmış ve sadedir. Dört kademeli mihrap nişinin çevresi bitki bezemeleri ve ayetlerle süslenmiş, iç kısımda püsküllü perde motifi ve madalyon bezemesi işlenmiştir. Niş içinde İhlâs Suresi yazılıdır. Mihrap kavsarasının yanlarında Ayete'l-Kürsî, üzerinde ise Bakara Suresi'nin 149. ayetinde geçen ibare yer alır.",
+        "en": "The small pulpit is of marble and the minbar of wood, both plain. The four-stage mihrab niche is decorated with vegetal motifs and verses, with a tasseled curtain motif and medallions inside. The Surah al-Ikhlas is written in the niche, the Ayat al-Kursi on the sides of the hood and a phrase from Surah al-Baqara 149 above it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "306"
+        }
+      ]
+    },
+    {
+      "id": "mahfil",
+      "order": 5,
+      "title": {
+        "tr": "Mahfiller ve İmam Odası",
+        "en": "Galleries and Imam's Room"
+      },
+      "body": {
+        "tr": "Harim girişinin üzerindeki ahşap kadınlar mahfiline kuzeybatı köşesindeki ahşap merdivenle çıkılır. Müezzin mahfili girişin solundadır. Batı duvarının kuzey köşesindeki bir pencere kapıya çevrilmiş, sonradan basit malzemeyle eklenen küçük imam odasına bu kapıdan geçilir.",
+        "en": "The wooden women's gallery above the entrance is reached by wooden stairs in the northwest corner. The muezzin's platform is to the left of the entrance. A window at the northern corner of the west wall was turned into a door giving access to the small imam's room added later in simple materials."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 6,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "1557 depreminde yıkılan ve ardından yeniden inşa edilen minare batı duvarına bitişiktir ve son cemaat mahallinden çıkılır. Kare tabanlı, tek şerefeli ve silindirik gövdelidir; iki sıra tuğla ve iki sıra moloz taşla örülmüştür. Şerefe altı stalaktitli, külahı kurşun kaplıdır.",
+        "en": "The minaret, destroyed in the 1557 earthquake and rebuilt, adjoins the west wall and is entered from the narthex. It has a square base, a single balcony and a cylindrical shaft of two rows of brick and two rows of rubble stone. The underside of the balcony has stalactites and the spire is lead-covered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "id": "depremler",
+      "order": 7,
+      "title": {
+        "tr": "Depremler, Yangınlar ve Çevresi",
+        "en": "Earthquakes, Fires and Surroundings"
+      },
+      "body": {
+        "tr": "Cami 1557, 1613, 1787, 1788 yıllarında ve çeşitli dönemlerde deprem ve yangınlara maruz kalmış, her seferinde onarılarak yapısal değişimlere uğramış ancak ibadethane işlevini sürdürmüştür. 1924'te kuzeybatısına bitişik inşa edilen Fransız trafosu hâlâ durmaktadır. Çarşı içinde bulunması nedeniyle \"Çarşı Camii\" kimliğini taşır.",
+        "en": "The mosque suffered earthquakes and fires in 1557, 1613, 1787, 1788 and at various other times; it was repaired and structurally altered each time but remained a place of worship. The French transformer built adjacent to its northwest in 1924 still stands. Because it lies in the bazaar it bears the identity of the \"Çarşı (Bazaar) Mosque\"."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "id": "kabir",
+      "order": 8,
+      "title": {
+        "tr": "Ertuğrul Bey Kabri",
+        "en": "Grave of Ertuğrul Bey"
+      },
+      "body": {
+        "tr": "Şehzade Ertuğrul Çelebi, 1376'da Bursa'da doğmuş, Yıldırım Bayezid'in en büyük oğludur; Saruhan (Manisa), Karesi (Balıkesir) ve Aydın sancak beyliği görevlerinde bulunmuştur. Bir görüşe göre H. 800 / M. 1398'de Çorum civarındaki \"Kırkdilim\" mevkiinde Kadı Burhaneddin'le yapılan savaşta komutan olarak katılırken vefat etmiştir; diğer görüşe göre H. 803 / M. 1400-1401'de Emir Timur'un Sivas kuşatması sırasında Osmanlı kuvvetlerinin başındayken hayatını kaybetmiştir. Cenazesi Bursa'ya getirilerek kendi yaptırdığı caminin doğusuna defnedilmiştir. Yazılı mezar taşı yoktur.",
+        "en": "Born in Bursa in 1376, Şehzade Ertuğrul Çelebi was the eldest son of Yıldırım Bayezid and served as sanjak bey of Saruhan (Manisa), Karesi (Balıkesir) and Aydın. According to one view he died in AH 800 / AD 1398 in the war with Kadı Burhâneddin at \"Kırkdilim\" near Çorum, as a commander; according to another he died in AH 803 / AD 1400-1401 at the head of Ottoman forces during Timur's siege of Sivas. His body was later brought to Bursa and buried east of the mosque he built. The grave has no inscribed gravestone."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "308"
+        }
+      ]
+    },
+    {
+      "id": "kabir-onarimlari",
+      "order": 9,
+      "title": {
+        "tr": "Kabrin Yenilenmesi",
+        "en": "Renovation of the Grave"
+      },
+      "body": {
+        "tr": "Kabir 1973'te Bursa Eski Eserleri Sevenler Kurumu tarafından tuğla ile örülmüş, 2008'de Osmangazi Belediyesi tarafından baş, ayak ve yan taşları klasik tarzda yazılarak tamamen mermerle yenilenmiştir.",
+        "en": "The grave was built in brick by the Bursa Association for the Appreciation of Antiquities in 1973 and completely renewed in marble, with head, foot and side stones inscribed in classical style, by Osmangazi Municipality in 2008."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "308"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat yeri ölçüleri",
+        "en": "Narthex dimensions"
+      },
+      "value": "5.00 × 10.00",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "305"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcu",
+      "label": {
+        "tr": "Harim iç ölçüleri",
+        "en": "Prayer hall interior dimensions"
+      },
+      "value": "10.40 × 9.95",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "306"
+        }
+      ]
+    },
+    {
+      "key": "duvar_kalinligi",
+      "label": {
+        "tr": "Beden duvarı kalınlığı",
+        "en": "Wall thickness"
+      },
+      "value": 1,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "306"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 18,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "306"
+        }
+      ],
+      "note": {
+        "tr": "Kitap 'her duvarda altta ve üstte ikişer, toplam on sekiz' diyor; dört duvar × dört pencere = 16 eder.",
+        "en": "The book says two above and two below on each wall, eighteen in total; four walls x four windows would be 16."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Şehzade Ertuğrul Çelebi",
+      "role": {
+        "tr": "Banî; Yıldırım Bayezid'in en büyük oğlu",
+        "en": "Founder; eldest son of Yıldırım Bayezid"
+      }
+    },
+    {
+      "name": "Yıldırım Bayezid",
+      "role": {
+        "tr": "Ertuğrul Çelebi'nin babası",
+        "en": "Father of Ertuğrul Çelebi"
+      }
+    },
+    {
+      "name": "Kadı Burhaneddin",
+      "role": {
+        "tr": "Çorum'daki savaşın karşı tarafı",
+        "en": "Opponent in the war near Çorum"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mihrap-ayet",
+      "location": {
+        "tr": "Mihrap kavsarası üzerinde",
+        "en": "Above the mihrab hood"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": "Fevelli vecheke şatra’l-Mescidi’l-Harâm",
+      "translation": {
+        "tr": "Öyleyse yüzünü Mescid-i Haram’a çevir.",
+        "en": "So turn your face towards the Masjid al-Haram."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "306"
+        }
+      ],
+      "note": {
+        "tr": "Bakara Suresi 149. ayetten alınan ibare.",
+        "en": "Phrase from Surah al-Baqara, verse 149."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "naas-1392",
+      "year": 1392,
+      "date": null,
+      "hijri": "791-792",
+      "type": "record",
+      "title": {
+        "tr": "Ertuğrul Çelebi'nin naaşı getirilip caminin doğusuna defnedildi (H. 791-792 / M. 1392-1393)",
+        "en": "Ertuğrul Çelebi's body brought and buried east of the mosque (AH 791-792 / AD 1392-1393)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "305"
+        }
+      ],
+      "note": {
+        "tr": "Aynı kitap kabir bölümünde ölümü H. 800 / M. 1398 ya da H. 803 / M. 1400-1401 olarak veriyor; tarihler çelişiyor.",
+        "en": "The same book gives his death as AH 800 / AD 1398 or AH 803 / AD 1400-1401 in the grave section; the dates conflict."
+      }
+    },
+    {
+      "id": "olum-1398",
+      "year": 1398,
+      "date": null,
+      "hijri": "800",
+      "type": "record",
+      "title": {
+        "tr": "Ertuğrul Çelebi'nin Kadı Burhaneddin'le savaşta ölümü (bir görüşe göre H. 800)",
+        "en": "Death of Ertuğrul Çelebi in the war with Kadı Burhâneddin (one view, AH 800)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "308"
+        }
+      ]
+    },
+    {
+      "id": "olum-1400",
+      "year": 1400,
+      "date": null,
+      "hijri": "803",
+      "type": "record",
+      "title": {
+        "tr": "Ertuğrul Çelebi'nin Sivas kuşatmasında ölümü (diğer görüşe göre H. 803 / M. 1400-1401)",
+        "en": "Death of Ertuğrul Çelebi at the siege of Sivas (other view, AH 803 / AD 1400-1401)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "308"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1557",
+      "year": 1557,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1557 depreminde minare yıkıldı, yeniden yapıldı",
+        "en": "Minaret destroyed in the 1557 earthquake and rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "id": "hasar-1613",
+      "year": 1613,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1613'te deprem/yangın hasarı",
+        "en": "Earthquake/fire damage in 1613"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "id": "hasar-1787",
+      "year": 1787,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1787'de deprem/yangın hasarı",
+        "en": "Earthquake/fire damage in 1787"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "id": "hasar-1788",
+      "year": 1788,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1788'de deprem/yangın hasarı",
+        "en": "Earthquake/fire damage in 1788"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "id": "trafo-1924",
+      "year": 1924,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Kuzeybatısına bitişik Fransız trafosu inşa edildi",
+        "en": "French transformer built adjacent to the northwest"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "307"
+        }
+      ]
+    },
+    {
+      "id": "kabir-1973",
+      "year": 1973,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kabir Bursa Eski Eserleri Sevenler Kurumu tarafından tuğlayla örüldü",
+        "en": "Grave built in brick by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "308"
+        }
+      ]
+    },
+    {
+      "id": "kabir-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kabir Osmangazi Belediyesi tarafından mermerle yenilendi",
+        "en": "Grave renewed in marble by Osmangazi Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "308"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ertuğrul Bey Camii, Cumhuriyet Caddesi'ne bakan küçük bir avludan girilen, dikdörtgen planlı ve ahşap kırma çatılı bir camidir. Önünde üç kaş kemerli açıklığı olan, camla kapatılmış bir son cemaat yeri vardır. İç mekânın zemini ve tavanı ahşaptır; girişin üzerinde ahşap bir kadınlar mahfili bulunur. Batı duvarına bitişik tuğla ve taştan örülmüş bir minare yükselir. Caminin doğusunda mermerle yenilenmiş bir kabir vardır.",
+      "en": "Ertuğrul Bey Mosque is a rectangular building with a wooden hipped roof, entered through a small courtyard facing Cumhuriyet Street. Its glazed narthex has three ogee-arched openings. The interior has a wooden floor and ceiling and a wooden women's gallery above the entrance. A minaret of brick and stone adjoins the west wall. East of the mosque lies a grave renewed in marble."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ertugrul-bey-camii/p037-1.jpg",
+        "original_name": "3-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "306"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Caminin cephesi ve sivri kemerli pencereler",
+        "en": "Facade with pointed-arch windows"
+      },
+      "alt": {
+        "tr": "Sarı sıvalı cephede ince sivri kemerli üç pencere ve kapı ile yanda taş duvar görünür. Üstünde tuğla minare, solda demir çitli hazire vardır.",
+        "en": "A yellow plastered facade with three slender pointed-arch windows and a door, beside a stone wall. A brick minaret rises above and a fenced graveyard is on the left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-ertugrul-bey-camii/p038-1.jpg",
+        "original_name": "4_1.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "307"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Harim, mihrap ve renkli camlı pencereler",
+        "en": "Prayer hall, mihrab and stained-glass windows"
+      },
+      "alt": {
+        "tr": "Krem duvarlı harimde ortada mihrap, sağda ahşap minber ve renkli camlı pencereler görünür. Zeminde mavi halı ve tavandan sarkan avize vardır.",
+        "en": "A cream-walled prayer hall with the mihrab at the centre, a wooden minbar on the right and coloured-glass windows. The floor has a blue carpet and a chandelier hangs above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

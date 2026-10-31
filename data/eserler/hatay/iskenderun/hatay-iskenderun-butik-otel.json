@@ -1,0 +1,294 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-iskenderun-butik-otel",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – İş Yeri ve Diğerleri",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki İskenderun Butik Otel bölümünden (s. 462-463) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapının yapım yılı, yaptıran ve mimar kaynakta yok.",
+      "Restorasyon yılı kaynakta yok; yalnızca 2014'te otel olarak hizmete girdiği belirtiliyor.",
+      "Hisse sahibi 'Abbas Kıllı Reyhanlı Yeni Şehir Camii Vakfı' ile Reyhanlı Yenişehir Camii (hatay-reyhanli-yenisehir-camii) arasındaki bağ kaynakta açıkça söylenmiyor; ilişki 'probable' yazıldı, doğrulanmalı.",
+      "Dönem (era) için kaynakta bilgi yok; null bırakıldı.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Bölüm özeti sayfası (s. 476) eseri 'BUTİK OTEL' diye listeliyor; eserin kendi başlığı 'İSKENDERUN BUTİK OTEL'. Başlıktaki ad kullanıldı."
+      },
+      {
+        "field": "sections[genel]",
+        "note": "Metinde 'vasfı evdir' deniyor, kullanım ise otel; kayıt türü bu yüzden 'sivil'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İskenderun Butik Otel",
+    "en": "İskenderun Boutique Hotel"
+  },
+  "subtitle": {
+    "tr": "Vakıflarca restore edilip 2014'te otel olarak açılan 20. yüzyıl başı ahşap ev",
+    "en": "An early 20th-century timber house restored by the foundations and opened as a hotel in 2014"
+  },
+  "alternate_names": [],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "butik otel",
+    "ahşap",
+    "İskenderun",
+    "vakıf"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "İskenderun",
+    "neighborhood": "Savaş Mahallesi",
+    "address": "İskenderun, Savaş Mahallesi, 2. Mıntıka, 1814 Parsel; Ziya Gökalp ve Şehit Oğuz Yener Caddeleri ile 47. ve 52. Sokaklar arasında",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "463"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.588385,
+      "lng": 36.170874,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Savaş Mah., İskenderun, Hatay, Akdeniz Bölgesi, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "20. yüzyılın ilk yılları",
+      "en": "First years of the 20th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap yalnızca 'yüzyılın ilk yıllarında' diyor; kesin yıl yok.",
+      "en": "The book only says 'first years of the century'; no exact year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "463"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": "Abbas Kıllı Reyhanlı Yeni Şehir Camii Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Taşınmazın 1/2 hissesi bu vakfa aittir.",
+      "en": "A 1/2 share of the property belongs to this foundation."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "463"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Vasfı ev olan, 20. yüzyılın ilk yıllarında çatısı da ahşap oturmalı bir ahşap yapıdır. Hatay Vakıflar Bölge Müdürlüğü'nce restore ettirilerek 2014'te butik otel olarak hizmete girmiştir; 1/2 hissesi bir cami vakfına aittir.",
+    "en": "A house in character, it was a timber building with a timber seated roof in the early 20th century. Restored by the Hatay Regional Directorate of Foundations, it opened as a boutique hotel in 2014; a 1/2 share belongs to a mosque foundation."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Mülkiyet ve Kullanım",
+        "en": "Location, Ownership and Use"
+      },
+      "body": {
+        "tr": "Yapı İskenderun ilçesi, Savaş Mahallesi, 2. mıntıka 1814 numaralı parseldedir; Ziya Gökalp-Şehit Oğuz Yener Caddeleri ile 47. ve 52. Sokaklar arasındaki binadır. Vasfı evdir ve taşınmazın toplam alanı 559 m²'dir. 20. yüzyılın ilk yıllarında çatısı da ahşap oturmalı olan ahşap bir yapıydı. Halen 1/2 hissesi Abbas Kıllı Reyhanlı Yeni Şehir Camii Vakfı'na aittir. Hatay Vakıflar Bölge Müdürlüğü'nce restore ettirilerek 2014 yılında butik otel olarak hizmete girmiştir.",
+        "en": "The building is in Savaş Neighborhood, Iskenderun, district no. 2, plot 1814, between Ziya Gökalp and Şehit Oğuz Yener Avenues and 47th and 52nd Streets. Its character is a house and the total area of the property is 559 m². In the first years of the 20th century it was a timber building with a timber seated roof. Currently a 1/2 share belongs to the Abbas Kıllı Reyhanlı Yeni Şehir Mosque Foundation. Restored by the Hatay Foundations Regional Directorate, it opened as a boutique hotel in 2014."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "463"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "toplam_alan",
+      "label": {
+        "tr": "Taşınmazın toplam alanı",
+        "en": "Total property area"
+      },
+      "value": 559,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Construction material"
+      },
+      "value": "Ahşap",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "463"
+        }
+      ]
+    },
+    {
+      "key": "hisse",
+      "label": {
+        "tr": "Vakıf hissesi",
+        "en": "Foundation share"
+      },
+      "value": "1/2",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "463"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "otel-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Restorasyon sonrası butik otel olarak hizmete girdi",
+        "en": "Opened as a boutique hotel after restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "463"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "hatay-reyhanli-yenisehir-camii",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Taşınmazın 1/2 hissesi 'Abbas Kıllı Reyhanlı Yeni Şehir Camii Vakfı'na aittir; bu vakfın Yenişehir Camii'ne ait olduğu kaynakta açıkça yazılı değildir.",
+        "en": "A 1/2 share belongs to the 'Abbas Kıllı Reyhanlı Yeni Şehir Mosque Foundation'; the book does not explicitly tie this foundation to the Yenişehir Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "463"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İskenderun Butik Otel, Savaş Mahallesi'nde Ziya Gökalp ve Şehit Oğuz Yener Caddeleri ile 47. ve 52. Sokaklar arasında yer alır. Taşınmazın toplam alanı 559 metrekaredir. 20. yüzyılın ilk yıllarında ahşap, ahşap oturmalı çatılı bir evdi; restore edilerek 2014'te butik otel olarak hizmete girmiştir.",
+      "en": "İskenderun Boutique Hotel stands in Savaş Neighborhood between Ziya Gökalp and Şehit Oğuz Yener Avenues and 47th and 52nd Streets. The property covers 559 square metres. In the early 20th century it was a timber house with a timber seated roof; it was restored and opened as a boutique hotel in 2014."
+    },
+    "audio_description_source": "Kitabın anlatımından (vk-hatay, s. 463) yazılmıştır; kaynakta ayrıntılı mimari tarif yoktur."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-butik-otel/p232-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "462-463"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Otelin ahşap cumbalı sokak cephesi",
+        "en": "Street façade of the hotel with its wooden balcony"
+      },
+      "alt": {
+        "tr": "İki katlı, krem sıvalı ve taş cepheli yapı; üst katta demir korkuluklu balkon ve ahşap panjurlu pencereler, altta şemsiyeli kafe terası ve saksılı bitkiler.",
+        "en": "A two-storey cream plastered and stone building with an iron-railed balcony and wooden-shuttered windows above, and a café terrace with a parasol and potted plants below."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-iskenderun-butik-otel/p232-2.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "463"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Otelin giriş salonu ve taş kemeri",
+        "en": "Hotel lobby with its stone arch"
+      },
+      "alt": {
+        "tr": "Ahşap kaplı tavanlı geniş salon; sağda taş kemerli açıklık, altın çerçeveli aynalar ve tablolar, yeşilimsi parlak mermer zemin, kanepe ve koltuklar.",
+        "en": "A wide lobby with a wooden-clad ceiling; a stone arch on the right, gold-framed mirrors and paintings, a glossy greenish marble floor, and a sofa and armchairs."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

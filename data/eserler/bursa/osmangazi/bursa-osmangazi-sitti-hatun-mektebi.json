@@ -1,0 +1,355 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-sitti-hatun-mektebi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Eğitim Yapıları",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' Eğitim Yapıları bölümünden (Osmangazi) yapay zekâ ile özetlenmiş taslaktır; kaynakta olmayan bilgi eklenmemiştir. İnsan kontrolü gerekir.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da harita doğrulamasıyla eklenecek (location.coordinates).",
+      "Fotoğraf ve arşiv fotoğrafı yok (media: [], archive_media: []); Drive klasörü bağlanınca media_folder doldurulacak.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kaynakta yok; sahada teyit edilecek.",
+      "Mektebin hicri yılı ve mimarı kaynakta yok.",
+      "Sitti Hatun'un yaptırdığı cami ve çeşmenin adı kaynakta verilmiyor; ilişki kayıtlarındaki hedef id'ler yer tutucudur ve gerçek adlarla değiştirilmelidir. Hedeflerin ilçesi metinde belirtilmiyor (aynı mahalle olduğundan Osmangazi varsayıldı).",
+      "Mektebin tür kodu enums.json'da yok; 'diger' kullanıldı.",
+      "16. yüzyıl başı maaş kaydının kaynak belgesi (vakfiye/defter) kitapta belirtilmiyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Kitap Kanberler Mahallesi'nden söz ederken yapının konumunu Ebuishak Mahallesi, Sıdıka Hatun Caddesi, Kanberler Parkı olarak verir; iki mahalle adı arasındaki ilişki açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sitti Hatun Mektebi",
+    "en": "Sitti Hatun School"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Kanberler Mektebi",
+      "en": "Kanberler School"
+    }
+  ],
+  "type": "mektep",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "mektep",
+    "sıbyan mektebi",
+    "çifte kubbe",
+    "Kanberler",
+    "Sitti Hatun",
+    "Bursa kemeri"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Ebuishak",
+    "address": "Sıdıka Hatun Caddesi, Kanberler Parkı içi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "579"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185586,
+      "lng": 29.071829,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Ebu İshak Mahallesi, Bursa, Osmangazi, Bursa, Marmara Bölgesi, 16030, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1459",
+      "en": "AD 1459"
+    },
+    "start_year": 1459,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap mektebin 1459'da cami ve çeşme ile birlikte inşa edildiğini söyler.",
+      "en": "The book says the school was built in 1459 together with the mosque and fountain."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "580"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sitti Hatun",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "579"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": {
+      "tr": "16. yüzyılın ilk çeyreğine ait kaynaklarda mektebin öğretmenine günlük 4 akçe maaş verildiği kaydedilmektedir.",
+      "en": "Sources from the first quarter of the 16th century record a daily salary of 4 akçe for the school's teacher."
+    },
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "579"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sitti Hatun'un 1459'da cami ve çeşmeyle birlikte yaptırdığı, yan yana iki kubbeli bölümden oluşan sıbyan mektebi; bugün Kanberler Parkı içindedir.",
+    "en": "A primary school of two side-by-side domed sections built by Sitti Hatun in 1459 with a mosque and fountain; it now stands within Kanberler Park."
+  },
+  "sections": [
+    {
+      "id": "bani",
+      "order": 1,
+      "title": {
+        "tr": "Banisi ve Konumu",
+        "en": "Founder and Location"
+      },
+      "body": {
+        "tr": "Yapı Osmangazi ilçesi, Ebuishak Mahallesi, Sıdıka Hatun Caddesi üzerinde, Kanberler Parkı içindedir. Kara Timurtaş Paşa'nın oğlu Oruç Bey'in kızı olan, Fâtih Sultan Mehmed'in vezirlerinden Zağanos Paşa'nın eşi Sitti Hatun, Kanberler Mahallesi'nde bir cami, bir mektep ve bir çeşme yaptırmıştır. 16. yüzyılın ilk çeyreğine ait kaynaklarda mektebin öğretmenine günlük 4 akçe maaş verildiği kaydedilir.",
+        "en": "The building is within Kanberler Park on Sıdıka Hatun Street, Ebuishak Neighborhood, Osmangazi. Sitti Hatun, daughter of Oruç Bey, son of Kara Timurtaş Paşa, and wife of Zağanos Paşa, a vizier of Fâtih Sultan Mehmed, built a mosque, a school and a fountain in the Kanberler District. Sources of the first quarter of the 16th century record a daily salary of 4 akçe for the teacher."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "579"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "1459'da cami ve çeşmeyle birlikte inşa edilen mektep, yan yana iki kubbeli bölümden oluşur. Beden duvarları iki sıra tuğla ve iki sıra kaba yonu taşla örülmüş, üstteki iki sıralı kirpi saçak ile çifte kubbeler kurşunla kaplanmıştır. Kubbelerin sekizgen kasnakları üç sıra tuğla ve bir sıra kesme küfeki taşıyla örülmüş, iki sıra kirpi saçakla bitirilmiştir. Doğu bölümünde ocak ve tuğla bir baca vardır; batı bölüm eyvan biçimindedir ve cephesi sivri kemerli açıklık içinde Bursa kemeriyle belirginleşir, köşelerde dekoratif tuğla tezyinat bulunur. Plan, klasik sıbyan mekteplerinde olduğu gibi yazlık ve kışlık kullanım düşünülerek tasarlanmıştır.",
+        "en": "Built in 1459 with the mosque and fountain, the school consists of two domed sections side by side. The walls are two rows of brick and two of roughly cut stone; the double-row sawtooth eaves and the twin domes are lead-covered. The octagonal drums are three rows of brick and one of cut limestone, finished with two rows of sawtooth eaves. The east section has a fireplace with a brick chimney; the west section is an iwan whose façade is marked by a Bursa arch within a pointed-arch opening, with decorative brick ornament at the corners. The plan was designed for summer and winter use as in classical primary schools."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "580"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 3,
+      "title": {
+        "tr": "Onarımlar ve Çevresi",
+        "en": "Repairs and Surroundings"
+      },
+      "body": {
+        "tr": "Çeşitli dönemlerde onarılan mektep 1845'te kapsamlı bir müdahale geçirmiş; 1956 ve 1962'de Bursa Eski Eserleri Sevenler Kurumu tarafından özgün özelliklerine uygun restore edilmiş, bu sırada duvarla çevrilerek avlu içine alınmıştır. Bulunduğu Kanberler Mahallesi, Osmangazi Belediyesi'nin 'Kızyakup Kent Parkı Kentsel Tasarım ve Mimari Projesi' kapsamında çağdaş bir kent parkına dönüştürülmüştür.",
+        "en": "Repaired at various periods, the school had a comprehensive intervention in 1845 and was restored in 1956 and 1962 by the Bursa Association for the Appreciation of Antiquities, when it was walled in a courtyard. Kanberler Neighborhood was turned into a contemporary city park under Osmangazi Municipality's 'Kızyakup City Park Urban Design and Architecture Project'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "580"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kubbeli_bolum_sayisi",
+      "label": {
+        "tr": "Kubbeli bölüm sayısı",
+        "en": "Domed sections"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "580"
+        }
+      ]
+    },
+    {
+      "key": "ogretmen_maasi",
+      "label": {
+        "tr": "Öğretmen günlük maaşı (16. yy. ilk çeyrek)",
+        "en": "Teacher's daily salary (first quarter of 16th c.)"
+      },
+      "value": 4,
+      "unit": "akçe",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "579"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sitti Hatun",
+      "role": {
+        "tr": "Banî; Oruç Bey'in kızı, Zağanos Paşa'nın eşi",
+        "en": "Founder; daughter of Oruç Bey, wife of Zağanos Paşa"
+      }
+    },
+    {
+      "name": "Zağanos Paşa",
+      "role": {
+        "tr": "Sitti Hatun'un eşi; Fâtih Sultan Mehmed'in veziri",
+        "en": "Sitti Hatun's husband; vizier of Fâtih Sultan Mehmed"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1459",
+      "year": 1459,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Mektep cami ve çeşmeyle birlikte inşa edildi",
+        "en": "School built together with the mosque and fountain"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "580"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1845",
+      "year": 1845,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kapsamlı onarım",
+        "en": "Comprehensive repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "580"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1956",
+      "year": 1956,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu restorasyonu",
+        "en": "Restoration by the Bursa Association for the Appreciation of Antiquities"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "580"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1962",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "İkinci restorasyon",
+        "en": "Second restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "580"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-kanberler-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "Sitti Hatun mektebi, camisi ve çeşmesi ile birlikte Kanberler Mahallesi'nde yaptırmıştır (cami adı kaynakta yok; id yer tutucudur).",
+        "en": "Sitti Hatun built the school together with a mosque and a fountain in the Kanberler District (the mosque's name is not given; the id is a placeholder)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "579-580"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-sitti-hatun-cesmesi",
+      "type": "same_founder",
+      "description": {
+        "tr": "Mektep, aynı banînin yaptırdığı çeşmeyle birlikte inşa edilmiştir (çeşme adı kaynakta yok; id yer tutucudur).",
+        "en": "The school was built together with a fountain by the same founder (the fountain's name is not given; the id is a placeholder)."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "579-580"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sitti Hatun Mektebi, yan yana duran ve kurşun kaplı kubbelerle örtülü iki bölümden oluşan küçük bir yapıdır. Duvarlar tuğla ve taş sıralıdır, kubbeler sekizgen kasnaklara oturur. Doğu bölümünde ocak ve tuğla baca, batı bölümde eyvan biçiminde, sivri kemer içinde Bursa kemerli bir cephe vardır. Yapı duvarla çevrili bir avlu içinde, Kanberler Parkı'ndadır.",
+      "en": "The Sitti Hatun School is a small building of two side-by-side sections covered by lead-clad domes. Walls are alternating brick and stone and the domes rest on octagonal drums. The east section has a hearth with a brick chimney; the west section is an iwan with a Bursa-arch façade within a pointed arch. The building stands in a walled courtyard in Kanberler Park."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt, Eğitim Yapıları bölümündeki mimari tarifin sadeleştirilmiş anlatımı; sahada doğrulanmadı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

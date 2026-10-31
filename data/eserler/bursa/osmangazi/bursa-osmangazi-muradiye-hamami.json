@@ -1,0 +1,479 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-muradiye-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Hamamın bugünkü işlevi ve erişimi (2020 sonrası) kitapta yok.",
+      "Hamamın vakfiye geliri/bağı kitapta belirtilmemiş."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel-bakis]",
+        "note": "Metin planı 'soğukluk, sıcaklık, iki halvet ve külhan' diye sayar; devamında ılıklık bölümünü anlatır. 'Sıcaklık' ile 'ılıklık' kitapta aynı bölüm olarak kullanılmış görünmektedir (İngilizce: caldarium / tepidarium). Kaynağa sadık kalındı."
+      },
+      {
+        "field": "timeline",
+        "note": "1980 onarımı ile 'hamamın 1986'ya kadar dökümhane olarak kullanıldığı' bilgisi ve 2008-2010 ile 2011 restorasyonları kitapta ayrı ayrı geçer; ayrıntıları birbiriyle açıklanmamıştır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Muradiye Hamamı",
+    "en": "Muradiye Bath"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": "bursa-osmangazi-muradiye-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "soğukluk",
+    "külhan"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "Kaplıca Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "126"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.190911,
+      "lng": 29.046998,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-osmangazi-muradiye-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "M. 1426",
+      "en": "AD 1426"
+    },
+    "start_year": 1426,
+    "end_year": 1426,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap hamamın Muradiye Külliyesi'nin parçası olarak 1426'da yaptırıldığını söyler.",
+      "en": "The book says it was built in 1426 as part of the Muradiye Complex."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "126"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan II. Murad",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "126"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Medresenin batısındaki, soğukluk, ılıklık, iki halvet ve külhandan oluşan sade planlı hamam. Zaman içinde dökümhane, engelli rehabilitasyon merkezi ve giyim mağazası olarak kullanılmıştır.",
+    "en": "A simply planned bath west of the madrasa, consisting of a frigidarium, a tepidarium, two bathing cells and a furnace. Over time it served as a foundry, a disabled rehabilitation center and a clothing store."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Muradiye Hamamı, Osmangazi ilçesi, Muradiye Mahallesi, Kaplıca Caddesi üzerinde, medresenin batısında yer alır. Muradiye Külliyesi'nin bir parçası olarak 1426'da Sultan II. Murad tarafından yaptırılmıştır. Oldukça sade planlı yapı soğukluk, sıcaklık, iki halvet odası ve külhandan oluşur. Beden duvarları üç ya da bazı kısımlarda iki sıra tuğla ve üç sıra moloz taşla almaşık örgüyle yapılmıştır.",
+        "en": "Muradiye Bath is located on Kaplıca Street, west of the madrasa. It was built in 1426 by Sultan Murad II as part of the Muradiye Complex. The very simply planned building consists of a frigidarium, a caldarium, two bathing cells and a furnace. The main walls are in alternating masonry of three (in some parts two) rows of bricks and three rows of rubble stone."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "126"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Soğukluğun kuzey cephesindeki taç kapı yol kotundan yukarıda kaldığı için bu bölüme sekiz basamaklı merdivenle ulaşılır. Yaklaşık 10 × 10 m ölçülerindeki soğukluk, sekizgen kasnağa oturan sivri tromplu bir kubbeyle örtülüdür; kubbenin ortasında aydınlık feneri vardır. Soğukluğun güneyindeki kapıdan ılıklığa geçilir; bu bölümün iki yanında kubbeli eyvanlar vardır ve ılıklıktan halvetlere bağlantı sağlanır. Alt kattaki sivri kemerli pencereler tuğladandır; soğuklukta altı sivri kemerli pencere vardır. Üst pencerelerde bu özelliğin bulunmaması sonradan eklendiklerini düşündürür. Kemerler ve kasnaklar kesme taştandır. Kubbeler kiremit kaplı ve metal profilli cam aydınlık fenerleriyle donatılmıştır.",
+        "en": "Since the portal on the north façade of the frigidarium is above road level, it is reached by an eight-step staircase. The frigidarium, about 10 × 10 m, is covered by a pointed-squinch dome on an octagonal drum with a roof lantern in the middle. A door south of the frigidarium leads to the tepidarium, which has domed iwans on both sides and a connection to the bathing cells. The lower-floor pointed-arched windows are of brick; there are six in the frigidarium. The absence of this feature in the upper windows suggests they were added later. Arches and drums are cut stone. The domes are tile-covered with glass roof lanterns with metal profiles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "126-127"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-onarim",
+      "order": 3,
+      "title": {
+        "tr": "Onarımlar ve Kullanım",
+        "en": "Repairs and Use"
+      },
+      "body": {
+        "tr": "Hamam 1523, 1623, 1634, 1742, 1930, 1980 ve 2008-2010'da çeşitli onarımlar geçirmiştir. 1930'larda harap durumdaki yapı onarılarak 1986'ya kadar dökümhane olarak kullanılmış; Bursa Eski Eserleri Sevenler Kurumu'nun desteğiyle kapsamlı restorasyondan geçirilip asıl işlevine döndürülmüştür. Zamanla yine bakımsız kalmış; 2011'deki restorasyonun ardından engelli rehabilitasyon merkezi olarak düzenlenmiş, 2020'de Sosyal Yardımlaşma Vakfı tarafından giyim mağazasına dönüştürülmüştür.",
+        "en": "The bath underwent restorations in 1523, 1623, 1634, 1742, 1930, 1980 and 2008-2010. In ruins in the 1930s, it was repaired and used as a foundry until 1986, then comprehensively restored with the support of the Bursa Association for the Appreciation of Antiquities and returned to its original function. It again fell into disrepair; after the restoration in 2011 it was organized as a disabled rehabilitation center and in 2020 converted into a clothing store by the Social Assistance Foundation."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sogukluk_olcusu",
+      "label": {
+        "tr": "Soğukluk ölçüsü",
+        "en": "Frigidarium size"
+      },
+      "value": "~10 × 10",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "126"
+        }
+      ]
+    },
+    {
+      "key": "sogukluk_basamak",
+      "label": {
+        "tr": "Giriş merdiveni basamak sayısı",
+        "en": "Entrance steps"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "126"
+        }
+      ]
+    },
+    {
+      "key": "sogukluk_pencere",
+      "label": {
+        "tr": "Soğukluktaki sivri kemerli pencere",
+        "en": "Pointed-arched windows in the frigidarium"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1426,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Muradiye Külliyesi'nin parçası olarak yaptırıldı",
+        "en": "Built as part of the Muradiye Complex"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "126"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1523",
+      "year": 1523,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1623",
+      "year": 1623,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1634",
+      "year": 1634,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1742",
+      "year": 1742,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1930",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım; yapı 1986'ya kadar dökümhane olarak kullanıldı",
+        "en": "Repair; used as a foundry until 1986"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1980",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarım/restorasyon (2008-2010)",
+        "en": "Repair/restoration (2008-2010)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "id": "rehabilitasyon-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon; engelli rehabilitasyon merkezi",
+        "en": "Restoration; disabled rehabilitation center"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    },
+    {
+      "id": "magaza-2020",
+      "year": 2020,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Sosyal Yardımlaşma Vakfı tarafından giyim mağazasına dönüştürüldü",
+        "en": "Converted into a clothing store by the Social Assistance Foundation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "127"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Muradiye (II. Murad) Külliyesi'nin bir birimidir.",
+        "en": "It is a unit of the Murad II (Muradiye) Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "126"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-muradiye-medresesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Hamam medresenin batısında yer alır.",
+        "en": "The bath lies west of the madrasa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "126"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, tuğla ve moloz taş almaşık duvarlı, sade planlı bir yapıdır. Kuzeydeki taç kapıya yol seviyesinden sekiz basamakla çıkılır. Yaklaşık 10 × 10 metrelik soğukluk, ortasında aydınlık feneri olan bir kubbeyle örtülüdür. Güneye doğru ılıklık, iki yanında kubbeli eyvanlar ve halvet odaları sıralanır. Kubbeler kiremit kaplıdır ve cam aydınlık fenerleri taşır.",
+      "en": "The bath is a simply planned building of alternating brick and rubble stone. The north portal is reached by eight steps from road level. The frigidarium, about 10 × 10 metres, is covered by a dome with a roof lantern at its centre. To the south follow the tepidarium with domed iwans on both sides and the bathing cells. The domes are tile-covered and carry glass roof lanterns."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1HbbB-StFjGefpePbEj52DctQnnyS_HOe",
+    "book_layout_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+    "book_pdf_name": "4-II. Murat Külliyesi.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-muradiye-hamami/p018-1.jpg",
+        "original_name": "DJI_20241026155034_0385_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "13ygqsVu1LAC9DseCMssEsmVfZm470zfi",
+        "book_pdf_name": "4-II. Murat Külliyesi.pdf",
+        "book_page": "127"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Muradiye Hamamı'nın köşeden görünümü",
+        "en": "The Muradiye Bathhouse seen from the corner"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş sıralı duvarlı hamamın üzerinde sekizgen, pembe renkli kubbe kasnağı yükseliyor. Kemerli kapı ve küçük pencereler sokağa bakıyor; kapı yanında kırmızı bir bayrak asılı.",
+        "en": "A bathhouse of banded brick and stone with a pink octagonal dome base rising above. An arched door and small windows face the street, with a red flag beside the door."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-26"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,0 +1,304 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-antakya-kursunlu-han-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-21",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – İş Yeri ve Diğerleri",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Kurşunlu Han (Cami alt başlığı) bölümünden (s. 469-470, 473) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Caminin kendi yapım tarihi ayrıca verilmiyor; hanın 1569 tarihi cami için de kullanıldı (probable). Doğrulanmalı.",
+      "Minare ve minberin yapım dönemi kaynakta yok.",
+      "Vakıf bilgisi kaynakta yok.",
+      "Caminin hukuki durumu (mescit/cami) vakıf kayıtlarından doğrulanmalı.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Kitap bu yapının mescit işlevli olduğunu ve cuma namazı kılınan, minberli bir cami olmadığını söylüyor; aynı sayfa sonrasında 'mihrap ve minber de sadedir' diyerek minberden söz ediyor. Çelişki not edildi; id'ye uygun olarak tür 'cami' bırakıldı."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin revaklı bölümün 'son cemaat yeri değil yazlık namazgâh' sayılmasını öneriyor; yapı 'son cemaat yeri' diye tarif edilmişken bu öneri kaynağın kendi yorumudur."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kurşunlu Han Camii",
+    "en": "Kurşunlu Inn Mosque"
+  },
+  "subtitle": {
+    "tr": "Hanın güneydoğu köşesinde, tek kubbeli, kare planlı cami",
+    "en": "A square, single-domed mosque in the southeast corner of the inn"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "hatay-antakya-kursunlu-han",
+  "era": "klasik-osmanli",
+  "tags": [
+    "cami",
+    "han camii",
+    "tek kubbe",
+    "mukarnas",
+    "Antakya"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Antakya",
+    "neighborhood": null,
+    "address": "Antakya, 5. Mıntıka, 260 Parsel; hanın avlusunun güneydoğu köşesinde",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "469"
+      }
+    ],
+    "coordinates": {
+      "lat": 36.203059,
+      "lng": 36.164037,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q139421142 ('Kurşunlu Han Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Hanla birlikte, 1569 (kayıtlara göre)",
+      "en": "With the inn, 1569 (according to records)"
+    },
+    "start_year": 1569,
+    "end_year": 1569,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap 1569 tarihini hanın bütünü için veriyor (kurşun alımı ve imam ataması kayıtları); cami için ayrı tarih yok.",
+      "en": "The book gives 1569 for the inn as a whole (records on lead and imam appointment); no separate date for the mosque."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "469"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hanın güneydoğu köşesinde yer alan kare planlı cami, kubbeli bir harim ile kuzey ve batıdan revaklarla çevrili son cemaat yerinden oluşur. Kitap, ticari yapılardaki küçük ibadet yerlerinin 'mescit' sayıldığını; ancak minaresi olduğu ve 1751'den itibaren imam atandığı için bu yapının cami diye anıldığını belirtir.",
+    "en": "The square mosque in the southeast corner of the inn has a domed sanctuary and a narthex with porticoes on the north and west. The book notes that small prayer places in commercial buildings are called 'masjid', but this one came to be called a mosque because of its minaret and an imam assigned since 1751."
+  },
+  "sections": [
+    {
+      "id": "ad-ve-islev",
+      "order": 1,
+      "title": {
+        "tr": "Mescit mi, Cami mi?",
+        "en": "Masjid or Mosque?"
+      },
+      "body": {
+        "tr": "Şehir içindeki han, bedesten ve arasta gibi ticari yapılarda namaz kılmaya mahsus küçük binalar 'mescit' adıyla anılır; bu nedenle yapı, minberi bulunan ve cuma namazı kılınan bir cami değildir. Ancak Kurşunlu Han hem ezan okunan bir minareye sahiptir hem de bünyesine 1751 tarihinden itibaren görevli bir imam atanmıştır; bu özelliklerinden dolayı cami olarak anılmaya başlanmıştır.",
+        "en": "In commercial buildings such as inns, bedestens and arastas, small buildings for prayer are called 'masjid', so the building is not a mosque with a minbar where Friday prayers are held. However the inn has a minaret from which the call to prayer is recited and an imam has been assigned since 1751; for these features it began to be called a mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "469"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami hanın güneydoğu köşesindedir ve kare planlıdır; kubbeli bir harim ile kuzey ve batı tarafı revaklarla çevrili son cemaat yerinden oluşur. Selçuklu kervansaraylarında ve Osmanlı şehir hanlarında köşk mescitler genellikle avlu içindedir ve altlarında su tesisi vardır; Kurşunlu Han bu forma uymaz. Antakya'daki diğer cami ve mescitlerde olduğu gibi bu bölümü son cemaat yeri olarak değil yazlık namazgâh olarak kabul etmek daha doğrudur. Bütün mekânın tek kubbeyle örtülmesi klasik Osmanlı mimarisinin Antakya'daki yansıması sayılabilir; ancak şemsiye örtülü kısa gövdeli kalın minare ve revaklı bölüm Antakya'nın iklim, gelenek ve deprem üreten jeolojik yapısının sonucudur. Minare gibi mihrap ve minber de sadedir; buna karşın revaklı bölümün sütun başlıklarında mukarnaslar vardır.",
+        "en": "The mosque is in the southeast corner of the inn, square in plan, with a domed sanctuary and a narthex surrounded by porticoes on the north and west. In Seljuk caravanserais and Ottoman city inns, kiosk masjids are usually in the courtyard with a water facility beneath; Kurşunlu Han does not conform. As with other mosques and masjids in Antakya, it is more correct to see this part as a summer prayer place rather than a narthex. Covering the whole space with a single dome reflects classical Ottoman architecture in Antakya; but the short thick minaret with umbrella cover and the portico part result from Antakya's climate, traditions and earthquake-producing geology. Like the minaret, the mihrab and minbar are plain, yet the portico column capitals have muqarnas."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "470, 473"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "470, 473"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Cover"
+      },
+      "value": "Tek kubbe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "470, 473"
+        }
+      ]
+    },
+    {
+      "key": "imam_atamasi",
+      "label": {
+        "tr": "İmam atanan yıl",
+        "en": "Year an imam was assigned"
+      },
+      "value": 1751,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "469"
+        }
+      ]
+    },
+    {
+      "key": "minare",
+      "label": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "value": "Kısa gövdeli, kalın, şemsiye örtülü",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "470, 473"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "imam-1751",
+      "year": 1751,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Bünyesine görevli bir imam atandı",
+        "en": "An imam was assigned to the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "469"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mukarnasli-baslik",
+      "title": {
+        "tr": "Mukarnaslı sütun başlıkları",
+        "en": "Muqarnas column capitals"
+      },
+      "hint": {
+        "tr": "Sade yapıda revaklı bölümün sütun başlıklarındaki mukarnaslara bakın.",
+        "en": "In an otherwise plain building, look for the muqarnas on the portico capitals."
+      },
+      "section_id": "mimari"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "hatay-antakya-kursunlu-han",
+      "type": "same_complex",
+      "description": {
+        "tr": "Cami, hanın avlusunun güneydoğu köşesindedir.",
+        "en": "The mosque is in the southeast corner of the inn's courtyard."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "469"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kurşunlu Han Camii, hanın güneydoğu köşesinde, kare planlı bir yapıdır. Tek bir kubbeyle örtülü harimin kuzey ve batısında revaklı bir bölüm vardır. Minaresi kısa gövdeli, kalın ve şemsiye biçimli bir külahla örtülüdür. Mihrap ve minber sadedir; yalnızca revaklı bölümün sütun başlıklarında mukarnas süsleme görülür.",
+      "en": "Kurşunlu Inn Mosque is a square building in the inn's southeast corner. A single dome covers the sanctuary, and a portico lies to its north and west. The minaret is short, thick and capped with an umbrella-shaped cover. The mihrab and minbar are plain; only the portico column capitals have muqarnas decoration."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 470, 473) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-antakya-kursunlu-han/p237-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "472"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Caminin ahşap kasnaklı kubbesi ve minaresi",
+        "en": "The mosque with its timber-drum dome and minaret"
+      },
+      "alt": {
+        "tr": "Hanın avlusundan görünen kiremit örtülü ahşap kasnaklı yapı ve yanında ahşap korkuluklu kısa minare; önde taş kemerli revak, arkada dağ silueti.",
+        "en": "A tile-covered timber-drum structure and a short minaret with a wooden balcony seen from the inn courtyard; a stone-arched portico in front and a mountain behind."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

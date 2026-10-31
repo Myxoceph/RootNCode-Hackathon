@@ -1,0 +1,537 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-meydancik-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden (s. 235-237) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kesin inşa yılı kitapta yok; yalnızca 'H. 903 / M. 1497'den önce' deniyor.",
+      "Veled-i Enbiya, Hasirî ve Meydancık Mescitleri ile Çendik Medresesi'nin ilçesi/ili kitapta 'Bursa' dışında belirtilmediği için same_founder ilişkisi açılmadı (id'leri bilinmiyor).",
+      "1913 minare onarım kitabesinin metni kitapta yok; kitabe kaydı açılmadı.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Yıl verilmeyen olaylar (inşa öncesi tarih aralığı, yol/afet vb.) zaman çizelgesine girilmedi; bilgi bölüm metinlerinde yer alır."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap 'kayıtlara göre ... H. 903 / M. 1497 yılından önce' der; tam yıl yoktur, bu yüzden start_year/end_year boş bırakıldı."
+      },
+      {
+        "field": "timeline[restorasyon-2018]",
+        "note": "Kitap restorasyonu '2018-2021 yılları arasında' verir; zaman çizelgesinde başlangıç yılı kullanıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Meydancık Camii",
+    "en": "Meydancık Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Meydancık",
+    "Süle Mehmet Paşa",
+    "kalkan duvarlı",
+    "kalem işi",
+    "çınar",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Meydancık",
+    "address": "Meydancık Mahallesi, Alancık Sokak, No: 18",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "235"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.18436,
+      "lng": 29.074693,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "II. Bayezid dönemi; H. 903 / M. 1497'den önce",
+      "en": "Reign of Bayezid II; before AH 903 / AD 1497"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap kayıtlara dayanarak caminin H. 903 / M. 1497'den önce yaptırıldığını söyler. Kesin inşa yılı verilmediği için başlangıç/bitiş yılı boş bırakıldı.",
+      "en": "The book says, based on records, that the mosque was built before AH 903 / AD 1497. No exact year is given, so start/end years are left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "235"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kazzazoğlu Süle Mehmet Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "235"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "II. Bayezid döneminde, H. 903 / M. 1497'den önce Kazzazoğlu Süle Mehmet Paşa'nın yaptırdığı, kare planlı, tek kubbeli, kalkan duvarlı mahalle camisi. 1583-1913 arasında yedi kez onarılmış, 2018-2021'de Vakıflar tarafından restore edilmiştir.",
+    "en": "A square-plan, single-domed neighborhood mosque with parapet walls built by Kazzazoğlu Süle Mehmet Paşa under Bayezid II, before AH 903 / AD 1497. Repaired seven times between 1583 and 1913 and restored by the Regional Directorate of Foundations in 2018-2021."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Banî",
+        "en": "Overview and Founder"
+      },
+      "body": {
+        "tr": "Cami Yıldırım ilçesi Meydancık Mahallesi, Alancık Sokak, No: 18'dedir ve mahallenin adıyla anılır. Kayıtlara göre II. Bayezid döneminde, H. 903 / M. 1497'den önce Kazzazoğlu Süle Mehmet Paşa tarafından inşa ettirilmiştir. Süle Mehmet Paşa Bursa'da Veled-i Enbiya, Hasirî ve Meydancık Mescitleri ile Çendik Medresesi'ni yaptırmış, Meydancık Köprüsü'nden geçen Pınarbaşı suyolu için oluklar inşa ettirmiş, Kayhan Camii ve diğer bazı camilere çeşitli yardımlarda bulunmuştur.",
+        "en": "The mosque is at No. 18 Alancık Street, Meydancık Neighborhood, Yıldırım, and is named after the neighborhood. According to records it was built by Kazzazoğlu Süle Mehmet Paşa in the reign of Bayezid II, before AH 903 / AD 1497. In Bursa he built the Veled-i Enbiya, Hasirî and Meydancık Masjids and the Çendik Madrasa, had channels built for the Pınarbaşı waterway passing the Meydancık Bridge, and made various donations to the Kayhan Mosque and other mosques."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "235-236"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-mimari",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Meydancık Camii kalkan duvarlı, kare planlı mahalle camilerinden biridir. İbadet mekânı 7 × 7 m, tek kubbeli ve yaklaşık 9,50 m yüksekliğindedir. Kesme küfeki taşı ile tuğlanın almaşık kullanıldığı dış duvarlar 3,70 m derinliğindeki tonoz örtülü son cemaat yeriyle sonlanır. Üç gözlü son cemaat yerinin ortasındaki sivri kemerli giriş yan kemerlerden yüksektir; yan bölümler ayna tonozla, orta bölüm beşik tonozla örtülüdür. Kalkan duvarı üç sıra tuğla ve bir sıra kesme taşla örülmüş, içinde Bursa'daki XV. yüzyıl yapılarında da görülen bir sıra dikey tuğla vardır.",
+        "en": "Meydancık Mosque is one of the neighborhood mosques with parapet walls and a square plan. The prayer hall is 7 × 7 m, single-domed and about 9.50 m high. Exterior walls of alternating cut limestone and brick end in a 3.70 m deep vaulted narthex. The pointed-arched entrance in the middle of the three-bay narthex is higher than the side arches; the side sections have flattened barrel vaults and the middle a barrel vault. The parapet wall is three rows of brick to one of cut stone, with a row of vertical brick like those in 15th-century Bursa buildings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "235-236"
+        }
+      ]
+    },
+    {
+      "id": "pencere-ve-orgu",
+      "order": 3,
+      "title": {
+        "tr": "Pencere ve Duvar Örgüsü",
+        "en": "Windows and Masonry"
+      },
+      "body": {
+        "tr": "Diğer kalkan duvarlı camilerden farklı olarak üst pencere yoktur; kuşak seviyesine iki pencere açılmış, kuzey cephesine bir tepelik eklenmiştir. Mihrap duvarındaki pencereler zamanla kapatılıp dolap olarak kullanılmıştır. Beden duvarlarında yatay ve düşey tuğla sıraları arasına moloz taş yerleştirilmiş, bu 'göz dolma' örgüyü andıran düzen yapıyı klasik kalkan duvarlı mescitlerden ayırır; benzer örneklerdeki sekizgen kasnak yoktur.",
+        "en": "Unlike other parapet-walled mosques there are no upper windows; two windows were opened at belt level and a parapet added to the north façade. The windows in the mihrab wall were later sealed and used as cupboards. The main walls place rubble stone between horizontal and vertical brick rows, recalling the 'göz dolma' infill system, which sets the building apart from classic parapet-walled masjids; the octagonal drum of similar examples is absent."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 4,
+      "title": {
+        "tr": "Onarımlar ve Eklentiler",
+        "en": "Repairs and Additions"
+      },
+      "body": {
+        "tr": "Cami 1583-1913 arasında yedi kez onarılmıştır. 'Meydancık Mescid-i Şerifi’nde bir sakat olmadığı ve mektebinin ba’zı mahalleri harâb oldığı' kaydından 1855 depreminden zarar görmediği anlaşılır. 1860'ta batıya 3,70 × 8,70 m, ahşap çatılı bir mekân eklenmiş, 1871'de kalem işi süslemeler yapılmış (son cemaat yerinde kırmızı-beyaz palmet kuşakları günümüze ulaşmıştır). Özgün minare yıkılmış, bugünkü tuğla gövdeli tek şerefeli minare 1913 onarımında yeniden yapılmıştır (onarım kitabesinde belirtilir); minareye batıdaki sonradan eklenen bölümden geçilir. Girişteki ahşap saçak 1968'de kaldırılmış, cami 2018-2021'de Bursa Vakıflar Bölge Müdürlüğü'nce kapsamlı restore edilmiştir.",
+        "en": "The mosque was repaired seven times between 1583 and 1913. A record saying 'there was no damage to the Meydancık Masjid and only some parts of its school were ruined' shows it was unharmed by the 1855 earthquake. In 1860 a wooden-roofed space of 3.70 × 8.70 m was added to the west, and in 1871 hand-painted decoration was added (bands of red-white palmettes survive in the narthex). The original minaret collapsed and the present brick, single-balcony minaret was rebuilt in the 1913 repair, as stated in its repair inscription; the minaret is reached through the later western addition. A wooden eave at the entrance was removed in 1968, and the mosque was comprehensively restored by the Bursa Regional Directorate of Foundations in 2018-2021."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "236-237"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 5,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Mihrabın XVIII. veya XIX. yüzyılda yapıldığı düşünülmektedir. Camide sade formlu ahşap bir minber vardır. Girişte geçmişten günümüze ulaşan anıtsal bir çınar ağacı bulunur.",
+        "en": "The mihrab is thought to have been built in the 18th or 19th century. Inside is a plain wooden minbar. At the entrance stands a monumental plane tree that has survived through the ages."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "237"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Meydancık Mahallesi, Alancık Sokak, No: 18",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "235"
+        }
+      ]
+    },
+    {
+      "key": "harim_olcusu",
+      "label": {
+        "tr": "İbadet mekânı ölçüsü",
+        "en": "Prayer hall dimensions"
+      },
+      "value": "7 × 7",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "236"
+        }
+      ]
+    },
+    {
+      "key": "ic_yukseklik",
+      "label": {
+        "tr": "İç yükseklik (yaklaşık)",
+        "en": "Interior height (approx.)"
+      },
+      "value": 9.5,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "236"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_derinligi",
+      "label": {
+        "tr": "Son cemaat yeri derinliği",
+        "en": "Narthex depth"
+      },
+      "value": 3.7,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "236"
+        }
+      ]
+    },
+    {
+      "key": "onarim_sayisi",
+      "label": {
+        "tr": "1583-1913 arası onarım sayısı",
+        "en": "Number of repairs 1583-1913"
+      },
+      "value": 7,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "236"
+        }
+      ]
+    },
+    {
+      "key": "ek_mekan_olcusu",
+      "label": {
+        "tr": "1860 ek mekân ölçüsü",
+        "en": "1860 added space dimensions"
+      },
+      "value": "3,70 × 8,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "236"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kazzazoğlu Süle Mehmet Paşa",
+      "role": {
+        "tr": "Banî; Bursa'da başka mescit ve medreseler de yaptıran",
+        "en": "Founder; also built other masjids and a madrasa in Bursa"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1855 depreminde camiye zarar gelmediği, mektebin bazı bölümlerinin harap olduğu kaydedildi",
+        "en": "1855 earthquake: mosque undamaged, some parts of the school ruined"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "236"
+        }
+      ]
+    },
+    {
+      "id": "ek-mekan-1860",
+      "year": 1860,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Batıya 3,70 × 8,70 m ahşap çatılı ek mekân eklendi",
+        "en": "Wooden-roofed space of 3.70 × 8.70 m added to the west"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "236"
+        }
+      ]
+    },
+    {
+      "id": "kalem-isi-1871",
+      "year": 1871,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Kalem işi süslemeler yapıldı",
+        "en": "Hand-painted decoration added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "236"
+        }
+      ]
+    },
+    {
+      "id": "minare-1913",
+      "year": 1913,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Minare yeniden inşa edildi (onarım kitabesinde belirtilir)",
+        "en": "Minaret rebuilt (stated in repair inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "sacak-1968",
+      "year": 1968,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Giriş kısmındaki ahşap saçak kaldırıldı",
+        "en": "Wooden eave at the entrance removed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "237"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Vakıflar Bölge Müdürlüğü'nce kapsamlı restorasyon (2018-2021)",
+        "en": "Comprehensive restoration by Bursa Regional Directorate of Foundations (2018-2021)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "237"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı gösterilir; süre 2018-2021.",
+        "en": "Start year shown; duration 2018-2021."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Meydancık Camii, Meydancık Mahallesi'nde Alancık Sokak'ta kare planlı, tek kubbeli bir mahalle camisidir. Dış duvarları kesme küfeki taşı ve tuğlanın almaşık dizilmesiyle örülmüştür. Önünde üç gözlü, tonoz örtülü bir son cemaat yeri vardır; ortadaki sivri kemerli giriş yan kemerlerden yüksektir ve revakta kırmızı-beyaz palmet kuşakları görülür. Kalkan duvarının önünde bir sıra dikey tuğla dikkat çeker. Batıda sonradan eklenen bölümden geçilen, tuğla gövdeli, tek şerefeli bir minare yükselir. Girişte yaşlı, anıtsal bir çınar ağacı durur.",
+      "en": "Meydancık Mosque is a square-plan, single-domed neighborhood mosque on Alancık Street in Meydancık Neighborhood. Its exterior walls are alternating cut limestone and brick. In front is a three-bay vaulted narthex; the pointed-arched entrance in the middle is taller than the side arches, and bands of red and white palmettes show in the portico. A row of vertical brick stands out in the parapet wall. A brick, single-balcony minaret, reached through the later western addition, rises beside it. A monumental old plane tree stands at the entrance."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-meydancik-camii/p024-1.jpg",
+        "original_name": "01 DJI_20240925144754_0703_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "235"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Meydancık Camii, ön görünüm ve minare",
+        "en": "Meydancık Mosque, front view and minaret"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla ve taş sıralı, üç kemerli son cemaat yeri olan küçük bir cami ile gri kubbesi görünür. Yanında kırmızı tuğlalı minare ve arkasında şehir ile dağlar yer alır.",
+        "en": "A small mosque of red brick and stone courses with a three-arched portico and a grey dome. A red brick minaret stands beside it, with the city and mountains behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-meydancik-camii/p025-2.jpg",
+        "original_name": "ERD03816 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "236"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mihrap ve avizeli ibadet alanı",
+        "en": "Mihrab and chandelier in the prayer hall"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı salonda kafes biçimli mihrap, iki yanında mavi çini şeritler ve tavanda geniş bir halka avize vardır. Sağda ahşap minber, yerde kırmızı halı görünür.",
+        "en": "In a white-walled hall, a cage-like mihrab sits between blue tile strips beneath a large ring chandelier. A wooden minbar is on the right and the carpet is red."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-meydancik-camii/p025-1.jpg",
+        "original_name": "07 ERD05210 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "236"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Duvardaki turuncu bitkisel kalem işi",
+        "en": "Orange painted plant motifs on the wall"
+      },
+      "alt": {
+        "tr": "Soluk renkli sıva üzerinde, sıra halinde dizilmiş turuncu ve kızıl kahve palmet benzeri bitkisel motifler görünür.",
+        "en": "A row of orange and reddish-brown palmette-like plant motifs painted on a pale, weathered plaster surface."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-12-10"
+    }
+  ],
+  "archive_media": []
+}

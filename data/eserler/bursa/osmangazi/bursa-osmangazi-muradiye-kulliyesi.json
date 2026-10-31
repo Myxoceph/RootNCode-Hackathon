@@ -1,0 +1,854 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-muradiye-kulliyesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "II. Murat Külliyesi",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki II. Murad (Muradiye) Külliyesi bölümünden (s. 111-169) özetlenerek yapay zekâ ile taslak olarak derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Fotoğraf eklenmeli: media, archive_media ve media_folder boş; Drive klasörü/dosya kimlikleri bilinmiyor.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tekerlekli sandalye, tuvalet) sahada teyit edilmeli; kitapta yok.",
+      "Külliyenin mimarı kitapta bu bölümde belirtilmemiş; araştırılmalı.",
+      "Sıbyan mektebi için ayrı bir bölüm yok; kitapta yalnızca çeşme bölümünde adı geçiyor.",
+      "Vakfiyede sayılan mülkler ve vakfiye şartları kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Simaviler Mahallesi ile Muradiye Mahallesi'nin ilişkisi kitapta açıklanmamış."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Giriş bölümü yapının 'H. 829 / M. 1426' yılında yaptırıldığını söyler; kitabe ise emrin Receb 828 (M. 1425), tamamlanmanın Muharrem 830 (M. 1426) olduğunu belgeler. Kitabe esas alındı."
+      },
+      {
+        "field": "facts[ilk_turbe_yili]",
+        "note": "Giriş bölümü ilk türbenin (Şehzade Alâaddin) 1442'de inşa edildiğini söyler; türbe bölümü ise türbenin babasının vefatından sonra yapıldığını belirtir. İkisi de saklandı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[turbeler]",
+        "note": "'On üç türbe' denir; kitapta ayrı bölümü olan türbeler tam olarak on üçtür."
+      }
+    ]
+  },
+  "name": {
+    "tr": "II. Murad (Muradiye) Külliyesi",
+    "en": "Murad II (Muradiye) Complex"
+  },
+  "subtitle": {
+    "tr": "Bursa'daki son selatin külliyesi",
+    "en": "The last imperial complex in Bursa"
+  },
+  "alternate_names": [
+    {
+      "tr": "Muradiye Külliyesi",
+      "en": "Muradiye Complex"
+    },
+    {
+      "tr": "Sultan II. Murad Külliyesi",
+      "en": "Sultan Murad II Complex"
+    }
+  ],
+  "type": "kulliye",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Muradiye",
+    "sultan külliyesi",
+    "tabhaneli/zaviyeli cami",
+    "hanedan türbeleri",
+    "UNESCO",
+    "Bursa ve Cumalıkızık"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Muradiye",
+    "address": "II. Murad Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "111"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.190911,
+      "lng": 29.046998,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-osmangazi-cariyeler-turbesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 828-830 / M. 1425-1426",
+      "en": "AH 828-830 / AD 1425-1426"
+    },
+    "start_year": 1425,
+    "end_year": 1426,
+    "hijri_year": 828,
+    "century": 15,
+    "basis": {
+      "tr": "Ana giriş kapısı üzerindeki inşa kitabesi: emir Receb 828 (Mayıs-Haziran 1425), tamamlanma Muharrem 830 (Kasım-Aralık 1426).",
+      "en": "Construction inscription over the main entrance: ordered Rajab AH 828 (May-June AD 1425), completed Muharram AH 830 (Nov-Dec AD 1426)."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "111-113"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sultan II. Murad",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "111-113"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "14 Temmuz 1430",
+      "excerpt": {
+        "tr": "Sultan II. Murad, 14 Temmuz 1430 tarihli vakfiyesinde külliyenin giderlerini karşılamak üzere birçok mülkü vakfetmiştir.",
+        "en": "In his endowment charter dated 14 July 1430, Sultan Murad II endowed many properties to cover the expenses of the complex."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "111"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Bursa'daki son selatin külliyesi: Sultan II. Murad'ın 1425-1426'da yaptırdığı cami, medrese, hamam, imaret, sıbyan mektebi, çeşme ve on üç hanedan türbesinden oluşan topluluk. Mahalleye adını veren külliye 2014'te UNESCO Dünya Miras Alanı olarak tescillenmiştir.",
+    "en": "The last imperial complex in Bursa: a group of a mosque, madrasa, bath, imaret, primary school, fountain and thirteen dynastic tombs built by Sultan Murad II in 1425-1426. The complex, which gave its name to the neighbourhood, was registered as a UNESCO World Heritage Site in 2014."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Osmangazi ilçesi, Muradiye Mahallesi, II. Murad Caddesi üzerindeki Muradiye Külliyesi'nin ana yapısı Muradiye Camii'dir. Bursa'daki son selatin külliyesinin ana yapısını oluşturan cami, her iki yanındaki tabhane/zaviyeleriyle birlikte Sultan II. Murad tarafından H. 829 / M. 1426 yılında yaptırılmıştır. Bulunduğu mahalleye adını veren külliye; medrese, hamam, imaret, sıbyan mektebi, çeşme ve türbeler topluluğundan meydana gelir.",
+        "en": "The main structure of the Muradiye Complex, on Murad II Street in Muradiye Neighborhood, Osmangazi District, is the Muradiye Mosque. It is the main building of the last imperial complex in Bursa and was built by Sultan Murad II in AH 829 / AD 1426 together with the hospices/zawiyas on both sides. The complex, which gave its name to the neighborhood, consists of a madrasa, a bath, an imaret, a primary school, a fountain, and a group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "id": "turbeler",
+      "order": 2,
+      "title": {
+        "tr": "Hanedan Türbeleri",
+        "en": "The Dynastic Tombs"
+      },
+      "body": {
+        "tr": "Osmanlı Hanedanı'nın üyeleri ve saray mensuplarına ait on üç türbeden ilki 1442'de inşa edilen Şehzade Alâaddin Türbesi, silsilenin son halkası ise 1573'te inşa edilen Şehzade Mustafa Türbesi'dir. Bu nedenle Ahmet Hamdi Tanpınar, Muradiye için \"sabrın acı meyvesi\" ifadesini kullanmıştır. Türbeler: Sultan II. Murad, Şehzade Alâaddin Ali, Cariyeler (Saraylılar), Cem Sultan, Ebe Hatun, Gülruh Hatun, Gülşah Hatun, Hüma Hatun, Mükrime Hatun, Şehzade Ahmet, Şehzade Mahmut, Şehzade Mustafa ve Şirin Hatun türbeleridir.",
+        "en": "The first of these thirteen tombs, belonging to members of the Ottoman Dynasty and courtiers, was the Tomb of Şehzade Alâaddin, built in 1442, and the last was the Tomb of Şehzade Mustafa, built in 1573. For this reason Ahmet Hamdi Tanpınar used the expression \"the bitter fruit of patience\" for Muradiye. The tombs are those of Sultan Murad II, Şehzade Alâaddin Ali, Cariyeler (Saraylılar), Cem Sultan, Ebe Hatun, Gülruh Hatun, Gülşah Hatun, Hüma Hatun, Mükrime Hatun, Şehzade Ahmet, Şehzade Mahmut, Şehzade Mustafa and Şirin Hatun."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111, 130-169"
+        }
+      ]
+    },
+    {
+      "id": "insa-sureci",
+      "order": 3,
+      "title": {
+        "tr": "İnşa Süreci ve Kitabe",
+        "en": "Construction and Inscription"
+      },
+      "body": {
+        "tr": "Külliyenin inşa kitabesi caminin ana giriş kapısı üzerindedir ve yapıyı yaptıran Sultan II. Murad'ın inşa zamanını açıkça belgeler. Kitabeye göre inşa emri H. 828 Receb ayında (M. Mayıs-Haziran 1425) verilmiş, yapı H. 830 Muharrem ayında (M. Kasım-Aralık 1426) tamamlanmıştır. Bu yönüyle Muradiye Külliyesi, Osmanlı mimarisinde en kısa sürede tamamlanan sultan külliyelerinden biri olarak öne çıkar. Kitabe metni Muradiye Camii kaydında verilmiştir.",
+        "en": "According to the inscription over the main entrance, the construction was ordered in Rajab AH 828 (May-June AD 1425) and completed in Muharram AH 830 (Nov-Dec AD 1426); the Muradiye Complex thus stands out as one of the imperial complexes completed in the shortest time in Ottoman architecture. The inscription text is given in the Muradiye Mosque record."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "112-113"
+        }
+      ]
+    },
+    {
+      "id": "mahalle",
+      "order": 4,
+      "title": {
+        "tr": "Simaviler Mahallesi'nde Konumu",
+        "en": "Location in the Simaviler Neighborhood"
+      },
+      "body": {
+        "tr": "Külliye, genellikle gayrimüslim nüfusun yaşadığı Simaviler Mahallesi'nde inşa edilmiştir. Kitaba göre bu konum, Osmanlı'nın sosyal hizmet anlayışında din farkı gözetilmediğini açıkça ortaya koyar.",
+        "en": "The complex was built in the Simaviler Neighborhood, where mostly non-Muslim people lived; according to the book this shows that there was no discrimination in the Ottoman understanding of social service."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "112"
+        }
+      ]
+    },
+    {
+      "id": "vakif",
+      "order": 5,
+      "title": {
+        "tr": "Vakfiye",
+        "en": "The Endowment Charter"
+      },
+      "body": {
+        "tr": "Sultan II. Murad bu hayır eseri için büyük bir cömertlik sergilemiş, 14 Temmuz 1430 tarihli vakfiyesinde külliyenin giderlerini karşılamak üzere birçok mülkü vakfetmiştir. Vakfedilen mülklerin neler olduğu kitapta sayılmamıştır.",
+        "en": "Sultan Murad II displayed great generosity for this charitable work; in his endowment charter dated 14 July 1430 he endowed many properties to cover the expenses of the complex. The book does not list the properties."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "order": 6,
+      "title": {
+        "tr": "Yakın Dönem ve Tescil",
+        "en": "Recent History and Registration"
+      },
+      "body": {
+        "tr": "Camide 2012-2014 arasında kapsamlı restorasyon yapılmıştır; türbelerde raspa sonucu kalem işleri ortaya çıkarılmıştır. Son cemaat yerinin iki yanında bulunan Yunan bayrağı ve ordu flaması, caminin 1920-1922'de Yunan askerleri tarafından depo olarak kullanıldığını göstermiştir. Külliye 2014'te UNESCO Dünya Miras Alanı olarak tescillenmiş ve koruma altına alınmıştır.",
+        "en": "The mosque was comprehensively restored in 2012-2014, and surface cleaning revealed hand-painted work in the tombs. The Greek flag and army pennant found on both sides of the narthex revealed that the mosque was used as a warehouse by Greek soldiers in 1920-1922. The complex was registered as a UNESCO World Heritage Site in 2014 and taken under protection."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "turbe_sayisi",
+      "label": {
+        "tr": "Türbe sayısı",
+        "en": "Number of tombs"
+      },
+      "value": 13,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "key": "insa_emri",
+      "label": {
+        "tr": "İnşa emri",
+        "en": "Construction ordered"
+      },
+      "value": "Receb 828 (Mayıs-Haziran 1425)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "112-113"
+        }
+      ]
+    },
+    {
+      "key": "tamamlanma",
+      "label": {
+        "tr": "Tamamlanma",
+        "en": "Completion"
+      },
+      "value": "Muharrem 830 (Kasım-Aralık 1426)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "112-113"
+        }
+      ]
+    },
+    {
+      "key": "vakfiye_tarihi",
+      "label": {
+        "tr": "Vakfiye tarihi",
+        "en": "Endowment charter date"
+      },
+      "value": "14 Temmuz 1430",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "key": "ilk_turbe_yili",
+      "label": {
+        "tr": "İlk türbenin yılı",
+        "en": "Year of the first tomb"
+      },
+      "value": 1442,
+      "unit": null,
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111, 136"
+        }
+      ],
+      "note": {
+        "tr": "Giriş bölümü 1442 der; Şehzade Alâaddin Türbesi bölümü türbenin babasının vefatından sonra yapıldığını söyler.",
+        "en": "The introduction says 1442; the Şehzade Alâaddin Tomb section says that tomb was built after his father's death."
+      }
+    },
+    {
+      "key": "son_turbe_yili",
+      "label": {
+        "tr": "Son türbenin yılı",
+        "en": "Year of the last tomb"
+      },
+      "value": 1573,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111, 163"
+        }
+      ]
+    },
+    {
+      "key": "unesco_yili",
+      "label": {
+        "tr": "UNESCO tescili",
+        "en": "UNESCO registration"
+      },
+      "value": 2014,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sultan II. Murad",
+      "role": {
+        "tr": "Banî (yaptıran)",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Ahmet Hamdi Tanpınar",
+      "role": {
+        "tr": "Muradiye için \"sabrın acı meyvesi\" ifadesini kullandı",
+        "en": "Called Muradiye \"the bitter fruit of patience\""
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-emri",
+      "year": 1425,
+      "date": null,
+      "hijri": "Receb 828",
+      "type": "construction",
+      "title": {
+        "tr": "Sultan II. Murad külliyenin inşasını emretti (Receb 828)",
+        "en": "Sultan Murad II ordered the construction of the complex (Rajab 828)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "112-113"
+        }
+      ]
+    },
+    {
+      "id": "tamamlanma",
+      "year": 1426,
+      "date": null,
+      "hijri": "Muharrem 830",
+      "type": "opening",
+      "title": {
+        "tr": "Külliye tamamlandı (Muharrem 830)",
+        "en": "The complex was completed (Muharram 830)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "112-113"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1430",
+      "year": 1430,
+      "date": "1430-07-14",
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Sultan II. Murad külliye için vakfiye düzenledi",
+        "en": "Sultan Murad II issued the endowment charter for the complex"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "id": "ilk-turbe",
+      "year": 1442,
+      "date": null,
+      "hijri": "846",
+      "type": "addition",
+      "title": {
+        "tr": "Giriş bölümüne göre ilk türbe (Şehzade Alâaddin) inşa edildi",
+        "en": "First tomb (Şehzade Alâaddin) built, according to the introduction"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111, 136"
+        }
+      ],
+      "note": {
+        "tr": "Türbe bölümü, yapının babasının vefatından (1451) sonra yapıldığını söyler.",
+        "en": "The tomb section says it was built after his father's death (1451)."
+      }
+    },
+    {
+      "id": "son-turbe",
+      "year": 1573,
+      "date": null,
+      "hijri": "981",
+      "type": "addition",
+      "title": {
+        "tr": "Son türbe (Şehzade Mustafa) inşa edildi",
+        "en": "Last tomb (Şehzade Mustafa) built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111, 163"
+        }
+      ]
+    },
+    {
+      "id": "yunan-depo",
+      "year": 1920,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Cami 1920-1922 arasında Yunan askerleri tarafından depo olarak kullanıldı",
+        "en": "Mosque used as a warehouse by Greek soldiers in 1920-1922"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Camide kapsamlı restorasyon (2012-2014)",
+        "en": "Comprehensive restoration of the mosque (2012-2014)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    },
+    {
+      "id": "unesco-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Külliye UNESCO Dünya Miras Alanı olarak tescillendi",
+        "en": "Complex registered as UNESCO World Heritage Site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "118"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "turbeler",
+      "title": {
+        "tr": "On üç hanedan türbesi",
+        "en": "Thirteen dynastic tombs"
+      },
+      "hint": {
+        "tr": "1442'den 1573'e uzanan türbe silsilesi.",
+        "en": "A series of tombs from 1442 to 1573."
+      },
+      "section_id": "turbeler"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-muradiye-camii",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin ana yapısı olan cami.",
+        "en": "The mosque, main structure of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111-118"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-muradiye-medresesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin batı ucundaki medrese.",
+        "en": "The madrasa at the western end of the complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "120-122"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-muradiye-cesmesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin vakıf eseri niteliğindeki Sıbyan Mektebi (Medrese) Çeşmesi.",
+        "en": "The Sıbyan Mektebi (Madrasa) Fountain, the complex's only foundation work among its fountains."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "123"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-muradiye-imareti",
+      "type": "same_complex",
+      "description": {
+        "tr": "Caminin kuzeydoğusundaki imaret.",
+        "en": "The imaret northeast of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "124-125"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-muradiye-hamami",
+      "type": "same_complex",
+      "description": {
+        "tr": "Medresenin batısındaki hamam.",
+        "en": "The bath west of the madrasa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "126-127"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ii-murad-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-sehzade-alaaddin-ali-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-cariyeler-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-cem-sultan-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-ebe-hatun-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-gulruh-hatun-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-gulsah-hatun-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-huma-hatun-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-mukrime-hatun-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-sehzade-ahmet-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-sehzade-mahmut-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-sehzade-mustafa-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-sirin-hatun-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Külliyenin türbeler topluluğundaki türbelerinden biridir.",
+        "en": "One of the tombs in the complex's group of tombs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "111"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Muradiye Külliyesi, Bursa'nın Osmangazi ilçesinde, Muradiye Mahallesi'nde yer alır. Ortada tuğla ve moloz taş almaşık duvarlı Muradiye Camii vardır; kuzeydoğusunda uzun dikdörtgen planlı imaret, batı ucunda revaklı avlulu medrese ve hamam bulunur. Caminin güneybatısındaki ve çevresindeki bahçede, kubbeli ya da açık baldaken planlı on üç hanedan türbesi dağınık bir topluluk oluşturur.",
+      "en": "The Muradiye Complex lies in Muradiye Neighborhood, Osmangazi, Bursa. At its centre stands the Muradiye Mosque, built in alternating brick and rubble stone. Northeast of it is the long rectangular imaret; at the western end are the madrasa with an arcaded courtyard and the bath. In the garden around and southwest of the mosque, thirteen dynastic tombs, domed or open baldachin types, form a loose group."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yapay zekâ ile taslak olarak yazıldı; saha ve fotoğrafla doğrulanmalı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": []
+}

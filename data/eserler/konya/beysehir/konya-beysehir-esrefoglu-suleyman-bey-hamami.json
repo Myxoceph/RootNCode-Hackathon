@@ -1,0 +1,345 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-beysehir-esrefoglu-suleyman-bey-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Külliyeler",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Hamamın yapıcısı/mimarı kitapta yok.",
+      "Vakfiyedeki 'Hamam-ı Kebir' ile eşleştirme kitapta varsayım olarak sunuluyor ('düşünülmektedir'); vakfiye bulunursa teyit edilmeli.",
+      "Hamamın bugünkü kullanım amacı kitapta belirtilmiyor ('günümüzde kullanılmaktadır')."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Hamamın yaptıranı metinde açıkça yazılmıyor; külliye kaydındaki bani (Süleyman Bey) esas alınarak 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Eşrefoğlu Süleyman Bey Külliyesi Hamamı",
+    "en": "Eşrefoğlu Süleyman Bey Complex Bath"
+  },
+  "subtitle": {
+    "tr": "Haçvari dört eyvanlı, köşe halvetli çifte hamam",
+    "en": "Double bath with cross-shaped four iwans and corner private rooms"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hamam-ı Kebir",
+      "en": "Great Bath",
+      "note": "Süleyman Bey'in vakfiyesinde bu adla geçtiği düşünülüyor"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": "konya-beysehir-esrefoglu-suleyman-bey-kulliyesi",
+  "era": "beylikler",
+  "tags": [
+    "çifte hamam",
+    "Hamam-ı Kebir",
+    "haçvari plan",
+    "Selçuklu hamam tipolojisi",
+    "restorasyon"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Beyşehir",
+    "neighborhood": "İçeri Şehir Mahallesi",
+    "address": "Eşrefoğlu Camii'nin kuzeybatısında; eski kale kapısı ile cami arasında, bedestenin hemen batısında",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "28"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.683463,
+      "lng": 31.718608,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (konya-beysehir-esrefoglu-suleyman-bey-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Kesin tarih bilinmiyor; camiden önce hizmete girdiği düşünülüyor",
+      "en": "Exact date unknown; thought to have been in use before the mosque"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "İnşa tarihi kesin bilinmiyor. Çevrede başka hamam bulunmadığından, vakfiyedeki 'Hamam-ı Kebir'in bu hamam olduğu ve camiden (H. 696 / 1296-97) önce hizmete açıldığı düşünülüyor.",
+      "en": "The construction date is not known. As there is no other bath in the area, the 'Hamam-ı Kebir' in the foundation charter is thought to be this bath, put into service before the mosque."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "28"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Eşrefoğlu Seyfeddin Süleyman Bey",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "28"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "Tarih verilmiyor",
+      "excerpt": {
+        "tr": "Süleyman Bey'in vakfiyesinde 'Hamam-ı Kebir' (Büyük Hamam) olarak anılır (hamamın bu hamam olduğu düşünülüyor).",
+        "en": "Mentioned as 'Hamam-ı Kebir' (Great Bath) in Süleyman Bey's foundation charter (identification as this bath is presumed)."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "28"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "28"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Selçuklu hamam tipolojisinde, çifte üniteli, haçvari dört eyvanlı ve köşe halvetli bir hamam. 2006-2007 restorasyonuna kadar yarı gömülü harabe durumundaydı; bugün kullanılıyor.",
+    "en": "A double-unit bath in the Seljuk bath typology with cross-shaped four iwans and corner private rooms. It lay in ruins, partly buried, until the 2006-2007 restoration; it is in use today."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Hamam, Eşrefoğlu Süleyman Bey Camii'nin kuzeybatısında, külliye içinde eski kale kapısı ile cami arasında ve bedestenin hemen batısında yer alır. İnşa tarihi kesin bilinmemektedir; Süleyman Bey'in vakfiyesinde 'Hamam-ı Kebir' diye geçen hamamın, çevrede başka hamam bulunmadığından bu yapı olduğu ve camiden önce hizmete açıldığı düşünülmektedir. 2006-2007'deki son restorasyona kadar zeminden yaklaşık 2 m toprağa gömülü, harap durumdaydı; 1960'lara kadar samanlık olarak kullanılmış, son yıllarda çöplük hâline gelmişti. Restorasyon sonrası ayağa kaldırılan yapı günümüzde kullanılmaktadır.",
+        "en": "The bath lies northwest of the mosque, within the complex between the old castle gate and the mosque, just west of the bedesten. Its construction date is unknown; as there is no other bath nearby, the 'Hamam-ı Kebir' in Süleyman Bey's foundation charter is thought to be this one, in service before the mosque. Until the last restoration in 2006-2007 it was in ruins, buried about 2 m below ground, used as a haystack until the 1960s and later a garbage dump. After restoration it is in use today."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "28"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Mekânlar",
+        "en": "Plan and Spaces"
+      },
+      "body": {
+        "tr": "Hamam Selçuklu hamam tipolojisine uygun, çifte üniteli hamamlar grubundandır; doğu-batı yönde dikdörtgen planlı olup giriş, soyunmalık, soğukluk, sıcaklık, halvet odaları ve külhan bölümlerinden oluşur. Hamamın doğusundaki soyunmalığın üst örtüsü köşelerde sağır sivri kemerli tromplara oturur; duvarlarda kalıp baskı tekniğiyle palmet ve rûmi motifleri vardır. Sıcaklık bölümü ortada kubbe, dört köşede sivri tonozlu eyvanlar ve halvet odalarından oluşur; kubbe pandantiflere ve eyvan kemerlerine oturur ve aydınlatma için dört adet üçlü göz açılmıştır. Kubbe kasnağının altında tepeleri lale şeklinde biten palmet ve rûmiler, hemen altında lale, yıldız, ibrik ve atlı süvari motifleri işlenmişti; bu süslemeler restorasyon sırasında yok olmuştur.",
+        "en": "The bath follows the Seljuk typology of double-unit baths: a rectangular plan in the east-west direction with entrance, dressing room, cold room, hot room, private rooms and furnace. The dressing room to the east has its cover resting on blind pointed squinches, with palmette and rumi motifs in block-print technique on the walls. The hot room has a central dome, four pointed-vaulted iwans and private rooms in the corners; the dome rests on pendentives and iwan arches with four triple openings for light. Below the drum, palmettes and rumi with tulip tops, and below them tulip, star, ewer and horseman motifs were worked in plaster; these decorations were destroyed during restoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "28-29"
+        }
+      ]
+    },
+    {
+      "id": "tipoloji",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Tipoloji",
+        "en": "Architectural Typology"
+      },
+      "body": {
+        "tr": "Hamam, Selçuklu geleneğinde ve sonrasında Osmanlılarda kullanılan 'haçvari dört eyvanlı ve köşe halvetli' plan tipinin Selçuklularda son, Beyliklerde ise ilk uygulamasıdır.",
+        "en": "The bath is the last application among the Seljuks and the first among the Beyliks of the 'cross-shaped four-iwan plan with corner private rooms', used in the Seljuk tradition and later by the Ottomans."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "29"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "gomulu_derinlik",
+      "label": {
+        "tr": "Restorasyon öncesi toprak altında kalma derinliği",
+        "en": "Depth buried before restoration"
+      },
+      "value": 2,
+      "unit": "m",
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "28"
+        }
+      ],
+      "note": {
+        "tr": "Metin 'yaklaşık 2 m' diyor.",
+        "en": "The text says 'about 2 m'."
+      }
+    },
+    {
+      "key": "kubbe_isik_gozu",
+      "label": {
+        "tr": "Sıcaklık kubbesindeki üçlü göz sayısı",
+        "en": "Triple light openings in the hot-room dome"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "29"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-2006",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son restorasyon (2006-2007); süslemeler yok oldu, hamam kullanıma açıldı",
+        "en": "Latest restoration (2006-2007); decorations lost, bath brought back into use"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "28-29"
+        }
+      ],
+      "note": {
+        "tr": "Yıl aralığın son yılıdır (2006-2007).",
+        "en": "The year is the end of the 2006-2007 range."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "sicaklik",
+      "title": {
+        "tr": "Sıcaklık bölümü",
+        "en": "Hot room"
+      },
+      "hint": {
+        "tr": "Ortada kubbe, dört köşede eyvan ve halvet odaları.",
+        "en": "Central dome with iwans and private rooms at four corners."
+      },
+      "section_id": "plan"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-beysehir-esrefoglu-suleyman-bey-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Eşrefoğlu Süleyman Bey Külliyesi'nin bir yapısıdır.",
+        "en": "A building of the Eşrefoğlu Süleyman Bey Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "28"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-beysehir-esrefoglu-suleyman-bey-bedesteni",
+      "type": "urban_context",
+      "description": {
+        "tr": "Hamam bedestenin hemen batısındadır.",
+        "en": "The bath is just west of the bedesten."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "28, 30"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, kale kapısı ile cami arasında, doğu-batı doğrultusunda uzanan dikdörtgen planlı bir yapıdır. Doğuda soyunmalık, ortada kubbeli sıcaklık bölümü ve dört köşede halvet odaları bulunur. Kubbede aydınlatma için üçlü delikler açılmıştır.",
+      "en": "The bath, between the castle gate and the mosque, is a rectangular building stretching east to west. There is a dressing room in the east, a domed hot room in the middle and private rooms at the four corners. The dome has triple openings for light."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-esrefoglu-suleyman-bey-hamami/p016-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "28"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın kiremit çatılı dışı",
+        "en": "Exterior of the bath with its tiled roof"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kırmızı kiremit çatılı, tepesinde küçük bir ışıklık bulunan yapı. Çevresinde ağaçlar ve evler, uzakta göl görülüyor.",
+        "en": "A stone-walled building with a red tiled roof and a small lantern on top. Trees and houses surround it and the lake is visible in the distance."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

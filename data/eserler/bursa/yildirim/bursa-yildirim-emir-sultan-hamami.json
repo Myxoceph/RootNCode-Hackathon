@@ -1,0 +1,669 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-emir-sultan-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Emir Sultan",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabının Emir Sultan Külliyesi bölümünden (s. 19-59) yapay zekâ ile taslak olarak özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir; kayıt insan incelemesi bekler.",
+    "todos": [
+      "Koordinat kaynakta yok; sahadan ya da resmi kayıttan alınıp 'location.coordinates' eklenmeli.",
+      "Fotoğraf ve arşiv fotoğrafı yok: 'media', 'archive_media' boş, 'media_folder' null; Drive klasörü bulunup photos match_photos.py ile eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kaynakta yok; sahada ya da Vakıflar Bölge Müdürlüğü'nden teyit edilmeli.",
+      "Hamamın kesin banisi/yapım tarihi için farklı görüşler var; kaynaklar (muhasebe defterleri, kadı sicilleri) VGM arşivinden doğrulanmalı.",
+      "Hamamın bugünkü kullanım durumu ('kapalı') ve yeniden işlevlendirme planı güncel kaynaktan teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Yaygın görüşe göre 1426'da Hundi Hatun yaptırmıştır; bazı kaynaklar yapıyı Fâtih ve II. Bayezid dönemlerinde yaşamış Cezerî Kasım Paşa'ya atfeder. Bu iki görüş birbiriyle çelişir (1426, Fâtih devrinden önce). İkisi de korundu, 'disputed' işaretlendi."
+      },
+      {
+        "field": "facts[plan_boyutu]",
+        "note": "Kitap planı 12,45 × 3,78 m, soğukluğu ise dıştan dışa 12,45 × 12,67 m ve 106 m² veriyor; bu değerler birbiriyle tutarsız (12,45 × 12,67 ≈ 158 m²). Her ikisi de kaynakta yazıldığı gibi korundu; olası tipografik hata."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Emir Sultan Hamamı",
+    "en": "Emir Sultan Bath"
+  },
+  "alternate_names": [],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": "bursa-yildirim-emir-sultan-kulliyesi",
+  "era": "erken-osmanli",
+  "tags": [
+    "hamam",
+    "tek hamam",
+    "Hammâm-ı Küçük",
+    "Hundi Hatun",
+    "Geleneksel Sanatlar Merkezi"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Emirsultan Mahallesi",
+    "address": "Emir Sultan Camii'nin güneyindeki meydan",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "41"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.18114,
+      "lng": 29.081031,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (bursa-yildirim-emir-sultan-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1426 (yaygın görüş)",
+      "en": "1426 (widely accepted view)"
+    },
+    "start_year": 1426,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, yaygın kabul gören görüşe göre hamamın 1426'da Hundi Hatun tarafından yaptırıldığını yazar; bazı kaynaklar Cezerî Kasım Paşa'ya atfeder.",
+      "en": "The book says that by the widely accepted view the bath was built by Hundi Hatun in 1426; some sources attribute it to Cezerî Kasım Paşa."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "41"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hundi Hatun",
+    "role": "banî (yaygın görüşe göre)",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "41"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Emir Sultan Vakfı",
+    "deed": {
+      "date_display": "H. 15 Recep 874 / M. 18 Ocak 1470",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "41"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakıf kayıtlarında Türbe Mahallesi'nde vakıf gelirleriyle inşa edildiği belirtilir.",
+      "en": "Foundation records state it was built with foundation revenues in the Türbe Neighborhood."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "41"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Emir Sultan Camii'nin güneyindeki meydanda, yaygın görüşe göre Hundi Hatun'un 1426'da yaptırdığı tek hamam planlı yapı; vakıf kayıtlarında \"Hammâm-ı Küçük\" olarak geçer, 2011'de Geleneksel Sanatlar Merkezi olmuş, bugün kapalıdır.",
+    "en": "A single-bath-plan building in the square south of the Emir Sultan Mosque, built according to the widely accepted view by Hundi Hatun in 1426; recorded in foundation documents as \"Hammâm-ı Küçük\", opened as a Traditional Arts Center in 2011 and closed today."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapımı",
+        "en": "Overview and Construction"
+      },
+      "body": {
+        "tr": "Emir Sultan Hamamı, aynı isimle anılan caminin güneyindeki meydanda, tekkeye yakın konumdadır ve tek hamam plan şemasına sahiptir. Yaygın kabul gören görüşe göre Yıldırım Bayezid'in kızı ve Emîr Sultan'ın eşi Hundi Hatun tarafından 1426'da inşa ettirilmiştir. Bazı kaynaklar ise yapının Fâtih Sultan Mehmed ve II. Bayezid dönemlerinde yaşamış devlet adamı ve şair Cezerî Kasım Paşa tarafından yaptırıldığını ileri sürer.",
+        "en": "The Emir Sultan Bath stands in the square south of the mosque of the same name, near the Sufi lodge, and has a single-bath plan. According to the widely accepted view it was built in 1426 by Hundi Hatun, daughter of Yıldırım Bayezid and wife of Emîr Sultan. Some sources claim it was built by the statesman and poet Cezerî Kasım Paşa, who lived under Fâtih Sultan Mehmed and Bayezid II."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "41"
+        }
+      ]
+    },
+    {
+      "id": "vakif-kayitlari",
+      "order": 2,
+      "title": {
+        "tr": "Vakıf ve Defter Kayıtları",
+        "en": "Foundation and Registry Records"
+      },
+      "body": {
+        "tr": "H. 15 Recep 874 / M. 18 Ocak 1470 tarihli, Bursa Kadısı Ali b. Yusuf el-Fenârî tarafından tasdik edilen vakfiyede yapı, Türbe Mahallesi'nde vakıf gelirleriyle inşa edilmiş \"Hammâm-ı Küçük\" olarak anılır. Muhasebe defterlerinde \"Hammâm-ı Küçük der-nezd-i Câmi-i Şerîf, der-kurb-i Câmi-i Şerîf\", kadı sicillerinde \"Hammâm-ı Küçük, hammâm el-kâinu fî mahalleti Hazreti Emîr\" olarak kayıtlıdır.",
+        "en": "In the endowment charter of 15 Rajab AH 874 / 18 January AD 1470, approved by Bursa Qadi Ali b. Yusuf el-Fenârî, the building is called \"Hammâm-ı Küçük\" (Small Bath) and said to have been built with foundation revenues in the Türbe Neighborhood. Accounting books record it as \"Hammâm-ı Küçük der-nezd-i Câmi-i Şerîf, der-kurb-i Câmi-i Şerîf\" and the qadi registers as \"Hammâm-ı Küçük, hammâm el-kâinu fî mahalleti Hazreti Emîr\"."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "41"
+        }
+      ]
+    },
+    {
+      "id": "dis-gorunum",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Dış Görünüm",
+        "en": "Plan and Exterior"
+      },
+      "body": {
+        "tr": "Hamam kuzey-güney doğrultusunda uzanan dikdörtgen bir plan üzerine kuruludur (kitapta 12,45 × 3,78 m). Beden duvarları bir sıra küfeki taşı ile iki sıra tuğla almaşık düzende örülmüş, taş sıraları arasına dikey olarak ikişer tuğla yerleştirilmiştir. Tüm çatı ve kubbe saçakları iki sıra kirpi silmesiyle çevrelenmiştir. Kuzey cephede basık kemerli, mermer söveli bir cümle kapısı vardır; üstünde yuvarlak kemerli tuğladan bir alınlık görülür.",
+        "en": "The bath is built on a rectangular plan extending north-south (given in the book as 12.45 × 3.78 m). The main walls alternate one course of limestone with two courses of brick, with two bricks set vertically between the stone courses. All roof and dome eaves are surrounded by two rows of sawtooth moldings. On the north side is a main door with a depressed arch and marble frame, with a round-arched brick pediment above."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "42"
+        }
+      ]
+    },
+    {
+      "id": "soguklik-iliklik",
+      "order": 4,
+      "title": {
+        "tr": "Soğukluk ve Ilıklık",
+        "en": "Frigidarium and Tepidarium"
+      },
+      "body": {
+        "tr": "Çift kanatlı ahşap kapıdan girilen soğukluk dıştan dışa 12,45 × 12,67 m ölçüsünde olup 106 m²'lik alan kaplar; zemini mermer döşeli, üzeri sekizgen kasnaklı kurşun kaplı bir kubbeyle örtülüdür. Kuzeyde iki, doğu ve batıda ikişer pencere ile kubbe tepesindeki dörtgen konik fenerden ışık alır. Sağdaki küçük kemerli kapıdan kare planlı, yaklaşık 20 m² alanlı ılıklığa geçilir; ılıklık helezoni formda 24 dilimli kurşun kaplı bir kubbeyle örtülüdür.",
+        "en": "The frigidarium, entered through a double-leafed wooden door, measures 12.45 × 12.67 m overall and covers 106 m²; its marble-paved floor is covered by a lead dome on an octagonal drum. It is lit by two windows on the north and two each on the east and west, plus the quadrangular conical lantern at the top of the dome. A small arched door on the right leads to the square tepidarium of about 20 m², covered with a 24-segmented, spiral-form lead-coated dome."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "42"
+        }
+      ]
+    },
+    {
+      "id": "sicaklik",
+      "order": 5,
+      "title": {
+        "tr": "Sıcaklık ve Diğer Mekânlar",
+        "en": "Caldarium and Other Spaces"
+      },
+      "body": {
+        "tr": "Ilıklıktan usturalık, hela ve iki halvet mekânına geçilir; buradan 63 m²'lik sekizgen planlı sıcaklığa ulaşılır. Eskiden göbek taşı bulunan sıcaklık, sekizgen kasnaklı kurşun kaplı bir kubbeyle örtülü olup tepede aydınlık feneri vardır; kasnaktaki bezemeler dikkat çekicidir. Sıcaklığın doğu, batı ve güneyinde kare planlı birer yıkanmalık eyvan, güneybatı ve güneydoğu köşelerinde sivri kemerli kapılı iki halvet bulunur; hepsi kasnaklı kurşun kubbelerle örtülü ve aydınlık fenerlidir. Yapının güney ucunda dikdörtgen planlı, tonoz örtülü bir su deposu ile külhan yer alır.",
+        "en": "From the tepidarium one reaches the shaving room, toilet and two bathing cells, and from there the octagonal caldarium of 63 m². The caldarium, which formerly had a central heated slab, is covered by a lead dome on an octagonal drum with a roof lantern; the decoration of the drum is striking. East, west and south of it are square bathing iwans, and in the southwest and southeast corners two secluded cells with pointed-arched doors; all have lead domes on octagonal drums with lanterns. At the south end are a rectangular vaulted water tank and the furnace."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    },
+    {
+      "id": "onarim-ve-bugun",
+      "order": 6,
+      "title": {
+        "tr": "Onarımlar ve Bugünkü Durum",
+        "en": "Repairs and Present State"
+      },
+      "body": {
+        "tr": "Hamam 1606, 1622, 1670 ve 1712'de onarım görmüş, 1741'de toprak kayması nedeniyle sıkıntı yaşamış, 1855 depreminde bir miktar zarar görmüş ancak uzun yıllar kullanılmaya devam etmiştir. 2009-2010 arasında Vakıflar Genel Müdürlüğü tarafından kapsamlı biçimde restore edilmiş, ardından Bursa Büyükşehir Belediyesi'nin bakım-onarımıyla 2011'de \"Geleneksel Sanatlar Merkezi\" olarak hizmete açılmıştır. Bugün kapalıdır; yeniden işlevlendirme hazırlıkları sürmektedir.",
+        "en": "The bath was repaired in 1606, 1622, 1670 and 1712, had problems from a landslide in 1741, and was somewhat damaged in the 1855 earthquake but remained in use for many years. It was comprehensively restored by the General Directorate of Foundations in 2009-2010, supported by maintenance from Bursa Metropolitan Municipality, and opened as a \"Traditional Arts Center\" in 2011. Today it is closed; preparations for a new function continue."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan_boyutu",
+      "label": {
+        "tr": "Plan boyutu (kitaptaki değer)",
+        "en": "Plan size (as given in book)"
+      },
+      "value": "12,45 × 3,78",
+      "unit": "m",
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "42"
+        }
+      ],
+      "note": {
+        "tr": "Soğukluk ölçüsüyle tutarsız; bkz. data_quality_notes.",
+        "en": "Inconsistent with the frigidarium size; see data_quality_notes."
+      }
+    },
+    {
+      "key": "soguklik_boyutu",
+      "label": {
+        "tr": "Soğukluk (dıştan dışa)",
+        "en": "Frigidarium (overall)"
+      },
+      "value": "12,45 × 12,67",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "42"
+        }
+      ]
+    },
+    {
+      "key": "soguklik_alani",
+      "label": {
+        "tr": "Soğukluk alanı",
+        "en": "Frigidarium area"
+      },
+      "value": 106,
+      "unit": "m²",
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "42"
+        }
+      ]
+    },
+    {
+      "key": "soguklik_pencere_sayisi",
+      "label": {
+        "tr": "Soğukluk penceresi",
+        "en": "Frigidarium windows"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "42"
+        }
+      ]
+    },
+    {
+      "key": "iliklik_alani",
+      "label": {
+        "tr": "Ilıklık alanı (yaklaşık)",
+        "en": "Tepidarium area (approx.)"
+      },
+      "value": 20,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "42"
+        }
+      ]
+    },
+    {
+      "key": "iliklik_kubbe_dilim",
+      "label": {
+        "tr": "Ilıklık kubbesi dilimi",
+        "en": "Tepidarium dome segments"
+      },
+      "value": 24,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "42"
+        }
+      ]
+    },
+    {
+      "key": "sicaklik_alani",
+      "label": {
+        "tr": "Sıcaklık alanı",
+        "en": "Caldarium area"
+      },
+      "value": 63,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    },
+    {
+      "key": "halvet_sayisi",
+      "label": {
+        "tr": "Halvet sayısı",
+        "en": "Number of secluded cells"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    },
+    {
+      "key": "yikanmalik_eyvan_sayisi",
+      "label": {
+        "tr": "Yıkanmalık eyvan sayısı",
+        "en": "Bathing iwans"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hundi Hatun",
+      "role": {
+        "tr": "Banî (yaygın görüşe göre)",
+        "en": "Founder (by widely accepted view)"
+      }
+    },
+    {
+      "name": "Cezerî Kasım Paşa",
+      "role": {
+        "tr": "Bazı kaynaklara göre banî",
+        "en": "Founder according to some sources"
+      }
+    },
+    {
+      "name": "Ali b. Yusuf el-Fenârî",
+      "role": {
+        "tr": "1470 vakfiyesini tasdik eden Bursa Kadısı",
+        "en": "Bursa Qadi who approved the 1470 charter"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1426",
+      "year": 1426,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "İnşa (yaygın görüşe göre)",
+        "en": "Construction (by widely accepted view)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "41"
+        }
+      ],
+      "note": {
+        "tr": "Hundi Hatun'a atfedilir; bazı kaynaklar Cezerî Kasım Paşa der.",
+        "en": "Attributed to Hundi Hatun; some sources say Cezerî Kasım Paşa."
+      }
+    },
+    {
+      "id": "vakfiye-1470",
+      "year": 1470,
+      "date": "1470-01-18",
+      "hijri": "15 Recep 874",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiyede \"Hammâm-ı Küçük\" olarak kayıtlı",
+        "en": "Recorded as \"Hammâm-ı Küçük\" in the charter"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "41"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1606",
+      "year": 1606,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1622",
+      "year": 1622,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1670",
+      "year": 1670,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1712",
+      "year": 1712,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    },
+    {
+      "id": "toprak-kaymasi-1741",
+      "year": 1741,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Toprak kayması",
+        "en": "Landslide"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde kısmi hasar",
+        "en": "Partial damage in the 1855 earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2009",
+      "year": 2009,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM restorasyonu (2009-2010)",
+        "en": "VGM restoration (2009-2010)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    },
+    {
+      "id": "acilis-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Geleneksel Sanatlar Merkezi olarak açıldı",
+        "en": "Opened as the Traditional Arts Center"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "43"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-yildirim-emir-sultan-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Emir Sultan Külliyesi'nin parçasıdır.",
+        "en": "Part of the Emir Sultan Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "19, 41"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-emir-sultan-kulliyesi",
+      "type": "waqf_income",
+      "description": {
+        "tr": "Vakıf kayıtlarına göre hamam vakıf gelirleriyle inşa edilmiştir.",
+        "en": "Per foundation records the bath was built with foundation revenues."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "41"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-yildirim-emir-sultan-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Hamam, caminin güneyindeki meydanda yer alır.",
+        "en": "The bath stands in the square south of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "41"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, Emir Sultan Camii'nin güneyindeki meydanda kuzey-güney doğrultusunda uzanan taş-tuğla almaşık örgülü bir yapıdır. Kuzey cephedeki basık kemerli, mermer söveli kapıdan girilir. Soğukluk mermer döşeli ve kurşun kaplı kubbelidir; ılıklık kare planlı, sıcaklık ise sekizgen planlıdır. Tüm kubbelerin üzerinde dört köşeli konik aydınlık fenerleri vardır. Bugün kapalıdır.",
+      "en": "The bath stands in the square south of the Emir Sultan Mosque, a north-south building with alternating stone and brick courses. It is entered through a depressed-arched, marble-framed door on the north side. The frigidarium has a marble floor and a lead dome; the tepidarium is square and the caldarium octagonal. Four-sided conical roof lanterns top the domes. It is closed today."
+    },
+    "audio_description_source": "Kitap metnindeki mimari anlatımdan (yalnızca kaynakta yazanlar) yapay zekâ taslağı olarak yazıldı."
+  },
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

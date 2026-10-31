@@ -1,0 +1,336 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-acik-namazgah",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' Yıldırım Camiler bölümünden yapay zekâ ile özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi kitapta verilmemiş; dating ve era null bırakıldı. Kara Timurtaş Paşa'nın dönemi kitaptan çıkarılamıyor.",
+      "Yapı türü: namazgâh için enum'da kod yok, 'diger' kullanıldı; gerekirse sonradan türü gözden geçirin.",
+      "Kitap 'Umur Bey' demektedir; Yıldırım'daki Umur Bey Külliyesi'nin banisiyle aynı kişi olup olmadığı belirtilmiyor, bu yüzden same_founder ilişkisi yazılmadı.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat eklenmeli (kitapta yok, uydurulmadı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli WC) sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "type",
+        "note": "Namazgâh kitapta cami/mescit olarak değil açık hava ibadet alanı olarak tanıtılıyor; enums.json'da karşılığı olmadığından 'diger' seçildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Açık Namazgâh",
+    "en": "Open-Air Prayer Area (Umur Bey)"
+  },
+  "alternate_names": [
+    {
+      "tr": "Umur Bey Namazgâhı",
+      "en": "Umur Bey Open-Air Prayer Area"
+    }
+  ],
+  "type": "namazgah",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "namazgâh",
+    "açık hava",
+    "mermer",
+    "bayram namazı",
+    "ordu"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Namazgâh",
+    "address": "Işıklar Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "214"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.177578,
+      "lng": 29.075482,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Umur Bey (Kara Timurtaş Paşa'nın oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "214"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Türkiye'nin en güzel açık namazgâhlarından biri sayılan yapı, Kara Timurtaş Paşa'nın oğlu Umur Bey tarafından yaptırılmıştır; mihrap duvarı, minber ve vaaz kürsüsü mermerdir.",
+    "en": "Considered one of Turkey's most beautiful open-air prayer areas, it was built by Umur Bey, son of Kara Timurtaş Paşa; its mihrab wall, minbar and sermon platform are marble."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Yapım Amacı",
+        "en": "Overview and Purpose"
+      },
+      "body": {
+        "tr": "Yıldırım, Namazgâh Mahallesi, Işıklar Caddesi üzerindeki yapı Türkiye'nin en güzel açık namazgâhlarından biri kabul edilmektedir. Kara Timurtaş Paşa'nın oğlu Umur Bey tarafından, bayram ve cuma namazlarının yanı sıra ordunun sefere çıkmadan önce namaz kılıp dua etmesi amacıyla inşa ettirilmiştir. Bazı belgelerde ilk yapıldığında beş kapısı bulunduğu belirtilmektedir.",
+        "en": "Located on Işıklar Street in the Namazgah Neighborhood of Yıldırım, this is considered one of Turkey's most beautiful open-air prayer areas. It was built by Umur Bey, son of Kara Timurtaş Paşa, for Eid and Friday prayers and for the army to pray before setting off on campaign. Some documents indicate that it had five doors when first built."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "214"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mihrap duvarı, minberi, vaaz kürsüsü, yan korkulukları, kapıları ve döşemesi tamamen mermerdir. Sofa bölümü 11,66 m derinliğinde ve 11,30 m genişliğindedir. Kuzeydeki mermer söveli kapı hâlen ayaktadır; kapının iki yanında 20 cm yüksekliğinde maksureler vardır. Korkuluklar 74 cm yüksekliğinde ve 15 cm kalınlığındadır. Güney duvarının doğu köşesinde vaaz kürsüsü, batı köşesinde minber bulunur; ikisi de oldukça sağlamdır. Minberin sekiz köşeli külahı, çatısı, taçlı kapı söveleri ve basamakları; vaaz kürsüsünün iki yan korkuluğu ve basamakları hâlen mevcuttur. Mihrap kavsarası altı sıra stalaktitli ve dikdörtgen nişlidir. Minberin külahında Mevlevi sikkesi biçiminde bir alem yer alır.",
+        "en": "The mihrab wall, minbar, sermon platform, side rails, doors and floor are entirely marble. The hall section is 11.66 m deep and 11.30 m wide. The marble-framed doorway on the north side still stands, with 20 cm high maqsuras on either side. The railings are marble, 74 cm high and 15 cm thick. The preaching platform is at the east corner of the south wall and the minbar at the west; both are in remarkably good condition. The minbar's octagonal spire, roof, crowned doorposts and steps, and the two side rails and steps of the preaching platform, are extant. The mihrab hood has six rows of stalactites and a rectangular niche. A finial in the form of a Mevlevi hat is displayed on the minbar's spire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "214-215"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-ve-durum",
+      "order": 3,
+      "title": {
+        "tr": "Kullanım ve Günümüzdeki Durum",
+        "en": "Use and Present Condition"
+      },
+      "body": {
+        "tr": "Namazgâh farklı dönemlerde birçok kez onarım görmüştür. Kuzeydeki kapının söve ve kemerleri onarılarak bugünkü haline getirilmiştir. Mihrap duvarının üzerine günümüzde yapılar inşa edilmiştir ve korkulukların bir kısmı eksiktir. Geçmişte burada cuma ve bayram namazları kılınmış, özellikle ordu sefere çıkarken zafer duası yapılmıştır. 2010'lu yıllarda teravih namazları yeniden kılınmaya başlanmış, bir süre sonra bu uygulama terk edilmiştir. Açık alanda bulunması nedeniyle mevcut mimari kalıntılar zamanla tahrip olmaya devam etmektedir.",
+        "en": "The prayer area has undergone numerous restorations. The doorframe and arches of the north door have been repaired to their current state. Structures have been built over the mihrab wall today, and some railings are missing. In the past Friday and Eid prayers were held here, and victory prayers were recited, especially during military campaigns. Tarawih prayers were resumed in the 2010s but abandoned shortly thereafter. Because it is in an open area, the remains continue to deteriorate."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "215"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "salon_derinlik",
+      "label": {
+        "tr": "Sofa derinliği",
+        "en": "Hall depth"
+      },
+      "value": 11.66,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "214-215"
+        }
+      ]
+    },
+    {
+      "key": "salon_genislik",
+      "label": {
+        "tr": "Sofa genişliği",
+        "en": "Hall width"
+      },
+      "value": 11.3,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "key": "korkuluk_yukseklik",
+      "label": {
+        "tr": "Korkuluk yüksekliği",
+        "en": "Railing height"
+      },
+      "value": 74,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "key": "korkuluk_kalinlik",
+      "label": {
+        "tr": "Korkuluk kalınlığı",
+        "en": "Railing thickness"
+      },
+      "value": 15,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "key": "maksure_yukseklik",
+      "label": {
+        "tr": "Maksure yüksekliği",
+        "en": "Maqsura height"
+      },
+      "value": 20,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "key": "ilk_kapi_sayisi",
+      "label": {
+        "tr": "İlk yapıldığındaki kapı sayısı",
+        "en": "Doors when first built"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "214"
+        }
+      ],
+      "note": {
+        "tr": "Kaynak 'bazı belgelerde' diyor.",
+        "en": "Source says 'some documents'."
+      }
+    }
+  ],
+  "people": [
+    {
+      "name": "Umur Bey",
+      "role": {
+        "tr": "Banî (yaptıran), Kara Timurtaş Paşa'nın oğlu",
+        "en": "Founder, son of Kara Timurtaş Paşa"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "teravih-2010lar",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "2010'lu yıllarda teravih namazları yeniden kılınmaya başlandı, sonra terk edildi",
+        "en": "Tarawih prayers resumed in the 2010s, later abandoned"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "215"
+        }
+      ],
+      "note": {
+        "tr": "Kaynak yalnızca '2010'lu yıllar' diyor; 2010 yılı onluğu temsil eder.",
+        "en": "Source only says 'the 2010s'; 2010 stands for the decade."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Açık havada, mermerden yapılmış bir namazgâhtır. Kuzeydeki mermer söveli kapıdan girilir. Güney duvarında, batı köşesinde sekiz köşeli külahlı minber, doğu köşesinde vaaz kürsüsü bulunur; mihrap kavsarası altı sıra stalaktitlidir. Zemin ve alçak korkuluklar mermerdir.",
+      "en": "An open-air prayer area built of marble. It is entered through the marble-framed door on the north. On the south wall are the minbar with an octagonal spire at the west corner and the sermon platform at the east corner; the mihrab hood has six rows of stalactites. The floor and low railings are marble."
+    },
+    "audio_description_source": "Kitap metninden yapay zekâ taslağı olarak yazıldı."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-acik-namazgah/p003-1.jpg",
+        "original_name": "01 DJI_20240926134233_0028_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "214"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Açık Namazgâh ve çevresi",
+        "en": "The open-air prayer area and surroundings"
+      },
+      "alt": {
+        "tr": "Taş döşeli açık alan demir parmaklıkla çevrili, arka tarafta mermer mihrap duvarı ve minber basamakları var. Çevrede apartmanlar ve bir ağaç görünür.",
+        "en": "A stone-paved open area enclosed by a metal fence, with a marble mihrab wall and minber steps at the back. Apartment buildings and a tree stand around it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-26"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

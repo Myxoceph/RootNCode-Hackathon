@@ -1,0 +1,349 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-seyh-hamit-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 3",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden (s. 433-434) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Yapım yılı kitapta verilmiyor; dating alanı boş bırakıldı.",
+      "Çağ (era) kitapta belirtilmiyor; yapım tarihine göre takım sınıflandırması olarak girildi, gözden geçirilmeli.",
+      "Somuncu Baba'nın dergâhı, çilehanesi ve fırını (caminin batısında) için hedef kayıt bilinmiyor.",
+      "Ulucami ile bağlantı (ilk hutbe) ilişki olarak eklenmedi; uygun ilişki türü yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Ad kitapta 'Şeyh Hamit (Somuncu Baba-Ayazma) Camii' olarak geçiyor; 'Ayazma' bölümünün hangi adın alternatifi olduğu açıklanmıyor, iki alternatif ad olarak girildi. İngilizce başlıkta 'Shaykh Hamit' yazımı kullanılıyor."
+      },
+      {
+        "field": "architecture",
+        "note": "Kitap yapıyı 'dikdörtgen planlı' olarak tanımlar; ana mekân kare (5,70 × 5,70 m) ve son cemaat yeri 3,00 × 5,70 m olarak verilir. Birleşik plan dikdörtgendir; çelişki yoktur."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Hamit (Somuncu Baba-Ayazma) Camii",
+    "en": "Shaykh Hamit (Somuncu Baba-Ayazma) Mosque"
+  },
+  "subtitle": {
+    "tr": "Somuncu Baba adına Hacı Sevindik'in yaptırdığı küçük cami ve haziresi",
+    "en": "Small mosque built by Hacı Sevindik in the name of Somuncu Baba, with its graveyard"
+  },
+  "alternate_names": [
+    {
+      "tr": "Somuncu Baba Camii",
+      "en": "Somuncu Baba Mosque",
+      "note": "Ad kitapta parantez içinde 'Somuncu Baba-Ayazma' olarak verilmiştir"
+    },
+    {
+      "tr": "Ayazma Camii",
+      "en": "Ayazma Mosque",
+      "note": "Ad kitapta parantez içinde 'Somuncu Baba-Ayazma' olarak verilmiştir"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Somuncu Baba",
+    "tek kubbeli",
+    "hazire",
+    "dergâh",
+    "kirpi saçak"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Mollafenâri",
+    "address": "3. Hamam veya Dar Sokak, No: 29A",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "433"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.177754,
+      "lng": 29.058886,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/254375056 ('Somuncu Baba Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Hacı Sevindik",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "433"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bursa Ulucami'nin açılışında ilk hutbeyi okuyan Hamîdüddin Aksarâyî (Somuncu Baba) adına Hacı Sevindik tarafından yaptırılmıştır. Yaklaşık 5,70 × 5,70 m'lik tek kubbeli ibadet mekânı ve kuzeyinde son cemaat yeri vardır; bahçesindeki haziresinde yalnızca iki kabir kalmıştır. Cami yakın zamanda tamamen restore edilmiştir.",
+    "en": "Built by Hacı Sevindik in the name of Hamîdüddin Aksarâyî (Somuncu Baba), who read the first sermon at the opening of Bursa Ulucami. It has a single-domed 5.70 × 5.70 m prayer hall with a narthex to the north; only two graves remain in its garden graveyard. The mosque was recently fully restored."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Banisi ve Somuncu Baba",
+        "en": "Founder and Somuncu Baba"
+      },
+      "body": {
+        "tr": "Cami, Bursa Ulucami'nin açılışında ilk hutbeyi okuyan ve Somuncu Baba adıyla bilinen Hamîdüddin Aksarâyî adına Hacı Sevindik tarafından inşa edilmiştir. Hacı Bayrâm-ı Velî'nin de mürşidi olan Somuncu Baba 1412'de Aksaray'da vefat etmiş ve orada defnedilmiştir. Dergâhı, çilehanesi ve fırını caminin batı tarafındadır.",
+        "en": "The mosque was built by Hacı Sevindik in the name of Hamîdüddin Aksarâyî, known as Somuncu Baba, who read the first sermon at the opening of Bursa Ulucami. Somuncu Baba, also the mentor of Hacı Bayram Veli, died in Aksaray in 1412 and was buried there. His Sufi lodge, ascetic cell and bakery are on the west side of the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "433"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı dikdörtgen planlıdır. 5,70 × 5,70 m'lik kare planlı ana ibadet mekânı tek kubbeyle örtülüdür; kuzeyde 3,00 × 5,70 m ölçülerinde bir son cemaat yeri vardır, duvarları iki sıra tuğla ve düzgün moloz taşla örülmüştür. Doğu, batı ve kuzey duvarlarında sivri kemerli ikişer alt sıra pencere, doğu ve batıda üst sıra pencereler iç mekânı aydınlatır. Kubbe kasnağı basık ve sağırdır, dıştan kirpi saçaklıdır; kubbe kurşunla kaplıdır. Beden duvarları düzgün moloz taş ve iki sıra tuğladan örülmüştür.",
+        "en": "The building has a rectangular plan. The 5.70 × 5.70 m square main hall is covered by a single dome; to the north is a narthex of 3.00 × 5.70 m whose walls are of two rows of brick and regular rubble stone. Two lower rows of pointed-arch windows on the east, west and north walls and upper rows on the east and west light the interior. The dome drum is flat and blind, with sawteeth at the eaves outside; the dome is lead-covered. The main walls are of regular rubble stone and two rows of brick."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "433-434"
+        }
+      ]
+    },
+    {
+      "id": "minare-ve-durum",
+      "order": 3,
+      "title": {
+        "tr": "Minare ve Durum",
+        "en": "Minaret and Condition"
+      },
+      "body": {
+        "tr": "Doğudaki minare sekizgen kaidelidir ve tuğla-taş almaşık teknikle yapılmıştır; silindirik gövdesi tuğladan, sivri külahı kurşunludur. Cami yakın zamanda çevre düzenlemesi yapılarak tamamen restore edilmiş, bakımlıdır ve ibadete açıktır.",
+        "en": "The minaret on the east has an octagonal base and is built in alternating brick and stone; its cylindrical shaft is of brick and its pointed spire is lead-covered. The mosque recently had landscaping and a full restoration; it is well maintained and open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "434"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Şeyh Hamit (Somuncu Baba) Haziresi",
+        "en": "Shaykh Hamit (Somuncu Baba) Graveyard"
+      },
+      "body": {
+        "tr": "Caminin bahçesinde zamanla bir hazire oluştuğu bilinmektedir. Sonradan düzenlenmiş hazirede yalnızca iki kabir vardır: birinin ayak tarafındaki taşta özensizce 'Allah' ve 'Muhammed' yazıları, diğerinin ayak tarafında kırık bir kitabe parçası bulunur. Cami duvarına asılı halde hazireden kalan kırık mezar taşı parçaları sergilenmektedir. Hazirede kimlerin medfun olduğu tespit edilememiştir.",
+        "en": "A graveyard is known to have formed over time in the garden of the mosque. In the later-arranged graveyard there are only two graves: the upright stone at the foot of one carelessly bears the words 'Allah' and 'Muhammad', and a broken inscription fragment is placed at the foot of the other. Broken gravestone pieces from the graveyard are displayed hanging on the mosque wall. Who is buried in the graveyard has not been determined."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "434"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ana_mekan",
+      "label": {
+        "tr": "Ana ibadet mekânı",
+        "en": "Main prayer hall"
+      },
+      "value": "5,70 × 5,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "433"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_yeri",
+      "label": {
+        "tr": "Son cemaat yeri",
+        "en": "Narthex"
+      },
+      "value": "3,00 × 5,70",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "433"
+        }
+      ]
+    },
+    {
+      "key": "hazire_kabir_sayisi",
+      "label": {
+        "tr": "Haziredeki kabir sayısı",
+        "en": "Graves in the graveyard"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "434"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Sevindik",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Hamîdüddin Aksarâyî (Somuncu Baba)",
+      "role": {
+        "tr": "Caminin adına yapıldığı zat; Ulucami'nin açılışında ilk hutbeyi okudu, 1412'de Aksaray'da vefat etti",
+        "en": "Saint in whose name the mosque was built; read the first sermon at the Ulucami opening, died in Aksaray in 1412"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "somuncu-baba-vefat-1412",
+      "year": 1412,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Somuncu Baba Aksaray'da vefat etti ve orada defnedildi",
+        "en": "Somuncu Baba died in Aksaray and was buried there"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "433"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şeyh Hamit Camii küçük, tek kubbeli bir camidir. Kare ibadet mekânının kuzeyinde bir son cemaat yeri vardır. Duvarlar moloz taş ve iki sıra tuğladan örülüdür; kubbe kurşun kaplıdır. Doğuda sekizgen kaideli, tuğla gövdeli bir minare yükselir. Bahçede iki kabirli küçük bir hazire ve duvarda sergilenen kırık mezar taşı parçaları vardır.",
+      "en": "Shaykh Hamit Mosque is a small single-domed mosque. A narthex lies to the north of the square prayer hall. Walls are rubble stone with two rows of brick and the dome is lead-covered. A brick minaret on an octagonal base rises on the east. The garden holds a small graveyard with two graves, and broken gravestone fragments are displayed on the wall."
+    },
+    "audio_description_source": "Bursa Vakıf Eserleri I. Cilt mimari betimlemesi (yalnızca kitaptaki bilgilerle)"
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1e00PZUYMZpqpCLbfIw-IC0Uhb8p2uSUO",
+    "book_layout_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+    "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyh-hamit-camii/p040-1.jpg",
+        "original_name": "02_5.jpeg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "433"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şeyh Hamit Camii ve minaresi",
+        "en": "Shaykh Hamit Mosque and its minaret"
+      },
+      "alt": {
+        "tr": "Kubbeli taş ve tuğla yapının önünde uzun tuğla gövdeli bir minare yükselir. Çevresinde ağaçlar, arkada yamaca yayılan evler ve bulutlu gökyüzü görünür.",
+        "en": "A domed stone-and-brick building with a tall brick minaret in front. Trees surround it, with houses spreading up the hillside and a cloudy sky behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-seyh-hamit-camii/p041-1.jpg",
+        "original_name": "03_6.jpg",
+        "book_pdf_file_id": "1cukz64iAVqHUdRbZFJIEj9Gf5j70g5Ag",
+        "book_pdf_name": "10-Osmangazi Camiler ve Hazireler 3.pdf",
+        "book_page": "434"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeyh Hamit Camii'nin çinili mihrabı ve minberi",
+        "en": "Tiled mihrab and minbar of Shaykh Hamit Mosque"
+      },
+      "alt": {
+        "tr": "Mavi çinilerle kaplı yüksek mihrabın üstünde büyük bir avize asılıdır; sağda ahşap minber ve kırmızı perde görünür. Pencereler kemerli, halı krem renkli ve kırmızı desenlidir.",
+        "en": "A tall mihrab covered in blue tiles with a large chandelier hanging above. A wooden minbar and red curtain are on the right, arched windows beside, and a cream carpet with red patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    }
+  ],
+  "archive_media": []
+}

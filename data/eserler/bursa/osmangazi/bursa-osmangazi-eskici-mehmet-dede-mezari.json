@@ -1,0 +1,393 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-eskici-mehmet-dede-mezari",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-15",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "türbeler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Türbeler ve Mezarlar (Osmangazi) bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kubbeli Kümbet'in kendi kaydı gerekebilir (kitapta ayrı bölümü olup olmadığı kontrol edilmeli).",
+      "Kabrin fiziksel biçimi (sanduka, örtü vb.) kitapta anlatılmıyor.",
+      "Kabir taşının özgün yazısı kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik (rampa, düzayak giriş vb.) kitapta yok; sahada doğrulanmalı.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Başlıkta 'Eskici Mehmet Dede Mezarı', metinde 'Eskici Mehmed Dede'nin kabri' yazıyor; yazım farkı saklandı."
+      },
+      {
+        "field": "type",
+        "note": "Kayıt bir türbe binası değil, hazire içindeki bir kabir olduğu için type 'hazire' seçildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Eskici Mehmet Dede Mezarı",
+    "en": "Eskici Mehmet Dede Grave"
+  },
+  "subtitle": {
+    "tr": "Kubbeli Kümbet'in doğusundaki hazirede, Üftâde müridi Eskici Mehmed Dede'nin kabri",
+    "en": "Grave of Eskici Mehmed Dede, a disciple of Üftâde, in the graveyard east of the Domed Tomb"
+  },
+  "alternate_names": [
+    {
+      "tr": "Eskici Mehmed Dede Kabri",
+      "en": "Grave of Eskici Mehmed Dede",
+      "note": "Metin gövdesinde 'Mehmed Dede', başlıkta 'Mehmet Dede'"
+    }
+  ],
+  "type": "hazire",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Eskici Mehmed Dede",
+    "Üftâde",
+    "Mahmud Hüdâyî",
+    "hazire",
+    "Kubbeli Kümbet"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Tahtakale Mahallesi",
+    "address": "Veziri Caddesi No: 43",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "498"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 988 / M. 1580 (vefat)",
+      "en": "AH 988 / AD 1580 (death)"
+    },
+    "start_year": 1580,
+    "end_year": 1580,
+    "hijri_year": 988,
+    "century": 16,
+    "basis": {
+      "tr": "Kabir taşındaki H. 988 tarihi; vefat yılı.",
+      "en": "The AH 988 date on the gravestone; year of death."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "498"
+      }
+    ]
+  },
+  "founder": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Tahtakale'de, 'Kubbeli Kümbet' denen tarihî yapının doğusundaki hazirede bulunan Eskici Mehmed Dede'nin kabri. Mahmud Hüdâyî'nin irşadına vesile olduğu anlatılan Üftâde müridi, 1580'de vefat etmiştir. Hazire 2006'da Osmangazi Belediyesi tarafından restore edilmiştir.",
+    "en": "The grave of Eskici Mehmed Dede, in the graveyard east of the historical structure called the 'Domed Tomb' in Tahtakale. A disciple of Üftâde, said to have led to the guidance of Mahmud Hüdâyî, he died in 1580. The graveyard was restored by Osmangazi Municipality in 2006."
+  },
+  "sections": [
+    {
+      "id": "kisi",
+      "order": 1,
+      "title": {
+        "tr": "Eskici Mehmed Dede",
+        "en": "Eskici Mehmed Dede"
+      },
+      "body": {
+        "tr": "Aslen Amasyalı olduğu bilinen Mehmed Dede, H. 988 / M. 1580'de vefat etmiş ve buraya defnedilmiştir. Zaman zaman bedestende ticaret yapmış, bazen eskicilik yapmıştır; çoğunlukla dünyevi işlerden elini eteğini çekerek münzevi bir hayat seçtiği rivayet edilmektedir.",
+        "en": "Known to be originally from Amasya, Mehmed Dede died in AH 988 / AD 1580 and was buried here. He traded in the covered bazaar at times and sometimes dealt in second-hand goods; it is reported that he mostly kept away from worldly affairs and lived a solitary life."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ]
+    },
+    {
+      "id": "konum",
+      "order": 2,
+      "title": {
+        "tr": "Konum",
+        "en": "Location"
+      },
+      "body": {
+        "tr": "Kabir, 'Kubbeli Kümbet' olarak da adlandırılan ve bir zaviye olduğu düşünülen tarihî yapının doğusundaki hazirededir.",
+        "en": "The grave lies in the graveyard east of the historical structure also called the 'Domed Tomb', which is thought to have been a zawiya."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon",
+      "order": 3,
+      "title": {
+        "tr": "Restorasyon ve Aş Evi",
+        "en": "Restoration and Soup Kitchen"
+      },
+      "body": {
+        "tr": "2006'da Osmangazi Belediyesi hazireyi ve yanındaki kubbeli tarihî yapıyı restore ederek düzenlemiştir. Bu çalışmalarda güneyinde daha önce var olan, yıkılmış bir sivil mimari örneği yeniden inşa edilmiş ve 'Eskici Mehmed Dede Aş Evi' adıyla hizmete açılmıştır.",
+        "en": "In 2006 Osmangazi Municipality restored and rearranged the graveyard and the domed historical building beside it. In this work a civil building that once stood to the south but had been demolished was rebuilt and opened as the 'Eskici Mehmed Dede Soup Kitchen'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "kerametler",
+      "title": {
+        "tr": "Kerametleri ve Üftâde menkıbesi",
+        "en": "His miracles and the Üftâde anecdote"
+      },
+      "body": {
+        "tr": "Kerametlerine dair pek çok menkıbe anlatılır. Üftâde Hazretleri ile arasında geçen ve sonradan Aziz Mahmud Hüdâyî'nin irşadına vesile olduğu söylenen menkıbe halk arasında en çok bilinenidir.",
+        "en": "Many anecdotes are told about his miracles. The story involving him and Hazrat Üftâde, said to have later led to the guidance of Aziz Mahmud Hüdâyî, is the best known among the public."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "vefat_yili",
+      "label": {
+        "tr": "Vefat yılı",
+        "en": "Year of death"
+      },
+      "value": "H. 988 / M. 1580",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ]
+    },
+    {
+      "key": "as_evi_acilis",
+      "label": {
+        "tr": "Restorasyon yılı",
+        "en": "Restoration year"
+      },
+      "value": 2006,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Eskici Mehmed Dede",
+      "role": {
+        "tr": "Kabri burada olan Üftâde müridi",
+        "en": "Disciple of Üftâde whose grave is here"
+      }
+    },
+    {
+      "name": "Hazret-i Üftâde",
+      "role": {
+        "tr": "Eskici Mehmed Dede'nin şeyhi",
+        "en": "Shaykh of Eskici Mehmed Dede"
+      }
+    },
+    {
+      "name": "Hüdâyî Mahmud Dede",
+      "role": {
+        "tr": "Eskici Mehmed Dede'nin irşat ettiği kişi (kabir taşına göre)",
+        "en": "Person guided by Eskici Mehmed Dede, per the gravestone"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kabir-tasi",
+      "location": {
+        "tr": "Kabir taşı",
+        "en": "Gravestone"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": "Hazret-i Üftâde müritlerinden, Hüdâyî Mahmud Dede’yi irşat eden Eskici Mehmed Dede H. 988.",
+      "translation": {
+        "tr": "Hazret-i Üftâde müritlerinden, Hüdâyî Mahmud Dede'yi irşat eden Eskici Mehmed Dede H. 988.",
+        "en": "Eskici Mehmed Dede, one of the disciples of Hazrat Üftâde, who guided Hüdâyî Mahmud Dede, AH 988."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 988,
+        "gregorian": "1580"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ],
+      "note": {
+        "tr": "Kitap taşın dilini belirtmiyor; metin kitapta Türkçe aktarılmış olarak veriliyor, özgün yazı aktarımı yok.",
+        "en": "The book does not state the stone's language and gives the text only in Turkish rendering, with no original transliteration."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vefat",
+      "year": 1580,
+      "date": null,
+      "hijri": "988",
+      "type": "record",
+      "title": {
+        "tr": "Eskici Mehmed Dede vefat etti ve buraya defnedildi",
+        "en": "Eskici Mehmed Dede died and was buried here"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Osmangazi Belediyesi hazireyi ve kubbeli yapıyı restore etti; Aş Evi yeniden inşa edildi",
+        "en": "Osmangazi Municipality restored the graveyard and domed building; the Soup Kitchen was rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-kubbeli-kumbet",
+      "target_name": {
+        "tr": "Kubbeli Kümbet"
+      },
+      "type": "same_complex",
+      "description": {
+        "tr": "Kabir, 'Kubbeli Kümbet' denen ve zaviye olduğu düşünülen tarihî yapının doğusundaki hazirededir.",
+        "en": "The grave is in the graveyard east of the historical structure called the 'Domed Tomb', thought to be a zawiya."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-eskici-mehmed-dede-as-evi",
+      "target_name": {
+        "tr": "Eskici Mehmed Dede Aş Evi"
+      },
+      "type": "urban_context",
+      "description": {
+        "tr": "Güneyde yeniden inşa edilen sivil mimari yapı 'Eskici Mehmed Dede Aş Evi' adıyla hizmet vermektedir.",
+        "en": "A civil building rebuilt to the south serves as the 'Eskici Mehmed Dede Soup Kitchen'."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "498"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Eskici Mehmed Dede'nin kabri, Veziri Caddesi'nde, Kubbeli Kümbet denen tarihî yapının doğusundaki bir hazirededir. Kabrin üzerinde bir kabir taşı bulunur. Güneyde yeniden inşa edilmiş, Aş Evi olarak hizmet veren bir sivil mimari yapı yer alır.",
+      "en": "The grave of Eskici Mehmed Dede lies in a graveyard east of the historical structure known as the Domed Tomb, on Veziri Street. It has a gravestone. To the south stands a rebuilt civil building serving as a soup kitchen."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı (yalnızca kaynakta geçen bilgiler)."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "10j2DkHdhrRARFmILgsplg9fNyvMKVU58",
+    "book_layout_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+    "book_pdf_name": "6-türbeler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-eskici-mehmet-dede-mezari/p009-1.jpg",
+        "original_name": "ERD07867 kopya.jpg",
+        "book_pdf_file_id": "1iYlmuZv6fBxQuAmC4Fogq6gtvV9GjiK4",
+        "book_pdf_name": "6-türbeler.pdf",
+        "book_page": "498"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Eskici Mehmet Dede kabri ve demir korkuluk",
+        "en": "Eskici Mehmet Dede grave and iron railing"
+      },
+      "alt": {
+        "tr": "Beyaz mermer bir kabir çerçevesi yeşil demir korkuluklarla çevrili. Korkulukta sarı bir isim levhası var; arkada ağaç ve eski evler görünür.",
+        "en": "A white marble grave surround enclosed by green iron railings with a yellow name plate. A tree and old houses can be seen behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2018-02-05"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

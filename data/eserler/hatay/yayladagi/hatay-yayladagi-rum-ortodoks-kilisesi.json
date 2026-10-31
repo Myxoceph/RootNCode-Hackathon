@@ -1,0 +1,329 @@
+{
+  "schema_version": "1.0",
+  "id": "hatay-yayladagi-rum-ortodoks-kilisesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-19",
+    "updated_at": "2026-10-22",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Hatay – Kiliseler",
+    "text_origin": "Metinler 'Hatay Vakıf Eserleri' kitabındaki Rum Ortodoks Kilisesi bölümünden (s. 450-451) ve bölüm özeti sayfasından özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi yalnızca mimariye dayalı tahmin; arşiv belgesiyle teyit edilmeli.",
+      "Yaptıran, mimar ve vakıf bilgisi kaynakta yok.",
+      "Yapının türü enums.json'da yok; en yakın kod 'diger' kullanıldı.",
+      "'Kurtuluş' mahalle adı mı, yoksa yalnızca bölüm özetindeki bir ifade mi, kaynakta açık değil.",
+      "Koordinat kaynakta yok; sahada ya da harita kaynağından doğrulanarak eklenmeli.",
+      "Adres, kitabın bölüm özeti sayfasından alındı (eserin kendi sayfalarından değil); doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada doğrulanmalı.",
+      "Metin ve fotoğraflar 2023 Kahramanmaraş depremlerinden önceki durumu anlatıyor; eserin güncel durumu (hasar, kapalı/açık) doğrulanmalı."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location",
+        "note": "Bölüm özeti sayfasının İngilizce sütunu (s. 455) Rum Ortodoks Kilisesi için 'İskenderun District 2, Plot 1647' yazıyor; bu Rum Katolik Kilisesi'nin parseliyle aynıdır. Türkçe özet (s. 454) Yayladağı Kurtuluş 113 ada 1 parsel veriyor ve eserin kendi metni de Yayladağı diyor; Türkçe değer korundu."
+      },
+      {
+        "field": "sections[ic-mekan]",
+        "note": "'Paşalı ahşap tavan' ifadesi İngilizce metinde 'ceiling covering with pasha' diye çevrilmiş; terimin anlamı kaynakta açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Rum Ortodoks Kilisesi",
+    "en": "Greek Orthodox Church"
+  },
+  "subtitle": {
+    "tr": "Eğimli arazide doğu-batı doğrultulu, tek nefli taş kilise",
+    "en": "A single-nave stone church lying east-west on sloping land"
+  },
+  "alternate_names": [],
+  "type": "kilise",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kilise",
+    "Yayladağı",
+    "tek nefli",
+    "moloz taş",
+    "ara kat"
+  ],
+  "location": {
+    "region": "akdeniz",
+    "city": "hatay",
+    "district": "Yayladağı",
+    "neighborhood": null,
+    "address": "Yayladağı, Kurtuluş, 113 Ada 1 Parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "451"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Tahminen 19. yüzyılın son çeyreği",
+      "en": "Probably last quarter of the 19th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitabe yok; kitap mimari ve bezeme özelliklerine göre 19. yüzyılın son çeyreği olabileceğini söylüyor. Kesin yıl verilmediği için yıllar boş.",
+      "en": "No inscription; the book suggests the last quarter of the 19th century from architecture and decoration. No exact year, so years are empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-hatay",
+        "pages": "451"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kesin yapım tarihini bildiren kitabesi olmayan kilise, mimari ve bezeme özelliklerine göre 19. yüzyılın son çeyreğinde yapılmış olabilir. 7,75 x 18,84 m ölçülerinde, tek nefli naos ve dışa taşkın apsisten oluşan, kaba yonu moloz taşla örülü sade bir yapıdır.",
+    "en": "With no inscription giving its exact date, the church may have been built in the last quarter of the 19th century judging by its architecture and decoration. A plain rough-rubble masonry building of 7.75 x 18.84 m, with a single-nave naos and a protruding apse."
+  },
+  "sections": [
+    {
+      "id": "tarih-ve-konum",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihleme",
+        "en": "Location and Dating"
+      },
+      "body": {
+        "tr": "Yayladağı ilçesi, 113 ada 1 numaralı parselde, eğimli arazi üzerinde doğu-batı doğrultusunda uzanır. Kesin yapı tarihini bildiren bir kitabesi yoktur; mimari ve bezeme özellikleri değerlendirildiğinde 19. yüzyılın son çeyreğinde yapılmış olabileceği düşünülebilir.",
+        "en": "It lies east-west on sloping land at block 113, plot 1, Yayladağı district. There is no inscription giving the exact date; judging by its architectural and decorative features it may have been built in the last quarter of the 19th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "451"
+        }
+      ]
+    },
+    {
+      "id": "plan-ve-yapi",
+      "order": 2,
+      "title": {
+        "tr": "Plan ve Yapı",
+        "en": "Plan and Structure"
+      },
+      "body": {
+        "tr": "Duvarlar oldukça sade ve yalın, kaba yonu moloz taştandır. Yapı 7,75 m x 18,84 m ölçülerinde dikdörtgen planlıdır; tek nefli naos ve dışa taşırılmış yarım daire apsisten oluşur. Apsisin üç penceresi küçük ve dikdörtgendir; apsise giriş kesme taş kemerle sağlanır ve kilit taşı dışarı taşar. Kilisenin ana girişi kuzey bölümünde, ikinci girişi güney cephesindeki bahçeye açılan bölümdedir. Kilise kagir yapı grubundadır.",
+        "en": "The walls are very plain, of rough rubble stone. The building has a rectangular plan of 7.75 x 18.84 m, consisting of a single-nave naos and a semicircular protruding apse. The apse's three windows are small and rectangular; the apse is entered through a cut-stone arch whose keystone protrudes. The main entrance is in the north part and the second opens to the garden on the south façade. The church belongs to the masonry building group."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "451"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Batı bölümünde ahşap doğramalı, üç dikme ayak üzerinde duran bir ara kat vardır; zemini ahşap, korkulukları ince çıtadandır. Ara kata çıkan ahşap merdiven güney duvarına bitişiktir ve bu bölümü dört pencere aydınlatır. Vaftiz teknesi kuzeybatı köşede, ahşap galerinin altında, merdivenin arkasındadır. Apsis içindeki betonarme altar masası 100,5 x 117,5 cm'dir. Zemin kaplaması erken dönemlidir, özgün halini korur; 20x20 cm karolarla çeşitli desenler oluşturulmuştur. Üst örtü ahşap kırma çatı olup alaturka kiremit kaplıdır; tavan erken dönem özellikli paşalı ahşap kaplamadır.",
+        "en": "In the west part is a mezzanine with wooden joinery on three pillars; its floor is wooden and railings of thin laths. The wooden staircase to the mezzanine abuts the south wall and four windows light this part. The baptismal vessel is in the northwest corner under the wooden gallery, behind the staircase. The reinforced-concrete altar table in the apse measures 100.5 x 117.5 cm. The floor covering is early and keeps its original form, with various patterns of 20x20 cm tiles. The roof is a wooden hipped roof with Turkish-style tiles; the ceiling is an early-period wooden covering with 'pasha' (paşalı) boards."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "451"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "olcu",
+      "label": {
+        "tr": "Yapı ölçüleri",
+        "en": "Dimensions"
+      },
+      "value": "7,75 m x 18,84 m",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "451"
+        }
+      ]
+    },
+    {
+      "key": "nef",
+      "label": {
+        "tr": "Nef sayısı",
+        "en": "Number of naves"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "451"
+        }
+      ]
+    },
+    {
+      "key": "apsis_pencere",
+      "label": {
+        "tr": "Apsis pencere sayısı",
+        "en": "Apse windows"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "451"
+        }
+      ]
+    },
+    {
+      "key": "giris_sayisi",
+      "label": {
+        "tr": "Giriş sayısı",
+        "en": "Entrances"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "451"
+        }
+      ]
+    },
+    {
+      "key": "altar_olcu",
+      "label": {
+        "tr": "Altar masası (betonarme)",
+        "en": "Altar table (reinforced concrete)"
+      },
+      "value": "100,5 cm x 117,5 cm",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "451"
+        }
+      ]
+    },
+    {
+      "key": "zemin_karo",
+      "label": {
+        "tr": "Zemin karoları",
+        "en": "Floor tiles"
+      },
+      "value": "20x20 cm",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "451"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Duvar malzemesi",
+        "en": "Wall material"
+      },
+      "value": "Kaba yonu moloz taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-hatay",
+          "pages": "451"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [
+    {
+      "feature": "ara-kat",
+      "title": {
+        "tr": "Üç ayak üzerinde ahşap ara kat",
+        "en": "Wooden mezzanine on three pillars"
+      },
+      "hint": {
+        "tr": "Batı bölümündeki ahşap ara kata ve altındaki vaftiz teknesine bakın.",
+        "en": "Look at the wooden mezzanine in the west and the baptismal vessel beneath it."
+      },
+      "section_id": "ic-mekan"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Rum Ortodoks Kilisesi, Yayladağı'nda eğimli bir arazide doğu-batı doğrultusunda uzanır. Kaba yonu moloz taştan örülmüş sade bir yapıdır; 7,75 metreye 18,84 metre ölçülerinde, tek nefli ve dışa taşkın yarım daire bir apsisi vardır. Apsisin üç küçük dikdörtgen penceresi bulunur. Ana giriş kuzeyde, ikinci giriş güneyde bahçeye açılır. Batıda üç ayak üzerinde ahşap bir ara kat yer alır. Çatısı ahşap kırma çatı olup alaturka kiremitle kaplıdır.",
+      "en": "The Greek Orthodox Church lies east-west on sloping land in Yayladağı. It is a plain building of rough rubble stone measuring 7.75 by 18.84 metres, with a single nave and a protruding semicircular apse with three small rectangular windows. The main entrance is on the north and a second opens to the garden on the south. In the west is a wooden mezzanine on three pillars. The roof is a wooden hipped roof covered with Turkish-style tiles."
+    },
+    "audio_description_source": "Kitabın mimari tarifinden (vk-hatay, s. 451) yazılmıştır; kaynakta olmayan bilgi eklenmemiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/hatay/images/hatay-yayladagi-rum-ortodoks-kilisesi/p226-1.jpg",
+        "book_pdf_name": "hatay-vakif-eserleri.pdf",
+        "book_page": "450"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kilisenin moloz taş cephesi ve girişi",
+        "en": "Rubble-stone façade and entrance of the church"
+      },
+      "alt": {
+        "tr": "Moloz taştan örülmüş uzun duvar; ortada kemerli ahşap çift kanatlı kapı ve taş basamaklar, yanlarda taş çerçeveli kemerli pencereler, kiremit çatı, önünde parke sokak.",
+        "en": "A long rubble-stone wall with a wooden double door in an arch with stone steps, arched windows in stone frames, a tiled roof and a cobbled street in front."
+      },
+      "credit": "Vakıf Katılım – Hatay İli Vakıf Eserleri",
+      "photographer": "Berica Nevin Berberoğlu Şen",
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

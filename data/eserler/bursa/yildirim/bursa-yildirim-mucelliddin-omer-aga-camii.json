@@ -1,0 +1,537 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-yildirim-mucelliddin-omer-aga-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Yıldırım Camiler",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri II. Cilt' kitabındaki Yıldırım Camiler bölümünden (s. 249-251) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita üzerinden belirlenip location.coordinates eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli.",
+      "Kesin ilk inşa yılı kitapta yok; yalnızca 'düşünülmektedir' ifadesiyle 1500'den önce deniyor.",
+      "1952 onarım levhasının metni kitapta verilmiyor; kitabe kaydı açılmadı.",
+      "Mihrap üstündeki panoda kelime-i şehadet yazdığı söyleniyor, metni/yazı türü verilmiyor; kitabe kaydı açılmadı.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Kitap başlığı 'Mücelliddîn Ömer Ağa (Resulzade)'; Mücelliddin Ömer Ağa'nın kim olduğu metinde anlatılmıyor.",
+      "Yıl verilmeyen olaylar (inşa öncesi tarih aralığı, yol/afet vb.) zaman çizelgesine girilmedi; bilgi bölüm metinlerinde yer alır."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap 'Kadı Ali Çelebi' tarafından yapıldığını 'düşünülmektedir' ifadesiyle verir; güven probable. Bugünkü yapıyı yaptıran Hacı Resul Mehmed Efendi (1929) founder olarak yazılmadı, timeline ve people'a girdi."
+      },
+      {
+        "field": "inscriptions[cin-suresi-18]",
+        "note": "Kitap ayeti 'Cin suresi 18. ayet' olarak, sülüs hatla yazılı biçimde verir; mealde İngilizce metin 'Surely the mosques belong to Allah...' der. Türkçe meal kitaptan alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mücelliddin Ömer Ağa Camii",
+    "en": "Mücelliddin Ömer Ağa Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Resulzade Camii",
+      "en": "Resulzade Mosque",
+      "note": "Başlıkta parantez içinde."
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "Mücelliddin Ömer Ağa",
+    "Resulzade",
+    "Kadı Ali Çelebi",
+    "1855 depremi",
+    "1929 yeniden inşa",
+    "Yıldırım"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Yıldırım",
+    "neighborhood": "Hacı Seyfettin",
+    "address": "Hacı Seyfettin Mahallesi, 2. Sümbül Sokak, No: 13",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "249"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.184737,
+      "lng": 29.080953,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/247424181 ('Mücelliddin Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1500'den önce (ahşap yapı); 1929'da yeniden inşa",
+      "en": "Before 1500 (wooden building); rebuilt in 1929"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Kitap, kitabesiz caminin 1500'den önce 'Kadı Ali Çelebi' tarafından ahşap malzeme ve kırma çatılı olarak yaptırıldığının düşünüldüğünü söyler; kesin yıl verilmez. Bugünkü yapı 1929 yeniden inşasıdır.",
+      "en": "The book says the mosque, which has no inscription, is believed to have been built before 1500 by 'Kadı Ali Çelebi' in wood with a hipped roof; no exact year is given. The present building is the 1929 reconstruction."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "249"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kadı Ali Çelebi",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c2",
+        "pages": "249"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "1500'den önce Kadı Ali Çelebi tarafından ahşap olarak yaptırıldığı düşünülen cami; 1855 depreminde ağır hasar görmüş, 1929'da Hacı Resul Mehmed Efendi tarafından kubbeli olarak yeniden inşa edilmiştir. 60 m² kare planlı harimi kurşun kaplı kubbeyle örtülüdür.",
+    "en": "A mosque believed to have been built of wood before 1500 by Kadı Ali Çelebi; badly damaged in the 1855 earthquake, it was rebuilt with a dome in 1929 by Hacı Resul Mehmed Efendi. Its 60 m² square prayer hall has a lead-covered dome."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Cami Yıldırım ilçesi Hacı Seyfettin Mahallesi, 2. Sümbül Sokak, No: 13'tedir. Kitabesi yoktur; 1500'den önce 'Kadı Ali Çelebi' tarafından ahşap malzeme ve kırma çatılı olarak yaptırıldığı düşünülmektedir. 1855 depreminde ağır hasar görmüş, uzun süre harabe kalmış, 1929'da Bursalı ipek tüccarı ve fabrikatör Hacı Resul Mehmed Efendi tarafından yeniden inşa edilmiştir. Bu inşada beden duvarları ve kubbe kasnaklarında iki sıra tuğla, bir sıra küfeki ve moloz taştan almaşık örgü kullanılmış, cami kubbeyle örtülmüştür.",
+        "en": "The mosque is at 2nd Sümbül Street, No. 13, Hacı Seyfettin Neighborhood, Yıldırım. It has no inscription and is believed to have been built before 1500 by 'Kadı Ali Çelebi' in wood with a hipped roof. Severely damaged in the 1855 earthquake, it lay in ruins a long time and was rebuilt in 1929 by Hacı Resul Mehmed Efendi, a Bursa silk merchant and factory owner. The rebuilding used alternating courses of two rows of brick and one row of limestone and rubble in the walls and dome drums, and covered the mosque with a dome."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "249-250"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-ve-harim",
+      "order": 2,
+      "title": {
+        "tr": "Son Cemaat Yeri ve Harim",
+        "en": "Narthex and Prayer Hall"
+      },
+      "body": {
+        "tr": "Küçük bir avluya sahip caminin kuzeyindeki kalkan duvarlı son cemaat yerine avludan birkaç basamakla çıkılır; yan cepheleri kapalıdır, ön cephesi üç sivri kemerli açıklıktır ve açıklıklar ahşap doğrama ve camla kapatılmıştır. Sağ duvarda 1952 onarımına ait bir kitabe levhası vardır. 60 m² kare planlı harime mermer söveli, basık kemerli çift kanatlı ahşap kapıdan girilir. Harim, altıgen kasnaklı kurşun kaplı kubbeyle örtülüdür; kubbe dışındaki çatı da kurşun kaplıdır, çatı kenarlarında ve kubbe eteklerinde iki sıra kirpi saçak vardır.",
+        "en": "The mosque has a small courtyard; the parapet-walled narthex to the north is reached by a few steps from it, its side façades are closed and its front has three pointed-arched openings enclosed with woodwork and glass. On the right wall is a plaque for the 1952 repair. The 60 m² square prayer hall is entered through a double-leafed wooden door with a marble frame and depressed arch. It is covered by a lead-clad dome on a hexagonal drum; the rest of the roof is also lead-covered, with two rows of sawteeth at the roof edges and dome skirts."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "250"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "İç mekân dördü alt sırada olmak üzere on bir pencereyle aydınlanır; alt pencereler dikdörtgen, taş söveli, demir parmaklıklı ve sivri kemer alınlıklıdır, üst pencereler yuvarlak kemerli, alçı şebekeli ve revzenlidir, alınlıklarında tuğla bezemeler görülür. Minber ve kürsü ahşaptır. Beyaz sıvalı, dikdörtgen çerçeveli, altı sıra mukarnaslı mihrap nişinin iki yanında sütunce düzenlemeleri vardır; mihrap kavsarası üstündeki panoda kelime-i şehadet yazılıdır. Ahşap direkler üzerindeki hanımlar mahfili harim girişinin üzerindedir.",
+        "en": "The interior is lit by eleven windows, four in the lower row; the lower windows are rectangular with stone frames, iron grilles and pointed-arch pediments, the upper ones round-arched with plaster grilles and decorative panes, with brick decoration on the pediments. The minbar and pulpit are wooden. The white-plastered, rectangular-framed mihrab niche has six rows of muqarnas and flanking column-like elements; the panel above the mihrab hood bears the Kalima al-Shahada. The women's gallery on wooden pillars is above the prayer-hall entrance."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "250-251"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "order": 4,
+      "title": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "body": {
+        "tr": "Kuzeybatı köşedeki minare, iki sıra küfeki taş ve iki sıra tuğlayla örülmüş altıgen bir kaide üzerindedir. Gövde silindirik ve tuğladır, şerefe altı üç sıra mukarnasla bezelidir, konik sivri külah kurşun kaplıdır.",
+        "en": "The minaret in the northwest corner stands on a hexagonal base of two rows of limestone and two of brick. The shaft is cylindrical brick, below the balcony are three rows of muqarnas, and the conical spire is lead-covered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "251"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 5,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "1793 kayıtlarında caminin iç nakışları, döşemeleri ve çevre duvarlarının bakım ve onarım gördüğü belirtilir. Yapı 1952'de bir kez daha onarılmış, 2008-2009'da Vakıflar Bölge Müdürlüğü tarafından kapsamlı restore edilmiştir.",
+        "en": "Records from 1793 say the mosque's interior decoration, floors and surrounding walls were maintained and repaired. It was repaired again in 1952 and comprehensively restored by the Regional Directorate of Foundations in 2008-2009."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "251"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "adres",
+      "label": {
+        "tr": "Adres",
+        "en": "Address"
+      },
+      "value": "Hacı Seyfettin Mahallesi, 2. Sümbül Sokak, No: 13",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "249"
+        }
+      ]
+    },
+    {
+      "key": "harim_alani",
+      "label": {
+        "tr": "Harim alanı",
+        "en": "Prayer hall area"
+      },
+      "value": 60,
+      "unit": "m²",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "250"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "İç mekân pencere sayısı",
+        "en": "Number of interior windows"
+      },
+      "value": 11,
+      "unit": "adet",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "251"
+        }
+      ],
+      "note": {
+        "tr": "Dördü alt sırada.",
+        "en": "Four of them in the lower row."
+      }
+    },
+    {
+      "key": "mihrap_mukarnas",
+      "label": {
+        "tr": "Mihrap nişi mukarnas sırası",
+        "en": "Mihrab niche muqarnas rows"
+      },
+      "value": 6,
+      "unit": "sıra",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "251"
+        }
+      ]
+    },
+    {
+      "key": "minare_kaide",
+      "label": {
+        "tr": "Minare kaidesi",
+        "en": "Minaret base"
+      },
+      "value": "Altıgen; iki sıra küfeki + iki sıra tuğla",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "251"
+        }
+      ]
+    },
+    {
+      "key": "duvar_orgusu",
+      "label": {
+        "tr": "Duvar örgüsü (1929)",
+        "en": "Wall masonry (1929)"
+      },
+      "value": "İki sıra tuğla, bir sıra küfeki ve moloz taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "250"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kadı Ali Çelebi",
+      "role": {
+        "tr": "Caminin ilk (ahşap) yapısını yaptırdığı düşünülen kişi",
+        "en": "Believed to have commissioned the first (wooden) mosque"
+      }
+    },
+    {
+      "name": "Hacı Resul Mehmed Efendi",
+      "role": {
+        "tr": "1929'da camiyi yeniden inşa ettiren Bursalı ipek tüccarı ve fabrikatör",
+        "en": "Bursa silk merchant and factory owner who rebuilt the mosque in 1929"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cin-suresi-18",
+      "location": {
+        "tr": "Harim giriş kemerinin üzeri",
+        "en": "Above the prayer-hall entrance arch"
+      },
+      "language": "ar",
+      "script": "Sülüs",
+      "transliteration": "Ve enn’el-mesâcide lillâhi felâ ted’û me’allâhi ehadâ",
+      "translation": {
+        "tr": "Şüphesiz mescitler Allah’ındır; öyleyse Allah ile birlikte hiç kimseye dua etmeyin.",
+        "en": "Surely the mosques belong to Allah, so do not pray to anyone besides Allah."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "250"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Depremde ağır hasar gördü; uzun süre harabe kaldı",
+        "en": "Severely damaged in the earthquake; remained in ruins for a long time"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "249-250"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1793",
+      "year": 1793,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "İç nakışlar, döşemeler ve çevre duvarları bakım ve onarım gördü",
+        "en": "Interior decoration, floors and surrounding walls repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "251"
+        }
+      ],
+      "note": {
+        "tr": "1793 kayıtlarına göre; kronolojik olarak 1855'ten öncedir.",
+        "en": "According to 1793 records; chronologically before 1855."
+      }
+    },
+    {
+      "id": "yeniden-insa-1929",
+      "year": 1929,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Hacı Resul Mehmed Efendi tarafından kubbeli olarak yeniden inşa edildi",
+        "en": "Rebuilt with a dome by Hacı Resul Mehmed Efendi"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "249-250"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1952",
+      "year": 1952,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (son cemaat yerindeki kitabe levhası)",
+        "en": "Repair (plaque in the narthex)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "250-251"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü kapsamlı restorasyonu (2008-2009)",
+        "en": "Comprehensive restoration by the Regional Directorate of Foundations (2008-2009)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c2",
+          "pages": "251"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı gösterilir; süre 2008-2009.",
+        "en": "Start year shown; duration 2008-2009."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mücelliddin Ömer Ağa Camii, Hacı Seyfettin Mahallesi'nde küçük bir avlunun içindedir. Kuzeyindeki kalkan duvarlı son cemaat yerine avludan birkaç basamakla çıkılır; ön yüzü üç sivri kemerli açıklıktır. Kare planlı harimi, altıgen kasnak üzerinde kurşun kaplı bir kubbeyle örtülüdür. Harim kapısının üzerinde sülüs yazıyla bir ayet yer alır. Kuzeybatı köşede altıgen kaideli, silindirik tuğla gövdeli, şerefe altı mukarnaslı ve kurşun külahlı bir minare vardır. İçeride ahşap minber ve kürsü, mukarnaslı beyaz mihrap ve direkler üstünde hanımlar mahfili bulunur.",
+      "en": "The Mücelliddin Ömer Ağa Mosque stands in a small courtyard in Hacı Seyfettin Neighborhood. The parapet-walled narthex to the north is reached by a few steps; its front has three pointed-arched openings. The square prayer hall is covered by a lead-clad dome on a hexagonal drum. Above the hall door is a verse in thuluth script. In the northwest corner is a minaret with a hexagonal base, cylindrical brick shaft, muqarnas below the balcony and a lead spire. Inside are a wooden minbar and pulpit, a white muqarnas mihrab and a women's gallery on wooden pillars."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (yalnızca kitap metni) yapay zekâ taslağı olarak yazıldı; insan gözden geçirmesi bekliyor."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1y3bhwIbOfMW6gF9e6H9LvVaKIkbuQqRb",
+    "book_layout_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+    "book_pdf_name": "11-Yıldırım Camiler.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-mucelliddin-omer-aga-camii/p038-1.jpg",
+        "original_name": "01 DJI_20240925180734_0759_D-Edit.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "249"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami cephesi ve minaresi",
+        "en": "Mosque facade and minaret"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla sıralı cephede üç kemerli pencere ve küçük bir ahşap saçaklı giriş bulunur. Sağda sivri külahlı minare, önde uzun bir servi ağacı yer alır.",
+        "en": "The stone and brick facade has three arched windows and a small wooden-roofed entrance. A pointed-cap minaret is on the right and a tall cypress tree stands in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-yildirim-mucelliddin-omer-aga-camii/p039-2.jpg",
+        "original_name": "07 ERD04015 kopya.jpg",
+        "book_pdf_file_id": "1NMGCQefusuz80WxWrMmy_41xvnS_YOgo",
+        "book_pdf_name": "11-Yıldırım Camiler.pdf",
+        "book_page": "250"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Taş mihrap ve minber",
+        "en": "Stone mihrab and minbar"
+      },
+      "alt": {
+        "tr": "Beyaz, sivri kemerli ve sarkıtlı bir mihrap nişi ile iki yanında pirinç şamdanlar vardır. Sağda ahşap minber, üstte mavi çerçeveli bir yazı levhası görünür.",
+        "en": "A white pointed-arch mihrab niche with a muqarnas hood stands between brass candlesticks. A wooden minbar is on the right and a blue-framed inscription panel hangs above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-25"
+    }
+  ],
+  "archive_media": []
+}

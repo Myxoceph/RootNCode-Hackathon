@@ -16,17 +16,21 @@
     "postinstall": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "account:create": "tsx src/scripts/create-account.ts",
+    "assistant:eval": "tsx src/scripts/assistant-eval.ts"
   },
   "dependencies": {
     "@fastify/cors": "^11.3.1",
+    "@fastify/helmet": "^13.1.1",
+    "@fastify/rate-limit": "^11.2.0",
     "@fastify/swagger": "^9.9.2",
     "@fastify/swagger-ui": "^6.1.2",
     "@prisma/adapter-pg": "7.10.0",
     "@prisma/client": "7.10.0",
-    "@vagabonds/contracts": "^0.1.0",
+    "@vagabonds/contracts": "^0.3.0",
     "dotenv": "^17.2.3",
-    "fastify": "^5.12.5",
+    "fastify": "^5.12.7",
     "zod": "^4.6.6"
   },
   "devDependencies": {

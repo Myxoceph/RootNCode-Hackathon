@@ -1,0 +1,361 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-lamii-celebi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler bölümünden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Banî Lâmiî Çelebi'nin hayat tarihleri ve mescidin vakıf durumu kitapta yok.",
+      "Nakkaş Ali'nin yaptırdığı mescit ve Yeşil Külliye için hedef kayıt eklenmedi (ilçe ve id kitapta verilmiyor).",
+      "Sahibenin kimliği kitapta belirtilmiyor ('sahibesi').",
+      "Yapı kitapta 'cami' başlığıyla, metinde ise 'mescit' olarak anılıyor; tür 'cami' girildi, gözden geçirilmeli.",
+      "Minare yükseklik/ölçü bilgisi yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap Lâmiî Çelebi'yi 'Fâtih Sultan Mehmed dönemi şair ve yazarlarından' sayar, mescidi ise 1528'de inşa edildi olarak verir; iki tarih arasındaki yaklaşık yarım yüzyıl kitapta açıklanmıyor."
+      },
+      {
+        "field": "type",
+        "note": "Başlık 'Lâmiî Çelebi Camii' iken metin yapıyı 'mescit' diye anar; İngilizce başlık 'Mosque', metin 'masjid/mosque' karışık kullanır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Lâmiî Çelebi Camii",
+    "en": "Lâmiî Çelebi Mosque"
+  },
+  "subtitle": {
+    "tr": "Şair Lâmiî Çelebi'nin 1528'de Çekirge'de yaptırdığı küçük mescit",
+    "en": "Small masjid built in 1528 in Çekirge by the poet Lâmiî Çelebi"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Çekirge",
+    "şair Lâmiî Çelebi",
+    "dikdörtgen plan",
+    "ahşap tavan",
+    "kırma çatı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Çekirge",
+    "address": "Çekirge Meydanı",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "388"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.201449,
+      "lng": 29.023835,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Çekirge, Çekirge Mahallesi, Osmangazi, Bursa, Marmara Bölgesi, 16080, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1528",
+      "en": "1528"
+    },
+    "start_year": 1528,
+    "end_year": 1528,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap mescidin 1528 yılında Çekirge Mahallesi'nde inşa ettirildiğini belirtir.",
+      "en": "The book states the masjid was built in 1528 in the Çekirge Neighborhood."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "388"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Lâmiî Çelebi (Mahmud Çelebi bin Osman bin Nakkaş Ali bin İlyas Ali)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "388"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Fâtih dönemi şairlerinden Lâmiî Çelebi'nin 1528'de Çekirge'de yaptırdığı, dikdörtgen planlı, kiremit kaplı kırma çatılı ve ahşap tavanlı küçük kâgir yapı. Uzun süre mesken ve spor kulübü olarak kullanılmış, 1960'ta sahibesi tarafından vakıflara bağışlanmış, 1962'de Bursa Eski Eserleri Sevenler Kurumu tarafından onarılıp minare eklenerek ibadete açılmıştır.",
+    "en": "A small masonry building on a rectangular plan with a tiled hipped roof and wooden ceiling, built in 1528 in Çekirge by Lâmiî Çelebi, a poet of the Fâtih period. Long used as a residence and sports club, it was endowed to the foundations by its owner in 1960, and repaired by the Bursa Association for the Appreciation of Antiquities in 1962, when a minaret was added and it was reopened for worship."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Banisi",
+        "en": "Location and Founder"
+      },
+      "body": {
+        "tr": "Cami, Osmangazi ilçesi, Çekirge Mahallesi, Çekirge Meydanı'nda yer alır. Bursa'nın kültür, sanat ve edebiyat tarihinde önemli bir yeri olan Şair Lâmiî Çelebi ve dedesi Nakkaş Ali şehrin önemli şahsiyetlerindendir. Nakkaş Ali, Bursa Yeşil Külliye'nin kalem işi nakışlarının ustasıdır. Lâmiî Çelebi ise Fâtih Sultan Mehmed dönemi şair ve yazarlarındandır; \"Lâmiî\" mahlasıdır, künyesi \"Mahmud Çelebi bin Osman bin Nakkaş Ali bin İlyas Ali\" olarak geçer. Dedesi gibi bir mescit inşa ettirerek imar faaliyetlerine de katkıda bulunmuştur.",
+        "en": "The mosque is in Osmangazi District, Çekirge Neighborhood, Çekirge Square. The poet Lâmiî Çelebi and his grandfather Nakkaş Ali have an important place in the cultural, artistic and literary history of Bursa. Nakkaş Ali was the master of the hand-painted ornamentation of the Bursa Yeşil Complex. Lâmiî Çelebi was one of the poets and writers of the Fâtih Sultan Mehmed period; 'Lâmiî' was his pen name and his identifier is given as 'Mahmud Çelebi bin Osman bin Nakkaş Ali bin İlyas Ali'. Like his grandfather, he contributed to building activities by having a masjid built."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "388"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "1528'de Çekirge Mahallesi'nde inşa ettirilen mescit ibadete açıktır. 4,00 × 7,50 m ölçülerindeki son cemaat yeriyle birlikte toplam 7,50 × 9,60 m boyutlarında dikdörtgen planlı kâgir bir yapıdır. Duvarları tuğla ve moloz taşla örülmüş, dıştan sıvanmıştır; bahçesi satılmıştır. Kiremit kaplı kırma çatısı ve ahşap tavanı vardır. Batıdaki bitişik konutlar nedeniyle iki penceresi örülerek kapatılmış; aydınlatma kuzey, güney ve doğudaki ikişer pencereyle sağlanmaktadır. İç mekân küçük olmasına rağmen sonradan eklenen ahşap minber ve vaaz kürsüsüyle zenginleştirilmiştir. Mihrap beş yuvarlak mukarnasla süslenmiştir.",
+        "en": "The masjid, built in 1528 in the Çekirge Neighborhood, is open for worship. It is a rectangular masonry building measuring 7.50 × 9.60 m in total, including a narthex of 4.00 × 7.50 m. The walls are of brick and rubble stone, plastered outside; the garden has been sold. It has a tiled hipped roof and a wooden ceiling. Two windows were blocked because of adjacent dwellings on the west; light comes through two windows each on the north, south and east. Though the interior is small, it is enriched by a later wooden minbar and sermon pulpit. The mihrab is decorated with five round muqarnas."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "388"
+        }
+      ]
+    },
+    {
+      "id": "kullanim-onarim",
+      "order": 3,
+      "title": {
+        "tr": "Kullanım ve Onarım",
+        "en": "Use and Repair"
+      },
+      "body": {
+        "tr": "Uzun süre mesken ve spor kulübü binası gibi farklı amaçlarla kullanılan mescit, 1960'ta sahibesi tarafından ibadethane olarak kullanılmak şartıyla yeniden vakıflara bağışlanmıştır. 1962'de Bursa Eski Eserleri Sevenler Kurumu tarafından onarılmış, minaresi eklenerek ibadete açılmıştır. Bugün bakımlı durumda olup Çekirge halkına hizmet vermektedir.",
+        "en": "Used for a long time for various purposes such as a residence and a sports club building, the masjid was endowed to the foundations again in 1960 by its owner, on condition that it be used as a place of worship. It was repaired by the Bursa Association for the Appreciation of Antiquities in 1962 and opened for worship with a minaret added. Today it is well kept and serves the people of Çekirge."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "388"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "toplam_olcu",
+      "label": {
+        "tr": "Toplam ölçü (son cemaat yeri dahil)",
+        "en": "Total size (including narthex)"
+      },
+      "value": "7,50 × 9,60",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "388"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat yeri ölçüsü",
+        "en": "Narthex size"
+      },
+      "value": "4,00 × 7,50",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "388"
+        }
+      ]
+    },
+    {
+      "key": "pencere_sayisi",
+      "label": {
+        "tr": "Açık pencere sayısı (kuzey, güney, doğu)",
+        "en": "Open windows (north, south, east)"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "388"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas",
+      "label": {
+        "tr": "Mihrap mukarnas sayısı",
+        "en": "Muqarnas on the mihrab"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "388"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Lâmiî Çelebi",
+      "role": {
+        "tr": "Banî; şair, Fâtih dönemi yazarı",
+        "en": "Founder; poet and writer of the Fâtih period"
+      }
+    },
+    {
+      "name": "Nakkaş Ali",
+      "role": {
+        "tr": "Lâmiî Çelebi'nin dedesi; Yeşil Külliye kalem işi nakışlarının ustası",
+        "en": "Lâmiî Çelebi's grandfather; master of the hand-painted ornament of the Yeşil Complex"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1528",
+      "year": 1528,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Mescit Çekirge Mahallesi'nde inşa ettirildi",
+        "en": "Masjid built in the Çekirge Neighborhood"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "388"
+        }
+      ]
+    },
+    {
+      "id": "vakif-bagis-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Sahibesi tarafından ibadethane olarak kullanılmak şartıyla vakıflara bağışlandı",
+        "en": "Endowed to the foundations by its owner on condition of use as a place of worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "388"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1962",
+      "year": 1962,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bursa Eski Eserleri Sevenler Kurumu onardı; minare eklenerek ibadete açıldı",
+        "en": "Repaired by the Bursa Association for the Appreciation of Antiquities; minaret added and reopened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "388"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Lâmiî Çelebi Camii, Çekirge Meydanı'nda küçük, dikdörtgen planlı bir yapıdır. Duvarları tuğla ve moloz taştan örülmüş ve dıştan sıvalıdır. Kiremit kaplı kırma çatısı ve ahşap tavanı vardır. Önünde 4 × 7,5 m ölçüsünde bir son cemaat yeri bulunur. İçeride sonradan eklenmiş ahşap bir minber ve vaaz kürsüsü, beş yuvarlak mukarnaslı bir mihrap yer alır. 1962'de eklenen minaresi vardır.",
+      "en": "Lâmiî Çelebi Mosque is a small rectangular building in Çekirge Square. Its walls are of brick and rubble stone, plastered outside. It has a tiled hipped roof and a wooden ceiling, with a 4 × 7.5 m narthex in front. Inside are a later wooden minbar and sermon pulpit and a mihrab with five round muqarnas. It has a minaret added in 1962."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden derlendi (Bursa Vakıf Eserleri I. Cilt); sahada doğrulanmadı."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-lamii-celebi-camii/p119-2.jpg",
+        "original_name": "ERD04894 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "388"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Caminin içi, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Ahşap tavanlı dikdörtgen harimde ortada beyaz mukarnaslı mihrap, sağda yeşil süslü ahşap minber var. Sarı camlı, ahşap panjurlu pencereler ve mavi halı görünüyor.",
+        "en": "A rectangular hall with a wooden ceiling, a white muqarnas mihrab at the centre and a wooden minber with green decoration on the right. Windows with yellow glass and shutters, and a blue carpet, are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-09-28"
+    }
+  ],
+  "archive_media": []
+}

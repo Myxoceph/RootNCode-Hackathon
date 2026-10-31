@@ -1,0 +1,573 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-haci-ivaz-pasa-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "todos": [
+      "Koordinatlar kitapta yok; sahada ya da harita kaynağından doğrulanarak eklenecek (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli.",
+      "Yapım yılı kitapta yok; yalnızca 1427 vakıf kaydından 'önce' çıkarımı var.",
+      "'bursa-osmangazi-haci-ivaz-pasa-kulliyesi' kaydı bu işte oluşturulmadı; medrese/mektep/çarşı için ayrı kayıt ve ad kitapta yok.",
+      "Oruç Bey Camii'nin ilçesi metinde yok; id 'osmangazi' varsayımıyla yazıldı.",
+      "Vakıf adı ve vakfiye kitapta yok (waqf.name null).",
+      "Yorumun 'Selçuklu geleneği' kısmı kitabın yorumudur."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.address",
+        "note": "Türkçe metin adresi 'Ulucami Caddesi, No: 78', İngilizce metin 'Uzunçarşı Street, No. 78' veriyor. Türkçe metin esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı İvaz Paşa Camii",
+    "en": "Hacı İvaz Paşa Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Tavukpazarı Camii",
+      "en": "Tavukpazarı Mosque"
+    },
+    {
+      "tr": "İmadiye Camii",
+      "en": "İmadiye Mosque"
+    },
+    {
+      "tr": "Kazzazhane Camii",
+      "en": "Kazzazhane Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "erken-osmanli",
+  "tags": [
+    "külliye",
+    "vezir camii",
+    "1958 Kapalıçarşı yangını",
+    "çarşı"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "Nalbantoğlu",
+    "address": "Ulucami Caddesi, No: 78",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "320"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185767,
+      "lng": 29.060947,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "1 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1427'den önce (vakıf kaydı 1427)",
+      "en": "Before 1427 (waqf record registered 1427)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Vakıf kaydı 1427'de tescil edildiği için yapı bu tarihten önce inşa edilmiştir; kesin yıl verilmiyor.",
+      "en": "The waqf record was registered in 1427, so the building predates it; no exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "321"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı İvaz Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "320"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakıf kaydı 1427'de tescil edilmiştir. Külliyeye gelir sağlamak amacıyla çarşı yapılmış; çarşı ayaktadır, han yok olmuştur.",
+      "en": "The waqf record was registered in 1427. A bazaar was built to provide income for the complex; the bazaar still stands but the han has disappeared."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "321"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Vezir Hacı İvaz Paşa'nın, vakıf kaydı 1427'de tescil edilmeden önce cami, medrese ve mektepten oluşan külliye olarak yaptırdığı cami; 1958 yangınında yanıp 1967'de tamamen yeniden yapılmıştır.",
+    "en": "Mosque of the vizier Hacı İvaz Paşa, built as part of a complex of mosque, madrasa and school before its waqf record was registered in 1427; burned in the 1958 fire and rebuilt completely in 1967."
+  },
+  "sections": [
+    {
+      "id": "banisi",
+      "order": 1,
+      "title": {
+        "tr": "Banisi ve Adlar",
+        "en": "Founder and Names"
+      },
+      "body": {
+        "tr": "Cami banisinin adıyla Hacı İvaz Paşa Camii olarak anılır; bölgeye yakınlığı nedeniyle Tavukpazarı, İmadiye ve Kazzazhane Camii adlarıyla da bilinir. Hacı İvaz Paşa 15. yüzyılda Osmanlı Devleti'nin önemli devlet adamlarındandır; Çelebi Mehmed ve II. Murad dönemlerinde vezirlik yapmıştır.",
+        "en": "The mosque is called Hacı İvaz Paşa Mosque after its founder and, because of its location, also Tavukpazarı, İmadiye and Kazzazhane Mosque. Hacı İvaz Paşa was an important 15th-century Ottoman statesman who served as vizier under Çelebi Mehmed and Murad II."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "320"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Vakıf kaydı 1427'de tescillendiği için yapının bu tarihten önce inşa edildiği bilinir. Cami, medrese ve mektepten oluşan bir külliye olarak düzenlenmiştir. Külliyeye gelir sağlamak için yapılan çarşı ayaktadır, han zamanla yok olmuştur. Bu topluluk Bursa İvaz Paşa Külliyesi'ni oluşturur. 1642'de Seyit Mehmed Efendi tarafından minber vakfedilerek camiye dönüştürülmüştür. 1855 depreminde duvarları, gövdesi ve minaresi yıkılmış, onarılamayacağı görüşüyle 1860'ta kâgir malzemeyle yeniden yapılmıştır.",
+        "en": "As the waqf record was registered in 1427, the building predates that year. It was organized as a complex of mosque, madrasa and school; the bazaar built to provide income still stands but the han has disappeared. Together they form the Bursa İvaz Paşa Complex. In 1642 Seyit Mehmed Efendi donated a minbar and it was converted into a mosque. In the 1855 earthquake its walls, body and minaret collapsed and, judged beyond repair, it was rebuilt in masonry in 1860."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "321"
+        }
+      ]
+    },
+    {
+      "id": "eski-yapi",
+      "order": 3,
+      "title": {
+        "tr": "Eski Yapı",
+        "en": "The Old Building"
+      },
+      "body": {
+        "tr": "Yazılı kaynaklara göre cami 7.5 × 15 m ölçülerinde, iki kubbeli, dikdörtgen planlı, sade, kâgir bir yapıydı; ahşap çatılı ve kiremitliydi, kuzey ve batıda iki kapısı vardı. Kuzeyde bir mahfil ve ahşap son cemaat yeri bulunuyordu. Avlusu yanındaki medreseden bir duvarla ayrılmış, iki yapıyı birleştiren ortak taş bir yol yapılmıştı. Mescit ve medrese yakınlığı Selçuklu geleneği şeklinde yorumlanabilir.",
+        "en": "According to written sources the mosque was a simple masonry rectangular two-domed building of 7.5 × 15 m with a tiled wooden roof and two doors on the north and west. There was a gallery and a wooden narthex on the north. Its courtyard was separated by a wall from the neighboring madrasa, with a common stone road joining the two. The proximity of masjid and madrasa can be read as a Seljuk tradition."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "321-322"
+        }
+      ]
+    },
+    {
+      "id": "bugunku-yapi",
+      "order": 4,
+      "title": {
+        "tr": "Günümüzdeki Yapı",
+        "en": "The Present Building"
+      },
+      "body": {
+        "tr": "1958 Kapalıçarşı yangınında temeline kadar yanan cami 1967'de bir hayırsever tarafından yeniden inşa edilmiştir; eski yapıdan temel ölçüleri dışında benzer özellik kalmamıştır. Günümüzdeki cami dikdörtgen planlı ve iki kubbelidir; bir sıra kesme taş, iki sıra düşey tuğla almaşık düzendedir. Planı Oruç Bey ve Abdal Mehmed camilerine benzer; 1990'larda esaslı tamir görmüştür. Minare kaidesi kesme taş ve tuğla, gövdesi tuğladır; gövdeye geçiş Türk üçgenleriyle sağlanmıştır. Tarihî kayıtlarda şerefe altının mihrapcıklarla süslü olduğu belirtilirken son inşada kirpi dizileriyle doldurulmuştur. Hâlen ibadete açıktır.",
+        "en": "Burned to its foundations in the 1958 Grand Bazaar fire, the mosque was rebuilt in 1967 by a philanthropist; nothing of the old building but its foundation dimensions survives. The present mosque is rectangular with two domes, in alternating one row of cut stone and two rows of vertical brick. Its plan resembles the Oruç Bey and Abdal Mehmed mosques; it had a major renovation in the 1990s. The minaret base is cut stone and brick, the shaft entirely brick, with Turkish triangles for the transition. Historical records say the underside of the balcony had niche-like decoration, but it was filled with sawtooth rows in the final construction. It is open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "322"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "eski_olcu",
+      "label": {
+        "tr": "Eski yapı ölçüleri",
+        "en": "Old building dimensions"
+      },
+      "value": "7.5 × 15",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "321"
+        }
+      ],
+      "note": {
+        "tr": "Yazılı kaynaklara göre.",
+        "en": "According to written sources."
+      }
+    },
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Kubbe sayısı",
+        "en": "Number of domes"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "322"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı İvaz Paşa",
+      "role": {
+        "tr": "Banî; Çelebi Mehmed ve II. Murad dönemi veziri",
+        "en": "Founder; vizier under Çelebi Mehmed and Murad II"
+      }
+    },
+    {
+      "name": "Seyit Mehmed Efendi",
+      "role": {
+        "tr": "1642'de minberi vakfeden",
+        "en": "Donor of the minbar in 1642"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakif-1427",
+      "year": 1427,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakıf kaydı tescil edildi",
+        "en": "Waqf record registered"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "321"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1557",
+      "year": 1557,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "1557'de onarım",
+        "en": "Repair in 1557"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "322"
+        }
+      ]
+    },
+    {
+      "id": "minber-1642",
+      "year": 1642,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Seyit Mehmed Efendi minber vakfetti, mescit camiye dönüştü",
+        "en": "Seyit Mehmed Efendi donated a minbar; masjid converted to mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "321"
+        }
+      ]
+    },
+    {
+      "id": "deprem-1855",
+      "year": 1855,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1855 depreminde duvarlar, gövde ve minare yıkıldı",
+        "en": "Walls, body and minaret collapsed in the 1855 earthquake"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "321"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-1860",
+      "year": 1860,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kâgir malzemeyle yeniden inşa edildi",
+        "en": "Rebuilt in masonry"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "321"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "1958 Kapalıçarşı yangınında temeline kadar yandı",
+        "en": "Burned to the foundations in the 1958 Grand Bazaar fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "322"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-1967",
+      "year": 1967,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bir hayırsever tarafından yeniden inşa edildi (1967-1968)",
+        "en": "Rebuilt by a philanthropist (1967-1968)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "322"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1990",
+      "year": 1990,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "1990'larda esaslı tamir",
+        "en": "Major renovation in the 1990s"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "322"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yalnızca '1990'lı yıllar' diyor.",
+        "en": "The book says only 'the 1990s'."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "bursa-osmangazi-haci-ivaz-pasa-kulliyesi",
+      "target_name": {
+        "tr": "İvaz Paşa Külliyesi"
+      },
+      "type": "same_complex",
+      "description": {
+        "tr": "Cami, medrese ve mektepten oluşan Bursa İvaz Paşa Külliyesi'nin parçasıdır.",
+        "en": "The mosque is part of the Bursa İvaz Paşa Complex of mosque, madrasa and school."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "321"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-abdal-mehmet-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Planı Abdal Mehmed Camii'ne benzer.",
+        "en": "Its plan resembles the Abdal Mehmed Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "322"
+        }
+      ]
+    },
+    {
+      "target_id": "bursa-osmangazi-oruc-bey-camii",
+      "target_name": {
+        "tr": "Oruç Bey Camii"
+      },
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Planı Oruç Bey Camii'ne benzer.",
+        "en": "Its plan resembles the Oruç Bey Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "322"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hacı İvaz Paşa Camii, dikdörtgen planlı ve iki kubbeli bir camidir. Duvarları bir sıra kesme taş ile iki sıra düşey tuğlanın almaşık dizilmesiyle örülmüştür. Minaresinin kaidesi kesme taş ve tuğla, gövdesi tuğladır; şerefe altı kirpi dizileriyle doludur. Cami 1967'de yeniden yapılmıştır.",
+      "en": "Hacı İvaz Paşa Mosque is a rectangular mosque with two domes. Its walls alternate one row of cut stone with two rows of vertical brick. The minaret has a cut-stone-and-brick base and a brick shaft, with sawtooth rows under the balcony. The mosque was rebuilt in 1967."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Bursa Vakıf Eserleri I. Cilt) derlenmiştir; yalnızca metinde geçen bilgiler."
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haci-ivaz-pasa-camii/p051-1.jpg",
+        "original_name": "1_3.jpeg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "320"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cami, kubbeleri ve minaresi",
+        "en": "Mosque, domes and minaret"
+      },
+      "alt": {
+        "tr": "Taş ve tuğla bantlı duvarlı, gri kurşun kaplı iki kubbeli cami ve yanında tek şerefeli minare görünür. Arkada geniş bir çarşı çatısı ve dağ yer alır.",
+        "en": "A mosque with stone and brick banded walls, two grey lead domes and a single-balcony minaret. A large market roof and a mountain are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haci-ivaz-pasa-camii/p052-1.jpg",
+        "original_name": "5-2.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "321"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ahşap mahfilli harim",
+        "en": "Prayer hall with wooden gallery"
+      },
+      "alt": {
+        "tr": "Uzun harimde sağda ahşap direkli mahfil, solda çini şeritli pencere nişleri ve ahşap kaplı alt duvarlar vardır. Zemin turkuaz halıyla kaplıdır.",
+        "en": "A long prayer hall with a wooden gallery on posts on the right, tiled window niches on the left and wood-panelled lower walls. The floor has a turquoise carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-haci-ivaz-pasa-camii/p053-2.jpg",
+        "original_name": "4.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "322"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Ahşap şadırvan ve avlu",
+        "en": "Wooden ablution fountain and courtyard"
+      },
+      "alt": {
+        "tr": "Kubbeli ahşap sekizgen şadırvan, taş döşemeli avluda caminin önünde durur. Arkada taş cephe ve ağaç dalları görünür.",
+        "en": "A domed octagonal wooden ablution fountain stands in a stone-paved courtyard in front of the mosque. A stone facade and tree branches are behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-16"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

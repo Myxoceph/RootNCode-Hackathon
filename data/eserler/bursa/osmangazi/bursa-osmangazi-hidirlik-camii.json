@@ -1,0 +1,289 @@
+{
+  "schema_version": "1.0",
+  "id": "bursa-osmangazi-hidirlik-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-16",
+    "updated_at": "2026-10-16",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Osmangazi Camiler ve Hazireler 2",
+    "text_origin": "Metinler 'Bursa Vakıf Eserleri I. Cilt' kitabındaki Osmangazi Camiler ve Hazireler 2 bölümünden (s. 337) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yapım tarihi kitapta yok; dating boş bırakıldı.",
+      "Çağ (era) kitapta belirtilmediği için boş bırakıldı (banî I. Murad'ın kızı olarak anılıyor ama yapım tarihi verilmiyor); veri ekibi karar vermeli.",
+      "Mimar ve vakıf bilgisi kitapta yok.",
+      "Koordinat eklenmeli (kitapta yok; location.coordinates bilerek boş bırakıldı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) sahada teyit edilmeli; kitapta yok.",
+      "Zaman Perdesi için arşiv görseli bulunmalı (archive_media boş)."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Banî bilgisi 'rivayetlere göre' ifadesiyle verildiği için 'probable' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hıdırlık (Nilüfer Hatun) Camii",
+    "en": "Hıdırlık (Nilüfer Hatun) Mosque"
+  },
+  "subtitle": {
+    "tr": "Kızı Nilüfer Hatun'a atfedilen küçük kubbeli cami",
+    "en": "Small domed mosque attributed to Nilüfer Hatun"
+  },
+  "alternate_names": [
+    {
+      "tr": "Nilüfer Hatun Camii",
+      "en": "Nilüfer Hatun Mosque",
+      "note": "Kitapta başlıkta parantez içinde; İzzeddin Bey Camii bölümünde 'Nilüfer Hatun Mescidi' olarak geçer"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "küçük cami",
+    "kubbeli",
+    "Nilüfer Hatun",
+    "Hıdırlık",
+    "İvazpaşa"
+  ],
+  "location": {
+    "region": "marmara",
+    "city": "bursa",
+    "district": "Osmangazi",
+    "neighborhood": "İvazpaşa",
+    "address": "Dikyokuş Sokak, No: 1",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "337"
+      }
+    ],
+    "coordinates": {
+      "lat": 40.185822,
+      "lng": 29.057579,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q135583057 ('Nilüfer Hatun Mescidi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": null,
+  "founder": {
+    "name": "Nilüfer Hatun (Sultan I. Murad'ın kızı)",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-bursa-c1",
+        "pages": "337"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "İvazpaşa Mahallesi'nde, Sultan I. Murad'ın kızı Nilüfer Hatun'a atfedilen küçük, kubbeli bir cami. Kitaba göre içinde eskiye ait bir unsur kalmamıştır; bugün ibadete açıktır.",
+    "en": "A small domed mosque in İvazpaşa Neighborhood attributed to Nilüfer Hatun, daughter of Sultan Murad I. According to the book, no old elements survive inside; it is open for worship today."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami, İvazpaşa Mahallesi, Dikyokuş Sokak No:1'de yer almaktadır. Rivayetlere göre Üftâde Hazretleri'nin şeyhi Hızır Dede burada medfun olduğu için bölgeye Hıdırlık Mahallesi adı verilmiş, cami ise Sultan I. Murad'ın kızı Nilüfer Hatun tarafından yaptırıldığı için onun adıyla anılmıştır.",
+        "en": "The mosque is located in İvazpaşa Neighborhood, Dikyokuş Street No. 1. According to narratives, the area was named Hıdırlık Neighborhood because Hızır Dede, the shaykh of Hazrat Üftâde, was buried here, and the mosque was named after Nilüfer Hatun, the daughter of Sultan Murad I, because she had it built."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Dikdörtgen planlı caminin ana mekânı 5,85 × 5,90 m, son cemaat yeri 2,05 × 5,90 m ölçülerindedir. Son cemaat yeri doğu cephesinde, sivri kemerli bir eyvan görünümündedir; doğu ve batısı kapalıdır ve ibadet mekânına bir kapı ile geçilir. Kubbe ile örtülü yapının doğu ve kuzey duvarlarında düz lentolu, dikdörtgen iki pencere vardır; ana mekân kubbe kasnağındaki üç sivri kemerli pencereyle aydınlanır. Yenilenmiş mihrap sivri kemerli, 0,43 m derinliğinde dört köşeli bir niştir. Duvarlar bir sıra taş ve bir sıra moloz taşla örülmüştür. Caminin içinde eskiye ait herhangi bir unsur kalmamıştır.",
+        "en": "The main area of the mosque, which has a rectangular plan, is 5.85 × 5.90 m, and the narthex is 2.05 × 5.90 m. The narthex is on the east side and looks like an iwan with a pointed arch; it is closed on the east and west, and the place of worship is entered through a door from it. There are two rectangular windows with flat lintels on the east and north walls of the domed structure, and three pointed arched windows on the dome drum. The renovated mihrab is a pointed arched, 0.43 m deep, four-sided niche. The walls use a row of stones and a row of rubble stone. There are no old elements left inside the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "id": "bugun",
+      "order": 3,
+      "title": {
+        "tr": "Bugünkü Durum",
+        "en": "Present Condition"
+      },
+      "body": {
+        "tr": "Cami günümüzde ibadete açıktır.",
+        "en": "Today, it is open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "337"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "hizir-dede-medfun",
+      "title": {
+        "tr": "Hızır Dede'nin burada medfun olduğu rivayeti",
+        "en": "Narrative that Hızır Dede is buried here"
+      },
+      "body": {
+        "tr": "Rivayetlere göre Üftâde Hazretleri'nin şeyhi Hızır Dede burada medfundur ve bu nedenle bölgeye Hıdırlık adı verilmiştir.",
+        "en": "According to narratives, Hızır Dede, the shaykh of Hazrat Üftâde, was buried here, and the area was therefore named Hıdırlık."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "337"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "ana_mekan_olcu",
+      "label": {
+        "tr": "Ana mekân ölçüsü",
+        "en": "Main space dimensions"
+      },
+      "value": "5,85 × 5,90",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_olcu",
+      "label": {
+        "tr": "Son cemaat yeri ölçüsü",
+        "en": "Narthex dimensions"
+      },
+      "value": "2,05 × 5,90",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "337"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_derinlik",
+      "label": {
+        "tr": "Mihrap nişi derinliği",
+        "en": "Mihrab niche depth"
+      },
+      "value": 0.43,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-bursa-c1",
+          "pages": "337"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Nilüfer Hatun",
+      "role": {
+        "tr": "Sultan I. Murad'ın kızı; camiyi yaptırdığı kabul edilir",
+        "en": "Daughter of Sultan Murad I; said to have had the mosque built"
+      }
+    },
+    {
+      "name": "Hızır Dede",
+      "role": {
+        "tr": "Üftâde Hazretleri'nin şeyhi; rivayete göre burada medfun",
+        "en": "Shaykh of Hazrat Üftâde; reportedly buried here"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hıdırlık Camii, İvazpaşa Mahallesi'nde küçük, tek kubbeli bir yapıdır. Dikdörtgen planlıdır; ana mekân yaklaşık 5,85 × 5,90 metredir. Doğu cephedeki son cemaat yeri sivri kemerli bir eyvan görünümünde olup yalnızca bir kapıyla ibadet mekânına geçilir. Kubbe kasnağında üç sivri kemerli pencere vardır. Duvarlar bir sıra taş, bir sıra moloz taşla örülmüştür.",
+      "en": "Hıdırlık Mosque is a small single-domed building in İvazpaşa Neighborhood. It has a rectangular plan; the main space measures about 5.85 by 5.90 metres. The narthex on the east side looks like a pointed-arched iwan, and a single door leads into the prayer hall. The dome drum has three pointed arched windows. The walls are built of alternating rows of stone and rubble stone."
+    }
+  },
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1RwL3x4ZxRnjvHiS2EQOrgPj0VbXb23UO",
+    "book_layout_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+    "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-osmangazi-hidirlik-camii/p068-2.jpg",
+        "original_name": "ERD01100 kopya.jpg",
+        "book_pdf_file_id": "14ZJMnMdwclJmvagUfQBgPQBeBo0tj1zh",
+        "book_pdf_name": "9-Osmangazi Camiler ve Hazireler 2.pdf",
+        "book_page": "337"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Sade beyaz mihrap ve kıble duvarı",
+        "en": "Plain white mihrab and qibla wall"
+      },
+      "alt": {
+        "tr": "Beyaz, sivri kemerli bir mihrap nişi; üstünde yazılı levha, iki yanında altıgen madalyonlar ve bir duvar saati var. En üstte örgü desenli küçük pencere, önde kırmızı halı görünüyor.",
+        "en": "A plain white pointed mihrab niche with a lettered panel above and hexagonal medallions at its sides, plus a wall clock. A small lattice window is at the top and red carpet in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-10-12"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

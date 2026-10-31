@@ -2,18 +2,17 @@
   "schema_version": "1.0",
   "id": "bursa-kestel-eski-vani-mehmed-sifa-hamami",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-15",
-    "updated_at": "2026-10-15",
+    "updated_at": "2026-10-16",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
     "from": "Kestel",
     "text_origin": "Metinler 'Bursa Vakıf Eserleri III. Cilt' Kestel bölümünden (Türkçe ve İngilizce metin) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
       "Hamamın külliye vakfındaki 'Kestel köyündeki hamam' ile aynı olduğu kitapta açıkça yazmıyor; parent_id verilmedi.",
       "Mimar kitapta yok.",
       "Koordinatlar kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates).",
-      "Fotoğraf yok: media[] ve archive_media[] boş; Drive klasörü (media_folder) henüz atanmadı.",
       "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) sahada teyit edilmeli."
     ],
     "data_quality_notes": [
@@ -58,7 +57,14 @@
         "source_id": "vk-bursa-c3",
         "pages": "567"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.200453,
+      "lng": 29.213285,
+      "source": "photo_exif",
+      "verified": false,
+      "verification_note": "2 Drive fotoğrafının (kitap sayfası eşleşmesiyle) EXIF GPS medyanı; drone konumu olabilir, binadan sapabilir."
+    }
   },
   "dating": {
     "display": {
@@ -225,7 +231,96 @@
     },
     "audio_description_source": "Kitaptaki mimari betimlemeden derlenmiştir (Bursa Vakıf Eserleri III. Cilt)."
   },
-  "media_folder": null,
-  "media": [],
+  "media_folder": {
+    "provider": "google_drive",
+    "links_folder_id": "1cxeDobWd9zo-NOT3PQQ4p-OdJNj-7SA2",
+    "book_layout_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+    "book_pdf_name": "7-Kestel.pdf"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-eski-vani-mehmed-sifa-hamami/p013-1.jpg",
+        "original_name": "DJI_20241107220432_0136_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "554"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hamamın ahşap kapılı cephesi",
+        "en": "Façade with wooden door"
+      },
+      "alt": {
+        "tr": "Beyaz sıvalı, ahşap çerçeveli cepheli yapının kiremit çatısı vardır. Ortada oyma ahşap bir kapı, önünde mezar taşlı küçük bir alan görülür.",
+        "en": "A white-plastered, timber-framed façade with a tiled roof. A carved wooden door is at the centre and a small area with gravestones in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-07"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-eski-vani-mehmed-sifa-hamami/p014-1.jpg",
+        "original_name": "02 DJI_20241107212533_0113_D_ODAK-Edit.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "555"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Yapının kuşbakışı çatısı",
+        "en": "Aerial view of the roof"
+      },
+      "alt": {
+        "tr": "Yukarıdan bakıldığında koyu kiremit kaplı kırma çatı, ağaçlar ve bitişikteki cadde görülür.",
+        "en": "From above, a dark tiled hipped roof with trees and an adjacent street."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/bursa-book/images/bursa-kestel-eski-vani-mehmed-sifa-hamami/p014-2.jpg",
+        "original_name": "04 ERD07616 kopya.jpg",
+        "book_pdf_file_id": "17IV00sGog0h4zYIaIWu5_BPKEcQr4FiN",
+        "book_pdf_name": "7-Kestel.pdf",
+        "book_page": "555"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İç mekân, mihrap ve minber",
+        "en": "Interior with mihrab and minber"
+      },
+      "alt": {
+        "tr": "Ahşap kasetli tavanlı, beyaz duvarlı salonda ortada mihrap, sağda minber ve duvarlarda hat levhaları vardır. Zemin açık renkli halıdır.",
+        "en": "A white hall with a coffered wooden ceiling, a mihrab at the centre, a minber at right and calligraphy plates on the walls. The floor has a light carpet."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-bursa-foto-arsivi",
+      "captured_at": "2024-11-07"
+    }
+  ],
   "archive_media": []
 }
