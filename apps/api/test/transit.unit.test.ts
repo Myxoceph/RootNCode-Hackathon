@@ -9,6 +9,7 @@ import {
   toItineraries,
   turkeyOffsetTime,
 } from "../src/modules/transit/otp.client.ts";
+import { nextMorning } from "../src/modules/transit/transit.routes.ts";
 
 // A real answer of OTP 2.10.0 on the Konya graph: Konya Garı to Karatay Medresesi, 2026-11-07 10:00.
 const PLAN = JSON.parse(readFileSync(new URL("./fixtures/otp-plan-gar-karatay.json", import.meta.url), "utf8"));
@@ -59,5 +60,14 @@ describe("OTP client", () => {
     });
     expect(await down.plan(ENDS.from, ENDS.to, new Date())).toBeNull();
     expect(errors).toHaveLength(1);
+  });
+});
+
+describe("nextMorning", () => {
+  it("moves a night search to 06:00 Türkiye time, and leaves the day alone", () => {
+    // 01:20 and 23:30 in Türkiye (UTC+3).
+    expect(nextMorning(new Date("2026-11-06T22:20:00Z"))?.toISOString()).toBe("2026-11-07T03:00:00.000Z");
+    expect(nextMorning(new Date("2026-11-06T20:30:00Z"))?.toISOString()).toBe("2026-11-07T03:00:00.000Z");
+    expect(nextMorning(new Date("2026-11-07T07:00:00Z"))).toBeNull();
   });
 });

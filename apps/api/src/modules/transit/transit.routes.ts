@@ -19,7 +19,7 @@ import { parseWith } from "../../lib/validate.ts";
 import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import type { Point } from "../assets/assets.network.ts";
-import type { TransitPlanner } from "./otp.client.ts";
+import { turkeyOffsetTime, type TransitPlanner } from "./otp.client.ts";
 import { ENTRY_POINTS, inPilotArea, TRANSIT_SOURCE } from "./transit.places.ts";
 import type { TransitRepository } from "./transit.repository.ts";
 
@@ -46,6 +46,20 @@ const PlanQuerySchema = z.object({
 });
 const LangQuerySchema = z.object({ lang: LangSchema.optional() });
 
+const HOUR_MS = 60 * 60 * 1000;
+/** Konya's first buses leave around then; a night search starts from it. */
+const FIRST_DEPARTURE_HOUR = 6;
+const LAST_DEPARTURE_HOUR = 23;
+
+/** 06:00 Türkiye time of the coming morning when `at` is at night, otherwise null. */
+export function nextMorning(at: Date): Date | null {
+  const local = new Date(at.getTime() + 3 * HOUR_MS);
+  const hour = local.getUTCHours();
+  if (hour >= FIRST_DEPARTURE_HOUR && hour < LAST_DEPARTURE_HOUR) return null;
+  const morning = new Date(Date.UTC(local.getUTCFullYear(), local.getUTCMonth(), local.getUTCDate(), FIRST_DEPARTURE_HOUR) - 3 * HOUR_MS);
+  return hour >= LAST_DEPARTURE_HOUR ? new Date(morning.getTime() + 24 * HOUR_MS) : morning;
+}
+
 type End = z.infer<typeof PlanQuerySchema>["from"];
 
 const unavailableHere = () =>
@@ -59,7 +73,7 @@ export interface TransitRoutesOptions {
 
 export const transitRoutes: FastifyPluginAsync<TransitRoutesOptions> = async (app, { planner, repository }) => {
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
-  const plans = new Map<string, { at: number; itineraries: TransitItinerary[] }>();
+  const plans = new Map<string, { searchedFrom: Date; itineraries: TransitItinerary[] }>();
 
   /** The end's name and point in the visitor's language; only places inside the Konya graph. */
   async function resolve(end: End, lang: Lang): Promise<Point & { name: string; assetId: string | null }> {
@@ -117,14 +131,26 @@ export const transitRoutes: FastifyPluginAsync<TransitRoutesOptions> = async (ap
 
     // Same ends within a minute: the popup and the assistant ask for the same plan.
     const key = JSON.stringify([from.lat, from.lng, to.lat, to.lng, from.name, to.name, Math.floor(at.getTime() / CACHE_MS)]);
-    let itineraries = plans.get(key)?.itineraries;
-    if (!itineraries) {
-      const planned = await planner.plan(from, to, at);
-      if (planned === null) throw new HttpError(503, "TRANSIT_UNAVAILABLE", "Transit directions could not be planned right now");
-      itineraries = planned;
-      plans.set(key, { at: Date.now(), itineraries });
+    let cached = plans.get(key);
+    if (!cached) {
+      const planOrFail = async (when: Date) => {
+        const planned = await planner.plan(from, to, when);
+        if (planned === null) throw new HttpError(503, "TRANSIT_UNAVAILABLE", "Transit directions could not be planned right now");
+        return planned;
+      };
+      let searchedFrom = at;
+      let itineraries = await planOrFail(at);
+      // Buses and trams stop around midnight: at night, "no route" would read as "no line".
+      const morning = nextMorning(at);
+      if (itineraries.length === 0 && morning) {
+        searchedFrom = morning;
+        itineraries = await planOrFail(morning);
+      }
+      cached = { searchedFrom, itineraries };
+      plans.set(key, cached);
       if (plans.size > CACHE_SIZE) plans.delete(plans.keys().next().value!);
     }
+    const { searchedFrom, itineraries } = cached;
 
     reply.header("cache-control", "no-store");
     return TransitPlanResponseSchema.parse({
@@ -133,6 +159,7 @@ export const transitRoutes: FastifyPluginAsync<TransitRoutesOptions> = async (ap
       city: TRANSIT_CITY,
       from: { name: from.name, lat: from.lat, lng: from.lng, stopCode: null },
       to: { name: to.name, lat: to.lat, lng: to.lng, stopCode: null, assetId: to.assetId },
+      searchedFrom: turkeyOffsetTime(searchedFrom),
       itineraries,
       source: { ...TRANSIT_SOURCE[lang], license: TRANSIT_SOURCE.license, url: TRANSIT_SOURCE.url },
     });

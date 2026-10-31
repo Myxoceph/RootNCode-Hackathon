@@ -76,6 +76,21 @@ describe.skipIf(!DATABASE_URL)("transit routes (PostgreSQL, recorded OTP)", () =
     expect((await plan(app, `from=Konya%20Gar%C4%B1&to=${KARATAY}`)).statusCode).toBe(400);
   });
 
+  it("searches from the morning when nothing runs at night", async () => {
+    const asked: Date[] = [];
+    const nightOnly: TransitPlanner = {
+      async plan(from, to, at) {
+        asked.push(at);
+        return asked.length === 1 ? [] : toItineraries(PLAN, { from, to });
+      },
+    };
+    const res = await plan(appWith(nightOnly), `from=konya-gari&to=${KARATAY}&at=2026-11-07T01:20:00%2B03:00`);
+    const body = TransitPlanResponseSchema.parse(res.json());
+    expect(body.searchedFrom).toBe("2026-11-07T06:00:00+03:00");
+    expect(body.itineraries.length).toBeGreaterThan(0);
+    expect(asked).toHaveLength(2);
+  });
+
   it("answers 503 without OpenTripPlanner, or when it does not answer", async () => {
     const off = await plan(appWith(null), `from=konya-gari&to=${KARATAY}`);
     expect([off.statusCode, off.json().error.code]).toEqual([503, "TRANSIT_UNAVAILABLE"]);

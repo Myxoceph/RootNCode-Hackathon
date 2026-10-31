@@ -82,6 +82,11 @@ export const TransitPlanResponseSchema = z.strictObject({
   city: z.literal(TRANSIT_CITY),
   from: TransitPlaceSchema,
   to: TransitPlaceSchema.extend({ assetId: AssetIdSchema.nullable() }),
+  /**
+   * Departures searched from this time: `at`, or the next morning when nothing runs at night
+   * (say "ilk sefer sabah" when it differs from what was asked).
+   */
+  searchedFrom: z.iso.datetime({ offset: true }),
   /** Empty when no bus or tram helps; the visitor can walk or take a taxi. */
   itineraries: z.array(TransitItinerarySchema).max(3),
   /** Show it under the map: the data comes from the municipality's timetable of this date. */
