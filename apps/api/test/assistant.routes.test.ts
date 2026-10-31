@@ -10,6 +10,7 @@ import { buildApp } from "../src/app.ts";
 import { createPrismaClient, type PrismaClient } from "../src/db/prisma.ts";
 import { createAssistantRepository } from "../src/modules/assistant/assistant.repository.ts";
 import { ModelError, type ChatMessage, type ChatModel, type ModelReply, type ToolSpec } from "../src/modules/assistant/assistant.model.ts";
+import { TOOL_SPECS } from "../src/modules/assistant/assistant.tools.ts";
 
 const DATABASE_URL = process.env["DATABASE_URL"];
 const HAMAM = "bursa-osmangazi-ordekli-hamam";
@@ -186,7 +187,8 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
       answer("Hava bilgisine ulaşılamadı."),
     ]);
     await chat(appWith(model), { message: "Hava nasıl?" });
-    expect(calls.map((c) => c.tools.length)).toEqual([5, 5, 5, 0]);
+    const all = TOOL_SPECS.length;
+    expect(calls.map((c) => c.tools.length)).toEqual([all, all, all, 0]);
   });
 
   it("gives the model the page's asset, and leaves old markers out of the history", async () => {
