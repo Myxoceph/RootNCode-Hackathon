@@ -25,7 +25,7 @@ interface MapSearchProps {
   onBack: () => void;
   onPickCity: (plate: number) => void;
   onPickAsset: (asset: AssetSummary) => void;
-  /** Shown to the right of the field: the assistant, while one answers. */
+  /** Shown to the right of the field: the assistant button. */
   trailing?: React.ReactNode;
   /** Something went wrong (the map, the city's assets): said under the field, with a retry. */
   notice?: { message: string; onRetry?: () => void } | null;

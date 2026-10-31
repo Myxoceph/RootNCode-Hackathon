@@ -12,7 +12,6 @@ import { CityAssetCards } from "@/components/city-asset-cards";
 import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapSearch } from "@/components/map-search";
 import { CITY_LANDMARKS, useCities, useCityMapAssets } from "@/data";
-import { useAssistantAvailable } from "@/data/assistant";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { areaAround, assetCategory, cityLandmark, MapLibreMap, mapTiers, useMapStatusBar, useMapTheme, type MapCity, type MapPin, type MapProvince, type MapProvinces } from "@/map";
@@ -49,7 +48,6 @@ export default function MapScreen() {
   const reduceMotion = useReducedMotion();
   const router = useRouter();
   const cities = useCities();
-  const assistant = useAssistantAvailable();
   const [mapError, setMapError] = useState<string | null>(null);
   const [selectedPlate, setSelectedPlate] = useState<number | null>(null);
   /** The city the camera has finished flying into: its cards come in only then. */
@@ -245,7 +243,7 @@ export default function MapScreen() {
         onBack={backToTurkey}
         onPickCity={openCity}
         onPickAsset={pickAsset}
-        trailing={assistant === true ? <AssistantButton /> : null}
+        trailing={<AssistantButton />}
         notice={notice}
         below={chosen ? <MapAssetActions asset={chosen} /> : null}
       />
@@ -253,19 +251,22 @@ export default function MapScreen() {
   );
 }
 
-/** Opens the assistant; shown only while a model answers (`/chat/status`). */
+/**
+ * Opens the assistant, in gold so it is found at a glance. Always shown: when no model answers,
+ * the assistant's screen says it is closed for now.
+ */
 function AssistantButton() {
   const { colors: c } = useTheme();
   const router = useRouter();
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel="Asistana sor"
+      accessibilityLabel="Yapay zekâ asistanına sor"
       onPress={() => router.push("/assistant")}
       hitSlop={4}
-      style={[styles.round, { backgroundColor: c.surfaceRaised }]}
+      style={({ pressed }) => [styles.round, { backgroundColor: c.highlightMark }, pressed && styles.pressed]}
     >
-      <Ionicons name="chatbubbles-outline" size={20} color={c.text} />
+      <Ionicons name="sparkles" size={20} color={c.onPrimary} />
     </Pressable>
   );
 }
@@ -281,6 +282,9 @@ const styles = StyleSheet.create({
     borderRadius: touchTarget.min / 2,
     alignItems: "center",
     justifyContent: "center",
+  },
+  pressed: {
+    opacity: 0.75,
   },
   cards: {
     position: "absolute",

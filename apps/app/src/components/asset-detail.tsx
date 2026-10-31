@@ -25,7 +25,6 @@ import { AssetImage } from "@/components/asset-image";
 import { BuildingIllustration } from "@/components/building-illustration";
 import { VisitorPulse } from "@/components/visitor-pulse";
 import { CAPSULE_SECONDS, captionAt, capsuleForSoundKey, capsules, formatSeconds } from "@/content/capsules";
-import { useAssistantAvailable } from "@/data/assistant";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speak, stopSpeaking } from "@/lib/speak";
 import { useA11ySettings } from "@/settings/a11y-settings";
@@ -541,7 +540,6 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
 /** The camera experiences, sound, spoken description and the assistant, a row each under hairlines. */
 function Experiences({ asset }: { asset: AssetDetail }) {
   const { settings } = useA11ySettings();
-  const assistant = useAssistantAvailable();
   const player = useCapsulePlayer();
   const [describing, setDescribing] = useState(false);
   const soundKey = asset.ambientSound?.key ?? null;
@@ -586,12 +584,8 @@ function Experiences({ asset }: { asset: AssetDetail }) {
       on: describing,
     });
   }
-  // Hidden while no model answers.
-  if (assistant === true) {
-    actions.push({ key: "ask", icon: "sparkles-outline", title: "Sor", hint: "Asistan kaynağıyla cevaplar", spoken: `Bu eser hakkında sor: ${asset.name}, asistanı açar`, href: { pathname: "/assistant", params: { asset: asset.id, name: asset.name } } });
-  }
-  if (actions.length === 0) return null;
-
+  // Always offered: when no model answers, the assistant's screen says it is closed for now.
+  actions.push({ key: "ask", icon: "sparkles-outline", title: "Sor", hint: "Asistan kaynağıyla cevaplar", spoken: `Bu eser hakkında sor: ${asset.name}, asistanı açar`, href: { pathname: "/assistant", params: { asset: asset.id, name: asset.name } } });
   return (
     <View style={styles.rows}>
       {actions.map((action) => (
