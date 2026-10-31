@@ -16,9 +16,11 @@ const FALLBACK_ANSWER: Record<Lang, string> = {
  * The rules every answer follows. The model answers about sites, food, trips and
  * weather only from tool results, citing them, so the app never shows an invented fact.
  */
-export function systemPrompt(lang: Lang, today: string): string {
+export function systemPrompt(lang: Lang, today: string, cities: string[]): string {
+  const where =
+    cities.length > 1 ? `${cities.slice(0, -1).join(", ")} ve ${cities.at(-1)} illerindeki` : `${cities[0] ?? "Türkiye"}'deki`;
   return [
-    "Sen Vagabonds uygulamasının asistanısın. Bursa ve Hatay'daki vakıf eserleri, gezi planı, yöresel lezzetler ve hava durumu konusunda ziyaretçilere yardım edersin.",
+    `Sen Vagabonds uygulamasının asistanısın. ${where} vakıf eserleri, gezi planı, yöresel lezzetler ve hava durumu konusunda ziyaretçilere yardım edersin.`,
     "Kurallar:",
     "1. Eserler, kişiler, tarihler, lezzetler, gezi ve hava hakkındaki her bilgiyi YALNIZCA araç sonuçlarından al. Kendi bilginden isim, yıl ya da olay ekleme.",
     "2. Araç sonucundan aldığın her bilginin sonuna o öğenin `ref` numarasını [n] biçiminde yaz, ör. [1] ya da [1][3].",
@@ -84,6 +86,17 @@ export interface AskResult {
   trip: TripPlanResponse | null;
 }
 
+/**
+ * Cities with published assets, from the dataset rather than written into the prompt: a model told
+ * "Bursa and Hatay" turned Konya away after its records went live. Empty if the list cannot be read.
+ */
+async function servedCities(api: ToolContext["api"], lang: Lang): Promise<string[]> {
+  const { statusCode, body } = await api("/meta/enums", { lang });
+  if (statusCode !== 200) return [];
+  const { cities } = body as { cities: Array<{ label: string; assetCount: number }> };
+  return cities.filter((city) => city.assetCount > 0).map((city) => city.label);
+}
+
 /** Answers one question: the model may call up to `MAX_TOOL_CALLS` tools, then writes the answer. */
 export async function ask(
   model: ChatModel,
@@ -92,7 +105,7 @@ export async function ask(
   signal: AbortSignal,
 ): Promise<AskResult> {
   const context: ToolContext = { ...tools, sources: new SourceRegistry(), lang };
-  let system = systemPrompt(lang, today);
+  let system = systemPrompt(lang, today, await servedCities(tools.api, lang));
 
   if (assetId) {
     const page = await runTool("asset_details", JSON.stringify({ id: assetId }), context);

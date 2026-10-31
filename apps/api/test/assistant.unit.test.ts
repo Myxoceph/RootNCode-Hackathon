@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createChatModel, oneSystemMessage } from "../src/modules/assistant/assistant.model.ts";
 import { searchTerms } from "../src/modules/assistant/assistant.repository.ts";
-import { plainText, resolveCitations } from "../src/modules/assistant/assistant.ts";
+import { plainText, resolveCitations, systemPrompt } from "../src/modules/assistant/assistant.ts";
 import { SourceRegistry } from "../src/modules/assistant/assistant.tools.ts";
 
 describe("resolveCitations", () => {
@@ -160,3 +160,11 @@ describe("plainText", () => {
     expect(plainText("## Başlık\n* **Kubbe:** kiremit kaplı [1]\n  * iç madde")).toBe("Başlık\n- Kubbe: kiremit kaplı [1]\n  - iç madde");
   });
 });
+
+describe("systemPrompt", () => {
+  it("names the cities it is given, so a newly published city is not turned away", () => {
+    expect(systemPrompt("tr", "2026-11-01", ["Bursa", "Hatay", "Konya"])).toContain("Bursa, Hatay ve Konya illerindeki");
+    expect(systemPrompt("tr", "2026-11-01", [])).toContain("Türkiye'deki vakıf eserleri");
+  });
+});
+

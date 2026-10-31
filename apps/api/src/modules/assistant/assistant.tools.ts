@@ -88,7 +88,7 @@ const ARGS = {
 type ToolName = keyof typeof ARGS;
 type ToolArgs<Name extends ToolName> = z.output<(typeof ARGS)[Name]>;
 
-const cityParam = { type: "string", description: "İl kodu, küçük harf (ör. bursa, hatay)" };
+const cityParam = { type: "string", description: "İl kodu, küçük harf (ör. bursa, hatay, konya)" };
 
 export const TOOL_SPECS: ToolSpec[] = [
   {
