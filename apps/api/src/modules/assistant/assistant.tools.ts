@@ -61,8 +61,9 @@ export interface ToolResult {
 }
 
 // Keeps a tool result within a small model's context window.
-const SECTION_CHARS = 1_200;
-const ASSET_CHARS = 7_000;
+const SECTION_CHARS = 900;
+// The answer's wait grows with the text the model reads: 7000 made the last call ~9 s on EVREN.
+const ASSET_CHARS = 4_000;
 const DISH_CHARS = 400;
 const SEARCH_LIMIT = 5;
 
