@@ -18,9 +18,10 @@ import { buildApp } from "../app.ts";
 import { loadEnv } from "../config/env.ts";
 import { createPrismaClient } from "../db/prisma.ts";
 import { createChatModel } from "../modules/assistant/assistant.model.ts";
+import { createOtpClient } from "../modules/transit/otp.client.ts";
 import { createWeatherService } from "../modules/weather/weather.service.ts";
 
-const QUESTIONS: Record<string, Array<{ message: string; assetId?: string; lang?: "tr" | "en" }>> = {
+const QUESTIONS: Record<string, Array<{ message: string; assetId?: string; lang?: "tr" | "en"; origin?: { lat: number; lng: number } }>> = {
   asset: [
     { message: "Bursa Ulucami ne zaman ve kim tarafından yaptırıldı?" },
     { message: "Koza Han'ın vakfiyesinde ne yazıyor?" },
@@ -45,6 +46,13 @@ const QUESTIONS: Record<string, Array<{ message: string; assetId?: string; lang?
     { message: "İnegöl'de ne yenir?" },
     { message: "Konya'da ne yenir?" },
     { message: "Bugün Hatay'da hava nasıl, gezmeye uygun mu?" },
+  ],
+  // Needs OTP_URL (the Konya pilot, docs/deploy.md).
+  transit: [
+    { message: "Konya Garı'na trenle geldim, Karatay Medresesi'ne nasıl giderim?" },
+    { message: "Buradan İnce Minareli Medrese'ye otobüsle nasıl giderim?", origin: { lat: 37.8667, lng: 32.48 } },
+    { message: "Havalimanına indim, Alaeddin Camii'ne nasıl gidebilirim?" },
+    { message: "Bursa'da Ulucami'ye otobüsle nasıl giderim?" },
   ],
   outside: [
     { message: "İstanbul'daki Süleymaniye Camii'ni anlatır mısın?" },
@@ -81,6 +89,7 @@ const app = buildApp({
     model: env.ASSISTANT_MODEL,
     apiKey: env.ASSISTANT_API_KEY || undefined,
   }),
+  transitPlanner: env.OTP_URL ? createOtpClient({ baseUrl: env.OTP_URL }) : null,
 });
 
 let failed = 0;

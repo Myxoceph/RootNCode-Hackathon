@@ -25,6 +25,7 @@ backup() {
 case "${1:-}" in
   up)
     docker info > /dev/null 2>&1 || { echo "Docker is not running: open Docker Desktop"; exit 1; }
+    [[ -f deploy/otp/data/graph.obj ]] || { echo "No Konya transit graph: run deploy/otp/prepare.sh once (docs/deploy.md)"; exit 1; }
     dc up -d --build --wait
     node deploy/preflight.mjs
     ;;
