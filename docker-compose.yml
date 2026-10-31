@@ -7,8 +7,9 @@ services:
       POSTGRES_USER: vagabonds
       POSTGRES_PASSWORD: vagabonds
       POSTGRES_DB: vagabonds
+    # Only this computer: the password is in git, and on shared Wi-Fi (the venue) anyone could connect.
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
     healthcheck:
