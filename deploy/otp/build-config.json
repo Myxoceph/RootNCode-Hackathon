@@ -1,0 +1,7 @@
+{
+  "transitServiceStart": "-P30D",
+  "transitServiceEnd": "P1Y",
+  "osmDefaults": { "osmTagMapping": "default", "timeZone": "Europe/Istanbul" },
+  "transitFeeds": [{ "type": "gtfs", "source": "konya-gtfs.zip", "feedId": "konya" }],
+  "osm": [{ "source": "konya.osm.pbf" }]
+}

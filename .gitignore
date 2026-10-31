@@ -31,3 +31,6 @@ apps/api/src/generated/
 *.pdf
 # Database dumps from deploy/demo.sh backup: visitors' accounts and photos
 deploy/backups/
+
+# OpenTripPlanner inputs and graph (deploy/otp/prepare.sh)
+deploy/otp/data/

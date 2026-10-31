@@ -1,0 +1,9 @@
+{
+  "server": { "apiProcessingTimeout": "10s" },
+  "routingDefaults": {
+    "numItineraries": 3,
+    "searchWindow": "PT90M",
+    "walk": { "speed": 1.2, "reluctance": 2.0 },
+    "transferSlack": "PT2M"
+  }
+}
