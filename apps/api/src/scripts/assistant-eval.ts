@@ -30,17 +30,20 @@ const QUESTIONS: Record<string, Array<{ message: string; assetId?: string; lang?
     { message: "Bu hamamın kubbesi hakkında ne biliniyor?", assetId: "bursa-osmangazi-ordekli-hamam" },
     { message: "Bu eser tekerlekli sandalyeyle gezilebilir mi?", assetId: "bursa-osmangazi-ordekli-hamam" },
     { message: "Which caravanserais are there in Hatay?", lang: "en" },
+    { message: "Konya'daki Karatay Medresesi'ni kim, ne zaman yaptırdı?" },
   ],
   trip: [
     { message: "Yarın Bursa'da tam gün gezmek istiyorum, plan yapar mısın?" },
     { message: "Hatay'da yarım günde camileri gezelim" },
     { message: "Bursa'da iki günlük gezi, yağmur yağarsa ne yapalım?" },
     { message: "Plan a half day in Bursa for me", lang: "en" },
+    { message: "Yarın Konya'da gezi planla ve rotada hava nasıl olacak söyle" },
   ],
   food: [
     { message: "Bursa'da ne yemeliyim?" },
     { message: "Hatay'ın meşhur tatlısı hangisi, hikâyesi ne?" },
     { message: "İnegöl'de ne yenir?" },
+    { message: "Konya'da ne yenir?" },
     { message: "Bugün Hatay'da hava nasıl, gezmeye uygun mu?" },
   ],
   outside: [
