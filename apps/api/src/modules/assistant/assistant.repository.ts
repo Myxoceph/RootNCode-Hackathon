@@ -9,6 +9,10 @@ export interface AssetSearchHit {
   city: string;
   type: string;
   district: string;
+  /** As printed in the record (e.g. "1396-1400"), so "when" needs no asset_details call. */
+  dating: string | null;
+  /** The founder's name, so "who built it" needs no asset_details call. */
+  founder: string | null;
   /** A short passage around the first matching word, or the summary when only the name matched. */
   snippet: string;
 }
@@ -64,6 +68,9 @@ const searchSelect = {
   district: true,
   summary_tr: true,
   summary_en: true,
+  dating_display_tr: true,
+  dating_display_en: true,
+  founder_name: true,
   city: { select: { label_tr: true, label_en: true } },
   asset_type: { select: { label_tr: true, label_en: true } },
   asset_section: { select: { title_tr: true, body_tr: true, body_en: true }, orderBy: { sort_order: "asc" } },
@@ -109,6 +116,8 @@ function toHit(record: SearchRecord, terms: string[], lang: Lang): AssetSearchHi
     city: pick(record.city.label_tr, record.city.label_en, lang),
     type: pick(record.asset_type.label_tr, record.asset_type.label_en, lang),
     district: record.district,
+    dating: record.dating_display_tr ? pick(record.dating_display_tr, record.dating_display_en, lang) : null,
+    founder: record.founder_name?.trim() || null,
     snippet: match?.body ? snippetAround(match.body, match.term) : pick(record.summary_tr, record.summary_en, lang),
   };
 }

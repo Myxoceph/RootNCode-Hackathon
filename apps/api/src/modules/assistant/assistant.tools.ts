@@ -61,8 +61,9 @@ export interface ToolResult {
 }
 
 // Keeps a tool result within a small model's context window.
-const SECTION_CHARS = 1_200;
-const ASSET_CHARS = 7_000;
+const SECTION_CHARS = 900;
+// The answer's wait grows with the text the model reads: 7000 made the last call ~9 s on EVREN.
+const ASSET_CHARS = 4_000;
 const DISH_CHARS = 400;
 const SEARCH_LIMIT = 5;
 
@@ -100,7 +101,7 @@ export const TOOL_SPECS: ToolSpec[] = [
   {
     name: "search_assets",
     description:
-      "Vakıf eserlerini adında ya da metninde geçen kelimelerle arar (cami, han, hamam, kişi adı, olay...). En iyi 5 eseri id ve kısa bir alıntıyla döner.",
+      "Vakıf eserlerini adında ya da metninde geçen kelimelerle arar (cami, han, hamam, kişi adı, olay...). En iyi 5 eseri id, tarih, bani ve kısa bir alıntıyla döner; yalnızca tarihi ya da banisi soruluyorsa asset_details gerekmez.",
     parameters: {
       type: "object",
       properties: { query: { type: "string", description: "Aranacak kelimeler" }, city: cityParam },
@@ -262,6 +263,10 @@ const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) 
     const { statusCode, body } = await api(`/cities/${encodeURIComponent(city)}/dishes`, { lang });
     if (statusCode === 400 || statusCode === 404) return failure(`Unknown city "${city}".`);
     const { dishes } = CityDishesResponseSchema.parse(body);
+    // Without the note the model retried with every `kind` until the tool limit.
+    if (dishes.length === 0) {
+      return { content: JSON.stringify({ dishes: [], note: "The dataset has no registered dishes for this city yet; say so." }) };
+    }
     return {
       content: JSON.stringify({
         dishes: dishes

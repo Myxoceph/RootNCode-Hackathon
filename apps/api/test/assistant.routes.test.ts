@@ -69,9 +69,24 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
     const repository = createAssistantRepository(prisma, "published");
     const first = async (query: string) => (await repository.searchAssets(query, { lang: "tr", limit: 3 }))[0]?.id;
     expect(await first("ulu camii bursa")).toBe("bursa-osmangazi-ulucami");
+    // Who and when come with the hit, so those questions need no asset_details call.
+    const [ulucami] = await repository.searchAssets("ulu camii bursa", { lang: "tr", limit: 1 });
+    expect(ulucami).toMatchObject({ founder: expect.stringContaining("Bayezid"), dating: expect.any(String) });
     expect(await first("ordekli hamami")).toBe(HAMAM);
     const inHatay = await repository.searchAssets("Habib-i Neccar", { city: "hatay", lang: "tr", limit: 3 });
     expect(inHatay.every((hit) => hit.id.startsWith("hatay-"))).toBe(true);
+  });
+
+  it("answers a repeated first question from memory, but not a follow-up", async () => {
+    const { model, calls } = scriptedModel([answer("Merhaba!")]);
+    const app = appWith(model);
+    const first = ChatResponseSchema.parse((await chat(app, { message: "Merhaba" })).json());
+    expect(ChatResponseSchema.parse((await chat(app, { message: "  merhaba " })).json())).toEqual(first);
+    expect(calls).toHaveLength(1);
+
+    await chat(app, { message: "Merhaba", history: [{ role: "user", content: "Selam" }, { role: "assistant", content: "Selam!" }] });
+    await chat(app, { message: "Merhaba", lang: "en" });
+    expect(calls).toHaveLength(3);
   });
 
   it("reports itself unavailable without a model, and answers 503", async () => {
