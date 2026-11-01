@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "konya-karatay-alemdar-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-11-01",
     "updated_at": "2026-11-01",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan",
     "from": "konya-envanteri-1_cilt-web",
     "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 257) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -56,7 +56,14 @@
         "source_id": "vk-konya-c1",
         "pages": "257"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 37.886479,
+      "lng": 32.507471,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/280246976 ('Alemdar Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {

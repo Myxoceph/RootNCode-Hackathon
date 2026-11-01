@@ -7,6 +7,17 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-01 · Konya I. cilt yayında, 150 eserin konumu
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import`.
+
+Değişenler:
+- Konya Vakıf Eserleri I. Cilt'in 205 kaydı (Hüseyin, PR #120) taslaktan yayına alındı; Mevlâna Külliyesi ve yapıları dahil. Fotoğrafları R2'de (1.462 dosya).
+- 150'sine `geocode.py` ile konum yazıldı: OSM'de ad ve ilçe eşleşmesi, Wikidata, bağlı olduğu külliyenin noktası. Kitaptaki adresten ya da mahalleden bulunan 29'u yaklaşık (`osm_area`). Otomatik eşleşmeden iki düzeltme: Sultan Alâeddin Camii Alâeddin Tepesi'ne alındı (eşleştirici ilçedeki başka bir Ulu Cami'yi seçmişti), Ereğli Ulu (Kıble) Camii'nin yanlış noktası silindi.
+- 55 kaydın konumu yok: listede ve asistanda görünürler, haritada görünmezler.
+
 ## 2026-11-01 · Veri seti dışındaki yerlere bağlar (migration, sözleşme 0.3.15)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **veri ekibi**, **uygulama ekibi** ([`YIGIT.md`](../YIGIT.md) 12. madde)

@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "konya-meram-askan-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-29",
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-01",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan",
     "from": "konya-envanteri-1_cilt-web",
     "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 90) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -44,7 +44,14 @@
         "source_id": "vk-konya-c1",
         "pages": "90"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 37.868722,
+      "lng": 32.469655,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Türkiye İş Bankası, 50A, Yeni Meram Caddesi, Melikşah Mahallesi, Meram, Konya, İç Anadolu Bölgesi, 42090, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {

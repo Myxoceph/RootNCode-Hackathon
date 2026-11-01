@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "konya-karatay-mevlana-sinan-pasa-turbesi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-29",
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-01",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan",
     "from": "konya-envanteri-1_cilt-web",
     "todos": [
       "Koordinat kitapta yok; eklenmeli (location.coordinates)",
@@ -58,7 +58,14 @@
         "source_id": "vk-konya-c1",
         "pages": "62-63"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 37.870471,
+      "lng": 32.504805,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/491583512 ('Sinan Paşa Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {

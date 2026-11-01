@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "konya-karatay-sarnic-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-11-01",
     "updated_at": "2026-11-01",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan",
     "from": "konya-envanteri-1_cilt-web",
     "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 206-207) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -41,7 +41,14 @@
         "source_id": "vk-konya-c1",
         "pages": "206-207"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 37.876546,
+      "lng": 32.512011,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Sedirler Sarnıç Camii, Sedirler Caddesi, Aziziye Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, 42030, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {

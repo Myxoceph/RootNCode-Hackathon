@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "konya-karapinar-yagmapinar-mescidi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-11-01",
     "updated_at": "2026-11-01",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan",
     "from": "konya-envanteri-1_cilt-web",
     "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 465-466) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -47,7 +47,14 @@
         "source_id": "vk-konya-c1",
         "pages": "465-466"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 37.823133,
+      "lng": 33.732228,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/502390545 ('Yağmapınar Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {

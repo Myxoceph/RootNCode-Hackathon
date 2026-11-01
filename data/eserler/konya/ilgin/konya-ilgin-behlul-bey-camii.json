@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "konya-ilgin-behlul-bey-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-11-01",
     "updated_at": "2026-11-01",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan",
     "from": "konya-envanteri-1_cilt-web",
     "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 445) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -49,7 +49,14 @@
         "source_id": "vk-konya-c1",
         "pages": "445"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 38.277844,
+      "lng": 31.909855,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Behlülbey Camii, Muhsin Yazıcıoğlu Caddesi, Fatih Mahallesi, Ilgın, Konya, İç Anadolu Bölgesi, 42600, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {

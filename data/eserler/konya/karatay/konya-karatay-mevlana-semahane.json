@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "konya-karatay-mevlana-semahane",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-29",
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-01",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan",
     "from": "konya-envanteri-1_cilt-web",
     "todos": [
       "Koordinat kitapta yok; eklenmeli (location.coordinates)",
@@ -58,7 +58,14 @@
         "source_id": "vk-konya-c1",
         "pages": "38-39"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 37.870774,
+      "lng": 32.505397,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (konya-karatay-mevlana-kulliyesi) noktası kullanıldı."
+    }
   },
   "dating": {
     "display": {

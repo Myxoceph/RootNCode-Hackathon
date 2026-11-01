@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "konya-meram-sukran-mescidi",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-10-29",
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-01",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan",
     "from": "konya-envanteri-1_cilt-web",
     "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 79) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
     "todos": [
@@ -45,7 +45,14 @@
         "source_id": "vk-konya-c1",
         "pages": "79"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 37.870176,
+      "lng": 32.498244,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1550429223 ('Şükran Mescidi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {

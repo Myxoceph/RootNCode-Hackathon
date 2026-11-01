@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "id": "konya-karatay-koprubasi-mustafa-aga-camii",
   "meta": {
-    "status": "draft",
+    "status": "published",
     "created_at": "2026-11-01",
     "updated_at": "2026-11-01",
     "prepared_by": "ai-draft:sonnet",
-    "reviewed_by": null,
+    "reviewed_by": "Ahmet Bakırcan",
     "from": "konya-envanteri-1_cilt-web",
     "todos": [
       "Kitâbe metni kitapta yok (inscriptions[].transliteration null)",
@@ -65,7 +65,14 @@
         "source_id": "vk-konya-c1",
         "pages": "248"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 37.874706,
+      "lng": 32.508732,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q127643397 ('Hacı Mustafa Ağa Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
