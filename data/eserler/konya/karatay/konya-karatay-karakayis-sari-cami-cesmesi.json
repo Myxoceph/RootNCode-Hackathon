@@ -216,7 +216,23 @@
       "section_id": "kitabe"
     }
   ],
-  "relations": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-karakayis-sari-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Çeşme, Karakayış Caddesi ile Karacaoğlan Sokağı'nın köşesindeki Sarı Camii'nin batısındadır.",
+        "en": "The fountain is west of the Sarı Mosque at the corner of Karakayış Street and Karacaoğlan Lane."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "236"
+        }
+      ]
+    }
+  ],
   "accessibility": {
     "wheelchair_access": "unknown",
     "step_free_entrance": "unknown",

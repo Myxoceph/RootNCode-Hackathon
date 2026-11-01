@@ -186,7 +186,38 @@
     }
   ],
   "highlights": [],
-  "relations": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-seyh-osman-rumi-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Şeyh Osman Rûmi, caminin yanındaki türbede medfundur.",
+        "en": "Sheikh Osman Rûmi is buried in the tomb next to the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "140"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-meram-seyh-hasan-i-rumi-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami, Şeyh Hasan Rûmi Türbesi'nin de içinde bulunduğu geniş bir avluda yer alır.",
+        "en": "The mosque stands in a wide courtyard that also holds the tomb of Sheikh Hasan Rûmi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "140"
+        }
+      ]
+    }
+  ],
   "visit": {
     "setting": "indoor",
     "estimated_duration_min": null,
