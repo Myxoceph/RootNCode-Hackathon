@@ -163,10 +163,11 @@ export default function MonumentsScreen() {
 
   const header = (
     <View style={[styles.header, { paddingTop: insets.top + spacing.xl }]}>
-      <Text headingLevel={1} colorValue={ink.text} style={styles.title}>
+      <Text variant="title" headingLevel={1} colorValue={ink.text}>
         Eserler
       </Text>
-      <Text colorValue={ink.soft} accessibilityLiveRegion="polite">
+      {/* Not shown, still read: screen readers hear the count as the list loads or the search changes. */}
+      <Text colorValue={ink.soft} accessibilityLiveRegion="polite" style={styles.visuallyHidden}>
         {all.status === "success" ? `${shown.length} vakıf eseri` : status}
       </Text>
 
@@ -383,6 +384,13 @@ const makeStyles = (ink: Ink) =>
       flex: 1,
       backgroundColor: ink.background,
     },
+    visuallyHidden: {
+      position: "absolute",
+      width: 1,
+      height: 1,
+      overflow: "hidden",
+      opacity: 0,
+    },
     center: {
       textAlign: "center",
     },
@@ -399,11 +407,6 @@ const makeStyles = (ink: Ink) =>
     header: {
       gap: spacing.xs,
       paddingBottom: spacing.xs,
-    },
-    title: {
-      fontFamily: fontFamily.display,
-      fontSize: 40,
-      lineHeight: 48,
     },
     searchRow: {
       flexDirection: "row",
