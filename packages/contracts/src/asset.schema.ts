@@ -100,8 +100,13 @@ export const MediaSchema = z.strictObject({
   credit: z.string().min(1),
   photographer: z.string().min(1).nullable(),
   license: z.string().min(1),
-  /** Year of an archive photo (Zaman Perdesi). */
+  /** Year of an archive photo. */
   archiveYear: z.int().nullable(),
+  /**
+   * What the photo shows, from the dataset: `exterior`, `portal`, `inscription`, `mihrab`,
+   * `ornament_detail`… Ziyaret Mührü picks a specific part of the monument by it. Null when unknown.
+   */
+  subject: z.string().min(1).nullable().default(null),
   sources: z.strictObject({
     webp: z.array(ImageSourceSchema),
     jpg: z.array(ImageSourceSchema),
