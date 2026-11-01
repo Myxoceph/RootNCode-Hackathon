@@ -86,7 +86,7 @@ describe.skipIf(!DATABASE_URL)("visit proof, wallet and rewards (PostgreSQL)", (
     await prisma.$disconnect();
   });
 
-  it("proves a visit only with one of the asset's own photos, and earns Zaman Yolcusu", async () => {
+  it("proves a visit only with one of the asset's own photos, and earns İlk Mühür", async () => {
     const { token } = await createUser();
     const near = { lat: asset.lat, lng: asset.lng };
     const wrong = await call("POST", `/assets/${asset.id}/visit/proof`, token, { ...near, mediaKey: otherMediaKey, method: "device_recognition" });
