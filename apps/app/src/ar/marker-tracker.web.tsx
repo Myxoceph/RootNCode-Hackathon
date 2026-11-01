@@ -13,11 +13,11 @@ import { trackerPageHtml } from "./tracker-page";
  * camera screens keep to their camera-free versions on the web (ADR 0001);
  * this lets the prototype be tried in a phone's browser and on a laptop.
  */
-export function MarkerTracker({ targetsMind, onEvent, style }: MarkerTrackerProps) {
+export function MarkerTracker({ target, onEvent, style }: MarkerTrackerProps) {
   const mindarScript = useVendored(loadMindar);
   const html = useMemo(
-    () => (mindarScript ? trackerPageHtml({ targetsMind, markColor: cameraColors.gold, mindarScript }) : null),
-    [targetsMind, mindarScript],
+    () => (mindarScript ? trackerPageHtml({ target, markColor: cameraColors.gold, mindarScript }) : null),
+    [target, mindarScript],
   );
   const frame = useRef<HTMLIFrameElement>(null);
 

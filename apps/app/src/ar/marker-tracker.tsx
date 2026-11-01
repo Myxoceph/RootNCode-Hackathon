@@ -7,11 +7,11 @@ import { WebView } from "react-native-webview";
 import { loadMindar, useVendored } from "@/vendor";
 
 import { parseTrackerEvent, type TrackerEvent } from "./mindar";
-import { trackerPageHtml } from "./tracker-page";
+import { trackerPageHtml, type TrackerTarget } from "./tracker-page";
 
 export interface MarkerTrackerProps {
-  /** A compiled `.mind` file, base64. */
-  targetsMind: string;
+  /** A compiled `.mind` file, or a photo compiled on the device. Keep it stable (memoised): a new one restarts the page. */
+  target: TrackerTarget;
   onEvent: (event: TrackerEvent) => void;
   style?: StyleProp<ViewStyle>;
 }
@@ -24,11 +24,11 @@ export interface MarkerTrackerProps {
  * The page is given an https base URL so it is a secure context: WebViews only
  * offer getUserMedia to those.
  */
-export function MarkerTracker({ targetsMind, onEvent, style }: MarkerTrackerProps) {
+export function MarkerTracker({ target, onEvent, style }: MarkerTrackerProps) {
   const mindarScript = useVendored(loadMindar);
   const html = useMemo(
-    () => (mindarScript ? trackerPageHtml({ targetsMind, markColor: cameraColors.gold, mindarScript }) : null),
-    [targetsMind, mindarScript],
+    () => (mindarScript ? trackerPageHtml({ target, markColor: cameraColors.gold, mindarScript }) : null),
+    [target, mindarScript],
   );
   const permission = useCameraPermission();
 

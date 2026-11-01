@@ -9,9 +9,13 @@ import { trackerFailureText, type TrackerEvent, type TrackerFailure, type Tracke
 import { testTargetLabels, testTargetsMind } from "@/ar/test-targets.generated";
 import { CameraTopBar } from "@/components/camera-chrome";
 
+/** The test targets never change; one object, so the page is not rebuilt on every render. */
+const testTarget = { mind: testTargetsMind };
+
 const stepText: Record<TrackerStep, string> = {
   page: "Sayfa yüklendi",
   library: "MindAR indirildi",
+  compile: "Hedef derleniyor",
   camera: "Kamera izni alındı",
   video: "Görüntü geliyor",
   targets: "Hedefler yüklendi",
@@ -113,7 +117,7 @@ export default function ArPrototypeScreen() {
       <Head>
         <title>AR prototipi · Vagabonds</title>
       </Head>
-      {failure === null && <MarkerTracker key={run} targetsMind={testTargetsMind} onEvent={onEvent} style={StyleSheet.absoluteFill} />}
+      {failure === null && <MarkerTracker key={run} target={testTarget} onEvent={onEvent} style={StyleSheet.absoluteFill} />}
 
       <View style={[styles.top, { top: insets.top + spacing.sm }]}>
         <CameraTopBar title="AR prototipi" subtitle="Y5 · MindAR, WebView içinde" />
