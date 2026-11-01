@@ -130,7 +130,27 @@
   "inscriptions": [],
   "timeline": [],
   "highlights": [],
-  "relations": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-haci-veyis-camii-ve-cesmesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Çeşme adını aldığı camiyle birlikte XIX. yüzyılda yapılmıştır; cami duvarına bitişik bir sokak çeşmesidir.",
+        "en": "The fountain was built in the 19th century together with the mosque it is named after; it is a street fountain against the mosque's wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "233"
+        },
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "187-189"
+        }
+      ]
+    }
+  ],
   "accessibility": {
     "wheelchair_access": "unknown",
     "step_free_entrance": "unknown",

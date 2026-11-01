@@ -7,6 +7,16 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-01 · Konya'da ciltler arası ve aynı banili bağlar
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import`.
+
+Değişenler:
+- Konya I ve II'de aynı yerdeki ayrı yapılar kitabın tarifiyle bağlandı (8 bağ): ör. Hacı Veyis Camii ile çeşmesi, Şeyh Osman Rûmi Camii ile türbesi, Şükran Mescidi ile altındaki dükkânlar, Hoca Fakih Camii ile çeşmesi.
+- Aynı baninin farklı külliyelerdeki eserleri bağlandı (5 bağ): Sahip Ata Fahreddin Ali (Sahip Ata Camii, Hanikahı, İnce Minareli Medrese, Tahir ile Zühre Mescidi) ve Karamanoğlu İbrahim Bey (Şeyh Ebul Vefa Camii, Mahkeme Yeni Hamamı, Çumra'daki camii). Kitabın baniyi "muhtemel" verdiği yerlerde bağ da muhtemel.
+
 ## 2026-11-01 · Konya I. cilt yayında, 150 eserin konumu
 
 Kimler: **API'yi yerelde çalıştıranlar**
