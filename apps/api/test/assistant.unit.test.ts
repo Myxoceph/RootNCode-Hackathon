@@ -1,8 +1,10 @@
+import { readFileSync } from "node:fs";
+import { AssetDetailSchema } from "@vagabonds/contracts";
 import { describe, expect, it } from "vitest";
 import { createChatModel, oneSystemMessage } from "../src/modules/assistant/assistant.model.ts";
 import { searchTerms } from "../src/modules/assistant/assistant.repository.ts";
 import { plainText, resolveCitations, systemPrompt } from "../src/modules/assistant/assistant.ts";
-import { runTool, SourceRegistry, type ToolContext } from "../src/modules/assistant/assistant.tools.ts";
+import { compactAsset, runTool, SourceRegistry, type ToolContext } from "../src/modules/assistant/assistant.tools.ts";
 
 describe("resolveCitations", () => {
   const sources = new SourceRegistry();
@@ -235,5 +237,17 @@ describe("plan_trip tool", () => {
   it("leaves the planner's own default (today) during the day, and keeps a date the model gave", async () => {
     expect(await plannedDate(10)).toBeUndefined();
     expect(await plannedDate(20, "2026-11-02")).toBe("2026-11-02");
+  });
+});
+
+describe("compactAsset", () => {
+  it("cuts the sections to the given length, for the later assets of one question", () => {
+    // A real detail from the app's fixtures (Bursa Ulucami).
+    const details = JSON.parse(readFileSync(new URL("../../app/src/data/fixtures/details.json", import.meta.url), "utf8"));
+    const asset = AssetDetailSchema.parse(details["bursa-osmangazi-ulucami"]);
+    const length = (chars?: number) =>
+      (compactAsset(asset, 1, chars).sections as Array<{ text: string }>).reduce((sum, section) => sum + section.text.length, 0);
+    expect(length()).toBeGreaterThan(length(2_000));
+    expect(length(2_000)).toBeLessThanOrEqual(2_000 + 2);
   });
 });

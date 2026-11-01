@@ -56,6 +56,8 @@ export interface ToolContext {
   hour: number;
   /** The visitor's position, when the app sent it. */
   origin?: { lat: number; lng: number } | undefined;
+  /** asset_details calls so far in this question; later ones get a shorter page. */
+  assetDetailsShown?: number;
 }
 
 export interface ToolResult {
@@ -71,6 +73,8 @@ export interface ToolResult {
 const SECTION_CHARS = 900;
 // The answer's wait grows with the text the model reads: 7000 made the last call ~9 s on EVREN.
 const ASSET_CHARS = 4_000;
+/** For the second and later assets of one question. */
+const LATER_ASSET_CHARS = 2_000;
 const DISH_CHARS = 400;
 const SEARCH_LIMIT = 5;
 
@@ -234,9 +238,9 @@ const clip = (text: string | null | undefined, max: number) => (!text ? null : t
 const hhmm = (minute: number) => `${String(Math.floor(minute / 60)).padStart(2, "0")}:${String(minute % 60).padStart(2, "0")}`;
 
 /** The parts of an asset a model answers from. Visitor contributions are never included. */
-export function compactAsset(asset: AssetDetail, ref: number): Record<string, unknown> {
+export function compactAsset(asset: AssetDetail, ref: number, chars = ASSET_CHARS): Record<string, unknown> {
   const sections = [];
-  let budget = ASSET_CHARS;
+  let budget = chars;
   for (const section of asset.sections) {
     if (budget <= 0) break;
     const text = clip(section.body, Math.min(SECTION_CHARS, budget))!;
@@ -312,11 +316,15 @@ const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) 
     return { content: JSON.stringify({ results: found.map((hit) => ({ ref: sources.add("asset", hit.id, hit.name), ...hit })) }) };
   },
 
-  async asset_details({ id }, { api, sources, lang }) {
+  async asset_details({ id }, context) {
+    const { api, sources, lang } = context;
     const { statusCode, body } = await api(`/assets/${encodeURIComponent(id)}`, { lang });
     if (statusCode === 400 || statusCode === 404) return failure(`No asset with id "${id}"; use search_assets first.`);
     const asset = AssetDetailSchema.parse(body);
-    return { content: JSON.stringify(compactAsset(asset, sources.add("asset", asset.id, asset.name))) };
+    // A question about several assets (e.g. Sahip Ata's buildings) read three full pages and took ~50 s.
+    const chars = context.assetDetailsShown ? LATER_ASSET_CHARS : ASSET_CHARS;
+    context.assetDetailsShown = (context.assetDetailsShown ?? 0) + 1;
+    return { content: JSON.stringify(compactAsset(asset, sources.add("asset", asset.id, asset.name), chars)) };
   },
 
   async plan_trip({ city, duration, theme, date }, { api, sources, lang, today, hour }) {
