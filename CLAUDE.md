@@ -13,7 +13,7 @@ Tek Expo (React Native + Expo Router) kod tabanından iOS, Android ve Web. Kamer
 - `docs/sprints`, `docs/reports`, `docs/decisions`: Haftalık plan, haftalık rapor, mimari kararlar (ADR).
 
 ## 8 Çekirdek Modül
-1. Zaman Perdesi: Ghost overlay kamera + before/after split slider.
+1. Ziyaret Mührü: Eserde belirlenen kısmı kameraya tanıtarak ziyareti kanıtlama (MindAR, hedef cihazda derlenir) + rozet ve puan.
 2. Taşın Dili: 2D Marker-based AR kitabe çözücü (meal, transkripsiyon, vakfiye şartı).
 3. Kentsel Ağ & Sis Açma: Eserler arası ilişkisel ağ (gelir, su, mimar) ve harita sis (Fog of War) mekaniği.
 4. Vakıf Travel Planner & Hava Durumu: Tematik rota dizilimi + anlık hava durumu.

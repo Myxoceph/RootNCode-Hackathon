@@ -12,7 +12,7 @@ deneyimle keşfettirir.
 
 | # | Modül | Ne yapar |
 |---|---|---|
-| 1 | Zaman Perdesi | Kamera üzerinde arşiv fotoğrafı (ghost overlay) ve önce/sonra kaydırıcısı |
+| 1 | Ziyaret Mührü | Eserde belirlenen kısmı kameraya göster; telefon tanıyınca ziyaret mühürlenir (kanıtlanır), rozet ve puan kazanılır |
 | 2 | Taşın Dili | Marker tabanlı AR ile kitabe çözümü: transkripsiyon, meal, vakfiye şartı |
 | 3 | Kentsel Ağ & Sis Açma | Eserler arası gelir, su, vakıf ve mimar ilişkileri; keşfettikçe açılan harita |
 | 4 | Vakıf Travel Planner | Tematik rota dizilimi ve anlık hava durumu |
@@ -102,7 +102,7 @@ curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
 | `POST /assets/:id/contributions`, `GET /assets/:id/pulse` | Ziyaretçi Nabzı: katkı gönderme ve onaylanmış katkılar |
 | `POST /assets/:id/photos`, `GET /assets/:id/photos`, `GET /photos/:id` | Ziyaretçi fotoğraf önerileri: yükleme (meta verisi silinir), onaylananların listesi ve dosyası |
 | `POST /assets/:id/visit`, `GET /achievements`, `GET /me/achievements`, `GET /me/visits` | Ziyaretler ve başarımlar: rozet ve puan; liste [`docs/achievements.md`](docs/achievements.md) |
-| `GET /rewards`, `GET /me/wallet`, `POST /rewards/:code/redeem`, `POST /assets/:id/visit/proof` | Ödül kataloğu ve cüzdan, Zaman Perdesi ile kanıtlanmış ziyaret; anlatım [`docs/rewards.md`](docs/rewards.md) |
+| `GET /rewards`, `GET /me/wallet`, `POST /rewards/:code/redeem`, `POST /assets/:id/visit/proof` | Ödül kataloğu ve cüzdan, Ziyaret Mührü ile kanıtlanmış ziyaret; anlatım [`docs/rewards.md`](docs/rewards.md) |
 | `GET /admin/summary`, `/admin/users`, `/admin/assets` | Yönetim paneli: özet, kullanıcılar ve roller, panelden eser ekleme |
 | `GET /admin/contributions`, `POST /admin/contributions/:id/approve` | Moderasyon kuyruğu (moderatör ya da admin hesabı: `npm run account:create --workspace @vagabonds/api -- <kullanıcı-adı> <moderator\|admin>`) |
 

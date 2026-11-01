@@ -17,7 +17,7 @@ Her maddenin yanında ilgili WCAG kriteri yazar. Bir maddeyi bilerek karşılam�
 - [ ] Etiket eylemi anlatır, görünüşü değil: "Sesi aç", "Hoparlör ikonu" değil. Rolü tekrar etmez: "Kaydet düğmesi" değil, "Kaydet".
 - [ ] Sonucu belirsiz eylemlerde **`accessibilityHint`** var: "Arşiv fotoğrafını kameranın üzerine yerleştirir".
 - [ ] Durum bilgisi **`accessibilityState`** ile verilir: `selected`, `checked`, `disabled`, `expanded`, `busy`. (4.1.2)
-- [ ] Kaydırıcıların (Zaman Perdesi şablon opaklığı gibi) `accessibilityValue`'su var (`{ min: 0, max: 100, now: 35, text: "yüzde 35" }`) ve `accessibilityActions` ile artırılıp azaltılabiliyor. (4.1.2)
+- [ ] Kaydırıcıların `accessibilityValue`'su var (`{ min: 0, max: 100, now: 35, text: "yüzde 35" }`) ve `accessibilityActions` ile artırılıp azaltılabiliyor. (4.1.2)
 - [ ] Bilgi taşıyan her görselin metin karşılığı var: eser fotoğrafı, arşiv karesi, harita pini. Süs amaçlı görseller ekran okuyucudan gizli (`accessible={false}`, `importantForAccessibility="no"`). (1.1.1)
 - [ ] Ekran başlıkları `accessibilityRole="header"` taşıyor; ekran okuyucu kullanıcısı başlıklar arasında atlayabiliyor. (1.3.1, 2.4.6)
 - [ ] Birlikte okunması gereken öğeler tek odakta toplanmış: eser kartı "Selimiye Camii, Edirne, 1575, çözüldü" olarak tek seferde okunur. (1.3.1)
@@ -47,7 +47,7 @@ Her maddenin yanında ilgili WCAG kriteri yazar. Bir maddeyi bilerek karşılam�
 
 - [ ] Renkler `@vagabonds/ui` token'larından ve temalarından geliyor; koda elle hex yazılmamış.
 - [ ] Kullanılan her metin/arka plan çifti `contrastPairs` içinde ve `npm run ui:contrast` geçiyor: metin 4.5:1, ikon ve kontrol sınırları 3:1. (1.4.3, 1.4.11)
-- [ ] Görsel veya kamera görüntüsü üstündeki metnin (Zaman Perdesi başlık kutusu gibi) arkasında yarı saydam değil, kontrastı ölçülmüş düz bir zemin var. (1.4.3)
+- [ ] Görsel veya kamera görüntüsü üstündeki metnin (Ziyaret Mührü durum paneli gibi) arkasında yarı saydam değil, kontrastı ölçülmüş düz bir zemin var. (1.4.3)
 - [ ] **Bilgi yalnızca renkle verilmiyor.** Çözülen eserde altın renk + sekiz köşeli yıldız + "çözüldü" etiketi; keşfedilmemiş eserde sis rengi + "keşfedilmedi" etiketi; hatada kırmızı + ikon + metin. (1.4.1)
 - [ ] Ekran üç temada da (açık, koyu, yüksek kontrast) okunuyor.
 
@@ -71,12 +71,12 @@ Her maddenin yanında ilgili WCAG kriteri yazar. Bir maddeyi bilerek karşılam�
 
 - [ ] Her eylem, öğeler arasında tek tek ilerleyen bir anahtarla (iOS Switch Control, Android Switch Access) yapılabiliyor; hiçbir eylem yalnızca bir hareketle tetiklenmiyor. (2.1.1)
 - [ ] Süre sınırı yok, ya da varsa uzatılabiliyor veya kapatılabiliyor: kaybolan bildirimler, otomatik kapanan ipuçları. (2.2.1)
-- [ ] Kaydırıcıların ve sürüklenen öğelerin adım adım çalışan düğme karşılığı var (Zaman Perdesi önce/sonra kaydırıcısı). (2.5.1)
+- [ ] Kaydırıcıların ve sürüklenen öğelerin adım adım çalışan düğme karşılığı var (2.5.1)
 - [ ] Sesli komut kullanıcıları için görünen düğme yazısı, `accessibilityLabel`'ın başında geçiyor ("Kaydet" yazan düğmenin etiketi "Kaydet…" ile başlıyor). (2.5.3)
 
 ## 8. Kamera, AR ve hareket
 
-- [ ] Kamera ve AR gerektiren her deneyimin **kamerasız bir karşılığı** var: Zaman Perdesi için önce/sonra kaydırıcısı, Taşın Dili için kitabe okuma modu, mimari için sesli betimleme. Web'de zaten bu karşılıklar kullanılıyor (bkz. [ADR 0001](decisions/0001-universal-expo-app.md)).
+- [ ] Kamera ve AR gerektiren her deneyimin **kamerasız bir karşılığı** var: Ziyaret Mührü için hangi kısmın çekileceğini gösteren rehber, Taşın Dili için kitabe okuma modu, mimari için sesli betimleme. Web'de zaten bu karşılıklar kullanılıyor (bkz. [ADR 0001](decisions/0001-universal-expo-app.md)).
 - [ ] Kamera izni reddedilince ekran boş kalmıyor; kamerasız karşılık ve izni yeniden isteme yolu gösteriliyor.
 - [ ] Hizalama kılavuzu ("Minareyi kılavuza otur %87") sesli ve metinle de yönlendiriyor: "Biraz sağa", "Hizalandı".
 - [ ] Rampa, merdiven ve giriş bilgisi her eser detayında görünüyor.

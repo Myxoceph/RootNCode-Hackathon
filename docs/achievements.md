@@ -90,12 +90,12 @@ Toplam: **34 başarım**, en çok **1350 puan**. Puanlar cüzdana yazılır ve �
 
 ## Kanıtlanmış ziyaretler
 
-Ziyaretçi Zaman Perdesi'nde eserin fotoğrafını kamerada tanıtınca ziyaret "kanıtlanmış" olur (`POST /assets/:id/visit/proof`).
+Ziyaretçi Ziyaret Mührü'nde eserin belirlenen kısmını kameraya tanıtınca ziyaret "kanıtlanmış" (mühürlü) olur (`POST /assets/:id/visit/proof`).
 
 | Rozet | Başarım | Gereksinim | Puan | Kod |
 |---|---|---|---|---|
-| ⏳ | **Zaman Yolcusu**<br>Zaman Perdesi'nde bir eseri kamerada tanıtarak ziyaretini kanıtla. | 1 kanıtlanmış ziyaret | 40 | `zaman-yolcusu` |
-| 🕰️ | **Zaman Ustası**<br>5 eserde ziyaretini Zaman Perdesi ile kanıtla. | 5 kanıtlanmış ziyaret | 100 | `zaman-ustasi` |
+| 🔏 | **İlk Mühür**<br>Ziyaret Mührü ile bir eserde bulunduğunu kanıtla. | 1 kanıtlanmış ziyaret | 40 | `zaman-yolcusu` |
+| 🏅 | **Mühür Ustası**<br>5 eserde ziyaretini Ziyaret Mührü ile kanıtla. | 5 kanıtlanmış ziyaret | 100 | `zaman-ustasi` |
 
 ## Kural türleri (admin için)
 
@@ -108,7 +108,7 @@ Yeni başarım eklerken `rule` alanı aşağıdakilerden biridir. Doğrulanmayan
 | `cities` | `count` | `count` farklı ilde eser ziyaret et |
 | `within` | `level` (`district` ya da `city`), `count` (2–20), `hours` (1–720), isteğe bağlı `city` | `hours` saat içinde `count` farklı ilçe ya da il gez |
 | `complex` | `parentId` (külliye id'si) | Külliyenin bütün alt yapılarını ziyaret et |
-| `proven_visits` | `count`, isteğe bağlı `city` | `count` ziyaretini Zaman Perdesi ile kanıtla |
+| `proven_visits` | `count`, isteğe bağlı `city` | `count` ziyaretini Ziyaret Mührü ile kanıtla |
 | `contributions` | `count`, `contribution` (`notes`, `photos`, `any`) | `count` katkın onaylansın |
 
 Örnek:

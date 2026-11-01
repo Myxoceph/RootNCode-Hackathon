@@ -61,7 +61,7 @@ Her tema bir rol → palet rengi eşlemesidir (`text`, `textSecondary`, `surface
 `focusRing`, `fog`…). Yüksek kontrast, ikincil metni ve çizgileri ana metin rengine çeker.
 
 Tema tek noktadan seçilir: `getTheme(şema, yüksekKontrastAçıkMı)`. Uygulama varsayılan olarak **aydınlık** açılır;
-şema Profil'deki "Tema" seçiminden gelir (Aydınlık / Koyu / Sistem, `apps/app/src/theme/theme-preference.ts`). Kamera ekranları (Zaman Perdesi,
+şema Profil'deki "Tema" seçiminden gelir (Aydınlık / Koyu / Sistem, `apps/app/src/theme/theme-preference.ts`). Kamera ekranları (Ziyaret Mührü,
 Taşın Dili, Ses Kapsülü) her temada karanlıktır ve `cameraColors` kullanır.
 
 ## Bileşenler

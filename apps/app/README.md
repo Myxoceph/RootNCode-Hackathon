@@ -75,7 +75,7 @@ sade alternatifler gösterilir:
 
 | Modül | Mobil | Web |
 |---|---|---|
-| 1. Zaman Perdesi | Kamera ghost overlay + slider | Önce/sonra slider |
+| 1. Ziyaret Mührü | Eserin belirlenen kısmı kamerada tanınır, ziyaret mühürlenir | Hangi kısmın çekileceği gösterilir; mühür telefonda |
 | 2. Taşın Dili | Marker AR ile kitabe tarama | Kitabe okuma modu |
 | 3-8 | Tam | Tam |
 
