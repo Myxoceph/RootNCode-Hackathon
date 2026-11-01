@@ -106,6 +106,7 @@ export function toMedia(record: AssetMediaRecord, { lang, mediaBaseUrl }: Mapper
     photographer: nonEmpty(media.photographer),
     license: media.license,
     archiveYear: record.archive_year,
+    subject: nonEmpty(record.subject),
     sources,
   };
 }
