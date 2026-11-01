@@ -124,7 +124,7 @@ export function getTheme(scheme: "light" | "dark", highContrastOn: boolean): The
 }
 
 /**
- * Camera screens (Zaman Perdesi, Taşın Dili, Ses Kapsülü) stay dark in every
+ * Camera screens (Ziyaret Mührü, Taşın Dili, Ses Kapsülü) stay dark in every
  * theme, so the viewfinder reads the same in daylight and at night.
  */
 const cameraSpec = {

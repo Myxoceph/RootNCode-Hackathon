@@ -60,7 +60,7 @@ function ThemedStack() {
         <Stack screenOptions={{ headerTitleStyle: { fontFamily: fontFamily.display } }}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           {/* Camera screens are full screen and always dark; they draw their own back button. */}
-          <Stack.Screen name="time-curtain" options={{ headerShown: false, title: "Zaman Perdesi" }} />
+          <Stack.Screen name="visit-seal" options={{ headerShown: false, title: "Ziyaret Mührü" }} />
           <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
           {/* Draws its own header, with "Temizle" next to the title. */}
           <Stack.Screen name="assistant" options={{ headerShown: false, title: "Asistan" }} />
