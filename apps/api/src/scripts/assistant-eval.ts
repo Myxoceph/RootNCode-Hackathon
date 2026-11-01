@@ -47,6 +47,15 @@ const QUESTIONS: Record<string, Array<{ message: string; assetId?: string; lang?
     { message: "Konya'da ne yenir?" },
     { message: "Bugün Hatay'da hava nasıl, gezmeye uygun mu?" },
   ],
+  // Konya, the demo's pilot city (both volumes).
+  konya: [
+    { message: "Mevlana Türbesi ne zaman ve kim tarafından yaptırıldı?" },
+    { message: "Alâeddin Camii'ni kim, ne zaman yaptırdı? Mimarı belli mi?" },
+    { message: "Sahip Ata kimdir, Konya'da hangi eserleri yaptırdı?" },
+    { message: "Konya'da Selçuklu döneminden kalma hangi camileri gezebilirim?" },
+    { message: "Mevlana Türbesi'nin kubbesi kaç metre yüksekliğinde?" },
+    { message: "Bu eserin kitabesinde ne yazıyor?", assetId: "konya-selcuklu-sultan-alaeddin-ulu-camii" },
+  ],
   // Needs OTP_URL (the Konya pilot, docs/deploy.md).
   transit: [
     { message: "Konya Garı'na trenle geldim, Karatay Medresesi'ne nasıl giderim?" },

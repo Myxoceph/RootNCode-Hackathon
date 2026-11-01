@@ -19,7 +19,11 @@ export interface AssetSearchHit {
 
 export interface AssistantRepository {
   /** Visible assets whose name or text mentions the query's words, best match first. */
-  searchAssets(query: string, options: { city?: string | undefined; lang: Lang; limit: number }): Promise<AssetSearchHit[]>;
+  /** By words, or with no words by era and type alone (the most described first). */
+  searchAssets(
+    query: string,
+    options: { city?: string | undefined; era?: string | undefined; type?: string | undefined; lang: Lang; limit: number },
+  ): Promise<AssetSearchHit[]>;
 }
 
 // Words that would match almost every text.
@@ -130,11 +134,25 @@ export function createAssistantRepository(prisma: PrismaClient, visibility: Asse
   const statuses = visibleStatuses(visibility);
 
   return {
-    async searchAssets(query, { city, lang, limit }) {
+    async searchAssets(query, { city, era, type, lang, limit }) {
       const terms = searchTerms(query);
-      if (terms.length === 0) return [];
-
-      const visible: Prisma.assetWhereInput = { status: { in: statuses }, ...(city && { city_code: city }) };
+      const visible: Prisma.assetWhereInput = {
+        status: { in: statuses },
+        ...(city && { city_code: city }),
+        ...(era && { era_code: era }),
+        ...(type && { type_code: type }),
+      };
+      if (terms.length === 0) {
+        if (!era && !type) return [];
+        // "Selçuklu camileri": no words to match, so the best-documented assets come first.
+        const records = await prisma.asset.findMany({
+          where: visible,
+          select: searchSelect,
+          orderBy: [{ asset_section: { _count: "desc" } }, { name_tr: "asc" }],
+          take: limit,
+        });
+        return records.map((record) => toHit(record, [], lang));
+      }
       // Names are scored over every visible asset (a few hundred short rows), so a word
       // that many names share cannot crowd out the one that matches all the words.
       const names = await prisma.asset.findMany({ where: visible, select: { id: true, name_tr: true, name_en: true } });

@@ -74,6 +74,10 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
     const [ulucami] = await repository.searchAssets("ulu camii bursa", { lang: "tr", limit: 1 });
     expect(ulucami).toMatchObject({ founder: expect.stringContaining("Bayezid"), dating: expect.any(String) });
     expect(await first("ordekli hamami")).toBe(HAMAM);
+    // "Selçuklu camileri": era and type with no words, the best-documented first; Selçuklu is also a district.
+    const seljuk = await repository.searchAssets("", { city: "konya", era: "selcuklu", type: "cami", lang: "tr", limit: 5 });
+    expect(seljuk.map((hit) => hit.id)).toContain("konya-selcuklu-sultan-alaeddin-ulu-camii");
+    expect(await repository.searchAssets("", { lang: "tr", limit: 5 })).toEqual([]);
     const inHatay = await repository.searchAssets("Habib-i Neccar", { city: "hatay", lang: "tr", limit: 3 });
     expect(inHatay.every((hit) => hit.id.startsWith("hatay-"))).toBe(true);
   });

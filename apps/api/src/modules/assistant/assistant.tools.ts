@@ -56,6 +56,8 @@ export interface ToolContext {
   hour: number;
   /** The visitor's position, when the app sent it. */
   origin?: { lat: number; lng: number } | undefined;
+  /** asset_details calls so far in this question; later ones get a shorter page. */
+  assetDetailsShown?: number;
 }
 
 export interface ToolResult {
@@ -71,6 +73,8 @@ export interface ToolResult {
 const SECTION_CHARS = 900;
 // The answer's wait grows with the text the model reads: 7000 made the last call ~9 s on EVREN.
 const ASSET_CHARS = 4_000;
+/** For the second and later assets of one question. */
+const LATER_ASSET_CHARS = 2_000;
 const DISH_CHARS = 400;
 const SEARCH_LIMIT = 5;
 
@@ -82,7 +86,14 @@ const CityArg = z
   .transform((value) => toIdFragment(value).replace(/-/g, ""));
 
 const ARGS = {
-  search_assets: z.object({ query: z.string().trim().min(2).max(120), city: CityArg.optional() }),
+  search_assets: z
+    .object({
+      query: z.string().trim().max(120).default(""),
+      city: CityArg.optional(),
+      era: z.enum(["selcuklu", "beylikler", "erken-osmanli", "klasik-osmanli", "gec-osmanli", "cumhuriyet"]).optional(),
+      type: z.string().regex(/^[a-z-]+$/).optional(),
+    })
+    .refine((args) => args.query.length >= 2 || args.era || args.type, "give query, era or type"),
   asset_details: z.object({ id: z.string().trim().min(2).max(120) }),
   plan_trip: z.object({
     city: CityArg,
@@ -112,11 +123,20 @@ export const TOOL_SPECS: ToolSpec[] = [
   {
     name: "search_assets",
     description:
-      "Vakıf eserlerini adında ya da metninde geçen kelimelerle arar (cami, han, hamam, kişi adı, olay...). En iyi 5 eseri id, tarih, bani ve kısa bir alıntıyla döner; yalnızca tarihi ya da banisi soruluyorsa asset_details gerekmez.",
+      "Vakıf eserlerini adında ya da metninde geçen kelimelerle, ya da dönem ve türe göre arar. En iyi 5 eseri id, tarih, bani ve kısa bir alıntıyla döner; yalnızca tarihi ya da banisi soruluyorsa asset_details gerekmez. Dönem sorusunda (ör. Selçuklu camileri) era ve type kullan: 'Selçuklu' hem dönem hem Konya'nın bir ilçesidir.",
     parameters: {
       type: "object",
-      properties: { query: { type: "string", description: "Aranacak kelimeler" }, city: cityParam },
-      required: ["query"],
+      properties: {
+        query: { type: "string", description: "Aranacak kelimeler; era ya da type verildiyse boş olabilir" },
+        city: cityParam,
+        era: {
+          type: "string",
+          enum: ["selcuklu", "beylikler", "erken-osmanli", "klasik-osmanli", "gec-osmanli", "cumhuriyet"],
+          description: "İsteğe bağlı dönem",
+        },
+        type: { type: "string", description: "İsteğe bağlı tür kodu: cami, mescit, medrese, turbe, han, hamam, kulliye, cesme, kervansaray, tekke" },
+      },
+      required: [],
     },
   },
   {
@@ -218,9 +238,9 @@ const clip = (text: string | null | undefined, max: number) => (!text ? null : t
 const hhmm = (minute: number) => `${String(Math.floor(minute / 60)).padStart(2, "0")}:${String(minute % 60).padStart(2, "0")}`;
 
 /** The parts of an asset a model answers from. Visitor contributions are never included. */
-export function compactAsset(asset: AssetDetail, ref: number): Record<string, unknown> {
+export function compactAsset(asset: AssetDetail, ref: number, chars = ASSET_CHARS): Record<string, unknown> {
   const sections = [];
-  let budget = ASSET_CHARS;
+  let budget = chars;
   for (const section of asset.sections) {
     if (budget <= 0) break;
     const text = clip(section.body, Math.min(SECTION_CHARS, budget))!;
@@ -290,17 +310,21 @@ function compactTrip(trip: TripPlanResponse, ref: number): Record<string, unknow
 }
 
 const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) => Promise<ToolResult> } = {
-  async search_assets({ query, city }, { repository, sources, lang }) {
-    const found = await repository.searchAssets(query, { city, lang, limit: SEARCH_LIMIT });
+  async search_assets({ query, city, era, type }, { repository, sources, lang }) {
+    const found = await repository.searchAssets(query, { city, era, type, lang, limit: SEARCH_LIMIT });
     if (found.length === 0) return { content: JSON.stringify({ results: [], note: "No matching asset in the dataset." }) };
     return { content: JSON.stringify({ results: found.map((hit) => ({ ref: sources.add("asset", hit.id, hit.name), ...hit })) }) };
   },
 
-  async asset_details({ id }, { api, sources, lang }) {
+  async asset_details({ id }, context) {
+    const { api, sources, lang } = context;
     const { statusCode, body } = await api(`/assets/${encodeURIComponent(id)}`, { lang });
     if (statusCode === 400 || statusCode === 404) return failure(`No asset with id "${id}"; use search_assets first.`);
     const asset = AssetDetailSchema.parse(body);
-    return { content: JSON.stringify(compactAsset(asset, sources.add("asset", asset.id, asset.name))) };
+    // A question about several assets (e.g. Sahip Ata's buildings) read three full pages and took ~50 s.
+    const chars = context.assetDetailsShown ? LATER_ASSET_CHARS : ASSET_CHARS;
+    context.assetDetailsShown = (context.assetDetailsShown ?? 0) + 1;
+    return { content: JSON.stringify(compactAsset(asset, sources.add("asset", asset.id, asset.name), chars)) };
   },
 
   async plan_trip({ city, duration, theme, date }, { api, sources, lang, today, hour }) {
