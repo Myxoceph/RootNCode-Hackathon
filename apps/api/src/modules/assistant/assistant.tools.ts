@@ -82,7 +82,14 @@ const CityArg = z
   .transform((value) => toIdFragment(value).replace(/-/g, ""));
 
 const ARGS = {
-  search_assets: z.object({ query: z.string().trim().min(2).max(120), city: CityArg.optional() }),
+  search_assets: z
+    .object({
+      query: z.string().trim().max(120).default(""),
+      city: CityArg.optional(),
+      era: z.enum(["selcuklu", "beylikler", "erken-osmanli", "klasik-osmanli", "gec-osmanli", "cumhuriyet"]).optional(),
+      type: z.string().regex(/^[a-z-]+$/).optional(),
+    })
+    .refine((args) => args.query.length >= 2 || args.era || args.type, "give query, era or type"),
   asset_details: z.object({ id: z.string().trim().min(2).max(120) }),
   plan_trip: z.object({
     city: CityArg,
@@ -112,11 +119,20 @@ export const TOOL_SPECS: ToolSpec[] = [
   {
     name: "search_assets",
     description:
-      "Vakıf eserlerini adında ya da metninde geçen kelimelerle arar (cami, han, hamam, kişi adı, olay...). En iyi 5 eseri id, tarih, bani ve kısa bir alıntıyla döner; yalnızca tarihi ya da banisi soruluyorsa asset_details gerekmez.",
+      "Vakıf eserlerini adında ya da metninde geçen kelimelerle, ya da dönem ve türe göre arar. En iyi 5 eseri id, tarih, bani ve kısa bir alıntıyla döner; yalnızca tarihi ya da banisi soruluyorsa asset_details gerekmez. Dönem sorusunda (ör. Selçuklu camileri) era ve type kullan: 'Selçuklu' hem dönem hem Konya'nın bir ilçesidir.",
     parameters: {
       type: "object",
-      properties: { query: { type: "string", description: "Aranacak kelimeler" }, city: cityParam },
-      required: ["query"],
+      properties: {
+        query: { type: "string", description: "Aranacak kelimeler; era ya da type verildiyse boş olabilir" },
+        city: cityParam,
+        era: {
+          type: "string",
+          enum: ["selcuklu", "beylikler", "erken-osmanli", "klasik-osmanli", "gec-osmanli", "cumhuriyet"],
+          description: "İsteğe bağlı dönem",
+        },
+        type: { type: "string", description: "İsteğe bağlı tür kodu: cami, mescit, medrese, turbe, han, hamam, kulliye, cesme, kervansaray, tekke" },
+      },
+      required: [],
     },
   },
   {
@@ -290,8 +306,8 @@ function compactTrip(trip: TripPlanResponse, ref: number): Record<string, unknow
 }
 
 const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) => Promise<ToolResult> } = {
-  async search_assets({ query, city }, { repository, sources, lang }) {
-    const found = await repository.searchAssets(query, { city, lang, limit: SEARCH_LIMIT });
+  async search_assets({ query, city, era, type }, { repository, sources, lang }) {
+    const found = await repository.searchAssets(query, { city, era, type, lang, limit: SEARCH_LIMIT });
     if (found.length === 0) return { content: JSON.stringify({ results: [], note: "No matching asset in the dataset." }) };
     return { content: JSON.stringify({ results: found.map((hit) => ({ ref: sources.add("asset", hit.id, hit.name), ...hit })) }) };
   },
