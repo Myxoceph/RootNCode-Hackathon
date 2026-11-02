@@ -93,7 +93,7 @@ interface CardColors {
  * Clear glass with white text in every theme: the map under it is always the night map.
  * The edges follow the theme: white in the light one, the seals' navy (`gece700`) in the dark one.
  */
-const GLASS_COLORS = {
+export const GLASS_COLORS = {
   tile: "rgba(255, 255, 255, 0.12)",
   text: palette.white,
   textSecondary: palette.gece200,
@@ -101,7 +101,7 @@ const GLASS_COLORS = {
   button: palette.gece700,
   onButton: palette.white,
 };
-const CARD_COLORS: Record<"light" | "dark", CardColors> = {
+export const CARD_COLORS: Record<"light" | "dark", CardColors> = {
   light: { ...GLASS_COLORS, mark: palette.white, edge: "rgba(255, 255, 255, 0.35)" },
   dark: { ...GLASS_COLORS, mark: palette.gece700, edge: "rgba(38, 50, 74, 0.6)" },
 };
@@ -120,10 +120,7 @@ function CityAssetCard({ asset, buildings, width, chosen, colors }: { asset: Ass
       onPress={() => router.push({ pathname: "/monuments/[id]", params: { id: asset.id } })}
       style={({ pressed }) => [styles.card, { width, borderColor: chosen ? colors.mark : colors.edge }, pressed && styles.pressed]}
     >
-      {/* Clear frosted glass: the night map shows through, blurred; the dark tint keeps white text readable over the fog. */}
-      <BlurView intensity={50} tint="systemUltraThinMaterialDark" style={StyleSheet.absoluteFill} />
-      <View style={[StyleSheet.absoluteFill, { backgroundColor: GLASS_TINT }]} />
-      <View style={[StyleSheet.absoluteFill, { backgroundColor: GLASS }]} />
+      <GlassFill />
       <View style={[styles.photo, { backgroundColor: colors.tile }]}>{asset.cover && <AssetImage media={asset.cover} decorative fill />}</View>
       <View style={styles.body}>
         <View style={styles.meta}>
@@ -155,6 +152,17 @@ function CityAssetCard({ asset, buildings, width, chosen, colors }: { asset: Ass
 /** A hint of the seals' navy in the glass, under a faint white sheen. */
 const GLASS_TINT = "rgba(38, 50, 74, 0.3)";
 const GLASS = "rgba(255, 255, 255, 0.1)";
+
+/** Clear frosted glass: the night map shows through, blurred; the dark tint keeps white text readable over the fog. Its parent clips it to its corners. */
+export function GlassFill() {
+  return (
+    <>
+      <BlurView intensity={50} tint="systemUltraThinMaterialDark" style={StyleSheet.absoluteFill} />
+      <View style={[StyleSheet.absoluteFill, { backgroundColor: GLASS_TINT }]} />
+      <View style={[StyleSheet.absoluteFill, { backgroundColor: GLASS }]} />
+    </>
+  );
+}
 
 const styles = StyleSheet.create({
   row: {
