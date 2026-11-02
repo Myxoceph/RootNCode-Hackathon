@@ -7,6 +7,30 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-02 · Asistan yalnızca hesapla; sohbet arşivi (migration, sözleşme 0.3.18)
+
+Kimler: **herkes** (API'yi yerelde çalıştıranlar, uygulama ekibi, demoyu açan)
+
+1. `npm run db:deploy --workspace @vagabonds/api` (sohbet tabloları).
+2. Demoyu açan: `deploy/.env`'e `PREFLIGHT_PASSWORD=` ekle (uzun, rastgele bir parola; `deploy/.env.example`).
+   Yoksa ön kontrolün asistan satırı başarısız olur.
+
+Değişenler:
+- Rehber artık yalnızca hesapla kullanılıyor: oturumsuz soru 401, anonim oturum 403 `ACCOUNT_REQUIRED`.
+  Uygulama giriş yapmamış ziyaretçiye Rehber'de "Giriş yap" kartını gösteriyor.
+- Her soru ve cevap kaydediliyor (`chat_conversation`, `chat_message`); cevap, kaynakları, gezi planı ve
+  rotasıyla gösterildiği gibi saklanıyor. Konum saklanmıyor. Kişi başı son 50 konuşma tutuluyor.
+- Her sayfada (Rehber ya da bir eser) bir açık konuşma var. "Yeni konuşma" (kalem) onu arşive alıyor;
+  arşivdeki konuşma yalnızca okunuyor, soru gönderilemiyor (409 `CONVERSATION_ARCHIVED`).
+- Yeni uçlar: `GET /me/conversations`, `GET /me/conversations/:id`, `POST /me/conversations/:id/archive`,
+  `DELETE /me/conversations/:id`, `DELETE /me/conversations`. `POST /chat` `conversationId` alıp döndürüyor.
+- Uygulama: Rehber'in sağ üstünde geçmiş (saat) ve yeni konuşma (kalem); `/assistant-history` listesi;
+  arşivdeki konuşma `/assistant?conversation=<id>` ile açılıyor, yazı alanının yerinde "Yeni konuşma" şeridi.
+  Uygulama yeniden açılınca sayfanın açık konuşması kaldığı yerden geliyor.
+- Ön kontrol (`deploy/preflight.mjs`) asistana kendi `onkontrol` hesabıyla soruyor ve konuşmasını siliyor.
+
+---
+
 ## 2026-11-02 · Asistan daha uzun konuşmayı hatırlıyor (sözleşme 0.3.17)
 
 Kimler: **sözleşmeyi kullananlar** (kurulum adımı yok)
