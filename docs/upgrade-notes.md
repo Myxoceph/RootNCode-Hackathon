@@ -7,6 +7,16 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-02 · Asistan daha uzun konuşmayı hatırlıyor (sözleşme 0.3.17)
+
+Kimler: **sözleşmeyi kullananlar** (kurulum adımı yok)
+
+Değişenler:
+- `POST /chat` geçmişte en çok 12 tur alıyor (6 soru ve cevabı; önceden 6 tur). Uygulama da son 12 turu gönderiyor (`HISTORY_TURNS`).
+- Uygulamanın fixture'larında yalnızca sürüm numarası değişti.
+
+---
+
 ## 2026-11-01 · Zaman Perdesi yerine Ziyaret Mührü (migration, yeni paket, sözleşme 0.3.16)
 
 Kimler: **uygulama ekibi**, **API'yi yerelde çalıştıranlar**, **veri ekibi**
