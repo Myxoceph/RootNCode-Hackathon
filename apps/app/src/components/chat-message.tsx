@@ -8,7 +8,7 @@ import Svg, { Circle, Defs, Line, LinearGradient as SvgGradient, Rect, Stop } fr
 
 import { answerLines, answerParts, followUps, type FollowUpTopic, type LinePart } from "@/lib/chat";
 import { inkFor } from "@/lib/route-ink";
-import { routeKey, useSavedRoutes } from "@/lib/saved-routes";
+import { routeKey, savedKindOf, useSavedRoutes } from "@/lib/saved-routes";
 import { speak, stopSpeaking } from "@/lib/speak";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -213,7 +213,7 @@ export function AssistantMessage({
 
   useEffect(() => () => stopSpeaking(), []);
 
-  // A trip answer is shown as the card alone: the plan is in Rotalarım, not told in words here.
+  // A trip answer is shown as the card alone: the plan is in Kaydettiklerim, not told in words here.
   const trip = response.attachments.trip;
   if (trip) {
     return (
@@ -280,6 +280,12 @@ export function AssistantMessage({
           </Appear>
         )}
       </View>
+
+      {done && (
+        <Appear animate={animate}>
+          <SavedNote response={response} />
+        </Appear>
+      )}
 
       {done && (
         <Appear animate={animate}>
@@ -422,6 +428,27 @@ function SourceChip({ citation }: { citation: ChatCitation }) {
   );
 }
 
+/** Under an answer Kaydettiklerim holds: that it was kept, and the way there. Nothing while it is not (yet) in the list. */
+function SavedNote({ response }: { response: ChatResponse }) {
+  const { colors: c } = useTheme();
+  const router = useRouter();
+  const kind = savedKindOf(useSavedRoutes(), response);
+  if (!kind) return null;
+  return (
+    <Pressable
+      accessibilityRole="link"
+      accessibilityLabel="Kaydettiklerim'e eklendi, listeyi açar"
+      onPress={() => router.push({ pathname: "/profile/routes", params: { tab: kind } })}
+      style={({ pressed }) => [styles.savedNote, pressed && styles.pressed]}
+    >
+      <Ionicons name="bookmark" size={14} color={c.highlightMark} />
+      <Text variant="caption" color="textSecondary">
+        Kaydettiklerim'e eklendi
+      </Text>
+    </Pressable>
+  );
+}
+
 /** A trip's walking distance, "850 m" or "2,4 km". */
 function distance(meters: number): string {
   return meters >= 1000 ? `${(meters / 1000).toFixed(1).replace(".", ",")} km` : `${meters} m`;
@@ -432,7 +459,7 @@ const tripDuration: Record<TripPlanResponse["duration"], string> = { half: "Yar�
 /**
  * A trip answer, shown instead of its words: "Rota oluşturuldu" on the city's ink, the plan's
  * name, its length, stops and walk, the stops as dots on a line, and the way to the saved plan
- * (lib/chat.ts keeps it in Profil · Rotalarım).
+ * (lib/chat.ts keeps it in Profil · Kaydettiklerim).
  */
 function TripCreated({ trip }: { trip: TripPlanResponse }) {
   const { colors: c } = useTheme();
@@ -449,7 +476,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
       <View
         style={styles.createdBand}
         accessible
-        accessibilityLabel={`Rota oluşturuldu: ${title}, ${tripDuration[trip.duration]}, ${stops} durak, ${distance(meters)} yürüyüş. Rotalarım'a kaydedildi.`}
+        accessibilityLabel={`Rota oluşturuldu: ${title}, ${tripDuration[trip.duration]}, ${stops} durak, ${distance(meters)} yürüyüş. Kaydettiklerim'e kaydedildi.`}
       >
         <Svg style={StyleSheet.absoluteFill} aria-hidden>
           <Defs>
@@ -501,7 +528,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
       <View style={[styles.createdInfo, { borderBottomColor: c.border }]}>
         <Ionicons name="information-circle-outline" size={16} color={c.textSecondary} />
         <Text variant="caption" color="textSecondary" style={styles.flex}>
-          Bu rota kaydedildi. İstediğin zaman Profil › Rotalarım'dan ulaşabilirsin.
+          Bu rota kaydedildi. İstediğin zaman Profil › Kaydettiklerim'den ulaşabilirsin.
         </Text>
       </View>
       <View style={styles.createdActions}>
@@ -523,7 +550,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
         >
           <Ionicons name="bookmark-outline" size={15} color={c.textSecondary} />
           <Text variant="caption" color="textSecondary" style={styles.createdAllText}>
-            Rotalarım
+            Kaydettiklerim
           </Text>
         </Pressable>
       </View>
@@ -532,6 +559,13 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
 }
 
 const styles = StyleSheet.create({
+  savedNote: {
+    flexDirection: "row",
+    alignItems: "center",
+    alignSelf: "flex-start",
+    gap: spacing.xs,
+    minHeight: touchTarget.min,
+  },
   created: {
     borderRadius: 22,
     borderWidth: StyleSheet.hairlineWidth,

@@ -127,7 +127,7 @@ export default function RouteScreen() {
               disabled={isSaved}
               onPress={() => {
                 void saveRoute({ region, duration, dishes: [...addedIds], title: plan.title, stops: stopCount });
-                announce("Rota kaydedildi. Profil, Rotalarım'da.");
+                announce("Rota kaydedildi. Profil, Kaydettiklerim'de.");
               }}
               style={({ pressed }) => [styles.save, { borderColor: isSaved ? c.border : c.highlightMark }, pressed && styles.pressed]}
             >

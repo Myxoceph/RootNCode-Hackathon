@@ -13,6 +13,7 @@ import Svg, { Circle, Defs, G, LinearGradient, Path, Pattern, RadialGradient, Re
 import { logout, useCommunity, useMyAchievements, useMyContributions } from "@/data";
 import { announce } from "@/lib/announce";
 import { useSavedRoutes } from "@/lib/saved-routes";
+import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -25,8 +26,8 @@ const PHOTO_H = 132;
 const STAR_SQUARE = "M22 22 H78 V78 H22 Z";
 
 /**
- * Profil: the visitor's passport (name, account, points, badges and visits) and four sections as
- * one list, each row to its own page: Rotalarım, Rozetlerim, Bıraktığım Notlar and Sistem ayarları
+ * Profil: the visitor's passport (name, account, points, badges and visits) and five sections as
+ * one list, each row to its own page: Kaydettiklerim, Mühürlenen eserler, Rozetlerim, Bıraktığım Notlar and Sistem ayarları
  * (module 8). The passport is firuze green and gold in both themes.
  */
 export default function SettingsScreen() {
@@ -428,21 +429,23 @@ function Join() {
 const ROW_ICON = 32;
 
 /**
- * The four sections as one grouped list: a gold icon in a gold-foil frame, the title, and how many
- * routes, badges or notes there are when that is known.
+ * The five sections as one grouped list: a gold icon in a gold-foil frame, the title, and how many
+ * routes, sealed assets, badges or notes there are when that is known.
  */
 function Sections() {
   const { colors: c, scheme } = useTheme();
   const dark = scheme === "dark";
   const router = useRouter();
   const routes = useSavedRoutes();
+  const sealed = useUnlockedAssets();
   const badges = useMyAchievements();
   const notes = useMyContributions();
   const badgeData = badges.status === "success" ? badges.data : null;
   const noteCount = notes.status === "success" && notes.data ? notes.data.length : null;
 
   const rows: Array<{ href: Href; icon: IconName; title: string; value: string | null }> = [
-    { href: "/profile/routes", icon: "map-outline", title: "Rotalarım", value: routes.length > 0 ? String(routes.length) : null },
+    { href: "/profile/routes", icon: "bookmark-outline", title: "Kaydettiklerim", value: routes.length > 0 ? String(routes.length) : null },
+    { href: "/profile/sealed", icon: "shield-checkmark-outline", title: "Mühürlenen eserler", value: sealed.size > 0 ? String(sealed.size) : null },
     {
       href: "/profile/badges",
       icon: "ribbon-outline",

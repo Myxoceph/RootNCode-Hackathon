@@ -64,15 +64,16 @@ function ThemedStack() {
           {/* Camera screens are full screen and always dark; they draw their own back button. */}
           <Stack.Screen name="visit-seal" options={{ headerShown: false, title: "Ziyaret Mührü" }} />
           <Stack.Screen name="auth" options={{ headerShown: false, title: "Giriş yap" }} />
-          {/* Profil's four sections, each on its own page under a header with a back button. */}
-          <Stack.Screen name="profile/routes" options={{ title: "Rotalarım", headerBackTitle: "Profil" }} />
+          {/* Profil's sections, each on its own page under a header with a back button. */}
+          <Stack.Screen name="profile/routes" options={{ title: "Kaydettiklerim", headerBackTitle: "Profil" }} />
+          <Stack.Screen name="profile/sealed" options={{ title: "Mühürlenen eserler", headerBackTitle: "Profil" }} />
           <Stack.Screen name="profile/badges" options={{ title: "Rozetlerim", headerBackTitle: "Profil" }} />
           <Stack.Screen name="profile/settings" options={{ title: "Sistem ayarları", headerBackTitle: "Profil" }} />
           <Stack.Screen name="profile/notes" options={{ title: "Bıraktığım Notlar", headerBackTitle: "Profil" }} />
           {/* An eser kartı over the Profil page it was opened from; it draws its own close button. */}
           <Stack.Screen name="asset/[id]" options={{ headerShown: false, title: "" }} />
-          {/* A trip Rehber planned, from Rotalarım; the screen sets its own title. */}
-          <Stack.Screen name="profile/trip" options={{ title: "Rota", headerBackTitle: "Rotalarım" }} />
+          {/* A trip Rehber planned, from Kaydettiklerim; the screen sets its own title. */}
+          <Stack.Screen name="profile/trip" options={{ title: "Rota", headerBackTitle: "Kaydettiklerim" }} />
           {/* Draws its own header: a system header that floats over the page would cover the sticky tabs. */}
           <Stack.Screen name="dossier" options={{ headerShown: false, title: "Eserin dosyası" }} />
           <Stack.Screen name="related" options={{ headerShown: false, title: "İlişkili eserler" }} />

@@ -3,7 +3,7 @@ import { useSyncExternalStore } from "react";
 
 import { archiveConversation, askAssistant, fetchConversation, fetchConversations } from "@/data/assistant";
 import { DataError } from "@/data/errors";
-import { saveTrip } from "@/lib/saved-routes";
+import { saveAdvice, saveTrip } from "@/lib/saved-routes";
 
 /** `POST /chat` takes at most this many earlier turns. */
 export const HISTORY_TURNS = 12;
@@ -282,7 +282,7 @@ export async function openArchived(conversationId: string): Promise<void> {
  * Asks one question in the conversation `key`. Resolves to the answer, or to `null` when it
  * failed (the reason is in `failed`) or another question is still on its way.
  */
-export async function ask(key: string, question: string, assetId?: string): Promise<ChatResponse | null> {
+export async function ask(key: string, question: string, assetId?: string, assetName?: string): Promise<ChatResponse | null> {
   const before = conversations.get(key) ?? EMPTY;
   const text = question.trim();
   if (before.pending !== null || before.archived !== null || text.length === 0) return null;
@@ -307,8 +307,12 @@ export async function ask(key: string, question: string, assetId?: string): Prom
     );
     if (!current()) return null;
     inFlight.delete(key);
-    // A trip Rehber plans goes to Profil · Rotalarım; the answer says so (components/chat-message.tsx).
+    // What Rehber plans or suggests goes to Profil · Kaydettiklerim; the answer says so (components/chat-message.tsx).
     if (response.attachments.trip) void saveTrip(response.attachments.trip);
+    void saveAdvice(text, response, {
+      asset: assetId && assetName ? { id: assetId, name: assetName } : undefined,
+      trips: before.entries.flatMap((entry) => (entry.role === "assistant" && entry.response.attachments.trip ? [entry.response.attachments.trip] : [])),
+    });
     update(key, {
       entries: [...before.entries, { id: nextId++, role: "user", text }, { id: nextId++, role: "assistant", response }],
       pending: null,

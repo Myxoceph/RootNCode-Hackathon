@@ -1,23 +1,33 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
-import { useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Animated, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Circle, Defs, Line, LinearGradient, Rect, Stop } from "react-native-svg";
 
+import { FoodAdviceList, TransitAdviceList } from "@/components/saved-advice";
 import { announce } from "@/lib/announce";
 import { bottomInset } from "@/lib/bottom-inset";
 import { inkFor } from "@/lib/route-ink";
-import { removeRoute, useSavedRoutes, type PlannerRoute, type SavedRoute } from "@/lib/saved-routes";
+import { isRoute, removeRoute, routeKey, useSavedRoutes, type FoodAdvice, type PlannerRoute, type TransitAdvice, type TripRoute } from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 const regionLabel: Record<PlannerRoute["region"], string> = { bursa: "Bursa", edirne: "Edirne", both: "Bursa & Edirne" };
 const durationLabel: Record<PlannerRoute["duration"], string> = { half: "Yarım gün", "1": "1 gün", "2": "2 gün" };
 
+type RouteEntry = PlannerRoute | TripRoute;
+type Tab = "routes" | "food" | "transit";
+
+const TABS: ReadonlyArray<{ key: Tab; label: string }> = [
+  { key: "routes", label: "Rotalar" },
+  { key: "food", label: "Yemek" },
+  { key: "transit", label: "Ulaşım" },
+];
+
 /** What a ticket shows: the city, the title, how long, from where, the stops and their ends. */
-function ticketOf(route: SavedRoute) {
+function ticketOf(route: RouteEntry) {
   if (route.kind === "trip") {
     const stops = route.trip.days.flatMap((day) => day.items.flatMap((item) => (item.kind === "stop" ? [item.asset.name] : [])));
     return {
@@ -40,16 +50,23 @@ function ticketOf(route: SavedRoute) {
 }
 
 /**
- * Profil · Rotalarım: the routes saved from the planner ("Rotayı kaydet") and the trips Rehber
- * planned, newest first, each as a ticket: the city on its own ink, the stops as dots on a dashed
- * line. A planner ticket opens its route in the planner again, a Rehber ticket its plan day by
- * day (./trip.tsx). New routes are planned with Rehber, where "Yeni" leads.
+ * Profil · Kaydettiklerim, one tab each for what is kept. Rotalar: the routes saved from the planner
+ * ("Rotayı kaydet") and the trips Rehber planned, newest first, each as a ticket: the city on its
+ * own ink, the stops as dots on a dashed line. A planner ticket opens its route in the planner
+ * again, a Rehber ticket its plan day by day (./trip.tsx). New routes are planned with Rehber, where
+ * "Yeni" leads. Yemek and Ulaşım: what Rehber suggested in the chat (components/saved-advice.tsx).
  */
 export default function MyRoutesScreen() {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const routes = useSavedRoutes();
+  const { tab: wanted } = useLocalSearchParams<{ tab?: string }>();
+  const [tab, setTab] = useState<Tab>(wanted === "food" || wanted === "transit" ? wanted : "routes");
+  const saved = useSavedRoutes();
+  const routes = saved.filter(isRoute);
+  const food = saved.filter((route): route is FoodAdvice => route.kind === "food");
+  const transit = saved.filter((route): route is TransitAdvice => route.kind === "transit");
+  const counts: Record<Tab, number> = { routes: routes.length, food: food.length, transit: transit.length };
   const stopTotal = routes.reduce((sum, route) => sum + route.stops, 0);
 
   return (
@@ -59,12 +76,33 @@ export default function MyRoutesScreen() {
       contentInsetAdjustmentBehavior="automatic"
     >
       <Head>
-        <title>Rotalarım · Vagabonds</title>
+        <title>Kaydettiklerim · Vagabonds</title>
       </Head>
 
-      {routes.length === 0 ? (
-        <Empty onNew={() => router.navigate("/rehber")} />
-      ) : (
+      <View accessibilityRole="tablist" style={[styles.tabs, { backgroundColor: c.surfaceRaised }]}>
+        {TABS.map((option) => {
+          const on = option.key === tab;
+          return (
+            <Pressable
+              key={option.key}
+              accessibilityRole="tab"
+              accessibilityState={{ selected: on }}
+              accessibilityLabel={`${option.label}, ${counts[option.key]} kayıt`}
+              onPress={() => setTab(option.key)}
+              style={[styles.tab, on && { backgroundColor: c.surface }]}
+            >
+              <Text variant="caption" color={on ? "text" : "textSecondary"} style={styles.tabText}>
+                {counts[option.key] > 0 ? `${option.label} ${counts[option.key]}` : option.label}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </View>
+
+      {tab === "food" && <FoodAdviceList items={food} />}
+      {tab === "transit" && <TransitAdviceList items={transit} />}
+      {tab === "routes" && routes.length === 0 && <Empty onNew={() => router.navigate("/rehber")} />}
+      {tab === "routes" && routes.length > 0 && (
         <>
           <View style={styles.head}>
             <Text variant="caption" color="textSecondary" style={styles.headText}>
@@ -94,14 +132,21 @@ export default function MyRoutesScreen() {
 }
 
 /** One saved route as a ticket; it rises in a moment after the one above it. */
-function Ticket({ route, index }: { route: SavedRoute; index: number }) {
+function Ticket({ route, index }: { route: RouteEntry; index: number }) {
   const { colors: c } = useTheme();
   const router = useRouter();
   const reduced = useReducedMotion();
   const rise = useRef(new Animated.Value(reduced ? 1 : 0)).current;
   const ticket = ticketOf(route);
   const [light, deep] = inkFor(ticket.code);
+  const [size, setSize] = useState({ width: 0, height: 0 });
   const saved = new Date(route.savedAt).toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
+  // What Rehber suggested for this route, so it is found from here too.
+  const forThis = useSavedRoutes().filter((entry) => (entry.kind === "food" || entry.kind === "transit") && entry.about?.key === routeKey(route));
+  const adviceCounts = (["food", "transit"] as const).flatMap((kind) => {
+    const count = forThis.filter((entry) => entry.kind === kind).length;
+    return count > 0 ? [`${count} ${kind === "food" ? "yemek" : "ulaşım"}`] : [];
+  });
 
   useEffect(() => {
     if (reduced) {
@@ -124,19 +169,21 @@ function Ticket({ route, index }: { route: SavedRoute; index: number }) {
         onPress={open}
         style={({ pressed }) => [styles.ticket, { backgroundColor: c.surface }, pressed && styles.ticketPressed]}
       >
-        <View style={styles.band}>
-          <Svg style={StyleSheet.absoluteFill} aria-hidden>
-            <Defs>
-              <LinearGradient id={`ink-${route.id}`} x1="0" y1="0" x2="1" y2="1">
-                <Stop offset="0" stopColor={light} />
-                <Stop offset="1" stopColor={deep} />
-              </LinearGradient>
-            </Defs>
-            <Rect width="100%" height="100%" fill={`url(#ink-${route.id})`} />
-            {/* A compass rose's rings in the corner, faint. */}
-            <Circle cx="92%" cy="20%" r={46} stroke={palette.altin200} strokeOpacity={0.12} fill="none" />
-            <Circle cx="92%" cy="20%" r={30} stroke={palette.altin200} strokeOpacity={0.1} strokeDasharray="2 4" fill="none" />
-          </Svg>
+        <View style={styles.band} onLayout={(e) => setSize(e.nativeEvent.layout)}>
+          {size.width > 0 && (
+            <Svg key={`${size.width}x${size.height}`} width={size.width} height={size.height} style={StyleSheet.absoluteFill} aria-hidden>
+              <Defs>
+                <LinearGradient id={`ink-${route.id}`} x1="0" y1="0" x2="1" y2="1">
+                  <Stop offset="0" stopColor={light} />
+                  <Stop offset="1" stopColor={deep} />
+                </LinearGradient>
+              </Defs>
+              <Rect width={size.width} height={size.height} fill={`url(#ink-${route.id})`} />
+              {/* A compass rose's rings in the corner, faint. */}
+              <Circle cx={size.width * 0.92} cy={size.height * 0.2} r={46} stroke={palette.altin200} strokeOpacity={0.12} fill="none" />
+              <Circle cx={size.width * 0.92} cy={size.height * 0.2} r={30} stroke={palette.altin200} strokeOpacity={0.1} strokeDasharray="2 4" fill="none" />
+            </Svg>
+          )}
           <View style={styles.bandTop}>
             <Text colorValue={palette.altin200} style={styles.city}>
               {ticket.city.toLocaleUpperCase("tr")}
@@ -173,7 +220,7 @@ function Ticket({ route, index }: { route: SavedRoute; index: number }) {
           <View style={[styles.foot, { borderTopColor: c.border }]}>
             <Ionicons name="calendar-outline" size={14} color={c.textSecondary} />
             <Text variant="caption" color="textSecondary" style={styles.flex}>
-              {`${saved} · ${route.stops} durak`}
+              {[`${saved} · ${route.stops} durak`, ...adviceCounts].join(" · ")}
             </Text>
             <Pressable
               accessibilityRole="button"
@@ -283,6 +330,22 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     padding: spacing.lg,
     gap: spacing.lg,
+  },
+  tabs: {
+    flexDirection: "row",
+    gap: spacing.xxs,
+    padding: spacing.xxs,
+    borderRadius: radius.full,
+  },
+  tab: {
+    flex: 1,
+    minHeight: touchTarget.min,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: radius.full,
+  },
+  tabText: {
+    fontFamily: fontFamily.sansSemiBold,
   },
   head: {
     flexDirection: "row",
