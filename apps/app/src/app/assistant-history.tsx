@@ -94,7 +94,7 @@ export default function AssistantHistoryScreen() {
   }
 
   return (
-    <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={[styles.content, { paddingBottom: insets.bottom + spacing.xl }]}>
+    <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={[styles.content, { paddingBottom: insets.bottom + spacing.xl }]} contentInsetAdjustmentBehavior="automatic">
       <Head>
         <title>Geçmiş konuşmalar · Vagabonds</title>
       </Head>
