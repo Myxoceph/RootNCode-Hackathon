@@ -62,6 +62,11 @@ function ThemedStack() {
           {/* Camera screens are full screen and always dark; they draw their own back button. */}
           <Stack.Screen name="visit-seal" options={{ headerShown: false, title: "Ziyaret Mührü" }} />
           <Stack.Screen name="auth" options={{ headerShown: false, title: "Giriş yap" }} />
+          {/* Profil's four sections, each on its own page under a header with a back button. */}
+          <Stack.Screen name="profile/routes" options={{ title: "Rotalarım", headerBackTitle: "Profil" }} />
+          <Stack.Screen name="profile/badges" options={{ title: "Rozetlerim", headerBackTitle: "Profil" }} />
+          <Stack.Screen name="profile/settings" options={{ title: "Sistem ayarları", headerBackTitle: "Profil" }} />
+          <Stack.Screen name="profile/notes" options={{ title: "Bıraktığım Notlar", headerBackTitle: "Profil" }} />
           <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
           {/* Draws its own header, with "Temizle" next to the title. */}
           <Stack.Screen name="assistant" options={{ headerShown: false, title: "Asistan" }} />

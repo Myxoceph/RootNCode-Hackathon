@@ -19,8 +19,11 @@ const kinds: Record<Contribution["kind"], string> = {
   photo: "Fotoğraf",
 };
 
-/** Profil · Notlarım (module 6): the notes the visitor sent and what the moderators decided. */
-export function MyContributions() {
+/**
+ * Profil · Bıraktığım Notlar (module 6): the notes the visitor sent and what the moderators
+ * decided. `title` null leaves the heading to the page's own header.
+ */
+export function MyContributions({ title = "Notlarım" }: { title?: string | null }) {
   const { colors: c } = useTheme();
   const { user, assetNames } = useCommunity();
   const mine = useMyContributions();
@@ -28,9 +31,13 @@ export function MyContributions() {
   return (
     <View style={styles.section}>
       <View style={styles.header}>
-        <Text variant="heading" headingLevel={2} style={styles.flex}>
-          Notlarım
-        </Text>
+        <View style={styles.flex}>
+          {title && (
+            <Text variant="heading" headingLevel={2}>
+              {title}
+            </Text>
+          )}
+        </View>
         {user && (
           <Pressable accessibilityRole="button" accessibilityLabel="Notlarımı yenile" onPress={mine.retry} style={styles.refresh}>
             <Text variant="label" color="primary">
