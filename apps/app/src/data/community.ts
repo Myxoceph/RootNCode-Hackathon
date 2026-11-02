@@ -6,6 +6,9 @@ import {
   ContributionSchema,
   MyAchievementsResponseSchema,
   MyContributionsResponseSchema,
+  MyVisitsResponseSchema,
+  SavedRouteSchema,
+  SavedRoutesResponseSchema,
   VisitResponseSchema,
   type AnonymousSessionResponse,
   type AppUser,
@@ -13,6 +16,8 @@ import {
   type RegisterRequest,
   type Contribution,
   type MyAchievementsResponse,
+  type MyVisit,
+  type SavedRoute,
   type TextContributionKind,
   type VisitProofRequest,
   type VisitResponse,
@@ -190,7 +195,11 @@ async function rememberAssetName(id: string, name: string) {
 }
 
 /** A request whose answer is never "not found"; a 401 forgets the session it was sent with. */
-async function call<T>(path: string, schema: SchemaParser<T>, init: { body?: unknown; token?: string; messages?: Record<string, string> } = {}): Promise<T> {
+async function call<T>(
+  path: string,
+  schema: SchemaParser<T>,
+  init: { body?: unknown; token?: string; method?: "POST" | "DELETE"; messages?: Record<string, string> } = {},
+): Promise<T> {
   const { messages, ...options } = init;
   const result = await request(`${resolveApiUrl()}${path}`, schema, {
     ...options,
@@ -309,6 +318,45 @@ export async function fetchMyAchievements(): Promise<MyAchievementsResponse | nu
   if (token) return call("/me/achievements", MyAchievementsResponseSchema, { token });
   const all = await call("/achievements", AchievementsResponseSchema);
   return { version: all.version, lang: all.lang, totalPoints: 0, visits: 0, items: all.items.map((item) => ({ ...item, earnedAt: null, progress: { current: 0, target: 1 } })) };
+}
+
+/** The session's user id once the stored session is read; null without a session. */
+export async function currentUserId(): Promise<string | null> {
+  await loadSession();
+  return token ? (state.user?.id ?? null) : null;
+}
+
+/**
+ * The assets the visitor has visited (`GET /me/visits`): the map's unlocked assets. Null without a
+ * session, so another account or a signed-out visitor on the same phone never sees them.
+ */
+export async function fetchMyVisits(): Promise<MyVisit[] | null> {
+  if (!communityAvailable) return null;
+  await loadSession();
+  if (!token) return null;
+  return (await call("/me/visits", MyVisitsResponseSchema, { token })).items;
+}
+
+/** Profil · Rotalarım (`GET /me/routes`), from the account; null without a session. */
+export async function fetchMyRoutes(): Promise<SavedRoute[] | null> {
+  if (!communityAvailable) return null;
+  await loadSession();
+  if (!token) return null;
+  return (await call("/me/routes", SavedRoutesResponseSchema, { token })).items;
+}
+
+/** Keeps a route on the account (`POST /me/routes`); `key` names the plan, the same plan again replaces it. */
+export async function saveMyRoute(key: string, route: Omit<SavedRoute, "savedAt">): Promise<SavedRoute> {
+  await loadSession();
+  if (!token) throw new DataError("rejected", "Rotayı kaydetmek için giriş yap.");
+  return call("/me/routes", SavedRouteSchema, { body: { key, route }, token });
+}
+
+export async function deleteMyRoute(id: string): Promise<void> {
+  await loadSession();
+  if (!token) return;
+  // Answers 204: the schema is never read.
+  await call(`/me/routes/${encodeURIComponent(id)}`, SavedRoutesResponseSchema, { method: "DELETE", token });
 }
 
 function subscribe(listener: () => void) {
