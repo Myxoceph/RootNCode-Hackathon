@@ -54,6 +54,8 @@ export type MapPageEvent =
   | { type: "leaveCity" }
   /** The camera has landed on the chosen city, its flight over. */
   | { type: "cityLanded"; plate: number }
+  /** "Kilidini aç" over the chosen locked asset was tapped. */
+  | { type: "unlock"; id: string }
   | { type: "error"; message: string };
 
 /** Messages the app sends to the map page. */
@@ -119,6 +121,20 @@ export function mapPageHtml({
   body:not(.credits-open) .maplibregl-ctrl-attrib.maplibregl-compact { padding: 0; background: rgba(255, 255, 255, 0.08); }
   body:not(.credits-open) .maplibregl-ctrl-attrib-button { background-color: transparent; filter: invert(1); opacity: 0.45; }
   #network { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  /* "Kilidini aç" over the chosen locked seal: night blue and gold like the seal, pointing down at it. */
+  .unlock {
+    position: relative; display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px 0 11px;
+    border: 1px solid rgba(231, 194, 106, 0.5); border-radius: 18px; background: ${colors.seal.to}; color: #fff;
+    font: 600 14px/1 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); cursor: pointer; transform-origin: 50% 100%; -webkit-tap-highlight-color: transparent;
+  }
+  .unlock::after {
+    content: ""; position: absolute; left: 50%; bottom: -6px; width: 10px; height: 10px; margin-left: -6px;
+    background: ${colors.seal.to}; border: solid rgba(231, 194, 106, 0.5); border-width: 0 1px 1px 0; transform: rotate(45deg);
+  }
+  .unlock:active { filter: brightness(1.2); }
+  .unlock.pop { animation: unlock-pop 0.38s cubic-bezier(0.2, 1.4, 0.4, 1) both; }
+  @keyframes unlock-pop { from { opacity: 0; transform: translateY(8px) scale(0.7); } to { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
@@ -329,6 +345,9 @@ function start() {
     for (const category of GLYPHS) {
       map.addImage("seal-" + category, sealImage(category, false), { pixelRatio: SEAL_RATIO });
       map.addImage("seal-" + category + "-landmark", sealImage(category, true), { pixelRatio: SEAL_RATIO });
+      // An unlocked asset's seal: the same, without the padlock.
+      map.addImage("seal-" + category + "-open", sealImage(category, false, false), { pixelRatio: SEAL_RATIO });
+      map.addImage("seal-" + category + "-landmark-open", sealImage(category, true, false), { pixelRatio: SEAL_RATIO });
     }
     // The city's fog, in two parts drawn by the map itself, so it stays fixed to the ground as the
     // map moves. Its own copy of the assets, cut into tiles no smaller than zoom 12's (about 10 km)
@@ -447,7 +466,7 @@ function start() {
       type: "symbol",
       source: "city-assets",
       layout: {
-        "icon-image": ["case", ["get", "landmark"], ["concat", "seal-", ["get", "category"], "-landmark"], ["concat", "seal-", ["get", "category"]]],
+        "icon-image": ["concat", "seal-", ["get", "category"], ["case", ["get", "landmark"], "-landmark", ""], ["case", ["get", "unlocked"], "-open", ""]],
         "icon-allow-overlap": true,
         // The names keep clear of city-asset-room instead.
         "icon-ignore-placement": true,
@@ -479,11 +498,20 @@ function start() {
       // A finger is wider than a pixel.
       const around = [[event.point.x - 12, event.point.y - 12], [event.point.x + 12, event.point.y + 12]];
       if (cityPlate !== null) {
+        if (onUnlockButton(event.point)) {
+          fireUnlock();
+          return;
+        }
         const zoom = map.getZoom();
         const asset = zoom >= (SEALS_ZOOM + DOTS_ZOOM) / 2
           ? map.queryRenderedFeatures(around, { layers: ["city-asset-badges"] })[0]
           : nearest(event.point, map.queryRenderedFeatures(around, { layers: ["city-asset-dots"] }).filter((dot) => dot.properties.id === citySelected || dot.properties.tier >= tierShownAt(zoom)));
-        if (asset) post({ type: "select", id: asset.properties.id });
+        if (asset) {
+          // Only an asset tapped on the map gets "Kilidini aç"; one chosen for the visitor does not.
+          tappedAsset = asset.properties.id;
+          post({ type: "select", id: asset.properties.id });
+          placeUnlock();
+        }
         return;
       }
       if (provincesShown) {
@@ -703,15 +731,20 @@ function start() {
         ? city.assets.map((asset) => ({
             type: "Feature",
             geometry: { type: "Point", coordinates: [asset.lng, asset.lat] },
-            properties: { id: asset.id, title: asset.title, category: asset.category, landmark: Boolean(asset.landmark), tier: asset.tier, cloud: cloudOf(asset.id), turn: cloudTurn(asset.id) },
+            properties: { id: asset.id, title: asset.title, category: asset.category, landmark: Boolean(asset.landmark), unlocked: Boolean(asset.unlocked), tier: asset.tier, cloud: cloudOf(asset.id), turn: cloudTurn(asset.id) },
           }))
         : [],
     };
     map.getSource("city-assets").setData(assets);
     map.getSource("city-fog").setData(assets);
     cityAssets = city ? city.assets : [];
-    if (plate === cityPlate) return;
+    if (plate === cityPlate) {
+      // The same city again, perhaps with an asset just unlocked: its button goes.
+      placeUnlock();
+      return;
+    }
     cityPlate = plate;
+    tappedAsset = null;
     cityLanded = false;
     leaving = false;
     const shown = plate !== null;
@@ -902,6 +935,82 @@ function start() {
     map.setLayoutProperty("city-asset-names", "symbol-sort-key", ["case", chosen, -2, ["get", "landmark"], -1, 0]);
     map.setLayoutProperty("city-asset-names", "text-field", ["case", ["any", chosen, ["get", "landmark"]], ["format", ["get", "title"], { "text-font": ["literal", ["Noto Sans Bold"]], "font-scale": 1.1 }], ["get", "title"]]);
     map.setLayoutProperty("city-asset-names", "text-radial-offset", ["case", ["any", chosen, ["get", "landmark"]], 1.75, 1.35]);
+    placeUnlock();
+  }
+
+  /**
+   * "Kilidini aç": a button pinned above a locked asset the visitor tapped on the map, opening its
+   * Ziyaret Mührü. Not for the asset the city opens on, nor one chosen from the cards or the search.
+   */
+  let unlock = null;
+  /** The asset last tapped on the map in this city. */
+  let tappedAsset = null;
+  let unlockFor = null;
+  const UNLOCK_ICON = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="' + colors.seal.icon + '" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V7.5a4 4 0 0 1 7.6-1.7"/><circle cx="12" cy="16" r="1" fill="' + colors.seal.icon + '"/></svg>';
+
+  /** Just above the chosen seal, which grows as the map zooms in (CHOSEN_SIZES). */
+  function unlockOffset() {
+    const zoom = map.getZoom();
+    const [atDots, at14, at16] = CHOSEN_SIZES;
+    const size = zoom <= DOTS_ZOOM ? atDots : zoom <= 14 ? atDots + ((at14 - atDots) * (zoom - DOTS_ZOOM)) / (14 - DOTS_ZOOM) : Math.min(at16, at14 + ((at16 - at14) * (zoom - 14)) / 2);
+    return [0, -((SEAL_SIZE + SEAL_ROOM * 2) * size) / 2 - 4];
+  }
+
+  /** Opens the shown asset's Ziyaret Mührü, once per tap whichever way it arrives. */
+  let unlockFired = 0;
+  function fireUnlock() {
+    if (!unlockFor || Date.now() - unlockFired < 600) return;
+    unlockFired = Date.now();
+    post({ type: "unlock", id: unlockFor });
+  }
+
+  /** Whether a tap at this map point fell on "Kilidini aç". */
+  function onUnlockButton(point) {
+    if (!unlock || !unlockFor) return false;
+    const button = unlock.getElement().firstChild.getBoundingClientRect();
+    const frame = map.getContainer().getBoundingClientRect();
+    const x = frame.left + point.x;
+    const y = frame.top + point.y;
+    // A little room below it: the point under the arrow still counts.
+    return x >= button.left && x <= button.right && y >= button.top && y <= button.bottom + 8;
+  }
+
+  function placeUnlock() {
+    const tapped = cityPlate !== null && citySelected !== null && citySelected === tappedAsset;
+    const found = tapped ? cityAssets.find((candidate) => candidate.id === citySelected) : null;
+    // An unlocked asset has nothing left to unlock.
+    const asset = found && !found.unlocked ? found : null;
+    if (!asset) {
+      if (unlock) unlock.remove();
+      unlockFor = null;
+      return;
+    }
+    if (!unlock) {
+      const wrap = document.createElement("div");
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "unlock";
+      button.innerHTML = UNLOCK_ICON + "<span>Kilidini aç</span>";
+      // In the phone's WebView the map's touch handling takes the tap before the button does, so the
+      // map's own tap (onTap) checks for the button first; a click here covers the mouse.
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
+        fireUnlock();
+      });
+      wrap.appendChild(button);
+      unlock = new maplibregl.Marker({ element: wrap, anchor: "bottom" });
+      map.on("zoom", () => unlockFor && unlock.setOffset(unlockOffset()));
+    }
+    const button = unlock.getElement().firstChild;
+    button.setAttribute("aria-label", asset.title + ": kilidini aç, Ziyaret Mührü kamerasını açar");
+    unlock.setLngLat([asset.lng, asset.lat]).setOffset(unlockOffset()).addTo(map);
+    if (unlockFor !== asset.id && motion) {
+      // Pops up again for each newly chosen asset.
+      button.classList.remove("pop");
+      void button.offsetWidth;
+      button.classList.add("pop");
+    }
+    unlockFor = asset.id;
   }
 
   /** The seals' sizes at DOTS_ZOOM, where they meet the dots: small enough to be one. */
@@ -939,11 +1048,11 @@ function start() {
   const SELECT_ZOOM = 15.5;
 
   /**
-   * A locked asset: a night-blue disc in a navy ring, the kind of place drawn in gold inside and a
+   * A locked asset (with locked false, an unlocked one: no padlock): a night-blue disc in a navy ring, the kind of place drawn in gold inside and a
    * gold padlock over its lower right edge, outlined in navy so it stands out on the fog
    * (colors.seal). The landmark's ring is doubled.
    */
-  function sealImage(category, landmark) {
+  function sealImage(category, landmark, locked = true) {
     const side = SEAL_SIZE + SEAL_ROOM * 2;
     const canvas = document.createElement("canvas");
     canvas.width = side * SEAL_RATIO;
@@ -987,6 +1096,7 @@ function start() {
     context.fillStyle = look.icon;
     drawGlyph(context, category, look.to);
     context.restore();
+    if (!locked) return context.getImageData(0, 0, canvas.width, canvas.height);
     // The padlock, over the lower right edge: a shackle and a body with a keyhole, each drawn
     // first wide in navy and then in gold, so a navy outline keeps it clear of the disc and the fog.
     const x = middle + r * 0.66;

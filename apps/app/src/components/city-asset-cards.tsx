@@ -116,6 +116,7 @@ function CityAssetCard({ asset, buildings, width, chosen, colors }: { asset: Ass
     <Pressable
       accessibilityRole="link"
       accessibilityLabel={label}
+      accessibilityHint="Eserin hikâyesini ve bilgilerini açar"
       onPress={() => router.push({ pathname: "/monuments/[id]", params: { id: asset.id } })}
       style={({ pressed }) => [styles.card, { width, borderColor: chosen ? colors.mark : colors.edge }, pressed && styles.pressed]}
     >
@@ -136,7 +137,6 @@ function CityAssetCard({ asset, buildings, width, chosen, colors }: { asset: Ass
               {place}
             </Text>
           )}
-      accessibilityHint="Eserin hikâyesini ve bilgilerini açar"
         </View>
         <Text variant="label" colorValue={colors.text} numberOfLines={1} style={styles.name}>
           {asset.name}

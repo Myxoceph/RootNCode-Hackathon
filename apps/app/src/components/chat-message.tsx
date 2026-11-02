@@ -1,12 +1,14 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { ChatCitation, ChatResponse, TripPlanResponse } from "@vagabonds/contracts";
-import { fontFamily, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
+import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
 import { useRouter, type Href } from "expo-router";
 import { useEffect, useState, type ComponentProps, type ReactNode } from "react";
 import { Animated, Easing, Pressable, Share, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
+import Svg, { Circle, Defs, Line, LinearGradient as SvgGradient, Rect, Stop } from "react-native-svg";
 
-import { formatClock } from "@/content/routes";
 import { answerLines, answerParts, followUps, type FollowUpTopic, type LinePart } from "@/lib/chat";
+import { inkFor } from "@/lib/route-ink";
+import { routeKey, useSavedRoutes } from "@/lib/saved-routes";
 import { speak, stopSpeaking } from "@/lib/speak";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -183,8 +185,8 @@ function useReveal(total: number, animate: boolean): number {
 
 /**
  * One answer, as plain text across the column: the text without its `[n]` markers, its sources
- * as small grey pills under it, the trip plan when there is one, and a row of quiet actions under
- * it. A fresh one (`animate`) writes itself out, the rest rising in after it. An
+ * as small grey pills under it, and a row of quiet actions under it; a trip answer is only its
+ * "Rota oluşturuldu" card. A fresh one (`animate`) writes itself out, the rest rising in after it. An
  * answer without sources is marked as general conversation, so it never reads as information
  * about a site.
  */
@@ -210,6 +212,20 @@ export function AssistantMessage({
   const done = shown >= total;
 
   useEffect(() => () => stopSpeaking(), []);
+
+  // A trip answer is shown as the card alone: the plan is in Rotalarım, not told in words here.
+  const trip = response.attachments.trip;
+  if (trip) {
+    return (
+      <View style={styles.answer}>
+        <Byline />
+        <Appear animate={animate}>
+          <TripCreated trip={trip} />
+        </Appear>
+        {onFollowUp && <FollowUps response={response} animate={animate} onAsk={onFollowUp} />}
+      </View>
+    );
+  }
 
   // Each line takes its share of what shows so far, in order.
   let left = shown;
@@ -254,17 +270,13 @@ export function AssistantMessage({
           {drawn}
         </View>
 
-        {done && (response.grounded || response.attachments.trip) && (
+        {done && response.grounded && (
           <Appear animate={animate} style={styles.extras}>
-            {response.grounded && (
-              <View style={styles.sources}>
-                {response.citations.map((citation) => (
-                  <SourceChip key={citation.ref} citation={citation} />
-                ))}
-              </View>
-            )}
-
-            {response.attachments.trip && <TripSummary trip={response.attachments.trip} />}
+            <View style={styles.sources}>
+              {response.citations.map((citation) => (
+                <SourceChip key={citation.ref} citation={citation} />
+              ))}
+            </View>
           </Appear>
         )}
       </View>
@@ -410,41 +422,216 @@ function SourceChip({ citation }: { citation: ChatCitation }) {
   );
 }
 
-/** The plan behind a trip answer, day by day, on a grey card; the answer itself only sums it up. */
-function TripSummary({ trip }: { trip: TripPlanResponse }) {
+/** A trip's walking distance, "850 m" or "2,4 km". */
+function distance(meters: number): string {
+  return meters >= 1000 ? `${(meters / 1000).toFixed(1).replace(".", ",")} km` : `${meters} m`;
+}
+
+const tripDuration: Record<TripPlanResponse["duration"], string> = { half: "Yarım gün", "1": "1 gün", "2": "2 gün" };
+
+/**
+ * A trip answer, shown instead of its words: "Rota oluşturuldu" on the city's ink, the plan's
+ * name, its length, stops and walk, the stops as dots on a line, and the way to the saved plan
+ * (lib/chat.ts keeps it in Profil · Rotalarım).
+ */
+function TripCreated({ trip }: { trip: TripPlanResponse }) {
   const { colors: c } = useTheme();
-  const multiDay = trip.days.length > 1;
+  const router = useRouter();
+  const saved = useSavedRoutes().find((route) => route.kind === "trip" && routeKey(route) === routeKey({ kind: "trip", trip }));
+  const [light, deep] = inkFor(trip.city.code);
+  const stops = trip.days.reduce((sum, day) => sum + day.items.filter((item) => item.kind === "stop").length, 0);
+  const meters = trip.days.reduce((sum, day) => sum + day.totals.walkMeters, 0);
+  const title = `${trip.city.label} gezi planı`;
+  const dots = Math.min(Math.max(0, stops - 2), 6);
+
   return (
-    <View style={[styles.trip, { backgroundColor: c.surfaceRaised }]}>
-      <Text variant="label" headingLevel={3}>
-        {`${trip.city.label} gezi planı`}
-      </Text>
-      {trip.days.map((day) => (
-        <View key={day.day} style={styles.day}>
-          <Text variant="caption" color="textSecondary" headingLevel={multiDay ? 4 : undefined}>
-            {multiDay ? `${day.day}. gün · ${day.weatherNote.text}` : day.weatherNote.text}
+    <View style={[styles.created, { backgroundColor: c.surface, borderColor: c.border }]}>
+      <View
+        style={styles.createdBand}
+        accessible
+        accessibilityLabel={`Rota oluşturuldu: ${title}, ${tripDuration[trip.duration]}, ${stops} durak, ${distance(meters)} yürüyüş. Rotalarım'a kaydedildi.`}
+      >
+        <Svg style={StyleSheet.absoluteFill} aria-hidden>
+          <Defs>
+            <SvgGradient id="created-ink" x1="0" y1="0" x2="1" y2="1">
+              <Stop offset="0" stopColor={light} />
+              <Stop offset="1" stopColor={deep} />
+            </SvgGradient>
+          </Defs>
+          <Rect width="100%" height="100%" fill="url(#created-ink)" />
+          <Circle cx="92%" cy="15%" r={56} stroke={palette.altin200} strokeOpacity={0.12} fill="none" />
+          <Circle cx="92%" cy="15%" r={36} stroke={palette.altin200} strokeOpacity={0.1} strokeDasharray="2 4" fill="none" />
+        </Svg>
+        <View style={styles.createdHead}>
+          <Ionicons name="checkmark-circle" size={18} color={palette.altin200} />
+          <Text colorValue={palette.altin200} style={styles.createdKicker}>
+            Rota oluşturuldu
           </Text>
-          {day.items.map((item, i) => (
-            // Two items can start in the same minute; the position keeps the key unique.
-            <View key={`${i}-${item.kind}-${item.at}`} style={styles.tripRow}>
-              <Text variant="caption" color="textSecondary" style={styles.clock}>
-                {formatClock(item.at)}
-              </Text>
-              <Text variant="caption" style={styles.flex}>
-                {item.kind === "stop" ? item.asset.name : item.dish ? `${item.label}: ${item.dish.name}` : item.label}
+        </View>
+        <Text colorValue={palette.white} style={styles.createdTitle}>
+          {title}
+        </Text>
+        <View style={styles.createdChips}>
+          {[tripDuration[trip.duration], `${stops} durak`, distance(meters)].map((chip) => (
+            <View key={chip} style={styles.createdChip}>
+              <Text colorValue={palette.gece50} style={styles.createdChipText}>
+                {chip}
               </Text>
             </View>
           ))}
         </View>
-      ))}
-      <Text variant="caption" color="textSecondary">
-        {trip.estimateNote}
-      </Text>
+        {stops > 0 && (
+          <View style={styles.createdLine} aria-hidden>
+            <Ionicons name="flag" size={15} color={palette.altin200} />
+            {stops > 1 &&
+              Array.from({ length: dots + 1 }, (_, i) => (
+                <View key={i} style={styles.createdLeg}>
+                  <View style={styles.createdDash}>
+                    <Svg height={2} width="100%">
+                      <Line x1="0" y1="1" x2="100%" y2="1" stroke={palette.altin200} strokeOpacity={0.6} strokeWidth={2} strokeDasharray="3 4" />
+                    </Svg>
+                  </View>
+                  {i < dots && <View style={styles.createdDot} />}
+                </View>
+              ))}
+            {stops > 1 && <Ionicons name="location" size={17} color={palette.altin200} />}
+          </View>
+        )}
+      </View>
+      <View style={[styles.createdInfo, { borderBottomColor: c.border }]}>
+        <Ionicons name="information-circle-outline" size={16} color={c.textSecondary} />
+        <Text variant="caption" color="textSecondary" style={styles.flex}>
+          Bu rota kaydedildi. İstediğin zaman Profil › Rotalarım'dan ulaşabilirsin.
+        </Text>
+      </View>
+      <View style={styles.createdActions}>
+        <Pressable
+          accessibilityRole="link"
+          onPress={() => (saved ? router.push({ pathname: "/profile/trip", params: { id: saved.id } }) : router.push("/profile/routes"))}
+          style={({ pressed }) => [styles.createdOpen, pressed && styles.pressed]}
+        >
+          <Text variant="label" colorValue={palette.white} style={styles.createdOpenText}>
+            Rotayı aç
+          </Text>
+          <Ionicons name="arrow-forward" size={16} color={palette.white} />
+        </Pressable>
+        <Pressable
+          accessibilityRole="link"
+          onPress={() => router.push("/profile/routes")}
+          hitSlop={6}
+          style={({ pressed }) => [styles.createdAll, pressed && styles.pressed]}
+        >
+          <Ionicons name="bookmark-outline" size={15} color={c.textSecondary} />
+          <Text variant="caption" color="textSecondary" style={styles.createdAllText}>
+            Rotalarım
+          </Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  created: {
+    borderRadius: 22,
+    borderWidth: StyleSheet.hairlineWidth,
+    overflow: "hidden",
+  },
+  createdBand: {
+    gap: spacing.sm,
+    padding: spacing.lg,
+  },
+  createdHead: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+  },
+  createdKicker: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 13,
+    lineHeight: 18,
+  },
+  createdTitle: {
+    fontFamily: fontFamily.display,
+    fontSize: 26,
+    lineHeight: 32,
+  },
+  createdChips: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.xs,
+  },
+  createdChip: {
+    height: 24,
+    justifyContent: "center",
+    paddingHorizontal: spacing.sm,
+    borderRadius: 12,
+    backgroundColor: "rgba(255, 255, 255, 0.12)",
+  },
+  createdChipText: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 12,
+    lineHeight: 16,
+  },
+  createdLine: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    marginTop: spacing.xs,
+  },
+  createdLeg: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+  },
+  createdDash: {
+    flex: 1,
+  },
+  createdDot: {
+    width: 9,
+    height: 9,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: palette.altin200,
+  },
+  createdInfo: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  createdActions: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: spacing.md,
+    padding: spacing.md,
+  },
+  createdOpen: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+    minHeight: 44,
+    paddingHorizontal: spacing.lg,
+    borderRadius: radius.full,
+    backgroundColor: palette.altin700,
+  },
+  createdOpenText: {
+    fontFamily: fontFamily.sansSemiBold,
+  },
+  createdAll: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    minHeight: 44,
+    paddingHorizontal: spacing.sm,
+  },
+  createdAllText: {
+    fontFamily: fontFamily.sansMedium,
+  },
   flex: {
     flex: 1,
   },
@@ -571,22 +758,6 @@ const styles = StyleSheet.create({
   chipTitle: {
     flexShrink: 1,
     fontFamily: fontFamily.sansMedium,
-  },
-  trip: {
-    gap: spacing.md,
-    padding: spacing.lg,
-    borderRadius: radius.xl,
-  },
-  day: {
-    gap: spacing.xs,
-  },
-  tripRow: {
-    flexDirection: "row",
-    gap: spacing.md,
-  },
-  clock: {
-    width: 44,
-    fontFamily: fontFamily.mono,
   },
   actions: {
     flexDirection: "row",

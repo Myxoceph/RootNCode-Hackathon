@@ -53,6 +53,9 @@
 		# page for all of them. Only one rewrite runs: a detail URL skips try_files below.
 		@assetDetail path_regexp ^/monuments/[^/]+/?$
 		rewrite @assetDetail "/monuments/[id].html"
+		# The same card opened over a Profil page (Rotalarım, Notlarım).
+		@assetOver path_regexp ^/asset/[^/]+/?$
+		rewrite @assetOver "/asset/[id].html"
 		try_files {path} {path}.html {path}/index.html /index.html
 		file_server
 	}

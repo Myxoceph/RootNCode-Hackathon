@@ -3,6 +3,7 @@ import { useSyncExternalStore } from "react";
 
 import { archiveConversation, askAssistant, fetchConversation, fetchConversations } from "@/data/assistant";
 import { DataError } from "@/data/errors";
+import { saveTrip } from "@/lib/saved-routes";
 
 /** `POST /chat` takes at most this many earlier turns. */
 export const HISTORY_TURNS = 12;
@@ -306,6 +307,8 @@ export async function ask(key: string, question: string, assetId?: string): Prom
     );
     if (!current()) return null;
     inFlight.delete(key);
+    // A trip Rehber plans goes to Profil · Rotalarım; the answer says so (components/chat-message.tsx).
+    if (response.attachments.trip) void saveTrip(response.attachments.trip);
     update(key, {
       entries: [...before.entries, { id: nextId++, role: "user", text }, { id: nextId++, role: "assistant", response }],
       pending: null,
