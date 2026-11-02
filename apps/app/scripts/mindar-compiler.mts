@@ -3,8 +3,7 @@
  * so this runs the MindAR bundled into the app (src/vendor) in headless Chrome
  * (./headless-chrome.mts); no network needed.
  *
- * Used by scripts/compile-ar-targets.mts (the app's test targets) and
- * data/tools/compile_ar_targets.mts (the dataset's targets).
+ * Used by data/tools/compile_ar_targets.mts (the dataset's targets).
  */
 import { mindarScript } from "../src/vendor/mindar.generated";
 import { withHeadlessChrome } from "./headless-chrome.mts";
