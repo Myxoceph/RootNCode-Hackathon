@@ -121,6 +121,16 @@ describe("createChatModel", () => {
       expect(await model.ping()).toBe(true);
     });
 
+    it("stays available after a slow answer runs out of time", async () => {
+      const fetchImpl = ((url: string, init?: RequestInit) =>
+        url.endsWith("/models")
+          ? Promise.resolve(new Response("{}"))
+          : new Promise((_, reject) => init?.signal?.addEventListener("abort", () => reject(new DOMException("aborted", "AbortError"))))) as unknown as typeof fetch;
+      const model = createChatModel({ baseUrl: "http://model.test/v1", model: "m", fetchImpl, now: () => 0 });
+      await expect(model.complete([], [], AbortSignal.timeout(10))).rejects.toThrow(/timed out/);
+      expect(await model.ping()).toBe(true);
+    });
+
     it("stays available after a fault in our own request (400)", async () => {
       const { state, model, ask } = provider();
       state.completion = 400;
