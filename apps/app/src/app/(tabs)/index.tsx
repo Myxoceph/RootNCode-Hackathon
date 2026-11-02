@@ -1,11 +1,10 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
-import { spacing, touchTarget, useTheme } from "@vagabonds/ui";
+import { spacing } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import Head from "expo-router/head";
 import { useEffect, useMemo, useState } from "react";
-import { BackHandler, Platform, Pressable, StyleSheet, View } from "react-native";
+import { BackHandler, Platform, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CityAssetCards } from "@/components/city-asset-cards";
@@ -243,7 +242,6 @@ export default function MapScreen() {
         onBack={backToTurkey}
         onPickCity={openCity}
         onPickAsset={pickAsset}
-        trailing={<AssistantButton />}
         notice={notice}
         below={chosen ? <MapAssetActions asset={chosen} /> : null}
       />
@@ -251,40 +249,10 @@ export default function MapScreen() {
   );
 }
 
-/**
- * Opens the assistant, in gold so it is found at a glance. Always shown: when no model answers,
- * the assistant's screen says it is closed for now.
- */
-function AssistantButton() {
-  const { colors: c } = useTheme();
-  const router = useRouter();
-  return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityLabel="Yapay zekâ asistanına sor"
-      onPress={() => router.push("/assistant")}
-      hitSlop={4}
-      style={({ pressed }) => [styles.round, { backgroundColor: c.highlightMark }, pressed && styles.pressed]}
-    >
-      <Ionicons name="sparkles" size={20} color={c.onPrimary} />
-    </Pressable>
-  );
-}
-
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
     overflow: "hidden",
-  },
-  round: {
-    width: touchTarget.min,
-    height: touchTarget.min,
-    borderRadius: touchTarget.min / 2,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  pressed: {
-    opacity: 0.75,
   },
   cards: {
     position: "absolute",

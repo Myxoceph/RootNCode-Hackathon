@@ -163,8 +163,10 @@ export function createChatModel({
           signal,
         });
       } catch (err) {
-        lastOutage = now();
+        // A slow answer that runs out of time is not an outage: the provider is up, only this
+        // question took long. Marking it would show the assistant as closed to everyone for a minute.
         if (signal.aborted) throw new ModelError("Model call timed out");
+        lastOutage = now();
         throw new ModelError(`Model unreachable (${(err as Error).name})`);
       }
       if (!response.ok) {

@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { AssetIdSchema } from "@vagabonds/contracts";
 import { fontFamily, radius, spacing, Text, touchTarget, useTheme, useUi } from "@vagabonds/ui";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter, useSegments } from "expo-router";
 import Head from "expo-router/head";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -43,6 +43,7 @@ const COUNTER_FROM = QUESTION_MAX - 80;
 
 /**
  * `/assistant`, or `/assistant?asset=<id>&name=<name>` from an asset's page ("Bu eser hakkında sor").
+ * The Rehber tab (`/rehber`) shows the same general conversation, without a back button.
  *
  * A conversation in the manner of today's chat apps, in the app's theme: a plain bar, the
  * visitor's lines in grey bubbles, answers as plain text across the column with their sources
@@ -56,6 +57,8 @@ export default function AssistantScreen() {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  // Also the Rehber tab (`/rehber`): there the bar sits below and there is nowhere to go back to.
+  const inTab = (useSegments() as string[])[0] === "(tabs)";
   const params = useLocalSearchParams<{ asset?: string; name?: string }>();
   // The id comes from the address: one the API would refuse makes it a general conversation.
   const asset = AssetIdSchema.safeParse(params.asset).success ? params.asset : undefined;
@@ -67,6 +70,8 @@ export default function AssistantScreen() {
   // Web only: what the live region says; phones hear it through `announce`.
   const [status, setStatus] = useState("");
   const scroll = useRef<ScrollViewInstance>(null);
+  // Answers already here when the screen opened show as they are; only new ones write themselves out.
+  const [earlier] = useState(() => new Set(conversation.entries.map((entry) => entry.id)));
 
   const busy = conversation.pending !== null;
   const empty = conversation.entries.length === 0 && !busy && !conversation.failed;
@@ -112,7 +117,7 @@ export default function AssistantScreen() {
       </Head>
 
       <View style={[styles.header, styles.column]}>
-        <IconButton icon="chevron-back" label="Geri" onPress={goBack} />
+        {inTab ? <View style={styles.round} /> : <IconButton icon="chevron-back" label="Geri" onPress={goBack} />}
         <View style={styles.title}>
           <Text style={styles.titleText} headingLevel={1}>
             Rehber
@@ -139,7 +144,14 @@ export default function AssistantScreen() {
       </View>
 
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === "web" ? undefined : "padding"}>
-        <ScrollView ref={scroll} style={styles.flex} contentContainerStyle={[styles.messages, empty && styles.messagesEmpty]} keyboardShouldPersistTaps="handled">
+        <ScrollView
+          ref={scroll}
+          style={styles.flex}
+          contentContainerStyle={[styles.messages, empty && styles.messagesEmpty]}
+          keyboardShouldPersistTaps="handled"
+          // Follows an answer as it writes itself out.
+          onContentSizeChange={() => scroll.current?.scrollToEnd({ animated: false })}
+        >
           {empty ? (
             <View style={styles.hello}>
               <View style={[styles.mark, { backgroundColor: closed ? c.surfaceRaised : c.text }]} aria-hidden>
@@ -156,14 +168,24 @@ export default function AssistantScreen() {
             </View>
           ) : (
             <>
-              {conversation.entries.map((entry) =>
-                entry.role === "user" ? <UserMessage key={entry.id} text={entry.text} /> : <AssistantMessage key={entry.id} response={entry.response} />,
+              {conversation.entries.map((entry, i) =>
+                entry.role === "user" ? (
+                  <UserMessage key={entry.id} text={entry.text} />
+                ) : (
+                  <AssistantMessage
+                    key={entry.id}
+                    response={entry.response}
+                    animate={!earlier.has(entry.id)}
+                    // Follow-ups only under the last answer, while nothing else is on its way.
+                    onFollowUp={i === conversation.entries.length - 1 && !busy && !conversation.failed ? (question) => void send(question) : undefined}
+                  />
+                ),
               )}
 
               {conversation.pending !== null && (
                 <>
-                  <UserMessage text={conversation.pending} />
-                  <Thinking />
+                  <UserMessage text={conversation.pending} animate />
+                  <Thinking question={conversation.pending} />
                 </>
               )}
 
@@ -195,7 +217,7 @@ export default function AssistantScreen() {
           </View>
         )}
 
-        <View style={[styles.bottom, { paddingBottom: insets.bottom + spacing.md }]}>
+        <View style={[styles.bottom, { paddingBottom: (inTab ? 0 : insets.bottom) + spacing.md }]}>
           {empty && !closed && (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.cards} keyboardShouldPersistTaps="handled">
               {(asset ? ASSET_SUGGESTIONS : GENERAL_SUGGESTIONS).map((suggestion) => (
