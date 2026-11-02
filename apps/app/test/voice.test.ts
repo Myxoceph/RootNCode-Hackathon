@@ -1,11 +1,41 @@
 import { VOICE_SPEECH_MAX_CHARS } from "@vagabonds/contracts";
 import { describe, expect, it, vi } from "vitest";
 
-vi.mock("expo-audio", () => ({ createAudioPlayer: vi.fn(), setAudioModeAsync: vi.fn() }));
+/** A player that starts and never finishes on its own, as one cut off mid-sentence. */
+const players: Array<{ removed: boolean }> = [];
+vi.mock("expo-audio", () => ({
+  createAudioPlayer: vi.fn(() => {
+    const player = {
+      removed: false,
+      addListener: (_event: string, listener: (status: object) => void) => {
+        queueMicrotask(() => listener({ playing: true, playbackState: "playing", didJustFinish: false }));
+        return { remove: vi.fn() };
+      },
+      play: vi.fn(),
+      remove: () => {
+        player.removed = true;
+      },
+    };
+    players.push(player);
+    return player;
+  }),
+  setAudioModeAsync: vi.fn(async () => {}),
+}));
 vi.mock("expo-speech", () => ({ speak: vi.fn(), stop: vi.fn() }));
-vi.mock("../src/data/voice", () => ({ speechSource: vi.fn() }));
+vi.mock("../src/data/voice", () => ({ speechSource: vi.fn(async (text: string) => ({ uri: `https://api.test/voice/speech?text=${text}` })) }));
 
-const { speechParts } = await import("../src/lib/voice");
+const { speakAnswer, speechParts, stopAnswer } = await import("../src/lib/voice");
+
+describe("speakAnswer", () => {
+  it("ends when stopped mid-part, and lets the player go", async () => {
+    const reading = speakAnswer("cevap", "Hamza Bey Camii'ni Hamza Bey yaptırdı. Fatih dönemine tarihlenir.");
+    await vi.waitFor(() => expect(players).toHaveLength(1));
+    stopAnswer();
+    await expect(reading).resolves.toBeUndefined();
+    expect(players).toHaveLength(1);
+    expect(players[0]!.removed).toBe(true);
+  });
+});
 
 describe("speechParts", () => {
   it("asks for the first sentence on its own, so it plays at once, and the rest together", () => {

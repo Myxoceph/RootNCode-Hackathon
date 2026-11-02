@@ -64,6 +64,8 @@ export function speechParts(text: string): string[] {
 let playing: string | null = null;
 let run = 0;
 let player: AudioPlayer | null = null;
+/** Ends the part being played, so the reading it belongs to goes on and sees it was stopped. */
+let endPart: (() => void) | null = null;
 const listeners = new Set<() => void>();
 
 function set(key: string | null) {
@@ -86,6 +88,7 @@ export function useSpeaking(): string | null {
 /** Stops whatever is being read, in either voice. */
 export function stopAnswer() {
   run += 1;
+  endPart?.();
   player?.remove();
   player = null;
   Speech.stop();
@@ -99,7 +102,11 @@ function playPart(source: AudioSource, current: () => boolean): Promise<boolean>
     const part = createAudioPlayer(source);
     player = part;
     let started = false;
+    let done = false;
     const finish = (ok: boolean) => {
+      if (done) return;
+      done = true;
+      if (endPart === end) endPart = null;
       clearTimeout(timer);
       subscription.remove();
       if (player === part) {
@@ -108,6 +115,8 @@ function playPart(source: AudioSource, current: () => boolean): Promise<boolean>
       }
       resolve(ok);
     };
+    const end = () => finish(true);
+    endPart = end;
     const timer = setTimeout(() => !started && finish(false), START_TIMEOUT_MS);
     const subscription = part.addListener("playbackStatusUpdate", (status) => {
       if (status.playing) started = true;
@@ -118,6 +127,12 @@ function playPart(source: AudioSource, current: () => boolean): Promise<boolean>
     });
     part.play();
   });
+}
+
+/** A browser's downloaded speech is let go once played (or not needed): it stays in memory otherwise. */
+function release(source: AudioSource | null) {
+  const uri = typeof source === "object" && source !== null && "uri" in source ? source.uri : undefined;
+  if (typeof uri === "string" && uri.startsWith("blob:")) URL.revokeObjectURL(uri);
 }
 
 /** The phone's own voice, for what EVREN's could not read. */
@@ -145,10 +160,13 @@ export async function speakAnswer(key: string, text: string): Promise<void> {
     const source = await next;
     next = i + 1 < parts.length ? speechSource(parts[i + 1]!).catch(() => null) : null;
     const ok = source !== null && (await playPart(source, current));
+    release(source);
     if (!ok) {
       await speakOnDevice(parts.slice(i).join(" "), current);
       break;
     }
   }
+  // A part asked for ahead and never played.
+  void next?.then(release);
   if (current()) set(null);
 }

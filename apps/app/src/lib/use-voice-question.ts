@@ -37,7 +37,8 @@ export function useVoiceQuestion(onQuestion: (text: string) => void, onError: (m
   const recorder = useAudioRecorder(RECORDING);
   const status = useAudioRecorderState(recorder, 100);
   const [phase, setPhase] = useState<VoicePhase>("idle");
-  const phaseRef = useRef<VoicePhase>("idle");
+  // "starting" while the permission and the microphone are asked for: a second tap then does nothing.
+  const phaseRef = useRef<VoicePhase | "starting">("idle");
   const limit = useRef<ReturnType<typeof setTimeout>>(undefined);
   const mounted = useRef(true);
   // The latest callbacks, for a recording that ends on the timer.
@@ -50,9 +51,11 @@ export function useVoiceQuestion(onQuestion: (text: string) => void, onError: (m
   };
 
   async function start() {
+    phaseRef.current = "starting";
     stopAnswer();
     const permission = await requestRecordingPermissionsAsync().catch(() => null);
     if (!permission?.granted) {
+      phaseRef.current = "idle";
       handlers.current.onError("Mikrofon izni verilmedi. Telefonun ayarlarından izin verebilir ya da yazarak sorabilirsin.");
       return;
     }
@@ -61,6 +64,7 @@ export function useVoiceQuestion(onQuestion: (text: string) => void, onError: (m
       await recorder.prepareToRecordAsync();
       recorder.record();
     } catch {
+      phaseRef.current = "idle";
       handlers.current.onError("Mikrofon açılamadı. Yazarak sorabilirsin.");
       return;
     }

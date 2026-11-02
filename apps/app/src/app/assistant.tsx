@@ -109,7 +109,15 @@ export default function AssistantScreen() {
   );
 
   // Leaving the screen (or the conversation) stops an answer being read aloud.
-  useEffect(() => stopAnswer, [key]);
+  // The conversation on screen; an answer that arrives after the visitor left it is not read aloud.
+  const shown = useRef<string | null>(key);
+  useEffect(() => {
+    shown.current = key;
+    return () => {
+      shown.current = null;
+      stopAnswer();
+    };
+  }, [key]);
 
   useEffect(() => {
     if (archiveId) {
@@ -135,6 +143,11 @@ export default function AssistantScreen() {
   /** `spoken`: asked by voice (Sesli Rehber), so the answer comes short and is read aloud at once. */
   async function send(question: string, spoken = false) {
     if (closed || busy || archiveId || signedOut || question.trim().length === 0) return;
+    // A long spoken question is cut at a word to what Rehber takes; a typed one cannot be sent.
+    if (spoken && question.length > QUESTION_MAX) {
+      const cut = question.lastIndexOf(" ", QUESTION_MAX);
+      question = question.slice(0, cut > 0 ? cut : QUESTION_MAX);
+    }
     setFreshFrom(conversation.entries.length);
     setDraft("");
     setVoiceError(null);
@@ -148,7 +161,7 @@ export default function AssistantScreen() {
         .join("");
       setStatus(plain);
       // Read aloud, the answer is not announced too: a screen reader would talk over the voice.
-      if (spoken) void speakAnswer(response.answer, plain);
+      if (spoken && shown.current === key) void speakAnswer(response.answer, plain);
       else announce(plain);
     } else {
       setStatus("");
