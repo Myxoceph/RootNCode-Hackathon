@@ -5,6 +5,7 @@
 #   deploy/demo.sh tunnel    serve it at PUBLIC_URL through Cloudflare Tunnel; keeps a Mac awake, Ctrl-C stops
 #   deploy/demo.sh check     preflight; add a URL to check through the tunnel
 #   deploy/demo.sh backup    dump the database (accounts, visits, notes, photos) to deploy/backups/
+#   deploy/demo.sh restore F put a backup back (replaces the database; the API is stopped meanwhile)
 #   deploy/demo.sh down      backup, then stop the stack (data stays in the volume)
 #   deploy/demo.sh logs      follow the API log
 set -euo pipefail
@@ -20,6 +21,16 @@ backup() {
   local file="deploy/backups/vagabonds-$(date +%F-%H%M).dump"
   dc exec -T postgres pg_dump -U vagabonds -Fc vagabonds > "$file"
   echo "✓ backup $file ($(du -h "$file" | cut -f1))"
+}
+
+# The API is stopped so nothing writes halfway; one transaction, so a failed restore leaves the old data.
+restore() {
+  local file=$1
+  [[ -f $file ]] || { echo "No backup at $file"; exit 1; }
+  dc stop api > /dev/null 2>&1
+  dc exec -T postgres pg_restore -U vagabonds -d vagabonds --clean --if-exists --no-owner --single-transaction < "$file"
+  dc up -d --wait api > /dev/null 2>&1
+  echo "✓ restored $file"
 }
 
 case "${1:-}" in
@@ -49,13 +60,14 @@ case "${1:-}" in
     ;;
   check) PREFLIGHT_PASSWORD=$(env_value PREFLIGHT_PASSWORD) node deploy/preflight.mjs "${@:2}" ;;
   backup) backup ;;
+  restore) restore "${2:?usage: deploy/demo.sh restore deploy/backups/<file>.dump}" ;;
   down)
     backup
     dc down
     ;;
   logs) dc logs -f api ;;
   *)
-    sed -n '2,9p' "$0" | sed 's/^# \{0,1\}//'
+    sed -n '2,10p' "$0" | sed 's/^# \{0,1\}//'
     exit 1
     ;;
 esac
