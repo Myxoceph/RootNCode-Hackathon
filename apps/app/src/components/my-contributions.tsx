@@ -79,7 +79,7 @@ function ContributionRow({ item, name }: { item: Contribution; name: string }) {
   return (
     <View style={[styles.row, { backgroundColor: c.surface, borderColor: c.border }]}>
       <View style={styles.rowHeader}>
-        <Link href={{ pathname: "/monuments/[id]", params: { id: item.assetId } }} style={styles.flex}>
+        <Link href={{ pathname: "/asset/[id]", params: { id: item.assetId } }} style={styles.flex}>
           <Text variant="label" color="primary">
             {name}
           </Text>

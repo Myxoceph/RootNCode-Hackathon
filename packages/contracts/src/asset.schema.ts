@@ -125,6 +125,12 @@ export const AssetSummarySchema = z.strictObject({
   coordinates: CoordinatesSchema.nullable(),
   summary: z.string().min(1),
   datingDisplay: z.string().min(1).nullable(),
+  /**
+   * When it was built, short, for a card: the Gregorian year the dating names ("1399"), else the
+   * record's start year, else its century ("XV. yüzyıl"); null when the book gives none. Never a
+   * Hijri year or an unrelated date (a founder's death, a rebuilding) the dating also mentions.
+   */
+  yearLabel: z.string().min(1).nullable().default(null),
   /** Null when the asset has no processed photo yet; show a placeholder. */
   cover: MediaSchema.nullable(),
   /**

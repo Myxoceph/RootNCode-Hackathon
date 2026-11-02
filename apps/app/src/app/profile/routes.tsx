@@ -1,111 +1,271 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { fontFamily, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
+import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
 import Head from "expo-router/head";
-import { Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { useEffect, useRef } from "react";
+import { Animated, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import Svg, { Circle, Defs, Line, LinearGradient, Rect, Stop } from "react-native-svg";
 
 import { announce } from "@/lib/announce";
-import { removeRoute, useSavedRoutes, type SavedRoute } from "@/lib/saved-routes";
+import { bottomInset } from "@/lib/bottom-inset";
+import { inkFor } from "@/lib/route-ink";
+import { removeRoute, useSavedRoutes, type PlannerRoute, type SavedRoute } from "@/lib/saved-routes";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 
-const regionLabel: Record<SavedRoute["region"], string> = { bursa: "Bursa", edirne: "Edirne", both: "Bursa & Edirne" };
-const durationLabel: Record<SavedRoute["duration"], string> = { half: "Yarım gün", "1": "1 gün", "2": "2 gün" };
+const regionLabel: Record<PlannerRoute["region"], string> = { bursa: "Bursa", edirne: "Edirne", both: "Bursa & Edirne" };
+const durationLabel: Record<PlannerRoute["duration"], string> = { half: "Yarım gün", "1": "1 gün", "2": "2 gün" };
+
+/** What a ticket shows: the city, the title, how long, from where, the stops and their ends. */
+function ticketOf(route: SavedRoute) {
+  if (route.kind === "trip") {
+    const stops = route.trip.days.flatMap((day) => day.items.flatMap((item) => (item.kind === "stop" ? [item.asset.name] : [])));
+    return {
+      city: route.trip.city.label,
+      code: route.trip.city.code,
+      title: route.title,
+      duration: durationLabel[route.trip.duration],
+      fromRehber: true,
+      ends: stops.length > 1 ? `${stops[0]} → ${stops[stops.length - 1]}` : (stops[0] ?? null),
+    };
+  }
+  return {
+    city: regionLabel[route.region],
+    code: route.region,
+    title: route.title,
+    duration: durationLabel[route.duration],
+    fromRehber: false,
+    ends: route.dishes.length > 0 ? `${route.dishes.length} lezzet durağıyla` : null,
+  };
+}
 
 /**
- * Profil · Rotalarım: the routes saved from the planner ("Rotayı kaydet"), newest first. A card
- * opens its route in the planner again; empty, it points to the planner.
+ * Profil · Rotalarım: the routes saved from the planner ("Rotayı kaydet") and the trips Rehber
+ * planned, newest first, each as a ticket: the city on its own ink, the stops as dots on a dashed
+ * line. A planner ticket opens its route in the planner again, a Rehber ticket its plan day by
+ * day (./trip.tsx). New routes are planned with Rehber, where "Yeni" leads.
  */
 export default function MyRoutesScreen() {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const routes = useSavedRoutes();
+  const stopTotal = routes.reduce((sum, route) => sum + route.stops, 0);
 
   return (
-    <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={[styles.content, { paddingBottom: insets.bottom + spacing.xl }]}>
+    <ScrollView
+      style={{ backgroundColor: c.background }}
+      contentContainerStyle={[styles.content, { paddingBottom: bottomInset(insets.bottom) + spacing.xl }]}
+      contentInsetAdjustmentBehavior="automatic"
+    >
       <Head>
         <title>Rotalarım · Vagabonds</title>
       </Head>
 
       {routes.length === 0 ? (
-        <View style={[styles.empty, { backgroundColor: c.surface }]}>
-          <View style={[styles.emptyIcon, { backgroundColor: c.surfaceRaised }]}>
-            <Ionicons name="map-outline" size={26} color={c.highlightMark} />
-          </View>
-          <Text variant="heading" headingLevel={2} style={styles.centered}>
-            Henüz kayıtlı rotan yok
-          </Text>
-          <Text color="textSecondary" style={styles.centered}>
-            Rota planlayıcıda bir güzergâh oluştur, "Rotayı kaydet" ile buraya ekle.
-          </Text>
-          <NewRoute onPress={() => router.push("/route")} />
-        </View>
+        <Empty onNew={() => router.navigate("/rehber")} />
       ) : (
         <>
+          <View style={styles.head}>
+            <Text variant="caption" color="textSecondary" style={styles.headText}>
+              {`${routes.length} rota · ${stopTotal} durak`}
+            </Text>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Rehber'le yeni rota planla"
+              onPress={() => router.navigate("/rehber")}
+              style={({ pressed }) => [styles.newPill, pressed && styles.pressed]}
+            >
+              <Ionicons name="sparkles" size={14} color={palette.white} />
+              <Text variant="label" colorValue={palette.white} style={styles.newPillText}>
+                Yeni
+              </Text>
+            </Pressable>
+          </View>
           <View accessibilityRole="list" style={styles.list}>
-            {routes.map((route) => (
-              <View key={route.id} style={[styles.card, { backgroundColor: c.surface }]}>
-                <Pressable
-                  accessibilityRole="link"
-                  accessibilityLabel={`${route.title}, ${regionLabel[route.region]}, ${durationLabel[route.duration]}, ${route.stops} eser. Rotayı aç`}
-                  onPress={() =>
-                    router.push({ pathname: "/route", params: { region: route.region, duration: route.duration, dishes: route.dishes.join(",") } })
-                  }
-                  style={({ pressed }) => [styles.cardMain, pressed && styles.pressed]}
-                >
-                  <View style={[styles.cardIcon, { backgroundColor: c.surfaceRaised }]}>
-                    <Ionicons name="git-branch" size={20} color={c.highlightMark} />
-                  </View>
-                  <View style={styles.flex}>
-                    <Text variant="label" numberOfLines={2} style={styles.cardTitle}>
-                      {route.title}
-                    </Text>
-                    <Text variant="caption" color="textSecondary">
-                      {`${regionLabel[route.region]} · ${durationLabel[route.duration]} · ${route.stops} eser`}
-                    </Text>
-                    <Text variant="caption" color="textSecondary">
-                      {`${new Date(route.savedAt).toLocaleDateString("tr-TR", { day: "numeric", month: "long" })} tarihinde kaydedildi`}
-                    </Text>
-                  </View>
-                  <Ionicons name="chevron-forward" size={18} color={c.textSecondary} />
-                </Pressable>
-                <Pressable
-                  accessibilityRole="button"
-                  accessibilityLabel={`${route.title} rotasını sil`}
-                  onPress={() => {
-                    void removeRoute(route.id);
-                    announce("Rota silindi.");
-                  }}
-                  hitSlop={4}
-                  style={({ pressed }) => [styles.remove, pressed && { backgroundColor: c.surfaceRaised }]}
-                >
-                  <Ionicons name="trash-outline" size={18} color={c.textSecondary} />
-                </Pressable>
-              </View>
+            {routes.map((route, i) => (
+              <Ticket key={route.id} route={route} index={i} />
             ))}
           </View>
-          <NewRoute onPress={() => router.push("/route")} />
         </>
       )}
     </ScrollView>
   );
 }
 
-function NewRoute({ onPress }: { onPress: () => void }) {
+/** One saved route as a ticket; it rises in a moment after the one above it. */
+function Ticket({ route, index }: { route: SavedRoute; index: number }) {
   const { colors: c } = useTheme();
+  const router = useRouter();
+  const reduced = useReducedMotion();
+  const rise = useRef(new Animated.Value(reduced ? 1 : 0)).current;
+  const ticket = ticketOf(route);
+  const [light, deep] = inkFor(ticket.code);
+  const saved = new Date(route.savedAt).toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
+
+  useEffect(() => {
+    if (reduced) {
+      rise.setValue(1);
+      return;
+    }
+    Animated.spring(rise, { toValue: 1, delay: Math.min(index, 8) * 70, friction: 8, tension: 70, useNativeDriver: true }).start();
+  }, [index, reduced, rise]);
+
+  const open = () =>
+    route.kind === "trip"
+      ? router.push({ pathname: "/profile/trip", params: { id: route.id } })
+      : router.push({ pathname: "/route", params: { region: route.region, duration: route.duration, dishes: route.dishes.join(",") } });
+
   return (
-    <Pressable
-      accessibilityRole="button"
-      onPress={onPress}
-      style={({ pressed }) => [styles.new, { backgroundColor: c.highlightMark }, pressed && styles.pressed]}
-    >
-      <Ionicons name="add" size={20} color={c.onPrimary} />
-      <Text variant="label" colorValue={c.onPrimary} style={styles.newText}>
-        Yeni rota planla
-      </Text>
-    </Pressable>
+    <Animated.View style={{ opacity: rise, transform: [{ translateY: rise.interpolate({ inputRange: [0, 1], outputRange: [18, 0] }) }] }}>
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel={`${ticket.title}, ${ticket.city}, ${ticket.duration}, ${route.stops} durak${ticket.fromRehber ? ", Rehber planladı" : ""}. Rotayı aç`}
+        onPress={open}
+        style={({ pressed }) => [styles.ticket, { backgroundColor: c.surface }, pressed && styles.ticketPressed]}
+      >
+        <View style={styles.band}>
+          <Svg style={StyleSheet.absoluteFill} aria-hidden>
+            <Defs>
+              <LinearGradient id={`ink-${route.id}`} x1="0" y1="0" x2="1" y2="1">
+                <Stop offset="0" stopColor={light} />
+                <Stop offset="1" stopColor={deep} />
+              </LinearGradient>
+            </Defs>
+            <Rect width="100%" height="100%" fill={`url(#ink-${route.id})`} />
+            {/* A compass rose's rings in the corner, faint. */}
+            <Circle cx="92%" cy="20%" r={46} stroke={palette.altin200} strokeOpacity={0.12} fill="none" />
+            <Circle cx="92%" cy="20%" r={30} stroke={palette.altin200} strokeOpacity={0.1} strokeDasharray="2 4" fill="none" />
+          </Svg>
+          <View style={styles.bandTop}>
+            <Text colorValue={palette.altin200} style={styles.city}>
+              {ticket.city.toLocaleUpperCase("tr")}
+            </Text>
+            <View style={styles.chip}>
+              <Ionicons name={ticket.fromRehber ? "sparkles" : "compass"} size={12} color={palette.altin200} />
+              <Text colorValue={palette.gece50} style={styles.chipText}>
+                {ticket.fromRehber ? "Rehber" : "Planlayıcı"}
+              </Text>
+            </View>
+          </View>
+          <Text colorValue={palette.white} style={styles.title} numberOfLines={2}>
+            {ticket.title}
+          </Text>
+          <View style={styles.chip}>
+            <Ionicons name="time-outline" size={12} color={palette.altin200} />
+            <Text colorValue={palette.gece50} style={styles.chipText}>
+              {ticket.duration}
+            </Text>
+          </View>
+        </View>
+
+        <View style={styles.body}>
+          <View style={[styles.notch, styles.notchLeft, { backgroundColor: c.background }]} />
+          <View style={[styles.notch, styles.notchRight, { backgroundColor: c.background }]} />
+
+          <RouteLine stops={route.stops} />
+          {ticket.ends && (
+            <Text variant="caption" color="textSecondary" numberOfLines={1}>
+              {ticket.ends}
+            </Text>
+          )}
+
+          <View style={[styles.foot, { borderTopColor: c.border }]}>
+            <Ionicons name="calendar-outline" size={14} color={c.textSecondary} />
+            <Text variant="caption" color="textSecondary" style={styles.flex}>
+              {`${saved} · ${route.stops} durak`}
+            </Text>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={`${ticket.title} rotasını sil`}
+              onPress={() => {
+                void removeRoute(route.id);
+                announce("Rota silindi.");
+              }}
+              hitSlop={6}
+              style={({ pressed }) => [styles.remove, pressed && { backgroundColor: c.surfaceRaised }]}
+            >
+              <Ionicons name="trash-outline" size={17} color={c.textSecondary} />
+            </Pressable>
+          </View>
+        </View>
+      </Pressable>
+    </Animated.View>
   );
 }
+
+/** Dots between the flag and the pin before the rest is told as "+n". */
+const MAX_DOTS = 6;
+
+/** The stops on a dashed gold line: a flag for the first, a pin for the last, dots between. */
+function RouteLine({ stops }: { stops: number }) {
+  const { colors: c } = useTheme();
+  if (stops === 0) {
+    return (
+      <Text variant="caption" color="textSecondary">
+        Henüz durak yok
+      </Text>
+    );
+  }
+  const between = Math.max(0, stops - 2);
+  const dots = Math.min(between, MAX_DOTS);
+  const dash = (key: string) => (
+    <View key={key} style={styles.segment}>
+      <Svg height={2} width="100%">
+        <Line x1="0" y1="1" x2="100%" y2="1" stroke={c.highlightMark} strokeOpacity={0.6} strokeWidth={2} strokeDasharray="3 4" />
+      </Svg>
+    </View>
+  );
+  return (
+    <View style={styles.line} aria-hidden>
+      <Ionicons name="flag" size={16} color={c.highlightMark} />
+      {stops > 1 && (
+        <>
+          {Array.from({ length: dots }, (_, i) => [dash(`d${i}`), <View key={`p${i}`} style={[styles.dot, { borderColor: c.highlightMark, backgroundColor: c.surface }]} />])}
+          {between > MAX_DOTS && (
+            <Text variant="caption" colorValue={c.highlight} style={styles.more}>
+              {`+${between - MAX_DOTS}`}
+            </Text>
+          )}
+          {dash("last")}
+          <Ionicons name="location" size={18} color={c.highlightMark} />
+        </>
+      )}
+    </View>
+  );
+}
+
+/** No routes yet: a dashed path between two pins, and the way to Rehber. */
+function Empty({ onNew }: { onNew: () => void }) {
+  const { colors: c } = useTheme();
+  return (
+    <View style={[styles.empty, { backgroundColor: c.surface }]}>
+      <View style={styles.emptyArt} aria-hidden>
+        <Svg width={220} height={90}>
+          <Line x1={30} y1={60} x2={110} y2={30} stroke={c.highlightMark} strokeWidth={2} strokeDasharray="4 6" strokeLinecap="round" />
+          <Line x1={110} y1={30} x2={190} y2={55} stroke={c.highlightMark} strokeWidth={2} strokeDasharray="4 6" strokeLinecap="round" />
+          <Circle cx={110} cy={30} r={6} fill={c.surface} stroke={c.highlightMark} strokeWidth={2} />
+        </Svg>
+        <Ionicons name="flag" size={26} color={c.highlightMark} style={styles.emptyStart} />
+        <Ionicons name="location" size={30} color={c.highlightMark} style={styles.emptyEnd} />
+      </View>
+      <Text variant="heading" headingLevel={2} style={[styles.centered, styles.emptyTitle]}>
+        İlk rotanı çiz
+      </Text>
+      <Text color="textSecondary" style={styles.centered}>
+        Rehber'e nereyi gezmek istediğini söyle; planladığı rotalar burada bilet olarak toplanır.
+      </Text>
+      <Pressable accessibilityRole="button" onPress={onNew} style={({ pressed }) => [styles.new, pressed && styles.pressed]}>
+        <Ionicons name="sparkles" size={18} color={palette.white} />
+        <Text variant="label" colorValue={palette.white} style={styles.newText}>
+          Rehber'le rota planla
+        </Text>
+      </Pressable>
+    </View>
+  );
+}
+
+const NOTCH = 22;
 
 const styles = StyleSheet.create({
   flex: {
@@ -124,33 +284,124 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
     gap: spacing.lg,
   },
-  list: {
-    gap: spacing.md,
-  },
-  card: {
+  head: {
     flexDirection: "row",
     alignItems: "center",
-    borderRadius: radius.xl,
-    paddingRight: spacing.xs,
+    justifyContent: "space-between",
   },
-  cardMain: {
-    flex: 1,
+  headText: {
+    fontFamily: fontFamily.sansMedium,
+  },
+  newPill: {
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.md,
-    padding: spacing.lg,
+    gap: 4,
+    minHeight: 36,
+    paddingHorizontal: spacing.md,
+    borderRadius: radius.full,
+    backgroundColor: palette.altin700,
   },
-  cardIcon: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  cardTitle: {
+  newPillText: {
     fontFamily: fontFamily.sansSemiBold,
-    fontSize: 16,
-    marginBottom: spacing.xxs,
+  },
+  list: {
+    gap: spacing.lg,
+  },
+  ticket: {
+    borderRadius: 24,
+    overflow: "hidden",
+    shadowColor: palette.gece1000,
+    shadowOpacity: 0.12,
+    shadowRadius: 16,
+    shadowOffset: { width: 0, height: 8 },
+    elevation: 4,
+  },
+  ticketPressed: {
+    transform: [{ scale: 0.98 }],
+  },
+  band: {
+    gap: spacing.sm,
+    paddingHorizontal: spacing.lg,
+    paddingTop: spacing.lg,
+    paddingBottom: spacing.lg + spacing.xs,
+  },
+  bandTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  city: {
+    fontFamily: fontFamily.monoMedium,
+    fontSize: 11,
+    lineHeight: 15,
+    letterSpacing: 2.5,
+  },
+  title: {
+    fontFamily: fontFamily.display,
+    fontSize: 24,
+    lineHeight: 30,
+  },
+  chip: {
+    flexDirection: "row",
+    alignItems: "center",
+    alignSelf: "flex-start",
+    gap: 4,
+    height: 24,
+    paddingHorizontal: spacing.sm,
+    borderRadius: 12,
+    backgroundColor: "rgba(255, 255, 255, 0.12)",
+  },
+  chipText: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 12,
+    lineHeight: 16,
+  },
+  body: {
+    gap: spacing.sm,
+    paddingHorizontal: spacing.lg,
+    paddingTop: spacing.lg,
+    paddingBottom: spacing.xs,
+  },
+  // Half circles cut into the ticket where the band meets the body.
+  notch: {
+    position: "absolute",
+    top: -NOTCH / 2,
+    width: NOTCH,
+    height: NOTCH,
+    borderRadius: NOTCH / 2,
+  },
+  notchLeft: {
+    left: -NOTCH / 2,
+  },
+  notchRight: {
+    right: -NOTCH / 2,
+  },
+  line: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    minHeight: 24,
+  },
+  segment: {
+    flex: 1,
+  },
+  dot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    borderWidth: 2,
+  },
+  more: {
+    fontFamily: fontFamily.sansBold,
+    marginHorizontal: spacing.xs,
+  },
+  foot: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+    marginTop: spacing.xs,
+    paddingTop: spacing.xs,
+    borderTopWidth: StyleSheet.hairlineWidth,
   },
   remove: {
     width: touchTarget.min,
@@ -163,14 +414,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: spacing.md,
     padding: spacing.xl,
-    borderRadius: radius.xl + spacing.xs,
+    borderRadius: 24,
   },
-  emptyIcon: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
-    alignItems: "center",
-    justifyContent: "center",
+  emptyArt: {
+    width: 220,
+    height: 90,
+  },
+  emptyStart: {
+    position: "absolute",
+    left: 18,
+    top: 50,
+  },
+  emptyEnd: {
+    position: "absolute",
+    left: 176,
+    top: 30,
+  },
+  emptyTitle: {
+    fontFamily: fontFamily.display,
   },
   new: {
     flexDirection: "row",
@@ -178,8 +439,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: spacing.xs,
     alignSelf: "stretch",
-    minHeight: touchTarget.min + 6,
+    minHeight: touchTarget.min + 4,
     borderRadius: radius.full,
+    backgroundColor: palette.altin700,
   },
   newText: {
     fontFamily: fontFamily.sansSemiBold,

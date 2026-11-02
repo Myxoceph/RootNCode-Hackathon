@@ -1,12 +1,18 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import type { TripPlanResponse } from "@vagabonds/contracts";
 import { useEffect, useSyncExternalStore } from "react";
 
 import type { Duration, Region } from "@/content/routes";
 
-/** Profil · Rotalarım: the routes the visitor saved from the planner, newest first, on this device. */
+/**
+ * Profil · Rotalarım: the routes the visitor saved from the planner and the trips Rehber planned
+ * for them, newest first, on this device.
+ */
 const KEY = "vagabonds-saved-routes";
 
-export interface SavedRoute {
+/** A route saved from the planner ("Rotayı kaydet"); routes saved before trips came have no `kind`. */
+export interface PlannerRoute {
+  kind?: "planner";
   id: string;
   region: Region;
   duration: Duration;
@@ -16,6 +22,18 @@ export interface SavedRoute {
   stops: number;
   savedAt: string;
 }
+
+/** A trip plan Rehber gave in the chat, kept as it was planned. */
+export interface TripRoute {
+  kind: "trip";
+  id: string;
+  title: string;
+  stops: number;
+  trip: TripPlanResponse;
+  savedAt: string;
+}
+
+export type SavedRoute = PlannerRoute | TripRoute;
 
 let routes: readonly SavedRoute[] = [];
 let loaded: Promise<void> | null = null;
@@ -45,18 +63,36 @@ function load(): Promise<void> {
   return loaded;
 }
 
-/** The same plan twice is one route: the region, the length and the food stops make it. */
-export function routeKey(route: Pick<SavedRoute, "region" | "duration" | "dishes">): string {
+/**
+ * The same plan twice is one route. A planner route is its region, length and food stops; a
+ * Rehber trip is its city, length, theme and first day.
+ */
+export function routeKey(route: Pick<PlannerRoute, "region" | "duration" | "dishes"> | Pick<TripRoute, "kind" | "trip">): string {
+  if ("trip" in route) {
+    const { trip } = route;
+    return ["trip", trip.city.code, trip.duration, trip.theme?.code ?? "", trip.days[0]?.date ?? ""].join("|");
+  }
   return [route.region, route.duration, [...route.dishes].sort().join("+")].join("|");
 }
 
-export async function saveRoute(route: Omit<SavedRoute, "id" | "savedAt">): Promise<void> {
+function newId(): string {
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+}
+
+async function keep(route: SavedRoute): Promise<void> {
   await load();
   const key = routeKey(route);
-  set([
-    { ...route, id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`, savedAt: new Date().toISOString() },
-    ...routes.filter((r) => routeKey(r) !== key),
-  ]);
+  set([route, ...routes.filter((r) => routeKey(r) !== key)]);
+}
+
+export function saveRoute(route: Omit<PlannerRoute, "id" | "savedAt" | "kind">): Promise<void> {
+  return keep({ ...route, kind: "planner", id: newId(), savedAt: new Date().toISOString() });
+}
+
+/** Keeps a trip Rehber planned; the same trip again replaces the one before. */
+export function saveTrip(trip: TripPlanResponse): Promise<void> {
+  const stops = trip.days.reduce((sum, day) => sum + day.items.filter((item) => item.kind === "stop").length, 0);
+  return keep({ kind: "trip", id: newId(), title: `${trip.city.label} gezi planı`, stops, trip, savedAt: new Date().toISOString() });
 }
 
 export async function removeRoute(id: string): Promise<void> {

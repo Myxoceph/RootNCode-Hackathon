@@ -35,6 +35,17 @@ Değişenler:
 
 ---
 
+## 2026-11-02 · Eser kartları için yıl etiketi (sözleşme 0.3.19)
+
+Kimler: **uygulama ekibi** (kurulum adımı yok)
+
+Değişenler:
+- Eser listesinde (`AssetSummary`) yeni alan `yearLabel`: kartta gösterilecek yıl ("1399", "XV. yüzyıl" ya da
+  `null`). Tarih metnindeki hicri yılları, ölüm ve onarım tarihlerini almaz. Kart bunu kullanmalı (`KUBRA.md` 4.1).
+- Uygulamanın fixture'ları API'den yeniden alındı.
+
+---
+
 ## 2026-11-02 · fast-uri güvenlik güncellemesi
 
 Kimler: **herkes**

@@ -4,7 +4,7 @@ import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text, u
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ActivityIndicator, Animated, Easing, Platform, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { ActivityIndicator, Animated, Easing, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { compileSource } from "@/ar/inscription-targets";
@@ -17,6 +17,7 @@ import { DataErrorView } from "@/components/resource-view";
 import { communityAvailable, DataError, sendVisitProof, useAsset, useCommunity } from "@/data";
 import { announce } from "@/lib/announce";
 import { currentPosition, type Position } from "@/lib/current-position";
+import { unlockAsset } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
@@ -25,6 +26,9 @@ import { kmBetween } from "@/map/dense-area";
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
 /** The target must stay in view this long before the visit is sealed, so a passing glimpse does not count. */
 const HOLD_MS = 1000;
+/** Where the stamp's one animated value stands as the seal hangs over the page, and as it strikes. */
+const STAMP_HANGS = 0.6;
+const STAMP_STRIKES = 0.8;
 
 /** Compiled seal targets of this run, by asset and photo: compiling again takes seconds. */
 const compiled = new Map<string, string>();
@@ -55,9 +59,21 @@ export default function VisitSealScreen() {
   const web = Platform.OS === "web";
   const asset = resource.status === "success" ? resource.data : null;
   const target = asset ? visitSealTarget(asset) : null;
+  const router = useRouter();
+  const [unlocked, setUnlocked] = useState(false);
+  // A simulation for the demo: "Kilidi aç" unlocks the asset on the map as a sealed visit would.
+  const unlock = asset
+    ? () => {
+        void unlockAsset(asset.id);
+        announce(`${asset.name} kilidi açıldı.`);
+        setUnlocked(true);
+      }
+    : undefined;
 
   let body;
-  if (resource.status === "loading" || (!web && screenReader === null)) {
+  if (asset && unlocked) {
+    body = <Sealed asset={asset} result={{ verified: false, firstVisit: true, newAchievements: [] }} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/"))} />;
+  } else if (resource.status === "loading" || (!web && screenReader === null)) {
     body = (
       <View style={styles.center}>
         <ActivityIndicator color={cameraColors.gold} size="large" accessibilityLabel="Yükleniyor" />
@@ -75,12 +91,22 @@ export default function VisitSealScreen() {
         <Text colorValue={cameraColors.text} style={styles.centerText}>
           {asset ? "Bu eser için henüz mühür kısmı belirlenmedi." : "Eser bulunamadı."}
         </Text>
+        {unlock && <UnlockButton onPress={unlock} />}
       </View>
     );
   } else if (web || screenReader) {
-    body = <SealGuide asset={asset} />;
+    body = (
+      <>
+        <SealGuide asset={asset} />
+        {unlock && (
+          <View style={[styles.unlockFloat, { bottom: insets.bottom + spacing.lg }]}>
+            <UnlockButton onPress={unlock} />
+          </View>
+        )}
+      </>
+    );
   } else {
-    body = <SealCamera asset={asset} />;
+    body = <SealCamera asset={asset} onUnlock={unlock} />;
   }
 
   return (
@@ -93,6 +119,23 @@ export default function VisitSealScreen() {
         <CameraTopBar title="Ziyaret Mührü" subtitle={asset?.name ?? "Eser"} />
       </View>
     </View>
+  );
+}
+
+/** "Kilidi aç": seals the visit at once, standing in for recognising the part (a demo simulation). */
+function UnlockButton({ onPress }: { onPress: () => void }) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityHint="Eserin kilidini açar ve ziyaretini mühürler"
+      onPress={onPress}
+      style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.85, transform: [{ scale: 0.98 }] }]}
+    >
+      <Ionicons name="lock-open" size={18} color={cameraColors.onGold} />
+      <Text variant="label" colorValue={cameraColors.onGold} style={styles.unlockText}>
+        Kilidi aç
+      </Text>
+    </Pressable>
   );
 }
 
@@ -119,7 +162,7 @@ function SealGuide({ asset }: { asset: AssetDetail }) {
   );
 }
 
-function SealCamera({ asset }: { asset: AssetDetail }) {
+function SealCamera({ asset, onUnlock }: { asset: AssetDetail; onUnlock?: () => void }) {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { user } = useCommunity();
@@ -150,6 +193,7 @@ function SealCamera({ asset }: { asset: AssetDetail }) {
       go({ name: "sending" });
       try {
         const result = await sendVisitProof(asset.id, { mediaKey: photo.key, ...(position ?? {}) }, nickname);
+        void unlockAsset(asset.id);
         go({ name: "sealed", result });
         announce(`Ziyaretin mühürlendi.${result.newAchievements.length ? ` ${result.newAchievements.length} yeni rozet kazandın.` : ""}`);
       } catch (error) {
@@ -237,6 +281,7 @@ function SealCamera({ asset }: { asset: AssetDetail }) {
       </View>
 
       <View style={[styles.panel, { paddingBottom: insets.bottom + spacing.lg }]} accessibilityLiveRegion="polite">
+        {onUnlock && <UnlockButton onPress={onUnlock} />}
         <PanelBody phase={phase} hold={hold} onRetry={retry} onNickname={(nickname, position) => void send(position, nickname)} />
       </View>
     </View>
@@ -357,69 +402,109 @@ function NicknameStep({ onSubmit }: { onSubmit: (nickname: string) => void }) {
   );
 }
 
-/** The seal comes down like a stamp, then what the visit earned. */
-function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: VisitResponse; onDone: () => void }) {
+/**
+ * The seal comes down like a stamp: it sinks in large and empty, hangs for a beat, and strikes. The ink
+ * shows at the strike, a ring spreads from it and the page jolts; then what the visit earned.
+ */
+function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<VisitResponse, "verified" | "firstVisit" | "newAchievements">; onDone: () => void }) {
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
   const stamp = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
+  const strike = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
+  const reveal = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
 
   useEffect(() => {
-    if (reduceMotion) return;
-    Animated.spring(stamp, { toValue: 1, damping: 9, stiffness: 140, mass: 0.8, useNativeDriver: true }).start();
-  }, [reduceMotion, stamp]);
+    if (reduceMotion) {
+      stamp.setValue(1);
+      strike.setValue(1);
+      reveal.setValue(1);
+      return;
+    }
+    const animation = Animated.sequence([
+      Animated.timing(stamp, { toValue: STAMP_HANGS, duration: 760, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+      Animated.delay(170),
+      Animated.timing(stamp, { toValue: STAMP_STRIKES, duration: 120, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
+      Animated.parallel([
+        Animated.spring(stamp, { toValue: 1, damping: 10, stiffness: 180, mass: 0.7, useNativeDriver: true }),
+        Animated.timing(strike, { toValue: 1, duration: 720, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(reveal, { toValue: 1, duration: 520, delay: 300, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+      ]),
+    ]);
+    animation.start();
+    return () => animation.stop();
+  }, [reduceMotion, stamp, strike, reveal]);
 
-  const scale = stamp.interpolate({ inputRange: [0, 1], outputRange: [1.8, 1] });
+  const scale = stamp.interpolate({ inputRange: [0, STAMP_HANGS, STAMP_STRIKES, 1], outputRange: [2.4, 1.26, 0.92, 1] });
+  const rotate = stamp.interpolate({ inputRange: [0, STAMP_HANGS, 1], outputRange: ["-22deg", "-8deg", "-8deg"] });
+  const opacity = stamp.interpolate({ inputRange: [0, STAMP_HANGS * 0.6, 1], outputRange: [0, 1, 1] });
+  const ink = stamp.interpolate({ inputRange: [0, STAMP_STRIKES - 0.02, STAMP_STRIKES, 1], outputRange: [0, 0, 1, 1] });
+  const jolt = strike.interpolate({ inputRange: [0, 0.06, 0.14, 0.24, 0.36, 1], outputRange: [0, 5, -3, 2, -1, 0] });
   const date = new Date().toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
 
   return (
     <ScrollView contentContainerStyle={[styles.sealed, { paddingTop: insets.top + 96, paddingBottom: insets.bottom + spacing.xl }]}>
-      <Animated.View style={[styles.seal, { opacity: stamp, transform: [{ scale }, { rotate: "-8deg" }] }]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
-        <View style={styles.sealInner}>
-          <Text style={styles.sealCaption} colorValue={cameraColors.gold}>
-            ZİYARET MÜHRÜ
-          </Text>
-          <Text variant="heading" colorValue={cameraColors.text} style={styles.centerText} numberOfLines={2}>
-            {asset.name}
-          </Text>
-          <Text style={styles.sealCaption} colorValue={cameraColors.textSecondary}>
-            {date.toLocaleUpperCase("tr")}
-          </Text>
-        </View>
+      <Animated.View style={[styles.sealStage, { transform: [{ translateY: jolt }] }]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+        <Animated.View
+          style={[
+            styles.sealRing,
+            {
+              opacity: strike.interpolate({ inputRange: [0, 0.02, 1], outputRange: [0, 0.9, 0] }),
+              transform: [{ scale: strike.interpolate({ inputRange: [0, 1], outputRange: [0.96, 1.6] }) }],
+            },
+          ]}
+        />
+        <Animated.View style={[styles.seal, { opacity, transform: [{ scale }, { rotate }] }]}>
+          <View style={styles.sealInner}>
+            <Animated.View style={[styles.sealInk, { opacity: ink }]}>
+              <Text style={styles.sealCaption} colorValue={cameraColors.gold}>
+                ZİYARET MÜHRÜ
+              </Text>
+              <Text variant="heading" colorValue={cameraColors.text} style={styles.centerText} numberOfLines={2}>
+                {asset.name}
+              </Text>
+              <Text style={styles.sealCaption} colorValue={cameraColors.textSecondary}>
+                {date.toLocaleUpperCase("tr")}
+              </Text>
+            </Animated.View>
+          </View>
+        </Animated.View>
       </Animated.View>
 
-      <Text variant="title" colorValue={cameraColors.text} style={styles.centerText} headingLevel={2}>
-        Ziyaretin mühürlendi
-      </Text>
-      <Text colorValue={cameraColors.textSecondary} style={styles.centerText}>
-        {result.verified ? "Konumun da doğrulandı. " : ""}
-        {result.firstVisit ? "Bu eser artık haritanda açık." : "Bu eseri daha önce de ziyaret etmiştin; ziyaretin artık mühürlü."}
-      </Text>
+      <Animated.View style={[styles.sealedText, { opacity: reveal, transform: [{ translateY: reveal.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}>
+        <Text variant="title" colorValue={cameraColors.text} style={styles.centerText} headingLevel={2}>
+          Ziyaretin mühürlendi
+        </Text>
+        <Text colorValue={cameraColors.textSecondary} style={styles.centerText}>
+          {result.verified ? "Konumun da doğrulandı. " : ""}
+          {result.firstVisit ? "Bu eser artık haritanda açık." : "Bu eseri daha önce de ziyaret etmiştin; ziyaretin artık mühürlü."}
+        </Text>
 
-      {result.newAchievements.length > 0 && (
-        <View style={styles.badges}>
-          <Text variant="overline" colorValue={cameraColors.gold}>
-            YENİ ROZETLER
-          </Text>
-          {result.newAchievements.map((achievement) => (
-            <View key={achievement.code} style={styles.badge} accessible accessibilityLabel={`${achievement.title}, ${achievement.points} puan. ${achievement.description}`}>
-              <Text style={styles.badgeIcon}>{achievement.badge}</Text>
-              <View style={styles.flex}>
-                <Text variant="label" colorValue={cameraColors.text}>
-                  {achievement.title}
-                </Text>
-                <Text variant="caption" colorValue={cameraColors.textSecondary}>
-                  {achievement.description}
+        {result.newAchievements.length > 0 && (
+          <View style={styles.badges}>
+            <Text variant="overline" colorValue={cameraColors.gold}>
+              YENİ ROZETLER
+            </Text>
+            {result.newAchievements.map((achievement) => (
+              <View key={achievement.code} style={styles.badge} accessible accessibilityLabel={`${achievement.title}, ${achievement.points} puan. ${achievement.description}`}>
+                <Text style={styles.badgeIcon}>{achievement.badge}</Text>
+                <View style={styles.flex}>
+                  <Text variant="label" colorValue={cameraColors.text}>
+                    {achievement.title}
+                  </Text>
+                  <Text variant="caption" colorValue={cameraColors.textSecondary}>
+                    {achievement.description}
+                  </Text>
+                </View>
+                <Text variant="label" colorValue={cameraColors.gold}>
+                  +{achievement.points}
                 </Text>
               </View>
-              <Text variant="label" colorValue={cameraColors.gold}>
-                +{achievement.points}
-              </Text>
-            </View>
-          ))}
-        </View>
-      )}
+            ))}
+          </View>
+        )}
 
-      <Button label="Tamam" onPress={onDone} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
+        <Button label="Tamam" onPress={onDone} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
+      </Animated.View>
     </ScrollView>
   );
 }
@@ -439,10 +524,30 @@ const styles = StyleSheet.create({
   flex: {
     flex: 1,
   },
+  unlock: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "stretch",
+    gap: spacing.sm,
+    minHeight: 52,
+    borderRadius: radius.full,
+    backgroundColor: "#FFFFFF",
+  },
+  unlockText: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 17,
+  },
+  unlockFloat: {
+    position: "absolute",
+    left: spacing.lg,
+    right: spacing.lg,
+  },
   center: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    gap: spacing.xl,
     padding: spacing.xl,
   },
   centerText: {
@@ -532,6 +637,24 @@ const styles = StyleSheet.create({
     width: "100%",
     alignSelf: "center",
   },
+  sealStage: {
+    width: 220,
+    height: 220,
+    marginBottom: spacing.lg,
+  },
+  sealRing: {
+    position: "absolute",
+    width: 220,
+    height: 220,
+    borderRadius: 110,
+    borderWidth: 3,
+    borderColor: cameraColors.gold,
+  },
+  sealedText: {
+    alignSelf: "stretch",
+    alignItems: "center",
+    gap: spacing.md,
+  },
   seal: {
     width: 220,
     height: 220,
@@ -539,7 +662,10 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: cameraColors.gold,
     padding: 8,
-    marginBottom: spacing.lg,
+  },
+  sealInk: {
+    alignItems: "center",
+    gap: spacing.xs,
   },
   sealInner: {
     flex: 1,

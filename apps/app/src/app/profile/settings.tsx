@@ -6,6 +6,7 @@ import { Platform, Pressable, ScrollView, StyleSheet, View } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { sampleDescription } from "@/content/camera";
+import { bottomInset } from "@/lib/bottom-inset";
 import { speak } from "@/lib/speak";
 import { useA11ySettings, type A11ySettings } from "@/settings/a11y-settings";
 import { resolveColorScheme, themePreferenceOptions, useColorScheme, type ColorScheme } from "@/theme";
@@ -39,7 +40,11 @@ export default function SystemSettingsScreen() {
   const scheme = resolveColorScheme(themePreference, useColorScheme());
 
   return (
-    <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={{ paddingTop: spacing.lg, paddingBottom: insets.bottom + spacing.xl }}>
+    <ScrollView
+      style={{ backgroundColor: c.background }}
+      contentContainerStyle={{ paddingTop: spacing.lg, paddingBottom: bottomInset(insets.bottom) + spacing.xl }}
+      contentInsetAdjustmentBehavior="automatic"
+    >
       <Head>
         <title>Sistem ayarları · Vagabonds</title>
       </Head>
