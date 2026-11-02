@@ -117,12 +117,12 @@ Demo yığınında, telefon boyutunda (390×844) Harita, Eserler, eser detayı, 
 Ağ isteklerinin hepsi başarılı; eser detayı, Profil ve Rehber'in giriş kartı sorunsuz. Düzeltilecekler,
 önem sırasıyla:
 
-1. **Eser listesinde yanlış yıl.** `asset-card.tsx`'teki `yearOf` (satır 12) "M."den hemen sonra sayı
-   bekliyor; "M. Aralık 1413" ya da "M. 8 Mart 1402" gibi yazımlarda ilk sayıyı alıyor ve hicri yılı
-   gösteriyor: "Devlet Hatun Türbesi · 816", "Eyne Bey Subaşı Medresesi · 804". "M."den sonraki ilk 3–4 haneli
-   sayıyı almak yeterli. Ayrıca bazı kayıtlarda ilk sayı yapım yılı değil: "Hacı Hüsamettin Türbesi · 1632"
-   (yaptıranın ölümü), "Seyyid Usûl Tekkesi · 2008" (bugünkü yapı). Bunlar için listeye kaydın kendi
-   `startYear`'ını eklerim (Ahmet, API); gelince kart önce onu kullansın.
+1. **Eser listesinde yanlış yıl.** `asset-card.tsx`'teki `yearOf` (satır 12) tarih metnindeki ilk sayıyı
+   alıyor ve hicri yılı ya da ilgisiz bir tarihi gösterebiliyor: "Devlet Hatun Türbesi · 816" (hicri),
+   "Hacı Hüsamettin Türbesi · 1632" (yaptıranın ölümü), "Seyyid Usûl Tekkesi · 2008" (bugünkü yapı).
+   **Sözleşme 0.3.19'dan beri** listedeki her eserde `yearLabel` var (API hesaplıyor): "1399", "1413",
+   "XV. yüzyıl" ya da kitap bir şey vermiyorsa `null`. Kart `yearOf` yerine `asset.yearLabel`'ı göstersin,
+   `null`'da yalnızca ilçe. `yearOf` silinebilir.
 2. **React #418 (hydration) hatası:** Harita, Eserler, Kamera ve Profil'de konsolda. Web'de önceden üretilen
    HTML ile tarayıcıdaki ilk çizim farklı; genelde ilk çizimde okunan tarih/saat, `window`, ekran boyutu ya da
    cihazda saklanan bir ayar (tema, yazı boyutu) yüzünden. O değer ilk çizimden sonra (`useEffect` içinde)
