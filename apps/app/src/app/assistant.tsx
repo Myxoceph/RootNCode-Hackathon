@@ -67,6 +67,8 @@ export default function AssistantScreen() {
   // Web only: what the live region says; phones hear it through `announce`.
   const [status, setStatus] = useState("");
   const scroll = useRef<ScrollViewInstance>(null);
+  // Answers already here when the screen opened show as they are; only new ones write themselves out.
+  const [earlier] = useState(() => new Set(conversation.entries.map((entry) => entry.id)));
 
   const busy = conversation.pending !== null;
   const empty = conversation.entries.length === 0 && !busy && !conversation.failed;
@@ -139,7 +141,14 @@ export default function AssistantScreen() {
       </View>
 
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === "web" ? undefined : "padding"}>
-        <ScrollView ref={scroll} style={styles.flex} contentContainerStyle={[styles.messages, empty && styles.messagesEmpty]} keyboardShouldPersistTaps="handled">
+        <ScrollView
+          ref={scroll}
+          style={styles.flex}
+          contentContainerStyle={[styles.messages, empty && styles.messagesEmpty]}
+          keyboardShouldPersistTaps="handled"
+          // Follows an answer as it writes itself out.
+          onContentSizeChange={() => scroll.current?.scrollToEnd({ animated: false })}
+        >
           {empty ? (
             <View style={styles.hello}>
               <View style={[styles.mark, { backgroundColor: closed ? c.surfaceRaised : c.text }]} aria-hidden>
@@ -156,14 +165,24 @@ export default function AssistantScreen() {
             </View>
           ) : (
             <>
-              {conversation.entries.map((entry) =>
-                entry.role === "user" ? <UserMessage key={entry.id} text={entry.text} /> : <AssistantMessage key={entry.id} response={entry.response} />,
+              {conversation.entries.map((entry, i) =>
+                entry.role === "user" ? (
+                  <UserMessage key={entry.id} text={entry.text} />
+                ) : (
+                  <AssistantMessage
+                    key={entry.id}
+                    response={entry.response}
+                    animate={!earlier.has(entry.id)}
+                    // Follow-ups only under the last answer, while nothing else is on its way.
+                    onFollowUp={i === conversation.entries.length - 1 && !busy && !conversation.failed ? (question) => void send(question) : undefined}
+                  />
+                ),
               )}
 
               {conversation.pending !== null && (
                 <>
-                  <UserMessage text={conversation.pending} />
-                  <Thinking />
+                  <UserMessage text={conversation.pending} animate />
+                  <Thinking question={conversation.pending} />
                 </>
               )}
 

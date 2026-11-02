@@ -11,9 +11,7 @@ export const QUESTION_MAX = 500;
 /** Longest turn the API accepts in the history (`ChatTurnSchema.content`). */
 const TURN_MAX = 2000;
 
-export type ChatEntry =
-  | { id: number; role: "user"; text: string }
-  | { id: number; role: "assistant"; response: ChatResponse };
+export type ChatEntry = { id: number; role: "user"; text: string } | { id: number; role: "assistant"; response: ChatResponse };
 
 export interface Conversation {
   entries: readonly ChatEntry[];
@@ -42,6 +40,127 @@ export function answerParts(answer: string, citations: readonly ChatCitation[]):
   }
   if (last < answer.length) parts.push({ kind: "text", text: answer.slice(last) });
   return parts;
+}
+
+/** A piece of an answer line: text, bold or not, or a source marker. */
+export type LinePart = { kind: "text"; text: string; bold: boolean } | { kind: "ref"; citation: ChatCitation };
+
+/** A line of an answer: a paragraph, a list item with its bullet or number, or a blank line. */
+export type AnswerLine = { kind: "paragraph" | "bullet"; parts: LinePart[] } | { kind: "number"; number: string; parts: LinePart[] } | { kind: "gap" };
+
+/** `**bold**` spans of a text, as the model writes them. */
+function boldSpans(text: string): LinePart[] {
+  return text
+    .split(/\*\*(.+?)\*\*/g)
+    .map((piece, i) => ({ kind: "text" as const, text: piece, bold: i % 2 === 1 }))
+    .filter((piece) => piece.text.length > 0);
+}
+
+/**
+ * An answer's lines, for showing it as chat apps do: the model writes lists with "- " or "1. ",
+ * headings with "#" and emphasis with "**", and these come out as list items and bold text, not
+ * as the marks themselves. A list item that starts with a short name and a colon ("Pideli Köfte:
+ * ...") shows the name in bold, as the model means it.
+ */
+export function answerLines(parts: readonly AnswerPart[]): AnswerLine[] {
+  const raw: AnswerPart[][] = [[]];
+  for (const part of parts) {
+    if (part.kind === "ref") {
+      raw[raw.length - 1]!.push(part);
+      continue;
+    }
+    part.text.split("\n").forEach((text, i) => {
+      if (i > 0) raw.push([]);
+      if (text) raw[raw.length - 1]!.push({ kind: "text", text });
+    });
+  }
+
+  const lines: AnswerLine[] = [];
+  for (const line of raw) {
+    const first = line[0];
+    if (!first || (line.length === 1 && first.kind === "text" && !first.text.trim())) {
+      if (lines.length > 0 && lines[lines.length - 1]!.kind !== "gap") lines.push({ kind: "gap" });
+      continue;
+    }
+    const head = first.kind === "text" ? first.text : "";
+    const bullet = /^\s*[-*•]\s+/.exec(head);
+    const number = /^\s*(\d+)[.)]\s+/.exec(head);
+    const heading = /^\s*#{1,6}\s+/.exec(head);
+    const lead = bullet ?? number ?? heading;
+    const rest: AnswerPart[] = lead ? [{ kind: "text", text: head.slice(lead[0].length) }, ...line.slice(1)] : line;
+
+    let out: LinePart[] = rest.flatMap((part): LinePart[] => (part.kind === "text" ? boldSpans(part.text) : [part]));
+    if (heading) out = out.map((part) => (part.kind === "text" ? { ...part, bold: true } : part));
+    const label = out[0];
+    if ((bullet || number) && label?.kind === "text" && !label.bold && !out.some((part) => part.kind === "text" && part.bold)) {
+      const colon = /^([^:]{2,40}):\s/.exec(label.text);
+      if (colon)
+        out = [
+          { kind: "text", text: `${colon[1]}:`, bold: true },
+          { kind: "text", text: label.text.slice(colon[1]!.length + 1), bold: false },
+          ...out.slice(1),
+        ];
+    }
+
+    if (number) lines.push({ kind: "number", number: number[1]!, parts: out });
+    else lines.push({ kind: bullet ? "bullet" : "paragraph", parts: out });
+  }
+  while (lines[lines.length - 1]?.kind === "gap") lines.pop();
+  return lines;
+}
+
+/** What a follow-up asks about. */
+export type FollowUpTopic = "food" | "transit" | "weather" | "trip";
+
+export interface FollowUp {
+  topic: FollowUpTopic;
+  /** What the pill says: short, so it stays on one line. */
+  label: string;
+  /** What is sent: the whole question, naming the site when there is one. */
+  question: string;
+}
+
+/**
+ * What to offer to ask next under an answer, as chat apps do: the steps a visit usually takes
+ * after what was just answered. After a trip plan, where to eat on it and how to get around;
+ * after a site, how to get there, what to eat nearby and a route around it; after food or the
+ * weather, a trip that fits. A topic the answer already covers is not offered again. At most
+ * three; none for general conversation.
+ */
+export function followUps(response: ChatResponse): FollowUp[] {
+  const covered = new Set<string>(response.citations.map((citation) => citation.kind));
+  if (response.attachments.trip) covered.add("trip");
+  if (response.attachments.transit) covered.add("transit");
+  const site = response.citations.find((citation) => citation.kind === "asset")?.title;
+
+  let offers: FollowUp[];
+  if (response.attachments.trip) {
+    offers = [
+      { topic: "food", label: "Öğle yemeğine ne önerirsin?", question: "Bu rotada öğle yemeği için ne önerirsin?" },
+      { topic: "transit", label: "Toplu taşımayla nasıl giderim?", question: "Bu rotadaki duraklara toplu taşımayla nasıl giderim?" },
+      { topic: "weather", label: "Gezi günü hava nasıl?", question: "Gezi günü hava nasıl olacak?" },
+    ];
+  } else if (site) {
+    offers = [
+      { topic: "transit", label: "Oraya nasıl giderim?", question: `${site} için toplu taşımayla nasıl giderim?` },
+      { topic: "food", label: "Yakınında ne yenir?", question: `${site} yakınında ne yiyebilirim?` },
+      { topic: "trip", label: "Çevresinde rota planla", question: `${site} çevresinde yarım günlük bir rota planla` },
+    ];
+  } else if (covered.has("dish")) {
+    offers = [
+      { topic: "trip", label: "Bu lezzetlerle rota planla", question: "Bu lezzetlerle yarım günlük bir gezi rotası planla" },
+      { topic: "weather", label: "Hava gezmeye uygun mu?", question: "Bugün hava gezmeye uygun mu?" },
+    ];
+  } else if (covered.has("weather")) {
+    offers = [
+      { topic: "trip", label: "Bu havaya uygun rota planla", question: "Bu havaya uygun bir gezi rotası planla" },
+      { topic: "food", label: "Bu havada ne yenir?", question: "Bu havada ne yemeli?" },
+    ];
+  } else {
+    offers = [];
+  }
+  const kind: Record<FollowUpTopic, string> = { food: "dish", transit: "transit", weather: "weather", trip: "trip" };
+  return offers.filter((offer) => !covered.has(kind[offer.topic])).slice(0, 3);
 }
 
 /** The last turns for `POST /chat`, oldest first, each cut to what the API accepts. */

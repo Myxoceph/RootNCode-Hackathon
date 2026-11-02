@@ -69,6 +69,52 @@ describe("answerParts", () => {
   });
 });
 
+describe("answerLines", () => {
+  const lines = (answer: string) => chat.answerLines(chat.answerParts(answer, [ULUCAMI]));
+  const text = (value: string, bold = false) => ({ kind: "text", text: value, bold });
+
+  it("turns list marks into list items and bolds an item's leading name", () => {
+    expect(lines("Lezzetler:\n\n- Pideli Köfte: yoğurtlu [1]\n2. **Cantık** fırında\n\nAfiyet olsun.")).toEqual([
+      { kind: "paragraph", parts: [text("Lezzetler:")] },
+      { kind: "gap" },
+      { kind: "bullet", parts: [text("Pideli Köfte:", true), text(" yoğurtlu "), { kind: "ref", citation: ULUCAMI }] },
+      { kind: "number", number: "2", parts: [text("Cantık", true), text(" fırında")] },
+      { kind: "gap" },
+      { kind: "paragraph", parts: [text("Afiyet olsun.")] },
+    ]);
+  });
+
+  it("bolds headings and drops blank lines at the ends", () => {
+    expect(lines("\n## Tarihçe\n1399'da açıldı.\n\n")).toEqual([
+      { kind: "paragraph", parts: [text("Tarihçe", true)] },
+      { kind: "paragraph", parts: [text("1399'da açıldı.")] },
+    ]);
+  });
+});
+
+describe("followUps", () => {
+  const topics = (r: ReturnType<typeof response>) => chat.followUps(r as never).map((offer) => offer.topic);
+
+  it("offers food, transit and the weather after a trip plan", () => {
+    const trip = {
+      ...response("Plan hazır [1].", [{ ref: 1, kind: "trip", id: "t", title: "Gezi" }]),
+      attachments: { trip: { city: { code: "bursa", label: "Bursa" } }, transit: null },
+    };
+    expect(topics(trip as never)).toEqual(["food", "transit", "weather"]);
+  });
+
+  it("offers the way there, food nearby and a route after a site, naming it", () => {
+    const offers = chat.followUps(response("1399'da [1].", [ULUCAMI]) as never);
+    expect(offers.map((offer) => offer.topic)).toEqual(["transit", "food", "trip"]);
+    expect(offers[0]!.question).toContain("Ulucami");
+  });
+
+  it("leaves out what the answer already covers and offers nothing for small talk", () => {
+    expect(topics(response("Ulucami [1], köfte [2].", [ULUCAMI, { ref: 2, kind: "dish", id: "d", title: "Köfte" }]))).toEqual(["transit", "trip"]);
+    expect(topics(response("Merhaba!"))).toEqual([]);
+  });
+});
+
 describe("historyFor", () => {
   it("sends only the last six turns, oldest first, each cut to 2000 characters", () => {
     const entries = Array.from({ length: 8 }, (_, i) =>
