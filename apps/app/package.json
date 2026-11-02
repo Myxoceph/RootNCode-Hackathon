@@ -12,7 +12,6 @@
     "web": "expo start --web",
     "export": "expo export --platform all",
     "fixtures": "tsx scripts/capture-fixtures.mts",
-    "ar:targets": "tsx scripts/compile-ar-targets.mts",
     "audio:stand-ins": "tsx scripts/render-capsule-sounds.mts",
     "vendor": "tsx scripts/vendor-web-libs.mts",
     "typecheck": "tsc --noEmit",

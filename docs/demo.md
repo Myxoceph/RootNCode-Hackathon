@@ -23,10 +23,10 @@ Rehber yalnızca hesapla kullanılıyor: giriş yapmadan açılırsa "Giriş yap
 ## Sunumdan önce
 
 1. Mac'te [deploy.md](deploy.md#final-günü-macbook-air-m4)'deki "Demo sabahı" adımları; ön kontrol 8/8.
-2. **Asistanı ısıt**: sahnede sormadan **en çok 30 dakika önce ve aynı saat içinde** (sunum 14:20'deyse
-   14:00–14:20 arası; 14:50'deyse 14:20–14:50 arası). API geçmişi olmayan ilk soruyu 30 dakika boyunca
-   bellekten anında cevaplar, ama bellek saatle anahtarlanır: 13:50'de ısıtılan soru 14:05'te yeniden
-   modele gider (5–25 sn). Soruları uygulamadan,
+2. **Asistanı ısıt**: sahnede sormadan **en çok 30 dakika önce**. API geçmişi olmayan ilk soruyu 30 dakika
+   boyunca bellekten anında cevaplar; model 5–30 sn, yoğunken daha da uzun sürüyor. Gezi planı ve toplu
+   taşıma soruları saate bağlı (akşam gezisi ertesi gün başlar, rota sıradaki seferleri verir): onları
+   **sahnede soracağın saat içinde** ısıt (sunum 14:20'deyse 14:00'ten sonra). Soruları uygulamadan,
    `gezgin` ile ve aşağıdaki kelimelerle birebir sor; sonra Rehber'de kalemle yeni konuşma aç ki sahnede
    boş bir konuşmayla başla. Takip soruları ve konuma göre rota her zaman modele gider, ısıtılamaz.
 3. `gezgin`'in Rehber geçmişinde ısıtma konuşmaları görünür; geçmiş ekranı gösterilecekse bu iyi bir şey.
@@ -66,10 +66,9 @@ ve soru alınmadığını göster, "Yeni konuşma" ile dön.
 
 ### Bilinen zayıf yerler
 
-- Ulucami sayfasındaki **"Hikâyesi"** kartı ~10 cümlelik uzun bir cevap veriyor; sahnede "Kim yaptırdı?"
-  kartını kullan.
-- Erişilebilirlik sorusunda ("Ulucami tekerlekli sandalyeyle gezilebilir mi?") cevap doğru ("bilinmiyor")
-  ama sonuna kendi önerisini ekleyebiliyor; sahnede sorma.
+- **"Hikâyesi"** kartı 2026-11-03'ten beri kısa (Ulucami 5, Yeşil Camii 6 cümle), ama kaydı çok dolu
+  eserlerde hâlâ uzayabiliyor (Karatay Medresesi ~9 cümle). Sahnede "Kim yaptırdı?" kartı daha güvenli.
+- Erişilebilirlik sorusu artık yalnızca kayıttakini söylüyor ("bilgi yok"), öneri uydurmuyor.
 - Konya Garı ve Selçuklu YHT'den rotalar otobüsle çıkıyor; tramvayı göstermek için Otogar'dan sor.
 - Rota saatleri sorulduğu andan sonraki seferler; gece sorulursa ertesi sabahın seferlerini verir.
 - Model ara sıra bir adı yanlış ekler ("Ulucamiisi'ni" gibi); ısıtırken cevabı oku. Bellekteki cevap o

@@ -3,6 +3,11 @@ interface TrackerPageOptions {
   target: TrackerTarget;
   /** Color of the corner marks drawn on a found target. */
   markColor: string;
+  /**
+   * Text drawn over each target while it is in view, by target index (Taşın Dili's translation).
+   * Only a picture: the screen around the camera has the same text for screen readers.
+   */
+  overlays?: readonly (string | null)[];
   /** MindAR, inlined so the page needs no network (`loadMindar` in @/vendor). */
   mindarScript: string;
 }
@@ -11,7 +16,13 @@ interface TrackerPageOptions {
  * A compiled `.mind` file, or one photo to compile on the device. Compiling takes a few seconds,
  * but no `.mind` file has to be built and hosted for every asset (Ziyaret Mührü).
  */
-export type TrackerTarget = { mind: string } | { image: string };
+type TargetSource = { mind: string } | { image: string };
+
+/**
+ * One target, or several `sources` tracked as one set: their `.mind` files and the photos
+ * compiled on the device are joined, in this order, so a found target's index is its place here.
+ */
+export type TrackerTarget = TargetSource | { sources: TargetSource[] };
 
 /**
  * The page inside the WebView (native) or iframe (web): camera, MindAR image
@@ -21,7 +32,7 @@ export type TrackerTarget = { mind: string } | { image: string };
  * MindAR's core (`Controller`) is used without its three.js layer: the corners
  * are projected from the pose it returns, so nothing 3D is loaded.
  */
-export function trackerPageHtml({ target, markColor, mindarScript }: TrackerPageOptions): string {
+export function trackerPageHtml({ target, markColor, overlays = [], mindarScript }: TrackerPageOptions): string {
   return `<!doctype html>
 <html>
 <head>
@@ -104,6 +115,73 @@ function drawCorners(corners) {
   }
 }
 
+// Lines of text that fit \`maxWidth\` at the context's font.
+function wrap(text, maxWidth) {
+  const lines = [];
+  let line = "";
+  for (const word of text.split(" ")) {
+    const next = line ? line + " " + word : word;
+    if (line && context.measureText(next).width > maxWidth) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = next;
+    }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+
+// A dark plate over the target with the text on it, laid on the target's plane: drawn in
+// target pixels, mapped by the affine transform of three corners (close enough to the
+// perspective at reading distance), so it moves and tilts with the stone.
+const overlays = ${JSON.stringify(overlays).replaceAll("</", "<\\/")};
+function drawOverlay(corners, width, height, text) {
+  const [p0, p1, , p3] = corners;
+  const a = (p1[0] - p0[0]) / width, b = (p1[1] - p0[1]) / width;
+  const c = (p3[0] - p0[0]) / height, d = (p3[1] - p0[1]) / height;
+  const det = a * d - b * c;
+  if (!det) return;
+  context.save();
+  context.setTransform(a, b, c, d, p0[0], p0[1]);
+  context.fillStyle = "rgba(10, 12, 18, 0.72)";
+  context.beginPath();
+  // roundRect is missing in older WebViews (iOS 15); a throw here would stop the tracking loop.
+  if (context.roundRect) context.roundRect(0, 0, width, height, width * 0.03);
+  else context.rect(0, 0, width, height);
+  context.fill();
+  // The text goes in the part of the target on screen: a wide inscription held close in a
+  // portrait phone runs past the screen's sides. The screen's corners, back on the target's plane.
+  const back = ([x, y]) => [(d * (x - p0[0]) - c * (y - p0[1])) / det, (-b * (x - p0[0]) + a * (y - p0[1])) / det];
+  const seen = [[0, 0], [canvas.width, 0], [canvas.width, canvas.height], [0, canvas.height]].map(back);
+  const left = Math.max(0, Math.min(...seen.map((p) => p[0])));
+  const right = Math.min(width, Math.max(...seen.map((p) => p[0])));
+  const top = Math.max(0, Math.min(...seen.map((p) => p[1])));
+  const bottom = Math.min(height, Math.max(...seen.map((p) => p[1])));
+  const boxWidth = right - left, boxHeight = bottom - top;
+  if (boxWidth <= 0 || boxHeight <= 0) return context.restore();
+  const pad = boxWidth * 0.06;
+  // The largest size whose lines fit, down to a floor; past that the last line ends in "…".
+  // \`size\` stays the size last set, so the spacing below matches the font drawn.
+  const floor = boxWidth / 30;
+  let size = boxWidth / 12;
+  let lines = [];
+  for (;;) {
+    context.font = "600 " + size + "px system-ui, sans-serif";
+    lines = wrap(text, boxWidth - 2 * pad);
+    if (lines.length * size * 1.3 <= boxHeight - 2 * pad || size * 0.9 < floor) break;
+    size *= 0.9;
+  }
+  const fit = Math.max(1, Math.floor((boxHeight - 2 * pad) / (size * 1.3)));
+  if (lines.length > fit) lines = [...lines.slice(0, fit - 1), lines[fit - 1] + "…"];
+  context.fillStyle = "#fff";
+  context.textAlign = "center";
+  context.textBaseline = "middle";
+  const first = (top + bottom) / 2 - ((lines.length - 1) * size * 1.3) / 2;
+  lines.forEach((line, i) => context.fillText(line, (left + right) / 2, first + i * size * 1.3));
+  context.restore();
+}
+
 function fromBase64(text) {
   const binary = atob(text);
   const bytes = new Uint8Array(binary.length);
@@ -128,29 +206,51 @@ function loadImage(src) {
   });
 }
 
-// The target's .mind data: given, or compiled here from the photo before the camera opens.
+// The targets' .mind data: given, or compiled here from the photos before the camera opens.
+// Several sources are joined into one set: MindAR's controller loads a single .mind file.
 async function targetBuffer(library) {
   const target = ${JSON.stringify(target)};
   if (target.mind) return fromBase64(target.mind);
-  step("compile");
-  let image;
-  try {
-    image = await loadImage(target.image);
-  } catch (error) {
-    fail("image-unavailable", error);
-    return null;
-  }
-  const compiler = new library.Compiler();
+  const sources = target.sources || [target];
+  const photos = sources.filter((source) => source.image).length;
+  if (photos > 0) step("compile");
+  const data = [];
+  let compiled = 0;
   let reported = -1;
-  await compiler.compileImageTargets([image], (progress) => {
-    const percent = Math.floor(progress / 5) * 5;
-    if (percent !== reported) {
-      reported = percent;
-      post({ type: "compile", progress: percent / 100 });
+  for (const source of sources) {
+    if (source.mind) {
+      // An outdated file comes back empty: the targets after it would take the wrong index.
+      const imported = new library.Compiler().importData(fromBase64(source.mind));
+      if (imported.length === 0) {
+        fail("load-failed", "A .mind file of another MindAR release");
+        return null;
+      }
+      data.push(...imported);
+      continue;
     }
-  });
-  const bytes = new Uint8Array(await compiler.exportData());
-  post({ type: "compiled", mind: toBase64(bytes) });
+    let image;
+    try {
+      image = await loadImage(source.image);
+    } catch (error) {
+      fail("image-unavailable", error);
+      return null;
+    }
+    const compiler = new library.Compiler();
+    // Progress over all the photos, in steps of 5 %.
+    await compiler.compileImageTargets([image], (progress) => {
+      const percent = Math.floor((compiled * 100 + progress) / photos / 5) * 5;
+      if (percent !== reported) {
+        reported = percent;
+        post({ type: "compile", progress: percent / 100 });
+      }
+    });
+    compiled += 1;
+    data.push(...compiler.data);
+  }
+  const joined = new library.Compiler();
+  joined.data = data;
+  const bytes = new Uint8Array(await joined.exportData());
+  if (photos > 0 || sources.length > 1) post({ type: "compiled", mind: toBase64(bytes) });
   return bytes.buffer;
 }
 
@@ -228,6 +328,7 @@ async function start() {
         const [width, height] = dimensions[targetIndex];
         const corners = [[0, 0], [width, 0], [width, height], [0, height]].map(([x, y]) => toCanvas(project(worldMatrix, height, x, y)));
         drawCorners(corners);
+        if (overlays[targetIndex]) drawOverlay(corners, width, height, overlays[targetIndex]);
         if (showing !== targetIndex) {
           showing = targetIndex;
           post({ type: "found", target: targetIndex });

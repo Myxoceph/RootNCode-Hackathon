@@ -7,30 +7,32 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import type { AssetDetail } from "@vagabonds/contracts";
 
-import { INSCRIPTION_ASSET, isTrackable, useTargetSet, type TrackedTarget } from "@/ar/inscription-targets";
+import { useInscriptionScope } from "@/ar/inscription-scope";
+import { isTrackable, rememberCompiledSet, useTargetSet, type TrackedTarget } from "@/ar/inscription-targets";
 import { MarkerTracker } from "@/ar/marker-tracker";
 import { trackerFailureText, type TrackerEvent, type TrackerFailure } from "@/ar/mindar";
-import { inscriptionOf, type InscriptionText } from "@/ar/use-inscription";
+import { inscriptionOf, inscriptionText, type InscriptionText } from "@/ar/use-inscription";
 import { CameraTopBar, GlassIconButton } from "@/components/camera-chrome";
 import { InscriptionReading } from "@/components/inscription-reading";
-import { useAsset, type ResourceWithRetry } from "@/data";
+import { DataError, type ResourceWithRetry } from "@/data";
 import { announce } from "@/lib/announce";
 import { speak } from "@/lib/speak";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
-type Phase = "starting" | "scanning" | "locked" | "revealed";
+type Phase = "preparing" | "starting" | "scanning" | "locked" | "revealed";
 
 /** How long the gold corners hold on the inscription before its card rises. */
 const REVEAL_MS = 800;
 
 /**
- * Taşın Dili (module 2). The camera looks for an inscription with MindAR
- * (ADR 0002); once one is found the page marks its corners, and its reading,
- * today's Turkish and the waqf rise in a card below, from the asset's record.
- * The target comes from the dataset too (Y13); without one, the bundled test
- * targets stand in.
+ * Taşın Dili (module 2). The camera looks for inscriptions with MindAR (ADR 0002): those of
+ * the asset it was opened from, else those of the assets near the visitor. Each is the
+ * dataset's photo of it (`arTargetMediaKey`), as its `.mind` file or compiled on the phone.
+ * Once one is found its translation lies over the stone and moves with it, and its reading,
+ * today's Turkish and the waqf rise in a card below, from the asset's record. Nothing is
+ * read off the stone: the text is the dataset's, checked against its sources.
  *
  * The camera-free reading mode (K7) opens instead on the web (no camera,
  * ADR 0001), when a screen reader is on and when the camera cannot start; on a
@@ -43,14 +45,32 @@ export default function InscriptionScreen() {
   const screenReader = useScreenReaderStatus();
   const [chosen, setMode] = useState<"camera" | "reading" | null>(web ? "reading" : null);
   const [notice, setNotice] = useState<string | null>(null);
-  const asset = useAsset(id ?? INSCRIPTION_ASSET);
-  const loaded = asset.status !== "loading";
-  // An asset whose inscription has no AR target yet (or that did not load): the camera has nothing to find.
-  const hasTarget = asset.status === "success" && asset.data !== null && isTrackable(asset.data);
-  const untrackable = loaded && !hasTarget;
-  // Until the asset is in and the system says whether a screen reader is on, open neither,
-  // so the camera is not asked for in vain.
-  const mode = untrackable ? "reading" : (chosen ?? (screenReader === null || !loaded ? null : screenReader ? "reading" : "camera"));
+  const [attempt, setAttempt] = useState(0);
+  // The location only serves the camera: not asked for on the web or with a screen reader;
+  // `null` waits until the system says whether one is on.
+  const locate = web ? false : screenReader === null ? null : !screenReader;
+  const scope = useInscriptionScope(id, locate, attempt);
+  const retry = useCallback(() => setAttempt((n) => n + 1), []);
+  // The asset the reading mode shows: the one asked for, or the nearest.
+  const asset: ResourceWithRetry<AssetDetail | null> =
+    scope.status === "loading"
+      ? { status: "loading", retry }
+      : scope.status === "error"
+        ? { status: "error", error: new DataError("unavailable", "Veriye şu an ulaşılamıyor.", []), retry }
+        : { status: "success", data: scope.assets[0] ?? null, retry };
+  const loaded = scope.status !== "loading";
+  // No inscription with a photo to find (or nothing loaded): the camera has nothing to look for.
+  const trackable = scope.status === "ready" ? scope.assets.filter(isTrackable) : [];
+  const untrackable = loaded && trackable.length === 0;
+  // Until the assets are in and the system says whether a screen reader is on, open neither,
+  // so the camera is not asked for in vain; the camera never opens with nothing to look for.
+  const mode = !loaded
+    ? chosen === "reading"
+      ? "reading"
+      : null
+    : untrackable
+      ? "reading"
+      : (chosen ?? (screenReader === null ? null : screenReader ? "reading" : "camera"));
 
   // A screen reader cannot follow a camera image; start such users on the text.
   useEffect(() => {
@@ -70,7 +90,7 @@ export default function InscriptionScreen() {
       {mode === "reading" && (
         <InscriptionReading
           inscription={inscriptionOf(asset, null)}
-          notice={untrackable && asset.status === "success" ? "Bu kitabe için henüz kamera hedefi yok; metnini aşağıda okuyabilirsin." : notice}
+          notice={untrackable && asset.status === "success" ? "Bu kitabenin kamerayla tanınacak fotoğrafı henüz yok; metnini aşağıda okuyabilirsin." : notice}
           onUseCamera={
             web || untrackable
               ? null
@@ -81,7 +101,15 @@ export default function InscriptionScreen() {
           }
         />
       )}
-      {mode === "camera" && <InscriptionCamera asset={asset} onFailure={onFailure} onReadAsText={() => setMode("reading")} />}
+      {mode === "camera" && trackable.length > 0 && (
+        <InscriptionCamera
+          assets={trackable}
+          nearby={scope.status === "ready" && scope.nearby}
+          asked={id !== undefined}
+          onFailure={onFailure}
+          onReadAsText={() => setMode("reading")}
+        />
+      )}
       {mode === null && (
         <View style={[styles.screen, styles.waiting]}>
           <ActivityIndicator color={cameraColors.gold} size="large" accessibilityLabel="Yükleniyor" />
@@ -95,23 +123,42 @@ export default function InscriptionScreen() {
 }
 
 interface InscriptionCameraProps {
-  asset: ResourceWithRetry<AssetDetail | null>;
+  /** The assets whose inscriptions are looked for; each has at least one. */
+  assets: AssetDetail[];
+  /** They are the ones near the visitor. */
+  nearby: boolean;
+  /** Opened from an asset's page. */
+  asked: boolean;
   onFailure: (reason: TrackerFailure) => void;
   onReadAsText: () => void;
 }
 
-function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCameraProps) {
+/**
+ * What the bar under the title says is being looked for: the tracked targets (capped at
+ * `MAX_TARGETS`), counted by the assets they are on.
+ */
+function lookingFor(assets: AssetDetail[], targets: TrackedTarget[], nearby: boolean, asked: boolean): string {
+  const on = assets.filter((asset) => targets.some((t) => t.assetId === asset.id));
+  const single = on.length === 1 ? `${on[0]!.name} ${targets.length === 1 ? "kitabesi" : `${targets.length} kitabesi`}` : null;
+  if (!nearby && !asked) return `Yakında yok · örnek: ${single ?? `${on.length} eser`}`;
+  const many = `${on.length} ${asked ? "yapının" : "eserin"} ${targets.length} kitabesi`;
+  return nearby ? `Yakındaki ${single ?? many}` : (single ?? many);
+}
+
+function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: InscriptionCameraProps) {
   const insets = useSafeAreaInsets();
-  const targets = useTargetSet(asset.status === "success" ? asset.data : null, asset.status !== "loading");
-  const targetSet = targets === "failed" ? null : targets;
-  const target = useMemo(() => (targetSet ? { mind: targetSet.mind } : null), [targetSet]);
-  useEffect(() => {
-    if (targets === "failed") onFailure("target-unavailable");
-  }, [targets, onFailure]);
+  const set = useTargetSet(assets);
+  const overlays = useMemo(() => set?.targets.map((t) => t.overlay), [set]);
   const [tracked, setTracked] = useState<TrackedTarget | null>(null);
-  const inscription = inscriptionOf(asset, tracked?.inscriptionId ?? null);
+  const trackedAsset = assets.find((a) => a.id === tracked?.assetId) ?? assets[0]!;
+  const text = inscriptionText(trackedAsset, tracked?.inscriptionId ?? "");
+  const noRetry = useCallback(() => {}, []);
+  const inscription: ResourceWithRetry<InscriptionText> = text
+    ? { status: "success", data: text, retry: noRetry }
+    : inscriptionOf({ status: "success", data: trackedAsset, retry: noRetry }, null);
   const reduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<Phase>("starting");
+  const [progress, setProgress] = useState(0);
   const [height, setHeight] = useState(0);
   const scan = useRef(new Animated.Value(0)).current;
   const card = useRef(new Animated.Value(0)).current;
@@ -135,7 +182,7 @@ function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCamera
 
   const lock = useCallback(
     (index: number) => {
-      setTracked(targetSet?.targets[index] ?? null);
+      setTracked(set?.targets[index] ?? null);
       clearTimeout(revealTimer.current);
       if (reduceMotion) {
         reveal();
@@ -145,14 +192,22 @@ function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCamera
       announce("Kitabe tanındı, hedef kilitli");
       revealTimer.current = setTimeout(reveal, REVEAL_MS);
     },
-    [go, targetSet, reduceMotion, reveal],
+    [go, set, reduceMotion, reveal],
   );
 
   const onEvent = useCallback(
     (event: TrackerEvent) => {
       switch (event.type) {
+        case "compile":
+          if (phaseRef.current === "starting" || phaseRef.current === "preparing") go("preparing");
+          setProgress(event.progress);
+          break;
+        case "compiled":
+          if (set) rememberCompiledSet(set.key, event.mind);
+          go("starting");
+          break;
         case "ready":
-          if (phaseRef.current === "starting") go("scanning");
+          if (phaseRef.current === "starting" || phaseRef.current === "preparing") go("scanning");
           break;
         case "found":
           inView.current = event.target;
@@ -171,7 +226,7 @@ function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCamera
           break;
       }
     },
-    [go, lock, onFailure],
+    [go, lock, onFailure, set],
   );
 
   const rescan = () => {
@@ -199,12 +254,19 @@ function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCamera
   const guideTop = insets.top + 120;
   const guideHeight = Math.max(0, cardTop - 64 - guideTop);
 
-  const status = { starting: "Kamera açılıyor…", scanning: "Kitabe aranıyor…", locked: "Kitabe tanındı · hedef kilitli", revealed: "Kitabe tanındı · hedef kilitli" }[phase];
+  const status = {
+    preparing: `Kitabeler hazırlanıyor %${Math.round(progress * 100)}`,
+    starting: set ? "Kamera açılıyor…" : "Kitabeler indiriliyor…",
+    scanning: "Kitabe aranıyor…",
+    locked: "Kitabe tanındı · hedef kilitli",
+    revealed: "Kitabe tanındı · çevirisi taşın üstünde",
+  }[phase];
   const found = phase === "locked" || phase === "revealed";
+  const subtitle = set ? lookingFor(assets, set.targets, nearby, asked) : "Kitabeye odaklan, tamamı ekrana sığsın";
 
   return (
     <View style={styles.screen} onLayout={(e) => setHeight(e.nativeEvent.layout.height)}>
-      {target && <MarkerTracker target={target} onEvent={onEvent} style={StyleSheet.absoluteFill} />}
+      {set && <MarkerTracker target={set.target} overlays={overlays} onEvent={onEvent} style={StyleSheet.absoluteFill} />}
 
       {phase === "scanning" && !reduceMotion && guideHeight > 0 && (
         <Animated.View
@@ -217,7 +279,7 @@ function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCamera
       )}
 
       <View style={[styles.top, { top: insets.top + spacing.sm }]}>
-        <CameraTopBar title="Taşın Dili" subtitle="Kitabeye odaklan, tamamı ekrana sığsın">
+        <CameraTopBar title="Taşın Dili" subtitle={subtitle}>
           <GlassIconButton icon="document-text-outline" label="Kamerasız oku" onPress={onReadAsText} />
         </CameraTopBar>
       </View>
@@ -242,7 +304,7 @@ function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCamera
         importantForAccessibility={phase === "revealed" ? "auto" : "no-hide-descendants"}
       >
         <ScrollView contentContainerStyle={styles.cardContent}>
-          <CardContent inscription={inscription} tracked={tracked} />
+          <CardContent inscription={inscription} />
           <View style={styles.buttons}>
             <Button
               label="Yeniden tara"
@@ -258,7 +320,7 @@ function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCamera
   );
 }
 
-function CardContent({ inscription, tracked }: { inscription: ResourceWithRetry<InscriptionText>; tracked: TrackedTarget | null }) {
+function CardContent({ inscription }: { inscription: ResourceWithRetry<InscriptionText> }) {
   if (inscription.status === "loading") {
     return <ActivityIndicator color={cameraColors.gold} accessibilityLabel="Yükleniyor" />;
   }
@@ -283,11 +345,6 @@ function CardContent({ inscription, tracked }: { inscription: ResourceWithRetry<
       {text.date && (
         <Text variant="caption" colorValue={cameraColors.textSecondary} style={styles.center}>
           {text.date}
-        </Text>
-      )}
-      {tracked?.test && (
-        <Text variant="caption" colorValue={cameraColors.textSecondary} style={styles.center}>
-          {`Test görseli tanındı (${tracked.label}); gerçek hedef eklenene kadar bu kitabe gösteriliyor.`}
         </Text>
       )}
       {text.translation && (

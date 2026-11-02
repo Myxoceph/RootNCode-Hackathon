@@ -7,6 +7,62 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-03 · Rotalar ve açılan eserler hesaba bağlı (migration, sözleşme 0.3.21)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. `npm run db:deploy --workspace @vagabonds/api` (`user_route` tablosu).
+
+Değişenler:
+- Rotalarım artık hesapta (`GET/POST /me/routes`, `DELETE /me/routes/:id`): her cihazda aynı liste, başka hesap ya da
+  çıkış yapmış ziyaretçi aynı telefonda başkasının rotasını görmüyor. Giriş yapmadan kaydedilen rota yalnızca o
+  oturumda kalır. Telefondaki eski ortak liste (`vagabonds-saved-routes`) siliniyor; kimin olduğu bilinmiyordu.
+- Haritada açılan eserler `GET /me/visits`'ten geliyor (mühürlenen ziyaretler). "Kilidi aç" demo simülasyonu o
+  hesap için telefonda tutuluyor (`vagabonds-unlocked-assets:<hesap>`); eski ortak liste siliniyor.
+- Uygulamada değişen yalnızca veri katmanı (`lib/saved-routes.ts`, `lib/unlocked-assets.ts`, `data/community.ts`);
+  ekranlar aynı.
+
+---
+
+## 2026-11-02 · Gizemli bağlar: `GET /me/connections` (sözleşme 0.3.20)
+
+Kimler: **uygulama ekibi** (kurulum adımı yok)
+
+Değişenler:
+- Yeni uç `GET /me/connections`: kullanıcının keşfettiği (ziyaret ettiği) eserlerin bağları. Karşı eser keşfedilene
+  kadar yalnızca konumu gelir (`revealed: false`); ikisi de keşfedilince türü, açıklaması ve adı (`revealed: true`).
+  "Aynı külliye" ve "hemen yanında" bağları listede yok. Uygulamada nasıl kullanılacağı: `KUBRA.md` 5. bölüm.
+
+---
+
+## 2026-11-02 · Taşın Dili gerçek kitabelerle: 11 AR hedefi, çeviri taşın üstünde
+
+Kimler: **API'yi yerelde çalıştıranlar**, **demoyu açan**
+
+1. `npm run db:import` (11 kitabe fotoğrafına bağlandı).
+2. Demoyu açan (R2 yazma yetkisi olan): `.mind` dosyalarını derleyip yükle. Yüklenmese de çalışır,
+   telefon fotoğrafı kendisi derler; ama ilk açılış birkaç saniye uzar.
+   ```bash
+   npm run data:ar-targets
+   rclone copy data/build/media r2:kok-kod-media-public --checksum --transfers 16 \
+     --header-upload "Cache-Control: public, max-age=31536000, immutable"
+   ```
+
+Değişenler:
+- 11 eserde bir kitabe, veri setindeki fotoğrafına bağlandı (`ar_target_media_id`): Azeb Bey, Ebu İshak,
+  Hamza Bey, Üftâde, Şirin Hatun, Umurbey Camii (batı vakfiyesi), Umurbey Çeşmesi, Küçük Ayasofya Çeşmesi,
+  Seyit Mahmut Hayrânî, Şeyh Aliman Yahşi, Sephevan. Eşleşme fotoğraf, açıklama ve kitabenin yeri
+  karşılaştırılarak yapıldı; uyuşmayan fotoğraflar (ayrı hat levhaları) bağlanmadı.
+- Taşın Dili artık bu fotoğrafları tanıyor; Ulucami test görselleri kullanılmıyor. Eser sayfasından açılınca
+  o eserin kitabeleri, Kamera sekmesinden açılınca 300 m içindeki eserlerin kitabeleri (en fazla 6) aranıyor;
+  yakında yoksa örnek olarak Azeb Bey Türbesi.
+- Kitabe tanınınca günümüz Türkçesi taşın üstüne yerleşip kitabeyle birlikte hareket ediyor; tam metin
+  alttaki kartta. Metin veri setinden geliyor: taştaki yazı okunmuyor, yapay zekâ kullanılmıyor.
+- Kamera sekmesindeki Taşın Dili gösterimi Yeşil Camii yerine Azeb Bey'in kitabesinde oynuyor (eski
+  fotoğraf taç kapı değil, iç mekândaki çini bir kapıydı).
+
+---
+
 ## 2026-11-02 · Eser kartları için yıl etiketi (sözleşme 0.3.19)
 
 Kimler: **uygulama ekibi** (kurulum adımı yok)

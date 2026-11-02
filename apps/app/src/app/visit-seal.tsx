@@ -7,6 +7,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, Animated, Easing, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { compileSource } from "@/ar/inscription-targets";
 import { MarkerTracker } from "@/ar/marker-tracker";
 import { trackerFailureText, type TrackerEvent } from "@/ar/mindar";
 import type { TrackerTarget } from "@/ar/tracker-page";
@@ -17,7 +18,7 @@ import { communityAvailable, DataError, sendVisitProof, useAsset, useCommunity }
 import { announce } from "@/lib/announce";
 import { currentPosition, type Position } from "@/lib/current-position";
 import { isAssetUnlocked } from "@/lib/related-assets";
-import { unlockAsset, useUnlockedAssets } from "@/lib/unlocked-assets";
+import { unlockAsset, unlockForDemo, useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
@@ -68,7 +69,7 @@ export default function VisitSealScreen() {
   // A simulation for the demo: "Kilidi aç" unlocks the asset on the map as a sealed visit would.
   const unlock = asset
     ? () => {
-        void unlockAsset(asset.id);
+        void unlockForDemo(asset.id);
         announce(`${asset.name} kilidi açıldı.`);
         setUnlocked(true);
       }
@@ -206,7 +207,7 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
       try {
         const result = await sendVisitProof(asset.id, { mediaKey: photo.key, ...(position ?? {}) }, nickname);
         onSealed();
-        void unlockAsset(asset.id);
+        unlockAsset(asset.id);
         go({ name: "sealed", result });
         announce(`Ziyaretin mühürlendi.${result.newAchievements.length ? ` ${result.newAchievements.length} yeni rozet kazandın.` : ""}`);
       } catch (error) {
@@ -520,12 +521,6 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
       </Animated.View>
     </ScrollView>
   );
-}
-
-/** The ~1280 px JPEG of the photo: big enough to recognise, small enough to compile in seconds. */
-function compileSource(media: AssetDetail["media"][number]): string {
-  const jpgs = [...media.sources.jpg].sort((a, b) => a.width - b.width);
-  return (jpgs.find((s) => s.width >= 1000) ?? jpgs[jpgs.length - 1] ?? media.sources.webp[0]!).url;
 }
 
 function formatMeters(meters: number): string {

@@ -20,6 +20,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
+import { useHasInscriptions } from "@/ar/inscription-scope";
 import { toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
 import { AssetGallery } from "@/components/asset-gallery";
 import { AssetImage } from "@/components/asset-image";
@@ -658,9 +659,10 @@ function Experiences({ asset }: { asset: AssetDetail }) {
   const playing = capsuleType !== undefined && player?.type === capsuleType ? player : null;
   const description = asset.accessibility.audioDescription;
   const opened = isAssetUnlocked(asset, useUnlockedAssets());
+  const inscriptions = useHasInscriptions(asset);
 
   const actions: Action[] = [];
-  if (asset.inscriptions.some((i) => i.translation || i.transliteration)) {
+  if (inscriptions) {
     actions.push({ key: "inscription", icon: "scan-outline", title: "Taşın Dili", hint: "Kitabeyi kamerayla oku", spoken: "Taşın Dili: kitabeyi kamerayla oku", href: { pathname: "/inscription", params: { asset: asset.id } } });
   }
   // An unlocked asset needs no seal.

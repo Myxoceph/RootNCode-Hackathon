@@ -171,7 +171,7 @@ export function useCityMapAssets(
 }
 
 /** Every published asset, located or not, 500 a request (the API's most). */
-async function loadAllAssets(): Promise<AssetSummary[]> {
+export async function loadAllAssets(): Promise<AssetSummary[]> {
   const items: AssetSummary[] = [];
   for (;;) {
     const page = await dataSource.listAssets({ limit: 500, offset: items.length }, LANG);

@@ -1,8 +1,9 @@
 import { readFileSync } from "node:fs";
-import { AssetDetailSchema } from "@vagabonds/contracts";
+import { AssetDetailSchema, type ChatResponse } from "@vagabonds/contracts";
 import { describe, expect, it } from "vitest";
 import { createChatModel, oneSystemMessage } from "../src/modules/assistant/assistant.model.ts";
 import { searchTerms } from "../src/modules/assistant/assistant.repository.ts";
+import { ANSWER_CACHE_MS, stillAnswers } from "../src/modules/assistant/assistant.routes.ts";
 import { plainText, resolveCitations, systemPrompt } from "../src/modules/assistant/assistant.ts";
 import { compactAsset, runTool, SourceRegistry, type ToolContext } from "../src/modules/assistant/assistant.tools.ts";
 
@@ -259,5 +260,24 @@ describe("compactAsset", () => {
       (compactAsset(asset, 1, chars).sections as Array<{ text: string }>).reduce((sum, section) => sum + section.text.length, 0);
     expect(length()).toBeGreaterThan(length(2_000));
     expect(length(2_000)).toBeLessThanOrEqual(2_000 + 2);
+  });
+});
+
+describe("stillAnswers (the warmed-answer cache)", () => {
+  const response = (attachments: { trip: unknown; transit: unknown }) => ({ attachments }) as unknown as ChatResponse;
+  const plain = { at: 0, hour: 13, response: response({ trip: null, transit: null }) };
+  const trip = { at: 0, hour: 13, response: response({ trip: {}, transit: null }) };
+  const transit = { at: 0, hour: 13, response: response({ trip: null, transit: {} }) };
+  const minutes = (n: number) => n * 60_000;
+
+  it("keeps an answer for half an hour, across the hour", () => {
+    expect(stillAnswers(plain, minutes(15), 14)).toBe(true);
+    expect(stillAnswers(plain, ANSWER_CACHE_MS, 14)).toBe(false);
+  });
+
+  it("keeps a trip or a route only within the hour it was planned in", () => {
+    expect(stillAnswers(trip, minutes(5), 13)).toBe(true);
+    expect(stillAnswers(trip, minutes(15), 14)).toBe(false);
+    expect(stillAnswers(transit, minutes(15), 14)).toBe(false);
   });
 });
