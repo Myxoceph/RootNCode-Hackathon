@@ -203,6 +203,35 @@ Terminal açık kaldıkça site yayındadır. Demo boyunca Mac'in uyumaması iç
 Docker'ın disk dosyası (`Docker.raw`) imajlar derlendikçe büyür. Mac'in diski dolarsa Docker'ın sanal
 makinesi bozulup açılmayabilir; derlemeden önce en az 10 GB boş yer bırak.
 
+## Oracle sunucusu (her zaman açık)
+
+2026-11-03'ten beri `vagabonds.allbytech.com` Oracle Cloud'daki ücretsiz bir sunucudan sunuluyor
+(Frankfurt, Ampere A1: 2 çekirdek, 12 GB, 100 GB disk, Ubuntu 24.04). Mac kapalıyken de açık; ekip API
+adresini değiştirmeden (`https://vagabonds.allbytech.com/api`) dener. Mac aynı yığınla yedekte durur.
+
+- **Aynı yapı:** `deploy/compose.yml` ve `deploy/demo.sh` sunucuda aynen çalışıyor; bütün imajların ARM sürümü
+  var. Konya'nın OTP grafiği (`deploy/otp/data/graph.obj`) Mac'ten kopyalandı, sunucuda yeniden derlenmez.
+- **Kendini günceller:** `vagabonds-update.timer` 5 dakikada bir `dev`'e bakar; dal ilerlediyse çeker, `demo.sh up`
+  ile yalnızca değişeni derler, ön kontrolü çalıştırır ve eski imajları siler (`deploy/oracle/update.sh`). Kayıt:
+  `journalctl -u vagabonds-update -n 50`. Final için `main`'i izlesin: servise `Environment=VAGABONDS_BRANCH=main`.
+- **Tünel:** `vagabonds-tunnel.service` (`demo.sh tunnel`) sunucu açılınca başlar, koparsa 5 sn sonra yeniden
+  bağlanır. Kayıt: `journalctl -u vagabonds-tunnel -f`.
+- **Erişim:** `ssh -i ~/.ssh/vagabonds_oracle ubuntu@130.61.26.125` (Ahmet'in Mac'inde). Dışarıya yalnızca SSH
+  açık; site tünelden gelir. `deploy/.env` sunucuda Mac'tekinin kopyası; ikisinde de aynı tutulmalı.
+
+**Tünel aynı anda tek makinede.** Adresi Mac'e almak için önce sunucuda
+`sudo systemctl stop vagabonds-tunnel`, sonra Mac'te `deploy/demo.sh tunnel`. Geri vermek için Mac'teki tüneli
+durdur (Ctrl-C), sunucuda `sudo systemctl start vagabonds-tunnel`. Hangisinin sunduğunu `/api/health`'teki
+`uptimeSeconds` gösterir.
+
+**Veri:** Sunucunun veritabanı 2026-11-03'te Mac'in yedeğinden geldi (hesaplar, ziyaretler, konuşmalar). Ekip
+deneme hesaplarıyla dener, demo hesaplarına dokunmaz. Final sabahı temiz bir yedek geri yüklenebilir:
+`deploy/demo.sh backup` ile alınan `.dump`'ı `pg_restore --clean --if-exists` ile (bkz. "Kayıtlar, yedek, sorun
+giderme").
+
+**Ücretsiz sunucunun kuralı:** Oracle, 7 gün boyunca işlemcisi çok az kullanılan ücretsiz sunucuları
+kapatabiliyor. Ekip kullandıkça sorun değil; uzun süre kullanılmayacaksa haftada bir bakın.
+
 ## Final günü (MacBook Air M4)
 
 Final demosu ekibin MacBook Air'inden (M4, 16 GB) tünelle yayınlanır. Bütün komutlar `deploy/demo.sh`'te:
