@@ -142,6 +142,60 @@ Ağ isteklerinin hepsi başarılı; eser detayı, Profil ve Rehber'in giriş kar
 
 Denenmeyenler: klavyeyle gezinme ve ekran okuyucuyla elle deneme, karanlık tema, tablet boyutu.
 
+## 5. Gizemli bağlar: keşfettikçe açılan Kentsel Ağ
+
+Bir eser keşfedilince (ziyaret edilince) kartında bir düğme; basınca o eserin bağlı olduğu eserler haritada
+parlıyor. **Bağın ne olduğu, karşı eser de keşfedilene kadar gizli**: yalnızca nerede olduğu görünür.
+
+**Veri: `GET /me/connections`** (sözleşme 0.3.20, `MyConnectionsResponseSchema`; oturum gerekir, `Bearer`).
+Kullanıcının keşfettiği her eserin bağları, tek istekte:
+
+```json
+{ "version": "0.3.20", "lang": "tr", "items": [
+  { "revealed": false, "from": "bursa-osmangazi-ulucami", "to": "bursa-yildirim-yesil-camii",
+    "toCoordinates": { "lat": 40.18, "lng": 29.07, "approximate": false, "verified": true, "source": "osm" } },
+  { "revealed": true, "from": "bursa-osmangazi-ulucami", "to": "bursa-yildirim-yildirim-kulliyesi",
+    "toCoordinates": { … }, "toName": "Yıldırım Külliyesi",
+    "type": { "code": "same_founder", "label": "Aynı banî" }, "direction": "outgoing",
+    "description": "İkisini de Sultan Yıldırım Bayezid yaptırdı.", "confidence": { "code": "certain", "label": "…" } }
+] }
+```
+
+- `from`: keşfedilmiş eser. `to`: bağlı eser. Bir eserin bağları = `items.filter(i => i.from === id)`.
+- `revealed: false` → yalnızca `toCoordinates`. Adı, türü, açıklaması **API'den hiç gelmiyor** (gizem telefonda
+  da korunuyor). Her gizli eser bir kez gelir, kaç bağı olursa olsun.
+- `revealed: true` → iki eser de keşfedilmiş: `toName`, `type`, `description`, `direction`. İki eser de
+  keşfedildiyse bağ iki kez gelir (her eserin tarafından bir).
+- "Aynı külliye" (`same_complex`) ve "hemen yanında" (`urban_context`) bağları listede yok; yalnızca hikâye
+  anlatanlar (vakıf geliri, vakıf arazisi, su, aynı bani, mimar, usta, mimari öncül).
+- Veri setinin dışındaki yerlere ve haritada noktası olmayan eserlere giden bağlar listede yok;
+  `toCoordinates` yine de `null` olabilir (konumu bilinmeyen eser): o bağı parlatma.
+- Oturum yoksa ya da hiç ziyaret yoksa `items: []` → düğme hiç görünmesin.
+
+**Uygulamada:**
+
+1. `src/data/community.ts`'e `fetchMyConnections()`: `fetchMyAchievements` gibi (`loadSession`, `token`,
+   `call("/me/connections", MyConnectionsResponseSchema, { token })`); oturum yoksa `[]`.
+2. Bir ziyaret kaydedilince (`sendVisitProof` ve "Buradayım") listeyi yeniden çek: yeni keşif hem yeni gizemleri
+   getirir hem eski gizemleri açar. Açılan bir bağ için küçük bir an iyi olur ("Yeni bağ: Yeşil Camii ile aynı
+   mimar").
+3. Düğme: eser kartında, yalnızca o eserden en az bir `item` varsa. Sayı yazabilir: "3 bağ (1 açık)".
+4. Haritada:
+   - gizli (`revealed: false`): `toCoordinates`'te parlayan bir nokta ya da halka; ok, ad, etiket yok.
+     `approximate: true` ise nokta yerine daha geniş, yumuşak bir parıltı (konum yaklaşık).
+   - açık (`revealed: true`): `from`'dan `to`'ya ok ve türün rengi. Renk grupları hazır:
+     `src/map/urban-network.ts` (`groupOfType`, `linkColor`, `linkGroupLabel`; şu an hiçbir ekran kullanmıyor).
+     Oka dokununca `description`.
+5. **Eser kartındaki "Bu yapının bağları" listesi** bugün `GET /assets/:id/relations`'tan bütün bağları gösteriyorsa
+   gizemi bozar: o listede de `/me/connections`'taki açık bağları göster, gizlileri "? Keşfedilmemiş bir eser"
+   diye say.
+6. Erişilebilirlik: parlayan noktaların harita dışında da bir karşılığı olsun (düğmenin açtığı listede "Keşfedilmemiş
+   bir eser, 1,2 km kuzeyde" gibi); `prefers-reduced-motion` açıksa parlama yanıp sönmesin.
+
+**Deneme:** `gezgin` hesabı 47 eser keşfetmiş: 20 bağı açık, ~30 bağı gizli. Sıfırdan denemek için
+`yeni_ziyaretci` ile Ulucami'yi ziyaret et: Yeşil Camii (aynı mimar) gizli gelir; Yeşil Camii'yi de ziyaret edince
+bağ açılır.
+
 ---
 
 ## PR'dan önce
