@@ -22,7 +22,10 @@ KEY=${KEY/#\~/$HOME}
 PUBLIC=$(env_value PUBLIC_URL)
 PUBLIC=${PUBLIC:-https://vagabonds.allbytech.com}
 REMOTE_DIR=RootNCode-Hackathon
-HERE=deploy/backups/oracle
+# Outside ~/Desktop and ~/Documents: macOS keeps background jobs (the LaunchAgent) out of those.
+HERE=$(env_value MAC_BACKUP_DIR)
+HERE=${HERE:-~/vagabonds-backups}
+HERE=${HERE/#\~/$HOME}
 KEPT_HERE=24
 TUNNEL_PID=deploy/backups/mac-tunnel.pid
 TUNNEL_LOG=deploy/backups/mac-tunnel.log
@@ -123,13 +126,25 @@ status() {
   [[ -n $file ]] && echo "Mac'teki en yeni yedek: $file ($(age_of "$file") önce)" || echo "Mac'te yedek yok"
 }
 
+# The LaunchAgent runs a copy of `pull` outside the repository: macOS does not let a background job
+# read ~/Desktop, where the repository is.
 install_pull() {
-  local plist=~/Library/LaunchAgents/com.vagabonds.backup-pull.plist
-  mkdir -p ~/Library/LaunchAgents deploy/backups
-  sed "s|__REPO__|$PWD|g" deploy/mac/com.vagabonds.backup-pull.plist > "$plist"
+  local dir=~/Library/Application\ Support/vagabonds
+  local script=$dir/pull-backups.sh plist=~/Library/LaunchAgents/com.vagabonds.backup-pull.plist
+  mkdir -p "$dir" "$HERE" ~/Library/LaunchAgents
+  {
+    echo '#!/bin/bash'
+    echo "# Written by deploy/failover.sh install-pull; run it again after changing deploy/failover.sh."
+    echo 'set -euo pipefail'
+    printf 'SERVER=%q KEY=%q REMOTE_DIR=%q HERE=%q KEPT_HERE=%q\n' "$SERVER" "$KEY" "$REMOTE_DIR" "$HERE" "$KEPT_HERE"
+    declare -f remote pull
+    echo pull
+  } > "$script"
+  chmod 700 "$script"
+  sed -e "s|__SCRIPT__|$script|g" -e "s|__LOG__|$HERE/pull.log|g" deploy/mac/com.vagabonds.backup-pull.plist > "$plist"
   launchctl bootout "gui/$(id -u)" "$plist" 2> /dev/null || true
   launchctl bootstrap "gui/$(id -u)" "$plist"
-  echo "✓ $plist: every 30 min, log deploy/backups/pull.log"
+  echo "✓ $plist: every 30 min into $HERE, log $HERE/pull.log"
 }
 
 case "${1:-}" in
