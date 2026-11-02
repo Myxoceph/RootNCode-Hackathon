@@ -255,8 +255,10 @@ Mac'in kodu `dev`'in gerisindeyse 3. adım birkaç dakika derler; Mac'te arada b
 bunu kısaltır. Kaybedilen veri: Mac'teki en yeni yedekten sonrası (en çok ~1 saat).
 
 **Mac'in yedekleri:** `deploy/failover.sh install-pull` (Mac'te bir kez) yarım saatte bir sunucunun en yeni
-yedeğini `deploy/backups/oracle/`'a çeken bir LaunchAgent kurar (son 24'ü tutar; kayıt: `deploy/backups/pull.log`).
-Elle: `deploy/failover.sh pull`.
+yedeğini `~/vagabonds-backups/`'a çeken bir LaunchAgent kurar (son 24'ü tutar; kayıt: `~/vagabonds-backups/pull.log`).
+macOS arka plandaki işlerin Masaüstü'ne erişmesine izin vermediği için yedekler ve LaunchAgent'ın çalıştırdığı betik
+(`~/Library/Application Support/vagabonds/pull-backups.sh`) repo dışında; `failover.sh` değişirse `install-pull`'u
+yeniden çalıştır. Elle: `deploy/failover.sh pull`.
 
 **Sunucu dönünce:** `deploy/failover.sh handback`: Mac'te biriken veriyi yedekleyip sunucuya yükler, Mac'teki
 tüneli kapatır, sunucudakini açar ve ön kontrolü yapar.
