@@ -1,0 +1,10 @@
+# Every five minutes; a run that is still building is not started again.
+[Unit]
+Description=Vagabonds: check the branch every five minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=timers.target

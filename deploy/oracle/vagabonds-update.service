@@ -1,0 +1,11 @@
+# Pulls the branch and rebuilds the stack when it moved (deploy/oracle/update.sh).
+[Unit]
+Description=Vagabonds: follow the branch and rebuild
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/RootNCode-Hackathon
+ExecStart=/home/ubuntu/RootNCode-Hackathon/deploy/oracle/update.sh
