@@ -9,6 +9,7 @@ import {
   CONTRACT_VERSION,
   LangSchema,
   MyAchievementsResponseSchema,
+  MyConnectionsResponseSchema,
   MyVisitsResponseSchema,
   VISIT_RADIUS_METERS,
   VisitProofRequestSchema,
@@ -19,8 +20,10 @@ import {
   type AchievementsResponse,
   type AdminAchievement,
   type AdminAchievementsResponse,
+  type Connection,
   type Lang,
   type MyAchievementsResponse,
+  type MyConnectionsResponse,
   type MyVisitsResponse,
   type VisitResponse,
 } from "@vagabonds/contracts";
@@ -31,7 +34,7 @@ import { pick, resolveLang } from "../../lib/lang.ts";
 import { parseWith } from "../../lib/validate.ts";
 import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
-import { APPROXIMATE_SOURCE } from "../assets/assets.mapper.ts";
+import { APPROXIMATE_SOURCE, requiredConfidence, toCoordinates } from "../assets/assets.mapper.ts";
 import { distanceMeters } from "../assets/assets.network.ts";
 import { requireUser } from "../community/auth.ts";
 import type { CommunityRepository } from "../community/community.repository.ts";
@@ -279,6 +282,56 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
         proven: v.proven_at !== null,
       })),
     });
+  });
+
+  app.get("/me/connections", {
+    schema: {
+      tags: ["community"],
+      summary: "Keşfettiğim eserlerin bağları; öbür eser keşfedilene kadar yalnızca yeri (gizemli bağ)",
+      security: bearer,
+      querystring: toOpenApiSchema(LangQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(MyConnectionsResponseSchema), 400: errorSchema, ...denied },
+    },
+  }, async (request, reply): Promise<MyConnectionsResponse> => {
+    const user = await requireUser(request, community);
+    const query = parseWith(LangQuerySchema, request.query, "INVALID_QUERY");
+    const lang = resolveLang(query.lang, request.headers["accept-language"]);
+    const { visited, relations, assets } = await repository.connections(user.id);
+    const byId = new Map(assets.map((a) => [a.id, a]));
+    const items: Connection[] = [];
+    const hidden = new Set<string>();
+    for (const relation of relations) {
+      const ends = [
+        { from: relation.source_asset_id, to: relation.target_asset_id, direction: "outgoing" as const },
+        { from: relation.target_asset_id, to: relation.source_asset_id, direction: "incoming" as const },
+      ];
+      for (const { from, to, direction } of ends) {
+        // Bonds to places outside the dataset, or to assets not published, have no point to glow at.
+        const other = byId.get(to);
+        if (!visited.has(from) || !byId.has(from) || !other || from === to) continue;
+        const coordinates = toCoordinates(other);
+        if (!visited.has(to)) {
+          // One glow per hidden asset, however many bonds lead to it.
+          const key = `${from}>${to}`;
+          if (!hidden.has(key)) items.push({ revealed: false, from, to, toCoordinates: coordinates });
+          hidden.add(key);
+          continue;
+        }
+        items.push({
+          revealed: true,
+          from,
+          to,
+          toCoordinates: coordinates,
+          toName: pick(other.name_tr, other.name_en, lang),
+          type: { code: relation.relation_type.code, label: pick(relation.relation_type.label_tr, relation.relation_type.label_en, lang) },
+          direction,
+          description: pick(relation.description_tr, relation.description_en, lang),
+          confidence: requiredConfidence(relation.confidence, lang),
+        });
+      }
+    }
+    reply.header("cache-control", "no-store");
+    return MyConnectionsResponseSchema.parse({ version: CONTRACT_VERSION, lang, items });
   });
 
   function toAdminAchievement(record: AchievementRecord, earnedCount: number): AdminAchievement {

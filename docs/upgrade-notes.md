@@ -7,6 +7,17 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-02 · Gizemli bağlar: `GET /me/connections` (sözleşme 0.3.20)
+
+Kimler: **uygulama ekibi** (kurulum adımı yok)
+
+Değişenler:
+- Yeni uç `GET /me/connections`: kullanıcının keşfettiği (ziyaret ettiği) eserlerin bağları. Karşı eser keşfedilene
+  kadar yalnızca konumu gelir (`revealed: false`); ikisi de keşfedilince türü, açıklaması ve adı (`revealed: true`).
+  "Aynı külliye" ve "hemen yanında" bağları listede yok. Uygulamada nasıl kullanılacağı: `KUBRA.md` 5. bölüm.
+
+---
+
 ## 2026-11-02 · Taşın Dili gerçek kitabelerle: 11 AR hedefi, çeviri taşın üstünde
 
 Kimler: **API'yi yerelde çalıştıranlar**, **demoyu açan**

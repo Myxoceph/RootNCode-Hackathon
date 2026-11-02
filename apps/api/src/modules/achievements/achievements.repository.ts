@@ -11,6 +11,8 @@ export interface AchievementsRepository {
   countVisitsSince(userId: string, since: Date): Promise<number>;
   /** The user's visits to visible assets, newest first. */
   listVisits(userId: string): Promise<{ asset_id: string; visited_at: Date; verified: boolean; proven_at: Date | null }[]>;
+  /** The bonds of the user's visited assets (both ends) and the visible assets at their ends. */
+  connections(userId: string): Promise<ConnectionRecords>;
   /** Whether the asset has a photo with this media key. */
   hasMedia(assetId: string, mediaKey: string): Promise<boolean>;
   /** Records the visit if new and marks it proven; false for `firstVisit` when it existed. */
@@ -27,6 +29,30 @@ export interface AchievementsRepository {
   deleteAchievement(code: string): Promise<boolean>;
   /** Descriptions of the codes and ids a rule refers to that do not exist. */
   missingRefs(refs: { city?: string | undefined; era?: string | undefined; parentId?: string | undefined }): Promise<string[]>;
+}
+
+/** Bonds that tell no story of their own: a complex's own buildings, and "right next to it". */
+export const UNTOLD_RELATION_TYPES = ["same_complex", "urban_context"];
+
+export interface ConnectionRecords {
+  visited: Set<string>;
+  relations: {
+    source_asset_id: string;
+    target_asset_id: string;
+    description_tr: string;
+    description_en: string | null;
+    confidence: string;
+    relation_type: { code: string; label_tr: string; label_en: string | null };
+  }[];
+  assets: {
+    id: string;
+    name_tr: string;
+    name_en: string | null;
+    lat: number | null;
+    lng: number | null;
+    coord_verified: boolean;
+    coord_source: string | null;
+  }[];
 }
 
 export function createAchievementsRepository(prisma: PrismaClient, statuses: string[]): AchievementsRepository {
@@ -59,6 +85,34 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
 
     countVisitsSince(userId, since) {
       return prisma.visit.count({ where: { user_id: userId, visited_at: { gte: since } } });
+    },
+
+    async connections(userId) {
+      const visits = await prisma.visit.findMany({ where: { user_id: userId, asset: { status: { in: statuses } } }, select: { asset_id: true } });
+      const visited = new Set(visits.map((v) => v.asset_id));
+      if (visited.size === 0) return { visited, relations: [], assets: [] };
+      const ids = [...visited];
+      const relations = await prisma.asset_relation.findMany({
+        where: {
+          type_code: { notIn: UNTOLD_RELATION_TYPES },
+          OR: [{ source_asset_id: { in: ids } }, { target_asset_id: { in: ids } }],
+        },
+        select: {
+          source_asset_id: true,
+          target_asset_id: true,
+          description_tr: true,
+          description_en: true,
+          confidence: true,
+          relation_type: { select: { code: true, label_tr: true, label_en: true } },
+        },
+        orderBy: { id: "asc" },
+      });
+      const ends = [...new Set(relations.flatMap((r) => [r.source_asset_id, r.target_asset_id]))];
+      const assets = await prisma.asset.findMany({
+        where: { id: { in: ends }, status: { in: statuses } },
+        select: { id: true, name_tr: true, name_en: true, lat: true, lng: true, coord_verified: true, coord_source: true },
+      });
+      return { visited, relations, assets };
     },
 
     listVisits(userId) {
