@@ -67,6 +67,8 @@ function ThemedStack() {
           <Stack.Screen name="profile/badges" options={{ title: "Rozetlerim", headerBackTitle: "Profil" }} />
           <Stack.Screen name="profile/settings" options={{ title: "Sistem ayarları", headerBackTitle: "Profil" }} />
           <Stack.Screen name="profile/notes" options={{ title: "Bıraktığım Notlar", headerBackTitle: "Profil" }} />
+          {/* An eser kartı over the Profil page it was opened from; it draws its own close button. */}
+          <Stack.Screen name="asset/[id]" options={{ headerShown: false, title: "" }} />
           <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
           {/* Draws its own header, with "Temizle" next to the title. */}
           <Stack.Screen name="assistant" options={{ headerShown: false, title: "Asistan" }} />
