@@ -24,6 +24,8 @@ export const summarySelect = {
   summary_en: true,
   dating_display_tr: true,
   dating_display_en: true,
+  start_year: true,
+  century: true,
   asset_type: { select: labelSelect },
   era: { select: labelSelect },
   city: { select: labelSelect },

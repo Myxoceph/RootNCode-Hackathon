@@ -122,6 +122,24 @@ function toArTarget(mediaKey: string | null, media: AssetMediaRecord[], mediaBas
   return { mindUrl: `${mediaBaseUrl}/${arTargetMindKey(variant.key)}`, mindarVersion: AR_MINDAR_VERSION };
 }
 
+const ROMAN: Array<[number, string]> = [[10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]];
+const roman = (n: number) => ROMAN.reduce((out, [value, digits]) => { while (n >= value) { out += digits; n -= value; } return out; }, "");
+/** A dating's Gregorian year this far from the start year still names the same building (built over years). */
+const SAME_BUILDING_YEARS = 10;
+
+/**
+ * The card's year: the first Gregorian year the dating names after "M." ("H. 802 / M. 1399-1400",
+ * "M. Aralık 1413") when it is close to the record's start year, else the start year; without one,
+ * the century. The dating's other numbers (Hijri years, a founder's death, today's rebuilding) never.
+ */
+export function yearLabel(display: string | null, startYear: number | null, century: number | null, lang: Lang): string | null {
+  const named = display?.match(/M\.[^\d/]*?(?:\d{1,2}\s+\p{L}+\s+)?(\d{3,4})/u)?.[1];
+  const gregorian = named ? Number(named) : null;
+  if (startYear !== null) return String(gregorian !== null && Math.abs(gregorian - startYear) <= SAME_BUILDING_YEARS ? gregorian : startYear);
+  if (century !== null) return lang === "en" ? `${century}th century` : `${roman(century)}. yüzyıl`;
+  return null;
+}
+
 export function toAssetSummary(
   record: AssetSummaryRecord,
   cover: AssetMediaRecord | undefined,
@@ -139,6 +157,7 @@ export function toAssetSummary(
     coordinates: toCoordinates(record),
     summary: pick(record.summary_tr, record.summary_en, lang),
     datingDisplay: pick(record.dating_display_tr, record.dating_display_en, lang),
+    yearLabel: yearLabel(record.dating_display_tr, record.start_year, record.century, lang),
     cover: cover ? toMedia(cover, context) : null,
     parentId: record.parent_id && record.asset && context.statuses.includes(record.asset.status) ? record.parent_id : null,
     prominence: Object.values(record._count).reduce((sum, count) => sum + count, 0),

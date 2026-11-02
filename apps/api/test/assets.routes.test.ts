@@ -55,6 +55,14 @@ describe.skipIf(!DATABASE_URL)("assets routes (PostgreSQL)", () => {
       expect(ids.size).toBe(10);
     });
 
+    it("gives each card a year to show: the dating's own, else the century", async () => {
+      const body = await list("?city=bursa&limit=500");
+      const year = (id: string) => body.items.find((item) => item.id === id)?.yearLabel;
+      expect(year(ULUCAMI)).toBe("1399");
+      expect(year("bursa-yildirim-devlet-hatun-turbesi")).toBe("1413");
+      expect(year("bursa-osmangazi-eyne-bey-subasi-medresesi")).toBe("XV. yüzyıl");
+    });
+
     it("filters by type and city", async () => {
       const body = await list("?city=bursa&type=hamam&limit=500");
 
