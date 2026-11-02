@@ -27,6 +27,7 @@ import { VisitorPulse } from "@/components/visitor-pulse";
 import { CAPSULE_SECONDS, captionAt, capsuleForSoundKey, capsules, formatSeconds } from "@/content/capsules";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speak, stopSpeaking } from "@/lib/speak";
+import { visitSealTarget } from "@/lib/visit-seal";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -553,15 +554,14 @@ function Experiences({ asset }: { asset: AssetDetail }) {
   const capsuleType = soundKey ? capsuleForSoundKey(soundKey) : undefined;
   const playing = capsuleType !== undefined && player?.type === capsuleType ? player : null;
   const description = asset.accessibility.audioDescription;
-  const archive = asset.media.find((m) => m.kind === "archive_photo");
 
   const actions: Action[] = [];
   if (asset.inscriptions.some((i) => i.translation || i.transliteration)) {
     actions.push({ key: "inscription", icon: "scan-outline", title: "Taşın Dili", hint: "Kitabeyi kamerayla oku", spoken: "Taşın Dili: kitabeyi kamerayla oku", href: { pathname: "/inscription", params: { asset: asset.id } } });
   }
-  if (archive || asset.cover) {
-    const hint = archive?.archiveYear ? `${archive.archiveYear} ile bugün` : "Dün ve bugün aynı karede";
-    actions.push({ key: "curtain", icon: "time-outline", title: "Zaman Perdesi", hint, spoken: `Zaman Perdesi: ${hint}`, href: { pathname: "/time-curtain", params: { asset: asset.id } } });
+  if (visitSealTarget(asset)) {
+    const hint = "Eserde olduğunu kanıtla";
+    actions.push({ key: "seal", icon: "ribbon-outline", title: "Ziyaret Mührü", hint, spoken: `Ziyaret Mührü: ${hint}`, href: { pathname: "/visit-seal", params: { asset: asset.id } } });
   }
   if (capsuleType) {
     // Only captions are announced; a counter that ticks every second would talk over everything.

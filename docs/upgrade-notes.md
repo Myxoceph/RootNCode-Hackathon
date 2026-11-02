@@ -7,6 +7,28 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-01 · Zaman Perdesi yerine Ziyaret Mührü (migration, yeni paket, sözleşme 0.3.16)
+
+Kimler: **uygulama ekibi**, **API'yi yerelde çalıştıranlar**, **veri ekibi**
+
+1. `npm install` (`expo-location` eklendi; Expo Go'da çalışır, geliştirme derlemesi kullanan yeniden derlemeli).
+2. `npm run db:deploy --workspace @vagabonds/api` (kanıt başarımlarının metni ve rozeti).
+
+Değişenler:
+- Modül 1'in konsepti değişti: önce/sonra perdesi yok. Ziyaretçi eserde, belirlediğimiz kısmı kameraya gösterir;
+  telefon tanıyınca ziyaret **mühürlenir** (`POST /assets/:id/visit/proof`), rozet ve puan kazanılır.
+- Sözleşme 0.3.16: `media[].subject` (fotoğrafın ne gösterdiği: `portal`, `inscription`, `mihrab`…). Mühür, eserin
+  belirli bir kısmının fotoğrafıyla yapılır (taçkapı, kitabe, süsleme detayı, çeşme, mihrap, minber, pencere); böyle bir
+  fotoğrafı olmayan eserde mühür yok (şu an 685 eserin 147'sinde var).
+- Uygulama: `/time-curtain` ekranı `/visit-seal` oldu. Hedef fotoğraf (`src/lib/visit-seal.ts`)
+  telefonda MindAR hedefine derlenir; eser başına `.mind` dosyası gerekmez. Takipçi sayfası artık `{ mind }` ya da
+  `{ image }` alıyor (`src/ar/tracker-page.ts`). Konum `expo-location` ile; takma adı olmayan ziyaretçiye mühürden önce sorulur.
+- Web'de ve ekran okuyucu açıkken kamera yok: ekran hangi kısmın çekileceğini gösterir.
+- Başarımlar kodlarını korudu (`zaman-yolcusu`, `zaman-ustasi`), adları değişti: 🔏 İlk Mühür, 🏅 Mühür Ustası.
+- Kamera sekmesi: iki deneyim alt alta, her biri gerçek bir eserde kısa bir demo oynatır.
+- Veri ekibi: arşiv fotoğrafı (`archive_media`) artık bu modül için gerekmiyor. Mühür kısmı fotoğrafların `subject`
+  alanından seçiliyor; detay fotoğrafı olmayan eserlere bir taçkapı ya da kitabe fotoğrafı eklemek mührü açar.
+
 ## 2026-11-01 · Konya'da ciltler arası ve aynı banili bağlar
 
 Kimler: **API'yi yerelde çalıştıranlar**

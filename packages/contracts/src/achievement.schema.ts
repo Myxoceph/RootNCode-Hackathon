@@ -39,7 +39,7 @@ export const AchievementRuleSchema = z.discriminatedUnion("kind", [
   }),
   /** Visit every building of a complex (the parent asset's children). */
   z.strictObject({ kind: z.literal("complex"), parentId: AssetIdSchema }),
-  /** Prove `count` visits (position plus recognising the site in Zaman Perdesi), in `city` when given. */
+  /** Prove `count` visits (position plus recognising the site in Ziyaret Mührü), in `city` when given. */
   z.strictObject({ kind: z.literal("proven_visits"), count: Count, city: CodeSchema.optional() }),
   /** Have `count` contributions approved: `notes` (tips, memories, corrections), `photos` or `any`. */
   z.strictObject({
@@ -98,7 +98,7 @@ export const ProofMethodSchema = z.enum(["device_recognition", "server_match"]);
 
 /**
  * `POST /assets/:id/visit/proof`: the app recognised one of the asset's photos (`mediaKey`, e.g.
- * the Zaman Perdesi template) through the camera. The position follows the same rule as a visit.
+ * the Ziyaret Mührü photo) through the camera. The position follows the same rule as a visit.
  */
 export const VisitProofRequestSchema = z
   .strictObject({

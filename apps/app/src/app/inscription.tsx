@@ -1,7 +1,7 @@
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ActivityIndicator, Animated, Easing, Platform, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -104,6 +104,7 @@ function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCamera
   const insets = useSafeAreaInsets();
   const targets = useTargetSet(asset.status === "success" ? asset.data : null, asset.status !== "loading");
   const targetSet = targets === "failed" ? null : targets;
+  const target = useMemo(() => (targetSet ? { mind: targetSet.mind } : null), [targetSet]);
   useEffect(() => {
     if (targets === "failed") onFailure("target-unavailable");
   }, [targets, onFailure]);
@@ -203,7 +204,7 @@ function InscriptionCamera({ asset, onFailure, onReadAsText }: InscriptionCamera
 
   return (
     <View style={styles.screen} onLayout={(e) => setHeight(e.nativeEvent.layout.height)}>
-      {targetSet && <MarkerTracker targetsMind={targetSet.mind} onEvent={onEvent} style={StyleSheet.absoluteFill} />}
+      {target && <MarkerTracker target={target} onEvent={onEvent} style={StyleSheet.absoluteFill} />}
 
       {phase === "scanning" && !reduceMotion && guideHeight > 0 && (
         <Animated.View

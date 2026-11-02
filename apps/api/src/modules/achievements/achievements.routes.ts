@@ -167,7 +167,7 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
     config: { rateLimit: { max: 30, timeWindow: 60 * 60 * 1000 } },
     schema: {
       tags: ["community"],
-      summary: "Ziyareti kanıtla: uygulama eserin bir fotoğrafını kamerada tanıdı (Zaman Perdesi); konum kuralı ziyaretteki gibi",
+      summary: "Ziyareti kanıtla: uygulama eserin mühür fotoğrafını kamerada tanıdı (Ziyaret Mührü); konum kuralı ziyaretteki gibi",
       security: bearer,
       params: toOpenApiSchema(AssetParamsSchema, "input"),
       querystring: toOpenApiSchema(LangQuerySchema, "input"),

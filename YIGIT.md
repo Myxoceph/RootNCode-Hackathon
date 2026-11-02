@@ -7,7 +7,7 @@ Bütün şemalar `@vagabonds/contracts`'ta; uçların tam listesi [`packages/con
 Öncelik sırası önerim (demo için en görünür olandan başlayarak):
 
 1. Konum izni ve ziyaret ("Buradayım")
-2. Zaman Perdesi ile kanıtlanmış ziyaret
+2. Ziyaret Mührü ile kanıtlanmış ziyaret ✅
 3. Başarımlar ekranı ve rozet bildirimi
 4. Cüzdan ve ödüller
 5. Giriş / kayıt
@@ -46,6 +46,7 @@ npm run account:create --workspace @vagabonds/api -- yigit admin    # parola bir
   ["expo-location", { "locationWhenInUsePermission": "Bir eserin yanında olduğunu doğrulamak ve başarım kazanman için konumunu kullanıyoruz." }]
   ```
   İzin verilmezse uygulama her şeyiyle çalışmaya devam etmeli; yalnızca "Buradayım" ve kanıt devre dışı kalır.
+  (`expo-location` ve izin metni Ziyaret Mührü ile eklendi; `src/lib/current-position.ts`.)
 - Ziyaret: `POST /assets/:id/visit` gövde `{ lat, lng }` (`VisitRequestSchema`) → `VisitResponseSchema`.
   - Eserin kesin noktası varsa kullanıcı **200 m** (`VISIT_RADIUS_METERS`) içinde olmalı. Değilse `400 TOO_FAR`
     (mesajda mesafe var: "X m uzaktasın" göster). Konum gönderilmezse `400 POSITION_REQUIRED`.
@@ -59,43 +60,28 @@ npm run account:create --workspace @vagabonds/api -- yigit admin    # parola bir
 
 ---
 
-## 2. Zaman Perdesi ile kanıtlanmış ziyaret
+## 2. Ziyaret Mührü ile kanıtlanmış ziyaret ✅ (uygulamada yapıldı)
 
-**Ne:** Kullanıcı Zaman Perdesi'nde hayalet resmi bina ile hizalayıp çektiğinde, uygulama **binayı kamerada
-tanırsa** ziyaret "kanıtlanmış" olur. Kanıtlanmış ziyaretler ek başarım (Zaman Yolcusu, Zaman Ustası) verir ve
+**Ne:** Zaman Perdesi'nin yerini aldı. Ziyaretçi eserde, belirlediğimiz kısmı kameraya gösterir; telefon tanıyınca
+ziyaret **mühürlenir** ("kanıtlanmış"). Kanıtlanmış ziyaretler ek başarım (🔏 İlk Mühür, 🏅 Mühür Ustası) verir ve
 bazı ödüller için gerekir (`minProvenVisits`).
 
-**Neden senin MindAR'ın:** Taşın Dili'ndeki `MarkerTracker` (WebView + MindAR) tam bunu yapıyor. Fark: Zaman
-Perdesi'nin hedefini önceden derlemek yerine **hayalet resmin kendisini cihazda derliyoruz**. Böylece her eser
-için `.mind` dosyası üretip R2'ye yüklemek gerekmez.
+Nasıl çalışıyor (`apps/app/src/app/visit-seal.tsx`):
 
-Adımlar:
+1. **Hedef:** `visitSealTarget(asset)` (`src/lib/visit-seal.ts`): eserin belirli bir kısmının fotoğrafı, `media[].subject`
+   ile seçilir (sırayla taçkapı, kitabe, süsleme detayı, çeşme, mihrap, minber, pencere). Böyle bir fotoğrafı olmayan eserde
+   mühür yok; eser sayfasındaki ve haritadaki düğme görünmez ya da pasif kalır.
+2. **Cihazda derleme:** takipçi sayfasına `{ image: <~1280 px JPEG> }` verilir; sayfa MindAR'ın `Compiler`'ıyla derler
+   ("Eser hazırlanıyor…" ve ilerleme), `compiled` olayıyla `.mind`'ı geri yollar; aynı oturumda ikinci açılışta derlenmez.
+   Medya sunucusu `access-control-allow-origin: *` döndüğü için CORS sorunu yok.
+3. **Tanıma:** `found` olayı ~1 sn sürerse (sabit tut çubuğu) mühür başlar; `lost` gelirse aramaya döner.
+4. **Kanıt:** konum `expo-location` ile alınır (kesin noktalı eserde 200 m kuralı istemcide de denetlenir, mesafe
+   söylenir), takma adı yoksa sorulur, sonra `sendVisitProof` (`src/data/community.ts`) → `POST /assets/:id/visit/proof`.
+5. **Mühür:** damga animasyonu, konumun doğrulandığı ve kazanılan rozetler; ekran okuyucuya duyurulur.
+6. **Web ve ekran okuyucu:** kamera yok; ekran hangi kısmın çekileceğini anlatır.
 
-1. **Hedefi cihazda derle.** `apps/app/scripts/mindar-compiler.mts`'teki kodun aynısı WebView'da çalışır:
-   ```js
-   const compiler = new window.MINDAR.IMAGE.Compiler();
-   await compiler.compileImageTargets([img], (progress) => post({ type: "compile-progress", progress }));
-   const mind = compiler.exportData();   // Uint8Array → base64 ile React tarafına
-   ```
-   - Görsel: şablonun (arşiv fotoğrafı, yoksa kapak; `time-curtain.tsx`'teki `template`) **~1280 px JPEG** sürümü
-     (`media.sources.jpg` içinden). Daha büyüğü derlemeyi yavaşlatır.
-   - Derleme birkaç saniye sürer: "Eser hazırlanıyor…" göster. Sonucu eser id'si + `media.key` ile önbelleğe al
-     (`expo-file-system` ya da AsyncStorage; base64 birkaç yüz KB) ki ikinci açılışta beklenmesin.
-   - Görsel WebView'da yüklenemezse (CORS) bana söyle; `media.allbytech.com` Worker'ına başlık ekleriz.
-2. **Takip et.** `MarkerTracker`'a `targetsMind` olarak bu base64'ü ver; hayalet resim üstte yarı saydam kalsın.
-   `targetFound` olayı gelince (ve ~1 sn sürerse, yanlış pozitif olmasın diye) kanıtı gönder.
-3. **Kanıtı gönder:** `POST /assets/:id/visit/proof`, gövde (`VisitProofRequestSchema`):
-   ```json
-   { "lat": 40.18, "lng": 29.06, "mediaKey": "<template.key>", "method": "device_recognition" }
-   ```
-   - `mediaKey`: derlediğin fotoğrafın detaydaki `media[].key` değeri. Anahtarlar eser içinde `m01`, `m02`… diye
-     numaralı; **bu eserin** `media` listesindeki değeri gönder.
-   - Konum kuralı ziyaretteki gibi (1. madde). Ziyaret yoksa API onu da kaydeder; ayrıca "Buradayım" gerekmez.
-   - Yanıt `VisitResponseSchema` (`proven: true`, `newAchievements`). Hatalar: `400 UNKNOWN_MEDIA`, `TOO_FAR`.
-4. **Deneyim:** kanıtlanınca "Ziyaretin kanıtlandı ⏳" ve kazanılan rozetler; sonra mevcut perde (önce/sonra) ekranına geç.
-5. **Web ve ekran okuyucu:** web'de ve ekran okuyucu açıkken kamera yok (ADR 0001); kanıt gösterilmez, ziyaret 1. maddeyle yapılır.
-6. **İlk test:** Ulucami (ya da yakındaki herhangi bir eser) kapak fotoğrafıyla, aynı açıdan. Kitap fotoğrafları bazen
-   yukarıdan ya da uzaktan çekilmiş; tanımazsa bana yaz, o eser için zeminden çekilmiş bir fotoğrafı şablon yaparız.
+Kalanlar: telefonda saha testi (Ulucami'nin taçkapı fotoğrafı aynı açıdan tanınıyor mu; tanımazsa daha yakından çekilmiş bir
+detay seçilmeli), derlenen `.mind`'ı cihazda kalıcı önbelleğe almak, ziyaret listesini (`GET /me/visits`) mühürden sonra yenilemek.
 
 > Bu kanıt telefonda yapılır; API sonucu doğrulayamaz (uygulamayı kurcalayan biri isteği taklit edebilir). Rozet ve
 > pilot ödüller için yeterli; ileride değerli ödüller için sunucuda fotoğraf eşleştirme (`proof_method: server_match`) ekleriz.
@@ -211,7 +197,7 @@ Haritada farklı bir işaretle (ör. içi boş daire) göster ve detayda "Konum 
 sisi kalkmalı, mühür açılmalı; ziyaret edilmemişler kilitli kalır.
 
 - Liste: `GET /me/visits` (oturum gerekli) → `MyVisitsResponseSchema`: `items[]` her ziyaret edilen eser için
-  `assetId`, `visitedAt`, `verified` (konum yerinde doğrulandı), `proven` (Zaman Perdesi ile kanıtlandı). Yeniden eskiye.
+  `assetId`, `visitedAt`, `verified` (konum yerinde doğrulandı), `proven` (Ziyaret Mührü ile kanıtlandı). Yeniden eskiye.
 - Harita açılınca ve bir ziyaret ya da kanıt başarılı olunca (`POST /assets/:id/visit` ve `/visit/proof`) listeyi yenile;
   yanıtı beklemeden yeni eseri hemen açık say.
 - Giriş yoksa (ya da anonim kullanıcı hiç ziyaret etmediyse) her şey kilitli kalır; çağrı `401` dönerse boş liste say.

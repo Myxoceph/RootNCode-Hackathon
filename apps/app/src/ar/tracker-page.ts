@@ -1,11 +1,17 @@
 interface TrackerPageOptions {
-  /** A compiled `.mind` file, base64. */
-  targetsMind: string;
+  /** What to look for: a compiled `.mind` file (base64), or a photo URL the page compiles itself. */
+  target: TrackerTarget;
   /** Color of the corner marks drawn on a found target. */
   markColor: string;
   /** MindAR, inlined so the page needs no network (`loadMindar` in @/vendor). */
   mindarScript: string;
 }
+
+/**
+ * A compiled `.mind` file, or one photo to compile on the device. Compiling takes a few seconds,
+ * but no `.mind` file has to be built and hosted for every asset (Ziyaret Mührü).
+ */
+export type TrackerTarget = { mind: string } | { image: string };
 
 /**
  * The page inside the WebView (native) or iframe (web): camera, MindAR image
@@ -15,7 +21,7 @@ interface TrackerPageOptions {
  * MindAR's core (`Controller`) is used without its three.js layer: the corners
  * are projected from the pose it returns, so nothing 3D is loaded.
  */
-export function trackerPageHtml({ targetsMind, markColor, mindarScript }: TrackerPageOptions): string {
+export function trackerPageHtml({ target, markColor, mindarScript }: TrackerPageOptions): string {
   return `<!doctype html>
 <html>
 <head>
@@ -98,6 +104,56 @@ function drawCorners(corners) {
   }
 }
 
+function fromBase64(text) {
+  const binary = atob(text);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return bytes.buffer;
+}
+
+function toBase64(bytes) {
+  let binary = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  return btoa(binary);
+}
+
+function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    // Read back by the compiler through a canvas: without CORS the canvas is tainted.
+    image.crossOrigin = "anonymous";
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error("Could not load " + src));
+    image.src = src;
+  });
+}
+
+// The target's .mind data: given, or compiled here from the photo before the camera opens.
+async function targetBuffer(library) {
+  const target = ${JSON.stringify(target)};
+  if (target.mind) return fromBase64(target.mind);
+  step("compile");
+  let image;
+  try {
+    image = await loadImage(target.image);
+  } catch (error) {
+    fail("image-unavailable", error);
+    return null;
+  }
+  const compiler = new library.Compiler();
+  let reported = -1;
+  await compiler.compileImageTargets([image], (progress) => {
+    const percent = Math.floor(progress / 5) * 5;
+    if (percent !== reported) {
+      reported = percent;
+      post({ type: "compile", progress: percent / 100 });
+    }
+  });
+  const bytes = new Uint8Array(await compiler.exportData());
+  post({ type: "compiled", mind: toBase64(bytes) });
+  return bytes.buffer;
+}
+
 function resizeCanvas() {
   const ratio = window.devicePixelRatio || 1;
   canvas.width = canvas.clientWidth * ratio;
@@ -118,6 +174,9 @@ async function start() {
   }
   const { Controller } = library;
   step("library");
+
+  const targets = await targetBuffer(library);
+  if (!targets) return;
 
   let stream;
   try {
@@ -181,10 +240,7 @@ async function start() {
     },
   });
 
-  const binary = atob(${JSON.stringify(targetsMind)});
-  const bytes = new Uint8Array(binary.length);
-  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-  ({ dimensions } = controller.addImageTargetsFromBuffer(bytes.buffer));
+  ({ dimensions } = controller.addImageTargetsFromBuffer(targets));
   step("targets");
 
   await controller.dummyRun(video);

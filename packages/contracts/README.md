@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.15`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.16`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -151,7 +151,7 @@ export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
 
 | Modül | Alanlar |
 |---|---|
-| 1. Zaman Perdesi | `media[]` (`kind: "archive_photo"`, `archiveYear`) |
+| 1. Ziyaret Mührü | `cover` (mühür fotoğrafı, cihazda derlenir), `POST /assets/:id/visit/proof` |
 | 2. Taşın Dili | `inscriptions[]` (`transliteration`, `translation`, `arTargetMediaKey`), `waqf` |
 | 3. Kentsel Ağ & Sis Açma | `coordinates`, `parentId`, `prominence`, `parent`, `children`, `/assets/:id/relations`, `/assets/:id/nearby` |
 | 4. Travel Planner & Hava Durumu | `/routes/trip` (`days[].items`, `weatherNote`), `/routes/plan` (`stops[]`, `totals`), `/weather` (`advice`, `daily`), `coordinates`, `/assets/:id/nearby` |

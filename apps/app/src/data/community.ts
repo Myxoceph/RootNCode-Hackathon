@@ -3,10 +3,13 @@ import {
   AnonymousSessionResponseSchema,
   ContributionSchema,
   MyContributionsResponseSchema,
+  VisitResponseSchema,
   type AnonymousSessionResponse,
   type AppUser,
   type Contribution,
   type TextContributionKind,
+  type VisitProofRequest,
+  type VisitResponse,
 } from "@vagabonds/contracts";
 import { useEffect, useSyncExternalStore } from "react";
 
@@ -123,6 +126,14 @@ function errorFor(status: number, code: string | null, details: string[]): DataE
       return rejected("Bu eser artık yayında değil.");
     case "INVALID_BODY":
       return rejected("Not kabul edilmedi; metni ve takma adı kontrol et.");
+    case "TOO_FAR":
+      return rejected("Esere yeterince yakın değilsin. Mühür için eserin 200 m yakınında olmalısın.");
+    case "POSITION_REQUIRED":
+      return rejected("Mühür için konumun gerekiyor. Konum iznini açıp tekrar dene.");
+    case "UNKNOWN_MEDIA":
+      return rejected("Tanınan fotoğraf bu esere ait değil.");
+    case "VISIT_LIMIT":
+      return rejected("Bugünkü ziyaret sınırına ulaştın. Yarın tekrar dene.");
   }
   return statusError(status, code, details);
 }
@@ -131,31 +142,37 @@ function errorFor(status: number, code: string | null, details: string[]): DataE
  * Sends a note on `asset`. A visitor without a session gets one first under `nickname`.
  * The note waits for a moderator; the pulse shows it once approved.
  */
+/**
+ * The stored session's token, or a new anonymous session under `nickname`. `opened` is the new
+ * session's user, for the caller to publish once its own request went through.
+ */
+async function sessionToken(nickname?: string): Promise<{ token: string; opened: AppUser | null }> {
+  await loadSession();
+  if (token) return { token, opened: null };
+  if (!nickname) throw new DataError("rejected", "Takma ad gerekli.");
+  const session = await call("/auth/anonymous", AnonymousSessionResponseSchema, { body: { nickname } });
+  token = session.token;
+  try {
+    await writeSession(JSON.stringify(session));
+  } catch {
+    // Not kept: this run still sends with it, the next launch asks for a nickname again.
+  }
+  return { token: session.token, opened: session.user };
+}
+
 export async function sendContribution(
   asset: { id: string; name: string },
   note: { kind: TextContributionKind; body: string },
   nickname?: string,
 ): Promise<Contribution> {
   if (!communityAvailable) throw new DataError("unavailable", "Not göndermek için sunucu gerekiyor.");
-  await loadSession();
-  let opened: AppUser | null = null;
-  if (!token) {
-    if (!nickname) throw new DataError("rejected", "Takma ad gerekli.");
-    const session = await call("/auth/anonymous", AnonymousSessionResponseSchema, { body: { nickname } });
-    token = session.token;
-    opened = session.user;
-    try {
-      await writeSession(JSON.stringify(session));
-    } catch {
-      // Not kept: this run still sends with it, the next launch asks for a nickname again.
-    }
-  }
+  const { token: sendWith, opened } = await sessionToken(nickname);
 
   let contribution: Contribution;
   try {
     contribution = await call(`/assets/${encodeURIComponent(asset.id)}/contributions`, ContributionSchema, {
       body: note,
-      token,
+      token: sendWith,
     });
   } catch (error) {
     if (opened) set({ user: opened });
@@ -165,6 +182,23 @@ export async function sendContribution(
   // One update for the new session and the new note, so "Notlarım" fetches once.
   set(opened ? { user: opened, sent: state.sent + 1 } : { sent: state.sent + 1 });
   return contribution;
+}
+
+/**
+ * Ziyaret Mührü: the camera recognised the asset's seal photo on site, so the visit is proven
+ * (`POST /assets/:id/visit/proof`). A visitor without a session gets one first under `nickname`.
+ */
+export async function sendVisitProof(assetId: string, proof: Omit<VisitProofRequest, "method">, nickname?: string): Promise<VisitResponse> {
+  if (!communityAvailable) throw new DataError("unavailable", "Mühür için sunucu gerekiyor.");
+  const { token: sendWith, opened } = await sessionToken(nickname);
+  try {
+    return await call(`/assets/${encodeURIComponent(assetId)}/visit/proof`, VisitResponseSchema, {
+      body: { ...proof, method: "device_recognition" },
+      token: sendWith,
+    });
+  } finally {
+    if (opened) set({ user: opened });
+  }
 }
 
 /** The visitor's own notes with their moderation status, newest first; `null` without a session. */

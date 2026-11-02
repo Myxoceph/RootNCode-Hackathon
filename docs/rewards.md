@@ -9,7 +9,7 @@ Başarımlardan kazanılan puan, ortak kurumların verdiği ödüllere harcanır
   kafede gösterilir. Aynı bakiye iki kez harcanamaz, aynı kod iki kişiye gitmez (tek veritabanı işlemi).
 - **Hesap gerekir:** anonim ziyaretçi puan kazanır ama kod alamaz (`403 ACCOUNT_REQUIRED`); anonim oturum açmak
   bedava olduğu için kodlar yalnızca kullanıcı adı ve parolası olan hesaplara verilir. Hesap açınca puanlar korunur.
-- **Kanıtlanmış ziyaret**: konumun yanında, Zaman Perdesi'nde eserin fotoğrafının kamerada tanınması
+- **Kanıtlanmış ziyaret**: konumun yanında, Ziyaret Mührü'nde eserin belirlenen kısmının kamerada tanınması
   ([`achievements.md`](achievements.md)). Değeri yüksek ödüller bunu ister; yalnızca konumla gezen biri kodları toplayamaz.
 - **Kodlar** ortak kurumdan gelir; admin yükler (`POST /admin/rewards/:code/codes`, en çok 1000'er). Kodu biten
   ödül `stock: 0` görünür.

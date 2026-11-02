@@ -7,6 +7,7 @@ import { Linking, Pressable, StyleSheet, View } from "react-native";
 
 import { useAsset } from "@/data";
 import { speak, stopSpeaking } from "@/lib/speak";
+import { visitSealTarget } from "@/lib/visit-seal";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -23,8 +24,8 @@ interface Action {
 
 /**
  * Four small buttons under the map's search bar for the asset chosen on the map: directions,
- * Taşın Dili, Zaman Perdesi and its spoken description. Taşın Dili and the description wait for
- * the asset's record and stay dimmed when it has no readable inscription or no description.
+ * Taşın Dili, Ziyaret Mührü and its spoken description. All but directions wait for the asset's
+ * record and stay dimmed when it has no readable inscription, no seal part or no description.
  */
 export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   const { colors: c } = useTheme();
@@ -34,6 +35,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   const record = detail.status === "success" ? detail.data : null;
   const description = record?.accessibility.audioDescription ?? null;
   const readable = record ? record.inscriptions.some((i) => i.translation || i.transliteration) : false;
+  const sealable = record ? visitSealTarget(record) !== null : false;
   const coords = asset.coordinates;
 
   // Another asset, another description: stop reading the last one.
@@ -60,12 +62,12 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
       onPress: () => router.push({ pathname: "/inscription", params: { asset: asset.id } }),
     },
     {
-      key: "curtain",
-      icon: "time",
-      label: "Zaman\nPerdesi",
-      spoken: `${asset.name}: Zaman Perdesi, dünü ve bugünü karşılaştır`,
-      disabled: false,
-      onPress: () => router.push({ pathname: "/time-curtain", params: { asset: asset.id } }),
+      key: "seal",
+      icon: "ribbon",
+      label: "Ziyaret\nMührü",
+      spoken: `${asset.name}: Ziyaret Mührü, eserde olduğunu kamerayla kanıtla`,
+      disabled: !sealable,
+      onPress: () => router.push({ pathname: "/visit-seal", params: { asset: asset.id } }),
     },
     {
       key: "describe",

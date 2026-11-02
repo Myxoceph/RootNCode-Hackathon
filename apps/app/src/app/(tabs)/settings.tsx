@@ -9,7 +9,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, LinearGradient, RadialGradient, Rect, Stop } from "react-native-svg";
 
 import { MyContributions } from "@/components/my-contributions";
-import { timeCurtain } from "@/content/camera";
+import { sampleDescription } from "@/content/camera";
 import { useCommunity } from "@/data";
 import { speak } from "@/lib/speak";
 import { useA11ySettings, type A11ySettings } from "@/settings/a11y-settings";
@@ -94,7 +94,7 @@ export default function SettingsScreen() {
               accessibilityRole="switch"
               accessibilityState={{ checked: settings.audioDescription }}
               accessibilityLabel="Sesli mimari betimleme"
-              accessibilityHint="Kamera açmadan dün ile bugünü dinle"
+              accessibilityHint="Kamera açmadan mimariyi dinle"
               onPress={() => setSetting("audioDescription", !settings.audioDescription)}
               style={({ pressed }) => [styles.wideSwitch, pressed && styles.pressed]}
             >
@@ -115,7 +115,7 @@ export default function SettingsScreen() {
               <Pressable
                 accessibilityRole="button"
                 accessibilityLabel="Örnek betimlemeyi dinle"
-                onPress={() => speak(timeCurtain.audioDescription)}
+                onPress={() => speak(sampleDescription.audioDescription)}
                 style={({ pressed }) => [styles.play, { backgroundColor: c.highlightMark }, pressed && styles.pressed]}
               >
                 <Ionicons name="play" size={16} color={c.onPrimary} style={styles.playIcon} />

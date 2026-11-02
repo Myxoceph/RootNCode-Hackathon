@@ -11,7 +11,8 @@ interface Point {
   lng: number;
 }
 
-function kmBetween(a: Point, b: Point): number {
+/** Great-circle distance in kilometres. */
+export function kmBetween(a: Point, b: Point): number {
   const toRad = Math.PI / 180;
   const dLat = (b.lat - a.lat) * toRad;
   const dLng = (b.lng - a.lng) * toRad;

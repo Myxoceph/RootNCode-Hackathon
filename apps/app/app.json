@@ -30,10 +30,16 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Kitabeleri tanımak ve Zaman Perdesi için kamera kullanılır. Görüntü cihazdan çıkmaz.",
+          "cameraPermission": "Kitabeleri tanımak ve ziyaretini mühürlemek için kamera kullanılır. Görüntü cihazdan çıkmaz.",
           "microphonePermission": false,
           "recordAudioAndroid": false,
           "barcodeScannerEnabled": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Bir eserin yanında olduğunu doğrulamak ve ziyaretini mühürlemek için konumunu kullanıyoruz."
         }
       ],
       [
