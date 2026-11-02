@@ -31,6 +31,11 @@ export const ChatRequestSchema = z.strictObject({
    * Without it the question starts a new conversation on its page, and the page's open one is archived.
    */
   conversationId: z.uuid().optional(),
+  /**
+   * The question was spoken and the answer will be read aloud (Sesli Rehber): a few short
+   * sentences without lists, written to be heard. Citations stay as they are.
+   */
+  spoken: z.boolean().default(false),
 });
 
 /** What a citation points at; the app opens the asset or dish page for `asset` and `dish`. */

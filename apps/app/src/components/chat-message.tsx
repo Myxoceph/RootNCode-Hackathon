@@ -9,7 +9,7 @@ import Svg, { Circle, Defs, Line, LinearGradient as SvgGradient, Rect, Stop } fr
 import { answerLines, answerParts, followUps, type FollowUpTopic, type LinePart } from "@/lib/chat";
 import { inkFor } from "@/lib/route-ink";
 import { routeKey, useSavedRoutes } from "@/lib/saved-routes";
-import { speak, stopSpeaking } from "@/lib/speak";
+import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -200,7 +200,8 @@ export function AssistantMessage({
   onFollowUp?: (question: string) => void;
 }) {
   const { colors: c } = useTheme();
-  const [reading, setReading] = useState(false);
+  // Read aloud in EVREN's voice (lib/voice.ts); a spoken question's answer starts on its own.
+  const reading = useSpeaking() === response.answer;
   // The markers stay out of the text, the space before each with them; the pills name the sources.
   const parts = answerParts(response.answer, response.citations)
     .filter((part) => part.kind === "text")
@@ -211,7 +212,6 @@ export function AssistantMessage({
   const shown = useReveal(total, animate);
   const done = shown >= total;
 
-  useEffect(() => () => stopSpeaking(), []);
 
   // A trip answer is shown as the card alone: the plan is in Rotalarım, not told in words here.
   const trip = response.attachments.trip;
@@ -289,9 +289,8 @@ export function AssistantMessage({
               title={reading ? "Durdur" : "Dinle"}
               label={reading ? "Okumayı durdur" : "Cevabı sesli oku"}
               onPress={() => {
-                if (reading) stopSpeaking();
-                else speak(plain);
-                setReading(!reading);
+                if (reading) stopAnswer();
+                else void speakAnswer(response.answer, plain);
               }}
             />
             <ActionButton

@@ -7,6 +7,31 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-03 · Sesli Rehber (sözleşme 0.3.22)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **demoyu açan**, **uygulama ekibi**
+
+1. API'yi yerelde çalıştıranlar: `apps/api/.env`'e `VOICE_ASR_MODEL=qwen3-asr-1.7b` ve
+   `VOICE_TTS_MODEL=voxcpm2` ekle (EVREN anahtarı aynı), API'yi yeniden başlat.
+2. Demoyu açan: `deploy/demo.sh up` yeter; compose EVREN'in ses modellerini varsayılan alıyor.
+3. Uygulama ekibi: `npm install` (uygulamaya `expo-file-system` eklendi; Expo'yla zaten geliyordu)
+   ve mikrofon izni eklendi (`app.json`). Expo Go'da hemen çalışır; APK yeniden derlenmeli.
+
+Değişenler:
+- Rehber'de yazma alanı boşken gönder düğmesinin yerinde mikrofon var. Dokun, sor, tekrar dokun:
+  soru yazıya çevrilir (`POST /voice/transcribe`), kısa ve konuşur gibi cevap gelir (`POST /chat`'te
+  yeni `spoken: true`) ve kendiliğinden sesli okunur (`GET /voice/speech`). Eser sayfasındaki
+  "Bu eser hakkında sor" da aynı ekran.
+- "Dinle" düğmesi artık EVREN'in sesiyle okuyor, bitince "Dinle"ye dönüyor; ses gelmezse telefonun sesi.
+- Sesli okunan metinde sayılar ve kısaltmalar yazıyla gider ("15. yüzyıl" → "on beşinci yüzyıl",
+  "H. 840" → "Hicri sekiz yüz kırk", "II. Murad" → "ikinci Murad"): EVREN'in ses modeli rakamları
+  yanlış okuyor. Cevap da "15." ya da "II." gibi noktalardan değil, cümle sonlarından bölünüyor.
+- EVREN'in ses modelleri ara sıra bir isteği cevapsız bekletiyor; API geciken isteğin yanına
+  2,5 ve 6. saniyede bir yenisini gönderip ilk gelen cevabı alıyor.
+- Kayıt saklanmıyor; ayrıntılar `docs/deploy.md`, "Sesli Rehber".
+
+---
+
 ## 2026-11-03 · Rotalar ve açılan eserler hesaba bağlı (migration, sözleşme 0.3.21)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**

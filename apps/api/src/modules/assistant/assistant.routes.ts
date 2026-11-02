@@ -45,9 +45,9 @@ const CHAT_TIMEOUT_MS = 60_000;
 export const ANSWER_CACHE_MS = 30 * 60_000;
 const ANSWER_CACHE_SIZE = 200;
 
-/** Same question in other case or spacing. */
-function cacheKey(message: string, assetId: string | undefined, lang: string, today: string): string {
-  return JSON.stringify([lang, assetId ?? null, today, message.toLocaleLowerCase("tr").replace(/\s+/g, " ").trim()]);
+/** Same question in other case or spacing; a spoken one has its own, shorter answer. */
+function cacheKey(message: string, assetId: string | undefined, lang: string, today: string, spoken: boolean): string {
+  return JSON.stringify([lang, assetId ?? null, today, spoken, message.toLocaleLowerCase("tr").replace(/\s+/g, " ").trim()]);
 }
 
 /**
@@ -75,7 +75,7 @@ const LangQuerySchema = z.object({ lang: LangSchema.optional() });
 const bearer = [{ bearerAuth: [] }];
 
 /** Only accounts ask: an anonymous session (no username) is refused, so every conversation has an owner who can sign in again. */
-async function requireAccount(request: FastifyRequest, community: CommunityRepository): Promise<UserRecord> {
+export async function requireAccount(request: FastifyRequest, community: CommunityRepository): Promise<UserRecord> {
   const user = await requireUser(request, community);
   if (user.username === null) throw new HttpError(403, "ACCOUNT_REQUIRED", "Sign in with an account to use the assistant");
   return user;
@@ -176,7 +176,7 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
     const today = turkeyToday();
     const hour = turkeyHour();
     // A position makes every question different, and is never kept.
-    const key = body.history.length === 0 && !body.origin ? cacheKey(body.message, body.assetId, lang, today) : null;
+    const key = body.history.length === 0 && !body.origin ? cacheKey(body.message, body.assetId, lang, today, body.spoken) : null;
     const cached = key === null ? undefined : answers.get(key);
     reply.header("cache-control", "no-store");
     if (cached && stillAnswers(cached, Date.now(), hour)) return answered(cached.response);
@@ -192,7 +192,7 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
     try {
       const result = await ask(
         model,
-        { message: body.message, history: body.history, assetId: body.assetId, lang, today, hour, origin: body.origin },
+        { message: body.message, history: body.history, assetId: body.assetId, lang, today, hour, origin: body.origin, spoken: body.spoken },
         { api, repository },
         AbortSignal.timeout(CHAT_TIMEOUT_MS),
       );

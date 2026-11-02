@@ -5,6 +5,7 @@ import { useLocalSearchParams, useRouter, useSegments } from "expo-router";
 import Head from "expo-router/head";
 import { useEffect, useRef, useState } from "react";
 import {
+  ActivityIndicator,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -33,6 +34,8 @@ import {
   resumeConversation,
   useConversation,
 } from "@/lib/chat";
+import { useVoiceQuestion, type VoiceQuestion } from "@/lib/use-voice-question";
+import { speakAnswer, stopAnswer } from "@/lib/voice";
 
 interface Suggestion {
   title: string;
@@ -96,6 +99,25 @@ export default function AssistantScreen() {
   const scroll = useRef<ScrollViewInstance>(null);
   // Only answers to questions asked on this screen write themselves out; earlier and restored ones show as they are.
   const [freshFrom, setFreshFrom] = useState(Number.POSITIVE_INFINITY);
+  const [voiceError, setVoiceError] = useState<string | null>(null);
+  const voice = useVoiceQuestion(
+    (question) => void send(question, true),
+    (message) => {
+      setVoiceError(message);
+      announce(message);
+    },
+  );
+
+  // Leaving the screen (or the conversation) stops an answer being read aloud.
+  // The conversation on screen; an answer that arrives after the visitor left it is not read aloud.
+  const shown = useRef<string | null>(key);
+  useEffect(() => {
+    shown.current = key;
+    return () => {
+      shown.current = null;
+      stopAnswer();
+    };
+  }, [key]);
 
   useEffect(() => {
     if (archiveId) {
@@ -118,19 +140,29 @@ export default function AssistantScreen() {
     scroll.current?.scrollToEnd({ animated: true });
   }, [conversation.entries.length, busy]);
 
-  async function send(question: string) {
+  /** `spoken`: asked by voice (Sesli Rehber), so the answer comes short and is read aloud at once. */
+  async function send(question: string, spoken = false) {
     if (closed || busy || archiveId || signedOut || question.trim().length === 0) return;
+    // A long spoken question is cut at a word to what Rehber takes; a typed one cannot be sent.
+    if (spoken && question.length > QUESTION_MAX) {
+      const cut = question.lastIndexOf(" ", QUESTION_MAX);
+      question = question.slice(0, cut > 0 ? cut : QUESTION_MAX);
+    }
     setFreshFrom(conversation.entries.length);
     setDraft("");
+    setVoiceError(null);
+    stopAnswer();
     setStatus("Yanıt hazırlanıyor.");
     announce("Yanıt hazırlanıyor.");
-    const response = await ask(key, question, asset);
+    const response = await ask(key, question, asset, { spoken });
     if (response) {
-      const spoken = answerParts(response.answer, response.citations)
+      const plain = answerParts(response.answer, response.citations)
         .map((part) => (part.kind === "text" ? part.text : ""))
         .join("");
-      setStatus(spoken);
-      announce(spoken);
+      setStatus(plain);
+      // Read aloud, the answer is not announced too: a screen reader would talk over the voice.
+      if (spoken && shown.current === key) void speakAnswer(response.answer, plain);
+      else announce(plain);
     } else {
       setStatus("");
     }
@@ -224,9 +256,13 @@ export default function AssistantScreen() {
               <Text style={styles.helloText} accessibilityRole={closed ? "alert" : "header"}>
                 {closed ? "Rehber şu an kapalı" : asset ? `${name ?? "Bu eser"} hakkında ne merak ediyorsun?` : "Nasıl yardımcı olabilirim?"}
               </Text>
-              {closed && (
+              {closed ? (
                 <Text color="textSecondary" style={styles.center}>
                   Eserler, harita ve rotalar çalışmaya devam ediyor. Biraz sonra tekrar bak.
+                </Text>
+              ) : (
+                <Text variant="caption" color="textSecondary" style={styles.center}>
+                  Mikrofona dokunup sesli de sorabilirsin. Ses yazıya çevrilmek için EVREN yapay zekâ servisine gönderilir, saklanmaz.
                 </Text>
               )}
             </View>
@@ -305,10 +341,17 @@ export default function AssistantScreen() {
             </ScrollView>
           )}
           <View style={styles.column}>
+            {voiceError && (
+              <Text variant="caption" color="warning" accessibilityRole="alert" style={styles.voiceError}>
+                {voiceError}
+              </Text>
+            )}
             {archiveId ? (
               archived && <ArchiveBar onStartNew={startNew} />
             ) : (
-              !signedOut && <Composer draft={draft} onChange={setDraft} onSend={() => void send(draft)} busy={busy} closed={closed} />
+              !signedOut && (
+                <Composer draft={draft} onChange={setDraft} onSend={() => void send(draft)} busy={busy} closed={closed} voice={voice} />
+              )
             )}
           </View>
         </View>
@@ -382,12 +425,69 @@ function IconButton({ icon, label, hint, onPress }: { icon: IconName; label: str
   );
 }
 
-/** The field: a soft grey box, the question growing in it, a round send button in its corner. */
-function Composer({ draft, onChange, onSend, busy, closed }: { draft: string; onChange: (text: string) => void; onSend: () => void; busy: boolean; closed: boolean }) {
+/**
+ * The field: a soft grey box, the question growing in it, a round button in its corner. Empty,
+ * the button is the microphone (Sesli Rehber); while listening the box shows the voice's level
+ * and the button stops and sends.
+ */
+function Composer({
+  draft,
+  onChange,
+  onSend,
+  busy,
+  closed,
+  voice,
+}: {
+  draft: string;
+  onChange: (text: string) => void;
+  onSend: () => void;
+  busy: boolean;
+  closed: boolean;
+  voice: VoiceQuestion;
+}) {
   const { colors: c } = useTheme();
   const { textScale } = useUi();
   const length = draft.trim().length;
   const canSend = !closed && !busy && length > 0 && length <= QUESTION_MAX;
+  const listening = voice.phase !== "idle";
+  // The microphone stands in for "Gönder" while there is nothing typed.
+  const canListen = !closed && !busy && (length === 0 || listening);
+
+  if (listening) {
+    const recording = voice.phase === "recording";
+    return (
+      <View style={styles.composerWrap}>
+        <View style={[styles.composer, styles.listening, { backgroundColor: c.surfaceRaised }]}>
+          <View style={styles.levels} aria-hidden>
+            {LEVEL_BARS.map((weight, i) => (
+              <View
+                key={i}
+                style={[styles.levelBar, { backgroundColor: c.text, height: 4 + Math.round(18 * voice.level * weight) }]}
+              />
+            ))}
+          </View>
+          <Text style={styles.flex} accessibilityLiveRegion="polite">
+            {recording ? `Dinliyorum… ${voice.seconds} sn` : "Anlıyorum…"}
+          </Text>
+          {recording ? (
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Bitir ve gönder"
+              hitSlop={4}
+              onPress={voice.toggle}
+              style={({ pressed }) => [styles.send, { backgroundColor: c.text }, pressed && styles.pressed]}
+            >
+              <Ionicons name="stop" size={18} color={c.background} />
+            </Pressable>
+          ) : (
+            <View style={styles.send}>
+              <ActivityIndicator color={c.text} accessibilityLabel="Ses yazıya çevriliyor" />
+            </View>
+          )}
+        </View>
+      </View>
+    );
+  }
 
   // Web: Enter sends, Shift+Enter starts a new line.
   function onKeyPress(event: TextInputKeyPressEvent) {
@@ -424,26 +524,64 @@ function Composer({ draft, onChange, onSend, busy, closed }: { draft: string; on
             {length > QUESTION_MAX ? `${length}/${QUESTION_MAX}` : `${QUESTION_MAX - length}`}
           </Text>
         )}
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel="Gönder"
-          accessibilityState={{ disabled: !canSend }}
-          disabled={!canSend}
-          // Drawn 36pt; the target is 44.
-          hitSlop={4}
-          onPress={onSend}
-          style={({ pressed }) => [styles.send, { backgroundColor: canSend ? c.text : c.border }, pressed && styles.pressed]}
-        >
-          <Ionicons name="arrow-up" size={20} color={canSend ? c.background : c.textSecondary} />
-        </Pressable>
+        {length === 0 ? (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Sesli sor"
+            accessibilityHint="Dokun ve sorunu söyle; bitirince tekrar dokun"
+            accessibilityState={{ disabled: !canListen }}
+            disabled={!canListen}
+            // Drawn 36pt; the target is 44.
+            hitSlop={4}
+            onPress={voice.toggle}
+            style={({ pressed }) => [styles.send, { backgroundColor: canListen ? c.text : c.border }, pressed && styles.pressed]}
+          >
+            <Ionicons name="mic" size={19} color={canListen ? c.background : c.textSecondary} />
+          </Pressable>
+        ) : (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Gönder"
+            accessibilityState={{ disabled: !canSend }}
+            disabled={!canSend}
+            // Drawn 36pt; the target is 44.
+            hitSlop={4}
+            onPress={onSend}
+            style={({ pressed }) => [styles.send, { backgroundColor: canSend ? c.text : c.border }, pressed && styles.pressed]}
+          >
+            <Ionicons name="arrow-up" size={20} color={canSend ? c.background : c.textSecondary} />
+          </Pressable>
+        )}
       </View>
     </View>
   );
 }
 
+/** How tall each level bar grows with the voice, middle ones most. */
+const LEVEL_BARS = [0.5, 0.8, 1, 0.8, 0.5];
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+  },
+  listening: {
+    alignItems: "center",
+    gap: spacing.sm,
+    paddingLeft: spacing.md,
+  },
+  levels: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 3,
+    height: 24,
+  },
+  levelBar: {
+    width: 3,
+    borderRadius: 2,
+  },
+  voiceError: {
+    marginBottom: spacing.xs,
+    textAlign: "center",
   },
   flex: {
     flex: 1,

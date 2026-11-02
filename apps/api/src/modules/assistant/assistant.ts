@@ -36,6 +36,13 @@ export function systemPrompt(lang: Lang, today: string, cities: string[]): strin
   ].join("\n");
 }
 
+/**
+ * Added for a question asked by voice: the answer is heard, not read, so it is short and
+ * written as speech. The sources rule (2) still holds; the app shows them under the answer.
+ */
+export const SPOKEN_RULE =
+  "Bu soru sesli soruldu ve cevabın sesli okunacak: en çok 3 kısa cümle yaz, liste ya da madde kullanma, konuşur gibi sade yaz. Kaynak numaralarını [n] yine yaz; okunmazlar.";
+
 /** Earlier answers' markers pointed at sources this question does not have. */
 const stripMarkers = (text: string) => text.replace(/\s*\[\d+(?:\s*,\s*\d+)*\]/g, "");
 
@@ -83,6 +90,8 @@ export interface AskInput {
   hour: number;
   /** The visitor's position, for directions from where they are. */
   origin?: { lat: number; lng: number } | undefined;
+  /** Asked by voice; the answer is read aloud (Sesli Rehber). */
+  spoken?: boolean | undefined;
 }
 
 export interface AskResult {
@@ -106,7 +115,7 @@ async function servedCities(api: ToolContext["api"], lang: Lang): Promise<string
 /** Answers one question: the model may call up to `MAX_TOOL_CALLS` tools, then writes the answer. */
 export async function ask(
   model: ChatModel,
-  { message, history, assetId, lang, today, hour, origin }: AskInput,
+  { message, history, assetId, lang, today, hour, origin, spoken = false }: AskInput,
   tools: Omit<ToolContext, "sources" | "lang" | "today" | "hour" | "origin">,
   signal: AbortSignal,
 ): Promise<AskResult> {
@@ -123,6 +132,7 @@ export async function ask(
       system += `\n\nZiyaretçi bu eserin sayfasından soruyor. Bu eser kaynak [${ref}]; ondan aldığın her bilginin sonuna [${ref}] yaz.\n<eser_sayfasi>\n${fenced}\n</eser_sayfasi>`;
     }
   }
+  if (spoken) system += `\n\n${SPOKEN_RULE}`;
   const messages: ChatMessage[] = [{ role: "system", content: system }];
   for (const turn of history) {
     messages.push({ role: turn.role, content: turn.role === "assistant" ? stripMarkers(turn.content) : turn.content });
