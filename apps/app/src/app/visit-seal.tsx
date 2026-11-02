@@ -17,7 +17,7 @@ import { DataErrorView } from "@/components/resource-view";
 import { communityAvailable, DataError, sendVisitProof, useAsset, useCommunity } from "@/data";
 import { announce } from "@/lib/announce";
 import { currentPosition, type Position } from "@/lib/current-position";
-import { unlockAsset } from "@/lib/unlocked-assets";
+import { unlockAsset, unlockForDemo } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
@@ -64,7 +64,7 @@ export default function VisitSealScreen() {
   // A simulation for the demo: "Kilidi aç" unlocks the asset on the map as a sealed visit would.
   const unlock = asset
     ? () => {
-        void unlockAsset(asset.id);
+        void unlockForDemo(asset.id);
         announce(`${asset.name} kilidi açıldı.`);
         setUnlocked(true);
       }
@@ -193,7 +193,7 @@ function SealCamera({ asset, onUnlock }: { asset: AssetDetail; onUnlock?: () => 
       go({ name: "sending" });
       try {
         const result = await sendVisitProof(asset.id, { mediaKey: photo.key, ...(position ?? {}) }, nickname);
-        void unlockAsset(asset.id);
+        unlockAsset(asset.id);
         go({ name: "sealed", result });
         announce(`Ziyaretin mühürlendi.${result.newAchievements.length ? ` ${result.newAchievements.length} yeni rozet kazandın.` : ""}`);
       } catch (error) {

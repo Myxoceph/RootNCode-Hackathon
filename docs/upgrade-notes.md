@@ -7,6 +7,23 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-03 · Rotalar ve açılan eserler hesaba bağlı (migration, sözleşme 0.3.21)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. `npm run db:deploy --workspace @vagabonds/api` (`user_route` tablosu).
+
+Değişenler:
+- Rotalarım artık hesapta (`GET/POST /me/routes`, `DELETE /me/routes/:id`): her cihazda aynı liste, başka hesap ya da
+  çıkış yapmış ziyaretçi aynı telefonda başkasının rotasını görmüyor. Giriş yapmadan kaydedilen rota yalnızca o
+  oturumda kalır. Telefondaki eski ortak liste (`vagabonds-saved-routes`) siliniyor; kimin olduğu bilinmiyordu.
+- Haritada açılan eserler `GET /me/visits`'ten geliyor (mühürlenen ziyaretler). "Kilidi aç" demo simülasyonu o
+  hesap için telefonda tutuluyor (`vagabonds-unlocked-assets:<hesap>`); eski ortak liste siliniyor.
+- Uygulamada değişen yalnızca veri katmanı (`lib/saved-routes.ts`, `lib/unlocked-assets.ts`, `data/community.ts`);
+  ekranlar aynı.
+
+---
+
 ## 2026-11-02 · Gizemli bağlar: `GET /me/connections` (sözleşme 0.3.20)
 
 Kimler: **uygulama ekibi** (kurulum adımı yok)
