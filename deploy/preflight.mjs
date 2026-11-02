@@ -1,6 +1,9 @@
 /**
  * Checks the demo stack before it goes on stage (docs/deploy.md, "Final günü"). Read-only, except one
  * question to the assistant: `/chat/status` only says the model is configured, so a real answer is asked.
+ * Only accounts ask, so the check signs in as its own account (PREFLIGHT_PASSWORD, from deploy/.env
+ * through deploy/demo.sh), opens it on first use, and deletes its conversation afterwards: a demo
+ * account's history never shows the check's question.
  *
  *   npm run demo:check                                         the stack on this machine (Caddy on 127.0.0.1:8080)
  *   npm run demo:check -- https://vagabonds.allbytech.com      through the tunnel, as a visitor sees it
@@ -16,6 +19,7 @@ const MIN_ASSETS = 500;
 /** docs/deploy.md: Docker's disk file grows with every build and breaks when the disk fills. */
 const MIN_FREE_GB = 10;
 const TIMEOUT_MS = 30_000;
+const PREFLIGHT_USERNAME = "onkontrol";
 
 let failed = 0;
 function report(ok, name, detail) {
@@ -74,17 +78,39 @@ await check("web app", async () => {
   return [status === 200 && String(body).includes("<html"), `${status}`];
 });
 
+/** The check's own account: signs in, or opens it the first time. Null without a password. */
+async function preflightToken() {
+  const password = process.env.PREFLIGHT_PASSWORD;
+  if (!password) return null;
+  const post = (path, payload) =>
+    get(`${BASE}/api${path}`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
+  let session = await post("/auth/login", { username: PREFLIGHT_USERNAME, password });
+  if (session.status === 401) session = await post("/auth/register", { username: PREFLIGHT_USERNAME, password, nickname: "Ön kontrol" });
+  if (session.status !== 200) throw new Error(`sign-in ${session.status} ${session.body.error?.code ?? ""}`);
+  return session.body.token;
+}
+
 await check("assistant", async () => {
   const s = await get(`${BASE}/api/chat/status`);
   if (s.body.available !== true) return [false, "turned off (the app hides the chat)"];
-  const started = Date.now();
-  const { status, body } = await get(`${BASE}/api/chat`, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ message: "Bursa Ulu Camii'ni kim yaptırdı?" }),
-  });
-  const seconds = ((Date.now() - started) / 1000).toFixed(1);
-  return [status === 200, `${status} ${s.body.model} ${seconds} s${status === 200 ? "" : ` ${body.error?.code ?? ""}`}`];
+  const token = await preflightToken();
+  if (token === null) return [false, "no PREFLIGHT_PASSWORD in deploy/.env (docs/deploy.md)"];
+  const authorization = `Bearer ${token}`;
+  try {
+    const started = Date.now();
+    const { status, body } = await get(`${BASE}/api/chat`, {
+      method: "POST",
+      headers: { "content-type": "application/json", authorization },
+      body: JSON.stringify({ message: "Bursa Ulu Camii'ni kim yaptırdı?" }),
+    });
+    const seconds = ((Date.now() - started) / 1000).toFixed(1);
+    const saved = status === 200 && body.conversationId !== null;
+    const detail = status === 200 ? (saved ? "" : " not saved") : ` ${body.error?.code ?? ""}`;
+    return [saved, `${status} ${s.body.model} ${seconds} s${detail}`];
+  } finally {
+    await get(`${BASE}/api/me/conversations`, { method: "DELETE", headers: { authorization } }).catch(() => {});
+    await get(`${BASE}/api/auth/logout`, { method: "POST", headers: { authorization } }).catch(() => {});
+  }
 });
 
 await check("transit (Konya pilot)", async () => {
