@@ -4,7 +4,7 @@ import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text, u
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ActivityIndicator, Animated, Easing, Platform, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { ActivityIndicator, Animated, Easing, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { MarkerTracker } from "@/ar/marker-tracker";
@@ -16,6 +16,7 @@ import { DataErrorView } from "@/components/resource-view";
 import { communityAvailable, DataError, sendVisitProof, useAsset, useCommunity } from "@/data";
 import { announce } from "@/lib/announce";
 import { currentPosition, type Position } from "@/lib/current-position";
+import { unlockAsset } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
@@ -54,9 +55,21 @@ export default function VisitSealScreen() {
   const web = Platform.OS === "web";
   const asset = resource.status === "success" ? resource.data : null;
   const target = asset ? visitSealTarget(asset) : null;
+  const router = useRouter();
+  const [unlocked, setUnlocked] = useState(false);
+  // A simulation for the demo: "Kilidi aç" unlocks the asset on the map as a sealed visit would.
+  const unlock = asset
+    ? () => {
+        void unlockAsset(asset.id);
+        announce(`${asset.name} kilidi açıldı.`);
+        setUnlocked(true);
+      }
+    : undefined;
 
   let body;
-  if (resource.status === "loading" || (!web && screenReader === null)) {
+  if (asset && unlocked) {
+    body = <Sealed asset={asset} result={{ verified: false, firstVisit: true, newAchievements: [] }} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/"))} />;
+  } else if (resource.status === "loading" || (!web && screenReader === null)) {
     body = (
       <View style={styles.center}>
         <ActivityIndicator color={cameraColors.gold} size="large" accessibilityLabel="Yükleniyor" />
@@ -74,12 +87,22 @@ export default function VisitSealScreen() {
         <Text colorValue={cameraColors.text} style={styles.centerText}>
           {asset ? "Bu eser için henüz mühür kısmı belirlenmedi." : "Eser bulunamadı."}
         </Text>
+        {unlock && <UnlockButton onPress={unlock} />}
       </View>
     );
   } else if (web || screenReader) {
-    body = <SealGuide asset={asset} />;
+    body = (
+      <>
+        <SealGuide asset={asset} />
+        {unlock && (
+          <View style={[styles.unlockFloat, { bottom: insets.bottom + spacing.lg }]}>
+            <UnlockButton onPress={unlock} />
+          </View>
+        )}
+      </>
+    );
   } else {
-    body = <SealCamera asset={asset} />;
+    body = <SealCamera asset={asset} onUnlock={unlock} />;
   }
 
   return (
@@ -92,6 +115,23 @@ export default function VisitSealScreen() {
         <CameraTopBar title="Ziyaret Mührü" subtitle={asset?.name ?? "Eser"} />
       </View>
     </View>
+  );
+}
+
+/** "Kilidi aç": seals the visit at once, standing in for recognising the part (a demo simulation). */
+function UnlockButton({ onPress }: { onPress: () => void }) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityHint="Eserin kilidini açar ve ziyaretini mühürler"
+      onPress={onPress}
+      style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.85, transform: [{ scale: 0.98 }] }]}
+    >
+      <Ionicons name="lock-open" size={18} color={cameraColors.onGold} />
+      <Text variant="label" colorValue={cameraColors.onGold} style={styles.unlockText}>
+        Kilidi aç
+      </Text>
+    </Pressable>
   );
 }
 
@@ -118,7 +158,7 @@ function SealGuide({ asset }: { asset: AssetDetail }) {
   );
 }
 
-function SealCamera({ asset }: { asset: AssetDetail }) {
+function SealCamera({ asset, onUnlock }: { asset: AssetDetail; onUnlock?: () => void }) {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { user } = useCommunity();
@@ -236,6 +276,7 @@ function SealCamera({ asset }: { asset: AssetDetail }) {
       </View>
 
       <View style={[styles.panel, { paddingBottom: insets.bottom + spacing.lg }]} accessibilityLiveRegion="polite">
+        {onUnlock && <UnlockButton onPress={onUnlock} />}
         <PanelBody phase={phase} hold={hold} onRetry={retry} onNickname={(nickname, position) => void send(position, nickname)} />
       </View>
     </View>
@@ -357,7 +398,7 @@ function NicknameStep({ onSubmit }: { onSubmit: (nickname: string) => void }) {
 }
 
 /** The seal comes down like a stamp, then what the visit earned. */
-function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: VisitResponse; onDone: () => void }) {
+function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<VisitResponse, "verified" | "firstVisit" | "newAchievements">; onDone: () => void }) {
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
   const stamp = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
@@ -444,10 +485,30 @@ const styles = StyleSheet.create({
   flex: {
     flex: 1,
   },
+  unlock: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "stretch",
+    gap: spacing.sm,
+    minHeight: 52,
+    borderRadius: radius.full,
+    backgroundColor: cameraColors.gold,
+  },
+  unlockText: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 17,
+  },
+  unlockFloat: {
+    position: "absolute",
+    left: spacing.lg,
+    right: spacing.lg,
+  },
   center: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    gap: spacing.xl,
     padding: spacing.xl,
   },
   centerText: {

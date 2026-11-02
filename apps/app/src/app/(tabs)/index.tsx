@@ -12,6 +12,7 @@ import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapSearch } from "@/components/map-search";
 import { CITY_LANDMARKS, useCities, useCityMapAssets } from "@/data";
 import { announce } from "@/lib/announce";
+import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { areaAround, assetCategory, cityLandmark, MapLibreMap, mapTiers, useMapStatusBar, useMapTheme, type MapCity, type MapPin, type MapProvince, type MapProvinces } from "@/map";
 
@@ -46,6 +47,7 @@ export default function MapScreen() {
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
   const router = useRouter();
+  const unlocked = useUnlockedAssets();
   const cities = useCities();
   const [mapError, setMapError] = useState<string | null>(null);
   const [selectedPlate, setSelectedPlate] = useState<number | null>(null);
@@ -114,6 +116,7 @@ export default function MapScreen() {
             category: assetCategory(asset.type.code),
             landmark: asset.id === landmark?.id,
             tier: tiers.get(asset.id) ?? 0,
+            unlocked: unlocked.has(asset.id),
           })),
           focus: landmark ? areaAround(landmark) : null,
         }
@@ -226,6 +229,7 @@ export default function MapScreen() {
         onSelectProvince={openCity}
         onLeaveCity={backToTurkey}
         onCityLanded={onCityLanded}
+        onUnlock={(id) => router.push({ pathname: "/visit-seal", params: { asset: id } })}
         onError={setMapError}
         fitPadding={fitPadding}
         provinces={provinces}

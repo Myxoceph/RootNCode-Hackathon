@@ -14,7 +14,7 @@ const DEFAULT_PADDING = { top: 48, right: 48, bottom: 48, left: 48 };
  * the commands sent to it when pins or the selection change, and its events.
  */
 export function useMapPage(
-  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity, onCityLanded }: AssetMapProps,
+  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity, onCityLanded, onUnlock }: AssetMapProps,
   send: (command: MapPageCommand) => void,
 ) {
   const { scheme, colors: c } = useMapTheme();
@@ -78,6 +78,7 @@ export function useMapPage(
     if (event?.type === "province") onSelectProvince?.(event.plate);
     if (event?.type === "leaveCity") onLeaveCity?.();
     if (event?.type === "cityLanded") onCityLanded?.(event.plate);
+    if (event?.type === "unlock") onUnlock?.(event.id);
     if (event?.type === "error") onError?.(event.message);
     if (event?.type === "ready" && !ready.current) {
       ready.current = true;
