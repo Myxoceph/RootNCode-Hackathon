@@ -224,6 +224,10 @@ adresini değiştirmeden (`https://vagabonds.allbytech.com/api`) dener. Mac ayn�
 durdur (Ctrl-C), sunucuda `sudo systemctl start vagabonds-tunnel`. Hangisinin sunduğunu `/api/health`'teki
 `uptimeSeconds` gösterir.
 
+**Yedek:** `vagabonds-backup.timer` her saat başı yedek alır (`deploy/oracle/backup.sh`, son 48'i tutar); her
+güncellemeden önce de bir yedek alınır, bir migration ters giderse oradan dönülür. Mac yarım saatte bir en yenisini
+kendine çeker (aşağıda).
+
 **Veri:** Sunucunun veritabanı 2026-11-03'te Mac'in yedeğinden geldi (hesaplar, ziyaretler, konuşmalar). Ekip
 deneme hesaplarıyla dener, demo hesaplarına dokunmaz. Final sabahı temiz bir yedek geri yüklenebilir:
 `deploy/demo.sh backup` ile alınan `.dump`'ı `pg_restore --clean --if-exists` ile (bkz. "Kayıtlar, yedek, sorun
@@ -231,6 +235,34 @@ giderme").
 
 **Ücretsiz sunucunun kuralı:** Oracle, 7 gün boyunca işlemcisi çok az kullanılan ücretsiz sunucuları
 kapatabiliyor. Ekip kullandıkça sorun değil; uzun süre kullanılmayacaksa haftada bir bakın.
+
+## Oracle çökerse: Mac'ten 5 dakikada
+
+Sunucu cevap vermiyorsa, siliniyorsa ya da sahneden önce bir şey ters giderse adres Mac'e alınır. Mac'te Docker
+Desktop açık olsun; gerisini tek komut yapar:
+
+```bash
+deploy/failover.sh takeover
+```
+
+1. Sunucudaki tüneli durdurur (sunucu ölüyse zaten düşmüştür).
+2. Sunucudan en yeni yedeği çeker; çekemezse Mac'teki en son yedeği kullanır.
+3. Mac'teki yığını açar (yalnızca değişeni derler).
+4. Yedeği yükler (`deploy/demo.sh restore`, ~20 sn).
+5. Tüneli Mac'te açar, adresin gerçekten Mac'e geldiğini `uptimeSeconds` ile doğrular, tünelden ön kontrol yapar.
+
+Mac'in kodu `dev`'in gerisindeyse 3. adım birkaç dakika derler; Mac'te arada bir `git pull && deploy/demo.sh up`
+bunu kısaltır. Kaybedilen veri: Mac'teki en yeni yedekten sonrası (en çok ~1 saat).
+
+**Mac'in yedekleri:** `deploy/failover.sh install-pull` (Mac'te bir kez) yarım saatte bir sunucunun en yeni
+yedeğini `deploy/backups/oracle/`'a çeken bir LaunchAgent kurar (son 24'ü tutar; kayıt: `deploy/backups/pull.log`).
+Elle: `deploy/failover.sh pull`.
+
+**Sunucu dönünce:** `deploy/failover.sh handback`: Mac'te biriken veriyi yedekleyip sunucuya yükler, Mac'teki
+tüneli kapatır, sunucudakini açar ve ön kontrolü yapar.
+
+**Hangisi sunuyor:** `deploy/failover.sh status` (adresin, sunucunun ve Mac'in `uptimeSeconds`'ı ve Mac'teki en
+yeni yedeğin yaşı). Gerekenler `deploy/.env`'de: `ORACLE_SSH`, `ORACLE_SSH_KEY`.
 
 ## Final günü (MacBook Air M4)
 
