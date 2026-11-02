@@ -1,5 +1,13 @@
 import { z } from "zod";
-import { AssetIdSchema, ContractVersionSchema, LangSchema } from "./asset.schema";
+import {
+  AssetIdSchema,
+  ConfidenceSchema,
+  ContractVersionSchema,
+  CoordinatesSchema,
+  LabeledCodeSchema,
+  LangSchema,
+  RelationDirectionSchema,
+} from "./asset.schema";
 
 /**
  * Başarımlar: visits to assets and approved contributions earn badges and points.
@@ -140,6 +148,44 @@ export const MyVisitsResponseSchema = z.strictObject({
   items: z.array(MyVisitSchema),
 });
 
+/**
+ * A bond of an asset the user has discovered (visited). Until the other asset is discovered too,
+ * only where it is comes with it: the map can make it glow, but what it is and why they are bound
+ * stay hidden. `same_complex` and `urban_context` bonds are not listed (a complex's own buildings,
+ * "right next to it"): only the ones that tell a story.
+ */
+export const ConnectionSchema = z.discriminatedUnion("revealed", [
+  z.strictObject({
+    revealed: z.literal(false),
+    /** The discovered asset. */
+    from: AssetIdSchema,
+    to: AssetIdSchema,
+    toCoordinates: CoordinatesSchema.nullable(),
+  }),
+  z.strictObject({
+    revealed: z.literal(true),
+    from: AssetIdSchema,
+    to: AssetIdSchema,
+    toCoordinates: CoordinatesSchema.nullable(),
+    toName: z.string().min(1),
+    type: LabeledCodeSchema,
+    /** `outgoing`: the bond is told from `from` ("its rent kept `to` going"); `incoming`: from `to`. */
+    direction: RelationDirectionSchema,
+    description: z.string().min(1),
+    confidence: ConfidenceSchema,
+  }),
+]);
+
+/**
+ * `GET /me/connections`: the bonds of every asset the user has discovered, an item per discovered
+ * end (a bond between two discovered assets comes once from each). Asked again after a visit.
+ */
+export const MyConnectionsResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  lang: LangSchema,
+  items: z.array(ConnectionSchema),
+});
+
 const I18n = z.strictObject({
   tr: z.string().trim().min(1).max(200),
   en: z.string().trim().min(1).max(200).nullable().optional(),
@@ -199,3 +245,5 @@ export type AdminAchievementInput = z.input<typeof AdminAchievementInputSchema>;
 export type AdminAchievementPatch = z.input<typeof AdminAchievementPatchSchema>;
 export type AdminAchievement = z.infer<typeof AdminAchievementSchema>;
 export type AdminAchievementsResponse = z.infer<typeof AdminAchievementsResponseSchema>;
+export type Connection = z.infer<typeof ConnectionSchema>;
+export type MyConnectionsResponse = z.infer<typeof MyConnectionsResponseSchema>;
