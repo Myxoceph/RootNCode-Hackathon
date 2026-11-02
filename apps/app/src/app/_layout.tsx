@@ -74,6 +74,7 @@ function ThemedStack() {
           <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
           {/* Draws its own header, with "Temizle" next to the title. */}
           <Stack.Screen name="assistant" options={{ headerShown: false, title: "Asistan" }} />
+          <Stack.Screen name="assistant-history" options={{ title: "Geçmiş konuşmalar", headerBackTitle: "Rehber" }} />
           <Stack.Screen name="ar-prototype" options={{ headerShown: false, title: "AR prototipi" }} />
           <Stack.Screen name="map-prototype" options={{ headerShown: false, title: "Harita prototipi" }} />
           <Stack.Screen name="+not-found" options={{ title: "Sayfa bulunamadı" }} />

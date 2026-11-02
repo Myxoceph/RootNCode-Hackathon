@@ -1,19 +1,25 @@
 import {
+  ChatConversationResponseSchema,
+  ChatConversationsResponseSchema,
   ChatResponseSchema,
   ChatStatusResponseSchema,
+  type ChatConversation,
+  type ChatConversationResponse,
   type ChatRequest,
   type ChatResponse,
 } from "@vagabonds/contracts";
 import { useEffect, useSyncExternalStore } from "react";
 
+import { accountToken, sessionRejected } from "./community";
 import { resolveApiUrl, resolveDataSourceKind } from "./config";
-import { DataError } from "./errors";
-import { request, statusError } from "./http";
+import { DataError, type SchemaParser } from "./errors";
+import { request, statusError, type RequestOptions } from "./http";
 
 /**
  * AI asistan (`POST /chat`): questions about the sites, trips and local food, answered by a
- * language model from the API's own data. The API is stateless; the app keeps the conversation
- * (../lib/chat.ts). With the mock source there is no model, so the entry points stay hidden.
+ * language model from the API's own data. Only accounts ask; the API saves each conversation
+ * (`/me/conversations`) and the app shows the one on its way (../lib/chat.ts). With the mock
+ * source there is no model, so the entry points stay hidden.
  */
 const assistantConfigured = resolveDataSourceKind() === "api";
 
@@ -76,26 +82,70 @@ export function useAssistantAvailable(): boolean | null {
   return useSyncExternalStore(subscribe, assistantAvailable, assistantAvailable);
 }
 
-/**
- * Sends one question with the last turns; every failure is a `DataError` with a message to show.
- * `signal` cancels it, e.g. when the conversation is cleared.
- */
-export async function askAssistant(body: ChatRequest, signal?: AbortSignal): Promise<ChatResponse> {
-  const answer = await request(`${resolveApiUrl()}/chat`, ChatResponseSchema, {
-    body,
-    signal,
-    timeoutMs: CHAT_TIMEOUT_MS,
+const SIGN_IN = "Rehber'i kullanmak için giriş yap.";
+
+/** A request as the signed-in account; a 401 signs out on this device too. */
+async function asAccount<T>(path: string, schema: SchemaParser<T>, options: Omit<RequestOptions, "token" | "errorFor"> = {}): Promise<T | null> {
+  const token = await accountToken();
+  if (token === null) throw new DataError("rejected", SIGN_IN, [path], "ACCOUNT_REQUIRED");
+  return request(`${resolveApiUrl()}${path}`, schema, {
+    ...options,
+    token,
     errorFor: (status, code, details) => {
+      if (status === 401) sessionRejected(token);
       // The model stopped answering: hide the entry points, and let the next screen ask /chat/status again.
       if (code === "ASSISTANT_UNAVAILABLE") setAvailable(false, false);
       return chatError(status, code, details);
     },
   });
-  // Never null: `allowNotFound` is not set.
-  return answer!;
 }
 
+/**
+ * Sends one question with the last turns; every failure is a `DataError` with a message to show.
+ * `signal` cancels it, e.g. when the conversation is cleared.
+ */
+export async function askAssistant(body: ChatRequest, signal?: AbortSignal): Promise<ChatResponse> {
+  // Never null: the API answers 200 with a body.
+  return (await asAccount("/chat", ChatResponseSchema, { body, signal, timeoutMs: CHAT_TIMEOUT_MS }))!;
+}
+
+/** The account's conversations, last asked first (`GET /me/conversations`). */
+export async function fetchConversations(): Promise<ChatConversation[]> {
+  return (await asAccount("/me/conversations", ChatConversationsResponseSchema))!.items;
+}
+
+/** A conversation and its messages as they were shown (`GET /me/conversations/:id`). */
+export async function fetchConversation(id: string): Promise<ChatConversationResponse> {
+  return (await asAccount(`/me/conversations/${encodeURIComponent(id)}`, ChatConversationResponseSchema))!;
+}
+
+// The three below answer 204: the schema is never read.
+
+/** "Yeni konuşma": the conversation becomes read-only and stays in the history. */
+export async function archiveConversation(id: string): Promise<void> {
+  await asAccount(`/me/conversations/${encodeURIComponent(id)}/archive`, ChatConversationsResponseSchema, { method: "POST" });
+}
+
+export async function deleteConversation(id: string): Promise<void> {
+  await asAccount(`/me/conversations/${encodeURIComponent(id)}`, ChatConversationsResponseSchema, { method: "DELETE" });
+}
+
+export async function deleteAllConversations(): Promise<void> {
+  await asAccount("/me/conversations", ChatConversationsResponseSchema, { method: "DELETE" });
+}
+
+/** What a conversation's error says; the code travels with it so the conversation can act on it. */
+const CONVERSATION_MESSAGES: Record<string, string> = {
+  ACCOUNT_REQUIRED: SIGN_IN,
+  UNAUTHORIZED: "Oturumun sona ermiş. Rehber'i kullanmak için yeniden giriş yap.",
+  CONVERSATION_ARCHIVED: "Bu konuşma arşivde. Sorunu yeni bir konuşmada gönder.",
+  CONVERSATION_FULL: "Bu konuşma çok uzadı. Sorunu yeni bir konuşmada gönder.",
+  CONVERSATION_NOT_FOUND: "Bu konuşma artık yok. Sorunu yeni bir konuşmada gönder.",
+};
+
 export function chatError(status: number, code: string | null, details: string[]): DataError {
+  const conversation = code ? CONVERSATION_MESSAGES[code] : undefined;
+  if (conversation) return new DataError("rejected", conversation, details, code);
   if (code === "ASSISTANT_BUSY") {
     return new DataError("unavailable", "Asistan şu an başka sorulara bakıyor. Birkaç saniye sonra tekrar dene.", details);
   }

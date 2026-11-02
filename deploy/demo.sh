@@ -27,7 +27,7 @@ case "${1:-}" in
     docker info > /dev/null 2>&1 || { echo "Docker is not running: open Docker Desktop"; exit 1; }
     [[ -f deploy/otp/data/graph.obj ]] || { echo "No Konya transit graph: run deploy/otp/prepare.sh once (docs/deploy.md)"; exit 1; }
     dc up -d --build --wait
-    node deploy/preflight.mjs
+    PREFLIGHT_PASSWORD=$(env_value PREFLIGHT_PASSWORD) node deploy/preflight.mjs
     ;;
   tunnel)
     # The token is the tunnel's secret: read from deploy/.env and passed in the environment, never on
@@ -44,7 +44,7 @@ case "${1:-}" in
       exit 1
     fi
     ;;
-  check) node deploy/preflight.mjs "${@:2}" ;;
+  check) PREFLIGHT_PASSWORD=$(env_value PREFLIGHT_PASSWORD) node deploy/preflight.mjs "${@:2}" ;;
   backup) backup ;;
   down)
     backup

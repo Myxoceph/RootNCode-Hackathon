@@ -18,13 +18,25 @@ function response(answer: string, citations: Array<{ ref: number; kind: "asset" 
 }
 
 const ULUCAMI = { ref: 1, kind: "asset" as const, id: "bursa-osmangazi-ulucami", title: "Ulucami" };
+const TOKEN = "vgb_account".padEnd(40, "x");
+const CONVERSATION = "4f0c3a52-2c1e-4d8a-9b9f-3e2d1c0b9a87";
+/** The account signed in on the device (`vagabonds-community-session`); Rehber answers accounts only. */
+function account(username: string | null = "gezgin") {
+  return {
+    user: { id: "0b9f6c2e-6d0e-4a55-8c1a-0e7d2f4b5a11", nickname: "Gezgin", username, role: "visitor", createdAt: "2026-10-25T08:00:00.000Z" },
+    token: TOKEN,
+  };
+}
+const KEY = "0b9f6c2e-6d0e-4a55-8c1a-0e7d2f4b5a11:general";
 
 /** A fetch whose answers the test hands out one request at a time. */
 function scriptedFetch() {
   const calls: Array<{ url: string; init: RequestInit; reply: (body: unknown, status?: number) => void }> = [];
   const fetch = vi.fn(
     (url: string, init: RequestInit) =>
-      new Promise<Response>((resolve) => calls.push({ url, init, reply: (body, status = 200) => resolve(Response.json(body, { status })) })),
+      new Promise<Response>((resolve) =>
+        calls.push({ url, init, reply: (body, status = 200) => resolve(status === 204 ? new Response(null, { status }) : Response.json(body, { status })) }),
+      ),
   );
   vi.stubGlobal("fetch", fetch);
   return { fetch, calls };
@@ -36,10 +48,13 @@ const sent = (init: RequestInit) => JSON.parse(init.body as string) as Record<st
 let chat: Chat;
 let assistant: Assistant;
 
-async function load(source: "api" | "mock" = "api") {
+async function load(source: "api" | "mock" = "api", session: ReturnType<typeof account> | null = account()) {
   vi.resetModules();
   vi.stubEnv("EXPO_PUBLIC_API_URL", API);
   vi.stubEnv("EXPO_PUBLIC_DATA_SOURCE", source);
+  const keychain = (await import("./mocks/secure-store")).store;
+  keychain.clear();
+  if (session) keychain.set("vagabonds-community-session", JSON.stringify(session));
   chat = await import("../src/lib/chat");
   assistant = await import("../src/data/assistant");
 }
@@ -116,14 +131,16 @@ describe("followUps", () => {
 });
 
 describe("historyFor", () => {
-  it("sends only the last six turns, oldest first, each cut to 2000 characters", () => {
-    const entries = Array.from({ length: 8 }, (_, i) =>
+  it("sends only the last twelve turns, oldest first, each cut to 2000 characters", () => {
+    const entries = Array.from({ length: 14 }, (_, i) =>
       i % 2 === 0
         ? { id: i, role: "user" as const, text: `soru ${i}` }
-        : { id: i, role: "assistant" as const, response: response(i === 7 ? "x".repeat(2100) : `cevap ${i}`) as never },
+        : { id: i, role: "assistant" as const, response: response(i === 13 ? "x".repeat(2100) : `cevap ${i}`) as never },
     );
     const history = chat.historyFor(entries);
-    expect(history.map((turn) => turn.content.slice(0, 7))).toEqual(["soru 2", "cevap 3", "soru 4", "cevap 5", "soru 6", "xxxxxxx"]);
+    expect(history.map((turn) => turn.content.slice(0, 8))).toEqual([
+      "soru 2", "cevap 3", "soru 4", "cevap 5", "soru 6", "cevap 7", "soru 8", "cevap 9", "soru 10", "cevap 11", "soru 12", "xxxxxxxx",
+    ]);
     expect(history.at(-1)!.content).toHaveLength(2000);
     expect(history[1]!.role).toBe("assistant");
   });
@@ -174,7 +191,7 @@ describe("asking", () => {
     expect(calls[0]!.init.signal?.aborted).toBe(true);
     calls[0]!.reply(response("Merhaba!"));
     expect(await asked).toBeNull();
-    expect(readConversation("general")).toEqual({ entries: [], pending: null, failed: null });
+    expect(readConversation("general")).toEqual({ entries: [], pending: null, failed: null, conversationId: null, archived: null });
   });
 
   it("does not give a cleared question's answer to the same question asked again", async () => {
@@ -200,6 +217,98 @@ describe("asking", () => {
       "Bu eserin hikâyesi nedir?",
       "Yeni cevap.",
     ]);
+  });
+});
+
+describe("saved conversations", () => {
+  const conversation = (archived: boolean, assetId: string | null = null) => ({
+    id: CONVERSATION,
+    title: "Kim yaptırdı?",
+    assetId,
+    assetName: assetId ? "Ulucami" : null,
+    messageCount: 2,
+    createdAt: "2026-11-02T08:00:00.000Z",
+    updatedAt: "2026-11-02T08:00:00.000Z",
+    archived,
+  });
+  const stored = [
+    { role: "user", text: "Kim yaptırdı?", createdAt: "2026-11-02T08:00:00.000Z" },
+    { role: "assistant", response: { ...response("Yıldırım Bayezid [1].", [ULUCAMI]), conversationId: CONVERSATION }, createdAt: "2026-11-02T08:00:00.000Z" },
+  ];
+
+  it("asks as the account and continues the conversation the first answer was saved in", async () => {
+    const { calls } = scriptedFetch();
+    const first = chat.ask(KEY, "Kim yaptırdı?");
+    await flush();
+    expect((calls[0]!.init.headers as Record<string, string>).Authorization).toBe(`Bearer ${TOKEN}`);
+    expect(sent(calls[0]!.init)).not.toHaveProperty("conversationId");
+    calls[0]!.reply({ ...response("Bayezid."), conversationId: CONVERSATION });
+    await first;
+    expect(readConversation(KEY).conversationId).toBe(CONVERSATION);
+
+    const second = chat.ask(KEY, "Ne zaman?");
+    await flush();
+    expect(sent(calls[1]!.init).conversationId).toBe(CONVERSATION);
+    // Archived on another phone: the question can go out again in a new conversation.
+    calls[1]!.reply({ error: { code: "CONVERSATION_ARCHIVED", message: "archived" } }, 409);
+    await second;
+    expect(readConversation(KEY)).toMatchObject({ conversationId: null, failed: { message: expect.stringContaining("arşivde") } });
+  });
+
+  it("archives the conversation on the API when a new one starts", async () => {
+    const { calls } = scriptedFetch();
+    const first = chat.ask(KEY, "Merhaba");
+    await flush();
+    calls[0]!.reply({ ...response("Merhaba!"), conversationId: CONVERSATION });
+    await first;
+    chat.clearConversation(KEY);
+    await flush();
+    expect(calls[1]!.url).toBe(`${API}/me/conversations/${CONVERSATION}/archive`);
+    expect(calls[1]!.init.method).toBe("POST");
+    calls[1]!.reply(null, 204);
+    expect(readConversation(KEY).entries).toEqual([]);
+  });
+
+  it("brings back the page's open conversation once, and opens an archived one read-only", async () => {
+    const { calls } = scriptedFetch();
+    const resumed = chat.resumeConversation(KEY, undefined);
+    await flush();
+    expect(calls[0]!.url).toBe(`${API}/me/conversations`);
+    calls[0]!.reply({ version: "0.3.18", items: [conversation(false, "bursa-osmangazi-ulucami"), { ...conversation(false), id: CONVERSATION }] });
+    await flush();
+    expect(calls[1]!.url).toBe(`${API}/me/conversations/${CONVERSATION}`);
+    calls[1]!.reply({ version: "0.3.18", conversation: conversation(false), messages: stored });
+    await resumed;
+    expect(readConversation(KEY)).toMatchObject({ conversationId: CONVERSATION, archived: null });
+    expect(readConversation(KEY).entries.map((entry) => entry.role)).toEqual(["user", "assistant"]);
+    await chat.resumeConversation(KEY, undefined);
+    expect(calls).toHaveLength(2);
+
+    const opened = chat.openArchived(CONVERSATION);
+    await flush();
+    calls[2]!.reply({ version: "0.3.18", conversation: conversation(true), messages: stored });
+    await opened;
+    const key = chat.archiveKey(CONVERSATION);
+    expect(readConversation(key).archived).toMatchObject({ id: CONVERSATION, archived: true });
+    await expect(chat.ask(key, "Bir soru daha")).resolves.toBeNull();
+    expect(calls).toHaveLength(3);
+  });
+
+  it("asks nothing without an account", async () => {
+    await load("api", account(null));
+    const { calls } = scriptedFetch();
+    await expect(assistant.askAssistant({ message: "Merhaba" })).rejects.toThrow("giriş yap");
+    await load("api", null);
+    await expect(assistant.fetchConversations()).rejects.toThrow("giriş yap");
+    expect(calls).toHaveLength(0);
+  });
+
+  it("groups the history by day", () => {
+    const now = new Date(2026, 10, 2, 15);
+    expect(chat.dayGroup(new Date(2026, 10, 2, 9).toISOString(), now)).toBe("Bugün");
+    expect(chat.dayGroup(new Date(2026, 10, 1, 23).toISOString(), now)).toBe("Dün");
+    expect(chat.dayGroup(new Date(2026, 9, 29).toISOString(), now)).toBe("Bu hafta");
+    expect(chat.dayGroup(new Date(2026, 9, 2).toISOString(), now)).toBe("Ekim 2026");
   });
 });
 

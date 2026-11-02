@@ -4,11 +4,21 @@
  * Every response is also parsed with the shared contract.
  */
 import "dotenv/config";
-import { ChatResponseSchema, ChatStatusResponseSchema } from "@vagabonds/contracts";
+import { randomUUID } from "node:crypto";
+import {
+  CHAT_CONVERSATION_MAX_MESSAGES,
+  CHAT_CONVERSATIONS_KEPT,
+  ChatConversationResponseSchema,
+  ChatConversationsResponseSchema,
+  ChatResponseSchema,
+  ChatStatusResponseSchema,
+} from "@vagabonds/contracts";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildApp } from "../src/app.ts";
 import { createPrismaClient, type PrismaClient } from "../src/db/prisma.ts";
 import { createAssistantRepository } from "../src/modules/assistant/assistant.repository.ts";
+import { conversationTitle } from "../src/modules/assistant/conversations.repository.ts";
+import { hashToken, newToken } from "../src/modules/community/auth.ts";
 import { ModelError, type ChatMessage, type ChatModel, type ModelReply, type ToolSpec } from "../src/modules/assistant/assistant.model.ts";
 import { TOOL_SPECS } from "../src/modules/assistant/assistant.tools.ts";
 
@@ -44,13 +54,33 @@ const toolMessages = (messages: ChatMessage[]) =>
 describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", () => {
   let prisma: PrismaClient;
   const apps: Array<ReturnType<typeof buildApp>> = [];
+  const userIds: string[] = [];
+  const tag = randomUUID().slice(0, 8);
+  /** Most tests ask as this account. */
+  let account: { id: string; token: string };
 
-  beforeAll(() => {
+  /** An account (username and password) or an anonymous session, with a token. */
+  async function createUser(kind: "account" | "anonymous" = "account") {
+    const token = newToken();
+    const user = await prisma.app_user.create({
+      data: {
+        nickname: `sohbet-${kind}`,
+        ...(kind === "account" && { username: `t${tag}${userIds.length}`, password_hash: "scrypt$test" }),
+        sessions: { create: { token_hash: hashToken(token) } },
+      },
+    });
+    userIds.push(user.id);
+    return { id: user.id, token };
+  }
+
+  beforeAll(async () => {
     prisma = createPrismaClient(DATABASE_URL as string);
+    account = await createUser();
   });
 
   afterAll(async () => {
     await Promise.all(apps.map((app) => app.close()));
+    await prisma.app_user.deleteMany({ where: { id: { in: userIds } } });
     await prisma.$disconnect();
   });
 
@@ -60,8 +90,10 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
     return app;
   }
 
-  async function chat(app: ReturnType<typeof buildApp>, payload: object, status = 200) {
-    const response = await app.inject({ method: "POST", url: "/chat", payload });
+  const auth = (token: string) => ({ authorization: `Bearer ${token}` });
+
+  async function chat(app: ReturnType<typeof buildApp>, payload: object, status = 200, token = account.token) {
+    const response = await app.inject({ method: "POST", url: "/chat", payload, headers: auth(token) });
     expect(response.statusCode, response.body).toBe(status);
     return response;
   }
@@ -85,8 +117,11 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
   it("answers a repeated first question from memory, but not a follow-up", async () => {
     const { model, calls } = scriptedModel([answer("Merhaba!")]);
     const app = appWith(model);
-    const first = ChatResponseSchema.parse((await chat(app, { message: "Merhaba" })).json());
-    expect(ChatResponseSchema.parse((await chat(app, { message: "  merhaba " })).json())).toEqual(first);
+    const { conversationId, ...first } = ChatResponseSchema.parse((await chat(app, { message: "Merhaba" })).json());
+    const again = ChatResponseSchema.parse((await chat(app, { message: "  merhaba " })).json());
+    // The same answer, saved in a conversation of its own.
+    expect({ ...again, conversationId: undefined }).toEqual({ ...first, conversationId: undefined });
+    expect(again.conversationId).not.toBe(conversationId);
     expect(calls).toHaveLength(1);
 
     await chat(app, { message: "Merhaba", history: [{ role: "user", content: "Selam" }, { role: "assistant", content: "Selam!" }] });
@@ -112,6 +147,17 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
     const app = appWith(model);
     expect((await chat(app, { message: "  " }, 400)).json().error.code).toBe("INVALID_BODY");
     expect((await chat(app, { message: "x".repeat(501) }, 400)).json().error.code).toBe("INVALID_BODY");
+  });
+
+  it("takes the last six questions and answers as history, and no more", async () => {
+    const { model, calls } = scriptedModel([answer("-")]);
+    const app = appWith(model);
+    const turns = (n: number) =>
+      Array.from({ length: n }, (_, i) => ({ role: i % 2 === 0 ? ("user" as const) : ("assistant" as const), content: `tur ${i}` }));
+    await chat(app, { message: "Peki ya bu?", history: turns(12) });
+    expect(calls).toHaveLength(1);
+    expect(calls[0]!.messages.filter((m) => m.role !== "system").map((m) => m.content)).toEqual([...turns(12).map((turn) => turn.content), "Peki ya bu?"]);
+    expect((await chat(app, { message: "Peki ya bu?", history: turns(13) }, 400)).json().error.code).toBe("INVALID_BODY");
   });
 
   it("searches, reads an asset and cites it; unknown markers are dropped", async () => {
@@ -232,5 +278,133 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
     expect((await chat(app, { message: "Üç" }, 503)).json().error.code).toBe("ASSISTANT_BUSY");
     release();
     await Promise.all(running);
+  });
+
+  describe("conversations", () => {
+    const get = (url: string, token: string) => app().inject({ method: "GET", url, headers: auth(token) });
+    let shared: ReturnType<typeof buildApp> | null = null;
+    function app() {
+      shared ??= appWith(scriptedModel([answer("Banisi Sultan Orhan'dır.")]).model);
+      return shared;
+    }
+
+    it("answers only accounts: 401 without a token, 403 to an anonymous session", async () => {
+      const response = await app().inject({ method: "POST", url: "/chat", payload: { message: "Merhaba" } });
+      expect([response.statusCode, response.json().error.code]).toEqual([401, "UNAUTHORIZED"]);
+      const anonymous = await createUser("anonymous");
+      expect((await chat(app(), { message: "Merhaba" }, 403, anonymous.token)).json().error.code).toBe("ACCOUNT_REQUIRED");
+      expect((await get("/me/conversations", anonymous.token)).statusCode).toBe(403);
+    });
+
+    it("saves each question and answer, and lists the conversation with its page", async () => {
+      const user = await createUser();
+      const first = ChatResponseSchema.parse((await chat(app(), { message: "Bunu kim yaptırdı?", assetId: HAMAM }, 200, user.token)).json());
+      expect(first.conversationId).toEqual(expect.any(String));
+      const next = ChatResponseSchema.parse(
+        (await chat(app(), { message: "Ne zaman?", assetId: HAMAM, conversationId: first.conversationId }, 200, user.token)).json(),
+      );
+      expect(next.conversationId).toBe(first.conversationId);
+
+      const list = ChatConversationsResponseSchema.parse((await get("/me/conversations", user.token)).json());
+      expect(list.items).toEqual([
+        expect.objectContaining({ id: first.conversationId, title: "Bunu kim yaptırdı?", assetId: HAMAM, messageCount: 4, archived: false }),
+      ]);
+      expect(list.items[0]!.assetName).toMatch(/Ördekli/);
+
+      const detail = ChatConversationResponseSchema.parse((await get(`/me/conversations/${first.conversationId}`, user.token)).json());
+      expect(detail.messages.map((m) => (m.role === "user" ? m.text : m.response.answer))).toEqual([
+        "Bunu kim yaptırdı?",
+        first.answer,
+        "Ne zaman?",
+        next.answer,
+      ]);
+      expect(detail.messages[1]).toMatchObject({ role: "assistant", response: { ...first, conversationId: null } });
+    });
+
+    it("archives the page's open conversation when a new one starts, and refuses questions to it", async () => {
+      const user = await createUser();
+      const old = ChatResponseSchema.parse((await chat(app(), { message: "İlk konuşma" }, 200, user.token)).json());
+      const onAsset = ChatResponseSchema.parse((await chat(app(), { message: "Eserde", assetId: HAMAM }, 200, user.token)).json());
+      const fresh = ChatResponseSchema.parse((await chat(app(), { message: "Yeni konuşma" }, 200, user.token)).json());
+
+      const items = ChatConversationsResponseSchema.parse((await get("/me/conversations", user.token)).json()).items;
+      const archived = Object.fromEntries(items.map((item) => [item.id, item.archived]));
+      // Another page's conversation stays open.
+      expect(archived).toEqual({ [old.conversationId!]: true, [onAsset.conversationId!]: false, [fresh.conversationId!]: false });
+      expect(items.map((item) => item.id)).toEqual([fresh.conversationId, onAsset.conversationId, old.conversationId]);
+
+      const refused = await chat(app(), { message: "Devam", conversationId: old.conversationId }, 409, user.token);
+      expect(refused.json().error.code).toBe("CONVERSATION_ARCHIVED");
+      const elsewhere = await chat(app(), { message: "Devam", conversationId: fresh.conversationId, assetId: HAMAM }, 400, user.token);
+      expect(elsewhere.json().error.code).toBe("CONVERSATION_PAGE_MISMATCH");
+    });
+
+    it("keeps conversations to their owner", async () => {
+      const owner = await createUser();
+      const other = await createUser();
+      const { conversationId } = ChatResponseSchema.parse((await chat(app(), { message: "Benim" }, 200, owner.token)).json());
+      expect((await chat(app(), { message: "Araya", conversationId }, 404, other.token)).json().error.code).toBe("CONVERSATION_NOT_FOUND");
+      expect((await get(`/me/conversations/${conversationId}`, other.token)).statusCode).toBe(404);
+      const remove = await app().inject({ method: "DELETE", url: `/me/conversations/${conversationId}`, headers: auth(other.token) });
+      expect(remove.statusCode).toBe(404);
+      expect(ChatConversationsResponseSchema.parse((await get("/me/conversations", other.token)).json()).items).toEqual([]);
+      expect((await get(`/me/conversations/${conversationId}`, owner.token)).statusCode).toBe(200);
+    });
+
+    it("archives, deletes one and deletes all", async () => {
+      const user = await createUser();
+      const a = ChatResponseSchema.parse((await chat(app(), { message: "Bir" }, 200, user.token)).json()).conversationId!;
+      const b = ChatResponseSchema.parse((await chat(app(), { message: "İki", assetId: HAMAM }, 200, user.token)).json()).conversationId!;
+      const post = (url: string) => app().inject({ method: "POST", url, headers: auth(user.token) });
+      const del = (url: string) => app().inject({ method: "DELETE", url, headers: auth(user.token) });
+
+      expect((await post(`/me/conversations/${b}/archive`)).statusCode).toBe(204);
+      expect((await post(`/me/conversations/${b}/archive`)).statusCode).toBe(204);
+      expect((await chat(app(), { message: "Devam", assetId: HAMAM, conversationId: b }, 409, user.token)).json().error.code).toBe(
+        "CONVERSATION_ARCHIVED",
+      );
+      expect((await del(`/me/conversations/${a}`)).statusCode).toBe(204);
+      expect((await get(`/me/conversations/${a}`, user.token)).statusCode).toBe(404);
+      expect((await del("/me/conversations")).statusCode).toBe(204);
+      expect(ChatConversationsResponseSchema.parse((await get("/me/conversations", user.token)).json()).items).toEqual([]);
+      expect((await post(`/me/conversations/${randomUUID()}/archive`)).statusCode).toBe(404);
+    });
+
+    it(`keeps the last ${CHAT_CONVERSATIONS_KEPT} conversations and refuses a full one`, async () => {
+      const user = await createUser();
+      const start = Date.now() - 60 * 60_000;
+      await prisma.chat_conversation.createMany({
+        data: Array.from({ length: CHAT_CONVERSATIONS_KEPT }, (_, i) => ({
+          user_id: user.id,
+          asset_id: HAMAM,
+          title: `eski ${i}`,
+          updated_at: new Date(start + i * 1000),
+          archived_at: new Date(start + i * 1000),
+        })),
+      });
+      await chat(app(), { message: "Elli birinci" }, 200, user.token);
+      const items = ChatConversationsResponseSchema.parse((await get("/me/conversations", user.token)).json()).items;
+      expect(items).toHaveLength(CHAT_CONVERSATIONS_KEPT);
+      expect(items.map((item) => item.title)).not.toContain("eski 0");
+      expect(items[0]!.title).toBe("Elli birinci");
+
+      const full = await prisma.chat_conversation.create({ data: { user_id: user.id, asset_id: HAMAM, title: "dolu" } });
+      await prisma.chat_message.createMany({
+        data: Array.from({ length: CHAT_CONVERSATION_MAX_MESSAGES - 1 }, (_, i) => ({
+          conversation_id: full.id,
+          role: "user",
+          content: `soru ${i}`,
+        })),
+      });
+      const refused = await chat(app(), { message: "Bir daha", assetId: HAMAM, conversationId: full.id }, 409, user.token);
+      expect(refused.json().error.code).toBe("CONVERSATION_FULL");
+    });
+
+    it("names a conversation after its first question, cut at a word", () => {
+      expect(conversationTitle("  Bursa'da   ne yenir?\n")).toBe("Bursa'da ne yenir?");
+      const long = conversationTitle(`${"Ulucami ".repeat(12)}nedir`);
+      expect(long.length).toBeLessThanOrEqual(80);
+      expect(long.endsWith("Ulucami…")).toBe(true);
+    });
   });
 });

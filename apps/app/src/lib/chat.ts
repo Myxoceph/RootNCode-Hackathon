@@ -1,12 +1,12 @@
-import type { ChatCitation, ChatResponse, ChatTurn } from "@vagabonds/contracts";
+import type { ChatCitation, ChatConversation, ChatConversationResponse, ChatResponse, ChatTurn } from "@vagabonds/contracts";
 import { useSyncExternalStore } from "react";
 
-import { askAssistant } from "@/data/assistant";
+import { archiveConversation, askAssistant, fetchConversation, fetchConversations } from "@/data/assistant";
 import { DataError } from "@/data/errors";
 import { saveTrip } from "@/lib/saved-routes";
 
 /** `POST /chat` takes at most this many earlier turns. */
-export const HISTORY_TURNS = 6;
+export const HISTORY_TURNS = 12;
 /** Longest question the API accepts (`ChatRequestSchema.message`). */
 export const QUESTION_MAX = 500;
 /** Longest turn the API accepts in the history (`ChatTurnSchema.content`). */
@@ -20,6 +20,10 @@ export interface Conversation {
   pending: string | null;
   /** The last question that failed and why; "Tekrar dene" sends it again. */
   failed: { question: string; message: string } | null;
+  /** The saved conversation the next question continues; null until the first answer. */
+  conversationId: string | null;
+  /** Opened from the history: read-only, no question goes to it. */
+  archived: ChatConversation | null;
 }
 
 /** A piece of an answer: plain text, or a `[n]` marker resolved to its source. */
@@ -164,6 +168,16 @@ export function followUps(response: ChatResponse): FollowUp[] {
   return offers.filter((offer) => !covered.has(kind[offer.topic])).slice(0, 3);
 }
 
+/** "Bugün", "Dün", "Bu hafta" or the month: how the history groups conversations, as chat apps do. */
+export function dayGroup(iso: string, now = new Date()): string {
+  const day = (date: Date) => new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
+  const days = Math.round((day(now) - day(new Date(iso))) / 86_400_000);
+  if (days <= 0) return "Bugün";
+  if (days === 1) return "Dün";
+  if (days < 7) return "Bu hafta";
+  return new Date(iso).toLocaleDateString("tr-TR", { month: "long", year: "numeric" });
+}
+
 /** The last turns for `POST /chat`, oldest first, each cut to what the API accepts. */
 export function historyFor(entries: readonly ChatEntry[]): ChatTurn[] {
   return entries.slice(-HISTORY_TURNS).map((entry) => ({
@@ -173,10 +187,12 @@ export function historyFor(entries: readonly ChatEntry[]): ChatTurn[] {
 }
 
 /**
- * Conversations live in memory while the app is open, one per page they were started from
- * (`general`, or an asset id), so leaving the screen and coming back keeps them.
+ * The conversation on each page lives in memory while the app is open, keyed by the account and
+ * the page it was started from (`general`, or an asset id), so leaving the screen and coming back
+ * keeps it; the API saves every question and answer, so after a restart `resumeConversation`
+ * brings the page's open one back. An archived one opened from the history is `archive:<id>`.
  */
-const EMPTY: Conversation = { entries: [], pending: null, failed: null };
+const EMPTY: Conversation = { entries: [], pending: null, failed: null, conversationId: null, archived: null };
 const conversations = new Map<string, Conversation>();
 /** The question on its way in each conversation: its number and how to cancel it. */
 const inFlight = new Map<string, { id: number; controller: AbortController }>();
@@ -204,11 +220,62 @@ export function useConversation(key: string): Conversation {
   return useSyncExternalStore(subscribe, read, read);
 }
 
-/** Empties the conversation and cancels its question on the way, so the API is free for the next one. */
+/** The conversation's key: the account and the page, so another account on the phone never sees it. */
+export function conversationKey(userId: string, assetId: string | undefined): string {
+  return `${userId}:${assetId ?? "general"}`;
+}
+
+/** The key of an archived conversation opened from the history. */
+export function archiveKey(conversationId: string): string {
+  return `archive:${conversationId}`;
+}
+
+/** The messages as the chat shows them, each with an id of its own. */
+function storedEntries(messages: ChatConversationResponse["messages"]): ChatEntry[] {
+  return messages.map((message) =>
+    message.role === "user" ? { id: nextId++, role: "user", text: message.text } : { id: nextId++, role: "assistant", response: message.response },
+  );
+}
+
+/**
+ * "Yeni konuşma": empties the page and cancels its question on the way, so the API is free for
+ * the next one. The saved conversation is archived and stays in the history; if the API cannot
+ * be reached it stays open there, and the next question archives it anyway.
+ */
 export function clearConversation(key: string) {
+  const { conversationId } = getConversation(key);
   inFlight.get(key)?.controller.abort();
   inFlight.delete(key);
   update(key, EMPTY);
+  if (conversationId) void archiveConversation(conversationId).catch(() => {});
+}
+
+/** Pages whose open conversation was already looked for, this run. */
+const resumed = new Set<string>();
+
+/**
+ * Brings back the page's open conversation after a restart, once per run. Nothing changes if
+ * the visitor asked something meanwhile, or the API cannot be reached.
+ */
+export async function resumeConversation(key: string, assetId: string | undefined): Promise<void> {
+  if (resumed.has(key)) return;
+  resumed.add(key);
+  try {
+    const open = (await fetchConversations()).find((item) => !item.archived && item.assetId === (assetId ?? null));
+    if (!open) return;
+    const { messages } = await fetchConversation(open.id);
+    const now = getConversation(key);
+    if (now.entries.length > 0 || now.pending !== null || now.conversationId !== null) return;
+    update(key, { entries: storedEntries(messages), conversationId: open.id });
+  } catch {
+    // Starts empty; the conversation is still in the history.
+  }
+}
+
+/** Opens a saved conversation from the history, read-only. Throws a `DataError` to show. */
+export async function openArchived(conversationId: string): Promise<void> {
+  const { conversation, messages } = await fetchConversation(conversationId);
+  update(archiveKey(conversationId), { ...EMPTY, entries: storedEntries(messages), conversationId, archived: conversation });
 }
 
 /**
@@ -218,7 +285,7 @@ export function clearConversation(key: string) {
 export async function ask(key: string, question: string, assetId?: string): Promise<ChatResponse | null> {
   const before = conversations.get(key) ?? EMPTY;
   const text = question.trim();
-  if (before.pending !== null || text.length === 0) return null;
+  if (before.pending !== null || before.archived !== null || text.length === 0) return null;
 
   // Answers are matched by request, not by text: the same question asked again after "Temizle"
   // must not take the cancelled one's answer.
@@ -229,7 +296,13 @@ export async function ask(key: string, question: string, assetId?: string): Prom
   update(key, { pending: text, failed: null });
   try {
     const response = await askAssistant(
-      { message: text, assetId, history: historyFor(before.entries), lang: "tr" },
+      {
+        message: text,
+        assetId,
+        history: historyFor(before.entries),
+        lang: "tr",
+        ...(before.conversationId && { conversationId: before.conversationId }),
+      },
       controller.signal,
     );
     if (!current()) return null;
@@ -239,13 +312,16 @@ export async function ask(key: string, question: string, assetId?: string): Prom
     update(key, {
       entries: [...before.entries, { id: nextId++, role: "user", text }, { id: nextId++, role: "assistant", response }],
       pending: null,
+      conversationId: response.conversationId,
     });
     return response;
   } catch (error) {
     if (!current()) return null;
     inFlight.delete(key);
     const message = error instanceof DataError ? error.message : "Soru gönderilemedi. Tekrar dene.";
-    update(key, { pending: null, failed: { question: text, message } });
+    // The saved conversation took no more questions (archived elsewhere, full, deleted): "Tekrar dene" starts a new one.
+    const closed = error instanceof DataError && error.code?.startsWith("CONVERSATION_");
+    update(key, { pending: null, failed: { question: text, message }, ...(closed && { conversationId: null }) });
     return null;
   }
 }
