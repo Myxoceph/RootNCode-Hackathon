@@ -135,13 +135,28 @@ export async function login(credentials: LoginRequest): Promise<AppUser> {
   return session.user;
 }
 
+/**
+ * The token to ask Rehber with: only accounts ask, so null without a session or with an
+ * anonymous one (no username).
+ */
+export async function accountToken(): Promise<string | null> {
+  if (!communityAvailable) return null;
+  await loadSession();
+  return token !== null && state.user?.username ? token : null;
+}
+
+/** The API answered 401 to `rejected`: the session is gone there, so it is forgotten here too. */
+export function sessionRejected(rejected: string) {
+  void forgetSession(rejected);
+}
+
 /** Signs out on this device (`POST /auth/logout`); signed out here even when the API cannot be reached. */
 export async function logout(): Promise<void> {
   await loadSession();
   const current = token;
   if (current) {
     try {
-      // The API answers 204, which `request` cannot read; only reaching it matters.
+      // Only reaching it matters.
       await request(`${resolveApiUrl()}/auth/logout`, AppUserSchema, { body: {}, token: current });
     } catch {
       // The token stays valid on the server until it expires; it is gone from here.

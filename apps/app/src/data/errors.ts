@@ -19,12 +19,15 @@ export class DataError extends Error {
   readonly kind: DataErrorKind;
   /** Developer-facing details, e.g. "monuments.0.latitude: Too big". Never shown in production. */
   readonly details: string[];
+  /** The API's error code, when the caller acts on it (e.g. `CONVERSATION_ARCHIVED`). */
+  readonly code: string | null;
 
-  constructor(kind: DataErrorKind, message: string, details: string[] = []) {
+  constructor(kind: DataErrorKind, message: string, details: string[] = [], code: string | null = null) {
     super(message);
     this.name = "DataError";
     this.kind = kind;
     this.details = details;
+    this.code = code;
   }
 
   static fromSchema(source: string, error: SchemaError): DataError {
