@@ -59,7 +59,7 @@ export function MyContributions({ title = "Notlarım" }: { title?: string | null
         </Text>
       )}
       {mine.status === "success" && (mine.data === null || mine.data.length === 0) && (
-        <Text color="textSecondary">Eser sayfalarındaki Ziyaretçi Notları sekmesinden not bırakınca durumunu burada görürsün.</Text>
+        <Text color="textSecondary">Eser kartındaki Ziyaretçi Notları bölümünden not bırakınca durumunu burada görürsün.</Text>
       )}
       {mine.status === "success" && mine.data && mine.data.length > 0 && (
         <View accessibilityRole="list" style={styles.list}>

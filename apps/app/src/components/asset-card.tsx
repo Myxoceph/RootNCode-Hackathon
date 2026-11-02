@@ -7,12 +7,7 @@ import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
 import { AssetImage } from "@/components/asset-image";
 import { BuildingIllustration } from "@/components/building-illustration";
-
-/** The first Gregorian year of a dating ("H. 802 / M. 1399-1400" → 1399), or the dating itself ("XIV. yüzyıl"). */
-function yearOf(dating: string | null): string | null {
-  if (!dating) return null;
-  return dating.match(/M\.\s*(\d{3,4})/)?.[1] ?? dating.match(/\b\d{3,4}\b/)?.[0] ?? dating;
-}
+import { yearOfDating } from "@/lib/dating";
 
 /**
  * One asset in the gallery grid: a photo with its type on a small glass tag, then its name and
@@ -21,7 +16,7 @@ function yearOf(dating: string | null): string | null {
  */
 export function AssetCard({ asset }: { asset: AssetSummary }) {
   const { colors: c } = useTheme();
-  const year = yearOf(asset.datingDisplay);
+  const year = asset.yearLabel ?? yearOfDating(asset.datingDisplay);
   const meta = [asset.district, year].filter(Boolean).join(" · ");
   const label = [asset.name, asset.type.label, `${asset.district}, ${asset.city.label}`, asset.datingDisplay].filter(Boolean).join(", ");
 
