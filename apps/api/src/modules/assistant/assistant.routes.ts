@@ -1,22 +1,36 @@
 import {
+  CHAT_CONVERSATION_MAX_MESSAGES,
+  ChatConversationResponseSchema,
+  ChatConversationSchema,
+  ChatConversationsResponseSchema,
   ChatRequestSchema,
   ChatResponseSchema,
   ChatStatusResponseSchema,
   CONTRACT_VERSION,
+  LangSchema,
+  type ChatConversation,
+  type ChatConversationResponse,
+  type ChatConversationsResponse,
   type ChatResponse,
   type ChatStatusResponse,
+  type ChatStoredMessage,
+  type Lang,
 } from "@vagabonds/contracts";
-import type { FastifyPluginAsync } from "fastify";
+import type { FastifyPluginAsync, FastifyRequest } from "fastify";
+import { z } from "zod";
 import { HttpError } from "../../lib/http-error.ts";
-import { resolveLang } from "../../lib/lang.ts";
+import { pick, resolveLang } from "../../lib/lang.ts";
 import { parseWith } from "../../lib/validate.ts";
 import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
+import { requireUser } from "../community/auth.ts";
+import type { CommunityRepository, UserRecord } from "../community/community.repository.ts";
 import { turkeyHour, turkeyToday } from "../planner/planner.routes.ts";
 import { ask } from "./assistant.ts";
 import { ModelError, type ChatModel } from "./assistant.model.ts";
 import type { AssistantRepository } from "./assistant.repository.ts";
 import type { ApiGet } from "./assistant.tools.ts";
+import type { ConversationRecord, ConversationsRepository, MessageRecord } from "./conversations.repository.ts";
 
 /** Questions one client IP may ask per minute; each one can take seconds of model time. */
 export const CHAT_RATE_LIMIT = { max: 10, timeWindow: 60_000 };
@@ -40,12 +54,47 @@ export interface AssistantRoutesOptions {
   /** Null when no model is configured: the assistant answers 503 and reports itself unavailable. */
   model: ChatModel | null;
   repository: AssistantRepository;
+  community: CommunityRepository;
+  conversations: ConversationsRepository;
 }
 
-export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async (app, { model, repository }) => {
+const IdParamsSchema = z.object({ id: z.uuid() });
+const LangQuerySchema = z.object({ lang: LangSchema.optional() });
+const bearer = [{ bearerAuth: [] }];
+
+/** Only accounts ask: an anonymous session (no username) is refused, so every conversation has an owner who can sign in again. */
+async function requireAccount(request: FastifyRequest, community: CommunityRepository): Promise<UserRecord> {
+  const user = await requireUser(request, community);
+  if (user.username === null) throw new HttpError(403, "ACCOUNT_REQUIRED", "Sign in with an account to use the assistant");
+  return user;
+}
+
+function toConversation(record: ConversationRecord, lang: Lang): ChatConversation {
+  return ChatConversationSchema.parse({
+    id: record.id,
+    title: record.title,
+    assetId: record.asset_id,
+    assetName: record.asset ? pick(record.asset.name_tr, record.asset.name_en, lang) : null,
+    messageCount: record._count.messages,
+    createdAt: record.created_at.toISOString(),
+    updatedAt: record.updated_at.toISOString(),
+    archived: record.archived_at !== null,
+  });
+}
+
+/** An answer saved under an older contract that no longer parses is left out rather than failing the whole conversation. */
+function toStoredMessage(record: MessageRecord): ChatStoredMessage | null {
+  const createdAt = record.created_at.toISOString();
+  if (record.role === "user") return { role: "user", text: record.content, createdAt };
+  const response = ChatResponseSchema.safeParse(record.response);
+  return response.success ? { role: "assistant", response: response.data, createdAt } : null;
+}
+
+export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async (app, { model, repository, community, conversations }) => {
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
+  const denied = { 401: errorSchema, 403: errorSchema };
   let running = 0;
-  // Insertion order is age order, so the first key is the oldest.
+  // Insertion order is age order, so the first key is the oldest. Kept without a conversation id: each asker saves their own.
   const answers = new Map<string, { at: number; response: ChatResponse }>();
 
   app.get("/chat/status", {
@@ -67,14 +116,50 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
     config: { rateLimit: CHAT_RATE_LIMIT },
     schema: {
       tags: ["assistant"],
-      summary: "Asistana soru: cevap yalnızca veri setinden, kaynak numaralarıyla",
+      summary: "Asistana soru (yalnızca hesapla): cevap yalnızca veri setinden, kaynak numaralarıyla; soru ve cevap konuşmaya kaydedilir",
+      security: bearer,
       body: toOpenApiSchema(ChatRequestSchema, "input"),
-      response: { 200: toOpenApiSchema(ChatResponseSchema), 400: errorSchema, 429: errorSchema, 503: errorSchema },
+      response: {
+        200: toOpenApiSchema(ChatResponseSchema),
+        400: errorSchema,
+        ...denied,
+        404: errorSchema,
+        409: errorSchema,
+        429: errorSchema,
+        503: errorSchema,
+      },
     },
   }, async (request, reply): Promise<ChatResponse> => {
-    // Visitors' questions are never logged; failures are, without the text.
+    // Visitors' questions are never logged; failures are, without the text. They are saved only in the asker's own conversations.
+    const user = await requireAccount(request, community);
     const body = parseWith(ChatRequestSchema, request.body, "INVALID_BODY");
     if (!model) throw new HttpError(503, "ASSISTANT_UNAVAILABLE", "The assistant is not configured");
+    const assetId = body.assetId ?? null;
+    if (body.conversationId) {
+      const conversation = await conversations.find(user.id, body.conversationId);
+      if (conversation === null) throw new HttpError(404, "CONVERSATION_NOT_FOUND", "Conversation not found");
+      if (conversation.archived_at !== null) throw new HttpError(409, "CONVERSATION_ARCHIVED", "Archived conversations are read-only; start a new one");
+      if (conversation.asset_id !== assetId) throw new HttpError(400, "CONVERSATION_PAGE_MISMATCH", "The conversation was started on another page");
+      if (conversation._count.messages + 2 > CHAT_CONVERSATION_MAX_MESSAGES) {
+        throw new HttpError(409, "CONVERSATION_FULL", "This conversation is full; start a new one");
+      }
+    }
+    // A failed save keeps the answer: the visitor reads it now, and the next question starts a new conversation.
+    const answered = async (response: ChatResponse): Promise<ChatResponse> => {
+      let conversationId: string | null = null;
+      try {
+        conversationId = await conversations.saveTurn({
+          userId: user.id,
+          conversationId: body.conversationId ?? null,
+          assetId,
+          question: body.message,
+          response,
+        });
+      } catch (err) {
+        request.log.warn({ reason: err instanceof Error ? err.name : "unknown" }, "Chat turn not saved");
+      }
+      return { ...response, conversationId };
+    };
     const lang = resolveLang(body.lang, request.headers["accept-language"]);
     const today = turkeyToday();
     const hour = turkeyHour();
@@ -82,7 +167,7 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
     const key = body.history.length === 0 && !body.origin ? cacheKey(body.message, body.assetId, lang, today, hour) : null;
     const cached = key === null ? undefined : answers.get(key);
     reply.header("cache-control", "no-store");
-    if (cached && Date.now() - cached.at < ANSWER_CACHE_MS) return cached.response;
+    if (cached && Date.now() - cached.at < ANSWER_CACHE_MS) return answered(cached.response);
     if (running >= MAX_CONCURRENT_CHATS) throw new HttpError(503, "ASSISTANT_BUSY", "The assistant is busy, retry in a moment");
 
     // Tools read our own routes as this client, so their requests count against its rate limit too.
@@ -113,7 +198,7 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
         answers.set(key, { at: Date.now(), response });
         if (answers.size > ANSWER_CACHE_SIZE) answers.delete(answers.keys().next().value!);
       }
-      return response;
+      return await answered(response);
     } catch (err) {
       if (err instanceof ModelError) {
         request.log.warn({ reason: err.message }, "Assistant model failed");
@@ -123,5 +208,88 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
     } finally {
       running -= 1;
     }
+  });
+
+  app.get("/me/conversations", {
+    schema: {
+      tags: ["assistant"],
+      summary: "Asistanla konuşmalarım (son sorulan önce); arşivdekiler yalnızca okunur",
+      security: bearer,
+      querystring: toOpenApiSchema(LangQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(ChatConversationsResponseSchema), 400: errorSchema, ...denied },
+    },
+  }, async (request, reply): Promise<ChatConversationsResponse> => {
+    const user = await requireAccount(request, community);
+    const query = parseWith(LangQuerySchema, request.query, "INVALID_QUERY");
+    const lang = resolveLang(query.lang, request.headers["accept-language"]);
+    reply.header("cache-control", "no-store");
+    return ChatConversationsResponseSchema.parse({
+      version: CONTRACT_VERSION,
+      items: (await conversations.list(user.id)).map((record) => toConversation(record, lang)),
+    });
+  });
+
+  app.get("/me/conversations/:id", {
+    schema: {
+      tags: ["assistant"],
+      summary: "Bir konuşmanın bütün soruları ve cevapları (eskiden yeniye), gösterildikleri gibi",
+      security: bearer,
+      params: toOpenApiSchema(IdParamsSchema, "input"),
+      querystring: toOpenApiSchema(LangQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(ChatConversationResponseSchema), 400: errorSchema, ...denied, 404: errorSchema },
+    },
+  }, async (request, reply): Promise<ChatConversationResponse> => {
+    const user = await requireAccount(request, community);
+    const { id } = parseWith(IdParamsSchema, request.params, "INVALID_ID");
+    const query = parseWith(LangQuerySchema, request.query, "INVALID_QUERY");
+    const lang = resolveLang(query.lang, request.headers["accept-language"]);
+    const conversation = await conversations.find(user.id, id);
+    if (conversation === null) throw new HttpError(404, "CONVERSATION_NOT_FOUND", "Conversation not found");
+    const messages = (await conversations.messages(id)).map(toStoredMessage).filter((message) => message !== null);
+    reply.header("cache-control", "no-store");
+    return ChatConversationResponseSchema.parse({ version: CONTRACT_VERSION, conversation: toConversation(conversation, lang), messages });
+  });
+
+  app.post("/me/conversations/:id/archive", {
+    schema: {
+      tags: ["assistant"],
+      summary: "Konuşmayı arşive al (\"Yeni konuşma\"): artık soru gönderilmez, geçmişte kalır",
+      security: bearer,
+      params: toOpenApiSchema(IdParamsSchema, "input"),
+      response: { 204: { type: "null" }, 400: errorSchema, ...denied, 404: errorSchema },
+    },
+  }, async (request, reply) => {
+    const user = await requireAccount(request, community);
+    const { id } = parseWith(IdParamsSchema, request.params, "INVALID_ID");
+    if (!(await conversations.archive(user.id, id))) throw new HttpError(404, "CONVERSATION_NOT_FOUND", "Conversation not found");
+    return reply.code(204).send();
+  });
+
+  app.delete("/me/conversations/:id", {
+    schema: {
+      tags: ["assistant"],
+      summary: "Konuşmayı sil",
+      security: bearer,
+      params: toOpenApiSchema(IdParamsSchema, "input"),
+      response: { 204: { type: "null" }, 400: errorSchema, ...denied, 404: errorSchema },
+    },
+  }, async (request, reply) => {
+    const user = await requireAccount(request, community);
+    const { id } = parseWith(IdParamsSchema, request.params, "INVALID_ID");
+    if (!(await conversations.remove(user.id, id))) throw new HttpError(404, "CONVERSATION_NOT_FOUND", "Conversation not found");
+    return reply.code(204).send();
+  });
+
+  app.delete("/me/conversations", {
+    schema: {
+      tags: ["assistant"],
+      summary: "Bütün konuşmalarımı sil",
+      security: bearer,
+      response: { 204: { type: "null" }, ...denied },
+    },
+  }, async (request, reply) => {
+    const user = await requireAccount(request, community);
+    await conversations.removeAll(user.id);
+    return reply.code(204).send();
   });
 };

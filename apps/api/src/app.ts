@@ -11,6 +11,7 @@ import { assetsRoutes } from "./modules/assets/assets.routes.ts";
 import type { ChatModel } from "./modules/assistant/assistant.model.ts";
 import { createAssistantRepository } from "./modules/assistant/assistant.repository.ts";
 import { assistantRoutes } from "./modules/assistant/assistant.routes.ts";
+import { createConversationsRepository } from "./modules/assistant/conversations.repository.ts";
 import { createAssetsRepository, visibleStatuses, type AssetVisibility } from "./modules/assets/assets.repository.ts";
 import { createCommunityRepository } from "./modules/community/community.repository.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
@@ -117,7 +118,12 @@ export function buildApp({
     planner: transitPlanner,
     repository: createTransitRepository(prisma, visibleStatuses(assetVisibility)),
   });
-  app.register(assistantRoutes, { model: assistantModel, repository: createAssistantRepository(prisma, assetVisibility) });
+  app.register(assistantRoutes, {
+    model: assistantModel,
+    repository: createAssistantRepository(prisma, assetVisibility),
+    community: communityRepository,
+    conversations: createConversationsRepository(prisma),
+  });
 
   return app;
 }
