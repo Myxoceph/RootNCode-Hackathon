@@ -326,6 +326,32 @@ Karşılaştırırken şunlara bak:
 `ASSISTANT_BASE_URL=http://host.docker.internal:11434/v1`, `ASSISTANT_MODEL=qwen3:8b`,
 `ASSISTANT_API_KEY` boş. Ollama'yı `0.0.0.0`'a açma; parolası yoktur.
 
+**Model düşerse.** 2026-11-03 gecesi EVREN `qwen3.8-flash-next` için saatlerce 503 verdi ("sağlıklı
+endpoint yok"); aynı anda `gemma-4-31b`, `qwen3-vl-30b` ve `deepseek-v4.1-flash` cevap veriyordu.
+`/chat/status` bunu ancak bir soru başarısız olduktan sonra görür. Sorun yalnızca o modeldeyse
+`deploy/.env`'de `ASSISTANT_MODEL=qwen3-vl-30b` yapıp `deploy/demo.sh up`. Bu model araç çağırıyor
+ve hızlı (bir sesli soru 8 sn), ama karşılaştırması yapılmadı; cevapları daha zayıf olabilir.
+
+### Sesli Rehber
+
+Rehber'e sesli de sorulabilir. Uygulama soruyu kaydeder (en çok 20 sn) ve `POST /voice/transcribe`'a
+gönderir; gövde kaydın kendisidir. Metin `POST /chat`'e `spoken: true` ile gider; model en çok 3 kısa
+cümleyle, konuşur gibi cevap verir. Cevap `GET /voice/speech?text=…` ile MP3 olarak okunur: ilk cümle
+tek başına istenir, kalanı o çalarken hazırlanır. İkisi de yalnızca hesapla.
+
+| Ne | Model | Süre (2026-11-03) |
+|---|---|---|
+| Konuşmadan metne | `qwen3-asr-1.7b` (`VOICE_ASR_MODEL`) | 5 sn'lik kayıt ~0,5 sn |
+| Metinden konuşmaya | `voxcpm2` (`VOICE_TTS_MODEL`) | bir cümle ~1 sn |
+
+- Modeller asistanın adresini ve anahtarını kullanır. `deploy/compose.yml` EVREN'in modellerini
+  varsayılan alır; Ollama'da konuşma modeli olmadığı için orada ikisini de boş bırak (sesli soru kapanır,
+  yazılı Rehber çalışır).
+- Kayıt saklanmaz, loglanmaz; yalnızca yazıya çevrilmek için EVREN'e gider. Okunan cevaplar API'nin
+  belleğinde tutulur (son 100): kuliste bir kez sorulan sorular sahnede beklemeden çalar.
+- Ses EVREN'den gelmezse uygulama cevabı telefonun kendi sesiyle (cihaz TTS) okur.
+- Gürültülü salonda telefonu ağza yakın tut; tanınan metin ekranda soru olarak görünür.
+
 ## Toplu taşıma (Konya pilotu)
 
 Asistanın "nasıl giderim" cevabı ve `GET /transit/plan`, Konya'da otobüs ve tramvayla rota verir. Rotayı
