@@ -26,6 +26,8 @@ import { createPlannerRepository } from "./modules/planner/planner.repository.ts
 import { createSoundsRepository } from "./modules/sounds/sounds.repository.ts";
 import { soundsRoutes } from "./modules/sounds/sounds.routes.ts";
 import { plannerRoutes } from "./modules/planner/planner.routes.ts";
+import { createSavedRoutesRepository } from "./modules/planner/saved-routes.repository.ts";
+import { savedRoutesRoutes } from "./modules/planner/saved-routes.routes.ts";
 import type { TransitPlanner } from "./modules/transit/otp.client.ts";
 import { createTransitRepository } from "./modules/transit/transit.repository.ts";
 import { transitRoutes } from "./modules/transit/transit.routes.ts";
@@ -113,6 +115,7 @@ export function buildApp({
     community: communityRepository,
   });
   app.register(rewardsRoutes, { repository: createRewardsRepository(prisma), community: communityRepository });
+  app.register(savedRoutesRoutes, { repository: createSavedRoutesRepository(prisma), community: communityRepository });
   app.register(photosRoutes, { repository: communityRepository, visibility: assetVisibility, urls: photoUrls });
   app.register(transitRoutes, {
     planner: transitPlanner,
