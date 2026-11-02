@@ -9,6 +9,7 @@ import {
   AdminAchievementSchema,
   AdminAchievementsResponseSchema,
   MyAchievementsResponseSchema,
+  MyConnectionsResponseSchema,
   MyVisitsResponseSchema,
   VisitResponseSchema,
 } from "@vagabonds/contracts";
@@ -150,5 +151,39 @@ describe.skipIf(!DATABASE_URL)("achievements (PostgreSQL)", () => {
 
     expect((await app.inject({ method: "DELETE", url: `/admin/achievements/${code}`, headers: auth(admin) })).statusCode).toBe(204);
     expect((await app.inject({ method: "DELETE", url: `/admin/achievements/${code}`, headers: auth(admin) })).statusCode).toBe(404);
+  });
+
+  it("keeps a bond a mystery until both of its assets are discovered", async () => {
+    const ULUCAMI = "bursa-osmangazi-ulucami";
+    const YESIL = "bursa-yildirim-yesil-camii";
+    const token = await createUser();
+    const userId = (await prisma.user_session.findUniqueOrThrow({ where: { token_hash: hashToken(token) } })).user_id;
+    const connections = async () =>
+      MyConnectionsResponseSchema.parse((await app.inject({ method: "GET", url: "/me/connections", headers: auth(token) })).json()).items;
+
+    expect(await connections()).toEqual([]);
+
+    await prisma.visit.create({ data: { user_id: userId, asset_id: ULUCAMI, verified: false } });
+    const mystery = await connections();
+    expect(mystery.every((item) => item.from === ULUCAMI)).toBe(true);
+    // Same architect as Yeşil Camii: where it is, not what binds them.
+    expect(mystery.find((item) => item.to === YESIL)).toEqual({ revealed: false, from: ULUCAMI, to: YESIL, toCoordinates: expect.any(Object) });
+    // Only bonds that tell a story, only to published assets on the map, one glow per asset.
+    const bonds = await prisma.asset_relation.findMany({ where: { OR: [{ source_asset_id: ULUCAMI }, { target_asset_id: ULUCAMI }] } });
+    const untold = new Set(bonds.filter((b) => ["same_complex", "urban_context"].includes(b.type_code)).map((b) => (b.source_asset_id === ULUCAMI ? b.target_asset_id : b.source_asset_id)));
+    const told = new Set(bonds.filter((b) => !["same_complex", "urban_context"].includes(b.type_code)).map((b) => (b.source_asset_id === ULUCAMI ? b.target_asset_id : b.source_asset_id)));
+    for (const item of mystery) expect(told.has(item.to) || !untold.has(item.to)).toBe(true);
+    expect(mystery.map((item) => item.to)).not.toContain("manisa-ulucami");
+    expect(new Set(mystery.map((item) => item.to)).size).toBe(mystery.length);
+
+    await prisma.visit.create({ data: { user_id: userId, asset_id: YESIL, verified: false } });
+    const revealed = (await connections()).filter((item) => item.revealed);
+    expect(revealed).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ from: ULUCAMI, to: YESIL, direction: "outgoing", type: { code: "same_architect", label: expect.any(String) }, toName: "Yeşil Camii" }),
+        expect.objectContaining({ from: YESIL, to: ULUCAMI, direction: "incoming", type: expect.objectContaining({ code: "same_architect" }) }),
+      ]),
+    );
+    expect((await app.inject({ method: "GET", url: "/me/connections" })).statusCode).toBe(401);
   });
 });
