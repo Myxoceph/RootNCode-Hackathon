@@ -22,7 +22,7 @@ Reels biçimi (tam ekran sayfa, bir fotoğraf, bir cümle) kalsın; aşağıdaki
 **API ve sözleşmede değişiklik gerekmiyor**: hepsi `GET /assets/:id` cevabında, `AssetDetail` tipinde
 (`packages/contracts/src/asset.schema.ts`) zaten var.
 
-Öncelik sırası: 1 (küçük, en çok içeriği açar) → 2 → 3.
+Öncelik sırası: 1 (küçük, en çok içeriği açar) → 2 → 3. Tarayıcı kontrolünde çıkan küçük düzeltmeler 4. bölümde.
 
 ---
 
@@ -110,6 +110,37 @@ Notlar:
 
 **Bitti sayılır:** Ulucami'nin dosya sayfasında 21 olay, 10 kişi, 7 kitabe, 3 rivayet ve bütün ölçüler var;
 Karatay Medresesi'nde vakfiye alıntısı ve şartları görünüyor.
+
+## 4. Tarayıcı kontrolünde çıkanlar (2026-11-02)
+
+Demo yığınında, telefon boyutunda (390×844) Harita, Eserler, eser detayı, Kamera, Profil ve Rehber gezildi.
+Ağ isteklerinin hepsi başarılı; eser detayı, Profil ve Rehber'in giriş kartı sorunsuz. Düzeltilecekler,
+önem sırasıyla:
+
+1. **Eser listesinde yanlış yıl.** `asset-card.tsx`'teki `yearOf` (satır 12) "M."den hemen sonra sayı
+   bekliyor; "M. Aralık 1413" ya da "M. 8 Mart 1402" gibi yazımlarda ilk sayıyı alıyor ve hicri yılı
+   gösteriyor: "Devlet Hatun Türbesi · 816", "Eyne Bey Subaşı Medresesi · 804". "M."den sonraki ilk 3–4 haneli
+   sayıyı almak yeterli. Ayrıca bazı kayıtlarda ilk sayı yapım yılı değil: "Hacı Hüsamettin Türbesi · 1632"
+   (yaptıranın ölümü), "Seyyid Usûl Tekkesi · 2008" (bugünkü yapı). Bunlar için listeye kaydın kendi
+   `startYear`'ını eklerim (Ahmet, API); gelince kart önce onu kullansın.
+2. **React #418 (hydration) hatası:** Harita, Eserler, Kamera ve Profil'de konsolda. Web'de önceden üretilen
+   HTML ile tarayıcıdaki ilk çizim farklı; genelde ilk çizimde okunan tarih/saat, `window`, ekran boyutu ya da
+   cihazda saklanan bir ayar (tema, yazı boyutu) yüzünden. O değer ilk çizimden sonra (`useEffect` içinde)
+   okunmalı. Ayrıntılı mesaj için `npx expo start --web` (geliştirme modu) ile aç.
+3. **Harita ekran okuyucuya kapalı.** Bursa, Konya, Hatay ve sağ üstteki "i" düğmesi erişilebilirlik
+   ağacında yok; ekran okuyucu yalnızca arama kutusunu ve sekmeleri görüyor. Haritanın üstüne (ya da
+   altına) ekran okuyucunun göreceği şehir düğmeleri; "i" düğmesine `accessibilityLabel`.
+4. **Kamera sekmesi (Lighthouse erişilebilirlik 94):** iki görselde `alt` yok; iki kartta ekran okuyucunun
+   okuduğu ad ekrandaki başlıkla başlamıyor (sesle kumandada sorun: "Ziyaret Mührü"ne bas denince bulunmaz).
+   `accessibilityLabel` görünen başlıkla başlasın.
+5. **Kamera sekmesindeki Ziyaret Mührü kartı** ekran görüntüsünde gri ve boş göründü (fotoğraf yüklenmiş
+   olduğu hâlde). Telefonda bir bak; kartın kendi animasyonuysa sorun yok.
+6. **Harita açılırken** yaklaşık 10 saniye yalnızca sis görünüyor. Bilinçliyse kalsın; değilse sahnede boş
+   ekran gibi duruyor.
+7. **Eserler listesinde yüklenirken** bulanık önizleme (`lqip`) kartı doldurmuyor, ortada küçük bir resim
+   olarak duruyor; tam boy yayılsın.
+
+Denenmeyenler: klavyeyle gezinme ve ekran okuyucuyla elle deneme, karanlık tema, tablet boyutu.
 
 ---
 
