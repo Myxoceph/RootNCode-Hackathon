@@ -7,6 +7,14 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-02 · fast-uri güvenlik güncellemesi
+
+Kimler: **herkes**
+
+1. `npm ci` (`fast-uri` 3.1.9 ve 4.2.3; yalnızca `package-lock.json` değişti).
+
+---
+
 ## 2026-11-02 · Asistan yalnızca hesapla; sohbet arşivi (migration, sözleşme 0.3.18)
 
 Kimler: **herkes** (API'yi yerelde çalıştıranlar, uygulama ekibi, demoyu açan)
