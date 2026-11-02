@@ -10,6 +10,8 @@ export interface RequestOptions {
   allowNotFound?: boolean;
   /** Sent as JSON in a POST; without it the request is a GET. */
   body?: unknown;
+  /** Only for a request without a body that is not a GET (`DELETE`, or a `POST` with nothing to send). */
+  method?: "POST" | "DELETE";
   /** Sent as `Authorization: Bearer <token>`. */
   token?: string;
   /** The error for an answer that is not 2xx; `statusError` by default. */
@@ -41,7 +43,7 @@ export async function request<T>(url: string, schema: SchemaParser<T>, options: 
   let response: Response;
   try {
     response = await fetch(url, {
-      method: options.body === undefined ? "GET" : "POST",
+      method: options.method ?? (options.body === undefined ? "GET" : "POST"),
       headers,
       body: options.body === undefined ? undefined : JSON.stringify(options.body),
       signal: controller.signal,
@@ -66,6 +68,9 @@ export async function request<T>(url: string, schema: SchemaParser<T>, options: 
     const details = [`${response.status} ${code ?? ""} ${url}`.trim()];
     throw (options.errorFor ?? statusError)(response.status, code, details);
   }
+
+  // Done, nothing to read (archive, delete, sign out).
+  if (response.status === 204) return null;
 
   let body: unknown;
   try {

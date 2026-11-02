@@ -221,6 +221,9 @@ bir kapak fotoğrafının medya Worker'ından gelmesi, harita altlığı, web uy
 soruya cevap vermesi ve boş disk (en az 10 GB). `/chat/status` bir soru sağlayıcı tarafında
 başarısız olunca (yoğunluk, kota, reddedilen anahtar) bir dakika `available: false` döner ve uygulama
 sohbeti gizler; ama o ilk sorudan önce sorunu bilemez, bu yüzden kontrol bir soru da sorar.
+Asistan yalnızca hesapla kullanıldığı için kontrol kendi hesabıyla (`onkontrol`) sorar: parolası
+`deploy/.env`'deki `PREFLIGHT_PASSWORD` (uzun, rastgele; demo hesaplarından biri değil). Hesap ilk
+kontrolde açılır, sorduğu konuşma hemen silinir; demo hesaplarının geçmişinde görünmez.
 
 **Bir gün önce** (demonun yapılacağı ağdan):
 1. `git switch main && git pull`, `deploy/demo.sh up`: derleme burada yapılır, demo günü yeniden derlenmez.

@@ -32,18 +32,18 @@ datasource db {
 /// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
 /// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
 model asset {
-  id                    String            @id
+  id                    String              @id
   status                String
   type_code             String
-  secondary_types       String[]          @default([])
+  secondary_types       String[]            @default([])
   parent_id             String?
   era_code              String?
-  tags                  String[]          @default([])
+  tags                  String[]            @default([])
   name_tr               String
   name_en               String?
   subtitle_tr           String?
   subtitle_en           String?
-  alternate_names       Json              @default("[]")
+  alternate_names       Json                @default("[]")
   summary_tr            String
   summary_en            String?
   city_code             String
@@ -53,13 +53,13 @@ model asset {
   lat                   Float?
   lng                   Float?
   coord_source          String?
-  coord_verified        Boolean           @default(false)
+  coord_verified        Boolean             @default(false)
   dating_display_tr     String?
   dating_display_en     String?
-  start_year            Int?              @db.SmallInt
-  end_year              Int?              @db.SmallInt
-  hijri_year            Int?              @db.SmallInt
-  century               Int?              @db.SmallInt
+  start_year            Int?                @db.SmallInt
+  end_year              Int?                @db.SmallInt
+  hijri_year            Int?                @db.SmallInt
+  century               Int?                @db.SmallInt
   dating_basis_tr       String?
   dating_basis_en       String?
   dating_confidence     String?
@@ -67,7 +67,7 @@ model asset {
   founder_role          String?
   founder_confidence    String?
   architect_name        String?
-  architect_candidates  Json              @default("[]")
+  architect_candidates  Json                @default("[]")
   architect_confidence  String?
   waqf_name             String?
   waqf_deed             Json?
@@ -77,16 +77,16 @@ model asset {
   waqf_land_note_en     String?
   waqf_confidence       String?
   visit_setting         String?
-  visit_duration_min    Int?              @db.SmallInt
+  visit_duration_min    Int?                @db.SmallInt
   visit_duration_source String?
   entrance_fee          String?
   visit_notes_tr        String?
   visit_notes_en        String?
-  a11y_wheelchair       String            @default("unknown")
-  a11y_step_free        String            @default("unknown")
-  a11y_ramp             String            @default("unknown")
-  a11y_toilet           String            @default("unknown")
-  a11y_verified         Boolean           @default(false)
+  a11y_wheelchair       String              @default("unknown")
+  a11y_step_free        String              @default("unknown")
+  a11y_ramp             String              @default("unknown")
+  a11y_toilet           String              @default("unknown")
+  a11y_verified         Boolean             @default(false)
   a11y_notes_tr         String?
   a11y_notes_en         String?
   audio_description_tr  String?
@@ -97,16 +97,16 @@ model asset {
   media_folder          Json?
   prepared_by           String?
   reviewed_by           String?
-  todos                 Json              @default("[]")
-  data_quality_notes    Json              @default("[]")
+  todos                 Json                @default("[]")
+  data_quality_notes    Json                @default("[]")
   source_json           Json
-  created_at            DateTime          @default(now()) @db.Timestamptz(6)
-  updated_at            DateTime          @default(now()) @db.Timestamptz(6)
-  city                  city              @relation(fields: [city_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
-  era                   era?              @relation(fields: [era_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
-  asset                 asset?            @relation("assetToasset", fields: [parent_id], references: [id], onUpdate: NoAction)
-  other_asset           asset[]           @relation("assetToasset")
-  asset_type            asset_type        @relation(fields: [type_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  created_at            DateTime            @default(now()) @db.Timestamptz(6)
+  updated_at            DateTime            @default(now()) @db.Timestamptz(6)
+  city                  city                @relation(fields: [city_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  era                   era?                @relation(fields: [era_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  asset                 asset?              @relation("assetToasset", fields: [parent_id], references: [id], onUpdate: NoAction)
+  other_asset           asset[]             @relation("assetToasset")
+  asset_type            asset_type          @relation(fields: [type_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
   asset_fact            asset_fact[]
   asset_highlight       asset_highlight[]
   asset_legend          asset_legend[]
@@ -122,6 +122,7 @@ model asset {
   timeline_event        timeline_event[]
   visit                 visit[]
   visitor_tip           visitor_tip[]
+  chat_conversation     chat_conversation[]
 
   @@index([lat, lng], map: "asset_geo_idx")
   @@index([parent_id], map: "asset_parent_idx")
@@ -470,19 +471,20 @@ model visitor_tip {
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model app_user {
-  id                    String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id                    String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   nickname              String
-  role                  String             @default("visitor")
-  created_at            DateTime           @default(now()) @db.Timestamptz(6)
-  banned_at             DateTime?          @db.Timestamptz(6)
-  username              String?            @unique
+  role                  String              @default("visitor")
+  created_at            DateTime            @default(now()) @db.Timestamptz(6)
+  banned_at             DateTime?           @db.Timestamptz(6)
+  username              String?             @unique
   password_hash         String?
-  reviewedContributions contribution[]     @relation("contribution_reviewed_byToapp_user")
-  contributions         contribution[]     @relation("contribution_user_idToapp_user")
+  reviewedContributions contribution[]      @relation("contribution_reviewed_byToapp_user")
+  contributions         contribution[]      @relation("contribution_user_idToapp_user")
   redemption            redemption[]
   user_achievement      user_achievement[]
   sessions              user_session[]
   visit                 visit[]
+  chat_conversation     chat_conversation[]
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
@@ -639,4 +641,33 @@ model reward_code {
   reward      reward      @relation(fields: [reward_code], references: [code], onDelete: Cascade, onUpdate: NoAction)
 
   @@unique([reward_code, code])
+}
+
+/// The partial unique index chat_conversation_open_idx (one open conversation per page) lives only in the migration.
+model chat_conversation {
+  id          String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id     String         @db.Uuid
+  asset_id    String?
+  title       String
+  created_at  DateTime       @default(now()) @db.Timestamptz(6)
+  updated_at  DateTime       @default(now()) @db.Timestamptz(6)
+  archived_at DateTime?      @db.Timestamptz(6)
+  app_user    app_user       @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  asset       asset?         @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  messages    chat_message[]
+
+  @@index([user_id, updated_at(sort: Desc)], map: "chat_conversation_user_idx")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model chat_message {
+  id              BigInt            @id @default(autoincrement())
+  conversation_id String            @db.Uuid
+  role            String
+  content         String
+  response        Json?
+  created_at      DateTime          @default(now()) @db.Timestamptz(6)
+  conversation    chat_conversation @relation(fields: [conversation_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([conversation_id, id], map: "chat_message_conversation_idx")
 }

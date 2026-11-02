@@ -19,8 +19,20 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { AssistantMessage, Thinking, UserMessage } from "@/components/chat-message";
 import { useAssistantAvailable } from "@/data/assistant";
+import { useCommunity } from "@/data/community";
+import { DataError } from "@/data/errors";
 import { announce } from "@/lib/announce";
-import { answerParts, ask, clearConversation, QUESTION_MAX, useConversation } from "@/lib/chat";
+import {
+  answerParts,
+  archiveKey,
+  ask,
+  clearConversation,
+  conversationKey,
+  openArchived,
+  QUESTION_MAX,
+  resumeConversation,
+  useConversation,
+} from "@/lib/chat";
 
 interface Suggestion {
   title: string;
@@ -40,10 +52,17 @@ const ASSET_SUGGESTIONS: Suggestion[] = [
 ];
 /** The counter shows only this close to the limit. */
 const COUNTER_FROM = QUESTION_MAX - 80;
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /**
  * `/assistant`, or `/assistant?asset=<id>&name=<name>` from an asset's page ("Bu eser hakkında sor").
  * The Rehber tab (`/rehber`) shows the same general conversation, without a back button.
+ * `/assistant?conversation=<id>` opens an archived conversation from the history, read-only:
+ * no field, a bar that starts a new conversation on its page instead.
+ *
+ * Only accounts ask: signed out, or with an anonymous session, the screen asks to sign in. The
+ * API saves every question and answer; the clock in the bar opens the history, the pencil
+ * starts a new conversation and archives this one.
  *
  * A conversation in the manner of today's chat apps, in the app's theme: a plain bar, the
  * visitor's lines in grey bubbles, answers as plain text across the column with their sources
@@ -59,22 +78,38 @@ export default function AssistantScreen() {
   const router = useRouter();
   // Also the Rehber tab (`/rehber`): there the bar sits below and there is nowhere to go back to.
   const inTab = (useSegments() as string[])[0] === "(tabs)";
-  const params = useLocalSearchParams<{ asset?: string; name?: string }>();
+  const params = useLocalSearchParams<{ asset?: string; name?: string; conversation?: string }>();
+  const archiveId = params.conversation && UUID.test(params.conversation) ? params.conversation : undefined;
   // The id comes from the address: one the API would refuse makes it a general conversation.
-  const asset = AssetIdSchema.safeParse(params.asset).success ? params.asset : undefined;
+  const asset = !archiveId && AssetIdSchema.safeParse(params.asset).success ? params.asset : undefined;
   const name = asset ? params.name : undefined;
-  const key = asset ?? "general";
+  const { user } = useCommunity();
+  const account = user?.username ? user : null;
+  const key = archiveId ? archiveKey(archiveId) : account ? conversationKey(account.id, asset) : "signed-out";
   const conversation = useConversation(key);
+  const archived = conversation.archived;
+  const [archiveError, setArchiveError] = useState<string | null>(null);
   const available = useAssistantAvailable();
   const [draft, setDraft] = useState("");
   // Web only: what the live region says; phones hear it through `announce`.
   const [status, setStatus] = useState("");
   const scroll = useRef<ScrollViewInstance>(null);
-  // Answers already here when the screen opened show as they are; only new ones write themselves out.
-  const [earlier] = useState(() => new Set(conversation.entries.map((entry) => entry.id)));
+  // Only answers to questions asked on this screen write themselves out; earlier and restored ones show as they are.
+  const [freshFrom, setFreshFrom] = useState(Number.POSITIVE_INFINITY);
+
+  useEffect(() => {
+    if (archiveId) {
+      setArchiveError(null);
+      openArchived(archiveId).catch((error: unknown) => setArchiveError(error instanceof DataError ? error.message : "Konuşma açılamadı."));
+    } else if (account) {
+      void resumeConversation(key, asset);
+    }
+  }, [key]);
 
   const busy = conversation.pending !== null;
   const empty = conversation.entries.length === 0 && !busy && !conversation.failed;
+  // Signed out (or the stored session still being read): no field, the sign-in card instead.
+  const signedOut = !archiveId && !account;
   // One rule for every way to send (typing, suggestions, "Tekrar dene"): everything is locked only
   // while the assistant is off and there is no conversation yet; otherwise one question at a time.
   const closed = available === false && empty;
@@ -84,7 +119,8 @@ export default function AssistantScreen() {
   }, [conversation.entries.length, busy]);
 
   async function send(question: string) {
-    if (closed || busy || question.trim().length === 0) return;
+    if (closed || busy || archiveId || signedOut || question.trim().length === 0) return;
+    setFreshFrom(conversation.entries.length);
     setDraft("");
     setStatus("Yanıt hazırlanıyor.");
     announce("Yanıt hazırlanıyor.");
@@ -109,6 +145,21 @@ export default function AssistantScreen() {
     else router.replace("/");
   }
 
+  /** From an archived conversation: a new one on the same page, the page's open one archived. */
+  function startNew() {
+    if (!archived || !account) return;
+    clearConversation(conversationKey(account.id, archived.assetId ?? undefined));
+    router.replace({ pathname: "/assistant", params: archived.assetId ? { asset: archived.assetId, name: archived.assetName ?? undefined } : {} });
+  }
+
+  const caption = archiveId
+    ? archived
+      ? `${archived.assetName ?? "Arşiv"} · ${new Date(archived.updatedAt).toLocaleDateString("tr-TR", { day: "numeric", month: "long" })}`
+      : "Arşiv"
+    : asset
+      ? (name ?? "Bu eser")
+      : null;
+
   // The card surface, not the page grey: white in the light theme, as chat apps are.
   return (
     <View style={[styles.screen, { backgroundColor: c.surface, paddingTop: insets.top }]}>
@@ -117,30 +168,35 @@ export default function AssistantScreen() {
       </Head>
 
       <View style={[styles.header, styles.column]}>
-        {inTab ? <View style={styles.round} /> : <IconButton icon="chevron-back" label="Geri" onPress={goBack} />}
+        {/* Two buttons wide on both sides, so the title stays centred. */}
+        <View style={styles.side}>
+          {inTab ? <View style={styles.round} /> : <IconButton icon="chevron-back" label="Geri" onPress={goBack} />}
+        </View>
         <View style={styles.title}>
           <Text style={styles.titleText} headingLevel={1}>
             Rehber
           </Text>
-          {asset && (
+          {caption && (
             <Text variant="caption" color="textSecondary" numberOfLines={1}>
-              {name ?? "Bu eser"}
+              {caption}
             </Text>
           )}
         </View>
-        {empty ? (
-          <View style={styles.round} />
-        ) : (
-          <IconButton
-            icon="create-outline"
-            label="Yeni konuşma"
-            hint="Bu konuşmayı siler"
-            onPress={() => {
-              clearConversation(key);
-              announce("Konuşma temizlendi.");
-            }}
-          />
-        )}
+        <View style={[styles.side, styles.sideEnd]}>
+          {account && !archiveId && <IconButton icon="time-outline" label="Geçmiş konuşmalar" onPress={() => router.push("/assistant-history")} />}
+          {account && !archiveId && !empty && (
+            <IconButton
+              icon="create-outline"
+              label="Yeni konuşma"
+              hint="Bu konuşma geçmişe kaydedilir"
+              onPress={() => {
+                clearConversation(key);
+                setFreshFrom(Number.POSITIVE_INFINITY);
+                announce("Yeni konuşma başladı. Önceki konuşma geçmişte.");
+              }}
+            />
+          )}
+        </View>
       </View>
 
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === "web" ? undefined : "padding"}>
@@ -152,7 +208,15 @@ export default function AssistantScreen() {
           // Follows an answer as it writes itself out.
           onContentSizeChange={() => scroll.current?.scrollToEnd({ animated: false })}
         >
-          {empty ? (
+          {signedOut ? (
+            user !== undefined && <SignIn onPress={() => router.push({ pathname: "/auth", params: { mode: "login" } })} />
+          ) : archiveId && !archived ? (
+            <View style={styles.hello}>
+              <Text color={archiveError ? "warning" : "textSecondary"} accessibilityRole={archiveError ? "alert" : undefined} style={styles.center}>
+                {archiveError ?? "Konuşma açılıyor…"}
+              </Text>
+            </View>
+          ) : empty ? (
             <View style={styles.hello}>
               <View style={[styles.mark, { backgroundColor: closed ? c.surfaceRaised : c.text }]} aria-hidden>
                 <Ionicons name="sparkles" size={22} color={closed ? c.textSecondary : c.background} />
@@ -175,9 +239,11 @@ export default function AssistantScreen() {
                   <AssistantMessage
                     key={entry.id}
                     response={entry.response}
-                    animate={!earlier.has(entry.id)}
-                    // Follow-ups only under the last answer, while nothing else is on its way.
-                    onFollowUp={i === conversation.entries.length - 1 && !busy && !conversation.failed ? (question) => void send(question) : undefined}
+                    animate={i >= freshFrom}
+                    // Follow-ups only under the last answer, while nothing else is on its way; none in the archive.
+                    onFollowUp={
+                      !archiveId && i === conversation.entries.length - 1 && !busy && !conversation.failed ? (question) => void send(question) : undefined
+                    }
                   />
                 ),
               )}
@@ -218,7 +284,7 @@ export default function AssistantScreen() {
         )}
 
         <View style={[styles.bottom, { paddingBottom: (inTab ? 0 : insets.bottom) + spacing.md }]}>
-          {empty && !closed && (
+          {!archiveId && !signedOut && empty && !closed && (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.cards} keyboardShouldPersistTaps="handled">
               {(asset ? ASSET_SUGGESTIONS : GENERAL_SUGGESTIONS).map((suggestion) => (
                 <Pressable
@@ -239,7 +305,11 @@ export default function AssistantScreen() {
             </ScrollView>
           )}
           <View style={styles.column}>
-            <Composer draft={draft} onChange={setDraft} onSend={() => void send(draft)} busy={busy} closed={closed} />
+            {archiveId ? (
+              archived && <ArchiveBar onStartNew={startNew} />
+            ) : (
+              !signedOut && <Composer draft={draft} onChange={setDraft} onSend={() => void send(draft)} busy={busy} closed={closed} />
+            )}
           </View>
         </View>
       </KeyboardAvoidingView>
@@ -247,7 +317,56 @@ export default function AssistantScreen() {
   );
 }
 
-function IconButton({ icon, label, hint, onPress }: { icon: "chevron-back" | "create-outline"; label: string; hint?: string; onPress: () => void }) {
+/** Signed out or anonymous: Rehber is for accounts, whose conversations it keeps. */
+function SignIn({ onPress }: { onPress: () => void }) {
+  const { colors: c } = useTheme();
+  return (
+    <View style={styles.hello}>
+      <View style={[styles.mark, { backgroundColor: c.text }]} aria-hidden>
+        <Ionicons name="sparkles" size={22} color={c.background} />
+      </View>
+      <Text style={styles.helloText} accessibilityRole="header">
+        Rehber'i kullanmak için giriş yap
+      </Text>
+      <Text color="textSecondary" style={styles.center}>
+        Konuşmaların hesabında saklanır; istediğin zaman geçmişten dönüp okuyabilirsin.
+      </Text>
+      <Pressable accessibilityRole="button" onPress={onPress} style={({ pressed }) => [styles.primary, { backgroundColor: c.text }, pressed && styles.pressed]}>
+        <Text variant="label" colorValue={c.background}>
+          Giriş yap ya da hesap aç
+        </Text>
+      </Pressable>
+    </View>
+  );
+}
+
+/** In place of the field in an archived conversation: it is read-only, a new one starts on its page. */
+function ArchiveBar({ onStartNew }: { onStartNew: () => void }) {
+  const { colors: c } = useTheme();
+  return (
+    <View style={[styles.archiveBar, { backgroundColor: c.surfaceRaised }]}>
+      <Ionicons name="archive-outline" size={18} color={c.textSecondary} aria-hidden />
+      <Text variant="caption" color="textSecondary" style={styles.flex}>
+        Bu konuşma arşivde; yeni soru gönderilemez.
+      </Text>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityHint="Aynı sayfada yeni bir konuşma açar"
+        onPress={onStartNew}
+        style={({ pressed }) => [styles.archiveAction, { backgroundColor: c.text }, pressed && styles.pressed]}
+      >
+        <Ionicons name="create-outline" size={15} color={c.background} />
+        <Text variant="label" colorValue={c.background}>
+          Yeni konuşma
+        </Text>
+      </Pressable>
+    </View>
+  );
+}
+
+type IconName = "chevron-back" | "create-outline" | "time-outline";
+
+function IconButton({ icon, label, hint, onPress }: { icon: IconName; label: string; hint?: string; onPress: () => void }) {
   const { colors: c } = useTheme();
   return (
     <Pressable
@@ -350,6 +469,38 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xxs,
+  },
+  side: {
+    width: touchTarget.min * 2,
+    flexDirection: "row",
+  },
+  sideEnd: {
+    justifyContent: "flex-end",
+  },
+  primary: {
+    minHeight: touchTarget.min,
+    paddingHorizontal: spacing.xl,
+    borderRadius: radius.full,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  archiveBar: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    marginHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
+    paddingLeft: spacing.lg,
+    paddingRight: spacing.sm,
+    borderRadius: radius.xl,
+  },
+  archiveAction: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xxs,
+    minHeight: touchTarget.min - 4,
+    paddingHorizontal: spacing.md,
+    borderRadius: radius.full,
   },
   round: {
     width: touchTarget.min,
