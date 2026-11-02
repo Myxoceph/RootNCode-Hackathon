@@ -1,12 +1,18 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
+  AchievementsResponseSchema,
   AnonymousSessionResponseSchema,
+  AppUserSchema,
   ContributionSchema,
+  MyAchievementsResponseSchema,
   MyContributionsResponseSchema,
   VisitResponseSchema,
   type AnonymousSessionResponse,
   type AppUser,
+  type LoginRequest,
+  type RegisterRequest,
   type Contribution,
+  type MyAchievementsResponse,
   type TextContributionKind,
   type VisitProofRequest,
   type VisitResponse,
@@ -30,7 +36,8 @@ export const communityAvailable = resolveDataSourceKind() === "api";
 /**
  * Topluluk Ziyaretçi Nabzı (module 6), the visitor's side: an anonymous session under a
  * nickname, sending notes, and the notes' moderation status. The token is stored on the
- * device (./session-storage.ts) and sent as `Authorization: Bearer`; no password, no account.
+ * device (./session-storage.ts) and sent as `Authorization: Bearer`. A visitor can also open an
+ * account with a username and password (`register`, `login`, `logout`); the session is kept the same way.
  */
 export interface CommunityState {
   /** `undefined` until the stored session has been read; `null` while the visitor has none. */
@@ -77,10 +84,76 @@ function loadSession(): Promise<void> {
   return loaded;
 }
 
+/** Keeps a signed-in session: the token for requests, the user for the screens. */
+async function keepSession(session: AnonymousSessionResponse) {
+  token = session.token;
+  set({ user: session.user });
+  try {
+    await writeSession(JSON.stringify(session));
+  } catch {
+    // Not kept: signed in for this run only, the next launch starts signed out.
+  }
+}
+
+/** Sign-in and sign-up say what went wrong in their own words, not a note's. */
+const AUTH_MESSAGES: Record<string, string> = {
+  INVALID_CREDENTIALS: "Kullanıcı adı ya da parola yanlış.",
+  USERNAME_TAKEN: "Bu kullanıcı adı alınmış. Başka bir tane dene.",
+  ALREADY_REGISTERED: "Bu oturumun zaten bir hesabı var.",
+  USER_BANNED: "Bu hesapla artık giriş yapılamıyor.",
+  INVALID_BODY: "Kullanıcı adı ya da parola kurallara uymuyor.",
+};
+
+/**
+ * Opens an account (`POST /auth/register`). A visitor who already left notes or seals under a
+ * nickname keeps them: their anonymous session becomes the account (`POST /auth/upgrade`).
+ */
+export async function register(account: RegisterRequest): Promise<AppUser> {
+  if (!communityAvailable) throw new DataError("unavailable", "Hesap açmak için sunucu gerekiyor.");
+  await loadSession();
+  if (token && state.user && state.user.username === null) {
+    const current = token;
+    const user = await call("/auth/upgrade", AppUserSchema, {
+      body: { username: account.username, password: account.password },
+      token: current,
+      messages: AUTH_MESSAGES,
+    });
+    await keepSession({ user, token: current });
+    return user;
+  }
+  const session = await call("/auth/register", AnonymousSessionResponseSchema, { body: account, messages: AUTH_MESSAGES });
+  await keepSession(session);
+  return session.user;
+}
+
+/** Signs in (`POST /auth/login`); a session already on the device gives way to the account's. */
+export async function login(credentials: LoginRequest): Promise<AppUser> {
+  if (!communityAvailable) throw new DataError("unavailable", "Giriş yapmak için sunucu gerekiyor.");
+  await loadSession();
+  const session = await call("/auth/login", AnonymousSessionResponseSchema, { body: credentials, messages: AUTH_MESSAGES });
+  await keepSession(session);
+  return session.user;
+}
+
+/** Signs out on this device (`POST /auth/logout`); signed out here even when the API cannot be reached. */
+export async function logout(): Promise<void> {
+  await loadSession();
+  const current = token;
+  if (current) {
+    try {
+      // The API answers 204, which `request` cannot read; only reaching it matters.
+      await request(`${resolveApiUrl()}/auth/logout`, AppUserSchema, { body: {}, token: current });
+    } catch {
+      // The token stays valid on the server until it expires; it is gone from here.
+    }
+  }
+  await forgetSession(current ?? "");
+}
+
 /** The API no longer knows `rejected` (revoked, database reset): the next note asks for a nickname. */
 async function forgetSession(rejected: string) {
   // A 401 that arrives after a new session was opened is about the old token: keep the new one.
-  if (token !== rejected) return;
+  if ((token ?? "") !== rejected) return;
   token = null;
   set({ user: null });
   try {
@@ -102,12 +175,14 @@ async function rememberAssetName(id: string, name: string) {
 }
 
 /** A request whose answer is never "not found"; a 401 forgets the session it was sent with. */
-async function call<T>(path: string, schema: SchemaParser<T>, init: { body?: unknown; token?: string } = {}): Promise<T> {
+async function call<T>(path: string, schema: SchemaParser<T>, init: { body?: unknown; token?: string; messages?: Record<string, string> } = {}): Promise<T> {
+  const { messages, ...options } = init;
   const result = await request(`${resolveApiUrl()}${path}`, schema, {
-    ...init,
+    ...options,
     errorFor: (status, code, details) => {
       if (status === 401 && init.token) void forgetSession(init.token);
-      return errorFor(status, code, details);
+      const message = code ? messages?.[code] : undefined;
+      return message ? new DataError("rejected", message, details) : errorFor(status, code, details);
     },
   });
   return result!;
@@ -207,6 +282,18 @@ export async function fetchMyContributions(): Promise<Contribution[] | null> {
   await loadSession();
   if (!token) return null;
   return (await call("/me/contributions", MyContributionsResponseSchema, { token })).items;
+}
+
+/**
+ * Profil · Rozetlerim: with a session, the visitor's progress and earned badges
+ * (`GET /me/achievements`); without one, every badge still to earn (`GET /achievements`).
+ */
+export async function fetchMyAchievements(): Promise<MyAchievementsResponse | null> {
+  if (!communityAvailable) return null;
+  await loadSession();
+  if (token) return call("/me/achievements", MyAchievementsResponseSchema, { token });
+  const all = await call("/achievements", AchievementsResponseSchema);
+  return { version: all.version, lang: all.lang, totalPoints: 0, visits: 0, items: all.items.map((item) => ({ ...item, earnedAt: null, progress: { current: 0, target: 1 } })) };
 }
 
 function subscribe(listener: () => void) {

@@ -5,12 +5,13 @@ import type {
   AssetSummary,
   Contribution,
   Lang,
+  MyAchievementsResponse,
   PulseResponse,
 } from "@vagabonds/contracts";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { dataSource } from "./active-source";
-import { fetchMyContributions, useCommunity } from "./community";
+import { fetchMyAchievements, fetchMyContributions, useCommunity } from "./community";
 import { DataError } from "./errors";
 import { useRefreshEpoch } from "./offline";
 import type { CityOption } from "./source";
@@ -78,6 +79,14 @@ export function usePulse(id: string): ResourceWithRetry<PulseResponse | null> {
 }
 
 /** The visitor's own notes ("Notlarım"); fetched again after each note sent. `null` without a session. */
+/** The visitor's badges (Rozetlerim): fetched again for a new session. `null` without a server. */
+export function useMyAchievements(): ResourceWithRetry<MyAchievementsResponse | null> {
+  const { user } = useCommunity();
+  const key = user === undefined ? null : (user?.id ?? "");
+  const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchMyAchievements()), [key]);
+  return useResource(load);
+}
+
 export function useMyContributions(): ResourceWithRetry<Contribution[] | null> {
   const { user, sent } = useCommunity();
   // A new session or a new note means a new list. Until the stored session has been read

@@ -200,3 +200,60 @@ describe("with the mock source", () => {
     expect(fetch).not.toHaveBeenCalled();
   });
 });
+
+describe("accounts", () => {
+  const account = (nickname: string, username: string, token: string) => {
+    const s = session(nickname, token);
+    return { ...s, user: { ...s.user, username } };
+  };
+
+  it("signs up with a new account and keeps its session", async () => {
+    const { calls } = scriptedFetch();
+    const signedUp = community.register({ username: "gezgin", password: "parola123" });
+    await flush();
+
+    expect(calls[0]!.url).toBe(`${API}/auth/register`);
+    const opened = account("gezgin", "gezgin", "vgb_account");
+    calls[0]!.reply(opened, 201);
+    expect((await signedUp).username).toBe("gezgin");
+    expect(community.getCommunityState().user?.username).toBe("gezgin");
+    expect(JSON.parse(keychain.get(SESSION_KEY)!).token).toBe(opened.token);
+  });
+
+  it("turns a visitor's anonymous session into the account, so their notes stay theirs", async () => {
+    const stored = session("Gezgin", "vgb_anon");
+    await load({ stored });
+    const { calls } = scriptedFetch();
+    const signedUp = community.register({ username: "gezgin", password: "parola123" });
+    await flush();
+
+    expect(calls[0]!.url).toBe(`${API}/auth/upgrade`);
+    expect(bearer(calls[0]!.init)).toBe(`Bearer ${stored.token}`);
+    calls[0]!.reply({ ...stored.user, username: "gezgin" });
+    await signedUp;
+    expect(community.getCommunityState().user).toMatchObject({ nickname: "Gezgin", username: "gezgin" });
+    expect(JSON.parse(keychain.get(SESSION_KEY)!).token).toBe(stored.token);
+  });
+
+  it("says a wrong password in its own words and keeps the visitor signed out", async () => {
+    const { calls } = scriptedFetch();
+    const signingIn = community.login({ username: "gezgin", password: "yanlis" });
+    await flush();
+    calls[0]!.reply({ error: { code: "INVALID_CREDENTIALS", message: "Wrong username or password" } }, 401);
+
+    await expect(signingIn).rejects.toThrow("Kullanıcı adı ya da parola yanlış.");
+    expect(community.getCommunityState().user).toBeNull();
+  });
+
+  it("signs out on this device even when the API cannot be reached", async () => {
+    await load({ stored: account("gezgin", "gezgin", "vgb_account") });
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(() => Promise.reject(new Error("offline"))),
+    );
+    await community.logout();
+
+    expect(community.getCommunityState().user).toBeNull();
+    expect(keychain.has(SESSION_KEY)).toBe(false);
+  });
+});

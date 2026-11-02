@@ -1,9 +1,9 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Button, Card, fontFamily, radius, spacing, Text, useTheme } from "@vagabonds/ui";
-import { Link, useRouter } from "expo-router";
+import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
-import { useState } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { useEffect, useState } from "react";
+import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Segmented } from "@/components/segmented";
@@ -17,7 +17,9 @@ import {
   type PlanItem,
   type Region,
 } from "@/content/routes";
-import { useAddedDishes } from "@/lib/route-plan";
+import { announce } from "@/lib/announce";
+import { setDishes, useAddedDishes } from "@/lib/route-plan";
+import { routeKey, saveRoute, useSavedRoutes } from "@/lib/saved-routes";
 
 const regions = [
   { value: "bursa", label: "Bursa" },
@@ -33,20 +35,31 @@ const durations = [
 
 /**
  * Rota Planla (module 4): pick a region and a length, get a themed waqf route
- * ordered by importance and fitted to the weather.
+ * ordered by importance and fitted to the weather. "Rotayı kaydet" keeps it in Profil ·
+ * Rotalarım, which opens it here again (`/route?region=…&duration=…&dishes=…`).
  */
 export default function RouteScreen() {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const params = useLocalSearchParams<{ region?: string; duration?: string; dishes?: string }>();
   const [region, setRegion] = useState<Region>("bursa");
   const [duration, setDuration] = useState<Duration>("half");
   const addedIds = useAddedDishes();
+  const saved = useSavedRoutes();
+
+  // A saved route opened from Rotalarım.
+  useEffect(() => {
+    if (params.region === "bursa" || params.region === "edirne" || params.region === "both") setRegion(params.region);
+    if (params.duration === "half" || params.duration === "1" || params.duration === "2") setDuration(params.duration);
+    if (params.dishes !== undefined) setDishes(params.dishes ? params.dishes.split(",") : []);
+  }, [params.region, params.duration, params.dishes]);
 
   const plan = planRoute(region, duration);
   const [firstDay] = plan.days;
   const stopCount = plan.days.reduce((n, d) => n + d.stops.length, 0);
   const added = bursaDishes.filter((d) => addedIds.includes(d.id));
+  const isSaved = saved.some((route) => routeKey(route) === routeKey({ region, duration, dishes: [...addedIds] }));
 
   return (
     <ScrollView
@@ -107,7 +120,26 @@ export default function RouteScreen() {
               />
             </View>
           )}
-          <Button label="Haritada başlat" onPress={() => router.navigate("/")} />
+          <View style={styles.actions}>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityState={{ disabled: isSaved }}
+              disabled={isSaved}
+              onPress={() => {
+                void saveRoute({ region, duration, dishes: [...addedIds], title: plan.title, stops: stopCount });
+                announce("Rota kaydedildi. Profil, Rotalarım'da.");
+              }}
+              style={({ pressed }) => [styles.save, { borderColor: isSaved ? c.border : c.highlightMark }, pressed && styles.pressed]}
+            >
+              <Ionicons name={isSaved ? "bookmark" : "bookmark-outline"} size={18} color={isSaved ? c.textSecondary : c.highlight} />
+              <Text variant="label" colorValue={isSaved ? c.textSecondary : c.highlight}>
+                {isSaved ? "Kaydedildi" : "Rotayı kaydet"}
+              </Text>
+            </Pressable>
+            <View style={styles.flex}>
+              <Button label="Haritada başlat" onPress={() => router.navigate("/")} />
+            </View>
+          </View>
         </Card>
 
         <Link href="/route/food" asChild>
@@ -204,6 +236,23 @@ function Timeline({ items }: { items: PlanItem[] }) {
 }
 
 const styles = StyleSheet.create({
+  pressed: {
+    opacity: 0.75,
+  },
+  actions: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+  },
+  save: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+    minHeight: 48,
+    paddingHorizontal: spacing.lg,
+    borderRadius: radius.full,
+    borderWidth: 1.5,
+  },
   content: {
     padding: spacing.lg,
     gap: spacing.md,
