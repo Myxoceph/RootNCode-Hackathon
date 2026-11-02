@@ -61,14 +61,6 @@ export function hasReadableInscription(asset: AssetDetail): boolean {
   return asset.inscriptions.some((i) => i.translation || i.transliteration);
 }
 
-/**
- * Whether Taşın Dili opens on this asset: an inscription of its own to read, or buildings that
- * may have one (a complex: the map shows it in their place, and the screen looks on them too).
- */
-export function hasInscriptions(asset: AssetDetail): boolean {
-  return hasReadableInscription(asset) || asset.children.length > 0;
-}
-
 /** Whether the camera has something to look for on this asset. */
 export function isTrackable(asset: AssetDetail): boolean {
   return cameraInscriptions(asset).length > 0;

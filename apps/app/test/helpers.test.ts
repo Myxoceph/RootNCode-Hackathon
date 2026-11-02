@@ -1,7 +1,7 @@
 import { AR_MINDAR_VERSION, type AssetDetail, type InscriptionV2 } from "@vagabonds/contracts";
 import { describe, expect, it } from "vitest";
 
-import { cameraInscriptions, featuredInscription, hasInscriptions, isTrackable, nearbyAssets, overlayText } from "../src/ar/inscription-targets";
+import { cameraInscriptions, featuredInscription, hasReadableInscription, isTrackable, nearbyAssets, overlayText } from "../src/ar/inscription-targets";
 import { capsuleForSoundKey, captionAt, capsules, formatSeconds } from "../src/content/capsules";
 import { pulseItemsFromTips } from "../src/data/pulse";
 import { formatDate } from "../src/lib/format-date";
@@ -71,11 +71,9 @@ describe("Taşın Dili inscription choice", () => {
     expect(cameraInscriptions(asset("x", [outdated]))[0]!.mindUrl).toBeNull();
   });
 
-  it("opens Taşın Dili on an asset with a text to read, and on a complex, whose inscriptions are on its buildings", () => {
-    const withChildren = (inscriptions: InscriptionV2[], children: unknown[]) => ({ ...asset("x", inscriptions), children }) as unknown as AssetDetail;
-    expect(hasInscriptions(withChildren([translated], []))).toBe(true);
-    expect(hasInscriptions(withChildren([untranslated], []))).toBe(false);
-    expect(hasInscriptions(withChildren([], [{ id: "x-camii" }]))).toBe(true);
+  it("reads an asset's inscriptions only when one has a text", () => {
+    expect(hasReadableInscription(asset("x", [untranslated, translated]))).toBe(true);
+    expect(hasReadableInscription(asset("x", [untranslated]))).toBe(false);
   });
 
   it("lays the translation over the stone, else the reading, cut at a word", () => {

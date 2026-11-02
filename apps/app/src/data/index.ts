@@ -3,6 +3,7 @@ export { communityAvailable, login, logout, register, sendContribution, sendVisi
 export { DataError, type DataErrorKind } from "./errors";
 export { refreshData, useOfflineSince } from "./offline";
 export {
+  loadAllAssets,
   useAsset,
   useAssetList,
   useAssetRelations,

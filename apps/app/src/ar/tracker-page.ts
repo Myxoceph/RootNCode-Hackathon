@@ -146,7 +146,9 @@ function drawOverlay(corners, width, height, text) {
   context.setTransform(a, b, c, d, p0[0], p0[1]);
   context.fillStyle = "rgba(10, 12, 18, 0.72)";
   context.beginPath();
-  context.roundRect(0, 0, width, height, width * 0.03);
+  // roundRect is missing in older WebViews (iOS 15); a throw here would stop the tracking loop.
+  if (context.roundRect) context.roundRect(0, 0, width, height, width * 0.03);
+  else context.rect(0, 0, width, height);
   context.fill();
   // The text goes in the part of the target on screen: a wide inscription held close in a
   // portrait phone runs past the screen's sides. The screen's corners, back on the target's plane.
@@ -160,12 +162,15 @@ function drawOverlay(corners, width, height, text) {
   if (boxWidth <= 0 || boxHeight <= 0) return context.restore();
   const pad = boxWidth * 0.06;
   // The largest size whose lines fit, down to a floor; past that the last line ends in "…".
+  // \`size\` stays the size last set, so the spacing below matches the font drawn.
+  const floor = boxWidth / 30;
   let size = boxWidth / 12;
   let lines = [];
-  for (; size >= boxWidth / 30; size *= 0.9) {
+  for (;;) {
     context.font = "600 " + size + "px system-ui, sans-serif";
     lines = wrap(text, boxWidth - 2 * pad);
-    if (lines.length * size * 1.3 <= boxHeight - 2 * pad) break;
+    if (lines.length * size * 1.3 <= boxHeight - 2 * pad || size * 0.9 < floor) break;
+    size *= 0.9;
   }
   const fit = Math.max(1, Math.floor((boxHeight - 2 * pad) / (size * 1.3)));
   if (lines.length > fit) lines = [...lines.slice(0, fit - 1), lines[fit - 1] + "…"];

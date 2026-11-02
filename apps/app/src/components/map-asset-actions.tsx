@@ -5,7 +5,7 @@ import { useRouter } from "expo-router";
 import { useEffect, useState, type ComponentProps } from "react";
 import { Animated, Easing, Linking, Pressable, StyleSheet } from "react-native";
 
-import { hasInscriptions } from "@/ar/inscription-targets";
+import { useHasInscriptions } from "@/ar/inscription-scope";
 import { useAsset } from "@/data";
 import { speak, stopSpeaking } from "@/lib/speak";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -37,7 +37,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   const [describing, setDescribing] = useState(false);
   const record = detail.status === "success" ? detail.data : null;
   const description = record?.accessibility.audioDescription ?? null;
-  const readable = record ? hasInscriptions(record) : false;
+  const readable = useHasInscriptions(record);
   const sealable = record ? visitSealTarget(record) !== null : false;
   const coords = asset.coordinates;
   const reduceMotion = useReducedMotion();

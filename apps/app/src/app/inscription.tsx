@@ -46,7 +46,10 @@ export default function InscriptionScreen() {
   const [chosen, setMode] = useState<"camera" | "reading" | null>(web ? "reading" : null);
   const [notice, setNotice] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
-  const scope = useInscriptionScope(id, attempt);
+  // The location only serves the camera: not asked for on the web or with a screen reader;
+  // `null` waits until the system says whether one is on.
+  const locate = web ? false : screenReader === null ? null : !screenReader;
+  const scope = useInscriptionScope(id, locate, attempt);
   const retry = useCallback(() => setAttempt((n) => n + 1), []);
   // The asset the reading mode shows: the one asked for, or the nearest.
   const asset: ResourceWithRetry<AssetDetail | null> =
@@ -59,9 +62,15 @@ export default function InscriptionScreen() {
   // No inscription with a photo to find (or nothing loaded): the camera has nothing to look for.
   const trackable = scope.status === "ready" ? scope.assets.filter(isTrackable) : [];
   const untrackable = loaded && trackable.length === 0;
-  // Until the asset is in and the system says whether a screen reader is on, open neither,
-  // so the camera is not asked for in vain.
-  const mode = untrackable ? "reading" : (chosen ?? (screenReader === null || !loaded ? null : screenReader ? "reading" : "camera"));
+  // Until the assets are in and the system says whether a screen reader is on, open neither,
+  // so the camera is not asked for in vain; the camera never opens with nothing to look for.
+  const mode = !loaded
+    ? chosen === "reading"
+      ? "reading"
+      : null
+    : untrackable
+      ? "reading"
+      : (chosen ?? (screenReader === null ? null : screenReader ? "reading" : "camera"));
 
   // A screen reader cannot follow a camera image; start such users on the text.
   useEffect(() => {
@@ -92,7 +101,7 @@ export default function InscriptionScreen() {
           }
         />
       )}
-      {mode === "camera" && (
+      {mode === "camera" && trackable.length > 0 && (
         <InscriptionCamera
           assets={trackable}
           nearby={scope.status === "ready" && scope.nearby}
@@ -124,12 +133,16 @@ interface InscriptionCameraProps {
   onReadAsText: () => void;
 }
 
-/** What the bar under the title says is being looked for. */
-function lookingFor(assets: AssetDetail[], count: number, nearby: boolean, asked: boolean): string {
-  const kitabe = count === 1 ? "kitabesi" : `${count} kitabesi`;
-  if (nearby) return assets.length === 1 ? `Yakındaki ${assets[0]!.name} ${kitabe}` : `Yakındaki ${assets.length} eserin ${count} kitabesi`;
-  if (asked) return `${assets[0]!.name} ${kitabe}`;
-  return `Yakında yok · örnek: ${assets[0]!.name}`;
+/**
+ * What the bar under the title says is being looked for: the tracked targets (capped at
+ * `MAX_TARGETS`), counted by the assets they are on.
+ */
+function lookingFor(assets: AssetDetail[], targets: TrackedTarget[], nearby: boolean, asked: boolean): string {
+  const on = assets.filter((asset) => targets.some((t) => t.assetId === asset.id));
+  const single = on.length === 1 ? `${on[0]!.name} ${targets.length === 1 ? "kitabesi" : `${targets.length} kitabesi`}` : null;
+  if (!nearby && !asked) return `Yakında yok · örnek: ${single ?? `${on.length} eser`}`;
+  const many = `${on.length} ${asked ? "yapının" : "eserin"} ${targets.length} kitabesi`;
+  return nearby ? `Yakındaki ${single ?? many}` : (single ?? many);
 }
 
 function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: InscriptionCameraProps) {
@@ -249,7 +262,7 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
     revealed: "Kitabe tanındı · çevirisi taşın üstünde",
   }[phase];
   const found = phase === "locked" || phase === "revealed";
-  const subtitle = set ? lookingFor(assets, set.targets.length, nearby, asked) : "Kitabeye odaklan, tamamı ekrana sığsın";
+  const subtitle = set ? lookingFor(assets, set.targets, nearby, asked) : "Kitabeye odaklan, tamamı ekrana sığsın";
 
   return (
     <View style={styles.screen} onLayout={(e) => setHeight(e.nativeEvent.layout.height)}>
