@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { AssetDetail, AssetSection, Confidence, Media } from "@vagabonds/contracts";
+import type { AssetDetail, AssetSection, Media } from "@vagabonds/contracts";
 import { cameraColors, fontFamily, palette, radius, SourceNote, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
 import { Link, useNavigation, useRouter, type Href } from "expo-router";
 import { StatusBar } from "expo-status-bar";
@@ -21,10 +21,16 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
 import { toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
+import { AssetGallery } from "@/components/asset-gallery";
 import { AssetImage } from "@/components/asset-image";
 import { BuildingIllustration } from "@/components/building-illustration";
 import { VisitorPulse } from "@/components/visitor-pulse";
 import { CAPSULE_SECONDS, captionAt, capsuleForSoundKey, capsules, formatSeconds } from "@/content/capsules";
+import { useAssetRelations } from "@/data";
+import { yearOfDating } from "@/lib/dating";
+import { announce } from "@/lib/announce";
+import { isAssetUnlocked, LOCKED_WARNING, relatedAssetsOf } from "@/lib/related-assets";
+import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speak, stopSpeaking } from "@/lib/speak";
 import { visitSealTarget } from "@/lib/visit-seal";
@@ -45,9 +51,6 @@ const ink = {
   edge: "rgba(255, 255, 255, 0.16)",
 };
 
-/** Only what the sources state outright: no "Tahmini", "Tartışmalı" or "Rivayet" here. */
-const isCertain = (confidence: Confidence | null) => confidence === null || confidence.code === "certain";
-
 type Page =
   | { kind: "cover"; key: string; photo: Media | null }
   | { kind: "summary"; key: string; photo: Media | null; text: string }
@@ -67,18 +70,20 @@ interface Figure {
  * a photo and one sentence each, at the visitor's own pace. The dots at the side show where
  * they are. The last page holds what to do: directions, the camera experiences and sound.
  *
- * Only what the sources state for certain is told.
+ * Whatever the book says is told, in its own words: "rivayete göre", "muhtemelen".
  */
 export function AssetDetailView({ asset }: { asset: AssetDetail }) {
   const router = useRouter();
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
-  const chapters = useMemo(() => asset.sections.filter((s) => isCertain(s.confidence)), [asset]);
+  const chapters = asset.sections;
   const pages = useMemo(() => buildPages(asset, chapters), [asset, chapters]);
   const scroll = useRef<ScrollViewInstance>(null);
   const [height, setHeight] = useState(0);
   const [index, setIndex] = useState(0);
   const [reading, setReading] = useState<number | null>(null);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const photos = useMemo(() => picturesOf(asset), [asset]);
 
   const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     if (height === 0) return;
@@ -108,7 +113,7 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
           scrollEventThrottle={32}
         >
           {pages.map((page, i) => (
-            <PageView key={page.key} page={page} height={height} active={i === index} asset={asset} onRead={setReading}>
+            <PageView key={page.key} page={page} height={height} active={i === index} asset={asset} onRead={setReading} photos={photos} onGallery={() => setGalleryOpen(true)}>
               {page.kind === "end" && (
                 <End asset={asset} onTop={() => scroll.current?.scrollTo({ y: 0, animated: true })} top={insets.top + spacing.xxxl + spacing.md} bottom={insets.bottom} />
               )}
@@ -138,6 +143,7 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
       )}
 
       <Reader chapters={chapters} index={reading} onChange={setReading} assetName={asset.name} />
+      <AssetGallery photos={photos} visible={galleryOpen} onClose={() => setGalleryOpen(false)} />
     </View>
   );
 }
@@ -163,7 +169,7 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
   pages.push({ kind: "summary", key: "summary", photo: photoFor(), text: asset.summary });
 
   const figures = figuresOf(asset);
-  const founder = asset.founder && isCertain(asset.founder.confidence) ? asset.founder.name : null;
+  const founder = asset.founder?.name ?? null;
   if (figures.length > 0) pages.push({ kind: "figures", key: "figures", photo: photoFor(), figures, founder });
 
   const told = new Set<string>();
@@ -195,14 +201,14 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
   return pages;
 }
 
-/** The year it was built (when certain), then the record's certain measurements: three at most. */
+/** The year it was built, then the record's measurements: three at most. */
 function figuresOf(asset: AssetDetail): Figure[] {
   const figures: Figure[] = [];
   const year = builtYear(asset);
   if (year) figures.push({ value: year, unit: null, label: "Yapım yılı" });
   for (const fact of asset.facts) {
     if (figures.length === 3) break;
-    if (fact.valueNum === null || !isCertain(fact.confidence)) continue;
+    if (fact.valueNum === null) continue;
     // No thousands dot under 10 000, so a year ("1573") never reads as "1.573".
     const value = fact.valueNum >= 10000 ? fact.valueNum.toLocaleString("tr-TR") : String(fact.valueNum);
     figures.push({ value, unit: fact.unit, label: fact.label });
@@ -210,16 +216,9 @@ function figuresOf(asset: AssetDetail): Figure[] {
   return figures;
 }
 
-/**
- * When it was built, when the sources are sure of it: the first Gregorian year of the display
- * ("H. 802 / M. 1399-1400" → 1399; `startYear` is when building began), or the display itself
- * when it names no year ("XIV. yüzyıl").
- */
+/** When it was built: the record's own label, else the first Gregorian year of its dating, or the dating itself. */
 function builtYear(asset: AssetDetail): string | null {
-  const dating = asset.dating;
-  if (!dating?.display || !isCertain(dating.confidence)) return null;
-  const year = dating.display.match(/M\.\s*(\d{3,4})/)?.[1] ?? dating.display.match(/\b\d{3,4}\b/)?.[0];
-  return year ?? dating.display;
+  return asset.yearLabel ?? yearOfDating(asset.dating?.display ?? null);
 }
 
 /** The first full sentence, skipping abbreviations like "H. 802"; cut at a word past 200 characters. */
@@ -257,6 +256,8 @@ function PageView({
   active,
   asset,
   onRead,
+  photos,
+  onGallery,
   children,
 }: {
   page: Page;
@@ -264,6 +265,8 @@ function PageView({
   active: boolean;
   asset: AssetDetail;
   onRead: (chapter: number) => void;
+  photos: Media[];
+  onGallery: () => void;
   children?: ReactNode;
 }) {
   const insets = useSafeAreaInsets();
@@ -297,14 +300,14 @@ function PageView({
             { opacity: enter, transform: [{ translateY: enter.interpolate({ inputRange: [0, 1], outputRange: [24, 0] }) }] },
           ]}
         >
-          <PageCopy page={page} asset={asset} onRead={onRead} />
+          <PageCopy page={page} asset={asset} onRead={onRead} photos={photos} onGallery={onGallery} />
         </Animated.View>
       )}
     </View>
   );
 }
 
-function PageCopy({ page, asset, onRead }: { page: Page; asset: AssetDetail; onRead: (chapter: number) => void }) {
+function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asset: AssetDetail; onRead: (chapter: number) => void; photos: Media[]; onGallery: () => void }) {
   switch (page.kind) {
     case "cover": {
       const meta = [builtYear(asset), `${asset.district}, ${asset.city.label}`].filter(Boolean).join("  ·  ");
@@ -326,6 +329,11 @@ function PageCopy({ page, asset, onRead }: { page: Page; asset: AssetDetail; onR
           <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
             {meta}
           </Text>
+          <View style={styles.coverActions}>
+            {photos.length > 1 && <GalleryButton photos={photos} onPress={onGallery} />}
+            <DossierButton asset={asset} />
+          </View>
+          <RelatedButton asset={asset} />
           <ScrollHint />
         </>
       );
@@ -413,9 +421,96 @@ function ScrollHint() {
         <Ionicons name="chevron-down" size={22} color={ink.text} />
       </Animated.View>
       <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
-        Keşfetmek için kaydır
+        Kaydır, eseri kısaca tanı
       </Text>
     </View>
+  );
+}
+
+/** The way into the gallery, showing what is in it: the next few photos as a small stack, on a gold edge. */
+function GalleryButton({ photos, onPress }: { photos: Media[]; onPress: () => void }) {
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel={`Fotoğraflar, ${photos.length} görsel`} onPress={onPress} style={({ pressed }) => [styles.gallery, pressed && styles.pressed]}>
+      <View style={styles.thumbs}>
+        {photos.slice(1, 3).map((photo, i) => (
+          <View key={photo.key} style={[styles.thumb, i > 0 && styles.thumbOver]}>
+            <AssetImage media={photo} decorative fill />
+          </View>
+        ))}
+      </View>
+      <Text variant="caption" colorValue={ink.text} style={styles.bold}>
+        {`${photos.length} fotoğraf`}
+      </Text>
+    </Pressable>
+  );
+}
+
+/** The way to everything the book says; the same on the first page and at the very end of the last. */
+function DossierButton({ asset, wide = false }: { asset: AssetDetail; wide?: boolean }) {
+  return (
+    <Link href={{ pathname: "/dossier", params: { asset: asset.id } }} asChild>
+      {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
+      <Pressable accessibilityRole="link" accessibilityLabel="Eserin dosyası: kitaptaki her şey" style={wide ? styles.dossierWide : styles.dossier}>
+        <Ionicons name="document-text-outline" size={wide ? 20 : 18} color={ink.gold} />
+        <Text variant={wide ? "label" : "caption"} colorValue={ink.text} style={styles.bold}>
+          Eserin dosyası
+        </Text>
+        {wide && <Ionicons name="chevron-forward" size={18} color={ink.gold} />}
+      </Pressable>
+    </Link>
+  );
+}
+
+/** How long the warning stands in for the button's words. */
+const LOCKED_WARNING_MS = 3500;
+
+/**
+ * The way to the assets this one is related to; gone when the answer is that there are none. While
+ * this asset is locked it does not open: pressed, it says why instead.
+ */
+function RelatedButton({ asset }: { asset: AssetDetail }) {
+  const related = useAssetRelations(asset.id);
+  const locked = !isAssetUnlocked(asset, useUnlockedAssets());
+  const [warned, setWarned] = useState(false);
+  useEffect(() => {
+    if (!warned) return;
+    const timer = setTimeout(() => setWarned(false), LOCKED_WARNING_MS);
+    return () => clearTimeout(timer);
+  }, [warned]);
+
+  const entries = related.status === "success" ? relatedAssetsOf(related.data?.items ?? []) : null;
+  if (entries?.length === 0) return null;
+  const inside = (
+    <>
+      <Ionicons name={warned ? "alert-circle" : "link"} size={20} color={ink.gold} style={styles.relatedIcon} />
+      <Text variant="caption" colorValue={ink.text} numberOfLines={2} style={[styles.bold, styles.flexText]}>
+        {warned ? LOCKED_WARNING : "Bu eserin ilişkili olduğu eserler listesi"}
+      </Text>
+      <Ionicons name={locked ? "lock-closed" : "chevron-forward"} size={locked ? 16 : 18} color={ink.gold} />
+    </>
+  );
+  if (locked) {
+    return (
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Bu eserin ilişkili olduğu eserler listesi, kilitli"
+        onPress={() => {
+          setWarned(true);
+          announce(LOCKED_WARNING);
+        }}
+        style={styles.related}
+      >
+        {inside}
+      </Pressable>
+    );
+  }
+  return (
+    <Link href={{ pathname: "/related", params: { asset: asset.id, name: asset.name } }} asChild>
+      {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
+      <Pressable accessibilityRole="link" accessibilityLabel={entries ? `Bu eserin ilişkili olduğu eserler listesi, ${entries.length} eser` : "Bu eserin ilişkili olduğu eserler listesi"} style={styles.related}>
+        {inside}
+      </Pressable>
+    </Link>
   );
 }
 
@@ -480,6 +575,12 @@ function galleryOf(asset: AssetDetail): Media[] {
   return asset.cover ? [asset.cover, ...rest] : rest;
 }
 
+/** Everything to look at in the gallery: the photos and the drawings (plans), the cover first. */
+function picturesOf(asset: AssetDetail): Media[] {
+  const rest = asset.media.filter((m) => (m.kind === "photo" || m.kind === "archive_photo" || m.kind === "drawing") && m.key !== asset.cover?.key);
+  return asset.cover ? [asset.cover, ...rest] : rest;
+}
+
 /** The dataset's fee codes; anything else is already a price in words. */
 const fees: Record<string, string | null> = {
   free: "Ücretsiz",
@@ -487,8 +588,8 @@ const fees: Record<string, string | null> = {
 };
 
 /**
- * The last page, kept quiet: the name, one line of what the visit takes, directions, and the
- * experiences as a plain list. Scrolls on its own when it does not fit.
+ * The last page, kept quiet: the name, one line of what the visit takes, directions, the
+ * experiences as a plain list and the visitors' notes. Scrolls on its own when it does not fit.
  */
 function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => void; top: number; bottom: number }) {
   const raw = asset.visit.entranceFee;
@@ -532,7 +633,7 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
         </View>
 
         <Experiences asset={asset} />
-        {asset.visitorTips.length > 0 && <Tips asset={asset} />}
+        <VisitorPulse asset={asset} />
 
         <Pressable accessibilityRole="button" onPress={onTop} style={({ pressed }) => [styles.replay, pressed && styles.pressed]}>
           <Ionicons name="arrow-up" size={14} color={ink.soft} />
@@ -540,6 +641,8 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
             Başa dön
           </Text>
         </Pressable>
+
+        <DossierButton asset={asset} wide />
       </View>
     </ScrollView>
   );
@@ -554,12 +657,14 @@ function Experiences({ asset }: { asset: AssetDetail }) {
   const capsuleType = soundKey ? capsuleForSoundKey(soundKey) : undefined;
   const playing = capsuleType !== undefined && player?.type === capsuleType ? player : null;
   const description = asset.accessibility.audioDescription;
+  const opened = isAssetUnlocked(asset, useUnlockedAssets());
 
   const actions: Action[] = [];
   if (asset.inscriptions.some((i) => i.translation || i.transliteration)) {
     actions.push({ key: "inscription", icon: "scan-outline", title: "Taşın Dili", hint: "Kitabeyi kamerayla oku", spoken: "Taşın Dili: kitabeyi kamerayla oku", href: { pathname: "/inscription", params: { asset: asset.id } } });
   }
-  if (visitSealTarget(asset)) {
+  // An unlocked asset needs no seal.
+  if (visitSealTarget(asset) && !opened) {
     const hint = "Eserde olduğunu kanıtla";
     actions.push({ key: "seal", icon: "ribbon-outline", title: "Ziyaret Mührü", hint, spoken: `Ziyaret Mührü: ${hint}`, href: { pathname: "/visit-seal", params: { asset: asset.id } } });
   }
@@ -634,16 +739,6 @@ function Row({ action, live }: { action: Action; live: boolean }) {
   );
 }
 
-/** Visitors' field notes, on the theme's own surface (the notes and their form are themed). */
-function Tips({ asset }: { asset: AssetDetail }) {
-  const { colors: c } = useTheme();
-  return (
-    <View style={[styles.tips, { backgroundColor: c.background }]}>
-      <VisitorPulse asset={asset} />
-    </View>
-  );
-}
-
 /* ───────────────────────── Reader ───────────────────────── */
 
 /** One chapter on a quiet page of its own: large text, its source, then the next chapter. */
@@ -705,6 +800,33 @@ function Reader({ chapters, index, onChange, assetName }: { chapters: AssetSecti
     </Modal>
   );
 }
+
+const relatedButton = {
+  flexDirection: "row",
+  alignItems: "center",
+  alignSelf: "stretch",
+  gap: spacing.xs,
+  minHeight: 48,
+  paddingLeft: spacing.xs,
+  paddingRight: spacing.md,
+  borderRadius: radius.full,
+  backgroundColor: "rgba(6, 8, 13, 0.6)",
+  borderColor: ink.gold,
+  borderWidth: 1.5,
+} as const;
+
+const dossierButton = {
+  flexDirection: "row",
+  alignItems: "center",
+  alignSelf: "flex-start",
+  gap: spacing.xs,
+  minHeight: 48,
+  paddingHorizontal: spacing.lg,
+  borderRadius: radius.full,
+  backgroundColor: "rgba(6, 8, 13, 0.6)",
+  borderColor: ink.gold,
+  borderWidth: 1.5,
+} as const;
 
 const styles = StyleSheet.create({
   screen: {
@@ -826,6 +948,62 @@ const styles = StyleSheet.create({
     fontSize: 22,
     lineHeight: 30,
   },
+  coverActions: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.sm,
+    marginTop: spacing.xs,
+  },
+  // The two on the cover share out the row's width, so it ends where the button under it does.
+  dossier: {
+    ...dossierButton,
+    alignSelf: "auto",
+    flexGrow: 1,
+    justifyContent: "center",
+    paddingHorizontal: spacing.md,
+  },
+  dossierWide: {
+    ...dossierButton,
+    minHeight: 56,
+    alignSelf: "stretch",
+    justifyContent: "center",
+  },
+  gallery: {
+    flexGrow: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing.xs,
+    minHeight: 48,
+    paddingLeft: spacing.xs,
+    paddingRight: spacing.md,
+    borderRadius: radius.full,
+    backgroundColor: "rgba(6, 8, 13, 0.6)",
+    borderColor: ink.gold,
+    borderWidth: 1.5,
+  },
+  related: relatedButton,
+  relatedIcon: {
+    marginLeft: spacing.sm,
+  },
+  flexText: {
+    flex: 1,
+  },
+  thumbs: {
+    flexDirection: "row",
+  },
+  thumb: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    overflow: "hidden",
+    borderWidth: 2,
+    borderColor: palette.gece1000,
+    backgroundColor: palette.gece1000,
+  },
+  thumbOver: {
+    marginLeft: -14,
+  },
   readMore: {
     flexDirection: "row",
     alignItems: "center",
@@ -881,10 +1059,6 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: ink.edge,
-  },
-  tips: {
-    padding: spacing.lg,
-    borderRadius: radius.xl,
   },
   replay: {
     flexDirection: "row",
