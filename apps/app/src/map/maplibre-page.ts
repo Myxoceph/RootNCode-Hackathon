@@ -56,6 +56,7 @@ export type MapPageEvent =
   | { type: "cityLanded"; plate: number }
   /** "Kilidini aç" over the chosen locked asset was tapped. */
   | { type: "unlock"; id: string }
+  | { type: "sceneEnd" }
   | { type: "error"; message: string };
 
 /** Messages the app sends to the map page. */
@@ -121,20 +122,163 @@ export function mapPageHtml({
   body:not(.credits-open) .maplibregl-ctrl-attrib.maplibregl-compact { padding: 0; background: rgba(255, 255, 255, 0.08); }
   body:not(.credits-open) .maplibregl-ctrl-attrib-button { background-color: transparent; filter: invert(1); opacity: 0.45; }
   #network { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-  /* "Kilidini aç" over the chosen locked seal: night blue and gold like the seal, pointing down at it. */
+  /* "Kilidini aç" over the chosen locked seal: white with night-blue words, pointing down at it. */
   .unlock {
     position: relative; display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px 0 11px;
-    border: 1px solid rgba(231, 194, 106, 0.5); border-radius: 18px; background: ${colors.seal.to}; color: #fff;
+    border: 1px solid rgba(10, 20, 40, 0.12); border-radius: 18px; background: #fff; color: ${colors.seal.lockEdge};
     font: 600 14px/1 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; white-space: nowrap;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); cursor: pointer; transform-origin: 50% 100%; -webkit-tap-highlight-color: transparent;
   }
   .unlock::after {
     content: ""; position: absolute; left: 50%; bottom: -6px; width: 10px; height: 10px; margin-left: -6px;
-    background: ${colors.seal.to}; border: solid rgba(231, 194, 106, 0.5); border-width: 0 1px 1px 0; transform: rotate(45deg);
+    background: #fff; border: solid rgba(10, 20, 40, 0.12); border-width: 0 1px 1px 0; transform: rotate(45deg);
   }
-  .unlock:active { filter: brightness(1.2); }
+  .unlock:active { filter: brightness(0.92); }
   .unlock.pop { animation: unlock-pop 0.38s cubic-bezier(0.2, 1.4, 0.4, 1) both; }
   @keyframes unlock-pop { from { opacity: 0; transform: translateY(8px) scale(0.7); } to { opacity: 1; transform: none; } }
+  /*
+   * An asset just unlocked (playOpened): the seal rises as a medallion, a gold ring fills, and at 1.25 s
+   * the padlock snaps: fog blown off, shockwaves on the ground, light, sparks, the medallion spinning to
+   * its open face, the name, then it lands. Only transform and opacity, so it holds up on a phone.
+   */
+  .scene, .scene * { pointer-events: none; }
+  .maplibregl-ctrl { transition: opacity 0.2s ease; }
+  body.scene-on .maplibregl-ctrl { opacity: 0; pointer-events: none; }
+  .scene { width: 0; height: 0; }
+  .scene i { position: absolute; display: block; }
+  .scene-veil {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(circle at var(--cx, 50%) var(--cy, 45%), rgba(4, 7, 14, 0.62), rgba(4, 7, 14, 0.94) 330px);
+    animation: scene-veil 3.9s linear both;
+  }
+  @keyframes scene-veil { 0% { opacity: 0; } 12% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; } }
+  #map.scene-shake { animation: scene-shake 0.46s 1.25s linear both; }
+  @keyframes scene-shake {
+    0%, 100% { transform: none; }
+    15% { transform: scale(1.018) translate(-5px, 3px); }
+    35% { transform: scale(1.014) translate(4px, -4px); }
+    55% { transform: scale(1.01) translate(-3px, -2px); }
+    78% { transform: scale(1.005) translate(2px, 1px); }
+  }
+  .scene-shadow {
+    left: -58px; top: -20px; width: 116px; height: 40px; border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 70%);
+    animation: scene-shadow 3.6s linear both;
+  }
+  @keyframes scene-shadow { 0% { opacity: 0; transform: scale(0.3); } 18%, 84% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(0.3); } }
+  .scene-pillar {
+    /* Reaches past the asset and fades there: a gradient alone would end in a straight line at its foot. */
+    left: -80px; bottom: -90px; width: 160px; height: 650px; transform-origin: 50% calc(100% - 90px);
+    background: radial-gradient(ellipse 50% 100% at 50% 100%, rgba(255, 238, 190, 0.9), rgba(231, 194, 106, 0.32) 42%, rgba(231, 194, 106, 0) 74%);
+    -webkit-mask-image: linear-gradient(to top, transparent, #000 130px);
+    mask-image: linear-gradient(to top, transparent, #000 130px);
+    animation: scene-pillar 1.5s 1.25s cubic-bezier(0.15, 0.8, 0.3, 1) both;
+  }
+  @keyframes scene-pillar { 0% { opacity: 0; transform: scaleX(0.25) scaleY(0.1); } 12% { opacity: 1; } 45% { opacity: 0.8; transform: scaleX(1) scaleY(1); } 100% { opacity: 0; transform: scaleX(0.55) scaleY(1.12); } }
+  .scene-coin {
+    left: -62px; top: -62px; width: 124px; height: 124px; perspective: 620px;
+    animation: scene-coin 3.6s linear both;
+  }
+  @keyframes scene-coin {
+    0% { transform: translateY(0) scale(var(--end)); animation-timing-function: cubic-bezier(0.2, 1.3, 0.4, 1); }
+    20% { transform: translateY(-96px) scale(1); }
+    34.7% { transform: translateY(-96px) scale(0.9); animation-timing-function: cubic-bezier(0.1, 1.9, 0.4, 1); }
+    42% { transform: translateY(-110px) scale(1.2); }
+    84% { transform: translateY(-104px) scale(1); animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.4); }
+    96% { transform: translateY(0) scale(var(--end)); animation-timing-function: ease-out; }
+    98% { transform: translateY(-7px) scale(var(--end)); animation-timing-function: ease-in; }
+    100% { transform: translateY(0) scale(var(--end)); }
+  }
+  .scene-backlight {
+    left: -46px; top: -46px; width: 216px; height: 216px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(246, 223, 164, 0.6), rgba(231, 194, 106, 0.2) 45%, rgba(231, 194, 106, 0) 70%);
+    animation: scene-backlight 3.1s linear both;
+  }
+  @keyframes scene-backlight { 0% { opacity: 0; } 18% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; } }
+  .scene-flip { inset: 0; transform-style: preserve-3d; animation: scene-flip 1.25s 1.25s cubic-bezier(0.12, 0.75, 0.25, 1) both; }
+  @keyframes scene-flip { from { transform: rotateY(0); } to { transform: rotateY(1260deg); } }
+  .scene-face { position: absolute; inset: 0; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  .scene-face.open { transform: rotateY(180deg); }
+  .scene-aura {
+    left: -60%; top: -60%; width: 220%; height: 220%; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 233, 176, 0.75), rgba(231, 194, 106, 0.22) 42%, rgba(231, 194, 106, 0) 68%);
+    animation: scene-aura 2s 1.25s ease-out both;
+  }
+  @keyframes scene-aura { 0% { opacity: 0; transform: scale(0.5); } 12% { opacity: 1; transform: scale(1.15); } 80% { opacity: 0.7; transform: scale(1); } 100% { opacity: 0; transform: scale(0.8); } }
+  .scene-arc { position: absolute; left: -14px; top: -14px; width: 152px; height: 152px; transform: rotate(-90deg); animation: scene-arc-out 0.25s 1.25s ease-out both; }
+  .scene-arc circle { fill: none; stroke: ${colors.seal.lock}; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 440; animation: scene-arc 0.72s 0.53s cubic-bezier(0.5, 0, 0.2, 1) both; }
+  @keyframes scene-arc { from { stroke-dashoffset: 440; } to { stroke-dashoffset: 0; } }
+  @keyframes scene-arc-out { to { opacity: 0; transform: rotate(-90deg) scale(1.7); } }
+  .scene-lock { position: absolute; left: 26px; top: 22px; width: 72px; height: 72px; overflow: visible; animation: scene-lock 1.9s linear both; }
+  @keyframes scene-lock {
+    0% { opacity: 0; transform: translate(26px, 26px) scale(0.3); animation-timing-function: cubic-bezier(0.2, 1.6, 0.4, 1); }
+    24% { opacity: 1; transform: none; }
+    66% { opacity: 1; transform: none; animation-timing-function: cubic-bezier(0.1, 1.6, 0.4, 1); }
+    74% { opacity: 1; transform: translateY(-14px) scale(1.34) rotate(-6deg); animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.5); }
+    100% { opacity: 0; transform: translate(34px, 170px) rotate(62deg) scale(0.9); }
+  }
+  .scene-shackle { transform-origin: 8px 11px; animation: scene-shackle 0.3s 1.25s cubic-bezier(0.2, 2.2, 0.4, 1) both; }
+  @keyframes scene-shackle { to { transform: translateY(-2.6px) rotate(-32deg); } }
+  .scene-ember {
+    left: 59px; top: 59px; width: 6px; height: 6px; border-radius: 3px; background: ${colors.seal.lock}; opacity: 0;
+    animation: scene-ember 0.56s var(--wait) cubic-bezier(0.6, 0, 0.9, 0.5) both;
+  }
+  @keyframes scene-ember { 0% { opacity: 0; transform: rotate(var(--turn)) translateY(-128px) scale(0.5); } 30% { opacity: 1; } 100% { opacity: 0.9; transform: rotate(var(--turn)) translateY(-30px) scale(1.2); } }
+  .scene-flash {
+    left: -148px; top: -148px; width: 420px; height: 420px; border-radius: 50%; opacity: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1), rgba(255, 236, 186, 0.6) 30%, rgba(255, 236, 186, 0) 68%);
+    animation: scene-flash 0.5s 1.25s ease-out both;
+  }
+  @keyframes scene-flash { 0% { opacity: 0; transform: scale(0.2); } 18% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.5); } }
+  .scene-spark {
+    left: 62px; top: 62px; width: var(--w); height: var(--h); margin: calc(var(--h) / -2) 0 0 calc(var(--w) / -2); border-radius: 2px; background: var(--tint); opacity: 0;
+    animation: scene-spark var(--life) 1.25s linear forwards;
+  }
+  @keyframes scene-spark {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0); animation-timing-function: cubic-bezier(0.08, 0.8, 0.3, 1); }
+    42% { opacity: 1; transform: translate(var(--dx), var(--dy)) rotate(var(--spin)); animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.6); }
+    100% { opacity: 0; transform: translate(calc(var(--dx) * 1.2), calc(var(--dy) + 210px)) rotate(calc(var(--spin) * 3)); }
+  }
+  .scene-wave {
+    left: -60px; top: -60px; width: 120px; height: 120px; box-sizing: border-box; border-radius: 50%;
+    border: 5px solid ${colors.seal.lock}; opacity: 0;
+    animation: scene-wave 1.3s var(--wait) cubic-bezier(0.12, 0.7, 0.3, 1) forwards;
+  }
+  @keyframes scene-wave { 0% { opacity: 0.95; transform: scale(0.3); } 100% { opacity: 0; transform: scale(var(--far)); } }
+  .scene-puff {
+    left: -95px; top: -95px; width: 190px; height: 190px; border-radius: 50%; opacity: 0;
+    background: radial-gradient(circle, var(--fog), rgba(0, 0, 0, 0) 68%);
+    animation: scene-puff 1.5s 1.25s cubic-bezier(0.1, 0.75, 0.3, 1) forwards;
+  }
+  @keyframes scene-puff {
+    0% { opacity: 0.95; transform: rotate(var(--turn)) translateY(-30px) scale(0.75); }
+    100% { opacity: 0; transform: rotate(var(--turn)) translateY(var(--reach)) scale(1.9); }
+  }
+  .scene-glint-ring {
+    left: -26px; top: -26px; width: 52px; height: 52px; box-sizing: border-box; border-radius: 50%; border: 2.5px solid ${colors.seal.lock}; opacity: 0;
+    animation: scene-glint-ring 0.8s var(--wait) ease-out forwards;
+  }
+  @keyframes scene-glint-ring { 0% { opacity: 1; transform: scale(0.45); } 100% { opacity: 0; transform: scale(1.5); } }
+  .scene-glint-star {
+    left: -11px; top: -11px; width: 22px; height: 22px; opacity: 0;
+    background: conic-gradient(from 0deg, #fff 0 2%, rgba(255, 255, 255, 0) 8% 23%, #fff 25% 27%, rgba(255, 255, 255, 0) 33% 48%, #fff 50% 52%, rgba(255, 255, 255, 0) 58% 73%, #fff 75% 77%, rgba(255, 255, 255, 0) 83% 98%, #fff 100%);
+    border-radius: 50%; animation: scene-glint-star 0.6s var(--wait) ease-out both;
+  }
+  @keyframes scene-glint-star { 0% { opacity: 0; transform: scale(0.2) rotate(0); } 35% { opacity: 1; transform: scale(1.25) rotate(40deg); } 100% { opacity: 0; transform: scale(0.3) rotate(90deg); } }
+  .scene-title {
+    position: fixed; left: 20px; right: 20px; z-index: 6; pointer-events: none; text-align: center; text-wrap: balance;
+    animation: scene-title-out 0.45s 3.25s ease-in both;
+  }
+  @keyframes scene-title-out { to { opacity: 0; transform: translateY(-10px); } }
+  .scene-found {
+    display: block; margin-bottom: 7px; color: ${colors.seal.lock}; letter-spacing: 3.5px;
+    font: 700 12px/1.2 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+    animation: scene-found 0.5s 1.55s cubic-bezier(0.2, 1, 0.4, 1) both;
+  }
+  @keyframes scene-found { from { opacity: 0; letter-spacing: 12px; } to { opacity: 1; letter-spacing: 3.5px; } }
+  .scene-name { font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; font-weight: 700; color: #fff; }
+  .scene-word { display: inline-block; animation: scene-word 0.5s var(--wait) cubic-bezier(0.2, 1.5, 0.4, 1) both; }
+  @keyframes scene-word { from { opacity: 0; transform: translateY(16px) scale(0.85); } to { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
@@ -355,42 +499,61 @@ function start() {
     // bank reaches far past its asset, so with street-sized tiles it would vanish the moment its
     // asset's tile left the screen.
     map.addSource("city-fog", { type: "geojson", data: { type: "FeatureCollection", features: [] }, maxzoom: 12, buffer: 512 });
+    // The fog of assets just unlocked, while it lifts (clearBanks).
+    map.addSource("city-fog-clearing", { type: "geojson", data: { type: "FeatureCollection", features: [] }, maxzoom: 12, buffer: 512 });
+    const hazeShape = {
+      // Wide from afar, so it covers whole districts; closer in it grows a little faster each level,
+      // never by a jump, up to where it gets costly to draw.
+      "heatmap-radius": ["interpolate", ["exponential", 2], ["zoom"], ...HAZE_RADIUS.flat()],
+      // As the map zooms out its assets close up on screen faster than the haze shrinks, so more of
+      // them pile onto each spot; each weighs that much less, and the haze stays as thick at every
+      // zoom instead of swelling into a glare.
+      "heatmap-intensity": ["interpolate", ["exponential", 2], ["zoom"], ...hazeWeights().flat()],
+      "heatmap-color": hazeRamp(),
+    };
     // A light haze joins the assets into one fog over the quarters where they crowd...
+    map.addLayer(CLEARING_UNDER_FOG);
     map.addLayer({
       id: "city-haze",
       type: "heatmap",
       source: "city-fog",
-      paint: {
-        // Wide from afar, so it covers whole districts; closer in it grows a little faster each level,
-        // never by a jump, up to where it gets costly to draw.
-        "heatmap-radius": ["interpolate", ["exponential", 2], ["zoom"], ...HAZE_RADIUS.flat()],
-        // As the map zooms out its assets close up on screen faster than the haze shrinks, so more of
-        // them pile onto each spot; each weighs that much less, and the haze stays as thick at every
-        // zoom instead of swelling into a glare.
-        "heatmap-intensity": ["interpolate", ["exponential", 2], ["zoom"], ...hazeWeights().flat()],
-        "heatmap-color": hazeRamp(),
-        "heatmap-opacity": 0,
-        "heatmap-opacity-transition": { duration: 1200 },
-      },
+      filter: ["!=", ["get", "unlocked"], true],
+      paint: { ...hazeShape, "heatmap-opacity": 0, "heatmap-opacity-transition": { duration: 1200 } },
+    });
+    map.addLayer({
+      id: "city-haze-clearing",
+      type: "heatmap",
+      source: "city-fog-clearing",
+      paint: { ...hazeShape, "heatmap-opacity": 0, "heatmap-opacity-transition": { duration: 0 } },
     });
     // ...and each locked asset hides in a thick bank of its own, standing out in the haze.
     for (let shape = 0; shape < CLOUD_SHAPES.length; shape++) map.addImage("cloud-" + shape, cloudImage(CLOUD_SHAPES[shape]), { pixelRatio: CLOUD_RATIO });
+    const bankLayout = {
+      "icon-image": ["concat", "cloud-", ["to-string", ["get", "cloud"]]],
+      "icon-rotate": ["get", "turn"],
+      "icon-rotation-alignment": "map",
+      "icon-allow-overlap": true,
+      "icon-ignore-placement": true,
+      // The bank keeps its ground: it grows and shrinks exactly as the map does, so zooming either
+      // way never thins it, piles it into a glare or changes it by a jump.
+      "icon-size": ["interpolate", ["exponential", 2], ["zoom"], 10, BANK_SIZE / 32, 20, BANK_SIZE * 32],
+    };
     map.addLayer({
       id: "city-clouds",
       type: "symbol",
       source: "city-fog",
-      layout: {
-        "icon-image": ["concat", "cloud-", ["to-string", ["get", "cloud"]]],
-        "icon-rotate": ["get", "turn"],
-        "icon-rotation-alignment": "map",
-        "icon-allow-overlap": true,
-        "icon-ignore-placement": true,
-        // The bank keeps its ground: it grows and shrinks exactly as the map does, so zooming either
-        // way never thins it, piles it into a glare or changes it by a jump.
-        "icon-size": ["interpolate", ["exponential", 2], ["zoom"], 10, BANK_SIZE / 32, 20, BANK_SIZE * 32],
-      },
+      filter: ["!=", ["get", "unlocked"], true],
+      layout: bankLayout,
       paint: { "icon-opacity": 0, "icon-opacity-transition": { duration: 900 } },
     });
+    map.addLayer({
+      id: "city-clouds-clearing",
+      type: "symbol",
+      source: "city-fog-clearing",
+      layout: bankLayout,
+      paint: { "icon-opacity": 0, "icon-opacity-transition": { duration: 0 } },
+    });
+    map.addLayer(CLEARING_OVER_FOG);
     // Further out the seals turn into gold dots, and the dots thin out (see dotOpacity).
     map.addLayer({
       id: "city-asset-dots",
@@ -725,22 +888,32 @@ function start() {
    */
   function showCity(city) {
     const plate = city ? city.plate : null;
-    const assets = {
-      type: "FeatureCollection",
-      features: city
-        ? city.assets.map((asset) => ({
-            type: "Feature",
-            geometry: { type: "Point", coordinates: [asset.lng, asset.lat] },
-            properties: { id: asset.id, title: asset.title, category: asset.category, landmark: Boolean(asset.landmark), unlocked: Boolean(asset.unlocked), tier: asset.tier, cloud: cloudOf(asset.id), turn: cloudTurn(asset.id) },
-          }))
-        : [],
-    };
+    const assetFeature = (asset) => ({
+      type: "Feature",
+      geometry: { type: "Point", coordinates: [asset.lng, asset.lat] },
+      properties: { id: asset.id, title: asset.title, category: asset.category, landmark: Boolean(asset.landmark), unlocked: Boolean(asset.unlocked), tier: asset.tier, cloud: cloudOf(asset.id), turn: cloudTurn(asset.id) },
+    });
+    const assets = { type: "FeatureCollection", features: city ? city.assets.map(assetFeature) : [] };
+    const justOpened =
+      city && plate === cityPlate && cityLanded && motion
+        ? city.assets.filter((asset) => asset.unlocked && cityAssets.some((before) => before.id === asset.id && !before.unlocked))
+        : [];
     map.getSource("city-assets").setData(assets);
     map.getSource("city-fog").setData(assets);
     cityAssets = city ? city.assets : [];
+    const liftsAt = performance.now() + FOG_LIFTS_AFTER_MS;
+    clearings = new Map(
+      cityAssets
+        .filter((asset) => asset.unlocked)
+        .map((asset) => [asset.id, { lng: asset.lng, lat: asset.lat, kept: keptFogAround(asset, cityAssets), opensAt: justOpened.includes(asset) ? liftsAt : (clearings.get(asset.id)?.opensAt ?? -FOG_LIFT_MS) }]),
+    );
     if (plate === cityPlate) {
       // The same city again, perhaps with an asset just unlocked: its button goes.
       placeUnlock();
+      if (justOpened.length > 0) {
+        clearBanks(justOpened.map(assetFeature));
+        playOpened(justOpened[0]);
+      }
       return;
     }
     cityPlate = plate;
@@ -775,6 +948,390 @@ function start() {
     }
   }
 
+  const BANK_OPACITY = DARK ? 0.7 : 0.88;
+  /** The moment the padlock snaps open, and how long the whole scene runs. */
+  const SNAP_MS = 1250;
+  const SCENE_MS = 3900;
+  /** The fog around the asset waits for the scene to end, then lifts slowly to nothing. */
+  const FOG_LIFTS_AFTER_MS = 3500;
+  const FOG_LIFT_MS = 4200;
+  const SCENE_PITCH = 54;
+  const SCENE_MIN_ZOOM = 15.4;
+  /** The medallion's width in points, and how far its gold wave reaches on screen in a second. */
+  const COIN_SIZE = 124;
+  const WAVE_SPEED = 520;
+  /** The medallion hovers 104 points over the asset and is 124 wide; the title stands a little above it. */
+  const TITLE_ABOVE_ASSET = 104 + COIN_SIZE / 2 + 14;
+
+  /**
+   * The clearings around unlocked assets. Fog from any asset may reach them, and a map layer can only
+   * add to what is under it, so the clearing is a pair of layers: the first keeps what the map looks
+   * like under the fog, the second paints that back on over the fog, soft-edged.
+   */
+  const CLEARING_METERS = 170;
+  /** Each locked asset near a clearing keeps its fog this far around it, or less if it stands closer. */
+  const KEPT_FOG_METERS = 90;
+  const KEPT_FOG_MAX = 12;
+  let clearings = new Map();
+  let clearingShared = null;
+
+  function clearingShader(gl, type, source) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    return shader;
+  }
+
+  function clearingResources(gl) {
+    if (clearingShared) return clearingShared;
+    const program = gl.createProgram();
+    gl.attachShader(program, clearingShader(gl, gl.VERTEX_SHADER, "attribute vec2 corner; uniform vec4 box; void main() { gl_Position = vec4(box.xy + corner * box.zw, 0.0, 1.0); }"));
+    gl.attachShader(
+      program,
+      clearingShader(
+        gl,
+        gl.FRAGMENT_SHADER,
+        "precision highp float; uniform sampler2D under; uniform vec2 size; uniform vec2 middle; uniform float radius; uniform float strength; uniform vec3 kept[" + KEPT_FOG_MAX + "];" +
+          "void main() { float away = distance(gl_FragCoord.xy, middle) / radius; float a = strength * (1.0 - smoothstep(0.5, 1.0, away));" +
+          "for (int i = 0; i < " + KEPT_FOG_MAX + "; i++) { if (kept[i].z > 0.0) a *= smoothstep(kept[i].z * 0.45, kept[i].z, distance(gl_FragCoord.xy, kept[i].xy)); }" +
+          "gl_FragColor = texture2D(under, gl_FragCoord.xy / size) * a; }",
+      ),
+    );
+    gl.linkProgram(program);
+    const texture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    const corners = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, corners);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    clearingShared = { program, texture, corners, width: 0, height: 0 };
+    return clearingShared;
+  }
+
+  /** Each clearing on screen now, in the drawing buffer's pixels (its y runs upwards). */
+  function clearingsOnScreen(gl) {
+    if (!citySealsShown || clearings.size === 0) return [];
+    const ratio = gl.drawingBufferWidth / map.getContainer().clientWidth;
+    const now = performance.now();
+    const shown = [];
+    for (const clearing of clearings.values()) {
+      const t = Math.min(1, Math.max(0, (now - clearing.opensAt) / FOG_LIFT_MS));
+      if (t === 0) continue;
+      const opened = t * t * (3 - 2 * t);
+      const point = map.project([clearing.lng, clearing.lat]);
+      const metersPerPoint = (78271.5 * Math.cos((clearing.lat * Math.PI) / 180)) / Math.pow(2, map.getZoom());
+      const radius = (CLEARING_METERS / metersPerPoint) * ratio * (0.6 + 0.4 * opened);
+      const x = point.x * ratio;
+      const y = gl.drawingBufferHeight - point.y * ratio;
+      if (x + radius < 0 || y + radius < 0 || x - radius > gl.drawingBufferWidth || y - radius > gl.drawingBufferHeight) continue;
+      const kept = new Float32Array(KEPT_FOG_MAX * 3);
+      clearing.kept.forEach((other, index) => {
+        const at = map.project([other.lng, other.lat]);
+        kept.set([at.x * ratio, gl.drawingBufferHeight - at.y * ratio, (other.meters / metersPerPoint) * ratio], index * 3);
+      });
+      shown.push({ x, y, radius, opened, kept });
+    }
+    return shown;
+  }
+
+  const CLEARING_UNDER_FOG = {
+    id: "city-clearing-keep",
+    type: "custom",
+    renderingMode: "2d",
+    render(gl) {
+      const shown = clearingsOnScreen(gl);
+      if (shown.length === 0) return;
+      const shared = clearingResources(gl);
+      gl.activeTexture(gl.TEXTURE0);
+      gl.bindTexture(gl.TEXTURE_2D, shared.texture);
+      if (shared.width !== gl.drawingBufferWidth || shared.height !== gl.drawingBufferHeight) {
+        shared.width = gl.drawingBufferWidth;
+        shared.height = gl.drawingBufferHeight;
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, shared.width, shared.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+      }
+      // Only the clearings' own squares: copying the whole screen each frame is costly on a phone.
+      for (const { x, y, radius } of shown) {
+        const left = Math.max(0, Math.floor(x - radius));
+        const bottom = Math.max(0, Math.floor(y - radius));
+        const right = Math.min(shared.width, Math.ceil(x + radius));
+        const top = Math.min(shared.height, Math.ceil(y + radius));
+        gl.copyTexSubImage2D(gl.TEXTURE_2D, 0, left, bottom, left, bottom, right - left, top - bottom);
+      }
+    },
+  };
+
+  const CLEARING_OVER_FOG = {
+    id: "city-clearing-paint",
+    type: "custom",
+    renderingMode: "2d",
+    render(gl) {
+      const shown = clearingsOnScreen(gl);
+      if (shown.length === 0) return;
+      const shared = clearingResources(gl);
+      gl.useProgram(shared.program);
+      gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+      gl.disable(gl.DEPTH_TEST);
+      gl.disable(gl.STENCIL_TEST);
+      gl.disable(gl.CULL_FACE);
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      gl.activeTexture(gl.TEXTURE0);
+      gl.bindTexture(gl.TEXTURE_2D, shared.texture);
+      gl.uniform1i(gl.getUniformLocation(shared.program, "under"), 0);
+      gl.uniform2f(gl.getUniformLocation(shared.program, "size"), shared.width, shared.height);
+      gl.bindBuffer(gl.ARRAY_BUFFER, shared.corners);
+      const corner = gl.getAttribLocation(shared.program, "corner");
+      gl.enableVertexAttribArray(corner);
+      gl.vertexAttribPointer(corner, 2, gl.FLOAT, false, 0, 0);
+      for (const { x, y, radius, opened, kept } of shown) {
+        gl.uniform3fv(gl.getUniformLocation(shared.program, "kept"), kept);
+        gl.uniform4f(
+          gl.getUniformLocation(shared.program, "box"),
+          (x / shared.width) * 2 - 1,
+          (y / shared.height) * 2 - 1,
+          (radius / shared.width) * 2,
+          (radius / shared.height) * 2,
+        );
+        gl.uniform2f(gl.getUniformLocation(shared.program, "middle"), x, y);
+        gl.uniform1f(gl.getUniformLocation(shared.program, "radius"), radius);
+        gl.uniform1f(gl.getUniformLocation(shared.program, "strength"), opened);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      }
+      gl.disableVertexAttribArray(corner);
+    },
+  };
+
+  /** The locked assets whose fog a clearing must leave alone, nearest first. */
+  function keptFogAround(asset, assets) {
+    const across = Math.cos((asset.lat * Math.PI) / 180);
+    return assets
+      .filter((other) => !other.unlocked)
+      .map((other) => ({ other, away: 111320 * Math.hypot(other.lat - asset.lat, (other.lng - asset.lng) * across) }))
+      .filter(({ away }) => away < CLEARING_METERS + KEPT_FOG_METERS)
+      .sort((a, b) => a.away - b.away)
+      .slice(0, KEPT_FOG_MAX)
+      // Never over the unlocked asset itself, however close the other stands.
+      .map(({ other, away }) => ({ lng: other.lng, lat: other.lat, meters: Math.min(KEPT_FOG_METERS, away * 0.7) }));
+  }
+
+  /** The fog of assets just unlocked, which the main layers have dropped, lingers over its own layers and lifts. */
+  function clearBanks(features) {
+    const source = map.getSource("city-fog-clearing");
+    source.setData({ type: "FeatureCollection", features });
+    const started = performance.now() + FOG_LIFTS_AFTER_MS;
+    const step = (now) => {
+      const t = Math.min(1, Math.max(0, (now - started) / FOG_LIFT_MS));
+      const left = 1 - t * t * (3 - 2 * t);
+      map.setPaintProperty("city-clouds-clearing", "icon-opacity", citySealsShown ? shownFrom(DOTS_ZOOM - 1, SEALS_ZOOM + 0.6, BANK_OPACITY * left) : 0);
+      map.setPaintProperty("city-haze-clearing", "heatmap-opacity", citySealsShown ? shownFrom(outerZoom() + LEAVE_ROOM, wholeZoom, left) : 0);
+      if (left > 0) requestAnimationFrame(step);
+      else source.setData({ type: "FeatureCollection", features: [] });
+    };
+    requestAnimationFrame(step);
+  }
+
+  function sceneElement(className, vars) {
+    const element = document.createElement("i");
+    element.className = className;
+    for (const name in vars || {}) element.style.setProperty("--" + name, vars[name]);
+    return element;
+  }
+
+  /** The closed face is bare, so the medallion's one padlock stands alone on it; the open face shows the kind of place. */
+  function sceneFace(asset, open) {
+    const ratio = Math.ceil((COIN_SIZE * 3) / (SEAL_SIZE + SEAL_ROOM * 2));
+    const image = sealImage(asset.category, Boolean(asset.landmark), false, ratio, open ? OPEN_SEAL : { ...colors.seal, ring: colors.seal.lock, blank: true });
+    const canvas = document.createElement("canvas");
+    canvas.width = image.width;
+    canvas.height = image.height;
+    canvas.getContext("2d").putImageData(image, 0, 0);
+    canvas.className = "scene-face" + (open ? " open" : "");
+    return canvas;
+  }
+
+  /** The name, word by word: a word is never cut, and letters keep the font's own spacing. */
+  function sceneTitle(asset, bottom) {
+    const title = document.createElement("div");
+    title.className = "scene-title";
+    title.setAttribute("aria-hidden", "true");
+    title.style.bottom = bottom + "px";
+    const found = document.createElement("span");
+    found.className = "scene-found";
+    found.textContent = "KİLİT AÇILDI";
+    const name = document.createElement("div");
+    name.className = "scene-name";
+    const size = asset.title.length <= 16 ? 30 : asset.title.length <= 28 ? 25 : 21;
+    name.style.fontSize = size + "px";
+    name.style.lineHeight = Math.round(size * 1.2) + "px";
+    asset.title.split(" ").forEach((word, index) => {
+      const wordElement = document.createElement("span");
+      wordElement.className = "scene-word";
+      wordElement.style.setProperty("--wait", 1.7 + index * 0.11 + "s");
+      wordElement.textContent = word;
+      name.append(wordElement, " ");
+    });
+    title.append(found, name);
+    return title;
+  }
+
+  /** Sparks flung out from the medallion and falling back under their own weight. */
+  function addSparks(parent) {
+    const tints = [colors.seal.lock, "#ffffff", "#f6dfa4", colors.seal.lock];
+    for (let index = 0; index < 44; index++) {
+      const turn = index * 2.399963;
+      const reach = 70 + ((index * 53) % 170);
+      const bar = index % 4 === 1;
+      parent.appendChild(
+        sceneElement("scene-spark", {
+          dx: Math.cos(turn) * reach + "px",
+          dy: Math.sin(turn) * reach * 0.8 - 46 + "px",
+          spin: (index % 2 ? 1 : -1) * (120 + index * 9) + "deg",
+          w: (bar ? 3 : 4 + (index % 5)) + "px",
+          h: (bar ? 13 : 4 + (index % 5)) + "px",
+          tint: tints[index % tints.length],
+          life: 1.05 + (index % 6) * 0.1 + "s",
+        }),
+      );
+    }
+  }
+
+  /** The nearest other seals catch the light as the wave reaches them. */
+  function glintNeighbours(asset, addMarker) {
+    const middle = map.project([asset.lng, asset.lat]);
+    const scale = Math.pow(2, Math.max(map.getZoom(), SCENE_MIN_ZOOM) - map.getZoom());
+    cityAssets
+      .filter((other) => other.id !== asset.id)
+      .map((other) => ({ other, away: map.project([other.lng, other.lat]).dist(middle) * scale }))
+      .filter(({ away }) => away < 520)
+      .sort((a, b) => a.away - b.away)
+      .slice(0, 16)
+      .forEach(({ other, away }) => {
+        const element = document.createElement("div");
+        element.className = "scene";
+        const wait = SNAP_MS / 1000 + away / WAVE_SPEED + "s";
+        element.append(sceneElement("scene-glint-ring", { wait }), sceneElement("scene-glint-star", { wait }));
+        addMarker(element, other, "viewport");
+      });
+  }
+
+  let scenePlaying = false;
+
+  /**
+   * The asset's unlocking, as a scene over the map: see the page's .scene styles for its beats. The
+   * map under it already has the open seal; the medallion comes down onto it at the end.
+   */
+  function playOpened(asset) {
+    if (scenePlaying) return;
+    scenePlaying = true;
+    document.body.classList.add("scene-on");
+    const before = { pitch: map.getPitch(), bearing: map.getBearing() };
+    const zoom = Math.max(map.getZoom(), SCENE_MIN_ZOOM);
+    const markers = [];
+    const addMarker = (element, at, alignment) => {
+      element.setAttribute("aria-hidden", "true");
+      markers.push(new maplibregl.Marker({ element, anchor: "center", pitchAlignment: alignment, rotationAlignment: alignment }).setLngLat([at.lng, at.lat]).addTo(map));
+    };
+
+    glintNeighbours(asset, addMarker);
+
+    // On the ground: lying flat under the tilted camera.
+    const ground = document.createElement("div");
+    ground.className = "scene";
+    const fog = "rgba(" + rgb(colors.fog).join(", ") + ", 0.95)";
+    for (let index = 0; index < 18; index++) {
+      ground.appendChild(sceneElement("scene-puff", { turn: index * 20 + (index % 3) * 7 + "deg", reach: -(170 + ((index * 61) % 170)) + "px", fog }));
+    }
+    [[1.25, 7], [1.42, 5.2], [1.62, 3.4]].forEach(([wait, far]) => ground.appendChild(sceneElement("scene-wave", { wait: wait + "s", far })));
+    ground.appendChild(sceneElement("scene-shadow"));
+    addMarker(ground, asset, "map");
+
+    // Facing the camera: the light, the medallion and its padlock.
+    const actors = document.createElement("div");
+    actors.className = "scene";
+    actors.style.setProperty("--end", String(((SEAL_SIZE + SEAL_ROOM * 2) * chosenSize(zoom)) / COIN_SIZE));
+    actors.appendChild(sceneElement("scene-pillar"));
+    const coin = sceneElement("scene-coin");
+    coin.append(sceneElement("scene-backlight"), sceneElement("scene-aura"));
+    for (let index = 0; index < 14; index++) {
+      coin.appendChild(sceneElement("scene-ember", { turn: index * 25.7 + "deg", wait: 0.68 + (index % 5) * 0.05 + "s" }));
+    }
+    const flip = sceneElement("scene-flip");
+    flip.append(sceneFace(asset, false), sceneFace(asset, true));
+    coin.appendChild(flip);
+    coin.insertAdjacentHTML(
+      "beforeend",
+      '<svg class="scene-arc" viewBox="0 0 152 152"><circle cx="76" cy="76" r="70"/></svg>' +
+        '<svg class="scene-lock" viewBox="0 0 24 24">' +
+        '<path class="scene-shackle" d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="' + colors.seal.lock + '" stroke-width="2.6"/>' +
+        '<rect x="4" y="10.5" width="16" height="11" rx="3" fill="' + colors.seal.lock + '" stroke="' + colors.seal.lockEdge + '" stroke-width="0.8"/>' +
+        '<circle cx="12" cy="15" r="1.7" fill="' + colors.seal.lockEdge + '"/><rect x="11.2" y="15" width="1.6" height="3.4" rx="0.8" fill="' + colors.seal.lockEdge + '"/>' +
+        "</svg>",
+    );
+    coin.appendChild(sceneElement("scene-flash"));
+    addSparks(coin);
+    actors.appendChild(coin);
+    addMarker(actors, asset, "viewport");
+
+    // The screen around the asset goes dark, a spotlight following it as the camera moves.
+    const veil = document.createElement("div");
+    veil.className = "scene-veil";
+    const follow = () => {
+      const { x, y } = map.project([asset.lng, asset.lat]);
+      veil.style.setProperty("--cx", x + "px");
+      veil.style.setProperty("--cy", y - 70 + "px");
+    };
+    follow();
+    map.on("move", follow);
+    const container = map.getContainer();
+    container.classList.add("scene-shake");
+    // Over the map but under the markers, so the scene stands clear of the map's own colors.
+    map.getCanvas().after(veil);
+    map.setPaintProperty("city-asset-names", "text-opacity", 0);
+
+    // The visitor taking the map keeps it: the camera does not come back on them.
+    let userMoved = false;
+    const onMoveStart = (event) => {
+      if (event.originalEvent) userMoved = true;
+    };
+    map.on("movestart", onMoveStart);
+
+    const plate = cityPlate;
+    map.easeTo({ center: [asset.lng, asset.lat], zoom, pitch: SCENE_PITCH, bearing: before.bearing - 16, duration: SNAP_MS, easing: (t) => 1 - Math.pow(1 - t, 3), essential: true });
+    // A slow turn around the asset through the burst.
+    const orbit = setTimeout(() => {
+      if (!userMoved) map.easeTo({ bearing: before.bearing + 12, duration: 1900, easing: (t) => t, essential: true });
+    }, SNAP_MS);
+
+    // Just over the medallion at rest, wherever the camera lands the asset: a longer name grows upwards.
+    const height = container.clientHeight;
+    const { top: roomTop, bottom: roomBottom } = map.getPadding();
+    const assetY = roomTop + (height - roomTop - roomBottom) / 2;
+    const title = sceneTitle(asset, height - assetY + TITLE_ABOVE_ASSET);
+    document.body.appendChild(title);
+
+    const settle = setTimeout(() => {
+      if (!userMoved && cityPlate === plate) map.easeTo({ pitch: before.pitch, bearing: before.bearing, duration: 800, easing: (t) => t * t * (3 - 2 * t), essential: true });
+    }, SNAP_MS + 1900);
+
+    setTimeout(() => {
+      clearTimeout(orbit);
+      clearTimeout(settle);
+      markers.forEach((marker) => marker.remove());
+      veil.remove();
+      title.remove();
+      map.setPaintProperty("city-asset-names", "text-opacity", citySealsShown ? 1 : 0);
+      container.classList.remove("scene-shake");
+      map.off("move", follow);
+      map.off("movestart", onMoveStart);
+      scenePlaying = false;
+      document.body.classList.remove("scene-on");
+      post({ type: "sceneEnd" });
+    }, SCENE_MS);
+  }
+
   function setCityAssetsShown(shown) {
     citySealsShown = shown;
     map.setPaintProperty("city-asset-names", "text-opacity", shown ? 1 : 0);
@@ -782,7 +1339,7 @@ function start() {
     // The haze thins with the dots and is gone by the Turkey view.
     map.setPaintProperty("city-haze", "heatmap-opacity", shown ? shownFrom(outerZoom() + LEAVE_ROOM, wholeZoom, 1) : 0);
     // The banks thin out slowly around the seals' turn into dots, so the fog does not jump.
-    map.setPaintProperty("city-clouds", "icon-opacity", shown ? shownFrom(DOTS_ZOOM - 1, SEALS_ZOOM + 0.6, DARK ? 0.7 : 0.88) : 0);
+    map.setPaintProperty("city-clouds", "icon-opacity", shown ? shownFrom(DOTS_ZOOM - 1, SEALS_ZOOM + 0.6, BANK_OPACITY) : 0);
     showDots();
     haloShown = shown;
     pulse();
@@ -946,14 +1503,17 @@ function start() {
   /** The asset last tapped on the map in this city. */
   let tappedAsset = null;
   let unlockFor = null;
-  const UNLOCK_ICON = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="' + colors.seal.icon + '" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V7.5a4 4 0 0 1 7.6-1.7"/><circle cx="12" cy="16" r="1" fill="' + colors.seal.icon + '"/></svg>';
+  const UNLOCK_ICON = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="' + colors.seal.lockEdge + '" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V7.5a4 4 0 0 1 7.6-1.7"/><circle cx="12" cy="16" r="1" fill="' + colors.seal.lockEdge + '"/></svg>';
 
-  /** Just above the chosen seal, which grows as the map zooms in (CHOSEN_SIZES). */
-  function unlockOffset() {
-    const zoom = map.getZoom();
+  /** The chosen seal's size now: it grows as the map zooms in (CHOSEN_SIZES). */
+  function chosenSize(zoom = map.getZoom()) {
     const [atDots, at14, at16] = CHOSEN_SIZES;
-    const size = zoom <= DOTS_ZOOM ? atDots : zoom <= 14 ? atDots + ((at14 - atDots) * (zoom - DOTS_ZOOM)) / (14 - DOTS_ZOOM) : Math.min(at16, at14 + ((at16 - at14) * (zoom - 14)) / 2);
-    return [0, -((SEAL_SIZE + SEAL_ROOM * 2) * size) / 2 - 4];
+    return zoom <= DOTS_ZOOM ? atDots : zoom <= 14 ? atDots + ((at14 - atDots) * (zoom - DOTS_ZOOM)) / (14 - DOTS_ZOOM) : Math.min(at16, at14 + ((at16 - at14) * (zoom - 14)) / 2);
+  }
+
+  /** Just above the chosen seal. */
+  function unlockOffset() {
+    return [0, -((SEAL_SIZE + SEAL_ROOM * 2) * chosenSize()) / 2 - 4];
   }
 
   /** Opens the shown asset's Ziyaret Mührü, once per tap whichever way it arrives. */
@@ -1013,6 +1573,9 @@ function start() {
     unlockFor = asset.id;
   }
 
+  /** An unlocked seal is gold with a night-blue icon, so it stands apart from the locked ones around it. */
+  const OPEN_SEAL = { ...colors.seal, from: "#F6DFA4", to: colors.seal.lock, ring: "#FFF4D2", icon: colors.seal.lockEdge };
+
   /** The seals' sizes at DOTS_ZOOM, where they meet the dots: small enough to be one. */
   const SEALS_AT_DOTS = { normal: 0.36, landmark: 0.44, chosen: 0.5 };
   /** The chosen seal's size at DOTS_ZOOM, 14 and 16. */
@@ -1048,20 +1611,19 @@ function start() {
   const SELECT_ZOOM = 15.5;
 
   /**
-   * A locked asset (with locked false, an unlocked one: no padlock): a night-blue disc in a navy ring, the kind of place drawn in gold inside and a
+   * A locked asset (with locked false, an unlocked one: gold all over, no padlock): a night-blue disc in a navy ring, the kind of place drawn in gold inside and a
    * gold padlock over its lower right edge, outlined in navy so it stands out on the fog
    * (colors.seal). The landmark's ring is doubled.
    */
-  function sealImage(category, landmark, locked = true) {
+  function sealImage(category, landmark, locked = true, ratio = SEAL_RATIO, look = locked ? colors.seal : OPEN_SEAL) {
     const side = SEAL_SIZE + SEAL_ROOM * 2;
     const canvas = document.createElement("canvas");
-    canvas.width = side * SEAL_RATIO;
-    canvas.height = side * SEAL_RATIO;
+    canvas.width = side * ratio;
+    canvas.height = side * ratio;
     const context = canvas.getContext("2d");
-    context.scale(SEAL_RATIO, SEAL_RATIO);
+    context.scale(ratio, ratio);
     const middle = side / 2;
     const r = SEAL_SIZE / 2;
-    const look = colors.seal;
     // The landmark's seal is ringed once more.
     if (landmark) {
       context.beginPath();
@@ -1094,7 +1656,7 @@ function start() {
     context.scale(GLYPH_SCALE, GLYPH_SCALE);
     context.translate(-16, -16);
     context.fillStyle = look.icon;
-    drawGlyph(context, category, look.to);
+    if (!look.blank) drawGlyph(context, category, look.to);
     context.restore();
     if (!locked) return context.getImageData(0, 0, canvas.width, canvas.height);
     // The padlock, over the lower right edge: a shackle and a body with a keyhole, each drawn
@@ -1226,67 +1788,74 @@ function start() {
     return { width, height, data };
   }
 
+  /**
+   * The kinds of place, in one geometric hand: solid shapes on a 32-point box with the same rounded
+   * corners, parted by clean gaps and cut through in the color of the disc.
+   */
   function drawGlyph(context, category, color) {
-    const shape = (points) => {
-      context.beginPath();
-      points.forEach(([x, y], index) => (index === 0 ? context.moveTo(x, y) : context.lineTo(x, y)));
-      context.closePath();
-      context.fill();
+    const ink = context.fillStyle;
+    const solid = (...paths) => {
+      context.fillStyle = ink;
+      paths.forEach((path) => context.fill(new Path2D(path)));
     };
-    const disc = (x, y, r, from = 0, to = Math.PI * 2) => {
-      context.beginPath();
-      context.arc(x, y, r, from, to);
-      context.closePath();
-      context.fill();
+    const cut = (...paths) => {
+      context.fillStyle = color;
+      paths.forEach((path) => context.fill(new Path2D(path)));
     };
     if (category === "worship") {
-      // A dome on its drum and a minaret.
-      disc(14.6, 17.6, 5, Math.PI, 0);
-      context.fillRect(9.6, 17.6, 10, 3.6);
-      context.fillRect(14.1, 11, 1, 2);
-      context.fillRect(20.8, 11.2, 1.8, 10);
-      shape([[20.6, 11.4], [21.7, 8.4], [22.8, 11.4]]);
+      // A pointed dome on its base, with a slim minaret.
+      solid(
+        "M14.2 8.2a1 1 0 1 1 0 2a1 1 0 1 1 0-2Z",
+        "M14.2 10.9C16.9 13 19.8 15 19.8 19.1H8.6C8.6 15 11.5 13 14.2 10.9Z",
+        "M9.3 20.1H19.1a.8.8 0 0 1 .8.8V25H8.5V20.9a.8.8 0 0 1 .8-.8Z",
+        "M22.1 12.2L23.4 7L24.7 12.2V25H22.1Z",
+      );
+      cut("M12.8 25V23a1.4 1.4 0 0 1 2.8 0V25Z");
     } else if (category === "tomb") {
-      // A kümbet: a pointed roof over an eight-sided body, with its door.
-      shape([[11.4, 14.6], [16, 7.6], [20.6, 14.6]]);
-      context.fillRect(12.2, 14.6, 7.6, 7.8);
-      context.fillStyle = color;
-      context.fillRect(11.4, 14.2, 9.2, 1);
-      disc(16, 19.2, 1.5, Math.PI, 0);
-      context.fillRect(14.5, 19.2, 3, 3.2);
+      // A kümbet: a cone over its body, with a pointed door.
+      solid("M16 5.8L21.6 14.6H10.4Z", "M12.3 15.6H19.7a.7.7 0 0 1 .7.7V25H11.6V16.3a.7.7 0 0 1 .7-.7Z");
+      cut("M14.4 25V21.2C14.4 20.2 15.4 19.5 16 18.6C16.6 19.5 17.6 20.2 17.6 21.2V25Z");
     } else if (category === "school") {
       // An open book.
-      shape([[9, 11.2], [15.3, 12.6], [15.3, 21.8], [9, 20.4]]);
-      shape([[16.7, 12.6], [23, 11.2], [23, 20.4], [16.7, 21.8]]);
+      solid(
+        "M15.2 11.1C13 9.5 10.1 9.2 7.8 9.6A.8.8 0 0 0 7 10.4V21.5A.8.8 0 0 0 7.9 22.3C10.2 21.9 13 22.1 15.2 23.6Z",
+        "M16.8 11.1C19 9.5 21.9 9.2 24.2 9.6A.8.8 0 0 1 25 10.4V21.5A.8.8 0 0 1 24.1 22.3C21.8 21.9 19 22.1 16.8 23.6Z",
+      );
     } else if (category === "trade") {
-      // A han's front: a wall with a great arched gate.
-      context.fillRect(9.2, 11.5, 13.6, 10.7);
-      for (const x of [9.2, 12.8, 16.4, 20]) context.fillRect(x, 9.8, 2.8, 1.8);
-      context.fillStyle = color;
-      disc(16, 17, 2.6, Math.PI, 0);
-      context.fillRect(13.4, 17, 5.2, 5.2);
+      // A han's front: three merlons and a great arched gate.
+      solid(
+        "M7.5 8.6h3.6v3H7.5Z",
+        "M14.2 8.6h3.6v3h-3.6Z",
+        "M20.9 8.6h3.6v3h-3.6Z",
+        "M7.5 12.5H24.5V24.2a.8.8 0 0 1-.8.8H8.3a.8.8 0 0 1-.8-.8Z",
+      );
+      cut("M12.6 25V18.8a3.4 3.4 0 0 1 6.8 0V25Z");
     } else if (category === "water") {
-      // A drop.
+      // A drop, with a glint on its lower left.
+      solid("M16 6.6C16 6.6 23 13.9 23 18.2A7 7 0 0 1 9 18.2C9 13.9 16 6.6 16 6.6Z");
+      context.strokeStyle = color;
+      context.lineWidth = 1.5;
+      context.lineCap = "round";
       context.beginPath();
-      context.moveTo(16, 8.6);
-      context.bezierCurveTo(16, 8.6, 21.6, 14.4, 21.6, 17.6);
-      context.arc(16, 17.6, 5.6, 0, Math.PI);
-      context.bezierCurveTo(10.4, 14.4, 16, 8.6, 16, 8.6);
-      context.closePath();
-      context.fill();
+      context.arc(16, 18.2, 4.3, Math.PI * 0.56, Math.PI * 0.98);
+      context.stroke();
     } else if (category === "charity") {
-      // A külliye: a large dome and a small one on a shared base.
-      disc(18.2, 17.4, 4.6, Math.PI, 0);
-      disc(11.8, 18.4, 3.2, Math.PI, 0);
-      context.fillRect(8.4, 17.4, 15.2, 4.4);
-      context.fillRect(17.7, 11, 1, 2.2);
+      // A külliye: a great dome between two small ones, on one base.
+      solid(
+        "M15.4 10.8h1.2v2.8h-1.2Z",
+        "M10.9 19.2a5.1 5.1 0 0 1 10.2 0Z",
+        "M6.5 19.2a1.95 1.95 0 0 1 3.9 0Z",
+        "M21.6 19.2a1.95 1.95 0 0 1 3.9 0Z",
+        "M7.3 20.2H24.7a.8.8 0 0 1 .8.8V25H6.5V21a.8.8 0 0 1 .8-.8Z",
+      );
+      cut("M14.6 25V23.2a1.4 1.4 0 0 1 2.8 0V25Z");
     } else {
-      // The eight-pointed star of the Hayrat design.
+      // The eight-pointed star of the Hayrat design, its points sharp.
       context.save();
       context.translate(16, 16);
       for (const turn of [0, Math.PI / 4]) {
         context.rotate(turn);
-        context.fillRect(-4.6, -4.6, 9.2, 9.2);
+        context.fillRect(-6.6, -6.6, 13.2, 13.2);
       }
       context.restore();
     }
@@ -1305,7 +1874,7 @@ function start() {
     return bounds;
   }
 
-  const OWN_SOURCES = new Set(["assets", "provinces", "province-names", "city-assets", "city-fog"]);
+  const OWN_SOURCES = new Set(["assets", "provinces", "province-names", "city-assets", "city-fog", "city-fog-clearing"]);
   /** Each base label layer's own filter and text, to put back when the provinces go away. */
   const baseLabels = new Map();
 
