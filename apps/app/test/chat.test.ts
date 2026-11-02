@@ -116,14 +116,16 @@ describe("followUps", () => {
 });
 
 describe("historyFor", () => {
-  it("sends only the last six turns, oldest first, each cut to 2000 characters", () => {
-    const entries = Array.from({ length: 8 }, (_, i) =>
+  it("sends only the last twelve turns, oldest first, each cut to 2000 characters", () => {
+    const entries = Array.from({ length: 14 }, (_, i) =>
       i % 2 === 0
         ? { id: i, role: "user" as const, text: `soru ${i}` }
-        : { id: i, role: "assistant" as const, response: response(i === 7 ? "x".repeat(2100) : `cevap ${i}`) as never },
+        : { id: i, role: "assistant" as const, response: response(i === 13 ? "x".repeat(2100) : `cevap ${i}`) as never },
     );
     const history = chat.historyFor(entries);
-    expect(history.map((turn) => turn.content.slice(0, 7))).toEqual(["soru 2", "cevap 3", "soru 4", "cevap 5", "soru 6", "xxxxxxx"]);
+    expect(history.map((turn) => turn.content.slice(0, 8))).toEqual([
+      "soru 2", "cevap 3", "soru 4", "cevap 5", "soru 6", "cevap 7", "soru 8", "cevap 9", "soru 10", "cevap 11", "soru 12", "xxxxxxxx",
+    ]);
     expect(history.at(-1)!.content).toHaveLength(2000);
     expect(history[1]!.role).toBe("assistant");
   });

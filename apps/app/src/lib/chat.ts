@@ -5,7 +5,7 @@ import { askAssistant } from "@/data/assistant";
 import { DataError } from "@/data/errors";
 
 /** `POST /chat` takes at most this many earlier turns. */
-export const HISTORY_TURNS = 6;
+export const HISTORY_TURNS = 12;
 /** Longest question the API accepts (`ChatRequestSchema.message`). */
 export const QUESTION_MAX = 500;
 /** Longest turn the API accepts in the history (`ChatTurnSchema.content`). */
