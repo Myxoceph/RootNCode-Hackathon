@@ -4,8 +4,38 @@ import { describe, expect, it } from "vitest";
 import { createChatModel, oneSystemMessage } from "../src/modules/assistant/assistant.model.ts";
 import { searchTerms } from "../src/modules/assistant/assistant.repository.ts";
 import { ANSWER_CACHE_MS, stillAnswers } from "../src/modules/assistant/assistant.routes.ts";
-import { plainText, resolveCitations, systemPrompt } from "../src/modules/assistant/assistant.ts";
+import { mayPlanTrip, plainText, resolveCitations, systemPrompt } from "../src/modules/assistant/assistant.ts";
 import { compactAsset, runTool, SourceRegistry, type ToolContext } from "../src/modules/assistant/assistant.tools.ts";
+
+describe("mayPlanTrip", () => {
+  it("lets a question about food, transport or the weather on a route be answered, not planned", () => {
+    for (const question of [
+      "Bu rotada öğle yemeği için ne önerirsin?",
+      "Bu rotadaki duraklara toplu taşımayla nasıl giderim?",
+      "Gezi günü hava nasıl olacak?",
+      "Yakınında ne yiyebilirim?",
+      "Ulucami için toplu taşımayla nasıl giderim?",
+      "What should I eat for lunch on this route?",
+    ]) {
+      expect(mayPlanTrip(question), question).toBe(false);
+    }
+  });
+
+  it("plans when asked, even with food or the weather in the question", () => {
+    for (const question of [
+      "Bursa'da yarım günlük bir gezi rotası planla",
+      "Yarın Bursa'da tam gün gezmek istiyorum, plan yapar mısın?",
+      "Yarın Konya'da gezi planla ve rotada hava nasıl olacak söyle",
+      "Bu lezzetlerle yarım günlük bir gezi rotası planla",
+      "Bu havaya uygun bir gezi rotası planla",
+      "Rotayı kısalt",
+      "Hatay'da 2 gün gezeceğim",
+      "Havalimanına yakın eserler hangileri?",
+    ]) {
+      expect(mayPlanTrip(question), question).toBe(true);
+    }
+  });
+});
 
 describe("resolveCitations", () => {
   const sources = new SourceRegistry();
