@@ -199,6 +199,9 @@ export default function MapScreen() {
 
   // The asset chosen in the open city, for the buttons under the search bar.
   const chosen = selectedCity ? (located.find(({ asset }) => asset.id === chosenAsset)?.asset ?? null) : null;
+  // The cards come in once the camera has landed (or at once without a map: they are its content in
+  // words), and the chosen asset's buttons with them.
+  const cardsShown = selectedCity !== null && cards.length > 0 && (landedPlate === selectedPlate || mapError !== null);
 
   // Only what went wrong is said over the map; the rest is in the cards and the search.
   const notice = mapError
@@ -230,8 +233,7 @@ export default function MapScreen() {
         style={StyleSheet.absoluteFill}
       />
 
-      {selectedCity && cards.length > 0 && (landedPlate === selectedPlate || mapError !== null) && (
-        // Without a map (it failed to draw) they come in at once: they are its content in words.
+      {cardsShown && (
         <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
           <CityAssetCards assets={cards} buildingsOf={buildingsOf} selectedId={chosenAsset} onSelect={setChosenAsset} />
         </View>
@@ -245,7 +247,7 @@ export default function MapScreen() {
         onPickAsset={pickAsset}
         trailing={<AssistantButton />}
         notice={notice}
-        below={chosen ? <MapAssetActions asset={chosen} /> : null}
+        below={chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null}
       />
     </View>
   );
