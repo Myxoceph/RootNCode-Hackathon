@@ -239,10 +239,11 @@ karşılaştırarak gör.
 **Demo sabahı:** Mac şarjda, Docker Desktop açık. `deploy/demo.sh up`, ayrı bir terminalde
 `deploy/demo.sh tunnel`, sonra `deploy/demo.sh check https://vagabonds.allbytech.com`: hepsi ✓ olmalı.
 
-**Asistanı ısıt:** sunumdan en çok 30 dakika önce sahnede soracağın soruları uygulamadan aynı kelimelerle bir kez
-sor. API, geçmişi olmayan ilk soruyu (aynı kelimeler, aynı eser sayfası, aynı dil) 30 dakika boyunca bellekten
-anında cevaplar; model 5–30 sn sürüyor. Takip soruları her zaman modele gider. API yeniden başlarsa
-(`deploy/demo.sh up`) bellek boşalır, yeniden ısıt.
+**Asistanı ısıt:** sunumdan en çok 30 dakika önce **ve aynı saat içinde** sahnede soracağın soruları
+uygulamadan, bir hesapla giriş yapıp aynı kelimelerle bir kez sor (sorular ve sıra: [demo.md](demo.md)). API,
+geçmişi olmayan ilk soruyu (aynı kelimeler, aynı eser sayfası, aynı dil, aynı saat) 30 dakika boyunca
+bellekten anında cevaplar; model 5–30 sn sürüyor. Saat değişince (13:50 → 14:05) bellek tutmaz. Takip
+soruları her zaman modele gider. API yeniden başlarsa (`deploy/demo.sh up`) bellek boşalır, yeniden ısıt.
 
 **Bir şey ters giderse:**
 
