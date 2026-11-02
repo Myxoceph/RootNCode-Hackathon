@@ -53,8 +53,8 @@
       [
         "expo-audio",
         {
-          "microphonePermission": false,
-          "recordAudioAndroid": false,
+          "microphonePermission": "Rehber'e sesli soru sorabilmen için mikrofon kullanılır. Kayıt yalnızca yazıya çevrilir, saklanmaz.",
+          "recordAudioAndroid": true,
           "enableBackgroundPlayback": false
         }
       ],

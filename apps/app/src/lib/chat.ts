@@ -280,9 +280,10 @@ export async function openArchived(conversationId: string): Promise<void> {
 
 /**
  * Asks one question in the conversation `key`. Resolves to the answer, or to `null` when it
- * failed (the reason is in `failed`) or another question is still on its way.
+ * failed (the reason is in `failed`) or another question is still on its way. `spoken`: asked by
+ * voice, so the answer comes short, to be heard (Sesli Rehber).
  */
-export async function ask(key: string, question: string, assetId?: string): Promise<ChatResponse | null> {
+export async function ask(key: string, question: string, assetId?: string, { spoken = false }: { spoken?: boolean } = {}): Promise<ChatResponse | null> {
   const before = conversations.get(key) ?? EMPTY;
   const text = question.trim();
   if (before.pending !== null || before.archived !== null || text.length === 0) return null;
@@ -301,6 +302,7 @@ export async function ask(key: string, question: string, assetId?: string): Prom
         assetId,
         history: historyFor(before.entries),
         lang: "tr",
+        ...(spoken && { spoken }),
         ...(before.conversationId && { conversationId: before.conversationId }),
       },
       controller.signal,
