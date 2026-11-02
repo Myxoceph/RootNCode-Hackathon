@@ -45,6 +45,9 @@ Kitabe tanıma, **MindAR'ın (1.2.5) görüntü takibiyle, `react-native-webview
 
 ## Prototip
 
+> Prototip ekranı ve test hedefleri 2026-11-02'de kaldırıldı; Taşın Dili veri setindeki kitabe
+> fotoğraflarını kullanıyor (aşağıda "Tanı ve üstüne yerleştir").
+
 `Kamera → AR prototipi` ekranı (yalnızca geliştirme modunda görünür, `apps/app/src/app/ar-prototype.tsx`).
 İki test hedefi var (`apps/app/src/ar/test-targets/`, Wikimedia Commons, CC BY-SA 4.0):
 
@@ -100,6 +103,23 @@ bir görüntü veriyor; ışık, titreme ve odak telefonda ölçülecek.
   izleniyor. Veride hedef yoksa, sürüm tutmuyorsa ya da dosya inmiyorsa uygulama gömülü test
   hedeflerine dönüyor (kartta "test görseli" notuyla); demoda gerçek kitabe taranamazsa yedek.
   Ulucami'nin bir fotoğrafı geçici hedef yapılarak Honor 400'de uçtan uca denendi.
+- **Tanı ve üstüne yerleştir (2026-11-02):** Kitabeyi kameradan canlı okuyup çevirmek (Google Lens
+  gibi) denendi ve bırakıldı. EVREN'in görsel modelleri iki gerçek kitabe fotoğrafında ya okuyamadı
+  (`qwen3.8-flash-next`, 30–37 sn) ya da metin uydurdu (`qwen3-vl-30b` bir kapı kitabesine
+  Ayetü'l-Kürsî yazdı). İstifli celî sülüs ve kabartma taş bugünkü OCR'ın sınırının ötesinde; uydurma
+  bir ayeti "çeviri" diye göstermek kabul edilemez. Bunun yerine kamera, veri setindeki fotoğrafı
+  tanıyor ve doğrulanmış çeviriyi taşın üstüne, kitabeyle birlikte hareket eden bir plakaya yazıyor.
+  - Birden çok kitabe tek sette: sayfa `.mind` dosyalarını ve telefonda derlenen fotoğrafları
+    MindAR derleyicisinin `importData`/`exportData`'sıyla birleştiriyor; bulunan hedefin sırası
+    listedeki yeri. Başka sürümün dosyası boş döndüğü için (sıralar kayardı) sayfa o durumda duruyor.
+  - `.mind` dosyası inmezse (henüz R2'de değil, ağ yok) fotoğraf telefonda derleniyor; derlenen set
+    uygulama açıkken bellekte tutuluyor. Test görselleri kalktı.
+  - Eser sayfasından açılınca o eserin kitabeleri, Kamera sekmesinden açılınca 300 m içindeki
+    eserlerinkiler (en fazla 6 fotoğraf) aranıyor; yakında yoksa Azeb Bey Türbesi.
+  - Plaka yalnızca görsel; aynı metin alttaki kartta ve ekran okuyucuda.
+  - Headless Chrome'da sahte kamerayla denendi: iki `.mind` dosyası ve bir telefonda derlenen
+    fotoğraftan kurulan sette üç kitabe de kendi sırasıyla tanındı (6–8 sn), plaka görünen kısma
+    sığıyor. Gerçek taşta saha testi yapılmadı.
 - **Kalan riskler:**
   - MindAR'ın bakımı durmuş görünüyor. Takip telefonda yetersiz kalırsa yedek plan ViroReact
     ve development build'dir; WebView ile native arasındaki mesaj sözleşmesi (`TrackerEvent`)
