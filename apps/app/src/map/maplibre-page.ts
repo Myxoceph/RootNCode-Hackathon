@@ -457,6 +457,7 @@ function start() {
     });
 
     map.on("click", "clusters", async (event) => {
+      if (flying) return;
       const feature = event.features[0];
       const zoom = await map.getSource("assets").getClusterExpansionZoom(feature.properties.cluster_id);
       map.easeTo({ center: feature.geometry.coordinates, zoom });
@@ -474,6 +475,7 @@ function start() {
       return features.reduce((best, feature) => (!best || away(feature) < away(best) ? feature : best), undefined);
     }
     function onTap(event) {
+      if (flying) return;
       // A finger is wider than a pixel.
       const around = [[event.point.x - 12, event.point.y - 12], [event.point.x + 12, event.point.y + 12]];
       if (cityPlate !== null) {
@@ -665,6 +667,28 @@ function start() {
   /** False when "Hareketi azalt" is on: the camera jumps instead of flying. */
   let motion = true;
   const FLY_MS = 2600;
+  /** The gestures turned off while the camera flies into or out of a city, so a touch neither stops it nor counts as a tap; false otherwise. */
+  let flying = false;
+  let flightEnds = 0;
+  const HANDLERS = ["dragPan", "scrollZoom", "boxZoom", "dragRotate", "keyboard", "doubleClickZoom", "touchZoomRotate", "touchPitch"];
+  /**
+   * Keeps the map still under the finger for ms milliseconds: MapLibre stops a flight on the first touch,
+   * so the gestures are off until it lands, then back to what they were.
+   */
+  function holdForFlight(ms) {
+    if (ms <= 0) return;
+    const ends = ++flightEnds;
+    if (!flying) {
+      const off = HANDLERS.filter((name) => map[name] && map[name].isEnabled());
+      off.forEach((name) => map[name].disable());
+      flying = off;
+    }
+    setTimeout(() => {
+      if (ends !== flightEnds || !flying) return;
+      flying.forEach((name) => map[name].enable());
+      flying = false;
+    }, ms);
+  }
 
   /**
    * Into a city: the fog closes over the whole map, the camera flies to where its assets
@@ -699,6 +723,7 @@ function start() {
     map.setPaintProperty("province-names", "text-opacity", shown ? ["interpolate", ["linear"], ["zoom"], outerZoom() + LEAVE_ROOM, names, outerZoom() + LEAVE_ROOM + 0.75, 0] : names);
     setCityAssetsShown(false);
     const options = { padding: cityPadding(), duration: motion ? FLY_MS : 0, linear: false, essential: true };
+    holdForFlight(options.duration);
     if (shown) {
       map.fitBounds(city.focus || provinceBounds(plate), { ...options, maxZoom: 16 });
       // The assets come up as the camera lands; from then on a new choice moves the camera.
