@@ -66,6 +66,8 @@ export interface MapCityAsset {
   tier: MapTier;
   /** Unlocked by the visitor: its seal has no padlock and no "Kilidini aç". */
   unlocked?: boolean;
+  /** The other assets on this map related to it, once unlocked: "İlişkili eserleri gör" draws lines to them. */
+  relatedTo?: string[];
 }
 
 /** The chosen city: a light mist over the map, each of its assets on its own cloud. */
@@ -112,6 +114,12 @@ export interface AssetMapProps {
   onCityLanded?: (plate: number) => void;
   /** "Kilidini aç" over the chosen city asset was tapped: open its Ziyaret Mührü. */
   onUnlock?: (id: string) => void;
+  /** "İncele" over an unlocked city asset was tapped: open its card. */
+  onInspect?: (id: string) => void;
+  /** Beside "Kapat", while an asset's related assets show: open their list. */
+  onOpenRelatedList?: (id: string) => void;
+  /** "Not bırak" over an unlocked city asset was tapped. */
+  onLeaveNote?: (id: string) => void;
   /** An unlocking scene has finished playing over the map. */
   onSceneEnd?: () => void;
   style?: StyleProp<ViewStyle>;

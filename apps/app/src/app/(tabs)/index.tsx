@@ -1,25 +1,27 @@
 import type { AssetSummary } from "@vagabonds/contracts";
 import { spacing } from "@vagabonds/ui";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
-import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import Head from "expo-router/head";
+import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Animated, BackHandler, Platform, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CityAssetCards } from "@/components/city-asset-cards";
 import { MapAssetActions } from "@/components/map-asset-actions";
+import { MapCityButtons } from "@/components/map-city-buttons";
 import { MapSearch } from "@/components/map-search";
-import { CITY_LANDMARKS, useCities, useCityMapAssets } from "@/data";
+import { CITY_LANDMARKS, useCities, useCityMapAssets, useRelationsOf } from "@/data";
 import { announce } from "@/lib/announce";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
+import { relatedPlacesOf } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { areaAround, assetCategory, cityLandmark, MapLibreMap, mapTiers, useMapStatusBar, useMapTheme, type MapCity, type MapPin, type MapProvince, type MapProvinces } from "@/map";
 
 /** Room kept free for the search bar when framing Turkey. */
 const HEADER_SPACE = 72;
 /** Room kept free for the search bar over a city and the chosen asset's buttons under it, and for its cards. */
-const CITY_TOP_SPACE = 118;
+const CITY_TOP_SPACE = 136;
 const CITY_CARDS_SPACE = 112;
 const NO_PINS: MapPin[] = [];
 const UNLOCK_AFTER_RETURN_MS = 450;
@@ -89,6 +91,10 @@ export default function MapScreen() {
     }
     return { places: located.filter(({ asset }) => !(asset.parentId && onMap.has(asset.parentId))), buildingsOf: counts, prominenceOf: prominence };
   }, [located]);
+  // Whether an unlocked place has anything related to it, known before its scene ends.
+  const openedPlaces = useMemo(() => places.filter(({ asset }) => allUnlocked.has(asset.id)).map(({ asset }) => asset.id), [places, allUnlocked]);
+  const relations = useRelationsOf(openedPlaces);
+  const placeIds = useMemo(() => new Set(places.map(({ asset }) => asset.id)), [places]);
   // The city opens on its best-known asset and the streets around it, not on all of it at once;
   // a landmark that is a building of a complex opens on the complex.
   const landmarkId = selectedCity ? CITY_LANDMARKS[selectedCity.code] : undefined;
@@ -123,6 +129,7 @@ export default function MapScreen() {
             landmark: asset.id === landmark?.id,
             tier: tiers.get(asset.id) ?? 0,
             unlocked: unlocked.has(asset.id),
+            relatedTo: relatedPlacesOf(relations.byId[asset.id] ?? [], asset.id, placeIds),
           })),
           focus: landmark ? areaAround(landmark) : null,
         }
@@ -259,6 +266,9 @@ export default function MapScreen() {
         onLeaveCity={backToTurkey}
         onCityLanded={onCityLanded}
         onUnlock={(id) => router.push({ pathname: "/visit-seal", params: { asset: id } })}
+        onInspect={(id) => router.push({ pathname: "/monuments/[id]", params: { id } })}
+        onOpenRelatedList={(id) => router.push({ pathname: "/related", params: { asset: id, name: located.find(({ asset }) => asset.id === id)?.asset.name } })}
+        onLeaveNote={(id) => router.push({ pathname: "/note", params: { asset: id } })}
         onSceneEnd={() => setSceneRunning(false)}
         onError={setMapError}
         fitPadding={fitPadding}
@@ -287,6 +297,7 @@ export default function MapScreen() {
           notice={notice}
           below={chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null}
         />
+        {!selectedCity && <MapCityButtons cities={withAssets} bottom={tabBarHeight + spacing.sm} onOpen={openCity} />}
       </Animated.View>
     </View>
   );

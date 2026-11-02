@@ -1,3 +1,4 @@
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { fontFamily, useTheme, type Theme as UiTheme } from "@vagabonds/ui";
 import { useFonts } from "expo-font";
 import { DarkTheme, DefaultTheme, Stack, ThemeProvider, type Theme } from "expo-router";
@@ -32,7 +33,8 @@ function navigationTheme(theme: UiTheme): Theme {
 
 export default function RootLayout() {
   // On failure the app still opens with system fonts instead of hanging on the splash screen.
-  const [fontsLoaded, fontError] = useFonts(fontFiles);
+  // The icons' font too: the page rendered ahead of time must draw them as the browser's first render does.
+  const [fontsLoaded, fontError] = useFonts({ ...fontFiles, ...Ionicons.font });
   const storedThemePreference = useStoredThemePreference();
   // On the phone the splash screen waits for the saved theme too, so a dark choice never opens light
   // for a moment. Web pages are rendered ahead of time and cannot wait; the saved theme follows.
@@ -71,6 +73,10 @@ function ThemedStack() {
           <Stack.Screen name="asset/[id]" options={{ headerShown: false, title: "" }} />
           {/* A trip Rehber planned, from Rotalarım; the screen sets its own title. */}
           <Stack.Screen name="profile/trip" options={{ title: "Rota", headerBackTitle: "Rotalarım" }} />
+          {/* Draws its own header: a system header that floats over the page would cover the sticky tabs. */}
+          <Stack.Screen name="dossier" options={{ headerShown: false, title: "Eserin dosyası" }} />
+          <Stack.Screen name="related" options={{ headerShown: false, title: "İlişkili eserler" }} />
+          <Stack.Screen name="note" options={{ headerShown: false, title: "Not bırak" }} />
           <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
           {/* Draws its own header, with "Temizle" next to the title. */}
           <Stack.Screen name="assistant" options={{ headerShown: false, title: "Asistan" }} />

@@ -29,9 +29,11 @@ function publish() {
 
 function loadFor(userId: string | null): Promise<void> {
   if (owner === userId) return loading;
+  // What a signed-out visitor unlocked stays theirs when their first note or seal opens a session.
+  const carried = owner === null && userId !== null ? demo : new Set<string>();
   owner = userId;
   visited = new Set();
-  demo = new Set();
+  demo = carried;
   publish();
   void AsyncStorage.removeItem(SHARED_KEY).catch(() => {});
   loading = userId === null ? Promise.resolve() : load(userId);
@@ -49,10 +51,11 @@ async function load(userId: string): Promise<void> {
   visited = new Set([...visited, ...(visits ?? []).map((visit) => visit.assetId)]);
   try {
     const parsed: unknown = raw ? JSON.parse(raw) : [];
-    if (Array.isArray(parsed)) demo = new Set(parsed.filter((id): id is string => typeof id === "string"));
+    if (Array.isArray(parsed)) demo = new Set([...demo, ...parsed.filter((id): id is string => typeof id === "string")]);
   } catch {
-    // Unreadable: only the visits are unlocked.
+    // Unreadable: only the visits and what came along from before the session are unlocked.
   }
+  if (demo.size > 0) void AsyncStorage.setItem(demoKey(userId), JSON.stringify([...demo])).catch(() => {});
   publish();
 }
 

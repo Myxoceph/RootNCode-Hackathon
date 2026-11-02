@@ -45,9 +45,21 @@ const CHAT_TIMEOUT_MS = 60_000;
 export const ANSWER_CACHE_MS = 30 * 60_000;
 const ANSWER_CACHE_SIZE = 200;
 
-/** Same question in other case or spacing; the hour is kept because evening trips start tomorrow. */
-function cacheKey(message: string, assetId: string | undefined, lang: string, today: string, hour: number, spoken: boolean): string {
-  return JSON.stringify([lang, assetId ?? null, today, hour, spoken, message.toLocaleLowerCase("tr").replace(/\s+/g, " ").trim()]);
+/** Same question in other case or spacing; a spoken one has its own, shorter answer. */
+function cacheKey(message: string, assetId: string | undefined, lang: string, today: string, spoken: boolean): string {
+  return JSON.stringify([lang, assetId ?? null, today, spoken, message.toLocaleLowerCase("tr").replace(/\s+/g, " ").trim()]);
+}
+
+/**
+ * Answers that change with the hour are kept only within it: an evening trip starts tomorrow, and a
+ * route gives the next departures. Every other answer holds across the hour, so a question warmed
+ * at 13:50 is still answered at once at 14:05.
+ */
+const hourBound = (response: ChatResponse) => response.attachments.trip !== null || response.attachments.transit !== null;
+
+/** Whether a kept answer still answers the question asked now, at this hour (Türkiye). */
+export function stillAnswers(kept: { at: number; hour: number; response: ChatResponse }, now: number, hour: number): boolean {
+  return now - kept.at < ANSWER_CACHE_MS && (!hourBound(kept.response) || kept.hour === hour);
 }
 
 export interface AssistantRoutesOptions {
@@ -95,7 +107,7 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
   const denied = { 401: errorSchema, 403: errorSchema };
   let running = 0;
   // Insertion order is age order, so the first key is the oldest. Kept without a conversation id: each asker saves their own.
-  const answers = new Map<string, { at: number; response: ChatResponse }>();
+  const answers = new Map<string, { at: number; hour: number; response: ChatResponse }>();
 
   app.get("/chat/status", {
     schema: {
@@ -164,10 +176,10 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
     const today = turkeyToday();
     const hour = turkeyHour();
     // A position makes every question different, and is never kept.
-    const key = body.history.length === 0 && !body.origin ? cacheKey(body.message, body.assetId, lang, today, hour, body.spoken) : null;
+    const key = body.history.length === 0 && !body.origin ? cacheKey(body.message, body.assetId, lang, today, body.spoken) : null;
     const cached = key === null ? undefined : answers.get(key);
     reply.header("cache-control", "no-store");
-    if (cached && Date.now() - cached.at < ANSWER_CACHE_MS) return answered(cached.response);
+    if (cached && stillAnswers(cached, Date.now(), hour)) return answered(cached.response);
     if (running >= MAX_CONCURRENT_CHATS) throw new HttpError(503, "ASSISTANT_BUSY", "The assistant is busy, retry in a moment");
 
     // Tools read our own routes as this client, so their requests count against its rate limit too.
@@ -195,7 +207,7 @@ export const assistantRoutes: FastifyPluginAsync<AssistantRoutesOptions> = async
       });
       if (key !== null) {
         answers.delete(key);
-        answers.set(key, { at: Date.now(), response });
+        answers.set(key, { at: Date.now(), hour, response });
         if (answers.size > ANSWER_CACHE_SIZE) answers.delete(answers.keys().next().value!);
       }
       return await answered(response);

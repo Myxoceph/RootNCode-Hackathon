@@ -57,6 +57,12 @@ export type MapPageEvent =
   /** "Kilidini aç" over the chosen locked asset was tapped. */
   | { type: "unlock"; id: string }
   | { type: "sceneEnd" }
+  /** "Not bırak" over an unlocked asset was tapped. */
+  | { type: "note"; id: string }
+  /** "İncele" over an unlocked asset was tapped. */
+  | { type: "inspect"; id: string }
+  /** "İlişkili eser listesini incele" beside "Kapat" was tapped. */
+  | { type: "relatedList"; id: string }
   | { type: "error"; message: string };
 
 /** Messages the app sends to the map page. */
@@ -135,6 +141,28 @@ export function mapPageHtml({
   }
   .unlock:active { filter: brightness(0.92); }
   .unlock.pop { animation: unlock-pop 0.38s cubic-bezier(0.2, 1.4, 0.4, 1) both; }
+  /* Three branches out of the asset; the marker has no size of its own, its parts stand around its middle (layoutOpenActions). */
+  .open-actions { position: relative; width: 0; height: 0; pointer-events: none; }
+  .open-actions > svg { position: absolute; left: 0; top: 0; width: 1px; height: 1px; overflow: visible; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5)); }
+  .open-actions line { stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1; }
+  .open-actions line[hidden] { display: none; }
+  .open-actions button { position: absolute; pointer-events: auto; transform: translate(var(--ex), var(--ey)); }
+  .open-actions.pop line { animation: branch-grow 0.28s var(--wait) ease-out both; }
+  .open-actions.pop button { animation: branch-out 0.36s var(--wait) cubic-bezier(0.2, 1.3, 0.4, 1) both; }
+  @keyframes branch-grow { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes branch-out { from { opacity: 0; transform: translate(calc(var(--ex) + var(--dx)), calc(var(--ey) + var(--dy))) scale(0.4); } to { opacity: 1; transform: translate(var(--ex), var(--ey)); } }
+  .open-actions button, .related-bar button {
+    display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 11px 0 5px;
+    border: 1px solid rgba(10, 20, 40, 0.12); border-radius: 17px; background: #fff; color: ${colors.seal.lockEdge};
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    font: 600 12.5px/1 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; white-space: nowrap; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  }
+  .open-actions button[hidden] { display: none; }
+  .related-bar { position: fixed; left: 12px; right: 12px; z-index: 5; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .open-actions button:hover, .related-bar button:hover { background: #eef1f5; }
+  .open-actions button:active, .related-bar button:active { background: #e3e7ed; }
+  .related-bar button:active { transform: scale(0.97); }
+  .option-icon { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 12px; background: ${colors.seal.lock}; }
   @keyframes unlock-pop { from { opacity: 0; transform: translateY(8px) scale(0.7); } to { opacity: 1; transform: none; } }
   /*
    * An asset just unlocked (playOpened): the seal rises as a medallion, a gold ring fills, and at 1.25 s
@@ -346,7 +374,10 @@ function start() {
   map.on("styleimagemissing", (event) => map.addImage(event.id, { width: 1, height: 1, data: new Uint8Array(4) }));
   // The credits the tiles and OpenStreetMap ask for stay one tap away behind a faint (i): the page's
   // style keeps them folded until the button is tapped (credits-open), so they never flash open first.
-  const foldCredits = () => document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
+  const foldCredits = () => {
+    document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
+    document.querySelector(".maplibregl-ctrl-attrib-button")?.setAttribute("aria-label", "Harita kaynakları");
+  };
   map.once("load", foldCredits);
   map.once("idle", foldCredits);
   document.addEventListener("click", (event) => {
@@ -554,6 +585,20 @@ function start() {
       paint: { "icon-opacity": 0, "icon-opacity-transition": { duration: 0 } },
     });
     map.addLayer(CLEARING_OVER_FOG);
+    // "İlişkili eserleri gör" (showRelated): a thin bright line to each related asset and a soft glow
+    // around it, over the fog and under the seals.
+    const noFeatures = { type: "FeatureCollection", features: [] };
+    map.addSource("city-links", { type: "geojson", data: noFeatures, lineMetrics: true });
+    map.addSource("city-related", { type: "geojson", data: noFeatures });
+    const linkLayout = { "line-cap": "round", "line-join": "round" };
+    map.addLayer({ id: "city-links-glow", type: "line", source: "city-links", layout: linkLayout, paint: { "line-width": 7, "line-blur": 6, "line-opacity": 0.55, "line-gradient": linkGradient(0) } });
+    map.addLayer({ id: "city-links-core", type: "line", source: "city-links", layout: linkLayout, paint: { "line-width": 1.5, "line-gradient": linkGradient(0) } });
+    map.addLayer({
+      id: "city-related-glow",
+      type: "circle",
+      source: "city-related",
+      paint: { "circle-radius": ["interpolate", ["linear"], ["zoom"], DOTS_ZOOM, 14, 16, 34], "circle-blur": 1, "circle-color": colors.seal.lock, "circle-opacity": 0, "circle-opacity-transition": { duration: 500 } },
+    });
     // Further out the seals turn into gold dots, and the dots thin out (see dotOpacity).
     map.addLayer({
       id: "city-asset-dots",
@@ -637,6 +682,13 @@ function start() {
       },
       paint: { "icon-opacity": 0, "icon-opacity-transition": { duration: 700 } },
     });
+    map.addLayer({
+      id: "city-related-names",
+      type: "symbol",
+      source: "city-related",
+      layout: { "text-field": ["get", "title"], "text-font": ["Noto Sans Regular"], "text-size": 12, "text-max-width": 9, "text-line-height": 1.15, "text-variable-anchor": ["top", "bottom", "left", "right"], "text-radial-offset": 1.1, "text-padding": 2 },
+      paint: { "text-color": "#fff", "text-halo-color": "rgba(13, 20, 34, 0.9)", "text-halo-width": 1.4 },
+    });
 
     map.on("click", "clusters", async (event) => {
       if (flying) return;
@@ -665,6 +717,11 @@ function start() {
           fireUnlock();
           return;
         }
+        const option = openActionAt(event.point);
+        if (option) {
+          fireOpenAction(option);
+          return;
+        }
         const zoom = map.getZoom();
         const asset = zoom >= (SEALS_ZOOM + DOTS_ZOOM) / 2
           ? map.queryRenderedFeatures(around, { layers: ["city-asset-badges"] })[0]
@@ -673,6 +730,13 @@ function start() {
           // Only an asset tapped on the map gets "Kilidini aç"; one chosen for the visitor does not.
           tappedAsset = asset.properties.id;
           post({ type: "select", id: asset.properties.id });
+          closeRelated(asset.properties.id === (relatedShown && relatedShown.id));
+          placeUnlock();
+        } else if (relatedShown) {
+          closeRelated(true);
+        } else {
+          // A tap anywhere else puts away what stands over the asset; tapping it brings that back.
+          tappedAsset = null;
           placeUnlock();
         }
         return;
@@ -888,6 +952,7 @@ function start() {
    */
   function showCity(city) {
     const plate = city ? city.plate : null;
+    if (plate !== cityPlate) closeRelated(false);
     const assetFeature = (asset) => ({
       type: "Feature",
       geometry: { type: "Point", coordinates: [asset.lng, asset.lat] },
@@ -908,12 +973,12 @@ function start() {
         .map((asset) => [asset.id, { lng: asset.lng, lat: asset.lat, kept: keptFogAround(asset, cityAssets), opensAt: justOpened.includes(asset) ? liftsAt : (clearings.get(asset.id)?.opensAt ?? -FOG_LIFT_MS) }]),
     );
     if (plate === cityPlate) {
-      // The same city again, perhaps with an asset just unlocked: its button goes.
-      placeUnlock();
+      // The same city again, perhaps with an asset just unlocked: its button goes, and its scene starts first, so its options wait for the end.
       if (justOpened.length > 0) {
         clearBanks(justOpened.map(assetFeature));
         playOpened(justOpened[0]);
       }
+      placeUnlock();
       return;
     }
     cityPlate = plate;
@@ -1226,6 +1291,7 @@ function start() {
   function playOpened(asset) {
     if (scenePlaying) return;
     scenePlaying = true;
+    closeRelated(false);
     document.body.classList.add("scene-on");
     const before = { pitch: map.getPitch(), bearing: map.getBearing() };
     const zoom = Math.max(map.getZoom(), SCENE_MIN_ZOOM);
@@ -1329,6 +1395,11 @@ function start() {
       scenePlaying = false;
       document.body.classList.remove("scene-on");
       post({ type: "sceneEnd" });
+      // The scene over, what can be done with the asset now stands over it.
+      if (cityPlate === plate) {
+        tappedAsset = asset.id;
+        placeUnlock();
+      }
     }, SCENE_MS);
   }
 
@@ -1474,6 +1545,7 @@ function start() {
   /** A chosen asset grows and gets a ring; once the camera has landed, it moves to it. */
   function selectCityAsset(id) {
     if (id === citySelected) return;
+    closeRelated(false);
     citySelected = id;
     showCitySelection();
     const asset = cityAssets.find((candidate) => candidate.id === id);
@@ -1540,6 +1612,7 @@ function start() {
     const found = tapped ? cityAssets.find((candidate) => candidate.id === citySelected) : null;
     // An unlocked asset has nothing left to unlock.
     const asset = found && !found.unlocked ? found : null;
+    placeOpenActions(found && found.unlocked && !scenePlaying ? found : null);
     if (!asset) {
       if (unlock) unlock.remove();
       unlockFor = null;
@@ -1571,6 +1644,236 @@ function start() {
       button.classList.add("pop");
     }
     unlockFor = asset.id;
+  }
+
+  /**
+   * "İlişkili eserleri gör" above, "Not bırak" and "İncele" below on either side: three branches out of an unlocked asset, once its scene
+   * is over or when it is tapped on the map. The same rule as "Kilidini aç" for the rest. While the
+   * related assets show they step aside for those lines, and placeRelatedBar stands above the cards.
+   */
+  let openActions = null;
+  let openActionsFor = null;
+  let openActionFired = 0;
+  const optionIcon = (path) => '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="' + colors.seal.lockEdge + '" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + path + "</svg>";
+  const OPEN_OPTIONS = [
+    { type: "related", end: (seal) => [0, -(seal + 30)], label: "İlişkili eserleri gör", icon: optionIcon('<path d="M10 14a4 4 0 0 0 6 .4l3-3a4 4 0 0 0-5.7-5.7l-1.1 1.1"/><path d="M14 10a4 4 0 0 0-6-.4l-3 3a4 4 0 0 0 5.7 5.7l1.1-1.1"/>') },
+    { type: "note", end: (seal) => [-72, seal + 20], label: "Not bırak", icon: optionIcon('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>') },
+    { type: "inspect", end: (seal) => [72, seal + 20], label: "İncele", icon: optionIcon('<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>') },
+  ];
+
+  /** Sends the option, once per tap whichever way it arrives. */
+  function fireOpenAction(type) {
+    if (!openActionsFor || Date.now() - openActionFired < 600) return;
+    openActionFired = Date.now();
+    if (type === "related") showRelated(openActionsFor);
+    else post({ type, id: openActionsFor });
+  }
+
+  /** How long the camera takes to draw back, how long the lines take to reach the related assets, and how far a line bends. */
+  const RELATED_FLY_MS = 1100;
+  const RELATED_GROW_MS = 1200;
+  /** The least the map draws back when the related assets show, in zoom levels. */
+  const RELATED_STEP_BACK = 1.5;
+  const LINK_POINTS = 48;
+  const LINK_BEND = 0.1;
+  const LINK_LIGHT = "#FFEDBE";
+  /** What "İlişkili eserleri gör" shows now, and the camera to come back to. */
+  let relatedShown = null;
+
+  /** The line up to how far it has come, nothing beyond. */
+  function linkGradient(progress) {
+    const head = Math.min(Math.max(progress, 0.001), 0.998);
+    const none = "rgba(" + rgb(LINK_LIGHT).join(", ") + ", 0)";
+    return ["interpolate", ["linear"], ["line-progress"], 0, LINK_LIGHT, head, LINK_LIGHT, head + 0.001, none, 1, none];
+  }
+
+  /** A gentle curve from one asset to another, each bending its own way so lines to one side do not lie on each other. */
+  function linkFeature(from, to, index) {
+    const across = Math.cos((from.lat * Math.PI) / 180);
+    const side = index % 2 ? 1 : -1;
+    const bendLng = from.lng / 2 + to.lng / 2 - ((to.lat - from.lat) * LINK_BEND * side) / across;
+    const bendLat = from.lat / 2 + to.lat / 2 + (to.lng - from.lng) * across * LINK_BEND * side;
+    const points = [];
+    for (let step = 0; step <= LINK_POINTS; step++) {
+      const t = step / LINK_POINTS;
+      const a = (1 - t) * (1 - t);
+      const b = 2 * t * (1 - t);
+      const c = t * t;
+      points.push([a * from.lng + b * bendLng + c * to.lng, a * from.lat + b * bendLat + c * to.lat]);
+    }
+    return { type: "Feature", geometry: { type: "LineString", coordinates: points }, properties: {} };
+  }
+
+  /** The map draws back until the asset's related assets are in view, lines reach out to them and they glow. */
+  function showRelated(id) {
+    const asset = cityAssets.find((candidate) => candidate.id === id);
+    const targets = asset ? (asset.relatedTo || []).flatMap((other) => cityAssets.filter((candidate) => candidate.id === other)) : [];
+    if (targets.length === 0) return;
+    const shown = { id, camera: { center: map.getCenter(), zoom: map.getZoom() } };
+    relatedShown = shown;
+    placeUnlock();
+    map.getSource("city-links").setData({ type: "FeatureCollection", features: targets.map((target, index) => linkFeature(asset, target, index)) });
+    map.getSource("city-related").setData({ type: "FeatureCollection", features: targets.map((target) => ({ type: "Feature", geometry: { type: "Point", coordinates: [target.lng, target.lat] }, properties: { title: target.title } })) });
+    // Only the asset and what it is related to stay on the map.
+    filterCityAssets(["in", ["get", "id"], ["literal", [id, ...targets.map((target) => target.id)]]]);
+    const bounds = new maplibregl.LngLatBounds([asset.lng, asset.lat], [asset.lng, asset.lat]);
+    targets.forEach((target) => bounds.extend([target.lng, target.lat]));
+    const room = cityPadding();
+    // The map adds its own padding (some camera moves leave it, some do not), so only what is missing is asked for: counted twice, it can leave no room at all.
+    const kept = map.getPadding();
+    const padding = { top: Math.max(0, room.top + 72 - kept.top), right: Math.max(0, room.right + 24 - kept.right), bottom: Math.max(0, room.bottom + 24 - kept.bottom), left: Math.max(0, room.left + 24 - kept.left) };
+    // Always a step back, however near the related assets are: already on screen, they would not move the camera at all.
+    const fit = map.cameraForBounds(bounds, { padding });
+    const stepBack = map.getZoom() - RELATED_STEP_BACK;
+    map.fitBounds(bounds, { padding, maxZoom: fit ? Math.min(fit.zoom, stepBack) : stepBack, duration: motion ? RELATED_FLY_MS : 0, essential: true });
+    const setReached = (reached) => {
+      const gradient = linkGradient(reached);
+      map.setPaintProperty("city-links-glow", "line-gradient", gradient);
+      map.setPaintProperty("city-links-core", "line-gradient", gradient);
+    };
+    const glow = () => map.setPaintProperty("city-related-glow", "circle-opacity", 0.8);
+    if (!motion) {
+      setReached(1);
+      glow();
+      return;
+    }
+    setReached(0);
+    const started = performance.now() + RELATED_FLY_MS * 0.3;
+    const step = (now) => {
+      if (relatedShown !== shown) return;
+      const t = Math.min(1, Math.max(0, (now - started) / RELATED_GROW_MS));
+      setReached(t * t * (3 - 2 * t));
+      if (t < 1) requestAnimationFrame(step);
+      else glow();
+    };
+    requestAnimationFrame(step);
+  }
+
+  function filterCityAssets(filter) {
+    for (const layer of ["city-asset-dots", "city-asset-room", "city-asset-names", "city-asset-badges"]) map.setFilter(layer, filter);
+  }
+
+  /** The lines and the glow go; when asked, the camera returns to where it was. */
+  function closeRelated(comeBack) {
+    if (!relatedShown) return;
+    const { camera } = relatedShown;
+    relatedShown = null;
+    const empty = { type: "FeatureCollection", features: [] };
+    map.getSource("city-links").setData(empty);
+    map.getSource("city-related").setData(empty);
+    map.setPaintProperty("city-related-glow", "circle-opacity", 0);
+    filterCityAssets(null);
+    if (comeBack) map.easeTo({ center: camera.center, zoom: camera.zoom, padding: cityPadding(), duration: motion ? 800 : 0, essential: true });
+    placeUnlock();
+  }
+
+  /** Which option a tap at this map point fell on. */
+  function openActionAt(point) {
+    if (!openActions || !openActionsFor) return null;
+    const frame = map.getContainer().getBoundingClientRect();
+    const x = frame.left + point.x;
+    const y = frame.top + point.y;
+    const buttons = [...openActions.getElement().querySelectorAll("button")];
+    const hit = buttons.find((button) => {
+      const box = button.getBoundingClientRect();
+      return x >= box.left && x <= box.right && y >= box.top && y <= box.bottom;
+    });
+    return hit ? hit.dataset.option : null;
+  }
+
+  let relatedBar = null;
+
+  /** "Kapat" and the way to the list while the related assets show: fixed on the screen, so they cover none of the lines. */
+  function placeRelatedBar(shown) {
+    if (!relatedBar) {
+      relatedBar = document.createElement("div");
+      relatedBar.className = "related-bar";
+      const button = (label, path, onPress) => {
+        const element = document.createElement("button");
+        element.type = "button";
+        element.innerHTML = '<span class="option-icon">' + optionIcon(path) + "</span><span>" + label + "</span>";
+        element.addEventListener("click", onPress);
+        relatedBar.appendChild(element);
+      };
+      button("Kapat", '<path d="M6 6l12 12"/><path d="M18 6L6 18"/>', () => closeRelated(true));
+      button("İlişkili eser listesini incele", '<path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6h.01"/><path d="M4 12h.01"/><path d="M4 18h.01"/>', () => relatedShown && post({ type: "relatedList", id: relatedShown.id }));
+      document.body.appendChild(relatedBar);
+    }
+    relatedBar.style.display = shown ? "flex" : "none";
+    relatedBar.style.bottom = lastPadding.bottom + 12 + "px";
+  }
+
+  /** Each branch runs from the rim of the chosen seal, which grows with the zoom, to its option. */
+  function layoutOpenActions() {
+    const row = openActions.getElement().firstChild;
+    const seal = ((SEAL_SIZE + SEAL_ROOM * 2) * chosenSize()) / 2 - 6;
+    OPEN_OPTIONS.forEach((option, index) => {
+      const [x, y] = option.end(seal);
+      const length = Math.hypot(x, y);
+      const line = row.querySelector('[data-branch="' + option.type + '"]');
+      line.setAttribute("x1", String((x * seal) / length));
+      line.setAttribute("y1", String((y * seal) / length));
+      line.setAttribute("x2", String(x));
+      line.setAttribute("y2", String(y));
+      const button = row.querySelector('[data-option="' + option.type + '"]');
+      button.style.left = x + "px";
+      button.style.top = y + "px";
+      button.style.setProperty("--ex", "-50%");
+      button.style.setProperty("--ey", y < 0 ? "-100%" : "0%");
+      button.style.setProperty("--dx", -x + "px");
+      button.style.setProperty("--dy", -y + "px");
+      button.style.setProperty("--wait", index * 0.06 + "s");
+      line.style.setProperty("--wait", index * 0.06 + "s");
+    });
+  }
+
+  function placeOpenActions(asset) {
+    const showing = asset !== null && relatedShown !== null && relatedShown.id === asset.id;
+    placeRelatedBar(showing);
+    if (!asset) {
+      if (openActions) openActions.remove();
+      openActionsFor = null;
+      return;
+    }
+    if (showing) {
+      if (openActions) openActions.remove();
+      return;
+    }
+    if (!openActions) {
+      const wrap = document.createElement("div");
+      const row = document.createElement("div");
+      row.className = "open-actions";
+      for (const option of OPEN_OPTIONS) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.dataset.option = option.type;
+        button.innerHTML = '<span class="option-icon">' + option.icon + "</span><span>" + option.label + "</span>";
+        // As with "Kilidini aç": the phone's WebView gives the tap to the map (onTap), a click covers the mouse.
+        button.addEventListener("click", (event) => {
+          event.stopPropagation();
+          fireOpenAction(option.type);
+        });
+        row.appendChild(button);
+      }
+      const lines = OPEN_OPTIONS.map((option) => '<line pathLength="1" data-branch="' + option.type + '"/>').join("");
+      row.insertAdjacentHTML("afterbegin", '<svg aria-hidden="true">' + lines + "</svg>");
+      wrap.appendChild(row);
+      openActions = new maplibregl.Marker({ element: wrap, anchor: "center" });
+      map.on("zoom", () => openActionsFor && layoutOpenActions());
+    }
+    const row = openActions.getElement().firstChild;
+    // An asset with nothing related to it on the map offers only the note.
+    const related = Boolean(asset.relatedTo && asset.relatedTo.length > 0);
+    row.querySelector('[data-option="related"]').hidden = !related;
+    row.querySelector('[data-branch="related"]').toggleAttribute("hidden", !related);
+    layoutOpenActions();
+    openActions.setLngLat([asset.lng, asset.lat]).addTo(map);
+    if (openActionsFor !== asset.id && motion) {
+      row.classList.remove("pop");
+      void row.offsetWidth;
+      row.classList.add("pop");
+    }
+    openActionsFor = asset.id;
   }
 
   /** An unlocked seal is gold with a night-blue icon, so it stands apart from the locked ones around it. */

@@ -17,7 +17,8 @@ import { DataErrorView } from "@/components/resource-view";
 import { communityAvailable, DataError, sendVisitProof, useAsset, useCommunity } from "@/data";
 import { announce } from "@/lib/announce";
 import { currentPosition, type Position } from "@/lib/current-position";
-import { unlockAsset, unlockForDemo } from "@/lib/unlocked-assets";
+import { isAssetUnlocked } from "@/lib/related-assets";
+import { unlockAsset, unlockForDemo, useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
@@ -61,6 +62,10 @@ export default function VisitSealScreen() {
   const target = asset ? visitSealTarget(asset) : null;
   const router = useRouter();
   const [unlocked, setUnlocked] = useState(false);
+  // Sealed on this screen, the camera's own "sealed" step is still to show; only one unlocked before needs no seal.
+  const [sealedHere, setSealedHere] = useState(false);
+  const allUnlocked = useUnlockedAssets();
+  const alreadyOpen = asset !== null && !sealedHere && isAssetUnlocked(asset, allUnlocked);
   // A simulation for the demo: "Kilidi aç" unlocks the asset on the map as a sealed visit would.
   const unlock = asset
     ? () => {
@@ -73,6 +78,14 @@ export default function VisitSealScreen() {
   let body;
   if (asset && unlocked) {
     body = <Sealed asset={asset} result={{ verified: false, firstVisit: true, newAchievements: [] }} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/"))} />;
+  } else if (alreadyOpen) {
+    body = (
+      <View style={styles.center}>
+        <Text colorValue={cameraColors.text} style={styles.centerText}>
+          Bu eserin kilidi zaten açık.
+        </Text>
+      </View>
+    );
   } else if (resource.status === "loading" || (!web && screenReader === null)) {
     body = (
       <View style={styles.center}>
@@ -106,7 +119,7 @@ export default function VisitSealScreen() {
       </>
     );
   } else {
-    body = <SealCamera asset={asset} onUnlock={unlock} />;
+    body = <SealCamera asset={asset} onUnlock={unlock} onSealed={() => setSealedHere(true)} />;
   }
 
   return (
@@ -162,7 +175,7 @@ function SealGuide({ asset }: { asset: AssetDetail }) {
   );
 }
 
-function SealCamera({ asset, onUnlock }: { asset: AssetDetail; onUnlock?: () => void }) {
+function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnlock?: () => void; onSealed: () => void }) {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { user } = useCommunity();
@@ -193,6 +206,7 @@ function SealCamera({ asset, onUnlock }: { asset: AssetDetail; onUnlock?: () => 
       go({ name: "sending" });
       try {
         const result = await sendVisitProof(asset.id, { mediaKey: photo.key, ...(position ?? {}) }, nickname);
+        onSealed();
         unlockAsset(asset.id);
         go({ name: "sealed", result });
         announce(`Ziyaretin mühürlendi.${result.newAchievements.length ? ` ${result.newAchievements.length} yeni rozet kazandın.` : ""}`);
@@ -200,7 +214,7 @@ function SealCamera({ asset, onUnlock }: { asset: AssetDetail; onUnlock?: () => 
         go({ name: "failed", message: error instanceof DataError ? error.message : "Mühür gönderilemedi." });
       }
     },
-    [asset.id, photo.key, go],
+    [asset.id, photo.key, go, onSealed],
   );
 
   const seal = useCallback(async () => {
