@@ -112,5 +112,7 @@ export interface AssetMapProps {
   onCityLanded?: (plate: number) => void;
   /** "Kilidini aç" over the chosen city asset was tapped: open its Ziyaret Mührü. */
   onUnlock?: (id: string) => void;
+  /** An unlocking scene has finished playing over the map. */
+  onSceneEnd?: () => void;
   style?: StyleProp<ViewStyle>;
 }

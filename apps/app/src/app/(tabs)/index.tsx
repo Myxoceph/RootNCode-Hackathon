@@ -1,10 +1,10 @@
 import type { AssetSummary } from "@vagabonds/contracts";
 import { spacing } from "@vagabonds/ui";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import Head from "expo-router/head";
-import { useEffect, useMemo, useState } from "react";
-import { BackHandler, Platform, StyleSheet, View } from "react-native";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Animated, BackHandler, Platform, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CityAssetCards } from "@/components/city-asset-cards";
@@ -22,6 +22,9 @@ const HEADER_SPACE = 72;
 const CITY_TOP_SPACE = 118;
 const CITY_CARDS_SPACE = 112;
 const NO_PINS: MapPin[] = [];
+const UNLOCK_AFTER_RETURN_MS = 450;
+/** Longer than the map's unlocking scene: its controls come back even if the scene never reports its end. */
+const SCENE_LIMIT_MS = 6000;
 
 /** Squared distance in degrees: enough to order a city's assets outward from its landmark. */
 function nearness(from: { lat: number; lng: number }, to: { lat: number; lng: number }): number {
@@ -47,7 +50,10 @@ export default function MapScreen() {
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
   const router = useRouter();
-  const unlocked = useUnlockedAssets();
+  const allUnlocked = useUnlockedAssets();
+  // The map lies behind the seal screen: an asset opens on it only once the visitor is back and that screen has slid away.
+  const [unlocked, setUnlocked] = useState(allUnlocked);
+  const [sceneRunning, setSceneRunning] = useState(false);
   const cities = useCities();
   const [mapError, setMapError] = useState<string | null>(null);
   const [selectedPlate, setSelectedPlate] = useState<number | null>(null);
@@ -121,6 +127,29 @@ export default function MapScreen() {
           focus: landmark ? areaAround(landmark) : null,
         }
       : null;
+  // A scene is due for an asset of the open city that has just unlocked. The search, buttons and cards
+  // stay out of its way from the moment the visitor is back until it ends; the tab bar stays.
+  const sceneDue = !reduceMotion && selectedPlate !== null && landedPlate === selectedPlate && places.some(({ asset }) => allUnlocked.has(asset.id) && !unlocked.has(asset.id));
+  useFocusEffect(
+    useCallback(() => {
+      const timer = setTimeout(() => {
+        setUnlocked(allUnlocked);
+        if (sceneDue) setSceneRunning(true);
+      }, UNLOCK_AFTER_RETURN_MS);
+      return () => clearTimeout(timer);
+    }, [allUnlocked, sceneDue]),
+  );
+  useEffect(() => {
+    if (!sceneRunning) return;
+    const limit = setTimeout(() => setSceneRunning(false), SCENE_LIMIT_MS);
+    return () => clearTimeout(limit);
+  }, [sceneRunning]);
+  const controlsHidden = sceneDue || sceneRunning;
+  const controls = useRef(new Animated.Value(1)).current;
+  useEffect(() => {
+    Animated.timing(controls, { toValue: controlsHidden ? 0 : 1, duration: 220, useNativeDriver: true }).start();
+  }, [controlsHidden, controls]);
+
   // Typed as the map's own props, so a misnamed field fails the typecheck.
   const mapView: Omit<MapProvinces, "reveal"> = { highlighted, city: mapCity };
   const mapKey = JSON.stringify(mapView);
@@ -230,27 +259,35 @@ export default function MapScreen() {
         onLeaveCity={backToTurkey}
         onCityLanded={onCityLanded}
         onUnlock={(id) => router.push({ pathname: "/visit-seal", params: { asset: id } })}
+        onSceneEnd={() => setSceneRunning(false)}
         onError={setMapError}
         fitPadding={fitPadding}
         provinces={provinces}
         style={StyleSheet.absoluteFill}
       />
 
-      {cardsShown && (
-        <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
-          <CityAssetCards assets={cards} buildingsOf={buildingsOf} selectedId={chosenAsset} onSelect={setChosenAsset} />
-        </View>
-      )}
-      <MapSearch
-        city={selectedCity}
-        cities={withAssets}
-        top={insets.top + spacing.sm}
-        onBack={backToTurkey}
-        onPickCity={openCity}
-        onPickAsset={pickAsset}
-        notice={notice}
-        below={chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null}
-      />
+      <Animated.View
+        style={[StyleSheet.absoluteFill, { opacity: controls }]}
+        pointerEvents={controlsHidden ? "none" : "box-none"}
+        accessibilityElementsHidden={controlsHidden}
+        importantForAccessibility={controlsHidden ? "no-hide-descendants" : "auto"}
+      >
+        {cardsShown && (
+          <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
+            <CityAssetCards assets={cards} buildingsOf={buildingsOf} selectedId={chosenAsset} onSelect={setChosenAsset} />
+          </View>
+        )}
+        <MapSearch
+          city={selectedCity}
+          cities={withAssets}
+          top={insets.top + spacing.sm}
+          onBack={backToTurkey}
+          onPickCity={openCity}
+          onPickAsset={pickAsset}
+          notice={notice}
+          below={chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null}
+        />
+      </Animated.View>
     </View>
   );
 }
