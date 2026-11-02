@@ -19,8 +19,8 @@ export const ChatRequestSchema = z.strictObject({
   message: z.string().trim().min(1).max(500),
   /** Set when the question is asked from an asset's page ("Bu eser hakkında sor"). */
   assetId: AssetIdSchema.optional(),
-  /** The last turns, oldest first; at most 6. */
-  history: z.array(ChatTurnSchema).max(6).default([]),
+  /** The last turns, oldest first; at most 12 (six questions and their answers). */
+  history: z.array(ChatTurnSchema).max(12).default([]),
   /** Answer language; without it, Accept-Language, then Turkish. */
   lang: LangSchema.optional(),
   /** The visitor's position, when they allowed it; "how do I get there" starts from here. Never stored. */

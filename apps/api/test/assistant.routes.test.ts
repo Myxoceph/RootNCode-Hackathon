@@ -114,6 +114,17 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
     expect((await chat(app, { message: "x".repeat(501) }, 400)).json().error.code).toBe("INVALID_BODY");
   });
 
+  it("takes the last six questions and answers as history, and no more", async () => {
+    const { model, calls } = scriptedModel([answer("-")]);
+    const app = appWith(model);
+    const turns = (n: number) =>
+      Array.from({ length: n }, (_, i) => ({ role: i % 2 === 0 ? ("user" as const) : ("assistant" as const), content: `tur ${i}` }));
+    await chat(app, { message: "Peki ya bu?", history: turns(12) });
+    expect(calls).toHaveLength(1);
+    expect(calls[0]!.messages.filter((m) => m.role !== "system").map((m) => m.content)).toEqual([...turns(12).map((turn) => turn.content), "Peki ya bu?"]);
+    expect((await chat(app, { message: "Peki ya bu?", history: turns(13) }, 400)).json().error.code).toBe("INVALID_BODY");
+  });
+
   it("searches, reads an asset and cites it; unknown markers are dropped", async () => {
     const { model, calls } = scriptedModel([
       call("search_assets", { query: "Ördekli Hamam", city: "Bursa" }),
