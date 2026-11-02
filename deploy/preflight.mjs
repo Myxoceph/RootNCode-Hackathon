@@ -86,7 +86,8 @@ async function preflightToken() {
     get(`${BASE}/api${path}`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
   let session = await post("/auth/login", { username: PREFLIGHT_USERNAME, password });
   if (session.status === 401) session = await post("/auth/register", { username: PREFLIGHT_USERNAME, password, nickname: "Ön kontrol" });
-  if (session.status !== 200) throw new Error(`sign-in ${session.status} ${session.body.error?.code ?? ""}`);
+  // Signing in answers 200; opening the account the first time, 201.
+  if (session.status !== 200 && session.status !== 201) throw new Error(`sign-in ${session.status} ${session.body.error?.code ?? ""}`);
   return session.body.token;
 }
 
