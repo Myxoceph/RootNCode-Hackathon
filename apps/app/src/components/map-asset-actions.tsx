@@ -3,10 +3,11 @@ import type { AssetSummary } from "@vagabonds/contracts";
 import { fontFamily, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
 import { useEffect, useState, type ComponentProps } from "react";
-import { Linking, Pressable, StyleSheet, View } from "react-native";
+import { Animated, Easing, Linking, Pressable, StyleSheet } from "react-native";
 
 import { useAsset } from "@/data";
 import { speak, stopSpeaking } from "@/lib/speak";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { visitSealTarget } from "@/lib/visit-seal";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -26,6 +27,7 @@ interface Action {
  * Four small buttons under the map's search bar for the asset chosen on the map: directions,
  * Taşın Dili, Ziyaret Mührü and its spoken description. All but directions wait for the asset's
  * record and stay dimmed when it has no readable inscription, no seal part or no description.
+ * The row drops in once, as the city's cards rise in under the map.
  */
 export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   const { colors: c } = useTheme();
@@ -37,6 +39,14 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   const readable = record ? record.inscriptions.some((i) => i.translation || i.transliteration) : false;
   const sealable = record ? visitSealTarget(record) !== null : false;
   const coords = asset.coordinates;
+  const reduceMotion = useReducedMotion();
+  const [drop] = useState(() => new Animated.Value(0));
+
+  // The same timing as the cards (city-asset-cards.tsx), from above instead of below.
+  useEffect(() => {
+    if (reduceMotion) drop.setValue(1);
+    else Animated.timing(drop, { toValue: 1, duration: 480, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
+  }, [drop, reduceMotion]);
 
   // Another asset, another description: stop reading the last one.
   useEffect(() => {
@@ -86,7 +96,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   ];
 
   return (
-    <View style={styles.row}>
+    <Animated.View style={[styles.row, { opacity: drop, transform: [{ translateY: drop.interpolate({ inputRange: [0, 1], outputRange: [-12, 0] }) }] }]}>
       {actions.map((action) => (
         <Pressable
           key={action.key}
@@ -111,7 +121,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
           </Text>
         </Pressable>
       ))}
-    </View>
+    </Animated.View>
   );
 }
 
