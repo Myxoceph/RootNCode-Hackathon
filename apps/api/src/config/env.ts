@@ -59,6 +59,11 @@ const EnvSchema = z.object({
   ASSISTANT_MODEL: z.string().default(""),
   // Only for hosted providers; Ollama needs none. Never logged.
   ASSISTANT_API_KEY: z.string().default(""),
+  // Sesli Rehber, on the assistant's provider (its /audio/transcriptions and /audio/speech):
+  // speech-to-text and text-to-speech models, e.g. EVREN's qwen3-asr-1.7b and voxcpm2.
+  // Either empty turns voice off; POST /voice/* then answer 503.
+  VOICE_ASR_MODEL: z.string().default(""),
+  VOICE_TTS_MODEL: z.string().default(""),
   // OpenTripPlanner serving the Konya graph (deploy/otp/prepare.sh), e.g. http://otp:8080; empty turns
   // transit directions off and GET /transit/plan answers 503.
   OTP_URL: z.union([z.literal(""), z.url()]).default(""),

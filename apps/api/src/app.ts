@@ -31,6 +31,8 @@ import { savedRoutesRoutes } from "./modules/planner/saved-routes.routes.ts";
 import type { TransitPlanner } from "./modules/transit/otp.client.ts";
 import { createTransitRepository } from "./modules/transit/transit.repository.ts";
 import { transitRoutes } from "./modules/transit/transit.routes.ts";
+import type { VoiceClient } from "./modules/voice/voice.client.ts";
+import { voiceRoutes } from "./modules/voice/voice.routes.ts";
 import type { WeatherService } from "./modules/weather/weather.service.ts";
 import { registerErrorHandlers } from "./plugins/error-handler.ts";
 import { registerOpenApi } from "./plugins/openapi.ts";
@@ -58,6 +60,8 @@ export interface BuildAppOptions {
   assistantModel?: ChatModel | null;
   /** OpenTripPlanner for the Konya transit pilot (`GET /transit/plan`); without it the route answers 503. */
   transitPlanner?: TransitPlanner | null;
+  /** Speech-to-text and text-to-speech behind Sesli Rehber (`POST /voice/*`); without it they answer 503. */
+  voice?: VoiceClient | null;
 }
 
 const NO_WEATHER: WeatherService = { current: async () => null, forecast: async () => null };
@@ -81,6 +85,7 @@ export function buildApp({
   weather = NO_WEATHER,
   assistantModel = null,
   transitPlanner = null,
+  voice = null,
   photoUrls = createPhotoUrls(),
 }: BuildAppOptions): FastifyInstance {
   const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
@@ -127,6 +132,7 @@ export function buildApp({
     community: communityRepository,
     conversations: createConversationsRepository(prisma),
   });
+  app.register(voiceRoutes, { client: voice, community: communityRepository });
 
   return app;
 }
