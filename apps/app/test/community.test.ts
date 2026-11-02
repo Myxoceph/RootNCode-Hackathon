@@ -32,7 +32,9 @@ function scriptedFetch() {
   const calls: Array<{ url: string; init: RequestInit; reply: (body: unknown, status?: number) => void }> = [];
   const fetch = vi.fn(
     (url: string, init: RequestInit) =>
-      new Promise<Response>((resolve) => calls.push({ url, init, reply: (body, status = 200) => resolve(Response.json(body, { status })) })),
+      new Promise<Response>((resolve) =>
+        calls.push({ url, init, reply: (body, status = 200) => resolve(Response.json(body, { status })) }),
+      ),
   );
   vi.stubGlobal("fetch", fetch);
   return { fetch, calls };

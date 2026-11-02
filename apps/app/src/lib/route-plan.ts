@@ -26,9 +26,5 @@ function subscribe(listener: () => void) {
 }
 
 export function useAddedDishes(): readonly string[] {
-  return useSyncExternalStore(
-    subscribe,
-    () => added,
-    () => added,
-  );
+  return useSyncExternalStore(subscribe, () => added, () => added);
 }

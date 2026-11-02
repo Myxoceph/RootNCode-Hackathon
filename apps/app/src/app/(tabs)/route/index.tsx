@@ -8,7 +8,15 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Segmented } from "@/components/segmented";
 import { bursaDishes } from "@/content/food";
-import { formatClock, planRoute, weatherAdvice, type DayPlan, type Duration, type PlanItem, type Region } from "@/content/routes";
+import {
+  formatClock,
+  planRoute,
+  weatherAdvice,
+  type DayPlan,
+  type Duration,
+  type PlanItem,
+  type Region,
+} from "@/content/routes";
 import { announce } from "@/lib/announce";
 import { setDishes, useAddedDishes } from "@/lib/route-plan";
 import { routeKey, saveRoute, useSavedRoutes } from "@/lib/saved-routes";
@@ -54,7 +62,10 @@ export default function RouteScreen() {
   const isSaved = saved.some((route) => routeKey(route) === routeKey({ region, duration, dishes: [...addedIds] }));
 
   return (
-    <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={[styles.content, { paddingTop: insets.top + spacing.lg }]}>
+    <ScrollView
+      style={{ backgroundColor: c.background }}
+      contentContainerStyle={[styles.content, { paddingTop: insets.top + spacing.lg }]}
+    >
       <Head>
         <title>Rota Planla · Vagabonds</title>
       </Head>
@@ -104,7 +115,9 @@ export default function RouteScreen() {
               <Text variant="overline" color="warning">
                 EKLEDİĞİN LEZZET DURAKLARI
               </Text>
-              <Timeline items={added.map((d) => ({ kind: "food", minutes: -1, label: "Lezzet durağı", name: d.name, where: d.where }))} />
+              <Timeline
+                items={added.map((d) => ({ kind: "food", minutes: -1, label: "Lezzet durağı", name: d.name, where: d.where }))}
+              />
             </View>
           )}
           <View style={styles.actions}>
@@ -190,14 +203,21 @@ function Timeline({ items }: { items: PlanItem[] }) {
         const last = i === items.length - 1;
         const time = item.minutes >= 0 ? `${formatClock(item.minutes)} ` : "";
         const title = food ? `${item.label} · ${item.name}` : item.stop.name;
-        const detail = food ? item.where : `${Math.round(item.stop.hours * 60)} dk · ${item.stop.tag}${item.stop.outdoor >= 0.6 ? " · açık hava" : ""}`;
+        const detail = food
+          ? item.where
+          : `${Math.round(item.stop.hours * 60)} dk · ${item.stop.tag}${item.stop.outdoor >= 0.6 ? " · açık hava" : ""}`;
         return (
           <View key={`${title}-${i}`} style={styles.stop} accessible accessibilityLabel={`${time}${title}, ${detail}`}>
             <Text variant="caption" color="textSecondary" style={styles.time}>
               {time.trim()}
             </Text>
             <View style={styles.rail}>
-              <View style={[styles.node, { borderColor: food ? c.warning : c.primary, backgroundColor: food ? c.warning : c.surface }]} />
+              <View
+                style={[
+                  styles.node,
+                  { borderColor: food ? c.warning : c.primary, backgroundColor: food ? c.warning : c.surface },
+                ]}
+              />
               {!last && <View style={[styles.line, { backgroundColor: c.border }]} />}
             </View>
             <View style={styles.flex}>

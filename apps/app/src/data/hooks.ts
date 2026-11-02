@@ -20,7 +20,10 @@ import type { CityOption } from "./source";
 const LANG: Lang = "tr";
 const PAGE_SIZE = 30;
 
-export type Resource<T> = { status: "loading" } | { status: "error"; error: DataError } | { status: "success"; data: T };
+export type Resource<T> =
+  | { status: "loading" }
+  | { status: "error"; error: DataError }
+  | { status: "success"; data: T };
 
 export type ResourceWithRetry<T> = Resource<T> & { retry: () => void };
 
@@ -89,7 +92,10 @@ export function useMyContributions(): ResourceWithRetry<Contribution[] | null> {
   // A new session or a new note means a new list. Until the stored session has been read
   // (`undefined`), nothing is fetched: that read decides whether there is a list at all.
   const key = user === undefined ? null : `${user?.id ?? ""}:${sent}`;
-  const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchMyContributions()), [key]);
+  const load = useCallback(
+    () => (key === null ? new Promise<never>(() => {}) : fetchMyContributions()),
+    [key],
+  );
   return useResource(load);
 }
 
@@ -157,7 +163,9 @@ export function useMapAssets(city?: string): ResourceWithRetry<{ located: AssetS
  * The same for one chosen city; `null` (and no request) while none is chosen. The answer
  * names its city: right after a new choice the previous answer is still in for a render.
  */
-export function useCityMapAssets(city: string | null): ResourceWithRetry<{ city: string; located: AssetSummary[]; total: number } | null> {
+export function useCityMapAssets(
+  city: string | null,
+): ResourceWithRetry<{ city: string; located: AssetSummary[]; total: number } | null> {
   const load = useCallback(async () => (city ? { city, ...(await loadMapAssets(city)) } : null), [city]);
   return useResource(load);
 }
