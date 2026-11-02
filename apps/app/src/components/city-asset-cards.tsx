@@ -26,7 +26,7 @@ interface CityAssetCardsProps {
 /**
  * The open city's assets as a row of cards under the map, the chosen one in front:
  * swiping chooses the next asset (the map moves to it), choosing one on the map brings
- * its card here. The row rises in when it appears. A card opens the asset. The cards are clear frosted glass in every theme. For screen readers this row is the map's
+ * its card here. The row rises in when it appears. A card opens the asset, and says so: "İncele". The cards are clear frosted glass in every theme. For screen readers this row is the map's
  * content in words: every asset, a link each.
  */
 export function CityAssetCards({ assets, buildingsOf, selectedId, onSelect }: CityAssetCardsProps) {
@@ -136,13 +136,17 @@ function CityAssetCard({ asset, buildings, width, chosen, colors }: { asset: Ass
               {place}
             </Text>
           )}
+      accessibilityHint="Eserin hikâyesini ve bilgilerini açar"
         </View>
         <Text variant="label" colorValue={colors.text} numberOfLines={1} style={styles.name}>
           {asset.name}
         </Text>
       </View>
       <View style={[styles.open, { backgroundColor: colors.button }]}>
-        <Ionicons name="arrow-forward" size={18} color={colors.onButton} />
+        <Text variant="caption" colorValue={colors.onButton} style={styles.openText}>
+          İncele
+        </Text>
+        <Ionicons name="arrow-forward" size={14} color={colors.onButton} />
       </View>
     </Pressable>
   );
@@ -199,10 +203,16 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.sansBold,
   },
   open: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    gap: spacing.xxs,
+    height: 34,
+    paddingLeft: spacing.md,
+    paddingRight: spacing.sm + spacing.xxs,
+    borderRadius: 17,
+  },
+  openText: {
+    fontFamily: fontFamily.sansSemiBold,
   },
 });
+  /** What a card does, in a word: the whole card is the target, this only says so. */
