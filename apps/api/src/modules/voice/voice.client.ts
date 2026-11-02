@@ -78,7 +78,10 @@ export function createVoiceClient({ baseUrl, asrModel, ttsModel, apiKey, fetchIm
         body: JSON.stringify({ model: ttsModel, input: text, response_format: "mp3" }),
         signal,
       });
-      const audio = Buffer.from(await response.arrayBuffer());
+      // A connection dropped mid-answer is the provider's failure too, so it is tried again.
+      const body = await response.arrayBuffer().catch(() => null);
+      if (body === null) throw new VoiceError("Voice provider dropped the audio");
+      const audio = Buffer.from(body);
       if (audio.length === 0) throw new VoiceError("Voice provider returned no audio");
       return audio;
     },

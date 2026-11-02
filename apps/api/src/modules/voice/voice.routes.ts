@@ -94,15 +94,19 @@ const LangQuerySchema = z.object({ lang: LangSchema.optional() });
  * and numbers are said in words (the speech model misreads digits): the record's
  * "H. 802 / M. 1399" as "Hicri sekiz yüz iki / Miladi bin üç yüz doksan dokuz".
  */
-export function speechText(text: string): string {
-  return text
+export function speechText(text: string, lang = "tr"): string {
+  const plain = text
     .replace(/\s*\[\d+\]/g, "")
     .replace(/\*\*(.+?)\*\*/g, "$1")
     .replace(/^#{1,6}\s+/gm, "")
-    .replace(/^\s*(?:[-*•]|\d+\.)\s+(.*)$/gm, (_line, item: string) => (/[.!?:;]$/.test(item.trim()) ? item.trim() : `${item.trim()}.`))
+    // "1. Ulucami" is a list item, "15. yüzyılda" an ordinal: an item starts with a capital.
+    .replace(/^\s*(?:[-*•]|\d+\.(?=\s+[A-ZÇĞİÖŞÜ"“(]))\s+(.*)$/gm, (_line, item: string) =>
+      /[.!?:;]$/.test(item.trim()) ? item.trim() : `${item.trim()}.`,
+    )
     .replace(/\s+/g, " ")
-    .trim()
-    .replace(/^.*$/s, sayNumbers);
+    .trim();
+  // The numbers are said in Turkish words; another language's answer keeps its digits.
+  return lang === "tr" ? sayNumbers(plain) : plain;
 }
 
 /** The media type without its parameters ("audio/webm;codecs=opus" → "audio/webm"). */
@@ -172,9 +176,10 @@ export const voiceRoutes: FastifyPluginAsync<VoiceRoutesOptions> = async (app, {
     await requireAccount(request, community);
     const query = parseWith(VoiceSpeechQuerySchema, request.query, "INVALID_QUERY");
     if (!client) throw new HttpError(503, "VOICE_UNAVAILABLE", "Voice is not configured");
-    const text = speechText(query.text);
+    // The language only decides how numbers are said: the speech model reads any language as written.
+    const text = speechText(query.text, resolveLang(query.lang, request.headers["accept-language"]));
     if (!text) throw new HttpError(400, "INVALID_QUERY", "Nothing to read aloud");
-    const key = JSON.stringify([resolveLang(query.lang, request.headers["accept-language"]), text]);
+    const key = text;
     let audio = spoken.get(key);
     if (!audio) {
       try {

@@ -11,7 +11,7 @@ import { createPrismaClient, type PrismaClient } from "../src/db/prisma.ts";
 import type { ChatMessage, ChatModel } from "../src/modules/assistant/assistant.model.ts";
 import { SPOKEN_RULE } from "../src/modules/assistant/assistant.ts";
 import { hashToken, newToken } from "../src/modules/community/auth.ts";
-import { VoiceError, type VoiceClient } from "../src/modules/voice/voice.client.ts";
+import { createVoiceClient, VoiceError, type VoiceClient } from "../src/modules/voice/voice.client.ts";
 import { numberWords, ordinalWords } from "../src/modules/voice/spoken-numbers.ts";
 import { hedged, speechText } from "../src/modules/voice/voice.routes.ts";
 
@@ -35,6 +35,12 @@ describe("speechText", () => {
     expect(speechText("I. Mehmed ve II. Murad'ın veziri, XV. yüzyılda; XIX yüzyıl. IV. Murad (1623-1640).")).toBe(
       "birinci Mehmed ve ikinci Murad'ın veziri, on beşinci yüzyılda; on dokuzuncu yüzyıl. dördüncü Murad (bin altı yüz yirmi üç ile bin altı yüz kırk).",
     );
+    expect(speechText("Cami Hamza Bey'indir.\n15. yüzyılda yapıldı.")).toBe("Cami Hamza Bey'indir. on beşinci yüzyılda yapıldı.");
+    expect(speechText("15. yüzyılda yapıldı.")).toBe("on beşinci yüzyılda yapıldı.");
+    expect(speechText("Numara 1234567890123456789012 ve 99999999999999.")).toBe(
+      "Numara bir iki üç dört beş altı yedi sekiz dokuz sıfır bir iki üç dört beş altı yedi sekiz dokuz sıfır bir iki ve dokuz dokuz dokuz dokuz dokuz dokuz dokuz dokuz dokuz dokuz dokuz dokuz dokuz dokuz.",
+    );
+    expect(speechText("Built in 1430, 15. century.", "en")).toBe("Built in 1430, 15. century.");
     expect(speechText("Kubbe ve Minare. Dolayısıyla LCD. İzmir Fâtihi.")).toBe("Kubbe ve Minare. Dolayısıyla LCD. İzmir Fâtihi.");
     expect(speechText("09:30 ile 17.00 arası, 1430-1435 yılları.")).toBe("dokuz otuz ile on yedi arası, bin dört yüz otuz ile bin dört yüz otuz beş yılları.");
   });
@@ -42,6 +48,7 @@ describe("speechText", () => {
 
 describe("numberWords and ordinalWords", () => {
   it("reads Turkish numbers, with the vowel harmony of ordinals", () => {
+    expect([Number.NaN, 1e21, -3].map(numberWords)).toEqual(["NaN", "1e+21", "-3"]);
     expect([0, 7, 100, 101, 1000, 1999, 2026, 1_000_000, 2_500_000].map(numberWords)).toEqual([
       "sıfır", "yedi", "yüz", "yüz bir", "bin", "bin dokuz yüz doksan dokuz", "iki bin yirmi altı", "bir milyon", "iki milyon beş yüz bin",
     ]);
@@ -192,6 +199,15 @@ describe.skipIf(!DATABASE_URL)("voice routes (PostgreSQL, stand-in provider)", (
     // The written question is not answered from the spoken one's cache.
     expect((await ask(false)).json().answer).toBe("Cevap 2");
     expect(systems[1]).not.toContain(SPOKEN_RULE);
+  });
+});
+
+describe("createVoiceClient", () => {
+  it("counts a connection dropped mid-audio as the provider's failure, which is tried again", async () => {
+    const dropped = new ReadableStream({ start: (controller) => controller.error(new TypeError("terminated")) });
+    const fetchImpl = (async () => new Response(dropped, { status: 200 })) as unknown as typeof fetch;
+    const client = createVoiceClient({ baseUrl: "http://voice.test/v1", asrModel: "a", ttsModel: "t", fetchImpl });
+    await expect(client.speak("Merhaba", new AbortController().signal)).rejects.toBeInstanceOf(VoiceError);
   });
 });
 

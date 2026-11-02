@@ -24,7 +24,8 @@ function belowThousand(n: number): string[] {
 
 /** 1430 → "bin dört yüz otuz". Numbers past the billions are read digit by digit. */
 export function numberWords(n: number): string {
-  if (!Number.isSafeInteger(n) || n < 0 || n >= 1e12) return [...String(n)].map((d) => numberWords(Number(d))).join(" ");
+  if (!Number.isSafeInteger(n) || n < 0) return String(n);
+  if (n >= 1e12) return [...String(n)].map((d) => ONES[Number(d)] || "sıfır").join(" ");
   if (n === 0) return "sıfır";
   const words: string[] = [];
   let rest = n;
@@ -63,6 +64,10 @@ const ABBREVIATIONS: Array<[RegExp, string]> = [
   [/\s*&\s*/g, " ve "],
 ];
 
+/** Digits as words: a long run (a phone number, an ID) is read digit by digit. */
+function spell(digits: string): string {
+  return digits.length > 12 ? [...digits].map((d) => ONES[Number(d)] || "sıfır").join(" ") : numberWords(Number.parseInt(digits, 10));
+}
 const int = (digits: string) => Number.parseInt(digits, 10);
 
 const ROMAN: Record<string, number> = { I: 1, V: 5, X: 10, L: 50 };
@@ -96,19 +101,19 @@ export function sayNumbers(text: string): string {
       // 1.200 → 1200 (a thousands separator, not a sentence end).
       .replace(/\b\d{1,3}(?:\.\d{3})+\b/g, (m) => m.replace(/\./g, ""))
       // %20 → yüzde yirmi
-      .replace(/%\s?(\d+)/g, (_m, d: string) => `yüzde ${numberWords(int(d))}`)
+      .replace(/%\s?(\d+)/g, (_m, d: string) => `yüzde ${spell(d)}`)
       // 09:30 / 09.30 → dokuz otuz
       .replace(/\b([01]?\d|2[0-3])[:.]([0-5]\d)\b(?!\.\d)/g, (_m, h: string, m: string) =>
         int(m) === 0 ? numberWords(int(h)) : `${numberWords(int(h))} ${numberWords(int(m))}`,
       )
       // 3,5 → üç virgül beş
-      .replace(/\b(\d+),(\d+)\b/g, (_m, a: string, b: string) => `${numberWords(int(a))} virgül ${numberWords(int(b))}`)
+      .replace(/\b(\d+),(\d+)\b/g, (_m, a: string, b: string) => `${spell(a)} virgül ${spell(b)}`)
       // 1430-1435 → 1430 ile 1435
       .replace(/\b(\d+)\s?[-–]\s?(\d+)\b/g, "$1 ile $2")
       // 15. yüzyıl → on beşinci yüzyıl (a lowercase word follows: not a sentence end)
-      .replace(/\b(\d+)\.(?=\s+[a-zçğıöşü])/g, (_m, d: string) => ordinalWords(int(d)))
+      .replace(/\b(\d{1,12})\.(?=\s+[a-zçğıöşü])/g, (_m, d: string) => ordinalWords(int(d)))
       // 1430'da → bin dört yüz otuzda
-      .replace(/\b(\d+)['’](\p{L}+)/gu, (_m, d: string, suffix: string) => `${numberWords(int(d))}${suffix}`)
-      .replace(/\b\d+\b/g, (d) => numberWords(int(d)))
+      .replace(/\b(\d+)['’](\p{L}+)/gu, (_m, d: string, suffix: string) => `${spell(d)}${suffix}`)
+      .replace(/\b\d+\b/g, (d) => spell(d))
   );
 }
