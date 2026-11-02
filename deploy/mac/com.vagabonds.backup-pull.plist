@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Copies the Oracle server's newest database backup to this Mac every 30 minutes, so the Mac can
+     take over with recent data (deploy/failover.sh). Installed by `deploy/failover.sh install-pull`,
+     which fills in __REPO__. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.vagabonds.backup-pull</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__REPO__/deploy/failover.sh</string>
+    <string>pull</string>
+  </array>
+  <key>StartInterval</key>
+  <integer>1800</integer>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>__REPO__/deploy/backups/pull.log</string>
+  <key>StandardErrorPath</key>
+  <string>__REPO__/deploy/backups/pull.log</string>
+</dict>
+</plist>
