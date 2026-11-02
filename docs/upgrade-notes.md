@@ -7,6 +7,23 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-03 · Kaydettiklerim: yemek önerileri ve ulaşım tarifleri hesapta (migration, sözleşme 0.3.22)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. `npm run db:deploy --workspace @vagabonds/api` (`user_route` yeni türleri kabul eder).
+
+Değişenler:
+- `/me/routes` artık `food` ve `transit` türlerini de saklıyor. Uygulama, Rehber'in yemek önerisi ve toplu taşıma
+  cevaplarını kendiliğinden kaydediyor; aynı yemekler ya da aynı güzergâh yeniden sorulunca öncekinin yerine geçiyor.
+- Profil'deki Rotalarım satırı **Kaydettiklerim** oldu; sayfada Rotalar, Yemek ve Ulaşım sekmeleri var.
+- Her öneri hangi rota ya da eser için alındıysa `about` alanında onu taşıyor; sekmelerde onun altında gruplanıyor
+  ve rotanın kendi sayfasında da görünüyor.
+- Rehber, "bu rotada ne yenir" gibi yemek, ulaşım ya da hava sorularında artık yeni plan çıkarmıyor (`mayPlanTrip`).
+- `/me/routes` cevabındaki `items` yeni türler içerebilir: bu listeyi okuyan kod `kind`'a bakmalı.
+
+---
+
 ## 2026-11-03 · Rotalar ve açılan eserler hesaba bağlı (migration, sözleşme 0.3.21)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**

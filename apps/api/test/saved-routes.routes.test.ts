@@ -59,6 +59,33 @@ describe.skipIf(!DATABASE_URL)("saved routes (PostgreSQL)", () => {
     expect((await app.inject({ method: "GET", url: "/me/routes" })).statusCode).toBe(401);
   });
 
+  it("keeps Rehber's food suggestions and transport directions", async () => {
+    const user = await createUser();
+    const place = { name: "Mevlana Müzesi", lat: 37.87, lng: 32.5, stopCode: null };
+    const at = "2026-11-07T10:15:00+03:00";
+    const transit = {
+      version: "0.3.22",
+      lang: "tr",
+      city: "konya",
+      from: { ...place, name: "Konya Garı" },
+      to: { ...place, assetId: null },
+      searchedFrom: at,
+      itineraries: [],
+      source: { name: "Konya Büyükşehir Belediyesi", license: "açık veri", timetable: "2026-11-01", url: "https://example.org/gtfs" },
+    };
+    const food = await save(user.token, {
+      key: "food|etli-ekmek",
+      route: { kind: "food", id: "f1", title: "Etli ekmek", question: "Ne yenir?", answer: "Etli ekmek denenmeli.", dishes: [{ id: "etli-ekmek", title: "Etli ekmek" }] },
+    });
+    expect(food.statusCode, food.body).toBe(200);
+    const bus = await save(user.token, {
+      key: "transit|konya-gari|mevlana",
+      route: { kind: "transit", id: "b1", title: "Konya Garı → Mevlana Müzesi", question: "Nasıl giderim?", answer: "Otobüsle gidilir.", transit },
+    });
+    expect(bus.statusCode, bus.body).toBe(200);
+    expect((await list(user.token)).map((route) => route.kind)).toEqual(["transit", "food"]);
+  });
+
   it("replaces the same plan saved again, and deletes", async () => {
     const user = await createUser();
     await save(user.token, planner("a1", ["pideli-kofte"]));
