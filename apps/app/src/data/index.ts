@@ -1,5 +1,5 @@
 export { dataSource } from "./active-source";
-export { communityAvailable, sendContribution, sendVisitProof, useCommunity, type CommunityState } from "./community";
+export { communityAvailable, login, logout, register, sendContribution, sendVisitProof, useCommunity, type CommunityState } from "./community";
 export { DataError, type DataErrorKind } from "./errors";
 export { refreshData, useOfflineSince } from "./offline";
 export {
@@ -9,6 +9,7 @@ export {
   useCities,
   useCityMapAssets,
   useMapAssets,
+  useMyAchievements,
   useMyContributions,
   usePulse,
   useRelationsOf,

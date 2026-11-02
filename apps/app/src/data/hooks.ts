@@ -5,12 +5,13 @@ import type {
   AssetSummary,
   Contribution,
   Lang,
+  MyAchievementsResponse,
   PulseResponse,
 } from "@vagabonds/contracts";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { dataSource } from "./active-source";
-import { fetchMyContributions, useCommunity } from "./community";
+import { fetchMyAchievements, fetchMyContributions, useCommunity } from "./community";
 import { DataError } from "./errors";
 import { useRefreshEpoch } from "./offline";
 import type { CityOption } from "./source";
@@ -19,10 +20,7 @@ import type { CityOption } from "./source";
 const LANG: Lang = "tr";
 const PAGE_SIZE = 30;
 
-export type Resource<T> =
-  | { status: "loading" }
-  | { status: "error"; error: DataError }
-  | { status: "success"; data: T };
+export type Resource<T> = { status: "loading" } | { status: "error"; error: DataError } | { status: "success"; data: T };
 
 export type ResourceWithRetry<T> = Resource<T> & { retry: () => void };
 
@@ -78,15 +76,20 @@ export function usePulse(id: string): ResourceWithRetry<PulseResponse | null> {
 }
 
 /** The visitor's own notes ("Notlarım"); fetched again after each note sent. `null` without a session. */
+/** The visitor's badges (Rozetlerim): fetched again for a new session. `null` without a server. */
+export function useMyAchievements(): ResourceWithRetry<MyAchievementsResponse | null> {
+  const { user } = useCommunity();
+  const key = user === undefined ? null : (user?.id ?? "");
+  const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchMyAchievements()), [key]);
+  return useResource(load);
+}
+
 export function useMyContributions(): ResourceWithRetry<Contribution[] | null> {
   const { user, sent } = useCommunity();
   // A new session or a new note means a new list. Until the stored session has been read
   // (`undefined`), nothing is fetched: that read decides whether there is a list at all.
   const key = user === undefined ? null : `${user?.id ?? ""}:${sent}`;
-  const load = useCallback(
-    () => (key === null ? new Promise<never>(() => {}) : fetchMyContributions()),
-    [key],
-  );
+  const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchMyContributions()), [key]);
   return useResource(load);
 }
 
@@ -154,9 +157,7 @@ export function useMapAssets(city?: string): ResourceWithRetry<{ located: AssetS
  * The same for one chosen city; `null` (and no request) while none is chosen. The answer
  * names its city: right after a new choice the previous answer is still in for a render.
  */
-export function useCityMapAssets(
-  city: string | null,
-): ResourceWithRetry<{ city: string; located: AssetSummary[]; total: number } | null> {
+export function useCityMapAssets(city: string | null): ResourceWithRetry<{ city: string; located: AssetSummary[]; total: number } | null> {
   const load = useCallback(async () => (city ? { city, ...(await loadMapAssets(city)) } : null), [city]);
   return useResource(load);
 }
