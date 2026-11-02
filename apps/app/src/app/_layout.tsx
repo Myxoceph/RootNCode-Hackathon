@@ -69,6 +69,8 @@ function ThemedStack() {
           <Stack.Screen name="profile/notes" options={{ title: "Bıraktığım Notlar", headerBackTitle: "Profil" }} />
           {/* An eser kartı over the Profil page it was opened from; it draws its own close button. */}
           <Stack.Screen name="asset/[id]" options={{ headerShown: false, title: "" }} />
+          {/* A trip Rehber planned, from Rotalarım; the screen sets its own title. */}
+          <Stack.Screen name="profile/trip" options={{ title: "Rota", headerBackTitle: "Rotalarım" }} />
           <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
           {/* Draws its own header, with "Temizle" next to the title. */}
           <Stack.Screen name="assistant" options={{ headerShown: false, title: "Asistan" }} />
