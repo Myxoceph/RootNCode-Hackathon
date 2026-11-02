@@ -1,0 +1,10 @@
+# Every hour; one missed while the server was off runs when it is back.
+[Unit]
+Description=Vagabonds: back up the database every hour
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

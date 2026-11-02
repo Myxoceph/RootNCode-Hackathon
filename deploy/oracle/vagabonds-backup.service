@@ -1,0 +1,10 @@
+# A database backup (deploy/oracle/backup.sh).
+[Unit]
+Description=Vagabonds: back up the database
+After=docker.service
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/RootNCode-Hackathon
+ExecStart=/home/ubuntu/RootNCode-Hackathon/deploy/oracle/backup.sh
