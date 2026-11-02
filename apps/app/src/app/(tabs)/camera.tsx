@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { AssetDetail, Media } from "@vagabonds/contracts";
+import type { AssetDetail, InscriptionV2, Media } from "@vagabonds/contracts";
 import { cameraColors, cameraGlass, fontFamily, radius, spacing, Text, useTheme } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
 import Head from "expo-router/head";
@@ -8,6 +8,7 @@ import { Animated, Easing, Platform, Pressable, StyleSheet, View, type LayoutCha
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
+import { featuredInscription, INSCRIPTION_ASSET } from "@/ar/inscription-targets";
 import { AssetImage } from "@/components/asset-image";
 import { useAsset } from "@/data";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -16,12 +17,10 @@ import { visitSealTarget } from "@/lib/visit-seal";
 /** The portal of Ulucami on its cover photo, as fractions of the photo: where Ziyaret Mührü's demo zooms in. */
 const PORTAL = { x: 0.495, y: 0.67 };
 /**
- * The lines of the inscription over Yeşil Camii's portal (its "taç kapı kitabesi"), on its portal
- * photo, as fractions of the photo: where Taşın Dili's demo locks on. The arch's tip above them is
- * left out: it is at the photo's very top, so a frame around it would sit on the card's edge.
+ * The lines of Azeb Bey Türbesi's door inscription on its photo (the one the camera recognizes),
+ * as fractions of the photo: where Taşın Dili's demo locks on.
  */
-const INSCRIPTION_PANEL = { x: 0.2, y: 0.07, width: 0.45, height: 0.18 };
-const INSCRIPTION_ID = "tac-kapi-kitabesi";
+const INSCRIPTION_PANEL = { x: 0.32, y: 0.47, width: 0.37, height: 0.3 };
 
 /** Height of the title strip over the bottom of each card; the demos keep their action above it. */
 const FOOTER = 108;
@@ -53,7 +52,7 @@ const modes: Mode[] = [
   {
     key: "inscription",
     icon: "scan",
-    asset: "bursa-yildirim-yesil-camii",
+    asset: INSCRIPTION_ASSET,
     path: "/inscription",
     title: "Taşın Dili",
     description: "Kitabeyi okut, günümüz Türkçesiyle oku.",
@@ -105,6 +104,9 @@ function ModeCard({ mode, web }: { mode: Mode; web: boolean }) {
   const resource = useAsset(mode.asset);
   const asset = resource.status === "success" ? resource.data : null;
   const seal = asset ? visitSealTarget(asset) : null;
+  // Taşın Dili plays on the photo its camera recognizes, so the demo is what the camera does.
+  const inscription = asset ? featuredInscription(asset) : undefined;
+  const inscriptionPhoto = asset?.media.find((m) => m.key === inscription?.arTargetMediaKey);
   const [box, setBox] = useState<Box>({ width: 0, height: 0 });
   return (
     <Pressable
@@ -120,7 +122,8 @@ function ModeCard({ mode, web }: { mode: Mode; web: boolean }) {
             mode.key === "seal" ? (
               seal && <SealPreview asset={asset} cover={asset.cover} part={seal.part} box={box} />
             ) : (
-              <InscriptionPreview asset={asset} photo={asset.cover} box={box} />
+              inscription &&
+              inscriptionPhoto && <InscriptionPreview inscription={inscription} photo={inscriptionPhoto} box={box} />
             )
           ) : null}
           <Fade id={`fade-${mode.key}`} />
@@ -362,15 +365,11 @@ function SealPreview({ asset, cover, part, box }: { asset: AssetDetail; cover: M
 }
 
 /**
- * Taşın Dili in miniature: the frame wanders over the portal like a hand-held phone, closes in
- * on the inscription above it, the corners lock, and the reading comes up: first the Ottoman,
+ * Taşın Dili in miniature: the frame wanders over the wall like a hand-held phone, closes in
+ * on the inscription, the corners lock, and the reading comes up: first the Ottoman,
  * then today's Turkish.
  */
-function InscriptionPreview({ asset, photo, box }: { asset: AssetDetail; photo: Media; box: Box }) {
-  const inscription =
-    asset.inscriptions.find((i) => i.id === INSCRIPTION_ID && i.transliteration && i.translation) ??
-    asset.inscriptions.find((i) => i.transliteration && i.translation) ??
-    null;
+function InscriptionPreview({ inscription, photo, box }: { inscription: InscriptionV2; photo: Media; box: Box }) {
   const settle = useRef(new Animated.Value(0)).current;
   const lock = useRef(new Animated.Value(0)).current;
   const card = useRef(new Animated.Value(0)).current;
@@ -460,7 +459,7 @@ function InscriptionPreview({ asset, photo, box }: { asset: AssetDetail; photo: 
             OKUNUŞ
           </Text>
           <Text style={styles.ottoman} colorValue={cameraColors.text} numberOfLines={compact ? 1 : 2}>
-            {inscription?.transliteration ?? "Vel-itisamu bikeremihil-amim, masnu saniyil-fıtrati…"}
+            {inscription.transliteration}
           </Text>
         </Animated.View>
         <Animated.View style={[styles.cardLayer, StyleSheet.absoluteFill, styles.cardTurned, { opacity: turn }]}>
@@ -468,7 +467,7 @@ function InscriptionPreview({ asset, photo, box }: { asset: AssetDetail; photo: 
             GÜNÜMÜZ TÜRKÇESİ
           </Text>
           <Text variant="caption" colorValue={cameraColors.text} numberOfLines={compact ? 1 : 2}>
-            {inscription?.translation ?? "Rahman ve Rahim olan Allah'ın adıyla. Her şeyi kuşatan lütfu ile başlanır işe."}
+            {inscription.translation}
           </Text>
         </Animated.View>
       </Animated.View>

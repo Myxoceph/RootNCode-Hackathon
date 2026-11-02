@@ -12,6 +12,8 @@ import { trackerPageHtml, type TrackerTarget } from "./tracker-page";
 export interface MarkerTrackerProps {
   /** A compiled `.mind` file, or a photo compiled on the device. Keep it stable (memoised): a new one restarts the page. */
   target: TrackerTarget;
+  /** Text drawn over each target while it is in view, by target index. Keep it stable too. */
+  overlays?: readonly (string | null)[];
   onEvent: (event: TrackerEvent) => void;
   style?: StyleProp<ViewStyle>;
 }
@@ -24,11 +26,11 @@ export interface MarkerTrackerProps {
  * The page is given an https base URL so it is a secure context: WebViews only
  * offer getUserMedia to those.
  */
-export function MarkerTracker({ target, onEvent, style }: MarkerTrackerProps) {
+export function MarkerTracker({ target, overlays, onEvent, style }: MarkerTrackerProps) {
   const mindarScript = useVendored(loadMindar);
   const html = useMemo(
-    () => (mindarScript ? trackerPageHtml({ target, markColor: cameraColors.gold, mindarScript }) : null),
-    [target, mindarScript],
+    () => (mindarScript ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript }) : null),
+    [target, overlays, mindarScript],
   );
   const permission = useCameraPermission();
 

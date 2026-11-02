@@ -1,7 +1,7 @@
 import { AR_MINDAR_VERSION, type AssetDetail, type InscriptionV2 } from "@vagabonds/contracts";
 import { describe, expect, it } from "vitest";
 
-import { featuredInscription, INSCRIPTION_ASSET, isTrackable } from "../src/ar/inscription-targets";
+import { cameraInscriptions, featuredInscription, hasInscriptions, isTrackable, nearbyAssets, overlayText } from "../src/ar/inscription-targets";
 import { capsuleForSoundKey, captionAt, capsules, formatSeconds } from "../src/content/capsules";
 import { pulseItemsFromTips } from "../src/data/pulse";
 import { formatDate } from "../src/lib/format-date";
@@ -27,31 +27,72 @@ function inscription(id: string, fields: Partial<InscriptionV2> = {}): Inscripti
   };
 }
 
+const jpg = (width: number) => ({ url: `https://media.allbytech.com/m03/${width}.jpg`, width, height: width / 2 });
+const photo = { key: "m03", kind: "photo", sources: { jpg: [jpg(480), jpg(1280)], webp: [] } };
+
 /** Only the fields Taşın Dili reads; built here so a re-recorded fixture cannot break the tests. */
-const asset = (id: string, inscriptions: InscriptionV2[]) => ({ id, inscriptions }) as unknown as AssetDetail;
+const asset = (id: string, inscriptions: InscriptionV2[]) => ({ id, inscriptions, media: [photo] }) as unknown as AssetDetail;
 
 describe("Taşın Dili inscription choice", () => {
   const untranslated = inscription("untranslated");
   const translated = inscription("translated", { translation: "Bu kapıyı ... yaptırdı." });
+  const photographed = inscription("photographed", { translation: "Şüphesiz biz sana apaçık bir fetih verdik.", arTargetMediaKey: "m03" });
 
-  it("picks the inscription with an AR target first", () => {
-    const tracked = inscription("tracked", { arTarget: target() });
-    expect(featuredInscription(asset("x", [untranslated, translated, tracked]))?.id).toBe("tracked");
+  it("picks the inscription the camera can find first", () => {
+    expect(featuredInscription(asset("x", [untranslated, translated, photographed]))?.id).toBe("photographed");
   });
 
-  it("falls back to the demo's inscription, then the first with a text, then the first", () => {
-    const demo = inscription("minber-kapi-kitabesi");
-    expect(featuredInscription(asset("x", [translated, demo]))?.id).toBe("minber-kapi-kitabesi");
+  it("falls back to the first with a text, then the first", () => {
     expect(featuredInscription(asset("x", [untranslated, translated]))?.id).toBe("translated");
     expect(featuredInscription(asset("x", [untranslated]))?.id).toBe("untranslated");
     expect(featuredInscription(asset("x", []))).toBeUndefined();
   });
 
-  it("opens the camera for Ulucami (test targets) and for assets with a target of this MindAR", () => {
-    expect(isTrackable(asset(INSCRIPTION_ASSET, []))).toBe(true);
+  it("looks for inscriptions with a photo of them and a text, by the photo's 1280 px JPEG or its .mind file", () => {
     expect(isTrackable(asset("x", [translated]))).toBe(false);
-    expect(isTrackable(asset("x", [inscription("t", { arTarget: target() })]))).toBe(true);
-    expect(isTrackable(asset("x", [inscription("t", { arTarget: target("1.1.0") })]))).toBe(false);
+    // A photo key the asset has no photo for, and a photographed inscription without a text.
+    expect(isTrackable(asset("x", [inscription("t", { translation: "Metin", arTargetMediaKey: "m09" })]))).toBe(false);
+    expect(isTrackable(asset("x", [inscription("t", { arTargetMediaKey: "m03" })]))).toBe(false);
+
+    expect(cameraInscriptions(asset("x", [translated, photographed]))).toEqual([
+      {
+        assetId: "x",
+        inscriptionId: "photographed",
+        label: "Kitabe",
+        overlay: "Şüphesiz biz sana apaçık bir fetih verdik.",
+        image: "https://media.allbytech.com/m03/1280.jpg",
+        mindUrl: null,
+      },
+    ]);
+    const compiled = inscription("c", { translation: "Metin", arTargetMediaKey: "m03", arTarget: target() });
+    expect(cameraInscriptions(asset("x", [compiled]))[0]!.mindUrl).toBe("https://media.allbytech.com/x.mind");
+    // A file of another MindAR cannot be loaded: the photo is compiled instead.
+    const outdated = inscription("c", { translation: "Metin", arTargetMediaKey: "m03", arTarget: target("1.1.0") });
+    expect(cameraInscriptions(asset("x", [outdated]))[0]!.mindUrl).toBeNull();
+  });
+
+  it("opens Taşın Dili on an asset with a text to read, and on a complex, whose inscriptions are on its buildings", () => {
+    const withChildren = (inscriptions: InscriptionV2[], children: unknown[]) => ({ ...asset("x", inscriptions), children }) as unknown as AssetDetail;
+    expect(hasInscriptions(withChildren([translated], []))).toBe(true);
+    expect(hasInscriptions(withChildren([untranslated], []))).toBe(false);
+    expect(hasInscriptions(withChildren([], [{ id: "x-camii" }]))).toBe(true);
+  });
+
+  it("lays the translation over the stone, else the reading, cut at a word", () => {
+    expect(overlayText(inscription("t", { translation: "Bir\n  iki", transliteration: "Bir iki" }))).toBe("Bir iki");
+    expect(overlayText(inscription("t", { transliteration: "İnnâ fetahnâ" }))).toBe("İnnâ fetahnâ");
+    expect(overlayText(inscription("t"))).toBeNull();
+    const long = overlayText(inscription("t", { translation: "kelime ".repeat(40) }))!;
+    expect(long.length).toBeLessThanOrEqual(161);
+    expect(long).toMatch(/kelime…$/);
+  });
+
+  it("finds the assets within 300 m, nearest first, leaving out approximate points", () => {
+    const at = (id: string, lat: number, approximate = false) => ({ id, coordinates: { lat, lng: 29.06, approximate } }) as never;
+    const here = { lat: 40.19, lng: 29.06 };
+    // 0.001° of latitude is about 111 m.
+    const found = nearbyAssets([at("far", 40.194), at("near", 40.1905), at("closest", 40.1901), at("rough", 40.1902, true)], here);
+    expect(found.map((a) => a.id)).toEqual(["closest", "near"]);
   });
 });
 

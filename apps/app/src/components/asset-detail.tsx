@@ -20,6 +20,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
+import { hasInscriptions } from "@/ar/inscription-targets";
 import { toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
 import { AssetImage } from "@/components/asset-image";
 import { BuildingIllustration } from "@/components/building-illustration";
@@ -556,7 +557,7 @@ function Experiences({ asset }: { asset: AssetDetail }) {
   const description = asset.accessibility.audioDescription;
 
   const actions: Action[] = [];
-  if (asset.inscriptions.some((i) => i.translation || i.transliteration)) {
+  if (hasInscriptions(asset)) {
     actions.push({ key: "inscription", icon: "scan-outline", title: "Taşın Dili", hint: "Kitabeyi kamerayla oku", spoken: "Taşın Dili: kitabeyi kamerayla oku", href: { pathname: "/inscription", params: { asset: asset.id } } });
   }
   if (visitSealTarget(asset)) {

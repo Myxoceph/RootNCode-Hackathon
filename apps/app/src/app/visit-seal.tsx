@@ -7,6 +7,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, Animated, Easing, Platform, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { compileSource } from "@/ar/inscription-targets";
 import { MarkerTracker } from "@/ar/marker-tracker";
 import { trackerFailureText, type TrackerEvent } from "@/ar/mindar";
 import type { TrackerTarget } from "@/ar/tracker-page";
@@ -421,12 +422,6 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: VisitRe
       <Button label="Tamam" onPress={onDone} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
     </ScrollView>
   );
-}
-
-/** The ~1280 px JPEG of the photo: big enough to recognise, small enough to compile in seconds. */
-function compileSource(media: AssetDetail["media"][number]): string {
-  const jpgs = [...media.sources.jpg].sort((a, b) => a.width - b.width);
-  return (jpgs.find((s) => s.width >= 1000) ?? jpgs[jpgs.length - 1] ?? media.sources.webp[0]!).url;
 }
 
 function formatMeters(meters: number): string {
