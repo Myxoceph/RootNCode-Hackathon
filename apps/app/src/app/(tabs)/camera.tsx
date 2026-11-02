@@ -115,7 +115,7 @@ function ModeCard({ mode, web }: { mode: Mode; web: boolean }) {
       style={({ pressed }) => [styles.card, pressed && styles.pressed]}
     >
       <View style={styles.cardInner} onLayout={(e: LayoutChangeEvent) => setBox(e.nativeEvent.layout)}>
-        <View style={StyleSheet.absoluteFill} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+        <View style={StyleSheet.absoluteFill} aria-hidden accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
           {box.width > 0 && asset?.cover ? (
             mode.key === "seal" ? (
               seal && <SealPreview asset={asset} cover={asset.cover} part={seal.part} box={box} />
