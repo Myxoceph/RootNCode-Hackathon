@@ -198,6 +198,59 @@ export const TripPlanResponseSchema = z.strictObject({
   attribution: z.string().min(1),
 });
 
+/** The app's own id of a saved route; the app makes it, so saving needs no round trip first. */
+export const SavedRouteIdSchema = z.string().regex(/^[a-z0-9-]{1,40}$/, "must be a short lowercase id");
+
+const savedRouteFields = {
+  id: SavedRouteIdSchema,
+  title: z.string().trim().min(1).max(120),
+  /** How many assets it visits. */
+  stops: z.int().min(0).max(500),
+};
+
+/**
+ * A route the user kept (Profil · Rotalarım), saved to their account so it follows them to every
+ * device: a route built in the planner, or a trip Rehber planned, kept as it was planned.
+ */
+export const SavedRouteSchema = z.discriminatedUnion("kind", [
+  z.strictObject({
+    kind: z.literal("planner"),
+    ...savedRouteFields,
+    region: z.enum(["bursa", "edirne", "both"]),
+    duration: z.enum(["half", "1", "2"]),
+    /** The food stops added to it. */
+    dishes: z.array(z.string().min(1).max(100)).max(50),
+    savedAt: z.iso.datetime(),
+  }),
+  z.strictObject({
+    kind: z.literal("trip"),
+    ...savedRouteFields,
+    trip: TripPlanResponseSchema,
+    savedAt: z.iso.datetime(),
+  }),
+]);
+
+/**
+ * `POST /me/routes`: keeps a route. `key` names the plan ("the same plan twice is one route"): a
+ * route with the same key replaces the one before, on any device. The API sets `savedAt`.
+ */
+export const SaveRouteRequestSchema = z.strictObject({
+  key: z.string().min(1).max(300),
+  route: z.discriminatedUnion("kind", [
+    SavedRouteSchema.options[0].omit({ savedAt: true }),
+    SavedRouteSchema.options[1].omit({ savedAt: true }),
+  ]),
+});
+
+/** `GET /me/routes`: the user's routes, last saved first; at most `SAVED_ROUTES_KEPT`. */
+export const SavedRoutesResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  items: z.array(SavedRouteSchema),
+});
+
+/** Routes kept per user; saving one more drops the oldest. */
+export const SAVED_ROUTES_KEPT = 100;
+
 export type WeatherCondition = z.infer<typeof WeatherConditionSchema>;
 export type DailyForecast = z.infer<typeof DailyForecastSchema>;
 export type TripDuration = z.infer<typeof TripDurationSchema>;
@@ -212,3 +265,6 @@ export type RouteThemeKind = z.infer<typeof RouteThemeKindSchema>;
 export type VisitSetting = z.infer<typeof VisitSettingSchema>;
 export type RouteStop = z.infer<typeof RouteStopSchema>;
 export type RoutePlanResponse = z.infer<typeof RoutePlanResponseSchema>;
+export type SavedRoute = z.infer<typeof SavedRouteSchema>;
+export type SaveRouteRequest = z.infer<typeof SaveRouteRequestSchema>;
+export type SavedRoutesResponse = z.infer<typeof SavedRoutesResponseSchema>;
