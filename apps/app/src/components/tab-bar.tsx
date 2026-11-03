@@ -41,7 +41,8 @@ export function TabBar({ state, descriptors, emitter, navigateToTab, insets, ite
   const focusedName = state.routes[state.index]?.name;
   const floats = FLOATS_ON.has(focusedName ?? "");
   const segments = useSegments();
-  if (HIDDEN_ON.has(segments.at(-1) ?? "")) return null;
+  // The opening greeting (`index`) fills the screen too, before the map.
+  if (focusedName === "index" || HIDDEN_ON.has(segments.at(-1) ?? "")) return null;
 
   return (
     <View
