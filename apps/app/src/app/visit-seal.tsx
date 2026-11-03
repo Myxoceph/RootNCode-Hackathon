@@ -102,7 +102,7 @@ export default function VisitSealScreen() {
     body = (
       <View style={styles.center}>
         <Text colorValue={cameraColors.text} style={styles.centerText}>
-          {asset ? "Bu eser için henüz mühür kısmı belirlenmedi." : "Eser bulunamadı."}
+          {asset ? "Bu eserin henüz fotoğrafı yok; mühür için kameranın tanıyacağı bir fotoğraf gerekiyor." : "Eser bulunamadı."}
         </Text>
         {unlock && <UnlockButton onPress={unlock} />}
       </View>
