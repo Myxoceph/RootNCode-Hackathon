@@ -551,6 +551,7 @@ function start() {
     };
     // A light haze joins the assets into one fog over the quarters where they crowd...
     map.addLayer(CLEARING_UNDER_FOG);
+    map.addLayer(CITY_SHEET);
     map.addLayer({
       id: "city-haze",
       type: "heatmap",
@@ -592,6 +593,8 @@ function start() {
       paint: { "icon-opacity": 0, "icon-opacity-transition": { duration: 0 } },
     });
     map.addLayer(CLEARING_OVER_FOG);
+    // The haze and the banks stay as layers (the unlocking still moves them), but the sheet is the fog that shows.
+    for (const id of ["city-haze", "city-haze-clearing", "city-clouds", "city-clouds-clearing"]) map.setLayoutProperty(id, "visibility", "none");
     // "İlişkili eserleri gör" (showRelated): a thin bright line to each related asset and a soft glow
     // around it, over the fog and under the seals.
     const noFeatures = { type: "FeatureCollection", features: [] };
@@ -972,6 +975,565 @@ function start() {
   }
 
   /**
+   * The city's fog: one sheet over the whole city, under the seals, drawn by the GPU at the screen's
+   * own sharpness at every zoom (CITY_SHEET). It comes in two scales:
+   * - the city (buildSheet, once per city, into a small texture): the whole city under it, its
+   *   edge frayed past the last assets into tongues and loose patches, with wide thicker and
+   *   thinner stretches from domain-warped noise;
+   * - the streets (in the shader): as the map comes closer, the fog between the assets opens into
+   *   thin spots and clear pockets, while around every asset it stays whole, a little thicker
+   *   around the locked ones.
+   * The noise is laid out in kilometres on the ground, so the fog never swims as the map zooms.
+   * Unlocked assets are opened by the clearing layers on either side of it (CLEARING_UNDER_FOG,
+   * CLEARING_OVER_FOG), as before.
+   */
+  const SHEET_PX = 512;
+  const SHEET_MARGIN_KM = 3.2;
+  /** How far each asset's share of the city reaches. */
+  const SHEET_REACH_KM = 0.6;
+  /** Around any asset the streets stay fogged this far; around a locked one the fog thickens this far. */
+  const SHEET_KEEP_KM = 0.06;
+  const SHEET_NEAR_KM = 0.45;
+  /** Rows worked out per frame, so a city's sheet never stalls the flight into it. */
+  const SHEET_ROWS_PER_FRAME = 40;
+  const SHEET_FADE_MS = 1200;
+  let sheetBuild = 0;
+  let sheetShown = false;
+  /** The open city's sheets as they are worked out: each one's texture's pixels and where it lies. */
+  let sheets = [];
+  /** Textures and buffers of sheets no longer shown, to free on the next frame. */
+  let sheetsGone = [];
+  let sheetLevel = 0;
+  let sheetLevelAt = 0;
+
+  function sheetNoise(seed) {
+    const p = new Uint8Array(512);
+    let state = seed;
+    const random = () => (state = (state * 1664525 + 1013904223) >>> 0) / 4294967296;
+    const order = [];
+    for (let i = 0; i < 256; i++) order.push(i);
+    for (let i = 255; i > 0; i--) {
+      const j = Math.floor(random() * (i + 1));
+      const swap = order[i];
+      order[i] = order[j];
+      order[j] = swap;
+    }
+    for (let i = 0; i < 512; i++) p[i] = order[i & 255];
+    const grad = (h, x, y) => {
+      const g = h & 7;
+      const u = g < 4 ? x : y;
+      const v = g < 4 ? y : x;
+      return (g & 1 ? -u : u) + (g & 2 ? -2 * v : 2 * v);
+    };
+    const fade = (t) => t * t * t * (t * (t * 6 - 15) + 10);
+    const lerp = (a, b, t) => a + t * (b - a);
+    return (x, y) => {
+      const X = Math.floor(x) & 255;
+      const Y = Math.floor(y) & 255;
+      x -= Math.floor(x);
+      y -= Math.floor(y);
+      const u = fade(x);
+      const v = fade(y);
+      const A = p[X] + Y;
+      const B = p[X + 1] + Y;
+      return lerp(lerp(grad(p[A], x, y), grad(p[B], x - 1, y), u), lerp(grad(p[A + 1], x, y - 1), grad(p[B + 1], x - 1, y - 1), u), v) / 2.2 + 0.5;
+    };
+  }
+
+  function sheetFbm(noise, x, y, octaves) {
+    let total = 0;
+    let amplitude = 0.5;
+    let frequency = 1;
+    let sum = 0;
+    for (let i = 0; i < octaves; i++) {
+      total += amplitude * noise(x * frequency, y * frequency);
+      sum += amplitude;
+      amplitude *= 0.5;
+      frequency *= 2.03;
+    }
+    return total / sum;
+  }
+
+  function sheetStep(a, b, x) {
+    const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+    return t * t * (3 - 2 * t);
+  }
+
+  /** Stamps a soft round spot of the given reach (in pixels) into one channel, keeping the larger value. */
+  function sheetStamp(pixels, width, height, channel, cx, cy, reach) {
+    const span = Math.ceil(reach * 3);
+    for (let y = Math.max(0, Math.floor(cy - span)); y < Math.min(height, Math.ceil(cy + span)); y++) {
+      for (let x = Math.max(0, Math.floor(cx - span)); x < Math.min(width, Math.ceil(cx + span)); x++) {
+        const value = Math.round(255 * Math.exp(-((x - cx) ** 2 + (y - cy) ** 2) / (2 * reach * reach)));
+        const k = (y * width + x) * 4 + channel;
+        if (value > pixels[k]) pixels[k] = value;
+      }
+    }
+  }
+
+  /**
+   * Splits a city's assets into the places where they stand together (a town, a city's old quarter),
+   * any two within this far of each other in the same place: each gets a sheet of its own, sharp
+   * enough for its streets, instead of one blurred sheet across the whole province.
+   */
+  const SHEET_LINK_KM = 7;
+
+  function sheetPlaces(assets) {
+    const parent = assets.map((_, i) => i);
+    const root = (i) => (parent[i] === i ? i : (parent[i] = root(parent[i])));
+    const across = Math.cos((assets[0].lat * Math.PI) / 180);
+    for (let i = 0; i < assets.length; i++) {
+      for (let j = i + 1; j < assets.length; j++) {
+        const km = 111.32 * Math.hypot(assets[i].lat - assets[j].lat, (assets[i].lng - assets[j].lng) * across);
+        if (km < SHEET_LINK_KM) parent[root(i)] = root(j);
+      }
+    }
+    const places = new Map();
+    assets.forEach((asset, i) => {
+      const key = root(i);
+      if (!places.has(key)) places.set(key, []);
+      places.get(key).push(asset);
+    });
+    return [...places.values()];
+  }
+
+  /**
+   * Works out the city's sheets over a few frames, one place after another: red how thick the fog
+   * is, green how light, blue how near any asset (the streets there stay fogged), alpha how near a
+   * locked one.
+   */
+  function buildSheet(assets, plate) {
+    const build = ++sheetBuild;
+    sheetsGone = [...sheetsGone, ...sheets];
+    sheets = [];
+    sheetLevel = 0;
+    if (assets.length === 0) return;
+    const places = sheetPlaces(assets);
+    const next = (index) => {
+      if (build !== sheetBuild || index >= places.length) return;
+      buildPiece(places[index], plate * 13 + index, build, (piece) => {
+        sheets = [...sheets, piece];
+        map.triggerRepaint();
+        next(index + 1);
+      });
+    };
+    // The whole province's cover first: it is what shows while the camera is still high.
+    buildProvincePiece(plate, assets, build, (piece) => {
+      if (piece) sheets = [...sheets, piece];
+      map.triggerRepaint();
+      next(0);
+    });
+  }
+
+  /** The wide cover is drawn this many pixels across. */
+  const PROVINCE_SHEET_PX = 1024;
+  const PROVINCE_SHEET_MARGIN_KM = 30;
+  /** How far each asset's share of the wide cover reaches. */
+  const PROVINCE_SHEET_REACH_KM = 5;
+  /** The province size the wide cover is drawn for; others scale it. */
+  const PROVINCE_SHEET_SIZE_KM = 170;
+
+  /**
+   * One wide cover over the city's assets, seen from afar: wherever they are, near or far apart,
+   * one soft, unbroken fog lies over them and a few kilometres past, its edge wandering freely
+   * (it does not follow the province's border); the open land with no assets stays clear. It is
+   * thicker over the towns, with wide thick and thin stretches. Closer in it gives way to the
+   * places' own sheets (buildPiece).
+   */
+  function buildProvincePiece(plate, assets, build, done) {
+    let west = Infinity;
+    let east = -Infinity;
+    let south = Infinity;
+    let north = -Infinity;
+    for (const asset of assets) {
+      west = Math.min(west, asset.lng);
+      east = Math.max(east, asset.lng);
+      south = Math.min(south, asset.lat);
+      north = Math.max(north, asset.lat);
+    }
+    const feature = PROVINCES.features.find((candidate) => candidate.properties.plate === plate);
+    if (feature) {
+      const bounds = provinceBounds(plate);
+      west = Math.min(west, bounds.getWest());
+      east = Math.max(east, bounds.getEast());
+      south = Math.min(south, bounds.getSouth());
+      north = Math.max(north, bounds.getNorth());
+    }
+    const middleLat = (south + north) / 2;
+    const kmPerLng = 111.32 * Math.cos((middleLat * Math.PI) / 180);
+    const kmPerLat = 110.574;
+    // Everything below is sized for a province like Bursa's and grows or shrinks with the
+    // province, so a large one (Konya) or a small one (Hatay) looks the same from afar.
+    const scale = Math.min(3, Math.max(0.6, Math.max((east - west) * kmPerLng, (north - south) * kmPerLat) / PROVINCE_SHEET_SIZE_KM));
+    const reachKm = PROVINCE_SHEET_REACH_KM * scale;
+    west -= (PROVINCE_SHEET_MARGIN_KM * scale) / kmPerLng;
+    east += (PROVINCE_SHEET_MARGIN_KM * scale) / kmPerLng;
+    south -= (PROVINCE_SHEET_MARGIN_KM * scale) / kmPerLat;
+    north += (PROVINCE_SHEET_MARGIN_KM * scale) / kmPerLat;
+    const widthKm = (east - west) * kmPerLng;
+    const heightKm = (north - south) * kmPerLat;
+    const width = widthKm >= heightKm ? PROVINCE_SHEET_PX : Math.max(64, Math.round((PROVINCE_SHEET_PX * widthKm) / heightKm));
+    const height = heightKm > widthKm ? PROVINCE_SHEET_PX : Math.max(64, Math.round((PROVINCE_SHEET_PX * heightKm) / widthKm));
+    const kmPerPx = widthKm / width;
+
+    // How much each spot belongs to the assets, on a coarse grid: a wide bell around every one,
+    // so a lone asset gets a little fog of its own and crowded ones merge into one.
+    const points = assets.map((asset) => ({ x: (asset.lng - west) * kmPerLng, y: (north - asset.lat) * kmPerLat }));
+    const step = 6;
+    const gridWidth = Math.ceil(width / step) + 1;
+    const gridHeight = Math.ceil(height / step) + 1;
+    const cover = new Float32Array(gridWidth * gridHeight);
+    const crowd = new Float32Array(gridWidth * gridHeight);
+    // How far the banks over the open land may wander: well around the assets, and thinly over
+    // the rest of the province.
+    const reach = new Float32Array(gridWidth * gridHeight);
+    const wideKm = reachKm * 3;
+    let most = 0;
+    for (let j = 0; j < gridHeight; j++) {
+      for (let i = 0; i < gridWidth; i++) {
+        const x = i * step * kmPerPx;
+        const y = j * step * kmPerPx;
+        let sum = 0;
+        let wide = 0;
+        for (const point of points) {
+          const away = (x - point.x) ** 2 + (y - point.y) ** 2;
+          sum += Math.exp(-away / (2 * reachKm * reachKm));
+          wide += Math.exp(-away / (2 * wideKm * wideKm));
+        }
+        cover[j * gridWidth + i] = Math.min(1, sum / 3);
+        crowd[j * gridWidth + i] = sum;
+        reach[j * gridWidth + i] = sheetStep(0.05, 0.6, wide / 2);
+        most = Math.max(most, sum);
+      }
+    }
+    if (feature) {
+      // The province itself, softened over several kilometres: its open land gets a light share.
+      const shape = document.createElement("canvas");
+      shape.width = gridWidth;
+      shape.height = gridHeight;
+      const pen = shape.getContext("2d");
+      pen.fillStyle = "#fff";
+      pen.beginPath();
+      const polygons = feature.geometry.type === "Polygon" ? [feature.geometry.coordinates] : feature.geometry.coordinates;
+      for (const polygon of polygons) {
+        for (const ring of polygon) {
+          ring.forEach(([lng, lat], index) => {
+            const x = ((lng - west) * kmPerLng) / (kmPerPx * step);
+            const y = ((north - lat) * kmPerLat) / (kmPerPx * step);
+            if (index === 0) pen.moveTo(x, y);
+            else pen.lineTo(x, y);
+          });
+          pen.closePath();
+        }
+      }
+      pen.fill("evenodd");
+      const filled = pen.getImageData(0, 0, gridWidth, gridHeight).data;
+      let own = new Float32Array(gridWidth * gridHeight);
+      for (let k = 0; k < own.length; k++) own[k] = filled[k * 4 + 3] / 255;
+      const blur = Math.max(1, Math.round((5 * scale) / (kmPerPx * step)));
+      for (let pass = 0; pass < 2; pass++) {
+        for (const across of [true, false]) {
+          const out = new Float32Array(own.length);
+          for (let j = 0; j < gridHeight; j++) {
+            for (let i = 0; i < gridWidth; i++) {
+              let sum = 0;
+              let count = 0;
+              for (let d = -blur; d <= blur; d++) {
+                const x = across ? i + d : i;
+                const y = across ? j : j + d;
+                if (x < 0 || y < 0 || x >= gridWidth || y >= gridHeight) continue;
+                sum += own[y * gridWidth + x];
+                count++;
+              }
+              out[j * gridWidth + i] = sum / count;
+            }
+          }
+          own = out;
+        }
+      }
+      for (let k = 0; k < reach.length; k++) reach[k] = Math.max(reach[k], own[k] * 0.45);
+    }
+    for (let k = 0; k < crowd.length; k++) crowd[k] = Math.min(1, crowd[k] / Math.max(3, Math.min(most, 12)));
+    const gridAt = (grid, x, y) => {
+      const fx = x / step;
+      const fy = y / step;
+      const i = Math.min(gridWidth - 2, Math.floor(fx));
+      const j = Math.min(gridHeight - 2, Math.floor(fy));
+      const u = fx - i;
+      const v = fy - j;
+      const upper = grid[j * gridWidth + i] * (1 - u) + grid[j * gridWidth + i + 1] * u;
+      const lower = grid[(j + 1) * gridWidth + i] * (1 - u) + grid[(j + 1) * gridWidth + i + 1] * u;
+      return upper * (1 - v) + lower * v;
+    };
+
+    const n1 = sheetNoise(301 + plate);
+    const n2 = sheetNoise(401 + plate);
+    const n3 = sheetNoise(501 + plate);
+    const n4 = sheetNoise(601 + plate);
+    const n5 = sheetNoise(701 + plate);
+    const pixels = new Uint8Array(width * height * 4);
+    // Where the places' own sheets lie (blue): closer in, the wide cover steps back from there and
+    // only keeps the land around them.
+    const places = new Float32Array(width * height);
+    const placeReach = SHEET_REACH_KM / kmPerPx;
+    const placeSpan = Math.ceil(placeReach * 3);
+    for (const point of points) {
+      const cx = point.x / kmPerPx;
+      const cy = point.y / kmPerPx;
+      for (let y = Math.max(0, Math.floor(cy - placeSpan)); y < Math.min(height, Math.ceil(cy + placeSpan)); y++) {
+        for (let x = Math.max(0, Math.floor(cx - placeSpan)); x < Math.min(width, Math.ceil(cx + placeSpan)); x++) {
+          places[y * width + x] += Math.exp(-((x - cx) ** 2 + (y - cy) ** 2) / (2 * placeReach * placeReach));
+        }
+      }
+    }
+    let row = 0;
+    const workRows = () => {
+      if (build !== sheetBuild) return;
+      const last = Math.min(height, row + SHEET_ROWS_PER_FRAME);
+      for (; row < last; row++) {
+        for (let x = 0; x < width; x++) {
+          const gx = (x * kmPerPx) / scale;
+          const gy = (row * kmPerPx) / scale;
+          const wx = gx + 6 * (sheetFbm(n2, gx * 0.08, gy * 0.08, 3) - 0.5);
+          const wy = gy + 6 * (sheetFbm(n3, gx * 0.08 + 5.2, gy * 0.08, 3) - 0.5);
+          const big = sheetFbm(n1, wx * 0.12, wy * 0.12, 4);
+          const ragged = sheetFbm(n4, wx * 0.3, wy * 0.3, 3);
+          const near = gridAt(cover, x, row);
+          const town = gridAt(crowd, x, row);
+          // One soft edge that wanders in and out with the noise; no specks, no holes.
+          const assetsFog = sheetStep(0.1, 0.42, near + (big - 0.5) * 0.45 + (ragged - 0.5) * 0.25);
+          // Over the land between, wide banks of fog here and open land there, whether or not
+          // there are assets under them, thinning out toward the sheet's far edges.
+          const land = sheetFbm(n5, wx * 0.045, wy * 0.045, 3) + (ragged - 0.5) * 0.12;
+          const border = Math.min(x, width - 1 - x, row, height - 1 - row) * kmPerPx;
+          const bank = sheetStep(0.46, 0.6, land) * gridAt(reach, x, row);
+          const edge = Math.max(assetsFog, bank);
+          const body = 0.6 + 0.4 * sheetStep(0.3, 0.7, big);
+          const k = (row * width + x) * 4;
+          pixels[k] = Math.round(255 * Math.min(1, edge * (body + town * 0.2)) * sheetStep(0, 4 * scale, border));
+          pixels[k + 1] = Math.round(255 * Math.min(1, big + town * 0.15));
+          pixels[k + 2] = Math.round(255 * Math.min(1, places[row * width + x]));
+        }
+      }
+      if (row < height) {
+        requestAnimationFrame(workRows);
+        return;
+      }
+      const corner = (lng, lat) => maplibregl.MercatorCoordinate.fromLngLat([lng, lat]);
+      const northWest = corner(west, north);
+      const southEast = corner(east, south);
+      done({ pixels, width, height, texture: null, places: null, box: [northWest.x, northWest.y, southEast.x, southEast.y], km: [widthKm, heightKm], seed: (plate * 11.3) % 197, province: true });
+    };
+    requestAnimationFrame(workRows);
+  }
+
+  /**
+   * A place's own detail, sharp enough for its streets, under the wide cover's shape: blue how near
+   * any asset (right around it the streets stay fogged), alpha the wider stretch around the assets
+   * that stays under fog while the clouds scatter.
+   */
+  function buildPiece(assets, seed, build, done) {
+    let west = Infinity;
+    let east = -Infinity;
+    let south = Infinity;
+    let north = -Infinity;
+    for (const asset of assets) {
+      west = Math.min(west, asset.lng);
+      east = Math.max(east, asset.lng);
+      south = Math.min(south, asset.lat);
+      north = Math.max(north, asset.lat);
+    }
+    const middleLat = (south + north) / 2;
+    const kmPerLng = 111.32 * Math.cos((middleLat * Math.PI) / 180);
+    const kmPerLat = 110.574;
+    west -= SHEET_MARGIN_KM / kmPerLng;
+    east += SHEET_MARGIN_KM / kmPerLng;
+    south -= SHEET_MARGIN_KM / kmPerLat;
+    north += SHEET_MARGIN_KM / kmPerLat;
+    const widthKm = (east - west) * kmPerLng;
+    const heightKm = (north - south) * kmPerLat;
+    const width = widthKm >= heightKm ? SHEET_PX : Math.max(64, Math.round((SHEET_PX * widthKm) / heightKm));
+    const height = heightKm > widthKm ? SHEET_PX : Math.max(64, Math.round((SHEET_PX * heightKm) / widthKm));
+    const kmPerPx = widthKm / width;
+    const pixels = new Uint8Array(width * height * 4);
+    for (const asset of assets) {
+      const x = ((asset.lng - west) * kmPerLng) / kmPerPx;
+      const y = ((north - asset.lat) * kmPerLat) / kmPerPx;
+      sheetStamp(pixels, width, height, 2, x, y, SHEET_KEEP_KM / kmPerPx);
+      sheetStamp(pixels, width, height, 3, x, y, SHEET_NEAR_KM / kmPerPx);
+      // Red: this piece's own ground, a little wider than where the wide cover hands over to it.
+      sheetStamp(pixels, width, height, 0, x, y, (SHEET_REACH_KM * 1.35) / kmPerPx);
+    }
+    const corner = (lng, lat) => maplibregl.MercatorCoordinate.fromLngLat([lng, lat]);
+    const northWest = corner(west, north);
+    const southEast = corner(east, south);
+    requestAnimationFrame(() => {
+      if (build === sheetBuild) done({ pixels, width, height, texture: null, places: null, box: [northWest.x, northWest.y, southEast.x, southEast.y] });
+    });
+  }
+
+  /** How thick the sheet should be now: gone by the Turkey view, whole by the city's province. */
+  function sheetTarget() {
+    if (!sheetShown) return 0;
+    const from = outerZoom() + LEAVE_ROOM;
+    const to = Math.max(wholeZoom, from + 0.01);
+    return Math.min(1, Math.max(0, (map.getZoom() - from) / (to - from)));
+  }
+
+  let sheetShared = null;
+
+  function sheetResources(gl) {
+    if (sheetShared) return sheetShared;
+    const program = gl.createProgram();
+    gl.attachShader(
+      program,
+      clearingShader(
+        gl,
+        gl.VERTEX_SHADER,
+        "uniform mat4 matrix; attribute vec2 place; attribute vec2 corner; varying vec2 uv; varying vec2 merc;" +
+          "void main() { uv = corner; merc = place; gl_Position = matrix * vec4(place, 0.0, 1.0); }",
+      ),
+    );
+    gl.attachShader(
+      program,
+      clearingShader(
+        gl,
+        gl.FRAGMENT_SHADER,
+        "precision highp float; uniform sampler2D field; uniform sampler2D wideField; uniform vec4 wideBox; uniform float isPlace;" +
+          "uniform vec2 origin; uniform float kmPerUnit; uniform float zoom; uniform float level; uniform vec3 top; uniform vec3 middle; uniform vec3 bottom;" +
+          "varying vec2 uv; varying vec2 merc;" +
+          "float hash(vec2 p) { vec3 q = fract(vec3(p.xyx) * 0.1031); q += dot(q, q.yzx + 33.33); return fract((q.x + q.y) * q.z); }" +
+          "float noise(vec2 p) { vec2 i = floor(p); vec2 f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);" +
+          " return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y); }" +
+          "float fbm(vec2 p) { float t = 0.0; float a = 0.5; for (int i = 0; i < 4; i++) { t += a * noise(p); p = mat2(1.6, 1.2, -1.2, 1.6) * p + 17.0; a *= 0.5; } return t / 0.9375; }" +
+          // How thick the fog is at a spot, from the wide cover (W) and a place's detail (L, none outside the places).
+          "float fog(vec4 W, vec4 L, float scatter, float close, float puff, float fine, float street, float wisp) {" +
+          // Coming in from afar the cover scatters into soft clouds with open land between; around the
+          // assets it stays whole.
+          " float body = smoothstep(0.46, 0.64, puff * 0.9 + fine * 0.1);" +
+          " float keep = smoothstep(0.3, 0.8, L.a + (puff - 0.5) * 0.8 + (fine - 0.5) * 0.4);" +
+          " float aMid = W.r * mix(1.0, max(body, keep * 0.85) * (0.94 + 0.12 * (fine - 0.5)), scatter);" +
+          // Up close the streets between the assets open: thin here, gone there.
+          " float open = smoothstep(0.44, 0.58, street);" +
+          " float away = 1.0 - smoothstep(0.35, 0.9, L.b * (0.55 + 0.9 * wisp));" +
+          " float aClose = W.r * mix(1.0, open, away) * 0.82 * (1.0 + 0.3 * (wisp - 0.65));" +
+          " return clamp(mix(aMid, aClose, close) * 0.92 + L.a * 0.12 * close, 0.0, 0.9);" +
+          "}" +
+          "void main() {" +
+          // The wide cover draws the fog everywhere, the same at every zoom; a place's piece only adds
+          // what its assets keep on top of it (its detail never thins the fog), so there is no seam.
+          " vec4 W = texture2D(wideField, (merc - wideBox.xy) / (wideBox.zw - wideBox.xy));" +
+          " vec4 L = isPlace > 0.5 ? texture2D(field, uv) : vec4(0.0);" +
+          // Noise in kilometres on the ground, the same for every piece.
+          " vec2 p = (merc - origin) * kmPerUnit;" +
+          " vec2 w = vec2(noise(p * 1.7), noise(p * 1.7 + 7.3));" +
+          " float street = fbm(p * 5.5 + (w - 0.5) * 2.2) * 0.6 + fbm(p * 15.0 + 3.1) * 0.4;" +
+          " float wisp = fbm(p * 19.0 + street * 2.0);" +
+          " float puff = fbm(p * 0.55 + vec2(noise(p * 0.3), noise(p * 0.3 + 4.1)) * 0.6);" +
+          " float fine = fbm(p * 3.5 + (w - 0.5) * 0.8);" +
+          " float scatter = smoothstep(11.4, 13.0, zoom);" +
+          " float close = smoothstep(14.3, 15.4, zoom);" +
+          " float base = fog(W, vec4(0.0), scatter, close, puff, fine, street, wisp);" +
+          " float a = base;" +
+          " if (isPlace > 0.5) { float whole = fog(W, L, scatter, close, puff, fine, street, wisp); a = max(0.0, whole - base) / max(0.001, 1.0 - base); }" +
+          " a *= level;" +
+          " if (a <= 0.002) discard;" +
+          " float shade = clamp(0.28 + 0.58 * W.g + 0.3 * close * (wisp - 0.5) + 0.2 * close * (street - 0.5) + 0.22 * (puff - 0.5) * scatter * (1.0 - close), 0.0, 1.0);" +
+          " vec3 c = shade > 0.5 ? mix(middle, top, (shade - 0.5) * 2.0) : mix(bottom, middle, shade * 2.0);" +
+          " gl_FragColor = vec4(c * a, a);" +
+          "}",
+      ),
+    );
+    gl.linkProgram(program);
+    const corners = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, corners);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([0, 0, 1, 0, 0, 1, 1, 1]), gl.STATIC_DRAW);
+    const color = (hex) => rgb(hex).map((channel) => channel / 255);
+    sheetShared = { program, corners, top: color(colors.cloud.top), middle: color(colors.cloud.middle), bottom: color(colors.cloud.bottom) };
+    return sheetShared;
+  }
+
+  const CITY_SHEET = {
+    id: "city-sheet",
+    type: "custom",
+    renderingMode: "2d",
+    render(gl, args) {
+      for (const gone of sheetsGone) {
+        if (gone.texture) gl.deleteTexture(gone.texture);
+        if (gone.places) gl.deleteBuffer(gone.places);
+      }
+      sheetsGone = [];
+      if (sheets.length === 0) return;
+      // Eases toward its target thickness, so the sheet fades in and out instead of jumping.
+      const now = performance.now();
+      const target = sheetTarget();
+      const stepBy = Math.min(1, (now - sheetLevelAt) / SHEET_FADE_MS);
+      sheetLevelAt = now;
+      sheetLevel = sheetLevel < target ? Math.min(target, sheetLevel + stepBy) : Math.max(target, sheetLevel - stepBy);
+      if (sheetLevel !== target) map.triggerRepaint();
+      if (sheetLevel <= 0) return;
+      const shared = sheetResources(gl);
+      gl.useProgram(shared.program);
+      gl.disable(gl.DEPTH_TEST);
+      gl.disable(gl.STENCIL_TEST);
+      gl.disable(gl.CULL_FACE);
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      // Mercator (0 to 1) to the screen.
+      gl.uniformMatrix4fv(gl.getUniformLocation(shared.program, "matrix"), false, args.defaultProjectionData.mainMatrix);
+      gl.uniform1i(gl.getUniformLocation(shared.program, "field"), 0);
+      gl.uniform1i(gl.getUniformLocation(shared.program, "wideField"), 1);
+      gl.uniform1f(gl.getUniformLocation(shared.program, "zoom"), map.getZoom());
+      gl.uniform1f(gl.getUniformLocation(shared.program, "level"), sheetLevel);
+      gl.uniform3fv(gl.getUniformLocation(shared.program, "top"), shared.top);
+      gl.uniform3fv(gl.getUniformLocation(shared.program, "middle"), shared.middle);
+      gl.uniform3fv(gl.getUniformLocation(shared.program, "bottom"), shared.bottom);
+      const place = gl.getAttribLocation(shared.program, "place");
+      const corner = gl.getAttribLocation(shared.program, "corner");
+      gl.bindBuffer(gl.ARRAY_BUFFER, shared.corners);
+      gl.enableVertexAttribArray(corner);
+      gl.vertexAttribPointer(corner, 2, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(place);
+      for (const piece of sheets) {
+        if (piece.texture) continue;
+        piece.texture = gl.createTexture();
+        gl.bindTexture(gl.TEXTURE_2D, piece.texture);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, piece.width, piece.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, piece.pixels);
+        const [left, upper, right, lower] = piece.box;
+        piece.places = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, piece.places);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([left, upper, right, upper, left, lower, right, lower]), gl.STATIC_DRAW);
+      }
+      // The wide cover comes first and every piece reads it.
+      const wide = sheets.find((piece) => piece.province);
+      if (wide) {
+        const [left, upper, right, lower] = wide.box;
+        const middleLat = (Math.atan(Math.sinh(Math.PI * (1 - (upper + lower)))) * 180) / Math.PI;
+        gl.activeTexture(gl.TEXTURE1);
+        gl.bindTexture(gl.TEXTURE_2D, wide.texture);
+        gl.activeTexture(gl.TEXTURE0);
+        gl.uniform4f(gl.getUniformLocation(shared.program, "wideBox"), left, upper, right, lower);
+        gl.uniform2f(gl.getUniformLocation(shared.program, "origin"), (left + right) / 2, (upper + lower) / 2);
+        gl.uniform1f(gl.getUniformLocation(shared.program, "kmPerUnit"), 40075.017 * Math.cos((middleLat * Math.PI) / 180));
+        for (const piece of sheets) {
+          gl.uniform1f(gl.getUniformLocation(shared.program, "isPlace"), piece.province ? 0 : 1);
+          gl.bindTexture(gl.TEXTURE_2D, piece.texture);
+          gl.bindBuffer(gl.ARRAY_BUFFER, piece.places);
+          gl.vertexAttribPointer(place, 2, gl.FLOAT, false, 0, 0);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        }
+      }
+      gl.disableVertexAttribArray(place);
+      gl.disableVertexAttribArray(corner);
+    },
+  };
+
+  /**
    * Into a city: the fog closes over the whole map, the camera flies to where its assets
    * crowd (or to the whole province), and the assets come up above the fog with their names.
    * Back out: the fog lifts and the camera returns to Turkey.
@@ -1008,6 +1570,7 @@ function start() {
       return;
     }
     cityPlate = plate;
+    if (city) buildSheet(city.assets, plate);
     tappedAsset = null;
     cityLanded = false;
     leaving = false;
@@ -1457,8 +2020,11 @@ function start() {
     citySealsShown = shown;
     map.setPaintProperty("city-asset-names", "text-opacity", shown ? 1 : 0);
     map.setPaintProperty("city-asset-badges", "icon-opacity", shown ? shownFrom(DOTS_ZOOM, SEALS_ZOOM, 1) : 0);
-    // The haze thins with the dots and is gone by the Turkey view.
+    // The haze thins with the dots and is gone by the Turkey view; the sheet with it.
     map.setPaintProperty("city-haze", "heatmap-opacity", shown ? shownFrom(outerZoom() + LEAVE_ROOM, wholeZoom, 1) : 0);
+    sheetShown = shown;
+    sheetLevelAt = performance.now();
+    map.triggerRepaint();
     // The banks thin out slowly around the seals' turn into dots, so the fog does not jump.
     map.setPaintProperty("city-clouds", "icon-opacity", shown ? shownFrom(DOTS_ZOOM - 1, SEALS_ZOOM + 0.6, BANK_OPACITY) : 0);
     showDots();
