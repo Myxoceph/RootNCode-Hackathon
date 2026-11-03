@@ -7,6 +7,22 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-03 · Hesap profili: e-posta, ad soyad, profil fotoğrafı (sözleşme 0.3.25)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. API'yi yerelde çalıştıranlar: `npm run db:deploy -w apps/api` (yeni migration `20261103180000_account_profile`),
+   sonra API'yi yeniden başlat. Sunucu bunu kendisi yapıyor.
+
+Değişenler:
+- Kayıt ve anonimden hesaba geçiş artık e-posta istiyor (`email`); bir e-postayla tek hesap açılır (`409 EMAIL_TAKEN`).
+  Daha önce açılmış hesapların e-postası boş kalır, giriş etkilenmez.
+- Yeni uçlar: `PATCH /me` (takma ad, ad soyad), `PUT /me/avatar` ve `DELETE /me/avatar` (profil fotoğrafı),
+  `GET /avatars/:userId` (yalnızca `/me`'nin verdiği imzalı adresle).
+- Uygulama: kayıt formunda e-posta alanı; Profil'deki kart fotoğrafı ve adı hesaptan alıyor. Ekranlar için `KUBRA.md` §6.
+
+---
+
 ## 2026-11-03 · Üst üste binen eserler: hanların mescitleri ve bitişik yapılar bağlandı
 
 Kimler: **API'yi yerelde çalıştıranlar**

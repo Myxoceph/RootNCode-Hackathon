@@ -198,6 +198,28 @@ bağ açılır.
 
 ---
 
+## 6. Profil: e-posta, ad soyad ve profil fotoğrafı (API hazır, sözleşme 0.3.25)
+
+Kimlik kartının arkası (`app/(tabs)/settings.tsx`, `holder`) artık hesaba bağlı: `user.photoUrl` ve `user.fullName`
+gelince kart onları gösteriyor, yoksa eskisi gibi baş harf ve takma ad. Kayıt formuna e-posta alanı eklendi
+(`app/auth.tsx`); e-posta artık zorunlu.
+
+Senin kuracağın ekranlar, kullanacağın fonksiyonlar:
+
+| İş | Fonksiyon | Not |
+| --- | --- | --- |
+| Profil fotoğrafı seç ve koy | `uploadAvatar(uri, "image/jpeg")` (`@/data/avatar`) | JPEG/PNG, en çok 2 MB, kenar ≥ 64 px. Kamera fotoğrafını önce `shrinkPhoto(uri)` (`@/data/vision`) ile küçült |
+| Fotoğrafı kaldır | `removeAvatar()` (`@/data`) | |
+| Ad soyad / takma ad değiştir | `updateProfile({ fullName })`, `updateProfile({ nickname })` (`@/data`) | `fullName: null` adı siler; ad 2–64 harf, boşluk, `' . -` |
+| Fotoğrafın adresi | `avatarUri(user)` (`@/data`) | Adres bir gün geçerli; kart açılınca `refreshMe()` yenisini alıyor |
+
+Hepsi kullanıcıyı (`AppUser`) döndürür ve oturumu kendisi günceller; `useCommunity()` yeni hâli hemen verir.
+Hata mesajları Türkçe `DataError.message` olarak gelir, ekranda olduğu gibi göster. E-posta yalnızca hesabın
+sahibine gider, başka kimseye gösterme. Fotoğraf seçmek için uygulamada `expo-image-picker` yok; eklersen
+`npm install` gerekir, upgrade notuna yaz.
+
+---
+
 ## PR'dan önce
 
 ```bash
