@@ -3,6 +3,7 @@ import { loadEnv } from "./config/env.ts";
 import { createPrismaClient } from "./db/prisma.ts";
 import { createChatModel } from "./modules/assistant/assistant.model.ts";
 import { createOtpClient } from "./modules/transit/otp.client.ts";
+import { createVisionClient } from "./modules/vision/vision.client.ts";
 import { createVoiceClient } from "./modules/voice/voice.client.ts";
 import { createWeatherService } from "./modules/weather/weather.service.ts";
 
@@ -34,6 +35,10 @@ const app = buildApp({
           ttsModel: env.VOICE_TTS_MODEL,
           apiKey: env.ASSISTANT_API_KEY || undefined,
         })
+      : null,
+  vision:
+    env.ASSISTANT_BASE_URL && env.VISION_MODEL
+      ? createVisionClient({ baseUrl: env.ASSISTANT_BASE_URL, model: env.VISION_MODEL, apiKey: env.ASSISTANT_API_KEY || undefined })
       : null,
   transitPlanner: env.OTP_URL
     ? createOtpClient({ baseUrl: env.OTP_URL, onError: (err) => app.log.warn({ err }, "OpenTripPlanner failed; no transit directions") })

@@ -9,6 +9,7 @@ import {
   Easing,
   Linking,
   Modal,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -33,7 +34,7 @@ import { announce } from "@/lib/announce";
 import { isAssetUnlocked, LOCKED_WARNING, relatedAssetsOf } from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { speak, stopSpeaking } from "@/lib/speak";
+import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -653,7 +654,15 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
 function Experiences({ asset }: { asset: AssetDetail }) {
   const { settings } = useA11ySettings();
   const player = useCapsulePlayer();
-  const [describing, setDescribing] = useState(false);
+  // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
+  const descriptionKey = `description:${asset.id}`;
+  const describing = useSpeaking() === descriptionKey;
+  // Leaving the page ends its description: its Durdur button goes with it.
+  const describingNow = useRef(describing);
+  describingNow.current = describing;
+  useEffect(() => () => {
+    if (describingNow.current) stopAnswer();
+  }, []);
   const soundKey = asset.ambientSound?.key ?? null;
   const capsuleType = soundKey ? capsuleForSoundKey(soundKey) : undefined;
   const playing = capsuleType !== undefined && player?.type === capsuleType ? player : null;
@@ -691,12 +700,16 @@ function Experiences({ asset }: { asset: AssetDetail }) {
       hint: "Mekânı gözünü kapatıp dinle",
       spoken: describing ? "Sesli betimlemeyi durdur" : "Mekânı sesli betimle",
       onPress: () => {
-        if (describing) stopSpeaking();
-        else speak(description);
-        setDescribing(!describing);
+        if (describing) stopAnswer();
+        else void speakAnswer(descriptionKey, description);
       },
       on: describing,
     });
+  }
+  // A phone feature: the photo comes from the camera (ADR 0001).
+  if (Platform.OS !== "web") {
+    const hint = "Bir detayı fotoğrafla, rehber açıklasın";
+    actions.push({ key: "stone", icon: "camera-outline", title: "Taşa Sor", hint, spoken: `Taşa Sor: ${hint}`, href: { pathname: "/stone-ask", params: { asset: asset.id, name: asset.name } } });
   }
   // Always offered: when no model answers, the assistant's screen says it is closed for now.
   actions.push({ key: "ask", icon: "sparkles-outline", title: "Sor", hint: "Asistan kaynağıyla cevaplar", spoken: `Bu eser hakkında sor: ${asset.name}, asistanı açar`, href: { pathname: "/assistant", params: { asset: asset.id, name: asset.name } } });
