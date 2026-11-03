@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, FlatList, Pressable, StyleSheet, useWindowDimensions, View, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
 
 import { AssetImage } from "@/components/asset-image";
+import { isAssetUnlocked } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 const MAX_CARD_WIDTH = 360;
@@ -19,8 +20,12 @@ interface CityAssetCardsProps {
   /** How many of a complex's buildings it stands for on the map. */
   buildingsOf: ReadonlyMap<string, number>;
   selectedId: string | null;
-  /** The card swiped to the middle. */
+  /** The assets out of the fog on the map. */
+  unlocked: ReadonlySet<string>;
+  /** The card swiped to the middle, or chosen with a screen reader's "Seç". */
   onSelect: (id: string) => void;
+  /** "Kilidini aç" on a locked card: the map's own button, for those who cannot see the map. */
+  onUnlock: (id: string) => void;
 }
 
 /**
@@ -29,7 +34,7 @@ interface CityAssetCardsProps {
  * its card here. The row rises in when it appears. A card opens the asset, and says so: "İncele". The cards are clear frosted glass in every theme. For screen readers this row is the map's
  * content in words: every asset, a link each.
  */
-export function CityAssetCards({ assets, buildingsOf, selectedId, onSelect }: CityAssetCardsProps) {
+export function CityAssetCards({ assets, buildingsOf, selectedId, unlocked, onSelect, onUnlock }: CityAssetCardsProps) {
   const { scheme } = useTheme();
   const { width } = useWindowDimensions();
   const cardWidth = Math.min(width - spacing.lg * 2 - PEEK, MAX_CARD_WIDTH);
@@ -68,7 +73,18 @@ export function CityAssetCards({ assets, buildingsOf, selectedId, onSelect }: Ci
         getItemLayout={(_, i) => ({ length: step, offset: step * i, index: i })}
         contentContainerStyle={styles.row}
         ItemSeparatorComponent={() => <View style={{ width: spacing.md }} />}
-        renderItem={({ item }) => <CityAssetCard asset={item} buildings={buildingsOf.get(item.id) ?? 0} width={cardWidth} chosen={item.id === selectedId} colors={CARD_COLORS[scheme]} />}
+        renderItem={({ item }) => (
+          <CityAssetCard
+            asset={item}
+            buildings={buildingsOf.get(item.id) ?? 0}
+            width={cardWidth}
+            chosen={item.id === selectedId}
+            opened={isAssetUnlocked(item, unlocked)}
+            colors={CARD_COLORS[scheme]}
+            onSelect={() => onSelect(item.id)}
+            onUnlock={() => onUnlock(item.id)}
+          />
+        )}
       />
     </Animated.View>
   );
@@ -106,10 +122,26 @@ export const CARD_COLORS: Record<"light" | "dark", CardColors> = {
   dark: { ...GLASS_COLORS, mark: palette.gece700, edge: "rgba(38, 50, 74, 0.6)" },
 };
 
-function CityAssetCard({ asset, buildings, width, chosen, colors }: { asset: AssetSummary; buildings: number; width: number; chosen: boolean; colors: CardColors }) {
+interface CityAssetCardProps {
+  asset: AssetSummary;
+  buildings: number;
+  width: number;
+  chosen: boolean;
+  /** Out of the fog: said on the card, as the map shows it. */
+  opened: boolean;
+  colors: CardColors;
+  onSelect: () => void;
+  onUnlock: () => void;
+}
+
+function CityAssetCard({ asset, buildings, width, chosen, opened, colors, onSelect, onUnlock }: CityAssetCardProps) {
   const router = useRouter();
   const place = [asset.district, buildings > 0 ? `${buildings} yapı` : null].filter(Boolean).join(" · ");
-  const label = [asset.name, asset.type.label, asset.district, buildings > 0 ? `${buildings} yapısıyla` : null].filter(Boolean).join(", ");
+  const label = [asset.name, asset.type.label, asset.district, buildings > 0 ? `${buildings} yapısıyla` : null, opened ? "keşfedildi" : "henüz keşfedilmedi"]
+    .filter(Boolean)
+    .join(", ");
+  // Swiping and the map choose an asset; a screen reader chooses it here, and unlocks it as the map's button does.
+  const actions = [...(chosen ? [] : [{ name: "select", label: "Seç" }]), ...(opened ? [] : [{ name: "unlock", label: "Kilidini aç" }])];
 
   // Not a `Link asChild`: that throws on the style this card needs.
   return (
@@ -117,6 +149,11 @@ function CityAssetCard({ asset, buildings, width, chosen, colors }: { asset: Ass
       accessibilityRole="link"
       accessibilityLabel={label}
       accessibilityHint="Eserin hikâyesini ve bilgilerini açar"
+      accessibilityActions={actions}
+      onAccessibilityAction={({ nativeEvent }) => {
+        if (nativeEvent.actionName === "select") onSelect();
+        else if (nativeEvent.actionName === "unlock") onUnlock();
+      }}
       onPress={() => router.push({ pathname: "/monuments/[id]", params: { id: asset.id } })}
       style={({ pressed }) => [styles.card, { width, borderColor: chosen ? colors.mark : colors.edge }, pressed && styles.pressed]}
     >
@@ -135,9 +172,12 @@ function CityAssetCard({ asset, buildings, width, chosen, colors }: { asset: Ass
             </Text>
           )}
         </View>
-        <Text variant="label" colorValue={colors.text} numberOfLines={1} style={styles.name}>
-          {asset.name}
-        </Text>
+        <View style={styles.meta}>
+          {!opened && <Ionicons name="lock-closed" size={12} color={colors.textSecondary} aria-hidden accessibilityElementsHidden importantForAccessibility="no" />}
+          <Text variant="label" colorValue={colors.text} numberOfLines={1} style={[styles.name, styles.shrink]}>
+            {asset.name}
+          </Text>
+        </View>
       </View>
       <View style={[styles.open, { backgroundColor: colors.button }]}>
         <Text variant="caption" colorValue={colors.onButton} style={styles.openText}>
