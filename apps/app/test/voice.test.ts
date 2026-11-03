@@ -2,7 +2,7 @@ import { VOICE_SPEECH_MAX_CHARS } from "@vagabonds/contracts";
 import { describe, expect, it, vi } from "vitest";
 
 /** A player that starts and never finishes on its own, as one cut off mid-sentence. */
-const players: Array<{ removed: boolean }> = [];
+const players: Array<{ removed: boolean; paused: boolean }> = [];
 vi.mock("expo-audio", () => ({
   createAudioPlayer: vi.fn(() => {
     const player = {
@@ -12,6 +12,10 @@ vi.mock("expo-audio", () => ({
         return { remove: vi.fn() };
       },
       play: vi.fn(),
+      paused: false,
+      pause: () => {
+        player.paused = true;
+      },
       remove: () => {
         player.removed = true;
       },
@@ -34,6 +38,8 @@ describe("speakAnswer", () => {
     await expect(reading).resolves.toBeUndefined();
     expect(players).toHaveLength(1);
     expect(players[0]!.removed).toBe(true);
+    // Paused first: on Android remove() alone can leave the sound playing.
+    expect(players[0]!.paused).toBe(true);
   });
 });
 

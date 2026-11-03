@@ -85,11 +85,21 @@ export function useSpeaking(): string | null {
   return useSyncExternalStore(subscribe, () => playing, () => playing);
 }
 
+/** Stops a player at once: on Android `remove()` alone can leave the sound playing. */
+function silence(part: AudioPlayer) {
+  try {
+    part.pause();
+  } catch {
+    // Already released.
+  }
+  part.remove();
+}
+
 /** Stops whatever is being read, in either voice. */
 export function stopAnswer() {
   run += 1;
   endPart?.();
-  player?.remove();
+  if (player) silence(player);
   player = null;
   Speech.stop();
   if (playing !== null) set(null);
@@ -110,7 +120,7 @@ function playPart(source: AudioSource, current: () => boolean): Promise<boolean>
       clearTimeout(timer);
       subscription.remove();
       if (player === part) {
-        part.remove();
+        silence(part);
         player = null;
       }
       resolve(ok);
