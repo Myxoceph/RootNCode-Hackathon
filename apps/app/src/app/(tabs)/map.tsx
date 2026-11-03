@@ -11,7 +11,7 @@ import { CityAssetCards } from "@/components/city-asset-cards";
 import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapCityButtons } from "@/components/map-city-buttons";
 import { MapSearch } from "@/components/map-search";
-import { MapTourGuide } from "@/components/map-tour-guide";
+import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
 import { SealScanDemo } from "@/components/seal-scan-demo";
 import { CITY_LANDMARKS, useCities, useCityMapAssets, useRelationsOf } from "@/data";
 import { announce } from "@/lib/announce";
@@ -28,8 +28,8 @@ const CITY_TOP_SPACE = 136;
 const CITY_CARDS_SPACE = 112;
 const NO_PINS: MapPin[] = [];
 const UNLOCK_AFTER_RETURN_MS = 450;
-/** Longer than the map's unlocking scene: its controls come back even if the scene never reports its end. */
-const SCENE_LIMIT_MS = 6000;
+/** Longer than the map's unlocking scene with its fog: its controls come back even if the scene never reports its end. */
+const SCENE_LIMIT_MS = 10500;
 
 /** Squared distance in degrees: enough to order a city's assets outward from its landmark. */
 function nearness(from: { lat: number; lng: number }, to: { lat: number; lng: number }): number {
@@ -247,7 +247,19 @@ export default function MapScreen() {
       setSceneRunning(false);
       backToTurkey();
     },
+    undoUnlock: () => {
+      setTourUnlock(null);
+      setSceneRunning(false);
+    },
   });
+
+  // "Bir esere dokun" points at the chosen asset: on a tour played again, the visitor may have unlocked it
+  // already, so the tour chooses a locked one (the nearest to the landmark) instead.
+  const chosenUnlocked = chosenAsset !== null && unlocked.has(chosenAsset);
+  const firstLocked = cards.find((card) => !unlocked.has(card.id))?.id ?? null;
+  useEffect(() => {
+    if (tour.step === "choose" && chosenUnlocked && firstLocked) setChosenAsset(firstLocked);
+  }, [tour.step, chosenUnlocked, firstLocked]);
 
   // Android's back button leaves the city before it leaves the screen.
   useEffect(() => {
@@ -289,7 +301,7 @@ export default function MapScreen() {
         onSelect={(id) => {
           if (!id) return;
           setChosenAsset(id);
-          tour.onAssetTapped();
+          tour.onAssetTapped(!unlocked.has(id));
         }}
         onSelectProvince={openCity}
         onLeaveCity={backToTurkey}
@@ -304,6 +316,7 @@ export default function MapScreen() {
         }}
         watchSpots={tour.step === "city" || tour.step === "choose" || tour.step === "unlock"}
         onSpots={setTourSpots}
+        offerUnlock={tour.step === "unlock"}
         onError={setMapError}
         fitPadding={fitPadding}
         provinces={provinces}
@@ -318,7 +331,16 @@ export default function MapScreen() {
       >
         {cardsShown && (
           <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
-            <CityAssetCards assets={cards} buildingsOf={buildingsOf} selectedId={chosenAsset} onSelect={setChosenAsset} />
+            <CityAssetCards
+              assets={cards}
+              buildingsOf={buildingsOf}
+              selectedId={chosenAsset}
+              onSelect={(id) => {
+                setChosenAsset(id);
+                // A card counts as a tap for the tour: the map then offers "Kilidini aç" over it.
+                tour.onAssetTapped(!unlocked.has(id));
+              }}
+            />
           </View>
         )}
         {/* The tour's step bar takes the search bar's place while it plays. */}
@@ -331,13 +353,21 @@ export default function MapScreen() {
             onPickCity={openCity}
             onPickAsset={pickAsset}
             notice={notice}
+            trailing={
+              <MapTourReplayButton
+                onPress={() => {
+                  setTourSpots(null);
+                  tour.replay();
+                }}
+              />
+            }
             below={chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null}
           />
         )}
         {!selectedCity && <MapCityButtons cities={withAssets} bottom={tabBarHeight + spacing.sm} onOpen={openCity} />}
       </Animated.View>
       {tour.scanning && <SealScanDemo onDone={tour.onScanned} />}
-      {tour.step && <MapTourGuide step={tour.step} spots={tourSpots} top={insets.top} onSkip={tour.skip} />}
+      {tour.step && <MapTourGuide step={tour.step} spots={tourSpots} top={insets.top} onNext={tour.next} onPrevious={tour.canGoBack ? tour.previous : null} onSkip={tour.skip} />}
     </View>
   );
 }
