@@ -3,13 +3,19 @@
 Ziyaretçiler eserleri ziyaret ettikçe ve katkıları onaylandıkça rozet ve puan kazanır. Bu sayfa başlangıç listesidir;
 adminler panelden yeni başarım ekleyebilir, düzenleyebilir ya da kapatabilir (`/admin/achievements`).
 
-- **Puan** parayla alınmaz ve paraya çevrilmez; şimdilik yalnızca toplam puan ve rozetler gösterilir.
+- **Puan** parayla alınmaz ve paraya çevrilmez. Toplam puan = kazanılan rozetlerin puanı + **etkinlik puanı**:
+  ziyaret edilen her eser 10, Ziyaret Mührü ile mühürlenen her ziyaret +10, onaylanan her not 5, onaylanan her
+  fotoğraf 10 (`ACTIVITY_POINTS`). Bekleyen ya da reddedilen katkı puan kazandırmaz.
 - **Ziyaret** `POST /assets/:id/visit` ile kaydedilir. Eserin koordinatı varsa ziyaretçi 200 m içinde olmalıdır (`verified: true`).
   Koordinatı olmayan eserin ziyareti doğrulanmadan kabul edilir ve başarımlara yine sayılır. Her eser kullanıcı başına bir kez (ilk ziyaret) sayılır.
+- **Deneme kilidi:** uygulamadaki "Kilidi aç" (`POST /assets/:id/visit/unlock`) eserde olmadan kanıtsız bir ziyaret
+  yazar; ziyaret rozetleri ve puanı gelir, mühür rozetleri gelmez. Ziyaret Mührü'nde fotoğraf zorunlu olunca
+  `DEMO_UNLOCK=false` ile kapatılır.
 - **İlerleme** `GET /me/achievements` ile okunur; kazanılan başarımlar bu çağrıda ve ziyaret yanıtında kaydedilir.
+  Yanıt etkinlik puanını, mühürlenen ziyaret sayısını ve not/fotoğraf sayılarını (onaylanan, bekleyen) da verir.
 - **Ziyaret edilen eserler** `GET /me/visits` ile okunur (yeniden eskiye); harita bu eserlerin sisini kaldırır.
 
-Toplam: **34 başarım**, en çok **1350 puan**. Puanlar cüzdana yazılır ve ödüllere harcanabilir ([`rewards.md`](rewards.md)).
+Toplam: **36 başarım**, rozetlerden en çok **1530 puan** (etkinlik puanı hariç). Puanlar cüzdana yazılır ve ödüllere harcanabilir ([`rewards.md`](rewards.md)).
 
 ## İlk adımlar
 
@@ -87,6 +93,8 @@ Toplam: **34 başarım**, en çok **1350 puan**. Puanlar cüzdana yazılır ve �
 | ✍️ | **İlk Not**<br>Bir ziyaretçi notun onaylansın. | 1 onaylanan not | 15 | `ilk-not` |
 | 📸 | **İlk Fotoğraf**<br>Önerdiğin bir fotoğraf onaylansın. | 1 onaylanan fotoğraf | 20 | `ilk-fotograf` |
 | 🤝 | **Katkıcı**<br>5 notun ya da fotoğrafın onaylansın. | 5 onaylanan not ya da fotoğraf | 50 | `katkici` |
+| 📝 | **Not Defteri**<br>10 ziyaretçi notun onaylansın. | 10 onaylanan not | 60 | `on-not` |
+| 🖋️ | **Rehber Kalem**<br>25 ziyaretçi notun onaylansın. | 25 onaylanan not | 120 | `rehber-kalem` |
 
 ## Kanıtlanmış ziyaretler
 

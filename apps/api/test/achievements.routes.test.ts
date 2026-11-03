@@ -5,6 +5,7 @@
 import "dotenv/config";
 import { randomUUID } from "node:crypto";
 import {
+  ACTIVITY_POINTS,
   AchievementsResponseSchema,
   AdminAchievementSchema,
   AdminAchievementsResponseSchema,
@@ -91,9 +92,57 @@ describe.skipIf(!DATABASE_URL)("achievements (PostgreSQL)", () => {
 
     const mine = MyAchievementsResponseSchema.parse((await app.inject({ method: "GET", url: "/me/achievements", headers: auth(token) })).json());
     expect(mine.visits).toBe(1);
-    expect(mine.totalPoints).toBe(10);
+    // The first-step badge's 10 and the visit's own 10.
+    expect(mine).toMatchObject({ totalPoints: 20, activityPoints: ACTIVITY_POINTS.visit, sealed: 0 });
     expect(mine.items.find((a) => a.code === `${unlocated.city_code}-ilk-adim`)?.earnedAt).not.toBeNull();
     expect(mine.items.find((a) => a.code === "uc-sehir")).toMatchObject({ earnedAt: null, progress: { current: 1, target: 3 } });
+  });
+
+  it("unlocks an asset without position or photo only when the demo unlock is on", async () => {
+    const token = await createUser();
+    const unlock = (on: ReturnType<typeof buildApp>) => on.inject({ method: "POST", url: `/assets/${located.id}/visit/unlock`, headers: auth(token) });
+    expect((await unlock(app)).statusCode).toBe(404);
+
+    const demo = buildApp({ prisma, rateLimit: false, demoUnlock: true });
+    try {
+      const first = VisitResponseSchema.parse((await unlock(demo)).json());
+      expect(first).toMatchObject({ verified: false, distanceMeters: null, firstVisit: true });
+      expect(first.newAchievements.map((a) => a.code)).toContain("bursa-ilk-adim");
+      expect(VisitResponseSchema.parse((await unlock(demo)).json())).toMatchObject({ firstVisit: false, newAchievements: [] });
+      expect((await demo.inject({ method: "POST", url: "/assets/yok-boyle-bir-eser/visit/unlock", headers: auth(token) })).statusCode).toBe(404);
+      expect((await demo.inject({ method: "POST", url: `/assets/${located.id}/visit/unlock` })).statusCode).toBe(401);
+
+      const mine = MyAchievementsResponseSchema.parse((await app.inject({ method: "GET", url: "/me/achievements", headers: auth(token) })).json());
+      expect(mine).toMatchObject({ visits: 1, sealed: 0, activityPoints: ACTIVITY_POINTS.visit });
+    } finally {
+      await demo.close();
+    }
+  });
+
+  it("counts notes waiting and approved, and only approved ones earn points and badges", async () => {
+    const token = await createUser();
+    const session = await prisma.user_session.findUniqueOrThrow({ where: { token_hash: hashToken(token) } });
+    const moderator = await prisma.user_session.findUniqueOrThrow({ where: { token_hash: hashToken(await createUser("admin")) } });
+    // A reviewed note names its reviewer (a check in the database).
+    const reviewed = { reviewed_by: moderator.user_id, reviewed_at: new Date() };
+    const note = (status: string) => ({
+      user_id: session.user_id,
+      asset_id: unlocated.id,
+      kind: "tip",
+      body: "Avlu sabah sakin.",
+      status,
+      ...(status !== "pending" && reviewed),
+    });
+    await prisma.contribution.createMany({ data: [note("approved"), note("approved"), note("pending"), note("rejected")] });
+
+    const mine = MyAchievementsResponseSchema.parse((await app.inject({ method: "GET", url: "/me/achievements", headers: auth(token) })).json());
+    expect(mine.notes).toEqual({ approved: 2, pending: 1 });
+    expect(mine.activityPoints).toBe(2 * ACTIVITY_POINTS.note);
+    const first = mine.items.find((a) => a.code === "ilk-not")!;
+    expect(first.earnedAt).not.toBeNull();
+    expect(mine.items.find((a) => a.code === "on-not")).toMatchObject({ earnedAt: null, progress: { current: 2, target: 10 } });
+    expect(mine.totalPoints).toBe(first.points + 2 * ACTIVITY_POINTS.note);
+    await prisma.contribution.deleteMany({ where: { user_id: session.user_id } });
   });
 
   it("lists my visits newest first, with how each was checked", async () => {

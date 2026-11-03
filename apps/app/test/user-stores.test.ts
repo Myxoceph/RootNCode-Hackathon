@@ -137,6 +137,32 @@ describe("unlocked assets", () => {
     expect(storage.has("vagabonds-unlocked-assets")).toBe(false);
   });
 
+  const visit = (assetId: string) => ({ version: "0.3.26", assetId, verified: false, distanceMeters: null, firstVisit: true, newAchievements: [] });
+
+  it("records an unlock on the API, so it earns badges, and keeps nothing on the phone", async () => {
+    fakeApi({ "GET /me/visits": { version: "0.3.26", items: [] }, "POST /assets/bursa-osmangazi-koza-hani/visit/unlock": visit("bursa-osmangazi-koza-hani") });
+    const result = await unlocked.unlockForDemo("bursa-osmangazi-koza-hani");
+    await flush();
+    expect(result).toMatchObject({ assetId: "bursa-osmangazi-koza-hani", firstVisit: true });
+    expect(JSON.parse(storage.get(`vagabonds-unlocked-assets:${ALICE}`) ?? "[]")).toEqual([]);
+  });
+
+  it("sends the unlocks kept on the phone once the account's unlocks load", async () => {
+    storage.set(`vagabonds-unlocked-assets:${ALICE}`, JSON.stringify(["bursa-osmangazi-ulucami"]));
+    const calls = fakeApi({
+      "GET /me/visits": { version: "0.3.26", items: [] },
+      "POST /assets/bursa-osmangazi-ulucami/visit/unlock": visit("bursa-osmangazi-ulucami"),
+      "POST /assets/bursa-osmangazi-koza-hani/visit/unlock": visit("bursa-osmangazi-koza-hani"),
+    });
+    await unlocked.unlockForDemo("bursa-osmangazi-koza-hani");
+    await flush();
+    expect(calls.map((call) => call.url).filter((url) => url.endsWith("/visit/unlock"))).toEqual([
+      `${API}/assets/bursa-osmangazi-ulucami/visit/unlock`,
+      `${API}/assets/bursa-osmangazi-koza-hani/visit/unlock`,
+    ]);
+    expect(storage.get(`vagabonds-unlocked-assets:${ALICE}`)).toBe("[]");
+  });
+
   it("signed out: a demo unlock is not written anywhere", async () => {
     await load(false);
     fakeApi({});

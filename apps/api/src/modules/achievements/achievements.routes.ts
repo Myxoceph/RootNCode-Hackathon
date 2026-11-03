@@ -39,7 +39,7 @@ import { distanceMeters } from "../assets/assets.network.ts";
 import { requireUser } from "../community/auth.ts";
 import type { CommunityRepository } from "../community/community.repository.ts";
 import type { AchievementRecord, AchievementsRepository } from "./achievements.repository.ts";
-import { isEarned, progressOf } from "./rules.ts";
+import { activityPoints, isEarned, progressOf } from "./rules.ts";
 
 /** Visits one user may record per day: a full day of walking, not a script. */
 export const VISITS_PER_DAY = 60;
@@ -71,9 +71,17 @@ export interface AchievementsRoutesOptions {
   repository: AchievementsRepository;
   /** For signing in the caller. */
   community: CommunityRepository;
+  /**
+   * `POST /assets/:id/visit/unlock`: a visit recorded without position or photo, for the app's
+   * "Kilidi aç" while Ziyaret Mührü is tried away from the sites. Off unless turned on.
+   */
+  demoUnlock?: boolean;
 }
 
-export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> = async (app, { repository, community }) => {
+export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> = async (
+  app,
+  { repository, community, demoUnlock = false },
+) => {
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
   const denied = { 401: errorSchema, 403: errorSchema };
 
@@ -88,7 +96,7 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
     await repository.award(userId, fresh.map((r) => r.code));
     const now = new Date();
     for (const r of fresh) earned.set(r.code, now);
-    return { results, earned, fresh, visits: facts.visits.length };
+    return { results, earned, fresh, facts };
   }
 
   /** A rule may only refer to cities, eras and complexes that exist. */
@@ -216,6 +224,37 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
     });
   });
 
+  if (demoUnlock) {
+    app.post("/assets/:id/visit/unlock", {
+      config: { rateLimit: { max: 60, timeWindow: 60 * 60 * 1000 } },
+      schema: {
+        tags: ["community"],
+        summary: "Deneme: eserin kilidini konum ve fotoğraf olmadan aç (uygulamadaki \"Kilidi aç\"); ziyaret kanıtsız sayılır",
+        security: bearer,
+        params: toOpenApiSchema(AssetParamsSchema, "input"),
+        querystring: toOpenApiSchema(LangQuerySchema, "input"),
+        response: { 200: toOpenApiSchema(VisitResponseSchema), 400: errorSchema, 404: errorSchema, 429: errorSchema, ...denied },
+      },
+    }, async (request): Promise<VisitResponse> => {
+      const user = await requireUser(request, community);
+      const { id } = parseWith(AssetParamsSchema, request.params, "INVALID_ID");
+      const lang = langOf(request);
+      if (!(await repository.findAsset(id))) throw new HttpError(404, "ASSET_NOT_FOUND", `Asset "${id}" not found`);
+      await checkDailyLimit(user.id);
+      const firstVisit = await repository.recordVisit({ userId: user.id, assetId: id, verified: false, distance: null });
+      const { fresh } = await evaluate(user.id);
+
+      return VisitResponseSchema.parse({
+        version: CONTRACT_VERSION,
+        assetId: id,
+        verified: false,
+        distanceMeters: null,
+        firstVisit,
+        newAchievements: fresh.map((r) => toAchievement(r, lang)),
+      });
+    });
+  }
+
   app.get("/achievements", {
     schema: {
       tags: ["community"],
@@ -246,18 +285,23 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
     const user = await requireUser(request, community);
     const lang = langOf(request);
     // Contributions approved since the last call are counted here.
-    const { results, earned, visits } = await evaluate(user.id);
+    const { results, earned, facts } = await evaluate(user.id);
     const items = results.map(({ record, progress }) => ({
       ...toAchievement(record, lang),
       earnedAt: earned.get(record.code)?.toISOString() ?? null,
       progress,
     }));
+    const activity = activityPoints(facts);
     reply.header("cache-control", "no-store");
     return MyAchievementsResponseSchema.parse({
       version: CONTRACT_VERSION,
       lang,
-      totalPoints: items.reduce((sum, item) => sum + (item.earnedAt ? item.points : 0), 0),
-      visits,
+      totalPoints: items.reduce((sum, item) => sum + (item.earnedAt ? item.points : 0), 0) + activity,
+      activityPoints: activity,
+      visits: facts.visits.length,
+      sealed: facts.visits.filter((v) => v.proven).length,
+      notes: { approved: facts.approved.notes, pending: facts.pending.notes },
+      photos: { approved: facts.approved.photos, pending: facts.pending.photos },
       items,
     });
   });

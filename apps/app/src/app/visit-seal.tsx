@@ -61,25 +61,26 @@ export default function VisitSealScreen() {
   const asset = resource.status === "success" ? resource.data : null;
   const target = asset ? visitSealTarget(asset) : null;
   const router = useRouter();
-  const [unlocked, setUnlocked] = useState(false);
+  const [unlocked, setUnlocked] = useState<VisitResponse | null | false>(false);
   // With a screen reader on the screen opens on the guide; the visitor may still ask for the camera.
   const [cameraAnyway, setCameraAnyway] = useState(false);
   // Sealed on this screen, the camera's own "sealed" step is still to show; only one unlocked before needs no seal.
   const [sealedHere, setSealedHere] = useState(false);
   const allUnlocked = useUnlockedAssets();
   const alreadyOpen = asset !== null && !sealedHere && isAssetUnlocked(asset, allUnlocked);
-  // A simulation for the demo: "Kilidi aç" unlocks the asset on the map as a sealed visit would.
+  // A try-out away from the sites: "Kilidi aç" records the visit, with its badges, as a sealed one would.
   const unlock = asset
     ? () => {
-        void unlockForDemo(asset.id);
-        announce(`${asset.name} kilidi açıldı.`);
-        setUnlocked(true);
+        void unlockForDemo(asset.id).then((result) => {
+          announce(`${asset.name} kilidi açıldı.`);
+          setUnlocked(result);
+        });
       }
     : undefined;
 
   let body;
-  if (asset && unlocked) {
-    body = <Sealed asset={asset} result={{ verified: false, firstVisit: true, newAchievements: [] }} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/map"))} />;
+  if (asset && unlocked !== false) {
+    body = <Sealed asset={asset} result={unlocked ?? { verified: false, firstVisit: true, newAchievements: [] }} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/map"))} />;
   } else if (alreadyOpen) {
     body = (
       <View style={styles.center}>

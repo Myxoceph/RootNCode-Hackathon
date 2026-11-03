@@ -302,6 +302,17 @@ export async function sendVisitProof(assetId: string, proof: Omit<VisitProofRequ
   }
 }
 
+/**
+ * "Kilidi aç" while Ziyaret Mührü is tried away from the sites (`POST /assets/:id/visit/unlock`): the
+ * visit counts for badges and points without position or photo. Null without a session.
+ */
+export async function sendDemoUnlock(assetId: string): Promise<VisitResponse | null> {
+  if (!communityAvailable) return null;
+  await loadSession();
+  if (!token) return null;
+  return call(`/assets/${encodeURIComponent(assetId)}/visit/unlock`, VisitResponseSchema, { method: "POST", token });
+}
+
 /** The account's details changed (name, photo): kept with the session it belongs to. */
 export async function keepUser(user: AppUser, sentWith: string) {
   if (token !== sentWith) return;
@@ -369,7 +380,18 @@ export async function fetchMyAchievements(): Promise<MyAchievementsResponse | nu
   await loadSession();
   if (token) return call("/me/achievements", MyAchievementsResponseSchema, { token });
   const all = await call("/achievements", AchievementsResponseSchema);
-  return { version: all.version, lang: all.lang, totalPoints: 0, visits: 0, items: all.items.map((item) => ({ ...item, earnedAt: null, progress: { current: 0, target: 1 } })) };
+  const none = { approved: 0, pending: 0 };
+  return {
+    version: all.version,
+    lang: all.lang,
+    totalPoints: 0,
+    activityPoints: 0,
+    visits: 0,
+    sealed: 0,
+    notes: none,
+    photos: none,
+    items: all.items.map((item) => ({ ...item, earnedAt: null, progress: { current: 0, target: 1 } })),
+  };
 }
 
 /** The session's user id once the stored session is read; null without a session. */

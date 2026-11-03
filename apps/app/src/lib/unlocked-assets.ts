@@ -1,13 +1,17 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useSyncExternalStore } from "react";
 
-import { currentUserId, fetchMyVisits, useCommunity } from "@/data/community";
+import type { VisitResponse } from "@vagabonds/contracts";
+
+import { currentUserId, fetchMyVisits, sendDemoUnlock, useCommunity } from "@/data/community";
 
 /**
  * The assets unlocked on the map: the signed-in visitor's visits (`GET /me/visits`, the same on
- * every device), and the ones "Kilidi aç" unlocked on this phone (a demo simulation of Ziyaret
- * Mührü, which the API cannot record without the visitor on site), kept per account. Another
- * account, or a signed-out visitor, on the same phone starts with the map locked.
+ * every device). "Kilidi aç", the try-out of Ziyaret Mührü away from the sites, records a visit
+ * too (`POST /assets/:id/visit/unlock`), so it earns badges and points. Only what could not be
+ * sent (signed out, offline, or unlocked before 2026-11-03) is kept on this phone, per account, and
+ * sent when the account's unlocks load. Another account, or a signed-out visitor, on the same
+ * phone starts with the map locked.
  */
 const demoKey = (userId: string) => `vagabonds-unlocked-assets:${userId}`;
 /** Before 2026-11-03 one list for the whole phone; removed, it belonged to no account. */
@@ -55,8 +59,26 @@ async function load(userId: string): Promise<void> {
   } catch {
     // Unreadable: only the visits and what came along from before the session are unlocked.
   }
-  if (demo.size > 0) void AsyncStorage.setItem(demoKey(userId), JSON.stringify([...demo])).catch(() => {});
   publish();
+  await sendKept(userId);
+}
+
+/** Sends the unlocks kept on this phone, one by one; what the API took is a visit from then on. */
+async function sendKept(userId: string): Promise<void> {
+  for (const id of [...demo]) {
+    if (!visited.has(id)) {
+      try {
+        if (!(await sendDemoUnlock(id))) break;
+      } catch {
+        break; // Offline, or a server without the unlock: sent again on the next launch.
+      }
+    }
+    if (owner !== userId) return;
+    visited = new Set([...visited, id]);
+    demo = new Set([...demo].filter((kept) => kept !== id));
+  }
+  publish();
+  void AsyncStorage.setItem(demoKey(userId), JSON.stringify([...demo])).catch(() => {});
 }
 
 /** A visit the API recorded (a sealed visit): unlocked at once, and from the API on the next launch. */
@@ -66,14 +88,29 @@ export function unlockAsset(id: string): void {
   publish();
 }
 
-/** "Kilidi aç", the demo simulation: kept for this account on this phone; signed out, for this run only. */
-export async function unlockForDemo(id: string): Promise<void> {
+/**
+ * "Kilidi aç": a visit recorded on the API, with the badges it earned. Not sent (signed out, offline),
+ * it is kept for this account on this phone, or for this run only when signed out, and the result is null.
+ */
+export async function unlockForDemo(id: string): Promise<VisitResponse | null> {
   // Opened before the map ever was: load this account's unlocks first, or the next load would drop it.
   await loadFor(await currentUserId());
-  if (demo.has(id)) return;
+  if (owner) {
+    try {
+      const result = await sendDemoUnlock(id);
+      if (result) {
+        unlockAsset(id);
+        return result;
+      }
+    } catch {
+      // Kept below and sent on the next launch.
+    }
+  }
+  if (demo.has(id)) return null;
   demo = new Set([...demo, id]);
   publish();
   if (owner) void AsyncStorage.setItem(demoKey(owner), JSON.stringify([...demo])).catch(() => {});
+  return null;
 }
 
 function subscribe(listener: () => void) {

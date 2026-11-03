@@ -1,3 +1,4 @@
+import { ACTIVITY_POINTS } from "@vagabonds/contracts";
 import type { Prisma, PrismaClient } from "../../generated/prisma/client.ts";
 
 export type RewardRecord = Prisma.rewardGetPayload<object>;
@@ -41,15 +42,21 @@ export interface RewardsRepository {
 
 type Db = Prisma.TransactionClient | PrismaClient;
 
+/** Badge points plus activity points (`ACTIVITY_POINTS`), as `GET /me/achievements` adds them up. */
 async function totalsIn(db: Db, userId: string): Promise<WalletTotals> {
-  const [earned, spent, provenVisits] = await Promise.all([
+  const [earned, spent, visits, provenVisits, notes, photos] = await Promise.all([
     db.$queryRaw<[{ sum: bigint | null }]>`
       SELECT sum(a.points) AS sum FROM user_achievement ua JOIN achievement a ON a.code = ua.achievement_code
       WHERE ua.user_id = ${userId}::uuid`,
     db.redemption.aggregate({ where: { user_id: userId }, _sum: { points: true } }),
+    db.visit.count({ where: { user_id: userId } }),
     db.visit.count({ where: { user_id: userId, proven_at: { not: null } } }),
+    db.contribution.count({ where: { user_id: userId, status: "approved", kind: { not: "photo" } } }),
+    db.contribution.count({ where: { user_id: userId, status: "approved", kind: "photo" } }),
   ]);
-  return { earned: Number(earned[0].sum ?? 0), spent: spent._sum.points ?? 0, provenVisits };
+  const activity =
+    visits * ACTIVITY_POINTS.visit + provenVisits * ACTIVITY_POINTS.sealed + notes * ACTIVITY_POINTS.note + photos * ACTIVITY_POINTS.photo;
+  return { earned: Number(earned[0].sum ?? 0) + activity, spent: spent._sum.points ?? 0, provenVisits };
 }
 
 export function createRewardsRepository(prisma: PrismaClient): RewardsRepository {

@@ -124,7 +124,7 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
     },
 
     async facts(userId, complexIds) {
-      const [visits, notes, photos, children] = await Promise.all([
+      const [visits, contributions, children] = await Promise.all([
         prisma.visit.findMany({
           where: { user_id: userId, asset: { status: { in: statuses } } },
           select: {
@@ -133,8 +133,11 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
             asset: { select: { id: true, city_code: true, district: true, type_code: true, era_code: true } },
           },
         }),
-        prisma.contribution.count({ where: { user_id: userId, status: "approved", kind: { not: "photo" } } }),
-        prisma.contribution.count({ where: { user_id: userId, status: "approved", kind: "photo" } }),
+        prisma.contribution.groupBy({
+          by: ["kind", "status"],
+          where: { user_id: userId, status: { in: ["approved", "pending"] } },
+          _count: { _all: true },
+        }),
         complexIds.length === 0
           ? []
           : prisma.asset.findMany({
@@ -142,6 +145,10 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
               select: { id: true, parent_id: true },
             }),
       ]);
+      const count = (status: string, photo: boolean) =>
+        contributions
+          .filter((group) => group.status === status && (group.kind === "photo") === photo)
+          .reduce((sum, group) => sum + group._count._all, 0);
       const complexChildren = new Map<string, string[]>();
       for (const child of children) {
         const parent = child.parent_id!;
@@ -157,7 +164,8 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
           at: visited_at,
           proven: proven_at !== null,
         })),
-        approved: { notes, photos },
+        approved: { notes: count("approved", false), photos: count("approved", true) },
+        pending: { notes: count("pending", false), photos: count("pending", true) },
         complexChildren,
       };
     },

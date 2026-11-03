@@ -3,7 +3,7 @@
 Başarımlardan kazanılan puan, ortak kurumların verdiği ödüllere harcanır. Puan **parayla alınmaz ve paraya
 çevrilmez**; bu yüzden bir ödeme sistemi ya da e-para lisansı gerekmez, bilinen sadakat programlarıyla aynı model.
 
-- **Bakiye** = kazanılan başarım puanları − harcanan puanlar (`GET /me/wallet`).
+- **Bakiye** = kazanılan başarım puanları + etkinlik puanları ([`achievements.md`](achievements.md)) − harcanan puanlar (`GET /me/wallet`).
 - **Ödül almak** (`POST /rewards/:code/redeem`): bakiye yetiyor ve gereken kanıtlanmış ziyaret sayısı
   tamamsa kullanıcıya ortak kurumun **tek kullanımlık kodu** verilir ve puan düşülür. Kod şubede, müzede ya da
   kafede gösterilir. Aynı bakiye iki kez harcanamaz, aynı kod iki kişiye gitmez (tek veritabanı işlemi).
@@ -28,7 +28,7 @@ Aşağıdakiler `sample: true` işaretli **örneklerdir**; arkalarında gerçek 
 | Vakıf Eserleri Müzesi Girişi | Vakıflar Genel Müdürlüğü | Müze girişi | 250 | 2 | `vgm-muze-giris` |
 | Tarihî Han Kafesinde %20 İndirim | Vakıf Katılım | İndirim | 80 | – | `han-kafe-indirim` |
 
-Başlangıç başarımlarının hepsi en çok 1350 puan verir; tişört ve müze girişi gibi ödüller birkaç ilin
+Başlangıç başarımlarının hepsi en çok 1530 puan verir (etkinlik puanı hariç); tişört ve müze girişi gibi ödüller birkaç ilin
 gezilmesini gerektirir.
 
 ## Admin

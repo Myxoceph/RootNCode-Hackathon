@@ -81,12 +81,28 @@ export const MyAchievementSchema = AchievementSchema.extend({
 });
 
 /** `GET /me/achievements?lang=`: progress on every achievement; newly earned ones are recorded. */
+/**
+ * Points for what a visitor does, on top of the badges' points: each different asset visited, each
+ * visit sealed in Ziyaret Mührü (on top of the visit), each note or photo once a moderator approves it.
+ */
+export const ACTIVITY_POINTS = { visit: 10, sealed: 10, note: 5, photo: 10 } as const;
+
+const CountsSchema = z.strictObject({ approved: z.int().min(0), pending: z.int().min(0) });
+
 export const MyAchievementsResponseSchema = z.strictObject({
   version: ContractVersionSchema,
   lang: LangSchema,
+  /** Earned badges' points plus `activityPoints`. */
   totalPoints: z.int().min(0),
+  /** From `ACTIVITY_POINTS`: visits, sealed visits and approved notes and photos. */
+  activityPoints: z.int().min(0).default(0),
   /** Different assets visited. */
   visits: z.int().min(0),
+  /** Of them, sealed in Ziyaret Mührü. */
+  sealed: z.int().min(0).default(0),
+  /** Tips, memories and corrections; only approved ones earn points and badges. */
+  notes: CountsSchema.default({ approved: 0, pending: 0 }),
+  photos: CountsSchema.default({ approved: 0, pending: 0 }),
   items: z.array(MyAchievementSchema),
 });
 
