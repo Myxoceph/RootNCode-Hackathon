@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-03 · Kitap fotoğraflarına alt metin (ekran okuyucu için)
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import`
+
+Değişenler:
+- 242 kayıtta "<eser> fotoğrafı" kalıbındaki 801 alt metin, fotoğrafta ne göründüğünü anlatan kısa Türkçe ve İngilizce
+  bir cümleyle değişti (ortalama 16 kelime). Metinleri EVREN'in görüntü modeli (`qwen3-vl-30b`) yazdı; yaygın kelime
+  hataları (kalligrafi → hat, fayans → çini, portik → revak…) yazarken düzeltildi. Tek tek okunmadı: yanlış bir ayrıntı
+  görürsen kayıtta `alt` alanını düzeltip `npm run db:import` yeter.
+
+---
+
 ## 2026-11-03 · Kitap fotoğrafları etiketlendi (ne gösterdikleri)
 
 Kimler: **API'yi yerelde çalıştıranlar**
