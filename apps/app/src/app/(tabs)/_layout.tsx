@@ -5,7 +5,7 @@ import { TabBar, type TabItem } from "@/components/tab-bar";
 
 /**
  * The five sections in the bar. Each tab is its own URL on the web:
- * `/map`, `/rehber`, `/camera`, `/monuments`, `/settings`. The app opens on Eserler (`/` sends there). The monument list and its
+ * `/map`, `/rehber`, `/camera`, `/monuments`, `/settings`. The app opens on a greeting at `/` that goes on to the map. The monument list and its
  * cards share the Eserler tab's stack. Kapsül (`/capsule`) and Rotalar (`/route`) have
  * no tab any more but stay screens under the tabs: asset cards still play their sound
  * capsules, and the map and the assistant's answers still open the planner.
@@ -31,7 +31,7 @@ export default function TabLayout() {
       {tabs.map(({ name, title, ownHeader }) => (
         <Tabs.Screen key={name} name={name} options={{ title, headerShown: !ownHeader }} />
       ))}
-      {/* Only sends on to Eserler. */}
+      {/* The opening greeting, which goes on to the map. */}
       <Tabs.Screen name="index" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false }} />
       {/* No tab button, but still a tab: since expo-router 58, `href: null` hides the screen and redirects away from it. */}
       <Tabs.Screen name="capsule" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: "Kapsül" }} />

@@ -1,6 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
-import { fontFamily, radius, spacing, Text, touchTarget, useTheme, type Theme } from "@vagabonds/ui";
+import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme, type Theme } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
@@ -169,7 +169,7 @@ export default function MonumentsScreen() {
           Eserler
         </Text>
         <Pressable accessibilityRole="link" accessibilityLabel="Zamanda yolculuk yaparak inceleyin" onPress={() => router.push("/time-journey")} style={({ pressed }) => [styles.journey, pressed && styles.journeyPressed]}>
-          <Text variant="label" colorValue={ink.onGold} numberOfLines={1} style={styles.journeyText}>
+          <Text variant="label" colorValue={palette.gece950} numberOfLines={1} style={styles.journeyText}>
             Zamanda yolculuk
           </Text>
           <View style={styles.journeyArrow}>
@@ -466,7 +466,8 @@ const makeStyles = (ink: Ink) =>
       paddingLeft: spacing.md,
       paddingRight: spacing.xs,
       borderRadius: radius.full,
-      backgroundColor: ink.gold,
+      // White in both themes, its words and arrow night blue.
+      backgroundColor: palette.white,
       shadowColor: "#000",
       shadowOpacity: 0.22,
       shadowRadius: 8,
@@ -483,7 +484,7 @@ const makeStyles = (ink: Ink) =>
       borderRadius: 16,
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: ink.onGold,
+      backgroundColor: palette.gece950,
     },
     journeyText: {
       flexShrink: 1,

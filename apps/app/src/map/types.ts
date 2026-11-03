@@ -92,6 +92,14 @@ export interface MapProvinces {
  * never see which renderer draws them. The map is visual only: whatever a
  * screen-reader user needs (the selected asset, the list) lives outside it.
  */
+/** Screen points the map tour points at; null when not on screen. */
+export interface MapSpots {
+  /** The name of the province with the most assets, in the Turkey view. */
+  province: { x: number; y: number; name: string } | null;
+  asset: { x: number; y: number } | null;
+  unlock: { x: number; y: number; width: number; height: number } | null;
+}
+
 export interface AssetMapProps {
   pins: MapPin[];
   selectedId: string | null;
@@ -122,5 +130,9 @@ export interface AssetMapProps {
   onLeaveNote?: (id: string) => void;
   /** An unlocking scene has finished playing over the map. */
   onSceneEnd?: () => void;
+  /** True while the screen wants `onSpots`: the map tour's bubble follows them. */
+  watchSpots?: boolean;
+  /** Where the chosen asset and "Kilidini aç" are on screen, sent as they move. */
+  onSpots?: (spots: MapSpots) => void;
   style?: StyleProp<ViewStyle>;
 }
