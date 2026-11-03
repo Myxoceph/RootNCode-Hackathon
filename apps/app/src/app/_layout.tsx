@@ -78,6 +78,7 @@ function ThemedStack() {
           <Stack.Screen name="dossier" options={{ headerShown: false, title: "Eserin dosyası" }} />
           <Stack.Screen name="related" options={{ headerShown: false, title: "İlişkili eserler" }} />
           <Stack.Screen name="note" options={{ headerShown: false, title: "Not bırak" }} />
+          <Stack.Screen name="time-journey" options={{ headerShown: false, title: "Zamanda Yolculuk" }} />
           <Stack.Screen name="inscription" options={{ headerShown: false, title: "Taşın Dili" }} />
           {/* Draws its own header, with "Temizle" next to the title. */}
           <Stack.Screen name="assistant" options={{ headerShown: false, title: "Asistan" }} />
