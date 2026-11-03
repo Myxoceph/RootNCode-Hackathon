@@ -220,6 +220,22 @@ sahibine gider, başka kimseye gösterme. Fotoğraf seçmek için uygulamada `ex
 
 ---
 
+## 7. Puan, mühür ve not sayıları (API hazır, sözleşme 0.3.26)
+
+Profil kartındaki **puan, rozet, ziyaret** artık "Kilidi aç" ile açılan eserleri de sayıyor; senden bir şey gerekmiyor.
+`useMyAchievements()` cevabında yeni alanlar var, istersen Rozetlerim ya da Bıraktığım Notlar'da göster:
+
+| Alan | Anlamı |
+| --- | --- |
+| `activityPoints` | Rozetler dışındaki puan: ziyaret 10, mühür +10, onaylanan not 5, onaylanan fotoğraf 10 (`ACTIVITY_POINTS`) |
+| `sealed` | Ziyaret Mührü ile kanıtlanan ziyaret sayısı |
+| `notes.approved` / `notes.pending` | Onaylanan / moderatör bekleyen not sayısı; yalnızca onaylanan puan ve rozet getirir |
+| `photos.approved` / `photos.pending` | Aynısı fotoğraflar için |
+
+Örnek metin: "3 notun onaylandı, 1'i bekliyor · onaylanan her not +5 puan". İki yeni rozet: Not Defteri (10 not), Rehber Kalem (25 not).
+
+---
+
 ## PR'dan önce
 
 ```bash

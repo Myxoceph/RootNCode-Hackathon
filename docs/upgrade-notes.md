@@ -7,6 +7,23 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-03 · Kilidi aç ziyaret sayılıyor, etkinlik puanı ve not rozetleri (sözleşme 0.3.26)
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:deploy -w apps/api` (iki yeni not rozeti), sonra API'yi yeniden başlat. Sunucu bunu kendisi yapıyor.
+
+Değişenler:
+- "Kilidi aç" artık API'ye kanıtsız bir ziyaret yazıyor (`POST /assets/:id/visit/unlock`): ziyaret, rozet ve puan
+  profilde görünüyor. Telefonda önceden açılmış olanlar ilk açılışta API'ye gönderiliyor. Ziyaret Mührü'nde
+  fotoğraf zorunlu olunca `DEMO_UNLOCK=false` ile kapatılacak (şimdilik açık).
+- Puan artık yalnızca rozetlerden gelmiyor: ziyaret 10, mühür +10, onaylanan not 5, onaylanan fotoğraf 10
+  (`ACTIVITY_POINTS`, `docs/achievements.md`). Cüzdan bakiyesi de bunu sayıyor.
+- `GET /me/achievements` yeni alanlar: `activityPoints`, `sealed`, `notes` ve `photos` (onaylanan, bekleyen).
+- CORS artık `PUT`'a izin veriyor (profil fotoğrafı, `PUT /me/avatar`).
+
+---
+
 ## 2026-11-03 · Hesap profili: e-posta, ad soyad, profil fotoğrafı (sözleşme 0.3.25)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
