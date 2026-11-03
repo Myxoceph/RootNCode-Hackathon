@@ -34,7 +34,7 @@ import { announce } from "@/lib/announce";
 import { isAssetUnlocked, LOCKED_WARNING, relatedAssetsOf } from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
+import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -657,12 +657,8 @@ function Experiences({ asset }: { asset: AssetDetail }) {
   // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
   const descriptionKey = `description:${asset.id}`;
   const describing = useSpeaking() === descriptionKey;
-  // Leaving the page ends its description: its Durdur button goes with it.
-  const describingNow = useRef(describing);
-  describingNow.current = describing;
-  useEffect(() => () => {
-    if (describingNow.current) stopAnswer();
-  }, []);
+  // Leaving the page ends its description (its Durdur button goes with it), not another screen's reading.
+  useEffect(() => () => stopAnswerOf((key) => key === descriptionKey), [descriptionKey]);
   const soundKey = asset.ambientSound?.key ?? null;
   const capsuleType = soundKey ? capsuleForSoundKey(soundKey) : undefined;
   const playing = capsuleType !== undefined && player?.type === capsuleType ? player : null;

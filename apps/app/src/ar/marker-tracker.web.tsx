@@ -2,7 +2,7 @@ import { cameraColors } from "@vagabonds/ui";
 import { useEffect, useMemo, useRef } from "react";
 import { StyleSheet, View } from "react-native";
 
-import { loadMindar, useVendored } from "@/vendor";
+import { loadMindar, loadOverlayFont, useVendored } from "@/vendor";
 
 import type { MarkerTrackerProps } from "./marker-tracker";
 import { parseTrackerEvent } from "./mindar";
@@ -15,9 +15,12 @@ import { trackerPageHtml } from "./tracker-page";
  */
 export function MarkerTracker({ target, overlays, onEvent, style }: MarkerTrackerProps) {
   const mindarScript = useVendored(loadMindar);
+  const overlayFont = useVendored(loadOverlayFont);
   const html = useMemo(
-    () => (mindarScript ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript }) : null),
-    [target, overlays, mindarScript],
+    () =>
+      // The font is optional: "" when it could not be loaded, and the page then draws in a system serif.
+      mindarScript && overlayFont !== null ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript, overlayFont: overlayFont || undefined }) : null,
+    [target, overlays, mindarScript, overlayFont],
   );
   const frame = useRef<HTMLIFrameElement>(null);
 

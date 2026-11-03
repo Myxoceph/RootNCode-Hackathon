@@ -4,7 +4,7 @@ import { useEffect, useMemo } from "react";
 import { StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 import { WebView } from "react-native-webview";
 
-import { loadMindar, useVendored } from "@/vendor";
+import { loadMindar, loadOverlayFont, useVendored } from "@/vendor";
 
 import { parseTrackerEvent, type TrackerEvent } from "./mindar";
 import { trackerPageHtml, type TrackerTarget } from "./tracker-page";
@@ -28,9 +28,12 @@ export interface MarkerTrackerProps {
  */
 export function MarkerTracker({ target, overlays, onEvent, style }: MarkerTrackerProps) {
   const mindarScript = useVendored(loadMindar);
+  const overlayFont = useVendored(loadOverlayFont);
   const html = useMemo(
-    () => (mindarScript ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript }) : null),
-    [target, overlays, mindarScript],
+    () =>
+      // The font is optional: "" when it could not be loaded, and the page then draws in a system serif.
+      mindarScript && overlayFont !== null ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript, overlayFont: overlayFont || undefined }) : null,
+    [target, overlays, mindarScript, overlayFont],
   );
   const permission = useCameraPermission();
 

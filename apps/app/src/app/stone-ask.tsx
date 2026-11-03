@@ -9,13 +9,13 @@ import { useEffect, useRef, useState } from "react";
 import { ActivityIndicator, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { CameraTopBar } from "@/components/camera-chrome";
+import { CameraTopBar, GlassPill } from "@/components/camera-chrome";
 import { DataError } from "@/data/errors";
 import { askStone, shrinkPhoto } from "@/data/vision";
 import { announce } from "@/lib/announce";
 import { answerParts } from "@/lib/chat";
 import { useVoiceQuestion } from "@/lib/use-voice-question";
-import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
+import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 
 type Phase = { kind: "aim" } | { kind: "looking"; photo: string; question: string | null } | { kind: "answered"; photo: string; question: string | null; response: VisionAskResponse; plain: string } | { kind: "failed"; photo: string | null; message: string };
 
@@ -36,11 +36,14 @@ export default function StoneAskScreen() {
   const shown = useRef(true);
   const speaking = useSpeaking();
 
+  // The answers this screen read aloud; leaving it ends them, not another screen's reading.
+  const mine = useRef(new Set<string>());
   useEffect(() => {
     shown.current = true;
+    const own = mine.current;
     return () => {
       shown.current = false;
-      stopAnswer();
+      stopAnswerOf((key) => own.has(key));
     };
   }, []);
 
@@ -71,6 +74,7 @@ export default function StoneAskScreen() {
         .trim();
       setPhase({ kind: "answered", photo, question, response, plain });
       // Read aloud, the answer is not announced too: a screen reader would talk over the voice.
+      mine.current.add(response.answer);
       void speakAnswer(response.answer, plain);
     } catch (error) {
       if (!shown.current) return;
@@ -185,13 +189,14 @@ export default function StoneAskScreen() {
               )}
             </ScrollView>
             <View style={styles.row}>
-              <Button
+              <GlassPill
+                icon={speaking === phase.response.answer ? "stop" : "volume-high"}
                 label={speaking === phase.response.answer ? "Durdur" : "Dinle"}
+                spoken={speaking === phase.response.answer ? "sesli okumayı kes" : "cevabı sesli oku"}
                 onPress={() => (speaking === phase.response.answer ? stopAnswer() : void speakAnswer(phase.response.answer, phase.plain))}
-                colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
-                style={styles.flex}
               />
-              <Button label="Yeniden sor" onPress={again} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.flex} />
+              <View style={styles.flex} />
+              <GlassPill gold icon="camera" label="Yeniden sor" spoken="kamerayı yeniden aç" onPress={again} />
             </View>
           </View>
         )}
@@ -199,7 +204,7 @@ export default function StoneAskScreen() {
         {phase.kind === "failed" && (
           <View style={styles.card} accessibilityRole="alert">
             <Text colorValue={cameraColors.text}>{phase.message}</Text>
-            <Button label="Tekrar dene" onPress={again} colors={[cameraColors.gold, cameraColors.onGold]} />
+            <GlassPill gold icon="refresh" label="Tekrar dene" onPress={again} />
           </View>
         )}
 
