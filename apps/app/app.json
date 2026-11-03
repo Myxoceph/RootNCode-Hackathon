@@ -5,6 +5,15 @@
     "version": "0.1.0",
     "orientation": "default",
     "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash-blank.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF",
+      "dark": {
+        "image": "./assets/images/splash-blank.png",
+        "backgroundColor": "#0D1420"
+      }
+    },
     "scheme": "vagabonds",
     "userInterfaceStyle": "automatic",
     "ios": {
@@ -45,9 +54,13 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#151B28",
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "backgroundColor": "#FFFFFF",
+          "image": "./assets/images/splash-blank.png",
+          "imageWidth": 1,
+          "dark": {
+            "backgroundColor": "#0D1420",
+            "image": "./assets/images/splash-blank.png"
+          }
         }
       ],
       [
