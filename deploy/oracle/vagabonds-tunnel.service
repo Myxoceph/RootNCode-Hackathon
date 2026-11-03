@@ -1,0 +1,16 @@
+# The Cloudflare Tunnel from the Oracle server (docs/deploy.md, "Oracle sunucusu"). Only one machine
+# may run the tunnel: stop it on the Mac before starting this one, and the other way round.
+[Unit]
+Description=Vagabonds Cloudflare Tunnel
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/RootNCode-Hackathon
+ExecStart=/home/ubuntu/RootNCode-Hackathon/deploy/demo.sh tunnel
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

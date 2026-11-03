@@ -203,6 +203,69 @@ Terminal açık kaldıkça site yayındadır. Demo boyunca Mac'in uyumaması iç
 Docker'ın disk dosyası (`Docker.raw`) imajlar derlendikçe büyür. Mac'in diski dolarsa Docker'ın sanal
 makinesi bozulup açılmayabilir; derlemeden önce en az 10 GB boş yer bırak.
 
+## Oracle sunucusu (her zaman açık)
+
+2026-11-03'ten beri `vagabonds.allbytech.com` Oracle Cloud'daki ücretsiz bir sunucudan sunuluyor
+(Frankfurt, Ampere A1: 2 çekirdek, 12 GB, 100 GB disk, Ubuntu 24.04). Mac kapalıyken de açık; ekip API
+adresini değiştirmeden (`https://vagabonds.allbytech.com/api`) dener. Mac aynı yığınla yedekte durur.
+
+- **Aynı yapı:** `deploy/compose.yml` ve `deploy/demo.sh` sunucuda aynen çalışıyor; bütün imajların ARM sürümü
+  var. Konya'nın OTP grafiği (`deploy/otp/data/graph.obj`) Mac'ten kopyalandı, sunucuda yeniden derlenmez.
+- **Kendini günceller:** `vagabonds-update.timer` 5 dakikada bir `dev`'e bakar; dal ilerlediyse çeker, `demo.sh up`
+  ile yalnızca değişeni derler, ön kontrolü çalıştırır ve eski imajları siler (`deploy/oracle/update.sh`). Kayıt:
+  `journalctl -u vagabonds-update -n 50`. Final için `main`'i izlesin: servise `Environment=VAGABONDS_BRANCH=main`.
+- **Tünel:** `vagabonds-tunnel.service` (`demo.sh tunnel`) sunucu açılınca başlar, koparsa 5 sn sonra yeniden
+  bağlanır. Kayıt: `journalctl -u vagabonds-tunnel -f`.
+- **Erişim:** `ssh -i ~/.ssh/vagabonds_oracle ubuntu@130.61.26.125` (Ahmet'in Mac'inde). Dışarıya yalnızca SSH
+  açık; site tünelden gelir. `deploy/.env` sunucuda Mac'tekinin kopyası; ikisinde de aynı tutulmalı.
+
+**Tünel aynı anda tek makinede.** Adresi Mac'e almak için önce sunucuda
+`sudo systemctl stop vagabonds-tunnel`, sonra Mac'te `deploy/demo.sh tunnel`. Geri vermek için Mac'teki tüneli
+durdur (Ctrl-C), sunucuda `sudo systemctl start vagabonds-tunnel`. Hangisinin sunduğunu `/api/health`'teki
+`uptimeSeconds` gösterir.
+
+**Yedek:** `vagabonds-backup.timer` her saat başı yedek alır (`deploy/oracle/backup.sh`, son 48'i tutar); her
+güncellemeden önce de bir yedek alınır, bir migration ters giderse oradan dönülür. Mac yarım saatte bir en yenisini
+kendine çeker (aşağıda).
+
+**Veri:** Sunucunun veritabanı 2026-11-03'te Mac'in yedeğinden geldi (hesaplar, ziyaretler, konuşmalar). Ekip
+deneme hesaplarıyla dener, demo hesaplarına dokunmaz. Final sabahı temiz bir yedek geri yüklenebilir:
+`deploy/demo.sh backup` ile alınan `.dump`'ı `pg_restore --clean --if-exists` ile (bkz. "Kayıtlar, yedek, sorun
+giderme").
+
+**Ücretsiz sunucunun kuralı:** Oracle, 7 gün boyunca işlemcisi çok az kullanılan ücretsiz sunucuları
+kapatabiliyor. Ekip kullandıkça sorun değil; uzun süre kullanılmayacaksa haftada bir bakın.
+
+## Oracle çökerse: Mac'ten 5 dakikada
+
+Sunucu cevap vermiyorsa, siliniyorsa ya da sahneden önce bir şey ters giderse adres Mac'e alınır. Mac'te Docker
+Desktop açık olsun; gerisini tek komut yapar:
+
+```bash
+deploy/failover.sh takeover
+```
+
+1. Sunucudaki tüneli durdurur (sunucu ölüyse zaten düşmüştür).
+2. Sunucudan en yeni yedeği çeker; çekemezse Mac'teki en son yedeği kullanır.
+3. Mac'teki yığını açar (yalnızca değişeni derler).
+4. Yedeği yükler (`deploy/demo.sh restore`, ~20 sn).
+5. Tüneli Mac'te açar, adresin gerçekten Mac'e geldiğini `uptimeSeconds` ile doğrular, tünelden ön kontrol yapar.
+
+Mac'in kodu `dev`'in gerisindeyse 3. adım birkaç dakika derler; Mac'te arada bir `git pull && deploy/demo.sh up`
+bunu kısaltır. Kaybedilen veri: Mac'teki en yeni yedekten sonrası (en çok ~1 saat).
+
+**Mac'in yedekleri:** `deploy/failover.sh install-pull` (Mac'te bir kez) yarım saatte bir sunucunun en yeni
+yedeğini `~/vagabonds-backups/`'a çeken bir LaunchAgent kurar (son 24'ü tutar; kayıt: `~/vagabonds-backups/pull.log`).
+macOS arka plandaki işlerin Masaüstü'ne erişmesine izin vermediği için yedekler ve LaunchAgent'ın çalıştırdığı betik
+(`~/Library/Application Support/vagabonds/pull-backups.sh`) repo dışında; `failover.sh` değişirse `install-pull`'u
+yeniden çalıştır. Elle: `deploy/failover.sh pull`.
+
+**Sunucu dönünce:** `deploy/failover.sh handback`: Mac'te biriken veriyi yedekleyip sunucuya yükler, Mac'teki
+tüneli kapatır, sunucudakini açar ve ön kontrolü yapar.
+
+**Hangisi sunuyor:** `deploy/failover.sh status` (adresin, sunucunun ve Mac'in `uptimeSeconds`'ı ve Mac'teki en
+yeni yedeğin yaşı). Gerekenler `deploy/.env`'de: `ORACLE_SSH`, `ORACLE_SSH_KEY`.
+
 ## Final günü (MacBook Air M4)
 
 Final demosu ekibin MacBook Air'inden (M4, 16 GB) tünelle yayınlanır. Bütün komutlar `deploy/demo.sh`'te:
@@ -326,6 +389,32 @@ Karşılaştırırken şunlara bak:
 `OLLAMA_KEEP_ALIVE=-1 OLLAMA_NUM_PARALLEL=2 caffeinate -i ollama serve` ve
 `ASSISTANT_BASE_URL=http://host.docker.internal:11434/v1`, `ASSISTANT_MODEL=qwen3:8b`,
 `ASSISTANT_API_KEY` boş. Ollama'yı `0.0.0.0`'a açma; parolası yoktur.
+
+**Model düşerse.** 2026-11-03 gecesi EVREN `qwen3.8-flash-next` için saatlerce 503 verdi ("sağlıklı
+endpoint yok"); aynı anda `gemma-4-31b`, `qwen3-vl-30b` ve `deepseek-v4.1-flash` cevap veriyordu.
+`/chat/status` bunu ancak bir soru başarısız olduktan sonra görür. Sorun yalnızca o modeldeyse
+`deploy/.env`'de `ASSISTANT_MODEL=qwen3-vl-30b` yapıp `deploy/demo.sh up`. Bu model araç çağırıyor
+ve hızlı (bir sesli soru 8 sn), ama karşılaştırması yapılmadı; cevapları daha zayıf olabilir.
+
+### Sesli Rehber
+
+Rehber'e sesli de sorulabilir. Uygulama soruyu kaydeder (en çok 20 sn) ve `POST /voice/transcribe`'a
+gönderir; gövde kaydın kendisidir. Metin `POST /chat`'e `spoken: true` ile gider; model en çok 3 kısa
+cümleyle, konuşur gibi cevap verir. Cevap `GET /voice/speech?text=…` ile MP3 olarak okunur: ilk cümle
+tek başına istenir, kalanı o çalarken hazırlanır. İkisi de yalnızca hesapla.
+
+| Ne | Model | Süre (2026-11-03) |
+|---|---|---|
+| Konuşmadan metne | `qwen3-asr-1.7b` (`VOICE_ASR_MODEL`) | 5 sn'lik kayıt ~0,5 sn |
+| Metinden konuşmaya | `voxcpm2` (`VOICE_TTS_MODEL`) | bir cümle ~1 sn |
+
+- Modeller asistanın adresini ve anahtarını kullanır. `deploy/compose.yml` EVREN'in modellerini
+  varsayılan alır; Ollama'da konuşma modeli olmadığı için orada ikisini de boş bırak (sesli soru kapanır,
+  yazılı Rehber çalışır).
+- Kayıt saklanmaz, loglanmaz; yalnızca yazıya çevrilmek için EVREN'e gider. Okunan cevaplar API'nin
+  belleğinde tutulur (son 100): kuliste bir kez sorulan sorular sahnede beklemeden çalar.
+- Ses EVREN'den gelmezse uygulama cevabı telefonun kendi sesiyle (cihaz TTS) okur.
+- Gürültülü salonda telefonu ağza yakın tut; tanınan metin ekranda soru olarak görünür.
 
 ## Toplu taşıma (Konya pilotu)
 

@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# Runs the demo from this Mac (docs/deploy.md, "Final günü"). From the repository root:
+# Runs the demo from this Mac or the Oracle server (docs/deploy.md, "Final günü", "Oracle sunucusu"). From the repository root:
 #
 #   deploy/demo.sh up        start the stack (builds only what changed) and run the preflight
-#   deploy/demo.sh tunnel    serve it at PUBLIC_URL through Cloudflare Tunnel; keeps the Mac awake, Ctrl-C stops
+#   deploy/demo.sh tunnel    serve it at PUBLIC_URL through Cloudflare Tunnel; keeps a Mac awake, Ctrl-C stops
 #   deploy/demo.sh check     preflight; add a URL to check through the tunnel
 #   deploy/demo.sh backup    dump the database (accounts, visits, notes, photos) to deploy/backups/
+#   deploy/demo.sh restore F put a backup back (replaces the database; the API is stopped meanwhile)
 #   deploy/demo.sh down      backup, then stop the stack (data stays in the volume)
 #   deploy/demo.sh logs      follow the API log
 set -euo pipefail
@@ -22,6 +23,16 @@ backup() {
   echo "✓ backup $file ($(du -h "$file" | cut -f1))"
 }
 
+# The API is stopped so nothing writes halfway; one transaction, so a failed restore leaves the old data.
+restore() {
+  local file=$1
+  [[ -f $file ]] || { echo "No backup at $file"; exit 1; }
+  dc stop api > /dev/null 2>&1
+  dc exec -T postgres pg_restore -U vagabonds -d vagabonds --clean --if-exists --no-owner --single-transaction < "$file"
+  dc up -d --wait api > /dev/null 2>&1
+  echo "✓ restored $file"
+}
+
 case "${1:-}" in
   up)
     docker info > /dev/null 2>&1 || { echo "Docker is not running: open Docker Desktop"; exit 1; }
@@ -35,10 +46,13 @@ case "${1:-}" in
     # The tunnel was made with `cloudflared tunnel create`, so its routing lives here, not in the
     # dashboard: --url points it at Caddy (HTTP_PORT in deploy/.env).
     token=$(env_value TUNNEL_TOKEN)
+    # A Mac would sleep under the tunnel; the server has no caffeinate and never sleeps.
+    awake=()
+    command -v caffeinate > /dev/null && awake=(caffeinate -i)
     if [[ -n $token ]]; then
-      TUNNEL_TOKEN=$token exec caffeinate -i cloudflared tunnel run --url "http://$(env_value HTTP_PORT)"
+      TUNNEL_TOKEN=$token exec ${awake[@]+"${awake[@]}"} cloudflared tunnel run --url "http://$(env_value HTTP_PORT)"
     elif [[ -f ~/.cloudflared/vagabonds-demo.yml ]]; then
-      exec caffeinate -i cloudflared tunnel --config ~/.cloudflared/vagabonds-demo.yml run vagabonds-demo
+      exec ${awake[@]+"${awake[@]}"} cloudflared tunnel --config ~/.cloudflared/vagabonds-demo.yml run vagabonds-demo
     else
       echo "No tunnel: set TUNNEL_TOKEN in deploy/.env, or log in (docs/deploy.md, \"Bilgisayardan yayın\")"
       exit 1
@@ -46,13 +60,14 @@ case "${1:-}" in
     ;;
   check) PREFLIGHT_PASSWORD=$(env_value PREFLIGHT_PASSWORD) node deploy/preflight.mjs "${@:2}" ;;
   backup) backup ;;
+  restore) restore "${2:?usage: deploy/demo.sh restore deploy/backups/<file>.dump}" ;;
   down)
     backup
     dc down
     ;;
   logs) dc logs -f api ;;
   *)
-    sed -n '2,9p' "$0" | sed 's/^# \{0,1\}//'
+    sed -n '2,10p' "$0" | sed 's/^# \{0,1\}//'
     exit 1
     ;;
 esac

@@ -10,6 +10,8 @@ export interface RequestOptions {
   allowNotFound?: boolean;
   /** Sent as JSON in a POST; without it the request is a GET. */
   body?: unknown;
+  /** Sent as it is in a POST, e.g. a voice recording; in place of `body`. */
+  rawBody?: { data: Blob; type: string };
   /** Only for a request without a body that is not a GET (`DELETE`, or a `POST` with nothing to send). */
   method?: "POST" | "DELETE";
   /** Sent as `Authorization: Bearer <token>`. */
@@ -29,6 +31,7 @@ export interface RequestOptions {
 export async function request<T>(url: string, schema: SchemaParser<T>, options: RequestOptions = {}): Promise<T | null> {
   const headers: Record<string, string> = { Accept: "application/json" };
   if (options.body !== undefined) headers["Content-Type"] = "application/json";
+  if (options.rawBody) headers["Content-Type"] = options.rawBody.type;
   if (options.token) headers.Authorization = `Bearer ${options.token}`;
   const controller = new AbortController();
   let timedOut = false;
@@ -43,9 +46,9 @@ export async function request<T>(url: string, schema: SchemaParser<T>, options: 
   let response: Response;
   try {
     response = await fetch(url, {
-      method: options.method ?? (options.body === undefined ? "GET" : "POST"),
+      method: options.method ?? (options.body === undefined && !options.rawBody ? "GET" : "POST"),
       headers,
-      body: options.body === undefined ? undefined : JSON.stringify(options.body),
+      body: options.rawBody ? options.rawBody.data : options.body === undefined ? undefined : JSON.stringify(options.body),
       signal: controller.signal,
     });
   } catch (error) {
