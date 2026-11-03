@@ -114,7 +114,7 @@ export function MapTourGuide({ step, spots, top, onSkip }: { step: MapTourStep; 
               <View key={key} style={[styles.segment, { backgroundColor: i <= index ? BUBBLE : "rgba(255, 255, 255, 0.28)" }]} />
             ))}
           </View>
-          <Pressable onPress={onSkip} accessibilityRole="button" accessibilityLabel="Gösterimi geç" hitSlop={8} style={({ hovered }: { hovered?: boolean }) => [styles.skip, hovered && styles.skipHovered]}>
+          <Pressable onPress={onSkip} accessibilityRole="button" accessibilityLabel="Gösterimi geç" hitSlop={8} style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.skip, hovered && styles.skipHovered]}>
             <Text variant="caption" colorValue={palette.white} style={styles.skipLabel}>
               Geç
             </Text>
