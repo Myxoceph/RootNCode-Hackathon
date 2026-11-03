@@ -87,12 +87,17 @@ export function useSpeaking(): string | null {
 
 /** Stops a player at once: on Android `remove()` alone can leave the sound playing. */
 function silence(part: AudioPlayer) {
+  // Either throws once the player is released; the rest of stopping must still run.
   try {
     part.pause();
   } catch {
     // Already released.
   }
-  part.remove();
+  try {
+    part.remove();
+  } catch {
+    // Already released.
+  }
 }
 
 /** Stops whatever is being read, in either voice. */
@@ -103,6 +108,14 @@ export function stopAnswer() {
   player = null;
   Speech.stop();
   if (playing !== null) set(null);
+}
+
+/**
+ * Stops the reading only when it is one `owns` claims: a screen that goes away ends its own
+ * reading, not one another screen started.
+ */
+export function stopAnswerOf(owns: (key: string) => boolean) {
+  if (playing !== null && owns(playing)) stopAnswer();
 }
 
 /** Plays one part to its end; false when it failed or did not start in time. */

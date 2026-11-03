@@ -26,6 +26,44 @@ export function GlassIconButton({
   );
 }
 
+/**
+ * A rounded icon-and-word button over the camera image: gold for the main action, glass for the
+ * others. `spoken` is read out after the visible word, so a voice command with the word finds it.
+ */
+export function GlassPill({
+  icon,
+  label,
+  spoken,
+  onPress,
+  gold = false,
+  disabled = false,
+}: {
+  icon: ComponentProps<typeof Ionicons>["name"];
+  label: string;
+  spoken?: string;
+  onPress: () => void;
+  gold?: boolean;
+  disabled?: boolean;
+}) {
+  const ink = gold ? cameraColors.onGold : cameraColors.text;
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={spoken ? `${label}, ${spoken}` : label}
+      accessibilityState={{ disabled }}
+      disabled={disabled}
+      onPress={onPress}
+      hitSlop={6}
+      style={({ pressed }) => [styles.pill, gold ? styles.pillGold : styles.pillGlass, (pressed || disabled) && styles.pressed]}
+    >
+      <Ionicons name={icon} size={16} color={ink} />
+      <Text variant="label" colorValue={ink} style={styles.pillText}>
+        {label}
+      </Text>
+    </Pressable>
+  );
+}
+
 /** Top bar of a camera screen: back, a title card, and optional extra buttons. */
 export function CameraTopBar({ title, subtitle, children }: { title: string; subtitle: string; children?: ReactNode }) {
   const router = useRouter();
@@ -63,6 +101,26 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.7,
+  },
+  pill: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing.xxs,
+    minHeight: touchTarget.min,
+    paddingHorizontal: spacing.md,
+    borderRadius: radius.full,
+  },
+  pillGold: {
+    backgroundColor: cameraColors.gold,
+  },
+  pillGlass: {
+    backgroundColor: cameraGlass,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.16)",
+  },
+  pillText: {
+    fontFamily: fontFamily.sansSemiBold,
   },
   title: {
     flex: 1,

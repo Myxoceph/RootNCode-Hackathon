@@ -2,7 +2,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
 import { fontFamily, palette, radius, spacing, Text, useTheme } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
-import { useEffect, useRef, useState, type ComponentProps } from "react";
+import { useEffect, useState, type ComponentProps } from "react";
 import { Animated, Easing, Linking, Pressable, StyleSheet } from "react-native";
 
 import { useHasInscriptions } from "@/ar/inscription-scope";
@@ -11,7 +11,7 @@ import { useAsset } from "@/data";
 import { isAssetUnlocked } from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
+import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -43,8 +43,6 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
   const descriptionKey = `description:${asset.id}`;
   const describing = useSpeaking() === descriptionKey;
-  const describingNow = useRef(describing);
-  describingNow.current = describing;
   const record = detail.status === "success" ? detail.data : null;
   const description = record?.accessibility.audioDescription ?? null;
   const readable = useHasInscriptions(record);
@@ -61,11 +59,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   }, [drop, reduceMotion]);
 
   // Another asset, another description: stop reading the last one.
-  useEffect(() => {
-    return () => {
-      if (describingNow.current) stopAnswer();
-    };
-  }, [asset.id]);
+  useEffect(() => () => stopAnswerOf((key) => key === descriptionKey), [descriptionKey]);
 
   const actions: Action[] = [
     {
