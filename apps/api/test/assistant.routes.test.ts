@@ -278,10 +278,12 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
   it("answers 503 busy beyond two questions at once", async () => {
     let release!: () => void;
     const gate = new Promise<void>((resolve) => (release = resolve));
-    const { model } = scriptedModel([async () => (await gate, answer("Tamam."))]);
+    const { model, calls } = scriptedModel([async () => (await gate, answer("Tamam."))]);
     const app = appWith(model);
     const running = [chat(app, { message: "Bir" }), chat(app, { message: "İki" })];
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    // Both are with the model, holding their places: not a guess at how long that takes on a slow runner.
+    for (let waited = 0; calls.length < 2 && waited < 3000; waited += 10) await new Promise((resolve) => setTimeout(resolve, 10));
+    expect(calls).toHaveLength(2);
     expect((await chat(app, { message: "Üç" }, 503)).json().error.code).toBe("ASSISTANT_BUSY");
     release();
     await Promise.all(running);

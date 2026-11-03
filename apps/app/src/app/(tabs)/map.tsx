@@ -165,6 +165,8 @@ export default function MapScreen() {
     return () => clearTimeout(limit);
   }, [sceneRunning]);
   const controlsHidden = sceneDue || sceneRunning;
+  // What the map shows out of the fog, the tour's example too: the cards say the same.
+  const shownOpen = useMemo(() => (tourUnlock ? new Set([...unlocked, tourUnlock]) : unlocked), [unlocked, tourUnlock]);
   const controls = useRef(new Animated.Value(1)).current;
   useEffect(() => {
     Animated.timing(controls, { toValue: controlsHidden ? 0 : 1, duration: 220, useNativeDriver: true }).start();
@@ -199,6 +201,11 @@ export default function MapScreen() {
   /** The place on the map that stands for an asset: itself, or the complex it is a building of. */
   function placeOf(asset: AssetSummary): string | null {
     return cards.find((card) => card.id === asset.id || card.id === asset.parentId)?.id ?? null;
+  }
+
+  /** "Kilidini aç", on the map or a card: the tour's example scan while it plays, Ziyaret Mührü otherwise. */
+  function unlockAsset(id: string) {
+    if (!tour.onUnlock(id)) router.push({ pathname: "/visit-seal", params: { asset: id } });
   }
 
   /** The visitor chose an asset (on the map, in the cards or the search): its buttons under the search are for it now, and that is said once. */
@@ -323,7 +330,7 @@ export default function MapScreen() {
         onSelectProvince={openCity}
         onLeaveCity={backToTurkey}
         onCityLanded={onCityLanded}
-        onUnlock={(id) => tour.onUnlock(id) || router.push({ pathname: "/visit-seal", params: { asset: id } })}
+        onUnlock={unlockAsset}
         onInspect={(id) => router.push({ pathname: "/monuments/[id]", params: { id } })}
         onOpenRelatedList={(id) => router.push({ pathname: "/related", params: { asset: id, name: located.find(({ asset }) => asset.id === id)?.asset.name } })}
         onLeaveNote={(id) => router.push({ pathname: "/note", params: { asset: id } })}
@@ -375,6 +382,8 @@ export default function MapScreen() {
               assets={cards}
               buildingsOf={buildingsOf}
               selectedId={chosenAsset}
+              unlocked={shownOpen}
+              onUnlock={unlockAsset}
               onSelect={(id) => {
                 chooseAsset(id);
                 // A card counts as a tap for the tour: the map then offers "Kilidini aç" over it.
