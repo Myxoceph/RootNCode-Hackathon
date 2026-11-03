@@ -2,16 +2,16 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
 import { fontFamily, palette, radius, spacing, Text, useTheme } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
-import { useEffect, useState, type ComponentProps } from "react";
+import { useEffect, useRef, useState, type ComponentProps } from "react";
 import { Animated, Easing, Linking, Pressable, StyleSheet } from "react-native";
 
 import { useHasInscriptions } from "@/ar/inscription-scope";
 import { CARD_COLORS, GLASS_COLORS, GlassFill } from "@/components/city-asset-cards";
 import { useAsset } from "@/data";
 import { isAssetUnlocked } from "@/lib/related-assets";
-import { speak, stopSpeaking } from "@/lib/speak";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -40,7 +40,11 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   const { colors: c, scheme } = useTheme();
   const router = useRouter();
   const detail = useAsset(asset.id);
-  const [describing, setDescribing] = useState(false);
+  // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
+  const descriptionKey = `description:${asset.id}`;
+  const describing = useSpeaking() === descriptionKey;
+  const describingNow = useRef(describing);
+  describingNow.current = describing;
   const record = detail.status === "success" ? detail.data : null;
   const description = record?.accessibility.audioDescription ?? null;
   const readable = useHasInscriptions(record);
@@ -58,8 +62,9 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
 
   // Another asset, another description: stop reading the last one.
   useEffect(() => {
-    setDescribing(false);
-    return stopSpeaking;
+    return () => {
+      if (describingNow.current) stopAnswer();
+    };
   }, [asset.id]);
 
   const actions: Action[] = [
@@ -107,9 +112,8 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
       on: describing,
       onPress: () => {
         if (!description) return;
-        if (describing) stopSpeaking();
-        else speak(description);
-        setDescribing(!describing);
+        if (describing) stopAnswer();
+        else void speakAnswer(descriptionKey, description);
       },
     },
   ];

@@ -1,12 +1,12 @@
 import { VoiceTranscriptionResponseSchema } from "@vagabonds/contracts";
 import type { AudioSource } from "expo-audio";
-import { File } from "expo-file-system";
 import { Platform } from "react-native";
 
 import { accountToken, sessionRejected } from "./community";
 import { resolveApiUrl } from "./config";
 import { DataError } from "./errors";
 import { request, statusError } from "./http";
+import { uploadFile } from "./upload";
 
 /**
  * Sesli Rehber's two API calls: a recording to text (`POST /voice/transcribe`) and an answer to
@@ -33,7 +33,11 @@ export async function transcribe(uri: string, signal?: AbortSignal): Promise<str
     if (status === 401) sessionRejected(token);
     return voiceError(status, code, details);
   };
-  if (Platform.OS !== "web") return uploadRecording(uri, url, token, errorFor, signal);
+  if (Platform.OS !== "web") {
+    // The phone's recorder writes .m4a (AAC in MP4).
+    const result = await uploadFile(uri, url, VoiceTranscriptionResponseSchema, { type: "audio/mp4", token, errorFor, timeoutMs: TRANSCRIBE_TIMEOUT_MS, signal });
+    return result.text;
+  }
   let audio: Blob;
   try {
     audio = await (await fetch(uri)).blob();
@@ -52,61 +56,6 @@ export async function transcribe(uri: string, signal?: AbortSignal): Promise<str
   return result!.text;
 }
 
-/**
- * A phone's recording, sent straight from its file: React Native's `fetch` cannot read a local
- * file into a request body (Android answers "File not found"), the file system's upload can.
- */
-async function uploadRecording(
-  uri: string,
-  url: string,
-  token: string,
-  errorFor: (status: number, code: string | null, details: string[]) => DataError,
-  signal?: AbortSignal,
-): Promise<string> {
-  const file = new File(uri.startsWith("/") ? `file://${uri}` : uri);
-  if (!file.exists || file.size === 0) throw new DataError("rejected", "Kayıt okunamadı. Tekrar dene ya da yazarak sor.", [uri]);
-  const controller = new AbortController();
-  let timedOut = false;
-  const timer = setTimeout(() => {
-    timedOut = true;
-    controller.abort();
-  }, TRANSCRIBE_TIMEOUT_MS);
-  const cancel = () => controller.abort();
-  if (signal?.aborted) cancel();
-  signal?.addEventListener("abort", cancel);
-  let result: { status: number; body: string };
-  try {
-    // The phone's recorder writes .m4a (AAC in MP4).
-    result = await file.upload(url, {
-      headers: { Accept: "application/json", Authorization: `Bearer ${token}`, "Content-Type": "audio/mp4" },
-      mimeType: "audio/mp4",
-      sessionType: "foreground",
-      signal: controller.signal,
-    });
-  } catch (error) {
-    if (signal?.aborted) throw new DataError("unavailable", "İstek iptal edildi.", [url]);
-    if (timedOut) throw new DataError("unavailable", "Sunucu zamanında cevap vermedi. Biraz sonra tekrar dene.", [url]);
-    throw new DataError("unavailable", "Sunucuya ulaşılamıyor. İnternet bağlantını kontrol edip tekrar dene.", [url, String(error)]);
-  } finally {
-    clearTimeout(timer);
-    signal?.removeEventListener("abort", cancel);
-  }
-  let body: unknown = null;
-  try {
-    body = JSON.parse(result.body);
-  } catch {
-    // Not our API's JSON; handled below.
-  }
-  if (result.status < 200 || result.status >= 300) {
-    const code = (body as { error?: { code?: unknown } } | null)?.error?.code;
-    const known = typeof code === "string" ? code : null;
-    throw errorFor(result.status, known, [`${result.status} ${known ?? ""} ${url}`.trim()]);
-  }
-  if (body === null) throw new DataError("unavailable", "Sunucuya ulaşılamıyor. Wi-Fi giriş sayfası açıksa önce oturum aç.", [url]);
-  const parsed = VoiceTranscriptionResponseSchema.safeParse(body);
-  if (!parsed.success) throw DataError.fromSchema("Sunucudan gelen veri", parsed.error);
-  return parsed.data.text;
-}
 
 /**
  * Where a player gets `text` read aloud. A phone's player streams the address itself with the
