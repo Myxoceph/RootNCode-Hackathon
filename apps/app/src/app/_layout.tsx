@@ -85,6 +85,8 @@ function ThemedStack() {
           <Stack.Screen name="assistant" options={{ headerShown: false, title: "Asistan" }} />
           <Stack.Screen name="assistant-history" options={{ title: "Geçmiş konuşmalar", headerBackTitle: "Rehber" }} />
           <Stack.Screen name="map-prototype" options={{ headerShown: false, title: "Harita prototipi" }} />
+          {/* The admin panel draws its own frame (side bar and pages). */}
+          <Stack.Screen name="admin" options={{ headerShown: false, title: "Yönetim paneli" }} />
           <Stack.Screen name="+not-found" options={{ title: "Sayfa bulunamadı" }} />
         </Stack>
       </OfflineBanner>

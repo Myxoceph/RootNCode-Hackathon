@@ -12,8 +12,8 @@ export interface RequestOptions {
   body?: unknown;
   /** Sent as it is in a POST, e.g. a voice recording; in place of `body`. */
   rawBody?: { data: Blob; type: string };
-  /** Only for a request without a body that is not a GET (`DELETE`, or a `POST` with nothing to send). */
-  method?: "POST" | "DELETE";
+  /** A request without a body that is not a GET (`DELETE`, or a `POST` with nothing to send), or a `PATCH` with one. */
+  method?: "POST" | "PUT" | "DELETE" | "PATCH";
   /** Sent as `Authorization: Bearer <token>`. */
   token?: string;
   /** The error for an answer that is not 2xx; `statusError` by default. */

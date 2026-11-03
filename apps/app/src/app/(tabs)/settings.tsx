@@ -440,6 +440,7 @@ function Sections() {
   const sealed = useUnlockedAssets();
   const badges = useMyAchievements();
   const notes = useMyContributions();
+  const { user } = useCommunity();
   const badgeData = badges.status === "success" ? badges.data : null;
   const noteCount = notes.status === "success" && notes.data ? notes.data.length : null;
 
@@ -454,6 +455,10 @@ function Sections() {
     },
     { href: "/profile/notes", icon: "chatbubble-ellipses-outline", title: "Bıraktığım Notlar", value: noteCount ? String(noteCount) : null },
     { href: "/profile/settings", icon: "settings-outline", title: "Sistem ayarları", value: null },
+    // Only moderators and admins: the panel the API lets them use.
+    ...(user?.role === "admin" || user?.role === "moderator"
+      ? [{ href: "/admin" as Href, icon: "shield-half-outline" as IconName, title: "Yönetim paneli", value: null }]
+      : []),
   ];
 
   return (
