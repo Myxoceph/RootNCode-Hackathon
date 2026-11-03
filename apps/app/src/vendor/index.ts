@@ -16,6 +16,9 @@ function once<T>(key: string, load: () => Promise<T>): () => Promise<T> {
 
 export const loadMindar = once("mindar", () => import("./mindar.generated").then((m) => m.mindarScript));
 
+/** The app's heading font, Marcellus, for the text the AR page draws over an inscription (base64 TrueType). */
+export const loadOverlayFont = once("overlay-font", () => import("./overlay-font.generated").then((m) => m.overlayFontBase64));
+
 export const loadMaplibre = once("maplibre", () =>
   import("./maplibre.generated").then((m) => ({ script: m.maplibreScript, css: m.maplibreCss })),
 );
