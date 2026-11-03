@@ -10,10 +10,11 @@ import Svg, { Circle, Defs, LinearGradient, Rect, Stop } from "react-native-svg"
 
 import { AssetImage } from "@/components/asset-image";
 import { formatClock } from "@/content/routes";
+import { RouteAdvice } from "@/components/saved-advice";
 import { announce } from "@/lib/announce";
 import { bottomInset } from "@/lib/bottom-inset";
 import { inkFor } from "@/lib/route-ink";
-import { removeRoute, useSavedRoutes, type TripRoute } from "@/lib/saved-routes";
+import { removeRoute, routeKey, useSavedRoutes, type TripRoute } from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -73,6 +74,7 @@ export default function SavedTripScreen() {
           {trip.trip.days.map((day) => (
             <Day key={day.day} day={day} multiDay={trip.trip.days.length > 1} />
           ))}
+          <RouteAdvice routeKey={routeKey(trip)} />
           {/* The API's note is about walking times, which this page leaves out. */}
           <Text variant="caption" color="textSecondary" style={styles.note}>
             Yürüme mesafeleri kuş uçuşu mesafeden tahmin edilmiştir.

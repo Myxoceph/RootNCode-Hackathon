@@ -56,7 +56,7 @@ export default function NoteScreen() {
 
 function useLeave() {
   const router = useRouter();
-  return () => (router.canGoBack() ? router.back() : router.replace("/"));
+  return () => (router.canGoBack() ? router.back() : router.replace("/map"));
 }
 
 function BackButton() {

@@ -77,7 +77,7 @@ export default function VisitSealScreen() {
 
   let body;
   if (asset && unlocked) {
-    body = <Sealed asset={asset} result={{ verified: false, firstVisit: true, newAchievements: [] }} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/"))} />;
+    body = <Sealed asset={asset} result={{ verified: false, firstVisit: true, newAchievements: [] }} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/map"))} />;
   } else if (alreadyOpen) {
     body = (
       <View style={styles.center}>

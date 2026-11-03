@@ -154,7 +154,7 @@ export default function AssistantScreen() {
     stopAnswer();
     setStatus("Yanıt hazırlanıyor.");
     announce("Yanıt hazırlanıyor.");
-    const response = await ask(key, question, asset, { spoken });
+    const response = await ask(key, question, asset, name, { spoken });
     if (response) {
       const plain = answerParts(response.answer, response.citations)
         .map((part) => (part.kind === "text" ? part.text : ""))

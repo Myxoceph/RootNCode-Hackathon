@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 type Routes = typeof import("../src/lib/saved-routes");
+type ChatResponse = import("@vagabonds/contracts").ChatResponse;
 type Unlocked = typeof import("../src/lib/unlocked-assets");
 
 const API = "http://api.test";
@@ -56,6 +57,50 @@ beforeEach(async () => {
 });
 
 describe("saved routes", () => {
+  const answer = (over: object) =>
+    ({ answer: "Etli ekmek **denenmeli** [1].", citations: [], attachments: { trip: null, transit: null }, ...over }) as unknown as ChatResponse;
+  const place = { name: "Konya Garı", lat: 37, lng: 32, stopCode: null };
+  const plan = (itineraries: object[]) => ({ from: place, to: { ...place, name: "Mevlana Müzesi", assetId: "mevlana" }, itineraries });
+  const dish = { ref: 1, kind: "dish", id: "etli-ekmek", title: "Etli ekmek" };
+
+  it("keeps the dishes an answer cites, once each, without its markers", () => {
+    const [food, ...rest] = routes.adviceOf("Ne yenir?", answer({ citations: [dish, { ...dish, ref: 2 }, { ref: 3, kind: "asset", id: "a", title: "Ulucami" }] }));
+    expect(rest).toEqual([]);
+    expect(food).toEqual({ kind: "food", title: "Etli ekmek", question: "Ne yenir?", answer: "Etli ekmek denenmeli.", dishes: [{ id: "etli-ekmek", title: "Etli ekmek" }], about: null });
+  });
+
+  it("keeps directions only when a bus or tram helps, and nothing of a trip", () => {
+    expect(routes.adviceOf("Nasıl?", answer({ attachments: { trip: null, transit: plan([]) } }))).toEqual([]);
+    expect(routes.adviceOf("Nasıl?", answer({ attachments: { trip: null, transit: plan([{}]) } }))[0]).toMatchObject({ kind: "transit", title: "Konya Garı → Mevlana Müzesi" });
+    expect(routes.adviceOf("Plan?", answer({ citations: [dish], attachments: { trip: {}, transit: null } }))).toEqual([]);
+  });
+
+  it("ties an answer to the route planned before it, in that route's city", () => {
+    const trip = (code: string) => ({ city: { code, label: code === "konya" ? "Konya" : "Bursa" }, duration: "half", theme: null, days: [{ date: "2026-11-03" }] }) as never;
+    const food = (id: string) => answer({ citations: [{ ...dish, id }] });
+    expect(routes.adviceOf("Ne yenir?", food("konya-etliekmek"), { trips: [trip("bursa"), trip("konya")] })[0]?.about).toEqual({ kind: "route", key: "trip|konya|half||2026-11-03", title: "Konya gezi planı" });
+    expect(routes.adviceOf("Konya'da ne yenir?", food("konya-etliekmek"), { trips: [trip("bursa")] })[0]?.about).toBeNull();
+    expect(routes.adviceOf("Nasıl?", answer({ attachments: { trip: null, transit: plan([{}]) } }), { trips: [trip("bursa")] })[0]?.about).toBeNull();
+    expect(routes.adviceOf("Yakında ne yenir?", food("konya-etliekmek"), { asset: { id: "a1", name: "Ulucami" }, trips: [trip("konya")] })[0]?.about).toEqual({ kind: "asset", key: "a1", title: "Ulucami" });
+  });
+
+  it("reads a food answer as a menu, and plain words as words", () => {
+    expect(routes.menuOf("Iki önerim var:\n\n- Pideli Köfte: yoğurtla sunulur\n- Kestane\n\nAfiyet olsun.")).toEqual({
+      intro: "Iki önerim var:",
+      dishes: [{ name: "Pideli Köfte", text: "Yoğurtla sunulur" }, { name: "Kestane", text: "" }],
+      outro: "Afiyet olsun.",
+    });
+    expect(routes.menuOf("Etli ekmek denenmeli.")).toEqual({ intro: "Etli ekmek denenmeli.", dishes: [], outro: "" });
+  });
+
+  it("names each kind of entry apart, and a planner route as before", () => {
+    expect(routes.routeKey({ kind: "planner", region: "bursa", duration: "half", dishes: ["b", "a"] } as never)).toBe("bursa|half|a+b");
+    expect(routes.routeKey({ region: "bursa", duration: "half", dishes: ["a", "b"] })).toBe("bursa|half|a+b");
+    expect(routes.routeKey({ kind: "food", dishes: [{ id: "b", title: "B" }, { id: "a", title: "A" }] })).toBe("food||a|b");
+    expect(routes.routeKey({ kind: "transit", transit: plan([]) as never })).toBe("transit||Konya Garı|mevlana");
+    expect(routes.routeKey({ kind: "food", dishes: [{ id: "a", title: "A" }], about: { kind: "route", key: "trip|bursa", title: "Bursa" } })).toBe("food|trip|bursa|a");
+  });
+
   it("come from the account, and a new one is sent there", async () => {
     const calls = fakeApi({ "GET /me/routes": { version: "0.3.21", items: [] } });
     // Rehber saves a trip before Rotalarım was ever opened: the account's list is loaded first.

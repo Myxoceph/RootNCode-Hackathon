@@ -892,6 +892,7 @@ function start() {
       revealLabels();
       lockToTurkey();
     }
+    if (provinces.city) showCity(provinces.city);
   }
 
   /** Where each province's name goes: a point inside it, from the data. */
@@ -989,6 +990,7 @@ function start() {
     showCitySelection();
     // Lighter over the open streets, so the clouds over the assets stand out; it thins as the map
     // zooms out and is gone, the province names back, by the Turkey view.
+    if (shown) endIntroNow();
     if (shown) wholeZoom = map.cameraForBounds(provinceBounds(plate), { padding: cityPadding() }).zoom;
     const names = labelsRevealed ? 1 : 0;
     map.setPaintProperty("province-names", "text-opacity", shown ? ["interpolate", ["linear"], ["zoom"], outerZoom() + LEAVE_ROOM, names, outerZoom() + LEAVE_ROOM + 0.75, 0] : names);
@@ -2323,6 +2325,22 @@ function start() {
 
   function mix(a, b, t) {
     return a.map((channel, i) => Math.round(channel + (b[i] - channel) * t));
+  }
+
+  /**
+   * A city asked for during the opening (from Ana Sayfa, or a link): the fog goes at once and the
+   * map is as the opening leaves it, or the opening's own camera would pull the flight back to Turkey.
+   */
+  function endIntroNow() {
+    if (!intro) return;
+    intro = null;
+    map.stop();
+    map.jumpTo({ pitch: 0, bearing: 0, ...(turkeyView ? { center: turkeyView.center, zoom: turkeyView.zoom } : {}) });
+    map.setPaintProperty("province-borders", "line-opacity", 1);
+    map.setPaintProperty("province-lines", "line-opacity", 1);
+    revealLabels();
+    lockToTurkey();
+    animate();
   }
 
   function drawIntro(now, width, height) {

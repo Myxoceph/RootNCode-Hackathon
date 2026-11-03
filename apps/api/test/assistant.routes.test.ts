@@ -236,9 +236,16 @@ describe.skipIf(!DATABASE_URL)("assistant routes (PostgreSQL, scripted model)", 
       call("weather", { city: "bursa" }, "c"),
       answer("Hava bilgisine ulaşılamadı."),
     ]);
-    await chat(appWith(model), { message: "Hava nasıl?" });
+    await chat(appWith(model), { message: "Bursa nasıl bir yer?" });
     const all = TOOL_SPECS.length;
     expect(calls.map((c) => c.tools.length)).toEqual([all, all, all, 0]);
+  });
+
+  it("offers no trip plan to a question about lunch on a route", async () => {
+    const { model, calls } = scriptedModel([answer("Öğle için bir öneri.")]);
+    const response = await chat(appWith(model), { message: "Bu rotada öğle yemeği için ne önerirsin?" });
+    expect(calls[0]?.tools.map((tool) => tool.name)).not.toContain("plan_trip");
+    expect(response.statusCode, response.body).toBe(200);
   });
 
   it("gives the model the page's asset, and leaves old markers out of the history", async () => {

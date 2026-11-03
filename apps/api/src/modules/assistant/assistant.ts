@@ -32,8 +32,26 @@ export function systemPrompt(lang: Lang, today: string, cities: string[]): strin
     "8. Gezi isteğinde plan_trip'i kullan; uygulama planın tamamını saatleriyle ayrıca gösterir, sen yalnızca 2-3 cümleyle özetle (hangi eserler, hava, öğle yemeği); durakları tek tek sayma.",
     "9. Erişilebilirlik (tekerlekli sandalye, rampa, tuvalet) için yalnızca kayıttaki değeri söyle; 'unknown' ise yalnızca bu konuda bilgi olmadığını söyle ve dur. Tahmin etme; kayıtta olmayan bir öneri, kurum ya da kişi (\"müdürlüğe sorun\", \"önceden arayın\" gibi) ekleme.",
     "10. Konya'da bir yere nasıl gidileceği sorulursa transit_route'u kullan (önce search_assets ile eserin id'sini bul). Başlangıç ziyaretçinin konumu (current), konya-gari, selcuklu-yht-gari, konya-otogari ya da bir eser olabilir. Uygulama rotayı haritada ayrıca gösterir; sen 2-3 cümleyle hangi hatta nereden binip nerede inileceğini ve saatleri söyle. Toplu taşıma rotası şimdilik yalnızca Konya'da (pilot); başka ilde bunu söyle. Ziyaretçi havalimanından geliyorsa belediye tarifesinde havalimanı hattı olmadığını söyle; taksiyle Otogar tramvay durağına ya da doğrudan esere gitmesini öner, istersen oradan konya-otogari ile rota ver. Taksi ücreti ya da süresi uydurma.",
+    "11. Ziyaretçi bir rota ya da gezi planı hakkında yemek, ulaşım ya da hava soruyorsa yeni plan yapma, sorusunu cevapla: yemek için city_dishes, hava için weather, ulaşım için transit_route. Hangi il olduğunu önceki konuşmadan anla.",
     `Bugünün tarihi: ${today}. Cevap dili: ${LANGUAGE_NAME[lang]}.`,
   ].join("\n");
+}
+
+/** Words that ask for a plan to be made or changed, even in a question that also names food or the weather. */
+const ASKS_FOR_PLAN =
+  /planla|plan (yap|çıkar|hazırla|öner|oluştur)|plan(ı|ımı)? (değiştir|yenile)|rota(yı|mı|sı)? (çiz|oluştur|yap|öner|planla|değiştir|kısalt|uzat)|make a plan|plan (a|my|the)\b|itinerary/;
+/** Food, getting around and the weather: what a visitor asks about on a route, in Turkish and English. */
+const ASKS_ABOUT_DETAIL =
+  /yem(ek|eğ)|yenir|yiye|yesem|yemeli|lezzet|kahvaltı|tatlı|restoran|lokanta|acıktım|toplu taşıma|otobüs|tramvay|metro|nasıl gid|ulaşım|(^|[^a-zçğıöşü])hava(sı|da|nın)?($|[^a-zçğıöşü])|yağmur|\b(food|eat|lunch|dinner|restaurant|bus|tram|transit|weather|rain)\b|how do i get/;
+
+/**
+ * Whether this question may produce a trip plan. "Bu rotada öğle yemeği için ne önerirsin?" is about
+ * lunch: a model reading "rota" plans the trip again, and the app shows a plan as its card alone,
+ * so the answer would be lost. Such a question gets no `plan_trip`, whatever the model would choose.
+ */
+export function mayPlanTrip(message: string): boolean {
+  const asked = message.toLocaleLowerCase("tr");
+  return ASKS_FOR_PLAN.test(asked) || !ASKS_ABOUT_DETAIL.test(asked);
 }
 
 /**
@@ -139,13 +157,14 @@ export async function ask(
   }
   messages.push({ role: "user", content: message });
 
+  const toolSpecs = mayPlanTrip(message) ? TOOL_SPECS : TOOL_SPECS.filter((tool) => tool.name !== "plan_trip");
   let calls = 0;
   let trip: TripPlanResponse | null = null;
   let transit: TransitPlanResponse | null = null;
   let text: string | null;
   for (;;) {
     const toolsLeft = calls < MAX_TOOL_CALLS;
-    const reply = await model.complete(messages, toolsLeft ? TOOL_SPECS : [], signal);
+    const reply = await model.complete(messages, toolsLeft ? toolSpecs : [], signal);
     if (reply.toolCalls.length === 0 || !toolsLeft) {
       text = reply.content;
       break;

@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { AssetSummarySchema, ContractVersionSchema, LabeledCodeSchema, LangSchema } from "./asset.schema";
+import { TransitPlanResponseSchema } from "./transit.schema";
 import { CityDishSchema } from "./gastronomy.schema";
 
 /**
@@ -209,8 +210,25 @@ const savedRouteFields = {
 };
 
 /**
- * A route the user kept (Profil · Rotalarım), saved to their account so it follows them to every
- * device: a route built in the planner, or a trip Rehber planned, kept as it was planned.
+ * What a kept Rehber answer was asked about: the route planned earlier in the conversation (its
+ * `key` names the saved route) or the asset whose page it was asked from.
+ */
+export const SavedAnswerAboutSchema = z.strictObject({
+  kind: z.enum(["route", "asset"]),
+  key: z.string().min(1).max(300),
+  title: z.string().min(1).max(120),
+});
+
+const savedAnswerFields = {
+  question: z.string().min(1).max(500),
+  answer: z.string().min(1).max(10_000),
+  about: SavedAnswerAboutSchema.nullable().default(null),
+};
+
+/**
+ * What the user kept (Profil · Kaydettiklerim), saved to their account so it follows them to every
+ * device: a route built in the planner, a trip Rehber planned, or Rehber's food suggestion or
+ * transport directions, each kept as it was given.
  */
 export const SavedRouteSchema = z.discriminatedUnion("kind", [
   z.strictObject({
@@ -228,6 +246,28 @@ export const SavedRouteSchema = z.discriminatedUnion("kind", [
     trip: TripPlanResponseSchema,
     savedAt: z.iso.datetime(),
   }),
+  /** Rehber's food suggestion: what was asked, the answer without its markers and the dishes it names. */
+  z.strictObject({
+    kind: z.literal("food"),
+    id: SavedRouteIdSchema,
+    title: savedRouteFields.title,
+    question: savedAnswerFields.question,
+    answer: savedAnswerFields.answer,
+    about: savedAnswerFields.about,
+    dishes: z.array(z.strictObject({ id: z.string().min(1), title: z.string().min(1) })).min(1).max(50),
+    savedAt: z.iso.datetime(),
+  }),
+  /** Rehber's public transport directions, as they were given. */
+  z.strictObject({
+    kind: z.literal("transit"),
+    id: SavedRouteIdSchema,
+    title: savedRouteFields.title,
+    question: savedAnswerFields.question,
+    answer: savedAnswerFields.answer,
+    about: savedAnswerFields.about,
+    transit: TransitPlanResponseSchema,
+    savedAt: z.iso.datetime(),
+  }),
 ]);
 
 /**
@@ -239,6 +279,8 @@ export const SaveRouteRequestSchema = z.strictObject({
   route: z.discriminatedUnion("kind", [
     SavedRouteSchema.options[0].omit({ savedAt: true }),
     SavedRouteSchema.options[1].omit({ savedAt: true }),
+    SavedRouteSchema.options[2].omit({ savedAt: true }),
+    SavedRouteSchema.options[3].omit({ savedAt: true }),
   ]),
 });
 
@@ -265,6 +307,7 @@ export type RouteThemeKind = z.infer<typeof RouteThemeKindSchema>;
 export type VisitSetting = z.infer<typeof VisitSettingSchema>;
 export type RouteStop = z.infer<typeof RouteStopSchema>;
 export type RoutePlanResponse = z.infer<typeof RoutePlanResponseSchema>;
+export type SavedAnswerAbout = z.infer<typeof SavedAnswerAboutSchema>;
 export type SavedRoute = z.infer<typeof SavedRouteSchema>;
 export type SaveRouteRequest = z.infer<typeof SaveRouteRequestSchema>;
 export type SavedRoutesResponse = z.infer<typeof SavedRoutesResponseSchema>;

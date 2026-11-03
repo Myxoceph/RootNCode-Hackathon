@@ -35,8 +35,8 @@ function toSavedRoute(record: SavedRouteRecord): SavedRoute | null {
 }
 
 /**
- * Profil · Rotalarım (`/me/routes`): the routes the user kept, on their account, so every device
- * shows the same list and another account on the same phone shows its own.
+ * Profil · Kaydettiklerim (`/me/routes`): the routes and Rehber answers the user kept, on their
+ * account, so every device shows the same list and another account on the same phone shows its own.
  */
 export const savedRoutesRoutes: FastifyPluginAsync<SavedRoutesRoutesOptions> = async (app, { repository, community }) => {
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
