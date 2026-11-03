@@ -149,6 +149,10 @@ function CityAssetCard({ asset, buildings, width, chosen, opened, colors, onSele
       accessibilityRole="link"
       accessibilityLabel={label}
       accessibilityHint="Eserin hikâyesini ve bilgilerini açar"
+      // The chosen card is the one the buttons under the search are for.
+      accessibilityState={{ selected: chosen }}
+      // The web has no "selected" for a link: the chosen card is the current one there.
+      aria-current={chosen ? "true" : undefined}
       accessibilityActions={actions}
       onAccessibilityAction={({ nativeEvent }) => {
         if (nativeEvent.actionName === "select") onSelect();

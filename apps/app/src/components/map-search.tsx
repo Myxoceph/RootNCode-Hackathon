@@ -103,7 +103,8 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
 
   return (
     <>
-      {open && <Pressable accessibilityLabel="Aramayı kapat" onPress={close} style={[StyleSheet.absoluteFill, styles.dim]} />}
+      {/* A tap beside the search closes it; screen readers have its "Kapat" for that. */}
+      {open && <Pressable onPress={close} accessible={false} aria-hidden accessibilityElementsHidden importantForAccessibility="no" style={[StyleSheet.absoluteFill, styles.dim]} />}
       <View style={[styles.wrap, { top }]}>
         <View style={[styles.field, shadow, { backgroundColor: c.surface, borderColor: open ? GOLD : c.surface }]}>
           {city ? (
@@ -137,6 +138,7 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
             placeholder={placeholder}
             placeholderTextColor={c.textSecondary}
             accessibilityLabel={placeholder}
+            accessibilityHint={city ? "Odaklanınca öne çıkan eserler listelenir" : "Şehir seçmek için odaklan; şehirler ve eserler listelenir"}
             returnKeyType="search"
             autoCorrect={false}
             autoCapitalize="none"
@@ -151,7 +153,20 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
               <Ionicons name="close-circle" size={20} color={c.textSecondary} />
             </Pressable>
           )}
-          {!open && trailing}
+          {open ? (
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Kapat"
+              accessibilityHint="Aramayı kapatır"
+              onPress={close}
+              hitSlop={4}
+              style={({ pressed }) => [styles.closeButton, { backgroundColor: c.surfaceRaised }, pressed && styles.pressed]}
+            >
+              <Text variant="label">Kapat</Text>
+            </Pressable>
+          ) : (
+            trailing
+          )}
         </View>
 
         {!open && below}
@@ -337,6 +352,13 @@ const styles = StyleSheet.create({
     minHeight: touchTarget.min,
     fontFamily: fontFamily.sans,
     paddingVertical: 0,
+  },
+  closeButton: {
+    minHeight: touchTarget.min,
+    paddingHorizontal: spacing.md,
+    borderRadius: radius.full,
+    alignItems: "center",
+    justifyContent: "center",
   },
   clear: {
     width: touchTarget.min - 8,

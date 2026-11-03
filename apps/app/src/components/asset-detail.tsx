@@ -713,7 +713,8 @@ function Experiences({ asset }: { asset: AssetDetail }) {
       icon: playing ? "pause-outline" : "musical-notes-outline",
       title: playing ? "Durdur" : "Sesini dinle",
       hint,
-      spoken: playing ? "Ses kapsülünü durdur" : `${capsules[capsuleType].name} ses kapsülünü çal`,
+      // The words on the row come first, so voice control finds it by what it shows (WCAG 2.5.3).
+      spoken: playing ? "Durdur: ses kapsülü" : `Sesini dinle: ${capsules[capsuleType].name} ses kapsülü`,
       onPress: () => toggleCapsule(capsuleType),
       on: !!playing,
     });
@@ -724,7 +725,7 @@ function Experiences({ asset }: { asset: AssetDetail }) {
       icon: describing ? "stop-outline" : "ear-outline",
       title: describing ? "Durdur" : "Sesli betimle",
       hint: "Mekânı gözünü kapatıp dinle",
-      spoken: describing ? "Sesli betimlemeyi durdur" : "Mekânı sesli betimle",
+      spoken: describing ? "Durdur: sesli betimleme" : "Sesli betimle: mekânı gözünü kapatıp dinle",
       onPress: () => {
         if (describing) stopAnswer();
         else void speakAnswer(descriptionKey, description);
@@ -738,7 +739,7 @@ function Experiences({ asset }: { asset: AssetDetail }) {
     actions.push({ key: "stone", icon: "camera-outline", title: "Taşa Sor", hint, spoken: `Taşa Sor: ${hint}`, href: { pathname: "/stone-ask", params: { asset: asset.id, name: asset.name } } });
   }
   // Always offered: when no model answers, the assistant's screen says it is closed for now.
-  actions.push({ key: "ask", icon: "sparkles-outline", title: "Sor", hint: "Asistan kaynağıyla cevaplar", spoken: `Bu eser hakkında sor: ${asset.name}, asistanı açar`, href: { pathname: "/assistant", params: { asset: asset.id, name: asset.name } } });
+  actions.push({ key: "ask", icon: "sparkles-outline", title: "Sor", hint: "Asistan kaynağıyla cevaplar", spoken: `Sor: ${asset.name} hakkında asistan kaynağıyla cevaplar`, href: { pathname: "/assistant", params: { asset: asset.id, name: asset.name } } });
   return (
     <View style={styles.rows}>
       {actions.map((action) => (

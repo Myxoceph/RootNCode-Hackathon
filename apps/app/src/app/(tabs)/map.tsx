@@ -1,5 +1,5 @@
 import type { AssetSummary } from "@vagabonds/contracts";
-import { spacing } from "@vagabonds/ui";
+import { spacing, Text } from "@vagabonds/ui";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
@@ -208,6 +208,13 @@ export default function MapScreen() {
     if (!tour.onUnlock(id)) router.push({ pathname: "/visit-seal", params: { asset: id } });
   }
 
+  /** The visitor chose an asset (on the map, in the cards or the search): its buttons under the search are for it now, and that is said once. */
+  function chooseAsset(id: string) {
+    setChosenAsset(id);
+    const name = located.find(({ asset }) => asset.id === id)?.asset.name;
+    if (name && id !== chosenAsset) announce(`${name} seçildi.`);
+  }
+
   function openAssetCard(asset: AssetSummary) {
     router.push({ pathname: "/monuments/[id]", params: { id: asset.id } });
   }
@@ -222,7 +229,7 @@ export default function MapScreen() {
     if (!asset.coordinates || plate === null) return openAssetCard(asset);
     if (plate === selectedPlate) {
       const place = placeOf(asset);
-      if (place) setChosenAsset(place);
+      if (place) chooseAsset(place);
       else openAssetCard(asset);
       return;
     }
@@ -234,7 +241,7 @@ export default function MapScreen() {
     setLandedPlate(plate);
     if (!pendingAsset || plate !== selectedPlate) return;
     const place = placeOf(pendingAsset);
-    if (place) setChosenAsset(place);
+    if (place) chooseAsset(place);
     else openAssetCard(pendingAsset);
     setPendingAsset(null);
   }
@@ -308,12 +315,16 @@ export default function MapScreen() {
       <Head>
         <title>{selectedCity ? `${selectedCity.label} · Harita · Vagabonds` : "Harita · Vagabonds"}</title>
       </Head>
+      {/* The map has no heading to see; screen readers start here. */}
+      <Text headingLevel={1} style={styles.unseen}>
+        {selectedCity ? `Harita, ${selectedCity.label}` : "Harita, Türkiye"}
+      </Text>
       <MapLibreMap
         pins={NO_PINS}
         selectedId={selectedCity ? chosenAsset : null}
         onSelect={(id) => {
           if (!id) return;
-          setChosenAsset(id);
+          chooseAsset(id);
           tour.onAssetTapped(!unlocked.has(id));
         }}
         onSelectProvince={openCity}
@@ -342,6 +353,29 @@ export default function MapScreen() {
         accessibilityElementsHidden={controlsHidden}
         importantForAccessibility={controlsHidden ? "no-hide-descendants" : "auto"}
       >
+        {/* First in reading order, as on the screen; the tour's step bar takes its place while it plays. */}
+        {!tour.step && (
+          <View style={[StyleSheet.absoluteFill, styles.over]} pointerEvents="box-none">
+            <MapSearch
+              city={selectedCity}
+              cities={withAssets}
+              top={insets.top + spacing.sm}
+              onBack={backToTurkey}
+              onPickCity={openCity}
+              onPickAsset={pickAsset}
+              notice={notice}
+              trailing={
+                <MapTourReplayButton
+                  onPress={() => {
+                    setTourSpots(null);
+                    tour.replay();
+                  }}
+                />
+              }
+              below={chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null}
+            />
+          </View>
+        )}
         {cardsShown && (
           <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
             <CityAssetCards
@@ -351,33 +385,12 @@ export default function MapScreen() {
               unlocked={shownOpen}
               onUnlock={unlockAsset}
               onSelect={(id) => {
-                setChosenAsset(id);
+                chooseAsset(id);
                 // A card counts as a tap for the tour: the map then offers "Kilidini aç" over it.
                 tour.onAssetTapped(!unlocked.has(id));
               }}
             />
           </View>
-        )}
-        {/* The tour's step bar takes the search bar's place while it plays. */}
-        {!tour.step && (
-          <MapSearch
-            city={selectedCity}
-            cities={withAssets}
-            top={insets.top + spacing.sm}
-            onBack={backToTurkey}
-            onPickCity={openCity}
-            onPickAsset={pickAsset}
-            notice={notice}
-            trailing={
-              <MapTourReplayButton
-                onPress={() => {
-                  setTourSpots(null);
-                  tour.replay();
-                }}
-              />
-            }
-            below={chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null}
-          />
         )}
         {!selectedCity && <MapCityButtons cities={withAssets} bottom={tabBarHeight + spacing.sm} onOpen={openCity} />}
       </Animated.View>
@@ -391,6 +404,18 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     overflow: "hidden",
+  },
+  unseen: {
+    position: "absolute",
+    width: 1,
+    height: 1,
+    overflow: "hidden",
+    opacity: 0,
+  },
+  /** The search over the cards, its list too. */
+  over: {
+    zIndex: 2,
+    elevation: 2,
   },
   cards: {
     position: "absolute",
