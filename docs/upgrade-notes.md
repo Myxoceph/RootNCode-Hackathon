@@ -7,6 +7,19 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-03 · Üst üste binen eserler: hanların mescitleri ve bitişik yapılar bağlandı
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import` (21 kayda `parent_id` eklendi, 5'inin noktası değişti).
+
+Değişenler:
+- Han mescitleri hanlarına, avludaki kümbetler camiye, çeşmeler ve türbeler bitişiğindeki camiye ya da medreseye
+  bağlandı; harita onları ana eserin kartında gösteriyor.
+- Haritada birbirine bağlı olmayan ve 25 metreden yakın eserler en az 30 metre ayrılarak çiziliyor (`src/map/spread.ts`).
+
+---
+
 ## 2026-11-04 · Taşa Sor (sözleşme 0.3.24)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **demoyu açan**, **uygulama ekibi**
