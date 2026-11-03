@@ -31,6 +31,8 @@ import { savedRoutesRoutes } from "./modules/planner/saved-routes.routes.ts";
 import type { TransitPlanner } from "./modules/transit/otp.client.ts";
 import { createTransitRepository } from "./modules/transit/transit.repository.ts";
 import { transitRoutes } from "./modules/transit/transit.routes.ts";
+import type { VisionClient } from "./modules/vision/vision.client.ts";
+import { visionRoutes } from "./modules/vision/vision.routes.ts";
 import type { VoiceClient } from "./modules/voice/voice.client.ts";
 import { voiceRoutes } from "./modules/voice/voice.routes.ts";
 import type { WeatherService } from "./modules/weather/weather.service.ts";
@@ -62,6 +64,8 @@ export interface BuildAppOptions {
   transitPlanner?: TransitPlanner | null;
   /** Speech-to-text and text-to-speech behind Sesli Rehber (`POST /voice/*`); without it they answer 503. */
   voice?: VoiceClient | null;
+  /** The vision model behind Taşa Sor (`POST /vision/ask`); without it the route answers 503. */
+  vision?: VisionClient | null;
 }
 
 const NO_WEATHER: WeatherService = { current: async () => null, forecast: async () => null };
@@ -86,6 +90,7 @@ export function buildApp({
   assistantModel = null,
   transitPlanner = null,
   voice = null,
+  vision = null,
   photoUrls = createPhotoUrls(),
 }: BuildAppOptions): FastifyInstance {
   const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
@@ -126,13 +131,15 @@ export function buildApp({
     planner: transitPlanner,
     repository: createTransitRepository(prisma, visibleStatuses(assetVisibility)),
   });
+  const assistantRepository = createAssistantRepository(prisma, assetVisibility);
   app.register(assistantRoutes, {
     model: assistantModel,
-    repository: createAssistantRepository(prisma, assetVisibility),
+    repository: assistantRepository,
     community: communityRepository,
     conversations: createConversationsRepository(prisma),
   });
   app.register(voiceRoutes, { client: voice, community: communityRepository });
+  app.register(visionRoutes, { client: vision, community: communityRepository, repository: assistantRepository });
 
   return app;
 }

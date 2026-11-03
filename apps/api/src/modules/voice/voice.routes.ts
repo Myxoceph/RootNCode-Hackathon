@@ -16,6 +16,7 @@ import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import { requireAccount } from "../assistant/assistant.routes.ts";
 import type { CommunityRepository } from "../community/community.repository.ts";
+import { hedge } from "../../lib/hedge.ts";
 import { sayNumbers } from "./spoken-numbers.ts";
 import { VoiceError, type VoiceClient } from "./voice.client.ts";
 
@@ -30,53 +31,13 @@ export const VOICE_HEDGE_MS = [0, 2_500, 6_000];
 /** All calls end by then: under the app's 20 s wait. */
 export const VOICE_DEADLINE_MS = 17_000;
 
-/**
- * `call` sent once at each of `starts`, unless an earlier one has answered: the first answer
- * wins and the others are cancelled. A call that fails sends the next one at once. Fails with
- * the last provider error when all failed or the deadline passed; an error that is not the
- * provider's is thrown at once.
- */
+/** `hedge` with the voice provider's timings; only its failures are tried again. */
 export function hedged<T>(
   call: (signal: AbortSignal) => Promise<T>,
   starts: number[] = VOICE_HEDGE_MS,
   deadlineMs = VOICE_DEADLINE_MS,
 ): Promise<T> {
-  return new Promise<T>((resolve, reject) => {
-    const controllers: AbortController[] = [];
-    const timers = new Map<number, ReturnType<typeof setTimeout>>();
-    let settled = false;
-    let launched = 0;
-    let failed = 0;
-    let last: unknown = new VoiceError("Voice call timed out");
-    const deadline = setTimeout(() => settle(() => reject(last)), deadlineMs);
-    function settle(finish: () => void) {
-      if (settled) return;
-      settled = true;
-      clearTimeout(deadline);
-      timers.forEach(clearTimeout);
-      controllers.forEach((controller) => controller.abort());
-      finish();
-    }
-    function launch() {
-      if (settled || launched === starts.length) return;
-      clearTimeout(timers.get(launched));
-      launched += 1;
-      const controller = new AbortController();
-      controllers.push(controller);
-      call(controller.signal).then(
-        (value) => settle(() => resolve(value)),
-        (err: unknown) => {
-          if (!(err instanceof VoiceError)) return settle(() => reject(err));
-          last = err;
-          failed += 1;
-          if (failed === starts.length) settle(() => reject(last));
-          else launch();
-        },
-      );
-    }
-    // A call sent early, after a failure, is not sent again when its time comes.
-    starts.forEach((at, i) => timers.set(i, setTimeout(() => launched === i && launch(), at)));
-  });
+  return hedge(call, { starts, deadlineMs, retryable: (err) => err instanceof VoiceError, timedOut: () => new VoiceError("Voice call timed out") });
 }
 /** Answers read aloud are kept in memory: the demo's questions, asked backstage once, play at once on stage. */
 const SPEECH_CACHE_SIZE = 100;
