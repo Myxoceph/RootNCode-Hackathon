@@ -33,13 +33,17 @@ function turkeyDate(moment: Date): string {
   return turkeyDay.format(moment);
 }
 
-export function toAppUser(record: UserRecord): AppUser {
+/** The account as its owner sees it: with the e-mail, the name and the profile photo. */
+export function toAppUser(record: UserRecord, urls: PhotoUrls): AppUser {
   return {
     id: record.id,
     nickname: record.nickname,
     username: record.username,
     role: UserRoleSchema.parse(record.role),
     createdAt: record.created_at.toISOString(),
+    email: record.email,
+    fullName: record.full_name,
+    photoUrl: record.avatar ? urls.avatarPath(record.id, record.avatar.sha256.slice(0, 12)) : null,
   };
 }
 

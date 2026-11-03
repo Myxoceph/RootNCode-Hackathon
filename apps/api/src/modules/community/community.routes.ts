@@ -12,6 +12,7 @@ import {
   PulseResponseSchema,
   RegisterRequestSchema,
   SessionResponseSchema,
+  UpdateProfileRequestSchema,
   UpgradeAccountRequestSchema,
   type AnonymousSessionResponse,
   type AppUser,
@@ -50,7 +51,11 @@ const HOUR_MS = 60 * 60 * 1000;
 const LOGIN_RATE_LIMIT = { max: 10, timeWindow: 15 * 60 * 1000 };
 const REGISTER_RATE_LIMIT = { max: 10, timeWindow: HOUR_MS };
 
-const usernameTaken = () => new HttpError(409, "USERNAME_TAKEN", "This username is already taken");
+const TAKEN = {
+  username_taken: () => new HttpError(409, "USERNAME_TAKEN", "This username is already taken"),
+  email_taken: () => new HttpError(409, "EMAIL_TAKEN", "An account with this e-mail already exists"),
+};
+const PROFILE_RATE_LIMIT = { max: 30, timeWindow: HOUR_MS };
 const bearer = [{ bearerAuth: [] }];
 
 function assetNotFound(id: string): HttpError {
@@ -81,33 +86,34 @@ export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async
     const { nickname } = parseWith(AnonymousSessionRequestSchema, request.body, "INVALID_BODY");
     const token = newToken();
     const user = await repository.createUser({ nickname, role: "visitor", tokenHash: hashToken(token) });
-    if (user === "username_taken") throw new Error("An anonymous user has no username");
+    if (typeof user === "string") throw new Error("An anonymous user has no username or e-mail");
 
     reply.code(201).header("cache-control", "no-store");
-    return AnonymousSessionResponseSchema.parse({ user: toAppUser(user), token });
+    return AnonymousSessionResponseSchema.parse({ user: toAppUser(user, photoUrls), token });
   });
 
   app.post("/auth/register", {
     config: { rateLimit: REGISTER_RATE_LIMIT },
     schema: {
       tags: ["community"],
-      summary: "Kullanıcı adı ve parolayla hesap aç; token yalnızca bir kez gösterilir",
+      summary: "Kullanıcı adı, parola ve e-postayla hesap aç; token yalnızca bir kez gösterilir",
       body: toOpenApiSchema(RegisterRequestSchema, "input"),
       response: { 201: toOpenApiSchema(SessionResponseSchema), 400: errorSchema, 409: errorSchema, 429: errorSchema },
     },
   }, async (request, reply): Promise<SessionResponse> => {
-    const { username, password, nickname } = parseWith(RegisterRequestSchema, request.body, "INVALID_BODY");
+    const { username, password, email, nickname, fullName } = parseWith(RegisterRequestSchema, request.body, "INVALID_BODY");
     const token = newToken();
     const user = await repository.createUser({
       nickname: nickname ?? username,
       role: "visitor",
       tokenHash: hashToken(token),
-      credentials: { username, passwordHash: await hashPassword(password) },
+      credentials: { username, passwordHash: await hashPassword(password), email },
+      fullName: fullName ?? null,
     });
-    if (user === "username_taken") throw usernameTaken();
+    if (typeof user === "string") throw TAKEN[user]();
 
     reply.code(201).header("cache-control", "no-store");
-    return SessionResponseSchema.parse({ user: toAppUser(user), token });
+    return SessionResponseSchema.parse({ user: toAppUser(user, photoUrls), token });
   });
 
   app.post("/auth/login", {
@@ -130,7 +136,7 @@ export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async
     await repository.createSession(account.id, hashToken(token));
 
     reply.header("cache-control", "no-store");
-    return SessionResponseSchema.parse({ user: toAppUser(account), token });
+    return SessionResponseSchema.parse({ user: toAppUser(account, photoUrls), token });
   });
 
   app.post("/auth/logout", {
@@ -157,13 +163,13 @@ export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async
     },
   }, async (request, reply): Promise<AppUser> => {
     const user = await requireUser(request, repository);
-    const { username, password } = parseWith(UpgradeAccountRequestSchema, request.body, "INVALID_BODY");
-    const result = await repository.addCredentials(user.id, { username, passwordHash: await hashPassword(password) });
-    if (result === "username_taken") throw usernameTaken();
+    const { username, password, email } = parseWith(UpgradeAccountRequestSchema, request.body, "INVALID_BODY");
+    const result = await repository.addCredentials(user.id, { username, passwordHash: await hashPassword(password), email });
     if (result === "has_account") throw new HttpError(409, "ALREADY_REGISTERED", "This user already has an account");
+    if (typeof result === "string") throw TAKEN[result]();
 
     reply.header("cache-control", "no-store");
-    return AppUserSchema.parse(toAppUser(result));
+    return AppUserSchema.parse(toAppUser(result, photoUrls));
   });
 
   app.get("/me", {
@@ -176,7 +182,23 @@ export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async
   }, async (request, reply): Promise<AppUser> => {
     const user = await requireUser(request, repository);
     reply.header("cache-control", "no-store");
-    return AppUserSchema.parse(toAppUser(user));
+    return AppUserSchema.parse(toAppUser(user, photoUrls));
+  });
+
+  app.patch("/me", {
+    config: { rateLimit: PROFILE_RATE_LIMIT },
+    schema: {
+      tags: ["community"],
+      summary: "Takma adı ya da ad soyadı değiştir (fullName: null siler)",
+      security: bearer,
+      body: toOpenApiSchema(UpdateProfileRequestSchema, "input"),
+      response: { 200: toOpenApiSchema(AppUserSchema), 400: errorSchema, 401: errorSchema, 403: errorSchema, 429: errorSchema },
+    },
+  }, async (request, reply): Promise<AppUser> => {
+    const user = await requireUser(request, repository);
+    const profile = parseWith(UpdateProfileRequestSchema, request.body, "INVALID_BODY");
+    reply.header("cache-control", "no-store");
+    return AppUserSchema.parse(toAppUser(await repository.updateProfile(user.id, profile), photoUrls));
   });
 
   app.get("/me/contributions", {

@@ -63,6 +63,26 @@ export const PASSWORD_MIN = 8;
 export const PASSWORD_MAX = 128;
 export const PasswordSchema = z.string().min(PASSWORD_MIN).max(PASSWORD_MAX);
 
+/** Stored lowercase; one account per address. Not verified: there is no mail service. */
+export const EmailSchema = z.string().trim().toLowerCase().max(254).pipe(z.email("not an e-mail address"));
+
+/** The visitor's own name for their card, 2–64 characters: letters, space, `'`, `.` and `-`. */
+export const FullNameSchema = z
+  .string()
+  .trim()
+  .transform((name) => name.normalize("NFC").replace(/\s+/g, " "))
+  .pipe(
+    z
+      .string()
+      .min(2)
+      .max(64)
+      .regex(/^\p{L}[\p{L}\p{M} '.-]*$/u, "name may contain letters, space, \"'\", '.' and '-'"),
+  );
+
+/** Profile photo (`PUT /me/avatar`): JPEG or PNG, at most 2 MB, each side at least 64 px. */
+export const AVATAR_MAX_BYTES = 2 * 1024 * 1024;
+export const AVATAR_MIN_SIDE = 64;
+
 export const AppUserSchema = z.strictObject({
   id: z.uuid(),
   nickname: z.string().min(1),
@@ -73,6 +93,15 @@ export const AppUserSchema = z.strictObject({
   username: z.string().min(1).nullable().default(null),
   role: UserRoleSchema,
   createdAt: z.iso.datetime(),
+  /**
+   * The account's own details, sent only to the account itself (sign-in, `/me`). Null for an
+   * anonymous visitor and for accounts opened before 0.3.25 (e-mail); the defaults keep sessions
+   * the app stored before then readable.
+   */
+  email: z.string().nullable().default(null),
+  fullName: z.string().nullable().default(null),
+  /** Signed path of the profile photo, relative to the API's base URL; it expires after a day, `/me` gives a fresh one. */
+  photoUrl: z.string().nullable().default(null),
 });
 
 /** `POST /auth/anonymous` */
@@ -88,7 +117,9 @@ export const AnonymousSessionResponseSchema = z.strictObject({
 export const RegisterRequestSchema = z.strictObject({
   username: UsernameSchema,
   password: PasswordSchema,
+  email: EmailSchema,
   nickname: NicknameSchema.optional(),
+  fullName: FullNameSchema.optional(),
 });
 
 /** `POST /auth/login` */
@@ -101,7 +132,16 @@ export const LoginRequestSchema = z.strictObject({
 export const UpgradeAccountRequestSchema = z.strictObject({
   username: UsernameSchema,
   password: PasswordSchema,
+  email: EmailSchema,
 });
+
+/** `PATCH /me`: only the fields sent change; `fullName: null` removes the name. */
+export const UpdateProfileRequestSchema = z
+  .strictObject({
+    nickname: NicknameSchema.optional(),
+    fullName: FullNameSchema.nullable().optional(),
+  })
+  .refine((body) => body.nickname !== undefined || body.fullName !== undefined, "send nickname or fullName");
 
 /** Response of register and login: the token is shown once, as for anonymous sessions. */
 export const SessionResponseSchema = AnonymousSessionResponseSchema;
@@ -236,6 +276,7 @@ export type UserRole = z.infer<typeof UserRoleSchema>;
 export type RegisterRequest = z.infer<typeof RegisterRequestSchema>;
 export type LoginRequest = z.infer<typeof LoginRequestSchema>;
 export type UpgradeAccountRequest = z.infer<typeof UpgradeAccountRequestSchema>;
+export type UpdateProfileRequest = z.input<typeof UpdateProfileRequestSchema>;
 export type SessionResponse = z.infer<typeof SessionResponseSchema>;
 export type ContributionKind = z.infer<typeof ContributionKindSchema>;
 export type TextContributionKind = z.infer<typeof TextContributionKindSchema>;

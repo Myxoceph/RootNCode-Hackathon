@@ -104,8 +104,11 @@ describe.skipIf(!DATABASE_URL)("Ziyaretçi Nabzı (PostgreSQL)", () => {
     const suffix = randomUUID().slice(0, 8);
     const name = (base: string) => `${base}_${suffix}`;
 
-    async function register(payload: object, status = 201) {
-      const response = await app.inject({ method: "POST", url: "/auth/register", payload });
+    // Each account needs its own e-mail; one made from the username unless the test gives it.
+    const mail = (username: unknown) => `${String(username).toLowerCase()}@ornek.test`;
+
+    async function register(payload: { username: string } & Record<string, unknown>, status = 201) {
+      const response = await app.inject({ method: "POST", url: "/auth/register", payload: { email: mail(payload.username), ...payload } });
       expect(response.statusCode, response.body).toBe(status);
       if (status !== 201) return { error: response.json().error.code as string };
       const session = SessionResponseSchema.parse(response.json());
@@ -120,7 +123,14 @@ describe.skipIf(!DATABASE_URL)("Ziyaretçi Nabzı (PostgreSQL)", () => {
     it("registers with a lowercase username and stores only a scrypt hash of the password", async () => {
       const session = await register({ username: name("Ayse.Gezgin").toUpperCase(), password: "kubbe-altinda-42" });
       if (!("user" in session)) throw new Error("expected a session");
-      expect(session.user).toMatchObject({ username: name("ayse.gezgin"), nickname: name("ayse.gezgin"), role: "visitor" });
+      expect(session.user).toMatchObject({
+        username: name("ayse.gezgin"),
+        nickname: name("ayse.gezgin"),
+        role: "visitor",
+        email: mail(name("ayse.gezgin")),
+        fullName: null,
+        photoUrl: null,
+      });
 
       const stored = await prisma.app_user.findUniqueOrThrow({ where: { id: session.user.id } });
       expect(stored.password_hash).toMatch(/^scrypt\$32768\$8\$1\$/);
@@ -133,6 +143,33 @@ describe.skipIf(!DATABASE_URL)("Ziyaretçi Nabzı (PostgreSQL)", () => {
       expect(await register({ username: name("TAKEN"), password: "baska-bir-parola" }, 409)).toEqual({ error: "USERNAME_TAKEN" });
       expect(await register({ username: "a", password: "yeterince-uzun" }, 400)).toEqual({ error: "INVALID_BODY" });
       expect(await register({ username: name("kisa"), password: "1234567" }, 400)).toEqual({ error: "INVALID_BODY" });
+    });
+
+    it("needs an e-mail, keeps it lowercase and gives each address one account", async () => {
+      const session = await register({ username: name("posta"), password: "yeterince-uzun", email: ` ${name("Posta")}@Ornek.TEST ` });
+      if (!("user" in session)) throw new Error("expected a session");
+      expect(session.user.email).toBe(`${name("posta")}@ornek.test`);
+
+      const same = { password: "yeterince-uzun", email: `${name("POSTA")}@ornek.test` };
+      expect(await register({ username: name("posta2"), ...same }, 409)).toEqual({ error: "EMAIL_TAKEN" });
+      expect(await register({ username: name("posta3"), password: "yeterince-uzun", email: "posta-degil" }, 400)).toEqual({ error: "INVALID_BODY" });
+      const without = await app.inject({ method: "POST", url: "/auth/register", payload: { username: name("posta4"), password: "yeterince-uzun" } });
+      expect([without.statusCode, without.json().error.code]).toEqual([400, "INVALID_BODY"]);
+    });
+
+    it("keeps a full name, and changes it or the nickname with PATCH /me", async () => {
+      const session = await register({ username: name("adli"), password: "yeterince-uzun", fullName: "  Ayşe   Yılmaz " });
+      if (!("user" in session)) throw new Error("expected a session");
+      expect(session.user.fullName).toBe("Ayşe Yılmaz");
+
+      const patch = (payload: object) => app.inject({ method: "PATCH", url: "/me", headers: auth(session.token), payload });
+      const renamed = await patch({ nickname: "Kubbe Sever", fullName: "Ayşe Nur Yılmaz" });
+      expect(renamed.statusCode, renamed.body).toBe(200);
+      expect(AppUserSchema.parse(renamed.json())).toMatchObject({ nickname: "Kubbe Sever", fullName: "Ayşe Nur Yılmaz" });
+      expect(AppUserSchema.parse((await patch({ fullName: null })).json())).toMatchObject({ nickname: "Kubbe Sever", fullName: null });
+      expect((await patch({})).statusCode).toBe(400);
+      expect((await patch({ fullName: "<script>" })).statusCode).toBe(400);
+      expect((await app.inject({ method: "PATCH", url: "/me", payload: { fullName: "Ayşe" } })).statusCode).toBe(401);
     });
 
     it("signs in with a new token per device and the same answer for a wrong password or an unknown user", async () => {
@@ -161,15 +198,19 @@ describe.skipIf(!DATABASE_URL)("Ziyaretçi Nabzı (PostgreSQL)", () => {
       expect((await contribute(token, { kind: "memory", body: "Çocukken burada top oynardık." })).statusCode).toBe(201);
 
       const upgrade = (payload: object) => app.inject({ method: "POST", url: "/auth/upgrade", headers: auth(token), payload });
-      const upgraded = await upgrade({ username: name("eski.anonim"), password: "artik-hesabim-var" });
+      const upgraded = await upgrade({ username: name("eski.anonim"), password: "artik-hesabim-var", email: mail(name("eski.anonim")) });
       expect(upgraded.statusCode, upgraded.body).toBe(200);
-      expect(AppUserSchema.parse(upgraded.json())).toMatchObject({ username: name("eski.anonim"), nickname: "Anonim Gezgin" });
+      expect(AppUserSchema.parse(upgraded.json())).toMatchObject({
+        username: name("eski.anonim"),
+        nickname: "Anonim Gezgin",
+        email: mail(name("eski.anonim")),
+      });
 
       const signedIn = SessionResponseSchema.parse((await login(name("eski.anonim"), "artik-hesabim-var")).json());
       const mine = await app.inject({ method: "GET", url: "/me/contributions", headers: auth(signedIn.token) });
       expect(mine.json().items).toHaveLength(1);
 
-      const again = await upgrade({ username: name("ikinci.ad"), password: "artik-hesabim-var" });
+      const again = await upgrade({ username: name("ikinci.ad"), password: "artik-hesabim-var", email: mail(name("ikinci.ad")) });
       expect([again.statusCode, again.json().error.code]).toEqual([409, "ALREADY_REGISTERED"]);
     });
 

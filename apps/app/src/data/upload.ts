@@ -11,6 +11,8 @@ export interface UploadOptions {
   errorFor: (status: number, code: string | null, details: string[]) => DataError;
   timeoutMs: number;
   signal?: AbortSignal | undefined;
+  /** `POST` unless given. */
+  method?: "POST" | "PUT";
 }
 
 /**
@@ -18,7 +20,7 @@ export interface UploadOptions {
  * against `schema`. React Native's `fetch` cannot read a local file into a request body (Android
  * answers "File not found"); the file system's upload can. Every failure is a `DataError`, as `request`'s.
  */
-export async function uploadFile<T>(uri: string, url: string, schema: SchemaParser<T>, { type, token, errorFor, timeoutMs, signal }: UploadOptions): Promise<T> {
+export async function uploadFile<T>(uri: string, url: string, schema: SchemaParser<T>, { type, token, errorFor, timeoutMs, signal, method = "POST" }: UploadOptions): Promise<T> {
   const file = new File(uri.startsWith("/") ? `file://${uri}` : uri);
   if (!file.exists || file.size === 0) throw new DataError("rejected", "Dosya okunamadı. Tekrar dene.", [uri]);
   const controller = new AbortController();
@@ -34,6 +36,7 @@ export async function uploadFile<T>(uri: string, url: string, schema: SchemaPars
   try {
     result = await file.upload(url, {
       headers: { Accept: "application/json", Authorization: `Bearer ${token}`, "Content-Type": type },
+      httpMethod: method,
       mimeType: type,
       sessionType: "foreground",
       signal: controller.signal,

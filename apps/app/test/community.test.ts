@@ -209,7 +209,7 @@ describe("accounts", () => {
 
   it("signs up with a new account and keeps its session", async () => {
     const { calls } = scriptedFetch();
-    const signedUp = community.register({ username: "gezgin", password: "parola123" });
+    const signedUp = community.register({ username: "gezgin", password: "parola123", email: "gezgin@ornek.test" });
     await flush();
 
     expect(calls[0]!.url).toBe(`${API}/auth/register`);
@@ -224,15 +224,30 @@ describe("accounts", () => {
     const stored = session("Gezgin", "vgb_anon");
     await load({ stored });
     const { calls } = scriptedFetch();
-    const signedUp = community.register({ username: "gezgin", password: "parola123" });
+    const signedUp = community.register({ username: "gezgin", password: "parola123", email: "gezgin@ornek.test" });
     await flush();
 
     expect(calls[0]!.url).toBe(`${API}/auth/upgrade`);
     expect(bearer(calls[0]!.init)).toBe(`Bearer ${stored.token}`);
+    expect(JSON.parse(String(calls[0]!.init?.body))).toEqual({ username: "gezgin", password: "parola123", email: "gezgin@ornek.test" });
     calls[0]!.reply({ ...stored.user, username: "gezgin" });
     await signedUp;
     expect(community.getCommunityState().user).toMatchObject({ nickname: "Gezgin", username: "gezgin" });
     expect(JSON.parse(keychain.get(SESSION_KEY)!).token).toBe(stored.token);
+  });
+
+  it("changes the full name and keeps the account's new details with its session", async () => {
+    const stored = account("Gezgin", "gezgin", "vgb_account");
+    await load({ stored });
+    const { calls } = scriptedFetch();
+    const updated = community.updateProfile({ fullName: "Ayşe Yılmaz" });
+    await flush();
+
+    expect([calls[0]!.url, calls[0]!.init?.method]).toEqual([`${API}/me`, "PATCH"]);
+    calls[0]!.reply({ ...stored.user, fullName: "Ayşe Yılmaz", photoUrl: "/avatars/x?v=1&exp=1&sig=s" });
+    expect((await updated).fullName).toBe("Ayşe Yılmaz");
+    expect(JSON.parse(keychain.get(SESSION_KEY)!)).toMatchObject({ token: stored.token, user: { fullName: "Ayşe Yılmaz" } });
+    expect(community.avatarUri(community.getCommunityState().user)).toBe(`${API}/avatars/x?v=1&exp=1&sig=s`);
   });
 
   it("says a wrong password in its own words and keeps the visitor signed out", async () => {

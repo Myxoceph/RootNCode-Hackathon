@@ -19,6 +19,7 @@ import {
   type MyVisit,
   type SavedRoute,
   type TextContributionKind,
+  type UpdateProfileRequest,
   type VisitProofRequest,
   type VisitResponse,
 } from "@vagabonds/contracts";
@@ -104,9 +105,10 @@ async function keepSession(session: AnonymousSessionResponse) {
 const AUTH_MESSAGES: Record<string, string> = {
   INVALID_CREDENTIALS: "Kullanıcı adı ya da parola yanlış.",
   USERNAME_TAKEN: "Bu kullanıcı adı alınmış. Başka bir tane dene.",
+  EMAIL_TAKEN: "Bu e-postayla açılmış bir hesap var. Giriş yapmayı dene.",
   ALREADY_REGISTERED: "Bu oturumun zaten bir hesabı var.",
   USER_BANNED: "Bu hesapla artık giriş yapılamıyor.",
-  INVALID_BODY: "Kullanıcı adı ya da parola kurallara uymuyor.",
+  INVALID_BODY: "Kullanıcı adı, e-posta ya da parola kurallara uymuyor.",
 };
 
 /**
@@ -119,7 +121,7 @@ export async function register(account: RegisterRequest): Promise<AppUser> {
   if (token && state.user && state.user.username === null) {
     const current = token;
     const user = await call("/auth/upgrade", AppUserSchema, {
-      body: { username: account.username, password: account.password },
+      body: { username: account.username, password: account.password, email: account.email },
       token: current,
       messages: AUTH_MESSAGES,
     });
@@ -198,7 +200,7 @@ async function rememberAssetName(id: string, name: string) {
 async function call<T>(
   path: string,
   schema: SchemaParser<T>,
-  init: { body?: unknown; token?: string; method?: "POST" | "DELETE"; messages?: Record<string, string> } = {},
+  init: { body?: unknown; token?: string; method?: "POST" | "PATCH" | "DELETE"; messages?: Record<string, string> } = {},
 ): Promise<T> {
   const { messages, ...options } = init;
   const result = await request(`${resolveApiUrl()}${path}`, schema, {
@@ -298,6 +300,56 @@ export async function sendVisitProof(assetId: string, proof: Omit<VisitProofRequ
   } finally {
     if (opened) set({ user: opened });
   }
+}
+
+/** The account's details changed (name, photo): kept with the session it belongs to. */
+export async function keepUser(user: AppUser, sentWith: string) {
+  if (token !== sentWith) return;
+  await keepSession({ user, token: sentWith });
+}
+
+/** The account's token, or a "sign in to …" error naming `action`. */
+export async function signedInToken(action: string): Promise<string> {
+  const current = await accountToken();
+  if (current === null) throw new DataError("rejected", `${action} için giriş yap.`, ["/me"], "ACCOUNT_REQUIRED");
+  return current;
+}
+
+/**
+ * The account as the API has it now (`GET /me`), kept for the screens. Its photo's path is
+ * signed for a day, so the profile asks again when it opens. Null without an account.
+ */
+export async function refreshMe(): Promise<AppUser | null> {
+  const current = await accountToken();
+  if (current === null) return null;
+  const user = await call("/me", AppUserSchema, { token: current });
+  await keepUser(user, current);
+  return user;
+}
+
+const PROFILE_MESSAGES: Record<string, string> = {
+  INVALID_BODY: "Ad soyad 2–64 harf olmalı; yalnızca harf, boşluk, ' . - kullanılabilir.",
+};
+
+/** Changes the nickname or the full name (`PATCH /me`); `fullName: null` removes the name. */
+export async function updateProfile(profile: UpdateProfileRequest): Promise<AppUser> {
+  const current = await signedInToken("Profili düzenlemek");
+  const user = await call("/me", AppUserSchema, { body: profile, method: "PATCH", token: current, messages: PROFILE_MESSAGES });
+  await keepUser(user, current);
+  return user;
+}
+
+/** Removes the profile photo (`DELETE /me/avatar`). */
+export async function removeAvatar(): Promise<AppUser> {
+  const current = await signedInToken("Profil fotoğrafını kaldırmak");
+  const user = await call("/me/avatar", AppUserSchema, { method: "DELETE", token: current });
+  await keepUser(user, current);
+  return user;
+}
+
+/** Where an image shows the account's profile photo; null without one. */
+export function avatarUri(user: AppUser | null | undefined): string | null {
+  return user?.photoUrl ? `${resolveApiUrl()}${user.photoUrl}` : null;
 }
 
 /** The visitor's own notes with their moderation status, newest first; `null` without a session. */
