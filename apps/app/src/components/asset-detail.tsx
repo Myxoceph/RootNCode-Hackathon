@@ -34,7 +34,7 @@ import { announce } from "@/lib/announce";
 import { isAssetUnlocked, LOCKED_WARNING, relatedAssetsOf } from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
+import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -92,6 +92,14 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
     const at = Math.round(event.nativeEvent.contentOffset.y / height);
     if (at !== index) setIndex(at);
   };
+
+  // The page counter is only drawn; a screen reader hears where it is when the page changes.
+  const shownPage = useRef(0);
+  useEffect(() => {
+    if (index === shownPage.current || !pages[index]) return;
+    shownPage.current = index;
+    announce(`Sayfa ${index + 1} / ${pages.length}: ${pageTitle(pages[index]!, asset)}`);
+  }, [index, pages, asset]);
   const close = () => {
     if (!router.canGoBack()) return router.replace("/monuments");
     // Opened from another tab (the map's cards, the assistant), the card is alone in the Eserler
@@ -105,6 +113,19 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
     <View style={styles.screen} onLayout={(event) => setHeight(event.nativeEvent.layout.height)}>
       <StatusBar style="light" />
 
+      {/* Before the pages in the tree, so "Kapat" is reached first (WCAG 2.4.3); drawn over them by zIndex. */}
+      <View style={[styles.top, { paddingTop: insets.top + spacing.sm }]} pointerEvents="box-none">
+        {/* Drawn as a reminder; a screen reader would hear the name again on every page. */}
+        <Text variant="caption" colorValue={ink.soft} numberOfLines={1} style={[styles.flex, styles.semibold]} aria-hidden accessibilityElementsHidden importantForAccessibility="no">
+          {index === 0 || last ? "" : asset.name}
+        </Text>
+        <Text variant="caption" colorValue={ink.soft} style={styles.mono} aria-hidden accessibilityElementsHidden importantForAccessibility="no">
+          {`${index + 1}/${pages.length}`}
+        </Text>
+        <Pressable accessibilityRole="button" accessibilityLabel="Kapat" hitSlop={6} onPress={close} style={({ pressed }) => [styles.round, pressed && styles.pressed]}>
+          <Ionicons name="close" size={20} color={ink.text} />
+        </Pressable>
+      </View>
       {height > 0 && (
         <ScrollView
           ref={scroll}
@@ -124,17 +145,6 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
         </ScrollView>
       )}
 
-      <View style={[styles.top, { paddingTop: insets.top + spacing.sm }]} pointerEvents="box-none">
-        <Text variant="caption" colorValue={ink.soft} numberOfLines={1} style={[styles.flex, styles.semibold]}>
-          {index === 0 || last ? "" : asset.name}
-        </Text>
-        <Text variant="caption" colorValue={ink.soft} style={styles.mono} aria-hidden>
-          {`${index + 1}/${pages.length}`}
-        </Text>
-        <Pressable accessibilityRole="button" accessibilityLabel="Kapat" hitSlop={6} onPress={close} style={({ pressed }) => [styles.round, pressed && styles.pressed]}>
-          <Ionicons name="close" size={20} color={ink.text} />
-        </Pressable>
-      </View>
 
       {!last && (
         <View style={styles.dots} pointerEvents="none" aria-hidden>
@@ -151,6 +161,24 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
 }
 
 /* ───────────────────────── Pages ───────────────────────── */
+
+/** What a page is about, in a few words, for the announcement when it comes into view. */
+function pageTitle(page: Page, asset: AssetDetail): string {
+  switch (page.kind) {
+    case "cover":
+      return asset.name;
+    case "summary":
+      return "Özet";
+    case "figures":
+      return "Rakamlarla";
+    case "highlight":
+      return `Yerinde bakın, ${page.number} / ${page.total}: ${page.title}`;
+    case "chapter":
+      return page.title;
+    case "end":
+      return "Keşfe çık";
+  }
+}
 
 function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
   const gallery = galleryOf(asset);
@@ -350,7 +378,7 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
       return (
         <View style={styles.figures}>
           {page.figures.map((figure) => (
-            <View key={figure.label} accessible accessibilityLabel={`${figure.label}: ${figure.value} ${figure.unit ?? ""}`}>
+            <View key={figure.label} accessible accessibilityLabel={`${figure.label}: ${[figure.value, figure.unit].filter(Boolean).join(" ")}`}>
               <Text colorValue={ink.gold} style={styles.figureValue}>
                 {figure.value}
                 {figure.unit && <Text colorValue={ink.gold} style={styles.figureUnit}>{` ${figure.unit}`}</Text>}
@@ -373,7 +401,7 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
           <Text variant="overline" colorValue={ink.gold}>
             {`YERİNDE BAKIN · ${page.number}/${page.total}`}
           </Text>
-          <Text colorValue={ink.text} style={styles.pageTitle}>
+          <Text colorValue={ink.text} style={styles.pageTitle} headingLevel={2}>
             {page.title}
           </Text>
           {page.hint && (
@@ -381,19 +409,20 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
               {page.hint}
             </Text>
           )}
-          {page.chapter >= 0 && <ReadMore onPress={() => onRead(page.chapter)} />}
+          {page.chapter >= 0 && <ReadMore title={page.title} onPress={() => onRead(page.chapter)} />}
         </>
       );
     case "chapter":
       return (
         <>
-          <Text variant="overline" colorValue={ink.gold}>
+          {/* Drawn in capitals, read as written: some readers spell out a word in capitals. */}
+          <Text variant="overline" colorValue={ink.gold} headingLevel={2} accessibilityLabel={page.title}>
             {page.title.toLocaleUpperCase("tr")}
           </Text>
           <Text colorValue={ink.text} style={styles.statement}>
             {page.sentence}
           </Text>
-          <ReadMore onPress={() => onRead(page.chapter)} />
+          <ReadMore title={page.title} onPress={() => onRead(page.chapter)} />
         </>
       );
     case "end":
@@ -516,9 +545,10 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
   );
 }
 
-function ReadMore({ onPress }: { onPress: () => void }) {
+/** "Devamını oku" for one chapter; its name says which, as each page has one (WCAG 2.4.4). */
+function ReadMore({ title, onPress }: { title: string; onPress: () => void }) {
   return (
-    <Pressable accessibilityRole="button" onPress={onPress} style={({ pressed }) => [styles.readMore, pressed && styles.pressed]}>
+    <Pressable accessibilityRole="button" accessibilityLabel={`Devamını oku: ${title}`} onPress={onPress} style={({ pressed }) => [styles.readMore, pressed && styles.pressed]}>
       <Text variant="label" colorValue={ink.text}>
         Devamını oku
       </Text>
@@ -657,12 +687,8 @@ function Experiences({ asset }: { asset: AssetDetail }) {
   // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
   const descriptionKey = `description:${asset.id}`;
   const describing = useSpeaking() === descriptionKey;
-  // Leaving the page ends its description: its Durdur button goes with it.
-  const describingNow = useRef(describing);
-  describingNow.current = describing;
-  useEffect(() => () => {
-    if (describingNow.current) stopAnswer();
-  }, []);
+  // Leaving the page ends its description (its Durdur button goes with it), not another screen's reading.
+  useEffect(() => () => stopAnswerOf((key) => key === descriptionKey), [descriptionKey]);
   const soundKey = asset.ambientSound?.key ?? null;
   const capsuleType = soundKey ? capsuleForSoundKey(soundKey) : undefined;
   const playing = capsuleType !== undefined && player?.type === capsuleType ? player : null;
@@ -872,6 +898,8 @@ const styles = StyleSheet.create({
   },
   top: {
     position: "absolute",
+    zIndex: 2,
+    elevation: 2,
     top: 0,
     left: 0,
     right: 0,

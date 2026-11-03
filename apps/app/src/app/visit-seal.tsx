@@ -62,6 +62,8 @@ export default function VisitSealScreen() {
   const target = asset ? visitSealTarget(asset) : null;
   const router = useRouter();
   const [unlocked, setUnlocked] = useState<VisitResponse | null | false>(false);
+  // With a screen reader on the screen opens on the guide; the visitor may still ask for the camera.
+  const [cameraAnyway, setCameraAnyway] = useState(false);
   // Sealed on this screen, the camera's own "sealed" step is still to show; only one unlocked before needs no seal.
   const [sealedHere, setSealedHere] = useState(false);
   const allUnlocked = useUnlockedAssets();
@@ -108,10 +110,10 @@ export default function VisitSealScreen() {
         {unlock && <UnlockButton onPress={unlock} />}
       </View>
     );
-  } else if (web || screenReader) {
+  } else if (web || (screenReader && !cameraAnyway)) {
     body = (
       <>
-        <SealGuide asset={asset} />
+        <SealGuide asset={asset} onUseCamera={web ? undefined : () => setCameraAnyway(true)} />
         {unlock && (
           <View style={[styles.unlockFloat, { bottom: insets.bottom + spacing.lg }]}>
             <UnlockButton onPress={unlock} />
@@ -128,20 +130,26 @@ export default function VisitSealScreen() {
       <Head>
         <title>Ziyaret Mührü · Vagabonds</title>
       </Head>
-      {body}
+      {/* Before the content in the tree, so the title is read first (WCAG 1.3.2); drawn over it by zIndex. */}
       <View style={[styles.top, { top: insets.top + spacing.sm }]}>
         <CameraTopBar title="Ziyaret Mührü" subtitle={asset?.name ?? "Eser"} />
       </View>
+      {body}
     </View>
   );
 }
+
+/** Height of the floating "Kilidi aç" and its gap. */
+const UNLOCK_ROOM = 72;
 
 /** "Kilidi aç": seals the visit at once, standing in for recognising the part (a demo simulation). */
 function UnlockButton({ onPress }: { onPress: () => void }) {
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityHint="Eserin kilidini açar ve ziyaretini mühürler"
+      accessibilityLabel="Kilidi aç"
+      // A demo simulation, and the screen reader must say so: it does not check the visit.
+      accessibilityHint="Demo: ziyareti hemen mühürler"
       onPress={onPress}
       style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.85, transform: [{ scale: 0.98 }] }]}
     >
@@ -154,11 +162,12 @@ function UnlockButton({ onPress }: { onPress: () => void }) {
 }
 
 /** Without a camera: the part to find, and how sealing works on site. */
-function SealGuide({ asset }: { asset: AssetDetail }) {
+function SealGuide({ asset, onUseCamera }: { asset: AssetDetail; onUseCamera?: () => void }) {
   const insets = useSafeAreaInsets();
   const { photo, part } = visitSealTarget(asset)!;
   return (
-    <ScrollView contentContainerStyle={[styles.guide, { paddingTop: insets.top + 80, paddingBottom: insets.bottom + spacing.xl }]}>
+    // Room at the end for the floating "Kilidi aç", so the last button is not under it.
+    <ScrollView contentContainerStyle={[styles.guide, { paddingTop: insets.top + 80, paddingBottom: insets.bottom + spacing.xl + UNLOCK_ROOM }]}>
       <Text variant="overline" colorValue={cameraColors.gold}>
         MÜHÜR KISMI · {part.toLocaleUpperCase("tr")}
       </Text>
@@ -172,6 +181,15 @@ function SealGuide({ asset }: { asset: AssetDetail }) {
         Telefon tanıyınca ziyaretin mühürlenir: eserde bulunduğun kanıtlanır, rozet ve puan kazanırsın. Mühür telefonda, eserin{" "}
         {VISIT_RADIUS_METERS} m yakınında çalışır.
       </Text>
+      {/* A screen reader opens the guide; the seal still needs the camera, which then talks the visitor through it. */}
+      {onUseCamera && (
+        <Button
+          label="Kamerayı yine de aç"
+          accessibilityHint={`Kamera ${part.toLocaleLowerCase("tr")} kısmını arar; tanıyınca sesle haber verilir`}
+          onPress={onUseCamera}
+          colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
+        />
+      )}
     </ScrollView>
   );
 }
@@ -247,7 +265,11 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
           go({ name: "starting" });
           break;
         case "ready":
-          if (now === "preparing" || now === "starting") go({ name: "searching" });
+          if (now === "preparing" || now === "starting") {
+            go({ name: "searching" });
+            // Guidance for a visitor who cannot see the image; nothing is said without a screen reader.
+            announce(`Kamera açık. ${part} kısmını ara: telefonu ona doğru tut ve yavaşça gezdir. Tanıyınca haber vereceğim.`);
+          }
           break;
         case "found":
           if (now !== "searching") break;
@@ -269,7 +291,7 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
           break;
       }
     },
-    [go, key, hold, reduceMotion, seal],
+    [go, key, hold, reduceMotion, seal, part],
   );
 
   useEffect(() => () => clearTimeout(holdTimer.current), []);
@@ -570,6 +592,8 @@ const styles = StyleSheet.create({
   },
   top: {
     position: "absolute",
+    zIndex: 2,
+    elevation: 2,
     left: spacing.lg,
     right: spacing.lg,
   },

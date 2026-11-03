@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
  * screens download, and later screens reuse the same promise.
  */
 const cache = new Map<string, Promise<unknown>>();
+/** How long the tracker waits for its optional font before it starts without it. */
+const OPTIONAL_WAIT_MS = 3_000;
 
 function once<T>(key: string, load: () => Promise<T>): () => Promise<T> {
   return () => {
@@ -15,6 +17,15 @@ function once<T>(key: string, load: () => Promise<T>): () => Promise<T> {
 }
 
 export const loadMindar = once("mindar", () => import("./mindar.generated").then((m) => m.mindarScript));
+
+/** The app's heading font, Marcellus, for the text the AR page draws over an inscription (base64 TrueType); "" when it could not be loaded. */
+export const loadOverlayFont = once("overlay-font", () =>
+  // Optional: if it fails or is slow (a web chunk after a deploy), the page draws in a system serif.
+  Promise.race([
+    import("./overlay-font.generated").then((m) => m.overlayFontBase64),
+    new Promise<string>((resolve) => setTimeout(() => resolve(""), OPTIONAL_WAIT_MS)),
+  ]).catch(() => ""),
+);
 
 export const loadMaplibre = once("maplibre", () =>
   import("./maplibre.generated").then((m) => ({ script: m.maplibreScript, css: m.maplibreCss })),
