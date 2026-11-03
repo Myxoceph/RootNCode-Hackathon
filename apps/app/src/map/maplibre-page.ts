@@ -1390,8 +1390,8 @@ function start() {
       clearingShader(
         gl,
         gl.VERTEX_SHADER,
-        "uniform mat4 matrix; attribute vec2 place; attribute vec2 corner; varying vec2 uv; varying vec2 merc;" +
-          "void main() { uv = corner; merc = place; gl_Position = matrix * vec4(place, 0.0, 1.0); }",
+        "uniform mat4 matrix; attribute vec2 place; attribute vec2 corner; attribute vec2 ground; varying vec2 uv; varying vec2 merc; varying vec2 km;" +
+          "void main() { uv = corner; merc = place; km = ground; gl_Position = matrix * vec4(place, 0.0, 1.0); }",
       ),
     );
     gl.attachShader(
@@ -1399,13 +1399,18 @@ function start() {
       clearingShader(
         gl,
         gl.FRAGMENT_SHADER,
-        "precision highp float; uniform sampler2D field; uniform sampler2D wideField; uniform vec4 wideBox; uniform float isPlace;" +
-          "uniform vec2 origin; uniform float kmPerUnit; uniform float zoom; uniform float level; uniform vec3 top; uniform vec3 middle; uniform vec3 bottom;" +
-          "varying vec2 uv; varying vec2 merc;" +
+        "precision highp float; uniform sampler2D field; uniform sampler2D wideField; uniform vec4 wideBox; uniform vec2 wideSize; uniform float isPlace;" +
+          "uniform float zoom; uniform float level; uniform vec3 top; uniform vec3 middle; uniform vec3 bottom;" +
+          "varying vec2 uv; varying vec2 merc; varying vec2 km;" +
           "float hash(vec2 p) { vec3 q = fract(vec3(p.xyx) * 0.1031); q += dot(q, q.yzx + 33.33); return fract((q.x + q.y) * q.z); }" +
           "float noise(vec2 p) { vec2 i = floor(p); vec2 f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);" +
           " return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y); }" +
           "float fbm(vec2 p) { float t = 0.0; float a = 0.5; for (int i = 0; i < 4; i++) { t += a * noise(p); p = mat2(1.6, 1.2, -1.2, 1.6) * p + 17.0; a *= 0.5; } return t / 0.9375; }" +
+          // The wide cover, blended by hand: the GPU's own blending steps visibly when one texel spans a whole screen.
+          "vec4 wideAt(vec2 at) { vec2 t = at * wideSize - 0.5; vec2 i = floor(t); vec2 f = fract(t); f = f * f * (3.0 - 2.0 * f);" +
+          " vec4 a = texture2D(wideField, (i + vec2(0.5, 0.5)) / wideSize); vec4 b = texture2D(wideField, (i + vec2(1.5, 0.5)) / wideSize);" +
+          " vec4 c = texture2D(wideField, (i + vec2(0.5, 1.5)) / wideSize); vec4 d = texture2D(wideField, (i + vec2(1.5, 1.5)) / wideSize);" +
+          " return mix(mix(a, b, f.x), mix(c, d, f.x), f.y); }" +
           // How thick the fog is at a spot, from the wide cover (W) and a place's detail (L, none outside the places).
           "float fog(vec4 W, vec4 L, float scatter, float close, float puff, float fine, float street, float wisp) {" +
           // Coming in from afar the cover scatters into soft clouds with open land between; around the
@@ -1422,10 +1427,11 @@ function start() {
           "void main() {" +
           // The wide cover draws the fog everywhere, the same at every zoom; a place's piece only adds
           // what its assets keep on top of it (its detail never thins the fog), so there is no seam.
-          " vec4 W = texture2D(wideField, (merc - wideBox.xy) / (wideBox.zw - wideBox.xy));" +
+          " vec4 W = wideAt((merc - wideBox.xy) / (wideBox.zw - wideBox.xy));" +
           " vec4 L = isPlace > 0.5 ? texture2D(field, uv) : vec4(0.0);" +
-          // Noise in kilometres on the ground, the same for every piece.
-          " vec2 p = (merc - origin) * kmPerUnit;" +
+          // Noise in kilometres on the ground from the city's middle, the same for every piece (worked
+          // out on the CPU: from the map's own coordinates it would step in metres up close).
+          " vec2 p = km;" +
           " vec2 w = vec2(noise(p * 1.7), noise(p * 1.7 + 7.3));" +
           " float street = fbm(p * 5.5 + (w - 0.5) * 2.2) * 0.6 + fbm(p * 15.0 + 3.1) * 0.4;" +
           " float wisp = fbm(p * 19.0 + street * 2.0);" +
@@ -1461,6 +1467,7 @@ function start() {
       for (const gone of sheetsGone) {
         if (gone.texture) gl.deleteTexture(gone.texture);
         if (gone.places) gl.deleteBuffer(gone.places);
+        if (gone.ground) gl.deleteBuffer(gone.ground);
       }
       sheetsGone = [];
       if (sheets.length === 0) return;
@@ -1518,15 +1525,29 @@ function start() {
         gl.bindTexture(gl.TEXTURE_2D, wide.texture);
         gl.activeTexture(gl.TEXTURE0);
         gl.uniform4f(gl.getUniformLocation(shared.program, "wideBox"), left, upper, right, lower);
-        gl.uniform2f(gl.getUniformLocation(shared.program, "origin"), (left + right) / 2, (upper + lower) / 2);
-        gl.uniform1f(gl.getUniformLocation(shared.program, "kmPerUnit"), 40075.017 * Math.cos((middleLat * Math.PI) / 180));
+        gl.uniform2f(gl.getUniformLocation(shared.program, "wideSize"), wide.width, wide.height);
+        const originX = (left + right) / 2;
+        const originY = (upper + lower) / 2;
+        const kmPerUnit = 40075.017 * Math.cos((middleLat * Math.PI) / 180);
+        const ground = gl.getAttribLocation(shared.program, "ground");
+        gl.enableVertexAttribArray(ground);
         for (const piece of sheets) {
+          if (!piece.ground) {
+            const [x0, y0, x1, y1] = piece.box;
+            const local = (x, y) => [(x - originX) * kmPerUnit, (y - originY) * kmPerUnit];
+            piece.ground = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, piece.ground);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([...local(x0, y0), ...local(x1, y0), ...local(x0, y1), ...local(x1, y1)]), gl.STATIC_DRAW);
+          }
+          gl.bindBuffer(gl.ARRAY_BUFFER, piece.ground);
+          gl.vertexAttribPointer(ground, 2, gl.FLOAT, false, 0, 0);
           gl.uniform1f(gl.getUniformLocation(shared.program, "isPlace"), piece.province ? 0 : 1);
           gl.bindTexture(gl.TEXTURE_2D, piece.texture);
           gl.bindBuffer(gl.ARRAY_BUFFER, piece.places);
           gl.vertexAttribPointer(place, 2, gl.FLOAT, false, 0, 0);
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
+        gl.disableVertexAttribArray(ground);
       }
       gl.disableVertexAttribArray(place);
       gl.disableVertexAttribArray(corner);
@@ -1558,7 +1579,7 @@ function start() {
     clearings = new Map(
       cityAssets
         .filter((asset) => asset.unlocked)
-        .map((asset) => [asset.id, { lng: asset.lng, lat: asset.lat, kept: keptFogAround(asset, cityAssets), opensAt: justOpened.includes(asset) ? liftsAt : (clearings.get(asset.id)?.opensAt ?? -FOG_LIFT_MS) }]),
+        .map((asset) => [asset.id, { lng: asset.lng, lat: asset.lat, meters: clearingMeters(asset, cityAssets), kept: keptFogAround(asset, cityAssets), opensAt: justOpened.includes(asset) ? liftsAt : (clearings.get(asset.id)?.opensAt ?? -FOG_LIFT_MS) }]),
     );
     if (plate === cityPlate) {
       // The same city again, perhaps with an asset just unlocked: its button goes, and its scene starts first, so its options wait for the end.
@@ -1631,8 +1652,15 @@ function start() {
    * like under the fog, the second paints that back on over the fog, soft-edged.
    */
   const CLEARING_METERS = 170;
+  /**
+   * A clearing never reaches further than this share of the way to the nearest locked asset (nor
+   * less far than the least), so a close neighbour keeps a full fog of its own around it.
+   */
+  const CLEARING_SHARE = 0.65;
+  const CLEARING_LEAST_METERS = 50;
   /** Each locked asset near a clearing keeps its fog this far around it, or less if it stands closer. */
-  const KEPT_FOG_METERS = 90;
+  const KEPT_FOG_METERS = 150;
+  const KEPT_FOG_SHARE = 0.9;
   const KEPT_FOG_MAX = 12;
   let clearings = new Map();
   let clearingShared = null;
@@ -1685,7 +1713,7 @@ function start() {
       const opened = t * t * (3 - 2 * t);
       const point = map.project([clearing.lng, clearing.lat]);
       const metersPerPoint = (78271.5 * Math.cos((clearing.lat * Math.PI) / 180)) / Math.pow(2, map.getZoom());
-      const radius = (CLEARING_METERS / metersPerPoint) * ratio * (0.6 + 0.4 * opened);
+      const radius = (clearing.meters / metersPerPoint) * ratio * (0.6 + 0.4 * opened);
       const x = point.x * ratio;
       const y = gl.drawingBufferHeight - point.y * ratio;
       if (x + radius < 0 || y + radius < 0 || x - radius > gl.drawingBufferWidth || y - radius > gl.drawingBufferHeight) continue;
@@ -1766,6 +1794,17 @@ function start() {
     },
   };
 
+  /** How far an unlocked asset's clearing reaches: less when a locked asset stands close by. */
+  function clearingMeters(asset, assets) {
+    const across = Math.cos((asset.lat * Math.PI) / 180);
+    let nearest = Infinity;
+    for (const other of assets) {
+      if (other.unlocked || other.id === asset.id) continue;
+      nearest = Math.min(nearest, 111320 * Math.hypot(other.lat - asset.lat, (other.lng - asset.lng) * across));
+    }
+    return Math.max(CLEARING_LEAST_METERS, Math.min(CLEARING_METERS, nearest * CLEARING_SHARE));
+  }
+
   /** The locked assets whose fog a clearing must leave alone, nearest first. */
   function keptFogAround(asset, assets) {
     const across = Math.cos((asset.lat * Math.PI) / 180);
@@ -1776,7 +1815,7 @@ function start() {
       .sort((a, b) => a.away - b.away)
       .slice(0, KEPT_FOG_MAX)
       // Never over the unlocked asset itself, however close the other stands.
-      .map(({ other, away }) => ({ lng: other.lng, lat: other.lat, meters: Math.min(KEPT_FOG_METERS, away * 0.7) }));
+      .map(({ other, away }) => ({ lng: other.lng, lat: other.lat, meters: Math.min(KEPT_FOG_METERS, away * KEPT_FOG_SHARE) }));
   }
 
   /** The fog of assets just unlocked, which the main layers have dropped, lingers over its own layers and lifts. */
