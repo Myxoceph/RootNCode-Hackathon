@@ -19,7 +19,7 @@ import { useMapTour } from "@/lib/map-tour";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { relatedPlacesOf } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { areaAround, assetCategory, cityLandmark, MapLibreMap, mapTiers, useMapStatusBar, useMapTheme, type MapCity, type MapPin, type MapProvince, type MapProvinces, type MapSpots } from "@/map";
+import { areaAround, assetCategory, cityLandmark, MapLibreMap, mapTiers, spreadPlaces, useMapStatusBar, useMapTheme, type MapCity, type MapPin, type MapProvince, type MapProvinces, type MapSpots } from "@/map";
 
 /** Room kept free for the search bar when framing Turkey. */
 const HEADER_SPACE = 72;
@@ -117,6 +117,12 @@ export default function MapScreen() {
     () => (landmark ? [...places].sort((a, b) => nearness(a.at, landmark) - nearness(b.at, landmark)) : places).map(({ asset }) => asset),
     [places, landmark],
   );
+  // Places of their own on one spot (often one neighbourhood centre for several assets) are drawn
+  // a little apart; the cards, the camera and the distances keep the real points.
+  const drawnAt = useMemo(
+    () => spreadPlaces(places.map(({ asset, at }) => ({ id: asset.id, lat: at.lat, lng: at.lng, approximate: at.approximate }))),
+    [places],
+  );
   // Zooming out, the least known places go first; the landmark stays to the last.
   const tiers = useMemo(
     () => mapTiers(places.map(({ asset }) => ({ id: asset.id, prominence: prominenceOf.get(asset.id) ?? 0 })), landmark?.id),
@@ -130,8 +136,8 @@ export default function MapScreen() {
           assets: places.map(({ asset, at }) => ({
             id: asset.id,
             title: asset.name,
-            lat: at.lat,
-            lng: at.lng,
+            lat: drawnAt.get(asset.id)?.lat ?? at.lat,
+            lng: drawnAt.get(asset.id)?.lng ?? at.lng,
             category: assetCategory(asset.type.code),
             landmark: asset.id === landmark?.id,
             tier: tiers.get(asset.id) ?? 0,
