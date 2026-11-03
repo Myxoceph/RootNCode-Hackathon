@@ -33,13 +33,19 @@ export interface VisitSealTarget {
   part: string;
 }
 
+/** The photo with the most pixels: the camera has the most detail to recognise in it. The first on a tie. */
+function sharpest(photos: Media[]): Media | undefined {
+  return photos.reduce<Media | undefined>((best, m) => (!best || m.width * m.height > best.width * best.height ? m : best), undefined);
+}
+
 /**
  * The part of the monument the visitor shows the camera for Ziyaret Mührü: the photo of its most
- * telling detail, by the dataset's `subject`. `null` when the asset has no photo to use.
+ * telling detail, by the dataset's `subject`, and of several such photos the sharpest. `null` when
+ * the asset has no photo to use.
  */
 export function visitSealTarget(asset: AssetDetail): VisitSealTarget | null {
   for (const [subject, part] of SEAL_PARTS) {
-    const photo = asset.media.find((m) => m.kind === "photo" && m.subject === subject);
+    const photo = sharpest(asset.media.filter((m) => m.kind === "photo" && m.subject === subject));
     if (photo) return { photo, part };
   }
   const photos = asset.media.filter((m) => m.kind === "photo" && UNSORTED.has(m.subject));
