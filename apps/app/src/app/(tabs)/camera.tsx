@@ -112,8 +112,11 @@ function ModeCard({ mode, web }: { mode: Mode; web: boolean }) {
     <Pressable
       accessibilityRole="link"
       onPress={() => router.push(mode.path)}
-      accessibilityLabel={`${mode.title}. ${mode.description}`}
-      accessibilityHint={web ? mode.web : undefined}
+      // The name is the visible title alone (WCAG 2.5.3, a voice command says it); what it does is the hint.
+      accessibilityLabel={mode.title}
+      accessibilityHint={web ? mode.web : mode.description}
+      // The web drops the hint: there the visible caption is the card's description.
+      aria-describedby={`camera-${mode.key}-hint`}
       style={({ pressed }) => [styles.card, pressed && styles.pressed]}
     >
       <View style={styles.cardInner} onLayout={(e: LayoutChangeEvent) => setBox(e.nativeEvent.layout)}>
@@ -136,12 +139,13 @@ function ModeCard({ mode, web }: { mode: Mode; web: boolean }) {
             <Text variant="heading" colorValue={cameraColors.text} numberOfLines={1}>
               {mode.title}
             </Text>
-            <Text variant="caption" colorValue={cameraColors.textSecondary} numberOfLines={2}>
+            {/* The card's hint (its description on the web), so not read again as part of its name. */}
+            <Text variant="caption" colorValue={cameraColors.textSecondary} numberOfLines={2} aria-hidden nativeID={`camera-${mode.key}-hint`}>
               {web ? mode.web : mode.description}
             </Text>
           </View>
           <View style={styles.go}>
-            <Ionicons name="arrow-forward" size={20} color={cameraColors.onGold} accessibilityElementsHidden importantForAccessibility="no" />
+            <Ionicons name="arrow-forward" size={20} color={cameraColors.onGold} aria-hidden accessibilityElementsHidden importantForAccessibility="no" />
           </View>
         </View>
       </View>
