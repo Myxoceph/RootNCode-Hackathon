@@ -2357,10 +2357,10 @@ function start() {
     }
     for (const layer of intro.layers) drawFogLayer(layer, opening, now, width, height, middle);
     drawOutline(elapsed);
+    // Tied to the frames, not a timer: the names come a moment after the lines, before the opening ends.
+    if (elapsed >= 0.75 && !labelsRevealed) revealLabels();
     if (elapsed >= 1) {
       intro = null;
-      // Tied to the last frame, not a timer: the names never come before the lines.
-      revealLabels();
       // The opening starts further out than the limit; the limits apply once it is over.
       lockToTurkey();
     }
