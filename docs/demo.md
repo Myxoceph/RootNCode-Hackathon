@@ -43,7 +43,30 @@ Bursa ile başla (eserler, Kentsel Ağ, gezi, lezzet), Konya ile bitir (toplu ta
 | 4 | Rehber | Aşağıdaki sorular | `gezgin` |
 | 5 | Ziyaret Mührü | `TODO(ön yüz)`: kamerayla mühür, rozet | `yeni_ziyaretci` |
 | 6 | Konya toplu taşıma | Rehber'de rota sorusu, haritada rota | `gezgin` |
-| 7 | Yönetim | `TODO(ön yüz)`: fotoğraf önerisi onayı | `demo_admin` |
+| 7 | Kapsayıcı erişilebilirlik | Ekran okuyucuyla Hoca Hasan Camii'nin fotoğrafları ve mührü (aşağıda) | `gezgin` |
+| 8 | Yönetim | `TODO(ön yüz)`: fotoğraf önerisi onayı | `demo_admin` |
+
+### Ekran okuyucuyla kamerasız betimleme
+
+Kitap fotoğraflarının alt metni fotoğrafta ne göründüğünü anlatıyor (EVREN'in görüntü modeli yazdı, #174). Görmeyen bir
+ziyaretçi eseri fotoğraflarından dinleyerek tanır; jüriye 8. modülü somut gösterir. Toplam 1–2 dakika.
+
+**Önceden (sahneden önce, bir kez):**
+- iPhone: Ayarlar › Erişilebilirlik › Erişilebilirlik Kısayolu › **VoiceOver**. Yan tuşa üç kez basınca açılıp kapanır.
+- Android: Ayarlar › Erişilebilirlik › TalkBack › **TalkBack kısayolu**. İki ses tuşuna 3 saniye basılı tutunca açılıp kapanır.
+- Hoca Hasan Camii'nin galerisini ekran okuyucuyla bir kez dinle: metinler tek tek okunmadı, yanlış bir ayrıntı varsa
+  kayıtta `alt` düzeltilip `npm run db:import` yeter. Yedek eser: Şıhcarullah (Zincirli) Camii, mihrap fotoğrafı.
+
+**Sahnede:**
+1. Eserler'de **Hoca Hasan Camii**'ni aç (Konya, Meram), ekran okuyucuyu kısayolla aç.
+2. Fotoğraflara gel, sağa kaydırarak tek tek dinlet. Örneğin minare: "Tuğladan inşa edilmiş, üst kısmında kubbeli ve kafesli
+   bir minare. Minarenin orta kısmında mavi bir şerit ve küçük pencere açıklıkları var."
+3. Ziyaret Mührü'nü aç: ekran okuyucu "Bulunacak kısım: İç mekân." deyip aranacak yeri anlatır (beyaz duvarlar, kemerli
+   pencereler, minber). Az gören ziyaretçi neyi araması gerektiğini duyar.
+4. Ekran okuyucuyu kısayolla kapat; açıkken dokunuşlar iki adımlı olur, akışın geri kalanını yavaşlatır.
+
+Söylenecek: "Fotoğrafları kamerasız, sesle betimliyoruz. 800'den fazla kitap fotoğrafının betimlemesini görüntü modeli
+yazdı; ekran okuyucu bunları okuyor, mühür ekranı da aranacak parçayı tarif ediyor."
 
 ### Rehber soruları
 
