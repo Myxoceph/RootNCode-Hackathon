@@ -7,6 +7,25 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-04 · Taşa Sor (sözleşme 0.3.24)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **demoyu açan**, **uygulama ekibi**
+
+1. API'yi yerelde çalıştıranlar: `apps/api/.env`'e `VISION_MODEL=qwen3-vl-30b` ekle (EVREN anahtarı
+   aynı), API'yi yeniden başlat.
+2. Demoyu açan: `deploy/demo.sh up` yeter; compose EVREN'in görüntü modelini varsayılan alıyor.
+3. Uygulama ekibi: `npm install` (uygulamaya `expo-image-manipulator` eklendi; Expo Go'da hazır).
+   Kamera izni metni değişti (`app.json`); APK yeniden derlenmeli.
+
+Değişenler:
+- Eser sayfasında, telefonda, "Taşa Sor": kamerayla bir detayı çek, deklanşörle "Bu ne?" ya da
+  mikrofonla sor; cevap eserin kaydına dayanır, ekranda yazılı görünür ve sesli okunur
+  (`POST /vision/ask`, ayrıntılar `docs/deploy.md`, "Taşa Sor").
+- "Sesli betimle" (eser sayfası) ve haritadaki "Betimle" artık Rehber'in EVREN sesiyle okuyor;
+  sayfadan çıkınca ya da başka esere geçince duruyor.
+
+---
+
 ## 2026-11-03 · Kaydettiklerim: yemek önerileri ve ulaşım tarifleri hesapta (migration, sözleşme 0.3.23)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**

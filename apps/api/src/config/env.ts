@@ -64,6 +64,9 @@ const EnvSchema = z.object({
   // Either empty turns voice off; POST /voice/* then answer 503.
   VOICE_ASR_MODEL: z.string().default(""),
   VOICE_TTS_MODEL: z.string().default(""),
+  // Taşa Sor, on the assistant's provider: a model that sees images (EVREN's qwen3-vl-30b).
+  // Empty turns it off; POST /vision/ask then answers 503.
+  VISION_MODEL: z.string().default(""),
   // OpenTripPlanner serving the Konya graph (deploy/otp/prepare.sh), e.g. http://otp:8080; empty turns
   // transit directions off and GET /transit/plan answers 503.
   OTP_URL: z.union([z.literal(""), z.url()]).default(""),

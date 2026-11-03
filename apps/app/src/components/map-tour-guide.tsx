@@ -166,14 +166,14 @@ export function MapTourGuide({
             accessibilityLabel="Önceki adım"
             accessibilityState={{ disabled: !onPrevious }}
             hitSlop={8}
-            style={({ hovered }) => [styles.skip, styles.back, hovered && onPrevious && styles.skipHovered, !onPrevious && styles.backOff]}
+            style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.skip, styles.back, hovered && onPrevious && styles.skipHovered, !onPrevious && styles.backOff]}
           >
             <Ionicons name="chevron-back" size={14} color={palette.white} />
             <Text variant="caption" colorValue={palette.white} style={styles.skipLabel}>
               Önceki
             </Text>
           </Pressable>
-          <Pressable onPress={onSkip} accessibilityRole="button" accessibilityLabel="Gösterimi geç" hitSlop={8} style={({ hovered }) => [styles.skip, hovered && styles.skipHovered]}>
+          <Pressable onPress={onSkip} accessibilityRole="button" accessibilityLabel="Gösterimi geç" hitSlop={8} style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.skip, hovered && styles.skipHovered]}>
             <Text variant="caption" colorValue={palette.white} style={styles.skipLabel}>
               Geç
             </Text>
