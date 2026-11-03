@@ -416,6 +416,25 @@ tek başına istenir, kalanı o çalarken hazırlanır. İkisi de yalnızca hesa
 - Ses EVREN'den gelmezse uygulama cevabı telefonun kendi sesiyle (cihaz TTS) okur.
 - Gürültülü salonda telefonu ağza yakın tut; tanınan metin ekranda soru olarak görünür.
 
+### Taşa Sor
+
+Eser sayfasındaki "Taşa Sor" (yalnızca telefonda) kamerayı açar. Ziyaretçi bir detayı (çini, kapı,
+kitabe, oyma) çeker ve deklanşörle "Bu ne?" ya da mikrofonla kendi sorusunu sorar. Fotoğraf telefonda
+1024 piksele küçültülür ve `POST /vision/ask?assetId=…&question=…` ile gönderilir; gövde fotoğrafın
+kendisidir (JPEG, en çok 1,5 MB). Model, eserin Rehber'in okuduğu kaydıyla birlikte çağrılır ve en çok
+3 cümleyle, kayda dayandığı yeri `[n]` ile göstererek cevap verir; cevap sesli okunur. Yalnızca hesapla.
+
+| Ne | Model | Süre (2026-11-03) |
+|---|---|---|
+| Fotoğraftan cevap | `qwen3-vl-30b` (`VISION_MODEL`) | ~1–2 sn |
+
+- Model asistanın adresini ve anahtarını kullanır; `deploy/compose.yml` EVREN'in modelini varsayılan
+  alır. Boş bırakılırsa Taşa Sor 503 verir, uygulamanın geri kalanı etkilenmez.
+- Fotoğraf saklanmaz, loglanmaz. Modele insanları betimlememesi, kayıtta olmayanı uydurmaması ve emin
+  değilse bunu söylemesi kuralı verilir; yine de yanlış tanıyabilir. Demoda önceden denenmiş bir detay
+  göster (ör. Yeşil Camii taçkapısı, Hamza Bey Camii kitabesi).
+- EVREN bir isteği bekletirse 9. saniyede ikinci bir istek gider; 25 sn'de vazgeçilir.
+
 ## Toplu taşıma (Konya pilotu)
 
 Asistanın "nasıl giderim" cevabı ve `GET /transit/plan`, Konya'da otobüs ve tramvayla rota verir. Rotayı
