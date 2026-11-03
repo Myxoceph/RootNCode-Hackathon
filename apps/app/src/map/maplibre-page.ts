@@ -1,6 +1,6 @@
 import turkeyOutline from "./turkey-outline.json";
 import turkeyProvinces from "./turkey-provinces.json";
-import type { MapNetwork, MapPadding, MapPin, MapProvinces } from "./types";
+import type { MapNetwork, MapPadding, MapPin, MapProvinces, MapSpots } from "./types";
 
 /**
  * MapLibre GL JS, bundled into the app by scripts/vendor-web-libs.mts: the same renderer
@@ -63,6 +63,8 @@ export type MapPageEvent =
   | { type: "inspect"; id: string }
   /** "İlişkili eser listesini incele" beside "Kapat" was tapped. */
   | { type: "relatedList"; id: string }
+  /** While asked (watchSpots): where the chosen asset and "Kilidini aç" are on screen, in pixels from the map's top left. */
+  | { type: "spots"; spots: MapSpots }
   | { type: "error"; message: string };
 
 /** Messages the app sends to the map page. */
@@ -70,7 +72,8 @@ export type MapPageCommand =
   | { type: "pins"; pins: MapPin[]; padding: MapPadding }
   | { type: "select"; id: string | null }
   | { type: "network"; network: MapNetwork | null }
-  | { type: "provinces"; provinces: MapProvinces | null };
+  | { type: "provinces"; provinces: MapProvinces | null }
+  | { type: "watchSpots"; on: boolean };
 
 export function parseMapPageEvent(data: unknown): MapPageEvent | null {
   if (typeof data !== "string") return null;
@@ -342,6 +345,7 @@ window.vagabondsMap = {
       if (command.type === "select") actions.select(command.id);
       if (command.type === "network") actions.showNetwork(command.network);
       if (command.type === "provinces") actions.showProvinces(command.provinces);
+      if (command.type === "watchSpots") actions.watchSpots(command.on);
     } catch (error) {
       reportError(command.type, error);
     }
@@ -898,7 +902,12 @@ function start() {
   /** Where each province's name goes: a point inside it, from the data. */
   const labelPoints = new Map(PROVINCES.features.map((feature) => [feature.properties.plate, feature.properties.label]));
 
+  /** The province with the most assets and where its name sits: the map tour points at it. */
+  let topProvince = null;
+
   function setLabels(highlighted) {
+    const top = highlighted.reduce((best, province) => (labelPoints.has(province.plate) && (!best || (province.rank || 0) > (best.rank || 0)) ? province : best), null);
+    topProvince = top ? { name: top.name, point: labelPoints.get(top.plate) } : null;
     map.getSource("province-names").setData({
       type: "FeatureCollection",
       features: highlighted.flatMap((province) => {
@@ -2617,6 +2626,36 @@ function start() {
   actions.select = select;
   actions.showNetwork = showNetwork;
   actions.showProvinces = showProvinces;
+  actions.watchSpots = watchSpots;
+
+  // Where the map tour points: the busiest province's name in the Turkey view, the chosen asset once the camera
+  // has landed in a city, and "Kilidini aç" while it shows.
+  // Polled rather than tied to every frame, and sent only when something moved.
+  const SPOTS_MS = 120;
+  let spotsTimer = null;
+  let lastSpots = "";
+  function watchSpots(on) {
+    clearInterval(spotsTimer);
+    spotsTimer = null;
+    lastSpots = "";
+    if (on) spotsTimer = setInterval(postSpots, SPOTS_MS);
+  }
+  function postSpots() {
+    const province = cityPlate === null && !intro && labelsRevealed && topProvince ? map.project(topProvince.point) : null;
+    const asset = cityPlate !== null && cityLanded && !flying ? cityAssets.find((candidate) => candidate.id === citySelected) : null;
+    const point = asset ? map.project([asset.lng, asset.lat]) : null;
+    let button = null;
+    if (unlock && unlockFor) {
+      const rect = unlock.getElement().firstChild.getBoundingClientRect();
+      const frame = map.getContainer().getBoundingClientRect();
+      button = { x: Math.round(rect.left - frame.left), y: Math.round(rect.top - frame.top), width: Math.round(rect.width), height: Math.round(rect.height) };
+    }
+    const spots = { province: province ? { x: Math.round(province.x), y: Math.round(province.y), name: topProvince.name } : null, asset: point ? { x: Math.round(point.x), y: Math.round(point.y) } : null, unlock: button };
+    const json = JSON.stringify(spots);
+    if (json === lastSpots) return;
+    lastSpots = json;
+    post({ type: "spots", spots });
+  }
 }
 </script>
 </body>
