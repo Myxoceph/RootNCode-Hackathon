@@ -2,11 +2,12 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import type { Media } from "@vagabonds/contracts";
 import { cameraColors, spacing, Text, touchTarget } from "@vagabonds/ui";
 import { useEffect, useRef, useState } from "react";
-import { Modal, Platform, Pressable, ScrollView, StyleSheet, useWindowDimensions, View, type ScrollViewInstance } from "react-native";
+import { Platform, Pressable, ScrollView, StyleSheet, View, type ScrollViewInstance } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { AssetImage } from "@/components/asset-image";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { FrameModal, useFrameDimensions } from "@/lib/in-frame";
 
 /**
  * Every photo and drawing of an asset, full screen: swiped sideways, or stepped with the previous and
@@ -15,16 +16,16 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 export function AssetGallery({ photos, visible, onClose }: { photos: Media[]; visible: boolean; onClose: () => void }) {
   const reduceMotion = useReducedMotion();
   return (
-    <Modal visible={visible} animationType={reduceMotion ? "none" : "fade"} presentationStyle="fullScreen" onRequestClose={onClose}>
+    <FrameModal visible={visible} animationType={reduceMotion ? "none" : "fade"} presentationStyle="fullScreen" onRequestClose={onClose}>
       {visible && <Viewer photos={photos} onClose={onClose} />}
-    </Modal>
+    </FrameModal>
   );
 }
 
 function Viewer({ photos, onClose }: { photos: Media[]; onClose: () => void }) {
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
-  const { width } = useWindowDimensions();
+  const { width } = useFrameDimensions();
   const scroll = useRef<ScrollViewInstance>(null);
   const [index, setIndex] = useState(0);
   const photo = photos[index];

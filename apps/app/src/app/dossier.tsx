@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AccessibilityStatus, AssetDetail, Media, TimelineEvent } from "@vagabonds/contracts";
 import { fontFamily, radius, SourceNote, spacing, Text, touchTarget, useTheme, useUi } from "@vagabonds/ui";
-import { Link, useLocalSearchParams, useRouter, type Href } from "expo-router";
+import { useLocalSearchParams, useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import { useMemo, useRef, useState, type ComponentProps, type ReactNode } from "react";
 import { Linking, Pressable, ScrollView, StyleSheet, View, type NativeScrollEvent, type NativeSyntheticEvent, type ScrollViewInstance } from "react-native";
@@ -10,6 +10,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AssetImage } from "@/components/asset-image";
 import { ResourceView } from "@/components/resource-view";
 import { useAsset } from "@/data";
+import { Editable, FrameLink, useFrameEditing, useInFrame, type EditPart } from "@/lib/in-frame";
 import { centuryOf, paragraphsOf, readableDate, readingMinutes, sentencesOf } from "@/lib/reading";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -20,6 +21,17 @@ type IconName = ComponentProps<typeof Ionicons>["name"];
  * cut: long texts are set in short paragraphs, photos break them up, each block has its own band and
  * the bar on top always says where the reader is. A block with nothing in it does not show.
  */
+/** The dossier of an asset already at hand, inside a frame: the admin panel's phone preview. */
+export function DossierView({ asset }: { asset: AssetDetail }) {
+  const { colors: c } = useTheme();
+  return (
+    <View style={[styles.flex, { backgroundColor: c.background }]}>
+      <TopBar asset={asset.id} />
+      <Dossier asset={asset} />
+    </View>
+  );
+}
+
 export default function DossierScreen() {
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const resource = useAsset(id ?? "");
@@ -51,8 +63,10 @@ function TopBar({ asset }: { asset?: string }) {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { colors: c } = useTheme();
+  const frame = useInFrame();
   const back = () => {
-    if (router.canGoBack()) router.back();
+    if (frame) frame.back();
+    else if (router.canGoBack()) router.back();
     else if (asset) router.replace({ pathname: "/monuments/[id]", params: { id: asset } });
     else router.replace("/monuments");
   };
@@ -74,7 +88,21 @@ interface Block {
   body: ReactNode;
 }
 
-function blocksOf(asset: AssetDetail): Block[] {
+/** The part of the record each block shows, for the panel's editor. */
+const PARTS: Record<string, EditPart | undefined> = {
+  identity: "built",
+  history: "sections",
+  timeline: "timeline",
+  people: "people",
+  waqf: "waqf",
+  inscriptions: "inscriptions",
+  facts: "facts",
+  legends: "legends",
+  accessibility: "access",
+};
+
+/** In the panel's editor with its samples on, an empty block still shows, to say where it would go. */
+function blocksOf(asset: AssetDetail, placeholders = false): Block[] {
   const candidates: Array<[string, string, ReactNode | null]> = [
     ["identity", "Künye", identity(asset)],
     ["history", "Tarihçe", asset.sections.length > 0 ? <History asset={asset} /> : null],
@@ -87,7 +115,11 @@ function blocksOf(asset: AssetDetail): Block[] {
     ["accessibility", "Erişilebilirlik", <Access key="access" asset={asset} />],
     ["sources", "Kaynakça", asset.sources.length > 0 ? <Sources asset={asset} /> : null],
   ];
-  return candidates.flatMap(([key, title, body]) => (body ? [{ key, title, body }] : []));
+  return candidates.flatMap(([key, title, body]) => {
+    if (body) return [{ key, title, body }];
+    if (placeholders && PARTS[key]) return [{ key, title, body: <Text color="textSecondary">Henüz eklenmedi. Uygulamada bu kısım görünmez.</Text> }];
+    return [];
+  });
 }
 
 function wordsOf(asset: AssetDetail): number {
@@ -104,7 +136,9 @@ function Dossier({ asset }: { asset: AssetDetail }) {
   const positions = useRef<Record<string, number>>({});
   const chips = useRef<Record<string, number>>({});
   const navHeight = useRef(0);
-  const blocks = useMemo(() => blocksOf(asset), [asset]);
+  const edit = useFrameEditing();
+  const placeholders = edit?.samples ?? false;
+  const blocks = useMemo(() => blocksOf(asset, placeholders), [asset, placeholders]);
   const [active, setActive] = useState(blocks[0]?.key);
 
   const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -160,22 +194,34 @@ function Dossier({ asset }: { asset: AssetDetail }) {
           }}
         >
           <View style={styles.column}>
-            <View style={styles.blockHead}>
-              <View style={styles.blockMark} aria-hidden>
-                <Text variant="caption" color="textSecondary" style={styles.blockNumber}>
-                  {String(index + 1).padStart(2, "0")}
+            <BlockPart part={PARTS[block.key]}>
+              <View style={styles.blockHead}>
+                <View style={styles.blockMark} aria-hidden>
+                  <Text variant="caption" color="textSecondary" style={styles.blockNumber}>
+                    {String(index + 1).padStart(2, "0")}
+                  </Text>
+                  <View style={[styles.blockRule, { backgroundColor: c.highlightMark }]} />
+                </View>
+                <Text variant="display" headingLevel={2}>
+                  {block.title}
                 </Text>
-                <View style={[styles.blockRule, { backgroundColor: c.highlightMark }]} />
               </View>
-              <Text variant="display" headingLevel={2}>
-                {block.title}
-              </Text>
-            </View>
-            {block.body}
+              {block.body}
+            </BlockPart>
           </View>
         </View>
       ))}
     </ScrollView>
+  );
+}
+
+/** A block the panel's editor can pick, when it shows a part of the record. */
+function BlockPart({ part, children }: { part: EditPart | undefined; children: ReactNode }) {
+  if (!part) return <>{children}</>;
+  return (
+    <Editable part={part} style={styles.column}>
+      {children}
+    </Editable>
   );
 }
 
@@ -245,13 +291,13 @@ function Info({ icon, label, children }: { icon: IconName; label: string; childr
 function AssetLink({ id, name }: { id: string; name: string }) {
   const { colors: c } = useTheme();
   return (
-    <Link href={{ pathname: "/monuments/[id]", params: { id } }} asChild>
+    <FrameLink href={{ pathname: "/monuments/[id]", params: { id } }}>
       <Pressable accessibilityRole="link" style={styles.link}>
         <Text variant="label" colorValue={c.primary} style={styles.underline}>
           {name}
         </Text>
       </Pressable>
-    </Link>
+    </FrameLink>
   );
 }
 
@@ -541,14 +587,14 @@ function Inscriptions({ asset }: { asset: AssetDetail }) {
             )}
             {inscription.note && <Text variant="caption">{inscription.note}</Text>}
             {inscription.arTarget && (
-              <Link href={camera} asChild>
+              <FrameLink href={camera}>
                 <Pressable accessibilityRole="link" accessibilityLabel={`Kamerayla oku: ${inscription.location ?? "kitabe"}`} style={styles.cameraLink}>
                   <Ionicons name="scan-outline" size={18} color={c.primary} />
                   <Text variant="label" colorValue={c.primary}>
                     Kamerayla oku
                   </Text>
                 </Pressable>
-              </Link>
+              </FrameLink>
             )}
           </View>
         );
