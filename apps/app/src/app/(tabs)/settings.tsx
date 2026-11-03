@@ -10,7 +10,7 @@ import { Animated, Easing, Pressable, ScrollView, StyleSheet, View } from "react
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Circle, Defs, G, LinearGradient, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
 
-import { logout, useCommunity, useMyAchievements, useMyContributions } from "@/data";
+import { avatarUri, logout, refreshMe, useCommunity, useMyAchievements, useMyContributions } from "@/data";
 import { announce } from "@/lib/announce";
 import { useSavedRoutes } from "@/lib/saved-routes";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
@@ -82,6 +82,11 @@ let peeked = false;
 
 function Passport() {
   const { user } = useCommunity();
+  // The photo's path is signed for a day: a fresh one each time the card is shown.
+  const accountId = user?.username ? user.id : null;
+  useEffect(() => {
+    if (accountId) refreshMe().catch(() => undefined);
+  }, [accountId]);
   const badges = useMyAchievements();
   const data = badges.status === "success" ? badges.data : null;
   const signedIn = Boolean(user?.username);
@@ -90,9 +95,8 @@ function Passport() {
   const earned = data ? data.items.filter((item) => item.earnedAt).length : 0;
   const visits = data?.visits ?? 0;
   const account = signedIn ? `@${user!.username}` : "Misafir gezgin";
-  // The visitor's own photo and full name: the account does not carry them yet (the API adds
-  // them later), so the back shows the initial and the nickname until then.
-  const holder: { photoUrl: string | null; fullName: string | null } = { photoUrl: null, fullName: null };
+  // The visitor's own photo and full name; without them the back shows the initial and the nickname.
+  const holder = { photoUrl: avatarUri(user), fullName: user?.fullName ?? null };
   const fullName = holder.fullName ?? name;
 
   // The cover is drawn at the card's measured size.
