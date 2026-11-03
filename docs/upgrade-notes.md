@@ -7,6 +7,21 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-03 · Kitap fotoğrafları etiketlendi (ne gösterdikleri)
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import`
+
+Değişenler:
+- 237 kayıtta sınıflanmamış (`subject: "photo"`) 794 kitap fotoğrafına ne gösterdiği yazıldı (dış cephe, iç mekân,
+  taçkapı, kitabe, mihrap…). Etiketleri EVREN'in görüntü modeli (`qwen3-vl-30b`) verdi; mevcut etiketli 102 fotoğrafta
+  %67 birebir doğru, bir parça (taçkapı, kitabe, mihrap…) dediğinde %94 gerçekten bir parça.
+- Ziyaret Mührü artık 252 eserde bir parçayı (önce 146), 405 eserde binanın bir görünümünü tanıtıyor; "Genel görünüm"
+  yedeğine düşen 3 eser kaldı. Bütün fotoğrafları "havadan" çıkan 5 eser, mührünü kaybetmesin diye etiketsiz bırakıldı.
+
+---
+
 ## 2026-11-03 · Kilidi aç ziyaret sayılıyor, etkinlik puanı ve not rozetleri (sözleşme 0.3.26)
 
 Kimler: **API'yi yerelde çalıştıranlar**
