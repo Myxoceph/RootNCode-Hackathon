@@ -11,7 +11,7 @@ import { CityAssetCards } from "@/components/city-asset-cards";
 import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapCityButtons } from "@/components/map-city-buttons";
 import { MapSearch } from "@/components/map-search";
-import { MapTourGuide } from "@/components/map-tour-guide";
+import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
 import { SealScanDemo } from "@/components/seal-scan-demo";
 import { CITY_LANDMARKS, useCities, useCityMapAssets, useRelationsOf } from "@/data";
 import { announce } from "@/lib/announce";
@@ -249,6 +249,14 @@ export default function MapScreen() {
     },
   });
 
+  // "Bir esere dokun" points at the chosen asset: on a tour played again, the visitor may have unlocked it
+  // already, so the tour chooses a locked one (the nearest to the landmark) instead.
+  const chosenUnlocked = chosenAsset !== null && unlocked.has(chosenAsset);
+  const firstLocked = cards.find((card) => !unlocked.has(card.id))?.id ?? null;
+  useEffect(() => {
+    if (tour.step === "choose" && chosenUnlocked && firstLocked) setChosenAsset(firstLocked);
+  }, [tour.step, chosenUnlocked, firstLocked]);
+
   // Android's back button leaves the city before it leaves the screen.
   useEffect(() => {
     // Only Android has one; the web warns that BackHandler is not supported.
@@ -289,7 +297,7 @@ export default function MapScreen() {
         onSelect={(id) => {
           if (!id) return;
           setChosenAsset(id);
-          tour.onAssetTapped();
+          tour.onAssetTapped(!unlocked.has(id));
         }}
         onSelectProvince={openCity}
         onLeaveCity={backToTurkey}
@@ -331,13 +339,21 @@ export default function MapScreen() {
             onPickCity={openCity}
             onPickAsset={pickAsset}
             notice={notice}
+            trailing={
+              <MapTourReplayButton
+                onPress={() => {
+                  setTourSpots(null);
+                  tour.replay();
+                }}
+              />
+            }
             below={chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null}
           />
         )}
         {!selectedCity && <MapCityButtons cities={withAssets} bottom={tabBarHeight + spacing.sm} onOpen={openCity} />}
       </Animated.View>
       {tour.scanning && <SealScanDemo onDone={tour.onScanned} />}
-      {tour.step && <MapTourGuide step={tour.step} spots={tourSpots} top={insets.top} onSkip={tour.skip} />}
+      {tour.step && <MapTourGuide step={tour.step} spots={tourSpots} top={insets.top} onNext={tour.next} onSkip={tour.skip} />}
     </View>
   );
 }

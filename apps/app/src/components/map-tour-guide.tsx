@@ -1,9 +1,11 @@
-import { fontFamily, palette, radius, spacing, Text } from "@vagabonds/ui";
-import { useEffect, useRef, useState } from "react";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { fontFamily, palette, radius, spacing, Text, touchTarget } from "@vagabonds/ui";
+import { useEffect, useRef, useState, type ComponentProps } from "react";
 import { Animated, Easing, Pressable, StyleSheet, useWindowDimensions, View } from "react-native";
 
 import { announce } from "@/lib/announce";
-import { COUNTED_STEPS, MAP_TOUR_STEPS, type MapTourStep } from "@/lib/map-tour";
+import { COUNTED_STEPS, isTabStep, MAP_TOUR_STEPS, TAB_OF, TAB_STEPS, type MapTourStep, type TabStep } from "@/lib/map-tour";
+import { setTabSpotlight, useTabSpots, type TabSpot } from "@/lib/tab-bar-spots";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import type { MapSpots } from "@/map";
 
@@ -28,6 +30,14 @@ function titleCase(name: string): string {
 /** The steps whose bubble stands beside something on the map. */
 const POINTING = new Set<MapTourStep>(["city", "choose", "unlock"]);
 
+const TAB_ICONS: Record<TabStep, ComponentProps<typeof Ionicons>["name"]> = {
+  "tab-map": "map",
+  "tab-rehber": "sparkles",
+  "tab-camera": "camera",
+  "tab-monuments": "library",
+  "tab-settings": "person",
+};
+
 interface Target {
   x: number;
   y: number;
@@ -35,7 +45,11 @@ interface Target {
   box?: { x: number; y: number; width: number; height: number };
 }
 
-function targetOf(step: MapTourStep, spots: MapSpots | null, width: number, height: number): Target | null {
+function targetOf(step: MapTourStep, spots: MapSpots | null, tabs: Readonly<Record<string, TabSpot>>, width: number, height: number): Target | null {
+  if (isTabStep(step)) {
+    const box = tabs[TAB_OF[step]];
+    return box ? { x: box.x + box.width / 2, y: box.y, box } : null;
+  }
   if (step === "city" && spots?.province) return spots.province;
   if (step === "choose" && spots?.asset) return spots.asset;
   if (step === "unlock" && spots?.unlock) {
@@ -49,9 +63,10 @@ function targetOf(step: MapTourStep, spots: MapSpots | null, width: number, heig
 /**
  * The map tour's guide: a thin step bar with "Geç" at the top, and a gold bubble beside what to tap
  * next, its arrow on it and a ring pulsing there. Steps with nothing to tap (the opened asset, the
- * last word) keep the bubble at the top; while the unlocking scene plays, only the bar stays. Each step is said aloud.
+ * last word) keep the bubble at the top; while the unlocking scene plays, only the bar stays. Then the
+ * bubble stands over each tab of the bar in turn, with "İleri" in it, gliding from tab to tab. Each step is said aloud.
  */
-export function MapTourGuide({ step, spots, top, onSkip }: { step: MapTourStep; spots: MapSpots | null; top: number; onSkip: () => void }) {
+export function MapTourGuide({ step, spots, top, onNext, onSkip }: { step: MapTourStep; spots: MapSpots | null; top: number; onNext: () => void; onSkip: () => void }) {
   const { width, height } = useWindowDimensions();
   const reduced = useReducedMotion();
   const enter = useRef(new Animated.Value(0)).current;
@@ -61,16 +76,26 @@ export function MapTourGuide({ step, spots, top, onSkip }: { step: MapTourStep; 
 
   const barTop = top + spacing.sm;
   const barBottom = barTop + 36;
-  const target = targetOf(step, spots, width, height);
+  const tabs = useTabSpots();
+  const target = targetOf(step, spots, tabs, width, height);
+  const onTab = isTabStep(step);
+  const lastTab = step === TAB_STEPS[TAB_STEPS.length - 1];
   // A step that points at something waits for it (the camera still flying, the button not up yet), instead of
-  // showing at the top first and jumping over to it. While the unlocking scene plays, the scene says it.
-  const shown = (target !== null || !POINTING.has(step)) && !(step === "opened" && !reduced);
+  // showing at the top first and jumping over to it. While the unlocking scene plays, the scene says it; the
+  // tabs have their own screen.
+  const shown = (target !== null || !POINTING.has(step)) && !(step === "opened" && !reduced) && !onTab;
+
+  // The bar lights the tab being shown and dims the rest.
+  useEffect(() => setTabSpotlight(onTab ? TAB_OF[step as TabStep] : null), [onTab, step]);
+  useEffect(() => () => setTabSpotlight(null), []);
 
   useEffect(() => announce(`${title}. ${body}`), [title, body]);
+  // From tab to tab the bubble stays up and glides over; anywhere else a new step pops in.
+  const placed = `${onTab ? "tabs" : step}:${shown}`;
   useEffect(() => {
     enter.setValue(0);
     if (shown) Animated.timing(enter, { toValue: 1, duration: reduced ? 0 : 280, easing: Easing.out(Easing.back(1.6)), useNativeDriver: true }).start();
-  }, [step, shown, enter, reduced]);
+  }, [placed, shown, enter, reduced]);
 
   // Over the target when there is room, under it otherwise; at the top with no target.
   const above = target ? target.y - GAP - ARROW - bubbleHeight > barBottom + spacing.sm : false;
@@ -78,12 +103,13 @@ export function MapTourGuide({ step, spots, top, onSkip }: { step: MapTourStep; 
   const bubbleLeft = Math.min(Math.max((target?.x ?? width / 2) - BUBBLE_WIDTH / 2, EDGE), width - EDGE - BUBBLE_WIDTH);
   const arrowLeft = target ? Math.min(Math.max(target.x - bubbleLeft - ARROW, radius.xl), BUBBLE_WIDTH - radius.xl - ARROW * 2) : null;
   // A new step (or a bubble just come in) is put in place; after that it glides after its target as the map moves.
-  const placed = `${step}:${shown}`;
   const bubbleAt = useGlide(bubbleLeft, bubbleTop, placed, reduced);
   const pulseAt = useGlide(target?.box?.x ?? target?.x ?? 0, target?.box?.y ?? target?.y ?? 0, placed, reduced);
 
   return (
     <View style={StyleSheet.absoluteFill} pointerEvents="box-none">
+      {onTab && <TabIntro step={step as TabStep} tab={target?.box ?? null} last={lastTab} still={reduced} onNext={onNext} />}
+
       {target && shown && step !== "scan" && (
         <Animated.View pointerEvents="none" style={[styles.anchor, { transform: pulseAt.getTranslateTransform() }]}>
           <Pulse box={target.box ?? null} still={reduced} />
@@ -126,6 +152,68 @@ export function MapTourGuide({ step, spots, top, onSkip }: { step: MapTourStep; 
 }
 
 /**
+ * The tab bar's tour: the map darkens, the bar keeps the shown tab lit, and the middle of the screen
+ * names it in large type with one line under it. A gold chevron bobs over the tab. A tap anywhere goes on.
+ */
+function TabIntro({ step, tab, last, still, onNext }: { step: TabStep; tab: TabSpot | null; last: boolean; still: boolean; onNext: () => void }) {
+  const { width } = useWindowDimensions();
+  const dim = useRef(new Animated.Value(0)).current;
+  const words = useRef(new Animated.Value(0)).current;
+  const bob = useRef(new Animated.Value(0)).current;
+  const { title, body } = MAP_TOUR_STEPS[step];
+
+  useEffect(() => {
+    Animated.timing(dim, { toValue: 1, duration: still ? 0 : 360, easing: Easing.out(Easing.quad), useNativeDriver: true }).start();
+  }, [dim, still]);
+  // Each tab's words come in on their own, rising a little.
+  useEffect(() => {
+    words.setValue(0);
+    Animated.timing(words, { toValue: 1, duration: still ? 0 : 420, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
+  }, [step, words, still]);
+  useEffect(() => {
+    if (still) return;
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(bob, { toValue: 1, duration: 600, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
+        Animated.timing(bob, { toValue: 0, duration: 600, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
+      ]),
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [bob, still]);
+
+  const chevronX = useGlide(tab ? tab.x + tab.width / 2 - 14 : width / 2 - 14, tab ? tab.y - 40 : 0, "tabs", still);
+
+  return (
+    <Animated.View style={[StyleSheet.absoluteFill, { opacity: dim }]}>
+      <Pressable onPress={onNext} accessibilityRole="button" accessibilityLabel={last ? "Bitir" : "Devam"} style={[StyleSheet.absoluteFill, styles.intro]}>
+        <Animated.View style={[styles.introWords, { opacity: words, transform: [{ translateY: words.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}>
+          <View style={styles.introIcon}>
+            <Ionicons name={TAB_ICONS[step]} size={26} color={ON_BUBBLE} />
+          </View>
+          <Text colorValue={palette.white} style={styles.introTitle}>
+            {title}
+          </Text>
+          <Text colorValue={palette.gece200} style={styles.introBody}>
+            {body}
+          </Text>
+        </Animated.View>
+        {tab && (
+          <Text variant="caption" colorValue={palette.gece300} style={[styles.introHint, { top: tab.y - 84 }]}>
+            {last ? "Bitirmek için dokun" : "Devam etmek için dokun"}
+          </Text>
+        )}
+      </Pressable>
+      {tab && (
+        <Animated.View pointerEvents="none" style={[styles.anchor, { transform: [...chevronX.getTranslateTransform(), { translateY: bob.interpolate({ inputRange: [0, 1], outputRange: [0, 6] }) }] }]}>
+          <Ionicons name="chevron-down" size={28} color={BUBBLE} />
+        </Animated.View>
+      )}
+    </Animated.View>
+  );
+}
+
+/**
  * A point that follows `x`, `y`: it jumps there when `placed` changes, and glides there otherwise, so a
  * bubble trails the map smoothly between the map's reports instead of stepping.
  */
@@ -142,6 +230,23 @@ function useGlide(x: number, y: number, placed: string, still: boolean): Animate
     Animated.timing(point, { toValue: { x, y }, duration: 180, easing: Easing.out(Easing.quad), useNativeDriver: true }).start();
   }, [x, y, placed, still, point]);
   return point;
+}
+
+/** In the map's search field, in the tour's gold: plays the tour again from the start. */
+export function MapTourReplayButton({ onPress }: { onPress: () => void }) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel="Nasıl oynanır, turu tekrar izle"
+      onPress={onPress}
+      hitSlop={4}
+      style={({ pressed }) => [styles.replay, pressed && styles.replayPressed]}
+    >
+      <View style={styles.replayDisc}>
+        <Ionicons name="help" size={20} color={ON_BUBBLE} />
+      </View>
+    </Pressable>
+  );
 }
 
 /** A ring that grows and fades over and over where the visitor should tap; around a box, its outline breathes instead. Drawn from its anchor: the point, or the box's top left. */
@@ -175,6 +280,64 @@ function Pulse({ box, still }: { box: Target["box"] | null; still: boolean }) {
 }
 
 const styles = StyleSheet.create({
+  // The touch target stays full size; the disc in it is a little smaller, as the field's other icons.
+  replay: {
+    width: touchTarget.min,
+    height: touchTarget.min,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  replayPressed: {
+    opacity: 0.8,
+    transform: [{ scale: 0.94 }],
+  },
+  intro: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(6, 8, 13, 0.82)",
+  },
+  introWords: {
+    alignItems: "center",
+    gap: spacing.sm,
+    paddingHorizontal: spacing.xl,
+  },
+  introIcon: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: BUBBLE,
+    marginBottom: spacing.sm,
+  },
+  introTitle: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 40,
+    lineHeight: 46,
+    letterSpacing: -1,
+    textAlign: "center",
+  },
+  introBody: {
+    maxWidth: 340,
+    fontFamily: fontFamily.sans,
+    fontSize: 16,
+    lineHeight: 24,
+    textAlign: "center",
+  },
+  introHint: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    textAlign: "center",
+  },
+  replayDisc: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: BUBBLE,
+  },
   bar: {
     position: "absolute",
     left: EDGE,
