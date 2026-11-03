@@ -1,9 +1,8 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
-import { useCallback, useEffect, useMemo, useRef, useState, type ComponentProps, type ReactNode } from "react";
-import { ActivityIndicator, Animated, Easing, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { ActivityIndicator, Animated, Easing, Platform, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import type { AssetDetail } from "@vagabonds/contracts";
@@ -12,14 +11,14 @@ import { useInscriptionScope } from "@/ar/inscription-scope";
 import { isTrackable, rememberCompiledSet, useTargetSet, type TrackedTarget } from "@/ar/inscription-targets";
 import { MarkerTracker } from "@/ar/marker-tracker";
 import { trackerFailureText, type TrackerEvent, type TrackerFailure } from "@/ar/mindar";
-import { inscriptionOf, inscriptionText, readAloudKey, type InscriptionText } from "@/ar/use-inscription";
-import { CameraTopBar, GlassIconButton } from "@/components/camera-chrome";
+import { inscriptionOf, inscriptionPlace, inscriptionText, isInscriptionReading, readAloudKey, type InscriptionText } from "@/ar/use-inscription";
+import { CameraTopBar, GlassIconButton, GlassPill } from "@/components/camera-chrome";
 import { GlassFill } from "@/components/city-asset-cards";
 import { InscriptionReading } from "@/components/inscription-reading";
 import { DataError, type ResourceWithRetry } from "@/data";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
+import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -179,10 +178,21 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
 
   const reveal = useCallback(() => {
     go("revealed");
-    announce("Kitabe çözüldü. Okunuşu ve günümüz Türkçesi aşağıda.");
-    if (reduceMotion) card.setValue(1);
-    else Animated.timing(card, { toValue: 1, duration: 600, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
-  }, [card, go, reduceMotion]);
+    announce("Kitabe çözüldü. Günümüz Türkçesi aşağıda.");
+  }, [go]);
+
+  // The card rises once it is on screen: a native animation started before its view exists can skip.
+  useEffect(() => {
+    if (phase !== "revealed") return;
+    if (reduceMotion) {
+      card.setValue(1);
+      return;
+    }
+    card.setValue(0);
+    const rise = Animated.timing(card, { toValue: 1, duration: 600, easing: Easing.out(Easing.cubic), useNativeDriver: true });
+    rise.start();
+    return () => rise.stop();
+  }, [card, phase, reduceMotion]);
 
   const lock = useCallback(
     (index: number) => {
@@ -235,18 +245,18 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
 
   const rescan = () => {
     clearTimeout(revealTimer.current);
-    stopAnswer();
+    stopAnswerOf(isInscriptionReading);
     setExpanded(false);
     card.setValue(0);
     go("scanning");
     if (inView.current >= 0) lock(inView.current);
   };
 
-  // Leaving the camera ends the reading: its Durdur button goes with it.
+  // Leaving the camera ends its own reading (its Durdur button goes with it), not another screen's.
   useEffect(
     () => () => {
       clearTimeout(revealTimer.current);
-      stopAnswer();
+      stopAnswerOf(isInscriptionReading);
     },
     [],
   );
@@ -314,16 +324,16 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
             ]}
           >
             <GlassFill />
-            <ScrollView style={styles.scroll} contentContainerStyle={styles.cardContent} scrollEnabled={expanded}>
+            <ScrollView style={styles.scroll} contentContainerStyle={styles.cardContent}>
               <CardContent inscription={inscription} expanded={expanded} />
             </ScrollView>
             <View style={styles.actions}>
               <ReadAloudButton inscription={inscription} />
-              {inscription.status === "success" && hasMore(inscription.data) && (
-                <Pill
+              {inscription.status === "success" && (
+                <GlassPill
                   icon={expanded ? "chevron-down" : "chevron-up"}
                   label={expanded ? "Daralt" : "Devamı"}
-                  spoken={expanded ? "Kartı daralt" : "Okunuşu ve vakfiyeyi göster"}
+                  spoken={expanded ? "kartı küçült" : "kitabenin tamamını göster"}
                   onPress={() => setExpanded(!expanded)}
                 />
               )}
@@ -335,11 +345,6 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
       </View>
     </View>
   );
-}
-
-/** Whether the card has more than its first lines: the reading or the waqf. */
-function hasMore(text: InscriptionText): boolean {
-  return !!(text.transliteration || text.waqfConditions || text.waqfName || (text.translation && text.translation.length > 160));
 }
 
 function CardContent({ inscription, expanded }: { inscription: ResourceWithRetry<InscriptionText>; expanded: boolean }) {
@@ -362,7 +367,7 @@ function CardContent({ inscription, expanded }: { inscription: ResourceWithRetry
         {["KİTABE", text.date].filter(Boolean).join(" · ")}
       </Text>
       <Text variant="heading" colorValue={cameraColors.text} style={styles.name} headingLevel={1} numberOfLines={expanded ? undefined : 1}>
-        {text.place}
+        {inscriptionPlace(text)}
       </Text>
       {text.translation && (
         <Text colorValue={cameraColors.text} numberOfLines={expanded ? undefined : 3} style={styles.translation}>
@@ -396,24 +401,6 @@ function CardContent({ inscription, expanded }: { inscription: ResourceWithRetry
   );
 }
 
-/** A small rounded button on the card, as the map's action chips. */
-function Pill({ icon, label, spoken, onPress, gold = false }: { icon: ComponentProps<typeof Ionicons>["name"]; label: string; spoken: string; onPress: () => void; gold?: boolean }) {
-  return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityLabel={spoken}
-      onPress={onPress}
-      hitSlop={6}
-      style={({ pressed }) => [styles.pill, gold ? styles.pillGold : styles.pillGlass, pressed && styles.pressed]}
-    >
-      <Ionicons name={icon} size={16} color={gold ? cameraColors.onGold : cameraColors.text} />
-      <Text variant="label" colorValue={gold ? cameraColors.onGold : cameraColors.text} style={styles.pillText}>
-        {label}
-      </Text>
-    </Pressable>
-  );
-}
-
 /** In EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached. */
 function ReadAloudButton({ inscription }: { inscription: ResourceWithRetry<InscriptionText> }) {
   const { settings } = useA11ySettings();
@@ -422,11 +409,11 @@ function ReadAloudButton({ inscription }: { inscription: ResourceWithRetry<Inscr
   const key = readAloudKey(inscription.data);
   const reading = speaking === key;
   return (
-    <Pill
+    <GlassPill
       gold
       icon={reading ? "stop" : "volume-high"}
       label={reading ? "Durdur" : "Sesli oku"}
-      spoken={reading ? "Sesli okumayı durdur" : "Kitabeyi sesli oku"}
+      spoken={reading ? "sesli okumayı kes" : "kitabeyi sesli oku"}
       onPress={() => (reading ? stopAnswer() : void speakAnswer(key, inscription.data.readAloud))}
     />
   );
@@ -455,9 +442,6 @@ const styles = StyleSheet.create({
   waiting: {
     alignItems: "center",
     justifyContent: "center",
-  },
-  center: {
-    textAlign: "center",
   },
   italic: {
     fontFamily: fontFamily.mono,
@@ -534,26 +518,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingTop: spacing.xs,
     paddingBottom: spacing.md,
-  },
-  pill: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.xxs,
-    minHeight: 44,
-    paddingHorizontal: spacing.md,
-    borderRadius: radius.full,
-  },
-  pillGold: {
-    backgroundColor: cameraColors.gold,
-  },
-  pillGlass: {
-    backgroundColor: "rgba(255,255,255,0.16)",
-  },
-  pillText: {
-    fontFamily: fontFamily.sansSemiBold,
-  },
-  pressed: {
-    opacity: 0.8,
   },
   section: {
     borderTopWidth: 1,

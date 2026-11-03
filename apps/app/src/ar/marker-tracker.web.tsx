@@ -17,7 +17,9 @@ export function MarkerTracker({ target, overlays, onEvent, style }: MarkerTracke
   const mindarScript = useVendored(loadMindar);
   const overlayFont = useVendored(loadOverlayFont);
   const html = useMemo(
-    () => (mindarScript && overlayFont ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript, overlayFont }) : null),
+    () =>
+      // The font is optional: "" when it could not be loaded, and the page then draws in a system serif.
+      mindarScript && overlayFont !== null ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript, overlayFont: overlayFont || undefined }) : null,
     [target, overlays, mindarScript, overlayFont],
   );
   const frame = useRef<HTMLIFrameElement>(null);

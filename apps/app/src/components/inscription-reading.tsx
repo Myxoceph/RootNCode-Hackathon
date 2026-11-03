@@ -5,11 +5,11 @@ import { useEffect, type ReactNode } from "react";
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { readAloudKey, type InscriptionText } from "@/ar/use-inscription";
+import { isInscriptionReading, readAloudKey, type InscriptionText } from "@/ar/use-inscription";
 import { DataErrorView } from "@/components/resource-view";
 import type { ResourceWithRetry } from "@/data";
 import { announce } from "@/lib/announce";
-import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
+import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
 interface InscriptionReadingProps {
@@ -41,8 +41,8 @@ export function InscriptionReading({ inscription, notice, onUseCamera }: Inscrip
     if (notice) announce(notice);
   }, [notice]);
 
-  // Leaving the page ends its reading: its Durdur button goes with it.
-  useEffect(() => stopAnswer, []);
+  // Leaving the page (or turning to the camera) ends its own reading, not another screen's.
+  useEffect(() => () => stopAnswerOf(isInscriptionReading), []);
 
   return (
     <View style={[styles.flex, { backgroundColor: c.background }]}>
@@ -122,10 +122,7 @@ function Actions({ text, onUseCamera }: { text: InscriptionText; onUseCamera: ((
           label="Kamerayla tara"
           variant="ghost"
           icon={<Ionicons name="scan-outline" size={18} color={c.text} />}
-          onPress={() => {
-            stopAnswer();
-            onUseCamera();
-          }}
+          onPress={onUseCamera}
           style={styles.flex}
         />
       )}
