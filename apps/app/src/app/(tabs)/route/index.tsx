@@ -137,7 +137,7 @@ export default function RouteScreen() {
               </Text>
             </Pressable>
             <View style={styles.flex}>
-              <Button label="Haritada başlat" onPress={() => router.navigate("/")} />
+              <Button label="Haritada başlat" onPress={() => router.navigate("/map")} />
             </View>
           </View>
         </Card>

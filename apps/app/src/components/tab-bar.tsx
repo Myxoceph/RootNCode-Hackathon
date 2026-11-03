@@ -15,7 +15,7 @@ export interface TabItem {
 }
 
 /** The tabs that float the bar over the screen: the map, the Eserler gallery and Profil run on under it. */
-const FLOATS_ON = new Set(["index", "monuments", "settings"]);
+const FLOATS_ON = new Set(["map", "monuments", "settings"]);
 /** Screens on the card surface, not the page grey (Rehber, white as chat apps are): the bar's strip matches them. */
 const ON_SURFACE = new Set(["rehber"]);
 /** Screens that fill the whole screen, the bar hidden: an asset's story. */
