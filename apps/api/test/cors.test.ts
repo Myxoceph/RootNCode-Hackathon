@@ -30,6 +30,8 @@ describe("CORS", () => {
     });
 
     expect(response.headers["access-control-allow-methods"]).toMatch(/PATCH.*DELETE/);
+    // The profile photo is sent with PUT (`PUT /me/avatar`).
+    expect(response.headers["access-control-allow-methods"]).toContain("PUT");
     await app.close();
   });
 
