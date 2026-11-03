@@ -34,7 +34,7 @@ const INSET = 6;
  * others show their icon, and Kamera sits in the middle as a gold disc. On the map and the Eserler gallery the capsule floats over them;
  * elsewhere it rests on the screen's background, so no screen content hides behind it.
  *
- * Every tab is a button with the "tab" role and its title, whatever is shown of it.
+ * Every tab is a button with the "tab" role and its title, whatever is shown of it; the open one is "selected", on the web too.
  */
 export function TabBar({ state, descriptors, emitter, navigateToTab, insets, items }: BottomTabBarProps & { items: TabItem[] }) {
   const { scheme, colors: c } = useTheme();
@@ -78,6 +78,8 @@ export function TabBar({ state, descriptors, emitter, navigateToTab, insets, ite
             const common = {
               accessibilityRole: "tab" as const,
               accessibilityState: { selected: focused },
+              // The web makes no aria-selected of the state above: said outright, the open tab is announced there too.
+              "aria-selected": focused,
               accessibilityLabel: descriptors[route.key]?.options.tabBarAccessibilityLabel ?? item.title,
               onPress,
               onLongPress,
