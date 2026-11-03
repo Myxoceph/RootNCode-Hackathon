@@ -340,8 +340,14 @@ function FilterMenu({
   if (!anchor) return null;
   return (
     <>
-      <Pressable accessibilityLabel="Menüyü kapat" onPress={onClose} style={StyleSheet.absoluteFill} />
-      <View style={[styles.menu, { top: anchor.top, left: anchor.left, width: anchor.width }]} accessibilityViewIsModal accessibilityRole="radiogroup">
+      {/* A tap beside the menu closes it; screen readers close it with a choice, the back button or the escape gesture. */}
+      <Pressable onPress={onClose} accessible={false} aria-hidden accessibilityElementsHidden importantForAccessibility="no" style={StyleSheet.absoluteFill} />
+      <View
+        style={[styles.menu, { top: anchor.top, left: anchor.left, width: anchor.width }]}
+        accessibilityViewIsModal
+        accessibilityRole="radiogroup"
+        onAccessibilityEscape={onClose}
+      >
         {rows.map((row) => {
           const on = row.code === selected;
           return (
