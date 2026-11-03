@@ -14,7 +14,7 @@ const DEFAULT_PADDING = { top: 48, right: 48, bottom: 48, left: 48 };
  * the commands sent to it when pins or the selection change, and its events.
  */
 export function useMapPage(
-  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity, onCityLanded, onUnlock, onInspect, onOpenRelatedList, onLeaveNote, onSceneEnd, watchSpots = false, onSpots }: AssetMapProps,
+  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity, onCityLanded, onUnlock, onInspect, onOpenRelatedList, onLeaveNote, onSceneEnd, watchSpots = false, onSpots, offerUnlock = false }: AssetMapProps,
   send: (command: MapPageCommand) => void,
 ) {
   const { scheme, colors: c } = useMapTheme();
@@ -72,6 +72,7 @@ export function useMapPage(
   const provincesJson = JSON.stringify(provinces);
   useEffect(() => send({ type: "provinces", provinces: JSON.parse(provincesJson) }), [provincesJson, send]);
   useEffect(() => send({ type: "watchSpots", on: watchSpots }), [watchSpots, send]);
+  useEffect(() => send({ type: "offerUnlock", on: offerUnlock }), [offerUnlock, send]);
 
   const onMessage = (data: unknown) => {
     const event = parseMapPageEvent(data);
@@ -99,6 +100,7 @@ export function useMapPage(
     send({ type: "network", network });
     send({ type: "provinces", provinces });
     send({ type: "watchSpots", on: watchSpots });
+    send({ type: "offerUnlock", on: offerUnlock });
   };
 
   return { html, onMessage, replay };

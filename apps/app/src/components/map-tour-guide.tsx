@@ -1,6 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { fontFamily, palette, radius, spacing, Text, touchTarget } from "@vagabonds/ui";
-import { useEffect, useRef, useState, type ComponentProps } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, Pressable, StyleSheet, useWindowDimensions, View } from "react-native";
 
 import { announce } from "@/lib/announce";
@@ -28,15 +28,8 @@ function titleCase(name: string): string {
 }
 
 /** The steps whose bubble stands beside something on the map. */
-const POINTING = new Set<MapTourStep>(["city", "choose", "unlock"]);
+const POINTING = new Set<MapTourStep>(["city", "choose", "unlock", ...TAB_STEPS]);
 
-const TAB_ICONS: Record<TabStep, ComponentProps<typeof Ionicons>["name"]> = {
-  "tab-map": "map",
-  "tab-rehber": "sparkles",
-  "tab-camera": "camera",
-  "tab-monuments": "library",
-  "tab-settings": "person",
-};
 
 interface Target {
   x: number;
@@ -66,7 +59,22 @@ function targetOf(step: MapTourStep, spots: MapSpots | null, tabs: Readonly<Reco
  * last word) keep the bubble at the top; while the unlocking scene plays, only the bar stays. Then the
  * bubble stands over each tab of the bar in turn, with "İleri" in it, gliding from tab to tab. Each step is said aloud.
  */
-export function MapTourGuide({ step, spots, top, onNext, onSkip }: { step: MapTourStep; spots: MapSpots | null; top: number; onNext: () => void; onSkip: () => void }) {
+export function MapTourGuide({
+  step,
+  spots,
+  top,
+  onNext,
+  onPrevious,
+  onSkip,
+}: {
+  step: MapTourStep;
+  spots: MapSpots | null;
+  top: number;
+  onNext: () => void;
+  /** "Önceki" beside "Geç"; null on the first step, where it stays on screen dimmed. */
+  onPrevious: (() => void) | null;
+  onSkip: () => void;
+}) {
   const { width, height } = useWindowDimensions();
   const reduced = useReducedMotion();
   const enter = useRef(new Animated.Value(0)).current;
@@ -81,9 +89,8 @@ export function MapTourGuide({ step, spots, top, onNext, onSkip }: { step: MapTo
   const onTab = isTabStep(step);
   const lastTab = step === TAB_STEPS[TAB_STEPS.length - 1];
   // A step that points at something waits for it (the camera still flying, the button not up yet), instead of
-  // showing at the top first and jumping over to it. While the unlocking scene plays, the scene says it; the
-  // tabs have their own screen.
-  const shown = (target !== null || !POINTING.has(step)) && !(step === "opened" && !reduced) && !onTab;
+  // showing at the top first and jumping over to it. While the unlocking scene plays, the scene says it.
+  const shown = (target !== null || !POINTING.has(step)) && !(step === "opened" && !reduced);
 
   // The bar lights the tab being shown and dims the rest.
   useEffect(() => setTabSpotlight(onTab ? TAB_OF[step as TabStep] : null), [onTab, step]);
@@ -108,8 +115,6 @@ export function MapTourGuide({ step, spots, top, onNext, onSkip }: { step: MapTo
 
   return (
     <View style={StyleSheet.absoluteFill} pointerEvents="box-none">
-      {onTab && <TabIntro step={step as TabStep} tab={target?.box ?? null} last={lastTab} still={reduced} onNext={onNext} />}
-
       {target && shown && step !== "scan" && (
         <Animated.View pointerEvents="none" style={[styles.anchor, { transform: pulseAt.getTranslateTransform() }]}>
           <Pulse box={target.box ?? null} still={reduced} />
@@ -117,7 +122,7 @@ export function MapTourGuide({ step, spots, top, onNext, onSkip }: { step: MapTo
       )}
 
       <Animated.View
-        pointerEvents="none"
+        pointerEvents={onTab && shown ? "box-none" : "none"}
         onLayout={(event) => setBubbleHeight(Math.round(event.nativeEvent.layout.height))}
         style={[
           styles.bubble,
@@ -130,6 +135,20 @@ export function MapTourGuide({ step, spots, top, onNext, onSkip }: { step: MapTo
         <Text variant="caption" colorValue={palette.gece800}>
           {step === "city" && spots?.province ? `Renkli illerde eser var. ${titleCase(spots.province.name)} gibi birine dokun.` : body}
         </Text>
+        {onTab && (
+          <Pressable
+            onPress={onNext}
+            accessibilityRole="button"
+            accessibilityLabel={lastTab ? "Bitir" : "İleri"}
+            hitSlop={8}
+            style={({ pressed }) => [styles.next, pressed && styles.replayPressed]}
+          >
+            <Text variant="caption" colorValue={BUBBLE} style={styles.nextLabel}>
+              {lastTab ? "Bitir" : "İleri"}
+            </Text>
+            {!lastTab && <Ionicons name="arrow-forward" size={14} color={BUBBLE} />}
+          </Pressable>
+        )}
         {arrowLeft !== null && <View style={[styles.arrow, above ? { bottom: -ARROW } : { top: -ARROW }, { left: arrowLeft }]} />}
       </Animated.View>
 
@@ -140,6 +159,20 @@ export function MapTourGuide({ step, spots, top, onNext, onSkip }: { step: MapTo
               <View key={key} style={[styles.segment, { backgroundColor: i <= index ? BUBBLE : "rgba(255, 255, 255, 0.28)" }]} />
             ))}
           </View>
+          <Pressable
+            onPress={onPrevious ?? undefined}
+            disabled={!onPrevious}
+            accessibilityRole="button"
+            accessibilityLabel="Önceki adım"
+            accessibilityState={{ disabled: !onPrevious }}
+            hitSlop={8}
+            style={({ hovered }) => [styles.skip, styles.back, hovered && onPrevious && styles.skipHovered, !onPrevious && styles.backOff]}
+          >
+            <Ionicons name="chevron-back" size={14} color={palette.white} />
+            <Text variant="caption" colorValue={palette.white} style={styles.skipLabel}>
+              Önceki
+            </Text>
+          </Pressable>
           <Pressable onPress={onSkip} accessibilityRole="button" accessibilityLabel="Gösterimi geç" hitSlop={8} style={({ hovered }) => [styles.skip, hovered && styles.skipHovered]}>
             <Text variant="caption" colorValue={palette.white} style={styles.skipLabel}>
               Geç
@@ -148,68 +181,6 @@ export function MapTourGuide({ step, spots, top, onNext, onSkip }: { step: MapTo
         </View>
       )}
     </View>
-  );
-}
-
-/**
- * The tab bar's tour: the map darkens, the bar keeps the shown tab lit, and the middle of the screen
- * names it in large type with one line under it. A gold chevron bobs over the tab. A tap anywhere goes on.
- */
-function TabIntro({ step, tab, last, still, onNext }: { step: TabStep; tab: TabSpot | null; last: boolean; still: boolean; onNext: () => void }) {
-  const { width } = useWindowDimensions();
-  const dim = useRef(new Animated.Value(0)).current;
-  const words = useRef(new Animated.Value(0)).current;
-  const bob = useRef(new Animated.Value(0)).current;
-  const { title, body } = MAP_TOUR_STEPS[step];
-
-  useEffect(() => {
-    Animated.timing(dim, { toValue: 1, duration: still ? 0 : 360, easing: Easing.out(Easing.quad), useNativeDriver: true }).start();
-  }, [dim, still]);
-  // Each tab's words come in on their own, rising a little.
-  useEffect(() => {
-    words.setValue(0);
-    Animated.timing(words, { toValue: 1, duration: still ? 0 : 420, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
-  }, [step, words, still]);
-  useEffect(() => {
-    if (still) return;
-    const loop = Animated.loop(
-      Animated.sequence([
-        Animated.timing(bob, { toValue: 1, duration: 600, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
-        Animated.timing(bob, { toValue: 0, duration: 600, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
-      ]),
-    );
-    loop.start();
-    return () => loop.stop();
-  }, [bob, still]);
-
-  const chevronX = useGlide(tab ? tab.x + tab.width / 2 - 14 : width / 2 - 14, tab ? tab.y - 40 : 0, "tabs", still);
-
-  return (
-    <Animated.View style={[StyleSheet.absoluteFill, { opacity: dim }]}>
-      <Pressable onPress={onNext} accessibilityRole="button" accessibilityLabel={last ? "Bitir" : "Devam"} style={[StyleSheet.absoluteFill, styles.intro]}>
-        <Animated.View style={[styles.introWords, { opacity: words, transform: [{ translateY: words.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}>
-          <View style={styles.introIcon}>
-            <Ionicons name={TAB_ICONS[step]} size={26} color={ON_BUBBLE} />
-          </View>
-          <Text colorValue={palette.white} style={styles.introTitle}>
-            {title}
-          </Text>
-          <Text colorValue={palette.gece200} style={styles.introBody}>
-            {body}
-          </Text>
-        </Animated.View>
-        {tab && (
-          <Text variant="caption" colorValue={palette.gece300} style={[styles.introHint, { top: tab.y - 84 }]}>
-            {last ? "Bitirmek için dokun" : "Devam etmek için dokun"}
-          </Text>
-        )}
-      </Pressable>
-      {tab && (
-        <Animated.View pointerEvents="none" style={[styles.anchor, { transform: [...chevronX.getTranslateTransform(), { translateY: bob.interpolate({ inputRange: [0, 1], outputRange: [0, 6] }) }] }]}>
-          <Ionicons name="chevron-down" size={28} color={BUBBLE} />
-        </Animated.View>
-      )}
-    </Animated.View>
   );
 }
 
@@ -291,44 +262,19 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     transform: [{ scale: 0.94 }],
   },
-  intro: {
+  next: {
+    alignSelf: "flex-end",
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(6, 8, 13, 0.82)",
+    gap: 4,
+    marginTop: spacing.sm,
+    minHeight: 32,
+    paddingHorizontal: spacing.md,
+    borderRadius: radius.full,
+    backgroundColor: ON_BUBBLE,
   },
-  introWords: {
-    alignItems: "center",
-    gap: spacing.sm,
-    paddingHorizontal: spacing.xl,
-  },
-  introIcon: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: BUBBLE,
-    marginBottom: spacing.sm,
-  },
-  introTitle: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 40,
-    lineHeight: 46,
-    letterSpacing: -1,
-    textAlign: "center",
-  },
-  introBody: {
-    maxWidth: 340,
-    fontFamily: fontFamily.sans,
-    fontSize: 16,
-    lineHeight: 24,
-    textAlign: "center",
-  },
-  introHint: {
-    position: "absolute",
-    left: 0,
-    right: 0,
-    textAlign: "center",
+  nextLabel: {
+    fontFamily: fontFamily.sansSemiBold,
   },
   replayDisc: {
     width: 36,
@@ -363,6 +309,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     borderRadius: radius.full,
     backgroundColor: "rgba(6, 8, 13, 0.55)",
+  },
+  backOff: {
+    opacity: 0.4,
+  },
+  back: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 2,
+    paddingLeft: spacing.sm,
   },
   skipHovered: {
     backgroundColor: "rgba(6, 8, 13, 0.75)",

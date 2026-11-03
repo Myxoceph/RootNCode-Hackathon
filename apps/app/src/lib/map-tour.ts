@@ -66,10 +66,10 @@ const START_AFTER_STILL_MS = 800;
 /** "Sıra sende" stays this long over the map once it is back as it was. */
 const DONE_MS = 4500;
 /** Longer than the unlocking scene: the tour ends even if the scene never reports its end. */
-const OPENED_LIMIT_MS = 10000;
+const OPENED_LIMIT_MS = 12000;
 const OPENED_STILL_MS = 4500;
 /** A moment on the opened asset after its scene, before the map goes back. */
-const AFTER_SCENE_MS = 3500;
+const AFTER_SCENE_MS = 2000;
 
 async function seen(): Promise<boolean> {
   try {
@@ -95,6 +95,8 @@ export interface MapTourDriver {
   unlockShown: (id: string) => void;
   /** Back to the map as the visitor found it: Turkey, nothing unlocked by the tour. */
   reset: () => void;
+  /** Takes the tour's unlock back: the asset is locked again, the city stays open. */
+  undoUnlock: () => void;
 }
 
 export interface MapTour {
@@ -116,6 +118,9 @@ export interface MapTour {
   onSceneEnd: () => void;
   /** "İleri" on a tab step: the next tab, or the end after the last. */
   next: () => void;
+  /** "Önceki": the step before, where there is one to go back to (not the scan or the scene). */
+  previous: () => void;
+  canGoBack: boolean;
   skip: () => void;
   /** The map's "?" button: the tour again from the start, over the map as it was. */
   replay: () => void;
@@ -185,6 +190,31 @@ export function useMapTour(driver: MapTourDriver): MapTour {
     else finish();
   };
 
+  const previous = () => {
+    if (step === "choose") {
+      // Back out of the city to pick one again.
+      live.current.reset();
+      setStep("city");
+    } else if (step === "unlock") {
+      setStep("choose");
+    } else if (step === "scan") {
+      // The example camera closes; "Kilidini aç" is still over the asset.
+      setScanning(null);
+      setStep("unlock");
+    } else if (step === "opened") {
+      if (timer.current) clearTimeout(timer.current);
+      live.current.undoUnlock();
+      setStep("unlock");
+    } else if (step === "tab-map") {
+      // The map went back to Turkey when the tabs began: the tour picks up from the city.
+      setStep("city");
+    } else if (isTabStep(step)) {
+      setStep(TAB_STEPS[TAB_STEPS.indexOf(step) - 1] ?? "tab-map");
+    }
+  };
+  /** Only the first step has nothing before it; "Önceki" stays on screen, dimmed there. */
+  const canGoBack = step !== null && step !== "city" && step !== "done";
+
   const skip = () => {
     if (timer.current) clearTimeout(timer.current);
     setDue(false);
@@ -231,6 +261,8 @@ export function useMapTour(driver: MapTourDriver): MapTour {
       if (step === "opened") after(AFTER_SCENE_MS, toTabs);
     },
     next,
+    previous,
+    canGoBack,
     skip,
     replay,
   };

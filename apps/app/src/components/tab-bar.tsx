@@ -43,7 +43,7 @@ export function TabBar({ state, descriptors, emitter, navigateToTab, insets, ite
   const focusedName = state.routes[state.index]?.name;
   const floats = FLOATS_ON.has(focusedName ?? "");
   const segments = useSegments();
-  // While the map tour shows a tab, that one stays lit in a gold ring and the others fade back.
+  // While the map tour shows a tab, it gets a gold ring.
   const spotlight = useTabSpotlight();
   // Each button tells where it is on screen, for the map tour's bubbles; a move of the bar moves them all.
   const buttons = useRef<Record<string, PressableInstance | null>>({});
@@ -93,7 +93,7 @@ export function TabBar({ state, descriptors, emitter, navigateToTab, insets, ite
                   key={item.name}
                   {...common}
                   hitSlop={4}
-                  style={({ pressed }) => [styles.camera, { backgroundColor: GOLD }, pressed && styles.pressed, spotlight && (spotlight === item.name ? styles.lit : styles.dimmed)]}
+                  style={({ pressed }) => [styles.camera, { backgroundColor: GOLD }, pressed && styles.pressed, spotlight === item.name && styles.lit]}
                 >
                   <Ionicons name={focused ? item.iconFocused : item.icon} size={ICON_SIZE} color={ON_GOLD} />
                 </Pressable>
@@ -103,7 +103,7 @@ export function TabBar({ state, descriptors, emitter, navigateToTab, insets, ite
               <Pressable
                 key={item.name}
                 {...common}
-                style={({ pressed }) => [styles.tab, focused && [styles.tabFocused, { backgroundColor: GOLD }], pressed && styles.pressed, spotlight && (spotlight === item.name ? styles.lit : styles.dimmed)]}
+                style={({ pressed }) => [styles.tab, focused && [styles.tabFocused, { backgroundColor: GOLD }], pressed && styles.pressed, spotlight === item.name && styles.lit]}
               >
                 <Ionicons name={focused ? item.iconFocused : item.icon} size={ICON_SIZE} color={focused ? ON_GOLD : look.icon} />
                 {focused && (
@@ -199,9 +199,6 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.8,
-  },
-  dimmed: {
-    opacity: 0.25,
   },
   lit: {
     borderWidth: 2,

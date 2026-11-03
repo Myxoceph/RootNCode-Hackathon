@@ -37,7 +37,7 @@ export function useTabSpots(): TabSpots {
   return useSyncExternalStore(subscribe, read, read);
 }
 
-/** The tab the map tour is showing: the bar keeps it lit and dims the others; null when none. */
+/** The tab the map tour is showing: the bar rings it in gold; null when none. */
 let spotlight: string | null = null;
 const spotlightListeners = new Set<() => void>();
 

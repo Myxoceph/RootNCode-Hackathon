@@ -73,7 +73,9 @@ export type MapPageCommand =
   | { type: "select"; id: string | null }
   | { type: "network"; network: MapNetwork | null }
   | { type: "provinces"; provinces: MapProvinces | null }
-  | { type: "watchSpots"; on: boolean };
+  | { type: "watchSpots"; on: boolean }
+  /** The map tour's "Düğmeye dokun": "Kilidini aç" stands over the chosen asset however it was chosen (a card too). */
+  | { type: "offerUnlock"; on: boolean };
 
 export function parseMapPageEvent(data: unknown): MapPageEvent | null {
   if (typeof data !== "string") return null;
@@ -346,6 +348,7 @@ window.vagabondsMap = {
       if (command.type === "network") actions.showNetwork(command.network);
       if (command.type === "provinces") actions.showProvinces(command.provinces);
       if (command.type === "watchSpots") actions.watchSpots(command.on);
+      if (command.type === "offerUnlock") actions.offerUnlock(command.on);
     } catch (error) {
       reportError(command.type, error);
     }
@@ -707,6 +710,19 @@ function start() {
         reportError("tap", error);
       }
     });
+    /**
+     * The seal a tap meant. Seals can stand on top of each other (two assets at the same point): the chosen
+     * one wins first, so a tap on the seal the map tour points at is never taken by the one under it; once
+     * it is tapped, the next tap there goes to the other. Otherwise the closest to the tap.
+     */
+    function sealAt(point, features) {
+      const ids = new Set(features.map((feature) => feature.properties.id));
+      const chosen = features.find((feature) => feature.properties.id === citySelected);
+      if (chosen && tappedAsset !== citySelected) return chosen;
+      const others = ids.size > 1 && chosen ? features.filter((feature) => feature.properties.id !== citySelected) : features;
+      return nearest(point, others);
+    }
+
     /** Of the features near a tap, the one closest to it: dots far out sit almost on each other. */
     function nearest(point, features) {
       const away = (feature) => map.project(feature.geometry.coordinates).dist(point);
@@ -728,7 +744,7 @@ function start() {
         }
         const zoom = map.getZoom();
         const asset = zoom >= (SEALS_ZOOM + DOTS_ZOOM) / 2
-          ? map.queryRenderedFeatures(around, { layers: ["city-asset-badges"] })[0]
+          ? sealAt(event.point, map.queryRenderedFeatures(around, { layers: ["city-asset-badges"] }))
           : nearest(event.point, map.queryRenderedFeatures(around, { layers: ["city-asset-dots"] }).filter((dot) => dot.properties.id === citySelected || dot.properties.tier >= tierShownAt(zoom)));
         if (asset) {
           // Only an asset tapped on the map gets "Kilidini aç"; one chosen for the visitor does not.
@@ -1025,12 +1041,19 @@ function start() {
   }
 
   const BANK_OPACITY = DARK ? 0.7 : 0.88;
-  /** The moment the padlock snaps open, and how long the whole scene runs. */
+  /** The moment the padlock snaps open, and how long the medallion's scene runs. */
   const SNAP_MS = 1250;
   const SCENE_MS = 3900;
-  /** The fog around the asset waits for the scene to end, then lifts slowly to nothing. */
-  const FOG_LIFTS_AFTER_MS = 3500;
-  const FOG_LIFT_MS = 4200;
+  /** After the turn around the asset, the camera settles and comes down onto it... */
+  const ZOOM_AT_MS = SNAP_MS + 1900;
+  const FOG_ZOOM_IN = 1.3;
+  const FOG_ZOOM_MAX = 18;
+  const FOG_ZOOM_MS = 2000;
+  /** ...and only once it is there does the fog around the asset lift, slowly, to nothing. */
+  const FOG_LIFTS_AFTER_MS = ZOOM_AT_MS + FOG_ZOOM_MS;
+  const FOG_LIFT_MS = 3200;
+  /** The whole unlocking, fog included: the asset's options come up then, and the map is the visitor's again. */
+  const OPENING_MS = FOG_LIFTS_AFTER_MS + FOG_LIFT_MS;
   const SCENE_PITCH = 54;
   const SCENE_MIN_ZOOM = 15.4;
   /** The medallion's width in points, and how far its gold wave reaches on screen in a second. */
@@ -1302,6 +1325,8 @@ function start() {
   function playOpened(asset) {
     if (scenePlaying) return;
     scenePlaying = true;
+    // Touches wait until it is over: a tap or a drag would cut the camera's moves short.
+    holdForFlight(OPENING_MS);
     closeRelated(false);
     document.body.classList.add("scene-on");
     const before = { pitch: map.getPitch(), bearing: map.getBearing() };
@@ -1389,19 +1414,33 @@ function start() {
     const title = sceneTitle(asset, height - assetY + TITLE_ABOVE_ASSET);
     document.body.appendChild(title);
 
+    // Settling from the tilt, the camera comes down onto the asset; the fog waits for it to arrive.
     const settle = setTimeout(() => {
-      if (!userMoved && cityPlate === plate) map.easeTo({ pitch: before.pitch, bearing: before.bearing, duration: 800, easing: (t) => t * t * (3 - 2 * t), essential: true });
-    }, SNAP_MS + 1900);
+      if (userMoved || cityPlate !== plate) return;
+      map.easeTo({
+        center: [asset.lng, asset.lat],
+        zoom: Math.min(zoom + FOG_ZOOM_IN, FOG_ZOOM_MAX),
+        pitch: before.pitch,
+        bearing: before.bearing,
+        duration: FOG_ZOOM_MS,
+        easing: (t) => t * t * (3 - 2 * t),
+        essential: true,
+      });
+    }, ZOOM_AT_MS);
 
+    // The medallion's part over, the camera and the fog go on.
     setTimeout(() => {
       clearTimeout(orbit);
-      clearTimeout(settle);
       markers.forEach((marker) => marker.remove());
       veil.remove();
       title.remove();
-      map.setPaintProperty("city-asset-names", "text-opacity", citySealsShown ? 1 : 0);
       container.classList.remove("scene-shake");
       map.off("move", follow);
+    }, SCENE_MS);
+
+    setTimeout(() => {
+      clearTimeout(settle);
+      map.setPaintProperty("city-asset-names", "text-opacity", citySealsShown ? 1 : 0);
       map.off("movestart", onMoveStart);
       scenePlaying = false;
       document.body.classList.remove("scene-on");
@@ -1411,7 +1450,7 @@ function start() {
         tappedAsset = asset.id;
         placeUnlock();
       }
-    }, SCENE_MS);
+    }, OPENING_MS);
   }
 
   function setCityAssetsShown(shown) {
@@ -1618,8 +1657,15 @@ function start() {
     return x >= button.left && x <= button.right && y >= button.top && y <= button.bottom + 8;
   }
 
+  /** True while the map tour asks for "Kilidini aç" over the chosen asset, tapped on the map or not. */
+  let unlockOffered = false;
+  function offerUnlock(on) {
+    unlockOffered = on;
+    placeUnlock();
+  }
+
   function placeUnlock() {
-    const tapped = cityPlate !== null && citySelected !== null && citySelected === tappedAsset;
+    const tapped = cityPlate !== null && citySelected !== null && (citySelected === tappedAsset || unlockOffered);
     const found = tapped ? cityAssets.find((candidate) => candidate.id === citySelected) : null;
     // An unlocked asset has nothing left to unlock.
     const asset = found && !found.unlocked ? found : null;
@@ -2627,6 +2673,7 @@ function start() {
   actions.showNetwork = showNetwork;
   actions.showProvinces = showProvinces;
   actions.watchSpots = watchSpots;
+  actions.offerUnlock = offerUnlock;
 
   // Where the map tour points: the busiest province's name in the Turkey view, the chosen asset once the camera
   // has landed in a city, and "Kilidini aç" while it shows.

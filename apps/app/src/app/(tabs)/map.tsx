@@ -28,8 +28,8 @@ const CITY_TOP_SPACE = 136;
 const CITY_CARDS_SPACE = 112;
 const NO_PINS: MapPin[] = [];
 const UNLOCK_AFTER_RETURN_MS = 450;
-/** Longer than the map's unlocking scene: its controls come back even if the scene never reports its end. */
-const SCENE_LIMIT_MS = 6000;
+/** Longer than the map's unlocking scene with its fog: its controls come back even if the scene never reports its end. */
+const SCENE_LIMIT_MS = 10500;
 
 /** Squared distance in degrees: enough to order a city's assets outward from its landmark. */
 function nearness(from: { lat: number; lng: number }, to: { lat: number; lng: number }): number {
@@ -247,6 +247,10 @@ export default function MapScreen() {
       setSceneRunning(false);
       backToTurkey();
     },
+    undoUnlock: () => {
+      setTourUnlock(null);
+      setSceneRunning(false);
+    },
   });
 
   // "Bir esere dokun" points at the chosen asset: on a tour played again, the visitor may have unlocked it
@@ -312,6 +316,7 @@ export default function MapScreen() {
         }}
         watchSpots={tour.step === "city" || tour.step === "choose" || tour.step === "unlock"}
         onSpots={setTourSpots}
+        offerUnlock={tour.step === "unlock"}
         onError={setMapError}
         fitPadding={fitPadding}
         provinces={provinces}
@@ -326,7 +331,16 @@ export default function MapScreen() {
       >
         {cardsShown && (
           <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
-            <CityAssetCards assets={cards} buildingsOf={buildingsOf} selectedId={chosenAsset} onSelect={setChosenAsset} />
+            <CityAssetCards
+              assets={cards}
+              buildingsOf={buildingsOf}
+              selectedId={chosenAsset}
+              onSelect={(id) => {
+                setChosenAsset(id);
+                // A card counts as a tap for the tour: the map then offers "Kilidini aç" over it.
+                tour.onAssetTapped(!unlocked.has(id));
+              }}
+            />
           </View>
         )}
         {/* The tour's step bar takes the search bar's place while it plays. */}
@@ -353,7 +367,7 @@ export default function MapScreen() {
         {!selectedCity && <MapCityButtons cities={withAssets} bottom={tabBarHeight + spacing.sm} onOpen={openCity} />}
       </Animated.View>
       {tour.scanning && <SealScanDemo onDone={tour.onScanned} />}
-      {tour.step && <MapTourGuide step={tour.step} spots={tourSpots} top={insets.top} onNext={tour.next} onSkip={tour.skip} />}
+      {tour.step && <MapTourGuide step={tour.step} spots={tourSpots} top={insets.top} onNext={tour.next} onPrevious={tour.canGoBack ? tour.previous : null} onSkip={tour.skip} />}
     </View>
   );
 }

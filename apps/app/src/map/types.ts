@@ -134,5 +134,7 @@ export interface AssetMapProps {
   watchSpots?: boolean;
   /** Where the chosen asset and "Kilidini aç" are on screen, sent as they move. */
   onSpots?: (spots: MapSpots) => void;
+  /** True for "Kilidini aç" over the chosen asset even when it was chosen from a card (the map tour). */
+  offerUnlock?: boolean;
   style?: StyleProp<ViewStyle>;
 }
