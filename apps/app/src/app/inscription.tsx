@@ -1,8 +1,9 @@
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { ActivityIndicator, Animated, Easing, Platform, ScrollView, StyleSheet, View } from "react-native";
+import { useCallback, useEffect, useMemo, useRef, useState, type ComponentProps, type ReactNode } from "react";
+import { ActivityIndicator, Animated, Easing, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import type { AssetDetail } from "@vagabonds/contracts";
@@ -11,13 +12,14 @@ import { useInscriptionScope } from "@/ar/inscription-scope";
 import { isTrackable, rememberCompiledSet, useTargetSet, type TrackedTarget } from "@/ar/inscription-targets";
 import { MarkerTracker } from "@/ar/marker-tracker";
 import { trackerFailureText, type TrackerEvent, type TrackerFailure } from "@/ar/mindar";
-import { inscriptionOf, inscriptionText, type InscriptionText } from "@/ar/use-inscription";
+import { inscriptionOf, inscriptionText, readAloudKey, type InscriptionText } from "@/ar/use-inscription";
 import { CameraTopBar, GlassIconButton } from "@/components/camera-chrome";
+import { GlassFill } from "@/components/city-asset-cards";
 import { InscriptionReading } from "@/components/inscription-reading";
 import { DataError, type ResourceWithRetry } from "@/data";
 import { announce } from "@/lib/announce";
-import { speak } from "@/lib/speak";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -160,6 +162,8 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
   const [phase, setPhase] = useState<Phase>("starting");
   const [progress, setProgress] = useState(0);
   const [height, setHeight] = useState(0);
+  // The card opens small, so the translation on the stone stays in view; "Devamı" opens the rest.
+  const [expanded, setExpanded] = useState(false);
   const scan = useRef(new Animated.Value(0)).current;
   const card = useRef(new Animated.Value(0)).current;
   const revealTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -231,12 +235,21 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
 
   const rescan = () => {
     clearTimeout(revealTimer.current);
+    stopAnswer();
+    setExpanded(false);
     card.setValue(0);
     go("scanning");
     if (inView.current >= 0) lock(inView.current);
   };
 
-  useEffect(() => () => clearTimeout(revealTimer.current), []);
+  // Leaving the camera ends the reading: its Durdur button goes with it.
+  useEffect(
+    () => () => {
+      clearTimeout(revealTimer.current);
+      stopAnswer();
+    },
+    [],
+  );
 
   useEffect(() => {
     if (phase !== "scanning" || reduceMotion) return;
@@ -250,9 +263,9 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
     return () => loop.stop();
   }, [phase, reduceMotion, scan]);
 
-  const cardTop = Math.max(insets.top + 260, height / 2);
   const guideTop = insets.top + 120;
-  const guideHeight = Math.max(0, cardTop - 64 - guideTop);
+  // The scan line sweeps down to the status pill, which sits above the card's place.
+  const guideHeight = Math.max(0, height - insets.bottom - 140 - guideTop);
 
   const status = {
     preparing: `Kitabeler hazırlanıyor %${Math.round(progress * 100)}`,
@@ -284,43 +297,52 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
         </CameraTopBar>
       </View>
 
-      <View style={[styles.status, { top: cardTop - 52 }]} accessibilityRole="text" accessibilityLiveRegion="polite">
-        <View style={[styles.dot, { backgroundColor: found ? "#5FD3A4" : cameraColors.textSecondary }]} />
-        <Text variant="caption" colorValue={cameraColors.text}>
-          {status}
-        </Text>
-      </View>
+      <View style={[styles.bottom, { bottom: insets.bottom + spacing.sm }]} pointerEvents="box-none">
+        <View style={styles.status} accessibilityRole="text" accessibilityLiveRegion="polite">
+          <View style={[styles.dot, { backgroundColor: found ? "#5FD3A4" : cameraColors.textSecondary }]} />
+          <Text variant="caption" colorValue={cameraColors.text}>
+            {status}
+          </Text>
+        </View>
 
-      <Animated.View
-        style={[
-          styles.card,
-          {
-            top: cardTop,
-            bottom: insets.bottom + spacing.sm,
-            transform: [{ translateY: card.interpolate({ inputRange: [0, 1], outputRange: [height, 0] }) }],
-          },
-        ]}
-        accessibilityElementsHidden={phase !== "revealed"}
-        importantForAccessibility={phase === "revealed" ? "auto" : "no-hide-descendants"}
-      >
-        <ScrollView contentContainerStyle={styles.cardContent}>
-          <CardContent inscription={inscription} />
-          <View style={styles.buttons}>
-            <Button
-              label="Yeniden tara"
-              onPress={rescan}
-              colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
-              style={styles.flex}
-            />
-            <ReadAloudButton inscription={inscription} />
-          </View>
-        </ScrollView>
-      </Animated.View>
+        {phase === "revealed" && (
+          <Animated.View
+            style={[
+              styles.card,
+              { maxHeight: expanded ? height * 0.7 : height * 0.42 },
+              { transform: [{ translateY: card.interpolate({ inputRange: [0, 1], outputRange: [height, 0] }) }] },
+            ]}
+          >
+            <GlassFill />
+            <ScrollView style={styles.scroll} contentContainerStyle={styles.cardContent} scrollEnabled={expanded}>
+              <CardContent inscription={inscription} expanded={expanded} />
+            </ScrollView>
+            <View style={styles.actions}>
+              <ReadAloudButton inscription={inscription} />
+              {inscription.status === "success" && hasMore(inscription.data) && (
+                <Pill
+                  icon={expanded ? "chevron-down" : "chevron-up"}
+                  label={expanded ? "Daralt" : "Devamı"}
+                  spoken={expanded ? "Kartı daralt" : "Okunuşu ve vakfiyeyi göster"}
+                  onPress={() => setExpanded(!expanded)}
+                />
+              )}
+              <View style={styles.flex} />
+              <GlassIconButton icon="refresh" label="Yeniden tara" onPress={rescan} />
+            </View>
+          </Animated.View>
+        )}
+      </View>
     </View>
   );
 }
 
-function CardContent({ inscription }: { inscription: ResourceWithRetry<InscriptionText> }) {
+/** Whether the card has more than its first lines: the reading or the waqf. */
+function hasMore(text: InscriptionText): boolean {
+  return !!(text.transliteration || text.waqfConditions || text.waqfName || (text.translation && text.translation.length > 160));
+}
+
+function CardContent({ inscription, expanded }: { inscription: ResourceWithRetry<InscriptionText>; expanded: boolean }) {
   if (inscription.status === "loading") {
     return <ActivityIndicator color={cameraColors.gold} accessibilityLabel="Yükleniyor" />;
   }
@@ -336,57 +358,76 @@ function CardContent({ inscription }: { inscription: ResourceWithRetry<Inscripti
   const text = inscription.data;
   return (
     <>
-      <Text variant="overline" colorValue={cameraColors.textSecondary} style={styles.center}>
-        KİTABE
+      <Text variant="overline" colorValue={cameraColors.gold}>
+        {["KİTABE", text.date].filter(Boolean).join(" · ")}
       </Text>
-      <Text variant="heading" colorValue={cameraColors.gold} style={styles.center} headingLevel={1}>
+      <Text variant="heading" colorValue={cameraColors.text} style={styles.name} headingLevel={1} numberOfLines={expanded ? undefined : 1}>
         {text.place}
       </Text>
-      {text.date && (
-        <Text variant="caption" colorValue={cameraColors.textSecondary} style={styles.center}>
-          {text.date}
+      {text.translation && (
+        <Text colorValue={cameraColors.text} numberOfLines={expanded ? undefined : 3} style={styles.translation}>
+          {text.translation}
         </Text>
       )}
-      {text.translation && (
-        <Section title="GÜNÜMÜZ TÜRKÇESİ">
-          <Text colorValue={cameraColors.text}>{text.translation}</Text>
-        </Section>
-      )}
-      {text.transliteration && (
+      {expanded && text.transliteration && (
         <Section title="OKUNUŞU">
           <Text colorValue={cameraColors.text} style={styles.italic} language={text.transliterationLanguage}>
             {text.transliteration}
           </Text>
         </Section>
       )}
-      {text.waqfConditions ? (
-        <Section title="VAKFİYENİN ŞARTI">
-          <View style={styles.quote}>
-            <Text variant="bodyLarge" colorValue={cameraColors.text} style={styles.quoteText}>
-              {`“${text.waqfConditions}”`}
-            </Text>
-          </View>
-        </Section>
-      ) : (
-        text.waqfName && (
-          <Section title="VAKIF">
-            <Text colorValue={cameraColors.text}>{text.waqfName}</Text>
+      {expanded &&
+        (text.waqfConditions ? (
+          <Section title="VAKFİYENİN ŞARTI">
+            <View style={styles.quote}>
+              <Text variant="bodyLarge" colorValue={cameraColors.text} style={styles.quoteText}>
+                {`“${text.waqfConditions}”`}
+              </Text>
+            </View>
           </Section>
-        )
-      )}
+        ) : (
+          text.waqfName && (
+            <Section title="VAKIF">
+              <Text colorValue={cameraColors.text}>{text.waqfName}</Text>
+            </Section>
+          )
+        ))}
     </>
   );
 }
 
+/** A small rounded button on the card, as the map's action chips. */
+function Pill({ icon, label, spoken, onPress, gold = false }: { icon: ComponentProps<typeof Ionicons>["name"]; label: string; spoken: string; onPress: () => void; gold?: boolean }) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={spoken}
+      onPress={onPress}
+      hitSlop={6}
+      style={({ pressed }) => [styles.pill, gold ? styles.pillGold : styles.pillGlass, pressed && styles.pressed]}
+    >
+      <Ionicons name={icon} size={16} color={gold ? cameraColors.onGold : cameraColors.text} />
+      <Text variant="label" colorValue={gold ? cameraColors.onGold : cameraColors.text} style={styles.pillText}>
+        {label}
+      </Text>
+    </Pressable>
+  );
+}
+
+/** In EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached. */
 function ReadAloudButton({ inscription }: { inscription: ResourceWithRetry<InscriptionText> }) {
   const { settings } = useA11ySettings();
+  const speaking = useSpeaking();
   if (!settings.audioDescription || inscription.status !== "success") return null;
+  const key = readAloudKey(inscription.data);
+  const reading = speaking === key;
   return (
-    <Button
-      label="Sesli oku"
-      onPress={() => speak(inscription.data.readAloud)}
-      colors={[cameraColors.gold, cameraColors.onGold]}
-      style={styles.flex}
+    <Pill
+      gold
+      icon={reading ? "stop" : "volume-high"}
+      label={reading ? "Durdur" : "Sesli oku"}
+      spoken={reading ? "Sesli okumayı durdur" : "Kitabeyi sesli oku"}
+      onPress={() => (reading ? stopAnswer() : void speakAnswer(key, inscription.data.readAloud))}
     />
   );
 }
@@ -439,8 +480,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 8,
   },
-  status: {
+  bottom: {
     position: "absolute",
+    left: spacing.sm,
+    right: spacing.sm,
+    maxWidth: 720,
+    alignSelf: "center",
+    gap: spacing.sm,
+  },
+  status: {
     alignSelf: "center",
     flexDirection: "row",
     alignItems: "center",
@@ -458,20 +506,54 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   card: {
-    position: "absolute",
-    left: spacing.sm,
-    right: spacing.sm,
-    maxWidth: 720,
-    alignSelf: "center",
-    backgroundColor: cameraColors.panel,
-    borderRadius: radius.xl + 6,
+    borderRadius: radius.xl,
     borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.08)",
+    borderColor: "rgba(255,255,255,0.18)",
     overflow: "hidden",
   },
+  scroll: {
+    flexGrow: 0,
+    flexShrink: 1,
+  },
   cardContent: {
-    padding: spacing.lg,
-    gap: spacing.xs,
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.xs,
+    gap: spacing.xxs,
+  },
+  name: {
+    fontFamily: fontFamily.sansBold,
+  },
+  translation: {
+    marginTop: spacing.xxs,
+  },
+  actions: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.xs,
+    paddingBottom: spacing.md,
+  },
+  pill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xxs,
+    minHeight: 44,
+    paddingHorizontal: spacing.md,
+    borderRadius: radius.full,
+  },
+  pillGold: {
+    backgroundColor: cameraColors.gold,
+  },
+  pillGlass: {
+    backgroundColor: "rgba(255,255,255,0.16)",
+  },
+  pillText: {
+    fontFamily: fontFamily.sansSemiBold,
+  },
+  pressed: {
+    opacity: 0.8,
   },
   section: {
     borderTopWidth: 1,
@@ -487,10 +569,5 @@ const styles = StyleSheet.create({
   },
   quoteText: {
     fontFamily: fontFamily.display,
-  },
-  buttons: {
-    flexDirection: "row",
-    gap: spacing.sm,
-    marginTop: spacing.lg,
   },
 });

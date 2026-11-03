@@ -9,6 +9,10 @@ import { featuredInscription } from "./inscription-targets";
 export interface InscriptionText {
   /** The asset and where on it the inscription is: "Ulucami · Minber kapısının üzerinde, ahşap oyma". */
   place: string;
+  /** The asset alone: "Ulucami". */
+  name: string;
+  /** Where on it the inscription is, or null: "Minber kapısının üzerinde, ahşap oyma". */
+  location: string | null;
   /** "H. 802 / 1399-1400", or null when the record has no date. */
   date: string | null;
   translation: string | null;
@@ -28,6 +32,8 @@ export function inscriptionText(asset: AssetDetail, inscriptionId: string): Insc
   const waqfConditions = asset.waqf?.conditions ?? null;
   return {
     place: [asset.name, inscription.location].filter(Boolean).join(" · "),
+    name: asset.name,
+    location: inscription.location ?? null,
     date: [inscription.hijriYear && `H. ${inscription.hijriYear}`, inscription.gregorian].filter(Boolean).join(" / ") || null,
     translation: inscription.translation,
     transliteration: inscription.transliteration,
@@ -55,3 +61,6 @@ export function inscriptionOf(
   }
   return { status: "success", data: text, retry: asset.retry };
 }
+
+/** The key "Sesli oku" reads an inscription under, on the camera card and in the reading mode alike. */
+export const readAloudKey = (text: InscriptionText) => `inscription:${text.place}`;
