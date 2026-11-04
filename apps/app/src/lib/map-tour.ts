@@ -34,7 +34,7 @@ export const MAP_TOUR_STEPS: Record<MapTourStep, { title: string; body: string }
   opened: { title: "Kilit açıldı", body: "Sis kalkar; eserin hikâyesi ve bağlantıları açılır." },
   "tab-map": {
     title: "Harita",
-    body: "Eserler sisin içinde kilitli; ziyaret edip mührünü bastığında kilidi açılır.",
+    body: "Eserler sisin içinde kilitli; ziyaret edip mührünü bastığında kilidi açılır. Alttaki Zamanda yolculuk ile yüzyıllara göre keşfet.",
   },
   "tab-rehber": {
     title: "Rehber",
@@ -46,7 +46,7 @@ export const MAP_TOUR_STEPS: Record<MapTourStep, { title: string; body: string }
   },
   "tab-monuments": {
     title: "Eserler",
-    body: "Tüm eserleri şehre ve türe göre gez; Zamanda Yolculuk ile yüzyıllara göre keşfet.",
+    body: "Tüm eserleri şehre ve türe göre gez, adıyla ara.",
   },
   "tab-settings": {
     title: "Profil",
