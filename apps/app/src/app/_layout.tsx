@@ -7,8 +7,10 @@ import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import { Platform } from "react-native";
 
+import { BadgeCelebration } from "@/components/badge-celebration";
 import { OfflineBanner } from "@/components/offline-banner";
 import { useAccountGate } from "@/lib/use-account-gate";
+import { useBadgeWatch } from "@/lib/use-badge-watch";
 import { A11ySettingsProvider } from "@/settings/a11y-settings";
 import { useStoredThemePreference } from "@/theme";
 import { fontFiles } from "@/theme/fonts";
@@ -58,6 +60,8 @@ function ThemedStack() {
   const theme = useTheme();
   // With a server, the app is for accounts: without one, every screen leads to signing in.
   useAccountGate();
+  // A badge earned anywhere is celebrated over the screen it was earned on.
+  useBadgeWatch();
   return (
     <ThemeProvider value={navigationTheme(theme)}>
       <StatusBar style={theme.scheme === "dark" ? "light" : "dark"} />
@@ -93,6 +97,7 @@ function ThemedStack() {
           <Stack.Screen name="admin" options={{ headerShown: false, title: "Yönetim paneli" }} />
           <Stack.Screen name="+not-found" options={{ title: "Sayfa bulunamadı" }} />
         </Stack>
+        <BadgeCelebration />
       </OfflineBanner>
     </ThemeProvider>
   );
