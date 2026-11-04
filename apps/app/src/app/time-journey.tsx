@@ -14,7 +14,7 @@ import { centuriesOf, firstCentury } from "@/lib/home";
 const COLUMN = 640;
 const TITLE_SOFT = "rgba(255, 255, 255, 0.76)";
 
-/** Zamanda Yolculuk, opened from the map's gold button: a line of words and the walk through the centuries, on the whole screen. */
+/** Zamanda Yolculuk, opened from the Eserler list: a line of words and the walk through the centuries, on the whole screen. */
 export default function TimeJourneyScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -33,7 +33,7 @@ export default function TimeJourneyScreen() {
 
       <TimeJourney centuries={centuries} opening={firstCentury(centuries)} page={Math.min(width, COLUMN)} bottomInset={insets.bottom + spacing.md}>
         <View style={styles.head}>
-          <Pressable accessibilityRole="button" accessibilityLabel="Geri" hitSlop={6} onPress={() => (router.canGoBack() ? router.back() : router.replace("/map"))} style={styles.back}>
+          <Pressable accessibilityRole="button" accessibilityLabel="Geri" hitSlop={6} onPress={() => (router.canGoBack() ? router.back() : router.replace("/monuments"))} style={styles.back}>
             <Ionicons name="chevron-back" size={22} color={cameraColors.text} />
           </Pressable>
           <Text variant="heading" headingLevel={1} colorValue={TITLE_SOFT} style={styles.title}>

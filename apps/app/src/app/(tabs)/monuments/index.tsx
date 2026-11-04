@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
-import { fontFamily, radius, spacing, Text, touchTarget, useTheme, type Theme } from "@vagabonds/ui";
-import { useLocalSearchParams } from "expo-router";
+import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme, type Theme } from "@vagabonds/ui";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import { StatusBar } from "expo-status-bar";
@@ -124,6 +124,7 @@ function matches(asset: AssetSummary, query: string, filters: Filters): boolean 
 export default function MonumentsScreen() {
   const { ink, styles } = useLook();
   const insets = useSafeAreaInsets();
+  const router = useRouter();
   const tabBarHeight = useBottomTabBarHeight();
   // A link can still open the list on one city (/monuments?city=bursa).
   const { city } = useLocalSearchParams<{ city?: string }>();
@@ -167,6 +168,14 @@ export default function MonumentsScreen() {
         <Text variant="title" headingLevel={1} colorValue={ink.text} style={styles.title}>
           Eserler
         </Text>
+        <Pressable accessibilityRole="link" accessibilityLabel="Zamanda yolculuk yaparak inceleyin" onPress={() => router.push("/time-journey")} style={({ pressed }) => [styles.journey, pressed && styles.journeyPressed]}>
+          <Text variant="label" colorValue={palette.gece950} numberOfLines={1} style={styles.journeyText}>
+            Zamanda yolculuk
+          </Text>
+          <View style={styles.journeyArrow}>
+            <Ionicons name="arrow-forward" size={16} color={ink.gold} />
+          </View>
+        </Pressable>
       </View>
       {/* Not shown, still read: screen readers hear the count as the list loads or the search changes. */}
       <Text colorValue={ink.soft} accessibilityLiveRegion="polite" style={styles.visuallyHidden}>
@@ -454,6 +463,38 @@ const makeStyles = (ink: Ink) =>
     },
     title: {
       flexShrink: 1,
+    },
+    journey: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: spacing.sm,
+      minHeight: touchTarget.min,
+      paddingLeft: spacing.md,
+      paddingRight: spacing.xs,
+      borderRadius: radius.full,
+      // White in both themes, its words and arrow night blue.
+      backgroundColor: palette.white,
+      shadowColor: "#000",
+      shadowOpacity: 0.22,
+      shadowRadius: 8,
+      shadowOffset: { width: 0, height: 3 },
+      elevation: 4,
+    },
+    journeyPressed: {
+      opacity: 0.8,
+      transform: [{ scale: 0.97 }],
+    },
+    journeyArrow: {
+      width: 32,
+      height: 32,
+      borderRadius: 16,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: palette.gece950,
+    },
+    journeyText: {
+      flexShrink: 1,
+      fontFamily: fontFamily.sansSemiBold,
     },
     // The two share the search field's width.
     dropdown: {
