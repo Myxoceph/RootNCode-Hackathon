@@ -1,10 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useRef, useState } from "react";
 
-/** Set once the map's tour has been played to the end or skipped: it plays on the first visit only. */
+/** Set once the map's tour has been played to the end or skipped, for each account on this phone. */
 const SEEN_KEY = "vagabonds-map-tour-seen";
-/** For now the tour plays every time the map opens; false makes it the first visit only again. */
-const EVERY_TIME = true;
 
 /**
  * The steps of the tour, in order. The visitor takes each one themselves, except `scan`: the
@@ -71,20 +69,28 @@ const OPENED_STILL_MS = 4500;
 /** A moment on the opened asset after its scene, before the map goes back. */
 const AFTER_SCENE_MS = 2000;
 
-async function seen(): Promise<boolean> {
+/** Where it is kept that `account` has seen the tour; without a server (no accounts) the phone's own. */
+export function tourSeenKey(account: string | null): string {
+  return account ? `${SEEN_KEY}:${account}` : SEEN_KEY;
+}
+
+/** Whether `account` has played the tour to the end or skipped it on this phone. */
+export async function tourSeen(account: string | null): Promise<boolean> {
   try {
-    return (await AsyncStorage.getItem(SEEN_KEY)) !== null;
+    return (await AsyncStorage.getItem(tourSeenKey(account))) !== null;
   } catch {
     // Unreadable storage: better shown again than never.
     return false;
   }
 }
 
-function markSeen() {
-  void AsyncStorage.setItem(SEEN_KEY, "1").catch(() => {});
+export function markTourSeen(account: string | null) {
+  void AsyncStorage.setItem(tourSeenKey(account), "1").catch(() => {});
 }
 
 export interface MapTourDriver {
+  /** The signed-in account's id: the tour plays on its first visit only. Null without a server; undefined while loading. */
+  account: string | null | undefined;
   /** False when a link asked for a city: the visitor came for it, not for the tour. */
   ready: boolean;
   /** "Hareketi azalt": no fog to wait for and no scene to watch. */
@@ -127,7 +133,7 @@ export interface MapTour {
 }
 
 /**
- * The map's first-visit tour: a card at the top says what to do next, and the visitor does it:
+ * The map's tour, on an account's first visit (the "?" button plays it again): a card at the top says what to do next, and the visitor does it:
  * picks a city, taps an asset, taps "Kilidini aç". Instead of the camera screen an example scan
  * plays, then the asset unlocks with its scene. After that the map goes back to how it was and the
  * unlock is dropped; then each tab of the bar is shown with a line on it, on "İleri".
@@ -141,14 +147,15 @@ export function useMapTour(driver: MapTourDriver): MapTour {
   const live = useRef(driver);
   live.current = driver;
 
+  const account = driver.account;
   useEffect(() => {
+    if (account === undefined) return;
     let active = true;
-    if (EVERY_TIME) setDue(true);
-    else seen().then((done) => active && setDue(!done));
+    void tourSeen(account).then((done) => active && setDue(!done));
     return () => {
       active = false;
     };
-  }, []);
+  }, [account]);
 
   const after = (ms: number, next: () => void) => {
     if (timer.current) clearTimeout(timer.current);
@@ -178,7 +185,7 @@ export function useMapTour(driver: MapTourDriver): MapTour {
 
   const finish = () => {
     if (timer.current) clearTimeout(timer.current);
-    markSeen();
+    markTourSeen(live.current.account ?? null);
     setStep("done");
     after(DONE_MS, () => setStep(null));
   };
@@ -219,7 +226,7 @@ export function useMapTour(driver: MapTourDriver): MapTour {
     if (timer.current) clearTimeout(timer.current);
     setDue(false);
     setScanning(null);
-    markSeen();
+    markTourSeen(live.current.account ?? null);
     live.current.reset();
     setStep(null);
   };

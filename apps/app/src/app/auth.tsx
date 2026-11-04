@@ -1,6 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { EmailSchema, PASSWORD_MIN, UsernameSchema } from "@vagabonds/contracts";
-import { cameraColors, fontFamily, palette, radius, spacing, Text, touchTarget, useUi } from "@vagabonds/ui";
+import { cameraColors, fontFamily, palette, radius, spacing, Text, useUi } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { StatusBar } from "expo-status-bar";
@@ -53,7 +53,9 @@ const copy: Record<Mode, { title: string; lead: string; action: string }> = {
  * between them. Emir Sultan's photo fades into the night blue at the top; under it a gold-marked
  * switch, glass fields and one gold button. Signing up shows the rules as they are met, and a
  * visitor who already left notes or seals under a nickname is told they move to the account.
- * Done, it goes back to where it was opened from.
+ *
+ * With a server the app is for accounts (`useAccountGate`): this screen has no way past it but
+ * signing up or in. Done, the greeting ("Merhaba, <ad>") opens and the map after it.
  */
 export default function AuthScreen() {
   const params = useLocalSearchParams<{ mode?: string }>();
@@ -89,11 +91,6 @@ export default function AuthScreen() {
     setError(null);
   }
 
-  function close() {
-    if (router.canGoBack()) router.back();
-    else router.replace("/settings");
-  }
-
   async function submit() {
     if (!ready) return;
     setBusy(true);
@@ -108,7 +105,7 @@ export default function AuthScreen() {
           })
         : await login({ username: username.trim().toLowerCase(), password });
       announce(registering ? `Hesabın oluşturuldu. Hoş geldin, ${signedIn.nickname}.` : `Hoş geldin, ${signedIn.nickname}.`);
-      close();
+      router.replace("/");
     } catch (err) {
       const message = err instanceof DataError ? err.message : "Bir şeyler ters gitti. Tekrar dene.";
       setError(message);
@@ -131,16 +128,6 @@ export default function AuthScreen() {
             {hero.status === "success" && hero.data?.cover && <AssetImage media={hero.data.cover} decorative fill />}
             <Fade />
           </View>
-
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel="Kapat"
-            onPress={close}
-            hitSlop={4}
-            style={({ pressed }) => [styles.close, { top: insets.top + spacing.sm }, pressed && styles.pressed]}
-          >
-            <Ionicons name="close" size={22} color={ink.text} />
-          </Pressable>
 
           <View style={[styles.column, { marginTop: -spacing.xxl * 2 }]}>
             <Text variant="overline" colorValue={ink.gold}>
@@ -262,11 +249,6 @@ export default function AuthScreen() {
               )}
             </Pressable>
 
-            <Pressable accessibilityRole="button" onPress={close} hitSlop={8} style={({ pressed }) => [styles.guest, pressed && styles.pressed]}>
-              <Text variant="label" colorValue={ink.textSecondary}>
-                Şimdilik misafir olarak devam et
-              </Text>
-            </Pressable>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -431,16 +413,6 @@ const styles = StyleSheet.create({
   strong: {
     fontFamily: fontFamily.sansSemiBold,
   },
-  close: {
-    position: "absolute",
-    left: spacing.lg,
-    width: touchTarget.min,
-    height: touchTarget.min,
-    borderRadius: touchTarget.min / 2,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(10, 14, 22, 0.55)",
-  },
   column: {
     width: "100%",
     maxWidth: 480,
@@ -562,11 +534,5 @@ const styles = StyleSheet.create({
   primaryText: {
     fontFamily: fontFamily.sansBold,
     fontSize: 16,
-  },
-  guest: {
-    alignSelf: "center",
-    minHeight: touchTarget.min,
-    justifyContent: "center",
-    marginTop: spacing.xs,
   },
 });

@@ -13,7 +13,7 @@ import { MapCityButtons } from "@/components/map-city-buttons";
 import { MapSearch } from "@/components/map-search";
 import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
 import { SealScanDemo } from "@/components/seal-scan-demo";
-import { CITY_LANDMARKS, useCities, useCityMapAssets, useRelationsOf } from "@/data";
+import { CITY_LANDMARKS, useCities, useCityMapAssets, useCommunity, useRelationsOf } from "@/data";
 import { announce } from "@/lib/announce";
 import { useMapTour } from "@/lib/map-tour";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
@@ -56,6 +56,7 @@ export default function MapScreen() {
   const reduceMotion = useReducedMotion();
   const router = useRouter();
   const allUnlocked = useUnlockedAssets();
+  const { user } = useCommunity();
   // The map lies behind the seal screen: an asset opens on it only once the visitor is back and that screen has slid away.
   const [unlocked, setUnlocked] = useState(allUnlocked);
   const [sceneRunning, setSceneRunning] = useState(false);
@@ -255,6 +256,7 @@ export default function MapScreen() {
 
   // The first-visit tour: the visitor unlocks an asset themselves, an example scan standing in for the camera.
   const tour = useMapTour({
+    account: user === undefined ? undefined : user?.username ? user.id : null,
     ready: !cityParam,
     still: reduceMotion,
     inCity: selectedPlate !== null,

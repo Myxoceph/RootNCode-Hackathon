@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import { Animated, Easing, Pressable, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { useCommunity } from "@/data";
+import { communityAvailable, useCommunity } from "@/data";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -16,8 +16,9 @@ const HOLD_MS = 2800;
 /**
  * `/`: the app opens on a greeting, "Merhaba, <ad>", centred on the app's plain background
  * (night blue in the dark theme, white in the light one), and
- * goes on to the map by itself. A visitor without an account is greeted as "gezgin". "Atla"
- * skips the wait.
+ * goes on to the map by itself. "Atla" skips the wait. Without an account it waits instead: the
+ * account gate takes the visitor to sign in (without a server, where none can be opened, the
+ * visitor is greeted as "gezgin").
  */
 export default function WelcomeScreen() {
   const router = useRouter();
@@ -31,7 +32,8 @@ export default function WelcomeScreen() {
   const left = useRef(false);
 
   const name = user?.nickname ?? null;
-  const ready = user !== undefined;
+  // The stored session is in, and it is an account (or there is no server to need one).
+  const ready = user !== undefined && (Boolean(user?.username) || !communityAvailable);
 
   const goToMap = () => {
     if (left.current) return;

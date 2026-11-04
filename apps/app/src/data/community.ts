@@ -178,7 +178,7 @@ export async function logout(): Promise<void> {
   await forgetSession(current ?? "");
 }
 
-/** The API no longer knows `rejected` (revoked, database reset): the next note asks for a nickname. */
+/** The API no longer knows `rejected` (revoked, database reset): signed out, the app asks to sign in again. */
 async function forgetSession(rejected: string) {
   // A 401 that arrives after a new session was opened is about the old token: keep the new one.
   if ((token ?? "") !== rejected) return;
@@ -226,13 +226,13 @@ function errorFor(status: number, code: string | null, details: string[]): DataE
     case "CONTRIBUTION_LIMIT":
       return rejected("Saatlik not sınırına ulaştın. Biraz sonra tekrar dene.");
     case "USER_BANNED":
-      return rejected("Bu takma adla artık not gönderilemiyor.");
+      return rejected("Bu hesapla artık not gönderilemiyor.");
     case "UNAUTHORIZED":
-      return rejected("Oturumun sona ermiş. Takma adını yeniden girip tekrar gönder.");
+      return rejected("Oturumun sona ermiş. Yeniden giriş yap.");
     case "ASSET_NOT_FOUND":
       return rejected("Bu eser artık yayında değil.");
     case "INVALID_BODY":
-      return rejected("Not kabul edilmedi; metni ve takma adı kontrol et.");
+      return rejected("Not kabul edilmedi; metni kontrol et.");
     case "TOO_FAR":
       return rejected("Esere yeterince yakın değilsin. Mühür için eserin 200 m yakınında olmalısın.");
     case "POSITION_REQUIRED":
@@ -246,66 +246,31 @@ function errorFor(status: number, code: string | null, details: string[]): DataE
 }
 
 /**
- * Sends a note on `asset`. A visitor without a session gets one first under `nickname`.
- * The note waits for a moderator; the pulse shows it once approved.
+ * Sends a note on `asset` under the account. The note waits for a moderator; the pulse shows it once approved.
  */
-/**
- * The stored session's token, or a new anonymous session under `nickname`. `opened` is the new
- * session's user, for the caller to publish once its own request went through.
- */
-async function sessionToken(nickname?: string): Promise<{ token: string; opened: AppUser | null }> {
-  await loadSession();
-  if (token) return { token, opened: null };
-  if (!nickname) throw new DataError("rejected", "Takma ad gerekli.");
-  const session = await call("/auth/anonymous", AnonymousSessionResponseSchema, { body: { nickname } });
-  token = session.token;
-  try {
-    await writeSession(JSON.stringify(session));
-  } catch {
-    // Not kept: this run still sends with it, the next launch asks for a nickname again.
-  }
-  return { token: session.token, opened: session.user };
-}
-
-export async function sendContribution(
-  asset: { id: string; name: string },
-  note: { kind: TextContributionKind; body: string },
-  nickname?: string,
-): Promise<Contribution> {
+export async function sendContribution(asset: { id: string; name: string }, note: { kind: TextContributionKind; body: string }): Promise<Contribution> {
   if (!communityAvailable) throw new DataError("unavailable", "Not göndermek için sunucu gerekiyor.");
-  const { token: sendWith, opened } = await sessionToken(nickname);
-
-  let contribution: Contribution;
-  try {
-    contribution = await call(`/assets/${encodeURIComponent(asset.id)}/contributions`, ContributionSchema, {
-      body: note,
-      token: sendWith,
-    });
-  } catch (error) {
-    if (opened) set({ user: opened });
-    throw error;
-  }
+  const sendWith = await signedInToken("Not bırakmak");
+  const contribution = await call(`/assets/${encodeURIComponent(asset.id)}/contributions`, ContributionSchema, {
+    body: note,
+    token: sendWith,
+  });
   void rememberAssetName(asset.id, asset.name);
-  // One update for the new session and the new note, so "Notlarım" fetches once.
-  set(opened ? { user: opened, sent: state.sent + 1 } : { sent: state.sent + 1 });
+  set({ sent: state.sent + 1 });
   return contribution;
 }
 
 /**
  * Ziyaret Mührü: the camera recognised the asset's seal photo on site, so the visit is proven
- * (`POST /assets/:id/visit/proof`). A visitor without a session gets one first under `nickname`.
+ * (`POST /assets/:id/visit/proof`) under the account.
  */
-export async function sendVisitProof(assetId: string, proof: Omit<VisitProofRequest, "method">, nickname?: string): Promise<VisitResponse> {
+export async function sendVisitProof(assetId: string, proof: Omit<VisitProofRequest, "method">): Promise<VisitResponse> {
   if (!communityAvailable) throw new DataError("unavailable", "Mühür için sunucu gerekiyor.");
-  const { token: sendWith, opened } = await sessionToken(nickname);
-  try {
-    return await call(`/assets/${encodeURIComponent(assetId)}/visit/proof`, VisitResponseSchema, {
-      body: { ...proof, method: "device_recognition" },
-      token: sendWith,
-    });
-  } finally {
-    if (opened) set({ user: opened });
-  }
+  const sendWith = await signedInToken("Mühür basmak");
+  return call(`/assets/${encodeURIComponent(assetId)}/visit/proof`, VisitResponseSchema, {
+    body: { ...proof, method: "device_recognition" },
+    token: sendWith,
+  });
 }
 
 /**

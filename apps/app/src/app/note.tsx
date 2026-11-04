@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { CONTRIBUTION_TEXT_MAX, CONTRIBUTION_TEXT_MIN, ContributionTextSchema, NicknameSchema, normalizeContributionText, type AssetDetail, type PulseItem, type TextContributionKind } from "@vagabonds/contracts";
+import { CONTRIBUTION_TEXT_MAX, CONTRIBUTION_TEXT_MIN, ContributionTextSchema, normalizeContributionText, type AssetDetail, type PulseItem, type TextContributionKind } from "@vagabonds/contracts";
 import { cameraColors, fontFamily, palette, radius, spacing, Text, touchTarget, typography, useTheme, useUi } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
@@ -119,14 +119,12 @@ function Composer({ asset }: { asset: AssetDetail }) {
   const leave = useLeave();
   const [kind, setKind] = useState<TextContributionKind>("tip");
   const [body, setBody] = useState("");
-  const [nickname, setNickname] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [focused, setFocused] = useState<"body" | "nickname" | null>(null);
+  const [focused, setFocused] = useState<"body" | null>(null);
 
   const chars = normalizeContributionText(body).length;
-  const needsNickname = user === null;
   const ready = chars >= CONTRIBUTION_TEXT_MIN && chars <= CONTRIBUTION_TEXT_MAX;
   const hint = KINDS.find((option) => option.value === kind)?.hint;
 
@@ -139,13 +137,10 @@ function Composer({ asset }: { asset: AssetDetail }) {
     if (!ContributionTextSchema.safeParse(body).success) {
       return fail(chars < CONTRIBUTION_TEXT_MIN ? `Not en az ${CONTRIBUTION_TEXT_MIN} karakter olmalı.` : `Not en çok ${CONTRIBUTION_TEXT_MAX} karakter olabilir.`);
     }
-    if (needsNickname && !NicknameSchema.safeParse(nickname).success) {
-      return fail("Takma ad 2–32 karakter olmalı; harf ya da rakamla başlamalı. Boşluk, nokta, alt çizgi ve tire kullanılabilir.");
-    }
     setError(null);
     setSending(true);
     try {
-      await sendContribution(asset, { kind, body }, needsNickname ? nickname.trim() : undefined);
+      await sendContribution(asset, { kind, body });
       setBody("");
       setSent(true);
       announce("Notun gönderildi. Moderatör onayından sonra görünecek.");
@@ -186,7 +181,7 @@ function Composer({ asset }: { asset: AssetDetail }) {
     );
   }
 
-  const fieldStyle = (name: "body" | "nickname") => [styles.field, { backgroundColor: c.background, borderColor: focused === name ? c.highlightMark : c.border }];
+  const fieldStyle = (name: "body") => [styles.field, { backgroundColor: c.background, borderColor: focused === name ? c.highlightMark : c.border }];
   const typed = { color: c.text, fontSize: typography.body.fontSize * textScale, lineHeight: typography.body.lineHeight * textScale };
   const noOutline = Platform.OS === "web" ? ({ outlineStyle: "none" } as object) : null;
 
@@ -233,38 +228,13 @@ function Composer({ asset }: { asset: AssetDetail }) {
         </Text>
       </View>
 
-      {needsNickname ? (
-        <View style={styles.nickname}>
-          <View style={fieldStyle("nickname")}>
-            <TextInput
-              accessibilityLabel="Takma ad"
-              value={nickname}
-              onChangeText={setNickname}
-              onFocus={() => setFocused("nickname")}
-              onBlur={() => setFocused(null)}
-              placeholder="Takma adın"
-              placeholderTextColor={c.textSecondary}
-              maxLength={32}
-              autoCapitalize="none"
-              autoCorrect={false}
-              autoComplete="off"
-              editable={!sending}
-              style={[styles.input, typed, noOutline]}
-            />
-          </View>
+      {user && (
+        <View style={styles.signedAs}>
+          <Ionicons name="person-circle-outline" size={18} color={c.textSecondary} />
           <Text variant="caption" color="textSecondary">
-            Notunun yanında görünür. Hesap, e-posta ya da şifre gerekmez.
+            {`${user.nickname} olarak gönderilecek`}
           </Text>
         </View>
-      ) : (
-        user && (
-          <View style={styles.signedAs}>
-            <Ionicons name="person-circle-outline" size={18} color={c.textSecondary} />
-            <Text variant="caption" color="textSecondary">
-              {`${user.nickname} olarak gönderilecek`}
-            </Text>
-          </View>
-        )
       )}
 
       {error && (
@@ -412,9 +382,6 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     paddingHorizontal: spacing.md,
     paddingBottom: spacing.xs,
-  },
-  nickname: {
-    gap: spacing.xs,
   },
   signedAs: {
     flexDirection: "row",

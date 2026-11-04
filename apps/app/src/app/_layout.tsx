@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { Platform } from "react-native";
 
 import { OfflineBanner } from "@/components/offline-banner";
+import { useAccountGate } from "@/lib/use-account-gate";
 import { A11ySettingsProvider } from "@/settings/a11y-settings";
 import { useStoredThemePreference } from "@/theme";
 import { fontFiles } from "@/theme/fonts";
@@ -55,6 +56,8 @@ export default function RootLayout() {
 
 function ThemedStack() {
   const theme = useTheme();
+  // With a server, the app is for accounts: without one, every screen leads to signing in.
+  useAccountGate();
   return (
     <ThemeProvider value={navigationTheme(theme)}>
       <StatusBar style={theme.scheme === "dark" ? "light" : "dark"} />
