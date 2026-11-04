@@ -7,6 +7,7 @@ import { ActivityIndicator, Animated, Modal, Pressable, ScrollView, StyleSheet, 
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Circle, Defs, LinearGradient, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
 
+import { BadgeArt, hasBadgeArt } from "@/components/badge-art";
 import { useCommunity, useMyAchievements } from "@/data";
 import { bottomInset } from "@/lib/bottom-inset";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -234,8 +235,9 @@ function Foil({ id }: { id: string }) {
 }
 
 /**
- * A badge as a medal. Earned: a gold coin with a foil rim and the emoji struck in it. Not yet:
- * a matte disc, the emoji faded, a lock, and a thin gold arc around it for the progress.
+ * A badge as a medal. With illustrated art (assets/badges): the drawing inside a foil rim when
+ * earned; when not yet, the drawing in grey, a lock, and a thin gold arc for the progress.
+ * Without art: a gold coin with the emoji struck in it, or a matte disc with the emoji faded.
  */
 function Medal({ badge, size }: { badge: Badge; size: number }) {
   const { colors: c, scheme } = useTheme();
@@ -247,6 +249,7 @@ function Medal({ badge, size }: { badge: Badge; size: number }) {
   const disc = mid - 9;
   const length = 2 * Math.PI * arc;
   const id = `m-${badge.code}-${size}`;
+  const art = hasBadgeArt(badge.code);
 
   return (
     <View style={{ width: size, height: size }}>
@@ -262,8 +265,12 @@ function Medal({ badge, size }: { badge: Badge; size: number }) {
         {earned ? (
           <>
             <Circle cx={mid} cy={mid} r={arc} stroke={`url(#${id}-foil)`} strokeWidth={2} fill="none" />
-            <Circle cx={mid} cy={mid} r={disc} fill={`url(#${id}-coin)`} />
-            <Circle cx={mid} cy={mid} r={disc - 4} stroke={palette.altin700} strokeOpacity={0.45} strokeWidth={1} strokeDasharray="1.5 2.5" fill="none" />
+            {!art && (
+              <>
+                <Circle cx={mid} cy={mid} r={disc} fill={`url(#${id}-coin)`} />
+                <Circle cx={mid} cy={mid} r={disc - 4} stroke={palette.altin700} strokeOpacity={0.45} strokeWidth={1} strokeDasharray="1.5 2.5" fill="none" />
+              </>
+            )}
           </>
         ) : (
           <>
@@ -281,14 +288,23 @@ function Medal({ badge, size }: { badge: Badge; size: number }) {
                 transform={`rotate(-90 ${mid} ${mid})`}
               />
             )}
-            <Circle cx={mid} cy={mid} r={disc} fill={dark ? palette.gece800 : palette.white} />
-            <Circle cx={mid} cy={mid} r={disc} fill={palette.altin200} fillOpacity={dark ? 0.06 : 0.14} />
-            <Circle cx={mid} cy={mid} r={disc - 4} stroke={c.textSecondary} strokeOpacity={0.25} strokeWidth={1} strokeDasharray="1.5 2.5" fill="none" />
+            {!art && (
+              <>
+                <Circle cx={mid} cy={mid} r={disc} fill={dark ? palette.gece800 : palette.white} />
+                <Circle cx={mid} cy={mid} r={disc} fill={palette.altin200} fillOpacity={dark ? 0.06 : 0.14} />
+                <Circle cx={mid} cy={mid} r={disc - 4} stroke={c.textSecondary} strokeOpacity={0.25} strokeWidth={1} strokeDasharray="1.5 2.5" fill="none" />
+              </>
+            )}
           </>
         )}
       </Svg>
       <View style={styles.medalFace}>
-        <Text style={[{ fontSize: size * 0.36, lineHeight: size * 0.44 }, !earned && styles.faded]}>{badge.badge}</Text>
+        {art ? (
+          // Inside the rim: the arc is drawn at `mid - 2`, so the drawing stops just short of it.
+          <BadgeArt code={badge.code} emoji={badge.badge} size={size - 10} earned={earned} />
+        ) : (
+          <Text style={[{ fontSize: size * 0.36, lineHeight: size * 0.44 }, !earned && styles.faded]}>{badge.badge}</Text>
+        )}
       </View>
       {!earned && (
         <View style={[styles.lock, { backgroundColor: c.surface, borderColor: c.background }]}>
