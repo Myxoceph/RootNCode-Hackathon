@@ -7,9 +7,12 @@ import {
   MyAchievementsResponseSchema,
   MyContributionsResponseSchema,
   MyVisitsResponseSchema,
+  RedeemResponseSchema,
+  RewardsResponseSchema,
   SavedRouteSchema,
   SavedRoutesResponseSchema,
   VisitResponseSchema,
+  WalletResponseSchema,
   type AnonymousSessionResponse,
   type AppUser,
   type LoginRequest,
@@ -17,6 +20,9 @@ import {
   type Contribution,
   type MyAchievementsResponse,
   type MyVisit,
+  type RedeemResponse,
+  type Reward,
+  type WalletResponse,
   type SavedRoute,
   type TextContributionKind,
   type UpdateProfileRequest,
@@ -392,6 +398,36 @@ export async function fetchMyAchievements(): Promise<MyAchievementsResponse | nu
     photos: none,
     items: all.items.map((item) => ({ ...item, earnedAt: null, progress: { current: 0, target: 1 } })),
   };
+}
+
+/** Ödüllerim: the partners' rewards on offer (`GET /rewards`); `null` without a server. */
+export async function fetchRewards(): Promise<Reward[] | null> {
+  if (!communityAvailable) return null;
+  return (await call("/rewards", RewardsResponseSchema)).items;
+}
+
+/** The visitor's points to spend and the codes taken (`GET /me/wallet`); `null` without a session. */
+export async function fetchWallet(): Promise<WalletResponse | null> {
+  if (!communityAvailable) return null;
+  await loadSession();
+  if (!token) return null;
+  return call("/me/wallet", WalletResponseSchema, { token });
+}
+
+const REDEEM_MESSAGES: Record<string, string> = {
+  ACCOUNT_REQUIRED: "Ödül almak için hesap aç; şimdiye kadar kazandığın puanlar korunur.",
+  INSUFFICIENT_POINTS: "Bu ödül için puanın yetmiyor.",
+  PROVEN_VISITS_REQUIRED: "Bu ödül için daha çok kanıtlanmış ziyaret gerekiyor.",
+  OUT_OF_STOCK: "Bu ödülün kodları tükendi.",
+  REWARD_NOT_FOUND: "Bu ödül artık sunulmuyor.",
+};
+
+/** Spends points on a reward (`POST /rewards/:code/redeem`): the partner's single-use code. */
+export async function redeemReward(code: string): Promise<RedeemResponse> {
+  await loadSession();
+  const current = token;
+  if (current === null) throw new DataError("rejected", REDEEM_MESSAGES.ACCOUNT_REQUIRED!, ["/rewards"], "ACCOUNT_REQUIRED");
+  return call(`/rewards/${encodeURIComponent(code)}/redeem`, RedeemResponseSchema, { method: "POST", token: current, messages: REDEEM_MESSAGES });
 }
 
 /** The session's user id once the stored session is read; null without a session. */

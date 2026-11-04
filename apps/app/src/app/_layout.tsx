@@ -68,6 +68,7 @@ function ThemedStack() {
           <Stack.Screen name="profile/routes" options={{ title: "Kaydettiklerim", headerBackTitle: "Profil" }} />
           <Stack.Screen name="profile/sealed" options={{ title: "Mühürlenen eserler", headerBackTitle: "Profil" }} />
           <Stack.Screen name="profile/badges" options={{ title: "Rozetlerim", headerBackTitle: "Profil" }} />
+          <Stack.Screen name="profile/rewards" options={{ title: "Ödüllerim", headerBackTitle: "Profil" }} />
           <Stack.Screen name="profile/settings" options={{ title: "Sistem ayarları", headerBackTitle: "Profil" }} />
           <Stack.Screen name="profile/notes" options={{ title: "Bıraktığım Notlar", headerBackTitle: "Profil" }} />
           {/* An eser kartı over the Profil page it was opened from; it draws its own close button. */}

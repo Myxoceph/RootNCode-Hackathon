@@ -14,6 +14,13 @@ Başarımlardan kazanılan puan, ortak kurumların verdiği ödüllere harcanır
 - **Kodlar** ortak kurumdan gelir; admin yükler (`POST /admin/rewards/:code/codes`, en çok 1000'er). Kodu biten
   ödül `stock: 0` görünür.
 
+## Uygulamada: Profil · Ödüllerim
+
+- **Gezgin Kartı:** harcanabilir puan, kazanılan ve harcanan puan, kanıtlanmış ziyaretler (`GET /me/wallet`).
+- **Ödüller:** katalog türe göre süzülür; her kartta puan bedeli ve ödüle ne kadar kaldığı (puan ya da kanıtlanmış ziyaret) görünür. Kart açılınca gereksinimler tek tek işaretlenir, koşullar tamamsa "… puanla al" kodu verir (`POST /rewards/:code/redeem`).
+- **Kodların:** alınan kodlar bilet olarak listelenir; dokununca kod büyük gösterilir.
+- Anonim ziyaretçiye "Hesap aç" önerilir; Rozetlerim'deki "Puanlarını ödüllere harca" da buraya açılır.
+
 ## Örnek katalog (sunum için)
 
 Aşağıdakiler `sample: true` işaretli **örneklerdir**; arkalarında gerçek bir anlaşma yoktur. Her biri için

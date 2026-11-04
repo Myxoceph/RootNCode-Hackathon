@@ -26,6 +26,7 @@ import {
   useToast,
 } from "@/components/admin/kit";
 import { AdminOnly, PageBody } from "@/components/admin/shell";
+import { BadgeArt, hasBadgeArt } from "@/components/badge-art";
 import { createAchievement, deleteAchievement, fetchAdminAchievements, fetchMetaEnums, updateAchievement } from "@/data/admin";
 
 /** Badges visitors earn: each is a rule with numbers, so new ones need no code. */
@@ -155,9 +156,13 @@ function AchievementsPage() {
             {shown.map((item) => (
               <Card key={item.code} style={[styles.tile, !item.active && { opacity: 0.62 }]}>
                 <View style={styles.tileHead}>
-                  <View style={[styles.medal, { backgroundColor: a.goldSoft, borderColor: a.dark ? "rgba(221,181,92,0.4)" : "rgba(156,116,36,0.3)" }]}>
-                    <Text style={styles.medalText}>{item.badge}</Text>
-                  </View>
+                  {hasBadgeArt(item.code) ? (
+                    <BadgeArt code={item.code} emoji={item.badge} size={48} />
+                  ) : (
+                    <View style={[styles.medal, { backgroundColor: a.goldSoft, borderColor: a.dark ? "rgba(221,181,92,0.4)" : "rgba(156,116,36,0.3)" }]}>
+                      <Text style={styles.medalText}>{item.badge}</Text>
+                    </View>
+                  )}
                   <View style={{ flex: 1, minWidth: 0 }}>
                     <Text style={styles.tileTitle} numberOfLines={1}>
                       {item.title}
