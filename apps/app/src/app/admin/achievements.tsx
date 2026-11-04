@@ -2,7 +2,7 @@ import type { AchievementRule, AdminAchievement, MetaEnumsResponse } from "@vaga
 import { fontFamily, Text } from "@vagabonds/ui";
 import { useLocalSearchParams } from "expo-router";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { Image, Platform, StyleSheet, View } from "react-native";
 
 import {
   Badge,
@@ -25,9 +25,20 @@ import {
   useLoad,
   useToast,
 } from "@/components/admin/kit";
+import { pickBadgeImage, type PickedImage } from "@/components/admin/pick-image";
+import { BilingualField } from "@/components/admin/record-fields";
 import { AdminOnly, PageBody } from "@/components/admin/shell";
 import { BadgeArt, hasBadgeArt } from "@/components/badge-art";
-import { createAchievement, deleteAchievement, fetchAdminAchievements, fetchMetaEnums, updateAchievement } from "@/data/admin";
+import {
+  createAchievement,
+  deleteAchievement,
+  deleteAchievementImage,
+  fetchAdminAchievements,
+  fetchMetaEnums,
+  updateAchievement,
+  uploadAchievementImage,
+} from "@/data/admin";
+import { resolveApiUrl } from "@/data/config";
 
 /** Badges visitors earn: each is a rule with numbers, so new ones need no code. */
 export default function Achievements() {
@@ -156,8 +167,8 @@ function AchievementsPage() {
             {shown.map((item) => (
               <Card key={item.code} style={[styles.tile, !item.active && { opacity: 0.62 }]}>
                 <View style={styles.tileHead}>
-                  {hasBadgeArt(item.code) ? (
-                    <BadgeArt code={item.code} emoji={item.badge} size={48} />
+                  {hasBadgeArt(item.code, item.imageUrl) ? (
+                    <BadgeArt code={item.code} emoji={item.badge} imageUrl={item.imageUrl} size={48} />
                   ) : (
                     <View style={[styles.medal, { backgroundColor: a.goldSoft, borderColor: a.dark ? "rgba(221,181,92,0.4)" : "rgba(156,116,36,0.3)" }]}>
                       <Text style={styles.medalText}>{item.badge}</Text>
@@ -230,6 +241,11 @@ function AchievementForm({ item, meta, onClose, onSaved }: { item: AdminAchievem
   const [code, setCode] = useState(item?.code ?? "");
   const [title, setTitle] = useState(item?.title ?? "");
   const [description, setDescription] = useState(item?.description ?? "");
+  const [titleEn, setTitleEn] = useState(item?.titleEn ?? "");
+  const [descriptionEn, setDescriptionEn] = useState(item?.descriptionEn ?? "");
+  // A picture picked to upload on save, or "remove" to take the current one away.
+  const [picture, setPicture] = useState<PickedImage | "remove" | null>(null);
+  const [pictureError, setPictureError] = useState<string | null>(null);
   const [badge, setBadge] = useState(item?.badge ?? "🏛️");
   const [points, setPoints] = useState(String(item?.points ?? 50));
   const [sortOrder, setSortOrder] = useState(String((item as { sortOrder?: number } | null)?.sortOrder ?? 1000));
@@ -273,21 +289,25 @@ function AchievementForm({ item, meta, onClose, onSaved }: { item: AdminAchievem
     setSaving(true);
     try {
       const fields = {
-        title: { tr: title.trim() },
-        description: { tr: description.trim() },
+        // An empty English is sent as null, so clearing it removes it.
+        title: { tr: title.trim(), en: titleEn.trim() || null },
+        description: { tr: description.trim(), en: descriptionEn.trim() || null },
         badge: badge.trim(),
         points: n(points),
         rule: buildRule(),
         sortOrder: n(sortOrder),
         active,
       };
-      if (item) {
-        await updateAchievement(item.code, fields);
-        onSaved(`${title.trim()} güncellendi.`);
-      } else {
-        await createAchievement({ ...fields, code: code.trim() });
-        onSaved(`${title.trim()} eklendi.`);
+      const saved = item ? await updateAchievement(item.code, fields) : await createAchievement({ ...fields, code: code.trim() });
+      // The picture goes once the achievement exists; a refused picture leaves the rest saved.
+      try {
+        if (picture === "remove") await deleteAchievementImage(saved.code);
+        else if (picture) await uploadAchievementImage(saved.code, picture.uri, picture.type);
+      } catch (failure) {
+        onSaved(`${title.trim()} kaydedildi ama görsel yüklenemedi: ${errorText(failure)}`);
+        return;
       }
+      onSaved(item ? `${title.trim()} güncellendi.` : `${title.trim()} eklendi.`);
     } catch (failure) {
       setError(errorText(failure));
     } finally {
@@ -319,9 +339,30 @@ function AchievementForm({ item, meta, onClose, onSaved }: { item: AdminAchievem
         </>
       }
     >
+      <BadgePicture
+        current={picture === "remove" ? null : picture ? picture.uri : item?.imageUrl ? `${resolveApiUrl()}${item.imageUrl}` : null}
+        emoji={badge}
+        code={item?.code ?? null}
+        error={pictureError}
+        onPick={async () => {
+          setPictureError(null);
+          try {
+            const picked = await pickBadgeImage();
+            if (picked) setPicture(picked);
+          } catch (failure) {
+            setPictureError(errorText(failure));
+          }
+        }}
+        onRemove={() => {
+          setPictureError(null);
+          setPicture(item?.imageUrl ? "remove" : null);
+        }}
+      />
       <View style={styles.pair}>
-        <Field label="Rozet" value={badge} onChangeText={setBadge} maxLength={16} hint="Tek bir emoji" style={{ width: 96 }} />
-        <Field label="Başlık *" value={title} onChangeText={setTitle} placeholder="ör. Han Avcısı" maxLength={200} style={{ flex: 1, minWidth: 200 }} />
+        <Field label="Yedek emoji" value={badge} onChangeText={setBadge} maxLength={16} hint="Görsel yokken rozetin yerinde görünür" style={{ width: 150 }} />
+        <View style={{ flex: 1, minWidth: 240 }}>
+          <BilingualField label="Başlık *" tr={title} en={titleEn} onTr={setTitle} onEn={setTitleEn} placeholder="ör. Han Avcısı" placeholderEn="e.g. Caravan Hunter" />
+        </View>
       </View>
       {!item && (
         <Field
@@ -334,7 +375,17 @@ function AchievementForm({ item, meta, onClose, onSaved }: { item: AdminAchievem
           autoCapitalize="none"
         />
       )}
-      <Field label="Açıklama *" value={description} onChangeText={setDescription} placeholder="Rozetin altında görünen cümle" multiline maxLength={200} />
+      <BilingualField
+        label="Açıklama *"
+        tr={description}
+        en={descriptionEn}
+        onTr={setDescription}
+        onEn={setDescriptionEn}
+        placeholder="Rozetin altında görünen cümle"
+        placeholderEn="The sentence under the badge"
+        multiline
+        hint="İngilizce isteğe bağlı; boşsa İngilizce uygulamada Türkçesi görünür."
+      />
 
       <Text color="textSecondary" style={styles.section}>
         KURAL
@@ -397,6 +448,69 @@ function AchievementForm({ item, meta, onClose, onSaved }: { item: AdminAchievem
   );
 }
 
+/**
+ * The badge's picture as the app draws it: in a circle with the gold rim, grey until earned, and
+ * small as in a list; with the buttons to pick or remove it. Without one, the emoji in its place.
+ */
+function BadgePicture({ current, emoji, code, error, onPick, onRemove }: { current: string | null; emoji: string; code: string | null; error: string | null; onPick: () => void; onRemove: () => void }) {
+  const a = useAdminColors();
+  const bundled = !current && code !== null && hasBadgeArt(code);
+  const face = (size: number, earned: boolean) =>
+    current ? (
+      <Image
+        source={{ uri: current }}
+        style={[{ width: size, height: size, borderRadius: size / 2 }, !earned && { opacity: 0.55 }, !earned && Platform.OS === "web" && ({ filter: "grayscale(1)" } as object)]}
+        resizeMode="cover"
+        accessibilityIgnoresInvertColors
+      />
+    ) : code !== null && bundled ? (
+      <BadgeArt code={code} emoji={emoji} size={size} earned={earned} />
+    ) : (
+      <Text style={[{ fontSize: size * 0.5, lineHeight: size * 0.62 }, !earned && { opacity: 0.4 }]}>{emoji || "🏛️"}</Text>
+    );
+  const medal = (size: number, earned: boolean) => (
+    <View style={[styles.previewMedal, { width: size + 8, height: size + 8, borderRadius: (size + 8) / 2, borderColor: earned ? a.goldMark : a.line, backgroundColor: a.goldSoft }]}>
+      {face(size, earned)}
+    </View>
+  );
+  return (
+    <View style={[styles.picture, { borderColor: a.line, backgroundColor: a.dark ? "rgba(255,255,255,0.03)" : "#F6F8FB" }]}>
+      <View style={styles.previewRow} accessible accessibilityLabel={current ? "Rozet görselinin önizlemesi" : "Rozetin görseli yok; emoji görünür"}>
+        {medal(96, true)}
+        <View style={styles.previewSmall}>
+          {medal(48, false)}
+          <Text color="textSecondary" style={styles.previewCaption}>
+            kazanılmamış
+          </Text>
+        </View>
+        <View style={styles.previewSmall}>
+          {medal(32, true)}
+          <Text color="textSecondary" style={styles.previewCaption}>
+            listede
+          </Text>
+        </View>
+      </View>
+      <View style={styles.pictureText}>
+        <Text style={styles.pictureTitle}>Rozet görseli</Text>
+        <Text color="textSecondary" style={styles.pictureHint}>
+          {bundled
+            ? "Bu rozetin uygulamada hazır bir görseli var. Yeni görsel yüklersen onun yerine geçer."
+            : "Kare bir JPEG ya da PNG (en az 512 px önerilir, en çok 2 MB). Dairenin içine kesilir; kenarlarda önemli bir şey bırakma."}
+        </Text>
+        <View style={styles.pictureActions}>
+          <Button label={current ? "Değiştir" : "Görsel seç"} icon="image-outline" onPress={onPick} />
+          {current && <Button label="Kaldır" icon="trash-outline" kind="ghost" onPress={onRemove} />}
+        </View>
+        {error && (
+          <Text color="warning" style={styles.pictureHint}>
+            {error}
+          </Text>
+        )}
+      </View>
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
   fill: { flex: 1 },
   grid: { flexDirection: "row", flexWrap: "wrap", gap: 16 },
@@ -416,4 +530,13 @@ const styles = StyleSheet.create({
   half: { flex: 1, minWidth: 160 },
   section: { fontFamily: fontFamily.monoMedium, fontSize: 11, letterSpacing: 1.6, marginTop: 6, marginBottom: -6 },
   preview: { borderWidth: 1, borderStyle: "dashed", borderRadius: 10, padding: 12 },
+  picture: { flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 18, borderWidth: 1, borderRadius: 14, padding: 16 },
+  previewRow: { flexDirection: "row", alignItems: "flex-end", gap: 14 },
+  previewMedal: { borderWidth: 2, alignItems: "center", justifyContent: "center", overflow: "hidden" },
+  previewSmall: { alignItems: "center", gap: 4 },
+  previewCaption: { fontFamily: fontFamily.mono, fontSize: 10 },
+  pictureText: { flex: 1, minWidth: 220, gap: 6 },
+  pictureTitle: { fontFamily: fontFamily.sansBold, fontSize: 15 },
+  pictureHint: { fontSize: 13, lineHeight: 18 },
+  pictureActions: { flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 4 },
 });

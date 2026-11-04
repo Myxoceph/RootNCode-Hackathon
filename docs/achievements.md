@@ -17,9 +17,10 @@ adminler panelden yeni başarım ekleyebilir, düzenleyebilir ya da kapatabilir 
 - **Rozet görselleri:** Uygulama, aşağıdaki tablolardaki emojinin yerine resimli rozeti çizer
   ([`design/achievement-badges.png`](design/achievement-badges.png); Bursa'ya Merhaba ayrı çizildi:
   [`design/badges/bursa-ilk-adim.svg`](design/badges/bursa-ilk-adim.svg)). Görseller kazanılmamış rozette gri ve
-  soluk görünür. Resmi olmayan başarımlar (adminin sonradan ekledikleri) emojisiyle çizilir. Yeni bir resim
-  eklemek için rozeti kaynak görsele ya da `docs/design/badges/` altına ekleyip `apps/app/scripts/cut-badges.py`
-  içindeki listeye kodunu yaz, sonra `npm run badges --workspace @vagabonds/app` çalıştır.
+  soluk görünür. Admin panelinden de bir başarıma görsel yüklenebilir (aşağıda); yüklenen görsel uygulamadaki
+  resmin yerine geçer. Görseli olmayan başarım emojisiyle çizilir. Uygulamaya hazır resim eklemek için rozeti kaynak
+  görsele ya da `docs/design/badges/` altına ekleyip `apps/app/scripts/cut-badges.py` içindeki listeye kodunu yaz,
+  sonra `npm run badges --workspace @vagabonds/app` çalıştır.
 
 Toplam: **36 başarım**, rozetlerden en çok **1530 puan** (etkinlik puanı hariç). Puanlar cüzdana yazılır ve ödüllere harcanabilir ([`rewards.md`](rewards.md)).
 
@@ -111,6 +112,18 @@ Ziyaretçi Ziyaret Mührü'nde eserin belirlenen kısmını kameraya tanıtınca
 | 🔏 | **İlk Mühür**<br>Ziyaret Mührü ile bir eserde bulunduğunu kanıtla. | 1 kanıtlanmış ziyaret | 40 | `zaman-yolcusu` |
 | 🏅 | **Mühür Ustası**<br>5 eserde ziyaretini Ziyaret Mührü ile kanıtla. | 5 kanıtlanmış ziyaret | 100 | `zaman-ustasi` |
 
+## Panelden başarım ekleme
+
+- **Başlık ve açıklama** Türkçe (zorunlu) ve İngilizce (isteğe bağlı) yazılır. İngilizcesi boş olan başarım
+  İngilizce uygulamada Türkçesiyle görünür. Düzenlerken yalnızca Türkçe gönderilirse İngilizce olduğu gibi kalır;
+  `en: null` İngilizceyi kaldırır. Ödüllerde de aynısı geçerlidir.
+- **Rozet görseli** `PUT /admin/achievements/:code/image` ile yüklenir: gövde JPEG ya da PNG dosyanın kendisi,
+  en çok 2 MB, kareye yakın (uzun kenar kısa kenarın en çok 1,25 katı), her kenar en az 128 px (512 px önerilir).
+  Meta verisi silinerek saklanır ve `GET /achievement-images/:code?v=…` adresinden herkese açık sunulur; adres
+  başarımın `imageUrl` alanındadır. `DELETE /admin/achievements/:code/image` görseli kaldırır. Görsel dairenin
+  içine kesilir, kazanılmamış rozette gri ve soluk görünür. Panel görseli şimdilik yalnızca web sürümünde yükler.
+- **Emoji** (`badge`) görsel yokken rozetin yerinde görünen yedektir.
+
 ## Kural türleri (admin için)
 
 Yeni başarım eklerken `rule` alanı aşağıdakilerden biridir. Doğrulanmayan kural API'de reddedilir.
@@ -131,10 +144,12 @@ Yeni başarım eklerken `rule` alanı aşağıdakilerden biridir. Doğrulanmayan
 {
   "code": "nilufer-gezgini",
   "title": {
-    "tr": "Nilüfer Gezgini"
+    "tr": "Nilüfer Gezgini",
+    "en": "Nilüfer Explorer"
   },
   "description": {
-    "tr": "Nilüfer'de 3 eser ziyaret et."
+    "tr": "Nilüfer'de 3 eser ziyaret et.",
+    "en": "Visit 3 sites in Nilüfer."
   },
   "badge": "🏛️",
   "points": 20,

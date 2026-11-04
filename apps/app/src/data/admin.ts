@@ -36,10 +36,13 @@ import {
   type UserRole,
 } from "@vagabonds/contracts";
 
+import { Platform } from "react-native";
+
 import { accountToken, sessionRejected } from "./community";
 import { resolveApiUrl } from "./config";
 import { DataError, type SchemaParser } from "./errors";
 import { request, statusError } from "./http";
+import { uploadFile } from "./upload";
 
 /**
  * The admin panel's requests (`/admin/*`). Every one is sent with the signed-in account's token;
@@ -64,6 +67,11 @@ const MESSAGES: Record<string, string> = {
   ACHIEVEMENT_NOT_FOUND: "Başarım bulunamadı.",
   REWARD_NOT_FOUND: "Ödül bulunamadı.",
   INVALID_BODY: "Bilgiler kurallara uymuyor; alanları kontrol et.",
+  INVALID_IMAGE: "Bu görsel kullanılamıyor: JPEG ya da PNG olmalı.",
+  UNSUPPORTED_MEDIA_TYPE: "Görsel JPEG ya da PNG olmalı.",
+  IMAGE_TOO_SMALL: "Görsel çok küçük: kenarları en az 128 piksel olmalı.",
+  IMAGE_NOT_SQUARE: "Görsel kareye yakın olmalı; rozet dairenin içinde çizilir.",
+  PAYLOAD_TOO_LARGE_IMAGE: "Görsel çok büyük: en çok 2 MB olabilir.",
   INVALID_QUERY: "Arama kurallara uymuyor.",
 };
 
@@ -161,6 +169,32 @@ export const updateAchievement = (code: string, patch: AdminAchievementPatch): P
   admin(`/admin/achievements/${code}`, AdminAchievementSchema, { body: patch, method: "PATCH" });
 
 export const deleteAchievement = (code: string): Promise<null> => admin(`/admin/achievements/${code}`, Nothing, { method: "DELETE" });
+
+/**
+ * Puts a badge's picture (`PUT /admin/achievements/:code/image`): the picked file on a phone, a
+ * blob or object URL on the web. JPEG or PNG, at most 2 MB, about square, sides 128 px or more.
+ */
+export async function uploadAchievementImage(code: string, uri: string, type: "image/jpeg" | "image/png"): Promise<AdminAchievement> {
+  const token = await accountToken();
+  if (!token) throw new DataError("rejected", "Panel için yönetici hesabıyla giriş yapmalısın.", [], "ACCOUNT_REQUIRED");
+  const url = `${resolveApiUrl()}/admin/achievements/${code}/image`;
+  const errorFor = (status: number, errorCode: string | null, details: string[]) => {
+    if (status === 401) sessionRejected(token);
+    const message = status === 413 ? MESSAGES.PAYLOAD_TOO_LARGE_IMAGE : errorCode ? MESSAGES[errorCode] : undefined;
+    return message ? new DataError("rejected", message, details, errorCode) : statusError(status, errorCode, details);
+  };
+  if (Platform.OS !== "web") return uploadFile(uri, url, AdminAchievementSchema, { type, token, errorFor, timeoutMs: 30_000, method: "PUT" });
+  let data: Blob;
+  try {
+    data = await (await fetch(uri)).blob();
+  } catch (error) {
+    throw new DataError("rejected", "Görsel okunamadı. Tekrar dene.", [uri, String(error)]);
+  }
+  return (await request(url, AdminAchievementSchema, { rawBody: { data, type }, method: "PUT", token, timeoutMs: 30_000, errorFor }))!;
+}
+
+export const deleteAchievementImage = (code: string): Promise<AdminAchievement> =>
+  admin(`/admin/achievements/${code}/image`, AdminAchievementSchema, { method: "DELETE" });
 
 // Rewards.
 export const fetchAdminRewards = async (): Promise<AdminReward[]> => (await admin("/admin/rewards?lang=tr", AdminRewardsResponseSchema)).items;

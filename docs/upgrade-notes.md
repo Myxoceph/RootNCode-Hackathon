@@ -7,6 +7,22 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-04 · Başarım görselleri ve panelde İngilizce
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:deploy --workspace @vagabonds/api` (yeni tablo: `achievement_image`)
+2. API'yi yeniden başlat.
+
+Değişenler:
+- Admin panelinde başarım ve ödül eklerken/düzenlerken başlık ve açıklama İngilizce de yazılabiliyor. Önceden
+  düzenleme İngilizceyi siliyordu; artık yalnızca Türkçe gönderilirse İngilizce korunur.
+- Başarımlara panelden kare bir JPEG/PNG rozet görseli yüklenebiliyor (`PUT /admin/achievements/:code/image`);
+  uygulama görseli emoji yerine daire içinde çizer. Sözleşme `0.3.27`: başarımlarda `imageUrl`, admin
+  yanıtlarında `titleEn` / `descriptionEn`.
+
+---
+
 ## 2026-11-03 · Kitap fotoğraflarına alt metin (ekran okuyucu için)
 
 Kimler: **API'yi yerelde çalıştıranlar**

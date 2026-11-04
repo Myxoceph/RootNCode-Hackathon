@@ -172,6 +172,8 @@ export const rewardsRoutes: FastifyPluginAsync<RewardsRoutesOptions> = async (ap
     const { total = 0, used = 0 } = counts ?? {};
     return AdminRewardSchema.parse({
       ...toReward(record, total - used, "tr"),
+      titleEn: record.title_en,
+      descriptionEn: record.description_en,
       active: record.active,
       sortOrder: record.sort_order,
       createdBy: record.created_by,
@@ -242,8 +244,12 @@ export const rewardsRoutes: FastifyPluginAsync<RewardsRoutesOptions> = async (ap
     const patch = parseWith(AdminRewardPatchSchema, request.body, "INVALID_BODY");
     if (!(await repository.findReward(code))) throw rewardNotFound(code);
     const updated = await repository.updateReward(code, {
-      ...(patch.title && { title_tr: patch.title.tr, title_en: patch.title.en ?? null }),
-      ...(patch.description && { description_tr: patch.description.tr, description_en: patch.description.en ?? null }),
+      // English left out keeps what is there; null removes it.
+      ...(patch.title && { title_tr: patch.title.tr, ...(patch.title.en !== undefined && { title_en: patch.title.en }) }),
+      ...(patch.description && {
+        description_tr: patch.description.tr,
+        ...(patch.description.en !== undefined && { description_en: patch.description.en }),
+      }),
       ...(patch.partner !== undefined && { partner: patch.partner }),
       ...(patch.kind !== undefined && { kind: patch.kind }),
       ...(patch.costPoints !== undefined && { cost_points: patch.costPoints }),

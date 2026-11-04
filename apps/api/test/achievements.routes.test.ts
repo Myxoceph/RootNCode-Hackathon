@@ -18,6 +18,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildApp } from "../src/app.ts";
 import { createPrismaClient, type PrismaClient } from "../src/db/prisma.ts";
 import { hashToken, newToken } from "../src/modules/community/auth.ts";
+import { jpegWithExif } from "./helpers/images.ts";
 
 const DATABASE_URL = process.env["DATABASE_URL"];
 
@@ -200,6 +201,46 @@ describe.skipIf(!DATABASE_URL)("achievements (PostgreSQL)", () => {
 
     expect((await app.inject({ method: "DELETE", url: `/admin/achievements/${code}`, headers: auth(admin) })).statusCode).toBe(204);
     expect((await app.inject({ method: "DELETE", url: `/admin/achievements/${code}`, headers: auth(admin) })).statusCode).toBe(404);
+  });
+
+  it("keeps the English text and takes a badge picture", async () => {
+    const admin = await createUser("admin");
+    const visitor = await createUser();
+    const code = `test-${tag}-gorselli`;
+    const made = await app.inject({
+      method: "POST",
+      url: "/admin/achievements",
+      headers: auth(admin),
+      payload: { code, title: { tr: "Görselli", en: "Pictured" }, description: { tr: "Bir eser gez.", en: "Visit one site." }, badge: "⭐", points: 5, rule: { kind: "visit_count", count: 1 } },
+    });
+    expect(made.statusCode, made.body).toBe(201);
+    expect(AdminAchievementSchema.parse(made.json())).toMatchObject({ titleEn: "Pictured", descriptionEn: "Visit one site.", imageUrl: null });
+
+    // Turkish alone keeps the English; null removes it.
+    const kept = await app.inject({ method: "PATCH", url: `/admin/achievements/${code}`, headers: auth(admin), payload: { title: { tr: "Görselli Rozet" } } });
+    expect(AdminAchievementSchema.parse(kept.json())).toMatchObject({ title: "Görselli Rozet", titleEn: "Pictured" });
+    const cleared = await app.inject({ method: "PATCH", url: `/admin/achievements/${code}`, headers: auth(admin), payload: { title: { tr: "Görselli Rozet", en: null } } });
+    expect(AdminAchievementSchema.parse(cleared.json()).titleEn).toBeNull();
+
+    const put = (body: Buffer, token = admin) =>
+      app.inject({ method: "PUT", url: `/admin/achievements/${code}/image`, headers: { ...auth(token), "content-type": "image/jpeg" }, payload: body });
+    expect((await put(jpegWithExif(512, 512), visitor)).statusCode).toBe(403);
+    expect((await put(jpegWithExif(64, 64))).json().error.code).toBe("IMAGE_TOO_SMALL");
+    expect((await put(jpegWithExif(800, 400))).json().error.code).toBe("IMAGE_NOT_SQUARE");
+
+    const pictured = await put(jpegWithExif(512, 512));
+    expect(pictured.statusCode, pictured.body).toBe(200);
+    const imageUrl = AdminAchievementSchema.parse(pictured.json()).imageUrl;
+    expect(imageUrl).toMatch(new RegExp(`^/achievement-images/${code}\\?v=[0-9a-f]{12}$`));
+    const file = await app.inject({ method: "GET", url: imageUrl! });
+    expect([file.statusCode, file.headers["content-type"]]).toEqual([200, "image/jpeg"]);
+    expect(file.rawPayload.includes(Buffer.from("GPSLatitude"))).toBe(false);
+    const list = AchievementsResponseSchema.parse((await app.inject({ method: "GET", url: "/achievements" })).json());
+    expect(list.items.find((a) => a.code === code)?.imageUrl).toBe(imageUrl);
+
+    const removed = await app.inject({ method: "DELETE", url: `/admin/achievements/${code}/image`, headers: auth(admin) });
+    expect(AdminAchievementSchema.parse(removed.json()).imageUrl).toBeNull();
+    expect((await app.inject({ method: "GET", url: `/achievement-images/${code}` })).statusCode).toBe(404);
   });
 
   it("keeps a bond a mystery until both of its assets are discovered", async () => {
