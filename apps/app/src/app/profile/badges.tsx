@@ -1,6 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { MyAchievementsResponse } from "@vagabonds/contracts";
 import { fontFamily, palette, radius, spacing, Text, useTheme, useUi } from "@vagabonds/ui";
+import { useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ActivityIndicator, Animated, Modal, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
@@ -179,6 +180,7 @@ function Backdrop() {
  */
 function Showcase({ items, points, visits, sealed, onOpen }: { items: Badge[]; points: number; visits: number; sealed: number; onOpen: (badge: Badge) => void }) {
   const { colors: c } = useTheme();
+  const router = useRouter();
   const earnedList = items.filter((b) => b.earnedAt).sort((a, b) => earnedTime(b) - earnedTime(a));
   const featured = earnedList[0];
   const recent = earnedList.slice(1, 6);
@@ -261,6 +263,17 @@ function Showcase({ items, points, visits, sealed, onOpen }: { items: Badge[]; p
           <View style={[styles.statRule, { backgroundColor: c.border }]} />
           <Stat value={sealed} label="mühür" />
         </View>
+        <Pressable
+          accessibilityRole="link"
+          onPress={() => router.push("/profile/rewards")}
+          style={({ pressed }) => [styles.spend, { backgroundColor: c.surfaceRaised }, pressed && styles.pressed]}
+        >
+          <Ionicons name="gift-outline" size={18} color={c.highlight} />
+          <Text variant="label" style={styles.spendText}>
+            Puanlarını ödüllere harca
+          </Text>
+          <Ionicons name="chevron-forward" size={18} color={c.textSecondary} />
+        </Pressable>
       </View>
     </View>
   );
@@ -664,6 +677,19 @@ const styles = StyleSheet.create({
   stat: {
     flex: 1,
     alignItems: "center",
+  },
+  spend: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    minHeight: 48,
+    marginTop: spacing.sm,
+    paddingHorizontal: spacing.md,
+    borderRadius: radius.full,
+  },
+  spendText: {
+    flex: 1,
+    fontSize: 15,
   },
   statRule: {
     width: 1,
