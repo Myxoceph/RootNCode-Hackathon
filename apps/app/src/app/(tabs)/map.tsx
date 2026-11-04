@@ -10,6 +10,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { CityAssetCards } from "@/components/city-asset-cards";
 import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapCityButtons } from "@/components/map-city-buttons";
+import { MapTimeJourneyButton } from "@/components/map-time-journey-button";
 import { MapSearch } from "@/components/map-search";
 import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
 import { SealScanDemo } from "@/components/seal-scan-demo";
@@ -395,6 +396,8 @@ export default function MapScreen() {
           </View>
         )}
         {!selectedCity && <MapCityButtons cities={withAssets} bottom={tabBarHeight + spacing.sm} onOpen={openCity} />}
+        {/* Not while the tour plays: its bubbles point at the map. Over a city's cards, it keeps small. */}
+        {!tour.step && <MapTimeJourneyButton compact={selectedCity !== null} bottom={tabBarHeight + (cardsShown ? CITY_CARDS_SPACE + spacing.xs : spacing.lg)} />}
       </Animated.View>
       {tour.scanning && <SealScanDemo onDone={tour.onScanned} />}
       {tour.step && <MapTourGuide step={tour.step} spots={tourSpots} top={insets.top} onNext={tour.next} onPrevious={tour.canGoBack ? tour.previous : null} onSkip={tour.skip} />}
