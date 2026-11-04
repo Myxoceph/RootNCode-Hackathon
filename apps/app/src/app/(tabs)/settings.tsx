@@ -49,7 +49,6 @@ export default function SettingsScreen() {
           Profil
         </Text>
 
-        {user !== undefined && !signedIn && <Join />}
         <Passport />
         <Sections />
 
@@ -94,7 +93,8 @@ function Passport() {
   const points = data?.totalPoints ?? 0;
   const earned = data ? data.items.filter((item) => item.earnedAt).length : 0;
   const visits = data?.visits ?? 0;
-  const account = signedIn ? `@${user!.username}` : "Misafir gezgin";
+  // Without a server no account can be opened: the sample version's passport has no handle.
+  const account = signedIn ? `@${user!.username}` : "Örnek sürüm";
   // The visitor's own photo and full name; without them the back shows the initial and the nickname.
   const holder = { photoUrl: avatarUri(user), fullName: user?.fullName ?? null };
   const fullName = holder.fullName ?? name;
@@ -382,54 +382,6 @@ function Sheen({ width, height }: { width: number; height: number }) {
   );
 }
 
-/**
- * For a visitor without an account, at the top of the page: one card with what an account keeps
- * and the way to sign up or in (`/auth`).
- */
-function Join() {
-  const { colors: c, scheme } = useTheme();
-  const dark = scheme === "dark";
-  const router = useRouter();
-  return (
-    <View style={[styles.join, { backgroundColor: c.surface, borderColor: dark ? goldFaint : c.border }]}>
-      <View style={styles.joinHead}>
-        <View style={[styles.joinIcon, { backgroundColor: dark ? "rgba(231, 194, 106, 0.16)" : "rgba(231, 194, 106, 0.24)" }]}>
-          <Ionicons name="person-add" size={18} color={c.highlightMark} />
-        </View>
-        <View style={styles.flex}>
-          <Text variant="label" style={styles.joinTitle}>
-            Hesabını oluştur
-          </Text>
-          <Text variant="caption" color="textSecondary">
-            Pasaportun, mühürlerin ve notların her cihazda seninle olsun.
-          </Text>
-        </View>
-      </View>
-      <View style={styles.joinActions}>
-        <Pressable
-          accessibilityRole="button"
-          onPress={() => router.push({ pathname: "/auth", params: { mode: "register" } })}
-          style={({ pressed }) => [styles.joinButton, { backgroundColor: palette.altin700 }, pressed && styles.pressed]}
-        >
-          {/* Bronze in both themes; white on it is 5.8:1 (altin600 would fall short of 4.5:1). */}
-          <Text variant="label" colorValue={palette.white} style={styles.joinButtonText}>
-            Kayıt ol
-          </Text>
-        </Pressable>
-        <Pressable
-          accessibilityRole="button"
-          onPress={() => router.push({ pathname: "/auth", params: { mode: "login" } })}
-          style={({ pressed }) => [styles.joinButton, { borderWidth: 1, borderColor: c.border }, pressed && styles.pressed]}
-        >
-          <Text variant="label" style={styles.joinButtonText}>
-            Giriş yap
-          </Text>
-        </Pressable>
-      </View>
-    </View>
-  );
-}
-
 const ROW_ICON = 32;
 
 /**
@@ -666,43 +618,6 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.sansMedium,
     fontSize: 13,
     lineHeight: 18,
-  },
-  join: {
-    gap: spacing.md,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.md,
-    borderRadius: 24,
-    borderWidth: StyleSheet.hairlineWidth,
-  },
-  joinHead: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-  },
-  joinIcon: {
-    width: 38,
-    height: 38,
-    borderRadius: 19,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  joinTitle: {
-    fontFamily: fontFamily.sansSemiBold,
-    fontSize: 16,
-  },
-  joinActions: {
-    flexDirection: "row",
-    gap: spacing.sm,
-  },
-  joinButton: {
-    flex: 1,
-    height: touchTarget.min,
-    borderRadius: radius.full,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  joinButtonText: {
-    fontFamily: fontFamily.sansSemiBold,
   },
   list: {
     borderRadius: radius.xl,

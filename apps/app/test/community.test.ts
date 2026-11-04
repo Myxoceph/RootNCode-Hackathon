@@ -61,88 +61,64 @@ beforeEach(async () => {
   await load();
 });
 
+/** A signed-in account: notes and seals go only under one. */
+function account(nickname: string, username: string, token: string) {
+  const s = session(nickname, token);
+  return { ...s, user: { ...s.user, username } };
+}
+
 describe("sending a note", () => {
-  it("opens an anonymous session under the nickname on the first note, and keeps it", async () => {
-    const { calls } = scriptedFetch();
-    const sent = community.sendContribution(ASSET, NOTE, "Gezgin");
-    await flush();
-
-    expect(calls[0]!.url).toBe(`${API}/auth/anonymous`);
-    expect(JSON.parse(calls[0]!.init.body as string)).toEqual({ nickname: "Gezgin" });
-    const opened = session("Gezgin", "vgb_first");
-    calls[0]!.reply(opened, 201);
-    await flush();
-
-    expect(calls[1]!.url).toBe(`${API}/assets/${ASSET.id}/contributions`);
-    expect(bearer(calls[1]!.init)).toBe(`Bearer ${opened.token}`);
-    calls[1]!.reply(contribution(), 201);
-    await sent;
-
-    expect(JSON.parse(keychain.get(SESSION_KEY)!).token).toBe(opened.token);
-    expect(community.getCommunityState()).toMatchObject({
-      user: { nickname: "Gezgin" },
-      sent: 1,
-      assetNames: { [ASSET.id]: "Ulucami" },
-    });
-  });
-
-  it("sends later notes under the stored session", async () => {
-    const stored = session("Gezgin", "vgb_stored");
+  it("sends under the account and counts it", async () => {
+    const stored = account("Gezgin", "gezgin", "vgb_stored");
     await load({ stored });
     const { calls } = scriptedFetch();
     const sent = community.sendContribution(ASSET, NOTE);
     await flush();
 
     expect(calls).toHaveLength(1);
+    expect(calls[0]!.url).toBe(`${API}/assets/${ASSET.id}/contributions`);
     expect(bearer(calls[0]!.init)).toBe(`Bearer ${stored.token}`);
     calls[0]!.reply(contribution(), 201);
     await sent;
+    expect(community.getCommunityState()).toMatchObject({ sent: 1, assetNames: { [ASSET.id]: "Ulucami" } });
   });
 
-  it("asks for a nickname without a session, before any request", async () => {
+  it("asks to sign in without an account, before any request", async () => {
     const { fetch } = scriptedFetch();
-    await expect(community.sendContribution(ASSET, NOTE)).rejects.toMatchObject({ kind: "rejected", message: "Takma ad gerekli." });
+    await expect(community.sendContribution(ASSET, NOTE)).rejects.toMatchObject({ kind: "rejected", message: "Not bırakmak için giriş yap." });
+    // An old nickname session is not an account either.
+    await load({ stored: session("Gezgin", "vgb_anon") });
+    await expect(community.sendContribution(ASSET, NOTE)).rejects.toMatchObject({ code: "ACCOUNT_REQUIRED" });
+    await expect(community.sendVisitProof(ASSET.id, { mediaKey: "kapi" })).rejects.toMatchObject({ message: "Mühür basmak için giriş yap." });
     expect(fetch).not.toHaveBeenCalled();
   });
 
   it("says when the hourly limit is reached, without a number that could go stale", async () => {
-    await load({ stored: session("Gezgin", "vgb_stored") });
+    await load({ stored: account("Gezgin", "gezgin", "vgb_stored") });
     const { calls } = scriptedFetch();
     const sent = community.sendContribution(ASSET, NOTE);
     await flush();
     calls[0]!.reply({ error: { code: "CONTRIBUTION_LIMIT" } }, 429);
     await expect(sent).rejects.toMatchObject({ kind: "rejected", message: "Saatlik not sınırına ulaştın. Biraz sonra tekrar dene." });
   });
-
-  it("keeps the new session when sending under it fails, so the nickname is not asked again", async () => {
-    const { calls } = scriptedFetch();
-    const sent = community.sendContribution(ASSET, NOTE, "Gezgin");
-    await flush();
-    calls[0]!.reply(session("Gezgin", "vgb_first"), 201);
-    await flush();
-    calls[1]!.reply({ error: { code: "INTERNAL" } }, 500);
-
-    await expect(sent).rejects.toMatchObject({ kind: "unavailable" });
-    expect(community.getCommunityState().user?.nickname).toBe("Gezgin");
-  });
 });
 
 describe("an expired session", () => {
-  it("is forgotten on a 401, so the next note asks for a nickname", async () => {
-    await load({ stored: session("Gezgin", "vgb_revoked") });
+  it("is forgotten on a 401, so the app asks to sign in again", async () => {
+    await load({ stored: account("Gezgin", "gezgin", "vgb_revoked") });
     const { calls } = scriptedFetch();
     const mine = community.fetchMyContributions();
     await flush();
     calls[0]!.reply({ error: { code: "UNAUTHORIZED" } }, 401);
 
-    await expect(mine).rejects.toMatchObject({ message: "Oturumun sona ermiş. Takma adını yeniden girip tekrar gönder." });
+    await expect(mine).rejects.toMatchObject({ message: "Oturumun sona ermiş. Yeniden giriş yap." });
     await flush();
     expect(keychain.has(SESSION_KEY)).toBe(false);
     expect(community.getCommunityState().user).toBeNull();
   });
 
   it("does not take a session opened meanwhile down with it", async () => {
-    await load({ stored: session("Eski", "vgb_revoked") });
+    await load({ stored: account("Eski", "eski", "vgb_revoked") });
     const { calls } = scriptedFetch();
 
     // Notlarım asks with the revoked token; the answer is slow.
@@ -153,14 +129,13 @@ describe("an expired session", () => {
     await flush();
     calls[1]!.reply({ error: { code: "UNAUTHORIZED" } }, 401);
     await expect(first).rejects.toMatchObject({ kind: "rejected" });
-    // ...so the visitor sends again under a new nickname.
-    const fresh = session("Yeni", "vgb_fresh");
-    const second = community.sendContribution(ASSET, NOTE, "Yeni");
     await flush();
-    calls[2]!.reply(fresh, 201);
+    // ...so the visitor signs in again.
+    const fresh = account("Yeni", "yeni", "vgb_fresh");
+    const signingIn = community.login({ username: "yeni", password: "parola123" });
     await flush();
-    calls[3]!.reply(contribution(), 201);
-    await second;
+    calls[2]!.reply(fresh);
+    await signingIn;
 
     // The slow 401 about the old token arrives last.
     calls[0]!.reply({ error: { code: "UNAUTHORIZED" } }, 401);
@@ -196,17 +171,12 @@ describe("with the mock source", () => {
     const { fetch } = scriptedFetch();
     expect(community.communityAvailable).toBe(false);
     await expect(community.fetchMyContributions()).resolves.toBeNull();
-    await expect(community.sendContribution(ASSET, NOTE, "Gezgin")).rejects.toMatchObject({ kind: "unavailable" });
+    await expect(community.sendContribution(ASSET, NOTE)).rejects.toMatchObject({ kind: "unavailable" });
     expect(fetch).not.toHaveBeenCalled();
   });
 });
 
 describe("accounts", () => {
-  const account = (nickname: string, username: string, token: string) => {
-    const s = session(nickname, token);
-    return { ...s, user: { ...s.user, username } };
-  };
-
   it("signs up with a new account and keeps its session", async () => {
     const { calls } = scriptedFetch();
     const signedUp = community.register({ username: "gezgin", password: "parola123", email: "gezgin@ornek.test" });

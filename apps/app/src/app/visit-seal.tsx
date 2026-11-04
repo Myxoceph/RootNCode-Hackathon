@@ -1,10 +1,10 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { NicknameSchema, VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
-import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text, useUi } from "@vagabonds/ui";
+import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
+import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ActivityIndicator, Animated, Easing, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { ActivityIndicator, Animated, Easing, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { compileSource } from "@/ar/inscription-targets";
@@ -14,7 +14,7 @@ import type { TrackerTarget } from "@/ar/tracker-page";
 import { AssetImage } from "@/components/asset-image";
 import { CameraTopBar } from "@/components/camera-chrome";
 import { DataErrorView } from "@/components/resource-view";
-import { communityAvailable, DataError, sendVisitProof, useAsset, useCommunity } from "@/data";
+import { communityAvailable, DataError, sendVisitProof, useAsset } from "@/data";
 import { announce } from "@/lib/announce";
 import { currentPosition, type Position } from "@/lib/current-position";
 import { isAssetUnlocked } from "@/lib/related-assets";
@@ -40,7 +40,6 @@ type Phase =
   | { name: "searching" }
   | { name: "holding" }
   | { name: "sending" }
-  | { name: "nickname"; position: Position | null }
   | { name: "sealed"; result: VisitResponse }
   | { name: "failed"; message: string };
 
@@ -197,7 +196,6 @@ function SealGuide({ asset, onUseCamera }: { asset: AssetDetail; onUseCamera?: (
 function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnlock?: () => void; onSealed: () => void }) {
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { user } = useCommunity();
   const { photo, part } = visitSealTarget(asset)!;
   const key = `${asset.id}:${photo.key}`;
   const [run, setRun] = useState(0);
@@ -221,10 +219,10 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
   }, [key, run]);
 
   const send = useCallback(
-    async (position: Position | null, nickname?: string) => {
+    async (position: Position | null) => {
       go({ name: "sending" });
       try {
-        const result = await sendVisitProof(asset.id, { mediaKey: photo.key, ...(position ?? {}) }, nickname);
+        const result = await sendVisitProof(asset.id, { mediaKey: photo.key, ...(position ?? {}) });
         onSealed();
         unlockAsset(asset.id);
         go({ name: "sealed", result });
@@ -249,9 +247,8 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
         return go({ name: "failed", message: `Esere ${formatMeters(meters)} uzaktasın. Mühür için ${VISIT_RADIUS_METERS} m yakınına gel.` });
       }
     }
-    if (!user) return go({ name: "nickname", position });
     await send(position);
-  }, [asset.coordinates, user, send, go]);
+  }, [asset.coordinates, send, go]);
 
   const onEvent = useCallback(
     (event: TrackerEvent) => {
@@ -319,7 +316,7 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
 
       <View style={[styles.panel, { paddingBottom: insets.bottom + spacing.lg }]} accessibilityLiveRegion="polite">
         {onUnlock && <UnlockButton onPress={onUnlock} />}
-        <PanelBody phase={phase} hold={hold} onRetry={retry} onNickname={(nickname, position) => void send(position, nickname)} />
+        <PanelBody phase={phase} hold={hold} onRetry={retry} />
       </View>
     </View>
   );
@@ -329,12 +326,10 @@ function PanelBody({
   phase,
   hold,
   onRetry,
-  onNickname,
 }: {
   phase: Phase;
   hold: Animated.Value;
   onRetry: () => void;
-  onNickname: (nickname: string, position: Position | null) => void;
 }) {
   switch (phase.name) {
     case "preparing":
@@ -381,8 +376,6 @@ function PanelBody({
           </View>
         </>
       );
-    case "nickname":
-      return <NicknameStep onSubmit={(nickname) => onNickname(nickname, phase.position)} />;
     case "failed":
       return (
         <>
@@ -395,48 +388,6 @@ function PanelBody({
     case "sealed":
       return null;
   }
-}
-
-/** A visitor without a session names the seal once; the same nickname signs their notes. */
-function NicknameStep({ onSubmit }: { onSubmit: (nickname: string) => void }) {
-  const { textScale } = useUi();
-  const [nickname, setNickname] = useState("");
-  const [error, setError] = useState<string | null>(null);
-  const submit = () => {
-    if (!NicknameSchema.safeParse(nickname).success) {
-      setError("Takma ad 2-32 karakter olmalı; harf, rakam, boşluk, nokta, alt çizgi ve tire kullanılabilir.");
-      return;
-    }
-    onSubmit(nickname.trim());
-  };
-  return (
-    <>
-      <Text variant="heading" colorValue={cameraColors.gold}>
-        Tanındı! Mühür kimin adına?
-      </Text>
-      <TextInput
-        value={nickname}
-        onChangeText={(text) => {
-          setNickname(text);
-          setError(null);
-        }}
-        onSubmitEditing={submit}
-        accessibilityLabel="Takma ad"
-        accessibilityHint="Mühür ve notların bu adla görünür"
-        placeholder="Takma ad"
-        placeholderTextColor={cameraColors.textSecondary}
-        autoCapitalize="none"
-        returnKeyType="done"
-        style={[styles.input, { fontSize: 16 * textScale, lineHeight: 24 * textScale }]}
-      />
-      {error && (
-        <Text variant="caption" colorValue={cameraColors.text} accessibilityRole="alert">
-          {error}
-        </Text>
-      )}
-      <Button label="Mühürle" onPress={submit} colors={[cameraColors.gold, cameraColors.onGold]} />
-    </>
-  );
 }
 
 /**
@@ -645,15 +596,6 @@ const styles = StyleSheet.create({
     height: "100%",
     borderRadius: 3,
     backgroundColor: cameraColors.gold,
-  },
-  input: {
-    minHeight: 48,
-    paddingHorizontal: spacing.md,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.3)",
-    color: cameraColors.text,
-    fontFamily: fontFamily.sans,
   },
   guide: {
     gap: spacing.md,
