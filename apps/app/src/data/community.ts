@@ -34,6 +34,7 @@ import { useEffect, useSyncExternalStore } from "react";
 import { resolveApiUrl, resolveDataSourceKind } from "./config";
 import { DataError, type SchemaParser } from "./errors";
 import { request, statusError } from "./http";
+import { celebrateEarned, noteEarned } from "./new-badges";
 import { clearSession, readSession, writeSession } from "./session-storage";
 
 /** Asset id → name of the assets the visitor left notes on, for "Notlarım". */
@@ -267,10 +268,12 @@ export async function sendContribution(asset: { id: string; name: string }, note
 export async function sendVisitProof(assetId: string, proof: Omit<VisitProofRequest, "method">): Promise<VisitResponse> {
   if (!communityAvailable) throw new DataError("unavailable", "Mühür için sunucu gerekiyor.");
   const sendWith = await signedInToken("Mühür basmak");
-  return call(`/assets/${encodeURIComponent(assetId)}/visit/proof`, VisitResponseSchema, {
+  const result = await call(`/assets/${encodeURIComponent(assetId)}/visit/proof`, VisitResponseSchema, {
     body: { ...proof, method: "device_recognition" },
     token: sendWith,
   });
+  void celebrateEarned(state.user?.id ?? null, result.newAchievements);
+  return result;
 }
 
 /**
@@ -281,7 +284,9 @@ export async function sendDemoUnlock(assetId: string): Promise<VisitResponse | n
   if (!communityAvailable) return null;
   await loadSession();
   if (!token) return null;
-  return call(`/assets/${encodeURIComponent(assetId)}/visit/unlock`, VisitResponseSchema, { method: "POST", token });
+  const result = await call(`/assets/${encodeURIComponent(assetId)}/visit/unlock`, VisitResponseSchema, { method: "POST", token });
+  void celebrateEarned(state.user?.id ?? null, result.newAchievements);
+  return result;
 }
 
 /** The account's details changed (name, photo): kept with the session it belongs to. */
@@ -349,7 +354,13 @@ export async function fetchMyContributions(): Promise<Contribution[] | null> {
 export async function fetchMyAchievements(): Promise<MyAchievementsResponse | null> {
   if (!communityAvailable) return null;
   await loadSession();
-  if (token) return call("/me/achievements", MyAchievementsResponseSchema, { token });
+  if (token) {
+    const mine = await call("/me/achievements", MyAchievementsResponseSchema, { token });
+    // This call also awards the badges of notes approved since: the ones not shown yet are celebrated.
+    const userId = state.user?.id;
+    if (userId) void noteEarned(userId, mine.items.filter((item) => item.earnedAt));
+    return mine;
+  }
   const all = await call("/achievements", AchievementsResponseSchema);
   const none = { approved: 0, pending: 0 };
   return {
