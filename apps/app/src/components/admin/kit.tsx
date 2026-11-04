@@ -1,8 +1,8 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { fontFamily, palette, Text, useTheme } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
-import { useCallback, useEffect, useRef, useState, type ComponentProps, type ReactNode } from "react";
-import { ActivityIndicator, Modal, Pressable, ScrollView, StyleSheet, TextInput, View, type StyleProp, type TextInputProps, type ViewStyle } from "react-native";
+import { useCallback, useEffect, useRef, useState, type ComponentProps, type ComponentRef, type ReactNode } from "react";
+import { ActivityIndicator, Modal, Platform, Pressable, ScrollView, StyleSheet, TextInput, View, type StyleProp, type TextInputProps, type ViewStyle } from "react-native";
 
 import { DataError } from "@/data";
 
@@ -189,7 +189,7 @@ export function CardHeader({ title, hint, actions }: { title: string; hint?: str
 }
 
 /** The page's title row: the title with a line under it, then the round tools and the page's actions. */
-export function PageHeader({ overline, title, hint, actions }: { overline?: string; title: string; hint?: string; actions?: ReactNode }) {
+export function PageHeader({ overline, title, hint, actions, tools = true }: { overline?: string; title: string; hint?: string; actions?: ReactNode; /** The round buttons to the review queue and back to the app; off on pages busy with one task. */ tools?: boolean }) {
   const router = useRouter();
   const { pending } = usePanel();
   return (
@@ -210,8 +210,12 @@ export function PageHeader({ overline, title, hint, actions }: { overline?: stri
         )}
       </View>
       <View style={[kit.row, { flexWrap: "wrap", gap: 10 }]}>
-        <IconButton icon="notifications-outline" label={pending ? `${pending} not bekliyor` : "İnceleme"} dot={!!pending} onPress={() => router.push("/admin/review")} />
-        <IconButton icon="map-outline" label="Uygulamaya dön" onPress={() => router.replace("/map")} />
+        {tools && (
+          <>
+            <IconButton icon="notifications-outline" label={pending ? `${pending} not bekliyor` : "İnceleme"} dot={!!pending} onPress={() => router.push("/admin/review")} />
+            <IconButton icon="map-outline" label="Uygulamaya dön" onPress={() => router.replace("/map")} />
+          </>
+        )}
         {actions}
       </View>
     </View>
@@ -368,16 +372,22 @@ export function Segments<T extends string>({ options, value, onChange, label }: 
 }
 
 /** A labelled text field. */
-export function Field({ label, hint, error, style, ...input }: TextInputProps & { label: string; hint?: string; error?: string | null; style?: StyleProp<ViewStyle> }) {
+export function Field({ label, hideLabel, hint, error, style, ...input }: TextInputProps & { label: string; hideLabel?: boolean; hint?: string; error?: string | null; style?: StyleProp<ViewStyle> }) {
   const a = useAdminColors();
   const [focused, setFocused] = useState(false);
+  // A long text grows its box instead of scrolling inside it.
+  const [height, setHeight] = useState(0);
   return (
     <View style={[kit.field, style]}>
-      {label ? <Text style={kit.fieldLabel}>{label}</Text> : null}
+      {label && !hideLabel ? <Text style={kit.fieldLabel}>{label}</Text> : null}
       <TextInput
         accessibilityLabel={label || undefined}
         placeholderTextColor={a.textSecondary}
         {...input}
+        onContentSizeChange={(event) => {
+          if (input.multiline) setHeight(Math.ceil(event.nativeEvent.contentSize.height));
+          input.onContentSizeChange?.(event);
+        }}
         onFocus={(event) => {
           setFocused(true);
           input.onFocus?.(event);
@@ -388,7 +398,7 @@ export function Field({ label, hint, error, style, ...input }: TextInputProps & 
         }}
         style={[
           kit.input,
-          input.multiline && kit.inputMulti,
+          input.multiline && [kit.inputMulti, { height: Math.max(110, height) }],
           { color: a.text, backgroundColor: a.well, borderColor: error ? a.warning : focused ? a.goldMark : a.line },
           focused && { boxShadow: `0 0 0 3px ${a.goldSoft}` },
           // @ts-expect-error: the web's own focus outline is replaced by the gold ring.
@@ -444,8 +454,14 @@ export function Picker({
   placeholder = "Seç",
   allowEmpty,
   hint,
+  hideLabel,
+  float,
 }: {
   label: string;
+  /** Kept for screen readers only, as in a table under its column's name. */
+  hideLabel?: boolean;
+  /** The list opens over what is below instead of pushing it down, as in a table row. */
+  float?: boolean;
   value: string | null;
   options: Array<{ value: string; label: string }>;
   onChange: (value: string | null) => void;
@@ -457,11 +473,25 @@ export function Picker({
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const picked = options.find((option) => option.value === value);
+  // An opened list below the fold scrolls the page just enough to show it.
+  const menu = useRef<ComponentRef<typeof View>>(null);
+  useEffect(() => {
+    if (!open || Platform.OS !== "web") return;
+    const timer = setTimeout(() => {
+      const node = menu.current as unknown as HTMLElement | null;
+      let box = node?.parentElement ?? null;
+      while (box && !/(auto|scroll)/.test(getComputedStyle(box).overflowY)) box = box.parentElement;
+      if (!node || !box) return;
+      const below = node.getBoundingClientRect().bottom - box.getBoundingClientRect().bottom + 16;
+      if (below > 0) box.scrollBy({ top: below, behavior: "smooth" });
+    }, 30);
+    return () => clearTimeout(timer);
+  }, [open]);
   const needle = search.trim().toLocaleLowerCase("tr");
   const shown = needle ? options.filter((option) => option.label.toLocaleLowerCase("tr").includes(needle)) : options;
   return (
     <View style={[kit.field, open && { zIndex: 20 }]}>
-      <Text style={kit.fieldLabel}>{label}</Text>
+      {!hideLabel && <Text style={kit.fieldLabel}>{label}</Text>}
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={`${label}: ${picked?.label ?? placeholder}`}
@@ -474,7 +504,7 @@ export function Picker({
         <Ionicons name={open ? "chevron-up" : "chevron-down"} size={16} color={a.textSecondary} aria-hidden />
       </Pressable>
       {open && (
-        <View style={[kit.pickerMenu, { backgroundColor: a.well, borderColor: a.line }]}>
+        <View ref={menu} style={[kit.pickerMenu, float && kit.pickerFloat, { backgroundColor: a.well, borderColor: a.line }]}>
           {options.length > 8 && (
             <TextInput
               autoFocus
@@ -490,7 +520,8 @@ export function Picker({
           <ScrollView style={{ maxHeight: 240 }} keyboardShouldPersistTaps="handled">
             {allowEmpty && (
               <MenuItem
-                label="Belirtilmemiş"
+                // The empty choice reads as the box does when nothing is picked.
+                label={placeholder === "Seç" ? "Belirtilmemiş" : placeholder}
                 muted
                 selected={value === null}
                 onPress={() => {
@@ -805,6 +836,7 @@ export const kit = StyleSheet.create({
   searchInput: { flex: 1, minWidth: 0, height: "100%", fontFamily: fontFamily.sans, fontSize: 14 },
   pickerButton: { flexDirection: "row", alignItems: "center", gap: 8 },
   pickerText: { flex: 1, fontSize: 14 },
+  pickerFloat: { position: "absolute", top: 50, left: 0, right: 0, minWidth: 200 },
   pickerMenu: { borderWidth: 1, borderRadius: 16, overflow: "hidden", boxShadow: "0 12px 32px rgba(6,8,13,0.18)" },
   pickerSearch: { height: 40, paddingHorizontal: 12, borderBottomWidth: 1, fontFamily: fontFamily.sans, fontSize: 14 },
   menuItem: { flexDirection: "row", alignItems: "center", gap: 8, paddingHorizontal: 12, paddingVertical: 9 },

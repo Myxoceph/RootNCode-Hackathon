@@ -30,7 +30,7 @@ import { CAPSULE_SECONDS, captionAt, capsuleForSoundKey, capsules, formatSeconds
 import { useAssetRelations } from "@/data";
 import { yearOfDating } from "@/lib/dating";
 import { announce } from "@/lib/announce";
-import { Editable, FrameLink, FrameModal } from "@/lib/in-frame";
+import { Editable, FrameLink, FrameModal, useFrameEditing } from "@/lib/in-frame";
 import { isAssetUnlocked, LOCKED_WARNING, relatedAssetsOf } from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -58,12 +58,12 @@ type Page =
   | { kind: "summary"; key: string; photo: Media | null; text: string }
   | { kind: "figures"; key: string; photo: Media | null; figures: Figure[]; founder: string | null }
   | { kind: "highlight"; key: string; photo: Media | null; number: number; total: number; title: string; hint: string | null; chapter: number }
-  | { kind: "chapter"; key: string; photo: Media | null; chapter: number; title: string; sentence: string }
+  | { kind: "chapter"; key: string; photo: Media | null; chapter: number; id: string; title: string; sentence: string }
   | { kind: "end"; key: string; photo: Media | null };
 
 interface Figure {
-  /** The year it was built, or one of the record's measurements. */
-  kind: "year" | "fact";
+  /** The record's field it shows, for the panel's editor. */
+  field: string;
   value: string;
   unit: string | null;
   label: string;
@@ -199,7 +199,7 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
     .slice(0, STORY_CHAPTERS)
     .forEach(({ chapter, i }) => {
       const title = chapter.title ?? "Tarihçe";
-      pages.push({ kind: "chapter", key: `chapter-${chapter.id}`, photo: photoFor(title), chapter: i, title, sentence: firstSentence(chapter.body) });
+      pages.push({ kind: "chapter", key: `chapter-${chapter.id}`, photo: photoFor(title), chapter: i, id: chapter.id, title, sentence: firstSentence(chapter.body) });
     });
 
   pages.push({ kind: "end", key: "end", photo: gallery[0] ?? null });
@@ -210,13 +210,13 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
 function figuresOf(asset: AssetDetail): Figure[] {
   const figures: Figure[] = [];
   const year = builtYear(asset);
-  if (year) figures.push({ kind: "year", value: year, unit: null, label: "Yapım yılı" });
+  if (year) figures.push({ field: "year", value: year, unit: null, label: "Yapım yılı" });
   for (const fact of asset.facts) {
     if (figures.length === 3) break;
     if (fact.valueNum === null) continue;
     // No thousands dot under 10 000, so a year ("1573") never reads as "1.573".
     const value = fact.valueNum >= 10000 ? fact.valueNum.toLocaleString("tr-TR") : String(fact.valueNum);
-    figures.push({ kind: "fact", value, unit: fact.unit, label: fact.label });
+    figures.push({ field: `fact:${fact.key}`, value, unit: fact.unit, label: fact.label });
   }
   return figures;
 }
@@ -313,34 +313,56 @@ function PageView({
 }
 
 function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asset: AssetDetail; onRead: (chapter: number) => void; photos: Media[]; onGallery: () => void }) {
+  const editing = useFrameEditing() !== null;
   switch (page.kind) {
     case "cover": {
-      const meta = [builtYear(asset), `${asset.district}, ${asset.city.label}`].filter(Boolean).join("  ·  ");
+      const year = builtYear(asset);
+      const place = `${asset.district}, ${asset.city.label}`;
       return (
         <>
-          <Editable part="identity" style={styles.group}>
+          <Editable field="type" label="Türü" style={styles.kickerBox}>
             <View style={styles.kicker}>
               <Text variant="caption" colorValue={ink.onGold} style={styles.bold}>
                 {asset.type.label}
               </Text>
             </View>
+          </Editable>
+          <Editable field="name" label="Adı">
             <Text headingLevel={1} colorValue={ink.text} style={styles.coverTitle}>
               {asset.name}
             </Text>
-            {asset.subtitle && (
+          </Editable>
+          {asset.subtitle && (
+            <Editable field="subtitle" label="Alt başlık">
               <Text variant="bodyLarge" colorValue={ink.soft} style={styles.italic}>
                 {asset.subtitle}
               </Text>
-            )}
-          </Editable>
-          <Editable part="place">
+            </Editable>
+          )}
+          {editing ? (
+            // In the panel's editor the year and the place are picked apart; the app sets them as one line.
+            <View style={styles.metaRow}>
+              {year && (
+                <Editable field="cover:year" label="Yapım yılı">
+                  <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+                    {year}
+                  </Text>
+                </Editable>
+              )}
+              <Editable field="place" label="İlçe ve il">
+                <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+                  {place}
+                </Text>
+              </Editable>
+            </View>
+          ) : (
             <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
-              {meta}
+              {[year, place].filter(Boolean).join("  ·  ")}
             </Text>
-          </Editable>
+          )}
           <View style={styles.coverActions}>
             {photos.length > 1 && (
-              <Editable part="media">
+              <Editable field="media" label="Fotoğraflar">
                 <GalleryButton photos={photos} onPress={onGallery} />
               </Editable>
             )}
@@ -353,7 +375,7 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
     }
     case "summary":
       return (
-        <Editable part="summary">
+        <Editable field="summary" label="Kısa tanıtım">
           <Text colorValue={ink.text} style={styles.statement}>
             {page.text}
           </Text>
@@ -363,7 +385,7 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
       return (
         <View style={styles.figures}>
           {page.figures.map((figure) => (
-            <Editable key={figure.label} part={figure.kind === "year" ? "built" : "facts"}>
+            <Editable key={figure.label} field={figure.field} label={figure.field === "year" ? "Yapım yılı" : `Sayı: ${figure.label}`}>
               <View accessible accessibilityLabel={`${figure.label}: ${figure.value} ${figure.unit ?? ""}`}>
                 <Text colorValue={ink.gold} style={styles.figureValue}>
                   {figure.value}
@@ -376,7 +398,7 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
             </Editable>
           ))}
           {page.founder && (
-            <Editable part="built">
+            <Editable field="founder" label="Kim yaptırdı">
               <Text colorValue={ink.text} style={styles.founder}>
                 {`${page.founder} yaptırdı.`}
               </Text>
@@ -387,29 +409,33 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
     case "highlight":
       return (
         <>
-          <Editable part="highlights" style={styles.group}>
-            <Text variant="overline" colorValue={ink.gold}>
-              {`YERİNDE BAKIN · ${page.number}/${page.total}`}
-            </Text>
+          <Text variant="overline" colorValue={ink.gold}>
+            {`YERİNDE BAKIN · ${page.number}/${page.total}`}
+          </Text>
+          <Editable field={`highlight:${page.number - 1}:title`} label="Bakılacak yer: ne?">
             <Text colorValue={ink.text} style={styles.pageTitle}>
               {page.title}
             </Text>
-            {page.hint && (
+          </Editable>
+          {page.hint && (
+            <Editable field={`highlight:${page.number - 1}:hint`} label="Bakılacak yer: nerede?">
               <Text variant="bodyLarge" colorValue={ink.soft}>
                 {page.hint}
               </Text>
-            )}
-          </Editable>
+            </Editable>
+          )}
           {page.chapter >= 0 && <ReadMore onPress={() => onRead(page.chapter)} />}
         </>
       );
     case "chapter":
       return (
         <>
-          <Editable part="sections" style={styles.group}>
+          <Editable field={`section:${page.id}:title`} label="Konunun başlığı">
             <Text variant="overline" colorValue={ink.gold}>
               {page.title.toLocaleUpperCase("tr")}
             </Text>
+          </Editable>
+          <Editable field={`section:${page.id}:body`} label="Konunun metni">
             <Text colorValue={ink.text} style={styles.statement}>
               {page.sentence}
             </Text>
@@ -626,22 +652,28 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
     <ScrollView style={StyleSheet.absoluteFill} nestedScrollEnabled contentContainerStyle={[styles.end, { paddingTop: top, paddingBottom: bottom + spacing.xxl }]}>
       <View style={styles.endInner}>
         <View style={styles.invite}>
-          <Editable part="visit" style={styles.invite}>
-            <Text variant="overline" colorValue={ink.gold}>
-              KEŞFE ÇIK
-            </Text>
+          <Text variant="overline" colorValue={ink.gold}>
+            KEŞFE ÇIK
+          </Text>
+          <Editable field="name" label="Adı">
             <Text headingLevel={2} colorValue={ink.text} style={styles.inviteTitle}>
               {asset.name}
             </Text>
-            <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
-              {meta}
-            </Text>
-            {asset.visit.notes && (
+          </Editable>
+          {meta !== "" && (
+            <Editable field="visit" label="Süre ve giriş">
+              <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+                {meta}
+              </Text>
+            </Editable>
+          )}
+          {asset.visit.notes && (
+            <Editable field="visit:notes" label="Ziyaret notu">
               <Text variant="caption" colorValue={ink.soft}>
                 {asset.visit.notes}
               </Text>
-            )}
-          </Editable>
+            </Editable>
+          )}
           {coords && (
             <Pressable
               accessibilityRole="link"
@@ -657,10 +689,10 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
           )}
         </View>
 
-        <Editable part="access">
+        <Editable field="audio" label="Sesli anlatım ve ortam sesi">
           <Experiences asset={asset} />
         </Editable>
-        <Editable part="tips">
+        <Editable field="tip" label="İpuçları">
           <VisitorPulse asset={asset} />
         </Editable>
 
@@ -945,7 +977,12 @@ const styles = StyleSheet.create({
     width: "100%",
     alignSelf: "center",
   },
-  group: {
+  kickerBox: {
+    alignSelf: "flex-start",
+  },
+  metaRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
     gap: spacing.md,
   },
   kicker: {

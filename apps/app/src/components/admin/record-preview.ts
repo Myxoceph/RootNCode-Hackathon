@@ -1,6 +1,8 @@
 import type { AdminAssetRecord, AssetDetail, Confidence, MetaEnumsResponse } from "@vagabonds/contracts";
 
 import { yearOfDating } from "@/lib/dating";
+import { withCustomBlocks, type CustomBlock } from "@/lib/dossier-custom";
+import { withDossierAfter, type DossierPlacements } from "@/lib/dossier-photos";
 
 /**
  * The editor's record as the app's asset page reads it, so the phone preview follows every keystroke.
@@ -31,7 +33,7 @@ export const SAMPLE_TEXTS = new Set(Object.values(SAMPLES));
 const blank = (text: string | null | undefined) => !text || text.trim() === "";
 const pick = (text: { tr: string; en: string | null } | null | undefined) => (text && !blank(text.tr) ? text.tr.trim() : null);
 
-export function previewOf(record: AdminAssetRecord, { id, meta, base, samples }: { id: string; meta: MetaEnumsResponse | null; base: AssetDetail | null; samples: boolean }): AssetDetail {
+export function previewOf(record: AdminAssetRecord, { id, meta, base, samples, placements = {}, customBlocks = [] }: { id: string; meta: MetaEnumsResponse | null; base: AssetDetail | null; samples: boolean; placements?: DossierPlacements; customBlocks?: CustomBlock[] }): AssetDetail {
   const confidence = (code: string | null): Confidence | null => {
     if (!code) return null;
     return meta?.confidence.find((c) => c.code === code) ?? { code: code as Confidence["code"], label: code };
@@ -48,7 +50,7 @@ export function previewOf(record: AdminAssetRecord, { id, meta, base, samples }:
   const byKey = new Map((base?.media ?? []).map((m) => [m.key, m]));
   const media = record.media.flatMap((m) => {
     const photo = byKey.get(m.key);
-    return photo ? [{ ...photo, caption: pick(m.caption), alt: pick(m.alt) ?? photo.alt, isCover: m.isCover }] : [];
+    return photo ? [withDossierAfter({ ...photo, caption: pick(m.caption), alt: pick(m.alt) ?? photo.alt, isCover: m.isCover }, placements[m.key] ?? null)] : [];
   });
   const cover = media.find((m) => m.isCover) ?? null;
 
@@ -85,7 +87,7 @@ export function previewOf(record: AdminAssetRecord, { id, meta, base, samples }:
     sources: base?.waqf?.sources ?? [],
   };
 
-  return {
+  const asset: AssetDetail = {
     id,
     name: sample(pick(record.name), SAMPLES.name) || id,
     subtitle: pick(record.subtitle) ?? (samples ? SAMPLES.subtitle : null),
@@ -196,6 +198,7 @@ export function previewOf(record: AdminAssetRecord, { id, meta, base, samples }:
     sources: base?.sources ?? [],
     updatedAt: base?.updatedAt ?? new Date().toISOString(),
   };
+  return withCustomBlocks(asset, customBlocks);
 }
 
 function toRoman(n: number): string {

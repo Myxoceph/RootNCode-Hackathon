@@ -10,8 +10,11 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AssetImage } from "@/components/asset-image";
 import { ResourceView } from "@/components/resource-view";
 import { useAsset } from "@/data";
-import { Editable, FrameLink, useFrameEditing, useInFrame, type EditPart } from "@/lib/in-frame";
+import { customBlocksOf } from "@/lib/dossier-custom";
+import { DOSSIER_BLOCKS, dossierAfterOf, photosByPlace } from "@/lib/dossier-photos";
+import { Editable, FrameLink, useFrameEditing, useInFrame } from "@/lib/in-frame";
 import { centuryOf, paragraphsOf, readableDate, readingMinutes, sentencesOf } from "@/lib/reading";
+import { RichText } from "@/lib/rich-text";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -86,38 +89,78 @@ interface Block {
   key: string;
   title: string;
   body: ReactNode;
+  /** Photos set after it. */
+  photos?: Media[];
 }
 
-/** The part of the record each block shows, for the panel's editor. */
-const PARTS: Record<string, EditPart | undefined> = {
-  identity: "built",
-  history: "sections",
-  timeline: "timeline",
-  people: "people",
-  waqf: "waqf",
-  inscriptions: "inscriptions",
-  facts: "facts",
-  legends: "legends",
-  accessibility: "access",
+/** For the panel's editor: the record's field an empty block would show, and what it is called. */
+const EMPTY_FIELDS: Record<string, [string, string] | undefined> = {
+  identity: ["year", "Tarih ve yaptıran"],
+  history: ["section", "Hikâye"],
+  timeline: ["event", "Önemli tarihler"],
+  people: ["person", "Kişiler"],
+  waqf: ["waqf", "Vakıf"],
+  inscriptions: ["inscription", "Kitabeler"],
+  facts: ["fact", "Sayılar"],
+  legends: ["legend", "Rivayetler"],
 };
 
 /** In the panel's editor with its samples on, an empty block still shows, to say where it would go. */
 function blocksOf(asset: AssetDetail, placeholders = false): Block[] {
+  const blocks = withCustom(asset, blockBodies(asset, placeholders));
+  const placed = photosByPlace(asset, blocks.map((b) => b.key));
+  return blocks.map((block) => ({ ...block, ...(block.key === "history" && asset.sections.length > 0 && { body: <History asset={asset} placed={placed} /> }), photos: placed.get(block.key) }));
+}
+
+/**
+ * The admin's own blocks, each after the block it names, in the order they were added; one whose
+ * block is not drawn follows the nearest drawn block before it. Kaynakça stays last.
+ */
+function withCustom(asset: AssetDetail, blocks: Block[]): Block[] {
+  const out = [...blocks];
+  const placed = new Map<string, number>();
+  for (const custom of customBlocksOf(asset)) {
+    if (!custom.title.trim() && !custom.body.trim()) continue;
+    const keys = out.map((b) => b.key);
+    let anchor = custom.after;
+    if (!keys.includes(anchor)) {
+      const at = DOSSIER_BLOCKS.indexOf(anchor as (typeof DOSSIER_BLOCKS)[number]);
+      anchor = DOSSIER_BLOCKS.slice(0, at < 0 ? DOSSIER_BLOCKS.length : at + 1).reverse().find((key) => keys.includes(key)) ?? keys.filter((k) => k !== "sources").pop() ?? "";
+    }
+    const index = keys.indexOf(anchor) + 1 + (placed.get(anchor) ?? 0);
+    placed.set(anchor, (placed.get(anchor) ?? 0) + 1);
+    out.splice(index, 0, {
+      key: `custom:${custom.id}`,
+      title: custom.title.trim() || "Yeni bölüm",
+      body: (
+        <Editable field={`custom:${custom.id}`} label="Eklenen bölüm">
+          {custom.body.trim() ? <RichText source={custom.body} /> : <Text color="textSecondary">Bölümün metni burada görünür.</Text>}
+        </Editable>
+      ),
+    });
+  }
+  return out;
+}
+
+function blockBodies(asset: AssetDetail, placeholders: boolean): Block[] {
   const candidates: Array<[string, string, ReactNode | null]> = [
     ["identity", "Künye", identity(asset)],
     ["history", "Tarihçe", asset.sections.length > 0 ? <History asset={asset} /> : null],
     ["timeline", "Zaman çizelgesi", asset.timeline.length > 0 ? <Timeline events={asset.timeline} /> : null],
     ["people", "Kişiler", asset.people.length > 0 ? <People asset={asset} /> : null],
-    ["waqf", "Vakıf", waqf(asset)],
+    ["waqf", "Vakıf", waqf(asset) && <Editable field="waqf" label="Vakıf">{waqf(asset)}</Editable>],
     ["inscriptions", "Kitabeler", asset.inscriptions.length > 0 ? <Inscriptions asset={asset} /> : null],
     ["facts", "Ölçüler", factsOf(asset).length > 0 ? <Facts asset={asset} /> : null],
     ["legends", "Rivayetler", asset.legends.length > 0 ? <Legends asset={asset} /> : null],
-    ["accessibility", "Erişilebilirlik", <Access key="access" asset={asset} />],
+    ["accessibility", "Erişilebilirlik", <Editable key="access" field="access" label="Engelli erişimi"><Access asset={asset} /></Editable>],
     ["sources", "Kaynakça", asset.sources.length > 0 ? <Sources asset={asset} /> : null],
   ];
   return candidates.flatMap(([key, title, body]) => {
     if (body) return [{ key, title, body }];
-    if (placeholders && PARTS[key]) return [{ key, title, body: <Text color="textSecondary">Henüz eklenmedi. Uygulamada bu kısım görünmez.</Text> }];
+    const empty = EMPTY_FIELDS[key];
+    if (placeholders && empty) {
+      return [{ key, title, body: <Editable field={empty[0]} label={empty[1]}><Text color="textSecondary">Henüz eklenmedi. Uygulamada bu kısım görünmez.</Text></Editable> }];
+    }
     return [];
   });
 }
@@ -194,34 +237,23 @@ function Dossier({ asset }: { asset: AssetDetail }) {
           }}
         >
           <View style={styles.column}>
-            <BlockPart part={PARTS[block.key]}>
-              <View style={styles.blockHead}>
-                <View style={styles.blockMark} aria-hidden>
-                  <Text variant="caption" color="textSecondary" style={styles.blockNumber}>
-                    {String(index + 1).padStart(2, "0")}
-                  </Text>
-                  <View style={[styles.blockRule, { backgroundColor: c.highlightMark }]} />
-                </View>
-                <Text variant="display" headingLevel={2}>
-                  {block.title}
+            <View style={styles.blockHead}>
+              <View style={styles.blockMark} aria-hidden>
+                <Text variant="caption" color="textSecondary" style={styles.blockNumber}>
+                  {String(index + 1).padStart(2, "0")}
                 </Text>
+                <View style={[styles.blockRule, { backgroundColor: c.highlightMark }]} />
               </View>
-              {block.body}
-            </BlockPart>
+              <Text variant="display" headingLevel={2}>
+                {block.title}
+              </Text>
+            </View>
+            {block.body}
+            {block.photos && <PlacedPhotos photos={block.photos} place={block.key} />}
           </View>
         </View>
       ))}
     </ScrollView>
-  );
-}
-
-/** A block the panel's editor can pick, when it shows a part of the record. */
-function BlockPart({ part, children }: { part: EditPart | undefined; children: ReactNode }) {
-  if (!part) return <>{children}</>;
-  return (
-    <Editable part={part} style={styles.column}>
-      {children}
-    </Editable>
   );
 }
 
@@ -306,29 +338,44 @@ function AssetLink({ id, name }: { id: string; name: string }) {
 function identity(asset: AssetDetail): ReactNode | null {
   const { dating, founder, architect, alternateNames, address, neighborhood, parent, children } = asset;
   const rows: ReactNode[] = [];
-  if (dating?.display) {
+  // The record's own words for the date; else the year it was built, as the pages show it.
+  const date = dating?.display ?? (dating?.startYear != null ? String(dating.startYear) : null);
+  if (dating && date) {
     rows.push(
-      <Info key="date" icon="calendar-outline" label="Tarih">
-        <Text variant="label">{dating.display}</Text>
-        {dating.basis && (
-          <Text variant="caption" color="textSecondary">
-            {dating.basis}
-          </Text>
-        )}
-      </Info>,
+      <Editable key="date" field="year" label="Tarih">
+        <Info icon="calendar-outline" label="Tarih">
+          <Text variant="label">{date}</Text>
+          {dating.basis && (
+            <Text variant="caption" color="textSecondary">
+              {dating.basis}
+            </Text>
+          )}
+        </Info>
+      </Editable>,
     );
   }
   if (founder) {
     rows.push(
-      <Info key="founder" icon="person-outline" label="Banî">
-        {founder.role && !/^ban[iî]$/i.test(founder.role) ? `${founder.name} (${founder.role})` : founder.name}
-      </Info>,
+      <Editable key="founder" field="founder" label="Kim yaptırdı">
+        <Info icon="person-outline" label="Banî">
+          {founder.role && !/^ban[iî]$/i.test(founder.role) ? `${founder.name} (${founder.role})` : founder.name}
+        </Info>
+      </Editable>,
     );
   }
-  if (architect?.name) rows.push(<Info key="architect" icon="construct-outline" label="Mimar">{architect.name}</Info>);
+  if (architect?.name) {
+    rows.push(
+      <Editable key="architect" field="architect" label="Mimarı">
+        <Info icon="construct-outline" label="Mimar">
+          {architect.name}
+        </Info>
+      </Editable>,
+    );
+  }
   if (architect && architect.candidates.length > 0) {
     rows.push(
-      <Info key="candidates" icon="construct-outline" label="Mimar adayları">
+      <Editable key="candidates" field="architect:candidates" label="Mimar adayları">
+      <Info icon="construct-outline" label="Mimar adayları">
         <View style={styles.tight}>
           {architect.candidates.map((one) => (
             <View key={one.name}>
@@ -341,12 +388,14 @@ function identity(asset: AssetDetail): ReactNode | null {
             </View>
           ))}
         </View>
-      </Info>,
+      </Info>
+      </Editable>,
     );
   }
   if (alternateNames.length > 0) {
     rows.push(
-      <Info key="names" icon="pricetag-outline" label="Diğer adları">
+      <Editable key="names" field="altNames" label="Başka adları">
+      <Info icon="pricetag-outline" label="Diğer adları">
         <View style={styles.tight}>
           {alternateNames.map((one) => (
             <View key={one.name}>
@@ -359,16 +408,27 @@ function identity(asset: AssetDetail): ReactNode | null {
             </View>
           ))}
         </View>
-      </Info>,
+      </Info>
+      </Editable>,
     );
   }
   const place = [address, neighborhood].filter(Boolean).join(", ");
-  if (place) rows.push(<Info key="place" icon="location-outline" label="Adres">{place}</Info>);
+  if (place) {
+    rows.push(
+      <Editable key="place" field="address" label="Açık adres">
+        <Info icon="location-outline" label="Adres">
+          {place}
+        </Info>
+      </Editable>,
+    );
+  }
   if (parent) {
     rows.push(
-      <Info key="parent" icon="git-merge-outline" label="Bağlı olduğu yapı">
-        <AssetLink id={parent.id} name={parent.name} />
-      </Info>,
+      <Editable key="parent" field="parent" label="Bağlı olduğu külliye">
+        <Info icon="git-merge-outline" label="Bağlı olduğu yapı">
+          <AssetLink id={parent.id} name={parent.name} />
+        </Info>
+      </Editable>,
     );
   }
   if (children.length > 0) {
@@ -392,9 +452,12 @@ const stems = (text: string) =>
     .filter((word) => word.length >= 4)
     .map((word) => word.slice(0, 5));
 
-/** A photo for every second chapter, the one whose caption speaks of the same thing when there is one. */
+/**
+ * A photo for every second chapter, the one whose caption speaks of the same thing when there is one.
+ * Photos set in a place of their own are left to it.
+ */
 function photosForChapters(asset: AssetDetail): Map<string, Media> {
-  const free = asset.media.filter((m) => (m.kind === "photo" || m.kind === "archive_photo" || m.kind === "drawing") && m.key !== asset.cover?.key);
+  const free = asset.media.filter((m) => (m.kind === "photo" || m.kind === "archive_photo" || m.kind === "drawing") && m.key !== asset.cover?.key && !dossierAfterOf(m));
   const chosen = new Map<string, Media>();
   asset.sections.forEach((section, index) => {
     if (index % 2 === 0 || free.length === 0) return;
@@ -406,7 +469,29 @@ function photosForChapters(asset: AssetDetail): Map<string, Media> {
   return chosen;
 }
 
-function History({ asset }: { asset: AssetDetail }) {
+/** Photos set in the dossier by hand, after a block or a chapter; pressing one in the editor opens its question. */
+function PlacedPhotos({ photos, place }: { photos: Media[]; place: string }) {
+  return (
+    <Editable field={`photo-in:${place}`} label="Dosyadaki fotoğraf">
+      <View style={styles.placed}>
+        {photos.map((photo) => (
+          <View key={photo.key} style={styles.figure}>
+            <View style={[styles.figurePhoto, { aspectRatio: Math.max(photo.aspectRatio, 1) }]}>
+              <AssetImage media={photo} fill />
+            </View>
+            {photo.caption && (
+              <Text variant="caption" color="textSecondary">
+                {photo.caption}
+              </Text>
+            )}
+          </View>
+        ))}
+      </View>
+    </Editable>
+  );
+}
+
+function History({ asset, placed }: { asset: AssetDetail; placed?: Map<string, Media[]> }) {
   const { textScale } = useUi();
   const photos = useMemo(() => photosForChapters(asset), [asset]);
   return (
@@ -416,12 +501,17 @@ function History({ asset }: { asset: AssetDetail }) {
         return (
           <View key={section.id} style={styles.chapter}>
             {section.title && (
-              <Text headingLevel={3} style={[styles.chapterTitle, { fontSize: 21 * textScale, lineHeight: 28 * textScale }]}>
-                {section.title}
-              </Text>
+              <Editable field={`section:${section.id}:title`} label="Konunun başlığı">
+                <Text headingLevel={3} style={[styles.chapterTitle, { fontSize: 21 * textScale, lineHeight: 28 * textScale }]}>
+                  {section.title}
+                </Text>
+              </Editable>
             )}
-            <Prose text={section.body} lead />
+            <Editable field={`section:${section.id}:body`} label="Konunun metni">
+              <Prose text={section.body} lead />
+            </Editable>
             <SourceNote compact sources={section.sources} />
+            {placed?.get(`section:${section.id}`) && <PlacedPhotos photos={placed.get(`section:${section.id}`)!} place={`section:${section.id}`} />}
             {photo && (
               <View style={styles.figure}>
                 <View style={[styles.figurePhoto, { aspectRatio: Math.max(photo.aspectRatio, 1) }]}>
@@ -467,7 +557,8 @@ function Timeline({ events }: { events: TimelineEvent[] }) {
               const meta = [event.date ? readableDate(event.date) : null, event.hijri ? hijriText(event.hijri) : null, event.type.label !== event.title ? event.type.label : null].filter(Boolean).join("  ·  ");
               const lastOne = at === group.events.length - 1;
               return (
-                <View key={event.id} style={styles.event}>
+                <Editable key={event.id} field={`event:${event.id}`} label="Olay">
+                <View style={styles.event}>
                   <Text variant="label" style={styles.eventYear}>
                     {event.year !== null ? String(event.year) : ""}
                   </Text>
@@ -485,6 +576,7 @@ function Timeline({ events }: { events: TimelineEvent[] }) {
                     {event.note && <Text variant="caption">{event.note}</Text>}
                   </View>
                 </View>
+                </Editable>
               );
             })}
           </View>
@@ -499,7 +591,8 @@ function People({ asset }: { asset: AssetDetail }) {
   return (
     <View accessibilityRole="list" style={styles.rows}>
       {asset.people.map((person, index) => (
-        <View key={`${person.name}-${index}`} style={styles.person} accessible accessibilityLabel={person.role ? `${person.name}, ${person.role}` : person.name}>
+        <Editable key={`${person.name}-${index}`} field={`person:${index}`} label="Kişi">
+        <View style={styles.person} accessible accessibilityLabel={person.role ? `${person.name}, ${person.role}` : person.name}>
           <View style={[styles.initial, { backgroundColor: c.surfaceRaised }]}>
             <Text variant="label">{person.name.charAt(0).toLocaleUpperCase("tr")}</Text>
           </View>
@@ -512,6 +605,7 @@ function People({ asset }: { asset: AssetDetail }) {
             )}
           </View>
         </View>
+        </Editable>
       ))}
     </View>
   );
@@ -567,7 +661,8 @@ function Inscriptions({ asset }: { asset: AssetDetail }) {
         const about = [inscription.script, inscription.author].filter(Boolean).join("  ·  ");
         const camera: Href = { pathname: "/inscription", params: { asset: asset.id } };
         return (
-          <View key={inscription.id} style={[styles.card, { backgroundColor: c.surfaceRaised }]}>
+          <Editable key={inscription.id} field={`inscription:${inscription.id}`} label="Kitabe">
+          <View style={[styles.card, { backgroundColor: c.surfaceRaised }]}>
             {inscription.location && <Text variant="label">{inscription.location}</Text>}
             {(date !== "" || about !== "") && (
               <Text variant="caption" color="textSecondary">
@@ -597,6 +692,7 @@ function Inscriptions({ asset }: { asset: AssetDetail }) {
               </FrameLink>
             )}
           </View>
+          </Editable>
         );
       })}
     </View>
@@ -617,7 +713,8 @@ function Facts({ asset }: { asset: AssetDetail }) {
   return (
     <View accessibilityRole="list" style={styles.tiles}>
       {factsOf(asset).map((fact) => (
-        <View key={fact.key} style={[styles.tile, fact.shown.length > 14 || fact.note ? styles.tileWide : null, { backgroundColor: c.surfaceRaised }]}>
+        <Editable key={fact.key} field={`fact:${fact.key}`} label={`Sayı: ${fact.label}`} style={[styles.tileBox, fact.shown.length > 14 || fact.note ? styles.tileWide : null]}>
+        <View style={[styles.tile, fact.shown.length > 14 || fact.note ? styles.tileWide : null, { backgroundColor: c.surfaceRaised }]}>
           <Text variant="heading" style={styles.factValue}>
             {fact.shown}
           </Text>
@@ -626,6 +723,7 @@ function Facts({ asset }: { asset: AssetDetail }) {
           </Text>
           {fact.note && <Text variant="caption">{fact.note}</Text>}
         </View>
+        </Editable>
       ))}
     </View>
   );
@@ -636,13 +734,15 @@ function Legends({ asset }: { asset: AssetDetail }) {
   return (
     <View style={styles.rows}>
       {asset.legends.map((legend) => (
-        <View key={legend.id} style={[styles.card, { backgroundColor: c.surfaceRaised }]}>
-          <Text variant="heading" headingLevel={3}>
-            {legend.title}
-          </Text>
-          <Prose text={legend.body} />
-          <SourceNote compact sources={legend.sources} />
-        </View>
+        <Editable key={legend.id} field={`legend:${legend.id}`} label="Rivayet">
+          <View style={[styles.card, { backgroundColor: c.surfaceRaised }]}>
+            <Text variant="heading" headingLevel={3}>
+              {legend.title}
+            </Text>
+            <Prose text={legend.body} />
+            <SourceNote compact sources={legend.sources} />
+          </View>
+        </Editable>
       ))}
     </View>
   );
@@ -825,6 +925,9 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
     marginTop: spacing.lg,
   },
+  placed: {
+    gap: spacing.md,
+  },
   figurePhoto: {
     width: "100%",
     borderRadius: radius.lg,
@@ -910,5 +1013,10 @@ const styles = StyleSheet.create({
   },
   tileWide: {
     flexBasis: "100%",
+  },
+  /** The tile's place in the row while the panel's editor wraps it. */
+  tileBox: {
+    flexGrow: 1,
+    flexBasis: "45%",
   },
 });

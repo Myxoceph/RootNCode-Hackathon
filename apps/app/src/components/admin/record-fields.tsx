@@ -1,87 +1,29 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { fontFamily, Text } from "@vagabonds/ui";
-import { useState, type ReactNode } from "react";
+import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { Pressable, StyleSheet, TextInput, View } from "react-native";
 
-import { Button, Card, Field, Segments, useAdminColors } from "./kit";
+import { Field, Segments, useAdminColors, type IconName } from "./kit";
 
-/**
- * The asset editor's inputs: a Turkish text with its English one step away, numbers, confidence,
- * tags, and lists whose items can be added, folded, moved and removed.
- */
+/** The asset editor's inputs: plain texts, numbers, choices, tags, and rows to set them side by side. */
 
-export type Pair = { tr: string; en: string | null };
-
-/** A Turkish text, with an "EN" switch that opens its English one. An optional text is null when both are empty. */
-export function PairField({
-  label,
-  value,
-  onChange,
-  optional,
-  multiline,
-  placeholder,
-  hint,
-  required,
-}: {
-  label: string;
-  value: Pair | null;
-  onChange: (value: Pair | null) => void;
-  optional?: boolean;
-  multiline?: boolean;
-  placeholder?: string;
-  hint?: string;
-  required?: boolean;
-}) {
-  const a = useAdminColors();
-  const current = value ?? { tr: "", en: null };
-  const [english, setEnglish] = useState(current.en !== null && current.en !== "");
-  const set = (next: Pair) => onChange(optional && !next.tr.trim() && !next.en?.trim() ? null : next);
-  return (
-    <View style={styles.pair}>
-      <View style={styles.labelRow}>
-        <Text style={styles.label}>
-          {label}
-          {required ? " *" : ""}
-        </Text>
-        <Pressable
-          accessibilityRole="switch"
-          accessibilityState={{ checked: english }}
-          accessibilityLabel={`${label}: İngilizcesi`}
-          onPress={() => setEnglish(!english)}
-          style={[styles.en, { backgroundColor: english ? a.ink : a.card }]}
-        >
-          <Text colorValue={english ? a.onInk : a.textSecondary} style={styles.enText}>
-            EN
-          </Text>
-        </Pressable>
-      </View>
-      <Field label="" accessibilityLabel={label} value={current.tr} onChangeText={(tr) => set({ ...current, tr })} multiline={multiline} placeholder={placeholder} hint={hint} />
-      {english && (
-        <Field
-          label=""
-          accessibilityLabel={`${label} (İngilizce)`}
-          value={current.en ?? ""}
-          onChangeText={(en) => set({ ...current, en: en === "" ? null : en })}
-          multiline={multiline}
-          placeholder="English"
-        />
-      )}
-    </View>
-  );
-}
+/** The DOM id of a record field's input, so the phone preview can send the editor to it. */
+export const fieldId = (field: string) => `field-${field}`;
 
 /** A plain text that is null when empty. */
-export function TextField({ label, value, onChange, placeholder, multiline, hint, required }: { label: string; value: string | null; onChange: (value: string | null) => void; placeholder?: string; multiline?: boolean; hint?: string; required?: boolean }) {
-  return <Field label={required ? `${label} *` : label} value={value ?? ""} onChangeText={(text) => onChange(text === "" ? null : text)} placeholder={placeholder} multiline={multiline} hint={hint} />;
+export function TextField({ label, value, onChange, placeholder, multiline, hint, required, id }: { label: string; value: string | null; onChange: (value: string | null) => void; placeholder?: string; multiline?: boolean; hint?: string; required?: boolean; id?: string }) {
+  return <Field nativeID={id && fieldId(id)} label={required ? `${label} *` : label} value={value ?? ""} onChangeText={(text) => onChange(text === "" ? null : text)} placeholder={placeholder} multiline={multiline} hint={hint} />;
 }
 
 /** A whole number, or null when empty. */
-export function NumberField({ label, value, onChange, placeholder, hint }: { label: string; value: number | null; onChange: (value: number | null) => void; placeholder?: string; hint?: string }) {
+export function NumberField({ label, hideLabel, value, onChange, placeholder, hint, id }: { label: string; hideLabel?: boolean; value: number | null; onChange: (value: number | null) => void; placeholder?: string; hint?: string; id?: string }) {
   const [text, setText] = useState(value === null ? "" : String(value));
   const bad = text.trim() !== "" && !/^-?\d+$/.test(text.trim());
   return (
     <Field
+      nativeID={id && fieldId(id)}
       label={label}
+      hideLabel={hideLabel}
       value={text}
       keyboardType="number-pad"
       placeholder={placeholder}
@@ -104,28 +46,6 @@ export function ChoiceField<T extends string>({ label, value, options, onChange 
       <Text style={styles.label}>{label}</Text>
       <Segments label={label} value={value} options={options} onChange={onChange} />
     </View>
-  );
-}
-
-const CONFIDENCE = [
-  { value: "certain", label: "Kesin" },
-  { value: "probable", label: "Muhtemel" },
-  { value: "disputed", label: "Tartışmalı" },
-  { value: "legend", label: "Rivayet" },
-] as const;
-
-export type ConfidenceCode = (typeof CONFIDENCE)[number]["value"];
-
-/** How sure the record is; "Belirtilmemiş" only where the field may have none. */
-export function ConfidenceField({ value, onChange, optional }: { value: ConfidenceCode | null; onChange: (value: ConfidenceCode | null) => void; optional?: boolean }) {
-  const options = optional ? [{ value: "none" as const, label: "Belirtilmemiş" }, ...CONFIDENCE] : [...CONFIDENCE];
-  return (
-    <ChoiceField
-      label="Güven"
-      value={(value ?? "none") as ConfidenceCode | "none"}
-      options={options as Array<{ value: ConfidenceCode | "none"; label: string }>}
-      onChange={(next) => onChange(next === "none" ? null : (next as ConfidenceCode))}
-    />
   );
 }
 
@@ -167,22 +87,155 @@ export function TagsField({ label, values, onChange, placeholder }: { label: str
   );
 }
 
-/** A group of fields, titled unless it is the only one. */
-export function Group({ title, hint, children }: { title?: string; hint?: string; children: ReactNode }) {
-  return (
-    <Card style={{ gap: 16 }}>
-      {(title || hint) && (
-        <View style={{ gap: 2 }}>
-          {title && <Text style={styles.groupTitle}>{title}</Text>}
-          {hint && (
-            <Text color="textSecondary" style={{ fontSize: 12.5, lineHeight: 18 }}>
-              {hint}
-            </Text>
-          )}
+/**
+ * A text in Turkish and English: one label, one box, a line for each language.
+ */
+export function BilingualField({ label, tr, en, onTr, onEn, placeholder, placeholderEn, multiline, id, hideLabel, hint, stacked }: { label: string; tr: string; en: string; onTr: (text: string) => void; onEn: (text: string) => void; placeholder?: string; placeholderEn?: string; multiline?: boolean; id?: string; /** Kept for screen readers only, as in a table under its column's name. */ hideLabel?: boolean; hint?: string; /** For a narrow box: each language's name above its line. */ stacked?: boolean }) {
+  const a = useAdminColors();
+  const [focused, setFocused] = useState<"tr" | "en" | null>(null);
+  // A long text grows its box instead of scrolling inside it.
+  const [heights, setHeights] = useState({ tr: 0, en: 0 });
+  const line = (lang: "tr" | "en") => {
+    const english = lang === "en";
+    return (
+      <View style={[styles.langLine, stacked && styles.langStacked, english && { borderTopWidth: 1, borderTopColor: a.line }]}>
+        <View style={[styles.langTag, stacked && styles.langTagStacked]}>
+          <Text color="textSecondary" style={styles.langName}>
+            {english ? "İngilizce" : "Türkçe"}
+          </Text>
         </View>
+        <TextInput
+          nativeID={!english && id ? fieldId(id) : undefined}
+          accessibilityLabel={english ? `${label} (İngilizce)` : label}
+          value={english ? en : tr}
+          onChangeText={english ? onEn : onTr}
+          placeholder={english ? placeholderEn : placeholder}
+          placeholderTextColor={a.textSecondary}
+          multiline={multiline}
+          onContentSizeChange={multiline ? (e) => { const h = e.nativeEvent.contentSize.height; setHeights((old) => (old[lang] === h ? old : { ...old, [lang]: h })); } : undefined}
+          onFocus={() => setFocused(lang)}
+          onBlur={() => setFocused(null)}
+          // @ts-expect-error: the web's own focus outline is replaced by the gold ring.
+          style={[styles.langInput, stacked && { paddingTop: 2 }, multiline && [styles.langInputMulti, { height: Math.max(72, heights[lang]) }], { color: a.text, outlineStyle: "none" }]}
+        />
+      </View>
+    );
+  };
+  return (
+    <View {...({ dataSet: { phone: id } } as object)} style={styles.pair}>
+      {!hideLabel && <Text style={styles.label}>{label}</Text>}
+      <View style={[styles.langBox, { backgroundColor: a.well, borderColor: focused ? a.goldMark : a.line }, focused && { boxShadow: `0 0 0 3px ${a.goldSoft}` }]}>
+        {line("tr")}
+        {line("en")}
+      </View>
+      {hint && (
+        <Text color="textSecondary" style={styles.hint}>
+          {hint}
+        </Text>
       )}
-      {children}
-    </Card>
+    </View>
+  );
+}
+
+/**
+ * A formatted text: a toolbar over the box writes the marks the dossier reads (see `rich-text.tsx`),
+ * on the selected words or the lines the cursor is on.
+ */
+export function RichTextField({ label, value, onChange, placeholder, id, hint }: { label: string; value: string; onChange: (text: string) => void; placeholder?: string; id?: string; hint?: string }) {
+  const a = useAdminColors();
+  const own = useId();
+  const domId = id ? fieldId(id) : `rich-${own}`;
+  const boxOf = () => (typeof document === "undefined" ? null : (document.getElementById(domId) as HTMLTextAreaElement | null));
+  // A toolbar press takes the focus; once the new text is in the box, it gets the focus back with
+  // the cursor (or the sample words, selected) where the change ends.
+  const pending = useRef<{ start: number; end: number } | null>(null);
+  useEffect(() => {
+    const box = boxOf();
+    if (!pending.current || !box) return;
+    box.focus();
+    box.setSelectionRange(pending.current.start, pending.current.end);
+    pending.current = null;
+  });
+  // What is in the box and selected right now; the box keeps its selection while a button is pressed.
+  const now = () => {
+    const box = boxOf();
+    return { text: box?.value ?? value, start: box?.selectionStart ?? value.length, end: box?.selectionEnd ?? value.length };
+  };
+  const apply = (next: string, start: number, end: number) => {
+    pending.current = { start, end };
+    onChange(next);
+  };
+  // Bold and italic wrap the words; with nothing selected they write a sample to type over.
+  const wrap = (mark: string, sample: string) => {
+    const { text, start, end } = now();
+    const words = text.slice(start, end) || sample;
+    apply(`${text.slice(0, start)}${mark}${words}${mark}${text.slice(end)}`, start + mark.length, start + mark.length + words.length);
+  };
+  // A heading, a list or a quote marks whole lines; pressing again takes the mark off.
+  const lines = (mark: string) => {
+    const { text, start, end } = now();
+    const from = text.lastIndexOf("\n", start - 1) + 1;
+    const toBreak = text.indexOf("\n", end);
+    const to = toBreak < 0 ? text.length : toBreak;
+    const picked = text.slice(from, to).split("\n");
+    const marked = picked.every((line) => line.startsWith(mark));
+    const strip = (line: string) => line.replace(/^(## |- |> )/, "");
+    const changed = picked.map((line) => (marked ? line.slice(mark.length) : `${mark}${strip(line)}`)).join("\n");
+    apply(`${text.slice(0, from)}${changed}${text.slice(to)}`, from + changed.length, from + changed.length);
+  };
+  const paragraph = () => {
+    const { text, end } = now();
+    apply(`${text.slice(0, end)}\n\n${text.slice(end)}`, end + 2, end + 2);
+  };
+  const tools: Array<{ icon?: IconName; glyph?: "bold" | "italic"; label: string; run: () => void }> = [
+    { icon: "text-outline", label: "Alt başlık", run: () => lines("## ") },
+    { icon: "reorder-four-outline", label: "Paragraf", run: paragraph },
+    { glyph: "bold", label: "Kalın", run: () => wrap("**", "kalın yazı") },
+    { glyph: "italic", label: "Eğik", run: () => wrap("_", "eğik yazı") },
+    { icon: "list-outline", label: "Liste", run: () => lines("- ") },
+    { icon: "chatbox-ellipses-outline", label: "Alıntı", run: () => lines("> ") },
+  ];
+  return (
+    <View style={styles.pair}>
+      <Text style={styles.label}>{label}</Text>
+      <View style={[styles.rich, { borderColor: a.line, backgroundColor: a.well }]}>
+        <View accessibilityRole="toolbar" accessibilityLabel={`${label} biçimi`} style={[styles.tools, { borderBottomColor: a.line }]}>
+          {tools.map((tool) => (
+            <Pressable
+              key={tool.label}
+              accessibilityRole="button"
+              accessibilityLabel={tool.label}
+              onPress={tool.run}
+              style={({ hovered }: { hovered?: boolean }) => [styles.tool, hovered && { backgroundColor: a.hover }]}
+            >
+              {tool.icon ? (
+                <Ionicons name={tool.icon} size={15} color={a.text} aria-hidden />
+              ) : (
+                <Text aria-hidden style={[styles.glyph, tool.glyph === "bold" ? { fontFamily: fontFamily.sansBold } : { fontStyle: "italic" }]}>
+                  {tool.glyph === "bold" ? "K" : "E"}
+                </Text>
+              )}
+              <Text style={styles.toolText}>{tool.label}</Text>
+            </Pressable>
+          ))}
+        </View>
+        <Field
+          nativeID={domId}
+          label={label}
+          hideLabel
+          multiline
+          value={value}
+          placeholder={placeholder}
+          onChangeText={onChange}
+          style={styles.richInput}
+        />
+      </View>
+      {hint && (
+        <Text color="textSecondary" style={styles.hint}>
+          {hint}
+        </Text>
+      )}
+    </View>
   );
 }
 
@@ -191,106 +244,8 @@ export function Row({ children }: { children: ReactNode }) {
   return <View style={styles.row}>{children}</View>;
 }
 
-export function Cell({ children, grow = 1 }: { children: ReactNode; grow?: number }) {
-  return <View style={{ flexGrow: grow, flexBasis: 180, minWidth: 0 }}>{children}</View>;
-}
-
-/**
- * A list of items, each folded to its title until opened. New items open at once. Items move up and
- * down and are removed with their buttons.
- */
-export function ListField<T>({
-  title,
-  hint,
-  items,
-  onChange,
-  make,
-  titleOf,
-  render,
-  addLabel,
-  empty,
-}: {
-  title?: string;
-  hint?: string;
-  items: T[];
-  onChange: (items: T[]) => void;
-  make: () => T;
-  titleOf: (item: T, index: number) => string;
-  render: (item: T, update: (item: T) => void, index: number) => ReactNode;
-  /** Empty when items cannot be added here. */
-  addLabel: string;
-  empty: string;
-}) {
-  const a = useAdminColors();
-  const [open, setOpen] = useState<Set<number>>(new Set());
-  const toggle = (i: number) => setOpen((now) => (now.has(i) ? new Set([...now].filter((x) => x !== i)) : new Set([...now, i])));
-  const move = (i: number, by: number) => {
-    const j = i + by;
-    if (j < 0 || j >= items.length) return;
-    const next = [...items];
-    [next[i], next[j]] = [next[j]!, next[i]!];
-    onChange(next);
-    setOpen((now) => new Set([...now].map((x) => (x === i ? j : x === j ? i : x))));
-  };
-  return (
-    <Group title={title && `${title}${items.length ? ` · ${items.length}` : ""}`} hint={hint}>
-      {items.length === 0 && (
-        <Text color="textSecondary" style={{ fontSize: 13 }}>
-          {empty}
-        </Text>
-      )}
-      <View style={{ gap: 8 }}>
-        {items.map((item, i) => {
-          const isOpen = open.has(i);
-          return (
-            <View key={i} style={[styles.item, { backgroundColor: a.well, borderColor: isOpen ? a.goldMark : a.line }]}>
-              <View style={styles.itemHead}>
-                <Pressable accessibilityRole="button" accessibilityState={{ expanded: isOpen }} onPress={() => toggle(i)} style={styles.itemToggle}>
-                  <View style={[styles.itemNumber, { backgroundColor: a.card }]}>
-                    <Text style={styles.itemNumberText}>{i + 1}</Text>
-                  </View>
-                  <Text style={styles.itemTitle} numberOfLines={1}>
-                    {titleOf(item, i) || "Başlıksız"}
-                  </Text>
-                  <Ionicons name={isOpen ? "chevron-up" : "chevron-down"} size={16} color={a.textSecondary} aria-hidden />
-                </Pressable>
-                <Button small kind="ghost" icon="arrow-up" accessibilityLabel="Yukarı taşı" disabled={i === 0} onPress={() => move(i, -1)} />
-                <Button small kind="ghost" icon="arrow-down" accessibilityLabel="Aşağı taşı" disabled={i === items.length - 1} onPress={() => move(i, 1)} />
-                <Button
-                  small
-                  kind="ghost"
-                  icon="trash-outline"
-                  accessibilityLabel="Kaldır"
-                  onPress={() => {
-                    onChange(items.filter((_, x) => x !== i));
-                    setOpen((now) => new Set([...now].filter((x) => x !== i).map((x) => (x > i ? x - 1 : x))));
-                  }}
-                />
-              </View>
-              {isOpen && (
-                <View style={styles.itemBody}>
-                  {render(item, (next) => onChange(items.map((old, x) => (x === i ? next : old))), i)}
-                </View>
-              )}
-            </View>
-          );
-        })}
-      </View>
-      {addLabel ? (
-      <View style={{ alignItems: "flex-start" }}>
-        <Button
-          small
-          label={addLabel}
-          icon="add"
-          onPress={() => {
-            onChange([...items, make()]);
-            setOpen((now) => new Set([...now, items.length]));
-          }}
-        />
-      </View>
-      ) : null}
-    </Group>
-  );
+export function Cell({ children, grow = 1, basis = 180 }: { children: ReactNode; grow?: number; basis?: number }) {
+  return <View style={{ flexGrow: grow, flexBasis: basis, minWidth: 0 }}>{children}</View>;
 }
 
 /** A new item's id: unique, lowercase, kept while the item lives. */
@@ -298,20 +253,24 @@ export const newId = (prefix: string) => `${prefix}-${Date.now().toString(36)}${
 
 const styles = StyleSheet.create({
   pair: { gap: 6 },
-  labelRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8 },
   label: { fontFamily: fontFamily.sansSemiBold, fontSize: 13 },
-  en: { borderRadius: 999, paddingHorizontal: 8, paddingVertical: 2 },
-  enText: { fontFamily: fontFamily.sansBold, fontSize: 10.5, letterSpacing: 0.6 },
-  groupTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 16, letterSpacing: -0.2 },
   row: { flexDirection: "row", flexWrap: "wrap", gap: 14 },
   tags: { flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6, minHeight: 44, borderWidth: 1, borderRadius: 14, paddingHorizontal: 8, paddingVertical: 6 },
   tag: { flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 999, paddingLeft: 10, paddingRight: 8, paddingVertical: 4 },
+  langBox: { borderWidth: 1, borderRadius: 14, overflow: "hidden" },
+  langLine: { flexDirection: "row", alignItems: "flex-start" },
+  langTag: { width: 80, paddingLeft: 12, paddingTop: 13, gap: 1 },
+  hint: { fontSize: 12, lineHeight: 17 },
+  langName: { fontFamily: fontFamily.sansSemiBold, fontSize: 12 },
+  langStacked: { flexDirection: "column", alignItems: "stretch" },
+  langTagStacked: { width: "auto", flexDirection: "row", gap: 6, paddingTop: 8 },
+  langInput: { flex: 1, minWidth: 0, minHeight: 44, paddingHorizontal: 12, paddingVertical: 12, fontFamily: fontFamily.sans, fontSize: 14 },
+  langInputMulti: { minHeight: 72, textAlignVertical: "top" },
+  rich: { borderWidth: 1, borderRadius: 14, overflow: "hidden" },
+  tools: { flexDirection: "row", flexWrap: "wrap", gap: 2, padding: 4, borderBottomWidth: 1 },
+  tool: { flexDirection: "row", alignItems: "center", gap: 5, borderRadius: 8, paddingHorizontal: 8, paddingVertical: 6 },
+  glyph: { width: 15, textAlign: "center", fontSize: 14 },
+  toolText: { fontFamily: fontFamily.sansMedium, fontSize: 12.5 },
+  richInput: { margin: -1 },
   tagInput: { flexGrow: 1, minWidth: 120, height: 30, fontFamily: fontFamily.sans, fontSize: 14 },
-  item: { borderRadius: 16, borderWidth: 1, overflow: "hidden" },
-  itemHead: { flexDirection: "row", alignItems: "center", gap: 2, paddingRight: 6 },
-  itemToggle: { flex: 1, minWidth: 0, flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 12, paddingVertical: 10 },
-  itemNumber: { width: 24, height: 24, borderRadius: 12, alignItems: "center", justifyContent: "center" },
-  itemNumberText: { fontFamily: fontFamily.sansBold, fontSize: 11.5 },
-  itemTitle: { flex: 1, fontFamily: fontFamily.sansSemiBold, fontSize: 13.5 },
-  itemBody: { gap: 14, paddingHorizontal: 14, paddingBottom: 14 },
 });

@@ -1,31 +1,30 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { AdminAssetRecordInputSchema, type AdminAssetRecord, type AssetDetail, type SourceRef } from "@vagabonds/contracts";
+import { AdminAssetRecordInputSchema, type AdminAssetRecord, type AssetDetail } from "@vagabonds/contracts";
 import { fontFamily, palette, Text } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
-import { useDeferredValue, useEffect, useMemo, useRef, useState, type ComponentProps, type ComponentRef, type ReactNode } from "react";
-import { Platform, Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from "react-native";
+import { useDeferredValue, useEffect, useMemo, useRef, useState, type ComponentRef, type ReactNode } from "react";
+import { Platform, Pressable, StyleSheet, useWindowDimensions, View } from "react-native";
 import { SafeAreaInsetsContext } from "react-native-safe-area-context";
 
 import { DossierView } from "@/app/dossier";
 import { AssetDetailView } from "@/components/asset-detail";
-import { AssetImage } from "@/components/asset-image";
-import { createAssetRecord, fetchAssetPreview, fetchAssetRecord, fetchMetaEnums, fetchPanelAssets, saveAssetRecord, updatePanelAsset } from "@/data/admin";
-import { InFrame, type EditPart, type Frame, type FrameEditing } from "@/lib/in-frame";
+import { createAssetRecord, fetchAssetPreview, fetchAssetRecord, fetchMetaEnums, fetchPanelAssets, saveAssetRecord } from "@/data/admin";
+import { placementsOf, type DossierPlacements } from "@/lib/dossier-photos";
+import { fieldIn, FRAME_ROOT_ID, InFrame, revealNode, type Frame, type FrameEditing } from "@/lib/in-frame";
 
-import { Badge, Button, Card, Confirm, Empty, errorText, Failed, formatDate, Loading, PageHeader, Segments, Toast, useAdminColors, useLoad, useToast, type Tone } from "./kit";
-import { PART_GROUPS, PartEditor, partInfo, PARTS, partState } from "./record-editor";
+import { Badge, Button, Card, Confirm, errorText, Failed, formatDate, Loading, PageHeader, Segments, Toast, useAdminColors, useLoad, useToast } from "./kit";
+import { forServer, SECTION_TITLE, STEPS, type CustomBlockDraft, type Section, type Step, type StepProps } from "./asset-steps";
 import { previewOf, SAMPLE_TEXTS } from "./record-preview";
+import { fieldId } from "./record-fields";
 import { PageBody } from "./shell";
 
 /**
- * An asset's page in the panel: the app's page in a phone, next to everything its record holds.
- * Any part of the phone can be pressed to edit it: the part opens beside the phone with only its own
- * fields, and the phone follows every keystroke. The list of parts says what is filled and what is
- * missing, and goes to a part on the phone too. A new asset opens straight into editing, with
- * faded sample texts where nothing is filled in yet. Narrow screens get the phone as a tab.
+ * An asset's page in the panel: questions one at a time, next to the app's page in a phone that
+ * shows where each answer goes and follows every keystroke. The questions go through the asset's
+ * pages, then its dossier; any can be skipped, and the last screen says what is filled and saves.
+ * Pressing a part of the phone, or a step in the list of steps, goes straight to its question.
+ * A new asset starts empty, with faded sample texts where nothing is filled in yet.
  */
-
-type Tab = "general" | "text" | "history" | "inscriptions" | "visit" | "media" | "preview";
 
 const EMPTY: AdminAssetRecord = {
   status: "draft",
@@ -66,31 +65,46 @@ export function AssetWorkspace({ id }: { id: string | null }) {
   const router = useRouter();
   const { width } = useWindowDimensions();
   const split = width >= 1280;
-  const [tab, setTab] = useState<Tab>("general");
-  const [draft, setDraft] = useState<AdminAssetRecord | null>(creating ? EMPTY : null);
-  const [part, setPart] = useState<EditPart>("identity");
+  // Unsaved changes; null while the form shows the record as saved.
+  const [draft, setDraft] = useState<AdminAssetRecord | null>(null);
+  const [at, setAt] = useState(0);
   const [focus, setFocus] = useState<FrameEditing["focus"]>(null);
-  const [phoneOnly, setPhoneOnly] = useState(false);
-  const [samples, setSamples] = useState(true);
+  // The one field being edited, picked on the phone or in the form; null for the question as a whole.
+  const [field, setField] = useState<string | null>(null);
+  // A field picked on the phone, for the form to open and focus.
+  const [target, setTarget] = useState<{ field: string; n: number } | null>(null);
+  // What the phone shows: the asset's pages, or its dossier open over them.
+  const [view, setView] = useState<Section>("pages");
+  const [showSteps, setShowSteps] = useState(false);
+  const [samples, setSamples] = useState(creating);
   // After a save is stopped, what is still wrong is checked again as the form changes.
   const [checked, setChecked] = useState(false);
-  const [leaving, setLeaving] = useState(false);
+  const [leaving, setLeaving] = useState<"back" | "discard" | null>(null);
   const [busy, setBusy] = useState(false);
   const { toast, show } = useToast();
+  const colors = useAdminColors();
   const preview = useLoad(() => (id ? fetchAssetPreview(id) : Promise.resolve(null)), [id]);
   const loaded = useLoad(() => (id ? fetchAssetRecord(id) : Promise.resolve(null)), [id]);
   const meta = useLoad(fetchMetaEnums);
   const assets = useLoad(fetchPanelAssets);
 
-  const editing = draft !== null;
-  const problems = useMemo(() => (checked && draft ? problemsOf(draft) : []), [checked, draft]);
-  const saved = loaded.data?.record ?? null;
-  const dirty = editing && (creating ? JSON.stringify(draft) !== JSON.stringify(EMPTY) : JSON.stringify(draft) !== JSON.stringify(saved));
+  const saved = creating ? EMPTY : (loaded.data?.record ?? null);
+  const record = draft ?? saved;
+  const dirty = draft !== null && JSON.stringify(draft) !== JSON.stringify(saved);
+  const problems = useMemo(() => (checked && record ? problemsOf(record) : []), [checked, record]);
+  const steps = useMemo(() => (record ? STEPS.filter((step) => !step.when || step.when(record)) : STEPS), [record]);
   // The phone follows the form a beat behind the keys, so typing stays quick.
-  const typed = useDeferredValue(draft);
+  const typed = useDeferredValue(record);
+  // Photos set between the dossier's blocks: kept here and shown on the phone, not saved yet (the API has no place for them).
+  const [placed, setPlaced] = useState<DossierPlacements | null>(null);
+  const saidPlacements = useMemo(() => placementsOf(preview.data), [preview.data]);
+  const placements = placed ?? saidPlacements;
+  // Blocks the admin adds to the dossier: kept and shown here the same way, not saved yet.
+  const [custom, setCustom] = useState<CustomBlockDraft[]>([]);
+  const customBlocks = useMemo(() => custom.map((b) => ({ id: b.id, title: b.title.tr, body: b.body.tr, after: b.after })), [custom]);
   const phone = useMemo(
-    () => (typed ? previewOf(typed, { id: id ?? "yeni-eser", meta: meta.data, base: preview.data, samples }) : preview.data),
-    [typed, id, meta.data, preview.data, samples],
+    () => (typed ? previewOf(typed, { id: id ?? "yeni-eser", meta: meta.data, base: preview.data, samples, placements, customBlocks }) : null),
+    [typed, id, meta.data, preview.data, samples, placements, customBlocks],
   );
 
   const reload = () => {
@@ -98,58 +112,96 @@ export function AssetWorkspace({ id }: { id: string | null }) {
     loaded.reload();
   };
 
-  const startEditing = () => {
-    setDraft(structuredClone(saved!));
-    setSamples(false);
+  /** Shows a place on the phone: the pages or the dossier, scrolled to the field. */
+  const showOnPhone = (section: Section, place: string | undefined) => {
+    setView(section);
+    if (place) setFocus({ field: place, n: Date.now() });
   };
-
-  /** Opens a part to edit; from the list, the phone also goes to where the part is. */
-  const pick = (next: EditPart, show = false) => {
-    if (!editing) startEditing();
-    setPart(next);
-    setPhoneOnly(false);
-    if (show) setFocus({ part: next, n: Date.now() });
+  /** Goes to a step (or past the last one, to the end), and the phone to where its answer shows. */
+  const go = (index: number) => {
+    const next = Math.max(0, Math.min(index, steps.length));
+    setAt(next);
+    setShowSteps(false);
+    setField(null);
+    const step = steps[next];
+    if (step) showOnPhone(step.section, step.phone[step.section]);
+    else setView("pages");
   };
+  const goToStep = (key: string) => go(steps.findIndex((s) => s.key === key));
+  const stepOf = (name: string) => steps.findIndex((s) => s.fields.some((f) => fieldIn(name, f)));
 
-  const frameEditing: FrameEditing = {
-    selected: editing ? part : null,
-    pick: (next) => pick(next),
-    label: (p) => partInfo(p).label,
-    focus,
-    samples: editing && samples,
-  };
-
-  const toggleStatus = async () => {
-    if (!id || !saved) return;
-    setBusy(true);
-    try {
-      const next = saved.status === "published" ? "draft" : "published";
-      await updatePanelAsset(id, { status: next });
-      show(next === "published" ? "Eser yayında." : "Eser taslağa alındı.");
-      reload();
-    } catch (error) {
-      show(errorText(error), "error");
-    } finally {
-      setBusy(false);
+  const step: Step | undefined = steps[at];
+  // The phone keeps the field being typed into, or else the question's place, in view as the answer changes.
+  const shown = field ?? (step ? (step.phone[view] ?? step.phone[step.section]) : undefined);
+  const typing = useRef(typed);
+  useEffect(() => {
+    if (typing.current === typed) return;
+    typing.current = typed;
+    if (shown) setFocus({ field: shown, n: Date.now(), soft: true });
+  }, [typed, shown]);
+  // Pressing into any field of the question shows its place on the phone: the nearest place named
+  // on the field or around it, else the question's own, on the screen (pages or dossier) it is on.
+  const onFormFocus = useRef<(node: HTMLElement) => void>(() => {});
+  onFormFocus.current = (node) => {
+    if (!step) return;
+    let name: string | null = null;
+    for (let el: HTMLElement | null = node; el && !name && el.dataset.question === undefined; el = el.parentElement) {
+      if (el.id.startsWith(fieldId(""))) name = el.id.slice(fieldId("").length);
+      else if (el.dataset.phone) name = el.dataset.phone;
     }
+    const place = name ? (PLACE_ALIAS[name] ?? name) : null;
+    const on = place ? screensOf(place) : [];
+    // A place left empty is not drawn on the screen shown; the question's place stands in for it.
+    const drawn = (field: string) => [...document.querySelectorAll<HTMLElement>(`#${FRAME_ROOT_ID} [data-edit-field]`)].some((el) => fieldIn(el.dataset.editField ?? "", field) || fieldIn(field, el.dataset.editField ?? ""));
+    const screen = on.includes(view) ? (drawn(place!) ? view : null) : (on[0] ?? null);
+    const section = screen ?? (step.phone[view] ? view : step.section);
+    const shownPlace = screen ? place! : step.phone[section];
+    if (section !== view) setView(section);
+    setField(shownPlace ?? null);
+    if (shownPlace) setFocus({ field: shownPlace, n: Date.now(), soft: true });
+  };
+  useEffect(() => {
+    if (Platform.OS !== "web") return;
+    const onFocus = (event: FocusEvent) => {
+      const node = event.target as HTMLElement | null;
+      if (node?.closest("[data-question]")) onFormFocus.current(node);
+    };
+    document.addEventListener("focusin", onFocus);
+    return () => document.removeEventListener("focusin", onFocus);
+  }, []);
+  const frameEditing: FrameEditing = {
+    state: (name) => (field && (fieldIn(name, field) || fieldIn(field, name)) ? "field" : step?.fields.some((f) => fieldIn(name, f)) ? "step" : null),
+    // A piece pressed on the phone opens its question, with its own field picked.
+    pick: (name) => {
+      const index = stepOf(name);
+      if (index < 0) return;
+      if (index !== at) {
+        setAt(index);
+        setShowSteps(false);
+      }
+      setField(name);
+      setTarget({ field: name === "cover:year" ? "year" : name, n: Date.now() });
+    },
+    focus,
+    samples,
   };
 
   const save = async () => {
-    if (!draft) return;
-    const found = problemsOf(draft);
+    if (!record) return;
+    const found = problemsOf(record);
     setChecked(true);
     if (found.length > 0) {
-      pick(found[0]!.part, true);
+      goToStep(found[0]!.step);
       return;
     }
     setBusy(true);
     try {
       if (creating) {
-        const created = await createAssetRecord(draft);
+        const created = await createAssetRecord(forServer(record));
         router.replace(`/admin/assets/${created.id}`);
         return;
       }
-      const result = await saveAssetRecord(id, draft);
+      const result = await saveAssetRecord(id, forServer(record));
       loaded.setData(result);
       preview.reload();
       setDraft(null);
@@ -162,25 +214,28 @@ export function AssetWorkspace({ id }: { id: string | null }) {
     }
   };
 
-  const leave = () => {
-    setLeaving(false);
-    setChecked(false);
-    if (creating) router.push("/admin/assets");
-    else setDraft(null);
+  const back = () => router.push("/admin/assets");
+  const confirmLeave = () => {
+    const was = leaving;
+    setLeaving(null);
+    if (was === "back" || creating) back();
+    else {
+      setDraft(null);
+      setChecked(false);
+    }
   };
 
   if ((preview.error && !preview.data) || (loaded.error && !loaded.data)) {
     return (
       <PageBody>
-        <BackLink onPress={() => router.push("/admin/assets")} />
+        <BackLink onPress={back} />
         <Card>
           <Failed message={preview.error ?? loaded.error ?? ""} onRetry={reload} />
         </Card>
       </PageBody>
     );
   }
-  const asset = preview.data;
-  if (!creating && (!asset || !saved || !loaded.data)) {
+  if (!record || (!creating && !preview.data)) {
     return (
       <PageBody>
         <Loading />
@@ -188,92 +243,71 @@ export function AssetWorkspace({ id }: { id: string | null }) {
     );
   }
 
-  const record = draft ?? saved!;
-  const count = (...lists: unknown[][]) => lists.reduce((sum, list) => sum + list.length, 0);
-  const tabs: Array<{ value: Tab; label: string; count?: number }> = [
-    { value: "general", label: "Genel" },
-    { value: "text", label: "Metin", count: count(record.sections, record.highlights) },
-    { value: "history", label: "Tarihçe", count: count(record.timeline, record.facts, record.legends) },
-    { value: "inscriptions", label: "Kitabe ve kişiler", count: count(record.inscriptions, record.people) },
-    { value: "visit", label: "Ziyaret", count: count(record.tips) },
-    { value: "media", label: "Görsel ve kaynak", count: count(asset?.media ?? [], asset?.sources ?? []) },
-    ...(split ? [] : [{ value: "preview" as const, label: "Önizleme" }]),
-  ];
-  const shownTab = split && tab === "preview" ? "general" : tab;
-  const title = editing ? draft.name.tr.trim() || (creating ? "Yeni eser" : asset!.name) : asset!.name;
-  const typeLabel = meta.data?.assetTypes.find((t) => t.code === record.type)?.label;
-  const cityLabel = meta.data?.cities.find((c) => c.code === record.city)?.label;
-  const hint = [typeLabel, [record.district, cityLabel].filter(Boolean).join(", "), id].filter(Boolean).join(" · ") || "Telefonda bir yere ya da soldaki listeden bir parçaya tıkla, bilgilerini gir.";
+  const asset = preview.data;
+  const title = record.name.tr.trim() || (creating ? "Yeni eser" : (asset?.name ?? ""));
+  const props: StepProps = { record, set: (change) => setDraft({ ...record, ...change }), meta: meta.data, base: asset, assets: assets.data ?? [], placements, setPlacements: setPlaced, customBlocks: custom, setCustomBlocks: setCustom, showPlace: (section, place) => {
+      setView(section);
+      setField(place);
+      setFocus({ field: place, n: Date.now(), soft: true });
+    } };
 
-  const actions = editing ? (
+  // One quiet line under the title: where the asset comes from and when it was last saved.
+  const about = creating
+    ? "Taslakken yalnızca panelde görünür; “Yayında” seçip eklersen uygulamada da görünür."
+    : [
+        loaded.data!.origin === "panel" ? "Panelden eklendi" : "Veri setinden",
+        `son kayıt ${formatDate(asset!.updatedAt)}`,
+        loaded.data!.origin === "dataset" ? "veri seti yeniden yüklenince değişiklikler silinir" : null,
+      ]
+        .filter(Boolean)
+        .join(" · ");
+
+  const actions = (
     <>
-      <Button label="Vazgeç" kind="ghost" onPress={() => (dirty ? setLeaving(true) : leave())} />
-      <Button label={creating ? "Eseri ekle" : "Kaydet"} icon="checkmark" kind="primary" busy={busy} disabled={!dirty && !creating} onPress={() => void save()} />
-    </>
-  ) : (
-    <>
-      <Button
-        label={saved!.status === "published" ? "Taslağa al" : "Yayına al"}
-        icon={saved!.status === "published" ? "cloud-download-outline" : "cloud-upload-outline"}
-        busy={busy}
-        onPress={() => void toggleStatus()}
+      <Segments
+        label="Uygulamada görünsün mü?"
+        value={record.status === "published" ? "published" : "draft"}
+        onChange={(status) => setDraft({ ...record, status })}
+        options={[
+          { value: "draft", label: "Taslak" },
+          { value: "published", label: "Yayında" },
+        ]}
       />
-      <Button label="Düzenle" icon="create-outline" kind="primary" onPress={startEditing} />
+      {dirty && <Button label="Vazgeç" kind="ghost" onPress={() => setLeaving("discard")} />}
+      <Button label={creating ? "Eseri ekle" : "Kaydet"} icon="checkmark" kind="primary" busy={busy} disabled={!dirty && !creating} onPress={() => void save()} />
     </>
   );
 
-  const phoneView = phone && <Phone asset={phone} faded={samples && editing} edit={frameEditing} />;
-
   const details = (
     <>
-      <BackLink onPress={() => (dirty ? setLeaving(true) : router.push("/admin/assets"))} />
-      <PageHeader title={title} hint={hint} actions={actions} />
-      <View style={styles.statusRow}>
-        {editing ? (
-          <Badge tone="gold" label={creating ? "Yeni eser" : dirty ? "Kaydedilmemiş değişiklikler" : "Düzenleniyor"} icon="create-outline" />
-        ) : (
-          <>
-            <StatusBadge status={saved!.status} />
-            <Badge tone="grey" label={loaded.data!.origin === "panel" ? "Panelden eklendi" : "Veri seti"} icon={loaded.data!.origin === "panel" ? "create-outline" : "server-outline"} />
-            <Text color="textSecondary" style={{ fontSize: 12.5 }}>
-              Son güncelleme {formatDate(asset!.updatedAt)}
-            </Text>
-          </>
-        )}
-      </View>
-      {editing && !creating && loaded.data!.origin === "dataset" && <DatasetNotice />}
-      {problems.length > 0 && <Problems problems={problems} onPick={(p) => pick(p, true)} />}
-      {editing ? (
-        <View style={styles.editor}>
-          <PartNav record={draft} part={phoneOnly ? null : part} problems={new Set(problems.map((p) => p.part))} onPick={(p) => pick(p, true)} onPhone={split ? undefined : () => setPhoneOnly(true)} phoneOn={phoneOnly} />
-          <View style={styles.panel}>
-            {phoneOnly ? (
-              <View style={{ alignItems: "center", gap: 12 }}>
-                <SamplesSwitch samples={samples} onSamples={setSamples} />
-                {phoneView}
-              </View>
-            ) : (
-              <PartPanel part={part} record={draft} onPick={(p) => pick(p, true)}>
-                <PartEditor key={part} part={part} record={draft} onChange={setDraft} meta={meta.data} base={asset} assets={assets.data ?? []} />
-              </PartPanel>
-            )}
+      <BackLink onPress={() => (dirty ? setLeaving("back") : back())} />
+      <PageHeader title={title} hint={about} actions={actions} tools={false} />
+      {dirty && (
+        <View style={styles.statusRow}>
+          <Badge tone="gold" label="Kaydedilmemiş değişiklikler" icon="create-outline" />
+        </View>
+      )}
+      <Progress steps={steps} at={at} record={record} open={showSteps} onToggle={() => setShowSteps(!showSteps)} onPick={go} />
+      {step ? (
+        <Question key={step.key} step={step} props={props} problems={problems.filter((p) => p.step === step.key)} target={target} onShow={(section) => showOnPhone(section, step.phone[section])} />
+      ) : (
+        <Finish steps={steps} record={record} problems={problems} creating={creating} busy={busy} dirty={dirty} onPick={go} onSave={() => void save()} />
+      )}
+      {step && (
+        <View style={styles.foot}>
+          {at > 0 ? <Button kind="ghost" icon="arrow-back" label="Geri" onPress={() => go(at - 1)} /> : <View />}
+          <View style={{ flexDirection: "row", gap: 10 }}>
+            {!step.done(record) && !step.required && <Button kind="secondary" label="Atla" onPress={() => go(at + 1)} />}
+            <Button kind="primary" label={at === steps.length - 1 ? "Bitir" : "İleri"} icon="arrow-forward" onPress={() => go(at + 1)} />
           </View>
         </View>
-      ) : (
-        <>
-          <View style={{ marginBottom: 20 }}>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              <Segments label="Bölüm" value={shownTab} onChange={setTab} options={tabs} />
-            </ScrollView>
-          </View>
-          {shownTab === "preview" && <View style={{ alignItems: "center" }}>{phoneView}</View>}
-          {shownTab === "general" && <General asset={asset!} />}
-          {shownTab === "text" && <TextTab asset={asset!} />}
-          {shownTab === "history" && <History asset={asset!} />}
-          {shownTab === "inscriptions" && <Inscriptions asset={asset!} />}
-          {shownTab === "visit" && <Visit asset={asset!} />}
-          {shownTab === "media" && <MediaTab asset={asset!} />}
-        </>
+      )}
+      {!split && phone && (
+        <View style={{ alignItems: "center", marginTop: 28 }}>
+          <PhoneView view={view} onView={setView} samples={samples} onSamples={setSamples}>
+            <Phone asset={phone} faded={samples} edit={frameEditing} view={view} onView={setView} />
+          </PhoneView>
+        </View>
       )}
     </>
   );
@@ -286,9 +320,11 @@ export function AssetWorkspace({ id }: { id: string | null }) {
             <PageBody>{details}</PageBody>
           </View>
           {phone && (
-            <PreviewColumn editing={editing} samples={samples} onSamples={setSamples}>
-              {phoneView}
-            </PreviewColumn>
+            <View style={[styles.previewColumn, { borderLeftColor: colors.line }]}>
+              <PhoneView view={view} onView={setView} samples={samples} onSamples={setSamples}>
+                <Phone asset={phone} faded={samples} edit={frameEditing} view={view} onView={setView} />
+              </PhoneView>
+            </View>
           )}
         </View>
       ) : (
@@ -297,11 +333,11 @@ export function AssetWorkspace({ id }: { id: string | null }) {
       {leaving && (
         <Confirm
           title="Değişiklikler kaydedilmedi"
-          body="Çıkarsan bu düzenlemede yaptığın değişiklikler kaybolur."
-          confirmLabel="Kaydetmeden çık"
+          body={leaving === "back" ? "Çıkarsan yaptığın değişiklikler kaybolur." : "Yaptığın değişiklikler silinir, eser kayıtlı hâline döner."}
+          confirmLabel={leaving === "back" ? "Kaydetmeden çık" : "Değişiklikleri sil"}
           danger
-          onConfirm={leave}
-          onCancel={() => setLeaving(false)}
+          onConfirm={confirmLeave}
+          onCancel={() => setLeaving(null)}
         />
       )}
       <Toast toast={toast} />
@@ -309,72 +345,106 @@ export function AssetWorkspace({ id }: { id: string | null }) {
   );
 }
 
-/* ───────────── Parts ───────────── */
+/* ───────────── Steps ───────────── */
 
-/** Every part of the page, grouped as the app shows them, with how full each one is. */
-function PartNav({
-  record,
-  part,
-  problems,
-  onPick,
-  onPhone,
-  phoneOn,
-}: {
-  record: AdminAssetRecord;
-  part: EditPart | null;
-  problems: Set<EditPart>;
-  onPick: (part: EditPart) => void;
-  /** Narrow screens: the phone in place of the form. */
-  onPhone?: () => void;
-  phoneOn: boolean;
-}) {
+
+/** What each question writes that has an English beside its Turkish. */
+const ENGLISH_OF: Record<string, (r: AdminAssetRecord) => Array<Pair | null>> = {
+  name: (r) => [r.name, r.subtitle, ...r.alternateNames.map((n) => n.name)],
+  summary: (r) => [r.summary],
+  built: (r) => [r.dating.display, r.dating.basis],
+  facts: (r) => r.facts.map((f) => f.label),
+  media: (r) => r.media.flatMap((m) => [m.caption, m.alt]),
+  sections: (r) => r.sections.flatMap((x) => [x.title, x.body]),
+  highlights: (r) => r.highlights.flatMap((h) => [h.title, h.hint]),
+  visit: (r) => [r.visit.notes],
+  audio: (r) => [r.accessibility.audioDescription, r.ambientSound.caption],
+  tips: (r) => r.tips.map((t) => t.text),
+  timeline: (r) => r.timeline.map((e) => e.title),
+  people: (r) => r.people.map((p) => p.role),
+  inscriptions: (r) => r.inscriptions.flatMap((n) => [n.location, n.translation]),
+  waqf: (r) => [r.waqf.deedExcerpt, r.waqf.conditions, r.waqf.landNote],
+  legends: (r) => r.legends.flatMap((l) => [l.title, l.body]),
+  access: (r) => [r.accessibility.notes],
+};
+
+type Pair = { tr: string; en: string | null };
+
+/** Form fields whose answer shows under another name on the phone. */
+const PLACE_ALIAS: Record<string, string> = { coords: "visit", dating: "year" };
+
+/** The phone's marked places, on the pages and in the dossier. */
+const PAGE_PLACES = ["type", "name", "subtitle", "cover:year", "place", "media", "summary", "founder", "year", "fact", "highlight", "section", "visit", "audio", "tip"];
+const DOSSIER_PLACES = ["custom", "photo-in", "year", "founder", "architect", "altNames", "address", "parent", "section", "event", "person", "inscription", "fact", "legend", "waqf", "access"];
+
+/** The screens a place is marked on, the pages first. */
+function screensOf(place: string): Section[] {
+  const on: Section[] = [];
+  if (PAGE_PLACES.some((p) => fieldIn(place, p))) on.push("pages");
+  if (DOSSIER_PLACES.some((p) => fieldIn(place, p))) on.push("dossier");
+  return on;
+}
+
+/** Where the questions are: the step and its part of the app, a bar, and every step to jump to. */
+function Progress({ steps, at, record, open, onToggle, onPick }: { steps: Step[]; at: number; record: AdminAssetRecord; open: boolean; onToggle: () => void; onPick: (index: number) => void }) {
   const a = useAdminColors();
-  const done = PARTS.filter((p) => partState(p.part, record).state === "done").length;
+  const step = steps[at];
+  const questions = steps.filter((s) => !s.intro);
   return (
-    <View style={[styles.nav, { backgroundColor: a.card }]}>
-      <View style={styles.navHead}>
-        <Text style={styles.navTitle}>Sayfanın parçaları</Text>
-        <Text color="textSecondary" style={{ fontSize: 12 }}>
-          {done}/{PARTS.length} dolu
+    <View style={{ gap: 10, marginBottom: 18 }}>
+      <View style={styles.progressHead}>
+        <Text color="textSecondary" style={styles.progressText}>
+          {step ? (step.intro ? SECTION_TITLE[step.section] : `Soru ${questions.indexOf(step) + 1} / ${questions.length}  ·  ${SECTION_TITLE[step.section]}`) : "Son kontrol"}
         </Text>
+        <Pressable accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={onToggle} style={styles.allSteps}>
+          <Ionicons name="list-outline" size={15} color={a.text} aria-hidden />
+          <Text style={styles.allStepsText}>Tüm sorular</Text>
+          <Ionicons name={open ? "chevron-up" : "chevron-down"} size={14} color={a.textSecondary} aria-hidden />
+        </Pressable>
       </View>
-      <View style={[styles.progress, { backgroundColor: a.line }]}>
-        <View style={{ width: `${(done / PARTS.length) * 100}%`, height: "100%", borderRadius: 2, backgroundColor: a.goldMark }} />
+      <View style={[styles.bar, { backgroundColor: a.line }]}>
+        <View style={{ width: `${(Math.min(at, steps.length) / steps.length) * 100}%`, height: "100%", borderRadius: 3, backgroundColor: a.goldMark }} />
       </View>
-      {onPhone && <NavRow icon="phone-portrait-outline" label="Önizleme" on={phoneOn} onPress={onPhone} />}
-      {PART_GROUPS.map((group) => (
-        <View key={group.title} style={{ gap: 2 }}>
-          <Text color="textSecondary" style={styles.navGroup}>
-            {group.title.toLocaleUpperCase("tr")}
+      {open && <StepList steps={steps} at={at} record={record} onPick={onPick} />}
+    </View>
+  );
+}
+
+/** Every question, in its section, with a tick when answered. */
+function StepList({ steps, at, record, onPick, problems = [] }: { steps: Step[]; at: number; record: AdminAssetRecord; onPick: (index: number) => void; problems?: Problem[] }) {
+  const a = useAdminColors();
+  return (
+    <View style={[styles.stepList, { backgroundColor: a.card }]}>
+      {(["pages", "dossier"] as const).map((section) => (
+        <View key={section} style={{ flexGrow: 1, flexBasis: 260, gap: 2 }}>
+          <Text color="textSecondary" style={styles.stepSection}>
+            {SECTION_TITLE[section].toLocaleUpperCase("tr")}
           </Text>
-          {group.parts.map((info) => {
-            const { state, count } = partState(info.part, record);
-            const problem = problems.has(info.part) || (state === "missing" && problems.size > 0);
+          {steps.map((step, index) => {
+            if (step.section !== section || step.intro) return null;
+            const done = step.done(record);
+            const wrong = problems.some((p) => p.step === step.key);
             return (
-              <NavRow
-                key={info.part}
-                icon={info.icon}
-                label={info.label}
-                on={info.part === part}
-                onPress={() => onPick(info.part)}
-                end={
-                  problem ? (
-                    <Ionicons name="alert-circle" size={16} color={a.warning} aria-label="Düzeltilmeli" />
-                  ) : count ? (
-                    <Text color="textSecondary" style={styles.navCount}>
-                      {count}
-                    </Text>
-                  ) : state === "done" ? (
-                    <Ionicons name="checkmark-circle" size={16} color={a.success} aria-label="Dolu" />
-                  ) : state === "missing" ? (
-                    <Text colorValue={a.warning} style={styles.navCount}>
-                      Gerekli
-                    </Text>
-                  ) : (
-                    <View style={[styles.navEmpty, { borderColor: a.textSecondary }]} aria-label="Boş" />
-                  )
-                }
-              />
+              <Pressable
+                key={step.key}
+                accessibilityRole="button"
+                aria-current={index === at ? "step" : undefined}
+                onPress={() => onPick(index)}
+                style={({ hovered }: { hovered?: boolean }) => [styles.stepRow, { backgroundColor: index === at ? a.well : hovered ? a.hover : "transparent" }]}
+              >
+                <Ionicons
+                  name={wrong ? "alert-circle" : done ? "checkmark-circle" : "ellipse-outline"}
+                  size={17}
+                  color={wrong ? a.warning : done ? a.success : a.textSecondary}
+                  aria-label={wrong ? "Düzeltilmeli" : done ? "Cevaplandı" : "Boş"}
+                />
+                <Text style={{ flex: 1, fontSize: 13.5 }}>{step.title}</Text>
+                {step.required && !done && (
+                  <Text colorValue={a.warning} style={styles.required}>
+                    Gerekli
+                  </Text>
+                )}
+              </Pressable>
             );
           })}
         </View>
@@ -383,158 +453,200 @@ function PartNav({
   );
 }
 
-function NavRow({ icon, label, on, onPress, end }: { icon: ComponentProps<typeof Ionicons>["name"]; label: string; on: boolean; onPress: () => void; end?: ReactNode }) {
+/** One question: what is asked, why, its fields, and its rarer details under them. */
+function Question({ step, props, problems, target, onShow }: { step: Step; props: StepProps; problems: Problem[]; target: { field: string; n: number } | null; onShow: (section: Section) => void }) {
   const a = useAdminColors();
-  return (
-    <Pressable
-      accessibilityRole="button"
-      aria-current={on ? "true" : undefined}
-      onPress={onPress}
-      style={({ hovered }: { hovered?: boolean }) => [styles.navRow, { backgroundColor: on ? a.well : hovered ? a.hover : "transparent" }, on && { boxShadow: a.shadow }]}
-    >
-      <Ionicons name={icon} size={16} color={on ? a.goldMark : a.textSecondary} aria-hidden />
-      <Text style={[styles.navLabel, on && { fontFamily: fontFamily.sansSemiBold }]} numberOfLines={1}>
-        {label}
-      </Text>
-      {end}
-    </Pressable>
-  );
-}
-
-/** The picked part: what it is and where it shows, its fields, and the way on to the next one. */
-function PartPanel({ part, record, onPick, children }: { part: EditPart; record: AdminAssetRecord; onPick: (part: EditPart) => void; children: ReactNode }) {
-  const a = useAdminColors();
-  const info = partInfo(part);
-  const at = PARTS.findIndex((p) => p.part === part);
-  const previous = PARTS[at - 1];
-  const next = PARTS[at + 1];
-  const { state } = partState(part, record);
-  // A part picked further down a long one leaves the page scrolled: bring the new part's top back into view.
-  const ref = useRef<ComponentRef<typeof View>>(null);
+  const { Body, More } = step;
+  // A field picked on the phone: bring its input into view and focus it.
   useEffect(() => {
-    const node = ref.current as unknown as HTMLElement | null;
-    if (Platform.OS === "web" && node && node.getBoundingClientRect().top < 0) node.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [part]);
+    if (!target || Platform.OS !== "web" || !step.fields.some((f) => fieldIn(target.field, f))) return;
+    const timer = setTimeout(() => {
+      const id = fieldId(target.field);
+      const node = document.getElementById(id) ?? document.querySelector<HTMLElement>(`[id^="${id}:"]`);
+      if (!node) return;
+      revealNode(node);
+      if (node instanceof HTMLInputElement || node instanceof HTMLTextAreaElement) node.focus({ preventScroll: true });
+    }, 60);
+    return () => clearTimeout(timer);
+  }, [target, step]);
   return (
-    <View ref={ref} style={{ gap: 16 }}>
-      <View style={styles.panelHead}>
-        <View style={[styles.panelIcon, { backgroundColor: a.goldSoft }]}>
-          <Ionicons name={info.icon} size={20} color={a.goldMark} aria-hidden />
+    <View {...({ dataSet: { question: "" } } as object)} style={[styles.question, { backgroundColor: a.well, borderColor: a.line, boxShadow: a.shadow }]}>
+      <View style={[styles.band, { backgroundColor: a.card, borderBottomColor: a.line }]}>
+        <Text color="textSecondary" style={styles.showsTitle}>
+          Bu bilgiler nerede görünüyor?
+        </Text>
+        <View style={styles.shows}>
+          {step.shows.map((where) => (
+            <Where key={where.in} section={where.in} place={where.place} onPress={() => onShow(where.in)} />
+          ))}
         </View>
-        <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
-          <Text headingLevel={2} style={styles.panelTitle}>
-            {info.label}
-          </Text>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 5 }}>
-            <Ionicons name="phone-portrait-outline" size={13} color={a.textSecondary} aria-hidden />
-            <Text color="textSecondary" style={{ fontSize: 12.5, flex: 1 }}>
-              {info.where}
-            </Text>
-          </View>
-        </View>
-        {state === "missing" ? <Badge tone="red" label="Gerekli" /> : state === "empty" ? <Badge tone="grey" label="Boş, uygulamada görünmez" /> : <Badge tone="green" label="Dolu" icon="checkmark" />}
       </View>
-      {children}
-      <View style={styles.panelFoot}>
-        {previous ? <Button kind="ghost" icon="arrow-back" label={previous.label} onPress={() => onPick(previous.part)} /> : <View />}
-        {next && <Button kind="secondary" label={`Sonraki: ${next.label}`} icon="arrow-forward" onPress={() => onPick(next.part)} />}
+      <View style={styles.questionBody}>
+        <View style={{ gap: 4 }}>
+          <Text headingLevel={2} style={styles.questionText}>
+            {step.question}
+            {step.required && <Text colorValue={a.warning} style={styles.questionText}>{" *"}</Text>}
+          </Text>
+          <Text color="textSecondary" style={styles.help}>
+            {step.help}
+          </Text>
+        </View>
+        {problems.length > 0 && (
+          <View style={[styles.problems, { backgroundColor: a.redSoft }]}>
+            {problems.map((problem) => (
+              <Text key={problem.text} colorValue={a.warning} style={{ fontSize: 13 }}>
+                {problem.text}
+              </Text>
+            ))}
+          </View>
+        )}
+        <View style={{ gap: 12 }}>
+          <Body {...props} />
+        </View>
+        {More && (
+          <View style={[styles.more, { borderTopColor: a.line }]}>
+            <Text color="textSecondary" style={styles.moreTitle}>
+              Ayrıntılar · isteğe bağlı
+            </Text>
+            <More {...props} />
+          </View>
+        )}
       </View>
     </View>
   );
 }
 
-/** What stops a record from being saved, in Turkish, with the part to fix it in. */
+/**
+ * Where an answer shows in the app, in the colour of its screen: gold for the asset's pages, blue
+ * for its dossier. Pressed, the phone goes there.
+ */
+function Where({ section, place, onPress }: { section: Section; place: string; onPress: () => void }) {
+  const a = useAdminColors();
+  const dossier = section === "dossier";
+  const color = dossier ? a.primary : a.gold;
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`${dossier ? "Eserin dosyasında" : "Kaydırmalı sayfalarda"} görünür: ${place}. Telefonda göster`}
+      onPress={onPress}
+      style={({ hovered }: { hovered?: boolean }) => [styles.where, { backgroundColor: dossier ? a.blueSoft : a.goldSoft }, hovered && { opacity: 0.8 }]}
+    >
+      <Ionicons name={dossier ? "document-text-outline" : "swap-vertical-outline"} size={15} color={color} aria-hidden />
+      <Text colorValue={color} style={styles.whereSection}>
+        {dossier ? "Eserin dosyasında" : "Kaydırmalı sayfalarda"}
+      </Text>
+      <Text colorValue={color} style={styles.wherePlace}>
+        {place}
+      </Text>
+    </Pressable>
+  );
+}
+
+/** Past the last question: what is answered, what is left, and the save. */
+function Finish({ steps, record, problems, creating, busy, dirty, onPick, onSave }: { steps: Step[]; record: AdminAssetRecord; problems: Problem[]; creating: boolean; busy: boolean; dirty: boolean; onPick: (index: number) => void; onSave: () => void }) {
+  const a = useAdminColors();
+  const questions = steps.filter((s) => !s.intro);
+  const done = questions.filter((s) => s.done(record)).length;
+  const missing = questions.filter((s) => s.required && !s.done(record));
+  // Turkish written without its English: the app in English would show the Turkish instead.
+  const untranslated = questions.flatMap((s) => {
+    const count = (ENGLISH_OF[s.key]?.(record) ?? []).filter((text) => !!text?.tr.trim() && !text.en?.trim()).length;
+    return count > 0 ? [{ label: count > 1 ? `${s.title} (${count})` : s.title, step: s.key }] : [];
+  });
+  return (
+    <View style={[styles.question, styles.questionBody, { backgroundColor: a.well, borderColor: a.line, boxShadow: a.shadow }]}>
+      <View style={{ gap: 6 }}>
+        <Text headingLevel={2} style={styles.questionText}>
+          {missing.length > 0 ? "Birkaç zorunlu soru kaldı" : "Hepsi bu kadar"}
+        </Text>
+        <Text color="textSecondary" style={styles.help}>
+          {missing.length > 0
+            ? `${missing.map((s) => s.title.toLocaleLowerCase("tr")).join(", ")} olmadan eser kaydedilemez.`
+            : `${questions.length} sorudan ${done} tanesi cevaplandı. Boş bıraktıkların uygulamada görünmez; istediğin zaman geri gelip doldurabilirsin.`}
+        </Text>
+      </View>
+      {untranslated.length > 0 && (
+        <View style={[styles.english, { backgroundColor: a.goldSoft }]}>
+          <Ionicons name="language-outline" size={18} color={a.gold} aria-hidden />
+          <Text style={{ fontSize: 13.5 }}>İngilizcesi yazılmamış:</Text>
+          {untranslated.map((item) => (
+            <Pressable key={item.label} accessibilityRole="link" onPress={() => onPick(steps.findIndex((s) => s.key === item.step))}>
+              <Text colorValue={a.gold} style={styles.englishLink}>
+                {item.label}
+              </Text>
+            </Pressable>
+          ))}
+        </View>
+      )}
+      <StepList steps={steps} at={-1} record={record} onPick={onPick} problems={problems} />
+      <View style={{ alignItems: "flex-start" }}>
+        <Button kind="primary" icon="checkmark" label={creating ? "Eseri ekle" : "Kaydet"} busy={busy} disabled={!dirty && !creating} onPress={onSave} />
+      </View>
+    </View>
+  );
+}
+
+/** What stops a record from being saved, in Turkish, with the question to fix it in. */
 interface Problem {
-  part: EditPart;
+  step: string;
   text: string;
 }
 
-const FIELD: Record<string, { part: EditPart; label: string }> = {
-  name: { part: "identity", label: "Ad" },
-  summary: { part: "summary", label: "Özet" },
-  type: { part: "identity", label: "Tür" },
-  alternateNames: { part: "identity", label: "Diğer adları" },
-  city: { part: "place", label: "İl" },
-  district: { part: "place", label: "İlçe" },
-  coordinates: { part: "place", label: "Koordinat" },
-  dating: { part: "built", label: "Yapım" },
-  architect: { part: "built", label: "Mimar adayları" },
-  sections: { part: "sections", label: "Bölümler" },
-  highlights: { part: "highlights", label: "Öne çıkanlar" },
-  timeline: { part: "timeline", label: "Zaman çizelgesi" },
-  facts: { part: "facts", label: "Ölçüler" },
-  legends: { part: "legends", label: "Rivayetler" },
-  inscriptions: { part: "inscriptions", label: "Kitabeler" },
-  people: { part: "people", label: "Kişiler" },
-  waqf: { part: "waqf", label: "Vakıf" },
-  visit: { part: "visit", label: "Ziyaret" },
-  tips: { part: "tips", label: "İpuçları" },
-  accessibility: { part: "access", label: "Erişilebilirlik" },
-  ambientSound: { part: "access", label: "Ses kapsülü" },
-  media: { part: "media", label: "Görseller" },
+const FIELD: Record<string, { step: string; label: string }> = {
+  name: { step: "name", label: "Adı" },
+  type: { step: "type", label: "Türü" },
+  city: { step: "place", label: "İl" },
+  district: { step: "place", label: "İlçe" },
+  coordinates: { step: "place", label: "Konum" },
+  summary: { step: "summary", label: "Kısa tanıtım" },
+  dating: { step: "built", label: "Yapım tarihi" },
+  architect: { step: "built", label: "Mimar adayları" },
+  alternateNames: { step: "name", label: "Başka adları" },
+  facts: { step: "facts", label: "Sayılar" },
+  media: { step: "media", label: "Fotoğraflar" },
+  sections: { step: "sections", label: "Hikâye" },
+  highlights: { step: "highlights", label: "Bakılacak yerler" },
+  visit: { step: "visit", label: "Ziyaret" },
+  accessibility: { step: "access", label: "Erişim" },
+  ambientSound: { step: "audio", label: "Ortam sesi" },
+  tips: { step: "tips", label: "İpuçları" },
+  timeline: { step: "timeline", label: "Önemli tarihler" },
+  people: { step: "people", label: "Kişiler" },
+  inscriptions: { step: "inscriptions", label: "Kitabeler" },
+  waqf: { step: "waqf", label: "Vakıf" },
+  legends: { step: "legends", label: "Rivayetler" },
 };
 
 const MESSAGE: Record<string, string> = {
   "name is required": "boş olamaz",
   "summary is required": "boş olamaz",
   "district is required": "boş olamaz",
-  "a section needs a title and a text": "başlık ve metin gerekli",
-  "an event needs a title": "başlık gerekli",
-  "a fact needs a label and a value": "ad ve değer gerekli",
-  "a legend needs a title and a text": "başlık ve metin gerekli",
-  "a person needs a name": "ad gerekli",
-  "an inscription needs a place": "yeri gerekli",
-  "a tip needs a text": "metin gerekli",
-  "a highlight needs a title": "başlık gerekli",
-  "a name is required": "ad gerekli",
+  "a section needs a title and a text": "başlığı ve metni yazılmalı",
+  "an event needs a title": "ne olduğu yazılmalı",
+  "a fact needs a label and a value": "ne olduğu ve kaç olduğu yazılmalı",
+  "a legend needs a title and a text": "başlığı ve anlatılanı yazılmalı",
+  "a person needs a name": "adı yazılmalı",
+  "an inscription needs a place": "nerede olduğu yazılmalı",
+  "a tip needs a text": "ipucu yazılmalı",
+  "a highlight needs a title": "ne olduğu yazılmalı",
+  "a name is required": "ad yazılmalı",
   "only one cover": "yalnızca bir kapak seçilebilir",
   "the end year comes after the start": "bitiş yılı başlangıçtan önce olamaz",
 };
 
 function problemsOf(record: AdminAssetRecord): Problem[] {
-  const result = AdminAssetRecordInputSchema.safeParse(record);
+  const result = AdminAssetRecordInputSchema.safeParse(forServer(record));
   if (result.success) return [];
   const seen = new Set<string>();
   return result.error.issues.flatMap((issue) => {
     const [key, index] = issue.path;
-    const field = FIELD[String(key)] ?? { part: "identity" as const, label: String(key) };
-    const what = typeof index === "number" ? `${field.label}, ${index + 1}. öğe` : field.label;
+    const field = FIELD[String(key)] ?? { step: "name", label: String(key) };
+    const what = typeof index === "number" ? `${field.label}, ${index + 1}. sıradaki` : field.label;
     const text = `${what}: ${MESSAGE[issue.message] ?? (key === "type" || key === "city" ? "seçilmeli" : "eksik ya da hatalı")}`;
     if (seen.has(text)) return [];
     seen.add(text);
-    return [{ part: field.part, text }];
+    return [{ step: field.step, text }];
   });
-}
-
-function Problems({ problems, onPick }: { problems: Problem[]; onPick: (part: EditPart) => void }) {
-  const a = useAdminColors();
-  return (
-    <View style={[styles.problems, { backgroundColor: a.redSoft }]}>
-      <Text colorValue={a.warning} style={styles.problemsTitle}>
-        Kaydetmeden önce düzelt
-      </Text>
-      {problems.slice(0, 8).map((problem) => (
-        <Pressable key={problem.text} accessibilityRole="link" onPress={() => onPick(problem.part)}>
-          <Text colorValue={a.warning} style={{ fontSize: 13, textDecorationLine: "underline" }}>
-            {problem.text}
-          </Text>
-        </Pressable>
-      ))}
-    </View>
-  );
-}
-
-/** Where a dataset asset's edits go: the database only, until the next import. */
-function DatasetNotice() {
-  const a = useAdminColors();
-  return (
-    <View style={[styles.notice, { backgroundColor: a.blueSoft }]}>
-      <Ionicons name="information-circle-outline" size={18} color={a.primary} aria-hidden />
-      <Text style={{ flex: 1, fontSize: 13, lineHeight: 19 }}>
-        Bu eser veri setinden geliyor. Değişiklikler uygulamada hemen görünür, ama veri seti yeniden içe aktarılınca data/eserler’deki hâline döner.
-      </Text>
-    </View>
-  );
 }
 
 function BackLink({ onPress }: { onPress: () => void }) {
@@ -548,29 +660,34 @@ function BackLink({ onPress }: { onPress: () => void }) {
   );
 }
 
-function StatusBadge({ status }: { status: AdminAssetRecord["status"] }) {
-  if (status === "published") return <Badge tone="green" label="Yayında" icon="radio-button-on" />;
-  if (status === "in_review") return <Badge tone="blue" label="İncelemede" icon="time-outline" />;
-  return <Badge tone="grey" label="Taslak" icon="document-outline" />;
-}
-
 /* ───────────── Preview ───────────── */
 
-function PreviewColumn({ editing, samples, onSamples, children }: { editing: boolean; samples: boolean; onSamples: (on: boolean) => void; children: ReactNode }) {
+/** The phone with its switch between the asset's pages and its dossier, and the sample texts' switch. */
+function PhoneView({ view, onView, samples, onSamples, children }: { view: Section; onView: (view: Section) => void; samples: boolean; onSamples: (on: boolean) => void; children: ReactNode }) {
   const a = useAdminColors();
   return (
-    <View style={[styles.previewColumn, styles.previewContent, { borderLeftColor: a.line }]}>
+    <View style={styles.previewContent}>
       <View style={styles.previewHead}>
-        <Text style={styles.previewTitle}>Önizleme</Text>
+        <Segments
+          label="Telefonda göster"
+          value={view}
+          onChange={onView}
+          options={[
+            { value: "pages", label: "Kaydırmalı sayfalar" },
+            { value: "dossier", label: "Eserin dosyası" },
+          ]}
+        />
+      </View>
+      {children}
+      <View style={styles.previewFoot}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 5 }}>
           <Ionicons name="hand-left-outline" size={13} color={a.textSecondary} aria-hidden />
           <Text color="textSecondary" style={{ fontSize: 12.5 }}>
-            {editing ? "Düzenlemek için telefonda bir yere tıkla" : "Bir yere tıklarsan orayı düzenlersin"}
+            Bir yere tıklarsan onun sorusu açılır
           </Text>
         </View>
-        {editing && <SamplesSwitch samples={samples} onSamples={onSamples} />}
+        <SamplesSwitch samples={samples} onSamples={onSamples} />
       </View>
-      {children}
     </View>
   );
 }
@@ -621,29 +738,25 @@ const SCREEN = { width: 393, height: 852 };
 const PHONE_INSETS = { top: 59, bottom: 34, left: 0, right: 0 };
 const BEZEL = 12;
 const FRAME = { width: SCREEN.width + BEZEL * 2, height: SCREEN.height + BEZEL * 2 };
-const DOSSIER_PARTS = new Set(PARTS.filter((p) => p.dossier).map((p) => p.part));
+
 
 /**
  * The app's own asset page laid out on a phone's real screen size, with its safe areas, then the
  * whole phone scaled to fit the window: proportions and text stay as in the app. Its parts are
  * picked to be edited; closing does nothing here.
  */
-function Phone({ asset, faded = false, edit }: { asset: AssetDetail; faded?: boolean; edit: FrameEditing }) {
+function Phone({ asset, faded = false, edit, view, onView }: { asset: AssetDetail; faded?: boolean; edit: FrameEditing; view: Section; onView: (view: Section) => void }) {
   const { height } = useWindowDimensions();
   const screen = useFadedSamples(faded);
-  const scale = Math.min(1, Math.max(0.5, (height - 170) / FRAME.height));
-  const [dossier, setDossier] = useState(false);
-  // A part picked in the list goes to where it is: the dossier for its own parts, the pages for the rest.
-  useEffect(() => {
-    if (edit.focus) setDossier(DOSSIER_PARTS.has(edit.focus.part));
-  }, [edit.focus]);
+  const scale = Math.min(1, Math.max(0.5, (height - 215) / FRAME.height));
+  const dossier = view === "dossier";
   // The dossier opens inside the phone; links that would leave the page (camera, assistant) do nothing here.
   const frame: Frame = {
     open: (href) => {
       const path = typeof href === "string" ? href.split("?")[0] : href.pathname;
-      if (path === "/dossier") setDossier(true);
+      if (path === "/dossier") onView("dossier");
     },
-    back: () => setDossier(false),
+    back: () => onView("pages"),
     ...SCREEN,
     edit,
   };
@@ -654,7 +767,7 @@ function Phone({ asset, faded = false, edit }: { asset: AssetDetail; faded?: boo
         <View style={[styles.button, { left: -3, top: 210, height: 62 }]} />
         <View style={[styles.button, { left: -3, top: 284, height: 62 }]} />
         <View style={[styles.button, { right: -3, top: 230, height: 96 }]} />
-        <View ref={screen} style={styles.phoneScreen}>
+        <View ref={screen} nativeID={FRAME_ROOT_ID} style={styles.phoneScreen}>
           <InFrame.Provider value={frame}>
             <SafeAreaInsetsContext.Provider value={PHONE_INSETS}>
               <AssetDetailView key={asset.updatedAt} asset={asset} onClose={() => {}} />
@@ -673,501 +786,41 @@ function Phone({ asset, faded = false, edit }: { asset: AssetDetail; faded?: boo
   );
 }
 
-/* ───────────── Tabs ───────────── */
-
-function General({ asset }: { asset: AssetDetail }) {
-  const a = useAdminColors();
-  const dating = asset.dating;
-  return (
-    <View style={styles.stack}>
-      <Card style={styles.overview}>
-        <View style={[styles.cover, { backgroundColor: a.well }]}>
-          {asset.cover ? (
-            <AssetImage media={asset.cover} fill />
-          ) : (
-            <View style={styles.coverEmpty}>
-              <Ionicons name="image-outline" size={26} color={a.textSecondary} aria-hidden />
-              <Text color="textSecondary" style={{ fontSize: 12.5 }}>
-                Kapak fotoğrafı yok
-              </Text>
-            </View>
-          )}
-        </View>
-        <View style={{ flex: 1, minWidth: 260, gap: 10 }}>
-          {asset.subtitle && <Text style={styles.subtitle}>{asset.subtitle}</Text>}
-          <Text style={styles.body}>{asset.summary}</Text>
-          {asset.tags.length > 0 && (
-            <View style={styles.chips}>
-              {asset.tags.map((tag) => (
-                <Chip key={tag} label={tag} />
-              ))}
-            </View>
-          )}
-        </View>
-      </Card>
-
-      <Block title="Kimlik">
-        <Info
-          rows={[
-            ["Tür", [asset.type.label, ...asset.secondaryTypes.map((type) => type.label)].join(", ")],
-            ["Dönem", asset.era?.label],
-            ["Diğer adları", asset.alternateNames.map((name) => (name.note ? `${name.name} (${name.note})` : name.name)).join(" · ")],
-            ["Bağlı olduğu külliye", asset.parent?.name],
-            ["Külliyenin yapıları", asset.children.map((child) => child.name).join(", ")],
-          ]}
-        />
-      </Block>
-
-      <Block title="Konum">
-        <Info
-          rows={[
-            ["İl / ilçe", `${asset.city.label} / ${asset.district}`],
-            ["Mahalle", asset.neighborhood],
-            ["Adres", asset.address],
-            ["Koordinat", asset.coordinates ? `${asset.coordinates.lat.toFixed(5)}, ${asset.coordinates.lng.toFixed(5)}` : null],
-          ]}
-        />
-      </Block>
-
-      <Block title="Yapım">
-        <Info
-          rows={[
-            ["Tarih", dating?.display, dating?.confidence],
-            ["Yıllar", dating && (dating.startYear || dating.endYear) ? [dating.startYear, dating.endYear].filter(Boolean).join("–") : null],
-            ["Hicrî", dating?.hijriYear ? String(dating.hijriYear) : null],
-            ["Yüzyıl", dating?.century ? `${dating.century}. yüzyıl` : null],
-            ["Tarihlendirme dayanağı", dating?.basis],
-            ["Bânî", asset.founder ? [asset.founder.name, asset.founder.role].filter(Boolean).join(" · ") : null, asset.founder?.confidence],
-            ["Mimar", asset.architect?.name ?? (asset.architect?.candidates.length ? asset.architect.candidates.map((c) => c.name).join(" ya da ") : null), asset.architect?.confidence],
-          ]}
-        />
-      </Block>
-
-      {asset.waqf && (
-        <Block title="Vakıf">
-          <Info
-            rows={[
-              ["Vakıf", asset.waqf.name, asset.waqf.confidence],
-              ["Vakfiye tarihi", asset.waqf.deedDate],
-              ["Vakfiyeden", asset.waqf.deedExcerpt],
-              ["Vakıf şartları", asset.waqf.conditions],
-              ["Arazi notu", asset.waqf.landNote],
-            ]}
-          />
-        </Block>
-      )}
-    </View>
-  );
-}
-
-function TextTab({ asset }: { asset: AssetDetail }) {
-  if (asset.sections.length === 0 && asset.highlights.length === 0) return <Nothing text="Bu eserin metin bölümü yok." />;
-  return (
-    <View style={styles.stack}>
-      {asset.sections.map((section, i) => (
-        <Card key={section.id} style={{ gap: 10 }}>
-          <View style={styles.itemHead}>
-            <Order value={i + 1} />
-            <Text style={styles.itemTitle}>{section.title ?? "Başlıksız bölüm"}</Text>
-            <Confidence value={section.confidence} />
-          </View>
-          <Text style={styles.body}>{section.body}</Text>
-          <Sources sources={section.sources} />
-        </Card>
-      ))}
-      {asset.highlights.length > 0 && (
-        <Block title="Öne çıkanlar">
-          {asset.highlights.map((highlight) => (
-            <Line key={highlight.feature + highlight.title} title={highlight.title} body={highlight.hint} />
-          ))}
-        </Block>
-      )}
-    </View>
-  );
-}
-
-function History({ asset }: { asset: AssetDetail }) {
-  if (asset.timeline.length + asset.facts.length + asset.legends.length === 0) return <Nothing text="Bu eserin zaman çizelgesi, bilgisi ya da rivayeti yok." />;
-  return (
-    <View style={styles.stack}>
-      {asset.timeline.length > 0 && (
-        <Block title="Zaman çizelgesi">
-          {asset.timeline.map((event) => (
-            <View key={event.id} style={styles.event}>
-              <Text style={styles.year}>{event.year ?? event.date ?? event.hijri ?? "?"}</Text>
-              <View style={{ flex: 1, gap: 4 }}>
-                <View style={styles.itemHead}>
-                  <Text style={styles.lineTitle}>{event.title}</Text>
-                  <Badge tone="grey" label={event.type.label} />
-                  <Confidence value={event.confidence} />
-                </View>
-                {event.note && (
-                  <Text color="textSecondary" style={styles.small}>
-                    {event.note}
-                  </Text>
-                )}
-              </View>
-            </View>
-          ))}
-        </Block>
-      )}
-      {asset.facts.length > 0 && (
-        <Block title="Bilgiler">
-          <Info rows={asset.facts.map((fact) => [fact.label, [fact.value ?? (fact.valueNum === null ? null : String(fact.valueNum)), fact.unit].filter(Boolean).join(" ") + (fact.note ? ` (${fact.note})` : ""), fact.confidence])} />
-        </Block>
-      )}
-      {asset.legends.length > 0 && (
-        <Block title="Rivayetler">
-          {asset.legends.map((legend) => (
-            <View key={legend.id} style={{ gap: 6 }}>
-              <View style={styles.itemHead}>
-                <Text style={styles.lineTitle}>{legend.title}</Text>
-                <Badge tone={legend.verdict === "refuted_by_source" ? "red" : "gold"} label={VERDICT[legend.verdict]} />
-              </View>
-              <Text style={styles.body}>{legend.body}</Text>
-            </View>
-          ))}
-        </Block>
-      )}
-    </View>
-  );
-}
-
-function Inscriptions({ asset }: { asset: AssetDetail }) {
-  if (asset.inscriptions.length + asset.people.length === 0) return <Nothing text="Bu eserin kitabesi ya da kişi kaydı yok." />;
-  return (
-    <View style={styles.stack}>
-      {asset.inscriptions.map((inscription, i) => (
-        <Card key={inscription.id} style={{ gap: 12 }}>
-          <View style={styles.itemHead}>
-            <Order value={i + 1} />
-            <Text style={styles.itemTitle}>{inscription.location ?? "Kitabe"}</Text>
-            {inscription.arTarget ? <Badge tone="green" label="AR hazır" icon="scan-outline" /> : inscription.arTargetMediaKey ? <Badge tone="gold" label="AR derlenmedi" /> : null}
-          </View>
-          <Info
-            rows={[
-              ["Dil / yazı", [LANGUAGE[inscription.language] ?? inscription.language, inscription.script].filter(Boolean).join(" · ")],
-              ["Tarih", [inscription.gregorian, inscription.hijriYear ? `H. ${inscription.hijriYear}` : null].filter(Boolean).join(" · ")],
-              ["Yazan", inscription.author],
-            ]}
-          />
-          {inscription.transliteration && <Quote label="Okunuş" text={inscription.transliteration} />}
-          {inscription.translation && <Quote label="Anlamı" text={inscription.translation} />}
-          {inscription.note && (
-            <Text color="textSecondary" style={styles.small}>
-              {inscription.note}
-            </Text>
-          )}
-          <Sources sources={inscription.sources} />
-        </Card>
-      ))}
-      {asset.people.length > 0 && (
-        <Block title="Kişiler">
-          <Info rows={asset.people.map((person) => [person.name, person.role ?? "—"])} />
-        </Block>
-      )}
-    </View>
-  );
-}
-
-function Visit({ asset }: { asset: AssetDetail }) {
-  const access = asset.accessibility;
-  return (
-    <View style={styles.stack}>
-      <Block title="Ziyaret">
-        <Info
-          rows={[
-            ["Ortam", asset.visit.setting],
-            ["Süre", asset.visit.durationMin ? `${asset.visit.durationMin} dakika` : null],
-            ["Giriş ücreti", asset.visit.entranceFee],
-            ["Notlar", asset.visit.notes],
-          ]}
-          empty="Ziyaret bilgisi girilmemiş."
-        />
-      </Block>
-      <Block title="Erişilebilirlik" hint={access.verified ? "Yerinde doğrulandı" : "Yerinde doğrulanmadı"}>
-        <View style={styles.access}>
-          <Access label="Tekerlekli sandalye" value={access.wheelchair} />
-          <Access label="Basamaksız giriş" value={access.stepFree} />
-          <Access label="Rampa" value={access.ramp} />
-          <Access label="Tuvalet" value={access.toilet} />
-        </View>
-        <Info
-          rows={[
-            ["Notlar", access.notes],
-            ["Sesli betimleme", access.audioDescription],
-          ]}
-        />
-      </Block>
-      <Block title="Ses kapsülü">
-        <Info
-          rows={[
-            ["Ses", asset.ambientSound?.key],
-            ["Alt yazı", asset.ambientSound?.caption],
-            ["Kayıt", asset.ambientSound ? (asset.ambientSound.recording ? `${Math.round(asset.ambientSound.recording.durationSeconds)} sn · ${asset.ambientSound.recording.license}` : "Henüz kayıt yok") : null],
-          ]}
-          empty="Ses kapsülü yok."
-        />
-      </Block>
-      {asset.visitorTips.length > 0 && (
-        <Block title="Ziyaretçi ipuçları">
-          {asset.visitorTips.map((tip, i) => (
-            <Line key={i} title={tip.text} body={[TIP_ORIGIN[tip.origin], tip.collectedAt && formatDate(tip.collectedAt)].filter(Boolean).join(" · ")} />
-          ))}
-        </Block>
-      )}
-    </View>
-  );
-}
-
-function MediaTab({ asset }: { asset: AssetDetail }) {
-  const a = useAdminColors();
-  if (asset.media.length + asset.sources.length === 0) return <Nothing text="Bu eserin görseli ya da kaynağı yok." />;
-  return (
-    <View style={styles.stack}>
-      {asset.media.length > 0 && (
-        <Block title="Görseller">
-          <View style={styles.gallery}>
-            {asset.media.map((media) => (
-              <View key={media.key} style={[styles.photo, { backgroundColor: a.well }]}>
-                <View style={styles.photoImage}>
-                  <AssetImage media={media} fill />
-                  {media.isCover && (
-                    <View style={styles.photoBadge}>
-                      <Badge tone="gold" label="Kapak" />
-                    </View>
-                  )}
-                </View>
-                <View style={{ padding: 10, gap: 2 }}>
-                  <Text style={styles.photoCaption} numberOfLines={2}>
-                    {media.caption ?? media.alt}
-                  </Text>
-                  <Text color="textSecondary" style={{ fontSize: 11.5 }} numberOfLines={1}>
-                    {[MEDIA_KIND[media.kind], media.archiveYear, media.credit, media.license].filter(Boolean).join(" · ")}
-                  </Text>
-                </View>
-              </View>
-            ))}
-          </View>
-        </Block>
-      )}
-      {asset.sources.length > 0 && (
-        <Block title="Kaynakça">
-          {asset.sources.map((source, i) => (
-            <View key={source.sourceId} style={styles.source}>
-              <Text color="textSecondary" style={styles.sourceNumber}>
-                {i + 1}
-              </Text>
-              <Text style={[styles.small, { flex: 1 }]}>
-                {source.title}
-                {source.pages ? `, s. ${source.pages}` : ""}
-              </Text>
-              {source.url && <Ionicons name="link-outline" size={15} color={a.textSecondary} aria-hidden />}
-            </View>
-          ))}
-        </Block>
-      )}
-    </View>
-  );
-}
-
-/* ───────────── Pieces ───────────── */
-
-const VERDICT = { folk_belief: "Halk inanışı", refuted_by_source: "Kaynaklarca çürütülmüş", unverified: "Doğrulanmamış" } as const;
-const TIP_ORIGIN = { field_visit: "Saha ziyareti", visitor_reviews_summary: "Ziyaretçi yorumlarından", official: "Resmî" } as const;
-const LANGUAGE: Record<string, string | undefined> = { ar: "Arapça", fa: "Farsça", tr: "Türkçe", "tr-ottoman": "Osmanlı Türkçesi", el: "Rumca", other: "Diğer" };
-const MEDIA_KIND = { photo: "Fotoğraf", archive_photo: "Arşiv fotoğrafı", drawing: "Çizim", audio: "Ses", video: "Video", document: "Belge" } as const;
-const ACCESS: Record<string, { label: string; tone: Tone }> = {
-  yes: { label: "Var", tone: "green" },
-  partial: { label: "Kısmen", tone: "gold" },
-  no: { label: "Yok", tone: "red" },
-  unknown: { label: "Bilinmiyor", tone: "grey" },
-};
-
-function Block({ title, hint, children }: { title: string; hint?: string; children: ReactNode }) {
-  return (
-    <Card style={{ gap: 14 }}>
-      <View style={styles.itemHead}>
-        <Text style={styles.itemTitle}>{title}</Text>
-        {hint && (
-          <Text color="textSecondary" style={{ fontSize: 12.5 }}>
-            {hint}
-          </Text>
-        )}
-      </View>
-      {children}
-    </Card>
-  );
-}
-
-type Confidence = AssetDetail["sections"][number]["confidence"] | null | undefined;
-
-/** Label and value rows; empty values are left out. */
-function Info({ rows, empty }: { rows: Array<[string, string | null | undefined, Confidence?]>; empty?: string }) {
-  const a = useAdminColors();
-  const shown = rows.filter(([, value]) => value && value.trim());
-  if (shown.length === 0) {
-    return (
-      <Text color="textSecondary" style={styles.small}>
-        {empty ?? "Henüz eklenmedi. “Düzenle” ile ekleyebilirsin; uygulamada bu kısım görünmez."}
-      </Text>
-    );
-  }
-  return (
-    <View style={[styles.info, { backgroundColor: a.well }]}>
-      {shown.map(([label, value, confidence], i) => (
-        <View key={label + i} style={[styles.infoRow, i > 0 && { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: a.line }]}>
-          <Text color="textSecondary" style={styles.infoLabel}>
-            {label}
-          </Text>
-          <View style={styles.infoValue}>
-            <Text style={styles.small}>{value}</Text>
-            <Confidence value={confidence} />
-          </View>
-        </View>
-      ))}
-    </View>
-  );
-}
-
-/** Shown only when a statement is less than certain. */
-function Confidence({ value }: { value: Confidence }) {
-  if (!value || value.code === "certain") return null;
-  return <Badge tone={value.code === "probable" ? "blue" : value.code === "legend" ? "gold" : "red"} label={value.label} />;
-}
-
-function Sources({ sources }: { sources: SourceRef[] }) {
-  if (sources.length === 0) return null;
-  return (
-    <Text color="textSecondary" style={{ fontSize: 12 }} numberOfLines={2}>
-      Kaynak: {sources.map((source) => (source.pages ? `${source.title}, s. ${source.pages}` : source.title)).join(" · ")}
-    </Text>
-  );
-}
-
-function Order({ value }: { value: number }) {
-  const a = useAdminColors();
-  return (
-    <View style={[styles.number, { backgroundColor: a.ink }]}>
-      <Text colorValue={a.onInk} style={styles.numberText}>
-        {value}
-      </Text>
-    </View>
-  );
-}
-
-function Chip({ label }: { label: string }) {
-  const a = useAdminColors();
-  return (
-    <View style={[styles.chip, { backgroundColor: a.well }]}>
-      <Text style={{ fontSize: 12 }}>{label}</Text>
-    </View>
-  );
-}
-
-function Line({ title, body }: { title: string; body?: string | null }) {
-  return (
-    <View style={{ gap: 2 }}>
-      <Text style={styles.lineTitle}>{title}</Text>
-      {body ? (
-        <Text color="textSecondary" style={styles.small}>
-          {body}
-        </Text>
-      ) : null}
-    </View>
-  );
-}
-
-function Quote({ label, text }: { label: string; text: string }) {
-  const a = useAdminColors();
-  return (
-    <View style={[styles.quote, { borderLeftColor: a.goldMark }]}>
-      <Text color="textSecondary" style={{ fontSize: 11.5, fontFamily: fontFamily.sansSemiBold }}>
-        {label}
-      </Text>
-      <Text style={styles.body}>{text}</Text>
-    </View>
-  );
-}
-
-function Access({ label, value }: { label: string; value: string }) {
-  const a = useAdminColors();
-  const look = ACCESS[value] ?? ACCESS.unknown!;
-  return (
-    <View style={[styles.accessItem, { backgroundColor: a.well }]}>
-      <Text style={{ fontSize: 12.5, fontFamily: fontFamily.sansMedium }}>{label}</Text>
-      <Badge tone={look.tone} label={look.label} />
-    </View>
-  );
-}
-
-/** A tab with nothing in it: the app leaves the part out, and "Düzenle" is where it is added. */
-function Nothing({ text }: { text: string }) {
-  return (
-    <Card>
-      <Empty icon="document-outline" title={text} body="Uygulamada bu kısım görünmez. “Düzenle” ile ekleyebilirsin." />
-    </Card>
-  );
-}
-
 const styles = StyleSheet.create({
+  progressHead: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 12 },
+  progressText: { fontFamily: fontFamily.sansSemiBold, fontSize: 13 },
+  allSteps: { flexDirection: "row", alignItems: "center", gap: 6, paddingVertical: 4 },
+  allStepsText: { fontFamily: fontFamily.sansSemiBold, fontSize: 13 },
+  bar: { height: 6, borderRadius: 3, overflow: "hidden" },
+  stepList: { flexDirection: "row", flexWrap: "wrap", gap: 16, borderRadius: 20, padding: 12 },
+  stepSection: { fontFamily: fontFamily.sansSemiBold, fontSize: 10.5, letterSpacing: 0.8, paddingHorizontal: 8, paddingBottom: 4 },
+  stepRow: { flexDirection: "row", alignItems: "center", gap: 10, borderRadius: 12, paddingHorizontal: 8, paddingVertical: 7 },
+  required: { fontFamily: fontFamily.sansSemiBold, fontSize: 11.5 },
+  // Above the buttons under it, so a list opened near its bottom covers them.
+  question: { borderRadius: 24, borderWidth: 1, zIndex: 2 },
+  english: { flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 10, borderRadius: 16, paddingHorizontal: 14, paddingVertical: 10 },
+  englishLink: { fontFamily: fontFamily.sansSemiBold, fontSize: 13.5, textDecorationLine: "underline" },
+  band: { borderTopLeftRadius: 23, borderTopRightRadius: 23, flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: 12, rowGap: 6, paddingHorizontal: 24, paddingVertical: 10, borderBottomWidth: 1 },
+  questionBody: { paddingHorizontal: 24, paddingTop: 20, paddingBottom: 22, gap: 18 },
+  questionText: { fontFamily: fontFamily.sansSemiBold, fontSize: 22, lineHeight: 28, letterSpacing: -0.4 },
+  help: { flex: 1, fontSize: 14, lineHeight: 20 },
+  more: { gap: 12, borderTopWidth: 1, paddingTop: 16, marginTop: 4 },
+  moreTitle: { fontFamily: fontFamily.sansBold, fontSize: 11.5, letterSpacing: 0.6, textTransform: "uppercase" },
+  foot: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 12, marginTop: 18 },
   fill: { flex: 1, minHeight: 0 },
   back: { flexDirection: "row", alignItems: "center", gap: 6, alignSelf: "flex-start", paddingVertical: 4, marginBottom: 6 },
   statusRow: { flexDirection: "row", alignItems: "center", gap: 8, flexWrap: "wrap", marginTop: -10, marginBottom: 18 },
-  stack: { gap: 16 },
-  overview: { flexDirection: "row", flexWrap: "wrap", gap: 20 },
-  cover: { width: 260, height: 180, borderRadius: 18, overflow: "hidden" },
-  coverEmpty: { flex: 1, alignItems: "center", justifyContent: "center", gap: 6 },
-  subtitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 15 },
-  body: { fontSize: 14, lineHeight: 22 },
-  small: { fontSize: 13.5, lineHeight: 20 },
-  chips: { flexDirection: "row", flexWrap: "wrap", gap: 6 },
-  chip: { borderRadius: 999, paddingHorizontal: 10, paddingVertical: 4 },
-  itemHead: { flexDirection: "row", alignItems: "center", gap: 10, flexWrap: "wrap" },
-  itemTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 16, letterSpacing: -0.2 },
-  lineTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 14 },
-  number: { width: 26, height: 26, borderRadius: 13, alignItems: "center", justifyContent: "center" },
-  numberText: { fontFamily: fontFamily.sansBold, fontSize: 12 },
-  info: { borderRadius: 16, overflow: "hidden" },
-  infoRow: { flexDirection: "row", gap: 16, paddingHorizontal: 14, paddingVertical: 11, flexWrap: "wrap" },
-  infoLabel: { width: 170, fontSize: 13, fontFamily: fontFamily.sansMedium },
-  infoValue: { flex: 1, minWidth: 200, flexDirection: "row", alignItems: "center", gap: 8, flexWrap: "wrap" },
-  event: { flexDirection: "row", gap: 14 },
-  year: { width: 64, fontFamily: fontFamily.sansBold, fontSize: 15, fontVariant: ["tabular-nums"] },
-  quote: { borderLeftWidth: 3, paddingLeft: 12, gap: 4 },
-  access: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
-  accessItem: { flexGrow: 1, flexBasis: 180, flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8, borderRadius: 14, paddingHorizontal: 12, paddingVertical: 10 },
-  gallery: { flexDirection: "row", flexWrap: "wrap", gap: 12 },
-  photo: { width: 220, borderRadius: 16, overflow: "hidden" },
-  photoImage: { height: 150 },
-  photoBadge: { position: "absolute", top: 8, left: 8 },
-  photoCaption: { fontSize: 12.5, fontFamily: fontFamily.sansMedium },
-  source: { flexDirection: "row", alignItems: "flex-start", gap: 10 },
-  sourceNumber: { width: 20, fontSize: 12.5, fontFamily: fontFamily.sansSemiBold, textAlign: "right" },
   previewColumn: { width: 480, flexGrow: 0, borderLeftWidth: 1 },
-  previewContent: { alignItems: "center", paddingTop: 28, paddingBottom: 28, gap: 16 },
-  samples: { flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 5, marginTop: 4 },
-  notice: { flexDirection: "row", gap: 10, padding: 14, borderRadius: 16, marginBottom: 16 },
+  previewContent: { alignItems: "center", paddingTop: 24, paddingBottom: 20, gap: 14 },
+  samples: { flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 5 },
+  previewFoot: { flexDirection: "row", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: 12 },
   problems: { gap: 4, padding: 14, borderRadius: 16, marginBottom: 16 },
-  problemsTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 13.5, marginBottom: 2 },
-  previewHead: { alignItems: "center", gap: 4 },
-  editor: { flexDirection: "row", alignItems: "flex-start", gap: 20 },
-  // Sticky (web): the list stays in view while a long part scrolls.
-  nav: { width: 236, flexGrow: 0, flexShrink: 0, borderRadius: 22, padding: 10, gap: 10, position: "sticky", top: 0 },
-  navHead: { flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", paddingHorizontal: 8, paddingTop: 4 },
-  navTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 14 },
-  progress: { height: 4, borderRadius: 2, marginHorizontal: 8, overflow: "hidden" },
-  navGroup: { fontFamily: fontFamily.sansSemiBold, fontSize: 10.5, letterSpacing: 0.8, paddingHorizontal: 8, paddingTop: 6, paddingBottom: 2 },
-  navRow: { flexDirection: "row", alignItems: "center", gap: 10, borderRadius: 12, paddingHorizontal: 10, paddingVertical: 7 },
-  navLabel: { flex: 1, fontSize: 13.5 },
-  navCount: { fontFamily: fontFamily.sansSemiBold, fontSize: 11.5 },
-  navEmpty: { width: 12, height: 12, borderRadius: 6, borderWidth: 1.5, opacity: 0.5, marginRight: 2 },
-  panel: { flex: 1, minWidth: 0 },
-  panelHead: { flexDirection: "row", alignItems: "center", gap: 12, flexWrap: "wrap" },
-  panelIcon: { width: 42, height: 42, borderRadius: 21, alignItems: "center", justifyContent: "center" },
-  panelTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 19, letterSpacing: -0.3 },
-  panelFoot: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 12, paddingTop: 4 },
-  previewTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 17 },
+  previewHead: { alignItems: "center", gap: 8 },
+  showsTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 12.5 },
+  shows: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  where: { flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 999, paddingHorizontal: 11, paddingVertical: 4 },
+  whereSection: { fontFamily: fontFamily.sansBold, fontSize: 12.5 },
+  wherePlace: { fontFamily: fontFamily.sansMedium, fontSize: 12.5 },
   phone: { borderRadius: 64, padding: BEZEL, backgroundColor: palette.gece1000, borderWidth: 2, borderColor: "#3A3F47", boxShadow: "0 30px 60px rgba(6,8,13,0.28)" },
   phoneScreen: { width: SCREEN.width, height: SCREEN.height, borderRadius: 52, overflow: "hidden", backgroundColor: palette.gece950 },
   button: { position: "absolute", width: 4, borderRadius: 2, backgroundColor: "#3A3F47" },
