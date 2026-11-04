@@ -300,8 +300,8 @@ function Medal({ badge, size }: { badge: Badge; size: number }) {
       </Svg>
       <View style={styles.medalFace}>
         {art ? (
-          // Inside the rim: the arc is drawn at `mid - 2`, so the drawing stops just short of it.
-          <BadgeArt code={badge.code} emoji={badge.badge} size={size - 10} earned={earned} />
+          // Up to the rim: the arc is drawn at `mid - 2` with a 2 px stroke, so its inside is `mid - 3`.
+          <BadgeArt code={badge.code} emoji={badge.badge} size={size - 6} earned={earned} />
         ) : (
           <Text style={[{ fontSize: size * 0.36, lineHeight: size * 0.44 }, !earned && styles.faded]}>{badge.badge}</Text>
         )}
