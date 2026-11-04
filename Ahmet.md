@@ -61,3 +61,140 @@ sıra düzenlenebiliyor. Yeni eserler fotoğrafsız tasarımla gösteriliyor. Bu
   fotoğrafları ayrı bir tabloda tutulup import sonrası yeniden mi bağlansın?
 
 Panel tarafı hazır olunca formdaki "Görseller" sekmesine yükleme alanını ben eklerim.
+
+---
+
+# Ahmet için: panelin ön yüzü hazır olan, backend bekleyen işler
+
+**Hazırlayan:** Kübra (admin paneli, `feat/admin-ui`) · **Tarih:** 4 Kasım 2026
+
+Aşağıdakilerin ön yüzü yazıldı. Ama sunucu bunları saklamadığı için panel şimdilik kaydetmiyor,
+yalnızca önizlemede gösteriyor. Backend'e dokunmadım; şema, sözleşme ve migration senin.
+
+## 1. Fotoğrafın eserin dosyasındaki yeri
+
+Admin, eserin fotoğraflarından birini dosyadaki herhangi bir bölümün hemen altına koyabiliyor. Bunun
+için panelde "Dosyadaki fotoğraflar" sorusu var. Bir yere birden çok fotoğraf konabiliyor; bir
+fotoğraf aynı anda yalnızca tek bir yerde duruyor.
+
+**Yapılması gerekenler:**
+
+- **Veritabanı:** `asset_media` tablosuna `dossier_after text NULL` sütunu (migration).
+- **Değer:**
+  - fotoğrafın altına geleceği blok: `identity`, `timeline`, `people`, `waqf`, `inscriptions`,
+    `facts`, `legends`, `accessibility`
+  - ya da Tarihçe'deki bir konu: `section:<konu id>`
+  - fotoğraf dosyada değilse `null`
+- **Sözleşme (`packages/contracts`):**
+  - `MediaSchema`'ya `dossierAfter: z.string().min(1).nullable().default(null)`
+  - `AdminAssetRecordSchema.media[]`'ya `dossierAfter: string | null`
+- **API:**
+  - `GET /assets/:id`, her fotoğrafta `dossierAfter`'ı göndermeli (`assets.repository.ts`'teki
+    seçime ve `assets.mapper.ts`'teki `toMedia`'ya eklenir).
+  - `GET`/`PUT /admin/assets/:id/record`, `media[].dossierAfter`'ı okuyup yazmalı
+    (`asset-record.ts`, fotoğrafların açıklaması ve sırası güncellenen yer).
+- **Veri seti:**
+  - `data/schema/eser.schema.json`'daki `mediaItem`'a isteğe bağlı `dossier_after`
+  - `data/tools/db_rows.py`'nin `asset_media` satırına `dossier_after`
+  - (Hüseyin'le birlikte)
+
+**Ön yüz tarafı:**
+
+- Dosya sayfası (`apps/app/src/app/dossier.tsx`) fotoğrafın `dossierAfter`'ını okuyor, sunucu
+  gönderdiği anda uygulamada da görünecek.
+- Bloğu boş olan bir yere konmuş fotoğraf, ondan önceki ilk dolu bloğun altına düşüyor
+  (`apps/app/src/lib/dossier-photos.ts`).
+- Elle konan fotoğraflar, konulara kendiliğinden dağıtılan fotoğraflardan çıkarılıyor.
+- Panel yerleşimleri şimdilik kayda değil, kendi durumunda tutuyor (`placements`). Sözleşme
+  güncellenince bunu `record.media[].dossierAfter`'a bağlayacağım.
+
+## 2. Başka adların ve mimar adaylarının notunun İngilizcesi
+
+"Başka adlarla da biliniyor mu?" altındaki "Nereden geliyor?" notu ile mimar adaylarının "Not"u
+bugün yalnızca Türkçe. Panelde ikisinin de İngilizce satırı var, ama İngilizce kaydedilmiyor.
+
+**Yapılması gerekenler:**
+
+- **Veritabanı:** `alternate_names` ve `architect_candidates` JSON sütunları. Öğelere `note`'un
+  yanına isteğe bağlı `note_en` eklenmesi yeterli, migration gerekmiyor.
+- **Sözleşme:** `AdminAssetRecordSchema` içinde `alternateNames[].note` ve
+  `architect.candidates[].note`, `RecordString(400)` yerine `RecordOptionalText(400)` olmalı
+  (`{ tr, en } | null`).
+- **API:**
+  - `asset-record.ts`: okurken `note` + `note_en` → `{ tr, en }`; yazarken `note` ve `note_en` ayrı
+    ayrı (boşsa yazılmaz). Panel eserinin `source_json`'ı için de aynısı.
+  - `assets.mapper.ts`: `lang=en` istenince `pick(note, note_en, lang)` ile İngilizcesi dönmeli.
+- **Veri seti:** `eser.schema.json`'da `i18nNote`'a ve `architect.candidates` öğesine isteğe bağlı
+  `note_en`; `data/README.md`'deki örneğe de.
+
+**Ön yüz tarafı:**
+
+- Panel İngilizceyi şimdilik öğenin üstünde `noteEn` olarak tutuyor ve kaydetmeden önce çıkarıyor
+  (`forServer`, `apps/app/src/components/admin/asset-steps.tsx`).
+- Sözleşme güncellenince alanı `note.en`'e bağlayacağım. Formdaki "İngilizce notlar şimdilik
+  kaydedilmiyor" yazısını da kaldıracağım.
+
+## 3. Eserin dosyasına yeni ana bölümler
+
+Admin, eserin dosyasına Tarihçe ve Zaman çizelgesi gibi kendi ana bölümünü ekleyebiliyor. Bunun için
+panelde "Yeni bölümler" sorusu var. Her bölümün:
+
+- adı (Türkçe + İngilizce)
+- dosyada nereye geleceği (hangi bölümden sonra)
+- biçimli metni (Türkçe + İngilizce)
+
+Bölüm, dosyanın üstündeki içindekiler şeridinde de çıkıyor. Bu bölümlerin altına da fotoğraf
+konabiliyor (1. madde, `custom:<id>`).
+
+**Metnin biçimi:** düz metin, panelin araç çubuğunun yazdığı birkaç işaretle:
+
+```
+## Alt başlık
+Bir paragraf, içinde **kalın** ve _eğik_ yazı.
+
+- liste öğesi
+> alıntı
+```
+
+Boş satır paragrafları ayırıyor. Sunucu metni olduğu gibi saklayıp göndermesi yeterli;
+çözümleme ön yüzde (`apps/app/src/lib/rich-text.tsx`). HTML değil, temizlemeye gerek yok.
+
+**Yapılması gerekenler:**
+
+- **Veritabanı:** yeni tablo, örneğin `asset_custom_block`:
+
+  | sütun | tür | not |
+  |---|---|---|
+  | `asset_id` | text | `asset`'e bağlı, silinince silinir |
+  | `id` | text | slug |
+  | `sort_order` | smallint | |
+  | `after_block` | text | `identity`, `history`, `timeline`, `people`, `waqf`, `inscriptions`, `facts`, `legends`, `accessibility` ya da başka bir eklenen bölümün `custom:<id>`'si |
+  | `title_tr`, `title_en` | text | `title_en` boş olabilir |
+  | `body_tr`, `body_en` | text | `body_en` boş olabilir |
+
+- **Sözleşme:**
+  - `AssetDetailSchema`'ya `customBlocks: Array<{ id, title, body, after }>` (dile göre seçilmiş
+    metinler)
+  - `AdminAssetRecordSchema`'ya `customBlocks: Array<{ id, title: RecordText, body: RecordText,
+    after }>`
+  - İkisi de varsayılan `[]`.
+- **API:**
+  - `GET /assets/:id`, `lang`'a göre `customBlocks`'u göndermeli.
+  - Panel kaydı (`asset-record.ts`) bunları diğer listeler gibi (bölümler, zaman çizelgesi) tek
+    işlemde silip yeniden yazmalı.
+  - Panel eserinin `source_json`'ına da yazılmalı.
+- **Veri seti:**
+  - `eser.schema.json`'a isteğe bağlı `custom_blocks[]`
+  - `db_rows.py`'ye yeni tablo
+  - (Hüseyin'le birlikte)
+
+**Ön yüz tarafı:**
+
+- Dosya sayfası (`dossier.tsx`) bölümleri `customBlocksOf(asset)` ile okuyor
+  (`apps/app/src/lib/dossier-custom.ts`), sunucu gönderdiği anda uygulamada görünecek.
+- Bölümün bağlandığı bölüm boşsa (dosyada çizilmiyorsa), ondan önceki ilk dolu bölümün arkasına
+  geliyor. Kaynakça hep sonda kalıyor.
+- Panel bölümleri şimdilik kendi durumunda tutuyor (`CustomBlockDraft[]`). Sözleşme güncellenince
+  bunları `record.customBlocks`'a bağlayacağım.
+
+Biri bitince haber verirsen panel tarafını aynı gün bağlarım.
