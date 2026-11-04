@@ -964,7 +964,7 @@ function TypeTiles({ options: list, value, onChange, loading }: { options: Array
                     accessibilityRole="radio"
                     accessibilityState={{ checked: on }}
                     onPress={() => onChange(option.value)}
-                    style={({ hovered }: { hovered?: boolean }) => [styles.tile, { backgroundColor: on ? a.ink : a.well, borderColor: on ? a.ink : hovered ? a.goldMark : a.line }]}
+                    style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.tile, { backgroundColor: on ? a.ink : a.well, borderColor: on ? a.ink : hovered ? a.goldMark : a.line }]}
                   >
                     {on && <Ionicons name="checkmark-circle" size={16} color={a.onInk} aria-hidden />}
                     <Text colorValue={on ? a.onInk : a.text} style={[styles.tileText, on && { fontFamily: fontFamily.sansSemiBold }]}>
@@ -1031,9 +1031,9 @@ function Items<T>({
       accessibilityLabel={`${i + 1}. öğeyi sil`}
       onPress={() => onChange(items.filter((_, x) => x !== i))}
       hitSlop={4}
-      style={({ hovered }: { hovered?: boolean }) => [styles.bin, hovered && { backgroundColor: a.redSoft }]}
+      style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.bin, hovered && { backgroundColor: a.redSoft }]}
     >
-      {({ hovered }: { hovered?: boolean }) => <Ionicons name="trash-outline" size={16} color={hovered ? a.warning : a.textSecondary} aria-hidden />}
+      {({ hovered }: { pressed: boolean; hovered?: boolean }) => <Ionicons name="trash-outline" size={16} color={hovered ? a.warning : a.textSecondary} aria-hidden />}
     </Pressable>
   );
   const move = (i: number, by: number) => {
@@ -1052,7 +1052,7 @@ function Items<T>({
         disabled={off}
         onPress={() => move(i, by)}
         hitSlop={4}
-        style={({ hovered }: { hovered?: boolean }) => [styles.bin, off && { opacity: 0.3 }, hovered && !off && { backgroundColor: a.hover }]}
+        style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.bin, off && { opacity: 0.3 }, hovered && !off && { backgroundColor: a.hover }]}
       >
         <Ionicons name={by < 0 ? "arrow-up" : "arrow-down"} size={16} color={a.textSecondary} aria-hidden />
       </Pressable>
@@ -1110,7 +1110,7 @@ function Items<T>({
         <Pressable
           accessibilityRole="button"
           onPress={() => onChange([...items, make()])}
-          style={({ hovered }: { hovered?: boolean }) => [styles.empty, { borderColor: hovered ? a.goldMark : a.line, backgroundColor: hovered ? a.goldSoft : a.card }]}
+          style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.empty, { borderColor: hovered ? a.goldMark : a.line, backgroundColor: hovered ? a.goldSoft : a.card }]}
         >
           <View style={[styles.emptyIcon, { backgroundColor: a.accent }]}>
             <Ionicons name="add" size={20} color={a.onAccent} aria-hidden />
@@ -1124,7 +1124,7 @@ function Items<T>({
         <Pressable
           accessibilityRole="button"
           onPress={() => onChange([...items, make()])}
-          style={({ hovered }: { hovered?: boolean }) => [styles.add, { borderColor: a.goldMark, backgroundColor: hovered ? a.goldSoft : "transparent" }]}
+          style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.add, { borderColor: a.goldMark, backgroundColor: hovered ? a.goldSoft : "transparent" }]}
         >
           <Ionicons name="add" size={17} color={a.gold} aria-hidden />
           <Text colorValue={a.gold} style={styles.addText}>
@@ -1174,7 +1174,7 @@ function Photos({ record, set, base }: StepProps) {
                     accessibilityRole="button"
                     accessibilityLabel={`${i + 1}. fotoğrafı kapak yap`}
                     onPress={() => set({ media: record.media.map((x) => ({ ...x, isCover: x.key === m.key })) })}
-                    style={({ hovered }: { hovered?: boolean }) => [styles.photoCover, hovered && { backgroundColor: "rgba(6,8,13,0.8)" }]}
+                    style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.photoCover, hovered && { backgroundColor: "rgba(6,8,13,0.8)" }]}
                   >
                     <Ionicons name="star-outline" size={13} color={palette.white} aria-hidden />
                     <Text colorValue={palette.white} style={styles.photoCoverText}>
@@ -1346,7 +1346,7 @@ function DossierPhotos({ record, base, placements, setPlacements, showPlace, cus
                   accessibilityState={{ expanded: picking }}
                   accessibilityLabel={`${p.label} bölümünün altına fotoğraf koy`}
                   onPress={() => setOpen(picking ? null : p.key)}
-                  style={({ hovered }: { hovered?: boolean }) => [styles.slotAdd, { borderColor: picking || hovered ? a.goldMark : a.line, backgroundColor: picking ? a.goldSoft : "transparent" }]}
+                  style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.slotAdd, { borderColor: picking || hovered ? a.goldMark : a.line, backgroundColor: picking ? a.goldSoft : "transparent" }]}
                 >
                   <Ionicons name={picking ? "close" : "add"} size={16} color={a.gold} aria-hidden />
                   <Text colorValue={a.gold} style={styles.addText}>
@@ -1372,7 +1372,7 @@ function DossierPhotos({ record, base, placements, setPlacements, showPlace, cus
                             place(m.key, p.key);
                             setOpen(null);
                           }}
-                          style={({ hovered }: { hovered?: boolean }) => [styles.pickerPhoto, { borderColor: on ? a.goldMark : hovered ? a.goldMark : "transparent" }]}
+                          style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.pickerPhoto, { borderColor: on ? a.goldMark : hovered ? a.goldMark : "transparent" }]}
                         >
                           <View style={styles.pickerImage}>
                             <AssetImage media={photos.get(m.key)!} fill />

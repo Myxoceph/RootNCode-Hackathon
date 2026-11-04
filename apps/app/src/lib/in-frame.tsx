@@ -151,9 +151,9 @@ export function Editable({ field, label, children, style }: { field: string; lab
         accessibilityRole="button"
         accessibilityLabel={`${label}: düzenle`}
         onPress={() => edit.pick(field)}
-        style={({ hovered }: { hovered?: boolean }) => [styles.target, state === "step" && styles.targetStep, hovered && styles.targetShown, state === "field" && styles.targetOn]}
+        style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.target, state === "step" && styles.targetStep, hovered && styles.targetShown, state === "field" && styles.targetOn]}
       >
-        {({ hovered }: { hovered?: boolean }) =>
+        {({ hovered }: { pressed: boolean; hovered?: boolean }) =>
           hovered || state === "field" ? (
             <View style={styles.tagRoom} pointerEvents="none">
               <View style={styles.tag}>

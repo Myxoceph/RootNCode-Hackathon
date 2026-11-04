@@ -206,7 +206,7 @@ export function RichTextField({ label, value, onChange, placeholder, id, hint }:
               accessibilityRole="button"
               accessibilityLabel={tool.label}
               onPress={tool.run}
-              style={({ hovered }: { hovered?: boolean }) => [styles.tool, hovered && { backgroundColor: a.hover }]}
+              style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.tool, hovered && { backgroundColor: a.hover }]}
             >
               {tool.icon ? (
                 <Ionicons name={tool.icon} size={15} color={a.text} aria-hidden />

@@ -430,7 +430,7 @@ function StepList({ steps, at, record, onPick, problems = [] }: { steps: Step[];
                 accessibilityRole="button"
                 aria-current={index === at ? "step" : undefined}
                 onPress={() => onPick(index)}
-                style={({ hovered }: { hovered?: boolean }) => [styles.stepRow, { backgroundColor: index === at ? a.well : hovered ? a.hover : "transparent" }]}
+                style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.stepRow, { backgroundColor: index === at ? a.well : hovered ? a.hover : "transparent" }]}
               >
                 <Ionicons
                   name={wrong ? "alert-circle" : done ? "checkmark-circle" : "ellipse-outline"}
@@ -529,7 +529,7 @@ function Where({ section, place, onPress }: { section: Section; place: string; o
       accessibilityRole="button"
       accessibilityLabel={`${dossier ? "Eserin dosyasında" : "Kaydırmalı sayfalarda"} görünür: ${place}. Telefonda göster`}
       onPress={onPress}
-      style={({ hovered }: { hovered?: boolean }) => [styles.where, { backgroundColor: dossier ? a.blueSoft : a.goldSoft }, hovered && { opacity: 0.8 }]}
+      style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.where, { backgroundColor: dossier ? a.blueSoft : a.goldSoft }, hovered && { opacity: 0.8 }]}
     >
       <Ionicons name={dossier ? "document-text-outline" : "swap-vertical-outline"} size={15} color={color} aria-hidden />
       <Text colorValue={color} style={styles.whereSection}>
