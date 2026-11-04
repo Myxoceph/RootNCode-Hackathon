@@ -15,10 +15,11 @@ adminler panelden yeni başarım ekleyebilir, düzenleyebilir ya da kapatabilir 
   Yanıt etkinlik puanını, mühürlenen ziyaret sayısını ve not/fotoğraf sayılarını (onaylanan, bekleyen) da verir.
 - **Ziyaret edilen eserler** `GET /me/visits` ile okunur (yeniden eskiye); harita bu eserlerin sisini kaldırır.
 - **Rozet görselleri:** Uygulama, aşağıdaki tablolardaki emojinin yerine resimli rozeti çizer
-  ([`design/achievement-badges.png`](design/achievement-badges.png)). Görseller kazanılmamış rozette gri ve soluk
-  görünür. Resmi olmayan başarımlar (şimdilik yalnızca `bursa-ilk-adim` ve adminin sonradan ekledikleri) emojisiyle
-  çizilir. Yeni bir resim eklemek için kaynak görsele rozeti ekleyip `apps/app/scripts/cut-badges.py` içindeki
-  listeye kodunu yaz, sonra `npm run badges --workspace @vagabonds/app` çalıştır.
+  ([`design/achievement-badges.png`](design/achievement-badges.png); Bursa'ya Merhaba ayrı çizildi:
+  [`design/badges/bursa-ilk-adim.svg`](design/badges/bursa-ilk-adim.svg)). Görseller kazanılmamış rozette gri ve
+  soluk görünür. Resmi olmayan başarımlar (adminin sonradan ekledikleri) emojisiyle çizilir. Yeni bir resim
+  eklemek için rozeti kaynak görsele ya da `docs/design/badges/` altına ekleyip `apps/app/scripts/cut-badges.py`
+  içindeki listeye kodunu yaz, sonra `npm run badges --workspace @vagabonds/app` çalıştır.
 
 Toplam: **36 başarım**, rozetlerden en çok **1530 puan** (etkinlik puanı hariç). Puanlar cüzdana yazılır ve ödüllere harcanabilir ([`rewards.md`](rewards.md)).
 
