@@ -7,11 +7,13 @@ import type {
   Lang,
   MyAchievementsResponse,
   PulseResponse,
+  Reward,
+  WalletResponse,
 } from "@vagabonds/contracts";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { dataSource } from "./active-source";
-import { fetchMyAchievements, fetchMyContributions, useCommunity } from "./community";
+import { fetchMyAchievements, fetchMyContributions, fetchRewards, fetchWallet, useCommunity } from "./community";
 import { DataError } from "./errors";
 import { useRefreshEpoch } from "./offline";
 import type { CityOption } from "./source";
@@ -84,6 +86,19 @@ export function useMyAchievements(): ResourceWithRetry<MyAchievementsResponse | 
   const { user } = useCommunity();
   const key = user === undefined ? null : (user?.id ?? "");
   const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchMyAchievements()), [key]);
+  return useResource(load);
+}
+
+/** The rewards on offer (Ödüllerim); `null` without a server. */
+export function useRewards(): ResourceWithRetry<Reward[] | null> {
+  return useResource(fetchRewards);
+}
+
+/** The visitor's wallet, fetched again for a new session or after `version` changes (a reward taken). */
+export function useWallet(version = 0): ResourceWithRetry<WalletResponse | null> {
+  const { user } = useCommunity();
+  const key = user === undefined ? null : `${user?.id ?? ""}:${version}`;
+  const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchWallet()), [key]);
   return useResource(load);
 }
 
