@@ -7,6 +7,9 @@ export function visibleStatuses(visibility: AssetVisibility): string[] {
   return visibility === "preview" ? ["published", "in_review"] : ["published"];
 }
 
+/** Every status, drafts included: only for the admin panel's preview. */
+export const ALL_ASSET_STATUSES = ["draft", "in_review", "published"];
+
 const labelSelect = { code: true, label_tr: true, label_en: true } as const;
 
 export const summarySelect = {
@@ -180,8 +183,11 @@ export function relationCitationKey(relation: Pick<RelationRecord, "target_asset
   return `${relation.target_asset_id}:${relation.relation_type.code}`;
 }
 
-export function createAssetsRepository(prisma: PrismaClient, visibility: AssetVisibility): AssetsRepository {
-  const statuses = visibleStatuses(visibility);
+export function createAssetsRepository(
+  prisma: PrismaClient,
+  visibility: AssetVisibility,
+  statuses: string[] = visibleStatuses(visibility),
+): AssetsRepository {
 
   return {
     async findMany({ city, type, era, q, bbox, limit, offset }) {

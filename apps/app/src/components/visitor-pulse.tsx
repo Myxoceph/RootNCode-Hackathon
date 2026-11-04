@@ -1,11 +1,11 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetDetail, PulseItem } from "@vagabonds/contracts";
 import { cameraColors, spacing, Text, touchTarget } from "@vagabonds/ui";
-import { Link } from "expo-router";
 import { Pressable, StyleSheet, View } from "react-native";
 
 import { pulseItemsFromTips, usePulse } from "@/data";
 import { formatDate } from "@/lib/format-date";
+import { FrameLink } from "@/lib/in-frame";
 
 const origins: Record<PulseItem["origin"], string> = {
   field_visit: "Saha ziyareti",
@@ -54,7 +54,7 @@ export function VisitorPulse({ asset }: { asset: AssetDetail }) {
       )}
       {pulse.status === "error" && <PulseError onRetry={pulse.retry} />}
 
-      <Link href={{ pathname: "/note", params: { asset: asset.id } }} asChild>
+      <FrameLink href={{ pathname: "/note", params: { asset: asset.id } }}>
         {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
         <Pressable accessibilityRole="link" accessibilityLabel={`${asset.name} için not bırak`} style={styles.leave}>
           <Ionicons name="create-outline" size={22} color={cameraColors.gold} />
@@ -63,7 +63,7 @@ export function VisitorPulse({ asset }: { asset: AssetDetail }) {
           </Text>
           <Ionicons name="chevron-forward" size={18} color={cameraColors.textSecondary} />
         </Pressable>
-      </Link>
+      </FrameLink>
     </View>
   );
 }

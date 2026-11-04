@@ -1,4 +1,6 @@
-import type { Prisma, PrismaClient } from "../../generated/prisma/client.ts";
+import type { AdminAssetRecord } from "@vagabonds/contracts";
+import { Prisma, type PrismaClient } from "../../generated/prisma/client.ts";
+import { assetColumns, recordSelect, writeLists, type AssetRecordRow } from "./asset-record.ts";
 import { PANEL_PREFIX } from "./panel-asset.ts";
 
 const adminUserSelect = {
@@ -26,6 +28,7 @@ const panelAssetSelect = {
 
 export type PanelAssetRecord = Prisma.assetGetPayload<{ select: typeof panelAssetSelect }>;
 
+
 export interface AdminSummary {
   pendingNotes: number;
   pendingPhotos: number;
@@ -50,16 +53,27 @@ export interface AdminRepository {
     era: boolean;
   }>;
   assetExists(id: string): Promise<boolean>;
-  listPanelAssets(): Promise<PanelAssetRecord[]>;
-  /** A panel asset's stored record, or null when the id is not a panel asset. */
-  findPanelAsset(id: string): Promise<{ source_json: Prisma.JsonValue; created_at: Date } | null>;
-  /** Writes the asset row and its one section together. */
-  savePanelAsset(
-    row: Prisma.assetUncheckedCreateInput,
-    section: Prisma.asset_sectionUncheckedCreateInput,
-    mode: "create" | "update",
-  ): Promise<PanelAssetRecord>;
+  /** Every asset, panel and dataset, last changed first. */
+  listAssets(): Promise<PanelAssetRecord[]>;
   deletePanelAsset(id: string): Promise<boolean>;
+  /** Every table row the panel's editor shows, or null for an unknown id. */
+  readRecord(id: string): Promise<AssetRecordRow | null>;
+  /**
+   * Writes a whole record: the asset's columns and its lists, in one transaction. A new asset gets
+   * `prepared_by` and `source_json`; an update rewrites `source_json` only when given (panel assets).
+   */
+  writeRecord(
+    id: string,
+    record: AdminAssetRecord,
+    options: {
+      mode: "create" | "update";
+      /** Who saves it: a published asset needs a reviewer, and this is them when it has none. */
+      reviewer: string;
+      preparedBy?: string;
+      sourceJson?: Prisma.InputJsonObject;
+      todos?: string[];
+    },
+  ): Promise<PanelAssetRecord>;
 }
 
 const isPanelAsset = { prepared_by: { startsWith: PANEL_PREFIX } } satisfies Prisma.assetWhereInput;
@@ -121,26 +135,34 @@ export function createAdminRepository(prisma: PrismaClient): AdminRepository {
       return (await prisma.asset.findUnique({ where: { id }, select: { id: true } })) !== null;
     },
 
-    listPanelAssets() {
-      return prisma.asset.findMany({ where: isPanelAsset, orderBy: { created_at: "desc" }, select: panelAssetSelect });
+    listAssets() {
+      return prisma.asset.findMany({ orderBy: [{ updated_at: "desc" }, { name_tr: "asc" }], select: panelAssetSelect });
     },
 
-    findPanelAsset(id) {
-      return prisma.asset.findFirst({ where: { id, ...isPanelAsset }, select: { source_json: true, created_at: true } });
+
+    async readRecord(id) {
+      const [row, media] = await Promise.all([
+        prisma.asset.findUnique({ where: { id }, select: recordSelect }),
+        prisma.asset_media.findMany({ where: { asset_id: id }, orderBy: [{ sort_order: "asc" }, { media_key: "asc" }] }),
+      ]);
+      return row && { ...row, media };
     },
 
-    savePanelAsset(row, section, mode) {
+    writeRecord(id, record, { mode, reviewer, preparedBy, sourceJson, todos }) {
+      const { waqf_deed, ...columns } = assetColumns(record);
+      const deed = waqf_deed ?? Prisma.DbNull;
       return prisma.$transaction(async (tx) => {
         if (mode === "create") {
-          await tx.asset.create({ data: row });
+          const reviewed_by = record.status === "published" ? reviewer : null;
+          await tx.asset.create({ data: { id, ...columns, waqf_deed: deed, reviewed_by, prepared_by: preparedBy ?? null, todos: todos ?? [], source_json: sourceJson ?? {} } });
         } else {
-          const { id, ...fields } = row;
-          await tx.asset.update({ where: { id }, data: { ...fields, updated_at: new Date() } });
-          await tx.asset_section.deleteMany({ where: { asset_id: id } });
+          const current = await tx.asset.findUniqueOrThrow({ where: { id }, select: { reviewed_by: true } });
+          const reviewed_by = record.status === "published" ? (current.reviewed_by ?? reviewer) : current.reviewed_by;
+          await tx.asset.update({ where: { id }, data: { ...columns, waqf_deed: deed, reviewed_by, ...(sourceJson && { source_json: sourceJson }), updated_at: new Date() } });
         }
-        await tx.asset_section.create({ data: section });
-        return tx.asset.findUniqueOrThrow({ where: { id: row.id }, select: panelAssetSelect });
-      });
+        await writeLists(tx, id, record);
+        return tx.asset.findUniqueOrThrow({ where: { id }, select: panelAssetSelect });
+      }, { timeout: 20_000 });
     },
 
     async deletePanelAsset(id) {

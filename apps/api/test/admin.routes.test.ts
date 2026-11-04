@@ -5,6 +5,7 @@
 import "dotenv/config";
 import { randomUUID } from "node:crypto";
 import {
+  AdminAssetRecordResponseSchema,
   AdminAssetSchema,
   AdminAssetsResponseSchema,
   AdminSummaryResponseSchema,
@@ -47,7 +48,7 @@ describe.skipIf(!DATABASE_URL)("admin panel (PostgreSQL)", () => {
   }
 
   const auth = (token: string) => ({ authorization: `Bearer ${token}` });
-  const call = (method: "GET" | "POST" | "PATCH" | "DELETE", url: string, token: string, payload?: object) =>
+  const call = (method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE", url: string, token: string, payload?: object) =>
     app.inject({ method, url, headers: auth(token), ...(payload && { payload }) });
 
   const newAsset = (overrides: object = {}) => ({
@@ -125,11 +126,16 @@ describe.skipIf(!DATABASE_URL)("admin panel (PostgreSQL)", () => {
     const asset = AdminAssetSchema.parse(created.json());
     expect(asset).toMatchObject({ id: `bursa-osmangazi-panel-cesmesi-${tag}`, status: "draft", createdBy: `admin_${tag}`, type: "Çeşme" });
     expect((await app.inject({ method: "GET", url: `/assets/${asset.id}` })).statusCode).toBe(404);
+    const preview = await call("GET", `/admin/assets/${asset.id}/preview`, admin.token);
+    expect(preview.statusCode, preview.body).toBe(200);
+    expect(AssetDetailSchema.parse(preview.json())).toMatchObject({ id: asset.id, name: `Panel Çeşmesi ${tag}` });
+    expect((await call("GET", `/admin/assets/${asset.id}/preview`, moderator.token)).statusCode).toBe(403);
 
     const stored = await prisma.asset.findUniqueOrThrow({ where: { id: asset.id }, select: { source_json: true } });
     expect(stored.source_json).toMatchObject({ id: asset.id, meta: { prepared_by: `admin:admin_${tag}`, status: "draft" }, location: { region: "marmara" } });
 
     const published = await call("PATCH", `/admin/assets/${asset.id}`, admin.token, { status: "published", coordinates: { lat: 40.19, lng: 29.06 } });
+    expect(published.statusCode, published.body).toBe(200);
     expect(AdminAssetSchema.parse(published.json()).status).toBe("published");
     const detail = AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${asset.id}` })).json());
     expect(detail).toMatchObject({ name: `Panel Çeşmesi ${tag}`, summary: "Mahalle arasında küçük bir çeşme.", coordinates: { lat: 40.19, lng: 29.06 } });
@@ -139,7 +145,7 @@ describe.skipIf(!DATABASE_URL)("admin panel (PostgreSQL)", () => {
     expect(list.items.some((a) => a.id === asset.id)).toBe(true);
   });
 
-  it("rejects unknown codes and taken ids, and leaves dataset assets alone", async () => {
+  it("rejects unknown codes and taken ids, and does not delete dataset assets", async () => {
     const unknown = await call("POST", "/admin/assets", admin.token, newAsset({ name: { tr: `Kod ${tag}` }, type: "uzay-ussu" }));
     expect([unknown.statusCode, unknown.json().error.code]).toEqual([400, "UNKNOWN_CODE"]);
 
@@ -147,9 +153,79 @@ describe.skipIf(!DATABASE_URL)("admin panel (PostgreSQL)", () => {
     const twin = await call("POST", "/admin/assets", admin.token, newAsset({ name: { tr: `İkiz ${tag}` } }));
     expect([twin.statusCode, twin.json().error.code]).toEqual([409, "ASSET_EXISTS"]);
 
-    expect((await call("PATCH", `/admin/assets/${ASSET}`, admin.token, { status: "draft" })).statusCode).toBe(404);
+    expect((await call("PATCH", `/admin/assets/${ASSET}`, admin.token, { type: "uzay-ussu" })).statusCode).toBe(400);
     expect((await call("DELETE", `/admin/assets/${ASSET}`, admin.token)).statusCode).toBe(404);
     expect((await call("POST", "/admin/assets", moderator.token, newAsset({ name: { tr: `Mod ${tag}` } }))).statusCode).toBe(403);
+  });
+
+  it("lists dataset assets and edits one in place, keeping its other sections", async () => {
+    const list = AdminAssetsResponseSchema.parse((await call("GET", "/admin/assets", admin.token)).json());
+    expect(list.items.find((a) => a.id === ASSET)).toMatchObject({ origin: "dataset", status: "published" });
+
+    const getRecord = async () => AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json()).record;
+    const before = await getRecord();
+    const sections = await prisma.asset_section.count({ where: { asset_id: ASSET } });
+    try {
+      const edited = await call("PATCH", `/admin/assets/${ASSET}`, admin.token, { summary: { tr: `Panelden özet ${tag}` }, description: { tr: `Panelden metin ${tag}` } });
+      expect(edited.statusCode, edited.body).toBe(200);
+      expect(AdminAssetSchema.parse(edited.json()).origin).toBe("dataset");
+      const after = await getRecord();
+      expect(after.summary.tr).toBe(`Panelden özet ${tag}`);
+      expect(after.sections[0]!.body.tr).toBe(`Panelden metin ${tag}`);
+      expect(after.sections.slice(1)).toEqual(before.sections.slice(1));
+      expect(await prisma.asset_section.count({ where: { asset_id: ASSET } })).toBe(sections);
+      expect(AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${ASSET}` })).json()).summary).toBe(`Panelden özet ${tag}`);
+    } finally {
+      await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, before);
+    }
+    expect(await getRecord()).toEqual(before);
+  });
+
+  it("reads a dataset asset's whole record and writes it back with changes, keeping sources", async () => {
+    const { record } = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+    const citations = await prisma.source_citation.count({ where: { asset_id: ASSET } });
+    try {
+      const edited = {
+        ...record,
+        subtitle: { tr: `Alt başlık ${tag}`, en: null },
+        timeline: [...record.timeline, { id: `olay-${tag}`, year: 1999, date: null, hijri: null, type: "repair", title: { tr: `Onarım ${tag}`, en: null }, note: null, confidence: "certain" as const }],
+        people: [...record.people, { name: `Usta ${tag}`, role: { tr: "Usta", en: null } }],
+      };
+      const saved = await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, edited);
+      expect(saved.statusCode, saved.body).toBe(200);
+      const detail = AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${ASSET}` })).json());
+      expect(detail.subtitle).toBe(`Alt başlık ${tag}`);
+      expect(detail.timeline.some((e) => e.title === `Onarım ${tag}`)).toBe(true);
+      expect(detail.people.some((p) => p.name === `Usta ${tag}`)).toBe(true);
+      expect(await prisma.source_citation.count({ where: { asset_id: ASSET } })).toBe(citations);
+
+      const bad = await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, { ...record, summary: { tr: " ", en: null } });
+      expect(bad.statusCode).toBe(400);
+      expect((await call("PUT", `/admin/assets/${ASSET}/record`, moderator.token, record)).statusCode).toBe(403);
+    } finally {
+      await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, record);
+    }
+    const restored = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+    expect(restored.record).toEqual(record);
+  });
+
+  it("adds a new asset with its whole record", async () => {
+    const { record: base } = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+    const record = {
+      ...base,
+      status: "draft" as const,
+      name: { tr: `Tam Kayıt ${tag}`, en: null },
+      media: [],
+      facts: [{ key: "yukseklik", label: { tr: "Yükseklik", en: null }, value: "12", unit: "m", note: null, confidence: "certain" as const }],
+    };
+    const created = await call("POST", "/admin/assets/record", admin.token, record);
+    expect(created.statusCode, created.body).toBe(201);
+    const { id, origin, record: stored } = AdminAssetRecordResponseSchema.parse(created.json());
+    expect(origin).toBe("panel");
+    expect(stored.sections.length).toBe(base.sections.length);
+    const preview = AssetDetailSchema.parse((await call("GET", `/admin/assets/${id}/preview`, admin.token)).json());
+    expect(preview.facts[0]).toMatchObject({ label: "Yükseklik", valueNum: 12, unit: "m" });
+    expect((await call("DELETE", `/admin/assets/${id}`, admin.token)).statusCode).toBe(204);
   });
 
   it("deletes a panel asset", async () => {

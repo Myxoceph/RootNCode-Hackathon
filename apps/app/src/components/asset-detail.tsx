@@ -1,14 +1,13 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetDetail, AssetSection, Media } from "@vagabonds/contracts";
 import { cameraColors, fontFamily, palette, radius, SourceNote, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
-import { Link, useNavigation, useRouter, type Href } from "expo-router";
+import { useNavigation, useRouter, type Href } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useMemo, useRef, useState, type ComponentProps, type ReactNode } from "react";
 import {
   Animated,
   Easing,
   Linking,
-  Modal,
   Platform,
   Pressable,
   ScrollView,
@@ -31,6 +30,7 @@ import { CAPSULE_SECONDS, captionAt, capsuleForSoundKey, capsules, formatSeconds
 import { useAssetRelations } from "@/data";
 import { yearOfDating } from "@/lib/dating";
 import { announce } from "@/lib/announce";
+import { Editable, FrameLink, FrameModal, useFrameEditing } from "@/lib/in-frame";
 import { isAssetUnlocked, LOCKED_WARNING, relatedAssetsOf } from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -58,10 +58,12 @@ type Page =
   | { kind: "summary"; key: string; photo: Media | null; text: string }
   | { kind: "figures"; key: string; photo: Media | null; figures: Figure[]; founder: string | null }
   | { kind: "highlight"; key: string; photo: Media | null; number: number; total: number; title: string; hint: string | null; chapter: number }
-  | { kind: "chapter"; key: string; photo: Media | null; chapter: number; title: string; sentence: string }
+  | { kind: "chapter"; key: string; photo: Media | null; chapter: number; id: string; title: string; sentence: string }
   | { kind: "end"; key: string; photo: Media | null };
 
 interface Figure {
+  /** The record's field it shows, for the panel's editor. */
+  field: string;
   value: string;
   unit: string | null;
   label: string;
@@ -74,7 +76,7 @@ interface Figure {
  *
  * Whatever the book says is told, in its own words: "rivayete göre", "muhtemelen".
  */
-export function AssetDetailView({ asset }: { asset: AssetDetail }) {
+export function AssetDetailView({ asset, onClose }: { asset: AssetDetail; /** Replaces going back, e.g. in the admin panel's preview. */ onClose?: () => void }) {
   const router = useRouter();
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
@@ -101,6 +103,7 @@ export function AssetDetailView({ asset }: { asset: AssetDetail }) {
     announce(`Sayfa ${index + 1} / ${pages.length}: ${pageTitle(pages[index]!, asset)}`);
   }, [index, pages, asset]);
   const close = () => {
+    if (onClose) return onClose();
     if (!router.canGoBack()) return router.replace("/monuments");
     // Opened from another tab (the map's cards, the assistant), the card is alone in the Eserler
     // stack: leave the list in its place, so the tab opens on the list next time, then go back.
@@ -224,7 +227,7 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
     .slice(0, STORY_CHAPTERS)
     .forEach(({ chapter, i }) => {
       const title = chapter.title ?? "Tarihçe";
-      pages.push({ kind: "chapter", key: `chapter-${chapter.id}`, photo: photoFor(title), chapter: i, title, sentence: firstSentence(chapter.body) });
+      pages.push({ kind: "chapter", key: `chapter-${chapter.id}`, photo: photoFor(title), chapter: i, id: chapter.id, title, sentence: firstSentence(chapter.body) });
     });
 
   pages.push({ kind: "end", key: "end", photo: gallery[0] ?? null });
@@ -235,13 +238,13 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
 function figuresOf(asset: AssetDetail): Figure[] {
   const figures: Figure[] = [];
   const year = builtYear(asset);
-  if (year) figures.push({ value: year, unit: null, label: "Yapım yılı" });
+  if (year) figures.push({ field: "year", value: year, unit: null, label: "Yapım yılı" });
   for (const fact of asset.facts) {
     if (figures.length === 3) break;
     if (fact.valueNum === null) continue;
     // No thousands dot under 10 000, so a year ("1573") never reads as "1.573".
     const value = fact.valueNum >= 10000 ? fact.valueNum.toLocaleString("tr-TR") : String(fact.valueNum);
-    figures.push({ value, unit: fact.unit, label: fact.label });
+    figures.push({ field: `fact:${fact.key}`, value, unit: fact.unit, label: fact.label });
   }
   return figures;
 }
@@ -338,29 +341,59 @@ function PageView({
 }
 
 function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asset: AssetDetail; onRead: (chapter: number) => void; photos: Media[]; onGallery: () => void }) {
+  const editing = useFrameEditing() !== null;
   switch (page.kind) {
     case "cover": {
-      const meta = [builtYear(asset), `${asset.district}, ${asset.city.label}`].filter(Boolean).join("  ·  ");
+      const year = builtYear(asset);
+      const place = `${asset.district}, ${asset.city.label}`;
       return (
         <>
-          <View style={styles.kicker}>
-            <Text variant="caption" colorValue={ink.onGold} style={styles.bold}>
-              {asset.type.label}
+          <Editable field="type" label="Türü" style={styles.kickerBox}>
+            <View style={styles.kicker}>
+              <Text variant="caption" colorValue={ink.onGold} style={styles.bold}>
+                {asset.type.label}
+              </Text>
+            </View>
+          </Editable>
+          <Editable field="name" label="Adı">
+            <Text headingLevel={1} colorValue={ink.text} style={styles.coverTitle}>
+              {asset.name}
             </Text>
-          </View>
-          <Text headingLevel={1} colorValue={ink.text} style={styles.coverTitle}>
-            {asset.name}
-          </Text>
+          </Editable>
           {asset.subtitle && (
-            <Text variant="bodyLarge" colorValue={ink.soft} style={styles.italic}>
-              {asset.subtitle}
+            <Editable field="subtitle" label="Alt başlık">
+              <Text variant="bodyLarge" colorValue={ink.soft} style={styles.italic}>
+                {asset.subtitle}
+              </Text>
+            </Editable>
+          )}
+          {editing ? (
+            // In the panel's editor the year and the place are picked apart; the app sets them as one line.
+            <View style={styles.metaRow}>
+              {year && (
+                <Editable field="cover:year" label="Yapım yılı">
+                  <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+                    {year}
+                  </Text>
+                </Editable>
+              )}
+              <Editable field="place" label="İlçe ve il">
+                <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+                  {place}
+                </Text>
+              </Editable>
+            </View>
+          ) : (
+            <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+              {[year, place].filter(Boolean).join("  ·  ")}
             </Text>
           )}
-          <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
-            {meta}
-          </Text>
           <View style={styles.coverActions}>
-            {photos.length > 1 && <GalleryButton photos={photos} onPress={onGallery} />}
+            {photos.length > 1 && (
+              <Editable field="media" label="Fotoğraflar">
+                <GalleryButton photos={photos} onPress={onGallery} />
+              </Editable>
+            )}
             <DossierButton asset={asset} />
           </View>
           <RelatedButton asset={asset} />
@@ -370,28 +403,34 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
     }
     case "summary":
       return (
-        <Text colorValue={ink.text} style={styles.statement}>
-          {page.text}
-        </Text>
+        <Editable field="summary" label="Kısa tanıtım">
+          <Text colorValue={ink.text} style={styles.statement}>
+            {page.text}
+          </Text>
+        </Editable>
       );
     case "figures":
       return (
         <View style={styles.figures}>
           {page.figures.map((figure) => (
-            <View key={figure.label} accessible accessibilityLabel={`${figure.label}: ${[figure.value, figure.unit].filter(Boolean).join(" ")}`}>
-              <Text colorValue={ink.gold} style={styles.figureValue}>
-                {figure.value}
-                {figure.unit && <Text colorValue={ink.gold} style={styles.figureUnit}>{` ${figure.unit}`}</Text>}
-              </Text>
-              <Text variant="label" colorValue={ink.soft}>
-                {figure.label}
-              </Text>
-            </View>
+            <Editable key={figure.label} field={figure.field} label={figure.field === "year" ? "Yapım yılı" : `Sayı: ${figure.label}`}>
+              <View accessible accessibilityLabel={`${figure.label}: ${[figure.value, figure.unit].filter(Boolean).join(" ")}`}>
+                <Text colorValue={ink.gold} style={styles.figureValue}>
+                  {figure.value}
+                  {figure.unit && <Text colorValue={ink.gold} style={styles.figureUnit}>{` ${figure.unit}`}</Text>}
+                </Text>
+                <Text variant="label" colorValue={ink.soft}>
+                  {figure.label}
+                </Text>
+              </View>
+            </Editable>
           ))}
           {page.founder && (
-            <Text colorValue={ink.text} style={styles.founder}>
-              {`${page.founder} yaptırdı.`}
-            </Text>
+            <Editable field="founder" label="Kim yaptırdı">
+              <Text colorValue={ink.text} style={styles.founder}>
+                {`${page.founder} yaptırdı.`}
+              </Text>
+            </Editable>
           )}
         </View>
       );
@@ -401,13 +440,17 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
           <Text variant="overline" colorValue={ink.gold}>
             {`YERİNDE BAKIN · ${page.number}/${page.total}`}
           </Text>
-          <Text colorValue={ink.text} style={styles.pageTitle} headingLevel={2}>
-            {page.title}
-          </Text>
-          {page.hint && (
-            <Text variant="bodyLarge" colorValue={ink.soft}>
-              {page.hint}
+          <Editable field={`highlight:${page.number - 1}:title`} label="Bakılacak yer: ne?">
+            <Text colorValue={ink.text} style={styles.pageTitle} headingLevel={2}>
+              {page.title}
             </Text>
+          </Editable>
+          {page.hint && (
+            <Editable field={`highlight:${page.number - 1}:hint`} label="Bakılacak yer: nerede?">
+              <Text variant="bodyLarge" colorValue={ink.soft}>
+                {page.hint}
+              </Text>
+            </Editable>
           )}
           {page.chapter >= 0 && <ReadMore title={page.title} onPress={() => onRead(page.chapter)} />}
         </>
@@ -416,12 +459,16 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
       return (
         <>
           {/* Drawn in capitals, read as written: some readers spell out a word in capitals. */}
-          <Text variant="overline" colorValue={ink.gold} headingLevel={2} accessibilityLabel={page.title}>
-            {page.title.toLocaleUpperCase("tr")}
-          </Text>
-          <Text colorValue={ink.text} style={styles.statement}>
-            {page.sentence}
-          </Text>
+          <Editable field={`section:${page.id}:title`} label="Konunun başlığı">
+            <Text variant="overline" colorValue={ink.gold} headingLevel={2} accessibilityLabel={page.title}>
+              {page.title.toLocaleUpperCase("tr")}
+            </Text>
+          </Editable>
+          <Editable field={`section:${page.id}:body`} label="Konunun metni">
+            <Text colorValue={ink.text} style={styles.statement}>
+              {page.sentence}
+            </Text>
+          </Editable>
           <ReadMore title={page.title} onPress={() => onRead(page.chapter)} />
         </>
       );
@@ -479,7 +526,7 @@ function GalleryButton({ photos, onPress }: { photos: Media[]; onPress: () => vo
 /** The way to everything the book says; the same on the first page and at the very end of the last. */
 function DossierButton({ asset, wide = false }: { asset: AssetDetail; wide?: boolean }) {
   return (
-    <Link href={{ pathname: "/dossier", params: { asset: asset.id } }} asChild>
+    <FrameLink href={{ pathname: "/dossier", params: { asset: asset.id } }}>
       {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
       <Pressable accessibilityRole="link" accessibilityLabel="Eserin dosyası: kitaptaki her şey" style={wide ? styles.dossierWide : styles.dossier}>
         <Ionicons name="document-text-outline" size={wide ? 20 : 18} color={ink.gold} />
@@ -488,7 +535,7 @@ function DossierButton({ asset, wide = false }: { asset: AssetDetail; wide?: boo
         </Text>
         {wide && <Ionicons name="chevron-forward" size={18} color={ink.gold} />}
       </Pressable>
-    </Link>
+    </FrameLink>
   );
 }
 
@@ -536,12 +583,12 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
     );
   }
   return (
-    <Link href={{ pathname: "/related", params: { asset: asset.id, name: asset.name } }} asChild>
+    <FrameLink href={{ pathname: "/related", params: { asset: asset.id, name: asset.name } }}>
       {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
       <Pressable accessibilityRole="link" accessibilityLabel={entries ? `Bu eserin ilişkili olduğu eserler listesi, ${entries.length} eser` : "Bu eserin ilişkili olduğu eserler listesi"} style={styles.related}>
         {inside}
       </Pressable>
-    </Link>
+    </FrameLink>
   );
 }
 
@@ -638,16 +685,24 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
           <Text variant="overline" colorValue={ink.gold}>
             KEŞFE ÇIK
           </Text>
-          <Text headingLevel={2} colorValue={ink.text} style={styles.inviteTitle}>
-            {asset.name}
-          </Text>
-          <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
-            {meta}
-          </Text>
-          {asset.visit.notes && (
-            <Text variant="caption" colorValue={ink.soft}>
-              {asset.visit.notes}
+          <Editable field="name" label="Adı">
+            <Text headingLevel={2} colorValue={ink.text} style={styles.inviteTitle}>
+              {asset.name}
             </Text>
+          </Editable>
+          {meta !== "" && (
+            <Editable field="visit" label="Süre ve giriş">
+              <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+                {meta}
+              </Text>
+            </Editable>
+          )}
+          {asset.visit.notes && (
+            <Editable field="visit:notes" label="Ziyaret notu">
+              <Text variant="caption" colorValue={ink.soft}>
+                {asset.visit.notes}
+              </Text>
+            </Editable>
           )}
           {coords && (
             <Pressable
@@ -664,8 +719,12 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
           )}
         </View>
 
-        <Experiences asset={asset} />
-        <VisitorPulse asset={asset} />
+        <Editable field="audio" label="Sesli anlatım ve ortam sesi">
+          <Experiences asset={asset} />
+        </Editable>
+        <Editable field="tip" label="İpuçları">
+          <VisitorPulse asset={asset} />
+        </Editable>
 
         <Pressable accessibilityRole="button" onPress={onTop} style={({ pressed }) => [styles.replay, pressed && styles.pressed]}>
           <Ionicons name="arrow-up" size={14} color={ink.soft} />
@@ -766,12 +825,12 @@ function Row({ action, live }: { action: Action; live: boolean }) {
   );
   if (action.href) {
     return (
-      <Link href={action.href} asChild>
+      <FrameLink href={action.href}>
         {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
         <Pressable accessibilityRole="link" accessibilityLabel={action.spoken} style={styles.row}>
           {content}
         </Pressable>
-      </Link>
+      </FrameLink>
     );
   }
   return (
@@ -792,7 +851,7 @@ function Reader({ chapters, index, onChange, assetName }: { chapters: AssetSecti
   const close = () => onChange(null);
 
   return (
-    <Modal visible={!!chapter} animationType="slide" presentationStyle="fullScreen" onRequestClose={close}>
+    <FrameModal visible={!!chapter} animationType="slide" presentationStyle="fullScreen" onRequestClose={close}>
       {chapter && index !== null && (
         <View style={[styles.flex, { backgroundColor: c.background, paddingTop: insets.top }]}>
           <View style={styles.readerBar}>
@@ -839,7 +898,7 @@ function Reader({ chapters, index, onChange, assetName }: { chapters: AssetSecti
           </ScrollView>
         </View>
       )}
-    </Modal>
+    </FrameModal>
   );
 }
 
@@ -946,6 +1005,14 @@ const styles = StyleSheet.create({
     maxWidth: 640 + spacing.xl * 2,
     width: "100%",
     alignSelf: "center",
+  },
+  kickerBox: {
+    alignSelf: "flex-start",
+  },
+  metaRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.md,
   },
   kicker: {
     alignSelf: "flex-start",

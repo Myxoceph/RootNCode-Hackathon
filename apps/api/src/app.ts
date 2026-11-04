@@ -7,12 +7,12 @@ import { createAdminRepository } from "./modules/admin/admin.repository.ts";
 import { createRewardsRepository } from "./modules/rewards/rewards.repository.ts";
 import { rewardsRoutes } from "./modules/rewards/rewards.routes.ts";
 import { adminRoutes } from "./modules/admin/admin.routes.ts";
-import { assetsRoutes } from "./modules/assets/assets.routes.ts";
+import { adminAssetPreviewRoutes, assetsRoutes } from "./modules/assets/assets.routes.ts";
 import type { ChatModel } from "./modules/assistant/assistant.model.ts";
 import { createAssistantRepository } from "./modules/assistant/assistant.repository.ts";
 import { assistantRoutes } from "./modules/assistant/assistant.routes.ts";
 import { createConversationsRepository } from "./modules/assistant/conversations.repository.ts";
-import { createAssetsRepository, visibleStatuses, type AssetVisibility } from "./modules/assets/assets.repository.ts";
+import { ALL_ASSET_STATUSES, createAssetsRepository, visibleStatuses, type AssetVisibility } from "./modules/assets/assets.repository.ts";
 import { createCommunityRepository } from "./modules/community/community.repository.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
 import { moderationRoutes } from "./modules/community/moderation.routes.ts";
@@ -123,6 +123,12 @@ export function buildApp({
   app.register(communityRoutes, { repository: communityRepository, visibility: assetVisibility, photoUrls });
   app.register(moderationRoutes, { repository: communityRepository, photoUrls });
   app.register(adminRoutes, { repository: createAdminRepository(prisma), community: communityRepository });
+  app.register(adminAssetPreviewRoutes, {
+    repository: createAssetsRepository(prisma, assetVisibility, ALL_ASSET_STATUSES),
+    sounds: soundsRepository,
+    mediaBaseUrl,
+    community: communityRepository,
+  });
   app.register(achievementsRoutes, {
     repository: createAchievementsRepository(prisma, visibleStatuses(assetVisibility)),
     community: communityRepository,

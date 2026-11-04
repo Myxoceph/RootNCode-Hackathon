@@ -22,7 +22,10 @@ import { toSoundRecording } from "../sounds/sounds.mapper.ts";
 import type { SoundsRepository } from "../sounds/sounds.repository.ts";
 import { ambientKeyOf, toAssetDetail, toAssetRelation, toAssetSummary, toCoordinates, toOutsideRelation, type MapperContext } from "./assets.mapper.ts";
 import { boundingBox, distanceMeters, selectRelations } from "./assets.network.ts";
+import type { CommunityRepository } from "../community/community.repository.ts";
+import { requireUser } from "../community/auth.ts";
 import {
+  ALL_ASSET_STATUSES,
   visibleStatuses,
   type AssetSummaryRecord,
   type AssetsRepository,
@@ -100,6 +103,52 @@ export interface AssetsRoutesOptions {
   sounds: SoundsRepository;
 }
 
+/** An asset's page, as `GET /assets/:id` serves it, from a repository that sees `statuses`. */
+async function assetDetail(
+  id: string,
+  lang: Lang,
+  { repository, sounds, mediaBaseUrl, statuses }: { repository: AssetsRepository; sounds: SoundsRepository; mediaBaseUrl: string; statuses: string[] },
+): Promise<AssetDetail> {
+  const record = await repository.findById(id);
+  if (!record) throw notFound(id);
+  const soundKey = ambientKeyOf(record);
+  const [media, secondaryTypes, sound] = await Promise.all([
+    repository.findMedia([record.id]),
+    repository.findAssetTypes(record.secondary_types),
+    soundKey ? sounds.findByKey(soundKey) : null,
+  ]);
+  const recording = sound && toSoundRecording(sound, mediaBaseUrl, lang);
+  return AssetDetailSchema.parse(toAssetDetail(record, media, secondaryTypes, { lang, mediaBaseUrl, statuses }, recording));
+}
+
+export interface AdminAssetPreviewOptions {
+  /** A repository made with `ALL_ASSET_STATUSES`, so drafts are found too. */
+  repository: AssetsRepository;
+  sounds: SoundsRepository;
+  mediaBaseUrl: string;
+  community: CommunityRepository;
+}
+
+/** `GET /admin/assets/:id/preview`: the asset's page as the app would show it, drafts included; admins only. */
+export const adminAssetPreviewRoutes: FastifyPluginAsync<AdminAssetPreviewOptions> = async (app, { repository, sounds, mediaBaseUrl, community }) => {
+  const errorSchema = toOpenApiSchema(ErrorResponseSchema);
+  app.get("/admin/assets/:id/preview", {
+    schema: {
+      tags: ["moderation"],
+      summary: "Eserin uygulamadaki sayfası (taslaklar dahil), panelin önizlemesi için",
+      security: [{ bearerAuth: [] }],
+      params: toOpenApiSchema(DetailParamsSchema, "input"),
+      querystring: toOpenApiSchema(DetailQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(AssetDetailSchema), 400: errorSchema, 401: errorSchema, 403: errorSchema, 404: errorSchema },
+    },
+  }, async (request, reply): Promise<AssetDetail> => {
+    await requireUser(request, community, "admin");
+    const { id, query } = parseAssetRequest(request, DetailQuerySchema);
+    reply.header("cache-control", "no-store");
+    return assetDetail(id, requestLang(request, query.lang), { repository, sounds, mediaBaseUrl, statuses: ALL_ASSET_STATUSES });
+  });
+};
+
 export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
   app,
   { repository, mediaBaseUrl, visibility, sounds },
@@ -148,18 +197,9 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
     const { id, query } = parseAssetRequest(request, DetailQuerySchema);
     const lang = requestLang(request, query.lang);
 
-    const record = await repository.findById(id);
-    if (!record) throw notFound(id);
-    const soundKey = ambientKeyOf(record);
-    const [media, secondaryTypes, sound] = await Promise.all([
-      repository.findMedia([record.id]),
-      repository.findAssetTypes(record.secondary_types),
-      soundKey ? sounds.findByKey(soundKey) : null,
-    ]);
-
+    const detail = await assetDetail(id, lang, { repository, sounds, mediaBaseUrl, statuses });
     setLanguageHeaders(reply, lang);
-    const recording = sound && toSoundRecording(sound, mediaBaseUrl, lang);
-    return AssetDetailSchema.parse(toAssetDetail(record, media, secondaryTypes, context(lang), recording));
+    return detail;
   });
 
   app.get("/assets/:id/relations", {

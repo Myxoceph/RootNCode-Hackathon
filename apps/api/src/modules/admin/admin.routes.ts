@@ -1,5 +1,7 @@
 import {
   AdminAssetInputSchema,
+  AdminAssetRecordInputSchema,
+  AdminAssetRecordResponseSchema,
   AdminAssetPatchSchema,
   AdminAssetSchema,
   AdminAssetsResponseSchema,
@@ -11,6 +13,8 @@ import {
   SetUserRoleRequestSchema,
   UserRoleSchema,
   type AdminAsset,
+  type AdminAssetRecord,
+  type AdminAssetRecordResponse,
   type AdminAssetsResponse,
   type AdminSummaryResponse,
   type AdminUser,
@@ -26,15 +30,8 @@ import { requireUser } from "../community/auth.ts";
 import type { CommunityRepository } from "../community/community.repository.ts";
 import { turkeyToday } from "../planner/planner.routes.ts";
 import type { AdminRepository, AdminUserRecord, PanelAssetRecord } from "./admin.repository.ts";
-import {
-  PANEL_PREFIX,
-  panelAssetId,
-  panelAssetInputOf,
-  panelAssetJson,
-  panelAssetRow,
-  panelAssetSection,
-  type PanelAssetInput,
-} from "./panel-asset.ts";
+import { datasetJson, toAssetRecord } from "./asset-record.ts";
+import { applyPatch, PANEL_PREFIX, PANEL_TODO, panelAssetId, recordFromInput } from "./panel-asset.ts";
 
 const UsersQuerySchema = z.object({
   q: z.string().trim().min(1).max(40).optional().describe("Takma ad ya da kullanıcı adında geçen"),
@@ -46,6 +43,8 @@ const UserParamsSchema = z.object({ id: z.uuid() });
 const AssetParamsSchema = z.object({ id: AssetIdSchema });
 
 const bearer = [{ bearerAuth: [] }];
+/** A whole asset record: Ulucami's, the longest in the dataset, is about 120 KB. */
+const RECORD_BODY_LIMIT = 2 * 1024 * 1024;
 
 function toAdminUser(record: AdminUserRecord): AdminUser {
   return {
@@ -59,7 +58,10 @@ function toAdminUser(record: AdminUserRecord): AdminUser {
   };
 }
 
+const isPanel = (preparedBy: string | null) => preparedBy?.startsWith(PANEL_PREFIX) ?? false;
+
 function toAdminAsset(record: PanelAssetRecord): AdminAsset {
+  const panel = isPanel(record.prepared_by);
   return AdminAssetSchema.parse({
     id: record.id,
     name: record.name_tr,
@@ -67,13 +69,15 @@ function toAdminAsset(record: PanelAssetRecord): AdminAsset {
     city: record.city.label_tr,
     district: record.district,
     status: record.status,
-    createdBy: (record.prepared_by ?? "").slice(PANEL_PREFIX.length),
+    origin: panel ? "panel" : "dataset",
+    createdBy: panel ? record.prepared_by!.slice(PANEL_PREFIX.length) : record.prepared_by || "veri seti",
     updatedAt: record.updated_at.toISOString(),
   });
 }
 
+
 const userNotFound = () => new HttpError(404, "USER_NOT_FOUND", "User not found");
-const assetNotFound = (id: string) => new HttpError(404, "ASSET_NOT_FOUND", `No asset "${id}" was added from the panel`);
+const assetNotFound = (id: string) => new HttpError(404, "ASSET_NOT_FOUND", `No asset "${id}"`);
 
 export interface AdminRoutesOptions {
   repository: AdminRepository;
@@ -87,7 +91,7 @@ export const adminRoutes: FastifyPluginAsync<AdminRoutesOptions> = async (app, {
   const denied = { 401: errorSchema, 403: errorSchema };
 
   /** Checks the codes and returns the city's region, which the stored record needs. */
-  async function regionFor(input: PanelAssetInput): Promise<string> {
+  async function regionFor(input: { type: string; city: string; era?: string | null }): Promise<string> {
     const codes = await repository.findCodes({ type: input.type, city: input.city, era: input.era ?? null });
     const unknown = [
       !codes.type && `type "${input.type}"`,
@@ -100,11 +104,34 @@ export const adminRoutes: FastifyPluginAsync<AdminRoutesOptions> = async (app, {
     return codes.region;
   }
 
-  /** Builds and writes the asset; an update keeps the id it was created with. */
-  async function save(id: string, input: PanelAssetInput, username: string, createdAt: string, mode: "create" | "update") {
-    const region = await regionFor(input);
-    const json = panelAssetJson(id, input, { region, username, createdAt, today: turkeyToday() });
-    return repository.savePanelAsset(panelAssetRow(id, input, json, username), panelAssetSection(id, input), mode);
+  /**
+   * Writes a whole record after checking its codes. A panel asset's `source_json` is rebuilt as a
+   * dataset file; a dataset asset keeps its own, which the next import restores it from.
+   */
+  async function saveRecord(id: string, record: AdminAssetRecord, username: string, target: { mode: "create" } | { mode: "update"; preparedBy: string | null; createdAt: Date }) {
+    const region = await regionFor(record);
+    const panel = target.mode === "create" || (target.preparedBy?.startsWith(PANEL_PREFIX) ?? false);
+    const createdAt = (target.mode === "create" ? new Date() : target.createdAt).toISOString().slice(0, 10);
+    const todos = [PANEL_TODO];
+    const sourceJson = panel ? datasetJson(id, record, { region, username, createdAt, today: turkeyToday(), todos }) : undefined;
+    try {
+      return await repository.writeRecord(id, record, {
+        mode: target.mode,
+        reviewer: username,
+        ...(sourceJson && { sourceJson }),
+        ...(target.mode === "create" && { preparedBy: `${PANEL_PREFIX}${username}`, todos }),
+      });
+    } catch (error) {
+      // A code no table knows: a timeline event type or the complex's id.
+      if ((error as { code?: string }).code === "P2003") throw new HttpError(400, "UNKNOWN_CODE", "A code or the complex id is unknown; see GET /meta/enums");
+      throw error;
+    }
+  }
+
+  async function recordResponse(id: string): Promise<AdminAssetRecordResponse> {
+    const row = await repository.readRecord(id);
+    if (!row) throw assetNotFound(id);
+    return AdminAssetRecordResponseSchema.parse({ id, origin: isPanel(row.prepared_by) ? "panel" : "dataset", record: toAssetRecord(row) });
   }
 
   app.get("/admin/summary", {
@@ -186,14 +213,14 @@ export const adminRoutes: FastifyPluginAsync<AdminRoutesOptions> = async (app, {
   app.get("/admin/assets", {
     schema: {
       tags: ["moderation"],
-      summary: "Panelden eklenen eserler (taslak ve yayında)",
+      summary: "Tüm eserler: panelden eklenenler ve veri setindekiler",
       security: bearer,
       response: { 200: toOpenApiSchema(AdminAssetsResponseSchema), ...denied },
     },
   }, async (request, reply): Promise<AdminAssetsResponse> => {
     await requireUser(request, community, "admin");
     reply.header("cache-control", "no-store");
-    return AdminAssetsResponseSchema.parse({ items: (await repository.listPanelAssets()).map(toAdminAsset) });
+    return AdminAssetsResponseSchema.parse({ items: (await repository.listAssets()).map(toAdminAsset) });
   });
 
   app.post("/admin/assets", {
@@ -210,15 +237,69 @@ export const adminRoutes: FastifyPluginAsync<AdminRoutesOptions> = async (app, {
     const id = panelAssetId(input);
     if (await repository.assetExists(id)) throw new HttpError(409, "ASSET_EXISTS", `An asset "${id}" already exists`);
 
-    const saved = await save(id, input, admin.username ?? admin.nickname, turkeyToday(), "create");
+    const saved = await saveRecord(id, recordFromInput(input), admin.username ?? admin.nickname, { mode: "create" });
     reply.code(201);
     return toAdminAsset(saved);
+  });
+
+  app.post("/admin/assets/record", {
+    bodyLimit: RECORD_BODY_LIMIT,
+    schema: {
+      tags: ["moderation"],
+      summary: "Yeni eseri bütün bilgileriyle ekle (yalnızca admin); id adından ve ilçeden üretilir",
+      security: bearer,
+      body: toOpenApiSchema(AdminAssetRecordInputSchema, "input"),
+      response: { 201: toOpenApiSchema(AdminAssetRecordResponseSchema), 400: errorSchema, 409: errorSchema, ...denied },
+    },
+  }, async (request, reply): Promise<AdminAssetRecordResponse> => {
+    const admin = await requireUser(request, community, "admin");
+    const record = parseWith(AdminAssetRecordInputSchema, request.body, "INVALID_BODY");
+    const id = panelAssetId(record);
+    if (!id || (await repository.assetExists(id))) throw new HttpError(409, "ASSET_EXISTS", `An asset "${id}" already exists`);
+    await saveRecord(id, { ...record, media: [] }, admin.username ?? admin.nickname, { mode: "create" });
+    reply.code(201);
+    return recordResponse(id);
+  });
+
+  app.get("/admin/assets/:id/record", {
+    schema: {
+      tags: ["moderation"],
+      summary: "Eserin bütün bilgileri, paneldeki düzenleyici için",
+      security: bearer,
+      params: toOpenApiSchema(AssetParamsSchema, "input"),
+      response: { 200: toOpenApiSchema(AdminAssetRecordResponseSchema), 400: errorSchema, 404: errorSchema, ...denied },
+    },
+  }, async (request, reply): Promise<AdminAssetRecordResponse> => {
+    await requireUser(request, community, "admin");
+    const { id } = parseWith(AssetParamsSchema, request.params, "INVALID_ID");
+    reply.header("cache-control", "no-store");
+    return recordResponse(id);
+  });
+
+  app.put("/admin/assets/:id/record", {
+    bodyLimit: RECORD_BODY_LIMIT,
+    schema: {
+      tags: ["moderation"],
+      summary: "Eserin bütün bilgilerini kaydet; veri setindeki eserde bir sonraki içe aktarmada data/'daki hâline döner",
+      security: bearer,
+      params: toOpenApiSchema(AssetParamsSchema, "input"),
+      body: toOpenApiSchema(AdminAssetRecordInputSchema, "input"),
+      response: { 200: toOpenApiSchema(AdminAssetRecordResponseSchema), 400: errorSchema, 404: errorSchema, ...denied },
+    },
+  }, async (request): Promise<AdminAssetRecordResponse> => {
+    const admin = await requireUser(request, community, "admin");
+    const { id } = parseWith(AssetParamsSchema, request.params, "INVALID_ID");
+    const record = parseWith(AdminAssetRecordInputSchema, request.body, "INVALID_BODY");
+    const current = await repository.readRecord(id);
+    if (!current) throw assetNotFound(id);
+    await saveRecord(id, record, admin.username ?? admin.nickname, { mode: "update", preparedBy: current.prepared_by, createdAt: current.created_at });
+    return recordResponse(id);
   });
 
   app.patch("/admin/assets/:id", {
     schema: {
       tags: ["moderation"],
-      summary: "Panelden eklenen eseri düzenle ya da yayına al (veri setindeki eserler data/'da düzenlenir)",
+      summary: "Eseri düzenle ya da yayına al; veri setindeki eserde değişiklik bir sonraki içe aktarmada data/'daki hâline döner",
       security: bearer,
       params: toOpenApiSchema(AssetParamsSchema, "input"),
       body: toOpenApiSchema(AdminAssetPatchSchema, "input"),
@@ -228,13 +309,11 @@ export const adminRoutes: FastifyPluginAsync<AdminRoutesOptions> = async (app, {
     const admin = await requireUser(request, community, "admin");
     const { id } = parseWith(AssetParamsSchema, request.params, "INVALID_ID");
     const patch = parseWith(AdminAssetPatchSchema, request.body, "INVALID_BODY");
-    const existing = await repository.findPanelAsset(id);
-    if (!existing) throw assetNotFound(id);
-
+    const current = await repository.readRecord(id);
+    if (!current) throw assetNotFound(id);
     // The id stays as created, even when the name or district changes, so links to it keep working.
-    const input: PanelAssetInput = { ...panelAssetInputOf(existing.source_json), ...patch };
-    const createdAt = existing.created_at.toISOString().slice(0, 10);
-    return toAdminAsset(await save(id, input, admin.username ?? admin.nickname, createdAt, "update"));
+    const record = applyPatch(toAssetRecord(current), patch);
+    return toAdminAsset(await saveRecord(id, record, admin.username ?? admin.nickname, { mode: "update", preparedBy: current.prepared_by, createdAt: current.created_at }));
   });
 
   app.delete("/admin/assets/:id", {
