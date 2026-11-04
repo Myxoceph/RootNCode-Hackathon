@@ -16,8 +16,9 @@ export { usePanel, type PanelRole };
 
 /**
  * The admin panel's frame: one big rounded white frame on a soft backdrop, with the side bar (the
- * sections as pills, the signed-in person and the theme switch) and the page inside it. Narrow
- * screens get the sections as a strip along the top instead.
+ * sections as pills, the signed-in person and the theme switch) and the page inside it. The side
+ * bar folds to a rail of icons for more room, and stays so on this browser. Narrow screens get the
+ * sections as a strip along the top instead.
  * Only moderators and admins get in; anyone else gets the sign-in screen.
  */
 
@@ -32,6 +33,26 @@ const SECTIONS: Array<{ href: Href; path: string; icon: IconName; label: string;
 ];
 
 const GOLD = palette.altin300;
+const FOLDED_KEY = "vagabonds-admin-menu-folded";
+
+/** Whether the side bar is folded, remembered on this browser when it can be. */
+function useFolded() {
+  const [folded, setFolded] = useState(() => {
+    try {
+      return globalThis.localStorage?.getItem(FOLDED_KEY) === "1";
+    } catch {
+      return false;
+    }
+  });
+  const toggle = () =>
+    setFolded((was) => {
+      try {
+        globalThis.localStorage?.setItem(FOLDED_KEY, was ? "0" : "1");
+      } catch {}
+      return !was;
+    });
+  return [folded, toggle] as const;
+}
 
 export function AdminShell({ children }: { children: ReactNode }) {
   const { user } = useCommunity();
@@ -40,6 +61,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
   const wide = width >= 960;
   const [pending, setPending] = useState<number | null>(null);
   const [round, setRound] = useState(0);
+  const [folded, toggleFolded] = useFolded();
   const role = user?.role === "admin" || user?.role === "moderator" ? user.role : null;
 
   useEffect(() => {
@@ -62,7 +84,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
     <Panel.Provider value={context}>
       <View style={[styles.fill, { backgroundColor: wide ? a.page : a.frame, padding: wide ? 16 : 0 }]}>
         <View style={[styles.fill, wide && styles.frame, { flexDirection: wide ? "row" : "column", backgroundColor: a.frame }]}>
-          {wide ? <SideBar name={user.nickname} username={user.username} role={role} pending={pending} /> : <TopStrip role={role} pending={pending} />}
+          {wide ? <SideBar name={user.nickname} username={user.username} role={role} pending={pending} folded={folded} onFold={toggleFolded} /> : <TopStrip role={role} pending={pending} />}
           <View style={styles.fill}>{children}</View>
         </View>
       </View>
@@ -83,15 +105,57 @@ function useActive() {
   return (path: string) => (path === "/admin" ? pathname === "/admin" || pathname === "/admin/" : pathname.startsWith(path));
 }
 
-function SideBar({ name, username, role, pending }: { name: string; username: string; role: PanelRole; pending: number | null }) {
+function SideBar({ name, username, role, pending, folded, onFold }: { name: string; username: string; role: PanelRole; pending: number | null; folded: boolean; onFold: () => void }) {
   const router = useRouter();
   const active = useActive();
   const a = useAdminColors();
+  const fold = (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={folded ? "Menüyü aç" : "Menüyü gizle"}
+      onPress={onFold}
+      style={(state) => [styles.iconButton, (state as { hovered?: boolean }).hovered && { backgroundColor: a.hover }]}
+    >
+      <Ionicons name={folded ? "chevron-forward" : "chevron-back"} size={17} color={a.textSecondary} aria-hidden />
+    </Pressable>
+  );
+  if (folded) {
+    return (
+      <View style={[styles.side, styles.rail]}>
+        <BrandMark />
+        {fold}
+        <ScrollView style={{ flex: 1, alignSelf: "stretch" }} contentContainerStyle={{ gap: 4, paddingTop: 10, alignItems: "center" }}>
+          {SECTIONS.filter((section) => role === "admin" || !section.adminOnly).map((section) => (
+            <SideLink
+              key={section.path}
+              icon={section.icon}
+              label={section.label}
+              active={active(section.path)}
+              count={section.counted ? pending : null}
+              onPress={() => router.push(section.href)}
+              folded
+            />
+          ))}
+        </ScrollView>
+        <Avatar name={name} size={40} />
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Çıkış yap"
+          onPress={() => void logout()}
+          style={(state) => [styles.iconButton, (state as { hovered?: boolean }).hovered && { backgroundColor: a.hover }]}
+        >
+          <Ionicons name="log-out-outline" size={18} color={a.textSecondary} aria-hidden />
+        </Pressable>
+        <ThemeSwitch folded />
+      </View>
+    );
+  }
   return (
     <View style={styles.side}>
       <View style={styles.brand}>
         <BrandMark />
-        <Text style={styles.brandName}>Vagabonds</Text>
+        <Text style={[styles.brandName, { flex: 1 }]}>Vagabonds</Text>
+        {fold}
       </View>
       <ScrollView style={{ flex: 1 }} contentContainerStyle={{ gap: 4, paddingTop: 22 }}>
         {SECTIONS.filter((section) => role === "admin" || !section.adminOnly).map((section) => (
@@ -132,9 +196,21 @@ function SideBar({ name, username, role, pending }: { name: string; username: st
 }
 
 /** Light and Dark, as two halves of a pill; the picked half is dark. */
-function ThemeSwitch() {
+function ThemeSwitch({ folded }: { folded?: boolean }) {
   const a = useAdminColors();
   const { setThemePreference } = useA11ySettings();
+  if (folded) {
+    return (
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={a.dark ? "Açık temaya geç" : "Koyu temaya geç"}
+        onPress={() => setThemePreference(a.dark ? "light" : "dark")}
+        style={[styles.themeOne, { backgroundColor: a.card }]}
+      >
+        <Ionicons name={a.dark ? "moon-outline" : "sunny-outline"} size={16} color={a.text} aria-hidden />
+      </Pressable>
+    );
+  }
   const options = [
     { scheme: "light" as const, label: "Açık", icon: "sunny-outline" as IconName },
     { scheme: "dark" as const, label: "Koyu", icon: "moon-outline" as IconName },
@@ -162,8 +238,24 @@ function ThemeSwitch() {
   );
 }
 
-function SideLink({ icon, label, active, count, onPress }: { icon: IconName; label: string; active: boolean; count?: number | null; onPress: () => void }) {
+function SideLink({ icon, label, active, count, onPress, folded }: { icon: IconName; label: string; active: boolean; count?: number | null; onPress: () => void; folded?: boolean }) {
   const a = useAdminColors();
+  if (folded) {
+    return (
+      <Pressable
+        accessibilityRole="link"
+        accessibilityState={{ selected: active }}
+        accessibilityLabel={count ? `${label}, ${count} bekleyen` : label}
+        onPress={onPress}
+        // @ts-expect-error: react-native-web shows the name on hover.
+        title={label}
+        style={(state) => [styles.railLink, active && { backgroundColor: a.accent }, !active && (state as { hovered?: boolean }).hovered && { backgroundColor: a.hover }]}
+      >
+        <Ionicons name={active ? (icon.replace("-outline", "") as IconName) : icon} size={19} color={active ? a.onAccent : a.text} aria-hidden />
+        {!!count && <View style={[styles.railDot, { backgroundColor: active ? a.onAccent : a.accent, borderColor: a.frame }]} />}
+      </Pressable>
+    );
+  }
   return (
     <Pressable
       accessibilityRole="link"
@@ -360,6 +452,10 @@ const styles = StyleSheet.create({
   brandName: { fontFamily: fontFamily.sansBold, fontSize: 19, lineHeight: 24, letterSpacing: -0.4 },
   frame: { borderRadius: 28, overflow: "hidden" },
   side: { width: 236, paddingHorizontal: 18, paddingVertical: 24 },
+  rail: { width: 76, paddingHorizontal: 0, alignItems: "center", gap: 10 },
+  railLink: { width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center" },
+  railDot: { position: "absolute", top: 8, right: 8, width: 10, height: 10, borderRadius: 5, borderWidth: 2 },
+  themeOne: { width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center" },
   link: { flexDirection: "row", alignItems: "center", gap: 12, height: 44, paddingHorizontal: 16, borderRadius: 999 },
   linkText: { flex: 1, fontFamily: fontFamily.sansMedium, fontSize: 14 },
   count: { minWidth: 22, height: 22, borderRadius: 11, paddingHorizontal: 6, alignItems: "center", justifyContent: "center" },
