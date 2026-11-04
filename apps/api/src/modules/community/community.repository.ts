@@ -7,6 +7,9 @@ const userSelect = {
   role: true,
   created_at: true,
   banned_at: true,
+  email: true,
+  full_name: true,
+  avatar: { select: { sha256: true } },
 } satisfies Prisma.app_userSelect;
 
 export type UserRecord = Prisma.app_userGetPayload<{ select: typeof userSelect }>;
@@ -89,12 +92,28 @@ export interface NewUser {
   /** The first session's token hash. */
   tokenHash: string;
   /** Both or neither: an account, or an anonymous visitor. */
-  credentials?: { username: string; passwordHash: string };
+  credentials?: Credentials;
+  fullName?: string | null;
+}
+
+export interface Credentials {
+  username: string;
+  passwordHash: string;
+  /** Required at sign-up; null only for staff accounts made with `account:create`. */
+  email: string | null;
+}
+
+/** Which unique field an account already holds. */
+export type TakenField = "username_taken" | "email_taken";
+
+export interface AvatarFile {
+  contentType: string;
+  bytes: Uint8Array;
 }
 
 export interface CommunityRepository {
-  /** Creates the user with one session; "username_taken" when the username exists. */
-  createUser(data: NewUser): Promise<UserRecord | "username_taken">;
+  /** Creates the user with one session; "username_taken" or "email_taken" when another account has it. */
+  createUser(data: NewUser): Promise<UserRecord | TakenField>;
   findUserByTokenHash(tokenHash: string): Promise<UserRecord | null>;
   /** The account with this (lowercase) username and its password hash, or null. */
   findAccount(username: string): Promise<(UserRecord & { password_hash: string | null }) | null>;
@@ -102,10 +121,13 @@ export interface CommunityRepository {
   /** Ends one session (sign-out on this device). */
   deleteSession(tokenHash: string): Promise<void>;
   /** Gives an anonymous visitor a username and password; "has_account" when it already has one. */
-  addCredentials(
-    userId: string,
-    credentials: { username: string; passwordHash: string },
-  ): Promise<UserRecord | "username_taken" | "has_account">;
+  addCredentials(userId: string, credentials: Credentials): Promise<UserRecord | TakenField | "has_account">;
+  /** Changes only the fields given; `fullName: null` removes the name. */
+  updateProfile(userId: string, profile: { nickname?: string | undefined; fullName?: string | null | undefined }): Promise<UserRecord>;
+  /** Puts the user's profile photo in place of the old one. */
+  saveAvatar(userId: string, avatar: NewPhoto): Promise<UserRecord>;
+  deleteAvatar(userId: string): Promise<UserRecord>;
+  findAvatar(userId: string): Promise<AvatarFile | null>;
   /** The asset if clients may see it (and so may contribute to it), otherwise null. */
   findVisibleAsset(id: string, statuses: string[]): Promise<VisibleAsset | null>;
   /** Text contributions (not photos) since `since`. */
@@ -133,6 +155,12 @@ function isUniqueViolation(err: unknown): boolean {
   return typeof err === "object" && err !== null && "code" in err && err.code === "P2002";
 }
 
+/** The account field a unique violation is about; Prisma names the column or the index in its metadata. */
+function takenField(err: unknown): TakenField {
+  const meta = JSON.stringify((err as { meta?: unknown }).meta ?? {});
+  return meta.includes("email") ? "email_taken" : "username_taken";
+}
+
 /** Only these kinds appear in the public pulse; corrections go to the editors only. */
 const PULSE_KINDS = ["tip", "memory"];
 
@@ -145,7 +173,7 @@ export function createCommunityRepository(prisma: PrismaClient): CommunityReposi
   });
 
   return {
-    async createUser({ nickname, role, tokenHash, credentials }) {
+    async createUser({ nickname, role, tokenHash, credentials, fullName }) {
       try {
         return await prisma.app_user.create({
           data: {
@@ -153,12 +181,14 @@ export function createCommunityRepository(prisma: PrismaClient): CommunityReposi
             role,
             username: credentials?.username ?? null,
             password_hash: credentials?.passwordHash ?? null,
+            email: credentials?.email ?? null,
+            full_name: fullName ?? null,
             sessions: { create: { token_hash: tokenHash } },
           },
           select: userSelect,
         });
       } catch (err) {
-        if (isUniqueViolation(err)) return "username_taken";
+        if (isUniqueViolation(err)) return takenField(err);
         throw err;
       }
     },
@@ -183,19 +213,39 @@ export function createCommunityRepository(prisma: PrismaClient): CommunityReposi
       await prisma.user_session.deleteMany({ where: { token_hash: tokenHash } });
     },
 
-    async addCredentials(userId, { username, passwordHash }) {
+    async addCredentials(userId, { username, passwordHash, email }) {
       try {
         // The username filter makes two concurrent upgrades of one visitor safe.
         const { count } = await prisma.app_user.updateMany({
           where: { id: userId, username: null },
-          data: { username, password_hash: passwordHash },
+          data: { username, password_hash: passwordHash, email },
         });
         if (count === 0) return "has_account";
         return await prisma.app_user.findUniqueOrThrow({ where: { id: userId }, select: userSelect });
       } catch (err) {
-        if (isUniqueViolation(err)) return "username_taken";
+        if (isUniqueViolation(err)) return takenField(err);
         throw err;
       }
+    },
+
+    updateProfile(userId, { nickname, fullName }) {
+      return prisma.app_user.update({ where: { id: userId }, data: { nickname, full_name: fullName }, select: userSelect });
+    },
+
+    async saveAvatar(userId, { contentType, bytes, width, height, sha256 }) {
+      const file = { content_type: contentType, bytes: new Uint8Array(bytes), width, height, sha256, updated_at: new Date() };
+      await prisma.user_avatar.upsert({ where: { user_id: userId }, create: { user_id: userId, ...file }, update: file });
+      return prisma.app_user.findUniqueOrThrow({ where: { id: userId }, select: userSelect });
+    },
+
+    async deleteAvatar(userId) {
+      await prisma.user_avatar.deleteMany({ where: { user_id: userId } });
+      return prisma.app_user.findUniqueOrThrow({ where: { id: userId }, select: userSelect });
+    },
+
+    async findAvatar(userId) {
+      const avatar = await prisma.user_avatar.findUnique({ where: { user_id: userId }, select: { content_type: true, bytes: true } });
+      return avatar ? { contentType: avatar.content_type, bytes: avatar.bytes } : null;
     },
 
     findVisibleAsset(id, statuses) {

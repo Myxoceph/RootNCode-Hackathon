@@ -7,6 +7,81 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-03 · Kitap fotoğraflarına alt metin (ekran okuyucu için)
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import`
+
+Değişenler:
+- 242 kayıtta "<eser> fotoğrafı" kalıbındaki 801 alt metin, fotoğrafta ne göründüğünü anlatan kısa Türkçe ve İngilizce
+  bir cümleyle değişti (ortalama 16 kelime). Metinleri EVREN'in görüntü modeli (`qwen3-vl-30b`) yazdı; yaygın kelime
+  hataları (kalligrafi → hat, fayans → çini, portik → revak…) yazarken düzeltildi. Tek tek okunmadı: yanlış bir ayrıntı
+  görürsen kayıtta `alt` alanını düzeltip `npm run db:import` yeter.
+
+---
+
+## 2026-11-03 · Kitap fotoğrafları etiketlendi (ne gösterdikleri)
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import`
+
+Değişenler:
+- 237 kayıtta sınıflanmamış (`subject: "photo"`) 794 kitap fotoğrafına ne gösterdiği yazıldı (dış cephe, iç mekân,
+  taçkapı, kitabe, mihrap…). Etiketleri EVREN'in görüntü modeli (`qwen3-vl-30b`) verdi; mevcut etiketli 102 fotoğrafta
+  %67 birebir doğru, bir parça (taçkapı, kitabe, mihrap…) dediğinde %94 gerçekten bir parça.
+- Ziyaret Mührü artık 252 eserde bir parçayı (önce 146), 405 eserde binanın bir görünümünü tanıtıyor; "Genel görünüm"
+  yedeğine düşen 3 eser kaldı. Bütün fotoğrafları "havadan" çıkan 5 eser, mührünü kaybetmesin diye etiketsiz bırakıldı.
+
+---
+
+## 2026-11-03 · Kilidi aç ziyaret sayılıyor, etkinlik puanı ve not rozetleri (sözleşme 0.3.26)
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:deploy -w apps/api` (iki yeni not rozeti), sonra API'yi yeniden başlat. Sunucu bunu kendisi yapıyor.
+
+Değişenler:
+- "Kilidi aç" artık API'ye kanıtsız bir ziyaret yazıyor (`POST /assets/:id/visit/unlock`): ziyaret, rozet ve puan
+  profilde görünüyor. Telefonda önceden açılmış olanlar ilk açılışta API'ye gönderiliyor. Ziyaret Mührü'nde
+  fotoğraf zorunlu olunca `DEMO_UNLOCK=false` ile kapatılacak (şimdilik açık).
+- Puan artık yalnızca rozetlerden gelmiyor: ziyaret 10, mühür +10, onaylanan not 5, onaylanan fotoğraf 10
+  (`ACTIVITY_POINTS`, `docs/achievements.md`). Cüzdan bakiyesi de bunu sayıyor.
+- `GET /me/achievements` yeni alanlar: `activityPoints`, `sealed`, `notes` ve `photos` (onaylanan, bekleyen).
+- CORS artık `PUT`'a izin veriyor (profil fotoğrafı, `PUT /me/avatar`).
+
+---
+
+## 2026-11-03 · Hesap profili: e-posta, ad soyad, profil fotoğrafı (sözleşme 0.3.25)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi**
+
+1. API'yi yerelde çalıştıranlar: `npm run db:deploy -w apps/api` (yeni migration `20261103180000_account_profile`),
+   sonra API'yi yeniden başlat. Sunucu bunu kendisi yapıyor.
+
+Değişenler:
+- Kayıt ve anonimden hesaba geçiş artık e-posta istiyor (`email`); bir e-postayla tek hesap açılır (`409 EMAIL_TAKEN`).
+  Daha önce açılmış hesapların e-postası boş kalır, giriş etkilenmez.
+- Yeni uçlar: `PATCH /me` (takma ad, ad soyad), `PUT /me/avatar` ve `DELETE /me/avatar` (profil fotoğrafı),
+  `GET /avatars/:userId` (yalnızca `/me`'nin verdiği imzalı adresle).
+- Uygulama: kayıt formunda e-posta alanı; Profil'deki kart fotoğrafı ve adı hesaptan alıyor. Ekranlar için `KUBRA.md` §6.
+
+---
+
+## 2026-11-03 · Üst üste binen eserler: hanların mescitleri ve bitişik yapılar bağlandı
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:import` (21 kayda `parent_id` eklendi, 5'inin noktası değişti).
+
+Değişenler:
+- Han mescitleri hanlarına, avludaki kümbetler camiye, çeşmeler ve türbeler bitişiğindeki camiye ya da medreseye
+  bağlandı; harita onları ana eserin kartında gösteriyor.
+- Haritada birbirine bağlı olmayan ve 25 metreden yakın eserler en az 30 metre ayrılarak çiziliyor (`src/map/spread.ts`).
+
+---
+
 ## 2026-11-04 · Taşa Sor (sözleşme 0.3.24)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **demoyu açan**, **uygulama ekibi**

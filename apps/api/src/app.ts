@@ -66,6 +66,8 @@ export interface BuildAppOptions {
   voice?: VoiceClient | null;
   /** The vision model behind Taşa Sor (`POST /vision/ask`); without it the route answers 503. */
   vision?: VisionClient | null;
+  /** `POST /assets/:id/visit/unlock` for the app's "Kilidi aç" (see achievementsRoutes); off by default. */
+  demoUnlock?: boolean;
 }
 
 const NO_WEATHER: WeatherService = { current: async () => null, forecast: async () => null };
@@ -92,6 +94,7 @@ export function buildApp({
   voice = null,
   vision = null,
   photoUrls = createPhotoUrls(),
+  demoUnlock = false,
 }: BuildAppOptions): FastifyInstance {
   const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
 
@@ -129,6 +132,7 @@ export function buildApp({
   app.register(achievementsRoutes, {
     repository: createAchievementsRepository(prisma, visibleStatuses(assetVisibility)),
     community: communityRepository,
+    demoUnlock,
   });
   app.register(rewardsRoutes, { repository: createRewardsRepository(prisma), community: communityRepository });
   app.register(savedRoutesRoutes, { repository: createSavedRoutesRepository(prisma), community: communityRepository });

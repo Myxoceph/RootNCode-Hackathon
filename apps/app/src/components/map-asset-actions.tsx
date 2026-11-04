@@ -2,8 +2,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
 import { fontFamily, palette, radius, spacing, Text, useTheme } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
-import { useEffect, useRef, useState, type ComponentProps } from "react";
-import { Animated, Easing, Linking, Pressable, StyleSheet } from "react-native";
+import { useEffect, useState, type ComponentProps } from "react";
+import { Animated, Easing, Linking, Platform, Pressable, StyleSheet, View } from "react-native";
 
 import { useHasInscriptions } from "@/ar/inscription-scope";
 import { CARD_COLORS, GLASS_COLORS, GlassFill } from "@/components/city-asset-cards";
@@ -11,7 +11,7 @@ import { useAsset } from "@/data";
 import { isAssetUnlocked } from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
+import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -21,7 +21,8 @@ interface Action {
   icon: IconName;
   /** One or two short words: the five stand side by side, all in sight. */
   label: string;
-  spoken: string;
+  /** What it does, after the label; or why it is dimmed. */
+  hint: string;
   disabled: boolean;
   /** Filled in gold: asking Rehber, and the description while it is being read. */
   on?: boolean;
@@ -43,8 +44,6 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
   const descriptionKey = `description:${asset.id}`;
   const describing = useSpeaking() === descriptionKey;
-  const describingNow = useRef(describing);
-  describingNow.current = describing;
   const record = detail.status === "success" ? detail.data : null;
   const description = record?.accessibility.audioDescription ?? null;
   const readable = useHasInscriptions(record);
@@ -61,18 +60,14 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   }, [drop, reduceMotion]);
 
   // Another asset, another description: stop reading the last one.
-  useEffect(() => {
-    return () => {
-      if (describingNow.current) stopAnswer();
-    };
-  }, [asset.id]);
+  useEffect(() => () => stopAnswerOf((key) => key === descriptionKey), [descriptionKey]);
 
   const actions: Action[] = [
     {
       key: "ask",
       icon: "sparkles",
       label: "Rehber'e sor",
-      spoken: `${asset.name} hakkında Rehber'e sor, asistanı açar`,
+      hint: `${asset.name} hakkında asistanı açar`,
       disabled: false,
       on: true,
       onPress: () => router.push({ pathname: "/assistant", params: { asset: asset.id, name: asset.name } }),
@@ -81,7 +76,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
       key: "directions",
       icon: "navigate",
       label: "Yol tarifi",
-      spoken: `${asset.name}: yol tarifi al, harita uygulamasını açar`,
+      hint: coords ? `${asset.name} için harita uygulamasını açar` : "Bu eserin konumu bilinmiyor",
       disabled: !coords,
       onPress: () => coords && Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`),
     },
@@ -89,7 +84,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
       key: "inscription",
       icon: "scan",
       label: "Taşın Dili",
-      spoken: `${asset.name}: Taşın Dili, kitabeyi kamerayla oku`,
+      hint: readable ? "Kitabeyi kamerayla okur" : record ? "Bu eserde okunacak kitabe yok" : "Eserin bilgileri yükleniyor",
       disabled: !readable,
       onPress: () => router.push({ pathname: "/inscription", params: { asset: asset.id } }),
     },
@@ -97,7 +92,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
       key: "seal",
       icon: "ribbon",
       label: "Mühür",
-      spoken: `${asset.name}: Ziyaret Mührü, eserde olduğunu kamerayla kanıtla`,
+      hint: sealable ? "Ziyaret Mührü: eserde olduğunu kamerayla kanıtlar" : record ? "Bu eserde mühür kısmı yok" : "Eserin bilgileri yükleniyor",
       disabled: !sealable,
       // An unlocked asset needs no seal: its place goes to the others.
       hidden: opened,
@@ -107,7 +102,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
       key: "describe",
       icon: describing ? "stop" : "ear",
       label: describing ? "Durdur" : "Betimle",
-      spoken: describing ? "Sesli betimlemeyi durdur" : `${asset.name}: mekânı sesli betimle`,
+      hint: describing ? "Sesli betimlemeyi keser" : description ? "Mekânı sesli betimler" : record ? "Bu eserin sesli betimlemesi yok" : "Eserin bilgileri yükleniyor",
       disabled: !description,
       on: describing,
       onPress: () => {
@@ -125,7 +120,10 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
         <Pressable
           key={action.key}
           accessibilityRole="button"
-          accessibilityLabel={action.spoken}
+          accessibilityLabel={action.label}
+          accessibilityHint={action.hint}
+          // The web drops the hint: the same words, unseen, describe the button there.
+          aria-describedby={web ? `map-action-${action.key}-hint` : undefined}
           accessibilityState={{ disabled: action.disabled }}
           disabled={action.disabled}
           onPress={action.onPress}
@@ -140,6 +138,11 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
           <Text variant="caption" colorValue={action.on ? c.onPrimary : GLASS_COLORS.text} numberOfLines={1} style={styles.label}>
             {action.label}
           </Text>
+          {web && (
+            <View nativeID={`map-action-${action.key}-hint`} aria-hidden style={styles.unseen}>
+              <Text>{action.hint}</Text>
+            </View>
+          )}
         </Pressable>
       ))}
     </Animated.View>
@@ -147,6 +150,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
 }
 
 const BAR_EDGE = 2;
+const web = Platform.OS === "web";
 
 const styles = StyleSheet.create({
   bar: {
@@ -180,5 +184,12 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.75,
+  },
+  unseen: {
+    position: "absolute",
+    width: 1,
+    height: 1,
+    overflow: "hidden",
+    opacity: 0,
   },
 });

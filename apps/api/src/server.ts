@@ -16,6 +16,7 @@ const app = buildApp({
   mediaBaseUrl: env.MEDIA_BASE_URL,
   assetVisibility: env.ASSET_VISIBILITY,
   trustProxy: env.TRUST_PROXY,
+  demoUnlock: env.DEMO_UNLOCK,
   rateLimit: env.RATE_LIMIT_MAX === 0 ? false : { max: env.RATE_LIMIT_MAX, timeWindowMs: 60_000 },
   weather: env.OPEN_METEO_URL
     ? createWeatherService({

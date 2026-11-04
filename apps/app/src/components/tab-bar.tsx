@@ -2,8 +2,10 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { fontFamily, palette, radius, spacing, Text, useTheme } from "@vagabonds/ui";
 import { useSegments } from "expo-router";
 import { BottomTabBarHeightCallbackContext, type BottomTabBarProps } from "expo-router/js-tabs";
-import { useContext, type ComponentProps } from "react";
-import { Pressable, StyleSheet, View } from "react-native";
+import { useContext, useRef, type ComponentProps } from "react";
+import { Pressable, StyleSheet, View, type PressableInstance } from "react-native";
+
+import { setTabSpot, useTabSpotlight } from "@/lib/tab-bar-spots";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -32,7 +34,7 @@ const INSET = 6;
  * others show their icon, and Kamera sits in the middle as a gold disc. On the map and the Eserler gallery the capsule floats over them;
  * elsewhere it rests on the screen's background, so no screen content hides behind it.
  *
- * Every tab is a button with the "tab" role and its title, whatever is shown of it.
+ * Every tab is a button with the "tab" role and its title, whatever is shown of it; the open one is "selected", on the web too.
  */
 export function TabBar({ state, descriptors, emitter, navigateToTab, insets, items }: BottomTabBarProps & { items: TabItem[] }) {
   const { scheme, colors: c } = useTheme();
@@ -41,12 +43,21 @@ export function TabBar({ state, descriptors, emitter, navigateToTab, insets, ite
   const focusedName = state.routes[state.index]?.name;
   const floats = FLOATS_ON.has(focusedName ?? "");
   const segments = useSegments();
+  // While the map tour shows a tab, it gets a gold ring.
+  const spotlight = useTabSpotlight();
+  // Each button tells where it is on screen, for the map tour's bubbles; a move of the bar moves them all.
+  const buttons = useRef<Record<string, PressableInstance | null>>({});
+  const measure = (name: string) => buttons.current[name]?.measureInWindow((x, y, width, height) => width > 0 && setTabSpot(name, { x, y, width, height }));
+  const measureAll = () => items.forEach((item) => measure(item.name));
   // The opening greeting (`index`) fills the screen too, before the map.
   if (focusedName === "index" || HIDDEN_ON.has(segments.at(-1) ?? "")) return null;
 
   return (
     <View
-      onLayout={(event) => onHeight?.(event.nativeEvent.layout.height)}
+      onLayout={(event) => {
+        onHeight?.(event.nativeEvent.layout.height);
+        measureAll();
+      }}
       style={[
         styles.dock,
         { paddingBottom: Math.max(insets.bottom, spacing.sm) },
@@ -67,20 +78,35 @@ export function TabBar({ state, descriptors, emitter, navigateToTab, insets, ite
             const common = {
               accessibilityRole: "tab" as const,
               accessibilityState: { selected: focused },
+              // The web makes no aria-selected of the state above: said outright, the open tab is announced there too.
+              "aria-selected": focused,
               accessibilityLabel: descriptors[route.key]?.options.tabBarAccessibilityLabel ?? item.title,
               onPress,
               onLongPress,
+              ref: (node: PressableInstance | null) => {
+                buttons.current[item.name] = node;
+              },
+              onLayout: () => measure(item.name),
             };
 
             if (item.name === "camera") {
               return (
-                <Pressable key={item.name} {...common} hitSlop={4} style={({ pressed }) => [styles.camera, { backgroundColor: GOLD }, pressed && styles.pressed]}>
+                <Pressable
+                  key={item.name}
+                  {...common}
+                  hitSlop={4}
+                  style={({ pressed }) => [styles.camera, { backgroundColor: GOLD }, pressed && styles.pressed, spotlight === item.name && styles.lit]}
+                >
                   <Ionicons name={focused ? item.iconFocused : item.icon} size={ICON_SIZE} color={ON_GOLD} />
                 </Pressable>
               );
             }
             return (
-              <Pressable key={item.name} {...common} style={({ pressed }) => [styles.tab, focused && [styles.tabFocused, { backgroundColor: GOLD }], pressed && styles.pressed]}>
+              <Pressable
+                key={item.name}
+                {...common}
+                style={({ pressed }) => [styles.tab, focused && [styles.tabFocused, { backgroundColor: GOLD }], pressed && styles.pressed, spotlight === item.name && styles.lit]}
+              >
                 <Ionicons name={focused ? item.iconFocused : item.icon} size={ICON_SIZE} color={focused ? ON_GOLD : look.icon} />
                 {focused && (
                   <Text variant="caption" colorValue={ON_GOLD} numberOfLines={1} style={styles.label}>
@@ -175,5 +201,9 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.8,
+  },
+  lit: {
+    borderWidth: 2,
+    borderColor: palette.altin300,
   },
 });

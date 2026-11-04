@@ -34,9 +34,10 @@ try {
     role,
     // The account signs in with its password; this first session is never handed out.
     tokenHash: hashToken(newToken()),
-    credentials: { username, passwordHash: await hashPassword(password) },
+    // Staff accounts are made here, not through sign-up, so they need no e-mail.
+    credentials: { username, passwordHash: await hashPassword(password), email: null },
   });
-  if (user === "username_taken") {
+  if (typeof user === "string") {
     console.error(`Username "${username}" is already taken.`);
     process.exitCode = 1;
   } else {

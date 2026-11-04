@@ -7,8 +7,12 @@ import { featuredInscription } from "./inscription-targets";
 
 /** One inscription as Taşın Dili shows it, on the camera card and in the reading mode alike. */
 export interface InscriptionText {
-  /** The asset and where on it the inscription is: "Ulucami · Minber kapısının üzerinde, ahşap oyma". */
-  place: string;
+  /** The asset's and the inscription's ids, "bursa-osmangazi-ulucami/k1": one per inscription. */
+  id: string;
+  /** The asset alone: "Ulucami". */
+  name: string;
+  /** Where on it the inscription is, or null: "Minber kapısının üzerinde, ahşap oyma". */
+  location: string | null;
   /** "H. 802 / 1399-1400", or null when the record has no date. */
   date: string | null;
   translation: string | null;
@@ -27,7 +31,9 @@ export function inscriptionText(asset: AssetDetail, inscriptionId: string): Insc
   if (!inscription) return null;
   const waqfConditions = asset.waqf?.conditions ?? null;
   return {
-    place: [asset.name, inscription.location].filter(Boolean).join(" · "),
+    id: `${asset.id}/${inscription.id}`,
+    name: asset.name,
+    location: inscription.location ?? null,
     date: [inscription.hijriYear && `H. ${inscription.hijriYear}`, inscription.gregorian].filter(Boolean).join(" / ") || null,
     translation: inscription.translation,
     transliteration: inscription.transliteration,
@@ -55,3 +61,12 @@ export function inscriptionOf(
   }
   return { status: "success", data: text, retry: asset.retry };
 }
+
+/** The asset and where on it the inscription is: "Ulucami · Minber kapısının üzerinde, ahşap oyma". */
+export const inscriptionPlace = (text: InscriptionText) => [text.name, text.location].filter(Boolean).join(" · ");
+
+const READ_ALOUD = "inscription:";
+/** The key "Sesli oku" reads an inscription under, on the camera card and in the reading mode alike. */
+export const readAloudKey = (text: InscriptionText) => `${READ_ALOUD}${text.id}`;
+/** Whether a reading is one of Taşın Dili's. */
+export const isInscriptionReading = (key: string) => key.startsWith(READ_ALOUD);

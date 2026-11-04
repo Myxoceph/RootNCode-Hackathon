@@ -2,7 +2,7 @@ import { VOICE_SPEECH_MAX_CHARS } from "@vagabonds/contracts";
 import { describe, expect, it, vi } from "vitest";
 
 /** A player that starts and never finishes on its own, as one cut off mid-sentence. */
-const players: Array<{ removed: boolean }> = [];
+const players: Array<{ removed: boolean; paused: boolean; released: boolean }> = [];
 vi.mock("expo-audio", () => ({
   createAudioPlayer: vi.fn(() => {
     const player = {
@@ -12,7 +12,14 @@ vi.mock("expo-audio", () => ({
         return { remove: vi.fn() };
       },
       play: vi.fn(),
+      paused: false,
+      released: false,
+      pause: () => {
+        if (player.released) throw new Error("released");
+        player.paused = true;
+      },
       remove: () => {
+        if (player.released) throw new Error("released");
         player.removed = true;
       },
     };
@@ -24,9 +31,29 @@ vi.mock("expo-audio", () => ({
 vi.mock("expo-speech", () => ({ speak: vi.fn(), stop: vi.fn() }));
 vi.mock("../src/data/voice", () => ({ speechSource: vi.fn(async (text: string) => ({ uri: `https://api.test/voice/speech?text=${text}` })) }));
 
-const { speakAnswer, speechParts, stopAnswer } = await import("../src/lib/voice");
+const { speakAnswer, speechParts, stopAnswer, stopAnswerOf } = await import("../src/lib/voice");
 
 describe("speakAnswer", () => {
+  it("still ends when the player was already released", async () => {
+    const reading = speakAnswer("salınmış", "Bir cümle burada duruyor ve biraz da uzun olsun.");
+    await vi.waitFor(() => expect(players.length).toBeGreaterThan(0));
+    players.at(-1)!.released = true;
+    expect(() => stopAnswer()).not.toThrow();
+    await expect(reading).resolves.toBeUndefined();
+    players.length = 0;
+  });
+
+  it("stops only a reading its owner claims", async () => {
+    const reading = speakAnswer("description:a", "Mekânın betimlemesi burada başlıyor ve devam ediyor.");
+    await vi.waitFor(() => expect(players.length).toBeGreaterThan(0));
+    stopAnswerOf((key) => key.startsWith("inscription:"));
+    expect(players.at(-1)!.removed).toBe(false);
+    stopAnswerOf((key) => key === "description:a");
+    await expect(reading).resolves.toBeUndefined();
+    expect(players.at(-1)!.removed).toBe(true);
+    players.length = 0;
+  });
+
   it("ends when stopped mid-part, and lets the player go", async () => {
     const reading = speakAnswer("cevap", "Hamza Bey Camii'ni Hamza Bey yaptırdı. Fatih dönemine tarihlenir.");
     await vi.waitFor(() => expect(players).toHaveLength(1));
@@ -34,6 +61,8 @@ describe("speakAnswer", () => {
     await expect(reading).resolves.toBeUndefined();
     expect(players).toHaveLength(1);
     expect(players[0]!.removed).toBe(true);
+    // Paused first: on Android remove() alone can leave the sound playing.
+    expect(players[0]!.paused).toBe(true);
   });
 });
 

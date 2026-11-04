@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isEarned, progressOf, type UserFacts, type VisitFact } from "../src/modules/achievements/rules.ts";
+import { activityPoints, isEarned, progressOf, type UserFacts, type VisitFact } from "../src/modules/achievements/rules.ts";
 
 const at = (hours: number) => new Date(Date.UTC(2026, 9, 30, 9) + hours * 3_600_000);
 const visit = (assetId: string, city: string, district: string, type = "cami", era: string | null = null, hours = 0): VisitFact => ({
@@ -14,6 +14,7 @@ const visit = (assetId: string, city: string, district: string, type = "cami", e
 const facts = (visits: VisitFact[], extra: Partial<UserFacts> = {}): UserFacts => ({
   visits,
   approved: { notes: 0, photos: 0 },
+  pending: { notes: 0, photos: 0 },
   complexChildren: new Map(),
   ...extra,
 });
@@ -67,5 +68,17 @@ describe("proven visits", () => {
     const f = facts([{ ...visit("a", "bursa", "Osmangazi"), proven: true }, visit("b", "bursa", "Yıldırım"), { ...visit("c", "konya", "Karatay"), proven: true }]);
     expect(progressOf({ kind: "proven_visits", count: 5 }, f).current).toBe(2);
     expect(progressOf({ kind: "proven_visits", count: 1, city: "konya" }, f)).toEqual({ current: 1, target: 1 });
+  });
+});
+
+describe("activityPoints", () => {
+  it("counts each visit, each seal on top, and approved notes and photos, never pending ones", () => {
+    const sealed = { ...visit("a", "konya", "Meram", "cami", null, 0), proven: true };
+    const f = facts([sealed, visit("b", "konya", "Meram", "cami", null, 1)], {
+      approved: { notes: 3, photos: 1 },
+      pending: { notes: 4, photos: 2 },
+    });
+    expect(activityPoints(f)).toBe(2 * 10 + 10 + 3 * 5 + 10);
+    expect(activityPoints(facts([]))).toBe(0);
   });
 });

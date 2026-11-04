@@ -118,6 +118,7 @@ describe.skipIf(!DATABASE_URL)("visit proof, wallet and rewards (PostgreSQL)", (
 
     await call("POST", `/assets/${asset.id}/visit/proof`, visitor.token, { lat: asset.lat, lng: asset.lng, mediaKey: asset.mediaKey, method: "device_recognition" });
     await prisma.user_achievement.deleteMany({ where: { user_id: visitor.id } });
+    // The sealed visit alone earns 20 activity points (visit + seal), short of the 50-point reward.
     const poor = await call("POST", `/rewards/${reward}/redeem`, visitor.token);
     expect([poor.statusCode, poor.json().error.code]).toEqual([409, "INSUFFICIENT_POINTS"]);
 
@@ -125,9 +126,9 @@ describe.skipIf(!DATABASE_URL)("visit proof, wallet and rewards (PostgreSQL)", (
     const got = RedeemResponseSchema.parse((await call("POST", `/rewards/${reward}/redeem`, visitor.token)).json());
     expect(got.redemption).toMatchObject({ points: 50, reward: { code: reward, partner: "Test Kurumu" } });
     expect(["KOD-1111", "KOD-2222"]).toContain(got.redemption.code);
-    expect(got.balance).toBe(70);
+    expect(got.balance).toBe(90);
     const wallet = WalletResponseSchema.parse((await call("GET", "/me/wallet", visitor.token)).json());
-    expect(wallet).toMatchObject({ earned: 120, spent: 50, balance: 70 });
+    expect(wallet).toMatchObject({ earned: 140, spent: 50, balance: 90 });
     expect(wallet.redemptions.map((r) => r.code)).toEqual([got.redemption.code]);
   });
 
@@ -141,14 +142,14 @@ describe.skipIf(!DATABASE_URL)("visit proof, wallet and rewards (PostgreSQL)", (
   it("never spends one balance twice or gives one code twice when requests race", async () => {
     const visitor = await createUser();
     await prisma.visit.create({ data: { user_id: visitor.id, asset_id: asset.id, verified: true, proven_at: new Date(), proof_method: "device_recognition" } });
-    await grantPoints(visitor.id, 60); // enough for one 50-point reward, not two
+    await grantPoints(visitor.id, 60); // with the sealed visit's 20, enough for one 50-point reward, not two
     const admin = await createUser("admin");
     await call("POST", `/admin/rewards/${reward}/codes`, admin.token, { codes: ["KOD-3333", "KOD-4444"] });
 
     const results = await Promise.all([1, 2, 3].map(() => call("POST", `/rewards/${reward}/redeem`, visitor.token)));
     expect(results.map((r) => r.statusCode).sort()).toEqual([200, 409, 409]);
     const wallet = WalletResponseSchema.parse((await call("GET", "/me/wallet", visitor.token)).json());
-    expect(wallet).toMatchObject({ spent: 50, balance: 10 });
+    expect(wallet).toMatchObject({ spent: 50, balance: 30 });
   });
 
   it("lets only admins manage rewards, and reports out of stock", async () => {

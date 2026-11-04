@@ -10,10 +10,10 @@ export interface RequestOptions {
   allowNotFound?: boolean;
   /** Sent as JSON in a POST; without it the request is a GET. */
   body?: unknown;
-  /** Sent as it is in a POST, e.g. a voice recording; in place of `body`. */
+  /** Sent as it is in a POST (or `method`), e.g. a voice recording; in place of `body`. */
   rawBody?: { data: Blob; type: string };
-  /** A request without a body that is not a GET (`DELETE`, or a `POST` with nothing to send), or a `PATCH` with one. */
-  method?: "POST" | "PUT" | "DELETE" | "PATCH";
+  /** A request without a body that is not a GET (`DELETE`, or a `POST` with nothing to send), or a body sent with `PUT` or `PATCH`. */
+  method?: "POST" | "PUT" | "PATCH" | "DELETE";
   /** Sent as `Authorization: Bearer <token>`. */
   token?: string;
   /** The error for an answer that is not 2xx; `statusError` by default. */

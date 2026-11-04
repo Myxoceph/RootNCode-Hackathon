@@ -10,6 +10,8 @@ interface TrackerPageOptions {
   overlays?: readonly (string | null)[];
   /** MindAR, inlined so the page needs no network (`loadMindar` in @/vendor). */
   mindarScript: string;
+  /** The app's heading font, Marcellus (base64 TrueType), for the overlay text; without it, a system serif. */
+  overlayFont?: string | undefined;
 }
 
 /**
@@ -32,7 +34,7 @@ export type TrackerTarget = TargetSource | { sources: TargetSource[] };
  * MindAR's core (`Controller`) is used without its three.js layer: the corners
  * are projected from the pose it returns, so nothing 3D is loaded.
  */
-export function trackerPageHtml({ target, markColor, overlays = [], mindarScript }: TrackerPageOptions): string {
+export function trackerPageHtml({ target, markColor, overlays = [], mindarScript, overlayFont }: TrackerPageOptions): string {
   return `<!doctype html>
 <html>
 <head>
@@ -42,7 +44,7 @@ export function trackerPageHtml({ target, markColor, overlays = [], mindarScript
   html, body { margin: 0; height: 100%; overflow: hidden; background: #000; }
   video, canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
   video { object-fit: cover; }
-</style>
+${overlayFont ? `  @font-face { font-family: "Marcellus"; src: url(data:font/ttf;base64,${overlayFont}) format("truetype"); }\n` : ""}</style>
 </head>
 <body>
 <video id="video" autoplay muted playsinline></video>
@@ -167,7 +169,7 @@ function drawOverlay(corners, width, height, text) {
   let size = boxWidth / 12;
   let lines = [];
   for (;;) {
-    context.font = "600 " + size + "px system-ui, sans-serif";
+    context.font = size + 'px "Marcellus", Georgia, serif';
     lines = wrap(text, boxWidth - 2 * pad);
     if (lines.length * size * 1.3 <= boxHeight - 2 * pad || size * 0.9 < floor) break;
     size *= 0.9;
@@ -262,6 +264,8 @@ function resizeCanvas() {
 window.addEventListener("resize", resizeCanvas);
 
 async function start() {
+  // A canvas does not load a font by itself; the overlay is drawn every frame, so once this is in it is used.
+  if (document.fonts) document.fonts.load('16px "Marcellus"').catch(() => {});
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
     fail("camera-unsupported", "getUserMedia is not available");
     return;

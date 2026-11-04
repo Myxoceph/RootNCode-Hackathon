@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { PASSWORD_MIN, UsernameSchema } from "@vagabonds/contracts";
+import { EmailSchema, PASSWORD_MIN, UsernameSchema } from "@vagabonds/contracts";
 import { cameraColors, fontFamily, palette, radius, spacing, Text, touchTarget, useUi } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
@@ -64,10 +64,12 @@ export default function AuthScreen() {
   const hero = useAsset(HERO_ASSET);
   const [mode, setMode] = useState<Mode>(params.mode === "register" ? "register" : "login");
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const emailField = useRef<TextInputInstance>(null);
   const passwordField = useRef<TextInputInstance>(null);
   const nicknameField = useRef<TextInputInstance>(null);
 
@@ -75,8 +77,10 @@ export default function AuthScreen() {
   // A visitor with notes or seals under a nickname: signing up turns that session into the account.
   const keeps = registering && user && user.username === null ? user.nickname : null;
   const nameOk = UsernameSchema.safeParse(username).success;
+  const emailOk = EmailSchema.safeParse(email).success;
   const passwordOk = password.length >= PASSWORD_MIN;
-  const ready = communityAvailable && !busy && (registering ? nameOk && passwordOk : username.trim().length > 0 && password.length > 0);
+  const ready =
+    communityAvailable && !busy && (registering ? nameOk && emailOk && passwordOk : username.trim().length > 0 && password.length > 0);
   const heroHeight = Math.min(Math.max(height * 0.36, 220), 340);
 
   function switchTo(next: Mode) {
@@ -96,7 +100,12 @@ export default function AuthScreen() {
     setError(null);
     try {
       const signedIn = registering
-        ? await register({ username: username.trim().toLowerCase(), password, ...(nickname.trim() && !keeps ? { nickname: nickname.trim() } : {}) })
+        ? await register({
+            username: username.trim().toLowerCase(),
+            email: email.trim().toLowerCase(),
+            password,
+            ...(nickname.trim() && !keeps ? { nickname: nickname.trim() } : {}),
+          })
         : await login({ username: username.trim().toLowerCase(), password });
       announce(registering ? `Hesabın oluşturuldu. Hoş geldin, ${signedIn.nickname}.` : `Hoş geldin, ${signedIn.nickname}.`);
       close();
@@ -167,8 +176,23 @@ export default function AuthScreen() {
                 autoComplete="username"
                 textContentType="username"
                 returnKeyType="next"
-                onSubmitEditing={() => passwordField.current?.focus()}
+                onSubmitEditing={() => (registering ? emailField : passwordField).current?.focus()}
               />
+              {registering && (
+                <Field
+                  inputRef={emailField}
+                  icon="mail-outline"
+                  label="E-posta"
+                  value={email}
+                  onChangeText={(text) => setEmail(text.replace(/\s/g, ""))}
+                  autoComplete="email"
+                  textContentType="emailAddress"
+                  keyboardType="email-address"
+                  returnKeyType="next"
+                  onSubmitEditing={() => passwordField.current?.focus()}
+                  maxLength={254}
+                />
+              )}
               <Field
                 inputRef={passwordField}
                 icon="lock-closed-outline"
@@ -200,6 +224,7 @@ export default function AuthScreen() {
             {registering && (
               <View style={styles.rules} accessibilityLabel="Kurallar">
                 <Rule met={nameOk} text="Kullanıcı adı 3–32 karakter (a–z, 0–9, _ .)" />
+                <Rule met={emailOk} text="Geçerli bir e-posta adresi" />
                 <Rule met={passwordOk} text={`Parola en az ${PASSWORD_MIN} karakter`} />
               </View>
             )}

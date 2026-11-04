@@ -1,4 +1,4 @@
-import type { AchievementRule } from "@vagabonds/contracts";
+import { ACTIVITY_POINTS, type AchievementRule } from "@vagabonds/contracts";
 
 /**
  * Achievement rules, evaluated from what a user has done. Pure, so every rule kind is
@@ -20,6 +20,8 @@ export interface UserFacts {
   /** First visits only, one per asset. */
   visits: VisitFact[];
   approved: { notes: number; photos: number };
+  /** Waiting for a moderator: shown, but they earn nothing yet. */
+  pending: { notes: number; photos: number };
   /** Visible children of each complex a `complex` rule names. */
   complexChildren: Map<string, string[]>;
 }
@@ -90,3 +92,14 @@ export function progressOf(rule: AchievementRule, facts: UserFacts): Progress {
 }
 
 export const isEarned = (progress: Progress) => progress.current >= progress.target;
+
+/** Points for what the visitor did (`ACTIVITY_POINTS`), apart from the badges'. */
+export function activityPoints(facts: UserFacts): number {
+  const sealed = facts.visits.filter((v) => v.proven).length;
+  return (
+    facts.visits.length * ACTIVITY_POINTS.visit +
+    sealed * ACTIVITY_POINTS.sealed +
+    facts.approved.notes * ACTIVITY_POINTS.note +
+    facts.approved.photos * ACTIVITY_POINTS.photo
+  );
+}

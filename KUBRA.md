@@ -198,6 +198,44 @@ bağ açılır.
 
 ---
 
+## 6. Profil: e-posta, ad soyad ve profil fotoğrafı (API hazır, sözleşme 0.3.25)
+
+Kimlik kartının arkası (`app/(tabs)/settings.tsx`, `holder`) artık hesaba bağlı: `user.photoUrl` ve `user.fullName`
+gelince kart onları gösteriyor, yoksa eskisi gibi baş harf ve takma ad. Kayıt formuna e-posta alanı eklendi
+(`app/auth.tsx`); e-posta artık zorunlu.
+
+Senin kuracağın ekranlar, kullanacağın fonksiyonlar:
+
+| İş | Fonksiyon | Not |
+| --- | --- | --- |
+| Profil fotoğrafı seç ve koy | `uploadAvatar(uri, "image/jpeg")` (`@/data/avatar`) | JPEG/PNG, en çok 2 MB, kenar ≥ 64 px. Kamera fotoğrafını önce `shrinkPhoto(uri)` (`@/data/vision`) ile küçült |
+| Fotoğrafı kaldır | `removeAvatar()` (`@/data`) | |
+| Ad soyad / takma ad değiştir | `updateProfile({ fullName })`, `updateProfile({ nickname })` (`@/data`) | `fullName: null` adı siler; ad 2–64 harf, boşluk, `' . -` |
+| Fotoğrafın adresi | `avatarUri(user)` (`@/data`) | Adres bir gün geçerli; kart açılınca `refreshMe()` yenisini alıyor |
+
+Hepsi kullanıcıyı (`AppUser`) döndürür ve oturumu kendisi günceller; `useCommunity()` yeni hâli hemen verir.
+Hata mesajları Türkçe `DataError.message` olarak gelir, ekranda olduğu gibi göster. E-posta yalnızca hesabın
+sahibine gider, başka kimseye gösterme. Fotoğraf seçmek için uygulamada `expo-image-picker` yok; eklersen
+`npm install` gerekir, upgrade notuna yaz.
+
+---
+
+## 7. Puan, mühür ve not sayıları (API hazır, sözleşme 0.3.26)
+
+Profil kartındaki **puan, rozet, ziyaret** artık "Kilidi aç" ile açılan eserleri de sayıyor; senden bir şey gerekmiyor.
+`useMyAchievements()` cevabında yeni alanlar var, istersen Rozetlerim ya da Bıraktığım Notlar'da göster:
+
+| Alan | Anlamı |
+| --- | --- |
+| `activityPoints` | Rozetler dışındaki puan: ziyaret 10, mühür +10, onaylanan not 5, onaylanan fotoğraf 10 (`ACTIVITY_POINTS`) |
+| `sealed` | Ziyaret Mührü ile kanıtlanan ziyaret sayısı |
+| `notes.approved` / `notes.pending` | Onaylanan / moderatör bekleyen not sayısı; yalnızca onaylanan puan ve rozet getirir |
+| `photos.approved` / `photos.pending` | Aynısı fotoğraflar için |
+
+Örnek metin: "3 notun onaylandı, 1'i bekliyor · onaylanan her not +5 puan". İki yeni rozet: Not Defteri (10 not), Rehber Kalem (25 not).
+
+---
+
 ## PR'dan önce
 
 ```bash

@@ -478,6 +478,9 @@ model app_user {
   banned_at             DateTime?           @db.Timestamptz(6)
   username              String?             @unique
   password_hash         String?
+  email                 String?             @unique
+  full_name             String?
+  avatar                user_avatar?
   reviewedContributions contribution[]      @relation("contribution_reviewed_byToapp_user")
   contributions         contribution[]      @relation("contribution_user_idToapp_user")
   redemption            redemption[]
@@ -552,6 +555,18 @@ model photo_upload {
   sha256          String
   created_at      DateTime     @default(now()) @db.Timestamptz(6)
   contribution    contribution @relation(fields: [contribution_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model user_avatar {
+  user_id      String   @id @db.Uuid
+  content_type String
+  bytes        Bytes
+  width        Int
+  height       Int
+  sha256       String
+  updated_at   DateTime @default(now()) @db.Timestamptz(6)
+  user         app_user @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.

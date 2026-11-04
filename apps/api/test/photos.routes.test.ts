@@ -4,6 +4,8 @@
  */
 import "dotenv/config";
 import {
+  AppUserSchema,
+  AVATAR_MAX_BYTES,
   CommunityPhotosResponseSchema,
   ContributionSchema,
   ModerationListResponseSchema,
@@ -143,5 +145,51 @@ describe.skipIf(!DATABASE_URL)("visitor photos (PostgreSQL)", () => {
     const { id } = ContributionSchema.parse((await upload(token, jpegWithExif())).json());
     const forged = await app.inject({ method: "GET", url: `/photos/${id}?exp=${Date.now() + 60_000}&sig=AAAA` });
     expect(forged.statusCode).toBe(404);
+  });
+
+  describe("profile photo", () => {
+    const putAvatar = (token: string, body: Buffer, type = "image/png") =>
+      app.inject({ method: "PUT", url: "/me/avatar", headers: { "content-type": type, ...auth(token) }, payload: body });
+
+    it("keeps one photo per user without its metadata, shown only through the signed path", async () => {
+      const { id, token } = await createUser("visitor", "Profilli");
+      const first = await putAvatar(token, pngWithText(200, 200));
+      expect(first.statusCode, first.body).toBe(200);
+      const photoUrl = AppUserSchema.parse(first.json()).photoUrl!;
+      expect(photoUrl).toMatch(new RegExp(`^/avatars/${id}\\?v=[0-9a-f]{12}&exp=\\d+&sig=`));
+
+      const file = await app.inject({ method: "GET", url: photoUrl });
+      expect([file.statusCode, file.headers["content-type"], file.headers["cache-control"]]).toEqual([200, "image/png", "private, max-age=3600"]);
+      expect(file.rawPayload.toString("latin1")).not.toContain(GPS_MARKER);
+      expect((await app.inject({ method: "GET", url: `/avatars/${id}` })).statusCode).toBe(404);
+
+      // A new photo replaces the old one and gets a new path; /me gives the same.
+      const second = AppUserSchema.parse((await putAvatar(token, jpegWithExif(400, 300), "image/jpeg")).json()).photoUrl!;
+      expect(second).not.toBe(photoUrl);
+      expect(await prisma.user_avatar.count({ where: { user_id: id } })).toBe(1);
+      expect(AppUserSchema.parse((await app.inject({ method: "GET", url: "/me", headers: auth(token) })).json()).photoUrl).toBe(second);
+
+      const removed = await app.inject({ method: "DELETE", url: "/me/avatar", headers: auth(token) });
+      expect(AppUserSchema.parse(removed.json()).photoUrl).toBeNull();
+      expect((await app.inject({ method: "GET", url: second })).statusCode).toBe(404);
+    });
+
+    it("does not open one user's photo with another's signature, nor with a photo's", async () => {
+      const owner = await createUser("visitor", "Sahibi");
+      const other = await createUser("visitor", "Başkası");
+      await putAvatar(owner.token, pngWithText(100, 100));
+      const theirs = AppUserSchema.parse((await putAvatar(other.token, pngWithText(100, 100))).json()).photoUrl!;
+      const query = theirs.slice(theirs.indexOf("?"));
+      expect((await app.inject({ method: "GET", url: `/avatars/${owner.id}${query}` })).statusCode).toBe(404);
+    });
+
+    it("refuses what is not a small enough image, and a request without a session", async () => {
+      const { token } = await createUser("visitor", "Kurallı");
+      expect((await putAvatar(token, pngWithText(32, 32))).statusCode).toBe(400);
+      expect((await putAvatar(token, Buffer.from("not an image"), "image/png")).statusCode).toBe(400);
+      expect((await putAvatar(token, Buffer.alloc(AVATAR_MAX_BYTES + 1), "image/png")).statusCode).toBe(413);
+      const anonymous = await app.inject({ method: "PUT", url: "/me/avatar", headers: { "content-type": "image/png" }, payload: pngWithText(100, 100) });
+      expect(anonymous.statusCode).toBe(401);
+    });
   });
 });

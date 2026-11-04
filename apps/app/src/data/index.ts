@@ -1,5 +1,18 @@
 export { dataSource } from "./active-source";
-export { communityAvailable, login, logout, register, sendContribution, sendVisitProof, useCommunity, type CommunityState } from "./community";
+export {
+  avatarUri,
+  communityAvailable,
+  login,
+  logout,
+  refreshMe,
+  register,
+  removeAvatar,
+  sendContribution,
+  sendVisitProof,
+  updateProfile,
+  useCommunity,
+  type CommunityState,
+} from "./community";
 export { DataError, type DataErrorKind } from "./errors";
 export { refreshData, useOfflineSince } from "./offline";
 export {
