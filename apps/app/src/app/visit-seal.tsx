@@ -524,7 +524,7 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
             </Text>
             {result.newAchievements.map((achievement) => (
               <View key={achievement.code} style={styles.badge} accessible accessibilityLabel={`${achievement.title}, ${achievement.points} puan. ${achievement.description}`}>
-                <BadgeArt code={achievement.code} emoji={achievement.badge} size={48} />
+                <BadgeArt code={achievement.code} emoji={achievement.badge} imageUrl={achievement.imageUrl} size={48} />
                 <View style={styles.flex}>
                   <Text variant="label" colorValue={cameraColors.text}>
                     {achievement.title}
