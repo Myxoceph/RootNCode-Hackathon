@@ -1,11 +1,12 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { MyAchievementsResponse } from "@vagabonds/contracts";
-import { fontFamily, palette, radius, spacing, Text, useTheme } from "@vagabonds/ui";
+import { fontFamily, palette, radius, spacing, Text, useUi } from "@vagabonds/ui";
+import { Stack } from "expo-router";
 import Head from "expo-router/head";
-import { useEffect, useRef, useState } from "react";
-import { ActivityIndicator, Animated, Modal, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { ActivityIndicator, Animated, Modal, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Svg, { Circle, Defs, LinearGradient, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
+import Svg, { Circle, Defs, LinearGradient, RadialGradient, Rect, Stop } from "react-native-svg";
 
 import { BadgeArt, hasBadgeArt } from "@/components/badge-art";
 import { useCommunity, useMyAchievements } from "@/data";
@@ -13,210 +14,382 @@ import { bottomInset } from "@/lib/bottom-inset";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 type Badge = MyAchievementsResponse["items"][number];
-
-const MEDAL = 84;
-const goldFaint = "rgba(231, 194, 106, 0.28)";
+type Rule = Badge["rule"];
+type Filter = "all" | "earned" | "next";
 
 /**
- * Profil · Rozetlerim as a medal collection: the share earned as a gold ring on the passport's
- * green leather, then every badge as a medal, earned ones struck in gold, the rest matte with a
- * ring for how far along they are. A medal opens its story and progress in a sheet.
+ * The night the badges are drawn in: every badge's art is a navy sky, so the page is that sky in
+ * light and dark theme alike. Text on it is gece50 / gece300 / altin200, all above 7:1 here.
+ */
+const sky = {
+  top: "#0C1A3A",
+  deep: "#070C1B",
+  card: "rgba(255, 255, 255, 0.045)",
+  cardEarned: "rgba(231, 194, 106, 0.07)",
+  line: "rgba(255, 255, 255, 0.1)",
+  goldLine: "rgba(231, 194, 106, 0.32)",
+  sheet: "#0E1730",
+};
+
+const COLUMNS = 3;
+const GAP = spacing.sm;
+
+/**
+ * Categories by what a badge's rule asks, so one an admin adds later lands in the right one
+ * without code. Within one, badges run from the fewest points to the most.
+ */
+const CATEGORIES: Array<{ key: string; title: string; holds: (rule: Rule) => boolean }> = [
+  {
+    key: "cities",
+    title: "Şehirler",
+    holds: (r) => (r.kind === "visit_count" && !!r.city && !r.district && !r.types && !r.era) || r.kind === "cities",
+  },
+  { key: "districts", title: "İlçeler", holds: (r) => (r.kind === "visit_count" && !!r.district) || r.kind === "districts" },
+  { key: "journeys", title: "Yolculuklar", holds: (r) => r.kind === "within" },
+  { key: "kinds", title: "Yapılar ve çağlar", holds: (r) => r.kind === "visit_count" && (!!r.types || !!r.era) },
+  { key: "complexes", title: "Külliyeler", holds: (r) => r.kind === "complex" },
+  { key: "seals", title: "Mühürler", holds: (r) => r.kind === "proven_visits" },
+  { key: "pen", title: "Notlar ve fotoğraflar", holds: (r) => r.kind === "contributions" },
+  { key: "other", title: "Diğer", holds: () => true },
+];
+
+const share = (badge: Badge) => Math.min(1, badge.progress.current / badge.progress.target);
+const left = (badge: Badge) => badge.progress.target - badge.progress.current;
+const earnedTime = (badge: Badge) => (badge.earnedAt ? Date.parse(badge.earnedAt) : 0);
+
+/** Not yet earned, nearest first: the largest share done, then the fewest steps left. */
+const upNext = (items: Badge[]) => items.filter((b) => !b.earnedAt).sort((a, b) => share(b) - share(a) || left(a) - left(b));
+
+/** The sections for a filter: by category for all, else one list in the filter's own order. */
+function sections(items: Badge[], filter: Filter): Array<{ key: string; title: string | null; items: Badge[] }> {
+  if (filter === "earned") {
+    return [{ key: "earned", title: null, items: items.filter((b) => b.earnedAt).sort((a, b) => earnedTime(b) - earnedTime(a)) }];
+  }
+  if (filter === "next") return [{ key: "next", title: null, items: upNext(items) }];
+  const groups = CATEGORIES.map((category) => ({ key: category.key, title: category.title as string | null, items: [] as Badge[] }));
+  for (const item of items) groups[CATEGORIES.findIndex((category) => category.holds(item.rule))]!.items.push(item);
+  for (const group of groups) group.items.sort((a, b) => a.points - b.points);
+  return groups.filter((group) => group.items.length > 0);
+}
+
+/**
+ * Profil · Rozetlerim as a showcase: the latest badge earned, large, with the collection's
+ * progress under it; then every badge as a tile, filtered to all, earned or next up. A tile
+ * opens the badge's story in a sheet.
  */
 export default function MyBadgesScreen() {
-  const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const { user } = useCommunity();
   const badges = useMyAchievements();
   const data = badges.status === "success" ? badges.data : null;
-  const items = data ? [...data.items].sort((a, b) => Number(Boolean(b.earnedAt)) - Number(Boolean(a.earnedAt))) : [];
-  const earnedItems = items.filter((item) => item.earnedAt);
-  const lockedItems = items.filter((item) => !item.earnedAt);
+  const items = useMemo(() => data?.items ?? [], [data]);
+  const [filter, setFilter] = useState<Filter>("all");
   const [open, setOpen] = useState<Badge | null>(null);
+  const shown = useMemo(() => sections(items, filter), [items, filter]);
+  const earned = items.filter((item) => item.earnedAt).length;
 
   return (
     <ScrollView
-      style={{ backgroundColor: c.background }}
-      contentContainerStyle={[styles.content, { paddingBottom: bottomInset(insets.bottom) + spacing.xl }]}
+      style={{ backgroundColor: sky.deep }}
+      contentContainerStyle={{ paddingBottom: bottomInset(insets.bottom) + spacing.xl }}
       contentInsetAdjustmentBehavior="automatic"
     >
+      <Stack.Screen options={{ headerStyle: { backgroundColor: sky.top }, headerTintColor: palette.gece50, headerShadowVisible: false }} />
       <Head>
         <title>Rozetlerim · Vagabonds</title>
       </Head>
+      <Backdrop />
 
-      <Collection earned={earnedItems.length} total={items.length} points={data?.totalPoints ?? 0} visits={data?.visits ?? 0} />
-      {!user && (
-        <Text variant="caption" color="textSecondary" style={styles.centered}>
-          Ziyaret Mührü ya da not bırakınca rozet kazanmaya başlarsın.
-        </Text>
-      )}
-
-      {badges.status === "loading" && <ActivityIndicator color={c.textSecondary} accessibilityLabel="Rozetler yükleniyor" />}
-      {badges.status === "error" && (
-        <Pressable accessibilityRole="button" onPress={badges.retry} style={styles.error}>
-          <Text variant="caption" color="textSecondary" style={styles.centered}>
-            {`${badges.error.message} Tekrar denemek için dokun.`}
+      <View style={styles.content}>
+        {items.length > 0 && <Showcase items={items} points={data?.totalPoints ?? 0} visits={data?.visits ?? 0} sealed={data?.sealed ?? 0} onOpen={setOpen} />}
+        {!user && (
+          <Text variant="caption" colorValue={palette.gece300} style={styles.centered}>
+            Ziyaret Mührü ya da not bırakınca rozet kazanmaya başlarsın.
           </Text>
-        </Pressable>
-      )}
-      {badges.status === "success" && data === null && (
-        <Text color="textSecondary" style={styles.centered}>
-          Rozetler için sunucu gerekiyor; bu sürüm örnek veriyle çalışıyor.
-        </Text>
-      )}
+        )}
 
-      {earnedItems.length > 0 && <Shelf title="Kazandıkların" items={earnedItems} onOpen={setOpen} />}
-      {lockedItems.length > 0 && <Shelf title="Seni bekleyenler" items={lockedItems} onOpen={setOpen} offset={earnedItems.length} />}
+        {badges.status === "loading" && <ActivityIndicator color={palette.gece300} accessibilityLabel="Rozetler yükleniyor" />}
+        {badges.status === "error" && (
+          <Pressable accessibilityRole="button" onPress={badges.retry} style={styles.error}>
+            <Text variant="caption" colorValue={palette.gece300} style={styles.centered}>
+              {`${badges.error.message} Tekrar denemek için dokun.`}
+            </Text>
+          </Pressable>
+        )}
+        {badges.status === "success" && data === null && (
+          <Text colorValue={palette.gece300} style={styles.centered}>
+            Rozetler için sunucu gerekiyor; bu sürüm örnek veriyle çalışıyor.
+          </Text>
+        )}
+
+        {items.length > 0 && (
+          <>
+            <Filters value={filter} onChange={setFilter} counts={{ all: items.length, earned, next: items.length - earned }} />
+            {shown.map((section) => (
+              <View key={`${filter}-${section.key}`} style={styles.section}>
+                {section.title && (
+                  <View style={styles.sectionHead}>
+                    <Text variant="label" headingLevel={2} colorValue={palette.gece50} style={styles.sectionTitle}>
+                      {section.title}
+                    </Text>
+                    <Text colorValue={palette.gece300} style={styles.sectionCount}>
+                      {`${section.items.filter((b) => b.earnedAt).length}/${section.items.length}`}
+                    </Text>
+                  </View>
+                )}
+                {section.items.length > 0 ? (
+                  <Grid items={section.items} onOpen={setOpen} />
+                ) : (
+                  <Text variant="caption" colorValue={palette.gece300} style={styles.centered}>
+                    {filter === "earned" ? "Henüz rozet kazanmadın; ilk ziyaretin ilk rozetin olur." : "Hepsini kazandın."}
+                  </Text>
+                )}
+              </View>
+            ))}
+          </>
+        )}
+      </View>
 
       <BadgeSheet badge={open} onClose={() => setOpen(null)} />
     </ScrollView>
   );
 }
 
-/**
- * The head of the page on the passport's green leather: the share of badges earned as a gold
- * ring, and the points and visits beside it.
- */
-function Collection({ earned, total, points, visits }: { earned: number; total: number; points: number; visits: number }) {
-  const [size, setSize] = useState({ width: 0, height: 0 });
-  const ring = 112;
-  const r = ring / 2 - 6;
-  const length = 2 * Math.PI * r;
-  const share = total > 0 ? earned / total : 0;
-
+/** A glow at the head of the page, fading into the night. */
+function Backdrop() {
+  const [width, setWidth] = useState(0);
   return (
-    <View
-      style={styles.collection}
-      onLayout={(e) => setSize(e.nativeEvent.layout)}
-      accessible
-      accessibilityLabel={`${total} rozetten ${earned} tanesi kazanıldı. ${points} puan, ${visits} ziyaret`}
-    >
-      {size.width > 0 && (
-        <Svg key={`${size.width}x${size.height}`} width={size.width} height={size.height} style={StyleSheet.absoluteFill} aria-hidden>
+    <View style={styles.backdropGlow} onLayout={(e) => setWidth(e.nativeEvent.layout.width)} pointerEvents="none" aria-hidden>
+      {width > 0 && (
+        <Svg width={width} height={520}>
           <Defs>
-            <LinearGradient id="col-leather" x1="0" y1="0" x2="1" y2="1">
-              <Stop offset="0" stopColor="#08433F" />
-              <Stop offset="0.55" stopColor="#063632" />
-              <Stop offset="1" stopColor="#031F1D" />
+            <LinearGradient id="page-fade" x1="0" y1="0" x2="0" y2="1">
+              <Stop offset="0" stopColor={sky.top} />
+              <Stop offset="1" stopColor={sky.deep} />
             </LinearGradient>
-            <RadialGradient id="col-light" cx="20%" cy="0%" r="80%">
-              <Stop offset="0" stopColor={palette.firuze300} stopOpacity={0.16} />
-              <Stop offset="1" stopColor={palette.firuze300} stopOpacity={0} />
+            <RadialGradient id="page-glow" cx="50%" cy="22%" r="60%">
+              <Stop offset="0" stopColor={palette.altin200} stopOpacity={0.12} />
+              <Stop offset="1" stopColor={palette.altin200} stopOpacity={0} />
             </RadialGradient>
-            <Pattern id="col-grain" width={11} height={13} patternUnits="userSpaceOnUse">
-              <Circle cx={1.2} cy={2.1} r={0.5} fill="#FFFFFF" fillOpacity={0.028} />
-              <Circle cx={6.7} cy={0.8} r={0.6} fill="#000000" fillOpacity={0.12} />
-              <Circle cx={3.8} cy={7.6} r={0.65} fill="#000000" fillOpacity={0.1} />
-              <Circle cx={8.1} cy={10.9} r={0.5} fill="#FFFFFF" fillOpacity={0.025} />
-            </Pattern>
           </Defs>
-          <Rect width={size.width} height={size.height} fill="url(#col-leather)" />
-          <Rect width={size.width} height={size.height} fill="url(#col-light)" />
-          <Rect width={size.width} height={size.height} fill="url(#col-grain)" />
-          <Rect x={7} y={7} width={size.width - 14} height={size.height - 14} rx={19} stroke="#FFFFFF" strokeOpacity={0.16} strokeDasharray="5 4" fill="none" />
+          <Rect width={width} height={520} fill="url(#page-fade)" />
+          <Rect width={width} height={520} fill="url(#page-glow)" />
         </Svg>
       )}
-
-      <View style={{ width: ring, height: ring }}>
-        <Svg width={ring} height={ring} aria-hidden>
-          <Defs>
-            <Foil id="col-foil" />
-          </Defs>
-          <Circle cx={ring / 2} cy={ring / 2} r={r} stroke="#FFFFFF" strokeOpacity={0.1} strokeWidth={8} fill="none" />
-          {share > 0 && (
-            <Circle
-              cx={ring / 2}
-              cy={ring / 2}
-              r={r}
-              stroke="url(#col-foil)"
-              strokeWidth={8}
-              strokeLinecap="round"
-              fill="none"
-              strokeDasharray={`${share * length} ${length}`}
-              transform={`rotate(-90 ${ring / 2} ${ring / 2})`}
-            />
-          )}
-        </Svg>
-        <View style={styles.ringCenter}>
-          <Text colorValue={palette.altin200} style={styles.ringValue}>
-            {earned}
-          </Text>
-          <Text colorValue={palette.gece300} style={styles.ringTotal}>
-            {`/ ${total}`}
-          </Text>
-        </View>
-      </View>
-
-      <View style={styles.collectionText}>
-        <Text colorValue={palette.altin200} style={styles.overline}>
-          ROZET KOLEKSİYONU
-        </Text>
-        <View style={styles.collectionStats}>
-          <View>
-            <Text colorValue={palette.gece50} style={styles.collectionValue}>
-              {points}
-            </Text>
-            <Text colorValue={palette.gece300} style={styles.collectionLabel}>
-              puan
-            </Text>
-          </View>
-          <View>
-            <Text colorValue={palette.gece50} style={styles.collectionValue}>
-              {visits}
-            </Text>
-            <Text colorValue={palette.gece300} style={styles.collectionLabel}>
-              ziyaret
-            </Text>
-          </View>
-        </View>
-      </View>
     </View>
   );
 }
 
-/** A titled row of medals; `offset` staggers their entrance after the shelf above. */
-function Shelf({ title, items, onOpen, offset = 0 }: { title: string; items: Badge[]; onOpen: (badge: Badge) => void; offset?: number }) {
+/**
+ * The showcase: the latest badge earned (or, before any, the one nearest), large in a gold glow,
+ * the few earned before it, and the collection's progress, points, visits and seals.
+ */
+function Showcase({ items, points, visits, sealed, onOpen }: { items: Badge[]; points: number; visits: number; sealed: number; onOpen: (badge: Badge) => void }) {
+  const earnedList = items.filter((b) => b.earnedAt).sort((a, b) => earnedTime(b) - earnedTime(a));
+  const featured = earnedList[0] ?? upNext(items)[0]!;
+  const recent = earnedList.slice(1, 6);
+  const more = earnedList.length - 1 - recent.length;
+  const earned = earnedList.length;
+  const total = items.length;
+  const isEarned = featured.earnedAt !== null;
+  const date = featured.earnedAt ? new Date(featured.earnedAt).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" }) : null;
+
   return (
-    <View style={styles.shelf}>
-      <Text variant="overline" color="textSecondary" style={styles.shelfTitle}>
-        {`${title.toLocaleUpperCase("tr")} · ${items.length}`}
-      </Text>
-      <View accessibilityRole="list" style={styles.grid}>
-        {items.map((item, i) => (
-          <MedalCell key={item.code} badge={item} index={offset + i} onOpen={onOpen} />
-        ))}
+    <View style={styles.showcase}>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={isEarned ? `Son kazandığın: ${featured.title}, ${date}` : `Sıradaki: ${featured.title}, ${featured.progress.current}/${featured.progress.target}`}
+        accessibilityHint="Rozetin ayrıntısını açar"
+        onPress={() => onOpen(featured)}
+        style={({ pressed }) => [styles.feature, pressed && styles.pressed]}
+      >
+        <Glow size={176} on={isEarned}>
+          <Medal badge={featured} size={132} />
+        </Glow>
+        <View style={styles.featureText}>
+          <Text colorValue={palette.altin200} style={styles.overline}>
+            {isEarned ? "✦ SON KAZANDIĞIN" : "✦ SIRADAKİ ROZETİN"}
+          </Text>
+          <Text variant="title" colorValue={palette.gece50} style={styles.centered}>
+            {featured.title}
+          </Text>
+          <Text variant="caption" colorValue={palette.gece300}>
+            {isEarned ? `${date} · +${featured.points} puan` : `${left(featured)} adım kaldı · +${featured.points} puan`}
+          </Text>
+        </View>
+      </Pressable>
+
+      {recent.length > 0 && (
+        <View style={styles.recent} accessible accessibilityLabel={`Ondan önce: ${recent.map((b) => b.title).join(", ")}${more > 0 ? ` ve ${more} rozet daha` : ""}`}>
+          <View style={styles.recentRow}>
+            {recent.map((badge, i) => (
+              <View key={badge.code} style={[styles.recentItem, i > 0 && styles.recentOverlap]}>
+                <BadgeArt code={badge.code} emoji={badge.badge} size={34} />
+              </View>
+            ))}
+            {more > 0 && (
+              <View style={[styles.recentItem, styles.recentOverlap, styles.recentMore]}>
+                <Text colorValue={palette.gece50} style={styles.recentMoreText}>{`+${more}`}</Text>
+              </View>
+            )}
+          </View>
+          <Text variant="caption" colorValue={palette.gece300}>
+            ondan önce kazandıkların
+          </Text>
+        </View>
+      )}
+
+      <View style={styles.progress} accessible accessibilityLabel={`${total} rozetten ${earned} tanesi kazanıldı. ${points} puan, ${visits} ziyaret, ${sealed} mühür`}>
+        <View style={styles.progressHead}>
+          <Text colorValue={palette.gece50} style={styles.progressValue}>
+            {earned}
+            <Text colorValue={palette.gece300} style={styles.progressOf}>{` / ${total} rozet`}</Text>
+          </Text>
+          <Text colorValue={palette.altin200} style={styles.progressShare}>{`%${total > 0 ? Math.round((earned / total) * 100) : 0}`}</Text>
+        </View>
+        <View style={styles.track}>
+          <View style={[styles.fill, { width: `${total > 0 ? (earned / total) * 100 : 0}%` }]} />
+        </View>
+        <View style={styles.stats}>
+          <Stat value={points} label="puan" />
+          <View style={styles.statRule} />
+          <Stat value={visits} label="ziyaret" />
+          <View style={styles.statRule} />
+          <Stat value={sealed} label="mühür" />
+        </View>
       </View>
     </View>
   );
 }
 
-/** One medal with its name; it pops in a moment after the one before it. */
-function MedalCell({ badge, index, onOpen }: { badge: Badge; index: number; onOpen: (badge: Badge) => void }) {
+/** A soft gold light behind what it holds, when `on`. */
+function Glow({ size, on, children }: { size: number; on: boolean; children: ReactNode }) {
+  return (
+    <View style={[styles.glow, { width: size, height: size }]}>
+      {on && (
+        <Svg width={size} height={size} style={StyleSheet.absoluteFill} aria-hidden>
+          <Defs>
+            <RadialGradient id={`glow-${size}`}>
+              <Stop offset="0.5" stopColor={palette.altin200} stopOpacity={0.4} />
+              <Stop offset="1" stopColor={palette.altin200} stopOpacity={0} />
+            </RadialGradient>
+          </Defs>
+          <Circle cx={size / 2} cy={size / 2} r={size / 2} fill={`url(#glow-${size})`} />
+        </Svg>
+      )}
+      {children}
+    </View>
+  );
+}
+
+function Stat({ value, label }: { value: number; label: string }) {
+  return (
+    <View style={styles.stat}>
+      <Text colorValue={palette.gece50} style={styles.statValue}>
+        {value}
+      </Text>
+      <Text colorValue={palette.gece300} style={styles.statLabel}>
+        {label}
+      </Text>
+    </View>
+  );
+}
+
+/** Tümü / Kazanılan / Sırada, as tabs over the grid. */
+function Filters({ value, onChange, counts }: { value: Filter; onChange: (filter: Filter) => void; counts: Record<Filter, number> }) {
+  const options: Array<{ key: Filter; label: string }> = [
+    { key: "all", label: "Tümü" },
+    { key: "earned", label: "Kazanılan" },
+    { key: "next", label: "Sırada" },
+  ];
+  return (
+    <View accessibilityRole="tablist" style={styles.filters}>
+      {options.map((option) => {
+        const selected = option.key === value;
+        return (
+          <Pressable
+            key={option.key}
+            accessibilityRole="tab"
+            accessibilityState={{ selected }}
+            // react-native-web does not carry accessibilityState.
+            {...(Platform.OS === "web" ? { "aria-selected": selected } : null)}
+            onPress={() => onChange(option.key)}
+            style={({ pressed }) => [styles.filter, selected && styles.filterOn, pressed && styles.pressed]}
+          >
+            <Text variant="label" colorValue={selected ? palette.altin950 : palette.gece50} style={styles.filterText}>
+              {option.label}
+            </Text>
+            <Text colorValue={selected ? palette.altin950 : palette.gece300} style={styles.filterCount}>
+              {counts[option.key]}
+            </Text>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+}
+
+/** The badges as equal tiles, three to a row. */
+function Grid({ items, onOpen }: { items: Badge[]; onOpen: (badge: Badge) => void }) {
+  const [width, setWidth] = useState(0);
+  const tile = width > 0 ? Math.floor((width - GAP * (COLUMNS - 1)) / COLUMNS) : 0;
+  return (
+    <View accessibilityRole="list" style={styles.grid} onLayout={(e) => setWidth(e.nativeEvent.layout.width)}>
+      {tile > 0 && items.map((badge, i) => <Tile key={badge.code} badge={badge} width={tile} index={i} onOpen={onOpen} />)}
+    </View>
+  );
+}
+
+/** One badge: its medal, its name in two lines, and its points or how far along. Fades up in turn. */
+function Tile({ badge, width, index, onOpen }: { badge: Badge; width: number; index: number; onOpen: (badge: Badge) => void }) {
   const reduced = useReducedMotion();
-  const pop = useRef(new Animated.Value(reduced ? 1 : 0)).current;
+  const { textScale } = useUi();
+  const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
   const earned = badge.earnedAt !== null;
+  const medal = Math.min(84, width - spacing.lg * 2);
 
   useEffect(() => {
     if (reduced) {
-      pop.setValue(1);
+      enter.setValue(1);
       return;
     }
-    Animated.spring(pop, { toValue: 1, delay: Math.min(index, 18) * 45, friction: 6, tension: 90, useNativeDriver: true }).start();
-  }, [index, pop, reduced]);
+    Animated.timing(enter, { toValue: 1, duration: 320, delay: Math.min(index, 12) * 35, useNativeDriver: true }).start();
+  }, [enter, index, reduced]);
 
-  const state = earned ? "kazanıldı" : `${badge.progress.current}/${badge.progress.target}`;
+  const state = earned ? `kazanıldı, ${badge.points} puan` : `${badge.progress.current}/${badge.progress.target}`;
   return (
-    <Animated.View style={[styles.cell, { opacity: pop, transform: [{ scale: pop.interpolate({ inputRange: [0, 1], outputRange: [0.6, 1] }) }] }]}>
+    <Animated.View
+      role="listitem"
+      style={{ width, opacity: enter, transform: [{ translateY: enter.interpolate({ inputRange: [0, 1], outputRange: [10, 0] }) }] }}
+    >
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={`${badge.title}, ${state}`}
         accessibilityHint="Rozetin ayrıntısını açar"
         onPress={() => onOpen(badge)}
-        style={({ pressed }) => [styles.cellInner, pressed && styles.pressed]}
+        style={({ pressed }) => [styles.tile, earned && styles.tileEarned, pressed && styles.pressed]}
       >
-        <Medal badge={badge} size={MEDAL} />
-        <Text variant="caption" style={styles.cellTitle} numberOfLines={2}>
+        <Medal badge={badge} size={medal} />
+        <Text
+          variant="caption"
+          colorValue={earned ? palette.gece50 : palette.gece300}
+          style={[styles.tileTitle, { minHeight: 36 * textScale }]}
+          numberOfLines={2}
+        >
           {badge.title}
         </Text>
+        {earned ? (
+          <View style={styles.tileFoot}>
+            <Text colorValue={palette.altin200} style={styles.tilePoints}>{`✦ +${badge.points}`}</Text>
+          </View>
+        ) : (
+          <View style={[styles.tileFoot, styles.tileProgress]}>
+            <View style={styles.tileTrack}>
+              <View style={[styles.fill, { width: `${share(badge) * 100}%` }]} />
+            </View>
+            <Text colorValue={palette.gece300} style={styles.tileCount}>{`${badge.progress.current}/${badge.progress.target}`}</Text>
+          </View>
+        )}
       </Pressable>
     </Animated.View>
   );
@@ -237,18 +410,16 @@ function Foil({ id }: { id: string }) {
 /**
  * A badge as a medal. With illustrated art (assets/badges): the drawing inside a foil rim when
  * earned; when not yet, the drawing in grey, a lock, and a thin gold arc for the progress.
- * Without art: a gold coin with the emoji struck in it, or a matte disc with the emoji faded.
+ * Without art: a gold coin with the emoji struck in it, or a night disc with the emoji faded.
  */
 function Medal({ badge, size }: { badge: Badge; size: number }) {
-  const { colors: c, scheme } = useTheme();
-  const dark = scheme === "dark";
   const earned = badge.earnedAt !== null;
-  const share = Math.min(1, badge.progress.current / badge.progress.target);
+  const done = share(badge);
   const mid = size / 2;
   const arc = mid - 2;
   const disc = mid - 9;
   const length = 2 * Math.PI * arc;
-  const id = `m-${badge.code}-${size}`;
+  const id = `m-${badge.code}-${Math.round(size)}`;
   const art = hasBadgeArt(badge.code);
 
   return (
@@ -274,8 +445,8 @@ function Medal({ badge, size }: { badge: Badge; size: number }) {
           </>
         ) : (
           <>
-            <Circle cx={mid} cy={mid} r={arc} stroke={c.border} strokeWidth={2} fill="none" />
-            {share > 0 && (
+            <Circle cx={mid} cy={mid} r={arc} stroke={sky.line} strokeWidth={2} fill="none" />
+            {done > 0 && (
               <Circle
                 cx={mid}
                 cy={mid}
@@ -284,15 +455,14 @@ function Medal({ badge, size }: { badge: Badge; size: number }) {
                 strokeWidth={2.5}
                 strokeLinecap="round"
                 fill="none"
-                strokeDasharray={`${share * length} ${length}`}
+                strokeDasharray={`${done * length} ${length}`}
                 transform={`rotate(-90 ${mid} ${mid})`}
               />
             )}
             {!art && (
               <>
-                <Circle cx={mid} cy={mid} r={disc} fill={dark ? palette.gece800 : palette.white} />
-                <Circle cx={mid} cy={mid} r={disc} fill={palette.altin200} fillOpacity={dark ? 0.06 : 0.14} />
-                <Circle cx={mid} cy={mid} r={disc - 4} stroke={c.textSecondary} strokeOpacity={0.25} strokeWidth={1} strokeDasharray="1.5 2.5" fill="none" />
+                <Circle cx={mid} cy={mid} r={disc} fill={palette.gece800} />
+                <Circle cx={mid} cy={mid} r={disc - 4} stroke={palette.gece300} strokeOpacity={0.25} strokeWidth={1} strokeDasharray="1.5 2.5" fill="none" />
               </>
             )}
           </>
@@ -307,17 +477,16 @@ function Medal({ badge, size }: { badge: Badge; size: number }) {
         )}
       </View>
       {!earned && (
-        <View style={[styles.lock, { backgroundColor: c.surface, borderColor: c.background }]}>
-          <Ionicons name="lock-closed" size={11} color={c.textSecondary} />
+        <View style={styles.lock}>
+          <Ionicons name="lock-closed" size={10} color={palette.gece300} />
         </View>
       )}
     </View>
   );
 }
 
-/** A medal's story: the big medal, its name, what it asks, and the points or how far along. */
+/** A badge's story: the big medal, its name, what it asks, and the points or how far along. */
 function BadgeSheet({ badge, onClose }: { badge: Badge | null; onClose: () => void }) {
-  const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   // Kept while the sheet slides away, so it does not empty before it is gone.
   const [shown, setShown] = useState<Badge | null>(badge);
@@ -331,34 +500,36 @@ function BadgeSheet({ badge, onClose }: { badge: Badge | null; onClose: () => vo
   return (
     <Modal visible={badge !== null} transparent animationType="slide" onRequestClose={onClose}>
       <Pressable style={styles.backdrop} onPress={onClose} accessibilityRole="button" accessibilityLabel="Kapat" />
-      <View style={[styles.sheet, { backgroundColor: c.surface, paddingBottom: insets.bottom + spacing.lg }]} accessibilityViewIsModal>
-        <View style={[styles.grabber, { backgroundColor: c.border }]} />
-        <Medal badge={shown} size={136} />
-        <Text variant="heading" headingLevel={2} style={styles.sheetTitle}>
+      <View style={[styles.sheet, { paddingBottom: insets.bottom + spacing.lg }]} accessibilityViewIsModal>
+        <View style={styles.grabber} />
+        <Glow size={200} on={earned}>
+          <Medal badge={shown} size={148} />
+        </Glow>
+        <Text variant="title" headingLevel={2} colorValue={palette.gece50} style={styles.centered}>
           {shown.title}
         </Text>
-        <Text color="textSecondary" style={styles.centered}>
+        <Text colorValue={palette.gece300} style={styles.centered}>
           {shown.description}
         </Text>
         {earned ? (
           <View style={styles.earnedChip}>
-            <Ionicons name="sparkles" size={14} color={palette.white} />
-            <Text variant="label" colorValue={palette.white} style={styles.chipText}>
+            <Ionicons name="sparkles" size={14} color={palette.altin950} />
+            <Text variant="label" colorValue={palette.altin950} style={styles.chipText}>
               {`Kazanıldı · +${shown.points} puan`}
             </Text>
           </View>
         ) : (
           <View style={styles.sheetProgress}>
-            <View style={[styles.track, { backgroundColor: c.surfaceRaised }]}>
+            <View style={styles.track}>
               <View style={[styles.fill, { width: `${Math.min(1, current / target) * 100}%` }]} />
             </View>
-            <Text variant="caption" color="textSecondary">
+            <Text variant="caption" colorValue={palette.gece300}>
               {`${current}/${target} · kazanınca +${shown.points} puan`}
             </Text>
           </View>
         )}
-        <Pressable accessibilityRole="button" onPress={onClose} style={({ pressed }) => [styles.close, { borderColor: c.border }, pressed && styles.pressed]}>
-          <Text variant="label" style={styles.chipText}>
+        <Pressable accessibilityRole="button" onPress={onClose} style={({ pressed }) => [styles.close, pressed && styles.pressed]}>
+          <Text variant="label" colorValue={palette.gece50} style={styles.chipText}>
             Tamam
           </Text>
         </Pressable>
@@ -374,46 +545,39 @@ const styles = StyleSheet.create({
   pressed: {
     opacity: 0.75,
   },
+  backdropGlow: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 520,
+  },
   content: {
     width: "100%",
     maxWidth: 560,
     alignSelf: "center",
     padding: spacing.lg,
-    gap: spacing.lg,
+    gap: spacing.xl,
   },
   error: {
     padding: spacing.md,
   },
-  collection: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.xl,
-    padding: spacing.xl,
-    borderRadius: 26,
+  showcase: {
+    borderRadius: 28,
     borderWidth: 1,
-    borderColor: goldFaint,
-    backgroundColor: "#063632",
+    borderColor: sky.goldLine,
+    backgroundColor: "rgba(12, 26, 58, 0.7)",
     overflow: "hidden",
   },
-  ringCenter: {
-    ...StyleSheet.absoluteFill,
+  feature: {
     alignItems: "center",
-    justifyContent: "center",
+    paddingTop: spacing.md,
+    paddingHorizontal: spacing.lg,
   },
-  // Sans figures: the display face draws its zero as a ring.
-  ringValue: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 34,
-    lineHeight: 38,
-  },
-  ringTotal: {
-    fontFamily: fontFamily.sansMedium,
-    fontSize: 13,
-    lineHeight: 16,
-  },
-  collectionText: {
-    flex: 1,
-    gap: spacing.md,
+  featureText: {
+    alignItems: "center",
+    gap: spacing.xs,
+    marginTop: -spacing.md,
   },
   overline: {
     fontFamily: fontFamily.monoMedium,
@@ -421,43 +585,201 @@ const styles = StyleSheet.create({
     lineHeight: 15,
     letterSpacing: 2.5,
   },
-  collectionStats: {
+  glow: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  recent: {
+    alignItems: "center",
+    gap: spacing.xs,
+    marginTop: spacing.lg,
+  },
+  recentRow: {
     flexDirection: "row",
-    gap: spacing.xl,
   },
-  collectionValue: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 24,
-    lineHeight: 30,
+  recentItem: {
+    width: 38,
+    height: 38,
+    borderRadius: 19,
+    borderWidth: 2,
+    borderColor: sky.top,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: sky.top,
   },
-  collectionLabel: {
-    fontFamily: fontFamily.sansMedium,
-    fontSize: 13,
-    lineHeight: 17,
+  recentOverlap: {
+    marginLeft: -10,
   },
-  shelf: {
-    gap: spacing.md,
+  recentMore: {
+    backgroundColor: palette.gece700,
   },
-  shelfTitle: {
+  recentMoreText: {
+    fontFamily: fontFamily.sansSemiBold,
     fontSize: 12,
     lineHeight: 16,
+  },
+  progress: {
+    gap: spacing.sm,
+    marginTop: spacing.lg,
+    padding: spacing.lg,
+    borderTopWidth: 1,
+    borderTopColor: sky.line,
+    backgroundColor: "rgba(255, 255, 255, 0.025)",
+  },
+  progressHead: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    justifyContent: "space-between",
+  },
+  // Sans figures: the display face draws its zero as a ring.
+  progressValue: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 22,
+    lineHeight: 28,
+  },
+  progressOf: {
+    fontFamily: fontFamily.sansMedium,
+    fontSize: 15,
+  },
+  progressShare: {
+    fontFamily: fontFamily.monoMedium,
+    fontSize: 14,
+    lineHeight: 20,
+  },
+  track: {
+    alignSelf: "stretch",
+    height: 6,
+    borderRadius: 3,
+    overflow: "hidden",
+    backgroundColor: sky.line,
+  },
+  fill: {
+    height: "100%",
+    borderRadius: 3,
+    backgroundColor: palette.altin200,
+  },
+  stats: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: spacing.sm,
+  },
+  stat: {
+    flex: 1,
+    alignItems: "center",
+  },
+  statRule: {
+    width: 1,
+    height: 28,
+    backgroundColor: sky.line,
+  },
+  statValue: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 18,
+    lineHeight: 24,
+  },
+  statLabel: {
+    fontFamily: fontFamily.sansMedium,
+    fontSize: 12,
+    lineHeight: 16,
+  },
+  filters: {
+    flexDirection: "row",
+    gap: spacing.xs,
+    padding: 4,
+    borderRadius: radius.full,
+    borderWidth: 1,
+    borderColor: sky.line,
+    backgroundColor: sky.card,
+  },
+  filter: {
+    flex: 1,
+    minHeight: 44,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    borderRadius: radius.full,
+  },
+  filterOn: {
+    backgroundColor: palette.altin200,
+  },
+  filterText: {
+    fontSize: 14,
+    lineHeight: 20,
+  },
+  filterCount: {
+    fontFamily: fontFamily.monoMedium,
+    fontSize: 12,
+    lineHeight: 16,
+  },
+  section: {
+    gap: spacing.md,
+  },
+  sectionHead: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    justifyContent: "space-between",
+  },
+  sectionTitle: {
+    fontSize: 17,
+  },
+  sectionCount: {
+    fontFamily: fontFamily.monoMedium,
+    fontSize: 13,
+    lineHeight: 18,
   },
   grid: {
     flexDirection: "row",
     flexWrap: "wrap",
-    rowGap: spacing.lg,
+    gap: GAP,
   },
-  cell: {
-    width: "33.33%",
-  },
-  cellInner: {
+  tile: {
     alignItems: "center",
     gap: spacing.sm,
-    paddingHorizontal: spacing.xs,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.sm,
+    paddingHorizontal: spacing.sm,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: sky.line,
+    backgroundColor: sky.card,
   },
-  cellTitle: {
+  tileEarned: {
+    borderColor: sky.goldLine,
+    backgroundColor: sky.cardEarned,
+  },
+  tileTitle: {
     fontFamily: fontFamily.sansSemiBold,
+    fontSize: 13,
+    lineHeight: 18,
     textAlign: "center",
+  },
+  tileFoot: {
+    height: 18,
+    justifyContent: "center",
+  },
+  tilePoints: {
+    fontFamily: fontFamily.monoMedium,
+    fontSize: 12,
+    lineHeight: 16,
+  },
+  tileProgress: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+  tileTrack: {
+    flex: 1,
+    height: 4,
+    borderRadius: 2,
+    overflow: "hidden",
+    backgroundColor: sky.line,
+  },
+  tileCount: {
+    fontFamily: fontFamily.monoMedium,
+    fontSize: 11,
+    lineHeight: 14,
   },
   medalFace: {
     ...StyleSheet.absoluteFill,
@@ -469,18 +791,20 @@ const styles = StyleSheet.create({
   },
   lock: {
     position: "absolute",
-    right: 4,
-    bottom: 4,
-    width: 22,
-    height: 22,
-    borderRadius: 11,
+    right: 2,
+    bottom: 2,
+    width: 20,
+    height: 20,
+    borderRadius: 10,
     borderWidth: 2,
+    borderColor: sky.deep,
+    backgroundColor: palette.gece800,
     alignItems: "center",
     justifyContent: "center",
   },
   backdrop: {
     flex: 1,
-    backgroundColor: "rgba(6, 8, 13, 0.45)",
+    backgroundColor: "rgba(3, 6, 14, 0.6)",
   },
   sheet: {
     alignItems: "center",
@@ -489,16 +813,16 @@ const styles = StyleSheet.create({
     paddingTop: spacing.md,
     borderTopLeftRadius: 28,
     borderTopRightRadius: 28,
+    borderWidth: 1,
+    borderBottomWidth: 0,
+    borderColor: sky.line,
+    backgroundColor: sky.sheet,
   },
   grabber: {
     width: 40,
     height: 5,
     borderRadius: 3,
-    marginBottom: spacing.sm,
-  },
-  sheetTitle: {
-    fontFamily: fontFamily.display,
-    textAlign: "center",
+    backgroundColor: sky.line,
   },
   earnedChip: {
     flexDirection: "row",
@@ -507,7 +831,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     height: 32,
     borderRadius: radius.full,
-    backgroundColor: palette.altin700,
+    backgroundColor: palette.altin200,
   },
   chipText: {
     fontFamily: fontFamily.sansSemiBold,
@@ -517,23 +841,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: spacing.sm,
   },
-  track: {
-    alignSelf: "stretch",
-    height: 8,
-    borderRadius: 4,
-    overflow: "hidden",
-  },
-  fill: {
-    height: "100%",
-    borderRadius: 4,
-    backgroundColor: palette.altin600,
-  },
   close: {
     alignSelf: "stretch",
     height: 48,
     marginTop: spacing.sm,
     borderRadius: radius.full,
     borderWidth: 1,
+    borderColor: sky.line,
     alignItems: "center",
     justifyContent: "center",
   },
