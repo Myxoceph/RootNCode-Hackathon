@@ -1,7 +1,18 @@
 import type { Prisma, PrismaClient } from "../../generated/prisma/client.ts";
 import type { UserFacts } from "./rules.ts";
 
-export type AchievementRecord = Prisma.achievementGetPayload<object>;
+/** With the badge picture's hash, if there is one, for its address; not its bytes. */
+const withImage = { image: { select: { sha256: true } } } as const;
+export type AchievementRecord = Prisma.achievementGetPayload<{ include: typeof withImage }>;
+
+/** A badge picture as stored: checked and without metadata. */
+export interface AchievementImage {
+  contentType: string;
+  bytes: Uint8Array;
+  width: number;
+  height: number;
+  sha256: string;
+}
 
 export interface AchievementsRepository {
   /** A visible asset's point (null lat/lng when it has none), or null when it is not visible. */
@@ -27,6 +38,11 @@ export interface AchievementsRepository {
   createAchievement(data: Prisma.achievementUncheckedCreateInput): Promise<AchievementRecord>;
   updateAchievement(code: string, data: Prisma.achievementUncheckedUpdateInput): Promise<AchievementRecord>;
   deleteAchievement(code: string): Promise<boolean>;
+  /** Puts the badge picture, in place of an earlier one. */
+  saveImage(code: string, image: AchievementImage): Promise<AchievementRecord>;
+  /** Removes the badge picture; false when there was none. */
+  deleteImage(code: string): Promise<boolean>;
+  findImage(code: string): Promise<{ contentType: string; bytes: Uint8Array } | null>;
   /** Descriptions of the codes and ids a rule refers to that do not exist. */
   missingRefs(refs: { city?: string | undefined; era?: string | undefined; parentId?: string | undefined }): Promise<string[]>;
 }
@@ -173,6 +189,7 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
     listAchievements({ activeOnly }) {
       return prisma.achievement.findMany({
         where: activeOnly ? { active: true } : {},
+        include: withImage,
         orderBy: [{ sort_order: "asc" }, { code: "asc" }],
       });
     },
@@ -196,15 +213,31 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
     },
 
     findAchievement(code) {
-      return prisma.achievement.findUnique({ where: { code } });
+      return prisma.achievement.findUnique({ where: { code }, include: withImage });
     },
 
     createAchievement(data) {
-      return prisma.achievement.create({ data });
+      return prisma.achievement.create({ data, include: withImage });
     },
 
     updateAchievement(code, data) {
-      return prisma.achievement.update({ where: { code }, data });
+      return prisma.achievement.update({ where: { code }, data, include: withImage });
+    },
+
+    async saveImage(code, image) {
+      const file = { content_type: image.contentType, bytes: Buffer.from(image.bytes), width: image.width, height: image.height, sha256: image.sha256, updated_at: new Date() };
+      await prisma.achievement_image.upsert({ where: { achievement_code: code }, create: { achievement_code: code, ...file }, update: file });
+      return prisma.achievement.findUniqueOrThrow({ where: { code }, include: withImage });
+    },
+
+    async deleteImage(code) {
+      const { count } = await prisma.achievement_image.deleteMany({ where: { achievement_code: code } });
+      return count > 0;
+    },
+
+    async findImage(code) {
+      const image = await prisma.achievement_image.findUnique({ where: { achievement_code: code }, select: { content_type: true, bytes: true } });
+      return image ? { contentType: image.content_type, bytes: image.bytes } : null;
     },
 
     async deleteAchievement(code) {

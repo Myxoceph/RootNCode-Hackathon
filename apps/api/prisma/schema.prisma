@@ -584,6 +584,19 @@ model achievement {
   created_by       String
   created_at       DateTime           @default(now()) @db.Timestamptz(6)
   user_achievement user_achievement[]
+  image            achievement_image?
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model achievement_image {
+  achievement_code String      @id
+  content_type     String
+  bytes            Bytes
+  width            Int
+  height           Int
+  sha256           String
+  updated_at       DateTime    @default(now()) @db.Timestamptz(6)
+  achievement      achievement @relation(fields: [achievement_code], references: [code], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model user_achievement {
