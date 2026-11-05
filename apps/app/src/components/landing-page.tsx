@@ -104,6 +104,12 @@ function Scene({ onSite, onApp }: { onSite: (event: MouseEvent<HTMLAnchorElement
   return (
     <div ref={room} className="vg-room">
       <div className="vg-scene vg-rise vg-d5" style={{ width: SCENE_W, height: SCENE_H, transform: `scale(${scale})`, opacity: scale ? undefined : 0 }}>
+        {/* The ground they stand on: the dots go dark under them, a soft gold light pools around. */}
+        <div className="vg-pool" aria-hidden />
+        <div className="vg-backlight" aria-hidden />
+        <div className="vg-halo" aria-hidden />
+        <div className="vg-contact vg-contact-laptop" aria-hidden />
+        <div className="vg-contact vg-contact-phone" aria-hidden />
         <a className="vg-device vg-device-laptop" href="/map" onClick={onSite} aria-label="Web sitesi: haritada eserleri keşfet">
           <div className="vg-laptop">
             <div className="vg-glass">
@@ -119,7 +125,7 @@ function Scene({ onSite, onApp }: { onSite: (event: MouseEvent<HTMLAnchorElement
             </div>
           </div>
           <span className="vg-tag">
-            <Ionicons name="laptop-outline" size={14} aria-hidden /> Web sitesi
+            Web sitesi
           </span>
         </a>
         <button type="button" className="vg-device vg-device-phone" onClick={onApp} aria-haspopup="dialog" aria-label="Mobil uygulama: telefonuna al">
@@ -131,7 +137,7 @@ function Scene({ onSite, onApp }: { onSite: (event: MouseEvent<HTMLAnchorElement
             </div>
           </div>
           <span className="vg-tag">
-            <Ionicons name="phone-portrait-outline" size={14} aria-hidden /> Mobil uygulama
+            Mobil uygulama
           </span>
         </button>
       </div>
@@ -220,8 +226,8 @@ const WEB_SHOT = Asset.fromModule(require("@/assets/images/landing/web-map.jpg")
 const APP_SHOT = Asset.fromModule(require("@/assets/images/landing/app-asset.jpg")).uri;
 
 /** The scene's own size, before it is scaled to fit: the laptop, and the phone over its right edge. */
-const SCENE_W = 760;
-const SCENE_H = 470;
+const SCENE_W = 780;
+const SCENE_H = 520;
 
 /** Film grain over everything, as an SVG noise tile. */
 const GRAIN = `url("data:image/svg+xml;utf8,${encodeURIComponent(
@@ -237,7 +243,7 @@ const CSS = `
 }
 .vg-landing *, .vg-landing *::before, .vg-landing *::after { box-sizing: border-box; }
 .vg-terrain { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 28%, #000 58%); mask-image: linear-gradient(to bottom, transparent 28%, #000 58%); }
+  -webkit-mask-image: linear-gradient(to bottom, transparent 26%, #000 56%); mask-image: linear-gradient(to bottom, transparent 26%, #000 56%); }
 .vg-vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.6) 100%); }
 .vg-grain { position: absolute; inset: -50%; pointer-events: none; background-image: ${GRAIN}; opacity: 0.09; mix-blend-mode: overlay; }
 
@@ -263,12 +269,23 @@ const CSS = `
 .vg-button-dark:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-1px); }
 .vg-button-disc { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 11px; background: var(--ink); color: #0B0F18; }
 
-.vg-room { position: relative; flex: 1; min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
+.vg-room { position: relative; flex: 1; transform: translateY(calc(-1 * clamp(16px, 6vh, 70px))); min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
 .vg-scene { position: relative; flex: none; transform-origin: 50% 100%; margin-bottom: 0; }
+.vg-pool { position: absolute; left: 50%; bottom: -40px; width: 1000px; height: 200px; transform: translateX(-50%); pointer-events: none;
+  background: radial-gradient(closest-side, rgba(5, 7, 13, 0.7) 0%, rgba(5, 7, 13, 0.4) 55%, rgba(5, 7, 13, 0) 100%); }
+.vg-backlight { position: absolute; left: 40%; top: -40px; width: 900px; height: 520px; transform: translateX(-50%); pointer-events: none;
+  background: radial-gradient(closest-side, rgba(221, 181, 92, 0.16), rgba(221, 181, 92, 0.05) 50%, rgba(221, 181, 92, 0) 100%); }
+.vg-halo { position: absolute; left: 50%; bottom: 22px; width: 900px; height: 104px; transform: translateX(-50%); border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(221, 181, 92, 0.16), rgba(221, 181, 92, 0.04) 60%, rgba(221, 181, 92, 0) 100%);
+  border: 1px solid rgba(231, 194, 106, 0.28); box-shadow: 0 0 24px rgba(231, 194, 106, 0.18), inset 0 0 24px rgba(231, 194, 106, 0.12);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent); mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent); }
+.vg-contact { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); }
+.vg-contact-laptop { left: 0; bottom: 50px; width: 620px; height: 26px; }
+.vg-contact-phone { right: 0; bottom: -2px; width: 200px; height: 22px; z-index: 1; }
 .vg-device { all: unset; position: absolute; bottom: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .vg-device:focus-visible { outline: 3px solid var(--gold); outline-offset: 10px; border-radius: 22px; }
-.vg-device-laptop { left: 0; width: 620px; }
-.vg-device-phone { right: 0; width: 200px; bottom: -6px; }
+.vg-device-laptop { left: 0; bottom: 64px; width: 620px; }
+.vg-device-phone { right: 0; width: 200px; bottom: 10px; z-index: 1; }
 .vg-device > div { transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.6s; }
 .vg-device:hover > div, .vg-device:focus-visible > div { transform: translateY(-8px); }
 .vg-tag { position: absolute; left: 50%; bottom: -34px; transform: translate(-50%, 6px); display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; white-space: nowrap;
@@ -276,22 +293,22 @@ const CSS = `
   opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; backdrop-filter: blur(8px); }
 .vg-device:hover .vg-tag, .vg-device:focus-visible .vg-tag { opacity: 1; transform: translate(-50%, 0); }
 
-.vg-laptop { display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.6)); }
+.vg-laptop { display: flex; flex-direction: column; align-items: center; }
 .vg-glass { position: relative; width: 572px; height: 368px; border-radius: 18px 18px 4px 4px; padding: 11px 11px 14px; background: #040507;
-  box-shadow: 0 0 0 1.5px #3B3F47, inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 80px -20px rgba(221, 181, 92, 0.25); }
+  box-shadow: 0 0 0 1.5px #474B54, 0 -1px 0 1.5px rgba(255, 255, 255, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 80px -30px rgba(0, 0, 0, 0.9); }
 .vg-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 6px 6px 2px 2px; background: #0D1420; }
-.vg-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.vg-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; filter: brightness(1.12) saturate(1.08); }
 .vg-glare { position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(120deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 34%, rgba(255,255,255,0) 34.5%), radial-gradient(120% 90% at 50% 0%, transparent 60%, rgba(0,0,0,0.25)); }
 .vg-cam { position: absolute; top: 10px; left: 50%; width: 66px; height: 12px; transform: translateX(-50%); border-radius: 0 0 8px 8px; background: #040507; }
 .vg-cam::after { content: ""; position: absolute; left: 50%; top: 3px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #1d2a3a; }
 .vg-hinge { width: 512px; height: 6px; background: linear-gradient(#111317, #2A2D33); border-radius: 0 0 3px 3px; }
 .vg-lip { position: relative; width: 620px; height: 15px; border-radius: 2px 2px 14px 14px / 2px 2px 12px 12px;
-  background: linear-gradient(#8E939C 0%, #5D626B 45%, #34373D 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45); }
+  background: linear-gradient(#A3A8B1 0%, #6B7079 45%, #34373D 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5); }
 .vg-scoop { position: absolute; top: 0; left: 50%; width: 104px; height: 6px; margin-left: -52px; border-radius: 0 0 10px 10px; background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08)); }
 
 .vg-phone { position: relative; width: 200px; height: 412px; border-radius: 38px; padding: 8px; background: #040507;
-  box-shadow: 0 0 0 2.5px #4A4E57, 0 0 0 4px #1E2026, inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 40px 60px -20px rgba(0, 0, 0, 0.8); }
+  box-shadow: 0 0 0 2.5px #5A5F69, 0 0 0 4px #1E2026, -1px -1px 0 4px rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.1), -24px 30px 60px -20px rgba(0, 0, 0, 0.9); }
 .vg-phone-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 31px; background: #0D1420; }
 .vg-notch { position: absolute; top: 9px; left: 50%; width: 72px; height: 21px; transform: translateX(-50%); border-radius: 12px; background: #030406; }
 
@@ -322,6 +339,10 @@ const CSS = `
 @keyframes vg-rise-scene { from { opacity: 0; translate: 0 40px; } to { opacity: 1; translate: 0 0; } }
 @keyframes vg-pop { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: none; } }
 
+@media (max-aspect-ratio: 4/5) {
+  .vg-room { align-items: center; transform: none; }
+  .vg-scene { transform-origin: 50% 50%; }
+}
 @media (max-width: 560px) {
   .vg-nav { padding: 16px 18px; }
   .vg-brand { font-size: 20px; }

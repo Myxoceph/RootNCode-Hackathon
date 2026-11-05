@@ -38,7 +38,7 @@ export function LandingTerrain({ still }: { still: boolean }) {
       // The floor: the south coast at the bottom edge, the Black Sea toward the horizon, the country wider than the screen.
       // A tall (phone) screen raises the floor into the room under the hero.
       const tall = height > width * 1.2;
-      const horizon = height * (tall ? 0.4 : 0.5);
+      const horizon = height * (tall ? 0.33 : 0.5);
       const reach = height * (tall ? 0.55 : 0.5);
       const lift = height * 0.18;
       const unit = Math.max(1, Math.min(width, 1800) / 1100);
@@ -95,9 +95,9 @@ export function LandingTerrain({ still }: { still: boolean }) {
 
 /** Turkey's span, and how the floor is laid out: a degree of latitude this much deeper. */
 const SOUTH = 33;
-const NEAR_LAT = 36.2;
+const NEAR_LAT = 37;
 const CENTER_LON = 35.4;
-const LON_SCALE = 0.105;
+const LON_SCALE = 0.155;
 const DEPTH_PER_DEGREE = 0.38;
 /** The provinces the map outlines in gold for their assets. */
 const LIT_PLATES = new Set([16, 42, 31]);
@@ -127,14 +127,14 @@ function buildDots(): Dot[] {
   const SEA = "#5B6E92";
 
   // Land and sea on one grid; the sea thinner, out to the edges of the view.
-  const step = 0.085;
+  const step = 0.065;
   for (let lat = SOUTH; lat <= 44.6; lat += step) {
     for (let lon = 14; lon <= 57; lon += step) {
       const province = provinceAt(provinces, lon, lat);
       if (province) {
         const lit = LIT_PLATES.has(province.plate);
         dots.push({ lon, lat, size: lit ? 2.2 : 1.7, alpha: lit ? 0.75 : 0.42, color: lit ? LIT : LAND });
-      } else if (Math.round(lon / step) % 3 === 0 && Math.round(lat / step) % 3 === 0) {
+      } else if (Math.round(lon / step) % 4 === 0 && Math.round(lat / step) % 4 === 0) {
         dots.push({ lon, lat, size: 1.5, alpha: 0.38, color: SEA });
       }
     }
