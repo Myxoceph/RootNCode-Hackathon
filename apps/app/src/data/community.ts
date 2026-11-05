@@ -269,13 +269,13 @@ export async function sendVisitProof(assetId: string, proof: Omit<VisitProofRequ
 
 /**
  * "Kilidi aç" while Ziyaret Mührü is tried away from the sites (`POST /assets/:id/visit/unlock`): the
- * visit counts for badges and points without position or photo. Null without a session.
+ * visit counts for badges and points without position or photo. Null without an account.
  */
 export async function sendDemoUnlock(assetId: string): Promise<VisitResponse | null> {
-  if (!communityAvailable) return null;
-  await loadSession();
-  if (!token) return null;
-  return call(`/assets/${encodeURIComponent(assetId)}/visit/unlock`, VisitResponseSchema, { method: "POST", token });
+  // An account's visit, as a sealed one: an old nickname session earns nothing either.
+  const sendWith = await accountToken();
+  if (sendWith === null) return null;
+  return call(`/assets/${encodeURIComponent(assetId)}/visit/unlock`, VisitResponseSchema, { method: "POST", token: sendWith });
 }
 
 /** The account's details changed (name, photo): kept with the session it belongs to. */

@@ -1,7 +1,7 @@
 import type { AppUser } from "@vagabonds/contracts";
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { needsSignIn } from "../src/lib/account-gate";
+import { afterSignIn, isAccount, needsSignIn } from "../src/lib/account-gate";
 import { markTourSeen, tourSeen, tourSeenKey } from "../src/lib/map-tour";
 import { store } from "./mocks/async-storage";
 
@@ -23,6 +23,29 @@ describe("the account gate", () => {
   it("decides nothing while the stored session loads, nor without a server to open an account on", () => {
     expect(needsSignIn(undefined, true, "(tabs)")).toBe(false);
     expect(needsSignIn(null, false, "(tabs)")).toBe(false);
+  });
+});
+
+describe("an account", () => {
+  it("has a username; an old nickname session does not", () => {
+    expect(isAccount(visitor("gezgin"))).toBe(true);
+    expect(isAccount(visitor(null))).toBe(false);
+    expect(isAccount(null)).toBe(false);
+    expect(isAccount(undefined)).toBe(false);
+  });
+});
+
+describe("after signing in", () => {
+  it("opens the page a shared link asked for", () => {
+    expect(afterSignIn("/asset/bursa-osmangazi-ulucami")).toBe("/asset/bursa-osmangazi-ulucami");
+    expect(afterSignIn("/map?city=bursa")).toBe("/map?city=bursa");
+  });
+
+  it("opens the greeting otherwise, and never a page outside the app or the sign-in screen", () => {
+    expect(afterSignIn(undefined)).toBe("/");
+    expect(afterSignIn("https://baska.site")).toBe("/");
+    expect(afterSignIn("//baska.site/yol")).toBe("/");
+    expect(afterSignIn("/auth?mode=login")).toBe("/");
   });
 });
 

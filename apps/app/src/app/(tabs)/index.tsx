@@ -7,6 +7,7 @@ import { Animated, Easing, Pressable, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { communityAvailable, useCommunity } from "@/data";
+import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -33,7 +34,7 @@ export default function WelcomeScreen() {
 
   const name = user?.nickname ?? null;
   // The stored session is in, and it is an account (or there is no server to need one).
-  const ready = user !== undefined && (Boolean(user?.username) || !communityAvailable);
+  const ready = user !== undefined && (isAccount(user) || !communityAvailable);
 
   const goToMap = () => {
     if (left.current) return;
@@ -60,17 +61,20 @@ export default function WelcomeScreen() {
       </Head>
       <StatusBar style={scheme === "dark" ? "light" : "dark"} />
 
-      <Pressable
-        onPress={goToMap}
-        accessibilityRole="button"
-        accessibilityLabel="Atla, haritaya geç"
-        hitSlop={8}
-        style={[styles.skip, { top: insets.top + spacing.md, backgroundColor: c.surfaceRaised, borderColor: c.border }]}
-      >
-        <Text variant="caption" colorValue={c.text} style={styles.skipLabel}>
-          Atla
-        </Text>
-      </Pressable>
+      {/* Only once there is somewhere to go: without an account the gate leads to signing in. */}
+      {ready && (
+        <Pressable
+          onPress={goToMap}
+          accessibilityRole="button"
+          accessibilityLabel="Atla, haritaya geç"
+          hitSlop={8}
+          style={[styles.skip, { top: insets.top + spacing.md, backgroundColor: c.surfaceRaised, borderColor: c.border }]}
+        >
+          <Text variant="caption" colorValue={c.text} style={styles.skipLabel}>
+            Atla
+          </Text>
+        </Pressable>
+      )}
 
       <Animated.View style={[styles.content, { opacity: fade, transform: [{ translateY: rise }] }]}>
         <Text colorValue={c.textSecondary} style={styles.hello}>

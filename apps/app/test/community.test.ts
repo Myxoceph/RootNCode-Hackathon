@@ -230,6 +230,24 @@ describe("accounts", () => {
     expect(community.getCommunityState().user).toBeNull();
   });
 
+  it("says the server cannot be reached when signing in offline", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(() => Promise.reject(new Error("offline"))),
+    );
+    await expect(community.login({ username: "gezgin", password: "parola123" })).rejects.toMatchObject({
+      kind: "unavailable",
+      message: "Sunucuya ulaşılamıyor. İnternet bağlantını kontrol edip tekrar dene.",
+    });
+  });
+
+  it("counts a demo unlock only for an account, not an old nickname session", async () => {
+    await load({ stored: session("Gezgin", "vgb_anon") });
+    const { fetch } = scriptedFetch();
+    await expect(community.sendDemoUnlock(ASSET.id)).resolves.toBeNull();
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
   it("signs out on this device even when the API cannot be reached", async () => {
     await load({ stored: account("gezgin", "gezgin", "vgb_account") });
     vi.stubGlobal(
