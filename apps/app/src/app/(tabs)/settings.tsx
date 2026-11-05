@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   fontFamily,
@@ -52,6 +54,8 @@ import { announce } from "@/lib/announce";
 import { useSavedRoutes } from "@/lib/saved-routes";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { casing } from "@/i18n";
+import { getMessages, useLang } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -69,6 +73,8 @@ const STAR_SQUARE = "M22 22 H78 V78 H22 Z";
  */
 export default function SettingsScreen() {
   const { colors: c, scheme } = useTheme();
+  // The page and its parts are drawn again in a new language; they read their words through getMessages().
+  useLang();
   const { user } = useCommunity();
   const insets = useSafeAreaInsets();
   const tabBarHeight = useBottomTabBarHeight();
@@ -80,9 +86,9 @@ export default function SettingsScreen() {
   const signOut = signedIn && (
     <Pressable
       accessibilityRole="button"
-      accessibilityHint="Bu cihazdaki oturumu kapatır"
+      accessibilityHint={getMessages().profile.signOutHint}
       onPress={() => {
-        void logout().then(() => announce("Çıkış yapıldı."));
+        void logout().then(() => announce(getMessages().profile.signedOut));
       }}
       style={({
         pressed,
@@ -97,7 +103,7 @@ export default function SettingsScreen() {
     >
       <Ionicons name="log-out-outline" size={18} color={c.warning} />
       <Text variant="label" color="warning">
-        Çıkış yap
+        {getMessages().profile.signOut}
       </Text>
     </Pressable>
   );
@@ -109,7 +115,7 @@ export default function SettingsScreen() {
     >
       <StatusBar style={scheme === "dark" ? "light" : "dark"} />
       <Head>
-        <title>Profil · Vagabonds</title>
+        <title>{`${getMessages().tabs.profile} · Vagabonds`}</title>
       </Head>
 
       {wide ? (
@@ -117,13 +123,13 @@ export default function SettingsScreen() {
           <View style={styles.hero}>
             <View style={styles.flex}>
               <Text style={[styles.overline, { color: c.highlightMark }]}>
-                PROFİL
+                {getMessages().profile.overline}
               </Text>
               <Text headingLevel={1} style={styles.heroTitle}>
                 {`Merhaba, ${user?.nickname ?? "Gezgin"}`}
               </Text>
               <Text color="textSecondary">
-                Vakıf mirasındaki yolculuğun bir bakışta.
+                {getMessages().profile.lead}
               </Text>
             </View>
             {signOut && (
@@ -144,7 +150,7 @@ export default function SettingsScreen() {
       ) : (
         <View style={[styles.column, { paddingTop: insets.top + spacing.md }]}>
           <Text headingLevel={1} style={styles.pageTitle}>
-            Profil
+            {getMessages().tabs.profile}
           </Text>
 
           <Passport />
@@ -178,7 +184,7 @@ function Passport() {
   const earned = data ? data.items.filter((item) => item.earnedAt).length : 0;
   const visits = data?.visits ?? 0;
   // Without a server no account can be opened: the sample version's passport has no handle.
-  const account = signedIn ? `@${user!.username}` : "Örnek sürüm";
+  const account = signedIn ? `@${user!.username}` : getMessages().profile.sample;
   // The visitor's own photo and full name; without them the back shows the initial and the nickname.
   const holder = {
     photoUrl: avatarUri(user),
@@ -244,10 +250,10 @@ function Passport() {
       accessibilityRole="button"
       accessibilityLabel={
         flipped
-          ? `Gezgin pasaportunun arkası. ${fullName}, ${account}`
-          : `Gezgin pasaportu. ${name}, ${account}. ${points} puan, ${earned} rozet, ${visits} ziyaret`
+          ? getMessages().profile.passportBack(fullName, account)
+          : getMessages().profile.passport(name, account, points, earned, visits)
       }
-      accessibilityHint="Kartı çevirir"
+      accessibilityHint={getMessages().profile.flipHint}
       onPress={flip}
     >
       <Animated.View
@@ -269,10 +275,10 @@ function Passport() {
             <Emblem size={34} />
             <View style={styles.flex}>
               <Text colorValue={palette.altin200} style={styles.coverTitle}>
-                GEZGİN PASAPORTU
+                {getMessages().profile.passportTitle}
               </Text>
               <Text colorValue={palette.gece300} style={styles.coverIssuer}>
-                Vakıf Mirası
+                {getMessages().profile.issuer}
               </Text>
             </View>
             <FlipHint />
@@ -297,9 +303,9 @@ function Passport() {
           </View>
 
           <View style={styles.stats}>
-            <Stat value={points} label="puan" gold />
-            <Stat value={earned} label="rozet" />
-            <Stat value={visits} label="ziyaret" />
+            <Stat value={points} label={getMessages().profile.points} gold />
+            <Stat value={earned} label={getMessages().profile.badges} />
+            <Stat value={visits} label={getMessages().profile.visits} />
           </View>
         </Animated.View>
 
@@ -348,7 +354,7 @@ function Passport() {
                   style={styles.photoInitial}
                   aria-hidden
                 >
-                  {fullName.charAt(0).toLocaleUpperCase("tr")}
+                  {fullName.charAt(0).toLocaleUpperCase(casing())}
                 </Text>
               ) : (
                 <Ionicons
@@ -402,7 +408,7 @@ function FlipHint() {
     <View style={styles.flipHint} aria-hidden>
       <Ionicons name="sync-outline" size={13} color={palette.altin200} />
       <Text colorValue={palette.altin200} style={styles.flipHintText}>
-        Çevir
+        {getMessages().profile.flip}
       </Text>
     </View>
   );
@@ -691,46 +697,46 @@ function Sections({ grid = false }: { grid?: boolean }) {
     {
       href: "/profile/routes",
       icon: "bookmark-outline",
-      title: "Kaydettiklerim",
+      title: getMessages().profile.saved,
       value: routes.length > 0 ? String(routes.length) : null,
-      note: "Rehber'le planladığın rotalar",
+      note: getMessages().profile.savedNote,
     },
     {
       href: "/profile/sealed",
       icon: "shield-checkmark-outline",
-      title: "Mühürlenen eserler",
+      title: getMessages().profile.sealed,
       value: sealed.size > 0 ? String(sealed.size) : null,
-      note: "Ziyaretle kilidini açtığın eserler",
+      note: getMessages().profile.sealedNote,
     },
     {
       href: "/profile/badges",
       icon: "ribbon-outline",
-      title: "Rozetlerim",
+      title: getMessages().profile.badgesTitle,
       value: badgeData
         ? `${badgeData.items.filter((b) => b.earnedAt).length}/${badgeData.items.length}`
         : null,
-      note: "Şehir ve ilçe rozetlerin",
+      note: getMessages().profile.badgesNote,
     },
     {
       href: "/profile/rewards",
       icon: "gift-outline",
-      title: "Ödüllerim",
-      value: walletData ? `${walletData.balance} puan` : null,
-      note: "Puanını ortak kurumlarda harca",
+      title: getMessages().profile.rewards,
+      value: walletData ? getMessages().profile.pointsValue(walletData.balance) : null,
+      note: getMessages().profile.rewardsNote,
     },
     {
       href: "/profile/notes",
       icon: "chatbubble-ellipses-outline",
-      title: "Bıraktığım Notlar",
+      title: getMessages().profile.notes,
       value: noteCount ? String(noteCount) : null,
-      note: "Eserlere bıraktığın saha notları",
+      note: getMessages().profile.notesNote,
     },
     {
       href: "/profile/settings",
       icon: "settings-outline",
-      title: "Sistem ayarları",
+      title: getMessages().profile.system,
       value: null,
-      note: "Görünüm ve erişilebilirlik",
+      note: getMessages().profile.systemNote,
     },
     // Only moderators and admins: the panel the API lets them use.
     ...(user?.role === "admin" || user?.role === "moderator"
@@ -738,9 +744,9 @@ function Sections({ grid = false }: { grid?: boolean }) {
           {
             href: "/admin" as Href,
             icon: "shield-half-outline" as IconName,
-            title: "Yönetim paneli",
+            title: getMessages().profile.admin,
             value: null,
-            note: "Moderasyon ve içerik",
+            note: getMessages().profile.adminNote,
           },
         ]
       : []),

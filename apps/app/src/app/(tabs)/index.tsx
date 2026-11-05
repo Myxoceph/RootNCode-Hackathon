@@ -10,6 +10,7 @@ import { communityAvailable, useCommunity } from "@/data";
 import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { useMessages } from "@/i18n";
 
 /** How long the greeting stays before the map opens. */
 const HOLD_MS = 2800;
@@ -23,6 +24,7 @@ const HOLD_MS = 2800;
  */
 export default function WelcomeScreen() {
   const router = useRouter();
+  const m = useMessages();
   const insets = useSafeAreaInsets();
   const { user } = useCommunity();
   const { scheme, colors: c } = useTheme();
@@ -45,7 +47,7 @@ export default function WelcomeScreen() {
   useEffect(() => {
     // Waits for the stored session, so the name is there when the greeting shows.
     if (!ready) return;
-    announce(`Merhaba${name ? `, ${name}` : ""}. Hoş geldin, haritana yönlendiriliyorsun.`);
+    announce(m.welcome.announce(name));
     Animated.timing(fade, { toValue: 1, duration: reduced ? 0 : 700, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
     const timer = setTimeout(goToMap, HOLD_MS);
     return () => clearTimeout(timer);
@@ -57,7 +59,7 @@ export default function WelcomeScreen() {
   return (
     <View style={[styles.screen, { backgroundColor: background }]}>
       <Head>
-        <title>Hoş geldin · Vagabonds</title>
+        <title>{m.common.title(m.welcome.title)}</title>
       </Head>
       <StatusBar style={scheme === "dark" ? "light" : "dark"} />
 
@@ -66,23 +68,24 @@ export default function WelcomeScreen() {
         <Pressable
           onPress={goToMap}
           accessibilityRole="button"
-          accessibilityLabel="Atla, haritaya geç"
+          accessibilityLabel={m.welcome.skipLabel}
           hitSlop={8}
           style={[styles.skip, { top: insets.top + spacing.md, backgroundColor: c.surfaceRaised, borderColor: c.border }]}
         >
           <Text variant="caption" colorValue={c.text} style={styles.skipLabel}>
-            Atla
+            {m.welcome.skip}
           </Text>
         </Pressable>
       )}
 
       <Animated.View style={[styles.content, { opacity: fade, transform: [{ translateY: rise }] }]}>
         <Text colorValue={c.textSecondary} style={styles.hello}>
-          Hoş geldin
+          {m.welcome.title}
         </Text>
         <Text headingLevel={1} colorValue={c.text} style={styles.title} numberOfLines={2}>
-          Merhaba,{"\n"}
-          {name ?? "gezgin"}
+          {m.welcome.hello}
+          {"\n"}
+          {name ?? m.welcome.traveller}
         </Text>
       </Animated.View>
     </View>

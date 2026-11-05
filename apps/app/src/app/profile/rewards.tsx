@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type {
   Redemption,
@@ -56,6 +58,7 @@ import { announce } from "@/lib/announce";
 import { bottomInset } from "@/lib/bottom-inset";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
+import { casing, useLang } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 type Filter = RewardKind | "all";
@@ -126,6 +129,7 @@ const dateOf = (iso: string) =>
  * is; the codes taken are tickets to show at the branch, museum or café (docs/rewards.md).
  */
 export default function MyRewardsScreen() {
+  useLang();
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const wide = useWideWeb();
@@ -386,7 +390,7 @@ function WalletCard({
             style={styles.holder}
             numberOfLines={1}
           >
-            {holder.toLocaleUpperCase("tr")}
+            {holder.toLocaleUpperCase(casing())}
           </Text>
         )}
       </View>

@@ -1,9 +1,12 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import type { Contribution, ContributionStatus } from "@vagabonds/contracts";
 import { radius, spacing, Text, touchTarget, useTheme, type ThemeRole } from "@vagabonds/ui";
 import { Link } from "expo-router";
 import { ActivityIndicator, Pressable, StyleSheet, View } from "react-native";
 
 import { useCommunity, useMyContributions } from "@/data";
+import { useLang } from "@/i18n";
 import { formatDate } from "@/lib/format-date";
 
 const statuses: Record<ContributionStatus, { label: string; color: ThemeRole }> = {
@@ -24,6 +27,7 @@ const kinds: Record<Contribution["kind"], string> = {
  * decided. `title` null leaves the heading to the page's own header.
  */
 export function MyContributions({ title = "Notlarım" }: { title?: string | null }) {
+  useLang();
   const { colors: c } = useTheme();
   const { user, assetNames } = useCommunity();
   const mine = useMyContributions();

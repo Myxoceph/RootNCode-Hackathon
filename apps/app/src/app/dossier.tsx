@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type {
   AccessibilityStatus,
@@ -63,6 +65,7 @@ import {
 import { RichText } from "@/lib/rich-text";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
+import { casing, useLang } from "@/i18n";
 
 const WEB = Platform.OS === "web";
 /** The wide web page's contents list, at the left of the text. */
@@ -77,6 +80,7 @@ type IconName = ComponentProps<typeof Ionicons>["name"];
  */
 /** The dossier of an asset already at hand, inside a frame: the admin panel's phone preview. */
 export function DossierView({ asset }: { asset: AssetDetail }) {
+  useLang();
   const { colors: c } = useTheme();
   return (
     <View style={[styles.flex, { backgroundColor: c.background }]}>
@@ -87,6 +91,7 @@ export function DossierView({ asset }: { asset: AssetDetail }) {
 }
 
 export default function DossierScreen() {
+  useLang();
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const resource = useAsset(id ?? "");
   const { colors: c } = useTheme();
@@ -978,7 +983,7 @@ function Timeline({ events }: { events: TimelineEvent[] }) {
         <View key={`${group.century}-${index}`} style={styles.tight}>
           {group.century && (
             <Text variant="overline" color="textSecondary">
-              {group.century.toLocaleUpperCase("tr")}
+              {group.century.toLocaleUpperCase(casing())}
             </Text>
           )}
           <View accessibilityRole="list">
@@ -1060,7 +1065,7 @@ function People({ asset }: { asset: AssetDetail }) {
               style={[styles.initial, { backgroundColor: c.surfaceRaised }]}
             >
               <Text variant="label">
-                {person.name.charAt(0).toLocaleUpperCase("tr")}
+                {person.name.charAt(0).toLocaleUpperCase(casing())}
               </Text>
             </View>
             <View style={styles.flex}>

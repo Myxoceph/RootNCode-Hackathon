@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Asset } from "expo-asset";
 import { useRouter } from "expo-router";
@@ -7,6 +9,7 @@ import { toQR } from "toqr";
 import { LandingSkyline } from "@/components/landing-skyline";
 import { appLinks, expoGoLink } from "@/content/app-links";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { getMessages, setLang, useLang, useMessages } from "@/i18n";
 
 /**
  * The web's home page (`/`, `app/(tabs)/index.web.tsx`), one screen tall, never scrolling: on a
@@ -20,6 +23,8 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 export function LandingPage() {
   const router = useRouter();
   const still = useReducedMotion();
+  const lang = useLang();
+  const m = useMessages();
   const dialog = useRef<HTMLDialogElement>(null);
   // Where the laptop stands: the skyline's shore is drawn there, the water under it.
   const shore = useRef<HTMLDivElement>(null);
@@ -45,34 +50,39 @@ export function LandingPage() {
       <div className="vg-grain" aria-hidden />
 
       <header className="vg-nav vg-rise">
-        <a className="vg-brand" href="/" aria-label="Vagabonds, ana sayfa">
+        <a className="vg-brand" href="/" aria-label={m.landing.homeLabel}>
           <span className="vg-mark" aria-hidden />
           Vagabonds
         </a>
-        <nav className="vg-nav-actions" aria-label="Hesap">
+        <nav className="vg-nav-actions" aria-label={m.landing.account}>
+          {/* The other language, named in itself: one tap turns the page and the site. */}
+          <button type="button" className="vg-nav-link" lang={lang === "tr" ? "en" : "tr"} onClick={() => setLang(lang === "tr" ? "en" : "tr")}>
+            {m.landing.otherLanguage}
+          </button>
           <a className="vg-nav-link" href="/auth?mode=login">
-            Giriş yap
+            {m.auth.login}
           </a>
           <a className="vg-nav-link vg-nav-primary" href="/auth?mode=register">
-            Kayıt ol
+            {m.auth.register}
           </a>
         </nav>
       </header>
 
       <main className="vg-main">
         <section className="vg-hero">
-          <p className="vg-overline vg-rise vg-d1">Vakıf eserleri · KÖK&amp;KOD</p>
+          <p className="vg-overline vg-rise vg-d1">{m.landing.overline}</p>
           <h1 className="vg-h1 vg-rise vg-d2">
-            Vakıf eserlerini <em>keşfet</em>
+            {m.landing.heading[0]}
+            <em>{m.landing.heading[1]}</em>
           </h1>
           <div className="vg-actions vg-rise vg-d4">
             <a className="vg-button vg-button-light" href="/map" onClick={openSite}>
               <Ionicons name="laptop-outline" size={18} aria-hidden />
-              Siteye gir
+              {m.landing.enterSite}
             </a>
             <button type="button" className="vg-button vg-button-dark" onClick={openApp} aria-haspopup="dialog">
               <Ionicons name="phone-portrait-outline" size={17} aria-hidden />
-              Uygulamayı edin
+              {m.landing.getApp}
             </button>
           </div>
         </section>
@@ -113,7 +123,7 @@ function Scene({ onSite, onApp, shore }: { onSite: (event: MouseEvent<HTMLAnchor
         <div className="vg-spill" aria-hidden />
         <div className="vg-contact vg-contact-laptop" aria-hidden />
         <div className="vg-contact vg-contact-phone" aria-hidden />
-        <a className="vg-device vg-device-laptop" href="/map" onClick={onSite} aria-label="Web sitesi: haritada eserleri keşfet">
+        <a className="vg-device vg-device-laptop" href="/map" onClick={onSite} aria-label={getMessages().landing.siteLabel}>
           <div className="vg-laptop">
             <div className="vg-glass">
               <div className="vg-screen">
@@ -128,10 +138,10 @@ function Scene({ onSite, onApp, shore }: { onSite: (event: MouseEvent<HTMLAnchor
             </div>
           </div>
           <span className="vg-tag">
-            Web sitesi
+            {getMessages().landing.site}
           </span>
         </a>
-        <button type="button" className="vg-device vg-device-phone" onClick={onApp} aria-haspopup="dialog" aria-label="Mobil uygulama: telefonuna al">
+        <button type="button" className="vg-device vg-device-phone" onClick={onApp} aria-haspopup="dialog" aria-label={getMessages().landing.appLabel}>
           <div className="vg-phone">
             <div className="vg-phone-screen">
               <img className="vg-shot" src={APP_SHOT} alt="" />
@@ -140,7 +150,7 @@ function Scene({ onSite, onApp, shore }: { onSite: (event: MouseEvent<HTMLAnchor
             </div>
           </div>
           <span className="vg-tag">
-            Mobil uygulama
+            {getMessages().landing.app}
           </span>
         </button>
       </div>
@@ -156,31 +166,33 @@ function AppWindow({ onClose }: { onClose: () => void }) {
   useEffect(() => close.current?.focus(), []);
   return (
     <div className="vg-window">
-      <button ref={close} type="button" className="vg-close" onClick={onClose} aria-label="Kapat">
+      <button ref={close} type="button" className="vg-close" onClick={onClose} aria-label={getMessages().common.close}>
         <Ionicons name="close" size={22} aria-hidden />
       </button>
-      <p className="vg-overline">MOBİL UYGULAMA</p>
+      <p className="vg-overline">{getMessages().landing.appOverline}</p>
       <h2 className="vg-h2" id="vg-dialog-title">
-        Vagabonds'u telefonuna al
+        {getMessages().landing.appTitle}
       </h2>
       {qr && link ? (
         <>
-          <div className="vg-qr" role="img" aria-label="Uygulamayı Expo Go ile açan QR kod">
+          <div className="vg-qr" role="img" aria-label={getMessages().landing.qr}>
             <svg viewBox={`-2 -2 ${qr.size + 4} ${qr.size + 4}`} shapeRendering="crispEdges">
               <rect x={-2} y={-2} width={qr.size + 4} height={qr.size + 4} fill="#FFFFFF" />
               <path d={qr.path} fill="#0D1420" />
             </svg>
           </div>
           <p className="vg-window-text">
-            Telefonunun kamerasıyla okut; uygulama <strong>Expo Go</strong> ile açılır. Telefondan bakıyorsan{" "}
+            {getMessages().landing.qrText[0]}
+            <strong>Expo Go</strong>
+            {getMessages().landing.qrText[1]}
             <a href={link} className="vg-inline-link">
-              buradan aç
+              {getMessages().landing.qrText[2]}
             </a>
-            .
+            {getMessages().landing.qrText[3]}
           </p>
         </>
       ) : (
-        <p className="vg-window-text">Uygulama yakında mağazalarda. Yayınlandığında buradan indirebileceksin.</p>
+        <p className="vg-window-text">{getMessages().landing.soon}</p>
       )}
       <div className="vg-stores">
         <Store icon="logo-apple" name="App Store" href={appLinks.appStore} />
@@ -195,7 +207,7 @@ function Store({ icon, name, href }: { icon: "logo-apple" | "logo-google-playsto
     <>
       <Ionicons name={icon} size={22} aria-hidden />
       <span className="vg-store-words">
-        <small>{href ? "İndir" : "Yakında"}</small>
+        <small>{href ? getMessages().landing.download : getMessages().landing.comingSoon}</small>
         {name}
       </span>
     </>
@@ -205,7 +217,7 @@ function Store({ icon, name, href }: { icon: "logo-apple" | "logo-google-playsto
       {body}
     </a>
   ) : (
-    <span className="vg-store vg-store-soon" aria-label={`${name}: yakında`}>
+    <span className="vg-store vg-store-soon" aria-label={getMessages().landing.storeSoon(name)}>
       {body}
     </span>
   );

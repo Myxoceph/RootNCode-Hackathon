@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { fontFamily, palette, spacing, Text, useTheme } from "@vagabonds/ui";
 import { router, useSegments, type Href } from "expo-router";
@@ -18,6 +20,7 @@ import { setTabSpot, useTabSpotlight } from "@/lib/tab-bar-spots";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
 import type { TabItem } from "./tab-bar";
+import { casing, getMessages, useLang } from "@/i18n";
 
 /** Screens that fill the whole screen, the bar hidden: an asset's story. */
 const HIDDEN_ON = new Set(["[id]"]);
@@ -32,28 +35,36 @@ const PROFILE = "settings";
 export const SITE_ITEMS: Array<TabItem & { href: Href }> = [
   {
     name: "map",
-    title: "Harita",
+    get title() {
+      return getMessages().tabs.map;
+    },
     icon: "map-outline",
     iconFocused: "map",
     href: "/map",
   },
   {
     name: "rehber",
-    title: "Rehber",
+    get title() {
+      return getMessages().tabs.rehber;
+    },
     icon: "sparkles-outline",
     iconFocused: "sparkles",
     href: "/rehber",
   },
   {
     name: "monuments",
-    title: "Eserler",
+    get title() {
+      return getMessages().tabs.monuments;
+    },
     icon: "library-outline",
     iconFocused: "library",
     href: "/monuments",
   },
   {
     name: "settings",
-    title: "Profil",
+    get title() {
+      return getMessages().tabs.profile;
+    },
     icon: "person-outline",
     iconFocused: "person",
     href: "/settings",
@@ -123,6 +134,7 @@ export function SiteNav({
   itemProps,
   spotlight = null,
 }: SiteNavProps) {
+  useLang();
   const { scheme } = useTheme();
   const { user } = useCommunity();
   const narrow = useWindowDimensions().width < 760;
@@ -155,7 +167,7 @@ export function SiteNav({
     .split(/\s+/)
     .filter(Boolean)
     .slice(0, 2)
-    .map((part) => part[0]?.toLocaleUpperCase("tr"))
+    .map((part) => part[0]?.toLocaleUpperCase(casing()))
     .join("");
 
   return (
@@ -179,7 +191,7 @@ export function SiteNav({
       >
         <Pressable
           accessibilityRole="link"
-          accessibilityLabel="Vagabonds ana sayfa"
+          accessibilityLabel={getMessages().web.home}
           onPress={() => router.navigate("/")}
           style={styles.brand}
         >
@@ -287,6 +299,7 @@ export function WebNavBar({
   navigateToTab,
   items,
 }: BottomTabBarProps & { items: TabItem[] }) {
+  useLang();
   const { colors: c } = useTheme();
   const focusedName = state.routes[state.index]?.name ?? null;
   const segments = useSegments();
@@ -353,6 +366,7 @@ export function WebPageHeader({
   section: string;
   back: { label: string; href: Href };
 }) {
+  useLang();
   const { colors: c } = useTheme();
   const wide = useWideWeb();
   return (
@@ -370,7 +384,7 @@ export function WebPageHeader({
       <View style={[styles.pageHead, wide && wideColumn]}>
         <Pressable
           accessibilityRole="link"
-          accessibilityLabel={`${back.label} sayfasına dön`}
+          accessibilityLabel={getMessages().web.backTo(back.label)}
           onPress={() =>
             router.canGoBack() ? router.back() : router.replace(back.href)
           }

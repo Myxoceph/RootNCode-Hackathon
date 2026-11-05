@@ -29,6 +29,8 @@ import { DataError } from "@/data/errors";
 import { afterSignIn } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { LanguageSwitch } from "@/components/language-switch";
+import { useMessages, type Messages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 type Mode = "login" | "register";
@@ -44,10 +46,11 @@ const field = {
 };
 const warning = palette.mercan300;
 
-const copy: Record<Mode, { title: string; lead: string; action: string }> = {
-  login: { title: "Tekrar hoş geldin", lead: "Mühürlerin, notların ve rozetlerin seni bekliyor.", action: "Giriş yap" },
-  register: { title: "Yolculuğuna başla", lead: "Bir hesapla gezdiğin her eser her cihazda seninle.", action: "Hesap oluştur" },
-};
+function copyFor(m: Messages, mode: Mode): { title: string; lead: string; action: string } {
+  return mode === "login"
+    ? { title: m.auth.loginTitle, lead: m.auth.loginLead, action: m.auth.login }
+    : { title: m.auth.registerTitle, lead: m.auth.registerLead, action: m.auth.createAccount };
+}
 
 /**
  * `/auth?mode=login|register`: signing in and opening an account, on one screen with a switch
@@ -62,6 +65,7 @@ const copy: Record<Mode, { title: string; lead: string; action: string }> = {
 export default function AuthScreen() {
   const params = useLocalSearchParams<{ mode?: string; next?: string }>();
   const router = useRouter();
+  const m = useMessages();
   const insets = useSafeAreaInsets();
   const { height } = useWindowDimensions();
   const { user } = useCommunity();
@@ -106,12 +110,12 @@ export default function AuthScreen() {
             ...(nickname.trim() && !keeps ? { nickname: nickname.trim() } : {}),
           })
         : await login({ username: username.trim().toLowerCase(), password });
-      announce(registering ? `Hesabın oluşturuldu. Hoş geldin, ${signedIn.nickname}.` : `Hoş geldin, ${signedIn.nickname}.`);
+      announce(registering ? m.auth.created(signedIn.nickname) : m.auth.welcomeBack(signedIn.nickname));
       // The page a shared link asked for. Otherwise the web's `/` is the home page, so an account goes
       // straight to the map there; the app opens on its greeting, which goes on to the map.
       router.replace(afterSignIn(params.next, Platform.OS === "web" ? "/map" : "/") as Href);
     } catch (err) {
-      const message = err instanceof DataError ? err.message : "Bir şeyler ters gitti. Tekrar dene.";
+      const message = err instanceof DataError ? err.message : m.common.somethingWrong;
       setError(message);
       announce(message);
     } finally {
@@ -123,7 +127,7 @@ export default function AuthScreen() {
     <View style={[styles.screen, { backgroundColor: ink.background }]}>
       <StatusBar style="light" />
       <Head>
-        <title>{`${registering ? "Kayıt ol" : "Giriş yap"} · Vagabonds`}</title>
+        <title>{m.common.title(registering ? m.auth.register : m.auth.login)}</title>
       </Head>
 
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === "ios" ? "padding" : undefined}>
@@ -135,16 +139,17 @@ export default function AuthScreen() {
 
           <View style={[styles.column, { marginTop: -spacing.xxl * 2 }]}>
             <Text variant="overline" colorValue={ink.gold}>
-              VAKIF MİRASI GEZGİNİ
+              {m.auth.overline}
             </Text>
             <Text headingLevel={1} colorValue={ink.text} style={styles.title}>
-              {copy[mode].title}
+              {copyFor(m, mode).title}
             </Text>
             <Text colorValue={ink.textSecondary} style={styles.lead}>
-              {copy[mode].lead}
+              {copyFor(m, mode).lead}
             </Text>
 
             <Switch mode={mode} onChange={switchTo} />
+            <LanguageSwitch on={{ fill: "rgba(255, 255, 255, 0.14)", text: ink.text }} off={{ text: ink.textSecondary, edge: field.edge }} />
 
             {keeps && (
               <View style={styles.keeps}>
@@ -153,7 +158,7 @@ export default function AuthScreen() {
                   <Text variant="caption" colorValue={ink.gold} style={styles.strong}>
                     {keeps}
                   </Text>{" "}
-                  olarak bıraktığın notlar ve mühürler bu hesaba taşınacak.
+                  {m.auth.keeps}
                 </Text>
               </View>
             )}
@@ -161,7 +166,7 @@ export default function AuthScreen() {
             <View style={styles.form}>
               <Field
                 icon="at"
-                label="Kullanıcı adı"
+                label={m.auth.username}
                 value={username}
                 onChangeText={(text) => setUsername(text.replace(/\s/g, ""))}
                 autoComplete="username"
@@ -173,7 +178,7 @@ export default function AuthScreen() {
                 <Field
                   inputRef={emailField}
                   icon="mail-outline"
-                  label="E-posta"
+                  label={m.auth.email}
                   value={email}
                   onChangeText={(text) => setEmail(text.replace(/\s/g, ""))}
                   autoComplete="email"
@@ -187,7 +192,7 @@ export default function AuthScreen() {
               <Field
                 inputRef={passwordField}
                 icon="lock-closed-outline"
-                label="Parola"
+                label={m.auth.password}
                 value={password}
                 onChangeText={setPassword}
                 secret
@@ -201,7 +206,7 @@ export default function AuthScreen() {
                 <Field
                   inputRef={nicknameField}
                   icon="person-outline"
-                  label="Takma ad (isteğe bağlı)"
+                  label={m.auth.nickname}
                   value={nickname}
                   onChangeText={setNickname}
                   autoComplete="nickname"
@@ -213,10 +218,10 @@ export default function AuthScreen() {
             </View>
 
             {registering && (
-              <View style={styles.rules} accessibilityLabel="Kurallar">
-                <Rule met={nameOk} text="Kullanıcı adı 3–32 karakter (a–z, 0–9, _ .)" />
-                <Rule met={emailOk} text="Geçerli bir e-posta adresi" />
-                <Rule met={passwordOk} text={`Parola en az ${PASSWORD_MIN} karakter`} />
+              <View style={styles.rules} accessibilityLabel={m.auth.rules}>
+                <Rule met={nameOk} text={m.auth.ruleUsername} />
+                <Rule met={emailOk} text={m.auth.ruleEmail} />
+                <Rule met={passwordOk} text={m.auth.rulePassword(PASSWORD_MIN)} />
               </View>
             )}
 
@@ -230,7 +235,7 @@ export default function AuthScreen() {
             )}
             {!communityAvailable && (
               <Text variant="caption" colorValue={ink.textSecondary}>
-                Hesaplar için sunucu gerekiyor; bu sürüm örnek veriyle çalışıyor.
+                {m.auth.noServer}
               </Text>
             )}
 
@@ -246,7 +251,7 @@ export default function AuthScreen() {
               ) : (
                 <>
                   <Text variant="label" colorValue={ink.onGold} style={styles.primaryText}>
-                    {copy[mode].action}
+                    {copyFor(m, mode).action}
                   </Text>
                   <Ionicons name="arrow-forward" size={18} color={ink.onGold} />
                 </>
@@ -280,6 +285,7 @@ function Fade() {
 
 /** Giriş yap | Kayıt ol, the gold mark sliding under the chosen one. */
 function Switch({ mode, onChange }: { mode: Mode; onChange: (mode: Mode) => void }) {
+  const m = useMessages();
   const reduceMotion = useReducedMotion();
   const [width, setWidth] = useState(0);
   const [at] = useState(() => new Animated.Value(mode === "register" ? 1 : 0));
@@ -306,7 +312,7 @@ function Switch({ mode, onChange }: { mode: Mode; onChange: (mode: Mode) => void
         return (
           <Pressable key={option} accessibilityRole="tab" accessibilityState={{ selected: on }} onPress={() => onChange(option)} style={styles.switchOption}>
             <Text variant="label" colorValue={on ? ink.onGold : ink.textSecondary} style={styles.switchText}>
-              {option === "login" ? "Giriş yap" : "Kayıt ol"}
+              {option === "login" ? m.auth.login : m.auth.register}
             </Text>
           </Pressable>
         );
@@ -326,6 +332,7 @@ interface FieldProps extends Omit<TextInputProps, "style" | "placeholder"> {
 
 /** A glass field: its icon, its label as the placeholder, a gold edge while typing in it. */
 function Field({ icon, label, secret = false, inputRef, onFocus, onBlur, ...input }: FieldProps) {
+  const m = useMessages();
   const { textScale } = useUi();
   const [focused, setFocused] = useState(false);
   const [shown, setShown] = useState(false);
@@ -355,7 +362,7 @@ function Field({ icon, label, secret = false, inputRef, onFocus, onBlur, ...inpu
       {secret && (
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel={shown ? "Parolayı gizle" : "Parolayı göster"}
+          accessibilityLabel={shown ? m.auth.hidePassword : m.auth.showPassword}
           onPress={() => setShown(!shown)}
           hitSlop={8}
           style={({ pressed }) => [styles.eye, pressed && styles.pressed]}
@@ -371,9 +378,10 @@ function Field({ icon, label, secret = false, inputRef, onFocus, onBlur, ...inpu
 function Strength({ password }: { password: string }) {
   const kinds = [/[a-zçğıöşü]/, /[A-ZÇĞİÖŞÜ]/, /\d/, /[^\p{L}\d]/u].filter((kind) => kind.test(password)).length;
   const level = password.length < PASSWORD_MIN ? 1 : password.length >= 12 && kinds >= 3 ? 3 : kinds >= 2 ? 2 : 1;
-  const [word, color] = level === 3 ? ["Güçlü", palette.firuze300] : level === 2 ? ["İyi", ink.gold] : ["Zayıf", warning];
+  const m = useMessages();
+  const [word, color] = level === 3 ? [m.auth.strong, palette.firuze300] : level === 2 ? [m.auth.good, ink.gold] : [m.auth.weak, warning];
   return (
-    <View style={styles.strength} accessible accessibilityLabel={`Parola gücü: ${word}`}>
+    <View style={styles.strength} accessible accessibilityLabel={m.auth.strength(word)}>
       <View style={styles.bars}>
         {[1, 2, 3].map((bar) => (
           <View key={bar} style={[styles.bar, { backgroundColor: bar <= level ? color : field.edge }]} />
@@ -388,8 +396,9 @@ function Strength({ password }: { password: string }) {
 
 /** A rule for the new account, ticked once met. */
 function Rule({ met, text }: { met: boolean; text: string }) {
+  const m = useMessages();
   return (
-    <View style={styles.rule} accessible accessibilityLabel={`${text}: ${met ? "tamam" : "henüz değil"}`}>
+    <View style={styles.rule} accessible accessibilityLabel={`${text}: ${met ? m.auth.ruleMet : m.auth.ruleNotMet}`}>
       <Ionicons name={met ? "checkmark-circle" : "ellipse-outline"} size={16} color={met ? palette.firuze300 : ink.textSecondary} />
       <Text variant="caption" colorValue={met ? ink.text : ink.textSecondary} style={styles.flexShrink}>
         {text}

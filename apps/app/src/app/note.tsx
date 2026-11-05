@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   CONTRIBUTION_TEXT_MAX,
@@ -48,6 +50,7 @@ import {
   usePulse,
 } from "@/data";
 import { announce } from "@/lib/announce";
+import { useLang } from "@/i18n";
 import { formatDate } from "@/lib/format-date";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
@@ -90,6 +93,7 @@ const ASIDE = 380;
  * under the form are the notes a moderator has approved.
  */
 export default function NoteScreen() {
+  useLang();
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const resource = useAsset(id ?? "");
   const { colors: c } = useTheme();

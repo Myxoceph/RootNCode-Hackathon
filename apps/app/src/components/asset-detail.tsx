@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetDetail, AssetSection, Media } from "@vagabonds/contracts";
 import {
@@ -62,7 +64,6 @@ import {
 } from "@/lib/in-frame";
 import {
   isAssetUnlocked,
-  LOCKED_WARNING,
   relatedAssetsOf,
 } from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
@@ -77,6 +78,10 @@ import {
 } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { useA11ySettings } from "@/settings/a11y-settings";
+import { casing, getMessages, localeTag, useLang } from "@/i18n";
+
+/** This page's words in the app's language; the page follows a change (`useLang` in `AssetDetailView`). */
+const words = () => getMessages().asset;
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -170,6 +175,8 @@ export function AssetDetailView({
 }) {
   // A wide web page reads the card as an article (`AssetArticle`); the phone and the panel's preview keep the pages.
   const wide = useWideWeb();
+  // The whole page is drawn again in a new language: its parts read their words through `words()`.
+  useLang();
   return wide && !onClose ? (
     <AssetArticle asset={asset} />
   ) : (
@@ -208,7 +215,7 @@ function AssetStory({
     if (index === shownPage.current || !pages[index]) return;
     shownPage.current = index;
     announce(
-      `Sayfa ${index + 1} / ${pages.length}: ${pageTitle(pages[index]!, asset)}`,
+      words().pageAnnounce(index + 1, pages.length, pageTitle(pages[index]!, asset)),
     );
   }, [index, pages, asset]);
   const close = () => {
@@ -258,7 +265,7 @@ function AssetStory({
         </Text>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel="Kapat"
+          accessibilityLabel={getMessages().common.close}
           hitSlop={6}
           onPress={close}
           style={({ pressed }) => [styles.round, pressed && styles.pressed]}
@@ -352,29 +359,29 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
   const stepFree =
     a11y.verified && a11y.stepFree !== "unknown"
       ? a11y.stepFree === "no"
-        ? "Basamaklı giriş"
-        : "Basamaksız giriş"
+        ? words().stepped
+        : words().stepFree
       : null;
   const coords = asset.coordinates;
   const facts = [
     asset.visit.durationMin
       ? {
           icon: "time-outline" as IconName,
-          label: "Gezi süresi",
-          value: `~${asset.visit.durationMin} dk`,
+          label: words().duration,
+          value: words().minutes(asset.visit.durationMin),
         }
       : null,
     fee
-      ? { icon: "ticket-outline" as IconName, label: "Giriş", value: fee }
+      ? { icon: "ticket-outline" as IconName, label: words().entry, value: fee }
       : null,
     stepFree
       ? {
           icon: "accessibility-outline" as IconName,
-          label: "Erişim",
+          label: words().access,
           value: stepFree,
         }
       : null,
-    { icon: "location-outline" as IconName, label: "Yer", value: place },
+    { icon: "location-outline" as IconName, label: words().place, value: place },
   ].filter(
     (fact): fact is { icon: IconName; label: string; value: string } =>
       fact !== null,
@@ -402,7 +409,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
         <View style={styles.articleColumn}>
           <Pressable
             accessibilityRole="link"
-            accessibilityLabel="Eserler sayfasına dön"
+            accessibilityLabel={words().backToSites}
             onPress={back}
             style={({
               pressed,
@@ -418,7 +425,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
           >
             <Ionicons name="chevron-back" size={16} color={look.soft} />
             <Text variant="label" colorValue={look.soft}>
-              Eserler
+              {words().sites}
             </Text>
           </Pressable>
 
@@ -512,7 +519,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
               )}
               {asset.founder?.name && (
                 <Text colorValue={look.soft} style={styles.founderLine}>
-                  {`${asset.founder.name} yaptırdı.`}
+                  {words().founded(asset.founder.name)}
                 </Text>
               )}
 
@@ -525,7 +532,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
                     colorValue={look.gold}
                     headingLevel={2}
                   >
-                    YERİNDE BAKIN
+                    {words().lookHere}
                   </Text>
                   <View style={styles.highlightList}>
                     {asset.highlights.map((highlight, i) => (
@@ -568,7 +575,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
                     headingLevel={2}
                     style={styles.sectionTitle}
                   >
-                    {section.title ?? "Tarihçe"}
+                    {section.title ?? words().history}
                   </Text>
                   {section.body
                     .split(/\n\s*\n/)
@@ -598,7 +605,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
                   colorValue={look.gold}
                   headingLevel={2}
                 >
-                  ZİYARET
+                  {words().visit}
                 </Text>
                 {facts.map((fact) => (
                   <View key={fact.label} style={styles.factRow}>
@@ -627,7 +634,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
                 {coords && (
                   <Pressable
                     accessibilityRole="link"
-                    accessibilityLabel="Yol tarifi al, harita uygulamasını açar"
+                    accessibilityLabel={words().directionsLabel}
                     onPress={() =>
                       Linking.openURL(
                         `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`,
@@ -645,7 +652,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
                       colorValue={look.onGold}
                       style={styles.bold}
                     >
-                      Yol tarifi al
+                      {words().directions}
                     </Text>
                   </Pressable>
                 )}
@@ -673,15 +680,15 @@ function pageTitle(page: Page, asset: AssetDetail): string {
     case "cover":
       return asset.name;
     case "summary":
-      return "Özet";
+      return words().summary;
     case "figures":
-      return "Rakamlarla";
+      return words().figures;
     case "highlight":
-      return `Yerinde bakın, ${page.number} / ${page.total}: ${page.title}`;
+      return words().highlightTitle(page.number, page.total, page.title);
     case "chapter":
       return page.title;
     case "end":
-      return "Keşfe çık";
+      return words().explore;
   }
 }
 
@@ -745,7 +752,7 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
     .filter(({ chapter }) => !told.has(chapter.id))
     .slice(0, STORY_CHAPTERS)
     .forEach(({ chapter, i }) => {
-      const title = chapter.title ?? "Tarihçe";
+      const title = chapter.title ?? words().history;
       pages.push({
         kind: "chapter",
         key: `chapter-${chapter.id}`,
@@ -770,7 +777,7 @@ function figuresOf(asset: AssetDetail): Figure[] {
       field: "year",
       value: year,
       unit: null,
-      label: "Yapım yılı",
+      label: words().built,
     });
   for (const fact of asset.facts) {
     if (figures.length === 3) break;
@@ -778,7 +785,7 @@ function figuresOf(asset: AssetDetail): Figure[] {
     // No thousands dot under 10 000, so a year ("1573") never reads as "1.573".
     const value =
       fact.valueNum >= 10000
-        ? fact.valueNum.toLocaleString("tr-TR")
+        ? fact.valueNum.toLocaleString(localeTag())
         : String(fact.valueNum);
     figures.push({
       field: `fact:${fact.key}`,
@@ -1054,7 +1061,7 @@ function PageCopy({
           {page.founder && (
             <Editable field="founder" label="Kim yaptırdı">
               <Text colorValue={ink.text} style={styles.founder}>
-                {`${page.founder} yaptırdı.`}
+                {words().founded(page.founder)}
               </Text>
             </Editable>
           )}
@@ -1064,7 +1071,7 @@ function PageCopy({
       return (
         <>
           <Text variant="overline" colorValue={ink.gold}>
-            {`YERİNDE BAKIN · ${page.number}/${page.total}`}
+            {words().lookHereCount(page.number, page.total)}
           </Text>
           <Editable
             field={`highlight:${page.number - 1}:title`}
@@ -1104,7 +1111,7 @@ function PageCopy({
               headingLevel={2}
               accessibilityLabel={page.title}
             >
-              {page.title.toLocaleUpperCase("tr")}
+              {page.title.toLocaleUpperCase(casing())}
             </Text>
           </Editable>
           <Editable field={`section:${page.id}:body`} label="Konunun metni">
@@ -1163,7 +1170,7 @@ function ScrollHint() {
         <Ionicons name="chevron-down" size={22} color={ink.text} />
       </Animated.View>
       <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
-        Kaydır, eseri kısaca tanı
+        {words().swipe}
       </Text>
     </View>
   );
@@ -1180,7 +1187,7 @@ function GalleryButton({
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={`Fotoğraflar, ${photos.length} görsel`}
+      accessibilityLabel={words().photos(photos.length)}
       onPress={onPress}
       style={({ pressed }) => [styles.gallery, pressed && styles.pressed]}
     >
@@ -1195,7 +1202,7 @@ function GalleryButton({
         ))}
       </View>
       <Text variant="caption" colorValue={ink.text} style={styles.bold}>
-        {`${photos.length} fotoğraf`}
+        {words().photoCount(photos.length)}
       </Text>
     </Pressable>
   );
@@ -1214,7 +1221,7 @@ function DossierButton({
       {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
       <Pressable
         accessibilityRole="link"
-        accessibilityLabel="Eserin dosyası: kitaptaki her şey"
+        accessibilityLabel={words().dossierLabel}
         style={wide ? styles.dossierWide : styles.dossier}
       >
         <Ionicons
@@ -1227,7 +1234,7 @@ function DossierButton({
           colorValue={ink.text}
           style={styles.bold}
         >
-          Eserin dosyası
+          {words().dossier}
         </Text>
         {wide && <Ionicons name="chevron-forward" size={18} color={ink.gold} />}
       </Pressable>
@@ -1271,7 +1278,7 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
         numberOfLines={2}
         style={[styles.bold, styles.flexText]}
       >
-        {warned ? LOCKED_WARNING : "Bu eserin ilişkili olduğu eserler listesi"}
+        {warned ? words().lockedWarning : words().related}
       </Text>
       <Ionicons
         name={locked ? "lock-closed" : "chevron-forward"}
@@ -1284,10 +1291,10 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
     return (
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel="Bu eserin ilişkili olduğu eserler listesi, kilitli"
+        accessibilityLabel={words().relatedLocked}
         onPress={() => {
           setWarned(true);
-          announce(LOCKED_WARNING);
+          announce(words().lockedWarning);
         }}
         style={styles.related}
       >
@@ -1307,8 +1314,8 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
         accessibilityRole="link"
         accessibilityLabel={
           entries
-            ? `Bu eserin ilişkili olduğu eserler listesi, ${entries.length} eser`
-            : "Bu eserin ilişkili olduğu eserler listesi"
+            ? words().relatedCount(entries.length)
+            : words().related
         }
         style={styles.related}
       >
@@ -1323,12 +1330,12 @@ function ReadMore({ title, onPress }: { title: string; onPress: () => void }) {
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={`Devamını oku: ${title}`}
+      accessibilityLabel={words().readMoreLabel(title)}
       onPress={onPress}
       style={({ pressed }) => [styles.readMore, pressed && styles.pressed]}
     >
       <Text variant="label" colorValue={ink.text}>
-        Devamını oku
+        {words().readMore}
       </Text>
       <Ionicons name="arrow-forward" size={16} color={ink.text} />
     </Pressable>
@@ -1437,7 +1444,9 @@ function picturesOf(asset: AssetDetail): Media[] {
 
 /** The dataset's fee codes; anything else is already a price in words. */
 const fees: Record<string, string | null> = {
-  free: "Ücretsiz",
+  get free() {
+    return words().free;
+  },
   unknown: null,
 };
 
@@ -1462,11 +1471,11 @@ function End({
   const stepFree =
     a11y.verified && a11y.stepFree !== "unknown"
       ? a11y.stepFree === "no"
-        ? "basamaklı giriş"
-        : "basamaksız giriş"
+        ? words().stepped.toLocaleLowerCase(casing())
+        : words().stepFree.toLocaleLowerCase(casing())
       : null;
   const meta = [
-    asset.visit.durationMin ? `~${asset.visit.durationMin} dk` : null,
+    asset.visit.durationMin ? words().minutes(asset.visit.durationMin) : null,
     fee,
     stepFree,
     asset.district,
@@ -1487,7 +1496,7 @@ function End({
       <View style={styles.endInner}>
         <View style={styles.invite}>
           <Text variant="overline" colorValue={ink.gold}>
-            KEŞFE ÇIK
+            {words().exploreOverline}
           </Text>
           <Editable field="name" label="Adı">
             <Text
@@ -1519,7 +1528,7 @@ function End({
           {coords && (
             <Pressable
               accessibilityRole="link"
-              accessibilityLabel="Yol tarifi al, harita uygulamasını açar"
+              accessibilityLabel={words().directionsLabel}
               onPress={() =>
                 Linking.openURL(
                   `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`,
@@ -1532,7 +1541,7 @@ function End({
             >
               <Ionicons name="navigate" size={18} color={ink.onGold} />
               <Text variant="label" colorValue={ink.onGold} style={styles.bold}>
-                Yol tarifi al
+                {words().directions}
               </Text>
             </Pressable>
           )}
@@ -1552,7 +1561,7 @@ function End({
         >
           <Ionicons name="arrow-up" size={14} color={ink.soft} />
           <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
-            Başa dön
+            {words().toTop}
           </Text>
         </Pressable>
 
@@ -1595,21 +1604,21 @@ function Experiences({
     actions.push({
       key: "inscription",
       icon: "scan-outline",
-      title: "Taşın Dili",
-      hint: "Kitabeyi kamerayla oku",
-      spoken: "Taşın Dili: kitabeyi kamerayla oku",
+      title: words().inscription,
+      hint: words().inscriptionHint,
+      spoken: `${words().inscription}: ${words().inscriptionHint}`,
       href: { pathname: "/inscription", params: { asset: asset.id } },
     });
   }
   // An unlocked asset needs no seal.
   if (phone && visitSealTarget(asset) && !opened) {
-    const hint = "Eserde olduğunu kanıtla";
+    const hint = words().sealHint;
     actions.push({
       key: "seal",
       icon: "ribbon-outline",
-      title: "Ziyaret Mührü",
+      title: words().seal,
       hint,
-      spoken: `Ziyaret Mührü: ${hint}`,
+      spoken: `${words().seal}: ${hint}`,
       href: { pathname: "/visit-seal", params: { asset: asset.id } },
     });
   }
@@ -1623,12 +1632,12 @@ function Experiences({
     actions.push({
       key: "sound",
       icon: playing ? "pause-outline" : "musical-notes-outline",
-      title: playing ? "Durdur" : "Sesini dinle",
+      title: playing ? getMessages().common.stop : words().playSound,
       hint,
       // The words on the row come first, so voice control finds it by what it shows (WCAG 2.5.3).
       spoken: playing
-        ? "Durdur: ses kapsülü"
-        : `Sesini dinle: ${capsules[capsuleType].name} ses kapsülü`,
+        ? words().stopSound
+        : words().playSoundLabel(capsules[capsuleType].name),
       onPress: () => toggleCapsule(capsuleType),
       on: !!playing,
     });
@@ -1637,11 +1646,11 @@ function Experiences({
     actions.push({
       key: "describe",
       icon: describing ? "stop-outline" : "ear-outline",
-      title: describing ? "Durdur" : "Sesli betimle",
-      hint: "Mekânı gözünü kapatıp dinle",
+      title: describing ? getMessages().common.stop : words().describe,
+      hint: words().describeHint,
       spoken: describing
-        ? "Durdur: sesli betimleme"
-        : "Sesli betimle: mekânı gözünü kapatıp dinle",
+        ? words().stopDescribing
+        : `${words().describe}: ${words().describeHint}`,
       onPress: () => {
         if (describing) stopAnswer();
         else void speakAnswer(descriptionKey, description);
@@ -1651,13 +1660,13 @@ function Experiences({
   }
   // A phone feature too: the photo comes from the camera.
   if (phone) {
-    const hint = "Bir detayı fotoğrafla, rehber açıklasın";
+    const hint = words().stoneHint;
     actions.push({
       key: "stone",
       icon: "camera-outline",
-      title: "Taşa Sor",
+      title: words().stone,
       hint,
-      spoken: `Taşa Sor: ${hint}`,
+      spoken: `${words().stone}: ${hint}`,
       href: {
         pathname: "/stone-ask",
         params: { asset: asset.id, name: asset.name },
@@ -1668,9 +1677,9 @@ function Experiences({
   actions.push({
     key: "ask",
     icon: "sparkles-outline",
-    title: "Sor",
-    hint: "Asistan kaynağıyla cevaplar",
-    spoken: `Sor: ${asset.name} hakkında asistan kaynağıyla cevaplar`,
+    title: words().ask,
+    hint: words().askHint,
+    spoken: words().askLabel(asset.name),
     href: {
       pathname: "/assistant",
       params: { asset: asset.id, name: asset.name },
@@ -1806,7 +1815,7 @@ function Reader({
             </Text>
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel="Kapat"
+              accessibilityLabel={getMessages().common.close}
               hitSlop={6}
               onPress={close}
               style={[styles.round, { backgroundColor: c.surfaceRaised }]}
@@ -1837,7 +1846,7 @@ function Reader({
             ]}
           >
             <Text variant="title" headingLevel={1}>
-              {chapter.title ?? "Tarihçe"}
+              {chapter.title ?? words().history}
             </Text>
             <Text style={styles.prose}>{chapter.body}</Text>
             <SourceNote compact sources={chapter.sources} />
@@ -1845,7 +1854,7 @@ function Reader({
             {next ? (
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel={`Sonraki bölüm: ${next.title ?? "Tarihçe"}`}
+                accessibilityLabel={words().nextChapterLabel(next.title ?? words().history)}
                 onPress={() => onChange(index + 1)}
                 style={({ pressed }) => [
                   styles.next,
@@ -1855,9 +1864,9 @@ function Reader({
               >
                 <View style={styles.flex}>
                   <Text variant="caption" color="textSecondary">
-                    Sonraki bölüm
+                    {words().nextChapter}
                   </Text>
-                  <Text variant="label">{next.title ?? "Tarihçe"}</Text>
+                  <Text variant="label">{next.title ?? words().history}</Text>
                 </View>
                 <Ionicons name="arrow-forward" size={20} color={c.text} />
               </Pressable>
@@ -1872,7 +1881,7 @@ function Reader({
                 ]}
               >
                 <Text variant="label" colorValue={c.background}>
-                  Bitti
+                  {words().done}
                 </Text>
               </Pressable>
             )}

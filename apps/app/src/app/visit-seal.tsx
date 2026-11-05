@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
@@ -24,6 +26,7 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { kmBetween } from "@/map/dense-area";
+import { casing, useLang } from "@/i18n";
 
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
 /** The target must stay in view this long before the visit is sealed, so a passing glimpse does not count. */
@@ -53,6 +56,7 @@ type Phase =
  * Without a camera (the web, ADR 0001; a screen reader on) the screen shows which part to find.
  */
 export default function VisitSealScreen() {
+  useLang();
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const resource = useAsset(id ?? DEFAULT_ASSET);
   const insets = useSafeAreaInsets();
@@ -169,7 +173,7 @@ function SealGuide({ asset, onUseCamera }: { asset: AssetDetail; onUseCamera?: (
     // Room at the end for the floating "Kilidi aç", so the last button is not under it.
     <ScrollView contentContainerStyle={[styles.guide, { paddingTop: insets.top + 80, paddingBottom: insets.bottom + spacing.xl + UNLOCK_ROOM }]}>
       <Text variant="overline" colorValue={cameraColors.gold}>
-        MÜHÜR KISMI · {part.toLocaleUpperCase("tr")}
+        MÜHÜR KISMI · {part.toLocaleUpperCase(casing())}
       </Text>
       <View style={styles.guidePhoto}>
         <AssetImage media={photo} />
@@ -311,7 +315,7 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
           <AssetImage media={photo} fill decorative />
         </View>
         <Text variant="caption" colorValue={cameraColors.gold} style={styles.mono} numberOfLines={1}>
-          {part.toLocaleUpperCase("tr")}
+          {part.toLocaleUpperCase(casing())}
         </Text>
       </View>
 
@@ -452,7 +456,7 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
                 {asset.name}
               </Text>
               <Text style={styles.sealCaption} colorValue={cameraColors.textSecondary}>
-                {date.toLocaleUpperCase("tr")}
+                {date.toLocaleUpperCase(casing())}
               </Text>
             </Animated.View>
           </View>

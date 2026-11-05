@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetDetail, InscriptionV2, Media } from "@vagabonds/contracts";
 import { cameraColors, cameraGlass, fontFamily, radius, spacing, Text, useTheme } from "@vagabonds/ui";
@@ -13,6 +15,8 @@ import { AssetImage } from "@/components/asset-image";
 import { useAsset } from "@/data";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { visitSealTarget } from "@/lib/visit-seal";
+import { casing } from "@/i18n";
+import { getMessages, useMessages } from "@/i18n";
 
 /** The portal of Ulucami on its cover photo, as fractions of the photo: where Ziyaret Mührü's demo zooms in. */
 const PORTAL = { x: 0.495, y: 0.67 };
@@ -45,18 +49,30 @@ const modes: Mode[] = [
     icon: "ribbon",
     asset: "bursa-osmangazi-ulucami",
     path: "/visit-seal",
-    title: "Ziyaret Mührü",
-    description: "Eserin belirli bir kısmını çek, orada olduğunu kanıtla ve sisi kaldır.",
-    web: "Web'de: hangi kısmı çekeceğin gösterilir; mühür telefonda.",
+    get title() {
+      return getMessages().asset.seal;
+    },
+    get description() {
+      return getMessages().camera.sealDescription;
+    },
+    get web() {
+      return getMessages().camera.sealWeb;
+    },
   },
   {
     key: "inscription",
     icon: "scan",
     asset: INSCRIPTION_ASSET,
     path: "/inscription",
-    title: "Taşın Dili",
-    description: "Kitabeyi okut, günümüz Türkçesiyle oku.",
-    web: "Web'de: kitabenin okunuşu ve günümüz Türkçesi doğrudan okunur.",
+    get title() {
+      return getMessages().asset.inscription;
+    },
+    get description() {
+      return getMessages().camera.inscriptionDescription;
+    },
+    get web() {
+      return getMessages().camera.inscriptionWeb;
+    },
   },
 ];
 
@@ -68,6 +84,7 @@ export default function CameraScreen() {
   const { colors: c } = useTheme();
   const web = Platform.OS === "web";
   const insets = useSafeAreaInsets();
+  const m = useMessages();
 
   return (
     <View
@@ -81,11 +98,11 @@ export default function CameraScreen() {
       ]}
     >
       <Head>
-        <title>Kamera · Vagabonds</title>
+        <title>{m.common.title(m.camera.title)}</title>
       </Head>
       <View style={styles.column}>
         <Text variant="title" headingLevel={1}>
-          Kamera
+          {m.camera.title}
         </Text>
         {modes.map((mode) => (
           <ModeCard key={mode.key} mode={mode} web={web} />
@@ -355,14 +372,14 @@ function SealPreview({ asset, cover, part, box }: { asset: AssetDetail; cover: M
         <View style={[styles.stampInner, { borderRadius: seal / 2 }]}>
           <Ionicons name="ribbon" size={seal * 0.2} color={cameraColors.gold} />
           <Text style={styles.stampLabel} colorValue={cameraColors.gold}>
-            MÜHÜRLENDİ
+            {getMessages().camera.sealed}
           </Text>
         </View>
       </Animated.View>
 
       <Status
         done={phase === "sealed"}
-        label={phase === "search" ? `Mühür kısmı: ${part}` : phase === "hold" ? "Tanındı, sabit tut" : `${asset.name} mühürlendi`}
+        label={phase === "search" ? getMessages().camera.sealPart(part) : phase === "hold" ? getMessages().camera.holdStill : getMessages().camera.sealedName(asset.name)}
       />
     </View>
   );
@@ -460,7 +477,7 @@ function InscriptionPreview({ inscription, photo, box }: { inscription: Inscript
       <Animated.View style={[styles.reading, { opacity: card, transform: [{ translateY: cardY }] }]}>
         <Animated.View style={[styles.cardLayer, { opacity: ottoman }]}>
           <Text variant="overline" colorValue={cameraColors.gold}>
-            OKUNUŞ
+            {getMessages().camera.reading}
           </Text>
           <Text style={styles.ottoman} colorValue={cameraColors.text} numberOfLines={compact ? 1 : 2}>
             {inscription.transliteration}
@@ -468,7 +485,7 @@ function InscriptionPreview({ inscription, photo, box }: { inscription: Inscript
         </Animated.View>
         <Animated.View style={[styles.cardLayer, StyleSheet.absoluteFill, styles.cardTurned, { opacity: turn }]}>
           <Text variant="overline" colorValue={cameraColors.gold}>
-            GÜNÜMÜZ TÜRKÇESİ
+            {getMessages().camera.translation}
           </Text>
           <Text variant="caption" colorValue={cameraColors.text} numberOfLines={compact ? 1 : 2}>
             {inscription.translation}
@@ -476,7 +493,7 @@ function InscriptionPreview({ inscription, photo, box }: { inscription: Inscript
         </Animated.View>
       </Animated.View>
 
-      <Status done={found} label={found ? "Kitabe bulundu" : "Kitabe aranıyor"} />
+      <Status done={found} label={found ? getMessages().camera.found : getMessages().camera.searching} />
     </View>
   );
 }
@@ -510,7 +527,7 @@ function Status({ label, done }: { label: string; done: boolean }) {
         <View style={[styles.statusDot, { backgroundColor: cameraColors.text }]} />
       )}
       <Text style={styles.statusLabel} colorValue={cameraColors.text}>
-        {label.toLocaleUpperCase("tr")}
+        {label.toLocaleUpperCase(casing())}
       </Text>
     </View>
   );

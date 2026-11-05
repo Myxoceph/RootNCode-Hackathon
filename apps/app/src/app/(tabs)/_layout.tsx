@@ -4,6 +4,7 @@ import { Platform } from "react-native";
 
 import { TabBar, type TabItem } from "@/components/tab-bar";
 import { WebNavBar } from "@/components/web-nav-bar";
+import { useMessages } from "@/i18n";
 
 /**
  * The five sections in the bar. Each tab is its own URL on the web:
@@ -18,18 +19,21 @@ import { WebNavBar } from "@/components/web-nav-bar";
  * On the web the tabs sit in a bar across the top of the page (`WebNavBar`), as a website's navigation does.
  */
 const WEB = Platform.OS === "web";
-const allTabs: Array<TabItem & { ownHeader?: boolean }> = [
-  { name: "map", title: "Harita", icon: "map-outline", iconFocused: "map", ownHeader: true },
+type TabName = "map" | "rehber" | "camera" | "monuments" | "settings";
+const allTabs: Array<Omit<TabItem, "title"> & { name: TabName; ownHeader?: boolean }> = [
+  { name: "map", icon: "map-outline", iconFocused: "map", ownHeader: true },
   // The general conversation of `/assistant`, which draws its own header.
-  { name: "rehber", title: "Rehber", icon: "sparkles-outline", iconFocused: "sparkles", ownHeader: true },
-  { name: "camera", title: "Kamera", icon: "camera-outline", iconFocused: "camera", ownHeader: true },
+  { name: "rehber", icon: "sparkles-outline", iconFocused: "sparkles", ownHeader: true },
+  { name: "camera", icon: "camera-outline", iconFocused: "camera", ownHeader: true },
   // Has its own stack (list → asset card), which draws the header.
-  { name: "monuments", title: "Eserler", icon: "library-outline", iconFocused: "library", ownHeader: true },
-  { name: "settings", title: "Profil", icon: "person-outline", iconFocused: "person", ownHeader: true },
+  { name: "monuments", icon: "library-outline", iconFocused: "library", ownHeader: true },
+  { name: "settings", icon: "person-outline", iconFocused: "person", ownHeader: true },
 ];
-const tabs = WEB ? allTabs.filter((tab) => tab.name !== "camera") : allTabs;
 
 export default function TabLayout() {
+  const m = useMessages();
+  const titles: Record<TabName, string> = { map: m.tabs.map, rehber: m.tabs.rehber, camera: m.tabs.camera, monuments: m.tabs.monuments, settings: m.tabs.profile };
+  const tabs = (WEB ? allTabs.filter((tab) => tab.name !== "camera") : allTabs).map((tab) => ({ ...tab, title: titles[tab.name] }));
   return (
     <Tabs
       tabBar={(props) => (WEB ? <WebNavBar {...props} items={tabs} /> : <TabBar {...props} items={tabs} />)}
@@ -38,13 +42,14 @@ export default function TabLayout() {
       {tabs.map(({ name, title, ownHeader }) => (
         <Tabs.Screen key={name} name={name} options={{ title, headerShown: !ownHeader }} />
       ))}
-      {WEB && <Tabs.Screen name="camera" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: "Kamera" }} />}
+      {/* An array, not `WEB && …`: a `false` child makes the layout warn that it is not a Screen. */}
+      {WEB ? [<Tabs.Screen key="camera" name="camera" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: m.tabs.camera }} />] : []}
       {/* The opening greeting, which goes on to the map. */}
       <Tabs.Screen name="index" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false }} />
       {/* No tab button, but still a tab: since expo-router 58, `href: null` hides the screen and redirects away from it. */}
-      <Tabs.Screen name="capsule" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: "Kapsül" }} />
+      <Tabs.Screen name="capsule" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: m.tabs.capsule }} />
       {/* Has its own stack (planner → food stops), which draws the header. */}
-      <Tabs.Screen name="route" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: "Rotalar" }} />
+      <Tabs.Screen name="route" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: m.tabs.routes }} />
     </Tabs>
   );
 }

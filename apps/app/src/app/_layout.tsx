@@ -21,6 +21,7 @@ import { useBadgeWatch } from "@/lib/use-badge-watch";
 import { A11ySettingsProvider } from "@/settings/a11y-settings";
 import { useStoredThemePreference } from "@/theme";
 import { fontFiles } from "@/theme/fonts";
+import { useLang, useLangSettled, useMessages } from "@/i18n";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -28,7 +29,7 @@ SplashScreen.preventAutoHideAsync();
  * Profil's pages on the web: the site's bar on top, then the way back and the title (`WebPageHeader`),
  * instead of the phone's plain header. The phone keeps its own.
  */
-function profilePage(title: string, back: "Profil" | "Kaydettiklerim") {
+function profilePage(title: string, back: string, fromSaved = false) {
   if (Platform.OS !== "web") return { title, headerBackTitle: back };
   return {
     title,
@@ -39,7 +40,7 @@ function profilePage(title: string, back: "Profil" | "Kaydettiklerim") {
         section="settings"
         back={{
           label: back,
-          href: back === "Profil" ? "/settings" : "/profile/routes",
+          href: fromSaved ? "/profile/routes" : "/settings",
         }}
       />
     ),
@@ -68,11 +69,13 @@ export default function RootLayout() {
   // The icons' font too: the page rendered ahead of time must draw them as the browser's first render does.
   const [fontsLoaded, fontError] = useFonts({ ...fontFiles, ...Ionicons.font });
   const storedThemePreference = useStoredThemePreference();
+  // The chosen language too, so a phone set to Turkish never opens in Turkish for one chosen English.
+  const langSettled = useLangSettled();
   // On the phone the splash screen waits for the saved theme too, so a dark choice never opens light
   // for a moment. Web pages are rendered ahead of time and cannot wait; the saved theme follows.
   const ready =
     (fontsLoaded || fontError !== null) &&
-    (storedThemePreference !== undefined || Platform.OS === "web");
+    ((storedThemePreference !== undefined && langSettled) || Platform.OS === "web");
 
   useEffect(() => {
     if (ready) SplashScreen.hideAsync();
@@ -89,6 +92,12 @@ export default function RootLayout() {
 
 function ThemedStack() {
   const theme = useTheme();
+  const m = useMessages();
+  const lang = useLang();
+  // The web page's language follows the app's, so screen readers pronounce it right.
+  useEffect(() => {
+    if (Platform.OS === "web") document.documentElement.lang = lang;
+  }, [lang]);
   // With a server, the app is for accounts: without one, every screen leads to signing in.
   useAccountGate();
   // A badge earned anywhere is celebrated over the screen it was earned on.
@@ -106,36 +115,36 @@ function ThemedStack() {
           {/* Camera screens are full screen and always dark; they draw their own back button. */}
           <Stack.Screen
             name="visit-seal"
-            options={{ headerShown: false, title: "Ziyaret Mührü" }}
+            options={{ headerShown: false, title: m.screens.visitSeal }}
           />
           <Stack.Screen
             name="auth"
-            options={{ headerShown: false, title: "Giriş yap" }}
+            options={{ headerShown: false, title: m.screens.signIn }}
           />
           {/* Profil's sections, each on its own page under a header with a back button. */}
           <Stack.Screen
             name="profile/routes"
-            options={profilePage("Kaydettiklerim", "Profil")}
+            options={profilePage(m.screens.saved, m.tabs.profile)}
           />
           <Stack.Screen
             name="profile/sealed"
-            options={profilePage("Mühürlenen eserler", "Profil")}
+            options={profilePage(m.screens.sealed, m.tabs.profile)}
           />
           <Stack.Screen
             name="profile/badges"
-            options={profilePage("Rozetlerim", "Profil")}
+            options={profilePage(m.screens.badges, m.tabs.profile)}
           />
           <Stack.Screen
             name="profile/rewards"
-            options={profilePage("Ödüllerim", "Profil")}
+            options={profilePage(m.screens.rewards, m.tabs.profile)}
           />
           <Stack.Screen
             name="profile/settings"
-            options={profilePage("Sistem ayarları", "Profil")}
+            options={profilePage(m.settings.title, m.tabs.profile)}
           />
           <Stack.Screen
             name="profile/notes"
-            options={profilePage("Bıraktığım Notlar", "Profil")}
+            options={profilePage(m.screens.notes, m.tabs.profile)}
           />
           {/* An eser kartı over the Profil page it was opened from; it draws its own close button. */}
           <Stack.Screen
@@ -145,54 +154,54 @@ function ThemedStack() {
           {/* A trip Rehber planned, from Kaydettiklerim; the screen sets its own title. */}
           <Stack.Screen
             name="profile/trip"
-            options={profilePage("Rota", "Kaydettiklerim")}
+            options={profilePage(m.screens.trip, m.screens.saved, true)}
           />
           {/* Draws its own header: a system header that floats over the page would cover the sticky tabs. */}
           <Stack.Screen
             name="dossier"
-            options={{ headerShown: false, title: "Eserin dosyası" }}
+            options={{ headerShown: false, title: m.screens.dossier }}
           />
           <Stack.Screen
             name="related"
-            options={{ headerShown: false, title: "İlişkili eserler" }}
+            options={{ headerShown: false, title: m.screens.related }}
           />
           <Stack.Screen
             name="note"
-            options={{ headerShown: false, title: "Not bırak" }}
+            options={{ headerShown: false, title: m.screens.note }}
           />
           <Stack.Screen
             name="time-journey"
-            options={{ headerShown: false, title: "Zamanda Yolculuk" }}
+            options={{ headerShown: false, title: m.screens.timeJourney }}
           />
           <Stack.Screen
             name="inscription"
-            options={{ headerShown: false, title: "Taşın Dili" }}
+            options={{ headerShown: false, title: m.screens.inscription }}
           />
           <Stack.Screen
             name="stone-ask"
-            options={{ headerShown: false, title: "Taşa Sor" }}
+            options={{ headerShown: false, title: m.screens.stoneAsk }}
           />
           {/* Draws its own header, with "Temizle" next to the title. */}
           <Stack.Screen
             name="assistant"
-            options={{ headerShown: false, title: "Asistan" }}
+            options={{ headerShown: false, title: m.screens.assistant }}
           />
           <Stack.Screen
             name="assistant-history"
-            options={{ title: "Geçmiş konuşmalar", headerBackTitle: "Rehber" }}
+            options={{ title: m.screens.history, headerBackTitle: m.tabs.rehber }}
           />
           <Stack.Screen
             name="map-prototype"
-            options={{ headerShown: false, title: "Harita prototipi" }}
+            options={{ headerShown: false, title: m.screens.mapPrototype }}
           />
           {/* The admin panel draws its own frame (side bar and pages). */}
           <Stack.Screen
             name="admin"
-            options={{ headerShown: false, title: "Yönetim paneli" }}
+            options={{ headerShown: false, title: m.screens.admin }}
           />
           <Stack.Screen
             name="+not-found"
-            options={{ title: "Sayfa bulunamadı" }}
+            options={{ title: m.screens.notFound }}
           />
         </Stack>
         <BadgeCelebration />
