@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { AssetIdSchema } from "@vagabonds/contracts";
+import { AssetIdSchema, type ChatConversation } from "@vagabonds/contracts";
 import { fontFamily, radius, spacing, Text, touchTarget, useTheme, useUi } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter, useSegments } from "expo-router";
 import Head from "expo-router/head";
@@ -12,12 +12,14 @@ import {
   ScrollView,
   StyleSheet,
   TextInput,
+  useWindowDimensions,
   View,
   type ScrollViewInstance,
   type TextInputKeyPressEvent,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { AssistantSessions } from "@/components/assistant-sessions";
 import { AssistantMessage, Thinking, UserMessage } from "@/components/chat-message";
 import { useAssistantAvailable } from "@/data/assistant";
 import { useCommunity } from "@/data/community";
@@ -42,6 +44,10 @@ interface Suggestion {
   detail: string;
   question: string;
 }
+
+const WEB = Platform.OS === "web";
+/** From this width the web page shows the conversations beside the one on screen. */
+const SESSIONS_FROM = 1000;
 
 const GENERAL_SUGGESTIONS: Suggestion[] = [
   { title: "Gezi planla", detail: "Bursa'da yarım günlük bir rota", question: "Bursa'da yarım günlük bir gezi planla" },
@@ -81,6 +87,13 @@ export default function AssistantScreen() {
   const router = useRouter();
   // Also the Rehber tab (`/rehber`): there the bar sits below and there is nowhere to go back to.
   const inTab = (useSegments() as string[])[0] === "(tabs)";
+  // On the web the site's bar names the tab: the title is there for screen readers only.
+  const webTab = WEB && inTab;
+  // The page this screen is on: the Rehber tab keeps its conversations in the tab.
+  const home = inTab ? "/rehber" : "/assistant";
+  // A wide web page lists the conversations in a panel at the left, as chat sites do.
+  const { width } = useWindowDimensions();
+  const sessions = WEB && width >= SESSIONS_FROM;
   const params = useLocalSearchParams<{ asset?: string; name?: string; conversation?: string }>();
   const archiveId = params.conversation && UUID.test(params.conversation) ? params.conversation : undefined;
   // The id comes from the address: one the API would refuse makes it a general conversation.
@@ -181,7 +194,21 @@ export default function AssistantScreen() {
   function startNew() {
     if (!archived || !account) return;
     clearConversation(conversationKey(account.id, archived.assetId ?? undefined));
-    router.replace({ pathname: "/assistant", params: archived.assetId ? { asset: archived.assetId, name: archived.assetName ?? undefined } : {} });
+    router.replace({ pathname: home, params: archived.assetId ? { asset: archived.assetId, name: archived.assetName ?? undefined } : {} });
+  }
+
+  /** "Yeni konuşma": this conversation goes to the history and an empty one opens in its place. */
+  function newConversation() {
+    if (archiveId) return startNew();
+    clearConversation(key);
+    setFreshFrom(Number.POSITIVE_INFINITY);
+    announce("Yeni konuşma başladı. Önceki konuşma geçmişte.");
+  }
+
+  /** A conversation from the side panel: an open one continues on its page, an archived one opens read-only. */
+  function openSession(item: ChatConversation) {
+    if (item.archived) router.replace({ pathname: home, params: { conversation: item.id } });
+    else router.replace({ pathname: home, params: item.assetId ? { asset: item.assetId, name: item.assetName ?? undefined } : {} });
   }
 
   const caption = archiveId
@@ -193,11 +220,48 @@ export default function AssistantScreen() {
       : null;
 
   // The card surface, not the page grey: white in the light theme, as chat apps are.
+  const suggestionCards = (asset ? ASSET_SUGGESTIONS : GENERAL_SUGGESTIONS).map((suggestion) => (
+    <Pressable
+      key={suggestion.title}
+      accessibilityRole="button"
+      accessibilityLabel={`Sor: ${suggestion.question}`}
+      onPress={() => void send(suggestion.question)}
+      style={({ pressed, hovered }: { pressed: boolean; hovered?: boolean }) => [
+        styles.card,
+        WEB && styles.cardWeb,
+        { borderColor: hovered ? c.textSecondary : c.border, backgroundColor: pressed || hovered ? c.surfaceRaised : c.surface },
+      ]}
+    >
+      <Text variant="label" style={styles.cardTitle}>
+        {suggestion.title}
+      </Text>
+      <Text variant="caption" color="textSecondary" numberOfLines={WEB ? 2 : 1}>
+        {suggestion.detail}
+      </Text>
+    </Pressable>
+  ));
+  // On the web an empty conversation is one block in the middle, as on chat sites: the greeting,
+  // the field right under it and the questions to start with under the field.
+  const centered = WEB && empty && !archiveId && !signedOut && !closed;
+  const composer = <Composer draft={draft} onChange={setDraft} onSend={() => void send(draft)} busy={busy} closed={closed} voice={voice} />;
+
+  const withPanel = sessions && account !== null;
+
   return (
-    <View style={[styles.screen, { backgroundColor: c.surface, paddingTop: insets.top }]}>
+    <View style={[styles.screen, withPanel && styles.row, { backgroundColor: c.surface, paddingTop: insets.top }]}>
       <Head>
         <title>Rehber · Vagabonds</title>
       </Head>
+      {withPanel && (
+        <AssistantSessions
+          current={archiveId ? { archiveId } : { assetId: asset ?? null }}
+          version={`${key}:${conversation.entries.length}`}
+          onOpen={openSession}
+          onNew={newConversation}
+          canStartNew={Boolean(archiveId) || !empty}
+        />
+      )}
+      <View style={styles.flex}>
 
       <View style={[styles.header, styles.column]}>
         {/* Two buttons wide on both sides, so the title stays centred. */}
@@ -205,7 +269,7 @@ export default function AssistantScreen() {
           {inTab ? <View style={styles.round} /> : <IconButton icon="chevron-back" label="Geri" onPress={goBack} />}
         </View>
         <View style={styles.title}>
-          <Text style={styles.titleText} headingLevel={1}>
+          <Text style={webTab ? styles.liveRegion : styles.titleText} headingLevel={1}>
             Rehber
           </Text>
           {caption && (
@@ -215,17 +279,13 @@ export default function AssistantScreen() {
           )}
         </View>
         <View style={[styles.side, styles.sideEnd]}>
-          {account && !archiveId && <IconButton icon="time-outline" label="Geçmiş konuşmalar" onPress={() => router.push("/assistant-history")} />}
-          {account && !archiveId && !empty && (
+          {account && !archiveId && !withPanel && <IconButton icon="time-outline" label="Geçmiş konuşmalar" onPress={() => router.push("/assistant-history")} />}
+          {account && !archiveId && !empty && !withPanel && (
             <IconButton
               icon="create-outline"
               label="Yeni konuşma"
               hint="Bu konuşma geçmişe kaydedilir"
-              onPress={() => {
-                clearConversation(key);
-                setFreshFrom(Number.POSITIVE_INFINITY);
-                announce("Yeni konuşma başladı. Önceki konuşma geçmişte.");
-              }}
+              onPress={newConversation}
             />
           )}
         </View>
@@ -253,7 +313,7 @@ export default function AssistantScreen() {
               <View style={[styles.mark, { backgroundColor: closed ? c.surfaceRaised : c.text }]} aria-hidden>
                 <Ionicons name="sparkles" size={22} color={closed ? c.textSecondary : c.background} />
               </View>
-              <Text style={styles.helloText} accessibilityRole={closed ? "alert" : "header"}>
+              <Text style={[styles.helloText, WEB && styles.helloWeb]} accessibilityRole={closed ? "alert" : "header"}>
                 {closed ? "Rehber şu an kapalı" : asset ? `${name ?? "Bu eser"} hakkında ne merak ediyorsun?` : "Nasıl yardımcı olabilirim?"}
               </Text>
               {closed ? (
@@ -264,6 +324,17 @@ export default function AssistantScreen() {
                 <Text variant="caption" color="textSecondary" style={styles.center}>
                   Mikrofona dokunup sesli de sorabilirsin. Ses yazıya çevrilmek için EVREN yapay zekâ servisine gönderilir, saklanmaz.
                 </Text>
+              )}
+              {centered && (
+                <View style={styles.centerBlock}>
+                  {voiceError && (
+                    <Text variant="caption" color="warning" accessibilityRole="alert" style={styles.voiceError}>
+                      {voiceError}
+                    </Text>
+                  )}
+                  {composer}
+                  <View style={styles.grid}>{suggestionCards}</View>
+                </View>
               )}
             </View>
           ) : (
@@ -320,28 +391,13 @@ export default function AssistantScreen() {
         )}
 
         <View style={[styles.bottom, { paddingBottom: (inTab ? 0 : insets.bottom) + spacing.md }]}>
-          {!archiveId && !signedOut && empty && !closed && (
+          {!centered && !archiveId && !signedOut && empty && !closed && (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.cards} keyboardShouldPersistTaps="handled">
-              {(asset ? ASSET_SUGGESTIONS : GENERAL_SUGGESTIONS).map((suggestion) => (
-                <Pressable
-                  key={suggestion.title}
-                  accessibilityRole="button"
-                  accessibilityLabel={`Sor: ${suggestion.question}`}
-                  onPress={() => void send(suggestion.question)}
-                  style={({ pressed }) => [styles.card, { borderColor: c.border, backgroundColor: pressed ? c.surfaceRaised : c.surface }]}
-                >
-                  <Text variant="label" style={styles.cardTitle}>
-                    {suggestion.title}
-                  </Text>
-                  <Text variant="caption" color="textSecondary" numberOfLines={1}>
-                    {suggestion.detail}
-                  </Text>
-                </Pressable>
-              ))}
+              {suggestionCards}
             </ScrollView>
           )}
           <View style={styles.column}>
-            {voiceError && (
+            {voiceError && !centered && (
               <Text variant="caption" color="warning" accessibilityRole="alert" style={styles.voiceError}>
                 {voiceError}
               </Text>
@@ -349,13 +405,12 @@ export default function AssistantScreen() {
             {archiveId ? (
               archived && <ArchiveBar onStartNew={startNew} />
             ) : (
-              !signedOut && (
-                <Composer draft={draft} onChange={setDraft} onSend={() => void send(draft)} busy={busy} closed={closed} voice={voice} />
-              )
+              !signedOut && !centered && composer
             )}
           </View>
         </View>
       </KeyboardAvoidingView>
+      </View>
     </View>
   );
 }
@@ -595,6 +650,9 @@ const styles = StyleSheet.create({
   disabled: {
     opacity: 0.55,
   },
+  row: {
+    flexDirection: "row",
+  },
   /** Header, messages and composer share one centered column on wide screens. */
   column: {
     width: "100%",
@@ -728,6 +786,32 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     fontFamily: fontFamily.sansSemiBold,
+  },
+  /** The web's empty conversation: the field and the questions under the greeting, in the column. */
+  centerBlock: {
+    alignSelf: "stretch",
+    gap: spacing.md,
+    marginTop: spacing.md,
+  },
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.sm,
+    paddingHorizontal: spacing.md,
+  },
+  cardWeb: {
+    flexGrow: 1,
+    flexBasis: 180,
+    minWidth: 0,
+    transitionProperty: "background-color, border-color",
+    transitionDuration: "150ms",
+  },
+  helloWeb: {
+    fontFamily: fontFamily.display,
+    fontWeight: "400",
+    fontSize: 36,
+    lineHeight: 44,
+    letterSpacing: 0,
   },
   composerWrap: {
     gap: spacing.xs + spacing.xxs,

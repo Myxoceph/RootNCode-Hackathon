@@ -477,7 +477,8 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
         accessible
         accessibilityLabel={`Rota oluşturuldu: ${title}, ${tripDuration[trip.duration]}, ${stops} durak, ${distance(meters)} yürüyüş. Kaydettiklerim'e kaydedildi.`}
       >
-        <Svg style={StyleSheet.absoluteFill} aria-hidden>
+        {/* Sized outright: on the web an SVG without a width keeps its 300px default, not its box's. */}
+        <Svg width="100%" height="100%" style={StyleSheet.absoluteFill} aria-hidden>
           <Defs>
             <SvgGradient id="created-ink" x1="0" y1="0" x2="1" y2="1">
               <Stop offset="0" stopColor={light} />
