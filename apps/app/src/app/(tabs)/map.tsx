@@ -14,7 +14,8 @@ import { MapSearch } from "@/components/map-search";
 import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
 import { MobileOnlyNotice } from "@/components/mobile-only-notice";
 import { SealScanDemo } from "@/components/seal-scan-demo";
-import { CITY_LANDMARKS, useCities, useCityMapAssets, useCommunity, useRelationsOf } from "@/data";
+import { CITY_LANDMARKS, communityAvailable, useCities, useCityMapAssets, useCommunity, useRelationsOf } from "@/data";
+import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useMapTour } from "@/lib/map-tour";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
@@ -264,7 +265,8 @@ export default function MapScreen() {
 
   // The first-visit tour: the visitor unlocks an asset themselves, an example scan standing in for the camera.
   const tour = useMapTour({
-    account: user === undefined ? undefined : user?.username ? user.id : null,
+    // Without a server the phone's own mark; with one, only an account's (signed out, it waits for the next one).
+    account: !communityAvailable ? null : isAccount(user) ? user.id : undefined,
     ready: !cityParam,
     still: reduceMotion,
     inCity: selectedPlate !== null,
