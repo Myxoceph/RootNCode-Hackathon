@@ -13,6 +13,12 @@ adminler panelden yeni başarım ekleyebilir, düzenleyebilir ya da kapatabilir 
   `DEMO_UNLOCK=false` ile kapatılır.
 - **İlerleme** `GET /me/achievements` ile okunur; kazanılan başarımlar bu çağrıda ve ziyaret yanıtında kaydedilir.
   Yanıt etkinlik puanını, mühürlenen ziyaret sayısını ve not/fotoğraf sayılarını (onaylanan, bekleyen) da verir.
+- **Rozet kutlaması:** Yeni kazanılan rozet, kazanıldığı ekranın üstünde bir sahneyle açılır (rozet gri döner,
+  rengi şok dalgası ve konfetiyle açılır, adı ve puanı belirir); birden fazlası sırayla gelir. Kaynakları: mühürlü
+  ziyaretin ve "Kilidi aç"ın `newAchievements` alanı, sonradan onaylanan notlar için de `GET /me/achievements`
+  (uygulama açılınca ve öne gelince en çok dakikada bir sorulur). Hangi rozetin gösterildiği hesap başına cihazda
+  tutulur; bir hesabın bu cihazdaki ilk okumasında önceden kazanılmışlar kutlanmaz. "Hareketi azalt" açıkken
+  yalnızca solarak açılır.
 - **Ziyaret edilen eserler** `GET /me/visits` ile okunur (yeniden eskiye); harita bu eserlerin sisini kaldırır.
 - **Rozet görselleri:** Uygulama, aşağıdaki tablolardaki emojinin yerine resimli rozeti çizer
   ([`design/achievement-badges.png`](design/achievement-badges.png); Bursa'ya Merhaba ayrı çizildi:
