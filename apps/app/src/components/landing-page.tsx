@@ -275,7 +275,7 @@ const CSS = `
 .vg-halo { position: absolute; left: 50%; bottom: 22px; width: 900px; height: 104px; transform: translateX(-50%); border-radius: 50%; pointer-events: none;
   background: radial-gradient(closest-side, rgba(221, 181, 92, 0.16), rgba(221, 181, 92, 0.04) 60%, rgba(221, 181, 92, 0) 100%);
 }
-.vg-contact { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); }
+.vg-contact { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0)); }
 .vg-contact-laptop { left: -20px; bottom: 40px; width: 660px; height: 44px; }
 .vg-contact-phone { right: -14px; bottom: -14px; width: 228px; height: 38px; z-index: 0; }
 .vg-device { all: unset; position: absolute; bottom: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
@@ -289,7 +289,7 @@ const CSS = `
   opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; backdrop-filter: blur(8px); }
 .vg-device:hover .vg-tag, .vg-device:focus-visible .vg-tag { opacity: 1; transform: translate(-50%, 0); }
 
-.vg-laptop { display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 26px 30px rgba(0, 0, 0, 0.45)); }
+.vg-laptop { display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 30px 38px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 60px rgba(5, 7, 13, 0.85)); }
 .vg-glass { position: relative; width: 572px; height: 368px; border-radius: 18px 18px 4px 4px; padding: 11px 11px 14px; background: #040507;
   box-shadow: 0 0 0 1.5px #474B54, 0 -1px 0 1.5px rgba(255, 255, 255, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 80px -30px rgba(0, 0, 0, 0.9); }
 .vg-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 6px 6px 2px 2px; background: #0D1420; }
@@ -304,7 +304,7 @@ const CSS = `
 .vg-scoop { position: absolute; top: 0; left: 50%; width: 104px; height: 6px; margin-left: -52px; border-radius: 0 0 10px 10px; background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08)); }
 
 .vg-phone { position: relative; width: 200px; height: 412px; border-radius: 38px; padding: 8px; background: #040507;
-  box-shadow: 0 0 0 2.5px #5A5F69, 0 0 0 4px #1E2026, -1px -1px 0 4px rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.1), -18px 26px 44px -18px rgba(0, 0, 0, 0.6); }
+  box-shadow: 0 0 0 2.5px #5A5F69, 0 0 0 4px #1E2026, -1px -1px 0 4px rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.1), -18px 28px 48px -16px rgba(0, 0, 0, 0.75), 0 0 60px 6px rgba(5, 7, 13, 0.8); }
 .vg-phone-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 31px; background: #0D1420; }
 .vg-notch { position: absolute; top: 9px; left: 50%; width: 72px; height: 21px; transform: translateX(-50%); border-radius: 12px; background: #030406; }
 
