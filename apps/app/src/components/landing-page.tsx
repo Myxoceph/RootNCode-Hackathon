@@ -112,34 +112,66 @@ export function LandingPage() {
   );
 }
 
-/** The laptop: a lid with the website's map on its screen, over a base with its keyboard and trackpad. */
+/**
+ * The laptop, built as a real one: a base slab (stacked layers give it its rounded aluminium sides)
+ * with a recessed keyboard between speaker grilles, a wide trackpad and a thumb scoop; a thin lid
+ * of black glass with an aluminium back and a notch, on a hinge; and two shadows on the floor.
+ */
 function Laptop() {
   return (
     <div className="vg-laptop-wrap">
       <div className="vg-laptop">
         <div className="vg-base">
-          <div className="vg-floor" />
+          <div className="vg-shadow-wide" />
+          <div className="vg-shadow-contact" />
+          {Array.from({ length: BASE_LAYERS }, (_, i) => (
+            <div key={i} className="vg-slab" style={{ transform: `translateZ(${-i - 1}px)` }} />
+          ))}
           <div className="vg-deck">
-            <div className="vg-keys">
-              {KEY_ROWS.map((row, r) => (
-                <div key={r} className="vg-key-row">
-                  {row.map((width, k) => (
-                    <i key={k} style={{ flexGrow: width }} />
+            <div className="vg-deck-row">
+              <div className="vg-grille" />
+              <div className="vg-well">
+                <div className="vg-key-row vg-key-row-fn">
+                  {Array.from({ length: 14 }, (_, k) => (
+                    <i key={k} style={{ flexGrow: k === 0 ? 1.5 : 1 }} />
                   ))}
                 </div>
-              ))}
+                {KEY_ROWS.map((row, r) => (
+                  <div key={r} className="vg-key-row">
+                    {row.map((width, k) => (
+                      <i key={k} style={{ flexGrow: width }} />
+                    ))}
+                  </div>
+                ))}
+                <div className="vg-key-row">
+                  {[1, 1, 1, 1.25, 5.3, 1.25, 1].map((width, k) => (
+                    <i key={k} style={{ flexGrow: width }} />
+                  ))}
+                  <span className="vg-arrows">
+                    <i className="vg-arrow-up" />
+                    <i />
+                    <i />
+                    <i />
+                  </span>
+                </div>
+              </div>
+              <div className="vg-grille" />
             </div>
             <div className="vg-pad" />
+            <div className="vg-scoop" />
           </div>
-          <div className="vg-edge vg-edge-front" />
-          <div className="vg-edge vg-edge-left" />
         </div>
         <div className="vg-lid">
-          <div className="vg-bezel">
+          {Array.from({ length: LID_LAYERS }, (_, i) => (
+            <div key={i} className="vg-lid-layer" style={{ transform: `translateZ(${-i - 1}px)` }} />
+          ))}
+          <div className="vg-hinge" />
+          <div className="vg-glass">
             <div className="vg-screen">
               <img className="vg-shot" src={WEB_SHOT} alt="" />
               <div className="vg-glare" />
             </div>
+            <div className="vg-cam" />
           </div>
         </div>
       </div>
@@ -248,14 +280,16 @@ function qrPath(content: string): { size: number; path: string } {
 const WEB_SHOT = Asset.fromModule(require("@/assets/images/landing/web-map.jpg")).uri;
 const APP_SHOT = Asset.fromModule(require("@/assets/images/landing/app-asset.jpg")).uri;
 
-/** The keyboard's rows, each key by its width. */
+/** The keyboard's rows under the function row, each key by its width; the bottom row is drawn on its own. */
 const KEY_ROWS: number[][] = [
-  Array(14).fill(1),
-  [1.4, ...Array(12).fill(1), 1.4],
+  [...Array(13).fill(1), 1.5],
+  [1.5, ...Array(12).fill(1), 1],
   [1.8, ...Array(11).fill(1), 1.8],
-  [2.3, ...Array(10).fill(1), 2.3],
-  [1, 1, 1, 1.3, 6, 1.3, 1, 1, 1],
+  [2.35, ...Array(10).fill(1), 2.35],
 ];
+/** The base's and the lid's thickness, a layer a pixel. */
+const BASE_LAYERS = 12;
+const LID_LAYERS = 5;
 /** The phone's thickness, a layer a pixel. */
 const PHONE_LAYERS = 9;
 
@@ -293,8 +327,8 @@ const CSS = `
 .vg-device { all: unset; box-sizing: border-box; min-width: 0; width: 100%; display: flex; flex-direction: column; align-items: center; cursor: pointer; border-radius: 28px; padding: 8px 8px 24px; -webkit-tap-highlight-color: transparent; }
 .vg-device:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
 .vg-stage { position: relative; width: 100%; min-width: 0; display: flex; align-items: center; justify-content: center; }
-.vg-stage-laptop { height: 540px; --s: 0.84; }
-.vg-stage-phone { height: 540px; }
+.vg-stage-laptop { height: 570px; --s: 0.84; --y: -80px; }
+.vg-stage-phone { height: 570px; }
 
 .vg-caption { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; max-width: 360px; }
 .vg-kicker { display: inline-flex; align-items: center; gap: 6px; font-family: IBMPlexMono_500Medium, monospace; font-size: 12px; letter-spacing: 2.5px; color: var(--gold); }
@@ -304,26 +338,53 @@ const CSS = `
 .vg-device:hover .vg-cta, .vg-device:focus-visible .vg-cta { transform: translateX(4px); box-shadow: 0 10px 24px -10px var(--floor); }
 
 /* The laptop: the lid hinges up from the back of the base; the whole turned to show its left side and its deck. */
-.vg-laptop-wrap { perspective: 2200px; transform: translate(var(--x, 0px), var(--y, -70px)) scale(var(--s, 1)); transform-origin: 50% 50%; }
-.vg-laptop { --lift: 0px; --open: 14deg; position: relative; width: 540px; height: 340px; transform-style: preserve-3d;
-  transform: translateY(var(--lift)) rotateX(-24deg) rotateY(32deg); transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.vg-device-laptop:hover .vg-laptop, .vg-device-laptop:focus-visible .vg-laptop { --lift: -12px; transform: translateY(var(--lift)) rotateX(-22deg) rotateY(26deg); }
-.vg-lid { position: absolute; inset: 0; transform-origin: 50% 100%; transform: rotateX(var(--open)); transform-style: preserve-3d; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.vg-device-laptop:hover .vg-lid { --open: 8deg; }
-.vg-bezel { position: absolute; inset: 0; border-radius: 18px 18px 6px 6px; padding: 12px 12px 18px; background: #0B0F17; box-shadow: inset 0 0 0 2px var(--alu-3), 0 0 0 1px var(--alu-edge); }
-.vg-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 6px; background: #0D1420; }
+.vg-landing { --deck-1: #F5F6F8; --deck-2: #E1E4E8; --deck-3: #CDD1D7; --side-1: #C9CDD3; --side-2: #A4AAB3; --lid-back: #D5D9DE;
+  --well: #C3C8CF; --key-1: #2A2D33; --key-2: #17191D; --grille: rgba(30, 34, 40, 0.38); --pad-1: #E9EBEE; --pad-2: #DADDE2; --pad-edge: rgba(0, 0, 0, 0.14); }
+.vg-landing[data-theme="dark"] { --deck-1: #6A6F78; --deck-2: #50545C; --deck-3: #43464D; --side-1: #3D4047; --side-2: #2A2C31; --lid-back: #45484F;
+  --well: #3A3D43; --key-1: #1C1E22; --key-2: #0C0D10; --grille: rgba(0, 0, 0, 0.5); --pad-1: #5A5E66; --pad-2: #4C5057; --pad-edge: rgba(0, 0, 0, 0.3); }
+.vg-laptop-wrap { perspective: 2400px; transform: translate(var(--x, 0px), var(--y, -70px)) scale(var(--s, 1)); transform-origin: 50% 50%; }
+.vg-laptop { --lift: 0px; --open: 17deg; position: relative; width: 560px; height: 352px; transform-style: preserve-3d;
+  transform: translateY(var(--lift)) rotateX(-24deg) rotateY(33deg); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.vg-device-laptop:hover .vg-laptop, .vg-device-laptop:focus-visible .vg-laptop { --lift: -12px; transform: translateY(var(--lift)) rotateX(-22deg) rotateY(27deg); }
+
+.vg-lid { position: absolute; inset: 0; transform-origin: 50% 100%; transform: rotateX(var(--open)); transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.vg-device-laptop:hover .vg-lid { --open: 11deg; }
+.vg-lid-layer { position: absolute; inset: 0; border-radius: 16px 16px 10px 10px; background: linear-gradient(90deg, var(--side-2), var(--side-1) 40%, var(--side-2)); }
+.vg-lid-layer:last-child { background: var(--lid-back); }
+.vg-glass { position: absolute; inset: 0; border-radius: 16px 16px 10px 10px; padding: 10px 10px 13px; background: #050608;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), 0 0 0 1px var(--side-2); }
+.vg-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 6px 6px 3px 3px; background: #0D1420; }
 .vg-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-.vg-glare { position: absolute; inset: 0; background: linear-gradient(115deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.04) 32%, transparent 33%); pointer-events: none; }
-.vg-base { position: absolute; left: 0; top: 340px; width: 540px; height: 370px; transform-origin: 50% 0; transform: rotateX(90deg); transform-style: preserve-3d; }
-.vg-deck { position: absolute; inset: 0; border-radius: 4px 4px 22px 22px; background: linear-gradient(160deg, var(--alu-1), var(--alu-2) 70%, var(--alu-3)); box-shadow: inset 0 0 0 1px var(--alu-edge); padding: 26px 30px 0; display: flex; flex-direction: column; align-items: center; gap: 22px; }
-.vg-keys { width: 100%; display: flex; flex-direction: column; gap: 6px; padding: 8px; border-radius: 8px; background: rgba(0,0,0,0.08); }
-.vg-key-row { display: flex; gap: 6px; height: 24px; }
-.vg-key-row i { display: block; flex-basis: 0; border-radius: 4px; background: linear-gradient(var(--key-top), var(--key)); box-shadow: 0 1px 0 rgba(0,0,0,0.35); }
-.vg-pad { width: 44%; height: 118px; border-radius: 10px; background: linear-gradient(160deg, var(--alu-2), var(--alu-1)); box-shadow: inset 0 0 0 1px var(--alu-edge); }
-.vg-edge { position: absolute; background: linear-gradient(var(--alu-3), var(--alu-edge)); }
-.vg-edge-front { left: 10px; right: 10px; bottom: 0; height: 12px; transform-origin: 50% 100%; transform: rotateX(90deg); border-radius: 0 0 10px 10px; }
-.vg-edge-left { left: 0; top: 0; bottom: 12px; width: 12px; transform-origin: 0 50%; transform: rotateY(-90deg); }
-.vg-floor { position: absolute; inset: -10px -30px -40px; transform: translateZ(-14px); background: radial-gradient(closest-side, var(--floor), transparent); filter: blur(16px); }
+.vg-glare { position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(118deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0) 30.5%), radial-gradient(120% 90% at 50% 0%, transparent 60%, rgba(0,0,0,0.25)); }
+.vg-cam { position: absolute; top: 9px; left: 50%; width: 64px; height: 11px; transform: translateX(-50%); border-radius: 0 0 7px 7px; background: #050608; }
+.vg-cam::after { content: ""; position: absolute; left: 50%; top: 3px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #1d2a3a; }
+.vg-hinge { position: absolute; left: 9%; right: 9%; bottom: -7px; height: 12px; border-radius: 6px; transform: translateZ(-4px);
+  background: linear-gradient(#3A3D44, #0F1013 60%, #24262B); }
+
+.vg-base { position: absolute; left: 0; top: 352px; width: 560px; height: 384px; transform-origin: 50% 0; transform: rotateX(90deg); transform-style: preserve-3d; }
+.vg-slab { position: absolute; inset: 0; border-radius: 12px 12px 22px 22px; background: linear-gradient(90deg, var(--side-2), var(--side-1) 30%, var(--side-1) 70%, var(--side-2)); }
+.vg-slab:last-of-type { background: var(--side-2); }
+.vg-deck { position: absolute; inset: 0; border-radius: 12px 12px 22px 22px; padding: 24px 18px 0; display: flex; flex-direction: column; align-items: center; gap: 18px;
+  background: linear-gradient(172deg, var(--deck-1) 0%, var(--deck-2) 55%, var(--deck-3) 100%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35), inset 0 -2px 0 rgba(0, 0, 0, 0.06); }
+.vg-deck-row { width: 100%; display: flex; gap: 12px; align-items: stretch; }
+.vg-grille { flex: 1; border-radius: 4px; background-image: radial-gradient(var(--grille) 0.9px, transparent 1.3px); background-size: 4.5px 4.5px; opacity: 0.9; }
+.vg-well { flex: 0 0 77%; display: flex; flex-direction: column; gap: 5px; padding: 6px; border-radius: 8px; background: var(--well); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18); }
+.vg-key-row { display: flex; gap: 5px; height: 25px; }
+.vg-key-row-fn { height: 13px; }
+.vg-key-row i, .vg-arrows i { display: block; flex-basis: 0; min-width: 0; border-radius: 4px; background: linear-gradient(var(--key-1), var(--key-2));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 1px 1px rgba(0, 0, 0, 0.45); }
+.vg-arrows { flex: 3.1 0 0; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 2px 5px; }
+.vg-arrows i { border-radius: 3px; }
+.vg-arrow-up { grid-column: 2; }
+.vg-pad { width: 47%; height: 154px; border-radius: 12px; background: linear-gradient(170deg, var(--pad-1), var(--pad-2)); box-shadow: inset 0 0 0 1px var(--pad-edge), inset 0 1px 0 rgba(255, 255, 255, 0.4); }
+.vg-scoop { position: absolute; bottom: 0; left: 50%; width: 96px; height: 7px; margin-left: -48px; border-radius: 0 0 48px 48px / 0 0 7px 7px;
+  background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.16)); }
+.vg-shadow-contact { position: absolute; inset: -8px -10px -12px; transform: translateZ(-13px); border-radius: 40px;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0) 100%); opacity: var(--contact, 0.6); }
+.vg-shadow-wide { position: absolute; inset: -60px -110px -150px -80px; transform: translateZ(-14px);
+  background: radial-gradient(closest-side, var(--floor), rgba(0, 0, 0, 0) 100%); }
+.vg-landing[data-theme="dark"] .vg-shadow-contact { --contact: 0.9; }
 
 /* The phone: leaning a little to the right, its right side and its shadow on the floor showing. */
 .vg-phone-wrap { position: relative; perspective: 1600px; transform: scale(var(--s, 1)); }
@@ -373,7 +434,7 @@ const CSS = `
   .vg-hero { padding: 16px 16px 0; }
   .vg-lead { font-size: 16px; }
   .vg-devices { padding: 0 16px; }
-  .vg-stage-laptop { height: 300px; --s: 0.46; --x: -30px; --y: -50px; }
+  .vg-stage-laptop { height: 320px; --s: 0.45; --x: -32px; --y: -60px; }
   .vg-stage-phone { height: 340px; --s: 0.72; }
 }
 @media (prefers-reduced-motion: reduce) {
