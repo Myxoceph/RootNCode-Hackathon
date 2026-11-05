@@ -275,7 +275,7 @@ const CSS = `
 .vg-button-dark { color: var(--ink); background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14); backdrop-filter: blur(12px); }
 .vg-button-dark:hover { background: rgba(255, 255, 255, 0.13); transform: translateY(-1px); }
 
-.vg-room { position: relative; flex: 1; pointer-events: none; transform: translateY(calc(-1 * clamp(16px, 6vh, 70px))); min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
+.vg-room { position: relative; flex: 1; pointer-events: none; transform: translateY(calc(-1 * clamp(0px, 1.5vh, 16px))); min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
 /* The scene's box is larger than its devices: only the devices take the pointer, so it never covers the buttons above. */
 .vg-scene { position: relative; flex: none; transform-origin: 50% 100%; margin-bottom: 0; pointer-events: none; }
 .vg-contact { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0)); }
