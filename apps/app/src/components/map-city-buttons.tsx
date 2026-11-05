@@ -4,6 +4,7 @@ import { Platform, Pressable, StyleSheet, View } from "react-native";
 
 import type { CityOption } from "@/data";
 import { useScreenReaderEnabled } from "@/lib/use-screen-reader";
+import { useMessages } from "@/i18n";
 
 /**
  * What the map says in pictures, for those who cannot see or tap it: the map itself is closed to
@@ -15,11 +16,12 @@ export function MapCityButtons({ cities, bottom, onOpen }: { cities: CityOption[
   const screenReader = useScreenReaderEnabled();
   const [focused, setFocused] = useState(false);
   const web = Platform.OS === "web";
+  const m = useMessages();
   if (!web && !screenReader) return null;
   const shown = !web || focused;
 
   return (
-    <View style={[styles.wrap, { bottom, backgroundColor: c.background }, !shown && styles.hidden]} accessibilityRole="list" accessibilityLabel="Haritadaki şehirler">
+    <View style={[styles.wrap, { bottom, backgroundColor: c.background }, !shown && styles.hidden]} accessibilityRole="list" accessibilityLabel={m.map.citiesOnMap}>
       {cities.flatMap((city) => {
         const plate = city.plate;
         if (plate === null) return [];
@@ -27,7 +29,7 @@ export function MapCityButtons({ cities, bottom, onOpen }: { cities: CityOption[
           <Pressable
             key={city.code}
             accessibilityRole="button"
-            accessibilityLabel={`${city.label}, ${city.assetCount} eser, haritada aç`}
+            accessibilityLabel={m.map.openCity(city.label, city.assetCount)}
             onPress={() => onOpen(plate)}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
@@ -38,7 +40,7 @@ export function MapCityButtons({ cities, bottom, onOpen }: { cities: CityOption[
         ];
       })}
       <Text variant="caption" color="textSecondary" style={styles.credit}>
-        Harita verisi: OpenFreeMap, OpenStreetMap katkıcıları
+        {m.map.attribution}
       </Text>
     </View>
   );

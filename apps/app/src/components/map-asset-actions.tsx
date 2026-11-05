@@ -13,6 +13,7 @@ import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
+import { useMessages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -40,6 +41,7 @@ interface Action {
 export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   const { colors: c, scheme } = useTheme();
   const router = useRouter();
+  const m = useMessages();
   const detail = useAsset(asset.id);
   // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
   const descriptionKey = `description:${asset.id}`;
@@ -66,8 +68,8 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
     {
       key: "ask",
       icon: "sparkles",
-      label: "Rehber'e sor",
-      hint: `${asset.name} hakkında asistanı açar`,
+      label: m.actions.ask,
+      hint: m.actions.askHint(asset.name),
       disabled: false,
       on: true,
       onPress: () => router.push({ pathname: "/assistant", params: { asset: asset.id, name: asset.name } }),
@@ -75,8 +77,8 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
     {
       key: "directions",
       icon: "navigate",
-      label: "Yol tarifi",
-      hint: coords ? `${asset.name} için harita uygulamasını açar` : "Bu eserin konumu bilinmiyor",
+      label: m.actions.directions,
+      hint: coords ? m.actions.directionsHint(asset.name) : m.actions.noLocation,
       disabled: !coords,
       onPress: () => coords && Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`),
     },
@@ -85,16 +87,16 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
       // The camera's: not on the web (ADR 0001), where "Kilidini aç" says the seal is the phone's too.
       hidden: web,
       icon: "scan",
-      label: "Taşın Dili",
-      hint: readable ? "Kitabeyi kamerayla okur" : record ? "Bu eserde okunacak kitabe yok" : "Eserin bilgileri yükleniyor",
+      label: m.actions.inscription,
+      hint: readable ? m.actions.inscriptionHint : record ? m.actions.noInscription : m.actions.loadingRecord,
       disabled: !readable,
       onPress: () => router.push({ pathname: "/inscription", params: { asset: asset.id } }),
     },
     {
       key: "seal",
       icon: "ribbon",
-      label: "Mühür",
-      hint: sealable ? "Ziyaret Mührü: eserde olduğunu kamerayla kanıtlar" : record ? "Bu eserde mühür kısmı yok" : "Eserin bilgileri yükleniyor",
+      label: m.actions.seal,
+      hint: sealable ? m.actions.sealHint : record ? m.actions.noSeal : m.actions.loadingRecord,
       disabled: !sealable,
       // An unlocked asset needs no seal: its place goes to the others.
       hidden: opened || web,
@@ -103,8 +105,8 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
     {
       key: "describe",
       icon: describing ? "stop" : "ear",
-      label: describing ? "Durdur" : "Betimle",
-      hint: describing ? "Sesli betimlemeyi keser" : description ? "Mekânı sesli betimler" : record ? "Bu eserin sesli betimlemesi yok" : "Eserin bilgileri yükleniyor",
+      label: describing ? m.common.stop : m.actions.describe,
+      hint: describing ? m.actions.stopDescribing : description ? m.actions.describeHint : record ? m.actions.noDescription : m.actions.loadingRecord,
       disabled: !description,
       on: describing,
       onPress: () => {

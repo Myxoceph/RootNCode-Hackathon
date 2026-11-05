@@ -1,11 +1,12 @@
 import { palette } from "@vagabonds/ui";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { loadMaplibre, useVendored } from "@/vendor";
 
 import { useMapTheme } from "./map-theme";
 import { mapPageHtml, parseMapPageEvent, type MapPageCommand } from "./maplibre-page";
 import type { AssetMapProps } from "./types";
+import { useMessages } from "@/i18n";
 
 const DEFAULT_PADDING = { top: 48, right: 48, bottom: 48, left: 48 };
 
@@ -18,6 +19,10 @@ export function useMapPage(
   send: (command: MapPageCommand) => void,
 ) {
   const { scheme, colors: c } = useMapTheme();
+  const words = useMessages().mapPage;
+  // The page is built with the words it first had; a new language reaches it as a command, so the
+  // map is not loaded again and keeps where it is, its open fog and its selection.
+  const [firstWords] = useState(words);
   const maplibre = useVendored(loadMaplibre);
   // Only whether and how the map opens is baked into the page; the outlined plates are sent as commands.
   const showsProvinces = provinces !== null;
@@ -54,11 +59,12 @@ export function useMapPage(
               // White fog on the day map, moonlit fog on the night map.
               cloud: scheme === "dark" ? { top: palette.gece100, middle: palette.gece300, bottom: palette.gece600 } : { top: palette.white, middle: palette.gece200, bottom: palette.gece400 },
             },
+            words: firstWords,
             maplibre,
             opening: showsProvinces ? { reveal } : null,
           })
         : null,
-    [scheme, c, maplibre, showsProvinces, reveal],
+    [scheme, c, firstWords, maplibre, showsProvinces, reveal],
   );
   const ready = useRef(false);
 
@@ -73,6 +79,7 @@ export function useMapPage(
   useEffect(() => send({ type: "provinces", provinces: JSON.parse(provincesJson) }), [provincesJson, send]);
   useEffect(() => send({ type: "watchSpots", on: watchSpots }), [watchSpots, send]);
   useEffect(() => send({ type: "offerUnlock", on: offerUnlock }), [offerUnlock, send]);
+  useEffect(() => send({ type: "words", words }), [words, send]);
 
   const onMessage = (data: unknown) => {
     const event = parseMapPageEvent(data);
@@ -95,6 +102,7 @@ export function useMapPage(
 
   /** Commands sent before the page loaded are lost; replay the current state once it has. */
   const replay = () => {
+    send({ type: "words", words });
     send({ type: "pins", pins, padding: fitPadding });
     send({ type: "select", id: selectedId });
     send({ type: "network", network });

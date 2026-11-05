@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
 import { fontFamily, palette, radius, spacing, Text, touchTarget, typography, useTheme, useUi } from "@vagabonds/ui";
@@ -9,6 +11,7 @@ import { useSearchableAssets } from "@/data";
 import type { CityOption } from "@/data/source";
 import { announce } from "@/lib/announce";
 import { searchAssets } from "@/search/asset-search";
+import { casing, getLang, useMessages } from "@/i18n";
 
 /** The gold of the tab bar: the field's ring while it is typed in. */
 const GOLD = "#966F22";
@@ -49,6 +52,7 @@ interface MapSearchProps {
 export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, trailing, notice, below, column, onBottom }: MapSearchProps) {
   const { colors: c } = useTheme();
   const { textScale } = useUi();
+  const m = useMessages();
   const input = useRef<ComponentRef<typeof TextInput>>(null);
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
@@ -80,7 +84,7 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
   // How many were found, once the typing pauses.
   useEffect(() => {
     if (!open || !typed || all.status !== "success") return;
-    const timer = setTimeout(() => announce(found === 0 ? "Sonuç yok." : `${found} sonuç.`), 700);
+    const timer = setTimeout(() => announce(found === 0 ? m.search.noResults : m.search.results(found)), 700);
     return () => clearTimeout(timer);
   }, [open, typed, found, all.status]);
 
@@ -102,7 +106,7 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
     else if (shownAssets[0]) pickAsset(shownAssets[0]);
   };
 
-  const placeholder = city ? `${inCity(city.label)} eser ara` : "Eser veya şehir ara";
+  const placeholder = city ? m.search.placeholderIn(placeIn(city.label)) : m.search.placeholder;
   const shadow = { shadowColor: "#000", shadowOpacity: 0.22, shadowRadius: 16, shadowOffset: { width: 0, height: 6 }, elevation: 8 };
 
   return (
@@ -117,7 +121,7 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
           {city ? (
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel="Türkiye haritasına dön"
+              accessibilityLabel={m.search.backToTurkey}
               onPress={onBack}
               hitSlop={4}
               style={({ pressed }) => [styles.round, { backgroundColor: c.surfaceRaised }, pressed && styles.pressed]}
@@ -145,7 +149,7 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
             placeholder={placeholder}
             placeholderTextColor={c.textSecondary}
             accessibilityLabel={placeholder}
-            accessibilityHint={city ? "Odaklanınca öne çıkan eserler listelenir" : "Şehir seçmek için odaklan; şehirler ve eserler listelenir"}
+            accessibilityHint={city ? m.search.hintCity : m.search.hint}
             returnKeyType="search"
             autoCorrect={false}
             autoCapitalize="none"
@@ -156,20 +160,20 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
             ]}
           />
           {typed && (
-            <Pressable accessibilityRole="button" accessibilityLabel="Aramayı temizle" onPress={() => setText("")} hitSlop={8} style={styles.clear}>
+            <Pressable accessibilityRole="button" accessibilityLabel={m.search.clear} onPress={() => setText("")} hitSlop={8} style={styles.clear}>
               <Ionicons name="close-circle" size={20} color={c.textSecondary} />
             </Pressable>
           )}
           {open ? (
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel="Kapat"
-              accessibilityHint="Aramayı kapatır"
+              accessibilityLabel={m.search.close}
+              accessibilityHint={m.search.closeHint}
               onPress={close}
               hitSlop={4}
               style={({ pressed }) => [styles.closeButton, { backgroundColor: c.surfaceRaised }, pressed && styles.pressed]}
             >
-              <Text variant="label">Kapat</Text>
+              <Text variant="label">{m.search.close}</Text>
             </Pressable>
           ) : (
             trailing
@@ -184,7 +188,7 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
                 <View style={styles.state}>
                   <ActivityIndicator color={GOLD} />
                   <Text variant="caption" color="textSecondary">
-                    Eserler yükleniyor…
+                    {m.search.loading}
                   </Text>
                 </View>
               )}
@@ -195,18 +199,18 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
                   </Text>
                   <Pressable accessibilityRole="button" onPress={all.retry} hitSlop={8}>
                     <Text variant="label" color="highlight">
-                      Tekrar dene
+                      {m.common.retry}
                     </Text>
                   </Pressable>
                 </View>
               )}
 
               {shownCities.length > 0 && (
-                <Section title="Şehirler">
+                <Section title={m.search.cities}>
                   {shownCities.map((option) => (
                     <Row
                       key={option.code}
-                      label={`${option.label}, ${option.assetCount} eser. Haritada aç`}
+                      label={m.search.cityRow(option.label, option.assetCount)}
                       onPress={() => pickCity(option)}
                       leading={
                         <View style={[styles.cityMark, { backgroundColor: palette.gece800 }]}>
@@ -214,14 +218,14 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
                         </View>
                       }
                       title={option.label}
-                      meta={`${option.assetCount} eser`}
+                      meta={m.search.count(option.assetCount)}
                     />
                   ))}
                 </Section>
               )}
 
               {all.status === "success" && shownAssets.length > 0 && (
-                <Section title={typed ? "Eserler" : "Öne çıkanlar"}>
+                <Section title={typed ? m.search.sites : m.search.featured}>
                   {shownAssets.map((asset) => {
                     const meta = [asset.type.label, city ? asset.district : `${asset.district}, ${asset.city.label}`].join(" · ");
                     return (
@@ -245,9 +249,9 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
               {all.status === "success" && typed && found === 0 && (
                 <View style={styles.empty}>
                   <Ionicons name="search-outline" size={28} color={c.textSecondary} />
-                  <Text variant="label">Sonuç bulunamadı</Text>
+                  <Text variant="label">{m.search.notFound}</Text>
                   <Text variant="caption" color="textSecondary" style={styles.center}>
-                    {`“${text.trim()}” ile eşleşen ${city ? `${inCity(city.label)} ` : ""}bir eser yok. Başka bir ad, tür ya da ilçe deneyin.`}
+                    {m.search.nothingMatches(text.trim(), city ? placeIn(city.label) : null)}
                   </Text>
                 </View>
               )}
@@ -263,7 +267,7 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
               {notice.onRetry && (
                 <Pressable accessibilityRole="button" onPress={notice.onRetry} hitSlop={8}>
                   <Text variant="label" color="highlight">
-                    Tekrar dene
+                    {m.common.retry}
                   </Text>
                 </Pressable>
               )}
@@ -273,6 +277,11 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
       </View>
     </>
   );
+}
+
+/** "Bursa'da" in Turkish, "Bursa" in English: the city as the phrases around it need it. */
+export function placeIn(name: string): string {
+  return getLang() === "tr" ? inCity(name) : name;
 }
 
 /** "Bursa'da", "Edirne'de", "Sinop'ta": the city with the locative ending its last sounds call for. */
@@ -288,7 +297,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <View style={styles.section}>
       <Text variant="overline" color="textSecondary" headingLevel={2} style={styles.sectionTitle}>
-        {title.toLocaleUpperCase("tr")}
+        {title.toLocaleUpperCase(casing())}
       </Text>
       {children}
     </View>

@@ -9,6 +9,7 @@ import { Animated, Easing, FlatList, Pressable, StyleSheet, useWindowDimensions,
 import { AssetImage } from "@/components/asset-image";
 import { isAssetUnlocked } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { useMessages } from "@/i18n";
 
 const MAX_CARD_WIDTH = 360;
 /** How much of the next card shows, so the row reads as one to swipe. */
@@ -103,6 +104,7 @@ const LIST_GAP = spacing.sm;
  */
 export function CityAssetList({ title, assets, buildingsOf, selectedId, unlocked, onSelect, onHide }: Omit<CityAssetCardsProps, "onUnlock"> & { title: string; onHide: () => void }) {
   const look = LIST_LOOKS[useTheme().scheme];
+  const m = useMessages();
   const list = useRef<FlatList<AssetSummary>>(null);
   const index = assets.findIndex((asset) => asset.id === selectedId);
   const [height, setHeight] = useState(0);
@@ -120,12 +122,12 @@ export function CityAssetList({ title, assets, buildingsOf, selectedId, unlocked
             {title}
           </Text>
           <Text variant="caption" colorValue={look.textSecondary}>
-            {assets.length} eser
+            {m.search.count(assets.length)}
           </Text>
         </View>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel="Listeyi gizle"
+          accessibilityLabel={m.cards.hideList}
           onPress={onHide}
           style={({ pressed, hovered }: { pressed: boolean; hovered?: boolean }) => [styles.hide, { backgroundColor: hovered ? look.hover : look.row }, pressed && styles.pressed]}
         >
@@ -166,13 +168,14 @@ function ListGap() {
 /** One row of the side panel; drawn again only when its own asset, choice or seal changes. */
 const CityAssetRow = memo(function CityAssetRow({ asset, buildings, chosen, opened, onSelect, look }: { asset: AssetSummary; buildings: number; chosen: boolean; opened: boolean; onSelect: (id: string) => void; look: ListLook }) {
   const router = useRouter();
-  const place = [asset.district, buildings > 0 ? `${buildings} yapı` : null].filter(Boolean).join(" · ");
+  const m = useMessages();
+  const place = [asset.district, buildings > 0 ? m.cards.buildings(buildings) : null].filter(Boolean).join(" · ");
   return (
     <View style={styles.listRow}>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={[asset.name, asset.type.label, place, opened ? "keşfedildi" : "henüz keşfedilmedi"].filter(Boolean).join(", ")}
-        accessibilityHint="Eseri haritada gösterir"
+        accessibilityLabel={[asset.name, asset.type.label, place, opened ? m.cards.discovered : m.cards.undiscovered].filter(Boolean).join(", ")}
+        accessibilityHint={m.cards.showOnMap}
         accessibilityState={{ selected: chosen }}
         aria-pressed={chosen}
         onPress={() => onSelect(asset.id)}
@@ -209,7 +212,7 @@ const CityAssetRow = memo(function CityAssetRow({ asset, buildings, chosen, open
       {/* Beside the row's button, not in it: one control is never inside another. */}
       <Pressable
         accessibilityRole="link"
-        accessibilityLabel={`${asset.name}: incele`}
+        accessibilityLabel={m.cards.openLabel(asset.name)}
         onPress={() => router.push({ pathname: "/monuments/[id]", params: { id: asset.id } })}
         style={({ pressed, hovered }: { pressed: boolean; hovered?: boolean }) => [
           styles.listOpen,
@@ -218,7 +221,7 @@ const CityAssetRow = memo(function CityAssetRow({ asset, buildings, chosen, open
         ]}
       >
         <Text variant="caption" colorValue={chosen ? look.onGold : look.text} style={styles.openText}>
-          İncele
+          {m.cards.open}
         </Text>
         <Ionicons name="arrow-forward" size={14} color={chosen ? look.onGold : look.text} />
       </Pressable>
@@ -317,19 +320,20 @@ interface CityAssetCardProps {
 
 function CityAssetCard({ asset, buildings, width, chosen, opened, colors, onSelect, onUnlock }: CityAssetCardProps) {
   const router = useRouter();
-  const place = [asset.district, buildings > 0 ? `${buildings} yapı` : null].filter(Boolean).join(" · ");
-  const label = [asset.name, asset.type.label, asset.district, buildings > 0 ? `${buildings} yapısıyla` : null, opened ? "keşfedildi" : "henüz keşfedilmedi"]
+  const m = useMessages();
+  const place = [asset.district, buildings > 0 ? m.cards.buildings(buildings) : null].filter(Boolean).join(" · ");
+  const label = [asset.name, asset.type.label, asset.district, buildings > 0 ? m.cards.withBuildings(buildings) : null, opened ? m.cards.discovered : m.cards.undiscovered]
     .filter(Boolean)
     .join(", ");
   // Swiping and the map choose an asset; a screen reader chooses it here, and unlocks it as the map's button does.
-  const actions = [...(chosen ? [] : [{ name: "select", label: "Seç" }]), ...(opened ? [] : [{ name: "unlock", label: "Kilidini aç" }])];
+  const actions = [...(chosen ? [] : [{ name: "select", label: m.cards.select }]), ...(opened ? [] : [{ name: "unlock", label: m.cards.unlock }])];
 
   // Not a `Link asChild`: that throws on the style this card needs.
   return (
     <Pressable
       accessibilityRole="link"
       accessibilityLabel={label}
-      accessibilityHint="Eserin hikâyesini ve bilgilerini açar"
+      accessibilityHint={m.cards.openHint}
       // The chosen card is the one the buttons under the search are for.
       accessibilityState={{ selected: chosen }}
       // The web has no "selected" for a link: the chosen card is the current one there.
@@ -366,7 +370,7 @@ function CityAssetCard({ asset, buildings, width, chosen, opened, colors, onSele
       </View>
       <View style={[styles.open, { backgroundColor: colors.button }]}>
         <Text variant="caption" colorValue={colors.onButton} style={styles.openText}>
-          İncele
+          {m.cards.open}
         </Text>
         <Ionicons name="arrow-forward" size={14} color={colors.onButton} />
       </View>

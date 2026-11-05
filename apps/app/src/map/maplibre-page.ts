@@ -75,7 +75,9 @@ export type MapPageCommand =
   | { type: "provinces"; provinces: MapProvinces | null }
   | { type: "watchSpots"; on: boolean }
   /** The map tour's "Düğmeye dokun": "Kilidini aç" stands over the chosen asset however it was chosen (a card too). */
-  | { type: "offerUnlock"; on: boolean };
+  | { type: "offerUnlock"; on: boolean }
+  /** The app's language changed: the page's own words follow, the map stays as it is. */
+  | { type: "words"; words: MapPageWords };
 
 export function parseMapPageEvent(data: unknown): MapPageEvent | null {
   if (typeof data !== "string") return null;
@@ -103,14 +105,30 @@ export function parseMapPageEvent(data: unknown): MapPageEvent | null {
  * ./turkey-outline.json is the country's border for the gold trace. The provinces with
  * assets are named by a symbol layer, which hides names that would overlap.
  */
+/** The page's own words, in the app's language (`map.page` in @/i18n/messages). */
+export interface MapPageWords {
+  sources: string;
+  unlocked: string;
+  unlock: string;
+  /** Read after the asset's name on "Kilidini aç". */
+  unlockLabel: string;
+  related: string;
+  note: string;
+  inspect: string;
+  close: string;
+  relatedList: string;
+}
+
 export function mapPageHtml({
   scheme,
   colors,
+  words,
   maplibre,
   opening = null,
 }: {
   scheme: "light" | "dark";
   colors: MapPageColors;
+  words: MapPageWords;
   /** MapLibre inlined, so the page needs no network for it (`loadMaplibre` in @/vendor). */
   maplibre: { script: string; css: string };
   /**
@@ -318,6 +336,8 @@ export function mapPageHtml({
 <div id="map"></div>
 <script>${maplibre.script}</script>
 <script>
+  /** Replaced by a "words" command when the app's language changes, without reloading the page. */
+  let WORDS = ${JSON.stringify(words).replace(/</g, "\\u003c")};
 const post = (event) => {
   const data = JSON.stringify(event);
   if (window.ReactNativeWebView) window.ReactNativeWebView.postMessage(data);
@@ -337,6 +357,11 @@ const actions = {};
 
 window.vagabondsMap = {
   receive(command) {
+    if (command.type === "words") {
+      WORDS = command.words;
+      document.querySelector(".maplibregl-ctrl-attrib-button")?.setAttribute("aria-label", WORDS.sources);
+      return;
+    }
     if (!loaded) {
       pending.push(command);
       return;
@@ -383,7 +408,7 @@ function start() {
   // style keeps them folded until the button is tapped (credits-open), so they never flash open first.
   const foldCredits = () => {
     document.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
-    document.querySelector(".maplibregl-ctrl-attrib-button")?.setAttribute("aria-label", "Harita kaynakları");
+    document.querySelector(".maplibregl-ctrl-attrib-button")?.setAttribute("aria-label", WORDS.sources);
   };
   map.once("load", foldCredits);
   map.once("idle", foldCredits);
@@ -1861,7 +1886,7 @@ function start() {
     title.style.bottom = bottom + "px";
     const found = document.createElement("span");
     found.className = "scene-found";
-    found.textContent = "KİLİT AÇILDI";
+    found.textContent = WORDS.unlocked;
     const name = document.createElement("div");
     name.className = "scene-name";
     const size = asset.title.length <= 16 ? 30 : asset.title.length <= 28 ? 25 : 21;
@@ -2285,7 +2310,7 @@ function start() {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "unlock";
-      button.innerHTML = UNLOCK_ICON + "<span>Kilidini aç</span>";
+      button.innerHTML = UNLOCK_ICON + "<span>" + WORDS.unlock + "</span>";
       // In the phone's WebView the map's touch handling takes the tap before the button does, so the
       // map's own tap (onTap) checks for the button first; a click here covers the mouse.
       button.addEventListener("click", (event) => {
@@ -2297,7 +2322,7 @@ function start() {
       map.on("zoom", () => unlockFor && unlock.setOffset(unlockOffset()));
     }
     const button = unlock.getElement().firstChild;
-    button.setAttribute("aria-label", asset.title + ": kilidini aç, Ziyaret Mührü kamerasını açar");
+    button.setAttribute("aria-label", asset.title + ": " + WORDS.unlockLabel);
     unlock.setLngLat([asset.lng, asset.lat]).setOffset(unlockOffset()).addTo(map);
     if (unlockFor !== asset.id && motion) {
       // Pops up again for each newly chosen asset.
@@ -2318,9 +2343,9 @@ function start() {
   let openActionFired = 0;
   const optionIcon = (path) => '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="' + colors.seal.lockEdge + '" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + path + "</svg>";
   const OPEN_OPTIONS = [
-    { type: "related", end: (seal) => [0, -(seal + 30)], label: "İlişkili eserleri gör", icon: optionIcon('<path d="M10 14a4 4 0 0 0 6 .4l3-3a4 4 0 0 0-5.7-5.7l-1.1 1.1"/><path d="M14 10a4 4 0 0 0-6-.4l-3 3a4 4 0 0 0 5.7 5.7l1.1-1.1"/>') },
-    { type: "note", end: (seal) => [-72, seal + 20], label: "Not bırak", icon: optionIcon('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>') },
-    { type: "inspect", end: (seal) => [72, seal + 20], label: "İncele", icon: optionIcon('<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>') },
+    { type: "related", end: (seal) => [0, -(seal + 30)], label: () => WORDS.related, icon: optionIcon('<path d="M10 14a4 4 0 0 0 6 .4l3-3a4 4 0 0 0-5.7-5.7l-1.1 1.1"/><path d="M14 10a4 4 0 0 0-6-.4l-3 3a4 4 0 0 0 5.7 5.7l1.1-1.1"/>') },
+    { type: "note", end: (seal) => [-72, seal + 20], label: () => WORDS.note, icon: optionIcon('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>') },
+    { type: "inspect", end: (seal) => [72, seal + 20], label: () => WORDS.inspect, icon: optionIcon('<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>') },
   ];
 
   /** Sends the option, once per tap whichever way it arrives. */
@@ -2457,8 +2482,8 @@ function start() {
         element.addEventListener("click", onPress);
         relatedBar.appendChild(element);
       };
-      button("Kapat", '<path d="M6 6l12 12"/><path d="M18 6L6 18"/>', () => closeRelated(true));
-      button("İlişkili eser listesini incele", '<path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6h.01"/><path d="M4 12h.01"/><path d="M4 18h.01"/>', () => relatedShown && post({ type: "relatedList", id: relatedShown.id }));
+      button(WORDS.close, '<path d="M6 6l12 12"/><path d="M18 6L6 18"/>', () => closeRelated(true));
+      button(WORDS.relatedList, '<path d="M9 6h11"/><path d="M9 12h11"/><path d="M9 18h11"/><path d="M4 6h.01"/><path d="M4 12h.01"/><path d="M4 18h.01"/>', () => relatedShown && post({ type: "relatedList", id: relatedShown.id }));
       document.body.appendChild(relatedBar);
     }
     relatedBar.style.display = shown ? "flex" : "none";
@@ -2509,7 +2534,7 @@ function start() {
         const button = document.createElement("button");
         button.type = "button";
         button.dataset.option = option.type;
-        button.innerHTML = '<span class="option-icon">' + option.icon + "</span><span>" + option.label + "</span>";
+        button.innerHTML = '<span class="option-icon">' + option.icon + "</span><span>" + option.label() + "</span>";
         // As with "Kilidini aç": the phone's WebView gives the tap to the map (onTap), a click covers the mouse.
         button.addEventListener("click", (event) => {
           event.stopPropagation();
@@ -3110,9 +3135,14 @@ function start() {
   if (OPENING && OPENING.reveal) {
     intro = newIntro();
     animate();
-    // Never left closed if the provinces do not come.
+    // Never left closed if the provinces do not come. The opening styles the province layers, so on a
+    // slow connection, where the base style is still loading, it waits for them (the load above adds them).
     setTimeout(() => {
-      if (!provincesShown) startIntro();
+      const open = () => {
+        if (!provincesShown) startIntro();
+      };
+      if (loaded) open();
+      else map.once("load", open);
     }, INTRO_WAIT_MS * 2);
   }
 
