@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { EmailSchema, PASSWORD_MIN, UsernameSchema } from "@vagabonds/contracts";
 import { cameraColors, fontFamily, palette, radius, spacing, Text, useUi } from "@vagabonds/ui";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useRef, useState, type ComponentProps, type RefObject } from "react";
@@ -26,6 +26,7 @@ import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 import { AssetImage } from "@/components/asset-image";
 import { communityAvailable, login, register, useAsset, useCommunity } from "@/data";
 import { DataError } from "@/data/errors";
+import { afterSignIn } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -55,10 +56,11 @@ const copy: Record<Mode, { title: string; lead: string; action: string }> = {
  * visitor who already left notes or seals under a nickname is told they move to the account.
  *
  * With a server the app is for accounts (`useAccountGate`): this screen has no way past it but
- * signing up or in. Done, the greeting ("Merhaba, <ad>") opens and the map after it.
+ * signing up or in. Done, the page a shared link asked for opens (`next`), or else the greeting
+ * ("Merhaba, <ad>") and the map after it.
  */
 export default function AuthScreen() {
-  const params = useLocalSearchParams<{ mode?: string }>();
+  const params = useLocalSearchParams<{ mode?: string; next?: string }>();
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { height } = useWindowDimensions();
@@ -105,8 +107,9 @@ export default function AuthScreen() {
           })
         : await login({ username: username.trim().toLowerCase(), password });
       announce(registering ? `Hesabın oluşturuldu. Hoş geldin, ${signedIn.nickname}.` : `Hoş geldin, ${signedIn.nickname}.`);
-      // The web's `/` is the home page: there an account goes straight to the map. The app opens on its greeting, which goes on to the map.
-      router.replace(Platform.OS === "web" ? "/map" : "/");
+      // The page a shared link asked for. Otherwise the web's `/` is the home page, so an account goes
+      // straight to the map there; the app opens on its greeting, which goes on to the map.
+      router.replace(afterSignIn(params.next, Platform.OS === "web" ? "/map" : "/") as Href);
     } catch (err) {
       const message = err instanceof DataError ? err.message : "Bir şeyler ters gitti. Tekrar dene.";
       setError(message);

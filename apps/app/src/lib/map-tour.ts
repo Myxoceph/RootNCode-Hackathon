@@ -96,7 +96,7 @@ export function markTourSeen(account: string | null) {
 }
 
 export interface MapTourDriver {
-  /** The signed-in account's id: the tour plays on its first visit only. Null without a server; undefined while loading. */
+  /** The signed-in account's id: the tour plays on its first visit only. Null without a server; undefined while there is none yet. */
   account: string | null | undefined;
   /** False when a link asked for a city: the visitor came for it, not for the tour. */
   ready: boolean;
@@ -155,7 +155,16 @@ export function useMapTour(driver: MapTourDriver): MapTour {
   live.current = driver;
 
   const account = driver.account;
+  const shownTo = useRef(account);
   useEffect(() => {
+    // Another account (or none): a tour under way was the last one's, and ends without a mark.
+    if (shownTo.current !== account) {
+      shownTo.current = account;
+      if (timer.current) clearTimeout(timer.current);
+      setScanning(null);
+      setStep(null);
+      setDue(false);
+    }
     if (account === undefined) return;
     let active = true;
     void tourSeen(account).then((done) => active && setDue(!done));

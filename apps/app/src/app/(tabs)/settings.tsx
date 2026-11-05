@@ -46,6 +46,7 @@ import {
   useMyContributions,
   useWallet,
 } from "@/data";
+import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useSavedRoutes } from "@/lib/saved-routes";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
@@ -70,7 +71,7 @@ export default function SettingsScreen() {
   const { user } = useCommunity();
   const insets = useSafeAreaInsets();
   const tabBarHeight = useBottomTabBarHeight();
-  const signedIn = Boolean(user?.username);
+  const signedIn = isAccount(user);
   // A wide web page sets the passport and the list side by side; the site's bar names the page.
   const { width } = useWindowDimensions();
   const wide = Platform.OS === "web" && width >= 900;
@@ -164,13 +165,13 @@ let peeked = false;
 function Passport() {
   const { user } = useCommunity();
   // The photo's path is signed for a day: a fresh one each time the card is shown.
-  const accountId = user?.username ? user.id : null;
+  const accountId = isAccount(user) ? user.id : null;
   useEffect(() => {
     if (accountId) refreshMe().catch(() => undefined);
   }, [accountId]);
   const badges = useMyAchievements();
   const data = badges.status === "success" ? badges.data : null;
-  const signedIn = Boolean(user?.username);
+  const signedIn = isAccount(user);
   const name = user?.nickname ?? "Gezgin";
   const points = data?.totalPoints ?? 0;
   const earned = data ? data.items.filter((item) => item.earnedAt).length : 0;
