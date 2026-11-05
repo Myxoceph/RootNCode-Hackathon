@@ -30,10 +30,10 @@ export class DataError extends Error {
     this.code = code;
   }
 
-  static fromSchema(source: string, error: SchemaError): DataError {
+  static fromSchema(source: string, error: SchemaError, message = `${source} beklenen biçimde değil.`): DataError {
     return new DataError(
       "invalid",
-      `${source} beklenen biçimde değil.`,
+      message,
       error.issues.map((issue) => `${issue.path.map(String).join(".") || "(kök)"}: ${issue.message}`),
     );
   }

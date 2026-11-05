@@ -1,4 +1,5 @@
 import { DataError, type SchemaParser } from "./errors";
+import { getLang, getMessages } from "@/i18n";
 
 const TIMEOUT_MS = 10_000;
 
@@ -29,7 +30,8 @@ export interface RequestOptions {
  * an error status, a body that is not JSON (a Wi-Fi login page in between) or one that breaks the contract.
  */
 export async function request<T>(url: string, schema: SchemaParser<T>, options: RequestOptions = {}): Promise<T | null> {
-  const headers: Record<string, string> = { Accept: "application/json" };
+  // The API answers in the app's language wherever a request does not name one (`?lang=`).
+  const headers: Record<string, string> = { Accept: "application/json", "Accept-Language": getLang() };
   if (options.body !== undefined) headers["Content-Type"] = "application/json";
   if (options.rawBody) headers["Content-Type"] = options.rawBody.type;
   if (options.token) headers.Authorization = `Bearer ${options.token}`;
@@ -52,12 +54,12 @@ export async function request<T>(url: string, schema: SchemaParser<T>, options: 
       signal: controller.signal,
     });
   } catch (error) {
-    if (options.signal?.aborted) throw new DataError("unavailable", "İstek iptal edildi.", [url]);
+    if (options.signal?.aborted) throw new DataError("unavailable", getMessages().errors.cancelled, [url]);
     // The connection works but the answer is late: "check your internet" would send the visitor the wrong way.
-    if (timedOut) throw new DataError("unavailable", "Sunucu zamanında cevap vermedi. Biraz sonra tekrar dene.", [url]);
+    if (timedOut) throw new DataError("unavailable", getMessages().errors.timeout, [url]);
     throw new DataError(
       "unavailable",
-      "Sunucuya ulaşılamıyor. İnternet bağlantını kontrol edip tekrar dene.",
+      getMessages().errors.unreachable,
       [url, String(error)],
     );
   } finally {
@@ -80,11 +82,11 @@ export async function request<T>(url: string, schema: SchemaParser<T>, options: 
     body = await response.json();
   } catch {
     // Not JSON at all: most likely not our API but a Wi-Fi login page (hotel, museum) in between.
-    throw new DataError("unavailable", "Sunucuya ulaşılamıyor. Wi-Fi giriş sayfası açıksa önce oturum aç.", [url]);
+    throw new DataError("unavailable", getMessages().errors.wifiLogin, [url]);
   }
 
   const result = schema.safeParse(body);
-  if (!result.success) throw DataError.fromSchema("Sunucudan gelen veri", result.error);
+  if (!result.success) throw DataError.fromSchema("Sunucudan gelen veri", result.error, getMessages().errors.badData);
   return result.data;
 }
 
@@ -98,7 +100,7 @@ async function readErrorCode(response: Response): Promise<string | null> {
 }
 
 export function statusError(status: number, _code: string | null, details: string[]): DataError {
-  if (status === 429) return new DataError("unavailable", "Çok fazla istek gönderildi. Biraz bekleyip tekrar dene.", details);
-  if (status >= 500) return new DataError("unavailable", "Sunucuda bir sorun oluştu. Biraz sonra tekrar dene.", details);
-  return new DataError("unavailable", "İstek tamamlanamadı.", details);
+  if (status === 429) return new DataError("unavailable", getMessages().errors.tooMany, details);
+  if (status >= 500) return new DataError("unavailable", getMessages().errors.server, details);
+  return new DataError("unavailable", getMessages().errors.failed, details);
 }

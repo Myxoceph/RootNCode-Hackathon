@@ -6,6 +6,7 @@ import { resolveApiUrl } from "./config";
 import { DataError } from "./errors";
 import { statusError } from "./http";
 import { uploadFile } from "./upload";
+import { getLang, getMessages } from "@/i18n";
 
 /**
  * Taşa Sor's API call: a photo of a detail of the asset, sent with a question to
@@ -19,10 +20,10 @@ const PHOTO_QUALITY = 0.7;
 const ASK_TIMEOUT_MS = 30_000;
 
 function visionError(status: number, code: string | null, details: string[]): DataError {
-  if (code === "VISION_UNAVAILABLE") return new DataError("unavailable", "Taşa Sor şu an cevap veremiyor. Biraz sonra tekrar dene.", details, code);
-  if (code === "ASSET_NOT_FOUND") return new DataError("rejected", "Bu eser bulunamadı.", details, code);
-  if (status === 413) return new DataError("rejected", "Fotoğraf çok büyük. Tekrar çek.", details, code);
-  if (status === 400 || status === 415) return new DataError("rejected", "Fotoğraf okunamadı. Tekrar çek.", details, code);
+  if (code === "VISION_UNAVAILABLE") return new DataError("unavailable", getMessages().errors.vision.down, details, code);
+  if (code === "ASSET_NOT_FOUND") return new DataError("rejected", getMessages().errors.vision.notFound, details, code);
+  if (status === 413) return new DataError("rejected", getMessages().errors.vision.tooLarge, details, code);
+  if (status === 400 || status === 415) return new DataError("rejected", getMessages().errors.vision.unreadable, details, code);
   return statusError(status, code, details);
 }
 
@@ -38,8 +39,8 @@ export async function shrinkPhoto(uri: string): Promise<string> {
 /** What the photo at `uri` (a JPEG on the phone) shows of the asset `assetId`, answering `question`. */
 export async function askStone(uri: string, assetId: string, question?: string, signal?: AbortSignal): Promise<VisionAskResponse> {
   const token = await accountToken();
-  if (token === null) throw new DataError("rejected", "Taşa Sor için giriş yap.", ["/vision/ask"], "ACCOUNT_REQUIRED");
-  const params = new URLSearchParams({ assetId, lang: "tr", ...(question && { question }) });
+  if (token === null) throw new DataError("rejected", getMessages().errors.vision.signIn, ["/vision/ask"], "ACCOUNT_REQUIRED");
+  const params = new URLSearchParams({ assetId, lang: getLang(), ...(question && { question }) });
   return uploadFile(uri, `${resolveApiUrl()}/vision/ask?${params.toString()}`, VisionAskResponseSchema, {
     type: "image/jpeg",
     token,
