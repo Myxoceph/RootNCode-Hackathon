@@ -46,6 +46,7 @@ import {
   useMyContributions,
   useWallet,
 } from "@/data";
+import { webTransition } from "@/lib/web-transition";
 import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useSavedRoutes } from "@/lib/saved-routes";
@@ -975,8 +976,7 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
     borderRadius: radius.xl,
     borderWidth: 1,
-    transitionProperty: "transform, border-color",
-    transitionDuration: "180ms",
+    ...webTransition("transform, border-color", "180ms"),
   },
   tileTop: {
     flexDirection: "row",

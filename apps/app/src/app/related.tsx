@@ -36,6 +36,7 @@ import {
   relatedAssetsOf,
   type RelatedAsset,
 } from "@/lib/related-assets";
+import { webTransition } from "@/lib/web-transition";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import {
   useWideWeb,
@@ -473,8 +474,7 @@ const styles = StyleSheet.create({
   },
   cardWide: {
     width: `calc(50% - ${spacing.lg / 2}px)` as unknown as number,
-    transitionProperty: "transform, border-color",
-    transitionDuration: "180ms",
+    ...webTransition("transform, border-color", "180ms"),
   } as object,
   lifted: {
     transform: [{ translateY: -3 }],

@@ -16,6 +16,7 @@ import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
 import { AssetImage } from "@/components/asset-image";
 import { BuildingIllustration } from "@/components/building-illustration";
+import { webTransition } from "@/lib/web-transition";
 import { yearOfDating } from "@/lib/dating";
 
 /**
@@ -48,7 +49,11 @@ export function AssetCard({ asset }: { asset: AssetSummary }) {
         // On the web the card lifts a little under the pointer. One flat style: `Link asChild` takes neither a function nor an array.
         onHoverIn={() => setHovered(true)}
         onHoverOut={() => setHovered(false)}
-        style={StyleSheet.flatten([styles.card, Platform.OS === "web" && styles.cardWeb, hovered && styles.cardHover])}
+        style={StyleSheet.flatten([
+          styles.card,
+          Platform.OS === "web" && styles.cardWeb,
+          hovered && styles.cardHover,
+        ])}
       >
         <View style={[styles.photo, { backgroundColor: c.surfaceRaised }]}>
           {asset.cover ? (
@@ -129,8 +134,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   cardWeb: {
-    transitionProperty: "transform",
-    transitionDuration: "220ms",
+    ...webTransition("transform", "220ms"),
   },
   cardHover: {
     transform: [{ translateY: -4 }],

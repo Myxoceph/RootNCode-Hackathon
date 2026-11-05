@@ -21,6 +21,7 @@ import {
 import { LIST_LOOKS } from "@/components/city-asset-cards";
 import { deleteConversation, fetchConversations } from "@/data/assistant";
 import { DataError } from "@/data/errors";
+import { webTransition } from "@/lib/web-transition";
 import { announce } from "@/lib/announce";
 import { dayGroup } from "@/lib/chat";
 
@@ -388,8 +389,7 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
     height: 44,
     borderRadius: radius.full,
-    transitionProperty: "opacity",
-    transitionDuration: "150ms",
+    ...webTransition("opacity", "150ms"),
   },
   newText: {
     fontFamily: fontFamily.sansSemiBold,
@@ -441,8 +441,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: radius.lg,
     borderWidth: 1,
-    transitionProperty: "background-color",
-    transitionDuration: "120ms",
+    ...webTransition("background-color", "120ms"),
   },
   rowMain: {
     flex: 1,

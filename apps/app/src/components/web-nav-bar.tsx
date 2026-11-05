@@ -13,6 +13,7 @@ import {
 } from "react-native";
 
 import { useCommunity } from "@/data";
+import { webTransition } from "@/lib/web-transition";
 import { setTabSpot, useTabSpotlight } from "@/lib/tab-bar-spots";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
@@ -466,8 +467,7 @@ const styles = StyleSheet.create({
     height: 40,
     paddingHorizontal: 16,
     borderRadius: 20,
-    transitionProperty: "background-color",
-    transitionDuration: "180ms",
+    ...webTransition("background-color", "180ms"),
   },
   linkLit: {
     backgroundColor: GOLD,
@@ -489,8 +489,7 @@ const styles = StyleSheet.create({
     paddingRight: 5,
     borderRadius: 21,
     borderWidth: 1,
-    transitionProperty: "background-color, border-color",
-    transitionDuration: "180ms",
+    ...webTransition("background-color, border-color", "180ms"),
   },
   ctaNarrow: {
     paddingLeft: 5,

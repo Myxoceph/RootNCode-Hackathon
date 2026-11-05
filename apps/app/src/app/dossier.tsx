@@ -410,7 +410,12 @@ function Dossier({ asset }: { asset: AssetDetail }) {
                   accessibilityLabel={`${block.title} bölümüne git`}
                   aria-current={on ? "true" : undefined}
                   onPress={() => goTo(block.key)}
-                  style={({ hovered }: { hovered?: boolean }) => [
+                  style={({
+                    hovered,
+                  }: {
+                    pressed: boolean;
+                    hovered?: boolean;
+                  }) => [
                     styles.tocItem,
                     { borderLeftColor: on ? c.highlightMark : c.border },
                     hovered && !on && { backgroundColor: c.surface },

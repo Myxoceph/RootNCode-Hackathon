@@ -260,7 +260,7 @@ function Aside({
               accessibilityState={{ selected: on }}
               accessibilityLabel={`${option.label}: ${option.hint}`}
               onPress={() => onKind(option.value)}
-              style={({ hovered }: { hovered?: boolean }) => [
+              style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [
                 styles.asideKind,
                 {
                   backgroundColor: on
