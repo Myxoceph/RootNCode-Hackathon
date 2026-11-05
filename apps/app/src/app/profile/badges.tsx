@@ -221,7 +221,7 @@ function Showcase({ items, points, visits, sealed, onOpen }: { items: Badge[]; p
           <View style={styles.recentRow}>
             {recent.map((badge, i) => (
               <View key={badge.code} style={[styles.recentItem, { borderColor: c.surface, backgroundColor: c.surface }, i > 0 && styles.recentOverlap]}>
-                <BadgeArt code={badge.code} emoji={badge.badge} size={34} />
+                <BadgeArt code={badge.code} emoji={badge.badge} imageUrl={badge.imageUrl} size={34} />
               </View>
             ))}
             {more > 0 && (
@@ -438,7 +438,7 @@ function Medal({ badge, size, ring }: { badge: Badge; size: number; ring: string
   const disc = mid - 9;
   const length = 2 * Math.PI * arc;
   const id = `m-${badge.code}-${Math.round(size)}`;
-  const art = hasBadgeArt(badge.code);
+  const art = hasBadgeArt(badge.code, badge.imageUrl);
 
   return (
     <View style={{ width: size, height: size }}>
@@ -489,7 +489,7 @@ function Medal({ badge, size, ring }: { badge: Badge; size: number; ring: string
       <View style={styles.medalFace}>
         {art ? (
           // Up to the rim: the arc is drawn at `mid - 2` with a 2 px stroke, so its inside is `mid - 3`.
-          <BadgeArt code={badge.code} emoji={badge.badge} size={size - 6} earned={earned} />
+          <BadgeArt code={badge.code} emoji={badge.badge} imageUrl={badge.imageUrl} size={size - 6} earned={earned} />
         ) : (
           <Text style={[{ fontSize: size * 0.36, lineHeight: size * 0.44 }, !earned && styles.faded]}>{badge.badge}</Text>
         )}

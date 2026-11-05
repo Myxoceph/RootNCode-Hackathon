@@ -1,4 +1,7 @@
+import { createHash } from "node:crypto";
 import {
+  ACHIEVEMENT_IMAGE_MAX_BYTES,
+  ACHIEVEMENT_IMAGE_MIN_SIDE,
   AchievementRuleSchema,
   AchievementsResponseSchema,
   AdminAchievementInputSchema,
@@ -38,6 +41,7 @@ import { APPROXIMATE_SOURCE, requiredConfidence, toCoordinates } from "../assets
 import { distanceMeters } from "../assets/assets.network.ts";
 import { requireUser } from "../community/auth.ts";
 import type { CommunityRepository } from "../community/community.repository.ts";
+import { checkImage, InvalidImageError } from "../community/photo-image.ts";
 import type { AchievementRecord, AchievementsRepository } from "./achievements.repository.ts";
 import { activityPoints, isEarned, progressOf } from "./rules.ts";
 
@@ -59,8 +63,16 @@ function toAchievement(record: AchievementRecord, lang: Lang): Achievement {
     badge: record.badge,
     points: record.points,
     rule: AchievementRuleSchema.parse(record.rule),
+    imageUrl: imagePath(record),
   };
 }
+
+/** The badge picture's address; its hash in `v`, so a new picture is a new address and caches never go stale. */
+const imagePath = (record: AchievementRecord) =>
+  record.image ? `/achievement-images/${record.code}?v=${record.image.sha256.slice(0, 12)}` : null;
+
+/** A badge picture should be about square: it is drawn in a circle. */
+const MAX_ASPECT = 1.25;
 
 const langOf = (request: FastifyRequest) =>
   resolveLang(parseWith(LangQuerySchema, request.query, "INVALID_QUERY").lang, request.headers["accept-language"]);
@@ -381,6 +393,8 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
   function toAdminAchievement(record: AchievementRecord, earnedCount: number): AdminAchievement {
     return AdminAchievementSchema.parse({
       ...toAchievement(record, "tr"),
+      titleEn: record.title_en,
+      descriptionEn: record.description_en,
       sortOrder: record.sort_order,
       active: record.active,
       createdBy: record.created_by,
@@ -450,8 +464,12 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
     if (!(await repository.findAchievement(code))) throw notFound(code);
     if (patch.rule) await checkRule(patch.rule);
     const updated = await repository.updateAchievement(code, {
-      ...(patch.title && { title_tr: patch.title.tr, title_en: patch.title.en ?? null }),
-      ...(patch.description && { description_tr: patch.description.tr, description_en: patch.description.en ?? null }),
+      // English left out keeps what is there; null removes it.
+      ...(patch.title && { title_tr: patch.title.tr, ...(patch.title.en !== undefined && { title_en: patch.title.en }) }),
+      ...(patch.description && {
+        description_tr: patch.description.tr,
+        ...(patch.description.en !== undefined && { description_en: patch.description.en }),
+      }),
       ...(patch.badge !== undefined && { badge: patch.badge }),
       ...(patch.points !== undefined && { points: patch.points }),
       ...(patch.rule && { rule: patch.rule }),
@@ -474,5 +492,81 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
     const { code } = parseWith(CodeParamsSchema, request.params, "INVALID_ID");
     if (!(await repository.deleteAchievement(code))) throw notFound(code);
     return reply.code(204).send();
+  });
+
+  // Badge pictures come as the file itself, as profile photos do (photos.routes.ts).
+  app.addContentTypeParser(["image/jpeg", "image/png"], { parseAs: "buffer", bodyLimit: ACHIEVEMENT_IMAGE_MAX_BYTES }, (_request, body, done) =>
+    done(null, body),
+  );
+
+  app.put("/admin/achievements/:code/image", {
+    bodyLimit: ACHIEVEMENT_IMAGE_MAX_BYTES,
+    schema: {
+      tags: ["moderation"],
+      summary: "Rozetin görselini koy ya da değiştir (yalnızca admin): gövde JPEG ya da PNG dosyanın kendisi, en çok 2 MB, kareye yakın",
+      security: bearer,
+      params: toOpenApiSchema(CodeParamsSchema, "input"),
+      response: { 200: toOpenApiSchema(AdminAchievementSchema), 400: errorSchema, 404: errorSchema, 413: errorSchema, 415: errorSchema, ...denied },
+    },
+  }, async (request): Promise<AdminAchievement> => {
+    await requireUser(request, community, "admin");
+    const { code } = parseWith(CodeParamsSchema, request.params, "INVALID_ID");
+    if (!(await repository.findAchievement(code))) throw notFound(code);
+    if (!Buffer.isBuffer(request.body)) throw new HttpError(415, "UNSUPPORTED_MEDIA_TYPE", "Send the picture as image/jpeg or image/png");
+    let image;
+    try {
+      image = checkImage(request.body);
+    } catch (err) {
+      if (err instanceof InvalidImageError) throw new HttpError(400, "INVALID_IMAGE", err.message);
+      throw err;
+    }
+    if (Math.min(image.width, image.height) < ACHIEVEMENT_IMAGE_MIN_SIDE) {
+      throw new HttpError(400, "IMAGE_TOO_SMALL", `Each side must be at least ${ACHIEVEMENT_IMAGE_MIN_SIDE} pixels`);
+    }
+    if (Math.max(image.width, image.height) / Math.min(image.width, image.height) > MAX_ASPECT) {
+      throw new HttpError(400, "IMAGE_NOT_SQUARE", "The picture must be about square; it is drawn in a circle");
+    }
+    const saved = await repository.saveImage(code, {
+      contentType: image.type,
+      bytes: image.bytes,
+      width: image.width,
+      height: image.height,
+      sha256: createHash("sha256").update(image.bytes).digest("hex"),
+    });
+    return toAdminAchievement(saved, (await repository.earnedCounts()).get(code) ?? 0);
+  });
+
+  app.delete("/admin/achievements/:code/image", {
+    schema: {
+      tags: ["moderation"],
+      summary: "Rozetin görselini kaldır (yalnızca admin); rozet yine emojisiyle görünür",
+      security: bearer,
+      params: toOpenApiSchema(CodeParamsSchema, "input"),
+      response: { 200: toOpenApiSchema(AdminAchievementSchema), 400: errorSchema, 404: errorSchema, ...denied },
+    },
+  }, async (request): Promise<AdminAchievement> => {
+    await requireUser(request, community, "admin");
+    const { code } = parseWith(CodeParamsSchema, request.params, "INVALID_ID");
+    if (!(await repository.findAchievement(code))) throw notFound(code);
+    await repository.deleteImage(code);
+    const updated = (await repository.findAchievement(code))!;
+    return toAdminAchievement(updated, (await repository.earnedCounts()).get(code) ?? 0);
+  });
+
+  app.get("/achievement-images/:code", {
+    schema: {
+      tags: ["community"],
+      summary: "Rozet görselinin dosyası; adresi başarımın imageUrl alanında",
+      params: toOpenApiSchema(CodeParamsSchema, "input"),
+      querystring: toOpenApiSchema(z.object({ v: z.string().optional() }), "input"),
+    },
+  }, async (request, reply) => {
+    const { code } = parseWith(CodeParamsSchema, request.params, "INVALID_ID");
+    const file = await repository.findImage(code);
+    if (file === null) throw new HttpError(404, "IMAGE_NOT_FOUND", "Badge picture not found");
+    reply.header("content-type", file.contentType);
+    // The address carries the picture's hash, so it can be kept for long.
+    reply.header("cache-control", "public, max-age=31536000, immutable");
+    return reply.send(Buffer.from(file.bytes));
   });
 };

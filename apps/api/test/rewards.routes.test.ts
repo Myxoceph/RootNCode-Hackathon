@@ -158,9 +158,12 @@ describe.skipIf(!DATABASE_URL)("visit proof, wallet and rewards (PostgreSQL)", (
     const admin = await createUser("admin");
     const empty = `test-${tag}-bos`;
     const made = await call("POST", "/admin/rewards", admin.token, {
-      code: empty, title: { tr: "Boş" }, description: { tr: "Kodu yok" }, partner: "Test", kind: "discount", costPoints: 1,
+      code: empty, title: { tr: "Boş", en: "Empty" }, description: { tr: "Kodu yok" }, partner: "Test", kind: "discount", costPoints: 1,
     });
-    expect(AdminRewardSchema.parse(made.json())).toMatchObject({ codesTotal: 0, stock: 0, minProvenVisits: 0, active: true });
+    expect(AdminRewardSchema.parse(made.json())).toMatchObject({ codesTotal: 0, stock: 0, minProvenVisits: 0, active: true, titleEn: "Empty", descriptionEn: null });
+    // Turkish alone keeps the English.
+    const renamed = await call("PATCH", `/admin/rewards/${empty}`, admin.token, { title: { tr: "Boş ödül" } });
+    expect(AdminRewardSchema.parse(renamed.json())).toMatchObject({ title: "Boş ödül", titleEn: "Empty" });
     await grantPoints(visitor.id, 5);
     const out = await call("POST", `/rewards/${empty}/redeem`, visitor.token);
     expect([out.statusCode, out.json().error.code]).toEqual([409, "OUT_OF_STOCK"]);

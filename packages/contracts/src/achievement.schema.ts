@@ -65,7 +65,16 @@ export const AchievementSchema = z.strictObject({
   badge: z.string().min(1).max(16),
   points: z.int().min(0).max(1000),
   rule: AchievementRuleSchema,
+  /**
+   * The badge's picture an admin uploaded (`PUT /admin/achievements/:code/image`), a path on the
+   * API; null without one. The app draws it in place of `badge`, cut to a circle.
+   */
+  imageUrl: z.string().min(1).nullable().default(null),
 });
+
+/** A badge picture: JPEG or PNG, at most this many bytes, square-ish, each side at least the minimum. */
+export const ACHIEVEMENT_IMAGE_MAX_BYTES = 2 * 1024 * 1024;
+export const ACHIEVEMENT_IMAGE_MIN_SIDE = 128;
 
 /** `GET /achievements?lang=`: every active achievement, in display order. */
 export const AchievementsResponseSchema = z.strictObject({
@@ -235,6 +244,9 @@ export const AdminAchievementPatchSchema = z
   .refine((patch) => Object.keys(patch).length > 0, "at least one field");
 
 export const AdminAchievementSchema = AchievementSchema.extend({
+  /** `title` and `description` are Turkish here; these are the English ones, null when not written. */
+  titleEn: z.string().nullable(),
+  descriptionEn: z.string().nullable(),
   sortOrder: z.int().min(0),
   active: z.boolean(),
   /** `seed` for the starting set, otherwise the admin's username. */
