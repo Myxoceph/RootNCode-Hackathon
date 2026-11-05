@@ -31,6 +31,10 @@ interface MapSearchProps {
   notice?: { message: string; onRetry?: () => void } | null;
   /** Shown right under the field while the search is closed: the chosen asset's buttons. */
   below?: React.ReactNode;
+  /** On a wide web page the bar keeps to the map's side panel: this far from the left, this wide. */
+  column?: { left: number; width: number };
+  /** Where the bar (with what is under it) ends, while the search is closed: the side panel's list starts there. */
+  onBottom?: (y: number) => void;
 }
 
 /**
@@ -42,7 +46,7 @@ interface MapSearchProps {
  * For screen readers this is also the map in words: the cities and assets are buttons in the list,
  * and how many were found is said as the list changes.
  */
-export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, trailing, notice, below }: MapSearchProps) {
+export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, trailing, notice, below, column, onBottom }: MapSearchProps) {
   const { colors: c } = useTheme();
   const { textScale } = useUi();
   const input = useRef<ComponentRef<typeof TextInput>>(null);
@@ -105,7 +109,10 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
     <>
       {/* A tap beside the search closes it; screen readers have its "Kapat" for that. */}
       {open && <Pressable onPress={close} accessible={false} aria-hidden accessibilityElementsHidden importantForAccessibility="no" style={[StyleSheet.absoluteFill, styles.dim]} />}
-      <View style={[styles.wrap, { top }]}>
+      <View
+        style={[styles.wrap, { top }, column && { left: column.left, width: column.width, right: undefined, alignSelf: "flex-start" }]}
+        onLayout={(event) => !open && onBottom?.(top + event.nativeEvent.layout.height)}
+      >
         <View style={[styles.field, shadow, { backgroundColor: c.surface, borderColor: open ? GOLD : c.surface }]}>
           {city ? (
             <Pressable

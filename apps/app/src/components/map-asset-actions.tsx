@@ -6,7 +6,7 @@ import { useEffect, useState, type ComponentProps } from "react";
 import { Animated, Easing, Linking, Platform, Pressable, StyleSheet, View } from "react-native";
 
 import { useHasInscriptions } from "@/ar/inscription-scope";
-import { CARD_COLORS, GLASS_COLORS, GlassFill } from "@/components/city-asset-cards";
+import { CARD_COLORS, GLASS_COLORS, GlassFill, LIST_LOOKS } from "@/components/city-asset-cards";
 import { useAsset } from "@/data";
 import { isAssetUnlocked } from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
@@ -115,9 +115,17 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
     },
   ];
 
+  // On the web it is solid, in the theme of the side panel under it: no map shows through its words.
+  const look = LIST_LOOKS[scheme];
   return (
-    <Animated.View style={[styles.bar, { borderColor: CARD_COLORS[scheme].edge, opacity: drop, transform: [{ translateY: drop.interpolate({ inputRange: [0, 1], outputRange: [-12, 0] }) }] }]}>
-      <GlassFill />
+    <Animated.View
+      style={[
+        styles.bar,
+        web ? { backgroundColor: look.panel, borderColor: look.panelEdge, boxShadow: look.shadow } : { borderColor: CARD_COLORS[scheme].edge },
+        { opacity: drop, transform: [{ translateY: drop.interpolate({ inputRange: [0, 1], outputRange: [-12, 0] }) }] },
+      ]}
+    >
+      {!web && <GlassFill />}
       {actions.filter((action) => !action.hidden).map((action) => (
         <Pressable
           key={action.key}
@@ -131,13 +139,13 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
           onPress={action.onPress}
           style={({ pressed, hovered }: { pressed: boolean; hovered?: boolean }) => [
             styles.cell,
-            action.on ? { backgroundColor: c.highlightMark } : hovered && !action.disabled && { backgroundColor: GLASS_COLORS.chip },
+            action.on ? { backgroundColor: c.highlightMark } : hovered && !action.disabled && { backgroundColor: web ? look.hover : GLASS_COLORS.chip },
             action.disabled && styles.disabled,
             pressed && styles.pressed,
           ]}
         >
-          <Ionicons name={action.icon} size={20} color={action.on ? c.onPrimary : palette.altin200} />
-          <Text variant="caption" colorValue={action.on ? c.onPrimary : GLASS_COLORS.text} numberOfLines={1} style={styles.label}>
+          <Ionicons name={action.icon} size={20} color={action.on ? c.onPrimary : web ? look.gold : palette.altin200} />
+          <Text variant="caption" colorValue={action.on ? c.onPrimary : web ? look.text : GLASS_COLORS.text} numberOfLines={1} style={styles.label}>
             {action.label}
           </Text>
           {web && (

@@ -1,19 +1,21 @@
+import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
-import { spacing, Text } from "@vagabonds/ui";
+import { spacing, Text, useTheme } from "@vagabonds/ui";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Animated, BackHandler, Platform, StyleSheet, View } from "react-native";
+import { Animated, BackHandler, Easing, Platform, Pressable, StyleSheet, useWindowDimensions, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { CityAssetCards } from "@/components/city-asset-cards";
+import { CityAssetCards, CityAssetList, LIST_LOOKS } from "@/components/city-asset-cards";
 import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapCityButtons } from "@/components/map-city-buttons";
-import { MapSearch } from "@/components/map-search";
+import { inCity, MapSearch } from "@/components/map-search";
 import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
 import { MobileOnlyNotice } from "@/components/mobile-only-notice";
 import { SealScanDemo } from "@/components/seal-scan-demo";
+import { WEB_NAV_SPACE } from "@/components/web-nav-bar";
 import { CITY_LANDMARKS, useCities, useCityMapAssets, useCommunity, useRelationsOf } from "@/data";
 import { announce } from "@/lib/announce";
 import { useMapTour } from "@/lib/map-tour";
@@ -27,6 +29,14 @@ const HEADER_SPACE = 72;
 /** Room kept free for the search bar over a city and the chosen asset's buttons under it, and for its cards. */
 const CITY_TOP_SPACE = 136;
 const CITY_CARDS_SPACE = 112;
+/**
+ * A wide web page lists a city's assets in a panel at the left of the map, under the search and the
+ * chosen asset's buttons, all three in one column this wide. The search stays where it is from
+ * Turkey to a city; the panel floats as the site's bar does, inset from the page's edges.
+ */
+const SIDE_PANEL = 400;
+const SIDE_EDGE = spacing.md;
+const SIDE_FROM = 900;
 const NO_PINS: MapPin[] = [];
 const UNLOCK_AFTER_RETURN_MS = 450;
 /** Longer than the map's unlocking scene with its fog: its controls come back even if the scene never reports its end. */
@@ -53,7 +63,17 @@ export default function MapScreen() {
   useMapStatusBar();
   // The tab bar floats over the map: the cards and the framing keep clear of it.
   const tabBarHeight = useBottomTabBarHeight();
-  const insets = useSafeAreaInsets();
+  // On the web the site's bar floats over the top of the map: what sits at the top keeps under it.
+  const safe = useSafeAreaInsets();
+  const insets = Platform.OS === "web" ? { ...safe, top: safe.top + WEB_NAV_SPACE - spacing.sm } : safe;
+  const { width: screenWidth } = useWindowDimensions();
+  const side = Platform.OS === "web" && screenWidth >= SIDE_FROM;
+  /** Where the search (and the chosen asset's buttons) end: the side panel's list starts under them. */
+  const [searchBottom, setSearchBottom] = useState(0);
+  // The visitor may fold the list away for more map; it stays folded from city to city.
+  const [listOpen, setListOpen] = useState(true);
+  const [listIn] = useState(() => new Animated.Value(0));
+  const listLook = LIST_LOOKS[useTheme().scheme];
   const reduceMotion = useReducedMotion();
   const router = useRouter();
   const allUnlocked = useUnlockedAssets();
@@ -302,6 +322,20 @@ export default function MapScreen() {
     return () => subscription.remove();
   }, [selectedPlate]);
 
+  // The side panel slides in from the left once the city's cards are there, and out when folded away.
+  const panelShown = side && selectedCity !== null && listOpen && (landedPlate === selectedPlate || mapError !== null);
+  useEffect(() => {
+    if (reduceMotion) listIn.setValue(panelShown ? 1 : 0);
+    else Animated.timing(listIn, { toValue: panelShown ? 1 : 0, duration: 320, easing: Easing.out(Easing.cubic), useNativeDriver: false }).start();
+  }, [panelShown, reduceMotion, listIn]);
+  // The same function from render to render: the list's rows are drawn again only when their own asset changes.
+  const listSelect = useRef<(id: string) => void>(() => {});
+  listSelect.current = (id) => {
+    chooseAsset(id);
+    tour.onAssetTapped(!unlocked.has(id));
+  };
+  const onListSelect = useCallback((id: string) => listSelect.current(id), []);
+
   // The asset chosen in the open city, for the buttons under the search bar.
   const chosen = selectedCity ? (located.find(({ asset }) => asset.id === chosenAsset)?.asset ?? null) : null;
   // The cards come in once the camera has landed (or at once without a map: they are its content in
@@ -316,7 +350,11 @@ export default function MapScreen() {
       : selectedCity && cityAssets.status === "error"
         ? { message: cityAssets.error.message, onRetry: cityAssets.retry }
         : null;
-  const fitPadding = selectedCity
+  const fitPadding = side
+    ? selectedCity
+      ? { top: insets.top + spacing.lg, right: spacing.xl, bottom: spacing.xl, left: (listOpen ? SIDE_PANEL : 0) + spacing.xl }
+      : { top: insets.top + HEADER_SPACE, right: spacing.lg, bottom: tabBarHeight + spacing.lg, left: spacing.lg }
+    : selectedCity
     ? { top: insets.top + CITY_TOP_SPACE, right: spacing.lg, bottom: tabBarHeight + CITY_CARDS_SPACE, left: spacing.lg }
     : { top: insets.top + HEADER_SPACE, right: spacing.lg, bottom: tabBarHeight + spacing.lg, left: spacing.lg };
 
@@ -363,6 +401,51 @@ export default function MapScreen() {
         accessibilityElementsHidden={controlsHidden}
         importantForAccessibility={controlsHidden ? "no-hide-descendants" : "auto"}
       >
+        {side && selectedCity && (
+          <Animated.View
+            pointerEvents={listOpen ? "auto" : "none"}
+            aria-hidden={!listOpen}
+            style={[
+              styles.side,
+              { backgroundColor: listLook.panel, borderColor: listLook.panelEdge, boxShadow: listLook.shadow },
+              {
+                top: searchBottom + spacing.sm,
+                transform: [{ translateX: listIn.interpolate({ inputRange: [0, 1], outputRange: [-SIDE_PANEL - SIDE_EDGE, 0] }) }],
+              },
+            ]}
+          >
+            {cardsShown && (
+              <CityAssetList
+                title={`${inCity(selectedCity.label)}ki eserler`}
+                assets={cards}
+                buildingsOf={buildingsOf}
+                selectedId={chosenAsset}
+                unlocked={shownOpen}
+                onSelect={onListSelect}
+                onHide={() => setListOpen(false)}
+              />
+            )}
+          </Animated.View>
+        )}
+        {side && selectedCity && cardsShown && !listOpen && !tour.step && (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={`${inCity(selectedCity.label)}ki eserleri göster, ${cards.length} eser`}
+            onPress={() => setListOpen(true)}
+            style={({ pressed, hovered }: { pressed: boolean; hovered?: boolean }) => [
+              styles.showList,
+              { top: searchBottom + spacing.sm, left: SIDE_EDGE },
+              { backgroundColor: listLook.panel, borderColor: hovered ? listLook.edgeHover : listLook.panelEdge, boxShadow: listLook.shadow },
+              pressed && { opacity: 0.85 },
+            ]}
+          >
+            <Ionicons name="list" size={18} color={listLook.text} />
+            <Text variant="label" colorValue={listLook.text} style={styles.showListText}>
+              {`${inCity(selectedCity.label)}ki eserler · ${cards.length}`}
+            </Text>
+            <Ionicons name="chevron-forward" size={16} color={listLook.text} />
+          </Pressable>
+        )}
         {/* First in reading order, as on the screen; the tour's step bar takes its place while it plays. */}
         {!tour.step && (
           <View style={[StyleSheet.absoluteFill, styles.over]} pointerEvents="box-none">
@@ -383,10 +466,12 @@ export default function MapScreen() {
                 />
               }
               below={chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null}
+              column={side ? { left: SIDE_EDGE, width: SIDE_PANEL - SIDE_EDGE } : undefined}
+              onBottom={setSearchBottom}
             />
           </View>
         )}
-        {cardsShown && (
+        {cardsShown && !side && (
           <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
             <CityAssetCards
               assets={cards}
@@ -427,6 +512,31 @@ const styles = StyleSheet.create({
   over: {
     zIndex: 2,
     elevation: 2,
+  },
+  /** The side panel of a wide web page: dark glass down the map's left edge. */
+  side: {
+    position: "absolute",
+    paddingTop: 14,
+    bottom: SIDE_EDGE,
+    left: SIDE_EDGE,
+    width: SIDE_PANEL - SIDE_EDGE,
+    overflow: "hidden",
+    borderRadius: 28,
+    borderWidth: 1,
+  },
+  /** The folded list's way back: a pill under the search. */
+  showList: {
+    position: "absolute",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+    height: 44,
+    paddingHorizontal: spacing.md,
+    borderRadius: 22,
+    borderWidth: 1,
+  },
+  showListText: {
+    fontFamily: "HankenGrotesk_600SemiBold",
   },
   cards: {
     position: "absolute",
