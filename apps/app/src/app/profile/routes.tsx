@@ -1,21 +1,62 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
+import {
+  fontFamily,
+  palette,
+  radius,
+  spacing,
+  Text,
+  touchTarget,
+  useTheme,
+} from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useEffect, useRef, useState } from "react";
-import { Animated, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import {
+  Animated,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  useWindowDimensions,
+  View,
+} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Svg, { Circle, Defs, Line, LinearGradient, Rect, Stop } from "react-native-svg";
+import Svg, {
+  Circle,
+  Defs,
+  Line,
+  LinearGradient,
+  Rect,
+  Stop,
+} from "react-native-svg";
 
 import { FoodAdviceList, TransitAdviceList } from "@/components/saved-advice";
 import { announce } from "@/lib/announce";
 import { bottomInset } from "@/lib/bottom-inset";
 import { inkFor } from "@/lib/route-ink";
-import { isRoute, removeRoute, routeKey, useSavedRoutes, type FoodAdvice, type PlannerRoute, type TransitAdvice, type TripRoute } from "@/lib/saved-routes";
+import {
+  isRoute,
+  removeRoute,
+  routeKey,
+  useSavedRoutes,
+  type FoodAdvice,
+  type PlannerRoute,
+  type TransitAdvice,
+  type TripRoute,
+} from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
-const regionLabel: Record<PlannerRoute["region"], string> = { bursa: "Bursa", edirne: "Edirne", both: "Bursa & Edirne" };
-const durationLabel: Record<PlannerRoute["duration"], string> = { half: "Yarım gün", "1": "1 gün", "2": "2 gün" };
+const regionLabel: Record<PlannerRoute["region"], string> = {
+  bursa: "Bursa",
+  edirne: "Edirne",
+  both: "Bursa & Edirne",
+};
+const durationLabel: Record<PlannerRoute["duration"], string> = {
+  half: "Yarım gün",
+  "1": "1 gün",
+  "2": "2 gün",
+};
 
 type RouteEntry = PlannerRoute | TripRoute;
 type Tab = "routes" | "food" | "transit";
@@ -29,14 +70,21 @@ const TABS: ReadonlyArray<{ key: Tab; label: string }> = [
 /** What a ticket shows: the city, the title, how long, from where, the stops and their ends. */
 function ticketOf(route: RouteEntry) {
   if (route.kind === "trip") {
-    const stops = route.trip.days.flatMap((day) => day.items.flatMap((item) => (item.kind === "stop" ? [item.asset.name] : [])));
+    const stops = route.trip.days.flatMap((day) =>
+      day.items.flatMap((item) =>
+        item.kind === "stop" ? [item.asset.name] : [],
+      ),
+    );
     return {
       city: route.trip.city.label,
       code: route.trip.city.code,
       title: route.title,
       duration: durationLabel[route.trip.duration],
       fromRehber: true,
-      ends: stops.length > 1 ? `${stops[0]} → ${stops[stops.length - 1]}` : (stops[0] ?? null),
+      ends:
+        stops.length > 1
+          ? `${stops[0]} → ${stops[stops.length - 1]}`
+          : (stops[0] ?? null),
     };
   }
   return {
@@ -45,7 +93,10 @@ function ticketOf(route: RouteEntry) {
     title: route.title,
     duration: durationLabel[route.duration],
     fromRehber: false,
-    ends: route.dishes.length > 0 ? `${route.dishes.length} lezzet durağıyla` : null,
+    ends:
+      route.dishes.length > 0
+        ? `${route.dishes.length} lezzet durağıyla`
+        : null,
   };
 }
 
@@ -61,69 +112,119 @@ export default function MyRoutesScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { tab: wanted } = useLocalSearchParams<{ tab?: string }>();
-  const [tab, setTab] = useState<Tab>(wanted === "food" || wanted === "transit" ? wanted : "routes");
+  const [tab, setTab] = useState<Tab>(
+    wanted === "food" || wanted === "transit" ? wanted : "routes",
+  );
   const saved = useSavedRoutes();
   const routes = saved.filter(isRoute);
-  const food = saved.filter((route): route is FoodAdvice => route.kind === "food");
-  const transit = saved.filter((route): route is TransitAdvice => route.kind === "transit");
-  const counts: Record<Tab, number> = { routes: routes.length, food: food.length, transit: transit.length };
+  const food = saved.filter(
+    (route): route is FoodAdvice => route.kind === "food",
+  );
+  const transit = saved.filter(
+    (route): route is TransitAdvice => route.kind === "transit",
+  );
+  const counts: Record<Tab, number> = {
+    routes: routes.length,
+    food: food.length,
+    transit: transit.length,
+  };
   const stopTotal = routes.reduce((sum, route) => sum + route.stops, 0);
+  // A wide web page: a wider column, the tabs and the summary in one bar, the tickets two to a row.
+  const wide = useWideWeb();
+  const head = (
+    <View style={styles.head}>
+      <Text variant="caption" color="textSecondary" style={styles.headText}>
+        {`${routes.length} rota · ${stopTotal} durak`}
+      </Text>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Rehber'le yeni rota planla"
+        onPress={() => router.navigate("/rehber")}
+        style={({ pressed }) => [styles.newPill, pressed && styles.pressed]}
+      >
+        <Ionicons name="sparkles" size={14} color={palette.white} />
+        <Text
+          variant="label"
+          colorValue={palette.white}
+          style={styles.newPillText}
+        >
+          Yeni
+        </Text>
+      </Pressable>
+    </View>
+  );
 
   return (
     <ScrollView
       style={{ backgroundColor: c.background }}
-      contentContainerStyle={[styles.content, { paddingBottom: bottomInset(insets.bottom) + spacing.xl }]}
+      contentContainerStyle={[
+        styles.content,
+        wide && wideColumn,
+        { paddingBottom: bottomInset(insets.bottom) + spacing.xl },
+      ]}
       contentInsetAdjustmentBehavior="automatic"
     >
       <Head>
         <title>Kaydettiklerim · Vagabonds</title>
       </Head>
 
-      <View accessibilityRole="tablist" style={[styles.tabs, { backgroundColor: c.surfaceRaised }]}>
-        {TABS.map((option) => {
-          const on = option.key === tab;
-          return (
-            <Pressable
-              key={option.key}
-              accessibilityRole="tab"
-              accessibilityState={{ selected: on }}
-              accessibilityLabel={`${option.label}, ${counts[option.key]} kayıt`}
-              onPress={() => setTab(option.key)}
-              style={[styles.tab, on && { backgroundColor: c.surface }]}
-            >
-              <Text variant="caption" color={on ? "text" : "textSecondary"} style={styles.tabText}>
-                {counts[option.key] > 0 ? `${option.label} ${counts[option.key]}` : option.label}
-              </Text>
-            </Pressable>
-          );
-        })}
+      <View style={wide ? styles.toolbar : undefined}>
+        <View
+          accessibilityRole="tablist"
+          style={[
+            styles.tabs,
+            wide && styles.tabsWide,
+            { backgroundColor: c.surfaceRaised },
+          ]}
+        >
+          {TABS.map((option) => {
+            const on = option.key === tab;
+            return (
+              <Pressable
+                key={option.key}
+                accessibilityRole="tab"
+                accessibilityState={{ selected: on }}
+                accessibilityLabel={`${option.label}, ${counts[option.key]} kayıt`}
+                onPress={() => setTab(option.key)}
+                style={[styles.tab, on && { backgroundColor: c.surface }]}
+              >
+                <Text
+                  variant="caption"
+                  color={on ? "text" : "textSecondary"}
+                  style={styles.tabText}
+                >
+                  {counts[option.key] > 0
+                    ? `${option.label} ${counts[option.key]}`
+                    : option.label}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </View>
+        {wide && tab === "routes" && routes.length > 0 && head}
       </View>
 
-      {tab === "food" && <FoodAdviceList items={food} />}
-      {tab === "transit" && <TransitAdviceList items={transit} />}
-      {tab === "routes" && routes.length === 0 && <Empty onNew={() => router.navigate("/rehber")} />}
+      {tab === "food" && <FoodAdviceList items={food} grid={wide} />}
+      {tab === "transit" && <TransitAdviceList items={transit} grid={wide} />}
+      {tab === "routes" && routes.length === 0 && (
+        <Empty onNew={() => router.navigate("/rehber")} />
+      )}
       {tab === "routes" && routes.length > 0 && (
         <>
-          <View style={styles.head}>
-            <Text variant="caption" color="textSecondary" style={styles.headText}>
-              {`${routes.length} rota · ${stopTotal} durak`}
-            </Text>
-            <Pressable
-              accessibilityRole="button"
-              accessibilityLabel="Rehber'le yeni rota planla"
-              onPress={() => router.navigate("/rehber")}
-              style={({ pressed }) => [styles.newPill, pressed && styles.pressed]}
-            >
-              <Ionicons name="sparkles" size={14} color={palette.white} />
-              <Text variant="label" colorValue={palette.white} style={styles.newPillText}>
-                Yeni
-              </Text>
-            </Pressable>
-          </View>
-          <View accessibilityRole="list" style={styles.list}>
-            {routes.map((route, i) => (
-              <Ticket key={route.id} route={route} index={i} />
-            ))}
+          {!wide && head}
+          <View
+            accessibilityRole="list"
+            style={wide ? styles.grid : styles.list}
+          >
+            {routes.map((route, i) =>
+              wide ? (
+                <View key={route.id} style={styles.gridCell}>
+                  <Ticket route={route} index={i} />
+                </View>
+              ) : (
+                <Ticket key={route.id} route={route} index={i} />
+              ),
+            )}
           </View>
         </>
       )}
@@ -140,12 +241,21 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
   const ticket = ticketOf(route);
   const [light, deep] = inkFor(ticket.code);
   const [size, setSize] = useState({ width: 0, height: 0 });
-  const saved = new Date(route.savedAt).toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
+  const saved = new Date(route.savedAt).toLocaleDateString("tr-TR", {
+    day: "numeric",
+    month: "long",
+  });
   // What Rehber suggested for this route, so it is found from here too.
-  const forThis = useSavedRoutes().filter((entry) => (entry.kind === "food" || entry.kind === "transit") && entry.about?.key === routeKey(route));
+  const forThis = useSavedRoutes().filter(
+    (entry) =>
+      (entry.kind === "food" || entry.kind === "transit") &&
+      entry.about?.key === routeKey(route),
+  );
   const adviceCounts = (["food", "transit"] as const).flatMap((kind) => {
     const count = forThis.filter((entry) => entry.kind === kind).length;
-    return count > 0 ? [`${count} ${kind === "food" ? "yemek" : "ulaşım"}`] : [];
+    return count > 0
+      ? [`${count} ${kind === "food" ? "yemek" : "ulaşım"}`]
+      : [];
   });
 
   useEffect(() => {
@@ -153,35 +263,98 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
       rise.setValue(1);
       return;
     }
-    Animated.spring(rise, { toValue: 1, delay: Math.min(index, 8) * 70, friction: 8, tension: 70, useNativeDriver: true }).start();
+    Animated.spring(rise, {
+      toValue: 1,
+      delay: Math.min(index, 8) * 70,
+      friction: 8,
+      tension: 70,
+      useNativeDriver: true,
+    }).start();
   }, [index, reduced, rise]);
 
   const open = () =>
     route.kind === "trip"
       ? router.push({ pathname: "/profile/trip", params: { id: route.id } })
-      : router.push({ pathname: "/route", params: { region: route.region, duration: route.duration, dishes: route.dishes.join(",") } });
+      : router.push({
+          pathname: "/route",
+          params: {
+            region: route.region,
+            duration: route.duration,
+            dishes: route.dishes.join(","),
+          },
+        });
 
   return (
-    <Animated.View style={{ opacity: rise, transform: [{ translateY: rise.interpolate({ inputRange: [0, 1], outputRange: [18, 0] }) }] }}>
+    <Animated.View
+      style={{
+        opacity: rise,
+        transform: [
+          {
+            translateY: rise.interpolate({
+              inputRange: [0, 1],
+              outputRange: [18, 0],
+            }),
+          },
+        ],
+      }}
+    >
       <Pressable
         accessibilityRole="link"
         accessibilityLabel={`${ticket.title}, ${ticket.city}, ${ticket.duration}, ${route.stops} durak${ticket.fromRehber ? ", Rehber planladı" : ""}. Rotayı aç`}
         onPress={open}
-        style={({ pressed }) => [styles.ticket, { backgroundColor: c.surface }, pressed && styles.ticketPressed]}
+        style={({ pressed }) => [
+          styles.ticket,
+          { backgroundColor: c.surface },
+          pressed && styles.ticketPressed,
+        ]}
       >
-        <View style={styles.band} onLayout={(e) => setSize(e.nativeEvent.layout)}>
+        <View
+          style={styles.band}
+          onLayout={(e) => setSize(e.nativeEvent.layout)}
+        >
           {size.width > 0 && (
-            <Svg key={`${size.width}x${size.height}`} width={size.width} height={size.height} style={StyleSheet.absoluteFill} aria-hidden>
+            <Svg
+              key={`${size.width}x${size.height}`}
+              width={size.width}
+              height={size.height}
+              style={StyleSheet.absoluteFill}
+              aria-hidden
+            >
               <Defs>
-                <LinearGradient id={`ink-${route.id}`} x1="0" y1="0" x2="1" y2="1">
+                <LinearGradient
+                  id={`ink-${route.id}`}
+                  x1="0"
+                  y1="0"
+                  x2="1"
+                  y2="1"
+                >
                   <Stop offset="0" stopColor={light} />
                   <Stop offset="1" stopColor={deep} />
                 </LinearGradient>
               </Defs>
-              <Rect width={size.width} height={size.height} fill={`url(#ink-${route.id})`} />
+              <Rect
+                width={size.width}
+                height={size.height}
+                fill={`url(#ink-${route.id})`}
+              />
               {/* A compass rose's rings in the corner, faint. */}
-              <Circle cx={size.width * 0.92} cy={size.height * 0.2} r={46} stroke={palette.altin200} strokeOpacity={0.12} fill="none" />
-              <Circle cx={size.width * 0.92} cy={size.height * 0.2} r={30} stroke={palette.altin200} strokeOpacity={0.1} strokeDasharray="2 4" fill="none" />
+              <Circle
+                cx={size.width * 0.92}
+                cy={size.height * 0.2}
+                r={46}
+                stroke={palette.altin200}
+                strokeOpacity={0.12}
+                fill="none"
+              />
+              <Circle
+                cx={size.width * 0.92}
+                cy={size.height * 0.2}
+                r={30}
+                stroke={palette.altin200}
+                strokeOpacity={0.1}
+                strokeDasharray="2 4"
+                fill="none"
+              />
             </Svg>
           )}
           <View style={styles.bandTop}>
@@ -189,13 +362,21 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
               {ticket.city.toLocaleUpperCase("tr")}
             </Text>
             <View style={styles.chip}>
-              <Ionicons name={ticket.fromRehber ? "sparkles" : "compass"} size={12} color={palette.altin200} />
+              <Ionicons
+                name={ticket.fromRehber ? "sparkles" : "compass"}
+                size={12}
+                color={palette.altin200}
+              />
               <Text colorValue={palette.gece50} style={styles.chipText}>
                 {ticket.fromRehber ? "Rehber" : "Planlayıcı"}
               </Text>
             </View>
           </View>
-          <Text colorValue={palette.white} style={styles.title} numberOfLines={2}>
+          <Text
+            colorValue={palette.white}
+            style={styles.title}
+            numberOfLines={2}
+          >
             {ticket.title}
           </Text>
           <View style={styles.chip}>
@@ -207,8 +388,20 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
         </View>
 
         <View style={styles.body}>
-          <View style={[styles.notch, styles.notchLeft, { backgroundColor: c.background }]} />
-          <View style={[styles.notch, styles.notchRight, { backgroundColor: c.background }]} />
+          <View
+            style={[
+              styles.notch,
+              styles.notchLeft,
+              { backgroundColor: c.background },
+            ]}
+          />
+          <View
+            style={[
+              styles.notch,
+              styles.notchRight,
+              { backgroundColor: c.background },
+            ]}
+          />
 
           <RouteLine stops={route.stops} />
           {ticket.ends && (
@@ -218,7 +411,11 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
           )}
 
           <View style={[styles.foot, { borderTopColor: c.border }]}>
-            <Ionicons name="calendar-outline" size={14} color={c.textSecondary} />
+            <Ionicons
+              name="calendar-outline"
+              size={14}
+              color={c.textSecondary}
+            />
             <Text variant="caption" color="textSecondary" style={styles.flex}>
               {[`${saved} · ${route.stops} durak`, ...adviceCounts].join(" · ")}
             </Text>
@@ -230,9 +427,16 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
                 announce("Rota silindi.");
               }}
               hitSlop={6}
-              style={({ pressed }) => [styles.remove, pressed && { backgroundColor: c.surfaceRaised }]}
+              style={({ pressed }) => [
+                styles.remove,
+                pressed && { backgroundColor: c.surfaceRaised },
+              ]}
             >
-              <Ionicons name="trash-outline" size={17} color={c.textSecondary} />
+              <Ionicons
+                name="trash-outline"
+                size={17}
+                color={c.textSecondary}
+              />
             </Pressable>
           </View>
         </View>
@@ -259,7 +463,16 @@ function RouteLine({ stops }: { stops: number }) {
   const dash = (key: string) => (
     <View key={key} style={styles.segment}>
       <Svg height={2} width="100%">
-        <Line x1="0" y1="1" x2="100%" y2="1" stroke={c.highlightMark} strokeOpacity={0.6} strokeWidth={2} strokeDasharray="3 4" />
+        <Line
+          x1="0"
+          y1="1"
+          x2="100%"
+          y2="1"
+          stroke={c.highlightMark}
+          strokeOpacity={0.6}
+          strokeWidth={2}
+          strokeDasharray="3 4"
+        />
       </Svg>
     </View>
   );
@@ -268,9 +481,22 @@ function RouteLine({ stops }: { stops: number }) {
       <Ionicons name="flag" size={16} color={c.highlightMark} />
       {stops > 1 && (
         <>
-          {Array.from({ length: dots }, (_, i) => [dash(`d${i}`), <View key={`p${i}`} style={[styles.dot, { borderColor: c.highlightMark, backgroundColor: c.surface }]} />])}
+          {Array.from({ length: dots }, (_, i) => [
+            dash(`d${i}`),
+            <View
+              key={`p${i}`}
+              style={[
+                styles.dot,
+                { borderColor: c.highlightMark, backgroundColor: c.surface },
+              ]}
+            />,
+          ])}
           {between > MAX_DOTS && (
-            <Text variant="caption" colorValue={c.highlight} style={styles.more}>
+            <Text
+              variant="caption"
+              colorValue={c.highlight}
+              style={styles.more}
+            >
               {`+${between - MAX_DOTS}`}
             </Text>
           )}
@@ -289,20 +515,69 @@ function Empty({ onNew }: { onNew: () => void }) {
     <View style={[styles.empty, { backgroundColor: c.surface }]}>
       <View style={styles.emptyArt} aria-hidden>
         <Svg width={220} height={90}>
-          <Line x1={30} y1={60} x2={110} y2={30} stroke={c.highlightMark} strokeWidth={2} strokeDasharray="4 6" strokeLinecap="round" />
-          <Line x1={110} y1={30} x2={190} y2={55} stroke={c.highlightMark} strokeWidth={2} strokeDasharray="4 6" strokeLinecap="round" />
-          <Circle cx={110} cy={30} r={6} fill={c.surface} stroke={c.highlightMark} strokeWidth={2} />
+          <Line
+            x1={30}
+            y1={60}
+            x2={110}
+            y2={30}
+            stroke={c.highlightMark}
+            strokeWidth={2}
+            strokeDasharray="4 6"
+            strokeLinecap="round"
+          />
+          <Line
+            x1={110}
+            y1={30}
+            x2={190}
+            y2={55}
+            stroke={c.highlightMark}
+            strokeWidth={2}
+            strokeDasharray="4 6"
+            strokeLinecap="round"
+          />
+          <Circle
+            cx={110}
+            cy={30}
+            r={6}
+            fill={c.surface}
+            stroke={c.highlightMark}
+            strokeWidth={2}
+          />
         </Svg>
-        <Ionicons name="flag" size={26} color={c.highlightMark} style={styles.emptyStart} />
-        <Ionicons name="location" size={30} color={c.highlightMark} style={styles.emptyEnd} />
+        <Ionicons
+          name="flag"
+          size={26}
+          color={c.highlightMark}
+          style={styles.emptyStart}
+        />
+        <Ionicons
+          name="location"
+          size={30}
+          color={c.highlightMark}
+          style={styles.emptyEnd}
+        />
       </View>
-      <Text variant="heading" headingLevel={2} style={[styles.centered, styles.emptyTitle]}>
+      <Text
+        variant="heading"
+        headingLevel={2}
+        style={[styles.centered, styles.emptyTitle]}
+      >
         İlk rotanı çiz
       </Text>
       <Text color="textSecondary" style={styles.centered}>
-        Rehber'e nereyi gezmek istediğini söyle; planladığı rotalar burada bilet olarak toplanır.
+        Rehber'e nereyi gezmek istediğini söyle; planladığı rotalar burada bilet
+        olarak toplanır.
       </Text>
-      <Pressable accessibilityRole="button" onPress={onNew} style={({ pressed }) => [styles.new, pressed && styles.pressed]}>
+      <Pressable
+        accessibilityRole="button"
+        onPress={onNew}
+        // On a wide web page the button keeps to its words instead of the whole card.
+        style={({ pressed }) => [
+          styles.new,
+          Platform.OS === "web" && styles.newWeb,
+          pressed && styles.pressed,
+        ]}
+      >
         <Ionicons name="sparkles" size={18} color={palette.white} />
         <Text variant="label" colorValue={palette.white} style={styles.newText}>
           Rehber'le rota planla
@@ -331,6 +606,29 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
     gap: spacing.lg,
   },
+  newWeb: {
+    alignSelf: "center",
+    paddingHorizontal: spacing.xl,
+  },
+  /** The tabs at the left, the summary and "Yeni" at the right. */
+  toolbar: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: spacing.lg,
+  },
+  tabsWide: {
+    width: 440,
+  },
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "flex-start",
+    gap: spacing.lg,
+  },
+  gridCell: {
+    width: "calc(50% - 12px)" as unknown as number,
+  },
   tabs: {
     flexDirection: "row",
     gap: spacing.xxs,
@@ -351,6 +649,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    gap: spacing.md,
   },
   headText: {
     fontFamily: fontFamily.sansMedium,

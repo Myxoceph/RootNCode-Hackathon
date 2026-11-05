@@ -1,15 +1,35 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
+import {
+  fontFamily,
+  palette,
+  radius,
+  spacing,
+  Text,
+  touchTarget,
+  useTheme,
+} from "@vagabonds/ui";
 import Head from "expo-router/head";
 import type { ComponentProps, ReactNode } from "react";
-import { Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import {
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  View,
+} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { sampleDescription } from "@/content/camera";
 import { bottomInset } from "@/lib/bottom-inset";
 import { speak } from "@/lib/speak";
 import { useA11ySettings, type A11ySettings } from "@/settings/a11y-settings";
-import { resolveColorScheme, themePreferenceOptions, useColorScheme, type ColorScheme } from "@/theme";
+import {
+  resolveColorScheme,
+  themePreferenceOptions,
+  useColorScheme,
+  type ColorScheme,
+} from "@/theme";
+import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -17,14 +37,42 @@ type IconName = ComponentProps<typeof Ionicons>["name"];
 const goldWash = "rgba(221, 181, 92, 0.14)";
 const goldEdge = "rgba(190, 150, 60, 0.6)";
 
-const schemeOptions = themePreferenceOptions.filter((option): option is { value: ColorScheme; label: string } => option.value !== "system");
+const schemeOptions = themePreferenceOptions.filter(
+  (option): option is { value: ColorScheme; label: string } =>
+    option.value !== "system",
+);
 
 /** The four smaller switches, as tiles; the audio description has its own wide tile above them. */
-const tiles: Array<{ key: keyof A11ySettings; icon: IconName; title: string; detail: string }> = [
-  { key: "captions", icon: "chatbox-ellipses-outline", title: "Altyazılar", detail: "Ses kapsüllerini metne dök" },
-  { key: "largeText", icon: "text-outline", title: "Büyük metin", detail: "Her yerde %14 daha büyük" },
-  { key: "highContrast", icon: "contrast-outline", title: "Yüksek kontrast", detail: "Metin ve çizgiler koyulaşır" },
-  { key: "strongFocusRing", icon: "scan-outline", title: "Odak halkası", detail: "Klavye ve anahtar erişimi" },
+const tiles: Array<{
+  key: keyof A11ySettings;
+  icon: IconName;
+  title: string;
+  detail: string;
+}> = [
+  {
+    key: "captions",
+    icon: "chatbox-ellipses-outline",
+    title: "Altyazılar",
+    detail: "Ses kapsüllerini metne dök",
+  },
+  {
+    key: "largeText",
+    icon: "text-outline",
+    title: "Büyük metin",
+    detail: "Her yerde %14 daha büyük",
+  },
+  {
+    key: "highContrast",
+    icon: "contrast-outline",
+    title: "Yüksek kontrast",
+    detail: "Metin ve çizgiler koyulaşır",
+  },
+  {
+    key: "strongFocusRing",
+    icon: "scan-outline",
+    title: "Odak halkası",
+    detail: "Klavye ve anahtar erişimi",
+  },
 ];
 
 /**
@@ -34,23 +82,32 @@ const tiles: Array<{ key: keyof A11ySettings; icon: IconName; title: string; det
 export default function SystemSettingsScreen() {
   const { colors: c, scheme: shown } = useTheme();
   const dark = shown === "dark";
-  const { settings, setSetting, themePreference, setThemePreference } = useA11ySettings();
+  const { settings, setSetting, themePreference, setThemePreference } =
+    useA11ySettings();
   const insets = useSafeAreaInsets();
+  const wide = useWideWeb();
   // Two choices here, light and dark; a stored "system" shows as the scheme it resolves to.
   const scheme = resolveColorScheme(themePreference, useColorScheme());
 
   return (
     <ScrollView
       style={{ backgroundColor: c.background }}
-      contentContainerStyle={{ paddingTop: spacing.lg, paddingBottom: bottomInset(insets.bottom) + spacing.xl }}
+      contentContainerStyle={{
+        paddingTop: spacing.lg,
+        paddingBottom: bottomInset(insets.bottom) + spacing.xl,
+      }}
       contentInsetAdjustmentBehavior="automatic"
     >
       <Head>
         <title>Sistem ayarları · Vagabonds</title>
       </Head>
-      <View style={styles.column}>
+      <View style={[styles.column, wide && wideColumn]}>
         <Section title="Görünüm">
-          <View accessibilityRole="radiogroup" accessibilityLabel="Tema" style={styles.themes}>
+          <View
+            accessibilityRole="radiogroup"
+            accessibilityLabel="Tema"
+            style={styles.themes}
+          >
             {schemeOptions.map((option) => (
               <ThemeCard
                 key={option.value}
@@ -65,17 +122,34 @@ export default function SystemSettingsScreen() {
 
         <Section title="Erişilebilirlik" note="Tüm ekranlara anında uygulanır">
           {/* The switch and the sample are side by side, not one inside the other. */}
-          <View style={[styles.wide, tileLook(settings.audioDescription, c.surface, dark ? "transparent" : c.border)]}>
+          <View
+            style={[
+              styles.wide,
+              tileLook(
+                settings.audioDescription,
+                c.surface,
+                dark ? "transparent" : c.border,
+              ),
+            ]}
+          >
             <Pressable
               accessibilityRole="switch"
               accessibilityState={{ checked: settings.audioDescription }}
               accessibilityLabel="Sesli mimari betimleme"
               accessibilityHint="Mekânın mimarisini sesli dinle"
-              onPress={() => setSetting("audioDescription", !settings.audioDescription)}
-              style={({ pressed }) => [styles.wideSwitch, pressed && styles.pressed]}
+              onPress={() =>
+                setSetting("audioDescription", !settings.audioDescription)
+              }
+              style={({ pressed }) => [
+                styles.wideSwitch,
+                pressed && styles.pressed,
+              ]}
             >
               <View style={styles.tileTop}>
-                <TileIcon name="volume-high-outline" on={settings.audioDescription} />
+                <TileIcon
+                  name="volume-high-outline"
+                  on={settings.audioDescription}
+                />
                 <Check on={settings.audioDescription} />
               </View>
               <View style={settings.audioDescription && styles.wideText}>
@@ -92,9 +166,18 @@ export default function SystemSettingsScreen() {
                 accessibilityRole="button"
                 accessibilityLabel="Örnek betimlemeyi dinle"
                 onPress={() => speak(sampleDescription.audioDescription)}
-                style={({ pressed }) => [styles.play, { backgroundColor: c.highlightMark }, pressed && styles.pressed]}
+                style={({ pressed }) => [
+                  styles.play,
+                  { backgroundColor: c.highlightMark },
+                  pressed && styles.pressed,
+                ]}
               >
-                <Ionicons name="play" size={16} color={c.onPrimary} style={styles.playIcon} />
+                <Ionicons
+                  name="play"
+                  size={16}
+                  color={c.onPrimary}
+                  style={styles.playIcon}
+                />
                 <Text variant="label" colorValue={c.onPrimary}>
                   Dinle
                 </Text>
@@ -113,7 +196,12 @@ export default function SystemSettingsScreen() {
                   accessibilityLabel={title}
                   accessibilityHint={detail}
                   onPress={() => setSetting(key, !on)}
-                  style={({ pressed }) => [styles.tile, tileLook(on, c.surface, dark ? "transparent" : c.border), pressed && styles.pressed]}
+                  style={({ pressed }) => [
+                    styles.tile,
+                    wide && styles.tileWide,
+                    tileLook(on, c.surface, dark ? "transparent" : c.border),
+                    pressed && styles.pressed,
+                  ]}
                 >
                   <View style={styles.tileTop}>
                     <TileIcon name={icon} on={on} />
@@ -123,7 +211,11 @@ export default function SystemSettingsScreen() {
                     <Text variant="label" style={styles.tileTitle}>
                       {title}
                     </Text>
-                    <Text variant="caption" color="textSecondary" numberOfLines={2}>
+                    <Text
+                      variant="caption"
+                      color="textSecondary"
+                      numberOfLines={2}
+                    >
                       {detail}
                     </Text>
                   </View>
@@ -135,8 +227,9 @@ export default function SystemSettingsScreen() {
 
         {Platform.OS === "web" && (
           <Text variant="caption" color="textSecondary" style={styles.center}>
-            Harici klavye ya da anahtar erişimi: <Kbd>Tab</Kbd> sıradaki öğeye geçer, <Kbd>Enter</Kbd> seçer, <Kbd>←</Kbd> <Kbd>→</Kbd> perdeyi ve kaydırıcıları
-            oynatır.
+            Harici klavye ya da anahtar erişimi: <Kbd>Tab</Kbd> sıradaki öğeye
+            geçer, <Kbd>Enter</Kbd> seçer, <Kbd>←</Kbd> <Kbd>→</Kbd> perdeyi ve
+            kaydırıcıları oynatır.
           </Text>
         )}
       </View>
@@ -145,10 +238,22 @@ export default function SystemSettingsScreen() {
 }
 
 const tileLook = (on: boolean, surface: string, border: string) =>
-  on ? { backgroundColor: goldWash, borderColor: goldEdge } : { backgroundColor: surface, borderColor: border };
+  on
+    ? { backgroundColor: goldWash, borderColor: goldEdge }
+    : { backgroundColor: surface, borderColor: border };
 
 /** A theme as a small picture of a screen in it. */
-function ThemeCard({ value, label, on, onPress }: { value: ColorScheme; label: string; on: boolean; onPress: () => void }) {
+function ThemeCard({
+  value,
+  label,
+  on,
+  onPress,
+}: {
+  value: ColorScheme;
+  label: string;
+  on: boolean;
+  onPress: () => void;
+}) {
   const { colors: c } = useTheme();
   const light = value === "light";
   return (
@@ -159,15 +264,43 @@ function ThemeCard({ value, label, on, onPress }: { value: ColorScheme; label: s
       onPress={onPress}
       style={({ pressed }) => [styles.themeCard, pressed && styles.pressed]}
     >
-      <View style={[styles.preview, { borderColor: on ? c.highlightMark : c.border, borderWidth: on ? 2 : StyleSheet.hairlineWidth }]}>
-        <View style={[styles.previewHalf, { backgroundColor: light ? palette.gece50 : palette.gece950 }]}>
-          <View style={[styles.previewBar, styles.previewBarLong, { backgroundColor: light ? palette.gece300 : palette.gece700 }]} />
-          <View style={[styles.previewBar, { backgroundColor: light ? palette.gece200 : palette.gece800 }]} />
-          <View style={[styles.previewDot, { backgroundColor: c.highlightMark }]} />
+      <View
+        style={[
+          styles.preview,
+          {
+            borderColor: on ? c.highlightMark : c.border,
+            borderWidth: on ? 2 : StyleSheet.hairlineWidth,
+          },
+        ]}
+      >
+        <View
+          style={[
+            styles.previewHalf,
+            { backgroundColor: light ? palette.gece50 : palette.gece950 },
+          ]}
+        >
+          <View
+            style={[
+              styles.previewBar,
+              styles.previewBarLong,
+              { backgroundColor: light ? palette.gece300 : palette.gece700 },
+            ]}
+          />
+          <View
+            style={[
+              styles.previewBar,
+              { backgroundColor: light ? palette.gece200 : palette.gece800 },
+            ]}
+          />
+          <View
+            style={[styles.previewDot, { backgroundColor: c.highlightMark }]}
+          />
         </View>
       </View>
       <View style={styles.themeLabel}>
-        {on && <Ionicons name="checkmark-circle" size={16} color={c.highlightMark} />}
+        {on && (
+          <Ionicons name="checkmark-circle" size={16} color={c.highlightMark} />
+        )}
         <Text variant="label" colorValue={on ? c.text : c.textSecondary}>
           {label}
         </Text>
@@ -179,8 +312,19 @@ function ThemeCard({ value, label, on, onPress }: { value: ColorScheme; label: s
 function TileIcon({ name, on }: { name: IconName; on: boolean }) {
   const { colors: c } = useTheme();
   return (
-    <View style={[styles.tileIcon, { backgroundColor: on ? c.highlightMark : c.surfaceRaised }]}>
-      <Ionicons name={name} size={20} color={on ? c.onPrimary : c.highlightMark} accessibilityElementsHidden importantForAccessibility="no" />
+    <View
+      style={[
+        styles.tileIcon,
+        { backgroundColor: on ? c.highlightMark : c.surfaceRaised },
+      ]}
+    >
+      <Ionicons
+        name={name}
+        size={20}
+        color={on ? c.onPrimary : c.highlightMark}
+        accessibilityElementsHidden
+        importantForAccessibility="no"
+      />
     </View>
   );
 }
@@ -189,18 +333,36 @@ function TileIcon({ name, on }: { name: IconName; on: boolean }) {
 function Check({ on }: { on: boolean }) {
   const { colors: c } = useTheme();
   return on ? (
-    <Ionicons name="checkmark-circle" size={22} color={c.highlightMark} aria-hidden />
+    <Ionicons
+      name="checkmark-circle"
+      size={22}
+      color={c.highlightMark}
+      aria-hidden
+    />
   ) : (
     <View style={[styles.empty, { borderColor: c.border }]} aria-hidden />
   );
 }
 
 /** A small caps title over a group, with an optional note beside it. */
-function Section({ title, note, children }: { title: string; note?: string; children: ReactNode }) {
+function Section({
+  title,
+  note,
+  children,
+}: {
+  title: string;
+  note?: string;
+  children: ReactNode;
+}) {
   return (
     <View style={styles.section}>
       <View style={styles.sectionHead}>
-        <Text variant="caption" color="textSecondary" headingLevel={2} style={styles.sectionTitle}>
+        <Text
+          variant="caption"
+          color="textSecondary"
+          headingLevel={2}
+          style={styles.sectionTitle}
+        >
           {title.toLocaleUpperCase("tr")}
         </Text>
         {note && (
@@ -217,7 +379,13 @@ function Section({ title, note, children }: { title: string; note?: string; chil
 function Kbd({ children }: { children: string }) {
   const { colors: c } = useTheme();
   return (
-    <Text variant="caption" style={[styles.kbd, { borderColor: c.border, backgroundColor: c.surface }]}>
+    <Text
+      variant="caption"
+      style={[
+        styles.kbd,
+        { borderColor: c.border, backgroundColor: c.surface },
+      ]}
+    >
       {children}
     </Text>
   );
@@ -312,6 +480,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     gap: spacing.md,
+  },
+  /** A wide web page: the four settings in one row. */
+  tileWide: {
+    flexBasis: "22%",
   },
   tile: {
     flexBasis: "40%",

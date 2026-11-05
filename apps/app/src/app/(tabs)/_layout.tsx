@@ -3,6 +3,7 @@ import { Tabs } from "expo-router/js-tabs";
 import { Platform } from "react-native";
 
 import { TabBar, type TabItem } from "@/components/tab-bar";
+import { WebNavBar } from "@/components/web-nav-bar";
 
 /**
  * The five sections in the bar. Each tab is its own URL on the web:
@@ -14,6 +15,7 @@ import { TabBar, type TabItem } from "@/components/tab-bar";
  * Screen readers announce the tab title; the bar (`TabBar`) shows the open tab's name and the others' icons.
  *
  * The web has no camera (ADR 0001): there is no Kamera tab, and `/camera` goes to the map (`camera.web.tsx`).
+ * On the web the tabs sit in a bar across the top of the page (`WebNavBar`), as a website's navigation does.
  */
 const WEB = Platform.OS === "web";
 const allTabs: Array<TabItem & { ownHeader?: boolean }> = [
@@ -30,8 +32,8 @@ const tabs = WEB ? allTabs.filter((tab) => tab.name !== "camera") : allTabs;
 export default function TabLayout() {
   return (
     <Tabs
-      tabBar={(props) => <TabBar {...props} items={tabs} />}
-      screenOptions={{ headerTitleStyle: { fontFamily: fontFamily.display } }}
+      tabBar={(props) => (WEB ? <WebNavBar {...props} items={tabs} /> : <TabBar {...props} items={tabs} />)}
+      screenOptions={{ headerTitleStyle: { fontFamily: fontFamily.display }, tabBarPosition: WEB ? "top" : "bottom" }}
     >
       {tabs.map(({ name, title, ownHeader }) => (
         <Tabs.Screen key={name} name={name} options={{ title, headerShown: !ownHeader }} />

@@ -1,16 +1,52 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
+import {
+  fontFamily,
+  palette,
+  radius,
+  spacing,
+  Text,
+  touchTarget,
+  useTheme,
+} from "@vagabonds/ui";
 import { Image } from "expo-image";
 import { useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useRef, useState, type ComponentProps } from "react";
-import { Animated, Easing, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import {
+  Animated,
+  Easing,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  useWindowDimensions,
+  View,
+} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Svg, { Circle, Defs, G, LinearGradient, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
+import Svg, {
+  Circle,
+  Defs,
+  G,
+  LinearGradient,
+  Path,
+  Pattern,
+  RadialGradient,
+  Rect,
+  Stop,
+} from "react-native-svg";
 
-import { avatarUri, logout, refreshMe, useCommunity, useMyAchievements, useMyContributions, useWallet } from "@/data";
+import {
+  avatarUri,
+  logout,
+  refreshMe,
+  useCommunity,
+  useMyAchievements,
+  useMyContributions,
+  useWallet,
+} from "@/data";
+import { webTransition } from "@/lib/web-transition";
 import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useSavedRoutes } from "@/lib/saved-routes";
@@ -37,38 +73,85 @@ export default function SettingsScreen() {
   const insets = useSafeAreaInsets();
   const tabBarHeight = useBottomTabBarHeight();
   const signedIn = isAccount(user);
+  // A wide web page sets the passport and the list side by side; the site's bar names the page.
+  const { width } = useWindowDimensions();
+  const wide = Platform.OS === "web" && width >= 900;
+
+  const signOut = signedIn && (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityHint="Bu cihazdaki oturumu kapatır"
+      onPress={() => {
+        void logout().then(() => announce("Çıkış yapıldı."));
+      }}
+      style={({
+        pressed,
+        hovered,
+      }: {
+        pressed: boolean;
+        hovered?: boolean;
+      }) => [
+        styles.signOut,
+        (pressed || hovered) && { backgroundColor: c.surfaceRaised },
+      ]}
+    >
+      <Ionicons name="log-out-outline" size={18} color={c.warning} />
+      <Text variant="label" color="warning">
+        Çıkış yap
+      </Text>
+    </Pressable>
+  );
 
   return (
-    <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={{ paddingBottom: tabBarHeight + spacing.xl }}>
+    <ScrollView
+      style={{ backgroundColor: c.background }}
+      contentContainerStyle={{ paddingBottom: tabBarHeight + spacing.xl }}
+    >
       <StatusBar style={scheme === "dark" ? "light" : "dark"} />
       <Head>
         <title>Profil · Vagabonds</title>
       </Head>
 
-      <View style={[styles.column, { paddingTop: insets.top + spacing.md }]}>
-        <Text headingLevel={1} style={styles.pageTitle}>
-          Profil
-        </Text>
+      {wide ? (
+        <View style={[styles.wide, { paddingTop: insets.top + spacing.lg }]}>
+          <View style={styles.hero}>
+            <View style={styles.flex}>
+              <Text style={[styles.overline, { color: c.highlightMark }]}>
+                PROFİL
+              </Text>
+              <Text headingLevel={1} style={styles.heroTitle}>
+                {`Merhaba, ${user?.nickname ?? "Gezgin"}`}
+              </Text>
+              <Text color="textSecondary">
+                Vakıf mirasındaki yolculuğun bir bakışta.
+              </Text>
+            </View>
+            {signOut && (
+              <View style={[styles.heroAction, { borderColor: c.border }]}>
+                {signOut}
+              </View>
+            )}
+          </View>
+          <View style={styles.wideRow}>
+            <View style={styles.wideSide}>
+              <Passport />
+            </View>
+            <View style={styles.wideMain}>
+              <Sections grid />
+            </View>
+          </View>
+        </View>
+      ) : (
+        <View style={[styles.column, { paddingTop: insets.top + spacing.md }]}>
+          <Text headingLevel={1} style={styles.pageTitle}>
+            Profil
+          </Text>
 
-        <Passport />
-        <Sections />
-
-        {signedIn && (
-          <Pressable
-            accessibilityRole="button"
-            accessibilityHint="Bu cihazdaki oturumu kapatır"
-            onPress={() => {
-              void logout().then(() => announce("Çıkış yapıldı."));
-            }}
-            style={({ pressed }) => [styles.signOut, pressed && { backgroundColor: c.surfaceRaised }]}
-          >
-            <Ionicons name="log-out-outline" size={18} color={c.warning} />
-            <Text variant="label" color="warning">
-              Çıkış yap
-            </Text>
-          </Pressable>
-        )}
-      </View>
+          <Passport />
+          <Sections />
+          {signOut}
+        </View>
+      )}
     </ScrollView>
   );
 }
@@ -97,7 +180,10 @@ function Passport() {
   // Without a server no account can be opened: the sample version's passport has no handle.
   const account = signedIn ? `@${user!.username}` : "Örnek sürüm";
   // The visitor's own photo and full name; without them the back shows the initial and the nickname.
-  const holder = { photoUrl: avatarUri(user), fullName: user?.fullName ?? null };
+  const holder = {
+    photoUrl: avatarUri(user),
+    fullName: user?.fullName ?? null,
+  };
   const fullName = holder.fullName ?? name;
 
   // The cover is drawn at the card's measured size.
@@ -110,7 +196,13 @@ function Passport() {
     const next = !flipped;
     setFlipped(next);
     if (reduced) turn.setValue(next ? 1 : 0);
-    else Animated.spring(turn, { toValue: next ? 1 : 0, friction: 9, tension: 40, useNativeDriver: true }).start();
+    else
+      Animated.spring(turn, {
+        toValue: next ? 1 : 0,
+        friction: 9,
+        tension: 40,
+        useNativeDriver: true,
+      }).start();
   };
 
   // Once per app run, the card turns a little and back, so it shows it can be turned.
@@ -119,14 +211,33 @@ function Passport() {
     peeked = true;
     Animated.sequence([
       Animated.delay(900),
-      Animated.timing(turn, { toValue: 0.12, duration: 380, easing: Easing.out(Easing.quad), useNativeDriver: true }),
-      Animated.spring(turn, { toValue: 0, friction: 5, tension: 60, useNativeDriver: true }),
+      Animated.timing(turn, {
+        toValue: 0.12,
+        duration: 380,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.spring(turn, {
+        toValue: 0,
+        friction: 5,
+        tension: 60,
+        useNativeDriver: true,
+      }),
     ]).start();
   }, [reduced, turn]);
 
-  const front = turn.interpolate({ inputRange: [0, 1], outputRange: ["0deg", "180deg"] });
-  const back = turn.interpolate({ inputRange: [0, 1], outputRange: ["180deg", "360deg"] });
-  const lift = turn.interpolate({ inputRange: [0, 0.5, 1], outputRange: [1, 0.96, 1] });
+  const front = turn.interpolate({
+    inputRange: [0, 1],
+    outputRange: ["0deg", "180deg"],
+  });
+  const back = turn.interpolate({
+    inputRange: [0, 1],
+    outputRange: ["180deg", "360deg"],
+  });
+  const lift = turn.interpolate({
+    inputRange: [0, 0.5, 1],
+    outputRange: [1, 0.96, 1],
+  });
 
   return (
     <Pressable
@@ -139,9 +250,15 @@ function Passport() {
       accessibilityHint="Kartı çevirir"
       onPress={flip}
     >
-      <Animated.View style={[styles.passportShadow, { transform: [{ scale: lift }] }]}>
+      <Animated.View
+        style={[styles.passportShadow, { transform: [{ scale: lift }] }]}
+      >
         <Animated.View
-          style={[styles.passport, styles.face, { transform: [{ perspective: 1200 }, { rotateY: front }] }]}
+          style={[
+            styles.passport,
+            styles.face,
+            { transform: [{ perspective: 1200 }, { rotateY: front }] },
+          ]}
           onLayout={(e) => setSize(e.nativeEvent.layout)}
           pointerEvents={flipped ? "none" : "auto"}
         >
@@ -162,10 +279,19 @@ function Passport() {
           </View>
 
           <View style={styles.holder}>
-            <Text colorValue={palette.gece50} style={styles.name} numberOfLines={1} adjustsFontSizeToFit>
+            <Text
+              colorValue={palette.gece50}
+              style={styles.name}
+              numberOfLines={1}
+              adjustsFontSizeToFit
+            >
               {name}
             </Text>
-            <Text colorValue={palette.gece300} style={styles.account} numberOfLines={1}>
+            <Text
+              colorValue={palette.gece300}
+              style={styles.account}
+              numberOfLines={1}
+            >
               {account}
             </Text>
           </View>
@@ -178,26 +304,59 @@ function Passport() {
         </Animated.View>
 
         <Animated.View
-          style={[styles.passport, styles.face, styles.backFace, { transform: [{ perspective: 1200 }, { rotateY: back }] }]}
+          style={[
+            styles.passport,
+            styles.face,
+            styles.backFace,
+            { transform: [{ perspective: 1200 }, { rotateY: back }] },
+          ]}
           pointerEvents={flipped ? "auto" : "none"}
         >
           <Cover width={size.width} height={size.height} />
           <View style={styles.backBody}>
             <View style={styles.photo}>
-              <Svg width={PHOTO_W} height={PHOTO_H} style={StyleSheet.absoluteFill} aria-hidden>
+              <Svg
+                width={PHOTO_W}
+                height={PHOTO_H}
+                style={StyleSheet.absoluteFill}
+                aria-hidden
+              >
                 <Defs>
                   <FoilGradient id="photo-foil" />
                 </Defs>
-                <Rect x={0.75} y={0.75} width={PHOTO_W - 1.5} height={PHOTO_H - 1.5} rx={14} stroke="url(#photo-foil)" strokeWidth={1.5} fill="none" />
+                <Rect
+                  x={0.75}
+                  y={0.75}
+                  width={PHOTO_W - 1.5}
+                  height={PHOTO_H - 1.5}
+                  rx={14}
+                  stroke="url(#photo-foil)"
+                  strokeWidth={1.5}
+                  fill="none"
+                />
               </Svg>
               {holder.photoUrl ? (
-                <Image source={{ uri: holder.photoUrl }} style={styles.photoImage} contentFit="cover" accessibilityIgnoresInvertColors />
+                <Image
+                  source={{ uri: holder.photoUrl }}
+                  style={styles.photoImage}
+                  contentFit="cover"
+                  accessibilityIgnoresInvertColors
+                />
               ) : user ? (
-                <Text colorValue={palette.altin200} style={styles.photoInitial} aria-hidden>
+                <Text
+                  colorValue={palette.altin200}
+                  style={styles.photoInitial}
+                  aria-hidden
+                >
                   {fullName.charAt(0).toLocaleUpperCase("tr")}
                 </Text>
               ) : (
-                <Ionicons name="person" size={44} color={palette.altin200} aria-hidden />
+                <Ionicons
+                  name="person"
+                  size={44}
+                  color={palette.altin200}
+                  aria-hidden
+                />
               )}
             </View>
             <View style={[styles.flex, styles.backFields]}>
@@ -205,7 +364,12 @@ function Passport() {
                 <Text colorValue={palette.altin200} style={styles.backLabel}>
                   AD SOYAD
                 </Text>
-                <Text colorValue={palette.gece50} style={styles.backName} numberOfLines={2} adjustsFontSizeToFit>
+                <Text
+                  colorValue={palette.gece50}
+                  style={styles.backName}
+                  numberOfLines={2}
+                  adjustsFontSizeToFit
+                >
                   {fullName}
                 </Text>
               </View>
@@ -213,7 +377,11 @@ function Passport() {
                 <Text colorValue={palette.altin200} style={styles.backLabel}>
                   KULLANICI
                 </Text>
-                <Text colorValue={palette.gece100} style={styles.account} numberOfLines={1}>
+                <Text
+                  colorValue={palette.gece100}
+                  style={styles.account}
+                  numberOfLines={1}
+                >
                   {account}
                 </Text>
               </View>
@@ -240,10 +408,21 @@ function FlipHint() {
   );
 }
 
-function Stat({ value, label, gold = false }: { value: number; label: string; gold?: boolean }) {
+function Stat({
+  value,
+  label,
+  gold = false,
+}: {
+  value: number;
+  label: string;
+  gold?: boolean;
+}) {
   return (
     <View style={styles.stat}>
-      <Text colorValue={gold ? palette.altin200 : palette.gece50} style={styles.statValue}>
+      <Text
+        colorValue={gold ? palette.altin200 : palette.gece50}
+        style={styles.statValue}
+      >
         {value}
       </Text>
       <Text colorValue={palette.gece300} style={styles.statLabel}>
@@ -272,7 +451,14 @@ function Emblem({ size }: { size: number }) {
       <Defs>
         <FoilGradient id="emblem-foil" />
       </Defs>
-      <Circle cx={50} cy={50} r={47} stroke="url(#emblem-foil)" strokeWidth={3} fill="none" />
+      <Circle
+        cx={50}
+        cy={50}
+        r={47}
+        stroke="url(#emblem-foil)"
+        strokeWidth={3}
+        fill="none"
+      />
       <G stroke="url(#emblem-foil)" strokeWidth={3.5} fill="none">
         <Path d={STAR_SQUARE} />
         <Path d={STAR_SQUARE} transform="rotate(45 50 50)" />
@@ -305,14 +491,61 @@ function Cover({ width, height }: { width: number; height: number }) {
             <Stop offset="1" stopColor={palette.firuze300} stopOpacity={0} />
           </RadialGradient>
           {/* Scattered, not on a grid, so it reads as leather and not as dotted paper. */}
-          <Pattern id="grain" width={11} height={13} patternUnits="userSpaceOnUse">
-            <Circle cx={1.2} cy={2.1} r={0.5} fill="#FFFFFF" fillOpacity={0.028} />
-            <Circle cx={6.7} cy={0.8} r={0.6} fill="#000000" fillOpacity={0.12} />
-            <Circle cx={9.4} cy={5.3} r={0.45} fill="#FFFFFF" fillOpacity={0.022} />
-            <Circle cx={3.8} cy={7.6} r={0.65} fill="#000000" fillOpacity={0.1} />
-            <Circle cx={8.1} cy={10.9} r={0.5} fill="#FFFFFF" fillOpacity={0.025} />
-            <Circle cx={0.6} cy={11.7} r={0.55} fill="#000000" fillOpacity={0.12} />
-            <Circle cx={5.2} cy={4.4} r={0.4} fill="#000000" fillOpacity={0.08} />
+          <Pattern
+            id="grain"
+            width={11}
+            height={13}
+            patternUnits="userSpaceOnUse"
+          >
+            <Circle
+              cx={1.2}
+              cy={2.1}
+              r={0.5}
+              fill="#FFFFFF"
+              fillOpacity={0.028}
+            />
+            <Circle
+              cx={6.7}
+              cy={0.8}
+              r={0.6}
+              fill="#000000"
+              fillOpacity={0.12}
+            />
+            <Circle
+              cx={9.4}
+              cy={5.3}
+              r={0.45}
+              fill="#FFFFFF"
+              fillOpacity={0.022}
+            />
+            <Circle
+              cx={3.8}
+              cy={7.6}
+              r={0.65}
+              fill="#000000"
+              fillOpacity={0.1}
+            />
+            <Circle
+              cx={8.1}
+              cy={10.9}
+              r={0.5}
+              fill="#FFFFFF"
+              fillOpacity={0.025}
+            />
+            <Circle
+              cx={0.6}
+              cy={11.7}
+              r={0.55}
+              fill="#000000"
+              fillOpacity={0.12}
+            />
+            <Circle
+              cx={5.2}
+              cy={4.4}
+              r={0.4}
+              fill="#000000"
+              fillOpacity={0.08}
+            />
           </Pattern>
           <FoilGradient id="frame-foil" />
         </Defs>
@@ -320,7 +553,11 @@ function Cover({ width, height }: { width: number; height: number }) {
         <Rect width={width} height={height} fill="url(#leather-light)" />
         <Rect width={width} height={height} fill="url(#grain)" />
         {/* Blind stamp: a shade darker below, a hair lighter above, like pressed leather. */}
-        <G transform={`translate(${width - star * 0.68} ${(height - star) / 2}) scale(${star / 100})`} fill="none" strokeWidth={0.45}>
+        <G
+          transform={`translate(${width - star * 0.68} ${(height - star) / 2}) scale(${star / 100})`}
+          fill="none"
+          strokeWidth={0.45}
+        >
           <G stroke="#000000" strokeOpacity={0.4} transform="translate(0 0.35)">
             <Circle cx={50} cy={50} r={47} />
             <Path d={STAR_SQUARE} />
@@ -334,8 +571,29 @@ function Cover({ width, height }: { width: number; height: number }) {
             <Circle cx={50} cy={50} r={11} />
           </G>
         </G>
-        <Rect x={7} y={7} width={width - 14} height={height - 14} rx={19} stroke="#FFFFFF" strokeOpacity={0.16} strokeWidth={1} strokeDasharray="5 4" fill="none" />
-        <Rect x={14} y={14} width={width - 28} height={height - 28} rx={13} stroke="url(#frame-foil)" strokeOpacity={0.55} strokeWidth={0.8} fill="none" />
+        <Rect
+          x={7}
+          y={7}
+          width={width - 14}
+          height={height - 14}
+          rx={19}
+          stroke="#FFFFFF"
+          strokeOpacity={0.16}
+          strokeWidth={1}
+          strokeDasharray="5 4"
+          fill="none"
+        />
+        <Rect
+          x={14}
+          y={14}
+          width={width - 28}
+          height={height - 28}
+          rx={13}
+          stroke="url(#frame-foil)"
+          strokeOpacity={0.55}
+          strokeWidth={0.8}
+          fill="none"
+        />
       </Svg>
     </View>
   );
@@ -351,7 +609,12 @@ function Sheen({ width, height }: { width: number; height: number }) {
     const loop = Animated.loop(
       Animated.sequence([
         Animated.delay(1200),
-        Animated.timing(x, { toValue: 1, duration: 2200, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
+        Animated.timing(x, {
+          toValue: 1,
+          duration: 2200,
+          easing: Easing.inOut(Easing.quad),
+          useNativeDriver: true,
+        }),
         Animated.delay(4800),
         Animated.timing(x, { toValue: 0, duration: 0, useNativeDriver: true }),
       ]),
@@ -362,12 +625,23 @@ function Sheen({ width, height }: { width: number; height: number }) {
 
   if (reduced || width === 0) return null;
   const band = 140;
-  const translateX = x.interpolate({ inputRange: [0, 1], outputRange: [-band * 2, width + band] });
+  const translateX = x.interpolate({
+    inputRange: [0, 1],
+    outputRange: [-band * 2, width + band],
+  });
   return (
     <Animated.View
       aria-hidden
       pointerEvents="none"
-      style={[styles.sheen, { width: band, height: height * 2, top: -height / 2, transform: [{ translateX }, { rotate: "18deg" }] }]}
+      style={[
+        styles.sheen,
+        {
+          width: band,
+          height: height * 2,
+          top: -height / 2,
+          transform: [{ translateX }, { rotate: "18deg" }],
+        },
+      ]}
     >
       <Svg width={band} height="100%">
         <Defs>
@@ -384,12 +658,14 @@ function Sheen({ width, height }: { width: number; height: number }) {
 }
 
 const ROW_ICON = 32;
+/** The icon of a section card on the web. */
+const TILE_ICON = 44;
 
 /**
  * The five sections as one grouped list: a gold icon in a gold-foil frame, the title, and how many
  * routes, sealed assets, badges or notes there are when that is known.
  */
-function Sections() {
+function Sections({ grid = false }: { grid?: boolean }) {
   const { colors: c, scheme } = useTheme();
   const dark = scheme === "dark";
   const router = useRouter();
@@ -399,48 +675,223 @@ function Sections() {
   const notes = useMyContributions();
   const { user } = useCommunity();
   const badgeData = badges.status === "success" ? badges.data : null;
-  const noteCount = notes.status === "success" && notes.data ? notes.data.length : null;
+  const noteCount =
+    notes.status === "success" && notes.data ? notes.data.length : null;
   const wallet = useWallet();
   const walletData = wallet.status === "success" ? wallet.data : null;
 
-  const rows: Array<{ href: Href; icon: IconName; title: string; value: string | null }> = [
-    { href: "/profile/routes", icon: "bookmark-outline", title: "Kaydettiklerim", value: routes.length > 0 ? String(routes.length) : null },
-    { href: "/profile/sealed", icon: "shield-checkmark-outline", title: "Mühürlenen eserler", value: sealed.size > 0 ? String(sealed.size) : null },
+  const rows: Array<{
+    href: Href;
+    icon: IconName;
+    title: string;
+    value: string | null;
+    /** What the page holds, said on the web's cards. */
+    note?: string;
+  }> = [
+    {
+      href: "/profile/routes",
+      icon: "bookmark-outline",
+      title: "Kaydettiklerim",
+      value: routes.length > 0 ? String(routes.length) : null,
+      note: "Rehber'le planladığın rotalar",
+    },
+    {
+      href: "/profile/sealed",
+      icon: "shield-checkmark-outline",
+      title: "Mühürlenen eserler",
+      value: sealed.size > 0 ? String(sealed.size) : null,
+      note: "Ziyaretle kilidini açtığın eserler",
+    },
     {
       href: "/profile/badges",
       icon: "ribbon-outline",
       title: "Rozetlerim",
-      value: badgeData ? `${badgeData.items.filter((b) => b.earnedAt).length}/${badgeData.items.length}` : null,
+      value: badgeData
+        ? `${badgeData.items.filter((b) => b.earnedAt).length}/${badgeData.items.length}`
+        : null,
+      note: "Şehir ve ilçe rozetlerin",
     },
-    { href: "/profile/rewards", icon: "gift-outline", title: "Ödüllerim", value: walletData ? `${walletData.balance} puan` : null },
-    { href: "/profile/notes", icon: "chatbubble-ellipses-outline", title: "Bıraktığım Notlar", value: noteCount ? String(noteCount) : null },
-    { href: "/profile/settings", icon: "settings-outline", title: "Sistem ayarları", value: null },
+    {
+      href: "/profile/rewards",
+      icon: "gift-outline",
+      title: "Ödüllerim",
+      value: walletData ? `${walletData.balance} puan` : null,
+      note: "Puanını ortak kurumlarda harca",
+    },
+    {
+      href: "/profile/notes",
+      icon: "chatbubble-ellipses-outline",
+      title: "Bıraktığım Notlar",
+      value: noteCount ? String(noteCount) : null,
+      note: "Eserlere bıraktığın saha notları",
+    },
+    {
+      href: "/profile/settings",
+      icon: "settings-outline",
+      title: "Sistem ayarları",
+      value: null,
+      note: "Görünüm ve erişilebilirlik",
+    },
     // Only moderators and admins: the panel the API lets them use.
     ...(user?.role === "admin" || user?.role === "moderator"
-      ? [{ href: "/admin" as Href, icon: "shield-half-outline" as IconName, title: "Yönetim paneli", value: null }]
+      ? [
+          {
+            href: "/admin" as Href,
+            icon: "shield-half-outline" as IconName,
+            title: "Yönetim paneli",
+            value: null,
+            note: "Moderasyon ve içerik",
+          },
+        ]
       : []),
   ];
 
+  // The web's wide page: each section a card of its own, two to a row.
+  if (grid)
+    return (
+      <View style={styles.grid}>
+        {rows.map((row) => (
+          <Pressable
+            key={row.title}
+            accessibilityRole="link"
+            accessibilityLabel={[row.title, row.value, row.note]
+              .filter(Boolean)
+              .join(", ")}
+            onPress={() => router.push(row.href)}
+            style={({
+              pressed,
+              hovered,
+            }: {
+              pressed: boolean;
+              hovered?: boolean;
+            }) => [
+              styles.tile,
+              {
+                backgroundColor: c.surface,
+                borderColor: hovered
+                  ? c.highlightMark
+                  : dark
+                    ? "transparent"
+                    : c.border,
+                transform: [{ translateY: hovered ? -2 : 0 }],
+              },
+              pressed && { opacity: 0.85 },
+            ]}
+          >
+            <View style={styles.tileTop}>
+              <View style={[styles.rowIcon, styles.tileIcon]}>
+                <Svg
+                  width={TILE_ICON}
+                  height={TILE_ICON}
+                  style={StyleSheet.absoluteFill}
+                  aria-hidden
+                >
+                  <Defs>
+                    <FoilGradient id="tile-foil" />
+                  </Defs>
+                  <Rect
+                    x={0.6}
+                    y={0.6}
+                    width={TILE_ICON - 1.2}
+                    height={TILE_ICON - 1.2}
+                    rx={11}
+                    stroke="url(#tile-foil)"
+                    strokeWidth={1.2}
+                    fill="none"
+                  />
+                </Svg>
+                <Ionicons name={row.icon} size={20} color={c.highlightMark} />
+              </View>
+              {row.value ? (
+                <View
+                  style={[
+                    styles.tileValue,
+                    { backgroundColor: c.surfaceRaised },
+                  ]}
+                >
+                  <Text variant="label" style={styles.tileValueText}>
+                    {row.value}
+                  </Text>
+                </View>
+              ) : (
+                <Ionicons
+                  name="arrow-forward"
+                  size={18}
+                  color={c.textSecondary}
+                  aria-hidden
+                />
+              )}
+            </View>
+            <View style={styles.tileBody}>
+              <Text style={styles.tileTitle} numberOfLines={1}>
+                {row.title}
+              </Text>
+              {row.note && (
+                <Text variant="caption" color="textSecondary" numberOfLines={1}>
+                  {row.note}
+                </Text>
+              )}
+            </View>
+          </Pressable>
+        ))}
+      </View>
+    );
+
   return (
-    <View style={[styles.list, { backgroundColor: c.surface, borderColor: dark ? "transparent" : c.border }]}>
+    <View
+      style={[
+        styles.list,
+        {
+          backgroundColor: c.surface,
+          borderColor: dark ? "transparent" : c.border,
+        },
+      ]}
+    >
       {rows.map((row, i) => (
         <Pressable
           key={row.title}
           accessibilityRole="link"
-          accessibilityLabel={row.value ? `${row.title}, ${row.value}` : row.title}
+          accessibilityLabel={
+            row.value ? `${row.title}, ${row.value}` : row.title
+          }
           onPress={() => router.push(row.href)}
-          style={({ pressed }) => [styles.row, pressed && { backgroundColor: c.surfaceRaised }]}
+          style={({ pressed }) => [
+            styles.row,
+            pressed && { backgroundColor: c.surfaceRaised },
+          ]}
         >
           <View style={styles.rowIcon}>
-            <Svg width={ROW_ICON} height={ROW_ICON} style={StyleSheet.absoluteFill} aria-hidden>
+            <Svg
+              width={ROW_ICON}
+              height={ROW_ICON}
+              style={StyleSheet.absoluteFill}
+              aria-hidden
+            >
               <Defs>
                 <FoilGradient id="row-foil" />
               </Defs>
-              <Rect x={0.6} y={0.6} width={ROW_ICON - 1.2} height={ROW_ICON - 1.2} rx={8} stroke="url(#row-foil)" strokeWidth={1.2} fill="none" />
+              <Rect
+                x={0.6}
+                y={0.6}
+                width={ROW_ICON - 1.2}
+                height={ROW_ICON - 1.2}
+                rx={8}
+                stroke="url(#row-foil)"
+                strokeWidth={1.2}
+                fill="none"
+              />
             </Svg>
             <Ionicons name={row.icon} size={17} color={c.highlightMark} />
           </View>
-          <View style={[styles.rowBody, i > 0 && { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: c.border }]}>
+          <View
+            style={[
+              styles.rowBody,
+              i > 0 && {
+                borderTopWidth: StyleSheet.hairlineWidth,
+                borderTopColor: c.border,
+              },
+            ]}
+          >
             <Text style={styles.rowTitle} numberOfLines={1}>
               {row.title}
             </Text>
@@ -449,7 +900,12 @@ function Sections() {
                 {row.value}
               </Text>
             )}
-            <Ionicons name="chevron-forward" size={17} color={c.textSecondary} aria-hidden />
+            <Ionicons
+              name="chevron-forward"
+              size={17}
+              color={c.textSecondary}
+              aria-hidden
+            />
           </View>
         </Pressable>
       ))}
@@ -471,18 +927,127 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     gap: spacing.lg,
   },
+  wide: {
+    width: "100%",
+    maxWidth: 1120,
+    alignSelf: "center",
+    gap: spacing.xl,
+    paddingHorizontal: spacing.xl,
+  },
+  hero: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+    gap: spacing.lg,
+  },
+  overline: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 12,
+    letterSpacing: 2.4,
+    marginBottom: spacing.xxs,
+  },
+  heroTitle: {
+    fontFamily: fontFamily.display,
+    fontSize: 44,
+    lineHeight: 52,
+    marginBottom: spacing.xxs,
+  },
+  heroAction: {
+    minWidth: 150,
+    borderWidth: 1,
+    borderRadius: radius.full,
+    overflow: "hidden",
+  },
+  wideRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.xl,
+  },
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.md,
+  },
+  tile: {
+    flexGrow: 1,
+    flexBasis: 240,
+    height: 150,
+    justifyContent: "space-between",
+    gap: spacing.lg,
+    padding: spacing.lg,
+    borderRadius: radius.xl,
+    borderWidth: 1,
+    ...webTransition("transform, border-color", "180ms"),
+  },
+  tileTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  tileIcon: {
+    width: TILE_ICON,
+    height: TILE_ICON,
+  },
+  tileBody: {
+    gap: 2,
+  },
+  tileValue: {
+    paddingHorizontal: spacing.sm,
+    paddingVertical: 4,
+    borderRadius: radius.full,
+  },
+  tileValueText: {
+    fontFamily: fontFamily.sansSemiBold,
+  },
+  tileTitle: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 17,
+  },
+  wideColumn: {
+    width: "100%",
+    maxWidth: 1040,
+    alignSelf: "center",
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.xl,
+    paddingHorizontal: spacing.xl,
+  },
+  wideSide: {
+    width: 440,
+    gap: spacing.md,
+  },
+  wideMain: {
+    flex: 1,
+    minWidth: 0,
+  },
+  unseen: {
+    position: "absolute",
+    width: 1,
+    height: 1,
+    overflow: "hidden",
+    opacity: 0,
+  },
   pageTitle: {
     fontFamily: fontFamily.display,
     fontSize: 34,
     lineHeight: 42,
   },
+  // The shadow falls from the card as it turns, not from the flat box around it: iOS draws a
+  // shadow from what the box holds and the web's drop-shadow does too. Android's elevation would
+  // draw the flat box behind the turning card, so there the card has none.
   passportShadow: {
     borderRadius: 26,
-    shadowColor: palette.gece1000,
-    shadowOpacity: 0.4,
-    shadowRadius: 30,
-    shadowOffset: { width: 0, height: 18 },
-    elevation: 14,
+    ...Platform.select({
+      ios: {
+        shadowColor: palette.gece1000,
+        shadowOpacity: 0.4,
+        shadowRadius: 30,
+        shadowOffset: { width: 0, height: 18 },
+      },
+      web: {
+        filter: "drop-shadow(0 18px 22px rgba(5, 8, 14, 0.32))",
+      } as object,
+      default: {},
+    }),
   },
   passport: {
     justifyContent: "space-between",

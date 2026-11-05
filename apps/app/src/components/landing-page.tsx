@@ -250,7 +250,7 @@ const CSS = `
 .vg-vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.6) 100%); }
 .vg-grain { position: absolute; inset: -50%; pointer-events: none; background-image: ${GRAIN}; opacity: 0.09; mix-blend-mode: overlay; }
 
-.vg-nav { position: relative; z-index: 2; flex: none; display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1240px; margin: 0 auto; padding: 22px 28px; }
+.vg-nav { position: relative; z-index: 2; flex: none; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 22px 26px 22px 34px; }
 .vg-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-family: Marcellus_400Regular, serif; font-size: 23px; letter-spacing: 0.2px; }
 .vg-mark { width: 9px; height: 9px; border-radius: 50%; background: #E7C26A; box-shadow: 0 0 14px rgba(231, 194, 106, 0.7); }
 .vg-nav-link { padding: 9px 18px; border-radius: 999px; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_500Medium, sans-serif; font-size: 14px;
@@ -278,7 +278,7 @@ const CSS = `
 .vg-room { position: relative; flex: 1; pointer-events: none; transform: translateY(calc(-1 * clamp(0px, 1.5vh, 16px))); min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
 /* The scene's box is larger than its devices: only the devices take the pointer, so it never covers the buttons above. */
 .vg-scene { position: relative; flex: none; transform-origin: 50% 100%; margin-bottom: 0; pointer-events: none; }
-.vg-contact { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0)); }
+.vg-contact { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0)); }
 .vg-contact-laptop { left: -10px; bottom: 50px; width: 640px; height: 30px; }
 .vg-contact-phone { right: -8px; bottom: 24px; width: 216px; height: 26px; z-index: 0; }
 .vg-shore { position: absolute; left: 0; right: 0; bottom: 64px; height: 0; pointer-events: none; }
@@ -295,7 +295,7 @@ const CSS = `
   opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; backdrop-filter: blur(8px); }
 .vg-device:hover .vg-tag, .vg-device:focus-visible .vg-tag { opacity: 1; transform: translate(-50%, 0); }
 
-.vg-laptop { display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55)); }
+.vg-laptop { display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 22px 32px rgba(0, 0, 0, 0.68)); }
 .vg-glass { position: relative; width: 572px; height: 368px; border-radius: 18px 18px 4px 4px; padding: 11px 11px 14px; background: #040507;
   box-shadow: 0 0 0 1.5px #474B54, 0 -1px 0 1.5px rgba(255, 255, 255, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 80px -30px rgba(0, 0, 0, 0.9); }
 .vg-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 6px 6px 2px 2px; background: #0D1420; }
@@ -310,7 +310,7 @@ const CSS = `
 .vg-scoop { position: absolute; top: 0; left: 50%; width: 104px; height: 6px; margin-left: -52px; border-radius: 0 0 10px 10px; background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08)); }
 
 .vg-phone { position: relative; width: 200px; height: 412px; border-radius: 38px; padding: 8px; background: #040507;
-  box-shadow: 0 0 0 2.5px #5A5F69, 0 0 0 4px #1E2026, -1px -1px 0 4px rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.1), -14px 22px 36px -14px rgba(0, 0, 0, 0.7); }
+  box-shadow: 0 0 0 2.5px #5A5F69, 0 0 0 4px #1E2026, -1px -1px 0 4px rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.1), -16px 26px 42px -14px rgba(0, 0, 0, 0.82); }
 .vg-phone-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 31px; background: #0D1420; }
 .vg-notch { position: absolute; top: 9px; left: 50%; width: 72px; height: 21px; transform: translateX(-50%); border-radius: 12px; background: #030406; }
 

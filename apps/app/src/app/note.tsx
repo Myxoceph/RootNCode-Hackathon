@@ -1,28 +1,88 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { CONTRIBUTION_TEXT_MAX, CONTRIBUTION_TEXT_MIN, ContributionTextSchema, normalizeContributionText, type AssetDetail, type PulseItem, type TextContributionKind } from "@vagabonds/contracts";
-import { cameraColors, fontFamily, palette, radius, spacing, Text, touchTarget, typography, useTheme, useUi } from "@vagabonds/ui";
+import {
+  CONTRIBUTION_TEXT_MAX,
+  CONTRIBUTION_TEXT_MIN,
+  ContributionTextSchema,
+  normalizeContributionText,
+  type AssetDetail,
+  type PulseItem,
+  type TextContributionKind,
+} from "@vagabonds/contracts";
+import {
+  cameraColors,
+  fontFamily,
+  palette,
+  radius,
+  spacing,
+  Text,
+  touchTarget,
+  typography,
+  useTheme,
+  useUi,
+} from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useState, type ComponentProps } from "react";
-import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import {
+  ActivityIndicator,
+  KeyboardAvoidingView,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  TextInput,
+  View,
+} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
 import { AssetImage } from "@/components/asset-image";
 import { ResourceView } from "@/components/resource-view";
-import { communityAvailable, DataError, sendContribution, useAsset, useCommunity, usePulse } from "@/data";
+import { WebPageHeader } from "@/components/web-nav-bar";
+import {
+  communityAvailable,
+  DataError,
+  sendContribution,
+  useAsset,
+  useCommunity,
+  usePulse,
+} from "@/data";
 import { announce } from "@/lib/announce";
 import { formatDate } from "@/lib/format-date";
+import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
-const KINDS: ReadonlyArray<{ value: TextContributionKind; label: string; icon: IconName; hint: string }> = [
-  { value: "tip", label: "İpucu", icon: "bulb-outline", hint: "Ziyarete yarayan bir bilgi: giriş, saatler, kalabalık, rampa…" },
-  { value: "memory", label: "Anı", icon: "heart-outline", hint: "Bu eserle ilgili bir anın ya da duyduğun bir hikâye." },
-  { value: "correction", label: "Düzeltme", icon: "create-outline", hint: "Sayfadaki bir bilgi yanlışsa doğrusunu ve kaynağını yaz." },
+const KINDS: ReadonlyArray<{
+  value: TextContributionKind;
+  label: string;
+  icon: IconName;
+  hint: string;
+}> = [
+  {
+    value: "tip",
+    label: "İpucu",
+    icon: "bulb-outline",
+    hint: "Ziyarete yarayan bir bilgi: giriş, saatler, kalabalık, rampa…",
+  },
+  {
+    value: "memory",
+    label: "Anı",
+    icon: "heart-outline",
+    hint: "Bu eserle ilgili bir anın ya da duyduğun bir hikâye.",
+  },
+  {
+    value: "correction",
+    label: "Düzeltme",
+    icon: "create-outline",
+    hint: "Sayfadaki bir bilgi yanlışsa doğrusunu ve kaynağını yaz.",
+  },
 ];
 
 const HERO_HEIGHT = 220;
+const WEB = Platform.OS === "web";
+/** On a wide web page: the asset's card and the kinds at the left, the form beside them. */
+const ASIDE = 380;
 
 /**
  * "Not bırak" over an unlocked asset on the map: the asset's photo, then the note. It goes to the API
@@ -33,18 +93,32 @@ export default function NoteScreen() {
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const resource = useAsset(id ?? "");
   const { colors: c } = useTheme();
+  const name =
+    resource.status === "success" && resource.data ? resource.data.name : null;
   return (
     <View style={[styles.flex, { backgroundColor: c.background }]}>
       <Head>
         <title>Not bırak · Vagabonds</title>
       </Head>
+      {WEB && (
+        <WebPageHeader
+          title={name ? `${name} için not bırak` : "Not bırak"}
+          section="monuments"
+          back={{
+            label: name ?? "Eser",
+            href: id
+              ? { pathname: "/monuments/[id]", params: { id } }
+              : "/monuments",
+          }}
+        />
+      )}
       <ResourceView resource={resource}>
         {(asset) =>
           asset ? (
             <Note asset={asset} />
           ) : (
             <View style={styles.missing}>
-              <BackButton />
+              {!WEB && <BackButton />}
               <Text>Eser bulunamadı.</Text>
             </View>
           )
@@ -63,7 +137,13 @@ function BackButton() {
   const leave = useLeave();
   const insets = useSafeAreaInsets();
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel="Geri" hitSlop={6} onPress={leave} style={[styles.back, { top: insets.top + spacing.xs }]}>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel="Geri"
+      hitSlop={6}
+      onPress={leave}
+      style={[styles.back, { top: insets.top + spacing.xs }]}
+    >
       <Ionicons name="chevron-back" size={22} color={cameraColors.text} />
     </Pressable>
   );
@@ -71,17 +151,159 @@ function BackButton() {
 
 function Note({ asset }: { asset: AssetDetail }) {
   const insets = useSafeAreaInsets();
+  const wide = useWideWeb();
+  // The kind is the page's: on a wide web page the left side picks it, the form below writes it.
+  const [kind, setKind] = useState<TextContributionKind>("tip");
+  if (wide) {
+    return (
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxxl }}
+      >
+        <View style={[styles.wideColumn, wideColumn]}>
+          <Aside asset={asset} kind={kind} onKind={setKind} />
+          <View style={styles.wideMain}>
+            <Composer asset={asset} kind={kind} onKind={setKind} wide />
+            <ApprovedNotes id={asset.id} />
+          </View>
+        </View>
+      </ScrollView>
+    );
+  }
   return (
-    <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={styles.flex}>
-      <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxxl }}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
+      style={styles.flex}
+    >
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxxl }}
+      >
         <Hero asset={asset} />
         <View style={styles.column}>
-          <Composer asset={asset} />
+          <Composer asset={asset} kind={kind} onKind={setKind} />
           <ApprovedNotes id={asset.id} />
         </View>
       </ScrollView>
       <BackButton />
     </KeyboardAvoidingView>
+  );
+}
+
+/** The wide web page's left side: the asset's photo with its name, and what each kind of note is for. */
+function Aside({
+  asset,
+  kind,
+  onKind,
+}: {
+  asset: AssetDetail;
+  kind: TextContributionKind;
+  onKind: (kind: TextContributionKind) => void;
+}) {
+  const { colors: c, scheme } = useTheme();
+  return (
+    <View style={styles.aside}>
+      <View style={[styles.hero, styles.asideHero]}>
+        {asset.cover && <AssetImage media={asset.cover} decorative fill />}
+        <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+          <Svg width="100%" height="100%">
+            <Defs>
+              <LinearGradient id="note-aside" x1="0" y1="0" x2="0" y2="1">
+                <Stop
+                  offset="0.35"
+                  stopColor={cameraColors.background}
+                  stopOpacity={0}
+                />
+                <Stop
+                  offset="1"
+                  stopColor={cameraColors.background}
+                  stopOpacity={0.9}
+                />
+              </LinearGradient>
+            </Defs>
+            <Rect width="100%" height="100%" fill="url(#note-aside)" />
+          </Svg>
+        </View>
+        <View style={styles.heroWords}>
+          <Text variant="overline" colorValue={cameraColors.gold}>
+            NOT BIRAK
+          </Text>
+          <Text
+            variant="title"
+            colorValue={cameraColors.text}
+            numberOfLines={2}
+          >
+            {asset.name}
+          </Text>
+          <Text variant="caption" colorValue={cameraColors.textSecondary}>
+            {`${asset.district}, ${asset.city.label}`}
+          </Text>
+        </View>
+      </View>
+      <View
+        style={[
+          styles.asideCard,
+          { backgroundColor: c.surface, borderColor: c.border },
+        ]}
+        accessibilityRole="radiogroup"
+        accessibilityLabel="Not türü"
+      >
+        <Text variant="overline" color="textSecondary" style={styles.asideHead}>
+          NE BIRAKMAK İSTERSİN?
+        </Text>
+        {KINDS.map((option) => {
+          const on = option.value === kind;
+          return (
+            <Pressable
+              key={option.value}
+              accessibilityRole="radio"
+              accessibilityState={{ selected: on }}
+              accessibilityLabel={`${option.label}: ${option.hint}`}
+              onPress={() => onKind(option.value)}
+              style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [
+                styles.asideKind,
+                {
+                  backgroundColor: on
+                    ? scheme === "dark"
+                      ? "rgba(231, 194, 106, 0.08)"
+                      : "rgba(150, 111, 34, 0.07)"
+                    : hovered
+                      ? c.background
+                      : "transparent",
+                  borderColor: on ? c.highlightMark : "transparent",
+                },
+              ]}
+            >
+              <View
+                style={[
+                  styles.asideIcon,
+                  { backgroundColor: on ? c.highlightMark : c.background },
+                ]}
+              >
+                <Ionicons
+                  name={option.icon}
+                  size={20}
+                  color={on ? c.onPrimary : c.highlight}
+                />
+              </View>
+              <View style={styles.flex}>
+                <Text variant="label" style={styles.semibold}>
+                  {option.label}
+                </Text>
+                <Text variant="caption" color="textSecondary">
+                  {option.hint}
+                </Text>
+              </View>
+              <Ionicons
+                name={on ? "radio-button-on" : "radio-button-off"}
+                size={20}
+                color={on ? c.highlightMark : c.border}
+              />
+            </Pressable>
+          );
+        })}
+      </View>
+    </View>
   );
 }
 
@@ -93,8 +315,16 @@ function Hero({ asset }: { asset: AssetDetail }) {
         <Svg width="100%" height="100%">
           <Defs>
             <LinearGradient id="note-hero" x1="0" y1="0" x2="0" y2="1">
-              <Stop offset="0.2" stopColor={cameraColors.background} stopOpacity={0.1} />
-              <Stop offset="1" stopColor={cameraColors.background} stopOpacity={0.92} />
+              <Stop
+                offset="0.2"
+                stopColor={cameraColors.background}
+                stopOpacity={0.1}
+              />
+              <Stop
+                offset="1"
+                stopColor={cameraColors.background}
+                stopOpacity={0.92}
+              />
             </LinearGradient>
           </Defs>
           <Rect width="100%" height="100%" fill="url(#note-hero)" />
@@ -104,7 +334,12 @@ function Hero({ asset }: { asset: AssetDetail }) {
         <Text variant="overline" colorValue={cameraColors.gold}>
           NOT BIRAK
         </Text>
-        <Text variant="title" headingLevel={1} colorValue={cameraColors.text} numberOfLines={2}>
+        <Text
+          variant="title"
+          headingLevel={1}
+          colorValue={cameraColors.text}
+          numberOfLines={2}
+        >
           {asset.name}
         </Text>
       </View>
@@ -112,12 +347,21 @@ function Hero({ asset }: { asset: AssetDetail }) {
   );
 }
 
-function Composer({ asset }: { asset: AssetDetail }) {
+function Composer({
+  asset,
+  kind,
+  onKind: setKind,
+  wide = false,
+}: {
+  asset: AssetDetail;
+  kind: TextContributionKind;
+  onKind: (kind: TextContributionKind) => void;
+  wide?: boolean;
+}) {
   const { colors: c } = useTheme();
   const { textScale } = useUi();
   const { user } = useCommunity();
   const leave = useLeave();
-  const [kind, setKind] = useState<TextContributionKind>("tip");
   const [body, setBody] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
@@ -125,7 +369,8 @@ function Composer({ asset }: { asset: AssetDetail }) {
   const [focused, setFocused] = useState<"body" | null>(null);
 
   const chars = normalizeContributionText(body).length;
-  const ready = chars >= CONTRIBUTION_TEXT_MIN && chars <= CONTRIBUTION_TEXT_MAX;
+  const ready =
+    chars >= CONTRIBUTION_TEXT_MIN && chars <= CONTRIBUTION_TEXT_MAX;
   const hint = KINDS.find((option) => option.value === kind)?.hint;
 
   function fail(message: string) {
@@ -135,7 +380,11 @@ function Composer({ asset }: { asset: AssetDetail }) {
 
   async function submit() {
     if (!ContributionTextSchema.safeParse(body).success) {
-      return fail(chars < CONTRIBUTION_TEXT_MIN ? `Not en az ${CONTRIBUTION_TEXT_MIN} karakter olmalı.` : `Not en çok ${CONTRIBUTION_TEXT_MAX} karakter olabilir.`);
+      return fail(
+        chars < CONTRIBUTION_TEXT_MIN
+          ? `Not en az ${CONTRIBUTION_TEXT_MIN} karakter olmalı.`
+          : `Not en çok ${CONTRIBUTION_TEXT_MAX} karakter olabilir.`,
+      );
     }
     setError(null);
     setSending(true);
@@ -145,7 +394,11 @@ function Composer({ asset }: { asset: AssetDetail }) {
       setSent(true);
       announce("Notun gönderildi. Moderatör onayından sonra görünecek.");
     } catch (e) {
-      fail(e instanceof DataError ? e.message : "Not gönderilemedi. Biraz sonra tekrar dene.");
+      fail(
+        e instanceof DataError
+          ? e.message
+          : "Not gönderilemedi. Biraz sonra tekrar dene.",
+      );
     } finally {
       setSending(false);
     }
@@ -153,15 +406,29 @@ function Composer({ asset }: { asset: AssetDetail }) {
 
   if (!communityAvailable) {
     return (
-      <View style={[styles.card, { backgroundColor: c.surface, borderColor: c.border }]}>
-        <Text color="textSecondary">Örnek veriyle çalışılıyor: not göndermek için sunucu gerekiyor.</Text>
+      <View
+        style={[
+          styles.card,
+          { backgroundColor: c.surface, borderColor: c.border },
+        ]}
+      >
+        <Text color="textSecondary">
+          Örnek veriyle çalışılıyor: not göndermek için sunucu gerekiyor.
+        </Text>
       </View>
     );
   }
 
   if (sent) {
     return (
-      <View style={[styles.card, styles.sent, { backgroundColor: c.surface, borderColor: c.border }]} accessibilityRole="alert">
+      <View
+        style={[
+          styles.card,
+          styles.sent,
+          { backgroundColor: c.surface, borderColor: c.border },
+        ]}
+        accessibilityRole="alert"
+      >
         <View style={[styles.sentMark, { backgroundColor: c.highlightMark }]}>
           <Ionicons name="checkmark" size={30} color={c.onPrimary} />
         </View>
@@ -169,10 +436,15 @@ function Composer({ asset }: { asset: AssetDetail }) {
           Notun bize ulaştı
         </Text>
         <Text color="textSecondary" style={styles.center}>
-          Bir moderatör onaylayınca herkese görünür. Durumunu Profil sekmesinde görebilirsin.
+          Bir moderatör onaylayınca herkese görünür. Durumunu Profil sekmesinde
+          görebilirsin.
         </Text>
         <PrimaryButton label="Haritaya dön" icon="map" onPress={leave} />
-        <Pressable accessibilityRole="button" onPress={() => setSent(false)} style={styles.again}>
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => setSent(false)}
+          style={styles.again}
+        >
           <Text variant="label" color="highlight">
             Bir not daha bırak
           </Text>
@@ -181,32 +453,69 @@ function Composer({ asset }: { asset: AssetDetail }) {
     );
   }
 
-  const fieldStyle = (name: "body") => [styles.field, { backgroundColor: c.background, borderColor: focused === name ? c.highlightMark : c.border }];
-  const typed = { color: c.text, fontSize: typography.body.fontSize * textScale, lineHeight: typography.body.lineHeight * textScale };
-  const noOutline = Platform.OS === "web" ? ({ outlineStyle: "none" } as object) : null;
+  const cardStyle = [
+    styles.card,
+    wide && styles.cardWide,
+    { backgroundColor: c.surface, borderColor: c.border },
+  ];
+  const fieldStyle = (name: "body") => [
+    styles.field,
+    {
+      backgroundColor: c.background,
+      borderColor: focused === name ? c.highlightMark : c.border,
+    },
+  ];
+  const typed = {
+    color: c.text,
+    fontSize: typography.body.fontSize * textScale,
+    lineHeight: typography.body.lineHeight * textScale,
+  };
+  const noOutline =
+    Platform.OS === "web" ? ({ outlineStyle: "none" } as object) : null;
 
   return (
-    <View style={[styles.card, { backgroundColor: c.surface, borderColor: c.border }]}>
-      <View style={styles.kinds} accessibilityRole="radiogroup" accessibilityLabel="Not türü">
-        {KINDS.map((option) => {
-          const on = option.value === kind;
-          return (
-            <Pressable
-              key={option.value}
-              accessibilityRole="radio"
-              accessibilityState={{ selected: on }}
-              accessibilityLabel={option.label}
-              onPress={() => setKind(option.value)}
-              style={[styles.kind, { backgroundColor: on ? c.highlightMark : c.background, borderColor: on ? c.highlightMark : c.border }]}
-            >
-              <Ionicons name={option.icon} size={20} color={on ? c.onPrimary : c.textSecondary} />
-              <Text variant="caption" colorValue={on ? c.onPrimary : c.text} style={styles.semibold}>
-                {option.label}
-              </Text>
-            </Pressable>
-          );
-        })}
-      </View>
+    <View style={cardStyle}>
+      {/* Wide, the kinds are picked at the left, with what each is for. */}
+      {!wide && (
+        <View
+          style={styles.kinds}
+          accessibilityRole="radiogroup"
+          accessibilityLabel="Not türü"
+        >
+          {KINDS.map((option) => {
+            const on = option.value === kind;
+            return (
+              <Pressable
+                key={option.value}
+                accessibilityRole="radio"
+                accessibilityState={{ selected: on }}
+                accessibilityLabel={option.label}
+                onPress={() => setKind(option.value)}
+                style={[
+                  styles.kind,
+                  {
+                    backgroundColor: on ? c.highlightMark : c.background,
+                    borderColor: on ? c.highlightMark : c.border,
+                  },
+                ]}
+              >
+                <Ionicons
+                  name={option.icon}
+                  size={20}
+                  color={on ? c.onPrimary : c.textSecondary}
+                />
+                <Text
+                  variant="caption"
+                  colorValue={on ? c.onPrimary : c.text}
+                  style={styles.semibold}
+                >
+                  {option.label}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </View>
+      )}
 
       <View style={fieldStyle("body")}>
         <TextInput
@@ -221,16 +530,33 @@ function Composer({ asset }: { asset: AssetDetail }) {
           multiline
           maxLength={CONTRIBUTION_TEXT_MAX + 200}
           editable={!sending}
-          style={[styles.input, styles.multiline, typed, noOutline]}
+          style={[
+            styles.input,
+            styles.multiline,
+            wide && styles.multilineWide,
+            typed,
+            noOutline,
+          ]}
         />
-        <Text variant="caption" color={chars > CONTRIBUTION_TEXT_MAX ? "warning" : "textSecondary"} accessibilityLiveRegion="polite" style={styles.count}>
-          {chars < CONTRIBUTION_TEXT_MIN ? `en az ${CONTRIBUTION_TEXT_MIN} karakter · ${chars}` : `${chars} / ${CONTRIBUTION_TEXT_MAX}`}
+        <Text
+          variant="caption"
+          color={chars > CONTRIBUTION_TEXT_MAX ? "warning" : "textSecondary"}
+          accessibilityLiveRegion="polite"
+          style={styles.count}
+        >
+          {chars < CONTRIBUTION_TEXT_MIN
+            ? `en az ${CONTRIBUTION_TEXT_MIN} karakter · ${chars}`
+            : `${chars} / ${CONTRIBUTION_TEXT_MAX}`}
         </Text>
       </View>
 
       {user && (
         <View style={styles.signedAs}>
-          <Ionicons name="person-circle-outline" size={18} color={c.textSecondary} />
+          <Ionicons
+            name="person-circle-outline"
+            size={18}
+            color={c.textSecondary}
+          />
           <Text variant="caption" color="textSecondary">
             {`${user.nickname} olarak gönderilecek`}
           </Text>
@@ -246,11 +572,26 @@ function Composer({ asset }: { asset: AssetDetail }) {
         </View>
       )}
 
-      <PrimaryButton label={sending ? "Gönderiliyor…" : "Notu gönder"} icon="send" onPress={submit} disabled={!ready || sending || user === undefined} busy={sending} />
+      <PrimaryButton
+        label={sending ? "Gönderiliyor…" : "Notu gönder"}
+        icon="send"
+        onPress={submit}
+        disabled={!ready || sending || user === undefined}
+        busy={sending}
+      />
 
       <View style={styles.moderation}>
-        <Ionicons name="shield-checkmark-outline" size={16} color={c.textSecondary} style={styles.moderationIcon} />
-        <Text variant="caption" color="textSecondary" style={styles.moderationText}>
+        <Ionicons
+          name="shield-checkmark-outline"
+          size={16}
+          color={c.textSecondary}
+          style={styles.moderationIcon}
+        />
+        <Text
+          variant="caption"
+          color="textSecondary"
+          style={styles.moderationText}
+        >
           Notlar moderatör onayından sonra görünür.
         </Text>
       </View>
@@ -258,7 +599,19 @@ function Composer({ asset }: { asset: AssetDetail }) {
   );
 }
 
-function PrimaryButton({ label, icon, onPress, disabled = false, busy = false }: { label: string; icon: IconName; onPress: () => void; disabled?: boolean; busy?: boolean }) {
+function PrimaryButton({
+  label,
+  icon,
+  onPress,
+  disabled = false,
+  busy = false,
+}: {
+  label: string;
+  icon: IconName;
+  onPress: () => void;
+  disabled?: boolean;
+  busy?: boolean;
+}) {
   const { colors: c } = useTheme();
   return (
     <Pressable
@@ -266,9 +619,18 @@ function PrimaryButton({ label, icon, onPress, disabled = false, busy = false }:
       accessibilityState={{ disabled, busy }}
       disabled={disabled}
       onPress={onPress}
-      style={({ pressed }) => [styles.primary, { backgroundColor: c.highlightMark }, disabled && styles.dimmed, pressed && styles.pressed]}
+      style={({ pressed }) => [
+        styles.primary,
+        { backgroundColor: c.highlightMark },
+        disabled && styles.dimmed,
+        pressed && styles.pressed,
+      ]}
     >
-      {busy ? <ActivityIndicator color={c.onPrimary} size="small" /> : <Ionicons name={icon} size={18} color={c.onPrimary} />}
+      {busy ? (
+        <ActivityIndicator color={c.onPrimary} size="small" />
+      ) : (
+        <Ionicons name={icon} size={18} color={c.onPrimary} />
+      )}
       <Text variant="label" colorValue={c.onPrimary} style={styles.semibold}>
         {label}
       </Text>
@@ -280,7 +642,10 @@ function PrimaryButton({ label, icon, onPress, disabled = false, busy = false }:
 function ApprovedNotes({ id }: { id: string }) {
   const { colors: c } = useTheme();
   const pulse = usePulse(id);
-  const items: PulseItem[] = pulse.status === "success" && pulse.data ? pulse.data.items.filter((item) => item.origin === "community") : [];
+  const items: PulseItem[] =
+    pulse.status === "success" && pulse.data
+      ? pulse.data.items.filter((item) => item.origin === "community")
+      : [];
   if (items.length === 0) return null;
   return (
     <View style={styles.approved}>
@@ -288,10 +653,18 @@ function ApprovedNotes({ id }: { id: string }) {
         ZİYARETÇİLERİN NOTLARI
       </Text>
       {items.map((item) => (
-        <View key={item.id} style={[styles.approvedItem, { backgroundColor: c.surface, borderColor: c.border }]}>
+        <View
+          key={item.id}
+          style={[
+            styles.approvedItem,
+            { backgroundColor: c.surface, borderColor: c.border },
+          ]}
+        >
           <Text>{item.text}</Text>
           <Text variant="caption" color="textSecondary">
-            {[item.author, item.date && formatDate(item.date)].filter(Boolean).join(" · ")}
+            {[item.author, item.date && formatDate(item.date)]
+              .filter(Boolean)
+              .join(" · ")}
           </Text>
         </View>
       ))}
@@ -344,6 +717,63 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     // The card rises over the photo's lower edge.
     marginTop: -spacing.md,
+  },
+  wideColumn: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.xxl,
+    width: "100%",
+    alignSelf: "center",
+    paddingTop: spacing.sm,
+  },
+  wideMain: {
+    flex: 1,
+    minWidth: 0,
+    gap: spacing.xl,
+  },
+  aside: {
+    width: ASIDE,
+    gap: spacing.lg,
+    position: "sticky" as "relative",
+    top: spacing.lg,
+  },
+  asideHero: {
+    height: 300,
+    borderRadius: 28,
+  },
+  asideCard: {
+    gap: spacing.xxs,
+    padding: spacing.sm,
+    borderRadius: 28,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
+  asideHead: {
+    paddingHorizontal: spacing.sm,
+    paddingTop: spacing.xs,
+    paddingBottom: spacing.xs,
+  },
+  asideKind: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: spacing.sm,
+    borderRadius: 20,
+    borderWidth: 1,
+  },
+  asideIcon: {
+    width: 44,
+    height: 44,
+    borderRadius: 14,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  cardWide: {
+    gap: spacing.lg,
+    padding: spacing.xl,
+    borderRadius: 28,
+  },
+  multilineWide: {
+    minHeight: 240,
   },
   card: {
     gap: spacing.md,

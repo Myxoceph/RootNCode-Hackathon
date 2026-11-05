@@ -1,40 +1,87 @@
+import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
-import { spacing, Text } from "@vagabonds/ui";
+import { spacing, Text, useTheme } from "@vagabonds/ui";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Animated, BackHandler, Platform, StyleSheet, View } from "react-native";
+import {
+  Animated,
+  BackHandler,
+  Easing,
+  Platform,
+  Pressable,
+  StyleSheet,
+  useWindowDimensions,
+  View,
+} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { CityAssetCards } from "@/components/city-asset-cards";
+import {
+  CityAssetCards,
+  CityAssetList,
+  LIST_LOOKS,
+} from "@/components/city-asset-cards";
 import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapCityButtons } from "@/components/map-city-buttons";
-import { MapSearch } from "@/components/map-search";
+import { inCity, MapSearch } from "@/components/map-search";
 import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
 import { MobileOnlyNotice } from "@/components/mobile-only-notice";
 import { SealScanDemo } from "@/components/seal-scan-demo";
-import { CITY_LANDMARKS, communityAvailable, useCities, useCityMapAssets, useCommunity, useRelationsOf } from "@/data";
+import { WEB_NAV_SPACE } from "@/components/web-nav-bar";
+import {
+  CITY_LANDMARKS,
+  communityAvailable,
+  useCities,
+  useCityMapAssets,
+  useCommunity,
+  useRelationsOf,
+} from "@/data";
 import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useMapTour } from "@/lib/map-tour";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { relatedPlacesOf } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { areaAround, assetCategory, cityLandmark, MapLibreMap, mapTiers, spreadPlaces, useMapStatusBar, useMapTheme, type MapCity, type MapPin, type MapProvince, type MapProvinces, type MapSpots } from "@/map";
+import {
+  areaAround,
+  assetCategory,
+  cityLandmark,
+  MapLibreMap,
+  mapTiers,
+  spreadPlaces,
+  useMapStatusBar,
+  useMapTheme,
+  type MapCity,
+  type MapPin,
+  type MapProvince,
+  type MapProvinces,
+  type MapSpots,
+} from "@/map";
 
 /** Room kept free for the search bar when framing Turkey. */
 const HEADER_SPACE = 72;
 /** Room kept free for the search bar over a city and the chosen asset's buttons under it, and for its cards. */
 const CITY_TOP_SPACE = 136;
 const CITY_CARDS_SPACE = 112;
+/**
+ * A wide web page lists a city's assets in a panel at the left of the map, under the search and the
+ * chosen asset's buttons, all three in one column this wide. The search stays where it is from
+ * Turkey to a city; the panel floats as the site's bar does, inset from the page's edges.
+ */
+const SIDE_PANEL = 400;
+const SIDE_EDGE = spacing.md;
+const SIDE_FROM = 900;
 const NO_PINS: MapPin[] = [];
 const UNLOCK_AFTER_RETURN_MS = 450;
 /** Longer than the map's unlocking scene with its fog: its controls come back even if the scene never reports its end. */
 const SCENE_LIMIT_MS = 10500;
 
 /** Squared distance in degrees: enough to order a city's assets outward from its landmark. */
-function nearness(from: { lat: number; lng: number }, to: { lat: number; lng: number }): number {
+function nearness(
+  from: { lat: number; lng: number },
+  to: { lat: number; lng: number },
+): number {
   return (from.lat - to.lat) ** 2 + (from.lng - to.lng) ** 2;
 }
 
@@ -54,7 +101,20 @@ export default function MapScreen() {
   useMapStatusBar();
   // The tab bar floats over the map: the cards and the framing keep clear of it.
   const tabBarHeight = useBottomTabBarHeight();
-  const insets = useSafeAreaInsets();
+  // On the web the site's bar floats over the top of the map: what sits at the top keeps under it.
+  const safe = useSafeAreaInsets();
+  const insets =
+    Platform.OS === "web"
+      ? { ...safe, top: safe.top + WEB_NAV_SPACE - spacing.sm }
+      : safe;
+  const { width: screenWidth } = useWindowDimensions();
+  const side = Platform.OS === "web" && screenWidth >= SIDE_FROM;
+  /** Where the search (and the chosen asset's buttons) end: the side panel's list starts under them. */
+  const [searchBottom, setSearchBottom] = useState(0);
+  // The visitor may fold the list away for more map; it stays folded from city to city.
+  const [listOpen, setListOpen] = useState(true);
+  const [listIn] = useState(() => new Animated.Value(0));
+  const listLook = LIST_LOOKS[useTheme().scheme];
   const reduceMotion = useReducedMotion();
   const router = useRouter();
   const allUnlocked = useUnlockedAssets();
@@ -77,19 +137,38 @@ export default function MapScreen() {
   /** Where the tour's bubble points, as the map reports it. */
   const [tourSpots, setTourSpots] = useState<MapSpots | null>(null);
   // "/map?city=bursa" opens a city straight away: a shareable link on the web, and the Ana Sayfa's cities (`at` makes the same city open again).
-  const { city: cityParam, at: cityAskedAt } = useLocalSearchParams<{ city?: string; at?: string }>();
+  const { city: cityParam, at: cityAskedAt } = useLocalSearchParams<{
+    city?: string;
+    at?: string;
+  }>();
 
-  const withAssets = cities.status === "success" ? cities.data.filter((city) => city.assetCount > 0) : [];
-  const selectedCity = withAssets.find((city) => city.plate === selectedPlate) ?? null;
+  const withAssets =
+    cities.status === "success"
+      ? cities.data.filter((city) => city.assetCount > 0)
+      : [];
+  const selectedCity =
+    withAssets.find((city) => city.plate === selectedPlate) ?? null;
   const cityAssets = useCityMapAssets(selectedCity?.code ?? null);
   // Only the chosen city's answer counts; a failed request still opens the city, without assets.
-  const cityAnswer = cityAssets.status === "success" && cityAssets.data?.city === selectedCity?.code ? cityAssets.data : null;
+  const cityAnswer =
+    cityAssets.status === "success" &&
+    cityAssets.data?.city === selectedCity?.code
+      ? cityAssets.data
+      : null;
   const cityReady = cityAnswer !== null || cityAssets.status === "error";
 
   const highlighted: MapProvince[] = withAssets.flatMap((city) =>
-    city.plate === null ? [] : [{ plate: city.plate, name: city.label, rank: city.assetCount }],
+    city.plate === null
+      ? []
+      : [{ plate: city.plate, name: city.label, rank: city.assetCount }],
   );
-  const located = useMemo(() => (cityAnswer?.located ?? []).flatMap((asset) => (asset.coordinates ? [{ asset, at: asset.coordinates }] : [])), [cityAnswer]);
+  const located = useMemo(
+    () =>
+      (cityAnswer?.located ?? []).flatMap((asset) =>
+        asset.coordinates ? [{ asset, at: asset.coordinates }] : [],
+      ),
+    [cityAnswer],
+  );
   // A complex stands for its buildings: a building whose complex is on the map is not marked on its own,
   // and the complex is as well known as its best-known building.
   const { places, buildingsOf, prominenceOf } = useMemo(() => {
@@ -97,40 +176,85 @@ export default function MapScreen() {
     const counts = new Map<string, number>();
     const prominence = new Map<string, number>();
     for (const { asset } of located) {
-      const place = asset.parentId && onMap.has(asset.parentId) ? asset.parentId : asset.id;
+      const place =
+        asset.parentId && onMap.has(asset.parentId) ? asset.parentId : asset.id;
       if (place !== asset.id) counts.set(place, (counts.get(place) ?? 0) + 1);
-      prominence.set(place, Math.max(prominence.get(place) ?? 0, asset.prominence));
+      prominence.set(
+        place,
+        Math.max(prominence.get(place) ?? 0, asset.prominence),
+      );
     }
-    return { places: located.filter(({ asset }) => !(asset.parentId && onMap.has(asset.parentId))), buildingsOf: counts, prominenceOf: prominence };
+    return {
+      places: located.filter(
+        ({ asset }) => !(asset.parentId && onMap.has(asset.parentId)),
+      ),
+      buildingsOf: counts,
+      prominenceOf: prominence,
+    };
   }, [located]);
   // Whether an unlocked place has anything related to it, known before its scene ends.
-  const openedPlaces = useMemo(() => places.filter(({ asset }) => allUnlocked.has(asset.id)).map(({ asset }) => asset.id), [places, allUnlocked]);
+  const openedPlaces = useMemo(
+    () =>
+      places
+        .filter(({ asset }) => allUnlocked.has(asset.id))
+        .map(({ asset }) => asset.id),
+    [places, allUnlocked],
+  );
   const relations = useRelationsOf(openedPlaces);
-  const placeIds = useMemo(() => new Set(places.map(({ asset }) => asset.id)), [places]);
+  const placeIds = useMemo(
+    () => new Set(places.map(({ asset }) => asset.id)),
+    [places],
+  );
   // The city opens on its best-known asset and the streets around it, not on all of it at once;
   // a landmark that is a building of a complex opens on the complex.
-  const landmarkId = selectedCity ? CITY_LANDMARKS[selectedCity.code] : undefined;
-  const landmarkParent = located.find(({ asset }) => asset.id === landmarkId)?.asset.parentId;
+  const landmarkId = selectedCity
+    ? CITY_LANDMARKS[selectedCity.code]
+    : undefined;
+  const landmarkParent = located.find(({ asset }) => asset.id === landmarkId)
+    ?.asset.parentId;
   const landmark = selectedCity
     ? cityLandmark(
         places.map(({ asset, at }) => ({ id: asset.id, ...at })),
-        landmarkParent && buildingsOf.has(landmarkParent) ? landmarkParent : landmarkId,
+        landmarkParent && buildingsOf.has(landmarkParent)
+          ? landmarkParent
+          : landmarkId,
       )
     : null;
   // The cards start at the landmark and walk outwards from it.
   const cards = useMemo(
-    () => (landmark ? [...places].sort((a, b) => nearness(a.at, landmark) - nearness(b.at, landmark)) : places).map(({ asset }) => asset),
+    () =>
+      (landmark
+        ? [...places].sort(
+            (a, b) => nearness(a.at, landmark) - nearness(b.at, landmark),
+          )
+        : places
+      ).map(({ asset }) => asset),
     [places, landmark],
   );
   // Places of their own on one spot (often one neighbourhood centre for several assets) are drawn
   // a little apart; the cards, the camera and the distances keep the real points.
   const drawnAt = useMemo(
-    () => spreadPlaces(places.map(({ asset, at }) => ({ id: asset.id, lat: at.lat, lng: at.lng, approximate: at.approximate }))),
+    () =>
+      spreadPlaces(
+        places.map(({ asset, at }) => ({
+          id: asset.id,
+          lat: at.lat,
+          lng: at.lng,
+          approximate: at.approximate,
+        })),
+      ),
     [places],
   );
   // Zooming out, the least known places go first; the landmark stays to the last.
   const tiers = useMemo(
-    () => mapTiers(places.map(({ asset }) => ({ id: asset.id, prominence: prominenceOf.get(asset.id) ?? 0 })), landmark?.id),
+    () =>
+      mapTiers(
+        places.map(({ asset }) => ({
+          id: asset.id,
+          prominence: prominenceOf.get(asset.id) ?? 0,
+        })),
+        landmark?.id,
+      ),
     [places, prominenceOf, landmark?.id],
   );
   // The city goes to the map once its assets are in, so the camera flies only once.
@@ -147,14 +271,24 @@ export default function MapScreen() {
             landmark: asset.id === landmark?.id,
             tier: tiers.get(asset.id) ?? 0,
             unlocked: unlocked.has(asset.id) || asset.id === tourUnlock,
-            relatedTo: relatedPlacesOf(relations.byId[asset.id] ?? [], asset.id, placeIds),
+            relatedTo: relatedPlacesOf(
+              relations.byId[asset.id] ?? [],
+              asset.id,
+              placeIds,
+            ),
           })),
           focus: landmark ? areaAround(landmark) : null,
         }
       : null;
   // A scene is due for an asset of the open city that has just unlocked. The search, buttons and cards
   // stay out of its way from the moment the visitor is back until it ends; the tab bar stays.
-  const sceneDue = !reduceMotion && selectedPlate !== null && landedPlate === selectedPlate && places.some(({ asset }) => allUnlocked.has(asset.id) && !unlocked.has(asset.id));
+  const sceneDue =
+    !reduceMotion &&
+    selectedPlate !== null &&
+    landedPlate === selectedPlate &&
+    places.some(
+      ({ asset }) => allUnlocked.has(asset.id) && !unlocked.has(asset.id),
+    );
   useFocusEffect(
     useCallback(() => {
       const timer = setTimeout(() => {
@@ -171,10 +305,17 @@ export default function MapScreen() {
   }, [sceneRunning]);
   const controlsHidden = sceneDue || sceneRunning;
   // What the map shows out of the fog, the tour's example too: the cards say the same.
-  const shownOpen = useMemo(() => (tourUnlock ? new Set([...unlocked, tourUnlock]) : unlocked), [unlocked, tourUnlock]);
+  const shownOpen = useMemo(
+    () => (tourUnlock ? new Set([...unlocked, tourUnlock]) : unlocked),
+    [unlocked, tourUnlock],
+  );
   const controls = useRef(new Animated.Value(1)).current;
   useEffect(() => {
-    Animated.timing(controls, { toValue: controlsHidden ? 0 : 1, duration: 220, useNativeDriver: true }).start();
+    Animated.timing(controls, {
+      toValue: controlsHidden ? 0 : 1,
+      duration: 220,
+      useNativeDriver: true,
+    }).start();
   }, [controlsHidden, controls]);
 
   // Typed as the map's own props, so a misnamed field fails the typecheck.
@@ -182,7 +323,10 @@ export default function MapScreen() {
   const mapKey = JSON.stringify(mapView);
   // A new object only when what the map shows changes; the fog rises once either way.
   const provinces = useMemo<MapProvinces>(
-    () => ({ ...(JSON.parse(mapKey) as Omit<MapProvinces, "reveal">), reveal: !reduceMotion }),
+    () => ({
+      ...(JSON.parse(mapKey) as Omit<MapProvinces, "reveal">),
+      reveal: !reduceMotion,
+    }),
     [mapKey, reduceMotion],
   );
 
@@ -190,7 +334,9 @@ export default function MapScreen() {
   const openingId = landmark?.id ?? null;
   useEffect(() => setChosenAsset(openingId), [openingId]);
 
-  const cityFromParam = cityParam ? withAssets.find((city) => city.code === cityParam)?.plate : undefined;
+  const cityFromParam = cityParam
+    ? withAssets.find((city) => city.code === cityParam)?.plate
+    : undefined;
   useEffect(() => {
     if (cityFromParam != null) setSelectedPlate(cityFromParam);
   }, [cityFromParam, cityAskedAt]);
@@ -205,7 +351,10 @@ export default function MapScreen() {
 
   /** The place on the map that stands for an asset: itself, or the complex it is a building of. */
   function placeOf(asset: AssetSummary): string | null {
-    return cards.find((card) => card.id === asset.id || card.id === asset.parentId)?.id ?? null;
+    return (
+      cards.find((card) => card.id === asset.id || card.id === asset.parentId)
+        ?.id ?? null
+    );
   }
 
   /**
@@ -214,7 +363,10 @@ export default function MapScreen() {
    */
   function unlockAsset(id: string) {
     if (tour.onUnlock(id)) return;
-    if (Platform.OS === "web") setMobileOnly(located.find(({ asset }) => asset.id === id)?.asset.name ?? "");
+    if (Platform.OS === "web")
+      setMobileOnly(
+        located.find(({ asset }) => asset.id === id)?.asset.name ?? "",
+      );
     else router.push({ pathname: "/visit-seal", params: { asset: id } });
   }
 
@@ -235,7 +387,8 @@ export default function MapScreen() {
    * One with no place on the map opens its card.
    */
   function pickAsset(asset: AssetSummary) {
-    const plate = withAssets.find((city) => city.code === asset.city.code)?.plate ?? null;
+    const plate =
+      withAssets.find((city) => city.code === asset.city.code)?.plate ?? null;
     if (!asset.coordinates || plate === null) return openAssetCard(asset);
     if (plate === selectedPlate) {
       const place = placeOf(asset);
@@ -290,25 +443,58 @@ export default function MapScreen() {
   const chosenUnlocked = chosenAsset !== null && unlocked.has(chosenAsset);
   const firstLocked = cards.find((card) => !unlocked.has(card.id))?.id ?? null;
   useEffect(() => {
-    if (tour.step === "choose" && chosenUnlocked && firstLocked) setChosenAsset(firstLocked);
+    if (tour.step === "choose" && chosenUnlocked && firstLocked)
+      setChosenAsset(firstLocked);
   }, [tour.step, chosenUnlocked, firstLocked]);
 
   // Android's back button leaves the city before it leaves the screen.
   useEffect(() => {
     // Only Android has one; the web warns that BackHandler is not supported.
     if (selectedPlate === null || Platform.OS !== "android") return;
-    const subscription = BackHandler.addEventListener("hardwareBackPress", () => {
-      setSelectedPlate(null);
-      return true;
-    });
+    const subscription = BackHandler.addEventListener(
+      "hardwareBackPress",
+      () => {
+        setSelectedPlate(null);
+        return true;
+      },
+    );
     return () => subscription.remove();
   }, [selectedPlate]);
 
+  // The side panel slides in from the left once the city's cards are there, and out when folded away.
+  const panelShown =
+    side &&
+    selectedCity !== null &&
+    listOpen &&
+    (landedPlate === selectedPlate || mapError !== null);
+  useEffect(() => {
+    if (reduceMotion) listIn.setValue(panelShown ? 1 : 0);
+    else
+      Animated.timing(listIn, {
+        toValue: panelShown ? 1 : 0,
+        duration: 320,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: false,
+      }).start();
+  }, [panelShown, reduceMotion, listIn]);
+  // The same function from render to render: the list's rows are drawn again only when their own asset changes.
+  const listSelect = useRef<(id: string) => void>(() => {});
+  listSelect.current = (id) => {
+    chooseAsset(id);
+    tour.onAssetTapped(!unlocked.has(id));
+  };
+  const onListSelect = useCallback((id: string) => listSelect.current(id), []);
+
   // The asset chosen in the open city, for the buttons under the search bar.
-  const chosen = selectedCity ? (located.find(({ asset }) => asset.id === chosenAsset)?.asset ?? null) : null;
+  const chosen = selectedCity
+    ? (located.find(({ asset }) => asset.id === chosenAsset)?.asset ?? null)
+    : null;
   // The cards come in once the camera has landed (or at once without a map: they are its content in
   // words), and the chosen asset's buttons with them.
-  const cardsShown = selectedCity !== null && cards.length > 0 && (landedPlate === selectedPlate || mapError !== null);
+  const cardsShown =
+    selectedCity !== null &&
+    cards.length > 0 &&
+    (landedPlate === selectedPlate || mapError !== null);
 
   // Only what went wrong is said over the map; the rest is in the cards and the search.
   const notice = mapError
@@ -318,14 +504,42 @@ export default function MapScreen() {
       : selectedCity && cityAssets.status === "error"
         ? { message: cityAssets.error.message, onRetry: cityAssets.retry }
         : null;
-  const fitPadding = selectedCity
-    ? { top: insets.top + CITY_TOP_SPACE, right: spacing.lg, bottom: tabBarHeight + CITY_CARDS_SPACE, left: spacing.lg }
-    : { top: insets.top + HEADER_SPACE, right: spacing.lg, bottom: tabBarHeight + spacing.lg, left: spacing.lg };
+  const fitPadding = side
+    ? selectedCity
+      ? {
+          top: insets.top + spacing.lg,
+          right: spacing.xl,
+          bottom: spacing.xl,
+          left: (listOpen ? SIDE_PANEL : 0) + spacing.xl,
+        }
+      : {
+          top: insets.top + HEADER_SPACE,
+          right: spacing.lg,
+          bottom: tabBarHeight + spacing.lg,
+          left: spacing.lg,
+        }
+    : selectedCity
+      ? {
+          top: insets.top + CITY_TOP_SPACE,
+          right: spacing.lg,
+          bottom: tabBarHeight + CITY_CARDS_SPACE,
+          left: spacing.lg,
+        }
+      : {
+          top: insets.top + HEADER_SPACE,
+          right: spacing.lg,
+          bottom: tabBarHeight + spacing.lg,
+          left: spacing.lg,
+        };
 
   return (
     <View style={[styles.screen, { backgroundColor: night.mapBackground }]}>
       <Head>
-        <title>{selectedCity ? `${selectedCity.label} · Harita · Vagabonds` : "Harita · Vagabonds"}</title>
+        <title>
+          {selectedCity
+            ? `${selectedCity.label} · Harita · Vagabonds`
+            : "Harita · Vagabonds"}
+        </title>
       </Head>
       {/* The map has no heading to see; screen readers start here. */}
       <Text headingLevel={1} style={styles.unseen}>
@@ -343,14 +557,30 @@ export default function MapScreen() {
         onLeaveCity={backToTurkey}
         onCityLanded={onCityLanded}
         onUnlock={unlockAsset}
-        onInspect={(id) => router.push({ pathname: "/monuments/[id]", params: { id } })}
-        onOpenRelatedList={(id) => router.push({ pathname: "/related", params: { asset: id, name: located.find(({ asset }) => asset.id === id)?.asset.name } })}
-        onLeaveNote={(id) => router.push({ pathname: "/note", params: { asset: id } })}
+        onInspect={(id) =>
+          router.push({ pathname: "/monuments/[id]", params: { id } })
+        }
+        onOpenRelatedList={(id) =>
+          router.push({
+            pathname: "/related",
+            params: {
+              asset: id,
+              name: located.find(({ asset }) => asset.id === id)?.asset.name,
+            },
+          })
+        }
+        onLeaveNote={(id) =>
+          router.push({ pathname: "/note", params: { asset: id } })
+        }
         onSceneEnd={() => {
           setSceneRunning(false);
           tour.onSceneEnd();
         }}
-        watchSpots={tour.step === "city" || tour.step === "choose" || tour.step === "unlock"}
+        watchSpots={
+          tour.step === "city" ||
+          tour.step === "choose" ||
+          tour.step === "unlock"
+        }
         onSpots={setTourSpots}
         offerUnlock={tour.step === "unlock"}
         onError={setMapError}
@@ -363,11 +593,86 @@ export default function MapScreen() {
         style={[StyleSheet.absoluteFill, { opacity: controls }]}
         pointerEvents={controlsHidden ? "none" : "box-none"}
         accessibilityElementsHidden={controlsHidden}
-        importantForAccessibility={controlsHidden ? "no-hide-descendants" : "auto"}
+        importantForAccessibility={
+          controlsHidden ? "no-hide-descendants" : "auto"
+        }
       >
+        {side && selectedCity && (
+          <Animated.View
+            pointerEvents={listOpen ? "auto" : "none"}
+            aria-hidden={!listOpen}
+            style={[
+              styles.side,
+              {
+                backgroundColor: listLook.panel,
+                borderColor: listLook.panelEdge,
+                boxShadow: listLook.shadow,
+              },
+              {
+                top: searchBottom + spacing.sm,
+                transform: [
+                  {
+                    translateX: listIn.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [-SIDE_PANEL - SIDE_EDGE, 0],
+                    }),
+                  },
+                ],
+              },
+            ]}
+          >
+            {cardsShown && (
+              <CityAssetList
+                title={`${inCity(selectedCity.label)}ki eserler`}
+                assets={cards}
+                buildingsOf={buildingsOf}
+                selectedId={chosenAsset}
+                unlocked={shownOpen}
+                onSelect={onListSelect}
+                onHide={() => setListOpen(false)}
+              />
+            )}
+          </Animated.View>
+        )}
+        {side && selectedCity && cardsShown && !listOpen && !tour.step && (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={`${inCity(selectedCity.label)}ki eserleri göster, ${cards.length} eser`}
+            onPress={() => setListOpen(true)}
+            style={({
+              pressed,
+              hovered,
+            }: {
+              pressed: boolean;
+              hovered?: boolean;
+            }) => [
+              styles.showList,
+              { top: searchBottom + spacing.sm, left: SIDE_EDGE },
+              {
+                backgroundColor: listLook.panel,
+                borderColor: hovered ? listLook.edgeHover : listLook.panelEdge,
+                boxShadow: listLook.shadow,
+              },
+              pressed && { opacity: 0.85 },
+            ]}
+          >
+            <Ionicons name="list" size={18} color={listLook.text} />
+            <Text
+              variant="label"
+              colorValue={listLook.text}
+              style={styles.showListText}
+            >
+              {`${inCity(selectedCity.label)}ki eserler · ${cards.length}`}
+            </Text>
+            <Ionicons name="chevron-forward" size={16} color={listLook.text} />
+          </Pressable>
+        )}
         {/* First in reading order, as on the screen; the tour's step bar takes its place while it plays. */}
         {!tour.step && (
-          <View style={[StyleSheet.absoluteFill, styles.over]} pointerEvents="box-none">
+          <View
+            style={[StyleSheet.absoluteFill, styles.over]}
+            pointerEvents="box-none"
+          >
             <MapSearch
               city={selectedCity}
               cities={withAssets}
@@ -384,11 +689,19 @@ export default function MapScreen() {
                   }}
                 />
               }
-              below={chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null}
+              below={
+                chosen && cardsShown ? <MapAssetActions asset={chosen} /> : null
+              }
+              column={
+                side
+                  ? { left: SIDE_EDGE, width: SIDE_PANEL - SIDE_EDGE }
+                  : undefined
+              }
+              onBottom={setSearchBottom}
             />
           </View>
         )}
-        {cardsShown && (
+        {cardsShown && !side && (
           <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
             <CityAssetCards
               assets={cards}
@@ -404,11 +717,26 @@ export default function MapScreen() {
             />
           </View>
         )}
-        {!selectedCity && <MapCityButtons cities={withAssets} bottom={tabBarHeight + spacing.sm} onOpen={openCity} />}
+        {!selectedCity && (
+          <MapCityButtons
+            cities={withAssets}
+            bottom={tabBarHeight + spacing.sm}
+            onOpen={openCity}
+          />
+        )}
       </Animated.View>
       {tour.scanning && <SealScanDemo onDone={tour.onScanned} />}
       <MobileOnlyNotice name={mobileOnly} onClose={() => setMobileOnly(null)} />
-      {tour.step && <MapTourGuide step={tour.step} spots={tourSpots} top={insets.top} onNext={tour.next} onPrevious={tour.canGoBack ? tour.previous : null} onSkip={tour.skip} />}
+      {tour.step && (
+        <MapTourGuide
+          step={tour.step}
+          spots={tourSpots}
+          top={insets.top}
+          onNext={tour.next}
+          onPrevious={tour.canGoBack ? tour.previous : null}
+          onSkip={tour.skip}
+        />
+      )}
     </View>
   );
 }
@@ -429,6 +757,31 @@ const styles = StyleSheet.create({
   over: {
     zIndex: 2,
     elevation: 2,
+  },
+  /** The side panel of a wide web page: dark glass down the map's left edge. */
+  side: {
+    position: "absolute",
+    paddingTop: 14,
+    bottom: SIDE_EDGE,
+    left: SIDE_EDGE,
+    width: SIDE_PANEL - SIDE_EDGE,
+    overflow: "hidden",
+    borderRadius: 28,
+    borderWidth: 1,
+  },
+  /** The folded list's way back: a pill under the search. */
+  showList: {
+    position: "absolute",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+    height: 44,
+    paddingHorizontal: spacing.md,
+    borderRadius: 22,
+    borderWidth: 1,
+  },
+  showListText: {
+    fontFamily: "HankenGrotesk_600SemiBold",
   },
   cards: {
     position: "absolute",

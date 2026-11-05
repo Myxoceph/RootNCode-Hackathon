@@ -1,14 +1,46 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { SavedAnswerAbout, TransitItinerary, TransitLeg } from "@vagabonds/contracts";
-import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
+import type {
+  SavedAnswerAbout,
+  TransitItinerary,
+  TransitLeg,
+} from "@vagabonds/contracts";
+import {
+  fontFamily,
+  palette,
+  radius,
+  spacing,
+  Text,
+  touchTarget,
+  useTheme,
+} from "@vagabonds/ui";
 import { useRouter, type Href } from "expo-router";
-import { useEffect, useRef, useState, type ComponentProps, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ComponentProps,
+  type ReactNode,
+} from "react";
 import { Animated, Pressable, StyleSheet, View } from "react-native";
-import Svg, { Circle, Defs, Line, LinearGradient, Rect, Stop } from "react-native-svg";
+import Svg, {
+  Circle,
+  Defs,
+  Line,
+  LinearGradient,
+  Rect,
+  Stop,
+} from "react-native-svg";
 
 import { announce } from "@/lib/announce";
 import { inkFor } from "@/lib/route-ink";
-import { menuOf, removeRoute, routeKey, useSavedRoutes, type FoodAdvice, type TransitAdvice } from "@/lib/saved-routes";
+import {
+  menuOf,
+  removeRoute,
+  routeKey,
+  useSavedRoutes,
+  type FoodAdvice,
+  type TransitAdvice,
+} from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -17,33 +49,61 @@ type IconName = ComponentProps<typeof Ionicons>["name"];
 const MENU_DISHES = 2;
 const NOTCH = 22;
 
-const legIcons: Record<TransitLeg["mode"], IconName> = { walk: "walk-outline", bus: "bus-outline", tram: "train-outline" };
+const legIcons: Record<TransitLeg["mode"], IconName> = {
+  walk: "walk-outline",
+  bus: "bus-outline",
+  tram: "train-outline",
+};
 
 const durations = { half: "Yarım gün", "1": "1 gün", "2": "2 gün" } as const;
 
-const savedOn = (iso: string) => new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
+const savedOn = (iso: string) =>
+  new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
 
 type Advice = FoodAdvice | TransitAdvice;
 
-const adviceCard = (item: Advice, index: number) => (item.kind === "food" ? <FoodCard key={item.id} item={item} index={index} /> : <TransitCard key={item.id} item={item} index={index} />);
+const adviceCard = (item: Advice, index: number) =>
+  item.kind === "food" ? (
+    <FoodCard key={item.id} item={item} index={index} />
+  ) : (
+    <TransitCard key={item.id} item={item} index={index} />
+  );
 
 /** The answers under what they were asked about, newest first; the rest come last, as "Diğer". */
 function groupsOf<T extends Advice>(items: readonly T[]) {
-  const groups = new Map<string, { about: SavedAnswerAbout | null; items: T[] }>();
+  const groups = new Map<
+    string,
+    { about: SavedAnswerAbout | null; items: T[] }
+  >();
   for (const item of items) {
     const key = item.about?.key ?? "";
     const group = groups.get(key) ?? { about: item.about, items: [] };
     group.items.push(item);
     groups.set(key, group);
   }
-  return [...groups.values()].sort((a, b) => Number(a.about === null) - Number(b.about === null));
+  return [...groups.values()].sort(
+    (a, b) => Number(a.about === null) - Number(b.about === null),
+  );
 }
 
 /** What a group of answers is for: the route (with its length and day, as two plans can share a city) or the asset, and the way there. */
-function GroupHead({ about, alone, icon }: { about: SavedAnswerAbout | null; alone: boolean; icon: boolean }) {
+function GroupHead({
+  about,
+  alone,
+  icon,
+}: {
+  about: SavedAnswerAbout | null;
+  alone: boolean;
+  icon: boolean;
+}) {
   const { colors: c } = useTheme();
   const router = useRouter();
-  const trip = useSavedRoutes().find((route) => route.kind === "trip" && about?.kind === "route" && routeKey(route) === about.key);
+  const trip = useSavedRoutes().find(
+    (route) =>
+      route.kind === "trip" &&
+      about?.kind === "route" &&
+      routeKey(route) === about.key,
+  );
   if (!about) {
     if (alone) return null;
     return (
@@ -53,17 +113,37 @@ function GroupHead({ about, alone, icon }: { about: SavedAnswerAbout | null; alo
     );
   }
   const firstDay = trip?.kind === "trip" ? trip.trip.days[0]?.date : undefined;
-  const details = trip?.kind === "trip" ? [durations[trip.trip.duration], firstDay && savedOn(firstDay)].filter(Boolean).join(" · ") : null;
-  const href: Href | null = about.kind === "asset" ? { pathname: "/asset/[id]", params: { id: about.key } } : trip ? { pathname: "/profile/trip", params: { id: trip.id } } : null;
+  const details =
+    trip?.kind === "trip"
+      ? [durations[trip.trip.duration], firstDay && savedOn(firstDay)]
+          .filter(Boolean)
+          .join(" · ")
+      : null;
+  const href: Href | null =
+    about.kind === "asset"
+      ? { pathname: "/asset/[id]", params: { id: about.key } }
+      : trip
+        ? { pathname: "/profile/trip", params: { id: trip.id } }
+        : null;
   const words = (
     <>
-      {icon && <Ionicons name={about.kind === "route" ? "map" : "business"} size={18} color={c.highlightMark} style={styles.groupIcon} />}
+      {icon && (
+        <Ionicons
+          name={about.kind === "route" ? "map" : "business"}
+          size={18}
+          color={c.highlightMark}
+          style={styles.groupIcon}
+        />
+      )}
       <View style={styles.flex}>
         <Text variant="label" headingLevel={2}>
           {about.title}
         </Text>
         <Text variant="caption" color="textSecondary">
-          {details ?? (about.kind === "route" ? "Bu rota artık kayıtlı değil" : "Bu eser için")}
+          {details ??
+            (about.kind === "route"
+              ? "Bu rota artık kayıtlı değil"
+              : "Bu eser için")}
         </Text>
       </View>
     </>
@@ -82,15 +162,46 @@ function GroupHead({ about, alone, icon }: { about: SavedAnswerAbout | null; alo
   );
 }
 
-function Groups<T extends Advice>({ items, headIcon = true }: { items: readonly T[]; headIcon?: boolean }) {
+function Groups<T extends Advice>({
+  items,
+  headIcon = true,
+  grid = false,
+}: {
+  items: readonly T[];
+  headIcon?: boolean;
+  grid?: boolean;
+}) {
   const groups = groupsOf(items);
+  // A wide web page: several groups stand side by side, each a column of its own; one group lays
+  // its cards out two to a row instead.
+  const sideBySide = grid && groups.length > 1;
+  const inner = grid && !sideBySide;
   return (
-    <View style={styles.groups}>
+    <View style={sideBySide ? styles.grid : styles.groups}>
       {groups.map((group) => (
-        <View key={group.about?.key ?? "other"} style={styles.list}>
-          <GroupHead about={group.about} alone={groups.length === 1} icon={headIcon} />
-          <View accessibilityRole="list" style={styles.list}>
-            {group.items.map(adviceCard)}
+        <View
+          key={group.about?.key ?? "other"}
+          style={[styles.list, sideBySide && styles.gridCell]}
+        >
+          {/* Side by side, the heads take the same height, so the cards under them start level. */}
+          <View style={sideBySide ? styles.evenHead : undefined}>
+            <GroupHead
+              about={group.about}
+              alone={groups.length === 1}
+              icon={headIcon}
+            />
+          </View>
+          <View
+            accessibilityRole="list"
+            style={inner ? styles.grid : styles.list}
+          >
+            {inner
+              ? group.items.map((item, i) => (
+                  <View key={item.id} style={styles.gridCell}>
+                    {adviceCard(item, i)}
+                  </View>
+                ))
+              : group.items.map(adviceCard)}
           </View>
         </View>
       ))}
@@ -99,17 +210,36 @@ function Groups<T extends Advice>({ items, headIcon = true }: { items: readonly 
 }
 
 /** Kaydettiklerim · Yemek: the food Rehber suggested, under the route or asset it was for. */
-export function FoodAdviceList({ items }: { items: readonly FoodAdvice[] }) {
-  if (items.length === 0) return <Empty icon="restaurant-outline" title="Henüz yemek önerisi yok" text="Rehber'e ne yiyebileceğini sor; önerdikleri burada toplanır." />;
-  return <Groups items={items} headIcon={false} />;
+export function FoodAdviceList({
+  items,
+  grid = false,
+}: {
+  items: readonly FoodAdvice[];
+  grid?: boolean;
+}) {
+  if (items.length === 0)
+    return (
+      <Empty
+        icon="restaurant-outline"
+        title="Henüz yemek önerisi yok"
+        text="Rehber'e ne yiyebileceğini sor; önerdikleri burada toplanır."
+      />
+    );
+  return <Groups items={items} headIcon={false} grid={grid} />;
 }
 
 /** A trip's page: what Rehber suggested for this route, food first. Nothing shows until there is some. */
 export function RouteAdvice({ routeKey: key }: { routeKey: string }) {
   const saved = useSavedRoutes();
-  const items = saved.filter((route): route is Advice => (route.kind === "food" || route.kind === "transit") && route.about?.key === key);
+  const items = saved.filter(
+    (route): route is Advice =>
+      (route.kind === "food" || route.kind === "transit") &&
+      route.about?.key === key,
+  );
   if (items.length === 0) return null;
-  const inOrder = [...items].sort((a, b) => Number(a.kind === "transit") - Number(b.kind === "transit"));
+  const inOrder = [...items].sort(
+    (a, b) => Number(a.kind === "transit") - Number(b.kind === "transit"),
+  );
   return (
     <View style={styles.list}>
       <Text variant="overline" headingLevel={2} color="textSecondary">
@@ -133,17 +263,37 @@ function FoodCard({ item, index }: { item: FoodAdvice; index: number }) {
   const hidden = dishes.length - shown.length;
   const long = dishes.length === 0 && intro.length > 220;
   return (
-    <Ticket index={index} code={code} id={item.id} savedAt={item.savedAt} title={item.title} spoken="yemek önerisini" band={
-      <>
-        <BandTop label={code.toLocaleUpperCase("tr")} icon="restaurant" tag="Sofra" />
-        <Text headingLevel={3} colorValue={palette.white} style={styles.bandTitle} numberOfLines={3}>
-          {item.title}
-        </Text>
-      </>
-    }>
+    <Ticket
+      index={index}
+      code={code}
+      id={item.id}
+      savedAt={item.savedAt}
+      title={item.title}
+      spoken="yemek önerisini"
+      band={
+        <>
+          <BandTop
+            label={code.toLocaleUpperCase("tr")}
+            icon="restaurant"
+            tag="Sofra"
+          />
+          <Text
+            headingLevel={3}
+            colorValue={palette.white}
+            style={styles.bandTitle}
+            numberOfLines={3}
+          >
+            {item.title}
+          </Text>
+        </>
+      }
+    >
       <Asked question={item.question} />
       {intro.length > 0 && (
-        <Text color="textSecondary" numberOfLines={long && !open ? 4 : undefined}>
+        <Text
+          color="textSecondary"
+          numberOfLines={long && !open ? 4 : undefined}
+        >
           {intro}
         </Text>
       )}
@@ -151,22 +301,42 @@ function FoodCard({ item, index }: { item: FoodAdvice; index: number }) {
         <View accessibilityRole="list" style={styles.menu}>
           {shown.map((dish) => (
             <View key={dish.name} style={styles.dish}>
-              <View style={[styles.diamond, { backgroundColor: c.highlightMark }]} />
+              <View
+                style={[styles.diamond, { backgroundColor: c.highlightMark }]}
+              />
               <View style={styles.flex}>
                 <Text style={styles.dishName}>{dish.name}</Text>
-                {dish.text.length > 0 && <Text color="textSecondary">{dish.text}</Text>}
+                {dish.text.length > 0 && (
+                  <Text color="textSecondary">{dish.text}</Text>
+                )}
               </View>
             </View>
           ))}
         </View>
       )}
       {open && outro.length > 0 && <Text color="textSecondary">{outro}</Text>}
-      {(hidden > 0 || long || (outro.length > 0 && !open) || (open && dishes.length > MENU_DISHES)) && (
-        <Pressable accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={() => setOpen(!open)} style={styles.more}>
+      {(hidden > 0 ||
+        long ||
+        (outro.length > 0 && !open) ||
+        (open && dishes.length > MENU_DISHES)) && (
+        <Pressable
+          accessibilityRole="button"
+          accessibilityState={{ expanded: open }}
+          onPress={() => setOpen(!open)}
+          style={styles.more}
+        >
           <Text variant="label" color="highlight">
-            {open ? "Daralt" : hidden > 0 ? `${hidden} lezzet daha` : "Devamını oku"}
+            {open
+              ? "Daralt"
+              : hidden > 0
+                ? `${hidden} lezzet daha`
+                : "Devamını oku"}
           </Text>
-          <Ionicons name={open ? "chevron-up" : "chevron-down"} size={16} color={c.highlight} />
+          <Ionicons
+            name={open ? "chevron-up" : "chevron-down"}
+            size={16}
+            color={c.highlight}
+          />
         </Pressable>
       )}
     </Ticket>
@@ -174,9 +344,22 @@ function FoodCard({ item, index }: { item: FoodAdvice; index: number }) {
 }
 
 /** Kaydettiklerim · Ulaşım: the directions Rehber gave, under the route or asset they were for. */
-export function TransitAdviceList({ items }: { items: readonly TransitAdvice[] }) {
-  if (items.length === 0) return <Empty icon="bus-outline" title="Henüz ulaşım tarifi yok" text="Rehber'e bir esere toplu taşımayla nasıl gideceğini sor; tarifler burada toplanır." />;
-  return <Groups items={items} />;
+export function TransitAdviceList({
+  items,
+  grid = false,
+}: {
+  items: readonly TransitAdvice[];
+  grid?: boolean;
+}) {
+  if (items.length === 0)
+    return (
+      <Empty
+        icon="bus-outline"
+        title="Henüz ulaşım tarifi yok"
+        text="Rehber'e bir esere toplu taşımayla nasıl gideceğini sor; tarifler burada toplanır."
+      />
+    );
+  return <Groups items={items} grid={grid} />;
 }
 
 /**
@@ -189,34 +372,76 @@ function TransitCard({ item, index }: { item: TransitAdvice; index: number }) {
   const [way, setWay] = useState(0);
   const itinerary = itineraries[way] ?? itineraries[0];
   if (!itinerary) return null;
-  const transfers = itinerary.transfers > 0 ? `${itinerary.transfers} aktarma` : "Aktarmasız";
+  const transfers =
+    itinerary.transfers > 0 ? `${itinerary.transfers} aktarma` : "Aktarmasız";
   return (
-    <Ticket index={index} code={item.transit.city} id={item.id} savedAt={item.savedAt} title={item.title} spoken="ulaşım tarifini" band={
-      <>
-        <BandTop label={item.transit.city.toLocaleUpperCase("tr")} icon="bus" tag="Biniş kartı" />
-        <View accessible accessibilityRole="header" accessibilityLabel={`${from.name}, ${to.name} yönüne`} style={styles.journey}>
-          <Text colorValue={palette.white} style={[styles.journeyEnd, styles.flex]} numberOfLines={3}>
-            {from.name}
-          </Text>
-          <View style={styles.journeyWay} aria-hidden>
-            <View style={styles.journeyDash}>
-              <Svg height={2} width="100%">
-                <Line x1="0" y1="1" x2="100%" y2="1" stroke={palette.altin200} strokeOpacity={0.7} strokeWidth={2} strokeDasharray="3 4" />
-              </Svg>
+    <Ticket
+      index={index}
+      code={item.transit.city}
+      id={item.id}
+      savedAt={item.savedAt}
+      title={item.title}
+      spoken="ulaşım tarifini"
+      band={
+        <>
+          <BandTop
+            label={item.transit.city.toLocaleUpperCase("tr")}
+            icon="bus"
+            tag="Biniş kartı"
+          />
+          <View
+            accessible
+            accessibilityRole="header"
+            accessibilityLabel={`${from.name}, ${to.name} yönüne`}
+            style={styles.journey}
+          >
+            <Text
+              colorValue={palette.white}
+              style={[styles.journeyEnd, styles.flex]}
+              numberOfLines={3}
+            >
+              {from.name}
+            </Text>
+            <View style={styles.journeyWay} aria-hidden>
+              <View style={styles.journeyDash}>
+                <Svg height={2} width="100%">
+                  <Line
+                    x1="0"
+                    y1="1"
+                    x2="100%"
+                    y2="1"
+                    stroke={palette.altin200}
+                    strokeOpacity={0.7}
+                    strokeWidth={2}
+                    strokeDasharray="3 4"
+                  />
+                </Svg>
+              </View>
+              <Ionicons
+                name="arrow-forward"
+                size={16}
+                color={palette.altin200}
+              />
             </View>
-            <Ionicons name="arrow-forward" size={16} color={palette.altin200} />
+            <Text
+              colorValue={palette.white}
+              style={[styles.journeyEnd, styles.journeyTo, styles.flex]}
+              numberOfLines={3}
+            >
+              {to.name}
+            </Text>
           </View>
-          <Text colorValue={palette.white} style={[styles.journeyEnd, styles.journeyTo, styles.flex]} numberOfLines={3}>
-            {to.name}
-          </Text>
-        </View>
-        <View style={styles.chips}>
-          <Chip icon="time-outline" text={`${itinerary.durationMinutes} dk`} />
-          <Chip icon="swap-horizontal" text={transfers} />
-          <Chip icon="walk-outline" text={`${itinerary.walkMeters} m`} />
-        </View>
-      </>
-    }>
+          <View style={styles.chips}>
+            <Chip
+              icon="time-outline"
+              text={`${itinerary.durationMinutes} dk`}
+            />
+            <Chip icon="swap-horizontal" text={transfers} />
+            <Chip icon="walk-outline" text={`${itinerary.walkMeters} m`} />
+          </View>
+        </>
+      }
+    >
       <Asked question={item.question} />
       {itineraries.length > 1 && (
         <View accessibilityRole="tablist" style={styles.ways}>
@@ -227,9 +452,16 @@ function TransitCard({ item, index }: { item: TransitAdvice; index: number }) {
               accessibilityState={{ selected: i === way }}
               accessibilityLabel={`${i + 1}. yol, ${option.durationMinutes} dakika`}
               onPress={() => setWay(i)}
-              style={[styles.wayTab, { borderColor: i === way ? c.highlightMark : c.border }]}
+              style={[
+                styles.wayTab,
+                { borderColor: i === way ? c.highlightMark : c.border },
+              ]}
             >
-              <Text variant="caption" color={i === way ? "text" : "textSecondary"} style={styles.wayText}>
+              <Text
+                variant="caption"
+                color={i === way ? "text" : "textSecondary"}
+                style={styles.wayText}
+              >
                 {`${option.durationMinutes} dk`}
               </Text>
             </Pressable>
@@ -251,8 +483,12 @@ function TransitCard({ item, index }: { item: TransitAdvice; index: number }) {
 
 /** White on a dark line color, ink on a light one: colors come from the timetable. */
 function onColor(hex: string): string {
-  const [r = 0, g = 0, b = 0] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
-  return 0.299 * r + 0.587 * g + 0.114 * b > 150 ? palette.gece900 : palette.white;
+  const [r = 0, g = 0, b = 0] = [1, 3, 5].map((i) =>
+    parseInt(hex.slice(i, i + 2), 16),
+  );
+  return 0.299 * r + 0.587 * g + 0.114 * b > 150
+    ? palette.gece900
+    : palette.white;
 }
 
 /** One step of the way: its mode on the line down the side, the bus or tram's own badge, where from and to. */
@@ -262,24 +498,61 @@ function Leg({ leg, last }: { leg: TransitLeg; last: boolean }) {
   return (
     <View style={styles.leg}>
       <View style={styles.legRail} aria-hidden>
-        <View style={[styles.legNode, walking ? { borderColor: c.border, backgroundColor: c.surface } : { borderColor: c.highlightMark, backgroundColor: c.highlightMark }]}>
-          <Ionicons name={legIcons[leg.mode]} size={14} color={walking ? c.textSecondary : c.onPrimary} />
+        <View
+          style={[
+            styles.legNode,
+            walking
+              ? { borderColor: c.border, backgroundColor: c.surface }
+              : {
+                  borderColor: c.highlightMark,
+                  backgroundColor: c.highlightMark,
+                },
+          ]}
+        >
+          <Ionicons
+            name={legIcons[leg.mode]}
+            size={14}
+            color={walking ? c.textSecondary : c.onPrimary}
+          />
         </View>
-        {!last && <View style={[styles.legLine, { backgroundColor: walking ? c.border : c.highlightMark }]} />}
+        {!last && (
+          <View
+            style={[
+              styles.legLine,
+              { backgroundColor: walking ? c.border : c.highlightMark },
+            ]}
+          />
+        )}
       </View>
       <View style={[styles.flex, !last && styles.legBody]}>
         {leg.line ? (
           <>
             <View style={styles.legHead}>
-              <View style={[styles.badge, { backgroundColor: leg.line.color ?? c.surfaceRaised }]}>
-                <Text variant="caption" colorValue={leg.line.color ? onColor(leg.line.color) : c.text} style={styles.badgeText} numberOfLines={2}>
+              <View
+                style={[
+                  styles.badge,
+                  { backgroundColor: leg.line.color ?? c.surfaceRaised },
+                ]}
+              >
+                <Text
+                  variant="caption"
+                  colorValue={leg.line.color ? onColor(leg.line.color) : c.text}
+                  style={styles.badgeText}
+                  numberOfLines={2}
+                >
                   {leg.line.name}
                 </Text>
               </View>
             </View>
             <Text>{`${leg.from.name} → ${leg.to.name}`}</Text>
             <Text variant="caption" color="textSecondary">
-              {[`${leg.durationMinutes} dk`, leg.stopsBetween > 0 && `${leg.stopsBetween} durak`, leg.headsign && `${leg.headsign} yönü`].filter(Boolean).join(" · ")}
+              {[
+                `${leg.durationMinutes} dk`,
+                leg.stopsBetween > 0 && `${leg.stopsBetween} durak`,
+                leg.headsign && `${leg.headsign} yönü`,
+              ]
+                .filter(Boolean)
+                .join(" · ")}
             </Text>
           </>
         ) : (
@@ -290,7 +563,15 @@ function Leg({ leg, last }: { leg: TransitLeg; last: boolean }) {
   );
 }
 
-function BandTop({ label, icon, tag }: { label: string; icon: IconName; tag: string }) {
+function BandTop({
+  label,
+  icon,
+  tag,
+}: {
+  label: string;
+  icon: IconName;
+  tag: string;
+}) {
   return (
     <View style={styles.bandTop}>
       <Text colorValue={palette.altin200} style={styles.city}>
@@ -325,7 +606,25 @@ function Asked({ question }: { question: string }) {
 }
 
 /** The card Rotalar's tickets are made of: the city's ink with a compass rose, cut notches, then paper. It rises in after the one above. */
-function Ticket({ index, code, id, title, savedAt, spoken, band, children }: { index: number; code: string; id: string; title: string; savedAt: string; spoken: string; band: ReactNode; children: ReactNode }) {
+function Ticket({
+  index,
+  code,
+  id,
+  title,
+  savedAt,
+  spoken,
+  band,
+  children,
+}: {
+  index: number;
+  code: string;
+  id: string;
+  title: string;
+  savedAt: string;
+  spoken: string;
+  band: ReactNode;
+  children: ReactNode;
+}) {
   const { colors: c } = useTheme();
   const reduced = useReducedMotion();
   const rise = useRef(new Animated.Value(reduced ? 1 : 0)).current;
@@ -337,30 +636,95 @@ function Ticket({ index, code, id, title, savedAt, spoken, band, children }: { i
       rise.setValue(1);
       return;
     }
-    Animated.spring(rise, { toValue: 1, delay: Math.min(index, 8) * 70, friction: 8, tension: 70, useNativeDriver: true }).start();
+    Animated.spring(rise, {
+      toValue: 1,
+      delay: Math.min(index, 8) * 70,
+      friction: 8,
+      tension: 70,
+      useNativeDriver: true,
+    }).start();
   }, [index, reduced, rise]);
 
   return (
-    <Animated.View style={[styles.ticket, { backgroundColor: c.surface, opacity: rise, transform: [{ translateY: rise.interpolate({ inputRange: [0, 1], outputRange: [18, 0] }) }] }]}>
+    <Animated.View
+      style={[
+        styles.ticket,
+        {
+          backgroundColor: c.surface,
+          opacity: rise,
+          transform: [
+            {
+              translateY: rise.interpolate({
+                inputRange: [0, 1],
+                outputRange: [18, 0],
+              }),
+            },
+          ],
+        },
+      ]}
+    >
       <View style={styles.band} onLayout={(e) => setSize(e.nativeEvent.layout)}>
         {size.width > 0 && (
-          <Svg key={`${size.width}x${size.height}`} width={size.width} height={size.height} style={StyleSheet.absoluteFill} aria-hidden>
+          <Svg
+            key={`${size.width}x${size.height}`}
+            width={size.width}
+            height={size.height}
+            style={StyleSheet.absoluteFill}
+            aria-hidden
+          >
             <Defs>
-              <LinearGradient id={`advice-ink-${id}`} x1="0" y1="0" x2="1" y2="1">
+              <LinearGradient
+                id={`advice-ink-${id}`}
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+              >
                 <Stop offset="0" stopColor={light} />
                 <Stop offset="1" stopColor={deep} />
               </LinearGradient>
             </Defs>
-            <Rect width={size.width} height={size.height} fill={`url(#advice-ink-${id})`} />
-            <Circle cx={size.width * 0.92} cy={size.height * 0.2} r={46} stroke={palette.altin200} strokeOpacity={0.12} fill="none" />
-            <Circle cx={size.width * 0.92} cy={size.height * 0.2} r={30} stroke={palette.altin200} strokeOpacity={0.1} strokeDasharray="2 4" fill="none" />
+            <Rect
+              width={size.width}
+              height={size.height}
+              fill={`url(#advice-ink-${id})`}
+            />
+            <Circle
+              cx={size.width * 0.92}
+              cy={size.height * 0.2}
+              r={46}
+              stroke={palette.altin200}
+              strokeOpacity={0.12}
+              fill="none"
+            />
+            <Circle
+              cx={size.width * 0.92}
+              cy={size.height * 0.2}
+              r={30}
+              stroke={palette.altin200}
+              strokeOpacity={0.1}
+              strokeDasharray="2 4"
+              fill="none"
+            />
           </Svg>
         )}
         {band}
       </View>
       <View style={styles.body}>
-        <View style={[styles.notch, styles.notchLeft, { backgroundColor: c.background }]} />
-        <View style={[styles.notch, styles.notchRight, { backgroundColor: c.background }]} />
+        <View
+          style={[
+            styles.notch,
+            styles.notchLeft,
+            { backgroundColor: c.background },
+          ]}
+        />
+        <View
+          style={[
+            styles.notch,
+            styles.notchRight,
+            { backgroundColor: c.background },
+          ]}
+        />
         {children}
         <View style={[styles.foot, { borderTopColor: c.border }]}>
           <Ionicons name="calendar-outline" size={14} color={c.textSecondary} />
@@ -375,7 +739,10 @@ function Ticket({ index, code, id, title, savedAt, spoken, band, children }: { i
               void removeRoute(id);
               announce("Kayıt silindi.");
             }}
-            style={({ pressed }) => [styles.remove, pressed && { backgroundColor: c.surfaceRaised }]}
+            style={({ pressed }) => [
+              styles.remove,
+              pressed && { backgroundColor: c.surfaceRaised },
+            ]}
           >
             <Ionicons name="trash-outline" size={17} color={c.textSecondary} />
           </Pressable>
@@ -385,7 +752,15 @@ function Ticket({ index, code, id, title, savedAt, spoken, band, children }: { i
   );
 }
 
-function Empty({ icon, title, text }: { icon: IconName; title: string; text: string }) {
+function Empty({
+  icon,
+  title,
+  text,
+}: {
+  icon: IconName;
+  title: string;
+  text: string;
+}) {
   const { colors: c } = useTheme();
   const router = useRouter();
   return (
@@ -399,7 +774,11 @@ function Empty({ icon, title, text }: { icon: IconName; title: string; text: str
       <Text color="textSecondary" style={styles.centered}>
         {text}
       </Text>
-      <Pressable accessibilityRole="button" onPress={() => router.navigate("/rehber")} style={styles.more}>
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => router.navigate("/rehber")}
+        style={styles.more}
+      >
         <Text variant="label" color="highlight">
           Rehber'e sor
         </Text>
@@ -433,6 +812,20 @@ const styles = StyleSheet.create({
   },
   list: {
     gap: spacing.md,
+  },
+  /** A wide web page: the cards two to a row. */
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "flex-start",
+    gap: spacing.lg,
+  },
+  evenHead: {
+    minHeight: 52,
+    justifyContent: "flex-end",
+  },
+  gridCell: {
+    width: "calc(50% - 12px)" as unknown as number,
   },
   ticket: {
     borderRadius: 24,

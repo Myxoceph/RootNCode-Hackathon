@@ -1,12 +1,32 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { TripDay, TripItem, TripPlanResponse } from "@vagabonds/contracts";
-import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
+import {
+  fontFamily,
+  palette,
+  radius,
+  spacing,
+  Text,
+  touchTarget,
+  useTheme,
+} from "@vagabonds/ui";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useEffect, useRef, type ComponentProps } from "react";
-import { Animated, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import {
+  Animated,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  View,
+} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Svg, { Circle, Defs, LinearGradient, Rect, Stop } from "react-native-svg";
+import Svg, {
+  Circle,
+  Defs,
+  LinearGradient,
+  Rect,
+  Stop,
+} from "react-native-svg";
 
 import { AssetImage } from "@/components/asset-image";
 import { formatClock } from "@/content/routes";
@@ -14,12 +34,22 @@ import { RouteAdvice } from "@/components/saved-advice";
 import { announce } from "@/lib/announce";
 import { bottomInset } from "@/lib/bottom-inset";
 import { inkFor } from "@/lib/route-ink";
-import { removeRoute, routeKey, useSavedRoutes, type TripRoute } from "@/lib/saved-routes";
+import {
+  removeRoute,
+  routeKey,
+  useSavedRoutes,
+  type TripRoute,
+} from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
-const durationLabel: Record<TripPlanResponse["duration"], string> = { half: "Yarım gün", "1": "1 gün", "2": "2 gün" };
+const durationLabel: Record<TripPlanResponse["duration"], string> = {
+  half: "Yarım gün",
+  "1": "1 gün",
+  "2": "2 gün",
+};
 const weatherIcon: Record<TripDay["weatherNote"]["code"], IconName> = {
   afternoon_rain: "rainy",
   rain_possible: "umbrella",
@@ -27,14 +57,23 @@ const weatherIcon: Record<TripDay["weatherNote"]["code"], IconName> = {
   clear: "sunny",
   unavailable: "cloud-outline",
 };
-const settingLabel = { indoor: "Kapalı", outdoor: "Açık hava", mixed: "Açık + kapalı" } as const;
+const settingLabel = {
+  indoor: "Kapalı",
+  outdoor: "Açık hava",
+  mixed: "Açık + kapalı",
+} as const;
 /** The API calls them "Öğle molası" and "Tatlı durağı"; these say what the break is for. */
-const mealLabel = { lunch: "Öğle yemeği molası", dessert: "Tatlı molası" } as const;
+const mealLabel = {
+  lunch: "Öğle yemeği molası",
+  dessert: "Tatlı molası",
+} as const;
 const NODE = 30;
 
 /** "850 m", "1,2 km". */
 function distance(meters: number): string {
-  return meters >= 1000 ? `${(meters / 1000).toFixed(1).replace(".", ",")} km` : `${meters} m`;
+  return meters >= 1000
+    ? `${(meters / 1000).toFixed(1).replace(".", ",")} km`
+    : `${meters} m`;
 }
 
 /** "1 sa 20 dk", "45 dk". */
@@ -52,6 +91,7 @@ function minutes(total: number): string {
 export default function SavedTripScreen() {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
+  const wide = useWideWeb();
   const router = useRouter();
   const { id } = useLocalSearchParams<{ id: string }>();
   const route = useSavedRoutes().find((r) => r.id === id);
@@ -60,7 +100,11 @@ export default function SavedTripScreen() {
   return (
     <ScrollView
       style={{ backgroundColor: c.background }}
-      contentContainerStyle={[styles.content, { paddingBottom: bottomInset(insets.bottom) + spacing.xl }]}
+      contentContainerStyle={[
+        styles.content,
+        wide && wideColumn,
+        { paddingBottom: bottomInset(insets.bottom) + spacing.xl },
+      ]}
       contentInsetAdjustmentBehavior="automatic"
     >
       <Stack.Screen options={{ title: trip?.title ?? "Rota" }} />
@@ -71,10 +115,21 @@ export default function SavedTripScreen() {
       {trip ? (
         <>
           <Hero route={trip} />
-          {trip.trip.days.map((day) => (
-            <Day key={day.day} day={day} multiDay={trip.trip.days.length > 1} />
-          ))}
-          <RouteAdvice routeKey={routeKey(trip)} />
+          {/* A wide web page: the days on the left, what Rehber suggested for them on the right. */}
+          <View style={wide ? styles.split : styles.stack}>
+            <View style={wide ? styles.splitMain : styles.stack}>
+              {trip.trip.days.map((day) => (
+                <Day
+                  key={day.day}
+                  day={day}
+                  multiDay={trip.trip.days.length > 1}
+                />
+              ))}
+            </View>
+            <View style={wide ? styles.splitSide : styles.stack}>
+              <RouteAdvice routeKey={routeKey(trip)} />
+            </View>
+          </View>
           {/* The API's note is about walking times, which this page leaves out. */}
           <Text variant="caption" color="textSecondary" style={styles.note}>
             Yürüme mesafeleri kuş uçuşu mesafeden tahmin edilmiştir.
@@ -86,7 +141,10 @@ export default function SavedTripScreen() {
               announce("Rota silindi.");
               router.back();
             }}
-            style={({ pressed }) => [styles.remove, pressed && { backgroundColor: c.surfaceRaised }]}
+            style={({ pressed }) => [
+              styles.remove,
+              pressed && { backgroundColor: c.surfaceRaised },
+            ]}
           >
             <Ionicons name="trash-outline" size={17} color={c.warning} />
             <Text variant="label" color="warning">
@@ -108,13 +166,25 @@ function Hero({ route }: { route: TripRoute }) {
   const { trip } = route;
   const [light, deep] = inkFor(trip.city.code);
   const meters = trip.days.reduce((sum, day) => sum + day.totals.walkMeters, 0);
-  const visit = trip.days.reduce((sum, day) => sum + day.totals.visitMinutes, 0);
+  const visit = trip.days.reduce(
+    (sum, day) => sum + day.totals.visitMinutes,
+    0,
+  );
   const walk = distance(meters);
-  const saved = new Date(route.savedAt).toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
+  const saved = new Date(route.savedAt).toLocaleDateString("tr-TR", {
+    day: "numeric",
+    month: "long",
+  });
 
   return (
     <View style={styles.hero}>
-      <Svg style={StyleSheet.absoluteFill} aria-hidden>
+      {/* Sized outright: on the web an SVG without a width keeps its 300px default, not its box's. */}
+      <Svg
+        width="100%"
+        height="100%"
+        style={StyleSheet.absoluteFill}
+        aria-hidden
+      >
         <Defs>
           <LinearGradient id="trip-ink" x1="0" y1="0" x2="1" y2="1">
             <Stop offset="0" stopColor={light} />
@@ -122,14 +192,33 @@ function Hero({ route }: { route: TripRoute }) {
           </LinearGradient>
         </Defs>
         <Rect width="100%" height="100%" fill="url(#trip-ink)" />
-        <Circle cx="90%" cy="18%" r={70} stroke={palette.altin200} strokeOpacity={0.12} fill="none" />
-        <Circle cx="90%" cy="18%" r={46} stroke={palette.altin200} strokeOpacity={0.1} strokeDasharray="2 4" fill="none" />
+        <Circle
+          cx="90%"
+          cy="18%"
+          r={70}
+          stroke={palette.altin200}
+          strokeOpacity={0.12}
+          fill="none"
+        />
+        <Circle
+          cx="90%"
+          cy="18%"
+          r={46}
+          stroke={palette.altin200}
+          strokeOpacity={0.1}
+          strokeDasharray="2 4"
+          fill="none"
+        />
       </Svg>
 
       <Text colorValue={palette.altin200} style={styles.city}>
         {trip.city.label.toLocaleUpperCase("tr")}
       </Text>
-      <Text colorValue={palette.white} style={styles.heroTitle} headingLevel={1}>
+      <Text
+        colorValue={palette.white}
+        style={styles.heroTitle}
+        headingLevel={1}
+      >
         {route.title}
       </Text>
       <View style={styles.chips}>
@@ -138,7 +227,11 @@ function Hero({ route }: { route: TripRoute }) {
         <Chip icon="bookmark-outline" text={saved} />
       </View>
 
-      <View style={styles.totals} accessible accessibilityLabel={`${route.stops} durak, ${minutes(visit)} ziyaret, ${walk} yürüyüş`}>
+      <View
+        style={styles.totals}
+        accessible
+        accessibilityLabel={`${route.stops} durak, ${minutes(visit)} ziyaret, ${walk} yürüyüş`}
+      >
         <Total value={String(route.stops)} label="durak" />
         <View style={styles.totalRule} />
         <Total value={minutes(visit)} label="ziyaret" />
@@ -163,7 +256,12 @@ function Chip({ icon, text }: { icon: IconName; text: string }) {
 function Total({ value, label }: { value: string; label: string }) {
   return (
     <View style={styles.total}>
-      <Text colorValue={palette.white} style={styles.totalValue} numberOfLines={1} adjustsFontSizeToFit>
+      <Text
+        colorValue={palette.white}
+        style={styles.totalValue}
+        numberOfLines={1}
+        adjustsFontSizeToFit
+      >
         {value}
       </Text>
       <Text colorValue={palette.gece300} style={styles.totalLabel}>
@@ -180,13 +278,29 @@ function Day({ day, multiDay }: { day: TripDay; multiDay: boolean }) {
   return (
     <View style={styles.day}>
       {multiDay && (
-        <Text variant="overline" color="textSecondary" style={styles.dayTitle} headingLevel={2}>
+        <Text
+          variant="overline"
+          color="textSecondary"
+          style={styles.dayTitle}
+          headingLevel={2}
+        >
           {`${day.day}. GÜN · ${new Date(day.date).toLocaleDateString("tr-TR", { day: "numeric", month: "long", weekday: "long" }).toLocaleUpperCase("tr")}`}
         </Text>
       )}
-      <View style={[styles.weather, { backgroundColor: c.surface, borderColor: c.border }]}>
-        <View style={[styles.weatherIcon, { backgroundColor: c.surfaceRaised }]}>
-          <Ionicons name={weatherIcon[day.weatherNote.code]} size={18} color={c.highlightMark} />
+      <View
+        style={[
+          styles.weather,
+          { backgroundColor: c.surface, borderColor: c.border },
+        ]}
+      >
+        <View
+          style={[styles.weatherIcon, { backgroundColor: c.surfaceRaised }]}
+        >
+          <Ionicons
+            name={weatherIcon[day.weatherNote.code]}
+            size={18}
+            color={c.highlightMark}
+          />
         </View>
         <Text variant="caption" color="textSecondary" style={styles.flex}>
           {day.weatherNote.text}
@@ -196,7 +310,15 @@ function Day({ day, multiDay }: { day: TripDay; multiDay: boolean }) {
       <View accessibilityRole="list">
         {day.items.map((item, i) => {
           if (item.kind === "stop") stop += 1;
-          return <Row key={`${i}-${item.kind}-${item.at}`} item={item} number={stop} index={i} last={i === day.items.length - 1} />;
+          return (
+            <Row
+              key={`${i}-${item.kind}-${item.at}`}
+              item={item}
+              number={stop}
+              index={i}
+              last={i === day.items.length - 1}
+            />
+          );
         })}
       </View>
     </View>
@@ -204,7 +326,17 @@ function Day({ day, multiDay }: { day: TripDay; multiDay: boolean }) {
 }
 
 /** One item on the timeline: the walk to it on the line, its node, and its card; it rises in. */
-function Row({ item, number, index, last }: { item: TripItem; number: number; index: number; last: boolean }) {
+function Row({
+  item,
+  number,
+  index,
+  last,
+}: {
+  item: TripItem;
+  number: number;
+  index: number;
+  last: boolean;
+}) {
   const { colors: c } = useTheme();
   const router = useRouter();
   const reduced = useReducedMotion();
@@ -215,19 +347,39 @@ function Row({ item, number, index, last }: { item: TripItem; number: number; in
       rise.setValue(1);
       return;
     }
-    Animated.spring(rise, { toValue: 1, delay: Math.min(index, 12) * 60, friction: 8, tension: 70, useNativeDriver: true }).start();
+    Animated.spring(rise, {
+      toValue: 1,
+      delay: Math.min(index, 12) * 60,
+      friction: 8,
+      tension: 70,
+      useNativeDriver: true,
+    }).start();
   }, [index, reduced, rise]);
 
   const meal = item.kind === "meal";
   const walk = item.kind === "stop" && item.legMeters > 0;
   const coral = c.warning;
   return (
-    <Animated.View style={{ opacity: rise, transform: [{ translateX: rise.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }}>
+    <Animated.View
+      style={{
+        opacity: rise,
+        transform: [
+          {
+            translateX: rise.interpolate({
+              inputRange: [0, 1],
+              outputRange: [16, 0],
+            }),
+          },
+        ],
+      }}
+    >
       {/* Always a gap on the line before an item, so neighbours never touch; the walk to it when there is one. */}
       {index > 0 && (
         <View style={[styles.leg, !walk && styles.legEmpty]}>
           <View style={styles.rail}>
-            <View style={[styles.railLine, { backgroundColor: c.highlightMark }]} />
+            <View
+              style={[styles.railLine, { backgroundColor: c.highlightMark }]}
+            />
           </View>
           {walk && (
             <>
@@ -241,31 +393,72 @@ function Row({ item, number, index, last }: { item: TripItem; number: number; in
       )}
       <View style={styles.row}>
         <View style={styles.rail}>
-          <View style={[styles.railLine, styles.railTop, { backgroundColor: index === 0 ? "transparent" : c.highlightMark }]} />
-          <View style={[styles.node, meal ? { backgroundColor: coral } : { backgroundColor: c.surface, borderColor: c.highlightMark, borderWidth: 2 }]}>
+          <View
+            style={[
+              styles.railLine,
+              styles.railTop,
+              {
+                backgroundColor: index === 0 ? "transparent" : c.highlightMark,
+              },
+            ]}
+          />
+          <View
+            style={[
+              styles.node,
+              meal
+                ? { backgroundColor: coral }
+                : {
+                    backgroundColor: c.surface,
+                    borderColor: c.highlightMark,
+                    borderWidth: 2,
+                  },
+            ]}
+          >
             {meal ? (
-              <Ionicons name={item.meal === "dessert" ? "ice-cream" : "restaurant"} size={14} color={palette.white} />
+              <Ionicons
+                name={item.meal === "dessert" ? "ice-cream" : "restaurant"}
+                size={14}
+                color={palette.white}
+              />
             ) : (
               <Text colorValue={c.highlight} style={styles.nodeText}>
                 {number}
               </Text>
             )}
           </View>
-          <View style={[styles.railLine, { backgroundColor: last ? "transparent" : c.highlightMark }]} />
+          <View
+            style={[
+              styles.railLine,
+              { backgroundColor: last ? "transparent" : c.highlightMark },
+            ]}
+          />
         </View>
 
         {item.kind === "stop" ? (
           <Pressable
             accessibilityRole="link"
             accessibilityLabel={`${formatClock(item.at)}, ${item.asset.name}, ${item.visitMinutes} dakika. Eseri aç`}
-            onPress={() => router.push({ pathname: "/asset/[id]", params: { id: item.asset.id } })}
-            style={({ pressed }) => [styles.card, { backgroundColor: c.surface }, pressed && styles.cardPressed]}
+            onPress={() =>
+              router.push({
+                pathname: "/asset/[id]",
+                params: { id: item.asset.id },
+              })
+            }
+            style={({ pressed }) => [
+              styles.card,
+              { backgroundColor: c.surface },
+              pressed && styles.cardPressed,
+            ]}
           >
             <View style={[styles.thumb, { backgroundColor: c.surfaceRaised }]}>
               {item.asset.cover ? (
                 <AssetImage media={item.asset.cover} decorative fill />
               ) : (
-                <Ionicons name="business-outline" size={20} color={c.textSecondary} />
+                <Ionicons
+                  name="business-outline"
+                  size={20}
+                  color={c.textSecondary}
+                />
               )}
             </View>
             <View style={styles.flex}>
@@ -279,7 +472,11 @@ function Row({ item, number, index, last }: { item: TripItem; number: number; in
                 {`${item.visitMinutes} dk · ${settingLabel[item.setting]}`}
               </Text>
             </View>
-            <Ionicons name="chevron-forward" size={16} color={c.textSecondary} />
+            <Ionicons
+              name="chevron-forward"
+              size={16}
+              color={c.textSecondary}
+            />
           </Pressable>
         ) : (
           <View
@@ -319,6 +516,23 @@ const styles = StyleSheet.create({
     maxWidth: 560,
     alignSelf: "center",
     padding: spacing.lg,
+    gap: spacing.lg,
+  },
+  stack: {
+    gap: spacing.lg,
+  },
+  split: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.xl,
+  },
+  splitMain: {
+    flex: 1,
+    minWidth: 0,
+    gap: spacing.lg,
+  },
+  splitSide: {
+    width: 420,
     gap: spacing.lg,
   },
   hero: {
