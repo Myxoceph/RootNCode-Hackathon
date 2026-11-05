@@ -12,6 +12,7 @@ import { DataError } from "@/data/errors";
 import { transcribe } from "@/data/voice";
 import { announce } from "@/lib/announce";
 import { stopAnswer } from "@/lib/voice";
+import { getMessages } from "@/i18n";
 
 export type VoicePhase = "idle" | "recording" | "transcribing";
 
@@ -56,7 +57,7 @@ export function useVoiceQuestion(onQuestion: (text: string) => void, onError: (m
     const permission = await requestRecordingPermissionsAsync().catch(() => null);
     if (!permission?.granted) {
       phaseRef.current = "idle";
-      handlers.current.onError("Mikrofon izni verilmedi. Telefonun ayarlarından izin verebilir ya da yazarak sorabilirsin.");
+      handlers.current.onError(getMessages().voice.noPermission);
       return;
     }
     try {
@@ -65,11 +66,11 @@ export function useVoiceQuestion(onQuestion: (text: string) => void, onError: (m
       recorder.record();
     } catch {
       phaseRef.current = "idle";
-      handlers.current.onError("Mikrofon açılamadı. Yazarak sorabilirsin.");
+      handlers.current.onError(getMessages().voice.noMic);
       return;
     }
     go("recording");
-    announce("Dinliyorum. Bitirince tekrar dokun.");
+    announce(getMessages().voice.listening);
     limit.current = setTimeout(() => void finish(), VOICE_MAX_SECONDS * 1000);
   }
 
@@ -83,10 +84,10 @@ export function useVoiceQuestion(onQuestion: (text: string) => void, onError: (m
       if (!mounted.current || !recorder.uri) return;
       const text = await transcribe(recorder.uri);
       if (!mounted.current) return;
-      if (text.length === 0) handlers.current.onError("Söylediğini anlayamadım. Biraz daha yakından ve yavaş tekrar dene.");
+      if (text.length === 0) handlers.current.onError(getMessages().voice.notUnderstood);
       else handlers.current.onQuestion(text);
     } catch (error) {
-      if (mounted.current) handlers.current.onError(error instanceof DataError ? error.message : "Sesli soru gönderilemedi. Yazarak sorabilirsin.");
+      if (mounted.current) handlers.current.onError(error instanceof DataError ? error.message : getMessages().voice.failed);
     } finally {
       go("idle");
     }

@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { ChatCitation, ChatResponse, TripPlanResponse } from "@vagabonds/contracts";
 import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
@@ -11,6 +13,7 @@ import { inkFor } from "@/lib/route-ink";
 import { routeKey, savedKindOf, useSavedRoutes } from "@/lib/saved-routes";
 import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { casing, getMessages, useLang } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -18,11 +21,11 @@ type IconName = ComponentProps<typeof Ionicons>["name"];
 function citationTarget(citation: ChatCitation): { href: Href; action: string } | null {
   switch (citation.kind) {
     case "asset":
-      return { href: { pathname: "/monuments/[id]", params: { id: citation.id } }, action: "eser sayfasını aç" };
+      return { href: { pathname: "/monuments/[id]", params: { id: citation.id } }, action: getMessages().rehber.openSite };
     case "dish":
-      return { href: "/route/food", action: "yöresel lezzetleri aç" };
+      return { href: "/route/food", action: getMessages().rehber.openFood };
     case "trip":
-      return { href: "/route", action: "Rotalar'ı aç" };
+      return { href: "/route", action: getMessages().rehber.openRoutes };
     case "weather":
     // The route map opens from the answer's transit attachment (YIGIT.md §11).
     case "transit":
@@ -55,10 +58,11 @@ function Appear({ animate, children, style }: { animate: boolean; children: Reac
 
 /** The visitor's line: a grey bubble on the right, rising in when just sent. */
 export function UserMessage({ text, animate = false }: { text: string; animate?: boolean }) {
+  useLang();
   const { colors: c } = useTheme();
   return (
     <Appear animate={animate} style={[styles.user, { backgroundColor: c.surfaceRaised }]}>
-      <View accessible accessibilityLabel={`Sen: ${text}`}>
+      <View accessible accessibilityLabel={getMessages().rehber.you(text)}>
         <Text style={styles.body}>{text}</Text>
       </View>
     </Appear>
@@ -70,23 +74,25 @@ export function UserMessage({ text, animate = false }: { text: string; animate?:
  * another as the seconds pass. The API answers in one go, so these follow the clock, not the model.
  */
 function waitingSteps(question: string): ReadonlyArray<[afterSeconds: number, text: string]> {
-  const q = question.toLocaleLowerCase("tr");
-  const topic = /hava|yağmur|sıcak|derece/.test(q)
-    ? "Hava durumuna bakıyorum…"
-    : /nasıl gid|ulaşım|otobüs|tramvay|yol tarifi/.test(q)
-      ? "Toplu taşıma seçeneklerine bakıyorum…"
-      : /rota|gezi|plan|gün/.test(q)
-        ? "Gezi rotasını kuruyorum…"
-        : /yemek|lezzet|ye[nr]|tatlı|mutfa/.test(q)
-          ? "Yöresel lezzetlere bakıyorum…"
-          : "Vakıf eserleri kayıtlarında arıyorum…";
+  const q = question.toLocaleLowerCase(casing());
+  const w = getMessages().rehber.wait;
+  // Turkish and English words for the same topics.
+  const topic = /hava|yağmur|sıcak|derece|\b(weather|rain(y|ing)?|hot|cold|degrees?)\b/.test(q)
+    ? w.weather
+    : /nasıl gid|ulaşım|otobüs|tramvay|yol tarifi|\b(get to|transit|bus(es)?|trams?|directions?)\b/.test(q)
+      ? w.transit
+      : /rota|gezi|plan|gün|\b(routes?|trips?|days?)\b/.test(q)
+        ? w.trip
+        : /yemek|lezzet|ye[nr]|tatlı|mutfa|\b(eat|food|dish(es)?|desserts?|cuisine)\b/.test(q)
+          ? w.food
+          : w.records;
   return [
-    [0, "Sorunu anlamaya çalışıyorum…"],
+    [0, w.understanding],
     [3, topic],
-    [9, "Kaynakları okuyorum…"],
-    [17, "Bilgileri kaynaklarla karşılaştırıyorum…"],
-    [26, "Cevabı yazıyorum…"],
-    [40, "Biraz uzun sürdü, neredeyse hazır…"],
+    [9, w.sources],
+    [17, w.comparing],
+    [26, w.writing],
+    [40, w.long],
   ];
 }
 
@@ -95,6 +101,7 @@ function waitingSteps(question: string): ReadonlyArray<[afterSeconds: number, te
  * changes as the wait grows, so a long answer never looks stuck. Still when motion is reduced.
  */
 export function Thinking({ question }: { question: string }) {
+  useLang();
   const { colors: c } = useTheme();
   const reduceMotion = useReducedMotion();
   const [t] = useState(() => new Animated.Value(0));
@@ -135,7 +142,7 @@ export function Thinking({ question }: { question: string }) {
       <View
         style={[styles.bubble, styles.thinking, { backgroundColor: c.background, borderColor: c.border }]}
         accessible
-        accessibilityLabel={`Yanıt hazırlanıyor. ${text}`}
+        accessibilityLabel={getMessages().rehber.preparingLabel(text)}
         accessibilityLiveRegion="polite"
       >
         <Animated.View
@@ -199,6 +206,7 @@ export function AssistantMessage({
   animate?: boolean;
   onFollowUp?: (question: string) => void;
 }) {
+  useLang();
   const { colors: c } = useTheme();
   // Read aloud in EVREN's voice (lib/voice.ts); a spoken question's answer starts on its own.
   const reading = useSpeaking() === response.answer;
@@ -292,8 +300,8 @@ export function AssistantMessage({
           <View style={styles.actions}>
             <ActionButton
               icon={reading ? "stop-circle-outline" : "volume-high-outline"}
-              title={reading ? "Durdur" : "Dinle"}
-              label={reading ? "Okumayı durdur" : "Cevabı sesli oku"}
+              title={reading ? getMessages().common.stop : getMessages().common.listen}
+              label={reading ? getMessages().rehber.stopReading : getMessages().rehber.readAloud}
               onPress={() => {
                 if (reading) stopAnswer();
                 else void speakAnswer(response.answer, plain);
@@ -301,13 +309,13 @@ export function AssistantMessage({
             />
             <ActionButton
               icon="share-social-outline"
-              title="Paylaş"
-              label="Cevabı paylaş"
+              title={getMessages().rehber.share}
+              label={getMessages().rehber.shareLabel}
               onPress={() => void Share.share({ message: plain }).catch(() => {})}
             />
             {!response.grounded && (
               <Text variant="caption" color="textSecondary" style={styles.note}>
-                Genel sohbet · kaynak yok
+                {getMessages().rehber.ungrounded}
               </Text>
             )}
           </View>
@@ -337,7 +345,7 @@ function FollowUps({ response, animate, onAsk }: { response: ChatResponse; anima
   return (
     <Appear animate={animate} style={styles.followUps}>
       <Text variant="caption" color="textSecondary" style={styles.followUpsTitle}>
-        İstersen şunlara da bakabilirim
+        {getMessages().rehber.alsoAsk}
       </Text>
       {offers.map((offer) => (
         <Pressable
@@ -366,7 +374,7 @@ function Byline() {
         <Ionicons name="sparkles" size={12} color={c.background} />
       </View>
       <Text variant="caption" style={styles.bold}>
-        Rehber
+        {getMessages().rehber.title}
       </Text>
     </View>
   );
@@ -408,7 +416,7 @@ function SourceChip({ citation }: { citation: ChatCitation }) {
 
   if (!target) {
     return (
-      <View style={look} accessible accessibilityLabel={`Kaynak: ${citation.title}`}>
+      <View style={look} accessible accessibilityLabel={getMessages().rehber.source(citation.title)}>
         {content}
       </View>
     );
@@ -416,7 +424,7 @@ function SourceChip({ citation }: { citation: ChatCitation }) {
   return (
     <Pressable
       accessibilityRole="link"
-      accessibilityLabel={`Kaynak: ${citation.title}, ${target.action}`}
+      accessibilityLabel={getMessages().rehber.sourceAction(citation.title, target.action)}
       onPress={() => router.push(target.href)}
       // The pill is drawn small; the target stays 44pt tall.
       hitSlop={{ top: 8, bottom: 8 }}
@@ -436,13 +444,13 @@ function SavedNote({ response }: { response: ChatResponse }) {
   return (
     <Pressable
       accessibilityRole="link"
-      accessibilityLabel="Kaydettiklerim'e eklendi, listeyi açar"
+      accessibilityLabel={getMessages().rehber.savedLabel}
       onPress={() => router.push({ pathname: "/profile/routes", params: { tab: kind } })}
       style={({ pressed }) => [styles.savedNote, pressed && styles.pressed]}
     >
       <Ionicons name="bookmark" size={14} color={c.highlightMark} />
       <Text variant="caption" color="textSecondary">
-        Kaydettiklerim'e eklendi
+        {getMessages().rehber.saved}
       </Text>
     </Pressable>
   );
@@ -450,10 +458,11 @@ function SavedNote({ response }: { response: ChatResponse }) {
 
 /** A trip's walking distance, "850 m" or "2,4 km". */
 function distance(meters: number): string {
-  return meters >= 1000 ? `${(meters / 1000).toFixed(1).replace(".", ",")} km` : `${meters} m`;
+  return meters >= 1000 ? `${(meters / 1000).toFixed(1).replace(".", getMessages().rehber.decimal)} km` : `${meters} m`;
 }
 
-const tripDuration: Record<TripPlanResponse["duration"], string> = { half: "Yarım gün", "1": "1 gün", "2": "2 gün" };
+const tripDuration = (duration: TripPlanResponse["duration"]): string =>
+  duration === "half" ? getMessages().rehber.halfDay : getMessages().rehber.days(Number(duration));
 
 /**
  * A trip answer, shown instead of its words: "Rota oluşturuldu" on the city's ink, the plan's
@@ -467,7 +476,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
   const [light, deep] = inkFor(trip.city.code);
   const stops = trip.days.reduce((sum, day) => sum + day.items.filter((item) => item.kind === "stop").length, 0);
   const meters = trip.days.reduce((sum, day) => sum + day.totals.walkMeters, 0);
-  const title = `${trip.city.label} gezi planı`;
+  const title = getMessages().rehber.tripTitle(trip.city.label);
   const dots = Math.min(Math.max(0, stops - 2), 6);
 
   return (
@@ -475,7 +484,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
       <View
         style={styles.createdBand}
         accessible
-        accessibilityLabel={`Rota oluşturuldu: ${title}, ${tripDuration[trip.duration]}, ${stops} durak, ${distance(meters)} yürüyüş. Kaydettiklerim'e kaydedildi.`}
+        accessibilityLabel={getMessages().rehber.tripCreatedLabel(title, tripDuration(trip.duration), stops, distance(meters))}
       >
         {/* Sized outright: on the web an SVG without a width keeps its 300px default, not its box's. */}
         <Svg width="100%" height="100%" style={StyleSheet.absoluteFill} aria-hidden>
@@ -492,14 +501,14 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
         <View style={styles.createdHead}>
           <Ionicons name="checkmark-circle" size={18} color={palette.altin200} />
           <Text colorValue={palette.altin200} style={styles.createdKicker}>
-            Rota oluşturuldu
+            {getMessages().rehber.tripCreated}
           </Text>
         </View>
         <Text colorValue={palette.white} style={styles.createdTitle}>
           {title}
         </Text>
         <View style={styles.createdChips}>
-          {[tripDuration[trip.duration], `${stops} durak`, distance(meters)].map((chip) => (
+          {[tripDuration(trip.duration), getMessages().rehber.stops(stops), distance(meters)].map((chip) => (
             <View key={chip} style={styles.createdChip}>
               <Text colorValue={palette.gece50} style={styles.createdChipText}>
                 {chip}
@@ -528,7 +537,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
       <View style={[styles.createdInfo, { borderBottomColor: c.border }]}>
         <Ionicons name="information-circle-outline" size={16} color={c.textSecondary} />
         <Text variant="caption" color="textSecondary" style={styles.flex}>
-          Bu rota kaydedildi. İstediğin zaman Profil › Kaydettiklerim'den ulaşabilirsin.
+          {getMessages().rehber.tripSavedNote}
         </Text>
       </View>
       <View style={styles.createdActions}>
@@ -538,7 +547,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
           style={({ pressed }) => [styles.createdOpen, pressed && styles.pressed]}
         >
           <Text variant="label" colorValue={palette.white} style={styles.createdOpenText}>
-            Rotayı aç
+            {getMessages().rehber.openTrip}
           </Text>
           <Ionicons name="arrow-forward" size={16} color={palette.white} />
         </Pressable>
@@ -550,7 +559,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
         >
           <Ionicons name="bookmark-outline" size={15} color={c.textSecondary} />
           <Text variant="caption" color="textSecondary" style={styles.createdAllText}>
-            Kaydettiklerim
+            {getMessages().rehber.savedList}
           </Text>
         </Pressable>
       </View>

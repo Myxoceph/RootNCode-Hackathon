@@ -4,6 +4,9 @@ import { useSyncExternalStore } from "react";
 import { archiveConversation, askAssistant, fetchConversation, fetchConversations } from "@/data/assistant";
 import { DataError } from "@/data/errors";
 import { saveAdvice, saveTrip } from "@/lib/saved-routes";
+import { getLang } from "@/i18n/lang";
+import { localeTag } from "@/i18n";
+import { getMessages } from "@/i18n";
 
 /** `POST /chat` takes at most this many earlier turns. */
 export const HISTORY_TURNS = 12;
@@ -138,28 +141,29 @@ export function followUps(response: ChatResponse): FollowUp[] {
   if (response.attachments.transit) covered.add("transit");
   const site = response.citations.find((citation) => citation.kind === "asset")?.title;
 
+  const f = getMessages().rehber.followUps;
   let offers: FollowUp[];
   if (response.attachments.trip) {
     offers = [
-      { topic: "food", label: "Öğle yemeğine ne önerirsin?", question: "Bu rotada öğle yemeği için ne önerirsin?" },
-      { topic: "transit", label: "Toplu taşımayla nasıl giderim?", question: "Bu rotadaki duraklara toplu taşımayla nasıl giderim?" },
-      { topic: "weather", label: "Gezi günü hava nasıl?", question: "Gezi günü hava nasıl olacak?" },
+      { topic: "food", ...f.tripFood },
+      { topic: "transit", ...f.tripTransit },
+      { topic: "weather", ...f.tripWeather },
     ];
   } else if (site) {
     offers = [
-      { topic: "transit", label: "Oraya nasıl giderim?", question: `${site} için toplu taşımayla nasıl giderim?` },
-      { topic: "food", label: "Yakınında ne yenir?", question: `${site} yakınında ne yiyebilirim?` },
-      { topic: "trip", label: "Çevresinde rota planla", question: `${site} çevresinde yarım günlük bir rota planla` },
+      { topic: "transit", label: f.siteTransit.label, question: f.siteTransit.question(site) },
+      { topic: "food", label: f.siteFood.label, question: f.siteFood.question(site) },
+      { topic: "trip", label: f.siteTrip.label, question: f.siteTrip.question(site) },
     ];
   } else if (covered.has("dish")) {
     offers = [
-      { topic: "trip", label: "Bu lezzetlerle rota planla", question: "Bu lezzetlerle yarım günlük bir gezi rotası planla" },
-      { topic: "weather", label: "Hava gezmeye uygun mu?", question: "Bugün hava gezmeye uygun mu?" },
+      { topic: "trip", ...f.dishTrip },
+      { topic: "weather", ...f.dishWeather },
     ];
   } else if (covered.has("weather")) {
     offers = [
-      { topic: "trip", label: "Bu havaya uygun rota planla", question: "Bu havaya uygun bir gezi rotası planla" },
-      { topic: "food", label: "Bu havada ne yenir?", question: "Bu havada ne yemeli?" },
+      { topic: "trip", ...f.weatherTrip },
+      { topic: "food", ...f.weatherFood },
     ];
   } else {
     offers = [];
@@ -172,10 +176,10 @@ export function followUps(response: ChatResponse): FollowUp[] {
 export function dayGroup(iso: string, now = new Date()): string {
   const day = (date: Date) => new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
   const days = Math.round((day(now) - day(new Date(iso))) / 86_400_000);
-  if (days <= 0) return "Bugün";
-  if (days === 1) return "Dün";
-  if (days < 7) return "Bu hafta";
-  return new Date(iso).toLocaleDateString("tr-TR", { month: "long", year: "numeric" });
+  if (days <= 0) return getMessages().rehber.today;
+  if (days === 1) return getMessages().rehber.yesterday;
+  if (days < 7) return getMessages().rehber.thisWeek;
+  return new Date(iso).toLocaleDateString(localeTag(), { month: "long", year: "numeric" });
 }
 
 /** The last turns for `POST /chat`, oldest first, each cut to what the API accepts. */
@@ -301,7 +305,7 @@ export async function ask(key: string, question: string, assetId?: string, asset
         message: text,
         assetId,
         history: historyFor(before.entries),
-        lang: "tr",
+        lang: getLang(),
         ...(spoken && { spoken }),
         ...(before.conversationId && { conversationId: before.conversationId }),
       },
@@ -324,7 +328,7 @@ export async function ask(key: string, question: string, assetId?: string, asset
   } catch (error) {
     if (!current()) return null;
     inFlight.delete(key);
-    const message = error instanceof DataError ? error.message : "Soru gönderilemedi. Tekrar dene.";
+    const message = error instanceof DataError ? error.message : getMessages().rehber.sendFailed;
     // The saved conversation took no more questions (archived elsewhere, full, deleted): "Tekrar dene" starts a new one.
     const closed = error instanceof DataError && error.code?.startsWith("CONVERSATION_");
     update(key, { pending: null, failed: { question: text, message }, ...(closed && { conversationId: null }) });

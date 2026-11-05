@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { AssetIdSchema, type ChatConversation } from "@vagabonds/contracts";
 import {
@@ -51,51 +53,12 @@ import {
 } from "@/lib/chat";
 import { useVoiceQuestion, type VoiceQuestion } from "@/lib/use-voice-question";
 import { speakAnswer, stopAnswer } from "@/lib/voice";
-
-interface Suggestion {
-  title: string;
-  detail: string;
-  question: string;
-}
+import { getMessages, localeTag, useMessages } from "@/i18n";
 
 const WEB = Platform.OS === "web";
 /** From this width the web page shows the conversations beside the one on screen. */
 const SESSIONS_FROM = 1000;
 
-const GENERAL_SUGGESTIONS: Suggestion[] = [
-  {
-    title: "Gezi planla",
-    detail: "Bursa'da yarım günlük bir rota",
-    question: "Bursa'da yarım günlük bir gezi planla",
-  },
-  {
-    title: "Ne yesem?",
-    detail: "Bursa'nın yöresel lezzetleri",
-    question: "Bursa'da ne yemeliyim?",
-  },
-  {
-    title: "Hava nasıl?",
-    detail: "Bugün Hatay gezmeye uygun mu",
-    question: "Bugün Hatay'da hava gezmeye uygun mu?",
-  },
-];
-const ASSET_SUGGESTIONS: Suggestion[] = [
-  {
-    title: "Hikâyesi",
-    detail: "Bu eser nasıl doğdu?",
-    question: "Bu eserin hikâyesi nedir?",
-  },
-  {
-    title: "Kim yaptırdı?",
-    detail: "Banisi ve yapım tarihi",
-    question: "Bu eseri kim, ne zaman yaptırdı?",
-  },
-  {
-    title: "Erişim",
-    detail: "Tekerlekli sandalyeyle gezilir mi?",
-    question: "Bu eser tekerlekli sandalyeyle gezilebilir mi?",
-  },
-];
 /** The counter shows only this close to the limit. */
 const COUNTER_FROM = QUESTION_MAX - 80;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -122,6 +85,7 @@ export default function AssistantScreen() {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const m = useMessages();
   // Also the Rehber tab (`/rehber`): there the bar sits below and there is nowhere to go back to.
   const inTab = (useSegments() as string[])[0] === "(tabs)";
   // On the web the site's bar names the tab: the title is there for screen readers only.
@@ -188,7 +152,7 @@ export default function AssistantScreen() {
       setArchiveError(null);
       openArchived(archiveId).catch((error: unknown) =>
         setArchiveError(
-          error instanceof DataError ? error.message : "Konuşma açılamadı.",
+          error instanceof DataError ? error.message : m.rehber.openFailed,
         ),
       );
     } else if (account) {
@@ -228,8 +192,8 @@ export default function AssistantScreen() {
     setDraft("");
     setVoiceError(null);
     stopAnswer();
-    setStatus("Yanıt hazırlanıyor.");
-    announce("Yanıt hazırlanıyor.");
+    setStatus(m.rehber.preparing);
+    announce(m.rehber.preparing);
     const response = await ask(key, question, asset, name, { spoken });
     if (response) {
       const plain = answerParts(response.answer, response.citations)
@@ -273,7 +237,7 @@ export default function AssistantScreen() {
     if (archiveId) return startNew();
     clearConversation(key);
     setFreshFrom(Number.POSITIVE_INFINITY);
-    announce("Yeni konuşma başladı. Önceki konuşma geçmişte.");
+    announce(m.rehber.newStarted);
   }
 
   /** A conversation from the side panel: an open one continues on its page, an archived one opens read-only. */
@@ -291,19 +255,19 @@ export default function AssistantScreen() {
 
   const caption = archiveId
     ? archived
-      ? `${archived.assetName ?? "Arşiv"} · ${new Date(archived.updatedAt).toLocaleDateString("tr-TR", { day: "numeric", month: "long" })}`
-      : "Arşiv"
+      ? `${archived.assetName ?? m.rehber.archive} · ${new Date(archived.updatedAt).toLocaleDateString(localeTag(), { day: "numeric", month: "long" })}`
+      : m.rehber.archive
     : asset
-      ? (name ?? "Bu eser")
+      ? (name ?? m.rehber.thisSite)
       : null;
 
   // The card surface, not the page grey: white in the light theme, as chat apps are.
-  const suggestionCards = (asset ? ASSET_SUGGESTIONS : GENERAL_SUGGESTIONS).map(
+  const suggestionCards = (asset ? m.rehber.suggestions.asset : m.rehber.suggestions.general).map(
     (suggestion) => (
       <Pressable
         key={suggestion.title}
         accessibilityRole="button"
-        accessibilityLabel={`Sor: ${suggestion.question}`}
+        accessibilityLabel={m.rehber.askLabel(suggestion.question)}
         onPress={() => void send(suggestion.question)}
         style={({
           pressed,
@@ -358,7 +322,7 @@ export default function AssistantScreen() {
       ]}
     >
       <Head>
-        <title>Rehber · Vagabonds</title>
+        <title>{`${getMessages().tabs.rehber} · Vagabonds`}</title>
       </Head>
       {withPanel && (
         <AssistantSessions
@@ -376,7 +340,7 @@ export default function AssistantScreen() {
             {inTab ? (
               <View style={styles.round} />
             ) : (
-              <IconButton icon="chevron-back" label="Geri" onPress={goBack} />
+              <IconButton icon="chevron-back" label={m.common.back} onPress={goBack} />
             )}
           </View>
           <View style={styles.title}>
@@ -384,7 +348,7 @@ export default function AssistantScreen() {
               style={webTab ? styles.liveRegion : styles.titleText}
               headingLevel={1}
             >
-              Rehber
+              {m.rehber.title}
             </Text>
             {caption && (
               <Text variant="caption" color="textSecondary" numberOfLines={1}>
@@ -396,15 +360,15 @@ export default function AssistantScreen() {
             {account && !archiveId && !withPanel && (
               <IconButton
                 icon="time-outline"
-                label="Geçmiş konuşmalar"
+                label={m.rehber.history}
                 onPress={() => router.push("/assistant-history")}
               />
             )}
             {account && !archiveId && !empty && !withPanel && (
               <IconButton
                 icon="create-outline"
-                label="Yeni konuşma"
-                hint="Bu konuşma geçmişe kaydedilir"
+                label={m.rehber.newConversation}
+                hint={m.rehber.newConversationHint}
                 onPress={newConversation}
               />
             )}
@@ -446,7 +410,7 @@ export default function AssistantScreen() {
                   accessibilityRole={archiveError ? "alert" : undefined}
                   style={styles.center}
                 >
-                  {archiveError ?? "Konuşma açılıyor…"}
+                  {archiveError ?? m.rehber.opening}
                 </Text>
               </View>
             ) : empty ? (
@@ -469,15 +433,14 @@ export default function AssistantScreen() {
                   accessibilityRole={closed ? "alert" : "header"}
                 >
                   {closed
-                    ? "Rehber şu an kapalı"
+                    ? m.rehber.closed
                     : asset
-                      ? `${name ?? "Bu eser"} hakkında ne merak ediyorsun?`
-                      : "Nasıl yardımcı olabilirim?"}
+                      ? m.rehber.aboutSite(name ?? m.rehber.thisSite)
+                      : m.rehber.howCanIHelp}
                 </Text>
                 {closed ? (
                   <Text color="textSecondary" style={styles.center}>
-                    Eserler, harita ve rotalar çalışmaya devam ediyor. Biraz
-                    sonra tekrar bak.
+                    {m.rehber.closedNote}
                   </Text>
                 ) : (
                   <Text
@@ -485,9 +448,7 @@ export default function AssistantScreen() {
                     color="textSecondary"
                     style={styles.center}
                   >
-                    Mikrofona dokunup sesli de sorabilirsin. Ses yazıya
-                    çevrilmek için EVREN yapay zekâ servisine gönderilir,
-                    saklanmaz.
+                    {m.rehber.voiceNote}
                   </Text>
                 )}
                 {centered && (
@@ -558,7 +519,7 @@ export default function AssistantScreen() {
                       ]}
                     >
                       <Ionicons name="refresh" size={15} color={c.text} />
-                      <Text variant="label">Tekrar dene</Text>
+                      <Text variant="label">{m.common.retry}</Text>
                     </Pressable>
                   </View>
                 )}
@@ -618,17 +579,17 @@ export default function AssistantScreen() {
 /** Signed out or anonymous: Rehber is for accounts, whose conversations it keeps. */
 function SignIn({ onPress }: { onPress: () => void }) {
   const { colors: c } = useTheme();
+  const m = useMessages();
   return (
     <View style={styles.hello}>
       <View style={[styles.mark, { backgroundColor: c.text }]} aria-hidden>
         <Ionicons name="sparkles" size={22} color={c.background} />
       </View>
       <Text style={styles.helloText} accessibilityRole="header">
-        Rehber'i kullanmak için giriş yap
+        {m.rehber.signInTitle}
       </Text>
       <Text color="textSecondary" style={styles.center}>
-        Konuşmaların hesabında saklanır; istediğin zaman geçmişten dönüp
-        okuyabilirsin.
+        {m.rehber.signInNote}
       </Text>
       <Pressable
         accessibilityRole="button"
@@ -640,7 +601,7 @@ function SignIn({ onPress }: { onPress: () => void }) {
         ]}
       >
         <Text variant="label" colorValue={c.background}>
-          Giriş yap ya da hesap aç
+          {m.rehber.signIn}
         </Text>
       </Pressable>
     </View>
@@ -650,6 +611,7 @@ function SignIn({ onPress }: { onPress: () => void }) {
 /** In place of the field in an archived conversation: it is read-only, a new one starts on its page. */
 function ArchiveBar({ onStartNew }: { onStartNew: () => void }) {
   const { colors: c } = useTheme();
+  const m = useMessages();
   return (
     <View style={[styles.archiveBar, { backgroundColor: c.surfaceRaised }]}>
       <Ionicons
@@ -659,11 +621,11 @@ function ArchiveBar({ onStartNew }: { onStartNew: () => void }) {
         aria-hidden
       />
       <Text variant="caption" color="textSecondary" style={styles.flex}>
-        Bu konuşma arşivde; yeni soru gönderilemez.
+        {m.rehber.archived}
       </Text>
       <Pressable
         accessibilityRole="button"
-        accessibilityHint="Aynı sayfada yeni bir konuşma açar"
+        accessibilityHint={m.rehber.newHere}
         onPress={onStartNew}
         style={({ pressed }) => [
           styles.archiveAction,
@@ -673,7 +635,7 @@ function ArchiveBar({ onStartNew }: { onStartNew: () => void }) {
       >
         <Ionicons name="create-outline" size={15} color={c.background} />
         <Text variant="label" colorValue={c.background}>
-          Yeni konuşma
+          {m.rehber.newConversation}
         </Text>
       </Pressable>
     </View>
@@ -733,6 +695,7 @@ function Composer({
 }) {
   const { colors: c } = useTheme();
   const { textScale } = useUi();
+  const m = useMessages();
   const length = draft.trim().length;
   const canSend = !closed && !busy && length > 0 && length <= QUESTION_MAX;
   const listening = voice.phase !== "idle";
@@ -765,12 +728,12 @@ function Composer({
             ))}
           </View>
           <Text style={styles.flex} accessibilityLiveRegion="polite">
-            {recording ? `Dinliyorum… ${voice.seconds} sn` : "Anlıyorum…"}
+            {recording ? m.rehber.listening(voice.seconds) : m.rehber.understanding}
           </Text>
           {recording ? (
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel="Bitir ve gönder"
+              accessibilityLabel={m.rehber.finishAndSend}
               hitSlop={4}
               onPress={voice.toggle}
               style={({ pressed }) => [
@@ -785,7 +748,7 @@ function Composer({
             <View style={styles.send}>
               <ActivityIndicator
                 color={c.text}
-                accessibilityLabel="Ses yazıya çevriliyor"
+                accessibilityLabel={m.rehber.transcribing}
               />
             </View>
           )}
@@ -818,10 +781,10 @@ function Composer({
           value={draft}
           onChangeText={onChange}
           onKeyPress={onKeyPress}
-          placeholder="Rehber'e sor"
+          placeholder={m.rehber.placeholder}
           placeholderTextColor={c.textSecondary}
-          accessibilityLabel="Soru"
-          accessibilityHint={`En çok ${QUESTION_MAX} karakter`}
+          accessibilityLabel={m.rehber.question}
+          accessibilityHint={m.rehber.maxChars(QUESTION_MAX)}
           multiline
           // One line to start with (a web textarea would open with two); it grows as the question does.
           numberOfLines={1}
@@ -852,8 +815,8 @@ function Composer({
         {length === 0 ? (
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel="Sesli sor"
-            accessibilityHint="Dokun ve sorunu söyle; bitirince tekrar dokun"
+            accessibilityLabel={m.rehber.askByVoice}
+            accessibilityHint={m.rehber.askByVoiceHint}
             accessibilityState={{ disabled: !canListen }}
             disabled={!canListen}
             // Drawn 36pt; the target is 44.
@@ -874,7 +837,7 @@ function Composer({
         ) : (
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel="Gönder"
+            accessibilityLabel={m.rehber.send}
             accessibilityState={{ disabled: !canSend }}
             disabled={!canSend}
             // Drawn 36pt; the target is 44.

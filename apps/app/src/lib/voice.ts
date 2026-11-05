@@ -4,6 +4,7 @@ import * as Speech from "expo-speech";
 import { useSyncExternalStore } from "react";
 
 import { speechSource } from "@/data/voice";
+import { localeTag } from "@/i18n";
 
 /**
  * Reads Rehber's answers aloud in EVREN's voice (`GET /voice/speech`), one answer at a time.
@@ -162,7 +163,7 @@ function release(source: AudioSource | null) {
 function speakOnDevice(text: string, current: () => boolean): Promise<void> {
   return new Promise((resolve) => {
     if (!current()) return resolve();
-    Speech.speak(text, { language: "tr-TR", rate: 0.95, onDone: resolve, onStopped: resolve, onError: () => resolve() });
+    Speech.speak(text, { language: localeTag(), rate: 0.95, onDone: resolve, onStopped: resolve, onError: () => resolve() });
   });
 }
 
