@@ -1,5 +1,6 @@
-import { useRootNavigationState, useRouter, useSegments } from "expo-router";
+import { usePathname, useRootNavigationState, useRouter, useSegments } from "expo-router";
 import { useEffect, useRef } from "react";
+import { Platform } from "react-native";
 
 import { communityAvailable, useCommunity } from "@/data";
 import { needsSignIn } from "@/lib/account-gate";
@@ -7,6 +8,7 @@ import { needsSignIn } from "@/lib/account-gate";
 /**
  * Sends a visitor without an account to `/auth`, from wherever they came in (the app's opening
  * or a shared link). A first visit opens on "Kayıt ol"; one who just signed out on "Giriş yap".
+ * The web's home page (`/`) is open to all: its laptop leads into the site, where the gate is.
  */
 export function useAccountGate() {
   const { user } = useCommunity();
@@ -17,7 +19,9 @@ export function useAccountGate() {
   if (user?.username) hadAccount.current = true;
 
   const screen = segments[0];
-  const closed = needsSignIn(user, communityAvailable, screen);
+  const pathname = usePathname();
+  const home = Platform.OS === "web" && pathname === "/";
+  const closed = !home && needsSignIn(user, communityAvailable, screen);
   useEffect(() => {
     if (!mounted || !closed) return;
     router.replace({ pathname: "/auth", params: { mode: hadAccount.current ? "login" : "register" } });
