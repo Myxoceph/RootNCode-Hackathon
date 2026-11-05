@@ -58,7 +58,7 @@ export function LandingPage() {
         <section className="vg-hero">
           <p className="vg-overline vg-rise vg-d1">Vakıf eserleri · KÖK&amp;KOD</p>
           <h1 className="vg-h1 vg-rise vg-d2">
-            Taşların hafızasını <em>keşfet</em>
+            Vakıf eserlerini <em>keşfet</em>
           </h1>
           <div className="vg-actions vg-rise vg-d4">
             <a className="vg-button vg-button-light" href="/map" onClick={openSite}>
@@ -104,7 +104,6 @@ function Scene({ onSite, onApp, shore }: { onSite: (event: MouseEvent<HTMLAnchor
     <div ref={room} className="vg-room">
       <div className="vg-scene vg-rise vg-d5" style={{ width: SCENE_W, height: SCENE_H, transform: `scale(${scale})`, opacity: scale ? undefined : 0 }}>
         {/* The ground they stand on: the dots go dark under them, a soft gold light pools around. */}
-        <div className="vg-backlight" aria-hidden />
         <div className="vg-shore" ref={shore} aria-hidden />
         <div className="vg-spill" aria-hidden />
         <div className="vg-contact vg-contact-laptop" aria-hidden />
@@ -242,7 +241,7 @@ const CSS = `
 }
 .vg-landing *, .vg-landing *::before, .vg-landing *::after { box-sizing: border-box; }
 .vg-skyline { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 44%, #000 62%); mask-image: linear-gradient(to bottom, transparent 44%, #000 62%); }
+  -webkit-mask-image: linear-gradient(to bottom, transparent 38%, #000 47%); mask-image: linear-gradient(to bottom, transparent 38%, #000 47%); }
 .vg-vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.6) 100%); }
 .vg-grain { position: absolute; inset: -50%; pointer-events: none; background-image: ${GRAIN}; opacity: 0.09; mix-blend-mode: overlay; }
 
@@ -270,8 +269,6 @@ const CSS = `
 
 .vg-room { position: relative; flex: 1; transform: translateY(calc(-1 * clamp(16px, 6vh, 70px))); min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
 .vg-scene { position: relative; flex: none; transform-origin: 50% 100%; margin-bottom: 0; }
-.vg-backlight { position: absolute; left: 40%; top: -40px; width: 900px; height: 520px; transform: translateX(-50%); pointer-events: none;
-  background: radial-gradient(closest-side, rgba(221, 181, 92, 0.16), rgba(221, 181, 92, 0.05) 50%, rgba(221, 181, 92, 0) 100%); }
 .vg-contact { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0)); }
 .vg-contact-laptop { left: -10px; bottom: 50px; width: 640px; height: 30px; }
 .vg-contact-phone { right: -8px; bottom: 24px; width: 216px; height: 26px; z-index: 0; }
@@ -289,7 +286,7 @@ const CSS = `
   opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; backdrop-filter: blur(8px); }
 .vg-device:hover .vg-tag, .vg-device:focus-visible .vg-tag { opacity: 1; transform: translate(-50%, 0); }
 
-.vg-laptop { display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 40px rgba(5, 7, 13, 0.6)); }
+.vg-laptop { display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55)); }
 .vg-glass { position: relative; width: 572px; height: 368px; border-radius: 18px 18px 4px 4px; padding: 11px 11px 14px; background: #040507;
   box-shadow: 0 0 0 1.5px #474B54, 0 -1px 0 1.5px rgba(255, 255, 255, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 80px -30px rgba(0, 0, 0, 0.9); }
 .vg-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 6px 6px 2px 2px; background: #0D1420; }
@@ -304,7 +301,7 @@ const CSS = `
 .vg-scoop { position: absolute; top: 0; left: 50%; width: 104px; height: 6px; margin-left: -52px; border-radius: 0 0 10px 10px; background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08)); }
 
 .vg-phone { position: relative; width: 200px; height: 412px; border-radius: 38px; padding: 8px; background: #040507;
-  box-shadow: 0 0 0 2.5px #5A5F69, 0 0 0 4px #1E2026, -1px -1px 0 4px rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.1), -14px 22px 36px -14px rgba(0, 0, 0, 0.7), 0 0 40px 4px rgba(5, 7, 13, 0.6); }
+  box-shadow: 0 0 0 2.5px #5A5F69, 0 0 0 4px #1E2026, -1px -1px 0 4px rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.1), -14px 22px 36px -14px rgba(0, 0, 0, 0.7); }
 .vg-phone-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 31px; background: #0D1420; }
 .vg-notch { position: absolute; top: 9px; left: 50%; width: 72px; height: 21px; transform: translateX(-50%); border-radius: 12px; background: #030406; }
 
