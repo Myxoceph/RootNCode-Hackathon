@@ -49,9 +49,14 @@ export function LandingPage() {
           <span className="vg-mark" aria-hidden />
           Vagabonds
         </a>
-        <a className="vg-nav-link" href="/auth">
-          Giriş yap
-        </a>
+        <nav className="vg-nav-actions" aria-label="Hesap">
+          <a className="vg-nav-link" href="/auth?mode=login">
+            Giriş yap
+          </a>
+          <a className="vg-nav-link vg-nav-primary" href="/auth?mode=register">
+            Kayıt ol
+          </a>
+        </nav>
       </header>
 
       <main className="vg-main">
@@ -251,6 +256,9 @@ const CSS = `
 .vg-nav-link { padding: 9px 18px; border-radius: 999px; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_500Medium, sans-serif; font-size: 14px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); transition: background 0.25s, box-shadow 0.25s; }
 .vg-nav-link:hover { background: rgba(255, 255, 255, 0.06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28); }
+.vg-nav-actions { display: flex; align-items: center; gap: 8px; }
+.vg-nav-primary { background: #F4F1EA; color: #0B0F18; box-shadow: none; }
+.vg-nav-primary:hover { background: #FFFFFF; box-shadow: none; }
 
 .vg-main { position: relative; z-index: 1; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; }
 .vg-hero { flex: none; display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(4px, 2vh, 28px) 24px 0; }
@@ -267,15 +275,16 @@ const CSS = `
 .vg-button-dark { color: var(--ink); background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14); backdrop-filter: blur(12px); }
 .vg-button-dark:hover { background: rgba(255, 255, 255, 0.13); transform: translateY(-1px); }
 
-.vg-room { position: relative; flex: 1; transform: translateY(calc(-1 * clamp(16px, 6vh, 70px))); min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
-.vg-scene { position: relative; flex: none; transform-origin: 50% 100%; margin-bottom: 0; }
+.vg-room { position: relative; flex: 1; pointer-events: none; transform: translateY(calc(-1 * clamp(16px, 6vh, 70px))); min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
+/* The scene's box is larger than its devices: only the devices take the pointer, so it never covers the buttons above. */
+.vg-scene { position: relative; flex: none; transform-origin: 50% 100%; margin-bottom: 0; pointer-events: none; }
 .vg-contact { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0)); }
 .vg-contact-laptop { left: -10px; bottom: 50px; width: 640px; height: 30px; }
 .vg-contact-phone { right: -8px; bottom: 24px; width: 216px; height: 26px; z-index: 0; }
 .vg-shore { position: absolute; left: 0; right: 0; bottom: 64px; height: 0; pointer-events: none; }
 .vg-spill { position: absolute; left: 30px; bottom: -60px; width: 560px; height: 124px; pointer-events: none; border-radius: 50%;
   background: radial-gradient(closest-side, rgba(140, 165, 220, 0.14), rgba(140, 165, 220, 0.04) 60%, rgba(140, 165, 220, 0) 100%); }
-.vg-device { all: unset; position: absolute; bottom: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.vg-device { all: unset; position: absolute; bottom: 0; cursor: pointer; pointer-events: auto; -webkit-tap-highlight-color: transparent; }
 .vg-device:focus-visible { outline: 3px solid var(--gold); outline-offset: 10px; border-radius: 22px; }
 .vg-device-laptop { left: 0; bottom: 64px; width: 620px; }
 .vg-device-phone { right: 0; width: 200px; bottom: 36px; z-index: 1; }
