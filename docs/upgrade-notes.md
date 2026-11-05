@@ -7,6 +7,39 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-05 · Web: kamera yok, yeni ana sayfa
+
+Kimler: **uygulamayı çalıştıranlar**
+
+1. `npm install` (uygulamaya yeni paketler: `toqr`, `expo-asset`)
+2. İsteğe bağlı: ana sayfadaki QR kodun açacağı Expo Go bağlantısı için `EXPO_PUBLIC_APP_URL`
+   (ör. `exp://u.expo.dev/...`). Verilmezse sayfa ağdaki geliştirme sunucusunu (`exp://<ip>:8081`)
+   kullanır; `localhost`'tan açıldığında QR yerine "yakında" yazar.
+
+Değişenler:
+- Web'de kamera deneyimi yok: Kamera sekmesi, Ziyaret Mührü, Taşın Dili ve Taşa Sor yalnızca mobilde.
+  Haritada "Kilidini aç" web'de "mobil uygulamada açılır" uyarısı gösterir (bkz. ADR 0001 güncellemesi).
+- Web'de `/` artık ana sayfa: laptop siteye (haritaya), telefon uygulamayı edinme penceresine götürür.
+  Hesap istemez; mobilde açılıştaki "Merhaba" karşılaması aynen duruyor.
+
+---
+
+## 2026-11-04 · Başarım görselleri ve panelde İngilizce
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. `npm run db:deploy --workspace @vagabonds/api` (yeni tablo: `achievement_image`)
+2. API'yi yeniden başlat.
+
+Değişenler:
+- Admin panelinde başarım ve ödül eklerken/düzenlerken başlık ve açıklama İngilizce de yazılabiliyor. Önceden
+  düzenleme İngilizceyi siliyordu; artık yalnızca Türkçe gönderilirse İngilizce korunur.
+- Başarımlara panelden kare bir JPEG/PNG rozet görseli yüklenebiliyor (`PUT /admin/achievements/:code/image`);
+  uygulama görseli emoji yerine daire içinde çizer. Sözleşme `0.3.27`: başarımlarda `imageUrl`, admin
+  yanıtlarında `titleEn` / `descriptionEn`.
+
+---
+
 ## 2026-11-03 · Kitap fotoğraflarına alt metin (ekran okuyucu için)
 
 Kimler: **API'yi yerelde çalıştıranlar**

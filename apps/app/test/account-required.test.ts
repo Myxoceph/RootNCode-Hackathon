@@ -46,6 +46,8 @@ describe("after signing in", () => {
     expect(afterSignIn("https://baska.site")).toBe("/");
     expect(afterSignIn("//baska.site/yol")).toBe("/");
     expect(afterSignIn("/auth?mode=login")).toBe("/");
+    // The web's `/` is its home page: there the way in is the map.
+    expect(afterSignIn(undefined, "/map")).toBe("/map");
   });
 });
 

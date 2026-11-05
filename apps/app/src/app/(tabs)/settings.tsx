@@ -10,7 +10,7 @@ import { Animated, Easing, Pressable, ScrollView, StyleSheet, View } from "react
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Circle, Defs, G, LinearGradient, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
 
-import { avatarUri, logout, refreshMe, useCommunity, useMyAchievements, useMyContributions } from "@/data";
+import { avatarUri, logout, refreshMe, useCommunity, useMyAchievements, useMyContributions, useWallet } from "@/data";
 import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useSavedRoutes } from "@/lib/saved-routes";
@@ -400,6 +400,8 @@ function Sections() {
   const { user } = useCommunity();
   const badgeData = badges.status === "success" ? badges.data : null;
   const noteCount = notes.status === "success" && notes.data ? notes.data.length : null;
+  const wallet = useWallet();
+  const walletData = wallet.status === "success" ? wallet.data : null;
 
   const rows: Array<{ href: Href; icon: IconName; title: string; value: string | null }> = [
     { href: "/profile/routes", icon: "bookmark-outline", title: "Kaydettiklerim", value: routes.length > 0 ? String(routes.length) : null },
@@ -410,6 +412,7 @@ function Sections() {
       title: "Rozetlerim",
       value: badgeData ? `${badgeData.items.filter((b) => b.earnedAt).length}/${badgeData.items.length}` : null,
     },
+    { href: "/profile/rewards", icon: "gift-outline", title: "Ödüllerim", value: walletData ? `${walletData.balance} puan` : null },
     { href: "/profile/notes", icon: "chatbubble-ellipses-outline", title: "Bıraktığım Notlar", value: noteCount ? String(noteCount) : null },
     { href: "/profile/settings", icon: "settings-outline", title: "Sistem ayarları", value: null },
     // Only moderators and admins: the panel the API lets them use.

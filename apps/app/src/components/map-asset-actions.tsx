@@ -82,6 +82,8 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
     },
     {
       key: "inscription",
+      // The camera's: not on the web (ADR 0001), where "Kilidini aç" says the seal is the phone's too.
+      hidden: web,
       icon: "scan",
       label: "Taşın Dili",
       hint: readable ? "Kitabeyi kamerayla okur" : record ? "Bu eserde okunacak kitabe yok" : "Eserin bilgileri yükleniyor",
@@ -95,7 +97,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
       hint: sealable ? "Ziyaret Mührü: eserde olduğunu kamerayla kanıtlar" : record ? "Bu eserde mühür kısmı yok" : "Eserin bilgileri yükleniyor",
       disabled: !sealable,
       // An unlocked asset needs no seal: its place goes to the others.
-      hidden: opened,
+      hidden: opened || web,
       onPress: () => router.push({ pathname: "/visit-seal", params: { asset: asset.id } }),
     },
     {

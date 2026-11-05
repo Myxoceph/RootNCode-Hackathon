@@ -103,6 +103,9 @@ export const AdminRewardPatchSchema = z
   .refine((patch) => Object.keys(patch).length > 0, "at least one field");
 
 export const AdminRewardSchema = RewardSchema.extend({
+  /** `title` and `description` are Turkish here; these are the English ones, null when not written. */
+  titleEn: z.string().nullable(),
+  descriptionEn: z.string().nullable(),
   active: z.boolean(),
   sortOrder: z.int().min(0),
   createdBy: z.string().min(1),

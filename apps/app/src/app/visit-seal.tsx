@@ -12,6 +12,7 @@ import { MarkerTracker } from "@/ar/marker-tracker";
 import { trackerFailureText, type TrackerEvent } from "@/ar/mindar";
 import type { TrackerTarget } from "@/ar/tracker-page";
 import { AssetImage } from "@/components/asset-image";
+import { BadgeArt } from "@/components/badge-art";
 import { CameraTopBar } from "@/components/camera-chrome";
 import { DataErrorView } from "@/components/resource-view";
 import { communityAvailable, DataError, sendVisitProof, useAsset } from "@/data";
@@ -474,7 +475,7 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
             </Text>
             {result.newAchievements.map((achievement) => (
               <View key={achievement.code} style={styles.badge} accessible accessibilityLabel={`${achievement.title}, ${achievement.points} puan. ${achievement.description}`}>
-                <Text style={styles.badgeIcon}>{achievement.badge}</Text>
+                <BadgeArt code={achievement.code} emoji={achievement.badge} imageUrl={achievement.imageUrl} size={48} />
                 <View style={styles.flex}>
                   <Text variant="label" colorValue={cameraColors.text}>
                     {achievement.title}
@@ -677,10 +678,6 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     borderRadius: radius.lg,
     backgroundColor: cameraColors.panel,
-  },
-  badgeIcon: {
-    fontSize: 28,
-    lineHeight: 34,
   },
   done: {
     alignSelf: "stretch",

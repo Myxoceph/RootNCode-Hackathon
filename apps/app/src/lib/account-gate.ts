@@ -17,10 +17,10 @@ export function needsSignIn(user: AppUser | null | undefined, available: boolean
 }
 
 /**
- * Where to go once signed in: the page the visitor came in for (a shared link), or the greeting.
+ * Where to go once signed in: the page the visitor came in for (a shared link), or `otherwise`.
  * Only a path inside the app counts, and never the sign-in screen itself.
  */
-export function afterSignIn(next: string | undefined): string {
-  if (!next || !next.startsWith("/") || next.startsWith("//") || next.startsWith("/auth")) return "/";
+export function afterSignIn(next: string | undefined, otherwise = "/"): string {
+  if (!next || !next.startsWith("/") || next.startsWith("//") || next.startsWith("/auth")) return otherwise;
   return next;
 }

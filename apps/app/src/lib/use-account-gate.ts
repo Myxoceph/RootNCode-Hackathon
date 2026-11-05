@@ -1,6 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useGlobalSearchParams, usePathname, useRootNavigationState, useRouter, useSegments } from "expo-router";
 import { useEffect, useState } from "react";
+import { Platform } from "react-native";
 
 import { communityAvailable, useCommunity } from "@/data";
 import { isAccount, needsSignIn } from "@/lib/account-gate";
@@ -12,6 +13,7 @@ const HAD_ACCOUNT_KEY = "vagabonds-had-account";
  * Sends a visitor without an account to `/auth`, from wherever they came in (the app's opening
  * or a shared link, which it opens once signed in). On a phone that never had an account it
  * opens on "Kayıt ol"; on one that had, on "Giriş yap".
+ * The web's home page (`/`) is open to all: its laptop leads into the site, where the gate is.
  */
 export function useAccountGate() {
   const { user } = useCommunity();
@@ -39,7 +41,8 @@ export function useAccountGate() {
     void AsyncStorage.setItem(HAD_ACCOUNT_KEY, "1").catch(() => {});
   }, [signedIn]);
 
-  const closed = needsSignIn(user, communityAvailable, segments[0]);
+  const home = Platform.OS === "web" && pathname === "/";
+  const closed = !home && needsSignIn(user, communityAvailable, segments[0]);
   useEffect(() => {
     if (!mounted || !closed || hadAccount === undefined) return;
     const query = new URLSearchParams(

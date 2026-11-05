@@ -25,6 +25,7 @@ import {
   type IconName,
   type Tone,
 } from "@/components/admin/kit";
+import { BilingualField } from "@/components/admin/record-fields";
 import { AdminOnly, PageBody } from "@/components/admin/shell";
 import { addRewardCodes, createReward, fetchAdminRewards, updateReward } from "@/data/admin";
 
@@ -192,6 +193,8 @@ function RewardForm({ item, onClose, onSaved }: { item: AdminReward | null; onCl
   const [code, setCode] = useState(item?.code ?? "");
   const [title, setTitle] = useState(item?.title ?? "");
   const [description, setDescription] = useState(item?.description ?? "");
+  const [titleEn, setTitleEn] = useState(item?.titleEn ?? "");
+  const [descriptionEn, setDescriptionEn] = useState(item?.descriptionEn ?? "");
   const [partner, setPartner] = useState(item?.partner ?? "");
   const [kind, setKind] = useState<RewardKind>(item?.kind ?? "museum");
   const [cost, setCost] = useState(String(item?.costPoints ?? 200));
@@ -211,8 +214,9 @@ function RewardForm({ item, onClose, onSaved }: { item: AdminReward | null; onCl
     setSaving(true);
     try {
       const fields = {
-        title: { tr: title.trim() },
-        description: { tr: description.trim() },
+        // An empty English is sent as null, so clearing it removes it.
+        title: { tr: title.trim(), en: titleEn.trim() || null },
+        description: { tr: description.trim(), en: descriptionEn.trim() || null },
         partner: partner.trim(),
         kind,
         costPoints: n(cost),
@@ -252,7 +256,16 @@ function RewardForm({ item, onClose, onSaved }: { item: AdminReward | null; onCl
         </>
       }
     >
-      <Field label="Başlık *" value={title} onChangeText={setTitle} placeholder="ör. Müze Kart indirimi" maxLength={300} />
+      <BilingualField
+        label="Başlık *"
+        tr={title}
+        en={titleEn}
+        onTr={setTitle}
+        onEn={setTitleEn}
+        placeholder="ör. Müze Kart indirimi"
+        placeholderEn="e.g. Museum Card discount"
+        hint="İngilizce isteğe bağlı; boşsa İngilizce uygulamada Türkçesi görünür."
+      />
       {!item && (
         <Field
           label="Kod *"
@@ -264,7 +277,16 @@ function RewardForm({ item, onClose, onSaved }: { item: AdminReward | null; onCl
           autoCapitalize="none"
         />
       )}
-      <Field label="Açıklama *" value={description} onChangeText={setDescription} placeholder="Ziyaretçinin ne aldığı ve nasıl kullanacağı" multiline maxLength={300} />
+      <BilingualField
+        label="Açıklama *"
+        tr={description}
+        en={descriptionEn}
+        onTr={setDescription}
+        onEn={setDescriptionEn}
+        placeholder="Ziyaretçinin ne aldığı ve nasıl kullanacağı"
+        placeholderEn="What the visitor gets and how to use it"
+        multiline
+      />
       <View style={styles.pair}>
         <Field label="Kurum *" value={partner} onChangeText={setPartner} placeholder="ör. Vakıf Katılım" maxLength={120} style={styles.half} />
         <View style={styles.half}>

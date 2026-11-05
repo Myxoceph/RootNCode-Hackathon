@@ -70,7 +70,7 @@ export default function SystemSettingsScreen() {
               accessibilityRole="switch"
               accessibilityState={{ checked: settings.audioDescription }}
               accessibilityLabel="Sesli mimari betimleme"
-              accessibilityHint="Kamera açmadan mimariyi dinle"
+              accessibilityHint="Mekânın mimarisini sesli dinle"
               onPress={() => setSetting("audioDescription", !settings.audioDescription)}
               style={({ pressed }) => [styles.wideSwitch, pressed && styles.pressed]}
             >
@@ -83,7 +83,7 @@ export default function SystemSettingsScreen() {
                   Sesli mimari betimleme
                 </Text>
                 <Text variant="caption" color="textSecondary">
-                  Kamera açmadan dün ile bugünü dinle
+                  Mekânı gözünü kapatıp dün ile bugünü dinle
                 </Text>
               </View>
             </Pressable>

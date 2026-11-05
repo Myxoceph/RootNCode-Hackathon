@@ -107,8 +107,9 @@ export default function AuthScreen() {
           })
         : await login({ username: username.trim().toLowerCase(), password });
       announce(registering ? `Hesabın oluşturuldu. Hoş geldin, ${signedIn.nickname}.` : `Hoş geldin, ${signedIn.nickname}.`);
-      // The page a shared link asked for, or the greeting.
-      router.replace(afterSignIn(params.next) as Href);
+      // The page a shared link asked for. Otherwise the web's `/` is the home page, so an account goes
+      // straight to the map there; the app opens on its greeting, which goes on to the map.
+      router.replace(afterSignIn(params.next, Platform.OS === "web" ? "/map" : "/") as Href);
     } catch (err) {
       const message = err instanceof DataError ? err.message : "Bir şeyler ters gitti. Tekrar dene.";
       setError(message);
