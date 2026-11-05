@@ -22,6 +22,7 @@ export default defineConfig({
   },
   test: {
     include: ["test/**/*.test.ts"],
+    setupFiles: ["./test/setup-lang.ts"],
     unstubEnvs: true,
     unstubGlobals: true,
   },
