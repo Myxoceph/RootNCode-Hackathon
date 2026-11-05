@@ -105,7 +105,8 @@ export default function AuthScreen() {
           })
         : await login({ username: username.trim().toLowerCase(), password });
       announce(registering ? `Hesabın oluşturuldu. Hoş geldin, ${signedIn.nickname}.` : `Hoş geldin, ${signedIn.nickname}.`);
-      router.replace("/");
+      // The web's `/` is the home page: there an account goes straight to the map. The app opens on its greeting, which goes on to the map.
+      router.replace(Platform.OS === "web" ? "/map" : "/");
     } catch (err) {
       const message = err instanceof DataError ? err.message : "Bir şeyler ters gitti. Tekrar dene.";
       setError(message);
