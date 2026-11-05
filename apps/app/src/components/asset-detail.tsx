@@ -1,9 +1,27 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetDetail, AssetSection, Media } from "@vagabonds/contracts";
-import { cameraColors, fontFamily, palette, radius, SourceNote, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
+import {
+  cameraColors,
+  fontFamily,
+  palette,
+  radius,
+  SourceNote,
+  spacing,
+  Text,
+  touchTarget,
+  useTheme,
+} from "@vagabonds/ui";
 import { useNavigation, useRouter, type Href } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useMemo, useRef, useState, type ComponentProps, type ReactNode } from "react";
+import {
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+  type ComponentProps,
+  type ReactNode,
+} from "react";
 import {
   Animated,
   Easing,
@@ -26,15 +44,37 @@ import { AssetGallery } from "@/components/asset-gallery";
 import { AssetImage } from "@/components/asset-image";
 import { BuildingIllustration } from "@/components/building-illustration";
 import { VisitorPulse } from "@/components/visitor-pulse";
-import { CAPSULE_SECONDS, captionAt, capsuleForSoundKey, capsules, formatSeconds } from "@/content/capsules";
+import {
+  CAPSULE_SECONDS,
+  captionAt,
+  capsuleForSoundKey,
+  capsules,
+  formatSeconds,
+} from "@/content/capsules";
 import { useAssetRelations } from "@/data";
 import { yearOfDating } from "@/lib/dating";
 import { announce } from "@/lib/announce";
-import { Editable, FrameLink, FrameModal, useFrameEditing } from "@/lib/in-frame";
-import { isAssetUnlocked, LOCKED_WARNING, relatedAssetsOf } from "@/lib/related-assets";
+import {
+  Editable,
+  FrameLink,
+  FrameModal,
+  useFrameEditing,
+} from "@/lib/in-frame";
+import {
+  isAssetUnlocked,
+  LOCKED_WARNING,
+  relatedAssetsOf,
+} from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
+import { useWideWeb } from "@/lib/use-wide-web";
+import { SiteNav, SITE_ITEMS } from "@/components/web-nav-bar";
+import {
+  speakAnswer,
+  stopAnswer,
+  stopAnswerOf,
+  useSpeaking,
+} from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -52,13 +92,58 @@ const ink = {
   glass: "rgba(255, 255, 255, 0.1)",
   edge: "rgba(255, 255, 255, 0.16)",
 };
+type Ink = {
+  text: string;
+  soft: string;
+  gold: string;
+  onGold: string;
+  glass: string;
+  edge: string;
+};
+
+/** The web article's words and cards below its photo, by theme; the photo band keeps `ink`. */
+const ARTICLE_INK: Record<"light" | "dark", Ink & { page: string }> = {
+  light: {
+    page: palette.gece50,
+    text: palette.gece950,
+    soft: palette.gece600,
+    gold: "#966F22",
+    onGold: palette.white,
+    glass: palette.white,
+    edge: "rgba(11, 15, 24, 0.09)",
+  },
+  dark: { ...ink, page: palette.gece950 },
+};
 
 type Page =
   | { kind: "cover"; key: string; photo: Media | null }
   | { kind: "summary"; key: string; photo: Media | null; text: string }
-  | { kind: "figures"; key: string; photo: Media | null; figures: Figure[]; founder: string | null }
-  | { kind: "highlight"; key: string; photo: Media | null; number: number; total: number; title: string; hint: string | null; chapter: number }
-  | { kind: "chapter"; key: string; photo: Media | null; chapter: number; id: string; title: string; sentence: string }
+  | {
+      kind: "figures";
+      key: string;
+      photo: Media | null;
+      figures: Figure[];
+      founder: string | null;
+    }
+  | {
+      kind: "highlight";
+      key: string;
+      photo: Media | null;
+      number: number;
+      total: number;
+      title: string;
+      hint: string | null;
+      chapter: number;
+    }
+  | {
+      kind: "chapter";
+      key: string;
+      photo: Media | null;
+      chapter: number;
+      id: string;
+      title: string;
+      sentence: string;
+    }
   | { kind: "end"; key: string; photo: Media | null };
 
 interface Figure {
@@ -76,7 +161,29 @@ interface Figure {
  *
  * Whatever the book says is told, in its own words: "rivayete göre", "muhtemelen".
  */
-export function AssetDetailView({ asset, onClose }: { asset: AssetDetail; /** Replaces going back, e.g. in the admin panel's preview. */ onClose?: () => void }) {
+export function AssetDetailView({
+  asset,
+  onClose,
+}: {
+  asset: AssetDetail;
+  /** Replaces going back, e.g. in the admin panel's preview. */ onClose?: () => void;
+}) {
+  // A wide web page reads the card as an article (`AssetArticle`); the phone and the panel's preview keep the pages.
+  const wide = useWideWeb();
+  return wide && !onClose ? (
+    <AssetArticle asset={asset} />
+  ) : (
+    <AssetStory asset={asset} onClose={onClose} />
+  );
+}
+
+function AssetStory({
+  asset,
+  onClose,
+}: {
+  asset: AssetDetail;
+  onClose?: () => void;
+}) {
   const router = useRouter();
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
@@ -100,32 +207,62 @@ export function AssetDetailView({ asset, onClose }: { asset: AssetDetail; /** Re
   useEffect(() => {
     if (index === shownPage.current || !pages[index]) return;
     shownPage.current = index;
-    announce(`Sayfa ${index + 1} / ${pages.length}: ${pageTitle(pages[index]!, asset)}`);
+    announce(
+      `Sayfa ${index + 1} / ${pages.length}: ${pageTitle(pages[index]!, asset)}`,
+    );
   }, [index, pages, asset]);
   const close = () => {
     if (onClose) return onClose();
     if (!router.canGoBack()) return router.replace("/monuments");
     // Opened from another tab (the map's cards, the assistant), the card is alone in the Eserler
     // stack: leave the list in its place, so the tab opens on the list next time, then go back.
-    if (navigation.getState()?.routes.length === 1) navigation.dispatch({ type: "REPLACE", payload: { name: "index" } });
+    if (navigation.getState()?.routes.length === 1)
+      navigation.dispatch({ type: "REPLACE", payload: { name: "index" } });
     router.back();
   };
   const last = pages[index]?.kind === "end";
 
   return (
-    <View style={styles.screen} onLayout={(event) => setHeight(event.nativeEvent.layout.height)}>
+    <View
+      style={styles.screen}
+      onLayout={(event) => setHeight(event.nativeEvent.layout.height)}
+    >
       <StatusBar style="light" />
 
       {/* Before the pages in the tree, so "Kapat" is reached first (WCAG 2.4.3); drawn over them by zIndex. */}
-      <View style={[styles.top, { paddingTop: insets.top + spacing.sm }]} pointerEvents="box-none">
+      <View
+        style={[styles.top, { paddingTop: insets.top + spacing.sm }]}
+        pointerEvents="box-none"
+      >
         {/* Drawn as a reminder; a screen reader would hear the name again on every page. */}
-        <Text variant="caption" colorValue={ink.soft} numberOfLines={1} style={[styles.flex, styles.semibold]} aria-hidden accessibilityElementsHidden importantForAccessibility="no">
+        <Text
+          variant="caption"
+          colorValue={ink.soft}
+          numberOfLines={1}
+          style={[styles.flex, styles.semibold]}
+          aria-hidden
+          accessibilityElementsHidden
+          importantForAccessibility="no"
+        >
           {index === 0 || last ? "" : asset.name}
         </Text>
-        <Text variant="caption" colorValue={ink.soft} style={styles.mono} aria-hidden accessibilityElementsHidden importantForAccessibility="no">
+        <Text
+          variant="caption"
+          colorValue={ink.soft}
+          style={styles.mono}
+          aria-hidden
+          accessibilityElementsHidden
+          importantForAccessibility="no"
+        >
           {`${index + 1}/${pages.length}`}
         </Text>
-        <Pressable accessibilityRole="button" accessibilityLabel="Kapat" hitSlop={6} onPress={close} style={({ pressed }) => [styles.round, pressed && styles.pressed]}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Kapat"
+          hitSlop={6}
+          onPress={close}
+          style={({ pressed }) => [styles.round, pressed && styles.pressed]}
+        >
           <Ionicons name="close" size={20} color={ink.text} />
         </Pressable>
       </View>
@@ -139,26 +276,391 @@ export function AssetDetailView({ asset, onClose }: { asset: AssetDetail; /** Re
           scrollEventThrottle={32}
         >
           {pages.map((page, i) => (
-            <PageView key={page.key} page={page} height={height} active={i === index} asset={asset} onRead={setReading} photos={photos} onGallery={() => setGalleryOpen(true)}>
+            <PageView
+              key={page.key}
+              page={page}
+              height={height}
+              active={i === index}
+              asset={asset}
+              onRead={setReading}
+              photos={photos}
+              onGallery={() => setGalleryOpen(true)}
+            >
               {page.kind === "end" && (
-                <End asset={asset} onTop={() => scroll.current?.scrollTo({ y: 0, animated: true })} top={insets.top + spacing.xxxl + spacing.md} bottom={insets.bottom} />
+                <End
+                  asset={asset}
+                  onTop={() =>
+                    scroll.current?.scrollTo({ y: 0, animated: true })
+                  }
+                  top={insets.top + spacing.xxxl + spacing.md}
+                  bottom={insets.bottom}
+                />
               )}
             </PageView>
           ))}
         </ScrollView>
       )}
 
-
       {!last && (
         <View style={styles.dots} pointerEvents="none" aria-hidden>
           {pages.map((page, i) => (
-            <View key={page.key} style={[styles.dot, i === index ? styles.dotOn : null]} />
+            <View
+              key={page.key}
+              style={[styles.dot, i === index ? styles.dotOn : null]}
+            />
           ))}
         </View>
       )}
 
-      <Reader chapters={chapters} index={reading} onChange={setReading} assetName={asset.name} />
-      <AssetGallery photos={photos} visible={galleryOpen} onClose={() => setGalleryOpen(false)} />
+      <Reader
+        chapters={chapters}
+        index={reading}
+        onChange={setReading}
+        assetName={asset.name}
+      />
+      <AssetGallery
+        photos={photos}
+        visible={galleryOpen}
+        onClose={() => setGalleryOpen(false)}
+      />
+    </View>
+  );
+}
+
+/* ───────────────────────── The web's article ───────────────────────── */
+
+/**
+ * Eser kartı on a wide web page, as an article instead of pages to scroll one by one: the site's
+ * bar, the asset's photo as a wide band with its name and the ways to its photos, file and related
+ * assets; then the story in a column (summary, figures, what to look at on site, every chapter in
+ * full) and beside it what a visit needs (time, fee, entrance, directions), sound and the visitors'
+ * tips. Dark in every theme, as the pages are: photos first.
+ */
+function AssetArticle({ asset }: { asset: AssetDetail }) {
+  const router = useRouter();
+  const { scheme } = useTheme();
+  const look = ARTICLE_INK[scheme === "dark" ? "dark" : "light"];
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const photos = useMemo(() => picturesOf(asset), [asset]);
+  const cover = galleryOf(asset)[0] ?? null;
+  const figures = figuresOf(asset);
+  const year = builtYear(asset);
+  const place = `${asset.district}, ${asset.city.label}`;
+  const raw = asset.visit.entranceFee;
+  const fee = raw ? (raw in fees ? fees[raw] : raw) : null;
+  const a11y = asset.accessibility;
+  const stepFree =
+    a11y.verified && a11y.stepFree !== "unknown"
+      ? a11y.stepFree === "no"
+        ? "Basamaklı giriş"
+        : "Basamaksız giriş"
+      : null;
+  const coords = asset.coordinates;
+  const facts = [
+    asset.visit.durationMin
+      ? {
+          icon: "time-outline" as IconName,
+          label: "Gezi süresi",
+          value: `~${asset.visit.durationMin} dk`,
+        }
+      : null,
+    fee
+      ? { icon: "ticket-outline" as IconName, label: "Giriş", value: fee }
+      : null,
+    stepFree
+      ? {
+          icon: "accessibility-outline" as IconName,
+          label: "Erişim",
+          value: stepFree,
+        }
+      : null,
+    { icon: "location-outline" as IconName, label: "Yer", value: place },
+  ].filter(
+    (fact): fact is { icon: IconName; label: string; value: string } =>
+      fact !== null,
+  );
+  const back = () =>
+    router.canGoBack() ? router.back() : router.replace("/monuments");
+
+  return (
+    <View style={[styles.article, { backgroundColor: look.page }]}>
+      <StatusBar style={scheme === "dark" ? "light" : "dark"} />
+      <ScrollView
+        style={styles.flex}
+        contentContainerStyle={styles.articleScroll}
+      >
+        <SiteNav
+          items={SITE_ITEMS}
+          active="monuments"
+          background="transparent"
+          onPress={(item) =>
+            router.navigate(
+              SITE_ITEMS.find((site) => site.name === item.name)!.href,
+            )
+          }
+        />
+        <View style={styles.articleColumn}>
+          <Pressable
+            accessibilityRole="link"
+            accessibilityLabel="Eserler sayfasına dön"
+            onPress={back}
+            style={({
+              pressed,
+              hovered,
+            }: {
+              pressed: boolean;
+              hovered?: boolean;
+            }) => [
+              styles.articleBack,
+              hovered && { backgroundColor: look.glass },
+              pressed && styles.pressed,
+            ]}
+          >
+            <Ionicons name="chevron-back" size={16} color={look.soft} />
+            <Text variant="label" colorValue={look.soft}>
+              Eserler
+            </Text>
+          </Pressable>
+
+          <View style={styles.hero}>
+            <Backdrop photo={cover} id="article-cover" />
+            <Scrim id="article-cover" heavy={false} />
+            <View style={styles.heroCopy}>
+              <View style={styles.kicker}>
+                <Text
+                  variant="caption"
+                  colorValue={ink.onGold}
+                  style={styles.bold}
+                >
+                  {asset.type.label}
+                </Text>
+              </View>
+              <Text
+                headingLevel={1}
+                colorValue={ink.text}
+                style={styles.heroTitle}
+              >
+                {asset.name}
+              </Text>
+              {asset.subtitle && (
+                <Text
+                  variant="bodyLarge"
+                  colorValue={ink.soft}
+                  style={styles.italic}
+                >
+                  {asset.subtitle}
+                </Text>
+              )}
+              <Text
+                variant="caption"
+                colorValue={ink.soft}
+                style={styles.semibold}
+              >
+                {[year, place].filter(Boolean).join("  ·  ")}
+              </Text>
+              <View style={styles.heroActions}>
+                {photos.length > 1 && (
+                  <GalleryButton
+                    photos={photos}
+                    onPress={() => setGalleryOpen(true)}
+                  />
+                )}
+                <DossierButton asset={asset} />
+                <View style={styles.heroRelated}>
+                  <RelatedButton asset={asset} />
+                </View>
+              </View>
+            </View>
+          </View>
+
+          <View style={styles.articleRow}>
+            <View style={styles.articleMain}>
+              <Text colorValue={look.text} style={styles.lede}>
+                {asset.summary}
+              </Text>
+
+              {figures.length > 0 && (
+                <View style={styles.figureRow}>
+                  {figures.map((figure) => (
+                    <View
+                      key={figure.label}
+                      style={[
+                        styles.figureCard,
+                        { borderColor: look.edge, backgroundColor: look.glass },
+                      ]}
+                      accessible
+                      accessibilityLabel={`${figure.label}: ${[figure.value, figure.unit].filter(Boolean).join(" ")}`}
+                    >
+                      <Text
+                        colorValue={look.gold}
+                        style={styles.figureCardValue}
+                      >
+                        {figure.value}
+                        {figure.unit && (
+                          <Text
+                            colorValue={look.gold}
+                            style={styles.figureUnit}
+                          >{` ${figure.unit}`}</Text>
+                        )}
+                      </Text>
+                      <Text variant="caption" colorValue={look.soft}>
+                        {figure.label}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+              )}
+              {asset.founder?.name && (
+                <Text colorValue={look.soft} style={styles.founderLine}>
+                  {`${asset.founder.name} yaptırdı.`}
+                </Text>
+              )}
+
+              {asset.highlights.length > 0 && (
+                <View
+                  style={[styles.articleSection, { borderTopColor: look.edge }]}
+                >
+                  <Text
+                    variant="overline"
+                    colorValue={look.gold}
+                    headingLevel={2}
+                  >
+                    YERİNDE BAKIN
+                  </Text>
+                  <View style={styles.highlightList}>
+                    {asset.highlights.map((highlight, i) => (
+                      <View
+                        key={`${highlight.title}-${i}`}
+                        style={styles.highlightItem}
+                      >
+                        <Text
+                          colorValue={look.gold}
+                          style={styles.highlightNumber}
+                        >
+                          {String(i + 1).padStart(2, "0")}
+                        </Text>
+                        <View style={styles.flex}>
+                          <Text
+                            colorValue={look.text}
+                            style={styles.highlightTitle}
+                          >
+                            {highlight.title}
+                          </Text>
+                          {highlight.hint && (
+                            <Text variant="caption" colorValue={look.soft}>
+                              {highlight.hint}
+                            </Text>
+                          )}
+                        </View>
+                      </View>
+                    ))}
+                  </View>
+                </View>
+              )}
+
+              {asset.sections.map((section) => (
+                <View
+                  key={section.id}
+                  style={[styles.articleSection, { borderTopColor: look.edge }]}
+                >
+                  <Text
+                    colorValue={look.text}
+                    headingLevel={2}
+                    style={styles.sectionTitle}
+                  >
+                    {section.title ?? "Tarihçe"}
+                  </Text>
+                  {section.body
+                    .split(/\n\s*\n/)
+                    .filter((part) => part.trim() !== "")
+                    .map((part, i) => (
+                      <Text
+                        key={i}
+                        colorValue={look.soft}
+                        style={styles.paragraph}
+                      >
+                        {part.trim()}
+                      </Text>
+                    ))}
+                </View>
+              ))}
+            </View>
+
+            <View style={styles.articleSide}>
+              <View
+                style={[
+                  styles.sideCard,
+                  { borderColor: look.edge, backgroundColor: look.glass },
+                ]}
+              >
+                <Text
+                  variant="overline"
+                  colorValue={look.gold}
+                  headingLevel={2}
+                >
+                  ZİYARET
+                </Text>
+                {facts.map((fact) => (
+                  <View key={fact.label} style={styles.factRow}>
+                    <Ionicons name={fact.icon} size={18} color={look.gold} />
+                    <Text
+                      variant="caption"
+                      colorValue={look.soft}
+                      style={styles.factLabel}
+                    >
+                      {fact.label}
+                    </Text>
+                    <Text
+                      variant="label"
+                      colorValue={look.text}
+                      style={styles.factValue}
+                    >
+                      {fact.value}
+                    </Text>
+                  </View>
+                ))}
+                {asset.visit.notes && (
+                  <Text variant="caption" colorValue={look.soft}>
+                    {asset.visit.notes}
+                  </Text>
+                )}
+                {coords && (
+                  <Pressable
+                    accessibilityRole="link"
+                    accessibilityLabel="Yol tarifi al, harita uygulamasını açar"
+                    onPress={() =>
+                      Linking.openURL(
+                        `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`,
+                      )
+                    }
+                    style={({ pressed }) => [
+                      styles.directions,
+                      { backgroundColor: look.gold },
+                      pressed && styles.pressed,
+                    ]}
+                  >
+                    <Ionicons name="navigate" size={18} color={look.onGold} />
+                    <Text
+                      variant="label"
+                      colorValue={look.onGold}
+                      style={styles.bold}
+                    >
+                      Yol tarifi al
+                    </Text>
+                  </Pressable>
+                )}
+              </View>
+              <Experiences asset={asset} look={look} />
+              <VisitorPulse asset={asset} look={look} />
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+      <AssetGallery
+        photos={photos}
+        visible={galleryOpen}
+        onClose={() => setGalleryOpen(false)}
+      />
     </View>
   );
 }
@@ -193,17 +695,34 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
     const fresh = gallery.filter((m) => !used.has(m.key));
     const pool = fresh.length > 0 ? fresh : gallery;
     const wanted = text ? stems(text).filter((s) => !nameStems.has(s)) : [];
-    const photo = pool.find((m) => stems(`${m.caption ?? ""} ${m.alt}`).some((w) => wanted.includes(w))) ?? pool[0]!;
+    const photo =
+      pool.find((m) =>
+        stems(`${m.caption ?? ""} ${m.alt}`).some((w) => wanted.includes(w)),
+      ) ?? pool[0]!;
     used.add(photo.key);
     return photo;
   };
 
-  const pages: Page[] = [{ kind: "cover", key: "cover", photo: gallery[0] ?? null }];
-  pages.push({ kind: "summary", key: "summary", photo: photoFor(), text: asset.summary });
+  const pages: Page[] = [
+    { kind: "cover", key: "cover", photo: gallery[0] ?? null },
+  ];
+  pages.push({
+    kind: "summary",
+    key: "summary",
+    photo: photoFor(),
+    text: asset.summary,
+  });
 
   const figures = figuresOf(asset);
   const founder = asset.founder?.name ?? null;
-  if (figures.length > 0) pages.push({ kind: "figures", key: "figures", photo: photoFor(), figures, founder });
+  if (figures.length > 0)
+    pages.push({
+      kind: "figures",
+      key: "figures",
+      photo: photoFor(),
+      figures,
+      founder,
+    });
 
   const told = new Set<string>();
   asset.highlights.forEach((highlight, i) => {
@@ -227,7 +746,15 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
     .slice(0, STORY_CHAPTERS)
     .forEach(({ chapter, i }) => {
       const title = chapter.title ?? "Tarihçe";
-      pages.push({ kind: "chapter", key: `chapter-${chapter.id}`, photo: photoFor(title), chapter: i, id: chapter.id, title, sentence: firstSentence(chapter.body) });
+      pages.push({
+        kind: "chapter",
+        key: `chapter-${chapter.id}`,
+        photo: photoFor(title),
+        chapter: i,
+        id: chapter.id,
+        title,
+        sentence: firstSentence(chapter.body),
+      });
     });
 
   pages.push({ kind: "end", key: "end", photo: gallery[0] ?? null });
@@ -238,13 +765,27 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
 function figuresOf(asset: AssetDetail): Figure[] {
   const figures: Figure[] = [];
   const year = builtYear(asset);
-  if (year) figures.push({ field: "year", value: year, unit: null, label: "Yapım yılı" });
+  if (year)
+    figures.push({
+      field: "year",
+      value: year,
+      unit: null,
+      label: "Yapım yılı",
+    });
   for (const fact of asset.facts) {
     if (figures.length === 3) break;
     if (fact.valueNum === null) continue;
     // No thousands dot under 10 000, so a year ("1573") never reads as "1.573".
-    const value = fact.valueNum >= 10000 ? fact.valueNum.toLocaleString("tr-TR") : String(fact.valueNum);
-    figures.push({ field: `fact:${fact.key}`, value, unit: fact.unit, label: fact.label });
+    const value =
+      fact.valueNum >= 10000
+        ? fact.valueNum.toLocaleString("tr-TR")
+        : String(fact.valueNum);
+    figures.push({
+      field: `fact:${fact.key}`,
+      value,
+      unit: fact.unit,
+      label: fact.label,
+    });
   }
   return figures;
 }
@@ -313,12 +854,31 @@ function PageView({
       return;
     }
     enter.setValue(0);
-    Animated.timing(enter, { toValue: 1, duration: 700, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
+    Animated.timing(enter, {
+      toValue: 1,
+      duration: 700,
+      easing: Easing.out(Easing.cubic),
+      useNativeDriver: true,
+    }).start();
   }, [active, reduceMotion, enter]);
 
   return (
     <View style={[styles.page, { height }]}>
-      <Animated.View style={[StyleSheet.absoluteFill, { transform: [{ scale: enter.interpolate({ inputRange: [0, 1], outputRange: [1.08, 1] }) }] }]}>
+      <Animated.View
+        style={[
+          StyleSheet.absoluteFill,
+          {
+            transform: [
+              {
+                scale: enter.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [1.08, 1],
+                }),
+              },
+            ],
+          },
+        ]}
+      >
         <Backdrop photo={page.photo} id={page.key} />
       </Animated.View>
       <Scrim id={page.key} heavy={end} />
@@ -330,17 +890,45 @@ function PageView({
           style={[
             styles.copy,
             { paddingBottom: insets.bottom + spacing.xxxl },
-            { opacity: enter, transform: [{ translateY: enter.interpolate({ inputRange: [0, 1], outputRange: [24, 0] }) }] },
+            {
+              opacity: enter,
+              transform: [
+                {
+                  translateY: enter.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [24, 0],
+                  }),
+                },
+              ],
+            },
           ]}
         >
-          <PageCopy page={page} asset={asset} onRead={onRead} photos={photos} onGallery={onGallery} />
+          <PageCopy
+            page={page}
+            asset={asset}
+            onRead={onRead}
+            photos={photos}
+            onGallery={onGallery}
+          />
         </Animated.View>
       )}
     </View>
   );
 }
 
-function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asset: AssetDetail; onRead: (chapter: number) => void; photos: Media[]; onGallery: () => void }) {
+function PageCopy({
+  page,
+  asset,
+  onRead,
+  photos,
+  onGallery,
+}: {
+  page: Page;
+  asset: AssetDetail;
+  onRead: (chapter: number) => void;
+  photos: Media[];
+  onGallery: () => void;
+}) {
   const editing = useFrameEditing() !== null;
   switch (page.kind) {
     case "cover": {
@@ -350,19 +938,31 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
         <>
           <Editable field="type" label="Türü" style={styles.kickerBox}>
             <View style={styles.kicker}>
-              <Text variant="caption" colorValue={ink.onGold} style={styles.bold}>
+              <Text
+                variant="caption"
+                colorValue={ink.onGold}
+                style={styles.bold}
+              >
                 {asset.type.label}
               </Text>
             </View>
           </Editable>
           <Editable field="name" label="Adı">
-            <Text headingLevel={1} colorValue={ink.text} style={styles.coverTitle}>
+            <Text
+              headingLevel={1}
+              colorValue={ink.text}
+              style={styles.coverTitle}
+            >
               {asset.name}
             </Text>
           </Editable>
           {asset.subtitle && (
             <Editable field="subtitle" label="Alt başlık">
-              <Text variant="bodyLarge" colorValue={ink.soft} style={styles.italic}>
+              <Text
+                variant="bodyLarge"
+                colorValue={ink.soft}
+                style={styles.italic}
+              >
                 {asset.subtitle}
               </Text>
             </Editable>
@@ -372,19 +972,31 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
             <View style={styles.metaRow}>
               {year && (
                 <Editable field="cover:year" label="Yapım yılı">
-                  <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+                  <Text
+                    variant="caption"
+                    colorValue={ink.soft}
+                    style={styles.semibold}
+                  >
                     {year}
                   </Text>
                 </Editable>
               )}
               <Editable field="place" label="İlçe ve il">
-                <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+                <Text
+                  variant="caption"
+                  colorValue={ink.soft}
+                  style={styles.semibold}
+                >
                   {place}
                 </Text>
               </Editable>
             </View>
           ) : (
-            <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+            <Text
+              variant="caption"
+              colorValue={ink.soft}
+              style={styles.semibold}
+            >
               {[year, place].filter(Boolean).join("  ·  ")}
             </Text>
           )}
@@ -413,11 +1025,25 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
       return (
         <View style={styles.figures}>
           {page.figures.map((figure) => (
-            <Editable key={figure.label} field={figure.field} label={figure.field === "year" ? "Yapım yılı" : `Sayı: ${figure.label}`}>
-              <View accessible accessibilityLabel={`${figure.label}: ${[figure.value, figure.unit].filter(Boolean).join(" ")}`}>
+            <Editable
+              key={figure.label}
+              field={figure.field}
+              label={
+                figure.field === "year" ? "Yapım yılı" : `Sayı: ${figure.label}`
+              }
+            >
+              <View
+                accessible
+                accessibilityLabel={`${figure.label}: ${[figure.value, figure.unit].filter(Boolean).join(" ")}`}
+              >
                 <Text colorValue={ink.gold} style={styles.figureValue}>
                   {figure.value}
-                  {figure.unit && <Text colorValue={ink.gold} style={styles.figureUnit}>{` ${figure.unit}`}</Text>}
+                  {figure.unit && (
+                    <Text
+                      colorValue={ink.gold}
+                      style={styles.figureUnit}
+                    >{` ${figure.unit}`}</Text>
+                  )}
                 </Text>
                 <Text variant="label" colorValue={ink.soft}>
                   {figure.label}
@@ -440,19 +1066,31 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
           <Text variant="overline" colorValue={ink.gold}>
             {`YERİNDE BAKIN · ${page.number}/${page.total}`}
           </Text>
-          <Editable field={`highlight:${page.number - 1}:title`} label="Bakılacak yer: ne?">
-            <Text colorValue={ink.text} style={styles.pageTitle} headingLevel={2}>
+          <Editable
+            field={`highlight:${page.number - 1}:title`}
+            label="Bakılacak yer: ne?"
+          >
+            <Text
+              colorValue={ink.text}
+              style={styles.pageTitle}
+              headingLevel={2}
+            >
               {page.title}
             </Text>
           </Editable>
           {page.hint && (
-            <Editable field={`highlight:${page.number - 1}:hint`} label="Bakılacak yer: nerede?">
+            <Editable
+              field={`highlight:${page.number - 1}:hint`}
+              label="Bakılacak yer: nerede?"
+            >
               <Text variant="bodyLarge" colorValue={ink.soft}>
                 {page.hint}
               </Text>
             </Editable>
           )}
-          {page.chapter >= 0 && <ReadMore title={page.title} onPress={() => onRead(page.chapter)} />}
+          {page.chapter >= 0 && (
+            <ReadMore title={page.title} onPress={() => onRead(page.chapter)} />
+          )}
         </>
       );
     case "chapter":
@@ -460,7 +1098,12 @@ function PageCopy({ page, asset, onRead, photos, onGallery }: { page: Page; asse
         <>
           {/* Drawn in capitals, read as written: some readers spell out a word in capitals. */}
           <Editable field={`section:${page.id}:title`} label="Konunun başlığı">
-            <Text variant="overline" colorValue={ink.gold} headingLevel={2} accessibilityLabel={page.title}>
+            <Text
+              variant="overline"
+              colorValue={ink.gold}
+              headingLevel={2}
+              accessibilityLabel={page.title}
+            >
               {page.title.toLocaleUpperCase("tr")}
             </Text>
           </Editable>
@@ -485,8 +1128,18 @@ function ScrollHint() {
     if (reduceMotion) return;
     const loop = Animated.loop(
       Animated.sequence([
-        Animated.timing(bob, { toValue: 1, duration: 700, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
-        Animated.timing(bob, { toValue: 0, duration: 700, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
+        Animated.timing(bob, {
+          toValue: 1,
+          duration: 700,
+          easing: Easing.inOut(Easing.quad),
+          useNativeDriver: true,
+        }),
+        Animated.timing(bob, {
+          toValue: 0,
+          duration: 700,
+          easing: Easing.inOut(Easing.quad),
+          useNativeDriver: true,
+        }),
       ]),
     );
     loop.start();
@@ -495,7 +1148,18 @@ function ScrollHint() {
 
   return (
     <View style={styles.hint} aria-hidden>
-      <Animated.View style={{ transform: [{ translateY: bob.interpolate({ inputRange: [0, 1], outputRange: [0, 6] }) }] }}>
+      <Animated.View
+        style={{
+          transform: [
+            {
+              translateY: bob.interpolate({
+                inputRange: [0, 1],
+                outputRange: [0, 6],
+              }),
+            },
+          ],
+        }}
+      >
         <Ionicons name="chevron-down" size={22} color={ink.text} />
       </Animated.View>
       <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
@@ -506,12 +1170,26 @@ function ScrollHint() {
 }
 
 /** The way into the gallery, showing what is in it: the next few photos as a small stack, on a gold edge. */
-function GalleryButton({ photos, onPress }: { photos: Media[]; onPress: () => void }) {
+function GalleryButton({
+  photos,
+  onPress,
+}: {
+  photos: Media[];
+  onPress: () => void;
+}) {
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={`Fotoğraflar, ${photos.length} görsel`} onPress={onPress} style={({ pressed }) => [styles.gallery, pressed && styles.pressed]}>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`Fotoğraflar, ${photos.length} görsel`}
+      onPress={onPress}
+      style={({ pressed }) => [styles.gallery, pressed && styles.pressed]}
+    >
       <View style={styles.thumbs}>
         {photos.slice(1, 3).map((photo, i) => (
-          <View key={photo.key} style={[styles.thumb, i > 0 && styles.thumbOver]}>
+          <View
+            key={photo.key}
+            style={[styles.thumb, i > 0 && styles.thumbOver]}
+          >
             <AssetImage media={photo} decorative fill />
           </View>
         ))}
@@ -524,13 +1202,31 @@ function GalleryButton({ photos, onPress }: { photos: Media[]; onPress: () => vo
 }
 
 /** The way to everything the book says; the same on the first page and at the very end of the last. */
-function DossierButton({ asset, wide = false }: { asset: AssetDetail; wide?: boolean }) {
+function DossierButton({
+  asset,
+  wide = false,
+}: {
+  asset: AssetDetail;
+  wide?: boolean;
+}) {
   return (
     <FrameLink href={{ pathname: "/dossier", params: { asset: asset.id } }}>
       {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
-      <Pressable accessibilityRole="link" accessibilityLabel="Eserin dosyası: kitaptaki her şey" style={wide ? styles.dossierWide : styles.dossier}>
-        <Ionicons name="document-text-outline" size={wide ? 20 : 18} color={ink.gold} />
-        <Text variant={wide ? "label" : "caption"} colorValue={ink.text} style={styles.bold}>
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel="Eserin dosyası: kitaptaki her şey"
+        style={wide ? styles.dossierWide : styles.dossier}
+      >
+        <Ionicons
+          name="document-text-outline"
+          size={wide ? 20 : 18}
+          color={ink.gold}
+        />
+        <Text
+          variant={wide ? "label" : "caption"}
+          colorValue={ink.text}
+          style={styles.bold}
+        >
           Eserin dosyası
         </Text>
         {wide && <Ionicons name="chevron-forward" size={18} color={ink.gold} />}
@@ -556,15 +1252,32 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
     return () => clearTimeout(timer);
   }, [warned]);
 
-  const entries = related.status === "success" ? relatedAssetsOf(related.data?.items ?? []) : null;
+  const entries =
+    related.status === "success"
+      ? relatedAssetsOf(related.data?.items ?? [])
+      : null;
   if (entries?.length === 0) return null;
   const inside = (
     <>
-      <Ionicons name={warned ? "alert-circle" : "link"} size={20} color={ink.gold} style={styles.relatedIcon} />
-      <Text variant="caption" colorValue={ink.text} numberOfLines={2} style={[styles.bold, styles.flexText]}>
+      <Ionicons
+        name={warned ? "alert-circle" : "link"}
+        size={20}
+        color={ink.gold}
+        style={styles.relatedIcon}
+      />
+      <Text
+        variant="caption"
+        colorValue={ink.text}
+        numberOfLines={2}
+        style={[styles.bold, styles.flexText]}
+      >
         {warned ? LOCKED_WARNING : "Bu eserin ilişkili olduğu eserler listesi"}
       </Text>
-      <Ionicons name={locked ? "lock-closed" : "chevron-forward"} size={locked ? 16 : 18} color={ink.gold} />
+      <Ionicons
+        name={locked ? "lock-closed" : "chevron-forward"}
+        size={locked ? 16 : 18}
+        color={ink.gold}
+      />
     </>
   );
   if (locked) {
@@ -583,9 +1296,22 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
     );
   }
   return (
-    <FrameLink href={{ pathname: "/related", params: { asset: asset.id, name: asset.name } }}>
+    <FrameLink
+      href={{
+        pathname: "/related",
+        params: { asset: asset.id, name: asset.name },
+      }}
+    >
       {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
-      <Pressable accessibilityRole="link" accessibilityLabel={entries ? `Bu eserin ilişkili olduğu eserler listesi, ${entries.length} eser` : "Bu eserin ilişkili olduğu eserler listesi"} style={styles.related}>
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel={
+          entries
+            ? `Bu eserin ilişkili olduğu eserler listesi, ${entries.length} eser`
+            : "Bu eserin ilişkili olduğu eserler listesi"
+        }
+        style={styles.related}
+      >
         {inside}
       </Pressable>
     </FrameLink>
@@ -595,7 +1321,12 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
 /** "Devamını oku" for one chapter; its name says which, as each page has one (WCAG 2.4.4). */
 function ReadMore({ title, onPress }: { title: string; onPress: () => void }) {
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={`Devamını oku: ${title}`} onPress={onPress} style={({ pressed }) => [styles.readMore, pressed && styles.pressed]}>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`Devamını oku: ${title}`}
+      onPress={onPress}
+      style={({ pressed }) => [styles.readMore, pressed && styles.pressed]}
+    >
       <Text variant="label" colorValue={ink.text}>
         Devamını oku
       </Text>
@@ -607,25 +1338,59 @@ function ReadMore({ title, onPress }: { title: string; onPress: () => void }) {
 /** The page's photo; the drawing when there is none or it fails to load. */
 function Backdrop({ photo, id }: { photo: Media | null; id: string }) {
   const [failed, setFailed] = useState(false);
+  const unique = useSvgId(id);
   return (
     <View style={StyleSheet.absoluteFill}>
-      <BuildingIllustration mode="now" id={`page-${id}`} />
-      {photo && !failed && <AssetImage media={photo} decorative fill onError={() => setFailed(true)} />}
+      <BuildingIllustration mode="now" id={`page-${unique}`} />
+      {photo && !failed && (
+        <AssetImage
+          media={photo}
+          decorative
+          fill
+          onError={() => setFailed(true)}
+        />
+      )}
     </View>
   );
 }
 
+/**
+ * An SVG id no other page shares. On the web the page left behind stays in the document, hidden; a
+ * gradient both pages name resolves to its hidden copy there, which draws nothing, and the words lose
+ * their dark fade.
+ */
+function useSvgId(id: string): string {
+  return `${id}-${useId().replace(/[^a-zA-Z0-9_-]/g, "")}`;
+}
+
 /** Dark at the top for the close button, clear in the middle, near-black under the words. */
-function Scrim({ id, heavy }: { id: string; heavy: boolean }) {
+function Scrim({ id: given, heavy }: { id: string; heavy: boolean }) {
+  const id = useSvgId(given);
   return (
     <View aria-hidden style={StyleSheet.absoluteFill} pointerEvents="none">
       <Svg width="100%" height="100%" preserveAspectRatio="none">
         <Defs>
           <LinearGradient id={`scrim-${id}`} x1="0" y1="0" x2="0" y2="1">
-            <Stop offset="0" stopColor={palette.gece1000} stopOpacity={heavy ? 0.82 : 0.55} />
-            <Stop offset="0.2" stopColor={palette.gece1000} stopOpacity={heavy ? 0.86 : 0.15} />
-            <Stop offset="0.35" stopColor={palette.gece1000} stopOpacity={heavy ? 0.9 : 0.5} />
-            <Stop offset="0.55" stopColor={palette.gece1000} stopOpacity={heavy ? 0.93 : 0.86} />
+            <Stop
+              offset="0"
+              stopColor={palette.gece1000}
+              stopOpacity={heavy ? 0.82 : 0.55}
+            />
+            <Stop
+              offset="0.2"
+              stopColor={palette.gece1000}
+              stopOpacity={heavy ? 0.86 : 0.15}
+            />
+            <Stop
+              offset="0.35"
+              stopColor={palette.gece1000}
+              stopOpacity={heavy ? 0.9 : 0.5}
+            />
+            <Stop
+              offset="0.55"
+              stopColor={palette.gece1000}
+              stopOpacity={heavy ? 0.93 : 0.86}
+            />
             <Stop offset="1" stopColor={palette.gece1000} stopOpacity={0.97} />
           </LinearGradient>
         </Defs>
@@ -650,13 +1415,23 @@ interface Action {
 
 /** The photos to tell with, the cover first. */
 function galleryOf(asset: AssetDetail): Media[] {
-  const rest = asset.media.filter((m) => (m.kind === "photo" || m.kind === "archive_photo") && m.key !== asset.cover?.key);
+  const rest = asset.media.filter(
+    (m) =>
+      (m.kind === "photo" || m.kind === "archive_photo") &&
+      m.key !== asset.cover?.key,
+  );
   return asset.cover ? [asset.cover, ...rest] : rest;
 }
 
 /** Everything to look at in the gallery: the photos and the drawings (plans), the cover first. */
 function picturesOf(asset: AssetDetail): Media[] {
-  const rest = asset.media.filter((m) => (m.kind === "photo" || m.kind === "archive_photo" || m.kind === "drawing") && m.key !== asset.cover?.key);
+  const rest = asset.media.filter(
+    (m) =>
+      (m.kind === "photo" ||
+        m.kind === "archive_photo" ||
+        m.kind === "drawing") &&
+      m.key !== asset.cover?.key,
+  );
   return asset.cover ? [asset.cover, ...rest] : rest;
 }
 
@@ -670,29 +1445,66 @@ const fees: Record<string, string | null> = {
  * The last page, kept quiet: the name, one line of what the visit takes, directions, the
  * experiences as a plain list and the visitors' notes. Scrolls on its own when it does not fit.
  */
-function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => void; top: number; bottom: number }) {
+function End({
+  asset,
+  onTop,
+  top,
+  bottom,
+}: {
+  asset: AssetDetail;
+  onTop: () => void;
+  top: number;
+  bottom: number;
+}) {
   const raw = asset.visit.entranceFee;
   const fee = raw ? (raw in fees ? fees[raw] : raw) : null;
   const a11y = asset.accessibility;
-  const stepFree = a11y.verified && a11y.stepFree !== "unknown" ? (a11y.stepFree === "no" ? "basamaklı giriş" : "basamaksız giriş") : null;
-  const meta = [asset.visit.durationMin ? `~${asset.visit.durationMin} dk` : null, fee, stepFree, asset.district].filter(Boolean).join("  ·  ");
+  const stepFree =
+    a11y.verified && a11y.stepFree !== "unknown"
+      ? a11y.stepFree === "no"
+        ? "basamaklı giriş"
+        : "basamaksız giriş"
+      : null;
+  const meta = [
+    asset.visit.durationMin ? `~${asset.visit.durationMin} dk` : null,
+    fee,
+    stepFree,
+    asset.district,
+  ]
+    .filter(Boolean)
+    .join("  ·  ");
   const coords = asset.coordinates;
 
   return (
-    <ScrollView style={StyleSheet.absoluteFill} nestedScrollEnabled contentContainerStyle={[styles.end, { paddingTop: top, paddingBottom: bottom + spacing.xxl }]}>
+    <ScrollView
+      style={StyleSheet.absoluteFill}
+      nestedScrollEnabled
+      contentContainerStyle={[
+        styles.end,
+        { paddingTop: top, paddingBottom: bottom + spacing.xxl },
+      ]}
+    >
       <View style={styles.endInner}>
         <View style={styles.invite}>
           <Text variant="overline" colorValue={ink.gold}>
             KEŞFE ÇIK
           </Text>
           <Editable field="name" label="Adı">
-            <Text headingLevel={2} colorValue={ink.text} style={styles.inviteTitle}>
+            <Text
+              headingLevel={2}
+              colorValue={ink.text}
+              style={styles.inviteTitle}
+            >
               {asset.name}
             </Text>
           </Editable>
           {meta !== "" && (
             <Editable field="visit" label="Süre ve giriş">
-              <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
+              <Text
+                variant="caption"
+                colorValue={ink.soft}
+                style={styles.semibold}
+              >
                 {meta}
               </Text>
             </Editable>
@@ -708,8 +1520,15 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
             <Pressable
               accessibilityRole="link"
               accessibilityLabel="Yol tarifi al, harita uygulamasını açar"
-              onPress={() => Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`)}
-              style={({ pressed }) => [styles.directions, pressed && styles.pressed]}
+              onPress={() =>
+                Linking.openURL(
+                  `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`,
+                )
+              }
+              style={({ pressed }) => [
+                styles.directions,
+                pressed && styles.pressed,
+              ]}
             >
               <Ionicons name="navigate" size={18} color={ink.onGold} />
               <Text variant="label" colorValue={ink.onGold} style={styles.bold}>
@@ -726,7 +1545,11 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
           <VisitorPulse asset={asset} />
         </Editable>
 
-        <Pressable accessibilityRole="button" onPress={onTop} style={({ pressed }) => [styles.replay, pressed && styles.pressed]}>
+        <Pressable
+          accessibilityRole="button"
+          onPress={onTop}
+          style={({ pressed }) => [styles.replay, pressed && styles.pressed]}
+        >
           <Ionicons name="arrow-up" size={14} color={ink.soft} />
           <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
             Başa dön
@@ -740,17 +1563,27 @@ function End({ asset, onTop, top, bottom }: { asset: AssetDetail; onTop: () => v
 }
 
 /** The camera experiences, sound, spoken description and the assistant, a row each under hairlines. */
-function Experiences({ asset }: { asset: AssetDetail }) {
+function Experiences({
+  asset,
+  look = ink,
+}: {
+  asset: AssetDetail;
+  look?: Ink;
+}) {
   const { settings } = useA11ySettings();
   const player = useCapsulePlayer();
   // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
   const descriptionKey = `description:${asset.id}`;
   const describing = useSpeaking() === descriptionKey;
   // Leaving the page ends its description (its Durdur button goes with it), not another screen's reading.
-  useEffect(() => () => stopAnswerOf((key) => key === descriptionKey), [descriptionKey]);
+  useEffect(
+    () => () => stopAnswerOf((key) => key === descriptionKey),
+    [descriptionKey],
+  );
   const soundKey = asset.ambientSound?.key ?? null;
   const capsuleType = soundKey ? capsuleForSoundKey(soundKey) : undefined;
-  const playing = capsuleType !== undefined && player?.type === capsuleType ? player : null;
+  const playing =
+    capsuleType !== undefined && player?.type === capsuleType ? player : null;
   const description = asset.accessibility.audioDescription;
   const opened = isAssetUnlocked(asset, useUnlockedAssets());
   const inscriptions = useHasInscriptions(asset);
@@ -759,23 +1592,43 @@ function Experiences({ asset }: { asset: AssetDetail }) {
   // Taşın Dili and Ziyaret Mührü need the camera: phone features (ADR 0001).
   const phone = Platform.OS !== "web";
   if (phone && inscriptions) {
-    actions.push({ key: "inscription", icon: "scan-outline", title: "Taşın Dili", hint: "Kitabeyi kamerayla oku", spoken: "Taşın Dili: kitabeyi kamerayla oku", href: { pathname: "/inscription", params: { asset: asset.id } } });
+    actions.push({
+      key: "inscription",
+      icon: "scan-outline",
+      title: "Taşın Dili",
+      hint: "Kitabeyi kamerayla oku",
+      spoken: "Taşın Dili: kitabeyi kamerayla oku",
+      href: { pathname: "/inscription", params: { asset: asset.id } },
+    });
   }
   // An unlocked asset needs no seal.
   if (phone && visitSealTarget(asset) && !opened) {
     const hint = "Eserde olduğunu kanıtla";
-    actions.push({ key: "seal", icon: "ribbon-outline", title: "Ziyaret Mührü", hint, spoken: `Ziyaret Mührü: ${hint}`, href: { pathname: "/visit-seal", params: { asset: asset.id } } });
+    actions.push({
+      key: "seal",
+      icon: "ribbon-outline",
+      title: "Ziyaret Mührü",
+      hint,
+      spoken: `Ziyaret Mührü: ${hint}`,
+      href: { pathname: "/visit-seal", params: { asset: asset.id } },
+    });
   }
   if (capsuleType) {
     // Only captions are announced; a counter that ticks every second would talk over everything.
-    const hint = playing ? (settings.captions ? captionAt(capsuleType, playing.elapsed) : `${formatSeconds(playing.elapsed)} / ${formatSeconds(CAPSULE_SECONDS)}`) : capsules[capsuleType].name;
+    const hint = playing
+      ? settings.captions
+        ? captionAt(capsuleType, playing.elapsed)
+        : `${formatSeconds(playing.elapsed)} / ${formatSeconds(CAPSULE_SECONDS)}`
+      : capsules[capsuleType].name;
     actions.push({
       key: "sound",
       icon: playing ? "pause-outline" : "musical-notes-outline",
       title: playing ? "Durdur" : "Sesini dinle",
       hint,
       // The words on the row come first, so voice control finds it by what it shows (WCAG 2.5.3).
-      spoken: playing ? "Durdur: ses kapsülü" : `Sesini dinle: ${capsules[capsuleType].name} ses kapsülü`,
+      spoken: playing
+        ? "Durdur: ses kapsülü"
+        : `Sesini dinle: ${capsules[capsuleType].name} ses kapsülü`,
       onPress: () => toggleCapsule(capsuleType),
       on: !!playing,
     });
@@ -786,7 +1639,9 @@ function Experiences({ asset }: { asset: AssetDetail }) {
       icon: describing ? "stop-outline" : "ear-outline",
       title: describing ? "Durdur" : "Sesli betimle",
       hint: "Mekânı gözünü kapatıp dinle",
-      spoken: describing ? "Durdur: sesli betimleme" : "Sesli betimle: mekânı gözünü kapatıp dinle",
+      spoken: describing
+        ? "Durdur: sesli betimleme"
+        : "Sesli betimle: mekânı gözünü kapatıp dinle",
       onPress: () => {
         if (describing) stopAnswer();
         else void speakAnswer(descriptionKey, description);
@@ -797,46 +1652,110 @@ function Experiences({ asset }: { asset: AssetDetail }) {
   // A phone feature too: the photo comes from the camera.
   if (phone) {
     const hint = "Bir detayı fotoğrafla, rehber açıklasın";
-    actions.push({ key: "stone", icon: "camera-outline", title: "Taşa Sor", hint, spoken: `Taşa Sor: ${hint}`, href: { pathname: "/stone-ask", params: { asset: asset.id, name: asset.name } } });
+    actions.push({
+      key: "stone",
+      icon: "camera-outline",
+      title: "Taşa Sor",
+      hint,
+      spoken: `Taşa Sor: ${hint}`,
+      href: {
+        pathname: "/stone-ask",
+        params: { asset: asset.id, name: asset.name },
+      },
+    });
   }
   // Always offered: when no model answers, the assistant's screen says it is closed for now.
-  actions.push({ key: "ask", icon: "sparkles-outline", title: "Sor", hint: "Asistan kaynağıyla cevaplar", spoken: `Sor: ${asset.name} hakkında asistan kaynağıyla cevaplar`, href: { pathname: "/assistant", params: { asset: asset.id, name: asset.name } } });
+  actions.push({
+    key: "ask",
+    icon: "sparkles-outline",
+    title: "Sor",
+    hint: "Asistan kaynağıyla cevaplar",
+    spoken: `Sor: ${asset.name} hakkında asistan kaynağıyla cevaplar`,
+    href: {
+      pathname: "/assistant",
+      params: { asset: asset.id, name: asset.name },
+    },
+  });
   return (
-    <View style={styles.rows}>
+    <View style={[styles.rows, { borderTopColor: look.edge }]}>
       {actions.map((action) => (
-        <Row key={action.key} action={action} live={action.key === "sound" && !!playing && settings.captions} />
+        <Row
+          key={action.key}
+          action={action}
+          look={look}
+          live={action.key === "sound" && !!playing && settings.captions}
+        />
       ))}
     </View>
   );
 }
 
-function Row({ action, live }: { action: Action; live: boolean }) {
+function Row({
+  action,
+  live,
+  look,
+}: {
+  action: Action;
+  live: boolean;
+  look: Ink;
+}) {
   const content = (
     <>
-      <Ionicons name={action.icon} size={22} color={ink.gold} />
+      <Ionicons name={action.icon} size={22} color={look.gold} />
       <View style={styles.flex}>
-        <Text variant="label" colorValue={ink.text}>
+        <Text variant="label" colorValue={look.text}>
           {action.title}
         </Text>
-        <Text variant="caption" colorValue={ink.soft} numberOfLines={2} accessibilityLiveRegion={live ? "polite" : "none"}>
+        <Text
+          variant="caption"
+          colorValue={look.soft}
+          numberOfLines={2}
+          accessibilityLiveRegion={live ? "polite" : "none"}
+        >
           {action.hint}
         </Text>
       </View>
-      <Ionicons name={action.href ? "chevron-forward" : action.on ? "radio-button-on" : "play-circle-outline"} size={18} color={action.on ? ink.gold : ink.soft} />
+      <Ionicons
+        name={
+          action.href
+            ? "chevron-forward"
+            : action.on
+              ? "radio-button-on"
+              : "play-circle-outline"
+        }
+        size={18}
+        color={action.on ? look.gold : look.soft}
+      />
     </>
   );
   if (action.href) {
     return (
       <FrameLink href={action.href}>
         {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
-        <Pressable accessibilityRole="link" accessibilityLabel={action.spoken} style={styles.row}>
+        <Pressable
+          accessibilityRole="link"
+          accessibilityLabel={action.spoken}
+          style={StyleSheet.flatten([
+            styles.row,
+            { borderBottomColor: look.edge },
+          ])}
+        >
           {content}
         </Pressable>
       </FrameLink>
     );
   }
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={action.spoken} onPress={action.onPress} style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={action.spoken}
+      onPress={action.onPress}
+      style={({ pressed }) => [
+        styles.row,
+        { borderBottomColor: look.edge },
+        pressed && styles.pressed,
+      ]}
+    >
       {content}
     </Pressable>
   );
@@ -845,7 +1764,17 @@ function Row({ action, live }: { action: Action; live: boolean }) {
 /* ───────────────────────── Reader ───────────────────────── */
 
 /** One chapter on a quiet page of its own: large text, its source, then the next chapter. */
-function Reader({ chapters, index, onChange, assetName }: { chapters: AssetSection[]; index: number | null; onChange: (index: number | null) => void; assetName: string }) {
+function Reader({
+  chapters,
+  index,
+  onChange,
+  assetName,
+}: {
+  chapters: AssetSection[];
+  index: number | null;
+  onChange: (index: number | null) => void;
+  assetName: string;
+}) {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const chapter = index !== null ? chapters[index] : undefined;
@@ -853,22 +1782,60 @@ function Reader({ chapters, index, onChange, assetName }: { chapters: AssetSecti
   const close = () => onChange(null);
 
   return (
-    <FrameModal visible={!!chapter} animationType="slide" presentationStyle="fullScreen" onRequestClose={close}>
+    <FrameModal
+      visible={!!chapter}
+      animationType="slide"
+      presentationStyle="fullScreen"
+      onRequestClose={close}
+    >
       {chapter && index !== null && (
-        <View style={[styles.flex, { backgroundColor: c.background, paddingTop: insets.top }]}>
+        <View
+          style={[
+            styles.flex,
+            { backgroundColor: c.background, paddingTop: insets.top },
+          ]}
+        >
           <View style={styles.readerBar}>
-            <Text variant="caption" color="textSecondary" numberOfLines={1} style={[styles.flex, styles.mono]}>
+            <Text
+              variant="caption"
+              color="textSecondary"
+              numberOfLines={1}
+              style={[styles.flex, styles.mono]}
+            >
               {`${assetName} · ${index + 1}/${chapters.length}`}
             </Text>
-            <Pressable accessibilityRole="button" accessibilityLabel="Kapat" hitSlop={6} onPress={close} style={[styles.round, { backgroundColor: c.surfaceRaised }]}>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Kapat"
+              hitSlop={6}
+              onPress={close}
+              style={[styles.round, { backgroundColor: c.surfaceRaised }]}
+            >
               <Ionicons name="close" size={20} color={c.text} />
             </Pressable>
           </View>
-          <View style={[styles.progress, { backgroundColor: c.border }]} aria-hidden>
-            <View style={[styles.progress, { backgroundColor: c.highlightMark, width: `${((index + 1) / chapters.length) * 100}%` }]} />
+          <View
+            style={[styles.progress, { backgroundColor: c.border }]}
+            aria-hidden
+          >
+            <View
+              style={[
+                styles.progress,
+                {
+                  backgroundColor: c.highlightMark,
+                  width: `${((index + 1) / chapters.length) * 100}%`,
+                },
+              ]}
+            />
           </View>
 
-          <ScrollView key={chapter.id} contentContainerStyle={[styles.readerBody, { paddingBottom: insets.bottom + spacing.xxxl }]}>
+          <ScrollView
+            key={chapter.id}
+            contentContainerStyle={[
+              styles.readerBody,
+              { paddingBottom: insets.bottom + spacing.xxxl },
+            ]}
+          >
             <Text variant="title" headingLevel={1}>
               {chapter.title ?? "Tarihçe"}
             </Text>
@@ -880,7 +1847,11 @@ function Reader({ chapters, index, onChange, assetName }: { chapters: AssetSecti
                 accessibilityRole="button"
                 accessibilityLabel={`Sonraki bölüm: ${next.title ?? "Tarihçe"}`}
                 onPress={() => onChange(index + 1)}
-                style={({ pressed }) => [styles.next, { backgroundColor: c.surface, borderColor: c.border }, pressed && styles.pressed]}
+                style={({ pressed }) => [
+                  styles.next,
+                  { backgroundColor: c.surface, borderColor: c.border },
+                  pressed && styles.pressed,
+                ]}
               >
                 <View style={styles.flex}>
                   <Text variant="caption" color="textSecondary">
@@ -891,7 +1862,15 @@ function Reader({ chapters, index, onChange, assetName }: { chapters: AssetSecti
                 <Ionicons name="arrow-forward" size={20} color={c.text} />
               </Pressable>
             ) : (
-              <Pressable accessibilityRole="button" onPress={close} style={({ pressed }) => [styles.done, { backgroundColor: c.text }, pressed && styles.pressed]}>
+              <Pressable
+                accessibilityRole="button"
+                onPress={close}
+                style={({ pressed }) => [
+                  styles.done,
+                  { backgroundColor: c.text },
+                  pressed && styles.pressed,
+                ]}
+              >
                 <Text variant="label" colorValue={c.background}>
                   Bitti
                 </Text>
@@ -932,6 +1911,159 @@ const dossierButton = {
 } as const;
 
 const styles = StyleSheet.create({
+  article: {
+    flex: 1,
+    backgroundColor: palette.gece950,
+  },
+  articleScroll: {
+    paddingBottom: spacing.xxxl,
+  },
+  articleColumn: {
+    width: "100%",
+    maxWidth: 1120,
+    alignSelf: "center",
+    paddingHorizontal: spacing.xl,
+    gap: spacing.lg,
+  },
+  articleBack: {
+    flexDirection: "row",
+    alignItems: "center",
+    alignSelf: "flex-start",
+    gap: 2,
+    marginLeft: -spacing.sm,
+    paddingVertical: spacing.xxs,
+    paddingLeft: spacing.xs,
+    paddingRight: spacing.sm,
+    borderRadius: radius.full,
+  },
+  hero: {
+    minHeight: 480,
+    // Under the photo and its fade: the words stay on dark while either is still on its way.
+    backgroundColor: palette.gece900,
+    justifyContent: "flex-end",
+    borderRadius: 28,
+    overflow: "hidden",
+  },
+  heroCopy: {
+    maxWidth: 720,
+    gap: spacing.sm,
+    padding: spacing.xl,
+  },
+  heroTitle: {
+    fontFamily: fontFamily.display,
+    fontSize: 60,
+    lineHeight: 68,
+  },
+  heroActions: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    gap: spacing.sm,
+    marginTop: spacing.sm,
+  },
+  heroRelated: {
+    minWidth: 340,
+  },
+  articleRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.xxl,
+    marginTop: spacing.lg,
+  },
+  articleMain: {
+    flex: 1,
+    minWidth: 0,
+    gap: spacing.xl,
+  },
+  articleSide: {
+    width: 360,
+    gap: spacing.lg,
+    position: "sticky" as "relative",
+    top: spacing.lg,
+  },
+  lede: {
+    fontFamily: fontFamily.display,
+    fontSize: 26,
+    lineHeight: 38,
+  },
+  figureRow: {
+    flexDirection: "row",
+    gap: spacing.md,
+  },
+  figureCard: {
+    flex: 1,
+    gap: spacing.xxs,
+    padding: spacing.lg,
+    borderRadius: radius.xl,
+    borderWidth: 1,
+    borderColor: ink.edge,
+    backgroundColor: ink.glass,
+  },
+  figureCardValue: {
+    fontFamily: fontFamily.display,
+    fontSize: 36,
+    lineHeight: 42,
+  },
+  founderLine: {
+    fontFamily: fontFamily.display,
+    fontSize: 20,
+    marginTop: -spacing.md,
+  },
+  articleSection: {
+    gap: spacing.md,
+    paddingTop: spacing.lg,
+    borderTopWidth: 1,
+    borderTopColor: ink.edge,
+  },
+  sectionTitle: {
+    fontFamily: fontFamily.display,
+    fontSize: 30,
+    lineHeight: 38,
+  },
+  paragraph: {
+    fontFamily: fontFamily.sans,
+    fontSize: 17,
+    lineHeight: 28,
+  },
+  highlightList: {
+    gap: spacing.md,
+  },
+  highlightItem: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.md,
+  },
+  highlightNumber: {
+    fontFamily: fontFamily.display,
+    fontSize: 22,
+    lineHeight: 26,
+    width: 32,
+  },
+  highlightTitle: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 17,
+    lineHeight: 24,
+  },
+  sideCard: {
+    gap: spacing.md,
+    padding: spacing.lg,
+    borderRadius: radius.xl,
+    borderWidth: 1,
+    borderColor: ink.edge,
+    backgroundColor: ink.glass,
+  },
+  factRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+  },
+  factLabel: {
+    width: 84,
+  },
+  factValue: {
+    flex: 1,
+    textAlign: "right",
+  },
   screen: {
     flex: 1,
     backgroundColor: cameraColors.background,

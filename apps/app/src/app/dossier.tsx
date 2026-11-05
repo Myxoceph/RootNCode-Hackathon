@@ -1,21 +1,72 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { AccessibilityStatus, AssetDetail, Media, TimelineEvent } from "@vagabonds/contracts";
-import { fontFamily, radius, SourceNote, spacing, Text, touchTarget, useTheme, useUi } from "@vagabonds/ui";
+import type {
+  AccessibilityStatus,
+  AssetDetail,
+  Media,
+  TimelineEvent,
+} from "@vagabonds/contracts";
+import {
+  fontFamily,
+  radius,
+  SourceNote,
+  spacing,
+  Text,
+  touchTarget,
+  useTheme,
+  useUi,
+} from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
-import { useMemo, useRef, useState, type ComponentProps, type ReactNode } from "react";
-import { Linking, Platform, Pressable, ScrollView, StyleSheet, View, type NativeScrollEvent, type NativeSyntheticEvent, type ScrollViewInstance } from "react-native";
+import {
+  useMemo,
+  useRef,
+  useState,
+  type ComponentProps,
+  type ReactNode,
+} from "react";
+import {
+  Linking,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  View,
+  type NativeScrollEvent,
+  type NativeSyntheticEvent,
+  type ScrollViewInstance,
+} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { AssetImage } from "@/components/asset-image";
 import { ResourceView } from "@/components/resource-view";
+import { WebPageHeader } from "@/components/web-nav-bar";
 import { useAsset } from "@/data";
 import { customBlocksOf } from "@/lib/dossier-custom";
-import { DOSSIER_BLOCKS, dossierAfterOf, photosByPlace } from "@/lib/dossier-photos";
-import { Editable, FrameLink, useFrameEditing, useInFrame } from "@/lib/in-frame";
-import { centuryOf, paragraphsOf, readableDate, readingMinutes, sentencesOf } from "@/lib/reading";
+import {
+  DOSSIER_BLOCKS,
+  dossierAfterOf,
+  photosByPlace,
+} from "@/lib/dossier-photos";
+import {
+  Editable,
+  FrameLink,
+  useFrameEditing,
+  useInFrame,
+} from "@/lib/in-frame";
+import {
+  centuryOf,
+  paragraphsOf,
+  readableDate,
+  readingMinutes,
+  sentencesOf,
+} from "@/lib/reading";
 import { RichText } from "@/lib/rich-text";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
+
+const WEB = Platform.OS === "web";
+/** The wide web page's contents list, at the left of the text. */
+const TOC = 240;
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -39,9 +90,24 @@ export default function DossierScreen() {
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const resource = useAsset(id ?? "");
   const { colors: c } = useTheme();
+  const name =
+    resource.status === "success" && resource.data ? resource.data.name : null;
   return (
     <View style={[styles.flex, { backgroundColor: c.background }]}>
-      <TopBar asset={id} />
+      {WEB ? (
+        <WebPageHeader
+          title={name ? `${name}: Eserin dosyası` : "Eserin dosyası"}
+          section="monuments"
+          back={{
+            label: name ?? "Eser",
+            href: id
+              ? { pathname: "/monuments/[id]", params: { id } }
+              : "/monuments",
+          }}
+        />
+      ) : (
+        <TopBar asset={id} />
+      )}
       <ResourceView resource={resource}>
         {(asset) =>
           asset === null ? (
@@ -70,12 +136,19 @@ function TopBar({ asset }: { asset?: string }) {
   const back = () => {
     if (frame) frame.back();
     else if (router.canGoBack()) router.back();
-    else if (asset) router.replace({ pathname: "/monuments/[id]", params: { id: asset } });
+    else if (asset)
+      router.replace({ pathname: "/monuments/[id]", params: { id: asset } });
     else router.replace("/monuments");
   };
   return (
     <View style={[styles.topBar, { paddingTop: insets.top + spacing.xs }]}>
-      <Pressable accessibilityRole="button" accessibilityLabel="Geri" hitSlop={6} onPress={back} style={[styles.back, { backgroundColor: c.surfaceRaised }]}>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Geri"
+        hitSlop={6}
+        onPress={back}
+        style={[styles.back, { backgroundColor: c.surfaceRaised }]}
+      >
         <Ionicons name="chevron-back" size={22} color={c.text} />
       </Pressable>
       <Text variant="label" numberOfLines={1} style={styles.flex}>
@@ -108,8 +181,18 @@ const EMPTY_FIELDS: Record<string, [string, string] | undefined> = {
 /** In the panel's editor with its samples on, an empty block still shows, to say where it would go. */
 function blocksOf(asset: AssetDetail, placeholders = false): Block[] {
   const blocks = withCustom(asset, blockBodies(asset, placeholders));
-  const placed = photosByPlace(asset, blocks.map((b) => b.key));
-  return blocks.map((block) => ({ ...block, ...(block.key === "history" && asset.sections.length > 0 && { body: <History asset={asset} placed={placed} /> }), photos: placed.get(block.key) }));
+  const placed = photosByPlace(
+    asset,
+    blocks.map((b) => b.key),
+  );
+  return blocks.map((block) => ({
+    ...block,
+    ...(block.key === "history" &&
+      asset.sections.length > 0 && {
+        body: <History asset={asset} placed={placed} />,
+      }),
+    photos: placed.get(block.key),
+  }));
 }
 
 /**
@@ -124,8 +207,15 @@ function withCustom(asset: AssetDetail, blocks: Block[]): Block[] {
     const keys = out.map((b) => b.key);
     let anchor = custom.after;
     if (!keys.includes(anchor)) {
-      const at = DOSSIER_BLOCKS.indexOf(anchor as (typeof DOSSIER_BLOCKS)[number]);
-      anchor = DOSSIER_BLOCKS.slice(0, at < 0 ? DOSSIER_BLOCKS.length : at + 1).reverse().find((key) => keys.includes(key)) ?? keys.filter((k) => k !== "sources").pop() ?? "";
+      const at = DOSSIER_BLOCKS.indexOf(
+        anchor as (typeof DOSSIER_BLOCKS)[number],
+      );
+      anchor =
+        DOSSIER_BLOCKS.slice(0, at < 0 ? DOSSIER_BLOCKS.length : at + 1)
+          .reverse()
+          .find((key) => keys.includes(key)) ??
+        keys.filter((k) => k !== "sources").pop() ??
+        "";
     }
     const index = keys.indexOf(anchor) + 1 + (placed.get(anchor) ?? 0);
     placed.set(anchor, (placed.get(anchor) ?? 0) + 1);
@@ -134,7 +224,11 @@ function withCustom(asset: AssetDetail, blocks: Block[]): Block[] {
       title: custom.title.trim() || "Yeni bölüm",
       body: (
         <Editable field={`custom:${custom.id}`} label="Eklenen bölüm">
-          {custom.body.trim() ? <RichText source={custom.body} /> : <Text color="textSecondary">Bölümün metni burada görünür.</Text>}
+          {custom.body.trim() ? (
+            <RichText source={custom.body} />
+          ) : (
+            <Text color="textSecondary">Bölümün metni burada görünür.</Text>
+          )}
         </Editable>
       ),
     });
@@ -145,28 +239,87 @@ function withCustom(asset: AssetDetail, blocks: Block[]): Block[] {
 function blockBodies(asset: AssetDetail, placeholders: boolean): Block[] {
   const candidates: Array<[string, string, ReactNode | null]> = [
     ["identity", "Künye", identity(asset)],
-    ["history", "Tarihçe", asset.sections.length > 0 ? <History asset={asset} /> : null],
-    ["timeline", "Zaman çizelgesi", asset.timeline.length > 0 ? <Timeline events={asset.timeline} /> : null],
-    ["people", "Kişiler", asset.people.length > 0 ? <People asset={asset} /> : null],
-    ["waqf", "Vakıf", waqf(asset) && <Editable field="waqf" label="Vakıf">{waqf(asset)}</Editable>],
-    ["inscriptions", "Kitabeler", asset.inscriptions.length > 0 ? <Inscriptions asset={asset} /> : null],
-    ["facts", "Ölçüler", factsOf(asset).length > 0 ? <Facts asset={asset} /> : null],
-    ["legends", "Rivayetler", asset.legends.length > 0 ? <Legends asset={asset} /> : null],
-    ["accessibility", "Erişilebilirlik", <Editable key="access" field="access" label="Engelli erişimi"><Access asset={asset} /></Editable>],
-    ["sources", "Kaynakça", asset.sources.length > 0 ? <Sources asset={asset} /> : null],
+    [
+      "history",
+      "Tarihçe",
+      asset.sections.length > 0 ? <History asset={asset} /> : null,
+    ],
+    [
+      "timeline",
+      "Zaman çizelgesi",
+      asset.timeline.length > 0 ? <Timeline events={asset.timeline} /> : null,
+    ],
+    [
+      "people",
+      "Kişiler",
+      asset.people.length > 0 ? <People asset={asset} /> : null,
+    ],
+    [
+      "waqf",
+      "Vakıf",
+      waqf(asset) && (
+        <Editable field="waqf" label="Vakıf">
+          {waqf(asset)}
+        </Editable>
+      ),
+    ],
+    [
+      "inscriptions",
+      "Kitabeler",
+      asset.inscriptions.length > 0 ? <Inscriptions asset={asset} /> : null,
+    ],
+    [
+      "facts",
+      "Ölçüler",
+      factsOf(asset).length > 0 ? <Facts asset={asset} /> : null,
+    ],
+    [
+      "legends",
+      "Rivayetler",
+      asset.legends.length > 0 ? <Legends asset={asset} /> : null,
+    ],
+    [
+      "accessibility",
+      "Erişilebilirlik",
+      <Editable key="access" field="access" label="Engelli erişimi">
+        <Access asset={asset} />
+      </Editable>,
+    ],
+    [
+      "sources",
+      "Kaynakça",
+      asset.sources.length > 0 ? <Sources asset={asset} /> : null,
+    ],
   ];
   return candidates.flatMap(([key, title, body]) => {
     if (body) return [{ key, title, body }];
     const empty = EMPTY_FIELDS[key];
     if (placeholders && empty) {
-      return [{ key, title, body: <Editable field={empty[0]} label={empty[1]}><Text color="textSecondary">Henüz eklenmedi. Uygulamada bu kısım görünmez.</Text></Editable> }];
+      return [
+        {
+          key,
+          title,
+          body: (
+            <Editable field={empty[0]} label={empty[1]}>
+              <Text color="textSecondary">
+                Henüz eklenmedi. Uygulamada bu kısım görünmez.
+              </Text>
+            </Editable>
+          ),
+        },
+      ];
     }
     return [];
   });
 }
 
 function wordsOf(asset: AssetDetail): number {
-  const texts = [...asset.sections.map((s) => s.body), ...asset.legends.map((l) => l.body), ...asset.timeline.map((e) => `${e.title} ${e.note ?? ""}`), ...asset.inscriptions.map((i) => i.translation ?? "")];
+  const texts = [
+    ...asset.sections.map((s) => s.body),
+    ...asset.legends.map((l) => l.body),
+    ...asset.timeline.map((e) => `${e.title} ${e.note ?? ""}`),
+    ...asset.inscriptions.map((i) => i.translation ?? ""),
+  ];
   return texts.join(" ").split(/\s+/).length;
 }
 
@@ -181,30 +334,181 @@ function Dossier({ asset }: { asset: AssetDetail }) {
   const navHeight = useRef(0);
   const edit = useFrameEditing();
   const placeholders = edit?.samples ?? false;
-  const blocks = useMemo(() => blocksOf(asset, placeholders), [asset, placeholders]);
+  const blocks = useMemo(
+    () => blocksOf(asset, placeholders),
+    [asset, placeholders],
+  );
   const [active, setActive] = useState(blocks[0]?.key);
+  // Wide, the contents stand at the left and the blocks sit in a row below the intro: their places
+  // are measured from that row. The panel's phone preview keeps the phone's page.
+  const wideWeb = useWideWeb();
+  const inFrame = useInFrame();
+  const wide = wideWeb && !inFrame;
+  const rowY = useRef(0);
+  const placeOf = (key: string) =>
+    (wide ? rowY.current : 0) + (positions.current[key] ?? Infinity);
 
   const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-    const line = event.nativeEvent.contentOffset.y + navHeight.current + spacing.xl;
-    const current = [...blocks].reverse().find((block) => (positions.current[block.key] ?? Infinity) <= line)?.key ?? blocks[0]?.key;
+    const line =
+      event.nativeEvent.contentOffset.y + navHeight.current + spacing.xl;
+    const current =
+      [...blocks].reverse().find((block) => placeOf(block.key) <= line)?.key ??
+      blocks[0]?.key;
     if (current && current !== active) {
       setActive(current);
-      nav.current?.scrollTo({ x: Math.max(0, (chips.current[current] ?? 0) - spacing.xl), animated: !reduceMotion });
+      nav.current?.scrollTo({
+        x: Math.max(0, (chips.current[current] ?? 0) - spacing.xl),
+        animated: !reduceMotion,
+      });
     }
   };
-  const goTo = (key: string) => scroll.current?.scrollTo({ y: (positions.current[key] ?? 0) - navHeight.current, animated: !reduceMotion });
+  const goTo = (key: string) =>
+    scroll.current?.scrollTo({
+      y:
+        (wide ? rowY.current : 0) +
+        (positions.current[key] ?? 0) -
+        (wide ? spacing.lg : navHeight.current),
+      animated: !reduceMotion,
+    });
+
+  if (wide) {
+    return (
+      <ScrollView
+        ref={scroll}
+        style={{ backgroundColor: c.background }}
+        scrollEventThrottle={32}
+        onScroll={onScroll}
+        contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxxl }}
+      >
+        <View style={[styles.wideIntro, wideColumn]}>
+          <Intro asset={asset} wide />
+        </View>
+        <View
+          style={[styles.wideRow, wideColumn]}
+          onLayout={(event) => {
+            rowY.current = event.nativeEvent.layout.y;
+          }}
+        >
+          <View
+            style={styles.toc}
+            accessibilityRole="navigation"
+            accessibilityLabel="İçindekiler"
+          >
+            <Text
+              variant="overline"
+              color="textSecondary"
+              style={styles.tocHead}
+            >
+              İÇİNDEKİLER
+            </Text>
+            {blocks.map((block, index) => {
+              const on = block.key === active;
+              return (
+                <Pressable
+                  key={block.key}
+                  accessibilityRole="button"
+                  accessibilityLabel={`${block.title} bölümüne git`}
+                  aria-current={on ? "true" : undefined}
+                  onPress={() => goTo(block.key)}
+                  style={({ hovered }: { hovered?: boolean }) => [
+                    styles.tocItem,
+                    { borderLeftColor: on ? c.highlightMark : c.border },
+                    hovered && !on && { backgroundColor: c.surface },
+                  ]}
+                >
+                  <Text
+                    variant="caption"
+                    colorValue={on ? c.highlight : c.textSecondary}
+                    style={styles.tocNumber}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </Text>
+                  <Text
+                    variant="label"
+                    colorValue={on ? c.text : c.textSecondary}
+                    style={on ? styles.bold : styles.semibold}
+                    numberOfLines={1}
+                  >
+                    {block.title}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
+          <View style={styles.wideMain}>
+            {blocks.map((block, index) => (
+              <View
+                key={block.key}
+                style={[
+                  styles.wideBlock,
+                  index > 0 && {
+                    borderTopWidth: StyleSheet.hairlineWidth,
+                    borderTopColor: c.border,
+                  },
+                ]}
+                onLayout={(event) => {
+                  positions.current[block.key] = event.nativeEvent.layout.y;
+                }}
+              >
+                <View style={styles.blockHead}>
+                  <View style={styles.blockMark} aria-hidden>
+                    <Text
+                      variant="caption"
+                      color="textSecondary"
+                      style={styles.blockNumber}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </Text>
+                    <View
+                      style={[
+                        styles.blockRule,
+                        { backgroundColor: c.highlightMark },
+                      ]}
+                    />
+                  </View>
+                  <Text variant="display" headingLevel={2}>
+                    {block.title}
+                  </Text>
+                </View>
+                {block.body}
+                {block.photos && (
+                  <PlacedPhotos photos={block.photos} place={block.key} />
+                )}
+              </View>
+            ))}
+          </View>
+        </View>
+      </ScrollView>
+    );
+  }
 
   return (
-    <ScrollView ref={scroll} style={{ backgroundColor: c.background }} stickyHeaderIndices={[1]} scrollEventThrottle={32} onScroll={onScroll} contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxxl }}>
+    <ScrollView
+      ref={scroll}
+      style={{ backgroundColor: c.background }}
+      stickyHeaderIndices={[1]}
+      scrollEventThrottle={32}
+      onScroll={onScroll}
+      contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xxxl }}
+    >
       <Intro asset={asset} />
 
       <View
-        style={[styles.nav, { backgroundColor: c.background, borderBottomColor: c.border }]}
+        style={[
+          styles.nav,
+          { backgroundColor: c.background, borderBottomColor: c.border },
+        ]}
         onLayout={(event) => {
           navHeight.current = event.nativeEvent.layout.height;
         }}
       >
-        <ScrollView ref={nav} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.navRow} accessibilityLabel="İçindekiler">
+        <ScrollView
+          ref={nav}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.navRow}
+          accessibilityLabel="İçindekiler"
+        >
           {blocks.map((block) => {
             const on = block.key === active;
             return (
@@ -217,9 +521,16 @@ function Dossier({ asset }: { asset: AssetDetail }) {
                   chips.current[block.key] = event.nativeEvent.layout.x;
                 }}
                 onPress={() => goTo(block.key)}
-                style={[styles.tab, { borderBottomColor: on ? c.highlightMark : "transparent" }]}
+                style={[
+                  styles.tab,
+                  { borderBottomColor: on ? c.highlightMark : "transparent" },
+                ]}
               >
-                <Text variant="caption" colorValue={on ? c.text : c.textSecondary} style={on ? styles.bold : styles.semibold}>
+                <Text
+                  variant="caption"
+                  colorValue={on ? c.text : c.textSecondary}
+                  style={on ? styles.bold : styles.semibold}
+                >
                   {block.title}
                 </Text>
               </Pressable>
@@ -231,7 +542,10 @@ function Dossier({ asset }: { asset: AssetDetail }) {
       {blocks.map((block, index) => (
         <View
           key={block.key}
-          style={[styles.band, { backgroundColor: index % 2 === 0 ? c.background : c.surface }]}
+          style={[
+            styles.band,
+            { backgroundColor: index % 2 === 0 ? c.background : c.surface },
+          ]}
           onLayout={(event) => {
             positions.current[block.key] = event.nativeEvent.layout.y;
           }}
@@ -239,17 +553,28 @@ function Dossier({ asset }: { asset: AssetDetail }) {
           <View style={styles.column}>
             <View style={styles.blockHead}>
               <View style={styles.blockMark} aria-hidden>
-                <Text variant="caption" color="textSecondary" style={styles.blockNumber}>
+                <Text
+                  variant="caption"
+                  color="textSecondary"
+                  style={styles.blockNumber}
+                >
                   {String(index + 1).padStart(2, "0")}
                 </Text>
-                <View style={[styles.blockRule, { backgroundColor: c.highlightMark }]} />
+                <View
+                  style={[
+                    styles.blockRule,
+                    { backgroundColor: c.highlightMark },
+                  ]}
+                />
               </View>
               <Text variant="display" headingLevel={2}>
                 {block.title}
               </Text>
             </View>
             {block.body}
-            {block.photos && <PlacedPhotos photos={block.photos} place={block.key} />}
+            {block.photos && (
+              <PlacedPhotos photos={block.photos} place={block.key} />
+            )}
           </View>
         </View>
       ))}
@@ -258,16 +583,35 @@ function Dossier({ asset }: { asset: AssetDetail }) {
 }
 
 /** The page opens on words alone: what the place is, its name, and how much there is to read. */
-function Intro({ asset }: { asset: AssetDetail }) {
+function Intro({
+  asset,
+  wide = false,
+}: {
+  asset: AssetDetail;
+  wide?: boolean;
+}) {
   const minutes = readingMinutes(wordsOf(asset));
-  const counts = [`~${minutes} dk okuma`, asset.sections.length > 0 ? `${asset.sections.length} bölüm` : null, asset.timeline.length > 0 ? `${asset.timeline.length} olay` : null].filter(Boolean).join("  ·  ");
+  const counts = [
+    `~${minutes} dk okuma`,
+    asset.sections.length > 0 ? `${asset.sections.length} bölüm` : null,
+    asset.timeline.length > 0 ? `${asset.timeline.length} olay` : null,
+  ]
+    .filter(Boolean)
+    .join("  ·  ");
   return (
-    <View style={styles.intro}>
-      <View style={styles.introColumn}>
+    <View style={[styles.intro, wide && styles.introWide]}>
+      <View style={[styles.introColumn, wide && styles.introColumnWide]}>
         <Text variant="overline" color="textSecondary">
-          {`${asset.type.label} · ${asset.district}, ${asset.city.label}`.toLocaleUpperCase("tr")}
+          {`${asset.type.label} · ${asset.district}, ${asset.city.label}`.toLocaleUpperCase(
+            "tr",
+          )}
         </Text>
-        <Text variant="display" headingLevel={1}>
+        {/* Wide, the site's header holds the page's title for a screen reader. */}
+        <Text
+          variant="display"
+          headingLevel={wide ? undefined : 1}
+          style={wide && styles.introTitleWide}
+        >
           {asset.name}
         </Text>
         <Text variant="caption" color="textSecondary" style={styles.semibold}>
@@ -287,7 +631,8 @@ function Prose({ text, lead = false }: { text: string; lead?: boolean }) {
   return (
     <View style={styles.prose}>
       {paragraphsOf(text).map((paragraph, index) => {
-        const first = lead && index === 0 ? sentencesOf(paragraph)[0] : undefined;
+        const first =
+          lead && index === 0 ? sentencesOf(paragraph)[0] : undefined;
         return (
           <Text key={index} style={size}>
             {first ? (
@@ -305,16 +650,33 @@ function Prose({ text, lead = false }: { text: string; lead?: boolean }) {
   );
 }
 
-function Info({ icon, label, children }: { icon: IconName; label: string; children: ReactNode }) {
+function Info({
+  icon,
+  label,
+  children,
+}: {
+  icon: IconName;
+  label: string;
+  children: ReactNode;
+}) {
   const { colors: c } = useTheme();
   return (
     <View style={styles.info}>
-      <Ionicons name={icon} size={20} color={c.textSecondary} style={styles.infoIcon} />
+      <Ionicons
+        name={icon}
+        size={20}
+        color={c.textSecondary}
+        style={styles.infoIcon}
+      />
       <View style={styles.flex}>
         <Text variant="caption" color="textSecondary">
           {label}
         </Text>
-        {typeof children === "string" ? <Text variant="label">{children}</Text> : children}
+        {typeof children === "string" ? (
+          <Text variant="label">{children}</Text>
+        ) : (
+          children
+        )}
       </View>
     </View>
   );
@@ -336,10 +698,21 @@ function AssetLink({ id, name }: { id: string; name: string }) {
 /* ───────────────────────── Blocks ───────────────────────── */
 
 function identity(asset: AssetDetail): ReactNode | null {
-  const { dating, founder, architect, alternateNames, address, neighborhood, parent, children } = asset;
+  const {
+    dating,
+    founder,
+    architect,
+    alternateNames,
+    address,
+    neighborhood,
+    parent,
+    children,
+  } = asset;
   const rows: ReactNode[] = [];
   // The record's own words for the date; else the year it was built, as the pages show it.
-  const date = dating?.display ?? (dating?.startYear != null ? String(dating.startYear) : null);
+  const date =
+    dating?.display ??
+    (dating?.startYear != null ? String(dating.startYear) : null);
   if (dating && date) {
     rows.push(
       <Editable key="date" field="year" label="Tarih">
@@ -358,7 +731,9 @@ function identity(asset: AssetDetail): ReactNode | null {
     rows.push(
       <Editable key="founder" field="founder" label="Kim yaptırdı">
         <Info icon="person-outline" label="Banî">
-          {founder.role && !/^ban[iî]$/i.test(founder.role) ? `${founder.name} (${founder.role})` : founder.name}
+          {founder.role && !/^ban[iî]$/i.test(founder.role)
+            ? `${founder.name} (${founder.role})`
+            : founder.name}
         </Info>
       </Editable>,
     );
@@ -374,41 +749,45 @@ function identity(asset: AssetDetail): ReactNode | null {
   }
   if (architect && architect.candidates.length > 0) {
     rows.push(
-      <Editable key="candidates" field="architect:candidates" label="Mimar adayları">
-      <Info icon="construct-outline" label="Mimar adayları">
-        <View style={styles.tight}>
-          {architect.candidates.map((one) => (
-            <View key={one.name}>
-              <Text variant="label">{one.name}</Text>
-              {one.note && (
-                <Text variant="caption" color="textSecondary">
-                  {one.note}
-                </Text>
-              )}
-            </View>
-          ))}
-        </View>
-      </Info>
+      <Editable
+        key="candidates"
+        field="architect:candidates"
+        label="Mimar adayları"
+      >
+        <Info icon="construct-outline" label="Mimar adayları">
+          <View style={styles.tight}>
+            {architect.candidates.map((one) => (
+              <View key={one.name}>
+                <Text variant="label">{one.name}</Text>
+                {one.note && (
+                  <Text variant="caption" color="textSecondary">
+                    {one.note}
+                  </Text>
+                )}
+              </View>
+            ))}
+          </View>
+        </Info>
       </Editable>,
     );
   }
   if (alternateNames.length > 0) {
     rows.push(
       <Editable key="names" field="altNames" label="Başka adları">
-      <Info icon="pricetag-outline" label="Diğer adları">
-        <View style={styles.tight}>
-          {alternateNames.map((one) => (
-            <View key={one.name}>
-              <Text variant="label">{one.name}</Text>
-              {one.note && (
-                <Text variant="caption" color="textSecondary">
-                  {one.note}
-                </Text>
-              )}
-            </View>
-          ))}
-        </View>
-      </Info>
+        <Info icon="pricetag-outline" label="Diğer adları">
+          <View style={styles.tight}>
+            {alternateNames.map((one) => (
+              <View key={one.name}>
+                <Text variant="label">{one.name}</Text>
+                {one.note && (
+                  <Text variant="caption" color="textSecondary">
+                    {one.note}
+                  </Text>
+                )}
+              </View>
+            ))}
+          </View>
+        </Info>
       </Editable>,
     );
   }
@@ -457,12 +836,23 @@ const stems = (text: string) =>
  * Photos set in a place of their own are left to it.
  */
 function photosForChapters(asset: AssetDetail): Map<string, Media> {
-  const free = asset.media.filter((m) => (m.kind === "photo" || m.kind === "archive_photo" || m.kind === "drawing") && m.key !== asset.cover?.key && !dossierAfterOf(m));
+  const free = asset.media.filter(
+    (m) =>
+      (m.kind === "photo" ||
+        m.kind === "archive_photo" ||
+        m.kind === "drawing") &&
+      m.key !== asset.cover?.key &&
+      !dossierAfterOf(m),
+  );
   const chosen = new Map<string, Media>();
   asset.sections.forEach((section, index) => {
     if (index % 2 === 0 || free.length === 0) return;
     const wanted = stems(`${section.title ?? ""}`);
-    const at = free.findIndex((m) => stems(`${m.caption ?? ""} ${m.alt}`).some((word) => wanted.includes(word)));
+    const at = free.findIndex((m) =>
+      stems(`${m.caption ?? ""} ${m.alt}`).some((word) =>
+        wanted.includes(word),
+      ),
+    );
     const [photo] = free.splice(Math.max(at, 0), 1);
     if (photo) chosen.set(section.id, photo);
   });
@@ -476,7 +866,12 @@ function PlacedPhotos({ photos, place }: { photos: Media[]; place: string }) {
       <View style={styles.placed}>
         {photos.map((photo) => (
           <View key={photo.key} style={styles.figure}>
-            <View style={[styles.figurePhoto, { aspectRatio: Math.max(photo.aspectRatio, 1) }]}>
+            <View
+              style={[
+                styles.figurePhoto,
+                { aspectRatio: Math.max(photo.aspectRatio, 1) },
+              ]}
+            >
               <AssetImage media={photo} fill />
             </View>
             {photo.caption && (
@@ -491,7 +886,13 @@ function PlacedPhotos({ photos, place }: { photos: Media[]; place: string }) {
   );
 }
 
-function History({ asset, placed }: { asset: AssetDetail; placed?: Map<string, Media[]> }) {
+function History({
+  asset,
+  placed,
+}: {
+  asset: AssetDetail;
+  placed?: Map<string, Media[]>;
+}) {
   const { textScale } = useUi();
   const photos = useMemo(() => photosForChapters(asset), [asset]);
   return (
@@ -501,20 +902,42 @@ function History({ asset, placed }: { asset: AssetDetail; placed?: Map<string, M
         return (
           <View key={section.id} style={styles.chapter}>
             {section.title && (
-              <Editable field={`section:${section.id}:title`} label="Konunun başlığı">
-                <Text headingLevel={3} style={[styles.chapterTitle, { fontSize: 21 * textScale, lineHeight: 28 * textScale }]}>
+              <Editable
+                field={`section:${section.id}:title`}
+                label="Konunun başlığı"
+              >
+                <Text
+                  headingLevel={3}
+                  style={[
+                    styles.chapterTitle,
+                    { fontSize: 21 * textScale, lineHeight: 28 * textScale },
+                  ]}
+                >
                   {section.title}
                 </Text>
               </Editable>
             )}
-            <Editable field={`section:${section.id}:body`} label="Konunun metni">
+            <Editable
+              field={`section:${section.id}:body`}
+              label="Konunun metni"
+            >
               <Prose text={section.body} lead />
             </Editable>
             <SourceNote compact sources={section.sources} />
-            {placed?.get(`section:${section.id}`) && <PlacedPhotos photos={placed.get(`section:${section.id}`)!} place={`section:${section.id}`} />}
+            {placed?.get(`section:${section.id}`) && (
+              <PlacedPhotos
+                photos={placed.get(`section:${section.id}`)!}
+                place={`section:${section.id}`}
+              />
+            )}
             {photo && (
               <View style={styles.figure}>
-                <View style={[styles.figurePhoto, { aspectRatio: Math.max(photo.aspectRatio, 1) }]}>
+                <View
+                  style={[
+                    styles.figurePhoto,
+                    { aspectRatio: Math.max(photo.aspectRatio, 1) },
+                  ]}
+                >
                   <AssetImage media={photo} fill />
                 </View>
                 {photo.caption && (
@@ -531,7 +954,8 @@ function History({ asset, placed }: { asset: AssetDetail; placed?: Map<string, M
   );
 }
 
-const hijriText = (hijri: string) => (/^h/i.test(hijri) ? hijri : `H. ${hijri}`);
+const hijriText = (hijri: string) =>
+  /^h/i.test(hijri) ? hijri : `H. ${hijri}`;
 
 /** Grouped by century, so a long list reads as a few short ones. */
 function Timeline({ events }: { events: TimelineEvent[] }) {
@@ -554,28 +978,52 @@ function Timeline({ events }: { events: TimelineEvent[] }) {
           )}
           <View accessibilityRole="list">
             {group.events.map((event, at) => {
-              const meta = [event.date ? readableDate(event.date) : null, event.hijri ? hijriText(event.hijri) : null, event.type.label !== event.title ? event.type.label : null].filter(Boolean).join("  ·  ");
+              const meta = [
+                event.date ? readableDate(event.date) : null,
+                event.hijri ? hijriText(event.hijri) : null,
+                event.type.label !== event.title ? event.type.label : null,
+              ]
+                .filter(Boolean)
+                .join("  ·  ");
               const lastOne = at === group.events.length - 1;
               return (
-                <Editable key={event.id} field={`event:${event.id}`} label="Olay">
-                <View style={styles.event}>
-                  <Text variant="label" style={styles.eventYear}>
-                    {event.year !== null ? String(event.year) : ""}
-                  </Text>
-                  <View style={styles.eventRail}>
-                    <View style={[styles.eventDot, { backgroundColor: c.highlightMark }]} />
-                    {!lastOne && <View style={[styles.eventLine, { backgroundColor: c.border }]} />}
+                <Editable
+                  key={event.id}
+                  field={`event:${event.id}`}
+                  label="Olay"
+                >
+                  <View style={styles.event}>
+                    <Text variant="label" style={styles.eventYear}>
+                      {event.year !== null ? String(event.year) : ""}
+                    </Text>
+                    <View style={styles.eventRail}>
+                      <View
+                        style={[
+                          styles.eventDot,
+                          { backgroundColor: c.highlightMark },
+                        ]}
+                      />
+                      {!lastOne && (
+                        <View
+                          style={[
+                            styles.eventLine,
+                            { backgroundColor: c.border },
+                          ]}
+                        />
+                      )}
+                    </View>
+                    <View style={styles.eventBody}>
+                      <Text variant="label">{event.title}</Text>
+                      {meta !== "" && (
+                        <Text variant="caption" color="textSecondary">
+                          {meta}
+                        </Text>
+                      )}
+                      {event.note && (
+                        <Text variant="caption">{event.note}</Text>
+                      )}
+                    </View>
                   </View>
-                  <View style={styles.eventBody}>
-                    <Text variant="label">{event.title}</Text>
-                    {meta !== "" && (
-                      <Text variant="caption" color="textSecondary">
-                        {meta}
-                      </Text>
-                    )}
-                    {event.note && <Text variant="caption">{event.note}</Text>}
-                  </View>
-                </View>
                 </Editable>
               );
             })}
@@ -591,20 +1039,34 @@ function People({ asset }: { asset: AssetDetail }) {
   return (
     <View accessibilityRole="list" style={styles.rows}>
       {asset.people.map((person, index) => (
-        <Editable key={`${person.name}-${index}`} field={`person:${index}`} label="Kişi">
-        <View style={styles.person} accessible accessibilityLabel={person.role ? `${person.name}, ${person.role}` : person.name}>
-          <View style={[styles.initial, { backgroundColor: c.surfaceRaised }]}>
-            <Text variant="label">{person.name.charAt(0).toLocaleUpperCase("tr")}</Text>
-          </View>
-          <View style={styles.flex}>
-            <Text variant="label">{person.name}</Text>
-            {person.role && (
-              <Text variant="caption" color="textSecondary">
-                {person.role}
+        <Editable
+          key={`${person.name}-${index}`}
+          field={`person:${index}`}
+          label="Kişi"
+        >
+          <View
+            style={styles.person}
+            accessible
+            accessibilityLabel={
+              person.role ? `${person.name}, ${person.role}` : person.name
+            }
+          >
+            <View
+              style={[styles.initial, { backgroundColor: c.surfaceRaised }]}
+            >
+              <Text variant="label">
+                {person.name.charAt(0).toLocaleUpperCase("tr")}
               </Text>
-            )}
+            </View>
+            <View style={styles.flex}>
+              <Text variant="label">{person.name}</Text>
+              {person.role && (
+                <Text variant="caption" color="textSecondary">
+                  {person.role}
+                </Text>
+              )}
+            </View>
           </View>
-        </View>
         </Editable>
       ))}
     </View>
@@ -613,7 +1075,17 @@ function People({ asset }: { asset: AssetDetail }) {
 
 function waqf(asset: AssetDetail): ReactNode | null {
   const record = asset.waqf;
-  if (!record || !(record.name || record.deedDate || record.deedExcerpt || record.conditions || record.landNote)) return null;
+  if (
+    !record ||
+    !(
+      record.name ||
+      record.deedDate ||
+      record.deedExcerpt ||
+      record.conditions ||
+      record.landNote
+    )
+  )
+    return null;
   return <Waqf record={record} />;
 }
 
@@ -622,14 +1094,29 @@ function Waqf({ record }: { record: NonNullable<AssetDetail["waqf"]> }) {
   const { textScale } = useUi();
   return (
     <View style={styles.rows}>
-      {record.name && <Info icon="business-outline" label="Vakıf">{record.name}</Info>}
-      {record.deedDate && <Info icon="calendar-outline" label="Vakfiye tarihi">{record.deedDate}</Info>}
+      {record.name && (
+        <Info icon="business-outline" label="Vakıf">
+          {record.name}
+        </Info>
+      )}
+      {record.deedDate && (
+        <Info icon="calendar-outline" label="Vakfiye tarihi">
+          {record.deedDate}
+        </Info>
+      )}
       {record.deedExcerpt && (
         <View style={[styles.quote, { borderLeftColor: c.highlightMark }]}>
           <Text variant="caption" color="textSecondary">
             Vakfiyeden
           </Text>
-          <Text style={[styles.quoteText, { fontSize: 19 * textScale, lineHeight: 30 * textScale }]}>{record.deedExcerpt}</Text>
+          <Text
+            style={[
+              styles.quoteText,
+              { fontSize: 19 * textScale, lineHeight: 30 * textScale },
+            ]}
+          >
+            {record.deedExcerpt}
+          </Text>
         </View>
       )}
       {record.conditions && (
@@ -657,41 +1144,65 @@ function Inscriptions({ asset }: { asset: AssetDetail }) {
   return (
     <View accessibilityRole="list" style={styles.rows}>
       {asset.inscriptions.map((inscription) => {
-        const date = [inscription.gregorian, inscription.hijriYear !== null ? `H. ${inscription.hijriYear}` : null].filter(Boolean).join("  ·  ");
-        const about = [inscription.script, inscription.author].filter(Boolean).join("  ·  ");
-        const camera: Href = { pathname: "/inscription", params: { asset: asset.id } };
+        const date = [
+          inscription.gregorian,
+          inscription.hijriYear !== null ? `H. ${inscription.hijriYear}` : null,
+        ]
+          .filter(Boolean)
+          .join("  ·  ");
+        const about = [inscription.script, inscription.author]
+          .filter(Boolean)
+          .join("  ·  ");
+        const camera: Href = {
+          pathname: "/inscription",
+          params: { asset: asset.id },
+        };
         return (
-          <Editable key={inscription.id} field={`inscription:${inscription.id}`} label="Kitabe">
-          <View style={[styles.card, { backgroundColor: c.surfaceRaised }]}>
-            {inscription.location && <Text variant="label">{inscription.location}</Text>}
-            {(date !== "" || about !== "") && (
-              <Text variant="caption" color="textSecondary">
-                {[date, about].filter(Boolean).join("  ·  ")}
-              </Text>
-            )}
-            {inscription.translation && <Prose text={inscription.translation} />}
-            {inscription.transliteration && (
-              <View style={styles.tight}>
+          <Editable
+            key={inscription.id}
+            field={`inscription:${inscription.id}`}
+            label="Kitabe"
+          >
+            <View style={[styles.card, { backgroundColor: c.surfaceRaised }]}>
+              {inscription.location && (
+                <Text variant="label">{inscription.location}</Text>
+              )}
+              {(date !== "" || about !== "") && (
                 <Text variant="caption" color="textSecondary">
-                  Okunuşu
+                  {[date, about].filter(Boolean).join("  ·  ")}
                 </Text>
-                <Text variant="caption" style={styles.italic}>
-                  {inscription.transliteration}
-                </Text>
-              </View>
-            )}
-            {inscription.note && <Text variant="caption">{inscription.note}</Text>}
-            {inscription.arTarget && Platform.OS !== "web" && (
-              <FrameLink href={camera}>
-                <Pressable accessibilityRole="link" accessibilityLabel={`Kamerayla oku: ${inscription.location ?? "kitabe"}`} style={styles.cameraLink}>
-                  <Ionicons name="scan-outline" size={18} color={c.primary} />
-                  <Text variant="label" colorValue={c.primary}>
-                    Kamerayla oku
+              )}
+              {inscription.translation && (
+                <Prose text={inscription.translation} />
+              )}
+              {inscription.transliteration && (
+                <View style={styles.tight}>
+                  <Text variant="caption" color="textSecondary">
+                    Okunuşu
                   </Text>
-                </Pressable>
-              </FrameLink>
-            )}
-          </View>
+                  <Text variant="caption" style={styles.italic}>
+                    {inscription.transliteration}
+                  </Text>
+                </View>
+              )}
+              {inscription.note && (
+                <Text variant="caption">{inscription.note}</Text>
+              )}
+              {inscription.arTarget && Platform.OS !== "web" && (
+                <FrameLink href={camera}>
+                  <Pressable
+                    accessibilityRole="link"
+                    accessibilityLabel={`Kamerayla oku: ${inscription.location ?? "kitabe"}`}
+                    style={styles.cameraLink}
+                  >
+                    <Ionicons name="scan-outline" size={18} color={c.primary} />
+                    <Text variant="label" colorValue={c.primary}>
+                      Kamerayla oku
+                    </Text>
+                  </Pressable>
+                </FrameLink>
+              )}
+            </View>
           </Editable>
         );
       })}
@@ -701,9 +1212,16 @@ function Inscriptions({ asset }: { asset: AssetDetail }) {
 
 function factsOf(asset: AssetDetail) {
   return asset.facts.flatMap((fact) => {
-    const raw = fact.value ?? (fact.valueNum !== null ? String(fact.valueNum) : null);
+    const raw =
+      fact.value ?? (fact.valueNum !== null ? String(fact.valueNum) : null);
     if (raw === null) return [];
-    return [{ ...fact, shown: fact.unit && !raw.endsWith(fact.unit) ? `${raw} ${fact.unit}` : raw }];
+    return [
+      {
+        ...fact,
+        shown:
+          fact.unit && !raw.endsWith(fact.unit) ? `${raw} ${fact.unit}` : raw,
+      },
+    ];
   });
 }
 
@@ -713,16 +1231,30 @@ function Facts({ asset }: { asset: AssetDetail }) {
   return (
     <View accessibilityRole="list" style={styles.tiles}>
       {factsOf(asset).map((fact) => (
-        <Editable key={fact.key} field={`fact:${fact.key}`} label={`Sayı: ${fact.label}`} style={[styles.tileBox, fact.shown.length > 14 || fact.note ? styles.tileWide : null]}>
-        <View style={[styles.tile, fact.shown.length > 14 || fact.note ? styles.tileWide : null, { backgroundColor: c.surfaceRaised }]}>
-          <Text variant="heading" style={styles.factValue}>
-            {fact.shown}
-          </Text>
-          <Text variant="caption" color="textSecondary">
-            {fact.label}
-          </Text>
-          {fact.note && <Text variant="caption">{fact.note}</Text>}
-        </View>
+        <Editable
+          key={fact.key}
+          field={`fact:${fact.key}`}
+          label={`Sayı: ${fact.label}`}
+          style={[
+            styles.tileBox,
+            fact.shown.length > 14 || fact.note ? styles.tileWide : null,
+          ]}
+        >
+          <View
+            style={[
+              styles.tile,
+              fact.shown.length > 14 || fact.note ? styles.tileWide : null,
+              { backgroundColor: c.surfaceRaised },
+            ]}
+          >
+            <Text variant="heading" style={styles.factValue}>
+              {fact.shown}
+            </Text>
+            <Text variant="caption" color="textSecondary">
+              {fact.label}
+            </Text>
+            {fact.note && <Text variant="caption">{fact.note}</Text>}
+          </View>
         </Editable>
       ))}
     </View>
@@ -748,7 +1280,12 @@ function Legends({ asset }: { asset: AssetDetail }) {
   );
 }
 
-const accessText: Record<AccessibilityStatus, string> = { yes: "Var", partial: "Kısmen", no: "Yok", unknown: "Bilgi yok" };
+const accessText: Record<AccessibilityStatus, string> = {
+  yes: "Var",
+  partial: "Kısmen",
+  no: "Yok",
+  unknown: "Bilgi yok",
+};
 
 /** An unchecked "unknown" reads as no information, never as accessible. */
 function Access({ asset }: { asset: AssetDetail }) {
@@ -786,11 +1323,22 @@ function Sources({ asset }: { asset: AssetDetail }) {
   return (
     <View accessibilityRole="list" style={styles.tight}>
       {asset.sources.map((source, index) => {
-        const text = source.pages ? `${source.title} · s. ${source.pages}` : source.title;
+        const text = source.pages
+          ? `${source.title} · s. ${source.pages}`
+          : source.title;
         const { url } = source;
         return url ? (
-          <Pressable key={`${source.sourceId}-${index}`} accessibilityRole="link" onPress={() => Linking.openURL(url)} style={styles.link}>
-            <Text variant="caption" colorValue={c.primary} style={styles.underline}>
+          <Pressable
+            key={`${source.sourceId}-${index}`}
+            accessibilityRole="link"
+            onPress={() => Linking.openURL(url)}
+            style={styles.link}
+          >
+            <Text
+              variant="caption"
+              colorValue={c.primary}
+              style={styles.underline}
+            >
               {text}
             </Text>
           </Pressable>
@@ -849,6 +1397,61 @@ const styles = StyleSheet.create({
     maxWidth: COLUMN,
     width: "100%",
     alignSelf: "center",
+  },
+  introWide: {
+    paddingHorizontal: 0,
+    paddingTop: spacing.md,
+    paddingBottom: spacing.xxl,
+  },
+  introColumnWide: {
+    maxWidth: "100%",
+    alignSelf: "stretch",
+  },
+  introTitleWide: {
+    fontSize: 52,
+    lineHeight: 60,
+  },
+  wideIntro: {
+    width: "100%",
+    alignSelf: "center",
+  },
+  wideRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.xxxl,
+    width: "100%",
+    alignSelf: "center",
+  },
+  toc: {
+    width: TOC,
+    gap: 2,
+    position: "sticky" as "relative",
+    top: spacing.lg,
+  },
+  tocHead: {
+    paddingBottom: spacing.sm,
+  },
+  tocItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    minHeight: 40,
+    paddingHorizontal: spacing.md,
+    borderLeftWidth: 2,
+    borderTopRightRadius: radius.md,
+    borderBottomRightRadius: radius.md,
+  },
+  tocNumber: {
+    fontFamily: fontFamily.monoMedium,
+    letterSpacing: 1,
+  },
+  wideMain: {
+    flex: 1,
+    minWidth: 0,
+  },
+  wideBlock: {
+    gap: spacing.xl,
+    paddingVertical: spacing.xxl,
   },
   nav: {
     borderBottomWidth: StyleSheet.hairlineWidth,
