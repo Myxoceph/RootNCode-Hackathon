@@ -1,15 +1,17 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 
 /**
  * The home page's ground: a skyline of the monuments the app is about (mosques with their domes,
  * half-domes and minarets, a türbe, a han with its row of small domes, a clock tower, cypresses),
  * drawn in gold dots, the outlines brighter than the fill. Two rows of it, a dim one behind and a
- * bright one in front, drift slowly from right to left. Under "Hareketi azalt" they stand still.
+ * bright one in front, drift slowly from right to left. They stand on the shore where the laptop
+ * stands (`shore`), mirrored in the water under it, the reflection rippling. Under "Hareketi azalt"
+ * they stand still.
  *
  * The shapes are drawn once, sampled into dots once and kept as images; a frame only slides them.
  * A canvas, web only; decorative.
  */
-export function LandingSkyline({ still }: { still: boolean }) {
+export function LandingSkyline({ still, shore }: { still: boolean; shore: RefObject<HTMLElement | null> }) {
   const canvas = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -41,17 +43,41 @@ export function LandingSkyline({ still }: { still: boolean }) {
       context.setTransform(1, 0, 0, 1, 0, 0);
       context.clearRect(0, 0, element.width, element.height);
       const t = time / 1000;
+      // The shore: where the laptop stands, else a little above the bottom.
+      const mark = shore.current?.getBoundingClientRect();
+      const box = element.getBoundingClientRect();
+      const line = Math.round((mark && mark.width > 0 ? mark.top - box.top : height * 0.82) * ratio);
       for (const layer of layers) {
         const tile = layer.image.width;
-        const top = element.height - layer.image.height - layer.lift * ratio;
-        let x = -((t * layer.speed * ratio) % tile);
-        context.globalAlpha = layer.alpha;
-        while (x < element.width) {
-          context.drawImage(layer.image, Math.round(x), Math.round(top));
-          x += tile;
+        const tall = layer.image.height;
+        const base = line - Math.round(layer.lift * ratio);
+        const offset = (t * layer.speed * ratio) % tile;
+        for (let x = -offset; x < element.width; x += tile) {
+          const dx = Math.round(x);
+          context.globalAlpha = layer.alpha;
+          context.drawImage(layer.image, dx, base - tall);
+          // The reflection, upside down under the shore, in slices that ripple.
+          context.globalAlpha = layer.alpha * 0.32;
+          for (let row = 0; row < tall; row += SLICE * ratio) {
+            const y = 2 * line - (base - tall + row) - SLICE * ratio;
+            if (y > element.height) continue;
+            const ripple = Math.sin(row / (9 * ratio) + t * 1.6) * 2.2 * ratio;
+            context.drawImage(layer.image, 0, row, tile, SLICE * ratio, dx + ripple, y, tile, SLICE * ratio);
+          }
         }
       }
       context.globalAlpha = 1;
+      // The water darkens away from the shore.
+      const fade = context.createLinearGradient(0, line, 0, element.height);
+      fade.addColorStop(0, "rgba(0,0,0,0)");
+      fade.addColorStop(0.75, "rgba(0,0,0,1)");
+      context.globalCompositeOperation = "destination-out";
+      context.fillStyle = fade;
+      context.fillRect(0, line, element.width, element.height - line);
+      context.globalCompositeOperation = "source-over";
+      // The shoreline itself, a thin gold line.
+      context.fillStyle = "rgba(231, 194, 106, 0.35)";
+      context.fillRect(0, line, element.width, Math.max(1, ratio));
     };
 
     const loop = (time: number) => {
@@ -71,7 +97,7 @@ export function LandingSkyline({ still }: { still: boolean }) {
       cancelAnimationFrame(frame);
       window.removeEventListener("resize", onResize);
     };
-  }, [still]);
+  }, [still, shore]);
 
   return <canvas ref={canvas} className="vg-skyline" aria-hidden />;
 }
@@ -82,6 +108,9 @@ interface Layer {
   lift: number;
   alpha: number;
 }
+
+/** The reflection's slices, in CSS pixels. */
+const SLICE = 3;
 
 /** The skyline's own size: one tile, repeated side by side. */
 const TILE_W = 3000;
