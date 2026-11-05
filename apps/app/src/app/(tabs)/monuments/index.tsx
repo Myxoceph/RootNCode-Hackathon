@@ -1,12 +1,38 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
-import { fontFamily, radius, spacing, Text, touchTarget, useTheme, type Theme } from "@vagabonds/ui";
+import {
+  fontFamily,
+  radius,
+  spacing,
+  Text,
+  touchTarget,
+  useTheme,
+  type Theme,
+} from "@vagabonds/ui";
 import { useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import { StatusBar } from "expo-status-bar";
-import { startTransition, useEffect, useMemo, useRef, useState, type ComponentRef } from "react";
-import { AccessibilityInfo, ActivityIndicator, BackHandler, FlatList, Platform, Pressable, StyleSheet, TextInput, View } from "react-native";
+import {
+  startTransition,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ComponentRef,
+} from "react";
+import {
+  AccessibilityInfo,
+  ActivityIndicator,
+  BackHandler,
+  FlatList,
+  Platform,
+  Pressable,
+  StyleSheet,
+  TextInput,
+  useWindowDimensions,
+  View,
+} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { AssetCard } from "@/components/asset-card";
@@ -17,6 +43,12 @@ import { foldTurkish } from "@/search/asset-search";
 
 /** Content column width; on a wide screen the cards stay a gallery instead of stretching. */
 const MAX_CONTENT_WIDTH = 560;
+/**
+ * A wide web page is a website's gallery: a wider column, three or four cards a row, and the
+ * search and the filters in one bar beside the title.
+ */
+const WEB_CONTENT_WIDTH = 1200;
+const WEB_FROM = 900;
 
 /** Gap between the grid's two columns and its rows. */
 const GRID_GAP = spacing.md;
@@ -43,7 +75,10 @@ function inkOf(theme: Theme) {
 }
 type Ink = ReturnType<typeof inkOf>;
 
-const looks = new Map<string, { ink: Ink; styles: ReturnType<typeof makeStyles> }>();
+const looks = new Map<
+  string,
+  { ink: Ink; styles: ReturnType<typeof makeStyles> }
+>();
 
 /** The colors and the styles for the current theme, made once per theme. */
 function useLook() {
@@ -94,7 +129,10 @@ function kindOf(asset: AssetSummary): { code: string; label: string } {
 }
 
 /** The distinct values of one field, most assets first. */
-function optionsOf(assets: AssetSummary[], pick: (asset: AssetSummary) => { code: string; label: string }): Option[] {
+function optionsOf(
+  assets: AssetSummary[],
+  pick: (asset: AssetSummary) => { code: string; label: string },
+): Option[] {
   const byCode = new Map<string, Option>();
   for (const asset of assets) {
     const { code, label } = pick(asset);
@@ -102,20 +140,30 @@ function optionsOf(assets: AssetSummary[], pick: (asset: AssetSummary) => { code
     option.count++;
     byCode.set(code, option);
   }
-  return [...byCode.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, "tr"));
+  return [...byCode.values()].sort(
+    (a, b) => b.count - a.count || a.label.localeCompare(b.label, "tr"),
+  );
 }
 
 /** The kinds that have assets, in their fixed order, "Diğer" last. */
 function kindOptions(assets: AssetSummary[]): Option[] {
   const counts = optionsOf(assets, kindOf);
-  return [...KINDS, OTHER].flatMap((kind) => counts.filter((option) => option.code === kind.code));
+  return [...KINDS, OTHER].flatMap((kind) =>
+    counts.filter((option) => option.code === kind.code),
+  );
 }
 
-function matches(asset: AssetSummary, query: string, filters: Filters): boolean {
+function matches(
+  asset: AssetSummary,
+  query: string,
+  filters: Filters,
+): boolean {
   if (filters.city && asset.city.code !== filters.city) return false;
   if (filters.kind && kindOf(asset).code !== filters.kind) return false;
   if (query === "") return true;
-  return [asset.name, asset.type.label, asset.district, asset.city.label].some((field) => foldTurkish(field).includes(query));
+  return [asset.name, asset.type.label, asset.district, asset.city.label].some(
+    (field) => foldTurkish(field).includes(query),
+  );
 }
 
 /**
@@ -126,12 +174,20 @@ export default function MonumentsScreen() {
   const { ink, styles } = useLook();
   const insets = useSafeAreaInsets();
   const tabBarHeight = useBottomTabBarHeight();
+  const { width } = useWindowDimensions();
+  const wide = Platform.OS === "web" && width >= WEB_FROM;
+  const columns = wide ? (width >= 1240 ? 4 : 3) : 2;
   // A link can still open the list on one city (/monuments?city=bursa).
   const { city } = useLocalSearchParams<{ city?: string }>();
   const all = useSearchableAssets(true);
-  const assets = useMemo(() => (all.status === "success" ? (all.data ?? []) : []), [all]);
+  const assets = useMemo(
+    () => (all.status === "success" ? (all.data ?? []) : []),
+    [all],
+  );
 
   const [text, setText] = useState("");
+  // The field's own ring shows the focus: the browser's outline around the bare input is turned off.
+  const [focused, setFocused] = useState(false);
   const [filters, setFilters] = useState<Filters>({ city });
   const [menu, setMenu] = useState<{
     field: keyof Filters;
@@ -142,80 +198,124 @@ export default function MonumentsScreen() {
   // Android, measures from under the status bar): the button's window position is made
   // relative to the screen.
   const openMenu = (field: keyof Filters, at: Anchor) =>
-    screen.current?.measureInWindow((x, y) => setMenu({ field, anchor: { ...at, top: at.top - y, left: at.left - x } }));
+    screen.current?.measureInWindow((x, y) =>
+      setMenu({ field, anchor: { ...at, top: at.top - y, left: at.left - x } }),
+    );
   useEffect(() => {
     if (city) setFilters((f) => ({ ...f, city }));
   }, [city]);
 
   const query = foldTurkish(text);
-  const shown = useMemo(() => assets.filter((asset) => matches(asset, query, filters)).sort((a, b) => b.prominence - a.prominence), [assets, query, filters]);
+  const shown = useMemo(
+    () =>
+      assets
+        .filter((asset) => matches(asset, query, filters))
+        .sort((a, b) => b.prominence - a.prominence),
+    [assets, query, filters],
+  );
   const cityOptions = useMemo(() => optionsOf(assets, (a) => a.city), [assets]);
   const typeOptions = useMemo(() => kindOptions(assets), [assets]);
   const options = { city: cityOptions, kind: typeOptions };
 
   // A status message (WCAG 4.1.3): read out when the list loads or the search changes.
   // Android and the web read the live region below; iOS needs an explicit announcement.
-  const status = all.status === "loading" ? "Eserler yükleniyor" : all.status === "success" ? `${shown.length} eser` : "";
+  const status =
+    all.status === "loading"
+      ? "Eserler yükleniyor"
+      : all.status === "success"
+        ? `${shown.length} eser`
+        : "";
   useEffect(() => {
     if (Platform.OS !== "ios" || status === "") return;
-    const timer = setTimeout(() => AccessibilityInfo.announceForAccessibility(status), 700);
+    const timer = setTimeout(
+      () => AccessibilityInfo.announceForAccessibility(status),
+      700,
+    );
     return () => clearTimeout(timer);
   }, [status]);
 
   const header = (
-    <View style={[styles.header, { paddingTop: insets.top + spacing.xl }]}>
-      <View style={styles.titleRow}>
-        <Text variant="title" headingLevel={1} colorValue={ink.text} style={styles.title}>
+    <View
+      style={[
+        styles.header,
+        wide && styles.headerWide,
+        { paddingTop: insets.top + (wide ? spacing.lg : spacing.xl) },
+      ]}
+    >
+      {/* On the web the site's bar names the page: the title is there for screen readers only. */}
+      <View style={wide ? styles.visuallyHidden : styles.titleRow}>
+        <Text
+          variant="title"
+          headingLevel={1}
+          colorValue={ink.text}
+          style={styles.title}
+        >
           Eserler
         </Text>
       </View>
-      {/* Not shown, still read: screen readers hear the count as the list loads or the search changes. */}
-      <Text colorValue={ink.soft} accessibilityLiveRegion="polite" style={styles.visuallyHidden}>
-        {all.status === "success" ? `${shown.length} vakıf eseri` : status}
-      </Text>
+      <View style={wide ? styles.toolbar : undefined}>
+        {/* Not shown, still read: screen readers hear the count as the list loads or the search changes. */}
+        <Text
+          colorValue={ink.soft}
+          accessibilityLiveRegion="polite"
+          style={styles.visuallyHidden}
+        >
+          {all.status === "success" ? `${shown.length} vakıf eseri` : status}
+        </Text>
 
-      <View style={styles.searchRow}>
-        <View style={styles.field}>
-          <Ionicons name="search" size={18} color={ink.soft} />
-          <TextInput
-            value={text}
-            onChangeText={setText}
-            placeholder="Eser, ilçe veya tür ara"
-            placeholderTextColor={ink.soft}
-            accessibilityLabel="Eser ara"
-            returnKeyType="search"
-            autoCorrect={false}
-            style={styles.input}
-          />
-          {text !== "" && (
-            <Pressable accessibilityRole="button" accessibilityLabel="Aramayı temizle" hitSlop={10} onPress={() => setText("")}>
-              <Ionicons name="close-circle" size={18} color={ink.soft} />
-            </Pressable>
-          )}
+        <View style={[styles.searchRow, wide && styles.searchRowWide]}>
+          <View style={[styles.field, focused && styles.fieldFocused]}>
+            <Ionicons name="search" size={18} color={ink.soft} />
+            <TextInput
+              value={text}
+              onChangeText={setText}
+              placeholder="Eser, ilçe veya tür ara"
+              placeholderTextColor={ink.soft}
+              accessibilityLabel="Eser ara"
+              onFocus={() => setFocused(true)}
+              onBlur={() => setFocused(false)}
+              returnKeyType="search"
+              autoCorrect={false}
+              style={[styles.input, Platform.OS === "web" && ({ outlineStyle: "none" } as object)]}
+            />
+            {text !== "" && (
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Aramayı temizle"
+                hitSlop={10}
+                onPress={() => setText("")}
+              >
+                <Ionicons name="close-circle" size={18} color={ink.soft} />
+              </Pressable>
+            )}
+          </View>
         </View>
-      </View>
 
-      <View style={styles.dropdowns}>
-        <Dropdown
-          title="Şehir"
-          value={cityOptions.find((o) => o.code === filters.city)?.label}
-          open={menu?.field === "city"}
-          onOpen={(anchor) => openMenu("city", anchor)}
-        />
-        <Dropdown
-          title="Tür"
-          value={typeOptions.find((o) => o.code === filters.kind)?.label}
-          open={menu?.field === "kind"}
-          onOpen={(anchor) => openMenu("kind", anchor)}
-        />
+        <View style={[styles.dropdowns, wide && styles.dropdownsWide]}>
+          <Dropdown
+            title="Şehir"
+            value={cityOptions.find((o) => o.code === filters.city)?.label}
+            open={menu?.field === "city"}
+            onOpen={(anchor) => openMenu("city", anchor)}
+          />
+          <Dropdown
+            title="Tür"
+            value={typeOptions.find((o) => o.code === filters.kind)?.label}
+            open={menu?.field === "kind"}
+            onOpen={(anchor) => openMenu("kind", anchor)}
+          />
+        </View>
       </View>
 
       {/* Out of the way while searching or filtering: the results come first then. */}
-      {all.status === "success" && query === "" && !filters.city && !filters.kind && (
-        <View style={styles.journeyCard}>
-          <TimeJourneyCard assets={assets} />
-        </View>
-      )}
+      {all.status === "success" &&
+        query === "" &&
+        !filters.city &&
+        !filters.kind && (
+          <View style={styles.journeyCard}>
+            <TimeJourneyCard assets={assets} />
+          </View>
+        )}
     </View>
   );
 
@@ -227,14 +327,24 @@ export default function MonumentsScreen() {
       </Head>
       {all.status === "success" ? (
         <FlatList
-          // An odd count gets an empty cell, so the last card keeps its column width.
-          data={shown.length % 2 ? [...shown, null] : shown}
-          keyExtractor={(a) => a?.id ?? "filler"}
-          numColumns={2}
+          // A short last row gets empty cells, so its cards keep their column width.
+          key={`grid-${columns}`}
+          data={[
+            ...shown,
+            ...Array<null>((columns - (shown.length % columns)) % columns).fill(
+              null,
+            ),
+          ]}
+          keyExtractor={(a, i) => a?.id ?? `filler-${i}`}
+          numColumns={columns}
           columnWrapperStyle={styles.row}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
-          contentContainerStyle={[styles.list, { paddingBottom: tabBarHeight + spacing.xl }]}
+          contentContainerStyle={[
+            styles.list,
+            wide && styles.listWide,
+            { paddingBottom: tabBarHeight + spacing.xl },
+          ]}
           ListHeaderComponent={header}
           ListEmptyComponent={
             <View style={styles.state}>
@@ -245,17 +355,26 @@ export default function MonumentsScreen() {
             </View>
           }
           ListFooterComponent={shown.length > 0 ? <EndMark /> : undefined}
-          renderItem={({ item }) => (item ? <AssetCard asset={item} /> : <View style={styles.filler} />)}
+          renderItem={({ item }) =>
+            item ? <AssetCard asset={item} /> : <View style={styles.filler} />
+          }
         />
       ) : (
-        <View style={styles.list}>
+        <View style={[styles.list, wide && styles.listWide]}>
           {header}
           {all.status === "loading" ? (
-            <ActivityIndicator color={ink.gold} size="large" accessibilityLabel="Yükleniyor" style={styles.state} />
+            <ActivityIndicator
+              color={ink.gold}
+              size="large"
+              accessibilityLabel="Yükleniyor"
+              style={styles.state}
+            />
           ) : (
             <View style={styles.state} accessibilityRole="alert">
               <Text variant="label" colorValue={ink.text}>
-                {all.error.kind === "invalid" ? "Veriler okunamadı" : "Veriler yüklenemedi"}
+                {all.error.kind === "invalid"
+                  ? "Veriler okunamadı"
+                  : "Veriler yüklenemedi"}
               </Text>
               <Text colorValue={ink.soft} style={styles.center}>
                 {all.error.message}
@@ -271,7 +390,12 @@ export default function MonumentsScreen() {
         options={menu ? options[menu.field] : []}
         selected={menu ? filters[menu.field] : undefined}
         // The menu closes first; the grid follows without holding the tap up.
-        onPick={(code) => menu && startTransition(() => setFilters((f) => ({ ...f, [menu.field]: code })))}
+        onPick={(code) =>
+          menu &&
+          startTransition(() =>
+            setFilters((f) => ({ ...f, [menu.field]: code })),
+          )
+        }
         onClose={() => setMenu(null)}
       />
     </View>
@@ -289,7 +413,17 @@ interface Anchor {
  * A filter as a button that drops a menu: its name, or the chosen value in gold, and a chevron.
  * The options stay out of sight until it is opened.
  */
-function Dropdown({ title, value, open, onOpen }: { title: string; value: string | undefined; open: boolean; onOpen: (anchor: Anchor) => void }) {
+function Dropdown({
+  title,
+  value,
+  open,
+  onOpen,
+}: {
+  title: string;
+  value: string | undefined;
+  open: boolean;
+  onOpen: (anchor: Anchor) => void;
+}) {
   const { ink, styles } = useLook();
   const ref = useRef<ComponentRef<typeof View>>(null);
   const on = value !== undefined;
@@ -299,13 +433,29 @@ function Dropdown({ title, value, open, onOpen }: { title: string; value: string
       accessibilityRole="button"
       accessibilityLabel={`${title}: ${value ?? "Tümü"}`}
       accessibilityState={{ expanded: open }}
-      onPress={() => ref.current?.measureInWindow((x, y, width, height) => onOpen({ top: y + height + spacing.xs, left: x, width }))}
-      style={({ pressed }) => [styles.dropdown, on && styles.dropdownOn, pressed && styles.pressed]}
+      onPress={() =>
+        ref.current?.measureInWindow((x, y, width, height) =>
+          onOpen({ top: y + height + spacing.xs, left: x, width }),
+        )
+      }
+      style={({ pressed }) => [
+        styles.dropdown,
+        on && styles.dropdownOn,
+        pressed && styles.pressed,
+      ]}
     >
-      <Text colorValue={on ? ink.gold : ink.text} style={styles.dropdownText} numberOfLines={1}>
+      <Text
+        colorValue={on ? ink.gold : ink.text}
+        style={styles.dropdownText}
+        numberOfLines={1}
+      >
         {value ?? title}
       </Text>
-      <Ionicons name={open ? "chevron-up" : "chevron-down"} size={16} color={on ? ink.gold : ink.soft} />
+      <Ionicons
+        name={open ? "chevron-up" : "chevron-down"}
+        size={16}
+        color={on ? ink.gold : ink.soft}
+      />
     </Pressable>
   );
 }
@@ -340,9 +490,19 @@ function FilterMenu({
   return (
     <>
       {/* A tap beside the menu closes it; screen readers close it with a choice, the back button or the escape gesture. */}
-      <Pressable onPress={onClose} accessible={false} aria-hidden accessibilityElementsHidden importantForAccessibility="no" style={StyleSheet.absoluteFill} />
+      <Pressable
+        onPress={onClose}
+        accessible={false}
+        aria-hidden
+        accessibilityElementsHidden
+        importantForAccessibility="no"
+        style={StyleSheet.absoluteFill}
+      />
       <View
-        style={[styles.menu, { top: anchor.top, left: anchor.left, width: anchor.width }]}
+        style={[
+          styles.menu,
+          { top: anchor.top, left: anchor.left, width: anchor.width },
+        ]}
         accessibilityViewIsModal
         accessibilityRole="radiogroup"
         onAccessibilityEscape={onClose}
@@ -358,9 +518,15 @@ function FilterMenu({
                 onClose();
                 onPick(row.code);
               }}
-              style={({ pressed }) => [styles.menuRow, pressed && styles.menuPressed]}
+              style={({ pressed }) => [
+                styles.menuRow,
+                pressed && styles.menuPressed,
+              ]}
             >
-              <Text colorValue={on ? ink.text : ink.soft} style={[styles.menuText, on && styles.menuTextOn]}>
+              <Text
+                colorValue={on ? ink.text : ink.soft}
+                style={[styles.menuText, on && styles.menuTextOn]}
+              >
                 {row.label}
               </Text>
               {on && <Ionicons name="checkmark" size={18} color={ink.gold} />}
@@ -372,10 +538,20 @@ function FilterMenu({
   );
 }
 
-function GoldButton({ label, onPress }: { label: string; onPress: () => void }) {
+function GoldButton({
+  label,
+  onPress,
+}: {
+  label: string;
+  onPress: () => void;
+}) {
   const { ink, styles } = useLook();
   return (
-    <Pressable accessibilityRole="button" onPress={onPress} style={({ pressed }) => [styles.gold, pressed && styles.pressed]}>
+    <Pressable
+      accessibilityRole="button"
+      onPress={onPress}
+      style={({ pressed }) => [styles.gold, pressed && styles.pressed]}
+    >
       <Text variant="label" colorValue={ink.onGold} style={styles.center}>
         {label}
       </Text>
@@ -424,6 +600,29 @@ const makeStyles = (ink: Ink) =>
       gap: spacing.xs,
       paddingBottom: spacing.xs,
     },
+    listWide: {
+      maxWidth: WEB_CONTENT_WIDTH,
+      paddingHorizontal: spacing.xl,
+      gap: spacing.xl,
+    },
+    headerWide: {
+      gap: spacing.lg,
+      paddingBottom: spacing.sm,
+    },
+    /** The search and the two filters in one row. */
+    toolbar: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: spacing.sm,
+    },
+    searchRowWide: {
+      flex: 1,
+      marginTop: 0,
+    },
+    dropdownsWide: {
+      width: 420,
+      marginTop: 0,
+    },
     searchRow: {
       flexDirection: "row",
       gap: spacing.sm,
@@ -456,7 +655,7 @@ const makeStyles = (ink: Ink) =>
     },
     titleRow: {
       flexDirection: "row",
-      alignItems: "center",
+      alignItems: "baseline",
       justifyContent: "space-between",
       gap: spacing.md,
     },
@@ -482,6 +681,10 @@ const makeStyles = (ink: Ink) =>
       backgroundColor: ink.glass,
       borderColor: ink.edge,
       borderWidth: StyleSheet.hairlineWidth,
+    },
+    fieldFocused: {
+      borderColor: ink.gold,
+      borderWidth: 1.5,
     },
     dropdownOn: {
       borderColor: ink.gold,

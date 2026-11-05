@@ -1,8 +1,17 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
-import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
+import {
+  fontFamily,
+  palette,
+  radius,
+  spacing,
+  Text,
+  touchTarget,
+  useTheme,
+} from "@vagabonds/ui";
 import { Link } from "expo-router";
-import { Pressable, StyleSheet, View } from "react-native";
+import { useState } from "react";
+import { Platform, Pressable, StyleSheet, View } from "react-native";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
 import { AssetImage } from "@/components/asset-image";
@@ -16,23 +25,55 @@ import { yearOfDating } from "@/lib/dating";
  */
 export function AssetCard({ asset }: { asset: AssetSummary }) {
   const { colors: c } = useTheme();
+  const [hovered, setHovered] = useState(false);
   const year = asset.yearLabel ?? yearOfDating(asset.datingDisplay);
   const meta = [asset.district, year].filter(Boolean).join(" · ");
-  const label = [asset.name, asset.type.label, `${asset.district}, ${asset.city.label}`, asset.datingDisplay].filter(Boolean).join(", ");
+  const label = [
+    asset.name,
+    asset.type.label,
+    `${asset.district}, ${asset.city.label}`,
+    asset.datingDisplay,
+  ]
+    .filter(Boolean)
+    .join(", ");
 
   return (
-    <Link href={{ pathname: "/monuments/[id]", params: { id: asset.id } }} asChild>
-      <Pressable accessibilityRole="link" accessibilityLabel={label} style={styles.card}>
+    <Link
+      href={{ pathname: "/monuments/[id]", params: { id: asset.id } }}
+      asChild
+    >
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel={label}
+        // On the web the card lifts a little under the pointer. One flat style: `Link asChild` takes neither a function nor an array.
+        onHoverIn={() => setHovered(true)}
+        onHoverOut={() => setHovered(false)}
+        style={StyleSheet.flatten([styles.card, Platform.OS === "web" && styles.cardWeb, hovered && styles.cardHover])}
+      >
         <View style={[styles.photo, { backgroundColor: c.surfaceRaised }]}>
-          {asset.cover ? <AssetImage media={asset.cover} decorative fill /> : <BuildingIllustration mode="now" id={`card-${asset.id}`} />}
+          {asset.cover ? (
+            <AssetImage media={asset.cover} decorative fill />
+          ) : (
+            <BuildingIllustration mode="now" id={`card-${asset.id}`} />
+          )}
           <Shade id={asset.id} />
           <View style={styles.tag}>
-            <Text variant="caption" colorValue={palette.white} style={styles.tagText} numberOfLines={1}>
+            <Text
+              variant="caption"
+              colorValue={palette.white}
+              style={styles.tagText}
+              numberOfLines={1}
+            >
               {asset.type.label}
             </Text>
           </View>
           <View style={styles.go}>
-            <Ionicons name="arrow-up-outline" size={14} color={palette.white} style={styles.goIcon} />
+            <Ionicons
+              name="arrow-up-outline"
+              size={14}
+              color={palette.white}
+              style={styles.goIcon}
+            />
           </View>
         </View>
 
@@ -40,7 +81,11 @@ export function AssetCard({ asset }: { asset: AssetSummary }) {
           <Text colorValue={c.text} style={styles.name} numberOfLines={2}>
             {asset.name}
           </Text>
-          <Text variant="caption" colorValue={c.textSecondary} numberOfLines={1}>
+          <Text
+            variant="caption"
+            colorValue={c.textSecondary}
+            numberOfLines={1}
+          >
             {meta}
           </Text>
         </View>
@@ -82,6 +127,13 @@ const styles = StyleSheet.create({
     minWidth: 0,
     minHeight: touchTarget.min,
     gap: spacing.sm,
+  },
+  cardWeb: {
+    transitionProperty: "transform",
+    transitionDuration: "220ms",
+  },
+  cardHover: {
+    transform: [{ translateY: -4 }],
   },
   photo: {
     aspectRatio: 4 / 5,
