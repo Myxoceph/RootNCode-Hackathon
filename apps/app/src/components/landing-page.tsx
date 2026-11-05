@@ -4,14 +4,14 @@ import { useRouter } from "expo-router";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { toQR } from "toqr";
 
-import { LandingTerrain } from "@/components/landing-terrain";
+import { LandingSkyline } from "@/components/landing-skyline";
 import { appLinks, expoGoLink } from "@/content/app-links";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 /**
  * The web's home page (`/`, `app/(tabs)/index.web.tsx`), one screen tall, never scrolling: on a
  * dark, grainy night the name and a line, two buttons, and a laptop with a phone leaning in front
- * of it, standing on Turkey drawn in gold dots (`LandingTerrain`). The laptop shows the website's
+ * of it, before a skyline of domes and minarets drawn in gold dots (`LandingSkyline`). The laptop shows the website's
  * map and leads into it; the phone shows an asset in the app and opens a window to get the app
  * (a QR code for Expo Go, the stores "yakında").
  *
@@ -38,7 +38,7 @@ export function LandingPage() {
   return (
     <div className="vg-landing">
       <style>{CSS}</style>
-      <LandingTerrain still={still} />
+      <LandingSkyline still={still} />
       <div className="vg-vignette" aria-hidden />
       <div className="vg-grain" aria-hidden />
 
@@ -105,7 +105,6 @@ function Scene({ onSite, onApp }: { onSite: (event: MouseEvent<HTMLAnchorElement
     <div ref={room} className="vg-room">
       <div className="vg-scene vg-rise vg-d5" style={{ width: SCENE_W, height: SCENE_H, transform: `scale(${scale})`, opacity: scale ? undefined : 0 }}>
         {/* The ground they stand on: the dots go dark under them, a soft gold light pools around. */}
-        <div className="vg-pool" aria-hidden />
         <div className="vg-backlight" aria-hidden />
         <div className="vg-halo" aria-hidden />
         <div className="vg-contact vg-contact-laptop" aria-hidden />
@@ -242,8 +241,8 @@ const CSS = `
   color: var(--ink); font-family: HankenGrotesk_400Regular, system-ui, sans-serif; -webkit-font-smoothing: antialiased;
 }
 .vg-landing *, .vg-landing *::before, .vg-landing *::after { box-sizing: border-box; }
-.vg-terrain { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 26%, #000 56%); mask-image: linear-gradient(to bottom, transparent 26%, #000 56%); }
+.vg-skyline { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 8%, #000 40%); mask-image: linear-gradient(to bottom, transparent 8%, #000 40%); }
 .vg-vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.6) 100%); }
 .vg-grain { position: absolute; inset: -50%; pointer-events: none; background-image: ${GRAIN}; opacity: 0.09; mix-blend-mode: overlay; }
 
@@ -271,17 +270,14 @@ const CSS = `
 
 .vg-room { position: relative; flex: 1; transform: translateY(calc(-1 * clamp(16px, 6vh, 70px))); min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
 .vg-scene { position: relative; flex: none; transform-origin: 50% 100%; margin-bottom: 0; }
-.vg-pool { position: absolute; left: 50%; bottom: -40px; width: 1000px; height: 200px; transform: translateX(-50%); pointer-events: none;
-  background: radial-gradient(closest-side, rgba(5, 7, 13, 0.7) 0%, rgba(5, 7, 13, 0.4) 55%, rgba(5, 7, 13, 0) 100%); }
 .vg-backlight { position: absolute; left: 40%; top: -40px; width: 900px; height: 520px; transform: translateX(-50%); pointer-events: none;
   background: radial-gradient(closest-side, rgba(221, 181, 92, 0.16), rgba(221, 181, 92, 0.05) 50%, rgba(221, 181, 92, 0) 100%); }
 .vg-halo { position: absolute; left: 50%; bottom: 22px; width: 900px; height: 104px; transform: translateX(-50%); border-radius: 50%; pointer-events: none;
   background: radial-gradient(closest-side, rgba(221, 181, 92, 0.16), rgba(221, 181, 92, 0.04) 60%, rgba(221, 181, 92, 0) 100%);
-  border: 1px solid rgba(231, 194, 106, 0.28); box-shadow: 0 0 24px rgba(231, 194, 106, 0.18), inset 0 0 24px rgba(231, 194, 106, 0.12);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent); mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent); }
-.vg-contact { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); }
-.vg-contact-laptop { left: 0; bottom: 50px; width: 620px; height: 26px; }
-.vg-contact-phone { right: 0; bottom: -2px; width: 200px; height: 22px; z-index: 1; }
+}
+.vg-contact { position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); }
+.vg-contact-laptop { left: -20px; bottom: 40px; width: 660px; height: 44px; }
+.vg-contact-phone { right: -14px; bottom: -14px; width: 228px; height: 38px; z-index: 0; }
 .vg-device { all: unset; position: absolute; bottom: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .vg-device:focus-visible { outline: 3px solid var(--gold); outline-offset: 10px; border-radius: 22px; }
 .vg-device-laptop { left: 0; bottom: 64px; width: 620px; }
@@ -293,7 +289,7 @@ const CSS = `
   opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; backdrop-filter: blur(8px); }
 .vg-device:hover .vg-tag, .vg-device:focus-visible .vg-tag { opacity: 1; transform: translate(-50%, 0); }
 
-.vg-laptop { display: flex; flex-direction: column; align-items: center; }
+.vg-laptop { display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 26px 30px rgba(0, 0, 0, 0.45)); }
 .vg-glass { position: relative; width: 572px; height: 368px; border-radius: 18px 18px 4px 4px; padding: 11px 11px 14px; background: #040507;
   box-shadow: 0 0 0 1.5px #474B54, 0 -1px 0 1.5px rgba(255, 255, 255, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 80px -30px rgba(0, 0, 0, 0.9); }
 .vg-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 6px 6px 2px 2px; background: #0D1420; }
@@ -308,7 +304,7 @@ const CSS = `
 .vg-scoop { position: absolute; top: 0; left: 50%; width: 104px; height: 6px; margin-left: -52px; border-radius: 0 0 10px 10px; background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08)); }
 
 .vg-phone { position: relative; width: 200px; height: 412px; border-radius: 38px; padding: 8px; background: #040507;
-  box-shadow: 0 0 0 2.5px #5A5F69, 0 0 0 4px #1E2026, -1px -1px 0 4px rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.1), -24px 30px 60px -20px rgba(0, 0, 0, 0.9); }
+  box-shadow: 0 0 0 2.5px #5A5F69, 0 0 0 4px #1E2026, -1px -1px 0 4px rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.1), -18px 26px 44px -18px rgba(0, 0, 0, 0.6); }
 .vg-phone-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 31px; background: #0D1420; }
 .vg-notch { position: absolute; top: 9px; left: 50%; width: 72px; height: 21px; transform: translateX(-50%); border-radius: 12px; background: #030406; }
 
