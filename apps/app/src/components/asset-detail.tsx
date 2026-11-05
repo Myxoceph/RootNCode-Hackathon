@@ -756,11 +756,13 @@ function Experiences({ asset }: { asset: AssetDetail }) {
   const inscriptions = useHasInscriptions(asset);
 
   const actions: Action[] = [];
-  if (inscriptions) {
+  // Taşın Dili and Ziyaret Mührü need the camera: phone features (ADR 0001).
+  const phone = Platform.OS !== "web";
+  if (phone && inscriptions) {
     actions.push({ key: "inscription", icon: "scan-outline", title: "Taşın Dili", hint: "Kitabeyi kamerayla oku", spoken: "Taşın Dili: kitabeyi kamerayla oku", href: { pathname: "/inscription", params: { asset: asset.id } } });
   }
   // An unlocked asset needs no seal.
-  if (visitSealTarget(asset) && !opened) {
+  if (phone && visitSealTarget(asset) && !opened) {
     const hint = "Eserde olduğunu kanıtla";
     actions.push({ key: "seal", icon: "ribbon-outline", title: "Ziyaret Mührü", hint, spoken: `Ziyaret Mührü: ${hint}`, href: { pathname: "/visit-seal", params: { asset: asset.id } } });
   }
@@ -792,8 +794,8 @@ function Experiences({ asset }: { asset: AssetDetail }) {
       on: describing,
     });
   }
-  // A phone feature: the photo comes from the camera (ADR 0001).
-  if (Platform.OS !== "web") {
+  // A phone feature too: the photo comes from the camera.
+  if (phone) {
     const hint = "Bir detayı fotoğrafla, rehber açıklasın";
     actions.push({ key: "stone", icon: "camera-outline", title: "Taşa Sor", hint, spoken: `Taşa Sor: ${hint}`, href: { pathname: "/stone-ask", params: { asset: asset.id, name: asset.name } } });
   }

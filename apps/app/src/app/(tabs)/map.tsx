@@ -12,6 +12,7 @@ import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapCityButtons } from "@/components/map-city-buttons";
 import { MapSearch } from "@/components/map-search";
 import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
+import { MobileOnlyNotice } from "@/components/mobile-only-notice";
 import { SealScanDemo } from "@/components/seal-scan-demo";
 import { CITY_LANDMARKS, useCities, useCityMapAssets, useCommunity, useRelationsOf } from "@/data";
 import { announce } from "@/lib/announce";
@@ -60,6 +61,8 @@ export default function MapScreen() {
   // The map lies behind the seal screen: an asset opens on it only once the visitor is back and that screen has slid away.
   const [unlocked, setUnlocked] = useState(allUnlocked);
   const [sceneRunning, setSceneRunning] = useState(false);
+  // The web's "Kilidini aç": the asset's name while the "mobil uygulamada" notice is up.
+  const [mobileOnly, setMobileOnly] = useState<string | null>(null);
   const cities = useCities();
   const [mapError, setMapError] = useState<string | null>(null);
   const [selectedPlate, setSelectedPlate] = useState<number | null>(null);
@@ -204,9 +207,14 @@ export default function MapScreen() {
     return cards.find((card) => card.id === asset.id || card.id === asset.parentId)?.id ?? null;
   }
 
-  /** "Kilidini aç", on the map or a card: the tour's example scan while it plays, Ziyaret Mührü otherwise. */
+  /**
+   * "Kilidini aç", on the map or a card: the tour's example scan while it plays, Ziyaret Mührü otherwise.
+   * The web has no camera: there it says the asset is unlocked in the mobile app.
+   */
   function unlockAsset(id: string) {
-    if (!tour.onUnlock(id)) router.push({ pathname: "/visit-seal", params: { asset: id } });
+    if (tour.onUnlock(id)) return;
+    if (Platform.OS === "web") setMobileOnly(located.find(({ asset }) => asset.id === id)?.asset.name ?? "");
+    else router.push({ pathname: "/visit-seal", params: { asset: id } });
   }
 
   /** The visitor chose an asset (on the map, in the cards or the search): its buttons under the search are for it now, and that is said once. */
@@ -397,6 +405,7 @@ export default function MapScreen() {
         {!selectedCity && <MapCityButtons cities={withAssets} bottom={tabBarHeight + spacing.sm} onOpen={openCity} />}
       </Animated.View>
       {tour.scanning && <SealScanDemo onDone={tour.onScanned} />}
+      <MobileOnlyNotice name={mobileOnly} onClose={() => setMobileOnly(null)} />
       {tour.step && <MapTourGuide step={tour.step} spots={tourSpots} top={insets.top} onNext={tour.next} onPrevious={tour.canGoBack ? tour.previous : null} onSkip={tour.skip} />}
     </View>
   );

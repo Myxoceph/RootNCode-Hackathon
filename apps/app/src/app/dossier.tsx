@@ -4,7 +4,7 @@ import { fontFamily, radius, SourceNote, spacing, Text, touchTarget, useTheme, u
 import { useLocalSearchParams, useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import { useMemo, useRef, useState, type ComponentProps, type ReactNode } from "react";
-import { Linking, Pressable, ScrollView, StyleSheet, View, type NativeScrollEvent, type NativeSyntheticEvent, type ScrollViewInstance } from "react-native";
+import { Linking, Platform, Pressable, ScrollView, StyleSheet, View, type NativeScrollEvent, type NativeSyntheticEvent, type ScrollViewInstance } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { AssetImage } from "@/components/asset-image";
@@ -681,7 +681,7 @@ function Inscriptions({ asset }: { asset: AssetDetail }) {
               </View>
             )}
             {inscription.note && <Text variant="caption">{inscription.note}</Text>}
-            {inscription.arTarget && (
+            {inscription.arTarget && Platform.OS !== "web" && (
               <FrameLink href={camera}>
                 <Pressable accessibilityRole="link" accessibilityLabel={`Kamerayla oku: ${inscription.location ?? "kitabe"}`} style={styles.cameraLink}>
                   <Ionicons name="scan-outline" size={18} color={c.primary} />

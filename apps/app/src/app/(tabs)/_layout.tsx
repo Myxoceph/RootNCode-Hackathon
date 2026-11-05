@@ -1,5 +1,6 @@
 import { fontFamily } from "@vagabonds/ui";
 import { Tabs } from "expo-router/js-tabs";
+import { Platform } from "react-native";
 
 import { TabBar, type TabItem } from "@/components/tab-bar";
 
@@ -11,8 +12,11 @@ import { TabBar, type TabItem } from "@/components/tab-bar";
  * capsules, and the map and the assistant's answers still open the planner.
  *
  * Screen readers announce the tab title; the bar (`TabBar`) shows the open tab's name and the others' icons.
+ *
+ * The web has no camera (ADR 0001): there is no Kamera tab, and `/camera` goes to the map (`camera.web.tsx`).
  */
-const tabs: Array<TabItem & { ownHeader?: boolean }> = [
+const WEB = Platform.OS === "web";
+const allTabs: Array<TabItem & { ownHeader?: boolean }> = [
   { name: "map", title: "Harita", icon: "map-outline", iconFocused: "map", ownHeader: true },
   // The general conversation of `/assistant`, which draws its own header.
   { name: "rehber", title: "Rehber", icon: "sparkles-outline", iconFocused: "sparkles", ownHeader: true },
@@ -21,6 +25,7 @@ const tabs: Array<TabItem & { ownHeader?: boolean }> = [
   { name: "monuments", title: "Eserler", icon: "library-outline", iconFocused: "library", ownHeader: true },
   { name: "settings", title: "Profil", icon: "person-outline", iconFocused: "person", ownHeader: true },
 ];
+const tabs = WEB ? allTabs.filter((tab) => tab.name !== "camera") : allTabs;
 
 export default function TabLayout() {
   return (
@@ -31,6 +36,7 @@ export default function TabLayout() {
       {tabs.map(({ name, title, ownHeader }) => (
         <Tabs.Screen key={name} name={name} options={{ title, headerShown: !ownHeader }} />
       ))}
+      {WEB && <Tabs.Screen name="camera" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: "Kamera" }} />}
       {/* The opening greeting, which goes on to the map. */}
       <Tabs.Screen name="index" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false }} />
       {/* No tab button, but still a tab: since expo-router 58, `href: null` hides the screen and redirects away from it. */}

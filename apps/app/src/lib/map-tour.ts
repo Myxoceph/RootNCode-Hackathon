@@ -1,5 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useRef, useState } from "react";
+import { Platform } from "react-native";
 
 /** Set once the map's tour has been played to the end or skipped, for each account on this phone. */
 const SEEN_KEY = "vagabonds-map-tour-seen";
@@ -12,7 +13,11 @@ export type MapTourStep = "city" | "choose" | "unlock" | "scan" | "opened" | Tab
 
 /** After the unlock, the tour walks the tab bar, one tab a step, on "İleri". */
 export type TabStep = "tab-map" | "tab-rehber" | "tab-camera" | "tab-monuments" | "tab-settings";
-export const TAB_STEPS: TabStep[] = ["tab-map", "tab-rehber", "tab-camera", "tab-monuments", "tab-settings"];
+/** The web has no camera (and no Kamera tab): there "Kilidini aç" goes straight to the unlocking, with no example scan. */
+const WEB = Platform.OS === "web";
+export const TAB_STEPS: TabStep[] = WEB
+  ? ["tab-map", "tab-rehber", "tab-monuments", "tab-settings"]
+  : ["tab-map", "tab-rehber", "tab-camera", "tab-monuments", "tab-settings"];
 /** The tab (its route name) each step points at. */
 export const TAB_OF: Record<TabStep, string> = {
   "tab-map": "map",
@@ -29,7 +34,9 @@ export function isTabStep(step: MapTourStep | null): step is TabStep {
 export const MAP_TOUR_STEPS: Record<MapTourStep, { title: string; body: string }> = {
   city: { title: "Bir şehir seç", body: "Renkli illerde eser var. Birine dokun." },
   choose: { title: "Bir esere dokun", body: "Eserler sisin içinde kilitli. İşaretli esere dokun." },
-  unlock: { title: "Düğmeye dokun", body: "Eserin kilidini buradan açarsın." },
+  unlock: WEB
+    ? { title: "Düğmeye dokun", body: "Gerçekte kilidi eserin yanında, mobil uygulamada açarsın. Burada nasıl açıldığını gör." }
+    : { title: "Düğmeye dokun", body: "Eserin kilidini buradan açarsın." },
   scan: { title: "Ziyaret Mührü kamerası", body: "Gerçekte bu düğme kamerayı açar; eserde işaretli kısmı kameraya tanıtırsın." },
   opened: { title: "Kilit açıldı", body: "Sis kalkar; eserin hikâyesi ve bağlantıları açılır." },
   "tab-map": {
@@ -56,7 +63,7 @@ export const MAP_TOUR_STEPS: Record<MapTourStep, { title: string; body: string }
 };
 
 /** The steps counted on the card's dots; `done` stands outside the count. */
-export const COUNTED_STEPS: MapTourStep[] = ["city", "choose", "unlock", "scan", "opened", ...TAB_STEPS];
+export const COUNTED_STEPS: MapTourStep[] = WEB ? ["city", "choose", "unlock", "opened", ...TAB_STEPS] : ["city", "choose", "unlock", "scan", "opened", ...TAB_STEPS];
 
 /** The map's own opening (the fog lifting) plays out before the tour starts. */
 const START_AFTER_MS = 5200;
@@ -135,7 +142,7 @@ export interface MapTour {
 /**
  * The map's tour, on an account's first visit (the "?" button plays it again): a card at the top says what to do next, and the visitor does it:
  * picks a city, taps an asset, taps "Kilidini aç". Instead of the camera screen an example scan
- * plays, then the asset unlocks with its scene. After that the map goes back to how it was and the
+ * plays (on the web, which has no camera, it unlocks at once), then the asset unlocks with its scene. After that the map goes back to how it was and the
  * unlock is dropped; then each tab of the bar is shown with a line on it, on "İleri".
  */
 export function useMapTour(driver: MapTourDriver): MapTour {
@@ -253,6 +260,12 @@ export function useMapTour(driver: MapTourDriver): MapTour {
     },
     onUnlock: (id) => {
       if (step !== "choose" && step !== "unlock") return false;
+      if (WEB) {
+        live.current.unlockShown(id);
+        setStep("opened");
+        after(live.current.still ? OPENED_STILL_MS : OPENED_LIMIT_MS, toTabs);
+        return true;
+      }
       setStep("scan");
       setScanning(id);
       return true;
