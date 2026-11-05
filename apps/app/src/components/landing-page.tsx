@@ -1,22 +1,25 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useTheme } from "@vagabonds/ui";
-import { useRouter } from "expo-router";
-import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { Asset } from "expo-asset";
+import { useRouter } from "expo-router";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { toQR } from "toqr";
 
+import { LandingTerrain } from "@/components/landing-terrain";
 import { appLinks, expoGoLink } from "@/content/app-links";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 /**
- * The web's home page (`/`, `app/(tabs)/index.web.tsx`): a laptop and a phone, drawn in CSS 3D,
- * each showing the real thing on its screen. The laptop is a link into the website (the map);
- * the phone opens a window to get the mobile app (a QR code for Expo Go, the stores "yakında").
+ * The web's home page (`/`, `app/(tabs)/index.web.tsx`), one screen tall, never scrolling: on a
+ * dark, grainy night the name and a line, two buttons, and a laptop with a phone leaning in front
+ * of it, standing on Turkey drawn in gold dots (`LandingTerrain`). The laptop shows the website's
+ * map and leads into it; the phone shows an asset in the app and opens a window to get the app
+ * (a QR code for Expo Go, the stores "yakında").
  *
- * Web only: it is plain DOM and CSS, for the 3D the devices need. Open without an account.
+ * Web only: plain DOM and CSS. Open without an account. Always dark, as a night over the map.
  */
 export function LandingPage() {
-  const { scheme } = useTheme();
   const router = useRouter();
+  const still = useReducedMotion();
   const dialog = useRef<HTMLDialogElement>(null);
   const [appOpen, setAppOpen] = useState(false);
 
@@ -26,7 +29,6 @@ export function LandingPage() {
     event.preventDefault();
     router.push("/map");
   };
-
   const openApp = () => {
     dialog.current?.showModal();
     setAppOpen(true);
@@ -34,76 +36,45 @@ export function LandingPage() {
   const closeApp = () => dialog.current?.close();
 
   return (
-    <div className="vg-landing" data-theme={scheme}>
+    <div className="vg-landing">
       <style>{CSS}</style>
-      <div className="vg-glow" aria-hidden />
+      <LandingTerrain still={still} />
+      <div className="vg-vignette" aria-hidden />
+      <div className="vg-grain" aria-hidden />
 
-      <header className="vg-nav">
+      <header className="vg-nav vg-rise">
         <a className="vg-brand" href="/" aria-label="Vagabonds, ana sayfa">
           <span className="vg-mark" aria-hidden>
-            <Ionicons name="star" size={16} />
+            <Ionicons name="star" size={14} />
           </span>
-          <span>Vagabonds</span>
+          Vagabonds
         </a>
-        <a className="vg-nav-link" href="/map" onClick={openSite}>
+        <a className="vg-nav-cta" href="/map" onClick={openSite}>
           Siteye gir
-          <Ionicons name="arrow-forward" size={16} aria-hidden />
         </a>
       </header>
 
-      <main>
-        <section className="vg-hero vg-rise">
-          <p className="vg-overline">VAKIF ESERLERİ · KÖK&amp;KOD</p>
-          <h1 className="vg-h1">
-            Taşların hafızasını
-            <br />
-            <em>yeniden keşfet</em>
+      <main className="vg-main">
+        <section className="vg-hero">
+          <p className="vg-overline vg-rise vg-d1">VAKIF ESERLERİ · KÖK&amp;KOD</p>
+          <h1 className="vg-h1 vg-rise vg-d2">
+            Vagabonds<span className="vg-diamond" aria-hidden />
           </h1>
-          <p className="vg-lead">
-            Haritadaki sisi kaldır, kitabelerin dilini çöz, eserlerin sesini dinle. Bilgisayarında web sitesinden, eserin yanında mobil uygulamadan.
-          </p>
+          <div className="vg-actions vg-rise vg-d4">
+            <a className="vg-button vg-button-light" href="/map" onClick={openSite}>
+              Siteye gir
+            </a>
+            <button type="button" className="vg-button vg-button-dark" onClick={openApp} aria-haspopup="dialog">
+              Uygulamayı edin
+              <span className="vg-button-disc" aria-hidden>
+                <Ionicons name="arrow-forward" size={13} />
+              </span>
+            </button>
+          </div>
         </section>
 
-        <section className="vg-devices" aria-label="Vagabonds'u nerede kullanacaksın?">
-          <a className="vg-device vg-device-laptop vg-rise vg-rise-2" href="/map" onClick={openSite} aria-describedby="vg-web-text">
-            <div className="vg-stage vg-stage-laptop" aria-hidden>
-              <Laptop />
-            </div>
-            <div className="vg-caption">
-              <span className="vg-kicker">
-                <Ionicons name="laptop-outline" size={15} aria-hidden /> WEB SİTESİ
-              </span>
-              <span className="vg-title">Bilgisayarında gez</span>
-              <span className="vg-text" id="vg-web-text">
-                Türkiye haritasında eserleri bul, hikâyelerini oku, Rehber'le rotanı planla.
-              </span>
-              <span className="vg-cta">
-                Siteye gir <Ionicons name="arrow-forward" size={16} aria-hidden />
-              </span>
-            </div>
-          </a>
-
-          <button type="button" className="vg-device vg-device-phone vg-rise vg-rise-3" onClick={openApp} aria-haspopup="dialog" aria-describedby="vg-app-text">
-            <div className="vg-stage vg-stage-phone" aria-hidden>
-              <Phone />
-            </div>
-            <div className="vg-caption">
-              <span className="vg-kicker">
-                <Ionicons name="phone-portrait-outline" size={15} aria-hidden /> MOBİL UYGULAMA
-              </span>
-              <span className="vg-title">Eserin yanında</span>
-              <span className="vg-text" id="vg-app-text">
-                Ziyaret Mührü ile kilidi aç, Taşın Dili ile kitabeyi kamerayla oku.
-              </span>
-              <span className="vg-cta">
-                Uygulamayı edin <Ionicons name="arrow-forward" size={16} aria-hidden />
-              </span>
-            </div>
-          </button>
-        </section>
+        <Scene onSite={openSite} onApp={openApp} />
       </main>
-
-      <footer className="vg-footer">Vagabonds · Vakıf eserlerini çok duyulu ve erişilebilir keşfet</footer>
 
       <dialog ref={dialog} className="vg-dialog" aria-labelledby="vg-dialog-title" onClose={() => setAppOpen(false)} onClick={(e) => e.target === dialog.current && closeApp()}>
         {appOpen && <AppWindow onClose={closeApp} />}
@@ -112,44 +83,57 @@ export function LandingPage() {
   );
 }
 
-/**
- * The laptop, seen straight on at eye level: the lid's black glass with a thin bezel, a notch and
- * the website's map, over the base's front edge with its thumb scoop. The keyboard stays out of sight.
- */
-function Laptop() {
+/** The laptop and the phone in front of it, scaled to the room left under the hero. */
+function Scene({ onSite, onApp }: { onSite: (event: MouseEvent<HTMLAnchorElement>) => void; onApp: () => void }) {
+  const room = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(0);
+  useLayoutEffect(() => {
+    const element = room.current;
+    if (!element) return;
+    const fit = () => {
+      const style = getComputedStyle(element);
+      const width = element.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      const height = element.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+      setScale(Math.max(0.1, Math.min(width / SCENE_W, height / SCENE_H, 1.45)));
+    };
+    fit();
+    const observer = new ResizeObserver(fit);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
   return (
-    <div className="vg-laptop-wrap">
-      <div className="vg-laptop">
-        <div className="vg-glass">
-          <div className="vg-screen">
-            <img className="vg-shot" src={WEB_SHOT} alt="" />
-            <div className="vg-glare" />
+    <div ref={room} className="vg-room">
+      <div className="vg-scene vg-rise vg-d5" style={{ width: SCENE_W, height: SCENE_H, transform: `scale(${scale})`, opacity: scale ? undefined : 0 }}>
+        <a className="vg-device vg-device-laptop" href="/map" onClick={onSite} aria-label="Web sitesi: haritada eserleri keşfet">
+          <div className="vg-laptop">
+            <div className="vg-glass">
+              <div className="vg-screen">
+                <img className="vg-shot" src={WEB_SHOT} alt="" />
+                <div className="vg-glare" />
+              </div>
+              <div className="vg-cam" />
+            </div>
+            <div className="vg-hinge" />
+            <div className="vg-lip">
+              <div className="vg-scoop" />
+            </div>
           </div>
-          <div className="vg-cam" />
-        </div>
-        <div className="vg-hinge" />
-        <div className="vg-lip">
-          <div className="vg-scoop" />
-        </div>
-        <div className="vg-floor-shadow vg-floor-laptop" />
-      </div>
-    </div>
-  );
-}
-
-/** The phone, standing straight, an asset's story on its screen. */
-function Phone() {
-  return (
-    <div className="vg-phone-wrap">
-      <div className="vg-phone">
-        <div className="vg-floor-shadow vg-floor-phone" />
-        <div className="vg-phone-front">
-          <div className="vg-phone-screen">
-            <img className="vg-shot" src={APP_SHOT} alt="" />
-            <div className="vg-notch" />
-            <div className="vg-glare" />
+          <span className="vg-tag">
+            <Ionicons name="laptop-outline" size={14} aria-hidden /> Web sitesi
+          </span>
+        </a>
+        <button type="button" className="vg-device vg-device-phone" onClick={onApp} aria-haspopup="dialog" aria-label="Mobil uygulama: telefonuna al">
+          <div className="vg-phone">
+            <div className="vg-phone-screen">
+              <img className="vg-shot" src={APP_SHOT} alt="" />
+              <div className="vg-notch" />
+              <div className="vg-glare" />
+            </div>
           </div>
-        </div>
+          <span className="vg-tag">
+            <Ionicons name="phone-portrait-outline" size={14} aria-hidden /> Mobil uygulama
+          </span>
+        </button>
       </div>
     </div>
   );
@@ -235,121 +219,114 @@ function qrPath(content: string): { size: number; path: string } {
 const WEB_SHOT = Asset.fromModule(require("@/assets/images/landing/web-map.jpg")).uri;
 const APP_SHOT = Asset.fromModule(require("@/assets/images/landing/app-asset.jpg")).uri;
 
+/** The scene's own size, before it is scaled to fit: the laptop, and the phone over its right edge. */
+const SCENE_W = 760;
+const SCENE_H = 470;
+
+/** Film grain over everything, as an SVG noise tile. */
+const GRAIN = `url("data:image/svg+xml;utf8,${encodeURIComponent(
+  "<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(#n)'/></svg>",
+)}")`;
+
 const CSS = `
 .vg-landing {
-  --bg: #F6F3EC; --bg2: #ECE6D9; --ink: #0D1420; --muted: #566174; --gold: #82601B; --gold-soft: #DDB55C;
-  --line: rgba(13, 20, 32, 0.1); --card: #FFFFFF; --cta: #0D1420; --cta-ink: #E7C26A;
-  --alu-1: #EEF0F3; --alu-2: #D3D8DF; --alu-3: #B4BBC6; --alu-edge: #9AA2AF; --key: #2B3344; --key-top: #3A4357;
-  --floor: rgba(13, 20, 32, 0.28); --glow: rgba(221, 181, 92, 0.32);
-  position: absolute; inset: 0; overflow-x: hidden; overflow-y: auto; background-attachment: local; background: radial-gradient(120% 80% at 50% 0%, var(--bg) 40%, var(--bg2) 100%);
+  --ink: #F4F1EA; --muted: rgba(244, 241, 234, 0.62); --gold: #E7C26A; --line: rgba(255, 255, 255, 0.1);
+  position: fixed; inset: 0; overflow: hidden; display: flex; flex-direction: column;
+  background: radial-gradient(90% 60% at 50% 18%, #121a2c 0%, #090d17 55%, #05070d 100%);
   color: var(--ink); font-family: HankenGrotesk_400Regular, system-ui, sans-serif; -webkit-font-smoothing: antialiased;
 }
-.vg-landing[data-theme="dark"] {
-  --bg: #111A2B; --bg2: #0A0F19; --ink: #F5F7FA; --muted: #AEB6C4; --gold: #E7C26A; --gold-soft: #DDB55C;
-  --line: rgba(255, 255, 255, 0.12); --card: #141B29; --cta: #DDB55C; --cta-ink: #0D1420;
-  --alu-1: #4A5468; --alu-2: #343D50; --alu-3: #262E3F; --alu-edge: #1A2030; --key: #0D1420; --key-top: #161E2E;
-  --floor: rgba(0, 0, 0, 0.6); --glow: rgba(221, 181, 92, 0.16);
-}
 .vg-landing *, .vg-landing *::before, .vg-landing *::after { box-sizing: border-box; }
-.vg-glow { position: absolute; left: 50%; top: 52%; width: 1100px; height: 520px; transform: translateX(-50%); background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
+.vg-terrain { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 28%, #000 58%); mask-image: linear-gradient(to bottom, transparent 28%, #000 58%); }
+.vg-vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.6) 100%); }
+.vg-grain { position: absolute; inset: -50%; pointer-events: none; background-image: ${GRAIN}; opacity: 0.09; mix-blend-mode: overlay; }
 
-.vg-nav { position: relative; display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 22px 24px; }
-.vg-brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-family: Marcellus_400Regular, serif; font-size: 24px; }
-.vg-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 17px; background: #DDB55C; color: #0D1420; }
-.vg-nav-link { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 15px; transition: background 0.2s; }
-.vg-nav-link:hover { background: var(--line); }
+.vg-nav { position: relative; z-index: 2; flex: none; display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1240px; margin: 0 auto; padding: 22px 28px; }
+.vg-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-family: Marcellus_400Regular, serif; font-size: 23px; letter-spacing: 0.2px; }
+.vg-mark { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 15px; background: #DDB55C; color: #0D1420; box-shadow: 0 0 24px rgba(221, 181, 92, 0.35); }
+.vg-nav-cta { padding: 11px 20px; border-radius: 12px; background: #F4F1EA; color: #0B0F18; text-decoration: none; font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 15px; transition: transform 0.25s, background 0.25s; }
+.vg-nav-cta:hover { background: #FFFFFF; transform: translateY(-1px); }
 
-.vg-hero { position: relative; max-width: 780px; margin: 0 auto; padding: 28px 24px 0; text-align: center; }
-.vg-overline { margin: 0 0 14px; font-family: IBMPlexMono_500Medium, monospace; font-size: 13px; letter-spacing: 3px; color: var(--gold); }
-.vg-h1 { margin: 0; font-family: Marcellus_400Regular, serif; font-weight: 400; font-size: clamp(40px, 6vw, 68px); line-height: 1.05; letter-spacing: -0.5px; }
-.vg-h1 em { font-style: normal; color: var(--gold); }
-.vg-lead { margin: 20px auto 0; max-width: 600px; font-size: 18px; line-height: 1.6; color: var(--muted); }
+.vg-main { position: relative; z-index: 1; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; }
+.vg-hero { flex: none; display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(4px, 2vh, 28px) 24px 0; }
+.vg-overline { margin: 0; font-family: IBMPlexMono_500Medium, monospace; font-size: 12px; letter-spacing: 4px; color: var(--gold); }
+.vg-h1 { position: relative; margin: clamp(4px, 1.2vh, 14px) 0 0; font-family: Marcellus_400Regular, serif; font-weight: 400; color: #FFFFFF;
+  font-size: clamp(54px, min(13vw, 14vh), 168px); line-height: 0.95; letter-spacing: -1px; }
+.vg-diamond { position: absolute; top: 0.09em; right: -0.32em; width: 0.13em; height: 0.13em; transform: rotate(45deg); background: var(--gold); box-shadow: 0 0 18px rgba(231, 194, 106, 0.6); }
+.vg-actions { display: flex; gap: 12px; margin-top: clamp(14px, 2.6vh, 28px); flex-wrap: wrap; justify-content: center; }
+.vg-button { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; height: 50px; padding: 0 22px; border-radius: 13px; cursor: pointer;
+  font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 16px; text-decoration: none; transition: transform 0.25s, background 0.25s, box-shadow 0.25s; }
+.vg-button:focus-visible, .vg-nav-cta:focus-visible, .vg-brand:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.vg-button-light { background: #F4F1EA; color: #0B0F18; }
+.vg-button-light:hover { background: #FFFFFF; transform: translateY(-1px); box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.35); }
+.vg-button-dark { background: rgba(255, 255, 255, 0.07); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+.vg-button-dark:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-1px); }
+.vg-button-disc { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 11px; background: var(--ink); color: #0B0F18; }
 
-.vg-devices { position: relative; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; gap: 24px; max-width: 1200px; margin: 56px auto 0; padding: 0 24px; }
-.vg-device { all: unset; box-sizing: border-box; min-width: 0; width: 100%; display: flex; flex-direction: column; align-items: center; cursor: pointer; border-radius: 28px; padding: 8px 8px 24px; -webkit-tap-highlight-color: transparent; }
-.vg-device:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
-.vg-stage { position: relative; width: 100%; min-width: 0; display: flex; align-items: flex-end; padding-bottom: 30px; justify-content: center; }
-.vg-stage-laptop { height: 500px; --s: 1.08; }
-.vg-stage-phone { height: 500px; }
+.vg-room { position: relative; flex: 1; min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
+.vg-scene { position: relative; flex: none; transform-origin: 50% 100%; margin-bottom: 0; }
+.vg-device { all: unset; position: absolute; bottom: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.vg-device:focus-visible { outline: 3px solid var(--gold); outline-offset: 10px; border-radius: 22px; }
+.vg-device-laptop { left: 0; width: 620px; }
+.vg-device-phone { right: 0; width: 200px; bottom: -6px; }
+.vg-device > div { transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.6s; }
+.vg-device:hover > div, .vg-device:focus-visible > div { transform: translateY(-8px); }
+.vg-tag { position: absolute; left: 50%; bottom: -34px; transform: translate(-50%, 6px); display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; white-space: nowrap;
+  background: rgba(10, 14, 24, 0.75); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12); color: var(--ink); font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 13px;
+  opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; backdrop-filter: blur(8px); }
+.vg-device:hover .vg-tag, .vg-device:focus-visible .vg-tag { opacity: 1; transform: translate(-50%, 0); }
 
-.vg-caption { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; max-width: 360px; }
-.vg-kicker { display: inline-flex; align-items: center; gap: 6px; font-family: IBMPlexMono_500Medium, monospace; font-size: 12px; letter-spacing: 2.5px; color: var(--gold); }
-.vg-title { font-family: Marcellus_400Regular, serif; font-size: 28px; line-height: 1.2; color: var(--ink); }
-.vg-text { font-size: 15px; line-height: 1.55; color: var(--muted); }
-.vg-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; padding: 12px 22px; border-radius: 999px; background: var(--cta); color: var(--cta-ink); font-family: HankenGrotesk_700Bold, sans-serif; font-size: 15px; transition: transform 0.3s, box-shadow 0.3s; }
-.vg-device:hover .vg-cta, .vg-device:focus-visible .vg-cta { transform: translateX(4px); box-shadow: 0 10px 24px -10px var(--floor); }
-
-/* The devices, straight on: a laptop at eye level (its keyboard out of sight) and an upright phone. */
-.vg-landing { --rim-1: #E4E7EB; --rim-2: #B9BFC8; --lip-1: #F1F3F5; --lip-2: #D5D9DF; --lip-3: #A9B0BA; }
-.vg-landing[data-theme="dark"] { --rim-1: #6A6F78; --rim-2: #3F434A; --lip-1: #727780; --lip-2: #4F535B; --lip-3: #2E3136; }
-.vg-laptop-wrap { flex: none; transform: scale(var(--s, 1)); transform-origin: 50% 100%; }
-.vg-laptop { --lift: 0px; position: relative; width: 600px; display: flex; flex-direction: column; align-items: center;
-  transform: translateY(var(--lift)); transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.vg-device-laptop:hover .vg-laptop, .vg-device-laptop:focus-visible .vg-laptop { --lift: -10px; }
-.vg-glass { position: relative; width: 560px; height: 362px; border-radius: 18px 18px 4px 4px; padding: 11px 11px 14px; background: #050608;
-  box-shadow: 0 0 0 1.5px var(--rim-2), inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 30px 60px -30px var(--floor); }
+.vg-laptop { display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.6)); }
+.vg-glass { position: relative; width: 572px; height: 368px; border-radius: 18px 18px 4px 4px; padding: 11px 11px 14px; background: #040507;
+  box-shadow: 0 0 0 1.5px #3B3F47, inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 80px -20px rgba(221, 181, 92, 0.25); }
 .vg-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 6px 6px 2px 2px; background: #0D1420; }
 .vg-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
 .vg-glare { position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(120deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.04) 34%, rgba(255,255,255,0) 34.5%), radial-gradient(120% 90% at 50% 0%, transparent 60%, rgba(0,0,0,0.22)); }
-.vg-cam { position: absolute; top: 10px; left: 50%; width: 66px; height: 12px; transform: translateX(-50%); border-radius: 0 0 8px 8px; background: #050608; }
+  background: linear-gradient(120deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 34%, rgba(255,255,255,0) 34.5%), radial-gradient(120% 90% at 50% 0%, transparent 60%, rgba(0,0,0,0.25)); }
+.vg-cam { position: absolute; top: 10px; left: 50%; width: 66px; height: 12px; transform: translateX(-50%); border-radius: 0 0 8px 8px; background: #040507; }
 .vg-cam::after { content: ""; position: absolute; left: 50%; top: 3px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: #1d2a3a; }
-.vg-hinge { width: 500px; height: 6px; background: linear-gradient(#1A1C20, #3A3D43); border-radius: 0 0 3px 3px; }
-.vg-lip { position: relative; width: 600px; height: 15px; border-radius: 2px 2px 14px 14px / 2px 2px 12px 12px;
-  background: linear-gradient(var(--lip-1) 0%, var(--lip-2) 55%, var(--lip-3) 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 0 rgba(0, 0, 0, 0.08); }
-.vg-scoop { position: absolute; top: 0; left: 50%; width: 100px; height: 6px; margin-left: -50px; border-radius: 0 0 10px 10px;
-  background: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.04)); }
-.vg-floor-shadow { position: absolute; left: 50%; pointer-events: none; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, var(--floor), rgba(0, 0, 0, 0)); }
-.vg-floor-laptop { bottom: -22px; width: 680px; height: 44px; }
-.vg-floor-phone { bottom: -20px; width: 250px; height: 36px; }
+.vg-hinge { width: 512px; height: 6px; background: linear-gradient(#111317, #2A2D33); border-radius: 0 0 3px 3px; }
+.vg-lip { position: relative; width: 620px; height: 15px; border-radius: 2px 2px 14px 14px / 2px 2px 12px 12px;
+  background: linear-gradient(#8E939C 0%, #5D626B 45%, #34373D 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45); }
+.vg-scoop { position: absolute; top: 0; left: 50%; width: 104px; height: 6px; margin-left: -52px; border-radius: 0 0 10px 10px; background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08)); }
 
-.vg-phone-wrap { flex: none; position: relative; transform: scale(var(--s, 1)); transform-origin: 50% 100%; }
-.vg-phone { --lift: 0px; position: relative; width: 214px; height: 440px; transform: translateY(var(--lift)); transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.vg-device-phone:hover .vg-phone, .vg-device-phone:focus-visible .vg-phone { --lift: -10px; }
-.vg-phone-front { position: absolute; inset: 0; border-radius: 40px; padding: 9px; background: #050608;
-  box-shadow: 0 0 0 3px var(--rim-1), 0 0 0 4.5px var(--rim-2), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 50px -28px var(--floor); }
-.vg-phone-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 32px; background: #0D1420; }
-.vg-notch { position: absolute; top: 9px; left: 50%; width: 78px; height: 22px; transform: translateX(-50%); border-radius: 12px; background: #05070B; }
+.vg-phone { position: relative; width: 200px; height: 412px; border-radius: 38px; padding: 8px; background: #040507;
+  box-shadow: 0 0 0 2.5px #4A4E57, 0 0 0 4px #1E2026, inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 40px 60px -20px rgba(0, 0, 0, 0.8); }
+.vg-phone-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 31px; background: #0D1420; }
+.vg-notch { position: absolute; top: 9px; left: 50%; width: 72px; height: 21px; transform: translateX(-50%); border-radius: 12px; background: #030406; }
 
-.vg-footer { position: relative; max-width: 1200px; margin: 16px auto 0; padding: 24px; text-align: center; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
-
-.vg-dialog { width: min(420px, calc(100vw - 32px)); padding: 0; border: 1px solid var(--line); border-radius: 28px; background: var(--card); color: var(--ink); box-shadow: 0 40px 80px -20px rgba(0,0,0,0.45); }
-.vg-dialog::backdrop { background: rgba(5, 9, 22, 0.55); backdrop-filter: blur(4px); }
+.vg-dialog { width: min(420px, calc(100vw - 32px)); padding: 0; border: 0; border-radius: 26px; background: #0E1422; color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 40px 80px -20px rgba(0, 0, 0, 0.7); }
+.vg-dialog::backdrop { background: rgba(3, 5, 10, 0.6); backdrop-filter: blur(6px); }
 .vg-dialog[open] { animation: vg-pop 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2); }
 .vg-window { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 32px 28px 28px; }
 .vg-close { all: unset; position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 20px; cursor: pointer; color: var(--muted); }
-.vg-close:hover { background: var(--line); }
+.vg-close:hover { background: rgba(255, 255, 255, 0.08); color: var(--ink); }
 .vg-close:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-.vg-h2 { margin: 0 0 18px; font-family: Marcellus_400Regular, serif; font-weight: 400; font-size: 26px; line-height: 1.25; }
-.vg-qr { width: 200px; height: 200px; padding: 10px; border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 0 1px var(--line), 0 12px 30px -16px var(--floor); }
+.vg-h2 { margin: 12px 0 20px; font-family: Marcellus_400Regular, serif; font-weight: 400; font-size: 26px; line-height: 1.25; }
+.vg-qr { width: 200px; height: 200px; padding: 10px; border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 40px -10px rgba(221, 181, 92, 0.45); }
 .vg-qr svg { display: block; width: 100%; height: 100%; }
-.vg-window-text { margin: 16px 0 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
+.vg-window-text { margin: 18px 0 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
 .vg-window-text strong { color: var(--ink); font-family: HankenGrotesk_600SemiBold, sans-serif; font-weight: 400; }
 .vg-inline-link { color: var(--gold); font-family: HankenGrotesk_600SemiBold, sans-serif; }
 .vg-stores { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; justify-content: center; }
-.vg-store { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px 9px 14px; border-radius: 14px; background: var(--ink); color: var(--card); text-decoration: none; text-align: left; }
-.vg-store-soon { opacity: 0.55; }
+.vg-store { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px 9px 14px; border-radius: 14px; background: #F4F1EA; color: #0B0F18; text-decoration: none; text-align: left; }
+.vg-store-soon { background: rgba(255, 255, 255, 0.08); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
 .vg-store-words { display: flex; flex-direction: column; font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 15px; line-height: 1.15; }
-.vg-store-words small { font-family: HankenGrotesk_400Regular, sans-serif; font-size: 11px; }
+.vg-store-words small { font-family: HankenGrotesk_400Regular, sans-serif; font-size: 11px; opacity: 0.7; }
 
-.vg-rise { animation: vg-rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
-.vg-rise-2 { animation-delay: 0.12s; }
-.vg-rise-3 { animation-delay: 0.24s; }
-@keyframes vg-rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+.vg-rise { animation: vg-rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.vg-d1 { animation-delay: 0.05s; } .vg-d2 { animation-delay: 0.12s; } .vg-d3 { animation-delay: 0.2s; } .vg-d4 { animation-delay: 0.28s; } .vg-d5 { animation-delay: 0.38s; }
+.vg-scene.vg-rise { animation-name: vg-rise-scene; }
+@keyframes vg-rise { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes vg-rise-scene { from { opacity: 0; translate: 0 40px; } to { opacity: 1; translate: 0 0; } }
 @keyframes vg-pop { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: none; } }
 
-@media (max-width: 960px) {
-  .vg-devices { grid-template-columns: minmax(0, 1fr); gap: 8px; }
-  .vg-stage-laptop { height: 360px; --s: 0.8; }
-  .vg-stage-phone { height: 460px; --s: 0.95; }
-}
 @media (max-width: 560px) {
-  .vg-nav { padding: 16px; }
-  .vg-hero { padding: 16px 16px 0; }
-  .vg-lead { font-size: 16px; }
-  .vg-devices { padding: 0 16px; }
-  .vg-stage-laptop { height: 260px; --s: 0.56; }
-  .vg-stage-phone { height: 375px; --s: 0.76; }
+  .vg-nav { padding: 16px 18px; }
+  .vg-brand { font-size: 20px; }
+  .vg-nav-cta { padding: 9px 14px; font-size: 14px; }
+  .vg-button { height: 46px; padding: 0 18px; font-size: 15px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .vg-landing *, .vg-dialog { animation: none !important; transition: none !important; }
