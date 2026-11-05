@@ -5,15 +5,21 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { MyContributions } from "@/components/my-contributions";
 import { bottomInset } from "@/lib/bottom-inset";
+import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
 /** Profil · Bıraktığım Notlar: the visitor's notes and their moderation, on a card of their own. */
 export default function MyNotesScreen() {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
+  const wide = useWideWeb();
   return (
     <ScrollView
       style={{ backgroundColor: c.background }}
-      contentContainerStyle={[styles.content, { paddingBottom: bottomInset(insets.bottom) + spacing.xl }]}
+      contentContainerStyle={[
+        styles.content,
+        wide && wideColumn,
+        { paddingBottom: bottomInset(insets.bottom) + spacing.xl },
+      ]}
       contentInsetAdjustmentBehavior="automatic"
     >
       <Head>
