@@ -46,31 +46,28 @@ export function LandingPage() {
 
       <header className="vg-nav vg-rise">
         <a className="vg-brand" href="/" aria-label="Vagabonds, ana sayfa">
-          <span className="vg-mark" aria-hidden>
-            <Ionicons name="star" size={14} />
-          </span>
+          <span className="vg-mark" aria-hidden />
           Vagabonds
         </a>
-        <a className="vg-nav-cta" href="/map" onClick={openSite}>
-          Siteye gir
+        <a className="vg-nav-link" href="/auth">
+          Giriş yap
         </a>
       </header>
 
       <main className="vg-main">
         <section className="vg-hero">
-          <p className="vg-overline vg-rise vg-d1">VAKIF ESERLERİ · KÖK&amp;KOD</p>
+          <p className="vg-overline vg-rise vg-d1">Vakıf eserleri · KÖK&amp;KOD</p>
           <h1 className="vg-h1 vg-rise vg-d2">
-            Vagabonds<span className="vg-diamond" aria-hidden />
+            Taşların hafızasını <em>keşfet</em>
           </h1>
           <div className="vg-actions vg-rise vg-d4">
             <a className="vg-button vg-button-light" href="/map" onClick={openSite}>
+              <Ionicons name="laptop-outline" size={18} aria-hidden />
               Siteye gir
             </a>
             <button type="button" className="vg-button vg-button-dark" onClick={openApp} aria-haspopup="dialog">
+              <Ionicons name="phone-portrait-outline" size={17} aria-hidden />
               Uygulamayı edin
-              <span className="vg-button-disc" aria-hidden>
-                <Ionicons name="arrow-forward" size={13} />
-              </span>
             </button>
           </div>
         </section>
@@ -245,31 +242,31 @@ const CSS = `
 }
 .vg-landing *, .vg-landing *::before, .vg-landing *::after { box-sizing: border-box; }
 .vg-skyline { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 34%, #000 56%); mask-image: linear-gradient(to bottom, transparent 34%, #000 56%); }
+  -webkit-mask-image: linear-gradient(to bottom, transparent 44%, #000 62%); mask-image: linear-gradient(to bottom, transparent 44%, #000 62%); }
 .vg-vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, 0.6) 100%); }
 .vg-grain { position: absolute; inset: -50%; pointer-events: none; background-image: ${GRAIN}; opacity: 0.09; mix-blend-mode: overlay; }
 
 .vg-nav { position: relative; z-index: 2; flex: none; display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1240px; margin: 0 auto; padding: 22px 28px; }
 .vg-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-family: Marcellus_400Regular, serif; font-size: 23px; letter-spacing: 0.2px; }
-.vg-mark { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 15px; background: #DDB55C; color: #0D1420; box-shadow: 0 0 24px rgba(221, 181, 92, 0.35); }
-.vg-nav-cta { padding: 11px 20px; border-radius: 12px; background: #F4F1EA; color: #0B0F18; text-decoration: none; font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 15px; transition: transform 0.25s, background 0.25s; }
-.vg-nav-cta:hover { background: #FFFFFF; transform: translateY(-1px); }
+.vg-mark { width: 9px; height: 9px; border-radius: 50%; background: #E7C26A; box-shadow: 0 0 14px rgba(231, 194, 106, 0.7); }
+.vg-nav-link { padding: 9px 18px; border-radius: 999px; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_500Medium, sans-serif; font-size: 14px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); transition: background 0.25s, box-shadow 0.25s; }
+.vg-nav-link:hover { background: rgba(255, 255, 255, 0.06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28); }
 
 .vg-main { position: relative; z-index: 1; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; }
 .vg-hero { flex: none; display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(4px, 2vh, 28px) 24px 0; }
-.vg-overline { margin: 0; font-family: IBMPlexMono_500Medium, monospace; font-size: 12px; letter-spacing: 4px; color: var(--gold); }
-.vg-h1 { position: relative; margin: clamp(4px, 1.2vh, 14px) 0 0; font-family: Marcellus_400Regular, serif; font-weight: 400; color: #FFFFFF;
-  font-size: clamp(54px, min(13vw, 14vh), 168px); line-height: 0.95; letter-spacing: -1px; }
-.vg-diamond { position: absolute; top: 0.09em; right: -0.32em; width: 0.13em; height: 0.13em; transform: rotate(45deg); background: var(--gold); box-shadow: 0 0 18px rgba(231, 194, 106, 0.6); }
-.vg-actions { display: flex; gap: 12px; margin-top: clamp(14px, 2.6vh, 28px); flex-wrap: wrap; justify-content: center; }
-.vg-button { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; height: 50px; padding: 0 22px; border-radius: 13px; cursor: pointer;
-  font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 16px; text-decoration: none; transition: transform 0.25s, background 0.25s, box-shadow 0.25s; }
-.vg-button:focus-visible, .vg-nav-cta:focus-visible, .vg-brand:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.vg-overline { margin: 0; font-family: HankenGrotesk_500Medium, sans-serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: rgba(244, 241, 234, 0.55); }
+.vg-h1 { margin: clamp(8px, 1.6vh, 18px) 0 0; max-width: 900px; font-family: Marcellus_400Regular, serif; font-weight: 400; color: #F7F3EA;
+  font-size: clamp(38px, min(7.4vw, 8.6vh), 92px); line-height: 1.04; letter-spacing: -1px; }
+.vg-h1 em { font-style: normal; color: #E7C26A; }
+.vg-actions { display: flex; gap: 10px; margin-top: clamp(16px, 3vh, 32px); flex-wrap: wrap; justify-content: center; }
+.vg-button { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: 9px; height: 48px; min-width: 186px; padding: 0 22px; border-radius: 999px; cursor: pointer;
+  font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 15px; text-decoration: none; transition: transform 0.25s, background 0.25s, box-shadow 0.25s; }
+.vg-button:focus-visible, .vg-nav-link:focus-visible, .vg-brand:focus-visible { outline: 2px solid #E7C26A; outline-offset: 3px; }
 .vg-button-light { background: #F4F1EA; color: #0B0F18; }
-.vg-button-light:hover { background: #FFFFFF; transform: translateY(-1px); box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.35); }
-.vg-button-dark { background: rgba(255, 255, 255, 0.07); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
-.vg-button-dark:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-1px); }
-.vg-button-disc { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 11px; background: var(--ink); color: #0B0F18; }
+.vg-button-light:hover { background: #FFFFFF; transform: translateY(-1px); }
+.vg-button-dark { color: var(--ink); background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14); backdrop-filter: blur(12px); }
+.vg-button-dark:hover { background: rgba(255, 255, 255, 0.13); transform: translateY(-1px); }
 
 .vg-room { position: relative; flex: 1; transform: translateY(calc(-1 * clamp(16px, 6vh, 70px))); min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding: clamp(10px, 2.5vh, 30px) 12px clamp(14px, 3.5vh, 40px); }
 .vg-scene { position: relative; flex: none; transform-origin: 50% 100%; margin-bottom: 0; }
@@ -345,7 +342,7 @@ const CSS = `
 @media (max-width: 560px) {
   .vg-nav { padding: 16px 18px; }
   .vg-brand { font-size: 20px; }
-  .vg-nav-cta { padding: 9px 14px; font-size: 14px; }
+  .vg-nav-link { padding: 8px 14px; font-size: 14px; }
   .vg-button { height: 46px; padding: 0 18px; font-size: 15px; }
 }
 @media (prefers-reduced-motion: reduce) {
