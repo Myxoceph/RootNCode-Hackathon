@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetDetail, PulseItem } from "@vagabonds/contracts";
 import { cameraColors, spacing, Text, touchTarget } from "@vagabonds/ui";
@@ -6,12 +8,21 @@ import { Pressable, StyleSheet, View } from "react-native";
 import { pulseItemsFromTips, usePulse } from "@/data";
 import { formatDate } from "@/lib/format-date";
 import { FrameLink } from "@/lib/in-frame";
+import { getMessages, useMessages } from "@/i18n";
 
 const origins: Record<PulseItem["origin"], string> = {
-  field_visit: "Saha ziyareti",
-  visitor_reviews_summary: "Ziyaretçi yorumlarından özet",
-  official: "Resmî bilgi",
-  community: "Ziyaretçi",
+  get field_visit() {
+    return getMessages().pulse.fieldVisit;
+  },
+  get visitor_reviews_summary() {
+    return getMessages().pulse.reviewsSummary;
+  },
+  get official() {
+    return getMessages().pulse.official;
+  },
+  get community() {
+    return getMessages().pulse.community;
+  },
 };
 
 const EDGE = "rgba(255, 255, 255, 0.16)";
@@ -44,6 +55,7 @@ export function VisitorPulse({
   look?: PulseLook;
 }) {
   const pulse = usePulse(asset.id);
+  const m = useMessages();
   const items =
     pulse.status === "success" && pulse.data
       ? pulse.data.items
@@ -61,11 +73,11 @@ export function VisitorPulse({
   return (
     <View style={styles.pulse}>
       <Text variant="overline" colorValue={look.gold} headingLevel={2}>
-        ZİYARETÇİ NOTLARI
+        {m.pulse.title}
       </Text>
       {items.length === 0 && (
         <Text colorValue={look.soft}>
-          Bu eser için henüz ziyaretçi notu yok. İlk notu sen bırakabilirsin.
+          {m.pulse.empty}
         </Text>
       )}
       {tips.length > 0 && <PulseList items={tips} look={look} />}
@@ -73,7 +85,7 @@ export function VisitorPulse({
       {memories.length > 0 && (
         <View style={styles.pulse}>
           <Text variant="overline" colorValue={look.soft} headingLevel={3}>
-            ANILAR
+            {m.pulse.memories}
           </Text>
           <PulseList items={memories} look={look} />
         </View>
@@ -81,7 +93,7 @@ export function VisitorPulse({
 
       {moreCommunity > 0 && (
         <Text variant="caption" colorValue={look.soft}>
-          {`En yeni notlar gösteriliyor; ${moreCommunity} not daha var.`}
+          {m.pulse.more(moreCommunity)}
         </Text>
       )}
       {pulse.status === "error" && (
@@ -92,12 +104,12 @@ export function VisitorPulse({
         {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
         <Pressable
           accessibilityRole="link"
-          accessibilityLabel={`${asset.name} için not bırak`}
+          accessibilityLabel={m.pulse.leaveNoteLabel(asset.name)}
           style={styles.leave}
         >
           <Ionicons name="create-outline" size={22} color={look.gold} />
           <Text variant="label" colorValue={look.text} style={styles.flex}>
-            Not bırak
+            {m.pulse.leaveNote}
           </Text>
           <Ionicons name="chevron-forward" size={18} color={look.soft} />
         </Pressable>
@@ -142,7 +154,7 @@ function PulseError({
   return (
     <View style={styles.errorRow}>
       <Text variant="caption" colorValue={look.soft} style={styles.flex}>
-        Ziyaretçilerin son notları şu an yüklenemedi.
+        {getMessages().pulse.failed}
       </Text>
       <Pressable
         accessibilityRole="button"
@@ -150,7 +162,7 @@ function PulseError({
         style={styles.retry}
       >
         <Text variant="label" colorValue={look.gold}>
-          Tekrar dene
+          {getMessages().common.retry}
         </Text>
       </Pressable>
     </View>

@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, Pressable, StyleSheet, useWindowDimensions, View } from "react-native";
 
 import { announce } from "@/lib/announce";
-import { COUNTED_STEPS, isTabStep, MAP_TOUR_STEPS, TAB_OF, TAB_STEPS, type MapTourStep, type TabStep } from "@/lib/map-tour";
+import { COUNTED_STEPS, isTabStep, TAB_OF, TAB_STEPS, type MapTourStep, type TabStep } from "@/lib/map-tour";
 import { setTabSpotlight, useTabSpots, type TabSpot } from "@/lib/tab-bar-spots";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import type { MapSpots } from "@/map";
+import { useMessages } from "@/i18n";
 
 /** Gold on night blue in both themes, as the map's seals. */
 const BUBBLE = palette.altin300;
@@ -79,7 +80,8 @@ export function MapTourGuide({
   const reduced = useReducedMotion();
   const enter = useRef(new Animated.Value(0)).current;
   const [bubbleHeight, setBubbleHeight] = useState(72);
-  const { title, body } = MAP_TOUR_STEPS[step];
+  const m = useMessages();
+  const { title, body } = m.tour.steps[step];
   const index = COUNTED_STEPS.indexOf(step);
 
   const barTop = top + spacing.sm;
@@ -133,18 +135,18 @@ export function MapTourGuide({
           {title}
         </Text>
         <Text variant="caption" colorValue={palette.gece800}>
-          {step === "city" && spots?.province ? `Renkli illerde eser var. ${titleCase(spots.province.name)} gibi birine dokun.` : body}
+          {step === "city" && spots?.province ? m.tour.cityLike(titleCase(spots.province.name)) : body}
         </Text>
         {onTab && (
           <Pressable
             onPress={onNext}
             accessibilityRole="button"
-            accessibilityLabel={lastTab ? "Bitir" : "İleri"}
+            accessibilityLabel={lastTab ? m.tour.finish : m.tour.next}
             hitSlop={8}
             style={({ pressed }) => [styles.next, pressed && styles.replayPressed]}
           >
             <Text variant="caption" colorValue={BUBBLE} style={styles.nextLabel}>
-              {lastTab ? "Bitir" : "İleri"}
+              {lastTab ? m.tour.finish : m.tour.next}
             </Text>
             {!lastTab && <Ionicons name="arrow-forward" size={14} color={BUBBLE} />}
           </Pressable>
@@ -154,7 +156,7 @@ export function MapTourGuide({
 
       {step !== "done" && (
         <View style={[styles.bar, { top: barTop }]} pointerEvents="box-none">
-          <View style={styles.segments} accessibilityLabel={`Adım ${index + 1} / ${COUNTED_STEPS.length}`}>
+          <View style={styles.segments} accessibilityLabel={m.tour.stepOf(index + 1, COUNTED_STEPS.length)}>
             {COUNTED_STEPS.map((key, i) => (
               <View key={key} style={[styles.segment, { backgroundColor: i <= index ? BUBBLE : "rgba(255, 255, 255, 0.28)" }]} />
             ))}
@@ -163,19 +165,19 @@ export function MapTourGuide({
             onPress={onPrevious ?? undefined}
             disabled={!onPrevious}
             accessibilityRole="button"
-            accessibilityLabel="Önceki adım"
+            accessibilityLabel={m.tour.previousStep}
             accessibilityState={{ disabled: !onPrevious }}
             hitSlop={8}
             style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.skip, styles.back, hovered && onPrevious && styles.skipHovered, !onPrevious && styles.backOff]}
           >
             <Ionicons name="chevron-back" size={14} color={palette.white} />
             <Text variant="caption" colorValue={palette.white} style={styles.skipLabel}>
-              Önceki
+              {m.tour.previous}
             </Text>
           </Pressable>
-          <Pressable onPress={onSkip} accessibilityRole="button" accessibilityLabel="Gösterimi geç" hitSlop={8} style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.skip, hovered && styles.skipHovered]}>
+          <Pressable onPress={onSkip} accessibilityRole="button" accessibilityLabel={m.tour.skipLabel} hitSlop={8} style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.skip, hovered && styles.skipHovered]}>
             <Text variant="caption" colorValue={palette.white} style={styles.skipLabel}>
-              Geç
+              {m.tour.skip}
             </Text>
           </Pressable>
         </View>
@@ -205,10 +207,11 @@ function useGlide(x: number, y: number, placed: string, still: boolean): Animate
 
 /** In the map's search field, in the tour's gold: plays the tour again from the start. */
 export function MapTourReplayButton({ onPress }: { onPress: () => void }) {
+  const m = useMessages();
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel="Nasıl oynanır, turu tekrar izle"
+      accessibilityLabel={m.tour.replay}
       onPress={onPress}
       hitSlop={4}
       style={({ pressed }) => [styles.replay, pressed && styles.replayPressed]}

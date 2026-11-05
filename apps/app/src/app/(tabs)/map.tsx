@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
 import { spacing, Text, useTheme } from "@vagabonds/ui";
@@ -24,7 +26,7 @@ import {
 } from "@/components/city-asset-cards";
 import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapCityButtons } from "@/components/map-city-buttons";
-import { inCity, MapSearch } from "@/components/map-search";
+import { MapSearch, placeIn } from "@/components/map-search";
 import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
 import { MobileOnlyNotice } from "@/components/mobile-only-notice";
 import { SealScanDemo } from "@/components/seal-scan-demo";
@@ -58,6 +60,7 @@ import {
   type MapProvinces,
   type MapSpots,
 } from "@/map";
+import { useMessages } from "@/i18n";
 
 /** Room kept free for the search bar when framing Turkey. */
 const HEADER_SPACE = 72;
@@ -97,6 +100,7 @@ function nearness(
  * city with assets before anything is typed) and the cards list the city's assets.
  */
 export default function MapScreen() {
+  const m = useMessages();
   const night = useMapTheme().colors;
   useMapStatusBar();
   // The tab bar floats over the map: the cards and the framing keep clear of it.
@@ -346,7 +350,7 @@ export default function MapScreen() {
     if (!city) return;
     setSelectedPlate(plate);
     tour.onCityPicked();
-    announce(`${city.label} açıldı.`);
+    announce(m.map.cityOpened(city.label));
   }
 
   /** The place on the map that stands for an asset: itself, or the complex it is a building of. */
@@ -374,7 +378,7 @@ export default function MapScreen() {
   function chooseAsset(id: string) {
     setChosenAsset(id);
     const name = located.find(({ asset }) => asset.id === id)?.asset.name;
-    if (name && id !== chosenAsset) announce(`${name} seçildi.`);
+    if (name && id !== chosenAsset) announce(m.map.selected(name));
   }
 
   function openAssetCard(asset: AssetSummary) {
@@ -413,7 +417,7 @@ export default function MapScreen() {
     setSelectedPlate(null);
     setPendingAsset(null);
     tour.onLeftCity();
-    announce("Türkiye haritası.");
+    announce(m.map.turkeyMap);
   }
 
   // The first-visit tour: the visitor unlocks an asset themselves, an example scan standing in for the camera.
@@ -498,7 +502,7 @@ export default function MapScreen() {
 
   // Only what went wrong is said over the map; the rest is in the cards and the search.
   const notice = mapError
-    ? { message: `Harita çizilemedi: ${mapError}` }
+    ? { message: m.map.mapFailed(mapError) }
     : cities.status === "error"
       ? { message: cities.error.message, onRetry: cities.retry }
       : selectedCity && cityAssets.status === "error"
@@ -537,13 +541,13 @@ export default function MapScreen() {
       <Head>
         <title>
           {selectedCity
-            ? `${selectedCity.label} · Harita · Vagabonds`
-            : "Harita · Vagabonds"}
+            ? m.common.title(`${selectedCity.label} · ${m.map.title}`)
+            : m.common.title(m.map.title)}
         </title>
       </Head>
       {/* The map has no heading to see; screen readers start here. */}
       <Text headingLevel={1} style={styles.unseen}>
-        {selectedCity ? `Harita, ${selectedCity.label}` : "Harita, Türkiye"}
+        {m.map.heading(selectedCity ? selectedCity.label : m.map.turkey)}
       </Text>
       <MapLibreMap
         pins={NO_PINS}
@@ -623,7 +627,7 @@ export default function MapScreen() {
           >
             {cardsShown && (
               <CityAssetList
-                title={`${inCity(selectedCity.label)}ki eserler`}
+                title={m.map.sitesIn(placeIn(selectedCity.label))}
                 assets={cards}
                 buildingsOf={buildingsOf}
                 selectedId={chosenAsset}
@@ -637,7 +641,7 @@ export default function MapScreen() {
         {side && selectedCity && cardsShown && !listOpen && !tour.step && (
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel={`${inCity(selectedCity.label)}ki eserleri göster, ${cards.length} eser`}
+            accessibilityLabel={m.map.showSitesIn(placeIn(selectedCity.label), cards.length)}
             onPress={() => setListOpen(true)}
             style={({
               pressed,
@@ -662,7 +666,7 @@ export default function MapScreen() {
               colorValue={listLook.text}
               style={styles.showListText}
             >
-              {`${inCity(selectedCity.label)}ki eserler · ${cards.length}`}
+              {m.map.sitesInCount(placeIn(selectedCity.label), cards.length)}
             </Text>
             <Ionicons name="chevron-forward" size={16} color={listLook.text} />
           </Pressable>

@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   fontFamily,
@@ -19,7 +21,6 @@ import {
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { sampleDescription } from "@/content/camera";
 import { bottomInset } from "@/lib/bottom-inset";
 import { speak } from "@/lib/speak";
 import { useA11ySettings, type A11ySettings } from "@/settings/a11y-settings";
@@ -30,6 +31,9 @@ import {
   type ColorScheme,
 } from "@/theme";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
+import { LanguageSwitch } from "@/components/language-switch";
+import { useMessages, type Messages } from "@/i18n";
+import { casing } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -43,35 +47,35 @@ const schemeOptions = themePreferenceOptions.filter(
 );
 
 /** The four smaller switches, as tiles; the audio description has its own wide tile above them. */
-const tiles: Array<{
+const tilesFor = (m: Messages): Array<{
   key: keyof A11ySettings;
   icon: IconName;
   title: string;
   detail: string;
-}> = [
+}> => [
   {
     key: "captions",
     icon: "chatbox-ellipses-outline",
-    title: "Altyazılar",
-    detail: "Ses kapsüllerini metne dök",
+    title: m.settings.captions,
+    detail: m.settings.captionsDetail,
   },
   {
     key: "largeText",
     icon: "text-outline",
-    title: "Büyük metin",
-    detail: "Her yerde %14 daha büyük",
+    title: m.settings.largeText,
+    detail: m.settings.largeTextDetail,
   },
   {
     key: "highContrast",
     icon: "contrast-outline",
-    title: "Yüksek kontrast",
-    detail: "Metin ve çizgiler koyulaşır",
+    title: m.settings.highContrast,
+    detail: m.settings.highContrastDetail,
   },
   {
     key: "strongFocusRing",
     icon: "scan-outline",
-    title: "Odak halkası",
-    detail: "Klavye ve anahtar erişimi",
+    title: m.settings.focusRing,
+    detail: m.settings.focusRingDetail,
   },
 ];
 
@@ -86,6 +90,9 @@ export default function SystemSettingsScreen() {
     useA11ySettings();
   const insets = useSafeAreaInsets();
   const wide = useWideWeb();
+  const m = useMessages();
+  const tiles = tilesFor(m);
+  const schemeLabel = { light: m.settings.light, dark: m.settings.dark } as const;
   // Two choices here, light and dark; a stored "system" shows as the scheme it resolves to.
   const scheme = resolveColorScheme(themePreference, useColorScheme());
 
@@ -99,20 +106,27 @@ export default function SystemSettingsScreen() {
       contentInsetAdjustmentBehavior="automatic"
     >
       <Head>
-        <title>Sistem ayarları · Vagabonds</title>
+        <title>{m.common.title(m.settings.title)}</title>
       </Head>
       <View style={[styles.column, wide && wideColumn]}>
-        <Section title="Görünüm">
+        <Section title={m.language.title} note={m.language.hint}>
+          <LanguageSwitch
+            on={{ fill: c.highlightMark, text: c.onPrimary }}
+            off={{ text: c.text, edge: dark ? "transparent" : c.border }}
+          />
+        </Section>
+
+        <Section title={m.settings.appearance}>
           <View
             accessibilityRole="radiogroup"
-            accessibilityLabel="Tema"
+            accessibilityLabel={m.settings.theme}
             style={styles.themes}
           >
             {schemeOptions.map((option) => (
               <ThemeCard
                 key={option.value}
                 value={option.value}
-                label={option.label}
+                label={schemeLabel[option.value]}
                 on={option.value === scheme}
                 onPress={() => setThemePreference(option.value)}
               />
@@ -120,7 +134,7 @@ export default function SystemSettingsScreen() {
           </View>
         </Section>
 
-        <Section title="Erişilebilirlik" note="Tüm ekranlara anında uygulanır">
+        <Section title={m.settings.accessibility} note={m.settings.appliesEverywhere}>
           {/* The switch and the sample are side by side, not one inside the other. */}
           <View
             style={[
@@ -135,8 +149,8 @@ export default function SystemSettingsScreen() {
             <Pressable
               accessibilityRole="switch"
               accessibilityState={{ checked: settings.audioDescription }}
-              accessibilityLabel="Sesli mimari betimleme"
-              accessibilityHint="Mekânın mimarisini sesli dinle"
+              accessibilityLabel={m.settings.audioDescription}
+              accessibilityHint={m.settings.audioDescriptionHint}
               onPress={() =>
                 setSetting("audioDescription", !settings.audioDescription)
               }
@@ -154,18 +168,18 @@ export default function SystemSettingsScreen() {
               </View>
               <View style={settings.audioDescription && styles.wideText}>
                 <Text variant="label" style={styles.tileTitle}>
-                  Sesli mimari betimleme
+                  {m.settings.audioDescription}
                 </Text>
                 <Text variant="caption" color="textSecondary">
-                  Mekânı gözünü kapatıp dün ile bugünü dinle
+                  {m.settings.audioDescriptionDetail}
                 </Text>
               </View>
             </Pressable>
             {settings.audioDescription && (
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel="Örnek betimlemeyi dinle"
-                onPress={() => speak(sampleDescription.audioDescription)}
+                accessibilityLabel={m.settings.sampleListen}
+                onPress={() => speak(m.settings.sample)}
                 style={({ pressed }) => [
                   styles.play,
                   { backgroundColor: c.highlightMark },
@@ -179,7 +193,7 @@ export default function SystemSettingsScreen() {
                   style={styles.playIcon}
                 />
                 <Text variant="label" colorValue={c.onPrimary}>
-                  Dinle
+                  {m.common.listen}
                 </Text>
               </Pressable>
             )}
@@ -227,9 +241,13 @@ export default function SystemSettingsScreen() {
 
         {Platform.OS === "web" && (
           <Text variant="caption" color="textSecondary" style={styles.center}>
-            Harici klavye ya da anahtar erişimi: <Kbd>Tab</Kbd> sıradaki öğeye
-            geçer, <Kbd>Enter</Kbd> seçer, <Kbd>←</Kbd> <Kbd>→</Kbd> perdeyi ve
-            kaydırıcıları oynatır.
+            {m.settings.keyboard[0]}
+            <Kbd>Tab</Kbd>
+            {m.settings.keyboard[1]}
+            <Kbd>Enter</Kbd>
+            {m.settings.keyboard[2]}
+            <Kbd>←</Kbd> <Kbd>→</Kbd>
+            {m.settings.keyboard[3]}
           </Text>
         )}
       </View>
@@ -363,7 +381,7 @@ function Section({
           headingLevel={2}
           style={styles.sectionTitle}
         >
-          {title.toLocaleUpperCase("tr")}
+          {title.toLocaleUpperCase(casing())}
         </Text>
         {note && (
           <Text variant="caption" color="textSecondary">

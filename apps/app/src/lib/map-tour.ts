@@ -31,36 +31,7 @@ export function isTabStep(step: MapTourStep | null): step is TabStep {
   return step !== null && step.startsWith("tab-");
 }
 
-export const MAP_TOUR_STEPS: Record<MapTourStep, { title: string; body: string }> = {
-  city: { title: "Bir şehir seç", body: "Renkli illerde eser var. Birine dokun." },
-  choose: { title: "Bir esere dokun", body: "Eserler sisin içinde kilitli. İşaretli esere dokun." },
-  unlock: WEB
-    ? { title: "Düğmeye dokun", body: "Gerçekte kilidi eserin yanında, mobil uygulamada açarsın. Burada nasıl açıldığını gör." }
-    : { title: "Düğmeye dokun", body: "Eserin kilidini buradan açarsın." },
-  scan: { title: "Ziyaret Mührü kamerası", body: "Gerçekte bu düğme kamerayı açar; eserde işaretli kısmı kameraya tanıtırsın." },
-  opened: { title: "Kilit açıldı", body: "Sis kalkar; eserin hikâyesi ve bağlantıları açılır." },
-  "tab-map": {
-    title: "Harita",
-    body: "Eserler sisin içinde kilitli; ziyaret edip mührünü bastığında kilidi açılır.",
-  },
-  "tab-rehber": {
-    title: "Rehber",
-    body: "Eserler hakkında soru sor; rota, yol tarifi ve yöresel lezzet önerisi al.",
-  },
-  "tab-camera": {
-    title: "Kamera",
-    body: "Ziyaret Mührü ile kilidi aç, Taşın Dili ile kitabeleri günümüz Türkçesiyle oku.",
-  },
-  "tab-monuments": {
-    title: "Eserler",
-    body: "Tüm eserleri şehre ve türe göre gez; Zamanda Yolculuk ile yüzyıllara göre keşfet.",
-  },
-  "tab-settings": {
-    title: "Profil",
-    body: "Mühürlerin, rozetlerin, notların ve kaydettiğin rotalar; ayarlar da burada.",
-  },
-  done: { title: "Sıra sende", body: "Gösterim bitti, harita baştan seninle." },
-};
+// The steps' words are the app's own, in both languages: `tour.steps` in @/i18n/messages.
 
 /** The steps counted on the card's dots; `done` stands outside the count. */
 export const COUNTED_STEPS: MapTourStep[] = WEB ? ["city", "choose", "unlock", "opened", ...TAB_STEPS] : ["city", "choose", "unlock", "scan", "opened", ...TAB_STEPS];

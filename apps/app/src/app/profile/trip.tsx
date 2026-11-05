@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { TripDay, TripItem, TripPlanResponse } from "@vagabonds/contracts";
 import {
@@ -42,6 +44,7 @@ import {
 } from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
+import { casing, useLang } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -89,6 +92,7 @@ function minutes(total: number): string {
  * distance between them on the line (no walking times), and the breaks in coral.
  */
 export default function SavedTripScreen() {
+  useLang();
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const wide = useWideWeb();
@@ -212,7 +216,7 @@ function Hero({ route }: { route: TripRoute }) {
       </Svg>
 
       <Text colorValue={palette.altin200} style={styles.city}>
-        {trip.city.label.toLocaleUpperCase("tr")}
+        {trip.city.label.toLocaleUpperCase(casing())}
       </Text>
       <Text
         colorValue={palette.white}
@@ -284,7 +288,7 @@ function Day({ day, multiDay }: { day: TripDay; multiDay: boolean }) {
           style={styles.dayTitle}
           headingLevel={2}
         >
-          {`${day.day}. GÜN · ${new Date(day.date).toLocaleDateString("tr-TR", { day: "numeric", month: "long", weekday: "long" }).toLocaleUpperCase("tr")}`}
+          {`${day.day}. GÜN · ${new Date(day.date).toLocaleDateString("tr-TR", { day: "numeric", month: "long", weekday: "long" }).toLocaleUpperCase(casing())}`}
         </Text>
       )}
       <View

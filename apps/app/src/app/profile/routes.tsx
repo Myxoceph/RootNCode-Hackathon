@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   fontFamily,
@@ -46,6 +48,7 @@ import {
 } from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
+import { casing, useLang } from "@/i18n";
 
 const regionLabel: Record<PlannerRoute["region"], string> = {
   bursa: "Bursa",
@@ -108,6 +111,7 @@ function ticketOf(route: RouteEntry) {
  * "Yeni" leads. Yemek and Ulaşım: what Rehber suggested in the chat (components/saved-advice.tsx).
  */
 export default function MyRoutesScreen() {
+  useLang();
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -359,7 +363,7 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
           )}
           <View style={styles.bandTop}>
             <Text colorValue={palette.altin200} style={styles.city}>
-              {ticket.city.toLocaleUpperCase("tr")}
+              {ticket.city.toLocaleUpperCase(casing())}
             </Text>
             <View style={styles.chip}>
               <Ionicons

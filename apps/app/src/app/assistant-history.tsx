@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { ChatConversation } from "@vagabonds/contracts";
 import { fontFamily, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
@@ -10,12 +12,13 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { deleteAllConversations, deleteConversation, fetchConversations } from "@/data/assistant";
 import { DataError } from "@/data/errors";
 import { announce } from "@/lib/announce";
+import { localeTag, useLang } from "@/i18n";
 import { dayGroup } from "@/lib/chat";
 
 type Load = { kind: "loading" } | { kind: "error"; message: string } | { kind: "ready"; items: ChatConversation[] };
 
 const time = (iso: string) =>
-  new Date(iso).toLocaleTimeString("tr-TR", {
+  new Date(iso).toLocaleTimeString(localeTag(), {
     hour: "2-digit",
     minute: "2-digit",
   });
@@ -26,6 +29,7 @@ const time = (iso: string) =>
  * and all at once after a second tap.
  */
 export default function AssistantHistoryScreen() {
+  useLang();
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();

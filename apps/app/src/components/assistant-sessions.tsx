@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { ChatConversation } from "@vagabonds/contracts";
 import {
@@ -24,6 +26,7 @@ import { DataError } from "@/data/errors";
 import { webTransition } from "@/lib/web-transition";
 import { announce } from "@/lib/announce";
 import { dayGroup } from "@/lib/chat";
+import { localeTag, useLang } from "@/i18n";
 
 /** The panel's width beside the conversation. */
 export const SESSIONS_WIDTH = 300;
@@ -34,7 +37,7 @@ const TINT = "rgba(150, 111, 34, 0.12)";
 const GOLD_EDGE = "rgba(150, 111, 34, 0.35)";
 
 const time = (iso: string) =>
-  new Date(iso).toLocaleTimeString("tr-TR", {
+  new Date(iso).toLocaleTimeString(localeTag(), {
     hour: "2-digit",
     minute: "2-digit",
   });
@@ -69,6 +72,7 @@ export function AssistantSessions({
   onNew,
   canStartNew,
 }: AssistantSessionsProps) {
+  useLang();
   const look = LIST_LOOKS[useTheme().scheme];
   const [load, setLoad] = useState<Load>({ kind: "loading" });
   const [hovered, setHovered] = useState<string | null>(null);

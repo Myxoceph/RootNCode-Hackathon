@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type {
   AssetRelationsResponse,
@@ -44,6 +46,7 @@ import {
   WIDE_PAGE_PADDING,
   wideColumn,
 } from "@/lib/use-wide-web";
+import { casing, useLang } from "@/i18n";
 
 /** On a photo, under its dark fade: the same in every theme. */
 const onPhoto = {
@@ -71,6 +74,7 @@ const WIDE_PHOTO_HEIGHT = 220;
  * find. The bar on top says how far the visitor has come.
  */
 export default function RelatedScreen() {
+  useLang();
   const { asset: id, name } = useLocalSearchParams<{
     asset?: string;
     name?: string;
@@ -200,7 +204,7 @@ function Related({
           <View style={styles.intro}>
             {name && (
               <Text variant="overline" color="highlight">
-                {name.toLocaleUpperCase("tr")}
+                {name.toLocaleUpperCase(casing())}
               </Text>
             )}
             <Text variant="display" headingLevel={1}>

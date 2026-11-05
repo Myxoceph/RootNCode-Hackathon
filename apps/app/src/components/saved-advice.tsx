@@ -1,3 +1,5 @@
+"use no memo";
+// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type {
   SavedAnswerAbout,
@@ -42,6 +44,8 @@ import {
   type TransitAdvice,
 } from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { localeTag, useLang } from "@/i18n";
+import { casing } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -58,7 +62,7 @@ const legIcons: Record<TransitLeg["mode"], IconName> = {
 const durations = { half: "Yarım gün", "1": "1 gün", "2": "2 gün" } as const;
 
 const savedOn = (iso: string) =>
-  new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
+  new Date(iso).toLocaleDateString(localeTag(), { day: "numeric", month: "long" });
 
 type Advice = FoodAdvice | TransitAdvice;
 
@@ -217,6 +221,7 @@ export function FoodAdviceList({
   items: readonly FoodAdvice[];
   grid?: boolean;
 }) {
+  useLang();
   if (items.length === 0)
     return (
       <Empty
@@ -230,6 +235,7 @@ export function FoodAdviceList({
 
 /** A trip's page: what Rehber suggested for this route, food first. Nothing shows until there is some. */
 export function RouteAdvice({ routeKey: key }: { routeKey: string }) {
+  useLang();
   const saved = useSavedRoutes();
   const items = saved.filter(
     (route): route is Advice =>
@@ -273,7 +279,7 @@ function FoodCard({ item, index }: { item: FoodAdvice; index: number }) {
       band={
         <>
           <BandTop
-            label={code.toLocaleUpperCase("tr")}
+            label={code.toLocaleUpperCase(casing())}
             icon="restaurant"
             tag="Sofra"
           />
@@ -351,6 +357,7 @@ export function TransitAdviceList({
   items: readonly TransitAdvice[];
   grid?: boolean;
 }) {
+  useLang();
   if (items.length === 0)
     return (
       <Empty
@@ -385,7 +392,7 @@ function TransitCard({ item, index }: { item: TransitAdvice; index: number }) {
       band={
         <>
           <BandTop
-            label={item.transit.city.toLocaleUpperCase("tr")}
+            label={item.transit.city.toLocaleUpperCase(casing())}
             icon="bus"
             tag="Biniş kartı"
           />

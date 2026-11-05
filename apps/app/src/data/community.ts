@@ -32,6 +32,7 @@ import {
 import { useEffect, useSyncExternalStore } from "react";
 
 import { resolveApiUrl, resolveDataSourceKind } from "./config";
+import { getMessages } from "@/i18n";
 import { DataError, type SchemaParser } from "./errors";
 import { request, statusError } from "./http";
 import { celebrateEarned, noteEarned } from "./new-badges";
@@ -109,42 +110,35 @@ async function keepSession(session: AnonymousSessionResponse) {
 }
 
 /** Sign-in and sign-up say what went wrong in their own words, not a note's. */
-const AUTH_MESSAGES: Record<string, string> = {
-  INVALID_CREDENTIALS: "Kullanıcı adı ya da parola yanlış.",
-  USERNAME_TAKEN: "Bu kullanıcı adı alınmış. Başka bir tane dene.",
-  EMAIL_TAKEN: "Bu e-postayla açılmış bir hesap var. Giriş yapmayı dene.",
-  ALREADY_REGISTERED: "Bu oturumun zaten bir hesabı var.",
-  USER_BANNED: "Bu hesapla artık giriş yapılamıyor.",
-  INVALID_BODY: "Kullanıcı adı, e-posta ya da parola kurallara uymuyor.",
-};
+const authMessages = (): Record<string, string> => getMessages().errors.auth;
 
 /**
  * Opens an account (`POST /auth/register`). A visitor who already left notes or seals under a
  * nickname keeps them: their anonymous session becomes the account (`POST /auth/upgrade`).
  */
 export async function register(account: RegisterRequest): Promise<AppUser> {
-  if (!communityAvailable) throw new DataError("unavailable", "Hesap açmak için sunucu gerekiyor.");
+  if (!communityAvailable) throw new DataError("unavailable", getMessages().errors.registerNeedsServer);
   await loadSession();
   if (token && state.user && state.user.username === null) {
     const current = token;
     const user = await call("/auth/upgrade", AppUserSchema, {
       body: { username: account.username, password: account.password, email: account.email },
       token: current,
-      messages: AUTH_MESSAGES,
+      messages: authMessages(),
     });
     await keepSession({ user, token: current });
     return user;
   }
-  const session = await call("/auth/register", AnonymousSessionResponseSchema, { body: account, messages: AUTH_MESSAGES });
+  const session = await call("/auth/register", AnonymousSessionResponseSchema, { body: account, messages: authMessages() });
   await keepSession(session);
   return session.user;
 }
 
 /** Signs in (`POST /auth/login`); a session already on the device gives way to the account's. */
 export async function login(credentials: LoginRequest): Promise<AppUser> {
-  if (!communityAvailable) throw new DataError("unavailable", "Giriş yapmak için sunucu gerekiyor.");
+  if (!communityAvailable) throw new DataError("unavailable", getMessages().errors.loginNeedsServer);
   await loadSession();
-  const session = await call("/auth/login", AnonymousSessionResponseSchema, { body: credentials, messages: AUTH_MESSAGES });
+  const session = await call("/auth/login", AnonymousSessionResponseSchema, { body: credentials, messages: authMessages() });
   await keepSession(session);
   return session.user;
 }

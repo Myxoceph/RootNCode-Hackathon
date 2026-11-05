@@ -14,6 +14,7 @@ import { accountToken, sessionRejected } from "./community";
 import { resolveApiUrl, resolveDataSourceKind } from "./config";
 import { DataError, type SchemaParser } from "./errors";
 import { request, statusError, type RequestOptions } from "./http";
+import { getMessages } from "@/i18n";
 
 /**
  * AI asistan (`POST /chat`): questions about the sites, trips and local food, answered by a
@@ -82,12 +83,11 @@ export function useAssistantAvailable(): boolean | null {
   return useSyncExternalStore(subscribe, assistantAvailable, assistantAvailable);
 }
 
-const SIGN_IN = "Rehber'i kullanmak için giriş yap.";
 
 /** A request as the signed-in account; a 401 signs out on this device too. */
 async function asAccount<T>(path: string, schema: SchemaParser<T>, options: Omit<RequestOptions, "token" | "errorFor"> = {}): Promise<T | null> {
   const token = await accountToken();
-  if (token === null) throw new DataError("rejected", SIGN_IN, [path], "ACCOUNT_REQUIRED");
+  if (token === null) throw new DataError("rejected", getMessages().rehber.signInError, [path], "ACCOUNT_REQUIRED");
   return request(`${resolveApiUrl()}${path}`, schema, {
     ...options,
     token,
@@ -136,22 +136,32 @@ export async function deleteAllConversations(): Promise<void> {
 
 /** What a conversation's error says; the code travels with it so the conversation can act on it. */
 const CONVERSATION_MESSAGES: Record<string, string> = {
-  ACCOUNT_REQUIRED: SIGN_IN,
-  UNAUTHORIZED: "Oturumun sona ermiş. Rehber'i kullanmak için yeniden giriş yap.",
-  CONVERSATION_ARCHIVED: "Bu konuşma arşivde. Sorunu yeni bir konuşmada gönder.",
-  CONVERSATION_FULL: "Bu konuşma çok uzadı. Sorunu yeni bir konuşmada gönder.",
-  CONVERSATION_NOT_FOUND: "Bu konuşma artık yok. Sorunu yeni bir konuşmada gönder.",
+  get ACCOUNT_REQUIRED() {
+    return getMessages().rehber.signInError;
+  },
+  get UNAUTHORIZED() {
+    return getMessages().rehber.expired;
+  },
+  get CONVERSATION_ARCHIVED() {
+    return getMessages().rehber.archivedError;
+  },
+  get CONVERSATION_FULL() {
+    return getMessages().rehber.full;
+  },
+  get CONVERSATION_NOT_FOUND() {
+    return getMessages().rehber.gone;
+  },
 };
 
 export function chatError(status: number, code: string | null, details: string[]): DataError {
   const conversation = code ? CONVERSATION_MESSAGES[code] : undefined;
   if (conversation) return new DataError("rejected", conversation, details, code);
   if (code === "ASSISTANT_BUSY") {
-    return new DataError("unavailable", "Asistan şu an başka sorulara bakıyor. Birkaç saniye sonra tekrar dene.", details);
+    return new DataError("unavailable", getMessages().rehber.busy, details);
   }
   if (code === "ASSISTANT_UNAVAILABLE") {
-    return new DataError("unavailable", "Asistan şu an cevap veremiyor. Biraz sonra tekrar dene.", details);
+    return new DataError("unavailable", getMessages().rehber.down, details);
   }
-  if (status === 400) return new DataError("rejected", "Soru gönderilemedi. Soruyu değiştirip tekrar dene.", details);
+  if (status === 400) return new DataError("rejected", getMessages().errors.questionRejected, details);
   return statusError(status, code, details);
 }
