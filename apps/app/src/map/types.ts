@@ -85,6 +85,11 @@ export interface MapProvinces {
   city?: MapCity | null;
   /** Turkey rises out of the fog the first time the map opens. False when "Hareketi azalt" is on. */
   reveal: boolean;
+  /**
+   * The camera flies and the fog fades. False when "Hareketi azalt" is on, or while a city is opened
+   * again as the visitor left it (it is simply there). Follows `reveal` when unset.
+   */
+  motion?: boolean;
 }
 
 /**

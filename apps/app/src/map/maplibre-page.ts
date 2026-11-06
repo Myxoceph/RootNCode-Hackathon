@@ -1011,7 +1011,7 @@ function start() {
     map.setFilter("province-glow", ["in", ["get", "plate"], ["literal", plates]]);
     map.setFilter("province-hit", ["in", ["get", "plate"], ["literal", plates]]);
     setLabels(provinces.highlighted);
-    motion = provinces.reveal;
+    motion = provinces.motion ?? provinces.reveal;
     if (provincesShown) showCity(provinces.city || null);
     if (provincesShown) return;
     provincesShown = true;
@@ -1742,8 +1742,9 @@ function start() {
       // Eases toward its target thickness, so the sheet fades in and out instead of jumping.
       const now = performance.now();
       const target = cover ? sheetTarget() : 0;
-      const stepBy = Math.min(1, (now - sheetLevelAt) / SHEET_FADE_MS);
-      const placesBy = Math.min(1, (now - sheetLevelAt) / PLACES_FADE_MS);
+      // Without motion the fog is simply there, as everything else.
+      const stepBy = motion ? Math.min(1, (now - sheetLevelAt) / SHEET_FADE_MS) : 1;
+      const placesBy = motion ? Math.min(1, (now - sheetLevelAt) / PLACES_FADE_MS) : 1;
       placesLevel = placesUp ? Math.min(1, placesLevel + placesBy) : 0;
       if (placesUp && placesLevel < 1) map.triggerRepaint();
       sheetLevelAt = now;

@@ -42,7 +42,7 @@ import { announce } from "@/lib/announce";
 import { useMapTour } from "@/lib/map-tour";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { whereFrom } from "@/lib/bearing";
-import { rememberCity } from "@/lib/last-city";
+import { rememberCity, rememberOpenCity, useOpenCity } from "@/lib/last-city";
 import { bondsSpoken } from "@/lib/map-bonds";
 import { relatedPlacesOf } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -142,6 +142,11 @@ export default function MapScreen() {
   const [tourUnlock, setTourUnlock] = useState<string | null>(null);
   /** Where the tour's bubble points, as the map reports it. */
   const [tourSpots, setTourSpots] = useState<MapSpots | null>(null);
+  // The city the map was left open on last time opens again at once, with no opening and no
+  // flight: `restoring` is undefined until that is known, true until the city is there.
+  const leftOpen = useOpenCity();
+  const [restoring, setRestoring] = useState<boolean>();
+  const [restored, setRestored] = useState(false);
   // "/map?city=bursa" opens a city straight away: a shareable link on the web, and the Ana Sayfa's cities (`at` makes the same city open again).
   const { city: cityParam, at: cityAskedAt } = useLocalSearchParams<{
     city?: string;
@@ -344,14 +349,32 @@ export default function MapScreen() {
   const provinces = useMemo<MapProvinces>(
     () => ({
       ...(JSON.parse(mapKey) as Omit<MapProvinces, "reveal">),
-      reveal: !reduceMotion,
+      // No opening over a city opened again as it was left, and no flight into it.
+      reveal: !reduceMotion && !restored,
+      motion: !reduceMotion && !restoring,
     }),
-    [mapKey, reduceMotion],
+    [mapKey, reduceMotion, restored, restoring],
   );
 
   // Each city opens with its landmark chosen.
   const openingId = landmark?.id ?? null;
   useEffect(() => setChosenAsset(openingId), [openingId]);
+
+  useEffect(() => {
+    if (restoring !== undefined || leftOpen === undefined) return;
+    if (!leftOpen || cityParam) return setRestoring(false);
+    if (cities.status === "loading") return;
+    const plate = withAssets.find((city) => city.code === leftOpen)?.plate;
+    if (plate == null) return setRestoring(false);
+    setSelectedPlate(plate);
+    setRestored(true);
+    setRestoring(true);
+  }, [restoring, leftOpen, cityParam, cities.status, withAssets]);
+  const mapShown = restoring === false || (restoring === true && mapCity !== null);
+  // Once the city is there, the camera flies again as usual.
+  useEffect(() => {
+    if (restoring && landedPlate !== null && landedPlate === selectedPlate) setRestoring(false);
+  }, [restoring, landedPlate, selectedPlate]);
 
   const cityFromParam = cityParam
     ? withAssets.find((city) => city.code === cityParam)?.plate
@@ -360,11 +383,18 @@ export default function MapScreen() {
     if (cityFromParam != null) setSelectedPlate(cityFromParam);
   }, [cityFromParam, cityAskedAt]);
 
-  // The city open now is remembered for the next greeting (its weather).
+  // The city open now is remembered for the next greeting (its weather), and the map opens on it
+  // again next time; going back to the Turkey view forgets it, so the map opens on Turkey then.
   const openCode = selectedCity?.code;
+  const hadCity = useRef(false);
   useEffect(() => {
-    if (openCode) rememberCity(openCode);
-  }, [openCode]);
+    if (restoring === undefined) return;
+    if (openCode) {
+      hadCity.current = true;
+      rememberCity(openCode);
+      rememberOpenCity(openCode);
+    } else if (hadCity.current) rememberOpenCity(null);
+  }, [openCode, restoring]);
 
   function openCity(plate: number) {
     const city = withAssets.find((candidate) => candidate.plate === plate);
@@ -448,7 +478,8 @@ export default function MapScreen() {
   const tour = useMapTour({
     // Without a server the phone's own mark; with one, only an account's (signed out, it waits for the next one).
     account: !communityAvailable ? null : isAccount(user) ? user.id : undefined,
-    ready: !cityParam,
+    // Not over a city opened again as it was left; next time, from the Turkey view.
+    ready: !cityParam && restoring === false && !restored,
     still: reduceMotion,
     inCity: selectedPlate !== null,
     unlockShown: (id) => {
@@ -573,49 +604,52 @@ export default function MapScreen() {
       <Text headingLevel={1} style={styles.unseen}>
         {m.map.heading(selectedCity ? selectedCity.label : m.map.turkey)}
       </Text>
-      <MapLibreMap
-        pins={NO_PINS}
-        selectedId={selectedCity ? chosenAsset : null}
-        onSelect={(id) => {
-          if (!id) return;
-          chooseAsset(id);
-          tour.onAssetTapped(!unlocked.has(id));
-        }}
-        onSelectProvince={openCity}
-        onLeaveCity={backToTurkey}
-        onCityLanded={onCityLanded}
-        onUnlock={unlockAsset}
-        onInspect={(id) =>
-          router.push({ pathname: "/monuments/[id]", params: { id } })
-        }
-        onOpenRelatedList={(id) =>
-          router.push({
-            pathname: "/related",
-            params: {
-              asset: id,
-              name: located.find(({ asset }) => asset.id === id)?.asset.name,
-            },
-          })
-        }
-        onLeaveNote={(id) =>
-          router.push({ pathname: "/note", params: { asset: id } })
-        }
-        onSceneEnd={() => {
-          setSceneRunning(false);
-          tour.onSceneEnd();
-        }}
-        watchSpots={
-          tour.step === "city" ||
-          tour.step === "choose" ||
-          tour.step === "unlock"
-        }
-        onSpots={setTourSpots}
-        offerUnlock={tour.step === "unlock"}
-        onError={setMapError}
-        fitPadding={fitPadding}
-        provinces={provinces}
-        style={StyleSheet.absoluteFill}
-      />
+      {/* Waits to know whether a city opens again as it was left, and then for that city, so Turkey never shows first. */}
+      {mapShown && (
+        <MapLibreMap
+          pins={NO_PINS}
+          selectedId={selectedCity ? chosenAsset : null}
+          onSelect={(id) => {
+            if (!id) return;
+            chooseAsset(id);
+            tour.onAssetTapped(!unlocked.has(id));
+          }}
+          onSelectProvince={openCity}
+          onLeaveCity={backToTurkey}
+          onCityLanded={onCityLanded}
+          onUnlock={unlockAsset}
+          onInspect={(id) =>
+            router.push({ pathname: "/monuments/[id]", params: { id } })
+          }
+          onOpenRelatedList={(id) =>
+            router.push({
+              pathname: "/related",
+              params: {
+                asset: id,
+                name: located.find(({ asset }) => asset.id === id)?.asset.name,
+              },
+            })
+          }
+          onLeaveNote={(id) =>
+            router.push({ pathname: "/note", params: { asset: id } })
+          }
+          onSceneEnd={() => {
+            setSceneRunning(false);
+            tour.onSceneEnd();
+          }}
+          watchSpots={
+            tour.step === "city" ||
+            tour.step === "choose" ||
+            tour.step === "unlock"
+          }
+          onSpots={setTourSpots}
+          offerUnlock={tour.step === "unlock"}
+          onError={setMapError}
+          fitPadding={fitPadding}
+          provinces={provinces}
+          style={StyleSheet.absoluteFill}
+        />
+      )}
 
       <Animated.View
         style={[StyleSheet.absoluteFill, { opacity: controls }]}
