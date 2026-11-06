@@ -8,6 +8,10 @@ import {
   VisitSettingSchema,
   WeatherResponseSchema,
   TRANSIT_CITY,
+  TransitEntryPointCodeSchema,
+  type TransitEntryPointCode,
+  type TransitItinerary,
+  type TripArrival,
   type DailyForecast,
   type Lang,
   type RoutePlanResponse,
@@ -26,14 +30,14 @@ import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import { toAssetSummary } from "../assets/assets.mapper.ts";
 import { visibleStatuses, type AssetsRepository, type AssetVisibility } from "../assets/assets.repository.ts";
 import { adviceFor, FORECAST_DAYS, WEATHER_ATTRIBUTION, type WeatherService } from "../weather/weather.service.ts";
-import { DETOUR_FACTOR, planRoute, WALK_METERS_PER_MINUTE, type PlannerCandidate } from "./planner.ts";
+import { DETOUR_FACTOR, planRoute, WALK_METERS_PER_MINUTE, walkMeters, walkMinutes, type PlannerCandidate } from "./planner.ts";
 import type { CandidateRecord, PlannerRepository } from "./planner.repository.ts";
 import { toCityDish } from "../gastronomy/gastronomy.mapper.ts";
 import type { GastronomyRepository } from "../gastronomy/gastronomy.repository.ts";
 import { pickDish } from "../gastronomy/meals.ts";
 import type { TransitPlanner } from "../transit/otp.client.ts";
-import { tramName } from "../transit/transit.places.ts";
-import { bestLegTransit, importanceOf, planTrip, TRANSIT_LEG_METERS, TRIP_SHAPE, weatherNoteCode, withoutPartsOfListed, type ImportanceSignals, type TripPlanDay } from "./trip.ts";
+import { ENTRY_POINTS, entryPointName, tramName } from "../transit/transit.places.ts";
+import { bestLegTransit, DAY_START, importanceOf, planTrip, TRANSIT_LEG_METERS, TRIP_SHAPE, weatherNoteCode, withoutPartsOfListed, type ImportanceSignals, type TripPlanDay } from "./trip.ts";
 
 /** How far ahead a trip can start. Beyond the forecast its days are planned without weather. */
 const TRIP_MAX_LEAD_DAYS = 365;
@@ -83,6 +87,7 @@ const TripQuerySchema = z.object({
   duration: TripDurationSchema.default("1").describe("half: 09:00–13:30; 1-5: o kadar tam gün, öğle molasıyla"),
   theme: TripThemeSchema.optional().describe("type:<tür kodu> ya da era:<dönem kodu>; verilmezse bütün eserler"),
   start: PointSchema.optional().describe("1. günün başlangıç noktası lat,lng; verilmezse her gün en önemli eserden başlar"),
+  arrival: TransitEntryPointCodeSchema.optional().describe("Ziyaretçinin ile geldiği yer (Konya): konya-gari, selcuklu-yht-gari ya da konya-otogari"),
   date: z.iso.date().optional().describe("1. günün tarihi (YYYY-MM-DD), bugünden en çok bir yıl sonrası; varsayılan bugün"),
 });
 
@@ -150,6 +155,14 @@ const turkeyHourFormat = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Is
 
 /** The hour in Türkiye, 0-23. */
 export const turkeyHour = () => Number(turkeyHourFormat.format(new Date()));
+
+/** Trams under the names passengers know, as on the transit route. */
+function namedLines(itineraries: TransitItinerary[], lang: Lang): TransitItinerary[] {
+  return itineraries.map((it) => ({
+    ...it,
+    legs: it.legs.map((leg) => (leg.mode === "tram" && leg.line ? { ...leg, line: { ...leg.line, name: tramName(leg.line.code, lang) } } : leg)),
+  }));
+}
 
 /** The moment `minute` minutes after midnight on this date in Türkiye (UTC+3 all year). */
 function turkeyTime(date: string, minute: number): Date {
@@ -220,6 +233,24 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
   }
 
   /** A bus or tram for each long leg, by the stop it leads to. Without an answer the leg stays a walk. */
+  /** How to get from the station or terminal to day 1's first stop, an hour before the day starts. */
+  async function arrivalAt(
+    code: TransitEntryPointCode,
+    city: string,
+    firstStop: CandidateRecord | undefined,
+    date: string,
+    lang: Lang,
+  ): Promise<TripArrival | null> {
+    if (city !== TRANSIT_CITY || !firstStop || firstStop.lat === null || firstStop.lng === null) return null;
+    const entry = ENTRY_POINTS[code];
+    const to = { lat: firstStop.lat, lng: firstStop.lng, name: pick(firstStop.name_tr, firstStop.name_en, lang) };
+    const meters = walkMeters(entry, to);
+    const departure = turkeyTime(date, DAY_START - 60);
+    const itineraries = await transitPlanner?.plan({ lat: entry.lat, lng: entry.lng, name: entry[lang] }, to, departure);
+    const transit = itineraries ? bestLegTransit(namedLines(itineraries, lang), { legMeters: meters, legMinutes: walkMinutes(meters), departure }) : null;
+    return { from: { code, name: entryPointName(code, lang) }, to: to.name, meters, transit };
+  }
+
   async function longLegTransit(
     city: string,
     days: TripPlanDay[],
@@ -240,11 +271,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
           if (!from || !to || stop.legMeters < TRANSIT_LEG_METERS) return;
           const departure = turkeyTime(dates[index] as string, stop.at - stop.legMinutes);
           const itineraries = await transitPlanner.plan(from, to, departure);
-          const named = itineraries?.map((it) => ({
-            ...it,
-            legs: it.legs.map((leg) => (leg.mode === "tram" && leg.line ? { ...leg, line: { ...leg.line, name: tramName(leg.line.code, lang) } } : leg)),
-          }));
-          const transit = named && bestLegTransit(named, { ...stop, departure });
+          const transit = itineraries && bestLegTransit(namedLines(itineraries, lang), { ...stop, departure });
           if (transit) found.set(stop.id, transit);
         });
       }),
@@ -419,7 +446,11 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
       });
     });
 
-    const legTransit = await longLegTransit(city.code, plan.days, dates, byId, lang);
+    const firstStop = plan.days[0]?.items.find((item) => item.kind === "stop");
+    const [legTransit, arrival] = await Promise.all([
+      longLegTransit(city.code, plan.days, dates, byId, lang),
+      query.arrival ? arrivalAt(query.arrival, city.code, firstStop && byId.get(firstStop.id), firstDate, lang) : null,
+    ]);
 
     setHeaders(reply, lang);
     return TripPlanResponseSchema.parse({
@@ -428,6 +459,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
       city,
       theme: theme ?? null,
       duration: duration === "half" ? duration : String(plan.days.length),
+      arrival,
       days: plan.days.map((day, index) => {
         const date = dates[index] as string;
         const weatherOfDay = dayWeather[index] ?? null;
