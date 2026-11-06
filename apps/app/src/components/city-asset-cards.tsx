@@ -20,6 +20,8 @@ interface CityAssetCardsProps {
   assets: AssetSummary[];
   /** How many of a complex's buildings it stands for on the map. */
   buildingsOf: ReadonlyMap<string, number>;
+  /** Where each asset lies from the city's landmark, in words: said to screen readers, not shown. */
+  whereOf?: ReadonlyMap<string, string>;
   selectedId: string | null;
   /** The assets out of the fog on the map. */
   unlocked: ReadonlySet<string>;
@@ -35,7 +37,7 @@ interface CityAssetCardsProps {
  * its card here. The row rises in when it appears. A card opens the asset, and says so: "İncele". The cards are clear frosted glass in every theme. For screen readers this row is the map's
  * content in words: every asset, a link each.
  */
-export function CityAssetCards({ assets, buildingsOf, selectedId, unlocked, onSelect, onUnlock }: CityAssetCardsProps) {
+export function CityAssetCards({ assets, buildingsOf, whereOf, selectedId, unlocked, onSelect, onUnlock }: CityAssetCardsProps) {
   const { scheme } = useTheme();
   const { width } = useWindowDimensions();
   const cardWidth = Math.min(width - spacing.lg * 2 - PEEK, MAX_CARD_WIDTH);
@@ -78,6 +80,7 @@ export function CityAssetCards({ assets, buildingsOf, selectedId, unlocked, onSe
           <CityAssetCard
             asset={item}
             buildings={buildingsOf.get(item.id) ?? 0}
+            where={whereOf?.get(item.id) ?? null}
             width={cardWidth}
             chosen={item.id === selectedId}
             opened={isAssetUnlocked(item, unlocked)}
@@ -102,7 +105,7 @@ const LIST_GAP = spacing.sm;
  * words, as the cards are: every asset a button to choose, with its "İncele" link after it.
  * `onHide` folds the panel away; the map page offers it back.
  */
-export function CityAssetList({ title, assets, buildingsOf, selectedId, unlocked, onSelect, onHide }: Omit<CityAssetCardsProps, "onUnlock"> & { title: string; onHide: () => void }) {
+export function CityAssetList({ title, assets, buildingsOf, whereOf, selectedId, unlocked, onSelect, onHide }: Omit<CityAssetCardsProps, "onUnlock"> & { title: string; onHide: () => void }) {
   const look = LIST_LOOKS[useTheme().scheme];
   const m = useMessages();
   const list = useRef<FlatList<AssetSummary>>(null);
@@ -150,6 +153,7 @@ export function CityAssetList({ title, assets, buildingsOf, selectedId, unlocked
           <CityAssetRow
             asset={item}
             buildings={buildingsOf.get(item.id) ?? 0}
+            where={whereOf?.get(item.id) ?? null}
             chosen={item.id === selectedId}
             opened={isAssetUnlocked(item, unlocked)}
             onSelect={onSelect}
@@ -166,7 +170,7 @@ function ListGap() {
 }
 
 /** One row of the side panel; drawn again only when its own asset, choice or seal changes. */
-const CityAssetRow = memo(function CityAssetRow({ asset, buildings, chosen, opened, onSelect, look }: { asset: AssetSummary; buildings: number; chosen: boolean; opened: boolean; onSelect: (id: string) => void; look: ListLook }) {
+const CityAssetRow = memo(function CityAssetRow({ asset, buildings, where, chosen, opened, onSelect, look }: { asset: AssetSummary; buildings: number; where: string | null; chosen: boolean; opened: boolean; onSelect: (id: string) => void; look: ListLook }) {
   const router = useRouter();
   const m = useMessages();
   const place = [asset.district, buildings > 0 ? m.cards.buildings(buildings) : null].filter(Boolean).join(" · ");
@@ -174,7 +178,7 @@ const CityAssetRow = memo(function CityAssetRow({ asset, buildings, chosen, open
     <View style={styles.listRow}>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={[asset.name, asset.type.label, place, opened ? m.cards.discovered : m.cards.undiscovered].filter(Boolean).join(", ")}
+        accessibilityLabel={[asset.name, asset.type.label, place, opened ? m.cards.discovered : m.cards.undiscovered, where].filter(Boolean).join(", ")}
         accessibilityHint={m.cards.showOnMap}
         accessibilityState={{ selected: chosen }}
         aria-pressed={chosen}
@@ -309,6 +313,8 @@ export const CARD_COLORS: Record<"light" | "dark", CardColors> = {
 interface CityAssetCardProps {
   asset: AssetSummary;
   buildings: number;
+  /** Where it lies from the city's landmark, in words, for screen readers. */
+  where: string | null;
   width: number;
   chosen: boolean;
   /** Out of the fog: said on the card, as the map shows it. */
@@ -318,11 +324,11 @@ interface CityAssetCardProps {
   onUnlock: () => void;
 }
 
-function CityAssetCard({ asset, buildings, width, chosen, opened, colors, onSelect, onUnlock }: CityAssetCardProps) {
+function CityAssetCard({ asset, buildings, where, width, chosen, opened, colors, onSelect, onUnlock }: CityAssetCardProps) {
   const router = useRouter();
   const m = useMessages();
   const place = [asset.district, buildings > 0 ? m.cards.buildings(buildings) : null].filter(Boolean).join(" · ");
-  const label = [asset.name, asset.type.label, asset.district, buildings > 0 ? m.cards.withBuildings(buildings) : null, opened ? m.cards.discovered : m.cards.undiscovered]
+  const label = [asset.name, asset.type.label, asset.district, buildings > 0 ? m.cards.withBuildings(buildings) : null, opened ? m.cards.discovered : m.cards.undiscovered, where]
     .filter(Boolean)
     .join(", ");
   // Swiping and the map choose an asset; a screen reader chooses it here, and unlocks it as the map's button does.

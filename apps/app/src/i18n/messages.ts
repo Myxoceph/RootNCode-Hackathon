@@ -533,6 +533,12 @@ const tr = {
     opensCard: "Eserin kartını açar",
     lockedTile: "Kilitli: ilişkisi, bu eserin kilidi açılınca görünür.",
   },
+  mapWords: {
+    directions: ["kuzey", "kuzeydoğu", "doğu", "güneydoğu", "güney", "güneybatı", "batı", "kuzeybatı"] as string[],
+    whereFrom: (name: string, distance: string, direction: string) => `${name} ile arası ${distance}, ${direction} yönünde`,
+    bond: (name: string, kinds: string, where: string) => `${name}: ${kinds}, ${where} yönünde`,
+    bonds: (count: number, list: string) => `Haritada ${count} bağı var. ${list}.`,
+  },
   dossier: {
     title: "Eserin dosyası",
     titleOf: (name: string) => `${name}: Eserin dosyası`,
@@ -1623,6 +1629,12 @@ const en: Messages = {
     progress: (opened, total) => `${opened} / ${total} unlocked`,
     opensCard: "Opens the site's page",
     lockedTile: "Locked: the relation shows once this site is unlocked.",
+  },
+  mapWords: {
+    directions: ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"],
+    whereFrom: (name, distance, direction) => `${distance} ${direction} of ${name}`,
+    bond: (name, kinds, where) => `${name}: ${kinds}, ${where}`,
+    bonds: (count, list) => `${count === 1 ? "1 bond" : `${count} bonds`} on the map. ${list}.`,
   },
   dossier: {
     title: "Site dossier",
