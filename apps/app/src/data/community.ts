@@ -233,7 +233,8 @@ function errorFor(status: number, code: string | null, details: string[]): DataE
     case "TOO_FAR":
       return rejected(words.seal.tooFar);
     case "POSITION_REQUIRED":
-      return rejected(words.seal.position);
+      // The seal screen acts on the code: it fetches the position and sends again.
+      return new DataError("rejected", words.seal.position, details, code);
     case "UNKNOWN_MEDIA":
       return rejected(words.seal.unknownMedia);
     case "VISIT_LIMIT":
