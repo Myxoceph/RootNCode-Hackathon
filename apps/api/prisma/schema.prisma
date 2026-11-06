@@ -186,6 +186,7 @@ model asset_media {
   is_cover            Boolean       @default(false)
   subject             String?
   dossier_after       String?
+  panel_upload        Boolean       @default(false)
   focal_x             Float?        @db.Real
   focal_y             Float?        @db.Real
   caption_tr          String

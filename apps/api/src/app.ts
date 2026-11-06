@@ -14,6 +14,8 @@ import { assistantRoutes } from "./modules/assistant/assistant.routes.ts";
 import { createConversationsRepository } from "./modules/assistant/conversations.repository.ts";
 import { ALL_ASSET_STATUSES, createAssetsRepository, visibleStatuses, type AssetVisibility } from "./modules/assets/assets.repository.ts";
 import { createCommunityRepository } from "./modules/community/community.repository.ts";
+import { adminMediaRoutes } from "./modules/admin/media.routes.ts";
+import type { MediaStore } from "./modules/admin/media-store.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
 import { moderationRoutes } from "./modules/community/moderation.routes.ts";
 import { createPhotoUrls, type PhotoUrls } from "./modules/community/photo-urls.ts";
@@ -66,6 +68,8 @@ export interface BuildAppOptions {
   voice?: VoiceClient | null;
   /** The vision model behind Taşa Sor (`POST /vision/ask`); without it the route answers 503. */
   vision?: VisionClient | null;
+  /** Where photos uploaded from the panel go; without one `POST /admin/assets/:id/media` answers 503. */
+  mediaStore?: MediaStore | null;
   /** `POST /assets/:id/visit/unlock` for the app's "Kilidi aç" (see achievementsRoutes); off by default. */
   demoUnlock?: boolean;
 }
@@ -95,6 +99,7 @@ export function buildApp({
   vision = null,
   photoUrls = createPhotoUrls(),
   demoUnlock = false,
+  mediaStore = null,
 }: BuildAppOptions): FastifyInstance {
   const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
 
@@ -122,7 +127,9 @@ export function buildApp({
   const communityRepository = createCommunityRepository(prisma);
   app.register(communityRoutes, { repository: communityRepository, visibility: assetVisibility, photoUrls });
   app.register(moderationRoutes, { repository: communityRepository, photoUrls });
-  app.register(adminRoutes, { repository: createAdminRepository(prisma), community: communityRepository });
+  const adminRepository = createAdminRepository(prisma);
+  app.register(adminRoutes, { repository: adminRepository, community: communityRepository });
+  app.register(adminMediaRoutes, { repository: adminRepository, community: communityRepository, store: mediaStore, mediaBaseUrl });
   app.register(adminAssetPreviewRoutes, {
     repository: createAssetsRepository(prisma, assetVisibility, ALL_ASSET_STATUSES),
     sounds: soundsRepository,

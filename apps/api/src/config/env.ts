@@ -70,6 +70,12 @@ const EnvSchema = z.object({
   // OpenTripPlanner serving the Konya graph (deploy/otp/prepare.sh), e.g. http://otp:8080; empty turns
   // transit directions off and GET /transit/plan answers 503.
   OTP_URL: z.union([z.literal(""), z.url()]).default(""),
+  // Photos uploaded from the panel: an R2 token allowed to write only this bucket. Any of them empty
+  // turns uploads off; POST /admin/assets/:id/media then answers 503. Never logged.
+  MEDIA_S3_ENDPOINT: z.union([z.literal(""), z.url()]).default(""),
+  MEDIA_BUCKET: z.string().default(""),
+  MEDIA_S3_ACCESS_KEY_ID: z.string().default(""),
+  MEDIA_S3_SECRET_ACCESS_KEY: z.string().default(""),
   // The app's "Kilidi aç": POST /assets/:id/visit/unlock records a visit without position or photo,
   // while Ziyaret Mührü is tried away from the sites. On until the app requires the photo; then "false".
   DEMO_UNLOCK: z.enum(["true", "false"]).default("true").transform((value) => value === "true"),
