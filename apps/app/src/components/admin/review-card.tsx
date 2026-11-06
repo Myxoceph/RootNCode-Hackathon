@@ -14,12 +14,12 @@ export const KIND: Record<ModerationItem["kind"], { label: string; tone: Tone; i
   tip: { label: "İpucu", tone: "blue", icon: "bulb-outline" },
   memory: { label: "Anı", tone: "gold", icon: "time-outline" },
   correction: { label: "Düzeltme", tone: "red", icon: "create-outline" },
-  photo: { label: "Fotoğraf", tone: "green", icon: "image-outline" },
+  photo: { label: "Fotoğraf", tone: "rose", icon: "image-outline" },
 };
 
 const STATUS: Record<ModerationItem["status"], { label: string; tone: Tone }> = {
   pending: { label: "Bekliyor", tone: "gold" },
-  approved: { label: "Onaylandı", tone: "green" },
+  approved: { label: "Onaylandı", tone: "rose" },
   rejected: { label: "Reddedildi", tone: "red" },
 };
 

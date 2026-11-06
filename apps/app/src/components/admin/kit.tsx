@@ -48,13 +48,13 @@ export function useAdminColors() {
     goldMark: dark ? palette.altin300 : palette.altin600,
     goldSoft: dark ? "rgba(221,181,92,0.14)" : "rgba(156,116,36,0.10)",
     blueSoft: dark ? "rgba(127,163,241,0.14)" : "rgba(30,74,160,0.08)",
-    greenSoft: dark ? "rgba(79,198,190,0.14)" : "rgba(10,122,118,0.09)",
+    roseSoft: dark ? "rgba(234,178,188,0.14)" : "rgba(160,85,104,0.09)",
     redSoft: dark ? "rgba(238,123,100,0.14)" : "rgba(190,58,38,0.08)",
     greySoft: dark ? "rgba(150,162,182,0.14)" : "rgba(86,97,116,0.09)",
   };
 }
 
-export type Tone = "gold" | "blue" | "green" | "red" | "grey";
+export type Tone = "gold" | "blue" | "rose" | "red" | "grey";
 
 function toneColors(tone: Tone, a: ReturnType<typeof useAdminColors>) {
   switch (tone) {
@@ -62,8 +62,8 @@ function toneColors(tone: Tone, a: ReturnType<typeof useAdminColors>) {
       return { fg: a.gold, bg: a.goldSoft };
     case "blue":
       return { fg: a.primary, bg: a.blueSoft };
-    case "green":
-      return { fg: a.success, bg: a.greenSoft };
+    case "rose":
+      return { fg: a.success, bg: a.roseSoft };
     case "red":
       return { fg: a.warning, bg: a.redSoft };
     case "grey":
@@ -112,7 +112,7 @@ export function Button({
     secondary: { bg: a.well, fg: a.text, border: a.line, hover: a.hover },
     ghost: { bg: "transparent", fg: a.textSecondary, border: "transparent", hover: a.hover },
     danger: { bg: "transparent", fg: a.warning, border: a.dark ? "rgba(238,123,100,0.35)" : "rgba(190,58,38,0.3)", hover: a.redSoft },
-    success: { bg: "transparent", fg: a.success, border: a.dark ? "rgba(79,198,190,0.35)" : "rgba(10,122,118,0.3)", hover: a.greenSoft },
+    success: { bg: "transparent", fg: a.success, border: a.dark ? "rgba(234,178,188,0.35)" : "rgba(160,85,104,0.3)", hover: a.roseSoft },
   }[kind];
   const off = disabled || busy;
   return (
@@ -705,7 +705,7 @@ export function Toast({ toast }: { toast: { text: string; tone: "ok" | "error" }
   const ok = toast.tone === "ok";
   return (
     <View accessibilityLiveRegion="polite" style={[kit.toast, { backgroundColor: a.dark ? palette.gece800 : palette.gece900 }]}>
-      <Ionicons name={ok ? "checkmark-circle" : "alert-circle"} size={18} color={ok ? palette.firuze300 : palette.mercan300} aria-hidden />
+      <Ionicons name={ok ? "checkmark-circle" : "alert-circle"} size={18} color={ok ? palette.gulkurusu300 : palette.mercan300} aria-hidden />
       <Text colorValue={palette.gece50} style={{ fontSize: 14, flexShrink: 1 }}>
         {toast.text}
       </Text>

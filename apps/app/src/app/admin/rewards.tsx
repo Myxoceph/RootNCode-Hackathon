@@ -41,7 +41,7 @@ export default function Rewards() {
 const KINDS: Record<RewardKind, { label: string; icon: IconName; tone: Tone }> = {
   merch: { label: "Hediyelik", icon: "bag-handle-outline", tone: "gold" },
   museum: { label: "Müze", icon: "business-outline", tone: "blue" },
-  discount: { label: "İndirim", icon: "pricetag-outline", tone: "green" },
+  discount: { label: "İndirim", icon: "pricetag-outline", tone: "rose" },
   experience: { label: "Deneyim", icon: "sparkles-outline", tone: "red" },
 };
 

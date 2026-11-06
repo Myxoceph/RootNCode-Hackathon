@@ -808,7 +808,7 @@ export const STEPS: Step[] = [
               <ChoiceField label="Engelli tuvaleti var mı?" value={access.toilet} options={[...A11Y]} onChange={(toilet) => setAccess({ toilet })} />
             </Box>
           </View>
-          <View style={[styles.verified, { borderColor: access.verified ? a.success : a.line, backgroundColor: access.verified ? a.greenSoft : "transparent" }]}>
+          <View style={[styles.verified, { borderColor: access.verified ? a.success : a.line, backgroundColor: access.verified ? a.roseSoft : "transparent" }]}>
             <Toggle label="Bunları yerinde gördüm" value={access.verified} onChange={(verified) => setAccess({ verified })} />
           </View>
         </>
@@ -1428,7 +1428,7 @@ function Coordinates({ value, onChange }: { value: R["coordinates"]; onChange: (
       note="Haritadaki iğne ve son sayfadaki “Yol tarifi al” düğmesi buna göre çıkar."
       status={
         value ? (
-          <View style={[styles.status, { backgroundColor: a.greenSoft }]}>
+          <View style={[styles.status, { backgroundColor: a.roseSoft }]}>
             <Ionicons name="checkmark-circle" size={14} color={a.success} aria-hidden />
             <Text colorValue={a.success} style={styles.statusText}>
               Yol tarifi açık

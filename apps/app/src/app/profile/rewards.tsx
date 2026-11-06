@@ -20,6 +20,7 @@ import { useRouter } from "expo-router";
 import Head from "expo-router/head";
 import {
   useEffect,
+  useId,
   useMemo,
   useRef,
   useState,
@@ -28,11 +29,14 @@ import {
 import {
   ActivityIndicator,
   Animated,
+  Easing,
+  Image,
   Modal,
   Platform,
   Pressable,
   ScrollView,
   StyleSheet,
+  useWindowDimensions,
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -40,9 +44,6 @@ import Svg, {
   Circle,
   Defs,
   LinearGradient,
-  Path,
-  Pattern,
-  RadialGradient,
   Rect,
   Stop,
 } from "react-native-svg";
@@ -57,7 +58,12 @@ import {
 import { announce } from "@/lib/announce";
 import { bottomInset } from "@/lib/bottom-inset";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
+import {
+  useWideWeb,
+  WIDE_PAGE,
+  WIDE_PAGE_PADDING,
+  wideColumn,
+} from "@/lib/use-wide-web";
 import { casing, useLang } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -83,8 +89,8 @@ const KINDS: Record<
   discount: {
     label: "İndirim",
     icon: "pricetag-outline",
-    light: palette.firuze700,
-    dark: palette.firuze300,
+    light: palette.gulkurusu700,
+    dark: palette.gulkurusu300,
   },
   experience: {
     label: "Deneyim",
@@ -92,13 +98,6 @@ const KINDS: Record<
     light: palette.mercan700,
     dark: palette.mercan300,
   },
-};
-
-/** The Gezgin Kartı's own colors: a navy card in both themes, like a card in the hand. */
-const card = {
-  from: "#0C1A3A",
-  to: "#16306A",
-  line: "rgba(231, 194, 106, 0.45)",
 };
 
 /** What stands between the visitor and a reward, if anything. */
@@ -171,8 +170,15 @@ export default function MyRewardsScreen() {
         <title>Ödüllerim · Vagabonds</title>
       </Head>
 
-      <WalletCard wallet={walletData} holder={user?.nickname ?? null} />
+      <WalletCard
+        wallet={walletData}
+        holder={user?.nickname ?? null}
+        createdAt={user?.username ? user.createdAt : null}
+      />
       {user !== undefined && !account && <AccountNote />}
+      {items.length > 0 && (
+        <Featured items={items} wallet={walletData} onOpen={setOpen} />
+      )}
 
       {rewards.status === "loading" && (
         <ActivityIndicator
@@ -203,9 +209,6 @@ export default function MyRewardsScreen() {
             <Text variant="heading" headingLevel={2}>
               Ödüller
             </Text>
-            <Text variant="caption" color="textSecondary">
-              Rozetlerle kazandığın puanı ortak kurumların ödüllerine harca.
-            </Text>
           </View>
           {kinds.length > 1 && (
             <Kinds value={filter} onChange={setFilter} kinds={kinds} />
@@ -229,10 +232,6 @@ export default function MyRewardsScreen() {
           <View style={styles.sectionHead}>
             <Text variant="heading" headingLevel={2}>
               Kodların
-            </Text>
-            <Text variant="caption" color="textSecondary">
-              Kodu şubede, gişede ya da kafede göster; her kod bir kez
-              kullanılır.
             </Text>
           </View>
           <View style={styles.tickets}>
@@ -265,118 +264,192 @@ export default function MyRewardsScreen() {
 }
 
 /** The Gezgin Kartı: the balance to spend, what was earned and spent, and the proven visits. */
+/** "11/26": the month the account was opened, where a bank card has its expiry. */
+function memberSince(createdAt: string | null): string | null {
+  if (!createdAt) return null;
+  const date = new Date(createdAt);
+  if (Number.isNaN(date.getTime())) return null;
+  return `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getFullYear()).slice(2)}`;
+}
+
+/** The night of the reward tiles. */
+const HERO_BG = "#0A1126";
+
+/** Vakıf Katılım's VKart, whose rewards these are. */
+const VK_CARD = require("../../../assets/images/rewards/vk-kart.jpg") as number;
+/** A bank card's own proportions (85.6 × 54 mm); the picture (1200×692) came a little flattened, so it is stretched to them. */
+const VK_CARD_RATIO = 85.6 / 54;
+
+/**
+ * The Gezgin Kartı is Vakıf Katılım's VKart: their card as it is, with the holder, the month they
+ * joined and the spendable points written on its empty lower band. A light sweeps across it when the
+ * page opens and again at a touch; under it, what was earned, spent and sealed.
+ */
 function WalletCard({
   wallet,
   holder,
+  createdAt,
 }: {
   wallet: WalletResponse | null;
   holder: string | null;
+  createdAt: string | null;
 }) {
-  const [size, setSize] = useState({ width: 0, height: 0 });
+  const reduced = useReducedMotion();
+  const shineId = useSvgKey("shine");
   const balance = wallet?.balance ?? 0;
+  const since = memberSince(createdAt);
+  const [width, setWidth] = useState(0);
+  const shine = useRef(new Animated.Value(0)).current;
+  const sweep = () => {
+    if (reduced) return;
+    shine.setValue(0);
+    Animated.timing(shine, {
+      toValue: 1,
+      duration: 1100,
+      easing: Easing.inOut(Easing.cubic),
+      useNativeDriver: true,
+    }).start();
+  };
+  const wide = useWideWeb();
+  const { colors: c, scheme } = useTheme();
+  const measured = width > 0;
+  useEffect(() => {
+    // Once the card has its width; a touch replays it.
+    if (measured) sweep();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [measured]);
   return (
-    <View
-      style={styles.wallet}
-      onLayout={(e) => setSize(e.nativeEvent.layout)}
-      accessible
-      accessibilityLabel={`Gezgin Kartı: ${balance} puan harcanabilir. ${wallet?.earned ?? 0} kazanılan, ${wallet?.spent ?? 0} harcanan, ${wallet?.provenVisits ?? 0} kanıtlanmış ziyaret`}
-    >
-      {size.width > 0 && (
-        <Svg
-          key={`${size.width}x${size.height}`}
-          width={size.width}
-          height={size.height}
-          style={StyleSheet.absoluteFill}
-          aria-hidden
+    <View style={[styles.walletBlock, wide && styles.walletBlockWide]}>
+      <View style={wide ? styles.walletCardWide : undefined}>
+        <Pressable
+          onPress={sweep}
+          style={({ pressed }) => [
+            styles.wallet,
+            pressed && !reduced && styles.walletPressed,
+          ]}
+          onLayout={(e) => setWidth(e.nativeEvent.layout.width)}
+          accessible
+          accessibilityRole="image"
+          accessibilityLabel={`Vakıf Katılım VKart, Gezgin Kartı${holder ? `, ${holder}` : ""}: ${balance} puan harcanabilir`}
         >
-          <Defs>
-            <LinearGradient id="wallet-bg" x1="0" y1="0" x2="1" y2="1">
-              <Stop offset="0" stopColor={card.from} />
-              <Stop offset="1" stopColor={card.to} />
-            </LinearGradient>
-            <RadialGradient id="wallet-glow" cx="92%" cy="0%" r="75%">
-              <Stop
-                offset="0"
-                stopColor={palette.altin200}
-                stopOpacity={0.32}
-              />
-              <Stop offset="1" stopColor={palette.altin200} stopOpacity={0} />
-            </RadialGradient>
-            {/* The eight-pointed star of the map, as a faint tiling. */}
-            <Pattern
-              id="wallet-stars"
-              width={36}
-              height={36}
-              patternUnits="userSpaceOnUse"
+          <Image
+            source={VK_CARD}
+            style={styles.walletImage}
+            resizeMode="stretch"
+            aria-hidden
+          />
+          {measured && !reduced && (
+            <Animated.View
+              pointerEvents="none"
+              aria-hidden
+              style={[
+                styles.shine,
+                {
+                  width: width * 0.35,
+                  transform: [
+                    {
+                      translateX: shine.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [-width * 0.6, width * 1.25],
+                      }),
+                    },
+                    { rotate: "18deg" },
+                  ],
+                },
+              ]}
             >
-              <Path
-                d={eightPointStar(18, 18, 7)}
-                fill="none"
-                stroke="#FFFFFF"
-                strokeOpacity={0.06}
-                strokeWidth={1}
-              />
-            </Pattern>
-          </Defs>
-          <Rect
-            width={size.width}
-            height={size.height}
-            fill="url(#wallet-bg)"
-          />
-          <Rect
-            width={size.width}
-            height={size.height}
-            fill="url(#wallet-stars)"
-          />
-          <Rect
-            width={size.width}
-            height={size.height}
-            fill="url(#wallet-glow)"
-          />
-          <Circle
-            cx={size.width - 40}
-            cy={size.height - 30}
-            r={70}
-            fill="none"
-            stroke={palette.altin200}
-            strokeOpacity={0.14}
-            strokeWidth={1}
-          />
-          <Circle
-            cx={size.width - 40}
-            cy={size.height - 30}
-            r={46}
-            fill="none"
-            stroke={palette.altin200}
-            strokeOpacity={0.1}
-            strokeWidth={1}
-          />
-        </Svg>
-      )}
-
-      <View style={styles.walletTop}>
-        <Text colorValue={palette.altin200} style={styles.overline}>
-          VAGABONDS · GEZGİN KARTI
-        </Text>
-        <Ionicons name="sparkles" size={18} color={palette.altin200} />
+              <Svg width="100%" height="100%">
+                <Defs>
+                  <LinearGradient id={shineId} x1="0" y1="0" x2="1" y2="0">
+                    <Stop offset="0" stopColor="#FFFFFF" stopOpacity={0} />
+                    <Stop offset="0.5" stopColor="#FFFFFF" stopOpacity={0.32} />
+                    <Stop offset="1" stopColor="#FFFFFF" stopOpacity={0} />
+                  </LinearGradient>
+                </Defs>
+                <Rect width="100%" height="100%" fill={`url(#${shineId})`} />
+              </Svg>
+            </Animated.View>
+          )}
+          <View style={styles.walletBottom}>
+            <View style={styles.holderBlock}>
+              {since && (
+                <Text colorValue="rgba(255,255,255,0.8)" style={styles.since}>
+                  ÜYE {since}
+                </Text>
+              )}
+              <Text
+                colorValue="#FFFFFF"
+                style={styles.holder}
+                numberOfLines={1}
+              >
+                {(holder ?? "GEZGİN").toLocaleUpperCase(casing())}
+              </Text>
+            </View>
+            <View style={styles.balanceBlock}>
+              <Text colorValue="#FFFFFF" style={styles.balance}>
+                {balance.toLocaleString("tr-TR")}
+              </Text>
+              <Text colorValue="#FFFFFF" style={styles.balanceUnit}>
+                puan
+              </Text>
+            </View>
+          </View>
+        </Pressable>
       </View>
 
-      <View>
-        <Text colorValue={palette.gece300} style={styles.walletLabel}>
-          Harcanabilir puan
-        </Text>
-        <View style={styles.balanceRow}>
-          <Text colorValue={palette.gece50} style={styles.balance}>
-            {balance.toLocaleString("tr-TR")}
+      {wide ? (
+        <View style={styles.summary}>
+          <Text
+            colorValue={scheme === "dark" ? palette.altin300 : palette.altin700}
+            style={styles.summaryOverline}
+          >
+            GEZGİN KARTI
           </Text>
-          <Text colorValue={palette.altin200} style={styles.balanceUnit}>
-            puan
-          </Text>
+          <View style={styles.summaryBalance}>
+            <Text colorValue={c.text} style={styles.summaryValue}>
+              {balance.toLocaleString("tr-TR")}
+            </Text>
+            <Text colorValue={c.textSecondary} style={styles.summaryUnit}>
+              puan harcanabilir
+            </Text>
+          </View>
+          <View style={[styles.summaryRows, { borderColor: c.border }]}>
+            {[
+              { label: "Kazanılan", value: wallet?.earned ?? 0 },
+              { label: "Harcanan", value: wallet?.spent ?? 0 },
+              { label: "Mühürlü ziyaret", value: wallet?.provenVisits ?? 0 },
+            ].map((row, i) => (
+              <View
+                key={row.label}
+                style={[
+                  styles.summaryRow,
+                  i > 0 && {
+                    borderTopWidth: StyleSheet.hairlineWidth,
+                    borderColor: c.border,
+                  },
+                ]}
+                accessible
+                accessibilityLabel={`${row.label}: ${row.value}`}
+              >
+                <Text
+                  colorValue={c.textSecondary}
+                  style={styles.summaryRowLabel}
+                >
+                  {row.label}
+                </Text>
+                <Text colorValue={c.text} style={styles.summaryRowValue}>
+                  {row.value.toLocaleString("tr-TR")}
+                </Text>
+              </View>
+            ))}
+          </View>
         </View>
-      </View>
-
-      <View style={styles.walletBottom}>
-        <View style={styles.walletStats}>
+      ) : (
+        <View
+          style={styles.walletStats}
+          accessible
+          accessibilityLabel={`${wallet?.earned ?? 0} kazanılan, ${wallet?.spent ?? 0} harcanan, ${wallet?.provenVisits ?? 0} mühürlü ziyaret`}
+        >
           <WalletStat value={wallet?.earned ?? 0} label="kazanılan" />
           <WalletStat value={wallet?.spent ?? 0} label="harcanan" />
           <WalletStat
@@ -384,41 +457,226 @@ function WalletCard({
             label="mühürlü ziyaret"
           />
         </View>
-        {holder && (
-          <Text
-            colorValue={palette.gece300}
-            style={styles.holder}
-            numberOfLines={1}
-          >
-            {holder.toLocaleUpperCase(casing())}
-          </Text>
-        )}
-      </View>
+      )}
     </View>
   );
 }
 
+/** One figure under the card, as a small pill. */
 function WalletStat({ value, label }: { value: number; label: string }) {
+  const { colors: c } = useTheme();
   return (
-    <View>
-      <Text colorValue={palette.gece50} style={styles.walletStatValue}>
+    <View
+      style={[
+        styles.walletStat,
+        { backgroundColor: c.surface, borderColor: c.border },
+      ]}
+    >
+      <Text colorValue={c.text} style={styles.walletStatValue}>
         {value.toLocaleString("tr-TR")}
       </Text>
-      <Text colorValue={palette.gece300} style={styles.walletStatLabel}>
+      <Text colorValue={c.textSecondary} style={styles.walletStatLabel}>
         {label}
       </Text>
     </View>
   );
 }
 
-/** An eight-pointed star (two squares, one turned), centered on (x, y). */
-function eightPointStar(x: number, y: number, r: number) {
-  const pts = Array.from({ length: 16 }, (_, i) => {
-    const angle = (Math.PI / 8) * i - Math.PI / 2;
-    const d = i % 2 === 0 ? r : r * 0.62;
-    return `${(x + d * Math.cos(angle)).toFixed(2)} ${(y + d * Math.sin(angle)).toFixed(2)}`;
-  });
-  return `M${pts.join(" L")} Z`;
+/** An SVG id of its own: on the web an earlier page stays in the document, hidden, with the same ids. */
+function useSvgKey(name: string): string {
+  return `${name}-${useId().replace(/[^a-zA-Z0-9_-]/g, "")}`;
+}
+
+/** The rewards nearest to hand: those ready first, then by how much of the way is done. */
+function nearest(items: Reward[], wallet: WalletResponse | null): Reward[] {
+  const balance = wallet?.balance ?? 0;
+  return items
+    .filter((r) => r.stock !== 0 && blocker(r, wallet).kind !== "visits")
+    .sort((x, y) => {
+      const rx = blocker(x, wallet).kind === null ? 1 : 0;
+      const ry = blocker(y, wallet).kind === null ? 1 : 0;
+      if (rx !== ry) return ry - rx;
+      return balance / y.costPoints - balance / x.costPoints;
+    })
+    .slice(0, 5);
+}
+
+/** Hedefine yakın: the nearest rewards as large night tiles that slide sideways. */
+function Featured({
+  items,
+  wallet,
+  onOpen,
+}: {
+  items: Reward[];
+  wallet: WalletResponse | null;
+  onOpen: (reward: Reward) => void;
+}) {
+  const { width: screen } = useWindowDimensions();
+  const wide = useWideWeb();
+  const picks = nearest(items, wallet).slice(0, wide ? 3 : 5);
+  if (picks.length === 0) return null;
+  const column = Math.min(screen, WIDE_PAGE) - WIDE_PAGE_PADDING * 2;
+  const tile = wide
+    ? Math.floor((column - spacing.md * 2) / 3)
+    : Math.min(300, Math.round(screen * 0.72));
+  return (
+    <View style={styles.section}>
+      <View style={styles.sectionHead}>
+        <Text variant="heading" headingLevel={2}>
+          Hedefine yakın
+        </Text>
+      </View>
+      <ScrollView
+        horizontal
+        scrollEnabled={!wide}
+        showsHorizontalScrollIndicator={false}
+        snapToInterval={tile + spacing.md}
+        decelerationRate="fast"
+        style={!wide && styles.featuredScroller}
+        contentContainerStyle={[styles.featured, wide && styles.featuredWide]}
+        accessibilityRole="list"
+      >
+        {picks.map((reward, i) => (
+          <FeaturedTile
+            key={reward.code}
+            reward={reward}
+            wallet={wallet}
+            width={tile}
+            index={i}
+            onOpen={onOpen}
+          />
+        ))}
+      </ScrollView>
+    </View>
+  );
+}
+
+function FeaturedTile({
+  reward,
+  wallet,
+  width,
+  index,
+  onOpen,
+}: {
+  reward: Reward;
+  wallet: WalletResponse | null;
+  width: number;
+  index: number;
+  onOpen: (reward: Reward) => void;
+}) {
+  const reduced = useReducedMotion();
+  const tileId = useSvgKey("tile");
+  const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
+  const look = KINDS[reward.kind];
+  const block = blocker(reward, wallet);
+  const balance = wallet?.balance ?? 0;
+  const share = Math.min(1, balance / reward.costPoints);
+  const ready = block.kind === null;
+  const height = 196;
+
+  useEffect(() => {
+    if (reduced) return;
+    Animated.spring(enter, {
+      toValue: 1,
+      delay: 120 + index * 90,
+      friction: 8,
+      tension: 60,
+      useNativeDriver: true,
+    }).start();
+  }, [enter, index, reduced]);
+
+  return (
+    <Animated.View
+      role="listitem"
+      style={{
+        opacity: enter,
+        transform: [
+          {
+            translateX: enter.interpolate({
+              inputRange: [0, 1],
+              outputRange: [40, 0],
+            }),
+          },
+        ],
+      }}
+    >
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={`${reward.title}, ${reward.partner}, ${reward.costPoints} puan, ${ready ? "alabilirsin" : `${block.needed} puan daha`}`}
+        accessibilityHint="Ödülün ayrıntısını açar"
+        onPress={() => onOpen(reward)}
+        style={({ pressed }) => [
+          styles.tile,
+          { width, height },
+          pressed && styles.tilePressed,
+        ]}
+      >
+        <Svg
+          width={width}
+          height={height}
+          style={StyleSheet.absoluteFill}
+          aria-hidden
+        >
+          <Defs>
+            <LinearGradient id={tileId} x1="0" y1="0" x2="1" y2="1">
+              <Stop offset="0" stopColor={look.light} stopOpacity={0.95} />
+              <Stop offset="1" stopColor={HERO_BG} stopOpacity={1} />
+            </LinearGradient>
+          </Defs>
+          <Rect width={width} height={height} fill={HERO_BG} />
+          <Rect width={width} height={height} fill={`url(#${tileId})`} />
+        </Svg>
+        <Ionicons
+          name={look.icon.replace("-outline", "") as IconName}
+          size={150}
+          color="#FFFFFF"
+          style={styles.tileMark}
+          aria-hidden
+        />
+
+        <View style={styles.tileTop}>
+          <Text colorValue="rgba(255,255,255,0.72)" style={styles.tileKind}>
+            {look.label.toLocaleUpperCase(casing())}
+          </Text>
+          {ready && (
+            <View style={styles.tileReady}>
+              <Text colorValue={palette.gece950} style={styles.tileReadyText}>
+                Alabilirsin
+              </Text>
+            </View>
+          )}
+        </View>
+
+        <View style={styles.tileBottom}>
+          <Text colorValue="#FFFFFF" style={styles.tileTitle} numberOfLines={2}>
+            {reward.title}
+          </Text>
+          <Text
+            colorValue="rgba(255,255,255,0.72)"
+            style={styles.tilePartner}
+            numberOfLines={1}
+          >
+            {reward.partner}
+          </Text>
+          <View style={styles.tileFoot}>
+            <Text colorValue={palette.altin200} style={styles.tileCost}>
+              {`✦ ${reward.costPoints}`}
+            </Text>
+            {!ready && (
+              <View style={styles.tileTrack} aria-hidden>
+                <View style={[styles.tileFill, { width: `${share * 100}%` }]} />
+              </View>
+            )}
+            {!ready && (
+              <Text colorValue="rgba(255,255,255,0.72)" style={styles.tileLeft}>
+                {`${block.needed} kaldı`}
+              </Text>
+            )}
+          </View>
+        </View>
+      </Pressable>
+    </Animated.View>
+  );
 }
 
 /** An anonymous visitor earns points but cannot take codes; an account keeps the points. */
@@ -646,7 +904,7 @@ function RewardCard({
               style={[
                 styles.ready,
                 {
-                  backgroundColor: `${scheme === "dark" ? palette.firuze300 : palette.firuze700}1F`,
+                  backgroundColor: `${scheme === "dark" ? palette.gulkurusu300 : palette.gulkurusu700}1F`,
                 },
               ]}
             >
@@ -1047,77 +1305,278 @@ const styles = StyleSheet.create({
   error: {
     padding: spacing.md,
   },
-  wallet: {
-    minHeight: 210,
-    padding: spacing.xl,
-    justifyContent: "space-between",
+  walletBlock: {
+    width: "100%",
+    maxWidth: 440,
+    alignSelf: "center",
     gap: spacing.lg,
-    borderRadius: 26,
-    borderWidth: 1,
-    borderColor: card.line,
-    backgroundColor: card.from,
+  },
+  wallet: {
+    width: "100%",
+    aspectRatio: VK_CARD_RATIO,
+    borderRadius: 20,
     overflow: "hidden",
+    // The card lifts off the page.
+    ...Platform.select({
+      ios: {
+        shadowColor: "#0A1E5A",
+        shadowOpacity: 0.35,
+        shadowRadius: 18,
+        shadowOffset: { width: 0, height: 12 },
+      },
+      android: { elevation: 10 },
+      default: { boxShadow: "0 16px 32px rgba(10, 30, 90, 0.28)" },
+    }),
   },
-  walletTop: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+  walletPressed: {
+    transform: [{ scale: 0.98 }],
   },
-  overline: {
-    fontFamily: fontFamily.monoMedium,
-    fontSize: 11,
-    lineHeight: 15,
-    letterSpacing: 2.5,
+  shine: {
+    position: "absolute",
+    top: "-40%",
+    bottom: "-40%",
+    left: 0,
   },
-  walletLabel: {
-    fontFamily: fontFamily.sansMedium,
-    fontSize: 13,
-    lineHeight: 18,
+  // Sized outright: on Android an absolute-fill image grows to its own pixel size.
+  walletImage: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
   },
-  balanceRow: {
-    flexDirection: "row",
-    alignItems: "baseline",
-    gap: spacing.sm,
-  },
-  // Sans figures: the display face draws its zero as a ring.
-  balance: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 52,
-    lineHeight: 60,
-    letterSpacing: -1,
-  },
-  balanceUnit: {
-    fontFamily: fontFamily.sansSemiBold,
-    fontSize: 18,
-    lineHeight: 24,
-  },
+  // The lower band under the printed number, inside the card's edge.
   walletBottom: {
+    position: "absolute",
+    left: "11%",
+    right: "6%",
+    bottom: "7%",
     flexDirection: "row",
     alignItems: "flex-end",
     justifyContent: "space-between",
     gap: spacing.md,
   },
+  holderBlock: {
+    flexShrink: 1,
+    gap: 2,
+  },
+  since: {
+    fontFamily: fontFamily.mono,
+    fontSize: 10,
+    lineHeight: 13,
+    letterSpacing: 1,
+  },
+  holder: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 13,
+    lineHeight: 17,
+    letterSpacing: 1.5,
+    textShadowColor: "rgba(0, 20, 80, 0.45)",
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 3,
+  },
+  balanceBlock: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    gap: 4,
+  },
+  // Sans figures: the display face draws its zero as a ring.
+  balance: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 30,
+    lineHeight: 34,
+    letterSpacing: -0.5,
+    textShadowColor: "rgba(0, 20, 80, 0.45)",
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 3,
+  },
+  balanceUnit: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 14,
+    lineHeight: 18,
+    textShadowColor: "rgba(0, 20, 80, 0.45)",
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 3,
+  },
   walletStats: {
     flexDirection: "row",
-    gap: spacing.lg,
-    flexShrink: 1,
+    justifyContent: "center",
+    flexWrap: "wrap",
+    gap: spacing.sm,
   },
-  walletStatValue: {
+  walletBlockWide: {
+    maxWidth: "100%",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xxl,
+  },
+  walletCardWide: {
+    width: 460,
+  },
+  summary: {
+    flex: 1,
+    gap: spacing.md,
+  },
+  summaryOverline: {
+    fontFamily: fontFamily.monoMedium,
+    fontSize: 11,
+    lineHeight: 15,
+    letterSpacing: 2.5,
+  },
+  summaryBalance: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    gap: spacing.sm,
+  },
+  // Sans figures: the display face draws its zero as a ring.
+  summaryValue: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 64,
+    lineHeight: 72,
+    letterSpacing: -1.5,
+  },
+  summaryUnit: {
+    fontFamily: fontFamily.sansMedium,
+    fontSize: 16,
+    lineHeight: 22,
+  },
+  summaryRows: {
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  summaryRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingVertical: spacing.md,
+  },
+  summaryRowLabel: {
+    fontFamily: fontFamily.sans,
+    fontSize: 15,
+    lineHeight: 20,
+  },
+  summaryRowValue: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 15,
+    lineHeight: 20,
+  },
+  featuredWide: {
+    paddingHorizontal: 0,
+  },
+  featuredScroller: {
+    marginHorizontal: -spacing.lg,
+  },
+  featured: {
+    gap: spacing.md,
+    paddingHorizontal: spacing.lg,
+    paddingBottom: spacing.xs,
+  },
+  tile: {
+    borderRadius: 26,
+    overflow: "hidden",
+    padding: spacing.lg,
+    justifyContent: "space-between",
+  },
+  tilePressed: {
+    transform: [{ scale: 0.97 }],
+  },
+  tileMark: {
+    position: "absolute",
+    right: -28,
+    bottom: -30,
+    opacity: 0.1,
+    transform: [{ rotate: "-12deg" }],
+  },
+  tileTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  tileKind: {
+    fontFamily: fontFamily.monoMedium,
+    fontSize: 10,
+    lineHeight: 14,
+    letterSpacing: 2,
+  },
+  tileReady: {
+    paddingHorizontal: 10,
+    height: 24,
+    justifyContent: "center",
+    borderRadius: radius.full,
+    backgroundColor: palette.altin200,
+  },
+  tileReadyText: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 11,
+    lineHeight: 14,
+  },
+  tileBottom: {
+    gap: 2,
+  },
+  // Sans: the display face draws its zero as a ring ("%20").
+  tileTitle: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 20,
+    lineHeight: 26,
+    letterSpacing: -0.2,
+  },
+  tilePartner: {
+    fontFamily: fontFamily.sans,
+    fontSize: 12,
+    lineHeight: 16,
+  },
+  tileFoot: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    marginTop: spacing.sm,
+  },
+  tileCost: {
     fontFamily: fontFamily.sansBold,
     fontSize: 16,
     lineHeight: 22,
   },
-  walletStatLabel: {
-    fontFamily: fontFamily.sansMedium,
-    fontSize: 11,
-    lineHeight: 15,
+  tileTrack: {
+    flex: 1,
+    height: 4,
+    borderRadius: 2,
+    backgroundColor: "rgba(255,255,255,0.18)",
+    overflow: "hidden",
   },
-  holder: {
-    fontFamily: fontFamily.monoMedium,
+  tileFill: {
+    height: "100%",
+    borderRadius: 2,
+    backgroundColor: palette.altin200,
+  },
+  tileLeft: {
+    fontFamily: fontFamily.sansMedium,
     fontSize: 12,
     lineHeight: 16,
-    letterSpacing: 1.5,
-    flexShrink: 1,
+  },
+  walletStat: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    gap: 5,
+    paddingHorizontal: 12,
+    height: 32,
+    alignContent: "center",
+    paddingTop: 6,
+    borderRadius: radius.full,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
+  statDivider: {
+    width: 1,
+    alignSelf: "stretch",
+  },
+  walletStatValue: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 14,
+    lineHeight: 20,
+  },
+  walletStatLabel: {
+    fontFamily: fontFamily.sans,
+    fontSize: 13,
+    lineHeight: 18,
   },
   note: {
     flexDirection: "row",
@@ -1133,6 +1592,7 @@ const styles = StyleSheet.create({
   sectionHead: {
     gap: 2,
   },
+  /** A wide web page: four rewards a row. */
   kinds: {
     gap: spacing.sm,
   },

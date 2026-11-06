@@ -4,7 +4,7 @@ import { fontFamily, palette, radius, spacing, Text, useTheme } from "@vagabonds
 import { BlurView } from "expo-blur";
 import { useRouter } from "expo-router";
 import { memo, useEffect, useRef, useState } from "react";
-import { Animated, Easing, FlatList, Pressable, StyleSheet, useWindowDimensions, View, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
+import { Animated, Easing, FlatList, Platform, Pressable, StyleSheet, useWindowDimensions, View, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
 
 import { AssetImage } from "@/components/asset-image";
 import { isAssetUnlocked } from "@/lib/related-assets";
@@ -382,8 +382,22 @@ function CityAssetCard({ asset, buildings, width, chosen, opened, colors, onSele
 const GLASS_TINT = "rgba(38, 50, 74, 0.3)";
 const GLASS = "rgba(255, 255, 255, 0.1)";
 
+/**
+ * Android's BlurView does not blur the map (its GL surface cannot be captured), so it would only be a
+ * thin tint with the labels showing through. There the glass is a solid navy instead.
+ */
+const ANDROID_GLASS = "#161E32";
+
 /** Clear frosted glass: the night map shows through, blurred; the dark tint keeps white text readable over the fog. Its parent clips it to its corners. */
 export function GlassFill() {
+  if (Platform.OS === "android") {
+    return (
+      <>
+        <View style={[StyleSheet.absoluteFill, { backgroundColor: ANDROID_GLASS }]} />
+        <View style={[StyleSheet.absoluteFill, { backgroundColor: GLASS }]} />
+      </>
+    );
+  }
   return (
     <>
       <BlurView intensity={50} tint="systemUltraThinMaterialDark" style={StyleSheet.absoluteFill} />
