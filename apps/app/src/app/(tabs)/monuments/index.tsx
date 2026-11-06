@@ -246,8 +246,8 @@ export default function MonumentsScreen() {
         { paddingTop: insets.top + (wide ? spacing.lg : spacing.xl) },
       ]}
     >
-      {/* On the web the site's bar names the page: the title is there for screen readers only. */}
-      <View style={wide ? styles.visuallyHidden : styles.titleRow}>
+      {/* The tab bar and the site's bar name the page: the title is there for screen readers only. */}
+      <View style={styles.visuallyHidden}>
         <Text
           variant="title"
           headingLevel={1}

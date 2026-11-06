@@ -8,6 +8,7 @@ import { Animated, Easing, Platform, Pressable, StyleSheet, View, type LayoutCha
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
+import { visuallyHidden } from "@/lib/visually-hidden";
 import { featuredInscription, INSCRIPTION_ASSET } from "@/ar/inscription-targets";
 import { AssetImage } from "@/components/asset-image";
 import { useAsset } from "@/data";
@@ -86,7 +87,8 @@ export default function CameraScreen() {
         <title>{m.common.title(m.camera.title)}</title>
       </Head>
       <View style={styles.column}>
-        <Text variant="title" headingLevel={1}>
+        {/* The tab bar names the page: the title is for screen readers only. */}
+        <Text variant="title" headingLevel={1} style={visuallyHidden}>
           {m.camera.title}
         </Text>
         {modesIn(m).map((mode) => (
