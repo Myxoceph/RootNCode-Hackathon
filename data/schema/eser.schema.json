@@ -185,6 +185,11 @@
           "type": "string",
           "description": "Ne gösterdiği: exterior, portal, minber, calligraphy..."
         },
+        "dossier_after": {
+          "type": "string",
+          "pattern": "^[a-z_]+(:[a-z0-9_-]+)?$",
+          "description": "Eserin dosyasında altına geleceği yer: identity, timeline, people, waqf, inscriptions, facts, legends, accessibility, section:<konu id> ya da custom:<bölüm id>. Yoksa fotoğraf konulara kendiliğinden dağıtılır."
+        },
         "focal_point": {
           "type": "object",
           "description": "Kırpmada korunacak nokta (0-1 arası, sol üst = 0,0). Yoksa merkez.",

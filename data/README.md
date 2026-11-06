@@ -584,6 +584,7 @@ CREATE TABLE asset_media (
   sort_order        smallint NOT NULL DEFAULT 0,
   is_cover          boolean NOT NULL DEFAULT false,
   subject           text,                              -- exterior, portal, minber...
+  dossier_after     text,                              -- dosyadaki yeri: timeline, section:<id>, custom:<id>
   focal_x           real CHECK (focal_x BETWEEN 0 AND 1),
   focal_y           real CHECK (focal_y BETWEEN 0 AND 1),
   caption_tr        text NOT NULL,
@@ -868,7 +869,7 @@ Yeni ya da değişen bir fotoğraf olursa manifest güncellenir ve **veri ekibi 
 İçe aktarmada JSON'daki `media[]` kaydı (açıklama, alt metin, telif, kapak) ile manifest kaydı (hash, boyut, sürümler) **`(asset_id, media_key)` üzerinden birleştirilir**:
 - `media`: sha256 üzerinden upsert. `width`, `height`, `aspect_ratio`, `lqip`, `dominant_color`, `original_*` manifestten gelir; `captured_at`, `capture_lat` ve `capture_lng` manifestin `exif` alanından gelir. `credit`, `license`, `photographer` ve `source_id` JSON'dan gelir.
 - `media_variant`: manifestteki `variants[]` listesi.
-- `asset_media`: JSON'daki `id`, `order`, `is_cover`, `subject`, `focal_point`, `caption`, `alt`; arşiv fotoğrafıysa `year`, `year_approx`, `overlay`.
+- `asset_media`: JSON'daki `id`, `order`, `is_cover`, `subject`, `dossier_after`, `focal_point`, `caption`, `alt`; arşiv fotoğrafıysa `year`, `year_approx`, `overlay`.
 
 ### Admin panelden yükleme ve topluluk katkısı
 

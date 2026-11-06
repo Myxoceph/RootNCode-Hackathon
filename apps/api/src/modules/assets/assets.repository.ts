@@ -56,6 +56,7 @@ export const assetMediaSelect = {
   alt_en: true,
   archive_year: true,
   subject: true,
+  dossier_after: true,
   media: {
     select: {
       kind: true,

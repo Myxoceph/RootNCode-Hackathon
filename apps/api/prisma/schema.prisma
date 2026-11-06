@@ -184,6 +184,7 @@ model asset_media {
   sort_order          Int           @default(0) @db.SmallInt
   is_cover            Boolean       @default(false)
   subject             String?
+  dossier_after       String?
   focal_x             Float?        @db.Real
   focal_y             Float?        @db.Real
   caption_tr          String

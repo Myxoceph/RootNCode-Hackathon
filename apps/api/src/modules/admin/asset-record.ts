@@ -87,7 +87,7 @@ export const recordSelect = {
 
 /** The asset's rows, and its photos (read on their own: the one-cover index makes Prisma see one). */
 export type AssetRecordRow = Prisma.assetGetPayload<{ select: typeof recordSelect }> & {
-  media: Array<{ media_key: string; caption_tr: string; caption_en: string | null; alt_tr: string; alt_en: string | null; is_cover: boolean }>;
+  media: Array<{ media_key: string; caption_tr: string; caption_en: string | null; alt_tr: string; alt_en: string | null; is_cover: boolean; dossier_after: string | null }>;
 };
 
 const AlternateNames = z.array(z.object({ tr: z.string(), en: z.string().nullish(), note: z.string().nullish() }));
@@ -198,7 +198,7 @@ export function toAssetRecord(row: AssetRecordRow): AdminAssetRecord {
       audioDescription: optionalText(row.audio_description_tr, row.audio_description_en),
     },
     ambientSound: { key: nonEmpty(row.ambient_sound_key), caption: optionalText(row.ambient_caption_tr, row.ambient_caption_en) },
-    media: row.media.map((m) => ({ key: m.media_key, caption: text(m.caption_tr, m.caption_en), alt: text(m.alt_tr, m.alt_en), isCover: m.is_cover })),
+    media: row.media.map((m) => ({ key: m.media_key, caption: text(m.caption_tr, m.caption_en), alt: text(m.alt_tr, m.alt_en), isCover: m.is_cover, dossierAfter: m.dossier_after })),
   };
 }
 
@@ -368,12 +368,12 @@ export async function writeLists(tx: Prisma.TransactionClient, id: string, r: Ad
   });
   await tx.visitor_tip.createMany({ data: r.tips.map((t) => ({ asset_id: id, text_tr: t.text.tr, text_en: orNull(t.text.en), origin: t.origin, collected_at: day(t.collectedAt) })) });
 
-  // Photos: captions, order and the cover; the one-cover index needs the old cover cleared first.
+  // Photos: captions, order, the cover and their place in the dossier; the one-cover index needs the old cover cleared first.
   await tx.asset_media.updateMany({ where: { asset_id: id }, data: { is_cover: false } });
   for (const [i, m] of r.media.entries()) {
     await tx.asset_media.updateMany({
       where: { asset_id: id, media_key: m.key },
-      data: { sort_order: i, is_cover: m.isCover, caption_tr: m.caption.tr, caption_en: orNull(m.caption.en), alt_tr: m.alt.tr, alt_en: orNull(m.alt.en) },
+      data: { sort_order: i, is_cover: m.isCover, caption_tr: m.caption.tr, caption_en: orNull(m.caption.en), alt_tr: m.alt.tr, alt_en: orNull(m.alt.en), dossier_after: m.dossierAfter },
     });
   }
 

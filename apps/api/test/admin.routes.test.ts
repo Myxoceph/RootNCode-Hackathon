@@ -209,6 +209,22 @@ describe.skipIf(!DATABASE_URL)("admin panel (PostgreSQL)", () => {
     expect(restored.record).toEqual(record);
   });
 
+  it("keeps a photo's place in the dossier and shows it on the asset", async () => {
+    const { record } = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+    const photo = record.media[0]!;
+    const placed = (dossierAfter: string | null) => ({ ...record, media: record.media.map((m) => (m.key === photo.key ? { ...m, dossierAfter } : m)) });
+    try {
+      expect((await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, placed("section:tarihce"))).statusCode).toBe(200);
+      const again = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+      expect(again.record.media.find((m) => m.key === photo.key)?.dossierAfter).toBe("section:tarihce");
+      const detail = AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${ASSET}` })).json());
+      expect(detail.media.find((m) => m.key === photo.key)?.dossierAfter).toBe("section:tarihce");
+      expect((await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, placed("<b>"))).statusCode).toBe(400);
+    } finally {
+      await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, record);
+    }
+  });
+
   it("adds a new asset with its whole record", async () => {
     const { record: base } = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
     const record = {
