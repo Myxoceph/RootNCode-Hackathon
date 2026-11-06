@@ -405,7 +405,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
     const ctx = { lang, mediaBaseUrl, statuses };
 
     // Each break gets a dish of the district it is in (the previous stop's), not served before on the trip.
-    const served = new Set<string>();
+    const served = new Map<string, number>();
     const mealDishes = plan.days.map((day) => {
       let district: string | null = null;
       return day.items.map((item) => {
@@ -414,7 +414,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
           return null;
         }
         const dish = pickDish(dishes, item.meal, district, served);
-        if (dish) served.add(dish.id);
+        if (dish) served.set(dish.id, (served.get(dish.id) ?? 0) + 1);
         return dish && toCityDish(dish, lang);
       });
     });

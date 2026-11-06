@@ -7,6 +7,12 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-06 · Yöresel lezzetler 29'dan 131'e çıktı
+
+Türk Patent coğrafi işaret kayıtlarından 102 yeni yemek ve tatlı eklendi.
+
+- Yerelde: `npm run db:import`. Sunucu güncellemede kendisi alır.
+
 ## 2026-11-06 · Gezi planında günlük durak sınırı ve toplu taşıma
 
 Sözleşme 0.3.31: gezi duraklarına `transit` eklendi. Kurulum adımı yok; yeni gezileri eski APK okuyamaz, yeni APK gerekir. Yerelde toplu taşıma önerisi için `OTP_URL` gerekir, yoksa plan yalnızca yürüyüş gösterir.
