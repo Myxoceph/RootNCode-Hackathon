@@ -1657,7 +1657,8 @@ function start() {
     // Lighter over the open streets, so the clouds over the assets stand out; it thins as the map
     // zooms out and is gone, the province names back, by the Turkey view.
     if (shown) endIntroNow();
-    if (shown) wholeZoom = map.cameraForBounds(provinceBounds(plate), { padding: cityPadding() }).zoom;
+    // No camera when the screen's panels leave the map no room: the zoom it has then stands in.
+    if (shown) wholeZoom = map.cameraForBounds(provinceBounds(plate), { padding: cityPadding() })?.zoom ?? map.getZoom();
     const names = labelsRevealed ? 1 : 0;
     map.setPaintProperty("province-names", "text-opacity", shown ? ["interpolate", ["linear"], ["zoom"], outerZoom() + LEAVE_ROOM, names, outerZoom() + LEAVE_ROOM + 0.75, 0] : names);
     setCityAssetsShown(false);
@@ -2883,9 +2884,23 @@ function start() {
     }
   }
 
-  /** Room around the framed assets, inside the screen's own panels. */
+  /**
+   * Room around the framed assets, inside the screen's own panels. On a small screen the panels
+   * (the search, the asset's buttons, a notice, the cards) can take more than the whole height; the
+   * room is then shrunk, each side as much as the other, so the map keeps at least 30% of the
+   * screen to frame in. Without it MapLibre finds no camera and the city cannot open.
+   */
   function cityPadding() {
-    return { top: lastPadding.top + 24, right: lastPadding.right + 24, bottom: lastPadding.bottom + 24, left: lastPadding.left + 24 };
+    const wanted = { top: lastPadding.top + 24, right: lastPadding.right + 24, bottom: lastPadding.bottom + 24, left: lastPadding.left + 24 };
+    const { clientWidth: width, clientHeight: height } = map.getContainer();
+    const fit = (a, b, size) => {
+      const most = size * 0.7;
+      const scale = a + b > most && a + b > 0 ? most / (a + b) : 1;
+      return [Math.floor(a * scale), Math.floor(b * scale)];
+    };
+    const [top, bottom] = fit(wanted.top, wanted.bottom, height);
+    const [left, right] = fit(wanted.left, wanted.right, width);
+    return { top, right, bottom, left };
   }
 
   function provinceBounds(plate) {
