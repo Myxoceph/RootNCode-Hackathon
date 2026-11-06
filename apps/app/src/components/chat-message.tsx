@@ -1,7 +1,5 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { ChatCitation, ChatResponse, TripPlanResponse } from "@vagabonds/contracts";
+import type { ChatCitation, ChatResponse, TripPlanResponse, Lang } from "@vagabonds/contracts";
 import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
 import { useRouter, type Href } from "expo-router";
 import { useEffect, useState, type ComponentProps, type ReactNode } from "react";
@@ -13,19 +11,19 @@ import { inkFor } from "@/lib/route-ink";
 import { routeKey, savedKindOf, useSavedRoutes } from "@/lib/saved-routes";
 import { speakAnswer, stopAnswer, useSpeaking } from "@/lib/voice";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { casing, getMessages, useLang } from "@/i18n";
+import { useLang, useMessages, type Messages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
 /** Where a source opens. The food list is local for now, so a dish opens the list, not the dish. */
-function citationTarget(citation: ChatCitation): { href: Href; action: string } | null {
+function citationTarget(citation: ChatCitation, m: Messages): { href: Href; action: string } | null {
   switch (citation.kind) {
     case "asset":
-      return { href: { pathname: "/monuments/[id]", params: { id: citation.id } }, action: getMessages().rehber.openSite };
+      return { href: { pathname: "/monuments/[id]", params: { id: citation.id } }, action: m.rehber.openSite };
     case "dish":
-      return { href: "/route/food", action: getMessages().rehber.openFood };
+      return { href: "/route/food", action: m.rehber.openFood };
     case "trip":
-      return { href: "/route", action: getMessages().rehber.openRoutes };
+      return { href: "/route", action: m.rehber.openRoutes };
     case "weather":
     // The route map opens from the answer's transit attachment (YIGIT.md §11).
     case "transit":
@@ -58,11 +56,11 @@ function Appear({ animate, children, style }: { animate: boolean; children: Reac
 
 /** The visitor's line: a grey bubble on the right, rising in when just sent. */
 export function UserMessage({ text, animate = false }: { text: string; animate?: boolean }) {
-  useLang();
+  const m = useMessages();
   const { colors: c } = useTheme();
   return (
     <Appear animate={animate} style={[styles.user, { backgroundColor: c.surfaceRaised }]}>
-      <View accessible accessibilityLabel={getMessages().rehber.you(text)}>
+      <View accessible accessibilityLabel={m.rehber.you(text)}>
         <Text style={styles.body}>{text}</Text>
       </View>
     </Appear>
@@ -73,9 +71,9 @@ export function UserMessage({ text, animate = false }: { text: string; animate?:
  * What the wait is about, for a question: the steps the assistant usually takes, said one after
  * another as the seconds pass. The API answers in one go, so these follow the clock, not the model.
  */
-function waitingSteps(question: string): ReadonlyArray<[afterSeconds: number, text: string]> {
-  const q = question.toLocaleLowerCase(casing());
-  const w = getMessages().rehber.wait;
+function waitingSteps(question: string, m: Messages, lang: Lang): ReadonlyArray<[afterSeconds: number, text: string]> {
+  const q = question.toLocaleLowerCase(lang);
+  const w = m.rehber.wait;
   // Turkish and English words for the same topics.
   const topic = /hava|yağmur|sıcak|derece|\b(weather|rain(y|ing)?|hot|cold|degrees?)\b/.test(q)
     ? w.weather
@@ -101,12 +99,13 @@ function waitingSteps(question: string): ReadonlyArray<[afterSeconds: number, te
  * changes as the wait grows, so a long answer never looks stuck. Still when motion is reduced.
  */
 export function Thinking({ question }: { question: string }) {
-  useLang();
+  const lang = useLang();
+  const m = useMessages();
   const { colors: c } = useTheme();
   const reduceMotion = useReducedMotion();
   const [t] = useState(() => new Animated.Value(0));
   const [fade] = useState(() => new Animated.Value(1));
-  const [steps] = useState(() => waitingSteps(question));
+  const [steps] = useState(() => waitingSteps(question, m, lang));
   const [step, setStep] = useState(0);
 
   useEffect(() => {
@@ -142,7 +141,7 @@ export function Thinking({ question }: { question: string }) {
       <View
         style={[styles.bubble, styles.thinking, { backgroundColor: c.background, borderColor: c.border }]}
         accessible
-        accessibilityLabel={getMessages().rehber.preparingLabel(text)}
+        accessibilityLabel={m.rehber.preparingLabel(text)}
         accessibilityLiveRegion="polite"
       >
         <Animated.View
@@ -206,7 +205,7 @@ export function AssistantMessage({
   animate?: boolean;
   onFollowUp?: (question: string) => void;
 }) {
-  useLang();
+  const m = useMessages();
   const { colors: c } = useTheme();
   // Read aloud in EVREN's voice (lib/voice.ts); a spoken question's answer starts on its own.
   const reading = useSpeaking() === response.answer;
@@ -300,8 +299,8 @@ export function AssistantMessage({
           <View style={styles.actions}>
             <ActionButton
               icon={reading ? "stop-circle-outline" : "volume-high-outline"}
-              title={reading ? getMessages().common.stop : getMessages().common.listen}
-              label={reading ? getMessages().rehber.stopReading : getMessages().rehber.readAloud}
+              title={reading ? m.common.stop : m.common.listen}
+              label={reading ? m.rehber.stopReading : m.rehber.readAloud}
               onPress={() => {
                 if (reading) stopAnswer();
                 else void speakAnswer(response.answer, plain);
@@ -309,13 +308,13 @@ export function AssistantMessage({
             />
             <ActionButton
               icon="share-social-outline"
-              title={getMessages().rehber.share}
-              label={getMessages().rehber.shareLabel}
+              title={m.rehber.share}
+              label={m.rehber.shareLabel}
               onPress={() => void Share.share({ message: plain }).catch(() => {})}
             />
             {!response.grounded && (
               <Text variant="caption" color="textSecondary" style={styles.note}>
-                {getMessages().rehber.ungrounded}
+                {m.rehber.ungrounded}
               </Text>
             )}
           </View>
@@ -339,13 +338,14 @@ const followUpIcon: Record<FollowUpTopic, IconName> = {
  * words and sent with a tap.
  */
 function FollowUps({ response, animate, onAsk }: { response: ChatResponse; animate: boolean; onAsk: (question: string) => void }) {
+  const m = useMessages();
   const { colors: c } = useTheme();
   const offers = followUps(response);
   if (offers.length === 0) return null;
   return (
     <Appear animate={animate} style={styles.followUps}>
       <Text variant="caption" color="textSecondary" style={styles.followUpsTitle}>
-        {getMessages().rehber.alsoAsk}
+        {m.rehber.alsoAsk}
       </Text>
       {offers.map((offer) => (
         <Pressable
@@ -367,6 +367,7 @@ function FollowUps({ response, animate, onAsk }: { response: ChatResponse; anima
 
 /** "Rehber" over its answers, with its small round mark. */
 function Byline() {
+  const m = useMessages();
   const { colors: c } = useTheme();
   return (
     <View style={styles.byline} aria-hidden importantForAccessibility="no-hide-descendants">
@@ -374,7 +375,7 @@ function Byline() {
         <Ionicons name="sparkles" size={12} color={c.background} />
       </View>
       <Text variant="caption" style={styles.bold}>
-        {getMessages().rehber.title}
+        {m.rehber.title}
       </Text>
     </View>
   );
@@ -401,9 +402,10 @@ function ActionButton({ icon, title, label, onPress }: { icon: IconName; title: 
 }
 
 function SourceChip({ citation }: { citation: ChatCitation }) {
+  const m = useMessages();
   const { colors: c } = useTheme();
   const router = useRouter();
-  const target = citationTarget(citation);
+  const target = citationTarget(citation, m);
   const content = (
     <>
       <Ionicons name={citationIcon[citation.kind]} size={12} color={c.textSecondary} />
@@ -416,7 +418,7 @@ function SourceChip({ citation }: { citation: ChatCitation }) {
 
   if (!target) {
     return (
-      <View style={look} accessible accessibilityLabel={getMessages().rehber.source(citation.title)}>
+      <View style={look} accessible accessibilityLabel={m.rehber.source(citation.title)}>
         {content}
       </View>
     );
@@ -424,7 +426,7 @@ function SourceChip({ citation }: { citation: ChatCitation }) {
   return (
     <Pressable
       accessibilityRole="link"
-      accessibilityLabel={getMessages().rehber.sourceAction(citation.title, target.action)}
+      accessibilityLabel={m.rehber.sourceAction(citation.title, target.action)}
       onPress={() => router.push(target.href)}
       // The pill is drawn small; the target stays 44pt tall.
       hitSlop={{ top: 8, bottom: 8 }}
@@ -437,6 +439,7 @@ function SourceChip({ citation }: { citation: ChatCitation }) {
 
 /** Under an answer Kaydettiklerim holds: that it was kept, and the way there. Nothing while it is not (yet) in the list. */
 function SavedNote({ response }: { response: ChatResponse }) {
+  const msg = useMessages();
   const { colors: c } = useTheme();
   const router = useRouter();
   const kind = savedKindOf(useSavedRoutes(), response);
@@ -444,25 +447,25 @@ function SavedNote({ response }: { response: ChatResponse }) {
   return (
     <Pressable
       accessibilityRole="link"
-      accessibilityLabel={getMessages().rehber.savedLabel}
+      accessibilityLabel={msg.rehber.savedLabel}
       onPress={() => router.push({ pathname: "/profile/routes", params: { tab: kind } })}
       style={({ pressed }) => [styles.savedNote, pressed && styles.pressed]}
     >
       <Ionicons name="bookmark" size={14} color={c.highlightMark} />
       <Text variant="caption" color="textSecondary">
-        {getMessages().rehber.saved}
+        {msg.rehber.saved}
       </Text>
     </Pressable>
   );
 }
 
 /** A trip's walking distance, "850 m" or "2,4 km". */
-function distance(meters: number): string {
-  return meters >= 1000 ? `${(meters / 1000).toFixed(1).replace(".", getMessages().rehber.decimal)} km` : `${meters} m`;
+function distance(meters: number, m: Messages): string {
+  return meters >= 1000 ? `${(meters / 1000).toFixed(1).replace(".", m.rehber.decimal)} km` : `${meters} m`;
 }
 
-const tripDuration = (duration: TripPlanResponse["duration"]): string =>
-  duration === "half" ? getMessages().rehber.halfDay : getMessages().rehber.days(Number(duration));
+const tripDuration = (duration: TripPlanResponse["duration"], m: Messages): string =>
+  duration === "half" ? m.rehber.halfDay : m.rehber.days(Number(duration));
 
 /**
  * A trip answer, shown instead of its words: "Rota oluşturuldu" on the city's ink, the plan's
@@ -470,13 +473,14 @@ const tripDuration = (duration: TripPlanResponse["duration"]): string =>
  * (lib/chat.ts keeps it in Profil · Kaydettiklerim).
  */
 function TripCreated({ trip }: { trip: TripPlanResponse }) {
+  const m = useMessages();
   const { colors: c } = useTheme();
   const router = useRouter();
   const saved = useSavedRoutes().find((route) => route.kind === "trip" && routeKey(route) === routeKey({ kind: "trip", trip }));
   const [light, deep] = inkFor(trip.city.code);
   const stops = trip.days.reduce((sum, day) => sum + day.items.filter((item) => item.kind === "stop").length, 0);
   const meters = trip.days.reduce((sum, day) => sum + day.totals.walkMeters, 0);
-  const title = getMessages().rehber.tripTitle(trip.city.label);
+  const title = m.rehber.tripTitle(trip.city.label);
   const dots = Math.min(Math.max(0, stops - 2), 6);
 
   return (
@@ -484,7 +488,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
       <View
         style={styles.createdBand}
         accessible
-        accessibilityLabel={getMessages().rehber.tripCreatedLabel(title, tripDuration(trip.duration), stops, distance(meters))}
+        accessibilityLabel={m.rehber.tripCreatedLabel(title, tripDuration(trip.duration, m), stops, distance(meters, m))}
       >
         {/* Sized outright: on the web an SVG without a width keeps its 300px default, not its box's. */}
         <Svg width="100%" height="100%" style={StyleSheet.absoluteFill} aria-hidden>
@@ -501,14 +505,14 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
         <View style={styles.createdHead}>
           <Ionicons name="checkmark-circle" size={18} color={palette.altin200} />
           <Text colorValue={palette.altin200} style={styles.createdKicker}>
-            {getMessages().rehber.tripCreated}
+            {m.rehber.tripCreated}
           </Text>
         </View>
         <Text colorValue={palette.white} style={styles.createdTitle}>
           {title}
         </Text>
         <View style={styles.createdChips}>
-          {[tripDuration(trip.duration), getMessages().rehber.stops(stops), distance(meters)].map((chip) => (
+          {[tripDuration(trip.duration, m), m.rehber.stops(stops), distance(meters, m)].map((chip) => (
             <View key={chip} style={styles.createdChip}>
               <Text colorValue={palette.gece50} style={styles.createdChipText}>
                 {chip}
@@ -537,7 +541,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
       <View style={[styles.createdInfo, { borderBottomColor: c.border }]}>
         <Ionicons name="information-circle-outline" size={16} color={c.textSecondary} />
         <Text variant="caption" color="textSecondary" style={styles.flex}>
-          {getMessages().rehber.tripSavedNote}
+          {m.rehber.tripSavedNote}
         </Text>
       </View>
       <View style={styles.createdActions}>
@@ -547,7 +551,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
           style={({ pressed }) => [styles.createdOpen, pressed && styles.pressed]}
         >
           <Text variant="label" colorValue={palette.white} style={styles.createdOpenText}>
-            {getMessages().rehber.openTrip}
+            {m.rehber.openTrip}
           </Text>
           <Ionicons name="arrow-forward" size={16} color={palette.white} />
         </Pressable>
@@ -559,7 +563,7 @@ function TripCreated({ trip }: { trip: TripPlanResponse }) {
         >
           <Ionicons name="bookmark-outline" size={15} color={c.textSecondary} />
           <Text variant="caption" color="textSecondary" style={styles.createdAllText}>
-            {getMessages().rehber.savedList}
+            {m.rehber.savedList}
           </Text>
         </Pressable>
       </View>

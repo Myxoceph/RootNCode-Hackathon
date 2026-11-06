@@ -1,7 +1,5 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { ChatConversation } from "@vagabonds/contracts";
+import type { ChatConversation, Lang } from "@vagabonds/contracts";
 import {
   fontFamily,
   palette,
@@ -26,7 +24,7 @@ import { DataError } from "@/data/errors";
 import { webTransition } from "@/lib/web-transition";
 import { announce } from "@/lib/announce";
 import { dayGroup } from "@/lib/chat";
-import { localeTag, useLang } from "@/i18n";
+import { localeTag, useLang, useMessages } from "@/i18n";
 
 /** The panel's width beside the conversation. */
 export const SESSIONS_WIDTH = 300;
@@ -36,8 +34,8 @@ const GOLD = "#966F22";
 const TINT = "rgba(150, 111, 34, 0.12)";
 const GOLD_EDGE = "rgba(150, 111, 34, 0.35)";
 
-const time = (iso: string) =>
-  new Date(iso).toLocaleTimeString(localeTag(), {
+const time = (iso: string, lang: Lang) =>
+  new Date(iso).toLocaleTimeString(localeTag(lang), {
     hour: "2-digit",
     minute: "2-digit",
   });
@@ -72,7 +70,9 @@ export function AssistantSessions({
   onNew,
   canStartNew,
 }: AssistantSessionsProps) {
-  useLang();
+  const lang = useLang();
+  const m = useMessages();
+  const w = m.sessions;
   const look = LIST_LOOKS[useTheme().scheme];
   const [load, setLoad] = useState<Load>({ kind: "loading" });
   const [hovered, setHovered] = useState<string | null>(null);
@@ -86,7 +86,7 @@ export function AssistantSessions({
           message:
             error instanceof DataError
               ? error.message
-              : "Konuşmalar yüklenemedi.",
+              : w.loadFailed,
         }),
     );
   }, []);
@@ -105,10 +105,10 @@ export function AssistantSessions({
     });
     try {
       await deleteConversation(item.id);
-      announce("Konuşma silindi.");
+      announce(w.deleted);
     } catch (error) {
       announce(
-        error instanceof DataError ? error.message : "Konuşma silinemedi.",
+        error instanceof DataError ? error.message : w.deleteFailed,
       );
       refresh();
     }
@@ -147,7 +147,7 @@ export function AssistantSessions({
             colorValue={look.text}
             style={styles.title}
           >
-            Konuşmalar
+            {w.title}
           </Text>
           {total > 0 && (
             <Text variant="caption" colorValue={look.textSecondary}>
@@ -157,8 +157,8 @@ export function AssistantSessions({
         </View>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel="Yeni konuşma"
-          accessibilityHint="Bu konuşma geçmişe kaydedilir"
+          accessibilityLabel={w.newOne}
+          accessibilityHint={w.newHint}
           accessibilityState={{ disabled: !canStartNew }}
           disabled={!canStartNew}
           onPress={onNew}
@@ -190,7 +190,7 @@ export function AssistantSessions({
             colorValue={canStartNew ? palette.white : look.textSecondary}
             style={styles.newText}
           >
-            Yeni konuşma
+            {w.newOne}
           </Text>
         </Pressable>
       </View>
@@ -199,7 +199,7 @@ export function AssistantSessions({
         {load.kind === "loading" && (
           <ActivityIndicator
             color={look.textSecondary}
-            accessibilityLabel="Konuşmalar yükleniyor"
+            accessibilityLabel={w.loading}
             style={styles.state}
           />
         )}
@@ -219,7 +219,7 @@ export function AssistantSessions({
             >
               <Ionicons name="refresh" size={14} color={look.text} />
               <Text variant="caption" colorValue={look.text}>
-                Tekrar dene
+                {m.common.retry}
               </Text>
             </Pressable>
           </View>
@@ -234,8 +234,7 @@ export function AssistantSessions({
               colorValue={look.textSecondary}
               style={styles.emptyText}
             >
-              Rehber'e sorduğun sorular burada saklanır; istediğin zaman dönüp
-              okuyabilirsin.
+              {w.noneBody}
             </Text>
           </View>
         )}
@@ -254,7 +253,7 @@ export function AssistantSessions({
               {group.items.map((item) => {
                 const on = isCurrent(item);
                 const over = hovered === item.id;
-                const page = item.assetName ?? "Rehber";
+                const page = item.assetName ?? m.tabs.rehber;
                 return (
                   <View
                     key={item.id}
@@ -277,7 +276,7 @@ export function AssistantSessions({
                   >
                     <Pressable
                       accessibilityRole="link"
-                      accessibilityLabel={`${item.title} (${page}): ${item.archived ? "arşivde, okumak için aç" : "açık, devam etmek için aç"}`}
+                      accessibilityLabel={w.shortLabel(item.title, page, item.archived ? w.archivedHint : w.openHint)}
                       aria-current={on ? "page" : undefined}
                       onPress={() => onOpen(item)}
                       style={({ pressed }) => [
@@ -317,14 +316,14 @@ export function AssistantSessions({
                           colorValue={look.textSecondary}
                           numberOfLines={1}
                         >
-                          {`${page} · ${time(item.updatedAt)}`}
+                          {`${page} · ${time(item.updatedAt, lang)}`}
                         </Text>
                       </View>
                     </Pressable>
                     {(over || on) && (
                       <Pressable
                         accessibilityRole="button"
-                        accessibilityLabel={`${item.title} konuşmasını sil`}
+                        accessibilityLabel={w.deleteOne(item.title)}
                         onPress={() => void remove(item)}
                         style={({
                           pressed,

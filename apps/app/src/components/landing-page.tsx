@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Asset } from "expo-asset";
 import { useRouter } from "expo-router";
@@ -9,7 +7,7 @@ import { toQR } from "toqr";
 import { LandingSkyline } from "@/components/landing-skyline";
 import { appLinks, expoGoLink } from "@/content/app-links";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { getMessages, setLang, useLang, useMessages } from "@/i18n";
+import { setLang, useLang, useMessages } from "@/i18n";
 
 /**
  * The web's home page (`/`, `app/(tabs)/index.web.tsx`), one screen tall, never scrolling: on a
@@ -99,6 +97,7 @@ export function LandingPage() {
 
 /** The laptop and the phone in front of it, scaled to the room left under the hero. */
 function Scene({ onSite, onApp, shore }: { onSite: (event: MouseEvent<HTMLAnchorElement>) => void; onApp: () => void; shore: RefObject<HTMLDivElement | null> }) {
+  const m = useMessages();
   const room = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0);
   useLayoutEffect(() => {
@@ -123,7 +122,7 @@ function Scene({ onSite, onApp, shore }: { onSite: (event: MouseEvent<HTMLAnchor
         <div className="vg-spill" aria-hidden />
         <div className="vg-contact vg-contact-laptop" aria-hidden />
         <div className="vg-contact vg-contact-phone" aria-hidden />
-        <a className="vg-device vg-device-laptop" href="/map" onClick={onSite} aria-label={getMessages().landing.siteLabel}>
+        <a className="vg-device vg-device-laptop" href="/map" onClick={onSite} aria-label={m.landing.siteLabel}>
           <div className="vg-laptop">
             <div className="vg-glass">
               <div className="vg-screen">
@@ -138,10 +137,10 @@ function Scene({ onSite, onApp, shore }: { onSite: (event: MouseEvent<HTMLAnchor
             </div>
           </div>
           <span className="vg-tag">
-            {getMessages().landing.site}
+            {m.landing.site}
           </span>
         </a>
-        <button type="button" className="vg-device vg-device-phone" onClick={onApp} aria-haspopup="dialog" aria-label={getMessages().landing.appLabel}>
+        <button type="button" className="vg-device vg-device-phone" onClick={onApp} aria-haspopup="dialog" aria-label={m.landing.appLabel}>
           <div className="vg-phone">
             <div className="vg-phone-screen">
               <img className="vg-shot" src={APP_SHOT} alt="" />
@@ -150,7 +149,7 @@ function Scene({ onSite, onApp, shore }: { onSite: (event: MouseEvent<HTMLAnchor
             </div>
           </div>
           <span className="vg-tag">
-            {getMessages().landing.app}
+            {m.landing.app}
           </span>
         </button>
       </div>
@@ -160,39 +159,40 @@ function Scene({ onSite, onApp, shore }: { onSite: (event: MouseEvent<HTMLAnchor
 
 /** The window the phone opens: a QR code for Expo Go, and the stores, "yakında" until the app is published. */
 function AppWindow({ onClose }: { onClose: () => void }) {
+  const m = useMessages();
   const link = expoGoLink(typeof window === "undefined" ? null : window.location);
   const qr = useMemo(() => (link ? qrPath(link) : null), [link]);
   const close = useRef<HTMLButtonElement>(null);
   useEffect(() => close.current?.focus(), []);
   return (
     <div className="vg-window">
-      <button ref={close} type="button" className="vg-close" onClick={onClose} aria-label={getMessages().common.close}>
+      <button ref={close} type="button" className="vg-close" onClick={onClose} aria-label={m.common.close}>
         <Ionicons name="close" size={22} aria-hidden />
       </button>
-      <p className="vg-overline">{getMessages().landing.appOverline}</p>
+      <p className="vg-overline">{m.landing.appOverline}</p>
       <h2 className="vg-h2" id="vg-dialog-title">
-        {getMessages().landing.appTitle}
+        {m.landing.appTitle}
       </h2>
       {qr && link ? (
         <>
-          <div className="vg-qr" role="img" aria-label={getMessages().landing.qr}>
+          <div className="vg-qr" role="img" aria-label={m.landing.qr}>
             <svg viewBox={`-2 -2 ${qr.size + 4} ${qr.size + 4}`} shapeRendering="crispEdges">
               <rect x={-2} y={-2} width={qr.size + 4} height={qr.size + 4} fill="#FFFFFF" />
               <path d={qr.path} fill="#0D1420" />
             </svg>
           </div>
           <p className="vg-window-text">
-            {getMessages().landing.qrText[0]}
+            {m.landing.qrText[0]}
             <strong>Expo Go</strong>
-            {getMessages().landing.qrText[1]}
+            {m.landing.qrText[1]}
             <a href={link} className="vg-inline-link">
-              {getMessages().landing.qrText[2]}
+              {m.landing.qrText[2]}
             </a>
-            {getMessages().landing.qrText[3]}
+            {m.landing.qrText[3]}
           </p>
         </>
       ) : (
-        <p className="vg-window-text">{getMessages().landing.soon}</p>
+        <p className="vg-window-text">{m.landing.soon}</p>
       )}
       <div className="vg-stores">
         <Store icon="logo-apple" name="App Store" href={appLinks.appStore} />
@@ -203,11 +203,12 @@ function AppWindow({ onClose }: { onClose: () => void }) {
 }
 
 function Store({ icon, name, href }: { icon: "logo-apple" | "logo-google-playstore"; name: string; href: string | null }) {
+  const m = useMessages();
   const body = (
     <>
       <Ionicons name={icon} size={22} aria-hidden />
       <span className="vg-store-words">
-        <small>{href ? getMessages().landing.download : getMessages().landing.comingSoon}</small>
+        <small>{href ? m.landing.download : m.landing.comingSoon}</small>
         {name}
       </span>
     </>
@@ -217,7 +218,7 @@ function Store({ icon, name, href }: { icon: "logo-apple" | "logo-google-playsto
       {body}
     </a>
   ) : (
-    <span className="vg-store vg-store-soon" aria-label={getMessages().landing.storeSoon(name)}>
+    <span className="vg-store vg-store-soon" aria-label={m.landing.storeSoon(name)}>
       {body}
     </span>
   );
