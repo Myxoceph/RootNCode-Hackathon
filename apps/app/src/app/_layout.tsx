@@ -196,10 +196,6 @@ function ThemedStack() {
             name="assistant-history"
             options={{ title: m.screens.history, headerBackTitle: m.tabs.rehber }}
           />
-          <Stack.Screen
-            name="map-prototype"
-            options={{ headerShown: false, title: m.screens.mapPrototype }}
-          />
           {/* The admin panel draws its own frame (side bar and pages). */}
           <Stack.Screen
             name="admin"

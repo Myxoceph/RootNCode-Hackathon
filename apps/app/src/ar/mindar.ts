@@ -1,5 +1,4 @@
 import { AR_MINDAR_VERSION } from "@vagabonds/contracts";
-import { type Messages } from "@/i18n";
 
 /**
  * MindAR, bundled into the app by scripts/vendor-web-libs.mts. Pinned in the contract:
