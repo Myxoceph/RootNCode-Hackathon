@@ -52,6 +52,7 @@ import { announce } from "@/lib/announce";
 import { useSavedRoutes } from "@/lib/saved-routes";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { visuallyHidden } from "@/lib/visually-hidden";
 import { useLang, useMessages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -145,7 +146,8 @@ export default function SettingsScreen() {
         </View>
       ) : (
         <View style={[styles.column, { paddingTop: insets.top + spacing.md }]}>
-          <Text headingLevel={1} style={styles.pageTitle}>
+          {/* The tab bar names the page: the title is for screen readers only. */}
+          <Text headingLevel={1} style={visuallyHidden}>
             {m.tabs.profile}
           </Text>
 
@@ -1031,11 +1033,6 @@ const styles = StyleSheet.create({
     height: 1,
     overflow: "hidden",
     opacity: 0,
-  },
-  pageTitle: {
-    fontFamily: fontFamily.display,
-    fontSize: 34,
-    lineHeight: 42,
   },
   // The shadow falls from the card as it turns, not from the flat box around it: iOS draws a
   // shadow from what the box holds and the web's drop-shadow does too. Android's elevation would

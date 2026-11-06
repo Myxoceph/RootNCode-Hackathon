@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { visuallyHidden } from "@/lib/visually-hidden";
 import { Segmented } from "@/components/segmented";
 import { bursaDishesIn } from "@/content/food";
 import {
@@ -70,7 +71,8 @@ export default function RouteScreen() {
       <Head>
         <title>{m.common.title(m.screens.planRoute)}</title>
       </Head>
-      <Text variant="title" headingLevel={1}>
+      {/* The tab bar names the page: the title is for screen readers only. */}
+      <Text variant="title" headingLevel={1} style={visuallyHidden}>
         {m.screens.planRoute}
       </Text>
       <Text color="textSecondary">{w.intro}</Text>

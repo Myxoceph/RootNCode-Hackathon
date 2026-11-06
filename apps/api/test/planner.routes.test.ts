@@ -95,6 +95,18 @@ describe.skipIf(!DATABASE_URL)("planner routes (PostgreSQL)", () => {
       const response = await get("/weather?city=atlantis", 404);
       expect(response.json().error.code).toBe("CITY_NOT_FOUND");
     });
+
+    it("gives the weather at a point, named as the visitor's location", async () => {
+      forecast = FORECAST;
+      const body = WeatherResponseSchema.parse((await get("/weather?at=41.01,28.97&lang=tr")).json());
+      expect(body.city).toEqual({ code: "here", label: "Konumun" });
+      expect(body.daily).toEqual(FORECAST);
+    });
+
+    it("asks for a city or a point", async () => {
+      await get("/weather", 400);
+      await get("/weather?at=95,10", 400);
+    });
   });
 
   describe("GET /routes/plan", () => {

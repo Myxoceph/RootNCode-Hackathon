@@ -1,6 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
-import { spacing, Text, useTheme } from "@vagabonds/ui";
+import { fontFamily, palette, spacing, Text, useTheme } from "@vagabonds/ui";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
@@ -40,8 +40,10 @@ import {
 import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useMapTour } from "@/lib/map-tour";
-import { useUnlockedAssets } from "@/lib/unlocked-assets";
+import { useUnlockedAssets, useUnlocksSettled } from "@/lib/unlocked-assets";
 import { whereFrom } from "@/lib/bearing";
+import { rememberCity, rememberOpenCity, useOpenCity } from "@/lib/last-city";
+import { NAVY } from "@/lib/page-navy";
 import { bondsSpoken } from "@/lib/map-bonds";
 import { relatedPlacesOf } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -126,6 +128,14 @@ export default function MapScreen() {
   const { user } = useCommunity();
   // The map lies behind the seal screen: an asset opens on it only once the visitor is back and that screen has slid away.
   const [unlocked, setUnlocked] = useState(allUnlocked);
+  // Unlocks that come in while the visitor's unlocks load (the map made ready behind the welcome page)
+  // were made on an earlier run: the map takes them as they are, with no scene.
+  const unlocksSettled = useUnlocksSettled();
+  const [unlocksTaken, setUnlocksTaken] = useState(unlocksSettled);
+  if (!unlocksTaken) {
+    if (unlocked !== allUnlocked) setUnlocked(allUnlocked);
+    if (unlocksSettled) setUnlocksTaken(true);
+  }
   const [sceneRunning, setSceneRunning] = useState(false);
   // The web's "Kilidini aç": the asset's name while the "mobil uygulamada" notice is up.
   const [mobileOnly, setMobileOnly] = useState<string | null>(null);
@@ -141,6 +151,11 @@ export default function MapScreen() {
   const [tourUnlock, setTourUnlock] = useState<string | null>(null);
   /** Where the tour's bubble points, as the map reports it. */
   const [tourSpots, setTourSpots] = useState<MapSpots | null>(null);
+  // The city the map was left open on last time opens again at once, with no opening and no
+  // flight: `restoring` is undefined until that is known, true until the city is there.
+  const leftOpen = useOpenCity();
+  const [restoring, setRestoring] = useState<boolean>();
+  const [restored, setRestored] = useState(false);
   // "/map?city=bursa" opens a city straight away: a shareable link on the web, and the Ana Sayfa's cities (`at` makes the same city open again).
   const { city: cityParam, at: cityAskedAt } = useLocalSearchParams<{
     city?: string;
@@ -343,14 +358,88 @@ export default function MapScreen() {
   const provinces = useMemo<MapProvinces>(
     () => ({
       ...(JSON.parse(mapKey) as Omit<MapProvinces, "reveal">),
-      reveal: !reduceMotion,
+      // No opening over a city opened again as it was left, and no flight into it.
+      reveal: !reduceMotion && !restored,
+      motion: !reduceMotion && !restoring,
     }),
-    [mapKey, reduceMotion],
+    [mapKey, reduceMotion, restored, restoring],
   );
+
+  // The search bar waits for the opening: it comes in once the fog has parted and the provinces are
+  // drawn (or after SEARCH_WAIT_LIMIT_MS, should the map never say so).
+  const [introOver, setIntroOver] = useState(false);
+  const searchWaits = provinces.reveal && !introOver;
+  const searchIn = useRef(new Animated.Value(searchWaits ? 0 : 1)).current;
+  useEffect(() => {
+    if (!searchWaits) return;
+    const limit = setTimeout(() => setIntroOver(true), SEARCH_WAIT_LIMIT_MS);
+    return () => clearTimeout(limit);
+  }, [searchWaits]);
+  useEffect(() => {
+    if (searchWaits) searchIn.setValue(0);
+    else Animated.timing(searchIn, { toValue: 1, duration: reduceMotion ? 0 : 450, easing: Easing.out(Easing.quad), useNativeDriver: true }).start();
+  }, [searchWaits, searchIn, reduceMotion]);
 
   // Each city opens with its landmark chosen.
   const openingId = landmark?.id ?? null;
   useEffect(() => setChosenAsset(openingId), [openingId]);
+
+  useEffect(() => {
+    if (restoring !== undefined || leftOpen === undefined) return;
+    if (!leftOpen || cityParam) return setRestoring(false);
+    if (cities.status === "loading") return;
+    const plate = withAssets.find((city) => city.code === leftOpen)?.plate;
+    if (plate == null) return setRestoring(false);
+    setSelectedPlate(plate);
+    setRestored(true);
+    setRestoring(true);
+  }, [restoring, leftOpen, cityParam, cities.status, withAssets]);
+  const mapShown = restoring === false || (restoring === true && mapCity !== null);
+  // A city opened again comes in behind a veil in the welcome page's colour with its name on it:
+  // nothing of the map coming in (its fog, seals and clouds drawn, its streets loaded) is seen.
+  // The veil stays at least long enough to read the name, and lifts once the map says the city is
+  // all there (or after VEIL_LIMIT_MS whatever it says), dissolving into the map.
+  const { scheme: pageScheme, colors: pageColors } = useTheme();
+  const veil = useRef(new Animated.Value(1)).current;
+  const [veilGone, setVeilGone] = useState(false);
+  // The line under the name breathes slowly while the city is made ready.
+  const veilBreath = useRef(new Animated.Value(1)).current;
+  useEffect(() => {
+    if (!restored || veilGone || reduceMotion) return;
+    const breathing = Animated.loop(
+      Animated.sequence([
+        Animated.timing(veilBreath, { toValue: 0.45, duration: 900, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
+        Animated.timing(veilBreath, { toValue: 1, duration: 900, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
+      ]),
+    );
+    breathing.start();
+    return () => breathing.stop();
+  }, [restored, veilGone, reduceMotion, veilBreath]);
+  const [readyPlate, setReadyPlate] = useState<number | null>(null);
+  const [veilHeld, setVeilHeld] = useState(false);
+  const [veilTimeUp, setVeilTimeUp] = useState(false);
+  useFocusEffect(
+    useCallback(() => {
+      if (!restored || veilGone) return;
+      const held = setTimeout(() => setVeilHeld(true), VEIL_HOLD_MS);
+      const limit = setTimeout(() => setVeilTimeUp(true), VEIL_LIMIT_MS);
+      return () => {
+        clearTimeout(held);
+        clearTimeout(limit);
+      };
+    }, [restored, veilGone]),
+  );
+  const veilLifts = restored && !veilGone && veilHeld && (veilTimeUp || (readyPlate !== null && readyPlate === selectedPlate));
+  useEffect(() => {
+    if (!veilLifts) return;
+    Animated.timing(veil, { toValue: 0, duration: reduceMotion ? 0 : VEIL_FADE_MS, easing: Easing.out(Easing.quad), useNativeDriver: true }).start(() =>
+      setVeilGone(true),
+    );
+  }, [veilLifts, veil, reduceMotion]);
+  // Once the city is there, the camera flies again as usual.
+  useEffect(() => {
+    if (restoring && landedPlate !== null && landedPlate === selectedPlate) setRestoring(false);
+  }, [restoring, landedPlate, selectedPlate]);
 
   const cityFromParam = cityParam
     ? withAssets.find((city) => city.code === cityParam)?.plate
@@ -358,6 +447,19 @@ export default function MapScreen() {
   useEffect(() => {
     if (cityFromParam != null) setSelectedPlate(cityFromParam);
   }, [cityFromParam, cityAskedAt]);
+
+  // The city open now is remembered for the next greeting (its weather), and the map opens on it
+  // again next time; going back to the Turkey view forgets it, so the map opens on Turkey then.
+  const openCode = selectedCity?.code;
+  const hadCity = useRef(false);
+  useEffect(() => {
+    if (restoring === undefined) return;
+    if (openCode) {
+      hadCity.current = true;
+      rememberCity(openCode);
+      rememberOpenCity(openCode);
+    } else if (hadCity.current) rememberOpenCity(null);
+  }, [openCode, restoring]);
 
   function openCity(plate: number) {
     const city = withAssets.find((candidate) => candidate.plate === plate);
@@ -441,7 +543,9 @@ export default function MapScreen() {
   const tour = useMapTour({
     // Without a server the phone's own mark; with one, only an account's (signed out, it waits for the next one).
     account: !communityAvailable ? null : isAccount(user) ? user.id : undefined,
-    ready: !cityParam,
+    // Not over a city opened again as it was left; next time, from the Turkey view.
+    // After the opening too: its step bar takes the search bar's place.
+    ready: !cityParam && restoring === false && !restored && !searchWaits,
     still: reduceMotion,
     inCity: selectedPlate !== null,
     unlockShown: (id) => {
@@ -566,49 +670,54 @@ export default function MapScreen() {
       <Text headingLevel={1} style={styles.unseen}>
         {m.map.heading(selectedCity ? selectedCity.label : m.map.turkey)}
       </Text>
-      <MapLibreMap
-        pins={NO_PINS}
-        selectedId={selectedCity ? chosenAsset : null}
-        onSelect={(id) => {
-          if (!id) return;
-          chooseAsset(id);
-          tour.onAssetTapped(!unlocked.has(id));
-        }}
-        onSelectProvince={openCity}
-        onLeaveCity={backToTurkey}
-        onCityLanded={onCityLanded}
-        onUnlock={unlockAsset}
-        onInspect={(id) =>
-          router.push({ pathname: "/monuments/[id]", params: { id } })
-        }
-        onOpenRelatedList={(id) =>
-          router.push({
-            pathname: "/related",
-            params: {
-              asset: id,
-              name: located.find(({ asset }) => asset.id === id)?.asset.name,
-            },
-          })
-        }
-        onLeaveNote={(id) =>
-          router.push({ pathname: "/note", params: { asset: id } })
-        }
-        onSceneEnd={() => {
-          setSceneRunning(false);
-          tour.onSceneEnd();
-        }}
-        watchSpots={
-          tour.step === "city" ||
-          tour.step === "choose" ||
-          tour.step === "unlock"
-        }
-        onSpots={setTourSpots}
-        offerUnlock={tour.step === "unlock"}
-        onError={setMapError}
-        fitPadding={fitPadding}
-        provinces={provinces}
-        style={StyleSheet.absoluteFill}
-      />
+      {/* Waits to know whether a city opens again as it was left, and then for that city, so Turkey never shows first. */}
+      {mapShown && (
+        <MapLibreMap
+          pins={NO_PINS}
+          selectedId={selectedCity ? chosenAsset : null}
+          onSelect={(id) => {
+            if (!id) return;
+            chooseAsset(id);
+            tour.onAssetTapped(!unlocked.has(id));
+          }}
+          onSelectProvince={openCity}
+          onLeaveCity={backToTurkey}
+          onCityLanded={onCityLanded}
+          onCityReady={setReadyPlate}
+          onIntroEnd={() => setIntroOver(true)}
+          onUnlock={unlockAsset}
+          onInspect={(id) =>
+            router.push({ pathname: "/monuments/[id]", params: { id } })
+          }
+          onOpenRelatedList={(id) =>
+            router.push({
+              pathname: "/related",
+              params: {
+                asset: id,
+                name: located.find(({ asset }) => asset.id === id)?.asset.name,
+              },
+            })
+          }
+          onLeaveNote={(id) =>
+            router.push({ pathname: "/note", params: { asset: id } })
+          }
+          onSceneEnd={() => {
+            setSceneRunning(false);
+            tour.onSceneEnd();
+          }}
+          watchSpots={
+            tour.step === "city" ||
+            tour.step === "choose" ||
+            tour.step === "unlock"
+          }
+          onSpots={setTourSpots}
+          offerUnlock={tour.step === "unlock"}
+          onError={setMapError}
+          fitPadding={fitPadding}
+          provinces={provinces}
+          style={StyleSheet.absoluteFill}
+        />
+      )}
 
       <Animated.View
         style={[StyleSheet.absoluteFill, { opacity: controls }]}
@@ -691,9 +800,11 @@ export default function MapScreen() {
         )}
         {/* First in reading order, as on the screen; the tour's step bar takes its place while it plays. */}
         {!tour.step && (
-          <View
-            style={[StyleSheet.absoluteFill, styles.over]}
-            pointerEvents="box-none"
+          <Animated.View
+            style={[StyleSheet.absoluteFill, styles.over, { opacity: searchIn }]}
+            pointerEvents={searchWaits ? "none" : "box-none"}
+            aria-hidden={searchWaits}
+            importantForAccessibility={searchWaits ? "no-hide-descendants" : "auto"}
           >
             <MapSearch
               city={selectedCity}
@@ -721,7 +832,7 @@ export default function MapScreen() {
               }
               onBottom={setSearchBottom}
             />
-          </View>
+          </Animated.View>
         )}
         {cardsShown && !side && (
           <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
@@ -760,11 +871,68 @@ export default function MapScreen() {
           onSkip={tour.skip}
         />
       )}
+      {restored && !veilGone && (
+        <Animated.View
+          pointerEvents="none"
+          aria-hidden
+          importantForAccessibility="no-hide-descendants"
+          style={[styles.veil, { opacity: veil, backgroundColor: pageScheme === "dark" ? NAVY : palette.white }]}
+        >
+          {selectedCity && (
+            <>
+              <Text colorValue={pageScheme === "dark" ? palette.altin200 : palette.altin600} style={styles.veilName}>
+                {selectedCity.label}
+              </Text>
+              <View style={[styles.veilRule, { backgroundColor: pageScheme === "dark" ? palette.altin200 : palette.altin600 }]} />
+              <Animated.View style={{ opacity: veilBreath }}>
+                <Text colorValue={pageColors.textSecondary} style={styles.veilLine}>
+                  {m.map.resuming}
+                </Text>
+              </Animated.View>
+            </>
+          )}
+        </Animated.View>
+      )}
     </View>
   );
 }
 
+/** The least a city opened again stays behind its veil, the most it waits for the map, and how long the veil takes to dissolve. */
+const VEIL_HOLD_MS = 700;
+/** The most the search bar waits for the map's opening to end. */
+const SEARCH_WAIT_LIMIT_MS = 7000;
+const VEIL_LIMIT_MS = 6000;
+const VEIL_FADE_MS = 450;
+
 const styles = StyleSheet.create({
+  veil: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  veilName: {
+    fontFamily: fontFamily.display,
+    fontSize: 44,
+    lineHeight: 52,
+  },
+  veilRule: {
+    width: 28,
+    height: 2,
+    borderRadius: 1,
+    marginTop: 14,
+    marginBottom: 14,
+    opacity: 0.7,
+  },
+  veilLine: {
+    fontSize: 15,
+    lineHeight: 22,
+    textAlign: "center",
+    paddingHorizontal: 32,
+  },
   screen: {
     flex: 1,
     overflow: "hidden",

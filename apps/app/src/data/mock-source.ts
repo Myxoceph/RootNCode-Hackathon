@@ -81,6 +81,9 @@ export function createMockSource(load: () => Promise<MockFixtures> = loadBundled
       if (!asset) return null;
       return { version: CONTRACT_VERSION, lang, assetId: id, items: pulseItemsFromTips(asset.visitorTips), communityTotal: 0 };
     },
+    // The fixtures have no weather.
+    getWeather: async () => null,
+    getWeatherAt: async () => null,
     async listCities() {
       // The fixtures have no /meta/enums snapshot; the list's own cities are enough offline.
       parsedList ??= parse((await getFixtures()).list, AssetListResponseSchema, "Örnek eser listesi");

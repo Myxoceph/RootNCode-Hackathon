@@ -54,6 +54,10 @@ export type MapPageEvent =
   | { type: "leaveCity" }
   /** The camera has landed on the chosen city, its flight over. */
   | { type: "cityLanded"; plate: number }
+  /** The opening is over: the fog has parted and the provinces are drawn (or a city cut it short). */
+  | { type: "introEnd" }
+  /** The open city is all there: its fog whole, its seals and clouds drawn, its streets loaded. */
+  | { type: "cityReady"; plate: number }
   /** "Kilidini aç" over the chosen locked asset was tapped. */
   | { type: "unlock"; id: string }
   | { type: "sceneEnd" }
@@ -435,7 +439,11 @@ function start() {
   window.vagabondsMap.map = map;
   map.on("error", (event) => post({ type: "error", message: String(event.error && event.error.message || event.error) }));
   // The base style asks for a few pattern images it does not ship; an empty one keeps the console quiet.
-  map.on("styleimagemissing", (event) => map.addImage(event.id, { width: 1, height: 1, data: new Uint8Array(4) }));
+  // Not for the page's own pictures (seals, clouds) still to be drawn: those are finished at once
+  // below, and an empty one put there first would stand in for them for good.
+  map.on("styleimagemissing", (event) => {
+    if (!pictureJobs.has(event.id)) map.addImage(event.id, { width: 1, height: 1, data: new Uint8Array(4) });
+  });
   // The credits the tiles and OpenStreetMap ask for stay one tap away behind a faint (i): the page's
   // style keeps them folded until the button is tapped (credits-open), so they never flash open first.
   const foldCredits = () => {
@@ -464,6 +472,59 @@ function start() {
     // In line with the bar's right edge (16 from the screen's), the control's own 10 margin taken off.
     corner.style.right = "6px";
   }
+
+  /**
+   * The seals' and the fog banks' pictures: together long enough to stop the opening's fog for a
+   * moment, and needed only once a city is open. So they are drawn after the opening, a few
+   * milliseconds a frame (a fog bank is worked out pixel by pixel, in steps); one asked for before
+   * its turn is finished at once (styleimagemissing). Each job gives steps that end in the picture.
+   */
+  const pictureJobs = new Map();
+  /** The picture being drawn a step at a time. */
+  let drawing = null;
+  /** A few milliseconds a frame: the frame stays well under the 16 of a smooth 60 a second. */
+  const PICTURE_BUDGET_MS = 6;
+  function finishPicture(id, steps, ratio) {
+    let step = steps.next();
+    while (!step.done) step = steps.next();
+    if (!map.hasImage(id)) map.addImage(id, step.value, { pixelRatio: ratio });
+  }
+  function addPicture(id) {
+    const job = pictureJobs.get(id);
+    if (!job) return;
+    pictureJobs.delete(id);
+    const steps = drawing && drawing.id === id ? drawing.steps : job.steps();
+    if (drawing && drawing.id === id) drawing = null;
+    finishPicture(id, steps, job.ratio);
+  }
+  let picturesStarted = false;
+  function drawPicturesLater() {
+    if (picturesStarted) return;
+    picturesStarted = true;
+    const frame = () => {
+      const until = performance.now() + PICTURE_BUDGET_MS;
+      while (performance.now() < until) {
+        if (!drawing) {
+          const id = pictureJobs.keys().next().value;
+          if (id === undefined) return;
+          drawing = { id, steps: pictureJobs.get(id).steps(), ratio: pictureJobs.get(id).ratio };
+        }
+        const step = drawing.steps.next();
+        if (step.done) {
+          pictureJobs.delete(drawing.id);
+          if (!map.hasImage(drawing.id)) map.addImage(drawing.id, step.value, { pixelRatio: drawing.ratio });
+          drawing = null;
+        }
+      }
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  }
+  /** Steps for a picture drawn in one go. */
+  function* atOnce(draw) {
+    return draw();
+  }
+  map.on("styleimagemissing", (event) => addPicture(event.id));
 
   map.on("load", () => {
     map.setPaintProperty("background", "background-color", colors.land);
@@ -582,11 +643,11 @@ function start() {
     // close, where they fit. The landmark's seal is gold and larger; the chosen one pulses.
     map.addSource("city-assets", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
     for (const category of GLYPHS) {
-      map.addImage("seal-" + category, sealImage(category, false), { pixelRatio: SEAL_RATIO });
-      map.addImage("seal-" + category + "-landmark", sealImage(category, true), { pixelRatio: SEAL_RATIO });
+      pictureJobs.set("seal-" + category, { steps: () => atOnce(() => sealImage(category, false)), ratio: SEAL_RATIO });
+      pictureJobs.set("seal-" + category + "-landmark", { steps: () => atOnce(() => sealImage(category, true)), ratio: SEAL_RATIO });
       // An unlocked asset's seal: the same, without the padlock.
-      map.addImage("seal-" + category + "-open", sealImage(category, false, false), { pixelRatio: SEAL_RATIO });
-      map.addImage("seal-" + category + "-landmark-open", sealImage(category, true, false), { pixelRatio: SEAL_RATIO });
+      pictureJobs.set("seal-" + category + "-open", { steps: () => atOnce(() => sealImage(category, false, false)), ratio: SEAL_RATIO });
+      pictureJobs.set("seal-" + category + "-landmark-open", { steps: () => atOnce(() => sealImage(category, true, false)), ratio: SEAL_RATIO });
     }
     // The city's fog, in two parts drawn by the map itself, so it stays fixed to the ground as the
     // map moves. Its own copy of the assets, cut into tiles no smaller than zoom 12's (about 10 km)
@@ -623,7 +684,7 @@ function start() {
       paint: { ...hazeShape, "heatmap-opacity": 0, "heatmap-opacity-transition": { duration: 0 } },
     });
     // ...and each locked asset hides in a thick bank of its own, standing out in the haze.
-    for (let shape = 0; shape < CLOUD_SHAPES.length; shape++) map.addImage("cloud-" + shape, cloudImage(CLOUD_SHAPES[shape]), { pixelRatio: CLOUD_RATIO });
+    for (let shape = 0; shape < CLOUD_SHAPES.length; shape++) pictureJobs.set("cloud-" + shape, { steps: () => cloudSteps(CLOUD_SHAPES[shape]), ratio: CLOUD_RATIO });
     const bankLayout = {
       "icon-image": ["concat", "cloud-", ["to-string", ["get", "cloud"]]],
       "icon-rotate": ["get", "turn"],
@@ -860,6 +921,8 @@ function start() {
     });
 
     loaded = true;
+    // Without an opening the pictures start at once; with one, once it is over.
+    if (!intro) drawPicturesLater();
     pending.forEach((command) => window.vagabondsMap.receive(command));
     pending = [];
   });
@@ -900,12 +963,16 @@ function start() {
   }
 
   // Provinces and the opening fog.
-  /** The fog lifts over this long once the tiles are drawn. */
-  const INTRO_MS = 4200;
-  /** Tiles get this long to arrive before the fog lifts anyway; the fog keeps drifting meanwhile. */
-  const INTRO_WAIT_MS = 2000;
-  /** Fog cells across the screen; the browser smooths them up into soft clouds. */
-  const FOG_CELLS = 72;
+  /** The fog lifts over this long once the tiles are drawn: short, the visitor came for the map. */
+  const INTRO_MS = 3200;
+  /** Turkey's border is traced through the fog over this long, finishing as the fog parts. */
+  const TRACE_MS = 1500;
+  /** Tiles get this long to arrive before the fog lifts anyway: the fog hides them meanwhile, so hardly a wait. */
+  const INTRO_WAIT_MS = 250;
+  /** How long the closed fog waits for the provinces before it opens without them. */
+  const PROVINCES_WAIT_MS = 3000;
+  /** Fog cells across the screen; the browser smooths them up into soft clouds. Fewer is lighter on phones. */
+  const FOG_CELLS = 48;
   /** Side of the repeating noise the clouds are cut from. */
   const NOISE_SIZE = 64;
   /** Middle of Turkey: the fog parts from here outwards. */
@@ -952,7 +1019,7 @@ function start() {
     map.setFilter("province-glow", ["in", ["get", "plate"], ["literal", plates]]);
     map.setFilter("province-hit", ["in", ["get", "plate"], ["literal", plates]]);
     setLabels(provinces.highlighted);
-    motion = provinces.reveal;
+    motion = provinces.motion ?? provinces.reveal;
     if (provincesShown) showCity(provinces.city || null);
     if (provincesShown) return;
     provincesShown = true;
@@ -1051,17 +1118,29 @@ function start() {
   /** Around any asset the streets stay fogged this far; around a locked one the fog thickens this far. */
   const SHEET_KEEP_KM = 0.06;
   const SHEET_NEAR_KM = 0.45;
-  /** Rows worked out per frame, so a city's sheet never stalls the flight into it. */
-  const SHEET_ROWS_PER_FRAME = 40;
   const SHEET_FADE_MS = 1200;
+  /** Sheet pixels sent to the graphics card a frame: about a megabyte, so a city's sheets go up in a few frames, none of them long. */
+  const SHEET_UPLOAD_BYTES = 1 << 20;
   let sheetBuild = 0;
+  /** The last build whose sheets were all worked out. */
+  let sheetMade = 0;
   let sheetShown = false;
   /** The open city's sheets as they are worked out: each one's texture's pixels and where it lies. */
   let sheets = [];
   /** Textures and buffers of sheets no longer shown, to free on the next frame. */
   let sheetsGone = [];
   let sheetLevel = 0;
+  /** How far the places' pieces have faded in over the cover, 0 to 1; they come in together. */
+  let placesLevel = 0;
+  const PLACES_FADE_MS = 900;
   let sheetLevelAt = 0;
+  /**
+   * The zoom the fog's look follows: it trails the camera's, so a quick zoom (a seal chosen, an
+   * unlocking scene) changes the fog's look slowly after it instead of flashing through it.
+   */
+  let fogZoom = null;
+  let sheetFogAt = 0;
+  const FOG_LOOK_MS = 650;
 
   function sheetNoise(seed) {
     const p = new Uint8Array(512);
@@ -1164,26 +1243,83 @@ function start() {
     sheetsGone = [...sheetsGone, ...sheets];
     sheets = [];
     sheetLevel = 0;
-    if (assets.length === 0) return;
+    placesLevel = 0;
+    if (assets.length === 0) {
+      sheetMade = build;
+      return;
+    }
     const places = sheetPlaces(assets);
+    // The province's cover shows as soon as it is made: it lies over the city while the camera is
+    // still high. The places' pieces join it all together, never one by one (placesLevel).
+    let cover = null;
+    let placePieces = places.length === 0 ? [] : null;
+    const show = () => {
+      if (build !== sheetBuild) return;
+      sheets = [...(cover ? [cover] : []), ...(placePieces || [])];
+      if (cover && placePieces) sheetMade = build;
+      map.triggerRepaint();
+    };
+    const workers = sheetWorkers();
+    if (workers) {
+      const job = provinceJob(plate);
+      const simple = (list) => list.map((asset) => ({ lng: asset.lng, lat: asset.lat }));
+      const jobs = [{ province: true, plate, assets: simple(assets), feature: job.feature, bounds: job.bounds }, ...places.map((place) => ({ assets: simple(place) }))];
+      const pieces = new Array(places.length);
+      let left = places.length;
+      const finish = () => {
+        for (const worker of workers) {
+          worker.removeEventListener("message", arrived);
+          worker.removeEventListener("error", failed);
+        }
+      };
+      const arrived = (event) => {
+        if (event.data.build !== build) return;
+        const piece = placedPiece(event.data.piece);
+        if (event.data.index === 0) cover = piece;
+        else {
+          pieces[event.data.index - 1] = piece;
+          if (--left === 0) placePieces = pieces;
+        }
+        if (cover && placePieces) finish();
+        show();
+      };
+      // A worker that fails is not used again: this city's sheets are worked out here instead.
+      const failed = () => {
+        finish();
+        sheetWorkersMade = null;
+        if (build === sheetBuild) buildSheet(assets, plate);
+      };
+      for (const worker of workers) {
+        worker.addEventListener("message", arrived);
+        worker.addEventListener("error", failed);
+      }
+      // The cover to the first; the places to the rest in turn (to the first too when it is alone).
+      const placeWorkers = workers.length > 1 ? workers.slice(1) : workers;
+      jobs.forEach((one, index) => (index === 0 ? workers[0] : placeWorkers[(index - 1) % placeWorkers.length]).postMessage({ ...one, build, index }));
+      return;
+    }
+    const made = [];
     const next = (index) => {
-      if (build !== sheetBuild || index >= places.length) return;
+      if (build !== sheetBuild) return;
+      if (index >= places.length) {
+        placePieces = made;
+        show();
+        return;
+      }
       buildPiece(places[index], plate * 13 + index, build, (piece) => {
-        sheets = [...sheets, piece];
-        map.triggerRepaint();
+        made.push(piece);
         next(index + 1);
       });
     };
-    // The whole province's cover first: it is what shows while the camera is still high.
     buildProvincePiece(plate, assets, build, (piece) => {
-      if (piece) sheets = [...sheets, piece];
-      map.triggerRepaint();
+      cover = piece;
+      show();
       next(0);
     });
   }
 
   /** The wide cover is drawn this many pixels across. */
-  const PROVINCE_SHEET_PX = 1024;
+  const PROVINCE_SHEET_PX = 640;
   const PROVINCE_SHEET_MARGIN_KM = 30;
   /** How far each asset's share of the wide cover reaches. */
   const PROVINCE_SHEET_REACH_KM = 5;
@@ -1198,6 +1334,77 @@ function start() {
    * places' own sheets (buildPiece).
    */
   function buildProvincePiece(plate, assets, build, done) {
+    const job = provinceJob(plate);
+    runSliced(provincePieceSteps(plate, assets, job.feature, job.bounds), build, (piece) => done(placedPiece(piece)));
+  }
+
+  /** The province's shape and bounds, for provincePieceSteps. */
+  function provinceJob(plate) {
+    const feature = PROVINCES.features.find((candidate) => candidate.properties.plate === plate) || null;
+    const bounds = feature ? provinceBounds(plate) : null;
+    return { feature, bounds: bounds ? { west: bounds.getWest(), east: bounds.getEast(), south: bounds.getSouth(), north: bounds.getNorth() } : null };
+  }
+
+  /** A piece made on its ground corners, placed for the map: its box in the map's own coordinates. */
+  function placedPiece(piece) {
+    const [west, north, east, south] = piece.geo;
+    const northWest = maplibregl.MercatorCoordinate.fromLngLat([west, north]);
+    const southEast = maplibregl.MercatorCoordinate.fromLngLat([east, south]);
+    return { ...piece, texture: null, places: null, box: [northWest.x, northWest.y, southEast.x, southEast.y] };
+  }
+
+  /**
+   * The workers the sheets are worked out in, built from the very functions above, so the camera's
+   * flight never waits on them: the province's cover in one, the places' pieces shared among the
+   * others, all at once, done by the time the camera lands. null where workers are not to be had
+   * (the sheets are then worked out a few milliseconds a frame, runSliced).
+   */
+  let sheetWorkersMade;
+  function sheetWorkers() {
+    if (sheetWorkersMade !== undefined) return sheetWorkersMade;
+    try {
+      const constants = { PROVINCE_SHEET_PX, PROVINCE_SHEET_MARGIN_KM, PROVINCE_SHEET_REACH_KM, PROVINCE_SHEET_SIZE_KM, SHEET_PX, SHEET_MARGIN_KM, SHEET_REACH_KM, SHEET_KEEP_KM, SHEET_NEAR_KM };
+      const source = [
+        ...Object.entries(constants).map(([name, value]) => "const " + name + " = " + JSON.stringify(value) + ";"),
+        ...[sheetNoise, sheetFbm, sheetStep, sheetStamp, provincePieceSteps, pieceSteps].map((part) => part.toString()),
+        "self.onmessage = (event) => { const job = event.data; const steps = job.province ? provincePieceSteps(job.plate, job.assets, job.feature, job.bounds) : pieceSteps(job.assets); let step = steps.next(); while (!step.done) step = steps.next(); self.postMessage({ build: job.build, index: job.index, piece: step.value }, [step.value.pixels.buffer]); };",
+      ].join(String.fromCharCode(10));
+      const url = URL.createObjectURL(new Blob([source], { type: "text/javascript" }));
+      // One for the cover and up to two for the places, leaving the phone a core for the map.
+      const count = Math.max(1, Math.min(3, (navigator.hardwareConcurrency || 2) - 1));
+      sheetWorkersMade = Array.from({ length: count }, () => new Worker(url));
+    } catch {
+      sheetWorkersMade = null;
+    }
+    return sheetWorkersMade;
+  }
+
+  /** Work on a sheet this many milliseconds a frame, so the camera's flight stays smooth meanwhile. */
+  const SHEET_BUDGET_MS = 4;
+
+  /** Runs steps a few milliseconds a frame until they end, then hands on what they made; dropped once a newer sheet is asked for. */
+  function runSliced(steps, build, done) {
+    const frame = () => {
+      if (build !== sheetBuild) return;
+      const until = performance.now() + SHEET_BUDGET_MS;
+      while (performance.now() < until) {
+        const step = steps.next();
+        if (step.done) {
+          done(step.value);
+          return;
+        }
+      }
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  }
+
+  /**
+   * The steps of buildProvincePiece: a pause after every row of each pass, ending in the piece with
+   * its corners on the ground (geo: west, north, east, south). Self-contained, with the province's
+   * shape and bounds passed in, so the sheet worker can run it from its source (sheetWorker).
+   */
+  function* provincePieceSteps(plate, assets, feature, bounds) {
     let west = Infinity;
     let east = -Infinity;
     let south = Infinity;
@@ -1208,13 +1415,11 @@ function start() {
       south = Math.min(south, asset.lat);
       north = Math.max(north, asset.lat);
     }
-    const feature = PROVINCES.features.find((candidate) => candidate.properties.plate === plate);
-    if (feature) {
-      const bounds = provinceBounds(plate);
-      west = Math.min(west, bounds.getWest());
-      east = Math.max(east, bounds.getEast());
-      south = Math.min(south, bounds.getSouth());
-      north = Math.max(north, bounds.getNorth());
+    if (feature && bounds) {
+      west = Math.min(west, bounds.west);
+      east = Math.max(east, bounds.east);
+      south = Math.min(south, bounds.south);
+      north = Math.max(north, bounds.north);
     }
     const middleLat = (south + north) / 2;
     const kmPerLng = 111.32 * Math.cos((middleLat * Math.PI) / 180);
@@ -1262,10 +1467,11 @@ function start() {
         reach[j * gridWidth + i] = sheetStep(0.05, 0.6, wide / 2);
         most = Math.max(most, sum);
       }
+      yield;
     }
     if (feature) {
       // The province itself, softened over several kilometres: its open land gets a light share.
-      const shape = document.createElement("canvas");
+      const shape = typeof OffscreenCanvas === "function" ? new OffscreenCanvas(gridWidth, gridHeight) : document.createElement("canvas");
       shape.width = gridWidth;
       shape.height = gridHeight;
       const pen = shape.getContext("2d");
@@ -1304,6 +1510,7 @@ function start() {
               }
               out[j * gridWidth + i] = sum / count;
             }
+            yield;
           }
           own = out;
         }
@@ -1342,12 +1549,9 @@ function start() {
           places[y * width + x] += Math.exp(-((x - cx) ** 2 + (y - cy) ** 2) / (2 * placeReach * placeReach));
         }
       }
+      yield;
     }
-    let row = 0;
-    const workRows = () => {
-      if (build !== sheetBuild) return;
-      const last = Math.min(height, row + SHEET_ROWS_PER_FRAME);
-      for (; row < last; row++) {
+    for (let row = 0; row < height; row++) {
         for (let x = 0; x < width; x++) {
           const gx = (x * kmPerPx) / scale;
           const gy = (row * kmPerPx) / scale;
@@ -1371,17 +1575,9 @@ function start() {
           pixels[k + 1] = Math.round(255 * Math.min(1, big + town * 0.15));
           pixels[k + 2] = Math.round(255 * Math.min(1, places[row * width + x]));
         }
-      }
-      if (row < height) {
-        requestAnimationFrame(workRows);
-        return;
-      }
-      const corner = (lng, lat) => maplibregl.MercatorCoordinate.fromLngLat([lng, lat]);
-      const northWest = corner(west, north);
-      const southEast = corner(east, south);
-      done({ pixels, width, height, texture: null, places: null, box: [northWest.x, northWest.y, southEast.x, southEast.y], km: [widthKm, heightKm], seed: (plate * 11.3) % 197, province: true });
-    };
-    requestAnimationFrame(workRows);
+      yield;
+    }
+    return { pixels, width, height, geo: [west, north, east, south], km: [widthKm, heightKm], seed: (plate * 11.3) % 197, province: true };
   }
 
   /**
@@ -1390,6 +1586,11 @@ function start() {
    * that stays under fog while the clouds scatter.
    */
   function buildPiece(assets, seed, build, done) {
+    runSliced(pieceSteps(assets), build, (piece) => done(placedPiece(piece)));
+  }
+
+  /** The steps of buildPiece: a pause after each asset's stamps, ending in the piece (corners as provincePieceSteps). */
+  function* pieceSteps(assets) {
     let west = Infinity;
     let east = -Infinity;
     let south = Infinity;
@@ -1420,13 +1621,9 @@ function start() {
       sheetStamp(pixels, width, height, 3, x, y, SHEET_NEAR_KM / kmPerPx);
       // Red: this piece's own ground, a little wider than where the wide cover hands over to it.
       sheetStamp(pixels, width, height, 0, x, y, (SHEET_REACH_KM * 1.35) / kmPerPx);
+      yield;
     }
-    const corner = (lng, lat) => maplibregl.MercatorCoordinate.fromLngLat([lng, lat]);
-    const northWest = corner(west, north);
-    const southEast = corner(east, south);
-    requestAnimationFrame(() => {
-      if (build === sheetBuild) done({ pixels, width, height, texture: null, places: null, box: [northWest.x, northWest.y, southEast.x, southEast.y] });
-    });
+    return { pixels, width, height, geo: [west, north, east, south] };
   }
 
   /** How thick the sheet should be now: gone by the Turkey view, whole by the city's province. */
@@ -1447,8 +1644,11 @@ function start() {
       clearingShader(
         gl,
         gl.VERTEX_SHADER,
-        "uniform mat4 matrix; attribute vec2 place; attribute vec2 corner; attribute vec2 ground; varying vec2 uv; varying vec2 merc; varying vec2 km;" +
-          "void main() { uv = corner; merc = place; km = ground; gl_Position = matrix * vec4(place, 0.0, 1.0); }",
+        // Each piece is drawn around its own middle (box: its corners from there) with a matrix
+        // worked out for it in double precision: whole-world coordinates in single precision step by
+        // pixels up close, and the fog would shake against the streets as the camera moves.
+        "uniform mat4 matrix; uniform vec4 box; uniform vec4 wideCorners; attribute vec2 corner; attribute vec2 ground; varying vec2 uv; varying vec2 wideUv; varying vec2 km;" +
+          "void main() { uv = corner; wideUv = mix(wideCorners.xy, wideCorners.zw, corner); km = ground; gl_Position = matrix * vec4(mix(box.xy, box.zw, corner), 0.0, 1.0); }",
       ),
     );
     gl.attachShader(
@@ -1456,9 +1656,9 @@ function start() {
       clearingShader(
         gl,
         gl.FRAGMENT_SHADER,
-        "precision highp float; uniform sampler2D field; uniform sampler2D wideField; uniform vec4 wideBox; uniform vec2 wideSize; uniform float isPlace;" +
+        "precision highp float; uniform sampler2D field; uniform sampler2D wideField; uniform vec2 wideSize; uniform float isPlace; uniform float placesLevel;" +
           "uniform float zoom; uniform float level; uniform vec3 top; uniform vec3 middle; uniform vec3 bottom;" +
-          "varying vec2 uv; varying vec2 merc; varying vec2 km;" +
+          "varying vec2 uv; varying vec2 wideUv; varying vec2 km;" +
           "float hash(vec2 p) { vec3 q = fract(vec3(p.xyx) * 0.1031); q += dot(q, q.yzx + 33.33); return fract((q.x + q.y) * q.z); }" +
           "float noise(vec2 p) { vec2 i = floor(p); vec2 f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);" +
           " return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y); }" +
@@ -1484,7 +1684,7 @@ function start() {
           "void main() {" +
           // The wide cover draws the fog everywhere, the same at every zoom; a place's piece only adds
           // what its assets keep on top of it (its detail never thins the fog), so there is no seam.
-          " vec4 W = wideAt((merc - wideBox.xy) / (wideBox.zw - wideBox.xy));" +
+          " vec4 W = wideAt(wideUv);" +
           " vec4 L = isPlace > 0.5 ? texture2D(field, uv) : vec4(0.0);" +
           // Noise in kilometres on the ground from the city's middle, the same for every piece (worked
           // out on the CPU: from the map's own coordinates it would step in metres up close).
@@ -1494,11 +1694,14 @@ function start() {
           " float wisp = fbm(p * 19.0 + street * 2.0);" +
           " float puff = fbm(p * 0.55 + vec2(noise(p * 0.3), noise(p * 0.3 + 4.1)) * 0.6);" +
           " float fine = fbm(p * 3.5 + (w - 0.5) * 0.8);" +
-          " float scatter = smoothstep(11.4, 13.0, zoom);" +
-          " float close = smoothstep(14.3, 15.4, zoom);" +
+          // The fog's look changes with the zoom (scattered clouds, then open streets); each spot turns
+          // a little before or after its neighbours, so the change spreads over the fog instead of washing it whole.
+          " float turn = (fine - 0.5) * 0.9;" +
+          " float scatter = smoothstep(11.4, 13.0, zoom + turn);" +
+          " float close = smoothstep(14.3, 15.4, zoom + turn);" +
           " float base = fog(W, vec4(0.0), scatter, close, puff, fine, street, wisp);" +
           " float a = base;" +
-          " if (isPlace > 0.5) { float whole = fog(W, L, scatter, close, puff, fine, street, wisp); a = max(0.0, whole - base) / max(0.001, 1.0 - base); }" +
+          " if (isPlace > 0.5) { float whole = fog(W, L, scatter, close, puff, fine, street, wisp); a = max(0.0, whole - base) / max(0.001, 1.0 - base) * placesLevel; }" +
           " a *= level;" +
           " if (a <= 0.002) discard;" +
           " float shade = clamp(0.28 + 0.58 * W.g + 0.3 * close * (wisp - 0.5) + 0.2 * close * (street - 0.5) + 0.22 * (puff - 0.5) * scatter * (1.0 - close), 0.0, 1.0);" +
@@ -1520,44 +1723,13 @@ function start() {
     id: "city-sheet",
     type: "custom",
     renderingMode: "2d",
-    render(gl, args) {
+    render(gl) {
       for (const gone of sheetsGone) {
         if (gone.texture) gl.deleteTexture(gone.texture);
-        if (gone.places) gl.deleteBuffer(gone.places);
         if (gone.ground) gl.deleteBuffer(gone.ground);
       }
       sheetsGone = [];
       if (sheets.length === 0) return;
-      // Eases toward its target thickness, so the sheet fades in and out instead of jumping.
-      const now = performance.now();
-      const target = sheetTarget();
-      const stepBy = Math.min(1, (now - sheetLevelAt) / SHEET_FADE_MS);
-      sheetLevelAt = now;
-      sheetLevel = sheetLevel < target ? Math.min(target, sheetLevel + stepBy) : Math.max(target, sheetLevel - stepBy);
-      if (sheetLevel !== target) map.triggerRepaint();
-      if (sheetLevel <= 0) return;
-      const shared = sheetResources(gl);
-      gl.useProgram(shared.program);
-      gl.disable(gl.DEPTH_TEST);
-      gl.disable(gl.STENCIL_TEST);
-      gl.disable(gl.CULL_FACE);
-      gl.enable(gl.BLEND);
-      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-      // Mercator (0 to 1) to the screen.
-      gl.uniformMatrix4fv(gl.getUniformLocation(shared.program, "matrix"), false, args.defaultProjectionData.mainMatrix);
-      gl.uniform1i(gl.getUniformLocation(shared.program, "field"), 0);
-      gl.uniform1i(gl.getUniformLocation(shared.program, "wideField"), 1);
-      gl.uniform1f(gl.getUniformLocation(shared.program, "zoom"), map.getZoom());
-      gl.uniform1f(gl.getUniformLocation(shared.program, "level"), sheetLevel);
-      gl.uniform3fv(gl.getUniformLocation(shared.program, "top"), shared.top);
-      gl.uniform3fv(gl.getUniformLocation(shared.program, "middle"), shared.middle);
-      gl.uniform3fv(gl.getUniformLocation(shared.program, "bottom"), shared.bottom);
-      const place = gl.getAttribLocation(shared.program, "place");
-      const corner = gl.getAttribLocation(shared.program, "corner");
-      gl.bindBuffer(gl.ARRAY_BUFFER, shared.corners);
-      gl.enableVertexAttribArray(corner);
-      gl.vertexAttribPointer(corner, 2, gl.FLOAT, false, 0, 0);
-      gl.enableVertexAttribArray(place);
       for (const piece of sheets) {
         if (piece.texture) continue;
         piece.texture = gl.createTexture();
@@ -1566,29 +1738,89 @@ function start() {
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-        gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, piece.width, piece.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, piece.pixels);
-        const [left, upper, right, lower] = piece.box;
-        piece.places = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, piece.places);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([left, upper, right, upper, left, lower, right, lower]), gl.STATIC_DRAW);
+        // Room only: the pixels go up a band at a time below, so no frame carries a whole sheet.
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, piece.width, piece.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+        piece.uploaded = 0;
       }
+      // Each frame sends up to SHEET_UPLOAD_BYTES of the sheets still going up.
+      let bytesLeft = SHEET_UPLOAD_BYTES;
+      gl.activeTexture(gl.TEXTURE0);
+      gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+      for (const piece of sheets) {
+        if (bytesLeft <= 0) break;
+        if (piece.uploaded >= piece.height) continue;
+        const rows = Math.max(1, Math.min(Math.floor(bytesLeft / (piece.width * 4)), piece.height - piece.uploaded));
+        gl.bindTexture(gl.TEXTURE_2D, piece.texture);
+        gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, piece.uploaded, piece.width, rows, gl.RGBA, gl.UNSIGNED_BYTE, piece.pixels.subarray(piece.uploaded * piece.width * 4, (piece.uploaded + rows) * piece.width * 4));
+        piece.uploaded += rows;
+        bytesLeft -= rows * piece.width * 4;
+      }
+      if (sheets.some((piece) => piece.uploaded < piece.height)) map.triggerRepaint();
+      // The cover shows once it is all up; the places' pieces once every one of them is.
+      const up = (piece) => piece.uploaded >= piece.height;
+      const cover = sheets.find((piece) => piece.province && up(piece)) || null;
+      const placePieces = sheets.filter((piece) => !piece.province);
+      const placesUp = placePieces.length > 0 && placePieces.every(up);
+      // Eases toward its target thickness, so the sheet fades in and out instead of jumping.
+      const now = performance.now();
+      const target = cover ? sheetTarget() : 0;
+      // Without motion the fog is simply there, as everything else.
+      const stepBy = motion ? Math.min(1, (now - sheetLevelAt) / SHEET_FADE_MS) : 1;
+      const placesBy = motion ? Math.min(1, (now - sheetLevelAt) / PLACES_FADE_MS) : 1;
+      placesLevel = placesUp ? Math.min(1, placesLevel + placesBy) : 0;
+      if (placesUp && placesLevel < 1) map.triggerRepaint();
+      sheetLevelAt = now;
+      sheetLevel = sheetLevel < target ? Math.min(target, sheetLevel + stepBy) : Math.max(target, sheetLevel - stepBy);
+      if (sheetLevel !== target) map.triggerRepaint();
+      if (sheetLevel <= 0) {
+        fogZoom = null;
+        return;
+      }
+      const zoomNow = map.getZoom();
+      if (fogZoom === null || !motion) fogZoom = zoomNow;
+      else {
+        fogZoom += (zoomNow - fogZoom) * (1 - Math.exp(-Math.min(100, now - sheetFogAt) / FOG_LOOK_MS));
+        if (Math.abs(zoomNow - fogZoom) < 0.003) fogZoom = zoomNow;
+        else map.triggerRepaint();
+      }
+      sheetFogAt = now;
+      const shared = sheetResources(gl);
+      gl.useProgram(shared.program);
+      gl.disable(gl.DEPTH_TEST);
+      gl.disable(gl.STENCIL_TEST);
+      gl.disable(gl.CULL_FACE);
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      // Mercator (0 to 1) to the screen, in double precision; each piece moves it to its own middle below.
+      const toScreen = map.transform.mercatorMatrix;
+      gl.uniform1i(gl.getUniformLocation(shared.program, "field"), 0);
+      gl.uniform1i(gl.getUniformLocation(shared.program, "wideField"), 1);
+      gl.uniform1f(gl.getUniformLocation(shared.program, "zoom"), fogZoom);
+      gl.uniform1f(gl.getUniformLocation(shared.program, "level"), sheetLevel);
+      gl.uniform1f(gl.getUniformLocation(shared.program, "placesLevel"), placesLevel);
+      gl.uniform3fv(gl.getUniformLocation(shared.program, "top"), shared.top);
+      gl.uniform3fv(gl.getUniformLocation(shared.program, "middle"), shared.middle);
+      gl.uniform3fv(gl.getUniformLocation(shared.program, "bottom"), shared.bottom);
+      const corner = gl.getAttribLocation(shared.program, "corner");
+      gl.bindBuffer(gl.ARRAY_BUFFER, shared.corners);
+      gl.enableVertexAttribArray(corner);
+      gl.vertexAttribPointer(corner, 2, gl.FLOAT, false, 0, 0);
+      const ready = cover ? [cover, ...(placesUp ? placePieces : [])] : [];
       // The wide cover comes first and every piece reads it.
-      const wide = sheets.find((piece) => piece.province);
+      const wide = cover;
       if (wide) {
         const [left, upper, right, lower] = wide.box;
         const middleLat = (Math.atan(Math.sinh(Math.PI * (1 - (upper + lower)))) * 180) / Math.PI;
         gl.activeTexture(gl.TEXTURE1);
         gl.bindTexture(gl.TEXTURE_2D, wide.texture);
         gl.activeTexture(gl.TEXTURE0);
-        gl.uniform4f(gl.getUniformLocation(shared.program, "wideBox"), left, upper, right, lower);
         gl.uniform2f(gl.getUniformLocation(shared.program, "wideSize"), wide.width, wide.height);
         const originX = (left + right) / 2;
         const originY = (upper + lower) / 2;
         const kmPerUnit = 40075.017 * Math.cos((middleLat * Math.PI) / 180);
         const ground = gl.getAttribLocation(shared.program, "ground");
         gl.enableVertexAttribArray(ground);
-        for (const piece of sheets) {
+        for (const piece of ready) {
           if (!piece.ground) {
             const [x0, y0, x1, y1] = piece.box;
             const local = (x, y) => [(x - originX) * kmPerUnit, (y - originY) * kmPerUnit];
@@ -1600,13 +1832,20 @@ function start() {
           gl.vertexAttribPointer(ground, 2, gl.FLOAT, false, 0, 0);
           gl.uniform1f(gl.getUniformLocation(shared.program, "isPlace"), piece.province ? 0 : 1);
           gl.bindTexture(gl.TEXTURE_2D, piece.texture);
-          gl.bindBuffer(gl.ARRAY_BUFFER, piece.places);
-          gl.vertexAttribPointer(place, 2, gl.FLOAT, false, 0, 0);
+          const [x0, y0, x1, y1] = piece.box;
+          const cx = (x0 + x1) / 2;
+          const cy = (y0 + y1) / 2;
+          const matrix = Array.from(toScreen);
+          for (let row = 0; row < 4; row++) matrix[12 + row] = toScreen[row] * cx + toScreen[4 + row] * cy + toScreen[12 + row];
+          gl.uniformMatrix4fv(gl.getUniformLocation(shared.program, "matrix"), false, new Float32Array(matrix));
+          gl.uniform4f(gl.getUniformLocation(shared.program, "box"), x0 - cx, y0 - cy, x1 - cx, y1 - cy);
+          const wideX = (x) => (x - left) / (right - left);
+          const wideY = (y) => (y - upper) / (lower - upper);
+          gl.uniform4f(gl.getUniformLocation(shared.program, "wideCorners"), wideX(x0), wideY(y0), wideX(x1), wideY(y1));
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
         gl.disableVertexAttribArray(ground);
       }
-      gl.disableVertexAttribArray(place);
       gl.disableVertexAttribArray(corner);
     },
   };
@@ -1616,6 +1855,7 @@ function start() {
    * crowd (or to the whole province), and the assets come up above the fog with their names.
    * Back out: the fog lifts and the camera returns to Turkey.
    */
+  let shownAssetsKey = null;
   function showCity(city) {
     const plate = city ? city.plate : null;
     if (plate !== cityPlate) closeRelated(false);
@@ -1629,8 +1869,14 @@ function start() {
       city && plate === cityPlate && cityLanded && motion
         ? city.assets.filter((asset) => asset.unlocked && cityAssets.some((before) => before.id === asset.id && !before.unlocked))
         : [];
-    map.getSource("city-assets").setData(assets);
-    map.getSource("city-fog").setData(assets);
+    // The same assets again (the screen sends the city anew when only its settings change): not
+    // handed to the map again, which would cut them into tiles all over.
+    const assetsKey = JSON.stringify(assets);
+    if (assetsKey !== shownAssetsKey) {
+      shownAssetsKey = assetsKey;
+      map.getSource("city-assets").setData(assets);
+      map.getSource("city-fog").setData(assets);
+    }
     cityAssets = city ? city.assets : [];
     const liftsAt = performance.now() + FOG_LIFTS_AFTER_MS;
     clearings = new Map(
@@ -1657,7 +1903,8 @@ function start() {
     // Lighter over the open streets, so the clouds over the assets stand out; it thins as the map
     // zooms out and is gone, the province names back, by the Turkey view.
     if (shown) endIntroNow();
-    if (shown) wholeZoom = map.cameraForBounds(provinceBounds(plate), { padding: cityPadding() }).zoom;
+    // No camera when the screen's panels leave the map no room: the zoom it has then stands in.
+    if (shown) wholeZoom = map.cameraForBounds(provinceBounds(plate), { padding: cityPadding() })?.zoom ?? map.getZoom();
     const names = labelsRevealed ? 1 : 0;
     map.setPaintProperty("province-names", "text-opacity", shown ? ["interpolate", ["linear"], ["zoom"], outerZoom() + LEAVE_ROOM, names, outerZoom() + LEAVE_ROOM + 0.75, 0] : names);
     setCityAssetsShown(false);
@@ -1675,10 +1922,35 @@ function start() {
       setTimeout(() => {
         if (cityPlate === plate) post({ type: "cityLanded", plate });
       }, motion ? FLY_MS : 0);
+      watchCityReady(plate);
     } else if (turkeyView) {
       // Exactly the view the map opened on, whatever padding choosing an asset left on the camera.
       map.flyTo({ center: turkeyView.center, zoom: turkeyView.zoom, padding: { top: 0, right: 0, bottom: 0, left: 0 }, duration: options.duration, essential: true });
     }
+  }
+
+  /** Whether the open city is all there, nothing of it still to come in: what a screen covering the map waits for. */
+  function cityReady() {
+    const whole = (piece) => piece.texture && piece.uploaded >= piece.height;
+    return (
+      cityLanded &&
+      sheetMade === sheetBuild &&
+      sheets.every(whole) &&
+      sheetLevel === sheetTarget() &&
+      (placesLevel >= 1 || !sheets.some((piece) => !piece.province)) &&
+      pictureJobs.size === 0 &&
+      !drawing &&
+      map.areTilesLoaded()
+    );
+  }
+  /** Tells the screen once the city just opened is all there; given up when another is opened. */
+  function watchCityReady(plate) {
+    const timer = setInterval(() => {
+      if (cityPlate !== plate) return clearInterval(timer);
+      if (!cityReady()) return;
+      clearInterval(timer);
+      post({ type: "cityReady", plate });
+    }, 100);
   }
 
   const BANK_OPACITY = DARK ? 0.7 : 0.88;
@@ -2391,8 +2663,8 @@ function start() {
   /** How long the camera takes to draw back, how long the lines take to reach the related assets, and how far a line bends. */
   const RELATED_FLY_MS = 1100;
   const RELATED_GROW_MS = 1200;
-  /** The least the map draws back when the related assets show, in zoom levels. */
-  const RELATED_STEP_BACK = 1.5;
+  /** Room at either side, so the name of a related asset at the edge stays on screen. */
+  const RELATED_SIDE = 56;
   const LINK_POINTS = 48;
   const LINK_BEND = 0.1;
   const LINK_LIGHT = "#FFEDBE";
@@ -2431,20 +2703,21 @@ function start() {
     const shown = { id, camera: { center: map.getCenter(), zoom: map.getZoom() } };
     relatedShown = shown;
     placeUnlock();
-    map.getSource("city-links").setData({ type: "FeatureCollection", features: targets.map((target, index) => linkFeature(asset, target, index)) });
+    const links = targets.map((target, index) => linkFeature(asset, target, index));
+    map.getSource("city-links").setData({ type: "FeatureCollection", features: links });
     map.getSource("city-related").setData({ type: "FeatureCollection", features: targets.map((target) => ({ type: "Feature", geometry: { type: "Point", coordinates: [target.lng, target.lat] }, properties: { title: target.title } })) });
     // Only the asset and what it is related to stay on the map.
     filterCityAssets(["in", ["get", "id"], ["literal", [id, ...targets.map((target) => target.id)]]]);
+    // Framed by the lines themselves, their bends too: the farthest one sets how far the map draws back.
     const bounds = new maplibregl.LngLatBounds([asset.lng, asset.lat], [asset.lng, asset.lat]);
-    targets.forEach((target) => bounds.extend([target.lng, target.lat]));
+    links.forEach((link) => link.geometry.coordinates.forEach((point) => bounds.extend(point)));
     const room = cityPadding();
     // The map adds its own padding (some camera moves leave it, some do not), so only what is missing is asked for: counted twice, it can leave no room at all.
     const kept = map.getPadding();
-    const padding = { top: Math.max(0, room.top + 72 - kept.top), right: Math.max(0, room.right + 24 - kept.right), bottom: Math.max(0, room.bottom + 24 - kept.bottom), left: Math.max(0, room.left + 24 - kept.left) };
-    // Always a step back, however near the related assets are: already on screen, they would not move the camera at all.
-    const fit = map.cameraForBounds(bounds, { padding });
-    const stepBack = map.getZoom() - RELATED_STEP_BACK;
-    map.fitBounds(bounds, { padding, maxZoom: fit ? Math.min(fit.zoom, stepBack) : stepBack, duration: motion ? RELATED_FLY_MS : 0, essential: true });
+    const padding = { top: Math.max(0, room.top + 72 - kept.top), right: Math.max(0, room.right + RELATED_SIDE - kept.right), bottom: Math.max(0, room.bottom + 24 - kept.bottom), left: Math.max(0, room.left + RELATED_SIDE - kept.left) };
+    // Just as far back as the farthest line needs, no further; lines all close by do not pull the
+    // camera in from where the visitor is (a chosen asset's zoom at least).
+    map.fitBounds(bounds, { padding, maxZoom: Math.max(map.getZoom(), SELECT_ZOOM), duration: motion ? RELATED_FLY_MS : 0, essential: true });
     const setReached = (reached) => {
       const gradient = linkGradient(reached);
       map.setPaintProperty("city-links-glow", "line-gradient", gradient);
@@ -2761,7 +3034,10 @@ function start() {
    * the middle the noise frays it into wisps, while the heart stays whole (colors.cloud).
    */
   let cloudNoise = null;
-  function cloudImage(seed) {
+  /** Rows worked out between two pauses of cloudSteps. */
+  const CLOUD_ROWS_A_STEP = 6;
+  /** The bank's picture, worked out a few rows a step (see drawPicturesLater). */
+  function* cloudSteps(seed) {
     cloudNoise = cloudNoise || tileableNoise(59);
     const width = CLOUD_W * CLOUD_RATIO;
     const height = CLOUD_H * CLOUD_RATIO;
@@ -2787,6 +3063,7 @@ function start() {
     const grid = new Float32Array(width * height);
     for (let py = 0; py < height; py++) {
       for (let px = 0; px < width; px++) grid[py * width + px] = thickness(px / CLOUD_RATIO - CLOUD_W / 2, py / CLOUD_RATIO - CLOUD_H / 2);
+      if (py % CLOUD_ROWS_A_STEP === CLOUD_ROWS_A_STEP - 1) yield;
     }
     const above = 4 * CLOUD_RATIO;
     const data = new Uint8ClampedArray(width * height * 4);
@@ -2806,6 +3083,7 @@ function start() {
         data[k + 2] = color[2];
         data[k + 3] = 255 * alpha * 0.92;
       }
+      if (py % CLOUD_ROWS_A_STEP === CLOUD_ROWS_A_STEP - 1) yield;
     }
     return { width, height, data };
   }
@@ -2883,9 +3161,23 @@ function start() {
     }
   }
 
-  /** Room around the framed assets, inside the screen's own panels. */
+  /**
+   * Room around the framed assets, inside the screen's own panels. On a small screen the panels
+   * (the search, the asset's buttons, a notice, the cards) can take more than the whole height; the
+   * room is then shrunk, each side as much as the other, so the map keeps at least 30% of the
+   * screen to frame in. Without it MapLibre finds no camera and the city cannot open.
+   */
   function cityPadding() {
-    return { top: lastPadding.top + 24, right: lastPadding.right + 24, bottom: lastPadding.bottom + 24, left: lastPadding.left + 24 };
+    const wanted = { top: lastPadding.top + 24, right: lastPadding.right + 24, bottom: lastPadding.bottom + 24, left: lastPadding.left + 24 };
+    const { clientWidth: width, clientHeight: height } = map.getContainer();
+    const fit = (a, b, size) => {
+      const most = size * 0.7;
+      const scale = a + b > most && a + b > 0 ? most / (a + b) : 1;
+      return [Math.floor(a * scale), Math.floor(b * scale)];
+    };
+    const [top, bottom] = fit(wanted.top, wanted.bottom, height);
+    const [left, right] = fit(wanted.left, wanted.right, width);
+    return { top, right, bottom, left };
   }
 
   function provinceBounds(plate) {
@@ -2932,17 +3224,16 @@ function start() {
 
   /**
    * The opening: drifting fog, Turkey's border traced in glowing gold through it, then the
-   * fog breaks up from the middle of the country outwards while the camera comes down from
-   * a tilted, turned view. The provinces with assets light up last, with one pulse.
+   * fog breaks up from the middle of the country outwards over a still map. The provinces
+   * with assets light up last, with one pulse.
    */
   function startIntro() {
-    const zoom = map.getZoom();
-    map.jumpTo({ zoom: zoom - 0.9, pitch: 48, bearing: -16 });
+    // The camera stays still: moving it as the fog parts loads new tiles at that very moment and the
+    // drawing stutters on phones. The fog and the traced border carry the opening alone.
     intro = intro || newIntro();
     const begin = () => {
       if (!intro || intro.start !== Infinity) return;
       intro.start = performance.now();
-      map.easeTo({ zoom, pitch: 0, bearing: 0, duration: INTRO_MS, easing: (t) => 1 - Math.pow(1 - t, 3) });
       // The provinces show as the fog parts; the ones with assets light up a moment later.
       setTimeout(() => map.setPaintProperty("province-borders", "line-opacity", 1), INTRO_MS * 0.42);
       setTimeout(() => {
@@ -3051,6 +3342,8 @@ function start() {
   function endIntroNow() {
     if (!intro) return;
     intro = null;
+    post({ type: "introEnd" });
+    drawPicturesLater();
     map.stop();
     map.jumpTo({ pitch: 0, bearing: 0, ...(turkeyView ? { center: turkeyView.center, zoom: turkeyView.zoom } : {}) });
     map.setPaintProperty("province-borders", "line-opacity", 1);
@@ -3061,6 +3354,8 @@ function start() {
   }
 
   function drawIntro(now, width, height) {
+    // The border's tracing runs on its own clock, so it can be paced apart from the fog.
+    const traced = intro.start === Infinity ? 0 : smoothstep(0, TRACE_MS, now - intro.start);
     const elapsed = intro.start === Infinity ? 0 : Math.min(1, (now - intro.start) / INTRO_MS);
     // The border is traced first, in the closed fog; the fog parts after.
     const opening = smoothstep(0.3, 1, elapsed);
@@ -3073,11 +3368,13 @@ function start() {
       context.fillRect(0, 0, width, height);
     }
     for (const layer of intro.layers) drawFogLayer(layer, opening, now, width, height, middle);
-    drawOutline(elapsed);
+    drawOutline(elapsed, traced);
     // Tied to the frames, not a timer: the names come a moment after the lines, before the opening ends.
     if (elapsed >= 0.75 && !labelsRevealed) revealLabels();
     if (elapsed >= 1) {
       intro = null;
+      post({ type: "introEnd" });
+      drawPicturesLater();
       // The opening starts further out than the limit; the limits apply once it is over.
       lockToTurkey();
     }
@@ -3123,8 +3420,7 @@ function start() {
   }
 
   /** Turkey's border, drawn in glowing gold through the fog, then handed over to the map. */
-  function drawOutline(elapsed) {
-    const traced = smoothstep(0, 0.36, elapsed);
+  function drawOutline(elapsed, traced) {
     const alpha = 1 - smoothstep(0.66, 0.92, elapsed);
     if (traced <= 0 || alpha <= 0) return;
     context.save();
@@ -3175,7 +3471,7 @@ function start() {
       };
       if (loaded) open();
       else map.once("load", open);
-    }, INTRO_WAIT_MS * 2);
+    }, PROVINCES_WAIT_MS);
   }
 
   function showNetwork(next) {

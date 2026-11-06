@@ -91,10 +91,23 @@ const TripQuerySchema = z.object({
   date: z.iso.date().optional().describe("1. günün tarihi (YYYY-MM-DD), bugünden en çok bir yıl sonrası; varsayılan bugün"),
 });
 
-const WeatherQuerySchema = z.object({
-  lang: LangSchema.optional(),
-  city: CodeSchema.describe("İl kodu, ör. bursa"),
-});
+/** Any point on Earth, "lat,lng": where the visitor is, which may be outside Turkey. */
+const AnyPointSchema = z
+  .string()
+  .transform((value) => value.split(",").map((part) => Number(part.trim())))
+  .pipe(z.tuple([z.number().min(-90).max(90), z.number().min(-180).max(180)]))
+  .transform(([lat, lng]) => ({ lat, lng }));
+
+const WeatherQuerySchema = z
+  .object({
+    lang: LangSchema.optional(),
+    city: CodeSchema.optional().describe("İl kodu, ör. bursa"),
+    at: AnyPointSchema.optional().describe("Bir noktanın hava durumu lat,lng (ör. ziyaretçinin konumu); verilirse city yerine kullanılır"),
+  })
+  .refine((query) => query.city !== undefined || query.at !== undefined, { message: "city or at is required", path: ["city"] });
+
+/** The place a point's weather is named by: the app names it from the phone, where it can. */
+const HERE: Record<Lang, string> = { tr: "Konumun", en: "Your location" };
 
 const ESTIMATE_NOTE: Record<Lang, string> = {
   tr: `Yürüme süreleri tahminidir: kuş uçuşu mesafe × ${DETOUR_FACTOR}, dakikada ${WALK_METERS_PER_MINUTE} m.`,
@@ -285,15 +298,18 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
   app.get("/weather", {
     schema: {
       tags: ["planner"],
-      summary: "İlin anlık hava durumu (Open-Meteo); sağlayıcıya ulaşılamazsa available: false",
+      summary: "İlin ya da bir noktanın (at) anlık hava durumu (Open-Meteo); sağlayıcıya ulaşılamazsa available: false",
       querystring: toOpenApiSchema(WeatherQuerySchema, "input"),
       response: { 200: toOpenApiSchema(WeatherResponseSchema), 400: errorSchema, 404: errorSchema },
     },
   }, async (request, reply): Promise<WeatherResponse> => {
     const query = parseWith(WeatherQuerySchema, request.query, "INVALID_QUERY");
     const lang = langOf(request, query.lang);
-    const city = await cityOf(query.city, lang);
-    const [current, daily] = await Promise.all([cityWeather(city.code), cityForecast(city.code)]);
+    const at = query.at;
+    const city = at ? { code: "here", label: HERE[lang] } : await cityOf(query.city!, lang);
+    const [current, daily] = at
+      ? await Promise.all([weather.current(at), weather.forecast(at).then((days) => days ?? [])])
+      : await Promise.all([cityWeather(city.code), cityForecast(city.code)]);
 
     setHeaders(reply, lang);
     return WeatherResponseSchema.parse({

@@ -24,6 +24,7 @@ import {
   useRef,
   useState,
   type ComponentProps,
+  type ReactNode,
 } from "react";
 import {
   ActivityIndicator,
@@ -415,7 +416,6 @@ function WalletCard({
             {[
               { label: w.earnedRow, value: wallet?.earned ?? 0 },
               { label: w.spentRow, value: wallet?.spent ?? 0 },
-              { label: w.sealedRow, value: wallet?.provenVisits ?? 0 },
             ].map((row, i) => (
               <View
                 key={row.label}
@@ -446,14 +446,10 @@ function WalletCard({
         <View
           style={styles.walletStats}
           accessible
-          accessibilityLabel={w.statsLabel(wallet?.earned ?? 0, wallet?.spent ?? 0, wallet?.provenVisits ?? 0)}
+          accessibilityLabel={w.statsLabel(wallet?.earned ?? 0, wallet?.spent ?? 0)}
         >
           <WalletStat value={wallet?.earned ?? 0} label={w.earned} />
           <WalletStat value={wallet?.spent ?? 0} label={w.spent} />
-          <WalletStat
-            value={wallet?.provenVisits ?? 0}
-            label={w.sealedVisits}
-          />
         </View>
       )}
     </View>
@@ -1043,7 +1039,6 @@ function RewardSheet({
   const m = useMessages();
   const w = m.rewards;
   const { colors: c, scheme } = useTheme();
-  const insets = useSafeAreaInsets();
   const router = useRouter();
   // Kept while the sheet slides away, so it does not empty before it is gone.
   const [shown, setShown] = useState<Reward | null>(reward);
@@ -1105,29 +1100,7 @@ function RewardSheet({
   };
 
   return (
-    <Modal
-      visible={reward !== null}
-      transparent
-      animationType="slide"
-      onRequestClose={onClose}
-    >
-      <Pressable
-        style={styles.backdrop}
-        onPress={onClose}
-        accessibilityRole="button"
-        accessibilityLabel={m.common.close}
-      />
-      <View
-        style={[
-          styles.sheet,
-          {
-            backgroundColor: c.surface,
-            borderColor: c.border,
-            paddingBottom: insets.bottom + spacing.lg,
-          },
-        ]}
-        accessibilityViewIsModal
-      >
+    <Sheet visible={reward !== null} onClose={onClose}>
         <View style={[styles.grabber, { backgroundColor: c.border }]} />
         <View style={[styles.sheetIcon, { backgroundColor: `${hue}1A` }]}>
           <Ionicons name={look.icon} size={40} color={hue} />
@@ -1216,6 +1189,55 @@ function RewardSheet({
           onPress={onClose}
           style={styles.stretch}
         />
+    </Sheet>
+  );
+}
+
+/**
+ * A sheet over the page: the shade behind it fades in where it is while the sheet alone rises from
+ * the bottom (a sliding Modal would carry the shade up with it), and both go the same way back.
+ */
+function Sheet({ visible, onClose, children }: { visible: boolean; onClose: () => void; children: ReactNode }) {
+  const m = useMessages();
+  const { colors: c } = useTheme();
+  const insets = useSafeAreaInsets();
+  const { height } = useWindowDimensions();
+  const reduced = useReducedMotion();
+  const [mounted, setMounted] = useState(visible);
+  const shade = useRef(new Animated.Value(0)).current;
+  const rise = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    if (visible) setMounted(true);
+    const to = visible ? 1 : 0;
+    const going = Animated.parallel([
+      Animated.timing(shade, { toValue: to, duration: reduced ? 0 : visible ? 260 : 200, easing: Easing.out(Easing.quad), useNativeDriver: true }),
+      Animated.timing(rise, { toValue: to, duration: reduced ? 0 : visible ? 340 : 220, easing: visible ? Easing.out(Easing.cubic) : Easing.in(Easing.quad), useNativeDriver: true }),
+    ]);
+    going.start(({ finished }) => {
+      if (finished && !visible) setMounted(false);
+    });
+    return () => going.stop();
+  }, [visible, shade, rise, reduced]);
+  return (
+    <Modal visible={mounted} transparent animationType="none" onRequestClose={onClose} statusBarTranslucent>
+      <View style={styles.sheetRoom}>
+        <Animated.View style={[StyleSheet.absoluteFill, styles.backdrop, { opacity: shade }]}>
+          <Pressable style={styles.flex} onPress={onClose} accessibilityRole="button" accessibilityLabel={m.common.close} />
+        </Animated.View>
+        <Animated.View
+          style={[
+            styles.sheet,
+            {
+              backgroundColor: c.surface,
+              borderColor: c.border,
+              paddingBottom: insets.bottom + spacing.lg,
+              transform: [{ translateY: rise.interpolate({ inputRange: [0, 1], outputRange: [height, 0] }) }],
+            },
+          ]}
+          accessibilityViewIsModal
+        >
+          {children}
+        </Animated.View>
       </View>
     </Modal>
   );
@@ -1233,36 +1255,13 @@ function CodeSheet({
   const m = useMessages();
   const w = m.rewards;
   const { colors: c } = useTheme();
-  const insets = useSafeAreaInsets();
   const [shown, setShown] = useState<Redemption | null>(redemption);
   useEffect(() => {
     if (redemption) setShown(redemption);
   }, [redemption]);
   if (!shown) return null;
   return (
-    <Modal
-      visible={redemption !== null}
-      transparent
-      animationType="slide"
-      onRequestClose={onClose}
-    >
-      <Pressable
-        style={styles.backdrop}
-        onPress={onClose}
-        accessibilityRole="button"
-        accessibilityLabel={m.common.close}
-      />
-      <View
-        style={[
-          styles.sheet,
-          {
-            backgroundColor: c.surface,
-            borderColor: c.border,
-            paddingBottom: insets.bottom + spacing.lg,
-          },
-        ]}
-        accessibilityViewIsModal
-      >
+    <Sheet visible={redemption !== null} onClose={onClose}>
         <View style={[styles.grabber, { backgroundColor: c.border }]} />
         <Ionicons name="ticket-outline" size={32} color={c.highlight} />
         <Text variant="title" headingLevel={2} style={styles.centered}>
@@ -1288,8 +1287,7 @@ function CodeSheet({
           onPress={onClose}
           style={styles.stretch}
         />
-      </View>
-    </Modal>
+    </Sheet>
   );
 }
 
@@ -1789,8 +1787,11 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   backdrop: {
-    flex: 1,
     backgroundColor: "rgba(3, 6, 14, 0.55)",
+  },
+  sheetRoom: {
+    flex: 1,
+    justifyContent: "flex-end",
   },
   sheet: {
     alignItems: "center",
