@@ -140,7 +140,7 @@ export const AdminAssetRecordSchema = z.strictObject({
   /** The complex (külliye) this asset is a building of. */
   parentId: AssetIdSchema.nullable(),
   tags: z.array(z.string().trim().min(1).max(60)).max(40),
-  alternateNames: z.array(z.strictObject({ name: RecordText(200), note: RecordString(400) })).max(30),
+  alternateNames: z.array(z.strictObject({ name: RecordText(200), note: RecordOptionalText(400) })).max(30),
   city: CodeSchema,
   district: z.string().trim().max(60),
   neighborhood: RecordString(120),
@@ -159,7 +159,7 @@ export const AdminAssetRecordSchema = z.strictObject({
   founder: z.strictObject({ name: RecordString(200), role: RecordString(200), confidence: RecordConfidence.nullable() }),
   architect: z.strictObject({
     name: RecordString(200),
-    candidates: z.array(z.strictObject({ name: z.string().trim().max(200), note: RecordString(400) })).max(20),
+    candidates: z.array(z.strictObject({ name: z.string().trim().max(200), note: RecordOptionalText(400) })).max(20),
     confidence: RecordConfidence.nullable(),
   }),
   waqf: z.strictObject({
