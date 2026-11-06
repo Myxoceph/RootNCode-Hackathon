@@ -29,6 +29,10 @@ import { visitSealTarget } from "@/lib/visit-seal";
 import { localeTag, useLang, useMessages } from "@/i18n";
 
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
+/** How much of the monument's photo shows over the camera: as much as lines up with it, the camera still seen through. */
+const GHOST = 0.4;
+/** Once recognised the gold corners take over; the photo steps back. */
+const GHOST_RECOGNISED = 0.15;
 /** The target must stay in view this long before the visit is sealed, so a passing glimpse does not count. */
 const HOLD_MS = 1000;
 /** How long a seal that needs the position waits for a fix. */
@@ -320,18 +324,19 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
     <View style={styles.fill}>
       <MarkerTracker key={run} target={target} onEvent={onEvent} style={StyleSheet.absoluteFill} />
 
-      <View style={[styles.hint, { top: insets.top + 72 }]} accessible accessibilityLabel={w.findLabel(part, photo.alt)}>
-        <View style={styles.hintPhoto}>
-          <AssetImage media={photo} fill decorative />
-        </View>
-        <Text variant="caption" colorValue={cameraColors.gold} style={styles.mono} numberOfLines={1}>
-          {part.toLocaleUpperCase(lang)}
-        </Text>
+      {/* Over the camera as a ghost, for the visitor to line up with the monument; the tracker sees only the camera. */}
+      <View
+        style={[StyleSheet.absoluteFill, { opacity: phase.name === "holding" || phase.name === "sending" ? GHOST_RECOGNISED : GHOST }]}
+        pointerEvents="none"
+        accessible
+        accessibilityLabel={w.findLabel(part, photo.alt)}
+      >
+        <AssetImage media={photo} fill decorative />
       </View>
 
       <View style={[styles.panel, { paddingBottom: insets.bottom + spacing.lg }]} accessibilityLiveRegion="polite">
         {onUnlock && <UnlockButton onPress={onUnlock} />}
-        <PanelBody phase={phase} hold={hold} onRetry={retry} />
+        <PanelBody phase={phase} part={part} hold={hold} onRetry={retry} />
       </View>
     </View>
   );
@@ -339,13 +344,16 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
 
 function PanelBody({
   phase,
+  part,
   hold,
   onRetry,
 }: {
   phase: Phase;
+  part: string;
   hold: Animated.Value;
   onRetry: () => void;
 }) {
+  const lang = useLang();
   const m = useMessages();
   const w = m.seal;
   switch (phase.name) {
@@ -376,6 +384,9 @@ function PanelBody({
     case "searching":
       return (
         <>
+          <Text variant="caption" colorValue={cameraColors.gold} style={styles.mono}>
+            {part.toLocaleUpperCase(lang)}
+          </Text>
           <Text variant="heading" colorValue={cameraColors.text}>
             {w.frameIt}
           </Text>
@@ -601,24 +612,6 @@ const styles = StyleSheet.create({
   mono: {
     fontFamily: fontFamily.monoMedium,
     letterSpacing: 1.5,
-  },
-  hint: {
-    position: "absolute",
-    right: spacing.lg,
-    width: 112,
-    gap: spacing.xs,
-    padding: spacing.xs,
-    borderRadius: radius.lg,
-    backgroundColor: cameraGlass,
-    alignItems: "center",
-  },
-  hintPhoto: {
-    width: "100%",
-    aspectRatio: 4 / 3,
-    borderRadius: radius.md,
-    overflow: "hidden",
-    borderWidth: 1.5,
-    borderColor: cameraColors.gold,
   },
   panel: {
     position: "absolute",
