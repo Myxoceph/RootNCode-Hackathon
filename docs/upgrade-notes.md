@@ -7,6 +7,14 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-06: Basılı fotoğrafla Ziyaret Mührü
+
+`DEMO_UNLOCK` açıkken mühür konuma bakmıyor: eserin mühür fotoğrafı kâğıttan ya da slayttan kameraya gösterilince ziyaret mühürlenir.
+
+- Telefondaki uygulama yeniden derlenmeli; eski sürüm 200 m kontrolünü kendisi yapıp reddeder.
+- Sunucuda bir şey yapmak gerekmiyor (`DEMO_UNLOCK` varsayılan olarak açık).
+- Kapatmak için: sunucunun `deploy/compose.yml` ve `deploy/.env` dosyalarına `DEMO_UNLOCK=false`.
+
 ## 2026-11-06 · Panelden fotoğraf yükleme (sözleşme 0.3.29)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **sunucuyu yöneten**, **Kübra (panel)**
