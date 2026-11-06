@@ -1,8 +1,8 @@
 /**
  * Checks the demo stack before it goes on stage (docs/deploy.md, "Final günü"). Read-only, except one
  * question to the assistant: `/chat/status` only says the model is configured, so a real answer is asked.
- * Only accounts ask, so the check signs in as its own account (PREFLIGHT_PASSWORD, from deploy/.env
- * through deploy/demo.sh), opens it on first use, and deletes its conversation afterwards: a demo
+ * Only accounts ask, so the check signs in as its own account (PREFLIGHT_PASSWORD, from the
+ * environment or deploy/.env), opens it on first use, and deletes its conversation afterwards: a demo
  * account's history never shows the check's question.
  *
  *   npm run demo:check                                         the stack on this machine (Caddy on 127.0.0.1:8080)
@@ -10,7 +10,7 @@
  *
  * Prints one line per check and exits 1 if any check failed.
  */
-import { statfsSync } from "node:fs";
+import { readFileSync, statfsSync } from "node:fs";
 
 const BASE = (process.argv[2] ?? "http://127.0.0.1:8080").replace(/\/+$/, "");
 const TILES = process.env.TILES_URL ?? "https://tiles.allbytech.com";
@@ -78,9 +78,19 @@ await check("web app", async () => {
   return [status === 200 && String(body).includes("<html"), `${status}`];
 });
 
+/** From the environment, else deploy/.env, so the check gives the same answer however it is started. */
+function preflightPassword() {
+  if (process.env.PREFLIGHT_PASSWORD) return process.env.PREFLIGHT_PASSWORD;
+  try {
+    return /^PREFLIGHT_PASSWORD=(.*)$/m.exec(readFileSync(new URL(".env", import.meta.url), "utf8"))?.[1]?.trim();
+  } catch {
+    return undefined;
+  }
+}
+
 /** The check's own account: signs in, or opens it the first time. Null without a password. */
 async function preflightToken() {
-  const password = process.env.PREFLIGHT_PASSWORD;
+  const password = preflightPassword();
   if (!password) return null;
   const post = (path, payload) =>
     get(`${BASE}/api${path}`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
