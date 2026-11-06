@@ -437,7 +437,11 @@ function start() {
   window.vagabondsMap.map = map;
   map.on("error", (event) => post({ type: "error", message: String(event.error && event.error.message || event.error) }));
   // The base style asks for a few pattern images it does not ship; an empty one keeps the console quiet.
-  map.on("styleimagemissing", (event) => map.addImage(event.id, { width: 1, height: 1, data: new Uint8Array(4) }));
+  // Not for the page's own pictures (seals, clouds) still to be drawn: those are finished at once
+  // below, and an empty one put there first would stand in for them for good.
+  map.on("styleimagemissing", (event) => {
+    if (!pictureJobs.has(event.id)) map.addImage(event.id, { width: 1, height: 1, data: new Uint8Array(4) });
+  });
   // The credits the tiles and OpenStreetMap ask for stay one tap away behind a faint (i): the page's
   // style keeps them folded until the button is tapped (credits-open), so they never flash open first.
   const foldCredits = () => {
