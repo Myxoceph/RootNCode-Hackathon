@@ -269,7 +269,7 @@ const CSS = `
 .vg-nav { position: relative; z-index: 2; flex: none; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 22px 26px 22px 34px; }
 .vg-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_600SemiBold, system-ui, sans-serif; font-size: calc(23px * var(--vg-text, 1)); letter-spacing: 0.2px; }
 .vg-mark { width: 9px; height: 9px; border-radius: 50%; background: #E7C26A; box-shadow: 0 0 14px rgba(231, 194, 106, 0.7); }
-.vg-nav-link { padding: 9px 18px; border: 0; border-radius: 999px; background: transparent; cursor: pointer; white-space: nowrap; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_500Medium, sans-serif; font-size: calc(14px * var(--vg-text, 1));
+.vg-nav-link { display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 9px 18px; border: 0; border-radius: 999px; background: transparent; cursor: pointer; white-space: nowrap; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_500Medium, sans-serif; font-size: calc(14px * var(--vg-text, 1));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); transition: background 0.25s, box-shadow 0.25s; }
 .vg-nav-link:hover { background: rgba(255, 255, 255, 0.06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28); }
 .vg-nav-actions { display: flex; align-items: center; gap: 8px; }
