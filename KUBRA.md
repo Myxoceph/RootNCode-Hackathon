@@ -1,148 +1,37 @@
-# Kübra için: eser ekranında kitabın tamamı
+# Kübra için: sıradaki işler
 
-Veritabanında ve API'de her eserin bütün kaydı var, ama eser ekranı (`apps/app/src/components/asset-detail.tsx`)
-bunun küçük bir kısmını gösteriyor. 770 yayındaki eserde bugün:
+Son güncelleme: 6 Kasım 2026 (Ahmet). Önceki listeden biten işler çıkarıldı: kitaptaki her şeyin görünmesi,
+fotoğraf galerisi, "Eserin dosyası" sayfası ve ekran okuyucu bulguları (#144–#151).
 
-| Veri | Kayıtta | Ekranda |
-|---|---|---|
-| Fotoğraf | 1996 | 193'ü hiç görünmüyor (27 eserde 3 ya da daha fazlası) |
-| Bölüm | 2495 | 424'ü hiç görünmüyor (kitapta "muhtemel" ya da "tartışmalı" diye geçtiği için) |
-| Zaman çizelgesi olayı | 2134 | hiçbiri |
-| Kişi (bani, mimar, usta) | 1466 | yalnızca baninin adı |
-| Kitabe metni ve çevirisi | 469 | yalnızca kamera deneyiminde (Taşın Dili) |
-| Rivayet | 102 | hiçbiri |
-| Vakıf bilgisi | 91 eser | hiçbiri |
-| Ölçü ve sayılar | 2155 | eser başına en çok 3, yalnızca sayı olanlar |
-
-Örnek: [Yıldırım Bayezid Camii](https://vagabonds.allbytech.com/monuments/bursa-yildirim-yildirim-bayezid-camii)'nin
-9 bölümünden "Tipoloji ve Tarihçe" dahil 2'si, 18 olaylık zaman çizelgesinin tamamı, 11 ölçünün 8'i, 6 kitabenin
-metinleri görünmüyor.
-
-Reels biçimi (tam ekran sayfa, bir fotoğraf, bir cümle) kalsın; aşağıdaki üç iş onun yanına ekleniyor.
-**API ve sözleşmede değişiklik gerekmiyor**: hepsi `GET /assets/:id` cevabında, `AssetDetail` tipinde
-(`packages/contracts/src/asset.schema.ts`) zaten var.
-
-Öncelik sırası: 1 (küçük, en çok içeriği açar) → 2 → 3. Tarayıcı kontrolünde çıkan küçük düzeltmeler 4. bölümde.
+Öncelik sırası: 1 → 2 → 3 → 4. Ekrandaki yeni metinler sözlüğe girsin (`src/i18n`), Türkçe ve İngilizce.
 
 ---
 
-## 0. Hazırlık
+## 1. Panel: fotoğrafın yeri ve yeni bölümler (#187 birleşince)
 
-```bash
-git switch dev && git pull
-npm ci
-git switch -c feat/asset-dossier
-npm run app        # web için: w
-```
+API hazır (sözleşme 0.3.28); `Ahmet.md`'deki 1 ve 3. maddeler. Panel bugün ikisini de kendi durumunda tutuyor ve kaydetmiyor.
+Bağlanana kadar panelin her kaydı `dossierAfter`'ı ve `customBlocks`'u boş gönderir, yani siler.
 
-Deneme eserleri (her birinde farklı bir eksik var):
-
-| Eser | Neden |
-|---|---|
-| `bursa-yildirim-yildirim-bayezid-camii` | Tarihçe bölümü "tartışmalı" diye gizli; 18 olay, 6 kitabe |
-| `bursa-osmangazi-ulucami` | En dolu kayıt: 10 fotoğraf, 21 olay, 10 kişi, 3 rivayet, 7 kitabe, mimar adayları |
-| `konya-selcuklu-sultan-alaeddin-ulu-camii` | 15 fotoğrafın 6'sı görünmüyor |
-| `hatay-antakya-seyh-ali-camii` | 13 fotoğrafın 8'i görünmüyor |
-| `konya-selcuklu-karatay-medresesi` | Vakfiyeden alıntı ve vakfın şartları var |
-
-## 1. Kitapta ne yazıyorsa görünsün
-
-Bugün yalnızca "kesin" bilgiler gösteriliyor; kitapta "muhtemel", "tartışmalı" diye geçenler gizleniyor.
-Karar: **kitapta ne yazıyorsa görünsün, ek bir etiket ya da uyarı yok.** Metnin kendisi zaten "rivayete göre",
-"muhtemelen" gibi kitabın sözleriyle yazılı.
-
-`asset-detail.tsx`'te `isCertain` (satır 49) dört yerde süzüyor; dördü de kalkacak:
-
-- satır 76: `chapters` bütün `asset.sections` olsun.
-- satır 166: `founder` her zaman `asset.founder?.name`.
-- satır 205: ölçüler `confidence`'a bakmadan.
-- satır 220: `builtYear` `confidence`'a bakmadan.
-
-`isCertain` ve `Confidence` importu kullanılmıyorsa sil; dosyadaki "Only what the sources state for certain is
-told" yorumlarını da güncelle.
-
-**Bitti sayılır:** Yıldırım Bayezid Camii'nde "Devamını oku" ile 9 bölümün 9'u da okunuyor.
-
-## 2. Fotoğraf galerisi
-
-Fotoğraflar bugün yalnızca sayfaların arka planı; sayfa sayısından fazlası hiç görünmüyor.
-
-- Kapak sayfasına bir düğme: "Fotoğraflar (15)". Yalnızca birden fazla fotoğraf varsa.
-- Tam ekran galeri: yatay kaydırma, altında `caption` (yoksa boş), köşede `1/15`, kapatma düğmesi.
-  `credit` ve `photographer` küçük yazıyla.
-- Fotoğraflar: `asset.media` içinde `kind` `photo`, `archive_photo` ya da `drawing` olanlar (çizimler planlar;
-  bugün hiç görünmüyorlar), kapak önce. `galleryOf` (satır 478) bunu `drawing` olmadan yapıyor.
-- Görsel bileşeni: `@/components/asset-image` (`AssetImage`); `lqip` ve `dominantColor` yüklenirken zemin.
-- Erişilebilirlik: her fotoğrafın `accessibilityLabel`'ı `alt`; `1/15` ekran okuyucuya da söylensin;
-  galeri açıkken geri tuşu ve Escape kapatsın; kaydırmanın yanında önceki/sonraki düğmeleri (switch access).
-
-**Bitti sayılır:** Sultan Alâeddin Camii'nde 15 fotoğrafın 15'i galeride.
-
-## 3. "Eserin dosyası" sayfası
-
-Son sayfadaki (`End`) "KEŞFE ÇIK" listesine bir satır: **"Eserin dosyası"** ("Kitaptaki her şey"). Açılınca
-normal, dikey kaydırılan bir okuma sayfası (reels değil; açık zemin, `useTheme` renkleri). Yeni bir route ya da
-bir modal, hangisi kolaysa: ör. `src/app/monuments/[id]/dossier.tsx`.
-
-Bloklar şu sırayla; **içi boş blok hiç görünmesin** (başlığıyla birlikte):
-
-| Blok | Alan (`AssetDetail`) | Nasıl |
+| Panelde bugün | Bağlanacağı yer | Biçim |
 |---|---|---|
-| Künye | `dating.display`, `dating.basis`, `founder.name` + `founder.role`, `architect.name`, `architect.candidates[]` (`name`, `note`), `alternateNames[]`, `address`, `neighborhood`, `parent` (bağlı olduğu külliye, tıklanınca o eser), `children[]` | Etiket: değer satırları |
-| Tarihçe | `sections[]` (`title`, `body`, `sources`) | Bütün bölümler, tam metin; altında `SourceNote` (`@vagabonds/ui`) |
-| Zaman çizelgesi | `timeline[]` (`year`, `hijri`, `date`, `type.label`, `title`, `note`) | Dikey çizgi; yıl solda (`year` yoksa `date`), `hijri` varsa "H. 793" |
-| Kişiler | `people[]` (`name`, `role`) | "Banî (yaptıran) · Sultan Yıldırım Bayezid" |
-| Vakıf | `waqf` (`name`, `deedDate`, `deedExcerpt`, `conditions`, `landNote`) | Vakfiyeden alıntı italik ya da alıntı kutusunda |
-| Kitabeler | `inscriptions[]` (`location`, `language`, `script`, `transliteration`, `translation`, `author`, `gregorian`, `hijriYear`, `note`) | Her biri bir kart: yeri, tarihi, transkripsiyon, çeviri; `arTarget` varsa kartta "Kamerayla oku" (`/inscription?asset=`) |
-| Ölçüler | `facts[]` (`label`, `value`, `unit`, `note`) | İki sütunlu tablo; `value` metin (`"33,60 x 7,10"`), `valueNum` değil |
-| Rivayetler | `legends[]` (`title`, `body`) | Kitabın kendi başlığı "Rivayetler"; `verdict`'e göre ek etiket yok |
-| Erişilebilirlik | `accessibility` | `verified` false ve değer `unknown` ise "Bilgi yok"; asla "erişilebilir" deme |
-| Kaynakça | `sources[]` (`title`, `pages`, `url`) | "Bursa Vakıf Eserleri – II. Cilt"; `pages` varsa "· s. 163-167", `url` varsa bağlantı |
+| `placements` | `record.media[].dossierAfter` | `string \| null`: blok adı, `section:<id>`, `custom:<id>` |
+| `CustomBlockDraft[]` | `record.customBlocks` | `{ id, title: { tr, en }, body: { tr, en }, after }` |
 
-Notlar:
+- Sunucu `GET /assets/:id`'de `media[].dossierAfter` ve `customBlocks` gönderiyor. `dossier-photos.ts` ve
+  `dossier-custom.ts`'teki `as` dönüşümleri artık gerekmiyor, sözleşmedeki tipler kullanılabilir.
+- `id` küçük harf, rakam, `-` ve `_` (`Slug`); başlık ve Türkçe metin boş olamaz, aynı `id` iki kez olamaz.
+- Notların İngilizcesini ben bağladım (`note: { tr, en } | null`), `forServer` kalktı. Yerelde çalışıyorsan `git pull`
+  yaparken `asset-steps.tsx`'te çakışma çıkabilir.
+- Panelden **veri setindeki** bir esere yapılan değişiklik yalnızca veritabanında durur ve sonraki içe aktarmada silinir
+  (sunucuda her güncellemede). Kalıcı sanma.
 
-- Metinler kitaptan geldiği gibi; kısaltma, "devamını oku" yok, hepsi açık.
-- Uzun sayfa: başta blok başlıklarına atlayan küçük bir içindekiler satırı iyi olur.
-- Erişilebilirlik (WCAG 2.1 AA): her blok başlığı `headingLevel={2}`; listeler `accessibilityRole="list"`;
-  dokunma hedefleri en az 44 pt; metin boyutu ayarıyla büyüsün (`useUi().textScale`); renkler `useTheme`'den,
-  kontrast `npm run ui:contrast`.
-- Mock veri (`EXPO_PUBLIC_DATA_SOURCE=mock`) için fixture'larda 6 eser var; Ulucami hepsini içeriyor.
+**Bitti sayılır:** panelde bir fotoğraf yerleştirip bir bölüm ekle, kaydet, sayfayı yenile: ikisi de duruyor, eserin
+dosyasında görünüyor.
 
-**Bitti sayılır:** Ulucami'nin dosya sayfasında 21 olay, 10 kişi, 7 kitabe, 3 rivayet ve bütün ölçüler var;
-Karatay Medresesi'nde vakfiye alıntısı ve şartları görünüyor.
+## 2. Gizemli bağlar: keşfettikçe açılan Kentsel Ağ
 
-## 4. Tarayıcı kontrolünde çıkanlar (2026-11-02)
-
-Demo yığınında, telefon boyutunda (390×844) Harita, Eserler, eser detayı, Kamera, Profil ve Rehber gezildi.
-Ağ isteklerinin hepsi başarılı; eser detayı, Profil ve Rehber'in giriş kartı sorunsuz. Düzeltilecekler,
-önem sırasıyla:
-
-1. **Eser listesinde yanlış yıl.** `asset-card.tsx`'teki `yearOf` (satır 12) tarih metnindeki ilk sayıyı
-   alıyor ve hicri yılı ya da ilgisiz bir tarihi gösterebiliyor: "Devlet Hatun Türbesi · 816" (hicri),
-   "Hacı Hüsamettin Türbesi · 1632" (yaptıranın ölümü), "Seyyid Usûl Tekkesi · 2008" (bugünkü yapı).
-   **Sözleşme 0.3.19'dan beri** listedeki her eserde `yearLabel` var (API hesaplıyor): "1399", "1413",
-   "XV. yüzyıl" ya da kitap bir şey vermiyorsa `null`. Kart `yearOf` yerine `asset.yearLabel`'ı göstersin,
-   `null`'da yalnızca ilçe. `yearOf` silinebilir.
-2. **React #418 (hydration) hatası:** Harita, Eserler, Kamera ve Profil'de konsolda. Web'de önceden üretilen
-   HTML ile tarayıcıdaki ilk çizim farklı; genelde ilk çizimde okunan tarih/saat, `window`, ekran boyutu ya da
-   cihazda saklanan bir ayar (tema, yazı boyutu) yüzünden. O değer ilk çizimden sonra (`useEffect` içinde)
-   okunmalı. Ayrıntılı mesaj için `npx expo start --web` (geliştirme modu) ile aç.
-3. **Harita ekran okuyucuya kapalı.** Bursa, Konya, Hatay ve sağ üstteki "i" düğmesi erişilebilirlik
-   ağacında yok; ekran okuyucu yalnızca arama kutusunu ve sekmeleri görüyor. Haritanın üstüne (ya da
-   altına) ekran okuyucunun göreceği şehir düğmeleri; "i" düğmesine `accessibilityLabel`.
-4. **Kamera sekmesi (Lighthouse erişilebilirlik 94):** iki görselde `alt` yok; iki kartta ekran okuyucunun
-   okuduğu ad ekrandaki başlıkla başlamıyor (sesle kumandada sorun: "Ziyaret Mührü"ne bas denince bulunmaz).
-   `accessibilityLabel` görünen başlıkla başlasın.
-5. **Kamera sekmesindeki Ziyaret Mührü kartı** ekran görüntüsünde gri ve boş göründü (fotoğraf yüklenmiş
-   olduğu hâlde). Telefonda bir bak; kartın kendi animasyonuysa sorun yok.
-6. **Harita açılırken** yaklaşık 10 saniye yalnızca sis görünüyor. Bilinçliyse kalsın; değilse sahnede boş
-   ekran gibi duruyor.
-7. **Eserler listesinde yüklenirken** bulanık önizleme (`lqip`) kartı doldurmuyor, ortada küçük bir resim
-   olarak duruyor; tam boy yayılsın.
-
-Denenmeyenler: klavyeyle gezinme ve ekran okuyucuyla elle deneme, karanlık tema, tablet boyutu.
-
-## 5. Gizemli bağlar: keşfettikçe açılan Kentsel Ağ
+**Henüz başlanmamış.** `fetchMyConnections` yok, harita bağları `useRelationsOf` ile (`app/(tabs)/map.tsx:207`) gizemsiz alıyor.
+`urban-network.ts`'teki renk grupları hazır.
 
 Bir eser keşfedilince (ziyaret edilince) kartında bir düğme; basınca o eserin bağlı olduğu eserler haritada
 parlıyor. **Bağın ne olduğu, karşı eser de keşfedilene kadar gizli**: yalnızca nerede olduğu görünür.
@@ -196,43 +85,41 @@ Kullanıcının keşfettiği her eserin bağları, tek istekte:
 `yeni_ziyaretci` ile Ulucami'yi ziyaret et: Yeşil Camii (aynı mimar) gizli gelir; Yeşil Camii'yi de ziyaret edince
 bağ açılır.
 
----
+## 3. Profil: fotoğraf ve ad düzenleme
 
-## 6. Profil: e-posta, ad soyad ve profil fotoğrafı (API hazır, sözleşme 0.3.25)
-
-Kimlik kartının arkası (`app/(tabs)/settings.tsx`, `holder`) artık hesaba bağlı: `user.photoUrl` ve `user.fullName`
-gelince kart onları gösteriyor, yoksa eskisi gibi baş harf ve takma ad. Kayıt formuna e-posta alanı eklendi
-(`app/auth.tsx`); e-posta artık zorunlu.
-
-Senin kuracağın ekranlar, kullanacağın fonksiyonlar:
+API ve veri katmanı hazır, ekranı yok. Kimlik kartı `user.photoUrl` ve `user.fullName`'i zaten gösteriyor; ikisini
+girecek ekran eksik.
 
 | İş | Fonksiyon | Not |
-| --- | --- | --- |
+|---|---|---|
 | Profil fotoğrafı seç ve koy | `uploadAvatar(uri, "image/jpeg")` (`@/data/avatar`) | JPEG/PNG, en çok 2 MB, kenar ≥ 64 px. Kamera fotoğrafını önce `shrinkPhoto(uri)` (`@/data/vision`) ile küçült |
 | Fotoğrafı kaldır | `removeAvatar()` (`@/data`) | |
 | Ad soyad / takma ad değiştir | `updateProfile({ fullName })`, `updateProfile({ nickname })` (`@/data`) | `fullName: null` adı siler; ad 2–64 harf, boşluk, `' . -` |
-| Fotoğrafın adresi | `avatarUri(user)` (`@/data`) | Adres bir gün geçerli; kart açılınca `refreshMe()` yenisini alıyor |
 
-Hepsi kullanıcıyı (`AppUser`) döndürür ve oturumu kendisi günceller; `useCommunity()` yeni hâli hemen verir.
-Hata mesajları Türkçe `DataError.message` olarak gelir, ekranda olduğu gibi göster. E-posta yalnızca hesabın
-sahibine gider, başka kimseye gösterme. Fotoğraf seçmek için uygulamada `expo-image-picker` yok; eklersen
-`npm install` gerekir, upgrade notuna yaz.
+Hepsi kullanıcıyı döndürür ve oturumu kendisi günceller; `useCommunity()` yeni hâli hemen verir. Hata mesajını
+`DataError.message` olarak olduğu gibi göster. `expo-image-picker` uygulamada yok; eklersen upgrade notuna yaz.
+E-posta yalnızca hesabın sahibine gider, başka kimseye gösterme.
 
----
+## 4. Küçük düzeltmeler
 
-## 7. Puan, mühür ve not sayıları (API hazır, sözleşme 0.3.26)
+1. **Eser kartındaki yıl (109 eser).** `asset-card.tsx:30`: `asset.yearLabel ?? yearOfDating(asset.datingDisplay)`.
+   `yearLabel` `null` ise API yıl vermemiş demektir, ama bu geri dönüş tarih metnini yine okuyor. Kartta ya ilgisiz bir
+   yıl çıkıyor (Abdüllatif Kudsî Türbesi'nde banînin ölüm yılı 1452, Ağca Mescidi'nde yenilenme yılı 1842) ya da cümlenin
+   tamamı ("Yapım tarihi kaynakta verilmiyor"). `null`'da yalnızca ilçe görünsün. `asset-detail.tsx:802`'de de aynısı var.
+2. **React #418 (hydration) hatası** hâlâ duruyor: 6 Kasım'da canlı sitede `/map`, `/monuments`, `/settings`'te konsolda.
+   Web'de önceden üretilen HTML ile ilk çizim farklı; genelde ilk çizimde okunan `window`, ekran boyutu, tema ya da dil.
+   O değer `useEffect` içinde okunmalı. Ayrıntılı mesaj için `npx expo start --web`.
+3. **Harita açılırken** bir süre yalnızca sis görünüyordu (2 Kasım'da ~10 sn). Bugün giriş yapmadan denenemedi; bir bak,
+   bilinçli değilse sahnede boş ekran gibi durur.
+4. **`docs/demo.md`'de `TODO(ön yüz)`** yazan 5 satır (harita, eser sayfası, Kentsel Ağ, mühür, yönetim): sahnede tam
+   olarak neye basılacağını yaz.
+5. İsteğe bağlı: `useMyAchievements()`'taki `notes.approved` / `notes.pending` ve `activityPoints` hiçbir ekranda yok.
+   Bıraktığım Notlar'da iyi durur: "3 notun onaylandı, 1'i bekliyor · onaylanan her not +5 puan".
 
-Profil kartındaki **puan, rozet, ziyaret** artık "Kilidi aç" ile açılan eserleri de sayıyor; senden bir şey gerekmiyor.
-`useMyAchievements()` cevabında yeni alanlar var, istersen Rozetlerim ya da Bıraktığım Notlar'da göster:
+## Sonra: panelden fotoğraf yükleme
 
-| Alan | Anlamı |
-| --- | --- |
-| `activityPoints` | Rozetler dışındaki puan: ziyaret 10, mühür +10, onaylanan not 5, onaylanan fotoğraf 10 (`ACTIVITY_POINTS`) |
-| `sealed` | Ziyaret Mührü ile kanıtlanan ziyaret sayısı |
-| `notes.approved` / `notes.pending` | Onaylanan / moderatör bekleyen not sayısı; yalnızca onaylanan puan ve rozet getirir |
-| `photos.approved` / `photos.pending` | Aynısı fotoğraflar için |
-
-Örnek metin: "3 notun onaylandı, 1'i bekliyor · onaylanan her not +5 puan". İki yeni rozet: Not Defteri (10 not), Rehber Kalem (25 not).
+Backend'e başlıyoruz (`Ahmet.md`, ilk bölüm). Uçlar hazır olunca haber vereceğim, "Görseller" sekmesine yükleme alanı
+sende. Şimdiden bir şey yapman gerekmiyor.
 
 ---
 
@@ -242,5 +129,5 @@ Profil kartındaki **puan, rozet, ziyaret** artık "Kilidi aç" ile açılan ese
 npm run typecheck && npm test && npm run ui:contrast
 ```
 
-PR `dev`'e, başlık ve açıklama Türkçe (`## Özet`, `## Kontrol`, `## Kurulum adımı`). Kurulum adımı yok.
+PR `dev`'e, başlık ve açıklama Türkçe (`## Özet`, `## Kontrol`, `## Kurulum adımı`).
 Takıldığın yerde Ahmet'e sor; API tarafında bir alan eksik görünürse önce `GET /assets/<id>` cevabına bak.
