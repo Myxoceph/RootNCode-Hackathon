@@ -28,6 +28,7 @@ import { AssetImage } from "@/components/asset-image";
 import { stripIndexAt, type Century } from "@/lib/home";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { useMessages } from "@/i18n";
 
 const NATIVE_DRIVER = Platform.OS !== "web";
 const WHITE = "#ffffff";
@@ -381,10 +382,11 @@ function DeckArrow({
   look: JourneyLook;
   onPress: () => void;
 }) {
+  const w = useMessages().journey;
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={side === "left" ? "Önceki eser" : "Sonraki eser"}
+      accessibilityLabel={side === "left" ? w.previous : w.next}
       accessibilityState={{ disabled }}
       disabled={disabled}
       onPress={onPress}
@@ -427,6 +429,7 @@ function Card({
   width: number;
   height: number;
 }) {
+  const w = useMessages().journey;
   const place = `${asset.district}, ${asset.city.label}`;
   const chips = [asset.yearLabel, asset.era?.label].filter(Boolean).join(" · ");
   return (
@@ -434,7 +437,7 @@ function Card({
       {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
       <Pressable
         accessibilityRole="link"
-        accessibilityLabel={`${asset.name}, ${chips}, ${place}${sealed ? ", mühürlü" : ""}, eser kartını açar`}
+        accessibilityLabel={`${asset.name}, ${chips}, ${place}${sealed ? w.sealed : ""}${w.opensCard}`}
         style={styles.card}
       >
         {asset.cover && <AssetImage media={asset.cover} decorative fill />}
@@ -533,6 +536,7 @@ function CenturyStrip({
     }),
   ).current;
 
+  const m = useMessages();
   const century = centuries[index];
   const step = (by: number) =>
     onChange(Math.min(centuries.length - 1, Math.max(0, index + by)));
@@ -541,7 +545,7 @@ function CenturyStrip({
     if (event.nativeEvent.actionName === "decrement") step(-1);
   };
   const valueText = century
-    ? `${century.decades}, ${century.assets.length} eser`
+    ? `${century.decades}, ${m.monuments.sites(century.assets.length)}`
     : "";
   // react-native-web forwards keyboard events on focusable views; native has no keyboard here.
   const webProps =
@@ -587,13 +591,13 @@ function CenturyStrip({
           {century?.decades}
         </Text>
         <Text colorValue={look.text}>
-          {century ? `${century.assets.length} eser` : ""}
+          {century ? m.monuments.sites(century.assets.length) : ""}
         </Text>
       </View>
       <View
         accessible
         accessibilityRole="adjustable"
-        accessibilityLabel="Yüzyıl seç"
+        accessibilityLabel={m.journey.chooseCentury}
         accessibilityValue={{
           min: 0,
           max: centuries.length - 1,

@@ -8,6 +8,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AssetImage } from "@/components/asset-image";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { FrameModal, useFrameDimensions } from "@/lib/in-frame";
+import { useMessages } from "@/i18n";
 
 /**
  * Every photo and drawing of an asset, full screen: swiped sideways, or stepped with the previous and
@@ -23,6 +24,7 @@ export function AssetGallery({ photos, visible, onClose }: { photos: Media[]; vi
 }
 
 function Viewer({ photos, onClose }: { photos: Media[]; onClose: () => void }) {
+  const w = useMessages().shared.gallery;
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
   const { width } = useFrameDimensions();
@@ -58,12 +60,12 @@ function Viewer({ photos, onClose }: { photos: Media[]; onClose: () => void }) {
           variant="label"
           colorValue={cameraColors.text}
           style={styles.flex}
-          accessibilityLabel={`Fotoğraf ${index + 1} / ${photos.length}`}
+          accessibilityLabel={w.photoOf(index + 1, photos.length)}
           accessibilityLiveRegion="polite"
         >
           {`${index + 1}/${photos.length}`}
         </Text>
-        <Pressable accessibilityRole="button" accessibilityLabel="Galeriyi kapat" hitSlop={6} onPress={onClose} style={({ pressed }) => [styles.round, pressed && styles.pressed]}>
+        <Pressable accessibilityRole="button" accessibilityLabel={w.close} hitSlop={6} onPress={onClose} style={({ pressed }) => [styles.round, pressed && styles.pressed]}>
           <Ionicons name="close" size={22} color={cameraColors.text} />
         </Pressable>
       </View>
@@ -102,8 +104,8 @@ function Viewer({ photos, onClose }: { photos: Media[]; onClose: () => void }) {
           )}
         </View>
         <View style={styles.steps}>
-          <Step icon="chevron-back" label="Önceki fotoğraf" disabled={index === 0} onPress={() => go(index - 1)} />
-          <Step icon="chevron-forward" label="Sonraki fotoğraf" disabled={index === photos.length - 1} onPress={() => go(index + 1)} />
+          <Step icon="chevron-back" label={w.previous} disabled={index === 0} onPress={() => go(index - 1)} />
+          <Step icon="chevron-forward" label={w.next} disabled={index === photos.length - 1} onPress={() => go(index + 1)} />
         </View>
       </View>
     </View>

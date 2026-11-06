@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { fontFamily, palette, spacing, Text, useTheme } from "@vagabonds/ui";
 import { router, useSegments, type Href } from "expo-router";
@@ -20,7 +18,7 @@ import { setTabSpot, useTabSpotlight } from "@/lib/tab-bar-spots";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
 import type { TabItem } from "./tab-bar";
-import { casing, getMessages, useLang } from "@/i18n";
+import { useLang, useMessages, type Messages } from "@/i18n";
 
 /** Screens that fill the whole screen, the bar hidden: an asset's story. */
 const HIDDEN_ON = new Set(["[id]"]);
@@ -32,39 +30,32 @@ const ON_SURFACE = new Set(["rehber"]);
 const PROFILE = "settings";
 
 /** The site's sections, for the bar on pages outside the tabs (`WebPageHeader`). */
-export const SITE_ITEMS: Array<TabItem & { href: Href }> = [
+/** The site's pages with their names in the language asked for. */
+export const siteItems = (m: Messages): Array<TabItem & { href: Href }> => [
   {
     name: "map",
-    get title() {
-      return getMessages().tabs.map;
-    },
+    title: m.tabs.map,
     icon: "map-outline",
     iconFocused: "map",
     href: "/map",
   },
   {
     name: "rehber",
-    get title() {
-      return getMessages().tabs.rehber;
-    },
+    title: m.tabs.rehber,
     icon: "sparkles-outline",
     iconFocused: "sparkles",
     href: "/rehber",
   },
   {
     name: "monuments",
-    get title() {
-      return getMessages().tabs.monuments;
-    },
+    title: m.tabs.monuments,
     icon: "library-outline",
     iconFocused: "library",
     href: "/monuments",
   },
   {
     name: "settings",
-    get title() {
-      return getMessages().tabs.profile;
-    },
+    title: m.tabs.profile,
     icon: "person-outline",
     iconFocused: "person",
     href: "/settings",
@@ -134,7 +125,8 @@ export function SiteNav({
   itemProps,
   spotlight = null,
 }: SiteNavProps) {
-  useLang();
+  const m = useMessages();
+  const lang = useLang();
   const { scheme } = useTheme();
   const { user } = useCommunity();
   const narrow = useWindowDimensions().width < 760;
@@ -167,7 +159,7 @@ export function SiteNav({
     .split(/\s+/)
     .filter(Boolean)
     .slice(0, 2)
-    .map((part) => part[0]?.toLocaleUpperCase(casing()))
+    .map((part) => part[0]?.toLocaleUpperCase(lang))
     .join("");
 
   return (
@@ -191,7 +183,7 @@ export function SiteNav({
       >
         <Pressable
           accessibilityRole="link"
-          accessibilityLabel={getMessages().web.home}
+          accessibilityLabel={m.web.home}
           onPress={() => router.navigate("/")}
           style={styles.brand}
         >
@@ -299,7 +291,6 @@ export function WebNavBar({
   navigateToTab,
   items,
 }: BottomTabBarProps & { items: TabItem[] }) {
-  useLang();
   const { colors: c } = useTheme();
   const focusedName = state.routes[state.index]?.name ?? null;
   const segments = useSegments();
@@ -366,25 +357,25 @@ export function WebPageHeader({
   section: string;
   back: { label: string; href: Href };
 }) {
-  useLang();
+  const m = useMessages();
   const { colors: c } = useTheme();
   const wide = useWideWeb();
   return (
     <View style={{ backgroundColor: c.background }}>
       <SiteNav
-        items={SITE_ITEMS}
+        items={siteItems(m)}
         active={section}
         background={c.background}
         onPress={(item) =>
           router.navigate(
-            SITE_ITEMS.find((site) => site.name === item.name)!.href,
+            siteItems(m).find((site) => site.name === item.name)!.href,
           )
         }
       />
       <View style={[styles.pageHead, wide && wideColumn]}>
         <Pressable
           accessibilityRole="link"
-          accessibilityLabel={getMessages().web.backTo(back.label)}
+          accessibilityLabel={m.web.backTo(back.label)}
           onPress={() =>
             router.canGoBack() ? router.back() : router.replace(back.href)
           }

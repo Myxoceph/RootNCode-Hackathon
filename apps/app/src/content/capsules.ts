@@ -3,6 +3,8 @@
  * Sample content (see ./README.md). On the web the sound is synthesized live;
  * the real CC0 recordings arrive with task H9.
  */
+import { getLang } from "@/i18n";
+
 export type CapsuleType = "sifahane" | "kervan" | "medrese" | "hamam";
 
 export interface Capsule {
@@ -64,6 +66,60 @@ export const capsules: Record<CapsuleType, Capsule> = {
   },
 };
 
+/** The capsules' names and captions in English; the sound keys and the moments stay the same. */
+const capsulesEn: Record<CapsuleType, Capsule> = {
+  sifahane: {
+    soundKey: "darussifa",
+    name: "Hospital (Darüşşifa)",
+    description: "Pool, fountain and ney: the courtyard where music was used as treatment.",
+    captions: [
+      [0, "[A fountain begins to murmur in the pool]"],
+      [3, "[The sound of a ney rises in the distance]"],
+      [9, "[The water goes on, a light wind in the courtyard]"],
+      [12, "[The ney again, closer]"],
+      [20, "[The sound slowly fades]"],
+    ],
+  },
+  kervan: {
+    soundKey: "han",
+    name: "Caravanserai",
+    description: "A caravan entering the stone courtyard: hooves, bells, the murmur of travellers.",
+    captions: [
+      [0, "[Hooves approach on the stone floor]"],
+      [4, "[Camel bells and jingles]"],
+      [10, "[The murmur of caravan men in the courtyard]"],
+      [17, "[The hooves move away]"],
+    ],
+  },
+  medrese: {
+    soundKey: "medrese",
+    name: "Madrasa",
+    description: "Lessons repeated from the cells, and the rustle of pages.",
+    captions: [
+      [0, "[Pages of a book turn]"],
+      [5, "[Students repeat their lesson in whispers]"],
+      [13, "[Another page turns, the whispers go on]"],
+      [20, "[The sound slowly fades]"],
+    ],
+  },
+  hamam: {
+    soundKey: "hamam",
+    name: "Bathhouse",
+    description: "Drops echoing in the dome, water poured from the basin, steam.",
+    captions: [
+      [0, "[Water drops echo in the dome]"],
+      [6, "[Water is poured from the basin with a bowl]"],
+      [11, "[A hiss of steam]"],
+      [15, "[Water is poured again, the echo dies away]"],
+    ],
+  },
+};
+
+/** A capsule's words in the app's language. */
+export function capsuleWords(type: CapsuleType): Capsule {
+  return (getLang() === "en" ? capsulesEn : capsules)[type];
+}
+
 export const capsuleTypes = Object.keys(capsules) as CapsuleType[];
 
 /**
@@ -78,8 +134,9 @@ export function capsuleForSoundKey(soundKey: string): CapsuleType | undefined {
 }
 
 export function captionAt(type: CapsuleType, seconds: number): string {
-  let text = capsules[type].captions[0]?.[1] ?? "";
-  for (const [at, line] of capsules[type].captions) if (seconds >= at) text = line;
+  const { captions } = capsuleWords(type);
+  let text = captions[0]?.[1] ?? "";
+  for (const [at, line] of captions) if (seconds >= at) text = line;
   return text;
 }
 

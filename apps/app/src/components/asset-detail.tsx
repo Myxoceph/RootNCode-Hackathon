@@ -1,7 +1,5 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { AssetDetail, AssetSection, Media } from "@vagabonds/contracts";
+import type { AssetDetail, AssetSection, Media, Lang } from "@vagabonds/contracts";
 import {
   cameraColors,
   fontFamily,
@@ -50,7 +48,7 @@ import {
   CAPSULE_SECONDS,
   captionAt,
   capsuleForSoundKey,
-  capsules,
+  capsuleWords,
   formatSeconds,
 } from "@/content/capsules";
 import { useAssetRelations } from "@/data";
@@ -69,7 +67,7 @@ import {
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb } from "@/lib/use-wide-web";
-import { SiteNav, SITE_ITEMS } from "@/components/web-nav-bar";
+import { siteItems, SiteNav } from "@/components/web-nav-bar";
 import {
   speakAnswer,
   stopAnswer,
@@ -78,10 +76,9 @@ import {
 } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { useA11ySettings } from "@/settings/a11y-settings";
-import { casing, getMessages, localeTag, useLang } from "@/i18n";
+import { localeTag, useLang, useMessages, type Messages } from "@/i18n";
 
 /** This page's words in the app's language; the page follows a change (`useLang` in `AssetDetailView`). */
-const words = () => getMessages().asset;
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -173,10 +170,10 @@ export function AssetDetailView({
   asset: AssetDetail;
   /** Replaces going back, e.g. in the admin panel's preview. */ onClose?: () => void;
 }) {
+  const m = useMessages();
   // A wide web page reads the card as an article (`AssetArticle`); the phone and the panel's preview keep the pages.
   const wide = useWideWeb();
-  // The whole page is drawn again in a new language: its parts read their words through `words()`.
-  useLang();
+  // The whole page is drawn again in a new language: its parts read their words through `m.asset`.
   return wide && !onClose ? (
     <AssetArticle asset={asset} />
   ) : (
@@ -191,11 +188,13 @@ function AssetStory({
   asset: AssetDetail;
   onClose?: () => void;
 }) {
+  const lang = useLang();
+  const m = useMessages();
   const router = useRouter();
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
   const chapters = asset.sections;
-  const pages = useMemo(() => buildPages(asset, chapters), [asset, chapters]);
+  const pages = useMemo(() => buildPages(asset, chapters, m.asset, lang), [asset, chapters, m, lang]);
   const scroll = useRef<ScrollViewInstance>(null);
   const [height, setHeight] = useState(0);
   const [index, setIndex] = useState(0);
@@ -215,7 +214,7 @@ function AssetStory({
     if (index === shownPage.current || !pages[index]) return;
     shownPage.current = index;
     announce(
-      words().pageAnnounce(index + 1, pages.length, pageTitle(pages[index]!, asset)),
+      m.asset.pageAnnounce(index + 1, pages.length, pageTitle(pages[index]!, asset, m.asset)),
     );
   }, [index, pages, asset]);
   const close = () => {
@@ -265,7 +264,7 @@ function AssetStory({
         </Text>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel={getMessages().common.close}
+          accessibilityLabel={m.common.close}
           hitSlop={6}
           onPress={close}
           style={({ pressed }) => [styles.round, pressed && styles.pressed]}
@@ -344,44 +343,46 @@ function AssetStory({
  * tips. Dark in every theme, as the pages are: photos first.
  */
 function AssetArticle({ asset }: { asset: AssetDetail }) {
+  const lang = useLang();
+  const m = useMessages();
   const router = useRouter();
   const { scheme } = useTheme();
   const look = ARTICLE_INK[scheme === "dark" ? "dark" : "light"];
   const [galleryOpen, setGalleryOpen] = useState(false);
   const photos = useMemo(() => picturesOf(asset), [asset]);
   const cover = galleryOf(asset)[0] ?? null;
-  const figures = figuresOf(asset);
+  const figures = figuresOf(asset, m.asset, lang);
   const year = builtYear(asset);
   const place = `${asset.district}, ${asset.city.label}`;
   const raw = asset.visit.entranceFee;
-  const fee = raw ? (raw in fees ? fees[raw] : raw) : null;
+  const fee = feeOf(raw, m.asset);
   const a11y = asset.accessibility;
   const stepFree =
     a11y.verified && a11y.stepFree !== "unknown"
       ? a11y.stepFree === "no"
-        ? words().stepped
-        : words().stepFree
+        ? m.asset.stepped
+        : m.asset.stepFree
       : null;
   const coords = asset.coordinates;
   const facts = [
     asset.visit.durationMin
       ? {
           icon: "time-outline" as IconName,
-          label: words().duration,
-          value: words().minutes(asset.visit.durationMin),
+          label: m.asset.duration,
+          value: m.asset.minutes(asset.visit.durationMin),
         }
       : null,
     fee
-      ? { icon: "ticket-outline" as IconName, label: words().entry, value: fee }
+      ? { icon: "ticket-outline" as IconName, label: m.asset.entry, value: fee }
       : null,
     stepFree
       ? {
           icon: "accessibility-outline" as IconName,
-          label: words().access,
+          label: m.asset.access,
           value: stepFree,
         }
       : null,
-    { icon: "location-outline" as IconName, label: words().place, value: place },
+    { icon: "location-outline" as IconName, label: m.asset.place, value: place },
   ].filter(
     (fact): fact is { icon: IconName; label: string; value: string } =>
       fact !== null,
@@ -397,19 +398,19 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
         contentContainerStyle={styles.articleScroll}
       >
         <SiteNav
-          items={SITE_ITEMS}
+          items={siteItems(m)}
           active="monuments"
           background="transparent"
           onPress={(item) =>
             router.navigate(
-              SITE_ITEMS.find((site) => site.name === item.name)!.href,
+              siteItems(m).find((site) => site.name === item.name)!.href,
             )
           }
         />
         <View style={styles.articleColumn}>
           <Pressable
             accessibilityRole="link"
-            accessibilityLabel={words().backToSites}
+            accessibilityLabel={m.asset.backToSites}
             onPress={back}
             style={({
               pressed,
@@ -425,7 +426,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
           >
             <Ionicons name="chevron-back" size={16} color={look.soft} />
             <Text variant="label" colorValue={look.soft}>
-              {words().sites}
+              {m.asset.sites}
             </Text>
           </Pressable>
 
@@ -519,7 +520,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
               )}
               {asset.founder?.name && (
                 <Text colorValue={look.soft} style={styles.founderLine}>
-                  {words().founded(asset.founder.name)}
+                  {m.asset.founded(asset.founder.name)}
                 </Text>
               )}
 
@@ -532,7 +533,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
                     colorValue={look.gold}
                     headingLevel={2}
                   >
-                    {words().lookHere}
+                    {m.asset.lookHere}
                   </Text>
                   <View style={styles.highlightList}>
                     {asset.highlights.map((highlight, i) => (
@@ -575,7 +576,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
                     headingLevel={2}
                     style={styles.sectionTitle}
                   >
-                    {section.title ?? words().history}
+                    {section.title ?? m.asset.history}
                   </Text>
                   {section.body
                     .split(/\n\s*\n/)
@@ -605,7 +606,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
                   colorValue={look.gold}
                   headingLevel={2}
                 >
-                  {words().visit}
+                  {m.asset.visit}
                 </Text>
                 {facts.map((fact) => (
                   <View key={fact.label} style={styles.factRow}>
@@ -634,7 +635,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
                 {coords && (
                   <Pressable
                     accessibilityRole="link"
-                    accessibilityLabel={words().directionsLabel}
+                    accessibilityLabel={m.asset.directionsLabel}
                     onPress={() =>
                       Linking.openURL(
                         `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`,
@@ -652,7 +653,7 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
                       colorValue={look.onGold}
                       style={styles.bold}
                     >
-                      {words().directions}
+                      {m.asset.directions}
                     </Text>
                   </Pressable>
                 )}
@@ -675,24 +676,24 @@ function AssetArticle({ asset }: { asset: AssetDetail }) {
 /* ───────────────────────── Pages ───────────────────────── */
 
 /** What a page is about, in a few words, for the announcement when it comes into view. */
-function pageTitle(page: Page, asset: AssetDetail): string {
+function pageTitle(page: Page, asset: AssetDetail, w: Messages["asset"]): string {
   switch (page.kind) {
     case "cover":
       return asset.name;
     case "summary":
-      return words().summary;
+      return w.summary;
     case "figures":
-      return words().figures;
+      return w.figures;
     case "highlight":
-      return words().highlightTitle(page.number, page.total, page.title);
+      return w.highlightTitle(page.number, page.total, page.title);
     case "chapter":
       return page.title;
     case "end":
-      return words().explore;
+      return w.explore;
   }
 }
 
-function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
+function buildPages(asset: AssetDetail, chapters: AssetSection[], w: Messages["asset"], lang: Lang): Page[] {
   const gallery = galleryOf(asset);
   const nameStems = new Set(stems(asset.name));
   const used = new Set<string>(gallery[0] ? [gallery[0].key] : []);
@@ -720,7 +721,7 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
     text: asset.summary,
   });
 
-  const figures = figuresOf(asset);
+  const figures = figuresOf(asset, w, lang);
   const founder = asset.founder?.name ?? null;
   if (figures.length > 0)
     pages.push({
@@ -752,7 +753,7 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
     .filter(({ chapter }) => !told.has(chapter.id))
     .slice(0, STORY_CHAPTERS)
     .forEach(({ chapter, i }) => {
-      const title = chapter.title ?? words().history;
+      const title = chapter.title ?? w.history;
       pages.push({
         kind: "chapter",
         key: `chapter-${chapter.id}`,
@@ -769,7 +770,7 @@ function buildPages(asset: AssetDetail, chapters: AssetSection[]): Page[] {
 }
 
 /** The year it was built, then the record's measurements: three at most. */
-function figuresOf(asset: AssetDetail): Figure[] {
+function figuresOf(asset: AssetDetail, w: Messages["asset"], lang: Lang): Figure[] {
   const figures: Figure[] = [];
   const year = builtYear(asset);
   if (year)
@@ -777,7 +778,7 @@ function figuresOf(asset: AssetDetail): Figure[] {
       field: "year",
       value: year,
       unit: null,
-      label: words().built,
+      label: w.built,
     });
   for (const fact of asset.facts) {
     if (figures.length === 3) break;
@@ -785,7 +786,7 @@ function figuresOf(asset: AssetDetail): Figure[] {
     // No thousands dot under 10 000, so a year ("1573") never reads as "1.573".
     const value =
       fact.valueNum >= 10000
-        ? fact.valueNum.toLocaleString(localeTag())
+        ? fact.valueNum.toLocaleString(localeTag(lang))
         : String(fact.valueNum);
     figures.push({
       field: `fact:${fact.key}`,
@@ -936,6 +937,8 @@ function PageCopy({
   photos: Media[];
   onGallery: () => void;
 }) {
+  const m = useMessages();
+  const lang = useLang();
   const editing = useFrameEditing() !== null;
   switch (page.kind) {
     case "cover": {
@@ -1061,7 +1064,7 @@ function PageCopy({
           {page.founder && (
             <Editable field="founder" label="Kim yaptırdı">
               <Text colorValue={ink.text} style={styles.founder}>
-                {words().founded(page.founder)}
+                {m.asset.founded(page.founder)}
               </Text>
             </Editable>
           )}
@@ -1071,7 +1074,7 @@ function PageCopy({
       return (
         <>
           <Text variant="overline" colorValue={ink.gold}>
-            {words().lookHereCount(page.number, page.total)}
+            {m.asset.lookHereCount(page.number, page.total)}
           </Text>
           <Editable
             field={`highlight:${page.number - 1}:title`}
@@ -1111,7 +1114,7 @@ function PageCopy({
               headingLevel={2}
               accessibilityLabel={page.title}
             >
-              {page.title.toLocaleUpperCase(casing())}
+              {page.title.toLocaleUpperCase(lang)}
             </Text>
           </Editable>
           <Editable field={`section:${page.id}:body`} label="Konunun metni">
@@ -1129,6 +1132,7 @@ function PageCopy({
 
 /** "Kaydır" with a chevron that bobs, so the first page says how to go on. Still when motion is reduced. */
 function ScrollHint() {
+  const m = useMessages();
   const reduceMotion = useReducedMotion();
   const [bob] = useState(() => new Animated.Value(0));
   useEffect(() => {
@@ -1170,7 +1174,7 @@ function ScrollHint() {
         <Ionicons name="chevron-down" size={22} color={ink.text} />
       </Animated.View>
       <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
-        {words().swipe}
+        {m.asset.swipe}
       </Text>
     </View>
   );
@@ -1184,10 +1188,11 @@ function GalleryButton({
   photos: Media[];
   onPress: () => void;
 }) {
+  const m = useMessages();
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={words().photos(photos.length)}
+      accessibilityLabel={m.asset.photos(photos.length)}
       onPress={onPress}
       style={({ pressed }) => [styles.gallery, pressed && styles.pressed]}
     >
@@ -1202,7 +1207,7 @@ function GalleryButton({
         ))}
       </View>
       <Text variant="caption" colorValue={ink.text} style={styles.bold}>
-        {words().photoCount(photos.length)}
+        {m.asset.photoCount(photos.length)}
       </Text>
     </Pressable>
   );
@@ -1216,12 +1221,13 @@ function DossierButton({
   asset: AssetDetail;
   wide?: boolean;
 }) {
+  const m = useMessages();
   return (
     <FrameLink href={{ pathname: "/dossier", params: { asset: asset.id } }}>
       {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
       <Pressable
         accessibilityRole="link"
-        accessibilityLabel={words().dossierLabel}
+        accessibilityLabel={m.asset.dossierLabel}
         style={wide ? styles.dossierWide : styles.dossier}
       >
         <Ionicons
@@ -1234,7 +1240,7 @@ function DossierButton({
           colorValue={ink.text}
           style={styles.bold}
         >
-          {words().dossier}
+          {m.asset.dossier}
         </Text>
         {wide && <Ionicons name="chevron-forward" size={18} color={ink.gold} />}
       </Pressable>
@@ -1250,6 +1256,7 @@ const LOCKED_WARNING_MS = 3500;
  * this asset is locked it does not open: pressed, it says why instead.
  */
 function RelatedButton({ asset }: { asset: AssetDetail }) {
+  const m = useMessages();
   const related = useAssetRelations(asset.id);
   const locked = !isAssetUnlocked(asset, useUnlockedAssets());
   const [warned, setWarned] = useState(false);
@@ -1278,7 +1285,7 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
         numberOfLines={2}
         style={[styles.bold, styles.flexText]}
       >
-        {warned ? words().lockedWarning : words().related}
+        {warned ? m.asset.lockedWarning : m.asset.related}
       </Text>
       <Ionicons
         name={locked ? "lock-closed" : "chevron-forward"}
@@ -1291,10 +1298,10 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
     return (
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={words().relatedLocked}
+        accessibilityLabel={m.asset.relatedLocked}
         onPress={() => {
           setWarned(true);
-          announce(words().lockedWarning);
+          announce(m.asset.lockedWarning);
         }}
         style={styles.related}
       >
@@ -1314,8 +1321,8 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
         accessibilityRole="link"
         accessibilityLabel={
           entries
-            ? words().relatedCount(entries.length)
-            : words().related
+            ? m.asset.relatedCount(entries.length)
+            : m.asset.related
         }
         style={styles.related}
       >
@@ -1327,15 +1334,16 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
 
 /** "Devamını oku" for one chapter; its name says which, as each page has one (WCAG 2.4.4). */
 function ReadMore({ title, onPress }: { title: string; onPress: () => void }) {
+  const m = useMessages();
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={words().readMoreLabel(title)}
+      accessibilityLabel={m.asset.readMoreLabel(title)}
       onPress={onPress}
       style={({ pressed }) => [styles.readMore, pressed && styles.pressed]}
     >
       <Text variant="label" colorValue={ink.text}>
-        {words().readMore}
+        {m.asset.readMore}
       </Text>
       <Ionicons name="arrow-forward" size={16} color={ink.text} />
     </Pressable>
@@ -1443,12 +1451,10 @@ function picturesOf(asset: AssetDetail): Media[] {
 }
 
 /** The dataset's fee codes; anything else is already a price in words. */
-const fees: Record<string, string | null> = {
-  get free() {
-    return words().free;
-  },
-  unknown: null,
-};
+function feeOf(raw: string | null | undefined, w: Messages["asset"]): string | null {
+  if (!raw || raw === "unknown") return null;
+  return raw === "free" ? w.free : raw;
+}
 
 /**
  * The last page, kept quiet: the name, one line of what the visit takes, directions, the
@@ -1465,17 +1471,19 @@ function End({
   top: number;
   bottom: number;
 }) {
+  const m = useMessages();
+  const lang = useLang();
   const raw = asset.visit.entranceFee;
-  const fee = raw ? (raw in fees ? fees[raw] : raw) : null;
+  const fee = feeOf(raw, m.asset);
   const a11y = asset.accessibility;
   const stepFree =
     a11y.verified && a11y.stepFree !== "unknown"
       ? a11y.stepFree === "no"
-        ? words().stepped.toLocaleLowerCase(casing())
-        : words().stepFree.toLocaleLowerCase(casing())
+        ? m.asset.stepped.toLocaleLowerCase(lang)
+        : m.asset.stepFree.toLocaleLowerCase(lang)
       : null;
   const meta = [
-    asset.visit.durationMin ? words().minutes(asset.visit.durationMin) : null,
+    asset.visit.durationMin ? m.asset.minutes(asset.visit.durationMin) : null,
     fee,
     stepFree,
     asset.district,
@@ -1496,7 +1504,7 @@ function End({
       <View style={styles.endInner}>
         <View style={styles.invite}>
           <Text variant="overline" colorValue={ink.gold}>
-            {words().exploreOverline}
+            {m.asset.exploreOverline}
           </Text>
           <Editable field="name" label="Adı">
             <Text
@@ -1528,7 +1536,7 @@ function End({
           {coords && (
             <Pressable
               accessibilityRole="link"
-              accessibilityLabel={words().directionsLabel}
+              accessibilityLabel={m.asset.directionsLabel}
               onPress={() =>
                 Linking.openURL(
                   `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`,
@@ -1541,7 +1549,7 @@ function End({
             >
               <Ionicons name="navigate" size={18} color={ink.onGold} />
               <Text variant="label" colorValue={ink.onGold} style={styles.bold}>
-                {words().directions}
+                {m.asset.directions}
               </Text>
             </Pressable>
           )}
@@ -1561,7 +1569,7 @@ function End({
         >
           <Ionicons name="arrow-up" size={14} color={ink.soft} />
           <Text variant="caption" colorValue={ink.soft} style={styles.semibold}>
-            {words().toTop}
+            {m.asset.toTop}
           </Text>
         </Pressable>
 
@@ -1579,6 +1587,7 @@ function Experiences({
   asset: AssetDetail;
   look?: Ink;
 }) {
+  const m = useMessages();
   const { settings } = useA11ySettings();
   const player = useCapsulePlayer();
   // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
@@ -1604,21 +1613,21 @@ function Experiences({
     actions.push({
       key: "inscription",
       icon: "scan-outline",
-      title: words().inscription,
-      hint: words().inscriptionHint,
-      spoken: `${words().inscription}: ${words().inscriptionHint}`,
+      title: m.asset.inscription,
+      hint: m.asset.inscriptionHint,
+      spoken: `${m.asset.inscription}: ${m.asset.inscriptionHint}`,
       href: { pathname: "/inscription", params: { asset: asset.id } },
     });
   }
   // An unlocked asset needs no seal.
   if (phone && visitSealTarget(asset) && !opened) {
-    const hint = words().sealHint;
+    const hint = m.asset.sealHint;
     actions.push({
       key: "seal",
       icon: "ribbon-outline",
-      title: words().seal,
+      title: m.asset.seal,
       hint,
-      spoken: `${words().seal}: ${hint}`,
+      spoken: `${m.asset.seal}: ${hint}`,
       href: { pathname: "/visit-seal", params: { asset: asset.id } },
     });
   }
@@ -1628,16 +1637,16 @@ function Experiences({
       ? settings.captions
         ? captionAt(capsuleType, playing.elapsed)
         : `${formatSeconds(playing.elapsed)} / ${formatSeconds(CAPSULE_SECONDS)}`
-      : capsules[capsuleType].name;
+      : capsuleWords(capsuleType).name;
     actions.push({
       key: "sound",
       icon: playing ? "pause-outline" : "musical-notes-outline",
-      title: playing ? getMessages().common.stop : words().playSound,
+      title: playing ? m.common.stop : m.asset.playSound,
       hint,
       // The words on the row come first, so voice control finds it by what it shows (WCAG 2.5.3).
       spoken: playing
-        ? words().stopSound
-        : words().playSoundLabel(capsules[capsuleType].name),
+        ? m.asset.stopSound
+        : m.asset.playSoundLabel(capsuleWords(capsuleType).name),
       onPress: () => toggleCapsule(capsuleType),
       on: !!playing,
     });
@@ -1646,11 +1655,11 @@ function Experiences({
     actions.push({
       key: "describe",
       icon: describing ? "stop-outline" : "ear-outline",
-      title: describing ? getMessages().common.stop : words().describe,
-      hint: words().describeHint,
+      title: describing ? m.common.stop : m.asset.describe,
+      hint: m.asset.describeHint,
       spoken: describing
-        ? words().stopDescribing
-        : `${words().describe}: ${words().describeHint}`,
+        ? m.asset.stopDescribing
+        : `${m.asset.describe}: ${m.asset.describeHint}`,
       onPress: () => {
         if (describing) stopAnswer();
         else void speakAnswer(descriptionKey, description);
@@ -1660,13 +1669,13 @@ function Experiences({
   }
   // A phone feature too: the photo comes from the camera.
   if (phone) {
-    const hint = words().stoneHint;
+    const hint = m.asset.stoneHint;
     actions.push({
       key: "stone",
       icon: "camera-outline",
-      title: words().stone,
+      title: m.asset.stone,
       hint,
-      spoken: `${words().stone}: ${hint}`,
+      spoken: `${m.asset.stone}: ${hint}`,
       href: {
         pathname: "/stone-ask",
         params: { asset: asset.id, name: asset.name },
@@ -1677,9 +1686,9 @@ function Experiences({
   actions.push({
     key: "ask",
     icon: "sparkles-outline",
-    title: words().ask,
-    hint: words().askHint,
-    spoken: words().askLabel(asset.name),
+    title: m.asset.ask,
+    hint: m.asset.askHint,
+    spoken: m.asset.askLabel(asset.name),
     href: {
       pathname: "/assistant",
       params: { asset: asset.id, name: asset.name },
@@ -1784,6 +1793,7 @@ function Reader({
   onChange: (index: number | null) => void;
   assetName: string;
 }) {
+  const m = useMessages();
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const chapter = index !== null ? chapters[index] : undefined;
@@ -1815,7 +1825,7 @@ function Reader({
             </Text>
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel={getMessages().common.close}
+              accessibilityLabel={m.common.close}
               hitSlop={6}
               onPress={close}
               style={[styles.round, { backgroundColor: c.surfaceRaised }]}
@@ -1846,7 +1856,7 @@ function Reader({
             ]}
           >
             <Text variant="title" headingLevel={1}>
-              {chapter.title ?? words().history}
+              {chapter.title ?? m.asset.history}
             </Text>
             <Text style={styles.prose}>{chapter.body}</Text>
             <SourceNote compact sources={chapter.sources} />
@@ -1854,7 +1864,7 @@ function Reader({
             {next ? (
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel={words().nextChapterLabel(next.title ?? words().history)}
+                accessibilityLabel={m.asset.nextChapterLabel(next.title ?? m.asset.history)}
                 onPress={() => onChange(index + 1)}
                 style={({ pressed }) => [
                   styles.next,
@@ -1864,9 +1874,9 @@ function Reader({
               >
                 <View style={styles.flex}>
                   <Text variant="caption" color="textSecondary">
-                    {words().nextChapter}
+                    {m.asset.nextChapter}
                   </Text>
-                  <Text variant="label">{next.title ?? words().history}</Text>
+                  <Text variant="label">{next.title ?? m.asset.history}</Text>
                 </View>
                 <Ionicons name="arrow-forward" size={20} color={c.text} />
               </Pressable>
@@ -1881,7 +1891,7 @@ function Reader({
                 ]}
               >
                 <Text variant="label" colorValue={c.background}>
-                  {words().done}
+                  {m.asset.done}
                 </Text>
               </Pressable>
             )}

@@ -7,6 +7,7 @@ import { AssetDetailView } from "@/components/asset-detail";
 import { ResourceView } from "@/components/resource-view";
 import { ScreenPlaceholder } from "@/components/screen-placeholder";
 import { useAsset } from "@/data";
+import { useMessages } from "@/i18n";
 import { useColors } from "@/theme";
 
 /**
@@ -40,10 +41,11 @@ export default function MonumentScreen() {
 
 function MonumentNotFound() {
   const c = useColors();
+  const w = useMessages().monuments;
   return (
-    <ScreenPlaceholder title="Eser bulunamadı" description="Bu adreste bir eser yok. Bağlantı eskimiş olabilir.">
+    <ScreenPlaceholder title={w.notFoundTitle} description={w.notFoundBody}>
       <Link href="/monuments" style={[styles.link, { color: c.primary }]}>
-        Tüm eserlere dön
+        {w.backToAll}
       </Link>
     </ScreenPlaceholder>
   );

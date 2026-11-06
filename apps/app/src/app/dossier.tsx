@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type {
   AccessibilityStatus,
@@ -65,7 +63,7 @@ import {
 import { RichText } from "@/lib/rich-text";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
-import { casing, useLang } from "@/i18n";
+import { useLang, useMessages, type Messages } from "@/i18n";
 
 const WEB = Platform.OS === "web";
 /** The wide web page's contents list, at the left of the text. */
@@ -80,7 +78,6 @@ type IconName = ComponentProps<typeof Ionicons>["name"];
  */
 /** The dossier of an asset already at hand, inside a frame: the admin panel's phone preview. */
 export function DossierView({ asset }: { asset: AssetDetail }) {
-  useLang();
   const { colors: c } = useTheme();
   return (
     <View style={[styles.flex, { backgroundColor: c.background }]}>
@@ -91,7 +88,8 @@ export function DossierView({ asset }: { asset: AssetDetail }) {
 }
 
 export default function DossierScreen() {
-  useLang();
+  const m = useMessages();
+  const w = m.dossier;
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const resource = useAsset(id ?? "");
   const { colors: c } = useTheme();
@@ -101,10 +99,10 @@ export default function DossierScreen() {
     <View style={[styles.flex, { backgroundColor: c.background }]}>
       {WEB ? (
         <WebPageHeader
-          title={name ? `${name}: Eserin dosyası` : "Eserin dosyası"}
+          title={name ? w.titleOf(name) : w.title}
           section="monuments"
           back={{
-            label: name ?? "Eser",
+            label: name ?? w.site,
             href: id
               ? { pathname: "/monuments/[id]", params: { id } }
               : "/monuments",
@@ -117,12 +115,12 @@ export default function DossierScreen() {
         {(asset) =>
           asset === null ? (
             <View style={styles.missing}>
-              <Text>Eser bulunamadı.</Text>
+              <Text>{w.notFound}</Text>
             </View>
           ) : (
             <>
               <Head>
-                <title>{`${asset.name}: Eserin dosyası · Vagabonds`}</title>
+                <title>{m.common.title(w.titleOf(asset.name))}</title>
               </Head>
               <Dossier asset={asset} />
             </>
@@ -138,6 +136,7 @@ function TopBar({ asset }: { asset?: string }) {
   const insets = useSafeAreaInsets();
   const { colors: c } = useTheme();
   const frame = useInFrame();
+  const m = useMessages();
   const back = () => {
     if (frame) frame.back();
     else if (router.canGoBack()) router.back();
@@ -149,7 +148,7 @@ function TopBar({ asset }: { asset?: string }) {
     <View style={[styles.topBar, { paddingTop: insets.top + spacing.xs }]}>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel="Geri"
+        accessibilityLabel={m.common.back}
         hitSlop={6}
         onPress={back}
         style={[styles.back, { backgroundColor: c.surfaceRaised }]}
@@ -157,11 +156,13 @@ function TopBar({ asset }: { asset?: string }) {
         <Ionicons name="chevron-back" size={22} color={c.text} />
       </Pressable>
       <Text variant="label" numberOfLines={1} style={styles.flex}>
-        Eserin dosyası
+        {m.dossier.title}
       </Text>
     </View>
   );
 }
+
+type DossierWords = Messages["dossier"];
 
 interface Block {
   key: string;
@@ -184,8 +185,8 @@ const EMPTY_FIELDS: Record<string, [string, string] | undefined> = {
 };
 
 /** In the panel's editor with its samples on, an empty block still shows, to say where it would go. */
-function blocksOf(asset: AssetDetail, placeholders = false): Block[] {
-  const blocks = withCustom(asset, blockBodies(asset, placeholders));
+function blocksOf(asset: AssetDetail, w: DossierWords, placeholders = false): Block[] {
+  const blocks = withCustom(asset, blockBodies(asset, w, placeholders), w);
   const placed = photosByPlace(
     asset,
     blocks.map((b) => b.key),
@@ -204,7 +205,7 @@ function blocksOf(asset: AssetDetail, placeholders = false): Block[] {
  * The admin's own blocks, each after the block it names, in the order they were added; one whose
  * block is not drawn follows the nearest drawn block before it. Kaynakça stays last.
  */
-function withCustom(asset: AssetDetail, blocks: Block[]): Block[] {
+function withCustom(asset: AssetDetail, blocks: Block[], w: DossierWords): Block[] {
   const out = [...blocks];
   const placed = new Map<string, number>();
   for (const custom of customBlocksOf(asset)) {
@@ -226,7 +227,7 @@ function withCustom(asset: AssetDetail, blocks: Block[]): Block[] {
     placed.set(anchor, (placed.get(anchor) ?? 0) + 1);
     out.splice(index, 0, {
       key: `custom:${custom.id}`,
-      title: custom.title.trim() || "Yeni bölüm",
+      title: custom.title.trim() || w.newBlock,
       body: (
         <Editable field={`custom:${custom.id}`} label="Eklenen bölüm">
           {custom.body.trim() ? (
@@ -241,27 +242,27 @@ function withCustom(asset: AssetDetail, blocks: Block[]): Block[] {
   return out;
 }
 
-function blockBodies(asset: AssetDetail, placeholders: boolean): Block[] {
+function blockBodies(asset: AssetDetail, w: DossierWords, placeholders: boolean): Block[] {
   const candidates: Array<[string, string, ReactNode | null]> = [
-    ["identity", "Künye", identity(asset)],
+    ["identity", w.blocks.identity, identity(asset, w)],
     [
       "history",
-      "Tarihçe",
+      w.blocks.history,
       asset.sections.length > 0 ? <History asset={asset} /> : null,
     ],
     [
       "timeline",
-      "Zaman çizelgesi",
+      w.blocks.timeline,
       asset.timeline.length > 0 ? <Timeline events={asset.timeline} /> : null,
     ],
     [
       "people",
-      "Kişiler",
+      w.blocks.people,
       asset.people.length > 0 ? <People asset={asset} /> : null,
     ],
     [
       "waqf",
-      "Vakıf",
+      w.blocks.waqf,
       waqf(asset) && (
         <Editable field="waqf" label="Vakıf">
           {waqf(asset)}
@@ -270,29 +271,29 @@ function blockBodies(asset: AssetDetail, placeholders: boolean): Block[] {
     ],
     [
       "inscriptions",
-      "Kitabeler",
+      w.blocks.inscriptions,
       asset.inscriptions.length > 0 ? <Inscriptions asset={asset} /> : null,
     ],
     [
       "facts",
-      "Ölçüler",
+      w.blocks.facts,
       factsOf(asset).length > 0 ? <Facts asset={asset} /> : null,
     ],
     [
       "legends",
-      "Rivayetler",
+      w.blocks.legends,
       asset.legends.length > 0 ? <Legends asset={asset} /> : null,
     ],
     [
       "accessibility",
-      "Erişilebilirlik",
+      w.blocks.accessibility,
       <Editable key="access" field="access" label="Engelli erişimi">
         <Access asset={asset} />
       </Editable>,
     ],
     [
       "sources",
-      "Kaynakça",
+      w.blocks.sources,
       asset.sources.length > 0 ? <Sources asset={asset} /> : null,
     ],
   ];
@@ -339,9 +340,10 @@ function Dossier({ asset }: { asset: AssetDetail }) {
   const navHeight = useRef(0);
   const edit = useFrameEditing();
   const placeholders = edit?.samples ?? false;
+  const w = useMessages().dossier;
   const blocks = useMemo(
-    () => blocksOf(asset, placeholders),
-    [asset, placeholders],
+    () => blocksOf(asset, w, placeholders),
+    [asset, w, placeholders],
   );
   const [active, setActive] = useState(blocks[0]?.key);
   // Wide, the contents stand at the left and the blocks sit in a row below the intro: their places
@@ -397,14 +399,14 @@ function Dossier({ asset }: { asset: AssetDetail }) {
           <View
             style={styles.toc}
             accessibilityRole="navigation"
-            accessibilityLabel="İçindekiler"
+            accessibilityLabel={w.contents}
           >
             <Text
               variant="overline"
               color="textSecondary"
               style={styles.tocHead}
             >
-              İÇİNDEKİLER
+              {w.contentsHead}
             </Text>
             {blocks.map((block, index) => {
               const on = block.key === active;
@@ -412,7 +414,7 @@ function Dossier({ asset }: { asset: AssetDetail }) {
                 <Pressable
                   key={block.key}
                   accessibilityRole="button"
-                  accessibilityLabel={`${block.title} bölümüne git`}
+                  accessibilityLabel={w.goTo(block.title)}
                   aria-current={on ? "true" : undefined}
                   onPress={() => goTo(block.key)}
                   style={({
@@ -517,7 +519,7 @@ function Dossier({ asset }: { asset: AssetDetail }) {
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.navRow}
-          accessibilityLabel="İçindekiler"
+          accessibilityLabel={w.contents}
         >
           {blocks.map((block) => {
             const on = block.key === active;
@@ -525,7 +527,7 @@ function Dossier({ asset }: { asset: AssetDetail }) {
               <Pressable
                 key={block.key}
                 accessibilityRole="button"
-                accessibilityLabel={`${block.title} bölümüne git`}
+                accessibilityLabel={w.goTo(block.title)}
                 aria-current={on ? "true" : undefined}
                 onLayout={(event) => {
                   chips.current[block.key] = event.nativeEvent.layout.x;
@@ -600,11 +602,13 @@ function Intro({
   asset: AssetDetail;
   wide?: boolean;
 }) {
+  const lang = useLang();
+  const w = useMessages().dossier;
   const minutes = readingMinutes(wordsOf(asset));
   const counts = [
-    `~${minutes} dk okuma`,
-    asset.sections.length > 0 ? `${asset.sections.length} bölüm` : null,
-    asset.timeline.length > 0 ? `${asset.timeline.length} olay` : null,
+    w.readingMinutes(minutes),
+    asset.sections.length > 0 ? w.sections(asset.sections.length) : null,
+    asset.timeline.length > 0 ? w.events(asset.timeline.length) : null,
   ]
     .filter(Boolean)
     .join("  ·  ");
@@ -612,9 +616,7 @@ function Intro({
     <View style={[styles.intro, wide && styles.introWide]}>
       <View style={[styles.introColumn, wide && styles.introColumnWide]}>
         <Text variant="overline" color="textSecondary">
-          {`${asset.type.label} · ${asset.district}, ${asset.city.label}`.toLocaleUpperCase(
-            "tr",
-          )}
+          {`${asset.type.label} · ${asset.district}, ${asset.city.label}`.toLocaleUpperCase(lang)}
         </Text>
         {/* Wide, the site's header holds the page's title for a screen reader. */}
         <Text
@@ -707,7 +709,7 @@ function AssetLink({ id, name }: { id: string; name: string }) {
 
 /* ───────────────────────── Blocks ───────────────────────── */
 
-function identity(asset: AssetDetail): ReactNode | null {
+function identity(asset: AssetDetail, w: DossierWords): ReactNode | null {
   const {
     dating,
     founder,
@@ -726,7 +728,7 @@ function identity(asset: AssetDetail): ReactNode | null {
   if (dating && date) {
     rows.push(
       <Editable key="date" field="year" label="Tarih">
-        <Info icon="calendar-outline" label="Tarih">
+        <Info icon="calendar-outline" label={w.date}>
           <Text variant="label">{date}</Text>
           {dating.basis && (
             <Text variant="caption" color="textSecondary">
@@ -740,7 +742,7 @@ function identity(asset: AssetDetail): ReactNode | null {
   if (founder) {
     rows.push(
       <Editable key="founder" field="founder" label="Kim yaptırdı">
-        <Info icon="person-outline" label="Banî">
+        <Info icon="person-outline" label={w.founder}>
           {founder.role && !/^ban[iî]$/i.test(founder.role)
             ? `${founder.name} (${founder.role})`
             : founder.name}
@@ -751,7 +753,7 @@ function identity(asset: AssetDetail): ReactNode | null {
   if (architect?.name) {
     rows.push(
       <Editable key="architect" field="architect" label="Mimarı">
-        <Info icon="construct-outline" label="Mimar">
+        <Info icon="construct-outline" label={w.architect}>
           {architect.name}
         </Info>
       </Editable>,
@@ -764,7 +766,7 @@ function identity(asset: AssetDetail): ReactNode | null {
         field="architect:candidates"
         label="Mimar adayları"
       >
-        <Info icon="construct-outline" label="Mimar adayları">
+        <Info icon="construct-outline" label={w.candidates}>
           <View style={styles.tight}>
             {architect.candidates.map((one) => (
               <View key={one.name}>
@@ -784,7 +786,7 @@ function identity(asset: AssetDetail): ReactNode | null {
   if (alternateNames.length > 0) {
     rows.push(
       <Editable key="names" field="altNames" label="Başka adları">
-        <Info icon="pricetag-outline" label="Diğer adları">
+        <Info icon="pricetag-outline" label={w.otherNames}>
           <View style={styles.tight}>
             {alternateNames.map((one) => (
               <View key={one.name}>
@@ -805,7 +807,7 @@ function identity(asset: AssetDetail): ReactNode | null {
   if (place) {
     rows.push(
       <Editable key="place" field="address" label="Açık adres">
-        <Info icon="location-outline" label="Adres">
+        <Info icon="location-outline" label={w.address}>
           {place}
         </Info>
       </Editable>,
@@ -814,7 +816,7 @@ function identity(asset: AssetDetail): ReactNode | null {
   if (parent) {
     rows.push(
       <Editable key="parent" field="parent" label="Bağlı olduğu külliye">
-        <Info icon="git-merge-outline" label="Bağlı olduğu yapı">
+        <Info icon="git-merge-outline" label={w.parent}>
           <AssetLink id={parent.id} name={parent.name} />
         </Info>
       </Editable>,
@@ -822,7 +824,7 @@ function identity(asset: AssetDetail): ReactNode | null {
   }
   if (children.length > 0) {
     rows.push(
-      <Info key="children" icon="git-branch-outline" label="Bağlı yapılar">
+      <Info key="children" icon="git-branch-outline" label={w.children}>
         <View accessibilityRole="list">
           {children.map((child) => (
             <AssetLink key={child.id} id={child.id} name={child.name} />
@@ -964,12 +966,14 @@ function History({
   );
 }
 
-const hijriText = (hijri: string) =>
-  /^h/i.test(hijri) ? hijri : `H. ${hijri}`;
+const hijriText = (hijri: string, w: DossierWords) =>
+  /^h/i.test(hijri) ? hijri : w.hijri(hijri);
 
 /** Grouped by century, so a long list reads as a few short ones. */
 function Timeline({ events }: { events: TimelineEvent[] }) {
+  const lang = useLang();
   const { colors: c } = useTheme();
+  const w = useMessages().dossier;
   const groups: Array<{ century: string | null; events: TimelineEvent[] }> = [];
   for (const event of events) {
     const century = event.year !== null ? centuryOf(event.year) : null;
@@ -983,14 +987,14 @@ function Timeline({ events }: { events: TimelineEvent[] }) {
         <View key={`${group.century}-${index}`} style={styles.tight}>
           {group.century && (
             <Text variant="overline" color="textSecondary">
-              {group.century.toLocaleUpperCase(casing())}
+              {group.century.toLocaleUpperCase(lang)}
             </Text>
           )}
           <View accessibilityRole="list">
             {group.events.map((event, at) => {
               const meta = [
                 event.date ? readableDate(event.date) : null,
-                event.hijri ? hijriText(event.hijri) : null,
+                event.hijri ? hijriText(event.hijri, w) : null,
                 event.type.label !== event.title ? event.type.label : null,
               ]
                 .filter(Boolean)
@@ -1045,6 +1049,7 @@ function Timeline({ events }: { events: TimelineEvent[] }) {
 }
 
 function People({ asset }: { asset: AssetDetail }) {
+  const lang = useLang();
   const { colors: c } = useTheme();
   return (
     <View accessibilityRole="list" style={styles.rows}>
@@ -1065,7 +1070,7 @@ function People({ asset }: { asset: AssetDetail }) {
               style={[styles.initial, { backgroundColor: c.surfaceRaised }]}
             >
               <Text variant="label">
-                {person.name.charAt(0).toLocaleUpperCase(casing())}
+                {person.name.charAt(0).toLocaleUpperCase(lang)}
               </Text>
             </View>
             <View style={styles.flex}>
@@ -1101,23 +1106,24 @@ function waqf(asset: AssetDetail): ReactNode | null {
 
 function Waqf({ record }: { record: NonNullable<AssetDetail["waqf"]> }) {
   const { colors: c } = useTheme();
+  const w = useMessages().dossier;
   const { textScale } = useUi();
   return (
     <View style={styles.rows}>
       {record.name && (
-        <Info icon="business-outline" label="Vakıf">
+        <Info icon="business-outline" label={w.waqfName}>
           {record.name}
         </Info>
       )}
       {record.deedDate && (
-        <Info icon="calendar-outline" label="Vakfiye tarihi">
+        <Info icon="calendar-outline" label={w.deedDate}>
           {record.deedDate}
         </Info>
       )}
       {record.deedExcerpt && (
         <View style={[styles.quote, { borderLeftColor: c.highlightMark }]}>
           <Text variant="caption" color="textSecondary">
-            Vakfiyeden
+            {w.fromDeed}
           </Text>
           <Text
             style={[
@@ -1132,7 +1138,7 @@ function Waqf({ record }: { record: NonNullable<AssetDetail["waqf"]> }) {
       {record.conditions && (
         <View style={styles.tight}>
           <Text variant="label" headingLevel={3}>
-            Vakfın şartları
+            {w.conditions}
           </Text>
           <Prose text={record.conditions} />
         </View>
@@ -1140,7 +1146,7 @@ function Waqf({ record }: { record: NonNullable<AssetDetail["waqf"]> }) {
       {record.landNote && (
         <View style={styles.tight}>
           <Text variant="label" headingLevel={3}>
-            Arazi
+            {w.land}
           </Text>
           <Prose text={record.landNote} />
         </View>
@@ -1151,12 +1157,13 @@ function Waqf({ record }: { record: NonNullable<AssetDetail["waqf"]> }) {
 
 function Inscriptions({ asset }: { asset: AssetDetail }) {
   const { colors: c } = useTheme();
+  const w = useMessages().dossier;
   return (
     <View accessibilityRole="list" style={styles.rows}>
       {asset.inscriptions.map((inscription) => {
         const date = [
           inscription.gregorian,
-          inscription.hijriYear !== null ? `H. ${inscription.hijriYear}` : null,
+          inscription.hijriYear !== null ? w.hijri(inscription.hijriYear) : null,
         ]
           .filter(Boolean)
           .join("  ·  ");
@@ -1188,7 +1195,7 @@ function Inscriptions({ asset }: { asset: AssetDetail }) {
               {inscription.transliteration && (
                 <View style={styles.tight}>
                   <Text variant="caption" color="textSecondary">
-                    Okunuşu
+                    {w.reading}
                   </Text>
                   <Text variant="caption" style={styles.italic}>
                     {inscription.transliteration}
@@ -1202,12 +1209,12 @@ function Inscriptions({ asset }: { asset: AssetDetail }) {
                 <FrameLink href={camera}>
                   <Pressable
                     accessibilityRole="link"
-                    accessibilityLabel={`Kamerayla oku: ${inscription.location ?? "kitabe"}`}
+                    accessibilityLabel={w.readByCameraLabel(inscription.location)}
                     style={styles.cameraLink}
                   >
                     <Ionicons name="scan-outline" size={18} color={c.primary} />
                     <Text variant="label" colorValue={c.primary}>
-                      Kamerayla oku
+                      {w.readByCamera}
                     </Text>
                   </Pressable>
                 </FrameLink>
@@ -1290,21 +1297,15 @@ function Legends({ asset }: { asset: AssetDetail }) {
   );
 }
 
-const accessText: Record<AccessibilityStatus, string> = {
-  yes: "Var",
-  partial: "Kısmen",
-  no: "Yok",
-  unknown: "Bilgi yok",
-};
-
 /** An unchecked "unknown" reads as no information, never as accessible. */
 function Access({ asset }: { asset: AssetDetail }) {
   const a = asset.accessibility;
+  const w = useMessages().dossier;
   const rows: Array<[string, IconName, AccessibilityStatus]> = [
-    ["Tekerlekli sandalye", "accessibility-outline", a.wheelchair],
-    ["Basamaksız giriş", "walk-outline", a.stepFree],
-    ["Rampa", "trending-up-outline", a.ramp],
-    ["Tuvalet", "water-outline", a.toilet],
+    [w.wheelchair, "accessibility-outline", a.wheelchair],
+    [w.stepFree, "walk-outline", a.stepFree],
+    [w.ramp, "trending-up-outline", a.ramp],
+    [w.toilet, "water-outline", a.toilet],
   ];
   const known = rows.some(([, , status]) => status !== "unknown");
   return (
@@ -1312,15 +1313,15 @@ function Access({ asset }: { asset: AssetDetail }) {
       {known ? (
         rows.map(([label, icon, status]) => (
           <Info key={label} icon={icon} label={label}>
-            {accessText[status]}
+            {w.access[status]}
           </Info>
         ))
       ) : (
-        <Text>Bilgi yok</Text>
+        <Text>{w.noInfo}</Text>
       )}
       {known && !a.verified && (
         <Text variant="caption" color="textSecondary">
-          Yerinde doğrulanmadı.
+          {w.notVerified}
         </Text>
       )}
       {a.notes && <Prose text={a.notes} />}
@@ -1330,11 +1331,12 @@ function Access({ asset }: { asset: AssetDetail }) {
 
 function Sources({ asset }: { asset: AssetDetail }) {
   const { colors: c } = useTheme();
+  const w = useMessages().dossier;
   return (
     <View accessibilityRole="list" style={styles.tight}>
       {asset.sources.map((source, index) => {
         const text = source.pages
-          ? `${source.title} · s. ${source.pages}`
+          ? `${source.title} · ${w.page(source.pages)}`
           : source.title;
         const { url } = source;
         return url ? (

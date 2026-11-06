@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { AssetSummary } from "@vagabonds/contracts";
+import type { AssetSummary, Lang } from "@vagabonds/contracts";
 import {
   fontFamily,
   radius,
@@ -39,6 +39,7 @@ import { AssetCard } from "@/components/asset-card";
 import { Star } from "@/components/star";
 import { TimeJourneyCard } from "@/components/time-journey-card";
 import { useSearchableAssets } from "@/data";
+import { useLang, useMessages, type Messages } from "@/i18n";
 import { foldTurkish } from "@/search/asset-search";
 
 /** Content column width; on a wide screen the cards stay a gallery instead of stretching. */
@@ -108,23 +109,17 @@ interface Option {
  * `asset_types` codes (data/enums.json), gathered by what a visitor looks for. A type not named
  * here falls under "Diğer".
  */
-const KINDS: { code: string; label: string; types: string[] }[] = [
-  {
-    code: "ibadet",
-    label: "Cami",
-    types: ["cami", "mescit", "kulliye", "tekke", "kilise"],
-  },
-  { code: "turbe", label: "Türbe", types: ["turbe", "hazire", "makam"] },
-  {
-    code: "ticaret",
-    label: "Han ve Çarşı",
-    types: ["han", "kervansaray", "bedesten", "arasta"],
-  },
-  { code: "su", label: "Hamam ve Çeşme", types: ["hamam", "cesme", "sebil"] },
+const KINDS: { code: KindCode; types: string[] }[] = [
+  { code: "ibadet", types: ["cami", "mescit", "kulliye", "tekke", "kilise"] },
+  { code: "turbe", types: ["turbe", "hazire", "makam"] },
+  { code: "ticaret", types: ["han", "kervansaray", "bedesten", "arasta"] },
+  { code: "su", types: ["hamam", "cesme", "sebil"] },
 ];
-const OTHER = { code: "diger", label: "Diğer" };
+const OTHER = { code: "diger" as const };
 
-function kindOf(asset: AssetSummary): { code: string; label: string } {
+type KindCode = keyof Messages["monuments"]["kinds"];
+
+function kindOf(asset: AssetSummary): { code: KindCode } {
   return KINDS.find((kind) => kind.types.includes(asset.type.code)) ?? OTHER;
 }
 
@@ -132,6 +127,7 @@ function kindOf(asset: AssetSummary): { code: string; label: string } {
 function optionsOf(
   assets: AssetSummary[],
   pick: (asset: AssetSummary) => { code: string; label: string },
+  lang: Lang,
 ): Option[] {
   const byCode = new Map<string, Option>();
   for (const asset of assets) {
@@ -141,13 +137,16 @@ function optionsOf(
     byCode.set(code, option);
   }
   return [...byCode.values()].sort(
-    (a, b) => b.count - a.count || a.label.localeCompare(b.label, "tr"),
+    (a, b) => b.count - a.count || a.label.localeCompare(b.label, lang),
   );
 }
 
 /** The kinds that have assets, in their fixed order, "Diğer" last. */
-function kindOptions(assets: AssetSummary[]): Option[] {
-  const counts = optionsOf(assets, kindOf);
+function kindOptions(assets: AssetSummary[], labels: Messages["monuments"]["kinds"], lang: Lang): Option[] {
+  const counts = optionsOf(assets, (asset) => {
+    const { code } = kindOf(asset);
+    return { code, label: labels[code] };
+  }, lang);
   return [...KINDS, OTHER].flatMap((kind) =>
     counts.filter((option) => option.code === kind.code),
   );
@@ -172,6 +171,9 @@ function matches(
  */
 export default function MonumentsScreen() {
   const { ink, styles } = useLook();
+  const m = useMessages();
+  const w = m.monuments;
+  const lang = useLang();
   const insets = useSafeAreaInsets();
   const tabBarHeight = useBottomTabBarHeight();
   const { width } = useWindowDimensions();
@@ -213,17 +215,17 @@ export default function MonumentsScreen() {
         .sort((a, b) => b.prominence - a.prominence),
     [assets, query, filters],
   );
-  const cityOptions = useMemo(() => optionsOf(assets, (a) => a.city), [assets]);
-  const typeOptions = useMemo(() => kindOptions(assets), [assets]);
+  const cityOptions = useMemo(() => optionsOf(assets, (a) => a.city, lang), [assets, lang]);
+  const typeOptions = useMemo(() => kindOptions(assets, w.kinds, lang), [assets, w, lang]);
   const options = { city: cityOptions, kind: typeOptions };
 
   // A status message (WCAG 4.1.3): read out when the list loads or the search changes.
   // Android and the web read the live region below; iOS needs an explicit announcement.
   const status =
     all.status === "loading"
-      ? "Eserler yükleniyor"
+      ? w.loading
       : all.status === "success"
-        ? `${shown.length} eser`
+        ? w.sites(shown.length)
         : "";
   useEffect(() => {
     if (Platform.OS !== "ios" || status === "") return;
@@ -250,7 +252,7 @@ export default function MonumentsScreen() {
           colorValue={ink.text}
           style={styles.title}
         >
-          Eserler
+          {m.tabs.monuments}
         </Text>
       </View>
       <View style={wide ? styles.toolbar : undefined}>
@@ -260,7 +262,7 @@ export default function MonumentsScreen() {
           accessibilityLiveRegion="polite"
           style={styles.visuallyHidden}
         >
-          {all.status === "success" ? `${shown.length} vakıf eseri` : status}
+          {all.status === "success" ? w.waqfSites(shown.length) : status}
         </Text>
 
         <View style={[styles.searchRow, wide && styles.searchRowWide]}>
@@ -269,9 +271,9 @@ export default function MonumentsScreen() {
             <TextInput
               value={text}
               onChangeText={setText}
-              placeholder="Eser, ilçe veya tür ara"
+              placeholder={w.searchPlaceholder}
               placeholderTextColor={ink.soft}
-              accessibilityLabel="Eser ara"
+              accessibilityLabel={w.searchLabel}
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
               returnKeyType="search"
@@ -281,7 +283,7 @@ export default function MonumentsScreen() {
             {text !== "" && (
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel="Aramayı temizle"
+                accessibilityLabel={w.clearSearch}
                 hitSlop={10}
                 onPress={() => setText("")}
               >
@@ -293,13 +295,13 @@ export default function MonumentsScreen() {
 
         <View style={[styles.dropdowns, wide && styles.dropdownsWide]}>
           <Dropdown
-            title="Şehir"
+            title={w.city}
             value={cityOptions.find((o) => o.code === filters.city)?.label}
             open={menu?.field === "city"}
             onOpen={(anchor) => openMenu("city", anchor)}
           />
           <Dropdown
-            title="Tür"
+            title={w.kind}
             value={typeOptions.find((o) => o.code === filters.kind)?.label}
             open={menu?.field === "kind"}
             onOpen={(anchor) => openMenu("kind", anchor)}
@@ -323,7 +325,7 @@ export default function MonumentsScreen() {
     <View ref={screen} style={styles.screen}>
       <StatusBar style={ink.dark ? "light" : "dark"} />
       <Head>
-        <title>Eserler · Vagabonds</title>
+        <title>{m.common.title(m.tabs.monuments)}</title>
       </Head>
       {all.status === "success" ? (
         <FlatList
@@ -350,7 +352,7 @@ export default function MonumentsScreen() {
             <View style={styles.state}>
               <Ionicons name="search-outline" size={28} color={ink.soft} />
               <Text colorValue={ink.soft} style={styles.center}>
-                Aramana uyan eser yok.
+                {w.empty}
               </Text>
             </View>
           }
@@ -366,20 +368,20 @@ export default function MonumentsScreen() {
             <ActivityIndicator
               color={ink.gold}
               size="large"
-              accessibilityLabel="Yükleniyor"
+              accessibilityLabel={m.common.loading}
               style={styles.state}
             />
           ) : (
             <View style={styles.state} accessibilityRole="alert">
               <Text variant="label" colorValue={ink.text}>
                 {all.error.kind === "invalid"
-                  ? "Veriler okunamadı"
-                  : "Veriler yüklenemedi"}
+                  ? w.unreadable
+                  : w.unavailable}
               </Text>
               <Text colorValue={ink.soft} style={styles.center}>
                 {all.error.message}
               </Text>
-              <GoldButton label="Tekrar dene" onPress={all.retry} />
+              <GoldButton label={m.common.retry} onPress={all.retry} />
             </View>
           )}
         </View>
@@ -425,13 +427,14 @@ function Dropdown({
   onOpen: (anchor: Anchor) => void;
 }) {
   const { ink, styles } = useLook();
+  const all = useMessages().monuments.all;
   const ref = useRef<ComponentRef<typeof View>>(null);
   const on = value !== undefined;
   return (
     <Pressable
       ref={ref}
       accessibilityRole="button"
-      accessibilityLabel={`${title}: ${value ?? "Tümü"}`}
+      accessibilityLabel={`${title}: ${value ?? all}`}
       accessibilityState={{ expanded: open }}
       onPress={() =>
         ref.current?.measureInWindow((x, y, width, height) =>
@@ -475,7 +478,7 @@ function FilterMenu({
   onClose: () => void;
 }) {
   const { ink, styles } = useLook();
-  const rows = [{ code: undefined, label: "Tümü" }, ...options];
+  const rows = [{ code: undefined, label: useMessages().monuments.all }, ...options];
   // Android's back button closes the menu first.
   useEffect(() => {
     if (!anchor || Platform.OS !== "android") return;
