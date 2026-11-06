@@ -28,6 +28,7 @@ export {
   useMyContributions,
   usePulse,
   useWeather,
+  useWeatherAt,
   useRelationsOf,
   useRewards,
   useWallet,

@@ -42,4 +42,6 @@ export interface DataSource {
   listCities(lang: Lang): Promise<CityOption[]>;
   /** Today's weather in a city (`cities` code); `null` when it cannot be had. Never stored: old weather misleads. */
   getWeather(city: string, lang: Lang): Promise<WeatherResponse | null>;
+  /** Today's weather at a point (the visitor's location); `null` when it cannot be had. Never stored either. */
+  getWeatherAt(point: { lat: number; lng: number }, lang: Lang): Promise<WeatherResponse | null>;
 }

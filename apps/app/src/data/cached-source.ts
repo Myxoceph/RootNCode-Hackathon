@@ -55,6 +55,7 @@ export function createCachedSource(source: DataSource): DataSource {
     listCities: (lang) => cached(`cities:${lang}`, CitiesSchema, () => source.listCities(lang)),
     // Not stored: yesterday's weather would mislead.
     getWeather: (city, lang) => source.getWeather(city, lang),
+    getWeatherAt: (point, lang) => source.getWeatherAt(point, lang),
   };
 }
 

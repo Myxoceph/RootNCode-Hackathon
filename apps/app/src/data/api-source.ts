@@ -41,6 +41,13 @@ export function createApiSource(baseUrl: string): DataSource {
         return null;
       }
     },
+    async getWeatherAt(point, lang) {
+      try {
+        return await request(`/weather?at=${point.lat.toFixed(3)},${point.lng.toFixed(3)}&lang=${lang}`, WeatherResponseSchema, { allowNotFound: true });
+      } catch {
+        return null;
+      }
+    },
     async listCities(lang) {
       const enums = (await request(`/meta/enums?lang=${lang}`, MetaEnumsResponseSchema))!;
       return enums.cities

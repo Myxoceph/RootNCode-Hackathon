@@ -1,20 +1,20 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { WeatherCondition } from "@vagabonds/contracts";
+import type { WeatherCondition, WeatherResponse } from "@vagabonds/contracts";
 import { fontFamily, palette, radius, spacing, Text, useTheme } from "@vagabonds/ui";
-import { useRouter, type Href } from "expo-router";
+import { useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useRef, useState, type ComponentProps, type ReactNode } from "react";
-import { Animated, Easing, Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from "react-native";
+import { useEffect, useRef, useState, type ComponentProps } from "react";
+import { Animated, Easing, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Svg, { Circle, Defs, LinearGradient, Rect, Stop } from "react-native-svg";
+import Svg, { Circle, Defs, LinearGradient, Path, RadialGradient, Rect, Stop } from "react-native-svg";
 
-import { AssetImage } from "@/components/asset-image";
-import { useAsset, useCities, useCityMapAssets, useCommunity, useMyAchievements, useWeather } from "@/data";
+import { useCities, useCommunity, useWeather, useWeatherAt } from "@/data";
 import { announce } from "@/lib/announce";
+import { useHere } from "@/lib/here";
 import { useLastCity } from "@/lib/last-city";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { dayAsset, nearestBadge, weatherMood } from "@/lib/welcome-lines";
+import { dayLabel } from "@/lib/welcome-lines";
 import { loadMaplibre } from "@/vendor";
 import { localeTag, useLang, useMessages } from "@/i18n";
 
@@ -22,14 +22,6 @@ type IconName = ComponentProps<typeof Ionicons>["name"];
 
 /** The page's navy in the dark theme (lacivert): bluer than the app's night blue. */
 const NAVY = "#0E1F3D";
-/** The chip over the photo: dark glass in both themes, the photo under it is the same. */
-const chip = {
-  fill: "rgba(8, 18, 38, 0.62)",
-  edge: "rgba(255, 255, 255, 0.14)",
-  text: palette.gece50,
-  sub: palette.gece300,
-  gold: palette.altin200,
-};
 
 /**
  * The page's colours: navy with light gold in the dark theme, white with deep gold in the light
@@ -45,42 +37,33 @@ function usePageColors() {
     textSecondary: c.textSecondary,
     /** Small gold words; deep gold on white for 4.5:1. */
     gold: dark ? palette.altin200 : palette.altin700,
-    /** Large gold words and marks (the name, the ring): 3:1 is enough for them. */
+    /** Large gold words and marks: 3:1 is enough for them. */
     goldMark: dark ? palette.altin200 : palette.altin600,
     /** The button: gold on the navy, navy on the white. */
     button: dark ? palette.altin200 : NAVY,
     onButton: dark ? palette.altin950 : palette.white,
     buttonMark: dark ? palette.altin950 : palette.altin200,
-    fill: dark ? "rgba(255, 255, 255, 0.05)" : palette.white,
-    edge: dark ? "rgba(255, 255, 255, 0.11)" : palette.gece100,
-    rule: dark ? "rgba(255, 255, 255, 0.09)" : palette.gece100,
-    track: dark ? "rgba(255, 255, 255, 0.13)" : palette.gece100,
-    medallion: dark ? "rgba(255, 255, 255, 0.04)" : palette.gece50,
+    /** The weather card's sky, top to bottom, and its edge. */
+    sky: dark ? ["#1D3A6E", "#122A52"] : ["#E3EDFB", "#F4F8FE"],
+    skyEdge: dark ? "rgba(255, 255, 255, 0.12)" : "#D6E2F3",
+    rule: dark ? "rgba(255, 255, 255, 0.12)" : "#D6E2F3",
+    chip: dark ? "rgba(255, 255, 255, 0.10)" : "rgba(255, 255, 255, 0.85)",
   };
 }
-/** Emir Sultan, the sign-in screen's photo: shown until the site of the day is in, or without one. */
-const FALLBACK_ASSET = "bursa-yildirim-emir-sultan-kulliyesi";
-/** The medallion on the left of each card: the badge's ring, the weather's disc. */
-const MEDALLION = 76;
-const RING = 6;
 
-const AnimatedCircle = Animated.createAnimatedComponent(Circle);
-
-/** The weather's icon: the sun by day, the moon by night when it is clear. */
+/** The weather's icon: the sun by day, the moon by night when it is clear or cloudy. */
 function weatherIcon(condition: WeatherCondition, isDay: boolean): IconName {
-  if (condition === "clear") return isDay ? "sunny-outline" : "moon-outline";
-  return ({ cloudy: "cloudy-outline", fog: "cloud-outline", rain: "rainy-outline", snow: "snow-outline", storm: "thunderstorm-outline" } as const)[condition];
+  if (condition === "clear") return isDay ? "sunny" : "moon";
+  if (condition === "cloudy" && !isDay) return "cloudy-night";
+  return ({ cloudy: "partly-sunny", fog: "cloud", rain: "rainy", snow: "snow", storm: "thunderstorm" } as const)[condition];
 }
 
-const capitalize = (text: string) => text.charAt(0).toLocaleUpperCase() + text.slice(1);
-
 /**
- * `/welcome`: the page the app opens on. The site of the day fills the top and sinks into the night
- * blue; under it the date and "Hoş geldin, <ad>" in the display face. Two cards of one make follow,
- * a medallion on the left, words on the right and a line of detail under a hairline: the visitor's
- * progress drawn out (a gold ring for the badge nearest to hand and a bar of the whole collection)
- * and the city's weather (the city last opened on the map, else the one with the most sites).
- * Nothing here needs the visitor; the page stays until "Keşfe başla" opens the map.
+ * `/welcome`: the page the app opens on. At the top the date and "Hoş geldin, <ad>" in the display
+ * face, under a faint gold eight-pointed star (the map's mark for a monument); under them the
+ * weather where the visitor is (without the location, in the city last opened on the map): now,
+ * in large, and the next three days. Nothing here needs the visitor; the page
+ * stays until "Devam et" opens the map.
  */
 export default function WelcomePage() {
   const router = useRouter();
@@ -88,7 +71,6 @@ export default function WelcomePage() {
   const w = m.welcome;
   const lang = useLang();
   const insets = useSafeAreaInsets();
-  const { height } = useWindowDimensions();
   const { user } = useCommunity();
   const reduced = useReducedMotion();
   const ink = usePageColors();
@@ -97,33 +79,21 @@ export default function WelcomePage() {
   // The first name when the account has a full name, else the nickname.
   const name = user?.fullName?.trim().split(/\s+/)[0] || user?.nickname || null;
 
-  // The badges: the one nearest to hand, and how many of all are earned.
-  const achievements = useMyAchievements();
-  const items = achievements.status === "success" ? (achievements.data?.items ?? null) : null;
-  const near = items ? nearestBadge(items) : null;
-  const earned = items ? items.filter((item) => item.earnedAt).length : 0;
-  const nearLeft = near ? w.left(near.left, w.units[near.unit](near.left)) : null;
-
-  // The city: the one last opened on the map, else the one with the most sites.
+  // The weather where the visitor is. Without the location (refused, or no fix), the city last
+  // opened on the map, else the one with the most sites.
+  const here = useHere();
+  const hereWeather = useWeatherAt(here?.position ?? null);
   const lastCity = useLastCity();
   const cities = useCities();
   const biggest = cities.status === "success" ? ([...cities.data].sort((a, b) => b.assetCount - a.assetCount)[0]?.code ?? null) : null;
-  const city = lastCity === undefined ? null : (lastCity ?? biggest);
-  const weather = useWeather(city);
+  const city = here !== null || lastCity === undefined ? null : (lastCity ?? biggest);
+  const cityWeather = useWeather(city);
+  const weather = here ? hereWeather : cityWeather;
   const forecast = weather.status === "success" ? weather.data : null;
-  const now = forecast?.available ? forecast.current : null;
-  const mood = weatherMood(forecast);
-  const todayForecast = forecast?.daily[0] ?? null;
-
-  // The site of the day, from the same city; Emir Sultan until it is in.
-  const cityAssets = useCityMapAssets(city);
-  const featured = cityAssets.status === "success" && cityAssets.data ? dayAsset(cityAssets.data.located, today) : null;
-  const fallback = useAsset(FALLBACK_ASSET);
-  const cover = featured?.cover ?? (fallback.status === "success" ? fallback.data?.cover : null) ?? null;
+  const place = here?.place ?? forecast?.city.label ?? "";
 
   const upper = (text: string) => text.toLocaleUpperCase(localeTag(lang));
   const date = upper(today.toLocaleDateString(localeTag(lang), { weekday: "long", day: "numeric", month: "long" }));
-  const heroHeight = Math.min(Math.max(height * 0.36, 240), 380);
 
   // The page rises in; each part a moment after the one above it.
   const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
@@ -147,44 +117,23 @@ export default function WelcomePage() {
       <Head>
         <title>{m.common.title(w.title)}</title>
       </Head>
-      <StatusBar style="light" />
+      <StatusBar style={ink.dark ? "light" : "dark"} />
 
-      <ScrollView contentContainerStyle={{ paddingBottom: footerHeight + spacing.md }} showsVerticalScrollIndicator={false} bounces={false}>
-        {/* The site of the day, its lower part sinking into the night blue. */}
-        <View style={[styles.hero, { height: heroHeight + insets.top }]}>
-          <View style={StyleSheet.absoluteFill} aria-hidden importantForAccessibility="no-hide-descendants">
-            {cover && <AssetImage media={cover} decorative fill />}
-            <Fade />
-          </View>
+      <Star color={ink.goldMark} top={insets.top} />
 
-          {featured && (
-            <Pressable
-              onPress={() => router.push(`/asset/${featured.id}` as Href)}
-              accessibilityRole="link"
-              accessibilityLabel={w.dayAssetLabel(featured.name)}
-              style={({ pressed }) => [styles.featured, pressed && styles.pressed]}
-            >
-              <View style={[styles.featuredMark, { borderColor: chip.gold }]}>
-                <Ionicons name="sparkles" size={12} color={chip.gold} />
-              </View>
-              <View style={styles.featuredWords}>
-                <Text colorValue={chip.gold} style={styles.kicker}>
-                  {upper(w.dayAsset)}
-                </Text>
-                <Text colorValue={chip.text} style={styles.featuredName} numberOfLines={1}>
-                  {featured.name}
-                </Text>
-              </View>
-              <Ionicons name="chevron-forward" size={16} color={chip.sub} />
-            </Pressable>
-          )}
-        </View>
-
+      <ScrollView
+        contentContainerStyle={[styles.scroll, { paddingTop: insets.top + spacing.xxl * 2, paddingBottom: footerHeight + spacing.md }]}
+        showsVerticalScrollIndicator={false}
+        bounces={false}
+      >
         <View style={styles.column}>
           <Animated.View style={rise(0)}>
-            <Text colorValue={ink.gold} style={styles.overline}>
-              {date}
-            </Text>
+            <View style={styles.dateRow}>
+              <View style={[styles.dateRule, { backgroundColor: ink.gold }]} />
+              <Text colorValue={ink.gold} style={styles.overline}>
+                {date}
+              </Text>
+            </View>
             <Text headingLevel={1} colorValue={ink.text} style={styles.title}>
               {w.greeting}
               {"\n"}
@@ -194,56 +143,11 @@ export default function WelcomePage() {
             </Text>
           </Animated.View>
 
-          {/* Told by screen readers as they arrive: they may come a moment after the greeting. */}
-          <View style={styles.cards} accessibilityLiveRegion="polite">
-            {items && items.length > 0 && (
-              <Animated.View style={rise(0.2)}>
-                <Card
-                  label={near && nearLeft ? w.ringLabel(near.title, near.current, near.target, nearLeft) : w.complete}
-                  medallion={
-                    <Ring share={near ? near.current / near.target : 1} reduced={reduced}>
-                      {near ? (
-                        <Text colorValue={ink.text} style={styles.ringCount}>
-                          {w.progress(near.current, near.target)}
-                        </Text>
-                      ) : (
-                        <Ionicons name="checkmark" size={28} color={ink.goldMark} />
-                      )}
-                    </Ring>
-                  }
-                  kicker={upper(w.nextBadge)}
-                  title={near?.title ?? w.complete}
-                  emoji={near?.badge}
-                  body={nearLeft ? capitalize(nearLeft) : w.completeLead}
-                  foot={<Collection earned={earned} total={items.length} />}
-                />
-              </Animated.View>
-            )}
-
-            {now && forecast && mood && (
-              <Animated.View style={rise(0.35)}>
-                <Card
-                  medallion={
-                    <Ring share={0} reduced>
-                      <Ionicons name={weatherIcon(now.condition, now.isDay)} size={26} color={ink.goldMark} />
-                    </Ring>
-                  }
-                  kicker={upper(w.cardTitle(w.weatherLabel, forecast.city.label))}
-                  title={w.cardTitle(w.degrees(Math.round(now.temperatureC)), w.conditions[now.condition])}
-                  body={w.sentence(capitalize(mood))}
-                  foot={
-                    todayForecast && (
-                      <View style={styles.footRow}>
-                        <Text colorValue={ink.textSecondary} style={styles.footText}>
-                          {w.highLow(Math.round(todayForecast.highC), Math.round(todayForecast.lowC))}
-                        </Text>
-                        <Text colorValue={ink.textSecondary} style={[styles.footText, styles.credit]}>
-                          {forecast.attribution}
-                        </Text>
-                      </View>
-                    )
-                  }
-                />
+          {/* Told by screen readers when it arrives: it may come a moment after the greeting. */}
+          <View accessibilityLiveRegion="polite" style={styles.cardSlot}>
+            {forecast?.available && forecast.current && (
+              <Animated.View style={rise(0.25)}>
+                <WeatherCard forecast={forecast} place={place} located={here != null} today={today} />
               </Animated.View>
             )}
           </View>
@@ -251,19 +155,7 @@ export default function WelcomePage() {
       </ScrollView>
 
       {/* The way on, always in reach: the page scrolls under it. */}
-      <View style={[styles.footer, { paddingBottom: insets.bottom + spacing.lg }]} pointerEvents="box-none">
-        <View style={StyleSheet.absoluteFill} pointerEvents="none">
-          <Svg width="100%" height="100%">
-            <Defs>
-              <LinearGradient id="welcome-foot" x1="0" y1="0" x2="0" y2="1">
-                <Stop offset="0" stopColor={ink.background} stopOpacity={0} />
-                <Stop offset="0.4" stopColor={ink.background} stopOpacity={0.94} />
-                <Stop offset="1" stopColor={ink.background} stopOpacity={1} />
-              </LinearGradient>
-            </Defs>
-            <Rect width="100%" height="100%" fill="url(#welcome-foot)" />
-          </Svg>
-        </View>
+      <View style={[styles.footer, { paddingBottom: insets.bottom + spacing.lg, backgroundColor: ink.background }]}>
         <Pressable
           onPress={() => router.replace("/map")}
           accessibilityRole="button"
@@ -280,123 +172,125 @@ export default function WelcomePage() {
   );
 }
 
-/** The photo: darker under the status bar and at the foot, where the chip sits; clear between. */
-function Fade() {
+/** A faint gold eight-pointed star in the top corner: the map's mark for a monument, as an ornament. */
+function Star({ color, top }: { color: string; top: number }) {
+  const size = 260;
+  const middle = size / 2;
+  // Two squares, one turned an eighth of a turn: the Seljuk star.
+  const square = (turn: number) =>
+    "M" +
+    Array.from({ length: 4 }, (_, corner) => {
+      const angle = turn + (Math.PI / 2) * corner;
+      return [middle + Math.cos(angle) * (middle - 6), middle + Math.sin(angle) * (middle - 6)].join(",");
+    }).join("L") +
+    "Z";
   return (
-    <View pointerEvents="none" style={StyleSheet.absoluteFill}>
-      <Svg width="100%" height="100%">
-        <Defs>
-          <LinearGradient id="welcome-fade" x1="0" y1="0" x2="0" y2="1">
-            <Stop offset="0" stopColor={NAVY} stopOpacity={0.5} />
-            <Stop offset="0.3" stopColor={NAVY} stopOpacity={0} />
-            <Stop offset="0.6" stopColor={NAVY} stopOpacity={0} />
-            <Stop offset="1" stopColor={NAVY} stopOpacity={0.55} />
-          </LinearGradient>
-        </Defs>
-        <Rect width="100%" height="100%" fill="url(#welcome-fade)" />
+    <View pointerEvents="none" aria-hidden importantForAccessibility="no-hide-descendants" style={[styles.star, { top: top - size * 0.28 }]}>
+      <Svg width={size} height={size}>
+        <Path d={square(0)} fill="none" stroke={color} strokeOpacity={0.2} strokeWidth={1.5} />
+        <Path d={square(Math.PI / 4)} fill="none" stroke={color} strokeOpacity={0.2} strokeWidth={1.5} />
+        <Circle cx={middle} cy={middle} r={middle * 0.38} fill="none" stroke={color} strokeOpacity={0.14} strokeWidth={1} />
       </Svg>
     </View>
   );
 }
 
 /**
- * One card of the page: the medallion on the left; the kicker, the title and a line on the right;
- * a detail under a hairline. Read as one by screen readers (`label`, else its words in order).
+ * The weather: a sky-coloured card with the moon's or the sun's glow in its corner. Now in large
+ * (the degrees and the sky), then the next three days in a row. `located`: it is where the visitor is.
  */
-function Card({
-  medallion,
-  kicker,
-  title,
-  emoji,
-  body,
-  foot,
-  label,
-}: {
-  medallion: ReactNode;
-  kicker: string;
-  title: string;
-  emoji?: string;
-  body: string;
-  foot?: ReactNode;
-  label?: string;
-}) {
+function WeatherCard({ forecast, place, located, today }: { forecast: WeatherResponse; place: string; located: boolean; today: Date }) {
+  const m = useMessages();
+  const w = m.welcome;
+  const lang = useLang();
   const ink = usePageColors();
+  const now = forecast.current!;
+  const degrees = Math.round(now.temperatureC);
+  const days = forecast.daily.slice(0, 3);
+
   return (
-    <View style={[styles.card, { backgroundColor: ink.fill, borderColor: ink.edge }, !ink.dark && styles.lifted]} accessible accessibilityLabel={label}>
-      <View style={styles.cardMain}>
-        {medallion}
-        <View style={styles.cardWords}>
-          <Text colorValue={ink.textSecondary} style={styles.kicker}>
-            {kicker}
+    <View style={[styles.card, { borderColor: ink.skyEdge }]}>
+      <View style={StyleSheet.absoluteFill} pointerEvents="none">
+        <Svg width="100%" height="100%">
+          <Defs>
+            <LinearGradient id="welcome-sky" x1="0" y1="0" x2="0" y2="1">
+              <Stop offset="0" stopColor={ink.sky[0]} />
+              <Stop offset="1" stopColor={ink.sky[1]} />
+            </LinearGradient>
+            <RadialGradient id="welcome-glow" cx="88%" cy="6%" r="60%">
+              <Stop offset="0" stopColor={palette.altin200} stopOpacity={ink.dark ? 0.32 : 0.45} />
+              <Stop offset="1" stopColor={palette.altin200} stopOpacity={0} />
+            </RadialGradient>
+          </Defs>
+          <Rect width="100%" height="100%" fill="url(#welcome-sky)" />
+          <Rect width="100%" height="100%" fill="url(#welcome-glow)" />
+        </Svg>
+      </View>
+
+      <View style={styles.cardTop}>
+        <View style={[styles.place, { backgroundColor: ink.chip }]}>
+          <Ionicons name={located ? "navigate" : "location"} size={13} color={ink.goldMark} />
+          <Text colorValue={ink.text} style={styles.placeText}>
+            {place}
           </Text>
-          <View style={styles.titleRow}>
-            {emoji && (
-              <Text style={styles.emoji} accessibilityElementsHidden importantForAccessibility="no">
-                {emoji}
-              </Text>
-            )}
-            <Text colorValue={ink.text} style={styles.cardTitle} numberOfLines={2}>
-              {title}
-            </Text>
-          </View>
-          <Text colorValue={ink.textSecondary} style={styles.cardBody}>
-            {body}
+        </View>
+        <Text colorValue={ink.textSecondary} style={styles.nowLabel}>
+          {w.now.toLocaleUpperCase(localeTag(lang))}
+        </Text>
+      </View>
+
+      <View style={styles.nowRow} accessible accessibilityLabel={w.nowLabel(place, degrees, w.conditions[now.condition])}>
+        <Text colorValue={ink.text} style={styles.degrees}>
+          {w.degrees(degrees)}
+        </Text>
+        <View style={styles.nowSide}>
+          <Ionicons name={weatherIcon(now.condition, now.isDay)} size={40} color={ink.goldMark} />
+          <Text colorValue={ink.text} style={styles.condition}>
+            {w.conditions[now.condition]}
           </Text>
         </View>
       </View>
-      {foot ? <View style={[styles.cardFoot, { borderTopColor: ink.rule }]}>{foot}</View> : null}
-    </View>
-  );
-}
 
-/** A ring around the medallion: a faint track, and a gold arc for the share done that draws itself in. */
-function Ring({ share, reduced, children }: { share: number; reduced: boolean; children: ReactNode }) {
-  const ink = usePageColors();
-  const r = (MEDALLION - RING) / 2;
-  const length = 2 * Math.PI * r;
-  const drawn = useRef(new Animated.Value(reduced ? share : 0)).current;
-  useEffect(() => {
-    if (reduced) drawn.setValue(share);
-    else Animated.timing(drawn, { toValue: share, duration: 1200, delay: 350, easing: Easing.out(Easing.cubic), useNativeDriver: false }).start();
-  }, [share, reduced, drawn]);
-  const offset = drawn.interpolate({ inputRange: [0, 1], outputRange: [length, 0] });
-  return (
-    <View style={styles.medallion}>
-      <Svg width={MEDALLION} height={MEDALLION} style={StyleSheet.absoluteFill}>
-        <Circle cx={MEDALLION / 2} cy={MEDALLION / 2} r={r} stroke={ink.track} strokeWidth={RING} fill={ink.medallion} />
-        {share > 0 && (
-          <AnimatedCircle
-            cx={MEDALLION / 2}
-            cy={MEDALLION / 2}
-            r={r}
-            stroke={ink.goldMark}
-            strokeWidth={RING}
-            fill="none"
-            strokeLinecap="round"
-            strokeDasharray={`${length} ${length}`}
-            strokeDashoffset={offset}
-            transform={`rotate(-90 ${MEDALLION / 2} ${MEDALLION / 2})`}
-          />
-        )}
-      </Svg>
-      {children}
-    </View>
-  );
-}
+      {days.length > 0 && (
+        <View style={[styles.days, { borderTopColor: ink.rule }]}>
+          {days.map((day, index) => {
+            const label = dayLabel(day.date, today, lang);
+            const high = Math.round(day.highC);
+            const low = Math.round(day.lowC);
+            const rain = day.precipitationProbability;
+            return (
+              <View
+                key={day.date}
+                style={[styles.day, index > 0 && { borderLeftWidth: 1, borderLeftColor: ink.rule }]}
+                accessible
+                accessibilityLabel={w.dayLabel(label, w.conditions[day.condition], high, low, rain)}
+              >
+                <Text colorValue={ink.textSecondary} style={styles.dayName}>
+                  {label}
+                </Text>
+                <Ionicons name={weatherIcon(day.condition, true)} size={22} color={ink.goldMark} />
+                <Text colorValue={ink.text} style={styles.dayTemps}>
+                  {w.degrees(high)}
+                  <Text colorValue={ink.textSecondary} style={styles.dayLow}>
+                    {w.slashLow(low)}
+                  </Text>
+                </Text>
+                {rain !== null && rain >= 20 && (
+                  <View style={styles.rain}>
+                    <Ionicons name="water" size={11} color={ink.textSecondary} />
+                    <Text colorValue={ink.textSecondary} style={styles.rainText}>
+                      {w.percent(rain)}
+                    </Text>
+                  </View>
+                )}
+              </View>
+            );
+          })}
+        </View>
+      )}
 
-/** The whole collection: one segment for each badge, gold for the earned ones, and its count. */
-function Collection({ earned, total }: { earned: number; total: number }) {
-  const m = useMessages();
-  const ink = usePageColors();
-  return (
-    <View accessible accessibilityLabel={m.welcome.collectionLabel(earned, total)} style={styles.collection}>
-      <View style={styles.segments}>
-        {Array.from({ length: total }, (_, index) => (
-          <View key={index} style={[styles.segment, { backgroundColor: index < earned ? ink.goldMark : ink.track }]} />
-        ))}
-      </View>
-      <Text colorValue={ink.textSecondary} style={styles.footText}>
-        {m.welcome.collection(earned, total)}
+      <Text colorValue={ink.textSecondary} style={styles.credit}>
+        {forecast.attribution}
       </Text>
     </View>
   );
@@ -406,156 +300,141 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
   },
-  hero: {
-    borderBottomLeftRadius: 32,
-    borderBottomRightRadius: 32,
-    overflow: "hidden",
-    justifyContent: "flex-end",
+  star: {
+    position: "absolute",
+    right: -70,
   },
-  featured: {
-    flexDirection: "row",
-    alignItems: "center",
-    alignSelf: "flex-start",
-    maxWidth: "86%",
-    margin: spacing.lg,
-    gap: spacing.sm,
-    paddingLeft: 6,
-    paddingRight: spacing.md,
-    paddingVertical: 6,
-    borderRadius: radius.full,
-    backgroundColor: chip.fill,
-    borderWidth: 1,
-    borderColor: chip.edge,
-  },
-  featuredMark: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    borderWidth: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  featuredWords: {
-    flexShrink: 1,
-  },
-  featuredName: {
-    fontFamily: fontFamily.sansSemiBold,
-    fontSize: 14,
-    lineHeight: 18,
+  scroll: {
+    flexGrow: 1,
+    paddingHorizontal: spacing.lg,
   },
   column: {
-    marginTop: spacing.xl,
-    paddingHorizontal: spacing.lg,
+    flex: 1,
     width: "100%",
     maxWidth: 600,
     alignSelf: "center",
+  },
+  dateRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    marginBottom: spacing.md,
+  },
+  dateRule: {
+    width: 24,
+    height: 2,
+    borderRadius: 1,
   },
   overline: {
     fontFamily: fontFamily.sansBold,
     fontSize: 12,
     letterSpacing: 2.2,
-    marginBottom: spacing.sm,
   },
   title: {
     fontFamily: fontFamily.display,
-    fontSize: 48,
-    lineHeight: 54,
+    fontSize: 52,
+    lineHeight: 58,
     letterSpacing: -0.5,
   },
-  cards: {
-    gap: spacing.md,
-    marginTop: spacing.lg,
+  cardSlot: {
+    flex: 1,
+    justifyContent: "center",
+    paddingTop: spacing.xxl,
   },
   card: {
-    borderRadius: 24,
+    borderRadius: 28,
     borderWidth: 1,
+    overflow: "hidden",
     padding: spacing.lg,
   },
-  lifted: {
-    shadowColor: NAVY,
-    shadowOpacity: 0.08,
-    shadowRadius: 20,
-    shadowOffset: { width: 0, height: 8 },
-    elevation: 3,
-  },
-  cardMain: {
+  cardTop: {
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.lg,
+    justifyContent: "space-between",
   },
-  medallion: {
-    width: MEDALLION,
-    height: MEDALLION,
+  place: {
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    gap: 5,
+    paddingHorizontal: spacing.md,
+    height: 30,
+    borderRadius: radius.full,
   },
-  ringCount: {
+  placeText: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 13,
+  },
+  nowLabel: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 11,
+    letterSpacing: 1.8,
+  },
+  nowRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: spacing.md,
+  },
+  degrees: {
     fontFamily: fontFamily.display,
-    fontSize: 20,
+    fontSize: 88,
+    lineHeight: 96,
+    letterSpacing: -2,
+  },
+  nowSide: {
+    alignItems: "flex-end",
+    gap: 4,
+  },
+  condition: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 18,
     lineHeight: 24,
   },
-  cardWords: {
-    flex: 1,
-    gap: 3,
-  },
-  kicker: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 10.5,
-    lineHeight: 14,
-    letterSpacing: 1.6,
-  },
-  titleRow: {
+  days: {
     flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-  },
-  emoji: {
-    fontSize: 18,
-    lineHeight: 26,
-  },
-  cardTitle: {
-    flexShrink: 1,
-    fontFamily: fontFamily.display,
-    fontSize: 22,
-    lineHeight: 28,
-  },
-  cardBody: {
-    fontSize: 14,
-    lineHeight: 20,
-  },
-  cardFoot: {
-    marginTop: spacing.md,
+    marginTop: spacing.lg,
     paddingTop: spacing.md,
     borderTopWidth: 1,
   },
-  footRow: {
+  day: {
+    flex: 1,
+    alignItems: "center",
+    gap: 6,
+    paddingVertical: 2,
+  },
+  dayName: {
+    fontFamily: fontFamily.sansSemiBold,
+    fontSize: 12.5,
+  },
+  dayTemps: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 15,
+  },
+  dayLow: {
+    fontFamily: fontFamily.sansMedium,
+    fontSize: 15,
+  },
+  rain: {
+    flexDirection: "row",
+    alignItems: "center",
     gap: 2,
   },
-  footText: {
-    fontSize: 12.5,
-    lineHeight: 17,
+  rainText: {
+    fontFamily: fontFamily.sansMedium,
+    fontSize: 11.5,
   },
   credit: {
-    opacity: 0.75,
-  },
-  collection: {
-    gap: spacing.sm,
-  },
-  segments: {
-    flexDirection: "row",
-    gap: 3,
-  },
-  segment: {
-    flex: 1,
-    height: 5,
-    borderRadius: 3,
+    marginTop: spacing.md,
+    fontSize: 11,
+    opacity: 0.8,
+    textAlign: "right",
   },
   footer: {
     position: "absolute",
     left: 0,
     right: 0,
     bottom: 0,
-    paddingTop: spacing.xl,
+    paddingTop: spacing.md,
     paddingHorizontal: spacing.lg,
     alignItems: "center",
   },

@@ -92,6 +92,18 @@ export function useWeather(city: string | null): ResourceWithRetry<WeatherRespon
   return useResource(load);
 }
 
+/** Today's weather at a point (the visitor's location); `null` without one. */
+export function useWeatherAt(point: { lat: number; lng: number } | null): ResourceWithRetry<WeatherResponse | null> {
+  const lang = useLang();
+  const lat = point?.lat;
+  const lng = point?.lng;
+  const load = useCallback(
+    () => (lat !== undefined && lng !== undefined ? dataSource.getWeatherAt({ lat, lng }, lang) : Promise.resolve(null)),
+    [lat, lng, lang],
+  );
+  return useResource(load);
+}
+
 /** The visitor's badges (Rozetlerim): fetched again for a new session. `null` without a server. */
 export function useMyAchievements(): ResourceWithRetry<MyAchievementsResponse | null> {
   const { user } = useCommunity();
