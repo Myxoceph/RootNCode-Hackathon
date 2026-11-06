@@ -1,8 +1,8 @@
-import type { MyAchievement, WeatherResponse } from "@vagabonds/contracts";
+import type { AssetSummary, MyAchievement, WeatherResponse } from "@vagabonds/contracts";
 import { describe, expect, it } from "vitest";
 
 import { inCity } from "../src/lib/place-names";
-import { dailyLine, dayNumber, nearestBadge, weatherLine } from "../src/lib/welcome-lines";
+import { dailyLine, dayAsset, dayNumber, nearestBadge, weatherLine, weatherMood } from "../src/lib/welcome-lines";
 
 const badge = (title: string, current: number, target: number, rule: MyAchievement["rule"] = { kind: "visit_count", count: target }, earnedAt: string | null = null) =>
   ({ code: title.toLowerCase(), title, description: "", badge: "🏅", points: 10, rule, imageUrl: null, earnedAt, progress: { current, target } }) as MyAchievement;
@@ -17,7 +17,7 @@ const odd = new Date(even.getTime() + 86_400_000);
 describe("the badge nearest to hand", () => {
   it("is the one with the fewest steps left, not yet earned", () => {
     const items = [badge("Bronz Gezgin", 3, 5), badge("Gümüş Gezgin", 3, 10), badge("İlk Adım", 1, 1, undefined, "2026-11-01T10:00:00.000Z")];
-    expect(nearestBadge(items)).toEqual({ title: "Bronz Gezgin", left: 2, unit: "asset" });
+    expect(nearestBadge(items)).toEqual({ title: "Bronz Gezgin", left: 2, unit: "asset", current: 3, target: 5 });
   });
 
   it("is the one further along on a tie", () => {
@@ -39,7 +39,7 @@ describe("the greeting's line of the day", () => {
   const items = [badge("Bronz Gezgin", 3, 5)];
 
   it("names the nearest badge on one day and gives a tip on the next", () => {
-    expect(dailyLine(items, even)).toEqual({ kind: "badge", text: "Bronz Gezgin rozetine 2 eser kaldı." });
+    expect(dailyLine(items, even)).toEqual({ kind: "badge", text: "Bronz Gezgin rozetine 2 eser kaldı.", current: 3, target: 5 });
     expect(dailyLine(items, odd).kind).toBe("tip");
   });
 
@@ -85,6 +85,17 @@ describe("the greeting's weather line", () => {
     expect(weatherLine(weather("cloudy", -2))).toContain("soğuk");
   });
 
+  it("speaks of the evening after dark", () => {
+    const night = weather("clear", 7);
+    night.current!.isDay = false;
+    expect(weatherLine(night)).toBe("Bursa'da bugün 7°, akşam yürüyüşü için güzel bir hava.");
+  });
+
+  it("gives the word on going out alone, for the weather card", () => {
+    expect(weatherMood(weather("fog", 8))).toBe("sisli; yakındaki eserlerle başla");
+    expect(weatherMood(null)).toBeNull();
+  });
+
   it("is left out without the weather", () => {
     expect(weatherLine(null)).toBeNull();
     expect(weatherLine(weather("clear", 10, false))).toBeNull();
@@ -102,5 +113,22 @@ describe("a city with its locative ending", () => {
       "Kayseri'de",
       "İstanbul'da",
     ]);
+  });
+});
+
+describe("the site of the day", () => {
+  const asset = (id: string, photo = true) => ({ id, cover: photo ? { alt: id } : null }) as unknown as AssetSummary;
+  const assets = [asset("c"), asset("a"), asset("b", false), asset("d")];
+
+  it("is one with a photo, the same all day and another the next day", () => {
+    const today = dayAsset(assets, even);
+    expect(today?.cover).not.toBeNull();
+    expect(dayAsset([...assets].reverse(), even)?.id).toBe(today?.id);
+    expect(dayAsset(assets, odd)?.id).not.toBe(today?.id);
+  });
+
+  it("is none without a photo", () => {
+    expect(dayAsset([asset("b", false)], even)).toBeNull();
+    expect(dayAsset([], even)).toBeNull();
   });
 });
