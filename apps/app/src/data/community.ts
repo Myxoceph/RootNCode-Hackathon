@@ -28,6 +28,7 @@ import {
   type UpdateProfileRequest,
   type VisitProofRequest,
   type VisitResponse,
+  type Lang,
 } from "@vagabonds/contracts";
 import { useEffect, useSyncExternalStore } from "react";
 
@@ -370,9 +371,9 @@ export async function fetchMyAchievements(): Promise<MyAchievementsResponse | nu
 }
 
 /** Ödüllerim: the partners' rewards on offer (`GET /rewards`); `null` without a server. */
-export async function fetchRewards(): Promise<Reward[] | null> {
+export async function fetchRewards(lang: Lang): Promise<Reward[] | null> {
   if (!communityAvailable) return null;
-  return (await call("/rewards", RewardsResponseSchema)).items;
+  return (await call(`/rewards?lang=${lang}`, RewardsResponseSchema)).items;
 }
 
 /** The visitor's points to spend and the codes taken (`GET /me/wallet`); `null` without a session. */

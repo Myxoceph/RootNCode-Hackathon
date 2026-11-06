@@ -87,20 +87,25 @@ export function usePulse(id: string): ResourceWithRetry<PulseResponse | null> {
 /** The visitor's badges (Rozetlerim): fetched again for a new session. `null` without a server. */
 export function useMyAchievements(): ResourceWithRetry<MyAchievementsResponse | null> {
   const { user } = useCommunity();
-  const key = user === undefined ? null : (user?.id ?? "");
+  // The language in the key: the badges' words come from the API in it.
+  const lang = useLang();
+  const key = user === undefined ? null : `${user?.id ?? ""}:${lang}`;
   const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchMyAchievements()), [key]);
   return useResource(load);
 }
 
 /** The rewards on offer (Ödüllerim); `null` without a server. */
 export function useRewards(): ResourceWithRetry<Reward[] | null> {
-  return useResource(fetchRewards);
+  const lang = useLang();
+  const load = useCallback(() => fetchRewards(lang), [lang]);
+  return useResource(load);
 }
 
 /** The visitor's wallet, fetched again for a new session or after `version` changes (a reward taken). */
 export function useWallet(version = 0): ResourceWithRetry<WalletResponse | null> {
   const { user } = useCommunity();
-  const key = user === undefined ? null : `${user?.id ?? ""}:${version}`;
+  const lang = useLang();
+  const key = user === undefined ? null : `${user?.id ?? ""}:${version}:${lang}`;
   const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchWallet()), [key]);
   return useResource(load);
 }
@@ -109,7 +114,8 @@ export function useMyContributions(): ResourceWithRetry<Contribution[] | null> {
   const { user, sent } = useCommunity();
   // A new session or a new note means a new list. Until the stored session has been read
   // (`undefined`), nothing is fetched: that read decides whether there is a list at all.
-  const key = user === undefined ? null : `${user?.id ?? ""}:${sent}`;
+  const lang = useLang();
+  const key = user === undefined ? null : `${user?.id ?? ""}:${sent}:${lang}`;
   const load = useCallback(
     () => (key === null ? new Promise<never>(() => {}) : fetchMyContributions()),
     [key],
