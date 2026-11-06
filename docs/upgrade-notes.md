@@ -7,6 +7,10 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-06 · Gezi planı 5 güne ve ileri tarihlere çıktı
+
+Sözleşme 0.3.30: `TripDuration` artık `half` ve `1`-`5`. Kurulum adımı yok; yeni planları eski APK okuyamaz, yeni APK gerekir.
+
 ## 2026-11-06 · Mühür fotoğrafları yerden çekilebilir olanlardan seçiliyor
 
 Yüksekten çekilmiş 50 fotoğraf `aerial` etiketi aldı, Yeşil Külliye'ye Yeşil Camii'nin çinili kapısı eklendi.
