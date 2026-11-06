@@ -1,4 +1,4 @@
-import { fontFamily, spacing, Text, useTheme, useUi } from "@vagabonds/ui";
+import { fontFamily, spacing, Text, useTheme } from "@vagabonds/ui";
 import { Fragment, type ReactNode } from "react";
 import { StyleSheet, View } from "react-native";
 
@@ -72,14 +72,13 @@ function Inline({ text, style }: { text: string; style: object }) {
 /** The formatted text, set like the dossier's other long texts. */
 export function RichText({ source }: { source: string }) {
   const { colors: c } = useTheme();
-  const { textScale } = useUi();
-  const body = { fontSize: 17 * textScale, lineHeight: 28 * textScale };
+  const body = { fontSize: 17, lineHeight: 28 };
   const blocks = parseRich(source);
   const render = (block: RichBlock, index: number): ReactNode => {
     switch (block.kind) {
       case "heading":
         return (
-          <Text key={index} headingLevel={3} style={[styles.heading, { fontSize: 21 * textScale, lineHeight: 28 * textScale }]}>
+          <Text key={index} headingLevel={3} style={[styles.heading, { fontSize: 21, lineHeight: 28 }]}>
             {block.text}
           </Text>
         );

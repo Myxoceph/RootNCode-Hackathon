@@ -2,6 +2,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Asset } from "expo-asset";
 import { useRouter } from "expo-router";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type MouseEvent, type RefObject } from "react";
+import { useUi } from "@vagabonds/ui";
 import { toQR } from "toqr";
 
 import { LandingSkyline } from "@/components/landing-skyline";
@@ -23,6 +24,8 @@ export function LandingPage() {
   const still = useReducedMotion();
   const lang = useLang();
   const m = useMessages();
+  // "Büyük metin": the page's own CSS sizes are multiplied by it, as the app's texts are.
+  const { textScale } = useUi();
   const dialog = useRef<HTMLDialogElement>(null);
   // Where the laptop stands: the skyline's shore is drawn there, the water under it.
   const shore = useRef<HTMLDivElement>(null);
@@ -41,7 +44,7 @@ export function LandingPage() {
   const closeApp = () => dialog.current?.close();
 
   return (
-    <div className="vg-landing">
+    <div className="vg-landing" style={{ ["--vg-text" as string]: String(textScale) }}>
       <style>{CSS}</style>
       <LandingSkyline still={still} shore={shore} />
       <div className="vg-vignette" aria-hidden />
@@ -264,9 +267,9 @@ const CSS = `
 .vg-grain { position: absolute; inset: -50%; pointer-events: none; background-image: ${GRAIN}; opacity: 0.09; mix-blend-mode: overlay; }
 
 .vg-nav { position: relative; z-index: 2; flex: none; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 22px 26px 22px 34px; }
-.vg-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-family: Marcellus_400Regular, serif; font-size: 23px; letter-spacing: 0.2px; }
+.vg-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-family: Marcellus_400Regular, serif; font-size: calc(23px * var(--vg-text, 1)); letter-spacing: 0.2px; }
 .vg-mark { width: 9px; height: 9px; border-radius: 50%; background: #E7C26A; box-shadow: 0 0 14px rgba(231, 194, 106, 0.7); }
-.vg-nav-link { padding: 9px 18px; border-radius: 999px; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_500Medium, sans-serif; font-size: 14px;
+.vg-nav-link { padding: 9px 18px; border: 0; border-radius: 999px; background: transparent; cursor: pointer; white-space: nowrap; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_500Medium, sans-serif; font-size: calc(14px * var(--vg-text, 1));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); transition: background 0.25s, box-shadow 0.25s; }
 .vg-nav-link:hover { background: rgba(255, 255, 255, 0.06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28); }
 .vg-nav-actions { display: flex; align-items: center; gap: 8px; }
@@ -275,13 +278,13 @@ const CSS = `
 
 .vg-main { position: relative; z-index: 1; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; }
 .vg-hero { flex: none; display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(4px, 2vh, 28px) 24px 0; }
-.vg-overline { margin: 0; font-family: HankenGrotesk_500Medium, sans-serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: rgba(244, 241, 234, 0.55); }
+.vg-overline { margin: 0; font-family: HankenGrotesk_500Medium, sans-serif; font-size: calc(13px * var(--vg-text, 1)); letter-spacing: 3px; text-transform: uppercase; color: rgba(244, 241, 234, 0.55); }
 .vg-h1 { margin: clamp(8px, 1.6vh, 18px) 0 0; max-width: 900px; font-family: Marcellus_400Regular, serif; font-weight: 400; color: #F7F3EA;
-  font-size: clamp(38px, min(7.4vw, 8.6vh), 92px); line-height: 1.04; letter-spacing: -1px; }
+  font-size: calc(clamp(38px, min(7.4vw, 8.6vh), 92px) * var(--vg-text, 1)); line-height: 1.04; letter-spacing: -1px; }
 .vg-h1 em { font-style: normal; color: #E7C26A; }
 .vg-actions { display: flex; gap: 10px; margin-top: clamp(16px, 3vh, 32px); flex-wrap: wrap; justify-content: center; }
 .vg-button { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: 9px; height: 48px; min-width: 186px; padding: 0 22px; border-radius: 999px; cursor: pointer;
-  font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 15px; text-decoration: none; transition: transform 0.25s, background 0.25s, box-shadow 0.25s; }
+  font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: calc(15px * var(--vg-text, 1)); text-decoration: none; transition: transform 0.25s, background 0.25s, box-shadow 0.25s; }
 .vg-button:focus-visible, .vg-nav-link:focus-visible, .vg-brand:focus-visible { outline: 2px solid #E7C26A; outline-offset: 3px; }
 .vg-button-light { background: #F4F1EA; color: #0B0F18; }
 .vg-button-light:hover { background: #FFFFFF; transform: translateY(-1px); }
@@ -304,7 +307,7 @@ const CSS = `
 .vg-device > div { transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.6s; }
 .vg-device:hover > div, .vg-device:focus-visible > div { transform: translateY(-8px); }
 .vg-tag { position: absolute; left: 50%; bottom: -34px; transform: translate(-50%, 6px); display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; white-space: nowrap;
-  background: rgba(10, 14, 24, 0.75); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12); color: var(--ink); font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 13px;
+  background: rgba(10, 14, 24, 0.75); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12); color: var(--ink); font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: calc(13px * var(--vg-text, 1));
   opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; backdrop-filter: blur(8px); }
 .vg-device:hover .vg-tag, .vg-device:focus-visible .vg-tag { opacity: 1; transform: translate(-50%, 0); }
 
@@ -335,17 +338,17 @@ const CSS = `
 .vg-close { all: unset; position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 20px; cursor: pointer; color: var(--muted); }
 .vg-close:hover { background: rgba(255, 255, 255, 0.08); color: var(--ink); }
 .vg-close:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-.vg-h2 { margin: 12px 0 20px; font-family: Marcellus_400Regular, serif; font-weight: 400; font-size: 26px; line-height: 1.25; }
+.vg-h2 { margin: 12px 0 20px; font-family: Marcellus_400Regular, serif; font-weight: 400; font-size: calc(26px * var(--vg-text, 1)); line-height: 1.25; }
 .vg-qr { width: 200px; height: 200px; padding: 10px; border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 40px -10px rgba(221, 181, 92, 0.45); }
 .vg-qr svg { display: block; width: 100%; height: 100%; }
-.vg-window-text { margin: 18px 0 0; font-size: 15px; line-height: 1.55; color: var(--muted); }
+.vg-window-text { margin: 18px 0 0; font-size: calc(15px * var(--vg-text, 1)); line-height: 1.55; color: var(--muted); }
 .vg-window-text strong { color: var(--ink); font-family: HankenGrotesk_600SemiBold, sans-serif; font-weight: 400; }
 .vg-inline-link { color: var(--gold); font-family: HankenGrotesk_600SemiBold, sans-serif; }
 .vg-stores { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; justify-content: center; }
 .vg-store { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px 9px 14px; border-radius: 14px; background: #F4F1EA; color: #0B0F18; text-decoration: none; text-align: left; }
 .vg-store-soon { background: rgba(255, 255, 255, 0.08); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
-.vg-store-words { display: flex; flex-direction: column; font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: 15px; line-height: 1.15; }
-.vg-store-words small { font-family: HankenGrotesk_400Regular, sans-serif; font-size: 11px; opacity: 0.7; }
+.vg-store-words { display: flex; flex-direction: column; font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: calc(15px * var(--vg-text, 1)); line-height: 1.15; }
+.vg-store-words small { font-family: HankenGrotesk_400Regular, sans-serif; font-size: calc(11px * var(--vg-text, 1)); opacity: 0.7; }
 
 .vg-rise { animation: vg-rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
 .vg-d1 { animation-delay: 0.05s; } .vg-d2 { animation-delay: 0.12s; } .vg-d3 { animation-delay: 0.2s; } .vg-d4 { animation-delay: 0.28s; } .vg-d5 { animation-delay: 0.38s; }
@@ -359,10 +362,12 @@ const CSS = `
   .vg-scene { transform-origin: 50% 50%; }
 }
 @media (max-width: 560px) {
-  .vg-nav { padding: 16px 18px; }
-  .vg-brand { font-size: 20px; }
-  .vg-nav-link { padding: 8px 14px; font-size: 14px; }
-  .vg-button { height: 46px; padding: 0 18px; font-size: 15px; }
+  /* When the words are larger than the row ("Büyük metin"), the links go under the name, not over it. */
+  .vg-nav { padding: 16px 14px; gap: 8px; flex-wrap: wrap; row-gap: 10px; }
+  .vg-brand { font-size: calc(20px * var(--vg-text, 1)); flex: none; }
+  .vg-nav-actions { gap: 4px; }
+  .vg-nav-link { padding: 8px 11px; font-size: calc(13.5px * var(--vg-text, 1)); }
+  .vg-button { height: 46px; padding: 0 18px; font-size: calc(15px * var(--vg-text, 1)); }
 }
 @media (prefers-reduced-motion: reduce) {
   .vg-landing *, .vg-dialog { animation: none !important; transition: none !important; }

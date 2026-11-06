@@ -7,6 +7,7 @@ import {
   Text,
   touchTarget,
   useTheme,
+  useUi,
   type Theme,
 } from "@vagabonds/ui";
 import { useLocalSearchParams } from "expo-router";
@@ -171,6 +172,7 @@ function matches(
  */
 export default function MonumentsScreen() {
   const { ink, styles } = useLook();
+  const { textScale } = useUi();
   const m = useMessages();
   const w = m.monuments;
   const lang = useLang();
@@ -278,7 +280,7 @@ export default function MonumentsScreen() {
               onBlur={() => setFocused(false)}
               returnKeyType="search"
               autoCorrect={false}
-              style={[styles.input, Platform.OS === "web" && ({ outlineStyle: "none" } as object)]}
+              style={[styles.input, { fontSize: 16 * textScale }, Platform.OS === "web" && ({ outlineStyle: "none" } as object)]}
             />
             {text !== "" && (
               <Pressable

@@ -2062,7 +2062,8 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.display,
     fontSize: 22,
     lineHeight: 26,
-    width: 32,
+    // At least this wide, so the titles line up; wider with "Büyük metin" rather than broken in two.
+    minWidth: 32,
   },
   highlightTitle: {
     fontFamily: fontFamily.sansSemiBold,
