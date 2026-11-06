@@ -54,6 +54,8 @@ export type MapPageEvent =
   | { type: "leaveCity" }
   /** The camera has landed on the chosen city, its flight over. */
   | { type: "cityLanded"; plate: number }
+  /** The opening is over: the fog has parted and the provinces are drawn (or a city cut it short). */
+  | { type: "introEnd" }
   /** The open city is all there: its fog whole, its seals and clouds drawn, its streets loaded. */
   | { type: "cityReady"; plate: number }
   /** "Kilidini aç" over the chosen locked asset was tapped. */
@@ -3339,6 +3341,7 @@ function start() {
   function endIntroNow() {
     if (!intro) return;
     intro = null;
+    post({ type: "introEnd" });
     drawPicturesLater();
     map.stop();
     map.jumpTo({ pitch: 0, bearing: 0, ...(turkeyView ? { center: turkeyView.center, zoom: turkeyView.zoom } : {}) });
@@ -3369,6 +3372,7 @@ function start() {
     if (elapsed >= 0.75 && !labelsRevealed) revealLabels();
     if (elapsed >= 1) {
       intro = null;
+      post({ type: "introEnd" });
       drawPicturesLater();
       // The opening starts further out than the limit; the limits apply once it is over.
       lockToTurkey();

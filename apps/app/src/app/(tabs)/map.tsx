@@ -365,6 +365,21 @@ export default function MapScreen() {
     [mapKey, reduceMotion, restored, restoring],
   );
 
+  // The search bar waits for the opening: it comes in once the fog has parted and the provinces are
+  // drawn (or after SEARCH_WAIT_LIMIT_MS, should the map never say so).
+  const [introOver, setIntroOver] = useState(false);
+  const searchWaits = provinces.reveal && !introOver;
+  const searchIn = useRef(new Animated.Value(searchWaits ? 0 : 1)).current;
+  useEffect(() => {
+    if (!searchWaits) return;
+    const limit = setTimeout(() => setIntroOver(true), SEARCH_WAIT_LIMIT_MS);
+    return () => clearTimeout(limit);
+  }, [searchWaits]);
+  useEffect(() => {
+    if (searchWaits) searchIn.setValue(0);
+    else Animated.timing(searchIn, { toValue: 1, duration: reduceMotion ? 0 : 450, easing: Easing.out(Easing.quad), useNativeDriver: true }).start();
+  }, [searchWaits, searchIn, reduceMotion]);
+
   // Each city opens with its landmark chosen.
   const openingId = landmark?.id ?? null;
   useEffect(() => setChosenAsset(openingId), [openingId]);
@@ -529,7 +544,8 @@ export default function MapScreen() {
     // Without a server the phone's own mark; with one, only an account's (signed out, it waits for the next one).
     account: !communityAvailable ? null : isAccount(user) ? user.id : undefined,
     // Not over a city opened again as it was left; next time, from the Turkey view.
-    ready: !cityParam && restoring === false && !restored,
+    // After the opening too: its step bar takes the search bar's place.
+    ready: !cityParam && restoring === false && !restored && !searchWaits,
     still: reduceMotion,
     inCity: selectedPlate !== null,
     unlockShown: (id) => {
@@ -668,6 +684,7 @@ export default function MapScreen() {
           onLeaveCity={backToTurkey}
           onCityLanded={onCityLanded}
           onCityReady={setReadyPlate}
+          onIntroEnd={() => setIntroOver(true)}
           onUnlock={unlockAsset}
           onInspect={(id) =>
             router.push({ pathname: "/monuments/[id]", params: { id } })
@@ -783,9 +800,11 @@ export default function MapScreen() {
         )}
         {/* First in reading order, as on the screen; the tour's step bar takes its place while it plays. */}
         {!tour.step && (
-          <View
-            style={[StyleSheet.absoluteFill, styles.over]}
-            pointerEvents="box-none"
+          <Animated.View
+            style={[StyleSheet.absoluteFill, styles.over, { opacity: searchIn }]}
+            pointerEvents={searchWaits ? "none" : "box-none"}
+            aria-hidden={searchWaits}
+            importantForAccessibility={searchWaits ? "no-hide-descendants" : "auto"}
           >
             <MapSearch
               city={selectedCity}
@@ -813,7 +832,7 @@ export default function MapScreen() {
               }
               onBottom={setSearchBottom}
             />
-          </View>
+          </Animated.View>
         )}
         {cardsShown && !side && (
           <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
@@ -880,6 +899,8 @@ export default function MapScreen() {
 
 /** The least a city opened again stays behind its veil, the most it waits for the map, and how long the veil takes to dissolve. */
 const VEIL_HOLD_MS = 700;
+/** The most the search bar waits for the map's opening to end. */
+const SEARCH_WAIT_LIMIT_MS = 7000;
 const VEIL_LIMIT_MS = 6000;
 const VEIL_FADE_MS = 450;
 
