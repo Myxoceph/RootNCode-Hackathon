@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { TripDay, TripItem, TripPlanResponse } from "@vagabonds/contracts";
+import type { TripArrival, TripDay, TripItem, TripLegTransit, TripPlanResponse } from "@vagabonds/contracts";
 import {
   fontFamily,
   palette,
@@ -101,6 +101,7 @@ export default function SavedTripScreen() {
       {trip ? (
         <>
           <Hero route={trip} />
+          {trip.trip.arrival && <Arrival arrival={trip.trip.arrival} />}
           {/* A wide web page: the days on the left, what Rehber suggested for them on the right. */}
           <View style={wide ? styles.split : styles.stack}>
             <View style={wide ? styles.splitMain : styles.stack}>
@@ -144,6 +145,28 @@ export default function SavedTripScreen() {
         </Text>
       )}
     </ScrollView>
+  );
+}
+
+const rideText = (ride: TripLegTransit["rides"][number]) =>
+  `${ride.line}: ${ride.from} → ${ride.to}`;
+
+/** From the station or terminal to the first stop, when the visitor said how they arrive. */
+function Arrival({ arrival }: { arrival: TripArrival }) {
+  const { colors: c } = useTheme();
+  const w = useMessages().saved;
+  const { from, to, meters, transit } = arrival;
+  return (
+    <View style={[styles.weather, { backgroundColor: c.surface, borderColor: c.border }]}>
+      <View style={[styles.weatherIcon, { backgroundColor: c.surfaceRaised }]}>
+        <Ionicons name="train" size={18} color={c.highlightMark} />
+      </View>
+      <Text variant="caption" color="textSecondary" style={styles.flex}>
+        {transit
+          ? w.arrivalRide(from.name, to, transit.rides.map(rideText).join(", "), transit.minutes)
+          : w.arrivalNoRide(from.name, to, distance(meters, w))}
+      </Text>
+    </View>
   );
 }
 
@@ -399,7 +422,7 @@ function Row({
           <Text variant="caption" color="textSecondary" style={styles.legText}>
             {w.legTransit(
               item.transit.rides
-                .map((ride) => `${ride.line}: ${ride.from} → ${ride.to}`)
+                .map(rideText)
                 .join(", "),
               item.transit.minutes,
             )}
