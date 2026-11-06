@@ -1,6 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { WeatherCondition } from "@vagabonds/contracts";
-import { cameraColors, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
+import { fontFamily, palette, radius, spacing, Text, useTheme } from "@vagabonds/ui";
 import { useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import { StatusBar } from "expo-status-bar";
@@ -19,15 +19,44 @@ import { localeTag, useLang, useMessages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
-/** Always the night look, as the sign-in screen it follows: the photo and the gold read best on it. */
-const ink = cameraColors;
-const glass = {
-  fill: "rgba(255, 255, 255, 0.045)",
-  edge: "rgba(255, 255, 255, 0.10)",
-  rule: "rgba(255, 255, 255, 0.08)",
-  track: "rgba(255, 255, 255, 0.10)",
-  chip: "rgba(10, 14, 22, 0.58)",
+/** The page's navy in the dark theme (lacivert): bluer than the app's night blue. */
+const NAVY = "#0E1F3D";
+/** The chip over the photo: dark glass in both themes, the photo under it is the same. */
+const chip = {
+  fill: "rgba(8, 18, 38, 0.62)",
+  edge: "rgba(255, 255, 255, 0.14)",
+  text: palette.gece50,
+  sub: palette.gece300,
+  gold: palette.altin200,
 };
+
+/**
+ * The page's colours: navy with light gold in the dark theme, white with deep gold in the light
+ * one. Text comes from the theme, so high contrast still reaches it.
+ */
+function usePageColors() {
+  const { scheme, colors: c } = useTheme();
+  const dark = scheme === "dark";
+  return {
+    dark,
+    background: dark ? NAVY : palette.white,
+    text: c.text,
+    textSecondary: c.textSecondary,
+    /** Small gold words; deep gold on white for 4.5:1. */
+    gold: dark ? palette.altin200 : palette.altin700,
+    /** Large gold words and marks (the name, the ring): 3:1 is enough for them. */
+    goldMark: dark ? palette.altin200 : palette.altin600,
+    /** The button: gold on the navy, navy on the white. */
+    button: dark ? palette.altin200 : NAVY,
+    onButton: dark ? palette.altin950 : palette.white,
+    buttonMark: dark ? palette.altin950 : palette.altin200,
+    fill: dark ? "rgba(255, 255, 255, 0.05)" : palette.white,
+    edge: dark ? "rgba(255, 255, 255, 0.11)" : palette.gece100,
+    rule: dark ? "rgba(255, 255, 255, 0.09)" : palette.gece100,
+    track: dark ? "rgba(255, 255, 255, 0.13)" : palette.gece100,
+    medallion: dark ? "rgba(255, 255, 255, 0.04)" : palette.gece50,
+  };
+}
 /** Emir Sultan, the sign-in screen's photo: shown until the site of the day is in, or without one. */
 const FALLBACK_ASSET = "bursa-yildirim-emir-sultan-kulliyesi";
 /** The medallion on the left of each card: the badge's ring, the weather's disc. */
@@ -61,6 +90,7 @@ export default function WelcomePage() {
   const { height } = useWindowDimensions();
   const { user } = useCommunity();
   const reduced = useReducedMotion();
+  const ink = usePageColors();
   const [today] = useState(() => new Date());
 
   // The first name when the account has a full name, else the nickname.
@@ -92,7 +122,7 @@ export default function WelcomePage() {
 
   const upper = (text: string) => text.toLocaleUpperCase(localeTag(lang));
   const date = upper(today.toLocaleDateString(localeTag(lang), { weekday: "long", day: "numeric", month: "long" }));
-  const heroHeight = Math.min(Math.max(height * 0.5, 320), 500);
+  const heroHeight = Math.min(Math.max(height * 0.36, 240), 380);
 
   // The page rises in; each part a moment after the one above it.
   const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
@@ -118,7 +148,7 @@ export default function WelcomePage() {
 
       <ScrollView contentContainerStyle={{ paddingBottom: footerHeight + spacing.md }} showsVerticalScrollIndicator={false} bounces={false}>
         {/* The site of the day, its lower part sinking into the night blue. */}
-        <View style={{ height: heroHeight }}>
+        <View style={[styles.hero, { height: heroHeight + insets.top }]}>
           <View style={StyleSheet.absoluteFill} aria-hidden importantForAccessibility="no-hide-descendants">
             {cover && <AssetImage media={cover} decorative fill />}
             <Fade />
@@ -129,20 +159,20 @@ export default function WelcomePage() {
               onPress={() => router.push(`/asset/${featured.id}` as Href)}
               accessibilityRole="link"
               accessibilityLabel={w.dayAssetLabel(featured.name)}
-              style={({ pressed }) => [styles.featured, { marginTop: insets.top + spacing.md }, pressed && styles.pressed]}
+              style={({ pressed }) => [styles.featured, pressed && styles.pressed]}
             >
-              <View style={[styles.featuredMark, { borderColor: ink.gold }]}>
-                <Ionicons name="sparkles" size={12} color={ink.gold} />
+              <View style={[styles.featuredMark, { borderColor: chip.gold }]}>
+                <Ionicons name="sparkles" size={12} color={chip.gold} />
               </View>
               <View style={styles.featuredWords}>
-                <Text colorValue={ink.gold} style={styles.kicker}>
+                <Text colorValue={chip.gold} style={styles.kicker}>
                   {upper(w.dayAsset)}
                 </Text>
-                <Text colorValue={ink.text} style={styles.featuredName} numberOfLines={1}>
+                <Text colorValue={chip.text} style={styles.featuredName} numberOfLines={1}>
                   {featured.name}
                 </Text>
               </View>
-              <Ionicons name="chevron-forward" size={16} color={ink.textSecondary} />
+              <Ionicons name="chevron-forward" size={16} color={chip.sub} />
             </Pressable>
           )}
         </View>
@@ -155,12 +185,9 @@ export default function WelcomePage() {
             <Text headingLevel={1} colorValue={ink.text} style={styles.title}>
               {w.greeting}
               {"\n"}
-              <Text colorValue={ink.gold} style={styles.title}>
+              <Text colorValue={ink.goldMark} style={styles.title}>
                 {name ?? w.traveller}
               </Text>
-            </Text>
-            <Text colorValue={ink.textSecondary} style={styles.lead}>
-              {w.lead}
             </Text>
           </Animated.View>
 
@@ -177,7 +204,7 @@ export default function WelcomePage() {
                           {w.progress(near.current, near.target)}
                         </Text>
                       ) : (
-                        <Ionicons name="checkmark" size={28} color={ink.gold} />
+                        <Ionicons name="checkmark" size={28} color={ink.goldMark} />
                       )}
                     </Ring>
                   }
@@ -195,7 +222,7 @@ export default function WelcomePage() {
                 <Card
                   medallion={
                     <Ring share={0} reduced>
-                      <Ionicons name={weatherIcon(now.condition, now.isDay)} size={26} color={ink.gold} />
+                      <Ionicons name={weatherIcon(now.condition, now.isDay)} size={26} color={ink.goldMark} />
                     </Ring>
                   }
                   kicker={upper(w.cardTitle(w.weatherLabel, forecast.city.label))}
@@ -238,29 +265,29 @@ export default function WelcomePage() {
           onPress={() => router.replace("/map")}
           accessibilityRole="button"
           accessibilityHint={w.startHint}
-          style={({ pressed }) => [styles.start, { backgroundColor: ink.gold }, pressed && styles.pressed]}
+          style={({ pressed }) => [styles.start, { backgroundColor: ink.button }, pressed && styles.pressed]}
         >
-          <Text variant="label" colorValue={ink.onGold} style={styles.startText}>
+          <Text variant="label" colorValue={ink.onButton} style={styles.startText}>
             {w.start}
           </Text>
-          <Ionicons name="arrow-forward" size={18} color={ink.onGold} />
+          <Ionicons name="arrow-forward" size={18} color={ink.buttonMark} />
         </Pressable>
       </View>
     </View>
   );
 }
 
-/** The photo: darker under the status bar, clear in the middle, night blue at the foot. */
+/** The photo: darker under the status bar and at the foot, where the chip sits; clear between. */
 function Fade() {
   return (
     <View pointerEvents="none" style={StyleSheet.absoluteFill}>
       <Svg width="100%" height="100%">
         <Defs>
           <LinearGradient id="welcome-fade" x1="0" y1="0" x2="0" y2="1">
-            <Stop offset="0" stopColor={ink.background} stopOpacity={0.6} />
-            <Stop offset="0.28" stopColor={ink.background} stopOpacity={0.05} />
-            <Stop offset="0.6" stopColor={ink.background} stopOpacity={0.3} />
-            <Stop offset="1" stopColor={ink.background} stopOpacity={1} />
+            <Stop offset="0" stopColor={NAVY} stopOpacity={0.5} />
+            <Stop offset="0.3" stopColor={NAVY} stopOpacity={0} />
+            <Stop offset="0.6" stopColor={NAVY} stopOpacity={0} />
+            <Stop offset="1" stopColor={NAVY} stopOpacity={0.55} />
           </LinearGradient>
         </Defs>
         <Rect width="100%" height="100%" fill="url(#welcome-fade)" />
@@ -290,8 +317,9 @@ function Card({
   foot?: ReactNode;
   label?: string;
 }) {
+  const ink = usePageColors();
   return (
-    <View style={styles.card} accessible accessibilityLabel={label}>
+    <View style={[styles.card, { backgroundColor: ink.fill, borderColor: ink.edge }, !ink.dark && styles.lifted]} accessible accessibilityLabel={label}>
       <View style={styles.cardMain}>
         {medallion}
         <View style={styles.cardWords}>
@@ -313,13 +341,14 @@ function Card({
           </Text>
         </View>
       </View>
-      {foot ? <View style={styles.cardFoot}>{foot}</View> : null}
+      {foot ? <View style={[styles.cardFoot, { borderTopColor: ink.rule }]}>{foot}</View> : null}
     </View>
   );
 }
 
 /** A ring around the medallion: a faint track, and a gold arc for the share done that draws itself in. */
 function Ring({ share, reduced, children }: { share: number; reduced: boolean; children: ReactNode }) {
+  const ink = usePageColors();
   const r = (MEDALLION - RING) / 2;
   const length = 2 * Math.PI * r;
   const drawn = useRef(new Animated.Value(reduced ? share : 0)).current;
@@ -331,13 +360,13 @@ function Ring({ share, reduced, children }: { share: number; reduced: boolean; c
   return (
     <View style={styles.medallion}>
       <Svg width={MEDALLION} height={MEDALLION} style={StyleSheet.absoluteFill}>
-        <Circle cx={MEDALLION / 2} cy={MEDALLION / 2} r={r} stroke={glass.track} strokeWidth={RING} fill={glass.fill} />
+        <Circle cx={MEDALLION / 2} cy={MEDALLION / 2} r={r} stroke={ink.track} strokeWidth={RING} fill={ink.medallion} />
         {share > 0 && (
           <AnimatedCircle
             cx={MEDALLION / 2}
             cy={MEDALLION / 2}
             r={r}
-            stroke={ink.gold}
+            stroke={ink.goldMark}
             strokeWidth={RING}
             fill="none"
             strokeLinecap="round"
@@ -355,11 +384,12 @@ function Ring({ share, reduced, children }: { share: number; reduced: boolean; c
 /** The whole collection: one segment for each badge, gold for the earned ones, and its count. */
 function Collection({ earned, total }: { earned: number; total: number }) {
   const m = useMessages();
+  const ink = usePageColors();
   return (
     <View accessible accessibilityLabel={m.welcome.collectionLabel(earned, total)} style={styles.collection}>
       <View style={styles.segments}>
         {Array.from({ length: total }, (_, index) => (
-          <View key={index} style={[styles.segment, { backgroundColor: index < earned ? ink.gold : glass.track }]} />
+          <View key={index} style={[styles.segment, { backgroundColor: index < earned ? ink.goldMark : ink.track }]} />
         ))}
       </View>
       <Text colorValue={ink.textSecondary} style={styles.footText}>
@@ -373,20 +403,26 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
   },
+  hero: {
+    borderBottomLeftRadius: 32,
+    borderBottomRightRadius: 32,
+    overflow: "hidden",
+    justifyContent: "flex-end",
+  },
   featured: {
     flexDirection: "row",
     alignItems: "center",
     alignSelf: "flex-start",
     maxWidth: "86%",
-    marginLeft: spacing.lg,
+    margin: spacing.lg,
     gap: spacing.sm,
     paddingLeft: 6,
     paddingRight: spacing.md,
     paddingVertical: 6,
     borderRadius: radius.full,
-    backgroundColor: glass.chip,
+    backgroundColor: chip.fill,
     borderWidth: 1,
-    borderColor: glass.edge,
+    borderColor: chip.edge,
   },
   featuredMark: {
     width: 30,
@@ -405,7 +441,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
   column: {
-    marginTop: -spacing.xxl * 2 - spacing.lg,
+    marginTop: spacing.xl,
     paddingHorizontal: spacing.lg,
     width: "100%",
     maxWidth: 600,
@@ -423,22 +459,21 @@ const styles = StyleSheet.create({
     lineHeight: 54,
     letterSpacing: -0.5,
   },
-  lead: {
-    marginTop: spacing.md,
-    fontSize: 16,
-    lineHeight: 24,
-    maxWidth: 420,
-  },
   cards: {
     gap: spacing.md,
-    marginTop: spacing.xl,
+    marginTop: spacing.lg,
   },
   card: {
     borderRadius: 24,
     borderWidth: 1,
-    borderColor: glass.edge,
-    backgroundColor: glass.fill,
     padding: spacing.lg,
+  },
+  lifted: {
+    shadowColor: NAVY,
+    shadowOpacity: 0.08,
+    shadowRadius: 20,
+    shadowOffset: { width: 0, height: 8 },
+    elevation: 3,
   },
   cardMain: {
     flexDirection: "row",
@@ -489,7 +524,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.md,
     paddingTop: spacing.md,
     borderTopWidth: 1,
-    borderTopColor: glass.rule,
   },
   footRow: {
     gap: 2,
