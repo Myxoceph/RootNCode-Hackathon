@@ -137,7 +137,7 @@ export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
   - **Günün notu:** `weatherNote.code` havanın planı nasıl etkilediğini söyler (`afternoon_rain`, `heat`, `rain_possible`, `clear`, `unavailable`); `text` aynı şeyi yanıt dilinde anlatır. Tahmin 7 günle sınırlıdır; daha ileri günler havaya bakılmadan planlanır (`weather: null`, `unavailable`).
   - **Birkaç gün:** 2-5 günlük gezide bir eser iki kez yer almaz. İlin eserleri biterse gezi erken biter; `duration` ve `days` planlanan gün sayısını gösterir.
   - **Molalar:** Öğle molasına bir ana yemek (`main`), tatlı durağına bir tatlı (`dessert`) konur (`dish`, `CityDish`). Önce önceki durağın ilçesine ait lezzet, sonra il geneli; gezi boyunca aynı lezzet, uygun başka lezzet kaldıkça tekrarlanmaz. İlin uygun lezzeti yoksa `dish: null`.
-  - **Durak sayısı:** Tam günde en çok 8, yarım günde en çok 4 durak vardır. Bir külliye planda varken yapıları ayrı durak olmaz.
+  - **Durak sayısı:** Tam günde en çok 10, yarım günde en çok 4 durak vardır. Bir külliye planda varken yapıları ayrı durak olmaz.
   - **Geliş:** Konya'da `arrival` (`konya-gari`, `selcuklu-yht-gari`, `konya-otogari`) verilirse yanıttaki `arrival`, oradan 1. günün ilk durağına nasıl gidileceğini söyler.
   - **Uzun bacaklar:** Aynı gündeki iki durak arası 3 km'yi geçmez (`legMeters`). Konya'da 1 km ve üstündeki bacaklarda otobüs ya da tramvay yürümeye seçenek olarak önerilir (`transit`, OTP); saatler yürüyüşe göre kalır. OTP yanıt vermezse `transit: null` olur.
 - **Ziyaretçi Nabzı:**

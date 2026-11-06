@@ -80,7 +80,7 @@ describe("stops of a day", () => {
   it("holds a day to its number of stops however much time is left", () => {
     const quick = Array.from({ length: 20 }, (_, i) => site(`q${i}`, i * 50, { visitMinutes: 5 }));
     const [day] = planTrip({ candidates: quick, start: null, duration: "1", weather: [null] }).days;
-    expect(stopIds(day)).toHaveLength(8);
+    expect(stopIds(day)).toHaveLength(10);
     expect(day?.items.some((item) => item.kind === "meal" && item.meal === "lunch")).toBe(true);
   });
 

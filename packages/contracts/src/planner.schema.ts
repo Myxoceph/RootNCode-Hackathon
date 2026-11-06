@@ -126,7 +126,7 @@ export const RoutePlanResponseSchema = z.strictObject({
   estimateNote: z.string().min(1),
 });
 
-/** `half`: 09:00–13:30, 4 stops; `1`: 09:00–17:30, 8 stops, a lunch break; `2` to `5`: that many such days, no site twice. */
+/** `half`: 09:00–13:30, 4 stops; `1`: 09:00–17:30, 10 stops, a lunch break; `2` to `5`: that many such days, no site twice. */
 export const TripDurationSchema = z.enum(["half", "1", "2", "3", "4", "5"]);
 
 /** How the weather shaped a day of the trip; `text` says it in the response language. */
