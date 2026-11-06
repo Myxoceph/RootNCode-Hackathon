@@ -749,7 +749,6 @@ const tr = {
     localDish: (dish: string) => `Yöresel lezzet: ${dish}`,
   },
   sealed: {
-    count: (count: number) => `${count} ESER`,
     emptyTitle: "Henüz mühürlenen eser yok",
     emptyBody: "Bir eserin kilidini açınca burada görünür.",
     opensCard: "eser kartını açar",
@@ -758,7 +757,6 @@ const tr = {
     title: "Notlarım",
     refreshLabel: "Notlarımı yenile",
     refresh: "Yenile",
-    nickname: (name: string) => `${name} takma adıyla`,
     loading: "Notların yükleniyor",
     empty: "Eser kartındaki Ziyaretçi Notları bölümünden not bırakınca durumunu burada görürsün.",
     site: "Eser",
@@ -1870,7 +1868,6 @@ const en: Messages = {
     localDish: (dish) => `Local dish: ${dish}`,
   },
   sealed: {
-    count: (count) => (count === 1 ? "1 SITE" : `${count} SITES`),
     emptyTitle: "No sealed sites yet",
     emptyBody: "A site shows here once you unlock it.",
     opensCard: "opens the site's page",
@@ -1879,7 +1876,6 @@ const en: Messages = {
     title: "My notes",
     refreshLabel: "Refresh my notes",
     refresh: "Refresh",
-    nickname: (name) => `As ${name}`,
     loading: "Loading your notes",
     empty: "Leave a note from the Visitor Notes section of a site's page and you will see its status here.",
     site: "Site",
