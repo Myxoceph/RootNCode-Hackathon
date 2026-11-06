@@ -52,6 +52,7 @@ TABLES = {
         "created_at", "updated_at",
     ],
     "asset_section": ["asset_id", "slug", "sort_order", "title_tr", "title_en", "body_tr", "body_en", "confidence"],
+    "asset_custom_block": ["asset_id", "slug", "sort_order", "after_block", "title_tr", "title_en", "body_tr", "body_en"],
     "asset_legend": ["asset_id", "slug", "sort_order", "title_tr", "title_en", "body_tr", "body_en", "source_verdict"],
     "asset_fact": ["asset_id", "key", "sort_order", "label_tr", "label_en", "value", "value_num", "unit", "note_tr", "note_en", "confidence"],
     "asset_person": ["asset_id", "sort_order", "name", "role_tr", "role_en"],
@@ -85,7 +86,7 @@ TABLES = {
 
 # Bir esere ait tablolar (görüntüleyicide eser sayfasında gösterilir), DDL sırasıyla
 ASSET_TABLES = [
-    "asset", "asset_section", "asset_legend", "asset_fact", "asset_person", "timeline_event",
+    "asset", "asset_section", "asset_custom_block", "asset_legend", "asset_fact", "asset_person", "timeline_event",
     "asset_highlight", "asset_relation", "visitor_tip", "exhibition", "source_citation",
     "media", "media_variant", "asset_media", "inscription", "contribution", "asset_revision",
 ]
@@ -250,6 +251,12 @@ def asset_rows(a, manifest):
             "body_tr": s["body"]["tr"], "body_en": s["body"].get("en"), "confidence": s["confidence"],
         })
         cite("section", s["id"], s["source_refs"])
+
+    for i, b in enumerate(a.get("custom_blocks", [])):
+        rows["asset_custom_block"].append({
+            "asset_id": aid, "slug": b["id"], "sort_order": i, "after_block": b["after"], "title_tr": b["title"]["tr"], "title_en": b["title"].get("en"),
+            "body_tr": b["body"]["tr"], "body_en": b["body"].get("en"),
+        })
     for i, g in enumerate(a.get("legends", [])):
         rows["asset_legend"].append({
             "asset_id": aid, "slug": g["id"], "sort_order": i, "title_tr": g["title"]["tr"], "title_en": g["title"].get("en"),

@@ -670,6 +670,21 @@
     "summary": {
       "$ref": "#/$defs/i18n"
     },
+    "custom_blocks": {
+      "type": "array",
+      "description": "Adminin dosyaya eklediği ana bölümler; sıra dizideki sıradır.",
+      "items": {
+        "type": "object",
+        "required": ["id", "after", "title", "body"],
+        "properties": {
+          "id": { "type": "string" },
+          "after": { "type": "string", "pattern": "^[a-z_]+(:[a-z0-9_-]+)?$", "description": "Hangi bölümden sonra: identity, history, timeline, people, waqf, inscriptions, facts, legends, accessibility ya da custom:<id>" },
+          "title": { "$ref": "#/$defs/i18n" },
+          "body": { "$ref": "#/$defs/i18n", "description": "Düz metin ve birkaç işaret: ## başlık, **kalın**, _eğik_, - liste, > alıntı" }
+        },
+        "additionalProperties": false
+      }
+    },
     "sections": {
       "type": "array",
       "minItems": 1,

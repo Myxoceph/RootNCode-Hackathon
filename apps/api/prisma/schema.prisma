@@ -115,6 +115,7 @@ model asset {
   asset_relation        asset_relation[]
   asset_revision        asset_revision[]
   asset_section         asset_section[]
+  asset_custom_block    asset_custom_block[]
   contribution          contribution[]
   exhibition            exhibition[]
   inscription           inscription[]
@@ -243,6 +244,20 @@ model asset_revision {
   asset      asset    @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@id([asset_id, version])
+}
+
+model asset_custom_block {
+  asset_id    String
+  slug        String
+  sort_order  Int     @db.SmallInt
+  after_block String
+  title_tr    String
+  title_en    String?
+  body_tr     String
+  body_en     String?
+  asset       asset   @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([asset_id, slug])
 }
 
 model asset_section {

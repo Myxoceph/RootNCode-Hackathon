@@ -337,6 +337,12 @@ export function toAssetDetail(
         ? { name: architectName, candidates, confidence: architectConfidence, sources: sourcesOf("architect") }
         : null,
     waqf: hasWaqf ? waqf : null,
+    customBlocks: record.asset_custom_block.map((b) => ({
+      id: b.slug,
+      title: pick(b.title_tr, b.title_en, lang),
+      body: pick(b.body_tr, b.body_en, lang),
+      after: b.after_block,
+    })),
     sections: record.asset_section.map((s) => ({
       id: s.slug,
       title: pick(s.title_tr, s.title_en, lang),

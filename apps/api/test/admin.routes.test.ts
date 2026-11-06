@@ -249,6 +249,32 @@ describe.skipIf(!DATABASE_URL)("admin panel (PostgreSQL)", () => {
     }
   });
 
+  it("keeps the blocks added to the dossier, serves them by language, and checks them", async () => {
+    const { record } = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+    const block = { id: `ek-${tag}`, title: { tr: "Onarımlar", en: "Repairs" }, body: { tr: "## Son onarım\n**Kalın** metin", en: "## Last repair\n**Bold** text" }, after: "timeline" };
+    const second = { id: `ek2-${tag}`, title: { tr: "Yalnız Türkçe", en: null }, body: { tr: "Metin", en: null }, after: `custom:ek-${tag}` };
+    const save = (customBlocks: unknown[]) => call("PUT", `/admin/assets/${ASSET}/record`, admin.token, { ...record, customBlocks });
+    const read = async (lang: string) => AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${ASSET}?lang=${lang}` })).json()).customBlocks;
+    try {
+      expect((await save([block, second])).statusCode).toBe(200);
+      const again = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+      expect(again.record.customBlocks).toEqual([block, second]);
+
+      expect(await read("en")).toEqual([
+        { id: block.id, title: "Repairs", body: block.body.en, after: "timeline" },
+        { id: second.id, title: "Yalnız Türkçe", body: "Metin", after: second.after },
+      ]);
+      expect((await read("tr"))[0]?.body).toBe(block.body.tr);
+
+      expect((await save([{ ...block, body: { tr: " ", en: null } }])).statusCode).toBe(400);
+      expect((await save([block, block])).statusCode).toBe(400);
+      expect((await save([{ ...block, after: "<script>" }])).statusCode).toBe(400);
+    } finally {
+      await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, record);
+    }
+    expect(await read("tr")).toEqual([]);
+  });
+
   it("adds a new asset with its whole record", async () => {
     const { record: base } = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
     const record = {

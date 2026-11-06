@@ -191,6 +191,7 @@ region ─< city ─< asset >─ asset_type          (lookup tabloları enums.js
                     │  └── era
                     │
                     ├─< asset_section            tarihçe bölümleri
+                    ├─< asset_custom_block       adminin dosyaya eklediği ana bölümler
                     ├─< asset_legend             rivayetler
                     ├─< asset_fact               sayısal bilgiler
                     ├─< asset_person             kişiler
@@ -400,6 +401,18 @@ CREATE INDEX asset_search_idx    ON asset USING gin (
 );
 
 -- ─────────────────────────────── İçerik alt tabloları
+CREATE TABLE asset_custom_block (
+  asset_id    text NOT NULL REFERENCES asset(id) ON DELETE CASCADE,
+  slug        text NOT NULL,
+  sort_order  smallint NOT NULL,
+  after_block text NOT NULL,
+  title_tr    text NOT NULL,
+  title_en    text,
+  body_tr     text NOT NULL,
+  body_en     text,
+  PRIMARY KEY (asset_id, slug)
+);
+
 CREATE TABLE asset_section (
   asset_id    text NOT NULL REFERENCES asset(id) ON DELETE CASCADE,
   slug        text NOT NULL,
@@ -723,6 +736,7 @@ Bir tabloya sütun eklemek ya da yeni tablo açmak için:
 | `ambient_sound.*` | `asset.ambient_sound_key`, `ambient_caption_tr/en` |
 | `media_folder`, `meta.todos`, `meta.data_quality_notes`, `meta.prepared_by`, `meta.reviewed_by` | aynı adlı `asset` sütunları |
 | `sections[]` | `asset_section` (`id` → `slug`, `order` → `sort_order`) |
+| `custom_blocks[]` | `asset_custom_block` (`id` → `slug`, `after` → `after_block`, dizideki sıra → `sort_order`) |
 | `legends[]` | `asset_legend` (dizideki sıra → `sort_order`) |
 | `facts[]` | `asset_fact` (`value` → `value`; sayıysa `value_num`'a da yaz) |
 | `people[]` | `asset_person` |
@@ -748,7 +762,7 @@ Sıra önemlidir; her adım bir öncekine bağlıdır:
 4. Tüm eser JSON'ları TEK transaction içinde:
      her eser için:
        a. asset           upsert (id)  -- parent_id FK'si DEFERRABLE, külliye aynı transaction'da sonra gelebilir
-       b. alt tablolar    o esere ait satırlar silinir, yeniden eklenir (asset_section, asset_legend,
+       b. alt tablolar    o esere ait satırlar silinir, yeniden eklenir (asset_section, asset_custom_block, asset_legend,
                           asset_fact, asset_person, timeline_event, asset_highlight, asset_relation,
                           visitor_tip, exhibition, source_citation, inscription, asset_media)
        c. media           upsert (sha256), media_variant upsert (media_id, format, width)

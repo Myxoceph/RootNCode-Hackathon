@@ -76,6 +76,7 @@ export const recordSelect = {
   ambient_caption_tr: true,
   ambient_caption_en: true,
   asset_section: { orderBy: { sort_order: "asc" } },
+  asset_custom_block: { orderBy: { sort_order: "asc" } },
   asset_highlight: { orderBy: { sort_order: "asc" } },
   timeline_event: { orderBy: [{ year: "asc" }, { slug: "asc" }] },
   asset_fact: { orderBy: { sort_order: "asc" } },
@@ -147,6 +148,7 @@ export function toAssetRecord(row: AssetRecordRow): AdminAssetRecord {
       landNote: optionalText(row.waqf_land_note_tr, row.waqf_land_note_en),
       confidence: confidence(row.waqf_confidence),
     },
+    customBlocks: row.asset_custom_block.map((b) => ({ id: b.slug, title: text(b.title_tr, b.title_en), body: text(b.body_tr, b.body_en), after: b.after_block })),
     sections: row.asset_section.map((s) => ({ id: s.slug, title: text(s.title_tr, s.title_en), body: text(s.body_tr, s.body_en), confidence: s.confidence as Confidence })),
     highlights: row.asset_highlight.map((h) => ({ feature: h.feature, title: text(h.title_tr, h.title_en), hint: text(h.hint_tr, h.hint_en), sectionId: h.section_slug })),
     timeline: row.timeline_event.map((e) => ({
@@ -291,6 +293,7 @@ export async function writeLists(tx: Prisma.TransactionClient, id: string, r: Ad
   await tx.inscription.deleteMany({ where: { asset_id: id } });
   await Promise.all([
     tx.asset_section.deleteMany({ where: { asset_id: id } }),
+    tx.asset_custom_block.deleteMany({ where: { asset_id: id } }),
     tx.timeline_event.deleteMany({ where: { asset_id: id } }),
     tx.asset_fact.deleteMany({ where: { asset_id: id } }),
     tx.asset_legend.deleteMany({ where: { asset_id: id } }),
@@ -300,6 +303,9 @@ export async function writeLists(tx: Prisma.TransactionClient, id: string, r: Ad
 
   await tx.asset_section.createMany({
     data: r.sections.map((s, i) => ({ asset_id: id, slug: s.id, sort_order: i + 1, title_tr: s.title.tr, title_en: orNull(s.title.en), body_tr: s.body.tr, body_en: orNull(s.body.en), confidence: s.confidence })),
+  });
+  await tx.asset_custom_block.createMany({
+    data: r.customBlocks.map((b, i) => ({ asset_id: id, slug: b.id, sort_order: i, after_block: b.after, title_tr: b.title.tr, title_en: orNull(b.title.en), body_tr: b.body.tr, body_en: orNull(b.body.en) })),
   });
   const sectionIds = new Set(r.sections.map((s) => s.id));
   await tx.asset_highlight.createMany({
@@ -435,6 +441,7 @@ export function datasetJson(
     founder: r.founder.name ? { name: r.founder.name, role: r.founder.role, confidence: r.founder.confidence ?? "certain", ...refs } : null,
     architect: r.architect.name || r.architect.candidates.length ? { name: r.architect.name, candidates: r.architect.candidates.map((c) => ({ name: c.name, ...noteFields(c.note) })), confidence: r.architect.confidence ?? "probable", ...refs } : null,
     waqf: r.waqf.name || r.waqf.conditions ? { name: r.waqf.name, deed: r.waqf.deedDate || r.waqf.deedExcerpt ? { date_display: r.waqf.deedDate, excerpt: i18n(r.waqf.deedExcerpt) } : null, conditions: i18n(r.waqf.conditions), land_note: i18n(r.waqf.landNote), confidence: r.waqf.confidence ?? "certain", ...refs } : null,
+    custom_blocks: r.customBlocks.map((b) => ({ id: b.id, after: b.after, title: i18n(b.title), body: i18n(b.body) })),
     sections: r.sections.map((s, i) => ({ id: s.id, order: i + 1, title: i18n(s.title), body: i18n(s.body), confidence: s.confidence, ...refs })),
     highlights: r.highlights.map((h) => ({ feature: h.feature, title: i18n(h.title), hint: i18n(h.hint), section_id: h.sectionId })),
     timeline: r.timeline.map((e) => ({ id: e.id, year: e.year, date: e.date, hijri: e.hijri, type: e.type, title: i18n(e.title), note: i18n(e.note), confidence: e.confidence, ...refs })),
