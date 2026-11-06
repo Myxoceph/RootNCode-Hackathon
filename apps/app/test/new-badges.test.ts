@@ -87,4 +87,14 @@ describe("new badges", () => {
     await store.noteEarned(ALICE, [badge("bursa-ilk-adim")]);
     expect(codes()).toEqual([]);
   });
+
+  it("keeps a held celebration closed, with its badges in line, until it is let go", async () => {
+    const release = store.holdBadges();
+    await store.celebrateEarned(ALICE, [badge("first")]);
+    expect(codes()).toEqual(["first"]);
+    expect(store.heldBadges()).toEqual([]);
+    release();
+    release();
+    expect(store.heldBadges()).toEqual([badge("first")]);
+  });
 });

@@ -118,6 +118,10 @@ function ThemedStack() {
             options={{ headerShown: false, title: m.screens.visitSeal }}
           />
           <Stack.Screen
+            name="seal-sequence"
+            options={{ headerShown: false, title: m.screens.visitSeal }}
+          />
+          <Stack.Screen
             name="auth"
             options={{ headerShown: false, title: m.screens.signIn }}
           />

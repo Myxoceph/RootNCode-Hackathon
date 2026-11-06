@@ -1627,7 +1627,7 @@ function Experiences({
   }
   // An unlocked asset needs no seal.
   if (phone && visitSealTarget(asset, lang) && !opened) {
-    const hint = m.asset.sealHint;
+    const hint = capsuleType ? m.asset.sealHintSound : m.asset.sealHint;
     actions.push({
       key: "seal",
       icon: "ribbon-outline",
@@ -1637,7 +1637,19 @@ function Experiences({
       href: { pathname: "/visit-seal", params: { asset: asset.id } },
     });
   }
-  if (capsuleType) {
+  // On a phone the sound is earned: the sealed asset opens its sequence again, an unsealed one offers the seal above.
+  const sealable = phone && visitSealTarget(asset, lang) !== null;
+  if (phone && opened) {
+    const hint = capsuleType ? m.asset.reliveHintSound : m.asset.reliveHint;
+    actions.push({
+      key: "relive",
+      icon: "hourglass-outline",
+      title: m.asset.relive,
+      hint,
+      spoken: `${m.asset.relive}: ${hint}`,
+      href: { pathname: "/seal-sequence", params: { asset: asset.id } },
+    });
+  } else if (capsuleType && !sealable) {
     // Only captions are announced; a counter that ticks every second would talk over everything.
     const hint = playing
       ? settings.captions
