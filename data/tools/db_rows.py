@@ -318,11 +318,12 @@ def asset_rows(a, manifest):
         fp, ov = m.get("focal_point") or {}, m.get("overlay") or {}
         rows["asset_media"].append({
             "asset_id": aid, "media_key": m["id"], "media_id": ref, "sort_order": m.get("order", 0), "is_cover": m.get("is_cover", False),
-            "subject": m.get("subject"), "dossier_after": m.get("dossier_after"), "focal_x": fp.get("x"), "focal_y": fp.get("y"),
+            "subject": m.get("subject"), "focal_x": fp.get("x"), "focal_y": fp.get("y"),
             "caption_tr": m["caption"]["tr"], "caption_en": m["caption"].get("en"), "alt_tr": m["alt"]["tr"], "alt_en": m["alt"].get("en"),
             "archive_year": m.get("year"), "archive_year_approx": m.get("year_approx"),
             "overlay_opacity": ov.get("opacity"), "overlay_aspect": ov.get("aspect_ratio"),
             "shooting_hint_tr": _t(ov.get("shooting_hint"), "tr"), "shooting_hint_en": _t(ov.get("shooting_hint"), "en"),
+            "dossier_after": m.get("dossier_after"),
         })
 
     for i, n in enumerate(a.get("inscriptions", [])):
