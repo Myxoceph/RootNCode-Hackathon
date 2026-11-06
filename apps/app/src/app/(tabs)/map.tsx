@@ -384,9 +384,22 @@ export default function MapScreen() {
   // nothing of the map coming in (its fog, seals and clouds drawn, its streets loaded) is seen.
   // The veil stays at least long enough to read the name, and lifts once the map says the city is
   // all there (or after VEIL_LIMIT_MS whatever it says), dissolving into the map.
-  const { scheme: pageScheme } = useTheme();
+  const { scheme: pageScheme, colors: pageColors } = useTheme();
   const veil = useRef(new Animated.Value(1)).current;
   const [veilGone, setVeilGone] = useState(false);
+  // The line under the name breathes slowly while the city is made ready.
+  const veilBreath = useRef(new Animated.Value(1)).current;
+  useEffect(() => {
+    if (!restored || veilGone || reduceMotion) return;
+    const breathing = Animated.loop(
+      Animated.sequence([
+        Animated.timing(veilBreath, { toValue: 0.45, duration: 900, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
+        Animated.timing(veilBreath, { toValue: 1, duration: 900, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
+      ]),
+    );
+    breathing.start();
+    return () => breathing.stop();
+  }, [restored, veilGone, reduceMotion, veilBreath]);
   const [readyPlate, setReadyPlate] = useState<number | null>(null);
   const [veilHeld, setVeilHeld] = useState(false);
   const [veilTimeUp, setVeilTimeUp] = useState(false);
@@ -847,9 +860,17 @@ export default function MapScreen() {
           style={[styles.veil, { opacity: veil, backgroundColor: pageScheme === "dark" ? NAVY : palette.white }]}
         >
           {selectedCity && (
-            <Text colorValue={pageScheme === "dark" ? palette.altin200 : palette.altin600} style={styles.veilName}>
-              {selectedCity.label}
-            </Text>
+            <>
+              <Text colorValue={pageScheme === "dark" ? palette.altin200 : palette.altin600} style={styles.veilName}>
+                {selectedCity.label}
+              </Text>
+              <View style={[styles.veilRule, { backgroundColor: pageScheme === "dark" ? palette.altin200 : palette.altin600 }]} />
+              <Animated.View style={{ opacity: veilBreath }}>
+                <Text colorValue={pageColors.textSecondary} style={styles.veilLine}>
+                  {m.map.resuming}
+                </Text>
+              </Animated.View>
+            </>
           )}
         </Animated.View>
       )}
@@ -876,6 +897,20 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.display,
     fontSize: 44,
     lineHeight: 52,
+  },
+  veilRule: {
+    width: 28,
+    height: 2,
+    borderRadius: 1,
+    marginTop: 14,
+    marginBottom: 14,
+    opacity: 0.7,
+  },
+  veilLine: {
+    fontSize: 15,
+    lineHeight: 22,
+    textAlign: "center",
+    paddingHorizontal: 32,
   },
   screen: {
     flex: 1,
