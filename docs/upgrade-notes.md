@@ -7,13 +7,6 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
-## 2026-11-06: Başlık yazı tipi Fraunces
-
-Başlıkların yazı tipi (`display`, `title`, `heading`) Marcellus yerine Fraunces oldu; yeni bir font paketi geldi.
-
-- Kökte `npm install` çalıştır (`@expo-google-fonts/fraunces`).
-- Expo'yu yeniden başlat: `npx expo start -c`.
-
 ## 2026-11-06: Basılı fotoğrafla Ziyaret Mührü
 
 `DEMO_UNLOCK` açıkken mühür konuma bakmıyor: eserin mühür fotoğrafı kâğıttan ya da slayttan kameraya gösterilince ziyaret mühürlenir.

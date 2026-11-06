@@ -47,8 +47,7 @@ açık temada daha canlı bir gül kurusu (`gulkurusu500` #BE7585; yalnızca çi
 
 | Yazı tipi | Kullanım | Expo paketi |
 |---|---|---|
-| Fraunces | Başlıklar (`display`, `title`, `heading`): yumuşak hatlı, modern serif | `@expo-google-fonts/fraunces` |
-| Hanken Grotesk | Arayüz ve gövde metni | `@expo-google-fonts/hanken-grotesk` |
+| Hanken Grotesk | Başlıklar (`display`, `title`, `heading`: SemiBold), arayüz ve gövde metni | `@expo-google-fonts/hanken-grotesk` |
 | Amiri | Hat ve kitabe katmanı (`inscription`) | `@expo-google-fonts/amiri` |
 | IBM Plex Mono | Yıl, saat, koordinat (`data`, `overline`) | `@expo-google-fonts/ibm-plex-mono` |
 
