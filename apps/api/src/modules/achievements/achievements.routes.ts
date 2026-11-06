@@ -85,7 +85,8 @@ export interface AchievementsRoutesOptions {
   community: CommunityRepository;
   /**
    * `POST /assets/:id/visit/unlock`: a visit recorded without position or photo, for the app's
-   * "Kilidi aç" while Ziyaret Mührü is tried away from the sites. Off unless turned on.
+   * "Kilidi aç" while Ziyaret Mührü is tried away from the sites. Also lets a photo recognised by
+   * the camera seal the visit from anywhere, so a printed photo can stand in for the site. Off unless turned on.
    */
   demoUnlock?: boolean;
 }
@@ -214,7 +215,7 @@ export const achievementsRoutes: FastifyPluginAsync<AchievementsRoutesOptions> =
     if (!(await repository.hasMedia(id, proof.mediaKey))) {
       throw new HttpError(400, "UNKNOWN_MEDIA", `"${proof.mediaKey}" is not a photo of this asset`);
     }
-    const distance = checkPosition(asset, proof);
+    const distance = demoUnlock ? null : checkPosition(asset, proof);
     await checkDailyLimit(user.id);
     const firstVisit = await repository.proveVisit({
       userId: user.id,
