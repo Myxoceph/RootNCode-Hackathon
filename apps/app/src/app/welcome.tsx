@@ -14,7 +14,7 @@ import { announce } from "@/lib/announce";
 import { useHere } from "@/lib/here";
 import { useLastCity } from "@/lib/last-city";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { dayLabel } from "@/lib/welcome-lines";
+import { dayLabel, outing, type Outing } from "@/lib/welcome-lines";
 import { loadMaplibre } from "@/vendor";
 import { localeTag, useLang, useMessages } from "@/i18n";
 
@@ -39,10 +39,8 @@ function usePageColors() {
     gold: dark ? palette.altin200 : palette.altin700,
     /** Large gold words and marks: 3:1 is enough for them. */
     goldMark: dark ? palette.altin200 : palette.altin600,
-    /** The button: gold on the navy, navy on the white. */
-    button: dark ? palette.altin200 : NAVY,
-    onButton: dark ? palette.altin950 : palette.white,
-    buttonMark: dark ? palette.altin950 : palette.altin200,
+    /** The button's soft shadow: on the white only. */
+    lift: !dark,
     /** The weather card's sky, top to bottom, and its edge. */
     sky: dark ? ["#1D3A6E", "#122A52"] : ["#E3EDFB", "#F4F8FE"],
     skyEdge: dark ? "rgba(255, 255, 255, 0.12)" : "#D6E2F3",
@@ -50,6 +48,15 @@ function usePageColors() {
     chip: dark ? "rgba(255, 255, 255, 0.10)" : "rgba(255, 255, 255, 0.85)",
   };
 }
+
+/** The verdict's mark: green, amber or coral, deep on the light card and bright on the dark one. */
+const OUTING_LOOK: Record<Outing, { icon: IconName; light: string; dark: string }> = {
+  good: { icon: "checkmark-circle", light: "#1B7F50", dark: "#6FD9A4" },
+  fair: { icon: "alert-circle", light: "#A35F00", dark: "#F2BE5C" },
+  poor: { icon: "close-circle", light: palette.mercan700, dark: palette.mercan300 },
+};
+/** The button's gold, lighter at the top. */
+const GOLD = ["#F3D88F", "#DDB55C"] as const;
 
 /** The weather's icon: the sun by day, the moon by night when it is clear or cloudy. */
 function weatherIcon(condition: WeatherCondition, isDay: boolean): IconName {
@@ -160,12 +167,25 @@ export default function WelcomePage() {
           onPress={() => router.replace("/map")}
           accessibilityRole="button"
           accessibilityHint={w.startHint}
-          style={({ pressed }) => [styles.start, { backgroundColor: ink.button }, pressed && styles.pressed]}
+          style={({ pressed }) => [styles.start, ink.lift && styles.startLift, pressed && styles.pressed]}
         >
-          <Text variant="label" colorValue={ink.onButton} style={styles.startText}>
+          <View style={StyleSheet.absoluteFill} pointerEvents="none">
+            <Svg width="100%" height="100%">
+              <Defs>
+                <LinearGradient id="welcome-gold" x1="0" y1="0" x2="1" y2="1">
+                  <Stop offset="0" stopColor={GOLD[0]} />
+                  <Stop offset="1" stopColor={GOLD[1]} />
+                </LinearGradient>
+              </Defs>
+              <Rect width="100%" height="100%" rx={30} fill="url(#welcome-gold)" />
+            </Svg>
+          </View>
+          <Text variant="label" colorValue={palette.altin950} style={styles.startText}>
             {w.start}
           </Text>
-          <Ionicons name="arrow-forward" size={18} color={ink.buttonMark} />
+          <View style={styles.startArrow}>
+            <Ionicons name="arrow-forward" size={20} color={GOLD[0]} />
+          </View>
         </Pressable>
       </View>
     </View>
@@ -197,7 +217,7 @@ function Star({ color, top }: { color: string; top: number }) {
 
 /**
  * The weather: a sky-coloured card with the moon's or the sun's glow in its corner. Now in large
- * (the degrees and the sky), then the next three days in a row. `located`: it is where the visitor is.
+ * (the degrees and the sky), whether it is a day for exploring and why, then the next three days. `located`: it is where the visitor is.
  */
 function WeatherCard({ forecast, place, located, today }: { forecast: WeatherResponse; place: string; located: boolean; today: Date }) {
   const m = useMessages();
@@ -207,6 +227,8 @@ function WeatherCard({ forecast, place, located, today }: { forecast: WeatherRes
   const now = forecast.current!;
   const degrees = Math.round(now.temperatureC);
   const days = forecast.daily.slice(0, 3);
+  const verdict = outing(forecast);
+  const verdictColor = verdict ? OUTING_LOOK[verdict.level][ink.dark ? "dark" : "light"] : undefined;
 
   return (
     <View style={[styles.card, { borderColor: ink.skyEdge }]}>
@@ -250,6 +272,20 @@ function WeatherCard({ forecast, place, located, today }: { forecast: WeatherRes
           </Text>
         </View>
       </View>
+
+      {verdict && (
+        <View style={styles.verdict} accessible accessibilityLabel={w.outing.levels[verdict.level] + ". " + w.outing.reasons[verdict.reason]}>
+          <View style={[styles.verdictChip, { backgroundColor: ink.chip }]}>
+            <Ionicons name={OUTING_LOOK[verdict.level].icon} size={16} color={verdictColor} />
+            <Text colorValue={verdictColor} style={styles.verdictLabel}>
+              {w.outing.levels[verdict.level]}
+            </Text>
+          </View>
+          <Text colorValue={ink.text} style={styles.verdictText}>
+            {w.outing.reasons[verdict.reason]}
+          </Text>
+        </View>
+      )}
 
       {days.length > 0 && (
         <View style={[styles.days, { borderTopColor: ink.rule }]}>
@@ -390,6 +426,29 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 24,
   },
+  verdict: {
+    gap: spacing.sm,
+    marginTop: spacing.sm,
+  },
+  verdictChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    alignSelf: "flex-start",
+    gap: 6,
+    paddingLeft: 8,
+    paddingRight: 12,
+    height: 30,
+    borderRadius: radius.full,
+  },
+  verdictLabel: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 13,
+  },
+  verdictText: {
+    fontFamily: fontFamily.sansMedium,
+    fontSize: 15,
+    lineHeight: 22,
+  },
   days: {
     flexDirection: "row",
     marginTop: spacing.lg,
@@ -441,16 +500,31 @@ const styles = StyleSheet.create({
   start: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.sm,
-    height: 56,
+    justifyContent: "space-between",
+    height: 60,
     width: "100%",
     maxWidth: 600,
-    borderRadius: radius.full,
+    paddingLeft: spacing.xl,
+    paddingRight: 8,
+    borderRadius: 30,
+  },  startLift: {
+    shadowColor: "#B98A2E",
+    shadowOpacity: 0.35,
+    shadowRadius: 16,
+    shadowOffset: { width: 0, height: 8 },
+    elevation: 6,
   },
   startText: {
     fontFamily: fontFamily.sansBold,
-    fontSize: 16,
+    fontSize: 17,
+    letterSpacing: 0.2,
+  },  startArrow: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: NAVY,
   },
   pressed: {
     opacity: 0.85,
