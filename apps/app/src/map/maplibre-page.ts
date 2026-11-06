@@ -1109,8 +1109,8 @@ function start() {
   const SHEET_KEEP_KM = 0.06;
   const SHEET_NEAR_KM = 0.45;
   const SHEET_FADE_MS = 1200;
-  /** Rows of sheet pixels sent to the graphics card a frame: a 1024-wide sheet goes up in a few frames, none of them long. */
-  const SHEET_UPLOAD_ROWS = 160;
+  /** Sheet pixels sent to the graphics card a frame: about a megabyte, so a city's sheets go up in a few frames, none of them long. */
+  const SHEET_UPLOAD_BYTES = 1 << 20;
   let sheetBuild = 0;
   let sheetShown = false;
   /** The open city's sheets as they are worked out: each one's texture's pixels and where it lies. */
@@ -1118,6 +1118,9 @@ function start() {
   /** Textures and buffers of sheets no longer shown, to free on the next frame. */
   let sheetsGone = [];
   let sheetLevel = 0;
+  /** How far the places' pieces have faded in over the cover, 0 to 1; they come in together. */
+  let placesLevel = 0;
+  const PLACES_FADE_MS = 900;
   let sheetLevelAt = 0;
 
   function sheetNoise(seed) {
@@ -1221,26 +1224,79 @@ function start() {
     sheetsGone = [...sheetsGone, ...sheets];
     sheets = [];
     sheetLevel = 0;
+    placesLevel = 0;
     if (assets.length === 0) return;
     const places = sheetPlaces(assets);
+    // The province's cover shows as soon as it is made: it lies over the city while the camera is
+    // still high. The places' pieces join it all together, never one by one (placesLevel).
+    let cover = null;
+    let placePieces = places.length === 0 ? [] : null;
+    const show = () => {
+      if (build !== sheetBuild) return;
+      sheets = [...(cover ? [cover] : []), ...(placePieces || [])];
+      map.triggerRepaint();
+    };
+    const workers = sheetWorkers();
+    if (workers) {
+      const job = provinceJob(plate);
+      const simple = (list) => list.map((asset) => ({ lng: asset.lng, lat: asset.lat }));
+      const jobs = [{ province: true, plate, assets: simple(assets), feature: job.feature, bounds: job.bounds }, ...places.map((place) => ({ assets: simple(place) }))];
+      const pieces = new Array(places.length);
+      let left = places.length;
+      const finish = () => {
+        for (const worker of workers) {
+          worker.removeEventListener("message", arrived);
+          worker.removeEventListener("error", failed);
+        }
+      };
+      const arrived = (event) => {
+        if (event.data.build !== build) return;
+        const piece = placedPiece(event.data.piece);
+        if (event.data.index === 0) cover = piece;
+        else {
+          pieces[event.data.index - 1] = piece;
+          if (--left === 0) placePieces = pieces;
+        }
+        if (cover && placePieces) finish();
+        show();
+      };
+      // A worker that fails is not used again: this city's sheets are worked out here instead.
+      const failed = () => {
+        finish();
+        sheetWorkersMade = null;
+        if (build === sheetBuild) buildSheet(assets, plate);
+      };
+      for (const worker of workers) {
+        worker.addEventListener("message", arrived);
+        worker.addEventListener("error", failed);
+      }
+      // The cover to the first; the places to the rest in turn (to the first too when it is alone).
+      const placeWorkers = workers.length > 1 ? workers.slice(1) : workers;
+      jobs.forEach((one, index) => (index === 0 ? workers[0] : placeWorkers[(index - 1) % placeWorkers.length]).postMessage({ ...one, build, index }));
+      return;
+    }
+    const made = [];
     const next = (index) => {
-      if (build !== sheetBuild || index >= places.length) return;
+      if (build !== sheetBuild) return;
+      if (index >= places.length) {
+        placePieces = made;
+        show();
+        return;
+      }
       buildPiece(places[index], plate * 13 + index, build, (piece) => {
-        sheets = [...sheets, piece];
-        map.triggerRepaint();
+        made.push(piece);
         next(index + 1);
       });
     };
-    // The whole province's cover first: it is what shows while the camera is still high.
     buildProvincePiece(plate, assets, build, (piece) => {
-      if (piece) sheets = [...sheets, piece];
-      map.triggerRepaint();
+      cover = piece;
+      show();
       next(0);
     });
   }
 
   /** The wide cover is drawn this many pixels across. */
-  const PROVINCE_SHEET_PX = 1024;
+  const PROVINCE_SHEET_PX = 640;
   const PROVINCE_SHEET_MARGIN_KM = 30;
   /** How far each asset's share of the wide cover reaches. */
   const PROVINCE_SHEET_REACH_KM = 5;
@@ -1255,7 +1311,49 @@ function start() {
    * places' own sheets (buildPiece).
    */
   function buildProvincePiece(plate, assets, build, done) {
-    runSliced(provincePieceSteps(plate, assets), build, done);
+    const job = provinceJob(plate);
+    runSliced(provincePieceSteps(plate, assets, job.feature, job.bounds), build, (piece) => done(placedPiece(piece)));
+  }
+
+  /** The province's shape and bounds, for provincePieceSteps. */
+  function provinceJob(plate) {
+    const feature = PROVINCES.features.find((candidate) => candidate.properties.plate === plate) || null;
+    const bounds = feature ? provinceBounds(plate) : null;
+    return { feature, bounds: bounds ? { west: bounds.getWest(), east: bounds.getEast(), south: bounds.getSouth(), north: bounds.getNorth() } : null };
+  }
+
+  /** A piece made on its ground corners, placed for the map: its box in the map's own coordinates. */
+  function placedPiece(piece) {
+    const [west, north, east, south] = piece.geo;
+    const northWest = maplibregl.MercatorCoordinate.fromLngLat([west, north]);
+    const southEast = maplibregl.MercatorCoordinate.fromLngLat([east, south]);
+    return { ...piece, texture: null, places: null, box: [northWest.x, northWest.y, southEast.x, southEast.y] };
+  }
+
+  /**
+   * The workers the sheets are worked out in, built from the very functions above, so the camera's
+   * flight never waits on them: the province's cover in one, the places' pieces shared among the
+   * others, all at once, done by the time the camera lands. null where workers are not to be had
+   * (the sheets are then worked out a few milliseconds a frame, runSliced).
+   */
+  let sheetWorkersMade;
+  function sheetWorkers() {
+    if (sheetWorkersMade !== undefined) return sheetWorkersMade;
+    try {
+      const constants = { PROVINCE_SHEET_PX, PROVINCE_SHEET_MARGIN_KM, PROVINCE_SHEET_REACH_KM, PROVINCE_SHEET_SIZE_KM, SHEET_PX, SHEET_MARGIN_KM, SHEET_REACH_KM, SHEET_KEEP_KM, SHEET_NEAR_KM };
+      const source = [
+        ...Object.entries(constants).map(([name, value]) => "const " + name + " = " + JSON.stringify(value) + ";"),
+        ...[sheetNoise, sheetFbm, sheetStep, sheetStamp, provincePieceSteps, pieceSteps].map((part) => part.toString()),
+        "self.onmessage = (event) => { const job = event.data; const steps = job.province ? provincePieceSteps(job.plate, job.assets, job.feature, job.bounds) : pieceSteps(job.assets); let step = steps.next(); while (!step.done) step = steps.next(); self.postMessage({ build: job.build, index: job.index, piece: step.value }, [step.value.pixels.buffer]); };",
+      ].join(String.fromCharCode(10));
+      const url = URL.createObjectURL(new Blob([source], { type: "text/javascript" }));
+      // One for the cover and up to two for the places, leaving the phone a core for the map.
+      const count = Math.max(1, Math.min(3, (navigator.hardwareConcurrency || 2) - 1));
+      sheetWorkersMade = Array.from({ length: count }, () => new Worker(url));
+    } catch {
+      sheetWorkersMade = null;
+    }
+    return sheetWorkersMade;
   }
 
   /** Work on a sheet this many milliseconds a frame, so the camera's flight stays smooth meanwhile. */
@@ -1278,8 +1376,12 @@ function start() {
     requestAnimationFrame(frame);
   }
 
-  /** The steps of buildProvincePiece: a pause after every row of each pass, ending in the piece. */
-  function* provincePieceSteps(plate, assets) {
+  /**
+   * The steps of buildProvincePiece: a pause after every row of each pass, ending in the piece with
+   * its corners on the ground (geo: west, north, east, south). Self-contained, with the province's
+   * shape and bounds passed in, so the sheet worker can run it from its source (sheetWorker).
+   */
+  function* provincePieceSteps(plate, assets, feature, bounds) {
     let west = Infinity;
     let east = -Infinity;
     let south = Infinity;
@@ -1290,13 +1392,11 @@ function start() {
       south = Math.min(south, asset.lat);
       north = Math.max(north, asset.lat);
     }
-    const feature = PROVINCES.features.find((candidate) => candidate.properties.plate === plate);
-    if (feature) {
-      const bounds = provinceBounds(plate);
-      west = Math.min(west, bounds.getWest());
-      east = Math.max(east, bounds.getEast());
-      south = Math.min(south, bounds.getSouth());
-      north = Math.max(north, bounds.getNorth());
+    if (feature && bounds) {
+      west = Math.min(west, bounds.west);
+      east = Math.max(east, bounds.east);
+      south = Math.min(south, bounds.south);
+      north = Math.max(north, bounds.north);
     }
     const middleLat = (south + north) / 2;
     const kmPerLng = 111.32 * Math.cos((middleLat * Math.PI) / 180);
@@ -1348,7 +1448,7 @@ function start() {
     }
     if (feature) {
       // The province itself, softened over several kilometres: its open land gets a light share.
-      const shape = document.createElement("canvas");
+      const shape = typeof OffscreenCanvas === "function" ? new OffscreenCanvas(gridWidth, gridHeight) : document.createElement("canvas");
       shape.width = gridWidth;
       shape.height = gridHeight;
       const pen = shape.getContext("2d");
@@ -1454,10 +1554,7 @@ function start() {
         }
       yield;
     }
-    const corner = (lng, lat) => maplibregl.MercatorCoordinate.fromLngLat([lng, lat]);
-    const northWest = corner(west, north);
-    const southEast = corner(east, south);
-    return { pixels, width, height, texture: null, places: null, box: [northWest.x, northWest.y, southEast.x, southEast.y], km: [widthKm, heightKm], seed: (plate * 11.3) % 197, province: true };
+    return { pixels, width, height, geo: [west, north, east, south], km: [widthKm, heightKm], seed: (plate * 11.3) % 197, province: true };
   }
 
   /**
@@ -1466,10 +1563,10 @@ function start() {
    * that stays under fog while the clouds scatter.
    */
   function buildPiece(assets, seed, build, done) {
-    runSliced(pieceSteps(assets), build, done);
+    runSliced(pieceSteps(assets), build, (piece) => done(placedPiece(piece)));
   }
 
-  /** The steps of buildPiece: a pause after each asset's stamps, ending in the piece. */
+  /** The steps of buildPiece: a pause after each asset's stamps, ending in the piece (corners as provincePieceSteps). */
   function* pieceSteps(assets) {
     let west = Infinity;
     let east = -Infinity;
@@ -1503,10 +1600,7 @@ function start() {
       sheetStamp(pixels, width, height, 0, x, y, (SHEET_REACH_KM * 1.35) / kmPerPx);
       yield;
     }
-    const corner = (lng, lat) => maplibregl.MercatorCoordinate.fromLngLat([lng, lat]);
-    const northWest = corner(west, north);
-    const southEast = corner(east, south);
-    return { pixels, width, height, texture: null, places: null, box: [northWest.x, northWest.y, southEast.x, southEast.y] };
+    return { pixels, width, height, geo: [west, north, east, south] };
   }
 
   /** How thick the sheet should be now: gone by the Turkey view, whole by the city's province. */
@@ -1536,7 +1630,7 @@ function start() {
       clearingShader(
         gl,
         gl.FRAGMENT_SHADER,
-        "precision highp float; uniform sampler2D field; uniform sampler2D wideField; uniform vec4 wideBox; uniform vec2 wideSize; uniform float isPlace;" +
+        "precision highp float; uniform sampler2D field; uniform sampler2D wideField; uniform vec4 wideBox; uniform vec2 wideSize; uniform float isPlace; uniform float placesLevel;" +
           "uniform float zoom; uniform float level; uniform vec3 top; uniform vec3 middle; uniform vec3 bottom;" +
           "varying vec2 uv; varying vec2 merc; varying vec2 km;" +
           "float hash(vec2 p) { vec3 q = fract(vec3(p.xyx) * 0.1031); q += dot(q, q.yzx + 33.33); return fract((q.x + q.y) * q.z); }" +
@@ -1578,7 +1672,7 @@ function start() {
           " float close = smoothstep(14.3, 15.4, zoom);" +
           " float base = fog(W, vec4(0.0), scatter, close, puff, fine, street, wisp);" +
           " float a = base;" +
-          " if (isPlace > 0.5) { float whole = fog(W, L, scatter, close, puff, fine, street, wisp); a = max(0.0, whole - base) / max(0.001, 1.0 - base); }" +
+          " if (isPlace > 0.5) { float whole = fog(W, L, scatter, close, puff, fine, street, wisp); a = max(0.0, whole - base) / max(0.001, 1.0 - base) * placesLevel; }" +
           " a *= level;" +
           " if (a <= 0.002) discard;" +
           " float shade = clamp(0.28 + 0.58 * W.g + 0.3 * close * (wisp - 0.5) + 0.2 * close * (street - 0.5) + 0.22 * (puff - 0.5) * scatter * (1.0 - close), 0.0, 1.0);" +
@@ -1608,10 +1702,48 @@ function start() {
       }
       sheetsGone = [];
       if (sheets.length === 0) return;
+      for (const piece of sheets) {
+        if (piece.texture) continue;
+        piece.texture = gl.createTexture();
+        gl.bindTexture(gl.TEXTURE_2D, piece.texture);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        // Room only: the pixels go up a band at a time below, so no frame carries a whole sheet.
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, piece.width, piece.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+        piece.uploaded = 0;
+        const [left, upper, right, lower] = piece.box;
+        piece.places = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, piece.places);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([left, upper, right, upper, left, lower, right, lower]), gl.STATIC_DRAW);
+      }
+      // Each frame sends up to SHEET_UPLOAD_BYTES of the sheets still going up.
+      let bytesLeft = SHEET_UPLOAD_BYTES;
+      gl.activeTexture(gl.TEXTURE0);
+      gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+      for (const piece of sheets) {
+        if (bytesLeft <= 0) break;
+        if (piece.uploaded >= piece.height) continue;
+        const rows = Math.max(1, Math.min(Math.floor(bytesLeft / (piece.width * 4)), piece.height - piece.uploaded));
+        gl.bindTexture(gl.TEXTURE_2D, piece.texture);
+        gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, piece.uploaded, piece.width, rows, gl.RGBA, gl.UNSIGNED_BYTE, piece.pixels.subarray(piece.uploaded * piece.width * 4, (piece.uploaded + rows) * piece.width * 4));
+        piece.uploaded += rows;
+        bytesLeft -= rows * piece.width * 4;
+      }
+      if (sheets.some((piece) => piece.uploaded < piece.height)) map.triggerRepaint();
+      // The cover shows once it is all up; the places' pieces once every one of them is.
+      const up = (piece) => piece.uploaded >= piece.height;
+      const cover = sheets.find((piece) => piece.province && up(piece)) || null;
+      const placePieces = sheets.filter((piece) => !piece.province);
+      const placesUp = placePieces.length > 0 && placePieces.every(up);
       // Eases toward its target thickness, so the sheet fades in and out instead of jumping.
       const now = performance.now();
-      const target = sheetTarget();
+      const target = cover ? sheetTarget() : 0;
       const stepBy = Math.min(1, (now - sheetLevelAt) / SHEET_FADE_MS);
+      const placesBy = Math.min(1, (now - sheetLevelAt) / PLACES_FADE_MS);
+      placesLevel = placesUp ? Math.min(1, placesLevel + placesBy) : 0;
+      if (placesUp && placesLevel < 1) map.triggerRepaint();
       sheetLevelAt = now;
       sheetLevel = sheetLevel < target ? Math.min(target, sheetLevel + stepBy) : Math.max(target, sheetLevel - stepBy);
       if (sheetLevel !== target) map.triggerRepaint();
@@ -1629,6 +1761,7 @@ function start() {
       gl.uniform1i(gl.getUniformLocation(shared.program, "wideField"), 1);
       gl.uniform1f(gl.getUniformLocation(shared.program, "zoom"), map.getZoom());
       gl.uniform1f(gl.getUniformLocation(shared.program, "level"), sheetLevel);
+      gl.uniform1f(gl.getUniformLocation(shared.program, "placesLevel"), placesLevel);
       gl.uniform3fv(gl.getUniformLocation(shared.program, "top"), shared.top);
       gl.uniform3fv(gl.getUniformLocation(shared.program, "middle"), shared.middle);
       gl.uniform3fv(gl.getUniformLocation(shared.program, "bottom"), shared.bottom);
@@ -1638,38 +1771,9 @@ function start() {
       gl.enableVertexAttribArray(corner);
       gl.vertexAttribPointer(corner, 2, gl.FLOAT, false, 0, 0);
       gl.enableVertexAttribArray(place);
-      for (const piece of sheets) {
-        if (piece.texture) continue;
-        piece.texture = gl.createTexture();
-        gl.bindTexture(gl.TEXTURE_2D, piece.texture);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-        // Room only: the pixels go up a band at a time below, so no frame carries a whole sheet.
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, piece.width, piece.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
-        piece.uploaded = 0;
-        const [left, upper, right, lower] = piece.box;
-        piece.places = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, piece.places);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([left, upper, right, upper, left, lower, right, lower]), gl.STATIC_DRAW);
-      }
-      // Each frame sends up to SHEET_UPLOAD_ROWS rows of the sheets still going up; a sheet shows once it is all there.
-      let rowsLeft = SHEET_UPLOAD_ROWS;
-      gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
-      for (const piece of sheets) {
-        if (rowsLeft <= 0) break;
-        if (piece.uploaded >= piece.height) continue;
-        const rows = Math.min(rowsLeft, piece.height - piece.uploaded);
-        gl.bindTexture(gl.TEXTURE_2D, piece.texture);
-        gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, piece.uploaded, piece.width, rows, gl.RGBA, gl.UNSIGNED_BYTE, piece.pixels.subarray(piece.uploaded * piece.width * 4, (piece.uploaded + rows) * piece.width * 4));
-        piece.uploaded += rows;
-        rowsLeft -= rows;
-      }
-      if (sheets.some((piece) => piece.uploaded < piece.height)) map.triggerRepaint();
-      const ready = sheets.filter((piece) => piece.uploaded >= piece.height);
+      const ready = cover ? [cover, ...(placesUp ? placePieces : [])] : [];
       // The wide cover comes first and every piece reads it.
-      const wide = ready.find((piece) => piece.province);
+      const wide = cover;
       if (wide) {
         const [left, upper, right, lower] = wide.box;
         const middleLat = (Math.atan(Math.sinh(Math.PI * (1 - (upper + lower)))) * 180) / Math.PI;
