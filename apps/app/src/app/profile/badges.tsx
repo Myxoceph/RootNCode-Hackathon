@@ -180,7 +180,6 @@ export default function MyBadgesScreen() {
             items={items}
             points={data?.totalPoints ?? 0}
             visits={data?.visits ?? 0}
-            sealed={data?.sealed ?? 0}
             onOpen={setOpen}
           />
         )}
@@ -268,7 +267,13 @@ export default function MyBadgesScreen() {
   );
 }
 
-/** A soft gold light at the head of the page. */
+/** How tall the page's gold light is: centred on the latest badge, it reaches just to the top. */
+const GLOW_HEIGHT = 300;
+
+/**
+ * A soft gold light at the head of the page, behind the latest badge: it fades out before the top
+ * edge, so the header never cuts it off.
+ */
 function Backdrop() {
   const [width, setWidth] = useState(0);
   return (
@@ -279,9 +284,9 @@ function Backdrop() {
       aria-hidden
     >
       {width > 0 && (
-        <Svg width={width} height={520}>
+        <Svg width={width} height={GLOW_HEIGHT}>
           <Defs>
-            <RadialGradient id="page-glow" cx="50%" cy="18%" r="60%">
+            <RadialGradient id="page-glow" cx="50%" cy="50%" r="50%">
               <Stop
                 offset="0"
                 stopColor={palette.altin200}
@@ -290,7 +295,7 @@ function Backdrop() {
               <Stop offset="1" stopColor={palette.altin200} stopOpacity={0} />
             </RadialGradient>
           </Defs>
-          <Rect width={width} height={520} fill="url(#page-glow)" />
+          <Rect width={width} height={GLOW_HEIGHT} fill="url(#page-glow)" />
         </Svg>
       )}
     </View>
@@ -299,19 +304,17 @@ function Backdrop() {
 
 /**
  * The showcase: the latest badge earned, large in a gold glow, the few earned before it, and the
- * collection's progress, points, visits and seals. Before any badge, only the progress.
+ * collection's progress, points and visits. Before any badge, only the progress.
  */
 function Showcase({
   items,
   points,
   visits,
-  sealed,
   onOpen,
 }: {
   items: Badge[];
   points: number;
   visits: number;
-  sealed: number;
   onOpen: (badge: Badge) => void;
 }) {
   const lang = useLang();
@@ -409,7 +412,7 @@ function Showcase({
           featured && [styles.progressUnder, { borderTopColor: c.border }],
         ]}
         accessible
-        accessibilityLabel={w.progressLabel(earned, total, points, visits, sealed)}
+        accessibilityLabel={w.progressLabel(earned, total, points, visits)}
       >
         <View style={styles.progressHead}>
           <Text style={styles.progressValue}>
@@ -444,8 +447,6 @@ function Showcase({
           <Stat value={points} label={w.points} />
           <View style={[styles.statRule, { backgroundColor: c.border }]} />
           <Stat value={visits} label={w.visits} />
-          <View style={[styles.statRule, { backgroundColor: c.border }]} />
-          <Stat value={sealed} label={w.seals} />
         </View>
         <Pressable
           accessibilityRole="link"
@@ -972,7 +973,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: 520,
+    height: GLOW_HEIGHT,
   },
   content: {
     width: "100%",
