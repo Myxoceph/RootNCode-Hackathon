@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { AssetIdSchema, ContractVersionSchema } from "./asset.schema";
+import { AssetIdSchema, ContractVersionSchema, DossierPlaceSchema } from "./asset.schema";
 import { UserRoleSchema } from "./community.schema";
 
 /**
@@ -140,7 +140,7 @@ export const AdminAssetRecordSchema = z.strictObject({
   /** The complex (külliye) this asset is a building of. */
   parentId: AssetIdSchema.nullable(),
   tags: z.array(z.string().trim().min(1).max(60)).max(40),
-  alternateNames: z.array(z.strictObject({ name: RecordText(200), note: RecordString(400) })).max(30),
+  alternateNames: z.array(z.strictObject({ name: RecordText(200), note: RecordOptionalText(400) })).max(30),
   city: CodeSchema,
   district: z.string().trim().max(60),
   neighborhood: RecordString(120),
@@ -159,7 +159,7 @@ export const AdminAssetRecordSchema = z.strictObject({
   founder: z.strictObject({ name: RecordString(200), role: RecordString(200), confidence: RecordConfidence.nullable() }),
   architect: z.strictObject({
     name: RecordString(200),
-    candidates: z.array(z.strictObject({ name: z.string().trim().max(200), note: RecordString(400) })).max(20),
+    candidates: z.array(z.strictObject({ name: z.string().trim().max(200), note: RecordOptionalText(400) })).max(20),
     confidence: RecordConfidence.nullable(),
   }),
   waqf: z.strictObject({
@@ -171,6 +171,10 @@ export const AdminAssetRecordSchema = z.strictObject({
     confidence: RecordConfidence.nullable(),
   }),
   sections: z.array(z.strictObject({ id: Slug, title: RecordText(200), body: RecordText(60000), confidence: RecordConfidence })).max(60),
+  customBlocks: z
+    .array(z.strictObject({ id: Slug, title: RecordText(200), body: RecordText(60000), after: DossierPlaceSchema }))
+    .max(30)
+    .default([]),
   highlights: z
     .array(z.strictObject({ feature: z.string().trim().max(80), title: RecordText(200), hint: RecordText(1000), sectionId: Slug.nullable() }))
     .max(40),
@@ -240,7 +244,17 @@ export const AdminAssetRecordSchema = z.strictObject({
   }),
   ambientSound: z.strictObject({ key: RecordString(80), caption: RecordOptionalText(600) }),
   /** The asset's photos in their order; only existing ones (by key) can be captioned, reordered or made the cover. */
-  media: z.array(z.strictObject({ key: z.string().min(1).max(120), caption: RecordText(600), alt: RecordText(600), isCover: z.boolean() })).max(200),
+  media: z
+    .array(
+      z.strictObject({
+        key: z.string().min(1).max(120),
+        caption: RecordText(600),
+        alt: RecordText(600),
+        isCover: z.boolean(),
+        dossierAfter: DossierPlaceSchema.nullable().default(null),
+      }),
+    )
+    .max(200),
 });
 
 const blank = (text: string | null | undefined) => !text || text.trim().length === 0;
@@ -253,6 +267,7 @@ export const AdminAssetRecordInputSchema = AdminAssetRecordSchema.superRefine((r
   need(blank(r.summary.tr), ["summary", "tr"], "summary is required");
   need(blank(r.district), ["district"], "district is required");
   r.sections.forEach((s, i) => need(blank(s.body.tr) || blank(s.title.tr), ["sections", i], "a section needs a title and a text"));
+  r.customBlocks.forEach((b, i) => need(blank(b.body.tr) || blank(b.title.tr), ["customBlocks", i], "a block needs a title and a text"));
   r.timeline.forEach((e, i) => need(blank(e.title.tr), ["timeline", i, "title"], "an event needs a title"));
   r.facts.forEach((f, i) => need(blank(f.label.tr) || blank(f.value), ["facts", i], "a fact needs a label and a value"));
   r.legends.forEach((l, i) => need(blank(l.title.tr) || blank(l.body.tr), ["legends", i], "a legend needs a title and a text"));
@@ -263,6 +278,7 @@ export const AdminAssetRecordInputSchema = AdminAssetRecordSchema.superRefine((r
   r.alternateNames.forEach((n, i) => need(blank(n.name.tr), ["alternateNames", i, "name"], "a name is required"));
   for (const [list, ids] of [
     ["sections", r.sections.map((s) => s.id)],
+    ["customBlocks", r.customBlocks.map((b) => b.id)],
     ["timeline", r.timeline.map((e) => e.id)],
     ["facts", r.facts.map((f) => f.key)],
     ["legends", r.legends.map((l) => l.id)],

@@ -83,6 +83,12 @@ export const ImageSourceSchema = z.strictObject({
   height: z.int().positive(),
 });
 
+/** A place in the dossier: a block's name, or `section:<id>` / `custom:<id>`. */
+export const DossierPlaceSchema = z
+  .string()
+  .max(120)
+  .regex(/^[a-z_]+(?::[a-z0-9_-]+)?$/, "must be a block, section:<id> or custom:<id>");
+
 /** One image with responsive variants. The photo's own GPS position is never part of the contract. */
 export const MediaSchema = z.strictObject({
   key: z.string().min(1),
@@ -107,6 +113,11 @@ export const MediaSchema = z.strictObject({
    * `ornament_detail`… Ziyaret Mührü picks a specific part of the monument by it. Null when unknown.
    */
   subject: z.string().min(1).nullable().default(null),
+  /**
+   * Where the admin put the photo in the asset's dossier: under a block (`identity`, `timeline`…), a
+   * chapter (`section:<id>`) or an added block (`custom:<id>`). Null: not placed by hand.
+   */
+  dossierAfter: DossierPlaceSchema.nullable().default(null),
   sources: z.strictObject({
     webp: z.array(ImageSourceSchema),
     jpg: z.array(ImageSourceSchema),
@@ -155,6 +166,17 @@ export const AssetRefSchema = z.strictObject({
 export const NamedNoteSchema = z.strictObject({
   name: z.string().min(1),
   note: z.string().min(1).nullable(),
+});
+
+/**
+ * A block the admin added to the dossier. `body` is plain text with a few marks (`## heading`,
+ * `**bold**`, `_italic_`, `- item`, `> quote`), never HTML; the app draws it. `after` is the block it follows.
+ */
+export const CustomBlockSchema = z.strictObject({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  body: z.string().min(1),
+  after: DossierPlaceSchema,
 });
 
 export const AssetSectionSchema = z.strictObject({
@@ -300,6 +322,7 @@ export const AssetDetailSchema = AssetSummarySchema.extend({
     })
     .nullable(),
   sections: z.array(AssetSectionSchema),
+  customBlocks: z.array(CustomBlockSchema).default([]),
   facts: z.array(AssetFactSchema),
   timeline: z.array(TimelineEventSchema),
   legends: z.array(AssetLegendSchema),

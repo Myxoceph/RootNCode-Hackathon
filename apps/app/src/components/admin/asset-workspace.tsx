@@ -13,7 +13,7 @@ import { placementsOf, type DossierPlacements } from "@/lib/dossier-photos";
 import { fieldIn, FRAME_ROOT_ID, InFrame, revealNode, type Frame, type FrameEditing } from "@/lib/in-frame";
 
 import { Badge, Button, Card, Confirm, errorText, Failed, formatDate, Loading, PageHeader, Segments, Toast, useAdminColors, useLoad, useToast } from "./kit";
-import { forServer, SECTION_TITLE, STEPS, type CustomBlockDraft, type Section, type Step, type StepProps } from "./asset-steps";
+import { SECTION_TITLE, STEPS, type CustomBlockDraft, type Section, type Step, type StepProps } from "./asset-steps";
 import { previewOf, SAMPLE_TEXTS } from "./record-preview";
 import { fieldId } from "./record-fields";
 import { PageBody } from "./shell";
@@ -47,6 +47,7 @@ const EMPTY: AdminAssetRecord = {
   architect: { name: null, candidates: [], confidence: null },
   waqf: { name: null, deedDate: null, deedExcerpt: null, conditions: null, landNote: null, confidence: null },
   sections: [],
+  customBlocks: [],
   highlights: [],
   timeline: [],
   facts: [],
@@ -197,11 +198,11 @@ export function AssetWorkspace({ id }: { id: string | null }) {
     setBusy(true);
     try {
       if (creating) {
-        const created = await createAssetRecord(forServer(record));
+        const created = await createAssetRecord(record);
         router.replace(`/admin/assets/${created.id}`);
         return;
       }
-      const result = await saveAssetRecord(id, forServer(record));
+      const result = await saveAssetRecord(id, record);
       loaded.setData(result);
       preview.reload();
       setDraft(null);
@@ -635,7 +636,7 @@ const MESSAGE: Record<string, string> = {
 };
 
 function problemsOf(record: AdminAssetRecord): Problem[] {
-  const result = AdminAssetRecordInputSchema.safeParse(forServer(record));
+  const result = AdminAssetRecordInputSchema.safeParse(record);
   if (result.success) return [];
   const seen = new Set<string>();
   return result.error.issues.flatMap((issue) => {

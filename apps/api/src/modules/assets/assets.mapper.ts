@@ -45,9 +45,9 @@ export interface MapperContext {
 
 // JSON columns: shapes come from data/schema/eser.schema.json.
 const AlternateNamesSchema = z.array(
-  z.object({ tr: z.string(), en: z.string().nullish(), note: z.string().nullish() }),
+  z.object({ tr: z.string(), en: z.string().nullish(), note: z.string().nullish(), note_en: z.string().nullish() }),
 );
-const CandidatesSchema = z.array(z.object({ name: z.string(), note: z.string().nullish() }));
+const CandidatesSchema = z.array(z.object({ name: z.string(), note: z.string().nullish(), note_en: z.string().nullish() }));
 const WaqfDeedSchema = z
   .object({
     excerpt: z.object({ tr: z.string().nullish(), en: z.string().nullish() }).nullish(),
@@ -107,6 +107,7 @@ export function toMedia(record: AssetMediaRecord, { lang, mediaBaseUrl }: Mapper
     license: media.license,
     archiveYear: record.archive_year,
     subject: nonEmpty(record.subject),
+    dossierAfter: nonEmpty(record.dossier_after),
     sources,
   };
 }
@@ -237,8 +238,8 @@ function groupCitations(record: AssetDetailRecord, lang: Lang) {
   };
 }
 
-function toNamedNotes(names: { name: string; note?: string | null | undefined }[]): NamedNote[] {
-  return names.map(({ name, note }) => ({ name, note: nonEmpty(note) }));
+function toNamedNotes(names: { name: string; note?: string | null | undefined; note_en?: string | null | undefined }[], lang: Lang): NamedNote[] {
+  return names.map(({ name, note, note_en }) => ({ name, note: pick(note, note_en, lang) }));
 }
 
 /** The asset's ambient sound key: its own, else its type's default. */
@@ -260,9 +261,9 @@ export function toAssetDetail(
 
   const alternateNames = AlternateNamesSchema.parse(record.alternate_names).map((n) => ({
     name: pick(n.tr, n.en, lang),
-    note: nonEmpty(n.note),
+    note: pick(n.note, n.note_en, lang),
   }));
-  const candidates = toNamedNotes(CandidatesSchema.parse(record.architect_candidates));
+  const candidates = toNamedNotes(CandidatesSchema.parse(record.architect_candidates), lang);
   const deed = WaqfDeedSchema.parse(record.waqf_deed);
 
   const dating = {
@@ -336,6 +337,12 @@ export function toAssetDetail(
         ? { name: architectName, candidates, confidence: architectConfidence, sources: sourcesOf("architect") }
         : null,
     waqf: hasWaqf ? waqf : null,
+    customBlocks: record.asset_custom_block.map((b) => ({
+      id: b.slug,
+      title: pick(b.title_tr, b.title_en, lang),
+      body: pick(b.body_tr, b.body_en, lang),
+      after: b.after_block,
+    })),
     sections: record.asset_section.map((s) => ({
       id: s.slug,
       title: pick(s.title_tr, s.title_en, lang),

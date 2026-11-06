@@ -130,7 +130,7 @@ Kısaltılmış örnek; tamamı [bursa-osmangazi-ulucami.json](eserler/bursa/osm
             "prepared_by": "...", "reviewed_by": null, "from": "Ulucamii", "todos": [], "data_quality_notes": [] },
   "name": { "tr": "Ulucami", "en": "Ulucami (Grand Mosque of Bursa)" },
   "subtitle": { "tr": "...", "en": "..." },
-  "alternate_names": [{ "tr": "Bursa'nın Ayasofyası", "en": "...", "note": "..." }],
+  "alternate_names": [{ "tr": "Bursa'nın Ayasofyası", "en": "...", "note": "...", "note_en": "..." }],
   "type": "cami", "secondary_types": [], "parent_id": null, "era": "erken-osmanli", "tags": ["..."],
   "location": { "region": "marmara", "city": "bursa", "district": "Osmangazi", "neighborhood": "...",
                 "address": "...", "coordinates": { "lat": 40.18417, "lng": 29.06167, "source": "manual",
@@ -191,6 +191,7 @@ region ─< city ─< asset >─ asset_type          (lookup tabloları enums.js
                     │  └── era
                     │
                     ├─< asset_section            tarihçe bölümleri
+                    ├─< asset_custom_block       adminin dosyaya eklediği ana bölümler
                     ├─< asset_legend             rivayetler
                     ├─< asset_fact               sayısal bilgiler
                     ├─< asset_person             kişiler
@@ -345,7 +346,7 @@ CREATE TABLE asset (
   founder_role          text,
   founder_confidence    confidence,
   architect_name        text,                       -- kesin biliniyorsa
-  architect_candidates  jsonb NOT NULL DEFAULT '[]', -- [{name, note}]
+  architect_candidates  jsonb NOT NULL DEFAULT '[]', -- [{name, note, note_en}]
   architect_confidence  confidence,
   waqf_name             text,
   waqf_deed             jsonb,                       -- {date_display, excerpt{tr,en}}
@@ -400,6 +401,18 @@ CREATE INDEX asset_search_idx    ON asset USING gin (
 );
 
 -- ─────────────────────────────── İçerik alt tabloları
+CREATE TABLE asset_custom_block (
+  asset_id    text NOT NULL REFERENCES asset(id) ON DELETE CASCADE,
+  slug        text NOT NULL,
+  sort_order  smallint NOT NULL,
+  after_block text NOT NULL,
+  title_tr    text NOT NULL,
+  title_en    text,
+  body_tr     text NOT NULL,
+  body_en     text,
+  PRIMARY KEY (asset_id, slug)
+);
+
 CREATE TABLE asset_section (
   asset_id    text NOT NULL REFERENCES asset(id) ON DELETE CASCADE,
   slug        text NOT NULL,
@@ -584,6 +597,7 @@ CREATE TABLE asset_media (
   sort_order        smallint NOT NULL DEFAULT 0,
   is_cover          boolean NOT NULL DEFAULT false,
   subject           text,                              -- exterior, portal, minber...
+  dossier_after     text,                              -- dosyadaki yeri: timeline, section:<id>, custom:<id>
   focal_x           real CHECK (focal_x BETWEEN 0 AND 1),
   focal_y           real CHECK (focal_y BETWEEN 0 AND 1),
   caption_tr        text NOT NULL,
@@ -722,6 +736,7 @@ Bir tabloya sütun eklemek ya da yeni tablo açmak için:
 | `ambient_sound.*` | `asset.ambient_sound_key`, `ambient_caption_tr/en` |
 | `media_folder`, `meta.todos`, `meta.data_quality_notes`, `meta.prepared_by`, `meta.reviewed_by` | aynı adlı `asset` sütunları |
 | `sections[]` | `asset_section` (`id` → `slug`, `order` → `sort_order`) |
+| `custom_blocks[]` | `asset_custom_block` (`id` → `slug`, `after` → `after_block`, dizideki sıra → `sort_order`) |
 | `legends[]` | `asset_legend` (dizideki sıra → `sort_order`) |
 | `facts[]` | `asset_fact` (`value` → `value`; sayıysa `value_num`'a da yaz) |
 | `people[]` | `asset_person` |
@@ -747,7 +762,7 @@ Sıra önemlidir; her adım bir öncekine bağlıdır:
 4. Tüm eser JSON'ları TEK transaction içinde:
      her eser için:
        a. asset           upsert (id)  -- parent_id FK'si DEFERRABLE, külliye aynı transaction'da sonra gelebilir
-       b. alt tablolar    o esere ait satırlar silinir, yeniden eklenir (asset_section, asset_legend,
+       b. alt tablolar    o esere ait satırlar silinir, yeniden eklenir (asset_section, asset_custom_block, asset_legend,
                           asset_fact, asset_person, timeline_event, asset_highlight, asset_relation,
                           visitor_tip, exhibition, source_citation, inscription, asset_media)
        c. media           upsert (sha256), media_variant upsert (media_id, format, width)
@@ -868,7 +883,7 @@ Yeni ya da değişen bir fotoğraf olursa manifest güncellenir ve **veri ekibi 
 İçe aktarmada JSON'daki `media[]` kaydı (açıklama, alt metin, telif, kapak) ile manifest kaydı (hash, boyut, sürümler) **`(asset_id, media_key)` üzerinden birleştirilir**:
 - `media`: sha256 üzerinden upsert. `width`, `height`, `aspect_ratio`, `lqip`, `dominant_color`, `original_*` manifestten gelir; `captured_at`, `capture_lat` ve `capture_lng` manifestin `exif` alanından gelir. `credit`, `license`, `photographer` ve `source_id` JSON'dan gelir.
 - `media_variant`: manifestteki `variants[]` listesi.
-- `asset_media`: JSON'daki `id`, `order`, `is_cover`, `subject`, `focal_point`, `caption`, `alt`; arşiv fotoğrafıysa `year`, `year_approx`, `overlay`.
+- `asset_media`: JSON'daki `id`, `order`, `is_cover`, `subject`, `dossier_after`, `focal_point`, `caption`, `alt`; arşiv fotoğrafıysa `year`, `year_approx`, `overlay`.
 
 ### Admin panelden yükleme ve topluluk katkısı
 

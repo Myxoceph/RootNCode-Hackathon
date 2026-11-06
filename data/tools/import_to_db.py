@@ -32,7 +32,7 @@ DB_GENERATED = {"asset": {"created_at", "updated_at"}, "media": {"id", "created_
                 "asset_relation": {"id"}, "visitor_tip": {"id"}, "exhibition": {"id"},
                 "contribution": {"id", "created_at"}, "asset_revision": {"version", "changed_at"}}
 CHILD_DELETE_ORDER = ["inscription", "asset_media", "source_citation", "exhibition", "visitor_tip", "asset_relation",
-                      "asset_highlight", "timeline_event", "asset_person", "asset_fact", "asset_legend", "asset_section"]
+                      "asset_highlight", "timeline_event", "asset_person", "asset_fact", "asset_legend", "asset_custom_block", "asset_section"]
 
 
 def ddl_from_readme():
@@ -98,7 +98,7 @@ def import_all(con):
             insert(cur, types, "media_variant", {**row, "media_id": media_ids[row["media_id"]["$media"]]},
                    conflict=["media_id", "format", "width"])
 
-        for table in ["asset_section", "asset_legend", "asset_fact", "asset_person", "timeline_event", "asset_highlight",
+        for table in ["asset_section", "asset_custom_block", "asset_legend", "asset_fact", "asset_person", "timeline_event", "asset_highlight",
                       "asset_relation", "visitor_tip", "exhibition", "source_citation", "asset_media", "inscription"]:
             for row in rows[table]:
                 if table == "asset_media":

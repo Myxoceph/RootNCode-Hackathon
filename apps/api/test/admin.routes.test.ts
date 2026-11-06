@@ -209,6 +209,72 @@ describe.skipIf(!DATABASE_URL)("admin panel (PostgreSQL)", () => {
     expect(restored.record).toEqual(record);
   });
 
+  it("keeps a photo's place in the dossier and shows it on the asset", async () => {
+    const { record } = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+    const photo = record.media[0]!;
+    const placed = (dossierAfter: string | null) => ({ ...record, media: record.media.map((m) => (m.key === photo.key ? { ...m, dossierAfter } : m)) });
+    try {
+      expect((await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, placed("section:tarihce"))).statusCode).toBe(200);
+      const again = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+      expect(again.record.media.find((m) => m.key === photo.key)?.dossierAfter).toBe("section:tarihce");
+      const detail = AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${ASSET}` })).json());
+      expect(detail.media.find((m) => m.key === photo.key)?.dossierAfter).toBe("section:tarihce");
+      expect((await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, placed("<b>"))).statusCode).toBe(400);
+    } finally {
+      await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, record);
+    }
+  });
+
+  it("keeps a note in both languages and serves the one asked for", async () => {
+    const { record } = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+    const note = { tr: "Evliya Çelebi'nin benzetmesi", en: "Evliya Çelebi's simile" };
+    const edited = {
+      ...record,
+      alternateNames: [...record.alternateNames, { name: { tr: `Ad ${tag}`, en: null }, note }],
+      architect: { ...record.architect, candidates: [...record.architect.candidates, { name: `Mimar ${tag}`, note }] },
+    };
+    try {
+      expect((await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, edited)).statusCode).toBe(200);
+      const again = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+      expect(again.record.alternateNames.find((n) => n.name.tr === `Ad ${tag}`)?.note).toEqual(note);
+      expect(again.record.architect.candidates.find((c) => c.name === `Mimar ${tag}`)?.note).toEqual(note);
+
+      const read = async (lang: string) => AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${ASSET}?lang=${lang}` })).json());
+      const en = await read("en");
+      expect(en.alternateNames.find((n) => n.name === `Ad ${tag}`)?.note).toBe(note.en);
+      expect(en.architect?.candidates.find((c) => c.name === `Mimar ${tag}`)?.note).toBe(note.en);
+      expect((await read("tr")).alternateNames.find((n) => n.name === `Ad ${tag}`)?.note).toBe(note.tr);
+    } finally {
+      await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, record);
+    }
+  });
+
+  it("keeps the blocks added to the dossier, serves them by language, and checks them", async () => {
+    const { record } = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+    const block = { id: `ek-${tag}`, title: { tr: "Onarımlar", en: "Repairs" }, body: { tr: "## Son onarım\n**Kalın** metin", en: "## Last repair\n**Bold** text" }, after: "timeline" };
+    const second = { id: `ek2-${tag}`, title: { tr: "Yalnız Türkçe", en: null }, body: { tr: "Metin", en: null }, after: `custom:ek-${tag}` };
+    const save = (customBlocks: unknown[]) => call("PUT", `/admin/assets/${ASSET}/record`, admin.token, { ...record, customBlocks });
+    const read = async (lang: string) => AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${ASSET}?lang=${lang}` })).json()).customBlocks;
+    try {
+      expect((await save([block, second])).statusCode).toBe(200);
+      const again = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
+      expect(again.record.customBlocks).toEqual([block, second]);
+
+      expect(await read("en")).toEqual([
+        { id: block.id, title: "Repairs", body: block.body.en, after: "timeline" },
+        { id: second.id, title: "Yalnız Türkçe", body: "Metin", after: second.after },
+      ]);
+      expect((await read("tr"))[0]?.body).toBe(block.body.tr);
+
+      expect((await save([{ ...block, body: { tr: " ", en: null } }])).statusCode).toBe(400);
+      expect((await save([block, block])).statusCode).toBe(400);
+      expect((await save([{ ...block, after: "<script>" }])).statusCode).toBe(400);
+    } finally {
+      await call("PUT", `/admin/assets/${ASSET}/record`, admin.token, record);
+    }
+    expect(await read("tr")).toEqual([]);
+  });
+
   it("adds a new asset with its whole record", async () => {
     const { record: base } = AdminAssetRecordResponseSchema.parse((await call("GET", `/admin/assets/${ASSET}/record`, admin.token)).json());
     const record = {
