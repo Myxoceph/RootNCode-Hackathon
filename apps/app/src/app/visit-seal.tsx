@@ -23,13 +23,13 @@ import { unlockAsset, unlockForDemo, useUnlockedAssets } from "@/lib/unlocked-as
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
-import { kmBetween } from "@/map/dense-area";
 import { localeTag, useLang, useMessages } from "@/i18n";
 
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
 /** The target must stay in view this long before the visit is sealed, so a passing glimpse does not count. */
 const HOLD_MS = 1000;
 /** Where the stamp's one animated value stands as the seal hangs over the page, and as it strikes. */
+const POSITION_WAIT_MS = 5000;
 const STAMP_HANGS = 0.6;
 const STAMP_STRIKES = 0.8;
 
@@ -246,18 +246,14 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
   const seal = useCallback(async () => {
     go({ name: "sending" });
     if (!communityAvailable) return go({ name: "failed", message: w.needsServer });
-    const position = await currentPosition();
-    const point = asset.coordinates;
-    // The API checks the same; saying it here names the distance and saves a request.
-    if (point && !point.approximate) {
-      if (!position) return go({ name: "failed", message: w.needsLocation });
-      const meters = Math.round(kmBetween(position, point) * 1000);
-      if (meters > VISIT_RADIUS_METERS) {
-        return go({ name: "failed", message: w.tooFar(formatMeters(meters), VISIT_RADIUS_METERS) });
-      }
-    }
+    // The API alone decides whether the position is needed: with DEMO_UNLOCK a printed photo seals from anywhere.
+    // A slow fix indoors must not hold up the seal, and the API says if it needed one.
+    const position = await Promise.race([
+      currentPosition(),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), POSITION_WAIT_MS)),
+    ]);
     await send(position);
-  }, [asset.coordinates, send, go, w]);
+  }, [send, go, w]);
 
   const onEvent = useCallback(
     (event: TrackerEvent) => {
@@ -508,10 +504,6 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
       </Animated.View>
     </ScrollView>
   );
-}
-
-function formatMeters(meters: number): string {
-  return meters >= 1000 ? `${(meters / 1000).toLocaleString(localeTag(), { maximumFractionDigits: 1 })} km` : `${meters} m`;
 }
 
 const styles = StyleSheet.create({

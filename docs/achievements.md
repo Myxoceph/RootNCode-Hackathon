@@ -9,8 +9,10 @@ adminler panelden yeni başarım ekleyebilir, düzenleyebilir ya da kapatabilir 
 - **Ziyaret** `POST /assets/:id/visit` ile kaydedilir. Eserin koordinatı varsa ziyaretçi 200 m içinde olmalıdır (`verified: true`).
   Koordinatı olmayan eserin ziyareti doğrulanmadan kabul edilir ve başarımlara yine sayılır. Her eser kullanıcı başına bir kez (ilk ziyaret) sayılır.
 - **Deneme kilidi:** uygulamadaki "Kilidi aç" (`POST /assets/:id/visit/unlock`) eserde olmadan kanıtsız bir ziyaret
-  yazar; ziyaret rozetleri ve puanı gelir, mühür rozetleri gelmez. Ziyaret Mührü'nde fotoğraf zorunlu olunca
-  `DEMO_UNLOCK=false` ile kapatılır.
+  yazar; ziyaret rozetleri ve puanı gelir, mühür rozetleri gelmez.
+- **Basılı fotoğrafla mühür:** `DEMO_UNLOCK` açıkken `POST /assets/:id/visit/proof` konuma bakmaz. Eserin mühür fotoğrafı
+  (`visitSealTarget`) kâğıttan ya da slayttan kameraya gösterilince ziyaret mühürlenir ve mühür rozetleri de gelir;
+  ziyaret `verified: false` kalır. Eserde olmak şart olunca `DEMO_UNLOCK=false` ile ikisi de kapanır.
 - **İlerleme** `GET /me/achievements` ile okunur; kazanılan başarımlar bu çağrıda ve ziyaret yanıtında kaydedilir.
   Yanıt etkinlik puanını, mühürlenen ziyaret sayısını ve not/fotoğraf sayılarını (onaylanan, bekleyen) da verir.
 - **Rozet kutlaması:** Yeni kazanılan rozet, kazanıldığı ekranın üstünde bir sahneyle açılır (rozet gri döner,
