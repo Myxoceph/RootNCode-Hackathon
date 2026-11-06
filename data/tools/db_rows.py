@@ -69,9 +69,9 @@ TABLES = {
     ],
     "media_variant": ["media_id", "format", "width", "height", "bytes", "key"],
     "asset_media": [
-        "asset_id", "media_key", "media_id", "sort_order", "is_cover", "subject", "dossier_after", "focal_x", "focal_y",
+        "asset_id", "media_key", "media_id", "sort_order", "is_cover", "subject", "focal_x", "focal_y",
         "caption_tr", "caption_en", "alt_tr", "alt_en", "archive_year", "archive_year_approx",
-        "overlay_opacity", "overlay_aspect", "shooting_hint_tr", "shooting_hint_en",
+        "overlay_opacity", "overlay_aspect", "shooting_hint_tr", "shooting_hint_en", "dossier_after",
     ],
     "inscription": [
         "asset_id", "slug", "sort_order", "location_tr", "location_en", "language", "script", "transliteration",
