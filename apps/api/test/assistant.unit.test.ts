@@ -254,7 +254,7 @@ describe("transit_route tool", () => {
 });
 
 describe("plan_trip tool", () => {
-  async function plannedDate(hour: number, date?: string) {
+  async function plannedDate(hour: number, date?: string, duration = "1") {
     let query: Record<string, string> = {};
     const context: ToolContext = {
       api: async (_path, q) => {
@@ -267,12 +267,19 @@ describe("plan_trip tool", () => {
       today: "2026-10-31",
       hour,
     };
-    await runTool("plan_trip", JSON.stringify({ city: "bursa", duration: "1", ...(date && { date }) }), context);
+    await runTool("plan_trip", JSON.stringify({ city: "bursa", duration, ...(date && { date }) }), context);
     return query.date;
   }
 
   it("starts a trip asked for in the evening tomorrow", async () => {
     expect(await plannedDate(20)).toBe("2026-11-01");
+  });
+
+  it("accepts up to five days and rejects more", async () => {
+    expect(await plannedDate(10, undefined, "5")).toBeUndefined();
+    const context = { api: async () => ({ statusCode: 404, body: {} }), sources: new SourceRegistry(), lang: "tr", today: "2026-10-31", hour: 10 } as never;
+    const { content } = await runTool("plan_trip", JSON.stringify({ city: "bursa", duration: "6" }), context);
+    expect(content).toContain("Invalid arguments");
   });
 
   it("leaves the planner's own default (today) during the day, and keeps a date the model gave", async () => {
