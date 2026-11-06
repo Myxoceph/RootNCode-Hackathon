@@ -3,6 +3,8 @@
  * the stops, weather and food are from the Hayrat design, the rules are its
  * prototype rule engine.
  */
+import { getLang, getMessages } from "@/i18n";
+
 export type RegionKey = "bursa" | "edirne";
 export type Region = RegionKey | "both";
 export type Duration = "half" | "1" | "2";
@@ -77,9 +79,49 @@ export const cityRoutes: Record<RegionKey, CityRoute> = {
   },
 };
 
+/** The same two cities' sample content in English: the rules read the same numbers. */
+const cityRoutesEn: Record<RegionKey, CityRoute> = {
+  bursa: {
+    city: "Bursa",
+    title: "Bursa's Early Complexes Route",
+    weather: [
+      { day: "Mon 12 Oct", high: 19, low: 11, sky: "Partly cloudy", rain: 40, afternoonRain: true, icon: "cloud" },
+      { day: "Tue 13 Oct", high: 21, low: 12, sky: "Sunny", rain: 5, afternoonRain: false, icon: "sunny" },
+    ],
+    stops: [
+      { name: "Grand Mosque (Ulu Cami)", importance: 10, hours: 0.75, outdoor: 0.1, tag: "Mosque" },
+      { name: "Green Mosque and Green Tomb", importance: 9, hours: 1, outdoor: 0.3, tag: "Mosque, tomb" },
+      { name: "Koza Han", importance: 8, hours: 0.5, outdoor: 0.85, tag: "Inn, open courtyard" },
+      { name: "Orhan Gazi Complex and Emir Han", importance: 8, hours: 0.75, outdoor: 0.5, tag: "Complex" },
+      { name: "Muradiye Complex", importance: 7, hours: 1.5, outdoor: 0.6, tag: "Complex, tomb garden" },
+      { name: "Yıldırım Complex", importance: 6, hours: 0.75, outdoor: 0.4, tag: "Complex" },
+    ],
+    lunch: { name: "İskender", where: "Hanlar District" },
+    dessert: { name: "Candied chestnuts", where: "Koza Han courtyard" },
+  },
+  edirne: {
+    city: "Edirne",
+    title: "Edirne's Sultans' Complexes Route",
+    weather: [
+      { day: "Mon 12 Oct", high: 17, low: 8, sky: "Sunny", rain: 0, afternoonRain: false, icon: "sunny" },
+      { day: "Tue 13 Oct", high: 16, low: 9, sky: "Partly cloudy", rain: 20, afternoonRain: false, icon: "cloud" },
+    ],
+    stops: [
+      { name: "Selimiye Mosque", importance: 10, hours: 1.25, outdoor: 0.2, tag: "Mosque" },
+      { name: "Complex of Bayezid II (Health Museum)", importance: 9, hours: 1.5, outdoor: 0.5, tag: "Complex, hospital" },
+      { name: "Üç Şerefeli Mosque", importance: 8, hours: 0.75, outdoor: 0.3, tag: "Mosque" },
+      { name: "Old Mosque (Eski Cami)", importance: 7, hours: 0.5, outdoor: 0.1, tag: "Mosque" },
+      { name: "Rüstem Pasha Caravanserai", importance: 6, hours: 0.5, outdoor: 0.7, tag: "Caravanserai, courtyard" },
+      { name: "Selimiye Arasta", importance: 6, hours: 0.5, outdoor: 0, tag: "Arasta" },
+    ],
+    lunch: { name: "Pan-fried liver", where: "Saraçlar Street" },
+    dessert: { name: "Almond paste", where: "Selimiye Arasta" },
+  },
+};
+
 export type PlanItem =
   | { kind: "stop"; minutes: number; stop: RouteStop }
-  | { kind: "food"; minutes: number; label: "Öğle molası" | "Tatlı durağı" | "Lezzet durağı"; name: string; where: string };
+  | { kind: "food"; minutes: number; label: string; name: string; where: string };
 
 export interface DayPlan {
   city: string;
@@ -119,12 +161,12 @@ function planDay(route: CityRoute, stops: RouteStop[], weather: Weather, budgetH
     items.push({ kind: "stop", minutes: t, stop });
     t += Math.round(stop.hours * 60) + WALK_MINUTES;
     if (!hadLunch && t >= 12 * 60) {
-      items.push({ kind: "food", minutes: t, label: "Öğle molası", ...route.lunch });
+      items.push({ kind: "food", minutes: t, label: getMessages().planner.lunch, ...route.lunch });
       t += 60;
       hadLunch = true;
     }
   }
-  items.push({ kind: "food", minutes: t, label: "Tatlı durağı", ...route.dessert });
+  items.push({ kind: "food", minutes: t, label: getMessages().planner.dessert, ...route.dessert });
 
   const allHours = picked.reduce((sum, s) => sum + s.hours, 0);
   const outdoorHours = picked.reduce((sum, s) => sum + s.hours * s.outdoor, 0);
@@ -133,26 +175,27 @@ function planDay(route: CityRoute, stops: RouteStop[], weather: Weather, budgetH
 
 export function planRoute(region: Region, duration: Duration): RoutePlan {
   const budget = duration === "half" ? 4.5 : 7.5;
-  const bursa = cityRoutes.bursa;
-  const edirne = cityRoutes.edirne;
+  const routes = getLang() === "en" ? cityRoutesEn : cityRoutes;
+  const w = getMessages().planner;
+  const bursa = routes.bursa;
+  const edirne = routes.edirne;
 
   if (region === "both") {
     if (duration !== "2") {
       return {
         title: bursa.title,
-        notice:
-          "Bursa ile Edirne arası yaklaşık 4 saat yol. İki şehir için en az 2 gün öneriyoruz; şimdilik yalnızca Bursa planlandı.",
+        notice: w.bothNotice,
         days: [planDay(bursa, bursa.stops, bursa.weather[0], budget)],
       };
     }
     return {
-      title: "İki Başkent: Bursa ve Edirne",
+      title: w.bothTitle,
       notice: null,
       days: [planDay(bursa, bursa.stops, bursa.weather[0], budget), planDay(edirne, edirne.stops, edirne.weather[1], budget)],
     };
   }
 
-  const route = cityRoutes[region];
+  const route = routes[region];
   if (duration === "2") {
     const sorted = [...route.stops].sort((a, b) => b.importance - a.importance);
     const half = Math.ceil(sorted.length / 2);
@@ -171,12 +214,13 @@ export function planRoute(region: Region, duration: Duration): RoutePlan {
 /** One sentence on how the weather shaped the day. */
 export function weatherAdvice(day: DayPlan): string {
   const w = day.weather;
+  const words = getMessages().planner;
   if (w.afternoonRain) {
     const open = day.stops.filter((s) => s.outdoor >= 0.5).map((s) => s.name.split(" ").slice(0, 2).join(" "));
-    return `Öğleden sonra %${w.rain} yağış ihtimali var. Açık avlulu duraklar${open.length ? ` (${open.join(", ")})` : ""} sabaha alındı, kapalı mekânlar öğleden sonraya.`;
+    return words.rainAdvice(w.rain, open.join(", "));
   }
-  if (w.rain > 15) return `Hafif yağış ihtimali (%${w.rain}). Avlu duraklarında küçük bir şemsiye yeter.`;
-  return "Hava açık. Avlular ve türbe bahçeleri için iyi bir gün.";
+  if (w.rain > 15) return words.lightRainAdvice(w.rain);
+  return words.clearAdvice;
 }
 
 export function formatClock(minutes: number): string {

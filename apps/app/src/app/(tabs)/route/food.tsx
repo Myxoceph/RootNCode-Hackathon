@@ -1,8 +1,10 @@
 import { Button, fontFamily, radius, spacing, Text, useTheme } from "@vagabonds/ui";
 import Head from "expo-router/head";
+import { useMemo } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 
-import { bursaDishes, type Dish } from "@/content/food";
+import { bursaDishesNow, type Dish } from "@/content/food";
+import { useLang, useMessages } from "@/i18n";
 import { toggleDish, useAddedDishes } from "@/lib/route-plan";
 
 /**
@@ -11,15 +13,18 @@ import { toggleDish, useAddedDishes } from "@/lib/route-plan";
  */
 export default function FoodScreen() {
   const { colors: c } = useTheme();
+  const m = useMessages();
   const added = useAddedDishes();
+  const lang = useLang();
+  const dishes = useMemo(() => bursaDishesNow(), [lang]);
 
   return (
     <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={styles.content}>
       <Head>
-        <title>Lezzet Durakları · Vagabonds</title>
+        <title>{m.common.title(m.screens.foodStops)}</title>
       </Head>
-      <Text color="textSecondary">Bursa · rotanın mola noktaları</Text>
-      {bursaDishes.map((dish) => (
+      <Text color="textSecondary">{m.planner.foodIntro}</Text>
+      {dishes.map((dish) => (
         <DishCard key={dish.id} dish={dish} added={added.includes(dish.id)} />
       ))}
     </ScrollView>
@@ -27,6 +32,7 @@ export default function FoodScreen() {
 }
 
 function DishCard({ dish, added }: { dish: Dish; added: boolean }) {
+  const w = useMessages().planner;
   const { colors: c } = useTheme();
   const accent = c[dish.color];
 
@@ -59,9 +65,9 @@ function DishCard({ dish, added }: { dish: Dish; added: boolean }) {
           </Text>
         </View>
         <Button
-          label={added ? "Rotada ✓" : "Rotaya ekle"}
+          label={added ? w.onRoute : w.addToRoute}
           // Starts with the visible words, so voice control ("Rotaya ekle'ye dokun") finds it (WCAG 2.5.3).
-          accessibilityLabel={`${added ? "Rotada" : "Rotaya ekle"}: ${dish.name}`}
+          accessibilityLabel={`${added ? w.onRouteLabel : w.addToRoute}: ${dish.name}`}
           variant="ghost"
           selected={added}
           onPress={() => toggleDish(dish.id)}
