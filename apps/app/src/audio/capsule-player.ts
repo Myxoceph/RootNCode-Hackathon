@@ -1,19 +1,10 @@
-import { createAudioPlayer, setAudioModeAsync, type AudioPlayer, type AudioSource } from "expo-audio";
+import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from "expo-audio";
 import { useSyncExternalStore } from "react";
 import { AppState } from "react-native";
 
-import { CAPSULE_SECONDS, capsules, type CapsuleType } from "@/content/capsules";
+import { CAPSULE_SECONDS, type CapsuleType } from "@/content/capsules";
 
-import { isMissing, markMissing, recordingUrl } from "./sounds";
-import { standInSounds } from "./stand-ins";
-import { startSynth, unlockAudio, type SynthHandle } from "./synth";
-
-/**
- * Where the sound comes from: the CC0 recording (H9), else a stand-in, the
- * synthesized ambience (live on the web, recorded on phones; see ./stand-ins.ts).
- * `null`: no sound could start; the captions still run.
- */
-export type CapsuleSource = "recording" | "stand-in" | null;
+import { capsuleSounds } from "./sounds";
 
 /**
  * One capsule plays at a time, app-wide: the Kapsül tab and the mini player on
@@ -22,16 +13,25 @@ export type CapsuleSource = "recording" | "stand-in" | null;
 export interface PlayerState {
   type: CapsuleType;
   elapsed: number;
-  source: CapsuleSource;
+  /** The sound is playing; false when it could not start, and the captions run on without it. */
+  audible: boolean;
   /** The sound is starting; captions start with it. */
   loading: boolean;
+  /** Silenced by the visitor; the capsule runs on, so the sound can come back at the same moment. */
+  muted: boolean;
 }
 
-/** How long a file may take to start playing before the next sound is tried. */
+/** How long the sound may take to start playing before the capsule runs on without it. */
 const START_TIMEOUT_MS = 4000;
+/** The sound rises from silence and sinks back into it, whatever the file itself does. */
+const FADE_SECONDS = 2;
+
+/** How loud the capsule is at a moment of its length, 0 to 1. */
+export function capsuleGain(seconds: number): number {
+  return Math.max(0, Math.min(1, seconds / FADE_SECONDS, (CAPSULE_SECONDS - seconds) / FADE_SECONDS));
+}
 
 let state: PlayerState | null = null;
-let synth: SynthHandle | null = null;
 let audio: AudioPlayer | null = null;
 /** Stops waiting for the current file to start. */
 let cancelStart: (() => void) | null = null;
@@ -71,8 +71,6 @@ export function stopCapsule() {
   cancelStart = null;
   if (timer) clearInterval(timer);
   timer = null;
-  synth?.stop();
-  synth = null;
   if (audio) release(audio);
   audio = null;
   state = null;
@@ -80,51 +78,38 @@ export function stopCapsule() {
 }
 
 /**
- * Starts in the tap itself (Safari lets audio start only there): the recording first; if it
- * fails or does not start in time, the stand-in. The captions start with the sound.
+ * Starts in the tap itself (Safari lets audio start only there). If the sound fails or does
+ * not start in time, the capsule runs silently, captions only. The captions start with the sound.
  */
 export function playCapsule(type: CapsuleType) {
   stopCapsule();
-  unlockAudio();
   setAudioMode();
   const id = run;
-  state = { type, elapsed: 0, source: null, loading: true };
+  state = { type, elapsed: 0, audible: false, loading: true, muted: false };
   emit();
 
-  const key = capsules[type].soundKey;
-  if (isMissing(key)) playStandIn(id, type);
-  else
-    playFile(id, type, { uri: recordingUrl(key) }, "recording", () => {
-      markMissing(key);
-      playStandIn(id, type);
-    });
+  startSound(id, type);
 }
 
-function playStandIn(id: number, type: CapsuleType) {
-  if (standInSounds) {
-    playFile(id, type, standInSounds[type], "stand-in", () => begin(id, type, null));
-    return;
-  }
-  synth = startSynth(type);
-  begin(id, type, synth ? "stand-in" : null);
-}
-
-/** Plays `file`; `begin`s once it is audible, or calls `onFail` on an error or a timeout. */
-function playFile(id: number, type: CapsuleType, file: AudioSource, source: CapsuleSource, onFail: () => void) {
+/** `begin`s once the sound is audible, or without it on an error or a timeout. */
+function startSound(id: number, type: CapsuleType) {
   let player: AudioPlayer;
   try {
-    player = createAudioPlayer(file);
+    player = createAudioPlayer(capsuleSounds[type]);
   } catch {
-    onFail();
+    begin(id, type, false);
     return;
   }
   audio = player;
+  // A file shorter than the capsule starts again; a longer one is cut by the fade at the end.
+  player.loop = true;
+  player.volume = 0;
   const sub = player.addListener("playbackStatusUpdate", (status) => {
     if (status.error) fail();
     // `playing` alone is not enough: the web reports it on `play()`, before the file has loaded.
     else if (status.playing && !status.isBuffering && status.currentTime > 0) {
       done();
-      begin(id, type, source);
+      begin(id, type, true);
     }
   });
   const timeout = setTimeout(fail, START_TIMEOUT_MS);
@@ -138,16 +123,16 @@ function playFile(id: number, type: CapsuleType, file: AudioSource, source: Caps
     if (id !== run) return;
     release(player);
     if (audio === player) audio = null;
-    onFail();
+    begin(id, type, false);
   }
   cancelStart = done;
   player.play();
 }
 
-function begin(id: number, type: CapsuleType, source: CapsuleSource) {
+function begin(id: number, type: CapsuleType, audible: boolean) {
   if (id !== run) return;
   const startedAt = Date.now();
-  state = { type, elapsed: 0, source, loading: false };
+  state = { type, elapsed: 0, audible, loading: false, muted: state?.muted ?? false };
   timer = setInterval(() => {
     const elapsed = (Date.now() - startedAt) / 1000;
     if (elapsed >= CAPSULE_SECONDS || !state) {
@@ -155,6 +140,7 @@ function begin(id: number, type: CapsuleType, source: CapsuleSource) {
       return;
     }
     state = { ...state, elapsed };
+    setVolume();
     emit();
   }, 200);
   emit();
@@ -165,14 +151,16 @@ export function toggleCapsule(type: CapsuleType) {
   else playCapsule(type);
 }
 
-/** Frequency data for the visualizer, while the web synthesizes; leaves `into` untouched otherwise. */
-export function readFrequencies(into: Uint8Array<ArrayBuffer>) {
-  synth?.readFrequencies(into);
+function setVolume() {
+  if (audio && state) audio.volume = state.muted ? 0 : capsuleGain(state.elapsed);
 }
 
-/** Whether `readFrequencies` has anything to read. */
-export function hasFrequencies(): boolean {
-  return synth !== null;
+/** Silences the capsule or brings its sound back, at the same moment. */
+export function setCapsuleMuted(muted: boolean) {
+  if (!state) return;
+  state = { ...state, muted };
+  setVolume();
+  emit();
 }
 
 // Leaving the app stops the capsule (Expo Go ignores app.json's `enableBackgroundPlayback`).

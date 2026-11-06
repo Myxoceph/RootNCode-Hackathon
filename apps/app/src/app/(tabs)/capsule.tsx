@@ -1,12 +1,12 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { cameraColors, fontFamily, radius, spacing, Text, touchTarget } from "@vagabonds/ui";
 import Head from "expo-router/head";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Circle, G, Line, Rect } from "react-native-svg";
 
-import { hasFrequencies, readFrequencies, toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
+import { toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
 import { CAPSULE_SECONDS, captionAt, capsuleTypes, capsuleWords, formatSeconds, type CapsuleType } from "@/content/capsules";
 import { useLang, useMessages } from "@/i18n";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -66,7 +66,7 @@ export default function CapsuleScreen() {
         })}
       </View>
 
-      <Visualizer live={mine !== null && hasFrequencies()} />
+      <Visualizer />
 
       <View style={styles.info}>
         <Text variant="title" colorValue={cameraColors.text} style={styles.center} headingLevel={2}>
@@ -124,11 +124,9 @@ export default function CapsuleScreen() {
         >
           {settings.captions ? captionAt(type, elapsed, lang) : w.captionsOff}
         </Text>
-        {mine && !mine.loading && mine.source !== "recording" && (
+        {mine && !mine.loading && !mine.audible && (
           <Text variant="caption" colorValue={cameraColors.textSecondary}>
-            {mine.source === "stand-in"
-              ? w.standIn
-              : w.silent}
+            {w.silent}
           </Text>
         )}
       </View>
@@ -139,15 +137,13 @@ export default function CapsuleScreen() {
 const BARS = 48;
 const SIZE = 200;
 
-/** A ring that breathes with the sound's frequencies; the star stays still at its center. */
-function Visualizer({ live }: { live: boolean }) {
+/** A ring that breathes slowly; the star stays still at its center. */
+function Visualizer() {
   const reduceMotion = useReducedMotion();
   const [levels, setLevels] = useState<number[]>(() => Array.from({ length: BARS }, () => 0.2));
-  const buffer = useRef(new Uint8Array(new ArrayBuffer(64)));
-  const [spin, setSpin] = useState(0);
 
   useEffect(() => {
-    if (reduceMotion && !live) return;
+    if (reduceMotion) return;
     let frame = 0;
     let last = 0;
     const t0 = Date.now();
@@ -156,19 +152,13 @@ function Visualizer({ live }: { live: boolean }) {
       // ~20 updates a second is enough for the eye and keeps the SVG re-render cheap.
       if (now - last > 50) {
         last = now;
-        if (live) {
-          readFrequencies(buffer.current);
-          setLevels(Array.from({ length: BARS }, (_, i) => (buffer.current[(i % 24) + 2] ?? 0) / 255));
-          if (!reduceMotion) setSpin(((now - t0) / 9000) * (180 / Math.PI));
-        } else {
-          setLevels(Array.from({ length: BARS }, (_, i) => 0.18 + 0.12 * Math.sin(i * 0.9 + (now - t0) / 1600)));
-        }
+        setLevels(Array.from({ length: BARS }, (_, i) => 0.18 + 0.12 * Math.sin(i * 0.9 + (now - t0) / 1600)));
       }
       frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [live, reduceMotion]);
+  }, [reduceMotion]);
 
   return (
     <View style={styles.viz} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
@@ -191,7 +181,7 @@ function Visualizer({ live }: { live: boolean }) {
             />
           );
         })}
-        <G stroke={cameraColors.gold} strokeWidth={1.6} fill="none" transform={`rotate(${spin})`}>
+        <G stroke={cameraColors.gold} strokeWidth={1.6} fill="none">
           <Rect x={-22} y={-22} width={44} height={44} />
           <Rect x={-22} y={-22} width={44} height={44} transform="rotate(45)" />
         </G>

@@ -1,7 +1,6 @@
 /**
  * Runs code in headless Chrome (CHROME_PATH, default: the macOS install) for the build
- * scripts that need a browser: MindAR's compiler (./mindar-compiler.mts) and the capsule
- * stand-in sounds (./render-capsule-sounds.mts). No network needed.
+ * scripts that need a browser: MindAR's compiler (./mindar-compiler.mts). No network needed.
  */
 import { spawn } from "node:child_process";
 import { mkdtempSync, rmSync } from "node:fs";
