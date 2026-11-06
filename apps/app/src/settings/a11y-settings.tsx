@@ -1,5 +1,6 @@
 import { getTheme, UiProvider } from "@vagabonds/ui";
-import { createContext, useCallback, useContext, useMemo, useState, type PropsWithChildren } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type PropsWithChildren } from "react";
+import { Platform } from "react-native";
 
 import {
   DEFAULT_THEME_PREFERENCE,
@@ -9,6 +10,9 @@ import {
   type ThemePreference,
 } from "@/theme";
 import { useMessages } from "@/i18n";
+
+import { readA11ySettings, writeA11ySettings } from "./a11y-storage";
+import { applyFocusRing } from "./focus-ring";
 
 /** The switches on the Profil screen (module 8). They apply to every screen at once. */
 export interface A11ySettings {
@@ -53,12 +57,30 @@ interface A11ySettingsProviderProps extends PropsWithChildren {
 }
 
 /**
- * Holds the settings for this session and hands the matching theme to the design system.
- * The theme choice is saved on the device; the other switches reset when the app restarts.
+ * Holds the settings and hands the matching theme to the design system. The theme choice and the
+ * switches are saved on the device, so they are the same after a restart.
  */
 export function A11ySettingsProvider({ storedThemePreference, children }: A11ySettingsProviderProps) {
   const systemScheme = useColorScheme();
   const [settings, setSettings] = useState(defaultA11ySettings);
+  // A switch turned before the saved ones are read wins over them.
+  const touched = useRef(new Set<keyof A11ySettings>());
+  useEffect(() => {
+    let active = true;
+    readA11ySettings(defaultA11ySettings).then((saved) => {
+      if (!active) return;
+      setSettings((current) => {
+        const next = { ...current };
+        for (const key of Object.keys(saved) as Array<keyof A11ySettings>) {
+          if (!touched.current.has(key)) next[key] = saved[key]!;
+        }
+        return next;
+      });
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
   const [chosenThemePreference, setChosenThemePreference] = useState<ThemePreference>();
   const themePreference = chosenThemePreference ?? storedThemePreference ?? DEFAULT_THEME_PREFERENCE;
   const scheme = resolveColorScheme(themePreference, systemScheme);
@@ -69,7 +91,12 @@ export function A11ySettingsProvider({ storedThemePreference, children }: A11ySe
   }, []);
 
   const setSetting = useCallback<A11yContextValue["setSetting"]>((key, value) => {
-    setSettings((current) => ({ ...current, [key]: value }));
+    touched.current.add(key);
+    setSettings((current) => {
+      const next = { ...current, [key]: value };
+      void writeA11ySettings(next);
+      return next;
+    });
   }, []);
 
   const words = useMessages().ui;
@@ -82,6 +109,11 @@ export function A11ySettingsProvider({ storedThemePreference, children }: A11ySe
     }),
     [words, scheme, settings.highContrast, settings.largeText, settings.strongFocusRing],
   );
+  // The web's focus ring follows the switch and the theme on every control, not only on Button.
+  const ringColor = ui.theme.colors.focusRing;
+  useEffect(() => {
+    if (Platform.OS === "web") applyFocusRing(ringColor, settings.strongFocusRing);
+  }, [ringColor, settings.strongFocusRing]);
   const value = useMemo(
     () => ({ settings, setSetting, themePreference, setThemePreference }),
     [settings, setSetting, themePreference, setThemePreference],

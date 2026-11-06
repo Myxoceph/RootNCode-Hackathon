@@ -77,7 +77,9 @@ export type MapPageCommand =
   /** The map tour's "Düğmeye dokun": "Kilidini aç" stands over the chosen asset however it was chosen (a card too). */
   | { type: "offerUnlock"; on: boolean }
   /** The app's language changed: the page's own words follow, the map stays as it is. */
-  | { type: "words"; words: MapPageWords };
+  | { type: "words"; words: MapPageWords }
+  /** "Büyük metin": the page's buttons and the names on the map grow by this much. */
+  | { type: "textScale"; scale: number };
 
 export function parseMapPageEvent(data: unknown): MapPageEvent | null {
   if (typeof data !== "string") return null;
@@ -153,9 +155,9 @@ export function mapPageHtml({
   #network { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
   /* "Kilidini aç" over the chosen locked seal: white with night-blue words, pointing down at it. */
   .unlock {
-    position: relative; display: flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px 0 11px;
+    position: relative; display: flex; align-items: center; gap: 6px; height: calc(36px * var(--text, 1)); padding: 0 14px 0 11px;
     border: 1px solid rgba(10, 20, 40, 0.12); border-radius: 18px; background: #fff; color: ${colors.seal.lockEdge};
-    font: 600 14px/1 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; white-space: nowrap;
+    font: 600 calc(14px * var(--text, 1))/1 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; white-space: nowrap;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); cursor: pointer; transform-origin: 50% 100%; -webkit-tap-highlight-color: transparent;
   }
   .unlock::after {
@@ -175,10 +177,10 @@ export function mapPageHtml({
   @keyframes branch-grow { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
   @keyframes branch-out { from { opacity: 0; transform: translate(calc(var(--ex) + var(--dx)), calc(var(--ey) + var(--dy))) scale(0.4); } to { opacity: 1; transform: translate(var(--ex), var(--ey)); } }
   .open-actions button, .related-bar button {
-    display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 11px 0 5px;
+    display: flex; align-items: center; gap: 6px; height: calc(34px * var(--text, 1)); padding: 0 11px 0 5px;
     border: 1px solid rgba(10, 20, 40, 0.12); border-radius: 17px; background: #fff; color: ${colors.seal.lockEdge};
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-    font: 600 12.5px/1 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; white-space: nowrap; cursor: pointer; -webkit-tap-highlight-color: transparent;
+    font: 600 calc(12.5px * var(--text, 1))/1 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; white-space: nowrap; cursor: pointer; -webkit-tap-highlight-color: transparent;
   }
   .open-actions button[hidden] { display: none; }
   .related-bar { position: fixed; left: 12px; right: 12px; z-index: 5; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
@@ -323,7 +325,7 @@ export function mapPageHtml({
   @keyframes scene-title-out { to { opacity: 0; transform: translateY(-10px); } }
   .scene-found {
     display: block; margin-bottom: 7px; color: ${colors.seal.lock}; letter-spacing: 3.5px;
-    font: 700 12px/1.2 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+    font: 700 calc(12px * var(--text, 1))/1.2 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
     animation: scene-found 0.5s 1.55s cubic-bezier(0.2, 1, 0.4, 1) both;
   }
   @keyframes scene-found { from { opacity: 0; letter-spacing: 12px; } to { opacity: 1; letter-spacing: 3.5px; } }
@@ -355,8 +357,38 @@ let fitted = false;
 /** Set by start() once the map exists. */
 const actions = {};
 
+/** "Büyük metin", sent by the app: the size of every word the page draws is multiplied by it. */
+let TEXT_SCALE = 1;
+/** A text size for a names layer, at the current scale; a zoom curve has each of its sizes scaled. */
+function named(id, size) {
+  TEXT_LAYERS[id] = size;
+  return textSize(size);
+}
+function textSize(size) {
+  if (typeof size === "number") return size * TEXT_SCALE;
+  return size.map((part, index) => (index > 3 && index % 2 === 0 && typeof part === "number" ? part * TEXT_SCALE : part));
+}
+/** The names layers and their sizes at scale 1, so a new scale can be set on them. */
+const TEXT_LAYERS = {};
+function applyTextScale() {
+  document.documentElement.style.setProperty("--text", String(TEXT_SCALE));
+  if (!actions.map) return;
+  for (const id of Object.keys(TEXT_LAYERS)) {
+    try {
+      if (actions.map.getLayer(id)) actions.map.setLayoutProperty(id, "text-size", textSize(TEXT_LAYERS[id]));
+    } catch {
+      // The style is still loading; the layer takes the scale when it is added.
+    }
+  }
+}
+
 window.vagabondsMap = {
   receive(command) {
+    if (command.type === "textScale") {
+      TEXT_SCALE = command.scale;
+      applyTextScale();
+      return;
+    }
     if (command.type === "words") {
       WORDS = command.words;
       document.querySelector(".maplibregl-ctrl-attrib-button")?.setAttribute("aria-label", WORDS.sources);
@@ -453,7 +485,7 @@ function start() {
       type: "symbol",
       source: "assets",
       filter: ["has", "point_count"],
-      layout: { "text-field": ["get", "point_count_abbreviated"], "text-font": ["Noto Sans Regular"], "text-size": 13 },
+      layout: { "text-field": ["get", "point_count_abbreviated"], "text-font": ["Noto Sans Regular"], "text-size": named("cluster-count", 13) },
       paint: { "text-color": colors.onCluster },
     });
     map.addLayer({
@@ -523,7 +555,7 @@ function start() {
         layout: {
           "text-field": ["get", "name"],
           "text-font": ["Noto Sans Bold"],
-          "text-size": ["interpolate", ["linear"], ["zoom"], 4, 10, 8, 13],
+          "text-size": named("province-names", ["interpolate", ["linear"], ["zoom"], 4, 10, 8, 13]),
           "text-letter-spacing": 0.12,
           "text-padding": 6,
           "symbol-sort-key": ["-", 0, ["get", "rank"]],
@@ -669,7 +701,7 @@ function start() {
       layout: {
         "text-field": ["get", "title"],
         "text-font": ["Noto Sans Regular"],
-        "text-size": 12,
+        "text-size": named("city-asset-names", 12),
         "text-max-width": 8,
         "text-line-height": 1.15,
         // Beside the badge where there is room, else under or over it.
@@ -721,7 +753,7 @@ function start() {
       id: "city-related-names",
       type: "symbol",
       source: "city-related",
-      layout: { "text-field": ["get", "title"], "text-font": ["Noto Sans Regular"], "text-size": 12, "text-max-width": 9, "text-line-height": 1.15, "text-variable-anchor": ["top", "bottom", "left", "right"], "text-radial-offset": 1.1, "text-padding": 2 },
+      layout: { "text-field": ["get", "title"], "text-font": ["Noto Sans Regular"], "text-size": named("city-related-names", 12), "text-max-width": 9, "text-line-height": 1.15, "text-variable-anchor": ["top", "bottom", "left", "right"], "text-radial-offset": 1.1, "text-padding": 2 },
       paint: { "text-color": "#fff", "text-halo-color": "rgba(13, 20, 34, 0.9)", "text-halo-width": 1.4 },
     });
 
@@ -3303,6 +3335,7 @@ function start() {
 
   map.on("render", () => draw());
 
+  actions.map = map;
   actions.showPins = showPins;
   actions.select = select;
   actions.showNetwork = showNetwork;

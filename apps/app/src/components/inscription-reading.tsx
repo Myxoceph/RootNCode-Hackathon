@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Button, fontFamily, SourceNote, spacing, Text, touchTarget, useTheme, useUi } from "@vagabonds/ui";
+import { Button, fontFamily, SourceNote, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
 import { useEffect, type ReactNode } from "react";
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from "react-native";
@@ -137,8 +137,7 @@ function Actions({ text, onUseCamera }: { text: InscriptionText; onUseCamera: ((
 function Bands({ text }: { text: InscriptionText }) {
   const w = useMessages().reading;
   const { colors: c } = useTheme();
-  const { textScale } = useUi();
-  const prose = { fontSize: 17 * textScale, lineHeight: 28 * textScale };
+  const prose = { fontSize: 17, lineHeight: 28 };
   const bands: Array<{ key: string; title: string; body: ReactNode }> = [];
   if (text.translation) {
     bands.push({ key: "translation", title: w.translationBand, body: <Text style={prose}>{text.translation}</Text> });
@@ -161,7 +160,7 @@ function Bands({ text }: { text: InscriptionText }) {
       key: "reading",
       title: w.transliterationBand,
       body: (
-        <Text style={[styles.mono, { fontSize: 15 * textScale, lineHeight: 26 * textScale }]} language={text.transliterationLanguage}>
+        <Text style={[styles.mono, { fontSize: 15, lineHeight: 26 }]} language={text.transliterationLanguage}>
           {text.transliteration}
         </Text>
       ),

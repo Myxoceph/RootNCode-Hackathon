@@ -41,6 +41,8 @@ import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useMapTour } from "@/lib/map-tour";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
+import { whereFrom } from "@/lib/bearing";
+import { bondsSpoken } from "@/lib/map-bonds";
 import { relatedPlacesOf } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import {
@@ -234,6 +236,19 @@ export default function MapScreen() {
       ).map(({ asset }) => asset),
     [places, landmark],
   );
+  // For those who cannot see the map: where each place lies from the landmark the cards start at.
+  const whereOf = useMemo(() => {
+    const out = new Map<string, string>();
+    const from = landmark
+      ? places.find(({ asset }) => asset.id === landmark.id)
+      : undefined;
+    if (!from) return out;
+    for (const { asset, at } of places) {
+      if (asset.id !== from.asset.id)
+        out.set(asset.id, whereFrom({ name: from.asset.name, ...from.at }, at));
+    }
+    return out;
+  }, [places, landmark]);
   // Places of their own on one spot (often one neighbourhood centre for several assets) are drawn
   // a little apart; the cards, the camera and the distances keep the real points.
   const drawnAt = useMemo(
@@ -376,8 +391,11 @@ export default function MapScreen() {
   /** The visitor chose an asset (on the map, in the cards or the search): its buttons under the search are for it now, and that is said once. */
   function chooseAsset(id: string) {
     setChosenAsset(id);
-    const name = located.find(({ asset }) => asset.id === id)?.asset.name;
-    if (name && id !== chosenAsset) announce(m.map.selected(name));
+    const place = located.find(({ asset }) => asset.id === id);
+    if (!place || id === chosenAsset) return;
+    // The lines the map draws from it, said as well: what each related asset is and where.
+    const bonds = bondsSpoken(place.at, relations.byId[id] ?? [], placeIds);
+    announce(bonds ? `${m.map.selected(place.asset.name)} ${bonds}` : m.map.selected(place.asset.name));
   }
 
   function openAssetCard(asset: AssetSummary) {
@@ -628,6 +646,7 @@ export default function MapScreen() {
               <CityAssetList
                 title={m.map.sitesIn(placeIn(selectedCity.label, lang))}
                 assets={cards}
+                whereOf={whereOf}
                 buildingsOf={buildingsOf}
                 selectedId={chosenAsset}
                 unlocked={shownOpen}
@@ -708,6 +727,7 @@ export default function MapScreen() {
           <View style={[styles.cards, { bottom: tabBarHeight + spacing.sm }]}>
             <CityAssetCards
               assets={cards}
+              whereOf={whereOf}
               buildingsOf={buildingsOf}
               selectedId={chosenAsset}
               unlocked={shownOpen}

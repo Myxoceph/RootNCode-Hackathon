@@ -13,8 +13,7 @@ import {
   Text,
   touchTarget,
   useTheme,
-  useUi,
-} from "@vagabonds/ui";
+  } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import {
@@ -638,8 +637,7 @@ function Intro({
 
 /** Long text set for reading: short paragraphs, the opening sentence a little stronger to skim by. */
 function Prose({ text, lead = false }: { text: string; lead?: boolean }) {
-  const { textScale } = useUi();
-  const size = { fontSize: 17 * textScale, lineHeight: 28 * textScale };
+  const size = { fontSize: 17, lineHeight: 28 };
   return (
     <View style={styles.prose}>
       {paragraphsOf(text).map((paragraph, index) => {
@@ -905,7 +903,6 @@ function History({
   asset: AssetDetail;
   placed?: Map<string, Media[]>;
 }) {
-  const { textScale } = useUi();
   const photos = useMemo(() => photosForChapters(asset), [asset]);
   return (
     <View style={styles.chapters}>
@@ -922,7 +919,7 @@ function History({
                   headingLevel={3}
                   style={[
                     styles.chapterTitle,
-                    { fontSize: 21 * textScale, lineHeight: 28 * textScale },
+                    { fontSize: 21, lineHeight: 28 },
                   ]}
                 >
                   {section.title}
@@ -1107,7 +1104,6 @@ function waqf(asset: AssetDetail): ReactNode | null {
 function Waqf({ record }: { record: NonNullable<AssetDetail["waqf"]> }) {
   const { colors: c } = useTheme();
   const w = useMessages().dossier;
-  const { textScale } = useUi();
   return (
     <View style={styles.rows}>
       {record.name && (
@@ -1128,7 +1124,7 @@ function Waqf({ record }: { record: NonNullable<AssetDetail["waqf"]> }) {
           <Text
             style={[
               styles.quoteText,
-              { fontSize: 19 * textScale, lineHeight: 30 * textScale },
+              { fontSize: 19, lineHeight: 30 },
             ]}
           >
             {record.deedExcerpt}

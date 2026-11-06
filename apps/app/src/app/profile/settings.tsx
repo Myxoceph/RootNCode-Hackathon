@@ -5,7 +5,6 @@ import {
   radius,
   spacing,
   Text,
-  touchTarget,
   useTheme,
 } from "@vagabonds/ui";
 import Head from "expo-router/head";
@@ -20,7 +19,6 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { bottomInset } from "@/lib/bottom-inset";
-import { speak } from "@/lib/speak";
 import { useA11ySettings, type A11ySettings } from "@/settings/a11y-settings";
 import {
   resolveColorScheme,
@@ -132,7 +130,6 @@ export default function SystemSettingsScreen() {
         </Section>
 
         <Section title={m.settings.accessibility} note={m.settings.appliesEverywhere}>
-          {/* The switch and the sample are side by side, not one inside the other. */}
           <View
             style={[
               styles.wide,
@@ -163,7 +160,7 @@ export default function SystemSettingsScreen() {
                 />
                 <Check on={settings.audioDescription} />
               </View>
-              <View style={settings.audioDescription && styles.wideText}>
+              <View>
                 <Text variant="label" style={styles.tileTitle}>
                   {m.settings.audioDescription}
                 </Text>
@@ -172,28 +169,6 @@ export default function SystemSettingsScreen() {
                 </Text>
               </View>
             </Pressable>
-            {settings.audioDescription && (
-              <Pressable
-                accessibilityRole="button"
-                accessibilityLabel={m.settings.sampleListen}
-                onPress={() => speak(m.settings.sample)}
-                style={({ pressed }) => [
-                  styles.play,
-                  { backgroundColor: c.highlightMark },
-                  pressed && styles.pressed,
-                ]}
-              >
-                <Ionicons
-                  name="play"
-                  size={16}
-                  color={c.onPrimary}
-                  style={styles.playIcon}
-                />
-                <Text variant="label" colorValue={c.onPrimary}>
-                  {m.common.listen}
-                </Text>
-              </Pressable>
-            )}
           </View>
 
           <View style={styles.grid}>
@@ -488,10 +463,6 @@ const styles = StyleSheet.create({
     gap: spacing.md,
     padding: spacing.lg,
   },
-  // Leaves room for the "Dinle" button at the bottom right.
-  wideText: {
-    paddingRight: 96,
-  },
   grid: {
     flexDirection: "row",
     flexWrap: "wrap",
@@ -533,20 +504,6 @@ const styles = StyleSheet.create({
     margin: 1,
     borderRadius: 10,
     borderWidth: 1.5,
-  },
-  play: {
-    position: "absolute",
-    right: spacing.lg,
-    bottom: spacing.lg,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.xs,
-    minHeight: touchTarget.min - 4,
-    paddingHorizontal: spacing.md,
-    borderRadius: radius.full,
-  },
-  playIcon: {
-    marginLeft: 1,
   },
   kbd: {
     fontFamily: fontFamily.monoMedium,
