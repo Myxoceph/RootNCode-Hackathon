@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { AssetSummarySchema, ContractVersionSchema, LabeledCodeSchema, LangSchema } from "./asset.schema";
-import { TransitPlanResponseSchema } from "./transit.schema";
+import { TransitEntryPointCodeSchema, TransitPlanResponseSchema } from "./transit.schema";
 import { CityDishSchema } from "./gastronomy.schema";
 
 /**
@@ -141,6 +141,16 @@ export const TripLegTransitSchema = z.strictObject({
   rides: z.array(z.strictObject({ line: z.string().min(1), from: z.string().min(1), to: z.string().min(1) })).min(1),
 });
 
+/** How to reach the first stop from where the visitor arrives in the city (Konya pilot). */
+export const TripArrivalSchema = z.strictObject({
+  from: z.strictObject({ code: TransitEntryPointCodeSchema, name: z.string().min(1) }),
+  /** The name of day 1's first stop. */
+  to: z.string().min(1),
+  /** Estimated walk; the ride, when there is one, is the way to go. */
+  meters: z.int().min(0),
+  transit: TripLegTransitSchema.nullable(),
+});
+
 export const TripStopItemSchema = z.strictObject({
   kind: z.literal("stop"),
   /** Arrival, minutes after local midnight (540 = 09:00). */
@@ -199,6 +209,8 @@ export const TripPlanResponseSchema = z.strictObject({
   theme: z.strictObject({ kind: z.enum(["type", "era"]), code: z.string().min(1) }).nullable(),
   /** The days actually planned: less than asked for when the city runs out of sites. */
   duration: TripDurationSchema,
+  /** Set when the visitor said how they arrive. The default keeps trips saved before 0.3.32 valid. */
+  arrival: TripArrivalSchema.nullable().default(null),
   days: z.array(TripDaySchema).min(1),
   /** Visible sites matching the theme in this city. */
   candidateCount: z.int().min(0),
@@ -312,6 +324,7 @@ export type TripWeatherNoteCode = z.infer<typeof TripWeatherNoteCodeSchema>;
 export type TripItem = z.infer<typeof TripItemSchema>;
 export type TripDay = z.infer<typeof TripDaySchema>;
 export type TripLegTransit = z.infer<typeof TripLegTransitSchema>;
+export type TripArrival = z.infer<typeof TripArrivalSchema>;
 export type TripPlanResponse = z.infer<typeof TripPlanResponseSchema>;
 export type WeatherAdvice = z.infer<typeof WeatherAdviceSchema>;
 export type CurrentWeather = z.infer<typeof CurrentWeatherSchema>;
