@@ -168,6 +168,17 @@ export const NamedNoteSchema = z.strictObject({
   note: z.string().min(1).nullable(),
 });
 
+/**
+ * A block the admin added to the dossier. `body` is plain text with a few marks (`## heading`,
+ * `**bold**`, `_italic_`, `- item`, `> quote`), never HTML; the app draws it. `after` is the block it follows.
+ */
+export const CustomBlockSchema = z.strictObject({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  body: z.string().min(1),
+  after: DossierPlaceSchema,
+});
+
 export const AssetSectionSchema = z.strictObject({
   id: z.string().min(1),
   title: z.string().min(1).nullable(),
@@ -311,6 +322,7 @@ export const AssetDetailSchema = AssetSummarySchema.extend({
     })
     .nullable(),
   sections: z.array(AssetSectionSchema),
+  customBlocks: z.array(CustomBlockSchema).default([]),
   facts: z.array(AssetFactSchema),
   timeline: z.array(TimelineEventSchema),
   legends: z.array(AssetLegendSchema),

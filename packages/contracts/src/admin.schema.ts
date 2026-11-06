@@ -171,6 +171,10 @@ export const AdminAssetRecordSchema = z.strictObject({
     confidence: RecordConfidence.nullable(),
   }),
   sections: z.array(z.strictObject({ id: Slug, title: RecordText(200), body: RecordText(60000), confidence: RecordConfidence })).max(60),
+  customBlocks: z
+    .array(z.strictObject({ id: Slug, title: RecordText(200), body: RecordText(60000), after: DossierPlaceSchema }))
+    .max(30)
+    .default([]),
   highlights: z
     .array(z.strictObject({ feature: z.string().trim().max(80), title: RecordText(200), hint: RecordText(1000), sectionId: Slug.nullable() }))
     .max(40),
@@ -263,6 +267,7 @@ export const AdminAssetRecordInputSchema = AdminAssetRecordSchema.superRefine((r
   need(blank(r.summary.tr), ["summary", "tr"], "summary is required");
   need(blank(r.district), ["district"], "district is required");
   r.sections.forEach((s, i) => need(blank(s.body.tr) || blank(s.title.tr), ["sections", i], "a section needs a title and a text"));
+  r.customBlocks.forEach((b, i) => need(blank(b.body.tr) || blank(b.title.tr), ["customBlocks", i], "a block needs a title and a text"));
   r.timeline.forEach((e, i) => need(blank(e.title.tr), ["timeline", i, "title"], "an event needs a title"));
   r.facts.forEach((f, i) => need(blank(f.label.tr) || blank(f.value), ["facts", i], "a fact needs a label and a value"));
   r.legends.forEach((l, i) => need(blank(l.title.tr) || blank(l.body.tr), ["legends", i], "a legend needs a title and a text"));
@@ -273,6 +278,7 @@ export const AdminAssetRecordInputSchema = AdminAssetRecordSchema.superRefine((r
   r.alternateNames.forEach((n, i) => need(blank(n.name.tr), ["alternateNames", i, "name"], "a name is required"));
   for (const [list, ids] of [
     ["sections", r.sections.map((s) => s.id)],
+    ["customBlocks", r.customBlocks.map((b) => b.id)],
     ["timeline", r.timeline.map((e) => e.id)],
     ["facts", r.facts.map((f) => f.key)],
     ["legends", r.legends.map((l) => l.id)],
