@@ -48,6 +48,11 @@ services:
       LOG_LEVEL: info
       CORS_ORIGINS: ${PUBLIC_URL:-http://localhost}
       MEDIA_BASE_URL: ${MEDIA_BASE_URL:-https://media.allbytech.com}
+      # Photos uploaded from the panel; empty turns uploads off.
+      MEDIA_S3_ENDPOINT: ${MEDIA_S3_ENDPOINT:-}
+      MEDIA_BUCKET: ${MEDIA_BUCKET:-}
+      MEDIA_S3_ACCESS_KEY_ID: ${MEDIA_S3_ACCESS_KEY_ID:-}
+      MEDIA_S3_SECRET_ACCESS_KEY: ${MEDIA_S3_SECRET_ACCESS_KEY:-}
       ASSET_VISIBILITY: published
       # Only Caddy reaches the API (private Docker network); the rate limit keys on the client IP it forwards.
       TRUST_PROXY: uniquelocal
