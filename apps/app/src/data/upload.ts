@@ -1,6 +1,7 @@
 import { File } from "expo-file-system";
 
 import { DataError, type SchemaParser } from "./errors";
+import { getMessages } from "@/i18n";
 
 export interface UploadOptions {
   /** The file's media type, sent as Content-Type. */
@@ -22,7 +23,7 @@ export interface UploadOptions {
  */
 export async function uploadFile<T>(uri: string, url: string, schema: SchemaParser<T>, { type, token, errorFor, timeoutMs, signal, method = "POST" }: UploadOptions): Promise<T> {
   const file = new File(uri.startsWith("/") ? `file://${uri}` : uri);
-  if (!file.exists || file.size === 0) throw new DataError("rejected", "Dosya okunamadı. Tekrar dene.", [uri]);
+  if (!file.exists || file.size === 0) throw new DataError("rejected", getMessages().moreErrors.fileUnreadable, [uri]);
   const controller = new AbortController();
   let timedOut = false;
   const timer = setTimeout(() => {
@@ -42,9 +43,9 @@ export async function uploadFile<T>(uri: string, url: string, schema: SchemaPars
       signal: controller.signal,
     });
   } catch (error) {
-    if (signal?.aborted) throw new DataError("unavailable", "İstek iptal edildi.", [url]);
-    if (timedOut) throw new DataError("unavailable", "Sunucu zamanında cevap vermedi. Biraz sonra tekrar dene.", [url]);
-    throw new DataError("unavailable", "Sunucuya ulaşılamıyor. İnternet bağlantını kontrol edip tekrar dene.", [url, String(error)]);
+    if (signal?.aborted) throw new DataError("unavailable", getMessages().errors.cancelled, [url]);
+    if (timedOut) throw new DataError("unavailable", getMessages().errors.timeout, [url]);
+    throw new DataError("unavailable", getMessages().errors.unreachable, [url, String(error)]);
   } finally {
     clearTimeout(timer);
     signal?.removeEventListener("abort", cancel);
@@ -60,8 +61,8 @@ export async function uploadFile<T>(uri: string, url: string, schema: SchemaPars
     const known = typeof code === "string" ? code : null;
     throw errorFor(result.status, known, [`${result.status} ${known ?? ""} ${url}`.trim()]);
   }
-  if (body === null) throw new DataError("unavailable", "Sunucuya ulaşılamıyor. Wi-Fi giriş sayfası açıksa önce oturum aç.", [url]);
+  if (body === null) throw new DataError("unavailable", getMessages().errors.wifiLogin, [url]);
   const parsed = schema.safeParse(body);
-  if (!parsed.success) throw DataError.fromSchema("Sunucudan gelen veri", parsed.error);
+  if (!parsed.success) throw DataError.fromSchema("Sunucudan gelen veri", parsed.error, getMessages().errors.badData);
   return parsed.data;
 }

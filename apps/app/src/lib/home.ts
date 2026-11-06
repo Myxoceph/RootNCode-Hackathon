@@ -1,4 +1,5 @@
-import type { AssetSummary } from "@vagabonds/contracts";
+import type { AssetSummary, Lang } from "@vagabonds/contracts";
+
 
 /** Records whose cover is cut out on black, which looks broken at this size. */
 const NOT_FOR_SHOWCASE = new Set(["konya-selcuklu-sultan-alaeddin-ulu-camii"]);
@@ -24,10 +25,12 @@ function toRoman(value: number): string {
   return out;
 }
 
-/** The century a card's year stands in: "1399" is the 14th, "XV. yüzyıl" the 15th; null with no year. */
+/** The century a card's year stands in: "1399" is the 14th, "XV. yüzyıl" and "15th century" the 15th; null with no year. */
 export function centuryOf(yearLabel: string | null): number | null {
   if (!yearLabel) return null;
   if (/^\d{3,4}$/.test(yearLabel)) return Math.floor((Number(yearLabel) - 1) / 100) + 1;
+  const english = yearLabel.match(/^(\d{1,2})(?:st|nd|rd|th) century$/i)?.[1];
+  if (english) return Number(english);
   const roman = yearLabel.match(/^([IVX]+)\./)?.[1];
   if (!roman) return null;
   for (let century = 1; century <= 30; century++) if (toRoman(century) === roman) return century;
@@ -38,14 +41,14 @@ export interface Century {
   number: number;
   /** "XV". */
   roman: string;
-  /** "1400'ler". */
+  /** "1400'ler"; in English, "1400s". */
   decades: string;
   /** Most prominent first. */
   assets: AssetSummary[];
 }
 
 /** The centuries assets were built in, oldest first; assets with no known year are left out. */
-export function centuriesOf(assets: readonly AssetSummary[]): Century[] {
+export function centuriesOf(assets: readonly AssetSummary[], lang: Lang): Century[] {
   const byCentury = new Map<number, AssetSummary[]>();
   for (const asset of showcaseAssets(assets)) {
     const century = centuryOf(asset.yearLabel);
@@ -53,7 +56,7 @@ export function centuriesOf(assets: readonly AssetSummary[]): Century[] {
   }
   return [...byCentury.entries()]
     .sort(([a], [b]) => a - b)
-    .map(([number, items]) => ({ number, roman: toRoman(number), decades: `${(number - 1) * 100}'ler`, assets: items }));
+    .map(([number, items]) => ({ number, roman: toRoman(number), decades: lang === "en" ? `${(number - 1) * 100}s` : `${(number - 1) * 100}'ler`, assets: items }));
 }
 
 /** The century the journey opens on: the one with the best-known asset. */

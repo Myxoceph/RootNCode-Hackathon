@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { TripDay, TripItem, TripPlanResponse } from "@vagabonds/contracts";
 import {
@@ -44,15 +42,10 @@ import {
 } from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
-import { casing, useLang } from "@/i18n";
+import { localeTag, useLang, useMessages, type Messages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
-const durationLabel: Record<TripPlanResponse["duration"], string> = {
-  half: "Yarım gün",
-  "1": "1 gün",
-  "2": "2 gün",
-};
 const weatherIcon: Record<TripDay["weatherNote"]["code"], IconName> = {
   afternoon_rain: "rainy",
   rain_possible: "umbrella",
@@ -60,30 +53,18 @@ const weatherIcon: Record<TripDay["weatherNote"]["code"], IconName> = {
   clear: "sunny",
   unavailable: "cloud-outline",
 };
-const settingLabel = {
-  indoor: "Kapalı",
-  outdoor: "Açık hava",
-  mixed: "Açık + kapalı",
-} as const;
-/** The API calls them "Öğle molası" and "Tatlı durağı"; these say what the break is for. */
-const mealLabel = {
-  lunch: "Öğle yemeği molası",
-  dessert: "Tatlı molası",
-} as const;
 const NODE = 30;
 
 /** "850 m", "1,2 km". */
-function distance(meters: number): string {
-  return meters >= 1000
-    ? `${(meters / 1000).toFixed(1).replace(".", ",")} km`
-    : `${meters} m`;
+function distance(meters: number, w: Messages["saved"]): string {
+  return meters >= 1000 ? w.km(meters / 1000) : `${meters} m`;
 }
 
 /** "1 sa 20 dk", "45 dk". */
-function minutes(total: number): string {
+function minutes(total: number, w: Messages["saved"]): string {
   const h = Math.floor(total / 60);
   const m = total % 60;
-  return h > 0 ? (m > 0 ? `${h} sa ${m} dk` : `${h} sa`) : `${m} dk`;
+  return h > 0 ? w.hoursMinutes(h, m) : w.minutes(m);
 }
 
 /**
@@ -92,7 +73,8 @@ function minutes(total: number): string {
  * distance between them on the line (no walking times), and the breaks in coral.
  */
 export default function SavedTripScreen() {
-  useLang();
+  const m = useMessages();
+  const w = m.saved;
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const wide = useWideWeb();
@@ -111,9 +93,9 @@ export default function SavedTripScreen() {
       ]}
       contentInsetAdjustmentBehavior="automatic"
     >
-      <Stack.Screen options={{ title: trip?.title ?? "Rota" }} />
+      <Stack.Screen options={{ title: trip ? m.shared.tripTitle(trip.trip.city.label) : w.trip }} />
       <Head>
-        <title>{`${trip?.title ?? "Rota"} · Vagabonds`}</title>
+        <title>{m.common.title(trip ? m.shared.tripTitle(trip.trip.city.label) : w.trip)}</title>
       </Head>
 
       {trip ? (
@@ -136,13 +118,13 @@ export default function SavedTripScreen() {
           </View>
           {/* The API's note is about walking times, which this page leaves out. */}
           <Text variant="caption" color="textSecondary" style={styles.note}>
-            Yürüme mesafeleri kuş uçuşu mesafeden tahmin edilmiştir.
+            {w.walkNote}
           </Text>
           <Pressable
             accessibilityRole="button"
             onPress={() => {
               void removeRoute(trip.id);
-              announce("Rota silindi.");
+              announce(w.removed);
               router.back();
             }}
             style={({ pressed }) => [
@@ -152,13 +134,13 @@ export default function SavedTripScreen() {
           >
             <Ionicons name="trash-outline" size={17} color={c.warning} />
             <Text variant="label" color="warning">
-              Rotayı sil
+              {w.remove}
             </Text>
           </Pressable>
         </>
       ) : (
         <Text color="textSecondary" style={styles.centered}>
-          Bu rota artık kayıtlı değil.
+          {w.gone}
         </Text>
       )}
     </ScrollView>
@@ -167,6 +149,9 @@ export default function SavedTripScreen() {
 
 /** The city's band, as on its ticket in Rotalarım: title, chips, and the trip's totals. */
 function Hero({ route }: { route: TripRoute }) {
+  const lang = useLang();
+  const m = useMessages();
+  const w = m.saved;
   const { trip } = route;
   const [light, deep] = inkFor(trip.city.code);
   const meters = trip.days.reduce((sum, day) => sum + day.totals.walkMeters, 0);
@@ -174,8 +159,8 @@ function Hero({ route }: { route: TripRoute }) {
     (sum, day) => sum + day.totals.visitMinutes,
     0,
   );
-  const walk = distance(meters);
-  const saved = new Date(route.savedAt).toLocaleDateString("tr-TR", {
+  const walk = distance(meters, w);
+  const saved = new Date(route.savedAt).toLocaleDateString(localeTag(lang), {
     day: "numeric",
     month: "long",
   });
@@ -216,31 +201,31 @@ function Hero({ route }: { route: TripRoute }) {
       </Svg>
 
       <Text colorValue={palette.altin200} style={styles.city}>
-        {trip.city.label.toLocaleUpperCase(casing())}
+        {trip.city.label.toLocaleUpperCase(lang)}
       </Text>
       <Text
         colorValue={palette.white}
         style={styles.heroTitle}
         headingLevel={1}
       >
-        {route.title}
+        {m.shared.tripTitle(trip.city.label)}
       </Text>
       <View style={styles.chips}>
-        <Chip icon="sparkles" text="Rehber" />
-        <Chip icon="time-outline" text={durationLabel[trip.duration]} />
+        <Chip icon="sparkles" text={m.tabs.rehber} />
+        <Chip icon="time-outline" text={w.durations[trip.duration]} />
         <Chip icon="bookmark-outline" text={saved} />
       </View>
 
       <View
         style={styles.totals}
         accessible
-        accessibilityLabel={`${route.stops} durak, ${minutes(visit)} ziyaret, ${walk} yürüyüş`}
+        accessibilityLabel={w.totalsLabel(route.stops, minutes(visit, w), walk)}
       >
-        <Total value={String(route.stops)} label="durak" />
+        <Total value={String(route.stops)} label={w.stops} />
         <View style={styles.totalRule} />
-        <Total value={minutes(visit)} label="ziyaret" />
+        <Total value={minutes(visit, w)} label={w.visit} />
         <View style={styles.totalRule} />
-        <Total value={walk} label="yürüyüş" />
+        <Total value={walk} label={w.walk} />
       </View>
     </View>
   );
@@ -277,6 +262,8 @@ function Total({ value, label }: { value: string; label: string }) {
 
 /** One day: its weather as a note, then its stops and breaks on the timeline. */
 function Day({ day, multiDay }: { day: TripDay; multiDay: boolean }) {
+  const lang = useLang();
+  const w = useMessages().saved;
   const { colors: c } = useTheme();
   let stop = 0;
   return (
@@ -288,7 +275,7 @@ function Day({ day, multiDay }: { day: TripDay; multiDay: boolean }) {
           style={styles.dayTitle}
           headingLevel={2}
         >
-          {`${day.day}. GÜN · ${new Date(day.date).toLocaleDateString("tr-TR", { day: "numeric", month: "long", weekday: "long" }).toLocaleUpperCase(casing())}`}
+          {w.dayHead(day.day, new Date(day.date).toLocaleDateString(localeTag(lang), { day: "numeric", month: "long", weekday: "long" }).toLocaleUpperCase(lang))}
         </Text>
       )}
       <View
@@ -341,6 +328,7 @@ function Row({
   index: number;
   last: boolean;
 }) {
+  const w = useMessages().saved;
   const { colors: c } = useTheme();
   const router = useRouter();
   const reduced = useReducedMotion();
@@ -389,7 +377,7 @@ function Row({
             <>
               <Ionicons name="walk" size={14} color={c.textSecondary} />
               <Text variant="caption" color="textSecondary">
-                {distance(item.legMeters)}
+                {distance(item.legMeters, w)}
               </Text>
             </>
           )}
@@ -441,7 +429,7 @@ function Row({
         {item.kind === "stop" ? (
           <Pressable
             accessibilityRole="link"
-            accessibilityLabel={`${formatClock(item.at)}, ${item.asset.name}, ${item.visitMinutes} dakika. Eseri aç`}
+            accessibilityLabel={w.stopLabel(formatClock(item.at), item.asset.name, item.visitMinutes)}
             onPress={() =>
               router.push({
                 pathname: "/asset/[id]",
@@ -473,7 +461,7 @@ function Row({
                 {item.asset.name}
               </Text>
               <Text variant="caption" color="textSecondary" numberOfLines={1}>
-                {`${item.visitMinutes} dk · ${settingLabel[item.setting]}`}
+                {`${w.minutes(item.visitMinutes)} · ${w.settings[item.setting]}`}
               </Text>
             </View>
             <Ionicons
@@ -486,18 +474,18 @@ function Row({
           <View
             style={[styles.card, styles.mealCard, { borderColor: coral }]}
             accessible
-            accessibilityLabel={`${formatClock(item.at)}, ${mealLabel[item.meal]}${item.dish ? `, yöresel lezzet: ${item.dish.name}` : ""}, ${item.minutes} dakika`}
+            accessibilityLabel={w.mealLabel(formatClock(item.at), w.meals[item.meal], item.dish?.name ?? null, item.minutes)}
           >
             <View style={styles.flex}>
               <Text colorValue={coral} style={styles.clock}>
-                {`${formatClock(item.at)} · ${item.minutes} dk`}
+                {`${formatClock(item.at)} · ${w.minutes(item.minutes)}`}
               </Text>
               <Text variant="label" style={styles.cardTitle}>
-                {mealLabel[item.meal]}
+                {w.meals[item.meal]}
               </Text>
               {item.dish && (
                 <Text variant="caption" color="textSecondary">
-                  {`Yöresel lezzet: ${item.dish.name}`}
+                  {w.localDish(item.dish.name)}
                 </Text>
               )}
             </View>

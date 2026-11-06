@@ -21,6 +21,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
+import { useMessages } from "@/i18n";
 import { AssetImage } from "@/components/asset-image";
 import { useSearchableAssets } from "@/data";
 import { bottomInset } from "@/lib/bottom-inset";
@@ -41,6 +42,7 @@ const STAMP = 34;
  * the corner. Each opens its eser kartı over this page.
  */
 export default function SealedAssetsScreen() {
+  const m = useMessages();
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
@@ -67,14 +69,14 @@ export default function SealedAssetsScreen() {
       contentInsetAdjustmentBehavior="automatic"
     >
       <Head>
-        <title>Mühürlenen eserler · Vagabonds</title>
+        <title>{m.common.title(m.screens.sealed)}</title>
       </Head>
 
       {unlocked.size === 0 && <Empty />}
       {unlocked.size > 0 && resource.status === "loading" && (
         <ActivityIndicator
           color={c.textSecondary}
-          accessibilityLabel="Eserler yükleniyor"
+          accessibilityLabel={m.monuments.loading}
         />
       )}
       {resource.status === "error" && (
@@ -84,14 +86,14 @@ export default function SealedAssetsScreen() {
           style={styles.error}
         >
           <Text variant="caption" color="textSecondary" style={styles.centered}>
-            {`${resource.error.message} Tekrar denemek için dokun.`}
+            {`${resource.error.message} ${m.common.tapToRetry}`}
           </Text>
         </Pressable>
       )}
       {assets.length > 0 && (
         <>
           <Text variant="overline" color="textSecondary">
-            {`${assets.length} ESER`}
+            {m.sealed.count(assets.length)}
           </Text>
           <View accessibilityRole="list" style={styles.tiles}>
             {assets.map((asset) => (
@@ -106,6 +108,7 @@ export default function SealedAssetsScreen() {
 
 function Empty() {
   const { colors: c } = useTheme();
+  const w = useMessages().sealed;
   return (
     <View style={styles.empty}>
       <View style={[styles.emptyMark, { borderColor: c.highlightMark }]}>
@@ -116,23 +119,24 @@ function Empty() {
         />
       </View>
       <Text variant="heading" style={styles.centered}>
-        Henüz mühürlenen eser yok
+        {w.emptyTitle}
       </Text>
       <Text color="textSecondary" style={styles.centered}>
-        Bir eserin kilidini açınca burada görünür.
+        {w.emptyBody}
       </Text>
     </View>
   );
 }
 
 function Tile({ asset, width }: { asset: AssetSummary; width: number }) {
+  const w = useMessages().sealed;
   const place = `${asset.district}, ${asset.city.label}`;
   return (
     <Link href={{ pathname: "/asset/[id]", params: { id: asset.id } }} asChild>
       {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
       <Pressable
         accessibilityRole="link"
-        accessibilityLabel={`${asset.name}, ${place}, eser kartını açar`}
+        accessibilityLabel={`${asset.name}, ${place}, ${w.opensCard}`}
         style={StyleSheet.flatten([
           styles.tile,
           { width, height: width * TILE_RATIO },

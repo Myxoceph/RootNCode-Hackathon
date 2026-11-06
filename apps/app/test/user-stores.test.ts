@@ -85,12 +85,12 @@ describe("saved routes", () => {
   });
 
   it("reads a food answer as a menu, and plain words as words", () => {
-    expect(routes.menuOf("Iki önerim var:\n\n- Pideli Köfte: yoğurtla sunulur\n- Kestane\n\nAfiyet olsun.")).toEqual({
+    expect(routes.menuOf("Iki önerim var:\n\n- Pideli Köfte: yoğurtla sunulur\n- Kestane\n\nAfiyet olsun.", "tr")).toEqual({
       intro: "Iki önerim var:",
       dishes: [{ name: "Pideli Köfte", text: "Yoğurtla sunulur" }, { name: "Kestane", text: "" }],
       outro: "Afiyet olsun.",
     });
-    expect(routes.menuOf("Etli ekmek denenmeli.")).toEqual({ intro: "Etli ekmek denenmeli.", dishes: [], outro: "" });
+    expect(routes.menuOf("Etli ekmek denenmeli.", "tr")).toEqual({ intro: "Etli ekmek denenmeli.", dishes: [], outro: "" });
   });
 
   it("names each kind of entry apart, and a planner route as before", () => {

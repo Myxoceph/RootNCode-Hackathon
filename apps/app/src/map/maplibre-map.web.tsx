@@ -4,6 +4,7 @@ import { StyleSheet, View } from "react-native";
 import type { MapPageCommand } from "./maplibre-page";
 import type { AssetMapProps } from "./types";
 import { useMapPage } from "./use-map-page";
+import { useMessages } from "@/i18n";
 
 type MapWindow = Window & { vagabondsMap?: { receive: (command: MapPageCommand) => void } };
 
@@ -14,6 +15,7 @@ export function MapLibreMap(props: AssetMapProps) {
     (frame.current?.contentWindow as MapWindow | null)?.vagabondsMap?.receive(command);
   }, []);
   const { html, onMessage, replay } = useMapPage(props, send);
+  const title = useMessages().tabs.map;
 
   useEffect(() => {
     const listener = (message: MessageEvent) => {
@@ -26,7 +28,7 @@ export function MapLibreMap(props: AssetMapProps) {
   return (
     <View style={[styles.box, props.style]} aria-hidden>
       {html !== null && (
-        <iframe ref={frame} srcDoc={html} onLoad={replay} title="Harita" tabIndex={-1} style={{ border: 0, width: "100%", height: "100%" }} />
+        <iframe ref={frame} srcDoc={html} onLoad={replay} title={title} tabIndex={-1} style={{ border: 0, width: "100%", height: "100%" }} />
       )}
     </View>
   );

@@ -8,9 +8,6 @@ function rank(code: string): number {
   return index < 0 ? ORDER.length : index;
 }
 
-/** Said when the related assets of an asset still locked are asked for. */
-export const LOCKED_WARNING = "Önce bu eserin kilidini açmalısın";
-
 export interface RelatedAsset {
   asset: AssetSummary;
   /** Every way the two are joined, the most telling first. */

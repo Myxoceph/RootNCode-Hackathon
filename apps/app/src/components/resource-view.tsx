@@ -5,6 +5,7 @@ import { ActivityIndicator, StyleSheet, View } from "react-native";
 import type { DataError, ResourceWithRetry } from "@/data";
 import { announce } from "@/lib/announce";
 import { useColors } from "@/theme";
+import { useMessages } from "@/i18n";
 
 interface ResourceViewProps<T> {
   resource: ResourceWithRetry<T>;
@@ -14,11 +15,12 @@ interface ResourceViewProps<T> {
 /** Renders the loading and error states of a data hook, and `children` once the data is in. */
 export function ResourceView<T>({ resource, children }: ResourceViewProps<T>) {
   const c = useColors();
+  const m = useMessages();
 
   if (resource.status === "loading") {
     return (
       <View style={styles.center}>
-        <ActivityIndicator color={c.primary} size="large" accessibilityLabel="Yükleniyor" />
+        <ActivityIndicator color={c.primary} size="large" accessibilityLabel={m.common.loading} />
       </View>
     );
   }
@@ -29,7 +31,8 @@ export function ResourceView<T>({ resource, children }: ResourceViewProps<T>) {
 }
 
 export function DataErrorView({ error, onRetry }: { error: DataError; onRetry: () => void }) {
-  const title = error.kind === "invalid" ? "Veriler okunamadı" : "Veriler yüklenemedi";
+  const m = useMessages();
+  const title = error.kind === "invalid" ? m.monuments.unreadable : m.monuments.unavailable;
 
   // The screen changes under the reader's finger; say what happened (web: role="alert" below).
   useEffect(() => announce(`${title}. ${error.message}`), [title, error.message]);
@@ -45,10 +48,10 @@ export function DataErrorView({ error, onRetry }: { error: DataError; onRetry: (
       {__DEV__ && error.details.length > 0 && (
         <Text variant="caption" color="textSecondary">
           {error.details.slice(0, 5).join("\n")}
-          {error.details.length > 5 ? `\n… ve ${error.details.length - 5} sorun daha` : ""}
+          {error.details.length > 5 ? m.shared.moreIssues(error.details.length - 5) : ""}
         </Text>
       )}
-      <Button label="Tekrar dene" onPress={onRetry} />
+      <Button label={m.common.retry} onPress={onRetry} />
     </View>
   );
 }

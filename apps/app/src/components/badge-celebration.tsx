@@ -8,6 +8,7 @@ import Svg, { Circle, Defs, LinearGradient, Path, RadialGradient, Stop } from "r
 
 import { BadgeArt } from "@/components/badge-art";
 import { dismissAllBadges, dismissBadge, useNewBadges, type NewBadge } from "@/data/new-badges";
+import { useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -56,6 +57,8 @@ function confetti(count: number) {
 }
 
 function Scene({ badge, left }: { badge: NewBadge; left: number }) {
+  const m = useMessages();
+  const w = m.badges;
   const reduced = useReducedMotion();
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -72,7 +75,7 @@ function Scene({ badge, left }: { badge: NewBadge; left: number }) {
   const [points, setPoints] = useState(0);
 
   useEffect(() => {
-    announce(`Yeni rozet kazandın: ${badge.title}. ${badge.points} puan.${left > 0 ? ` ${left} rozet daha var.` : ""}`);
+    announce(w.newBadgeSaid(badge.title, badge.points, left));
   }, [badge, left]);
 
   useEffect(() => {
@@ -248,7 +251,7 @@ function Scene({ badge, left }: { badge: NewBadge; left: number }) {
 
         <Animated.View style={[styles.words, rise(0, 0.5)]}>
           <Text colorValue={palette.altin200} style={styles.overline}>
-            ✦ YENİ ROZET
+            {w.newBadge}
           </Text>
         </Animated.View>
         <Animated.View style={rise(0.15, 0.65)}>
@@ -263,19 +266,19 @@ function Scene({ badge, left }: { badge: NewBadge; left: number }) {
         </Animated.View>
         <Animated.View style={[styles.pointsRow, rise(0.45, 1)]}>
           <View style={styles.points}>
-            <Text colorValue={palette.altin200} style={styles.pointsText}>{`+${points} puan`}</Text>
+            <Text colorValue={palette.altin200} style={styles.pointsText}>{w.pointsGained(points)}</Text>
           </View>
         </Animated.View>
 
         <Animated.View style={[styles.actions, rise(0.6, 1)]}>
           <Pressable accessibilityRole="button" onPress={next} style={({ pressed }) => [styles.primary, pressed && styles.pressed]}>
             <Text variant="label" colorValue={palette.altin950} style={styles.primaryText}>
-              {last ? "Rozetlerimi gör" : `Sıradaki rozet (${left})`}
+              {last ? w.seeBadges : w.nextBadge(left)}
             </Text>
           </Pressable>
           <Pressable accessibilityRole="button" onPress={close} style={({ pressed }) => [styles.secondary, pressed && styles.pressed]}>
             <Text variant="label" colorValue={palette.gece50}>
-              {last ? "Kapat" : "Hepsini kapat"}
+              {last ? m.common.close : w.closeAll}
             </Text>
           </Pressable>
         </Animated.View>

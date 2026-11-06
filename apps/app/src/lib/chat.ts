@@ -1,4 +1,4 @@
-import type { ChatCitation, ChatConversation, ChatConversationResponse, ChatResponse, ChatTurn } from "@vagabonds/contracts";
+import type { ChatCitation, ChatConversation, ChatConversationResponse, ChatResponse, ChatTurn, Lang } from "@vagabonds/contracts";
 import { useSyncExternalStore } from "react";
 
 import { archiveConversation, askAssistant, fetchConversation, fetchConversations } from "@/data/assistant";
@@ -7,6 +7,7 @@ import { saveAdvice, saveTrip } from "@/lib/saved-routes";
 import { getLang } from "@/i18n/lang";
 import { localeTag } from "@/i18n";
 import { getMessages } from "@/i18n";
+import { messages } from "@/i18n/messages";
 
 /** `POST /chat` takes at most this many earlier turns. */
 export const HISTORY_TURNS = 12;
@@ -135,13 +136,13 @@ export interface FollowUp {
  * weather, a trip that fits. A topic the answer already covers is not offered again. At most
  * three; none for general conversation.
  */
-export function followUps(response: ChatResponse): FollowUp[] {
+export function followUps(response: ChatResponse, lang: Lang): FollowUp[] {
   const covered = new Set<string>(response.citations.map((citation) => citation.kind));
   if (response.attachments.trip) covered.add("trip");
   if (response.attachments.transit) covered.add("transit");
   const site = response.citations.find((citation) => citation.kind === "asset")?.title;
 
-  const f = getMessages().rehber.followUps;
+  const f = messages[lang].rehber.followUps;
   let offers: FollowUp[];
   if (response.attachments.trip) {
     offers = [
@@ -173,13 +174,13 @@ export function followUps(response: ChatResponse): FollowUp[] {
 }
 
 /** "Bugün", "Dün", "Bu hafta" or the month: how the history groups conversations, as chat apps do. */
-export function dayGroup(iso: string, now = new Date()): string {
+export function dayGroup(iso: string, lang: Lang, now = new Date()): string {
   const day = (date: Date) => new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
   const days = Math.round((day(now) - day(new Date(iso))) / 86_400_000);
-  if (days <= 0) return getMessages().rehber.today;
-  if (days === 1) return getMessages().rehber.yesterday;
-  if (days < 7) return getMessages().rehber.thisWeek;
-  return new Date(iso).toLocaleDateString(localeTag(), { month: "long", year: "numeric" });
+  if (days <= 0) return messages[lang].rehber.today;
+  if (days === 1) return messages[lang].rehber.yesterday;
+  if (days < 7) return messages[lang].rehber.thisWeek;
+  return new Date(iso).toLocaleDateString(localeTag(lang), { month: "long", year: "numeric" });
 }
 
 /** The last turns for `POST /chat`, oldest first, each cut to what the API accepts. */

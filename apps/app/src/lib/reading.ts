@@ -1,3 +1,5 @@
+import type { Lang } from "@vagabonds/contracts";
+
 /**
  * Splits a text into sentences without changing a letter. A full stop ends a sentence only before a
  * capital and after a word of three or more letters, so "H. 802", "M. 1399" and "15. yüzyıl" hold.
@@ -49,9 +51,17 @@ const ROMAN: Array<[number, string]> = [
   [1, "I"],
 ];
 
-/** "XIV. yüzyıl" for 1399. */
-export function centuryOf(year: number): string {
-  let left = Math.floor((year - 1) / 100) + 1;
+function ordinal(n: number): string {
+  const tens = n % 100;
+  if (tens >= 11 && tens <= 13) return `${n}th`;
+  return `${n}${["th", "st", "nd", "rd"][n % 10] ?? "th"}`;
+}
+
+/** "XIV. yüzyıl" for 1399; in English, "14th century". */
+export function centuryOf(year: number, lang: Lang): string {
+  const century = Math.floor((year - 1) / 100) + 1;
+  if (lang === "en") return `${ordinal(century)} century`;
+  let left = century;
   let roman = "";
   for (const [value, letters] of ROMAN) {
     while (left >= value) {
@@ -62,11 +72,14 @@ export function centuryOf(year: number): string {
   return `${roman}. yüzyıl`;
 }
 
-const MONTHS = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+const MONTHS = {
+  tr: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+  en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+};
 
 /** "19 Şubat 1494" for the record's "1494-02-19"; any other wording stays as the book has it. */
-export function readableDate(date: string): string {
+export function readableDate(date: string, lang: Lang): string {
   const match = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  const month = match ? MONTHS[Number(match[2]) - 1] : undefined;
+  const month = match ? MONTHS[lang][Number(match[2]) - 1] : undefined;
   return match && month ? `${Number(match[3])} ${month} ${match[1]}` : date;
 }

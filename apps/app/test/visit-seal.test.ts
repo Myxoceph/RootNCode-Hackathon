@@ -12,22 +12,22 @@ function asset(...photos: Array<[subject: string | null, isCover?: boolean, widt
 
 describe("visitSealTarget", () => {
   it("prefers a part to frame over a view of the building", () => {
-    expect(visitSealTarget(asset(["exterior", true], ["mihrab"], ["portal"]))?.part).toBe("Taçkapı");
+    expect(visitSealTarget(asset(["exterior", true], ["mihrab"], ["portal"]), "tr")?.part).toBe("Taçkapı");
   });
 
   it("takes the sharpest of several photos of the same part", () => {
-    expect(visitSealTarget(asset(["mihrab", false, 433], ["mihrab", false, 1600], ["mihrab", false, 900]))?.photo).toMatchObject({ id: "m1" });
+    expect(visitSealTarget(asset(["mihrab", false, 433], ["mihrab", false, 1600], ["mihrab", false, 900]), "tr")?.photo).toMatchObject({ id: "m1" });
     // A part still comes before a sharper view.
-    expect(visitSealTarget(asset(["exterior", true, 4000], ["portal", false, 400]))?.part).toBe("Taçkapı");
+    expect(visitSealTarget(asset(["exterior", true, 4000], ["portal", false, 400]), "tr")?.part).toBe("Taçkapı");
   });
 
   it("falls back to a view of the building", () => {
-    expect(visitSealTarget(asset(["aerial", true], ["photo"], ["exterior"]))?.part).toBe("Dış cephe");
+    expect(visitSealTarget(asset(["aerial", true], ["photo"], ["exterior"]), "tr")?.part).toBe("Dış cephe");
   });
 
   it("uses the cover photo when no photo is sorted, but never one from above", () => {
-    expect(visitSealTarget(asset(["photo"], ["photo", true]))).toMatchObject({ photo: { id: "m1" }, part: "Genel görünüm" });
-    expect(visitSealTarget(asset(["aerial", true]))).toBeNull();
-    expect(visitSealTarget(asset())).toBeNull();
+    expect(visitSealTarget(asset(["photo"], ["photo", true]), "tr")).toMatchObject({ photo: { id: "m1" }, part: "Genel görünüm" });
+    expect(visitSealTarget(asset(["aerial", true]), "tr")).toBeNull();
+    expect(visitSealTarget(asset(), "tr")).toBeNull();
   });
 });

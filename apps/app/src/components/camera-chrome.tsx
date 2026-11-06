@@ -3,6 +3,7 @@ import { cameraColors, cameraGlass, fontFamily, radius, spacing, Text, touchTarg
 import { useRouter } from "expo-router";
 import type { ComponentProps, ReactNode } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
+import { useMessages } from "@/i18n";
 
 /** A round glass icon button over the camera image. */
 export function GlassIconButton({
@@ -67,9 +68,10 @@ export function GlassPill({
 /** Top bar of a camera screen: back, a title card, and optional extra buttons. */
 export function CameraTopBar({ title, subtitle, children }: { title: string; subtitle: string; children?: ReactNode }) {
   const router = useRouter();
+  const m = useMessages();
   return (
     <View style={styles.topBar}>
-      <GlassIconButton icon="chevron-back" label="Geri" onPress={() => (router.canGoBack() ? router.back() : router.navigate("/camera"))} />
+      <GlassIconButton icon="chevron-back" label={m.common.back} onPress={() => (router.canGoBack() ? router.back() : router.navigate("/camera"))} />
       <View style={styles.title}>
         <Text variant="heading" colorValue={cameraColors.text} headingLevel={1} numberOfLines={1}>
           {title}

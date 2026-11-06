@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
@@ -11,7 +9,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { compileSource } from "@/ar/inscription-targets";
 import { MarkerTracker } from "@/ar/marker-tracker";
-import { trackerFailureText, type TrackerEvent } from "@/ar/mindar";
+import type { TrackerEvent } from "@/ar/mindar";
 import type { TrackerTarget } from "@/ar/tracker-page";
 import { AssetImage } from "@/components/asset-image";
 import { BadgeArt } from "@/components/badge-art";
@@ -26,7 +24,7 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { kmBetween } from "@/map/dense-area";
-import { casing, useLang } from "@/i18n";
+import { localeTag, useLang, useMessages } from "@/i18n";
 
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
 /** The target must stay in view this long before the visit is sealed, so a passing glimpse does not count. */
@@ -56,14 +54,16 @@ type Phase =
  * Without a camera (the web, ADR 0001; a screen reader on) the screen shows which part to find.
  */
 export default function VisitSealScreen() {
-  useLang();
+  const lang = useLang();
+  const m = useMessages();
+  const w = m.seal;
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const resource = useAsset(id ?? DEFAULT_ASSET);
   const insets = useSafeAreaInsets();
   const screenReader = useScreenReaderStatus();
   const web = Platform.OS === "web";
   const asset = resource.status === "success" ? resource.data : null;
-  const target = asset ? visitSealTarget(asset) : null;
+  const target = asset ? visitSealTarget(asset, lang) : null;
   const router = useRouter();
   const [unlocked, setUnlocked] = useState<VisitResponse | null | false>(false);
   // With a screen reader on the screen opens on the guide; the visitor may still ask for the camera.
@@ -76,7 +76,7 @@ export default function VisitSealScreen() {
   const unlock = asset
     ? () => {
         void unlockForDemo(asset.id).then((result) => {
-          announce(`${asset.name} kilidi açıldı.`);
+          announce(w.unlockedSaid(asset.name));
           setUnlocked(result);
         });
       }
@@ -89,14 +89,14 @@ export default function VisitSealScreen() {
     body = (
       <View style={styles.center}>
         <Text colorValue={cameraColors.text} style={styles.centerText}>
-          Bu eserin kilidi zaten açık.
+          {w.alreadyOpen}
         </Text>
       </View>
     );
   } else if (resource.status === "loading" || (!web && screenReader === null)) {
     body = (
       <View style={styles.center}>
-        <ActivityIndicator color={cameraColors.gold} size="large" accessibilityLabel="Yükleniyor" />
+        <ActivityIndicator color={cameraColors.gold} size="large" accessibilityLabel={m.common.loading} />
       </View>
     );
   } else if (resource.status === "error") {
@@ -109,7 +109,7 @@ export default function VisitSealScreen() {
     body = (
       <View style={styles.center}>
         <Text colorValue={cameraColors.text} style={styles.centerText}>
-          {asset ? "Bu eserin henüz fotoğrafı yok; mühür için kameranın tanıyacağı bir fotoğraf gerekiyor." : "Eser bulunamadı."}
+          {asset ? w.noPhoto : w.notFound}
         </Text>
         {unlock && <UnlockButton onPress={unlock} />}
       </View>
@@ -132,11 +132,11 @@ export default function VisitSealScreen() {
   return (
     <View style={styles.screen}>
       <Head>
-        <title>Ziyaret Mührü · Vagabonds</title>
+        <title>{m.common.title(m.screens.visitSeal)}</title>
       </Head>
       {/* Before the content in the tree, so the title is read first (WCAG 1.3.2); drawn over it by zIndex. */}
       <View style={[styles.top, { top: insets.top + spacing.sm }]}>
-        <CameraTopBar title="Ziyaret Mührü" subtitle={asset?.name ?? "Eser"} />
+        <CameraTopBar title={m.screens.visitSeal} subtitle={asset?.name ?? w.site} />
       </View>
       {body}
     </View>
@@ -148,18 +148,19 @@ const UNLOCK_ROOM = 72;
 
 /** "Kilidi aç": seals the visit at once, standing in for recognising the part (a demo simulation). */
 function UnlockButton({ onPress }: { onPress: () => void }) {
+  const w = useMessages().seal;
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel="Kilidi aç"
+      accessibilityLabel={w.unlock}
       // A demo simulation, and the screen reader must say so: it does not check the visit.
-      accessibilityHint="Demo: ziyareti hemen mühürler"
+      accessibilityHint={w.unlockHint}
       onPress={onPress}
       style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.85, transform: [{ scale: 0.98 }] }]}
     >
       <Ionicons name="lock-open" size={18} color={cameraColors.onGold} />
       <Text variant="label" colorValue={cameraColors.onGold} style={styles.unlockText}>
-        Kilidi aç
+        {w.unlock}
       </Text>
     </Pressable>
   );
@@ -167,29 +168,30 @@ function UnlockButton({ onPress }: { onPress: () => void }) {
 
 /** Without a camera: the part to find, and how sealing works on site. */
 function SealGuide({ asset, onUseCamera }: { asset: AssetDetail; onUseCamera?: () => void }) {
+  const lang = useLang();
   const insets = useSafeAreaInsets();
-  const { photo, part } = visitSealTarget(asset)!;
+  const { photo, part } = visitSealTarget(asset, lang)!;
+  const w = useMessages().seal;
   return (
     // Room at the end for the floating "Kilidi aç", so the last button is not under it.
     <ScrollView contentContainerStyle={[styles.guide, { paddingTop: insets.top + 80, paddingBottom: insets.bottom + spacing.xl + UNLOCK_ROOM }]}>
       <Text variant="overline" colorValue={cameraColors.gold}>
-        MÜHÜR KISMI · {part.toLocaleUpperCase(casing())}
+        {w.partHead(part.toLocaleUpperCase(lang))}
       </Text>
       <View style={styles.guidePhoto}>
         <AssetImage media={photo} />
       </View>
       <Text variant="heading" colorValue={cameraColors.text}>
-        Eserin yanındayken {part.toLocaleLowerCase("tr")} kısmını bul ve kameraya göster
+        {w.findPart(part.toLocaleLowerCase(lang))}
       </Text>
       <Text colorValue={cameraColors.textSecondary}>
-        Telefon tanıyınca ziyaretin mühürlenir: eserde bulunduğun kanıtlanır, rozet ve puan kazanırsın. Mühür telefonda, eserin{" "}
-        {VISIT_RADIUS_METERS} m yakınında çalışır.
+        {w.how(VISIT_RADIUS_METERS)}
       </Text>
       {/* A screen reader opens the guide; the seal still needs the camera, which then talks the visitor through it. */}
       {onUseCamera && (
         <Button
-          label="Kamerayı yine de aç"
-          accessibilityHint={`Kamera ${part.toLocaleLowerCase("tr")} kısmını arar; tanıyınca sesle haber verilir`}
+          label={w.openCamera}
+          accessibilityHint={w.openCameraHint(part.toLocaleLowerCase(lang))}
           onPress={onUseCamera}
           colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
         />
@@ -199,9 +201,11 @@ function SealGuide({ asset, onUseCamera }: { asset: AssetDetail; onUseCamera?: (
 }
 
 function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnlock?: () => void; onSealed: () => void }) {
+  const lang = useLang();
+  const w = useMessages().seal;
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { photo, part } = visitSealTarget(asset)!;
+  const { photo, part } = visitSealTarget(asset, lang)!;
   const key = `${asset.id}:${photo.key}`;
   const [run, setRun] = useState(0);
   const [phase, setPhaseState] = useState<Phase>(compiled.has(key) ? { name: "starting" } : { name: "preparing", progress: 0 });
@@ -231,29 +235,29 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
         onSealed();
         unlockAsset(asset.id);
         go({ name: "sealed", result });
-        announce(`Ziyaretin mühürlendi.${result.newAchievements.length ? ` ${result.newAchievements.length} yeni rozet kazandın.` : ""}`);
+        announce(w.sealedSaid(result.newAchievements.length));
       } catch (error) {
-        go({ name: "failed", message: error instanceof DataError ? error.message : "Mühür gönderilemedi." });
+        go({ name: "failed", message: error instanceof DataError ? error.message : w.failed });
       }
     },
-    [asset.id, photo.key, go, onSealed],
+    [asset.id, photo.key, go, onSealed, w],
   );
 
   const seal = useCallback(async () => {
     go({ name: "sending" });
-    if (!communityAvailable) return go({ name: "failed", message: "Mühür için sunucu gerekiyor; bu sürüm örnek veriyle çalışıyor." });
+    if (!communityAvailable) return go({ name: "failed", message: w.needsServer });
     const position = await currentPosition();
     const point = asset.coordinates;
     // The API checks the same; saying it here names the distance and saves a request.
     if (point && !point.approximate) {
-      if (!position) return go({ name: "failed", message: "Mühür için konumun gerekiyor. Konum iznini açıp tekrar dene." });
+      if (!position) return go({ name: "failed", message: w.needsLocation });
       const meters = Math.round(kmBetween(position, point) * 1000);
       if (meters > VISIT_RADIUS_METERS) {
-        return go({ name: "failed", message: `Esere ${formatMeters(meters)} uzaktasın. Mühür için ${VISIT_RADIUS_METERS} m yakınına gel.` });
+        return go({ name: "failed", message: w.tooFar(formatMeters(meters), VISIT_RADIUS_METERS) });
       }
     }
     await send(position);
-  }, [asset.coordinates, send, go]);
+  }, [asset.coordinates, send, go, w]);
 
   const onEvent = useCallback(
     (event: TrackerEvent) => {
@@ -270,13 +274,13 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
           if (now === "preparing" || now === "starting") {
             go({ name: "searching" });
             // Guidance for a visitor who cannot see the image; nothing is said without a screen reader.
-            announce(`Kamera açık. ${part} kısmını ara: telefonu ona doğru tut ve yavaşça gezdir. Tanıyınca haber vereceğim.`);
+            announce(w.cameraOpenSaid(part));
           }
           break;
         case "found":
           if (now !== "searching") break;
           go({ name: "holding" });
-          announce("Tanındı, telefonu sabit tut.");
+          announce(w.recognisedSaid);
           hold.setValue(0);
           if (!reduceMotion) Animated.timing(hold, { toValue: 1, duration: HOLD_MS, easing: Easing.linear, useNativeDriver: false }).start();
           holdTimer.current = setTimeout(() => void seal(), HOLD_MS);
@@ -289,11 +293,11 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
           }
           break;
         case "error":
-          go({ name: "failed", message: trackerFailureText[event.reason] });
+          go({ name: "failed", message: w.tracker[event.reason] });
           break;
       }
     },
-    [go, key, hold, reduceMotion, seal, part],
+    [go, key, hold, reduceMotion, seal, part, w],
   );
 
   useEffect(() => () => clearTimeout(holdTimer.current), []);
@@ -310,12 +314,12 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
     <View style={styles.fill}>
       <MarkerTracker key={run} target={target} onEvent={onEvent} style={StyleSheet.absoluteFill} />
 
-      <View style={[styles.hint, { top: insets.top + 72 }]} accessible accessibilityLabel={`Bulunacak kısım: ${part}. ${photo.alt}`}>
+      <View style={[styles.hint, { top: insets.top + 72 }]} accessible accessibilityLabel={w.findLabel(part, photo.alt)}>
         <View style={styles.hintPhoto}>
           <AssetImage media={photo} fill decorative />
         </View>
         <Text variant="caption" colorValue={cameraColors.gold} style={styles.mono} numberOfLines={1}>
-          {part.toLocaleUpperCase(casing())}
+          {part.toLocaleUpperCase(lang)}
         </Text>
       </View>
 
@@ -336,18 +340,20 @@ function PanelBody({
   hold: Animated.Value;
   onRetry: () => void;
 }) {
+  const m = useMessages();
+  const w = m.seal;
   switch (phase.name) {
     case "preparing":
       return (
         <>
           <Text variant="heading" colorValue={cameraColors.text}>
-            Eser hazırlanıyor…
+            {w.preparing}
           </Text>
           <View style={styles.track}>
             <View style={[styles.bar, { width: `${Math.round(phase.progress * 100)}%` }]} />
           </View>
           <Text variant="caption" colorValue={cameraColors.textSecondary}>
-            Fotoğraf telefonda tanınmaya hazırlanıyor; ikinci açılışta beklemezsin.
+            {w.preparingHint}
           </Text>
         </>
       );
@@ -357,7 +363,7 @@ function PanelBody({
         <View style={styles.row}>
           <ActivityIndicator color={cameraColors.gold} />
           <Text variant="label" colorValue={cameraColors.text}>
-            {phase.name === "starting" ? "Kamera açılıyor…" : "Mühürleniyor…"}
+            {phase.name === "starting" ? w.cameraOpening : w.sealing}
           </Text>
         </View>
       );
@@ -365,16 +371,16 @@ function PanelBody({
       return (
         <>
           <Text variant="heading" colorValue={cameraColors.text}>
-            Eserin bu kısmını kadraja al
+            {w.frameIt}
           </Text>
-          <Text colorValue={cameraColors.textSecondary}>Köşedeki fotoğraftaki açıdan bak; tanınınca altın köşeler belirir.</Text>
+          <Text colorValue={cameraColors.textSecondary}>{w.frameHint}</Text>
         </>
       );
     case "holding":
       return (
         <>
           <Text variant="heading" colorValue={cameraColors.gold}>
-            Tanındı, sabit tut
+            {w.holdStill}
           </Text>
           <View style={styles.track}>
             <Animated.View style={[styles.bar, { width: hold.interpolate({ inputRange: [0, 1], outputRange: ["0%", "100%"] }) }]} />
@@ -387,7 +393,7 @@ function PanelBody({
           <Text colorValue={cameraColors.text} accessibilityRole="alert">
             {phase.message}
           </Text>
-          <Button label="Tekrar dene" onPress={onRetry} colors={[cameraColors.gold, cameraColors.onGold]} />
+          <Button label={m.common.retry} onPress={onRetry} colors={[cameraColors.gold, cameraColors.onGold]} />
         </>
       );
     case "sealed":
@@ -400,6 +406,8 @@ function PanelBody({
  * shows at the strike, a ring spreads from it and the page jolts; then what the visit earned.
  */
 function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<VisitResponse, "verified" | "firstVisit" | "newAchievements">; onDone: () => void }) {
+  const lang = useLang();
+  const w = useMessages().seal;
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
   const stamp = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
@@ -432,7 +440,7 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
   const opacity = stamp.interpolate({ inputRange: [0, STAMP_HANGS * 0.6, 1], outputRange: [0, 1, 1] });
   const ink = stamp.interpolate({ inputRange: [0, STAMP_STRIKES - 0.02, STAMP_STRIKES, 1], outputRange: [0, 0, 1, 1] });
   const jolt = strike.interpolate({ inputRange: [0, 0.06, 0.14, 0.24, 0.36, 1], outputRange: [0, 5, -3, 2, -1, 0] });
-  const date = new Date().toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
+  const date = new Date().toLocaleDateString(localeTag(lang), { day: "numeric", month: "long", year: "numeric" });
 
   return (
     <ScrollView contentContainerStyle={[styles.sealed, { paddingTop: insets.top + 96, paddingBottom: insets.bottom + spacing.xl }]}>
@@ -450,13 +458,13 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
           <View style={styles.sealInner}>
             <Animated.View style={[styles.sealInk, { opacity: ink }]}>
               <Text style={styles.sealCaption} colorValue={cameraColors.gold}>
-                ZİYARET MÜHRÜ
+                {w.stamp}
               </Text>
               <Text variant="heading" colorValue={cameraColors.text} style={styles.centerText} numberOfLines={2}>
                 {asset.name}
               </Text>
               <Text style={styles.sealCaption} colorValue={cameraColors.textSecondary}>
-                {date.toLocaleUpperCase(casing())}
+                {date.toLocaleUpperCase(lang)}
               </Text>
             </Animated.View>
           </View>
@@ -465,20 +473,20 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
 
       <Animated.View style={[styles.sealedText, { opacity: reveal, transform: [{ translateY: reveal.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}>
         <Text variant="title" colorValue={cameraColors.text} style={styles.centerText} headingLevel={2}>
-          Ziyaretin mühürlendi
+          {w.sealedTitle}
         </Text>
         <Text colorValue={cameraColors.textSecondary} style={styles.centerText}>
-          {result.verified ? "Konumun da doğrulandı. " : ""}
-          {result.firstVisit ? "Bu eser artık haritanda açık." : "Bu eseri daha önce de ziyaret etmiştin; ziyaretin artık mühürlü."}
+          {result.verified ? w.verified : ""}
+          {result.firstVisit ? w.firstVisit : w.againVisit}
         </Text>
 
         {result.newAchievements.length > 0 && (
           <View style={styles.badges}>
             <Text variant="overline" colorValue={cameraColors.gold}>
-              YENİ ROZETLER
+              {w.newBadges}
             </Text>
             {result.newAchievements.map((achievement) => (
-              <View key={achievement.code} style={styles.badge} accessible accessibilityLabel={`${achievement.title}, ${achievement.points} puan. ${achievement.description}`}>
+              <View key={achievement.code} style={styles.badge} accessible accessibilityLabel={w.badgeLabel(achievement.title, achievement.points, achievement.description)}>
                 <BadgeArt code={achievement.code} emoji={achievement.badge} imageUrl={achievement.imageUrl} size={48} />
                 <View style={styles.flex}>
                   <Text variant="label" colorValue={cameraColors.text}>
@@ -496,14 +504,14 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
           </View>
         )}
 
-        <Button label="Tamam" onPress={onDone} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
+        <Button label={w.ok} onPress={onDone} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
       </Animated.View>
     </ScrollView>
   );
 }
 
 function formatMeters(meters: number): string {
-  return meters >= 1000 ? `${(meters / 1000).toLocaleString("tr-TR", { maximumFractionDigits: 1 })} km` : `${meters} m`;
+  return meters >= 1000 ? `${(meters / 1000).toLocaleString(localeTag(), { maximumFractionDigits: 1 })} km` : `${meters} m`;
 }
 
 const styles = StyleSheet.create({

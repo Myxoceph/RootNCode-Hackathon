@@ -1,11 +1,10 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type {
   Redemption,
   Reward,
   RewardKind,
   WalletResponse,
+  Lang,
 } from "@vagabonds/contracts";
 import {
   Button,
@@ -64,7 +63,7 @@ import {
   WIDE_PAGE_PADDING,
   wideColumn,
 } from "@/lib/use-wide-web";
-import { casing, useLang } from "@/i18n";
+import { localeTag, useLang, useMessages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 type Filter = RewardKind | "all";
@@ -72,28 +71,24 @@ type Filter = RewardKind | "all";
 /** Each kind's icon and hue: the hue's light-theme shade for text and icons, the dark one on dark. */
 const KINDS: Record<
   RewardKind,
-  { label: string; icon: IconName; light: string; dark: string }
+  { icon: IconName; light: string; dark: string }
 > = {
   merch: {
-    label: "Hediyelik",
     icon: "bag-handle-outline",
     light: palette.altin700,
     dark: palette.altin300,
   },
   museum: {
-    label: "Müze",
     icon: "business-outline",
     light: palette.kobalt700,
     dark: palette.kobalt300,
   },
   discount: {
-    label: "İndirim",
     icon: "pricetag-outline",
     light: palette.gulkurusu700,
     dark: palette.gulkurusu300,
   },
   experience: {
-    label: "Deneyim",
     icon: "sparkles-outline",
     light: palette.mercan700,
     dark: palette.mercan300,
@@ -115,8 +110,8 @@ function blocker(
   return { kind: null, needed: 0 };
 }
 
-const dateOf = (iso: string) =>
-  new Date(iso).toLocaleDateString("tr-TR", {
+const dateOf = (iso: string, lang: Lang) =>
+  new Date(iso).toLocaleDateString(localeTag(lang), {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -128,7 +123,8 @@ const dateOf = (iso: string) =>
  * is; the codes taken are tickets to show at the branch, museum or café (docs/rewards.md).
  */
 export default function MyRewardsScreen() {
-  useLang();
+  const m = useMessages();
+  const w = m.rewards;
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const wide = useWideWeb();
@@ -167,7 +163,7 @@ export default function MyRewardsScreen() {
       contentInsetAdjustmentBehavior="automatic"
     >
       <Head>
-        <title>Ödüllerim · Vagabonds</title>
+        <title>{m.common.title(m.screens.rewards)}</title>
       </Head>
 
       <WalletCard
@@ -183,7 +179,7 @@ export default function MyRewardsScreen() {
       {rewards.status === "loading" && (
         <ActivityIndicator
           color={c.textSecondary}
-          accessibilityLabel="Ödüller yükleniyor"
+          accessibilityLabel={w.loading}
         />
       )}
       {rewards.status === "error" && (
@@ -193,13 +189,13 @@ export default function MyRewardsScreen() {
           style={styles.error}
         >
           <Text variant="caption" color="textSecondary" style={styles.centered}>
-            {`${rewards.error.message} Tekrar denemek için dokun.`}
+            {`${rewards.error.message} ${m.common.tapToRetry}`}
           </Text>
         </Pressable>
       )}
       {rewards.status === "success" && rewards.data === null && (
         <Text color="textSecondary" style={styles.centered}>
-          Ödüller için sunucu gerekiyor; bu sürüm örnek veriyle çalışıyor.
+          {w.needsServer}
         </Text>
       )}
 
@@ -207,7 +203,7 @@ export default function MyRewardsScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHead}>
             <Text variant="heading" headingLevel={2}>
-              Ödüller
+              {w.title}
             </Text>
           </View>
           {kinds.length > 1 && (
@@ -231,7 +227,7 @@ export default function MyRewardsScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHead}>
             <Text variant="heading" headingLevel={2}>
-              Kodların
+              {w.codes}
             </Text>
           </View>
           <View style={styles.tickets}>
@@ -294,6 +290,8 @@ function WalletCard({
   holder: string | null;
   createdAt: string | null;
 }) {
+  const lang = useLang();
+  const w = useMessages().rewards;
   const reduced = useReducedMotion();
   const shineId = useSvgKey("shine");
   const balance = wallet?.balance ?? 0;
@@ -330,7 +328,7 @@ function WalletCard({
           onLayout={(e) => setWidth(e.nativeEvent.layout.width)}
           accessible
           accessibilityRole="image"
-          accessibilityLabel={`Vakıf Katılım VKart, Gezgin Kartı${holder ? `, ${holder}` : ""}: ${balance} puan harcanabilir`}
+          accessibilityLabel={w.vkartLabel(holder, balance)}
         >
           <Image
             source={VK_CARD}
@@ -374,7 +372,7 @@ function WalletCard({
             <View style={styles.holderBlock}>
               {since && (
                 <Text colorValue="rgba(255,255,255,0.8)" style={styles.since}>
-                  ÜYE {since}
+                  {w.memberSince(since)}
                 </Text>
               )}
               <Text
@@ -382,15 +380,15 @@ function WalletCard({
                 style={styles.holder}
                 numberOfLines={1}
               >
-                {(holder ?? "GEZGİN").toLocaleUpperCase(casing())}
+                {(holder ?? w.traveller).toLocaleUpperCase(lang)}
               </Text>
             </View>
             <View style={styles.balanceBlock}>
               <Text colorValue="#FFFFFF" style={styles.balance}>
-                {balance.toLocaleString("tr-TR")}
+                {balance.toLocaleString(localeTag(lang))}
               </Text>
               <Text colorValue="#FFFFFF" style={styles.balanceUnit}>
-                puan
+                {w.points}
               </Text>
             </View>
           </View>
@@ -403,21 +401,21 @@ function WalletCard({
             colorValue={scheme === "dark" ? palette.altin300 : palette.altin700}
             style={styles.summaryOverline}
           >
-            GEZGİN KARTI
+            {w.cardHead}
           </Text>
           <View style={styles.summaryBalance}>
             <Text colorValue={c.text} style={styles.summaryValue}>
-              {balance.toLocaleString("tr-TR")}
+              {balance.toLocaleString(localeTag(lang))}
             </Text>
             <Text colorValue={c.textSecondary} style={styles.summaryUnit}>
-              puan harcanabilir
+              {w.pointsToSpend}
             </Text>
           </View>
           <View style={[styles.summaryRows, { borderColor: c.border }]}>
             {[
-              { label: "Kazanılan", value: wallet?.earned ?? 0 },
-              { label: "Harcanan", value: wallet?.spent ?? 0 },
-              { label: "Mühürlü ziyaret", value: wallet?.provenVisits ?? 0 },
+              { label: w.earnedRow, value: wallet?.earned ?? 0 },
+              { label: w.spentRow, value: wallet?.spent ?? 0 },
+              { label: w.sealedRow, value: wallet?.provenVisits ?? 0 },
             ].map((row, i) => (
               <View
                 key={row.label}
@@ -438,7 +436,7 @@ function WalletCard({
                   {row.label}
                 </Text>
                 <Text colorValue={c.text} style={styles.summaryRowValue}>
-                  {row.value.toLocaleString("tr-TR")}
+                  {row.value.toLocaleString(localeTag(lang))}
                 </Text>
               </View>
             ))}
@@ -448,13 +446,13 @@ function WalletCard({
         <View
           style={styles.walletStats}
           accessible
-          accessibilityLabel={`${wallet?.earned ?? 0} kazanılan, ${wallet?.spent ?? 0} harcanan, ${wallet?.provenVisits ?? 0} mühürlü ziyaret`}
+          accessibilityLabel={w.statsLabel(wallet?.earned ?? 0, wallet?.spent ?? 0, wallet?.provenVisits ?? 0)}
         >
-          <WalletStat value={wallet?.earned ?? 0} label="kazanılan" />
-          <WalletStat value={wallet?.spent ?? 0} label="harcanan" />
+          <WalletStat value={wallet?.earned ?? 0} label={w.earned} />
+          <WalletStat value={wallet?.spent ?? 0} label={w.spent} />
           <WalletStat
             value={wallet?.provenVisits ?? 0}
-            label="mühürlü ziyaret"
+            label={w.sealedVisits}
           />
         </View>
       )}
@@ -464,6 +462,7 @@ function WalletCard({
 
 /** One figure under the card, as a small pill. */
 function WalletStat({ value, label }: { value: number; label: string }) {
+  const lang = useLang();
   const { colors: c } = useTheme();
   return (
     <View
@@ -473,7 +472,7 @@ function WalletStat({ value, label }: { value: number; label: string }) {
       ]}
     >
       <Text colorValue={c.text} style={styles.walletStatValue}>
-        {value.toLocaleString("tr-TR")}
+        {value.toLocaleString(localeTag(lang))}
       </Text>
       <Text colorValue={c.textSecondary} style={styles.walletStatLabel}>
         {label}
@@ -511,6 +510,7 @@ function Featured({
   wallet: WalletResponse | null;
   onOpen: (reward: Reward) => void;
 }) {
+  const w = useMessages().rewards;
   const { width: screen } = useWindowDimensions();
   const wide = useWideWeb();
   const picks = nearest(items, wallet).slice(0, wide ? 3 : 5);
@@ -523,7 +523,7 @@ function Featured({
     <View style={styles.section}>
       <View style={styles.sectionHead}>
         <Text variant="heading" headingLevel={2}>
-          Hedefine yakın
+          {w.nearGoal}
         </Text>
       </View>
       <ScrollView
@@ -564,6 +564,8 @@ function FeaturedTile({
   index: number;
   onOpen: (reward: Reward) => void;
 }) {
+  const lang = useLang();
+  const w = useMessages().rewards;
   const reduced = useReducedMotion();
   const tileId = useSvgKey("tile");
   const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
@@ -602,8 +604,8 @@ function FeaturedTile({
     >
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={`${reward.title}, ${reward.partner}, ${reward.costPoints} puan, ${ready ? "alabilirsin" : `${block.needed} puan daha`}`}
-        accessibilityHint="Ödülün ayrıntısını açar"
+        accessibilityLabel={w.tileLabel(reward.title, reward.partner, reward.costPoints, ready ? w.available : w.pointsMore(block.needed))}
+        accessibilityHint={w.opensReward}
         onPress={() => onOpen(reward)}
         style={({ pressed }) => [
           styles.tile,
@@ -636,12 +638,12 @@ function FeaturedTile({
 
         <View style={styles.tileTop}>
           <Text colorValue="rgba(255,255,255,0.72)" style={styles.tileKind}>
-            {look.label.toLocaleUpperCase(casing())}
+            {w.kinds[reward.kind].toLocaleUpperCase(lang)}
           </Text>
           {ready && (
             <View style={styles.tileReady}>
               <Text colorValue={palette.gece950} style={styles.tileReadyText}>
-                Alabilirsin
+                {w.canRedeem}
               </Text>
             </View>
           )}
@@ -669,7 +671,7 @@ function FeaturedTile({
             )}
             {!ready && (
               <Text colorValue="rgba(255,255,255,0.72)" style={styles.tileLeft}>
-                {`${block.needed} kaldı`}
+                {w.left(block.needed)}
               </Text>
             )}
           </View>
@@ -682,6 +684,7 @@ function FeaturedTile({
 /** An anonymous visitor earns points but cannot take codes; an account keeps the points. */
 function AccountNote() {
   const { colors: c } = useTheme();
+  const w = useMessages().rewards;
   const router = useRouter();
   return (
     <View
@@ -692,11 +695,10 @@ function AccountNote() {
     >
       <Ionicons name="person-add-outline" size={20} color={c.primary} />
       <Text variant="caption" style={styles.flex}>
-        Kod almak için hesap aç. Şimdiye kadar kazandığın puanlar hesabına
-        geçer.
+        {w.accountNote}
       </Text>
       <Button
-        label="Hesap aç"
+        label={w.openAccount}
         variant="ghost"
         onPress={() =>
           router.push({ pathname: "/auth", params: { mode: "register" } })
@@ -717,9 +719,10 @@ function Kinds({
   kinds: RewardKind[];
 }) {
   const { colors: c } = useTheme();
+  const w = useMessages().rewards;
   const options: Array<{ key: Filter; label: string }> = [
-    { key: "all", label: "Tümü" },
-    ...kinds.map((kind) => ({ key: kind, label: KINDS[kind].label })),
+    { key: "all", label: w.all },
+    ...kinds.map((kind) => ({ key: kind, label: w.kinds[kind] })),
   ];
   return (
     <ScrollView
@@ -781,6 +784,7 @@ function RewardCard({
   onOpen: (reward: Reward) => void;
 }) {
   const wideCell = useWideWeb();
+  const w = useMessages().rewards;
   const { colors: c, scheme } = useTheme();
   const reduced = useReducedMotion();
   const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
@@ -804,12 +808,12 @@ function RewardCard({
 
   const state =
     block.kind === "stock"
-      ? "tükendi"
+      ? w.soldOutState
       : block.kind === "visits"
-        ? `${block.needed} kanıtlanmış ziyaret daha gerekiyor`
+        ? w.visitsNeeded(block.needed)
         : block.kind === "points"
-          ? `${block.needed} puan daha gerekiyor`
-          : "alabilirsin";
+          ? w.pointsNeeded(block.needed)
+          : w.available;
 
   return (
     <Animated.View
@@ -832,8 +836,8 @@ function RewardCard({
     >
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={`${reward.title}, ${reward.partner}, ${reward.costPoints} puan, ${state}${reward.sample ? ", örnek ödül" : ""}`}
-        accessibilityHint="Ödülün ayrıntısını açar"
+        accessibilityLabel={w.cardLabel(reward.title, reward.partner, reward.costPoints, state, reward.sample)}
+        accessibilityHint={w.opensReward}
         onPress={() => onOpen(reward)}
         style={({ pressed }) => [
           styles.card,
@@ -862,7 +866,7 @@ function RewardCard({
           {reward.sample && (
             <View style={[styles.tag, { backgroundColor: c.surface }]}>
               <Text colorValue={c.textSecondary} style={styles.tagText}>
-                ÖRNEK
+                {w.sample}
               </Text>
             </View>
           )}
@@ -871,7 +875,7 @@ function RewardCard({
               style={[styles.tag, styles.tagRight, { backgroundColor: c.text }]}
             >
               <Text colorValue={c.background} style={styles.tagText}>
-                TÜKENDİ
+                {w.soldOut}
               </Text>
             </View>
           )}
@@ -895,7 +899,7 @@ function RewardCard({
               style={styles.cost}
             >{`✦ ${reward.costPoints}`}</Text>
             <Text variant="caption" color="textSecondary">
-              puan
+              {w.points}
             </Text>
           </View>
 
@@ -910,7 +914,7 @@ function RewardCard({
             >
               <Ionicons name="checkmark-circle" size={14} color={c.success} />
               <Text colorValue={c.success} style={styles.readyText}>
-                Alabilirsin
+                {w.canRedeem}
               </Text>
             </View>
           )}
@@ -933,7 +937,7 @@ function RewardCard({
                 variant="caption"
                 color="textSecondary"
                 style={styles.nearText}
-              >{`${block.needed} puan daha`}</Text>
+              >{w.pointsMore(block.needed)}</Text>
             </View>
           )}
           {block.kind === "visits" && (
@@ -943,7 +947,7 @@ function RewardCard({
                 variant="caption"
                 color="textSecondary"
                 style={styles.nearText}
-              >{`${block.needed} mühürlü ziyaret daha`}</Text>
+              >{w.sealedMore(block.needed)}</Text>
             </View>
           )}
           {block.kind === "stock" && (
@@ -952,7 +956,7 @@ function RewardCard({
               color="textSecondary"
               style={styles.nearText}
             >
-              Yeni kodlar bekleniyor
+              {w.restocking}
             </Text>
           )}
         </View>
@@ -969,14 +973,16 @@ function Ticket({
   redemption: Redemption;
   onOpen: (redemption: Redemption) => void;
 }) {
+  const lang = useLang();
+  const w = useMessages().rewards;
   const { colors: c, scheme } = useTheme();
   const look = KINDS[redemption.reward.kind];
   const hue = scheme === "dark" ? look.dark : look.light;
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={`${redemption.reward.title}, ${redemption.reward.partner}, ${dateOf(redemption.createdAt)}. Kod ${redemption.code}`}
-      accessibilityHint="Kodu büyük gösterir"
+      accessibilityLabel={w.ticketLabel(redemption.reward.title, redemption.reward.partner, dateOf(redemption.createdAt, lang), redemption.code)}
+      accessibilityHint={w.opensCode}
       onPress={() => onOpen(redemption)}
       style={({ pressed }) => [
         styles.ticket,
@@ -1009,7 +1015,7 @@ function Ticket({
           {redemption.reward.title}
         </Text>
         <Text variant="caption" color="textSecondary" numberOfLines={1}>
-          {`${redemption.reward.partner} · ${dateOf(redemption.createdAt)}`}
+          {`${redemption.reward.partner} · ${dateOf(redemption.createdAt, lang)}`}
         </Text>
         <Text color="highlight" style={styles.ticketCode} numberOfLines={1}>
           {redemption.code}
@@ -1034,6 +1040,8 @@ function RewardSheet({
   onClose: () => void;
   onRedeemed: (redemption: Redemption) => void;
 }) {
+  const m = useMessages();
+  const w = m.rewards;
   const { colors: c, scheme } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -1057,23 +1065,23 @@ function RewardSheet({
   const needs: Array<{ met: boolean; text: string }> = [
     {
       met: balance >= shown.costPoints,
-      text: `${shown.costPoints} puan (sende ${balance})`,
+      text: w.needPoints(shown.costPoints, balance),
     },
     ...(shown.minProvenVisits > 0
       ? [
           {
             met: proven >= shown.minProvenVisits,
-            text: `${shown.minProvenVisits} kanıtlanmış ziyaret (sende ${proven})`,
+            text: w.needVisits(shown.minProvenVisits, proven),
           },
         ]
       : []),
     {
       met: shown.stock > 0,
-      text: shown.stock > 0 ? `Stokta ${shown.stock} kod` : "Kodlar tükendi",
+      text: shown.stock > 0 ? w.stock(shown.stock) : w.noStock,
     },
     {
       met: account,
-      text: account ? "Hesabınla giriş yaptın" : "Hesap gerekir",
+      text: account ? w.signedIn : w.needsAccount,
     },
   ];
 
@@ -1082,13 +1090,13 @@ function RewardSheet({
     setError(null);
     try {
       const result = await redeemReward(shown.code);
-      announce(`${shown.title} alındı. Kodun ${result.redemption.code}`);
+      announce(w.taken(shown.title, result.redemption.code));
       onRedeemed(result.redemption);
     } catch (e) {
       const message =
         e instanceof DataError || e instanceof Error
           ? e.message
-          : "Ödül alınamadı.";
+          : w.takeFailed;
       setError(message);
       announce(message);
     } finally {
@@ -1107,7 +1115,7 @@ function RewardSheet({
         style={styles.backdrop}
         onPress={onClose}
         accessibilityRole="button"
-        accessibilityLabel="Kapat"
+        accessibilityLabel={m.common.close}
       />
       <View
         style={[
@@ -1126,7 +1134,7 @@ function RewardSheet({
         </View>
         <View style={styles.sheetHead}>
           <Text variant="caption" color="textSecondary" style={styles.centered}>
-            {`${look.label} · ${shown.partner}${shown.sample ? " · örnek ödül" : ""}`}
+            {`${w.kinds[shown.kind]} · ${shown.partner}${shown.sample ? w.sampleTag : ""}`}
           </Text>
           <Text variant="title" headingLevel={2} style={styles.centered}>
             {shown.title}
@@ -1172,7 +1180,7 @@ function RewardSheet({
         )}
         {!account ? (
           <Button
-            label="Hesap aç"
+            label={w.openAccount}
             onPress={() => {
               onClose();
               router.push({ pathname: "/auth", params: { mode: "register" } });
@@ -1183,14 +1191,14 @@ function RewardSheet({
           <Button
             label={
               busy
-                ? "Alınıyor…"
+                ? w.taking
                 : block.kind === null
-                  ? `${shown.costPoints} puanla al`
+                  ? w.takeFor(shown.costPoints)
                   : block.kind === "points"
-                    ? `${block.needed} puan daha gerekiyor`
+                    ? w.pointsNeeded(block.needed)
                     : block.kind === "visits"
-                      ? `${block.needed} kanıtlanmış ziyaret daha`
-                      : "Tükendi"
+                      ? w.visitsMore(block.needed)
+                      : w.soldOutButton
             }
             disabled={busy || block.kind !== null}
             icon={
@@ -1203,7 +1211,7 @@ function RewardSheet({
           />
         )}
         <Button
-          label="Vazgeç"
+          label={w.cancel}
           variant="ghost"
           onPress={onClose}
           style={styles.stretch}
@@ -1221,6 +1229,9 @@ function CodeSheet({
   redemption: Redemption | null;
   onClose: () => void;
 }) {
+  const lang = useLang();
+  const m = useMessages();
+  const w = m.rewards;
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const [shown, setShown] = useState<Redemption | null>(redemption);
@@ -1239,7 +1250,7 @@ function CodeSheet({
         style={styles.backdrop}
         onPress={onClose}
         accessibilityRole="button"
-        accessibilityLabel="Kapat"
+        accessibilityLabel={m.common.close}
       />
       <View
         style={[
@@ -1258,21 +1269,21 @@ function CodeSheet({
           {shown.reward.title}
         </Text>
         <Text variant="caption" color="textSecondary" style={styles.centered}>
-          {`${shown.reward.partner} · ${dateOf(shown.createdAt)} · ${shown.points} puan`}
+          {w.ticketMeta(shown.reward.partner, dateOf(shown.createdAt, lang), shown.points)}
         </Text>
         <View style={[styles.bigCode, { borderColor: c.highlightMark }]}>
           <Text variant="caption" color="textSecondary" style={styles.centered}>
-            TEK KULLANIMLIK KOD
+            {w.singleUse}
           </Text>
           <Text selectable color="text" style={styles.bigCodeText}>
             {shown.code}
           </Text>
         </View>
         <Text variant="caption" color="textSecondary" style={styles.centered}>
-          Bu kodu şubede, gişede ya da kafede göster. Kod bir kez kullanılır.
+          {w.showCode}
         </Text>
         <Button
-          label="Tamam"
+          label={w.ok}
           variant="ghost"
           onPress={onClose}
           style={styles.stretch}

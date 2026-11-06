@@ -1,7 +1,5 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { AssetSummary } from "@vagabonds/contracts";
+import type { AssetSummary, Lang } from "@vagabonds/contracts";
 import { fontFamily, palette, radius, spacing, Text, touchTarget, typography, useTheme, useUi } from "@vagabonds/ui";
 import { useEffect, useMemo, useRef, useState, type ComponentRef } from "react";
 import { ActivityIndicator, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from "react-native";
@@ -11,7 +9,7 @@ import { useSearchableAssets } from "@/data";
 import type { CityOption } from "@/data/source";
 import { announce } from "@/lib/announce";
 import { searchAssets } from "@/search/asset-search";
-import { casing, getLang, useMessages } from "@/i18n";
+import { useLang, useMessages } from "@/i18n";
 
 /** The gold of the tab bar: the field's ring while it is typed in. */
 const GOLD = "#966F22";
@@ -50,6 +48,7 @@ interface MapSearchProps {
  * and how many were found is said as the list changes.
  */
 export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, trailing, notice, below, column, onBottom }: MapSearchProps) {
+  const lang = useLang();
   const { colors: c } = useTheme();
   const { textScale } = useUi();
   const m = useMessages();
@@ -106,7 +105,7 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
     else if (shownAssets[0]) pickAsset(shownAssets[0]);
   };
 
-  const placeholder = city ? m.search.placeholderIn(placeIn(city.label)) : m.search.placeholder;
+  const placeholder = city ? m.search.placeholderIn(placeIn(city.label, lang)) : m.search.placeholder;
   const shadow = { shadowColor: "#000", shadowOpacity: 0.22, shadowRadius: 16, shadowOffset: { width: 0, height: 6 }, elevation: 8 };
 
   return (
@@ -251,7 +250,7 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
                   <Ionicons name="search-outline" size={28} color={c.textSecondary} />
                   <Text variant="label">{m.search.notFound}</Text>
                   <Text variant="caption" color="textSecondary" style={styles.center}>
-                    {m.search.nothingMatches(text.trim(), city ? placeIn(city.label) : null)}
+                    {m.search.nothingMatches(text.trim(), city ? placeIn(city.label, lang) : null)}
                   </Text>
                 </View>
               )}
@@ -280,8 +279,8 @@ export function MapSearch({ city, cities, top, onBack, onPickCity, onPickAsset, 
 }
 
 /** "Bursa'da" in Turkish, "Bursa" in English: the city as the phrases around it need it. */
-export function placeIn(name: string): string {
-  return getLang() === "tr" ? inCity(name) : name;
+export function placeIn(name: string, lang: Lang): string {
+  return lang === "tr" ? inCity(name) : name;
 }
 
 /** "Bursa'da", "Edirne'de", "Sinop'ta": the city with the locative ending its last sounds call for. */
@@ -294,10 +293,11 @@ export function inCity(name: string): string {
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  const lang = useLang();
   return (
     <View style={styles.section}>
       <Text variant="overline" color="textSecondary" headingLevel={2} style={styles.sectionTitle}>
-        {title.toLocaleUpperCase(casing())}
+        {title.toLocaleUpperCase(lang)}
       </Text>
       {children}
     </View>

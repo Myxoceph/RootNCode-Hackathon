@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type {
   AssetRelationsResponse,
@@ -34,7 +32,6 @@ import { WebPageHeader } from "@/components/web-nav-bar";
 import { useAsset, useAssetRelations } from "@/data";
 import {
   isAssetUnlocked,
-  LOCKED_WARNING,
   relatedAssetsOf,
   type RelatedAsset,
 } from "@/lib/related-assets";
@@ -46,7 +43,7 @@ import {
   WIDE_PAGE_PADDING,
   wideColumn,
 } from "@/lib/use-wide-web";
-import { casing, useLang } from "@/i18n";
+import { useLang, useMessages } from "@/i18n";
 
 /** On a photo, under its dark fade: the same in every theme. */
 const onPhoto = {
@@ -74,7 +71,8 @@ const WIDE_PHOTO_HEIGHT = 220;
  * find. The bar on top says how far the visitor has come.
  */
 export default function RelatedScreen() {
-  useLang();
+  const m = useMessages();
+  const w = m.related;
   const { asset: id, name } = useLocalSearchParams<{
     asset?: string;
     name?: string;
@@ -91,14 +89,14 @@ export default function RelatedScreen() {
   return (
     <View style={[styles.flex, { backgroundColor: c.background }]}>
       <Head>
-        <title>{`${name ? `${name}: ` : ""}İlişkili eserler · Vagabonds`}</title>
+        <title>{m.common.title(name ? `${name}: ${w.title}` : w.title)}</title>
       </Head>
       {WEB ? (
         <WebPageHeader
-          title={name ? `${name}: ilişkili eserler` : "İlişkili eserler"}
+          title={name ? w.titleOf(name) : w.title}
           section="monuments"
           back={{
-            label: name ?? "Eser",
+            label: name ?? w.site,
             href: id
               ? { pathname: "/monuments/[id]", params: { id } }
               : "/monuments",
@@ -122,6 +120,7 @@ function TopBar({ asset }: { asset?: string }) {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { colors: c } = useTheme();
+  const words = useMessages().common;
   const back = () => {
     if (router.canGoBack()) router.back();
     else if (asset)
@@ -132,7 +131,7 @@ function TopBar({ asset }: { asset?: string }) {
     <View style={[styles.topBar, { paddingTop: insets.top + spacing.xs }]}>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel="Geri"
+        accessibilityLabel={words.back}
         hitSlop={6}
         onPress={back}
         style={[styles.back, { backgroundColor: c.surfaceRaised }]}
@@ -145,6 +144,7 @@ function TopBar({ asset }: { asset?: string }) {
 
 function Locked() {
   const { colors: c } = useTheme();
+  const w = useMessages().related;
   return (
     <View style={styles.shutPage}>
       <View style={[styles.shutMark, { borderColor: c.highlightMark }]}>
@@ -155,7 +155,7 @@ function Locked() {
         accessibilityLiveRegion="polite"
         style={styles.center}
       >
-        {LOCKED_WARNING}
+        {w.lockedWarning}
       </Text>
     </View>
   );
@@ -168,6 +168,8 @@ function Related({
   relations: AssetRelationsResponse | null;
   name?: string;
 }) {
+  const lang = useLang();
+  const w = useMessages().related;
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const unlocked = useUnlockedAssets();
@@ -204,11 +206,11 @@ function Related({
           <View style={styles.intro}>
             {name && (
               <Text variant="overline" color="highlight">
-                {name.toLocaleUpperCase(casing())}
+                {name.toLocaleUpperCase(lang)}
               </Text>
             )}
             <Text variant="display" headingLevel={1}>
-              Bu eserin ilişkili olduğu eserler
+              {w.heading}
             </Text>
             {related.length > 0 && (
               <Progress opened={opened.length} total={related.length} />
@@ -217,13 +219,13 @@ function Related({
         )}
 
         {related.length === 0 && (
-          <Text color="textSecondary">Bu eserin kayıtlı bir ilişkisi yok.</Text>
+          <Text color="textSecondary">{w.none}</Text>
         )}
 
         {opened.length > 0 && (
           <View style={styles.section}>
             <Text variant="overline" headingLevel={2} color="textSecondary">
-              AÇILAN İLİŞKİLER
+              {w.opened}
             </Text>
             <View style={wide && styles.openGrid}>
               {opened.map((entry) => (
@@ -237,10 +239,10 @@ function Related({
           <View style={styles.section}>
             <View style={styles.sectionHead}>
               <Text variant="overline" headingLevel={2} color="textSecondary">
-                KİLİTLİ
+                {w.locked}
               </Text>
               <Text variant="caption" color="textSecondary">
-                Kilidini açtıkça ilişkisi burada görünür.
+                {w.lockedHint}
               </Text>
             </View>
             <View style={[styles.tiles, wide && styles.tilesWide]}>
@@ -261,11 +263,12 @@ function Related({
 
 function Progress({ opened, total }: { opened: number; total: number }) {
   const { colors: c } = useTheme();
+  const w = useMessages().related;
   return (
     <View
       style={styles.progress}
       accessible
-      accessibilityLabel={`${total} eserden ${opened} ilişki açıldı`}
+      accessibilityLabel={w.progressLabel(opened, total)}
     >
       <View style={[styles.progressTrack, { backgroundColor: c.border }]}>
         <View
@@ -279,7 +282,7 @@ function Progress({ opened, total }: { opened: number; total: number }) {
         />
       </View>
       <Text variant="caption" color="textSecondary" style={styles.semibold}>
-        {`${opened} / ${total} açıldı`}
+        {w.progress(opened, total)}
       </Text>
     </View>
   );
@@ -306,6 +309,7 @@ function OpenCard({
 }) {
   const { asset, reasons } = entry;
   const { colors: c } = useTheme();
+  const w = useMessages().related;
   const open = useOpenAsset(asset);
   const said = reasons
     .map((reason) => `${reason.type.label}: ${reason.description}`)
@@ -314,7 +318,7 @@ function OpenCard({
     <Pressable
       accessibilityRole="link"
       accessibilityLabel={`${asset.name}, ${metaOf(asset)}. ${said}`}
-      accessibilityHint="Eserin kartını açar"
+      accessibilityHint={w.opensCard}
       onPress={open}
       style={({
         pressed,
@@ -364,12 +368,13 @@ function OpenCard({
 /** An asset still locked: a small dimmed photo, its name and a padlock; what joins the two stays unsaid. */
 function LockedTile({ asset, width }: { asset: AssetSummary; width: number }) {
   const { colors: c } = useTheme();
+  const w = useMessages().related;
   const open = useOpenAsset(asset);
   return (
     <Pressable
       accessibilityRole="link"
-      accessibilityLabel={`${asset.name}, ${metaOf(asset)}. Kilitli: ilişkisi, bu eserin kilidi açılınca görünür.`}
-      accessibilityHint="Eserin kartını açar"
+      accessibilityLabel={`${asset.name}, ${metaOf(asset)}. ${w.lockedTile}`}
+      accessibilityHint={w.opensCard}
       onPress={open}
       style={({
         pressed,

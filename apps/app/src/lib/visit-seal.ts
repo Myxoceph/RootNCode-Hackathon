@@ -1,4 +1,6 @@
-import type { AssetDetail, Media } from "@vagabonds/contracts";
+import type { AssetDetail, Lang, Media } from "@vagabonds/contracts";
+
+import { messages, type Messages } from "@/i18n/messages";
 
 /**
  * The parts of a monument that can carry its seal, best first, with their names. A specific part is
@@ -6,23 +8,23 @@ import type { AssetDetail, Media } from "@vagabonds/contracts";
  * many monuments whose photos show no such part; the cover photo is last, when no photo says what it
  * shows (book photos not yet sorted), as it is most often the building from outside.
  */
-const SEAL_PARTS: ReadonlyArray<[subject: string, name: string]> = [
-  ["portal", "Taçkapı"],
-  ["inscription", "Kitabe"],
-  ["ornament_detail", "Süsleme detayı"],
-  ["fountain", "Çeşme"],
-  ["mihrab", "Mihrap"],
-  ["minber", "Minber"],
-  ["window", "Pencere"],
-  ["engraving", "Oyma"],
-  ["interior", "İç mekân"],
-  ["portico", "Revak"],
-  ["courtyard", "Avlu"],
-  ["exterior", "Dış cephe"],
-  ["minaret", "Minare"],
-  ["dome", "Kubbe"],
-  ["tomb", "Türbe"],
-  ["sadirvan", "Şadırvan"],
+const SEAL_PARTS: ReadonlyArray<Exclude<keyof Messages["seal"]["parts"], "general">> = [
+  "portal",
+  "inscription",
+  "ornament_detail",
+  "fountain",
+  "mihrab",
+  "minber",
+  "window",
+  "engraving",
+  "interior",
+  "portico",
+  "courtyard",
+  "exterior",
+  "minaret",
+  "dome",
+  "tomb",
+  "sadirvan",
 ];
 /** Photos nobody has sorted yet; one from above (`aerial`) cannot be framed on the spot and is never used. */
 const UNSORTED = new Set<string | null>(["photo", "other", null]);
@@ -43,12 +45,13 @@ function sharpest(photos: Media[]): Media | undefined {
  * telling detail, by the dataset's `subject`, and of several such photos the sharpest. `null` when
  * the asset has no photo to use.
  */
-export function visitSealTarget(asset: AssetDetail): VisitSealTarget | null {
-  for (const [subject, part] of SEAL_PARTS) {
+export function visitSealTarget(asset: AssetDetail, lang: Lang): VisitSealTarget | null {
+  const parts = messages[lang].seal.parts;
+  for (const subject of SEAL_PARTS) {
     const photo = sharpest(asset.media.filter((m) => m.kind === "photo" && m.subject === subject));
-    if (photo) return { photo, part };
+    if (photo) return { photo, part: parts[subject] };
   }
   const photos = asset.media.filter((m) => m.kind === "photo" && UNSORTED.has(m.subject));
   const cover = photos.find((m) => m.isCover) ?? photos[0];
-  return cover ? { photo: cover, part: "Genel görünüm" } : null;
+  return cover ? { photo: cover, part: parts.general } : null;
 }

@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetDetail, PulseItem } from "@vagabonds/contracts";
 import { cameraColors, spacing, Text, touchTarget } from "@vagabonds/ui";
@@ -8,22 +6,14 @@ import { Pressable, StyleSheet, View } from "react-native";
 import { pulseItemsFromTips, usePulse } from "@/data";
 import { formatDate } from "@/lib/format-date";
 import { FrameLink } from "@/lib/in-frame";
-import { getMessages, useMessages } from "@/i18n";
+import { useLang, useMessages, type Messages } from "@/i18n";
 
-const origins: Record<PulseItem["origin"], string> = {
-  get field_visit() {
-    return getMessages().pulse.fieldVisit;
-  },
-  get visitor_reviews_summary() {
-    return getMessages().pulse.reviewsSummary;
-  },
-  get official() {
-    return getMessages().pulse.official;
-  },
-  get community() {
-    return getMessages().pulse.community;
-  },
-};
+const originsIn = (m: Messages): Record<PulseItem["origin"], string> => ({
+  field_visit: m.pulse.fieldVisit,
+  visitor_reviews_summary: m.pulse.reviewsSummary,
+  official: m.pulse.official,
+  community: m.pulse.community,
+});
 
 const EDGE = "rgba(255, 255, 255, 0.16)";
 
@@ -119,6 +109,8 @@ export function VisitorPulse({
 }
 
 function PulseList({ items, look }: { items: PulseItem[]; look: PulseLook }) {
+  const m = useMessages();
+  const lang = useLang();
   return (
     <View
       accessibilityRole="list"
@@ -132,8 +124,8 @@ function PulseList({ items, look }: { items: PulseItem[]; look: PulseLook }) {
           <Text colorValue={look.text}>{item.text}</Text>
           <Text variant="caption" colorValue={look.soft}>
             {[
-              item.author ?? origins[item.origin],
-              item.date && formatDate(item.date),
+              item.author ?? originsIn(m)[item.origin],
+              item.date && formatDate(item.date, lang),
             ]
               .filter(Boolean)
               .join(" · ")}
@@ -151,10 +143,11 @@ function PulseError({
   onRetry: () => void;
   look: PulseLook;
 }) {
+  const m = useMessages();
   return (
     <View style={styles.errorRow}>
       <Text variant="caption" colorValue={look.soft} style={styles.flex}>
-        {getMessages().pulse.failed}
+        {m.pulse.failed}
       </Text>
       <Pressable
         accessibilityRole="button"
@@ -162,7 +155,7 @@ function PulseError({
         style={styles.retry}
       >
         <Text variant="label" colorValue={look.gold}>
-          {getMessages().common.retry}
+          {m.common.retry}
         </Text>
       </Pressable>
     </View>

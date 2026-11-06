@@ -6,6 +6,7 @@ import { useMemo } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 
 import { AssetImage } from "@/components/asset-image";
+import { useLang, useMessages } from "@/i18n";
 import { centuriesOf } from "@/lib/home";
 
 /**
@@ -15,8 +16,10 @@ import { centuriesOf } from "@/lib/home";
  */
 export function TimeJourneyCard({ assets }: { assets: readonly AssetSummary[] }) {
   const { colors: c, scheme } = useTheme();
+  const w = useMessages().journey;
+  const lang = useLang();
   const router = useRouter();
-  const centuries = useMemo(() => centuriesOf(assets), [assets]);
+  const centuries = useMemo(() => centuriesOf(assets, lang), [assets, lang]);
   if (centuries.length < 2) return null;
 
   const first = centuries[0]!;
@@ -29,8 +32,8 @@ export function TimeJourneyCard({ assets }: { assets: readonly AssetSummary[] })
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={`Zamanda yolculuk: ${first.roman}. yüzyıldan ${last.roman}. yüzyıla, ${centuries.length} yüzyıl, ${count} eser`}
-      accessibilityHint="Eserleri yapıldıkları yüzyıllara göre gezersin"
+      accessibilityLabel={w.cardLabel(first.roman, last.roman, centuries.length, count)}
+      accessibilityHint={w.cardHint}
       onPress={() => router.push("/time-journey")}
       style={({ pressed }) => [
         styles.card,
@@ -54,10 +57,10 @@ export function TimeJourneyCard({ assets }: { assets: readonly AssetSummary[] })
 
       <View style={styles.words}>
         <Text color="highlight" style={styles.overline}>
-          ZAMANDA YOLCULUK
+          {w.overline}
         </Text>
         <Text variant="label" numberOfLines={2} style={styles.title}>
-          {`${first.roman}. yüzyıldan ${last.roman}. yüzyıla`}
+          {w.span(first.roman, last.roman)}
         </Text>
         <View style={styles.timeline} aria-hidden>
           <View style={[styles.line, { backgroundColor: dark ? "rgba(221, 181, 92, 0.35)" : "rgba(156, 116, 36, 0.3)" }]} />
@@ -73,7 +76,7 @@ export function TimeJourneyCard({ assets }: { assets: readonly AssetSummary[] })
           ))}
         </View>
         <Text variant="caption" color="textSecondary" style={styles.count}>
-          {`${centuries.length} yüzyıl · ${count} eser`}
+          {w.counts(centuries.length, count)}
         </Text>
       </View>
 

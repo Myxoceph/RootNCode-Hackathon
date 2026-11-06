@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { AssetIdSchema, type ChatConversation } from "@vagabonds/contracts";
 import {
@@ -53,7 +51,7 @@ import {
 } from "@/lib/chat";
 import { useVoiceQuestion, type VoiceQuestion } from "@/lib/use-voice-question";
 import { speakAnswer, stopAnswer } from "@/lib/voice";
-import { getMessages, localeTag, useMessages } from "@/i18n";
+import { localeTag, useLang, useMessages } from "@/i18n";
 
 const WEB = Platform.OS === "web";
 /** From this width the web page shows the conversations beside the one on screen. */
@@ -82,6 +80,7 @@ const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
  * answer when it arrives.
  */
 export default function AssistantScreen() {
+  const lang = useLang();
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -255,7 +254,7 @@ export default function AssistantScreen() {
 
   const caption = archiveId
     ? archived
-      ? `${archived.assetName ?? m.rehber.archive} · ${new Date(archived.updatedAt).toLocaleDateString(localeTag(), { day: "numeric", month: "long" })}`
+      ? `${archived.assetName ?? m.rehber.archive} · ${new Date(archived.updatedAt).toLocaleDateString(localeTag(lang), { day: "numeric", month: "long" })}`
       : m.rehber.archive
     : asset
       ? (name ?? m.rehber.thisSite)
@@ -322,7 +321,7 @@ export default function AssistantScreen() {
       ]}
     >
       <Head>
-        <title>{`${getMessages().tabs.rehber} · Vagabonds`}</title>
+        <title>{`${m.tabs.rehber} · Vagabonds`}</title>
       </Head>
       {withPanel && (
         <AssistantSessions

@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   fontFamily,
@@ -32,8 +30,7 @@ import {
 } from "@/theme";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 import { LanguageSwitch } from "@/components/language-switch";
-import { useMessages, type Messages } from "@/i18n";
-import { casing } from "@/i18n";
+import { useLang, useMessages, type Messages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -372,6 +369,7 @@ function Section({
   note?: string;
   children: ReactNode;
 }) {
+  const lang = useLang();
   return (
     <View style={styles.section}>
       <View style={styles.sectionHead}>
@@ -381,7 +379,7 @@ function Section({
           headingLevel={2}
           style={styles.sectionTitle}
         >
-          {title.toLocaleUpperCase(casing())}
+          {title.toLocaleUpperCase(lang)}
         </Text>
         {note && (
           <Text variant="caption" color="textSecondary">

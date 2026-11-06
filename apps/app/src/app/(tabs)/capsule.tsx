@@ -1,13 +1,14 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { cameraColors, fontFamily, radius, spacing, Text, touchTarget } from "@vagabonds/ui";
 import Head from "expo-router/head";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Circle, G, Line, Rect } from "react-native-svg";
 
 import { hasFrequencies, readFrequencies, toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
-import { CAPSULE_SECONDS, captionAt, capsules, capsuleTypes, formatSeconds, type CapsuleType } from "@/content/capsules";
+import { CAPSULE_SECONDS, captionAt, capsuleTypes, capsuleWords, formatSeconds, type CapsuleType } from "@/content/capsules";
+import { useLang, useMessages } from "@/i18n";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -16,6 +17,9 @@ import { useA11ySettings } from "@/settings/a11y-settings";
  * use. Captions are on by default and turn every sound event into text.
  */
 export default function CapsuleScreen() {
+  const m = useMessages();
+  const w = m.capsule;
+  const lang = useLang();
   const insets = useSafeAreaInsets();
   const [type, setType] = useState<CapsuleType>("sifahane");
   const player = useCapsulePlayer();
@@ -23,7 +27,7 @@ export default function CapsuleScreen() {
 
   const mine = player?.type === type ? player : null;
   const elapsed = mine?.elapsed ?? 0;
-  const capsule = capsules[type];
+  const capsule = useMemo(() => capsuleWords(type, lang), [type, lang]);
 
   const choose = (next: CapsuleType) => {
     setType(next);
@@ -37,13 +41,13 @@ export default function CapsuleScreen() {
       contentContainerStyle={[styles.content, { paddingTop: insets.top + spacing.lg }]}
     >
       <Head>
-        <title>Ses Kapsülü · Vagabonds</title>
+        <title>{m.common.title(w.title)}</title>
       </Head>
       <Text variant="overline" colorValue={cameraColors.textSecondary} headingLevel={1}>
-        SESLİ ZAMAN KAPSÜLÜ
+        {w.overline}
       </Text>
 
-      <View accessibilityRole="radiogroup" accessibilityLabel="Eser türü" style={styles.types}>
+      <View accessibilityRole="radiogroup" accessibilityLabel={w.kindLabel} style={styles.types}>
         {capsuleTypes.map((key) => {
           const on = key === type;
           return (
@@ -55,7 +59,7 @@ export default function CapsuleScreen() {
               style={[styles.type, on && styles.typeOn]}
             >
               <Text variant="label" colorValue={on ? cameraColors.onGold : cameraColors.text}>
-                {capsules[key].name}
+                {capsuleWords(key, lang).name}
               </Text>
             </Pressable>
           );
@@ -76,7 +80,7 @@ export default function CapsuleScreen() {
       <View style={styles.controls}>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel={mine ? "Durdur" : `${capsule.name} kapsülünü çal`}
+          accessibilityLabel={mine ? m.common.stop : w.play(capsule.name)}
           onPress={() => toggleCapsule(type)}
           style={styles.play}
         >
@@ -86,7 +90,7 @@ export default function CapsuleScreen() {
           style={styles.progress}
           accessible
           accessibilityRole="progressbar"
-          accessibilityLabel="Oynatma"
+          accessibilityLabel={w.playback}
           accessibilityValue={{ min: 0, max: CAPSULE_SECONDS, now: Math.floor(elapsed) }}
         >
           <View style={[styles.progressFill, { width: `${(elapsed / CAPSULE_SECONDS) * 100}%` }]} />
@@ -99,11 +103,11 @@ export default function CapsuleScreen() {
       <View style={styles.captions}>
         <View style={styles.captionsHead}>
           <Text variant="overline" colorValue={cameraColors.textSecondary}>
-            ALTYAZI
+            {w.captionsHead}
           </Text>
           <Pressable
             accessibilityRole="switch"
-            accessibilityLabel="Altyazılar"
+            accessibilityLabel={w.captions}
             aria-checked={settings.captions}
             onPress={() => setSetting("captions", !settings.captions)}
             style={[styles.cc, settings.captions && styles.ccOn]}
@@ -118,13 +122,13 @@ export default function CapsuleScreen() {
           colorValue={settings.captions ? cameraColors.text : cameraColors.textSecondary}
           style={settings.captions ? styles.mono : styles.italic}
         >
-          {settings.captions ? captionAt(type, elapsed) : "Altyazılar kapalı. Açmak için CC."}
+          {settings.captions ? captionAt(type, elapsed, lang) : w.captionsOff}
         </Text>
         {mine && !mine.loading && mine.source !== "recording" && (
           <Text variant="caption" colorValue={cameraColors.textSecondary}>
             {mine.source === "stand-in"
-              ? "Gerçek ses kaydı henüz eklenmedi; şimdilik canlandırılmış bir ses çalıyor."
-              : "Ses başlatılamadı; kapsül yalnızca altyazıyla ilerliyor."}
+              ? w.standIn
+              : w.silent}
           </Text>
         )}
       </View>

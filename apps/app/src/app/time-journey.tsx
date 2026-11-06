@@ -25,7 +25,8 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { TimeJourney } from "@/components/time-journey";
 import { useSearchableAssets } from "@/data";
-import { SITE_ITEMS, SiteNav } from "@/components/web-nav-bar";
+import { siteItems, SiteNav } from "@/components/web-nav-bar";
+import { useLang, useMessages } from "@/i18n";
 import { centuriesOf, firstCentury } from "@/lib/home";
 import { useWideWeb } from "@/lib/use-wide-web";
 
@@ -36,12 +37,15 @@ const TITLE_SOFT = "rgba(255, 255, 255, 0.76)";
 
 /** Zamanda Yolculuk, opened from the Eserler list: a line of words and the walk through the centuries, on the whole screen. */
 export default function TimeJourneyScreen() {
+  const m = useMessages();
+  const lang = useLang();
+  const w = m.journey;
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const assets = useSearchableAssets(true);
   const list = assets.status === "success" && assets.data ? assets.data : [];
-  const centuries = useMemo(() => centuriesOf(list), [list]);
+  const centuries = useMemo(() => centuriesOf(list, lang), [list, lang]);
   const wide = useWideWeb();
   // The web follows the light theme; the phone keeps the page dark, as its camera pages.
   const { scheme } = useTheme();
@@ -57,12 +61,12 @@ export default function TimeJourneyScreen() {
     router.canGoBack() ? router.back() : router.replace("/monuments");
   const nav = wide ? (
     <SiteNav
-      items={SITE_ITEMS}
+      items={siteItems(m)}
       active="monuments"
       background="transparent"
       onPress={(item) =>
         router.navigate(
-          SITE_ITEMS.find((site) => site.name === item.name)!.href,
+          siteItems(m).find((site) => site.name === item.name)!.href,
         )
       }
     />
@@ -74,7 +78,7 @@ export default function TimeJourneyScreen() {
       contentContainerStyle={styles.content}
     >
       <Head>
-        <title>Zamanda Yolculuk · Vagabonds</title>
+        <title>{m.common.title(m.screens.timeJourney)}</title>
       </Head>
       {/* Dark in both themes on the phone; the web follows its theme. */}
       <StatusBar style={light ? "dark" : "light"} />
@@ -96,7 +100,7 @@ export default function TimeJourneyScreen() {
           <View style={styles.headWide}>
             <Pressable
               accessibilityRole="link"
-              accessibilityLabel="Eserler sayfasına dön"
+              accessibilityLabel={w.backToList}
               onPress={back}
               style={({
                 hovered,
@@ -116,19 +120,19 @@ export default function TimeJourneyScreen() {
             >
               <Ionicons name="chevron-back" size={16} color={ink.soft} />
               <Text variant="label" colorValue={ink.soft}>
-                Eserler
+                {m.tabs.monuments}
               </Text>
             </Pressable>
             {/* The page's name for a screen reader; the cards say the rest. */}
             <Text headingLevel={1} style={styles.unseen}>
-              Zamanda Yolculuk
+              {m.screens.timeJourney}
             </Text>
           </View>
         ) : (
           <View style={styles.head}>
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel="Geri"
+              accessibilityLabel={m.common.back}
               hitSlop={6}
               onPress={back}
               style={[
@@ -144,22 +148,22 @@ export default function TimeJourneyScreen() {
               colorValue={light ? ink.soft : TITLE_SOFT}
               style={styles.title}
             >
-              {"Eserleri "}
+              {w.titleStart}
               <Text
                 variant="heading"
                 colorValue={ink.text}
                 style={styles.titleStrong}
               >
-                zaman yolculuğu
+                {w.titleStrong}
               </Text>
-              {"\nile keşfedebilirsin"}
+              {w.titleEnd}
             </Text>
           </View>
         )}
         {assets.status === "loading" && (
           <ActivityIndicator
             color={ink.soft}
-            accessibilityLabel="Eserler yükleniyor"
+            accessibilityLabel={m.monuments.loading}
             style={styles.loading}
           />
         )}
@@ -170,7 +174,7 @@ export default function TimeJourneyScreen() {
             style={styles.retry}
           >
             <Text variant="caption" colorValue={ink.soft}>
-              {`${assets.error.message} Tekrar denemek için dokun.`}
+              {`${assets.error.message} ${m.common.tapToRetry}`}
             </Text>
           </Pressable>
         )}

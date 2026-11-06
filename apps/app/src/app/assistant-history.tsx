@@ -1,7 +1,5 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { ChatConversation } from "@vagabonds/contracts";
+import type { ChatConversation, Lang } from "@vagabonds/contracts";
 import { fontFamily, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
 import { useFocusEffect, useRouter } from "expo-router";
 import Head from "expo-router/head";
@@ -12,13 +10,13 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { deleteAllConversations, deleteConversation, fetchConversations } from "@/data/assistant";
 import { DataError } from "@/data/errors";
 import { announce } from "@/lib/announce";
-import { localeTag, useLang } from "@/i18n";
+import { localeTag, useLang, useMessages } from "@/i18n";
 import { dayGroup } from "@/lib/chat";
 
 type Load = { kind: "loading" } | { kind: "error"; message: string } | { kind: "ready"; items: ChatConversation[] };
 
-const time = (iso: string) =>
-  new Date(iso).toLocaleTimeString(localeTag(), {
+const time = (iso: string, lang: Lang) =>
+  new Date(iso).toLocaleTimeString(localeTag(lang), {
     hour: "2-digit",
     minute: "2-digit",
   });
@@ -29,7 +27,9 @@ const time = (iso: string) =>
  * and all at once after a second tap.
  */
 export default function AssistantHistoryScreen() {
-  useLang();
+  const lang = useLang();
+  const m = useMessages();
+  const w = m.sessions;
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -42,10 +42,10 @@ export default function AssistantHistoryScreen() {
       (error: unknown) =>
         setLoad({
           kind: "error",
-          message: error instanceof DataError ? error.message : "Konuşmalar yüklenemedi.",
+          message: error instanceof DataError ? error.message : w.loadFailed,
         }),
     );
-  }, []);
+  }, [w.loadFailed]);
   // Again on coming back: a question asked meanwhile moves its conversation to the top.
   useFocusEffect(refresh);
 
@@ -71,9 +71,9 @@ export default function AssistantHistoryScreen() {
     });
     try {
       await deleteConversation(item.id);
-      announce("Konuşma silindi.");
+      announce(w.deleted);
     } catch (error) {
-      announce(error instanceof DataError ? error.message : "Konuşma silinemedi.");
+      announce(error instanceof DataError ? error.message : w.deleteFailed);
       refresh();
     }
   }
@@ -83,16 +83,16 @@ export default function AssistantHistoryScreen() {
     try {
       await deleteAllConversations();
       setLoad({ kind: "ready", items: [] });
-      announce("Bütün konuşmalar silindi.");
+      announce(w.allDeleted);
     } catch (error) {
-      announce(error instanceof DataError ? error.message : "Konuşmalar silinemedi.");
+      announce(error instanceof DataError ? error.message : w.allDeleteFailed);
     }
   }
 
   const items = load.kind === "ready" ? load.items : [];
   const groups: Array<{ title: string; items: ChatConversation[] }> = [];
   for (const item of items) {
-    const title = dayGroup(item.updatedAt);
+    const title = dayGroup(item.updatedAt, lang);
     if (groups.at(-1)?.title !== title) groups.push({ title, items: [] });
     groups.at(-1)!.items.push(item);
   }
@@ -100,10 +100,10 @@ export default function AssistantHistoryScreen() {
   return (
     <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={[styles.content, { paddingBottom: insets.bottom + spacing.xl }]} contentInsetAdjustmentBehavior="automatic">
       <Head>
-        <title>Geçmiş konuşmalar · Vagabonds</title>
+        <title>{m.common.title(m.screens.history)}</title>
       </Head>
 
-      {load.kind === "loading" && <ActivityIndicator color={c.textSecondary} accessibilityLabel="Konuşmalar yükleniyor" style={styles.loading} />}
+      {load.kind === "loading" && <ActivityIndicator color={c.textSecondary} accessibilityLabel={w.loading} style={styles.loading} />}
 
       {load.kind === "error" && (
         <View style={[styles.empty, { backgroundColor: c.surface }]}>
@@ -116,7 +116,7 @@ export default function AssistantHistoryScreen() {
             style={({ pressed }) => [styles.secondary, { backgroundColor: c.surfaceRaised }, pressed && styles.pressed]}
           >
             <Ionicons name="refresh" size={16} color={c.text} />
-            <Text variant="label">Tekrar dene</Text>
+            <Text variant="label">{m.common.retry}</Text>
           </Pressable>
         </View>
       )}
@@ -127,10 +127,10 @@ export default function AssistantHistoryScreen() {
             <Ionicons name="chatbubbles-outline" size={26} color={c.highlightMark} />
           </View>
           <Text variant="heading" headingLevel={2} style={styles.centered}>
-            Henüz konuşma yok
+            {w.none}
           </Text>
           <Text color="textSecondary" style={styles.centered}>
-            Rehber'e sorduğun sorular burada saklanır; istediğin zaman dönüp okuyabilirsin.
+            {w.noneBody}
           </Text>
         </View>
       )}
@@ -142,7 +142,7 @@ export default function AssistantHistoryScreen() {
           </Text>
           <View accessibilityRole="list" style={[styles.list, { backgroundColor: c.surface }]}>
             {group.items.map((item, i) => {
-              const page = item.assetName ?? "Rehber";
+              const page = item.assetName ?? m.tabs.rehber;
               const questions = Math.ceil(item.messageCount / 2);
               return (
                 <View
@@ -157,7 +157,7 @@ export default function AssistantHistoryScreen() {
                 >
                   <Pressable
                     accessibilityRole="link"
-                    accessibilityLabel={`${item.title} (${page}, ${questions} soru, ${time(item.updatedAt)}): ${item.archived ? "arşivde, okumak için aç" : "açık, devam etmek için aç"}`}
+                    accessibilityLabel={w.rowLabel(item.title, page, questions, time(item.updatedAt, lang), item.archived ? w.archivedHint : w.openHint)}
                     onPress={() => open(item)}
                     style={({ pressed }) => [styles.rowMain, pressed && styles.pressed]}
                   >
@@ -169,13 +169,13 @@ export default function AssistantHistoryScreen() {
                         {item.title}
                       </Text>
                       <Text variant="caption" color="textSecondary" numberOfLines={1}>
-                        {`${page} · ${questions} soru · ${time(item.updatedAt)}${item.archived ? "" : " · Açık"}`}
+                        {w.rowMeta(page, questions, time(item.updatedAt, lang), !item.archived)}
                       </Text>
                     </View>
                   </Pressable>
                   <Pressable
                     accessibilityRole="button"
-                    accessibilityLabel={`${item.title} konuşmasını sil`}
+                    accessibilityLabel={w.deleteOne(item.title)}
                     onPress={() => void remove(item)}
                     hitSlop={4}
                     style={({ pressed }) => [styles.remove, pressed && { backgroundColor: c.surfaceRaised }]}
@@ -192,14 +192,14 @@ export default function AssistantHistoryScreen() {
       {items.length > 0 &&
         (confirming ? (
           <View style={[styles.confirm, { backgroundColor: c.surface }]} accessibilityRole="alert">
-            <Text style={styles.centered}>Bütün konuşmalar silinsin mi? Bu geri alınamaz.</Text>
+            <Text style={styles.centered}>{w.confirmAll}</Text>
             <View style={styles.confirmActions}>
               <Pressable
                 accessibilityRole="button"
                 onPress={() => setConfirming(false)}
                 style={({ pressed }) => [styles.secondary, { backgroundColor: c.surfaceRaised }, pressed && styles.pressed]}
               >
-                <Text variant="label">Vazgeç</Text>
+                <Text variant="label">{w.cancel}</Text>
               </Pressable>
               <Pressable
                 accessibilityRole="button"
@@ -207,7 +207,7 @@ export default function AssistantHistoryScreen() {
                 style={({ pressed }) => [styles.secondary, { backgroundColor: c.text }, pressed && styles.pressed]}
               >
                 <Text variant="label" colorValue={c.background}>
-                  Hepsini sil
+                  {w.deleteAll}
                 </Text>
               </Pressable>
             </View>
@@ -220,7 +220,7 @@ export default function AssistantHistoryScreen() {
           >
             <Ionicons name="trash-outline" size={16} color={c.textSecondary} />
             <Text variant="label" color="textSecondary">
-              Bütün konuşmaları sil
+              {w.deleteEvery}
             </Text>
           </Pressable>
         ))}

@@ -7,6 +7,7 @@ import { loadMindar, loadOverlayFont, useVendored } from "@/vendor";
 import type { MarkerTrackerProps } from "./marker-tracker";
 import { parseTrackerEvent } from "./mindar";
 import { trackerPageHtml } from "./tracker-page";
+import { useMessages } from "@/i18n";
 
 /**
  * The web version of the tracker: the same page in an iframe. The app's own
@@ -23,6 +24,7 @@ export function MarkerTracker({ target, overlays, onEvent, style }: MarkerTracke
     [target, overlays, mindarScript, overlayFont],
   );
   const frame = useRef<HTMLIFrameElement>(null);
+  const title = useMessages().tabs.camera;
 
   useEffect(() => {
     const listener = (message: MessageEvent) => {
@@ -36,7 +38,7 @@ export function MarkerTracker({ target, overlays, onEvent, style }: MarkerTracke
 
   return (
     <View style={[styles.box, style]} aria-hidden>
-      {html !== null && <iframe ref={frame} srcDoc={html} allow="camera" title="Kamera" tabIndex={-1} style={{ border: 0, width: "100%", height: "100%" }} />}
+      {html !== null && <iframe ref={frame} srcDoc={html} allow="camera" title={title} tabIndex={-1} style={{ border: 0, width: "100%", height: "100%" }} />}
     </View>
   );
 }

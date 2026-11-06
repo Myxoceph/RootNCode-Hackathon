@@ -3,6 +3,7 @@ import { Pressable, ScrollView, StyleSheet } from "react-native";
 
 import type { CityOption } from "@/data";
 import { useColors } from "@/theme";
+import { useMessages } from "@/i18n";
 
 interface CityPickerProps {
   cities: CityOption[];
@@ -17,8 +18,9 @@ interface CityPickerProps {
  * the selected chip is also filled, not only recolored.
  */
 export function CityPicker({ cities, selected, onSelect }: CityPickerProps) {
+  const w = useMessages().shared;
   const total = cities.reduce((sum, city) => sum + city.assetCount, 0);
-  const options = [{ code: undefined, label: "Tümü", assetCount: total }, ...cities];
+  const options = [{ code: undefined, label: w.allCities, assetCount: total }, ...cities];
 
   return (
     <ScrollView
@@ -26,7 +28,7 @@ export function CityPicker({ cities, selected, onSelect }: CityPickerProps) {
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.row}
       accessibilityRole="radiogroup"
-      accessibilityLabel="Şehir"
+      accessibilityLabel={w.cityLabel}
     >
       {options.map((option) => (
         <Chip
@@ -43,12 +45,13 @@ export function CityPicker({ cities, selected, onSelect }: CityPickerProps) {
 
 function Chip({ label, count, selected, onPress }: { label: string; count: number; selected: boolean; onPress: () => void }) {
   const c = useColors();
+  const w = useMessages().shared;
   return (
     <Pressable
       accessibilityRole="radio"
       // `aria-checked`, not `accessibilityState`: react-native-web drops the latter.
       aria-checked={selected}
-      accessibilityLabel={`${label}, ${count} eser`}
+      accessibilityLabel={w.cityCount(label, count)}
       onPress={onPress}
       style={[
         styles.chip,

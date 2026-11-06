@@ -1,6 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Button, palette, radius, spacing, Text, useTheme } from "@vagabonds/ui";
 import { Modal, Pressable, StyleSheet, View } from "react-native";
+import { useMessages } from "@/i18n";
 
 /**
  * Said on the web when something needs the phone's camera: the web has none (ADR 0001), so
@@ -8,12 +9,13 @@ import { Modal, Pressable, StyleSheet, View } from "react-native";
  * `name` is the asset asked for; the notice shows while it is set (an empty string shows it without a name).
  */
 export function MobileOnlyNotice({ name, onClose }: { name: string | null; onClose: () => void }) {
+  const m = useMessages();
   const { colors: c, scheme } = useTheme();
   const dark = scheme === "dark";
   return (
     <Modal visible={name !== null} transparent animationType="fade" onRequestClose={onClose}>
       <View style={styles.backdrop}>
-        <Pressable style={StyleSheet.absoluteFill} onPress={onClose} accessibilityLabel="Kapat" accessibilityRole="button" />
+        <Pressable style={StyleSheet.absoluteFill} onPress={onClose} accessibilityLabel={m.common.close} accessibilityRole="button" />
         <View
           accessibilityViewIsModal
           role="alertdialog"
@@ -26,7 +28,7 @@ export function MobileOnlyNotice({ name, onClose }: { name: string | null; onClo
             <Ionicons name="phone-portrait-outline" size={26} color={dark ? palette.gece950 : palette.altin200} />
           </View>
           <Text variant="heading" headingLevel={2} nativeID="mobile-only-title" style={styles.center}>
-            Mobil uygulamada açılır
+            {m.shared.mobileOnlyTitle}
           </Text>
           {name && (
             <Text variant="label" color="highlight" style={styles.center}>
@@ -34,9 +36,9 @@ export function MobileOnlyNotice({ name, onClose }: { name: string | null; onClo
             </Text>
           )}
           <Text color="textSecondary" nativeID="mobile-only-body" style={styles.center}>
-            Eserlerin kilidini yalnızca mobil uygulamada açabilirsin. Eserin yanındayken Ziyaret Mührü ile işaretli kısmı kameraya tanıtman yeterli.
+            {m.shared.mobileOnlyBody}
           </Text>
-          <Button label="Tamam" onPress={onClose} style={styles.button} />
+          <Button label={m.shared.ok} onPress={onClose} style={styles.button} />
         </View>
       </View>
     </Modal>

@@ -10,12 +10,13 @@ import type { AssetDetail } from "@vagabonds/contracts";
 import { useInscriptionScope } from "@/ar/inscription-scope";
 import { isTrackable, rememberCompiledSet, useTargetSet, type TrackedTarget } from "@/ar/inscription-targets";
 import { MarkerTracker } from "@/ar/marker-tracker";
-import { trackerFailureText, type TrackerEvent, type TrackerFailure } from "@/ar/mindar";
+import type { TrackerEvent, TrackerFailure } from "@/ar/mindar";
 import { inscriptionOf, inscriptionPlace, inscriptionText, isInscriptionReading, readAloudKey, type InscriptionText } from "@/ar/use-inscription";
 import { CameraTopBar, GlassIconButton, GlassPill } from "@/components/camera-chrome";
 import { GlassFill } from "@/components/city-asset-cards";
 import { InscriptionReading } from "@/components/inscription-reading";
 import { DataError, type ResourceWithRetry } from "@/data";
+import { useLang, useMessages, type Messages } from "@/i18n";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
@@ -40,6 +41,9 @@ const REVEAL_MS = 800;
  * phone it is one tap away.
  */
 export default function InscriptionScreen() {
+  const lang = useLang();
+  const m = useMessages();
+  const w = m.reading;
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const insets = useSafeAreaInsets();
   const web = Platform.OS === "web";
@@ -57,7 +61,7 @@ export default function InscriptionScreen() {
     scope.status === "loading"
       ? { status: "loading", retry }
       : scope.status === "error"
-        ? { status: "error", error: new DataError("unavailable", "Veriye şu an ulaşılamıyor.", []), retry }
+        ? { status: "error", error: new DataError("unavailable", m.errors.noData, []), retry }
         : { status: "success", data: scope.assets[0] ?? null, retry };
   const loaded = scope.status !== "loading";
   // No inscription with a photo to find (or nothing loaded): the camera has nothing to look for.
@@ -79,19 +83,19 @@ export default function InscriptionScreen() {
   }, [screenReader]);
 
   const onFailure = useCallback((reason: TrackerFailure) => {
-    setNotice(`${trackerFailureText[reason]} Kitabeyi aşağıda metin olarak okuyabilirsin.`);
+    setNotice(`${m.seal.tracker[reason]} ${w.readBelow}`);
     setMode("reading");
-  }, []);
+  }, [m, w]);
 
   return (
     <>
       <Head>
-        <title>Taşın Dili · Vagabonds</title>
+        <title>{m.common.title(m.screens.inscription)}</title>
       </Head>
       {mode === "reading" && (
         <InscriptionReading
-          inscription={inscriptionOf(asset, null)}
-          notice={untrackable && asset.status === "success" ? "Bu kitabenin kamerayla tanınacak fotoğrafı henüz yok; metnini aşağıda okuyabilirsin." : notice}
+          inscription={inscriptionOf(asset, null, lang)}
+          notice={untrackable && asset.status === "success" ? w.noTarget : notice}
           onUseCamera={
             web || untrackable
               ? null
@@ -113,9 +117,9 @@ export default function InscriptionScreen() {
       )}
       {mode === null && (
         <View style={[styles.screen, styles.waiting]}>
-          <ActivityIndicator color={cameraColors.gold} size="large" accessibilityLabel="Yükleniyor" />
+          <ActivityIndicator color={cameraColors.gold} size="large" accessibilityLabel={m.common.loading} />
           <View style={[styles.top, { top: insets.top + spacing.sm }]}>
-            <CameraTopBar title="Taşın Dili" subtitle="Yükleniyor" />
+            <CameraTopBar title={m.screens.inscription} subtitle={m.common.loading} />
           </View>
         </View>
       )}
@@ -138,25 +142,28 @@ interface InscriptionCameraProps {
  * What the bar under the title says is being looked for: the tracked targets (capped at
  * `MAX_TARGETS`), counted by the assets they are on.
  */
-function lookingFor(assets: AssetDetail[], targets: TrackedTarget[], nearby: boolean, asked: boolean): string {
+function lookingFor(assets: AssetDetail[], targets: TrackedTarget[], nearby: boolean, asked: boolean, w: Messages["reading"]): string {
   const on = assets.filter((asset) => targets.some((t) => t.assetId === asset.id));
-  const single = on.length === 1 ? `${on[0]!.name} ${targets.length === 1 ? "kitabesi" : `${targets.length} kitabesi`}` : null;
-  if (!nearby && !asked) return `Yakında yok · örnek: ${single ?? `${on.length} eser`}`;
-  const many = `${on.length} ${asked ? "yapının" : "eserin"} ${targets.length} kitabesi`;
-  return nearby ? `Yakındaki ${single ?? many}` : (single ?? many);
+  const single = on.length === 1 ? w.oneOf(on[0]!.name, targets.length) : null;
+  if (!nearby && !asked) return w.nearbyNone(single ?? w.sitesCount(on.length));
+  const many = w.many(on.length, targets.length, asked);
+  return nearby ? w.nearby(single ?? many) : (single ?? many);
 }
 
 function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: InscriptionCameraProps) {
+  const lang = useLang();
+  const m = useMessages();
+  const w = m.reading;
   const insets = useSafeAreaInsets();
   const set = useTargetSet(assets);
   const overlays = useMemo(() => set?.targets.map((t) => t.overlay), [set]);
   const [tracked, setTracked] = useState<TrackedTarget | null>(null);
   const trackedAsset = assets.find((a) => a.id === tracked?.assetId) ?? assets[0]!;
-  const text = inscriptionText(trackedAsset, tracked?.inscriptionId ?? "");
+  const text = inscriptionText(trackedAsset, tracked?.inscriptionId ?? "", lang);
   const noRetry = useCallback(() => {}, []);
   const inscription: ResourceWithRetry<InscriptionText> = text
     ? { status: "success", data: text, retry: noRetry }
-    : inscriptionOf({ status: "success", data: trackedAsset, retry: noRetry }, null);
+    : inscriptionOf({ status: "success", data: trackedAsset, retry: noRetry }, null, lang);
   const reduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<Phase>("starting");
   const [progress, setProgress] = useState(0);
@@ -178,8 +185,8 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
 
   const reveal = useCallback(() => {
     go("revealed");
-    announce("Kitabe çözüldü. Günümüz Türkçesi aşağıda.");
-  }, [go]);
+    announce(w.solvedSaid);
+  }, [go, w]);
 
   // The card rises once it is on screen: a native animation started before its view exists can skip.
   useEffect(() => {
@@ -203,10 +210,10 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
         return;
       }
       go("locked");
-      announce("Kitabe tanındı, hedef kilitli");
+      announce(w.foundSaid);
       revealTimer.current = setTimeout(reveal, REVEAL_MS);
     },
-    [go, set, reduceMotion, reveal],
+    [go, set, reduceMotion, reveal, w],
   );
 
   const onEvent = useCallback(
@@ -278,14 +285,14 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
   const guideHeight = Math.max(0, height - insets.bottom - 140 - guideTop);
 
   const status = {
-    preparing: `Kitabeler hazırlanıyor %${Math.round(progress * 100)}`,
-    starting: set ? "Kamera açılıyor…" : "Kitabeler indiriliyor…",
-    scanning: "Kitabe aranıyor…",
-    locked: "Kitabe tanındı · hedef kilitli",
-    revealed: "Kitabe tanındı · çevirisi taşın üstünde",
+    preparing: w.preparing(Math.round(progress * 100)),
+    starting: set ? w.cameraOpening : w.downloading,
+    scanning: w.scanning,
+    locked: w.locked,
+    revealed: w.revealed,
   }[phase];
   const found = phase === "locked" || phase === "revealed";
-  const subtitle = set ? lookingFor(assets, set.targets, nearby, asked) : "Kitabeye odaklan, tamamı ekrana sığsın";
+  const subtitle = set ? lookingFor(assets, set.targets, nearby, asked, w) : w.focus;
 
   return (
     <View style={styles.screen} onLayout={(e) => setHeight(e.nativeEvent.layout.height)}>
@@ -302,8 +309,8 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
       )}
 
       <View style={[styles.top, { top: insets.top + spacing.sm }]}>
-        <CameraTopBar title="Taşın Dili" subtitle={subtitle}>
-          <GlassIconButton icon="document-text-outline" label="Kamerasız oku" onPress={onReadAsText} />
+        <CameraTopBar title={m.screens.inscription} subtitle={subtitle}>
+          <GlassIconButton icon="document-text-outline" label={w.readWithoutCamera} onPress={onReadAsText} />
         </CameraTopBar>
       </View>
 
@@ -332,13 +339,13 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
               {inscription.status === "success" && (
                 <GlassPill
                   icon={expanded ? "chevron-down" : "chevron-up"}
-                  label={expanded ? "Daralt" : "Devamı"}
-                  spoken={expanded ? "kartı küçült" : "kitabenin tamamını göster"}
+                  label={expanded ? w.collapse : w.expand}
+                  spoken={expanded ? w.collapseSpoken : w.expandSpoken}
                   onPress={() => setExpanded(!expanded)}
                 />
               )}
               <View style={styles.flex} />
-              <GlassIconButton icon="refresh" label="Yeniden tara" onPress={rescan} />
+              <GlassIconButton icon="refresh" label={w.rescan} onPress={rescan} />
             </View>
           </Animated.View>
         )}
@@ -348,14 +355,16 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
 }
 
 function CardContent({ inscription, expanded }: { inscription: ResourceWithRetry<InscriptionText>; expanded: boolean }) {
+  const m = useMessages();
+  const w = m.reading;
   if (inscription.status === "loading") {
-    return <ActivityIndicator color={cameraColors.gold} accessibilityLabel="Yükleniyor" />;
+    return <ActivityIndicator color={cameraColors.gold} accessibilityLabel={m.common.loading} />;
   }
   if (inscription.status === "error") {
     return (
       <View style={styles.section} accessibilityRole="alert">
         <Text colorValue={cameraColors.text}>{inscription.error.message}</Text>
-        <Button label="Tekrar dene" onPress={inscription.retry} colors={[cameraColors.gold, cameraColors.onGold]} />
+        <Button label={m.common.retry} onPress={inscription.retry} colors={[cameraColors.gold, cameraColors.onGold]} />
       </View>
     );
   }
@@ -364,7 +373,7 @@ function CardContent({ inscription, expanded }: { inscription: ResourceWithRetry
   return (
     <>
       <Text variant="overline" colorValue={cameraColors.gold}>
-        {["KİTABE", text.date].filter(Boolean).join(" · ")}
+        {[w.inscription, text.date].filter(Boolean).join(" · ")}
       </Text>
       <Text variant="heading" colorValue={cameraColors.text} style={styles.name} headingLevel={1} numberOfLines={expanded ? undefined : 1}>
         {inscriptionPlace(text)}
@@ -375,7 +384,7 @@ function CardContent({ inscription, expanded }: { inscription: ResourceWithRetry
         </Text>
       )}
       {expanded && text.transliteration && (
-        <Section title="OKUNUŞU">
+        <Section title={w.transliteration}>
           <Text colorValue={cameraColors.text} style={styles.italic} language={text.transliterationLanguage}>
             {text.transliteration}
           </Text>
@@ -383,7 +392,7 @@ function CardContent({ inscription, expanded }: { inscription: ResourceWithRetry
       )}
       {expanded &&
         (text.waqfConditions ? (
-          <Section title="VAKFİYENİN ŞARTI">
+          <Section title={w.waqfTerm}>
             <View style={styles.quote}>
               <Text variant="bodyLarge" colorValue={cameraColors.text} style={styles.quoteText}>
                 {`“${text.waqfConditions}”`}
@@ -392,7 +401,7 @@ function CardContent({ inscription, expanded }: { inscription: ResourceWithRetry
           </Section>
         ) : (
           text.waqfName && (
-            <Section title="VAKIF">
+            <Section title={w.waqf}>
               <Text colorValue={cameraColors.text}>{text.waqfName}</Text>
             </Section>
           )
@@ -403,6 +412,7 @@ function CardContent({ inscription, expanded }: { inscription: ResourceWithRetry
 
 /** In EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached. */
 function ReadAloudButton({ inscription }: { inscription: ResourceWithRetry<InscriptionText> }) {
+  const w = useMessages().reading;
   const { settings } = useA11ySettings();
   const speaking = useSpeaking();
   if (!settings.audioDescription || inscription.status !== "success") return null;
@@ -412,8 +422,8 @@ function ReadAloudButton({ inscription }: { inscription: ResourceWithRetry<Inscr
     <GlassPill
       gold
       icon={reading ? "stop" : "volume-high"}
-      label={reading ? "Durdur" : "Sesli oku"}
-      spoken={reading ? "sesli okumayı kes" : "kitabeyi sesli oku"}
+      label={reading ? w.stop : w.readAloud}
+      spoken={reading ? w.stopSpoken : w.readAloudSpoken}
       onPress={() => (reading ? stopAnswer() : void speakAnswer(key, inscription.data.readAloud))}
     />
   );

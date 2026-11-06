@@ -8,6 +8,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { isInscriptionReading, readAloudKey, type InscriptionText } from "@/ar/use-inscription";
 import { DataErrorView } from "@/components/resource-view";
 import type { ResourceWithRetry } from "@/data";
+import { useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { useA11ySettings } from "@/settings/a11y-settings";
@@ -33,6 +34,8 @@ const COLUMN = 640;
  * transliteration.
  */
 export function InscriptionReading({ inscription, notice, onUseCamera }: InscriptionReadingProps) {
+  const m = useMessages();
+  const w = m.reading;
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -49,7 +52,7 @@ export function InscriptionReading({ inscription, notice, onUseCamera }: Inscrip
       <View style={[styles.topBar, { paddingTop: insets.top + spacing.xs }]}>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel="Geri"
+          accessibilityLabel={m.common.back}
           hitSlop={6}
           onPress={() => (router.canGoBack() ? router.back() : router.navigate("/camera"))}
           style={[styles.back, { backgroundColor: c.surfaceRaised }]}
@@ -57,7 +60,7 @@ export function InscriptionReading({ inscription, notice, onUseCamera }: Inscrip
           <Ionicons name="chevron-back" size={22} color={c.text} />
         </Pressable>
         <Text variant="label" numberOfLines={1} style={styles.flex}>
-          Taşın Dili
+          {m.screens.inscription}
         </Text>
       </View>
 
@@ -65,10 +68,10 @@ export function InscriptionReading({ inscription, notice, onUseCamera }: Inscrip
         <View style={styles.intro}>
           <View style={styles.column}>
             <Text variant="overline" color="textSecondary">
-              {["KİTABE", inscription.status === "success" ? inscription.data.date : null].filter(Boolean).join(" · ")}
+              {[w.inscription, inscription.status === "success" ? inscription.data.date : null].filter(Boolean).join(" · ")}
             </Text>
             <Text variant="display" headingLevel={1}>
-              {inscription.status === "success" ? inscription.data.name : "Taşın Dili"}
+              {inscription.status === "success" ? inscription.data.name : m.screens.inscription}
             </Text>
             {inscription.status === "success" && inscription.data.location && (
               <Text variant="caption" color="textSecondary" style={styles.semibold}>
@@ -83,11 +86,11 @@ export function InscriptionReading({ inscription, notice, onUseCamera }: Inscrip
             )}
 
             {inscription.status === "success" && <Actions text={inscription.data} onUseCamera={onUseCamera} />}
-            {inscription.status !== "success" && onUseCamera && <Button label="Kamerayla tara" variant="ghost" onPress={onUseCamera} />}
+            {inscription.status !== "success" && onUseCamera && <Button label={w.scanWithCamera} variant="ghost" onPress={onUseCamera} />}
           </View>
         </View>
 
-        {inscription.status === "loading" && <ActivityIndicator color={c.primary} size="large" accessibilityLabel="Yükleniyor" />}
+        {inscription.status === "loading" && <ActivityIndicator color={c.primary} size="large" accessibilityLabel={m.common.loading} />}
         {inscription.status === "error" && (
           <View style={styles.band}>
             <View style={styles.column}>
@@ -103,6 +106,7 @@ export function InscriptionReading({ inscription, notice, onUseCamera }: Inscrip
 
 /** "Sesli oku" in EVREN's voice (the phone's when it cannot be reached), with a Durdur; and the camera. */
 function Actions({ text, onUseCamera }: { text: InscriptionText; onUseCamera: (() => void) | null }) {
+  const w = useMessages().reading;
   const { colors: c } = useTheme();
   const { settings } = useA11ySettings();
   const reading = useSpeaking() === readAloudKey(text);
@@ -110,8 +114,8 @@ function Actions({ text, onUseCamera }: { text: InscriptionText; onUseCamera: ((
     <View style={styles.actions}>
       {settings.audioDescription && (
         <Button
-          label={reading ? "Durdur" : "Sesli oku"}
-          accessibilityLabel={reading ? "Sesli okumayı durdur" : "Kitabeyi sesli oku"}
+          label={reading ? w.stop : w.readAloud}
+          accessibilityLabel={reading ? w.stopLabel : w.readAloudLabel}
           icon={<Ionicons name={reading ? "stop" : "volume-high-outline"} size={18} color={c.onPrimary} />}
           onPress={() => (reading ? stopAnswer() : void speakAnswer(readAloudKey(text), text.readAloud))}
           style={styles.flex}
@@ -119,7 +123,7 @@ function Actions({ text, onUseCamera }: { text: InscriptionText; onUseCamera: ((
       )}
       {onUseCamera && (
         <Button
-          label="Kamerayla tara"
+          label={w.scanWithCamera}
           variant="ghost"
           icon={<Ionicons name="scan-outline" size={18} color={c.text} />}
           onPress={onUseCamera}
@@ -131,17 +135,18 @@ function Actions({ text, onUseCamera }: { text: InscriptionText; onUseCamera: ((
 }
 
 function Bands({ text }: { text: InscriptionText }) {
+  const w = useMessages().reading;
   const { colors: c } = useTheme();
   const { textScale } = useUi();
   const prose = { fontSize: 17 * textScale, lineHeight: 28 * textScale };
   const bands: Array<{ key: string; title: string; body: ReactNode }> = [];
   if (text.translation) {
-    bands.push({ key: "translation", title: "Günümüz Türkçesi", body: <Text style={prose}>{text.translation}</Text> });
+    bands.push({ key: "translation", title: w.translationBand, body: <Text style={prose}>{text.translation}</Text> });
   }
   if (text.waqfConditions) {
     bands.push({
       key: "waqf",
-      title: "Vakfiyenin şartı",
+      title: w.waqfTermBand,
       body: (
         <View style={[styles.quote, { borderLeftColor: c.highlightMark }]}>
           <Text variant="title" style={styles.quoteText}>{`“${text.waqfConditions}”`}</Text>
@@ -149,12 +154,12 @@ function Bands({ text }: { text: InscriptionText }) {
       ),
     });
   } else if (text.waqfName) {
-    bands.push({ key: "waqf", title: "Vakıf", body: <Text style={prose}>{text.waqfName}</Text> });
+    bands.push({ key: "waqf", title: w.waqfBand, body: <Text style={prose}>{text.waqfName}</Text> });
   }
   if (text.transliteration) {
     bands.push({
       key: "reading",
-      title: "Okunuşu",
+      title: w.transliterationBand,
       body: (
         <Text style={[styles.mono, { fontSize: 15 * textScale, lineHeight: 26 * textScale }]} language={text.transliterationLanguage}>
           {text.transliteration}

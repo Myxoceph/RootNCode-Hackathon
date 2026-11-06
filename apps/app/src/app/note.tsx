@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   CONTRIBUTION_TEXT_MAX,
@@ -50,7 +48,7 @@ import {
   usePulse,
 } from "@/data";
 import { announce } from "@/lib/announce";
-import { useLang } from "@/i18n";
+import { useLang, useMessages, type Messages } from "@/i18n";
 import { formatDate } from "@/lib/format-date";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
@@ -58,29 +56,21 @@ type IconName = ComponentProps<typeof Ionicons>["name"];
 
 const KINDS: ReadonlyArray<{
   value: TextContributionKind;
-  label: string;
   icon: IconName;
-  hint: string;
 }> = [
-  {
-    value: "tip",
-    label: "İpucu",
-    icon: "bulb-outline",
-    hint: "Ziyarete yarayan bir bilgi: giriş, saatler, kalabalık, rampa…",
-  },
-  {
-    value: "memory",
-    label: "Anı",
-    icon: "heart-outline",
-    hint: "Bu eserle ilgili bir anın ya da duyduğun bir hikâye.",
-  },
-  {
-    value: "correction",
-    label: "Düzeltme",
-    icon: "create-outline",
-    hint: "Sayfadaki bir bilgi yanlışsa doğrusunu ve kaynağını yaz.",
-  },
+  { value: "tip", icon: "bulb-outline" },
+  { value: "memory", icon: "heart-outline" },
+  { value: "correction", icon: "create-outline" },
 ];
+
+/** The kinds with their words in the app's language. */
+function kindsIn(m: Messages) {
+  return KINDS.map((kind) => ({
+    ...kind,
+    label: m.notes.kinds[kind.value],
+    hint: m.note.hints[kind.value],
+  }));
+}
 
 const HERO_HEIGHT = 220;
 const WEB = Platform.OS === "web";
@@ -93,7 +83,8 @@ const ASIDE = 380;
  * under the form are the notes a moderator has approved.
  */
 export default function NoteScreen() {
-  useLang();
+  const m = useMessages();
+  const w = m.note;
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
   const resource = useAsset(id ?? "");
   const { colors: c } = useTheme();
@@ -102,14 +93,14 @@ export default function NoteScreen() {
   return (
     <View style={[styles.flex, { backgroundColor: c.background }]}>
       <Head>
-        <title>Not bırak · Vagabonds</title>
+        <title>{m.common.title(w.title)}</title>
       </Head>
       {WEB && (
         <WebPageHeader
-          title={name ? `${name} için not bırak` : "Not bırak"}
+          title={name ? w.titleFor(name) : w.title}
           section="monuments"
           back={{
-            label: name ?? "Eser",
+            label: name ?? w.site,
             href: id
               ? { pathname: "/monuments/[id]", params: { id } }
               : "/monuments",
@@ -123,7 +114,7 @@ export default function NoteScreen() {
           ) : (
             <View style={styles.missing}>
               {!WEB && <BackButton />}
-              <Text>Eser bulunamadı.</Text>
+              <Text>{w.notFound}</Text>
             </View>
           )
         }
@@ -140,10 +131,11 @@ function useLeave() {
 function BackButton() {
   const leave = useLeave();
   const insets = useSafeAreaInsets();
+  const m = useMessages();
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel="Geri"
+      accessibilityLabel={m.common.back}
       hitSlop={6}
       onPress={leave}
       style={[styles.back, { top: insets.top + spacing.xs }]}
@@ -205,6 +197,8 @@ function Aside({
   onKind: (kind: TextContributionKind) => void;
 }) {
   const { colors: c, scheme } = useTheme();
+  const m = useMessages();
+  const w = m.note;
   return (
     <View style={styles.aside}>
       <View style={[styles.hero, styles.asideHero]}>
@@ -230,7 +224,7 @@ function Aside({
         </View>
         <View style={styles.heroWords}>
           <Text variant="overline" colorValue={cameraColors.gold}>
-            NOT BIRAK
+            {w.overline}
           </Text>
           <Text
             variant="title"
@@ -250,12 +244,12 @@ function Aside({
           { backgroundColor: c.surface, borderColor: c.border },
         ]}
         accessibilityRole="radiogroup"
-        accessibilityLabel="Not türü"
+        accessibilityLabel={w.kindLabel}
       >
         <Text variant="overline" color="textSecondary" style={styles.asideHead}>
-          NE BIRAKMAK İSTERSİN?
+          {w.whatToLeave}
         </Text>
-        {KINDS.map((option) => {
+        {kindsIn(m).map((option) => {
           const on = option.value === kind;
           return (
             <Pressable
@@ -312,6 +306,7 @@ function Aside({
 }
 
 function Hero({ asset }: { asset: AssetDetail }) {
+  const w = useMessages().note;
   return (
     <View style={styles.hero}>
       {asset.cover && <AssetImage media={asset.cover} decorative fill />}
@@ -336,7 +331,7 @@ function Hero({ asset }: { asset: AssetDetail }) {
       </View>
       <View style={styles.heroWords}>
         <Text variant="overline" colorValue={cameraColors.gold}>
-          NOT BIRAK
+          {w.overline}
         </Text>
         <Text
           variant="title"
@@ -364,6 +359,9 @@ function Composer({
 }) {
   const { colors: c } = useTheme();
   const { textScale } = useUi();
+  const m = useMessages();
+  const w = m.note;
+  const kinds = kindsIn(m);
   const { user } = useCommunity();
   const leave = useLeave();
   const [body, setBody] = useState("");
@@ -375,7 +373,7 @@ function Composer({
   const chars = normalizeContributionText(body).length;
   const ready =
     chars >= CONTRIBUTION_TEXT_MIN && chars <= CONTRIBUTION_TEXT_MAX;
-  const hint = KINDS.find((option) => option.value === kind)?.hint;
+  const hint = kinds.find((option) => option.value === kind)?.hint;
 
   function fail(message: string) {
     setError(message);
@@ -386,8 +384,8 @@ function Composer({
     if (!ContributionTextSchema.safeParse(body).success) {
       return fail(
         chars < CONTRIBUTION_TEXT_MIN
-          ? `Not en az ${CONTRIBUTION_TEXT_MIN} karakter olmalı.`
-          : `Not en çok ${CONTRIBUTION_TEXT_MAX} karakter olabilir.`,
+          ? w.tooShort(CONTRIBUTION_TEXT_MIN)
+          : w.tooLong(CONTRIBUTION_TEXT_MAX),
       );
     }
     setError(null);
@@ -396,12 +394,12 @@ function Composer({
       await sendContribution(asset, { kind, body });
       setBody("");
       setSent(true);
-      announce("Notun gönderildi. Moderatör onayından sonra görünecek.");
+      announce(w.sentSaid);
     } catch (e) {
       fail(
         e instanceof DataError
           ? e.message
-          : "Not gönderilemedi. Biraz sonra tekrar dene.",
+          : w.failed,
       );
     } finally {
       setSending(false);
@@ -417,7 +415,7 @@ function Composer({
         ]}
       >
         <Text color="textSecondary">
-          Örnek veriyle çalışılıyor: not göndermek için sunucu gerekiyor.
+          {w.needsServer}
         </Text>
       </View>
     );
@@ -437,20 +435,19 @@ function Composer({
           <Ionicons name="checkmark" size={30} color={c.onPrimary} />
         </View>
         <Text variant="heading" style={styles.center}>
-          Notun bize ulaştı
+          {w.reachedUs}
         </Text>
         <Text color="textSecondary" style={styles.center}>
-          Bir moderatör onaylayınca herkese görünür. Durumunu Profil sekmesinde
-          görebilirsin.
+          {w.reachedBody}
         </Text>
-        <PrimaryButton label="Haritaya dön" icon="map" onPress={leave} />
+        <PrimaryButton label={w.backToMap} icon="map" onPress={leave} />
         <Pressable
           accessibilityRole="button"
           onPress={() => setSent(false)}
           style={styles.again}
         >
           <Text variant="label" color="highlight">
-            Bir not daha bırak
+            {w.another}
           </Text>
         </Pressable>
       </View>
@@ -484,9 +481,9 @@ function Composer({
         <View
           style={styles.kinds}
           accessibilityRole="radiogroup"
-          accessibilityLabel="Not türü"
+          accessibilityLabel={w.kindLabel}
         >
-          {KINDS.map((option) => {
+          {kinds.map((option) => {
             const on = option.value === kind;
             return (
               <Pressable
@@ -523,7 +520,7 @@ function Composer({
 
       <View style={fieldStyle("body")}>
         <TextInput
-          accessibilityLabel="Notun"
+          accessibilityLabel={w.yourNote}
           accessibilityHint={hint}
           value={body}
           onChangeText={setBody}
@@ -549,7 +546,7 @@ function Composer({
           style={styles.count}
         >
           {chars < CONTRIBUTION_TEXT_MIN
-            ? `en az ${CONTRIBUTION_TEXT_MIN} karakter · ${chars}`
+            ? w.atLeast(CONTRIBUTION_TEXT_MIN, chars)
             : `${chars} / ${CONTRIBUTION_TEXT_MAX}`}
         </Text>
       </View>
@@ -562,7 +559,7 @@ function Composer({
             color={c.textSecondary}
           />
           <Text variant="caption" color="textSecondary">
-            {`${user.nickname} olarak gönderilecek`}
+            {w.sendAs(user.nickname)}
           </Text>
         </View>
       )}
@@ -577,7 +574,7 @@ function Composer({
       )}
 
       <PrimaryButton
-        label={sending ? "Gönderiliyor…" : "Notu gönder"}
+        label={sending ? w.sending : w.send}
         icon="send"
         onPress={submit}
         disabled={!ready || sending || user === undefined}
@@ -596,7 +593,7 @@ function Composer({
           color="textSecondary"
           style={styles.moderationText}
         >
-          Notlar moderatör onayından sonra görünür.
+          {w.moderation}
         </Text>
       </View>
     </View>
@@ -644,7 +641,9 @@ function PrimaryButton({
 
 /** What other visitors left here and a moderator approved; nothing shows until there is some. */
 function ApprovedNotes({ id }: { id: string }) {
+  const lang = useLang();
   const { colors: c } = useTheme();
+  const w = useMessages().note;
   const pulse = usePulse(id);
   const items: PulseItem[] =
     pulse.status === "success" && pulse.data
@@ -654,7 +653,7 @@ function ApprovedNotes({ id }: { id: string }) {
   return (
     <View style={styles.approved}>
       <Text variant="overline" headingLevel={2} color="textSecondary">
-        ZİYARETÇİLERİN NOTLARI
+        {w.visitorNotes}
       </Text>
       {items.map((item) => (
         <View
@@ -666,7 +665,7 @@ function ApprovedNotes({ id }: { id: string }) {
         >
           <Text>{item.text}</Text>
           <Text variant="caption" color="textSecondary">
-            {[item.author, item.date && formatDate(item.date)]
+            {[item.author, item.date && formatDate(item.date, lang)]
               .filter(Boolean)
               .join(" · ")}
           </Text>

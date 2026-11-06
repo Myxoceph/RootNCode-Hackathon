@@ -108,7 +108,7 @@ describe("answerLines", () => {
 });
 
 describe("followUps", () => {
-  const topics = (r: ReturnType<typeof response>) => chat.followUps(r as never).map((offer) => offer.topic);
+  const topics = (r: ReturnType<typeof response>) => chat.followUps(r as never, "tr").map((offer) => offer.topic);
 
   it("offers food, transit and the weather after a trip plan", () => {
     const trip = {
@@ -119,7 +119,7 @@ describe("followUps", () => {
   });
 
   it("offers the way there, food nearby and a route after a site, naming it", () => {
-    const offers = chat.followUps(response("1399'da [1].", [ULUCAMI]) as never);
+    const offers = chat.followUps(response("1399'da [1].", [ULUCAMI]) as never, "tr");
     expect(offers.map((offer) => offer.topic)).toEqual(["transit", "food", "trip"]);
     expect(offers[0]!.question).toContain("Ulucami");
   });
@@ -305,10 +305,10 @@ describe("saved conversations", () => {
 
   it("groups the history by day", () => {
     const now = new Date(2026, 10, 2, 15);
-    expect(chat.dayGroup(new Date(2026, 10, 2, 9).toISOString(), now)).toBe("Bugün");
-    expect(chat.dayGroup(new Date(2026, 10, 1, 23).toISOString(), now)).toBe("Dün");
-    expect(chat.dayGroup(new Date(2026, 9, 29).toISOString(), now)).toBe("Bu hafta");
-    expect(chat.dayGroup(new Date(2026, 9, 2).toISOString(), now)).toBe("Ekim 2026");
+    expect(chat.dayGroup(new Date(2026, 10, 2, 9).toISOString(), "tr", now)).toBe("Bugün");
+    expect(chat.dayGroup(new Date(2026, 10, 1, 23).toISOString(), "tr", now)).toBe("Dün");
+    expect(chat.dayGroup(new Date(2026, 9, 29).toISOString(), "tr", now)).toBe("Bu hafta");
+    expect(chat.dayGroup(new Date(2026, 9, 2).toISOString(), "tr", now)).toBe("Ekim 2026");
   });
 });
 

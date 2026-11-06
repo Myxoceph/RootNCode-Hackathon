@@ -1,10 +1,9 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type {
   SavedAnswerAbout,
   TransitItinerary,
   TransitLeg,
+  Lang,
 } from "@vagabonds/contracts";
 import {
   fontFamily,
@@ -44,8 +43,7 @@ import {
   type TransitAdvice,
 } from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { localeTag, useLang } from "@/i18n";
-import { casing } from "@/i18n";
+import { localeTag, useLang, useMessages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -59,10 +57,8 @@ const legIcons: Record<TransitLeg["mode"], IconName> = {
   tram: "train-outline",
 };
 
-const durations = { half: "Yarım gün", "1": "1 gün", "2": "2 gün" } as const;
-
-const savedOn = (iso: string) =>
-  new Date(iso).toLocaleDateString(localeTag(), { day: "numeric", month: "long" });
+const savedOn = (iso: string, lang: Lang) =>
+  new Date(iso).toLocaleDateString(localeTag(lang), { day: "numeric", month: "long" });
 
 type Advice = FoodAdvice | TransitAdvice;
 
@@ -100,6 +96,9 @@ function GroupHead({
   alone: boolean;
   icon: boolean;
 }) {
+  const lang = useLang();
+  const m = useMessages();
+  const w = useMessages().advice;
   const { colors: c } = useTheme();
   const router = useRouter();
   const trip = useSavedRoutes().find(
@@ -112,14 +111,16 @@ function GroupHead({
     if (alone) return null;
     return (
       <Text variant="overline" headingLevel={2} color="textSecondary">
-        DİĞER
+        {w.other}
       </Text>
     );
   }
+  // A trip still on the list is named in today's language; one removed keeps its saved words.
+  const title = trip?.kind === "trip" ? m.shared.tripTitle(trip.trip.city.label) : about.title;
   const firstDay = trip?.kind === "trip" ? trip.trip.days[0]?.date : undefined;
   const details =
     trip?.kind === "trip"
-      ? [durations[trip.trip.duration], firstDay && savedOn(firstDay)]
+      ? [m.saved.durations[trip.trip.duration], firstDay && savedOn(firstDay, lang)]
           .filter(Boolean)
           .join(" · ")
       : null;
@@ -141,13 +142,13 @@ function GroupHead({
       )}
       <View style={styles.flex}>
         <Text variant="label" headingLevel={2}>
-          {about.title}
+          {title}
         </Text>
         <Text variant="caption" color="textSecondary">
           {details ??
             (about.kind === "route"
-              ? "Bu rota artık kayıtlı değil"
-              : "Bu eser için")}
+              ? w.routeGone
+              : w.forSite)}
         </Text>
       </View>
     </>
@@ -156,7 +157,7 @@ function GroupHead({
   return (
     <Pressable
       accessibilityRole="link"
-      accessibilityLabel={`${about.title}${details ? `, ${details}` : ""}, ${about.kind === "route" ? "rotayı açar" : "eser kartını açar"}`}
+      accessibilityLabel={`${title}${details ? `, ${details}` : ""}, ${about.kind === "route" ? w.opensRoute : w.opensSite}`}
       onPress={() => router.push(href)}
       style={({ pressed }) => [styles.group, pressed && styles.pressed]}
     >
@@ -221,13 +222,13 @@ export function FoodAdviceList({
   items: readonly FoodAdvice[];
   grid?: boolean;
 }) {
-  useLang();
+  const w = useMessages().advice;
   if (items.length === 0)
     return (
       <Empty
         icon="restaurant-outline"
-        title="Henüz yemek önerisi yok"
-        text="Rehber'e ne yiyebileceğini sor; önerdikleri burada toplanır."
+        title={w.noFood}
+        text={w.noFoodBody}
       />
     );
   return <Groups items={items} headIcon={false} grid={grid} />;
@@ -235,7 +236,7 @@ export function FoodAdviceList({
 
 /** A trip's page: what Rehber suggested for this route, food first. Nothing shows until there is some. */
 export function RouteAdvice({ routeKey: key }: { routeKey: string }) {
-  useLang();
+  const w = useMessages().advice;
   const saved = useSavedRoutes();
   const items = saved.filter(
     (route): route is Advice =>
@@ -249,7 +250,7 @@ export function RouteAdvice({ routeKey: key }: { routeKey: string }) {
   return (
     <View style={styles.list}>
       <Text variant="overline" headingLevel={2} color="textSecondary">
-        BU ROTA İÇİN KAYDETTİKLERİN
+        {w.forThisRoute}
       </Text>
       {inOrder.map(adviceCard)}
     </View>
@@ -261,10 +262,12 @@ export function RouteAdvice({ routeKey: key }: { routeKey: string }) {
  * each dish with its story, gold marks down the side. The rest of a long one opens below.
  */
 function FoodCard({ item, index }: { item: FoodAdvice; index: number }) {
+  const lang = useLang();
+  const w = useMessages().advice;
   const { colors: c } = useTheme();
   const [open, setOpen] = useState(false);
   const code = item.dishes[0]?.id.split("-")[0] ?? "";
-  const { intro, dishes, outro } = menuOf(item.answer);
+  const { intro, dishes, outro } = menuOf(item.answer, lang);
   const shown = open ? dishes : dishes.slice(0, MENU_DISHES);
   const hidden = dishes.length - shown.length;
   const long = dishes.length === 0 && intro.length > 220;
@@ -275,13 +278,13 @@ function FoodCard({ item, index }: { item: FoodAdvice; index: number }) {
       id={item.id}
       savedAt={item.savedAt}
       title={item.title}
-      spoken="yemek önerisini"
+      spoken={w.foodSpoken}
       band={
         <>
           <BandTop
-            label={code.toLocaleUpperCase(casing())}
+            label={code.toLocaleUpperCase(lang)}
             icon="restaurant"
-            tag="Sofra"
+            tag={w.foodTag}
           />
           <Text
             headingLevel={3}
@@ -333,10 +336,10 @@ function FoodCard({ item, index }: { item: FoodAdvice; index: number }) {
         >
           <Text variant="label" color="highlight">
             {open
-              ? "Daralt"
+              ? w.collapse
               : hidden > 0
-                ? `${hidden} lezzet daha`
-                : "Devamını oku"}
+                ? w.moreDishes(hidden)
+                : w.readMore}
           </Text>
           <Ionicons
             name={open ? "chevron-up" : "chevron-down"}
@@ -357,13 +360,13 @@ export function TransitAdviceList({
   items: readonly TransitAdvice[];
   grid?: boolean;
 }) {
-  useLang();
+  const w = useMessages().advice;
   if (items.length === 0)
     return (
       <Empty
         icon="bus-outline"
-        title="Henüz ulaşım tarifi yok"
-        text="Rehber'e bir esere toplu taşımayla nasıl gideceğini sor; tarifler burada toplanır."
+        title={w.noTransit}
+        text={w.noTransitBody}
       />
     );
   return <Groups items={items} grid={grid} />;
@@ -374,13 +377,15 @@ export function TransitAdviceList({
  * many changes, then the way itself as stops on a line. Other ways to go are a tap away.
  */
 function TransitCard({ item, index }: { item: TransitAdvice; index: number }) {
+  const lang = useLang();
+  const w = useMessages().advice;
   const { colors: c } = useTheme();
   const { itineraries, from, to, source } = item.transit;
   const [way, setWay] = useState(0);
   const itinerary = itineraries[way] ?? itineraries[0];
   if (!itinerary) return null;
   const transfers =
-    itinerary.transfers > 0 ? `${itinerary.transfers} aktarma` : "Aktarmasız";
+    itinerary.transfers > 0 ? w.transfers(itinerary.transfers) : w.direct;
   return (
     <Ticket
       index={index}
@@ -388,18 +393,18 @@ function TransitCard({ item, index }: { item: TransitAdvice; index: number }) {
       id={item.id}
       savedAt={item.savedAt}
       title={item.title}
-      spoken="ulaşım tarifini"
+      spoken={w.transitSpoken}
       band={
         <>
           <BandTop
-            label={item.transit.city.toLocaleUpperCase(casing())}
+            label={item.transit.city.toLocaleUpperCase(lang)}
             icon="bus"
-            tag="Biniş kartı"
+            tag={w.boardingPass}
           />
           <View
             accessible
             accessibilityRole="header"
-            accessibilityLabel={`${from.name}, ${to.name} yönüne`}
+            accessibilityLabel={w.journeyLabel(from.name, to.name)}
             style={styles.journey}
           >
             <Text
@@ -441,7 +446,7 @@ function TransitCard({ item, index }: { item: TransitAdvice; index: number }) {
           <View style={styles.chips}>
             <Chip
               icon="time-outline"
-              text={`${itinerary.durationMinutes} dk`}
+              text={w.minutes(itinerary.durationMinutes)}
             />
             <Chip icon="swap-horizontal" text={transfers} />
             <Chip icon="walk-outline" text={`${itinerary.walkMeters} m`} />
@@ -457,7 +462,7 @@ function TransitCard({ item, index }: { item: TransitAdvice; index: number }) {
               key={i}
               accessibilityRole="tab"
               accessibilityState={{ selected: i === way }}
-              accessibilityLabel={`${i + 1}. yol, ${option.durationMinutes} dakika`}
+              accessibilityLabel={w.wayLabel(i + 1, option.durationMinutes)}
               onPress={() => setWay(i)}
               style={[
                 styles.wayTab,
@@ -469,7 +474,7 @@ function TransitCard({ item, index }: { item: TransitAdvice; index: number }) {
                 color={i === way ? "text" : "textSecondary"}
                 style={styles.wayText}
               >
-                {`${option.durationMinutes} dk`}
+                {w.minutes(option.durationMinutes)}
               </Text>
             </Pressable>
           ))}
@@ -482,7 +487,7 @@ function TransitCard({ item, index }: { item: TransitAdvice; index: number }) {
       </View>
       {/* Times change with the timetable: the legs are kept, the clock is not promised. */}
       <Text variant="caption" color="textSecondary">
-        {`Kaydedildiği günkü tarifeye göre. Kaynak: ${source.name}.`}
+        {w.timetable(source.name)}
       </Text>
     </Ticket>
   );
@@ -500,6 +505,7 @@ function onColor(hex: string): string {
 
 /** One step of the way: its mode on the line down the side, the bus or tram's own badge, where from and to. */
 function Leg({ leg, last }: { leg: TransitLeg; last: boolean }) {
+  const w = useMessages().advice;
   const { colors: c } = useTheme();
   const walking = !leg.line;
   return (
@@ -554,16 +560,16 @@ function Leg({ leg, last }: { leg: TransitLeg; last: boolean }) {
             <Text>{`${leg.from.name} → ${leg.to.name}`}</Text>
             <Text variant="caption" color="textSecondary">
               {[
-                `${leg.durationMinutes} dk`,
-                leg.stopsBetween > 0 && `${leg.stopsBetween} durak`,
-                leg.headsign && `${leg.headsign} yönü`,
+                w.minutes(leg.durationMinutes),
+                leg.stopsBetween > 0 && w.stops(leg.stopsBetween),
+                leg.headsign && w.towards(leg.headsign),
               ]
                 .filter(Boolean)
                 .join(" · ")}
             </Text>
           </>
         ) : (
-          <Text color="textSecondary">{`${leg.to.name} için ${leg.distanceMeters} m yürü`}</Text>
+          <Text color="textSecondary">{w.walkTo(leg.to.name, leg.distanceMeters)}</Text>
         )}
       </View>
     </View>
@@ -632,6 +638,8 @@ function Ticket({
   band: ReactNode;
   children: ReactNode;
 }) {
+  const lang = useLang();
+  const w = useMessages().advice;
   const { colors: c } = useTheme();
   const reduced = useReducedMotion();
   const rise = useRef(new Animated.Value(reduced ? 1 : 0)).current;
@@ -736,15 +744,15 @@ function Ticket({
         <View style={[styles.foot, { borderTopColor: c.border }]}>
           <Ionicons name="calendar-outline" size={14} color={c.textSecondary} />
           <Text variant="caption" color="textSecondary" style={styles.flex}>
-            {savedOn(savedAt)}
+            {savedOn(savedAt, lang)}
           </Text>
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel={`${title} ${spoken} sil`}
+            accessibilityLabel={w.deleteLabel(title, spoken)}
             hitSlop={6}
             onPress={() => {
               void removeRoute(id);
-              announce("Kayıt silindi.");
+              announce(w.deleted);
             }}
             style={({ pressed }) => [
               styles.remove,
@@ -768,6 +776,7 @@ function Empty({
   title: string;
   text: string;
 }) {
+  const w = useMessages().advice;
   const { colors: c } = useTheme();
   const router = useRouter();
   return (
@@ -787,7 +796,7 @@ function Empty({
         style={styles.more}
       >
         <Text variant="label" color="highlight">
-          Rehber'e sor
+          {w.askRehber}
         </Text>
       </Pressable>
     </View>

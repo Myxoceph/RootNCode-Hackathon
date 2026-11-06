@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   fontFamily,
@@ -32,7 +30,10 @@ import Svg, {
   Stop,
 } from "react-native-svg";
 
+import type { Lang } from "@vagabonds/contracts";
+
 import { FoodAdviceList, TransitAdviceList } from "@/components/saved-advice";
+import { planRoute } from "@/content/routes";
 import { announce } from "@/lib/announce";
 import { bottomInset } from "@/lib/bottom-inset";
 import { inkFor } from "@/lib/route-ink";
@@ -48,30 +49,22 @@ import {
 } from "@/lib/saved-routes";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
-import { casing, useLang } from "@/i18n";
+import { localeTag, useLang, useMessages, type Messages } from "@/i18n";
 
 const regionLabel: Record<PlannerRoute["region"], string> = {
   bursa: "Bursa",
   edirne: "Edirne",
   both: "Bursa & Edirne",
 };
-const durationLabel: Record<PlannerRoute["duration"], string> = {
-  half: "Yarım gün",
-  "1": "1 gün",
-  "2": "2 gün",
-};
 
 type RouteEntry = PlannerRoute | TripRoute;
 type Tab = "routes" | "food" | "transit";
 
-const TABS: ReadonlyArray<{ key: Tab; label: string }> = [
-  { key: "routes", label: "Rotalar" },
-  { key: "food", label: "Yemek" },
-  { key: "transit", label: "Ulaşım" },
-];
+const TABS: ReadonlyArray<Tab> = ["routes", "food", "transit"];
 
 /** What a ticket shows: the city, the title, how long, from where, the stops and their ends. */
-function ticketOf(route: RouteEntry) {
+function ticketOf(route: RouteEntry, m: Messages, lang: Lang) {
+  const w = m.saved;
   if (route.kind === "trip") {
     const stops = route.trip.days.flatMap((day) =>
       day.items.flatMap((item) =>
@@ -81,8 +74,8 @@ function ticketOf(route: RouteEntry) {
     return {
       city: route.trip.city.label,
       code: route.trip.city.code,
-      title: route.title,
-      duration: durationLabel[route.trip.duration],
+      title: m.shared.tripTitle(route.trip.city.label),
+      duration: w.durations[route.trip.duration],
       fromRehber: true,
       ends:
         stops.length > 1
@@ -93,12 +86,12 @@ function ticketOf(route: RouteEntry) {
   return {
     city: regionLabel[route.region],
     code: route.region,
-    title: route.title,
-    duration: durationLabel[route.duration],
+    title: planRoute(route.region, route.duration, lang).title,
+    duration: w.durations[route.duration],
     fromRehber: false,
     ends:
       route.dishes.length > 0
-        ? `${route.dishes.length} lezzet durağıyla`
+        ? w.withFood(route.dishes.length)
         : null,
   };
 }
@@ -111,7 +104,8 @@ function ticketOf(route: RouteEntry) {
  * "Yeni" leads. Yemek and Ulaşım: what Rehber suggested in the chat (components/saved-advice.tsx).
  */
 export default function MyRoutesScreen() {
-  useLang();
+  const m = useMessages();
+  const w = m.saved;
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -138,11 +132,11 @@ export default function MyRoutesScreen() {
   const head = (
     <View style={styles.head}>
       <Text variant="caption" color="textSecondary" style={styles.headText}>
-        {`${routes.length} rota · ${stopTotal} durak`}
+        {w.summary(routes.length, stopTotal)}
       </Text>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel="Rehber'le yeni rota planla"
+        accessibilityLabel={w.planNew}
         onPress={() => router.navigate("/rehber")}
         style={({ pressed }) => [styles.newPill, pressed && styles.pressed]}
       >
@@ -152,7 +146,7 @@ export default function MyRoutesScreen() {
           colorValue={palette.white}
           style={styles.newPillText}
         >
-          Yeni
+          {w.newShort}
         </Text>
       </Pressable>
     </View>
@@ -169,7 +163,7 @@ export default function MyRoutesScreen() {
       contentInsetAdjustmentBehavior="automatic"
     >
       <Head>
-        <title>Kaydettiklerim · Vagabonds</title>
+        <title>{m.common.title(m.screens.saved)}</title>
       </Head>
 
       <View style={wide ? styles.toolbar : undefined}>
@@ -181,14 +175,15 @@ export default function MyRoutesScreen() {
             { backgroundColor: c.surfaceRaised },
           ]}
         >
-          {TABS.map((option) => {
+          {TABS.map((key) => {
+            const option = { key, label: w.tabs[key] };
             const on = option.key === tab;
             return (
               <Pressable
                 key={option.key}
                 accessibilityRole="tab"
                 accessibilityState={{ selected: on }}
-                accessibilityLabel={`${option.label}, ${counts[option.key]} kayıt`}
+                accessibilityLabel={w.tabLabel(option.label, counts[option.key])}
                 onPress={() => setTab(option.key)}
                 style={[styles.tab, on && { backgroundColor: c.surface }]}
               >
@@ -238,14 +233,17 @@ export default function MyRoutesScreen() {
 
 /** One saved route as a ticket; it rises in a moment after the one above it. */
 function Ticket({ route, index }: { route: RouteEntry; index: number }) {
+  const lang = useLang();
   const { colors: c } = useTheme();
   const router = useRouter();
   const reduced = useReducedMotion();
   const rise = useRef(new Animated.Value(reduced ? 1 : 0)).current;
-  const ticket = ticketOf(route);
+  const m = useMessages();
+  const w = m.saved;
+  const ticket = ticketOf(route, m, lang);
   const [light, deep] = inkFor(ticket.code);
   const [size, setSize] = useState({ width: 0, height: 0 });
-  const saved = new Date(route.savedAt).toLocaleDateString("tr-TR", {
+  const saved = new Date(route.savedAt).toLocaleDateString(localeTag(lang), {
     day: "numeric",
     month: "long",
   });
@@ -258,7 +256,7 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
   const adviceCounts = (["food", "transit"] as const).flatMap((kind) => {
     const count = forThis.filter((entry) => entry.kind === kind).length;
     return count > 0
-      ? [`${count} ${kind === "food" ? "yemek" : "ulaşım"}`]
+      ? [kind === "food" ? w.foodCount(count) : w.transitCount(count)]
       : [];
   });
 
@@ -304,7 +302,7 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
     >
       <Pressable
         accessibilityRole="link"
-        accessibilityLabel={`${ticket.title}, ${ticket.city}, ${ticket.duration}, ${route.stops} durak${ticket.fromRehber ? ", Rehber planladı" : ""}. Rotayı aç`}
+        accessibilityLabel={w.ticketLabel(ticket.title, ticket.city, ticket.duration, route.stops, ticket.fromRehber)}
         onPress={open}
         style={({ pressed }) => [
           styles.ticket,
@@ -363,7 +361,7 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
           )}
           <View style={styles.bandTop}>
             <Text colorValue={palette.altin200} style={styles.city}>
-              {ticket.city.toLocaleUpperCase(casing())}
+              {ticket.city.toLocaleUpperCase(lang)}
             </Text>
             <View style={styles.chip}>
               <Ionicons
@@ -372,7 +370,7 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
                 color={palette.altin200}
               />
               <Text colorValue={palette.gece50} style={styles.chipText}>
-                {ticket.fromRehber ? "Rehber" : "Planlayıcı"}
+                {ticket.fromRehber ? m.tabs.rehber : w.planner}
               </Text>
             </View>
           </View>
@@ -421,14 +419,14 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
               color={c.textSecondary}
             />
             <Text variant="caption" color="textSecondary" style={styles.flex}>
-              {[`${saved} · ${route.stops} durak`, ...adviceCounts].join(" · ")}
+              {[w.ticketMeta(saved, route.stops), ...adviceCounts].join(" · ")}
             </Text>
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel={`${ticket.title} rotasını sil`}
+              accessibilityLabel={w.removeLabel(ticket.title)}
               onPress={() => {
                 void removeRoute(route.id);
-                announce("Rota silindi.");
+                announce(w.removed);
               }}
               hitSlop={6}
               style={({ pressed }) => [
@@ -454,11 +452,12 @@ const MAX_DOTS = 6;
 
 /** The stops on a dashed gold line: a flag for the first, a pin for the last, dots between. */
 function RouteLine({ stops }: { stops: number }) {
+  const w = useMessages().saved;
   const { colors: c } = useTheme();
   if (stops === 0) {
     return (
       <Text variant="caption" color="textSecondary">
-        Henüz durak yok
+        {w.noStops}
       </Text>
     );
   }
@@ -514,6 +513,7 @@ function RouteLine({ stops }: { stops: number }) {
 
 /** No routes yet: a dashed path between two pins, and the way to Rehber. */
 function Empty({ onNew }: { onNew: () => void }) {
+  const w = useMessages().saved;
   const { colors: c } = useTheme();
   return (
     <View style={[styles.empty, { backgroundColor: c.surface }]}>
@@ -566,11 +566,10 @@ function Empty({ onNew }: { onNew: () => void }) {
         headingLevel={2}
         style={[styles.centered, styles.emptyTitle]}
       >
-        İlk rotanı çiz
+        {w.firstTitle}
       </Text>
       <Text color="textSecondary" style={styles.centered}>
-        Rehber'e nereyi gezmek istediğini söyle; planladığı rotalar burada bilet
-        olarak toplanır.
+        {w.firstBody}
       </Text>
       <Pressable
         accessibilityRole="button"
@@ -584,7 +583,7 @@ function Empty({ onNew }: { onNew: () => void }) {
       >
         <Ionicons name="sparkles" size={18} color={palette.white} />
         <Text variant="label" colorValue={palette.white} style={styles.newText}>
-          Rehber'le rota planla
+          {w.planWithRehber}
         </Text>
       </Pressable>
     </View>

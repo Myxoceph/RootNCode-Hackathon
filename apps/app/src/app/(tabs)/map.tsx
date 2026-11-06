@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
 import { spacing, Text, useTheme } from "@vagabonds/ui";
@@ -60,7 +58,7 @@ import {
   type MapProvinces,
   type MapSpots,
 } from "@/map";
-import { useMessages } from "@/i18n";
+import { useLang, useMessages } from "@/i18n";
 
 /** Room kept free for the search bar when framing Turkey. */
 const HEADER_SPACE = 72;
@@ -101,6 +99,7 @@ function nearness(
  */
 export default function MapScreen() {
   const m = useMessages();
+  const lang = useLang();
   const night = useMapTheme().colors;
   useMapStatusBar();
   // The tab bar floats over the map: the cards and the framing keep clear of it.
@@ -627,7 +626,7 @@ export default function MapScreen() {
           >
             {cardsShown && (
               <CityAssetList
-                title={m.map.sitesIn(placeIn(selectedCity.label))}
+                title={m.map.sitesIn(placeIn(selectedCity.label, lang))}
                 assets={cards}
                 buildingsOf={buildingsOf}
                 selectedId={chosenAsset}
@@ -641,7 +640,7 @@ export default function MapScreen() {
         {side && selectedCity && cardsShown && !listOpen && !tour.step && (
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel={m.map.showSitesIn(placeIn(selectedCity.label), cards.length)}
+            accessibilityLabel={m.map.showSitesIn(placeIn(selectedCity.label, lang), cards.length)}
             onPress={() => setListOpen(true)}
             style={({
               pressed,
@@ -666,7 +665,7 @@ export default function MapScreen() {
               colorValue={listLook.text}
               style={styles.showListText}
             >
-              {m.map.sitesInCount(placeIn(selectedCity.label), cards.length)}
+              {m.map.sitesInCount(placeIn(selectedCity.label, lang), cards.length)}
             </Text>
             <Ionicons name="chevron-forward" size={16} color={listLook.text} />
           </Pressable>

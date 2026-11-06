@@ -12,6 +12,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { CameraTopBar, GlassPill } from "@/components/camera-chrome";
 import { DataError } from "@/data/errors";
 import { askStone, shrinkPhoto } from "@/data/vision";
+import { useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
 import { answerParts } from "@/lib/chat";
 import { useVoiceQuestion } from "@/lib/use-voice-question";
@@ -26,6 +27,8 @@ type Phase = { kind: "aim" } | { kind: "looking"; photo: string; question: strin
  * asset's page offers it only on a phone (ADR 0001). Photos are not stored.
  */
 export default function StoneAskScreen() {
+  const m = useMessages();
+  const w = m.stone;
   const { asset, name } = useLocalSearchParams<{ asset?: string; name?: string }>();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -60,11 +63,11 @@ export default function StoneAskScreen() {
       if (!shot) throw new Error("no photo");
       photo = await shrinkPhoto(shot.uri);
     } catch {
-      setPhase({ kind: "failed", photo: null, message: "Fotoğraf çekilemedi. Tekrar dene." });
+      setPhase({ kind: "failed", photo: null, message: w.photoFailed });
       return;
     }
     setPhase({ kind: "looking", photo, question });
-    announce("Bakıyorum.");
+    announce(w.lookingSaid);
     try {
       const response = await askStone(photo, asset, question ?? undefined);
       if (!shown.current) return;
@@ -78,7 +81,7 @@ export default function StoneAskScreen() {
       void speakAnswer(response.answer, plain);
     } catch (error) {
       if (!shown.current) return;
-      const message = error instanceof DataError ? error.message : "Taşa Sor şu an cevap veremiyor. Biraz sonra tekrar dene.";
+      const message = error instanceof DataError ? error.message : m.errors.vision.down;
       setPhase({ kind: "failed", photo, message });
       announce(message);
     }
@@ -97,11 +100,11 @@ export default function StoneAskScreen() {
     setPhase({ kind: "aim" });
   }
 
-  const title = name ?? "Taşa Sor";
-  const subtitle = "TAŞA SOR";
+  const title = name ?? m.screens.stoneAsk;
+  const subtitle = w.overline;
   const head = (
     <Head>
-      <title>Taşa Sor · Vagabonds</title>
+      <title>{m.common.title(m.screens.stoneAsk)}</title>
     </Head>
   );
 
@@ -111,9 +114,9 @@ export default function StoneAskScreen() {
       <View style={[styles.screen, styles.center, { paddingTop: insets.top + spacing.md }]}>
         {head}
         <Text colorValue={cameraColors.text} style={styles.centerText}>
-          Taşa Sor telefonda, bir eserin sayfasından açılır.
+          {w.phoneOnly}
         </Text>
-        <Button label="Geri dön" onPress={() => (router.canGoBack() ? router.back() : router.replace("/"))} colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]} />
+        <Button label={w.goBack} onPress={() => (router.canGoBack() ? router.back() : router.replace("/"))} colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]} />
       </View>
     );
   }
@@ -123,9 +126,9 @@ export default function StoneAskScreen() {
       <View style={[styles.screen, styles.center, { paddingTop: insets.top + spacing.md }]}>
         {head}
         <Text colorValue={cameraColors.text} style={styles.centerText} accessibilityRole="alert">
-          Taşa Sor için kamera izni gerekiyor. Telefonun ayarlarından izin verebilirsin.
+          {w.needsCamera}
         </Text>
-        <Button label="Geri dön" onPress={() => router.back()} colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]} />
+        <Button label={w.goBack} onPress={() => router.back()} colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]} />
       </View>
     );
   }
@@ -139,7 +142,7 @@ export default function StoneAskScreen() {
       {permission?.granted && (
         <CameraView ref={camera} style={StyleSheet.absoluteFill} facing="back" onCameraReady={() => setReady(true)} accessible={false} importantForAccessibility="no-hide-descendants" />
       )}
-      {photo && <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} contentFit="cover" accessibilityLabel="Çektiğin fotoğraf" />}
+      {photo && <Image source={{ uri: photo }} style={StyleSheet.absoluteFill} contentFit="cover" accessibilityLabel={w.yourPhoto} />}
 
       <View style={[styles.top, { paddingTop: insets.top + spacing.sm }]}>
         <CameraTopBar title={title} subtitle={subtitle} />
@@ -148,12 +151,12 @@ export default function StoneAskScreen() {
       <View style={[styles.bottom, { paddingBottom: insets.bottom + spacing.md }]}>
         {phase.kind === "aim" && !listening && (
           <Text variant="caption" colorValue={cameraColors.text} style={[styles.hint, styles.centerText]}>
-            Bir detaya tut: çini, kapı, kitabe, oyma. Deklanşöre bas ya da mikrofona dokunup sor.
+            {w.aim}
           </Text>
         )}
         {listening && (
           <Text variant="caption" colorValue={cameraColors.text} style={[styles.hint, styles.centerText]} accessibilityLiveRegion="polite">
-            {voice.phase === "recording" ? `Dinliyorum… ${voice.seconds} sn · bitince tekrar dokun` : "Anlıyorum…"}
+            {voice.phase === "recording" ? w.listening(voice.seconds) : w.understanding}
           </Text>
         )}
 
@@ -166,7 +169,7 @@ export default function StoneAskScreen() {
             )}
             <View style={styles.row}>
               <ActivityIndicator color={cameraColors.gold} />
-              <Text colorValue={cameraColors.text}>Bakıyorum…</Text>
+              <Text colorValue={cameraColors.text}>{w.looking}</Text>
             </View>
           </View>
         )}
@@ -184,19 +187,19 @@ export default function StoneAskScreen() {
               </Text>
               {phase.response.citations.length > 0 && (
                 <Text variant="caption" colorValue={cameraColors.textSecondary}>
-                  Kaynak: {phase.response.citations.map((citation) => citation.title).join(", ")} kaydı · fotoğraftaki yorum yapay zekâya ait
+                  {w.source(phase.response.citations.map((citation) => citation.title).join(", "))}
                 </Text>
               )}
             </ScrollView>
             <View style={styles.row}>
               <GlassPill
                 icon={speaking === phase.response.answer ? "stop" : "volume-high"}
-                label={speaking === phase.response.answer ? "Durdur" : "Dinle"}
-                spoken={speaking === phase.response.answer ? "sesli okumayı kes" : "cevabı sesli oku"}
+                label={speaking === phase.response.answer ? m.common.stop : m.common.listen}
+                spoken={speaking === phase.response.answer ? w.stopSpoken : w.readSpoken}
                 onPress={() => (speaking === phase.response.answer ? stopAnswer() : void speakAnswer(phase.response.answer, phase.plain))}
               />
               <View style={styles.flex} />
-              <GlassPill gold icon="camera" label="Yeniden sor" spoken="kamerayı yeniden aç" onPress={again} />
+              <GlassPill gold icon="camera" label={w.askAgain} spoken={w.askAgainSpoken} onPress={again} />
             </View>
           </View>
         )}
@@ -204,7 +207,7 @@ export default function StoneAskScreen() {
         {phase.kind === "failed" && (
           <View style={styles.card} accessibilityRole="alert">
             <Text colorValue={cameraColors.text}>{phase.message}</Text>
-            <GlassPill gold icon="refresh" label="Tekrar dene" onPress={again} />
+            <GlassPill gold icon="refresh" label={m.common.retry} onPress={again} />
           </View>
         )}
 
@@ -213,7 +216,7 @@ export default function StoneAskScreen() {
             <View style={styles.side} />
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel="Fotoğraf çek ve sor: Bu ne?"
+              accessibilityLabel={w.shoot}
               accessibilityState={{ disabled: !ready || listening }}
               disabled={!ready || listening}
               onPress={() => void capture(null)}
@@ -223,7 +226,7 @@ export default function StoneAskScreen() {
             </Pressable>
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel={voice.phase === "recording" ? "Dinlemeyi bitir ve sor" : "Sesli sor"}
+              accessibilityLabel={voice.phase === "recording" ? w.stopAndAsk : w.askByVoice}
               disabled={!ready || voice.phase === "transcribing"}
               onPress={voice.toggle}
               style={({ pressed }) => [styles.mic, voice.phase === "recording" && styles.micOn, pressed && styles.dim]}
