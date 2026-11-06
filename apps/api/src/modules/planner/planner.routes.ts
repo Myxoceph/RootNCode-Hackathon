@@ -31,6 +31,9 @@ import type { GastronomyRepository } from "../gastronomy/gastronomy.repository.t
 import { pickDish } from "../gastronomy/meals.ts";
 import { importanceOf, planTrip, TRIP_SHAPE, weatherNoteCode, type ImportanceSignals } from "./trip.ts";
 
+/** How far ahead a trip can start. Beyond the forecast its days are planned without weather. */
+const TRIP_MAX_LEAD_DAYS = 365;
+
 const CodeSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "must be a lowercase code");
 
 const ThemeSchema = z
@@ -73,10 +76,10 @@ const TripThemeSchema = z.string().transform((value, ctx) => {
 const TripQuerySchema = z.object({
   lang: LangSchema.optional(),
   city: CodeSchema.describe("İl kodu, ör. bursa"),
-  duration: TripDurationSchema.default("1").describe("half: 09:00–13:30; 1: tam gün, öğle molasıyla; 2: iki tam gün"),
+  duration: TripDurationSchema.default("1").describe("half: 09:00–13:30; 1-5: o kadar tam gün, öğle molasıyla"),
   theme: TripThemeSchema.optional().describe("type:<tür kodu> ya da era:<dönem kodu>; verilmezse bütün eserler"),
   start: PointSchema.optional().describe("1. günün başlangıç noktası lat,lng; verilmezse her gün en önemli eserden başlar"),
-  date: z.iso.date().optional().describe("1. günün tarihi (YYYY-MM-DD), bugünden itibaren tahmin aralığında; varsayılan bugün"),
+  date: z.iso.date().optional().describe("1. günün tarihi (YYYY-MM-DD), bugünden en çok bir yıl sonrası; varsayılan bugün"),
 });
 
 const WeatherQuerySchema = z.object({
@@ -94,7 +97,12 @@ const MEAL_LABEL: Record<"lunch" | "dessert", Record<Lang, string>> = {
   dessert: { tr: "Tatlı durağı", en: "Dessert stop" },
 };
 
-function weatherNoteText(code: TripWeatherNoteCode, weather: DailyForecast | null, lang: Lang): string {
+function weatherNoteText(code: TripWeatherNoteCode, weather: DailyForecast | null, lang: Lang, beyondForecast: boolean): string {
+  if (code === "unavailable" && beyondForecast) {
+    return lang === "tr"
+      ? "Bu gün için henüz hava tahmini yok; plan havaya bakılmadan yapıldı."
+      : "There is no forecast for this day yet; the plan does not take the weather into account.";
+  }
   const afternoon = weather?.afternoonPrecipitationProbability ?? 0;
   const chance = weather?.precipitationProbability ?? 0;
   const high = Math.round(weather?.highC ?? 0);
@@ -303,7 +311,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
   app.get("/routes/trip", {
     schema: {
       tags: ["planner"],
-      summary: "Yarım, bir ya da iki günlük gezi: önemli eserler önce, hava tahminine göre sıralı, öğle ve tatlı molalarıyla",
+      summary: "Yarım günden beş güne kadar gezi: önemli eserler önce, hava tahminine göre sıralı, öğle ve tatlı molalarıyla",
       querystring: toOpenApiSchema(TripQuerySchema, "input"),
       response: { 200: toOpenApiSchema(TripPlanResponseSchema), 400: errorSchema, 404: errorSchema },
     },
@@ -316,10 +324,11 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
 
     const today = turkeyToday();
     const firstDate = query.date ?? today;
-    const lastAllowed = addDays(today, FORECAST_DAYS - dayCount);
+    const lastAllowed = addDays(today, TRIP_MAX_LEAD_DAYS);
     if (firstDate < today || firstDate > lastAllowed) {
-      throw new HttpError(400, "INVALID_QUERY", `date must be between ${today} and ${lastAllowed} for this duration`);
+      throw new HttpError(400, "INVALID_QUERY", `date must be between ${today} and ${lastAllowed}`);
     }
+    const lastForecast = addDays(today, FORECAST_DAYS - 1);
     const dates = Array.from({ length: dayCount }, (_, day) => addDays(firstDate, day));
 
     const [records, forecast, dishes] = await Promise.all([
@@ -371,15 +380,16 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
       lang,
       city,
       theme: theme ?? null,
-      duration,
+      duration: duration === "half" ? duration : String(plan.days.length),
       days: plan.days.map((day, index) => {
+        const date = dates[index] as string;
         const weatherOfDay = dayWeather[index] ?? null;
         const code = weatherNoteCode(weatherOfDay);
         return {
           day: index + 1,
-          date: dates[index],
+          date,
           weather: weatherOfDay,
-          weatherNote: { code, text: weatherNoteText(code, weatherOfDay, lang) },
+          weatherNote: { code, text: weatherNoteText(code, weatherOfDay, lang, date > lastForecast) },
           items: day.items.map((item, itemIndex) =>
             item.kind === "stop"
               ? {

@@ -126,8 +126,8 @@ export const RoutePlanResponseSchema = z.strictObject({
   estimateNote: z.string().min(1),
 });
 
-/** `half`: 09:00–13:30; `1`: 09:00–17:30 with a lunch break; `2`: two such days, no site twice. */
-export const TripDurationSchema = z.enum(["half", "1", "2"]);
+/** `half`: 09:00–13:30; `1`: 09:00–17:30 with a lunch break; `2` to `5`: that many such days, no site twice. */
+export const TripDurationSchema = z.enum(["half", "1", "2", "3", "4", "5"]);
 
 /** How the weather shaped a day of the trip; `text` says it in the response language. */
 export const TripWeatherNoteCodeSchema = z.enum(["afternoon_rain", "heat", "rain_possible", "clear", "unavailable"]);
@@ -165,7 +165,7 @@ export const TripDaySchema = z.strictObject({
   /** 1-based. */
   day: z.int().positive(),
   date: z.iso.date(),
-  /** Null when the forecast is unavailable; the day is then planned without weather. */
+  /** Null when the forecast is unavailable or the day is too far ahead; the day is then planned without weather. */
   weather: DailyForecastSchema.nullable(),
   weatherNote: z.strictObject({ code: TripWeatherNoteCodeSchema, text: z.string().min(1) }),
   /** Stops and meals in time order. Empty when nothing is left to visit. */
@@ -186,6 +186,7 @@ export const TripPlanResponseSchema = z.strictObject({
   city: LabeledCodeSchema,
   /** Null when the trip covers every type of site. */
   theme: z.strictObject({ kind: z.enum(["type", "era"]), code: z.string().min(1) }).nullable(),
+  /** The days actually planned: less than asked for when the city runs out of sites. */
   duration: TripDurationSchema,
   days: z.array(TripDaySchema).min(1),
   /** Visible sites matching the theme in this city. */

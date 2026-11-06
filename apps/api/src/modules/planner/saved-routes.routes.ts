@@ -24,8 +24,8 @@ export interface SavedRoutesRoutesOptions {
 }
 
 const IdParamsSchema = z.object({ id: SavedRouteIdSchema });
-/** A two-day trip plan is ~60 KB of JSON; the API's own limit is kept for every other request. */
-const SAVE_BODY_LIMIT = 256 * 1024;
+/** A two-day trip plan is ~60 KB of JSON, a five-day one up to ~230 KB; the API's own limit is kept for every other request. */
+const SAVE_BODY_LIMIT = 512 * 1024;
 const bearer = [{ bearerAuth: [] }];
 
 /** A route saved under an older contract that no longer parses is left out rather than failing the list. */

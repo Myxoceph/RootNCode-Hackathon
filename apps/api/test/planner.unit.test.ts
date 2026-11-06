@@ -242,7 +242,7 @@ describe("weather", () => {
     expect(await service.forecast(ORIGIN)).toHaveLength(2);
     const url = new URL(String(fetch.mock.calls[0]?.[0]));
     expect(url.searchParams.get("hourly")).toBe("precipitation_probability");
-    expect(url.searchParams.get("forecast_days")).toBe("3");
+    expect(url.searchParams.get("forecast_days")).toBe("7");
     await service.forecast(ORIGIN);
     expect(fetch).toHaveBeenCalledTimes(1);
     clock = 1_001;

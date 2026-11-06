@@ -683,7 +683,7 @@ const tr = {
     ok: "Tamam",
   },
   saved: {
-    durations: { half: "Yarım gün", "1": "1 gün", "2": "2 gün" },
+    durations: { half: "Yarım gün", "1": "1 gün", "2": "2 gün", "3": "3 gün", "4": "4 gün", "5": "5 gün" },
     tabs: { routes: "Rotalar", food: "Yemek", transit: "Ulaşım" },
     withFood: (count: number) => `${count} lezzet durağıyla`,
     summary: (routes: number, stops: number) => `${routes} rota · ${stops} durak`,
@@ -1779,7 +1779,7 @@ const en: Messages = {
     ok: "OK",
   },
   saved: {
-    durations: { half: "Half a day", "1": "1 day", "2": "2 days" },
+    durations: { half: "Half a day", "1": "1 day", "2": "2 days", "3": "3 days", "4": "4 days", "5": "5 days" },
     tabs: { routes: "Routes", food: "Food", transit: "Transit" },
     withFood: (count) => `with ${count} food ${count === 1 ? "stop" : "stops"}`,
     summary: (routes, stops) => `${routes} ${routes === 1 ? "route" : "routes"} · ${stops} ${stops === 1 ? "stop" : "stops"}`,

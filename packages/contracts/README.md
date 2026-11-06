@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.29`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.30`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -25,10 +25,10 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `GET /assets/:id/relations?lang=` | `AssetRelationsResponseSchema` (Kentsel Ağ bağları): `items` haritadaki eserlere bağlar; `outside` veri setinde olmayan yerlere bağlar, kaynaktaki adıyla (`name`, ör. "II. Bayezid Külliyesi (İstanbul)"), haritaya çizilmez; `unavailableCount` henüz yayında olmayanlar |
 | `GET /assets/:id/nearby?radius=&limit=&lang=` | `NearbyAssetsResponseSchema` (yarıçap metre: 100–50000, varsayılan 2000; limit 1–50, varsayılan 10) |
 | `GET /meta/enums?lang=` | `MetaEnumsResponseSchema` (il, tür, dönem, bağ türü, güven, erişilebilirlik, medya türü) |
-| `GET /weather?city=&lang=` | `WeatherResponseSchema` (anlık hava durumu, `advice` ve bugünden itibaren 3 günlük `daily` tahmin; sağlayıcıya ulaşılamazsa `available: false`, `daily: []`) |
+| `GET /weather?city=&lang=` | `WeatherResponseSchema` (anlık hava durumu, `advice` ve bugünden itibaren 7 günlük `daily` tahmin; sağlayıcıya ulaşılamazsa `available: false`, `daily: []`) |
 | `GET /meta/sounds?lang=` | `MetaSoundsResponseSchema` (yayındaki ortam sesi kayıtları: adres, süre, altyazılar, lisans; kayıt yoksa `sounds: []`) |
 | `GET /cities/:code/dishes?lang=` | `CityDishesResponseSchema` (ilin yöresel lezzetleri, veri ekibinin sırasıyla; lezzeti olmayan ilde `dishes: []`) |
-| `GET /routes/trip?city=&duration=&theme=&start=&date=&lang=` | `TripPlanResponseSchema` (`duration`: `half`, `1` (varsayılan) ya da `2`; `theme`: `type:<kod>` ya da `era:<kod>`, verilmezse bütün eserler; `date`: 1. günün tarihi, bugünden tahmin aralığının sonuna kadar) |
+| `GET /routes/trip?city=&duration=&theme=&start=&date=&lang=` | `TripPlanResponseSchema` (`duration`: `half`, `1` (varsayılan), `2`, `3`, `4` ya da `5`; eser biterse yanıtta planlanan gün sayısı döner; `theme`: `type:<kod>` ya da `era:<kod>`, verilmezse bütün eserler; `date`: 1. günün tarihi, bugünden en çok bir yıl sonrasına kadar) |
 | `GET /routes/plan?city=&theme=&start=&maxMinutes=&lang=` | `RoutePlanResponseSchema` (`theme`: `type:<kod>`, `era:<kod>` ya da `network:<eser id>`; `start`: `lat,lng`; `maxMinutes` 15–600, varsayılan 120) |
 | `GET /chat/status` | `ChatStatusResponseSchema` (`available: false` iken sohbet girişleri gizlenir) |
 | `POST /chat` | İstek `ChatRequestSchema` (`message` 1–500 karakter, `assetId?`, `history` en çok 6 tur, `lang?`), yanıt `ChatResponseSchema` (`answer` içindeki `[n]` işaretleri `citations[].ref`'e karşılık gelir; `grounded: false` ise cevap kaynaksızdır; gezi sorusunda `attachments.trip`; Konya'da "nasıl giderim" sorusunda `attachments.transit`, `TransitPlanResponseSchema`). İstekte isteğe bağlı `origin: { lat, lng }`: ziyaretçinin konumu, saklanmaz |
@@ -134,8 +134,8 @@ export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
   - **Günün başlangıcı:** `start` verilmezse gün, 3 km yürüme yarıçapında en çok önem toplayan eserden başlar. Seçilen eserler en yakından ilerlenerek gezilir.
   - **Öğle molası:** Tam günde öğleden sonra biten ilk duraktan sonra gelir (1 saat). Her günün sonunda tatlı durağı vardır (30 dk).
   - **Hava tahmini:** Öğleden sonra yağmur (12:00–18:00 arasında %50 ve üstü) ya da sıcak (32 °C ve üstü) bekleniyorsa açık mekânlar sabaha, kapalı mekânlar öğleden sonraya eğilimlidir.
-  - **Günün notu:** `weatherNote.code` havanın planı nasıl etkilediğini söyler (`afternoon_rain`, `heat`, `rain_possible`, `clear`, `unavailable`); `text` aynı şeyi yanıt dilinde anlatır.
-  - **İki gün:** 2 günlük gezide bir eser iki kez yer almaz.
+  - **Günün notu:** `weatherNote.code` havanın planı nasıl etkilediğini söyler (`afternoon_rain`, `heat`, `rain_possible`, `clear`, `unavailable`); `text` aynı şeyi yanıt dilinde anlatır. Tahmin 7 günle sınırlıdır; daha ileri günler havaya bakılmadan planlanır (`weather: null`, `unavailable`).
+  - **Birkaç gün:** 2-5 günlük gezide bir eser iki kez yer almaz. İlin eserleri biterse gezi erken biter; `duration` ve `days` planlanan gün sayısını gösterir.
   - **Molalar:** Öğle molasına bir ana yemek (`main`), tatlı durağına bir tatlı (`dessert`) konur (`dish`, `CityDish`). Önce önceki durağın ilçesine ait lezzet, sonra il geneli; gezi boyunca aynı lezzet, uygun başka lezzet kaldıkça tekrarlanmaz. İlin uygun lezzeti yoksa `dish: null`.
   - **Uzun bacaklar:** Aynı gündeki iki durak arası 3 km'yi geçebilir (`legMeters`); uygulama uzun bacaklarda toplu taşıma önerebilir.
 - **Ziyaretçi Nabzı:**

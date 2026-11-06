@@ -122,9 +122,16 @@ describe("planTrip", () => {
     expect(legMeters).toBeGreaterThan(1000);
   });
 
-  it("returns empty days when nothing is located", () => {
+  it("ends the trip early when the sites run out, instead of leaving empty days", () => {
+    const plan = planTrip({ candidates: street, start: null, duration: "5", weather: [] });
+    expect(plan.days.length).toBeLessThan(5);
+    expect(plan.days.every((day) => day.items.some((item) => item.kind === "stop"))).toBe(true);
+    expect(plan.notPlannedCount).toBe(0);
+  });
+
+  it("returns one empty day when nothing is located", () => {
     const plan = planTrip({ candidates: [site("unknown", null)], start: null, duration: "2", weather: [null, null] });
-    expect(plan.days).toHaveLength(2);
+    expect(plan.days).toHaveLength(1);
     expect(plan.days.every((day) => day.items.length === 0 && day.outdoorShare === 0)).toBe(true);
     expect(plan).toMatchObject({ skippedWithoutCoordinates: 1, notPlannedCount: 0 });
   });
