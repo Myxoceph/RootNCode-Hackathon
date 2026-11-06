@@ -14,7 +14,7 @@ Kimler: **API'yi yerelde çalıştıranlar**, **sunucuyu yöneten**, **Kübra (p
 1. API'yi yerelde çalıştıranlar: `npm install` (yeni paketler: `sharp`, `aws4fetch`), `npm run db:deploy -w apps/api`,
    `npm run prisma:generate -w apps/api`, API'yi yeniden başlat. Yerelde R2 anahtarı yoksa yükleme 503 döner, normaldir.
 2. Sunucuyu yöneten: R2 yazma anahtarı ve `deploy/.env`: `docs/deploy.md`, "Panelden fotoğraf yükleme".
-3. Kübra: "Görseller" sekmesi, `KUBRA.md` §1.
+3. Kübra: "Fotoğraflar" adımı, `KUBRA.md` §1.
 
 Değişenler:
 - `POST /admin/assets/:id/media` (yalnızca admin; gövde JPEG, PNG ya da WebP, en çok 15 MB, kenar ≥ 300 px) ve
