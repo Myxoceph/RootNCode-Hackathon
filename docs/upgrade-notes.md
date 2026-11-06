@@ -7,6 +7,24 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-06 · Panel: fotoğrafın dosyadaki yeri, notların İngilizcesi, dosyaya yeni bölümler (sözleşme 0.3.28)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **Kübra (panel)**
+
+1. API'yi yerelde çalıştıranlar: `npm run db:deploy -w apps/api` (`asset_media.dossier_after`, yeni tablo `asset_custom_block`),
+   sonra `npm run prisma:generate -w apps/api` ve API'yi yeniden başlat. Sunucu bunu kendisi yapıyor.
+2. Kübra: panelde `placements` ve `CustomBlockDraft`'ı `record.media[].dossierAfter` ve `record.customBlocks`'a bağla.
+   Notların İngilizcesi bağlandı (`note: { tr, en } | null`), `forServer` kaldırıldı.
+
+Değişenler:
+- `GET /assets/:id`: her fotoğrafta `dossierAfter`, ayrıca `customBlocks` (`{ id, title, body, after }`, dile göre);
+  `alternateNames[].note` ve `architect.candidates[].note` `lang=en`'de İngilizce.
+- Veri seti: `media[].dossier_after`, `custom_blocks[]`, `note_en` isteğe bağlı alanlar.
+- Panelden veri setindeki bir esere yapılan değişiklik yine yalnızca veritabanında durur: sonraki `import_to_db.py`
+  (sunucuda her güncelleme) siler. Kalıcı olması için kayda da yazılmalı.
+
+---
+
 ## 2026-11-05 · Web: kamera yok, yeni ana sayfa
 
 Kimler: **uygulamayı çalıştıranlar**
