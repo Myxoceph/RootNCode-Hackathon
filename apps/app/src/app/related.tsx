@@ -229,7 +229,7 @@ function Related({
             <Text variant="overline" headingLevel={2} color="textSecondary">
               {w.opened}
             </Text>
-            <View style={wide && styles.openGrid}>
+            <View style={[styles.openList, wide && styles.openGrid]}>
               {opened.map((entry) => (
                 <OpenCard key={entry.asset.id} entry={entry} wide={wide} />
               ))}
@@ -476,6 +476,10 @@ const styles = StyleSheet.create({
   },
   columnWide: {
     gap: spacing.xl,
+  },
+  // One under the other on a phone, as far apart as side by side on a wide screen.
+  openList: {
+    gap: spacing.lg,
   },
   openGrid: {
     flexDirection: "row",
