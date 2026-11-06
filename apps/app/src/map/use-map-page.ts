@@ -1,4 +1,4 @@
-import { palette } from "@vagabonds/ui";
+import { palette, useUi } from "@vagabonds/ui";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { loadMaplibre, useVendored } from "@/vendor";
@@ -20,6 +20,7 @@ export function useMapPage(
 ) {
   const { scheme, colors: c } = useMapTheme();
   const words = useMessages().mapPage;
+  const { textScale } = useUi();
   // The page is built with the words it first had; a new language reaches it as a command, so the
   // map is not loaded again and keeps where it is, its open fog and its selection.
   const [firstWords] = useState(words);
@@ -80,6 +81,7 @@ export function useMapPage(
   useEffect(() => send({ type: "watchSpots", on: watchSpots }), [watchSpots, send]);
   useEffect(() => send({ type: "offerUnlock", on: offerUnlock }), [offerUnlock, send]);
   useEffect(() => send({ type: "words", words }), [words, send]);
+  useEffect(() => send({ type: "textScale", scale: textScale }), [textScale, send]);
 
   const onMessage = (data: unknown) => {
     const event = parseMapPageEvent(data);
@@ -103,6 +105,7 @@ export function useMapPage(
   /** Commands sent before the page loaded are lost; replay the current state once it has. */
   const replay = () => {
     send({ type: "words", words });
+    send({ type: "textScale", scale: textScale });
     send({ type: "pins", pins, padding: fitPadding });
     send({ type: "select", id: selectedId });
     send({ type: "network", network });
