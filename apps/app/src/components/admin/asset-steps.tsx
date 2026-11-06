@@ -50,24 +50,13 @@ export interface CustomBlockDraft {
   after: string;
 }
 
-/*
- * The English of a name's or a candidate's note: the API keeps these notes in Turkish only for now,
- * so the editor holds the English on the item while editing and leaves it out when saving.
- */
-type WithNoteEn = { noteEn?: string | null };
-const noteEnOf = (item: object) => (item as WithNoteEn).noteEn ?? "";
-const withNoteEn = <T extends object>(item: T, text: string): T => ({ ...item, noteEn: text === "" ? null : text });
-const dropNoteEn = <T extends object>(item: T): T => {
-  const { noteEn: _, ...rest } = item as T & WithNoteEn;
-  return rest as T;
+/** A name's or a candidate's note with one language changed; with neither language, no note. */
+type NoteText = { tr: string; en: string | null } | null;
+const withNote = (note: NoteText, change: { tr?: string; en?: string }): NoteText => {
+  const tr = change.tr ?? note?.tr ?? "";
+  const en = change.en ?? note?.en ?? "";
+  return tr || en ? { tr, en: en || null } : null;
 };
-
-/** The record as the API takes it: without what only the editor holds. */
-export const forServer = (r: R): R => ({
-  ...r,
-  alternateNames: r.alternateNames.map(dropNoteEn),
-  architect: { ...r.architect, candidates: r.architect.candidates.map(dropNoteEn) },
-});
 
 export interface Step {
   key: string;
@@ -100,7 +89,6 @@ const withTr = (pair: Pair | null, text: string): Pair => ({ tr: text, en: pair?
 /** An optional text: null once both languages are empty. */
 const optionalTr = (pair: Pair | null, text: string): Pair | null => (text.trim() === "" && !has(pair?.en) ? null : withTr(pair, text));
 const withEn = (pair: Pair | null, text: string): Pair => ({ tr: pair?.tr ?? "", en: text === "" ? null : text });
-const NOTE_EN_UNSAVED = "İngilizce notlar şimdilik kaydedilmiyor; kaydetme yakında eklenecek.";
 
 /** An optional text's English: null once both languages are empty. */
 const optionalEn = (pair: Pair | null, text: string): Pair | null => (text.trim() === "" && !has(pair?.tr) ? null : withEn(pair, text));
@@ -163,18 +151,15 @@ export const STEPS: Step[] = [
               key="note"
               label="Nereden geliyor?"
               hideLabel
-              tr={n.note ?? ""}
-              en={noteEnOf(n)}
-              onTr={(note) => update({ ...n, note: note || null })}
-              onEn={(text) => update(withNoteEn(n, text))}
+              tr={n.note?.tr ?? ""}
+              en={n.note?.en ?? ""}
+              onTr={(tr) => update({ ...n, note: withNote(n.note, { tr }) })}
+              onEn={(en) => update({ ...n, note: withNote(n.note, { en }) })}
               placeholder="ör. Evliya Çelebi'nin benzetmesi"
               placeholderEn="ör. Evliya Çelebi's simile"
             />,
           ]}
         />
-        <Text color="textSecondary" style={styles.note}>
-          {NOTE_EN_UNSAVED}
-        </Text>
       </>
     ),
   },
@@ -371,12 +356,9 @@ export const STEPS: Step[] = [
             columns={[{ label: "Ad" }, { label: "Not (isteğe bağlı)" }]}
             cells={(c, update) => [
               <Field key="name" label="Ad" hideLabel value={c.name} onChangeText={(name) => update({ ...c, name })} />,
-              <BilingualField key="note" label="Not" hideLabel tr={c.note ?? ""} en={noteEnOf(c)} onTr={(note) => update({ ...c, note: note || null })} onEn={(text) => update(withNoteEn(c, text))} />,
+              <BilingualField key="note" label="Not" hideLabel tr={c.note?.tr ?? ""} en={c.note?.en ?? ""} onTr={(tr) => update({ ...c, note: withNote(c.note, { tr }) })} onEn={(en) => update({ ...c, note: withNote(c.note, { en }) })} />,
             ]}
           />
-          <Text color="textSecondary" style={styles.note}>
-            {NOTE_EN_UNSAVED}
-          </Text>
         </Box>
       </>
     ),
