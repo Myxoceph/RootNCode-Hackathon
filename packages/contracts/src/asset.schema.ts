@@ -83,6 +83,12 @@ export const ImageSourceSchema = z.strictObject({
   height: z.int().positive(),
 });
 
+/** A place in the dossier: a block's name, or `section:<id>` / `custom:<id>`. */
+export const DossierPlaceSchema = z
+  .string()
+  .max(120)
+  .regex(/^[a-z_]+(?::[a-z0-9_-]+)?$/, "must be a block, section:<id> or custom:<id>");
+
 /** One image with responsive variants. The photo's own GPS position is never part of the contract. */
 export const MediaSchema = z.strictObject({
   key: z.string().min(1),
@@ -107,6 +113,11 @@ export const MediaSchema = z.strictObject({
    * `ornament_detail`… Ziyaret Mührü picks a specific part of the monument by it. Null when unknown.
    */
   subject: z.string().min(1).nullable().default(null),
+  /**
+   * Where the admin put the photo in the asset's dossier: under a block (`identity`, `timeline`…), a
+   * chapter (`section:<id>`) or an added block (`custom:<id>`). Null: not placed by hand.
+   */
+  dossierAfter: DossierPlaceSchema.nullable().default(null),
   sources: z.strictObject({
     webp: z.array(ImageSourceSchema),
     jpg: z.array(ImageSourceSchema),

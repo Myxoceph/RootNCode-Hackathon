@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { AssetIdSchema, ContractVersionSchema } from "./asset.schema";
+import { AssetIdSchema, ContractVersionSchema, DossierPlaceSchema } from "./asset.schema";
 import { UserRoleSchema } from "./community.schema";
 
 /**
@@ -240,7 +240,17 @@ export const AdminAssetRecordSchema = z.strictObject({
   }),
   ambientSound: z.strictObject({ key: RecordString(80), caption: RecordOptionalText(600) }),
   /** The asset's photos in their order; only existing ones (by key) can be captioned, reordered or made the cover. */
-  media: z.array(z.strictObject({ key: z.string().min(1).max(120), caption: RecordText(600), alt: RecordText(600), isCover: z.boolean() })).max(200),
+  media: z
+    .array(
+      z.strictObject({
+        key: z.string().min(1).max(120),
+        caption: RecordText(600),
+        alt: RecordText(600),
+        isCover: z.boolean(),
+        dossierAfter: DossierPlaceSchema.nullable().default(null),
+      }),
+    )
+    .max(200),
 });
 
 const blank = (text: string | null | undefined) => !text || text.trim().length === 0;
