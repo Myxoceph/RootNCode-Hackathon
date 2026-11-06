@@ -7,6 +7,13 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-06 · Mühür fotoğrafları yerden çekilebilir olanlardan seçiliyor
+
+Yüksekten çekilmiş 50 fotoğraf `aerial` etiketi aldı, Yeşil Külliye'ye Yeşil Camii'nin çinili kapısı eklendi.
+
+- Yerelde: `npm run db:import`. Sunucu güncellemede kendisi alır.
+- Çıktıyla sunum için güncel PDF'teki fotoğrafları kullanın; Yeşil Külliye'nin mühür fotoğrafı artık kubbe değil, çinili kapı.
+
 ## 2026-11-06: Basılı fotoğrafla Ziyaret Mührü
 
 `DEMO_UNLOCK` açıkken mühür konuma bakmıyor: eserin mühür fotoğrafı kâğıttan ya da slayttan kameraya gösterilince ziyaret mühürlenir.
