@@ -1,4 +1,4 @@
-import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
+import { Button, cameraColors, cameraGlass, fontFamily, palette, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
@@ -309,7 +309,7 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
 
       <View style={[styles.bottom, { bottom: insets.bottom + spacing.sm }]} pointerEvents="box-none">
         <View style={styles.status} accessibilityRole="text" accessibilityLiveRegion="polite">
-          <View style={[styles.dot, { backgroundColor: found ? "#5FD3A4" : cameraColors.textSecondary }]} />
+          <View style={[styles.dot, { backgroundColor: found ? palette.gulkurusu300 : cameraColors.textSecondary }]} />
           <Text variant="caption" colorValue={cameraColors.text}>
             {status}
           </Text>
