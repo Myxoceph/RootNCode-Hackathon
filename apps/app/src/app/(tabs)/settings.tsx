@@ -66,7 +66,7 @@ const STAR_SQUARE = "M22 22 H78 V78 H22 Z";
 /**
  * Profil: the visitor's passport (name, account, points, badges and visits) and five sections as
  * one list, each row to its own page: Kaydettiklerim, Mühürlenen eserler, Rozetlerim, Bıraktığım Notlar and Sistem ayarları
- * (module 8). The passport is firuze green and gold in both themes.
+ * (module 8). The passport is gül kurusu (dusty rose) and gold in both themes.
  */
 export default function SettingsScreen() {
   const m = useMessages();
@@ -159,7 +159,7 @@ export default function SettingsScreen() {
 }
 
 /**
- * The visitor's passport as its cover: firuze-green leather, stitched at the edge, a gold-foil
+ * The visitor's passport as its cover: gül kurusu leather, stitched at the edge, a gold-foil
  * frame and emblem, the Seljuk star blind-stamped large, and only the name and three numbers.
  */
 /** Whether the passport has shown it can be turned this run (see `Passport`). */
@@ -486,14 +486,14 @@ function Cover({ width, height }: { width: number; height: number }) {
       <Svg key={`${width}x${height}`} width={width} height={height}>
         <Defs>
           <LinearGradient id="leather" x1="0" y1="0" x2="1" y2="1">
-            {/* Deep firuze: light enough to read as green, dark enough for the light text on it. */}
-            <Stop offset="0" stopColor="#08433F" />
-            <Stop offset="0.55" stopColor="#063632" />
-            <Stop offset="1" stopColor="#031F1D" />
+            {/* Deep gül kurusu: light enough to read as rose, dark enough for the light text on it. */}
+            <Stop offset="0" stopColor="#6B3442" />
+            <Stop offset="0.55" stopColor="#582A37" />
+            <Stop offset="1" stopColor="#341720" />
           </LinearGradient>
           <RadialGradient id="leather-light" cx="18%" cy="0%" r="80%">
-            <Stop offset="0" stopColor={palette.firuze300} stopOpacity={0.16} />
-            <Stop offset="1" stopColor={palette.firuze300} stopOpacity={0} />
+            <Stop offset="0" stopColor={palette.gulkurusu300} stopOpacity={0.16} />
+            <Stop offset="1" stopColor={palette.gulkurusu300} stopOpacity={0} />
           </RadialGradient>
           {/* Scattered, not on a grid, so it reads as leather and not as dotted paper. */}
           <Pattern
@@ -1064,7 +1064,7 @@ const styles = StyleSheet.create({
     borderRadius: 26,
     borderWidth: 1,
     borderColor: goldFaint,
-    backgroundColor: "#063632",
+    backgroundColor: "#582A37",
     overflow: "hidden",
   },
   face: {

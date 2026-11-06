@@ -379,7 +379,7 @@ function Strength({ password }: { password: string }) {
   const kinds = [/[a-zçğıöşü]/, /[A-ZÇĞİÖŞÜ]/, /\d/, /[^\p{L}\d]/u].filter((kind) => kind.test(password)).length;
   const level = password.length < PASSWORD_MIN ? 1 : password.length >= 12 && kinds >= 3 ? 3 : kinds >= 2 ? 2 : 1;
   const m = useMessages();
-  const [word, color] = level === 3 ? [m.auth.strong, palette.firuze300] : level === 2 ? [m.auth.good, ink.gold] : [m.auth.weak, warning];
+  const [word, color] = level === 3 ? [m.auth.strong, palette.gulkurusu300] : level === 2 ? [m.auth.good, ink.gold] : [m.auth.weak, warning];
   return (
     <View style={styles.strength} accessible accessibilityLabel={m.auth.strength(word)}>
       <View style={styles.bars}>
@@ -399,7 +399,7 @@ function Rule({ met, text }: { met: boolean; text: string }) {
   const m = useMessages();
   return (
     <View style={styles.rule} accessible accessibilityLabel={`${text}: ${met ? m.auth.ruleMet : m.auth.ruleNotMet}`}>
-      <Ionicons name={met ? "checkmark-circle" : "ellipse-outline"} size={16} color={met ? palette.firuze300 : ink.textSecondary} />
+      <Ionicons name={met ? "checkmark-circle" : "ellipse-outline"} size={16} color={met ? palette.gulkurusu300 : ink.textSecondary} />
       <Text variant="caption" colorValue={met ? ink.text : ink.textSecondary} style={styles.flexShrink}>
         {text}
       </Text>

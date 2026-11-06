@@ -171,7 +171,7 @@ function AssetsPage() {
             shown.map((asset, i) => {
               const status =
                 asset.status === "published" ? (
-                  <Badge tone="green" label="Yayında" icon="radio-button-on" />
+                  <Badge tone="rose" label="Yayında" icon="radio-button-on" />
                 ) : asset.status === "in_review" ? (
                   <Badge tone="blue" label="İncelemede" icon="time-outline" />
                 ) : (

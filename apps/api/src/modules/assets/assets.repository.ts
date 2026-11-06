@@ -56,6 +56,7 @@ export const assetMediaSelect = {
   alt_en: true,
   archive_year: true,
   subject: true,
+  dossier_after: true,
   media: {
     select: {
       kind: true,
@@ -91,6 +92,7 @@ function detailArgs(statuses: string[]) {
       asset: { select: { ...assetRefSelect, status: true } },
       other_asset: { where: { status: { in: statuses } }, select: assetRefSelect, orderBy: { name_tr: "asc" } },
       asset_section: { orderBy: { sort_order: "asc" } },
+      asset_custom_block: { orderBy: { sort_order: "asc" } },
       asset_legend: { orderBy: { sort_order: "asc" } },
       asset_fact: { orderBy: { sort_order: "asc" } },
       asset_person: { orderBy: { sort_order: "asc" } },

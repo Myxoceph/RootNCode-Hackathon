@@ -44,6 +44,7 @@ export function recordFromInput(input: PanelAssetInput): AdminAssetRecord {
     founder: { name: input.founder ?? null, role: null, confidence: input.founder ? "certain" : null },
     architect: { name: null, candidates: [], confidence: null },
     waqf: { name: null, deedDate: null, deedExcerpt: null, conditions: null, landNote: null, confidence: null },
+    customBlocks: [],
     sections: [{ ...SECTION, body: i18n(input.description), confidence: "certain" }],
     highlights: [],
     timeline: [],

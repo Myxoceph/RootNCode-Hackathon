@@ -68,6 +68,9 @@ Panel tarafı hazır olunca formdaki "Görseller" sekmesine yükleme alanını b
 
 **Hazırlayan:** Kübra (admin paneli, `feat/admin-ui`) · **Tarih:** 4 Kasım 2026
 
+**Durum (6 Kasım, Ahmet):** 1, 2 ve 3'ün backend'i hazır (sözleşme 0.3.28). 2. maddenin panel tarafını da bağladım, çünkü
+sözleşme değişince panel derlenmiyordu. 1 ve 3'ün panel bağlantısı sende. Ayrıntı: `docs/upgrade-notes.md`.
+
 Aşağıdakilerin ön yüzü yazıldı. Ama sunucu bunları saklamadığı için panel şimdilik kaydetmiyor,
 yalnızca önizlemede gösteriyor. Backend'e dokunmadım; şema, sözleşme ve migration senin.
 

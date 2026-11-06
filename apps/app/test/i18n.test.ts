@@ -35,7 +35,7 @@ describe("the dictionaries", () => {
 
   it("keep Turkish letters out of the English, but for names", () => {
     // Names of places, the Turkish language and the team keep their own spelling.
-    const names = /Türkiye|Türkçe|KÖK&KOD/g;
+    const names = /Türkiye|Türkçe|KÖK&KOD|Vakıf Katılım/g;
     const turkish = texts(messages.en).filter(([, text]) => /[çğıöşüÇĞİÖŞÜ]/.test(text.replace(names, "")));
     expect(turkish.map(([path]) => path)).toEqual([]);
   });

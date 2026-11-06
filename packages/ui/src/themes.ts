@@ -48,16 +48,16 @@ const lightSpec: ThemeSpec = {
   border: "gece200",
   primary: "kobalt700",
   onPrimary: "white",
-  success: "firuze700",
+  success: "gulkurusu700",
   warning: "mercan700",
   highlight: "altin700",
   highlightMark: "altin600",
-  focusRing: "firuze700",
+  focusRing: "gulkurusu700",
   fog: "gece200",
   mapBackground: "gece50",
   mapRoad: "white",
   mapRoadEdge: "gece200",
-  mapProvince: "firuze500",
+  mapProvince: "gulkurusu500",
   mapBorder: "gece300",
 };
 
@@ -70,11 +70,11 @@ const darkSpec: ThemeSpec = {
   border: "gece700",
   primary: "kobalt300",
   onPrimary: "gece950",
-  success: "firuze300",
+  success: "gulkurusu300",
   warning: "mercan300",
   highlight: "altin300",
   highlightMark: "altin300",
-  focusRing: "firuze300",
+  focusRing: "gulkurusu300",
   fog: "gece800",
   mapBackground: "gece950",
   mapRoad: "gece700",
@@ -91,7 +91,7 @@ function highContrast(spec: ThemeSpec, overrides: Partial<ThemeSpec> = {}): Them
 export const themeSpecs = {
   light: lightSpec,
   dark: darkSpec,
-  lightHighContrast: highContrast(lightSpec, { mapProvince: "firuze700", mapBorder: "gece600" }),
+  lightHighContrast: highContrast(lightSpec, { mapProvince: "gulkurusu700", mapBorder: "gece600" }),
   darkHighContrast: highContrast(darkSpec, { mapBorder: "gece400" }),
 } as const;
 

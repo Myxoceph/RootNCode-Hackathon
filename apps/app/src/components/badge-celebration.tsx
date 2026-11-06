@@ -1,7 +1,8 @@
 import { fontFamily, palette, radius, spacing, Text } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Animated, Easing, Modal, Platform, Pressable, StyleSheet, View } from "react-native";
+import { Animated, Easing, Modal, Platform, Pressable, StyleSheet, useWindowDimensions, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Circle, Defs, LinearGradient, Path, RadialGradient, Stop } from "react-native-svg";
 
@@ -23,7 +24,9 @@ export function BadgeCelebration() {
   const queue = useNewBadges();
   const badge = queue[0];
   return (
-    <Modal visible={badge !== undefined} transparent animationType="none" statusBarTranslucent onRequestClose={dismissAllBadges}>
+    <Modal visible={badge !== undefined} transparent animationType="none" statusBarTranslucent navigationBarTranslucent onRequestClose={dismissAllBadges}>
+      {/* The scene is always night: light status bar icons over it. */}
+      {badge && <StatusBar style="light" />}
       {badge && <Scene key={badge.code} badge={badge} left={queue.length - 1} />}
     </Modal>
   );
@@ -33,7 +36,7 @@ const MEDAL = 156;
 const STAGE = 340;
 const USE_NATIVE = Platform.OS !== "web";
 
-const CONFETTI_COLORS = [palette.altin200, palette.altin300, palette.firuze300, palette.kobalt300, palette.mercan300, palette.gece50];
+const CONFETTI_COLORS = [palette.altin200, palette.altin300, palette.gulkurusu300, palette.kobalt300, palette.mercan300, palette.gece50];
 
 /** The confetti, the same every time: an angle, how far it flies, its spin, shape and colour. */
 function confetti(count: number) {
@@ -132,6 +135,11 @@ function Scene({ badge, left }: { badge: NewBadge; left: number }) {
     transform: [{ translateY: words.interpolate({ inputRange: [from, to], outputRange: [14, 0], extrapolate: "clamp" }) }],
   });
 
+  const screen = useWindowDimensions();
+  const glowX = screen.width / 2;
+  const glowY = screen.height * 0.4;
+  const glowR = Math.max(screen.width, screen.height) * 0.6;
+
   const last = left === 0;
   const close = () => dismissAllBadges();
   const next = () => {
@@ -142,15 +150,16 @@ function Scene({ badge, left }: { badge: NewBadge; left: number }) {
 
   return (
     <Animated.View style={[styles.backdrop, { opacity: fade, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + spacing.lg }]} accessibilityViewIsModal>
-      <Svg width="100%" height="100%" style={StyleSheet.absoluteFill} aria-hidden pointerEvents="none">
+      {/* In pixels, not percentages: on Android a percentage glow was cut off at a straight edge. */}
+      <Svg width={screen.width} height={screen.height} style={styles.glow} aria-hidden pointerEvents="none">
         <Defs>
-          <RadialGradient id="cel-glow" cx="50%" cy="40%" r="55%">
+          <RadialGradient id="cel-glow" gradientUnits="userSpaceOnUse" cx={glowX} cy={glowY} r={glowR}>
             <Stop offset="0" stopColor={palette.altin200} stopOpacity={0.28} />
             <Stop offset="0.55" stopColor={palette.kobalt700} stopOpacity={0.12} />
             <Stop offset="1" stopColor="#050916" stopOpacity={0} />
           </RadialGradient>
         </Defs>
-        <Circle cx="50%" cy="40%" r="70%" fill="url(#cel-glow)" />
+        <Circle cx={glowX} cy={glowY} r={glowR} fill="url(#cel-glow)" />
       </Svg>
 
       <View style={styles.column}>
@@ -349,11 +358,16 @@ function Star({ size }: { size: number }) {
 
 const styles = StyleSheet.create({
   backdrop: {
-    flex: 1,
+    ...StyleSheet.absoluteFill,
     backgroundColor: "#050916",
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: spacing.lg,
+  },
+  glow: {
+    position: "absolute",
+    top: 0,
+    left: 0,
   },
   column: {
     width: "100%",

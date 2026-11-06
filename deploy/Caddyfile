@@ -26,20 +26,10 @@
 
 	# API: /api/assets → api:3000/assets. Swagger UI at /api/docs.
 	handle_path /api/* {
-		# Photo suggestions send the image itself (the API allows 5 MB); everything else is small JSON.
-		@photoUpload {
-			method POST
-			path_regexp ^/assets/[^/]+/photos$
-		}
-		@smallBody not {
-			method POST
-			path_regexp ^/assets/[^/]+/photos$
-		}
-		request_body @photoUpload {
-			max_size 6MB
-		}
-		request_body @smallBody {
-			max_size 64KB
+		# Only a ceiling: the API sets each route's own limit (16 KB unless the route needs more) and refuses
+		# by Content-Length, so a list of routes here would only fall behind. It once cut Taşa Sor, voice and more at 64 KB.
+		request_body {
+			max_size 16MB
 		}
 		reverse_proxy api:3000
 	}

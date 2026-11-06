@@ -76,7 +76,7 @@ export function previewOf(record: AdminAssetRecord, { id, meta, base, samples, p
 
   const counted = sections.length + highlights.length + record.legends.length + record.people.length + record.timeline.length + record.inscriptions.length;
   const architectName = record.architect.name?.trim() || null;
-  const candidates = record.architect.candidates.filter((c) => !blank(c.name)).map((c) => ({ name: c.name.trim(), note: c.note }));
+  const candidates = record.architect.candidates.filter((c) => !blank(c.name)).map((c) => ({ name: c.name.trim(), note: pick(c.note) }));
   const waqf = {
     name: record.waqf.name,
     deedExcerpt: pick(record.waqf.deedExcerpt),
@@ -102,7 +102,7 @@ export function previewOf(record: AdminAssetRecord, { id, meta, base, samples, p
     cover,
     parentId: record.parentId,
     prominence: counted,
-    alternateNames: record.alternateNames.filter((n) => !blank(n.name.tr)).map((n) => ({ name: n.name.tr.trim(), note: n.note })),
+    alternateNames: record.alternateNames.filter((n) => !blank(n.name.tr)).map((n) => ({ name: n.name.tr.trim(), note: pick(n.note) })),
     secondaryTypes: record.secondaryTypes.map((code) => labelOf(meta?.assetTypes, code)),
     tags: record.tags,
     neighborhood: record.neighborhood,
@@ -129,6 +129,7 @@ export function previewOf(record: AdminAssetRecord, { id, meta, base, samples, p
     architect: architectName || candidates.length > 0 ? { name: architectName, candidates, confidence: confidence(record.architect.confidence), sources: base?.architect?.sources ?? [] } : null,
     waqf: [waqf.name, waqf.deedExcerpt, waqf.conditions, waqf.landNote].some((v) => v) ? waqf : null,
     sections,
+    customBlocks: [],
     facts: record.facts
       .filter((f) => !blank(f.label.tr) && !blank(f.value))
       .map((f) => {
