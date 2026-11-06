@@ -27,8 +27,9 @@ import { localeTag, useLang, useMessages } from "@/i18n";
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
 /** The target must stay in view this long before the visit is sealed, so a passing glimpse does not count. */
 const HOLD_MS = 1000;
-/** Where the stamp's one animated value stands as the seal hangs over the page, and as it strikes. */
+/** How long a seal that needs the position waits for a fix. */
 const POSITION_WAIT_MS = 5000;
+/** Where the stamp's one animated value stands as the seal hangs over the page, and as it strikes. */
 const STAMP_HANGS = 0.6;
 const STAMP_STRIKES = 0.8;
 
@@ -226,33 +227,31 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key, run]);
 
-  const send = useCallback(
-    async (position: Position | null) => {
-      go({ name: "sending" });
-      try {
-        const result = await sendVisitProof(asset.id, { mediaKey: photo.key, ...(position ?? {}) });
-        onSealed();
-        unlockAsset(asset.id);
-        go({ name: "sealed", result });
-        announce(w.sealedSaid(result.newAchievements.length));
-      } catch (error) {
-        go({ name: "failed", message: error instanceof DataError ? error.message : w.failed });
-      }
-    },
-    [asset.id, photo.key, go, onSealed, w],
-  );
-
   const seal = useCallback(async () => {
     go({ name: "sending" });
     if (!communityAvailable) return go({ name: "failed", message: w.needsServer });
-    // The API alone decides whether the position is needed: with DEMO_UNLOCK a printed photo seals from anywhere.
-    // A slow fix indoors must not hold up the seal, and the API says if it needed one.
-    const position = await Promise.race([
-      currentPosition(),
-      new Promise<null>((resolve) => setTimeout(() => resolve(null), POSITION_WAIT_MS)),
-    ]);
-    await send(position);
-  }, [send, go, w]);
+    const prove = (position: Position | null) => sendVisitProof(asset.id, { mediaKey: photo.key, ...(position ?? {}) });
+    try {
+      // The API alone decides whether the position is needed: with DEMO_UNLOCK a printed photo seals from anywhere,
+      // without waiting on a slow fix or a permission dialog in front of an audience.
+      const result = await prove(null).catch(async (error: unknown) => {
+        if (!(error instanceof DataError) || error.code !== "POSITION_REQUIRED") throw error;
+        // A slow fix indoors must not hold up the seal forever; the API says if it came too late.
+        return prove(
+          await Promise.race([
+            currentPosition(),
+            new Promise<null>((resolve) => setTimeout(() => resolve(null), POSITION_WAIT_MS)),
+          ]),
+        );
+      });
+      onSealed();
+      unlockAsset(asset.id);
+      go({ name: "sealed", result });
+      announce(w.sealedSaid(result.newAchievements.length));
+    } catch (error) {
+      go({ name: "failed", message: error instanceof DataError ? error.message : w.failed });
+    }
+  }, [asset.id, photo.key, go, onSealed, w]);
 
   const onEvent = useCallback(
     (event: TrackerEvent) => {
