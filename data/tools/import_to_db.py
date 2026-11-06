@@ -89,7 +89,12 @@ def import_all(con):
         cur.execute("UPDATE asset SET updated_at = now() WHERE id = %s", (aid,))
         for table in CHILD_DELETE_ORDER:
             col = "source_asset_id" if table == "asset_relation" else "asset_id"
-            cur.execute(f"DELETE FROM {table} WHERE {col} = %s", (aid,))
+            # Photos uploaded from the panel are not in the dataset: they stay.
+            keep = " AND NOT panel_upload" if table == "asset_media" else ""
+            cur.execute(f"DELETE FROM {table} WHERE {col} = %s{keep}", (aid,))
+        # One cover per asset: the dataset's, when it names one.
+        if any(r["is_cover"] for r in rows["asset_media"]):
+            cur.execute("UPDATE asset_media SET is_cover = false WHERE asset_id = %s", (aid,))
 
         media_ids = {}  # '$media' yer tutucusu → gerçek uuid
         for row in rows["media"]:
@@ -162,11 +167,11 @@ def verify(con):
             # contribution: API'nin yazdığı ziyaretçi katkıları; JSON'da yoktur, satırları karşılaştırılmaz
             if t in ("asset", "media", "media_variant", "asset_relation", "asset_revision", "contribution"):
                 continue
-            compare(t, rows[t], "asset_id = %s", aid)
+            compare(t, rows[t], "asset_id = %s AND NOT panel_upload" if t == "asset_media" else "asset_id = %s", aid)
         compare("asset_relation", rows["asset_relation"], "source_asset_id = %s", aid)
-        compare("media", rows["media"], "id IN (SELECT media_id FROM asset_media WHERE asset_id = %s)", aid)
+        compare("media", rows["media"], "id IN (SELECT media_id FROM asset_media WHERE asset_id = %s AND NOT panel_upload)", aid)
         compare("media_variant", rows["media_variant"],
-                "media_id IN (SELECT media_id FROM asset_media WHERE asset_id = %s)", aid)
+                "media_id IN (SELECT media_id FROM asset_media WHERE asset_id = %s AND NOT panel_upload)", aid)
         # Görüntüleyici geçmişin yalnızca son sürümünü gösterir
         compare("asset_revision", rows["asset_revision"],
                 "asset_id = %s AND version = (SELECT max(version) FROM asset_revision r WHERE r.asset_id = asset_revision.asset_id)", aid)

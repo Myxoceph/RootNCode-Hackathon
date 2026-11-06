@@ -72,7 +72,7 @@ TABLES = {
     "asset_media": [
         "asset_id", "media_key", "media_id", "sort_order", "is_cover", "subject", "focal_x", "focal_y",
         "caption_tr", "caption_en", "alt_tr", "alt_en", "archive_year", "archive_year_approx",
-        "overlay_opacity", "overlay_aspect", "shooting_hint_tr", "shooting_hint_en", "dossier_after",
+        "overlay_opacity", "overlay_aspect", "shooting_hint_tr", "shooting_hint_en", "dossier_after", "panel_upload",
     ],
     "inscription": [
         "asset_id", "slug", "sort_order", "location_tr", "location_en", "language", "script", "transliteration",
@@ -330,7 +330,7 @@ def asset_rows(a, manifest):
             "archive_year": m.get("year"), "archive_year_approx": m.get("year_approx"),
             "overlay_opacity": ov.get("opacity"), "overlay_aspect": ov.get("aspect_ratio"),
             "shooting_hint_tr": _t(ov.get("shooting_hint"), "tr"), "shooting_hint_en": _t(ov.get("shooting_hint"), "en"),
-            "dossier_after": m.get("dossier_after"),
+            "dossier_after": m.get("dossier_after"), "panel_upload": False,
         })
 
     for i, n in enumerate(a.get("inscriptions", [])):
