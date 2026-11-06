@@ -114,6 +114,16 @@ await check("assistant", async () => {
   }
 });
 
+await check("uploads reach the API", async () => {
+  // A photo's size, without a session: the API answers 401; a 413 here means the proxy cut it off.
+  const { status } = await get(`${BASE}/api/vision/ask?assetId=preflight`, {
+    method: "POST",
+    headers: { "content-type": "image/jpeg" },
+    body: Buffer.alloc(200 * 1024),
+  });
+  return [status === 401, String(status)];
+});
+
 await check("transit (Konya pilot)", async () => {
   // Konya Garı to Karatay Medresesi; at night the API searches from the morning.
   const { status, body } = await get(`${BASE}/api/transit/plan?from=konya-gari&to=konya-selcuklu-karatay-medresesi`);

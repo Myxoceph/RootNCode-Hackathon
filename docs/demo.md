@@ -22,7 +22,7 @@ Rehber yalnızca hesapla kullanılıyor: giriş yapmadan açılırsa "Giriş yap
 
 ## Sunumdan önce
 
-1. Mac'te [deploy.md](deploy.md#final-günü-macbook-air-m4)'deki "Demo sabahı" adımları; ön kontrol 8/8.
+1. Mac'te [deploy.md](deploy.md#final-günü-macbook-air-m4)'deki "Demo sabahı" adımları; ön kontrol 9/9.
 2. **Asistanı ısıt**: sahnede sormadan **en çok 30 dakika önce**. API geçmişi olmayan ilk soruyu 30 dakika
    boyunca bellekten anında cevaplar; model 5–30 sn, yoğunken daha da uzun sürüyor. Gezi planı ve toplu
    taşıma soruları saate bağlı (akşam gezisi ertesi gün başlar, rota sıradaki seferleri verir): onları
