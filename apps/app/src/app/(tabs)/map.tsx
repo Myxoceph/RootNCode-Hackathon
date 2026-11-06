@@ -1,6 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AssetSummary } from "@vagabonds/contracts";
-import { spacing, Text, useTheme } from "@vagabonds/ui";
+import { fontFamily, palette, spacing, Text, useTheme } from "@vagabonds/ui";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
@@ -43,6 +43,7 @@ import { useMapTour } from "@/lib/map-tour";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { whereFrom } from "@/lib/bearing";
 import { rememberCity, rememberOpenCity, useOpenCity } from "@/lib/last-city";
+import { NAVY } from "@/lib/page-navy";
 import { bondsSpoken } from "@/lib/map-bonds";
 import { relatedPlacesOf } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -371,6 +372,25 @@ export default function MapScreen() {
     setRestoring(true);
   }, [restoring, leftOpen, cityParam, cities.status, withAssets]);
   const mapShown = restoring === false || (restoring === true && mapCity !== null);
+  // A city opened again comes in behind a veil in the welcome page's colour with its name on it:
+  // the map's first moment on screen (drawing what waited while it was out of sight) is not seen.
+  // The veil stays a little longer than that moment, then dissolves into the map.
+  const { scheme: pageScheme } = useTheme();
+  const veil = useRef(new Animated.Value(1)).current;
+  const [veilGone, setVeilGone] = useState(false);
+  useFocusEffect(
+    useCallback(() => {
+      if (!restored || veilGone) return;
+      const timer = setTimeout(
+        () =>
+          Animated.timing(veil, { toValue: 0, duration: reduceMotion ? 0 : VEIL_FADE_MS, easing: Easing.out(Easing.quad), useNativeDriver: true }).start(() =>
+            setVeilGone(true),
+          ),
+        VEIL_HOLD_MS,
+      );
+      return () => clearTimeout(timer);
+    }, [restored, veilGone, veil, reduceMotion]),
+  );
   // Once the city is there, the camera flies again as usual.
   useEffect(() => {
     if (restoring && landedPlate !== null && landedPlate === selectedPlate) setRestoring(false);
@@ -801,11 +821,43 @@ export default function MapScreen() {
           onSkip={tour.skip}
         />
       )}
+      {restored && !veilGone && (
+        <Animated.View
+          pointerEvents="none"
+          aria-hidden
+          importantForAccessibility="no-hide-descendants"
+          style={[styles.veil, { opacity: veil, backgroundColor: pageScheme === "dark" ? NAVY : palette.white }]}
+        >
+          {selectedCity && (
+            <Text colorValue={pageScheme === "dark" ? palette.altin200 : palette.altin600} style={styles.veilName}>
+              {selectedCity.label}
+            </Text>
+          )}
+        </Animated.View>
+      )}
     </View>
   );
 }
 
+/** How long a city opened again stays behind its veil, and how long the veil takes to dissolve. */
+const VEIL_HOLD_MS = 1200;
+const VEIL_FADE_MS = 450;
+
 const styles = StyleSheet.create({
+  veil: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  veilName: {
+    fontFamily: fontFamily.display,
+    fontSize: 44,
+    lineHeight: 52,
+  },
   screen: {
     flex: 1,
     overflow: "hidden",

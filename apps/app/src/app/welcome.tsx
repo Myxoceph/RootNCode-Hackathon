@@ -13,6 +13,7 @@ import { useCities, useCommunity, useWeather, useWeatherAt } from "@/data";
 import { announce } from "@/lib/announce";
 import { useHere } from "@/lib/here";
 import { useLastCity, useOpenCity } from "@/lib/last-city";
+import { NAVY } from "@/lib/page-navy";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { dayLabel, outing } from "@/lib/welcome-lines";
 import { loadMaplibre } from "@/vendor";
@@ -20,8 +21,6 @@ import { localeTag, useLang, useMessages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
-/** The page's navy in the dark theme (lacivert): bluer than the app's night blue. */
-const NAVY = "#0E1F3D";
 
 /**
  * The page's colours: navy with light gold in the dark theme, white with deep gold in the light
