@@ -156,7 +156,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
           ]}
         >
           <Ionicons name={action.icon} size={20} color={action.on ? c.onPrimary : web ? look.gold : palette.altin200} />
-          <Text variant="caption" colorValue={action.on ? c.onPrimary : web ? look.text : GLASS_COLORS.text} numberOfLines={1} style={styles.label}>
+          <Text variant="caption" colorValue={action.on ? c.onPrimary : web ? look.text : GLASS_COLORS.text} numberOfLines={2} style={styles.label}>
             {action.label}
           </Text>
           {web && (
@@ -184,13 +184,17 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   cell: {
-    // A cell is as wide as its words and shares out what is left, so the longest words fit on a small phone.
+    // Every cell as wide as the others, whatever its words: a long label ("Language of Stone", or any
+    // with "Büyük metin") goes onto a second line instead of pushing the last button off the bar.
     flexGrow: 1,
+    flexBasis: 0,
+    minWidth: 0,
     alignItems: "center",
     justifyContent: "center",
     gap: spacing.xxs,
     paddingVertical: spacing.xs,
-    paddingHorizontal: spacing.xxs,
+    // No side padding: the words are centred, and five cells on a 390 pt phone keep 70 pt each, room
+    // for the longest word ("Directions") with "Büyük metin" on.
     // Follows the bar's corner at an even distance, the gold and the hover alike.
     borderRadius: radius.xl - BAR_EDGE - spacing.xxs,
   },
@@ -199,6 +203,7 @@ const styles = StyleSheet.create({
     // A little under the 14pt floor so five fit side by side; each is also read out in full.
     fontSize: 13,
     lineHeight: 15,
+    textAlign: "center",
   },
   disabled: {
     opacity: 0.45,
