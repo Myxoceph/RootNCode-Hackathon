@@ -246,13 +246,27 @@ deploy/failover.sh takeover
 ```
 
 1. Sunucudaki tüneli durdurur (sunucu ölüyse zaten düşmüştür).
-2. Sunucudan en yeni yedeği çeker; çekemezse Mac'teki en son yedeği kullanır.
+2. Sunucuya ulaşabiliyorsa tünel durmuşken taze bir yedek aldırır (hiç veri kaybolmaz); sonra en yeni yedeği çeker,
+   çekemezse Mac'teki en son yedeği kullanır.
 3. Mac'teki yığını açar (yalnızca değişeni derler).
 4. Yedeği yükler (`deploy/demo.sh restore`, ~20 sn).
 5. Tüneli Mac'te açar, adresin gerçekten Mac'e geldiğini `uptimeSeconds` ile doğrular, tünelden ön kontrol yapar.
 
 Mac'in kodu `dev`'in gerisindeyse 3. adım birkaç dakika derler; Mac'te arada bir `git pull && deploy/demo.sh up`
-bunu kısaltır. Kaybedilen veri: Mac'teki en yeni yedekten sonrası (en çok ~1 saat).
+bunu kısaltır. Sunucu ölüyse kaybedilen veri: Mac'teki en yeni yedekten sonrası (en çok ~1 saat).
+
+**Tatbikat (2026-11-06, `dev` d3b8395):**
+
+| Adım | Süre |
+|---|---|
+| `takeover`, Mac'in yığını eskiyken (Docker kapalıydı, önce açıldı: 6 sn) | 5 dk 9 sn |
+| Yığının derlemesiz açılışı (`up --build --wait`) | 22 sn |
+| Yedeğin yüklenmesi | 15 sn |
+| `handback` | 1 dk 43 sn |
+
+Ön kontrol iki yönde de 8/8. Veri birebir aynı kaldı (6 hesap, 47 ziyaret, 1 katkı, 6 sohbet mesajı); adres Mac'teyken açılan
+deneme hesabı `handback` ile sunucuya geçti. Sürenin çoğu derleme: **demodan önce Mac'te `git pull && deploy/demo.sh up`
+ile derlemeyi tazele** (sonra `docker compose -f deploy/compose.yml --env-file deploy/.env stop`), devralma ~1 dakikaya iner.
 
 **Mac'in yedekleri:** `deploy/failover.sh install-pull` (Mac'te bir kez) yarım saatte bir sunucunun en yeni
 yedeğini `~/vagabonds-backups/`'a çeken bir LaunchAgent kurar (son 24'ü tutar; kayıt: `~/vagabonds-backups/pull.log`).
