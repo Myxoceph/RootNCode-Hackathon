@@ -3,6 +3,7 @@ import {
   AdminAchievementSchema,
   AdminAchievementsResponseSchema,
   AdminAssetRecordResponseSchema,
+  AdminPhotoUploadResponseSchema,
   AssetDetailSchema,
   AdminAssetSchema,
   AdminAssetsResponseSchema,
@@ -21,6 +22,8 @@ import {
   type AdminAsset,
   type AdminAssetRecord,
   type AdminAssetRecordResponse,
+  type AdminPhotoUploadQuery,
+  type AdminPhotoUploadResponse,
   type AssetDetail,
   type AdminAssetInput,
   type AdminAssetPatch,
@@ -157,6 +160,63 @@ export const updatePanelAsset = (id: string, patch: AdminAssetPatch): Promise<Ad
   admin(`/admin/assets/${id}`, AdminAssetSchema, { body: patch, method: "PATCH" });
 
 export const deletePanelAsset = (id: string): Promise<null> => admin(`/admin/assets/${id}`, Nothing, { method: "DELETE" });
+
+/** The asset photo upload's refusals, in Turkish; they differ from a badge picture's. */
+const PHOTO_MESSAGES: Record<string, string> = {
+  INVALID_IMAGE: "Bu dosya kullanılamıyor: resim değil ya da çok küçük (kısa kenarı en az 300 piksel olmalı).",
+  PHOTO_ON_ASSET: "Bu fotoğraf bu eserde zaten var.",
+  DATASET_PHOTO: "Bu fotoğraf veri setinden geliyor; panelden kaldırılamaz.",
+  PHOTO_NOT_FOUND: "Fotoğraf bulunamadı; kaldırılmış olabilir.",
+  MEDIA_UPLOAD_OFF: "Fotoğraf yükleme bu sunucuda açık değil (R2 anahtarı yok).",
+  INVALID_QUERY: "Fotoğrafın bilgileri eksik: ne göründüğünü (en az 3 harf) ve çekeni yaz.",
+  ASSET_NOT_FOUND: MESSAGES.ASSET_NOT_FOUND!,
+};
+
+const photoError = (token: string) => (status: number, code: string | null, details: string[]) => {
+  if (status === 401) sessionRejected(token);
+  const message =
+    status === 413
+      ? "Dosya çok büyük: en çok 15 MB olabilir."
+      : status === 415
+        ? "Bu dosya türü desteklenmiyor: JPEG, PNG ya da WebP olmalı."
+        : (code && (PHOTO_MESSAGES[code] ?? MESSAGES[code])) || undefined;
+  return message ? new DataError("rejected", message, details, code) : statusError(status, code, details);
+};
+
+/**
+ * Uploads a photo to an asset (`POST /admin/assets/:id/media`, admins only): the file itself as
+ * the body, a JPEG, PNG or WebP of at most 15 MB, its short side 300 px or more. The server makes
+ * its sizes, which takes a few seconds; the answer is the photo as the asset page shows it.
+ */
+export async function uploadAssetPhoto(id: string, file: { uri: string; type: string }, about: AdminPhotoUploadQuery): Promise<AdminPhotoUploadResponse> {
+  const token = await accountToken();
+  if (!token) throw new DataError("rejected", "Panel için yönetici hesabıyla giriş yapmalısın.", [], "ACCOUNT_REQUIRED");
+  const url = `${resolveApiUrl()}/admin/assets/${id}/media${query({
+    alt: about.alt,
+    altEn: about.altEn,
+    caption: about.caption,
+    captionEn: about.captionEn,
+    credit: about.credit,
+    license: about.license,
+    isCover: about.isCover,
+  })}`;
+  const errorFor = photoError(token);
+  if (Platform.OS !== "web") return uploadFile(file.uri, url, AdminPhotoUploadResponseSchema, { type: file.type, token, errorFor, timeoutMs: 120_000, method: "POST" });
+  let data: Blob;
+  try {
+    data = await (await fetch(file.uri)).blob();
+  } catch (error) {
+    throw new DataError("rejected", "Fotoğraf okunamadı. Tekrar dene.", [file.uri, String(error)]);
+  }
+  return (await request(url, AdminPhotoUploadResponseSchema, { rawBody: { data, type: file.type }, method: "POST", token, timeoutMs: 120_000, errorFor }))!;
+}
+
+/** Removes a photo uploaded from the panel (`DELETE /admin/assets/:id/media/:key`); the dataset's own cannot be. */
+export async function deleteAssetPhoto(id: string, key: string): Promise<null> {
+  const token = await accountToken();
+  if (!token) throw new DataError("rejected", "Panel için yönetici hesabıyla giriş yapmalısın.", [], "ACCOUNT_REQUIRED");
+  return request(`${resolveApiUrl()}/admin/assets/${id}/media/${encodeURIComponent(key)}`, Nothing, { method: "DELETE", token, errorFor: photoError(token) }) as Promise<null>;
+}
 
 // Achievements.
 export const fetchAdminAchievements = async (): Promise<AdminAchievement[]> =>

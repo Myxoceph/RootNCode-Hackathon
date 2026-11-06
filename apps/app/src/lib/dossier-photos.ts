@@ -1,11 +1,9 @@
-import type { AssetDetail, Media } from "@vagabonds/contracts";
+import type { AdminAssetRecord, AssetDetail, Media } from "@vagabonds/contracts";
 
 /**
  * Photos set between the dossier's blocks. A photo names the block it follows (`identity`,
- * `timeline`…, an added block's `custom:<id>`) or the chapter (`section:<id>`) as `dossierAfter`.
- *
- * The API does not send this yet: the panel's editor sets it on its preview, and the dossier reads
- * it from any photo that has it, so it shows as soon as the API does.
+ * `timeline`…, an added block's `custom:<id>`) or the chapter (`section:<id>`) as `dossierAfter`
+ * (contract 0.3.28): the panel saves it with the record and `GET /assets/:id` sends it.
  */
 
 /** The dossier's blocks a photo can follow, in their order. */
@@ -13,13 +11,11 @@ export const DOSSIER_BLOCKS = ["identity", "history", "timeline", "people", "waq
 
 export type DossierPlacements = Record<string, string>;
 
-type PlacedMedia = Media & { dossierAfter?: string | null };
-
 /** The place a photo is set after in the dossier, or null. */
-export const dossierAfterOf = (media: Media): string | null => (media as PlacedMedia).dossierAfter ?? null;
+export const dossierAfterOf = (media: Media): string | null => media.dossierAfter ?? null;
 
 /** The photo with its place in the dossier set, or cleared. */
-export const withDossierAfter = (media: Media, after: string | null): Media => Object.assign({}, media, { dossierAfter: after });
+export const withDossierAfter = (media: Media, after: string | null): Media => ({ ...media, dossierAfter: after });
 
 /** Each photo's place, by its key, as the asset gives them. */
 export function placementsOf(asset: AssetDetail | null): DossierPlacements {
@@ -49,4 +45,28 @@ export function photosByPlace(asset: AssetDetail, drawn: string[]): Map<string, 
     byPlace.set(place, [...(byPlace.get(place) ?? []), m]);
   }
   return byPlace;
+}
+
+/** Each photo's place in the dossier, by its key, as the record holds them. */
+export function placementsIn(record: AdminAssetRecord | null): DossierPlacements {
+  const places: DossierPlacements = {};
+  for (const m of record?.media ?? []) if (m.dossierAfter) places[m.key] = m.dossierAfter;
+  return places;
+}
+
+/**
+ * The photos after an upload or a removal: the server's list, with what the admin has changed and
+ * not saved yet kept (captions, order, places). A photo just uploaded as the cover takes the cover;
+ * a removed cover's place goes to the one the server chose.
+ */
+export function mergePhotos(draft: AdminAssetRecord["media"], server: AdminAssetRecord["media"]): AdminAssetRecord["media"] {
+  const onServer = new Map(server.map((m) => [m.key, m]));
+  const kept = draft.filter((m) => onServer.has(m.key));
+  const known = new Set(kept.map((m) => m.key));
+  const added = server.filter((m) => !known.has(m.key));
+  const merged = [...kept, ...added.map((m) => ({ ...m }))];
+  const newCover = added.find((m) => m.isCover);
+  if (newCover) return merged.map((m) => ({ ...m, isCover: m.key === newCover.key }));
+  if (merged.some((m) => m.isCover)) return merged;
+  return merged.map((m) => ({ ...m, isCover: onServer.get(m.key)?.isCover ?? false }));
 }
