@@ -24,6 +24,9 @@ export const TRIP_SHAPE: Record<TripDuration, { days: number; endMinute: number;
   half: { days: 1, endMinute: 13 * 60 + 30, lunch: false },
   "1": { days: 1, endMinute: 17 * 60 + 30, lunch: true },
   "2": { days: 2, endMinute: 17 * 60 + 30, lunch: true },
+  "3": { days: 3, endMinute: 17 * 60 + 30, lunch: true },
+  "4": { days: 4, endMinute: 17 * 60 + 30, lunch: true },
+  "5": { days: 5, endMinute: 17 * 60 + 30, lunch: true },
 };
 
 export interface ImportanceSignals {
@@ -217,6 +220,8 @@ export function planTrip({ candidates, start, duration, weather }: TripInput): T
         }
       }
     }
+    // Out of sites: a five-day trip in a small town ends early rather than with empty days.
+    if (picked.length === 0 && day > 0) break;
     const used = new Set(picked.map((site) => site.id));
     remaining = remaining.filter((site) => !used.has(site.id));
     days.push(summarize(plan.items));

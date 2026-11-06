@@ -8,8 +8,8 @@ export const HEAT_THRESHOLD_C = 32;
 
 /** An afternoon (12:00–18:00) hour at or above this chance of precipitation counts as afternoon rain. */
 export const AFTERNOON_RAIN_PERCENT = 50;
-/** Today and the next two days: enough for a two-day trip that starts tomorrow. */
-export const FORECAST_DAYS = 3;
+/** Today and the next six days. A forecast further ahead is too rough to reorder a day by. */
+export const FORECAST_DAYS = 7;
 
 const DEFAULT_TIMEOUT_MS = 2_000;
 const DEFAULT_TTL_MS = 15 * 60 * 1_000;

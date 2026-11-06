@@ -181,6 +181,26 @@ describe.skipIf(!DATABASE_URL)("planner routes (PostgreSQL)", () => {
       expect(new Set(dishIds).size).toBe(4);
     });
 
+    it("plans a trip beyond the forecast without weather, and says why", async () => {
+      forecast = FORECAST;
+      const first = dayAfter(TODAY, 30);
+      const body = TripPlanResponseSchema.parse((await get(`/routes/trip?city=bursa&duration=5&date=${first}`)).json());
+      expect(body.days.length).toBeGreaterThan(2);
+      expect(body.duration).toBe(String(body.days.length));
+      expect(body.days[0]).toMatchObject({ date: first, weather: null, weatherNote: { code: "unavailable" } });
+      expect(body.days[0]?.weatherNote.text).toContain("henüz");
+      expect(body.days[1]?.date).toBe(dayAfter(TODAY, 31));
+      const ids = body.days.flatMap((day) => stops(day).map((stop) => stop.asset.id));
+      expect(new Set(ids).size).toBe(ids.length);
+    });
+
+    it("mixes forecast days and later ones in a trip that reaches past the forecast", async () => {
+      forecast = FORECAST;
+      const body = TripPlanResponseSchema.parse((await get("/routes/trip?city=bursa&duration=4")).json());
+      expect(body.days[1]?.weatherNote.code).toBe("afternoon_rain");
+      expect(body.days[3]).toMatchObject({ weather: null, weatherNote: { code: "unavailable" } });
+    });
+
     it("keeps a themed half day to its theme and before 13:30", async () => {
       const body = TripPlanResponseSchema.parse(
         (await get(`/routes/trip?city=bursa&duration=half&theme=type:turbe&date=${dayAfter(TODAY, 1)}`)).json(),
@@ -195,10 +215,10 @@ describe.skipIf(!DATABASE_URL)("planner routes (PostgreSQL)", () => {
 
     it("validates the query", async () => {
       const bad = [
-        "city=bursa&duration=3",
+        "city=bursa&duration=6",
         "city=bursa&theme=network:bursa-osmangazi-ulucami",
         "city=bursa&date=2020-01-01",
-        `city=bursa&duration=2&date=${dayAfter(TODAY, 2)}`,
+        `city=bursa&date=${dayAfter(TODAY, 366)}`,
         "city=bursa&start=1,2",
       ];
       for (const query of bad) {
