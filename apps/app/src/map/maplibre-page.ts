@@ -2663,8 +2663,8 @@ function start() {
   /** How long the camera takes to draw back, how long the lines take to reach the related assets, and how far a line bends. */
   const RELATED_FLY_MS = 1100;
   const RELATED_GROW_MS = 1200;
-  /** The least the map draws back when the related assets show, in zoom levels. */
-  const RELATED_STEP_BACK = 1.5;
+  /** Room at either side, so the name of a related asset at the edge stays on screen. */
+  const RELATED_SIDE = 56;
   const LINK_POINTS = 48;
   const LINK_BEND = 0.1;
   const LINK_LIGHT = "#FFEDBE";
@@ -2703,20 +2703,21 @@ function start() {
     const shown = { id, camera: { center: map.getCenter(), zoom: map.getZoom() } };
     relatedShown = shown;
     placeUnlock();
-    map.getSource("city-links").setData({ type: "FeatureCollection", features: targets.map((target, index) => linkFeature(asset, target, index)) });
+    const links = targets.map((target, index) => linkFeature(asset, target, index));
+    map.getSource("city-links").setData({ type: "FeatureCollection", features: links });
     map.getSource("city-related").setData({ type: "FeatureCollection", features: targets.map((target) => ({ type: "Feature", geometry: { type: "Point", coordinates: [target.lng, target.lat] }, properties: { title: target.title } })) });
     // Only the asset and what it is related to stay on the map.
     filterCityAssets(["in", ["get", "id"], ["literal", [id, ...targets.map((target) => target.id)]]]);
+    // Framed by the lines themselves, their bends too: the farthest one sets how far the map draws back.
     const bounds = new maplibregl.LngLatBounds([asset.lng, asset.lat], [asset.lng, asset.lat]);
-    targets.forEach((target) => bounds.extend([target.lng, target.lat]));
+    links.forEach((link) => link.geometry.coordinates.forEach((point) => bounds.extend(point)));
     const room = cityPadding();
     // The map adds its own padding (some camera moves leave it, some do not), so only what is missing is asked for: counted twice, it can leave no room at all.
     const kept = map.getPadding();
-    const padding = { top: Math.max(0, room.top + 72 - kept.top), right: Math.max(0, room.right + 24 - kept.right), bottom: Math.max(0, room.bottom + 24 - kept.bottom), left: Math.max(0, room.left + 24 - kept.left) };
-    // Always a step back, however near the related assets are: already on screen, they would not move the camera at all.
-    const fit = map.cameraForBounds(bounds, { padding });
-    const stepBack = map.getZoom() - RELATED_STEP_BACK;
-    map.fitBounds(bounds, { padding, maxZoom: fit ? Math.min(fit.zoom, stepBack) : stepBack, duration: motion ? RELATED_FLY_MS : 0, essential: true });
+    const padding = { top: Math.max(0, room.top + 72 - kept.top), right: Math.max(0, room.right + RELATED_SIDE - kept.right), bottom: Math.max(0, room.bottom + 24 - kept.bottom), left: Math.max(0, room.left + RELATED_SIDE - kept.left) };
+    // Just as far back as the farthest line needs, no further; lines all close by do not pull the
+    // camera in from where the visitor is (a chosen asset's zoom at least).
+    map.fitBounds(bounds, { padding, maxZoom: Math.max(map.getZoom(), SELECT_ZOOM), duration: motion ? RELATED_FLY_MS : 0, essential: true });
     const setReached = (reached) => {
       const gradient = linkGradient(reached);
       map.setPaintProperty("city-links-glow", "line-gradient", gradient);
