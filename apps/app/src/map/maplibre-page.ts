@@ -901,7 +901,7 @@ function start() {
 
   // Provinces and the opening fog.
   /** The fog lifts over this long once the tiles are drawn: short, the visitor came for the map. */
-  const INTRO_MS = 2400;
+  const INTRO_MS = 3200;
   /** Tiles get this long to arrive before the fog lifts anyway: the fog hides them meanwhile, so hardly a wait. */
   const INTRO_WAIT_MS = 250;
   /** How long the closed fog waits for the provinces before it opens without them. */
