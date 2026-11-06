@@ -40,7 +40,7 @@ import {
 import { isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useMapTour } from "@/lib/map-tour";
-import { useUnlockedAssets } from "@/lib/unlocked-assets";
+import { useUnlockedAssets, useUnlocksSettled } from "@/lib/unlocked-assets";
 import { whereFrom } from "@/lib/bearing";
 import { rememberCity, rememberOpenCity, useOpenCity } from "@/lib/last-city";
 import { NAVY } from "@/lib/page-navy";
@@ -128,6 +128,14 @@ export default function MapScreen() {
   const { user } = useCommunity();
   // The map lies behind the seal screen: an asset opens on it only once the visitor is back and that screen has slid away.
   const [unlocked, setUnlocked] = useState(allUnlocked);
+  // Unlocks that come in while the visitor's unlocks load (the map made ready behind the welcome page)
+  // were made on an earlier run: the map takes them as they are, with no scene.
+  const unlocksSettled = useUnlocksSettled();
+  const [unlocksTaken, setUnlocksTaken] = useState(unlocksSettled);
+  if (!unlocksTaken) {
+    if (unlocked !== allUnlocked) setUnlocked(allUnlocked);
+    if (unlocksSettled) setUnlocksTaken(true);
+  }
   const [sceneRunning, setSceneRunning] = useState(false);
   // The web's "Kilidini aç": the asset's name while the "mobil uygulamada" notice is up.
   const [mobileOnly, setMobileOnly] = useState<string | null>(null);
