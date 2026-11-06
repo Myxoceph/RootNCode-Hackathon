@@ -42,6 +42,7 @@ import { announce } from "@/lib/announce";
 import { useMapTour } from "@/lib/map-tour";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { whereFrom } from "@/lib/bearing";
+import { rememberCity } from "@/lib/last-city";
 import { bondsSpoken } from "@/lib/map-bonds";
 import { relatedPlacesOf } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -358,6 +359,12 @@ export default function MapScreen() {
   useEffect(() => {
     if (cityFromParam != null) setSelectedPlate(cityFromParam);
   }, [cityFromParam, cityAskedAt]);
+
+  // The city open now is remembered for the next greeting (its weather).
+  const openCode = selectedCity?.code;
+  useEffect(() => {
+    if (openCode) rememberCity(openCode);
+  }, [openCode]);
 
   function openCity(plate: number) {
     const city = withAssets.find((candidate) => candidate.plate === plate);

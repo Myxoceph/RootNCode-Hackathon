@@ -4,6 +4,7 @@ import type {
   AssetRelationsResponse,
   Lang,
   PulseResponse,
+  WeatherResponse,
 } from "@vagabonds/contracts";
 
 /** A city that has published assets, for the list filter. */
@@ -39,4 +40,6 @@ export interface DataSource {
   getPulse(id: string, lang: Lang): Promise<PulseResponse | null>;
   /** Cities with at least one published asset, in the API's order. */
   listCities(lang: Lang): Promise<CityOption[]>;
+  /** Today's weather in a city (`cities` code); `null` when it cannot be had. Never stored: old weather misleads. */
+  getWeather(city: string, lang: Lang): Promise<WeatherResponse | null>;
 }

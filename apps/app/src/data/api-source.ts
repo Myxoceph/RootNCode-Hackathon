@@ -4,6 +4,7 @@ import {
   AssetRelationsResponseSchema,
   MetaEnumsResponseSchema,
   PulseResponseSchema,
+  WeatherResponseSchema,
 } from "@vagabonds/contracts";
 
 import type { SchemaParser } from "./errors";
@@ -31,6 +32,14 @@ export function createApiSource(baseUrl: string): DataSource {
     },
     getPulse(id, lang) {
       return request(`/assets/${encodeURIComponent(id)}/pulse?lang=${lang}`, PulseResponseSchema, { allowNotFound: true });
+    },
+    async getWeather(city, lang) {
+      // The weather is a nicety: without it the app goes on.
+      try {
+        return await request(`/weather?city=${encodeURIComponent(city)}&lang=${lang}`, WeatherResponseSchema, { allowNotFound: true });
+      } catch {
+        return null;
+      }
     },
     async listCities(lang) {
       const enums = (await request(`/meta/enums?lang=${lang}`, MetaEnumsResponseSchema))!;

@@ -53,6 +53,8 @@ export function createCachedSource(source: DataSource): DataSource {
       cached(`relations:${lang}:${id}`, AssetRelationsResponseSchema, () => source.getRelations(id, lang)),
     getPulse: (id, lang) => cached(`pulse:${lang}:${id}`, PulseResponseSchema, () => source.getPulse(id, lang)),
     listCities: (lang) => cached(`cities:${lang}`, CitiesSchema, () => source.listCities(lang)),
+    // Not stored: yesterday's weather would mislead.
+    getWeather: (city, lang) => source.getWeather(city, lang),
   };
 }
 

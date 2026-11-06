@@ -9,6 +9,7 @@ import type {
   PulseResponse,
   Reward,
   WalletResponse,
+  WeatherResponse,
 } from "@vagabonds/contracts";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -84,6 +85,13 @@ export function usePulse(id: string): ResourceWithRetry<PulseResponse | null> {
 }
 
 /** The visitor's own notes ("Notlarım"); fetched again after each note sent. `null` without a session. */
+/** Today's weather in a city; `null` while there is no city, or when the weather cannot be had. */
+export function useWeather(city: string | null): ResourceWithRetry<WeatherResponse | null> {
+  const lang = useLang();
+  const load = useCallback(() => (city ? dataSource.getWeather(city, lang) : Promise.resolve(null)), [city, lang]);
+  return useResource(load);
+}
+
 /** The visitor's badges (Rozetlerim): fetched again for a new session. `null` without a server. */
 export function useMyAchievements(): ResourceWithRetry<MyAchievementsResponse | null> {
   const { user } = useCommunity();

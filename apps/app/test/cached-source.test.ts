@@ -31,7 +31,7 @@ afterEach(() => {
 
 function source(getAsset: DataSource["getAsset"]): DataSource {
   const unused = () => Promise.reject(new Error("not used"));
-  return { getAsset, listAssets: unused, getRelations: unused, getPulse: unused, listCities: unused };
+  return { getAsset, listAssets: unused, getRelations: unused, getPulse: unused, listCities: unused, getWeather: unused };
 }
 
 function stored(key: string, data: unknown, savedAt = 1000) {

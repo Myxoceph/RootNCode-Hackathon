@@ -121,6 +121,11 @@ function ThemedStack() {
             name="auth"
             options={{ headerShown: false, title: m.screens.signIn }}
           />
+          {/* The page the app opens on; it draws its own way on, with no back to anywhere. */}
+          <Stack.Screen
+            name="welcome"
+            options={{ headerShown: false, title: m.welcome.title, gestureEnabled: false }}
+          />
           {/* Profil's sections, each on its own page under a header with a back button. */}
           <Stack.Screen
             name="profile/routes"
