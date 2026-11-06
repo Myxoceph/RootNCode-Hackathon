@@ -11,7 +11,7 @@ import {
 } from "@vagabonds/ui";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
-import { useEffect, useRef, type ComponentProps } from "react";
+import { useEffect, useRef, useState, type ComponentProps } from "react";
 import {
   Animated,
   Pressable,
@@ -154,6 +154,8 @@ function Hero({ route }: { route: TripRoute }) {
   const w = m.saved;
   const { trip } = route;
   const [light, deep] = inkFor(trip.city.code);
+  // Measured: on iOS a percent-sized Svg keeps its first size when the band grows under it.
+  const [band, setBand] = useState<{ width: number; height: number } | null>(null);
   const meters = trip.days.reduce((sum, day) => sum + day.totals.walkMeters, 0);
   const visit = trip.days.reduce(
     (sum, day) => sum + day.totals.visitMinutes,
@@ -166,11 +168,14 @@ function Hero({ route }: { route: TripRoute }) {
   });
 
   return (
-    <View style={styles.hero}>
+    <View
+      style={[styles.hero, { backgroundColor: deep }]}
+      onLayout={(event) => setBand(event.nativeEvent.layout)}
+    >
       {/* Sized outright: on the web an SVG without a width keeps its 300px default, not its box's. */}
-      <Svg
-        width="100%"
-        height="100%"
+      {band && <Svg
+        width={band.width}
+        height={band.height}
         style={StyleSheet.absoluteFill}
         aria-hidden
       >
@@ -180,25 +185,25 @@ function Hero({ route }: { route: TripRoute }) {
             <Stop offset="1" stopColor={deep} />
           </LinearGradient>
         </Defs>
-        <Rect width="100%" height="100%" fill="url(#trip-ink)" />
+        <Rect width={band.width} height={band.height} fill="url(#trip-ink)" />
         <Circle
-          cx="90%"
-          cy="18%"
+          cx={band.width * 0.9}
+          cy={band.height * 0.18}
           r={70}
           stroke={palette.altin200}
           strokeOpacity={0.12}
           fill="none"
         />
         <Circle
-          cx="90%"
-          cy="18%"
+          cx={band.width * 0.9}
+          cy={band.height * 0.18}
           r={46}
           stroke={palette.altin200}
           strokeOpacity={0.1}
           strokeDasharray="2 4"
           fill="none"
         />
-      </Svg>
+      </Svg>}
 
       <Text colorValue={palette.altin200} style={styles.city}>
         {trip.city.label.toLocaleUpperCase(lang)}
@@ -381,6 +386,24 @@ function Row({
               </Text>
             </>
           )}
+        </View>
+      )}
+      {item.kind === "stop" && item.transit && (
+        <View style={styles.leg}>
+          <View style={styles.rail}>
+            <View
+              style={[styles.railLine, { backgroundColor: c.highlightMark }]}
+            />
+          </View>
+          <Ionicons name="bus" size={14} color={c.textSecondary} />
+          <Text variant="caption" color="textSecondary" style={styles.legText}>
+            {w.legTransit(
+              item.transit.rides
+                .map((ride) => `${ride.line}: ${ride.from} → ${ride.to}`)
+                .join(", "),
+              item.transit.minutes,
+            )}
+          </Text>
         </View>
       )}
       <View style={styles.row}>
@@ -618,6 +641,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: spacing.xs,
     minHeight: 28,
+  },
+  legText: {
+    flex: 1,
   },
   legEmpty: {
     minHeight: spacing.md,

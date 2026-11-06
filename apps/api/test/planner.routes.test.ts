@@ -10,11 +10,13 @@ import {
   WeatherResponseSchema,
   type CurrentWeather,
   type DailyForecast,
+  type TransitItinerary,
   type TripDay,
 } from "@vagabonds/contracts";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildApp } from "../src/app.ts";
 import { createPrismaClient, type PrismaClient } from "../src/db/prisma.ts";
+import type { TransitPlanner } from "../src/modules/transit/otp.client.ts";
 import type { WeatherService } from "../src/modules/weather/weather.service.ts";
 
 const DATABASE_URL = process.env["DATABASE_URL"];
@@ -199,6 +201,29 @@ describe.skipIf(!DATABASE_URL)("planner routes (PostgreSQL)", () => {
       const body = TripPlanResponseSchema.parse((await get("/routes/trip?city=bursa&duration=4")).json());
       expect(body.days[1]?.weatherNote.code).toBe("afternoon_rain");
       expect(body.days[3]).toMatchObject({ weather: null, weatherNote: { code: "unavailable" } });
+    });
+
+    it("offers a ride on Konya's long legs and keeps the rest a walk, also when OTP fails", async () => {
+      const ride: TransitItinerary = {
+        departure: "2026-11-14T10:00:00+03:00",
+        arrival: "2026-11-14T10:05:00+03:00",
+        durationMinutes: 5,
+        walkMeters: 100,
+        transfers: 0,
+        legs: [{ mode: "bus", line: { code: "56-A", name: "56-A" }, from: { name: "Durak 1" }, to: { name: "Durak 2" } }],
+      } as unknown as TransitItinerary;
+      const legsOf = async (plan: TransitPlanner["plan"]) => {
+        const withTransit = buildApp({ prisma, mediaBaseUrl: "https://media.test", weather, transitPlanner: { plan } });
+        const response = await withTransit.inject({ method: "GET", url: `/routes/trip?city=konya&duration=5&date=${dayAfter(TODAY, 1)}` });
+        await withTransit.close();
+        return TripPlanResponseSchema.parse(response.json()).days.flatMap(stops);
+      };
+      const legs = await legsOf(async (_from, _to, at) => [{ ...ride, arrival: new Date(at.getTime() + 5 * 60_000).toISOString() }]);
+      const long = legs.filter((stop) => stop.legMeters >= 1000);
+      expect(long.length).toBeGreaterThan(0);
+      expect(long.every((stop) => stop.transit?.rides[0]?.line === "56-A")).toBe(true);
+      expect(legs.filter((stop) => stop.legMeters < 1000).every((stop) => stop.transit === null)).toBe(true);
+      expect((await legsOf(async () => null)).every((stop) => stop.transit === null)).toBe(true);
     });
 
     it("keeps a themed half day to its theme and before 13:30", async () => {

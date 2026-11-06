@@ -305,6 +305,11 @@ function compactTrip(trip: TripPlanResponse, ref: number): Record<string, unknow
           : { at: hhmm(item.at), meal: item.label, dish: item.dish?.name ?? null, minutes: item.minutes },
       ),
     })),
+    rideOptions: trip.days.flatMap((day) =>
+      day.items.flatMap((item) =>
+        item.kind === "stop" && item.transit ? [{ day: day.day, to: item.asset.name, minutes: item.transit.minutes, rides: item.transit.rides }] : [],
+      ),
+    ),
     notPlanned: trip.notPlannedCount,
     note: trip.estimateNote,
   };
@@ -337,7 +342,7 @@ const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) 
     const days = trip.duration === "half" ? "½" : trip.duration;
     const title = `${trip.city.label} · ${days} ${lang === "en" ? "day trip" : "günlük gezi"}`;
     const compact = compactTrip(trip, sources.add("trip", trip.city.code, title));
-    const shortened = trip.duration !== duration && { note: `The dataset has sites for only ${trip.days.length} of the ${duration} days asked for; say so.` };
+    const shortened = trip.duration !== duration && { shortened: `The dataset has sites for only ${trip.days.length} of the ${duration} days asked for; say so.` };
     return { content: JSON.stringify({ ...compact, ...shortened }), trip };
   },
 

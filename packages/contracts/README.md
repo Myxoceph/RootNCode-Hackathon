@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.30`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.31`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -137,7 +137,8 @@ export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
   - **Günün notu:** `weatherNote.code` havanın planı nasıl etkilediğini söyler (`afternoon_rain`, `heat`, `rain_possible`, `clear`, `unavailable`); `text` aynı şeyi yanıt dilinde anlatır. Tahmin 7 günle sınırlıdır; daha ileri günler havaya bakılmadan planlanır (`weather: null`, `unavailable`).
   - **Birkaç gün:** 2-5 günlük gezide bir eser iki kez yer almaz. İlin eserleri biterse gezi erken biter; `duration` ve `days` planlanan gün sayısını gösterir.
   - **Molalar:** Öğle molasına bir ana yemek (`main`), tatlı durağına bir tatlı (`dessert`) konur (`dish`, `CityDish`). Önce önceki durağın ilçesine ait lezzet, sonra il geneli; gezi boyunca aynı lezzet, uygun başka lezzet kaldıkça tekrarlanmaz. İlin uygun lezzeti yoksa `dish: null`.
-  - **Uzun bacaklar:** Aynı gündeki iki durak arası 3 km'yi geçebilir (`legMeters`); uygulama uzun bacaklarda toplu taşıma önerebilir.
+  - **Durak sayısı:** Tam günde en çok 8, yarım günde en çok 4 durak vardır. Bir külliye planda varken yapıları ayrı durak olmaz.
+  - **Uzun bacaklar:** Aynı gündeki iki durak arası 3 km'yi geçmez (`legMeters`). Konya'da 1 km ve üstündeki bacaklarda otobüs ya da tramvay yürümeye seçenek olarak önerilir (`transit`, OTP); saatler yürüyüşe göre kalır. OTP yanıt vermezse `transit: null` olur.
 - **Ziyaretçi Nabzı:**
   - Kullanıcı anonimdir. `POST /auth/anonymous` ile takma ad verir, karşılığında bir token alır. Token yalnızca bir kez döner, API onun yalnızca özetini saklar. İstemci token'ı güvenli depoda tutar (mobilde `expo-secure-store`); kaybolursa yeni oturum açılır.
   - Katkı türleri: `tip` (saha ipucu), `memory` (anı) ve `correction` (editörlere düzeltme). Fotoğraf katkısı şimdilik yok.
