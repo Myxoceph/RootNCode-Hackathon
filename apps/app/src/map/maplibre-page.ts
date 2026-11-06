@@ -957,6 +957,9 @@ function start() {
   // Provinces and the opening fog.
   /** The fog lifts over this long once the tiles are drawn: short, the visitor came for the map. */
   const INTRO_MS = 3200;
+  /** Turkey's border is traced through the closed fog over this long; the rest of the opening waits the difference. */
+  const TRACE_MS = 1500;
+  const TRACE_LEAD_MS = TRACE_MS - INTRO_MS * 0.36;
   /** Tiles get this long to arrive before the fog lifts anyway: the fog hides them meanwhile, so hardly a wait. */
   const INTRO_WAIT_MS = 250;
   /** How long the closed fog waits for the provinces before it opens without them. */
@@ -3162,12 +3165,12 @@ function start() {
       if (!intro || intro.start !== Infinity) return;
       intro.start = performance.now();
       // The provinces show as the fog parts; the ones with assets light up a moment later.
-      setTimeout(() => map.setPaintProperty("province-borders", "line-opacity", 1), INTRO_MS * 0.42);
+      setTimeout(() => map.setPaintProperty("province-borders", "line-opacity", 1), TRACE_LEAD_MS + INTRO_MS * 0.42);
       setTimeout(() => {
         map.setPaintProperty("province-lines", "line-opacity", 1);
         map.setPaintProperty("province-glow", "line-opacity", 0.8);
         setTimeout(() => map.setPaintProperty("province-glow", "line-opacity", 0), 1000);
-      }, INTRO_MS * 0.6);
+      }, TRACE_LEAD_MS + INTRO_MS * 0.6);
       animate();
     };
     map.once("idle", begin);
@@ -3280,7 +3283,9 @@ function start() {
   }
 
   function drawIntro(now, width, height) {
-    const elapsed = intro.start === Infinity ? 0 : Math.min(1, (now - intro.start) / INTRO_MS);
+    // The border's tracing runs on its own clock, slower; the fog's opening starts once it is nearly drawn.
+    const traced = intro.start === Infinity ? 0 : smoothstep(0, TRACE_MS, now - intro.start);
+    const elapsed = intro.start === Infinity ? 0 : Math.min(1, Math.max(0, (now - intro.start - TRACE_LEAD_MS) / INTRO_MS));
     // The border is traced first, in the closed fog; the fog parts after.
     const opening = smoothstep(0.3, 1, elapsed);
     const middle = map.project(TURKEY_MIDDLE);
@@ -3292,7 +3297,7 @@ function start() {
       context.fillRect(0, 0, width, height);
     }
     for (const layer of intro.layers) drawFogLayer(layer, opening, now, width, height, middle);
-    drawOutline(elapsed);
+    drawOutline(elapsed, traced);
     // Tied to the frames, not a timer: the names come a moment after the lines, before the opening ends.
     if (elapsed >= 0.75 && !labelsRevealed) revealLabels();
     if (elapsed >= 1) {
@@ -3343,8 +3348,7 @@ function start() {
   }
 
   /** Turkey's border, drawn in glowing gold through the fog, then handed over to the map. */
-  function drawOutline(elapsed) {
-    const traced = smoothstep(0, 0.36, elapsed);
+  function drawOutline(elapsed, traced) {
     const alpha = 1 - smoothstep(0.66, 0.92, elapsed);
     if (traced <= 0 || alpha <= 0) return;
     context.save();
