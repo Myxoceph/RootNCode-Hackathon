@@ -465,6 +465,59 @@ function start() {
     corner.style.right = "6px";
   }
 
+  /**
+   * The seals' and the fog banks' pictures: together long enough to stop the opening's fog for a
+   * moment, and needed only once a city is open. So they are drawn after the opening, a few
+   * milliseconds a frame (a fog bank is worked out pixel by pixel, in steps); one asked for before
+   * its turn is finished at once (styleimagemissing). Each job gives steps that end in the picture.
+   */
+  const pictureJobs = new Map();
+  /** The picture being drawn a step at a time. */
+  let drawing = null;
+  /** A few milliseconds a frame: the frame stays well under the 16 of a smooth 60 a second. */
+  const PICTURE_BUDGET_MS = 6;
+  function finishPicture(id, steps, ratio) {
+    let step = steps.next();
+    while (!step.done) step = steps.next();
+    if (!map.hasImage(id)) map.addImage(id, step.value, { pixelRatio: ratio });
+  }
+  function addPicture(id) {
+    const job = pictureJobs.get(id);
+    if (!job) return;
+    pictureJobs.delete(id);
+    const steps = drawing && drawing.id === id ? drawing.steps : job.steps();
+    if (drawing && drawing.id === id) drawing = null;
+    finishPicture(id, steps, job.ratio);
+  }
+  let picturesStarted = false;
+  function drawPicturesLater() {
+    if (picturesStarted) return;
+    picturesStarted = true;
+    const frame = () => {
+      const until = performance.now() + PICTURE_BUDGET_MS;
+      while (performance.now() < until) {
+        if (!drawing) {
+          const id = pictureJobs.keys().next().value;
+          if (id === undefined) return;
+          drawing = { id, steps: pictureJobs.get(id).steps(), ratio: pictureJobs.get(id).ratio };
+        }
+        const step = drawing.steps.next();
+        if (step.done) {
+          pictureJobs.delete(drawing.id);
+          if (!map.hasImage(drawing.id)) map.addImage(drawing.id, step.value, { pixelRatio: drawing.ratio });
+          drawing = null;
+        }
+      }
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  }
+  /** Steps for a picture drawn in one go. */
+  function* atOnce(draw) {
+    return draw();
+  }
+  map.on("styleimagemissing", (event) => addPicture(event.id));
+
   map.on("load", () => {
     map.setPaintProperty("background", "background-color", colors.land);
     map.addSource("assets", { type: "geojson", data: { type: "FeatureCollection", features: [] }, cluster: true, clusterRadius: 44, clusterMaxZoom: 14 });
@@ -582,11 +635,11 @@ function start() {
     // close, where they fit. The landmark's seal is gold and larger; the chosen one pulses.
     map.addSource("city-assets", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
     for (const category of GLYPHS) {
-      map.addImage("seal-" + category, sealImage(category, false), { pixelRatio: SEAL_RATIO });
-      map.addImage("seal-" + category + "-landmark", sealImage(category, true), { pixelRatio: SEAL_RATIO });
+      pictureJobs.set("seal-" + category, { steps: () => atOnce(() => sealImage(category, false)), ratio: SEAL_RATIO });
+      pictureJobs.set("seal-" + category + "-landmark", { steps: () => atOnce(() => sealImage(category, true)), ratio: SEAL_RATIO });
       // An unlocked asset's seal: the same, without the padlock.
-      map.addImage("seal-" + category + "-open", sealImage(category, false, false), { pixelRatio: SEAL_RATIO });
-      map.addImage("seal-" + category + "-landmark-open", sealImage(category, true, false), { pixelRatio: SEAL_RATIO });
+      pictureJobs.set("seal-" + category + "-open", { steps: () => atOnce(() => sealImage(category, false, false)), ratio: SEAL_RATIO });
+      pictureJobs.set("seal-" + category + "-landmark-open", { steps: () => atOnce(() => sealImage(category, true, false)), ratio: SEAL_RATIO });
     }
     // The city's fog, in two parts drawn by the map itself, so it stays fixed to the ground as the
     // map moves. Its own copy of the assets, cut into tiles no smaller than zoom 12's (about 10 km)
@@ -623,7 +676,7 @@ function start() {
       paint: { ...hazeShape, "heatmap-opacity": 0, "heatmap-opacity-transition": { duration: 0 } },
     });
     // ...and each locked asset hides in a thick bank of its own, standing out in the haze.
-    for (let shape = 0; shape < CLOUD_SHAPES.length; shape++) map.addImage("cloud-" + shape, cloudImage(CLOUD_SHAPES[shape]), { pixelRatio: CLOUD_RATIO });
+    for (let shape = 0; shape < CLOUD_SHAPES.length; shape++) pictureJobs.set("cloud-" + shape, { steps: () => cloudSteps(CLOUD_SHAPES[shape]), ratio: CLOUD_RATIO });
     const bankLayout = {
       "icon-image": ["concat", "cloud-", ["to-string", ["get", "cloud"]]],
       "icon-rotate": ["get", "turn"],
@@ -860,6 +913,8 @@ function start() {
     });
 
     loaded = true;
+    // Without an opening the pictures start at once; with one, once it is over.
+    if (!intro) drawPicturesLater();
     pending.forEach((command) => window.vagabondsMap.receive(command));
     pending = [];
   });
@@ -2764,7 +2819,10 @@ function start() {
    * the middle the noise frays it into wisps, while the heart stays whole (colors.cloud).
    */
   let cloudNoise = null;
-  function cloudImage(seed) {
+  /** Rows worked out between two pauses of cloudSteps. */
+  const CLOUD_ROWS_A_STEP = 6;
+  /** The bank's picture, worked out a few rows a step (see drawPicturesLater). */
+  function* cloudSteps(seed) {
     cloudNoise = cloudNoise || tileableNoise(59);
     const width = CLOUD_W * CLOUD_RATIO;
     const height = CLOUD_H * CLOUD_RATIO;
@@ -2790,6 +2848,7 @@ function start() {
     const grid = new Float32Array(width * height);
     for (let py = 0; py < height; py++) {
       for (let px = 0; px < width; px++) grid[py * width + px] = thickness(px / CLOUD_RATIO - CLOUD_W / 2, py / CLOUD_RATIO - CLOUD_H / 2);
+      if (py % CLOUD_ROWS_A_STEP === CLOUD_ROWS_A_STEP - 1) yield;
     }
     const above = 4 * CLOUD_RATIO;
     const data = new Uint8ClampedArray(width * height * 4);
@@ -2809,6 +2868,7 @@ function start() {
         data[k + 2] = color[2];
         data[k + 3] = 255 * alpha * 0.92;
       }
+      if (py % CLOUD_ROWS_A_STEP === CLOUD_ROWS_A_STEP - 1) yield;
     }
     return { width, height, data };
   }
@@ -2949,18 +3009,16 @@ function start() {
 
   /**
    * The opening: drifting fog, Turkey's border traced in glowing gold through it, then the
-   * fog breaks up from the middle of the country outwards while the camera comes down from
-   * a tilted, turned view. The provinces with assets light up last, with one pulse.
+   * fog breaks up from the middle of the country outwards over a still map. The provinces
+   * with assets light up last, with one pulse.
    */
   function startIntro() {
-    const zoom = map.getZoom();
-    // A gentle zoom in, flat: a tilted, turning camera loads many more tiles and stutters on phones.
-    map.jumpTo({ zoom: zoom - 0.5 });
+    // The camera stays still: moving it as the fog parts loads new tiles at that very moment and the
+    // drawing stutters on phones. The fog and the traced border carry the opening alone.
     intro = intro || newIntro();
     const begin = () => {
       if (!intro || intro.start !== Infinity) return;
       intro.start = performance.now();
-      map.easeTo({ zoom, duration: INTRO_MS, easing: (t) => 1 - Math.pow(1 - t, 3) });
       // The provinces show as the fog parts; the ones with assets light up a moment later.
       setTimeout(() => map.setPaintProperty("province-borders", "line-opacity", 1), INTRO_MS * 0.42);
       setTimeout(() => {
@@ -3069,6 +3127,7 @@ function start() {
   function endIntroNow() {
     if (!intro) return;
     intro = null;
+    drawPicturesLater();
     map.stop();
     map.jumpTo({ pitch: 0, bearing: 0, ...(turkeyView ? { center: turkeyView.center, zoom: turkeyView.zoom } : {}) });
     map.setPaintProperty("province-borders", "line-opacity", 1);
@@ -3096,6 +3155,7 @@ function start() {
     if (elapsed >= 0.75 && !labelsRevealed) revealLabels();
     if (elapsed >= 1) {
       intro = null;
+      drawPicturesLater();
       // The opening starts further out than the limit; the limits apply once it is over.
       lockToTurkey();
     }
