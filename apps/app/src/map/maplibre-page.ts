@@ -900,12 +900,14 @@ function start() {
   }
 
   // Provinces and the opening fog.
-  /** The fog lifts over this long once the tiles are drawn. */
-  const INTRO_MS = 4200;
-  /** Tiles get this long to arrive before the fog lifts anyway; the fog keeps drifting meanwhile. */
-  const INTRO_WAIT_MS = 2000;
-  /** Fog cells across the screen; the browser smooths them up into soft clouds. */
-  const FOG_CELLS = 72;
+  /** The fog lifts over this long once the tiles are drawn: short, the visitor came for the map. */
+  const INTRO_MS = 2400;
+  /** Tiles get this long to arrive before the fog lifts anyway: the fog hides them meanwhile, so hardly a wait. */
+  const INTRO_WAIT_MS = 250;
+  /** How long the closed fog waits for the provinces before it opens without them. */
+  const PROVINCES_WAIT_MS = 3000;
+  /** Fog cells across the screen; the browser smooths them up into soft clouds. Fewer is lighter on phones. */
+  const FOG_CELLS = 48;
   /** Side of the repeating noise the clouds are cut from. */
   const NOISE_SIZE = 64;
   /** Middle of Turkey: the fog parts from here outwards. */
@@ -2952,12 +2954,13 @@ function start() {
    */
   function startIntro() {
     const zoom = map.getZoom();
-    map.jumpTo({ zoom: zoom - 0.9, pitch: 48, bearing: -16 });
+    // A gentle zoom in, flat: a tilted, turning camera loads many more tiles and stutters on phones.
+    map.jumpTo({ zoom: zoom - 0.5 });
     intro = intro || newIntro();
     const begin = () => {
       if (!intro || intro.start !== Infinity) return;
       intro.start = performance.now();
-      map.easeTo({ zoom, pitch: 0, bearing: 0, duration: INTRO_MS, easing: (t) => 1 - Math.pow(1 - t, 3) });
+      map.easeTo({ zoom, duration: INTRO_MS, easing: (t) => 1 - Math.pow(1 - t, 3) });
       // The provinces show as the fog parts; the ones with assets light up a moment later.
       setTimeout(() => map.setPaintProperty("province-borders", "line-opacity", 1), INTRO_MS * 0.42);
       setTimeout(() => {
@@ -3190,7 +3193,7 @@ function start() {
       };
       if (loaded) open();
       else map.once("load", open);
-    }, INTRO_WAIT_MS * 2);
+    }, PROVINCES_WAIT_MS);
   }
 
   function showNetwork(next) {

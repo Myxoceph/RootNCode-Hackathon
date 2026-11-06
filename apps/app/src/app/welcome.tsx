@@ -15,6 +15,7 @@ import { announce } from "@/lib/announce";
 import { useLastCity } from "@/lib/last-city";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { dayAsset, nearestBadge, weatherMood } from "@/lib/welcome-lines";
+import { loadMaplibre } from "@/vendor";
 import { localeTag, useLang, useMessages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -127,6 +128,8 @@ export default function WelcomePage() {
   // The page rises in; each part a moment after the one above it.
   const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
   useEffect(() => {
+    // The map's library starts loading while the visitor reads, so the map opens at once after.
+    void loadMaplibre();
     announce(w.announce(name));
     if (!reduced) Animated.timing(enter, { toValue: 1, duration: 1000, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
     // Said once, with the name the page opened with.
