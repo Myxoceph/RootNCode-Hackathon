@@ -1818,6 +1818,7 @@ function start() {
    * crowd (or to the whole province), and the assets come up above the fog with their names.
    * Back out: the fog lifts and the camera returns to Turkey.
    */
+  let shownAssetsKey = null;
   function showCity(city) {
     const plate = city ? city.plate : null;
     if (plate !== cityPlate) closeRelated(false);
@@ -1831,8 +1832,14 @@ function start() {
       city && plate === cityPlate && cityLanded && motion
         ? city.assets.filter((asset) => asset.unlocked && cityAssets.some((before) => before.id === asset.id && !before.unlocked))
         : [];
-    map.getSource("city-assets").setData(assets);
-    map.getSource("city-fog").setData(assets);
+    // The same assets again (the screen sends the city anew when only its settings change): not
+    // handed to the map again, which would cut them into tiles all over.
+    const assetsKey = JSON.stringify(assets);
+    if (assetsKey !== shownAssetsKey) {
+      shownAssetsKey = assetsKey;
+      map.getSource("city-assets").setData(assets);
+      map.getSource("city-fog").setData(assets);
+    }
     cityAssets = city ? city.assets : [];
     const liftsAt = performance.now() + FOG_LIFTS_AFTER_MS;
     clearings = new Map(

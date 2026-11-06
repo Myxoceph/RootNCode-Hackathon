@@ -111,7 +111,8 @@ function ThemedStack() {
             headerTitleStyle: { fontFamily: fontFamily.display },
           }}
         >
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          {/* No slide into the tabs: from the welcome page the map is already made (prefetched) and simply shows. */}
+          <Stack.Screen name="(tabs)" options={{ headerShown: false, animation: "none" }} />
           {/* Camera screens are full screen and always dark; they draw their own back button. */}
           <Stack.Screen
             name="visit-seal"

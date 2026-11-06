@@ -12,7 +12,7 @@ import Svg, { Circle, Defs, LinearGradient, Path, RadialGradient, Rect, Stop } f
 import { useCities, useCommunity, useWeather, useWeatherAt } from "@/data";
 import { announce } from "@/lib/announce";
 import { useHere } from "@/lib/here";
-import { useLastCity } from "@/lib/last-city";
+import { useLastCity, useOpenCity } from "@/lib/last-city";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { dayLabel, outing } from "@/lib/welcome-lines";
 import { loadMaplibre } from "@/vendor";
@@ -95,6 +95,13 @@ export default function WelcomePage() {
 
   const upper = (text: string) => text.toLocaleUpperCase(localeTag(lang));
   const date = upper(today.toLocaleDateString(localeTag(lang), { weekday: "long", day: "numeric", month: "long" }));
+
+  // With a city left open on the map, the map is made ready behind this page (it opens there with no
+  // opening to watch), so "Devam et" shows it at once instead of waiting for it to load.
+  const leftOpen = useOpenCity();
+  useEffect(() => {
+    if (leftOpen) router.prefetch("/map");
+  }, [leftOpen, router]);
 
   // The page rises in; each part a moment after the one above it.
   const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
