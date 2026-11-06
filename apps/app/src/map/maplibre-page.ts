@@ -1132,6 +1132,13 @@ function start() {
   let placesLevel = 0;
   const PLACES_FADE_MS = 900;
   let sheetLevelAt = 0;
+  /**
+   * The zoom the fog's look follows: it trails the camera's, so a quick zoom (a seal chosen, an
+   * unlocking scene) changes the fog's look slowly after it instead of flashing through it.
+   */
+  let fogZoom = null;
+  let sheetFogAt = 0;
+  const FOG_LOOK_MS = 650;
 
   function sheetNoise(seed) {
     const p = new Uint8Array(512);
@@ -1635,8 +1642,11 @@ function start() {
       clearingShader(
         gl,
         gl.VERTEX_SHADER,
-        "uniform mat4 matrix; attribute vec2 place; attribute vec2 corner; attribute vec2 ground; varying vec2 uv; varying vec2 merc; varying vec2 km;" +
-          "void main() { uv = corner; merc = place; km = ground; gl_Position = matrix * vec4(place, 0.0, 1.0); }",
+        // Each piece is drawn around its own middle (box: its corners from there) with a matrix
+        // worked out for it in double precision: whole-world coordinates in single precision step by
+        // pixels up close, and the fog would shake against the streets as the camera moves.
+        "uniform mat4 matrix; uniform vec4 box; uniform vec4 wideCorners; attribute vec2 corner; attribute vec2 ground; varying vec2 uv; varying vec2 wideUv; varying vec2 km;" +
+          "void main() { uv = corner; wideUv = mix(wideCorners.xy, wideCorners.zw, corner); km = ground; gl_Position = matrix * vec4(mix(box.xy, box.zw, corner), 0.0, 1.0); }",
       ),
     );
     gl.attachShader(
@@ -1644,9 +1654,9 @@ function start() {
       clearingShader(
         gl,
         gl.FRAGMENT_SHADER,
-        "precision highp float; uniform sampler2D field; uniform sampler2D wideField; uniform vec4 wideBox; uniform vec2 wideSize; uniform float isPlace; uniform float placesLevel;" +
+        "precision highp float; uniform sampler2D field; uniform sampler2D wideField; uniform vec2 wideSize; uniform float isPlace; uniform float placesLevel;" +
           "uniform float zoom; uniform float level; uniform vec3 top; uniform vec3 middle; uniform vec3 bottom;" +
-          "varying vec2 uv; varying vec2 merc; varying vec2 km;" +
+          "varying vec2 uv; varying vec2 wideUv; varying vec2 km;" +
           "float hash(vec2 p) { vec3 q = fract(vec3(p.xyx) * 0.1031); q += dot(q, q.yzx + 33.33); return fract((q.x + q.y) * q.z); }" +
           "float noise(vec2 p) { vec2 i = floor(p); vec2 f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);" +
           " return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y); }" +
@@ -1672,7 +1682,7 @@ function start() {
           "void main() {" +
           // The wide cover draws the fog everywhere, the same at every zoom; a place's piece only adds
           // what its assets keep on top of it (its detail never thins the fog), so there is no seam.
-          " vec4 W = wideAt((merc - wideBox.xy) / (wideBox.zw - wideBox.xy));" +
+          " vec4 W = wideAt(wideUv);" +
           " vec4 L = isPlace > 0.5 ? texture2D(field, uv) : vec4(0.0);" +
           // Noise in kilometres on the ground from the city's middle, the same for every piece (worked
           // out on the CPU: from the map's own coordinates it would step in metres up close).
@@ -1682,8 +1692,11 @@ function start() {
           " float wisp = fbm(p * 19.0 + street * 2.0);" +
           " float puff = fbm(p * 0.55 + vec2(noise(p * 0.3), noise(p * 0.3 + 4.1)) * 0.6);" +
           " float fine = fbm(p * 3.5 + (w - 0.5) * 0.8);" +
-          " float scatter = smoothstep(11.4, 13.0, zoom);" +
-          " float close = smoothstep(14.3, 15.4, zoom);" +
+          // The fog's look changes with the zoom (scattered clouds, then open streets); each spot turns
+          // a little before or after its neighbours, so the change spreads over the fog instead of washing it whole.
+          " float turn = (fine - 0.5) * 0.9;" +
+          " float scatter = smoothstep(11.4, 13.0, zoom + turn);" +
+          " float close = smoothstep(14.3, 15.4, zoom + turn);" +
           " float base = fog(W, vec4(0.0), scatter, close, puff, fine, street, wisp);" +
           " float a = base;" +
           " if (isPlace > 0.5) { float whole = fog(W, L, scatter, close, puff, fine, street, wisp); a = max(0.0, whole - base) / max(0.001, 1.0 - base) * placesLevel; }" +
@@ -1708,10 +1721,9 @@ function start() {
     id: "city-sheet",
     type: "custom",
     renderingMode: "2d",
-    render(gl, args) {
+    render(gl) {
       for (const gone of sheetsGone) {
         if (gone.texture) gl.deleteTexture(gone.texture);
-        if (gone.places) gl.deleteBuffer(gone.places);
         if (gone.ground) gl.deleteBuffer(gone.ground);
       }
       sheetsGone = [];
@@ -1727,10 +1739,6 @@ function start() {
         // Room only: the pixels go up a band at a time below, so no frame carries a whole sheet.
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, piece.width, piece.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
         piece.uploaded = 0;
-        const [left, upper, right, lower] = piece.box;
-        piece.places = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, piece.places);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([left, upper, right, upper, left, lower, right, lower]), gl.STATIC_DRAW);
       }
       // Each frame sends up to SHEET_UPLOAD_BYTES of the sheets still going up.
       let bytesLeft = SHEET_UPLOAD_BYTES;
@@ -1762,7 +1770,18 @@ function start() {
       sheetLevelAt = now;
       sheetLevel = sheetLevel < target ? Math.min(target, sheetLevel + stepBy) : Math.max(target, sheetLevel - stepBy);
       if (sheetLevel !== target) map.triggerRepaint();
-      if (sheetLevel <= 0) return;
+      if (sheetLevel <= 0) {
+        fogZoom = null;
+        return;
+      }
+      const zoomNow = map.getZoom();
+      if (fogZoom === null || !motion) fogZoom = zoomNow;
+      else {
+        fogZoom += (zoomNow - fogZoom) * (1 - Math.exp(-Math.min(100, now - sheetFogAt) / FOG_LOOK_MS));
+        if (Math.abs(zoomNow - fogZoom) < 0.003) fogZoom = zoomNow;
+        else map.triggerRepaint();
+      }
+      sheetFogAt = now;
       const shared = sheetResources(gl);
       gl.useProgram(shared.program);
       gl.disable(gl.DEPTH_TEST);
@@ -1770,22 +1789,20 @@ function start() {
       gl.disable(gl.CULL_FACE);
       gl.enable(gl.BLEND);
       gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-      // Mercator (0 to 1) to the screen.
-      gl.uniformMatrix4fv(gl.getUniformLocation(shared.program, "matrix"), false, args.defaultProjectionData.mainMatrix);
+      // Mercator (0 to 1) to the screen, in double precision; each piece moves it to its own middle below.
+      const toScreen = map.transform.mercatorMatrix;
       gl.uniform1i(gl.getUniformLocation(shared.program, "field"), 0);
       gl.uniform1i(gl.getUniformLocation(shared.program, "wideField"), 1);
-      gl.uniform1f(gl.getUniformLocation(shared.program, "zoom"), map.getZoom());
+      gl.uniform1f(gl.getUniformLocation(shared.program, "zoom"), fogZoom);
       gl.uniform1f(gl.getUniformLocation(shared.program, "level"), sheetLevel);
       gl.uniform1f(gl.getUniformLocation(shared.program, "placesLevel"), placesLevel);
       gl.uniform3fv(gl.getUniformLocation(shared.program, "top"), shared.top);
       gl.uniform3fv(gl.getUniformLocation(shared.program, "middle"), shared.middle);
       gl.uniform3fv(gl.getUniformLocation(shared.program, "bottom"), shared.bottom);
-      const place = gl.getAttribLocation(shared.program, "place");
       const corner = gl.getAttribLocation(shared.program, "corner");
       gl.bindBuffer(gl.ARRAY_BUFFER, shared.corners);
       gl.enableVertexAttribArray(corner);
       gl.vertexAttribPointer(corner, 2, gl.FLOAT, false, 0, 0);
-      gl.enableVertexAttribArray(place);
       const ready = cover ? [cover, ...(placesUp ? placePieces : [])] : [];
       // The wide cover comes first and every piece reads it.
       const wide = cover;
@@ -1795,7 +1812,6 @@ function start() {
         gl.activeTexture(gl.TEXTURE1);
         gl.bindTexture(gl.TEXTURE_2D, wide.texture);
         gl.activeTexture(gl.TEXTURE0);
-        gl.uniform4f(gl.getUniformLocation(shared.program, "wideBox"), left, upper, right, lower);
         gl.uniform2f(gl.getUniformLocation(shared.program, "wideSize"), wide.width, wide.height);
         const originX = (left + right) / 2;
         const originY = (upper + lower) / 2;
@@ -1814,13 +1830,20 @@ function start() {
           gl.vertexAttribPointer(ground, 2, gl.FLOAT, false, 0, 0);
           gl.uniform1f(gl.getUniformLocation(shared.program, "isPlace"), piece.province ? 0 : 1);
           gl.bindTexture(gl.TEXTURE_2D, piece.texture);
-          gl.bindBuffer(gl.ARRAY_BUFFER, piece.places);
-          gl.vertexAttribPointer(place, 2, gl.FLOAT, false, 0, 0);
+          const [x0, y0, x1, y1] = piece.box;
+          const cx = (x0 + x1) / 2;
+          const cy = (y0 + y1) / 2;
+          const matrix = Array.from(toScreen);
+          for (let row = 0; row < 4; row++) matrix[12 + row] = toScreen[row] * cx + toScreen[4 + row] * cy + toScreen[12 + row];
+          gl.uniformMatrix4fv(gl.getUniformLocation(shared.program, "matrix"), false, new Float32Array(matrix));
+          gl.uniform4f(gl.getUniformLocation(shared.program, "box"), x0 - cx, y0 - cy, x1 - cx, y1 - cy);
+          const wideX = (x) => (x - left) / (right - left);
+          const wideY = (y) => (y - upper) / (lower - upper);
+          gl.uniform4f(gl.getUniformLocation(shared.program, "wideCorners"), wideX(x0), wideY(y0), wideX(x1), wideY(y1));
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         }
         gl.disableVertexAttribArray(ground);
       }
-      gl.disableVertexAttribArray(place);
       gl.disableVertexAttribArray(corner);
     },
   };
