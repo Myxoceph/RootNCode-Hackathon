@@ -10,7 +10,7 @@ export const MAX_LEG_WALK_METERS = 3_000;
 
 // Used while the dataset has no `visit` block (as of 2026-10 no record has one).
 export const DEFAULT_VISIT_MINUTES: Record<string, number> = {
-  kulliye: 45, cami: 20, mescit: 10, turbe: 10, hazire: 10, hamam: 20, medrese: 15, imaret: 15,
+  kulliye: 45, cami: 25, mescit: 15, turbe: 15, hazire: 10, hamam: 20, medrese: 30, imaret: 15,
   darussifa: 15, mektep: 10, tekke: 15, han: 20, bedesten: 20, kervansaray: 25, cesme: 5, sivil: 10,
   makam: 10, kilise: 15, kutuphane: 10, namazgah: 5, kopru: 10, degirmen: 10, hoyuk: 15,
 };
