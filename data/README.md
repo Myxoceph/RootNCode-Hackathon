@@ -130,7 +130,7 @@ Kısaltılmış örnek; tamamı [bursa-osmangazi-ulucami.json](eserler/bursa/osm
             "prepared_by": "...", "reviewed_by": null, "from": "Ulucamii", "todos": [], "data_quality_notes": [] },
   "name": { "tr": "Ulucami", "en": "Ulucami (Grand Mosque of Bursa)" },
   "subtitle": { "tr": "...", "en": "..." },
-  "alternate_names": [{ "tr": "Bursa'nın Ayasofyası", "en": "...", "note": "..." }],
+  "alternate_names": [{ "tr": "Bursa'nın Ayasofyası", "en": "...", "note": "...", "note_en": "..." }],
   "type": "cami", "secondary_types": [], "parent_id": null, "era": "erken-osmanli", "tags": ["..."],
   "location": { "region": "marmara", "city": "bursa", "district": "Osmangazi", "neighborhood": "...",
                 "address": "...", "coordinates": { "lat": 40.18417, "lng": 29.06167, "source": "manual",
@@ -345,7 +345,7 @@ CREATE TABLE asset (
   founder_role          text,
   founder_confidence    confidence,
   architect_name        text,                       -- kesin biliniyorsa
-  architect_candidates  jsonb NOT NULL DEFAULT '[]', -- [{name, note}]
+  architect_candidates  jsonb NOT NULL DEFAULT '[]', -- [{name, note, note_en}]
   architect_confidence  confidence,
   waqf_name             text,
   waqf_deed             jsonb,                       -- {date_display, excerpt{tr,en}}

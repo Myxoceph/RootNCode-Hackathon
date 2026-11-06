@@ -90,13 +90,18 @@ export type AssetRecordRow = Prisma.assetGetPayload<{ select: typeof recordSelec
   media: Array<{ media_key: string; caption_tr: string; caption_en: string | null; alt_tr: string; alt_en: string | null; is_cover: boolean; dossier_after: string | null }>;
 };
 
-const AlternateNames = z.array(z.object({ tr: z.string(), en: z.string().nullish(), note: z.string().nullish() }));
-const Candidates = z.array(z.object({ name: z.string(), note: z.string().nullish() }));
+const AlternateNames = z.array(z.object({ tr: z.string(), en: z.string().nullish(), note: z.string().nullish(), note_en: z.string().nullish() }));
+const Candidates = z.array(z.object({ name: z.string(), note: z.string().nullish(), note_en: z.string().nullish() }));
 const Deed = z.object({ excerpt: z.object({ tr: z.string().nullish(), en: z.string().nullish() }).nullish(), date_display: z.string().nullish() }).nullish();
 
 const nonEmpty = (text: string | null | undefined) => (text && text.trim() ? text.trim() : null);
 const text = (tr: string | null | undefined, en: string | null | undefined) => ({ tr: tr ?? "", en: nonEmpty(en) });
 const optionalText = (tr: string | null | undefined, en: string | null | undefined) => (nonEmpty(tr) || nonEmpty(en) ? text(tr, en) : null);
+/** A note in a JSON column: `note` and `note_en`, each only when there is one. */
+const noteFields = (note: { tr: string; en: string | null } | null) => ({
+  ...(nonEmpty(note?.tr) && { note: nonEmpty(note?.tr) }),
+  ...(nonEmpty(note?.en) && { note_en: nonEmpty(note?.en) }),
+});
 const isoDate = (date: Date | null) => (date ? date.toISOString().slice(0, 10) : null);
 type Confidence = AdminAssetRecord["sections"][number]["confidence"];
 const confidence = (value: string | null): Confidence | null => (value ? (value as Confidence) : null);
@@ -112,7 +117,7 @@ export function toAssetRecord(row: AssetRecordRow): AdminAssetRecord {
     era: row.era_code,
     parentId: row.parent_id,
     tags: row.tags,
-    alternateNames: AlternateNames.parse(row.alternate_names).map((n) => ({ name: text(n.tr, n.en), note: nonEmpty(n.note) })),
+    alternateNames: AlternateNames.parse(row.alternate_names).map((n) => ({ name: text(n.tr, n.en), note: optionalText(n.note, n.note_en) })),
     city: row.city_code,
     district: row.district,
     neighborhood: nonEmpty(row.neighborhood),
@@ -131,7 +136,7 @@ export function toAssetRecord(row: AssetRecordRow): AdminAssetRecord {
     founder: { name: nonEmpty(row.founder_name), role: nonEmpty(row.founder_role), confidence: confidence(row.founder_confidence) },
     architect: {
       name: nonEmpty(row.architect_name),
-      candidates: Candidates.parse(row.architect_candidates).map((c) => ({ name: c.name, note: nonEmpty(c.note) })),
+      candidates: Candidates.parse(row.architect_candidates).map((c) => ({ name: c.name, note: optionalText(c.note, c.note_en) })),
       confidence: confidence(row.architect_confidence),
     },
     waqf: {
@@ -217,7 +222,7 @@ export function assetColumns(r: AdminAssetRecord) {
     name_en: orNull(r.name.en),
     subtitle_tr: orNull(r.subtitle?.tr),
     subtitle_en: orNull(r.subtitle?.en),
-    alternate_names: r.alternateNames.map((n) => ({ tr: n.name.tr, en: n.name.en, note: n.note })),
+    alternate_names: r.alternateNames.map((n) => ({ tr: n.name.tr, en: n.name.en, ...noteFields(n.note) })),
     summary_tr: r.summary.tr,
     summary_en: orNull(r.summary.en),
     city_code: r.city,
@@ -239,7 +244,7 @@ export function assetColumns(r: AdminAssetRecord) {
     founder_role: orNull(r.founder.role),
     founder_confidence: r.founder.confidence,
     architect_name: orNull(r.architect.name),
-    architect_candidates: r.architect.candidates.filter((c) => c.name.trim()).map((c) => ({ name: c.name, note: c.note })),
+    architect_candidates: r.architect.candidates.filter((c) => c.name.trim()).map((c) => ({ name: c.name, ...noteFields(c.note) })),
     architect_confidence: r.architect.confidence,
     waqf_name: orNull(r.waqf.name),
     waqf_deed:
@@ -416,7 +421,7 @@ export function datasetJson(
     parent_id: r.parentId,
     era: r.era,
     tags: r.tags,
-    alternate_names: r.alternateNames.map((n) => ({ tr: n.name.tr, en: n.name.en, note: n.note })),
+    alternate_names: r.alternateNames.map((n) => ({ tr: n.name.tr, en: n.name.en, ...noteFields(n.note) })),
     location: {
       region,
       city: r.city,
@@ -428,7 +433,7 @@ export function datasetJson(
     summary: i18n(r.summary),
     dating: r.dating.display || r.dating.startYear !== null ? { display: i18n(r.dating.display), start_year: r.dating.startYear, end_year: r.dating.endYear, hijri_year: r.dating.hijriYear, century: r.dating.century, basis: i18n(r.dating.basis), confidence: r.dating.confidence ?? "certain", ...refs } : null,
     founder: r.founder.name ? { name: r.founder.name, role: r.founder.role, confidence: r.founder.confidence ?? "certain", ...refs } : null,
-    architect: r.architect.name || r.architect.candidates.length ? { name: r.architect.name, candidates: r.architect.candidates, confidence: r.architect.confidence ?? "probable", ...refs } : null,
+    architect: r.architect.name || r.architect.candidates.length ? { name: r.architect.name, candidates: r.architect.candidates.map((c) => ({ name: c.name, ...noteFields(c.note) })), confidence: r.architect.confidence ?? "probable", ...refs } : null,
     waqf: r.waqf.name || r.waqf.conditions ? { name: r.waqf.name, deed: r.waqf.deedDate || r.waqf.deedExcerpt ? { date_display: r.waqf.deedDate, excerpt: i18n(r.waqf.deedExcerpt) } : null, conditions: i18n(r.waqf.conditions), land_note: i18n(r.waqf.landNote), confidence: r.waqf.confidence ?? "certain", ...refs } : null,
     sections: r.sections.map((s, i) => ({ id: s.id, order: i + 1, title: i18n(s.title), body: i18n(s.body), confidence: s.confidence, ...refs })),
     highlights: r.highlights.map((h) => ({ feature: h.feature, title: i18n(h.title), hint: i18n(h.hint), section_id: h.sectionId })),

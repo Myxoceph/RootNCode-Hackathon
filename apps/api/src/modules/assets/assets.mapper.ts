@@ -45,9 +45,9 @@ export interface MapperContext {
 
 // JSON columns: shapes come from data/schema/eser.schema.json.
 const AlternateNamesSchema = z.array(
-  z.object({ tr: z.string(), en: z.string().nullish(), note: z.string().nullish() }),
+  z.object({ tr: z.string(), en: z.string().nullish(), note: z.string().nullish(), note_en: z.string().nullish() }),
 );
-const CandidatesSchema = z.array(z.object({ name: z.string(), note: z.string().nullish() }));
+const CandidatesSchema = z.array(z.object({ name: z.string(), note: z.string().nullish(), note_en: z.string().nullish() }));
 const WaqfDeedSchema = z
   .object({
     excerpt: z.object({ tr: z.string().nullish(), en: z.string().nullish() }).nullish(),
@@ -238,8 +238,8 @@ function groupCitations(record: AssetDetailRecord, lang: Lang) {
   };
 }
 
-function toNamedNotes(names: { name: string; note?: string | null | undefined }[]): NamedNote[] {
-  return names.map(({ name, note }) => ({ name, note: nonEmpty(note) }));
+function toNamedNotes(names: { name: string; note?: string | null | undefined; note_en?: string | null | undefined }[], lang: Lang): NamedNote[] {
+  return names.map(({ name, note, note_en }) => ({ name, note: pick(note, note_en, lang) }));
 }
 
 /** The asset's ambient sound key: its own, else its type's default. */
@@ -261,9 +261,9 @@ export function toAssetDetail(
 
   const alternateNames = AlternateNamesSchema.parse(record.alternate_names).map((n) => ({
     name: pick(n.tr, n.en, lang),
-    note: nonEmpty(n.note),
+    note: pick(n.note, n.note_en, lang),
   }));
-  const candidates = toNamedNotes(CandidatesSchema.parse(record.architect_candidates));
+  const candidates = toNamedNotes(CandidatesSchema.parse(record.architect_candidates), lang);
   const deed = WaqfDeedSchema.parse(record.waqf_deed);
 
   const dating = {
