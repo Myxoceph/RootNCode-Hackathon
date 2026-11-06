@@ -116,7 +116,7 @@ export const RoutePlanResponseSchema = z.strictObject({
     visitMinutes: z.int().min(0),
     totalMinutes: z.int().min(0),
   }),
-  /** Visible sites matching the theme in this city. */
+  /** Visible sites matching the theme in this city; a complex counts once, without its buildings. */
   candidateCount: z.int().min(0),
   /** Matching sites left out because their location is not known yet. */
   skippedWithoutCoordinates: z.int().min(0),
@@ -126,11 +126,20 @@ export const RoutePlanResponseSchema = z.strictObject({
   estimateNote: z.string().min(1),
 });
 
-/** `half`: 09:00–13:30; `1`: 09:00–17:30 with a lunch break; `2` to `5`: that many such days, no site twice. */
+/** `half`: 09:00–13:30, 4 stops; `1`: 09:00–17:30, 8 stops, a lunch break; `2` to `5`: that many such days, no site twice. */
 export const TripDurationSchema = z.enum(["half", "1", "2", "3", "4", "5"]);
 
 /** How the weather shaped a day of the trip; `text` says it in the response language. */
 export const TripWeatherNoteCodeSchema = z.enum(["afternoon_rain", "heat", "rain_possible", "clear", "unavailable"]);
+
+/** A bus or tram instead of walking a long leg; only where public transport is planned (Konya). */
+export const TripLegTransitSchema = z.strictObject({
+  /** Departure to arrival, walking to and from the stops included. */
+  minutes: z.int().min(0),
+  /** What is still walked. */
+  walkMeters: z.int().min(0),
+  rides: z.array(z.strictObject({ line: z.string().min(1), from: z.string().min(1), to: z.string().min(1) })).min(1),
+});
 
 export const TripStopItemSchema = z.strictObject({
   kind: z.literal("stop"),
@@ -140,6 +149,8 @@ export const TripStopItemSchema = z.strictObject({
   /** Estimated walk from the previous stop or meal; 0 for the first stop of a day. */
   legMeters: z.int().min(0),
   legMinutes: z.int().min(0),
+  /** The other way to take this leg when it is long; the times above stay those of walking. The default keeps trips saved before 0.3.31 valid. */
+  transit: TripLegTransitSchema.nullable().default(null),
   visitMinutes: z.int().positive(),
   visitMinutesEstimated: z.boolean(),
   setting: VisitSettingSchema,
@@ -300,6 +311,7 @@ export type TripDuration = z.infer<typeof TripDurationSchema>;
 export type TripWeatherNoteCode = z.infer<typeof TripWeatherNoteCodeSchema>;
 export type TripItem = z.infer<typeof TripItemSchema>;
 export type TripDay = z.infer<typeof TripDaySchema>;
+export type TripLegTransit = z.infer<typeof TripLegTransitSchema>;
 export type TripPlanResponse = z.infer<typeof TripPlanResponseSchema>;
 export type WeatherAdvice = z.infer<typeof WeatherAdviceSchema>;
 export type CurrentWeather = z.infer<typeof CurrentWeatherSchema>;
