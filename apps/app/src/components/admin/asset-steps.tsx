@@ -2,13 +2,17 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import type { AdminAsset, AdminAssetRecord, AssetDetail, MetaEnumsResponse } from "@vagabonds/contracts";
 import { fontFamily, palette, Text } from "@vagabonds/ui";
 import { useState, type ReactNode } from "react";
-import { Linking, Pressable, StyleSheet, View } from "react-native";
+import { ADMIN_PHOTO_MAX_BYTES, ADMIN_PHOTO_MIN_SIDE, ADMIN_PHOTO_TYPES } from "@vagabonds/contracts";
+import { Image, Linking, Platform, Pressable, StyleSheet, View } from "react-native";
 
 import { AssetImage } from "@/components/asset-image";
 import { type DossierPlacements } from "@/lib/dossier-photos";
 import { assetCategory, type MapCategory } from "@/map/asset-category";
 
-import { Badge, Button, Field, Picker, Toggle, useAdminColors, type IconName } from "./kit";
+import { deleteAssetPhoto, uploadAssetPhoto } from "@/data/admin";
+
+import { Badge, Button, Confirm, errorText, Field, Picker, Toggle, useAdminColors, type IconName } from "./kit";
+import { usePanel } from "./panel";
 import { BilingualField, Cell, ChoiceField, fieldId, newId, NumberField, RichTextField, Row, TagsField, TextField } from "./record-fields";
 
 /**
@@ -38,17 +42,16 @@ export interface StepProps {
   setCustomBlocks: (blocks: CustomBlockDraft[]) => void;
   /** Scrolls the phone to a place and marks it. */
   showPlace: (section: Section, place: string) => void;
+  /** The asset being edited; null while a new one is not saved yet (it has nowhere to put a photo). */
+  assetId: string | null;
+  /** A photo was uploaded or removed: the server already has it, the editor reads it again. */
+  onPhotosChanged: () => Promise<void>;
 }
 
 export type Section = "pages" | "dossier";
 
-/** A block the admin adds to the dossier, in both languages, after the block it names. */
-export interface CustomBlockDraft {
-  id: string;
-  title: Pair;
-  body: Pair;
-  after: string;
-}
+/** A block the admin adds to the dossier, in both languages, after the block it names: the record's own. */
+export type CustomBlockDraft = R["customBlocks"][number];
 
 /** A name's or a candidate's note with one language changed; with neither language, no note. */
 type NoteText = { tr: string; en: string | null } | null;
@@ -397,8 +400,7 @@ export const STEPS: Step[] = [
     title: "Fotoğraflar",
     question: "Fotoğrafları düzenle.",
     shows: [{ in: "pages", place: "Sayfaların arka planı ve galeri" }],
-    help: "Kapak fotoğrafı ilk sayfada durur. Yeni fotoğraf yükleme yakında.",
-    when: (r) => r.media.length > 0,
+    help: "Kapak fotoğrafı ilk sayfada durur. Yeni fotoğrafı buradan yükleyebilirsin; yüklenen hemen kaydedilir.",
     done: (r) => r.media.length > 0,
     Body: (props) => (
       <View nativeID={fieldId("media")}>
@@ -835,7 +837,7 @@ export const STEPS: Step[] = [
     question: "Dosyaya kendi bölümünü eklemek ister misin?",
     shows: [{ in: "dossier", place: "Seçtiğin bölümden sonra, ayrı bir bölüm olarak" }],
     help: "Tarihçe, Zaman çizelgesi gibi ana bir bölüm olur. Metni alt başlık, kalın yazı, liste ve alıntıyla düzenleyebilirsin.",
-    done: () => false,
+    done: (r) => r.customBlocks.length > 0,
     Body: (props) => <CustomBlocks {...props} />,
   },
   {
@@ -848,7 +850,7 @@ export const STEPS: Step[] = [
     shows: [{ in: "dossier", place: "Seçtiğin bölümün hemen altı" }],
     help: "Bir yer seç, oraya koyacağın fotoğrafı seç. Bir yere birden çok fotoğraf koyabilirsin.",
     when: (r) => r.media.length > 0,
-    done: () => false,
+    done: (r) => r.media.some((m) => m.dossierAfter !== null),
     Body: (props) => <DossierPhotos {...props} />,
   },
 ];
@@ -1131,10 +1133,39 @@ function Inline({ label, children }: { label: string; children: ReactNode }) {
   );
 }
 
-function Photos({ record, set, base }: StepProps) {
+function Photos(props: StepProps) {
+  const { record, set, base, assetId, onPhotosChanged } = props;
   const a = useAdminColors();
+  // Uploading and removing are an admin's; a moderator sees the photos as they are.
+  const admin = usePanel().role === "admin";
+  const [removing, setRemoving] = useState<{ key: string; n: number } | null>(null);
+  const [busyKey, setBusyKey] = useState<string | null>(null);
+  const [removeError, setRemoveError] = useState<string | null>(null);
   const photos = new Map((base?.media ?? []).map((m) => [m.key, m]));
+  const remove = async (key: string) => {
+    if (!assetId) return;
+    setBusyKey(key);
+    setRemoveError(null);
+    try {
+      await deleteAssetPhoto(assetId, key);
+      setRemoving(null);
+      await onPhotosChanged();
+    } catch (error) {
+      setRemoving(null);
+      setRemoveError(errorText(error));
+    } finally {
+      setBusyKey(null);
+    }
+  };
   return (
+    <View style={{ gap: 14 }}>
+      {admin && <PhotoUpload assetId={assetId} first={record.media.length === 0} onUploaded={onPhotosChanged} />}
+      {removeError && <Message tone="error" text={removeError} />}
+      {record.media.length === 0 && !admin && (
+        <Text color="textSecondary" style={styles.note}>
+          Bu eserin henüz fotoğrafı yok.
+        </Text>
+      )}
     <View style={styles.photos}>
       {record.media.map((m, i) => {
         const photo = photos.get(m.key);
@@ -1169,10 +1200,248 @@ function Photos({ record, set, base }: StepProps) {
             <View style={{ padding: 10, gap: 8 }}>
               <PairField stacked label="Altında yazan" pair={m.caption} onChange={(caption) => edit({ caption: caption! })} placeholder="ör. Kadınlar kısmının kubbesi" placeholderEn="ör. The dome of the women's side" />
               <PairField stacked label="Ne görünüyor? (ekran okuyucu için)" pair={m.alt} onChange={(alt) => edit({ alt: alt! })} placeholder="ör. Tepesinde ışık delikleri olan kubbe" placeholderEn="ör. A dome with light holes at its top" />
+              {/* Only a photo uploaded from the panel can go; the dataset's come back with the next import. */}
+              {admin && m.uploaded && assetId && (
+                <Button
+                  label="Fotoğrafı kaldır"
+                  icon="trash-outline"
+                  kind="danger"
+                  small
+                  busy={busyKey === m.key}
+                  onPress={() => setRemoving({ key: m.key, n: i + 1 })}
+                />
+              )}
             </View>
           </View>
         );
       })}
+    </View>
+      {removing && (
+        <Confirm
+          title={`${removing.n}. fotoğraf kaldırılsın mı?`}
+          body="Fotoğraf eserden hemen kaldırılır; uygulamada da görünmez. Geri almak için yeniden yüklemen gerekir."
+          confirmLabel="Kaldır"
+          danger
+          busy={busyKey === removing.key}
+          onConfirm={() => void remove(removing.key)}
+          onCancel={() => setRemoving(null)}
+        />
+      )}
+    </View>
+  );
+}
+
+/** A photo picked to upload: its object URL (the preview, read again to send it), type, size and sides. */
+interface PickedPhoto {
+  uri: string;
+  type: (typeof ADMIN_PHOTO_TYPES)[number];
+  name: string;
+  bytes: number;
+  width: number;
+  height: number;
+}
+
+/**
+ * Asks for an asset photo in the panel's file dialog: a JPEG, PNG or WebP of at most 15 MB, its
+ * short side 300 px or more. A file that does not fit is refused here with the reason, before it is
+ * sent; null when nothing is chosen.
+ */
+function pickAssetPhoto(): Promise<PickedPhoto | null> {
+  if (Platform.OS !== "web" || typeof document === "undefined") {
+    return Promise.reject(new Error("Fotoğrafı panelin web sürümünden yükle."));
+  }
+  return new Promise((resolve, reject) => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = ADMIN_PHOTO_TYPES.join(",");
+    input.onchange = () => {
+      const file = input.files?.[0];
+      if (!file) return resolve(null);
+      if (!(ADMIN_PHOTO_TYPES as readonly string[]).includes(file.type)) return reject(new Error("Bu dosya türü desteklenmiyor: JPEG, PNG ya da WebP olmalı."));
+      if (file.size > ADMIN_PHOTO_MAX_BYTES) return reject(new Error("Dosya çok büyük: en çok 15 MB olabilir."));
+      const uri = URL.createObjectURL(file);
+      const image = new window.Image();
+      image.onload = () => {
+        if (Math.min(image.naturalWidth, image.naturalHeight) < ADMIN_PHOTO_MIN_SIDE) {
+          URL.revokeObjectURL(uri);
+          return reject(new Error(`Fotoğraf çok küçük: kısa kenarı en az ${ADMIN_PHOTO_MIN_SIDE} piksel olmalı.`));
+        }
+        resolve({ uri, type: file.type as PickedPhoto["type"], name: file.name, bytes: file.size, width: image.naturalWidth, height: image.naturalHeight });
+      };
+      image.onerror = () => {
+        URL.revokeObjectURL(uri);
+        reject(new Error("Fotoğraf açılamadı; başka bir dosya dene."));
+      };
+      image.src = uri;
+    };
+    input.click();
+  });
+}
+
+const megabytes = (bytes: number) => `${(bytes / (1024 * 1024)).toLocaleString("tr-TR", { maximumFractionDigits: 1 })} MB`;
+
+/**
+ * Uploading a new photo: pick a file, say what it shows and who took it, send it. The server keeps
+ * it at once (it does not wait for the record's save) and makes its sizes, which takes a few seconds.
+ */
+function PhotoUpload({ assetId, first, onUploaded }: { assetId: string | null; first: boolean; onUploaded: () => Promise<void> }) {
+  const a = useAdminColors();
+  const [picked, setPicked] = useState<PickedPhoto | null>(null);
+  const [alt, setAlt] = useState<Pair>({ tr: "", en: null });
+  const [caption, setCaption] = useState<Pair>({ tr: "", en: null });
+  const [credit, setCredit] = useState("");
+  const [cover, setCover] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [done, setDone] = useState<string | null>(null);
+  const [tried, setTried] = useState(false);
+
+  if (!assetId) {
+    return <Message tone="info" text="Fotoğraf yüklemek için önce eseri kaydet; kaydedince bu adımdan yükleyebilirsin." />;
+  }
+
+  const altText = alt.tr.trim();
+  const creditText = credit.trim();
+  const altProblem = altText.length < 3 ? "Ne göründüğünü en az 3 harfle yaz." : null;
+  const creditProblem = creditText.length < 2 ? "Fotoğrafı kimin çektiğini ya da kime ait olduğunu yaz." : null;
+  const altEnText = alt.en?.trim() ?? "";
+  const altEnProblem = altEnText.length > 0 && altEnText.length < 3 ? "İngilizcesi de en az 3 harf olmalı." : null;
+
+  const reset = () => {
+    if (picked) URL.revokeObjectURL(picked.uri);
+    setPicked(null);
+    setAlt({ tr: "", en: null });
+    setCaption({ tr: "", en: null });
+    setCredit("");
+    setCover(false);
+    setTried(false);
+  };
+  const choose = async () => {
+    setError(null);
+    setDone(null);
+    try {
+      const file = await pickAssetPhoto();
+      if (!file) return;
+      if (picked) URL.revokeObjectURL(picked.uri);
+      setPicked(file);
+    } catch (reason) {
+      setError(reason instanceof Error ? reason.message : errorText(reason));
+    }
+  };
+  const upload = async () => {
+    setTried(true);
+    if (!picked || altProblem || creditProblem || altEnProblem) return;
+    setBusy(true);
+    setError(null);
+    try {
+      await uploadAssetPhoto(assetId, picked, {
+        alt: altText,
+        altEn: altEnText || undefined,
+        caption: caption.tr.trim() || undefined,
+        captionEn: caption.en?.trim() || undefined,
+        credit: creditText,
+        isCover: cover ? "true" : "false",
+      });
+      reset();
+      setDone("Fotoğraf yüklendi ve esere eklendi.");
+      await onUploaded();
+    } catch (reason) {
+      setError(errorText(reason));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <View style={[styles.upload, { borderColor: a.line, backgroundColor: a.card }]}>
+      <View style={styles.uploadHead}>
+        <View style={[styles.uploadIcon, { backgroundColor: a.goldSoft }]}>
+          <Ionicons name="cloud-upload-outline" size={18} color={a.gold} aria-hidden />
+        </View>
+        <View style={{ flex: 1, gap: 2 }}>
+          <Text style={styles.uploadTitle}>Yeni fotoğraf yükle</Text>
+          <Text color="textSecondary" style={styles.note}>
+            {`JPEG, PNG ya da WebP; en çok 15 MB, kısa kenarı en az ${ADMIN_PHOTO_MIN_SIDE} piksel. Yüklenen fotoğraf hemen kaydedilir.`}
+            {first ? " Eserin ilk fotoğrafı kendiliğinden kapak olur." : ""}
+          </Text>
+        </View>
+      </View>
+
+      {picked ? (
+        <View style={styles.uploadBody}>
+          <View style={styles.uploadPicked}>
+            <Image source={{ uri: picked.uri }} style={styles.uploadPreview} accessibilityIgnoresInvertColors alt="" />
+            <View style={{ flex: 1, gap: 4 }}>
+              <Text numberOfLines={1} style={styles.uploadName}>
+                {picked.name}
+              </Text>
+              <Text color="textSecondary" style={styles.note}>
+                {`${picked.width} × ${picked.height} piksel · ${megabytes(picked.bytes)}`}
+              </Text>
+              <View style={{ flexDirection: "row", gap: 8, marginTop: 4 }}>
+                <Button label="Başka dosya seç" small onPress={() => void choose()} disabled={busy} />
+                <Button label="Vazgeç" kind="ghost" small onPress={reset} disabled={busy} />
+              </View>
+            </View>
+          </View>
+          <PairField
+            stacked
+            label="Ne görünüyor? (zorunlu, ekran okuyucu için)"
+            pair={alt}
+            onChange={(next) => setAlt(next ?? { tr: "", en: null })}
+            placeholder="ör. Taç kapının mukarnaslı kavsarası"
+            placeholderEn="ör. The muqarnas hood of the portal"
+          />
+          {tried && (altProblem || altEnProblem) && <Message tone="error" text={(altProblem ?? altEnProblem)!} />}
+          <PairField
+            stacked
+            label="Altında yazan (boşsa ne göründüğü yazılır)"
+            pair={caption}
+            onChange={(next) => setCaption(next ?? { tr: "", en: null })}
+            placeholder="ör. Kuzey cephesi, öğleden sonra"
+            placeholderEn="ör. The north front in the afternoon"
+          />
+          <Field
+            label="Kim çekti? (zorunlu)"
+            value={credit}
+            onChangeText={setCredit}
+            placeholder="ör. Kübra Alkan ya da Vakıflar Genel Müdürlüğü"
+            error={tried ? creditProblem : null}
+            hint="Fotoğrafın altında görünür."
+          />
+          {!first && <Toggle label="Kapak fotoğrafı yap" value={cover} onChange={setCover} hint="Veri setindeki bir eserde içe aktarma kapağı veri setininkine geri alır." />}
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+            <Button label={busy ? "Yükleniyor…" : "Fotoğrafı yükle"} icon="cloud-upload-outline" kind="primary" busy={busy} onPress={() => void upload()} />
+            {busy && (
+              <Text color="textSecondary" style={styles.note} accessibilityLiveRegion="polite">
+                Sunucu fotoğrafın boyutlarını hazırlıyor; birkaç saniye sürebilir.
+              </Text>
+            )}
+          </View>
+        </View>
+      ) : (
+        <View style={{ flexDirection: "row" }}>
+          <Button label="Fotoğraf seç" icon="image-outline" onPress={() => void choose()} />
+        </View>
+      )}
+      {error && <Message tone="error" text={error} />}
+      {done && !error && <Message tone="ok" text={done} />}
+    </View>
+  );
+}
+
+/** A line under the upload: what went wrong, what went right, or what to do first. */
+function Message({ tone, text }: { tone: "error" | "ok" | "info"; text: string }) {
+  const a = useAdminColors();
+  const look = {
+    error: { bg: a.redSoft, fg: a.warning, icon: "alert-circle-outline" as const },
+    ok: { bg: a.roseSoft, fg: a.success, icon: "checkmark-circle-outline" as const },
+    info: { bg: a.goldSoft, fg: a.gold, icon: "information-circle-outline" as const },
+  }[tone];
+  return (
+    <View style={[styles.notice, { backgroundColor: look.bg }]} accessibilityLiveRegion="polite" accessibilityRole={tone === "error" ? "alert" : undefined}>
+      <Ionicons name={look.icon} size={16} color={look.fg} aria-hidden />
+      <Text style={{ flex: 1, fontSize: 12.5, lineHeight: 18 }}>{text}</Text>
     </View>
   );
 }
@@ -1236,9 +1505,6 @@ function CustomBlocks({ customBlocks, setCustomBlocks, showPlace }: StepProps) {
           </>
         )}
       />
-      <Text color="textSecondary" style={styles.note}>
-        Yeni bölümler şimdilik yalnızca sağdaki önizlemede görünür; kaydetme yakında eklenecek.
-      </Text>
     </>
   );
 }
@@ -1289,10 +1555,6 @@ function DossierPhotos({ record, base, placements, setPlacements, showPlace, cus
   };
   return (
     <View style={{ gap: 10 }}>
-      <View style={[styles.notice, { backgroundColor: a.goldSoft }]}>
-        <Ionicons name="information-circle-outline" size={16} color={a.gold} aria-hidden />
-        <Text style={{ flex: 1, fontSize: 12.5, lineHeight: 18 }}>Şimdilik yalnızca sağdaki önizlemede görünür; kaydetme yakında eklenecek.</Text>
-      </View>
       <View style={styles.places}>
         {places.map((p) => {
           const here = all.filter((m) => placements[m.key] === p.key);
@@ -1521,4 +1783,12 @@ const styles = StyleSheet.create({
   photoNumberText: { fontFamily: fontFamily.sansBold, fontSize: 12 },
   photoCover: { flexDirection: "row", alignItems: "center", gap: 4, borderRadius: 999, paddingHorizontal: 10, paddingVertical: 5, backgroundColor: "rgba(6,8,13,0.6)" },
   photoCoverText: { fontFamily: fontFamily.sansSemiBold, fontSize: 12 },
+  upload: { borderWidth: 1, borderStyle: "dashed", borderRadius: 18, padding: 14, gap: 12 },
+  uploadHead: { flexDirection: "row", alignItems: "flex-start", gap: 10 },
+  uploadIcon: { width: 34, height: 34, borderRadius: 17, alignItems: "center", justifyContent: "center" },
+  uploadTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 14.5 },
+  uploadBody: { gap: 12 },
+  uploadPicked: { flexDirection: "row", alignItems: "center", gap: 12 },
+  uploadPreview: { width: 96, height: 72, borderRadius: 10 },
+  uploadName: { fontFamily: fontFamily.sansSemiBold, fontSize: 13.5 },
 });
