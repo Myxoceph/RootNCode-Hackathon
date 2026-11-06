@@ -59,7 +59,6 @@ const tr = {
     degrees: (n: number) => `${n}°`,
     now: "Şimdi",
     outing: {
-      levels: { good: "Gezmeye uygun", fair: "Dikkatli gez", poor: "Gezmeye uygun değil" },
       reasons: {
         perfect: "Hava harika; açık avlular ve türbe bahçeleri için en güzel gün.",
         fine: "Gezmek için uygun bir hava; rahat ayakkabılarını giy.",
@@ -1183,7 +1182,6 @@ const en: Messages = {
     degrees: (n) => `${n}°`,
     now: "Now",
     outing: {
-      levels: { good: "Good for exploring", fair: "Explore with care", poor: "Not a day to explore" },
       reasons: {
         perfect: "Lovely weather: the best of days for open courtyards and tomb gardens.",
         fine: "Fine weather for exploring; wear comfortable shoes.",

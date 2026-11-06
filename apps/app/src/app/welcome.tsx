@@ -14,7 +14,7 @@ import { announce } from "@/lib/announce";
 import { useHere } from "@/lib/here";
 import { useLastCity } from "@/lib/last-city";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { dayLabel, outing, type Outing } from "@/lib/welcome-lines";
+import { dayLabel, outing } from "@/lib/welcome-lines";
 import { loadMaplibre } from "@/vendor";
 import { localeTag, useLang, useMessages } from "@/i18n";
 
@@ -49,12 +49,6 @@ function usePageColors() {
   };
 }
 
-/** The verdict's mark: green, amber or coral, deep on the light card and bright on the dark one. */
-const OUTING_LOOK: Record<Outing, { icon: IconName; light: string; dark: string }> = {
-  good: { icon: "checkmark-circle", light: "#1B7F50", dark: "#6FD9A4" },
-  fair: { icon: "alert-circle", light: "#A35F00", dark: "#F2BE5C" },
-  poor: { icon: "close-circle", light: palette.mercan700, dark: palette.mercan300 },
-};
 /** The button's gold, lighter at the top. */
 const GOLD = ["#F3D88F", "#DDB55C"] as const;
 
@@ -228,7 +222,6 @@ function WeatherCard({ forecast, place, located, today }: { forecast: WeatherRes
   const degrees = Math.round(now.temperatureC);
   const days = forecast.daily.slice(0, 3);
   const verdict = outing(forecast);
-  const verdictColor = verdict ? OUTING_LOOK[verdict.level][ink.dark ? "dark" : "light"] : undefined;
 
   return (
     <View style={[styles.card, { borderColor: ink.skyEdge }]}>
@@ -274,17 +267,9 @@ function WeatherCard({ forecast, place, located, today }: { forecast: WeatherRes
       </View>
 
       {verdict && (
-        <View style={styles.verdict} accessible accessibilityLabel={w.outing.levels[verdict.level] + ". " + w.outing.reasons[verdict.reason]}>
-          <View style={[styles.verdictChip, { backgroundColor: ink.chip }]}>
-            <Ionicons name={OUTING_LOOK[verdict.level].icon} size={16} color={verdictColor} />
-            <Text colorValue={verdictColor} style={styles.verdictLabel}>
-              {w.outing.levels[verdict.level]}
-            </Text>
-          </View>
-          <Text colorValue={ink.text} style={styles.verdictText}>
-            {w.outing.reasons[verdict.reason]}
-          </Text>
-        </View>
+        <Text colorValue={ink.text} style={styles.verdictText}>
+          {w.outing.reasons[verdict.reason]}
+        </Text>
       )}
 
       {days.length > 0 && (
@@ -426,25 +411,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 24,
   },
-  verdict: {
-    gap: spacing.sm,
-    marginTop: spacing.sm,
-  },
-  verdictChip: {
-    flexDirection: "row",
-    alignItems: "center",
-    alignSelf: "flex-start",
-    gap: 6,
-    paddingLeft: 8,
-    paddingRight: 12,
-    height: 30,
-    borderRadius: radius.full,
-  },
-  verdictLabel: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 13,
-  },
   verdictText: {
+    marginTop: spacing.xs,
     fontFamily: fontFamily.sansMedium,
     fontSize: 15,
     lineHeight: 22,
