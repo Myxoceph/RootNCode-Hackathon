@@ -126,6 +126,10 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
     },
   ];
 
+  // All five on the bar leave no room for the guide's full name: it goes by its short one.
+  const visible = actions.filter((action) => !action.hidden);
+  const shown = visible.length >= 5 ? visible.map((action) => (action.key === "ask" ? { ...action, label: m.actions.askShort } : action)) : visible;
+
   // On the web it is solid, in the theme of the side panel under it: no map shows through its words.
   const look = LIST_LOOKS[scheme];
   return (
@@ -137,7 +141,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
       ]}
     >
       {!web && <GlassFill />}
-      {actions.filter((action) => !action.hidden).map((action) => (
+      {shown.map((action) => (
         <Pressable
           key={action.key}
           accessibilityRole="button"

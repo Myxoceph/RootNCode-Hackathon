@@ -425,6 +425,8 @@ const tr = {
   },
   actions: {
     ask: "Rehber'e sor",
+    /** Shorter, when the bar holds all five actions and the full one does not fit. */
+    askShort: "Rehber",
     askHint: (name: string) => `${name} hakkında asistanı açar`,
     directions: "Yol tarifi",
     directionsHint: (name: string) => `${name} için harita uygulamasını açar`,
@@ -1548,6 +1550,7 @@ const en: Messages = {
   },
   actions: {
     ask: "Ask the Guide",
+    askShort: "Guide",
     askHint: (name) => `Opens the assistant about ${name}`,
     directions: "Directions",
     directionsHint: (name) => `Opens the maps app for ${name}`,
