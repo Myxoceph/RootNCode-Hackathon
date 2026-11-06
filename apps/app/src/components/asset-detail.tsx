@@ -1599,11 +1599,16 @@ function Experiences({
     () => () => stopAnswerOf((key) => key === descriptionKey),
     [descriptionKey],
   );
+  // Turned off while it reads: the reading stops with its button.
+  useEffect(() => {
+    if (!settings.audioDescription) stopAnswerOf((key) => key === descriptionKey);
+  }, [settings.audioDescription, descriptionKey]);
   const soundKey = asset.ambientSound?.key ?? null;
   const capsuleType = soundKey ? capsuleForSoundKey(soundKey) : undefined;
   const playing =
     capsuleType !== undefined && player?.type === capsuleType ? player : null;
-  const description = asset.accessibility.audioDescription;
+  // Offered only while "Sesli mimari betimleme" is on in Sistem ayarları.
+  const description = settings.audioDescription ? asset.accessibility.audioDescription : null;
   const opened = isAssetUnlocked(asset, useUnlockedAssets());
   const inscriptions = useHasInscriptions(asset);
 

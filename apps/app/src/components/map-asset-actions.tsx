@@ -11,6 +11,7 @@ import { useAsset } from "@/data";
 import { isAssetUnlocked } from "@/lib/related-assets";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
+import { useA11ySettings } from "@/settings/a11y-settings";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { useLang, useMessages } from "@/i18n";
@@ -54,6 +55,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   const coords = asset.coordinates;
   const opened = isAssetUnlocked(asset, useUnlockedAssets());
   const reduceMotion = useReducedMotion();
+  const { audioDescription } = useA11ySettings().settings;
   const [drop] = useState(() => new Animated.Value(0));
 
   // The same timing as the cards (city-asset-cards.tsx), from above instead of below.
@@ -64,6 +66,10 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
 
   // Another asset, another description: stop reading the last one.
   useEffect(() => () => stopAnswerOf((key) => key === descriptionKey), [descriptionKey]);
+  // Turned off while it reads: the reading stops with its button.
+  useEffect(() => {
+    if (!audioDescription) stopAnswerOf((key) => key === descriptionKey);
+  }, [audioDescription, descriptionKey]);
 
   const actions: Action[] = [
     {
@@ -109,6 +115,8 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
       label: describing ? m.common.stop : m.actions.describe,
       hint: describing ? m.actions.stopDescribing : description ? m.actions.describeHint : record ? m.actions.noDescription : m.actions.loadingRecord,
       disabled: !description,
+      // "Sesli mimari betimleme" turned off in Sistem ayarları: no spoken description is offered.
+      hidden: !audioDescription,
       on: describing,
       onPress: () => {
         if (!description) return;
