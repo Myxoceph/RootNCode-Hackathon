@@ -2,7 +2,7 @@ import type { AssetSummary, MyAchievement, WeatherResponse } from "@vagabonds/co
 import { describe, expect, it } from "vitest";
 
 import { inCity } from "../src/lib/place-names";
-import { dailyLine, dayAsset, dayNumber, nearestBadge, weatherLine, weatherMood } from "../src/lib/welcome-lines";
+import { dayAsset, dayNumber, nearestBadge, weatherLine, weatherMood } from "../src/lib/welcome-lines";
 
 const badge = (title: string, current: number, target: number, rule: MyAchievement["rule"] = { kind: "visit_count", count: target }, earnedAt: string | null = null) =>
   ({ code: title.toLowerCase(), title, description: "", badge: "🏅", points: 10, rule, imageUrl: null, earnedAt, progress: { current, target } }) as MyAchievement;
@@ -17,7 +17,7 @@ const odd = new Date(even.getTime() + 86_400_000);
 describe("the badge nearest to hand", () => {
   it("is the one with the fewest steps left, not yet earned", () => {
     const items = [badge("Bronz Gezgin", 3, 5), badge("Gümüş Gezgin", 3, 10), badge("İlk Adım", 1, 1, undefined, "2026-11-01T10:00:00.000Z")];
-    expect(nearestBadge(items)).toEqual({ title: "Bronz Gezgin", left: 2, unit: "asset", current: 3, target: 5 });
+    expect(nearestBadge(items)).toMatchObject({ title: "Bronz Gezgin", badge: "🏅", left: 2, unit: "asset", current: 3, target: 5 });
   });
 
   it("is the one further along on a tie", () => {
@@ -32,33 +32,6 @@ describe("the badge nearest to hand", () => {
 
   it("is none when every badge is earned", () => {
     expect(nearestBadge([badge("İlk Adım", 1, 1, undefined, "2026-11-01T10:00:00.000Z")])).toBeNull();
-  });
-});
-
-describe("the greeting's line of the day", () => {
-  const items = [badge("Bronz Gezgin", 3, 5)];
-
-  it("names the nearest badge on one day and gives a tip on the next", () => {
-    expect(dailyLine(items, even)).toEqual({ kind: "badge", text: "Bronz Gezgin rozetine 2 eser kaldı.", current: 3, target: 5 });
-    expect(dailyLine(items, odd).kind).toBe("tip");
-  });
-
-  it("is the same all day long", () => {
-    const morning = new Date(even);
-    morning.setHours(0, 5);
-    const night = new Date(even);
-    night.setHours(23, 55);
-    expect(dailyLine(items, morning)).toEqual(dailyLine(items, night));
-  });
-
-  it("gives a tip when there is no badge to name", () => {
-    expect(dailyLine(null, even).kind).toBe("tip");
-    expect(dailyLine([], even).kind).toBe("tip");
-  });
-
-  it("gives another tip on another tip day", () => {
-    const later = new Date(odd.getTime() + 2 * 86_400_000);
-    expect(dailyLine(null, odd).text).not.toBe(dailyLine(null, later).text);
   });
 });
 

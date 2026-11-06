@@ -29,7 +29,18 @@ function unitOf(rule: Rule): Unit {
  * The badge the visitor is nearest to: not earned yet, the fewest steps left (the most of the way
  * there on a tie). `null` when every badge is earned or there are none.
  */
-export function nearestBadge(items: MyAchievement[]): { title: string; left: number; unit: Unit; current: number; target: number } | null {
+export interface NearBadge {
+  title: string;
+  /** The badge's emoji, and its picture when it has one. */
+  badge: string;
+  imageUrl: string | null;
+  left: number;
+  unit: Unit;
+  current: number;
+  target: number;
+}
+
+export function nearestBadge(items: MyAchievement[]): NearBadge | null {
   let best: { item: MyAchievement; left: number } | null = null;
   for (const item of items) {
     if (item.earnedAt) continue;
@@ -40,30 +51,20 @@ export function nearestBadge(items: MyAchievement[]): { title: string; left: num
     if (!best || left < best.left || (left === best.left && share > bestShare)) best = { item, left };
   }
   return best
-    ? { title: best.item.title, left: best.left, unit: unitOf(best.item.rule), current: best.item.progress.current, target: best.item.progress.target }
+    ? {
+        title: best.item.title,
+        badge: best.item.badge,
+        imageUrl: best.item.imageUrl,
+        left: best.left,
+        unit: unitOf(best.item.rule),
+        current: best.item.progress.current,
+        target: best.item.progress.target,
+      }
     : null;
 }
 
 /** Days since 1 January 1970 in local time: the same number all day, the next one tomorrow. */
 export const dayNumber = (date: Date): number => Math.floor((date.getTime() - date.getTimezoneOffset() * 60_000) / 86_400_000);
-
-/**
- * The greeting's first line, which changes by itself from day to day: on one day the badge the
- * visitor is nearest to, on the next a tip of the app; a tip whenever there is no badge to name.
- */
-export type DayLine =
-  | { kind: "badge"; text: string; current: number; target: number }
-  | { kind: "tip"; text: string };
-
-export function dailyLine(achievements: MyAchievement[] | null, date: Date): DayLine {
-  const w = getMessages().welcome;
-  const day = dayNumber(date);
-  const badge = achievements ? nearestBadge(achievements) : null;
-  if (badge && day % 2 === 0) {
-    return { kind: "badge", text: w.badge(badge.title, badge.left, w.units[badge.unit](badge.left)), current: badge.current, target: badge.target };
-  }
-  return { kind: "tip", text: w.tips[Math.floor(day / 2) % w.tips.length]! };
-}
 
 /** "gezmek için güzel bir gün": a word on going out in the weather now. `null` without it. */
 export function weatherMood(weather: WeatherResponse | null): string | null {

@@ -4,17 +4,17 @@ import { cameraColors, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useMemo, useRef, useState, type ComponentProps, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ComponentProps, type ReactNode } from "react";
 import { Animated, Easing, Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
+import Svg, { Circle, Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
 import { AssetImage } from "@/components/asset-image";
-import { useAsset, useCities, useCityMapAssets, useCommunity, useMyAchievements, useWallet, useWeather } from "@/data";
+import { useAsset, useCities, useCityMapAssets, useCommunity, useMyAchievements, useWeather } from "@/data";
 import { announce } from "@/lib/announce";
 import { useLastCity } from "@/lib/last-city";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { dailyLine, dayAsset, weatherMood } from "@/lib/welcome-lines";
+import { dayAsset, nearestBadge, weatherMood } from "@/lib/welcome-lines";
 import { localeTag, useLang, useMessages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -22,12 +22,19 @@ type IconName = ComponentProps<typeof Ionicons>["name"];
 /** Always the night look, as the sign-in screen it follows: the photo and the gold read best on it. */
 const ink = cameraColors;
 const glass = {
-  fill: "rgba(255, 255, 255, 0.05)",
-  edge: "rgba(255, 255, 255, 0.11)",
-  rule: "rgba(255, 255, 255, 0.09)",
+  fill: "rgba(255, 255, 255, 0.045)",
+  edge: "rgba(255, 255, 255, 0.10)",
+  rule: "rgba(255, 255, 255, 0.08)",
+  track: "rgba(255, 255, 255, 0.10)",
+  chip: "rgba(10, 14, 22, 0.58)",
 };
 /** Emir Sultan, the sign-in screen's photo: shown until the site of the day is in, or without one. */
 const FALLBACK_ASSET = "bursa-yildirim-emir-sultan-kulliyesi";
+/** The medallion on the left of each card: the badge's ring, the weather's disc. */
+const MEDALLION = 76;
+const RING = 6;
+
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 /** The weather's icon: the sun by day, the moon by night when it is clear. */
 function weatherIcon(condition: WeatherCondition, isDay: boolean): IconName {
@@ -38,12 +45,12 @@ function weatherIcon(condition: WeatherCondition, isDay: boolean): IconName {
 const capitalize = (text: string) => text.charAt(0).toLocaleUpperCase() + text.slice(1);
 
 /**
- * `/welcome`: the page the app opens on. The site of the day fills the top, sinking into the night
- * blue; over it the date and the weather, under it "Hoş geldin, <ad>" in the display face. Then the
- * visitor's seals, badges and points, the city's weather (the city last opened on the map, else the
- * one with the most sites) and the day's line: the badge nearest to hand with its progress, or a
- * tip, by turns from day to day. Nothing here needs the visitor; the page stays until "Keşfe
- * başla" opens the map. It never moves on by itself.
+ * `/welcome`: the page the app opens on. The site of the day fills the top and sinks into the night
+ * blue; under it the date and "Hoş geldin, <ad>" in the display face. Two cards of one make follow,
+ * a medallion on the left, words on the right and a line of detail under a hairline: the visitor's
+ * progress drawn out (a gold ring for the badge nearest to hand and a bar of the whole collection)
+ * and the city's weather (the city last opened on the map, else the one with the most sites).
+ * Nothing here needs the visitor; the page stays until "Keşfe başla" opens the map.
  */
 export default function WelcomePage() {
   const router = useRouter();
@@ -59,18 +66,12 @@ export default function WelcomePage() {
   // The first name when the account has a full name, else the nickname.
   const name = user?.fullName?.trim().split(/\s+/)[0] || user?.nickname || null;
 
-  // The visitor's seals, badges and points.
-  const wallet = useWallet();
+  // The badges: the one nearest to hand, and how many of all are earned.
   const achievements = useMyAchievements();
-  const items = achievements.status === "success" ? (achievements.data?.items ?? []) : null;
-  const walletData = wallet.status === "success" ? wallet.data : null;
-  const stats =
-    walletData && items
-      ? { seals: walletData.provenVisits, badges: items.filter((item) => item.earnedAt).length, points: walletData.balance }
-      : null;
-
-  // The day's line: the badge nearest to hand or a tip; it waits for the badges, a tip without them.
-  const dayLine = useMemo(() => (achievements.status === "loading" ? null : dailyLine(items, today)), [achievements.status, items, today]);
+  const items = achievements.status === "success" ? (achievements.data?.items ?? null) : null;
+  const near = items ? nearestBadge(items) : null;
+  const earned = items ? items.filter((item) => item.earnedAt).length : 0;
+  const nearLeft = near ? w.left(near.left, w.units[near.unit](near.left)) : null;
 
   // The city: the one last opened on the map, else the one with the most sites.
   const lastCity = useLastCity();
@@ -89,20 +90,21 @@ export default function WelcomePage() {
   const fallback = useAsset(FALLBACK_ASSET);
   const cover = featured?.cover ?? (fallback.status === "success" ? fallback.data?.cover : null) ?? null;
 
-  const date = today.toLocaleDateString(localeTag(lang), { weekday: "long", day: "numeric", month: "long" });
-  const heroHeight = Math.min(Math.max(height * 0.5, 320), 480);
+  const upper = (text: string) => text.toLocaleUpperCase(localeTag(lang));
+  const date = upper(today.toLocaleDateString(localeTag(lang), { weekday: "long", day: "numeric", month: "long" }));
+  const heroHeight = Math.min(Math.max(height * 0.5, 320), 500);
 
   // The page rises in; each part a moment after the one above it.
   const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
   useEffect(() => {
     announce(w.announce(name));
-    if (!reduced) Animated.timing(enter, { toValue: 1, duration: 900, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
+    if (!reduced) Animated.timing(enter, { toValue: 1, duration: 1000, easing: Easing.out(Easing.cubic), useNativeDriver: true }).start();
     // Said once, with the name the page opened with.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const rise = (from: number) => ({
     opacity: enter.interpolate({ inputRange: [from, Math.min(from + 0.5, 1)], outputRange: [0, 1], extrapolate: "clamp" }),
-    transform: [{ translateY: enter.interpolate({ inputRange: [from, Math.min(from + 0.5, 1)], outputRange: [18, 0], extrapolate: "clamp" }) }],
+    transform: [{ translateY: enter.interpolate({ inputRange: [from, Math.min(from + 0.5, 1)], outputRange: [16, 0], extrapolate: "clamp" }) }],
   });
 
   const footerHeight = 56 + spacing.lg * 2 + insets.bottom;
@@ -122,50 +124,33 @@ export default function WelcomePage() {
             <Fade />
           </View>
 
-          <View style={[styles.heroTop, { paddingTop: insets.top + spacing.md }]}>
-            <View style={styles.datePill}>
-              <View style={[styles.dot, { backgroundColor: ink.gold }]} />
-              <Text variant="caption" colorValue={ink.text} style={styles.dateText}>
-                {capitalize(date)}
-              </Text>
-            </View>
-            {now && (
-              <View style={styles.weatherPill} accessible accessibilityLabel={w.place(forecast?.city.label ?? "", w.degrees(Math.round(now.temperatureC)))}>
-                <Ionicons name={weatherIcon(now.condition, now.isDay)} size={16} color={ink.gold} />
-                <Text variant="caption" colorValue={ink.text} style={styles.pillText}>
-                  {w.degrees(Math.round(now.temperatureC))}
-                </Text>
-              </View>
-            )}
-          </View>
-
           {featured && (
             <Pressable
               onPress={() => router.push(`/asset/${featured.id}` as Href)}
               accessibilityRole="link"
               accessibilityLabel={w.dayAssetLabel(featured.name)}
-              style={({ pressed }) => [styles.featured, pressed && styles.pressed]}
+              style={({ pressed }) => [styles.featured, { marginTop: insets.top + spacing.md }, pressed && styles.pressed]}
             >
-              <Text variant="caption" colorValue={ink.gold} style={styles.featuredKicker}>
-                {w.dayAsset.toLocaleUpperCase(localeTag(lang))}
-              </Text>
-              <View style={styles.featuredRow}>
+              <View style={[styles.featuredMark, { borderColor: ink.gold }]}>
+                <Ionicons name="sparkles" size={12} color={ink.gold} />
+              </View>
+              <View style={styles.featuredWords}>
+                <Text colorValue={ink.gold} style={styles.kicker}>
+                  {upper(w.dayAsset)}
+                </Text>
                 <Text colorValue={ink.text} style={styles.featuredName} numberOfLines={1}>
                   {featured.name}
                 </Text>
-                <Ionicons name="arrow-forward" size={14} color={ink.textSecondary} />
               </View>
-              <Text variant="caption" colorValue={ink.textSecondary} numberOfLines={1}>
-                {w.place(featured.district, featured.city.label)}
-              </Text>
+              <Ionicons name="chevron-forward" size={16} color={ink.textSecondary} />
             </Pressable>
           )}
         </View>
 
         <View style={styles.column}>
           <Animated.View style={rise(0)}>
-            <Text variant="caption" colorValue={ink.gold} style={styles.overline}>
-              {w.overline}
+            <Text colorValue={ink.gold} style={styles.overline}>
+              {date}
             </Text>
             <Text headingLevel={1} colorValue={ink.text} style={styles.title}>
               {w.greeting}
@@ -179,75 +164,56 @@ export default function WelcomePage() {
             </Text>
           </Animated.View>
 
-          {/* Seals, badges and points, the three numbers of the visitor's journey. */}
-          {stats && (
-            <Animated.View style={[styles.panel, styles.stats, rise(0.15)]} accessible accessibilityLabel={w.statsLabel(stats.seals, stats.badges, stats.points)}>
-              <Stat value={stats.seals} label={w.stats.seals} />
-              <View style={styles.statRule} />
-              <Stat value={stats.badges} label={w.stats.badges} />
-              <View style={styles.statRule} />
-              <Stat value={stats.points} label={w.stats.points} />
-            </Animated.View>
-          )}
-
           {/* Told by screen readers as they arrive: they may come a moment after the greeting. */}
           <View style={styles.cards} accessibilityLiveRegion="polite">
-            {now && forecast && mood && (
-              <Animated.View style={rise(0.3)}>
-                <Panel>
-                  <View style={styles.cardHead}>
-                    <Text variant="caption" colorValue={ink.textSecondary} style={styles.cardLabel}>
-                      {w.cardTitle(w.weatherLabel, forecast.city.label).toLocaleUpperCase(localeTag(lang))}
-                    </Text>
-                    <Ionicons name={weatherIcon(now.condition, now.isDay)} size={22} color={ink.gold} accessibilityElementsHidden importantForAccessibility="no" />
-                  </View>
-                  <View style={styles.weatherBody} accessible>
-                    <Text colorValue={ink.text} style={styles.degrees}>
-                      {w.degrees(Math.round(now.temperatureC))}
-                    </Text>
-                    <View style={styles.weatherWords}>
-                      <Text colorValue={ink.text} style={styles.condition}>
-                        {w.conditions[now.condition]}
-                      </Text>
-                      <Text colorValue={ink.textSecondary} style={styles.cardText}>
-                        {w.sentence(capitalize(mood))}
-                      </Text>
-                    </View>
-                  </View>
-                  {todayForecast && (
-                    <View style={styles.cardFoot}>
-                      <Text variant="caption" colorValue={ink.textSecondary}>
-                        {w.highLow(Math.round(todayForecast.highC), Math.round(todayForecast.lowC))}
-                      </Text>
-                      <Text variant="caption" colorValue={ink.textSecondary} style={styles.credit}>
-                        {forecast.attribution}
-                      </Text>
-                    </View>
-                  )}
-                </Panel>
+            {items && items.length > 0 && (
+              <Animated.View style={rise(0.2)}>
+                <Card
+                  label={near && nearLeft ? w.ringLabel(near.title, near.current, near.target, nearLeft) : w.complete}
+                  medallion={
+                    <Ring share={near ? near.current / near.target : 1} reduced={reduced}>
+                      {near ? (
+                        <Text colorValue={ink.text} style={styles.ringCount}>
+                          {w.progress(near.current, near.target)}
+                        </Text>
+                      ) : (
+                        <Ionicons name="checkmark" size={28} color={ink.gold} />
+                      )}
+                    </Ring>
+                  }
+                  kicker={upper(w.nextBadge)}
+                  title={near?.title ?? w.complete}
+                  emoji={near?.badge}
+                  body={nearLeft ? capitalize(nearLeft) : w.completeLead}
+                  foot={<Collection earned={earned} total={items.length} />}
+                />
               </Animated.View>
             )}
 
-            {dayLine && (
-              <Animated.View style={rise(0.45)}>
-                <Panel>
-                  <View style={styles.cardHead}>
-                    <Text variant="caption" colorValue={ink.textSecondary} style={styles.cardLabel}>
-                      {(dayLine.kind === "badge" ? w.badgeLabel : w.tipLabel).toLocaleUpperCase(localeTag(lang))}
-                    </Text>
-                    <Ionicons
-                      name={dayLine.kind === "badge" ? "ribbon-outline" : "bulb-outline"}
-                      size={22}
-                      color={ink.gold}
-                      accessibilityElementsHidden
-                      importantForAccessibility="no"
-                    />
-                  </View>
-                  <Text colorValue={ink.text} style={styles.dayText}>
-                    {dayLine.text}
-                  </Text>
-                  {dayLine.kind === "badge" && <Progress current={dayLine.current} target={dayLine.target} />}
-                </Panel>
+            {now && forecast && mood && (
+              <Animated.View style={rise(0.35)}>
+                <Card
+                  medallion={
+                    <Ring share={0} reduced>
+                      <Ionicons name={weatherIcon(now.condition, now.isDay)} size={26} color={ink.gold} />
+                    </Ring>
+                  }
+                  kicker={upper(w.cardTitle(w.weatherLabel, forecast.city.label))}
+                  title={w.cardTitle(w.degrees(Math.round(now.temperatureC)), w.conditions[now.condition])}
+                  body={w.sentence(capitalize(mood))}
+                  foot={
+                    todayForecast && (
+                      <View style={styles.footRow}>
+                        <Text colorValue={ink.textSecondary} style={styles.footText}>
+                          {w.highLow(Math.round(todayForecast.highC), Math.round(todayForecast.lowC))}
+                        </Text>
+                        <Text colorValue={ink.textSecondary} style={[styles.footText, styles.credit]}>
+                          {forecast.attribution}
+                        </Text>
+                      </View>
+                    )
+                  }
+                />
               </Animated.View>
             )}
           </View>
@@ -261,7 +227,7 @@ export default function WelcomePage() {
             <Defs>
               <LinearGradient id="welcome-foot" x1="0" y1="0" x2="0" y2="1">
                 <Stop offset="0" stopColor={ink.background} stopOpacity={0} />
-                <Stop offset="0.35" stopColor={ink.background} stopOpacity={0.92} />
+                <Stop offset="0.4" stopColor={ink.background} stopOpacity={0.94} />
                 <Stop offset="1" stopColor={ink.background} stopOpacity={1} />
               </LinearGradient>
             </Defs>
@@ -291,9 +257,9 @@ function Fade() {
       <Svg width="100%" height="100%">
         <Defs>
           <LinearGradient id="welcome-fade" x1="0" y1="0" x2="0" y2="1">
-            <Stop offset="0" stopColor={ink.background} stopOpacity={0.55} />
-            <Stop offset="0.3" stopColor={ink.background} stopOpacity={0.08} />
-            <Stop offset="0.62" stopColor={ink.background} stopOpacity={0.25} />
+            <Stop offset="0" stopColor={ink.background} stopOpacity={0.6} />
+            <Stop offset="0.28" stopColor={ink.background} stopOpacity={0.05} />
+            <Stop offset="0.6" stopColor={ink.background} stopOpacity={0.3} />
             <Stop offset="1" stopColor={ink.background} stopOpacity={1} />
           </LinearGradient>
         </Defs>
@@ -303,34 +269,101 @@ function Fade() {
   );
 }
 
-function Panel({ children }: { children: ReactNode }) {
-  return <View style={styles.panel}>{children}</View>;
-}
-
-function Stat({ value, label }: { value: number; label: string }) {
+/**
+ * One card of the page: the medallion on the left; the kicker, the title and a line on the right;
+ * a detail under a hairline. Read as one by screen readers (`label`, else its words in order).
+ */
+function Card({
+  medallion,
+  kicker,
+  title,
+  emoji,
+  body,
+  foot,
+  label,
+}: {
+  medallion: ReactNode;
+  kicker: string;
+  title: string;
+  emoji?: string;
+  body: string;
+  foot?: ReactNode;
+  label?: string;
+}) {
   return (
-    <View style={styles.stat}>
-      <Text colorValue={ink.text} style={styles.statValue}>
-        {value}
-      </Text>
-      <Text variant="caption" colorValue={ink.textSecondary} style={styles.statLabel}>
-        {label}
-      </Text>
+    <View style={styles.card} accessible accessibilityLabel={label}>
+      <View style={styles.cardMain}>
+        {medallion}
+        <View style={styles.cardWords}>
+          <Text colorValue={ink.textSecondary} style={styles.kicker}>
+            {kicker}
+          </Text>
+          <View style={styles.titleRow}>
+            {emoji && (
+              <Text style={styles.emoji} accessibilityElementsHidden importantForAccessibility="no">
+                {emoji}
+              </Text>
+            )}
+            <Text colorValue={ink.text} style={styles.cardTitle} numberOfLines={2}>
+              {title}
+            </Text>
+          </View>
+          <Text colorValue={ink.textSecondary} style={styles.cardBody}>
+            {body}
+          </Text>
+        </View>
+      </View>
+      {foot ? <View style={styles.cardFoot}>{foot}</View> : null}
     </View>
   );
 }
 
-/** The badge's progress: a thin gold bar and its count. */
-function Progress({ current, target }: { current: number; target: number }) {
-  const m = useMessages();
-  const share = target > 0 ? Math.min(current / target, 1) : 0;
+/** A ring around the medallion: a faint track, and a gold arc for the share done that draws itself in. */
+function Ring({ share, reduced, children }: { share: number; reduced: boolean; children: ReactNode }) {
+  const r = (MEDALLION - RING) / 2;
+  const length = 2 * Math.PI * r;
+  const drawn = useRef(new Animated.Value(reduced ? share : 0)).current;
+  useEffect(() => {
+    if (reduced) drawn.setValue(share);
+    else Animated.timing(drawn, { toValue: share, duration: 1200, delay: 350, easing: Easing.out(Easing.cubic), useNativeDriver: false }).start();
+  }, [share, reduced, drawn]);
+  const offset = drawn.interpolate({ inputRange: [0, 1], outputRange: [length, 0] });
   return (
-    <View style={styles.progress}>
-      <View style={styles.track}>
-        <View style={[styles.bar, { width: `${share * 100}%`, backgroundColor: ink.gold }]} />
+    <View style={styles.medallion}>
+      <Svg width={MEDALLION} height={MEDALLION} style={StyleSheet.absoluteFill}>
+        <Circle cx={MEDALLION / 2} cy={MEDALLION / 2} r={r} stroke={glass.track} strokeWidth={RING} fill={glass.fill} />
+        {share > 0 && (
+          <AnimatedCircle
+            cx={MEDALLION / 2}
+            cy={MEDALLION / 2}
+            r={r}
+            stroke={ink.gold}
+            strokeWidth={RING}
+            fill="none"
+            strokeLinecap="round"
+            strokeDasharray={`${length} ${length}`}
+            strokeDashoffset={offset}
+            transform={`rotate(-90 ${MEDALLION / 2} ${MEDALLION / 2})`}
+          />
+        )}
+      </Svg>
+      {children}
+    </View>
+  );
+}
+
+/** The whole collection: one segment for each badge, gold for the earned ones, and its count. */
+function Collection({ earned, total }: { earned: number; total: number }) {
+  const m = useMessages();
+  return (
+    <View accessible accessibilityLabel={m.welcome.collectionLabel(earned, total)} style={styles.collection}>
+      <View style={styles.segments}>
+        {Array.from({ length: total }, (_, index) => (
+          <View key={index} style={[styles.segment, { backgroundColor: index < earned ? ink.gold : glass.track }]} />
+        ))}
       </View>
-      <Text variant="caption" colorValue={ink.textSecondary} style={styles.progressText}>
-        {m.welcome.progress(current, target)}
+      <Text colorValue={ink.textSecondary} style={styles.footText}>
+        {m.welcome.collection(earned, total)}
       </Text>
     </View>
   );
@@ -340,76 +373,39 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
   },
-  heroTop: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: spacing.lg,
-  },
-  datePill: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm,
-    paddingHorizontal: spacing.md,
-    height: 34,
-    borderRadius: radius.full,
-    backgroundColor: "rgba(10, 14, 22, 0.55)",
-    borderWidth: 1,
-    borderColor: glass.edge,
-  },
-  dot: {
-    width: 6,
-    height: 6,
-    borderRadius: 3,
-  },
-  dateText: {
-    fontFamily: fontFamily.sansSemiBold,
-    letterSpacing: 0.3,
-  },
-  weatherPill: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-    paddingHorizontal: spacing.md,
-    height: 34,
-    borderRadius: radius.full,
-    backgroundColor: "rgba(10, 14, 22, 0.55)",
-    borderWidth: 1,
-    borderColor: glass.edge,
-  },
-  pillText: {
-    fontFamily: fontFamily.sansBold,
-  },
   featured: {
-    position: "absolute",
-    right: spacing.lg,
-    bottom: spacing.xxl * 2 + spacing.lg,
-    maxWidth: "62%",
-    paddingVertical: spacing.sm,
-    paddingHorizontal: spacing.md,
-    borderRadius: 14,
-    backgroundColor: "rgba(10, 14, 22, 0.6)",
-    borderWidth: 1,
-    borderColor: glass.edge,
-    gap: 1,
-  },
-  featuredKicker: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 10,
-    letterSpacing: 1.4,
-  },
-  featuredRow: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 6,
+    alignSelf: "flex-start",
+    maxWidth: "86%",
+    marginLeft: spacing.lg,
+    gap: spacing.sm,
+    paddingLeft: 6,
+    paddingRight: spacing.md,
+    paddingVertical: 6,
+    borderRadius: radius.full,
+    backgroundColor: glass.chip,
+    borderWidth: 1,
+    borderColor: glass.edge,
+  },
+  featuredMark: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    borderWidth: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  featuredWords: {
+    flexShrink: 1,
   },
   featuredName: {
-    flexShrink: 1,
     fontFamily: fontFamily.sansSemiBold,
     fontSize: 14,
+    lineHeight: 18,
   },
   column: {
-    marginTop: -spacing.xxl * 2,
+    marginTop: -spacing.xxl * 2 - spacing.lg,
     paddingHorizontal: spacing.lg,
     width: "100%",
     maxWidth: 600,
@@ -417,127 +413,105 @@ const styles = StyleSheet.create({
   },
   overline: {
     fontFamily: fontFamily.sansBold,
-    letterSpacing: 2.4,
-    fontSize: 11,
+    fontSize: 12,
+    letterSpacing: 2.2,
     marginBottom: spacing.sm,
   },
   title: {
     fontFamily: fontFamily.display,
-    fontSize: 46,
-    lineHeight: 52,
+    fontSize: 48,
+    lineHeight: 54,
     letterSpacing: -0.5,
   },
   lead: {
     marginTop: spacing.md,
     fontSize: 16,
     lineHeight: 24,
+    maxWidth: 420,
   },
-  panel: {
-    borderRadius: 22,
+  cards: {
+    gap: spacing.md,
+    marginTop: spacing.xl,
+  },
+  card: {
+    borderRadius: 24,
     borderWidth: 1,
     borderColor: glass.edge,
     backgroundColor: glass.fill,
     padding: spacing.lg,
   },
-  stats: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: spacing.xl,
-    paddingVertical: spacing.md,
-    paddingHorizontal: spacing.sm,
-  },
-  stat: {
-    flex: 1,
-    alignItems: "center",
-    gap: 2,
-  },
-  statValue: {
-    fontFamily: fontFamily.display,
-    fontSize: 30,
-    lineHeight: 36,
-  },
-  statLabel: {
-    fontFamily: fontFamily.sansMedium,
-    letterSpacing: 0.4,
-  },
-  statRule: {
-    width: 1,
-    alignSelf: "stretch",
-    marginVertical: spacing.xs,
-    backgroundColor: glass.rule,
-  },
-  cards: {
-    gap: spacing.md,
-    marginTop: spacing.md,
-  },
-  cardHead: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: spacing.sm,
-  },
-  cardLabel: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 11,
-    letterSpacing: 1.6,
-  },
-  weatherBody: {
+  cardMain: {
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.lg,
   },
-  degrees: {
+  medallion: {
+    width: MEDALLION,
+    height: MEDALLION,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  ringCount: {
     fontFamily: fontFamily.display,
-    fontSize: 64,
-    lineHeight: 72,
-  },
-  weatherWords: {
-    flex: 1,
-    gap: 2,
-  },
-  condition: {
-    fontFamily: fontFamily.sansSemiBold,
-    fontSize: 18,
+    fontSize: 20,
     lineHeight: 24,
   },
-  cardText: {
-    fontSize: 15,
-    lineHeight: 21,
+  cardWords: {
+    flex: 1,
+    gap: 3,
+  },
+  kicker: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 10.5,
+    lineHeight: 14,
+    letterSpacing: 1.6,
+  },
+  titleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+  emoji: {
+    fontSize: 18,
+    lineHeight: 26,
+  },
+  cardTitle: {
+    flexShrink: 1,
+    fontFamily: fontFamily.display,
+    fontSize: 22,
+    lineHeight: 28,
+  },
+  cardBody: {
+    fontSize: 14,
+    lineHeight: 20,
   },
   cardFoot: {
-    gap: 2,
     marginTop: spacing.md,
-    paddingTop: spacing.sm,
+    paddingTop: spacing.md,
     borderTopWidth: 1,
     borderTopColor: glass.rule,
   },
+  footRow: {
+    gap: 2,
+  },
+  footText: {
+    fontSize: 12.5,
+    lineHeight: 17,
+  },
   credit: {
-    opacity: 0.8,
+    opacity: 0.75,
   },
-  dayText: {
-    fontFamily: fontFamily.sansMedium,
-    fontSize: 17,
-    lineHeight: 25,
+  collection: {
+    gap: spacing.sm,
   },
-  progress: {
+  segments: {
     flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    marginTop: spacing.md,
+    gap: 3,
   },
-  track: {
+  segment: {
     flex: 1,
-    height: 6,
+    height: 5,
     borderRadius: 3,
-    overflow: "hidden",
-    backgroundColor: glass.rule,
-  },
-  bar: {
-    height: "100%",
-    borderRadius: 3,
-  },
-  progressText: {
-    fontFamily: fontFamily.monoMedium,
   },
   footer: {
     position: "absolute",
