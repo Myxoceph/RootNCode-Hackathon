@@ -129,6 +129,7 @@ export function previewOf(record: AdminAssetRecord, { id, meta, base, samples, p
     architect: architectName || candidates.length > 0 ? { name: architectName, candidates, confidence: confidence(record.architect.confidence), sources: base?.architect?.sources ?? [] } : null,
     waqf: [waqf.name, waqf.deedExcerpt, waqf.conditions, waqf.landNote].some((v) => v) ? waqf : null,
     sections,
+    customBlocks: [],
     facts: record.facts
       .filter((f) => !blank(f.label.tr) && !blank(f.value))
       .map((f) => {

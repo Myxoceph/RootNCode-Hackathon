@@ -47,6 +47,7 @@ const EMPTY: AdminAssetRecord = {
   architect: { name: null, candidates: [], confidence: null },
   waqf: { name: null, deedDate: null, deedExcerpt: null, conditions: null, landNote: null, confidence: null },
   sections: [],
+  customBlocks: [],
   highlights: [],
   timeline: [],
   facts: [],
