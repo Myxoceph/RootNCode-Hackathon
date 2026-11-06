@@ -34,9 +34,11 @@ export default function TabLayout() {
   const m = useMessages();
   const titles: Record<TabName, string> = { map: m.tabs.map, rehber: m.tabs.rehber, camera: m.tabs.camera, monuments: m.tabs.monuments, settings: m.tabs.profile };
   const tabs = (WEB ? allTabs.filter((tab) => tab.name !== "camera") : allTabs).map((tab) => ({ ...tab, title: titles[tab.name] }));
+  // The site's bar starts with the home page (`index`, the landing page on the web); it is no tab of its own.
+  const webLinks: TabItem[] = [{ name: "index", icon: "home-outline", iconFocused: "home", title: m.tabs.home }, ...tabs];
   return (
     <Tabs
-      tabBar={(props) => (WEB ? <WebNavBar {...props} items={tabs} /> : <TabBar {...props} items={tabs} />)}
+      tabBar={(props) => (WEB ? <WebNavBar {...props} items={webLinks} /> : <TabBar {...props} items={tabs} />)}
       screenOptions={{ headerTitleStyle: { fontFamily: fontFamily.display }, tabBarPosition: WEB ? "top" : "bottom" }}
     >
       {tabs.map(({ name, title, ownHeader }) => (

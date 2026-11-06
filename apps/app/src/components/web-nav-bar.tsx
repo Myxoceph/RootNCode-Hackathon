@@ -33,6 +33,13 @@ const PROFILE = "settings";
 /** The site's pages with their names in the language asked for. */
 export const siteItems = (m: Messages): Array<TabItem & { href: Href }> => [
   {
+    name: "index",
+    title: m.tabs.home,
+    icon: "home-outline",
+    iconFocused: "home",
+    href: "/",
+  },
+  {
     name: "map",
     title: m.tabs.map,
     icon: "map-outline",

@@ -41,6 +41,7 @@ const tr = {
     foodStops: "Lezzet Durakları",
   },
   tabs: {
+    home: "Ana sayfa",
     map: "Harita",
     rehber: "Rehber",
     camera: "Kamera",
@@ -1136,6 +1137,7 @@ const en: Messages = {
     foodStops: "Food Stops",
   },
   tabs: {
+    home: "Home",
     map: "Map",
     rehber: "Guide",
     camera: "Camera",
