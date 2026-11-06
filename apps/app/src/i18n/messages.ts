@@ -1081,7 +1081,6 @@ const tr = {
     audioDescription: "Sesli mimari betimleme",
     audioDescriptionHint: "Mekânın mimarisini sesli dinle",
     audioDescriptionDetail: "Mekânı gözünü kapatıp dün ile bugünü dinle",
-    sampleListen: "Örnek betimlemeyi dinle",
     captions: "Altyazılar",
     captionsDetail: "Ses kapsüllerini metne dök",
     largeText: "Büyük metin",
@@ -1091,8 +1090,6 @@ const tr = {
     focusRing: "Odak halkası",
     focusRingDetail: "Klavye ve anahtar erişimi",
     keyboard: ["Harici klavye ya da anahtar erişimi: ", " sıradaki öğeye geçer, ", " seçer, ", " perdeyi ve kaydırıcıları oynatır."] as string[],
-    sample:
-      "Muradiye Camii, iki dönem yan yana. 1920'lerdeki fotoğrafta caminin solunda cumbalı, iki katlı ahşap bir ev, sağında da daha küçük bir ahşap ev var; önde fesli iki yaya yürüyor ve zemin topraktır. Bugünkü karede iki ev de yok. Soldaki evin yerinde bir ağaç ve sokak lambası duruyor, caminin batı cephesini restorasyon iskelesi sarıyor, önde park etmiş bir otomobil görünüyor. Kubbe, beş kubbeli revak ve tek şerefeli minare yüz yıl önceki haliyle aynı.",
   },
 };
 
@@ -2175,7 +2172,6 @@ const en: Messages = {
     audioDescription: "Spoken architectural description",
     audioDescriptionHint: "Listen to the architecture of the place",
     audioDescriptionDetail: "Close your eyes and hear the place, then and now",
-    sampleListen: "Listen to a sample description",
     captions: "Captions",
     captionsDetail: "Turn the sound capsules into text",
     largeText: "Large text",
@@ -2185,8 +2181,6 @@ const en: Messages = {
     focusRing: "Focus ring",
     focusRingDetail: "Keyboard and switch access",
     keyboard: ["External keyboard or switch access: ", " moves to the next item, ", " selects, ", " move the slider and the scrubbers."],
-    sample:
-      "Muradiye Mosque, two eras side by side. In the photograph from the 1920s, a two-storey wooden house with a bay window stands to the left of the mosque, and a smaller wooden house to its right; two pedestrians in fezzes walk in front, on an earthen ground. In today's picture both houses are gone. Where the house on the left stood there is a tree and a street lamp, restoration scaffolding wraps the mosque's west front, and a parked car shows in front. The dome, the portico of five domes and the minaret with a single balcony are as they were a hundred years ago.",
   },
 };
 
