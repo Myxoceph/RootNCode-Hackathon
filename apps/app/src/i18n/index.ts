@@ -1,3 +1,5 @@
+import type { Lang } from "@vagabonds/contracts";
+
 import { getLang, useLang } from "./lang";
 import { messages, type Messages } from "./messages";
 
@@ -15,8 +17,8 @@ export function getMessages(): Messages {
 }
 
 /** The language as a locale, for dates, numbers and the phone's voice. */
-export function localeTag(): "tr-TR" | "en-US" {
-  return getLang() === "en" ? "en-US" : "tr-TR";
+export function localeTag(lang: Lang = getLang()): "tr-TR" | "en-US" {
+  return lang === "en" ? "en-US" : "tr-TR";
 }
 
 /** The locale for upper- and lower-casing shown words: "İ" and "ı" belong to Turkish only. */

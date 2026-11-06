@@ -217,25 +217,26 @@ async function call<T>(
 
 function errorFor(status: number, code: string | null, details: string[]): DataError {
   const rejected = (message: string) => new DataError("rejected", message, details);
+  const words = getMessages().moreErrors;
   switch (code) {
     case "CONTRIBUTION_LIMIT":
-      return rejected("Saatlik not sınırına ulaştın. Biraz sonra tekrar dene.");
+      return rejected(words.note.limit);
     case "USER_BANNED":
-      return rejected("Bu hesapla artık not gönderilemiyor.");
+      return rejected(words.note.banned);
     case "UNAUTHORIZED":
-      return rejected("Oturumun sona ermiş. Yeniden giriş yap.");
+      return rejected(words.note.expired);
     case "ASSET_NOT_FOUND":
-      return rejected("Bu eser artık yayında değil.");
+      return rejected(words.note.unpublished);
     case "INVALID_BODY":
-      return rejected("Not kabul edilmedi; metni kontrol et.");
+      return rejected(words.note.invalid);
     case "TOO_FAR":
-      return rejected("Esere yeterince yakın değilsin. Mühür için eserin 200 m yakınında olmalısın.");
+      return rejected(words.seal.tooFar);
     case "POSITION_REQUIRED":
-      return rejected("Mühür için konumun gerekiyor. Konum iznini açıp tekrar dene.");
+      return rejected(words.seal.position);
     case "UNKNOWN_MEDIA":
-      return rejected("Tanınan fotoğraf bu esere ait değil.");
+      return rejected(words.seal.unknownMedia);
     case "VISIT_LIMIT":
-      return rejected("Bugünkü ziyaret sınırına ulaştın. Yarın tekrar dene.");
+      return rejected(words.seal.limit);
   }
   return statusError(status, code, details);
 }
@@ -244,8 +245,8 @@ function errorFor(status: number, code: string | null, details: string[]): DataE
  * Sends a note on `asset` under the account. The note waits for a moderator; the pulse shows it once approved.
  */
 export async function sendContribution(asset: { id: string; name: string }, note: { kind: TextContributionKind; body: string }): Promise<Contribution> {
-  if (!communityAvailable) throw new DataError("unavailable", "Not göndermek için sunucu gerekiyor.");
-  const sendWith = await signedInToken("Not bırakmak");
+  if (!communityAvailable) throw new DataError("unavailable", getMessages().moreErrors.note.needsServer);
+  const sendWith = await signedInToken(getMessages().moreErrors.signIn.note);
   const contribution = await call(`/assets/${encodeURIComponent(asset.id)}/contributions`, ContributionSchema, {
     body: note,
     token: sendWith,
@@ -260,8 +261,8 @@ export async function sendContribution(asset: { id: string; name: string }, note
  * (`POST /assets/:id/visit/proof`) under the account.
  */
 export async function sendVisitProof(assetId: string, proof: Omit<VisitProofRequest, "method">): Promise<VisitResponse> {
-  if (!communityAvailable) throw new DataError("unavailable", "Mühür için sunucu gerekiyor.");
-  const sendWith = await signedInToken("Mühür basmak");
+  if (!communityAvailable) throw new DataError("unavailable", getMessages().moreErrors.seal.needsServer);
+  const sendWith = await signedInToken(getMessages().moreErrors.signIn.seal);
   const result = await call(`/assets/${encodeURIComponent(assetId)}/visit/proof`, VisitResponseSchema, {
     body: { ...proof, method: "device_recognition" },
     token: sendWith,
@@ -289,10 +290,10 @@ export async function keepUser(user: AppUser, sentWith: string) {
   await keepSession({ user, token: sentWith });
 }
 
-/** The account's token, or a "sign in to …" error naming `action`. */
-export async function signedInToken(action: string): Promise<string> {
+/** The account's token, or the "sign in to …" error given. */
+export async function signedInToken(signIn: string): Promise<string> {
   const current = await accountToken();
-  if (current === null) throw new DataError("rejected", `${action} için giriş yap.`, ["/me"], "ACCOUNT_REQUIRED");
+  if (current === null) throw new DataError("rejected", signIn, ["/me"], "ACCOUNT_REQUIRED");
   return current;
 }
 
@@ -308,21 +309,19 @@ export async function refreshMe(): Promise<AppUser | null> {
   return user;
 }
 
-const PROFILE_MESSAGES: Record<string, string> = {
-  INVALID_BODY: "Ad soyad 2–64 harf olmalı; yalnızca harf, boşluk, ' . - kullanılabilir.",
-};
+const profileMessages = (): Record<string, string> => getMessages().moreErrors.profile;
 
 /** Changes the nickname or the full name (`PATCH /me`); `fullName: null` removes the name. */
 export async function updateProfile(profile: UpdateProfileRequest): Promise<AppUser> {
-  const current = await signedInToken("Profili düzenlemek");
-  const user = await call("/me", AppUserSchema, { body: profile, method: "PATCH", token: current, messages: PROFILE_MESSAGES });
+  const current = await signedInToken(getMessages().moreErrors.signIn.profile);
+  const user = await call("/me", AppUserSchema, { body: profile, method: "PATCH", token: current, messages: profileMessages() });
   await keepUser(user, current);
   return user;
 }
 
 /** Removes the profile photo (`DELETE /me/avatar`). */
 export async function removeAvatar(): Promise<AppUser> {
-  const current = await signedInToken("Profil fotoğrafını kaldırmak");
+  const current = await signedInToken(getMessages().moreErrors.signIn.removePhoto);
   const user = await call("/me/avatar", AppUserSchema, { method: "DELETE", token: current });
   await keepUser(user, current);
   return user;
@@ -384,20 +383,14 @@ export async function fetchWallet(): Promise<WalletResponse | null> {
   return call("/me/wallet", WalletResponseSchema, { token });
 }
 
-const REDEEM_MESSAGES: Record<string, string> = {
-  ACCOUNT_REQUIRED: "Ödül almak için hesap aç; şimdiye kadar kazandığın puanlar korunur.",
-  INSUFFICIENT_POINTS: "Bu ödül için puanın yetmiyor.",
-  PROVEN_VISITS_REQUIRED: "Bu ödül için daha çok kanıtlanmış ziyaret gerekiyor.",
-  OUT_OF_STOCK: "Bu ödülün kodları tükendi.",
-  REWARD_NOT_FOUND: "Bu ödül artık sunulmuyor.",
-};
+const redeemMessages = (): Record<string, string> => getMessages().moreErrors.redeem;
 
 /** Spends points on a reward (`POST /rewards/:code/redeem`): the partner's single-use code. */
 export async function redeemReward(code: string): Promise<RedeemResponse> {
   await loadSession();
   const current = token;
-  if (current === null) throw new DataError("rejected", REDEEM_MESSAGES.ACCOUNT_REQUIRED!, ["/rewards"], "ACCOUNT_REQUIRED");
-  return call(`/rewards/${encodeURIComponent(code)}/redeem`, RedeemResponseSchema, { method: "POST", token: current, messages: REDEEM_MESSAGES });
+  if (current === null) throw new DataError("rejected", getMessages().moreErrors.redeem.ACCOUNT_REQUIRED, ["/rewards"], "ACCOUNT_REQUIRED");
+  return call(`/rewards/${encodeURIComponent(code)}/redeem`, RedeemResponseSchema, { method: "POST", token: current, messages: redeemMessages() });
 }
 
 /** The session's user id once the stored session is read; null without a session. */
@@ -428,7 +421,7 @@ export async function fetchMyRoutes(): Promise<SavedRoute[] | null> {
 /** Keeps a route on the account (`POST /me/routes`); `key` names the plan, the same plan again replaces it. */
 export async function saveMyRoute(key: string, route: Omit<SavedRoute, "savedAt">): Promise<SavedRoute> {
   await loadSession();
-  if (!token) throw new DataError("rejected", "Rotayı kaydetmek için giriş yap.");
+  if (!token) throw new DataError("rejected", getMessages().moreErrors.signIn.route);
   return call("/me/routes", SavedRouteSchema, { body: { key, route }, token });
 }
 

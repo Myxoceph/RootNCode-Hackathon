@@ -6,8 +6,14 @@ import { messages, type Messages } from "../src/i18n/messages";
 function texts(node: unknown, path = ""): Array<[string, string]> {
   if (typeof node === "string") return [[path, node]];
   if (typeof node === "function") {
+    const call = node as (...a: unknown[]) => unknown;
     const args = Array.from({ length: node.length }, (_, i) => (i === 0 ? "Bursa" : 3));
-    return texts((node as (...a: unknown[]) => unknown)(...args), path);
+    try {
+      return texts(call(...args), path);
+    } catch {
+      // It counts something: numbers all the way.
+      return texts(call(...args.map(() => 3)), path);
+    }
   }
   if (Array.isArray(node)) return node.flatMap((item, i) => texts(item, `${path}[${i}]`));
   if (node && typeof node === "object") return Object.entries(node).flatMap(([key, value]) => texts(value, path ? `${path}.${key}` : key));

@@ -5,7 +5,7 @@ import type { ThemeRole } from "../themes";
 import { radius, spacing, touchTarget } from "../tokens/spacing";
 import { fontFamily } from "../tokens/typography";
 import { Text } from "./text";
-import { useTheme } from "./theme-context";
+import { useTheme, useUiWords, type UiWords } from "./theme-context";
 
 /** The confidence codes of the `/assets` contract (`ConfidenceCodeSchema`). */
 export type ConfidenceCode = "certain" | "probable" | "disputed" | "legend";
@@ -21,14 +21,14 @@ interface BadgeLook {
   /** Each level differs in shape too, so it never depends on color alone (WCAG 1.4.1). */
   border: "none" | "dashed" | "solid" | "filled";
   /** Read before the label, so "Tahmini" is heard as a confidence level, not loose text. */
-  spoken: string;
+  spoken: "confidence" | "infoKind";
 }
 
 const looks: Record<ConfidenceCode, BadgeLook> = {
-  certain: { color: "success", border: "none", spoken: "Güven düzeyi" },
-  probable: { color: "primary", border: "dashed", spoken: "Güven düzeyi" },
-  disputed: { color: "warning", border: "solid", spoken: "Güven düzeyi" },
-  legend: { color: "highlight", border: "filled", spoken: "Bilgi türü" },
+  certain: { color: "success", border: "none", spoken: "confidence" },
+  probable: { color: "primary", border: "dashed", spoken: "confidence" },
+  disputed: { color: "warning", border: "solid", spoken: "confidence" },
+  legend: { color: "highlight", border: "filled", spoken: "infoKind" },
 };
 
 function BadgeIcon({ code, color }: { code: ConfidenceCode; color: string }) {
@@ -69,6 +69,7 @@ export interface ConfidenceBadgeProps {
 /** Confidence of one piece of content: an icon, the API's label and a border style per level. */
 export function ConfidenceBadge({ confidence, showCertain = false }: ConfidenceBadgeProps) {
   const { colors: c } = useTheme();
+  const words = useUiWords();
   if (confidence.code === "certain" && !showCertain) return null;
 
   const look = looks[confidence.code];
@@ -77,7 +78,7 @@ export function ConfidenceBadge({ confidence, showCertain = false }: ConfidenceB
   return (
     <View
       accessible
-      accessibilityLabel={`${look.spoken}: ${confidence.label}`}
+      accessibilityLabel={`${words[look.spoken]}: ${confidence.label}`}
       style={[
         styles.badge,
         look.border === "filled" && { backgroundColor: c.surfaceRaised },
@@ -109,12 +110,12 @@ export interface SourceRef {
   url: string | null;
 }
 
-function formatPages(pages: string): string {
-  return pages.includes("-") ? `s. ${pages.replace("-", "–")}` : `s. ${pages}`;
+function formatPages(pages: string, words: UiWords): string {
+  return `${words.pagesShort} ${pages.replace("-", "–")}`;
 }
 
-const sourceText = (source: SourceRef) => (source.pages ? `${source.title}, ${formatPages(source.pages)}` : source.title);
-const sourceSpoken = (source: SourceRef) => (source.pages ? `${source.title}, sayfa ${source.pages}` : source.title);
+const sourceText = (source: SourceRef, words: UiWords) => (source.pages ? `${source.title}, ${formatPages(source.pages, words)}` : source.title);
+const sourceSpoken = (source: SourceRef, words: UiWords) => (source.pages ? `${source.title}, ${words.pageSpoken} ${source.pages}` : source.title);
 
 export interface SourceNoteProps {
   sources: SourceRef[];
@@ -131,19 +132,20 @@ export interface SourceNoteProps {
  */
 export function SourceNote({ sources, compact = false }: SourceNoteProps) {
   const { colors: c } = useTheme();
+  const words = useUiWords();
   if (sources.length === 0) {
     return (
       <Text variant="caption" color="warning">
-        Kaynak belirtilmemiş
+        {words.noSource}
       </Text>
     );
   }
 
-  const prefix = sources.length === 1 ? "Kaynak:" : "Kaynaklar:";
+  const prefix = sources.length === 1 ? words.source : words.sources;
   if (compact) {
     return (
-      <Text variant="caption" color="textSecondary" accessibilityLabel={`${prefix} ${sources.map(sourceSpoken).join("; ")}`}>
-        {`${prefix} ${sources.map(sourceText).join("; ")}`}
+      <Text variant="caption" color="textSecondary" accessibilityLabel={`${prefix} ${sources.map((source) => sourceSpoken(source, words)).join("; ")}`}>
+        {`${prefix} ${sources.map((source) => sourceText(source, words)).join("; ")}`}
       </Text>
     );
   }
@@ -156,8 +158,8 @@ export function SourceNote({ sources, compact = false }: SourceNoteProps) {
       {/* The same book can be cited twice with different pages, so the id alone is not a key. */}
       {sources.map((source, index) => {
         const key = `${source.sourceId}-${index}`;
-        const text = sourceText(source);
-        const spoken = sourceSpoken(source);
+        const text = sourceText(source, words);
+        const spoken = sourceSpoken(source, words);
         if (!source.url) {
           return (
             <Text key={key} variant="caption" color="textSecondary" accessibilityLabel={spoken}>

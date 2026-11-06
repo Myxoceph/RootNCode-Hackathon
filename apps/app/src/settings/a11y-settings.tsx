@@ -8,6 +8,7 @@ import {
   writeThemePreference,
   type ThemePreference,
 } from "@/theme";
+import { useMessages } from "@/i18n";
 
 /** The switches on the Profil screen (module 8). They apply to every screen at once. */
 export interface A11ySettings {
@@ -71,13 +72,15 @@ export function A11ySettingsProvider({ storedThemePreference, children }: A11ySe
     setSettings((current) => ({ ...current, [key]: value }));
   }, []);
 
+  const words = useMessages().ui;
   const ui = useMemo(
     () => ({
+      words,
       theme: getTheme(scheme, settings.highContrast),
       textScale: settings.largeText ? LARGE_TEXT_SCALE : 1,
       strongFocusRing: settings.strongFocusRing,
     }),
-    [scheme, settings.highContrast, settings.largeText, settings.strongFocusRing],
+    [words, scheme, settings.highContrast, settings.largeText, settings.strongFocusRing],
   );
   const value = useMemo(
     () => ({ settings, setSetting, themePreference, setThemePreference }),

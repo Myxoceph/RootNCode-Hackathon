@@ -22,6 +22,8 @@ describe("centuryOf", () => {
     expect(centuryOf("XV. yüzyıl")).toBe(15);
     expect(centuryOf("XVIII. yüzyıl")).toBe(18);
     expect(centuryOf("XIX. yüzyıl")).toBe(19);
+    expect(centuryOf("15th century")).toBe(15);
+    expect(centuryOf("21st century")).toBe(21);
   });
 
   it("has no century without a year", () => {

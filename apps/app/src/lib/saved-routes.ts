@@ -3,6 +3,7 @@ import { TRANSIT_CITY, type ChatResponse, type SavedAnswerAbout, type SavedRoute
 import { useEffect, useSyncExternalStore } from "react";
 
 import { currentUserId, deleteMyRoute, fetchMyRoutes, saveMyRoute, useCommunity } from "@/data/community";
+import { getLang, getMessages } from "@/i18n";
 
 export type { SavedRoute } from "@vagabonds/contracts";
 
@@ -124,7 +125,7 @@ export function saveRoute(route: Omit<PlannerRoute, "id" | "savedAt" | "kind">):
   return keep({ ...route, kind: "planner", id: newId(), savedAt: new Date().toISOString() });
 }
 
-const tripTitle = (trip: TripPlanResponse) => `${trip.city.label} gezi planı`;
+const tripTitle = (trip: TripPlanResponse) => getMessages().shared.tripTitle(trip.city.label);
 
 /** Keeps a trip Rehber planned; the same trip again replaces the one before. */
 export function saveTrip(trip: TripPlanResponse): Promise<void> {
@@ -194,7 +195,7 @@ export function menuOf(answer: string): { intro: string; dishes: Array<{ name: s
     if (item) {
       const colon = item.indexOf(": ");
       const text = colon > 0 ? item.slice(colon + 2) : "";
-      dishes.push({ name: colon > 0 ? item.slice(0, colon) : item, text: `${text.charAt(0).toLocaleUpperCase("tr")}${text.slice(1)}` });
+      dishes.push({ name: colon > 0 ? item.slice(0, colon) : item, text: `${text.charAt(0).toLocaleUpperCase(getLang())}${text.slice(1)}` });
     } else {
       (dishes.length > 0 ? outro : intro).push(line);
     }
