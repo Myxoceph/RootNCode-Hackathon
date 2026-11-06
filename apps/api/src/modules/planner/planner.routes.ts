@@ -7,9 +7,11 @@ import {
   TripPlanResponseSchema,
   VisitSettingSchema,
   WeatherResponseSchema,
+  TRANSIT_CITY,
   type DailyForecast,
   type Lang,
   type RoutePlanResponse,
+  type TripLegTransit,
   type TripPlanResponse,
   type TripWeatherNoteCode,
   type WeatherResponse,
@@ -29,7 +31,9 @@ import type { CandidateRecord, PlannerRepository } from "./planner.repository.ts
 import { toCityDish } from "../gastronomy/gastronomy.mapper.ts";
 import type { GastronomyRepository } from "../gastronomy/gastronomy.repository.ts";
 import { pickDish } from "../gastronomy/meals.ts";
-import { importanceOf, planTrip, TRIP_SHAPE, weatherNoteCode, type ImportanceSignals } from "./trip.ts";
+import type { TransitPlanner } from "../transit/otp.client.ts";
+import { tramName } from "../transit/transit.places.ts";
+import { bestLegTransit, importanceOf, planTrip, TRANSIT_LEG_METERS, TRIP_SHAPE, weatherNoteCode, withoutPartsOfListed, type ImportanceSignals, type TripPlanDay } from "./trip.ts";
 
 /** How far ahead a trip can start. Beyond the forecast its days are planned without weather. */
 const TRIP_MAX_LEAD_DAYS = 365;
@@ -147,6 +151,11 @@ const turkeyHourFormat = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Is
 /** The hour in Türkiye, 0-23. */
 export const turkeyHour = () => Number(turkeyHourFormat.format(new Date()));
 
+/** The moment `minute` minutes after midnight on this date in Türkiye (UTC+3 all year). */
+function turkeyTime(date: string, minute: number): Date {
+  return new Date(new Date(`${date}T00:00:00+03:00`).getTime() + minute * 60_000);
+}
+
 export function addDays(date: string, days: number): string {
   const d = new Date(`${date}T00:00:00Z`);
   d.setUTCDate(d.getUTCDate() + days);
@@ -168,6 +177,8 @@ function toCandidate(record: CandidateRecord): PlannerCandidate {
 }
 
 export interface PlannerRoutesOptions {
+  /** Offers a bus or tram on a trip's long legs; null when OTP_URL is not set. */
+  transitPlanner: TransitPlanner | null;
   repository: PlannerRepository;
   assets: AssetsRepository;
   weather: WeatherService;
@@ -179,7 +190,7 @@ export interface PlannerRoutesOptions {
 
 export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
   app,
-  { repository, assets, weather, mediaBaseUrl, visibility, gastronomy },
+  { transitPlanner, repository, assets, weather, mediaBaseUrl, visibility, gastronomy },
 ) => {
   const statuses = visibleStatuses(visibility);
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
@@ -206,6 +217,39 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
   async function cityForecast(code: string): Promise<DailyForecast[]> {
     const point = await repository.findCityPoint(code);
     return (point && (await weather.forecast(point))) ?? [];
+  }
+
+  /** A bus or tram for each long leg, by the stop it leads to. Without an answer the leg stays a walk. */
+  async function longLegTransit(
+    city: string,
+    days: TripPlanDay[],
+    dates: string[],
+    byId: Map<string, CandidateRecord>,
+    lang: Lang,
+  ): Promise<Map<string, TripLegTransit>> {
+    const found = new Map<string, TripLegTransit>();
+    if (!transitPlanner || city !== TRANSIT_CITY) return found;
+    const place = (record: CandidateRecord | undefined) =>
+      record && record.lat !== null && record.lng !== null ? { lat: record.lat, lng: record.lng, name: record.name_tr } : null;
+    await Promise.all(
+      days.flatMap((day, index) => {
+        const stops = day.items.flatMap((item) => (item.kind === "stop" ? [item] : []));
+        return stops.map(async (stop, i) => {
+          const from = place(byId.get(stops[i - 1]?.id ?? ""));
+          const to = place(byId.get(stop.id));
+          if (!from || !to || stop.legMeters < TRANSIT_LEG_METERS) return;
+          const departure = turkeyTime(dates[index] as string, stop.at - stop.legMinutes);
+          const itineraries = await transitPlanner.plan(from, to, departure);
+          const named = itineraries?.map((it) => ({
+            ...it,
+            legs: it.legs.map((leg) => (leg.mode === "tram" && leg.line ? { ...leg, line: { ...leg.line, name: tramName(leg.line.code, lang) } } : leg)),
+          }));
+          const transit = named && bestLegTransit(named, { ...stop, departure });
+          if (transit) found.set(stop.id, transit);
+        });
+      }),
+    );
+    return found;
   }
 
   const langOf = (request: FastifyRequest, queryLang: Lang | undefined) =>
@@ -331,7 +375,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
     const lastForecast = addDays(today, FORECAST_DAYS - 1);
     const dates = Array.from({ length: dayCount }, (_, day) => addDays(firstDate, day));
 
-    const [records, forecast, dishes] = await Promise.all([
+    const [matching, forecast, dishes] = await Promise.all([
       repository.findCandidates({
         city: city.code,
         ...(theme?.kind === "type" && { type: theme.code }),
@@ -340,6 +384,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
       cityForecast(city.code),
       gastronomy.findDishes(city.code),
     ]);
+    const records = withoutPartsOfListed(matching);
     const signals = await repository.findImportanceSignals(records.map((record) => record.id));
     const dayWeather = dates.map((date) => forecast.find((day) => day.date === date) ?? null);
 
@@ -374,6 +419,8 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
       });
     });
 
+    const legTransit = await longLegTransit(city.code, plan.days, dates, byId, lang);
+
     setHeaders(reply, lang);
     return TripPlanResponseSchema.parse({
       version: CONTRACT_VERSION,
@@ -398,6 +445,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
                   asset: toAssetSummary(byId.get(item.id) as CandidateRecord, coverOf.get(item.id), ctx),
                   legMeters: item.legMeters,
                   legMinutes: item.legMinutes,
+                  transit: legTransit.get(item.id) ?? null,
                   visitMinutes: item.visitMinutes,
                   visitMinutesEstimated: item.visitMinutesEstimated,
                   setting: item.setting,
