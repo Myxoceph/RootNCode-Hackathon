@@ -3,6 +3,7 @@ import {
   CityDishesResponseSchema,
   TransitEntryPointCodeSchema,
   TransitPlanResponseSchema,
+  TripDurationSchema,
   TripPlanResponseSchema,
   WeatherResponseSchema,
   type AssetDetail,
@@ -76,6 +77,8 @@ const ASSET_CHARS = 4_000;
 /** For the second and later assets of one question. */
 const LATER_ASSET_CHARS = 2_000;
 const DISH_CHARS = 400;
+/** Konya has 67 dishes: all of them would cost the model tens of KB for a question about one meal. */
+const DISH_LIMIT = 15;
 const SEARCH_LIMIT = 5;
 
 /** Models write "Bursa" or "bursa"; city codes are lowercase ASCII. */
@@ -97,12 +100,13 @@ const ARGS = {
   asset_details: z.object({ id: z.string().trim().min(2).max(120) }),
   plan_trip: z.object({
     city: CityArg,
-    duration: z.enum(["half", "1", "2"]).default("1"),
+    duration: TripDurationSchema.default("1"),
     theme: z
       .string()
       .regex(/^(type|era):[a-z0-9-]+$/)
       .optional(),
     date: z.iso.date().optional(),
+    arrival: TransitEntryPointCodeSchema.optional(),
   }),
   city_dishes: z.object({ city: CityArg, kind: z.enum(["main", "meze", "dessert", "street"]).optional() }),
   weather: z.object({ city: CityArg }),
@@ -152,14 +156,19 @@ export const TOOL_SPECS: ToolSpec[] = [
   {
     name: "plan_trip",
     description:
-      "Bir ilde yarım, bir ya da iki günlük gezi planı: önemli eserler önce, hava tahminine göre sıralı, öğle ve tatlı molalarında yöresel lezzetle.",
+      "Bir ilde yarım günden beş güne kadar gezi planı: önemli eserler önce, hava tahminine göre sıralı, öğle ve tatlı molalarında yöresel lezzetle. Daha uzun bir gezi istenirse 5 günlük planla ve kalan günler için yeni bir plan istemesini söyle.",
     parameters: {
       type: "object",
       properties: {
         city: cityParam,
-        duration: { type: "string", enum: ["half", "1", "2"], description: "half: yarım gün, 1: tam gün, 2: iki gün" },
+        duration: { type: "string", enum: TripDurationSchema.options, description: "half: yarım gün, 1-5: o kadar tam gün" },
         theme: { type: "string", description: "İsteğe bağlı: type:<tür kodu> (ör. type:cami, type:han) ya da era:<dönem kodu>" },
-        date: { type: "string", description: "İsteğe bağlı: ilk günün tarihi YYYY-MM-DD (bugünden en çok 2 gün sonrası)" },
+        date: { type: "string", description: "İsteğe bağlı: ilk günün tarihi YYYY-MM-DD (bugünden en çok bir yıl sonrası; yaklaşık 7 günden ilerisi için hava tahmini yoktur)" },
+        arrival: {
+          type: "string",
+          enum: TransitEntryPointCodeSchema.options,
+          description: "Yalnızca Konya ve ziyaretçi nasıl geleceğini söylediyse: hızlı tren selcuklu-yht-gari, normal tren konya-gari, otobüs konya-otogari",
+        },
       },
       required: ["city"],
     },
@@ -294,6 +303,9 @@ function compactTrip(trip: TripPlanResponse, ref: number): Record<string, unknow
     ref,
     city: trip.city.label,
     duration: trip.duration,
+    ...(trip.arrival && {
+      arrival: { from: trip.arrival.from.name, to: trip.arrival.to, meters: trip.arrival.meters, ride: trip.arrival.transit },
+    }),
     days: trip.days.map((day) => ({
       day: day.day,
       date: day.date,
@@ -304,6 +316,11 @@ function compactTrip(trip: TripPlanResponse, ref: number): Record<string, unknow
           : { at: hhmm(item.at), meal: item.label, dish: item.dish?.name ?? null, minutes: item.minutes },
       ),
     })),
+    rideOptions: trip.days.flatMap((day) =>
+      day.items.flatMap((item) =>
+        item.kind === "stop" && item.transit ? [{ day: day.day, to: item.asset.name, minutes: item.transit.minutes, rides: item.transit.rides }] : [],
+      ),
+    ),
     notPlanned: trip.notPlannedCount,
     note: trip.estimateNote,
   };
@@ -327,15 +344,17 @@ const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) 
     return { content: JSON.stringify(compactAsset(asset, sources.add("asset", asset.id, asset.name), chars)) };
   },
 
-  async plan_trip({ city, duration, theme, date }, { api, sources, lang, today, hour }) {
+  async plan_trip({ city, duration, theme, date, arrival }, { api, sources, lang, today, hour }) {
     const start = date ?? (hour >= LATE_HOUR ? addDays(today, 1) : undefined);
-    const { statusCode, body } = await api("/routes/trip", { city, duration, lang, ...(theme && { theme }), ...(start && { date: start }) });
+    const { statusCode, body } = await api("/routes/trip", { city, duration, lang, ...(theme && { theme }), ...(start && { date: start }), ...(arrival && { arrival }) });
     if (statusCode === 404) return failure(`Unknown city "${city}".`);
-    if (statusCode === 400) return failure("Invalid trip parameters: the date must be today or within the next 2 days.");
+    if (statusCode === 400) return failure("Invalid trip parameters: the date must be today or within the next year.");
     const trip = TripPlanResponseSchema.parse(body);
     const days = trip.duration === "half" ? "½" : trip.duration;
     const title = `${trip.city.label} · ${days} ${lang === "en" ? "day trip" : "günlük gezi"}`;
-    return { content: JSON.stringify(compactTrip(trip, sources.add("trip", trip.city.code, title))), trip };
+    const compact = compactTrip(trip, sources.add("trip", trip.city.code, title));
+    const shortened = trip.duration !== duration && { shortened: `The dataset has sites for only ${trip.days.length} of the ${duration} days asked for; say so.` };
+    return { content: JSON.stringify({ ...compact, ...shortened }), trip };
   },
 
   async city_dishes({ city, kind }, { api, sources, lang }) {
@@ -350,6 +369,7 @@ const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) 
       content: JSON.stringify({
         dishes: dishes
           .filter((dish) => !kind || dish.kind.code === kind)
+          .slice(0, DISH_LIMIT)
           .map((dish) => ({
             ref: sources.add("dish", dish.id, dish.name),
             name: dish.name,

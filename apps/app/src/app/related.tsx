@@ -26,6 +26,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
+import { visuallyHidden } from "@/lib/visually-hidden";
 import { AssetImage } from "@/components/asset-image";
 import { ResourceView } from "@/components/resource-view";
 import { WebPageHeader } from "@/components/web-nav-bar";
@@ -209,7 +210,8 @@ function Related({
                 {name.toLocaleUpperCase(lang)}
               </Text>
             )}
-            <Text variant="display" headingLevel={1}>
+            {/* The page's title, for screen readers only; the asset's name above says what it is about. */}
+            <Text variant="display" headingLevel={1} style={visuallyHidden}>
               {w.heading}
             </Text>
             {related.length > 0 && (
@@ -227,7 +229,7 @@ function Related({
             <Text variant="overline" headingLevel={2} color="textSecondary">
               {w.opened}
             </Text>
-            <View style={wide && styles.openGrid}>
+            <View style={[styles.openList, wide && styles.openGrid]}>
               {opened.map((entry) => (
                 <OpenCard key={entry.asset.id} entry={entry} wide={wide} />
               ))}
@@ -474,6 +476,10 @@ const styles = StyleSheet.create({
   },
   columnWide: {
     gap: spacing.xl,
+  },
+  // One under the other on a phone, as far apart as side by side on a wide screen.
+  openList: {
+    gap: spacing.lg,
   },
   openGrid: {
     flexDirection: "row",

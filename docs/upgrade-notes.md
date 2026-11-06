@@ -22,6 +22,39 @@ Değişenler:
 
 ---
 
+## 2026-11-06 · Gezi planı gardan ilk durağa yolu söylüyor
+
+Sözleşme 0.3.32: gezi planına `arrival` eklendi. Kurulum adımı yok; yeni gezileri eski APK okuyamaz, yeni APK gerekir.
+
+## 2026-11-06 · Yöresel lezzetler 29'dan 131'e çıktı
+
+Türk Patent coğrafi işaret kayıtlarından 102 yeni yemek ve tatlı eklendi.
+
+- Yerelde: `npm run db:import`. Sunucu güncellemede kendisi alır.
+
+## 2026-11-06 · Gezi planında günlük durak sınırı ve toplu taşıma
+
+Sözleşme 0.3.31: gezi duraklarına `transit` eklendi. Kurulum adımı yok; yeni gezileri eski APK okuyamaz, yeni APK gerekir. Yerelde toplu taşıma önerisi için `OTP_URL` gerekir, yoksa plan yalnızca yürüyüş gösterir.
+
+## 2026-11-06 · Gezi planı 5 güne ve ileri tarihlere çıktı
+
+Sözleşme 0.3.30: `TripDuration` artık `half` ve `1`-`5`. Kurulum adımı yok; yeni planları eski APK okuyamaz, yeni APK gerekir.
+
+## 2026-11-06 · Mühür fotoğrafları yerden çekilebilir olanlardan seçiliyor
+
+Yüksekten çekilmiş 50 fotoğraf `aerial` etiketi aldı, Yeşil Külliye'ye Yeşil Camii'nin çinili kapısı eklendi.
+
+- Yerelde: `npm run db:import`. Sunucu güncellemede kendisi alır.
+- Çıktıyla sunum için güncel PDF'teki fotoğrafları kullanın; Yeşil Külliye'nin mühür fotoğrafı artık kubbe değil, çinili kapı.
+
+## 2026-11-06: Basılı fotoğrafla Ziyaret Mührü
+
+`DEMO_UNLOCK` açıkken mühür konuma bakmıyor: eserin mühür fotoğrafı kâğıttan ya da slayttan kameraya gösterilince ziyaret mühürlenir.
+
+- Telefondaki uygulama yeniden derlenmeli; eski sürüm 200 m kontrolünü kendisi yapıp reddeder.
+- Sunucuda bir şey yapmak gerekmiyor (`DEMO_UNLOCK` varsayılan olarak açık).
+- Kapatmak için: sunucunun `deploy/compose.yml` ve `deploy/.env` dosyalarına `DEMO_UNLOCK=false`.
+
 ## 2026-11-06 · Panelden fotoğraf yükleme (sözleşme 0.3.29)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **sunucuyu yöneten**, **Kübra (panel)**

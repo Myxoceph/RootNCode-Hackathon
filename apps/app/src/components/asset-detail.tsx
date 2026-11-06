@@ -170,10 +170,10 @@ export function AssetDetailView({
   asset: AssetDetail;
   /** Replaces going back, e.g. in the admin panel's preview. */ onClose?: () => void;
 }) {
-  const m = useMessages();
   // A wide web page reads the card as an article (`AssetArticle`); the phone and the panel's preview keep the pages.
   const wide = useWideWeb();
   // The whole page is drawn again in a new language: its parts read their words through `m.asset`.
+  useMessages();
   return wide && !onClose ? (
     <AssetArticle asset={asset} />
   ) : (

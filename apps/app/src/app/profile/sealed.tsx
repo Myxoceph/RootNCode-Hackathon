@@ -92,9 +92,6 @@ export default function SealedAssetsScreen() {
       )}
       {assets.length > 0 && (
         <>
-          <Text variant="overline" color="textSecondary">
-            {m.sealed.count(assets.length)}
-          </Text>
           <View accessibilityRole="list" style={styles.tiles}>
             {assets.map((asset) => (
               <Tile key={asset.id} asset={asset} width={tile} />

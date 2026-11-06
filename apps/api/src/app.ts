@@ -114,6 +114,7 @@ export function buildApp({
   app.register(assetsRoutes, { repository: assetsRepository, mediaBaseUrl, visibility: assetVisibility, sounds: soundsRepository });
   const gastronomyRepository = createGastronomyRepository(prisma, assetVisibility);
   app.register(plannerRoutes, {
+    transitPlanner,
     repository: createPlannerRepository(prisma, assetVisibility),
     assets: assetsRepository,
     weather,

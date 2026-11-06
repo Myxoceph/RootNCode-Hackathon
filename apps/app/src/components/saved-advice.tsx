@@ -1,7 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type {
   SavedAnswerAbout,
-  TransitItinerary,
   TransitLeg,
   Lang,
 } from "@vagabonds/contracts";

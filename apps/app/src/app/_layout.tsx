@@ -111,7 +111,8 @@ function ThemedStack() {
             headerTitleStyle: { fontFamily: fontFamily.display },
           }}
         >
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          {/* No slide into the tabs: from the welcome page the map is already made (prefetched) and simply shows. */}
+          <Stack.Screen name="(tabs)" options={{ headerShown: false, animation: "none" }} />
           {/* Camera screens are full screen and always dark; they draw their own back button. */}
           <Stack.Screen
             name="visit-seal"
@@ -124,6 +125,11 @@ function ThemedStack() {
           <Stack.Screen
             name="auth"
             options={{ headerShown: false, title: m.screens.signIn }}
+          />
+          {/* The page the app opens on; it draws its own way on, with no back to anywhere. */}
+          <Stack.Screen
+            name="welcome"
+            options={{ headerShown: false, title: m.welcome.title, gestureEnabled: false }}
           />
           {/* Profil's sections, each on its own page under a header with a back button. */}
           <Stack.Screen
@@ -193,10 +199,6 @@ function ThemedStack() {
           <Stack.Screen
             name="assistant-history"
             options={{ title: m.screens.history, headerBackTitle: m.tabs.rehber }}
-          />
-          <Stack.Screen
-            name="map-prototype"
-            options={{ headerShown: false, title: m.screens.mapPrototype }}
           />
           {/* The admin panel draws its own frame (side bar and pages). */}
           <Stack.Screen

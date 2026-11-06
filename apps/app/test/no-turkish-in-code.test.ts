@@ -18,8 +18,6 @@ const LEFT_OUT = [
   /^data\/mock-source\.ts$/,
   // Sample content with its English beside it.
   /^content\//,
-  // A developer's test page.
-  /^app\/map-prototype\.tsx$/,
 ];
 
 /** Lines that hold Turkish without showing it to anyone. */

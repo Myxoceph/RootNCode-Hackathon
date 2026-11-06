@@ -1,4 +1,4 @@
-import type { DailyForecast, TripDuration, TripWeatherNoteCode, VisitSetting } from "@vagabonds/contracts";
+import type { DailyForecast, TransitItinerary, TripDuration, TripLegTransit, TripWeatherNoteCode, VisitSetting } from "@vagabonds/contracts";
 import type { Point } from "../assets/assets.network.ts";
 import { HEAT_THRESHOLD_C } from "../weather/weather.service.ts";
 import {
@@ -19,11 +19,19 @@ export const DESSERT_MINUTES = 30;
 /** Above this chance of precipitation in the day (but not in the afternoon) the note suggests an umbrella. */
 export const RAIN_POSSIBLE_PERCENT = 15;
 
-/** When each day must be over, dessert included, and whether it has a lunch break. */
-export const TRIP_SHAPE: Record<TripDuration, { days: number; endMinute: number; lunch: boolean }> = {
-  half: { days: 1, endMinute: 13 * 60 + 30, lunch: false },
-  "1": { days: 1, endMinute: 17 * 60 + 30, lunch: true },
-  "2": { days: 2, endMinute: 17 * 60 + 30, lunch: true },
+const FULL_DAY = { endMinute: 17 * 60 + 30, lunch: true, maxStops: 10 };
+
+/**
+ * When each day must be over (dessert included), whether it has a lunch break, and how many stops
+ * it holds: the visit times are short estimates, so the clock alone packed 24 stops into a day.
+ */
+export const TRIP_SHAPE: Record<TripDuration, { days: number; endMinute: number; lunch: boolean; maxStops: number }> = {
+  half: { days: 1, endMinute: 13 * 60 + 30, lunch: false, maxStops: 4 },
+  "1": { days: 1, ...FULL_DAY },
+  "2": { days: 2, ...FULL_DAY },
+  "3": { days: 3, ...FULL_DAY },
+  "4": { days: 4, ...FULL_DAY },
+  "5": { days: 5, ...FULL_DAY },
 };
 
 export interface ImportanceSignals {
@@ -158,6 +166,11 @@ function timeline(sites: Located[], from: Point | null, lunch: boolean): { items
     }
   }
   if (sites.length) {
+    if (!hadLunch) {
+      t = Math.max(t, LUNCH_AFTER);
+      items.push({ kind: "meal", meal: "lunch", at: t, minutes: LUNCH_MINUTES });
+      t += LUNCH_MINUTES;
+    }
     items.push({ kind: "meal", meal: "dessert", at: t, minutes: DESSERT_MINUTES });
     t += DESSERT_MINUTES;
   }
@@ -193,6 +206,36 @@ function summarize(items: TripPlanItem[]): TripPlanDay {
  * morning and indoor ones to the afternoon. Lunch follows the first stop that
  * ends after noon; every day with stops ends with a dessert stop.
  */
+/** A complex is visited as a whole: its buildings are not stops of their own while it is in the plan. */
+export function withoutPartsOfListed<T extends { id: string; parent_id: string | null }>(records: T[]): T[] {
+  const ids = new Set(records.map((record) => record.id));
+  return records.filter((record) => record.parent_id === null || !ids.has(record.parent_id));
+}
+
+/** From this walk on, a leg is worth a bus. */
+export const TRANSIT_LEG_METERS = 1_000;
+/** A ride that gets there this much later than walking is not an alternative. */
+const TRANSIT_MAX_DELAY_MINUTES = 15;
+
+/** The itinerary to offer instead of a walk: a real ride that saves most of the walking, soon enough. */
+export function bestLegTransit(
+  itineraries: TransitItinerary[],
+  { legMeters, departure, legMinutes }: { legMeters: number; departure: Date; legMinutes: number },
+): TripLegTransit | null {
+  const latest = departure.getTime() + (legMinutes + TRANSIT_MAX_DELAY_MINUTES) * 60_000;
+  const useful = itineraries.filter(
+    (it) =>
+      it.legs.some((leg) => leg.line) && it.walkMeters <= legMeters * 0.6 && new Date(it.arrival).getTime() <= latest,
+  );
+  const best = useful.sort((a, b) => a.durationMinutes - b.durationMinutes)[0];
+  if (!best) return null;
+  return {
+    minutes: best.durationMinutes,
+    walkMeters: best.walkMeters,
+    rides: best.legs.flatMap((leg) => (leg.line ? [{ line: leg.line.name, from: leg.from.name, to: leg.to.name }] : [])),
+  };
+}
+
 export function planTrip({ candidates, start, duration, weather }: TripInput): TripPlan {
   const shape = TRIP_SHAPE[duration];
   const located = candidates.filter((c): c is Located => c.point !== null);
@@ -208,15 +251,19 @@ export function planTrip({ candidates, start, duration, weather }: TripInput): T
     let plan = timeline([], from, shape.lunch);
     if (anchor) {
       for (const site of remaining) {
+        if (picked.length === shape.maxStops) break;
         if (walkMeters(anchor, site.point) > MAX_LEG_WALK_METERS) continue;
         const trial = order([...picked, site], anchor, outdoorsFirst);
         const trialPlan = timeline(trial, from, shape.lunch);
-        if (trialPlan.end <= shape.endMinute) {
+        const legsFit = trialPlan.items.every((item) => item.kind !== "stop" || item.legMeters <= MAX_LEG_WALK_METERS);
+        if (trialPlan.end <= shape.endMinute && legsFit) {
           picked = trial;
           plan = trialPlan;
         }
       }
     }
+    // Out of sites: a five-day trip in a small town ends early rather than with empty days.
+    if (picked.length === 0 && day > 0) break;
     const used = new Set(picked.map((site) => site.id));
     remaining = remaining.filter((site) => !used.has(site.id));
     days.push(summarize(plan.items));

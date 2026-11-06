@@ -42,11 +42,6 @@ export function MyContributions({ title }: { title?: string | null }) {
           </Pressable>
         )}
       </View>
-      {user && (
-        <Text variant="caption" color="textSecondary">
-          {w.nickname(user.nickname)}
-        </Text>
-      )}
 
       {mine.status === "loading" && <ActivityIndicator color={c.textSecondary} accessibilityLabel={w.loading} />}
       {mine.status === "error" && (

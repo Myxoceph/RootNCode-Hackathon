@@ -8,6 +8,7 @@ import { Animated, Easing, Platform, Pressable, StyleSheet, View, type LayoutCha
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
+import { visuallyHidden } from "@/lib/visually-hidden";
 import { featuredInscription, INSCRIPTION_ASSET } from "@/ar/inscription-targets";
 import { AssetImage } from "@/components/asset-image";
 import { useAsset } from "@/data";
@@ -86,7 +87,8 @@ export default function CameraScreen() {
         <title>{m.common.title(m.camera.title)}</title>
       </Head>
       <View style={styles.column}>
-        <Text variant="title" headingLevel={1}>
+        {/* The tab bar names the page: the title is for screen readers only. */}
+        <Text variant="title" headingLevel={1} style={visuallyHidden}>
           {m.camera.title}
         </Text>
         {modesIn(m).map((mode) => (
@@ -490,7 +492,7 @@ function InscriptionPreview({ inscription, photo, box }: { inscription: Inscript
  * Dims everything around the focus frame, so the locked part stands out and the corners read on
  * any photo. Four bands around `rect`; `opacity` fades them in with the lock.
  */
-function Spotlight({ rect: raw, box, opacity }: { rect: { left: number; top: number; width: number; height: number }; box: Box; opacity: Animated.AnimatedInterpolation<number> | Animated.Value }) {
+function Spotlight({ rect: raw, opacity }: { rect: { left: number; top: number; width: number; height: number }; box: Box; opacity: Animated.AnimatedInterpolation<number> | Animated.Value }) {
   // Whole pixels, so the four bands meet without a seam.
   const rect = { left: Math.round(raw.left), top: Math.round(raw.top), width: Math.round(raw.width), height: Math.round(raw.height) };
   const right = rect.left + rect.width;

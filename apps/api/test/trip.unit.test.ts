@@ -1,8 +1,10 @@
-import type { DailyForecast, VisitSetting } from "@vagabonds/contracts";
+import type { DailyForecast, TransitItinerary, VisitSetting } from "@vagabonds/contracts";
 import { describe, expect, it } from "vitest";
 import type { Point } from "../src/modules/assets/assets.network.ts";
 import { walkMeters, walkMinutes } from "../src/modules/planner/planner.ts";
 import {
+  bestLegTransit,
+  withoutPartsOfListed,
   DAY_START,
   importanceOf,
   LUNCH_AFTER,
@@ -43,6 +45,61 @@ const lastEnd = (day: TripPlanDay) => {
 
 // Twenty 30-minute sites, 100 m apart: more than any single day can hold.
 const street = Array.from({ length: 20 }, (_, i) => site(`s${String(i).padStart(2, "0")}`, i * 100, { importance: i }));
+
+describe("bestLegTransit", () => {
+  const departure = new Date("2026-11-14T10:00:00+03:00");
+  const leg = { legMeters: 2000, legMinutes: 25, departure };
+  const ride = (arrival: string, walkMeters = 300, durationMinutes = 15) =>
+    ({
+      arrival,
+      walkMeters,
+      durationMinutes,
+      legs: [
+        { line: null, from: { name: "A" }, to: { name: "Durak 1" } },
+        { line: { name: "56-A" }, from: { name: "Durak 1" }, to: { name: "Durak 2" } },
+      ],
+    }) as unknown as TransitItinerary;
+
+  it("offers the quickest ride that spares most of the walk", () => {
+    expect(bestLegTransit([ride("2026-11-14T10:30:00+03:00", 300, 20), ride("2026-11-14T10:20:00+03:00", 400, 12)], leg)).toEqual({
+      minutes: 12,
+      walkMeters: 400,
+      rides: [{ line: "56-A", from: "Durak 1", to: "Durak 2" }],
+    });
+  });
+
+  it("offers nothing for a walk, a ride that spares little walking, or a long wait", () => {
+    const walk = { ...ride("2026-11-14T10:20:00+03:00"), legs: [{ line: null }] } as unknown as TransitItinerary;
+    expect(bestLegTransit([walk], leg)).toBeNull();
+    expect(bestLegTransit([ride("2026-11-14T10:20:00+03:00", 1500)], leg)).toBeNull();
+    expect(bestLegTransit([ride("2026-11-14T11:00:00+03:00")], leg)).toBeNull();
+  });
+});
+
+describe("stops of a day", () => {
+  it("holds a day to its number of stops however much time is left", () => {
+    const quick = Array.from({ length: 20 }, (_, i) => site(`q${i}`, i * 50, { visitMinutes: 5 }));
+    const [day] = planTrip({ candidates: quick, start: null, duration: "1", weather: [null] }).days;
+    expect(stopIds(day)).toHaveLength(10);
+    expect(day?.items.some((item) => item.kind === "meal" && item.meal === "lunch")).toBe(true);
+  });
+
+  it("leaves out a site that would take a leg longer than the walk limit", () => {
+    const apart = [site("a", 0, { importance: 3 }), site("b", 2200, { importance: 2 }), site("c", -2200, { importance: 1 })];
+    const { days } = planTrip({ candidates: apart, start: null, duration: "1", weather: [null] });
+    for (const item of days[0]?.items ?? []) if (item.kind === "stop") expect(item.legMeters).toBeLessThanOrEqual(3000);
+    expect(stopIds(days[0])).not.toEqual(expect.arrayContaining(["a", "b", "c"]));
+  });
+
+  it("drops a complex's buildings only while the complex is listed", () => {
+    const records = [
+      { id: "kulliye", parent_id: null },
+      { id: "semahane", parent_id: "kulliye" },
+      { id: "cami", parent_id: "yok" },
+    ];
+    expect(withoutPartsOfListed(records).map((r) => r.id)).toEqual(["kulliye", "cami"]);
+  });
+});
 
 describe("importance", () => {
   it("weighs links most, then highlights, then having a photo", () => {
@@ -122,9 +179,16 @@ describe("planTrip", () => {
     expect(legMeters).toBeGreaterThan(1000);
   });
 
-  it("returns empty days when nothing is located", () => {
+  it("ends the trip early when the sites run out, instead of leaving empty days", () => {
+    const plan = planTrip({ candidates: street, start: null, duration: "5", weather: [] });
+    expect(plan.days.length).toBeLessThan(5);
+    expect(plan.days.every((day) => day.items.some((item) => item.kind === "stop"))).toBe(true);
+    expect(plan.notPlannedCount).toBe(0);
+  });
+
+  it("returns one empty day when nothing is located", () => {
     const plan = planTrip({ candidates: [site("unknown", null)], start: null, duration: "2", weather: [null, null] });
-    expect(plan.days).toHaveLength(2);
+    expect(plan.days).toHaveLength(1);
     expect(plan.days.every((day) => day.items.length === 0 && day.outdoorShare === 0)).toBe(true);
     expect(plan).toMatchObject({ skippedWithoutCoordinates: 1, notPlannedCount: 0 });
   });

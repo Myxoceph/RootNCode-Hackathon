@@ -77,7 +77,8 @@ const EnvSchema = z.object({
   MEDIA_S3_ACCESS_KEY_ID: z.string().default(""),
   MEDIA_S3_SECRET_ACCESS_KEY: z.string().default(""),
   // The app's "Kilidi aç": POST /assets/:id/visit/unlock records a visit without position or photo,
-  // while Ziyaret Mührü is tried away from the sites. On until the app requires the photo; then "false".
+  // and POST /assets/:id/visit/proof takes no position, so a printed photo can stand in for the site.
+  // On until visits must happen on site; then "false".
   DEMO_UNLOCK: z.enum(["true", "false"]).default("true").transform((value) => value === "true"),
 });
 

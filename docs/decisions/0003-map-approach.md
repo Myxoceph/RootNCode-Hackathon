@@ -47,7 +47,7 @@ Harita her platformda **MapLibre GL JS** ile çizilir: web'de bir iframe'de, tel
 
 ## Prototip
 
-`Kamera → Harita prototipi` ekranı (yalnızca geliştirme modunda, `apps/app/src/app/map-prototype.tsx`).
+`Kamera → Harita prototipi` ekranı (yalnızca geliştirme modunda; karar verildikten sonra silindi, git geçmişinde `apps/app/src/app/map-prototype.tsx`).
 API'den koordinatı olan eserleri şehre göre gösterir. Karşılaştırma sırasında telefonda
 `react-native-maps`'e geçiş de vardı; panelde haritanın kaç saniyede çizildiği ve kaç eserin koordinatı
 olduğu yazar.

@@ -33,6 +33,13 @@ const PROFILE = "settings";
 /** The site's pages with their names in the language asked for. */
 export const siteItems = (m: Messages): Array<TabItem & { href: Href }> => [
   {
+    name: "index",
+    title: m.tabs.home,
+    icon: "home-outline",
+    iconFocused: "home",
+    href: "/",
+  },
+  {
     name: "map",
     title: m.tabs.map,
     icon: "map-outline",
@@ -431,6 +438,9 @@ const styles = StyleSheet.create({
     paddingLeft: 12,
   },
   brand: {
+    minWidth: 44,
+    minHeight: 44,
+    justifyContent: "center",
     flexDirection: "row",
     alignItems: "center",
     gap: 12,
@@ -469,7 +479,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 7,
-    height: 40,
+    height: 44,
     paddingHorizontal: 16,
     borderRadius: 20,
     ...webTransition("background-color", "180ms"),
@@ -486,7 +496,7 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.sansSemiBold,
   },
   cta: {
-    height: 42,
+    height: 44,
     flexDirection: "row",
     alignItems: "center",
     gap: 12,

@@ -22,6 +22,8 @@ let owner: string | null | undefined;
 let visited: ReadonlySet<string> = new Set();
 let demo: ReadonlySet<string> = new Set();
 let unlocked: ReadonlySet<string> = new Set();
+/** Whether the owner's unlocks have come in: what is unlocked before then was unlocked before this run. */
+let settled = false;
 /** The owner's unlocks on their way: an unlock waits for them, so they cannot drop it when they arrive. */
 let loading: Promise<void> = Promise.resolve();
 const listeners = new Set<() => void>();
@@ -38,6 +40,7 @@ function loadFor(userId: string | null): Promise<void> {
   owner = userId;
   visited = new Set();
   demo = carried;
+  settled = userId === null;
   publish();
   void AsyncStorage.removeItem(SHARED_KEY).catch(() => {});
   loading = userId === null ? Promise.resolve() : load(userId);
@@ -59,6 +62,7 @@ async function load(userId: string): Promise<void> {
   } catch {
     // Unreadable: only the visits and what came along from before the session are unlocked.
   }
+  settled = true;
   publish();
   await sendKept(userId);
 }
@@ -131,5 +135,17 @@ export function useUnlockedAssets(): ReadonlySet<string> {
     subscribe,
     () => unlocked,
     () => unlocked,
+  );
+}
+
+/**
+ * Whether the visitor's unlocks have come in. Until then a newly listed unlock is one made before
+ * this run, loading; the map plays no unlocking scene for it.
+ */
+export function useUnlocksSettled(): boolean {
+  return useSyncExternalStore(
+    subscribe,
+    () => settled,
+    () => settled,
   );
 }

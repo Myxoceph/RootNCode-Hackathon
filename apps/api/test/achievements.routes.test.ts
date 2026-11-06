@@ -120,6 +120,33 @@ describe.skipIf(!DATABASE_URL)("achievements (PostgreSQL)", () => {
     }
   });
 
+  it("seals from anywhere only when the demo unlock is on, and the visit counts as sealed", async () => {
+    const token = await createUser();
+    const photographed = await prisma.asset_media.findFirstOrThrow({
+      where: { asset: { status: "published", lat: { not: null }, NOT: { coord_source: "osm_area" } } },
+      select: { asset_id: true, media_key: true },
+    });
+    const prove = (on: ReturnType<typeof buildApp>) =>
+      on.inject({
+        method: "POST",
+        url: `/assets/${photographed.asset_id}/visit/proof`,
+        headers: auth(token),
+        payload: { mediaKey: photographed.media_key, method: "device_recognition" },
+      });
+    const refused = await prove(app);
+    expect([refused.statusCode, refused.json().error.code]).toEqual([400, "POSITION_REQUIRED"]);
+
+    const demo = buildApp({ prisma, rateLimit: false, demoUnlock: true });
+    try {
+      const sealed = VisitResponseSchema.parse((await prove(demo)).json());
+      expect(sealed).toMatchObject({ proven: true, verified: false, distanceMeters: null, firstVisit: true });
+      const mine = MyAchievementsResponseSchema.parse((await app.inject({ method: "GET", url: "/me/achievements", headers: auth(token) })).json());
+      expect(mine).toMatchObject({ visits: 1, sealed: 1 });
+    } finally {
+      await demo.close();
+    }
+  });
+
   it("counts notes waiting and approved, and only approved ones earn points and badges", async () => {
     const token = await createUser();
     const session = await prisma.user_session.findUniqueOrThrow({ where: { token_hash: hashToken(token) } });

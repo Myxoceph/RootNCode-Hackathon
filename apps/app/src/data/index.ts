@@ -27,6 +27,8 @@ export {
   useMyAchievements,
   useMyContributions,
   usePulse,
+  useWeather,
+  useWeatherAt,
   useRelationsOf,
   useRewards,
   useWallet,

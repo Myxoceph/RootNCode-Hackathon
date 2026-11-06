@@ -85,6 +85,11 @@ export interface MapProvinces {
   city?: MapCity | null;
   /** Turkey rises out of the fog the first time the map opens. False when "Hareketi azalt" is on. */
   reveal: boolean;
+  /**
+   * The camera flies and the fog fades. False when "Hareketi azalt" is on, or while a city is opened
+   * again as the visitor left it (it is simply there). Follows `reveal` when unset.
+   */
+  motion?: boolean;
 }
 
 /**
@@ -120,6 +125,10 @@ export interface AssetMapProps {
   onLeaveCity?: () => void;
   /** The camera has finished flying into the chosen city. */
   onCityLanded?: (plate: number) => void;
+  /** The open city is all there: its fog whole, its seals and clouds drawn, its streets loaded. */
+  onCityReady?: (plate: number) => void;
+  /** The opening (`reveal`) is over: the fog has parted and the provinces are drawn. */
+  onIntroEnd?: () => void;
   /** "Kilidini aç" over the chosen city asset was tapped: open its Ziyaret Mührü. */
   onUnlock?: (id: string) => void;
   /** "İncele" over an unlocked city asset was tapped: open its card. */

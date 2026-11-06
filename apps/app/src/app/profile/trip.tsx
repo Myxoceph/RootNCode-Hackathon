@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { TripDay, TripItem, TripPlanResponse } from "@vagabonds/contracts";
+import type { TripArrival, TripDay, TripItem, TripLegTransit } from "@vagabonds/contracts";
 import {
   fontFamily,
   palette,
@@ -11,7 +11,7 @@ import {
 } from "@vagabonds/ui";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
-import { useEffect, useRef, type ComponentProps } from "react";
+import { useEffect, useRef, useState, type ComponentProps } from "react";
 import {
   Animated,
   Pressable,
@@ -101,6 +101,7 @@ export default function SavedTripScreen() {
       {trip ? (
         <>
           <Hero route={trip} />
+          {trip.trip.arrival && <Arrival arrival={trip.trip.arrival} />}
           {/* A wide web page: the days on the left, what Rehber suggested for them on the right. */}
           <View style={wide ? styles.split : styles.stack}>
             <View style={wide ? styles.splitMain : styles.stack}>
@@ -147,6 +148,28 @@ export default function SavedTripScreen() {
   );
 }
 
+const rideText = (ride: TripLegTransit["rides"][number]) =>
+  `${ride.line}: ${ride.from} → ${ride.to}`;
+
+/** From the station or terminal to the first stop, when the visitor said how they arrive. */
+function Arrival({ arrival }: { arrival: TripArrival }) {
+  const { colors: c } = useTheme();
+  const w = useMessages().saved;
+  const { from, to, meters, transit } = arrival;
+  return (
+    <View style={[styles.weather, { backgroundColor: c.surface, borderColor: c.border }]}>
+      <View style={[styles.weatherIcon, { backgroundColor: c.surfaceRaised }]}>
+        <Ionicons name="train" size={18} color={c.highlightMark} />
+      </View>
+      <Text variant="caption" color="textSecondary" style={styles.flex}>
+        {transit
+          ? w.arrivalRide(from.name, to, transit.rides.map(rideText).join(", "), transit.minutes)
+          : w.arrivalNoRide(from.name, to, distance(meters, w))}
+      </Text>
+    </View>
+  );
+}
+
 /** The city's band, as on its ticket in Rotalarım: title, chips, and the trip's totals. */
 function Hero({ route }: { route: TripRoute }) {
   const lang = useLang();
@@ -154,6 +177,8 @@ function Hero({ route }: { route: TripRoute }) {
   const w = m.saved;
   const { trip } = route;
   const [light, deep] = inkFor(trip.city.code);
+  // Measured: on iOS a percent-sized Svg keeps its first size when the band grows under it.
+  const [band, setBand] = useState<{ width: number; height: number } | null>(null);
   const meters = trip.days.reduce((sum, day) => sum + day.totals.walkMeters, 0);
   const visit = trip.days.reduce(
     (sum, day) => sum + day.totals.visitMinutes,
@@ -166,11 +191,14 @@ function Hero({ route }: { route: TripRoute }) {
   });
 
   return (
-    <View style={styles.hero}>
+    <View
+      style={[styles.hero, { backgroundColor: deep }]}
+      onLayout={(event) => setBand(event.nativeEvent.layout)}
+    >
       {/* Sized outright: on the web an SVG without a width keeps its 300px default, not its box's. */}
-      <Svg
-        width="100%"
-        height="100%"
+      {band && <Svg
+        width={band.width}
+        height={band.height}
         style={StyleSheet.absoluteFill}
         aria-hidden
       >
@@ -180,25 +208,25 @@ function Hero({ route }: { route: TripRoute }) {
             <Stop offset="1" stopColor={deep} />
           </LinearGradient>
         </Defs>
-        <Rect width="100%" height="100%" fill="url(#trip-ink)" />
+        <Rect width={band.width} height={band.height} fill="url(#trip-ink)" />
         <Circle
-          cx="90%"
-          cy="18%"
+          cx={band.width * 0.9}
+          cy={band.height * 0.18}
           r={70}
           stroke={palette.altin200}
           strokeOpacity={0.12}
           fill="none"
         />
         <Circle
-          cx="90%"
-          cy="18%"
+          cx={band.width * 0.9}
+          cy={band.height * 0.18}
           r={46}
           stroke={palette.altin200}
           strokeOpacity={0.1}
           strokeDasharray="2 4"
           fill="none"
         />
-      </Svg>
+      </Svg>}
 
       <Text colorValue={palette.altin200} style={styles.city}>
         {trip.city.label.toLocaleUpperCase(lang)}
@@ -381,6 +409,24 @@ function Row({
               </Text>
             </>
           )}
+        </View>
+      )}
+      {item.kind === "stop" && item.transit && (
+        <View style={styles.leg}>
+          <View style={styles.rail}>
+            <View
+              style={[styles.railLine, { backgroundColor: c.highlightMark }]}
+            />
+          </View>
+          <Ionicons name="bus" size={14} color={c.textSecondary} />
+          <Text variant="caption" color="textSecondary" style={styles.legText}>
+            {w.legTransit(
+              item.transit.rides
+                .map(rideText)
+                .join(", "),
+              item.transit.minutes,
+            )}
+          </Text>
         </View>
       )}
       <View style={styles.row}>
@@ -618,6 +664,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: spacing.xs,
     minHeight: 28,
+  },
+  legText: {
+    flex: 1,
   },
   legEmpty: {
     minHeight: spacing.md,

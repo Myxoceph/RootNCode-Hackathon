@@ -9,11 +9,12 @@ import { SafeAreaInsetsContext } from "react-native-safe-area-context";
 import { DossierView } from "@/app/dossier";
 import { AssetDetailView } from "@/components/asset-detail";
 import { createAssetRecord, fetchAssetPreview, fetchAssetRecord, fetchMetaEnums, fetchPanelAssets, saveAssetRecord } from "@/data/admin";
-import { placementsOf, type DossierPlacements } from "@/lib/dossier-photos";
+import { withBlocks } from "@/lib/dossier-custom";
+import { mergePhotos, placementsIn } from "@/lib/dossier-photos";
 import { fieldIn, FRAME_ROOT_ID, InFrame, revealNode, type Frame, type FrameEditing } from "@/lib/in-frame";
 
 import { Badge, Button, Card, Confirm, errorText, Failed, formatDate, Loading, PageHeader, Segments, Toast, useAdminColors, useLoad, useToast } from "./kit";
-import { SECTION_TITLE, STEPS, type CustomBlockDraft, type Section, type Step, type StepProps } from "./asset-steps";
+import { SECTION_TITLE, STEPS, type Section, type Step, type StepProps } from "./asset-steps";
 import { previewOf, SAMPLE_TEXTS } from "./record-preview";
 import { fieldId } from "./record-fields";
 import { PageBody } from "./shell";
@@ -96,13 +97,13 @@ export function AssetWorkspace({ id }: { id: string | null }) {
   const steps = useMemo(() => (record ? STEPS.filter((step) => !step.when || step.when(record)) : STEPS), [record]);
   // The phone follows the form a beat behind the keys, so typing stays quick.
   const typed = useDeferredValue(record);
-  // Photos set between the dossier's blocks: kept here and shown on the phone, not saved yet (the API has no place for them).
-  const [placed, setPlaced] = useState<DossierPlacements | null>(null);
-  const saidPlacements = useMemo(() => placementsOf(preview.data), [preview.data]);
-  const placements = placed ?? saidPlacements;
-  // Blocks the admin adds to the dossier: kept and shown here the same way, not saved yet.
-  const [custom, setCustom] = useState<CustomBlockDraft[]>([]);
-  const customBlocks = useMemo(() => custom.map((b) => ({ id: b.id, title: b.title.tr, body: b.body.tr, after: b.after })), [custom]);
+  // Photos set between the dossier's blocks and the blocks the admin adds: both are the record's own
+  // (media[].dossierAfter, customBlocks), so they are saved with it and come back with it.
+  const placements = useMemo(() => placementsIn(typed), [typed]);
+  const customBlocks = useMemo(
+    () => (typed?.customBlocks ?? []).map((b) => ({ id: b.id, title: b.title.tr, body: b.body.tr, after: b.after })),
+    [typed],
+  );
   const phone = useMemo(
     () => (typed ? previewOf(typed, { id: id ?? "yeni-eser", meta: meta.data, base: preview.data, samples, placements, customBlocks }) : null),
     [typed, id, meta.data, preview.data, samples, placements, customBlocks],
@@ -215,6 +216,18 @@ export function AssetWorkspace({ id }: { id: string | null }) {
     }
   };
 
+  /**
+   * After a photo is uploaded or removed (the server keeps it at once): the record and the phone are
+   * read again, and changes not saved yet stay on top of them, so a later save does not undo it.
+   */
+  const photosChanged = async () => {
+    if (!id) return;
+    const fresh = await fetchAssetRecord(id);
+    loaded.setData(fresh);
+    preview.reload();
+    setDraft((current) => (current ? { ...current, media: mergePhotos(current.media, fresh.record.media) } : null));
+  };
+
   const back = () => router.push("/admin/assets");
   const confirmLeave = () => {
     const was = leaving;
@@ -246,7 +259,7 @@ export function AssetWorkspace({ id }: { id: string | null }) {
 
   const asset = preview.data;
   const title = record.name.tr.trim() || (creating ? "Yeni eser" : (asset?.name ?? ""));
-  const props: StepProps = { record, set: (change) => setDraft({ ...record, ...change }), meta: meta.data, base: asset, assets: assets.data ?? [], placements, setPlacements: setPlaced, customBlocks: custom, setCustomBlocks: setCustom, showPlace: (section, place) => {
+  const props: StepProps = { record, set: (change) => setDraft({ ...record, ...change }), meta: meta.data, base: asset, assets: assets.data ?? [], placements: placementsIn(record), setPlacements: (next) => setDraft({ ...record, media: record.media.map((m) => ({ ...m, dossierAfter: next[m.key] ?? null })) }), customBlocks: record.customBlocks, setCustomBlocks: (customBlocks) => setDraft(withBlocks(record, customBlocks)), assetId: id, onPhotosChanged: photosChanged, showPlace: (section, place) => {
       setView(section);
       setField(place);
       setFocus({ field: place, n: Date.now(), soft: true });
@@ -616,6 +629,7 @@ const FIELD: Record<string, { step: string; label: string }> = {
   inscriptions: { step: "inscriptions", label: "Kitabeler" },
   waqf: { step: "waqf", label: "Vakıf" },
   legends: { step: "legends", label: "Rivayetler" },
+  customBlocks: { step: "custom", label: "Yeni bölümler" },
 };
 
 const MESSAGE: Record<string, string> = {
@@ -623,6 +637,8 @@ const MESSAGE: Record<string, string> = {
   "summary is required": "boş olamaz",
   "district is required": "boş olamaz",
   "a section needs a title and a text": "başlığı ve metni yazılmalı",
+  "a block needs a title and a text": "başlığı ve Türkçe metni yazılmalı",
+  "ids must be unique": "aynı kimlik iki kez kullanılmış",
   "an event needs a title": "ne olduğu yazılmalı",
   "a fact needs a label and a value": "ne olduğu ve kaç olduğu yazılmalı",
   "a legend needs a title and a text": "başlığı ve anlatılanı yazılmalı",

@@ -6,6 +6,7 @@ import type { ImportanceSignals } from "./trip.ts";
 export const candidateSelect = {
   ...summarySelect,
   type_code: true,
+  parent_id: true,
   visit_setting: true,
   visit_duration_min: true,
 } satisfies Prisma.assetSelect;

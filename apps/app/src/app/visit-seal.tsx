@@ -1,4 +1,3 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
 import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
@@ -27,12 +26,13 @@ import { unlockAsset, unlockForDemo, useUnlockedAssets } from "@/lib/unlocked-as
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
-import { kmBetween } from "@/map/dense-area";
 import { localeTag, useLang, useMessages } from "@/i18n";
 
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
 /** The target must stay in view this long before the visit is sealed, so a passing glimpse does not count. */
 const HOLD_MS = 1000;
+/** How long a seal that needs the position waits for a fix. */
+const POSITION_WAIT_MS = 5000;
 /** Where the stamp's one animated value stands as the seal hangs over the page, and as it strikes. */
 const STAMP_HANGS = 0.6;
 const STAMP_STRIKES = 0.8;
@@ -156,9 +156,9 @@ export default function VisitSealScreen() {
 }
 
 /** Height of the floating "Kilidi aç" and its gap. */
-const UNLOCK_ROOM = 72;
+const UNLOCK_ROOM = 44;
 
-/** "Kilidi aç": seals the visit at once, standing in for recognising the part (a demo simulation). */
+/** A small "Aç", just in case the camera does not recognise the photo: seals the visit at once (a demo simulation). */
 function UnlockButton({ onPress }: { onPress: () => void }) {
   const w = useMessages().seal;
   return (
@@ -167,12 +167,12 @@ function UnlockButton({ onPress }: { onPress: () => void }) {
       accessibilityLabel={w.unlock}
       // A demo simulation, and the screen reader must say so: it does not check the visit.
       accessibilityHint={w.unlockHint}
+      hitSlop={8}
       onPress={onPress}
-      style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.85, transform: [{ scale: 0.98 }] }]}
+      style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.7 }]}
     >
-      <Ionicons name="lock-open" size={18} color={cameraColors.onGold} />
-      <Text variant="label" colorValue={cameraColors.onGold} style={styles.unlockText}>
-        {w.unlock}
+      <Text colorValue={cameraColors.text} style={styles.unlockText}>
+        {w.unlockShort}
       </Text>
     </Pressable>
   );
@@ -239,37 +239,31 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key, run]);
 
-  const send = useCallback(
-    async (position: Position | null) => {
-      go({ name: "sending" });
-      try {
-        const result = await sendVisitProof(asset.id, { mediaKey: photo.key, ...(position ?? {}) });
-        onSealed();
-        unlockAsset(asset.id);
-        go({ name: "sealed", result });
-        announce(w.sealedSaid(result.newAchievements.length));
-      } catch (error) {
-        go({ name: "failed", message: error instanceof DataError ? error.message : w.failed });
-      }
-    },
-    [asset.id, photo.key, go, onSealed, w],
-  );
-
   const seal = useCallback(async () => {
     go({ name: "sending" });
     if (!communityAvailable) return go({ name: "failed", message: w.needsServer });
-    const position = await currentPosition();
-    const point = asset.coordinates;
-    // The API checks the same; saying it here names the distance and saves a request.
-    if (point && !point.approximate) {
-      if (!position) return go({ name: "failed", message: w.needsLocation });
-      const meters = Math.round(kmBetween(position, point) * 1000);
-      if (meters > VISIT_RADIUS_METERS) {
-        return go({ name: "failed", message: w.tooFar(formatMeters(meters), VISIT_RADIUS_METERS) });
-      }
+    const prove = (position: Position | null) => sendVisitProof(asset.id, { mediaKey: photo.key, ...(position ?? {}) });
+    try {
+      // The API alone decides whether the position is needed: with DEMO_UNLOCK a printed photo seals from anywhere,
+      // without waiting on a slow fix or a permission dialog in front of an audience.
+      const result = await prove(null).catch(async (error: unknown) => {
+        if (!(error instanceof DataError) || error.code !== "POSITION_REQUIRED") throw error;
+        // A slow fix indoors must not hold up the seal forever; the API says if it came too late.
+        return prove(
+          await Promise.race([
+            currentPosition(),
+            new Promise<null>((resolve) => setTimeout(() => resolve(null), POSITION_WAIT_MS)),
+          ]),
+        );
+      });
+      onSealed();
+      unlockAsset(asset.id);
+      go({ name: "sealed", result });
+      announce(w.sealedSaid(result.newAchievements.length));
+    } catch (error) {
+      go({ name: "failed", message: error instanceof DataError ? error.message : w.failed });
     }
-    await send(position);
-  }, [asset.coordinates, send, go, w]);
+  }, [asset.id, photo.key, go, onSealed, w]);
 
   const onEvent = useCallback(
     (event: TrackerEvent) => {
@@ -557,10 +551,6 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
   );
 }
 
-function formatMeters(meters: number): string {
-  return meters >= 1000 ? `${(meters / 1000).toLocaleString(localeTag(), { maximumFractionDigits: 1 })} km` : `${meters} m`;
-}
-
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -573,18 +563,18 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   unlock: {
-    flexDirection: "row",
+    alignSelf: "flex-end",
+    minHeight: 28,
+    minWidth: 28,
     alignItems: "center",
     justifyContent: "center",
-    alignSelf: "stretch",
-    gap: spacing.sm,
-    minHeight: 52,
-    borderRadius: radius.full,
-    backgroundColor: "#FFFFFF",
+    paddingHorizontal: spacing.sm,
+    borderRadius: radius.sm,
+    backgroundColor: cameraColors.background,
   },
   unlockText: {
     fontFamily: fontFamily.sansBold,
-    fontSize: 17,
+    fontSize: 12,
   },
   unlockFloat: {
     position: "absolute",
