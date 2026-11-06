@@ -7,6 +7,10 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-06 · Gezi planı gardan ilk durağa yolu söylüyor
+
+Sözleşme 0.3.32: gezi planına `arrival` eklendi. Kurulum adımı yok; yeni gezileri eski APK okuyamaz, yeni APK gerekir.
+
 ## 2026-11-06 · Yöresel lezzetler 29'dan 131'e çıktı
 
 Türk Patent coğrafi işaret kayıtlarından 102 yeni yemek ve tatlı eklendi.

@@ -71,7 +71,7 @@ describe("planRoute", () => {
     });
     expect(plan.stops.map((s) => s.id)).toEqual(["near", "mid", "far"]);
     expect(plan.start).toMatchObject({ source: "query" });
-    expect(plan.stops[0]).toMatchObject({ arrivalMinute: plan.stops[0]?.legMinutes, visitMinutes: 20 });
+    expect(plan.stops[0]).toMatchObject({ arrivalMinute: plan.stops[0]?.legMinutes, visitMinutes: 25 });
     // arrival = previous arrival + its visit + this leg
     const [a, b] = plan.stops;
     expect(b?.arrivalMinute).toBe((a?.arrivalMinute ?? 0) + (a?.visitMinutes ?? 0) + (b?.legMinutes ?? 0));
@@ -82,12 +82,12 @@ describe("planRoute", () => {
     const plan = planRoute({
       candidates: [site("a", east(100)), site("b", east(200)), site("c", east(300))],
       start: ORIGIN,
-      maxMinutes: 45, // two mosques (2 × 20 min) plus short walks
+      maxMinutes: 55, // two mosques (2 × 25 min) plus short walks
       preferIndoor: false,
     });
     expect(plan.stops.map((s) => s.id)).toEqual(["a", "b"]);
     expect(plan.notReachedCount).toBe(1);
-    expect(plan.walkMinutes + plan.visitMinutes).toBeLessThanOrEqual(45);
+    expect(plan.walkMinutes + plan.visitMinutes).toBeLessThanOrEqual(55);
   });
 
   it("does not offer a leg longer than the walking limit", () => {

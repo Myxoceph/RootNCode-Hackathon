@@ -226,6 +226,25 @@ describe.skipIf(!DATABASE_URL)("planner routes (PostgreSQL)", () => {
       expect((await legsOf(async () => null)).every((stop) => stop.transit === null)).toBe(true);
     });
 
+    it("says how to reach the first stop from a station in Konya, and only there", async () => {
+      const ride = {
+        arrival: "2026-11-14T08:30:00+03:00",
+        durationMinutes: 30,
+        walkMeters: 100,
+        legs: [{ mode: "bus", line: { code: "56-A", name: "56-A" }, from: { name: "Gar" }, to: { name: "Alaaddin" } }],
+      } as unknown as TransitItinerary;
+      const withTransit = buildApp({ prisma, mediaBaseUrl: "https://media.test", weather, transitPlanner: { plan: async () => [ride] } });
+      const trip = async (query: string) =>
+        TripPlanResponseSchema.parse((await withTransit.inject({ method: "GET", url: `/routes/trip?${query}` })).json());
+      const konya = await trip("city=konya&duration=half&date=2026-11-14&arrival=selcuklu-yht-gari");
+      expect(konya.arrival).toMatchObject({ from: { code: "selcuklu-yht-gari" }, transit: { minutes: 30, rides: [{ line: "56-A" }] } });
+      expect(konya.arrival?.to).toBe(stops(konya.days[0])[0]?.asset.name);
+      expect((await trip("city=bursa&duration=half&arrival=selcuklu-yht-gari")).arrival).toBeNull();
+      expect((await trip("city=konya&duration=half")).arrival).toBeNull();
+      await withTransit.close();
+      expect((await get("/routes/trip?city=konya&arrival=atlantis", 400)).json().error.code).toBe("INVALID_QUERY");
+    });
+
     it("keeps a themed half day to its theme and before 13:30", async () => {
       const body = TripPlanResponseSchema.parse(
         (await get(`/routes/trip?city=bursa&duration=half&theme=type:turbe&date=${dayAfter(TODAY, 1)}`)).json(),

@@ -106,6 +106,7 @@ const ARGS = {
       .regex(/^(type|era):[a-z0-9-]+$/)
       .optional(),
     date: z.iso.date().optional(),
+    arrival: TransitEntryPointCodeSchema.optional(),
   }),
   city_dishes: z.object({ city: CityArg, kind: z.enum(["main", "meze", "dessert", "street"]).optional() }),
   weather: z.object({ city: CityArg }),
@@ -163,6 +164,11 @@ export const TOOL_SPECS: ToolSpec[] = [
         duration: { type: "string", enum: TripDurationSchema.options, description: "half: yarım gün, 1-5: o kadar tam gün" },
         theme: { type: "string", description: "İsteğe bağlı: type:<tür kodu> (ör. type:cami, type:han) ya da era:<dönem kodu>" },
         date: { type: "string", description: "İsteğe bağlı: ilk günün tarihi YYYY-MM-DD (bugünden en çok bir yıl sonrası; yaklaşık 7 günden ilerisi için hava tahmini yoktur)" },
+        arrival: {
+          type: "string",
+          enum: TransitEntryPointCodeSchema.options,
+          description: "Yalnızca Konya ve ziyaretçi nasıl geleceğini söylediyse: hızlı tren selcuklu-yht-gari, normal tren konya-gari, otobüs konya-otogari",
+        },
       },
       required: ["city"],
     },
@@ -297,6 +303,9 @@ function compactTrip(trip: TripPlanResponse, ref: number): Record<string, unknow
     ref,
     city: trip.city.label,
     duration: trip.duration,
+    ...(trip.arrival && {
+      arrival: { from: trip.arrival.from.name, to: trip.arrival.to, meters: trip.arrival.meters, ride: trip.arrival.transit },
+    }),
     days: trip.days.map((day) => ({
       day: day.day,
       date: day.date,
@@ -335,9 +344,9 @@ const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) 
     return { content: JSON.stringify(compactAsset(asset, sources.add("asset", asset.id, asset.name), chars)) };
   },
 
-  async plan_trip({ city, duration, theme, date }, { api, sources, lang, today, hour }) {
+  async plan_trip({ city, duration, theme, date, arrival }, { api, sources, lang, today, hour }) {
     const start = date ?? (hour >= LATE_HOUR ? addDays(today, 1) : undefined);
-    const { statusCode, body } = await api("/routes/trip", { city, duration, lang, ...(theme && { theme }), ...(start && { date: start }) });
+    const { statusCode, body } = await api("/routes/trip", { city, duration, lang, ...(theme && { theme }), ...(start && { date: start }), ...(arrival && { arrival }) });
     if (statusCode === 404) return failure(`Unknown city "${city}".`);
     if (statusCode === 400) return failure("Invalid trip parameters: the date must be today or within the next year.");
     const trip = TripPlanResponseSchema.parse(body);

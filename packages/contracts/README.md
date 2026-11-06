@@ -1,6 +1,6 @@
 # @vagabonds/contracts
 
-Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.31`).
+Backend ile istemci (mobil + web) arasındaki **tek doğruluk kaynağı** olan veri sözleşmesi. Sürüm: `CONTRACT_VERSION` (`0.3.32`).
 
 - `src/asset.schema.ts`: `/assets` uçlarının Zod şemaları ve TypeScript tipleri
 - `src/meta.schema.ts`: `/meta/enums` (filtre, lejant ve rozet kod listeleri)
@@ -28,7 +28,7 @@ v0.1'in `Monument` sözleşmesi ve `mock_monuments.json` v0.3.0'da kaldırıldı
 | `GET /weather?city=&lang=` | `WeatherResponseSchema` (anlık hava durumu, `advice` ve bugünden itibaren 7 günlük `daily` tahmin; sağlayıcıya ulaşılamazsa `available: false`, `daily: []`) |
 | `GET /meta/sounds?lang=` | `MetaSoundsResponseSchema` (yayındaki ortam sesi kayıtları: adres, süre, altyazılar, lisans; kayıt yoksa `sounds: []`) |
 | `GET /cities/:code/dishes?lang=` | `CityDishesResponseSchema` (ilin yöresel lezzetleri, veri ekibinin sırasıyla; lezzeti olmayan ilde `dishes: []`) |
-| `GET /routes/trip?city=&duration=&theme=&start=&date=&lang=` | `TripPlanResponseSchema` (`duration`: `half`, `1` (varsayılan), `2`, `3`, `4` ya da `5`; eser biterse yanıtta planlanan gün sayısı döner; `theme`: `type:<kod>` ya da `era:<kod>`, verilmezse bütün eserler; `date`: 1. günün tarihi, bugünden en çok bir yıl sonrasına kadar) |
+| `GET /routes/trip?city=&duration=&theme=&start=&date=&lang=` | `TripPlanResponseSchema` (`duration`: `half`, `1` (varsayılan), `2`, `3`, `4` ya da `5`; eser biterse yanıtta planlanan gün sayısı döner; `theme`: `type:<kod>` ya da `era:<kod>`, verilmezse bütün eserler; `arrival`: Konya'da gelinen gar ya da otogar; `date`: 1. günün tarihi, bugünden en çok bir yıl sonrasına kadar) |
 | `GET /routes/plan?city=&theme=&start=&maxMinutes=&lang=` | `RoutePlanResponseSchema` (`theme`: `type:<kod>`, `era:<kod>` ya da `network:<eser id>`; `start`: `lat,lng`; `maxMinutes` 15–600, varsayılan 120) |
 | `GET /chat/status` | `ChatStatusResponseSchema` (`available: false` iken sohbet girişleri gizlenir) |
 | `POST /chat` | İstek `ChatRequestSchema` (`message` 1–500 karakter, `assetId?`, `history` en çok 6 tur, `lang?`), yanıt `ChatResponseSchema` (`answer` içindeki `[n]` işaretleri `citations[].ref`'e karşılık gelir; `grounded: false` ise cevap kaynaksızdır; gezi sorusunda `attachments.trip`; Konya'da "nasıl giderim" sorusunda `attachments.transit`, `TransitPlanResponseSchema`). İstekte isteğe bağlı `origin: { lat, lng }`: ziyaretçinin konumu, saklanmaz |
@@ -137,7 +137,8 @@ export async function fetchAsset(id: string, lang: "tr" | "en" = "tr") {
   - **Günün notu:** `weatherNote.code` havanın planı nasıl etkilediğini söyler (`afternoon_rain`, `heat`, `rain_possible`, `clear`, `unavailable`); `text` aynı şeyi yanıt dilinde anlatır. Tahmin 7 günle sınırlıdır; daha ileri günler havaya bakılmadan planlanır (`weather: null`, `unavailable`).
   - **Birkaç gün:** 2-5 günlük gezide bir eser iki kez yer almaz. İlin eserleri biterse gezi erken biter; `duration` ve `days` planlanan gün sayısını gösterir.
   - **Molalar:** Öğle molasına bir ana yemek (`main`), tatlı durağına bir tatlı (`dessert`) konur (`dish`, `CityDish`). Önce önceki durağın ilçesine ait lezzet, sonra il geneli; gezi boyunca aynı lezzet, uygun başka lezzet kaldıkça tekrarlanmaz. İlin uygun lezzeti yoksa `dish: null`.
-  - **Durak sayısı:** Tam günde en çok 8, yarım günde en çok 4 durak vardır. Bir külliye planda varken yapıları ayrı durak olmaz.
+  - **Durak sayısı:** Tam günde en çok 10, yarım günde en çok 4 durak vardır. Bir külliye planda varken yapıları ayrı durak olmaz.
+  - **Geliş:** Konya'da `arrival` (`konya-gari`, `selcuklu-yht-gari`, `konya-otogari`) verilirse yanıttaki `arrival`, oradan 1. günün ilk durağına nasıl gidileceğini söyler.
   - **Uzun bacaklar:** Aynı gündeki iki durak arası 3 km'yi geçmez (`legMeters`). Konya'da 1 km ve üstündeki bacaklarda otobüs ya da tramvay yürümeye seçenek olarak önerilir (`transit`, OTP); saatler yürüyüşe göre kalır. OTP yanıt vermezse `transit: null` olur.
 - **Ziyaretçi Nabzı:**
   - Kullanıcı anonimdir. `POST /auth/anonymous` ile takma ad verir, karşılığında bir token alır. Token yalnızca bir kez döner, API onun yalnızca özetini saklar. İstemci token'ı güvenli depoda tutar (mobilde `expo-secure-store`); kaybolursa yeni oturum açılır.

@@ -19,7 +19,7 @@ export const DESSERT_MINUTES = 30;
 /** Above this chance of precipitation in the day (but not in the afternoon) the note suggests an umbrella. */
 export const RAIN_POSSIBLE_PERCENT = 15;
 
-const FULL_DAY = { endMinute: 17 * 60 + 30, lunch: true, maxStops: 8 };
+const FULL_DAY = { endMinute: 17 * 60 + 30, lunch: true, maxStops: 10 };
 
 /**
  * When each day must be over (dessert included), whether it has a lunch break, and how many stops
