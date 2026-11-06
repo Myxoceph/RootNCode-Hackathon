@@ -4,6 +4,7 @@ import { DataError, type ResourceWithRetry } from "@/data";
 import { transliterationLanguage } from "@/lib/language";
 
 import { featuredInscription } from "./inscription-targets";
+import { getMessages } from "@/i18n";
 
 /** One inscription as Taşın Dili shows it, on the camera card and in the reading mode alike. */
 export interface InscriptionText {
@@ -30,20 +31,19 @@ export function inscriptionText(asset: AssetDetail, inscriptionId: string): Insc
   const inscription = asset.inscriptions.find((item) => item.id === inscriptionId);
   if (!inscription) return null;
   const waqfConditions = asset.waqf?.conditions ?? null;
+  const w = getMessages().reading;
   return {
     id: `${asset.id}/${inscription.id}`,
     name: asset.name,
     location: inscription.location ?? null,
-    date: [inscription.hijriYear && `H. ${inscription.hijriYear}`, inscription.gregorian].filter(Boolean).join(" / ") || null,
+    date: [inscription.hijriYear && w.hijri(inscription.hijriYear), inscription.gregorian].filter(Boolean).join(" / ") || null,
     translation: inscription.translation,
     transliteration: inscription.transliteration,
     transliterationLanguage: transliterationLanguage(inscription.language),
     waqfName: asset.waqf?.name ?? null,
     waqfConditions,
     sources: inscription.sources,
-    readAloud: [`${asset.name} kitabesi.`, inscription.translation, waqfConditions && `Vakfiyenin şartı: ${waqfConditions}`]
-      .filter(Boolean)
-      .join(" "),
+    readAloud: w.aloud(asset.name, inscription.translation, waqfConditions),
   };
 }
 
@@ -56,7 +56,7 @@ export function inscriptionOf(
   const id = inscriptionId ?? (asset.data && featuredInscription(asset.data)?.id);
   const text = asset.data && id ? inscriptionText(asset.data, id) : null;
   if (!text) {
-    const error = new DataError("invalid", "Bu kitabenin kaydı bulunamadı.", [`${asset.data?.id ?? "?"} / ${id ?? "?"}`]);
+    const error = new DataError("invalid", getMessages().reading.notFound, [`${asset.data?.id ?? "?"} / ${id ?? "?"}`]);
     return { status: "error", error, retry: asset.retry };
   }
   return { status: "success", data: text, retry: asset.retry };

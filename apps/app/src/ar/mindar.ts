@@ -1,4 +1,5 @@
 import { AR_MINDAR_VERSION } from "@vagabonds/contracts";
+import { type Messages } from "@/i18n";
 
 /**
  * MindAR, bundled into the app by scripts/vendor-web-libs.mts. Pinned in the contract:
@@ -19,16 +20,6 @@ export type TrackerFailure =
   /** The photo to compile on the device could not be downloaded (offline); a `.mind` file that does not download falls back to it. */
   | "image-unavailable"
   | "unknown";
-
-/** What to tell a person when the tracker cannot start. */
-export const trackerFailureText: Record<TrackerFailure, string> = {
-  "camera-denied": "Kamera izni verilmedi. Telefonun ayarlarından izin verip yeniden dene.",
-  "camera-unavailable": "Kamera açılamadı. Başka bir uygulama kullanıyor olabilir.",
-  "camera-unsupported": "Bu WebView kameraya erişemiyor.",
-  "load-failed": "AR kütüphanesi yüklenemedi.",
-  "image-unavailable": "Eserin fotoğrafı indirilemedi; internet bağlantısı gerekiyor.",
-  unknown: "AR başlatılamadı.",
-};
 
 export type TrackerStep = "page" | "library" | "compile" | "camera" | "video" | "targets";
 

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, StyleSheet, View } from "react-native";
 
 import { BuildingIllustration } from "@/components/building-illustration";
+import { useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -25,6 +26,7 @@ const ink = cameraColors;
  * "Tanındı" and `onDone`. Decorative apart from what it says aloud.
  */
 export function SealScanDemo({ onDone }: { onDone: () => void }) {
+  const w = useMessages().seal;
   const reduced = useReducedMotion();
   const enter = useRef(new Animated.Value(0)).current;
   const sweep = useRef(new Animated.Value(0)).current;
@@ -34,10 +36,10 @@ export function SealScanDemo({ onDone }: { onDone: () => void }) {
   done.current = onDone;
 
   useEffect(() => {
-    announce("Örnek: eserin işaretli kısmı kameraya tanıtılıyor.");
+    announce(w.demoSaid);
     const recognise = () => {
       setRecognised(true);
-      announce("Tanındı.");
+      announce(w.demoRecognisedSaid);
       Animated.spring(found, { toValue: 1, friction: 5, tension: 120, useNativeDriver: true }).start();
     };
     let timer: ReturnType<typeof setTimeout>;
@@ -76,7 +78,7 @@ export function SealScanDemo({ onDone }: { onDone: () => void }) {
           <View style={styles.example}>
             <Ionicons name="camera" size={12} color={palette.white} />
             <Text variant="caption" colorValue={palette.white} style={styles.exampleLabel}>
-              Örnek
+              {w.demoTag}
             </Text>
           </View>
 
@@ -92,7 +94,7 @@ export function SealScanDemo({ onDone }: { onDone: () => void }) {
             <Animated.View style={[styles.badge, { backgroundColor: ink.gold, opacity: found, transform: [{ scale: pop }] }]}>
               <Ionicons name="checkmark" size={16} color={palette.gece950} />
               <Text variant="caption" colorValue={palette.gece950} style={styles.badgeLabel}>
-                Tanındı
+                {w.demoRecognised}
               </Text>
             </Animated.View>
           )}

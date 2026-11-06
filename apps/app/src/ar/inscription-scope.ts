@@ -2,6 +2,7 @@ import type { AssetDetail } from "@vagabonds/contracts";
 import { useEffect, useState } from "react";
 
 import { dataSource, loadAllAssets } from "@/data";
+import { getLang, useLang } from "@/i18n";
 import { currentPosition, type Position } from "@/lib/current-position";
 
 import { hasReadableInscription, INSCRIPTION_ASSET, isTrackable, nearbyAssets } from "./inscription-targets";
@@ -18,7 +19,7 @@ export type InscriptionScope =
   | { status: "ready"; assets: AssetDetail[]; nearby: boolean };
 
 const fetchAll = (ids: string[]) =>
-  Promise.all(ids.map((id) => dataSource.getAsset(id, "tr").catch(() => null))).then((assets) =>
+  Promise.all(ids.map((id) => dataSource.getAsset(id, getLang()).catch(() => null))).then((assets) =>
     assets.filter((asset): asset is AssetDetail => asset !== null),
   );
 
@@ -27,7 +28,7 @@ const fetchAll = (ids: string[]) =>
  * inscriptions are on them. Those the camera can find; else the first with a text to read.
  */
 async function withBuildings(id: string): Promise<AssetDetail[]> {
-  const asset = await dataSource.getAsset(id, "tr");
+  const asset = await dataSource.getAsset(id, getLang());
   if (!asset) return [];
   const all = [asset, ...(await fetchAll(asset.children.map((child) => child.id)))];
   const trackable = all.filter(isTrackable);
@@ -63,6 +64,8 @@ async function nearbyInscriptions(position: Position): Promise<AssetDetail[] | n
  */
 export function useInscriptionScope(id: string | undefined, locate: boolean | null, attempt = 0): InscriptionScope {
   const [scope, setScope] = useState<InscriptionScope>({ status: "loading" });
+  // Another language: the records' words again.
+  const lang = useLang();
 
   useEffect(() => {
     let active = true;
@@ -81,7 +84,7 @@ export function useInscriptionScope(id: string | undefined, locate: boolean | nu
     return () => {
       active = false;
     };
-  }, [id, locate, attempt]);
+  }, [id, locate, attempt, lang]);
 
   return scope;
 }
