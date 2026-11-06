@@ -381,24 +381,33 @@ export default function MapScreen() {
   }, [restoring, leftOpen, cityParam, cities.status, withAssets]);
   const mapShown = restoring === false || (restoring === true && mapCity !== null);
   // A city opened again comes in behind a veil in the welcome page's colour with its name on it:
-  // the map's first moment on screen (drawing what waited while it was out of sight) is not seen.
-  // The veil stays a little longer than that moment, then dissolves into the map.
+  // nothing of the map coming in (its fog, seals and clouds drawn, its streets loaded) is seen.
+  // The veil stays at least long enough to read the name, and lifts once the map says the city is
+  // all there (or after VEIL_LIMIT_MS whatever it says), dissolving into the map.
   const { scheme: pageScheme } = useTheme();
   const veil = useRef(new Animated.Value(1)).current;
   const [veilGone, setVeilGone] = useState(false);
+  const [readyPlate, setReadyPlate] = useState<number | null>(null);
+  const [veilHeld, setVeilHeld] = useState(false);
+  const [veilTimeUp, setVeilTimeUp] = useState(false);
   useFocusEffect(
     useCallback(() => {
       if (!restored || veilGone) return;
-      const timer = setTimeout(
-        () =>
-          Animated.timing(veil, { toValue: 0, duration: reduceMotion ? 0 : VEIL_FADE_MS, easing: Easing.out(Easing.quad), useNativeDriver: true }).start(() =>
-            setVeilGone(true),
-          ),
-        VEIL_HOLD_MS,
-      );
-      return () => clearTimeout(timer);
-    }, [restored, veilGone, veil, reduceMotion]),
+      const held = setTimeout(() => setVeilHeld(true), VEIL_HOLD_MS);
+      const limit = setTimeout(() => setVeilTimeUp(true), VEIL_LIMIT_MS);
+      return () => {
+        clearTimeout(held);
+        clearTimeout(limit);
+      };
+    }, [restored, veilGone]),
   );
+  const veilLifts = restored && !veilGone && veilHeld && (veilTimeUp || (readyPlate !== null && readyPlate === selectedPlate));
+  useEffect(() => {
+    if (!veilLifts) return;
+    Animated.timing(veil, { toValue: 0, duration: reduceMotion ? 0 : VEIL_FADE_MS, easing: Easing.out(Easing.quad), useNativeDriver: true }).start(() =>
+      setVeilGone(true),
+    );
+  }, [veilLifts, veil, reduceMotion]);
   // Once the city is there, the camera flies again as usual.
   useEffect(() => {
     if (restoring && landedPlate !== null && landedPlate === selectedPlate) setRestoring(false);
@@ -645,6 +654,7 @@ export default function MapScreen() {
           onSelectProvince={openCity}
           onLeaveCity={backToTurkey}
           onCityLanded={onCityLanded}
+          onCityReady={setReadyPlate}
           onUnlock={unlockAsset}
           onInspect={(id) =>
             router.push({ pathname: "/monuments/[id]", params: { id } })
@@ -847,8 +857,9 @@ export default function MapScreen() {
   );
 }
 
-/** How long a city opened again stays behind its veil, and how long the veil takes to dissolve. */
-const VEIL_HOLD_MS = 1200;
+/** The least a city opened again stays behind its veil, the most it waits for the map, and how long the veil takes to dissolve. */
+const VEIL_HOLD_MS = 700;
+const VEIL_LIMIT_MS = 6000;
 const VEIL_FADE_MS = 450;
 
 const styles = StyleSheet.create({

@@ -125,6 +125,8 @@ export interface AssetMapProps {
   onLeaveCity?: () => void;
   /** The camera has finished flying into the chosen city. */
   onCityLanded?: (plate: number) => void;
+  /** The open city is all there: its fog whole, its seals and clouds drawn, its streets loaded. */
+  onCityReady?: (plate: number) => void;
   /** "Kilidini aç" over the chosen city asset was tapped: open its Ziyaret Mührü. */
   onUnlock?: (id: string) => void;
   /** "İncele" over an unlocked city asset was tapped: open its card. */

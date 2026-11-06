@@ -54,6 +54,8 @@ export type MapPageEvent =
   | { type: "leaveCity" }
   /** The camera has landed on the chosen city, its flight over. */
   | { type: "cityLanded"; plate: number }
+  /** The open city is all there: its fog whole, its seals and clouds drawn, its streets loaded. */
+  | { type: "cityReady"; plate: number }
   /** "Kilidini aç" over the chosen locked asset was tapped. */
   | { type: "unlock"; id: string }
   | { type: "sceneEnd" }
@@ -1114,6 +1116,8 @@ function start() {
   /** Sheet pixels sent to the graphics card a frame: about a megabyte, so a city's sheets go up in a few frames, none of them long. */
   const SHEET_UPLOAD_BYTES = 1 << 20;
   let sheetBuild = 0;
+  /** The last build whose sheets were all worked out. */
+  let sheetMade = 0;
   let sheetShown = false;
   /** The open city's sheets as they are worked out: each one's texture's pixels and where it lies. */
   let sheets = [];
@@ -1227,7 +1231,10 @@ function start() {
     sheets = [];
     sheetLevel = 0;
     placesLevel = 0;
-    if (assets.length === 0) return;
+    if (assets.length === 0) {
+      sheetMade = build;
+      return;
+    }
     const places = sheetPlaces(assets);
     // The province's cover shows as soon as it is made: it lies over the city while the camera is
     // still high. The places' pieces join it all together, never one by one (placesLevel).
@@ -1236,6 +1243,7 @@ function start() {
     const show = () => {
       if (build !== sheetBuild) return;
       sheets = [...(cover ? [cover] : []), ...(placePieces || [])];
+      if (cover && placePieces) sheetMade = build;
       map.triggerRepaint();
     };
     const workers = sheetWorkers();
@@ -1885,10 +1893,35 @@ function start() {
       setTimeout(() => {
         if (cityPlate === plate) post({ type: "cityLanded", plate });
       }, motion ? FLY_MS : 0);
+      watchCityReady(plate);
     } else if (turkeyView) {
       // Exactly the view the map opened on, whatever padding choosing an asset left on the camera.
       map.flyTo({ center: turkeyView.center, zoom: turkeyView.zoom, padding: { top: 0, right: 0, bottom: 0, left: 0 }, duration: options.duration, essential: true });
     }
+  }
+
+  /** Whether the open city is all there, nothing of it still to come in: what a screen covering the map waits for. */
+  function cityReady() {
+    const whole = (piece) => piece.texture && piece.uploaded >= piece.height;
+    return (
+      cityLanded &&
+      sheetMade === sheetBuild &&
+      sheets.every(whole) &&
+      sheetLevel === sheetTarget() &&
+      (placesLevel >= 1 || !sheets.some((piece) => !piece.province)) &&
+      pictureJobs.size === 0 &&
+      !drawing &&
+      map.areTilesLoaded()
+    );
+  }
+  /** Tells the screen once the city just opened is all there; given up when another is opened. */
+  function watchCityReady(plate) {
+    const timer = setInterval(() => {
+      if (cityPlate !== plate) return clearInterval(timer);
+      if (!cityReady()) return;
+      clearInterval(timer);
+      post({ type: "cityReady", plate });
+    }, 100);
   }
 
   const BANK_OPACITY = DARK ? 0.7 : 0.88;
