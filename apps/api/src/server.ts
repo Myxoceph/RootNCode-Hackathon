@@ -1,3 +1,4 @@
+import { createR2MediaStore } from "./modules/admin/media-store.ts";
 import { buildApp } from "./app.ts";
 import { loadEnv } from "./config/env.ts";
 import { createPrismaClient } from "./db/prisma.ts";
@@ -17,6 +18,15 @@ const app = buildApp({
   assetVisibility: env.ASSET_VISIBILITY,
   trustProxy: env.TRUST_PROXY,
   demoUnlock: env.DEMO_UNLOCK,
+  mediaStore:
+    env.MEDIA_S3_ENDPOINT && env.MEDIA_BUCKET && env.MEDIA_S3_ACCESS_KEY_ID && env.MEDIA_S3_SECRET_ACCESS_KEY
+      ? createR2MediaStore({
+          endpoint: env.MEDIA_S3_ENDPOINT,
+          bucket: env.MEDIA_BUCKET,
+          accessKeyId: env.MEDIA_S3_ACCESS_KEY_ID,
+          secretAccessKey: env.MEDIA_S3_SECRET_ACCESS_KEY,
+        })
+      : null,
   rateLimit: env.RATE_LIMIT_MAX === 0 ? false : { max: env.RATE_LIMIT_MAX, timeWindowMs: 60_000 },
   weather: env.OPEN_METEO_URL
     ? createWeatherService({

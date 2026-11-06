@@ -1,6 +1,9 @@
 # Ahmet için: Admin panelinden eser fotoğrafı yükleme
 
-**Hazırlayan:** Kübra (admin paneli, `feat/admin-ui`) · **Tarih:** 3 Kasım 2026 · **Durum:** öneri, karar senin
+**Hazırlayan:** Kübra (admin paneli, `feat/admin-ui`) · **Tarih:** 3 Kasım 2026
+
+**Durum (6 Kasım, Ahmet):** backend hazır (sözleşme 0.3.29). Kararlar: R2 anahtarı sunucuda, işleme istek içinde ve sırayla,
+panel fotoğrafları içe aktarmada silinmiyor (`panel_upload`). S3 için `aws4fetch` kullanıldı. Uçlar: `KUBRA.md` §1b.
 
 ## Ne isteniyor
 

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { AssetIdSchema, ContractVersionSchema, DossierPlaceSchema } from "./asset.schema";
+import { AssetIdSchema, ContractVersionSchema, DossierPlaceSchema, MediaSchema } from "./asset.schema";
 import { UserRoleSchema } from "./community.schema";
 
 /**
@@ -252,6 +252,8 @@ export const AdminAssetRecordSchema = z.strictObject({
         alt: RecordText(600),
         isCover: z.boolean(),
         dossierAfter: DossierPlaceSchema.nullable().default(null),
+        /** Uploaded from the panel, so it can be removed there. Read only: a save does not change it. */
+        uploaded: z.boolean().default(false),
       }),
     )
     .max(200),
@@ -302,6 +304,29 @@ export const AdminAssetsResponseSchema = z.strictObject({
   items: z.array(AdminAssetSchema),
 });
 
+/** `POST /admin/assets/:id/media`: the request body is the photo itself. */
+export const ADMIN_PHOTO_MAX_BYTES = 15 * 1024 * 1024;
+export const ADMIN_PHOTO_MIN_SIDE = 300;
+export const ADMIN_PHOTO_TYPES = ["image/jpeg", "image/png", "image/webp"] as const;
+
+export const AdminPhotoUploadQuerySchema = z.object({
+  /** Required: what a screen reader says, and the caption when there is none. */
+  alt: z.string().trim().min(3).max(600),
+  altEn: z.string().trim().min(3).max(600).optional(),
+  caption: z.string().trim().min(1).max(600).optional(),
+  captionEn: z.string().trim().min(1).max(600).optional(),
+  /** Who took it or owns it; shown under the photo. */
+  credit: z.string().trim().min(2).max(200),
+  license: z.string().trim().min(2).max(60).default("all-rights-reserved"),
+  /** The asset's first photo becomes its cover anyway. */
+  isCover: z.enum(["true", "false"]).default("false").transform((value) => value === "true"),
+});
+
+export const AdminPhotoUploadResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  media: MediaSchema,
+});
+
 export type AdminSummaryResponse = z.infer<typeof AdminSummaryResponseSchema>;
 export type AdminUser = z.infer<typeof AdminUserSchema>;
 export type AdminUsersResponse = z.infer<typeof AdminUsersResponseSchema>;
@@ -312,3 +337,5 @@ export type AdminAsset = z.infer<typeof AdminAssetSchema>;
 export type AdminAssetRecord = z.infer<typeof AdminAssetRecordSchema>;
 export type AdminAssetRecordResponse = z.infer<typeof AdminAssetRecordResponseSchema>;
 export type AdminAssetsResponse = z.infer<typeof AdminAssetsResponseSchema>;
+export type AdminPhotoUploadQuery = z.input<typeof AdminPhotoUploadQuerySchema>;
+export type AdminPhotoUploadResponse = z.infer<typeof AdminPhotoUploadResponseSchema>;

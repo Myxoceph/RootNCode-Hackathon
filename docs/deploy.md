@@ -236,6 +236,28 @@ giderme").
 **Ücretsiz sunucunun kuralı:** Oracle, 7 gün boyunca işlemcisi çok az kullanılan ücretsiz sunucuları
 kapatabiliyor. Ekip kullandıkça sorun değil; uzun süre kullanılmayacaksa haftada bir bakın.
 
+## Panelden fotoğraf yükleme
+
+`POST /admin/assets/:id/media` fotoğrafı sunucuda işler (`sharp`, `media_pipeline.py` ile aynı boyut ve kalite) ve R2'ye
+yazar. Bunun için bucket'a yazabilen bir anahtar gerekir; yoksa bu uç 503 döner, başka hiçbir şey etkilenmez.
+
+1. Cloudflare › R2 › **Manage R2 API Tokens** › **Create API Token**: izin **Object Read & Write**, yalnızca
+   `kok-kod-media-public` bucket'ı. Hesabın tamamına yetki verme.
+2. Sunucuda `deploy/.env`'e (git'e girmez):
+
+   ```bash
+   MEDIA_S3_ENDPOINT=https://<hesap-id>.r2.cloudflarestorage.com
+   MEDIA_BUCKET=kok-kod-media-public
+   MEDIA_S3_ACCESS_KEY_ID=...
+   MEDIA_S3_SECRET_ACCESS_KEY=...
+   ```
+
+3. `deploy/demo.sh up` ya da bir sonraki otomatik güncelleme. Mac'in `deploy/.env`'ine de yazılırsa devralmada da çalışır.
+
+Panelden yüklenen fotoğraflar `asset_media.panel_upload` ile işaretlenir: içe aktarma bunları silmez, kapağı yalnızca
+veri seti bir kapak söylüyorsa geri alır. Kaydı veri tabanında (yedeklerde), dosyaları R2'dedir; veri setinde
+(`data/eserler`) değildir, yani boş bir veritabanına sıfırdan içe aktarmada gelmezler.
+
 ## Oracle çökerse: Mac'ten 5 dakikada
 
 Sunucu cevap vermiyorsa, siliniyorsa ya da sahneden önce bir şey ters giderse adres Mac'e alınır. Mac'te Docker

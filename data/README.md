@@ -598,6 +598,7 @@ CREATE TABLE asset_media (
   is_cover          boolean NOT NULL DEFAULT false,
   subject           text,                              -- exterior, portal, minber...
   dossier_after     text,                              -- dosyadaki yeri: timeline, section:<id>, custom:<id>
+  panel_upload      boolean NOT NULL DEFAULT false,    -- panelden yüklendi; içe aktarma dokunmaz
   focal_x           real CHECK (focal_x BETWEEN 0 AND 1),
   focal_y           real CHECK (focal_y BETWEEN 0 AND 1),
   caption_tr        text NOT NULL,

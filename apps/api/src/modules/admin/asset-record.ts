@@ -88,7 +88,7 @@ export const recordSelect = {
 
 /** The asset's rows, and its photos (read on their own: the one-cover index makes Prisma see one). */
 export type AssetRecordRow = Prisma.assetGetPayload<{ select: typeof recordSelect }> & {
-  media: Array<{ media_key: string; caption_tr: string; caption_en: string | null; alt_tr: string; alt_en: string | null; is_cover: boolean; dossier_after: string | null }>;
+  media: Array<{ media_key: string; caption_tr: string; caption_en: string | null; alt_tr: string; alt_en: string | null; is_cover: boolean; dossier_after: string | null; panel_upload: boolean }>;
 };
 
 const AlternateNames = z.array(z.object({ tr: z.string(), en: z.string().nullish(), note: z.string().nullish(), note_en: z.string().nullish() }));
@@ -205,7 +205,7 @@ export function toAssetRecord(row: AssetRecordRow): AdminAssetRecord {
       audioDescription: optionalText(row.audio_description_tr, row.audio_description_en),
     },
     ambientSound: { key: nonEmpty(row.ambient_sound_key), caption: optionalText(row.ambient_caption_tr, row.ambient_caption_en) },
-    media: row.media.map((m) => ({ key: m.media_key, caption: text(m.caption_tr, m.caption_en), alt: text(m.alt_tr, m.alt_en), isCover: m.is_cover, dossierAfter: m.dossier_after })),
+    media: row.media.map((m) => ({ key: m.media_key, caption: text(m.caption_tr, m.caption_en), alt: text(m.alt_tr, m.alt_en), isCover: m.is_cover, dossierAfter: m.dossier_after, uploaded: m.panel_upload })),
   };
 }
 
