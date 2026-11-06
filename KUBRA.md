@@ -28,6 +28,23 @@ Bağlanana kadar panelin her kaydı `dossierAfter`'ı ve `customBlocks`'u boş g
 **Bitti sayılır:** panelde bir fotoğraf yerleştirip bir bölüm ekle, kaydet, sayfayı yenile: ikisi de duruyor, eserin
 dosyasında görünüyor.
 
+## 1b. Panel: "Görseller" sekmesine fotoğraf yükleme
+
+API hazır (sözleşme 0.3.29). Yalnızca admin; moderatöre göstermeyin.
+
+- `POST /admin/assets/:id/media?alt=…&credit=…`: gövde dosyanın kendisi, `Content-Type` `image/jpeg`, `image/png` ya da
+  `image/webp`, en çok 15 MB (`ADMIN_PHOTO_MAX_BYTES`), kenar ≥ 300 px. Panel web'de: `request`'in `rawBody`'si yeter
+  (`data/avatar.ts`'teki web kolu gibi).
+- Sorgu: `alt` ve `credit` zorunlu; `altEn`, `caption`, `captionEn`, `license`, `isCover=true` isteğe bağlı. Altyazı
+  verilmezse `alt` kullanılır. Eserin ilk fotoğrafı kendiliğinden kapak olur.
+- Cevap `201 { version, media }`: `media` eser sayfasındaki `Media` ile aynı, önizlemeye hemen koyabilirsin.
+- `DELETE /admin/assets/:id/media/:key` → 204. Yalnızca panelden yüklenenler; kayıttaki `media[].uploaded` `true` ise
+  kaldır düğmesini göster. Veri setinin fotoğrafı `409 DATASET_PHOTO` döner.
+- Hatalar: `400 INVALID_IMAGE`, `409 PHOTO_ON_ASSET` (aynı fotoğraf bu eserde var), `413`, `415`, `503 MEDIA_UPLOAD_OFF`
+  (sunucuda R2 anahtarı yok). Hepsine Türkçe mesaj yaz.
+- İşleme sunucuda birkaç saniye sürer: yükleniyor durumu göster. Açıklama ve sıra sonra normal kayıtla değişir.
+- Yüklenen fotoğraf içe aktarmada silinmez, ama kapak seçimi veri setindeki esere dönebilir.
+
 ## 2. Gizemli bağlar: keşfettikçe açılan Kentsel Ağ
 
 **Henüz başlanmamış.** `fetchMyConnections` yok, harita bağları `useRelationsOf` ile (`app/(tabs)/map.tsx:207`) gizemsiz alıyor.
@@ -115,11 +132,6 @@ E-posta yalnızca hesabın sahibine gider, başka kimseye gösterme.
    olarak neye basılacağını yaz.
 5. İsteğe bağlı: `useMyAchievements()`'taki `notes.approved` / `notes.pending` ve `activityPoints` hiçbir ekranda yok.
    Bıraktığım Notlar'da iyi durur: "3 notun onaylandı, 1'i bekliyor · onaylanan her not +5 puan".
-
-## Sonra: panelden fotoğraf yükleme
-
-Backend'e başlıyoruz (`Ahmet.md`, ilk bölüm). Uçlar hazır olunca haber vereceğim, "Görseller" sekmesine yükleme alanı
-sende. Şimdiden bir şey yapman gerekmiyor.
 
 ---
 
