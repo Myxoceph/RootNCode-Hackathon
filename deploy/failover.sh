@@ -32,7 +32,8 @@ TUNNEL_LOG=deploy/backups/mac-tunnel.log
 LOCAL_API=http://$(env_value HTTP_PORT)/api
 
 remote() { ssh -i "$KEY" -o ConnectTimeout=10 -o BatchMode=yes "$SERVER" "$@"; }
-uptime_of() { curl -fsS -m 10 "$1/health" 2>/dev/null | sed -n 's/.*"uptimeSeconds":\([0-9]*\).*/\1/p'; }
+# Empty, not a failure, when nothing answers: with pipefail a failed curl would end the script here.
+uptime_of() { { curl -fsS -m 10 "$1/health" 2>/dev/null || true; } | sed -n 's/.*"uptimeSeconds":\([0-9]*\).*/\1/p'; }
 newest_here() { ls -1t "$HERE"/vagabonds-*.dump 2>/dev/null | head -1 || true; }
 age_of() { echo "$(( ($(date +%s) - $(stat -f %m "$1")) / 60 )) dk"; }
 
@@ -69,6 +70,8 @@ takeover() {
   if remote "sudo systemctl stop vagabonds-tunnel"; then echo "   durdu"; else echo "   sunucuya ulaşılamadı; tüneli zaten düşmüş olmalı"; fi
 
   echo "2/5 En yeni yedek"
+  # With the tunnel stopped nobody writes any more: a backup now loses nothing. A dead server keeps its last one.
+  remote "cd $REMOTE_DIR && deploy/demo.sh backup" > /dev/null 2>&1 || echo "   sunucuda yeni yedek alınamadı"
   pull || echo "   sunucudan çekilemedi; Mac'teki en son yedek kullanılacak"
   file=$(newest_here)
   [[ -n $file ]] || { echo "   Mac'te hiç yedek yok: deploy/demo.sh up ile boş veriyle açılır"; }
