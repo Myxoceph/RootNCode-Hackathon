@@ -6,7 +6,7 @@ import {
   HankenGrotesk_700Bold,
 } from "@expo-google-fonts/hanken-grotesk";
 import { IBMPlexMono_400Regular, IBMPlexMono_500Medium } from "@expo-google-fonts/ibm-plex-mono";
-import { Marcellus_400Regular } from "@expo-google-fonts/marcellus";
+import { Fraunces_400Regular } from "@expo-google-fonts/fraunces";
 import type { fontFamily } from "@vagabonds/ui";
 
 /**
@@ -14,7 +14,7 @@ import type { fontFamily } from "@vagabonds/ui";
  * The `satisfies` check fails to compile if a token family has no file here.
  */
 export const fontFiles = {
-  Marcellus_400Regular,
+  Fraunces_400Regular,
   HankenGrotesk_400Regular,
   HankenGrotesk_500Medium,
   HankenGrotesk_600SemiBold,

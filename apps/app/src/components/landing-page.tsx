@@ -267,7 +267,7 @@ const CSS = `
 .vg-grain { position: absolute; inset: -50%; pointer-events: none; background-image: ${GRAIN}; opacity: 0.09; mix-blend-mode: overlay; }
 
 .vg-nav { position: relative; z-index: 2; flex: none; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 22px 26px 22px 34px; }
-.vg-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-family: Marcellus_400Regular, serif; font-size: calc(23px * var(--vg-text, 1)); letter-spacing: 0.2px; }
+.vg-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-family: Fraunces_400Regular, Georgia, serif; font-size: calc(23px * var(--vg-text, 1)); letter-spacing: 0.2px; }
 .vg-mark { width: 9px; height: 9px; border-radius: 50%; background: #E7C26A; box-shadow: 0 0 14px rgba(231, 194, 106, 0.7); }
 .vg-nav-link { padding: 9px 18px; border: 0; border-radius: 999px; background: transparent; cursor: pointer; white-space: nowrap; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_500Medium, sans-serif; font-size: calc(14px * var(--vg-text, 1));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); transition: background 0.25s, box-shadow 0.25s; }
@@ -279,7 +279,7 @@ const CSS = `
 .vg-main { position: relative; z-index: 1; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; }
 .vg-hero { flex: none; display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(4px, 2vh, 28px) 24px 0; }
 .vg-overline { margin: 0; font-family: HankenGrotesk_500Medium, sans-serif; font-size: calc(13px * var(--vg-text, 1)); letter-spacing: 3px; text-transform: uppercase; color: rgba(244, 241, 234, 0.55); }
-.vg-h1 { margin: clamp(8px, 1.6vh, 18px) 0 0; max-width: 900px; font-family: Marcellus_400Regular, serif; font-weight: 400; color: #F7F3EA;
+.vg-h1 { margin: clamp(8px, 1.6vh, 18px) 0 0; max-width: 900px; font-family: Fraunces_400Regular, Georgia, serif; font-weight: 400; color: #F7F3EA;
   font-size: calc(clamp(38px, min(7.4vw, 8.6vh), 92px) * var(--vg-text, 1)); line-height: 1.04; letter-spacing: -1px; }
 .vg-h1 em { font-style: normal; color: #E7C26A; }
 .vg-actions { display: flex; gap: 10px; margin-top: clamp(16px, 3vh, 32px); flex-wrap: wrap; justify-content: center; }
@@ -338,7 +338,7 @@ const CSS = `
 .vg-close { all: unset; position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 20px; cursor: pointer; color: var(--muted); }
 .vg-close:hover { background: rgba(255, 255, 255, 0.08); color: var(--ink); }
 .vg-close:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-.vg-h2 { margin: 12px 0 20px; font-family: Marcellus_400Regular, serif; font-weight: 400; font-size: calc(26px * var(--vg-text, 1)); line-height: 1.25; }
+.vg-h2 { margin: 12px 0 20px; font-family: Fraunces_400Regular, Georgia, serif; font-weight: 400; font-size: calc(26px * var(--vg-text, 1)); line-height: 1.25; }
 .vg-qr { width: 200px; height: 200px; padding: 10px; border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 40px -10px rgba(221, 181, 92, 0.45); }
 .vg-qr svg { display: block; width: 100%; height: 100%; }
 .vg-window-text { margin: 18px 0 0; font-size: calc(15px * var(--vg-text, 1)); line-height: 1.55; color: var(--muted); }
