@@ -1,5 +1,3 @@
-"use no memo";
-// Reads the app's language outside hooks (getMessages, casing, localeTag): the React Compiler must not cache it.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   fontFamily,
@@ -54,8 +52,7 @@ import { announce } from "@/lib/announce";
 import { useSavedRoutes } from "@/lib/saved-routes";
 import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
-import { casing } from "@/i18n";
-import { getMessages, useLang } from "@/i18n";
+import { useLang, useMessages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -72,9 +69,8 @@ const STAR_SQUARE = "M22 22 H78 V78 H22 Z";
  * (module 8). The passport is firuze green and gold in both themes.
  */
 export default function SettingsScreen() {
+  const m = useMessages();
   const { colors: c, scheme } = useTheme();
-  // The page and its parts are drawn again in a new language; they read their words through getMessages().
-  useLang();
   const { user } = useCommunity();
   const insets = useSafeAreaInsets();
   const tabBarHeight = useBottomTabBarHeight();
@@ -86,9 +82,9 @@ export default function SettingsScreen() {
   const signOut = signedIn && (
     <Pressable
       accessibilityRole="button"
-      accessibilityHint={getMessages().profile.signOutHint}
+      accessibilityHint={m.profile.signOutHint}
       onPress={() => {
-        void logout().then(() => announce(getMessages().profile.signedOut));
+        void logout().then(() => announce(m.profile.signedOut));
       }}
       style={({
         pressed,
@@ -103,7 +99,7 @@ export default function SettingsScreen() {
     >
       <Ionicons name="log-out-outline" size={18} color={c.warning} />
       <Text variant="label" color="warning">
-        {getMessages().profile.signOut}
+        {m.profile.signOut}
       </Text>
     </Pressable>
   );
@@ -115,7 +111,7 @@ export default function SettingsScreen() {
     >
       <StatusBar style={scheme === "dark" ? "light" : "dark"} />
       <Head>
-        <title>{`${getMessages().tabs.profile} · Vagabonds`}</title>
+        <title>{`${m.tabs.profile} · Vagabonds`}</title>
       </Head>
 
       {wide ? (
@@ -123,13 +119,13 @@ export default function SettingsScreen() {
           <View style={styles.hero}>
             <View style={styles.flex}>
               <Text style={[styles.overline, { color: c.highlightMark }]}>
-                {getMessages().profile.overline}
+                {m.profile.overline}
               </Text>
               <Text headingLevel={1} style={styles.heroTitle}>
                 {`Merhaba, ${user?.nickname ?? "Gezgin"}`}
               </Text>
               <Text color="textSecondary">
-                {getMessages().profile.lead}
+                {m.profile.lead}
               </Text>
             </View>
             {signOut && (
@@ -150,7 +146,7 @@ export default function SettingsScreen() {
       ) : (
         <View style={[styles.column, { paddingTop: insets.top + spacing.md }]}>
           <Text headingLevel={1} style={styles.pageTitle}>
-            {getMessages().tabs.profile}
+            {m.tabs.profile}
           </Text>
 
           <Passport />
@@ -170,6 +166,8 @@ export default function SettingsScreen() {
 let peeked = false;
 
 function Passport() {
+  const m = useMessages();
+  const lang = useLang();
   const { user } = useCommunity();
   // The photo's path is signed for a day: a fresh one each time the card is shown.
   const accountId = isAccount(user) ? user.id : null;
@@ -184,7 +182,7 @@ function Passport() {
   const earned = data ? data.items.filter((item) => item.earnedAt).length : 0;
   const visits = data?.visits ?? 0;
   // Without a server no account can be opened: the sample version's passport has no handle.
-  const account = signedIn ? `@${user!.username}` : getMessages().profile.sample;
+  const account = signedIn ? `@${user!.username}` : m.profile.sample;
   // The visitor's own photo and full name; without them the back shows the initial and the nickname.
   const holder = {
     photoUrl: avatarUri(user),
@@ -250,10 +248,10 @@ function Passport() {
       accessibilityRole="button"
       accessibilityLabel={
         flipped
-          ? getMessages().profile.passportBack(fullName, account)
-          : getMessages().profile.passport(name, account, points, earned, visits)
+          ? m.profile.passportBack(fullName, account)
+          : m.profile.passport(name, account, points, earned, visits)
       }
-      accessibilityHint={getMessages().profile.flipHint}
+      accessibilityHint={m.profile.flipHint}
       onPress={flip}
     >
       <Animated.View
@@ -275,10 +273,10 @@ function Passport() {
             <Emblem size={34} />
             <View style={styles.flex}>
               <Text colorValue={palette.altin200} style={styles.coverTitle}>
-                {getMessages().profile.passportTitle}
+                {m.profile.passportTitle}
               </Text>
               <Text colorValue={palette.gece300} style={styles.coverIssuer}>
-                {getMessages().profile.issuer}
+                {m.profile.issuer}
               </Text>
             </View>
             <FlipHint />
@@ -303,9 +301,9 @@ function Passport() {
           </View>
 
           <View style={styles.stats}>
-            <Stat value={points} label={getMessages().profile.points} gold />
-            <Stat value={earned} label={getMessages().profile.badges} />
-            <Stat value={visits} label={getMessages().profile.visits} />
+            <Stat value={points} label={m.profile.points} gold />
+            <Stat value={earned} label={m.profile.badges} />
+            <Stat value={visits} label={m.profile.visits} />
           </View>
         </Animated.View>
 
@@ -354,7 +352,7 @@ function Passport() {
                   style={styles.photoInitial}
                   aria-hidden
                 >
-                  {fullName.charAt(0).toLocaleUpperCase(casing())}
+                  {fullName.charAt(0).toLocaleUpperCase(lang)}
                 </Text>
               ) : (
                 <Ionicons
@@ -404,11 +402,12 @@ function Passport() {
 
 /** The "Çevir" tag on both faces: the card is something to tap. */
 function FlipHint() {
+  const m = useMessages();
   return (
     <View style={styles.flipHint} aria-hidden>
       <Ionicons name="sync-outline" size={13} color={palette.altin200} />
       <Text colorValue={palette.altin200} style={styles.flipHintText}>
-        {getMessages().profile.flip}
+        {m.profile.flip}
       </Text>
     </View>
   );
@@ -672,6 +671,7 @@ const TILE_ICON = 44;
  * routes, sealed assets, badges or notes there are when that is known.
  */
 function Sections({ grid = false }: { grid?: boolean }) {
+  const m = useMessages();
   const { colors: c, scheme } = useTheme();
   const dark = scheme === "dark";
   const router = useRouter();
@@ -697,46 +697,46 @@ function Sections({ grid = false }: { grid?: boolean }) {
     {
       href: "/profile/routes",
       icon: "bookmark-outline",
-      title: getMessages().profile.saved,
+      title: m.profile.saved,
       value: routes.length > 0 ? String(routes.length) : null,
-      note: getMessages().profile.savedNote,
+      note: m.profile.savedNote,
     },
     {
       href: "/profile/sealed",
       icon: "shield-checkmark-outline",
-      title: getMessages().profile.sealed,
+      title: m.profile.sealed,
       value: sealed.size > 0 ? String(sealed.size) : null,
-      note: getMessages().profile.sealedNote,
+      note: m.profile.sealedNote,
     },
     {
       href: "/profile/badges",
       icon: "ribbon-outline",
-      title: getMessages().profile.badgesTitle,
+      title: m.profile.badgesTitle,
       value: badgeData
         ? `${badgeData.items.filter((b) => b.earnedAt).length}/${badgeData.items.length}`
         : null,
-      note: getMessages().profile.badgesNote,
+      note: m.profile.badgesNote,
     },
     {
       href: "/profile/rewards",
       icon: "gift-outline",
-      title: getMessages().profile.rewards,
-      value: walletData ? getMessages().profile.pointsValue(walletData.balance) : null,
-      note: getMessages().profile.rewardsNote,
+      title: m.profile.rewards,
+      value: walletData ? m.profile.pointsValue(walletData.balance) : null,
+      note: m.profile.rewardsNote,
     },
     {
       href: "/profile/notes",
       icon: "chatbubble-ellipses-outline",
-      title: getMessages().profile.notes,
+      title: m.profile.notes,
       value: noteCount ? String(noteCount) : null,
-      note: getMessages().profile.notesNote,
+      note: m.profile.notesNote,
     },
     {
       href: "/profile/settings",
       icon: "settings-outline",
-      title: getMessages().profile.system,
+      title: m.profile.system,
       value: null,
-      note: getMessages().profile.systemNote,
+      note: m.profile.systemNote,
     },
     // Only moderators and admins: the panel the API lets them use.
     ...(user?.role === "admin" || user?.role === "moderator"
@@ -744,9 +744,9 @@ function Sections({ grid = false }: { grid?: boolean }) {
           {
             href: "/admin" as Href,
             icon: "shield-half-outline" as IconName,
-            title: getMessages().profile.admin,
+            title: m.profile.admin,
             value: null,
-            note: getMessages().profile.adminNote,
+            note: m.profile.adminNote,
           },
         ]
       : []),

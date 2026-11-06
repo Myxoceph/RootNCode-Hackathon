@@ -4,11 +4,13 @@ import { ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { MyContributions } from "@/components/my-contributions";
+import { useMessages } from "@/i18n";
 import { bottomInset } from "@/lib/bottom-inset";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
 /** Profil · Bıraktığım Notlar: the visitor's notes and their moderation, on a card of their own. */
 export default function MyNotesScreen() {
+  const m = useMessages();
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const wide = useWideWeb();
@@ -23,7 +25,7 @@ export default function MyNotesScreen() {
       contentInsetAdjustmentBehavior="automatic"
     >
       <Head>
-        <title>Bıraktığım Notlar · Vagabonds</title>
+        <title>{m.common.title(m.screens.notes)}</title>
       </Head>
       <View style={[styles.card, { backgroundColor: c.surface }]}>
         <MyContributions title={null} />

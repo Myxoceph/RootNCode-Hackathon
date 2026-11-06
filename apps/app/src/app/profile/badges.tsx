@@ -34,6 +34,7 @@ import Svg, {
 
 import { BadgeArt, hasBadgeArt } from "@/components/badge-art";
 import { useCommunity, useMyAchievements } from "@/data";
+import { localeTag, useLang, useMessages, type Messages } from "@/i18n";
 import { bottomInset } from "@/lib/bottom-inset";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
@@ -63,13 +64,11 @@ const GAP = spacing.sm;
  * without code. Within one, badges run from the fewest points to the most.
  */
 const CATEGORIES: Array<{
-  key: string;
-  title: string;
+  key: keyof Messages["badges"]["categories"];
   holds: (rule: Rule) => boolean;
 }> = [
   {
     key: "cities",
-    title: "Şehirler",
     holds: (r) =>
       (r.kind === "visit_count" &&
         !!r.city &&
@@ -80,24 +79,21 @@ const CATEGORIES: Array<{
   },
   {
     key: "districts",
-    title: "İlçeler",
     holds: (r) =>
       (r.kind === "visit_count" && !!r.district) || r.kind === "districts",
   },
-  { key: "journeys", title: "Yolculuklar", holds: (r) => r.kind === "within" },
+  { key: "journeys", holds: (r) => r.kind === "within" },
   {
     key: "kinds",
-    title: "Yapılar ve çağlar",
     holds: (r) => r.kind === "visit_count" && (!!r.types || !!r.era),
   },
-  { key: "complexes", title: "Külliyeler", holds: (r) => r.kind === "complex" },
-  { key: "seals", title: "Mühürler", holds: (r) => r.kind === "proven_visits" },
+  { key: "complexes", holds: (r) => r.kind === "complex" },
+  { key: "seals", holds: (r) => r.kind === "proven_visits" },
   {
     key: "pen",
-    title: "Notlar ve fotoğraflar",
     holds: (r) => r.kind === "contributions",
   },
-  { key: "other", title: "Diğer", holds: () => true },
+  { key: "other", holds: () => true },
 ];
 
 const share = (badge: Badge) =>
@@ -116,6 +112,7 @@ const upNext = (items: Badge[]) =>
 function sections(
   items: Badge[],
   filter: Filter,
+  titles: Messages["badges"]["categories"],
 ): Array<{ key: string; title: string | null; items: Badge[] }> {
   if (filter === "earned") {
     return [
@@ -132,7 +129,7 @@ function sections(
     return [{ key: "next", title: null, items: upNext(items) }];
   const groups = CATEGORIES.map((category) => ({
     key: category.key,
-    title: category.title as string | null,
+    title: titles[category.key] as string | null,
     items: [] as Badge[],
   }));
   for (const item of items)
@@ -149,6 +146,8 @@ function sections(
  * opens the badge's story in a sheet.
  */
 export default function MyBadgesScreen() {
+  const m = useMessages();
+  const w = m.badges;
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const wide = useWideWeb();
@@ -158,7 +157,7 @@ export default function MyBadgesScreen() {
   const items = useMemo(() => data?.items ?? [], [data]);
   const [filter, setFilter] = useState<Filter>("all");
   const [open, setOpen] = useState<Badge | null>(null);
-  const shown = useMemo(() => sections(items, filter), [items, filter]);
+  const shown = useMemo(() => sections(items, filter, w.categories), [items, filter, w]);
   const earned = items.filter((item) => item.earnedAt).length;
 
   return (
@@ -170,7 +169,7 @@ export default function MyBadgesScreen() {
       contentInsetAdjustmentBehavior="automatic"
     >
       <Head>
-        <title>Rozetlerim · Vagabonds</title>
+        <title>{m.common.title(m.screens.badges)}</title>
       </Head>
       {/* Not on the web: there the site's bar sits above the page and the light would end in a hard line under it. */}
       {Platform.OS !== "web" && <Backdrop />}
@@ -187,14 +186,14 @@ export default function MyBadgesScreen() {
         )}
         {!user && (
           <Text variant="caption" color="textSecondary" style={styles.centered}>
-            Ziyaret Mührü ya da not bırakınca rozet kazanmaya başlarsın.
+            {w.startHint}
           </Text>
         )}
 
         {badges.status === "loading" && (
           <ActivityIndicator
             color={c.textSecondary}
-            accessibilityLabel="Rozetler yükleniyor"
+            accessibilityLabel={w.loading}
           />
         )}
         {badges.status === "error" && (
@@ -208,13 +207,13 @@ export default function MyBadgesScreen() {
               color="textSecondary"
               style={styles.centered}
             >
-              {`${badges.error.message} Tekrar denemek için dokun.`}
+              {`${badges.error.message} ${m.common.tapToRetry}`}
             </Text>
           </Pressable>
         )}
         {badges.status === "success" && data === null && (
           <Text color="textSecondary" style={styles.centered}>
-            Rozetler için sunucu gerekiyor; bu sürüm örnek veriyle çalışıyor.
+            {w.needsServer}
           </Text>
         )}
 
@@ -254,8 +253,8 @@ export default function MyBadgesScreen() {
                     style={styles.centered}
                   >
                     {filter === "earned"
-                      ? "Henüz rozet kazanmadın; ilk ziyaretin ilk rozetin olur."
-                      : "Hepsini kazandın."}
+                      ? w.noneEarned
+                      : w.allEarned}
                   </Text>
                 )}
               </View>
@@ -315,7 +314,9 @@ function Showcase({
   sealed: number;
   onOpen: (badge: Badge) => void;
 }) {
+  const lang = useLang();
   const { colors: c } = useTheme();
+  const w = useMessages().badges;
   const router = useRouter();
   const earnedList = items
     .filter((b) => b.earnedAt)
@@ -326,7 +327,7 @@ function Showcase({
   const earned = earnedList.length;
   const total = items.length;
   const date = featured?.earnedAt
-    ? new Date(featured.earnedAt).toLocaleDateString("tr-TR", {
+    ? new Date(featured.earnedAt).toLocaleDateString(localeTag(lang), {
         day: "numeric",
         month: "long",
         year: "numeric",
@@ -338,8 +339,8 @@ function Showcase({
       {featured && (
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel={`Son kazandığın: ${featured.title}, ${date}`}
-          accessibilityHint="Rozetin ayrıntısını açar"
+          accessibilityLabel={w.latestLabel(featured.title, date)}
+          accessibilityHint={w.opensBadge}
           onPress={() => onOpen(featured)}
           style={({ pressed }) => [styles.feature, pressed && styles.pressed]}
         >
@@ -348,13 +349,13 @@ function Showcase({
           </Glow>
           <View style={styles.featureText}>
             <Text color="highlight" style={styles.overline}>
-              ✦ SON KAZANDIĞIN
+              {w.latest}
             </Text>
             <Text variant="title" style={styles.centered}>
               {featured.title}
             </Text>
             <Text variant="caption" color="textSecondary">
-              {`${date} · +${featured.points} puan`}
+              {w.latestMeta(date, featured.points)}
             </Text>
           </View>
         </Pressable>
@@ -364,7 +365,7 @@ function Showcase({
         <View
           style={styles.recent}
           accessible
-          accessibilityLabel={`Ondan önce: ${recent.map((b) => b.title).join(", ")}${more > 0 ? ` ve ${more} rozet daha` : ""}`}
+          accessibilityLabel={w.beforeLabel(recent.map((b) => b.title).join(", "), more)}
         >
           <View style={styles.recentRow}>
             {recent.map((badge, i) => (
@@ -397,7 +398,7 @@ function Showcase({
             )}
           </View>
           <Text variant="caption" color="textSecondary">
-            ondan önce kazandıkların
+            {w.before}
           </Text>
         </View>
       )}
@@ -408,7 +409,7 @@ function Showcase({
           featured && [styles.progressUnder, { borderTopColor: c.border }],
         ]}
         accessible
-        accessibilityLabel={`${total} rozetten ${earned} tanesi kazanıldı. ${points} puan, ${visits} ziyaret, ${sealed} mühür`}
+        accessibilityLabel={w.progressLabel(earned, total, points, visits, sealed)}
       >
         <View style={styles.progressHead}>
           <Text style={styles.progressValue}>
@@ -416,12 +417,12 @@ function Showcase({
             <Text
               color="textSecondary"
               style={styles.progressOf}
-            >{` / ${total} rozet`}</Text>
+            >{w.ofTotal(total)}</Text>
           </Text>
           <Text
             color="highlight"
             style={styles.progressShare}
-          >{`%${total > 0 ? Math.round((earned / total) * 100) : 0}`}</Text>
+          >{w.percent(total > 0 ? Math.round((earned / total) * 100) : 0)}</Text>
         </View>
         <View style={[styles.track, { backgroundColor: c.surfaceRaised }]}>
           <View
@@ -436,15 +437,15 @@ function Showcase({
         </View>
         {!featured && (
           <Text variant="caption" color="textSecondary">
-            İlk rozetin ilk ziyaretinle gelir.
+            {w.firstBadge}
           </Text>
         )}
         <View style={styles.stats}>
-          <Stat value={points} label="puan" />
+          <Stat value={points} label={w.points} />
           <View style={[styles.statRule, { backgroundColor: c.border }]} />
-          <Stat value={visits} label="ziyaret" />
+          <Stat value={visits} label={w.visits} />
           <View style={[styles.statRule, { backgroundColor: c.border }]} />
-          <Stat value={sealed} label="mühür" />
+          <Stat value={sealed} label={w.seals} />
         </View>
         <Pressable
           accessibilityRole="link"
@@ -457,7 +458,7 @@ function Showcase({
         >
           <Ionicons name="gift-outline" size={18} color={c.highlight} />
           <Text variant="label" style={styles.spendText}>
-            Puanlarını ödüllere harca
+            {w.spend}
           </Text>
           <Ionicons name="chevron-forward" size={18} color={c.textSecondary} />
         </Pressable>
@@ -530,10 +531,11 @@ function Filters({
   counts: Record<Filter, number>;
 }) {
   const { colors: c } = useTheme();
+  const w = useMessages().badges;
   const options: Array<{ key: Filter; label: string }> = [
-    { key: "all", label: "Tümü" },
-    { key: "earned", label: "Kazanılan" },
-    { key: "next", label: "Sırada" },
+    { key: "all", label: w.all },
+    { key: "earned", label: w.earned },
+    { key: "next", label: w.next },
   ];
   return (
     <View
@@ -628,6 +630,7 @@ function Tile({
   const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
   const earned = badge.earnedAt !== null;
   const medal = Math.min(84, width - spacing.lg * 2);
+  const w = useMessages().badges;
 
   useEffect(() => {
     if (reduced) {
@@ -643,7 +646,7 @@ function Tile({
   }, [enter, index, reduced]);
 
   const state = earned
-    ? `kazanıldı, ${badge.points} puan`
+    ? w.earnedState(badge.points)
     : `${badge.progress.current}/${badge.progress.target}`;
   return (
     <Animated.View
@@ -664,7 +667,7 @@ function Tile({
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={`${badge.title}, ${state}`}
-        accessibilityHint="Rozetin ayrıntısını açar"
+        accessibilityHint={w.opensBadge}
         onPress={() => onOpen(badge)}
         style={({ pressed }) => [
           styles.tile,
@@ -867,6 +870,8 @@ function BadgeSheet({
   const insets = useSafeAreaInsets();
   // Kept while the sheet slides away, so it does not empty before it is gone.
   const [shown, setShown] = useState<Badge | null>(badge);
+  const m = useMessages();
+  const w = m.badges;
   useEffect(() => {
     if (badge) setShown(badge);
   }, [badge]);
@@ -885,7 +890,7 @@ function BadgeSheet({
         style={styles.backdrop}
         onPress={onClose}
         accessibilityRole="button"
-        accessibilityLabel="Kapat"
+        accessibilityLabel={m.common.close}
       />
       <View
         style={[
@@ -916,7 +921,7 @@ function BadgeSheet({
               colorValue={palette.altin950}
               style={styles.chipText}
             >
-              {`Kazanıldı · +${shown.points} puan`}
+              {w.earnedChip(shown.points)}
             </Text>
           </View>
         ) : (
@@ -933,7 +938,7 @@ function BadgeSheet({
               />
             </View>
             <Text variant="caption" color="textSecondary">
-              {`${current}/${target} · kazanınca +${shown.points} puan`}
+              {w.whenEarned(current, target, shown.points)}
             </Text>
           </View>
         )}
@@ -947,7 +952,7 @@ function BadgeSheet({
           ]}
         >
           <Text variant="label" style={styles.chipText}>
-            Tamam
+            {w.ok}
           </Text>
         </Pressable>
       </View>
