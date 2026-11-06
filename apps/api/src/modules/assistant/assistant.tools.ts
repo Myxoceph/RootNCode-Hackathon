@@ -77,6 +77,8 @@ const ASSET_CHARS = 4_000;
 /** For the second and later assets of one question. */
 const LATER_ASSET_CHARS = 2_000;
 const DISH_CHARS = 400;
+/** Konya has 67 dishes: all of them would cost the model tens of KB for a question about one meal. */
+const DISH_LIMIT = 15;
 const SEARCH_LIMIT = 5;
 
 /** Models write "Bursa" or "bursa"; city codes are lowercase ASCII. */
@@ -358,6 +360,7 @@ const TOOLS: { [Name in ToolName]: (args: ToolArgs<Name>, context: ToolContext) 
       content: JSON.stringify({
         dishes: dishes
           .filter((dish) => !kind || dish.kind.code === kind)
+          .slice(0, DISH_LIMIT)
           .map((dish) => ({
             ref: sources.add("dish", dish.id, dish.name),
             name: dish.name,
