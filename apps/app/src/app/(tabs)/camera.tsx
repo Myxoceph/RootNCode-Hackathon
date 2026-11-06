@@ -492,7 +492,7 @@ function InscriptionPreview({ inscription, photo, box }: { inscription: Inscript
  * Dims everything around the focus frame, so the locked part stands out and the corners read on
  * any photo. Four bands around `rect`; `opacity` fades them in with the lock.
  */
-function Spotlight({ rect: raw, box, opacity }: { rect: { left: number; top: number; width: number; height: number }; box: Box; opacity: Animated.AnimatedInterpolation<number> | Animated.Value }) {
+function Spotlight({ rect: raw, opacity }: { rect: { left: number; top: number; width: number; height: number }; box: Box; opacity: Animated.AnimatedInterpolation<number> | Animated.Value }) {
   // Whole pixels, so the four bands meet without a seam.
   const rect = { left: Math.round(raw.left), top: Math.round(raw.top), width: Math.round(raw.width), height: Math.round(raw.height) };
   const right = rect.left + rect.width;

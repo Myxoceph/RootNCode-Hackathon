@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { TripArrival, TripDay, TripItem, TripLegTransit, TripPlanResponse } from "@vagabonds/contracts";
+import type { TripArrival, TripDay, TripItem, TripLegTransit } from "@vagabonds/contracts";
 import {
   fontFamily,
   palette,
