@@ -30,7 +30,10 @@ import Svg, {
   Stop,
 } from "react-native-svg";
 
+import type { Lang } from "@vagabonds/contracts";
+
 import { FoodAdviceList, TransitAdviceList } from "@/components/saved-advice";
+import { planRoute } from "@/content/routes";
 import { announce } from "@/lib/announce";
 import { bottomInset } from "@/lib/bottom-inset";
 import { inkFor } from "@/lib/route-ink";
@@ -60,7 +63,8 @@ type Tab = "routes" | "food" | "transit";
 const TABS: ReadonlyArray<Tab> = ["routes", "food", "transit"];
 
 /** What a ticket shows: the city, the title, how long, from where, the stops and their ends. */
-function ticketOf(route: RouteEntry, w: Messages["saved"]) {
+function ticketOf(route: RouteEntry, m: Messages, lang: Lang) {
+  const w = m.saved;
   if (route.kind === "trip") {
     const stops = route.trip.days.flatMap((day) =>
       day.items.flatMap((item) =>
@@ -70,7 +74,7 @@ function ticketOf(route: RouteEntry, w: Messages["saved"]) {
     return {
       city: route.trip.city.label,
       code: route.trip.city.code,
-      title: route.title,
+      title: m.shared.tripTitle(route.trip.city.label),
       duration: w.durations[route.trip.duration],
       fromRehber: true,
       ends:
@@ -82,7 +86,7 @@ function ticketOf(route: RouteEntry, w: Messages["saved"]) {
   return {
     city: regionLabel[route.region],
     code: route.region,
-    title: route.title,
+    title: planRoute(route.region, route.duration, lang).title,
     duration: w.durations[route.duration],
     fromRehber: false,
     ends:
@@ -236,7 +240,7 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
   const rise = useRef(new Animated.Value(reduced ? 1 : 0)).current;
   const m = useMessages();
   const w = m.saved;
-  const ticket = ticketOf(route, w);
+  const ticket = ticketOf(route, m, lang);
   const [light, deep] = inkFor(ticket.code);
   const [size, setSize] = useState({ width: 0, height: 0 });
   const saved = new Date(route.savedAt).toLocaleDateString(localeTag(lang), {

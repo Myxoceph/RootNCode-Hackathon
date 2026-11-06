@@ -7,7 +7,7 @@ import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Segmented } from "@/components/segmented";
-import { bursaDishesNow } from "@/content/food";
+import { bursaDishesIn } from "@/content/food";
 import {
   formatClock,
   planRoute,
@@ -41,7 +41,6 @@ export default function RouteScreen() {
   const router = useRouter();
   const m = useMessages();
   const w = m.planner;
-  // The plan and the dishes come from plain functions that read the language.
   const lang = useLang();
   const durations = DURATIONS.map((value) => ({ value, label: w.durations[value] }));
   const params = useLocalSearchParams<{ region?: string; duration?: string; dishes?: string }>();
@@ -57,10 +56,10 @@ export default function RouteScreen() {
     if (params.dishes !== undefined) setDishes(params.dishes ? params.dishes.split(",") : []);
   }, [params.region, params.duration, params.dishes]);
 
-  const plan = useMemo(() => planRoute(region, duration), [region, duration, lang]);
+  const plan = useMemo(() => planRoute(region, duration, lang), [region, duration, lang]);
   const [firstDay] = plan.days;
   const stopCount = plan.days.reduce((n, d) => n + d.stops.length, 0);
-  const added = useMemo(() => bursaDishesNow().filter((d) => addedIds.includes(d.id)), [addedIds, lang]);
+  const added = useMemo(() => bursaDishesIn(lang).filter((d) => addedIds.includes(d.id)), [addedIds, lang]);
   const isSaved = saved.some((route) => routeKey(route) === routeKey({ region, duration, dishes: [...addedIds] }));
 
   return (
@@ -90,7 +89,7 @@ export default function RouteScreen() {
             <WeatherCard day={firstDay} />
             <Balance share={firstDay.outdoorShare} />
             <View style={[styles.advice, { backgroundColor: c.surfaceRaised }]}>
-              <Text variant="caption">{weatherAdvice(firstDay)}</Text>
+              <Text variant="caption">{weatherAdvice(firstDay, w)}</Text>
             </View>
           </>
         )}
@@ -173,7 +172,7 @@ function WeatherCard({ day }: { day: DayPlan }) {
         </Text>
       </View>
       <View style={[styles.chip, { backgroundColor: c.surfaceRaised }]}>
-        <Text variant="caption">Tahmin</Text>
+        <Text variant="caption">{words.forecast}</Text>
       </View>
     </Card>
   );

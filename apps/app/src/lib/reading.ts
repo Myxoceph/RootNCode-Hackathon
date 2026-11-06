@@ -1,4 +1,4 @@
-import { getLang } from "@/i18n";
+import type { Lang } from "@vagabonds/contracts";
 
 /**
  * Splits a text into sentences without changing a letter. A full stop ends a sentence only before a
@@ -58,9 +58,9 @@ function ordinal(n: number): string {
 }
 
 /** "XIV. yüzyıl" for 1399; in English, "14th century". */
-export function centuryOf(year: number): string {
+export function centuryOf(year: number, lang: Lang): string {
   const century = Math.floor((year - 1) / 100) + 1;
-  if (getLang() === "en") return `${ordinal(century)} century`;
+  if (lang === "en") return `${ordinal(century)} century`;
   let left = century;
   let roman = "";
   for (const [value, letters] of ROMAN) {
@@ -78,8 +78,8 @@ const MONTHS = {
 };
 
 /** "19 Şubat 1494" for the record's "1494-02-19"; any other wording stays as the book has it. */
-export function readableDate(date: string): string {
+export function readableDate(date: string, lang: Lang): string {
   const match = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  const month = match ? MONTHS[getLang()][Number(match[2]) - 1] : undefined;
+  const month = match ? MONTHS[lang][Number(match[2]) - 1] : undefined;
   return match && month ? `${Number(match[3])} ${month} ${match[1]}` : date;
 }

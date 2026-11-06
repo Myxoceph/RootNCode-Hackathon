@@ -89,7 +89,7 @@ export function AssistantSessions({
               : w.loadFailed,
         }),
     );
-  }, []);
+  }, [w.loadFailed]);
   useFocusEffect(refresh);
   // A question asked or a conversation started moves it to the top: fetched again a moment after.
   useEffect(() => {
@@ -122,7 +122,7 @@ export function AssistantSessions({
   const items = load.kind === "ready" ? load.items : [];
   const groups: Array<{ title: string; items: ChatConversation[] }> = [];
   for (const item of items) {
-    const title = dayGroup(item.updatedAt);
+    const title = dayGroup(item.updatedAt, lang);
     if (groups.at(-1)?.title !== title) groups.push({ title, items: [] });
     groups.at(-1)!.items.push(item);
   }

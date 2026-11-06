@@ -652,7 +652,7 @@ function RewardCard({
             >
               <Ionicons name="checkmark-circle" size={14} color={c.success} />
               <Text colorValue={c.success} style={styles.readyText}>
-                Alabilirsin
+                {w.canRedeem}
               </Text>
             </View>
           )}

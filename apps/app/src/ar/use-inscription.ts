@@ -1,10 +1,10 @@
-import type { AssetDetail, SourceRef } from "@vagabonds/contracts";
+import type { AssetDetail, Lang, SourceRef } from "@vagabonds/contracts";
 
 import { DataError, type ResourceWithRetry } from "@/data";
 import { transliterationLanguage } from "@/lib/language";
 
 import { featuredInscription } from "./inscription-targets";
-import { getMessages } from "@/i18n";
+import { messages } from "@/i18n/messages";
 
 /** One inscription as Taşın Dili shows it, on the camera card and in the reading mode alike. */
 export interface InscriptionText {
@@ -27,11 +27,11 @@ export interface InscriptionText {
   readAloud: string;
 }
 
-export function inscriptionText(asset: AssetDetail, inscriptionId: string): InscriptionText | null {
+export function inscriptionText(asset: AssetDetail, inscriptionId: string, lang: Lang): InscriptionText | null {
   const inscription = asset.inscriptions.find((item) => item.id === inscriptionId);
   if (!inscription) return null;
   const waqfConditions = asset.waqf?.conditions ?? null;
-  const w = getMessages().reading;
+  const w = messages[lang].reading;
   return {
     id: `${asset.id}/${inscription.id}`,
     name: asset.name,
@@ -51,12 +51,13 @@ export function inscriptionText(asset: AssetDetail, inscriptionId: string): Insc
 export function inscriptionOf(
   asset: ResourceWithRetry<AssetDetail | null>,
   inscriptionId: string | null,
+  lang: Lang,
 ): ResourceWithRetry<InscriptionText> {
   if (asset.status !== "success") return asset;
   const id = inscriptionId ?? (asset.data && featuredInscription(asset.data)?.id);
-  const text = asset.data && id ? inscriptionText(asset.data, id) : null;
+  const text = asset.data && id ? inscriptionText(asset.data, id, lang) : null;
   if (!text) {
-    const error = new DataError("invalid", getMessages().reading.notFound, [`${asset.data?.id ?? "?"} / ${id ?? "?"}`]);
+    const error = new DataError("invalid", messages[lang].reading.notFound, [`${asset.data?.id ?? "?"} / ${id ?? "?"}`]);
     return { status: "error", error, retry: asset.retry };
   }
   return { status: "success", data: text, retry: asset.retry };

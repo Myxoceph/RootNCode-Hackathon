@@ -1,6 +1,5 @@
+import type { Lang } from "@vagabonds/contracts";
 import type { ThemeRole } from "@vagabonds/ui";
-
-import { getLang } from "@/i18n";
 
 /** Bursa food stops along the route. Sample content (see ./README.md). */
 export interface Dish {
@@ -85,7 +84,7 @@ const bursaDishesEn: Dish[] = [
   },
 ];
 
-/** The food stops in the app's language. */
-export function bursaDishesNow(): Dish[] {
-  return getLang() === "en" ? bursaDishesEn : bursaDishes;
+/** The food stops in a language; passed in, so a compiled screen follows a change of language. */
+export function bursaDishesIn(lang: Lang): Dish[] {
+  return lang === "en" ? bursaDishesEn : bursaDishes;
 }

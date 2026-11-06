@@ -48,7 +48,7 @@ import {
   usePulse,
 } from "@/data";
 import { announce } from "@/lib/announce";
-import { useMessages, type Messages } from "@/i18n";
+import { useLang, useMessages, type Messages } from "@/i18n";
 import { formatDate } from "@/lib/format-date";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
@@ -641,6 +641,7 @@ function PrimaryButton({
 
 /** What other visitors left here and a moderator approved; nothing shows until there is some. */
 function ApprovedNotes({ id }: { id: string }) {
+  const lang = useLang();
   const { colors: c } = useTheme();
   const w = useMessages().note;
   const pulse = usePulse(id);
@@ -664,7 +665,7 @@ function ApprovedNotes({ id }: { id: string }) {
         >
           <Text>{item.text}</Text>
           <Text variant="caption" color="textSecondary">
-            {[item.author, item.date && formatDate(item.date)]
+            {[item.author, item.date && formatDate(item.date, lang)]
               .filter(Boolean)
               .join(" · ")}
           </Text>

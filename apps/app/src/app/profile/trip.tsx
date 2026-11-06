@@ -93,9 +93,9 @@ export default function SavedTripScreen() {
       ]}
       contentInsetAdjustmentBehavior="automatic"
     >
-      <Stack.Screen options={{ title: trip?.title ?? w.trip }} />
+      <Stack.Screen options={{ title: trip ? m.shared.tripTitle(trip.trip.city.label) : w.trip }} />
       <Head>
-        <title>{m.common.title(trip?.title ?? w.trip)}</title>
+        <title>{m.common.title(trip ? m.shared.tripTitle(trip.trip.city.label) : w.trip)}</title>
       </Head>
 
       {trip ? (
@@ -208,7 +208,7 @@ function Hero({ route }: { route: TripRoute }) {
         style={styles.heroTitle}
         headingLevel={1}
       >
-        {route.title}
+        {m.shared.tripTitle(trip.city.label)}
       </Text>
       <View style={styles.chips}>
         <Chip icon="sparkles" text={m.tabs.rehber} />

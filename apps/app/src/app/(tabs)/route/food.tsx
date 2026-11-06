@@ -3,7 +3,7 @@ import Head from "expo-router/head";
 import { useMemo } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 
-import { bursaDishesNow, type Dish } from "@/content/food";
+import { bursaDishesIn, type Dish } from "@/content/food";
 import { useLang, useMessages } from "@/i18n";
 import { toggleDish, useAddedDishes } from "@/lib/route-plan";
 
@@ -16,7 +16,7 @@ export default function FoodScreen() {
   const m = useMessages();
   const added = useAddedDishes();
   const lang = useLang();
-  const dishes = useMemo(() => bursaDishesNow(), [lang]);
+  const dishes = useMemo(() => bursaDishesIn(lang), [lang]);
 
   return (
     <ScrollView style={{ backgroundColor: c.background }} contentContainerStyle={styles.content}>

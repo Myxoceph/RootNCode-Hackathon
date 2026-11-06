@@ -976,7 +976,7 @@ function Timeline({ events }: { events: TimelineEvent[] }) {
   const w = useMessages().dossier;
   const groups: Array<{ century: string | null; events: TimelineEvent[] }> = [];
   for (const event of events) {
-    const century = event.year !== null ? centuryOf(event.year) : null;
+    const century = event.year !== null ? centuryOf(event.year, lang) : null;
     const last = groups[groups.length - 1];
     if (last && last.century === century) last.events.push(event);
     else groups.push({ century, events: [event] });
@@ -993,7 +993,7 @@ function Timeline({ events }: { events: TimelineEvent[] }) {
           <View accessibilityRole="list">
             {group.events.map((event, at) => {
               const meta = [
-                event.date ? readableDate(event.date) : null,
+                event.date ? readableDate(event.date, lang) : null,
                 event.hijri ? hijriText(event.hijri, w) : null,
                 event.type.label !== event.title ? event.type.label : null,
               ]

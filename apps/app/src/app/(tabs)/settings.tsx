@@ -122,7 +122,7 @@ export default function SettingsScreen() {
                 {m.profile.overline}
               </Text>
               <Text headingLevel={1} style={styles.heroTitle}>
-                {`Merhaba, ${user?.nickname ?? "Gezgin"}`}
+                {m.profile.greeting(user?.nickname ?? m.profile.traveller)}
               </Text>
               <Text color="textSecondary">
                 {m.profile.lead}
@@ -177,7 +177,7 @@ function Passport() {
   const badges = useMyAchievements();
   const data = badges.status === "success" ? badges.data : null;
   const signedIn = isAccount(user);
-  const name = user?.nickname ?? "Gezgin";
+  const name = user?.nickname ?? m.profile.traveller;
   const points = data?.totalPoints ?? 0;
   const earned = data ? data.items.filter((item) => item.earnedAt).length : 0;
   const visits = data?.visits ?? 0;
@@ -366,7 +366,7 @@ function Passport() {
             <View style={[styles.flex, styles.backFields]}>
               <View>
                 <Text colorValue={palette.altin200} style={styles.backLabel}>
-                  AD SOYAD
+                  {m.profile.fullNameHead}
                 </Text>
                 <Text
                   colorValue={palette.gece50}
@@ -379,7 +379,7 @@ function Passport() {
               </View>
               <View>
                 <Text colorValue={palette.altin200} style={styles.backLabel}>
-                  KULLANICI
+                  {m.profile.usernameHead}
                 </Text>
                 <Text
                   colorValue={palette.gece100}

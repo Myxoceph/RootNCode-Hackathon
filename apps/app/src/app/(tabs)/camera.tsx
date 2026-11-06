@@ -102,10 +102,11 @@ export default function CameraScreen() {
  * fade. The whole card opens it.
  */
 function ModeCard({ mode, web }: { mode: Mode; web: boolean }) {
+  const lang = useLang();
   const router = useRouter();
   const resource = useAsset(mode.asset);
   const asset = resource.status === "success" ? resource.data : null;
-  const seal = asset ? visitSealTarget(asset) : null;
+  const seal = asset ? visitSealTarget(asset, lang) : null;
   // Taşın Dili plays on the photo its camera recognizes, so the demo is what the camera does.
   const inscription = asset ? featuredInscription(asset) : undefined;
   const inscriptionPhoto = asset?.media.find((m) => m.key === inscription?.arTargetMediaKey);

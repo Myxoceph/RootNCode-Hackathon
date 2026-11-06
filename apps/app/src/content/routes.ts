@@ -3,7 +3,9 @@
  * the stops, weather and food are from the Hayrat design, the rules are its
  * prototype rule engine.
  */
-import { getLang, getMessages } from "@/i18n";
+import type { Lang } from "@vagabonds/contracts";
+
+import { messages, type Messages } from "@/i18n/messages";
 
 export type RegionKey = "bursa" | "edirne";
 export type Region = RegionKey | "both";
@@ -142,7 +144,7 @@ export interface RoutePlan {
 const DAY_START = 9 * 60;
 const WALK_MINUTES = 15;
 
-function planDay(route: CityRoute, stops: RouteStop[], weather: Weather, budgetHours: number): DayPlan {
+function planDay(route: CityRoute, stops: RouteStop[], weather: Weather, budgetHours: number, w: Messages["planner"]): DayPlan {
   let used = 0;
   const picked: RouteStop[] = [];
   for (const stop of [...stops].sort((a, b) => b.importance - a.importance)) {
@@ -161,22 +163,23 @@ function planDay(route: CityRoute, stops: RouteStop[], weather: Weather, budgetH
     items.push({ kind: "stop", minutes: t, stop });
     t += Math.round(stop.hours * 60) + WALK_MINUTES;
     if (!hadLunch && t >= 12 * 60) {
-      items.push({ kind: "food", minutes: t, label: getMessages().planner.lunch, ...route.lunch });
+      items.push({ kind: "food", minutes: t, label: w.lunch, ...route.lunch });
       t += 60;
       hadLunch = true;
     }
   }
-  items.push({ kind: "food", minutes: t, label: getMessages().planner.dessert, ...route.dessert });
+  items.push({ kind: "food", minutes: t, label: w.dessert, ...route.dessert });
 
   const allHours = picked.reduce((sum, s) => sum + s.hours, 0);
   const outdoorHours = picked.reduce((sum, s) => sum + s.hours * s.outdoor, 0);
   return { city: route.city, weather, items, stops: picked, outdoorShare: allHours ? outdoorHours / allHours : 0 };
 }
 
-export function planRoute(region: Region, duration: Duration): RoutePlan {
+/** The language is passed in, so a compiled screen plans again when it changes. */
+export function planRoute(region: Region, duration: Duration, lang: Lang): RoutePlan {
   const budget = duration === "half" ? 4.5 : 7.5;
-  const routes = getLang() === "en" ? cityRoutesEn : cityRoutes;
-  const w = getMessages().planner;
+  const routes = lang === "en" ? cityRoutesEn : cityRoutes;
+  const w = messages[lang].planner;
   const bursa = routes.bursa;
   const edirne = routes.edirne;
 
@@ -185,13 +188,13 @@ export function planRoute(region: Region, duration: Duration): RoutePlan {
       return {
         title: bursa.title,
         notice: w.bothNotice,
-        days: [planDay(bursa, bursa.stops, bursa.weather[0], budget)],
+        days: [planDay(bursa, bursa.stops, bursa.weather[0], budget, w)],
       };
     }
     return {
       title: w.bothTitle,
       notice: null,
-      days: [planDay(bursa, bursa.stops, bursa.weather[0], budget), planDay(edirne, edirne.stops, edirne.weather[1], budget)],
+      days: [planDay(bursa, bursa.stops, bursa.weather[0], budget, w), planDay(edirne, edirne.stops, edirne.weather[1], budget, w)],
     };
   }
 
@@ -203,18 +206,17 @@ export function planRoute(region: Region, duration: Duration): RoutePlan {
       title: route.title,
       notice: null,
       days: [
-        planDay(route, sorted.slice(0, half), route.weather[0], budget),
-        planDay(route, sorted.slice(half), route.weather[1], budget),
+        planDay(route, sorted.slice(0, half), route.weather[0], budget, w),
+        planDay(route, sorted.slice(half), route.weather[1], budget, w),
       ],
     };
   }
-  return { title: route.title, notice: null, days: [planDay(route, route.stops, route.weather[0], budget)] };
+  return { title: route.title, notice: null, days: [planDay(route, route.stops, route.weather[0], budget, w)] };
 }
 
 /** One sentence on how the weather shaped the day. */
-export function weatherAdvice(day: DayPlan): string {
+export function weatherAdvice(day: DayPlan, words: Messages["planner"]): string {
   const w = day.weather;
-  const words = getMessages().planner;
   if (w.afternoonRain) {
     const open = day.stops.filter((s) => s.outdoor >= 0.5).map((s) => s.name.split(" ").slice(0, 2).join(" "));
     return words.rainAdvice(w.rain, open.join(", "));

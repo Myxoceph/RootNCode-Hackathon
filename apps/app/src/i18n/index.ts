@@ -20,8 +20,3 @@ export function getMessages(): Messages {
 export function localeTag(lang: Lang = getLang()): "tr-TR" | "en-US" {
   return lang === "en" ? "en-US" : "tr-TR";
 }
-
-/** The locale for upper- and lower-casing shown words: "İ" and "ı" belong to Turkish only. */
-export function casing(): "tr" | "en" {
-  return getLang();
-}

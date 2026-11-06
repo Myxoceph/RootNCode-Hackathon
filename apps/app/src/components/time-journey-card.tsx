@@ -6,7 +6,7 @@ import { useMemo } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 
 import { AssetImage } from "@/components/asset-image";
-import { useMessages } from "@/i18n";
+import { useLang, useMessages } from "@/i18n";
 import { centuriesOf } from "@/lib/home";
 
 /**
@@ -17,8 +17,9 @@ import { centuriesOf } from "@/lib/home";
 export function TimeJourneyCard({ assets }: { assets: readonly AssetSummary[] }) {
   const { colors: c, scheme } = useTheme();
   const w = useMessages().journey;
+  const lang = useLang();
   const router = useRouter();
-  const centuries = useMemo(() => centuriesOf(assets), [assets]);
+  const centuries = useMemo(() => centuriesOf(assets, lang), [assets, lang]);
   if (centuries.length < 2) return null;
 
   const first = centuries[0]!;

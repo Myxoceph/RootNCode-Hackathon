@@ -45,7 +45,7 @@ export default function AssistantHistoryScreen() {
           message: error instanceof DataError ? error.message : w.loadFailed,
         }),
     );
-  }, []);
+  }, [w.loadFailed]);
   // Again on coming back: a question asked meanwhile moves its conversation to the top.
   useFocusEffect(refresh);
 
@@ -92,7 +92,7 @@ export default function AssistantHistoryScreen() {
   const items = load.kind === "ready" ? load.items : [];
   const groups: Array<{ title: string; items: ChatConversation[] }> = [];
   for (const item of items) {
-    const title = dayGroup(item.updatedAt);
+    const title = dayGroup(item.updatedAt, lang);
     if (groups.at(-1)?.title !== title) groups.push({ title, items: [] });
     groups.at(-1)!.items.push(item);
   }
@@ -116,7 +116,7 @@ export default function AssistantHistoryScreen() {
             style={({ pressed }) => [styles.secondary, { backgroundColor: c.surfaceRaised }, pressed && styles.pressed]}
           >
             <Ionicons name="refresh" size={16} color={c.text} />
-            <Text variant="label">Tekrar dene</Text>
+            <Text variant="label">{m.common.retry}</Text>
           </Pressable>
         </View>
       )}

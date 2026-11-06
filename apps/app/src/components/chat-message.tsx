@@ -273,7 +273,7 @@ export function AssistantMessage({
     <View style={styles.answer}>
       <Byline />
       <View style={[styles.bubble, { backgroundColor: c.background, borderColor: c.border }]}>
-        <View accessible accessibilityLabel={`Rehber: ${plain}`} style={styles.lines}>
+        <View accessible accessibilityLabel={`${m.tabs.rehber}: ${plain}`} style={styles.lines}>
           {drawn}
         </View>
 
@@ -339,8 +339,9 @@ const followUpIcon: Record<FollowUpTopic, IconName> = {
  */
 function FollowUps({ response, animate, onAsk }: { response: ChatResponse; animate: boolean; onAsk: (question: string) => void }) {
   const m = useMessages();
+  const lang = useLang();
   const { colors: c } = useTheme();
-  const offers = followUps(response);
+  const offers = followUps(response, lang);
   if (offers.length === 0) return null;
   return (
     <Appear animate={animate} style={styles.followUps}>
@@ -351,7 +352,7 @@ function FollowUps({ response, animate, onAsk }: { response: ChatResponse; anima
         <Pressable
           key={offer.topic}
           accessibilityRole="button"
-          accessibilityLabel={`Sor: ${offer.question}`}
+          accessibilityLabel={m.rehber.askLabel(offer.question)}
           // Drawn 38pt tall; the target is 44.
           hitSlop={{ top: 3, bottom: 3 }}
           onPress={() => onAsk(offer.question)}

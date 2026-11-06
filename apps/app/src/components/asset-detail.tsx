@@ -1587,6 +1587,7 @@ function Experiences({
   asset: AssetDetail;
   look?: Ink;
 }) {
+  const lang = useLang();
   const m = useMessages();
   const { settings } = useA11ySettings();
   const player = useCapsulePlayer();
@@ -1620,7 +1621,7 @@ function Experiences({
     });
   }
   // An unlocked asset needs no seal.
-  if (phone && visitSealTarget(asset) && !opened) {
+  if (phone && visitSealTarget(asset, lang) && !opened) {
     const hint = m.asset.sealHint;
     actions.push({
       key: "seal",
@@ -1635,9 +1636,9 @@ function Experiences({
     // Only captions are announced; a counter that ticks every second would talk over everything.
     const hint = playing
       ? settings.captions
-        ? captionAt(capsuleType, playing.elapsed)
+        ? captionAt(capsuleType, playing.elapsed, lang)
         : `${formatSeconds(playing.elapsed)} / ${formatSeconds(CAPSULE_SECONDS)}`
-      : capsuleWords(capsuleType).name;
+      : capsuleWords(capsuleType, lang).name;
     actions.push({
       key: "sound",
       icon: playing ? "pause-outline" : "musical-notes-outline",
@@ -1646,7 +1647,7 @@ function Experiences({
       // The words on the row come first, so voice control finds it by what it shows (WCAG 2.5.3).
       spoken: playing
         ? m.asset.stopSound
-        : m.asset.playSoundLabel(capsuleWords(capsuleType).name),
+        : m.asset.playSoundLabel(capsuleWords(capsuleType, lang).name),
       onPress: () => toggleCapsule(capsuleType),
       on: !!playing,
     });

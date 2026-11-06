@@ -36,7 +36,7 @@ describe("centuriesOf", () => {
   const list = [asset("a", 1, { yearLabel: "1399" }), asset("b", 9, { yearLabel: "XIV. yüzyıl" }), asset("c", 5, { yearLabel: "1250" }), asset("d", 7, { yearLabel: null })];
 
   it("groups oldest first, best known first, and leaves out unknown years", () => {
-    const centuries = centuriesOf(list);
+    const centuries = centuriesOf(list, "tr");
     expect(centuries.map((item) => [item.roman, item.decades, item.assets.map((one) => one.id)])).toEqual([
       ["XIII", "1200'ler", ["c"]],
       ["XIV", "1300'ler", ["b", "a"]],
@@ -44,7 +44,7 @@ describe("centuriesOf", () => {
   });
 
   it("opens on the century of the best-known asset", () => {
-    expect(firstCentury(centuriesOf(list))?.roman).toBe("XIV");
+    expect(firstCentury(centuriesOf(list, "tr"))?.roman).toBe("XIV");
     expect(firstCentury([])).toBeNull();
   });
 });

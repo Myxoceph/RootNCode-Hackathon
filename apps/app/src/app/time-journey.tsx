@@ -26,7 +26,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { TimeJourney } from "@/components/time-journey";
 import { useSearchableAssets } from "@/data";
 import { siteItems, SiteNav } from "@/components/web-nav-bar";
-import { useMessages } from "@/i18n";
+import { useLang, useMessages } from "@/i18n";
 import { centuriesOf, firstCentury } from "@/lib/home";
 import { useWideWeb } from "@/lib/use-wide-web";
 
@@ -38,13 +38,14 @@ const TITLE_SOFT = "rgba(255, 255, 255, 0.76)";
 /** Zamanda Yolculuk, opened from the Eserler list: a line of words and the walk through the centuries, on the whole screen. */
 export default function TimeJourneyScreen() {
   const m = useMessages();
+  const lang = useLang();
   const w = m.journey;
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const assets = useSearchableAssets(true);
   const list = assets.status === "success" && assets.data ? assets.data : [];
-  const centuries = useMemo(() => centuriesOf(list), [list]);
+  const centuries = useMemo(() => centuriesOf(list, lang), [list, lang]);
   const wide = useWideWeb();
   // The web follows the light theme; the phone keeps the page dark, as its camera pages.
   const { scheme } = useTheme();

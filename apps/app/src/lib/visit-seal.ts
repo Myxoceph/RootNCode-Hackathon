@@ -1,6 +1,6 @@
-import type { AssetDetail, Media } from "@vagabonds/contracts";
+import type { AssetDetail, Lang, Media } from "@vagabonds/contracts";
 
-import { getMessages, type Messages } from "@/i18n";
+import { messages, type Messages } from "@/i18n/messages";
 
 /**
  * The parts of a monument that can carry its seal, best first, with their names. A specific part is
@@ -45,9 +45,8 @@ function sharpest(photos: Media[]): Media | undefined {
  * telling detail, by the dataset's `subject`, and of several such photos the sharpest. `null` when
  * the asset has no photo to use.
  */
-export function visitSealTarget(asset: AssetDetail): VisitSealTarget | null {
-  // The asset comes in the app's language and again when it changes, so its part's name does too.
-  const parts = getMessages().seal.parts;
+export function visitSealTarget(asset: AssetDetail, lang: Lang): VisitSealTarget | null {
+  const parts = messages[lang].seal.parts;
   for (const subject of SEAL_PARTS) {
     const photo = sharpest(asset.media.filter((m) => m.kind === "photo" && m.subject === subject));
     if (photo) return { photo, part: parts[subject] };

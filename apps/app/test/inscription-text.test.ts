@@ -16,15 +16,15 @@ const asset = {
 
 describe("inscription text", () => {
   it("gives each inscription of an asset its own reading key, even without a location", () => {
-    const first = inscriptionText(asset, "k1")!;
-    const second = inscriptionText(asset, "k2")!;
+    const first = inscriptionText(asset, "k1", "tr")!;
+    const second = inscriptionText(asset, "k2", "tr")!;
     expect(readAloudKey(first)).not.toBe(readAloudKey(second));
     expect(isInscriptionReading(readAloudKey(first))).toBe(true);
     expect(isInscriptionReading("description:bursa-osmangazi-ornek")).toBe(false);
   });
 
   it("says the place from the asset's name and the inscription's location", () => {
-    expect(inscriptionPlace(inscriptionText(asset, "k1")!)).toBe("Örnek Türbe");
-    expect(inscriptionPlace(inscriptionText(asset, "k2")!)).toBe("Örnek Türbe · Kapı üzerinde");
+    expect(inscriptionPlace(inscriptionText(asset, "k1", "tr")!)).toBe("Örnek Türbe");
+    expect(inscriptionPlace(inscriptionText(asset, "k2", "tr")!)).toBe("Örnek Türbe · Kapı üzerinde");
   });
 });

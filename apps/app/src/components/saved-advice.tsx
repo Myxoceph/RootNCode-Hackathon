@@ -115,6 +115,8 @@ function GroupHead({
       </Text>
     );
   }
+  // A trip still on the list is named in today's language; one removed keeps its saved words.
+  const title = trip?.kind === "trip" ? m.shared.tripTitle(trip.trip.city.label) : about.title;
   const firstDay = trip?.kind === "trip" ? trip.trip.days[0]?.date : undefined;
   const details =
     trip?.kind === "trip"
@@ -140,7 +142,7 @@ function GroupHead({
       )}
       <View style={styles.flex}>
         <Text variant="label" headingLevel={2}>
-          {about.title}
+          {title}
         </Text>
         <Text variant="caption" color="textSecondary">
           {details ??
@@ -155,7 +157,7 @@ function GroupHead({
   return (
     <Pressable
       accessibilityRole="link"
-      accessibilityLabel={`${about.title}${details ? `, ${details}` : ""}, ${about.kind === "route" ? w.opensRoute : w.opensSite}`}
+      accessibilityLabel={`${title}${details ? `, ${details}` : ""}, ${about.kind === "route" ? w.opensRoute : w.opensSite}`}
       onPress={() => router.push(href)}
       style={({ pressed }) => [styles.group, pressed && styles.pressed]}
     >
@@ -265,7 +267,7 @@ function FoodCard({ item, index }: { item: FoodAdvice; index: number }) {
   const { colors: c } = useTheme();
   const [open, setOpen] = useState(false);
   const code = item.dishes[0]?.id.split("-")[0] ?? "";
-  const { intro, dishes, outro } = menuOf(item.answer);
+  const { intro, dishes, outro } = menuOf(item.answer, lang);
   const shown = open ? dishes : dishes.slice(0, MENU_DISHES);
   const hidden = dishes.length - shown.length;
   const long = dishes.length === 0 && intro.length > 220;
@@ -282,7 +284,7 @@ function FoodCard({ item, index }: { item: FoodAdvice; index: number }) {
           <BandTop
             label={code.toLocaleUpperCase(lang)}
             icon="restaurant"
-            tag="Sofra"
+            tag={w.foodTag}
           />
           <Text
             headingLevel={3}

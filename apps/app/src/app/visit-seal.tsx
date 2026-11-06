@@ -54,6 +54,7 @@ type Phase =
  * Without a camera (the web, ADR 0001; a screen reader on) the screen shows which part to find.
  */
 export default function VisitSealScreen() {
+  const lang = useLang();
   const m = useMessages();
   const w = m.seal;
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
@@ -62,7 +63,7 @@ export default function VisitSealScreen() {
   const screenReader = useScreenReaderStatus();
   const web = Platform.OS === "web";
   const asset = resource.status === "success" ? resource.data : null;
-  const target = asset ? visitSealTarget(asset) : null;
+  const target = asset ? visitSealTarget(asset, lang) : null;
   const router = useRouter();
   const [unlocked, setUnlocked] = useState<VisitResponse | null | false>(false);
   // With a screen reader on the screen opens on the guide; the visitor may still ask for the camera.
@@ -169,7 +170,7 @@ function UnlockButton({ onPress }: { onPress: () => void }) {
 function SealGuide({ asset, onUseCamera }: { asset: AssetDetail; onUseCamera?: () => void }) {
   const lang = useLang();
   const insets = useSafeAreaInsets();
-  const { photo, part } = visitSealTarget(asset)!;
+  const { photo, part } = visitSealTarget(asset, lang)!;
   const w = useMessages().seal;
   return (
     // Room at the end for the floating "Kilidi aç", so the last button is not under it.
@@ -204,7 +205,7 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
   const w = useMessages().seal;
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { photo, part } = visitSealTarget(asset)!;
+  const { photo, part } = visitSealTarget(asset, lang)!;
   const key = `${asset.id}:${photo.key}`;
   const [run, setRun] = useState(0);
   const [phase, setPhaseState] = useState<Phase>(compiled.has(key) ? { name: "starting" } : { name: "preparing", progress: 0 });
@@ -239,7 +240,7 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
         go({ name: "failed", message: error instanceof DataError ? error.message : w.failed });
       }
     },
-    [asset.id, photo.key, go, onSealed],
+    [asset.id, photo.key, go, onSealed, w],
   );
 
   const seal = useCallback(async () => {
@@ -256,7 +257,7 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
       }
     }
     await send(position);
-  }, [asset.coordinates, send, go]);
+  }, [asset.coordinates, send, go, w]);
 
   const onEvent = useCallback(
     (event: TrackerEvent) => {
@@ -296,7 +297,7 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
           break;
       }
     },
-    [go, key, hold, reduceMotion, seal, part],
+    [go, key, hold, reduceMotion, seal, part, w],
   );
 
   useEffect(() => () => clearTimeout(holdTimer.current), []);

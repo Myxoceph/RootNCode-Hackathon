@@ -19,7 +19,6 @@ import { useA11ySettings } from "@/settings/a11y-settings";
 export default function CapsuleScreen() {
   const m = useMessages();
   const w = m.capsule;
-  // The capsules' words come from a plain function that reads the language.
   const lang = useLang();
   const insets = useSafeAreaInsets();
   const [type, setType] = useState<CapsuleType>("sifahane");
@@ -28,7 +27,7 @@ export default function CapsuleScreen() {
 
   const mine = player?.type === type ? player : null;
   const elapsed = mine?.elapsed ?? 0;
-  const capsule = useMemo(() => capsuleWords(type), [type, lang]);
+  const capsule = useMemo(() => capsuleWords(type, lang), [type, lang]);
 
   const choose = (next: CapsuleType) => {
     setType(next);
@@ -60,7 +59,7 @@ export default function CapsuleScreen() {
               style={[styles.type, on && styles.typeOn]}
             >
               <Text variant="label" colorValue={on ? cameraColors.onGold : cameraColors.text}>
-                {capsuleWords(key).name}
+                {capsuleWords(key, lang).name}
               </Text>
             </Pressable>
           );
@@ -104,7 +103,7 @@ export default function CapsuleScreen() {
       <View style={styles.captions}>
         <View style={styles.captionsHead}>
           <Text variant="overline" colorValue={cameraColors.textSecondary}>
-            ALTYAZI
+            {w.captionsHead}
           </Text>
           <Pressable
             accessibilityRole="switch"
@@ -123,7 +122,7 @@ export default function CapsuleScreen() {
           colorValue={settings.captions ? cameraColors.text : cameraColors.textSecondary}
           style={settings.captions ? styles.mono : styles.italic}
         >
-          {settings.captions ? captionAt(type, elapsed) : w.captionsOff}
+          {settings.captions ? captionAt(type, elapsed, lang) : w.captionsOff}
         </Text>
         {mine && !mine.loading && mine.source !== "recording" && (
           <Text variant="caption" colorValue={cameraColors.textSecondary}>

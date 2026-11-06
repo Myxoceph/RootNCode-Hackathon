@@ -13,7 +13,7 @@ import { useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { visitSealTarget } from "@/lib/visit-seal";
-import { useMessages } from "@/i18n";
+import { useLang, useMessages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -39,6 +39,7 @@ interface Action {
  * under the map.
  */
 export function MapAssetActions({ asset }: { asset: AssetSummary }) {
+  const lang = useLang();
   const { colors: c, scheme } = useTheme();
   const router = useRouter();
   const m = useMessages();
@@ -49,7 +50,7 @@ export function MapAssetActions({ asset }: { asset: AssetSummary }) {
   const record = detail.status === "success" ? detail.data : null;
   const description = record?.accessibility.audioDescription ?? null;
   const readable = useHasInscriptions(record);
-  const sealable = record ? visitSealTarget(record) !== null : false;
+  const sealable = record ? visitSealTarget(record, lang) !== null : false;
   const coords = asset.coordinates;
   const opened = isAssetUnlocked(asset, useUnlockedAssets());
   const reduceMotion = useReducedMotion();

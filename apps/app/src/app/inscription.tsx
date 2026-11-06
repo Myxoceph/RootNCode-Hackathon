@@ -16,7 +16,7 @@ import { CameraTopBar, GlassIconButton, GlassPill } from "@/components/camera-ch
 import { GlassFill } from "@/components/city-asset-cards";
 import { InscriptionReading } from "@/components/inscription-reading";
 import { DataError, type ResourceWithRetry } from "@/data";
-import { useMessages, type Messages } from "@/i18n";
+import { useLang, useMessages, type Messages } from "@/i18n";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
@@ -41,6 +41,7 @@ const REVEAL_MS = 800;
  * phone it is one tap away.
  */
 export default function InscriptionScreen() {
+  const lang = useLang();
   const m = useMessages();
   const w = m.reading;
   const { asset: id } = useLocalSearchParams<{ asset?: string }>();
@@ -93,7 +94,7 @@ export default function InscriptionScreen() {
       </Head>
       {mode === "reading" && (
         <InscriptionReading
-          inscription={inscriptionOf(asset, null)}
+          inscription={inscriptionOf(asset, null, lang)}
           notice={untrackable && asset.status === "success" ? w.noTarget : notice}
           onUseCamera={
             web || untrackable
@@ -150,6 +151,7 @@ function lookingFor(assets: AssetDetail[], targets: TrackedTarget[], nearby: boo
 }
 
 function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: InscriptionCameraProps) {
+  const lang = useLang();
   const m = useMessages();
   const w = m.reading;
   const insets = useSafeAreaInsets();
@@ -157,11 +159,11 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
   const overlays = useMemo(() => set?.targets.map((t) => t.overlay), [set]);
   const [tracked, setTracked] = useState<TrackedTarget | null>(null);
   const trackedAsset = assets.find((a) => a.id === tracked?.assetId) ?? assets[0]!;
-  const text = inscriptionText(trackedAsset, tracked?.inscriptionId ?? "");
+  const text = inscriptionText(trackedAsset, tracked?.inscriptionId ?? "", lang);
   const noRetry = useCallback(() => {}, []);
   const inscription: ResourceWithRetry<InscriptionText> = text
     ? { status: "success", data: text, retry: noRetry }
-    : inscriptionOf({ status: "success", data: trackedAsset, retry: noRetry }, null);
+    : inscriptionOf({ status: "success", data: trackedAsset, retry: noRetry }, null, lang);
   const reduceMotion = useReducedMotion();
   const [phase, setPhase] = useState<Phase>("starting");
   const [progress, setProgress] = useState(0);
@@ -184,7 +186,7 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
   const reveal = useCallback(() => {
     go("revealed");
     announce(w.solvedSaid);
-  }, [go]);
+  }, [go, w]);
 
   // The card rises once it is on screen: a native animation started before its view exists can skip.
   useEffect(() => {
@@ -211,7 +213,7 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
       announce(w.foundSaid);
       revealTimer.current = setTimeout(reveal, REVEAL_MS);
     },
-    [go, set, reduceMotion, reveal],
+    [go, set, reduceMotion, reveal, w],
   );
 
   const onEvent = useCallback(

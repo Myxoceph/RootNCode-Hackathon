@@ -29,14 +29,14 @@ describe("paragraphsOf", () => {
 
 describe("helpers", () => {
   it("names the century", () => {
-    expect(centuryOf(1399)).toBe("XIV. yüzyıl");
-    expect(centuryOf(1400)).toBe("XIV. yüzyıl");
-    expect(centuryOf(1901)).toBe("XX. yüzyıl");
+    expect(centuryOf(1399, "tr")).toBe("XIV. yüzyıl");
+    expect(centuryOf(1400, "tr")).toBe("XIV. yüzyıl");
+    expect(centuryOf(1901, "tr")).toBe("XX. yüzyıl");
   });
 
   it("reads a record date and leaves other wording alone", () => {
-    expect(readableDate("1494-02-19")).toBe("19 Şubat 1494");
-    expect(readableDate("Aralık 1413")).toBe("Aralık 1413");
+    expect(readableDate("1494-02-19", "tr")).toBe("19 Şubat 1494");
+    expect(readableDate("Aralık 1413", "tr")).toBe("Aralık 1413");
   });
 
   it("never says zero minutes", () => {

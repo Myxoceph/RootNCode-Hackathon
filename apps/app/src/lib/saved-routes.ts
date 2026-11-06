@@ -1,9 +1,9 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { TRANSIT_CITY, type ChatResponse, type SavedAnswerAbout, type SavedRoute, type TripPlanResponse } from "@vagabonds/contracts";
+import { TRANSIT_CITY, type ChatResponse, type Lang, type SavedAnswerAbout, type SavedRoute, type TripPlanResponse } from "@vagabonds/contracts";
 import { useEffect, useSyncExternalStore } from "react";
 
 import { currentUserId, deleteMyRoute, fetchMyRoutes, saveMyRoute, useCommunity } from "@/data/community";
-import { getLang, getMessages } from "@/i18n";
+import { getMessages } from "@/i18n";
 
 export type { SavedRoute } from "@vagabonds/contracts";
 
@@ -186,7 +186,7 @@ export async function saveAdvice(question: string, response: ChatResponse, asked
 }
 
 /** A kept food answer as a menu: the words around it, and its "- Yemek: açıklaması" lines as dishes. */
-export function menuOf(answer: string): { intro: string; dishes: Array<{ name: string; text: string }>; outro: string } {
+export function menuOf(answer: string, lang: Lang): { intro: string; dishes: Array<{ name: string; text: string }>; outro: string } {
   const intro: string[] = [];
   const outro: string[] = [];
   const dishes: Array<{ name: string; text: string }> = [];
@@ -195,7 +195,7 @@ export function menuOf(answer: string): { intro: string; dishes: Array<{ name: s
     if (item) {
       const colon = item.indexOf(": ");
       const text = colon > 0 ? item.slice(colon + 2) : "";
-      dishes.push({ name: colon > 0 ? item.slice(0, colon) : item, text: `${text.charAt(0).toLocaleUpperCase(getLang())}${text.slice(1)}` });
+      dishes.push({ name: colon > 0 ? item.slice(0, colon) : item, text: `${text.charAt(0).toLocaleUpperCase(lang)}${text.slice(1)}` });
     } else {
       (dishes.length > 0 ? outro : intro).push(line);
     }

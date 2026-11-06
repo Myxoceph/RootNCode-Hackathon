@@ -1,6 +1,5 @@
-import type { AssetSummary } from "@vagabonds/contracts";
+import type { AssetSummary, Lang } from "@vagabonds/contracts";
 
-import { getLang } from "@/i18n";
 
 /** Records whose cover is cut out on black, which looks broken at this size. */
 const NOT_FOR_SHOWCASE = new Set(["konya-selcuklu-sultan-alaeddin-ulu-camii"]);
@@ -49,7 +48,7 @@ export interface Century {
 }
 
 /** The centuries assets were built in, oldest first; assets with no known year are left out. */
-export function centuriesOf(assets: readonly AssetSummary[]): Century[] {
+export function centuriesOf(assets: readonly AssetSummary[], lang: Lang): Century[] {
   const byCentury = new Map<number, AssetSummary[]>();
   for (const asset of showcaseAssets(assets)) {
     const century = centuryOf(asset.yearLabel);
@@ -57,7 +56,7 @@ export function centuriesOf(assets: readonly AssetSummary[]): Century[] {
   }
   return [...byCentury.entries()]
     .sort(([a], [b]) => a - b)
-    .map(([number, items]) => ({ number, roman: toRoman(number), decades: getLang() === "en" ? `${(number - 1) * 100}s` : `${(number - 1) * 100}'ler`, assets: items }));
+    .map(([number, items]) => ({ number, roman: toRoman(number), decades: lang === "en" ? `${(number - 1) * 100}s` : `${(number - 1) * 100}'ler`, assets: items }));
 }
 
 /** The century the journey opens on: the one with the best-known asset. */

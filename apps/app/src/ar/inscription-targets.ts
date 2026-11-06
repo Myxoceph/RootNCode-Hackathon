@@ -23,7 +23,6 @@ export interface CameraInscription {
   assetId: string;
   inscriptionId: string;
   /** Where it is: "Cümle kapısının üzerinde". */
-  label: string;
   /** Today's Turkish (or the reading), short enough to sit over the stone. */
   overlay: string;
   /** The ~1280 px JPEG compiled on the phone when there is no `.mind` file. */
@@ -53,7 +52,7 @@ export function cameraInscriptions(asset: AssetDetail): CameraInscription[] {
     const overlay = overlayText(inscription);
     if (!photo || !overlay) return [];
     const mindUrl = inscription.arTarget?.mindarVersion === MINDAR_VERSION ? inscription.arTarget.mindUrl : null;
-    return [{ assetId: asset.id, inscriptionId: inscription.id, label: inscription.location ?? "Kitabe", overlay, image: compileSource(photo), mindUrl }];
+    return [{ assetId: asset.id, inscriptionId: inscription.id, overlay, image: compileSource(photo), mindUrl }];
   });
 }
 

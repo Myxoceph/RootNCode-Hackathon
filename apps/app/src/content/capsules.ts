@@ -3,7 +3,7 @@
  * Sample content (see ./README.md). On the web the sound is synthesized live;
  * the real CC0 recordings arrive with task H9.
  */
-import { getLang } from "@/i18n";
+import type { Lang } from "@vagabonds/contracts";
 
 export type CapsuleType = "sifahane" | "kervan" | "medrese" | "hamam";
 
@@ -115,9 +115,9 @@ const capsulesEn: Record<CapsuleType, Capsule> = {
   },
 };
 
-/** A capsule's words in the app's language. */
-export function capsuleWords(type: CapsuleType): Capsule {
-  return (getLang() === "en" ? capsulesEn : capsules)[type];
+/** A capsule's words in a language; passed in, so a compiled screen follows a change of language. */
+export function capsuleWords(type: CapsuleType, lang: Lang): Capsule {
+  return (lang === "en" ? capsulesEn : capsules)[type];
 }
 
 export const capsuleTypes = Object.keys(capsules) as CapsuleType[];
@@ -133,8 +133,8 @@ export function capsuleForSoundKey(soundKey: string): CapsuleType | undefined {
   return bySoundKey.get(soundKey);
 }
 
-export function captionAt(type: CapsuleType, seconds: number): string {
-  const { captions } = capsuleWords(type);
+export function captionAt(type: CapsuleType, seconds: number, lang: Lang): string {
+  const { captions } = capsuleWords(type, lang);
   let text = captions[0]?.[1] ?? "";
   for (const [at, line] of captions) if (seconds >= at) text = line;
   return text;

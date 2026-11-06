@@ -58,7 +58,6 @@ describe("Taşın Dili inscription choice", () => {
       {
         assetId: "x",
         inscriptionId: "photographed",
-        label: "Kitabe",
         overlay: "Şüphesiz biz sana apaçık bir fetih verdik.",
         image: "https://media.allbytech.com/m03/1280.jpg",
         mindUrl: null,
@@ -102,9 +101,9 @@ describe("capsules", () => {
 
   it("shows the caption of the last cue passed, the first one before any", () => {
     const [[, first], [secondAt, second]] = capsules.hamam.captions as [[number, string], [number, string]];
-    expect(captionAt("hamam", 0)).toBe(first);
-    expect(captionAt("hamam", secondAt - 0.1)).toBe(first);
-    expect(captionAt("hamam", secondAt)).toBe(second);
+    expect(captionAt("hamam", 0, "tr")).toBe(first);
+    expect(captionAt("hamam", secondAt - 0.1, "tr")).toBe(first);
+    expect(captionAt("hamam", secondAt, "tr")).toBe(second);
   });
 
   it("formats seconds as 0:SS", () => {
