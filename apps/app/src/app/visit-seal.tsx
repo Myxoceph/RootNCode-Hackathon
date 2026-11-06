@@ -1,4 +1,3 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
 import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
@@ -144,9 +143,9 @@ export default function VisitSealScreen() {
 }
 
 /** Height of the floating "Kilidi aç" and its gap. */
-const UNLOCK_ROOM = 72;
+const UNLOCK_ROOM = 44;
 
-/** "Kilidi aç": seals the visit at once, standing in for recognising the part (a demo simulation). */
+/** A small "Aç", just in case the camera does not recognise the photo: seals the visit at once (a demo simulation). */
 function UnlockButton({ onPress }: { onPress: () => void }) {
   const w = useMessages().seal;
   return (
@@ -155,12 +154,12 @@ function UnlockButton({ onPress }: { onPress: () => void }) {
       accessibilityLabel={w.unlock}
       // A demo simulation, and the screen reader must say so: it does not check the visit.
       accessibilityHint={w.unlockHint}
+      hitSlop={8}
       onPress={onPress}
-      style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.85, transform: [{ scale: 0.98 }] }]}
+      style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.7 }]}
     >
-      <Ionicons name="lock-open" size={18} color={cameraColors.onGold} />
-      <Text variant="label" colorValue={cameraColors.onGold} style={styles.unlockText}>
-        {w.unlock}
+      <Text colorValue={cameraColors.text} style={styles.unlockText}>
+        {w.unlockShort}
       </Text>
     </Pressable>
   );
@@ -518,18 +517,18 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   unlock: {
-    flexDirection: "row",
+    alignSelf: "flex-end",
+    minHeight: 28,
+    minWidth: 28,
     alignItems: "center",
     justifyContent: "center",
-    alignSelf: "stretch",
-    gap: spacing.sm,
-    minHeight: 52,
-    borderRadius: radius.full,
-    backgroundColor: "#FFFFFF",
+    paddingHorizontal: spacing.sm,
+    borderRadius: radius.sm,
+    backgroundColor: cameraColors.background,
   },
   unlockText: {
     fontFamily: fontFamily.sansBold,
-    fontSize: 17,
+    fontSize: 12,
   },
   unlockFloat: {
     position: "absolute",
