@@ -7,6 +7,21 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-06 · Mühür sekansı ve yeni kapsül sesleri
+
+Kimler: **Mobil geliştirenler**, **Kübra (metinler)**
+
+1. Herkes: `npm install` (yeni paket: `expo-haptics`, damga vuruşunda titreşim).
+
+Değişenler:
+
+- İlk ziyarette damgadan sonra "Zamanı aç" / "Sessiz geç" çıkar; "Zamanı aç" 24 saniyelik sekansı başlatır (`components/seal-sequence.tsx`). Sahne metinleri eserin kaydından seçilir (`lib/seal-scenes.ts`), yeni içerik yazılmaz.
+- Telefonda eser sayfasındaki "Sesini dinle" yerine, mühürlenince "Zamanı yeniden aç" gelir. Web'de "Sesini dinle" aynen durur.
+- Rozet kutlaması mühür ekranında sekans bitene kadar bekler (`holdBadges`).
+- Eski sentez sesler kaldırıldı. 10 yeni ses (Google Flow Music, 25 sn, aynı seviyeye eşitlenmiş) uygulamanın içinde: `apps/app/src/audio/capsules/`. Altyazılar henüz bu müziklere göre yazılmadı. Bir sesi değiştirmek yeni APK gerektirir.
+
+---
+
 ## 2026-11-06 · Gezi planı gardan ilk durağa yolu söylüyor
 
 Sözleşme 0.3.32: gezi planına `arrival` eklendi. Kurulum adımı yok; yeni gezileri eski APK okuyamaz, yeni APK gerekir.

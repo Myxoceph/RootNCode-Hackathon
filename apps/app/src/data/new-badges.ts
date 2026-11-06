@@ -24,6 +24,9 @@ interface Seen {
 }
 
 let queue: NewBadge[] = [];
+/** While above zero the celebration waits; its badges stay in line. */
+let holds = 0;
+const NONE: NewBadge[] = [];
 const listeners = new Set<() => void>();
 /** Codes queued or shown in this run, so one badge is never celebrated twice. */
 const celebrated = new Set<string>();
@@ -98,7 +101,26 @@ const subscribe = (listener: () => void) => {
   listeners.add(listener);
   return () => listeners.delete(listener);
 };
-const getQueue = () => queue;
+const getQueue = () => (holds > 0 ? NONE : queue);
+
+/** What the celebration may show now: nothing while it is held. */
+export const heldBadges = getQueue;
+
+/**
+ * Keeps the celebration from opening, while a screen has its own moment on (a seal's sequence).
+ * Returns what lets it go; the badges earned meanwhile then come in line.
+ */
+export function holdBadges(): () => void {
+  holds++;
+  publish();
+  let released = false;
+  return () => {
+    if (released) return;
+    released = true;
+    holds--;
+    publish();
+  };
+}
 
 /** The badges waiting, outside React. */
 export const pendingBadges = (): NewBadge[] => queue;

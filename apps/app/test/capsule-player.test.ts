@@ -1,11 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { capsules } from "../src/content/capsules";
-import { recordingUrl } from "../src/audio/sounds";
 import type { FakePlayer } from "./mocks/expo-audio";
 
-vi.mock("../src/audio/stand-ins", () => ({
-  standInSounds: { sifahane: "sifahane.m4a", kervan: "kervan.m4a", medrese: "medrese.m4a", hamam: "hamam.m4a" },
+vi.mock("../src/audio/sounds", () => ({
+  capsuleSounds: { hamam: "hamam.mp3", kervan: "han.mp3", medrese: "medrese.mp3" },
 }));
 
 const playing = { playing: true, isBuffering: false, currentTime: 0.2 };
@@ -32,11 +30,11 @@ const last = (): FakePlayer => audio.players.at(-1)!;
 describe("capsule player", () => {
   it("plays the recording, and starts the captions once it is audible", () => {
     player.playCapsule("hamam");
-    expect(last().source).toEqual({ uri: recordingUrl(capsules.hamam.soundKey) });
-    expect(player.getPlayerState()).toMatchObject({ type: "hamam", loading: true, source: null });
+    expect(last().source).toBe("hamam.mp3");
+    expect(player.getPlayerState()).toMatchObject({ type: "hamam", loading: true, audible: false });
 
     last().emit(playing);
-    expect(player.getPlayerState()).toMatchObject({ loading: false, source: "recording" });
+    expect(player.getPlayerState()).toMatchObject({ loading: false, audible: true });
   });
 
   it("does not take 'playing' before any sound is out for a start", () => {
@@ -45,24 +43,45 @@ describe("capsule player", () => {
     expect(player.getPlayerState()?.loading).toBe(true);
   });
 
-  it("falls back to the stand-in when the recording fails, and skips the recording next time", () => {
+  it("runs silently when the sound fails", () => {
     player.playCapsule("hamam");
-    const recording = last();
-    recording.emit({ playing: false, isBuffering: false, currentTime: 0, error: "404" });
+    const sound = last();
+    sound.emit({ playing: false, isBuffering: false, currentTime: 0, error: "decode" });
 
-    expect(last().source).toBe("hamam.m4a");
-    expect(audio.log).toContainEqual(["remove", recording]);
-    last().emit(playing);
-    expect(player.getPlayerState()?.source).toBe("stand-in");
-
-    player.playCapsule("hamam");
-    expect(last().source).toBe("hamam.m4a");
+    expect(audio.log).toContainEqual(["remove", sound]);
+    expect(player.getPlayerState()).toMatchObject({ loading: false, audible: false });
   });
 
-  it("falls back to the stand-in when the recording has not started in 4 seconds", () => {
+  it("runs silently when the sound has not started in 4 seconds", () => {
     player.playCapsule("kervan");
     vi.advanceTimersByTime(4000);
-    expect(last().source).toBe("kervan.m4a");
+    expect(player.getPlayerState()).toMatchObject({ loading: false, audible: false });
+  });
+
+  it("rises from silence, loops a short file and sinks back at the end", () => {
+    player.playCapsule("hamam");
+    expect(last().volume).toBe(0);
+    expect(last().loop).toBe(true);
+    last().emit(playing);
+    vi.advanceTimersByTime(1000);
+    expect(last().volume).toBeCloseTo(0.5, 1);
+    vi.advanceTimersByTime(9000);
+    expect(last().volume).toBe(1);
+    vi.advanceTimersByTime(13_000);
+    expect(last().volume).toBeCloseTo(0.5, 1);
+  });
+
+  it("silences and brings back the sound at the same moment", () => {
+    player.playCapsule("hamam");
+    last().emit(playing);
+    vi.advanceTimersByTime(10_000);
+    player.setCapsuleMuted(true);
+    expect(last().volume).toBe(0);
+    vi.advanceTimersByTime(1000);
+    expect(last().volume).toBe(0);
+    expect(player.getPlayerState()?.elapsed).toBeGreaterThan(10);
+    player.setCapsuleMuted(false);
+    expect(last().volume).toBe(1);
   });
 
   it("pauses before it removes, so a phone stops the sound at once", () => {

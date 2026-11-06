@@ -346,7 +346,7 @@ export const AssetDetailSchema = AssetSummarySchema.extend({
     .strictObject({
       key: z.string().min(1),
       caption: z.string().min(1).nullable(),
-      /** The key's published recording; null until the data team adds one (the app then plays a stand-in). */
+      /** The key's published recording; null until the data team adds one (the app plays its own sound for the key). */
       recording: SoundRecordingSchema.nullable(),
     })
     .nullable(),

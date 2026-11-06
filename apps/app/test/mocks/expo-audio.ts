@@ -8,6 +8,8 @@ export interface AudioStatus {
 
 export class FakePlayer {
   readonly listeners = new Set<(status: AudioStatus) => void>();
+  loop = false;
+  volume = 1;
 
   constructor(readonly source: unknown) {}
 

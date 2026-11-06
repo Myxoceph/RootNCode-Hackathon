@@ -1,9 +1,10 @@
 import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import * as Haptics from "expo-haptics";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ActivityIndicator, Animated, Easing, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { ActivityIndicator, Animated, Easing, Modal, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { compileSource } from "@/ar/inscription-targets";
@@ -14,7 +15,10 @@ import { AssetImage } from "@/components/asset-image";
 import { BadgeArt } from "@/components/badge-art";
 import { CameraTopBar } from "@/components/camera-chrome";
 import { DataErrorView } from "@/components/resource-view";
+import { SealSequence } from "@/components/seal-sequence";
+import { capsuleForSoundKey } from "@/content/capsules";
 import { communityAvailable, DataError, sendVisitProof, useAsset } from "@/data";
+import { holdBadges } from "@/data/new-badges";
 import { announce } from "@/lib/announce";
 import { currentPosition, type Position } from "@/lib/current-position";
 import { isAssetUnlocked } from "@/lib/related-assets";
@@ -32,6 +36,10 @@ const POSITION_WAIT_MS = 5000;
 /** Where the stamp's one animated value stands as the seal hangs over the page, and as it strikes. */
 const STAMP_HANGS = 0.6;
 const STAMP_STRIKES = 0.8;
+/** How long after it starts falling the stamp strikes the page. */
+const STRIKE_MS = 760 + 170 + 120;
+/** The sequence's window is closing for this long: iOS refuses to open another (the badges) meanwhile. */
+const WINDOW_CLOSES_MS = 500;
 
 /** Compiled seal targets of this run, by asset and photo: compiling again takes seconds. */
 const compiled = new Map<string, string>();
@@ -70,6 +78,10 @@ export default function VisitSealScreen() {
   const [cameraAnyway, setCameraAnyway] = useState(false);
   // Sealed on this screen, the camera's own "sealed" step is still to show; only one unlocked before needs no seal.
   const [sealedHere, setSealedHere] = useState(false);
+  // The badges wait for the seal's own moment: a sealed visit's answer would open them over the stamp.
+  const [settled, setSettled] = useState(false);
+  const onSettled = useCallback(() => setSettled(true), []);
+  useEffect(() => (settled ? undefined : holdBadges()), [settled]);
   const allUnlocked = useUnlockedAssets();
   const alreadyOpen = asset !== null && !sealedHere && isAssetUnlocked(asset, allUnlocked);
   // A try-out away from the sites: "Kilidi aç" records the visit, with its badges, as a sealed one would.
@@ -84,7 +96,7 @@ export default function VisitSealScreen() {
 
   let body;
   if (asset && unlocked !== false) {
-    body = <Sealed asset={asset} result={unlocked ?? { verified: false, firstVisit: true, newAchievements: [] }} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/map"))} />;
+    body = <Sealed asset={asset} result={unlocked ?? { verified: false, firstVisit: true, newAchievements: [] }} onSettled={onSettled} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/map"))} />;
   } else if (alreadyOpen) {
     body = (
       <View style={styles.center}>
@@ -126,7 +138,7 @@ export default function VisitSealScreen() {
       </>
     );
   } else {
-    body = <SealCamera asset={asset} onUnlock={unlock} onSealed={() => setSealedHere(true)} />;
+    body = <SealCamera asset={asset} onUnlock={unlock} onSealed={() => setSealedHere(true)} onSettled={onSettled} />;
   }
 
   return (
@@ -200,7 +212,7 @@ function SealGuide({ asset, onUseCamera }: { asset: AssetDetail; onUseCamera?: (
   );
 }
 
-function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnlock?: () => void; onSealed: () => void }) {
+function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDetail; onUnlock?: () => void; onSealed: () => void; onSettled: () => void }) {
   const lang = useLang();
   const w = useMessages().seal;
   const insets = useSafeAreaInsets();
@@ -302,7 +314,7 @@ function SealCamera({ asset, onUnlock, onSealed }: { asset: AssetDetail; onUnloc
     setRun((n) => n + 1);
   };
 
-  if (phase.name === "sealed") return <Sealed asset={asset} result={phase.result} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/camera"))} />;
+  if (phase.name === "sealed") return <Sealed asset={asset} result={phase.result} onSettled={onSettled} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/camera"))} />;
 
   return (
     <View style={styles.fill}>
@@ -397,9 +409,11 @@ function PanelBody({
 
 /**
  * The seal comes down like a stamp: it sinks in large and empty, hangs for a beat, and strikes. The ink
- * shows at the strike, a ring spreads from it and the page jolts; then what the visit earned.
+ * shows at the strike, a ring spreads from it and the page jolts. A first visit then offers its
+ * sequence with one tap (a tap, as many seals are struck inside a mosque or a tomb, where a sound
+ * must not start by itself); then what the visit earned.
  */
-function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<VisitResponse, "verified" | "firstVisit" | "newAchievements">; onDone: () => void }) {
+function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; result: Pick<VisitResponse, "verified" | "firstVisit" | "newAchievements">; onDone: () => void; onSettled: () => void }) {
   const lang = useLang();
   const w = useMessages().seal;
   const insets = useSafeAreaInsets();
@@ -407,6 +421,21 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
   const stamp = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
   const strike = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
   const reveal = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
+  const [stage, setStage] = useState<"offer" | "sequence" | "result">(result.firstVisit ? "offer" : "result");
+
+  const windowOpened = useRef(false);
+  useEffect(() => {
+    if (stage === "sequence") windowOpened.current = true;
+    if (stage !== "result") return;
+    const settle = setTimeout(onSettled, windowOpened.current ? WINDOW_CLOSES_MS : 0);
+    return () => clearTimeout(settle);
+  }, [stage, onSettled]);
+
+  // The stamp is felt as it strikes.
+  useEffect(() => {
+    const strikeFelt = setTimeout(() => void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy).catch(() => {}), reduceMotion ? 0 : STRIKE_MS);
+    return () => clearTimeout(strikeFelt);
+  }, [reduceMotion]);
 
   useEffect(() => {
     if (reduceMotion) {
@@ -474,7 +503,20 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
           {result.firstVisit ? w.firstVisit : w.againVisit}
         </Text>
 
-        {result.newAchievements.length > 0 && (
+        {stage !== "result" && (
+          <>
+            <Button label={w.openTime} accessibilityHint={capsuleForSoundKey(asset.ambientSound?.key ?? "") ? w.openTimeHintSound : w.openTimeHint} onPress={() => setStage("sequence")} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
+            <Button
+              label={w.skipTime}
+              accessibilityHint={w.skipTimeHint}
+              onPress={() => setStage("result")}
+              colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
+              style={styles.skip}
+            />
+          </>
+        )}
+
+        {stage === "result" && result.newAchievements.length > 0 && (
           <View style={styles.badges}>
             <Text variant="overline" colorValue={cameraColors.gold}>
               {w.newBadges}
@@ -498,8 +540,13 @@ function Sealed({ asset, result, onDone }: { asset: AssetDetail; result: Pick<Vi
           </View>
         )}
 
-        <Button label={w.ok} onPress={onDone} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
+        {stage === "result" && <Button label={w.ok} onPress={onDone} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />}
       </Animated.View>
+
+      {/* Over the screen's top bar too; the system's back gesture ends it as "Geç" does. */}
+      <Modal visible={stage === "sequence"} animationType="fade" statusBarTranslucent navigationBarTranslucent onRequestClose={() => setStage("result")}>
+        {stage === "sequence" && <SealSequence asset={asset} onDone={() => setStage("result")} />}
+      </Modal>
     </ScrollView>
   );
 }
@@ -684,5 +731,8 @@ const styles = StyleSheet.create({
   done: {
     alignSelf: "stretch",
     marginTop: spacing.md,
+  },
+  skip: {
+    alignSelf: "stretch",
   },
 });
