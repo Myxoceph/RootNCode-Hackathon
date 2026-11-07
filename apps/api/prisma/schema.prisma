@@ -508,6 +508,10 @@ model app_user {
   user_route            user_route[]
   journal_entry         journal_entry[]
   journal_photo         journal_photo[]
+  intakeJobsCreated     intake_job[]        @relation("intake_job_created_byToapp_user")
+  intakeMapsConfirmed   intake_job[]        @relation("intake_job_map_confirmed_byToapp_user")
+  intakeDraftsCreated   intake_draft[]      @relation("intake_draft_created_byToapp_user")
+  intakeDraftsReviewed  intake_draft[]      @relation("intake_draft_reviewed_byToapp_user")
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
@@ -771,4 +775,64 @@ model journal_photo {
 
   @@index([entry_id, created_at])
   @@index([user_id, created_at])
+}
+
+/// Veri Döngüsü: a book PDF the data pipeline splits into drafts (docs/plans/veri-dongusu.md).
+/// jsonb shapes: packages/contracts/src/intake.schema.ts. The Python worker (data/pipeline) writes here too.
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model intake_job {
+  id               String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  kind             String         @default("pdf")
+  status           String         @default("queued")
+  title            String
+  city             String
+  source_id        String?
+  file_path        String
+  layout           Json?
+  book_map         Json?
+  map_confirmed_at DateTime?      @db.Timestamptz(6)
+  map_confirmed_by String?        @db.Uuid
+  progress_done    Int            @default(0)
+  progress_total   Int            @default(0)
+  error            String?
+  created_by       String?        @db.Uuid
+  created_at       DateTime       @default(now()) @db.Timestamptz(6)
+  updated_at       DateTime       @default(now()) @db.Timestamptz(6)
+  creator          app_user?      @relation("intake_job_created_byToapp_user", fields: [created_by], references: [id], onUpdate: NoAction)
+  mapConfirmer     app_user?      @relation("intake_job_map_confirmed_byToapp_user", fields: [map_confirmed_by], references: [id], onUpdate: NoAction)
+  drafts           intake_draft[]
+
+  @@index([status, created_at], map: "intake_job_status_idx")
+}
+
+/// Veri Döngüsü: one item of the review queue (a book's asset, a visitor's inscription, later a field asset).
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model intake_draft {
+  id           String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  kind         String
+  status       String      @default("pending")
+  job_id       String?     @db.Uuid
+  asset_id     String
+  entry_key    String?
+  record       Json        @default("{}")
+  media        Json        @default("[]")
+  source_refs  Json        @default("[]")
+  validation   Json        @default("{\"errors\": [], \"warnings\": []}")
+  ai           Json?
+  duplicate_of String?
+  note         String?
+  created_by   String?     @db.Uuid
+  reviewed_by  String?     @db.Uuid
+  reviewed_at  DateTime?   @db.Timestamptz(6)
+  review_note  String?
+  created_at   DateTime    @default(now()) @db.Timestamptz(6)
+  updated_at   DateTime    @default(now()) @db.Timestamptz(6)
+  job          intake_job? @relation(fields: [job_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  creator      app_user?   @relation("intake_draft_created_byToapp_user", fields: [created_by], references: [id], onUpdate: NoAction)
+  reviewer     app_user?   @relation("intake_draft_reviewed_byToapp_user", fields: [reviewed_by], references: [id], onUpdate: NoAction)
+
+  @@index([status, kind, created_at], map: "intake_draft_queue_idx")
+  @@index([asset_id], map: "intake_draft_asset_idx")
+  // Also unique (job_id, entry_key) WHERE job_id IS NOT NULL (intake_draft_entry_idx): a partial index
+  // Prisma cannot express, so it lives only in the migration; `migrate diff` reports it, keep it.
 }
