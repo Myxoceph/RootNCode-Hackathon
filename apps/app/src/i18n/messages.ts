@@ -420,6 +420,8 @@ const tr = {
     pageTitle: "Vakıfname · Vakıf eserlerini keşfet",
     description: "Vakıf eserlerini haritada keşfet, kitabelerini oku, seslerini dinle. Web sitesinde ve mobil uygulamada.",
     otherLanguage: "English",
+    otherLanguageShort: "EN",
+    newHere: ["Hesabın yok mu? ", "Kayıt ol"] as string[],
   },
   mapPage: {
     sources: "Harita kaynakları",
@@ -1775,6 +1777,8 @@ const en: Messages = {
     pageTitle: "Vakıfname · Discover waqf heritage",
     description: "Discover waqf heritage sites on the map, read their inscriptions, hear their sounds. On the website and in the mobile app.",
     otherLanguage: "Türkçe",
+    otherLanguageShort: "TR",
+    newHere: ["New here? ", "Sign up"],
   },
   mapPage: {
     sources: "Map sources",

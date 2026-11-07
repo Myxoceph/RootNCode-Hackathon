@@ -57,13 +57,16 @@ export function LandingPage() {
         </a>
         <nav className="vg-nav-actions" aria-label={m.landing.account}>
           {/* The other language, named in itself: one tap turns the page and the site. */}
-          <button type="button" className="vg-nav-link" lang={lang === "tr" ? "en" : "tr"} onClick={() => setLang(lang === "tr" ? "en" : "tr")}>
-            {m.landing.otherLanguage}
+          <button type="button" className="vg-nav-link vg-lang" lang={lang === "tr" ? "en" : "tr"} aria-label={m.landing.otherLanguage} onClick={() => setLang(lang === "tr" ? "en" : "tr")}>
+            <span className="vg-lang-long">{m.landing.otherLanguage}</span>
+            <span className="vg-lang-short" aria-hidden>
+              {m.landing.otherLanguageShort}
+            </span>
           </button>
           <a className="vg-nav-link" href="/auth?mode=login">
             {m.auth.login}
           </a>
-          <a className="vg-nav-link vg-nav-primary" href="/auth?mode=register">
+          <a className="vg-nav-link vg-nav-primary vg-nav-register" href="/auth?mode=register">
             {m.auth.register}
           </a>
         </nav>
@@ -86,6 +89,11 @@ export function LandingPage() {
               {m.landing.getApp}
             </button>
           </div>
+          {/* On a phone the bar keeps only "Giriş yap": signing up is offered here, under the buttons. */}
+          <p className="vg-new-here vg-rise vg-d4">
+            {m.landing.newHere[0]}
+            <a href="/auth?mode=register">{m.landing.newHere[1]}</a>
+          </p>
         </section>
 
         <Scene onSite={openSite} onApp={openApp} shore={shore} />
@@ -102,24 +110,34 @@ export function LandingPage() {
 function Scene({ onSite, onApp, shore }: { onSite: (event: MouseEvent<HTMLAnchorElement>) => void; onApp: () => void; shore: RefObject<HTMLDivElement | null> }) {
   const m = useMessages();
   const room = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(0);
+  const [layout, setLayout] = useState<{ scale: number; width: number; height: number | null }>({ scale: 0, width: SCENE_W, height: null });
   useLayoutEffect(() => {
     const element = room.current;
     if (!element) return;
+    const main = element.parentElement;
+    const hero = element.previousElementSibling as HTMLElement | null;
     const fit = () => {
       const style = getComputedStyle(element);
-      const width = element.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
-      const height = element.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
-      setScale(Math.max(0.1, Math.min(width / SCENE_W, height / SCENE_H, 1.45)));
+      const sides = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
+      const ends = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
+      const upright = window.innerWidth < window.innerHeight * PORTRAIT;
+      const sceneWidth = upright ? SCENE_W_UPRIGHT : SCENE_W;
+      const width = element.clientWidth - sides;
+      // Upright, the scene is as tall as it needs under the words, and the two are centred together; otherwise it fills the room left.
+      const room = upright && main && hero ? main.clientHeight - hero.offsetHeight : element.clientHeight;
+      const next = Math.max(0.1, Math.min(width / sceneWidth, (room - ends) / SCENE_H, 1.45));
+      setLayout({ scale: next, width: sceneWidth, height: upright ? SCENE_H * next + ends : null });
     };
     fit();
     const observer = new ResizeObserver(fit);
     observer.observe(element);
+    if (main) observer.observe(main);
     return () => observer.disconnect();
   }, []);
+  const { scale } = layout;
   return (
-    <div ref={room} className="vg-room">
-      <div className="vg-scene vg-rise vg-d5" style={{ width: SCENE_W, height: SCENE_H, transform: `scale(${scale})`, opacity: scale ? undefined : 0 }}>
+    <div ref={room} className="vg-room" style={layout.height === null ? undefined : { flex: "none", height: layout.height }}>
+      <div className="vg-scene vg-rise vg-d5" style={{ width: layout.width, height: SCENE_H, transform: `scale(${scale})`, opacity: scale ? undefined : 0 }}>
         {/* The ground they stand on: the dots go dark under them, a soft gold light pools around. */}
         <div className="vg-shore" ref={shore} aria-hidden />
         <div className="vg-spill" aria-hidden />
@@ -249,6 +267,12 @@ const APP_SHOT = Asset.fromModule(require("@/assets/images/landing/app-asset.jpg
 /** The scene's own size, before it is scaled to fit: the laptop, and the phone over its right edge. */
 const SCENE_W = 780;
 const SCENE_H = 520;
+/**
+ * On an upright screen (a phone) the phone leans further over the laptop, so the two take less width
+ * and are drawn larger. Below this width-to-height share a screen counts as upright.
+ */
+const SCENE_W_UPRIGHT = 640;
+const PORTRAIT = 0.8;
 
 /** Film grain over everything, as an SVG noise tile. */
 const GRAIN = `url("data:image/svg+xml;utf8,${encodeURIComponent(
@@ -284,6 +308,11 @@ const CSS = `
 .vg-h1 { margin: clamp(8px, 1.6vh, 18px) 0 0; max-width: 900px; font-family: HankenGrotesk_600SemiBold, system-ui, sans-serif; font-weight: 400; color: #F7F3EA;
   font-size: calc(clamp(38px, min(7.4vw, 8.6vh), 92px) * var(--vg-text, 1)); line-height: 1.04; letter-spacing: -1px; }
 .vg-h1 em { font-style: normal; color: #E7C26A; }
+.vg-new-here { display: none; margin: 16px 0 0; font-size: calc(14px * var(--vg-text, 1)); color: var(--muted); }
+.vg-new-here a { color: var(--gold); font-family: HankenGrotesk_600SemiBold, sans-serif; text-decoration: none; }
+.vg-new-here a:hover { text-decoration: underline; }
+.vg-new-here a:focus-visible { outline: 2px solid #E7C26A; outline-offset: 3px; border-radius: 4px; }
+.vg-lang-short { display: none; }
 .vg-actions { display: flex; gap: 10px; margin-top: clamp(16px, 3vh, 32px); flex-wrap: wrap; justify-content: center; }
 .vg-button { all: unset; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: 9px; height: 48px; min-width: 186px; padding: 0 22px; border-radius: 999px; cursor: pointer;
   font-family: HankenGrotesk_600SemiBold, sans-serif; font-size: calc(15px * var(--vg-text, 1)); text-decoration: none; transition: transform 0.25s, background 0.25s, box-shadow 0.25s; }
@@ -360,17 +389,27 @@ const CSS = `
 @keyframes vg-pop { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: none; } }
 
 @media (max-aspect-ratio: 4/5) {
-  .vg-room { align-items: center; transform: none; }
-  .vg-scene { transform-origin: 50% 50%; }
+  /* Upright: the words and the scene are one block in the middle of the screen; the shore and its water fill below. */
+  .vg-main { justify-content: center; padding-bottom: clamp(12px, 5vh, 56px); }
+  .vg-room { align-items: flex-end; transform: none; padding-top: clamp(18px, 4vh, 40px); padding-bottom: 8px; }
 }
 @media (max-width: 560px) {
   /* When the words are larger than the row ("Büyük metin"), the links go under the name, not over it. */
-  .vg-nav { padding: 16px 14px; gap: 8px; flex-wrap: wrap; row-gap: 10px; }
+  .vg-nav { padding: 14px 16px; gap: 8px; flex-wrap: wrap; row-gap: 10px; }
   .vg-brand { font-size: calc(20px * var(--vg-text, 1)); flex: none; }
-  .vg-logo { height: calc(32px * var(--vg-text, 1)); }
-  .vg-nav-actions { gap: 4px; }
-  .vg-nav-link { padding: 8px 11px; font-size: calc(13.5px * var(--vg-text, 1)); }
-  .vg-button { height: 46px; padding: 0 18px; font-size: calc(15px * var(--vg-text, 1)); }
+  .vg-logo { height: calc(30px * var(--vg-text, 1)); }
+  .vg-nav-actions { gap: 6px; }
+  .vg-nav-link { padding: 8px 16px; font-size: calc(14px * var(--vg-text, 1)); }
+  /* The language as a round "EN" / "TR"; signing up moves under the hero's buttons. */
+  .vg-lang { justify-content: center; min-width: 44px; padding: 8px 0; letter-spacing: 0.5px; }
+  .vg-lang-long, .vg-nav-register { display: none; }
+  .vg-lang-short { display: inline; }
+  .vg-new-here { display: block; }
+  .vg-hero { padding: clamp(10px, 2vh, 24px) 20px 0; }
+  .vg-overline { font-size: calc(11.5px * var(--vg-text, 1)); letter-spacing: 2.4px; }
+  .vg-h1 { margin-top: 12px; font-size: calc(clamp(36px, 11vw, 48px) * var(--vg-text, 1)); line-height: 1.06; letter-spacing: -0.8px; }
+  .vg-actions { flex-direction: column; align-items: stretch; width: min(100%, 340px); gap: 10px; margin-top: 24px; }
+  .vg-button { width: 100%; min-width: 0; height: 50px; padding: 0 18px; font-size: calc(15.5px * var(--vg-text, 1)); }
 }
 @media (prefers-reduced-motion: reduce) {
   .vg-landing *, .vg-dialog { animation: none !important; transition: none !important; }
