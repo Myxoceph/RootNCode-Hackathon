@@ -1,8 +1,8 @@
-import type { AdminReward, RewardKind } from "@vagabonds/contracts";
+import { RewardArtSchema, type AdminReward, type RewardArt as Art, type RewardKind } from "@vagabonds/contracts";
 import { fontFamily, Text } from "@vagabonds/ui";
 import { useLocalSearchParams } from "expo-router";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 
 import {
   Badge,
@@ -26,6 +26,7 @@ import {
   type Tone,
 } from "@/components/admin/kit";
 import { BilingualField } from "@/components/admin/record-fields";
+import { pick, RewardArt } from "@/components/reward-art";
 import { AdminOnly, PageBody } from "@/components/admin/shell";
 import { addRewardCodes, createReward, fetchAdminRewards, updateReward } from "@/data/admin";
 
@@ -119,11 +120,16 @@ function RewardsPage() {
                       </Text>
                     </Text>
                   </View>
-                  <View>
-                    <Text style={styles.tileTitle}>{item.title}</Text>
-                    <Text color="textSecondary" style={styles.partner}>
-                      {item.partner}
-                    </Text>
+                  <View style={styles.tileName}>
+                    <View style={[styles.tileArt, { backgroundColor: a.well }]}>
+                      <RewardArt code={item.code} kind={item.kind} art={item.art} size={60} />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.tileTitle}>{item.title}</Text>
+                      <Text color="textSecondary" style={styles.partner}>
+                        {item.partner}
+                      </Text>
+                    </View>
                   </View>
                   <Text color="textSecondary" style={styles.desc} numberOfLines={2}>
                     {item.description}
@@ -197,6 +203,7 @@ function RewardForm({ item, onClose, onSaved }: { item: AdminReward | null; onCl
   const [descriptionEn, setDescriptionEn] = useState(item?.descriptionEn ?? "");
   const [partner, setPartner] = useState(item?.partner ?? "");
   const [kind, setKind] = useState<RewardKind>(item?.kind ?? "museum");
+  const [art, setArt] = useState<Art | null>(item?.art ?? null);
   const [cost, setCost] = useState(String(item?.costPoints ?? 200));
   const [minVisits, setMinVisits] = useState(String(item?.minProvenVisits ?? 0));
   const [sortOrder, setSortOrder] = useState(String(item?.sortOrder ?? 1000));
@@ -219,6 +226,7 @@ function RewardForm({ item, onClose, onSaved }: { item: AdminReward | null; onCl
         description: { tr: description.trim(), en: descriptionEn.trim() || null },
         partner: partner.trim(),
         kind,
+        art,
         costPoints: n(cost),
         minProvenVisits: n(minVisits),
         sample,
@@ -293,6 +301,7 @@ function RewardForm({ item, onClose, onSaved }: { item: AdminReward | null; onCl
           <Picker label="Tür" value={kind} options={Object.entries(KINDS).map(([value, look]) => ({ value, label: look.label }))} onChange={(value) => value && setKind(value as RewardKind)} />
         </View>
       </View>
+      <ArtPicker value={art} onChange={setArt} code={item?.code ?? code.trim()} kind={kind} />
       <View style={styles.pair}>
         <Field label="Bedel (puan) *" value={cost} onChangeText={setCost} keyboardType="number-pad" style={styles.half} />
         <Field label="Kanıtlı ziyaret şartı" value={minVisits} onChangeText={setMinVisits} keyboardType="number-pad" hint="0: şart yok" style={styles.half} />
@@ -301,6 +310,61 @@ function RewardForm({ item, onClose, onSaved }: { item: AdminReward | null; onCl
       <Toggle label="Yayında" value={active} onChange={setActive} />
       <Toggle label="Örnek ödül" value={sample} onChange={setSample} hint="Gerçek bir anlaşma yok; uygulamada “Örnek” diye işaretlenir." />
     </Sheet>
+  );
+}
+
+/** Each drawing's name in the panel. */
+const ART_NAMES: Record<Art, string> = {
+  mug: "Kupa",
+  notebook: "Defter",
+  cap: "Şapka",
+  shirt: "Tişört",
+  ticket: "Bilet",
+  tea: "Çay",
+  gift: "Hediye",
+  museum: "Müze",
+  tag: "Etiket",
+  lantern: "Fener",
+};
+
+/**
+ * The reward's drawing in the app, picked from the app's own: "Otomatik" leaves it to the code and
+ * the kind, and shows which one that gives now.
+ */
+function ArtPicker({ value, onChange, code, kind }: { value: Art | null; onChange: (art: Art | null) => void; code: string; kind: RewardKind }) {
+  const a = useAdminColors();
+  const guess = pick(code, kind);
+  const options: Array<{ art: Art | null; label: string; drawn: Art }> = [
+    { art: null, label: "Otomatik", drawn: guess },
+    ...RewardArtSchema.options.map((one) => ({ art: one, label: ART_NAMES[one], drawn: one })),
+  ];
+  return (
+    <View style={{ gap: 8 }}>
+      <Text style={styles.label}>Görsel</Text>
+      <View accessibilityRole="radiogroup" accessibilityLabel="Ödülün uygulamadaki görseli" style={styles.arts}>
+        {options.map((option) => {
+          const on = option.art === value;
+          return (
+            <Pressable
+              key={option.art ?? "auto"}
+              accessibilityRole="radio"
+              accessibilityState={{ checked: on }}
+              accessibilityLabel={option.art ? option.label : `Otomatik: şimdi ${ART_NAMES[guess]}`}
+              onPress={() => onChange(option.art)}
+              style={[styles.artOption, { backgroundColor: a.card, borderColor: on ? a.gold : "transparent" }]}
+            >
+              <RewardArt code={code} kind={kind} art={option.drawn} size={64} />
+              <Text style={[styles.artLabel, on && { color: a.gold }]} numberOfLines={1}>
+                {option.label}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </View>
+      <Text color="textSecondary" style={styles.meta}>
+        {value ? "Uygulamada bu çizim görünür." : `Otomatik: kodundan ya da türünden seçilir; şimdi ${ART_NAMES[guess].toLocaleLowerCase("tr")}.`}
+      </Text>
+    </View>
   );
 }
 
@@ -365,6 +429,12 @@ const styles = StyleSheet.create({
   cost: { fontFamily: fontFamily.display, fontSize: 22 },
   costUnit: { fontFamily: fontFamily.sans, fontSize: 13 },
   tileTitle: { fontFamily: fontFamily.sansBold, fontSize: 17 },
+  tileName: { flexDirection: "row", alignItems: "center", gap: 12 },
+  tileArt: { width: 72, height: 72, borderRadius: 18, alignItems: "center", justifyContent: "center" },
+  label: { fontFamily: fontFamily.sansSemiBold, fontSize: 13 },
+  arts: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  artOption: { width: 88, alignItems: "center", gap: 2, paddingTop: 6, paddingBottom: 8, borderRadius: 16, borderWidth: 2 },
+  artLabel: { fontFamily: fontFamily.sansSemiBold, fontSize: 12 },
   partner: { fontSize: 13 },
   desc: { fontSize: 14, lineHeight: 20 },
   meta: { fontSize: 12, lineHeight: 16 },

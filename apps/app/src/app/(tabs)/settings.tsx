@@ -13,7 +13,7 @@ import { useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useRef, useState, type ComponentProps, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ComponentProps } from "react";
 import {
   Animated,
   Easing,
@@ -38,7 +38,7 @@ import Svg, {
 } from "react-native-svg";
 
 import { DeleteAccount } from "@/components/delete-account";
-import { AvatarEditor } from "@/components/avatar-editor";
+import { AVATAR_BADGE, AvatarEditor } from "@/components/avatar-editor";
 import { OpenBookLink } from "@/components/journal/open-book";
 import {
   avatarUri,
@@ -74,6 +74,7 @@ const STAR_SQUARE = "M22 22 H78 V78 H22 Z";
  */
 export default function SettingsScreen() {
   const m = useMessages();
+  const lang = useLang();
   const { colors: c, scheme } = useTheme();
   const { user } = useCommunity();
   const insets = useSafeAreaInsets();
@@ -98,18 +99,29 @@ export default function SettingsScreen() {
         hovered?: boolean;
       }) => [
         styles.signOut,
+        { borderColor: c.border },
         (pressed || hovered) && { backgroundColor: c.surfaceRaised },
       ]}
     >
-      <Ionicons name="log-out-outline" size={18} color={c.warning} />
-      <Text variant="label" color="warning">
-        {m.profile.signOut}
-      </Text>
+      <Ionicons name="log-out-outline" size={17} color={c.text} />
+      <Text variant="label">{m.profile.signOut}</Text>
     </Pressable>
   );
 
   // A moderator's or admin's account cannot be deleted (the API refuses it), so it is not offered.
   const deleteAccount = signedIn && user?.role === "visitor" && <DeleteAccount />;
+  // Last on the page and quiet: they are there when looked for, not what the page is about.
+  const account = signedIn && (
+    <View style={[styles.accountFoot, { borderTopColor: c.border }]}>
+      <Text variant="caption" color="textSecondary" style={styles.accountHead}>
+        {m.profile.accountHead.toLocaleUpperCase(lang)}
+      </Text>
+      <View style={styles.accountRow}>
+        {signOut}
+        {deleteAccount}
+      </View>
+    </View>
+  );
 
   return (
     <ScrollView
@@ -137,11 +149,6 @@ export default function SettingsScreen() {
                 {m.profile.lead}
               </Text>
             </View>
-            {signOut && (
-              <View style={[styles.heroAction, { borderColor: c.border }]}>
-                {signOut}
-              </View>
-            )}
           </View>
           <View style={styles.wideRow}>
             <View style={styles.wideSide}>
@@ -150,7 +157,7 @@ export default function SettingsScreen() {
             </View>
             <View style={styles.wideMain}>
               <Sections />
-              {deleteAccount}
+              {account}
             </View>
           </View>
         </View>
@@ -164,8 +171,7 @@ export default function SettingsScreen() {
           <OpenBookLink />
           <Passport />
           <Sections />
-          {signOut}
-          {deleteAccount}
+          {account}
         </View>
       )}
     </ScrollView>
@@ -211,6 +217,9 @@ function Passport() {
   const turn = useRef(new Animated.Value(0)).current;
   // The profile photo's sheet: from the badge on the photo, or a screen reader's action on the card.
   const [photoOpen, setPhotoOpen] = useState(false);
+  /** Where the photo lies on the back, for the badge laid over its corner. */
+  const [backBodyY, setBackBodyY] = useState(0);
+  const [photoAt, setPhotoAt] = useState<{ x: number; y: number } | null>(null);
 
   const flip = () => {
     const next = !flipped;
@@ -260,6 +269,7 @@ function Passport() {
   });
 
   return (
+    <View>
     <Pressable
       accessibilityRole="button"
       accessibilityLabel={
@@ -338,9 +348,8 @@ function Passport() {
           pointerEvents={flipped ? "auto" : "none"}
         >
           <Cover width={size.width} height={size.height} />
-          <View style={styles.backBody}>
-            <MaybeAvatarEditor editable={signedIn} hasPhoto={holder.photoUrl !== null} open={photoOpen} onOpenChange={setPhotoOpen}>
-            <View style={styles.photo}>
+          <View style={styles.backBody} onLayout={(e) => setBackBodyY(e.nativeEvent.layout.y)}>
+            <View style={styles.photo} onLayout={(e) => setPhotoAt({ x: e.nativeEvent.layout.x, y: e.nativeEvent.layout.y })}>
               <Svg
                 width={PHOTO_W}
                 height={PHOTO_H}
@@ -385,7 +394,6 @@ function Passport() {
                 />
               )}
             </View>
-            </MaybeAvatarEditor>
             <View style={[styles.flex, styles.backFields]}>
               <View>
                 <Text colorValue={palette.altin200} style={styles.backLabel}>
@@ -420,12 +428,26 @@ function Passport() {
         </Animated.View>
       </Animated.View>
     </Pressable>
+    {/* Over the card and not in it: the card is a button, and a button cannot hold another. On the photo's corner, while the back is up. */}
+    {/* It comes in once the back has turned all the way, and goes as it starts to turn away. */}
+    {signedIn && photoAt && (
+      <Animated.View
+        pointerEvents={flipped ? "box-none" : "none"}
+        accessibilityElementsHidden={!flipped}
+        importantForAccessibility={flipped ? "auto" : "no-hide-descendants"}
+        aria-hidden={!flipped}
+        style={{
+          position: "absolute",
+          left: spacing.xl + photoAt.x + PHOTO_W - (AVATAR_BADGE * 2) / 3,
+          top: backBodyY + photoAt.y + PHOTO_H - (AVATAR_BADGE * 2) / 3,
+          opacity: turn.interpolate({ inputRange: [0, 0.9, 1], outputRange: [0, 0, 1], extrapolate: "clamp" }),
+        }}
+      >
+        <AvatarEditor hasPhoto={holder.photoUrl !== null} open={photoOpen} onOpenChange={setPhotoOpen} />
+      </Animated.View>
+    )}
+    </View>
   );
-}
-
-/** The photo, with its camera badge for an account; as it is for a visitor without one. */
-function MaybeAvatarEditor({ editable, children, ...editor }: { editable: boolean; hasPhoto: boolean; open: boolean; onOpenChange: (open: boolean) => void; children: ReactNode }) {
-  return editable ? <AvatarEditor {...editor}>{children}</AvatarEditor> : <>{children}</>;
 }
 
 /** The "Çevir" tag on both faces: the card is something to tap. */
@@ -903,12 +925,6 @@ const styles = StyleSheet.create({
     lineHeight: 52,
     marginBottom: spacing.xxs,
   },
-  heroAction: {
-    minWidth: 150,
-    borderWidth: 1,
-    borderRadius: radius.full,
-    overflow: "hidden",
-  },
   wideRow: {
     flexDirection: "row",
     alignItems: "flex-start",
@@ -1189,12 +1205,29 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 18,
   },
+  accountFoot: {
+    gap: spacing.sm,
+    marginTop: spacing.xl,
+    paddingTop: spacing.lg,
+    borderTopWidth: StyleSheet.hairlineWidth,
+  },
+  accountHead: {
+    fontFamily: fontFamily.sansSemiBold,
+    letterSpacing: 1.6,
+  },
+  accountRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    gap: spacing.sm,
+  },
   signOut: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.sm,
-    minHeight: touchTarget.min + 8,
-    borderRadius: radius.xl,
+    gap: spacing.xs,
+    minHeight: touchTarget.min,
+    paddingHorizontal: spacing.md,
+    borderWidth: 1,
+    borderRadius: radius.full,
   },
 });

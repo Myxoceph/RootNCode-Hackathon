@@ -8,7 +8,7 @@ const redemptionSelect = {
   points: true,
   created_at: true,
   issued_code: { select: { code: true } },
-  reward: { select: { code: true, title_tr: true, title_en: true, partner: true, kind: true } },
+  reward: { select: { code: true, title_tr: true, title_en: true, partner: true, kind: true, art: true } },
 } satisfies Prisma.redemptionSelect;
 
 export type RedemptionRecord = Prisma.redemptionGetPayload<{ select: typeof redemptionSelect }>;

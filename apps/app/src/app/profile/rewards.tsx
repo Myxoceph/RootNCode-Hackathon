@@ -65,6 +65,7 @@ import {
   wideColumn,
 } from "@/lib/use-wide-web";
 import { localeTag, useLang, useMessages } from "@/i18n";
+import { RewardArt } from "@/components/reward-art";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 type Filter = RewardKind | "all";
@@ -173,9 +174,6 @@ export default function MyRewardsScreen() {
         createdAt={user?.username ? user.createdAt : null}
       />
       {user !== undefined && !account && <AccountNote />}
-      {items.length > 0 && (
-        <Featured items={items} wallet={walletData} onOpen={setOpen} />
-      )}
 
       {rewards.status === "loading" && (
         <ActivityIndicator
@@ -202,11 +200,6 @@ export default function MyRewardsScreen() {
 
       {items.length > 0 && (
         <View style={styles.section}>
-          <View style={styles.sectionHead}>
-            <Text variant="heading" headingLevel={2}>
-              {w.title}
-            </Text>
-          </View>
           {kinds.length > 1 && (
             <Kinds value={filter} onChange={setFilter} kinds={kinds} />
           )}
@@ -269,8 +262,6 @@ function memberSince(createdAt: string | null): string | null {
   return `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getFullYear()).slice(2)}`;
 }
 
-/** The night of the reward tiles. */
-const HERO_BG = "#0A1126";
 
 /** Vakıf Katılım's VKart, whose rewards these are. */
 const VK_CARD = require("../../../assets/images/rewards/vk-kart.jpg") as number;
@@ -482,201 +473,6 @@ function useSvgKey(name: string): string {
   return `${name}-${useId().replace(/[^a-zA-Z0-9_-]/g, "")}`;
 }
 
-/** The rewards nearest to hand: those ready first, then by how much of the way is done. */
-function nearest(items: Reward[], wallet: WalletResponse | null): Reward[] {
-  const balance = wallet?.balance ?? 0;
-  return items
-    .filter((r) => r.stock !== 0 && blocker(r, wallet).kind !== "visits")
-    .sort((x, y) => {
-      const rx = blocker(x, wallet).kind === null ? 1 : 0;
-      const ry = blocker(y, wallet).kind === null ? 1 : 0;
-      if (rx !== ry) return ry - rx;
-      return balance / y.costPoints - balance / x.costPoints;
-    })
-    .slice(0, 5);
-}
-
-/** Hedefine yakın: the nearest rewards as large night tiles that slide sideways. */
-function Featured({
-  items,
-  wallet,
-  onOpen,
-}: {
-  items: Reward[];
-  wallet: WalletResponse | null;
-  onOpen: (reward: Reward) => void;
-}) {
-  const w = useMessages().rewards;
-  const { width: screen } = useWindowDimensions();
-  const wide = useWideWeb();
-  const picks = nearest(items, wallet).slice(0, wide ? 3 : 5);
-  if (picks.length === 0) return null;
-  const column = Math.min(screen, WIDE_PAGE) - WIDE_PAGE_PADDING * 2;
-  const tile = wide
-    ? Math.floor((column - spacing.md * 2) / 3)
-    : Math.min(300, Math.round(screen * 0.72));
-  return (
-    <View style={styles.section}>
-      <View style={styles.sectionHead}>
-        <Text variant="heading" headingLevel={2}>
-          {w.nearGoal}
-        </Text>
-      </View>
-      <ScrollView
-        horizontal
-        scrollEnabled={!wide}
-        showsHorizontalScrollIndicator={false}
-        snapToInterval={tile + spacing.md}
-        decelerationRate="fast"
-        style={!wide && styles.featuredScroller}
-        contentContainerStyle={[styles.featured, wide && styles.featuredWide]}
-        accessibilityRole="list"
-      >
-        {picks.map((reward, i) => (
-          <FeaturedTile
-            key={reward.code}
-            reward={reward}
-            wallet={wallet}
-            width={tile}
-            index={i}
-            onOpen={onOpen}
-          />
-        ))}
-      </ScrollView>
-    </View>
-  );
-}
-
-function FeaturedTile({
-  reward,
-  wallet,
-  width,
-  index,
-  onOpen,
-}: {
-  reward: Reward;
-  wallet: WalletResponse | null;
-  width: number;
-  index: number;
-  onOpen: (reward: Reward) => void;
-}) {
-  const lang = useLang();
-  const w = useMessages().rewards;
-  const reduced = useReducedMotion();
-  const tileId = useSvgKey("tile");
-  const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
-  const look = KINDS[reward.kind];
-  const block = blocker(reward, wallet);
-  const balance = wallet?.balance ?? 0;
-  const share = Math.min(1, balance / reward.costPoints);
-  const ready = block.kind === null;
-  const height = 196;
-
-  useEffect(() => {
-    if (reduced) return;
-    Animated.spring(enter, {
-      toValue: 1,
-      delay: 120 + index * 90,
-      friction: 8,
-      tension: 60,
-      useNativeDriver: true,
-    }).start();
-  }, [enter, index, reduced]);
-
-  return (
-    <Animated.View
-      role="listitem"
-      style={{
-        opacity: enter,
-        transform: [
-          {
-            translateX: enter.interpolate({
-              inputRange: [0, 1],
-              outputRange: [40, 0],
-            }),
-          },
-        ],
-      }}
-    >
-      <Pressable
-        accessibilityRole="button"
-        accessibilityLabel={w.tileLabel(reward.title, reward.partner, reward.costPoints, ready ? w.available : w.pointsMore(block.needed))}
-        accessibilityHint={w.opensReward}
-        onPress={() => onOpen(reward)}
-        style={({ pressed }) => [
-          styles.tile,
-          { width, height },
-          pressed && styles.tilePressed,
-        ]}
-      >
-        <Svg
-          width={width}
-          height={height}
-          style={StyleSheet.absoluteFill}
-          aria-hidden
-        >
-          <Defs>
-            <LinearGradient id={tileId} x1="0" y1="0" x2="1" y2="1">
-              <Stop offset="0" stopColor={look.light} stopOpacity={0.95} />
-              <Stop offset="1" stopColor={HERO_BG} stopOpacity={1} />
-            </LinearGradient>
-          </Defs>
-          <Rect width={width} height={height} fill={HERO_BG} />
-          <Rect width={width} height={height} fill={`url(#${tileId})`} />
-        </Svg>
-        <Ionicons
-          name={look.icon.replace("-outline", "") as IconName}
-          size={150}
-          color="#FFFFFF"
-          style={styles.tileMark}
-          aria-hidden
-        />
-
-        <View style={styles.tileTop}>
-          <Text colorValue="rgba(255,255,255,0.72)" style={styles.tileKind}>
-            {w.kinds[reward.kind].toLocaleUpperCase(lang)}
-          </Text>
-          {ready && (
-            <View style={styles.tileReady}>
-              <Text colorValue={palette.gece950} style={styles.tileReadyText}>
-                {w.canRedeem}
-              </Text>
-            </View>
-          )}
-        </View>
-
-        <View style={styles.tileBottom}>
-          <Text colorValue="#FFFFFF" style={styles.tileTitle} numberOfLines={2}>
-            {reward.title}
-          </Text>
-          <Text
-            colorValue="rgba(255,255,255,0.72)"
-            style={styles.tilePartner}
-            numberOfLines={1}
-          >
-            {reward.partner}
-          </Text>
-          <View style={styles.tileFoot}>
-            <Text colorValue={palette.altin200} style={styles.tileCost}>
-              {`✦ ${reward.costPoints}`}
-            </Text>
-            {!ready && (
-              <View style={styles.tileTrack} aria-hidden>
-                <View style={[styles.tileFill, { width: `${share * 100}%` }]} />
-              </View>
-            )}
-            {!ready && (
-              <Text colorValue="rgba(255,255,255,0.72)" style={styles.tileLeft}>
-                {w.left(block.needed)}
-              </Text>
-            )}
-          </View>
-        </View>
-      </Pressable>
-    </Animated.View>
-  );
-}
-
 /** An anonymous visitor earns points but cannot take codes; an account keeps the points. */
 function AccountNote() {
   const { colors: c } = useTheme();
@@ -851,14 +647,7 @@ function RewardCard({
             <Circle cx="82%" cy="18%" r={46} fill={hue} fillOpacity={0.08} />
             <Circle cx="12%" cy="100%" r={34} fill={hue} fillOpacity={0.08} />
           </Svg>
-          <View
-            style={[
-              styles.cardIcon,
-              { backgroundColor: c.surface, borderColor: `${hue}55` },
-            ]}
-          >
-            <Ionicons name={look.icon} size={26} color={hue} />
-          </View>
+          <RewardArt code={reward.code} kind={reward.kind} art={reward.art} size={108} />
           {reward.sample && (
             <View style={[styles.tag, { backgroundColor: c.surface }]}>
               <Text colorValue={c.textSecondary} style={styles.tagText}>
@@ -987,7 +776,7 @@ function Ticket({
       ]}
     >
       <View style={[styles.stub, { backgroundColor: `${hue}1A` }]}>
-        <Ionicons name={look.icon} size={24} color={hue} />
+        <RewardArt code={redemption.reward.code} kind={redemption.reward.kind} art={redemption.reward.art} size={56} />
       </View>
       <View style={styles.perforation} aria-hidden>
         <View
@@ -1103,7 +892,7 @@ function RewardSheet({
     <Sheet visible={reward !== null} onClose={onClose}>
         <View style={[styles.grabber, { backgroundColor: c.border }]} />
         <View style={[styles.sheetIcon, { backgroundColor: `${hue}1A` }]}>
-          <Ionicons name={look.icon} size={40} color={hue} />
+          <RewardArt code={shown.code} kind={shown.kind} art={shown.art} size={128} />
         </View>
         <View style={styles.sheetHead}>
           <Text variant="caption" color="textSecondary" style={styles.centered}>
@@ -1407,10 +1196,9 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 3,
   },
+  // As wide as the card above, shared by its two figures.
   walletStats: {
     flexDirection: "row",
-    justifyContent: "center",
-    flexWrap: "wrap",
     gap: spacing.sm,
   },
   walletBlockWide: {
@@ -1469,107 +1257,16 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 20,
   },
-  featuredWide: {
-    paddingHorizontal: 0,
-  },
-  featuredScroller: {
-    marginHorizontal: -spacing.lg,
-  },
-  featured: {
-    gap: spacing.md,
-    paddingHorizontal: spacing.lg,
-    paddingBottom: spacing.xs,
-  },
-  tile: {
-    borderRadius: 26,
-    overflow: "hidden",
-    padding: spacing.lg,
-    justifyContent: "space-between",
-  },
-  tilePressed: {
-    transform: [{ scale: 0.97 }],
-  },
-  tileMark: {
-    position: "absolute",
-    right: -28,
-    bottom: -30,
-    opacity: 0.1,
-    transform: [{ rotate: "-12deg" }],
-  },
-  tileTop: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  tileKind: {
-    fontFamily: fontFamily.monoMedium,
-    fontSize: 10,
-    lineHeight: 14,
-    letterSpacing: 2,
-  },
-  tileReady: {
-    paddingHorizontal: 10,
-    height: 24,
-    justifyContent: "center",
-    borderRadius: radius.full,
-    backgroundColor: palette.altin200,
-  },
-  tileReadyText: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 11,
-    lineHeight: 14,
-  },
-  tileBottom: {
-    gap: 2,
-  },
-  // Sans: the display face draws its zero as a ring ("%20").
-  tileTitle: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 20,
-    lineHeight: 26,
-    letterSpacing: -0.2,
-  },
-  tilePartner: {
-    fontFamily: fontFamily.sans,
-    fontSize: 12,
-    lineHeight: 16,
-  },
-  tileFoot: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm,
-    marginTop: spacing.sm,
-  },
-  tileCost: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 16,
-    lineHeight: 22,
-  },
-  tileTrack: {
-    flex: 1,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: "rgba(255,255,255,0.18)",
-    overflow: "hidden",
-  },
-  tileFill: {
-    height: "100%",
-    borderRadius: 2,
-    backgroundColor: palette.altin200,
-  },
-  tileLeft: {
-    fontFamily: fontFamily.sansMedium,
-    fontSize: 12,
-    lineHeight: 16,
-  },
   walletStat: {
+    flex: 1,
+    justifyContent: "center",
     flexDirection: "row",
     alignItems: "baseline",
     gap: 5,
     paddingHorizontal: 12,
-    height: 32,
+    height: 42,
     alignContent: "center",
-    paddingTop: 6,
+    paddingTop: 10,
     borderRadius: radius.full,
     borderWidth: StyleSheet.hairlineWidth,
   },
@@ -1639,18 +1336,10 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   cardArt: {
-    height: 104,
+    height: 128,
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-  },
-  cardIcon: {
-    width: 56,
-    height: 56,
-    borderRadius: 18,
-    borderWidth: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
   tag: {
     position: "absolute",
@@ -1809,9 +1498,9 @@ const styles = StyleSheet.create({
     borderRadius: 3,
   },
   sheetIcon: {
-    width: 84,
-    height: 84,
-    borderRadius: 26,
+    width: 148,
+    height: 148,
+    borderRadius: 40,
     alignItems: "center",
     justifyContent: "center",
   },

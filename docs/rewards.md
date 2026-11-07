@@ -43,7 +43,7 @@ gezilmesini gerektirir.
 | Uç | Ne yapar |
 |---|---|
 | `GET /admin/rewards` | Bütün ödüller, yüklenen ve kullanılan kod sayısıyla |
-| `POST /admin/rewards` | Ödül ekler (`code`, `title`, `description`, `partner`, `kind`: `merch` / `museum` / `discount` / `experience`, `costPoints`, `minProvenVisits`, `sample`) |
+| `POST /admin/rewards` | Ödül ekler (`code`, `title`, `description`, `partner`, `kind`: `merch` / `museum` / `discount` / `experience`, `art`: uygulamadaki çizim ya da `null` = otomatik, `costPoints`, `minProvenVisits`, `sample`) |
 | `PATCH /admin/rewards/:code` | Düzenler ya da kapatır (`active: false`); alınmış kodlar geçerli kalır |
 | `POST /admin/rewards/:code/codes` | Kurumun kodlarını yükler; aynı kod ikinci kez eklenmez |
 
