@@ -3,7 +3,7 @@
 The app's sound cues, synthesized: nothing recorded, nothing licensed. Run again to rebuild
 src/audio/cues/*.wav (`npm run sounds`); the same seed gives the same files.
 
-Each cue is short (under 1.6 s), mono, 32 kHz, 16-bit, and peaks at -3 dBFS; the app plays them
+Each cue is short (under 2.3 s), mono, 32 kHz, 16-bit, and peaks at -3 dBFS; the app plays them
 quieter still (src/lib/feedback.ts). The palette follows the app's materials: stone, copper, paper.
 """
 import math
@@ -71,6 +71,22 @@ def noise(seconds, decay, low=None, high=None, attack=0.001):
             hp_prev_in, hp_prev_out = y, hp
             y = hp
         out.append(y * min(1.0, t / attack) * math.exp(-t / decay))
+    return out
+
+
+def swept_noise(seconds, cutoff, level, q=1.2):
+    """Noise through a band-pass whose centre (`cutoff(t)`, Hz) and loudness (`level(t)`) move over time."""
+    n = int(seconds * RATE)
+    out = []
+    low = band = 0.0
+    for i in range(n):
+        t = i / RATE
+        f = 2 * math.sin(math.pi * min(cutoff(t), RATE / 6) / RATE)
+        x = random.uniform(-1, 1)
+        high = x - low - band / q
+        band += f * high
+        low += f * band
+        out.append(band * level(t))
     return out
 
 
@@ -150,8 +166,54 @@ def badge():
     return finish(s)
 
 
+# Harita: the fog parts over Turkey. Air rising and opening out, a faint fifth under it.
+def fog():
+    s = silence(2.3)
+    swell = lambda t: min(1.0, t / 0.7) * max(0.0, min(1.0, (2.25 - t) / 1.1))
+    mix(s, swept_noise(2.3, lambda t: 350 + 1900 * min(1.0, t / 1.4), swell, q=0.9), gain=1.0)
+    mix(s, swept_noise(2.3, lambda t: 2600 + 1800 * min(1.0, t / 1.6), lambda t: 0.5 * swell(t), q=2.5), gain=1.0)
+    pad = lambda f: tone(f, 1.3, 0.7, attack=0.45)
+    mix(s, pad(note("A4")), at=0.9, gain=0.08)
+    mix(s, pad(note("E5")), at=0.95, gain=0.06)
+    return finish(s, peak_db=-6, fade=0.2)
+
+
+# Anı Defteri: a leaf turns. A soft sweep of paper, a crackle at its edge.
+def page_turn():
+    s = silence(0.5)
+    shape = lambda t: min(1.0, t / 0.12) * math.exp(-max(0.0, t - 0.12) / 0.09)
+    mix(s, swept_noise(0.5, lambda t: 1400 + 5000 * math.sin(math.pi * min(1.0, t / 0.35)), shape, q=0.8), gain=1.0)
+    for _ in range(6):
+        mix(s, noise(0.01, 0.0015, low=3000), at=random.uniform(0.05, 0.22), gain=0.25)
+    return finish(s, peak_db=-6)
+
+
+# Anı Defteri: a sticker is pressed on. A small rising pop.
+def sticker():
+    s = silence(0.18)
+    mix(s, tone(420, 0.12, 0.04, attack=0.002, glide_to=980, partials=((1, 1), (2, 0.2))), gain=0.9)
+    mix(s, noise(0.01, 0.002, low=2000), gain=0.3)
+    return finish(s, peak_db=-6)
+
+
+# A camera's shutter, as a phone camera sounds: a sharp click as it opens, the blades sliding,
+# and a fuller clack as it shuts. Long and loud enough to be heard over a hand's own movement.
+def shutter():
+    s = silence(0.34)
+    mix(s, noise(0.04, 0.01, low=800, high=5000), gain=1.0)
+    mix(s, tone(700, 0.06, 0.025, attack=0.0005, glide_to=480, partials=((1, 1), (2.4, 0.4))), gain=0.8)
+    slide = swept_noise(0.12, lambda t: 1500 - 5000 * t, lambda t: min(1.0, t / 0.03) * (1 - t / 0.12), q=1.5)
+    mix(s, slide, at=0.02, gain=0.35)
+    mix(s, noise(0.05, 0.015, low=600, high=4000), at=0.12, gain=1.0)
+    mix(s, tone(520, 0.2, 0.04, attack=0.0005, glide_to=360, partials=((1, 1), (2.6, 0.5))), at=0.12, gain=1.0)
+    return finish(s, peak_db=-1)
+
 if __name__ == "__main__":
     write("seal-fit", seal_fit())
     write("seal-stamp", seal_stamp())
     write("inscription-found", inscription_found())
     write("badge", badge())
+    write("fog", fog())
+    write("page-turn", page_turn())
+    write("sticker", sticker())
+    write("shutter", shutter())
