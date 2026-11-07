@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-08 · Expo yama sürümleri, sözleşme testleri
+
+Kimler: **uygulamayı çalıştıranlar**, **uygulamayı derleyenler**
+
+1. `npm install` (Expo 58.0.23 ve beş paketin yama sürümü; sözleşme paketine `vitest`).
+2. Kendi derlemesini (APK) kullananlar yeniden derler: `react-native-safe-area-context` 5.11'e çıktı ve yerel kod içeriyor (`npm run android:apk -w apps/app`). Expo Go'da ek adım yok.
+
+Değişenler:
+
+- `npx expo install --check` temiz: expo, expo-audio, expo-linking, expo-router, expo-splash-screen, react-native-safe-area-context.
+- `packages/contracts` kendi testlerini çalıştırıyor (`npm test -w @vagabonds/contracts`); kökteki `npm test` ve CI bunları da çalıştırır.
+
+---
+
 ## 2026-11-07 · Ödüllere panelden görsel (sözleşme 0.3.37)
 
 Kimler: **API'yi çalıştıranlar** (sunum sunucusu dahil), **uygulama ekibi**
