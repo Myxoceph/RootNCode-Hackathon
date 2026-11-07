@@ -23,6 +23,16 @@ const localMediaDir = env.INTAKE_LOCAL_ONLY
       : resolve(REPO_ROOT, env.LOCAL_MEDIA_DIR)
     : resolve(REPO_ROOT, "data/build/media")
   : null;
+const mediaStore = localMediaDir
+  ? createLocalMediaStore(localMediaDir)
+  : env.MEDIA_S3_ENDPOINT && env.MEDIA_BUCKET && env.MEDIA_S3_ACCESS_KEY_ID && env.MEDIA_S3_SECRET_ACCESS_KEY
+    ? createR2MediaStore({
+        endpoint: env.MEDIA_S3_ENDPOINT,
+        bucket: env.MEDIA_BUCKET,
+        accessKeyId: env.MEDIA_S3_ACCESS_KEY_ID,
+        secretAccessKey: env.MEDIA_S3_SECRET_ACCESS_KEY,
+      })
+    : null;
 const prisma = createPrismaClient(env.DATABASE_URL);
 const app = buildApp({
   prisma,
@@ -32,20 +42,12 @@ const app = buildApp({
   assetVisibility: env.ASSET_VISIBILITY,
   trustProxy: env.TRUST_PROXY,
   demoUnlock: env.DEMO_UNLOCK,
-  mediaStore: localMediaDir
-    ? createLocalMediaStore(localMediaDir)
-    : env.MEDIA_S3_ENDPOINT && env.MEDIA_BUCKET && env.MEDIA_S3_ACCESS_KEY_ID && env.MEDIA_S3_SECRET_ACCESS_KEY
-      ? createR2MediaStore({
-          endpoint: env.MEDIA_S3_ENDPOINT,
-          bucket: env.MEDIA_BUCKET,
-          accessKeyId: env.MEDIA_S3_ACCESS_KEY_ID,
-          secretAccessKey: env.MEDIA_S3_SECRET_ACCESS_KEY,
-        })
-      : null,
+  mediaStore,
   // Reads what the local store has, and sends the rest to the shared media host (read only).
   localMedia: localMediaDir ? { dir: localMediaDir, fallbackBaseUrl: env.MEDIA_BASE_URL } : null,
-  // Uploaded PDFs, where the worker (data/pipeline) reads them; not in git.
-  intake: env.INTAKE_ENABLED ? { root: REPO_ROOT, dir: "data/build/cache/intake" } : null,
+  // Uploaded PDFs and chat photos, where the worker (data/pipeline) reads them; not in git. Chat photos
+  // are processed into the local store only: until Veri Döngüsü reaches dev (plan §9), never into R2.
+  intake: env.INTAKE_ENABLED ? { root: REPO_ROOT, dir: "data/build/cache/intake", store: localMediaDir ? mediaStore : null } : null,
   rateLimit: env.RATE_LIMIT_MAX === 0 ? false : { max: env.RATE_LIMIT_MAX, timeWindowMs: 60_000 },
   weather: env.OPEN_METEO_URL
     ? createWeatherService({
