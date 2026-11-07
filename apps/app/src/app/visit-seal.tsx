@@ -2,19 +2,21 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import * as Haptics from "expo-haptics";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, Animated, Easing, Modal, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { compileSource } from "@/ar/inscription-targets";
-import { MarkerTracker } from "@/ar/marker-tracker";
+import { MarkerTracker, type MarkerTrackerHandle } from "@/ar/marker-tracker";
 import type { TrackerEvent } from "@/ar/mindar";
 import type { TrackerTarget } from "@/ar/tracker-page";
 import { AssetImage } from "@/components/asset-image";
 import { BadgeArt } from "@/components/badge-art";
 import { CameraTopBar } from "@/components/camera-chrome";
 import { DataErrorView } from "@/components/resource-view";
+import { Slider } from "@/components/slider";
 import { SealSequence } from "@/components/seal-sequence";
 import { SealStamp } from "@/components/seal-stamp";
 import { capsuleForSoundKey } from "@/content/capsules";
@@ -30,12 +32,14 @@ import { visitSealTarget } from "@/lib/visit-seal";
 import { localeTag, useLang, useMessages } from "@/i18n";
 
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
-/** How much of the monument's photo shows over the camera: as much as lines up with it, the camera still seen through. */
-const GHOST = 0.4;
-/** Once recognised the gold corners take over; the photo steps back. */
-const GHOST_RECOGNISED = 0.15;
-/** The target must stay in view this long before the visit is sealed, so a passing glimpse does not count. */
-const HOLD_MS = 1000;
+/** How much of the monument's photo shows over the camera, in percent: the visitor sets it, from the start as much as lines up with it. */
+const GHOST = { start: 40, min: 10, max: 80, step: 5 };
+/** Once recognised the gold corners take over; the photo steps back to this, or stays fainter if set so. */
+const GHOST_RECOGNISED = 15;
+/** A frozen frame that has not been checked by then counts as not showing the part. */
+const VERIFY_TIMEOUT_MS = 8000;
+/** The shutter's size: a camera's round button, well over the 44 pt minimum. */
+const SHUTTER = 72;
 /** How long a seal that needs the position waits for a fix. */
 const POSITION_WAIT_MS = 5000;
 /** Room left for the top bar over the sealed screen. */
@@ -50,7 +54,12 @@ type Phase =
   | { name: "preparing"; progress: number }
   | { name: "starting" }
   | { name: "searching" }
-  | { name: "holding" }
+  /** The part is in view: the shutter is ready. */
+  | { name: "recognised" }
+  /** The photo is taken; its frame is being checked. */
+  | { name: "verifying" }
+  /** The photo did not show the part; the frame stays until the visitor takes another. */
+  | { name: "rejected" }
   | { name: "sending" }
   | { name: "sealed"; result: VisitResponse }
   | { name: "failed"; message: string };
@@ -221,12 +230,14 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
   const router = useRouter();
   const { photo, part } = visitSealTarget(asset, lang)!;
   const key = `${asset.id}:${photo.key}`;
+  const [ghost, setGhost] = useState(GHOST.start);
   const [run, setRun] = useState(0);
   const [phase, setPhaseState] = useState<Phase>(compiled.has(key) ? { name: "starting" } : { name: "preparing", progress: 0 });
   // Read inside tracker events and timers, which arrive outside React's render.
   const phaseRef = useRef(phase);
-  const holdTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
-  const hold = useRef(new Animated.Value(0)).current;
+  const verifyTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const tracker = useRef<MarkerTrackerHandle>(null);
+  const flash = useRef(new Animated.Value(0)).current;
   const reduceMotion = useReducedMotion();
 
   const go = useCallback((next: Phase) => {
@@ -287,17 +298,21 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
           break;
         case "found":
           if (now !== "searching") break;
-          go({ name: "holding" });
+          go({ name: "recognised" });
           announce(w.recognisedSaid);
-          hold.setValue(0);
-          if (!reduceMotion) Animated.timing(hold, { toValue: 1, duration: HOLD_MS, easing: Easing.linear, useNativeDriver: false }).start();
-          holdTimer.current = setTimeout(() => void seal(), HOLD_MS);
           break;
         case "lost":
-          if (now === "holding") {
-            clearTimeout(holdTimer.current);
-            hold.stopAnimation();
-            go({ name: "searching" });
+          if (now === "recognised") go({ name: "searching" });
+          break;
+        case "captured":
+          if (now !== "verifying") break;
+          clearTimeout(verifyTimer.current);
+          if (event.target !== null) {
+            announce(w.verifiedSaid);
+            void seal();
+          } else {
+            go({ name: "rejected" });
+            announce(w.rejected);
           }
           break;
         case "error":
@@ -305,13 +320,37 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
           break;
       }
     },
-    [go, key, hold, reduceMotion, seal, part, w],
+    [go, key, seal, part, w],
   );
 
-  useEffect(() => () => clearTimeout(holdTimer.current), []);
+  useEffect(() => () => clearTimeout(verifyTimer.current), []);
+
+  // The shutter: the frame freezes and is checked by the tracker page ("captured"). Pressed before the
+  // part was recognised it is checked all the same: the photo decides, not the moment before it.
+  const shoot = () => {
+    const now = phaseRef.current.name;
+    if (now !== "searching" && now !== "recognised") return;
+    go({ name: "verifying" });
+    void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
+    if (!reduceMotion) {
+      flash.setValue(0.85);
+      Animated.timing(flash, { toValue: 0, duration: 260, easing: Easing.out(Easing.quad), useNativeDriver: true }).start();
+    }
+    tracker.current?.send("capture");
+    verifyTimer.current = setTimeout(() => {
+      if (phaseRef.current.name !== "verifying") return;
+      go({ name: "rejected" });
+      announce(w.rejected);
+    }, VERIFY_TIMEOUT_MS);
+  };
+
+  const retake = () => {
+    tracker.current?.send("resume");
+    go({ name: "searching" });
+  };
 
   const retry = () => {
-    clearTimeout(holdTimer.current);
+    clearTimeout(verifyTimer.current);
     go(compiled.has(key) ? { name: "starting" } : { name: "preparing", progress: 0 });
     setRun((n) => n + 1);
   };
@@ -320,36 +359,80 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
 
   return (
     <View style={styles.fill}>
-      <MarkerTracker key={run} target={target} onEvent={onEvent} style={StyleSheet.absoluteFill} />
+      <MarkerTracker key={run} ref={tracker} target={target} onEvent={onEvent} style={StyleSheet.absoluteFill} />
 
       {/* Over the camera as a ghost, for the visitor to line up with the monument; the tracker sees only the camera. */}
       <View
-        style={[StyleSheet.absoluteFill, { opacity: phase.name === "holding" || phase.name === "sending" ? GHOST_RECOGNISED : GHOST }]}
+        style={[StyleSheet.absoluteFill, { opacity: ghostShown(phase, ghost) / 100 }]}
         pointerEvents="none"
         accessible
         accessibilityLabel={w.findLabel(part, photo.alt)}
       >
         <AssetImage media={photo} fill decorative />
       </View>
+      <Animated.View pointerEvents="none" style={[StyleSheet.absoluteFill, styles.flash, { opacity: flash }]} />
 
       <View style={[styles.panel, { paddingBottom: insets.bottom + spacing.lg }]} accessibilityLiveRegion="polite">
         {onUnlock && <UnlockButton onPress={onUnlock} />}
-        <PanelBody phase={phase} part={part} hold={hold} onRetry={retry} />
+        <PanelBody phase={phase} part={part} onRetry={retry} onRetake={retake} />
+        {(phase.name === "searching" || phase.name === "recognised") && (
+          <View style={styles.row}>
+            <Text variant="caption" colorValue={cameraColors.textSecondary} style={styles.ghostLabel}>
+              {w.ghost}
+            </Text>
+            <Slider
+              value={ghost}
+              min={GHOST.min}
+              max={GHOST.max}
+              step={GHOST.step}
+              onChange={setGhost}
+              label={w.ghostLabel}
+              valueText={w.ghostValue(ghost)}
+              trackColor="rgba(255,255,255,0.2)"
+              fillColor={cameraColors.gold}
+              thumbColor={cameraColors.gold}
+              style={styles.flex}
+            />
+            <Text variant="caption" colorValue={cameraColors.text} style={[styles.mono, styles.ghostValue]}>
+              {w.ghostValue(ghost)}
+            </Text>
+          </View>
+        )}
+        {(phase.name === "searching" || phase.name === "recognised" || phase.name === "verifying") && (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={w.shutter}
+            accessibilityHint={w.shutterHint}
+            accessibilityState={{ disabled: phase.name === "verifying" }}
+            disabled={phase.name === "verifying"}
+            onPress={shoot}
+            style={({ pressed }) => [styles.shutter, phase.name === "recognised" && styles.shutterReady, pressed && styles.shutterPressed]}
+          >
+            {phase.name === "verifying" ? <ActivityIndicator color={cameraColors.onGold} /> : <View style={styles.shutterCore} />}
+          </Pressable>
+        )}
       </View>
     </View>
   );
 }
 
+/** How much of the photo shows: as set while framing, fainter once recognised, none once a photo is taken. */
+function ghostShown(phase: Phase, ghost: number): number {
+  if (phase.name === "recognised") return Math.min(ghost, GHOST_RECOGNISED);
+  if (phase.name === "searching" || phase.name === "preparing" || phase.name === "starting") return ghost;
+  return 0;
+}
+
 function PanelBody({
   phase,
   part,
-  hold,
   onRetry,
+  onRetake,
 }: {
   phase: Phase;
   part: string;
-  hold: Animated.Value;
   onRetry: () => void;
+  onRetake: () => void;
 }) {
   const lang = useLang();
   const m = useMessages();
@@ -391,15 +474,26 @@ function PanelBody({
           <Text colorValue={cameraColors.textSecondary}>{w.frameHint}</Text>
         </>
       );
-    case "holding":
+    case "recognised":
       return (
         <>
           <Text variant="heading" colorValue={cameraColors.gold}>
-            {w.holdStill}
+            {w.recognised}
           </Text>
-          <View style={styles.track}>
-            <Animated.View style={[styles.bar, { width: hold.interpolate({ inputRange: [0, 1], outputRange: ["0%", "100%"] }) }]} />
-          </View>
+          <Text colorValue={cameraColors.textSecondary}>{w.recognisedHint}</Text>
+        </>
+      );
+    case "verifying":
+      return (
+        <Text variant="heading" colorValue={cameraColors.text}>
+          {w.verifying}
+        </Text>
+      );
+    case "rejected":
+      return (
+        <>
+          <Text colorValue={cameraColors.text}>{w.rejected}</Text>
+          <Button label={w.retake} onPress={onRetake} colors={[cameraColors.gold, cameraColors.onGold]} />
         </>
       );
     case "failed":
@@ -589,6 +683,40 @@ const styles = StyleSheet.create({
   mono: {
     fontFamily: fontFamily.monoMedium,
     letterSpacing: 1.5,
+  },
+  ghostValue: {
+    minWidth: 40,
+    textAlign: "right",
+  },
+  ghostLabel: {
+    marginRight: spacing.xs,
+  },
+  flash: {
+    backgroundColor: "#FFFFFF",
+  },
+  shutter: {
+    alignSelf: "center",
+    width: SHUTTER,
+    height: SHUTTER,
+    borderRadius: SHUTTER / 2,
+    borderWidth: 3,
+    borderColor: "rgba(255,255,255,0.7)",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.12)",
+  },
+  shutterReady: {
+    borderColor: cameraColors.gold,
+    backgroundColor: cameraColors.gold,
+  },
+  shutterPressed: {
+    transform: [{ scale: 0.94 }],
+  },
+  shutterCore: {
+    width: SHUTTER - 18,
+    height: SHUTTER - 18,
+    borderRadius: (SHUTTER - 18) / 2,
+    backgroundColor: "#FFFFFF",
   },
   panel: {
     position: "absolute",

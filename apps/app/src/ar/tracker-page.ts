@@ -31,6 +31,10 @@ export type TrackerTarget = TargetSource | { sources: TargetSource[] };
  * tracking, and gold corner marks drawn over the target. It only sees; the app
  * owns everything a person reads or hears, and gets `TrackerEvent`s as JSON.
  *
+ * On `capture` it freezes the picture and looks for the targets again in that one frame
+ * (a "captured" event); `resume` lets the camera run on. The app sends them as
+ * `TrackerCommand`s: injected on native, posted into the iframe on the web.
+ *
  * MindAR's core (`Controller`) is used without its three.js layer: the corners
  * are projected from the pose it returns, so nothing 3D is loaded.
  */
@@ -56,6 +60,15 @@ const post = (event) => {
   if (window.ReactNativeWebView) window.ReactNativeWebView.postMessage(data);
   else window.parent.postMessage(data, "*");
 };
+// Commands from the app, set once the tracker runs: injected on native, posted into the iframe on the web.
+const commands = {};
+window.__trackerCommand = (name) => commands[name] && commands[name]();
+window.addEventListener("message", (message) => {
+  if (message.source !== window.parent || typeof message.data !== "string") return;
+  try {
+    window.__trackerCommand(JSON.parse(message.data).command);
+  } catch {}
+});
 const fail = (reason, error) => post({ type: "error", reason, message: String(error && error.message || error) });
 const step = (name) => post({ type: "step", step: name });
 window.addEventListener("unhandledrejection", (event) => fail("unknown", event.reason));
@@ -197,13 +210,26 @@ function toBase64(bytes) {
   return btoa(binary);
 }
 
+// A slow connection must not leave the screen at "preparing" for good: past this the photo counts as not downloaded.
+const IMAGE_TIMEOUT_MS = 20000;
+
 function loadImage(src) {
   return new Promise((resolve, reject) => {
     const image = new Image();
+    const timeout = setTimeout(() => {
+      image.src = "";
+      reject(new Error("Timed out loading " + src));
+    }, IMAGE_TIMEOUT_MS);
     // Read back by the compiler through a canvas: without CORS the canvas is tainted.
     image.crossOrigin = "anonymous";
-    image.onload = () => resolve(image);
-    image.onerror = () => reject(new Error("Could not load " + src));
+    image.onload = () => {
+      clearTimeout(timeout);
+      resolve(image);
+    };
+    image.onerror = () => {
+      clearTimeout(timeout);
+      reject(new Error("Could not load " + src));
+    };
     image.src = src;
   });
 }
@@ -318,6 +344,8 @@ async function start() {
   let dimensions = [];
   let showing = -1;
   let frames = 0;
+  /** Resolves the next time the tracker finishes a frame: one is in flight when it is stopped. */
+  let frameDone = null;
   const controller = new Controller({
     inputWidth: video.videoWidth,
     inputHeight: video.videoHeight,
@@ -325,6 +353,7 @@ async function start() {
     onUpdate: ({ type, targetIndex, worldMatrix }) => {
       if (type === "processDone") {
         frames += 1;
+        if (frameDone) frameDone();
         return;
       }
       if (type !== "updateMatrix") return;
@@ -351,6 +380,45 @@ async function start() {
   await controller.dummyRun(video);
   post({ type: "ready", videoWidth: video.videoWidth, videoHeight: video.videoHeight });
   controller.processVideo(video);
+
+  // The photo: the picture stops on the frame, the tracker stops with it, and that one frame is
+  // searched again from scratch. Only a frame that shows the target counts, not a glimpse before it.
+  let frozen = false;
+  commands.capture = async () => {
+    if (frozen) return;
+    frozen = true;
+    const started = performance.now();
+    video.pause();
+    controller.stopProcessVideo();
+    await new Promise((resolve) => {
+      frameDone = resolve;
+      setTimeout(resolve, 300);
+    });
+    frameDone = null;
+    try {
+      const frame = document.createElement("canvas");
+      frame.width = video.videoWidth;
+      frame.height = video.videoHeight;
+      frame.getContext("2d").drawImage(video, 0, 0, frame.width, frame.height);
+      const { featurePoints } = await controller.detect(frame);
+      let target = null;
+      for (let index = 0; index < dimensions.length && target === null; index++) {
+        const { modelViewTransform } = await controller.match(featurePoints, index);
+        if (modelViewTransform) target = index;
+      }
+      post({ type: "captured", target, ms: Math.round(performance.now() - started) });
+    } catch (error) {
+      post({ type: "captured", target: null, ms: Math.round(performance.now() - started), error: String(error && error.message || error) });
+    }
+  };
+  commands.resume = () => {
+    if (!frozen) return;
+    frozen = false;
+    showing = -1;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    video.play().catch(() => {});
+    controller.processVideo(video);
+  };
 
   setInterval(() => {
     post({ type: "stats", fps: frames / 2 });
