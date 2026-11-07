@@ -1,8 +1,8 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { fontFamily, palette, Text } from "@vagabonds/ui";
+import { fontFamily, Text } from "@vagabonds/ui";
 import { usePathname, useRouter, type Href } from "expo-router";
 import { useEffect, useState, type ReactNode } from "react";
-import { Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from "react-native";
+import { Image, Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from "react-native";
 
 import { fetchAdminSummary } from "@/data/admin";
 import { logout, useCommunity } from "@/data";
@@ -31,7 +31,6 @@ const SECTIONS: Array<{ href: Href; path: string; icon: IconName; label: string;
   { href: "/admin/rewards", path: "/admin/rewards", icon: "gift-outline", label: "Ödüller", adminOnly: true },
 ];
 
-const GOLD = palette.altin300;
 const FOLDED_KEY = "vagabonds-admin-menu-folded";
 
 /** Whether the side bar is folded, remembered on this browser when it can be. */
@@ -107,11 +106,27 @@ function Away() {
   return <View style={[styles.fill, { backgroundColor: a.page }]} />;
 }
 
-function BrandMark({ size = 30 }: { size?: number }) {
+/** The app's logo, as the site's bar has it: deep gold on the light panel, light gold on the dark one. */
+const BRAND = {
+  light: { logo: require("../../../assets/images/brand/logo.png"), symbol: require("../../../assets/images/brand/symbol.png") },
+  dark: { logo: require("../../../assets/images/brand/logo-light.png"), symbol: require("../../../assets/images/brand/symbol-light.png") },
+};
+/** Their width for their height (assets/images/brand). */
+const LOGO_SHAPE = 1885 / 474;
+const SYMBOL_SHAPE = 1255 / 947;
+
+/** The logo, named for a screen reader; the symbol alone where the side bar is folded. */
+function BrandMark({ height = 32, symbol = false }: { height?: number; symbol?: boolean }) {
+  const { dark } = useAdminColors();
+  const look = BRAND[dark ? "dark" : "light"];
   return (
-    <View style={[styles.mark, { width: size, height: size, borderRadius: size / 2 }]}>
-      <Ionicons name="star" size={size * 0.46} color={palette.gece950} aria-hidden />
-    </View>
+    <Image
+      source={symbol ? look.symbol : look.logo}
+      accessibilityRole="image"
+      accessibilityLabel="Vakıfname"
+      resizeMode="contain"
+      style={{ height, width: height * (symbol ? SYMBOL_SHAPE : LOGO_SHAPE) }}
+    />
   );
 }
 
@@ -137,7 +152,7 @@ function SideBar({ name, username, role, pending, folded, onFold }: { name: stri
   if (folded) {
     return (
       <View style={[styles.side, styles.rail]}>
-        <BrandMark />
+        <BrandMark symbol height={30} />
         {fold}
         <ScrollView style={{ flex: 1, alignSelf: "stretch" }} contentContainerStyle={{ gap: 4, paddingTop: 10, alignItems: "center" }}>
           {SECTIONS.filter((section) => role === "admin" || !section.adminOnly).map((section) => (
@@ -168,8 +183,9 @@ function SideBar({ name, username, role, pending, folded, onFold }: { name: stri
   return (
     <View style={styles.side}>
       <View style={styles.brand}>
-        <BrandMark />
-        <Text style={[styles.brandName, { flex: 1 }]}>Vakıfname</Text>
+        <View style={{ flex: 1 }}>
+          <BrandMark height={34} />
+        </View>
         {fold}
       </View>
       <ScrollView style={{ flex: 1 }} contentContainerStyle={{ gap: 4, paddingTop: 22 }}>
@@ -303,8 +319,7 @@ function TopStrip({ role, pending }: { role: PanelRole; pending: number | null }
     <View style={[styles.strip, { borderBottomColor: a.line }]}>
       <View style={styles.stripHead}>
         <View style={[styles.brand, { paddingVertical: 12 }]}>
-          <BrandMark size={26} />
-          <Text style={styles.brandName}>Vakıfname</Text>
+          <BrandMark height={28} />
         </View>
         <Pressable accessibilityRole="button" accessibilityLabel="Çıkış yap" onPress={() => void logout()} style={styles.iconButton}>
           <Ionicons name="log-out-outline" size={19} color={a.textSecondary} aria-hidden />
@@ -349,9 +364,7 @@ export function AdminOnly({ children }: { children: ReactNode }) {
 
 const styles = StyleSheet.create({
   fill: { flex: 1, minHeight: 0 },
-  mark: { backgroundColor: GOLD, alignItems: "center", justifyContent: "center" },
   brand: { flexDirection: "row", alignItems: "center", gap: 10, paddingHorizontal: 6, paddingVertical: 6 },
-  brandName: { fontFamily: fontFamily.sansBold, fontSize: 19, lineHeight: 24, letterSpacing: -0.4 },
   frame: { borderRadius: 28, overflow: "hidden" },
   side: { width: 236, paddingHorizontal: 18, paddingVertical: 24 },
   rail: { width: 76, paddingHorizontal: 0, alignItems: "center", gap: 10 },
