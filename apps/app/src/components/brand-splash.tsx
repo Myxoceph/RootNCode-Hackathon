@@ -12,7 +12,7 @@ const LOOKS = {
   dark: { background: palette.gece950, logo: require("../../assets/images/splash-icon-dark.png") },
 } as const;
 /** Once the app is ready, the logo stays this long, then fades. */
-const HOLD_MS = 650;
+const HOLD_MS = 1100;
 const FADE_MS = 450;
 
 /**
