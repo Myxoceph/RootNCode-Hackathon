@@ -1,6 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
-import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
+import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text, touchTarget } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -13,7 +13,6 @@ import { MarkerTracker, type MarkerTrackerHandle } from "@/ar/marker-tracker";
 import type { TrackerEvent } from "@/ar/mindar";
 import type { TrackerTarget } from "@/ar/tracker-page";
 import { AssetImage } from "@/components/asset-image";
-import { BadgeArt } from "@/components/badge-art";
 import { CameraTopBar } from "@/components/camera-chrome";
 import { DataErrorView } from "@/components/resource-view";
 import { Slider } from "@/components/slider";
@@ -610,8 +609,10 @@ function PanelBody({
 
 /**
  * The seal is stamped (`SealStamp`): one red seal comes down, strikes and its ink soaks into the page. A first
- * visit then offers its sequence with one tap (a tap, as many seals are struck inside a mosque or a tomb,
- * where a sound must not start by itself); then what the visit earned.
+ * visit then offers its sequence with one tap, "Eserin sesini dinle" ("Zamanı aç" for a site with no sound; a tap, as many seals are struck inside a mosque
+ * or a tomb, where a sound must not start by itself), its sound switched off beside it in one touch, or
+ * "Geç". Either way the screen then goes by itself; the badges the visit earned open over what is next.
+ * A visit sealed again has no sequence: only "Tamam".
  */
 function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; result: Pick<VisitResponse, "verified" | "firstVisit" | "newAchievements">; onDone: () => void; onSettled: () => void }) {
   const lang = useLang();
@@ -621,12 +622,14 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
   const reduceMotion = useReducedMotion();
   const reveal = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
   const [stage, setStage] = useState<"offer" | "sequence" | "result">(result.firstVisit ? "offer" : "result");
-  // Watched without its sound: the sequence starts muted, its switch still there.
+  // Switched off beside "Eserin sesini dinle": the sequence starts muted, its own switch still there.
   const [muted, setMuted] = useState(false);
   const hasSound = capsuleForSoundKey(asset.ambientSound?.key ?? "") !== undefined;
-  const watch = (withSound: boolean) => {
-    setMuted(!withSound);
-    setStage("sequence");
+  // After the sequence (or "Geç") the screen goes, no "Tamam" to tap: what the visit earned opens over
+  // what is next (BadgeCelebration), held until now so it never covers the stamp.
+  const leave = () => {
+    onSettled();
+    onDone();
   };
 
   const windowOpened = useRef(false);
@@ -653,77 +656,36 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
           {result.firstVisit ? w.firstVisit : w.againVisit}
         </Text>
 
-        {stage !== "result" && hasSound && (
+        {stage === "offer" && (
           <View style={styles.offer}>
-            {/* Says there is a sound before the choice; the buttons say it again for a screen reader. */}
-            <View style={styles.soundCue} aria-hidden>
-              <Ionicons name="musical-notes" size={15} color={cameraColors.gold} />
-              <Text variant="caption" colorValue={cameraColors.gold} style={styles.soundCueText}>
-                {w.soundHere}
-              </Text>
-            </View>
-            <View style={styles.watchRow}>
+            {/* One tap opens the sequence (never by itself: many seals are struck inside a mosque or a tomb).
+                Its sound is on unless switched off here, in one touch beside it; the sequence keeps the switch. */}
+            <View style={styles.openRow}>
               <Button
-                label={w.watchWithSound}
-                accessibilityHint={w.watchWithSoundHint}
-                icon={<Ionicons name="volume-high" size={20} color={cameraColors.onGold} />}
-                onPress={() => watch(true)}
+                label={hasSound ? w.listenToSite : w.openTime}
+                accessibilityHint={hasSound ? (muted ? w.openTimeHint : w.openTimeHintSound) : w.openTimeHint}
+                icon={<Ionicons name="play" size={18} color={cameraColors.onGold} />}
+                onPress={() => setStage("sequence")}
                 colors={[cameraColors.gold, cameraColors.onGold]}
-                style={styles.watch}
+                style={styles.open}
               />
-              <Button
-                label={w.watchMuted}
-                accessibilityHint={w.watchMutedHint}
-                icon={<Ionicons name="volume-mute" size={20} color={cameraColors.text} />}
-                onPress={() => watch(false)}
-                colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.22)"]}
-                style={styles.watch}
-              />
+              {hasSound && (
+                <Pressable
+                  accessibilityRole="switch"
+                  accessibilityLabel={w.sequenceSound}
+                  accessibilityState={{ checked: !muted }}
+                  onPress={() => setMuted((now) => !now)}
+                  style={({ pressed }) => [styles.soundSwitch, pressed && styles.pressed]}
+                >
+                  <Ionicons name={muted ? "volume-mute" : "volume-high"} size={22} color={cameraColors.text} />
+                </Pressable>
+              )}
             </View>
-            <Button
-              label={w.skipListening}
-              accessibilityHint={w.skipTimeHint}
-              onPress={() => setStage("result")}
-              colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
-              style={styles.skip}
-            />
-          </View>
-        )}
-        {/* No sound to choose about: the sequence runs on its words, and can be left out. */}
-        {stage !== "result" && !hasSound && (
-          <>
-            <Button label={w.openTime} accessibilityHint={w.openTimeHint} onPress={() => watch(true)} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
-            <Button
-              label={w.skipTime}
-              accessibilityHint={w.skipTimeHint}
-              onPress={() => setStage("result")}
-              colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
-              style={styles.skip}
-            />
-          </>
-        )}
-
-        {stage === "result" && result.newAchievements.length > 0 && (
-          <View style={styles.badges}>
-            <Text variant="overline" colorValue={cameraColors.gold}>
-              {w.newBadges}
-            </Text>
-            {result.newAchievements.map((achievement) => (
-              <View key={achievement.code} style={styles.badge} accessible accessibilityLabel={w.badgeLabel(achievement.title, achievement.points, achievement.description)}>
-                <BadgeArt code={achievement.code} emoji={achievement.badge} imageUrl={achievement.imageUrl} size={48} />
-                <View style={styles.flex}>
-                  <Text variant="label" colorValue={cameraColors.text}>
-                    {achievement.title}
-                  </Text>
-                  <Text variant="caption" colorValue={cameraColors.textSecondary}>
-                    {achievement.description}
-                  </Text>
-                </View>
-                <Text variant="label" colorValue={cameraColors.gold}>
-                  +{achievement.points}
-                </Text>
-              </View>
-            ))}
+            <Pressable accessibilityRole="button" accessibilityHint={w.skipTimeHint} onPress={leave} hitSlop={8} style={({ pressed }) => [styles.skipLink, pressed && styles.pressed]}>
+              <Text variant="label" colorValue={cameraColors.textSecondary}>
+                {w.skipSequence}
+              </Text>
+            </Pressable>
           </View>
         )}
 
@@ -731,8 +693,8 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
       </Animated.View>
 
       {/* Over the screen's top bar too; the system's back gesture ends it as "Geç" does. */}
-      <Modal visible={stage === "sequence"} animationType="fade" statusBarTranslucent navigationBarTranslucent onRequestClose={() => setStage("result")}>
-        {stage === "sequence" && <SealSequence asset={asset} muted={muted} onDone={() => setStage("result")} />}
+      <Modal visible={stage === "sequence"} animationType="fade" statusBarTranslucent navigationBarTranslucent onRequestClose={leave}>
+        {stage === "sequence" && <SealSequence asset={asset} muted={muted} onDone={leave} />}
       </Modal>
     </ScrollView>
   );
@@ -891,43 +853,37 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     marginTop: spacing.md,
   },
-  soundCue: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.xs,
-  },
-  soundCueText: {
-    fontFamily: fontFamily.sansSemiBold,
-    letterSpacing: 0.3,
-  },
-  watchRow: {
+  openRow: {
     alignSelf: "stretch",
     flexDirection: "row",
-    flexWrap: "wrap",
-    gap: spacing.sm,
-  },
-  watch: {
-    flexGrow: 1,
-    flexBasis: 150,
-  },
-  badges: {
-    alignSelf: "stretch",
-    gap: spacing.sm,
-    marginTop: spacing.sm,
-  },
-  badge: {
-    flexDirection: "row",
     alignItems: "center",
-    gap: spacing.md,
-    padding: spacing.md,
+    gap: spacing.sm,
+  },
+  open: {
+    flex: 1,
+  },
+  // As tall and as round as the button beside it.
+  soundSwitch: {
+    width: 56,
+    height: touchTarget.min,
     borderRadius: radius.lg,
-    backgroundColor: cameraColors.panel,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.22)",
+    backgroundColor: cameraGlass,
+  },
+  pressed: {
+    opacity: 0.7,
+  },
+  skipLink: {
+    minHeight: touchTarget.min,
+    paddingHorizontal: spacing.lg,
+    alignItems: "center",
+    justifyContent: "center",
   },
   done: {
     alignSelf: "stretch",
     marginTop: spacing.md,
-  },
-  skip: {
-    alignSelf: "stretch",
   },
 });
