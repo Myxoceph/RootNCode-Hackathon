@@ -36,6 +36,11 @@ const OUT = join(DATA, "build/ar-targets.json");
 const MEDIA_BASE_URL = (process.env.MEDIA_BASE_URL ?? "https://media.allbytech.com").replace(/\/+$/, "");
 /** Bu kadar hedefte bir ilerleme diske yazılır. */
 const SAVE_EVERY = 25;
+/**
+ * Chrome bu kadar derlemede bir kapatılıp yeniden açılır: MindAR sekmede bellek biriktiriyor
+ * (tek Chrome'la yüzlerce fotoğrafta 14 GB'a çıkıp makineyi takasa düşürdü).
+ */
+const COMPILES_PER_CHROME = 30;
 
 const args = process.argv.slice(2);
 const sealCities = args.find((a) => a.startsWith("--cities="))?.slice("--cities=".length).split(",").filter(Boolean) ?? null;
@@ -149,38 +154,46 @@ const save = (final: boolean) => {
   writeFileSync(OUT, `${JSON.stringify({ ...result, targets }, null, 2)}\n`);
 };
 
-await withMindCompiler(async (compile) => {
-  for (const [index, job] of jobs.entries()) {
-    const found = variantOf(job.assetId, job.mediaId);
-    if (!found) {
-      missing.push(`${job.label}: '${job.mediaId}' manifestte yok (önce media_pipeline.py)`);
-      continue;
-    }
-    const key = arTargetMindKey(found.variant.key);
-    let compiled = known.get(key);
-    if (!compiled || compiled.sha256 !== found.entry.sha256) {
-      let mind: Buffer;
-      try {
-        mind = await compile([`data:image/jpeg;base64,${(await photo(found.variant)).toString("base64")}`]);
-      } catch (error) {
-        // Bir fotoğraf (geçici bir ağ hatası, MindAR'ın derleyemediği bir resim) ötekileri durdurmaz.
-        missing.push(`${job.label}: derlenemedi (${error instanceof Error ? error.message.split("\n")[0] : String(error)})`);
+/** Sıradaki iş: her yeni Chrome kaldığı yerden sürdürür. */
+let next = 0;
+while (next < jobs.length) {
+  let compiledHere = 0;
+  await withMindCompiler(async (compile) => {
+    for (; next < jobs.length && compiledHere < COMPILES_PER_CHROME; next++) {
+      const index = next;
+      const job = jobs[index]!;
+      const found = variantOf(job.assetId, job.mediaId);
+      if (!found) {
+        missing.push(`${job.label}: '${job.mediaId}' manifestte yok (önce media_pipeline.py)`);
         continue;
       }
-      mkdirSync(dirname(join(MEDIA, key)), { recursive: true });
-      writeFileSync(join(MEDIA, key), mind);
-      compiled = { sha256: found.entry.sha256, key, bytes: mind.length };
-      known.set(key, compiled);
-      compiledNow++;
-      const each = (Date.now() - started) / compiledNow;
-      const left = Math.round(((jobs.length - index - 1) * each) / 60_000);
-      console.log(`✔ [${index + 1}/${jobs.length}] ${job.label} → ${key} (${Math.round(mind.length / 1024)} KB, ~${left} dk kaldı)`);
+      const key = arTargetMindKey(found.variant.key);
+      let compiled = known.get(key);
+      if (!compiled || compiled.sha256 !== found.entry.sha256) {
+        let mind: Buffer;
+        try {
+          mind = await compile([`data:image/jpeg;base64,${(await photo(found.variant)).toString("base64")}`]);
+        } catch (error) {
+          // Bir fotoğraf (geçici bir ağ hatası, MindAR'ın derleyemediği bir resim) ötekileri durdurmaz.
+          missing.push(`${job.label}: derlenemedi (${error instanceof Error ? error.message.split("\n")[0] : String(error)})`);
+          continue;
+        }
+        mkdirSync(dirname(join(MEDIA, key)), { recursive: true });
+        writeFileSync(join(MEDIA, key), mind);
+        compiled = { sha256: found.entry.sha256, key, bytes: mind.length };
+        known.set(key, compiled);
+        compiledNow++;
+        compiledHere++;
+        const each = (Date.now() - started) / compiledNow;
+        const left = Math.round(((jobs.length - index - 1) * each) / 60_000);
+        console.log(`✔ [${index + 1}/${jobs.length}] ${job.label} → ${key} (${Math.round(mind.length / 1024)} KB, ~${left} dk kaldı)`);
+      }
+      if (job.inscription) (result.targets[job.assetId] ??= {})[job.mediaId] = compiled;
+      if (job.seal) result.seals![job.assetId] = { ...compiled, media_id: job.mediaId };
+      if ((index + 1) % SAVE_EVERY === 0) save(false);
     }
-    if (job.inscription) (result.targets[job.assetId] ??= {})[job.mediaId] = compiled;
-    if (job.seal) result.seals![job.assetId] = { ...compiled, media_id: job.mediaId };
-    if ((index + 1) % SAVE_EVERY === 0) save(false);
-  }
-});
+  });
+}
 
 save(true);
 const inscriptions = Object.values(result.targets).reduce((n, targets) => n + Object.keys(targets).length, 0);
