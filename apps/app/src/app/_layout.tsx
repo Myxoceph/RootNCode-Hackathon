@@ -11,7 +11,7 @@ import {
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useCallback, useEffect, useState } from "react";
-import { Platform, View } from "react-native";
+import { Platform, useColorScheme as useSystemScheme, View } from "react-native";
 
 import { BadgeCelebration } from "@/components/badge-celebration";
 import { BrandSplash } from "@/components/brand-splash";
@@ -20,7 +20,7 @@ import { WebPageHeader } from "@/components/web-nav-bar";
 import { useAccountGate } from "@/lib/use-account-gate";
 import { useBadgeWatch } from "@/lib/use-badge-watch";
 import { A11ySettingsProvider } from "@/settings/a11y-settings";
-import { useStoredThemePreference } from "@/theme";
+import { DEFAULT_THEME_PREFERENCE, resolveColorScheme, useStoredThemePreference } from "@/theme";
 import { fontFiles } from "@/theme/fonts";
 import { useLang, useLangSettled, useMessages } from "@/i18n";
 
@@ -92,15 +92,18 @@ export default function RootLayout() {
   const phone = Platform.OS !== "web";
   const [logoGone, setLogoGone] = useState(!phone);
   const onLogoGone = useCallback(() => setLogoGone(true), []);
+  // In the app's theme: the saved choice, the light one it opens in until that is read.
+  const system = useSystemScheme() === "dark" ? "dark" : "light";
+  const logoScheme = resolveColorScheme(storedThemePreference ?? DEFAULT_THEME_PREFERENCE, system);
 
-  if (!ready) return phone ? <BrandSplash /> : null;
+  if (!ready) return phone ? <BrandSplash scheme={logoScheme} /> : null;
 
   return (
     <>
       <A11ySettingsProvider storedThemePreference={storedThemePreference}>
         <ThemedStack />
       </A11ySettingsProvider>
-      {!logoGone && <BrandSplash leaving onGone={onLogoGone} />}
+      {!logoGone && <BrandSplash scheme={logoScheme} leaving onGone={onLogoGone} />}
     </>
   );
 }

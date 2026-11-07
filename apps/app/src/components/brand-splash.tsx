@@ -1,6 +1,6 @@
 import { palette } from "@vagabonds/ui";
 import { useEffect, useRef } from "react";
-import { Animated, Easing, Image, StyleSheet, useColorScheme } from "react-native";
+import { Animated, Easing, Image, StyleSheet } from "react-native";
 
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -16,14 +16,15 @@ const HOLD_MS = 1100;
 const FADE_MS = 450;
 
 /**
- * The app opens with its logo. While it loads the logo stands where the launch screen left it (the
- * phone's own theme picks white or night blue, as the launch screen does), so the hand-over is not
- * seen; Expo Go, which shows no launch screen image, opens with it too. Once `leaving`, it holds
+ * The app opens with its logo, in the app's own theme: deep gold on white in the light theme (the
+ * one it opens in, and the launch screen's), light gold on night blue in the dark one. While it loads
+ * the logo stands where the launch screen left it, so the hand-over is not seen; Expo Go, which
+ * shows no launch screen image, opens with it too. Once `leaving`, it holds
  * a moment and fades as it draws a little nearer, then `onGone`. With reduced motion it simply goes.
  * Only seen: a screen reader goes on to the app.
  */
-export function BrandSplash({ leaving = false, onGone }: { leaving?: boolean; onGone?: () => void }) {
-  const look = LOOKS[useColorScheme() === "dark" ? "dark" : "light"];
+export function BrandSplash({ scheme, leaving = false, onGone }: { scheme: "light" | "dark"; leaving?: boolean; onGone?: () => void }) {
+  const look = LOOKS[scheme];
   const reduceMotion = useReducedMotion();
   const fade = useRef(new Animated.Value(1)).current;
 
