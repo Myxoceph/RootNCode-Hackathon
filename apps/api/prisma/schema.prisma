@@ -838,5 +838,6 @@ model intake_draft {
   @@index([asset_id], map: "intake_draft_asset_idx")
   // Also two partial indexes Prisma cannot express, so they live only in the migrations and
   // `migrate diff` reports them; keep them: unique (job_id, entry_key) WHERE job_id IS NOT NULL
-  // (intake_draft_entry_idx) and (status, applied_at) WHERE approved and not applied (intake_draft_apply_idx).
+  // (intake_draft_entry_idx), (status, applied_at) WHERE approved and not applied (intake_draft_apply_idx),
+  // and unique (asset_id) WHERE approved new-asset drafts (intake_draft_new_asset_idx).
 }

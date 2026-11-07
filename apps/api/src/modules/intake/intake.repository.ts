@@ -30,6 +30,8 @@ function lenient<T>(schema: z.ZodType<T>, value: unknown, fallback: T): T {
 }
 
 const iso = (date: Date | null) => (date ? date.toISOString() : null);
+/** Text the worker may have written longer than the contract allows: cut, so one row cannot break a list. */
+const clip = (text: string | null, max: number) => (text !== null && text.length > max ? `${text.slice(0, max - 1)}…` : text);
 
 export function toIntakeJob(row: JobRow): IntakeJob {
   return {
@@ -63,13 +65,13 @@ export function toIntakeDraft(row: DraftRow): IntakeDraft {
     validation: lenient(IntakeValidationSchema, row.validation, { errors: ["validation: unreadable"], warnings: [] }),
     ai: lenient(IntakeAiSchema.nullable(), row.ai, null),
     duplicateOf: row.duplicate_of,
-    note: row.note,
+    note: clip(row.note, 1000),
     createdAt: row.created_at.toISOString(),
     updatedAt: row.updated_at.toISOString(),
     reviewedAt: iso(row.reviewed_at),
-    reviewNote: row.review_note,
+    reviewNote: clip(row.review_note, 1000),
     appliedAt: iso(row.applied_at),
-    applyError: row.apply_error,
+    applyError: clip(row.apply_error, 4000),
   };
 }
 
@@ -143,17 +145,18 @@ export function createIntakeRepository(prisma: PrismaClient) {
     },
 
     /**
-     * Decides a pending draft. Only from `pending`: false when someone else decided it first, so
-     * two reviewers never both approve.
+     * Decides a pending draft. `decided`: someone else decided it first (only `pending` moves), so two
+     * reviewers never both approve. `taken`: another draft is already approved as this new asset
+     * (intake_draft_new_asset_idx), even when both approvals arrive at once.
      */
     async review(
       id: string,
       decision: { status: "approved"; assetId: string; record: Record<string, unknown> } | { status: "rejected" },
       note: string | null,
       userId: string,
-    ): Promise<boolean> {
+    ): Promise<"ok" | "decided" | "taken"> {
       const now = new Date();
-      const { count } = await prisma.intake_draft.updateMany({
+      const update = prisma.intake_draft.updateMany({
         where: { id, status: "pending" },
         data: {
           status: decision.status,
@@ -167,7 +170,12 @@ export function createIntakeRepository(prisma: PrismaClient) {
           updated_at: now,
         },
       });
-      return count === 1;
+      try {
+        return (await update).count === 1 ? "ok" : "decided";
+      } catch (error) {
+        if ((error as { code?: string }).code === "P2002") return "taken";
+        throw error;
+      }
     },
   };
 }
