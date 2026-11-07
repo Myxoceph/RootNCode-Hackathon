@@ -10,6 +10,8 @@ const defaults: A11ySettings = {
   largeText: false,
   highContrast: false,
   strongFocusRing: true,
+  soundEffects: true,
+  haptics: true,
 };
 
 describe("saved accessibility switches", () => {
@@ -18,6 +20,10 @@ describe("saved accessibility switches", () => {
       largeText: true,
       audioDescription: false,
     });
+  });
+
+  it("keeps the sound and vibration switches too", () => {
+    expect(parseA11ySettings(JSON.stringify({ soundEffects: false, haptics: false }), defaults)).toEqual({ soundEffects: false, haptics: false });
   });
 
   it("leaves out what is not a switch, or not one of them", () => {

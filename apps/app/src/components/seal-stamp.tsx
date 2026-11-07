@@ -1,9 +1,9 @@
 import { cameraColors, fontFamily, palette, spacing, Text } from "@vagabonds/ui";
-import * as Haptics from "expo-haptics";
 import { memo, useEffect, useMemo, useRef } from "react";
 import { Animated, Easing, StyleSheet, View } from "react-native";
 import Svg, { Circle, Defs, Path, RadialGradient, Stop, Text as SvgText, TextPath } from "react-native-svg";
 
+import { cue, haptic } from "@/lib/feedback";
 import { beads, bleedBlots, scallopPath, starPath, wornSpots } from "@/lib/seal-impression";
 
 /** The seal's square, and its centre. */
@@ -81,8 +81,9 @@ export const SealStamp = memo(function SealStamp({
   // The seal is felt as it strikes, and once more as the ink settles under it.
   useEffect(() => {
     const at = reduceMotion ? 0 : STRIKE_MS;
-    const struck = setTimeout(() => void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy).catch(() => {}), at);
-    const settled = setTimeout(() => void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {}), at + SETTLE_TAP_MS);
+    // The strike is heard too: a thud, and a small copper bell.
+    const struck = setTimeout(() => cue("sealStamp"), at);
+    const settled = setTimeout(() => haptic("light"), at + SETTLE_TAP_MS);
     return () => {
       clearTimeout(struck);
       clearTimeout(settled);

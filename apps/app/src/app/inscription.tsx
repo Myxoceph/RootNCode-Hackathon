@@ -20,6 +20,7 @@ import { InscriptionReading } from "@/components/inscription-reading";
 import { DataError, type ResourceWithRetry } from "@/data";
 import { useLang, useMessages, type Messages } from "@/i18n";
 import { announce } from "@/lib/announce";
+import { cue } from "@/lib/feedback";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
@@ -260,11 +261,13 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
       setTracked(set?.targets[index] ?? null);
       clearTimeout(revealTimer.current);
       if (reduceMotion) {
+        cue("inscriptionFound");
         reveal();
         return;
       }
       go("locked");
       announce(w.foundSaid);
+      cue("inscriptionFound");
       revealTimer.current = setTimeout(reveal, REVEAL_MS);
     },
     [go, set, reduceMotion, reveal, w],
