@@ -7,6 +7,19 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-07 · Hesap silme (sözleşme 0.3.34)
+
+Kimler: **API'yi yerelde çalıştıranlar**
+
+1. API'yi yeniden başlat; migration ya da yeni paket yok.
+
+Değişenler:
+
+- `POST /auth/delete-account`: parolayla doğrulanır, hesabı ve ona bağlı tüm kayıtları siler. Moderatör ve yönetici hesapları, inceleme yapmış eski moderatörler de silinemez (`STAFF_ACCOUNT`).
+- Profil'de ziyaretçilere "Hesabımı sil" düğmesi.
+
+---
+
 ## 2026-11-07 · Anı Defteri (sözleşme 0.3.33)
 
 Kimler: **API'yi yerelde çalıştıranlar**, **sunucuyu yöneten**, **uygulamayı derleyenler**
