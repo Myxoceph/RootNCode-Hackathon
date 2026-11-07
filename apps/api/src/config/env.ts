@@ -80,6 +80,22 @@ const EnvSchema = z.object({
   // and POST /assets/:id/visit/proof takes no position, so a printed photo can stand in for the site.
   // On until visits must happen on site; then "false".
   DEMO_UNLOCK: z.enum(["true", "false"]).default("true").transform((value) => value === "true"),
+  // Veri Döngüsü's development (docs/plans/veri-dongusu.md §0): "true" refuses to start unless the
+  // database is on this machine and no R2 credentials are set; photos then go to LOCAL_MEDIA_DIR,
+  // served at /local-media. Never on a server.
+  INTAKE_LOCAL_ONLY: z.enum(["true", "false"]).default("false").transform((value) => value === "true"),
+  // Veri Döngüsü's routes (book intake, the review queue's new kinds, inscription proposals). Off by
+  // default: merged code changes nothing on a server until this is turned on.
+  INTAKE_ENABLED: z.enum(["true", "false"]).default("false").transform((value) => value === "true"),
+  // Where the local media store writes with INTAKE_LOCAL_ONLY; empty: the repo's data/build/media.
+  LOCAL_MEDIA_DIR: z.string().default(""),
+  // With INTAKE_LOCAL_ONLY, the media URLs the API gives (instead of MEDIA_BASE_URL, which stays the
+  // shared host the local route falls back to). A phone needs the computer's address, not localhost.
+  // Kept apart from MEDIA_BASE_URL so the same .env works on branches without the local route.
+  LOCAL_MEDIA_BASE_URL: z
+    .url()
+    .default("http://localhost:3000/local-media")
+    .transform((url) => url.replace(/\/+$/, "")),
 });
 
 export type Env = z.infer<typeof EnvSchema>;
@@ -92,5 +108,25 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): Env {
       .join("\n");
     throw new Error(`Invalid environment configuration:\n${details}`);
   }
+  const problems = localOnlyProblems(result.data);
+  if (problems.length > 0) {
+    throw new Error(`INTAKE_LOCAL_ONLY is on, so nothing may be written off this machine:\n${problems.map((p) => `  - ${p}`).join("\n")}`);
+  }
   return result.data;
+}
+
+const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "[::1]", "::1"]);
+
+/**
+ * Why the environment would write off this machine although INTAKE_LOCAL_ONLY is on: a database
+ * elsewhere, or R2 credentials (photos would go to the shared bucket). Empty when it is off.
+ */
+export function localOnlyProblems(env: Pick<Env, "INTAKE_LOCAL_ONLY" | "DATABASE_URL" | "MEDIA_S3_ENDPOINT" | "MEDIA_BUCKET" | "MEDIA_S3_ACCESS_KEY_ID" | "MEDIA_S3_SECRET_ACCESS_KEY">): string[] {
+  if (!env.INTAKE_LOCAL_ONLY) return [];
+  const problems: string[] = [];
+  const host = new URL(env.DATABASE_URL).hostname;
+  if (!LOCAL_HOSTS.has(host)) problems.push(`DATABASE_URL points at "${host}"; only localhost is allowed`);
+  const r2 = (["MEDIA_S3_ENDPOINT", "MEDIA_BUCKET", "MEDIA_S3_ACCESS_KEY_ID", "MEDIA_S3_SECRET_ACCESS_KEY"] as const).filter((key) => env[key] !== "");
+  if (r2.length > 0) problems.push(`${r2.join(", ")} set; remove them (photos go to the local store)`);
+  return problems;
 }

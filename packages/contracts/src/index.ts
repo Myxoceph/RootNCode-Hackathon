@@ -12,6 +12,7 @@ export * from "./asset.schema";
 export * from "./chat.schema";
 export * from "./community.schema";
 export * from "./gastronomy.schema";
+export * from "./intake.schema";
 export * from "./journal.schema";
 export * from "./meta.schema";
 export * from "./planner.schema";

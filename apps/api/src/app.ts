@@ -16,6 +16,7 @@ import { ALL_ASSET_STATUSES, createAssetsRepository, visibleStatuses, type Asset
 import { createCommunityRepository } from "./modules/community/community.repository.ts";
 import { adminMediaRoutes } from "./modules/admin/media.routes.ts";
 import type { MediaStore } from "./modules/admin/media-store.ts";
+import { localMediaRoutes, type LocalMediaRoutesOptions } from "./modules/intake/local-media.routes.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
 import { moderationRoutes } from "./modules/community/moderation.routes.ts";
 import { createJournalRepository } from "./modules/journal/journal.repository.ts";
@@ -72,6 +73,8 @@ export interface BuildAppOptions {
   vision?: VisionClient | null;
   /** Where photos uploaded from the panel go; without one `POST /admin/assets/:id/media` answers 503. */
   mediaStore?: MediaStore | null;
+  /** `GET /local-media/*` for Veri Döngüsü's development (INTAKE_LOCAL_ONLY); without it there is no such route. */
+  localMedia?: LocalMediaRoutesOptions | null;
   /** `POST /assets/:id/visit/unlock` for the app's "Kilidi aç" (see achievementsRoutes); off by default. */
   demoUnlock?: boolean;
 }
@@ -102,6 +105,7 @@ export function buildApp({
   photoUrls = createPhotoUrls(),
   demoUnlock = false,
   mediaStore = null,
+  localMedia = null,
 }: BuildAppOptions): FastifyInstance {
   const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
 
@@ -133,6 +137,7 @@ export function buildApp({
   const adminRepository = createAdminRepository(prisma);
   app.register(adminRoutes, { repository: adminRepository, community: communityRepository });
   app.register(adminMediaRoutes, { repository: adminRepository, community: communityRepository, store: mediaStore, mediaBaseUrl });
+  if (localMedia) app.register(localMediaRoutes, localMedia);
   app.register(adminAssetPreviewRoutes, {
     repository: createAssetsRepository(prisma, assetVisibility, ALL_ASSET_STATUSES),
     sounds: soundsRepository,

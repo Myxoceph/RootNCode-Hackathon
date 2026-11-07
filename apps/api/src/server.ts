@@ -1,4 +1,5 @@
-import { createR2MediaStore } from "./modules/admin/media-store.ts";
+import { fileURLToPath } from "node:url";
+import { createLocalMediaStore, createR2MediaStore } from "./modules/admin/media-store.ts";
 import { buildApp } from "./app.ts";
 import { loadEnv } from "./config/env.ts";
 import { createPrismaClient } from "./db/prisma.ts";
@@ -9,17 +10,20 @@ import { createVoiceClient } from "./modules/voice/voice.client.ts";
 import { createWeatherService } from "./modules/weather/weather.service.ts";
 
 const env = loadEnv();
+/** Veri Döngüsü's development (INTAKE_LOCAL_ONLY): photos stay in the repo's data/build/media. */
+const localMediaDir = env.INTAKE_LOCAL_ONLY ? env.LOCAL_MEDIA_DIR || fileURLToPath(new URL("../../../data/build/media", import.meta.url)) : null;
 const prisma = createPrismaClient(env.DATABASE_URL);
 const app = buildApp({
   prisma,
   logger: { level: env.LOG_LEVEL },
   corsOrigins: env.CORS_ORIGINS,
-  mediaBaseUrl: env.MEDIA_BASE_URL,
+  mediaBaseUrl: localMediaDir ? env.LOCAL_MEDIA_BASE_URL : env.MEDIA_BASE_URL,
   assetVisibility: env.ASSET_VISIBILITY,
   trustProxy: env.TRUST_PROXY,
   demoUnlock: env.DEMO_UNLOCK,
-  mediaStore:
-    env.MEDIA_S3_ENDPOINT && env.MEDIA_BUCKET && env.MEDIA_S3_ACCESS_KEY_ID && env.MEDIA_S3_SECRET_ACCESS_KEY
+  mediaStore: localMediaDir
+    ? createLocalMediaStore(localMediaDir)
+    : env.MEDIA_S3_ENDPOINT && env.MEDIA_BUCKET && env.MEDIA_S3_ACCESS_KEY_ID && env.MEDIA_S3_SECRET_ACCESS_KEY
       ? createR2MediaStore({
           endpoint: env.MEDIA_S3_ENDPOINT,
           bucket: env.MEDIA_BUCKET,
@@ -27,6 +31,8 @@ const app = buildApp({
           secretAccessKey: env.MEDIA_S3_SECRET_ACCESS_KEY,
         })
       : null,
+  // Reads what the local store has, and sends the rest to the shared media host (read only).
+  localMedia: localMediaDir ? { dir: localMediaDir, fallbackBaseUrl: env.MEDIA_BASE_URL } : null,
   rateLimit: env.RATE_LIMIT_MAX === 0 ? false : { max: env.RATE_LIMIT_MAX, timeWindowMs: 60_000 },
   weather: env.OPEN_METEO_URL
     ? createWeatherService({
