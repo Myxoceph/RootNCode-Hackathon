@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-07 · Taşın Dili ve Taşa Sor tek ekranda (sözleşme 0.3.35)
+
+Kimler: **API'yi çalıştıranlar** (sunum sunucusu dahil), **uygulama ekibi**
+
+1. API'yi yeniden başlat (sunum makinesinde `deploy/demo.sh up`); migration ya da yeni paket yok.
+
+Değişenler:
+
+- Taşın Dili'nde 10 sn kitabe bulunamazsa "Asistana danış" çıkar; aynı kameranın o anki karesi asistana gider, cevap ekranda yazılı görünür ve sesli okunur.
+- `POST /vision/ask`'te `assetId` artık isteğe bağlı. Eser bilinmiyorsa cevap yalnızca fotoğraftan gelir, kaynak işareti olmaz.
+- Eser sayfasında "Taşa Sor" satırı kalktı; "Taşın Dili" kitabesi tanınamayan eserde doğrudan soru kamerasını açar.
+
+---
+
 ## 2026-11-07 · Anı Defteri: hikâye olarak paylaşma
 
 Kimler: **uygulamayı çalıştıranlar**, **uygulamayı derleyenler**

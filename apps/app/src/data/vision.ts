@@ -36,11 +36,14 @@ export async function shrinkPhoto(uri: string): Promise<string> {
   return saved.uri;
 }
 
-/** What the photo at `uri` (a JPEG on the phone) shows of the asset `assetId`, answering `question`. */
-export async function askStone(uri: string, assetId: string, question?: string, signal?: AbortSignal): Promise<VisionAskResponse> {
+/**
+ * What the photo at `uri` (a JPEG on the phone) shows of the asset `assetId`, answering `question`.
+ * Without an asset (the visitor is near none) the answer comes from the photo alone.
+ */
+export async function askStone(uri: string, assetId: string | null, question?: string, signal?: AbortSignal): Promise<VisionAskResponse> {
   const token = await accountToken();
   if (token === null) throw new DataError("rejected", getMessages().errors.vision.signIn, ["/vision/ask"], "ACCOUNT_REQUIRED");
-  const params = new URLSearchParams({ assetId, lang: getLang(), ...(question && { question }) });
+  const params = new URLSearchParams({ ...(assetId && { assetId }), lang: getLang(), ...(question && { question }) });
   return uploadFile(uri, `${resolveApiUrl()}/vision/ask?${params.toString()}`, VisionAskResponseSchema, {
     type: "image/jpeg",
     token,

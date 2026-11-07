@@ -454,11 +454,15 @@ tek başına istenir, kalanı o çalarken hazırlanır. İkisi de yalnızca hesa
 
 ### Taşa Sor
 
-Eser sayfasındaki "Taşa Sor" (yalnızca telefonda) kamerayı açar. Ziyaretçi bir detayı (çini, kapı,
+Taşın Dili'nde kitabe bulunamayınca çıkan "Asistana danış" (ve kitabesi tanınamayan eserlerde eser
+sayfasındaki "Taşın Dili", yalnızca telefonda) soru kamerasını açar. Ziyaretçi bir detayı (çini, kapı,
 kitabe, oyma) çeker ve deklanşörle "Bu ne?" ya da mikrofonla kendi sorusunu sorar. Fotoğraf telefonda
 1024 piksele küçültülür ve `POST /vision/ask?assetId=…&question=…` ile gönderilir; gövde fotoğrafın
 kendisidir (JPEG, en çok 1,5 MB). Model, eserin Rehber'in okuduğu kaydıyla birlikte çağrılır ve en çok
 3 cümleyle, kayda dayandığı yeri `[n]` ile göstererek cevap verir; cevap sesli okunur. Yalnızca hesapla.
+Eser bilinmiyorsa (yakında eser yok, ör. sunum salonu) `assetId` gönderilmez: cevap yalnızca fotoğraftan
+gelir, yazıyı okuyup çevirir, üslup için temkinli tahmin yürütür; eserin adını, tarihini ya da yaptıranını
+söylemez ve kaynak işareti koymaz.
 
 | Ne | Model | Süre (2026-11-03) |
 |---|---|---|

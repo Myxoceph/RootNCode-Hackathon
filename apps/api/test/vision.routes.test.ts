@@ -10,7 +10,7 @@ import { buildApp } from "../src/app.ts";
 import { createPrismaClient, type PrismaClient } from "../src/db/prisma.ts";
 import { hashToken, newToken } from "../src/modules/community/auth.ts";
 import { createVisionClient, VisionError, type VisionClient, type VisionLook } from "../src/modules/vision/vision.client.ts";
-import { visionSystem } from "../src/modules/vision/vision.ts";
+import { visionSystem, visionSystemOpen } from "../src/modules/vision/vision.ts";
 
 const DATABASE_URL = process.env["DATABASE_URL"];
 const HAMAM = "bursa-osmangazi-ordekli-hamam";
@@ -25,6 +25,15 @@ describe("visionSystem", () => {
     // The record cannot close its fence.
     expect(system.match(/<\/eser_kaydi>/g)).toHaveLength(1);
     expect(visionSystem("en", 2, "{}")).toContain("İngilizce");
+  });
+
+  it("without a record, forbids naming or dating the building and asks for no markers", () => {
+    const system = visionSystemOpen("tr");
+    expect(system).toContain("eser kaydı yok");
+    expect(system).toContain("tahmin etme");
+    expect(system).toContain("insan");
+    expect(system).not.toContain("<eser_kaydi>");
+    expect(visionSystemOpen("en")).toContain("İngilizce");
   });
 });
 
@@ -147,6 +156,18 @@ describe.skipIf(!DATABASE_URL)("vision routes (PostgreSQL, stand-in model)", () 
     expect(shutter.looks[0]!.type).toBe("image/jpeg");
   });
 
+  it("answers from the photo alone when no asset is given, citing nothing", async () => {
+    const { client, looks } = fakeVision("Fotoğrafta mermer bir kitabe görünüyor [1].");
+    const response = await ask(appWith(client), account, { question: "Burada ne yazıyor?" });
+    expect(response.statusCode).toBe(200);
+    const body = VisionAskResponseSchema.parse(response.json());
+    // No record, so a marker points nowhere and is dropped.
+    expect(body.answer).toBe("Fotoğrafta mermer bir kitabe görünüyor.");
+    expect(body.citations).toEqual([]);
+    expect(looks[0]!.question).toBe("Burada ne yazıyor?");
+    expect(looks[0]!.system).toBe(visionSystemOpen("tr"));
+  });
+
   it("asks for an account, a photo and an asset that exists", async () => {
     const app = appWith(fakeVision().client);
     expect((await ask(app, null)).statusCode).toBe(401);
@@ -154,7 +175,7 @@ describe.skipIf(!DATABASE_URL)("vision routes (PostgreSQL, stand-in model)", () 
     expect((await ask(app, account, { assetId: HAMAM }, "image/jpeg", Buffer.alloc(0))).json().error.code).toBe("INVALID_IMAGE");
     expect((await ask(app, account, { assetId: HAMAM }, "image/gif")).statusCode).toBe(415);
     expect((await ask(app, account, { assetId: HAMAM }, "image/jpeg", Buffer.alloc(VISION_MAX_BYTES + 1))).statusCode).toBe(413);
-    expect((await ask(app, account, {})).json().error.code).toBe("INVALID_QUERY");
+    expect((await ask(app, account, { assetId: "Bozuk!" })).json().error.code).toBe("INVALID_QUERY");
     const missing = await ask(app, account, { assetId: "bursa-osmangazi-yok-boyle-bir-eser" });
     expect(missing.statusCode).toBe(404);
     expect(missing.json().error.code).toBe("ASSET_NOT_FOUND");

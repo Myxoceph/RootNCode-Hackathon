@@ -20,7 +20,7 @@ import { runTool, SourceRegistry, type ApiGet } from "../assistant/assistant.too
 import type { CommunityRepository } from "../community/community.repository.ts";
 import { turkeyHour, turkeyToday } from "../planner/planner.routes.ts";
 import { VisionError, type VisionClient } from "./vision.client.ts";
-import { visionSystem } from "./vision.ts";
+import { visionSystem, visionSystemOpen } from "./vision.ts";
 
 /** Photos one client IP may send per minute: each is seconds of model time. */
 export const VISION_RATE_LIMIT = { max: 10, timeWindow: 60_000 };
@@ -52,7 +52,7 @@ export const visionRoutes: FastifyPluginAsync<VisionRoutesOptions> = async (app,
     schema: {
       tags: ["assistant"],
       summary: "Taşa Sor (yalnızca hesapla): eserde çekilen bir fotoğrafı, eserin kaydıyla kısa ve sesli okunacak biçimde açıkla",
-      description: `Gövde fotoğrafın kendisi (${VISION_IMAGE_TYPES.join(", ")}), en çok ${VISION_MAX_BYTES / 1024} KB. Fotoğraf saklanmaz.`,
+      description: `Gövde fotoğrafın kendisi (${VISION_IMAGE_TYPES.join(", ")}), en çok ${VISION_MAX_BYTES / 1024} KB. Fotoğraf saklanmaz. \`assetId\` verilmezse cevap yalnızca fotoğraftan gelir, kaynak işareti olmaz.`,
       security: [{ bearerAuth: [] }],
       querystring: toOpenApiSchema(VisionAskQuerySchema, "input"),
       response: {
@@ -83,21 +83,28 @@ export const visionRoutes: FastifyPluginAsync<VisionRoutesOptions> = async (app,
       return { statusCode: response.statusCode, body: response.json() };
     };
     const sources = new SourceRegistry();
-    const page = await runTool("asset_details", JSON.stringify({ id: query.assetId }), {
-      api,
-      repository,
-      sources,
-      lang,
-      today: turkeyToday(),
-      hour: turkeyHour(),
-    });
-    if (page.content.startsWith('{"error"')) throw new HttpError(404, "ASSET_NOT_FOUND", `No asset with id "${query.assetId}"`);
-    const { ref } = JSON.parse(page.content) as { ref: number };
+    let system: string;
+    if (query.assetId) {
+      const page = await runTool("asset_details", JSON.stringify({ id: query.assetId }), {
+        api,
+        repository,
+        sources,
+        lang,
+        today: turkeyToday(),
+        hour: turkeyHour(),
+      });
+      if (page.content.startsWith('{"error"')) throw new HttpError(404, "ASSET_NOT_FOUND", `No asset with id "${query.assetId}"`);
+      const { ref } = JSON.parse(page.content) as { ref: number };
+      system = visionSystem(lang, ref, page.content);
+    } else {
+      // Near no known asset: the photo alone, and no source to cite (a stray marker is dropped).
+      system = visionSystemOpen(lang);
+    }
 
     let text: string;
     try {
       text = await hedge(
-        (signal) => client.look({ image, type, system: visionSystem(lang, ref, page.content), question: query.question ?? VISION_DEFAULT_QUESTION, signal }),
+        (signal) => client.look({ image, type, system, question: query.question ?? VISION_DEFAULT_QUESTION, signal }),
         { starts: VISION_HEDGE_MS, deadlineMs: VISION_DEADLINE_MS, retryable: (err) => err instanceof VisionError, timedOut: () => new VisionError("Vision call timed out") },
       );
     } catch (err) {

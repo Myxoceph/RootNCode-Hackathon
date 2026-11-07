@@ -1,5 +1,6 @@
 import { Button, cameraColors, cameraGlass, fontFamily, palette, radius, spacing, Text } from "@vagabonds/ui";
-import { useLocalSearchParams } from "expo-router";
+import { File, Paths } from "expo-file-system";
+import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ActivityIndicator, Animated, Easing, Platform, ScrollView, StyleSheet, View } from "react-native";
@@ -9,9 +10,10 @@ import type { AssetDetail } from "@vagabonds/contracts";
 
 import { useInscriptionScope } from "@/ar/inscription-scope";
 import { isTrackable, rememberCompiledSet, useTargetSet, type TrackedTarget } from "@/ar/inscription-targets";
-import { MarkerTracker } from "@/ar/marker-tracker";
+import { MarkerTracker, type MarkerTrackerHandle } from "@/ar/marker-tracker";
 import type { TrackerEvent, TrackerFailure } from "@/ar/mindar";
 import { inscriptionOf, inscriptionPlace, inscriptionText, isInscriptionReading, readAloudKey, type InscriptionText } from "@/ar/use-inscription";
+import { AskPanel } from "@/components/ask-panel";
 import { CameraTopBar, GlassIconButton, GlassPill } from "@/components/camera-chrome";
 import { GlassFill } from "@/components/city-asset-cards";
 import { InscriptionReading } from "@/components/inscription-reading";
@@ -64,6 +66,15 @@ export default function InscriptionScreen() {
         ? { status: "error", error: new DataError("unavailable", m.errors.noData, []), retry }
         : { status: "success", data: scope.assets[0] ?? null, retry };
   const loaded = scope.status !== "loading";
+  const router = useRouter();
+  // The asset the assistant's answer is grounded in: the one asked for, or the nearest. Not the
+  // sample asset opened when nothing near is known: an answer from the wrong record is worse than
+  // none, so then it answers from the photo alone.
+  const askAsset = id ?? (scope.status === "ready" && scope.nearby ? (scope.assets[0]?.id ?? null) : null);
+  const askAbout = (asset: string | null) => {
+    const name = scope.status === "ready" ? scope.assets.find((a) => a.id === asset)?.name : undefined;
+    router.push({ pathname: "/stone-ask", params: asset ? { asset, ...(name && { name }) } : {} });
+  };
   // No inscription with a photo to find (or nothing loaded): the camera has nothing to look for.
   const trackable = scope.status === "ready" ? scope.assets.filter(isTrackable) : [];
   const untrackable = loaded && trackable.length === 0;
@@ -82,6 +93,16 @@ export default function InscriptionScreen() {
     if (screenReader) setMode("reading");
   }, [screenReader]);
 
+  // Another screen over this one (the assistant, Taşa Sor): the camera's WebView loses its video
+  // there and does not get it back, so the camera closes and starts afresh on the way back.
+  const [focused, setFocused] = useState(true);
+  useFocusEffect(
+    useCallback(() => {
+      setFocused(true);
+      return () => setFocused(false);
+    }, []),
+  );
+
   const onFailure = useCallback((reason: TrackerFailure) => {
     setNotice(`${m.seal.tracker[reason]} ${w.readBelow}`);
     setMode("reading");
@@ -96,6 +117,7 @@ export default function InscriptionScreen() {
         <InscriptionReading
           inscription={inscriptionOf(asset, null, lang)}
           notice={untrackable && asset.status === "success" ? w.noTarget : notice}
+          onAsk={web ? null : () => askAbout(askAsset)}
           onUseCamera={
             web || untrackable
               ? null
@@ -106,13 +128,14 @@ export default function InscriptionScreen() {
           }
         />
       )}
-      {mode === "camera" && trackable.length > 0 && (
+      {mode === "camera" && trackable.length > 0 && focused && (
         <InscriptionCamera
           assets={trackable}
           nearby={scope.status === "ready" && scope.nearby}
           asked={id !== undefined}
+          askAsset={askAsset}
           onFailure={onFailure}
-          onReadAsText={() => setMode("reading")}
+          onReadAsText={askAsset ? () => setMode("reading") : null}
         />
       )}
       {mode === null && (
@@ -127,6 +150,11 @@ export default function InscriptionScreen() {
   );
 }
 
+/** Scanning this long without an inscription in view offers the assistant. */
+const ASK_AFTER_MS = 10_000;
+/** The tracker page answers a snapshot within this, or the photo counts as not taken. */
+const SNAPSHOT_TIMEOUT_MS = 5_000;
+
 interface InscriptionCameraProps {
   /** The assets whose inscriptions are looked for; each has at least one. */
   assets: AssetDetail[];
@@ -134,23 +162,27 @@ interface InscriptionCameraProps {
   nearby: boolean;
   /** Opened from an asset's page. */
   asked: boolean;
+  /** The asset a question to the assistant is about, or null when it is not known (the photo alone). */
+  askAsset: string | null;
   onFailure: (reason: TrackerFailure) => void;
-  onReadAsText: () => void;
+  /** The camera-free reading, of the asset asked for or the nearest; null near none (it would show a sample). */
+  onReadAsText: (() => void) | null;
 }
 
 /**
  * What the bar under the title says is being looked for: the tracked targets (capped at
- * `MAX_TARGETS`), counted by the assets they are on.
+ * `MAX_TARGETS`), counted by the assets they are on. Near no asset, the sample inscriptions the
+ * camera still knows are not named: only how to aim.
  */
 function lookingFor(assets: AssetDetail[], targets: TrackedTarget[], nearby: boolean, asked: boolean, w: Messages["reading"]): string {
+  if (!nearby && !asked) return w.focus;
   const on = assets.filter((asset) => targets.some((t) => t.assetId === asset.id));
   const single = on.length === 1 ? w.oneOf(on[0]!.name, targets.length) : null;
-  if (!nearby && !asked) return w.nearbyNone(single ?? w.sitesCount(on.length));
   const many = w.many(on.length, targets.length, asked);
   return nearby ? w.nearby(single ?? many) : (single ?? many);
 }
 
-function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: InscriptionCameraProps) {
+function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadAsText }: InscriptionCameraProps) {
   const lang = useLang();
   const m = useMessages();
   const w = m.reading;
@@ -177,6 +209,28 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
   const phaseRef = useRef<Phase>("starting");
   // The target in view, or -1, so "Yeniden tara" can lock again without a new `found`.
   const inView = useRef(-1);
+  const tracker = useRef<MarkerTrackerHandle>(null);
+  // No inscription found for a while: the assistant is offered for whatever the camera shows.
+  const [offered, setOffered] = useState(false);
+  const [asking, setAskingState] = useState(false);
+  const askingRef = useRef(false);
+  const setAsking = useCallback((next: boolean) => {
+    askingRef.current = next;
+    setAskingState(next);
+  }, []);
+  // The one snapshot asked for: a reply after its time is up resolves nothing.
+  const snapshot = useRef<{ resolve: (jpeg: string) => void; reject: (error: Error) => void; timer: ReturnType<typeof setTimeout> } | null>(null);
+  // The tracker's frame stands still (a snapshot was taken): `resume` forgets what it showed and
+  // posts `found` afresh, so what was in view before is not known any more.
+  const frozen = useRef(false);
+  // Counts the scans after asking: each one offers the assistant again after its own wait.
+  const [scanRound, setScanRound] = useState(0);
+
+  useEffect(() => {
+    if (phase !== "scanning") return;
+    const timer = setTimeout(() => setOffered(true), ASK_AFTER_MS);
+    return () => clearTimeout(timer);
+  }, [phase, scanRound]);
 
   const go = useCallback((next: Phase) => {
     phaseRef.current = next;
@@ -232,8 +286,18 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
           break;
         case "found":
           inView.current = event.target;
-          if (phaseRef.current === "scanning") lock(event.target);
+          // While asking, the camera stays on what the visitor asks about.
+          if (phaseRef.current === "scanning" && !askingRef.current) lock(event.target);
           break;
+        case "snapshot": {
+          const pending = snapshot.current;
+          if (!pending) break;
+          snapshot.current = null;
+          clearTimeout(pending.timer);
+          if (event.jpeg) pending.resolve(event.jpeg);
+          else pending.reject(new Error(event.error ?? "no frame"));
+          break;
+        }
         case "lost":
           if (inView.current === event.target) inView.current = -1;
           // Once the card is up it stays, so reading it does not depend on holding the phone still.
@@ -249,6 +313,53 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
     },
     [go, lock, onFailure, set],
   );
+
+  // The frame in view, frozen, as a JPEG file for the assistant.
+  const takePhoto = async (): Promise<string> => {
+    if (snapshot.current) throw new Error("a snapshot is already on its way");
+    const jpeg = await new Promise<string>((resolve, reject) => {
+      const timer = setTimeout(() => {
+        if (snapshot.current?.timer === timer) snapshot.current = null;
+        reject(new Error("no frame in time"));
+      }, SNAPSHOT_TIMEOUT_MS);
+      snapshot.current = { resolve, reject, timer };
+      frozen.current = true;
+      tracker.current?.send("snapshot");
+    });
+    const binary = atob(jpeg);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    // One file, written over by each question: the photos are not kept.
+    const file = new File(Paths.cache, "inscription-ask.jpg");
+    file.create({ overwrite: true });
+    await file.write(bytes);
+    return file.uri;
+  };
+
+  const ask = () => {
+    clearTimeout(revealTimer.current);
+    setAsking(true);
+  };
+
+  // The camera runs on. After a snapshot the tracker posts `found` again for what it sees.
+  const resumeCamera = () => {
+    if (frozen.current) {
+      frozen.current = false;
+      inView.current = -1;
+    }
+    tracker.current?.send("resume");
+  };
+
+  const stopAsking = () => {
+    resumeCamera();
+    setAsking(false);
+    go("scanning");
+    setOffered(false);
+    setScanRound((n) => n + 1);
+    // An inscription found while asking (the camera never stood still) stays in view without a
+    // new `found`: its card rises now.
+    if (inView.current >= 0) lock(inView.current);
+  };
 
   const rescan = () => {
     clearTimeout(revealTimer.current);
@@ -268,8 +379,10 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
     [],
   );
 
+  // Started afresh after asking: the line is drawn anew then, and a native loop left running
+  // would not move it.
   useEffect(() => {
-    if (phase !== "scanning" || reduceMotion) return;
+    if (phase !== "scanning" || asking || reduceMotion) return;
     const loop = Animated.loop(
       Animated.sequence([
         Animated.timing(scan, { toValue: 1, duration: 1400, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),
@@ -278,7 +391,7 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
     );
     loop.start();
     return () => loop.stop();
-  }, [phase, reduceMotion, scan]);
+  }, [phase, asking, reduceMotion, scan]);
 
   const guideTop = insets.top + 120;
   // The scan line sweeps down to the status pill, which sits above the card's place.
@@ -296,9 +409,9 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
 
   return (
     <View style={styles.screen} onLayout={(e) => setHeight(e.nativeEvent.layout.height)}>
-      {set && <MarkerTracker target={set.target} overlays={overlays} onEvent={onEvent} style={StyleSheet.absoluteFill} />}
+      {set && <MarkerTracker ref={tracker} target={set.target} overlays={overlays} onEvent={onEvent} style={StyleSheet.absoluteFill} />}
 
-      {phase === "scanning" && !reduceMotion && guideHeight > 0 && (
+      {phase === "scanning" && !asking && !reduceMotion && guideHeight > 0 && (
         <Animated.View
           pointerEvents="none"
           style={[
@@ -309,12 +422,30 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
       )}
 
       <View style={[styles.top, { top: insets.top + spacing.sm }]}>
-        <CameraTopBar title={m.screens.inscription} subtitle={subtitle}>
-          <GlassIconButton icon="document-text-outline" label={w.readWithoutCamera} onPress={onReadAsText} />
+        <CameraTopBar title={m.screens.inscription} subtitle={asking ? m.stone.overline : subtitle}>
+          {onReadAsText && <GlassIconButton icon="document-text-outline" label={w.readWithoutCamera} onPress={onReadAsText} />}
         </CameraTopBar>
       </View>
 
+      {asking && (
+        <AskPanel
+          assetId={askAsset}
+          takePhoto={takePhoto}
+          ready={phase !== "starting" && phase !== "preparing"}
+          defaultQuestion={w.askQuestion}
+          showPhoto={false}
+          onAgain={resumeCamera}
+          back={{ label: w.backToScan, onPress: stopAsking }}
+        />
+      )}
+
+      {!asking && (
       <View style={[styles.bottom, { bottom: insets.bottom + spacing.sm }]} pointerEvents="box-none">
+        {phase === "scanning" && offered && (
+          <View style={styles.offer}>
+            <GlassPill gold icon="sparkles" label={w.askAssistant} spoken={w.askAssistantSpoken} onPress={ask} />
+          </View>
+        )}
         <View style={styles.status} accessibilityRole="text" accessibilityLiveRegion="polite">
           <View style={[styles.dot, { backgroundColor: found ? palette.gulkurusu300 : cameraColors.textSecondary }]} />
           <Text variant="caption" colorValue={cameraColors.text}>
@@ -350,6 +481,7 @@ function InscriptionCamera({ assets, nearby, asked, onFailure, onReadAsText }: I
           </Animated.View>
         )}
       </View>
+      )}
     </View>
   );
 }
@@ -481,6 +613,9 @@ const styles = StyleSheet.create({
     maxWidth: 720,
     alignSelf: "center",
     gap: spacing.sm,
+  },
+  offer: {
+    alignSelf: "center",
   },
   status: {
     alignSelf: "center",
