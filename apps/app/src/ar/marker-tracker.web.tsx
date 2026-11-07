@@ -14,14 +14,14 @@ import { useMessages } from "@/i18n";
  * camera screens keep to their camera-free versions on the web (ADR 0001);
  * this lets the prototype be tried in a phone's browser and on a laptop.
  */
-export function MarkerTracker({ target, overlays, onEvent, style, ref }: MarkerTrackerProps) {
+export function MarkerTracker({ target, overlays, onEvent, style, ref, marks, poses }: MarkerTrackerProps) {
   const mindarScript = useVendored(loadMindar);
   const overlayFont = useVendored(loadOverlayFont);
   const html = useMemo(
     () =>
       // The font is optional: "" when it could not be loaded, and the page then draws in a system serif.
-      mindarScript && overlayFont !== null ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript, overlayFont: overlayFont || undefined }) : null,
-    [target, overlays, mindarScript, overlayFont],
+      mindarScript && overlayFont !== null ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript, overlayFont: overlayFont || undefined, marks, poses }) : null,
+    [target, overlays, mindarScript, overlayFont, marks, poses],
   );
   const frame = useRef<HTMLIFrameElement>(null);
   const title = useMessages().tabs.camera;

@@ -16,6 +16,10 @@ export interface MarkerTrackerProps {
   overlays?: readonly (string | null)[];
   onEvent: (event: TrackerEvent) => void;
   style?: StyleProp<ViewStyle>;
+  /** Gold corners on a found target; on unless the screen shows its own sign. */
+  marks?: boolean;
+  /** Post the target's place on the view ("pose" events). */
+  poses?: boolean;
   /** Sends the page a command (`capture`, `resume`); its answer comes as an event. */
   ref?: Ref<MarkerTrackerHandle>;
 }
@@ -32,14 +36,14 @@ export interface MarkerTrackerHandle {
  * The page is given an https base URL so it is a secure context: WebViews only
  * offer getUserMedia to those.
  */
-export function MarkerTracker({ target, overlays, onEvent, style, ref }: MarkerTrackerProps) {
+export function MarkerTracker({ target, overlays, onEvent, style, ref, marks, poses }: MarkerTrackerProps) {
   const mindarScript = useVendored(loadMindar);
   const overlayFont = useVendored(loadOverlayFont);
   const html = useMemo(
     () =>
       // The font is optional: "" when it could not be loaded, and the page then draws in a system serif.
-      mindarScript && overlayFont !== null ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript, overlayFont: overlayFont || undefined }) : null,
-    [target, overlays, mindarScript, overlayFont],
+      mindarScript && overlayFont !== null ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript, overlayFont: overlayFont || undefined, marks, poses }) : null,
+    [target, overlays, mindarScript, overlayFont, marks, poses],
   );
   const permission = useCameraPermission();
   const view = useRef<ComponentRef<typeof WebView>>(null);
