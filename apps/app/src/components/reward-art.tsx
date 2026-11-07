@@ -1,16 +1,17 @@
-import type { RewardKind } from "@vagabonds/contracts";
+import type { RewardArt as Art, RewardKind } from "@vagabonds/contracts";
 import { palette } from "@vagabonds/ui";
 import type { ReactNode } from "react";
 import Svg, { Circle, Ellipse, G, Line, Path, Rect } from "react-native-svg";
 
 /**
  * Each reward drawn as what it is: the mug, the notebook, the cap, the shirt, the museum's ticket,
- * the tea at the han's café. A reward the drawings do not know is drawn by what its code says it
+ * the tea at the han's café. The drawing picked in the admin panel (`art`) comes first; without one
+ * a reward is drawn by what its code says it
  * is ("kupa", "defter", "muze"…), and failing that by its kind. Flat, each in its own colours, on a
  * 120 × 120 square; decorative, as the card says what the reward is in words.
  */
-export function RewardArt({ code, kind, size = 96 }: { code: string; kind: RewardKind; size?: number }) {
-  const art = ART[pick(code, kind)];
+export function RewardArt({ code, kind, art: chosen = null, size = 96 }: { code: string; kind: RewardKind; art?: Art | null; size?: number }) {
+  const art = ART[chosen ?? pick(code, kind)];
   return (
     <Svg width={size} height={size} viewBox="0 0 120 120" aria-hidden>
       {/* The shadow it stands on. */}
@@ -20,7 +21,6 @@ export function RewardArt({ code, kind, size = 96 }: { code: string; kind: Rewar
   );
 }
 
-type Art = "mug" | "notebook" | "cap" | "shirt" | "ticket" | "tea" | "gift" | "museum" | "tag" | "lantern";
 
 /** By the sample catalogue's codes (docs/rewards.md), then by words in the code, then by kind. */
 const BY_CODE: Record<string, Art> = {

@@ -647,7 +647,7 @@ function RewardCard({
             <Circle cx="82%" cy="18%" r={46} fill={hue} fillOpacity={0.08} />
             <Circle cx="12%" cy="100%" r={34} fill={hue} fillOpacity={0.08} />
           </Svg>
-          <RewardArt code={reward.code} kind={reward.kind} size={108} />
+          <RewardArt code={reward.code} kind={reward.kind} art={reward.art} size={108} />
           {reward.sample && (
             <View style={[styles.tag, { backgroundColor: c.surface }]}>
               <Text colorValue={c.textSecondary} style={styles.tagText}>
@@ -776,7 +776,7 @@ function Ticket({
       ]}
     >
       <View style={[styles.stub, { backgroundColor: `${hue}1A` }]}>
-        <RewardArt code={redemption.reward.code} kind={redemption.reward.kind} size={56} />
+        <RewardArt code={redemption.reward.code} kind={redemption.reward.kind} art={redemption.reward.art} size={56} />
       </View>
       <View style={styles.perforation} aria-hidden>
         <View
@@ -892,7 +892,7 @@ function RewardSheet({
     <Sheet visible={reward !== null} onClose={onClose}>
         <View style={[styles.grabber, { backgroundColor: c.border }]} />
         <View style={[styles.sheetIcon, { backgroundColor: `${hue}1A` }]}>
-          <RewardArt code={shown.code} kind={shown.kind} size={128} />
+          <RewardArt code={shown.code} kind={shown.kind} art={shown.art} size={128} />
         </View>
         <View style={styles.sheetHead}>
           <Text variant="caption" color="textSecondary" style={styles.centered}>
