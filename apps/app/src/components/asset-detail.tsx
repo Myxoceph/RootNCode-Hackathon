@@ -1654,14 +1654,18 @@ function Experiences({
   const actions: Action[] = [];
   // Taşın Dili and Ziyaret Mührü need the camera: phone features (ADR 0001).
   const phone = Platform.OS !== "web";
-  if (phone && inscriptions) {
+  // Taşın Dili and Taşa Sor in one: the camera looks for the inscriptions and offers the assistant
+  // when none is found. An asset with none to look for opens on asking at once.
+  if (phone) {
     actions.push({
       key: "inscription",
       icon: "scan-outline",
       title: m.asset.inscription,
       hint: m.asset.inscriptionHint,
       spoken: `${m.asset.inscription}: ${m.asset.inscriptionHint}`,
-      href: { pathname: "/inscription", params: { asset: asset.id } },
+      href: inscriptions
+        ? { pathname: "/inscription", params: { asset: asset.id } }
+        : { pathname: "/stone-ask", params: { asset: asset.id, name: asset.name } },
     });
   }
   // An unlocked asset needs no seal.
@@ -1721,21 +1725,7 @@ function Experiences({
       on: describing,
     });
   }
-  // A phone feature too: the photo comes from the camera.
-  if (phone) {
-    const hint = m.asset.stoneHint;
-    actions.push({
-      key: "stone",
-      icon: "camera-outline",
-      title: m.asset.stone,
-      hint,
-      spoken: `${m.asset.stone}: ${hint}`,
-      href: {
-        pathname: "/stone-ask",
-        params: { asset: asset.id, name: asset.name },
-      },
-    });
-  }
+
   // Always offered: when no model answers, the assistant's screen says it is closed for now.
   actions.push({
     key: "ask",

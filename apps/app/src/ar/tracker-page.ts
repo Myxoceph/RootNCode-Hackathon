@@ -214,6 +214,10 @@ function toBase64(bytes) {
   return btoa(binary);
 }
 
+// The still sent to the assistant: as wide as the photos Taşa Sor sends, and as compressed.
+const SNAPSHOT_WIDTH = 1024;
+const SNAPSHOT_QUALITY = 0.7;
+
 // Poses are posted this often at most: enough to guide a hand, little for the bridge to carry.
 const POSE_EVERY_MS = 150;
 
@@ -422,6 +426,25 @@ async function start() {
       post({ type: "captured", target, ms: Math.round(performance.now() - started) });
     } catch (error) {
       post({ type: "captured", target: null, ms: Math.round(performance.now() - started), error: String(error && error.message || error) });
+    }
+  };
+  // A still for the assistant: the picture stops on the frame, which goes to the app as a JPEG.
+  commands.snapshot = async () => {
+    if (!frozen) {
+      frozen = true;
+      video.pause();
+      controller.stopProcessVideo();
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    try {
+      const scale = Math.min(1, SNAPSHOT_WIDTH / video.videoWidth);
+      const frame = document.createElement("canvas");
+      frame.width = Math.round(video.videoWidth * scale);
+      frame.height = Math.round(video.videoHeight * scale);
+      frame.getContext("2d").drawImage(video, 0, 0, frame.width, frame.height);
+      post({ type: "snapshot", jpeg: frame.toDataURL("image/jpeg", SNAPSHOT_QUALITY).split(",")[1] });
+    } catch (error) {
+      post({ type: "snapshot", jpeg: null, error: String(error && error.message || error) });
     }
   };
   commands.resume = () => {
