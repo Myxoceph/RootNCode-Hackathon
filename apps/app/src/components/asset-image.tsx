@@ -47,6 +47,9 @@ export function AssetImage({ media, decorative = false, fill = false, fit = "cov
       alt={decorative ? "" : media.alt}
       // On the web expo-image gives its main <img> only this, not `alt`.
       accessibilityLabel={decorative ? "" : media.alt}
+      // An empty label leaves the web's <img> with no `alt` at all: a decorative one is hidden outright instead.
+      aria-hidden={decorative || undefined}
+      importantForAccessibility={decorative ? "no-hide-descendants" : undefined}
       style={[fill ? StyleSheet.absoluteFill : [styles.image, { aspectRatio: media.aspectRatio }], { backgroundColor: media.dominantColor ?? undefined }, webPreview, style]}
     />
   );
