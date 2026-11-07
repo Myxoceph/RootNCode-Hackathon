@@ -1344,9 +1344,9 @@ const tr = {
     focusRingDetail: "Klavye ve anahtar erişimi",
     feedback: "Ses ve titreşim",
     soundEffects: "Ses efektleri",
-    soundEffectsDetail: "Mühür, kitabe ve rozet anlarında kısa sesler",
+    soundEffectsDetail: "Mühür, kitabe, rozet ve defterde kısa sesler",
     haptics: "Titreşim",
-    hapticsDetail: "Dokunuşlarda ve ödül anlarında",
+    hapticsDetail: "Sekmelerde, dokunuşlarda ve ödül anlarında",
     keyboard: ["Harici klavye ya da anahtar erişimi: ", " sıradaki öğeye geçer, ", " seçer, ", " perdeyi ve kaydırıcıları oynatır."] as string[],
   },
 };
@@ -2690,9 +2690,9 @@ const en: Messages = {
     focusRingDetail: "Keyboard and switch access",
     feedback: "Sound and vibration",
     soundEffects: "Sound effects",
-    soundEffectsDetail: "Short sounds for seals, inscriptions and badges",
+    soundEffectsDetail: "Short sounds for seals, inscriptions, badges and the journal",
     haptics: "Vibration",
-    hapticsDetail: "On taps and moments of reward",
+    hapticsDetail: "On tabs, taps and moments of reward",
     keyboard: ["External keyboard or switch access: ", " moves to the next item, ", " selects, ", " move the slider and the scrubbers."],
   },
 };

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Animated, Easing, PanResponder, Platform } from "react-native";
 
+import { cue } from "./feedback";
 import { settleTurn } from "./journal";
 
 const TURN_MS = 760;
@@ -49,6 +50,7 @@ export function usePageTurn({ last, span, reduced, onePage }: { last: number; sp
 
   const turnTo = (target: number) => {
     const next = Math.max(0, Math.min(target, now.current.last));
+    if (next !== now.current.index) cue("pageTurn");
     now.current.index = next;
     setIndex(next);
     run(next, TURN_MS);
@@ -84,6 +86,8 @@ export function usePageTurn({ last, span, reduced, onePage }: { last: number; sp
         const { from, progress, movedAt } = drag.current;
         const target = settleTurn(from, progress, Date.now() - movedAt > FLICK_WITHIN_MS ? 0 : vx, now.current.last);
         const left = Math.abs(target - (from + progress));
+        // Let go of past the turning point: the leaf turns on, and is heard to.
+        if (target !== from) cue("pageTurn");
         now.current.index = target;
         setIndex(target);
         run(target, Math.max(QUICKEST_MS, TURN_MS * left));

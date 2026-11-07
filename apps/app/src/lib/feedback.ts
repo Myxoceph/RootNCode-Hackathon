@@ -14,16 +14,20 @@ import { isSpeaking } from "@/lib/voice";
  * and "Titreşim" on Sistem ayarları turn either off. A cue's sound waits out nothing and talks
  * over nothing: while a capsule plays or an answer is read aloud only its haptic comes.
  */
-export type Cue = "sealFit" | "sealStamp" | "inscriptionFound" | "badge";
+export type Cue = "sealFit" | "sealStamp" | "inscriptionFound" | "badge" | "fog" | "pageTurn" | "sticker" | "shutter";
 
 /** A haptic on its own, for taps that make no sound. */
-export type Haptic = "light" | "medium" | "heavy" | "success" | "warning";
+export type Haptic = "selection" | "light" | "medium" | "heavy" | "success" | "warning";
 
 const sources: Record<Cue, number> = {
   sealFit: require("@/audio/cues/seal-fit.wav"),
   sealStamp: require("@/audio/cues/seal-stamp.wav"),
   inscriptionFound: require("@/audio/cues/inscription-found.wav"),
   badge: require("@/audio/cues/badge.wav"),
+  fog: require("@/audio/cues/fog.wav"),
+  pageTurn: require("@/audio/cues/page-turn.wav"),
+  sticker: require("@/audio/cues/sticker.wav"),
+  shutter: require("@/audio/cues/shutter.wav"),
 };
 
 /** Under the voice and the capsules: a cue is a touch, not a sound to listen to. */
@@ -32,13 +36,22 @@ const volume: Record<Cue, number> = {
   sealStamp: 0.9,
   inscriptionFound: 0.55,
   badge: 0.7,
+  fog: 0.45,
+  pageTurn: 0.5,
+  sticker: 0.5,
+  shutter: 1,
 };
 
-const haptics: Record<Cue, Haptic | "aligned"> = {
+const haptics: Record<Cue, Haptic | "aligned" | null> = {
   sealFit: "aligned",
   sealStamp: "heavy",
   inscriptionFound: "light",
   badge: "success",
+  // The fog is only watched: nothing was touched.
+  fog: null,
+  pageTurn: "light",
+  sticker: "light",
+  shutter: "medium",
 };
 
 const native = Platform.OS !== "web";
@@ -77,15 +90,35 @@ function voiceSounding(): boolean {
   return isSpeaking() || (capsule !== null && capsule.audible && !capsule.muted);
 }
 
+/**
+ * On Android expo-haptics plays at a fraction of the motor's strength (a selection at about an
+ * eighth), too faint to feel on many phones: there the system's own vibration runs at full
+ * strength, as short pulses (ms; a pattern starts with a wait).
+ */
+const androidPulses: Record<Haptic | "aligned", number | number[]> = {
+  // Under about 25 ms many phones' motors do not get going: felt as nothing.
+  selection: 30,
+  light: 30,
+  medium: 35,
+  heavy: 60,
+  aligned: [0, 35, 70, 35],
+  success: [0, 30, 60, 45],
+  warning: [0, 40, 60, 40, 60, 40],
+};
+
 /** A haptic, unless "Titreşim" is off. */
 export function haptic(kind: Haptic | "aligned") {
   if (!native || !options.haptics) return;
+  if (Platform.OS === "android") {
+    Vibration.vibrate(androidPulses[kind]);
+    return;
+  }
   switch (kind) {
+    case "selection":
+      void Haptics.selectionAsync().catch(() => {});
+      return;
     case "aligned":
-      // On Android expo-haptics plays at a fraction of the motor's strength, too faint on many
-      // phones: the system's own vibration runs at full strength.
-      if (Platform.OS === "android") Vibration.vibrate([0, 35, 70, 35]);
-      else void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
+      void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
       return;
     case "success":
       void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
@@ -117,12 +150,9 @@ function start(player: AudioPlayer) {
 /** The cue's haptic, and its sound unless "Ses efektleri" is off or a voice is sounding. */
 export function cue(name: Cue) {
   if (!native) return;
-  haptic(haptics[name]);
-  if (!options.sound) return;
-  if (voiceSounding()) {
-    if (__DEV__) console.info(`[cue] ${name}: kept quiet, a capsule or a reading is sounding`);
-    return;
-  }
+  const touch = haptics[name];
+  if (touch) haptic(touch);
+  if (!options.sound || voiceSounding()) return;
   try {
     const player = playerFor(name);
     player.volume = volume[name];
@@ -136,7 +166,6 @@ export function cue(name: Cue) {
       if (!status.isLoaded) return;
       subscription.remove();
       if (Date.now() - asked <= LOAD_WAIT_MS) start(player);
-      else if (__DEV__) console.info(`[cue] ${name}: loaded too late, skipped`);
     });
   } catch (error) {
     // A sound that cannot play is only a sound: the moment is shown and said all the same.

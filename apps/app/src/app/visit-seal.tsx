@@ -372,7 +372,7 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
       return;
     }
     go({ name: "verifying" });
-    haptic("medium");
+    cue("shutter");
     if (!reduceMotion) {
       flash.setValue(0.85);
       Animated.timing(flash, { toValue: 0, duration: 260, easing: Easing.out(Easing.quad), useNativeDriver: true }).start();
