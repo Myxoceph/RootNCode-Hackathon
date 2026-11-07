@@ -1,8 +1,8 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { JournalEntry, JournalLayout, JournalPhoto } from "@vagabonds/contracts";
 import { radius, spacing, Text, touchTarget } from "@vagabonds/ui";
-import { useState } from "react";
-import { ActivityIndicator, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { useRef, useState } from "react";
+import { ActivityIndicator, Platform, Pressable, ScrollView, StyleSheet, View, type ScrollViewInstance } from "react-native";
 
 import { localeTag, useLang, useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
@@ -143,6 +143,14 @@ export function EntryPage({
   const [atBottom, setAtBottom] = useState(false);
   const date = formatDate(entry.createdAt, lang);
   const continues = contentHeight > area + END_SLOP && !atBottom;
+  const scroller = useRef<ScrollViewInstance>(null);
+  const offset = useRef(0);
+  // "Devamı var" turns the page's lines on: as far as a page less two lines, so the last read stays in sight.
+  const showMore = () => {
+    const step = Math.max(page.line, Math.floor((area - page.line * 2) / page.line) * page.line);
+    const y = Math.min(offset.current + step, Math.max(0, contentHeight - area));
+    scroller.current?.scrollTo({ y, animated: true });
+  };
 
   // A page shared as a picture is only as long as what is on it: no empty lines below.
   const least = still ? page.line * STILL_LINES : area;
@@ -171,12 +179,14 @@ export function EntryPage({
         // By its key: a recycled page starts at its own top.
         <ScrollView
           key={entry.id}
+          ref={scroller}
           nestedScrollEnabled
           scrollEnabled={active}
           style={{ height: area, flexGrow: 0 }}
           showsVerticalScrollIndicator={contentHeight > area}
           scrollEventThrottle={64}
           onScroll={({ nativeEvent }) => {
+            offset.current = nativeEvent.contentOffset.y;
             const end = nativeEvent.contentOffset.y + nativeEvent.layoutMeasurement.height >= nativeEvent.contentSize.height - END_SLOP;
             if (end !== atBottom) setAtBottom(end);
           }}
@@ -191,7 +201,7 @@ export function EntryPage({
           </Text>
         </View>
       ) : (
-        <EntryFoot entry={entry} number={number} page={page} continues={continues} onEdit={onEdit} {...(onShare ? { onShare } : {})} />
+        <EntryFoot entry={entry} number={number} page={page} continues={continues} onMore={showMore} onEdit={onEdit} {...(onShare ? { onShare } : {})} />
       )}
     </View>
   );
@@ -303,7 +313,7 @@ function Prints({ entry, pending, page, width, pageHeight, date, onOpenPhoto }: 
  * The page's number, a sign when there is more to read, and change and delete. Deleting asks here on
  * the page: the same on the web, where the system's alert does not exist.
  */
-function EntryFoot({ entry, number, page, continues, onEdit, onShare }: { entry: JournalEntry; number: number; page: PageStyle; continues: boolean; onEdit: () => void; onShare?: () => void }) {
+function EntryFoot({ entry, number, page, continues, onMore, onEdit, onShare }: { entry: JournalEntry; number: number; page: PageStyle; continues: boolean; onMore: () => void; onEdit: () => void; onShare?: () => void }) {
   const w = useMessages().journal;
   const [asking, setAsking] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -347,12 +357,18 @@ function EntryFoot({ entry, number, page, continues, onEdit, onShare }: { entry:
       </Text>
       <View style={styles.flex}>
         {continues && (
-          <View style={styles.continues}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityHint={w.continuesHint}
+            onPress={onMore}
+            hitSlop={6}
+            style={({ pressed }) => [styles.continues, pressed && styles.continuesPressed]}
+          >
             <Text variant="caption" colorValue={page.inkSoft} numberOfLines={1}>
               {w.continues}
             </Text>
             <Ionicons name="chevron-down" size={14} color={page.inkSoft} />
-          </View>
+          </Pressable>
         )}
       </View>
       {onShare && (
@@ -497,6 +513,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     gap: spacing.xxs,
+    alignSelf: "center",
+    minHeight: touchTarget.min,
+    paddingHorizontal: spacing.sm,
+  },
+  continuesPressed: {
+    opacity: 0.6,
   },
   action: {
     minWidth: touchTarget.min,
