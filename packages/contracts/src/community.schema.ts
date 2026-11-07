@@ -128,6 +128,11 @@ export const LoginRequestSchema = z.strictObject({
   password: z.string().min(1).max(PASSWORD_MAX),
 });
 
+/** `POST /auth/delete-account`: the account's own password, so a device left open cannot erase it. */
+export const DeleteAccountRequestSchema = z.strictObject({
+  password: z.string().min(1).max(PASSWORD_MAX),
+});
+
 /** `POST /auth/upgrade`: the signed-in anonymous visitor becomes an account and keeps their contributions. */
 export const UpgradeAccountRequestSchema = z.strictObject({
   username: UsernameSchema,
@@ -275,6 +280,7 @@ export type AnonymousSessionResponse = z.infer<typeof AnonymousSessionResponseSc
 export type UserRole = z.infer<typeof UserRoleSchema>;
 export type RegisterRequest = z.infer<typeof RegisterRequestSchema>;
 export type LoginRequest = z.infer<typeof LoginRequestSchema>;
+export type DeleteAccountRequest = z.infer<typeof DeleteAccountRequestSchema>;
 export type UpgradeAccountRequest = z.infer<typeof UpgradeAccountRequestSchema>;
 export type UpdateProfileRequest = z.input<typeof UpdateProfileRequestSchema>;
 export type SessionResponse = z.infer<typeof SessionResponseSchema>;
