@@ -1,3 +1,4 @@
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
@@ -17,6 +18,7 @@ import { CameraTopBar } from "@/components/camera-chrome";
 import { DataErrorView } from "@/components/resource-view";
 import { Slider } from "@/components/slider";
 import { SealSequence } from "@/components/seal-sequence";
+import { SealStamp } from "@/components/seal-stamp";
 import { capsuleForSoundKey } from "@/content/capsules";
 import { communityAvailable, DataError, sendVisitProof, useAsset } from "@/data";
 import { holdBadges } from "@/data/new-badges";
@@ -41,11 +43,8 @@ const VERIFY_TIMEOUT_MS = 8000;
 const SHUTTER = 72;
 /** How long a seal that needs the position waits for a fix. */
 const POSITION_WAIT_MS = 5000;
-/** Where the stamp's one animated value stands as the seal hangs over the page, and as it strikes. */
-const STAMP_HANGS = 0.6;
-const STAMP_STRIKES = 0.8;
-/** How long after it starts falling the stamp strikes the page. */
-const STRIKE_MS = 760 + 170 + 120;
+/** Room left for the top bar over the sealed screen. */
+const TOP_BAR_ROOM = 72;
 /** The sequence's window is closing for this long: iOS refuses to open another (the badges) meanwhile. */
 const WINDOW_CLOSES_MS = 500;
 
@@ -169,9 +168,9 @@ export default function VisitSealScreen() {
 }
 
 /** Height of the floating "Kilidi aç" and its gap. */
-const UNLOCK_ROOM = 44;
+const UNLOCK_ROOM = 72;
 
-/** A small "Aç", just in case the camera does not recognise the photo: seals the visit at once (a demo simulation). */
+/** "Kilidi aç", for testing: seals the visit at once, standing in for recognising the part (a demo simulation). */
 function UnlockButton({ onPress }: { onPress: () => void }) {
   const w = useMessages().seal;
   return (
@@ -180,12 +179,12 @@ function UnlockButton({ onPress }: { onPress: () => void }) {
       accessibilityLabel={w.unlock}
       // A demo simulation, and the screen reader must say so: it does not check the visit.
       accessibilityHint={w.unlockHint}
-      hitSlop={8}
       onPress={onPress}
-      style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.7 }]}
+      style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.85, transform: [{ scale: 0.98 }] }]}
     >
-      <Text colorValue={cameraColors.text} style={styles.unlockText}>
-        {w.unlockShort}
+      <Ionicons name="lock-open" size={18} color={cameraColors.onGold} />
+      <Text variant="label" colorValue={cameraColors.onGold} style={styles.unlockText}>
+        {w.unlock}
       </Text>
     </Pressable>
   );
@@ -578,20 +577,25 @@ function PanelBody({
 }
 
 /**
- * The seal comes down like a stamp: it sinks in large and empty, hangs for a beat, and strikes. The ink
- * shows at the strike, a ring spreads from it and the page jolts. A first visit then offers its
- * sequence with one tap (a tap, as many seals are struck inside a mosque or a tomb, where a sound
- * must not start by itself); then what the visit earned.
+ * The seal is stamped (`SealStamp`): one red seal comes down, strikes and its ink soaks into the page. A first
+ * visit then offers its sequence with one tap (a tap, as many seals are struck inside a mosque or a tomb,
+ * where a sound must not start by itself); then what the visit earned.
  */
 function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; result: Pick<VisitResponse, "verified" | "firstVisit" | "newAchievements">; onDone: () => void; onSettled: () => void }) {
   const lang = useLang();
-  const w = useMessages().seal;
+  const m = useMessages();
+  const w = m.seal;
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
-  const stamp = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
-  const strike = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
   const reveal = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
   const [stage, setStage] = useState<"offer" | "sequence" | "result">(result.firstVisit ? "offer" : "result");
+  // Watched without its sound: the sequence starts muted, its switch still there.
+  const [muted, setMuted] = useState(false);
+  const hasSound = capsuleForSoundKey(asset.ambientSound?.key ?? "") !== undefined;
+  const watch = (withSound: boolean) => {
+    setMuted(!withSound);
+    setStage("sequence");
+  };
 
   const windowOpened = useRef(false);
   useEffect(() => {
@@ -601,68 +605,12 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
     return () => clearTimeout(settle);
   }, [stage, onSettled]);
 
-  // The stamp is felt as it strikes.
-  useEffect(() => {
-    const strikeFelt = setTimeout(() => void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy).catch(() => {}), reduceMotion ? 0 : STRIKE_MS);
-    return () => clearTimeout(strikeFelt);
-  }, [reduceMotion]);
-
-  useEffect(() => {
-    if (reduceMotion) {
-      stamp.setValue(1);
-      strike.setValue(1);
-      reveal.setValue(1);
-      return;
-    }
-    const animation = Animated.sequence([
-      Animated.timing(stamp, { toValue: STAMP_HANGS, duration: 760, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-      Animated.delay(170),
-      Animated.timing(stamp, { toValue: STAMP_STRIKES, duration: 120, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
-      Animated.parallel([
-        Animated.spring(stamp, { toValue: 1, damping: 10, stiffness: 180, mass: 0.7, useNativeDriver: true }),
-        Animated.timing(strike, { toValue: 1, duration: 720, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(reveal, { toValue: 1, duration: 520, delay: 300, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-      ]),
-    ]);
-    animation.start();
-    return () => animation.stop();
-  }, [reduceMotion, stamp, strike, reveal]);
-
-  const scale = stamp.interpolate({ inputRange: [0, STAMP_HANGS, STAMP_STRIKES, 1], outputRange: [2.4, 1.26, 0.92, 1] });
-  const rotate = stamp.interpolate({ inputRange: [0, STAMP_HANGS, 1], outputRange: ["-22deg", "-8deg", "-8deg"] });
-  const opacity = stamp.interpolate({ inputRange: [0, STAMP_HANGS * 0.6, 1], outputRange: [0, 1, 1] });
-  const ink = stamp.interpolate({ inputRange: [0, STAMP_STRIKES - 0.02, STAMP_STRIKES, 1], outputRange: [0, 0, 1, 1] });
-  const jolt = strike.interpolate({ inputRange: [0, 0.06, 0.14, 0.24, 0.36, 1], outputRange: [0, 5, -3, 2, -1, 0] });
   const date = new Date().toLocaleDateString(localeTag(lang), { day: "numeric", month: "long", year: "numeric" });
 
   return (
-    <ScrollView contentContainerStyle={[styles.sealed, { paddingTop: insets.top + 96, paddingBottom: insets.bottom + spacing.xl }]}>
-      <Animated.View style={[styles.sealStage, { transform: [{ translateY: jolt }] }]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
-        <Animated.View
-          style={[
-            styles.sealRing,
-            {
-              opacity: strike.interpolate({ inputRange: [0, 0.02, 1], outputRange: [0, 0.9, 0] }),
-              transform: [{ scale: strike.interpolate({ inputRange: [0, 1], outputRange: [0.96, 1.6] }) }],
-            },
-          ]}
-        />
-        <Animated.View style={[styles.seal, { opacity, transform: [{ scale }, { rotate }] }]}>
-          <View style={styles.sealInner}>
-            <Animated.View style={[styles.sealInk, { opacity: ink }]}>
-              <Text style={styles.sealCaption} colorValue={cameraColors.gold}>
-                {w.stamp}
-              </Text>
-              <Text variant="heading" colorValue={cameraColors.text} style={styles.centerText} numberOfLines={2}>
-                {asset.name}
-              </Text>
-              <Text style={styles.sealCaption} colorValue={cameraColors.textSecondary}>
-                {date.toLocaleUpperCase(lang)}
-              </Text>
-            </Animated.View>
-          </View>
-        </Animated.View>
-      </Animated.View>
+    // Set in the middle of the screen, under the top bar: the seal and what it says read as one.
+    <ScrollView contentContainerStyle={[styles.sealed, { paddingTop: insets.top + TOP_BAR_ROOM, paddingBottom: insets.bottom + spacing.xl }]}>
+      <SealStamp name={asset.name} ring={`${w.stamp} • ${m.profile.issuer.toLocaleUpperCase(lang)}`} date={date.toLocaleUpperCase(lang)} reduceMotion={reduceMotion} reveal={reveal} />
 
       <Animated.View style={[styles.sealedText, { opacity: reveal, transform: [{ translateY: reveal.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}>
         <Text variant="title" colorValue={cameraColors.text} style={styles.centerText} headingLevel={2}>
@@ -673,9 +621,39 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
           {result.firstVisit ? w.firstVisit : w.againVisit}
         </Text>
 
-        {stage !== "result" && (
+        {stage !== "result" && hasSound && (
+          <View style={styles.offer}>
+            {/* Says there is a sound before the choice; the buttons say it again for a screen reader. */}
+            <View style={styles.soundCue} aria-hidden>
+              <Ionicons name="musical-notes" size={15} color={cameraColors.gold} />
+              <Text variant="caption" colorValue={cameraColors.gold} style={styles.soundCueText}>
+                {w.soundHere}
+              </Text>
+            </View>
+            <View style={styles.watchRow}>
+              <Button
+                label={w.watchWithSound}
+                accessibilityHint={w.watchWithSoundHint}
+                icon={<Ionicons name="volume-high" size={20} color={cameraColors.onGold} />}
+                onPress={() => watch(true)}
+                colors={[cameraColors.gold, cameraColors.onGold]}
+                style={styles.watch}
+              />
+              <Button
+                label={w.watchMuted}
+                accessibilityHint={w.watchMutedHint}
+                icon={<Ionicons name="volume-mute" size={20} color={cameraColors.text} />}
+                onPress={() => watch(false)}
+                colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.22)"]}
+                style={styles.watch}
+              />
+            </View>
+          </View>
+        )}
+        {/* No sound to choose about: the sequence runs on its words, and can be left out. */}
+        {stage !== "result" && !hasSound && (
           <>
-            <Button label={w.openTime} accessibilityHint={capsuleForSoundKey(asset.ambientSound?.key ?? "") ? w.openTimeHintSound : w.openTimeHint} onPress={() => setStage("sequence")} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
+            <Button label={w.openTime} accessibilityHint={w.openTimeHint} onPress={() => watch(true)} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
             <Button
               label={w.skipTime}
               accessibilityHint={w.skipTimeHint}
@@ -715,7 +693,7 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
 
       {/* Over the screen's top bar too; the system's back gesture ends it as "Geç" does. */}
       <Modal visible={stage === "sequence"} animationType="fade" statusBarTranslucent navigationBarTranslucent onRequestClose={() => setStage("result")}>
-        {stage === "sequence" && <SealSequence asset={asset} onDone={() => setStage("result")} />}
+        {stage === "sequence" && <SealSequence asset={asset} muted={muted} onDone={() => setStage("result")} />}
       </Modal>
     </ScrollView>
   );
@@ -733,18 +711,18 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   unlock: {
-    alignSelf: "flex-end",
-    minHeight: 28,
-    minWidth: 28,
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: spacing.sm,
-    borderRadius: radius.sm,
-    backgroundColor: cameraColors.background,
+    alignSelf: "stretch",
+    gap: spacing.sm,
+    minHeight: 52,
+    borderRadius: radius.full,
+    backgroundColor: "#FFFFFF",
   },
   unlockText: {
     fontFamily: fontFamily.sansBold,
-    fontSize: 12,
+    fontSize: 17,
   },
   unlockFloat: {
     position: "absolute",
@@ -854,6 +832,8 @@ const styles = StyleSheet.create({
     borderColor: cameraColors.gold,
   },
   sealed: {
+    flexGrow: 1,
+    justifyContent: "center",
     alignItems: "center",
     gap: spacing.md,
     paddingHorizontal: spacing.lg,
@@ -861,52 +841,35 @@ const styles = StyleSheet.create({
     width: "100%",
     alignSelf: "center",
   },
-  sealStage: {
-    width: 220,
-    height: 220,
-    marginBottom: spacing.lg,
-  },
-  sealRing: {
-    position: "absolute",
-    width: 220,
-    height: 220,
-    borderRadius: 110,
-    borderWidth: 3,
-    borderColor: cameraColors.gold,
-  },
   sealedText: {
     alignSelf: "stretch",
     alignItems: "center",
     gap: spacing.md,
   },
-  seal: {
-    width: 220,
-    height: 220,
-    borderRadius: 110,
-    borderWidth: 3,
-    borderColor: cameraColors.gold,
-    padding: 8,
+  offer: {
+    alignSelf: "stretch",
+    alignItems: "center",
+    gap: spacing.sm,
+    marginTop: spacing.md,
   },
-  sealInk: {
+  soundCue: {
+    flexDirection: "row",
     alignItems: "center",
     gap: spacing.xs,
   },
-  sealInner: {
-    flex: 1,
-    borderRadius: 110,
-    borderWidth: 1,
-    borderColor: cameraColors.gold,
-    borderStyle: "dashed",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.xs,
-    padding: spacing.lg,
+  soundCueText: {
+    fontFamily: fontFamily.sansSemiBold,
+    letterSpacing: 0.3,
   },
-  sealCaption: {
-    fontFamily: fontFamily.monoMedium,
-    fontSize: 12,
-    lineHeight: 16,
-    letterSpacing: 2,
+  watchRow: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.sm,
+  },
+  watch: {
+    flexGrow: 1,
+    flexBasis: 150,
   },
   badges: {
     alignSelf: "stretch",

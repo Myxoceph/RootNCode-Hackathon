@@ -1,6 +1,6 @@
 import turkeyOutline from "./turkey-outline.json";
 import turkeyProvinces from "./turkey-provinces.json";
-import type { MapNetwork, MapPadding, MapPin, MapProvinces, MapSpots } from "./types";
+import type { MapListen, MapNetwork, MapPadding, MapPin, MapProvinces, MapSpots } from "./types";
 
 /**
  * MapLibre GL JS, bundled into the app by scripts/vendor-web-libs.mts: the same renderer
@@ -65,6 +65,8 @@ export type MapPageEvent =
   | { type: "note"; id: string }
   /** "İncele" over an unlocked asset was tapped. */
   | { type: "inspect"; id: string }
+  /** "Sesli dinle" (or "Durdur") over an unlocked asset was tapped. */
+  | { type: "listen"; id: string }
   /** "İlişkili eser listesini incele" beside "Kapat" was tapped. */
   | { type: "relatedList"; id: string }
   /** While asked (watchSpots): where the chosen asset and "Kilidini aç" are on screen, in pixels from the map's top left. */
@@ -83,7 +85,9 @@ export type MapPageCommand =
   /** The app's language changed: the page's own words follow, the map stays as it is. */
   | { type: "words"; words: MapPageWords }
   /** "Büyük metin": the page's buttons and the names on the map grow by this much. */
-  | { type: "textScale"; scale: number };
+  | { type: "textScale"; scale: number }
+  /** The asset with a sound to offer, and whether it plays; `null` offers none. */
+  | { type: "listen"; listen: MapListen | null };
 
 export function parseMapPageEvent(data: unknown): MapPageEvent | null {
   if (typeof data !== "string") return null;
@@ -123,6 +127,10 @@ export interface MapPageWords {
   inspect: string;
   close: string;
   relatedList: string;
+  listen: string;
+  /** Read after the asset's name on "Sesli dinle". */
+  listenLabel: string;
+  stopListening: string;
 }
 
 export function mapPageHtml({
@@ -410,6 +418,7 @@ window.vagabondsMap = {
       if (command.type === "provinces") actions.showProvinces(command.provinces);
       if (command.type === "watchSpots") actions.watchSpots(command.on);
       if (command.type === "offerUnlock") actions.offerUnlock(command.on);
+      if (command.type === "listen") actions.offerListen(command.listen);
     } catch (error) {
       reportError(command.type, error);
     }
@@ -2646,11 +2655,35 @@ function start() {
   let openActionsFor = null;
   let openActionFired = 0;
   const optionIcon = (path) => '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="' + colors.seal.lockEdge + '" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + path + "</svg>";
+  /** A speaker with its waves, and a square while the sound plays. */
+  const LISTEN_PATH = '<path d="M11 5 6 9H3v6h3l5 4Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/>';
+  const STOP_PATH = '<rect x="6" y="6" width="12" height="12" rx="2"/>';
   const OPEN_OPTIONS = [
     { type: "related", end: (seal) => [0, -(seal + 30)], label: () => WORDS.related, icon: optionIcon('<path d="M10 14a4 4 0 0 0 6 .4l3-3a4 4 0 0 0-5.7-5.7l-1.1 1.1"/><path d="M14 10a4 4 0 0 0-6-.4l-3 3a4 4 0 0 0 5.7 5.7l1.1-1.1"/>') },
     { type: "note", end: (seal) => [-72, seal + 20], label: () => WORDS.note, icon: optionIcon('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>') },
     { type: "inspect", end: (seal) => [72, seal + 20], label: () => WORDS.inspect, icon: optionIcon('<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>') },
+    // Below the other two, straight down: only for an asset with a sound.
+    { type: "listen", end: (seal) => [0, seal + 64], label: () => WORDS.listen, icon: optionIcon(LISTEN_PATH) },
   ];
+
+  /** The chosen asset's sound, sent by the app (MapListen): "Sesli dinle" shows for it, "Durdur" while it plays. */
+  let listen = null;
+  function offerListen(next) {
+    listen = next;
+    placeUnlock();
+  }
+
+  /** "Sesli dinle" as the sound stands: its words, icon and name for a screen reader. */
+  function showListen(row, asset) {
+    const button = row.querySelector('[data-option="listen"]');
+    const on = Boolean(listen && listen.id === asset.id);
+    button.hidden = !on;
+    row.querySelector('[data-branch="listen"]').toggleAttribute("hidden", !on);
+    if (!on) return;
+    const playing = listen.playing;
+    button.innerHTML = '<span class="option-icon">' + optionIcon(playing ? STOP_PATH : LISTEN_PATH) + "</span><span>" + (playing ? WORDS.stopListening : WORDS.listen) + "</span>";
+    button.setAttribute("aria-label", playing ? WORDS.stopListening : asset.title + ": " + WORDS.listenLabel);
+  }
 
   /** Sends the option, once per tap whichever way it arrives. */
   function fireOpenAction(type) {
@@ -2858,6 +2891,7 @@ function start() {
     const related = Boolean(asset.relatedTo && asset.relatedTo.length > 0);
     row.querySelector('[data-option="related"]').hidden = !related;
     row.querySelector('[data-branch="related"]').toggleAttribute("hidden", !related);
+    showListen(row, asset);
     layoutOpenActions();
     openActions.setLngLat([asset.lng, asset.lat]).addTo(map);
     if (openActionsFor !== asset.id && motion) {
@@ -3638,6 +3672,7 @@ function start() {
   actions.showProvinces = showProvinces;
   actions.watchSpots = watchSpots;
   actions.offerUnlock = offerUnlock;
+  actions.offerListen = offerListen;
 
   // Where the map tour points: the busiest province's name in the Turkey view, the chosen asset once the camera
   // has landed in a city, and "Kilidini aç" while it shows.
