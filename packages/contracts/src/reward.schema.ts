@@ -25,7 +25,7 @@ export const RewardSchema = z.strictObject({
   /** The institution that gives the reward, e.g. "Vakıf Katılım". */
   partner: z.string().min(1),
   kind: RewardKindSchema,
-  /** The default keeps answers of an API before 0.3.36 readable. */
+  /** The default keeps answers of an API before 0.3.37 readable. */
   art: RewardArtSchema.nullable().default(null),
   costPoints: z.int().positive(),
   /** Proven visits (position plus recognition of the site) needed before redeeming; 0 for none. */
