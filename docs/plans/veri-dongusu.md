@@ -156,6 +156,10 @@ Migration **yalnızca ekleme** yapar: yeni tablolar, var olan tablolara dokunmaz
   - `asset_id` kebab-case;
   - durum ve tür listeleri §5.1'deki gibi.
 - `intake_job.created_by` boş olabilir (worker'ın testleri için); API her zaman doldurur.
+- `20261108100000_intake_entry_key`: `book_asset` taslağında `entry_key` zorunlu, öbür türlerde boş
+  (yoksa benzersizlik NULL'ları ayrı saydığı için yeniden çalışmada taslak çoğalırdı).
+- Kısıtlar gerçek PostgreSQL'de sınanıyor: `apps/api/test/intake.db.test.ts`. Worker'ın kullanacağı
+  `ON CONFLICT` cümlesinin örneği de orada.
 
 **jsonb sütunlarının biçimi:** `packages/contracts/src/intake.schema.ts` (Zod). Python için JSON Schema'sı
 `data/pipeline/contracts/intake.schema.json`: worker yazmadan önce bununla doğrular. Sözleşme değişince
@@ -182,7 +186,10 @@ Sözlükte iki ek alan var: `BookMapEntry.proposedId` (önerilen eser id) ve `In
 - API `GET /local-media/*` ile bu klasörü sunar. Dosya yerelde yoksa `MEDIA_BASE_URL`'e (ortak medya sunucusu)
   **302 ile yönlendirir**. Okuma uzaktan olabilir, yazma her zaman yereldir.
 - `INTAKE_LOCAL_ONLY` açıkken API fotoğraf adreslerini `LOCAL_MEDIA_BASE_URL` ile verir
-  (varsayılan `http://localhost:3000/local-media`; telefonda `http://<bilgisayarın IP'si>:3000/local-media`).
+  (boşsa `http://localhost:<PORT>/local-media`; telefonda `http://<bilgisayarın IP'si>:3000/local-media`).
+- Koruma, `MEDIA_BASE_URL` `/local-media`'yı gösterirse API'yi açmaz: yerelde olmayan her dosya kendine
+  yönlenip sonsuz döngüye girerdi.
+- Anahtarlar `.` ile başlayan bir parça içeremez (`.env`, `.git` sunulmaz); göreli `LOCAL_MEDIA_DIR` repo kökünden okunur.
 - **`MEDIA_BASE_URL`'ye dokunulmaz.** `.env` her dalda ortak; o değişkeni yerele çevirmek, bu uç noktanın
   olmadığı dallarda bütün fotoğrafları kırar. Yeni değişkenleri diğer dallar tanımaz ve yok sayar.
 - Worker'ın çıkardığı fotoğraflar da aynı klasöre ve düzene yazılır (`media_pipeline.py` biçimi).

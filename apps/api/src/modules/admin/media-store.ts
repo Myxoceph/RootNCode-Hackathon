@@ -37,9 +37,12 @@ export function createR2MediaStore({ endpoint, bucket, accessKeyId, secretAccess
   };
 }
 
-/** A media key that is safe as a path under a folder: relative segments of plain characters, no `.` or `..`. */
+/**
+ * A media key that is safe as a path under a folder: relative segments of plain characters, none
+ * starting with a dot (no `.`, `..`, nor hidden files such as `.env` or `.git`).
+ */
 export function isSafeMediaKey(key: string): boolean {
-  return /^[A-Za-z0-9_.-]+(?:\/[A-Za-z0-9_.-]+)*$/.test(key) && !key.split("/").some((part) => part === "." || part === "..");
+  return /^[A-Za-z0-9_-][A-Za-z0-9_.-]*(?:\/[A-Za-z0-9_-][A-Za-z0-9_.-]*)*$/.test(key);
 }
 
 /**

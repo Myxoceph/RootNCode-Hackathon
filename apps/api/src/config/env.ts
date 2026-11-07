@@ -92,9 +92,10 @@ const EnvSchema = z.object({
   // With INTAKE_LOCAL_ONLY, the media URLs the API gives (instead of MEDIA_BASE_URL, which stays the
   // shared host the local route falls back to). A phone needs the computer's address, not localhost.
   // Kept apart from MEDIA_BASE_URL so the same .env works on branches without the local route.
+  // Empty: http://localhost:<PORT>/local-media (localMediaBaseUrl).
   LOCAL_MEDIA_BASE_URL: z
-    .url()
-    .default("http://localhost:3000/local-media")
+    .union([z.literal(""), z.url()])
+    .default("")
     .transform((url) => url.replace(/\/+$/, "")),
 });
 
@@ -121,12 +122,33 @@ const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "[::1]", "::1"]);
  * Why the environment would write off this machine although INTAKE_LOCAL_ONLY is on: a database
  * elsewhere, or R2 credentials (photos would go to the shared bucket). Empty when it is off.
  */
-export function localOnlyProblems(env: Pick<Env, "INTAKE_LOCAL_ONLY" | "DATABASE_URL" | "MEDIA_S3_ENDPOINT" | "MEDIA_BUCKET" | "MEDIA_S3_ACCESS_KEY_ID" | "MEDIA_S3_SECRET_ACCESS_KEY">): string[] {
+export function localOnlyProblems(
+  env: Pick<Env, "INTAKE_LOCAL_ONLY" | "DATABASE_URL" | "MEDIA_BASE_URL" | "MEDIA_S3_ENDPOINT" | "MEDIA_BUCKET" | "MEDIA_S3_ACCESS_KEY_ID" | "MEDIA_S3_SECRET_ACCESS_KEY">,
+): string[] {
   if (!env.INTAKE_LOCAL_ONLY) return [];
   const problems: string[] = [];
-  const host = new URL(env.DATABASE_URL).hostname;
-  if (!LOCAL_HOSTS.has(host)) problems.push(`DATABASE_URL points at "${host}"; only localhost is allowed`);
+  let url: URL | null = null;
+  try {
+    url = new URL(env.DATABASE_URL);
+  } catch {
+    problems.push("DATABASE_URL could not be read; only a localhost address is allowed");
+  }
+  if (url) {
+    // A Unix socket (`postgresql:///db?host=/tmp`) is on this machine too.
+    const socket = url.hostname === "" && (url.searchParams.get("host") ?? "").startsWith("/");
+    if (!socket && !LOCAL_HOSTS.has(url.hostname)) problems.push(`DATABASE_URL points at "${url.hostname}"; only localhost is allowed`);
+  }
+  // MEDIA_BASE_URL is where /local-media sends what it does not have: pointed at /local-media itself,
+  // every such photo would redirect to itself forever. LOCAL_MEDIA_BASE_URL is the local one.
+  if (/\/local-media(\/|$)/.test(env.MEDIA_BASE_URL)) {
+    problems.push("MEDIA_BASE_URL points at /local-media; keep it the shared media host and set LOCAL_MEDIA_BASE_URL instead");
+  }
   const r2 = (["MEDIA_S3_ENDPOINT", "MEDIA_BUCKET", "MEDIA_S3_ACCESS_KEY_ID", "MEDIA_S3_SECRET_ACCESS_KEY"] as const).filter((key) => env[key] !== "");
   if (r2.length > 0) problems.push(`${r2.join(", ")} set; remove them (photos go to the local store)`);
   return problems;
+}
+
+/** The media URLs the API gives with INTAKE_LOCAL_ONLY: LOCAL_MEDIA_BASE_URL, else this API's own /local-media. */
+export function localMediaBaseUrl(env: Pick<Env, "LOCAL_MEDIA_BASE_URL" | "PORT">): string {
+  return env.LOCAL_MEDIA_BASE_URL || `http://localhost:${env.PORT}/local-media`;
 }

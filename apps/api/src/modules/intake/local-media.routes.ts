@@ -18,14 +18,19 @@ const TYPES: Record<string, string> = {
   ".jpeg": "image/jpeg",
   ".png": "image/png",
   ".mind": "application/octet-stream",
+  ".mp3": "audio/mpeg",
+  ".m4a": "audio/mp4",
+  ".ogg": "audio/ogg",
+  ".wav": "audio/wav",
   ".json": "application/json",
 };
 
 /**
- * `GET /local-media/*`: Veri Döngüsü's development only (INTAKE_LOCAL_ONLY), with MEDIA_BASE_URL set
- * to this route. Serves what the local store wrote; a key it does not have (the dataset's photos
- * already on the media host) answers a redirect there, so the app shows both. Reads may go out;
- * writes never do.
+ * `GET /local-media/*`: Veri Döngüsü's development only (INTAKE_LOCAL_ONLY); the API gives media URLs
+ * on this route (LOCAL_MEDIA_BASE_URL). Serves what the local store wrote; a key it does not have
+ * (the dataset's photos already on the shared host) answers a redirect to MEDIA_BASE_URL, so the app
+ * shows both. Reads may go out; writes never do. Whole files only, no byte ranges: what is written
+ * here is photos and `.mind` files; sounds stay on the shared host.
  */
 export const localMediaRoutes: FastifyPluginAsync<LocalMediaRoutesOptions> = async (app, { dir, fallbackBaseUrl }) => {
   const fallback = fallbackBaseUrl.replace(/\/+$/, "");
@@ -37,6 +42,7 @@ export const localMediaRoutes: FastifyPluginAsync<LocalMediaRoutesOptions> = asy
     const found = await stat(path).catch(() => null);
     if (!found?.isFile()) return reply.redirect(`${fallback}/${key}`, 302);
     reply.header("Cache-Control", "no-cache");
+    reply.header("Content-Length", found.size);
     reply.header("Access-Control-Allow-Origin", "*");
     reply.type(TYPES[extname(key).toLowerCase()] ?? "application/octet-stream");
     return reply.send(createReadStream(path));
