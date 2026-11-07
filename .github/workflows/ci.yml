@@ -83,5 +83,9 @@ jobs:
         # Proves the Prisma-managed schema matches data/tools/db_rows.py (columns and rows).
         run: python data/tools/import_to_db.py --verify
 
+      - name: Test the data pipeline (Veri Döngüsü worker, local-only guard, EVREN client)
+        # The worker's tests make a schema of their own, apply the intake migration there and drop it.
+        run: python -m unittest discover -s data/pipeline/tests
+
       - name: Run tests (unit + integration against PostgreSQL)
         run: npm test

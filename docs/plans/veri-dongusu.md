@@ -216,7 +216,7 @@ Yük yaklaşık eşit: Yiğit API + ekranlar + uygulama akışı; Hüseyin worke
 
 | # | İş | Bağımlılık | Bitti sayılır |
 |---|---|---|---|
-| H0 | `data/pipeline/` iskeleti: `db.py` (yerel-yalnız denetimi, §5.5), `llm.py` (EVREN istemcisi: OpenAI uyumlu `/chat/completions`, adres ve anahtar API ile aynı ortam değişkenlerinden — `ASSISTANT_BASE_URL`, `ASSISTANT_API_KEY`; metin ve görüntü modeli ayrı değişkenlerle seçilir; zaman aşımı, yeniden deneme, oran sınırına uyma), `worker.py` döngüsü (`FOR UPDATE SKIP LOCKED`, yarıda kalan iş kaldığı yerden sürer) | Y0'ın tabloları (o gelene kadar §5.2'ye göre yerel bir taslak tabloyla) | Worker boş kuyrukta bekliyor, sahte bir işi `done`'a taşıyor |
+| H0 | `data/pipeline/` iskeleti: `db.py` (yerel-yalnız denetimi, §5.5), `llm.py` (EVREN istemcisi: OpenAI uyumlu `/chat/completions`, adres ve anahtar API ile aynı ortam değişkenlerinden — `ASSISTANT_BASE_URL`, `ASSISTANT_API_KEY`; metin ve görüntü modeli ayrı değişkenlerle seçilir; zaman aşımı, yeniden deneme, oran sınırına uyma), `worker.py` döngüsü (`FOR UPDATE SKIP LOCKED`, yarıda kalan iş kaldığı yerden sürer) | Y0'ın tabloları (o gelene kadar §5.2'ye göre yerel bir taslak tabloyla) | Worker boş kuyrukta bekliyor, sahte bir işi `done`'a taşıyor ✓ 2026-11-08 |
 | H1 | Ölçüm düzeni: `data/pipeline/eval/`. Altın set: var olan, insanca kontrol edilmiş kayıtlar (Hatay ve Konya). Alan alan doğruluk (tarih, banı, mimar, ilçe, tür, dönem, kitabe sayısı, fotoğraf konusu) | yok | `python3 data/pipeline/eval/run.py --book hatay` bir rapor üretiyor |
 | H2 | Düzen tespiti + kitap haritası: karşılıklı sayfa/sütun/dil tespiti (`hatay_book.py`, `konya_book.py`'deki kuralların genelleştirilmesi) + `book-map.md` istemi | H0 | Hatay ve Konya kitaplarında harita, el yazımı `CONTENTS` listesiyle ≥%90 örtüşüyor |
 | H3 | İstemler (§5.3): `asset-record.md` (PROMPT.md'den), `photo-subject.md`, `inscription-read.md`; her biri H1 ile ölçülür | H1 | Her istem için ölçüm sonucu bu dosyada (§7) |
@@ -238,6 +238,8 @@ Kararlar ve ölçümler buraya yazılır (tarih + kim).
 | 2026-11-08 | Model sağlayıcısı | **Yalnızca EVREN.** Başka sağlayıcı (Claude API vb.) kullanılmaz. Hangi EVREN modelinin hangi işi yapacağı H5'te ölçülerek seçilir. `PROMPT.md` Sonnet ile denenmişti; EVREN'deki kalitesi bilinmiyor, ölçmeden vaat edilmez | Yiğit |
 | 2026-11-08 | Kitabe Gönüllüleri kapsamı | Kitabe yalnızca var olan bir esere eklenir; yeni eser önerisi Saha Defteri'nin işi | Yiğit |
 | 2026-11-08 | Saha ekibi rolü | Bu aşamada mevcut `moderator` rolü; `field` rolü sonra | Yiğit |
+| 2026-11-08 | Worker'ın iş kilidi | `FOR UPDATE SKIP LOCKED` yerine oturum süren advisory lock (`pg_try_advisory_lock`). Satır kilidi iş bitene kadar bir işlemi açık tutar, ilerleme (`progress_done`) API'ye görünmez; advisory lock aynı korumayı verir, worker kapanınca kendiliğinden düşer. Taslaklar `ON CONFLICT (job_id, entry_key) … WHERE status = 'pending'` ile yazılır: onaylanmış/reddedilmiş taslağa dokunulmaz | Hüseyin |
+| 2026-11-08 | EVREN metin modeli | `qwen3.8-flash-next` cevaptan önce düşünüyor (ilk denemede 83 çıktı token'ının 65'i); `max_tokens` bol tutulmalı. Hesapta 1070 kredi var (`usage.evren.credits_remaining_cr`): H5 karşılaştırması bu bütçeyle sınırlı | Hüseyin |
 
 ## 8. Aşamalar ve kontrol noktaları
 
@@ -281,7 +283,9 @@ dev ──► feat/veri-dongusu (ortak, uzun ömürlü; PR ile beslenir)
 
 **İhtiyaç notları** (öbür şeritten istenen değişiklik; ekleyen yazar, sahibi işaretler):
 
-- (boş)
+- **Hüseyin → Yiğit:** Worker'ın metin modeli için `INTAKE_TEXT_MODEL` (yoksa `ASSISTANT_MODEL`), görüntü modeli için `VISION_MODEL` okunuyor. API'de başka bir ad kullanılacaksa söyle, ikisi aynı olsun.
+- **Hüseyin → Yiğit (Y3):** İnceleme ekranındaki PDF sayfası görüntüsünü worker üretebilir (sayfayı PNG'ye çevirip `data/build/media/intake/<iş>/pages/<n>.png`). Sözleşmede bunun yeri yok: `intake_job`'a ya da taslağa bir alan mı, yoksa sabit bir yol kuralı mı? Karar senin.
+- **Hüseyin → Yiğit:** Fotoğrafları iki yer işliyor: API'de `photo-process.ts` (sharp), worker'da `media_pipeline.py` biçimi. Boyutlar (480/1280/2560), anahtar düzeni ve konum bilgisinin silinmesi aynı olmalı; esas alınacak tarafı yazalım. Ben `photo-process.ts`'e uyarım.
 
 ## 11. Yerel kurulum (bir kez)
 
