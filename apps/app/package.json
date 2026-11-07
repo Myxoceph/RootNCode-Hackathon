@@ -13,6 +13,7 @@
     "export": "expo export --platform all",
     "fixtures": "tsx scripts/capture-fixtures.mts",
     "badges": "python3 scripts/cut-badges.py",
+    "sounds": "python3 scripts/make-sounds.py",
     "vendor": "tsx scripts/vendor-web-libs.mts && tsx scripts/vendor-overlay-font.mts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
