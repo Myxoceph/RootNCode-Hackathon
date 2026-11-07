@@ -419,6 +419,9 @@ const tr = {
     inspect: "İncele",
     close: "Kapat",
     relatedList: "İlişkili eser listesini incele",
+    listen: "Sesli dinle",
+    listenLabel: "sesli dinle, eserin 24 saniyelik sesini çalar",
+    stopListening: "Durdur",
   },
   search: {
     placeholderIn: (inCity: string) => `${inCity} eser ara`,
@@ -1717,6 +1720,9 @@ const en: Messages = {
     inspect: "Explore",
     close: "Close",
     relatedList: "Open the list of related sites",
+    listen: "Listen",
+    listenLabel: "listen, plays the site's 24-second sound",
+    stopListening: "Stop",
   },
   search: {
     placeholderIn: (inCity) => `Search sites in ${inCity}`,

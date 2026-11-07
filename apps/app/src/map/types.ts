@@ -70,6 +70,12 @@ export interface MapCityAsset {
   relatedTo?: string[];
 }
 
+/** The asset whose sound "Sesli dinle" plays, and whether it is playing. */
+export interface MapListen {
+  id: string;
+  playing: boolean;
+}
+
 /** The chosen city: a light mist over the map, each of its assets on its own cloud. */
 export interface MapCity {
   plate: number;
@@ -137,6 +143,10 @@ export interface AssetMapProps {
   onOpenRelatedList?: (id: string) => void;
   /** "Not bırak" over an unlocked city asset was tapped. */
   onLeaveNote?: (id: string) => void;
+  /** The chosen asset has a sound: "Sesli dinle" joins its buttons, "Durdur" while it plays. */
+  listen?: MapListen | null;
+  /** "Sesli dinle" (or "Durdur") over an unlocked city asset was tapped. */
+  onListen?: (id: string) => void;
   /** An unlocking scene has finished playing over the map. */
   onSceneEnd?: () => void;
   /** True while the screen wants `onSpots`: the map tour's bubble follows them. */
