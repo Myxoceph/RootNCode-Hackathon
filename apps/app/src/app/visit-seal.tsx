@@ -1,7 +1,6 @@
 import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import * as Haptics from "expo-haptics";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, Animated, Easing, Modal, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
@@ -16,6 +15,7 @@ import { BadgeArt } from "@/components/badge-art";
 import { CameraTopBar } from "@/components/camera-chrome";
 import { DataErrorView } from "@/components/resource-view";
 import { SealSequence } from "@/components/seal-sequence";
+import { SealStamp } from "@/components/seal-stamp";
 import { capsuleForSoundKey } from "@/content/capsules";
 import { communityAvailable, DataError, sendVisitProof, useAsset } from "@/data";
 import { holdBadges } from "@/data/new-badges";
@@ -37,11 +37,6 @@ const GHOST_RECOGNISED = 0.15;
 const HOLD_MS = 1000;
 /** How long a seal that needs the position waits for a fix. */
 const POSITION_WAIT_MS = 5000;
-/** Where the stamp's one animated value stands as the seal hangs over the page, and as it strikes. */
-const STAMP_HANGS = 0.6;
-const STAMP_STRIKES = 0.8;
-/** How long after it starts falling the stamp strikes the page. */
-const STRIKE_MS = 760 + 170 + 120;
 /** The sequence's window is closing for this long: iOS refuses to open another (the badges) meanwhile. */
 const WINDOW_CLOSES_MS = 500;
 
@@ -419,18 +414,15 @@ function PanelBody({
 }
 
 /**
- * The seal comes down like a stamp: it sinks in large and empty, hangs for a beat, and strikes. The ink
- * shows at the strike, a ring spreads from it and the page jolts. A first visit then offers its
- * sequence with one tap (a tap, as many seals are struck inside a mosque or a tomb, where a sound
- * must not start by itself); then what the visit earned.
+ * The seal is stamped (`SealStamp`): a brass stamp strikes and leaves its impression in red ink. A first
+ * visit then offers its sequence with one tap (a tap, as many seals are struck inside a mosque or a tomb,
+ * where a sound must not start by itself); then what the visit earned.
  */
 function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; result: Pick<VisitResponse, "verified" | "firstVisit" | "newAchievements">; onDone: () => void; onSettled: () => void }) {
   const lang = useLang();
   const w = useMessages().seal;
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
-  const stamp = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
-  const strike = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
   const reveal = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
   const [stage, setStage] = useState<"offer" | "sequence" | "result">(result.firstVisit ? "offer" : "result");
 
@@ -442,68 +434,11 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
     return () => clearTimeout(settle);
   }, [stage, onSettled]);
 
-  // The stamp is felt as it strikes.
-  useEffect(() => {
-    const strikeFelt = setTimeout(() => void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy).catch(() => {}), reduceMotion ? 0 : STRIKE_MS);
-    return () => clearTimeout(strikeFelt);
-  }, [reduceMotion]);
-
-  useEffect(() => {
-    if (reduceMotion) {
-      stamp.setValue(1);
-      strike.setValue(1);
-      reveal.setValue(1);
-      return;
-    }
-    const animation = Animated.sequence([
-      Animated.timing(stamp, { toValue: STAMP_HANGS, duration: 760, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-      Animated.delay(170),
-      Animated.timing(stamp, { toValue: STAMP_STRIKES, duration: 120, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
-      Animated.parallel([
-        Animated.spring(stamp, { toValue: 1, damping: 10, stiffness: 180, mass: 0.7, useNativeDriver: true }),
-        Animated.timing(strike, { toValue: 1, duration: 720, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(reveal, { toValue: 1, duration: 520, delay: 300, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-      ]),
-    ]);
-    animation.start();
-    return () => animation.stop();
-  }, [reduceMotion, stamp, strike, reveal]);
-
-  const scale = stamp.interpolate({ inputRange: [0, STAMP_HANGS, STAMP_STRIKES, 1], outputRange: [2.4, 1.26, 0.92, 1] });
-  const rotate = stamp.interpolate({ inputRange: [0, STAMP_HANGS, 1], outputRange: ["-22deg", "-8deg", "-8deg"] });
-  const opacity = stamp.interpolate({ inputRange: [0, STAMP_HANGS * 0.6, 1], outputRange: [0, 1, 1] });
-  const ink = stamp.interpolate({ inputRange: [0, STAMP_STRIKES - 0.02, STAMP_STRIKES, 1], outputRange: [0, 0, 1, 1] });
-  const jolt = strike.interpolate({ inputRange: [0, 0.06, 0.14, 0.24, 0.36, 1], outputRange: [0, 5, -3, 2, -1, 0] });
   const date = new Date().toLocaleDateString(localeTag(lang), { day: "numeric", month: "long", year: "numeric" });
 
   return (
     <ScrollView contentContainerStyle={[styles.sealed, { paddingTop: insets.top + 96, paddingBottom: insets.bottom + spacing.xl }]}>
-      <Animated.View style={[styles.sealStage, { transform: [{ translateY: jolt }] }]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
-        <Animated.View
-          style={[
-            styles.sealRing,
-            {
-              opacity: strike.interpolate({ inputRange: [0, 0.02, 1], outputRange: [0, 0.9, 0] }),
-              transform: [{ scale: strike.interpolate({ inputRange: [0, 1], outputRange: [0.96, 1.6] }) }],
-            },
-          ]}
-        />
-        <Animated.View style={[styles.seal, { opacity, transform: [{ scale }, { rotate }] }]}>
-          <View style={styles.sealInner}>
-            <Animated.View style={[styles.sealInk, { opacity: ink }]}>
-              <Text style={styles.sealCaption} colorValue={cameraColors.gold}>
-                {w.stamp}
-              </Text>
-              <Text variant="heading" colorValue={cameraColors.text} style={styles.centerText} numberOfLines={2}>
-                {asset.name}
-              </Text>
-              <Text style={styles.sealCaption} colorValue={cameraColors.textSecondary}>
-                {date.toLocaleUpperCase(lang)}
-              </Text>
-            </Animated.View>
-          </View>
-        </Animated.View>
-      </Animated.View>
+      <SealStamp name={asset.name} caption={w.stamp} date={date.toLocaleUpperCase(lang)} reduceMotion={reduceMotion} reveal={reveal} />
 
       <Animated.View style={[styles.sealedText, { opacity: reveal, transform: [{ translateY: reveal.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}>
         <Text variant="title" colorValue={cameraColors.text} style={styles.centerText} headingLevel={2}>
@@ -661,52 +596,10 @@ const styles = StyleSheet.create({
     width: "100%",
     alignSelf: "center",
   },
-  sealStage: {
-    width: 220,
-    height: 220,
-    marginBottom: spacing.lg,
-  },
-  sealRing: {
-    position: "absolute",
-    width: 220,
-    height: 220,
-    borderRadius: 110,
-    borderWidth: 3,
-    borderColor: cameraColors.gold,
-  },
   sealedText: {
     alignSelf: "stretch",
     alignItems: "center",
     gap: spacing.md,
-  },
-  seal: {
-    width: 220,
-    height: 220,
-    borderRadius: 110,
-    borderWidth: 3,
-    borderColor: cameraColors.gold,
-    padding: 8,
-  },
-  sealInk: {
-    alignItems: "center",
-    gap: spacing.xs,
-  },
-  sealInner: {
-    flex: 1,
-    borderRadius: 110,
-    borderWidth: 1,
-    borderColor: cameraColors.gold,
-    borderStyle: "dashed",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.xs,
-    padding: spacing.lg,
-  },
-  sealCaption: {
-    fontFamily: fontFamily.monoMedium,
-    fontSize: 12,
-    lineHeight: 16,
-    letterSpacing: 2,
   },
   badges: {
     alignSelf: "stretch",
