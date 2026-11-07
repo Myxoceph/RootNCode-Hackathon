@@ -787,7 +787,10 @@ model intake_job {
   title            String
   city             String
   source_id        String?
-  file_path        String
+  /// A book's PDF (kind=pdf); null for a chat.
+  file_path        String?
+  /// A chat's messages and photos (kind=chat, IntakeChatInputSchema); null for a book.
+  input            Json?
   layout           Json?
   book_map         Json?
   map_confirmed_at DateTime?      @db.Timestamptz(6)

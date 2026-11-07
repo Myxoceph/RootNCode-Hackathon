@@ -120,7 +120,7 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
     expect(job).toMatchObject({ status: "queued", city: "bursa", title: "Bursa Vakıf Eserleri", bookMap: null, progress: { done: 0, total: 0 } });
     const row = await prisma.intake_job.findUniqueOrThrow({ where: { id: job.id } });
     expect(row.file_path).toBe(`data/build/cache/intake/${job.id}/source.pdf`);
-    expect(readFileSync(join(root, row.file_path))).toEqual(PDF);
+    expect(readFileSync(join(root, row.file_path!))).toEqual(PDF);
 
     const list = IntakeJobListResponseSchema.parse((await json("GET", "/admin/intake/jobs", moderator)).json());
     expect(list.items.map((j) => j.id)).toContain(job.id);

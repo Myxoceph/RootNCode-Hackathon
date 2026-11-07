@@ -25,7 +25,7 @@ Panel: sohbet  ──▶  API: mesajı + fotoğrafları saklar, iş açar (intak
                eksik alanlar → intake_draft (kind=field_asset, entry_key='chat')
                       │
                       ▼
-               Onay kuyruğu (Y3) → uzman düzeltir, onaylar → asset (in_review)
+               Onay kuyruğu (Y3) → uzman düzeltir, onaylar (= yayın kararı) → worker yayınlar (H6)
 ```
 
 Model çağrılarının hepsi worker'da: API EVREN'e bu akış için istek atmaz, yalnızca saklar ve sunar.
@@ -137,6 +137,35 @@ yalnızca `pdf` için. Worker bunu kendi tarafında ayırıyor.
 
 ---
 
+### 1.6 Uygulandı (Y2, 2026-11-08) — worker için bilmen gerekenler
+
+Sözleşme `packages/contracts/src/intake.schema.ts`, migration `20261108130000_intake_chat`, uçlar
+`apps/api/src/modules/intake/intake-chat.routes.ts`. Önerinden farkları ve worker'a düşen kurallar:
+
+- **Şehir zorunlu.** `intake_job.city` NOT NULL; sohbet başlatılırken admin şehri seçer
+  (`POST /admin/intake/chats` gövdesinde `city`). İlçe ve konumu bu şehrin içinde ara.
+- **Başlık** ilk mesajın ilk satırı (en çok 120 karakter); boşsa "Fotoğraflar".
+- **Fotoğraf akışı:** önce `POST /admin/intake/uploads` (ham gövde, `image/jpeg|png|webp`, ≤15 MB) → işlenir
+  (`photo-process.ts`), sürümler yerel depoda `intake/<yükleme>/<genişlik>.<webp|jpg>`; orijinal olduğu gibi
+  saklanır. Mesaj gönderilince orijinal `data/build/cache/intake/<iş>/files/<n>.<uzantı>`'ya taşınır
+  (`input.files[].path`, n sohbetteki sıra). `files[].key` = 1280 px JPEG (`intake/<yükleme>/1280.jpg`; küçük
+  fotoğrafta en büyük JPEG). **Yayında** (H6) bu sürümleri `assets/<eser>/<medya>/…` düzenine taşı.
+- **`input.assetId` her zaman `null`** (bir sohbet = bir yeni eser).
+- **`missing`** `IntakeValidationSchema`'da (`default([])`); eski satırlar onsuz da okunur.
+- **Kaynak alıntısı:** `IntakeSourceRefSchema` iki biçimin birleşimi; sohbet için `{ field, message, quote }`.
+- **Mesaj ekleme ve worker (önemli):** `POST /admin/intake/chats/:id/messages` iş `drafting`'teyken 409 döner,
+  taslak onaylanmış/reddedilmişse 409 `CHAT_CLOSED`. Girdiyi değiştirip işi yeniden `queued` yapar ve
+  `updated_at`'i yeniler. **Worker işi bitirirken `done`'ı yalnızca girdi değişmediyse yazmalı:**
+  `UPDATE intake_job SET status = 'done' … WHERE id = $1 AND updated_at = <işi alırken okuduğun updated_at>`
+  (ya da işi alırken `input`'u `UPDATE … SET status = 'drafting' WHERE status = 'queued' RETURNING input,
+  updated_at` ile tek adımda oku). Yoksa işi alıp `drafting`'e çekmeden önceki anda gelen bir mesaj, eski
+  girdiyle yazılan taslağın altında kaybolur.
+- **Kısıtlar:** kitap ve sohbet taslağı bir işe ve satıra bağlı (`entry_key`, sohbette `'chat'`); ziyaretçinin
+  kitabesi ikisine de değil. Kitabın `file_path`'i var, sohbetin `input`'u var.
+- **Bayraklar** `1`/`0`'ı da kabul ediyor.
+- **Doğrulanamadı:** worker testlerin benim makinemde Docker yüzünden (planın §10'u) açılmıyor; yeni
+  migration'la geçtiklerini sen doğrula.
+
 ## 2. Daha önceki ihtiyaç notları (planın §10'unda da var)
 
 1. **Model değişkenleri.** Worker metin modeli için `INTAKE_TEXT_MODEL` (yoksa `ASSISTANT_MODEL`), görüntü
@@ -170,7 +199,18 @@ yalnızca `pdf` için. Worker bunu kendi tarafında ayırıyor.
 - Sohbet kaynakları için `data/sources.json`'a `vagabonds-panel` eklendi (`pages`: "mesaj 2"). Onaylanan sohbet
   kayıtları `source_refs`'te bunu gösterir; uzman asıl kaynağı biliyorsa ekler.
 
-## 4. Açık sorular (cevabı bu dosyaya ya da plana yaz)
+## 4. Açık sorular (cevaplandı, 2026-11-08; kararlar planın §7'sinde)
+
+- **Var olan eseri sohbetle düzeltmek:** şimdilik yok. `input.assetId` her zaman `null`.
+- **Bir sohbet = bir eser:** evet.
+- **Onaydan sonra:** `in_review` değil, yayın (planın kararı korunur).
+- **Fotoğraf yükleme:** çok parçalı istek yerine önce `POST /admin/intake/uploads`, sonra mesaj yükleme kimlikleriyle.
+- **Model değişkeni:** API sohbet için modele istek atmaz; Kitabe Gönüllüleri (H7) `VISION_MODEL`'i okur. Adlar aynı.
+- **PDF sayfa görüntüsü:** sabit yol, `intake/<iş>/pages/<n>.webp`.
+- **Fotoğraf işleme:** esas `photo-process.ts`; ayrıntı §7'de.
+- **Kitabe Gönüllüleri API'si** Hüseyin'e geçti (H7).
+
+## 4a. Eski sorular
 
 - Sohbet bir **var olan eseri düzeltmek** için de kullanılacak mı (`input.assetId`)? Kullanılacaksa onay,
   yeni eser yerine var olan esere değişiklik olarak yazılır; Y1'in onay akışını etkiler.

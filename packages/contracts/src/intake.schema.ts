@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { SEAL_SUBJECTS } from "./achievement.schema";
 import { AssetIdSchema, ContractVersionSchema } from "./asset.schema";
-import { InscriptionLanguageSchema } from "./admin.schema";
+import { ADMIN_PHOTO_MAX_BYTES, ADMIN_PHOTO_TYPES, InscriptionLanguageSchema } from "./admin.schema";
 
 /**
  * Veri Döngüsü (docs/plans/veri-dongusu.md): data that comes in to be reviewed before it is
@@ -17,7 +17,8 @@ import { InscriptionLanguageSchema } from "./admin.schema";
 // ── States ──────────────────────────────────────────────────────────────────────────────────
 
 /**
- * A book's way through the pipeline: `queued` (uploaded) → `mapping` (the worker reads the layout
+ * A chat (Sohbetten Kabul) goes `queued` → `drafting` → `done`, and back to `queued` with each new
+ * message. A book's way through the pipeline: `queued` (uploaded) → `mapping` (the worker reads the layout
  * and the contents) → `needs_map` (a person checks the book map) → `map_confirmed` → `drafting`
  * (one draft per asset) → `done`. `failed` keeps the error; the worker resumes from where it was.
  */
@@ -78,10 +79,46 @@ export type BookMapEntry = z.infer<typeof BookMapEntrySchema>;
 
 export const BookMapSchema = z.array(BookMapEntrySchema).max(500);
 
+// ── Chat (Sohbetten Kabul) ─────────────────────────────────────────────────────────────────
+
+/** `pdf`: a book (PDF Kabul) · `chat`: an admin's messages and photos about one new asset (Sohbetten Kabul). */
+export const IntakeJobKindSchema = z.enum(["pdf", "chat"]);
+export type IntakeJobKind = z.infer<typeof IntakeJobKindSchema>;
+
+/** A photo sent in a chat. */
+export const IntakeChatFileSchema = z.strictObject({
+  /** `data/build/cache/intake/<job>/files/<name>`: the ORIGINAL file, unprocessed (with its EXIF, for the place it was taken). Not in git. */
+  path: z.string().min(1).max(400),
+  name: z.string().max(200),
+  mime: z.string().max(80),
+  /** The processed photo's 1280 px JPEG in the local media store (`intake/<upload>/1280.jpg`); the worker moves it under `assets/` when publishing. */
+  key: z.string().max(400).nullable(),
+  width: z.int().min(1).nullable(),
+  height: z.int().min(1).nullable(),
+  /** Which message it came with (index in `messages`). */
+  message: z.int().min(0),
+});
+export type IntakeChatFile = z.infer<typeof IntakeChatFileSchema>;
+
+export const IntakeChatMessageSchema = z.strictObject({
+  text: z.string().max(50_000),
+  at: z.iso.datetime({ offset: true }),
+  by: z.uuid().nullable(),
+});
+
+/** What the admin said and sent: the only source the worker may draft from. */
+export const IntakeChatInputSchema = z.strictObject({
+  messages: z.array(IntakeChatMessageSchema).min(1).max(200),
+  files: z.array(IntakeChatFileSchema).max(60),
+  /** The asset this chat corrects. Always null for now: a chat brings one new asset (plan §7). */
+  assetId: AssetIdSchema.nullable(),
+});
+export type IntakeChatInput = z.infer<typeof IntakeChatInputSchema>;
+
 /** `GET /admin/intake/jobs/:id`, and each row of `GET /admin/intake/jobs` */
 export const IntakeJobSchema = z.strictObject({
   id: z.uuid(),
-  kind: z.literal("pdf"),
+  kind: IntakeJobKindSchema,
   status: IntakeJobStatusSchema,
   title: z.string(),
   city: CityCodeSchema,
@@ -92,6 +129,8 @@ export const IntakeJobSchema = z.strictObject({
   mapConfirmedAt: Timestamp.nullable(),
   progress: z.strictObject({ done: z.int().min(0), total: z.int().min(0) }),
   error: z.string().nullable(),
+  /** A chat's messages and photos; null for a book, and in lists (a chat can be long). */
+  input: IntakeChatInputSchema.nullable(),
   createdAt: Timestamp,
   updatedAt: Timestamp,
 });
@@ -113,7 +152,6 @@ export const IntakeMapConfirmRequestSchema = z.strictObject({
   sourceId: z.string().trim().min(2).max(80).optional(),
 });
 
-export const IntakeJobResponseSchema = z.strictObject({ version: ContractVersionSchema, job: IntakeJobSchema });
 export const IntakeJobListResponseSchema = z.strictObject({ version: ContractVersionSchema, items: z.array(IntakeJobSchema) });
 
 // ── Drafts ──────────────────────────────────────────────────────────────────────────────────
@@ -136,17 +174,31 @@ export const IntakeDraftMediaSchema = z.strictObject({
 });
 export type IntakeDraftMedia = z.infer<typeof IntakeDraftMediaSchema>;
 
-/** Where in the book a field's value comes from: shown beside the field in review. */
-export const IntakeSourceRefSchema = z.strictObject({
-  /** JSON pointer into the draft's record, e.g. `/dating/year`. */
-  field: z.string().min(1).max(200),
-  pages: z.array(PageSchema).min(1).max(40),
-});
+/**
+ * Where a field's value comes from, shown beside the field in review: pages of the book, or the
+ * sentence of a chat message. A chat value's quote appears word for word in that message: the worker
+ * checks it and leaves out a value it cannot quote (plan §7, the quote rule).
+ */
+export const IntakeSourceRefSchema = z.union([
+  z.strictObject({
+    /** JSON pointer into the draft's record, e.g. `/dating/year`. */
+    field: z.string().min(1).max(200),
+    pages: z.array(PageSchema).min(1).max(40),
+  }),
+  z.strictObject({
+    field: z.string().min(1).max(200),
+    /** Index in the chat's `messages`. */
+    message: z.int().min(0),
+    quote: z.string().min(1).max(500),
+  }),
+]);
 
 /** `validate.py`'s findings on the record: errors block approval, warnings do not. */
 export const IntakeValidationSchema = z.strictObject({
   errors: z.array(z.string().max(500)).max(200),
   warnings: z.array(z.string().max(500)).max(200),
+  /** Fields the source did not give (JSON pointers, e.g. `/district`): the panel asks for them. */
+  missing: z.array(z.string().max(200)).max(100).default([]),
 });
 
 /** Which model wrote the draft and how. */
@@ -247,3 +299,60 @@ export const IntakeReviewRequestSchema = z.discriminatedUnion("decision", [
 ]);
 
 export const IntakeDraftResponseSchema = z.strictObject({ version: ContractVersionSchema, draft: IntakeDraftSchema });
+
+/** `GET /admin/intake/jobs/:id` and the chat routes: the job, and for a chat its draft once the worker wrote it. */
+export const IntakeJobResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  job: IntakeJobSchema,
+  draft: IntakeDraftSchema.nullable().default(null),
+});
+
+// ── Chat requests ──────────────────────────────────────────────────────────────────────────
+
+export const INTAKE_UPLOAD_TYPES = ADMIN_PHOTO_TYPES;
+export const INTAKE_UPLOAD_MAX_BYTES = ADMIN_PHOTO_MAX_BYTES;
+
+/** `POST /admin/intake/uploads`: the body is the photo itself; its file name goes in the query. */
+export const IntakeUploadQuerySchema = z.object({
+  name: z.string().trim().min(1).max(200).optional(),
+});
+
+/** A photo uploaded for a chat message, before the message is sent. */
+export const IntakeUploadSchema = z.strictObject({
+  id: z.uuid(),
+  name: z.string().max(200),
+  mime: z.string().max(80),
+  /** Its 1280 px JPEG in the local media store, to show while the message is written. */
+  key: z.string().max(400),
+  width: z.int().min(1),
+  height: z.int().min(1),
+});
+export type IntakeUpload = z.infer<typeof IntakeUploadSchema>;
+
+export const IntakeUploadResponseSchema = z.strictObject({ version: ContractVersionSchema, upload: IntakeUploadSchema });
+
+/**
+ * `POST /admin/intake/chats` (starts a chat) and `POST /admin/intake/chats/:id/messages` (adds to one):
+ * a message, with the photos uploaded for it. Either may be empty, not both.
+ */
+const ChatMessageFields = {
+  text: z.string().trim().max(50_000).default(""),
+  uploads: z.array(z.uuid()).max(20).default([]),
+};
+const hasContent = (m: { text: string; uploads: string[] }) => m.text.length > 0 || m.uploads.length > 0;
+const uploadsOnce = (m: { uploads: string[] }) => new Set(m.uploads).size === m.uploads.length;
+
+export const IntakeChatMessageRequestSchema = z
+  .strictObject(ChatMessageFields)
+  .refine(hasContent, "a message needs text or a photo")
+  .refine(uploadsOnce, "an upload is sent once");
+
+/** `POST /admin/intake/chats`: the first message, and the city the asset is in (the worker reads districts and places within it). */
+export const IntakeChatCreateRequestSchema = z
+  .strictObject({ ...ChatMessageFields, city: CityCodeSchema })
+  .refine(hasContent, "a message needs text or a photo")
+  .refine(uploadsOnce, "an upload is sent once");
+
+/** Most messages and photos one chat holds (IntakeChatInputSchema). */
+export const INTAKE_CHAT_MAX_MESSAGES = 200;
+export const INTAKE_CHAT_MAX_FILES = 60;

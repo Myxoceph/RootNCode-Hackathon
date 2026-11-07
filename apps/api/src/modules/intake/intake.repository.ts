@@ -1,5 +1,7 @@
 import {
   BookMapSchema,
+  IntakeChatInputSchema,
+  type IntakeChatInput,
   IntakeAiSchema,
   IntakeDraftMediaSchema,
   IntakeLayoutSchema,
@@ -33,10 +35,11 @@ const iso = (date: Date | null) => (date ? date.toISOString() : null);
 /** Text the worker may have written longer than the contract allows: cut, so one row cannot break a list. */
 const clip = (text: string | null, max: number) => (text !== null && text.length > max ? `${text.slice(0, max - 1)}…` : text);
 
-export function toIntakeJob(row: JobRow): IntakeJob {
+/** A job as the API gives it; `withInput` adds a chat's messages (left out of lists: a chat can be long). */
+export function toIntakeJob(row: JobRow, withInput = false): IntakeJob {
   return {
     id: row.id,
-    kind: "pdf",
+    kind: row.kind as IntakeJob["kind"],
     status: row.status as IntakeJob["status"],
     title: row.title,
     city: row.city,
@@ -46,6 +49,7 @@ export function toIntakeJob(row: JobRow): IntakeJob {
     mapConfirmedAt: iso(row.map_confirmed_at),
     progress: { done: row.progress_done, total: row.progress_total },
     error: row.error,
+    input: withInput ? lenient(IntakeChatInputSchema.nullable(), row.input, null) : null,
     createdAt: row.created_at.toISOString(),
     updatedAt: row.updated_at.toISOString(),
   };
@@ -62,7 +66,7 @@ export function toIntakeDraft(row: DraftRow): IntakeDraft {
     record: lenient(z.record(z.string(), z.unknown()), row.record, {}),
     media: lenient(z.array(IntakeDraftMediaSchema), row.media, []),
     sourceRefs: lenient(z.array(IntakeSourceRefSchema), row.source_refs, []),
-    validation: lenient(IntakeValidationSchema, row.validation, { errors: ["validation: unreadable"], warnings: [] }),
+    validation: lenient(IntakeValidationSchema, row.validation, { errors: ["validation: unreadable"], warnings: [], missing: [] }),
     ai: lenient(IntakeAiSchema.nullable(), row.ai, null),
     duplicateOf: row.duplicate_of,
     note: clip(row.note, 1000),
@@ -97,6 +101,30 @@ export function createIntakeRepository(prisma: PrismaClient) {
 
     findJob(id: string) {
       return prisma.intake_job.findUnique({ where: { id } });
+    },
+
+    createChatJob(data: { id: string; title: string; city: string; input: IntakeChatInput; createdBy: string }) {
+      return prisma.intake_job.create({
+        data: { id: data.id, kind: "chat", title: data.title, city: data.city, input: data.input as Prisma.InputJsonValue, created_by: data.createdBy },
+      });
+    },
+
+    /**
+     * A chat's input with a new message, queued again for the worker. Only if the job is as it was
+     * read (`updatedAt`) and not being drafted: false when the worker took it up meanwhile, so a
+     * message is never lost under a draft written from the older input.
+     */
+    async appendChat(id: string, input: IntakeChatInput, readAt: Date): Promise<boolean> {
+      const { count } = await prisma.intake_job.updateMany({
+        where: { id, kind: "chat", updated_at: readAt, status: { in: ["queued", "done", "failed"] } },
+        data: { input: input as Prisma.InputJsonValue, status: "queued", error: null, updated_at: new Date() },
+      });
+      return count === 1;
+    },
+
+    /** The one draft of a chat (entry_key 'chat'), or of nothing. */
+    findDraftOfJob(jobId: string) {
+      return prisma.intake_draft.findFirst({ where: { job_id: jobId }, orderBy: { created_at: "desc" } });
     },
 
     /** Only from `needs_map`: false when the job was elsewhere (another person confirmed it first). */
