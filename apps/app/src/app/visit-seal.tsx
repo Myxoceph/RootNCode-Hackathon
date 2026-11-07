@@ -415,13 +415,14 @@ function PanelBody({
 }
 
 /**
- * The seal is stamped (`SealStamp`): a brass stamp strikes and leaves its impression in red ink. A first
+ * The seal is stamped (`SealStamp`): one red seal comes down, strikes and its ink soaks into the page. A first
  * visit then offers its sequence with one tap (a tap, as many seals are struck inside a mosque or a tomb,
  * where a sound must not start by itself); then what the visit earned.
  */
 function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; result: Pick<VisitResponse, "verified" | "firstVisit" | "newAchievements">; onDone: () => void; onSettled: () => void }) {
   const lang = useLang();
-  const w = useMessages().seal;
+  const m = useMessages();
+  const w = m.seal;
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();
   const reveal = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
@@ -439,7 +440,7 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
 
   return (
     <ScrollView contentContainerStyle={[styles.sealed, { paddingTop: insets.top + 96, paddingBottom: insets.bottom + spacing.xl }]}>
-      <SealStamp name={asset.name} caption={w.stamp} date={date.toLocaleUpperCase(lang)} reduceMotion={reduceMotion} reveal={reveal} />
+      <SealStamp name={asset.name} ring={`${w.stamp} • ${m.profile.issuer.toLocaleUpperCase(lang)}`} date={date.toLocaleUpperCase(lang)} reduceMotion={reduceMotion} reveal={reveal} />
 
       <Animated.View style={[styles.sealedText, { opacity: reveal, transform: [{ translateY: reveal.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}>
         <Text variant="title" colorValue={cameraColors.text} style={styles.centerText} headingLevel={2}>
