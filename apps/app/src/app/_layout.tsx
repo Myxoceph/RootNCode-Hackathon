@@ -11,7 +11,7 @@ import {
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { Platform } from "react-native";
+import { Platform, View } from "react-native";
 
 import { BadgeCelebration } from "@/components/badge-celebration";
 import { OfflineBanner } from "@/components/offline-banner";
@@ -25,12 +25,17 @@ import { useLang, useLangSettled, useMessages } from "@/i18n";
 
 SplashScreen.preventAutoHideAsync();
 
+/** The page's name for a screen reader only: nothing is written at the head of Profil's pages, as on the web. */
+function UnseenHeaderTitle({ children }: { children: string }) {
+  return <View accessible accessibilityRole="header" accessibilityLabel={children} style={{ width: 1, height: 1 }} />;
+}
+
 /**
  * Profil's pages on the web: the site's bar on top, then the way back and the title (`WebPageHeader`),
  * instead of the phone's plain header. The phone keeps its own.
  */
 function profilePage(title: string, back: string, fromSaved = false) {
-  if (Platform.OS !== "web") return { title, headerBackTitle: back };
+  if (Platform.OS !== "web") return { title, headerBackTitle: back, headerTitle: UnseenHeaderTitle };
   return {
     title,
     // The page may name itself later (a trip's own title): the header reads it from the options.
@@ -155,6 +160,10 @@ function ThemedStack() {
           <Stack.Screen
             name="profile/notes"
             options={profilePage(m.screens.notes, m.tabs.profile)}
+          />
+          <Stack.Screen
+            name="profile/journal"
+            options={profilePage(m.screens.journal, m.tabs.profile)}
           />
           {/* An eser kartı over the Profil page it was opened from; it draws its own close button. */}
           <Stack.Screen

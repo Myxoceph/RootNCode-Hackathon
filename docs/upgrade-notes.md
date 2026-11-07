@@ -7,6 +7,24 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-07 · Anı Defteri (sözleşme 0.3.33)
+
+Kimler: **API'yi yerelde çalıştıranlar**, **sunucuyu yöneten**, **uygulamayı derleyenler**
+
+1. Herkes: `npm install` (yeni paketler: `expo-image-picker`, `@expo-google-fonts/caveat`).
+2. API'yi yerelde çalıştıranlar: `npm run db:deploy -w apps/api`, `npm run prisma:generate -w apps/api`, API'yi yeniden başlat.
+3. Sunucuyu yöneten: `npm run db:deploy` dışında ayar yok. Yedekler defter fotoğrafları kadar büyür (ADR 0004).
+4. Telefondaki uygulama yeniden derlenmeli: `expo-image-picker` yerel modül, ayrıca uygulama artık yalnızca dikey çalışıyor (`app.json`, `orientation`).
+
+Değişenler:
+- `/me/journal` uçları ve `/journal-photos/:id/:size` (yalnızca imzalı adresle). Profil'de "Anı Defteri" satırı.
+- Sayfalar elle düzenlenebilir ve üzerine çizim yapılabilir: `journal_entry.layout`, `has_drawing` (üç migration var, hepsi `db:deploy` ile gelir).
+- Sayfalara sticker eklenebilir. Çizimler uygulamanın içinde (`lib/journal-stickers.ts`), sayfaya yalnızca adı kaydedilir; yeni kurulum gerekmez.
+- Profil yeniden düzenlendi: defter en üstte açık kitap olarak durur, Profil sayfalarının üst çubuğunda başlık yazmaz. Haritanın "kaldığın yer" perdesi de yenilendi.
+- Fotoğraflar herkese açık R2'ye gitmez, veritabanında durur: gerekçe `docs/decisions/0004-ani-defteri.md`.
+
+---
+
 ## 2026-11-06 · Mühür sekansı ve yeni kapsül sesleri
 
 Kimler: **Mobil geliştirenler**, **Kübra (metinler)**
