@@ -65,6 +65,7 @@ import {
   wideColumn,
 } from "@/lib/use-wide-web";
 import { localeTag, useLang, useMessages } from "@/i18n";
+import { RewardArt } from "@/components/reward-art";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 type Filter = RewardKind | "all";
@@ -271,6 +272,8 @@ function memberSince(createdAt: string | null): string | null {
 
 /** The night of the reward tiles. */
 const HERO_BG = "#0A1126";
+/** The reward's drawing on a featured tile, at its top right. */
+const TILE_ART = 84;
 
 /** Vakıf Katılım's VKart, whose rewards these are. */
 const VK_CARD = require("../../../assets/images/rewards/vk-kart.jpg") as number;
@@ -570,7 +573,8 @@ function FeaturedTile({
   const balance = wallet?.balance ?? 0;
   const share = Math.min(1, balance / reward.costPoints);
   const ready = block.kind === null;
-  const height = 196;
+  // Tall enough that a two-line title stays under the drawing, not over it.
+  const height = 212;
 
   useEffect(() => {
     if (reduced) return;
@@ -624,13 +628,9 @@ function FeaturedTile({
           <Rect width={width} height={height} fill={HERO_BG} />
           <Rect width={width} height={height} fill={`url(#${tileId})`} />
         </Svg>
-        <Ionicons
-          name={look.icon.replace("-outline", "") as IconName}
-          size={150}
-          color="#FFFFFF"
-          style={styles.tileMark}
-          aria-hidden
-        />
+        <View style={styles.tileArt} pointerEvents="none">
+          <RewardArt code={reward.code} kind={reward.kind} tone={look.dark} size={TILE_ART} />
+        </View>
 
         <View style={styles.tileTop}>
           <Text colorValue="rgba(255,255,255,0.72)" style={styles.tileKind}>
@@ -851,14 +851,7 @@ function RewardCard({
             <Circle cx="82%" cy="18%" r={46} fill={hue} fillOpacity={0.08} />
             <Circle cx="12%" cy="100%" r={34} fill={hue} fillOpacity={0.08} />
           </Svg>
-          <View
-            style={[
-              styles.cardIcon,
-              { backgroundColor: c.surface, borderColor: `${hue}55` },
-            ]}
-          >
-            <Ionicons name={look.icon} size={26} color={hue} />
-          </View>
+          <RewardArt code={reward.code} kind={reward.kind} tone={hue} size={108} />
           {reward.sample && (
             <View style={[styles.tag, { backgroundColor: c.surface }]}>
               <Text colorValue={c.textSecondary} style={styles.tagText}>
@@ -987,7 +980,7 @@ function Ticket({
       ]}
     >
       <View style={[styles.stub, { backgroundColor: `${hue}1A` }]}>
-        <Ionicons name={look.icon} size={24} color={hue} />
+        <RewardArt code={redemption.reward.code} kind={redemption.reward.kind} tone={hue} size={56} />
       </View>
       <View style={styles.perforation} aria-hidden>
         <View
@@ -1103,7 +1096,7 @@ function RewardSheet({
     <Sheet visible={reward !== null} onClose={onClose}>
         <View style={[styles.grabber, { backgroundColor: c.border }]} />
         <View style={[styles.sheetIcon, { backgroundColor: `${hue}1A` }]}>
-          <Ionicons name={look.icon} size={40} color={hue} />
+          <RewardArt code={shown.code} kind={shown.kind} tone={hue} size={128} />
         </View>
         <View style={styles.sheetHead}>
           <Text variant="caption" color="textSecondary" style={styles.centered}>
@@ -1489,12 +1482,10 @@ const styles = StyleSheet.create({
   tilePressed: {
     transform: [{ scale: 0.97 }],
   },
-  tileMark: {
+  tileArt: {
     position: "absolute",
-    right: -28,
-    bottom: -30,
-    opacity: 0.1,
-    transform: [{ rotate: "-12deg" }],
+    top: spacing.xs,
+    right: spacing.sm,
   },
   tileTop: {
     flexDirection: "row",
@@ -1639,18 +1630,10 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   cardArt: {
-    height: 104,
+    height: 128,
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-  },
-  cardIcon: {
-    width: 56,
-    height: 56,
-    borderRadius: 18,
-    borderWidth: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
   tag: {
     position: "absolute",
@@ -1809,9 +1792,9 @@ const styles = StyleSheet.create({
     borderRadius: 3,
   },
   sheetIcon: {
-    width: 84,
-    height: 84,
-    borderRadius: 26,
+    width: 148,
+    height: 148,
+    borderRadius: 40,
     alignItems: "center",
     justifyContent: "center",
   },
