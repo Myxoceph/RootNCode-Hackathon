@@ -36,7 +36,12 @@ export type TrackerEvent =
   | { type: "step"; step: TrackerStep }
   /** Tracker frames processed per second over the last two seconds. */
   | { type: "stats"; fps: number }
+  /** The frame frozen by `capture`, searched again: the target it shows, or null; `error` when the search itself failed. */
+  | { type: "captured"; target: number | null; ms: number; error?: string }
   | { type: "error"; reason: TrackerFailure; message: string };
+
+/** What the app asks of the tracker page: freeze a frame and check it, or let the camera run on. */
+export type TrackerCommand = "capture" | "resume";
 
 export function parseTrackerEvent(data: unknown): TrackerEvent | null {
   if (typeof data !== "string") return null;

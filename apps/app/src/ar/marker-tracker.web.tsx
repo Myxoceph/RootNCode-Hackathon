@@ -1,5 +1,5 @@
 import { cameraColors } from "@vagabonds/ui";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useImperativeHandle, useMemo, useRef } from "react";
 import { StyleSheet, View } from "react-native";
 
 import { loadMindar, loadOverlayFont, useVendored } from "@/vendor";
@@ -14,7 +14,7 @@ import { useMessages } from "@/i18n";
  * camera screens keep to their camera-free versions on the web (ADR 0001);
  * this lets the prototype be tried in a phone's browser and on a laptop.
  */
-export function MarkerTracker({ target, overlays, onEvent, style }: MarkerTrackerProps) {
+export function MarkerTracker({ target, overlays, onEvent, style, ref }: MarkerTrackerProps) {
   const mindarScript = useVendored(loadMindar);
   const overlayFont = useVendored(loadOverlayFont);
   const html = useMemo(
@@ -25,6 +25,9 @@ export function MarkerTracker({ target, overlays, onEvent, style }: MarkerTracke
   );
   const frame = useRef<HTMLIFrameElement>(null);
   const title = useMessages().tabs.camera;
+  useImperativeHandle(ref, () => ({
+    send: (command) => frame.current?.contentWindow?.postMessage(JSON.stringify({ command }), "*"),
+  }));
 
   useEffect(() => {
     const listener = (message: MessageEvent) => {
