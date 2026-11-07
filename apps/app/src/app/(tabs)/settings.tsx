@@ -37,6 +37,7 @@ import Svg, {
   Stop,
 } from "react-native-svg";
 
+import { OpenBookLink } from "@/components/journal/open-book";
 import {
   avatarUri,
   logout,
@@ -65,8 +66,8 @@ const PHOTO_H = 132;
 const STAR_SQUARE = "M22 22 H78 V78 H22 Z";
 
 /**
- * Profil: the visitor's passport (name, account, points, badges and visits) and five sections as
- * one list, each row to its own page: Kaydettiklerim, Mühürlenen eserler, Rozetlerim, Bıraktığım Notlar and Sistem ayarları
+ * Profil: the Anı Defteri lying open at the head of the page, the visitor's passport (name, account,
+ * points, badges and visits) and its sections as one list, each row to its own page: Kaydettiklerim, Mühürlenen eserler, Rozetlerim, Bıraktığım Notlar and Sistem ayarları
  * (module 8). The passport is gül kurusu (dusty rose) and gold in both themes.
  */
 export default function SettingsScreen() {
@@ -137,10 +138,11 @@ export default function SettingsScreen() {
           </View>
           <View style={styles.wideRow}>
             <View style={styles.wideSide}>
+              <OpenBookLink />
               <Passport />
             </View>
             <View style={styles.wideMain}>
-              <Sections grid />
+              <Sections />
             </View>
           </View>
         </View>
@@ -151,6 +153,7 @@ export default function SettingsScreen() {
             {m.tabs.profile}
           </Text>
 
+          <OpenBookLink />
           <Passport />
           <Sections />
           {signOut}
@@ -304,8 +307,8 @@ function Passport() {
 
           <View style={styles.stats}>
             <Stat value={points} label={m.profile.points} gold />
-            <Stat value={earned} label={m.profile.badges} />
-            <Stat value={visits} label={m.profile.visits} />
+            <Stat value={earned} label={m.profile.badges} ruled />
+            <Stat value={visits} label={m.profile.visits} ruled />
           </View>
         </Animated.View>
 
@@ -419,13 +422,16 @@ function Stat({
   value,
   label,
   gold = false,
+  ruled = false,
 }: {
   value: number;
   label: string;
   gold?: boolean;
+  /** A fine rule between it and the one before. */
+  ruled?: boolean;
 }) {
   return (
-    <View style={styles.stat}>
+    <View style={[styles.stat, ruled && styles.statRuled]}>
       <Text
         colorValue={gold ? palette.altin200 : palette.gece50}
         style={styles.statValue}
@@ -664,19 +670,105 @@ function Sheen({ width, height }: { width: number; height: number }) {
   );
 }
 
-const ROW_ICON = 32;
-/** The icon of a section card on the web. */
-const TILE_ICON = 44;
+
+const BADGE = 38;
+const SMALL_CARD = 124;
+
+/** An icon in the gold-foil frame the passport has, with nothing behind it. */
+function FoilIcon({ name, size = BADGE }: { name: IconName; size?: number }) {
+  const { colors: c } = useTheme();
+  return (
+    <View style={[styles.foilIcon, { width: size, height: size }]}>
+      <Svg width={size} height={size} style={StyleSheet.absoluteFill} aria-hidden>
+        <Defs>
+          <FoilGradient id="section-foil" />
+        </Defs>
+        <Rect x={0.75} y={0.75} width={size - 1.5} height={size - 1.5} rx={size * 0.32} stroke="url(#section-foil)" strokeWidth={1.5} fill="none" />
+      </Svg>
+      <Ionicons name={name} size={size * 0.5} color={c.highlightMark} />
+    </View>
+  );
+}
+
+interface Section {
+  href: Href;
+  icon: IconName;
+  title: string;
+  /** Set large. */
+  value?: string | null;
+  /** Beside it, small: out of how many, or of what. */
+  unit?: string | undefined;
+  note: string;
+}
+
+/** A card lifted off the page: shadow and no outline; in the dark theme its lighter surface does that. */
+function SectionCard({ section, kind, style }: { section: Section; kind: "large" | "small" | "wide" | "short"; style?: object }) {
+  const { colors: c, scheme } = useTheme();
+  const router = useRouter();
+  const { href, icon, title, value, unit, note } = section;
+  const go = (
+    <Ionicons name="arrow-forward" size={17} color={c.textSecondary} aria-hidden style={styles.cardArrow} />
+  );
+  const figure = value && (
+    <View style={styles.cardFigure}>
+      <Text numberOfLines={1} style={kind === "large" ? styles.cardValueLarge : styles.cardValue}>
+        {value}
+      </Text>
+      {unit && (
+        <Text numberOfLines={1} color="textSecondary" style={styles.cardUnit}>
+          {unit}
+        </Text>
+      )}
+    </View>
+  );
+  return (
+    <Pressable
+      accessibilityRole="link"
+      accessibilityLabel={[title, value && `${value}${unit ? ` ${unit}` : ""}`, note].filter(Boolean).join(", ")}
+      onPress={() => router.push(href)}
+      style={({ pressed, hovered }: { pressed: boolean; hovered?: boolean }) => [
+        styles.card,
+        scheme === "light" && styles.cardLifted,
+        { backgroundColor: c.surface },
+        kind === "wide" || kind === "short" ? styles.cardInLine : styles.cardUpright,
+        hovered && styles.cardHovered,
+        pressed && styles.cardPressed,
+        style,
+      ]}
+    >
+      {kind === "wide" || kind === "short" ? (
+        <>
+          <FoilIcon name={icon} size={kind === "short" ? 34 : BADGE} />
+          <Text numberOfLines={2} style={styles.cardLineTitle}>
+            {title}
+          </Text>
+          {figure}
+          {kind === "wide" && go}
+        </>
+      ) : (
+        <>
+          <View style={styles.cardHead}>
+            <FoilIcon name={icon} />
+            {go}
+          </View>
+          <View>
+            {figure}
+            <Text numberOfLines={2} style={styles.cardTitle}>
+              {title}
+            </Text>
+          </View>
+        </>
+      )}
+    </Pressable>
+  );
+}
 
 /**
- * The five sections as one grouped list: a gold icon in a gold-foil frame, the title, and how many
- * routes, sealed assets, badges or notes there are when that is known.
+ * What the visitor has gathered as cards of different sizes, what matters most the largest, each with its
+ * number; then the two ways on, small. Colour stays with the book and the passport: here it is gold lines.
  */
-function Sections({ grid = false }: { grid?: boolean }) {
+function Sections() {
   const m = useMessages();
-  const { colors: c, scheme } = useTheme();
-  const dark = scheme === "dark";
-  const router = useRouter();
   const routes = useSavedRoutes();
   const sealed = useUnlockedAssets();
   const badges = useMyAchievements();
@@ -688,235 +780,64 @@ function Sections({ grid = false }: { grid?: boolean }) {
   const wallet = useWallet();
   const walletData = wallet.status === "success" ? wallet.data : null;
 
-  const rows: Array<{
-    href: Href;
-    icon: IconName;
-    title: string;
-    value: string | null;
-    /** What the page holds, said on the web's cards. */
-    note?: string;
-  }> = [
-    {
-      href: "/profile/routes",
-      icon: "bookmark-outline",
-      title: m.profile.saved,
-      value: routes.length > 0 ? String(routes.length) : null,
-      note: m.profile.savedNote,
-    },
-    {
-      href: "/profile/sealed",
-      icon: "shield-checkmark-outline",
-      title: m.profile.sealed,
-      value: sealed.size > 0 ? String(sealed.size) : null,
-      note: m.profile.sealedNote,
-    },
-    {
-      href: "/profile/badges",
-      icon: "ribbon-outline",
-      title: m.profile.badgesTitle,
-      value: badgeData
-        ? `${badgeData.items.filter((b) => b.earnedAt).length}/${badgeData.items.length}`
-        : null,
-      note: m.profile.badgesNote,
-    },
-    {
-      href: "/profile/rewards",
-      icon: "gift-outline",
-      title: m.profile.rewards,
-      value: walletData ? m.profile.pointsValue(walletData.balance) : null,
-      note: m.profile.rewardsNote,
-    },
-    {
-      href: "/profile/notes",
-      icon: "chatbubble-ellipses-outline",
-      title: m.profile.notes,
-      value: noteCount ? String(noteCount) : null,
-      note: m.profile.notesNote,
-    },
-    {
-      href: "/profile/settings",
-      icon: "settings-outline",
-      title: m.profile.system,
-      value: null,
-      note: m.profile.systemNote,
-    },
-    // Only moderators and admins: the panel the API lets them use.
-    ...(user?.role === "admin" || user?.role === "moderator"
-      ? [
-          {
-            href: "/admin" as Href,
-            icon: "shield-half-outline" as IconName,
-            title: m.profile.admin,
-            value: null,
-            note: m.profile.adminNote,
-          },
-        ]
-      : []),
-  ];
-
-  // The web's wide page: each section a card of its own, two to a row.
-  if (grid)
-    return (
-      <View style={styles.grid}>
-        {rows.map((row) => (
-          <Pressable
-            key={row.title}
-            accessibilityRole="link"
-            accessibilityLabel={[row.title, row.value, row.note]
-              .filter(Boolean)
-              .join(", ")}
-            onPress={() => router.push(row.href)}
-            style={({
-              pressed,
-              hovered,
-            }: {
-              pressed: boolean;
-              hovered?: boolean;
-            }) => [
-              styles.tile,
-              {
-                backgroundColor: c.surface,
-                borderColor: hovered
-                  ? c.highlightMark
-                  : dark
-                    ? "transparent"
-                    : c.border,
-                transform: [{ translateY: hovered ? -2 : 0 }],
-              },
-              pressed && { opacity: 0.85 },
-            ]}
-          >
-            <View style={styles.tileTop}>
-              <View style={[styles.rowIcon, styles.tileIcon]}>
-                <Svg
-                  width={TILE_ICON}
-                  height={TILE_ICON}
-                  style={StyleSheet.absoluteFill}
-                  aria-hidden
-                >
-                  <Defs>
-                    <FoilGradient id="tile-foil" />
-                  </Defs>
-                  <Rect
-                    x={0.6}
-                    y={0.6}
-                    width={TILE_ICON - 1.2}
-                    height={TILE_ICON - 1.2}
-                    rx={11}
-                    stroke="url(#tile-foil)"
-                    strokeWidth={1.2}
-                    fill="none"
-                  />
-                </Svg>
-                <Ionicons name={row.icon} size={20} color={c.highlightMark} />
-              </View>
-              {row.value ? (
-                <View
-                  style={[
-                    styles.tileValue,
-                    { backgroundColor: c.surfaceRaised },
-                  ]}
-                >
-                  <Text variant="label" style={styles.tileValueText}>
-                    {row.value}
-                  </Text>
-                </View>
-              ) : (
-                <Ionicons
-                  name="arrow-forward"
-                  size={18}
-                  color={c.textSecondary}
-                  aria-hidden
-                />
-              )}
-            </View>
-            <View style={styles.tileBody}>
-              <Text style={styles.tileTitle} numberOfLines={1}>
-                {row.title}
-              </Text>
-              {row.note && (
-                <Text variant="caption" color="textSecondary" numberOfLines={1}>
-                  {row.note}
-                </Text>
-              )}
-            </View>
-          </Pressable>
-        ))}
-      </View>
-    );
-
+  const staff = user?.role === "admin" || user?.role === "moderator";
   return (
-    <View
-      style={[
-        styles.list,
-        {
-          backgroundColor: c.surface,
-          borderColor: dark ? "transparent" : c.border,
-        },
-      ]}
-    >
-      {rows.map((row, i) => (
-        <Pressable
-          key={row.title}
-          accessibilityRole="link"
-          accessibilityLabel={
-            row.value ? `${row.title}, ${row.value}` : row.title
-          }
-          onPress={() => router.push(row.href)}
-          style={({ pressed }) => [
-            styles.row,
-            pressed && { backgroundColor: c.surfaceRaised },
-          ]}
-        >
-          <View style={styles.rowIcon}>
-            <Svg
-              width={ROW_ICON}
-              height={ROW_ICON}
-              style={StyleSheet.absoluteFill}
-              aria-hidden
-            >
-              <Defs>
-                <FoilGradient id="row-foil" />
-              </Defs>
-              <Rect
-                x={0.6}
-                y={0.6}
-                width={ROW_ICON - 1.2}
-                height={ROW_ICON - 1.2}
-                rx={8}
-                stroke="url(#row-foil)"
-                strokeWidth={1.2}
-                fill="none"
-              />
-            </Svg>
-            <Ionicons name={row.icon} size={17} color={c.highlightMark} />
-          </View>
-          <View
-            style={[
-              styles.rowBody,
-              i > 0 && {
-                borderTopWidth: StyleSheet.hairlineWidth,
-                borderTopColor: c.border,
-              },
-            ]}
-          >
-            <Text style={styles.rowTitle} numberOfLines={1}>
-              {row.title}
-            </Text>
-            {row.value && (
-              <Text color="textSecondary" style={styles.rowValue}>
-                {row.value}
-              </Text>
-            )}
-            <Ionicons
-              name="chevron-forward"
-              size={17}
-              color={c.textSecondary}
-              aria-hidden
-            />
-          </View>
-        </Pressable>
-      ))}
+    <View style={styles.sections}>
+      <View style={styles.bento}>
+        <SectionCard
+          kind="large"
+          style={styles.flex}
+          section={{ href: "/profile/sealed", icon: "shield-checkmark-outline", title: m.profile.sealed, value: String(sealed.size), note: m.profile.sealedNote }}
+        />
+        <View style={[styles.flex, styles.sections]}>
+          <SectionCard
+            kind="small"
+            section={{ href: "/profile/routes", icon: "bookmark-outline", title: m.profile.saved, value: String(routes.length), note: m.profile.savedNote }}
+          />
+          <SectionCard
+            kind="small"
+            section={{
+              href: "/profile/badges",
+              icon: "ribbon-outline",
+              title: m.profile.badgesTitle,
+              value: badgeData ? String(badgeData.items.filter((b) => b.earnedAt).length) : "–",
+              unit: badgeData ? `/ ${badgeData.items.length}` : undefined,
+              note: m.profile.badgesNote,
+            }}
+          />
+        </View>
+      </View>
+      <SectionCard
+        kind="wide"
+        section={{
+          href: "/profile/rewards",
+          icon: "gift-outline",
+          title: m.profile.rewards,
+          value: walletData ? String(walletData.balance) : "–",
+          unit: walletData ? m.profile.points : undefined,
+          note: m.profile.rewardsNote,
+        }}
+      />
+      <View style={styles.shortcuts}>
+        <SectionCard
+          kind="short"
+          style={styles.shortcut}
+          section={{ href: "/profile/notes", icon: "chatbubble-ellipses-outline", title: m.profile.notes, value: noteCount ? String(noteCount) : null, note: m.profile.notesNote }}
+        />
+        <SectionCard
+          kind="short"
+          style={styles.shortcut}
+          section={{ href: "/profile/settings", icon: "settings-outline", title: m.profile.system, note: m.profile.systemNote }}
+        />
+        {/* Only moderators and admins: the panel the API lets them use. */}
+        {staff && (
+          <SectionCard
+            kind="short"
+            style={styles.shortcut}
+            section={{ href: "/admin", icon: "shield-half-outline", title: m.profile.admin, note: m.profile.adminNote }}
+          />
+        )}
+      </View>
     </View>
   );
 }
@@ -970,45 +891,93 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     gap: spacing.xl,
   },
-  grid: {
+  sections: {
+    gap: spacing.md,
+  },
+  bento: {
+    flexDirection: "row",
+    gap: spacing.md,
+  },
+  shortcuts: {
     flexDirection: "row",
     flexWrap: "wrap",
     gap: spacing.md,
   },
-  tile: {
+  shortcut: {
     flexGrow: 1,
-    flexBasis: 240,
-    height: 150,
-    justifyContent: "space-between",
-    gap: spacing.lg,
-    padding: spacing.lg,
-    borderRadius: radius.xl,
-    borderWidth: 1,
-    ...webTransition("transform, border-color", "180ms"),
+    flexBasis: "45%",
   },
-  tileTop: {
+  card: {
+    borderRadius: 24,
+    padding: spacing.md,
+    ...webTransition("transform", "160ms"),
+  },
+  cardLifted: {
+    boxShadow: "0px 10px 28px rgba(20, 27, 41, 0.08), 0px 1px 3px rgba(20, 27, 41, 0.05)",
+  },
+  cardUpright: {
+    minHeight: SMALL_CARD,
+    justifyContent: "space-between",
+    gap: spacing.sm,
+  },
+  cardInLine: {
+    minHeight: 68,
     flexDirection: "row",
     alignItems: "center",
+    gap: spacing.sm,
+  },
+  cardHovered: {
+    transform: [{ translateY: -2 }],
+  },
+  cardPressed: {
+    transform: [{ scale: 0.97 }],
+  },
+  cardHead: {
+    flexDirection: "row",
+    alignItems: "flex-start",
     justifyContent: "space-between",
   },
-  tileIcon: {
-    width: TILE_ICON,
-    height: TILE_ICON,
+  // Pointing up and out: this leads somewhere.
+  cardArrow: {
+    transform: [{ rotate: "-45deg" }],
   },
-  tileBody: {
-    gap: 2,
+  cardFigure: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    gap: spacing.xxs,
   },
-  tileValue: {
-    paddingHorizontal: spacing.sm,
-    paddingVertical: 4,
-    borderRadius: radius.full,
+  cardValue: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 26,
+    lineHeight: 32,
+    letterSpacing: -0.5,
   },
-  tileValueText: {
-    fontFamily: fontFamily.sansSemiBold,
+  cardValueLarge: {
+    fontFamily: fontFamily.sansBold,
+    fontSize: 52,
+    lineHeight: 58,
+    letterSpacing: -1.5,
   },
-  tileTitle: {
-    fontFamily: fontFamily.sansSemiBold,
-    fontSize: 17,
+  cardUnit: {
+    flexShrink: 1,
+    fontFamily: fontFamily.sansMedium,
+    fontSize: 14,
+    lineHeight: 20,
+  },
+  cardTitle: {
+    fontFamily: fontFamily.sansMedium,
+    fontSize: 14,
+    lineHeight: 19,
+  },
+  cardLineTitle: {
+    flex: 1,
+    fontFamily: fontFamily.sansMedium,
+    fontSize: 14,
+    lineHeight: 19,
+  },
+  foilIcon: {
+    alignItems: "center",
+    justifyContent: "center",
   },
   wideColumn: {
     width: "100%",
@@ -1174,12 +1143,18 @@ const styles = StyleSheet.create({
   },
   stats: {
     flexDirection: "row",
-    gap: spacing.xl,
+    paddingTop: spacing.sm,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: goldFaint,
   },
   stat: {
-    flexDirection: "row",
-    alignItems: "baseline",
-    gap: 5,
+    flex: 1,
+    gap: 1,
+  },
+  statRuled: {
+    paddingLeft: spacing.md,
+    borderLeftWidth: StyleSheet.hairlineWidth,
+    borderLeftColor: goldFaint,
   },
   statValue: {
     fontFamily: fontFamily.sansBold,
@@ -1190,41 +1165,6 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.sansMedium,
     fontSize: 13,
     lineHeight: 18,
-  },
-  list: {
-    borderRadius: radius.xl,
-    borderWidth: StyleSheet.hairlineWidth,
-    overflow: "hidden",
-  },
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    paddingLeft: spacing.lg,
-  },
-  rowIcon: {
-    width: ROW_ICON,
-    height: ROW_ICON,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  rowBody: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm,
-    minHeight: 56,
-    paddingRight: spacing.lg,
-  },
-  rowTitle: {
-    flex: 1,
-    fontFamily: fontFamily.sansMedium,
-    fontSize: 16,
-    lineHeight: 22,
-  },
-  rowValue: {
-    fontSize: 15,
-    lineHeight: 20,
   },
   signOut: {
     flexDirection: "row",
