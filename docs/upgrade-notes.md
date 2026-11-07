@@ -7,6 +7,21 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-07 · Ziyaret Mührü: hazır hedefler
+
+Kimler: **veri hattını çalıştıranlar** (R2'ye yükleme)
+
+1. Mühür hedeflerini derle (Chrome gerekir; 685 eser ~3 saat, kesilirse kaldığı yerden sürer): `npm run data:ar-targets`
+2. R2'ye yükle (data/README.md §8): `rclone copy data/build/media r2:kok-kod-media-public --checksum --transfers 16 --header-upload "Cache-Control: public, max-age=31536000, immutable"`
+3. `data/build/ar-targets.json` değişir; commit'le. API'de ve veritabanında değişiklik yok.
+
+Değişenler:
+
+- Ziyaret Mührü, eserin mühür fotoğrafının sunucuda derlenmiş `.mind` dosyasını indirip telefonda saklıyor; "Eser hazırlanıyor" beklemesi kalkıyor. Dosya yoksa eskisi gibi telefonda derleniyor.
+- Mühür fotoğrafını seçen kural ortak pakette (`pickSealPhoto`); uygulama ve veri hattı aynı fotoğrafı seçiyor.
+
+---
+
 ## 2026-11-07 · Taşın Dili hızlı açılıyor (sözleşme 0.3.36)
 
 Kimler: **uygulamayı çalıştıranlar**, **API'yi çalıştıranlar** (sunum sunucusu dahil)
