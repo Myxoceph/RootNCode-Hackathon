@@ -862,7 +862,7 @@ const A11Y = [
   { value: "unknown", label: "Bilmiyorum" },
 ] as const;
 
-const LANGUAGES = [
+export const LANGUAGES = [
   { value: "ar", label: "Arapça" },
   { value: "tr-ottoman", label: "Osmanlı Türkçesi" },
   { value: "fa", label: "Farsça" },
