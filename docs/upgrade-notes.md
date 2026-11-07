@@ -7,6 +7,21 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-07 · Ödüllere panelden görsel (sözleşme 0.3.36)
+
+Kimler: **API'yi çalıştıranlar** (sunum sunucusu dahil), **uygulama ekibi**
+
+1. Migration'ı uygula: yerelde `npm run db:deploy -w @vagabonds/api`, sunucuda güncellemeyle birlikte (`deploy/demo.sh up`).
+2. API'yi yeniden başlat; yeni paket yok.
+
+Değişenler:
+
+- `reward` tablosuna `art` sütunu (boş olabilir). Panelde ödül eklerken ya da düzenlerken **Görsel** seçilir: kupa, defter, şapka, tişört, bilet, çay, hediye, müze, etiket, fener ya da **Otomatik**.
+- Otomatik (boş) bırakılırsa uygulama eskisi gibi ödülün kodundaki kelimeden (`kupa`, `defter`, `muze`…), o da yoksa türünden seçer. Mevcut ödüller değişmeden aynı görünür.
+- `Reward` ve `Redemption.reward` yanıtlarında `art` alanı; eski API yanıtları için varsayılanı `null`.
+
+---
+
 ## 2026-11-07 · Yeni ad, logo ve ikon: Vakıfname
 
 Kimler: **uygulamayı derleyenler**

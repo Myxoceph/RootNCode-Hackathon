@@ -668,6 +668,8 @@ model reward {
   description_en    String?
   partner           String
   kind              String
+  /// The drawing picked in the panel (RewardArtSchema); null lets the app pick by code and kind.
+  art               String?
   cost_points       Int
   min_proven_visits Int           @default(0)
   sample            Boolean       @default(false)
