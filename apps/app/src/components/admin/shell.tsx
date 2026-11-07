@@ -75,8 +75,8 @@ export function AdminShell({ children }: { children: ReactNode }) {
     };
   }, [role, round]);
 
-  // Signed in at the app's own sign-in page, as every account is; a hand-made link without the role goes to the map.
-  if (user === undefined || !user?.username || !role) return <Away signedIn={Boolean(user?.username)} />;
+  // Signed in at the app's own sign-in page, as every account is.
+  if (user === undefined || !user?.username || !role) return <Away />;
 
   const context: PanelContext = { role, pending, refreshPending: () => setRound((n) => n + 1) };
   return (
@@ -92,19 +92,18 @@ export function AdminShell({ children }: { children: ReactNode }) {
 }
 
 /**
- * The panel has no sign-in page of its own: signed out, the app's sign-in opens and comes back here
- * once signed in (`next`); an account without the moderator's or admin's role goes to the map.
+ * The panel has no sign-in page of its own: signed out, or signed in with an account without the
+ * moderator's or admin's role, the app's sign-in opens, and comes back here once signed in (`next`).
  */
-function Away({ signedIn }: { signedIn: boolean }) {
+function Away() {
   const a = useAdminColors();
   const router = useRouter();
   const pathname = usePathname();
   const { user } = useCommunity();
   useEffect(() => {
     if (user === undefined) return;
-    if (signedIn) router.replace("/map");
-    else router.replace({ pathname: "/auth", params: { mode: "login", next: pathname } });
-  }, [user, signedIn, pathname, router]);
+    router.replace({ pathname: "/auth", params: { mode: "login", next: pathname } });
+  }, [user, pathname, router]);
   return <View style={[styles.fill, { backgroundColor: a.page }]} />;
 }
 

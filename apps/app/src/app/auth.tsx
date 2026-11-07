@@ -168,7 +168,8 @@ export default function AuthScreen() {
             </Text>
             {!tight && (
               <Text colorValue={ink.textSecondary} style={styles.lead}>
-                {copyFor(m, mode).lead}
+                {/* Come from the admin panel: it opens for a moderator's or admin's account. */}
+                {!registering && params.next?.startsWith("/admin") ? m.auth.panelLead : copyFor(m, mode).lead}
               </Text>
             )}
 
