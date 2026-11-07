@@ -24,6 +24,7 @@ import {
 } from "@/components/city-asset-cards";
 import { MapAssetActions } from "@/components/map-asset-actions";
 import { MapCityButtons } from "@/components/map-city-buttons";
+import { MapResumeVeil } from "@/components/map-resume-veil";
 import { MapSearch, placeIn } from "@/components/map-search";
 import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
 import { MobileOnlyNotice } from "@/components/mobile-only-notice";
@@ -43,7 +44,6 @@ import { useMapTour } from "@/lib/map-tour";
 import { useUnlockedAssets, useUnlocksSettled } from "@/lib/unlocked-assets";
 import { whereFrom } from "@/lib/bearing";
 import { rememberCity, rememberOpenCity, useOpenCity } from "@/lib/last-city";
-import { NAVY } from "@/lib/page-navy";
 import { bondsSpoken } from "@/lib/map-bonds";
 import { relatedPlacesOf } from "@/lib/related-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
@@ -395,26 +395,12 @@ export default function MapScreen() {
     setRestoring(true);
   }, [restoring, leftOpen, cityParam, cities.status, withAssets]);
   const mapShown = restoring === false || (restoring === true && mapCity !== null);
-  // A city opened again comes in behind a veil in the welcome page's colour with its name on it:
+  // A city opened again comes in behind a veil with its name on it (`MapResumeVeil`):
   // nothing of the map coming in (its fog, seals and clouds drawn, its streets loaded) is seen.
   // The veil stays at least long enough to read the name, and lifts once the map says the city is
   // all there (or after VEIL_LIMIT_MS whatever it says), dissolving into the map.
-  const { scheme: pageScheme, colors: pageColors } = useTheme();
   const veil = useRef(new Animated.Value(1)).current;
   const [veilGone, setVeilGone] = useState(false);
-  // The line under the name breathes slowly while the city is made ready.
-  const veilBreath = useRef(new Animated.Value(1)).current;
-  useEffect(() => {
-    if (!restored || veilGone || reduceMotion) return;
-    const breathing = Animated.loop(
-      Animated.sequence([
-        Animated.timing(veilBreath, { toValue: 0.45, duration: 900, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
-        Animated.timing(veilBreath, { toValue: 1, duration: 900, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
-      ]),
-    );
-    breathing.start();
-    return () => breathing.stop();
-  }, [restored, veilGone, reduceMotion, veilBreath]);
   const [readyPlate, setReadyPlate] = useState<number | null>(null);
   const [veilHeld, setVeilHeld] = useState(false);
   const [veilTimeUp, setVeilTimeUp] = useState(false);
@@ -876,21 +862,9 @@ export default function MapScreen() {
           pointerEvents="none"
           aria-hidden
           importantForAccessibility="no-hide-descendants"
-          style={[styles.veil, { opacity: veil, backgroundColor: pageScheme === "dark" ? NAVY : palette.white }]}
+          style={[styles.veil, { opacity: veil }]}
         >
-          {selectedCity && (
-            <>
-              <Text colorValue={pageScheme === "dark" ? palette.altin200 : palette.altin600} style={styles.veilName}>
-                {selectedCity.label}
-              </Text>
-              <View style={[styles.veilRule, { backgroundColor: pageScheme === "dark" ? palette.altin200 : palette.altin600 }]} />
-              <Animated.View style={{ opacity: veilBreath }}>
-                <Text colorValue={pageColors.textSecondary} style={styles.veilLine}>
-                  {m.map.resuming}
-                </Text>
-              </Animated.View>
-            </>
-          )}
+          {selectedCity && <MapResumeVeil city={selectedCity.label} line={m.map.resuming} bottom={tabBarHeight} />}
         </Animated.View>
       )}
     </View>
@@ -911,27 +885,6 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     left: 0,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  veilName: {
-    fontFamily: fontFamily.display,
-    fontSize: 44,
-    lineHeight: 52,
-  },
-  veilRule: {
-    width: 28,
-    height: 2,
-    borderRadius: 1,
-    marginTop: 14,
-    marginBottom: 14,
-    opacity: 0.7,
-  },
-  veilLine: {
-    fontSize: 15,
-    lineHeight: 22,
-    textAlign: "center",
-    paddingHorizontal: 32,
   },
   screen: {
     flex: 1,

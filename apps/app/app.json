@@ -3,7 +3,7 @@
     "name": "Vagabonds",
     "slug": "vagabonds",
     "version": "0.1.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "splash": {
       "image": "./assets/images/splash-blank.png",
@@ -69,6 +69,14 @@
           "microphonePermission": "Rehber'e sesli soru sorabilmen için mikrofon kullanılır. Kayıt yalnızca yazıya çevrilir, saklanmaz.",
           "recordAudioAndroid": true,
           "enableBackgroundPlayback": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Anı Defteri'ne eklemek için seçtiğin fotoğraflara erişilir. Bu fotoğrafları yalnızca sen görebilirsin.",
+          "cameraPermission": false,
+          "microphonePermission": false
         }
       ],
       [

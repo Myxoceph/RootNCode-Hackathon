@@ -21,10 +21,14 @@ export interface PhotoUrls {
   /** `version` (part of the photo's hash) changes the path when the photo changes, so a cached old one is not shown. */
   avatarPath(userId: string, version: string, now?: number): string;
   verifyAvatar(userId: string, exp: string | undefined, sig: string | undefined, now?: number): boolean;
+  /** A photo in a visitor's private journal: only ever shown to its owner, so always signed. */
+  journalPath(photoId: string, size: "thumb" | "full", now?: number): string;
+  verifyJournal(photoId: string, exp: string | undefined, sig: string | undefined, now?: number): boolean;
 }
 
 // Signed apart from photo ids, so a photo's signature never opens an avatar or the other way round.
 const avatarKey = (userId: string) => `avatar:${userId}`;
+const journalKey = (photoId: string) => `journal:${photoId}`;
 
 /** Without a secret, a random one per process: signed paths then end when the API restarts. */
 export function createPhotoUrls(secret: Buffer = randomBytes(32)): PhotoUrls {
@@ -54,5 +58,12 @@ export function createPhotoUrls(secret: Buffer = randomBytes(32)): PhotoUrls {
     },
 
     verifyAvatar: (userId, exp, sig, now) => verify(avatarKey(userId), exp, sig, now),
+
+    journalPath(photoId, size, now = Date.now()) {
+      const exp = expiry(now);
+      return `/journal-photos/${photoId}/${size}?exp=${exp}&sig=${signature(journalKey(photoId), exp)}`;
+    },
+
+    verifyJournal: (photoId, exp, sig, now) => verify(journalKey(photoId), exp, sig, now),
   };
 }

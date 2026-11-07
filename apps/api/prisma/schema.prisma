@@ -506,6 +506,8 @@ model app_user {
   visit                 visit[]
   chat_conversation     chat_conversation[]
   user_route            user_route[]
+  journal_entry         journal_entry[]
+  journal_photo         journal_photo[]
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
@@ -731,4 +733,40 @@ model user_route {
   @@id([user_id, id])
   @@unique([user_id, key], map: "user_route_key_unique")
   @@index([user_id, saved_at(sort: Desc)], map: "user_route_user_time_idx")
+}
+
+/// The visitor's private journal (Profil · Anı Defteri). No route shows it to anyone but its owner.
+model journal_entry {
+  id         String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id    String          @db.Uuid
+  text       String?
+  layout     Json?
+  /// Whether the layout holds any drawing: a page of nothing else is still a page.
+  has_drawing Boolean        @default(false)
+  created_at DateTime        @default(now()) @db.Timestamptz(3)
+  updated_at DateTime        @default(now()) @db.Timestamptz(3)
+  user       app_user        @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  photos     journal_photo[]
+
+  @@index([user_id, created_at(sort: Desc), id(sort: Desc)])
+}
+
+/// Both sizes are held here and not on the public media bucket: see docs/decisions/0004-ani-defteri.md.
+model journal_photo {
+  id             String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  entry_id       String        @db.Uuid
+  user_id        String        @db.Uuid
+  width          Int
+  height         Int
+  lqip           String
+  dominant_color String
+  content_type   String
+  thumb          Bytes
+  full           Bytes
+  created_at     DateTime      @default(now()) @db.Timestamptz(3)
+  entry          journal_entry @relation(fields: [entry_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  user           app_user      @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([entry_id, created_at])
+  @@index([user_id, created_at])
 }
