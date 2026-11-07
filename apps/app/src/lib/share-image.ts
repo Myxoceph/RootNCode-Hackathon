@@ -12,6 +12,10 @@ export const canShareImage = false;
 
 export type ShareResult = "shared" | "unavailable";
 
-export async function shareViewAsImage(_view: RefObject<ComponentRef<typeof View> | null>, _dialogTitle: string): Promise<ShareResult> {
+export async function shareViewAsImage(
+  _view: RefObject<ComponentRef<typeof View> | null>,
+  _dialogTitle: string,
+  _size?: { width: number; height: number },
+): Promise<ShareResult> {
   return "unavailable";
 }
