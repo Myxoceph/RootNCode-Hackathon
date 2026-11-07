@@ -69,6 +69,8 @@ export function AskPanel({ assetId, takePhoto, ready, defaultQuestion, showPhoto
   async function capture(question: string | null) {
     if (busy.current || phase.kind === "looking" || !ready) return;
     busy.current = true;
+    // An answer still being read stops first, or the shutter would keep quiet under it.
+    stopAnswer();
     cue("shutter");
     try {
       await ask(question);

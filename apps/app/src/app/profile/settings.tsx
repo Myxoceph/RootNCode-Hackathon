@@ -223,7 +223,6 @@ function SwitchTiles({ tiles, wide }: { tiles: SwitchTile[]; wide: boolean }) {
   return (
     <View style={styles.grid}>
       {tiles.map(({ key, icon, title, detail }) => {
-
         const on = settings[key];
         return (
           <Pressable
