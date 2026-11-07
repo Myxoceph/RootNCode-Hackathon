@@ -1661,8 +1661,9 @@ function Experiences({
       key: "inscription",
       icon: "scan-outline",
       title: m.asset.inscription,
-      hint: m.asset.inscriptionHint,
-      spoken: `${m.asset.inscription}: ${m.asset.inscriptionHint}`,
+      // No inscription the camera can find: the row asks the assistant only, and says so.
+      hint: inscriptions ? m.asset.inscriptionHint : m.asset.inscriptionAskHint,
+      spoken: `${m.asset.inscription}: ${inscriptions ? m.asset.inscriptionHint : m.asset.inscriptionAskHint}`,
       href: inscriptions
         ? { pathname: "/inscription", params: { asset: asset.id } }
         : { pathname: "/stone-ask", params: { asset: asset.id, name: asset.name } },

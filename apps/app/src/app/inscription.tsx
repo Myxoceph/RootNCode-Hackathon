@@ -71,7 +71,10 @@ export default function InscriptionScreen() {
   // sample asset opened when nothing near is known: an answer from the wrong record is worse than
   // none, so then it answers from the photo alone.
   const askAsset = id ?? (scope.status === "ready" && scope.nearby ? (scope.assets[0]?.id ?? null) : null);
-  const askAbout = (asset: string | null) => router.push({ pathname: "/stone-ask", params: asset ? { asset } : {} });
+  const askAbout = (asset: string | null) => {
+    const name = scope.status === "ready" ? scope.assets.find((a) => a.id === asset)?.name : undefined;
+    router.push({ pathname: "/stone-ask", params: asset ? { asset, ...(name && { name }) } : {} });
+  };
   // No inscription with a photo to find (or nothing loaded): the camera has nothing to look for.
   const trackable = scope.status === "ready" ? scope.assets.filter(isTrackable) : [];
   const untrackable = loaded && trackable.length === 0;
@@ -215,13 +218,19 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
     askingRef.current = next;
     setAskingState(next);
   }, []);
-  const snapshot = useRef<{ resolve: (jpeg: string) => void; reject: (error: Error) => void } | null>(null);
+  // The one snapshot asked for: a reply after its time is up resolves nothing.
+  const snapshot = useRef<{ resolve: (jpeg: string) => void; reject: (error: Error) => void; timer: ReturnType<typeof setTimeout> } | null>(null);
+  // The tracker's frame stands still (a snapshot was taken): `resume` forgets what it showed and
+  // posts `found` afresh, so what was in view before is not known any more.
+  const frozen = useRef(false);
+  // Counts the scans after asking: each one offers the assistant again after its own wait.
+  const [scanRound, setScanRound] = useState(0);
 
   useEffect(() => {
     if (phase !== "scanning") return;
     const timer = setTimeout(() => setOffered(true), ASK_AFTER_MS);
     return () => clearTimeout(timer);
-  }, [phase]);
+  }, [phase, scanRound]);
 
   const go = useCallback((next: Phase) => {
     phaseRef.current = next;
@@ -280,11 +289,15 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
           // While asking, the camera stays on what the visitor asks about.
           if (phaseRef.current === "scanning" && !askingRef.current) lock(event.target);
           break;
-        case "snapshot":
-          if (event.jpeg) snapshot.current?.resolve(event.jpeg);
-          else snapshot.current?.reject(new Error(event.error ?? "no frame"));
+        case "snapshot": {
+          const pending = snapshot.current;
+          if (!pending) break;
           snapshot.current = null;
+          clearTimeout(pending.timer);
+          if (event.jpeg) pending.resolve(event.jpeg);
+          else pending.reject(new Error(event.error ?? "no frame"));
           break;
+        }
         case "lost":
           if (inView.current === event.target) inView.current = -1;
           // Once the card is up it stays, so reading it does not depend on holding the phone still.
@@ -303,15 +316,21 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
 
   // The frame in view, frozen, as a JPEG file for the assistant.
   const takePhoto = async (): Promise<string> => {
+    if (snapshot.current) throw new Error("a snapshot is already on its way");
     const jpeg = await new Promise<string>((resolve, reject) => {
-      snapshot.current = { resolve, reject };
+      const timer = setTimeout(() => {
+        if (snapshot.current?.timer === timer) snapshot.current = null;
+        reject(new Error("no frame in time"));
+      }, SNAPSHOT_TIMEOUT_MS);
+      snapshot.current = { resolve, reject, timer };
+      frozen.current = true;
       tracker.current?.send("snapshot");
-      setTimeout(() => reject(new Error("no frame in time")), SNAPSHOT_TIMEOUT_MS);
     });
     const binary = atob(jpeg);
     const bytes = new Uint8Array(binary.length);
     for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-    const file = new File(Paths.cache, `ask-${Date.now()}.jpg`);
+    // One file, written over by each question: the photos are not kept.
+    const file = new File(Paths.cache, "inscription-ask.jpg");
     file.create({ overwrite: true });
     await file.write(bytes);
     return file.uri;
@@ -322,12 +341,23 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
     setAsking(true);
   };
 
-  const stopAsking = () => {
+  // The camera runs on. After a snapshot the tracker posts `found` again for what it sees.
+  const resumeCamera = () => {
+    if (frozen.current) {
+      frozen.current = false;
+      inView.current = -1;
+    }
     tracker.current?.send("resume");
+  };
+
+  const stopAsking = () => {
+    resumeCamera();
     setAsking(false);
     go("scanning");
     setOffered(false);
-    // An inscription found while asking stays in view without a new `found`: its card rises now.
+    setScanRound((n) => n + 1);
+    // An inscription found while asking (the camera never stood still) stays in view without a
+    // new `found`: its card rises now.
     if (inView.current >= 0) lock(inView.current);
   };
 
@@ -404,7 +434,7 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
           ready={phase !== "starting" && phase !== "preparing"}
           defaultQuestion={w.askQuestion}
           showPhoto={false}
-          onAgain={() => tracker.current?.send("resume")}
+          onAgain={resumeCamera}
           back={{ label: w.backToScan, onPress: stopAsking }}
         />
       )}

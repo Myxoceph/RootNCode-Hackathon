@@ -50,6 +50,8 @@ export function AskPanel({ assetId, takePhoto, ready, defaultQuestion, showPhoto
   const insets = useSafeAreaInsets();
   const [phase, setPhase] = useState<Phase>({ kind: "aim" });
   const shown = useRef(true);
+  // A photo on its way: a second tap or spoken question waits for this one's answer.
+  const busy = useRef(false);
   const speaking = useSpeaking();
   // The answers this panel read aloud; leaving it ends them, not another screen's reading.
   const mine = useRef(new Set<string>());
@@ -64,13 +66,22 @@ export function AskPanel({ assetId, takePhoto, ready, defaultQuestion, showPhoto
   }, []);
 
   async function capture(question: string | null) {
-    if (phase.kind === "looking" || !ready) return;
+    if (busy.current || phase.kind === "looking" || !ready) return;
+    busy.current = true;
+    try {
+      await ask(question);
+    } finally {
+      busy.current = false;
+    }
+  }
+
+  async function ask(question: string | null) {
     stopAnswer();
     let photo: string;
     try {
       photo = await takePhoto();
     } catch {
-      setPhase({ kind: "failed", photo: null, message: w.photoFailed });
+      if (shown.current) setPhase({ kind: "failed", photo: null, message: w.photoFailed });
       return;
     }
     if (!shown.current) return;
