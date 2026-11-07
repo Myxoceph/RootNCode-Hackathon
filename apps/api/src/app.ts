@@ -18,6 +18,8 @@ import { adminMediaRoutes } from "./modules/admin/media.routes.ts";
 import type { MediaStore } from "./modules/admin/media-store.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
 import { moderationRoutes } from "./modules/community/moderation.routes.ts";
+import { createJournalRepository } from "./modules/journal/journal.repository.ts";
+import { journalRoutes } from "./modules/journal/journal.routes.ts";
 import { createPhotoUrls, type PhotoUrls } from "./modules/community/photo-urls.ts";
 import { photosRoutes } from "./modules/community/photos.routes.ts";
 import { createGastronomyRepository } from "./modules/gastronomy/gastronomy.repository.ts";
@@ -145,6 +147,7 @@ export function buildApp({
   app.register(rewardsRoutes, { repository: createRewardsRepository(prisma), community: communityRepository });
   app.register(savedRoutesRoutes, { repository: createSavedRoutesRepository(prisma), community: communityRepository });
   app.register(photosRoutes, { repository: communityRepository, visibility: assetVisibility, urls: photoUrls });
+  app.register(journalRoutes, { repository: createJournalRepository(prisma), community: communityRepository, urls: photoUrls });
   app.register(transitRoutes, {
     planner: transitPlanner,
     repository: createTransitRepository(prisma, visibleStatuses(assetVisibility)),
