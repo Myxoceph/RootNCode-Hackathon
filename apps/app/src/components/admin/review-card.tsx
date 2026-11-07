@@ -1,12 +1,10 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { ModerationItem } from "@vagabonds/contracts";
 import { fontFamily, Text } from "@vagabonds/ui";
-import { Image } from "expo-image";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 
 import { approveContribution, banUser, rejectContribution } from "@/data/admin";
-import { resolveApiUrl } from "@/data/config";
 
 import { Avatar, Badge, Button, Confirm, errorText, Field, timeAgo, useAdminColors, type IconName, type Tone } from "./kit";
 
@@ -27,8 +25,7 @@ const STATUS: Record<ModerationItem["status"], { label: string; tone: Tone }> = 
 const REASONS = ["Esere ait değil", "Yanlış ya da doğrulanamayan bilgi", "Uygunsuz içerik", "Kişisel bilgi içeriyor"];
 
 /**
- * One contribution in the review queue: what it is, on which asset, by whom, and its text or
- * photo, with approve, reject (with a reason the author sees) and ban the author.
+ * One contribution in the review queue: what it is, on which asset, by whom, and its text, with approve, reject (with a reason the author sees) and ban the author.
  */
 export function ReviewCard({
   item,
@@ -86,15 +83,7 @@ export function ReviewCard({
         {!pending && <Badge tone={STATUS[item.status].tone} label={STATUS[item.status].label} />}
       </View>
 
-      <View style={[styles.content, item.photo && styles.contentPhoto]}>
-        {item.photo && (
-          <Image
-            source={{ uri: `${resolveApiUrl()}${item.photo.path}` }}
-            accessibilityLabel={item.body}
-            contentFit="cover"
-            style={[styles.photo, { backgroundColor: a.line }, compact && { width: 120, height: 90 }]}
-          />
-        )}
+      <View style={styles.content}>
         <Text style={styles.body} numberOfLines={compact ? 3 : undefined}>
           {item.body}
         </Text>
@@ -160,8 +149,6 @@ const styles = StyleSheet.create({
   author: { fontFamily: fontFamily.sansBold, fontSize: 15, flexShrink: 1 },
   meta: { fontSize: 13, lineHeight: 18 },
   content: { gap: 12 },
-  contentPhoto: { flexDirection: "row", alignItems: "flex-start" },
-  photo: { width: 168, height: 126, borderRadius: 16 },
   body: { flex: 1, fontSize: 15, lineHeight: 23 },
   reason: { flexDirection: "row", alignItems: "center", gap: 8, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 10 },
   rejectBox: { borderTopWidth: 1, paddingTop: 14, gap: 12 },

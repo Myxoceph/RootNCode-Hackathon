@@ -68,7 +68,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
     if (!role) return;
     let active = true;
     fetchAdminSummary().then(
-      (summary) => active && setPending(summary.pending.notes + summary.pending.photos),
+      (summary) => active && setPending(summary.pending.notes),
       () => {},
     );
     return () => {

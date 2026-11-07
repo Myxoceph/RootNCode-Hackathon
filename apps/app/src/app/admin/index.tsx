@@ -31,7 +31,7 @@ export default function Overview() {
   const assets = useLoad(() => (role === "admin" ? fetchPanelAssets() : Promise.resolve([])), [role]);
 
   const s = summary.data;
-  const pending = s ? s.pending.notes + s.pending.photos : null;
+  const pending = s ? s.pending.notes : null;
   const days = lastDays(7);
   const joined = users.data ? perDay(days, users.data.items.map((person) => person.createdAt)) : null;
   const submitted = queue.data ? perDay(days, queue.data.items.map((item) => item.createdAt)) : null;
@@ -62,7 +62,7 @@ export default function Overview() {
       />
 
       <View style={[styles.row, { flexDirection: medium ? "row" : "column" }]}>
-        <StatTile icon="hourglass-outline" label="Bekleyen not" value={pending} note={s ? `${formatNumber(s.pending.notes)} yazılı · ${formatNumber(s.pending.photos)} fotoğraflı` : null} chart={submitted && <Bars days={days} values={submitted} />} onPress={() => router.push("/admin/review")} />
+        <StatTile icon="hourglass-outline" label="Bekleyen not" value={pending} note={null} chart={submitted && <Bars days={days} values={submitted} />} onPress={() => router.push("/admin/review")} />
         <StatTile icon="person-add-outline" label="Bu hafta katılan" value={joined ? (users.data!.items.length === 100 && sum(joined) === 100 ? "100+" : sum(joined)) : null} note={joinedAccounts === null ? null : `${formatNumber(joinedAccounts)} kişi hesap açtı`} chart={joined && <Bars days={days} values={joined} />} onPress={() => router.push("/admin/users")} />
         <StatTile icon="checkmark-done-outline" label="İncelenen not" value={reviewedTotal} note={reviewedTotal === null ? null : `${formatNumber(approved.data!.total)} onay · ${formatNumber(rejected.data!.total)} ret`} chart={reviewed && <Capsules days={days} values={reviewed} />} onPress={() => router.push("/admin/review")} />
       </View>
@@ -117,10 +117,10 @@ export default function Overview() {
             ) : queue.error && !queue.data ? (
               <Failed message={queue.error} onRetry={queue.reload} />
             ) : !next ? (
-              <Empty icon="checkmark-done-outline" title="Kuyruk boş" body="Yeni not ve fotoğraflar geldikçe burada görünür." />
+              <Empty icon="checkmark-done-outline" title="Kuyruk boş" body="Yeni notlar geldikçe burada görünür." />
             ) : (
               <View style={[styles.nextRow, { flexDirection: medium ? "row" : "column" }]}>
-                <NextUp item={next} onPress={() => router.push(next.kind === "photo" ? "/admin/review?kind=photos" : "/admin/review")} />
+                <NextUp item={next} onPress={() => router.push("/admin/review")} />
                 <Timeline items={queue.data!.items.slice(1, 6)} />
               </View>
             )}
@@ -349,7 +349,7 @@ function NextUp({ item, onPress }: { item: ModerationItem; onPress: () => void }
         <Text colorValue={palette.gece950} style={styles.nextKind}>
           {kind.label.toLocaleUpperCase("tr")}
         </Text>
-        <Ionicons name={item.kind === "photo" ? "image-outline" : "chatbubble-ellipses-outline"} size={18} color={palette.gece950} aria-hidden />
+        <Ionicons name="chatbubble-ellipses-outline" size={18} color={palette.gece950} aria-hidden />
       </View>
       <View style={{ gap: 6 }}>
         <Text colorValue={palette.gece950} style={styles.nextAsset} numberOfLines={2}>

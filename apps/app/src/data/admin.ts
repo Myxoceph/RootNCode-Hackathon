@@ -106,11 +106,12 @@ export const fetchAdminSummary = (): Promise<AdminSummaryResponse> => admin("/ad
 export const fetchMetaEnums = (): Promise<MetaEnumsResponse> => admin("/meta/enums?lang=tr", MetaEnumsResponseSchema);
 
 // Review queue.
-export type QueueKind = "notes" | "photos";
+/** Only written notes are reviewed: visitors no longer send photos. */
+export type QueueKind = "notes";
 export type QueueStatus = "pending" | "approved" | "rejected";
 
 export const fetchQueue = (params: { status: QueueStatus; kind?: QueueKind; limit?: number; offset?: number }): Promise<ModerationListResponse> =>
-  admin(`/admin/contributions${query({ ...params, lang: "tr" })}`, ModerationListResponseSchema);
+  admin(`/admin/contributions${query({ kind: "notes", ...params, lang: "tr" })}`, ModerationListResponseSchema);
 
 /** Every contribution with a status, page by page, up to `cap`: for counts the API does not give. */
 export async function fetchWholeQueue(status: QueueStatus, cap = 1000): Promise<ModerationItem[]> {

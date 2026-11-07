@@ -4,7 +4,7 @@ export type PanelRole = "moderator" | "admin";
 
 export interface PanelContext {
   role: PanelRole;
-  /** Pending notes and photos, for the side bar's count; pages bump it after a review. */
+  /** Pending notes, for the side bar's count; pages bump it after a review. */
   pending: number | null;
   refreshPending: () => void;
 }

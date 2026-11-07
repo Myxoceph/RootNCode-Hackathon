@@ -657,7 +657,7 @@ const tr = {
     page: (pages: string) => `s. ${pages}`,
   },
   badges: {
-    categories: { cities: "Şehirler", districts: "İlçeler", journeys: "Yolculuklar", kinds: "Yapılar ve çağlar", complexes: "Külliyeler", seals: "Mühürler", pen: "Notlar ve fotoğraflar", other: "Diğer" },
+    categories: { cities: "Şehirler", districts: "İlçeler", journeys: "Yolculuklar", kinds: "Yapılar ve çağlar", complexes: "Külliyeler", seals: "Mühürler", pen: "Notlar", other: "Diğer" },
     startHint: "Ziyaret Mührü ya da not bırakınca rozet kazanmaya başlarsın.",
     loading: "Rozetler yükleniyor",
     needsServer: "Rozetler için sunucu gerekiyor; bu sürüm örnek veriyle çalışıyor.",
@@ -1980,7 +1980,7 @@ const en: Messages = {
     page: (pages) => `p. ${pages}`,
   },
   badges: {
-    categories: { cities: "Cities", districts: "Districts", journeys: "Journeys", kinds: "Buildings and eras", complexes: "Complexes", seals: "Seals", pen: "Notes and photos", other: "Other" },
+    categories: { cities: "Cities", districts: "Districts", journeys: "Journeys", kinds: "Buildings and eras", complexes: "Complexes", seals: "Seals", pen: "Notes", other: "Other" },
     startHint: "You start earning badges with a Visit Seal or a note.",
     loading: "Loading the badges",
     needsServer: "Badges need the server; this version runs on sample data.",
