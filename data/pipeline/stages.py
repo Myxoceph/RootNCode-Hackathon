@@ -42,6 +42,8 @@ class Stages(Protocol):
 
     def draft_entry(self, job: dict[str, Any], entry: dict[str, Any]) -> Draft | None: ...
 
+    def draft_chat(self, job: dict[str, Any]) -> Draft: ...
+
 
 class SkeletonStages:
     """H0: adımların yeri. Gerçek bir PDF açmaz, model çağırmaz."""
@@ -51,3 +53,6 @@ class SkeletonStages:
 
     def draft_entry(self, job: dict[str, Any], entry: dict[str, Any]) -> Draft | None:
         return None
+
+    def draft_chat(self, job: dict[str, Any]) -> Draft:
+        raise NotImplementedError("Sohbet adımı bu iskelette yok (worker.PipelineStages kullanır)")

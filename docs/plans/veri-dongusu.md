@@ -259,6 +259,7 @@ Kararlar ve ölçümler buraya yazılır (tarih + kim).
 | 2026-11-08 | Saha ekibi rolü | Bu aşamada mevcut `moderator` rolü; `field` rolü sonra | Yiğit |
 | 2026-11-08 | Worker'ın iş kilidi | `FOR UPDATE SKIP LOCKED` yerine oturum süren advisory lock (`pg_try_advisory_lock`). Satır kilidi iş bitene kadar bir işlemi açık tutar, ilerleme (`progress_done`) API'ye görünmez; advisory lock aynı korumayı verir, worker kapanınca kendiliğinden düşer. Taslaklar `ON CONFLICT (job_id, entry_key) … WHERE status = 'pending'` ile yazılır: onaylanmış/reddedilmiş taslağa dokunulmaz | Hüseyin |
 | 2026-11-08 | EVREN metin modeli | `qwen3.8-flash-next` cevaptan önce düşünüyor (ilk denemede 83 çıktı token'ının 65'i); `max_tokens` bol tutulmalı. Hesapta 1070 kredi var (`usage.evren.credits_remaining_cr`): H5 karşılaştırması bu bütçeyle sınırlı | Hüseyin |
+| 2026-11-08 | EVREN düşünmesi kapalı | Düşünmeye bırakılan model bir sohbet taslağında 6000 token'ın hepsini düşünmeye harcayıp boş cevap verdi (136 sn). Worker her istekte `chat_template_kwargs: {enable_thinking: false}` gönderir (EVREN'in tanıdığı tek yol); aynı taslak 46 sn'de çıktı. Açmak için `INTAKE_LLM_THINKING=true` | Hüseyin |
 
 ## 8. Aşamalar ve kontrol noktaları
 

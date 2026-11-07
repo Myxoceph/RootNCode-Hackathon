@@ -83,7 +83,7 @@ Sonra `npm run intake-schema -w @vagabonds/contracts` ile `data/pipeline/contrac
 Hüseyin bu migration'ı yerelde uyguladı; o dosyayı düzenleme, **yenisini ekle**:
 
 ```sql
-ALTER TABLE intake_job DROP CONSTRAINT <kind check>;          -- adı: \d intake_job
+ALTER TABLE intake_job DROP CONSTRAINT intake_job_kind_check;
 ALTER TABLE intake_job ADD CONSTRAINT intake_job_kind_check CHECK (kind IN ('pdf', 'chat'));
 ALTER TABLE intake_job ALTER COLUMN file_path DROP NOT NULL;
 ALTER TABLE intake_job ADD CONSTRAINT intake_job_file_check CHECK ((kind = 'pdf') = (file_path IS NOT NULL));
@@ -91,11 +91,13 @@ ALTER TABLE intake_job ADD COLUMN input jsonb;                 -- kind=chat: Int
 ALTER TABLE intake_job ADD CONSTRAINT intake_job_input_check CHECK ((kind = 'chat') = (input IS NOT NULL));
 
 -- Bugün: (kind = 'book_asset') = (job_id IS NOT NULL). Sohbet taslağı (field_asset) da bir işe bağlı.
-ALTER TABLE intake_draft DROP CONSTRAINT <job check>;
+ALTER TABLE intake_draft DROP CONSTRAINT intake_draft_check;   -- (kind = 'book_asset') = (job_id IS NOT NULL)
 ALTER TABLE intake_draft ADD CONSTRAINT intake_draft_job_check CHECK ((kind = 'inscription') = (job_id IS NULL));
 ```
 
 Tablolar bu dalda yeni olduğu için bu, var olan bir tabloyu değiştirmek sayılmaz (§9 "yalnızca ekleme").
+Bu SQL Hüseyin'in testinde (`data/pipeline/tests/test_chat.py`, `PROPOSED`) senin migration'ının üstüne uygulanıp
+sınandı; kısıt adları yerel veritabanından alındı. Kendi migration'ın gelince test onu kullanacak şekilde güncellenir.
 `entry_key` ve `intake_draft_entry_idx` aynı kalır: sohbet işinin tek taslağı `entry_key = 'chat'`.
 
 ### 1.3 API (`apps/api`, `INTAKE_ENABLED` arkasında, moderatör/admin)
@@ -154,11 +156,19 @@ yalnızca `pdf` için. Worker bunu kendi tarafında ayırıyor.
   `dev.py` (panel gelene kadar iş ekleme ve onaylama). 27 test. CI'a Python test adımı eklendi.
 - `.env` notu: API `INTAKE_LOCAL_ONLY` ve `INTAKE_ENABLED` için yalnızca `true`/`false` kabul ediyor.
   `1` yazılırsa API açılmaz. `.env.example`'da belirtmek iyi olur.
-- **Sıradaki (Hüseyin):** sohbet adımı (`asset-structure.md` istemi, "değer metinde geçiyor mu" denetimi,
-  fotoğraf konusu, EXIF konumu, tekrar uyarısı), sonra ölçüm (H1). Senin §1.1 ve §1.2'n gelene kadar worker
-  bu dosyadaki biçimi varsayar; adlar değişirse buraya yaz, uyarlar.
-- **EVREN:** `qwen3.8-flash-next` cevaptan önce düşünüyor (çıktı token'larının büyük kısmı), `max_tokens`
-  bol tutulmalı. Hesapta sınırlı kredi var (`usage.evren.credits_remaining_cr`).
+- **Sohbet adımı yazıldı (Hüseyin):** `data/pipeline/chat.py` + `prompts/asset-structure.md`, `prompts/photo-subject.md`.
+  Worker `kind=chat` işini alır, tek taslak yazar (`field_asset`, `entry_key='chat'`). Sözleşmen `source_refs`'in
+  mesaj biçimini ve `validation.missing`'i desteklediği an worker bunları kendiliğinden doldurur (JSON Schema'dan
+  algılıyor); o zamana kadar kaynaklar boş, eksikler `warnings`'te "eksik: /yol" olarak durur.
+  Senin tablon gelmeden denemek için: `python3 data/pipeline/dev.py chat --city bursa --text-file a.txt [--photo b.jpg]`
+  (kuru çalışır, tabloya yazmaz).
+- **EVREN, önemli:** `qwen3.8-flash-next` düşünmeye bırakılınca uzun bir istekte 6000 token'ın hepsini düşünmeye
+  harcayıp **boş cevap** verdi (136 sn, `usage.evren.reasoning_budget_exhausted: true`). EVREN düşünmeyi yalnızca
+  `chat_template_kwargs: { enable_thinking: false }` ile kapatıyor; `reasoning_effort`, `/no_think` ve üst düzey
+  `enable_thinking` yok sayılıyor. Worker bunu her istekte gönderiyor (aynı taslak 46 sn'de, boş değil). API'nin
+  asistanı, Taşa Sor ve kitabe okuma da uzun girdide aynı duruma düşebilir: oralara da eklemeyi düşün.
+- Sohbet kaynakları için `data/sources.json`'a `vagabonds-panel` eklendi (`pages`: "mesaj 2"). Onaylanan sohbet
+  kayıtları `source_refs`'te bunu gösterir; uzman asıl kaynağı biliyorsa ekler.
 
 ## 4. Açık sorular (cevabı bu dosyaya ya da plana yaz)
 
