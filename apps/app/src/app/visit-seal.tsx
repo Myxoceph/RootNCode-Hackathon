@@ -648,6 +648,13 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
                 style={styles.watch}
               />
             </View>
+            <Button
+              label={w.skipListening}
+              accessibilityHint={w.skipTimeHint}
+              onPress={() => setStage("result")}
+              colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.16)"]}
+              style={styles.skip}
+            />
           </View>
         )}
         {/* No sound to choose about: the sequence runs on its words, and can be left out. */}
