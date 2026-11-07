@@ -13,6 +13,7 @@ import {
   IntakeJobResponseSchema,
   IntakeMapConfirmRequestSchema,
   IntakeReviewRequestSchema,
+  InscriptionDraftSchema,
   type BookMapEntry,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync } from "fastify";
@@ -40,23 +41,40 @@ const IdParamsSchema = z.object({ id: z.uuid() });
 /** The asset kinds a draft adds as a new asset (an inscription adds to one that exists). */
 const NEW_ASSET_KINDS = new Set(["book_asset", "field_asset"]);
 
-/** Why a book map cannot be confirmed: keys and proposed ids must be unique, parents must exist. */
+/** A whole corrected record (sections, timeline…) is larger than the API's usual 16 KB body. */
+const REVIEW_BODY_LIMIT = 2 * 1024 * 1024;
+
+/**
+ * Why a book map cannot be confirmed: keys and proposed ids must be unique, parents must exist and
+ * lead to a top entry (no loops: the worker walks them to link a complex and its buildings).
+ * Page ranges are checked by the contract itself.
+ */
 export function bookMapProblems(entries: BookMapEntry[]): string[] {
   const problems: string[] = [];
-  const keys = new Set<string>();
+  const parents = new Map<string, string | null>();
   const ids = new Set<string>();
   for (const entry of entries) {
-    if (keys.has(entry.key)) problems.push(`key "${entry.key}" appears twice`);
-    keys.add(entry.key);
+    if (parents.has(entry.key)) problems.push(`key "${entry.key}" appears twice`);
+    parents.set(entry.key, entry.parentKey);
     if (entry.proposedId) {
       if (ids.has(entry.proposedId)) problems.push(`id "${entry.proposedId}" is proposed twice`);
       ids.add(entry.proposedId);
     }
-    if (entry.printedPages && entry.printedPages[0] > entry.printedPages[1]) problems.push(`"${entry.key}": printed pages run backwards`);
   }
   for (const entry of entries) {
     if (entry.parentKey === entry.key) problems.push(`"${entry.key}" is its own parent`);
-    else if (entry.parentKey && !keys.has(entry.parentKey)) problems.push(`"${entry.key}": parent "${entry.parentKey}" is not in the map`);
+    else if (entry.parentKey && !parents.has(entry.parentKey)) problems.push(`"${entry.key}": parent "${entry.parentKey}" is not in the map`);
+  }
+  if (problems.length > 0) return problems;
+  for (const entry of entries) {
+    const seen = new Set<string>([entry.key]);
+    for (let parent = entry.parentKey; parent !== null; parent = parents.get(parent) ?? null) {
+      if (seen.has(parent)) {
+        problems.push(`"${entry.key}": its parents go round in a loop`);
+        break;
+      }
+      seen.add(parent);
+    }
   }
   return problems;
 }
@@ -78,6 +96,10 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
 
   app.post("/admin/intake/jobs", {
     bodyLimit: INTAKE_PDF_MAX_BYTES,
+    // Before the body is read: a caller without the role must not make the API take in 200 MB.
+    onRequest: async (request) => {
+      await requireUser(request, community, "moderator");
+    },
     schema: {
       tags: ["moderation"],
       summary: "PDF Kabul: bir envanter kitabının PDF'ini yükle; worker onu böler ve kitap haritasını önerir",
@@ -98,9 +120,10 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
     const id = randomUUID();
     const filePath = `${dir}/${id}/source.pdf`;
     const absolute = resolve(root, filePath);
-    await mkdir(dirname(absolute), { recursive: true });
-    await writeFile(absolute, body);
     try {
+      // A write cut short (a full disk) leaves no half file without a job behind.
+      await mkdir(dirname(absolute), { recursive: true });
+      await writeFile(absolute, body);
       const job = await repository.createJob({ id, title: query.title, city: query.city, sourceId: query.sourceId ?? null, filePath, createdBy: user.id });
       reply.code(201);
       return IntakeJobResponseSchema.parse({ version: CONTRACT_VERSION, job: toIntakeJob(job) });
@@ -158,7 +181,9 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
     const job = await repository.findJob(id);
     if (!job) throw jobNotFound();
     if (!(await repository.confirmMap(id, input.bookMap, input.sourceId, user.id))) {
-      throw new HttpError(409, "NOT_WAITING_FOR_MAP", `The job is "${job.status}"; a map is confirmed only while it is "needs_map"`);
+      // Read again: another moderator may have confirmed it a moment ago.
+      const now = (await repository.findJob(id))?.status ?? job.status;
+      throw new HttpError(409, "NOT_WAITING_FOR_MAP", `The job is "${now}"; a map is confirmed only while it is "needs_map"`);
     }
     return IntakeJobResponseSchema.parse({ version: CONTRACT_VERSION, job: toIntakeJob((await repository.findJob(id))!) });
   });
@@ -197,6 +222,7 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
   });
 
   app.post("/admin/intake/drafts/:id/review", {
+    bodyLimit: REVIEW_BODY_LIMIT,
     schema: {
       tags: ["moderation"],
       summary: "Taslağı onayla (düzeltilmiş kaydıyla) ya da reddet; onaylananı worker yayınlar",
@@ -213,7 +239,7 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
     if (!draft) throw draftNotFound();
     if (draft.status !== "pending") throw new HttpError(409, "ALREADY_REVIEWED", `The draft is already ${draft.status}`);
 
-    let decided: boolean;
+    let decided: "ok" | "decided" | "taken";
     if (input.decision === "reject") {
       decided = await repository.review(id, { status: "rejected" }, input.note, user.id);
     } else {
@@ -222,6 +248,8 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
         throw new HttpError(409, "HAS_ERRORS", `The record has ${current.validation.errors.length} validation error(s); approve it with the record corrected`);
       }
       let record = input.record ?? current.record;
+      // A corrected inscription is held to its contract; a dataset record is checked by validate.py when published.
+      if (draft.kind === "inscription" && input.record) record = parseWith(InscriptionDraftSchema, input.record, "INVALID_RECORD");
       let assetId = draft.asset_id;
       if (NEW_ASSET_KINDS.has(draft.kind)) {
         // The reviewer may have renamed the asset: its id is the record's.
@@ -236,7 +264,8 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
       }
       decided = await repository.review(id, { status: "approved", assetId, record }, input.note ?? null, user.id);
     }
-    if (!decided) throw new HttpError(409, "ALREADY_REVIEWED", "Someone else decided this draft first");
+    if (decided === "decided") throw new HttpError(409, "ALREADY_REVIEWED", "Someone else decided this draft first");
+    if (decided === "taken") throw new HttpError(409, "ASSET_EXISTS", "Another draft is already approved as this asset; give the record another id");
     return IntakeDraftResponseSchema.parse({ version: CONTRACT_VERSION, draft: toIntakeDraft((await repository.findDraft(id))!) });
   });
 };

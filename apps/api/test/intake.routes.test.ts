@@ -40,7 +40,11 @@ describe("bookMapProblems", () => {
     expect(bookMapProblems([entry("a", { parentKey: "a" })])).toEqual([expect.stringContaining("own parent")]);
     expect(bookMapProblems([entry("a", { parentKey: "z" })])).toEqual([expect.stringContaining("not in the map")]);
     expect(bookMapProblems([entry("a", { proposedId: "x" }), entry("b", { proposedId: "x" })])).toEqual([expect.stringContaining("proposed twice")]);
-    expect(bookMapProblems([entry("a", { printedPages: [12, 10] })])).toEqual([expect.stringContaining("backwards")]);
+    expect(bookMapProblems([entry("a", { parentKey: "b" }), entry("b", { parentKey: "a" })])).toEqual([
+      expect.stringContaining("loop"),
+      expect.stringContaining("loop"),
+    ]);
+    expect(bookMapProblems([entry("a"), entry("b", { parentKey: "a" }), entry("c", { parentKey: "b" })])).toEqual([]);
   });
 });
 
@@ -201,6 +205,41 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
     expect(draft.record).toEqual({ id: renamed, name: { tr: "Düzeltilmiş Eser" }, dating: { year: 1399 }, status: "published" });
   });
 
+  it("approves one draft per new asset id, even when two drafts carry the same one", async () => {
+    const id = await jobNeedingMap();
+    const shared = `bursa-osmangazi-ayni-${tag}`;
+    const first = await bookDraft(id, "s1", { assetId: shared });
+    const second = await bookDraft(id, "s2", { assetId: shared });
+    expect((await json("POST", `/admin/intake/drafts/${first}/review`, moderator, { decision: "approve" })).statusCode).toBe(200);
+    const again = await json("POST", `/admin/intake/drafts/${second}/review`, moderator, { decision: "approve" });
+    expect(again.statusCode).toBe(409);
+    expect(again.json().error.code).toBe("ASSET_EXISTS");
+    // Still waiting, for a reviewer to rename it or reject it.
+    expect((await prisma.intake_draft.findUniqueOrThrow({ where: { id: second } })).status).toBe("pending");
+  });
+
+  it("takes a whole corrected record larger than the API's usual body", async () => {
+    const id = await jobNeedingMap();
+    const draftId = await bookDraft(id, "big");
+    const sections = Array.from({ length: 40 }, (_, i) => ({ id: `b${i}`, title: { tr: `Bölüm ${i}` }, body: { tr: "Taş ".repeat(200) } }));
+    const response = await json("POST", `/admin/intake/drafts/${draftId}/review`, moderator, {
+      decision: "approve",
+      record: { id: `bursa-osmangazi-buyuk-${tag}`, sections },
+    });
+    expect(JSON.stringify({ sections }).length).toBeGreaterThan(16 * 1024);
+    expect(response.statusCode).toBe(200);
+  });
+
+  it("shows a row with an overlong worker error instead of breaking the queue", async () => {
+    const id = await jobNeedingMap();
+    const draftId = await bookDraft(id, "long");
+    await prisma.intake_draft.update({ where: { id: draftId }, data: { note: "n".repeat(3000) } });
+    const response = await json("GET", `/admin/intake/drafts?jobId=${id}`, moderator);
+    expect(response.statusCode).toBe(200);
+    const [draft] = IntakeDraftListResponseSchema.parse(response.json()).items;
+    expect(draft!.note!.length).toBe(1000);
+  });
+
   it("rejects with a reason, and keeps a visitor's inscription on the asset it adds to", async () => {
     const id = await jobNeedingMap();
     const draftId = await bookDraft(id, "no");
@@ -212,6 +251,8 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
       data: { kind: "inscription", asset_id: EXISTING, record: { transliteration: "…", uncertain: [] } },
     });
     draftIds.push(inscription.id);
+    // A corrected reading is held to the inscription's contract.
+    expect((await json("POST", `/admin/intake/drafts/${inscription.id}/review`, moderator, { decision: "approve", record: { foo: 1 } })).statusCode).toBe(400);
     const approved = await json("POST", `/admin/intake/drafts/${inscription.id}/review`, moderator, { decision: "approve" });
     expect(approved.statusCode).toBe(200);
     expect(IntakeDraftResponseSchema.parse(approved.json()).draft).toMatchObject({ status: "approved", assetId: EXISTING });

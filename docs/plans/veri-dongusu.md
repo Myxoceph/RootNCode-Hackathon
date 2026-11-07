@@ -165,6 +165,8 @@ Migration **yalnızca ekleme** yapar: yeni tablolar, var olan tablolara dokunmaz
   - `status = 'pending'` ⇔ `reviewed_at` boş;
   - `asset_id` kebab-case;
   - durum ve tür listeleri §5.1'deki gibi.
+- `20261108120000_intake_one_approval`: bir eser id'si için tek onaylı yeni eser taslağı (`intake_draft_new_asset_idx`,
+  kısmi benzersiz index); aynı anda gelen iki onayın ikincisi 409 alır.
 - `intake_job.created_by` boş olabilir (worker'ın testleri için); API her zaman doldurur.
 - `20261108100000_intake_entry_key`: `book_asset` taslağında `entry_key` zorunlu, öbür türlerde boş
   (yoksa benzersizlik NULL'ları ayrı saydığı için yeniden çalışmada taslak çoğalırdı).
@@ -239,7 +241,7 @@ Yük yaklaşık eşit: Yiğit API + ekranlar + uygulama akışı; Hüseyin worke
 | H3 | İstemler (§5.3): `asset-record.md` (PROMPT.md'den), `photo-subject.md`, `inscription-read.md`; her biri H1 ile ölçülür | H1 | Her istem için ölçüm sonucu bu dosyada (§7) |
 | H4 | Eser başına hat: metin dilimi + fotoğraf + açıklama eşleme → taslak kayıt → JSON Schema doğrulama → hata varsa 1 onarım → konum (`geocode.py`) → tekrar uyarısı → `intake_draft` | H2, H3 | Hatay PDF'i uçtan uca: tüm eserler kuyrukta, `validate.py` hatası yok |
 | H5 | EVREN modelleriyle ayar: EVREN'deki metin modelleri (asistanın kullandığı `qwen3.8-flash-next` ve varsa diğerleri) ve görüntü modeli (`qwen3-vl-30b`) aynı altın sette karşılaştırılır; istemler ölçüme göre iyileştirilir. Uzun bölümler modelin bağlamına sığmazsa metin parçalanır. Sonuç §7'ye yazılır | H1, H3 | Tablo + seçilen EVREN modelleri + istem sürümleri |
-| H6 | **Yayın adımı** (worker): `status = 'approved' AND applied_at IS NULL` taslakları sırayla al → kaydı `data/eserler/<il>/<ilçe>/<id>.json` olarak yaz → `validate.py` → fotoğrafları `media_pipeline.py` ile işle (yerel depoya, §5.4) → `import_to_db.py` ile o eseri yerel veritabanına aktar → `applied_at = now()`. Hata olursa dosyayı geri al, `apply_error`'a yaz. **`import_to_db.py` kendi bağlantısını açar: çağırmadan önce `db.py`'nin yerel-yalnız denetimi aynı `DATABASE_URL` için çalışmalı (§0.1).** `inscription` taslakları için de: kitabeyi eserin dosyasına ekle, aynı yol (Y4 ile birlikte). `data/README.md`'ye bölüm | Y1 | Onaylanan bir kitap taslağı birkaç saniye içinde haritada; dosyası `validate.py`'den geçiyor |
+| H6 | **Yayın adımı** (worker): `status = 'approved' AND applied_at IS NULL` taslakları sırayla al → kaydı `data/eserler/<il>/<ilçe>/<id>.json` olarak yaz → `validate.py` → fotoğrafları `media_pipeline.py` ile işle (yerel depoya, §5.4) → `import_to_db.py` ile o eseri yerel veritabanına aktar → `applied_at = now()`. Yeni eserin id'si yayın anında veri setinde (`data/eserler`) ya da `asset` tablosunda **zaten varsa üzerine yazma**, `apply_error`'a yaz: API onayda bakar, ama onay ile yayın arasında başka bir yoldan eklenmiş olabilir. Hata olursa dosyayı geri al, `apply_error`'a yaz. **`import_to_db.py` kendi bağlantısını açar: çağırmadan önce `db.py`'nin yerel-yalnız denetimi aynı `DATABASE_URL` için çalışmalı (§0.1).** `inscription` taslakları için de: kitabeyi eserin dosyasına ekle, aynı yol (Y4 ile birlikte). `data/README.md`'ye bölüm | Y1 | Onaylanan bir kitap taslağı birkaç saniye içinde haritada; dosyası `validate.py`'den geçiyor |
 
 ### Ortak
 
