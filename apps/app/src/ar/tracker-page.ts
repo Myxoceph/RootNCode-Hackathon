@@ -438,6 +438,11 @@ async function start() {
   };
   // A still for the assistant: the picture stops on the frame, which goes to the app as a JPEG.
   commands.snapshot = async () => {
+    // No frame yet (the camera has not sent one): nothing to send, said as such.
+    if (!video.videoWidth) {
+      post({ type: "snapshot", jpeg: null, error: "no frame yet" });
+      return;
+    }
     if (!frozen) {
       frozen = true;
       holdFrame();

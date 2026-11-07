@@ -72,6 +72,9 @@ export default function InscriptionScreen() {
   // sample asset opened when nothing near is known: an answer from the wrong record is worse than
   // none, so then it answers from the photo alone.
   const askAsset = id ?? (scope.status === "ready" && scope.nearby ? (scope.assets[0]?.id ?? null) : null);
+  // Opened from the camera tab, and nothing near the visitor: the camera still knows the sample
+  // inscriptions, but the reading does not show the sample asset as if it were here.
+  const sampleOnly = id === undefined && scope.status === "ready" && !scope.nearby;
   const askAbout = (asset: string | null) => {
     const name = scope.status === "ready" ? scope.assets.find((a) => a.id === asset)?.name : undefined;
     router.push({ pathname: "/stone-ask", params: asset ? { asset, ...(name && { name }) } : {} });
@@ -116,6 +119,7 @@ export default function InscriptionScreen() {
       </Head>
       {mode === "reading" && (
         <InscriptionReading
+          empty={sampleOnly ? { message: w.noneNearby, onRetry: retry } : null}
           inscription={inscriptionOf(asset, null, lang)}
           notice={untrackable && asset.status === "success" ? w.noTarget : notice}
           onAsk={web ? null : () => askAbout(askAsset)}

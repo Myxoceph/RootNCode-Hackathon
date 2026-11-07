@@ -20,6 +20,11 @@ interface InscriptionReadingProps {
   onUseCamera: (() => void) | null;
   /** Asks the assistant about what the camera shows; null where there is no camera (the web). */
   onAsk?: (() => void) | null;
+  /**
+   * No asset to read: none was asked for and none is near (the sample asset the camera falls back
+   * on is not shown as if it were here). Says so, with a way to look for the visitor again.
+   */
+  empty?: { message: string; onRetry: () => void } | null;
 }
 
 /** Width of the reading column, as the asset's dossier. */
@@ -35,7 +40,7 @@ const COLUMN = 640;
  * people can follow first: today's Turkish and the waqf come before the
  * transliteration.
  */
-export function InscriptionReading({ inscription, notice, onUseCamera, onAsk = null }: InscriptionReadingProps) {
+export function InscriptionReading({ inscription, notice, onUseCamera, onAsk = null, empty = null }: InscriptionReadingProps) {
   const m = useMessages();
   const w = m.reading;
   const { colors: c } = useTheme();
@@ -45,6 +50,10 @@ export function InscriptionReading({ inscription, notice, onUseCamera, onAsk = n
   useEffect(() => {
     if (notice) announce(notice);
   }, [notice]);
+
+  useEffect(() => {
+    if (empty) announce(empty.message);
+  }, [empty?.message]);
 
   // Leaving the page (or turning to the camera) ends its own reading, not another screen's.
   useEffect(() => () => stopAnswerOf(isInscriptionReading), []);
@@ -70,12 +79,12 @@ export function InscriptionReading({ inscription, notice, onUseCamera, onAsk = n
         <View style={styles.intro}>
           <View style={styles.column}>
             <Text variant="overline" color="textSecondary">
-              {[w.inscription, inscription.status === "success" ? inscription.data.date : null].filter(Boolean).join(" · ")}
+              {[w.inscription, !empty && inscription.status === "success" ? inscription.data.date : null].filter(Boolean).join(" · ")}
             </Text>
             <Text variant="display" headingLevel={1}>
-              {inscription.status === "success" ? inscription.data.name : m.screens.inscription}
+              {!empty && inscription.status === "success" ? inscription.data.name : m.screens.inscription}
             </Text>
-            {inscription.status === "success" && inscription.data.location && (
+            {!empty && inscription.status === "success" && inscription.data.location && (
               <Text variant="caption" color="textSecondary" style={styles.semibold}>
                 {inscription.data.location}
               </Text>
@@ -87,21 +96,28 @@ export function InscriptionReading({ inscription, notice, onUseCamera, onAsk = n
               </Text>
             )}
 
-            {inscription.status === "success" && <Actions text={inscription.data} onUseCamera={onUseCamera} />}
-            {inscription.status !== "success" && onUseCamera && <Button label={w.scanWithCamera} variant="ghost" onPress={onUseCamera} />}
+            {empty && (
+              <>
+                <Text color="textSecondary">{empty.message}</Text>
+                <Button label={m.common.retry} onPress={empty.onRetry} />
+              </>
+            )}
+
+            {!empty && inscription.status === "success" && <Actions text={inscription.data} onUseCamera={onUseCamera} />}
+            {(empty || inscription.status !== "success") && onUseCamera && <Button label={w.scanWithCamera} variant="ghost" onPress={onUseCamera} />}
             {onAsk && <Button label={w.askAssistant} accessibilityHint={w.askAssistantHint} variant="ghost" onPress={onAsk} />}
           </View>
         </View>
 
-        {inscription.status === "loading" && <ActivityIndicator color={c.primary} size="large" accessibilityLabel={m.common.loading} />}
-        {inscription.status === "error" && (
+        {!empty && inscription.status === "loading" && <ActivityIndicator color={c.primary} size="large" accessibilityLabel={m.common.loading} />}
+        {!empty && inscription.status === "error" && (
           <View style={styles.band}>
             <View style={styles.column}>
               <DataErrorView error={inscription.error} onRetry={inscription.retry} />
             </View>
           </View>
         )}
-        {inscription.status === "success" && <Bands text={inscription.data} />}
+        {!empty && inscription.status === "success" && <Bands text={inscription.data} />}
       </ScrollView>
     </View>
   );

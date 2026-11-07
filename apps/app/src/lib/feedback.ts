@@ -1,6 +1,6 @@
 import { createAudioPlayer, type AudioPlayer } from "expo-audio";
 import * as Haptics from "expo-haptics";
-import { Platform, Vibration } from "react-native";
+import { AccessibilityInfo, Platform, Vibration } from "react-native";
 
 import { getPlayerState } from "@/audio/capsule-player";
 import { isSpeaking } from "@/lib/voice";
@@ -54,9 +54,29 @@ const haptics: Record<Cue, Haptic | "aligned" | null> = {
   shutter: "medium",
 };
 
+/**
+ * The least time between two plays of a cue: the seal's photo can slip in and out of line several
+ * times a second in a trembling hand, and should not stutter.
+ */
+const cooldownMs: Partial<Record<Cue, number>> = { sealFit: 1500 };
+
 const native = Platform.OS !== "web";
 let options = { sound: true, haptics: true };
 const players = new Map<Cue, AudioPlayer>();
+const lastPlayed = new Map<Cue, number>();
+/** Cues waiting for their file to load: a second call meanwhile does not wait twice. */
+const waiting = new Set<Cue>();
+
+// A screen reader speaks at the same moments the cues mark (a found inscription, a badge): the
+// sound would cover its words, so with one on only the haptic comes.
+let screenReader = false;
+if (native) {
+  AccessibilityInfo.isScreenReaderEnabled().then(
+    (on) => (screenReader = on),
+    () => {},
+  );
+  AccessibilityInfo.addEventListener("screenReaderChanged", (on) => (screenReader = on));
+}
 
 /** The two switches on Sistem ayarları; the settings provider keeps this in step with them. */
 export function setFeedbackOptions(next: { sound: boolean; haptics: boolean }) {
@@ -118,8 +138,6 @@ export function haptic(kind: Haptic | "aligned") {
       void Haptics.selectionAsync().catch(() => {});
       return;
     case "aligned":
-      void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
-      return;
     case "success":
       void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
       return;
@@ -150,9 +168,13 @@ function start(player: AudioPlayer) {
 /** The cue's haptic, and its sound unless "Ses efektleri" is off or a voice is sounding. */
 export function cue(name: Cue) {
   if (!native) return;
+  const now = Date.now();
+  const gap = cooldownMs[name];
+  if (gap && now - (lastPlayed.get(name) ?? 0) < gap) return;
+  lastPlayed.set(name, now);
   const touch = haptics[name];
   if (touch) haptic(touch);
-  if (!options.sound || voiceSounding()) return;
+  if (!options.sound || screenReader || voiceSounding()) return;
   try {
     const player = playerFor(name);
     player.volume = volume[name];
@@ -161,12 +183,20 @@ export function cue(name: Cue) {
       return;
     }
     // Not loaded yet (the first cue soon after start): played once it is, if still in its moment.
-    const asked = Date.now();
+    // One wait at a time, and none longer than its moment, even if the file never loads.
+    if (waiting.has(name)) return;
+    waiting.add(name);
     const subscription = player.addListener("playbackStatusUpdate", (status) => {
       if (!status.isLoaded) return;
-      subscription.remove();
-      if (Date.now() - asked <= LOAD_WAIT_MS) start(player);
+      done();
+      start(player);
     });
+    const done = () => {
+      clearTimeout(timer);
+      subscription.remove();
+      waiting.delete(name);
+    };
+    const timer = setTimeout(done, LOAD_WAIT_MS);
   } catch (error) {
     // A sound that cannot play is only a sound: the moment is shown and said all the same.
     if (__DEV__) console.warn(`[cue] ${name}: could not play`, error);
