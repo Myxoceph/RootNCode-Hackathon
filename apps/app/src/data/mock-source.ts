@@ -61,9 +61,11 @@ export function createMockSource(load: () => Promise<MockFixtures> = loadBundled
   }
 
   return {
-    async listAssets({ city, limit, offset }) {
+    async listAssets({ city, bbox, limit, offset }) {
       parsedList ??= parse((await getFixtures()).list, AssetListResponseSchema, "Örnek eser listesi");
-      const matching = city ? parsedList.items.filter((a) => a.city.code === city) : parsedList.items;
+      const inBox = (a: AssetListResponse["items"][number]) =>
+        !bbox || (a.coordinates !== null && a.coordinates.lng >= bbox[0] && a.coordinates.lat >= bbox[1] && a.coordinates.lng <= bbox[2] && a.coordinates.lat <= bbox[3]);
+      const matching = parsedList.items.filter((a) => (!city || a.city.code === city) && inBox(a));
       return { ...parsedList, total: matching.length, limit, offset, items: matching.slice(offset, offset + limit) };
     },
     getAsset: (id) => getAsset(id),
@@ -80,6 +82,25 @@ export function createMockSource(load: () => Promise<MockFixtures> = loadBundled
       const asset = await getAsset(id);
       if (!asset) return null;
       return { version: CONTRACT_VERSION, lang, assetId: id, items: pulseItemsFromTips(asset.visitorTips), communityTotal: 0 };
+    },
+    async listArTargets() {
+      // The targets of the sample assets, as the API would list them.
+      const fixtures = await getFixtures();
+      const details = (await Promise.all(Object.keys(fixtures.details).map(getAsset))).filter((a): a is AssetDetail => a !== null);
+      const items = details.flatMap((asset) =>
+        asset.inscriptions.flatMap((inscription) =>
+          inscription.arTarget
+            ? [{
+                assetId: asset.id,
+                inscriptionId: inscription.id,
+                city: asset.city.code,
+                coordinates: asset.coordinates ? { lat: asset.coordinates.lat, lng: asset.coordinates.lng } : null,
+                ...inscription.arTarget,
+              }]
+            : [],
+        ),
+      );
+      return { version: CONTRACT_VERSION, items };
     },
     // The fixtures have no weather.
     getWeather: async () => null,

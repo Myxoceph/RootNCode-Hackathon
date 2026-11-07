@@ -45,9 +45,12 @@ const CitiesSchema: SchemaParser<CityOption[]> = MetaEnumsResponseSchema.shape.c
 export function createCachedSource(source: DataSource): DataSource {
   return {
     listAssets: (query, lang) =>
-      cached(`assets:${lang}:${query.city ?? ""}:${query.limit}:${query.offset}`, AssetListResponseSchema, () =>
-        source.listAssets(query, lang),
-      ),
+      // A box is where the visitor stands: an answer for another place is no answer.
+      query.bbox
+        ? source.listAssets(query, lang)
+        : cached(`assets:${lang}:${query.city ?? ""}:${query.limit}:${query.offset}`, AssetListResponseSchema, () =>
+            source.listAssets(query, lang),
+          ),
     getAsset: (id, lang) => cached(`asset:${lang}:${id}`, AssetDetailSchema, () => source.getAsset(id, lang)),
     getRelations: (id, lang) =>
       cached(`relations:${lang}:${id}`, AssetRelationsResponseSchema, () => source.getRelations(id, lang)),
@@ -56,6 +59,8 @@ export function createCachedSource(source: DataSource): DataSource {
     // Not stored: yesterday's weather would mislead.
     getWeather: (city, lang) => source.getWeather(city, lang),
     getWeatherAt: (point, lang) => source.getWeatherAt(point, lang),
+    // Kept by its own module (ar/ar-targets.ts), which shows the stored list at once.
+    listArTargets: () => source.listArTargets(),
   };
 }
 

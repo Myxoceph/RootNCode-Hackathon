@@ -1,4 +1,5 @@
 import type {
+  ArTargetsResponse,
   AssetDetail,
   AssetListResponse,
   AssetRelationsResponse,
@@ -19,6 +20,8 @@ export interface CityOption {
 export interface AssetListQuery {
   /** City code from `/meta/enums`, e.g. `bursa`. */
   city?: string;
+  /** Only assets with coordinates in this box: [minLng, minLat, maxLng, maxLat]. */
+  bbox?: [number, number, number, number];
   limit: number;
   offset: number;
 }
@@ -44,4 +47,6 @@ export interface DataSource {
   getWeather(city: string, lang: Lang): Promise<WeatherResponse | null>;
   /** Today's weather at a point (the visitor's location); `null` when it cannot be had. Never stored either. */
   getWeatherAt(point: { lat: number; lng: number }, lang: Lang): Promise<WeatherResponse | null>;
+  /** Taşın Dili: every inscription the camera can find, with where it is (`GET /ar-targets`). */
+  listArTargets(): Promise<ArTargetsResponse>;
 }

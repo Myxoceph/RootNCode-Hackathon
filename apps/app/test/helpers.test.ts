@@ -1,7 +1,7 @@
 import { AR_MINDAR_VERSION, type AssetDetail, type InscriptionV2 } from "@vagabonds/contracts";
 import { describe, expect, it } from "vitest";
 
-import { cameraInscriptions, featuredInscription, hasReadableInscription, isTrackable, nearbyAssets, overlayText } from "../src/ar/inscription-targets";
+import { cameraInscriptions, featuredInscription, hasReadableInscription, isTrackable, nearbyAssets, overlayText, targetsNear } from "../src/ar/inscription-targets";
 import { capsuleForSoundKey, captionAt, capsules, formatSeconds } from "../src/content/capsules";
 import { pulseItemsFromTips } from "../src/data/pulse";
 import { formatDate } from "../src/lib/format-date";
@@ -90,6 +90,20 @@ describe("Taşın Dili inscription choice", () => {
     // 0.001° of latitude is about 111 m.
     const found = nearbyAssets([at("far", 40.194), at("near", 40.1905), at("closest", 40.1901), at("rough", 40.1902, true)], here);
     expect(found.map((a) => a.id)).toEqual(["closest", "near"]);
+  });
+
+  it("picks the targets near the visitor from the short list, nearest first", () => {
+    const entry = (assetId: string, lat: number | null) => ({
+      assetId,
+      inscriptionId: "kitabe",
+      city: "bursa",
+      coordinates: lat === null ? null : { lat, lng: 29.06 },
+      mindUrl: `https://media.test/${assetId}.mind`,
+      mindarVersion: AR_MINDAR_VERSION,
+    });
+    const here = { lat: 40.19, lng: 29.06 };
+    const found = targetsNear([entry("far", 40.194), entry("near", 40.1915), entry("closest", 40.1902), entry("nowhere", null)], here);
+    expect(found.map((t) => t.assetId)).toEqual(["closest", "near"]);
   });
 });
 

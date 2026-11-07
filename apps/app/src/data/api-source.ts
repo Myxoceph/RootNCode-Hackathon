@@ -1,4 +1,5 @@
 import {
+  ArTargetsResponseSchema,
   AssetDetailSchema,
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
@@ -16,11 +17,16 @@ export function createApiSource(baseUrl: string): DataSource {
     requestJson(`${baseUrl}${path}`, schema, options);
 
   return {
-    async listAssets({ city, limit, offset }, lang) {
+    async listAssets({ city, bbox, limit, offset }, lang) {
       const params = new URLSearchParams({ lang, limit: String(limit), offset: String(offset) });
       if (city) params.set("city", city);
+      if (bbox) params.set("bbox", bbox.join(","));
       // Never null: the list endpoint has no "not found".
       return (await request(`/assets?${params}`, AssetListResponseSchema))!;
+    },
+    async listArTargets() {
+      // Never null: the list has no "not found".
+      return (await request("/ar-targets", ArTargetsResponseSchema))!;
     },
     getAsset(id, lang) {
       return request(`/assets/${encodeURIComponent(id)}?lang=${lang}`, AssetDetailSchema, { allowNotFound: true });

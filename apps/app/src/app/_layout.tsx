@@ -18,6 +18,7 @@ import { BrandSplash } from "@/components/brand-splash";
 import { OfflineBanner } from "@/components/offline-banner";
 import { WebPageHeader } from "@/components/web-nav-bar";
 import { useAccountGate } from "@/lib/use-account-gate";
+import { usePrefetchTargets } from "@/ar/ar-targets";
 import { preloadCues } from "@/lib/feedback";
 import { useBadgeWatch } from "@/lib/use-badge-watch";
 import { A11ySettingsProvider } from "@/settings/a11y-settings";
@@ -123,6 +124,8 @@ function ThemedStack() {
   useBadgeWatch();
   // The sound cues load once, so the first seal or badge is heard without a pause.
   useEffect(() => preloadCues(), []);
+  // Taşın Dili's targets, kept ready behind the first screen.
+  usePrefetchTargets();
   return (
     <ThemeProvider value={navigationTheme(theme)}>
       <StatusBar style={theme.scheme === "dark" ? "light" : "dark"} />
