@@ -1,4 +1,4 @@
-import type { ArTargetEntry, AssetDetail, AssetSummary, InscriptionV2 } from "@vagabonds/contracts";
+import { arTargetMindKey, type ArTargetEntry, type AssetDetail, type AssetSummary, type InscriptionV2 } from "@vagabonds/contracts";
 import { useEffect, useState } from "react";
 
 import { kmBetween } from "@/map/dense-area";
@@ -38,6 +38,14 @@ export function overlayText(inscription: InscriptionV2): string | null {
   if (text.length <= OVERLAY_MAX) return text;
   const cut = text.slice(0, OVERLAY_MAX);
   return `${cut.slice(0, cut.lastIndexOf(" ") > 0 ? cut.lastIndexOf(" ") : OVERLAY_MAX)}…`;
+}
+
+/**
+ * Where the data pipeline puts the `.mind` file it compiles from a photo: beside the photo's
+ * variants (`arTargetMindKey`, packages/contracts), from the same ~1280 px JPEG the phone compiles.
+ */
+export function mindUrlBeside(photoUrl: string): string {
+  return arTargetMindKey(photoUrl);
 }
 
 /** The ~1280 px JPEG of the photo: big enough to recognise, small enough to compile in seconds. */

@@ -119,6 +119,62 @@ export const MyAchievementsResponseSchema = z.strictObject({
 export const VISIT_RADIUS_METERS = 200;
 
 /**
+ * The parts of a monument that can carry its visit seal (Ziyaret Mührü), by the photo's `subject`,
+ * best first. A specific part is best: one a visitor has to walk up to and frame. A view of the
+ * building comes after them, for the many monuments whose photos show no such part. The app and the
+ * data pipeline (which compiles the seal photo's `.mind` file ahead) pick by this same rule.
+ */
+export const SEAL_SUBJECTS = [
+  "portal",
+  "inscription",
+  "ornament_detail",
+  "fountain",
+  "mihrab",
+  "minber",
+  "window",
+  "engraving",
+  "interior",
+  "portico",
+  "courtyard",
+  "exterior",
+  "minaret",
+  "dome",
+  "tomb",
+  "sadirvan",
+] as const;
+export type SealSubject = (typeof SEAL_SUBJECTS)[number];
+
+/** Photos nobody has sorted yet: the cover among them is the last resort. One from above (`aerial`) cannot be framed on the spot. */
+const UNSORTED_SUBJECTS = new Set<string | null>(["photo", "other", null]);
+
+/** What the rule reads of a photo: the API's `Media`, or the dataset's record with its manifest size. */
+export interface SealCandidate {
+  kind: string;
+  subject: string | null;
+  width: number;
+  height: number;
+  isCover: boolean;
+}
+
+/**
+ * The photo a visitor shows the camera for the seal: of the best part there is a photo of, the
+ * sharpest (most pixels, the first on a tie); else the cover among the unsorted photos, else the
+ * first of them. `subject` is null for that last resort. `null` when the asset has no photo to use.
+ */
+export function pickSealPhoto<T extends SealCandidate>(media: readonly T[]): { photo: T; subject: SealSubject | null } | null {
+  const photos = media.filter((m) => m.kind === "photo");
+  for (const subject of SEAL_SUBJECTS) {
+    const photo = photos
+      .filter((m) => m.subject === subject)
+      .reduce<T | undefined>((best, m) => (!best || m.width * m.height > best.width * best.height ? m : best), undefined);
+    if (photo) return { photo, subject };
+  }
+  const unsorted = photos.filter((m) => UNSORTED_SUBJECTS.has(m.subject));
+  const cover = unsorted.find((m) => m.isCover) ?? unsorted[0];
+  return cover ? { photo: cover, subject: null } : null;
+}
+
+/**
  * `POST /assets/:id/visit`: the visitor's position. Required when the asset has a point;
  * an asset without one accepts the visit as unchecked (`verified: false`).
  */

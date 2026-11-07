@@ -871,6 +871,7 @@ Depolamaya yükleme:
   npm run data:ar-targets
   ```
   Betik (`tools/compile_ar_targets.mts`, Chrome gerekir) fotoğrafın 1280 px JPEG sürümünden `target-mindar-<sürüm>.mind` dosyasını sürümlerin yanına yazar ve `build/ar-targets.json`'u günceller. Hedef fotoğraf önden, net ve kitabeyi dolduracak biçimde çekilmiş olmalı; MindAR kitabenin desenini tanır. İçe aktarma, derlenmemiş (ya da fotoğrafı değişmiş) hedefi boş bırakır.
+- **Ziyaret mührü hedefleri:** Aynı betik her eserin mühür fotoğrafını da derler (`build/ar-targets.json` → `seals`). Fotoğrafı uygulamayla aynı kural seçer (`pickSealPhoto`, packages/contracts). Uygulama dosyanın adresini fotoğrafınkinden kurar; dosya yoksa fotoğrafı telefonda derler ("Eser hazırlanıyor"), yani derlenmemiş eser de çalışır. Fotoğraf başına ~15-20 sn: 685 eserin hepsi ~3 saat. Değişmemiş hedef yeniden derlenmez, yarıda kesilen çalıştırma kaldığı yerden sürer. Seçenekler: `-- --cities=bursa,konya`, `-- --no-seals`, `-- --assets=<id>,<id>`. Derlenenler yukarıdaki `rclone copy` ile yüklenir.
 - Kontrol ederken tarayıcı user-agent'ı kullanın: `r2.dev` adresi Python'un varsayılan istemcisine (`Python-urllib`) 403 döner, tarayıcı ve uygulama etkilenmez.
 
 **Git'e ne girer?**

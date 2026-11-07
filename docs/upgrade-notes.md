@@ -22,6 +22,22 @@ Değişenler:
 
 ---
 
+## 2026-11-07 · Ziyaret Mührü: hazır hedefler
+
+Kimler: **veri hattını çalıştıranlar** (R2'ye yükleme)
+
+1. Mühür hedeflerini derle (Chrome gerekir; 643 hedef ~1 saat; Chrome her 30 derlemede yeniden açılır, takılan fotoğraf atlanır, kesilirse kaldığı yerden sürer): `npm run data:ar-targets`. Bu PR'da derlenmiş hâli var (`data/build/ar-targets.json`: 11 kitabe, 632 mühür).
+2. **R2'ye yükleme şimdilik askıda** (sunuma kadar R2'ye dokunulmuyor). Dosyalar yüklenene kadar uygulama mühür fotoğrafını eskisi gibi telefonda derler; hiçbir şey bozulmaz. Yüklenirken yalnızca `.mind` dosyaları, silmeyen ve üzerine yazmayan biçimde; önce deneme modu (`--dry-run`) ve öncesi/sonrası `rclone size` karşılaştırması:
+   `rclone copy data/build/media r2:kok-kod-media-public --include "*.mind" --immutable --checksum --transfers 16 --header-upload "Cache-Control: public, max-age=31536000, immutable"`
+3. API'de ve veritabanında değişiklik yok.
+
+Değişenler:
+
+- Ziyaret Mührü, eserin mühür fotoğrafının sunucuda derlenmiş `.mind` dosyasını indirip telefonda saklıyor; "Eser hazırlanıyor" beklemesi kalkıyor. Dosya yoksa eskisi gibi telefonda derleniyor.
+- Mühür fotoğrafını seçen kural ortak pakette (`pickSealPhoto`); uygulama ve veri hattı aynı fotoğrafı seçiyor.
+
+---
+
 ## 2026-11-07 · Ödüllere panelden görsel (sözleşme 0.3.37)
 
 Kimler: **API'yi çalıştıranlar** (sunum sunucusu dahil), **uygulama ekibi**
