@@ -10,28 +10,25 @@ import { PageBody } from "@/components/admin/shell";
 import { fetchWholeQueue } from "@/data/admin";
 
 type Period = "7" | "30" | "all";
-type Kind = "all" | "notes" | "photos";
 
 interface Row {
   id: string;
   name: string;
   notes: number;
-  photos: number;
   total: number;
   pending: number;
   last: string;
 }
 
-/** The assets ranked by approved notes, written and with a photo, over a chosen period. */
+/** The assets ranked by approved written notes over a chosen period. */
 export default function Ranking() {
   const { width } = useWindowDimensions();
   const narrow = width < 900;
   const [period, setPeriod] = useState<Period>("30");
-  const [kind, setKind] = useState<Kind>("all");
   const approved = useLoad(() => fetchWholeQueue("approved"));
   const pending = useLoad(() => fetchWholeQueue("pending"));
 
-  const rows = approved.data ? rank(approved.data, pending.data ?? [], period, kind) : null;
+  const rows = approved.data ? rank(approved.data, pending.data ?? [], period) : null;
   const top = rows?.slice(0, 3) ?? [];
   const rest = rows?.slice(3) ?? [];
   const most = rest[0]?.total ?? 1;
@@ -45,15 +42,14 @@ export default function Ranking() {
     : [
         { label: "#", width: 52 },
         { label: "Diğer eserler", flex: 2 },
-        { label: "Yazılı", width: 80, align: "right" },
-        { label: "Fotoğraflı", width: 96, align: "right" },
+        { label: "Onaylı", width: 90, align: "right" },
         { label: "Bekleyen", width: 90, align: "right" },
         { label: "Toplam", flex: 1.4 },
       ];
 
   return (
     <PageBody>
-      <PageHeader overline="Topluluk Ziyaretçi Nabzı" title="En çok not alan eserler" hint="Ziyaretçilerin onaylanan yazılı ve fotoğraflı notlarına göre eserlerin sıralaması." />
+      <PageHeader overline="Topluluk Ziyaretçi Nabzı" title="En çok not alan eserler" hint="Ziyaretçilerin onaylanan notlarına göre eserlerin sıralaması." />
       <View style={styles.filters}>
         <Segments
           label="Dönem"
@@ -63,16 +59,6 @@ export default function Ranking() {
             { value: "7", label: "Son 7 gün" },
             { value: "30", label: "Son 30 gün" },
             { value: "all", label: "Tüm zamanlar" },
-          ]}
-        />
-        <Segments
-          label="Not türü"
-          value={kind}
-          onChange={setKind}
-          options={[
-            { value: "all", label: "Tümü" },
-            { value: "notes", label: "Yazılı" },
-            { value: "photos", label: "Fotoğraflı" },
           ]}
         />
       </View>
@@ -102,12 +88,11 @@ export default function Ranking() {
             {rest.map((row, index) => {
               const i = index + 3;
               const cells = narrow
-                ? [<Place key="p" place={i + 1} />, <Cell key="n" title={row.name} sub={`${row.notes} yazılı · ${row.photos} fotoğraflı`} />, <Total key="t" value={row.total} />]
+                ? [<Place key="p" place={i + 1} />, <Cell key="n" title={row.name} sub={`Son not ${timeAgo(row.last)}`} />, <Total key="t" value={row.total} />]
                 : [
                     <Place key="p" place={i + 1} />,
                     <Cell key="n" title={row.name} sub={`Son not ${timeAgo(row.last)}`} />,
                     <Count key="w" value={row.notes} />,
-                    <Count key="f" value={row.photos} />,
                     <Count key="b" value={row.pending} muted />,
                     <Bar key="t" value={row.total} most={most} />,
                   ];
@@ -121,15 +106,15 @@ export default function Ranking() {
   );
 }
 
-function rank(approved: ModerationItem[], pending: ModerationItem[], period: Period, kind: Kind): Row[] {
+function rank(approved: ModerationItem[], pending: ModerationItem[], period: Period): Row[] {
   const since = period === "all" ? 0 : Date.now() - Number(period) * 86_400_000;
-  const counted = (item: ModerationItem) => (kind === "all" ? true : kind === "photos" ? item.kind === "photo" : item.kind !== "photo");
+  // Photos sent before they were taken out of the app are not counted.
+  const counted = (item: ModerationItem) => item.kind !== "photo";
   const rows = new Map<string, Row>();
   for (const item of approved) {
     if (new Date(item.createdAt).getTime() < since || !counted(item)) continue;
-    const row = rows.get(item.asset.id) ?? { id: item.asset.id, name: item.asset.name, notes: 0, photos: 0, total: 0, pending: 0, last: item.createdAt };
-    if (item.kind === "photo") row.photos += 1;
-    else row.notes += 1;
+    const row = rows.get(item.asset.id) ?? { id: item.asset.id, name: item.asset.name, notes: 0, total: 0, pending: 0, last: item.createdAt };
+    row.notes += 1;
     row.total += 1;
     if (item.createdAt > row.last) row.last = item.createdAt;
     rows.set(item.asset.id, row);
@@ -178,11 +163,6 @@ function Podium({ row, place, narrow }: { row: Row; place: number; narrow: boole
           </Text>
           <Text colorValue={sub} style={{ fontSize: 12.5 }}>
             onaylı not
-          </Text>
-        </View>
-        <View style={[styles.podiumSplit, { backgroundColor: first ? "rgba(255,255,255,0.35)" : a.well }]}>
-          <Text colorValue={sub} style={styles.podiumSplitText}>
-            {row.notes} yazılı · {row.photos} fotoğraflı
           </Text>
         </View>
       </View>
@@ -236,8 +216,6 @@ const styles = StyleSheet.create({
   podiumName: { fontFamily: fontFamily.sansSemiBold, fontSize: 19, lineHeight: 25, letterSpacing: -0.4 },
   podiumFoot: { flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", gap: 10, flexWrap: "wrap" },
   podiumValue: { fontFamily: fontFamily.sansMedium, fontSize: 32, lineHeight: 38, letterSpacing: -1, fontVariant: ["tabular-nums"] },
-  podiumSplit: { borderRadius: 999, paddingHorizontal: 12, paddingVertical: 6 },
-  podiumSplitText: { fontFamily: fontFamily.sansMedium, fontSize: 12 },
   place: { width: 30, height: 30, borderRadius: 15, alignItems: "center", justifyContent: "center" },
   placeText: { fontFamily: fontFamily.sansBold, fontSize: 13 },
   count: { fontFamily: fontFamily.sansSemiBold, fontSize: 14, fontVariant: ["tabular-nums"], textAlign: "right" },

@@ -5,7 +5,7 @@ import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 import { book, RuledLines, usePageStyle } from "./paper";
 
 /** Far enough that a lifted leaf does not swell over the screen on a phone. */
-const PERSPECTIVE = 2400;
+export const PERSPECTIVE = 2400;
 /** The leaf at its most lifted: how dark the face turning from the light goes, and the shadow it throws. */
 const FACE_SHADE = 0.3;
 const CAST_SHADOW = 0.42;
@@ -120,6 +120,7 @@ export function Leaf({
   backColor = book.paper,
   frontActive,
   backActive = false,
+  perspective = PERSPECTIVE,
 }: {
   position: Animated.Value;
   number: number;
@@ -134,6 +135,8 @@ export function Leaf({
   backColor?: string;
   frontActive: boolean;
   backActive?: boolean;
+  /** How far the eye is: a leaf lifted towards it grows by `perspective / (perspective - width)` at its edge. */
+  perspective?: number;
 }) {
   const twoSided = back !== undefined;
   const page = usePageStyle();
@@ -162,7 +165,7 @@ export function Leaf({
           height,
           zIndex: over ? stack + 2000 + number : stack,
           transformOrigin: "left center",
-          transform: [{ perspective: PERSPECTIVE }, { rotateY }],
+          transform: [{ perspective }, { rotateY }],
         },
       ]}
     >

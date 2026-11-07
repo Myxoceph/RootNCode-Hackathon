@@ -329,7 +329,7 @@ function EntryFoot({ entry, number, page, continues, onEdit, onShare }: { entry:
       <View style={styles.flex}>
         {continues && (
           <View style={styles.continues}>
-            <Text variant="caption" colorValue={page.inkSoft}>
+            <Text variant="caption" colorValue={page.inkSoft} numberOfLines={1}>
               {w.continues}
             </Text>
             <Ionicons name="chevron-down" size={14} color={page.inkSoft} />

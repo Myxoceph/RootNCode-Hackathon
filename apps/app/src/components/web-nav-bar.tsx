@@ -20,6 +20,16 @@ import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 import type { TabItem } from "./tab-bar";
 import { useLang, useMessages, type Messages } from "@/i18n";
 
+/** The logo: deep gold on the light bar, light gold on the dark one; the symbol alone on a narrow window. */
+const BRAND = {
+  light: { logo: require("../../assets/images/brand/logo.png"), symbol: require("../../assets/images/brand/symbol.png") },
+  dark: { logo: require("../../assets/images/brand/logo-light.png"), symbol: require("../../assets/images/brand/symbol-light.png") },
+} as const;
+/** The logo's and the symbol's width for their height (assets/images/brand). */
+const LOGO_SHAPE = 1885 / 474;
+const SYMBOL_SHAPE = 1255 / 947;
+const BRAND_HEIGHT = 40;
+
 /** Screens that fill the whole screen, the bar hidden: an asset's story. */
 const HIDDEN_ON = new Set(["[id]"]);
 /** Tabs the bar floats over, as the phone's capsule does: the map runs on under it. */
@@ -194,14 +204,13 @@ export function SiteNav({
           onPress={() => router.navigate("/")}
           style={styles.brand}
         >
-          <View style={styles.mark} aria-hidden>
-            <Text style={styles.markLetter}>V</Text>
-          </View>
-          {!narrow && (
-            <Text style={[styles.wordmark, { color: tone.text }]}>
-              Vagabonds
-            </Text>
-          )}
+          {/* The link's name says where it goes; the logo itself is not read. */}
+          <Image
+            source={narrow ? BRAND[scheme].symbol : BRAND[scheme].logo}
+            style={{ height: BRAND_HEIGHT, width: BRAND_HEIGHT * (narrow ? SYMBOL_SHAPE : LOGO_SHAPE) }}
+            resizeMode="contain"
+            aria-hidden
+          />
         </Pressable>
 
         <View style={styles.end}>
@@ -444,25 +453,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 12,
-  },
-  mark: {
-    width: 30,
-    height: 30,
-    borderRadius: 9,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: NIGHT,
-    boxShadow: "inset 0 0 0 1px rgba(231, 194, 106, 0.4)",
-  },
-  markLetter: {
-    fontFamily: fontFamily.display,
-    fontSize: 18,
-    lineHeight: 21,
-    color: LIGHT_GOLD,
-  },
-  wordmark: {
-    fontFamily: fontFamily.display,
-    fontSize: 22,
   },
   /** The links and Profil together at the right, Profil last. */
   end: {

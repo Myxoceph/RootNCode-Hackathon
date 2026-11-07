@@ -541,13 +541,13 @@ function Where({ section, place, onPress }: { section: Section; place: string; o
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={`${dossier ? "Eserin dosyasında" : "Kaydırmalı sayfalarda"} görünür: ${place}. Telefonda göster`}
+      accessibilityLabel={`${dossier ? "Eser bilgilerinde" : "Kaydırmalı sayfalarda"} görünür: ${place}. Telefonda göster`}
       onPress={onPress}
       style={({ hovered }: { pressed: boolean; hovered?: boolean }) => [styles.where, { backgroundColor: dossier ? a.blueSoft : a.goldSoft }, hovered && { opacity: 0.8 }]}
     >
       <Ionicons name={dossier ? "document-text-outline" : "swap-vertical-outline"} size={15} color={color} aria-hidden />
       <Text colorValue={color} style={styles.whereSection}>
-        {dossier ? "Eserin dosyasında" : "Kaydırmalı sayfalarda"}
+        {dossier ? "Eser bilgilerinde" : "Kaydırmalı sayfalarda"}
       </Text>
       <Text colorValue={color} style={styles.wherePlace}>
         {place}
@@ -691,7 +691,7 @@ function PhoneView({ view, onView, samples, onSamples, children }: { view: Secti
           onChange={onView}
           options={[
             { value: "pages", label: "Kaydırmalı sayfalar" },
-            { value: "dossier", label: "Eserin dosyası" },
+            { value: "dossier", label: "Eser bilgileri" },
           ]}
         />
       </View>

@@ -71,7 +71,7 @@ const TOC = 240;
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
 /**
- * Eserin dosyası: everything the book says about an asset, on one page to read at ease. Nothing is
+ * Eser bilgileri: everything the book says about an asset, on one page to read at ease. Nothing is
  * cut: long texts are set in short paragraphs, photos break them up, each block has its own band and
  * the bar on top always says where the reader is. A block with nothing in it does not show.
  */
@@ -872,7 +872,7 @@ function photosForChapters(asset: AssetDetail): Map<string, Media> {
 /** Photos set in the dossier by hand, after a block or a chapter; pressing one in the editor opens its question. */
 function PlacedPhotos({ photos, place }: { photos: Media[]; place: string }) {
   return (
-    <Editable field={`photo-in:${place}`} label="Dosyadaki fotoğraf">
+    <Editable field={`photo-in:${place}`} label="Eser bilgilerindeki fotoğraf">
       <View style={styles.placed}>
         {photos.map((photo) => (
           <View key={photo.key} style={styles.figure}>

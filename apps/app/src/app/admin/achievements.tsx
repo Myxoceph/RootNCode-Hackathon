@@ -82,7 +82,7 @@ function ruleText(rule: AchievementRule, meta: MetaEnumsResponse | null): string
     case "complex":
       return `Külliyenin bütün yapılarını gez (${rule.parentId})`;
     case "contributions":
-      return `${rule.count} ${rule.contribution === "notes" ? "yazılı notu" : rule.contribution === "photos" ? "fotoğraflı notu" : "notu"} onaylansın`;
+      return `${rule.count} ${"notu"} onaylansın`;
   }
 }
 
@@ -258,7 +258,8 @@ function AchievementForm({ item, meta, onClose, onSaved }: { item: AdminAchievem
   const [hours, setHours] = useState(String(rule?.kind === "within" ? rule.hours : 48));
   const [level, setLevel] = useState<"district" | "city">(rule?.kind === "within" ? rule.level : "district");
   const [parentId, setParentId] = useState(rule?.kind === "complex" ? rule.parentId : "");
-  const [contribution, setContribution] = useState<"notes" | "photos" | "any">(rule?.kind === "contributions" ? rule.contribution : "any");
+  // Visitors send only written notes now, so a new rule counts every note; an old rule keeps its own.
+  const contribution = rule?.kind === "contributions" ? rule.contribution : "any";
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 
@@ -418,18 +419,6 @@ function AchievementForm({ item, meta, onClose, onSaved }: { item: AdminAchievem
         </View>
       )}
       {kind === "complex" && <Field label="Külliye kimliği *" value={parentId} onChangeText={setParentId} placeholder="ör. bursa-osmangazi-muradiye-kulliyesi" autoCapitalize="none" />}
-      {kind === "contributions" && (
-        <Segments
-          label="Not türü"
-          value={contribution}
-          onChange={setContribution}
-          options={[
-            { value: "any", label: "Hepsi" },
-            { value: "notes", label: "Yazılı" },
-            { value: "photos", label: "Fotoğraflı" },
-          ]}
-        />
-      )}
       <View style={[styles.preview, { borderColor: "rgba(156,116,36,0.3)" }]}>
         <Text color="textSecondary" style={{ fontSize: 13 }}>
           Önizleme: {ruleText(buildRule(), meta)}

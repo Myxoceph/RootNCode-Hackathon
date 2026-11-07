@@ -321,7 +321,7 @@ export default function AssistantScreen() {
       ]}
     >
       <Head>
-        <title>{`${m.tabs.rehber} · Vagabonds`}</title>
+        <title>{m.common.title(m.tabs.rehber)}</title>
       </Head>
       {withPanel && (
         <AssistantSessions

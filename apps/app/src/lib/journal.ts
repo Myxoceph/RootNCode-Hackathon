@@ -262,15 +262,18 @@ const SPREAD_SHAPE = 1.4;
 const PAGE_MAX_WIDTH = 480;
 const SPREAD_MAX_WIDTH = 1040;
 const SPREAD_MIN_WIDTH = 640;
+/** Two pages open in a low room (a laptop's short screen, a phone on its side) may be this wide for their height, so they are not narrow columns. */
+const SPREAD_WIDEST = 1.7;
 
 /**
  * The book's size in the room there is: always a book's shape, whole inside that room. Where the room
- * is wide (a wide web page, a phone on its side) it lies open on two pages.
+ * is wide (a wide web page, a phone on its side) it lies open on two pages, and where that room is low
+ * the pages open a little wider than tall rather than shrink to narrow columns.
  */
 export function bookSize(roomWidth: number, roomHeight: number): { width: number; height: number; spread: boolean } {
   const spread = roomWidth >= SPREAD_MIN_WIDTH && roomWidth > roomHeight * 1.2;
   const shape = spread ? SPREAD_SHAPE : PAGE_SHAPE;
-  const width = Math.min(roomWidth, spread ? SPREAD_MAX_WIDTH : PAGE_MAX_WIDTH);
-  const height = Math.min(width / shape, roomHeight);
-  return { width: Math.floor(Math.min(width, height * shape)), height: Math.floor(height), spread };
+  const most = Math.min(roomWidth, spread ? SPREAD_MAX_WIDTH : PAGE_MAX_WIDTH);
+  const height = Math.min(most / shape, roomHeight);
+  return { width: Math.floor(Math.min(most, height * (spread ? SPREAD_WIDEST : shape))), height: Math.floor(height), spread };
 }

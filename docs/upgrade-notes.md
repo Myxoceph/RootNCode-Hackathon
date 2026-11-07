@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-07 · Yeni ad, logo ve ikon: Vakıfname
+
+Kimler: **uygulamayı derleyenler**
+
+1. Yeni APK al: ikon, açılış ekranı ve telefonda görünen ad yerel derlemeye girer (`npm run android:apk -w apps/app`). Expo Go'da açılış ekranı da yenilenir.
+
+Değişenler:
+
+- Görünen ad **Vakıfname**: sekme başlıkları, web sitesi, tanıtım sayfası, yönetim paneli ve telefonda ikonun altı. Paket kimliği (`com.vagabonds.app`), slug ve `vagabonds://` bağlantı şeması değişmedi; kurulu uygulamalar güncellenir, bağlantılar çalışmaya devam eder.
+- Uygulama ikonu, Android uyarlanabilir ikonu ve favicon yeni sembolle. Uygulama "Vakıfname" logosuyla açılır: açılış ekranında beyaz üstüne koyu altın logo, ardından kısa süre uygulamanın içinde uygulamanın kendi temasıyla (aydınlıkta beyaz üstüne koyu altın, koyuda lacivert üstüne açık altın) durup kaybolur (Expo Go'da da).
+- Logo ve sembolün temiz, şeffaf halleri: `apps/app/assets/images/brand/`.
+
+---
+
 ## 2026-11-07 · Taşın Dili ve Taşa Sor tek ekranda (sözleşme 0.3.35)
 
 Kimler: **API'yi çalıştıranlar** (sunum sunucusu dahil), **uygulama ekibi**

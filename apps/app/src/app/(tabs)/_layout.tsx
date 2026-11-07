@@ -1,4 +1,4 @@
-import { fontFamily } from "@vagabonds/ui";
+import { fontFamily, palette } from "@vagabonds/ui";
 import { Tabs } from "expo-router/js-tabs";
 import { Platform } from "react-native";
 
@@ -42,7 +42,13 @@ export default function TabLayout() {
       screenOptions={{ headerTitleStyle: { fontFamily: fontFamily.display }, tabBarPosition: WEB ? "top" : "bottom" }}
     >
       {tabs.map(({ name, title, ownHeader }) => (
-        <Tabs.Screen key={name} name={name} options={{ title, headerShown: !ownHeader }} />
+        <Tabs.Screen
+          key={name}
+          name={name}
+          // The map is night in every theme: while its screen loads (the site loads each page's code when
+          // first opened) its place is night blue too, going on into its veil, not the page grey.
+          options={{ title, headerShown: !ownHeader, ...(name === "map" ? { sceneStyle: { backgroundColor: palette.gece950 } } : {}) }}
+        />
       ))}
       {/* An array, not `WEB && …`: a `false` child makes the layout warn that it is not a Screen. */}
       {WEB ? [<Tabs.Screen key="camera" name="camera" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: m.tabs.camera }} />] : []}

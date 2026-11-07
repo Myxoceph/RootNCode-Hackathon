@@ -2,14 +2,14 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import type { JournalEntry, JournalPhoto } from "@vagabonds/contracts";
 import { fontFamily, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
 import Head from "expo-router/head";
-import { useEffect, useRef, useState, type ComponentRef } from "react";
+import { useEffect, useRef, useState, type ComponentRef, type ReactNode } from "react";
 import { ActivityIndicator, Animated, Platform, Pressable, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Defs, G, Line, LinearGradient, Path, Pattern, RadialGradient, Rect, Stop } from "react-native-svg";
 
 import { JournalComposer } from "@/components/journal/composer";
 import { JournalCover } from "@/components/journal/cover";
-import { Leaf, LeafFace } from "@/components/journal/leaf";
+import { Leaf, LeafFace, PERSPECTIVE } from "@/components/journal/leaf";
 import { EntryPage, MorePage, NewPage } from "@/components/journal/pages";
 import { book } from "@/components/journal/paper";
 import { PhotoViewer } from "@/components/journal/photo-viewer";
@@ -54,6 +54,15 @@ const CAPSULE_INK = "#FFFFFF";
 const CAPSULE_SOFT = "#A9BDB2";
 /** Wide enough for "Yeni sayfa" and for "12 / 120": the arrows stay put as the page changes. */
 const COUNTER_WIDTH = 96;
+const WEB = Platform.OS === "web";
+/**
+ * On the web the eye is this many page widths away. A wide page seen from a phone's distance swells as
+ * it lifts, over the book's edges and the page; from here it grows by a ninth at most, and the book
+ * keeps that room above and below it. Nothing of a leaf shows past it either: on a narrow page the
+ * turned leaves do not lie off the book's left edge as they do on a phone.
+ */
+const WEB_EYE = 10;
+const WEB_SWELL = WEB_EYE / (WEB_EYE - 1);
 /** How long the offer to share a page just written stays over the controls. */
 const OFFER_MS = 9000;
 
@@ -92,9 +101,12 @@ export default function JournalScreen() {
     return () => clearTimeout(timer);
   }, [offer]);
 
-  const size = bookSize(room.width - DEPTH, room.height - DEPTH - RIBBON_TAIL);
+  const size = bookSize(room.width - DEPTH, (room.height - DEPTH - RIBBON_TAIL) / (WEB ? WEB_SWELL : 1));
   const wide = size.spread;
   const pageWidth = Math.floor(size.width / (wide ? 2 : 1));
+  const perspective = WEB ? pageWidth * WEB_EYE : PERSPECTIVE;
+  /** How far a lifted leaf reaches past the book's head and foot, at most. */
+  const swell = WEB ? Math.ceil((size.height * (WEB_SWELL - 1)) / 2) : 0;
   const pages = bookPages(journal.entries, journal.total, journal.nextCursor !== null, !wide);
   // One leaf a page on a phone. Two pages open: the left lies still, and each leaf is a right page with a left on its back.
   const last = wide ? Math.max(0, Math.floor((pages.length - 1) / 2)) : Math.max(0, pages.length - 1);
@@ -213,38 +225,41 @@ export default function JournalScreen() {
               )}
               {journal.status === "ready" && pageWidth > 0 && (
                 <View {...panHandlers} style={styles.leaves}>
-                  {wide
-                    ? pages[0] && index <= 1 && (
-                        <View style={[styles.stillPage, { width: pageWidth, height: size.height }]}>
-                          <LeafFace active={index === 0}>{pageOf(pages[0], index === 0)}</LeafFace>
-                        </View>
-                      )
-                    : null}
-                  {near.map((leaf) => {
-                    const front = wide ? pages[leaf * 2 + 1] : pages[leaf];
-                    const back = wide && leaf < last ? pages[leaf * 2 + 2] : undefined;
-                    const frontKey = front ? pageKey(front) : "blank";
-                    return (
-                      <Leaf
-                        key={wide ? `spread-${leaf}-${frontKey}` : frontKey}
-                        position={position}
-                        number={leaf}
-                        width={pageWidth}
-                        height={size.height}
-                        left={wide ? pageWidth : 0}
-                        // The cover is over everything, the binding included; the rest lie first on top.
-                        stack={front?.kind === "cover" ? pages.length + COVER_ABOVE : pages.length - leaf}
-                        backColor={front?.kind === "cover" ? book.hide : book.paper}
-                        frontActive={leaf === index}
-                        backActive={leaf === index - 1}
-                        front={front ? pageOf(front, leaf === index) : <View style={styles.blank} />}
-                        {...(wide && leaf < last ? { back: back ? pageOf(back, leaf === index - 1) : <View style={styles.blank} /> } : {})}
-                      />
-                    );
-                  })}
-                  <View pointerEvents="none" style={[styles.bindingLayer, { zIndex: wide ? WIDE_BINDING_ABOVE : pages.length + 1 }]}>
-                    <Binding height={size.height} center={wide ? pageWidth : null} />
-                  </View>
+                  <LeafFrame swell={swell}>
+                    {wide
+                      ? pages[0] && index <= 1 && (
+                          <View style={[styles.stillPage, { width: pageWidth, height: size.height }]}>
+                            <LeafFace active={index === 0}>{pageOf(pages[0], index === 0)}</LeafFace>
+                          </View>
+                        )
+                      : null}
+                    {near.map((leaf) => {
+                      const front = wide ? pages[leaf * 2 + 1] : pages[leaf];
+                      const back = wide && leaf < last ? pages[leaf * 2 + 2] : undefined;
+                      const frontKey = front ? pageKey(front) : "blank";
+                      return (
+                        <Leaf
+                          key={wide ? `spread-${leaf}-${frontKey}` : frontKey}
+                          position={position}
+                          number={leaf}
+                          width={pageWidth}
+                          height={size.height}
+                          left={wide ? pageWidth : 0}
+                          perspective={perspective}
+                          // The cover is over everything, the binding included; the rest lie first on top.
+                          stack={front?.kind === "cover" ? pages.length + COVER_ABOVE : pages.length - leaf}
+                          backColor={front?.kind === "cover" ? book.hide : book.paper}
+                          frontActive={leaf === index}
+                          backActive={leaf === index - 1}
+                          front={front ? pageOf(front, leaf === index) : <View style={styles.blank} />}
+                          {...(wide && leaf < last ? { back: back ? pageOf(back, leaf === index - 1) : <View style={styles.blank} /> } : {})}
+                        />
+                      );
+                    })}
+                    <View pointerEvents="none" style={[styles.bindingLayer, { zIndex: wide ? WIDE_BINDING_ABOVE : pages.length + 1 }]}>
+                      <Binding height={size.height} center={wide ? pageWidth : null} />
+                    </View>
+                  </LeafFrame>
                 </View>
               )}
             </View>
@@ -366,6 +381,16 @@ export default function JournalScreen() {
         />
       )}
       <PhotoViewer photo={viewing?.photo ?? null} label={viewing?.label ?? ""} onClose={() => setViewing(null)} />
+    </View>
+  );
+}
+
+/** On the web, what keeps the leaves to the book's width and to the room above and below it they swell into. */
+function LeafFrame({ swell, children }: { swell: number; children: ReactNode }) {
+  if (!WEB) return <>{children}</>;
+  return (
+    <View style={[styles.frame, { top: -swell, bottom: -swell }]}>
+      <View style={[styles.framed, { top: swell, bottom: swell }]}>{children}</View>
     </View>
   );
 }
@@ -509,6 +534,17 @@ const styles = StyleSheet.create({
   leaves: {
     flex: 1,
     ...(Platform.OS === "web" ? ({ userSelect: "none" } as object) : {}),
+  },
+  frame: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    overflow: "hidden",
+  },
+  framed: {
+    position: "absolute",
+    left: 0,
+    right: 0,
   },
   stillPage: {
     position: "absolute",

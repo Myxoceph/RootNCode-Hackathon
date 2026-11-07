@@ -19,6 +19,7 @@ import { useColors } from "@/theme";
 export default function MonumentScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const asset = useAsset(id);
+  const m = useMessages();
 
   return (
     <ResourceView resource={asset}>
@@ -29,7 +30,7 @@ export default function MonumentScreen() {
           <>
             <Stack.Screen options={{ title: data.name }} />
             <Head>
-              <title>{`${data.name} · Vagabonds`}</title>
+              <title>{m.common.title(data.name)}</title>
             </Head>
             <AssetDetailView asset={data} />
           </>
