@@ -145,6 +145,25 @@ intake_draft
 
 Migration **yalnızca ekleme** yapar: yeni tablolar, var olan tablolara dokunmaz.
 
+**Uygulandı (Y0):** `apps/api/prisma/migrations/20261108090000_intake/migration.sql`. Yukarıdakine ek olarak:
+- `intake_draft.entry_key`: taslağın kitap haritasındaki satırı (`BookMapEntry.key`).
+- `(job_id, entry_key)` kitap taslakları için benzersiz (`intake_draft_entry_idx`, kısmi index). Worker yeniden
+  çalıştığında `INSERT … ON CONFLICT (job_id, entry_key) WHERE job_id IS NOT NULL DO UPDATE` ile **üzerine yazar**,
+  çoğaltmaz. Prisma bu index'i ifade edemez; `prisma migrate diff` onu "fark" diye gösterir, silinmez.
+- CHECK kısıtları:
+  - `kind = 'book_asset'` ⇔ `job_id` dolu;
+  - `status = 'pending'` ⇔ `reviewed_at` boş;
+  - `asset_id` kebab-case;
+  - durum ve tür listeleri §5.1'deki gibi.
+- `intake_job.created_by` boş olabilir (worker'ın testleri için); API her zaman doldurur.
+
+**jsonb sütunlarının biçimi:** `packages/contracts/src/intake.schema.ts` (Zod). Python için JSON Schema'sı
+`data/pipeline/contracts/intake.schema.json`: worker yazmadan önce bununla doğrular. Sözleşme değişince
+`npm run intake-schema -w @vagabonds/contracts` ile yeniden üretilir ve commit'lenir. JSON Schema'ya taşınamayan
+tek kural sayfa aralıklarının geriye gitmemesi (`[başlangıç, bitiş]`, başlangıç ≤ bitiş); worker bunu kendisi denetler.
+Sözlükte iki ek alan var: `BookMapEntry.proposedId` (önerilen eser id) ve `IntakeDraftMedia.arTargetCandidate`
+(Taşın Dili'ne uygun kitabe fotoğrafı). Fotoğraf konusu sözlüğü `PHOTO_SUBJECTS` = `SEAL_SUBJECTS` + `aerial` + `other`.
+
 ### 5.3 İstem dosyaları (Hüseyin yazar, iki taraf okur)
 
 `data/pipeline/prompts/` altında, başında `version:` satırı olan Markdown dosyaları:
@@ -160,9 +179,12 @@ Migration **yalnızca ekleme** yapar: yeni tablolar, var olan tablolara dokunmaz
 
 - `createLocalMediaStore(root)`: R2 deposuyla aynı `MediaStore` arayüzü, dosyaları `data/build/media/<key>`'e yazar
   (R2'deki anahtar düzeniyle aynı).
-- API `GET /local-media/*` ile bu klasörü sunar. Dosya yerelde yoksa `https://media.allbytech.com/<key>`'e
+- API `GET /local-media/*` ile bu klasörü sunar. Dosya yerelde yoksa `MEDIA_BASE_URL`'e (ortak medya sunucusu)
   **302 ile yönlendirir**. Okuma uzaktan olabilir, yazma her zaman yereldir.
-- Yerel `.env`: `MEDIA_BASE_URL=http://localhost:3000/local-media` (telefonda bilgisayarın IP'si).
+- `INTAKE_LOCAL_ONLY` açıkken API fotoğraf adreslerini `LOCAL_MEDIA_BASE_URL` ile verir
+  (varsayılan `http://localhost:3000/local-media`; telefonda `http://<bilgisayarın IP'si>:3000/local-media`).
+- **`MEDIA_BASE_URL`'ye dokunulmaz.** `.env` her dalda ortak; o değişkeni yerele çevirmek, bu uç noktanın
+  olmadığı dallarda bütün fotoğrafları kırar. Yeni değişkenleri diğer dallar tanımaz ve yok sayar.
 - Worker'ın çıkardığı fotoğraflar da aynı klasöre ve düzene yazılır (`media_pipeline.py` biçimi).
 
 ### 5.5 Yerel-yalnız koruması
@@ -182,7 +204,7 @@ Yük yaklaşık eşit: Yiğit API + ekranlar + uygulama akışı; Hüseyin worke
 
 | # | İş | Bağımlılık | Bitti sayılır |
 |---|---|---|---|
-| Y0 | Sözleşmeler (§5.1-5.2) + migration + yerel-yalnız koruması (§5.5) + yerel fotoğraf deposu (§5.4) | yok | `npm test` ve tip denetimi geçiyor; uzak `DATABASE_URL` ile API açılmıyor; panelden yerelde fotoğraf yüklenebiliyor |
+| Y0 | Sözleşmeler (§5.1-5.2) + migration + yerel-yalnız koruması (§5.5) + yerel fotoğraf deposu (§5.4) | yok | `npm test` ve tip denetimi geçiyor; uzak `DATABASE_URL` ile API açılmıyor; panelden yerelde fotoğraf yüklenebiliyor  ✓ 2026-11-08 |
 | Y1 | Intake API: iş oluştur (PDF yükleme, ≤200 MB, diske), iş durumu, haritayı onayla, taslak listesi, onayla/reddet | Y0 | API testleri; onay `book_asset` taslağını `asset` + medya olarak yazıyor (yeni eserler `published` değil `in_review` başlar, sonra yayına alınır) |
 | Y2 | Panel: PDF Kabul ekranları (yükle, ilerleme, kitap haritası tablosu düzenle/onayla) | Y1 | Hatay PDF'iyle harita onaylanıp iş `drafting`'e geçiyor |
 | Y3 | Panel: birleşik onay kuyruğu (eski katkılar + `intake_draft`), yan yana inceleme (PDF sayfası görüntüsü + alanlar + kaynak sayfa işaretleri + doğrulama + tekrar uyarısı) | Y1 | Bir taslak düzeltilip onaylanınca eser haritada görünüyor |
@@ -235,6 +257,9 @@ Hepsi sağlanmadan `feat/veri-dongusu` → `dev` PR'ı açılmaz:
 
 - [ ] `npm test`, `npm run typecheck` ve Python testleri geçiyor; CI yeşil
 - [ ] Migration yalnızca ekleme yapıyor; mevcut tablolar ve veriler değişmiyor
+- [ ] Sözleşme sürümü (`CONTRACT_VERSION`, `packages/contracts/package.json`) `dev`'in o anki sürümünden bir üste
+      çıkarıldı. Bu dalda bilerek artırılmıyor: `dev` her sürüm artırdığında çakışma çıkmasın diye
+- [ ] Migration'ın adı `dev`'deki son migration'dan sonra geliyor; gelmiyorsa yeniden adlandırıldı
 - [ ] `INTAKE_ENABLED` kapalıyken uygulama ve API eskisiyle birebir aynı davranıyor
 - [ ] Yerel-yalnız koruması ve yerel fotoğraf deposu üretimde devre dışı (yalnızca bayrakla)
 - [ ] Demo senaryosu (§2) yerelde baştan sona çalışıyor
@@ -268,10 +293,20 @@ npm run db:import
 python3 -m pip install pymupdf "psycopg[binary]"
 ```
 
-`apps/api/.env`'de olması gerekenler: `DATABASE_URL` (localhost), `INTAKE_LOCAL_ONLY=1`,
-`INTAKE_ENABLED=1`, `MEDIA_BASE_URL=http://localhost:3000/local-media`, EVREN anahtarı
-(`ASSISTANT_API_KEY`). `MEDIA_S3_*` **olmamalı**. PDF'ler `data/build/cache/intake/` altında durur
-(git'e girmez).
+`apps/api/.env`'de olması gerekenler:
+- `DATABASE_URL` (localhost)
+- `INTAKE_LOCAL_ONLY=true`
+- `INTAKE_ENABLED=true`
+- EVREN: `ASSISTANT_BASE_URL`, `ASSISTANT_API_KEY`, `ASSISTANT_MODEL`, `VISION_MODEL`
+- Telefonla deneyecekler için: `LOCAL_MEDIA_BASE_URL=http://<bilgisayarın IP'si>:3000/local-media`
+
+Kurallar:
+- `MEDIA_S3_*` **olmamalı**; varsa API açılmaz.
+- `MEDIA_BASE_URL` değiştirilmez (§5.4).
+- PDF'ler `data/build/cache/intake/` altında durur (git'e girmez).
+
+Dal güncellendikçe: `npm run db:deploy -w @vagabonds/api` (yeni migration'lar) ve `npx prisma generate`
+(`apps/api` içinde; tip hatası "alan yok" diyorsa istemci eskidir).
 
 ## 12. Riskler
 
