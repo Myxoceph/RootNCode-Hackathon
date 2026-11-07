@@ -10,7 +10,7 @@ import Svg, { Defs, G, Line, LinearGradient, Path, Pattern, RadialGradient, Rect
 import { JournalComposer } from "@/components/journal/composer";
 import { JournalCover } from "@/components/journal/cover";
 import { Leaf, LeafFace, PERSPECTIVE } from "@/components/journal/leaf";
-import { EntryPage, MorePage, NewPage } from "@/components/journal/pages";
+import { BlankPage, EntryPage, MorePage, NewPage } from "@/components/journal/pages";
 import { book } from "@/components/journal/paper";
 import { PhotoViewer } from "@/components/journal/photo-viewer";
 import { ShareStory } from "@/components/journal/share-story";
@@ -251,8 +251,8 @@ export default function JournalScreen() {
                           backColor={front?.kind === "cover" ? book.hide : book.paper}
                           frontActive={leaf === index}
                           backActive={leaf === index - 1}
-                          front={front ? pageOf(front, leaf === index) : <View style={styles.blank} />}
-                          {...(wide && leaf < last ? { back: back ? pageOf(back, leaf === index - 1) : <View style={styles.blank} /> } : {})}
+                          front={front ? pageOf(front, leaf === index) : <BlankPage width={pageWidth} height={size.height} />}
+                          {...(wide && leaf < last ? { back: back ? pageOf(back, leaf === index - 1) : <BlankPage width={pageWidth} height={size.height} /> } : {})}
                         />
                       );
                     })}
@@ -553,10 +553,6 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     borderTopLeftRadius: 3,
     borderBottomLeftRadius: 3,
-    backgroundColor: book.paper,
-  },
-  blank: {
-    flex: 1,
     backgroundColor: book.paper,
   },
   bindingLayer: {

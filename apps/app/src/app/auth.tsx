@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { EmailSchema, PASSWORD_MIN, UsernameSchema } from "@vagabonds/contracts";
 import { cameraColors, fontFamily, palette, radius, spacing, Text, useUi } from "@vagabonds/ui";
-import { useLocalSearchParams, useRouter, type Href } from "expo-router";
+import { Redirect, useLocalSearchParams, useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useRef, useState, type ComponentProps, type RefObject } from "react";
@@ -26,7 +26,7 @@ import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 import { AssetImage } from "@/components/asset-image";
 import { communityAvailable, login, register, useAsset, useCommunity } from "@/data";
 import { DataError } from "@/data/errors";
-import { afterSignIn } from "@/lib/account-gate";
+import { afterSignIn, isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { LanguageSwitch } from "@/components/language-switch";
@@ -134,6 +134,13 @@ export default function AuthScreen() {
     } finally {
       setBusy(false);
     }
+  }
+
+  // Signed in already: another account is signed in to after this one signs out, so the form is
+  // not offered; the page asked for opens instead. The panel's way here is the exception: an account
+  // without its role signs in with another one.
+  if (isAccount(user) && !busy && !params.next?.startsWith("/admin")) {
+    return <Redirect href={afterSignIn(params.next, Platform.OS === "web" ? "/map" : "/") as Href} />;
   }
 
   return (

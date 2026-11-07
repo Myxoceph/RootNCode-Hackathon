@@ -135,6 +135,8 @@ export interface AssetMapProps {
   onCityReady?: (plate: number) => void;
   /** The opening (`reveal`) is over: the fog has parted and the provinces are drawn. */
   onIntroEnd?: () => void;
+  /** The opening's fog starts to part: something is to be seen at last. */
+  onFogParting?: () => void;
   /** "Kilidini aç" over the chosen city asset was tapped: open its Ziyaret Mührü. */
   onUnlock?: (id: string) => void;
   /** "İncele" over an unlocked city asset was tapped: open its card. */

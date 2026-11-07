@@ -15,15 +15,25 @@ import { useLang, useMessages, type Messages } from "@/i18n";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
-/** Where a source opens. The food list is local for now, so a dish opens the list, not the dish. */
-function citationTarget(citation: ChatCitation, m: Messages): { href: Href; action: string } | null {
+/** A dish's city: its id starts with the city's code ("konya-etliekmek"). */
+const dishCity = (id: string) => id.slice(0, id.indexOf("-")) || null;
+
+/**
+ * Where a source opens. A dish opens its city's dishes, marked among them; a trip (whose id is its
+ * city) the trip kept in Kaydettiklerim for that city, else the city on the map.
+ */
+function citationTarget(citation: ChatCitation, m: Messages, savedTrip: string | null): { href: Href; action: string } | null {
   switch (citation.kind) {
     case "asset":
       return { href: { pathname: "/monuments/[id]", params: { id: citation.id } }, action: m.rehber.openSite };
-    case "dish":
-      return { href: "/route/food", action: m.rehber.openFood };
+    case "dish": {
+      const city = dishCity(citation.id);
+      return city ? { href: { pathname: "/dishes", params: { city, dish: citation.id } }, action: m.rehber.openFood } : null;
+    }
     case "trip":
-      return { href: "/route", action: m.rehber.openRoutes };
+      return savedTrip
+        ? { href: { pathname: "/profile/trip", params: { id: savedTrip } }, action: m.rehber.openTripSource }
+        : { href: { pathname: "/map", params: { city: citation.id } }, action: m.rehber.openCityMap };
     case "weather":
     // The route map opens from the answer's transit attachment (YIGIT.md §11).
     case "transit":
@@ -406,7 +416,9 @@ function SourceChip({ citation }: { citation: ChatCitation }) {
   const m = useMessages();
   const { colors: c } = useTheme();
   const router = useRouter();
-  const target = citationTarget(citation, m);
+  // The newest trip kept for the city a trip source names.
+  const savedTrip = useSavedRoutes().find((route) => route.kind === "trip" && route.trip.city.code === citation.id)?.id ?? null;
+  const target = citationTarget(citation, m, citation.kind === "trip" ? savedTrip : null);
   const content = (
     <>
       <Ionicons name={citationIcon[citation.kind]} size={12} color={c.textSecondary} />

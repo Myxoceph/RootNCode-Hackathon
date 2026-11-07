@@ -199,6 +199,11 @@ function ThemedStack() {
             name="dossier"
             options={{ headerShown: false, title: m.screens.dossier }}
           />
+          {/* A city's dishes, from Rehber's sources; the screen names itself after the city. */}
+          <Stack.Screen
+            name="dishes"
+            options={{ title: m.screens.foodStops, headerBackTitle: m.tabs.rehber }}
+          />
           <Stack.Screen
             name="related"
             options={{ headerShown: false, title: m.screens.related }}

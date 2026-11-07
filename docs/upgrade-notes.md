@@ -7,6 +7,21 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-08 · Expo yama sürümleri, ESLint, sözleşme testleri
+
+Kimler: **uygulamayı çalıştıranlar**, **uygulamayı derleyenler**
+
+1. `npm install` (Expo 58.0.23 ve beş paketin yama sürümü; sözleşme paketine `vitest`; uygulamaya `eslint` ve `eslint-config-expo`).
+2. Kendi derlemesini (APK) kullananlar yeniden derler: `react-native-safe-area-context` 5.11'e çıktı ve yerel kod içeriyor (`npm run android:apk -w apps/app`). Expo Go'da ek adım yok.
+
+Değişenler:
+
+- `npx expo install --check` temiz: expo, expo-audio, expo-linking, expo-router, expo-splash-screen, react-native-safe-area-context.
+- Uygulamada ESLint var: `npm run lint -w apps/app` (CI'da da çalışıyor). Hook kuralı ihlali hata; React Compiler'ın denetimleri şimdilik uyarı.
+- `packages/contracts` kendi testlerini çalıştırıyor (`npm test -w @vagabonds/contracts`), `pickSealPhoto` testleri de artık orada; kökteki `npm test` ve CI bunları da çalıştırır.
+
+---
+
 ## 2026-11-07 · Ziyaret Mührü: hazır hedefler
 
 Kimler: **veri hattını çalıştıranlar** (R2'ye yükleme)

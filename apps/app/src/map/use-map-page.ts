@@ -16,7 +16,7 @@ const DEFAULT_PADDING = { top: 48, right: 48, bottom: 48, left: 48 };
  * the commands sent to it when pins or the selection change, and its events.
  */
 export function useMapPage(
-  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity, onCityLanded, onCityReady, onIntroEnd, onUnlock, onInspect, onOpenRelatedList, onLeaveNote, listen = null, onListen, onSceneEnd, watchSpots = false, onSpots, offerUnlock = false }: AssetMapProps,
+  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity, onCityLanded, onCityReady, onIntroEnd, onFogParting, onUnlock, onInspect, onOpenRelatedList, onLeaveNote, listen = null, onListen, onSceneEnd, watchSpots = false, onSpots, offerUnlock = false }: AssetMapProps,
   send: (command: MapPageCommand) => void,
 ) {
   const { scheme, colors: c } = useMapTheme();
@@ -94,7 +94,10 @@ export function useMapPage(
     if (event?.type === "leaveCity") onLeaveCity?.();
     if (event?.type === "cityLanded") onCityLanded?.(event.plate);
     if (event?.type === "cityReady") onCityReady?.(event.plate);
-    if (event?.type === "fogParting") cue("fog");
+    if (event?.type === "fogParting") {
+      cue("fog");
+      onFogParting?.();
+    }
     if (event?.type === "introEnd") onIntroEnd?.();
     if (event?.type === "unlock") onUnlock?.(event.id);
     if (event?.type === "inspect") onInspect?.(event.id);
