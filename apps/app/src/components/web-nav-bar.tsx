@@ -12,7 +12,7 @@ import {
   type PressableInstance,
 } from "react-native";
 
-import { useCommunity } from "@/data";
+import { avatarUri, useCommunity } from "@/data";
 import { webTransition } from "@/lib/web-transition";
 import { setTabSpot, useTabSpotlight } from "@/lib/tab-bar-spots";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
@@ -172,6 +172,8 @@ export function SiteNav({
   const links = items.filter((item) => item.name !== PROFILE);
   const profile = items.find((item) => item.name === PROFILE);
   const profileTab = profile ? propsOf(profile) : null;
+  // The path the API gives is relative to it; signed, it expires after a day and `/me` gives a fresh one.
+  const photo = avatarUri(user);
   const initials = (user?.fullName || user?.username || "")
     .split(/\s+/)
     .filter(Boolean)
@@ -275,9 +277,9 @@ export function SiteNav({
                 </Text>
               )}
               <View style={styles.avatar}>
-                {user?.photoUrl ? (
+                {photo ? (
                   <Image
-                    source={{ uri: user.photoUrl }}
+                    source={{ uri: photo }}
                     style={styles.photo}
                     accessibilityIgnoresInvertColors
                   />
