@@ -4,7 +4,7 @@ Adres ve anahtar API'ninkiyle aynı değişkenlerden gelir; modeller ayrı seçi
 
     ASSISTANT_BASE_URL   EVREN adresi (…/v1)
     ASSISTANT_API_KEY    anahtar; hiçbir yerde yazdırılmaz
-    INTAKE_TEXT_MODEL    taslak kayıt ve kitap haritası (yoksa ASSISTANT_MODEL)
+    INTAKE_TEXT_MODEL    taslak kayıt ve kitap haritası (yoksa gemma-4-31b; aşağıda neden)
     VISION_MODEL         fotoğraf konusu ve kitabe okuma (yoksa qwen3-vl-30b, API'nin varsayılanı)
     INTAKE_LLM_TIMEOUT   bir isteğin süresi, sn (yoksa 120)
     INTAKE_LLM_INTERVAL  iki istek arası en az süre, sn (yoksa 1): oran sınırına takılmamak için
@@ -36,6 +36,9 @@ from dataclasses import dataclass, field
 from typing import Any
 
 DEFAULT_VISION_MODEL = "qwen3-vl-30b"
+# Sohbet taslağında EVREN modelleri aynı sonucu verdi; en hızlısı bu (14 sn, qwen3.8-flash-next 46-48 sn,
+# glm-5.3 72 sn). Plan §7: bir tur 30 sn'yi aşmamalı. Asistanın modeli (ASSISTANT_MODEL) değişmez.
+DEFAULT_TEXT_MODEL = "gemma-4-31b"
 RETRY_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
 MAX_BACKOFF = 60.0
 
@@ -94,11 +97,9 @@ class LlmConfig:
     @classmethod
     def from_env(cls, env: Mapping[str, str]) -> "LlmConfig":
         base_url = (env.get("ASSISTANT_BASE_URL") or "").rstrip("/")
-        text_model = env.get("INTAKE_TEXT_MODEL") or env.get("ASSISTANT_MODEL") or ""
+        text_model = env.get("INTAKE_TEXT_MODEL") or DEFAULT_TEXT_MODEL
         if not base_url:
             raise LlmError("ASSISTANT_BASE_URL tanımlı değil (apps/api/.env)")
-        if not text_model:
-            raise LlmError("INTAKE_TEXT_MODEL ya da ASSISTANT_MODEL tanımlı değil")
         return cls(
             base_url=base_url,
             api_key=env.get("ASSISTANT_API_KEY") or None,

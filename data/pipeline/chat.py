@@ -73,6 +73,15 @@ def norm(text: str) -> str:
     return _SPACE.sub(" ", text).strip()
 
 
+_QUOTES = str.maketrans({"’": "'", "‘": "'", "`": "'", "´": "'", "“": '"', "”": '"', "„": '"', "«": '"', "»": '"', "–": "-", "—": "-", "‐": "-", "\u00a0": " "})
+
+
+def qnorm(text: str) -> str:
+    """Alıntı karşılaştırması: yalnızca boşluk, büyük/küçük harf ve tırnak/tire biçimi farkı yok sayılır."""
+    text = unicodedata.normalize("NFKC", text or "").translate(_QUOTES).translate(_TR_UPPER).lower()
+    return _SPACE.sub(" ", text).strip()
+
+
 def words(text: str, least: int = 4) -> list[str]:
     return [word for word in norm(text).split() if len(word) >= least or word.isdigit()]
 
@@ -173,51 +182,64 @@ def structure_problems(answer: Any) -> list[str]:
 @dataclass
 class Findings:
     warnings: list[str] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)
     missing: list[str] = field(default_factory=list)
     refs: list[dict[str, Any]] = field(default_factory=list)  # sözleşmedeki source_refs: {field, message, quote}
 
 
 def check_quote(name: str, pointer: str, item: dict[str, Any], messages: list[str], values: list[Any], found: Findings) -> bool:
-    """Alıntı mesajda mı, değer alıntıda mı. Bulunamazsa uyarı yazılır; kaynak yalnızca bulunursa eklenir."""
+    """Alıntı mesajda kelimesi kelimesine mi (boşluk, büyük/küçük harf, tırnak ve tire biçimi dışında), değer
+    alıntıda mı. Değilse "kaynaksız" uyarısı ve False: çağıran değeri taslağa koymaz."""
     quote, number = item.get("quote") or "", item.get("message")
-    # Model birkaç cümleyi "…" ile birleştirebilir: her parça ayrı aranır.
-    parts = [norm(part) for part in ELLIPSIS.split(quote) if norm(part)]
+    # Model birkaç cümleyi "…" ile birleştirebilir: her parça ayrı ayrı birebir aranır.
+    parts = [qnorm(part) for part in ELLIPSIS.split(quote) if qnorm(part)]
     if not parts:
-        found.warnings.append(f"{name}: alıntı yok, değer metinde doğrulanamadı")
+        found.warnings.append(f"kaynaksız: {name} için alıntı yok, taslağa eklenmedi")
         return False
+    texts = [qnorm(text) for text in messages]
 
     def holds(text: str) -> bool:
-        text = norm(text)
         return all(part in text for part in parts)
 
-    if isinstance(number, int) and 1 <= number <= len(messages) and holds(messages[number - 1]):
-        where = number
-    else:
-        where = next((index + 1 for index, text in enumerate(messages) if holds(text)), None)
-        if where is None and all(any(part in norm(text) for text in messages) for part in parts):
-            where = next(index + 1 for index, text in enumerate(messages) if parts[0] in norm(text))
-        if where is None:
-            found.warnings.append(f"{name}: alıntılanan cümle mesajlarda yok (uydurma olabilir): \"{quote[:120]}\"")
-            return False
+    where = number if isinstance(number, int) and 1 <= number <= len(messages) and holds(texts[number - 1]) else None
+    if where is None:
+        where = next((index + 1 for index, text in enumerate(texts) if holds(text)), None)
+    if where is None and all(any(part in text for text in texts) for part in parts):
+        where = next(index + 1 for index, text in enumerate(texts) if parts[0] in text)
+    if where is None:
+        found.warnings.append(f"kaynaksız: {name}, alıntı mesajlarda birebir geçmiyor, taslağa eklenmedi: \"{quote[:120]}\"")
+        return False
     for value in values:
         if value is None or value == "":
             continue
         text = str(value)
         if isinstance(value, int) or text.isdigit():
             if text not in re.findall(r"\d+", quote):
-                found.warnings.append(f"{name}: '{text}' alıntıda geçmiyor (uydurma olabilir)")
+                found.warnings.append(f"kaynaksız: {name}, '{text}' alıntıda geçmiyor, taslağa eklenmedi")
                 return False
         elif coverage(text, quote) < 1.0:
-            found.warnings.append(f"{name}: '{text[:80]}' alıntıda geçmiyor (uydurma olabilir)")
+            found.warnings.append(f"kaynaksız: {name}, '{text[:80]}' alıntıda geçmiyor, taslağa eklenmedi")
             return False
     found.refs.append({"field": pointer, "message": where - 1, "quote": quote[:500]})
     return True
 
 
-def check_text(name: str, text: str, source: str, found: Findings) -> None:
+def grounded_text(name: str, text: str, source: str, found: Findings) -> bool:
+    """Bölüm ya da özet: kelimelerinin en az %85'i mesajlarda olmalı; değilse taslağa girmez."""
     share = coverage(text, source)
     if share < COVERAGE_MIN:
-        found.warnings.append(f"{name}: kelimelerin %{round(share * 100)}'i mesajlarda var; mesajda olmayan bilgi eklenmiş olabilir")
+        found.warnings.append(f"kaynaksız: {name}, kelimelerin yalnızca %{round(share * 100)}'i mesajlarda var; taslağa eklenmedi")
+        return False
+    return True
+
+
+def first_sentence(messages: list[str], limit: int = 400) -> str:
+    for text in messages:
+        text = text.strip()
+        if text:
+            match = re.match(r"(.+?[.!?])(\s|$)", text, re.S)
+            return (match.group(1) if match else text)[:limit].strip()
+    return ""
 
 
 # ── Fotoğraf ────────────────────────────────────────────────────────────────────────────────
@@ -322,7 +344,7 @@ class ChatStages:
         self._locate(chat.get("files", []), record, found)
         duplicate = self._duplicate(record, city, chat.get("assetId"), found)
         errors, warnings = self._validate(record)
-        validation: dict[str, Any] = {"errors": errors, "warnings": found.warnings + [w for w in warnings if w not in found.warnings]}
+        validation: dict[str, Any] = {"errors": found.errors + errors, "warnings": found.warnings + [w for w in warnings if w not in found.warnings]}
         if supports_missing():
             validation["missing"] = found.missing
         else:
@@ -373,77 +395,79 @@ class ChatStages:
                 if pointer not in found.missing:
                     found.missing.append(pointer)
 
+        # Sert kural (plan §7, "Alıntı kuralı"): alıntısı mesajda kelimesi kelimesine geçmeyen değer taslağa
+        # girmez, "kaynaksız" uyarısı olur. Silinemeyen tek zorunlu alan, ad: kalır ama onayı engeller.
         name = answer["name"]
-        check_quote("name", "/name/tr", name, messages, [name["tr"]], found)
+        if not check_quote("name", "/name/tr", name, messages, [name["tr"]], found):
+            found.errors.append("name: eserin adı mesajlarda bulunamadı; adı mesajdaki gibi düzelt")
         kind = answer["type"]["value"]
         if kind not in ASSET_TYPES:
             found.warnings.append(f"type: '{kind}' tür listesinde yok, 'diger' yazıldı")
             kind = "diger"
-        check_quote("type", "/type", answer["type"], messages, [], found)
+        elif not check_quote("type", "/type", answer["type"], messages, [], found):
+            kind = "diger"
 
         location: dict[str, Any] = {"region": CITY_REGION.get(city, ""), "city": city, "district": ""}
         district = answer.get("district")
-        if district:
-            check_quote("district", "/location/district", district, messages, [district["value"]], found)
+        if district and check_quote("district", "/location/district", district, messages, [district["value"]], found):
             location["district"] = slug(district["value"])
         elif "/location/district" not in found.missing:
             found.missing.append("/location/district")
         for key in ("neighborhood", "address"):
             item = answer.get(key)
-            if item:
-                check_quote(key, f"/location/{key}", item, messages, [item["value"]], found)
-                location[key] = item["value"]
-            else:
-                location[key] = None
+            location[key] = item["value"] if item and check_quote(key, f"/location/{key}", item, messages, [item["value"]], found) else None
 
         era = answer.get("era")
         era_code = None
         if era:
-            if era["value"] in ERAS:
-                said = any(norm(word) in norm(era.get("quote") or "") for word in ERA_WORDS.get(era["value"], ()))
-                if not said:
-                    found.warnings.append(f"era: '{era['value']}' alıntıda söylenmiyor, model tahmin etmiş olabilir; boş bırakıldı")
-                elif check_quote("era", "/era", era, messages, [], found):
-                    era_code = era["value"]
-            else:
+            if era["value"] not in ERAS:
                 found.warnings.append(f"era: '{era['value']}' dönem listesinde yok, boş bırakıldı")
+            elif not any(qnorm(word) in qnorm(era.get("quote") or "") for word in ERA_WORDS.get(era["value"], ())):
+                found.warnings.append(f"kaynaksız: era '{era['value']}' alıntıda adıyla söylenmiyor, model tahmin etmiş olabilir; boş bırakıldı")
+            elif check_quote("era", "/era", era, messages, [], found):
+                era_code = era["value"]
 
         dating = answer.get("dating")
         dating_record = None
         if dating:
             years = [dating.get(key) for key in ("start_year", "end_year", "hijri_year")]
-            check_quote("dating", "/dating", dating, messages, years, found)
-            dating_record = {
-                "display": {"tr": dating["display"], "en": None},
-                "start_year": dating.get("start_year"),
-                "end_year": dating.get("end_year"),
-                "hijri_year": dating.get("hijri_year"),
-                "century": dating.get("century"),
-                "confidence": dating["confidence"],
-                "source_refs": ref(dating),
-            }
+            if check_quote("dating", "/dating", dating, messages, years, found):
+                dating_record = {
+                    "display": {"tr": dating["display"], "en": None},
+                    "start_year": dating.get("start_year"),
+                    "end_year": dating.get("end_year"),
+                    "hijri_year": dating.get("hijri_year"),
+                    "century": dating.get("century"),
+                    "confidence": dating["confidence"],
+                    "source_refs": ref(dating),
+                }
 
         people = {}
         for key in ("founder", "architect"):
             item = answer.get(key)
-            if item:
-                check_quote(key, f"/{key}/name", item, messages, [item["name"]], found)
+            people[key] = None
+            if item and check_quote(key, f"/{key}/name", item, messages, [item["name"]], found):
                 person = {"name": item["name"], "confidence": item["confidence"], "source_refs": ref(item)}
                 if key == "founder" and item.get("role"):
                     person["role"] = item["role"]
                 people[key] = person
-            else:
-                people[key] = None
 
         summary = (answer.get("summary") or {}).get("tr", "").strip()
-        if summary:
-            check_text("summary", summary, all_text, found)
-        else:
-            found.missing.append("/summary")
+        if summary and not grounded_text("summary", summary, all_text, found):
+            summary = ""
+        if not summary:
+            # Mesajın kendi ilk cümlesi: kaynağı belli, uzman sonra düzeltir.
+            summary = first_sentence(messages)
+            if summary:
+                found.warnings.append("summary: modelin özeti kullanılmadı; ilk mesajın ilk cümlesi yazıldı")
+            else:
+                found.missing.append("/summary")
 
         sections, seen = [], set()
-        for order, section in enumerate(answer.get("sections", []), start=1):
-            check_text(f"sections[{section['title']}]", section["body"], all_text, found)
+        for section in answer.get("sections", []):
+            if not grounded_text(f"sections[{section['title']}]", section["body"], all_text, found):
+                continue
+            order = len(sections) + 1
             section_id = slug(section["title"]) or f"bolum-{order}"
             while section_id in seen:
                 section_id += "-2"
@@ -461,10 +485,12 @@ class ChatStages:
             found.missing.append("/sections")
 
         inscriptions = []
-        for index, item in enumerate(answer.get("inscriptions", []), start=1):
-            check_quote(f"inscriptions[{index}]", f"/inscriptions/{index - 1}", item, messages, [], found)
+        for item in answer.get("inscriptions", []):
+            number = len(inscriptions) + 1
+            if not check_quote(f"inscriptions[{number}]", f"/inscriptions/{number - 1}", item, messages, [], found):
+                continue
             inscriptions.append({
-                "id": f"kitabe-{index}",
+                "id": f"kitabe-{number}",
                 "location": {"tr": item.get("location") or "Belirtilmedi", "en": None},
                 "language": item["language"],
                 "transliteration": item.get("transliteration"),

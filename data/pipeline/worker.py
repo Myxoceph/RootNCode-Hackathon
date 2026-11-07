@@ -135,14 +135,29 @@ def run_chat(conn, job: dict[str, Any], stages: Stages) -> str:
     from psycopg.types.json import Jsonb
 
     job_id = job["id"]
-    set_status(conn, job_id, "drafting", error=None, progress_done=0, progress_total=1)
+    # İşi drafting'e çekmek ve girdiyi okumak tek adım: arada gelen bir mesaj eski girdiyle yazılan
+    # taslağın altında kaybolmaz (yigit-veri-dongusu.md §1.6). API drafting'teki işe mesaj eklemez (409).
+    row = conn.execute(
+        """update intake_job set status = 'drafting', error = null, progress_done = 0, progress_total = 1, updated_at = now()
+           where id = %s and kind = 'chat' and status in ('queued', 'drafting') returning input""",
+        (job_id,),
+    ).fetchone()
+    if row is None:
+        log(f"{job_id} bu arada değişti, atlandı")
+        return "skipped"
+    job = {**job, "input": row[0]}
     log(f"{job_id} sohbet düzenleniyor: {job['title']}")
     draft = stages.draft_chat(job)
     check_draft(draft.asset_id, draft.media, draft.source_refs, draft.validation, draft.ai)
     with conn.transaction():
         save_draft(conn, job_id, CHAT_ENTRY, draft, Jsonb, kind="field_asset")
-        conn.execute("update intake_job set progress_done = 1, updated_at = now() where id = %s", (job_id,))
-    set_status(conn, job_id, "done")
+        finished = conn.execute(
+            "update intake_job set status = 'done', progress_done = 1, updated_at = now() where id = %s and status = 'drafting' returning id",
+            (job_id,),
+        ).fetchone()
+    if finished is None:
+        log(f"{job_id} yazılırken sohbet değişti; iş yeniden kuyrukta")
+        return "requeued"
     errors, warnings = len(draft.validation.get("errors", [])), len(draft.validation.get("warnings", []))
     log(f"{job_id} taslak hazır: {draft.asset_id} ({errors} hata, {warnings} uyarı)")
     return "done"

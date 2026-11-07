@@ -93,23 +93,63 @@ class Draft(unittest.TestCase):
         self.assertEqual(draft.ai["promptVersion"], "asset-structure-1")
         self.assertFalse(draft.ai["repaired"])
 
-    def test_invented_year_is_flagged(self):
+    def test_invented_year_never_enters_the_draft(self):
         answer = copy.deepcopy(GOOD)
         answer["dating"].update(start_year=1485, display="1485")
         draft = stages(answer).draft_chat(job())
-        self.assertTrue(any("dating" in w and "1485" in w for w in draft.validation["warnings"]), draft.validation["warnings"])
+        self.assertIsNone(draft.record["dating"])
+        self.assertTrue(any(w.startswith("kaynaksız: dating") and "1485" in w for w in draft.validation["warnings"]), draft.validation["warnings"])
 
-    def test_quote_not_in_the_messages_is_flagged(self):
+    def test_value_whose_quote_is_not_in_the_messages_never_enters_the_draft(self):
         answer = copy.deepcopy(GOOD)
         answer["architect"] = {"name": "Mimar Sinan", "confidence": "certain", "message": 2, "quote": "Caminin mimarı Mimar Sinan'dır."}
         draft = stages(answer).draft_chat(job())
-        self.assertTrue(any(w.startswith("architect: alıntılanan cümle mesajlarda yok") for w in draft.validation["warnings"]), draft.validation["warnings"])
+        self.assertIsNone(draft.record["architect"])
+        self.assertNotIn("Sinan", json.dumps(draft.record, ensure_ascii=False))
+        self.assertTrue(any(w.startswith("kaynaksız: architect") for w in draft.validation["warnings"]), draft.validation["warnings"])
 
-    def test_section_with_added_knowledge_is_flagged(self):
+    def test_a_reworded_quote_is_not_verbatim(self):
+        answer = copy.deepcopy(GOOD)
+        answer["founder"]["quote"] = "Cami 1490'da Hacı Ahmed Bey tarafından yaptırıldı."
+        draft = stages(answer).draft_chat(job())
+        self.assertIsNone(draft.record["founder"])
+
+    def test_every_quote_left_in_the_draft_is_verbatim_in_a_message(self):
+        """Plan §7 "Alıntı kuralı": taslakta kalan her değerin alıntısı mesajda kelimesi kelimesine geçer."""
+        from chat import ELLIPSIS, qnorm
+
+        answer = copy.deepcopy(GOOD)
+        answer["architect"] = {"name": "Mimar Sinan", "confidence": "certain", "message": 2, "quote": "Mimar Sinan yaptı."}
+        answer["dating"]["quote"] = "Cami 1490 yılında yapıldı."
+        draft = stages(answer).draft_chat(job())
+        texts = [qnorm(text) for text in MESSAGES]
+        self.assertTrue(draft.source_refs)
+        for ref in draft.source_refs:
+            for part in ELLIPSIS.split(ref["quote"]):
+                if qnorm(part):
+                    self.assertTrue(any(qnorm(part) in text for text in texts), ref)
+        fields = {ref["field"] for ref in draft.source_refs}
+        self.assertNotIn("/architect/name", fields)
+        self.assertNotIn("/dating", fields)
+
+    def test_section_with_added_knowledge_never_enters_the_draft(self):
         answer = copy.deepcopy(GOOD)
         answer["sections"][1]["body"] += " Yapı, Mimar Sinan'ın çıraklık döneminin en muhteşem eserlerinden biri sayılır ve İznik çinileriyle süslenmiştir."
         draft = stages(answer).draft_chat(job())
-        self.assertTrue(any(w.startswith("sections[Mimari]") for w in draft.validation["warnings"]), draft.validation["warnings"])
+        self.assertEqual([section["title"]["tr"] for section in draft.record["sections"]], ["Genel Bakış"])
+        self.assertTrue(any(w.startswith("kaynaksız: sections[Mimari]") for w in draft.validation["warnings"]), draft.validation["warnings"])
+
+    def test_an_ungrounded_name_blocks_approval(self):
+        answer = copy.deepcopy(GOOD)
+        answer["name"]["quote"] = "Yeni Cami güzeldir."
+        draft = stages(answer).draft_chat(job())
+        self.assertTrue(any(e.startswith("name:") for e in draft.validation["errors"]))
+
+    def test_an_ungrounded_summary_falls_back_to_the_first_sentence(self):
+        answer = copy.deepcopy(GOOD)
+        answer["summary"]["tr"] = "Mimar Sinan'ın İznik çinileriyle süslediği muhteşem bir yapıdır."
+        draft = stages(answer).draft_chat(job())
+        self.assertEqual(draft.record["summary"]["tr"], MESSAGES[0].split(". ")[0] + ".")
 
     def test_quote_joined_with_an_ellipsis_is_found(self):
         answer = copy.deepcopy(GOOD)
@@ -122,7 +162,7 @@ class Draft(unittest.TestCase):
         answer["era"] = {"value": "erken-osmanli", "message": 1, "quote": "Cami 1490 yılında Hacı Ahmed Bey tarafından yaptırılmıştır."}
         draft = stages(answer).draft_chat(job())
         self.assertIsNone(draft.record["era"])
-        self.assertTrue(any(w.startswith("era:") for w in draft.validation["warnings"]))
+        self.assertTrue(any(w.startswith("kaynaksız: era") for w in draft.validation["warnings"]))
         self.assertEqual(stages(GOOD).draft_chat(job()).record["era"], "klasik-osmanli", "mesajda söylenen dönem kalır")
 
     def test_unknown_type_and_era(self):
@@ -203,18 +243,12 @@ class Photos(unittest.TestCase):
         self.assertEqual(draft.duplicate_of, "bursa-osmangazi-kursunlu-camii-ve-turbesi")
 
 
-INTAKE = REPO / "apps" / "api" / "prisma" / "migrations" / "20261108090000_intake" / "migration.sql"
-# Yiğit'e önerilen migration (yigit-veri-dongusu.md §1.2); o gelince bu test onu kullanır.
-PROPOSED = """
-ALTER TABLE intake_job DROP CONSTRAINT intake_job_kind_check;
-ALTER TABLE intake_job ADD CONSTRAINT intake_job_kind_check CHECK (kind IN ('pdf', 'chat'));
-ALTER TABLE intake_job ALTER COLUMN file_path DROP NOT NULL;
-ALTER TABLE intake_job ADD CONSTRAINT intake_job_file_check CHECK ((kind = 'pdf') = (file_path IS NOT NULL));
-ALTER TABLE intake_job ADD COLUMN input jsonb;
-ALTER TABLE intake_job ADD CONSTRAINT intake_job_input_check CHECK ((kind = 'chat') = (input IS NOT NULL));
-ALTER TABLE intake_draft DROP CONSTRAINT intake_draft_check;
-ALTER TABLE intake_draft ADD CONSTRAINT intake_draft_job_check CHECK ((kind = 'inscription') = (job_id IS NULL));
-"""
+MIGRATIONS = REPO / "apps" / "api" / "prisma" / "migrations"
+
+
+def intake_migrations():
+    """Yiğit'in intake migration'ları, sırasıyla (20261108090000_intake, …_intake_chat …)."""
+    return sorted(MIGRATIONS.glob("2026*_intake*/migration.sql"))
 
 
 class ChatJobOnLocalDb(unittest.TestCase):
@@ -228,13 +262,16 @@ class ChatJobOnLocalDb(unittest.TestCase):
         except Exception as error:  # noqa: BLE001
             raise unittest.SkipTest(f"yerel veritabanı yok: {type(error).__name__}")
         cls.conn.execute(f'create schema "{cls.schema}"')
-        cls.conn.execute(INTAKE.read_text(encoding="utf-8"))
-        cls.conn.execute(PROPOSED)
+        for migration in intake_migrations():
+            cls.conn.execute(migration.read_text(encoding="utf-8"))
 
     @classmethod
     def tearDownClass(cls):
         cls.conn.execute(f'drop schema if exists "{cls.schema}" cascade')
         cls.conn.close()
+
+    def setUp(self):
+        self.conn.execute("delete from intake_job")
 
     def test_chat_job_becomes_one_pending_field_draft_and_reruns_in_place(self):
         from psycopg.types.json import Jsonb
@@ -250,6 +287,22 @@ class ChatJobOnLocalDb(unittest.TestCase):
         self.conn.execute("update intake_job set status = 'queued' where id = %s", (job_id,))
         self.assertTrue(worker.work_once(self.conn, steps))
         self.assertEqual(self.conn.execute("select count(*) from intake_draft where job_id = %s", (job_id,)).fetchone()[0], 1)
+
+    def test_a_message_arriving_while_drafting_is_not_lost(self):
+        from psycopg.types.json import Jsonb
+
+        job_id = self.conn.execute("insert into intake_job (kind, title, city, input) values ('chat', 'Kurşunlu', 'bursa', %s) returning id", (Jsonb(job()["input"]),)).fetchone()[0]
+        inner = stages(GOOD)
+        conn = self.conn
+
+        class MessageMeanwhile:
+            def draft_chat(self, chat_job):
+                # Taslak yazılırken (API'nin 409'una rağmen bir şekilde) girdi değişti ve iş yeniden kuyruğa girdi.
+                conn.execute("update intake_job set status = 'queued', updated_at = now() where id = %s", (job_id,))
+                return inner.draft_chat(chat_job)
+
+        self.assertTrue(worker.work_once(self.conn, MessageMeanwhile()))
+        self.assertEqual(self.conn.execute("select status from intake_job where id = %s", (job_id,)).fetchone()[0], "queued", "done yazılmaz, iş yeniden alınır")
 
     def test_pdf_jobs_still_need_a_file(self):
         import psycopg
