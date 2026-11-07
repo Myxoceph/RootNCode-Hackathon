@@ -21,6 +21,35 @@ Değişenler:
 
 ---
 
+## 2026-11-07 · Taşın Dili ve Taşa Sor tek ekranda (sözleşme 0.3.35)
+
+Kimler: **API'yi çalıştıranlar** (sunum sunucusu dahil), **uygulama ekibi**
+
+1. API'yi yeniden başlat (sunum makinesinde `deploy/demo.sh up`); migration ya da yeni paket yok.
+
+Değişenler:
+
+- Taşın Dili'nde 10 sn kitabe bulunamazsa "Asistana danış" çıkar; aynı kameranın o anki karesi asistana gider, cevap ekranda yazılı görünür ve sesli okunur.
+- `POST /vision/ask`'te `assetId` artık isteğe bağlı. Eser bilinmiyorsa cevap yalnızca fotoğraftan gelir, kaynak işareti olmaz.
+- Eser sayfasında "Taşa Sor" satırı kalktı; "Taşın Dili" kitabesi tanınamayan eserde doğrudan soru kamerasını açar.
+
+---
+
+## 2026-11-07 · Anı Defteri: hikâye olarak paylaşma
+
+Kimler: **uygulamayı çalıştıranlar**, **uygulamayı derleyenler**
+
+1. `npm install` (yeni paketler: `expo-sharing`, `react-native-view-shot`).
+2. Expo Go'da başka bir şey gerekmez. Kendi derlemesini (APK, dev client) kullananlar yeniden derler: iki paket de yerel modül.
+
+Değişenler:
+
+- Anı Defteri'nde her sayfanın altında paylaş düğmesi. Önizlemede sağa-sola kaydırılarak (ya da alttaki adlarla) şablon seçilir: Defter ve Açık 1080×1920 hikâye kartı, Sadece sayfa yalnızca beyaz sayfa (1080 genişlik, içerik kadar boy). Sonra sistemin paylaşım menüsü açılır (WhatsApp, Instagram hikâyesi…).
+- Yeni bir anı kaydedilince birkaç saniye "Paylaş" önerisi çıkar.
+- Yalnızca iOS ve Android'de. Web'de düğme gösterilmez (`src/lib/share-image.ts`).
+
+---
+
 ## 2026-11-07 · Hesap silme (sözleşme 0.3.34)
 
 Kimler: **API'yi yerelde çalıştıranlar**

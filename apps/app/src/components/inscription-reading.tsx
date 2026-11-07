@@ -18,6 +18,8 @@ interface InscriptionReadingProps {
   /** Why the camera is not in use, when it failed to start. */
   notice: string | null;
   onUseCamera: (() => void) | null;
+  /** Asks the assistant about what the camera shows; null where there is no camera (the web). */
+  onAsk?: (() => void) | null;
 }
 
 /** Width of the reading column, as the asset's dossier. */
@@ -33,7 +35,7 @@ const COLUMN = 640;
  * people can follow first: today's Turkish and the waqf come before the
  * transliteration.
  */
-export function InscriptionReading({ inscription, notice, onUseCamera }: InscriptionReadingProps) {
+export function InscriptionReading({ inscription, notice, onUseCamera, onAsk = null }: InscriptionReadingProps) {
   const m = useMessages();
   const w = m.reading;
   const { colors: c } = useTheme();
@@ -87,6 +89,7 @@ export function InscriptionReading({ inscription, notice, onUseCamera }: Inscrip
 
             {inscription.status === "success" && <Actions text={inscription.data} onUseCamera={onUseCamera} />}
             {inscription.status !== "success" && onUseCamera && <Button label={w.scanWithCamera} variant="ghost" onPress={onUseCamera} />}
+            {onAsk && <Button label={w.askAssistant} accessibilityHint={w.askAssistantHint} variant="ghost" onPress={onAsk} />}
           </View>
         </View>
 

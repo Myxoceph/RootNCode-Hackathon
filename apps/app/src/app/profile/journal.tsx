@@ -13,10 +13,12 @@ import { Leaf, LeafFace, PERSPECTIVE } from "@/components/journal/leaf";
 import { EntryPage, MorePage, NewPage } from "@/components/journal/pages";
 import { book } from "@/components/journal/paper";
 import { PhotoViewer } from "@/components/journal/photo-viewer";
+import { ShareStory } from "@/components/journal/share-story";
 import { useCommunity } from "@/data";
 import { useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
-import { bookPages, bookSize, loadMoreJournal, openJournal, useJournal, type BookPage } from "@/lib/journal";
+import { bookPages, bookSize, journalSnapshot, loadMoreJournal, openJournal, useJournal, type BookPage } from "@/lib/journal";
+import { canShareImage } from "@/lib/share-image";
 import { usePageTurn } from "@/lib/use-page-turn";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useA11ySettings } from "@/settings/a11y-settings";
@@ -61,6 +63,8 @@ const WEB = Platform.OS === "web";
  */
 const WEB_EYE = 10;
 const WEB_SWELL = WEB_EYE / (WEB_EYE - 1);
+/** How long the offer to share a page just written stays over the controls. */
+const OFFER_MS = 9000;
 
 const pageKey = (page: BookPage) => (page.kind === "entry" ? page.entry.id : page.kind);
 
@@ -87,6 +91,15 @@ export default function JournalScreen() {
   /** The page being written: `null` a new one. */
   const [composing, setComposing] = useState<{ entry: JournalEntry | null; pickFirst?: boolean; writeFirst?: boolean } | null>(null);
   const [viewing, setViewing] = useState<{ photo: JournalPhoto; label: string } | null>(null);
+  /** The page being shared, by its entry: it stays the page as it is now, its photos arriving too. */
+  const [sharing, setSharing] = useState<string | null>(null);
+  /** A page just written: offered for sharing for a moment, over the controls. */
+  const [offer, setOffer] = useState<string | null>(null);
+  useEffect(() => {
+    if (!offer) return;
+    const timer = setTimeout(() => setOffer(null), OFFER_MS);
+    return () => clearTimeout(timer);
+  }, [offer]);
 
   const size = bookSize(room.width - DEPTH, (room.height - DEPTH - RIBBON_TAIL) / (WEB ? WEB_SWELL : 1));
   const wide = size.spread;
@@ -140,10 +153,14 @@ export default function JournalScreen() {
         pending={coming(item.entry.id)}
         active={active}
         onEdit={() => setComposing({ entry: item.entry })}
+        {...(canShareImage ? { onShare: () => setSharing(item.entry.id) } : {})}
         onOpenPhoto={(photo, label) => setViewing({ photo, label })}
       />
     );
   };
+  const findEntryPage = (id: string | null) => pages.find((page): page is Extract<BookPage, { kind: "entry" }> => page.kind === "entry" && page.entry.id === id);
+  const shared = findEntryPage(sharing);
+  const offered = findEntryPage(offer);
   // The open leaf, and those next to it; the leaf after next so that a quick turn finds its page drawn.
   // Going forward they change when the turn has come to rest, so it lays out nothing new while moving.
   // Going back or turned on quickly, at once: the leaf that will lie on the left is there as this one leaves it.
@@ -251,6 +268,31 @@ export default function JournalScreen() {
       </View>
 
       <View style={styles.controls}>
+        {offered && (
+          <View accessibilityLiveRegion="polite" style={styles.offer}>
+            <Ionicons name="checkmark-circle" size={20} color={book.gold} />
+            <Text variant="caption" numberOfLines={1} colorValue={CAPSULE_INK} style={styles.offerText}>
+              {w.share.offer}
+            </Text>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={w.shareLabel}
+              onPress={() => {
+                setOffer(null);
+                setSharing(offered.entry.id);
+              }}
+              style={styles.offerAction}
+            >
+              <Ionicons name={Platform.OS === "ios" ? "share-outline" : "share-social"} size={16} color={book.hideDark} />
+              <Text variant="label" colorValue={book.hideDark}>
+                {w.share.offerAction}
+              </Text>
+            </Pressable>
+            <Pressable accessibilityRole="button" accessibilityLabel={w.share.offerClose} onPress={() => setOffer(null)} style={styles.offerClose}>
+              <Ionicons name="close" size={18} color={CAPSULE_SOFT} />
+            </Pressable>
+          </View>
+        )}
         {last > 0 && (
           // How far through the book: it moves with the leaf, under the finger too.
           <View aria-hidden style={[styles.progress, { width: size.width, backgroundColor: c.border }]}>
@@ -322,7 +364,20 @@ export default function JournalScreen() {
             // The new page is the next leaf after the one for writing; open two, it lies beside that one.
             // By `turnLeaf`, which knows the book as it is by then: this screen's `last` is from before the page.
             if (isNew && !wide) setTimeout(() => turnLeaf(2), NEW_PAGE_DRAWN_MS);
+            // Newest first: the page just written is the first entry.
+            if (isNew && canShareImage) setOffer(journalSnapshot().entries[0]?.id ?? null);
           }}
+        />
+      )}
+      {shared && (
+        <ShareStory
+          entry={shared.entry}
+          number={shared.number}
+          total={journal.total}
+          pending={coming(shared.entry.id)}
+          pageWidth={pageWidth}
+          pageHeight={size.height}
+          onClose={() => setSharing(null)}
         />
       )}
       <PhotoViewer photo={viewing?.photo ?? null} label={viewing?.label ?? ""} onClose={() => setViewing(null)} />
@@ -590,6 +645,36 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 24,
     fontVariant: ["tabular-nums"],
+  },
+  offer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+    maxWidth: "100%",
+    paddingLeft: spacing.md,
+    paddingRight: spacing.xxs,
+    paddingVertical: spacing.xxs,
+    borderRadius: touchTarget.min,
+    backgroundColor: CAPSULE,
+    boxShadow: "0px 8px 24px rgba(10, 30, 22, 0.3)",
+  },
+  offerText: {
+    flexShrink: 1,
+  },
+  offerAction: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xxs,
+    minHeight: touchTarget.min,
+    paddingHorizontal: spacing.md,
+    borderRadius: touchTarget.min / 2,
+    backgroundColor: book.gold,
+  },
+  offerClose: {
+    width: touchTarget.min,
+    height: touchTarget.min,
+    alignItems: "center",
+    justifyContent: "center",
   },
   newButton: {
     width: touchTarget.min,

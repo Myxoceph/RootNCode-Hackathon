@@ -12,6 +12,10 @@ interface TrackerPageOptions {
   mindarScript: string;
   /** The app's heading font, Marcellus (base64 TrueType), for the overlay text; without it, a system serif. */
   overlayFont?: string | undefined;
+  /** Draw gold corners on a found target. Off where the app shows its own sign (Ziyaret Mührü). */
+  marks?: boolean | undefined;
+  /** Post where a found target lies on the screen ("pose"), a few times a second. */
+  poses?: boolean | undefined;
 }
 
 /**
@@ -38,7 +42,7 @@ export type TrackerTarget = TargetSource | { sources: TargetSource[] };
  * MindAR's core (`Controller`) is used without its three.js layer: the corners
  * are projected from the pose it returns, so nothing 3D is loaded.
  */
-export function trackerPageHtml({ target, markColor, overlays = [], mindarScript, overlayFont }: TrackerPageOptions): string {
+export function trackerPageHtml({ target, markColor, overlays = [], mindarScript, overlayFont, marks = true, poses = false }: TrackerPageOptions): string {
   return `<!doctype html>
 <html>
 <head>
@@ -210,6 +214,13 @@ function toBase64(bytes) {
   return btoa(binary);
 }
 
+// The still sent to the assistant: as wide as the photos Taşa Sor sends, and as compressed.
+const SNAPSHOT_WIDTH = 1024;
+const SNAPSHOT_QUALITY = 0.7;
+
+// Poses are posted this often at most: enough to guide a hand, little for the bridge to carry.
+const POSE_EVERY_MS = 150;
+
 // A slow connection must not leave the screen at "preparing" for good: past this the photo counts as not downloaded.
 const IMAGE_TIMEOUT_MS = 20000;
 
@@ -343,6 +354,7 @@ async function start() {
 
   let dimensions = [];
   let showing = -1;
+  let posed = 0;
   let frames = 0;
   /** Resolves the next time the tracker finishes a frame: one is in flight when it is stopped. */
   let frameDone = null;
@@ -360,8 +372,13 @@ async function start() {
       if (worldMatrix) {
         const [width, height] = dimensions[targetIndex];
         const corners = [[0, 0], [width, 0], [width, height], [0, height]].map(([x, y]) => toCanvas(project(worldMatrix, height, x, y)));
-        drawCorners(corners);
+        if (${marks}) drawCorners(corners);
         if (overlays[targetIndex]) drawOverlay(corners, width, height, overlays[targetIndex]);
+        // Where the target lies, as fractions of the view: the app compares it with what it shows.
+        if (${poses} && performance.now() - posed > POSE_EVERY_MS) {
+          posed = performance.now();
+          post({ type: "pose", target: targetIndex, corners: corners.map(([x, y]) => [x / canvas.width, y / canvas.height]) });
+        }
         if (showing !== targetIndex) {
           showing = targetIndex;
           post({ type: "found", target: targetIndex });
@@ -409,6 +426,25 @@ async function start() {
       post({ type: "captured", target, ms: Math.round(performance.now() - started) });
     } catch (error) {
       post({ type: "captured", target: null, ms: Math.round(performance.now() - started), error: String(error && error.message || error) });
+    }
+  };
+  // A still for the assistant: the picture stops on the frame, which goes to the app as a JPEG.
+  commands.snapshot = async () => {
+    if (!frozen) {
+      frozen = true;
+      video.pause();
+      controller.stopProcessVideo();
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    try {
+      const scale = Math.min(1, SNAPSHOT_WIDTH / video.videoWidth);
+      const frame = document.createElement("canvas");
+      frame.width = Math.round(video.videoWidth * scale);
+      frame.height = Math.round(video.videoHeight * scale);
+      frame.getContext("2d").drawImage(video, 0, 0, frame.width, frame.height);
+      post({ type: "snapshot", jpeg: frame.toDataURL("image/jpeg", SNAPSHOT_QUALITY).split(",")[1] });
+    } catch (error) {
+      post({ type: "snapshot", jpeg: null, error: String(error && error.message || error) });
     }
   };
   commands.resume = () => {

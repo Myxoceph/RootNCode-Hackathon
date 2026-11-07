@@ -2,7 +2,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import type { JournalEntry, JournalLayout, JournalPhoto } from "@vagabonds/contracts";
 import { radius, spacing, Text, touchTarget } from "@vagabonds/ui";
 import { useState } from "react";
-import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { ActivityIndicator, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
 
 import { localeTag, useLang, useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
@@ -25,6 +25,8 @@ const HEAD = PAGE_HEAD;
 /** How far a written line may be from the end of the scroll and still count as the last. */
 const END_SLOP = 4;
 const NARROW_COLUMN = 220;
+/** The fewest lines a page shared as a picture has, however little is written. */
+const STILL_LINES = 4;
 const ICON = 20;
 
 /** The next empty page: the day, a question, and a place waiting for a photo and for words. */
@@ -94,7 +96,9 @@ export function EntryPage({
   width,
   height,
   active,
+  still = false,
   onEdit,
+  onShare,
   onOpenPhoto,
 }: {
   entry: JournalEntry;
@@ -105,7 +109,11 @@ export function EntryPage({
   height: number;
   /** Whether this page lies open: one being turned does not scroll under the finger. */
   active: boolean;
+  /** The page as a picture, for sharing: as long as what is on it, its number at the foot and nothing to press. */
+  still?: boolean;
   onEdit: () => void;
+  /** Left out where sharing is not offered (the web). */
+  onShare?: () => void;
   onOpenPhoto: (photo: JournalPhoto, label: string) => void;
 }) {
   const w = useMessages().journal;
@@ -117,37 +125,55 @@ export function EntryPage({
   const date = formatDate(entry.createdAt, lang);
   const continues = contentHeight > area + END_SLOP && !atBottom;
 
+  // A page shared as a picture is only as long as what is on it: no empty lines below.
+  const least = still ? page.line * STILL_LINES : area;
+  const content = (
+    <View style={{ minHeight: least }} onLayout={(event) => setContentHeight(event.nativeEvent.layout.height)}>
+      <RuledLines height={Math.max(contentHeight, least)} line={page.line} plain={page.plain} />
+      <Text headingLevel={2} accessibilityLabel={w.pageLabel(number, total, date)} style={[page.date, styles.written, { color: page.inkSoft }]}>
+        {date}
+      </Text>
+      {entry.layout ? (
+        <ArrangedPage entry={entry} layout={entry.layout} pending={pending} page={page} width={width} minHeight={least - page.line} date={date} onOpenPhoto={onOpenPhoto} />
+      ) : (
+        <>
+          <Prints entry={entry} pending={pending} page={page} width={width} pageHeight={area} date={date} onOpenPhoto={onOpenPhoto} />
+          {entry.text !== null && <Text style={[page.body, styles.written, { color: page.ink }]}>{entry.text}</Text>}
+        </>
+      )}
+    </View>
+  );
+
   return (
-    <View style={[styles.page, { width, height, paddingTop: HEAD }]}>
-      {/* By its key: a recycled page starts at its own top. */}
-      <ScrollView
-        key={entry.id}
-        nestedScrollEnabled
-        scrollEnabled={active}
-        style={{ height: area, flexGrow: 0 }}
-        showsVerticalScrollIndicator={contentHeight > area}
-        scrollEventThrottle={64}
-        onScroll={({ nativeEvent }) => {
-          const end = nativeEvent.contentOffset.y + nativeEvent.layoutMeasurement.height >= nativeEvent.contentSize.height - END_SLOP;
-          if (end !== atBottom) setAtBottom(end);
-        }}
-      >
-        <View style={{ minHeight: area }} onLayout={(event) => setContentHeight(event.nativeEvent.layout.height)}>
-          <RuledLines height={Math.max(contentHeight, area)} line={page.line} plain={page.plain} />
-          <Text headingLevel={2} accessibilityLabel={w.pageLabel(number, total, date)} style={[page.date, styles.written, { color: page.inkSoft }]}>
-            {date}
+    <View style={[styles.page, { width, paddingTop: HEAD }, still ? null : { height }]}>
+      {still ? (
+        content
+      ) : (
+        // By its key: a recycled page starts at its own top.
+        <ScrollView
+          key={entry.id}
+          nestedScrollEnabled
+          scrollEnabled={active}
+          style={{ height: area, flexGrow: 0 }}
+          showsVerticalScrollIndicator={contentHeight > area}
+          scrollEventThrottle={64}
+          onScroll={({ nativeEvent }) => {
+            const end = nativeEvent.contentOffset.y + nativeEvent.layoutMeasurement.height >= nativeEvent.contentSize.height - END_SLOP;
+            if (end !== atBottom) setAtBottom(end);
+          }}
+        >
+          {content}
+        </ScrollView>
+      )}
+      {still ? (
+        <View style={styles.foot}>
+          <Text aria-hidden style={[page.date, styles.number, { color: page.inkSoft }]}>
+            {number}
           </Text>
-          {entry.layout ? (
-            <ArrangedPage entry={entry} layout={entry.layout} pending={pending} page={page} width={width} minHeight={area - page.line} date={date} onOpenPhoto={onOpenPhoto} />
-          ) : (
-            <>
-              <Prints entry={entry} pending={pending} page={page} width={width} pageHeight={area} date={date} onOpenPhoto={onOpenPhoto} />
-              {entry.text !== null && <Text style={[page.body, styles.written, { color: page.ink }]}>{entry.text}</Text>}
-            </>
-          )}
         </View>
-      </ScrollView>
-      <EntryFoot entry={entry} number={number} page={page} continues={continues} onEdit={onEdit} />
+      ) : (
+        <EntryFoot entry={entry} number={number} page={page} continues={continues} onEdit={onEdit} {...(onShare ? { onShare } : {})} />
+      )}
     </View>
   );
 }
@@ -258,7 +284,7 @@ function Prints({ entry, pending, page, width, pageHeight, date, onOpenPhoto }: 
  * The page's number, a sign when there is more to read, and change and delete. Deleting asks here on
  * the page: the same on the web, where the system's alert does not exist.
  */
-function EntryFoot({ entry, number, page, continues, onEdit }: { entry: JournalEntry; number: number; page: PageStyle; continues: boolean; onEdit: () => void }) {
+function EntryFoot({ entry, number, page, continues, onEdit, onShare }: { entry: JournalEntry; number: number; page: PageStyle; continues: boolean; onEdit: () => void; onShare?: () => void }) {
   const w = useMessages().journal;
   const [asking, setAsking] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -310,6 +336,11 @@ function EntryFoot({ entry, number, page, continues, onEdit }: { entry: JournalE
           </View>
         )}
       </View>
+      {onShare && (
+        <Pressable accessibilityRole="button" accessibilityLabel={w.shareLabel} onPress={onShare} style={styles.action}>
+          <Ionicons name={Platform.OS === "ios" ? "share-outline" : "share-social-outline"} size={ICON} color={page.inkSoft} />
+        </Pressable>
+      )}
       <Pressable accessibilityRole="button" accessibilityLabel={w.editLabel} onPress={onEdit} style={styles.action}>
         <Ionicons name="pencil-outline" size={ICON} color={page.inkSoft} />
       </Pressable>
