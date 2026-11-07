@@ -946,6 +946,8 @@ function PageCopy({
       const place = `${asset.district}, ${asset.city.label}`;
       return (
         <>
+          {/* What the asset is, its name and where it stands read as one block, close together. */}
+          <View style={styles.coverHead}>
           <Editable field="type" label="Türü" style={styles.kickerBox}>
             <View style={styles.kicker}>
               <Text
@@ -1010,6 +1012,9 @@ function PageCopy({
               {[year, place].filter(Boolean).join("  ·  ")}
             </Text>
           )}
+          </View>
+          {/* The ways on, all alike: icon and words from the left, the same gap between them. */}
+          <View style={styles.coverButtons}>
           <View style={styles.coverActions}>
             {photos.length > 1 && (
               <Editable field="media" label="Fotoğraflar">
@@ -1020,6 +1025,7 @@ function PageCopy({
             <DescribeButton asset={asset} />
           </View>
           <RelatedButton asset={asset} />
+          </View>
           <ScrollHint />
         </>
       );
@@ -1276,7 +1282,7 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
     <>
       <Ionicons
         name={warned ? "alert-circle" : "link"}
-        size={20}
+        size={18}
         color={ink.gold}
         style={styles.relatedIcon}
       />
@@ -1954,7 +1960,7 @@ const relatedButton = {
   flexDirection: "row",
   alignItems: "center",
   alignSelf: "stretch",
-  gap: spacing.xs,
+  gap: spacing.sm,
   minHeight: 48,
   paddingLeft: spacing.xs,
   paddingRight: spacing.md,
@@ -2261,18 +2267,26 @@ const styles = StyleSheet.create({
     fontSize: 22,
     lineHeight: 30,
   },
+  coverHead: {
+    gap: spacing.xs,
+  },
+  coverButtons: {
+    gap: spacing.sm,
+    marginTop: spacing.xs,
+  },
   coverActions: {
     flexDirection: "row",
     flexWrap: "wrap",
     gap: spacing.sm,
-    marginTop: spacing.xs,
   },
-  // The two on the cover share out the row's width, so it ends where the button under it does.
+  // The ones on the cover share out the row's width, so it ends where the button under it does; their
+  // words start from the left, as the related assets' button under them does.
   dossier: {
     ...dossierButton,
     alignSelf: "auto",
     flexGrow: 1,
-    justifyContent: "center",
+    justifyContent: "flex-start",
+    gap: spacing.sm,
     paddingHorizontal: spacing.md,
   },
   dossierWide: {
@@ -2285,8 +2299,8 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.xs,
+    justifyContent: "flex-start",
+    gap: spacing.sm,
     minHeight: 48,
     paddingLeft: spacing.xs,
     paddingRight: spacing.md,
@@ -2297,7 +2311,7 @@ const styles = StyleSheet.create({
   },
   related: relatedButton,
   relatedIcon: {
-    marginLeft: spacing.sm,
+    marginLeft: spacing.md - spacing.xs,
   },
   flexText: {
     flex: 1,
