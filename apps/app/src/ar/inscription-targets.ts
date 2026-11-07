@@ -40,6 +40,14 @@ export function overlayText(inscription: InscriptionV2): string | null {
   return `${cut.slice(0, cut.lastIndexOf(" ") > 0 ? cut.lastIndexOf(" ") : OVERLAY_MAX)}…`;
 }
 
+/**
+ * Where the data pipeline puts the `.mind` file it compiles from a photo: beside the photo's
+ * variants (`arTargetMindKey`, packages/contracts), from the same ~1280 px JPEG the phone compiles.
+ */
+export function mindUrlBeside(photoUrl: string): string {
+  return `${photoUrl.slice(0, photoUrl.lastIndexOf("/"))}/target-mindar-${MINDAR_VERSION}.mind`;
+}
+
 /** The ~1280 px JPEG of the photo: big enough to recognise, small enough to compile in seconds. */
 export function compileSource(media: AssetDetail["media"][number]): string {
   const jpgs = [...media.sources.jpg].sort((a, b) => a.width - b.width);
