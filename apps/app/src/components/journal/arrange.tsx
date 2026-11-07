@@ -7,6 +7,7 @@ import { Keyboard, PanResponder, Platform, Pressable, ScrollView, StyleSheet, Te
 
 import { useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
+import { cue } from "@/lib/feedback";
 import { newPhotoId } from "@/lib/journal";
 import { STROKE_COLORS, strokesBottom } from "@/lib/journal-drawing";
 import { duplicateSticker, moveItem, moveText, placeSticker, PRINT_BORDER, printHeight, resizePhoto, resizeSticker, resizeText, snapToCentre, stickersBottom, textTop, textWidth, topZ, turnItem } from "@/lib/journal-layout";
@@ -172,6 +173,7 @@ export function ArrangeCanvas({
     onEditing(false);
     onPicked();
     announce(w.arrange.stickerAdded(w.arrange.stickerNames[sticker]));
+    cue("sticker");
   };
 
   const lowest = layout.photos.reduce((low, placement) => Math.max(low, (placement.y + printHeight(placement.width, aspectOf(placement.id), width)) * width), textTop(layout.text.y, width, page.line) + textHeight);

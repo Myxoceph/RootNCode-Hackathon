@@ -7,6 +7,7 @@ import { useMapTheme } from "./map-theme";
 import { mapPageHtml, parseMapPageEvent, type MapPageCommand } from "./maplibre-page";
 import type { AssetMapProps } from "./types";
 import { useMessages } from "@/i18n";
+import { cue } from "@/lib/feedback";
 
 const DEFAULT_PADDING = { top: 48, right: 48, bottom: 48, left: 48 };
 
@@ -93,6 +94,7 @@ export function useMapPage(
     if (event?.type === "leaveCity") onLeaveCity?.();
     if (event?.type === "cityLanded") onCityLanded?.(event.plate);
     if (event?.type === "cityReady") onCityReady?.(event.plate);
+    if (event?.type === "fogParting") cue("fog");
     if (event?.type === "introEnd") onIntroEnd?.();
     if (event?.type === "unlock") onUnlock?.(event.id);
     if (event?.type === "inspect") onInspect?.(event.id);

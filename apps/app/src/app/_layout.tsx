@@ -18,6 +18,7 @@ import { BrandSplash } from "@/components/brand-splash";
 import { OfflineBanner } from "@/components/offline-banner";
 import { WebPageHeader } from "@/components/web-nav-bar";
 import { useAccountGate } from "@/lib/use-account-gate";
+import { preloadCues } from "@/lib/feedback";
 import { useBadgeWatch } from "@/lib/use-badge-watch";
 import { A11ySettingsProvider } from "@/settings/a11y-settings";
 import { DEFAULT_THEME_PREFERENCE, resolveColorScheme, useStoredThemePreference } from "@/theme";
@@ -120,6 +121,8 @@ function ThemedStack() {
   useAccountGate();
   // A badge earned anywhere is celebrated over the screen it was earned on.
   useBadgeWatch();
+  // The sound cues load once, so the first seal or badge is heard without a pause.
+  useEffect(() => preloadCues(), []);
   return (
     <ThemeProvider value={navigationTheme(theme)}>
       <StatusBar style={theme.scheme === "dark" ? "light" : "dark"} />

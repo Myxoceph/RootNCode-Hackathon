@@ -1355,6 +1355,11 @@ const tr = {
     highContrastDetail: "Metin ve çizgiler koyulaşır",
     focusRing: "Odak halkası",
     focusRingDetail: "Klavye ve anahtar erişimi",
+    feedback: "Ses ve titreşim",
+    soundEffects: "Ses efektleri",
+    soundEffectsDetail: "Mühür, kitabe, rozet ve defterde kısa sesler",
+    haptics: "Titreşim",
+    hapticsDetail: "Sekmelerde, dokunuşlarda ve ödül anlarında",
     keyboard: ["Harici klavye ya da anahtar erişimi: ", " sıradaki öğeye geçer, ", " seçer, ", " perdeyi ve kaydırıcıları oynatır."] as string[],
   },
 };
@@ -2709,6 +2714,11 @@ const en: Messages = {
     highContrastDetail: "Text and lines get darker",
     focusRing: "Focus ring",
     focusRingDetail: "Keyboard and switch access",
+    feedback: "Sound and vibration",
+    soundEffects: "Sound effects",
+    soundEffectsDetail: "Short sounds for seals, inscriptions, badges and the journal",
+    haptics: "Vibration",
+    hapticsDetail: "On tabs, taps and moments of reward",
     keyboard: ["External keyboard or switch access: ", " moves to the next item, ", " selects, ", " move the slider and the scrubbers."],
   },
 };

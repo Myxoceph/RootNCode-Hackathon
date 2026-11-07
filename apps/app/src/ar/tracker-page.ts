@@ -51,11 +51,13 @@ export function trackerPageHtml({ target, markColor, overlays = [], mindarScript
 <style>
   html, body { margin: 0; height: 100%; overflow: hidden; background: #000; }
   video, canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-  video { object-fit: cover; }
+  video, #still { object-fit: cover; }
+  #still { display: none; }
 ${overlayFont ? `  @font-face { font-family: "Marcellus"; src: url(data:font/ttf;base64,${overlayFont}) format("truetype"); }\n` : ""}</style>
 </head>
 <body>
 <video id="video" autoplay muted playsinline></video>
+<canvas id="still"></canvas>
 <script>${mindarScript}</script>
 <canvas id="marks"></canvas>
 <script type="module">
@@ -79,6 +81,9 @@ window.addEventListener("unhandledrejection", (event) => fail("unknown", event.r
 step("page");
 
 const video = document.getElementById("video");
+// The frame a photo stops on, laid over the video: the video runs on under it, and a resume only
+// takes it away.
+const still = document.getElementById("still");
 const canvas = document.getElementById("marks");
 const context = canvas.getContext("2d");
 
@@ -401,11 +406,17 @@ async function start() {
   // The photo: the picture stops on the frame, the tracker stops with it, and that one frame is
   // searched again from scratch. Only a frame that shows the target counts, not a glimpse before it.
   let frozen = false;
+  const holdFrame = () => {
+    still.width = video.videoWidth;
+    still.height = video.videoHeight;
+    still.getContext("2d").drawImage(video, 0, 0, still.width, still.height);
+    still.style.display = "block";
+  };
   commands.capture = async () => {
     if (frozen) return;
     frozen = true;
     const started = performance.now();
-    video.pause();
+    holdFrame();
     controller.stopProcessVideo();
     await new Promise((resolve) => {
       frameDone = resolve;
@@ -413,11 +424,8 @@ async function start() {
     });
     frameDone = null;
     try {
-      const frame = document.createElement("canvas");
-      frame.width = video.videoWidth;
-      frame.height = video.videoHeight;
-      frame.getContext("2d").drawImage(video, 0, 0, frame.width, frame.height);
-      const { featurePoints } = await controller.detect(frame);
+      // The frame on screen, not the video, which has run on.
+      const { featurePoints } = await controller.detect(still);
       let target = null;
       for (let index = 0; index < dimensions.length && target === null; index++) {
         const { modelViewTransform } = await controller.match(featurePoints, index);
@@ -432,16 +440,17 @@ async function start() {
   commands.snapshot = async () => {
     if (!frozen) {
       frozen = true;
-      video.pause();
+      holdFrame();
       controller.stopProcessVideo();
       context.clearRect(0, 0, canvas.width, canvas.height);
     }
     try {
-      const scale = Math.min(1, SNAPSHOT_WIDTH / video.videoWidth);
+      // The frame on screen (taken by a capture, or just now), not the video, which runs on.
+      const scale = Math.min(1, SNAPSHOT_WIDTH / still.width);
       const frame = document.createElement("canvas");
-      frame.width = Math.round(video.videoWidth * scale);
-      frame.height = Math.round(video.videoHeight * scale);
-      frame.getContext("2d").drawImage(video, 0, 0, frame.width, frame.height);
+      frame.width = Math.round(still.width * scale);
+      frame.height = Math.round(still.height * scale);
+      frame.getContext("2d").drawImage(still, 0, 0, frame.width, frame.height);
       post({ type: "snapshot", jpeg: frame.toDataURL("image/jpeg", SNAPSHOT_QUALITY).split(",")[1] });
     } catch (error) {
       post({ type: "snapshot", jpeg: null, error: String(error && error.message || error) });
@@ -452,7 +461,7 @@ async function start() {
     frozen = false;
     showing = -1;
     context.clearRect(0, 0, canvas.width, canvas.height);
-    video.play().catch(() => {});
+    still.style.display = "none";
     controller.processVideo(video);
   };
 

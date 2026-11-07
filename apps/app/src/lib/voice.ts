@@ -81,6 +81,11 @@ function subscribe(listener: () => void) {
   };
 }
 
+/** Something is being read aloud now (sound cues keep quiet over it). */
+export function isSpeaking(): boolean {
+  return playing !== null;
+}
+
 /** The key of the answer being read aloud, or `null`; for the "Dinle / Durdur" buttons. */
 export function useSpeaking(): string | null {
   return useSyncExternalStore(subscribe, () => playing, () => playing);
