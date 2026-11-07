@@ -174,9 +174,6 @@ export default function MyRewardsScreen() {
         createdAt={user?.username ? user.createdAt : null}
       />
       {user !== undefined && !account && <AccountNote />}
-      {items.length > 0 && (
-        <Featured items={items} wallet={walletData} onOpen={setOpen} />
-      )}
 
       {rewards.status === "loading" && (
         <ActivityIndicator
@@ -203,11 +200,6 @@ export default function MyRewardsScreen() {
 
       {items.length > 0 && (
         <View style={styles.section}>
-          <View style={styles.sectionHead}>
-            <Text variant="heading" headingLevel={2}>
-              {w.title}
-            </Text>
-          </View>
           {kinds.length > 1 && (
             <Kinds value={filter} onChange={setFilter} kinds={kinds} />
           )}
@@ -270,12 +262,6 @@ function memberSince(createdAt: string | null): string | null {
   return `${String(date.getMonth() + 1).padStart(2, "0")}/${String(date.getFullYear()).slice(2)}`;
 }
 
-/** The night of the reward tiles. */
-const HERO_BG = "#0A1126";
-/** A featured tile: low, its words beside the drawing. */
-const TILE_HEIGHT = 160;
-/** The reward's drawing on a featured tile, at its top right. */
-const TILE_ART = 80;
 
 /** Vakıf Katılım's VKart, whose rewards these are. */
 const VK_CARD = require("../../../assets/images/rewards/vk-kart.jpg") as number;
@@ -485,197 +471,6 @@ function WalletStat({ value, label }: { value: number; label: string }) {
 /** An SVG id of its own: on the web an earlier page stays in the document, hidden, with the same ids. */
 function useSvgKey(name: string): string {
   return `${name}-${useId().replace(/[^a-zA-Z0-9_-]/g, "")}`;
-}
-
-/** The rewards nearest to hand: those ready first, then by how much of the way is done. */
-function nearest(items: Reward[], wallet: WalletResponse | null): Reward[] {
-  const balance = wallet?.balance ?? 0;
-  return items
-    .filter((r) => r.stock !== 0 && blocker(r, wallet).kind !== "visits")
-    .sort((x, y) => {
-      const rx = blocker(x, wallet).kind === null ? 1 : 0;
-      const ry = blocker(y, wallet).kind === null ? 1 : 0;
-      if (rx !== ry) return ry - rx;
-      return balance / y.costPoints - balance / x.costPoints;
-    })
-    .slice(0, 5);
-}
-
-/** Hedefine yakın: the nearest rewards as large night tiles that slide sideways. */
-function Featured({
-  items,
-  wallet,
-  onOpen,
-}: {
-  items: Reward[];
-  wallet: WalletResponse | null;
-  onOpen: (reward: Reward) => void;
-}) {
-  const w = useMessages().rewards;
-  const { width: screen } = useWindowDimensions();
-  const wide = useWideWeb();
-  const picks = nearest(items, wallet).slice(0, wide ? 3 : 5);
-  if (picks.length === 0) return null;
-  const column = Math.min(screen, WIDE_PAGE) - WIDE_PAGE_PADDING * 2;
-  const tile = wide
-    ? Math.floor((column - spacing.md * 2) / 3)
-    : Math.min(300, Math.round(screen * 0.72));
-  return (
-    <View style={styles.section}>
-      <View style={styles.sectionHead}>
-        <Text variant="heading" headingLevel={2}>
-          {w.nearGoal}
-        </Text>
-      </View>
-      <ScrollView
-        horizontal
-        scrollEnabled={!wide}
-        showsHorizontalScrollIndicator={false}
-        snapToInterval={tile + spacing.md}
-        decelerationRate="fast"
-        style={!wide && styles.featuredScroller}
-        contentContainerStyle={[styles.featured, wide && styles.featuredWide]}
-        accessibilityRole="list"
-      >
-        {picks.map((reward, i) => (
-          <FeaturedTile
-            key={reward.code}
-            reward={reward}
-            wallet={wallet}
-            width={tile}
-            index={i}
-            onOpen={onOpen}
-          />
-        ))}
-      </ScrollView>
-    </View>
-  );
-}
-
-function FeaturedTile({
-  reward,
-  wallet,
-  width,
-  index,
-  onOpen,
-}: {
-  reward: Reward;
-  wallet: WalletResponse | null;
-  width: number;
-  index: number;
-  onOpen: (reward: Reward) => void;
-}) {
-  const lang = useLang();
-  const w = useMessages().rewards;
-  const reduced = useReducedMotion();
-  const tileId = useSvgKey("tile");
-  const enter = useRef(new Animated.Value(reduced ? 1 : 0)).current;
-  const look = KINDS[reward.kind];
-  const block = blocker(reward, wallet);
-  const balance = wallet?.balance ?? 0;
-  const share = Math.min(1, balance / reward.costPoints);
-  const ready = block.kind === null;
-  const height = TILE_HEIGHT;
-
-  useEffect(() => {
-    if (reduced) return;
-    Animated.spring(enter, {
-      toValue: 1,
-      delay: 120 + index * 90,
-      friction: 8,
-      tension: 60,
-      useNativeDriver: true,
-    }).start();
-  }, [enter, index, reduced]);
-
-  return (
-    <Animated.View
-      role="listitem"
-      style={{
-        opacity: enter,
-        transform: [
-          {
-            translateX: enter.interpolate({
-              inputRange: [0, 1],
-              outputRange: [40, 0],
-            }),
-          },
-        ],
-      }}
-    >
-      <Pressable
-        accessibilityRole="button"
-        accessibilityLabel={w.tileLabel(reward.title, reward.partner, reward.costPoints, ready ? w.available : w.pointsMore(block.needed))}
-        accessibilityHint={w.opensReward}
-        onPress={() => onOpen(reward)}
-        style={({ pressed }) => [
-          styles.tile,
-          { width, height },
-          pressed && styles.tilePressed,
-        ]}
-      >
-        <Svg
-          width={width}
-          height={height}
-          style={StyleSheet.absoluteFill}
-          aria-hidden
-        >
-          <Defs>
-            <LinearGradient id={tileId} x1="0" y1="0" x2="1" y2="1">
-              <Stop offset="0" stopColor={look.light} stopOpacity={0.95} />
-              <Stop offset="1" stopColor={HERO_BG} stopOpacity={1} />
-            </LinearGradient>
-          </Defs>
-          <Rect width={width} height={height} fill={HERO_BG} />
-          <Rect width={width} height={height} fill={`url(#${tileId})`} />
-        </Svg>
-        <View style={styles.tileArt} pointerEvents="none">
-          <RewardArt code={reward.code} kind={reward.kind} size={TILE_ART} />
-        </View>
-
-        <View style={[styles.tileTop, styles.tileBeside]}>
-          <Text colorValue="rgba(255,255,255,0.72)" style={styles.tileKind}>
-            {w.kinds[reward.kind].toLocaleUpperCase(lang)}
-          </Text>
-          {ready && (
-            <View style={styles.tileReady}>
-              <Text colorValue={palette.gece950} style={styles.tileReadyText}>
-                {w.canRedeem}
-              </Text>
-            </View>
-          )}
-        </View>
-
-        <View style={styles.tileBottom}>
-          <Text colorValue="#FFFFFF" style={[styles.tileTitle, styles.tileBeside]} numberOfLines={2}>
-            {reward.title}
-          </Text>
-          <Text
-            colorValue="rgba(255,255,255,0.72)"
-            style={[styles.tilePartner, styles.tileBeside]}
-            numberOfLines={1}
-          >
-            {reward.partner}
-          </Text>
-          <View style={styles.tileFoot}>
-            <Text colorValue={palette.altin200} style={styles.tileCost}>
-              {`✦ ${reward.costPoints}`}
-            </Text>
-            {!ready && (
-              <View style={styles.tileTrack} aria-hidden>
-                <View style={[styles.tileFill, { width: `${share * 100}%` }]} />
-              </View>
-            )}
-            {!ready && (
-              <Text colorValue="rgba(255,255,255,0.72)" style={styles.tileLeft}>
-                {w.left(block.needed)}
-              </Text>
-            )}
-          </View>
-        </View>
-      </Pressable>
-    </Animated.View>
-  );
 }
 
 /** An anonymous visitor earns points but cannot take codes; an account keeps the points. */
@@ -1401,10 +1196,9 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 3,
   },
+  // As wide as the card above, shared by its two figures.
   walletStats: {
     flexDirection: "row",
-    justifyContent: "center",
-    flexWrap: "wrap",
     gap: spacing.sm,
   },
   walletBlockWide: {
@@ -1463,110 +1257,16 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 20,
   },
-  featuredWide: {
-    paddingHorizontal: 0,
-  },
-  featuredScroller: {
-    marginHorizontal: -spacing.lg,
-  },
-  featured: {
-    gap: spacing.md,
-    paddingHorizontal: spacing.lg,
-    paddingBottom: spacing.xs,
-  },
-  tile: {
-    borderRadius: 26,
-    overflow: "hidden",
-    padding: spacing.lg,
-    justifyContent: "space-between",
-  },
-  tilePressed: {
-    transform: [{ scale: 0.97 }],
-  },
-  tileArt: {
-    position: "absolute",
-    top: spacing.xs,
-    right: spacing.sm,
-  },
-  /** The words keep clear of the drawing at the top right; the points line runs the whole width under it. */
-  tileBeside: {
-    paddingRight: TILE_ART - spacing.sm,
-  },
-  tileTop: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    gap: spacing.sm,
-  },
-  tileKind: {
-    fontFamily: fontFamily.monoMedium,
-    fontSize: 10,
-    lineHeight: 14,
-    letterSpacing: 2,
-  },
-  tileReady: {
-    paddingHorizontal: 10,
-    height: 24,
-    justifyContent: "center",
-    borderRadius: radius.full,
-    backgroundColor: palette.altin200,
-  },
-  tileReadyText: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 11,
-    lineHeight: 14,
-  },
-  tileBottom: {
-    gap: 2,
-  },
-  // Sans: the display face draws its zero as a ring ("%20").
-  tileTitle: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 18,
-    lineHeight: 23,
-    letterSpacing: -0.2,
-  },
-  tilePartner: {
-    fontFamily: fontFamily.sans,
-    fontSize: 12,
-    lineHeight: 16,
-  },
-  tileFoot: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm,
-    marginTop: spacing.sm,
-  },
-  tileCost: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 16,
-    lineHeight: 22,
-  },
-  tileTrack: {
-    flex: 1,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: "rgba(255,255,255,0.18)",
-    overflow: "hidden",
-  },
-  tileFill: {
-    height: "100%",
-    borderRadius: 2,
-    backgroundColor: palette.altin200,
-  },
-  tileLeft: {
-    fontFamily: fontFamily.sansMedium,
-    fontSize: 12,
-    lineHeight: 16,
-  },
   walletStat: {
+    flex: 1,
+    justifyContent: "center",
     flexDirection: "row",
     alignItems: "baseline",
     gap: 5,
     paddingHorizontal: 12,
-    height: 32,
+    height: 42,
     alignContent: "center",
-    paddingTop: 6,
+    paddingTop: 10,
     borderRadius: radius.full,
     borderWidth: StyleSheet.hairlineWidth,
   },
