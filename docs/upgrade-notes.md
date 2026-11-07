@@ -18,7 +18,7 @@ Değişenler:
 
 - `npx expo install --check` temiz: expo, expo-audio, expo-linking, expo-router, expo-splash-screen, react-native-safe-area-context.
 - Uygulamada ESLint var: `npm run lint -w apps/app` (CI'da da çalışıyor). Hook kuralı ihlali hata; React Compiler'ın denetimleri şimdilik uyarı.
-- `packages/contracts` kendi testlerini çalıştırıyor (`npm test -w @vagabonds/contracts`); kökteki `npm test` ve CI bunları da çalıştırır.
+- `packages/contracts` kendi testlerini çalıştırıyor (`npm test -w @vagabonds/contracts`), `pickSealPhoto` testleri de artık orada; kökteki `npm test` ve CI bunları da çalıştırır.
 
 ---
 

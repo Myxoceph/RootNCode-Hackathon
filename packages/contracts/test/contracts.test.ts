@@ -6,6 +6,7 @@ import {
   CONTRIBUTION_TEXT_MAX,
   JournalLayoutSchema,
   normalizeContributionText,
+  pickSealPhoto,
   RewardSchema,
 } from "../src/index";
 
@@ -67,5 +68,19 @@ describe("defaults that keep older answers readable", () => {
     const layout = JournalLayoutSchema.parse({ photos: [], text: { x: 0, y: 0, width: 0.9, z: 0 } });
     expect(layout.strokes).toEqual([]);
     expect(layout.stickers).toEqual([]);
+  });
+});
+
+describe("pickSealPhoto", () => {
+  const photo = (id: string, subject: string | null, width = 1000, isCover = false, kind = "photo") => ({ id, kind, subject, width, height: 800, isCover });
+
+  it("takes the best part there is a photo of, and of its photos the sharpest", () => {
+    const picked = pickSealPhoto([photo("m1", "exterior", 4000), photo("m2", "mihrab", 900), photo("m3", "mihrab", 1200), photo("m4", "portal", 800, false, "drawing")]);
+    expect(picked).toEqual({ photo: expect.objectContaining({ id: "m3" }), subject: "mihrab" });
+  });
+
+  it("falls back on the cover among the unsorted photos, never on one from above", () => {
+    expect(pickSealPhoto([photo("m1", null), photo("m2", "photo", 1000, true), photo("m3", "aerial")])).toEqual({ photo: expect.objectContaining({ id: "m2" }), subject: null });
+    expect(pickSealPhoto([photo("m3", "aerial")])).toBeNull();
   });
 });
