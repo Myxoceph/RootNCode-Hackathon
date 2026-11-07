@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rename, rm, rmdir, stat, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import {
   CONTRACT_VERSION,
@@ -43,6 +43,15 @@ export interface IntakeChatRoutesOptions {
 const IdParamsSchema = z.object({ id: z.uuid() });
 const EXTENSION: Record<string, string> = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
 const CONTENT_TYPE = { webp: "image/webp", jpg: "image/jpeg" } as const;
+/** An upload no message named for this long is swept away. */
+const STALE_UPLOAD_MS = 24 * 60 * 60 * 1000;
+
+/** An upload taken by a message: its folder, held under the job, and its file once in place. */
+interface Claimed {
+  uploadId: string;
+  held: string;
+  file: IntakeChatFile | null;
+}
 
 /** A chat's title in lists: its first line, as the admin wrote it. */
 export function chatTitle(text: string): string {
@@ -96,7 +105,8 @@ export const intakeChatRoutes: FastifyPluginAsync<IntakeChatRoutesOptions> = asy
       throw error;
     }
     const id = randomUUID();
-    for (const v of photo.variants) await store.put(`intake/${id}/${v.width}.${v.format}`, v.bytes, CONTENT_TYPE[v.format]);
+    const keys = photo.variants.map((v) => `intake/${id}/${v.width}.${v.format}`);
+    await Promise.all(photo.variants.map((v, i) => store.put(keys[i]!, v.bytes, CONTENT_TYPE[v.format])));
     const shown = photo.variants.find((v) => v.format === "jpg" && v.width === 1280) ?? photo.variants.filter((v) => v.format === "jpg").at(-1)!;
     const upload: IntakeUpload = {
       id,
@@ -110,45 +120,79 @@ export const intakeChatRoutes: FastifyPluginAsync<IntakeChatRoutesOptions> = asy
     const folder = join(uploadsDir, id);
     await mkdir(folder, { recursive: true });
     await writeFile(join(folder, `original.${EXTENSION[mime]}`), request.body);
+    await writeFile(join(folder, "variants.json"), JSON.stringify(keys));
+    // upload.json last: until it is there, the upload cannot be sent.
     await writeFile(join(folder, "upload.json"), JSON.stringify(upload));
+    void sweepStale().catch((err) => request.log.warn({ err }, "Could not sweep stale intake uploads"));
     reply.code(201);
     return IntakeUploadResponseSchema.parse({ version: CONTRACT_VERSION, upload });
   });
 
   /**
-   * A message's uploads as the chat's files, at the paths they will have under the job
-   * (`<dir>/<job>/files/<n>.<ext>`). Nothing is moved yet: an upload that is unknown or already sent
-   * is a 400, and a message the database turns down leaves its uploads to be sent again.
+   * A message's uploads become the chat's files (`<dir>/<job>/files/<n>.<ext>`) before the database
+   * hears of them, so the worker never takes up a chat whose photos are not yet in place. Each upload
+   * is claimed by moving its folder (one rename: of two requests naming it, one gets it, the other a
+   * 400). If anything after fails, `giveBack` puts every upload back as it was, to be sent again.
    */
-  async function readUploads(jobId: string, uploadIds: string[], message: number, first: number) {
-    const taken: Array<{ file: IntakeChatFile; from: string; folder: string }> = [];
-    for (const [i, uploadId] of uploadIds.entries()) {
-      const folder = join(uploadsDir, uploadId);
-      const meta = await readFile(join(folder, "upload.json"), "utf8").catch(() => null);
-      let upload: IntakeUpload | null = null;
-      try {
-        upload = meta === null ? null : IntakeUploadSchema.parse(JSON.parse(meta));
-      } catch {
-        upload = null;
+  async function claimUploads(jobId: string, uploadIds: string[], message: number, first: number) {
+    const claimed: Claimed[] = [];
+    if (uploadIds.length === 0) return claimed;
+    const incoming = resolve(root, dir, jobId, "incoming");
+    await mkdir(incoming, { recursive: true });
+    await mkdir(resolve(root, dir, jobId, "files"), { recursive: true });
+    try {
+      for (const [i, uploadId] of uploadIds.entries()) {
+        const held = join(incoming, uploadId);
+        try {
+          await rename(join(uploadsDir, uploadId), held);
+        } catch (error) {
+          if ((error as NodeJS.ErrnoException).code === "ENOENT") throw new HttpError(400, "UNKNOWN_UPLOAD", `No upload "${uploadId}" waiting to be sent`);
+          throw error;
+        }
+        const item: Claimed = { uploadId, held, file: null };
+        claimed.push(item);
+        const upload = IntakeUploadSchema.safeParse(await readFile(join(held, "upload.json"), "utf8").then(JSON.parse).catch(() => null));
+        if (!upload.success) throw new HttpError(400, "UNKNOWN_UPLOAD", `Upload "${uploadId}" cannot be read`);
+        const { name, mime, key, width, height } = upload.data;
+        const ext = EXTENSION[mime]!;
+        const file: IntakeChatFile = { path: `${dir}/${jobId}/files/${first + i}.${ext}`, name, mime, key, width, height, message };
+        await rename(join(held, `original.${ext}`), resolve(root, file.path));
+        item.file = file;
       }
-      if (!upload) throw new HttpError(400, "UNKNOWN_UPLOAD", `No upload "${uploadId}" waiting to be sent`);
-      const ext = EXTENSION[upload.mime]!;
-      const path = `${dir}/${jobId}/files/${first + i}.${ext}`;
-      taken.push({
-        file: { path, name: upload.name, mime: upload.mime, key: upload.key, width: upload.width, height: upload.height, message },
-        from: join(folder, `original.${ext}`),
-        folder,
-      });
+    } catch (error) {
+      await giveBack(jobId, claimed);
+      throw error;
     }
-    return taken;
+    return claimed;
   }
 
-  /** Once the message is stored: the originals go where its files say. */
-  async function moveUploads(jobId: string, taken: Awaited<ReturnType<typeof readUploads>>) {
-    if (taken.length === 0) return;
-    await mkdir(resolve(root, dir, jobId, "files"), { recursive: true });
-    for (const { file, from, folder } of taken) {
-      await rename(from, resolve(root, file.path));
+  /** The message was turned down: each upload goes back where it waited, and the job's empty folders go. */
+  async function giveBack(jobId: string, claimed: Claimed[]) {
+    for (const { uploadId, held, file } of claimed) {
+      if (file) await rename(resolve(root, file.path), join(held, `original.${EXTENSION[file.mime]}`));
+      await rename(held, join(uploadsDir, uploadId));
+    }
+    // rmdir, not rm: a folder that still holds anything (an earlier message's photos) stays.
+    for (const folder of ["incoming", "files", ""]) await rmdir(resolve(root, dir, jobId, folder)).catch(() => {});
+  }
+
+  /** The message is stored: what is left of its uploads (their upload.json) goes. */
+  async function settle(jobId: string, claimed: Claimed[]) {
+    if (claimed.length === 0) return;
+    for (const { held } of claimed) await rm(held, { recursive: true, force: true });
+    await rmdir(resolve(root, dir, jobId, "incoming")).catch(() => {});
+  }
+
+  /** Uploads no message named within a day: the original and its processed photos go. */
+  async function sweepStale() {
+    if (!store) return;
+    const now = Date.now();
+    for (const name of await readdir(uploadsDir).catch(() => [])) {
+      const folder = join(uploadsDir, name);
+      const info = await stat(folder).catch(() => null);
+      if (!info?.isDirectory() || now - info.mtimeMs < STALE_UPLOAD_MS) continue;
+      const keys = await readFile(join(folder, "variants.json"), "utf8").then(JSON.parse).catch(() => []);
+      if (Array.isArray(keys)) for (const key of keys) if (typeof key === "string" && key.startsWith(`intake/${name}/`)) await store.remove(key).catch(() => {});
       await rm(folder, { recursive: true, force: true });
     }
   }
@@ -172,14 +216,19 @@ export const intakeChatRoutes: FastifyPluginAsync<IntakeChatRoutesOptions> = asy
     const body = parseWith(IntakeChatCreateRequestSchema, request.body, "INVALID_BODY");
     if (!(await repository.cityExists(body.city))) throw new HttpError(400, "UNKNOWN_CODE", `Unknown city "${body.city}"; see GET /meta/enums`);
     const id = randomUUID();
-    const taken = await readUploads(id, body.uploads, 0, 0);
-    const input: IntakeChatInput = IntakeChatInputSchema.parse({
-      messages: [{ text: body.text, at: new Date().toISOString(), by: user.id }],
-      files: taken.map((t) => t.file),
-      assetId: null,
-    });
-    await repository.createChatJob({ id, title: chatTitle(body.text), city: body.city, input, createdBy: user.id });
-    await moveUploads(id, taken);
+    const claimed = await claimUploads(id, body.uploads, 0, 0);
+    try {
+      const input: IntakeChatInput = IntakeChatInputSchema.parse({
+        messages: [{ text: body.text, at: new Date().toISOString(), by: user.id }],
+        files: claimed.map((c) => c.file!),
+        assetId: null,
+      });
+      await repository.createChatJob({ id, title: chatTitle(body.text), city: body.city, input, createdBy: user.id });
+    } catch (error) {
+      await giveBack(id, claimed);
+      throw error;
+    }
+    await settle(id, claimed);
     reply.code(201);
     return jobResponse(id);
   });
@@ -208,16 +257,25 @@ export const intakeChatRoutes: FastifyPluginAsync<IntakeChatRoutesOptions> = asy
     if (messages.length >= INTAKE_CHAT_MAX_MESSAGES) throw new HttpError(400, "TOO_MANY_MESSAGES", `A chat holds at most ${INTAKE_CHAT_MAX_MESSAGES} messages`);
     if (files.length + body.uploads.length > INTAKE_CHAT_MAX_FILES) throw new HttpError(400, "TOO_MANY_PHOTOS", `A chat holds at most ${INTAKE_CHAT_MAX_FILES} photos`);
 
-    const taken = await readUploads(id, body.uploads, messages.length, files.length);
-    const input: IntakeChatInput = {
-      ...before.data,
-      messages: [...messages, { text: body.text, at: new Date().toISOString(), by: user.id }],
-      files: [...files, ...taken.map((t) => t.file)],
-    };
-    if (!(await repository.appendChat(id, input, job.updated_at))) {
-      throw new HttpError(409, "DRAFTING", "The chat changed meanwhile (the worker took it up); send the message again once the draft is done");
+    const claimed = await claimUploads(id, body.uploads, messages.length, files.length);
+    let result: Awaited<ReturnType<IntakeRepository["appendChat"]>>;
+    try {
+      const input: IntakeChatInput = {
+        ...before.data,
+        messages: [...messages, { text: body.text, at: new Date().toISOString(), by: user.id }],
+        files: [...files, ...claimed.map((c) => c.file!)],
+      };
+      result = await repository.appendChat(id, job.input, input);
+    } catch (error) {
+      await giveBack(id, claimed);
+      throw error;
     }
-    await moveUploads(id, taken);
+    if (result !== "ok") {
+      await giveBack(id, claimed);
+      if (result === "closed") throw new HttpError(409, "CHAT_CLOSED", "The draft was decided meanwhile");
+      throw new HttpError(409, "CHAT_CHANGED", "The chat changed meanwhile (another message, or the worker took it up); send the message again");
+    }
+    await settle(id, claimed);
     return jobResponse(id);
   });
 };

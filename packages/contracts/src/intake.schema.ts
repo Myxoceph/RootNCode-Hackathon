@@ -339,19 +339,16 @@ const ChatMessageFields = {
   text: z.string().trim().max(50_000).default(""),
   uploads: z.array(z.uuid()).max(20).default([]),
 };
-const hasContent = (m: { text: string; uploads: string[] }) => m.text.length > 0 || m.uploads.length > 0;
-const uploadsOnce = (m: { uploads: string[] }) => new Set(m.uploads).size === m.uploads.length;
+/** The rules every message keeps, whether it starts a chat or adds to one. */
+const withMessageRules = <T extends z.ZodType<{ text: string; uploads: string[] }>>(schema: T) =>
+  schema
+    .refine((m) => m.text.length > 0 || m.uploads.length > 0, "a message needs text or a photo")
+    .refine((m) => new Set(m.uploads).size === m.uploads.length, "an upload is sent once");
 
-export const IntakeChatMessageRequestSchema = z
-  .strictObject(ChatMessageFields)
-  .refine(hasContent, "a message needs text or a photo")
-  .refine(uploadsOnce, "an upload is sent once");
+export const IntakeChatMessageRequestSchema = withMessageRules(z.strictObject(ChatMessageFields));
 
 /** `POST /admin/intake/chats`: the first message, and the city the asset is in (the worker reads districts and places within it). */
-export const IntakeChatCreateRequestSchema = z
-  .strictObject({ ...ChatMessageFields, city: CityCodeSchema })
-  .refine(hasContent, "a message needs text or a photo")
-  .refine(uploadsOnce, "an upload is sent once");
+export const IntakeChatCreateRequestSchema = withMessageRules(z.strictObject({ ...ChatMessageFields, city: CityCodeSchema }));
 
 /** Most messages and photos one chat holds (IntakeChatInputSchema). */
 export const INTAKE_CHAT_MAX_MESSAGES = 200;

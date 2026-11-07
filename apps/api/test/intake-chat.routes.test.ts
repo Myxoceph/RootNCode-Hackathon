@@ -166,4 +166,39 @@ describe.skipIf(!DATABASE_URL)("intake chat routes (PostgreSQL)", () => {
     expect(response.statusCode).toBe(409);
     expect(response.json().error.code).toBe("CHAT_CLOSED");
   });
+
+  it("takes a message after the worker touched the chat with now()'s microseconds", async () => {
+    const started = IntakeJobResponseSchema.parse((await post("/admin/intake/chats", moderator, { city: "bursa", text: "Bir köprü." })).json()).job;
+    // As the worker's set_status does: a timestamp a JS Date cannot hold.
+    await prisma.$executeRaw`UPDATE intake_job SET status = 'done', updated_at = now() + interval '123 microseconds' WHERE id = ${started.id}::uuid`;
+    const response = await post(`/admin/intake/chats/${started.id}/messages`, moderator, { text: "Taş köprü." });
+    expect(response.statusCode).toBe(200);
+  });
+
+  it("gives one upload to one message: the other is turned down and loses nothing", async () => {
+    const item = await uploaded();
+    const [a, b] = await Promise.all([
+      post("/admin/intake/chats", moderator, { city: "bursa", text: "A", uploads: [item.id] }),
+      post("/admin/intake/chats", moderator, { city: "bursa", text: "B", uploads: [item.id] }),
+    ]);
+    expect([a.statusCode, b.statusCode].sort()).toEqual([201, 400]);
+    const won = IntakeJobResponseSchema.parse((a.statusCode === 201 ? a : b).json()).job;
+    expect(readFileSync(join(root, DIR, won.id, "files/0.jpg"))).toEqual(photo);
+    expect(existsSync(join(root, DIR, won.id, "incoming"))).toBe(false);
+  });
+
+  it("leaves the photos of a turned-down message to be sent again", async () => {
+    const started = IntakeJobResponseSchema.parse((await post("/admin/intake/chats", moderator, { city: "bursa", text: "Bir han." })).json()).job;
+    const item = await uploaded();
+    // Another message came in after this one was read: the stored input is no longer what was read.
+    await prisma.intake_job.update({ where: { id: started.id }, data: { status: "drafting" } });
+    expect((await post(`/admin/intake/chats/${started.id}/messages`, moderator, { text: "x", uploads: [item.id] })).json().error.code).toBe("DRAFTING");
+    expect(existsSync(join(root, DIR, "uploads", item.id, "original.jpg"))).toBe(true);
+    expect(existsSync(join(root, DIR, started.id))).toBe(false);
+
+    await prisma.intake_job.update({ where: { id: started.id }, data: { status: "done" } });
+    const sent = await post(`/admin/intake/chats/${started.id}/messages`, moderator, { text: "Avlusu var.", uploads: [item.id] });
+    expect(sent.statusCode).toBe(200);
+    expect(readFileSync(join(root, DIR, started.id, "files/0.jpg"))).toEqual(photo);
+  });
 });
