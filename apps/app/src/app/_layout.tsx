@@ -10,10 +10,11 @@ import {
 } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Platform, View } from "react-native";
 
 import { BadgeCelebration } from "@/components/badge-celebration";
+import { BrandSplash } from "@/components/brand-splash";
 import { OfflineBanner } from "@/components/offline-banner";
 import { WebPageHeader } from "@/components/web-nav-bar";
 import { useAccountGate } from "@/lib/use-account-gate";
@@ -86,12 +87,21 @@ export default function RootLayout() {
     if (ready) SplashScreen.hideAsync();
   }, [ready]);
 
-  if (!ready) return null;
+  // On the phone the app opens with its logo (BrandSplash), over the launch screen's place; the web
+  // page is rendered ahead of time and opens on its content.
+  const phone = Platform.OS !== "web";
+  const [logoGone, setLogoGone] = useState(!phone);
+  const onLogoGone = useCallback(() => setLogoGone(true), []);
+
+  if (!ready) return phone ? <BrandSplash /> : null;
 
   return (
-    <A11ySettingsProvider storedThemePreference={storedThemePreference}>
-      <ThemedStack />
-    </A11ySettingsProvider>
+    <>
+      <A11ySettingsProvider storedThemePreference={storedThemePreference}>
+        <ThemedStack />
+      </A11ySettingsProvider>
+      {!logoGone && <BrandSplash leaving onGone={onLogoGone} />}
+    </>
   );
 }
 

@@ -16,7 +16,7 @@ Kimler: **uygulamayı derleyenler**
 Değişenler:
 
 - Görünen ad **Vakıfname**: sekme başlıkları, web sitesi, tanıtım sayfası, yönetim paneli ve telefonda ikonun altı. Paket kimliği (`com.vagabonds.app`), slug ve `vagabonds://` bağlantı şeması değişmedi; kurulu uygulamalar güncellenir, bağlantılar çalışmaya devam eder.
-- Uygulama ikonu, Android uyarlanabilir ikonu, favicon ve açılış ekranı yeni sembolle. Açılış ekranı açık temada beyaz üstüne koyu altın, koyu temada lacivert üstüne açık altın sembol gösterir.
+- Uygulama ikonu, Android uyarlanabilir ikonu ve favicon yeni sembolle. Uygulama logoyla açılır: açılış ekranında ve ardından kısa süre uygulamanın içinde, açık temada beyaz üstüne koyu altın, koyu temada lacivert üstüne açık altın "Vakıfname" logosu durup kaybolur (Expo Go'da da).
 - Logo ve sembolün temiz, şeffaf halleri: `apps/app/assets/images/brand/`.
 
 ---
