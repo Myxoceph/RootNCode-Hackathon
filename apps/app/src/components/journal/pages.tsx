@@ -87,6 +87,25 @@ export function NewPage({ width, height, isFirst, onWrite, onAddPhoto }: { width
   );
 }
 
+/**
+ * A page with nothing on it yet, across from the newest one in a book lying open (the web's wide
+ * screen): ruled as the others, a small star stamped faintly in its middle and one line saying
+ * the pages to come gather here.
+ */
+export function BlankPage({ width, height }: { width: number; height: number }) {
+  const w = useMessages().journal;
+  const page = usePageStyle();
+  return (
+    <View style={[styles.page, { width, height, paddingTop: HEAD }]}>
+      <RuledLines height={height} line={page.line} plain={page.plain} />
+      <View style={styles.blankMiddle}>
+        <Ionicons name="sparkles-outline" size={28} color={page.inkSoft} style={styles.blankMark} aria-hidden />
+        <Text style={[page.body, styles.blankWords, { color: page.inkSoft }]}>{w.blankPage}</Text>
+      </View>
+    </View>
+  );
+}
+
 /** A page holding one entry. A long one scrolls within its lines; its foot stays where it is. */
 export function EntryPage({
   entry,
@@ -377,6 +396,21 @@ export function MorePage({ width, height, error, onRetry }: { width: number; hei
 }
 
 const styles = StyleSheet.create({
+  blankMiddle: {
+    ...StyleSheet.absoluteFill,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingLeft: MARGIN_LEFT,
+    paddingRight: spacing.xl,
+    gap: spacing.sm,
+  },
+  blankMark: {
+    opacity: 0.45,
+  },
+  blankWords: {
+    textAlign: "center",
+    opacity: 0.6,
+  },
   flex: {
     flex: 1,
   },
