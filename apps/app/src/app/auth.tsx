@@ -46,6 +46,11 @@ const field = {
 };
 const warning = palette.mercan300;
 
+/** The least of the photo left over the form: a strip under the title; less on a short phone. */
+const HERO_MIN = 112;
+const HERO_MIN_SHORT = 88;
+const SHORT_SCREEN = 720;
+
 function copyFor(m: Messages, mode: Mode): { title: string; lead: string; action: string } {
   return mode === "login"
     ? { title: m.auth.loginTitle, lead: m.auth.loginLead, action: m.auth.login }
@@ -90,6 +95,14 @@ export default function AuthScreen() {
   const ready =
     communityAvailable && !busy && (registering ? nameOk && emailOk && passwordOk : username.trim().length > 0 && password.length > 0);
   const heroHeight = Math.min(Math.max(height * 0.36, 220), 340);
+  // The page fits the screen and does not scroll: the photo gives up its height first. It scrolls only
+  // when the form cannot fit even so (large text, the keyboard up), so every field can still be reached.
+  const [viewport, setViewport] = useState(0);
+  const [content, setContent] = useState(0);
+  const overflows = viewport > 0 && content > viewport + 1;
+  // A short phone (an SE): the new account's form leaves out its lead line and sits closer still.
+  const short = height < SHORT_SCREEN;
+  const tight = registering && short;
 
   function switchTo(next: Mode) {
     if (next === mode) return;
@@ -131,22 +144,33 @@ export default function AuthScreen() {
       </Head>
 
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === "ios" ? "padding" : undefined}>
-        <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + spacing.xl }} keyboardShouldPersistTaps="handled" bounces={false}>
-          <View style={{ height: heroHeight }} aria-hidden importantForAccessibility="no-hide-descendants">
+        <ScrollView
+          contentContainerStyle={[styles.page, { paddingBottom: insets.bottom + (registering ? spacing.lg : spacing.xl) }]}
+          keyboardShouldPersistTaps="handled"
+          bounces={false}
+          scrollEnabled={overflows}
+          showsVerticalScrollIndicator={overflows}
+          onLayout={({ nativeEvent }) => setViewport(nativeEvent.layout.height)}
+          onContentSizeChange={(_width, contentHeight) => setContent(contentHeight)}
+        >
+          {/* As tall as it may be, and as short as it must be for the form to fit. */}
+          <View style={[styles.hero, { maxHeight: heroHeight, minHeight: short ? HERO_MIN_SHORT : HERO_MIN }]} aria-hidden importantForAccessibility="no-hide-descendants">
             {hero.status === "success" && hero.data?.cover && <AssetImage media={hero.data.cover} decorative fill />}
             <Fade />
           </View>
 
-          <View style={[styles.column, { marginTop: -spacing.xxl * 2 }]}>
+          <View style={[styles.column, registering && styles.columnTight, { marginTop: -spacing.xxl * 2 }]}>
             <Text variant="overline" colorValue={ink.gold}>
               {m.auth.overline}
             </Text>
             <Text headingLevel={1} colorValue={ink.text} style={styles.title}>
               {copyFor(m, mode).title}
             </Text>
-            <Text colorValue={ink.textSecondary} style={styles.lead}>
-              {copyFor(m, mode).lead}
-            </Text>
+            {!tight && (
+              <Text colorValue={ink.textSecondary} style={styles.lead}>
+                {copyFor(m, mode).lead}
+              </Text>
+            )}
 
             <Switch mode={mode} onChange={switchTo} />
             <LanguageSwitch on={{ fill: "rgba(255, 255, 255, 0.14)", text: ink.text }} off={{ text: ink.textSecondary, edge: field.edge }} />
@@ -165,6 +189,8 @@ export default function AuthScreen() {
 
             <View style={styles.form}>
               <Field
+                compact={registering}
+                tight={tight}
                 icon="at"
                 label={m.auth.username}
                 value={username}
@@ -176,6 +202,8 @@ export default function AuthScreen() {
               />
               {registering && (
                 <Field
+                  compact
+                  tight={tight}
                   inputRef={emailField}
                   icon="mail-outline"
                   label={m.auth.email}
@@ -190,6 +218,8 @@ export default function AuthScreen() {
                 />
               )}
               <Field
+                compact={registering}
+                tight={tight}
                 inputRef={passwordField}
                 icon="lock-closed-outline"
                 label={m.auth.password}
@@ -204,6 +234,8 @@ export default function AuthScreen() {
               {registering && password.length > 0 && <Strength password={password} />}
               {registering && !keeps && (
                 <Field
+                  compact
+                  tight={tight}
                   inputRef={nicknameField}
                   icon="person-outline"
                   label={m.auth.nickname}
@@ -328,16 +360,20 @@ interface FieldProps extends Omit<TextInputProps, "style" | "placeholder"> {
   label: string;
   secret?: boolean;
   inputRef?: RefObject<TextInputInstance | null>;
+  /** A little lower, for the longer form of a new account. */
+  compact?: boolean;
+  /** Lower still, on a short phone. */
+  tight?: boolean;
 }
 
 /** A glass field: its icon, its label as the placeholder, a gold edge while typing in it. */
-function Field({ icon, label, secret = false, inputRef, onFocus, onBlur, ...input }: FieldProps) {
+function Field({ icon, label, secret = false, compact = false, tight = false, inputRef, onFocus, onBlur, ...input }: FieldProps) {
   const m = useMessages();
   const { textScale } = useUi();
   const [focused, setFocused] = useState(false);
   const [shown, setShown] = useState(false);
   return (
-    <View style={[styles.field, { backgroundColor: field.fill, borderColor: focused ? ink.gold : field.edge }]}>
+    <View style={[styles.field, compact && styles.fieldCompact, tight && styles.fieldTight, { backgroundColor: field.fill, borderColor: focused ? ink.gold : field.edge }]}>
       <Ionicons name={icon} size={18} color={focused ? ink.gold : ink.textSecondary} />
       <TextInput
         ref={inputRef}
@@ -426,12 +462,22 @@ const styles = StyleSheet.create({
   strong: {
     fontFamily: fontFamily.sansSemiBold,
   },
+  page: {
+    flexGrow: 1,
+  },
+  hero: {
+    flexGrow: 1,
+    flexBasis: 0,
+  },
   column: {
     width: "100%",
     maxWidth: 480,
     alignSelf: "center",
     paddingHorizontal: spacing.xl,
     gap: spacing.md,
+  },
+  columnTight: {
+    gap: spacing.sm + spacing.xxs,
   },
   title: {
     fontFamily: fontFamily.display,
@@ -492,6 +538,12 @@ const styles = StyleSheet.create({
     paddingRight: spacing.sm,
     borderRadius: radius.lg,
     borderWidth: 1,
+  },
+  fieldCompact: {
+    height: 50,
+  },
+  fieldTight: {
+    height: 46,
   },
   input: {
     flex: 1,
