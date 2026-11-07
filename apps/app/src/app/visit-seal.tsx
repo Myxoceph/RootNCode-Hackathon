@@ -609,7 +609,7 @@ function PanelBody({
 
 /**
  * The seal is stamped (`SealStamp`): one red seal comes down, strikes and its ink soaks into the page. A first
- * visit then offers its sequence with one tap, "Zamanı aç" (a tap, as many seals are struck inside a mosque
+ * visit then offers its sequence with one tap, "Eserin sesini dinle" ("Zamanı aç" for a site with no sound; a tap, as many seals are struck inside a mosque
  * or a tomb, where a sound must not start by itself), its sound switched off beside it in one touch, or
  * "Geç". Either way the screen then goes by itself; the badges the visit earned open over what is next.
  * A visit sealed again has no sequence: only "Tamam".
@@ -622,7 +622,7 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
   const reduceMotion = useReducedMotion();
   const reveal = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
   const [stage, setStage] = useState<"offer" | "sequence" | "result">(result.firstVisit ? "offer" : "result");
-  // Switched off beside "Zamanı aç": the sequence starts muted, its own switch still there.
+  // Switched off beside "Eserin sesini dinle": the sequence starts muted, its own switch still there.
   const [muted, setMuted] = useState(false);
   const hasSound = capsuleForSoundKey(asset.ambientSound?.key ?? "") !== undefined;
   // After the sequence (or "Geç") the screen goes, no "Tamam" to tap: what the visit earned opens over
@@ -662,7 +662,7 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
                 Its sound is on unless switched off here, in one touch beside it; the sequence keeps the switch. */}
             <View style={styles.openRow}>
               <Button
-                label={w.openTime}
+                label={hasSound ? w.listenToSite : w.openTime}
                 accessibilityHint={hasSound ? (muted ? w.openTimeHint : w.openTimeHintSound) : w.openTimeHint}
                 icon={<Ionicons name="play" size={18} color={cameraColors.onGold} />}
                 onPress={() => setStage("sequence")}
@@ -862,7 +862,7 @@ const styles = StyleSheet.create({
   open: {
     flex: 1,
   },
-  // As tall and as round as "Zamanı aç" beside it.
+  // As tall and as round as the button beside it.
   soundSwitch: {
     width: 56,
     height: touchTarget.min,
