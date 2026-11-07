@@ -427,6 +427,7 @@ const tr = {
     otherLanguage: "English",
     otherLanguageShort: "EN",
     newHere: ["Hesabın yok mu? ", "Kayıt ol"] as string[],
+    myProfile: "Profilim",
   },
   mapPage: {
     sources: "Harita kaynakları",
@@ -1806,6 +1807,7 @@ const en: Messages = {
     otherLanguage: "Türkçe",
     otherLanguageShort: "TR",
     newHere: ["New here? ", "Sign up"],
+    myProfile: "My profile",
   },
   mapPage: {
     sources: "Map sources",
