@@ -16,7 +16,7 @@ Kimler: **uygulamayı çalıştıranlar**, **uygulamayı derleyenler**
 
 Değişenler:
 
-- Anı Defteri'nde her sayfanın altında paylaş düğmesi. Sayfa 1080×1920 bir hikâye görseline dönüşür, önce önizlemesi gösterilir, sonra sistemin paylaşım menüsü açılır (WhatsApp, Instagram hikâyesi…).
+- Anı Defteri'nde her sayfanın altında paylaş düğmesi. Önizlemede sağa-sola kaydırılarak (ya da alttaki adlarla) şablon seçilir: Defter ve Açık 1080×1920 hikâye kartı, Sadece sayfa yalnızca beyaz sayfa (1080 genişlik, içerik kadar boy). Sonra sistemin paylaşım menüsü açılır (WhatsApp, Instagram hikâyesi…).
 - Yeni bir anı kaydedilince birkaç saniye "Paylaş" önerisi çıkar.
 - Yalnızca iOS ve Android'de. Web'de düğme gösterilmez (`src/lib/share-image.ts`).
 

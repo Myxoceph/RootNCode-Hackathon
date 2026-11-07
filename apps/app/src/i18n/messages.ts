@@ -1230,6 +1230,9 @@ const tr = {
       offer: "Anın deftere eklendi",
       offerAction: "Paylaş",
       offerClose: "Öneriyi kapat",
+      templates: { story: "Defter", light: "Açık", page: "Sadece sayfa" },
+      swipe: "Şablonu değiştirmek için kaydır",
+      templateLabel: (name: string, at: number, count: number) => `${name} şablonu, ${at} / ${count}`,
     },
     errors: {
       signIn: "Anı Defteri için giriş yap.",
@@ -2538,6 +2541,9 @@ const en: Messages = {
       offer: "Your memory is in the book",
       offerAction: "Share",
       offerClose: "Dismiss",
+      templates: { story: "Book", light: "Light", page: "Page only" },
+      swipe: "Swipe to change the template",
+      templateLabel: (name: string, at: number, count: number) => `${name} template, ${at} of ${count}`,
     },
     errors: {
       signIn: "Sign in to use your Memory Book.",

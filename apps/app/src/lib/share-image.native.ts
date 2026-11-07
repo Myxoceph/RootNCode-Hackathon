@@ -14,9 +14,13 @@ export type ShareResult = "shared" | "unavailable";
  * The view as a picture the size of a story, handed to the system's share sheet: WhatsApp, Instagram
  * and the rest are chosen there. The file is the app's own temporary one; nothing goes to the photos.
  */
-export async function shareViewAsImage(view: RefObject<ComponentRef<typeof View> | null>, dialogTitle: string): Promise<ShareResult> {
+export async function shareViewAsImage(
+  view: RefObject<ComponentRef<typeof View> | null>,
+  dialogTitle: string,
+  size: { width: number; height: number } = STORY_SIZE,
+): Promise<ShareResult> {
   if (!(await Sharing.isAvailableAsync())) return "unavailable";
-  const uri = await captureRef(view, { format: "jpg", quality: 0.92, result: "tmpfile", ...STORY_SIZE });
+  const uri = await captureRef(view, { format: "jpg", quality: 0.92, result: "tmpfile", ...size });
   await Sharing.shareAsync(uri, { mimeType: "image/jpeg", UTI: "public.jpeg", dialogTitle });
   return "shared";
 }
