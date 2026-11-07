@@ -283,6 +283,7 @@ dev ──► feat/veri-dongusu (ortak, uzun ömürlü; PR ile beslenir)
 
 **İhtiyaç notları** (öbür şeritten istenen değişiklik; ekleyen yazar, sahibi işaretler):
 
+- **Hüseyin → Yiğit (kapsam değişikliği):** Yeni eser bilgisi admin panelinde tek bir sohbetten gelecek (Sohbetten Kabul). Sözleşme, migration, API ve panel değişiklikleri: [`yigit-veri-dongusu.md`](yigit-veri-dongusu.md).
 - **Hüseyin → Yiğit:** Worker'ın metin modeli için `INTAKE_TEXT_MODEL` (yoksa `ASSISTANT_MODEL`), görüntü modeli için `VISION_MODEL` okunuyor. API'de başka bir ad kullanılacaksa söyle, ikisi aynı olsun.
 - **Hüseyin → Yiğit (Y3):** İnceleme ekranındaki PDF sayfası görüntüsünü worker üretebilir (sayfayı PNG'ye çevirip `data/build/media/intake/<iş>/pages/<n>.png`). Sözleşmede bunun yeri yok: `intake_job`'a ya da taslağa bir alan mı, yoksa sabit bir yol kuralı mı? Karar senin.
 - **Hüseyin → Yiğit:** Fotoğrafları iki yer işliyor: API'de `photo-process.ts` (sharp), worker'da `media_pipeline.py` biçimi. Boyutlar (480/1280/2560), anahtar düzeni ve konum bilgisinin silinmesi aynı olmalı; esas alınacak tarafı yazalım. Ben `photo-process.ts`'e uyarım.
