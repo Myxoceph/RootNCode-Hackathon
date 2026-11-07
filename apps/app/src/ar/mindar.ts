@@ -36,6 +36,8 @@ export type TrackerEvent =
   | { type: "step"; step: TrackerStep }
   /** Tracker frames processed per second over the last two seconds. */
   | { type: "stats"; fps: number }
+  /** Where a found target lies: its corners (top left, top right, bottom right, bottom left) as fractions of the view. */
+  | { type: "pose"; target: number; corners: Array<[number, number]> }
   /** The frame frozen by `capture`, searched again: the target it shows, or null; `error` when the search itself failed. */
   | { type: "captured"; target: number | null; ms: number; error?: string }
   | { type: "error"; reason: TrackerFailure; message: string };

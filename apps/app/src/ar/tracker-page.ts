@@ -12,6 +12,10 @@ interface TrackerPageOptions {
   mindarScript: string;
   /** The app's heading font, Marcellus (base64 TrueType), for the overlay text; without it, a system serif. */
   overlayFont?: string | undefined;
+  /** Draw gold corners on a found target. Off where the app shows its own sign (Ziyaret Mührü). */
+  marks?: boolean | undefined;
+  /** Post where a found target lies on the screen ("pose"), a few times a second. */
+  poses?: boolean | undefined;
 }
 
 /**
@@ -38,7 +42,7 @@ export type TrackerTarget = TargetSource | { sources: TargetSource[] };
  * MindAR's core (`Controller`) is used without its three.js layer: the corners
  * are projected from the pose it returns, so nothing 3D is loaded.
  */
-export function trackerPageHtml({ target, markColor, overlays = [], mindarScript, overlayFont }: TrackerPageOptions): string {
+export function trackerPageHtml({ target, markColor, overlays = [], mindarScript, overlayFont, marks = true, poses = false }: TrackerPageOptions): string {
   return `<!doctype html>
 <html>
 <head>
@@ -210,6 +214,9 @@ function toBase64(bytes) {
   return btoa(binary);
 }
 
+// Poses are posted this often at most: enough to guide a hand, little for the bridge to carry.
+const POSE_EVERY_MS = 150;
+
 // A slow connection must not leave the screen at "preparing" for good: past this the photo counts as not downloaded.
 const IMAGE_TIMEOUT_MS = 20000;
 
@@ -343,6 +350,7 @@ async function start() {
 
   let dimensions = [];
   let showing = -1;
+  let posed = 0;
   let frames = 0;
   /** Resolves the next time the tracker finishes a frame: one is in flight when it is stopped. */
   let frameDone = null;
@@ -360,8 +368,13 @@ async function start() {
       if (worldMatrix) {
         const [width, height] = dimensions[targetIndex];
         const corners = [[0, 0], [width, 0], [width, height], [0, height]].map(([x, y]) => toCanvas(project(worldMatrix, height, x, y)));
-        drawCorners(corners);
+        if (${marks}) drawCorners(corners);
         if (overlays[targetIndex]) drawOverlay(corners, width, height, overlays[targetIndex]);
+        // Where the target lies, as fractions of the view: the app compares it with what it shows.
+        if (${poses} && performance.now() - posed > POSE_EVERY_MS) {
+          posed = performance.now();
+          post({ type: "pose", target: targetIndex, corners: corners.map(([x, y]) => [x / canvas.width, y / canvas.height]) });
+        }
         if (showing !== targetIndex) {
           showing = targetIndex;
           post({ type: "found", target: targetIndex });
