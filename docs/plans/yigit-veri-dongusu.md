@@ -153,13 +153,21 @@ Sözleşme `packages/contracts/src/intake.schema.ts`, migration `20261108130000_
 - **`input.assetId` her zaman `null`** (bir sohbet = bir yeni eser).
 - **`missing`** `IntakeValidationSchema`'da (`default([])`); eski satırlar onsuz da okunur.
 - **Kaynak alıntısı:** `IntakeSourceRefSchema` iki biçimin birleşimi; sohbet için `{ field, message, quote }`.
-- **Mesaj ekleme ve worker (önemli):** `POST /admin/intake/chats/:id/messages` iş `drafting`'teyken 409 döner,
-  taslak onaylanmış/reddedilmişse 409 `CHAT_CLOSED`. Girdiyi değiştirip işi yeniden `queued` yapar ve
-  `updated_at`'i yeniler. **Worker işi bitirirken `done`'ı yalnızca girdi değişmediyse yazmalı:**
-  `UPDATE intake_job SET status = 'done' … WHERE id = $1 AND updated_at = <işi alırken okuduğun updated_at>`
-  (ya da işi alırken `input`'u `UPDATE … SET status = 'drafting' WHERE status = 'queued' RETURNING input,
-  updated_at` ile tek adımda oku). Yoksa işi alıp `drafting`'e çekmeden önceki anda gelen bir mesaj, eski
-  girdiyle yazılan taslağın altında kaybolur.
+- **Mesaj ekleme ve worker (önemli, Y2 incelemesinden sonra):** `POST /admin/intake/chats/:id/messages`
+  iş `drafting`'teyken 409 `DRAFTING`, taslak onaylanmış/reddedilmişse 409 `CHAT_CLOSED`, arada başka bir
+  mesaj geldiyse 409 `CHAT_CHANGED` döner. Girdiyi tek bir SQL'le, yalnızca iş `queued|done|failed`'dayken,
+  `input` okunduğu gibiyken ve taslak hâlâ `pending`'ken değiştirir ve işi yeniden `queued` yapar
+  (`updated_at` değil `input` karşılaştırılır: `now()`'ın mikrosaniyesi JS'te tutulamıyor).
+  **Worker'a düşen yarı:** `run_chat` bugün `input`'u `claim`'de okuyor, `drafting`'e ayrı bir adımda geçiyor.
+  Arada gelen mesaj eski girdiyle yazılan taslağın altında kaybolur. Çözüm: `drafting`'e geçerken girdiyi
+  aynı adımda oku ve taslağı onunla yaz:
+  `UPDATE intake_job SET status = 'drafting', error = NULL, progress_done = 0, progress_total = 1, updated_at = now() WHERE id = %s AND status = ANY(%s) RETURNING input`
+  (satır dönmezse işi bırak, sonraki turda yeniden alınır). `drafting`'teyken API girdiye dokunmadığı için
+  dönen `input` taslak bitene kadar değişmez.
+- **Fotoğraflar kayıttan önce yerinde:** iş `queued` göründüğünde `input.files[].path`'teki dosyalar
+  diskte. `<iş>/incoming/` geçici klasördür, okuma. Bir günde mesaja eklenmeyen yüklemeler silinir.
+- **Bu dalda sohbet fotoğrafları yalnızca yerel depoya** yazılır: `INTAKE_LOCAL_ONLY` kapalıyken yükleme 503
+  döner (R2'ye gitmesin diye; `dev`'e alırken §9'da açılır).
 - **Kısıtlar:** kitap ve sohbet taslağı bir işe ve satıra bağlı (`entry_key`, sohbette `'chat'`); ziyaretçinin
   kitabesi ikisine de değil. Kitabın `file_path`'i var, sohbetin `input`'u var.
 - **Bayraklar** `1`/`0`'ı da kabul ediyor.
