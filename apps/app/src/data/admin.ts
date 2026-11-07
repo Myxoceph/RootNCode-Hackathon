@@ -12,6 +12,9 @@ import {
   AdminSummaryResponseSchema,
   AdminUserSchema,
   AdminUsersResponseSchema,
+  IntakeJobListResponseSchema,
+  IntakeJobResponseSchema,
+  IntakeUploadResponseSchema,
   MetaEnumsResponseSchema,
   ModerationItemSchema,
   ModerationListResponseSchema,
@@ -25,6 +28,8 @@ import {
   type AdminPhotoUploadQuery,
   type AdminPhotoUploadResponse,
   type AssetDetail,
+  type IntakeJob,
+  type IntakeUpload,
   type AdminAssetInput,
   type AdminAssetPatch,
   type AdminReward,
@@ -76,6 +81,15 @@ const MESSAGES: Record<string, string> = {
   IMAGE_NOT_SQUARE: "Görsel kareye yakın olmalı; rozet dairenin içinde çizilir.",
   PAYLOAD_TOO_LARGE_IMAGE: "Görsel çok büyük: en çok 2 MB olabilir.",
   INVALID_QUERY: "Arama kurallara uymuyor.",
+  NOT_FOUND: "Bu işlem bu sunucuda yok.",
+  JOB_NOT_FOUND: "Sohbet bulunamadı; silinmiş olabilir.",
+  DRAFTING: "Taslak şu an yazılıyor. Bitince mesajını yeniden gönder.",
+  CHAT_CLOSED: "Bu sohbetin taslağı onaylandı ya da reddedildi; yeni mesaj alınmıyor.",
+  CHAT_CHANGED: "Sohbet bu arada değişti (başka bir mesaj geldi ya da taslak yazılmaya başladı). Mesajını yeniden gönder.",
+  CHAT_UNREADABLE: "Sohbetin kayıtlı mesajları okunamıyor.",
+  UNKNOWN_UPLOAD: "Fotoğraflardan biri bulunamadı ya da zaten gönderildi. Kaldırıp yeniden ekle.",
+  TOO_MANY_MESSAGES: "Bir sohbette en çok 200 mesaj olabilir.",
+  TOO_MANY_PHOTOS: "Bir sohbette en çok 60 fotoğraf olabilir.",
 };
 
 /** A void schema for answers with nothing to read (204). */
@@ -267,3 +281,53 @@ export const updateReward = (code: string, patch: AdminRewardPatch): Promise<Adm
 
 export const addRewardCodes = (code: string, codes: string[]): Promise<AddRewardCodesResponse> =>
   admin(`/admin/rewards/${code}/codes`, AddRewardCodesResponseSchema, { body: { codes } });
+
+// Sohbetten Kabul (Veri Döngüsü, docs/plans/yigit-veri-dongusu.md §1.4): an admin tells about a new
+// asset in a chat, the worker (data/pipeline) writes its draft. Only on an API with INTAKE_ENABLED.
+
+export type ChatJob = IntakeJob & { kind: "chat" };
+
+/** The chats, newest first; null when this API has no intake routes (INTAKE_ENABLED off). */
+export async function fetchChats(): Promise<IntakeJob[] | null> {
+  try {
+    return (await admin("/admin/intake/jobs", IntakeJobListResponseSchema)).items.filter((job) => job.kind === "chat");
+  } catch (error) {
+    if (error instanceof DataError && error.code === "NOT_FOUND") return null;
+    throw error;
+  }
+}
+
+/** A chat with its messages and, once the worker wrote it, its draft: polled while the worker works. */
+export const fetchChat = (id: string) => admin(`/admin/intake/jobs/${id}`, IntakeJobResponseSchema);
+
+export const startChat = (body: { city: string; text: string; uploads: string[] }) => admin("/admin/intake/chats", IntakeJobResponseSchema, { body });
+
+export const addChatMessage = (id: string, body: { text: string; uploads: string[] }) =>
+  admin(`/admin/intake/chats/${id}/messages`, IntakeJobResponseSchema, { body });
+
+/**
+ * A photo for a chat message (`POST /admin/intake/uploads`): sent before the message, which then
+ * names it. The API keeps the original as sent (the worker reads where it was taken from its EXIF).
+ */
+export async function uploadChatPhoto(file: { uri: string; type: string; name: string }): Promise<IntakeUpload> {
+  const token = await accountToken();
+  if (!token) throw new DataError("rejected", "Panel için yönetici hesabıyla giriş yapmalısın.", [], "ACCOUNT_REQUIRED");
+  const url = `${resolveApiUrl()}/admin/intake/uploads${query({ name: file.name.slice(0, 200) })}`;
+  const photoErrorFor = photoError(token);
+  const errorFor = (status: number, code: string | null, details: string[]) =>
+    code === "MEDIA_UPLOAD_OFF"
+      ? new DataError("rejected", "Sohbet fotoğrafları yalnızca yerel geliştirmede (INTAKE_LOCAL_ONLY) yüklenebilir.", details, code)
+      : code === "INVALID_IMAGE"
+        ? new DataError("rejected", "Bu dosya kullanılamıyor: resim değil ya da çok küçük.", details, code)
+        : photoErrorFor(status, code, details);
+  let data: Blob;
+  try {
+    data = await (await fetch(file.uri)).blob();
+  } catch (error) {
+    throw new DataError("rejected", "Fotoğraf okunamadı. Tekrar dene.", [file.uri, String(error)]);
+  }
+  return (await request(url, IntakeUploadResponseSchema, { rawBody: { data, type: file.type }, method: "POST", token, timeoutMs: 120_000, errorFor }))!.upload;
+}
+
+/** A photo the API keeps in its local media store (INTAKE_LOCAL_ONLY), by its key. */
+export const localMediaUrl = (key: string) => `${resolveApiUrl()}/local-media/${key.split("/").map(encodeURIComponent).join("/")}`;
