@@ -30,9 +30,12 @@ import { MapTourGuide, MapTourReplayButton } from "@/components/map-tour-guide";
 import { MobileOnlyNotice } from "@/components/mobile-only-notice";
 import { SealScanDemo } from "@/components/seal-scan-demo";
 import { WEB_NAV_SPACE } from "@/components/web-nav-bar";
+import { stopCapsule, toggleCapsule, useCapsulePlayer } from "@/audio/capsule-player";
+import { capsuleForSoundKey, type CapsuleType } from "@/content/capsules";
 import {
   CITY_LANDMARKS,
   communityAvailable,
+  useAsset,
   useCities,
   useCityMapAssets,
   useCommunity,
@@ -81,6 +84,21 @@ const NO_PINS: MapPin[] = [];
 const UNLOCK_AFTER_RETURN_MS = 450;
 /** Longer than the map's unlocking scene with its fog: its controls come back even if the scene never reports its end. */
 const SCENE_LIMIT_MS = 10500;
+
+/** The chosen asset's sound, as its record says: the capsule "Sesli dinle" plays over the map. */
+interface ChosenSound {
+  id: string;
+  type: CapsuleType;
+}
+
+/** Reads the chosen asset's record for its sound; draws nothing. */
+function ChosenSoundOf({ id, onSound }: { id: string; onSound: (sound: ChosenSound | null) => void }) {
+  const detail = useAsset(id);
+  const key = detail.status === "success" ? (detail.data?.ambientSound?.key ?? null) : null;
+  const type = key ? capsuleForSoundKey(key) : undefined;
+  useEffect(() => onSound(type ? { id, type } : null), [id, type, onSound]);
+  return null;
+}
 
 /** Squared distance in degrees: enough to order a city's assets outward from its landmark. */
 function nearness(
@@ -600,6 +618,25 @@ export default function MapScreen() {
   const chosen = selectedCity
     ? (located.find(({ asset }) => asset.id === chosenAsset)?.asset ?? null)
     : null;
+
+  // "Sesli dinle" over an unlocked asset with a sound, "Durdur" while it plays.
+  const [chosenSound, setChosenSound] = useState<ChosenSound | null>(null);
+  const capsule = useCapsulePlayer();
+  const soundOfChosen = chosen && chosenSound?.id === chosen.id && unlocked.has(chosen.id) ? chosenSound : null;
+  const listen = soundOfChosen ? { id: soundOfChosen.id, playing: capsule?.type === soundOfChosen.type } : null;
+  // Only a sound started here is stopped here: on choosing another asset, and on leaving the map.
+  const playedHere = useRef(false);
+  const stopPlayedHere = useCallback(() => {
+    if (playedHere.current) stopCapsule();
+    playedHere.current = false;
+  }, []);
+  useEffect(() => stopPlayedHere, [chosen?.id, stopPlayedHere]);
+  useFocusEffect(useCallback(() => stopPlayedHere, [stopPlayedHere]));
+  const listenTo = (id: string) => {
+    if (!soundOfChosen || soundOfChosen.id !== id) return;
+    playedHere.current = true;
+    toggleCapsule(soundOfChosen.type);
+  };
   // The cards come in once the camera has landed (or at once without a map: they are its content in
   // words), and the chosen asset's buttons with them.
   const cardsShown =
@@ -656,6 +693,7 @@ export default function MapScreen() {
       <Text headingLevel={1} style={styles.unseen}>
         {m.map.heading(selectedCity ? selectedCity.label : m.map.turkey)}
       </Text>
+      {chosen && <ChosenSoundOf id={chosen.id} onSound={setChosenSound} />}
       {/* Waits to know whether a city opens again as it was left, and then for that city, so Turkey never shows first. */}
       {mapShown && (
         <MapLibreMap
@@ -687,6 +725,8 @@ export default function MapScreen() {
           onLeaveNote={(id) =>
             router.push({ pathname: "/note", params: { asset: id } })
           }
+          listen={listen}
+          onListen={listenTo}
           onSceneEnd={() => {
             setSceneRunning(false);
             tour.onSceneEnd();

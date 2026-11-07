@@ -946,6 +946,8 @@ function PageCopy({
       const place = `${asset.district}, ${asset.city.label}`;
       return (
         <>
+          {/* What the asset is, its name and where it stands read as one block, close together. */}
+          <View style={styles.coverHead}>
           <Editable field="type" label="Türü" style={styles.kickerBox}>
             <View style={styles.kicker}>
               <Text
@@ -1010,6 +1012,9 @@ function PageCopy({
               {[year, place].filter(Boolean).join("  ·  ")}
             </Text>
           )}
+          </View>
+          {/* The ways on, all alike: icon and words from the left, the same gap between them. */}
+          <View style={styles.coverButtons}>
           <View style={styles.coverActions}>
             {photos.length > 1 && (
               <Editable field="media" label="Fotoğraflar">
@@ -1017,8 +1022,10 @@ function PageCopy({
               </Editable>
             )}
             <DossierButton asset={asset} />
+            <DescribeButton asset={asset} />
           </View>
           <RelatedButton asset={asset} />
+          </View>
           <ScrollHint />
         </>
       );
@@ -1275,7 +1282,7 @@ function RelatedButton({ asset }: { asset: AssetDetail }) {
     <>
       <Ionicons
         name={warned ? "alert-circle" : "link"}
-        size={20}
+        size={18}
         color={ink.gold}
         style={styles.relatedIcon}
       />
@@ -1579,6 +1586,51 @@ function End({
   );
 }
 
+/**
+ * The asset's spoken architectural description, read in EVREN's voice as Rehber's answers (the phone's voice
+ * when it cannot be reached). Offered only while "Sesli mimari betimleme" is on in Sistem ayarları. The first
+ * page and the experiences share one reading: started on one, the other shows it playing and stops it.
+ */
+function useAssetDescription(asset: AssetDetail) {
+  const { settings } = useA11ySettings();
+  const key = `description:${asset.id}`;
+  const describing = useSpeaking() === key;
+  // Leaving the page ends its description (its Durdur button goes with it), not another screen's reading.
+  useEffect(() => () => stopAnswerOf((reading) => reading === key), [key]);
+  // Turned off while it reads: the reading stops with its button.
+  useEffect(() => {
+    if (!settings.audioDescription) stopAnswerOf((reading) => reading === key);
+  }, [settings.audioDescription, key]);
+  const description = settings.audioDescription ? asset.accessibility.audioDescription : null;
+  const toggleDescription = () => {
+    if (!description) return;
+    if (describing) stopAnswer();
+    else void speakAnswer(key, description);
+  };
+  return { description, describing, toggleDescription };
+}
+
+/** The spoken description on the first page, beside the dossier: there from the start, not only at the end. */
+function DescribeButton({ asset }: { asset: AssetDetail }) {
+  const m = useMessages();
+  const { description, describing, toggleDescription } = useAssetDescription(asset);
+  if (!description) return null;
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={describing ? m.asset.stopDescribing : `${m.asset.describe}: ${m.asset.describeHint}`}
+      accessibilityState={{ selected: describing }}
+      onPress={toggleDescription}
+      style={({ pressed }) => [styles.dossier, pressed && styles.pressed]}
+    >
+      <Ionicons name={describing ? "stop-outline" : "ear-outline"} size={18} color={ink.gold} />
+      <Text variant="caption" colorValue={ink.text} style={styles.bold}>
+        {describing ? m.common.stop : m.asset.describe}
+      </Text>
+    </Pressable>
+  );
+}
+
 /** The camera experiences, sound, spoken description and the assistant, a row each under hairlines. */
 function Experiences({
   asset,
@@ -1591,24 +1643,11 @@ function Experiences({
   const m = useMessages();
   const { settings } = useA11ySettings();
   const player = useCapsulePlayer();
-  // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
-  const descriptionKey = `description:${asset.id}`;
-  const describing = useSpeaking() === descriptionKey;
-  // Leaving the page ends its description (its Durdur button goes with it), not another screen's reading.
-  useEffect(
-    () => () => stopAnswerOf((key) => key === descriptionKey),
-    [descriptionKey],
-  );
-  // Turned off while it reads: the reading stops with its button.
-  useEffect(() => {
-    if (!settings.audioDescription) stopAnswerOf((key) => key === descriptionKey);
-  }, [settings.audioDescription, descriptionKey]);
+  const { description, describing, toggleDescription } = useAssetDescription(asset);
   const soundKey = asset.ambientSound?.key ?? null;
   const capsuleType = soundKey ? capsuleForSoundKey(soundKey) : undefined;
   const playing =
     capsuleType !== undefined && player?.type === capsuleType ? player : null;
-  // Offered only while "Sesli mimari betimleme" is on in Sistem ayarları.
-  const description = settings.audioDescription ? asset.accessibility.audioDescription : null;
   const opened = isAssetUnlocked(asset, useUnlockedAssets());
   const inscriptions = useHasInscriptions(asset);
 
@@ -1678,10 +1717,7 @@ function Experiences({
       spoken: describing
         ? m.asset.stopDescribing
         : `${m.asset.describe}: ${m.asset.describeHint}`,
-      onPress: () => {
-        if (describing) stopAnswer();
-        else void speakAnswer(descriptionKey, description);
-      },
+      onPress: toggleDescription,
       on: describing,
     });
   }
@@ -1924,7 +1960,7 @@ const relatedButton = {
   flexDirection: "row",
   alignItems: "center",
   alignSelf: "stretch",
-  gap: spacing.xs,
+  gap: spacing.sm,
   minHeight: 48,
   paddingLeft: spacing.xs,
   paddingRight: spacing.md,
@@ -2231,18 +2267,26 @@ const styles = StyleSheet.create({
     fontSize: 22,
     lineHeight: 30,
   },
+  coverHead: {
+    gap: spacing.xs,
+  },
+  coverButtons: {
+    gap: spacing.sm,
+    marginTop: spacing.xs,
+  },
   coverActions: {
     flexDirection: "row",
     flexWrap: "wrap",
     gap: spacing.sm,
-    marginTop: spacing.xs,
   },
-  // The two on the cover share out the row's width, so it ends where the button under it does.
+  // The ones on the cover share out the row's width, so it ends where the button under it does; their
+  // words start from the left, as the related assets' button under them does.
   dossier: {
     ...dossierButton,
     alignSelf: "auto",
     flexGrow: 1,
-    justifyContent: "center",
+    justifyContent: "flex-start",
+    gap: spacing.sm,
     paddingHorizontal: spacing.md,
   },
   dossierWide: {
@@ -2255,8 +2299,8 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.xs,
+    justifyContent: "flex-start",
+    gap: spacing.sm,
     minHeight: 48,
     paddingLeft: spacing.xs,
     paddingRight: spacing.md,
@@ -2267,7 +2311,7 @@ const styles = StyleSheet.create({
   },
   related: relatedButton,
   relatedIcon: {
-    marginLeft: spacing.sm,
+    marginLeft: spacing.md - spacing.xs,
   },
   flexText: {
     flex: 1,

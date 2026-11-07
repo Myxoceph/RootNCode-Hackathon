@@ -15,7 +15,7 @@ const DEFAULT_PADDING = { top: 48, right: 48, bottom: 48, left: 48 };
  * the commands sent to it when pins or the selection change, and its events.
  */
 export function useMapPage(
-  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity, onCityLanded, onCityReady, onIntroEnd, onUnlock, onInspect, onOpenRelatedList, onLeaveNote, onSceneEnd, watchSpots = false, onSpots, offerUnlock = false }: AssetMapProps,
+  { pins, selectedId, onSelect, onReady, onError, fitPadding = DEFAULT_PADDING, network = null, provinces = null, onSelectProvince, onLeaveCity, onCityLanded, onCityReady, onIntroEnd, onUnlock, onInspect, onOpenRelatedList, onLeaveNote, listen = null, onListen, onSceneEnd, watchSpots = false, onSpots, offerUnlock = false }: AssetMapProps,
   send: (command: MapPageCommand) => void,
 ) {
   const { scheme, colors: c } = useMapTheme();
@@ -80,6 +80,9 @@ export function useMapPage(
   useEffect(() => send({ type: "provinces", provinces: JSON.parse(provincesJson) }), [provincesJson, send]);
   useEffect(() => send({ type: "watchSpots", on: watchSpots }), [watchSpots, send]);
   useEffect(() => send({ type: "offerUnlock", on: offerUnlock }), [offerUnlock, send]);
+  // By value, as the padding: the screen builds the object again on every render.
+  const listenJson = JSON.stringify(listen);
+  useEffect(() => send({ type: "listen", listen: JSON.parse(listenJson) }), [listenJson, send]);
   useEffect(() => send({ type: "words", words }), [words, send]);
   useEffect(() => send({ type: "textScale", scale: textScale }), [textScale, send]);
 
@@ -95,6 +98,7 @@ export function useMapPage(
     if (event?.type === "inspect") onInspect?.(event.id);
     if (event?.type === "relatedList") onOpenRelatedList?.(event.id);
     if (event?.type === "note") onLeaveNote?.(event.id);
+    if (event?.type === "listen") onListen?.(event.id);
     if (event?.type === "sceneEnd") onSceneEnd?.();
     if (event?.type === "spots") onSpots?.(event.spots);
     if (event?.type === "error") onError?.(event.message);
@@ -114,6 +118,7 @@ export function useMapPage(
     send({ type: "provinces", provinces });
     send({ type: "watchSpots", on: watchSpots });
     send({ type: "offerUnlock", on: offerUnlock });
+    send({ type: "listen", listen });
   };
 
   return { html, onMessage, replay };
