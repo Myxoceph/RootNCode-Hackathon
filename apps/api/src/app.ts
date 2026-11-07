@@ -19,6 +19,7 @@ import type { MediaStore } from "./modules/admin/media-store.ts";
 import { localMediaRoutes, type LocalMediaRoutesOptions } from "./modules/intake/local-media.routes.ts";
 import { createIntakeRepository } from "./modules/intake/intake.repository.ts";
 import { intakeRoutes } from "./modules/intake/intake.routes.ts";
+import { intakeChatRoutes } from "./modules/intake/intake-chat.routes.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
 import { moderationRoutes } from "./modules/community/moderation.routes.ts";
 import { createJournalRepository } from "./modules/journal/journal.repository.ts";
@@ -143,7 +144,11 @@ export function buildApp({
   app.register(adminRoutes, { repository: adminRepository, community: communityRepository });
   app.register(adminMediaRoutes, { repository: adminRepository, community: communityRepository, store: mediaStore, mediaBaseUrl });
   if (localMedia) app.register(localMediaRoutes, localMedia);
-  if (intake) app.register(intakeRoutes, { repository: createIntakeRepository(prisma), community: communityRepository, ...intake });
+  if (intake) {
+    const intakeRepository = createIntakeRepository(prisma);
+    app.register(intakeRoutes, { repository: intakeRepository, community: communityRepository, ...intake });
+    app.register(intakeChatRoutes, { repository: intakeRepository, community: communityRepository, store: mediaStore, ...intake });
+  }
   app.register(adminAssetPreviewRoutes, {
     repository: createAssetsRepository(prisma, assetVisibility, ALL_ASSET_STATUSES),
     sounds: soundsRepository,

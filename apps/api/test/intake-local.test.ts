@@ -50,6 +50,9 @@ describe("INTAKE_LOCAL_ONLY", () => {
     expect(() => loadEnv({ DATABASE_URL: "postgresql://u:p@db.example.com:5432/db", INTAKE_LOCAL_ONLY: "true" })).toThrow(/INTAKE_LOCAL_ONLY/);
     expect(loadEnv({ DATABASE_URL: LOCAL_DB, INTAKE_LOCAL_ONLY: "true" }).INTAKE_LOCAL_ONLY).toBe(true);
     expect(loadEnv({ DATABASE_URL: LOCAL_DB }).INTAKE_ENABLED).toBe(false);
+    // "1" and "0" as well as "true" and "false".
+    expect(loadEnv({ DATABASE_URL: LOCAL_DB, INTAKE_ENABLED: "1", INTAKE_LOCAL_ONLY: "1" })).toMatchObject({ INTAKE_ENABLED: true, INTAKE_LOCAL_ONLY: true });
+    expect(loadEnv({ DATABASE_URL: LOCAL_DB, INTAKE_ENABLED: "0" }).INTAKE_ENABLED).toBe(false);
   });
 });
 

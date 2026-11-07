@@ -83,10 +83,10 @@ const EnvSchema = z.object({
   // Veri Döngüsü's development (docs/plans/veri-dongusu.md §0): "true" refuses to start unless the
   // database is on this machine and no R2 credentials are set; photos then go to LOCAL_MEDIA_DIR,
   // served at /local-media. Never on a server.
-  INTAKE_LOCAL_ONLY: z.enum(["true", "false"]).default("false").transform((value) => value === "true"),
+  INTAKE_LOCAL_ONLY: z.enum(["true", "false", "1", "0"]).default("false").transform((value) => value === "true" || value === "1"),
   // Veri Döngüsü's routes (book intake, the review queue's new kinds, inscription proposals). Off by
   // default: merged code changes nothing on a server until this is turned on.
-  INTAKE_ENABLED: z.enum(["true", "false"]).default("false").transform((value) => value === "true"),
+  INTAKE_ENABLED: z.enum(["true", "false", "1", "0"]).default("false").transform((value) => value === "true" || value === "1"),
   // Where the local media store writes with INTAKE_LOCAL_ONLY; empty: the repo's data/build/media.
   LOCAL_MEDIA_DIR: z.string().default(""),
   // With INTAKE_LOCAL_ONLY, the media URLs the API gives (instead of MEDIA_BASE_URL, which stays the

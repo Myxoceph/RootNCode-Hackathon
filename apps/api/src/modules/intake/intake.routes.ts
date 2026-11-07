@@ -143,7 +143,7 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
   }, async (request, reply) => {
     await requireUser(request, community, "moderator");
     reply.header("cache-control", "no-store");
-    return IntakeJobListResponseSchema.parse({ version: CONTRACT_VERSION, items: (await repository.listJobs()).map(toIntakeJob) });
+    return IntakeJobListResponseSchema.parse({ version: CONTRACT_VERSION, items: (await repository.listJobs()).map((job) => toIntakeJob(job)) });
   });
 
   app.get("/admin/intake/jobs/:id", {
@@ -160,7 +160,9 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
     const job = await repository.findJob(id);
     if (!job) throw jobNotFound();
     reply.header("cache-control", "no-store");
-    return IntakeJobResponseSchema.parse({ version: CONTRACT_VERSION, job: toIntakeJob(job) });
+    // A chat comes with its messages and, once the worker wrote it, its draft (the panel polls this).
+    const draft = job.kind === "chat" ? await repository.findDraftOfJob(id) : null;
+    return IntakeJobResponseSchema.parse({ version: CONTRACT_VERSION, job: toIntakeJob(job, true), draft: draft ? toIntakeDraft(draft) : null });
   });
 
   app.post("/admin/intake/jobs/:id/map", {
@@ -179,7 +181,7 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
     const problems = bookMapProblems(input.bookMap);
     if (problems.length > 0) throw new HttpError(400, "INVALID_MAP", problems.join("; "));
     const job = await repository.findJob(id);
-    if (!job) throw jobNotFound();
+    if (!job || job.kind !== "pdf") throw jobNotFound();
     if (!(await repository.confirmMap(id, input.bookMap, input.sourceId, user.id))) {
       // Read again: another moderator may have confirmed it a moment ago.
       const now = (await repository.findJob(id))?.status ?? job.status;
