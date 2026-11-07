@@ -167,7 +167,16 @@ tünelden ulaşılır. `TRUSTED_PROXIES=private_ranges` ile Caddy özel ağdan g
 yalnızca tünelde ve portlar `127.0.0.1`'e bağlıyken açılır; sunucuda kapalı kalır (varsayılan), yoksa
 ziyaretçi IP'sini taklit edip hız sınırını aşabilir.
 
-Kurulum (alan adının sahibi yapar, bir kez):
+Kurulum (alan adının sahibi yapar, bir kez). İki yol var:
+
+- **Token (önerilen):** tünelin sahibi kendi bilgisayarında `cloudflared tunnel token vagabonds-demo`
+  çalıştırır, çıkan değeri demo Mac'inin `deploy/.env` dosyasına `TUNNEL_TOKEN=<değer>` olarak yazar.
+  Bu durumda demo Mac'inde `login`, sertifika ya da yapılandırma dosyası gerekmez; tünel ve alan adı
+  sahibinin hesabında kalır, DNS kaydı (`route dns`) zaten vardır. `deploy/demo.sh tunnel` tüneli
+  `HTTP_PORT`'taki Caddy'ye bağlar. Token bir parola gibidir: git'e, sohbete ya da komut satırına
+  yazılmaz (betik onu ortam değişkeniyle verir). Sahibi tüneli istediği an `cloudflared tunnel delete`
+  ya da panelden kapatabilir.
+- **Giriş:** aynı Mac'te aşağıdaki komutlar.
 
 ```bash
 brew install cloudflared
@@ -194,6 +203,316 @@ Terminal açık kaldıkça site yayındadır. Demo boyunca Mac'in uyumaması iç
 Docker'ın disk dosyası (`Docker.raw`) imajlar derlendikçe büyür. Mac'in diski dolarsa Docker'ın sanal
 makinesi bozulup açılmayabilir; derlemeden önce en az 10 GB boş yer bırak.
 
+## Oracle sunucusu (her zaman açık)
+
+2026-11-03'ten beri `vagabonds.allbytech.com` Oracle Cloud'daki ücretsiz bir sunucudan sunuluyor
+(Frankfurt, Ampere A1: 2 çekirdek, 12 GB, 100 GB disk, Ubuntu 24.04). Mac kapalıyken de açık; ekip API
+adresini değiştirmeden (`https://vagabonds.allbytech.com/api`) dener. Mac aynı yığınla yedekte durur.
+
+- **Aynı yapı:** `deploy/compose.yml` ve `deploy/demo.sh` sunucuda aynen çalışıyor; bütün imajların ARM sürümü
+  var. Konya'nın OTP grafiği (`deploy/otp/data/graph.obj`) Mac'ten kopyalandı, sunucuda yeniden derlenmez.
+- **Kendini günceller:** `vagabonds-update.timer` 5 dakikada bir `dev`'e bakar; dal ilerlediyse çeker, `demo.sh up`
+  ile yalnızca değişeni derler, ön kontrolü çalıştırır ve eski imajları siler (`deploy/oracle/update.sh`). Kayıt:
+  `journalctl -u vagabonds-update -n 50`. Final için `main`'i izlesin: servise `Environment=VAGABONDS_BRANCH=main`.
+- **Tünel:** `vagabonds-tunnel.service` (`demo.sh tunnel`) sunucu açılınca başlar, koparsa 5 sn sonra yeniden
+  bağlanır. Kayıt: `journalctl -u vagabonds-tunnel -f`.
+- **Erişim:** `ssh -i ~/.ssh/vagabonds_oracle ubuntu@130.61.26.125` (Ahmet'in Mac'inde). Dışarıya yalnızca SSH
+  açık; site tünelden gelir. `deploy/.env` sunucuda Mac'tekinin kopyası; ikisinde de aynı tutulmalı.
+
+**Tünel aynı anda tek makinede.** Adresi Mac'e almak için önce sunucuda
+`sudo systemctl stop vagabonds-tunnel`, sonra Mac'te `deploy/demo.sh tunnel`. Geri vermek için Mac'teki tüneli
+durdur (Ctrl-C), sunucuda `sudo systemctl start vagabonds-tunnel`. Hangisinin sunduğunu `/api/health`'teki
+`uptimeSeconds` gösterir.
+
+**Yedek:** `vagabonds-backup.timer` her saat başı yedek alır (`deploy/oracle/backup.sh`, son 48'i tutar); her
+güncellemeden önce de bir yedek alınır, bir migration ters giderse oradan dönülür. Mac yarım saatte bir en yenisini
+kendine çeker (aşağıda).
+
+**Veri:** Sunucunun veritabanı 2026-11-03'te Mac'in yedeğinden geldi (hesaplar, ziyaretler, konuşmalar). Ekip
+deneme hesaplarıyla dener, demo hesaplarına dokunmaz. Final sabahı temiz bir yedek geri yüklenebilir:
+`deploy/demo.sh backup` ile alınan `.dump`'ı `pg_restore --clean --if-exists` ile (bkz. "Kayıtlar, yedek, sorun
+giderme").
+
+**Ücretsiz sunucunun kuralı:** Oracle, 7 gün boyunca işlemcisi çok az kullanılan ücretsiz sunucuları
+kapatabiliyor. Ekip kullandıkça sorun değil; uzun süre kullanılmayacaksa haftada bir bakın.
+
+## Panelden fotoğraf yükleme
+
+`POST /admin/assets/:id/media` fotoğrafı sunucuda işler (`sharp`, `media_pipeline.py` ile aynı boyut ve kalite) ve R2'ye
+yazar. Bunun için bucket'a yazabilen bir anahtar gerekir; yoksa bu uç 503 döner, başka hiçbir şey etkilenmez.
+
+1. Cloudflare › R2 › **Manage R2 API Tokens** › **Create API Token**: izin **Object Read & Write**, yalnızca
+   `kok-kod-media-public` bucket'ı. Hesabın tamamına yetki verme.
+2. Sunucuda `deploy/.env`'e (git'e girmez):
+
+   ```bash
+   MEDIA_S3_ENDPOINT=https://<hesap-id>.r2.cloudflarestorage.com
+   MEDIA_BUCKET=kok-kod-media-public
+   MEDIA_S3_ACCESS_KEY_ID=...
+   MEDIA_S3_SECRET_ACCESS_KEY=...
+   ```
+
+3. `deploy/demo.sh up` ya da bir sonraki otomatik güncelleme. Mac'in `deploy/.env`'ine de yazılırsa devralmada da çalışır.
+
+Panelden yüklenen fotoğraflar `asset_media.panel_upload` ile işaretlenir: içe aktarma bunları silmez, kapağı yalnızca
+veri seti bir kapak söylüyorsa geri alır. Kaydı veri tabanında (yedeklerde), dosyaları R2'dedir; veri setinde
+(`data/eserler`) değildir, yani boş bir veritabanına sıfırdan içe aktarmada gelmezler.
+
+## Oracle çökerse: Mac'ten 5 dakikada
+
+Sunucu cevap vermiyorsa, siliniyorsa ya da sahneden önce bir şey ters giderse adres Mac'e alınır. Mac'te Docker
+Desktop açık olsun; gerisini tek komut yapar:
+
+```bash
+deploy/failover.sh takeover
+```
+
+1. Sunucudaki tüneli durdurur (sunucu ölüyse zaten düşmüştür).
+2. Sunucuya ulaşabiliyorsa tünel durmuşken taze bir yedek aldırır (hiç veri kaybolmaz); sonra en yeni yedeği çeker,
+   çekemezse Mac'teki en son yedeği kullanır.
+3. Mac'teki yığını açar (yalnızca değişeni derler).
+4. Yedeği yükler (`deploy/demo.sh restore`, ~20 sn).
+5. Tüneli Mac'te açar, adresin gerçekten Mac'e geldiğini `uptimeSeconds` ile doğrular, tünelden ön kontrol yapar.
+
+Mac'in kodu `dev`'in gerisindeyse 3. adım birkaç dakika derler; Mac'te arada bir `git pull && deploy/demo.sh up`
+bunu kısaltır. Sunucu ölüyse kaybedilen veri: Mac'teki en yeni yedekten sonrası (en çok ~1 saat).
+
+**Tatbikat (2026-11-06, `dev` d3b8395):**
+
+| Adım | Süre |
+|---|---|
+| `takeover`, Mac'in yığını eskiyken (Docker kapalıydı, önce açıldı: 6 sn) | 5 dk 9 sn |
+| Yığının derlemesiz açılışı (`up --build --wait`) | 22 sn |
+| Yedeğin yüklenmesi | 15 sn |
+| `handback` | 1 dk 43 sn |
+
+Ön kontrol iki yönde de 8/8. Veri birebir aynı kaldı (6 hesap, 47 ziyaret, 1 katkı, 6 sohbet mesajı); adres Mac'teyken açılan
+deneme hesabı `handback` ile sunucuya geçti. Sürenin çoğu derleme: **demodan önce Mac'te `git pull && deploy/demo.sh up`
+ile derlemeyi tazele** (sonra `docker compose -f deploy/compose.yml --env-file deploy/.env stop`), devralma ~1 dakikaya iner.
+
+**Mac'in yedekleri:** `deploy/failover.sh install-pull` (Mac'te bir kez) yarım saatte bir sunucunun en yeni
+yedeğini `~/vagabonds-backups/`'a çeken bir LaunchAgent kurar (son 24'ü tutar; kayıt: `~/vagabonds-backups/pull.log`).
+macOS arka plandaki işlerin Masaüstü'ne erişmesine izin vermediği için yedekler ve LaunchAgent'ın çalıştırdığı betik
+(`~/Library/Application Support/vagabonds/pull-backups.sh`) repo dışında; `failover.sh` değişirse `install-pull`'u
+yeniden çalıştır. Elle: `deploy/failover.sh pull`.
+
+**Sunucu dönünce:** `deploy/failover.sh handback`: Mac'te biriken veriyi yedekleyip sunucuya yükler, Mac'teki
+tüneli kapatır, sunucudakini açar ve ön kontrolü yapar.
+
+**Hangisi sunuyor:** `deploy/failover.sh status` (adresin, sunucunun ve Mac'in `uptimeSeconds`'ı ve Mac'teki en
+yeni yedeğin yaşı). Gerekenler `deploy/.env`'de: `ORACLE_SSH`, `ORACLE_SSH_KEY`.
+
+## Final günü (MacBook Air M4)
+
+Final demosu ekibin MacBook Air'inden (M4, 16 GB) tünelle yayınlanır. Bütün komutlar `deploy/demo.sh`'te:
+
+| Komut | Ne yapar |
+|---|---|
+| `deploy/demo.sh up` | Yığını başlatır (yalnızca değişeni derler), hazır olmasını bekler, ön kontrolü çalıştırır |
+| `deploy/demo.sh tunnel` | Siteyi `PUBLIC_URL`'de yayınlar; Mac'i uyanık tutar, Ctrl-C kapatır |
+| `deploy/demo.sh check [URL]` | Ön kontrol; URL verilirse tünelden, ziyaretçinin gördüğü gibi |
+| `deploy/demo.sh backup` | Veritabanını `deploy/backups/`'a yedekler (hesaplar, ziyaretler, notlar, fotoğraflar) |
+| `deploy/demo.sh down` | Önce yedek alır, sonra yığını durdurur (veri volume'da kalır) |
+| `deploy/demo.sh logs` | API kayıtlarını izler |
+
+Ön kontrol (`npm run demo:check`) şunlara bakar: API ve veritabanı, yayındaki eser sayısı (en az 500),
+bir kapak fotoğrafının medya Worker'ından gelmesi, harita altlığı, web uygulaması, asistanın gerçek bir
+soruya cevap vermesi ve boş disk (en az 10 GB). `/chat/status` bir soru sağlayıcı tarafında
+başarısız olunca (yoğunluk, kota, reddedilen anahtar) bir dakika `available: false` döner ve uygulama
+sohbeti gizler; ama o ilk sorudan önce sorunu bilemez, bu yüzden kontrol bir soru da sorar.
+Asistan yalnızca hesapla kullanıldığı için kontrol kendi hesabıyla (`onkontrol`) sorar: parolası
+`deploy/.env`'deki `PREFLIGHT_PASSWORD` (uzun, rastgele; demo hesaplarından biri değil). Hesap ilk
+kontrolde açılır, sorduğu konuşma hemen silinir; demo hesaplarının geçmişinde görünmez.
+
+**Bir gün önce** (demonun yapılacağı ağdan):
+1. `git switch main && git pull`, `deploy/demo.sh up`: derleme burada yapılır, demo günü yeniden derlenmez.
+2. `npm run map:warm` (harita önbelleği) ve `deploy/demo.sh tunnel` ile telefondan bir tur.
+3. Moderatör ve admin hesaplarını aç ([Moderatör ve admin hesabı](#moderatör-ve-admin-hesabı)); parolalar bir kez yazılır.
+4. `deploy/demo.sh backup`.
+
+**Tüneli aynı anda yalnızca bir bilgisayar açar.** İki bilgisayar aynı tünele bağlanırsa Cloudflare
+istekleri ikisine dağıtır: kayıt birinin veritabanına, giriş öbürününkine düşer. Adresin hangi makineyi
+gösterdiğini `/api/health`'teki `uptimeSeconds`'ı yerel `http://127.0.0.1:8080/api/health` ile
+karşılaştırarak gör.
+
+**Demo sabahı:** Mac şarjda, Docker Desktop açık. `deploy/demo.sh up`, ayrı bir terminalde
+`deploy/demo.sh tunnel`, sonra `deploy/demo.sh check https://vagabonds.allbytech.com`: hepsi ✓ olmalı.
+
+**Asistanı ısıt:** sunumdan en çok 30 dakika önce sahnede soracağın soruları uygulamadan, bir hesapla giriş
+yapıp aynı kelimelerle bir kez sor (sorular ve sıra: [demo.md](demo.md)). API, geçmişi olmayan ilk soruyu (aynı
+kelimeler, aynı eser sayfası, aynı dil) 30 dakika boyunca bellekten anında cevaplar; model 5–30 sn, yoğunken daha
+uzun sürüyor. Gezi planı ve toplu taşıma cevapları saate bağlı: yalnızca aynı saat içinde bellekten gelir, onları
+sahnede soracağın saatte ısıt. Takip soruları her zaman modele gider. API yeniden başlarsa (`deploy/demo.sh up`)
+bellek boşalır, yeniden ısıt.
+
+**Bir şey ters giderse:**
+
+| Durum | Ne yapılır |
+|---|---|
+| Salonun interneti yok ya da yavaş | Mac'i bir telefonun hücresel hotspot'una bağla; tünel kendiliğinden yeniden bağlanır. Yanında hotspot verebilecek iki telefon olsun. |
+| Tünel bağlanmıyor | `deploy/demo.sh tunnel` çıktısına bak; token yanlışsa `Unauthorized`. Telefonlar ve Mac aynı ağdaysa geçici olarak `HTTP_PORT=0.0.0.0:8080` ile `up` ve uygulamada `EXPO_PUBLIC_API_URL=http://<Mac'in IP'si>:8080/api`; `TRUSTED_PROXIES` satırını o sırada kaldır. |
+| Asistan cevap vermiyor (`check`'te ✗) | Sağlayıcı yoğun ya da kota dolu. `deploy/.env`'de diğer sağlayıcıya (EVREN ↔ Gemini) geç ya da Ollama yedeği, sonra `deploy/demo.sh up`. Olmazsa asistanı gösterme; sitenin gerisi etkilenmez. |
+| İnternet hiç yok | Görseller, harita ve asistan dışarıdan gelir, çalışmaz. Uygulama `EXPO_PUBLIC_DATA_SOURCE=mock` ile paketli veriyle açılır (eser metinleri, rotalar; hesap, ziyaret ve ödüller yok). Bu derleme demodan önce telefonda hazır olmalı. |
+| Veri bozuldu | `deploy/demo.sh down`, ardından [yedekten geri yükle](#kayıtlar-yedek-sorun-giderme). |
+
+## AI asistan
+
+Asistan (`POST /chat`) EVREN'in dil modeliyle çalışır (`evren.ssyz.org.tr`, yurt içinde barınan kamu
+platformu, 2026-12-01'e kadar ücretsiz). API modele OpenAI uyumlu `/v1/chat/completions` ile bağlanır.
+Bu yüzden model ya da sağlayıcı değiştirmek yalnızca üç ortam değişkenini değiştirmek demektir.
+Model tanımlı değilse ya da cevap vermiyorsa `GET /chat/status` `available: false` döner, uygulama
+sohbet girişlerini gizler; sitenin geri kalanı etkilenmez.
+
+```
+API (Docker) ──► evren-llmapi.ssyz.org.tr/v1 ──► qwen3.8-flash-next
+```
+
+`qwen3.8-flash-next` EVREN'deki en hızlı model: 2026-11-01'de aynı dört soruda bir cevap 4–9 sn sürdü;
+`deepseek-v4.1-flash`, `gemma-4-31b` ve `glm-5.3` 20–50 sn sürdü ya da 503 verdi.
+
+Kurulum (bir kez):
+
+1. EVREN'de `/api-keys` sayfasından bir anahtar oluştur.
+2. Kullanım şartlarını kabul et; kabul edilmezse her istek `403 terms_not_accepted` döner.
+3. `deploy/.env`'e (yerelde `apps/api/.env`'e) ekle:
+
+```dotenv
+ASSISTANT_BASE_URL=https://evren-llmapi.ssyz.org.tr/v1
+ASSISTANT_MODEL=qwen3.8-flash-next
+ASSISTANT_API_KEY=
+```
+
+Anahtar yalnızca `.env` dosyasında durur; git'e, PR'a ya da sohbete yazılmaz.
+
+**Gizlilik.** Ziyaretçinin soruları ve son altı turu EVREN'e gönderilir. EVREN'in kullanım şartları
+2026-10-30'da okundu ve demoda kullanımı onaylandı; şartların yeni sürümü (`GET /v1/terms/status`,
+`current_version`) çıkarsa yeniden okunmalı. Uygulama sohbet ekranında kişisel bilgi yazılmamasını hatırlatır.
+
+Sonra `docker compose … up -d` ile API'yi yeniden başlat ve kontrol et:
+`curl https://vagabonds.allbytech.com/api/chat/status` → `"available": true`.
+
+Sınırlar: günde 15 milyon token (bütün anahtarlar ve modeller toplamı), aşılınca `429`. Kalan kota
+`GET /v1/quota` ile görülür.
+
+**Dış bağımlılık.** Asistan, sitenin dışarıdaki bir servise bağlı tek parçasıdır. EVREN'e ulaşılamazsa,
+kota dolarsa ya da ücretsiz dönem (2026-12-01) biterse `/chat/status` `available: false` döner ve
+uygulama sohbet girişlerini gizler; eserler, harita ve rotalar etkilenmez. Asistan demoda gösterilecekse
+öncesinde `/chat/status`'a bak; gerekirse aşağıdaki yerel model yedeğine geç.
+
+**Model seçimi.** Bir soru en çok dört model çağrısıdır (üç araç + cevap) ve 60 saniyede kesilir.
+Düşünen (reasoning) modellerde düşünme hem süreyi hem `max_tokens` bütçesini yer. 2026-10-30
+karşılaştırması (22 soru):
+
+| Model | Ortanca | En yavaş | Not |
+|---|---|---|---|
+| `qwen3.8-flash-next` | 5,5 sn | 11,6 sn | Seçilen. Kaynak işaretleri ve "bilgi yok" cevapları doğru. |
+| `glm-5.3` | ~21 sn | 60 sn (zaman aşımı) | Kısa bir soruda bile 600+ token düşünüyor; demoya uygun değil. |
+
+Aday modelleri aynı sorularla karşılaştır. Sorular şu gruplarda: eser, gezi, yemek ve veri setinde
+cevabı olmayan ya da konu dışı sorular. `.env`'i değiştirmeden model komut satırından verilebilir:
+
+```bash
+ASSISTANT_MODEL=<model> npm run assistant:eval --workspace @vagabonds/api
+```
+
+Karşılaştırırken şunlara bak:
+- Her bilginin yanında `[n]` kaynak işareti var mı?
+- Cevabı olmayan soruda model "bilgi yok" diyor mu, uydurmuyor mu?
+- Cevaplar kaç saniyede geliyor? Sonuç özetinde ortanca ve en yavaş süre yazar.
+
+**Yerel model (yedek).** EVREN'e ulaşılamazsa aynı değişkenlerle Ollama'ya geçilebilir:
+`brew install ollama`, `ollama pull qwen3:8b`, sonra
+`OLLAMA_KEEP_ALIVE=-1 OLLAMA_NUM_PARALLEL=2 caffeinate -i ollama serve` ve
+`ASSISTANT_BASE_URL=http://host.docker.internal:11434/v1`, `ASSISTANT_MODEL=qwen3:8b`,
+`ASSISTANT_API_KEY` boş. Ollama'yı `0.0.0.0`'a açma; parolası yoktur.
+
+**Model düşerse.** 2026-11-03 gecesi EVREN `qwen3.8-flash-next` için saatlerce 503 verdi ("sağlıklı
+endpoint yok"); aynı anda `gemma-4-31b`, `qwen3-vl-30b` ve `deepseek-v4.1-flash` cevap veriyordu.
+`/chat/status` bunu ancak bir soru başarısız olduktan sonra görür. Sorun yalnızca o modeldeyse
+`deploy/.env`'de `ASSISTANT_MODEL=qwen3-vl-30b` yapıp `deploy/demo.sh up`. Bu model araç çağırıyor
+ve hızlı (bir sesli soru 8 sn), ama karşılaştırması yapılmadı; cevapları daha zayıf olabilir.
+
+### Sesli Rehber
+
+Rehber'e sesli de sorulabilir. Uygulama soruyu kaydeder (en çok 20 sn) ve `POST /voice/transcribe`'a
+gönderir; gövde kaydın kendisidir. Metin `POST /chat`'e `spoken: true` ile gider; model en çok 3 kısa
+cümleyle, konuşur gibi cevap verir. Cevap `GET /voice/speech?text=…` ile MP3 olarak okunur: ilk cümle
+tek başına istenir, kalanı o çalarken hazırlanır. İkisi de yalnızca hesapla.
+
+| Ne | Model | Süre (2026-11-03) |
+|---|---|---|
+| Konuşmadan metne | `qwen3-asr-1.7b` (`VOICE_ASR_MODEL`) | 5 sn'lik kayıt ~0,5 sn |
+| Metinden konuşmaya | `voxcpm2` (`VOICE_TTS_MODEL`) | bir cümle ~1 sn |
+
+- Modeller asistanın adresini ve anahtarını kullanır. `deploy/compose.yml` EVREN'in modellerini
+  varsayılan alır; Ollama'da konuşma modeli olmadığı için orada ikisini de boş bırak (sesli soru kapanır,
+  yazılı Rehber çalışır).
+- Kayıt saklanmaz, loglanmaz; yalnızca yazıya çevrilmek için EVREN'e gider. Okunan cevaplar API'nin
+  belleğinde tutulur (son 100): kuliste bir kez sorulan sorular sahnede beklemeden çalar.
+- Ses EVREN'den gelmezse uygulama cevabı telefonun kendi sesiyle (cihaz TTS) okur.
+- Gürültülü salonda telefonu ağza yakın tut; tanınan metin ekranda soru olarak görünür.
+
+### Taşa Sor
+
+Taşın Dili'nde kitabe bulunamayınca çıkan "Asistana danış" (ve kitabesi tanınamayan eserlerde eser
+sayfasındaki "Taşın Dili", yalnızca telefonda) soru kamerasını açar. Ziyaretçi bir detayı (çini, kapı,
+kitabe, oyma) çeker ve deklanşörle "Bu ne?" ya da mikrofonla kendi sorusunu sorar. Fotoğraf telefonda
+1024 piksele küçültülür ve `POST /vision/ask?assetId=…&question=…` ile gönderilir; gövde fotoğrafın
+kendisidir (JPEG, en çok 1,5 MB). Model, eserin Rehber'in okuduğu kaydıyla birlikte çağrılır ve en çok
+3 cümleyle, kayda dayandığı yeri `[n]` ile göstererek cevap verir; cevap sesli okunur. Yalnızca hesapla.
+Eser bilinmiyorsa (yakında eser yok, ör. sunum salonu) `assetId` gönderilmez: cevap yalnızca fotoğraftan
+gelir, yazıyı okuyup çevirir, üslup için temkinli tahmin yürütür; eserin adını, tarihini ya da yaptıranını
+söylemez ve kaynak işareti koymaz.
+
+| Ne | Model | Süre (2026-11-03) |
+|---|---|---|
+| Fotoğraftan cevap | `qwen3-vl-30b` (`VISION_MODEL`) | ~1–2 sn |
+
+- Model asistanın adresini ve anahtarını kullanır; `deploy/compose.yml` EVREN'in modelini varsayılan
+  alır. Boş bırakılırsa Taşa Sor 503 verir, uygulamanın geri kalanı etkilenmez.
+- Fotoğraf saklanmaz, loglanmaz. Modele insanları betimlememesi, kayıtta olmayanı uydurmaması ve emin
+  değilse bunu söylemesi kuralı verilir; yine de yanlış tanıyabilir. Demoda önceden denenmiş bir detay
+  göster (ör. Yeşil Camii taçkapısı, Hamza Bey Camii kitabesi).
+- EVREN bir isteği bekletirse 9. saniyede ikinci bir istek gider; 25 sn'de vazgeçilir.
+
+## Toplu taşıma (Konya pilotu)
+
+Asistanın "nasıl giderim" cevabı ve `GET /transit/plan`, Konya'da otobüs ve tramvayla rota verir. Rotayı
+[OpenTripPlanner](https://www.opentripplanner.org/) 2.10.0 hesaplar; veri Konya Büyükşehir Belediyesi'nin
+[GTFS paketi](https://acikveri.konya.bel.tr/dataset/toplu-tasima-gtfs-verileri) (Kasım 2025, CC BY 4.0) ve
+OpenStreetMap'in Konya kesiti. Diğer illerde toplu taşıma verisi yok; API `TRANSIT_NOT_AVAILABLE_HERE` döner.
+
+```
+API ──► otp:8080 (/otp/gtfs/v1) ──► deploy/otp/data/graph.obj
+```
+
+Kurulum (bir kez, Konya yeni tarife yayınlayınca yeniden):
+
+```bash
+deploy/otp/prepare.sh        # GTFS ve OSM'yi indirir, Konya'yı keser, grafiği kurar (~2 dk, geçici ~650 MB)
+deploy/demo.sh up            # otp servisi grafiği yükler (~6 sn, ~600 MB bellek); API onu bekler
+```
+
+- Grafik ve indirilen dosyalar `deploy/otp/data/` altında, git dışında. `demo.sh up` grafik yoksa durur.
+- Ön kontrol (`demo.sh check`) Konya Garı → Karatay Medresesi rotasını sorar.
+- Rotanın başlayabileceği yerler: ziyaretçinin konumu, bir eser ve üç giriş noktası (Konya Garı, Selçuklu YHT
+  Garı, Otogar tramvay durağı). Otogar'ın noktası terminal binası değil tramvay durağıdır: OSM'de binadan perona
+  yaya yolu yok, binadan rota 1 km yürütüyordu.
+- Belediyenin Kasım 2025 dışa aktarımında ana tramvayın (150-B) 435 seferi Belediye durağında kesik: Zafer, Alaaddin ve
+  dönüş yok. Bütün tramvaylar hattın sonuna kadar gider; `deploy/otp/fix_gtfs.py` bu seferleri aynı hattın eksiksiz
+  seferlerinin durak sırası ve süreleriyle tamamlar (`prepare.sh` kendisi çağırır, asıl dosya `konya-gtfs-original.zip`).
+  Yeni bir tarife gelince çıktıdaki "completed N cut tram trips" sayısına bak; 0 ise belediye düzeltmiş demektir.
+- Havalimanına belediye hattı yok; asistan taksiyle Otogar tramvay durağına ya da doğrudan esere gitmeyi önerir.
+- Tarife Kasım 2025 tarihli; ekranda kaynak ve tarih yazar (`source`).
+
+Yerelde (demo yığını olmadan) API'yi OTP'yle denemek için:
+
+```bash
+docker run -d --name otp -p 127.0.0.1:8090:8080 -e JAVA_TOOL_OPTIONS=-Xmx2g \
+  -v "$PWD/deploy/otp/data:/var/opentripplanner:ro" opentripplanner/opentripplanner:2.10.0 --load --serve
+# apps/api/.env: OTP_URL=http://localhost:8090
+```
+
 ## Kayıtlar, yedek, sorun giderme
 
 ```bash
@@ -211,15 +530,18 @@ dc exec -T postgres pg_restore -U vagabonds -d vagabonds --clean --if-exists < v
 > (`contribution`) yalnızca veritabanında durur; eserler gibi içe aktarmayla yeniden kurulamaz.
 > `down -v` bunları siler. Sürüm güncellemesinden önce yedek al.
 
-### Moderatör oluşturma
+### Moderatör ve admin hesabı
 
-Moderasyon uçları (`/api/admin/...`) moderatör token'ı ister. Token yalnızca bir kez yazdırılır, kaybolursa yeni moderatör oluşturulur:
+Moderasyon uçları (`/api/admin/...`) moderatör ya da admin ister. Hesap komut satırından açılır; parola
+yalnızca bir kez yazdırılır, kaybolursa yeni hesap açılır:
 
 ```bash
-dc exec api npx --no-install tsx src/scripts/create-moderator.ts "Ahmet"
+dc exec api npx --no-install tsx src/scripts/create-account.ts ahmet admin
+dc exec api npx --no-install tsx src/scripts/create-account.ts huseyin moderator "Hüseyin"
 ```
 
-Kuyruk Swagger'dan yönetilebilir: `/api/docs` → **Authorize** → token → `GET /admin/contributions`.
+Uygulamadan kullanıcı adı ve parolayla giriş yapılır. Swagger'da (`/api/docs`) önce `POST /auth/login`
+ile token alınır, sonra **Authorize** → token → `GET /admin/contributions`.
 
 | Belirti | Neden / çözüm |
 |---|---|
@@ -249,3 +571,7 @@ docker compose -p vagabonds-trial -f deploy/compose.yml --env-file /tmp/trial.en
 - API kendi güvenlik başlıklarını da ekler (JSON yanıtlarda `default-src 'none'` CSP). API'yi Caddy olmadan açsan da başlıklar korunur.
 - **Hız sınırı:** IP başına dakikada 120 istek (`RATE_LIMIT_MAX`); aşılınca `429 RATE_LIMITED`. `/health` sınırsızdır. API gerçek istemci IP'sini Caddy'nin `X-Forwarded-For` başlığından alır (`TRUST_PROXY: uniquelocal`, yalnızca özel Docker ağındaki proxy'ye güvenilir).
 - İstek gövdesi API'de 16 KB, Caddy'de 64 KB ile sınırlıdır.
+- **Asistan:**
+  - Sınırlar: IP başına dakikada 10 soru, aynı anda en çok 2 soru (fazlası `503 ASSISTANT_BUSY`), soru başına 60 sn ve en çok 3 araç çağrısı.
+  - Model yalnızca API'nin kendi verisini araçlarla okur. Ziyaretçi katkıları modele hiç gitmez. Soruların metni kayıtlara yazılmaz.
+  - Sağlayıcı anahtarı yalnızca `Authorization` başlığında kullanılır.

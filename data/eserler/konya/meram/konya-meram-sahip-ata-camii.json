@@ -1,0 +1,661 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-sahip-ata-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 122-127) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Sahip Ata'nın türbesi, hanikahı ve hamamı kitapta ayrı bölüm olarak yok; ayrı kayıt gerekirse başka kaynak aranmalı.",
+      "Kelük bin Abdullah'ın diğer eserleri (İnce Minareli Medrese, Nalıncı Baba-Emir Nizameddin Türbesi) için ilçe bu metinde belirtilmediği için ilişki (same_architect) yazılmadı.",
+      "Yangının tam yılı ve cami onarım yılı kitapta verilmiyor.",
+      "Kitap hem 'Sahip Ata Külliyesi'ni Konya'daki ana eser olarak anıyor hem de bu camiyi Meram'da gösteriyor; ilçe kitaptaki başlığa göre Meram alındı.",
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Zaman çizelgesi: yılı kesin olmayan olaylar (yangın 'XIX. yüzyıl sonlarına doğru' / ilk inşa 'H. 598 öncesi' / H. 947 onarımı) şema yıl istediği için timeline'a yazılmadı; bölüm metninde anlatılıyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architect",
+        "note": "Kitap bir yerde mimarın 'muhtemelen Sahip Ata'nın banisi olduğu yapıların hepsinin mimarı' olduğunu söylüyor; bu camide ise kitâbeye dayanarak adı kesin veriliyor. İsim yazımı: 'Kelük' / 'Kölük' / 'Keluk'."
+      },
+      {
+        "field": "architect.name",
+        "note": "Türkçe metinde 'Mimar Kelük bin Abdullah'a yaptırılmıştır' yazıyor; ustanın adı sebil üstündeki usta kitâbesinde geçiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sahip Ata (Larende) Camii",
+    "en": "Sahip Ata (Larende) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Larende Camii",
+      "en": "Larende Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Selçuklu",
+    "ahşap direkli cami",
+    "mozaik çini mihrap",
+    "taç kapı",
+    "Kelük bin Abdullah",
+    "Sahip Ata Külliyesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Furkandede Mahallesi",
+    "address": "Sahip Ata Sokak, No. 89",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "122-123"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.867947,
+      "lng": 32.494282,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q127788015 ('Sahip Ata Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 656 / M. 1258",
+      "en": "656 AH / 1258 AD"
+    },
+    "start_year": 1258,
+    "end_year": 1258,
+    "hijri_year": 656,
+    "century": 13,
+    "basis": {
+      "tr": "Taç kapı üzerindeki kitâbede yer alan tarih (656) ve kitabın 1258 yılı kaydı; II. Keykâvus dönemi.",
+      "en": "Date (656) on the crown gate inscription and the book's statement of 1258, in the reign of Keykavus II."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "122-127"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sahip Ata Fahreddin Ali",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "122-125"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Kelük bin Abdullah",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "122-125"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "124-125"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sahip Ata Fahreddin Ali tarafından mimar Kelük bin Abdullah'a H. 656 / M. 1258'de yaptırılan cami, Anadolu'daki en erken ahşap direkli ve ahşap tavanlı camidir. Büyük yangında yalnızca kıble duvarı, mihrap ve taç kapı kalmış; mozaik çini mihrabı Selçuklu döneminin nadir çini mihraplarındandır.",
+    "en": "Built in 656 AH / 1258 AD by Sahip Ata Fahreddin Ali through the architect Kelük bin Abdullah, the mosque is the earliest mosque with wooden pillars and a wooden ceiling in Anatolia. After a great fire only the qibla wall, mihrab and crown gate survived; its mosaic tile mihrab is one of the rare tile mihrabs of the Seljuk period."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Banisi",
+        "en": "History and Founder"
+      },
+      "body": {
+        "tr": "Taç kapıdaki kitâbeye göre cami II. Keykâvus zamanında H. 656 / M. 1258'de Sahip Ata tarafından yaptırılmıştır. Sahip Ata Fahreddin Ali, Anadolu Selçuklu döneminin en uzun siyasi kariyerine sahip yöneticilerinden biridir; yaklaşık kırk yıllık görevinde devletin tüm önemli makamlarında bulunmuş, günümüze ulaşan on yedi ve kaynaklardan bilinen on bir yapıyla en çok eser bırakan kişi olmuş, 'Ebu'l-Hayrat' (Hayırların Babası) unvanıyla anılmıştır. Cami ve külliyesi, kendisinin de gömülü olduğu, diğer yapılara göre daha önemli yapıdır. Cami XIX. yüzyılın sonlarına doğru büyük bir yangın geçirmiştir.",
+        "en": "According to the crown gate inscription, the mosque was built by Sahip Ata in 656 AH / 1258 AD during the reign of Keykavus II. Sahip Ata Fahreddin Ali held one of the longest political careers of the Anatolian Seljuk period; in nearly forty years he held all important state offices and left the most works, seventeen surviving and eleven known only from sources, earning the title 'Ebu'l-Hayrat' (Father of Goodness). The mosque and complex, where he is buried, are of greater importance than his other buildings. The mosque suffered a great fire towards the end of the 19th century."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "122-125"
+        }
+      ]
+    },
+    {
+      "id": "mimar",
+      "order": 2,
+      "title": {
+        "tr": "Mimar Kelük bin Abdullah",
+        "en": "Architect Kelük bin Abdullah"
+      },
+      "body": {
+        "tr": "Mimar Kelük bin Abdullah Anadolu Türk mimarisinin önde gelen sanatçılarından sayılır ve muhtemelen Sahip Ata'nın banisi olduğu yapıların hepsinin mimarıdır. Adı burada 'Amelû Kölük bin Abdullah' şeklinde geçer; imzasını taşıyan diğer eser Konya İnce Minareli Medrese'dir. Konya Nalıncı Baba-Emir Nizameddin Türbesi de diğer eserleri arasında bilinir. Taç kapının ön yüzünün batısındaki sebilin üstündeki iki madalyonda, oyma tekniğiyle, celî sülüs hatla 'Kelük b. Abdullah' ibaresi yer alır.",
+        "en": "Architect Kelük bin Abdullah is considered one of the leading artists of Anatolian Turkish architecture and is probably the architect of all buildings that Sahip Ata built. His name appears here as 'Amelu Keluk bin Abdullah'; his signature is also found on the Konya İnce Minareli Madrasa, and the Konya Nalıncı Baba-Emir Nizameddin Tomb is also known among his works. The master's inscription 'Keluk b. Abdullah' is carved in celi thuluth on two medallions on the sebil west of the front face of the crown gate."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "122-125"
+        }
+      ]
+    },
+    {
+      "id": "kulliye-tac-kapi",
+      "order": 3,
+      "title": {
+        "tr": "Külliye ve Taç Kapı",
+        "en": "Complex and Crown Gate"
+      },
+      "body": {
+        "tr": "Külliye cami, türbe, hanikah ve hamamdan oluşur; en eski yapısı camidir. Yangında oldukça zarar gören camiden günümüze yalnızca kıble duvarı, mihrap ve taç kapı gelmiştir. Taç kapı aslında çifte şerefeli ve çifte minareli tasarlanmıştır; sivri kemerli, köşeliklerinde düğüm yapan geometrik bezemeli ve 14 sıra mukarnas kavsaralıdır. Kavsara köşeliklerinde tahrip olmuş birer kabara vardır; kuşatma kemeri yarım daire silindirik gövdeli sütuncelere oturur, sütunce gövdelerinde sivastikalardan gelişen geometrik süslemeler, başlıklarında palmet ve yaprak motifleri bulunur. Girişin iki yanında dört kollu yıldız biçimli birer mihrabiye vardır; iç yüzlerinde sekizgen ve sekiz kollu yıldızlardan gelişen geometrik bezeme ile kufi yazı kuşağı görülür, beş sıra mukarnas kavsaralıdırlar. Cami güneyden türbe ve hanikaha bitişiktir; kuzey cephe ortasındaki düz lentolu kapının ahşap kanatları orijinal ve kündekâri teknikli olup yan kuşağında rûmi ve palmet motifleri vardır.",
+        "en": "The complex consists of a mosque, tomb, khanikah and bath; the mosque is the oldest. Of the mosque, severely damaged by fire, only the qibla wall, mihrab and crown gate survive. The crown gate was originally designed with double balconies and double minarets; it has a pointed arch, knotted geometric ornament on the spandrels and 14 rows of muqarnas kavsara. The kavsara corners have damaged spikes; the surrounding arch rests on half-round cylindrical colonnettes with geometric ornament from swastikas on the shafts and palmette and leaf motifs on the capitals. On both sides of the entrance is a four-armed star-shaped mihrabiye, with geometric ornament from octagons and eight-pointed stars and a Kufic band inside, and five rows of muqarnas kavsara. The mosque is adjacent to the tomb and khanikah on the south; the wooden door wings of the flat-lintelled opening in the middle of the north facade are original, made in the kündekâri technique, with rumi and palmette motifs on the side band."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "124-125"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 4,
+      "title": {
+        "tr": "İlk Cami ve Bugünkü İç Mekân",
+        "en": "Original Mosque and Present Interior"
+      },
+      "body": {
+        "tr": "İlk camiden kalan ayaklar ve başlıklar caminin ahşap direkli ve toprak damlı olduğunu gösterir. Haluk Karamağaralı'nın kazı ve sondajlarına göre cami mevcut portale kadar uzanan dikdörtgen bir alanı kaplıyor, kıble duvarına dik yedi sahınlıydı; sahınlar altı ahşap destekle ayrılıyor, orta sahın biraz geniştir. Mihrap önünde bir kubbe, ortada aydınlık feneri ve havuz olması gerektiği, doğu ve batıda karşılıklı birer kapı bulunduğu düşünülmektedir. Yanan caminin yerine yapılan bugünkü yapı mihraba dikey beş sahınlıdır; ayaklar Bursa kemerleriyle bağlıdır, üst örtü ahşap tavanlıdır ve ortasında şemse motifli göbek bulunur. Kuzeyde boydan boya ahşap mahfil, batı köşede sade bir minber vardır.",
+        "en": "The surviving piers and capitals of the first mosque show that it was built with wooden pillars and earthen roofs. According to Haluk Karamağaralı's excavations and soundings, the mosque covered a rectangular area up to the present portal and had seven aisles perpendicular to the qibla wall, separated by six wooden supports, the middle aisle slightly wider. It is thought to have had a dome in front of the mihrab, a lantern and pool in the centre, and opposing doors on the east and west. The present building with five aisles perpendicular to the mihrab was built on the site of the burned mosque; the piers are linked with Bursa arches, the ceiling is wooden with a sun-motif centre, there is a full-width wooden mahfil in the north and a plain minbar in the west corner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "125-127"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 5,
+      "title": {
+        "tr": "Mozaik Çini Mihrap",
+        "en": "Mosaic Tile Mihrab"
+      },
+      "body": {
+        "tr": "Kıble duvarının ortasındaki anıtsal mihrap mozaik çinidendir ve Selçuklu döneminin nadir çini mihraplarından biridir. Dikdörtgen planlı nişin yüzeyinde firuze ve patlıcan moru mozaik çiniden altı kollu yıldızlar yer alır; köşelerde geometrik süslemeli, zar başlıklı silindirik sütuncelere oturur. Nişin üzerinde altı sıra mukarnas kavsara vardır ve her mukarnasta farklı mozaik çini bezeme bulunur; kavsara ortasında levha çini tekniğinde palmet ve rûmi motifleriyle bezeli bir alan görülür. Çinilerde yaygın olarak firuze, lacivert ve patlıcan moru kullanılmıştır. Kitaba göre 1258'de yapılan bu cami Anadolu'daki en erken ahşap direkli ve ahşap tavanlı camidir ve Orta Asya'daki ahşap cami geleneğinin Anadolu'daki ilk temsilcisidir.",
+        "en": "The monumental mihrab in the middle of the qibla wall is made of mosaic tile and is one of the rare tile mihrabs of the Seljuk period. The surface of the rectangular niche has six-pointed stars of turquoise and eggplant-purple mosaic tile, with cylindrical geometric colonnettes with dice capitals at the corners. Above the niche are six rows of muqarnas kavsara, each with different mosaic tile decoration; in the middle of the kavsara is an area with palmette and rumi motifs in plate tile technique. Turquoise, dark blue and eggplant purple dominate the tiles. According to the book, this mosque of 1258 is the earliest mosque with wooden pillars and wooden ceiling in Anatolia and the first representative of the Central Asian wooden mosque tradition in Anatolia."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "126-127"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kitabe_olcusu",
+      "label": {
+        "tr": "Taç kapı kitâbesi ölçüsü",
+        "en": "Crown gate inscription size"
+      },
+      "value": "3.25 x 0.35",
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "124"
+        }
+      ]
+    },
+    {
+      "key": "tac_kapi_mukarnas",
+      "label": {
+        "tr": "Taç kapı mukarnas sırası",
+        "en": "Crown gate muqarnas rows"
+      },
+      "value": 14,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "124"
+        }
+      ]
+    },
+    {
+      "key": "bugunku_saha",
+      "label": {
+        "tr": "Bugünkü sahın sayısı",
+        "en": "Present number of aisles"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "124-126"
+        }
+      ]
+    },
+    {
+      "key": "ilk_cami_saha",
+      "label": {
+        "tr": "İlk camideki sahın sayısı (kazı)",
+        "en": "Aisles of original mosque (excavation)"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "126"
+        }
+      ]
+    },
+    {
+      "key": "sahip_ata_eser",
+      "label": {
+        "tr": "Sahip Ata'nın yaptırdığı yapı sayısı",
+        "en": "Buildings commissioned by Sahip Ata"
+      },
+      "value": "17 günümüze ulaşan, 11 ulaşmayan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "124"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sahip Ata Fahreddin Ali",
+      "role": {
+        "tr": "Banî; külliyede gömülü",
+        "en": "Founder; buried in the complex"
+      }
+    },
+    {
+      "name": "Kelük bin Abdullah",
+      "role": {
+        "tr": "Mimar",
+        "en": "Architect"
+      }
+    },
+    {
+      "name": "II. Keykâvus",
+      "role": {
+        "tr": "Cami onun saltanatında yapıldı",
+        "en": "Sultan during whose reign the mosque was built"
+      }
+    },
+    {
+      "name": "Haluk Karamağaralı",
+      "role": {
+        "tr": "Camide kazı ve sondaj yapan araştırmacı",
+        "en": "Researcher who excavated and sounded the mosque"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Taç kapı üzerinde, tek satır, alçak kabartma",
+        "en": "On the crown gate, single line, low relief"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu mübarek mescidin yapılmasını büyük sultan, kölelerin azat edicisi, Arap ve Acem sultanların efendisi, dünya ve dinin izzeti, fetih babası, Keyhüsrev oğlu Keykâvus'un saltanat günlerinde (Allah saltanatını daim etsin) Allah'ın rahmetine muhtaç, zayıf kul, Hacı Ebubekir oğlu Hüseyin oğlu Ali 656 yılında emretmiştir. Allah kendisini, anasını ve babasını affetsin.",
+        "en": "This holy mosque was built during the reign of the great sultan, freer of slaves, master of Arab and Persian sultans, glory of the world and religion, father of conquest, Keykavus son of Keyhusrev (may Allah perpetuate his reign), by the order of Ali, a weak servant in need of Allah's mercy, son of Huseyin son of Hacı Ebubekir, in 656. May God forgive him, his mother and father."
+      },
+      "date": {
+        "hijri_year": 656,
+        "gregorian": "1258"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "124"
+        }
+      ],
+      "note": {
+        "tr": "Celî sülüs hat; 3.25 x 0.35 ölçülerinde. Arapça transkripsiyon kitapta verilmiyor.",
+        "en": "Celî sülüs hat; 3.25 x 0.35 ölçülerinde. Arapça transkripsiyon kitapta verilmiyor."
+      }
+    },
+    {
+      "id": "usta-kitabesi",
+      "location": {
+        "tr": "Taç kapının ön yüzünün batısındaki sebilin üstünde, iki madalyon",
+        "en": "On two medallions above the sebil west of the crown gate front"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "125"
+        }
+      ],
+      "note": {
+        "tr": "Oyma tekniği, celî sülüs hat; 'Kelük b. Abdullah' ibaresi. Kitap meal vermiyor, yalnızca ibareyi aktarıyor.",
+        "en": "Oyma tekniği, celî sülüs hat; 'Kelük b. Abdullah' ibaresi. Kitap meal vermiyor, yalnızca ibareyi aktarıyor."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1258,
+      "date": null,
+      "hijri": "656",
+      "type": "construction",
+      "title": {
+        "tr": "Cami Sahip Ata Fahreddin Ali tarafından mimar Kelük bin Abdullah'a yaptırıldı",
+        "en": "Mosque built by Sahip Ata Fahreddin Ali through architect Kelük bin Abdullah"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "122-127"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-sahip-ata-hanikahi-ve-turbesi",
+      "type": "same_founder",
+      "description": {
+        "tr": "İki yapıyı da Sahip Ata Fahreddin Ali yaptırmıştır.",
+        "en": "Both were commissioned by Sahip Ata Fahreddin Ali."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "122-125"
+        },
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "135"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-selcuklu-ince-minareli-medrese",
+      "type": "same_founder",
+      "description": {
+        "tr": "İki yapıyı da Sahip Ata Fahreddin Ali yaptırmıştır.",
+        "en": "Both were commissioned by Sahip Ata Fahreddin Ali."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "122-125"
+        },
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sahip Ata Camii'nin ön yüzünde, sivri kemerli ve çok sıralı mukarnaslı, çifte minareli olarak tasarlanmış görkemli bir taç kapı yükselir; iki yanında yıldız biçimli birer mihrabiye vardır. İçeride ahşap direkler Bursa kemerleriyle bağlanarak mekânı mihraba dikey beş sahına böler, düz ahşap tavanın ortasında güneş motifli bir göbek bulunur. Kıble duvarının ortasındaki mihrap firuze ve patlıcan moru mozaik çinilerle kaplıdır.",
+      "en": "A grand crown gate rises on the front of the Sahip Ata Mosque, with a pointed arch and many rows of muqarnas, originally designed with double minarets and flanked by a star-shaped mihrabiye on each side. Inside, wooden posts linked by Bursa arches divide the space into five aisles perpendicular to the mihrab, with a sun-motif centre in the flat wooden ceiling. The mihrab in the middle of the qibla wall is covered with turquoise and eggplant-purple mosaic tiles."
+    }
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]",
+      "en": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "123-127"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=425",
+        "original_name": "pdf-s63-xref425",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "123"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Sahip Ata (Larende) Camii (kitap s. 123)",
+        "en": "Sahip Ata (Larende) Mosque (book p. 123)"
+      },
+      "alt": {
+        "tr": "Dış görünümde, kiremit kaplı bir minare ve taş duvarlı cami yer alıyor. Girişte kemerli bir kapı ve yanlarında sütunlar var.",
+        "en": "The exterior shows a tiled minaret and a stone-walled mosque. There is an arched entrance with columns on the sides."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=429",
+        "original_name": "pdf-s64-xref429",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "124"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sahip Ata (Larende) Camii (kitap s. 124)",
+        "en": "Sahip Ata (Larende) Mosque (book p. 124)"
+      },
+      "alt": {
+        "tr": "Ahşap sütunlar, kemerler ve tavan, mavi halılar ve mermer duvarlarla kaplı iç mekân.",
+        "en": "Wooden pillars, arches, and ceiling, with blue carpets and marble walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=433",
+        "original_name": "pdf-s64-xref433",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "125"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sahip Ata (Larende) Camii (kitap s. 125)",
+        "en": "Sahip Ata (Larende) Mosque (book p. 125)"
+      },
+      "alt": {
+        "tr": "Mavi kare çinilarla kaplı duvarların önünde ahşap vitrinlerde bronz kandil ve kadehler sergileniyor.",
+        "en": "Bronze lamps and chalices displayed in wooden cases before walls covered with blue square tiles."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=431",
+        "original_name": "pdf-s64-xref431",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "125"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sahip Ata (Larende) Camii (kitap s. 125)",
+        "en": "Sahip Ata (Larende) Mosque (book p. 125)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış, geometrik ve bitkisel desenlerle süslü bir duvar detayı.",
+        "en": "A stone wall detail with geometric and vegetal patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=437",
+        "original_name": "pdf-s65-xref437",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "126"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sahip Ata (Larende) Camii (kitap s. 126)",
+        "en": "Sahip Ata (Larende) Mosque (book p. 126)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, ahşap kubbeli iç mekanda, duvarda plakalar ve vitrinler var.",
+        "en": "Stone-walled interior with a wooden vaulted ceiling, plaques on the walls, and display cases."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=439",
+        "original_name": "pdf-s65-xref439",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "127"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sahip Ata (Larende) Camii (kitap s. 127)",
+        "en": "Sahip Ata (Larende) Mosque (book p. 127)"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla duvarlarda, mavi çinilarla süslenmiş bir kemer detayı.",
+        "en": "A brick arch with blue tile decoration."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

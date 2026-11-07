@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-hamzaoglu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 266) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kesin yapım tarihi kitapta yok; XX. yüzyıl ortası tahmini.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Hamzaoğlu Camii",
+    "en": "Hamzaoğlu Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "Cumhuriyet dönemi",
+    "ahşap çardak minare"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Doğuş Mahallesi",
+    "address": "Rüstem Şirvani Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "266"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.862388,
+      "lng": 32.50998,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Adıyla OpenStreetMap Nominatim'de bulundu ('Sarıyakup Hamzaoğlu Camii, Celaleddin Karatay Caddesi, Sarıyakup Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, 42040, T'); sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl ortası (tahmini)",
+      "en": "Mid-20th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap, mimari özelliklerine göre XX. yüzyılın ortalarında yapıldığını ve Cumhuriyet dönemi eserlerinden olduğunu belirtir. Yıl verilmiyor.",
+      "en": "The book says that by its architectural features it was built in the mid-20th century and is a work of the Republic period. No year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "266"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Doğuş Mahallesi'nde, XX. yüzyıl ortasında yapılmış, taş temelli kerpiç, batı cephesinde ahşap çardak minareli sade Cumhuriyet dönemi camisi.",
+    "en": "A plain Republic-period mosque in Doğuş Neighborhood, built in the mid-20th century with stone foundations, adobe walls and a wooden pergola minaret on the west facade."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Doğuş Mahallesi, Rüstem Şirvani Sokak'ta yer almaktadır. Mimari özellikleri itibarıyla XX. yüzyılın ortalarında yapılmış, Cumhuriyet dönemi eserlerindendir.",
+        "en": "The mosque is on Rüstem Şirvani Street, Doğuş Neighborhood, Karatay. By its architectural features it was built in the mid-20th century and is a work of the Republic period."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "266"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Temelde taş, diğer bölümlerde kerpiç malzemeyle yığma (kâgir) olarak inşa edilen caminin üst örtüsü kırma çatılıdır. Batı cephesinde harime girişi sağlayan kapı ve ahşap çardak minaresi bulunur. Cepheler sıvalıdır ve pencereler vardır. Harim kareye yakın dikdörtgen planlıdır. Mihrap, minber ve vaaz kürsüsü oldukça sadedir.",
+        "en": "Built in masonry with stone at the base and adobe elsewhere, the mosque has a hipped roof. On the west facade are the door to the harim and a wooden pergola minaret. The facades are plastered with windows. The harim is near-square rectangular. The mihrab, minbar and preaching platform are very plain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "266"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamzaoğlu Camii, taş temelli, kerpiç duvarlı, sıvalı cepheli ve kırma çatılı bir Cumhuriyet dönemi camisidir. Batı cephesinde giriş kapısı ve ahşap çardak minare yer alır. İçerideki mihrap, minber ve vaaz kürsüsü oldukça sadedir.",
+      "en": "Hamzaoğlu Mosque is a Republic-period building with stone foundations, adobe walls, plastered facades and a hipped roof. The entrance door and a wooden pergola minaret are on the west facade. The mihrab, minbar and preaching platform inside are very plain."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 266)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "266-266"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1078",
+        "original_name": "pdf-s135-xref1078",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "266"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Hamzaoğlu Camii (kitap s. 266)",
+        "en": "Hamzaoğlu Mosque (book p. 266)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, koyu renkli bir zeminli küçük bir yapı. Üstünde ahşap minare ve kubbe var. Önünde bir ağaç ve bir kiosk.",
+        "en": "A small building with white walls and a dark base. It has a wooden minaret and dome. A tree and a kiosk are in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1080",
+        "original_name": "pdf-s135-xref1080",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "266"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hamzaoğlu Camii (kitap s. 266)",
+        "en": "Hamzaoğlu Mosque (book p. 266)"
+      },
+      "alt": {
+        "tr": "İç mekanda, ahşap tavan, yeşil bir minber ve pencere, taş duvarlar, ahşap paneller ve desenli halılar görülüyor.",
+        "en": "Inside, wooden ceiling, green minbar, windows, stone walls, wooden panels, and patterned carpets are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

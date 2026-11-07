@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-hoca-fakih-cesmesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Su Yapıları",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Çeşmenin bağlı olduğu külliyenin adı metinde verilmiyor; külliye ve sebil/sarnıç kayıtlarıyla ilişki kurulamadı.",
+      "Dönem (era) kitapta belirtilmiyor; era boş bırakıldı.",
+      "Adı geçen sebil ve sarnıç için ids.md'de kayıt yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "İçindekiler sayfasında eser 'Hoca Fatih Çeşmesi' olarak geçiyor; kitap sayfasındaki başlık ve cadde adı 'Hoca Fakih' (Hocafakih Caddesi). 'Hoca Fakih' esas alındı, id değiştirilmedi."
+      },
+      {
+        "field": "timeline[sel-yenileme-1909]",
+        "note": "Kitap 'R. 1325 / M. 1909-10' veriyor; yıl olarak aralığın ilk yılı alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hoca Fakih Çeşmesi",
+    "en": "Hoca Fakih Fountain"
+  },
+  "subtitle": {
+    "tr": "Külliye kuzey duvarındaki, teğet kemerli nişli çeşme",
+    "en": "Tangent-arch niche fountain on the north wall of a complex"
+  },
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "çeşme",
+    "teğet kemerli niş",
+    "Sille taşı",
+    "Gödene taşı",
+    "1909 sel"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Armağan Mahallesi",
+    "address": "Hocafakih Caddesi; külliyenin kuzey duvarında, cephenin doğu kısmında",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "231"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.872211,
+      "lng": 32.466484,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q133860350 ('Hoca Fakih Sarnıcı'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Tarih verilmiyor; duvarla birlikte 1909-10 sonrasında yenilenmiş olması kuvvetle muhtemel",
+      "en": "No date given; very probably renewed together with the wall after 1909-10"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Çeşmede inşa tarihi ve banisiyle ilgili bilgi yok. Külliyenin kuzey duvarı R. 1325 / M. 1909-10 selinden sonra yenilenirken çeşmenin de yenilenmiş olması kuvvetle muhtemeldir.",
+      "en": "There is no information on its construction date or patron. When the complex's north wall was renewed after the flood of 1325 R / 1909-10 AD, the fountain was very probably renewed with it."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "231"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meram Armağan Mahallesi'nde Hocafakih Caddesi üzerinde, bir yapılar grubunun (külliyenin) kuzey duvarında sebil ve sarnıçla birlikte bulunan, Sille ve Gödene taşından çeşme. 1909-10 selinden sonra duvarla birlikte yenilenmiş olması kuvvetle muhtemeldir; sağlam ama kullanılmamaktadır.",
+    "en": "A fountain of Sille and Gödene stone on the north wall of a group of buildings (complex) on Hocafakih Street, Armağan District, Meram, together with a sebil and cistern. It was very probably renewed with the wall after the 1909-10 flood; it is sound but not in use."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Çeşme Meram'da, Armağan Mahallesi'nde, Hocafakih Caddesi üzerindedir. Zaman içinde manzume olarak tamamlanan yapılar grubunun bir elemanı olarak inşa edilmiş ve külliyenin kuzey duvarında, cephenin doğu kısmında, aynı cephedeki sebil ve sarnıç yapılarıyla bir arada durur. Üzerinde inşa tarihi ya da banisiyle ilgili bilgi yoktur. Külliyenin kuzey duvarı, önceki konumundan yaklaşık 10 m geride iken, R. 1325 / M. 1909-10 selinin tahribatından sonra giriş kapısıyla birlikte bugünkü konumuna alınmıştır; çeşmenin de duvarla birlikte yenilenmiş olması kuvvetle muhtemeldir.",
+        "en": "The fountain is in Meram, Armağan District, on Hocafakih Street. It was built as an element of a group of buildings completed over time as an ensemble and stands on the complex's north wall, in the east part of the facade, together with the sebil and cistern on the same facade. It carries no information about its construction date or patron. The complex's north wall, formerly about 10 m further back, was moved to its present position together with the entrance gate after the flood of 1325 R / 1909-10 AD; the fountain was very probably renewed together with the wall."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "231"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Durum",
+        "en": "Architecture and Condition"
+      },
+      "body": {
+        "tr": "Çeşme 'tipolojik olarak bağımsız, tek cepheli ve teğet kemerli nişli çeşmeler' grubundandır. Yapımında Sille taşı ve Gödene taşı olmak üzere iki taş kullanılmış; duvardan taşırılarak duvarla aynı malzemelerle yapılan çeşmede farklı renk taşların kullanımında simetriye dikkat edilmiştir. Yapısal olarak sağlamdır ancak kullanılmamaktadır.",
+        "en": "The fountain belongs to the 'typologically independent, single-facade, tangent-arch niche fountains'. Two stones, Sille and Gödene, were used; built projecting from the wall in the same materials as the wall, symmetry was observed in the use of different-coloured stones. It is structurally sound but not used."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "231"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "sel-yenileme-1909",
+      "year": 1909,
+      "date": null,
+      "hijri": "R. 1325",
+      "type": "repair",
+      "title": {
+        "tr": "R. 1325 selinden sonra külliye kuzey duvarı ve giriş kapısı yenilenip bugünkü yerine alındı; çeşmenin de yenilenmiş olması kuvvetle muhtemel",
+        "en": "After the flood of 1325 R the complex's north wall and gate were renewed and moved to the present position; the fountain was very probably renewed too"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "231"
+        }
+      ],
+      "note": {
+        "tr": "R. 1325 / M. 1909-10; yıl aralığın ilk yılıdır.",
+        "en": "1325 R / 1909-10 AD; the year is the first of the range."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-hoca-fakih-camii-ve-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Çeşme, külliyenin kuzey duvarında, cephenin doğu kısmında, sebil ve sarnıçla bir arada durur.",
+        "en": "The fountain stands in the complex's north wall, on the east side of the front, together with the sebil and cistern."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "231"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çeşme, bir külliyenin kuzey duvarında, cephenin doğu kısmındadır; aynı cephede sebil ve sarnıç da bulunur. Tek cepheli, teğet kemerli nişli bir yapıdır. Sille ve Gödene taşı kullanılmış, farklı renkli taşlarda simetriye dikkat edilmiştir.",
+      "en": "The fountain is on the north wall of a complex, in the east part of the facade, where a sebil and cistern also stand. It is a single-facade structure with a tangent-arch niche, built of Sille and Gödene stone with symmetry in the coloured stones."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-hoca-fakih-cesmesi/p117-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "231"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Hoca Fakih Çeşmesi",
+        "en": "Hoca Fakih Fountain"
+      },
+      "alt": {
+        "tr": "Renkli kesme taştan örülmüş bir duvara yerleştirilmiş, sivri kemerli büyük bir çeşme nişi. Üstte kiremitli bir saçak, altta taş döşeme var; nişin içi düz ve musluksuz görünüyor.",
+        "en": "A large pointed-arch fountain niche set into a wall of multicoloured cut stone, with a tiled eave above and paving below. The niche looks plain and has no visible tap."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

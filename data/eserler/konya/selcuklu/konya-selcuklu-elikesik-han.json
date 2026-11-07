@@ -1,0 +1,383 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-elikesik-han",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Yapım tarihi yalnızca mimari benzerliğe dayanıyor; kitâbe yok.",
+      "Banî ve vakıf bilgisi kitapta yok.",
+      "Altınapa Hanı için ids.md'de kayıt yok; Kuruçeşme ve Horozlu ile ilişki yazıldı, Altınapa için yazılmadı.",
+      "Kitapta 'kapalı mekân avludan önce yapıldı' diyen kaynaklar adlandırılmıyor.",
+      "Ahmet Çaycı'nın makalesinin künyesi kitapta verilmiyor."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Elikesik Han",
+    "en": "Elikesik Inn"
+  },
+  "subtitle": {
+    "tr": "Konya-Derbent yolunda, 2007'de temel kalıntıları üzerinde yeniden ayağa kaldırılan han",
+    "en": "Inn on the Konya-Derbent road, re-erected in 2007 on its excavated foundations"
+  },
+  "alternate_names": [],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "han",
+    "Selçuklu hanı",
+    "üç sahınlı",
+    "avlulu han",
+    "mermer ayak",
+    "devşirme malzeme",
+    "yeniden inşa"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Kalburcu/Güney Köyü",
+    "address": "Konya-Derbent yolu üzerinde, Aladağlar arasında Başara Vadisi yolu",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "258"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.032924,
+      "lng": 32.122702,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/177553903 ('Elikesik Han'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyılın ilk yarısı (düşünülmektedir)",
+      "en": "First half of the 13th century (thought to be)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitâbe yoktur; Konya ve çevresindeki üç sahınlı ve avlulu hanlarla mimari benzerliğine dayanılır.",
+      "en": "There is no inscription; the dating rests on architectural similarity to the three-aisled courtyard inns of Konya and its surroundings."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "258"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Konya-Derbent yolunda Kalburcu/Güney Köyü'ndeki, kapalı bölüm ve avludan oluşan Selçuklu hanı. XIII. yüzyılın ilk yarısına ait olduğu düşünülür; Vakıflar Genel Müdürlüğü 2007'de temel kalıntıları üzerinde aslına uygun biçimde ayağa kaldırmıştır.",
+    "en": "A Seljuk inn of closed section and courtyard in Kalburcu/Güney Village on the Konya-Derbent road. Thought to date to the first half of the 13th century, it was re-erected by the General Directorate of Foundations in 2007 on its foundations in accordance with the original plan."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Tarih ve Onarım",
+        "en": "Location, Date and Repair"
+      },
+      "body": {
+        "tr": "Han, Konya-Derbent yolu üzerinde, Aladağlar arasında Başara Vadisi yolundaki Kalburcu/Güney Köyü içindedir. Yapıda kitâbe yoktur. Kaynaklar kapalı mekânın avludan önce yapıldığını belirtir. Konya ve çevresindeki üç sahınlı ve avlulu hanlarla mimari benzerliği nedeniyle XIII. yüzyılın ilk yarısında yapıldığı düşünülür. Vakıflar Genel Müdürlüğü hanı 2007'de tamir etmiş; büyük bölümü yenilenen yapı, kazılarda ulaşılan temel kalıntıları üzerinde aslına uygun planla ayağa kaldırılmıştır.",
+        "en": "The inn is in Kalburcu/Güney Village on the Konya-Derbent road, along the Başara Valley road among the Aladağlar. The building has no inscription. Sources state the closed section was built before the courtyard. Because of its architectural similarity to the three-aisled courtyard inns of Konya and surroundings, it is thought to have been built in the first half of the 13th century. The General Directorate of Foundations repaired it in 2007; a large part was renewed and the building was erected in accordance with the original plan on the foundations uncovered in excavations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "258"
+        }
+      ]
+    },
+    {
+      "id": "avlu-ve-islev",
+      "order": 2,
+      "title": {
+        "tr": "Avlunun Bölümleri ve İşlevi",
+        "en": "Courtyard Sections and Function"
+      },
+      "body": {
+        "tr": "İlk inşadan sonra eklemeler yapılan ve zamanla kullanılamaz hâle gelen yapının avlu kısmının doğu ve güney bölümlerinin işlevleri tam anlaşılamamıştır. Doğudaki mekânın duvarındaki mihrap izlerinden mescit olarak kullanıldığı söylenebilir; güneydeki bölümün mescitle bağlantılı bir birim olduğu düşünülür. Ahmet Çaycı makalesinde Konya Şer'iyye sicillerinden hareketle yapının han/zaviye olduğunu belirtir.",
+        "en": "The functions of the east and south sections of the courtyard, which received additions after the first construction and became unusable over time, are not fully understood. From mihrab traces on the wall of the eastern space it can be said to have been used as a masjid; the southern section is thought to be a unit linked to the masjid. In his article Ahmet Çaycı states, based on the Konya Shari'a court registers, that the building was an inn/zawiya."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "258-259"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Han güney-kuzey doğrultulu, derinlemesine dikdörtgen planlıdır ve kapalı mekân ile avludan oluşur. Düzgün kesme taş kullanılmıştır; dış duvarlarda devşirme malzeme de görülür. Kapalı bölüme taç kapıdan geçilir. Bu bölüm kare formlu, üçerli iki sıra ayakla üç sahına bölünmüştür; orta sahın daha geniştir. Mekânı bölen ayaklar mermerdir. Elikesik Han'ı Altınapa, Horozlu ve Kuruçeşme hanlarıyla çağdaştır ve benzer mimari özellikler gösterir.",
+        "en": "The inn has a deep rectangular south-north plan and consists of a closed space and a courtyard. Smooth cut stone was used, with spolia also seen on the outer walls. The closed section is entered through the crown gate and is divided into three aisles by two rows of three square piers; the middle aisle is wider. The dividing piers are marble. Elikesik Inn is contemporary with the Altınapa, Horozlu and Kuruçeşme inns and shows similar architectural features."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "259"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Kapalı bölümde ayak",
+        "en": "Pillars in the closed section"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "259"
+        }
+      ],
+      "note": {
+        "tr": "Üçerli iki sıra, kare formlu, mermer.",
+        "en": "Two rows of three, square, marble."
+      }
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Kapalı bölümde sahın sayısı",
+        "en": "Number of aisles in the closed section"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "259"
+        }
+      ]
+    },
+    {
+      "key": "onarim_yili",
+      "label": {
+        "tr": "VGM onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "value": 2007,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "258"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ahmet Çaycı",
+      "role": {
+        "tr": "Yapının han/zaviye olduğunu Konya Şer'iyye sicillerine dayanarak belirten makale yazarı",
+        "en": "Author of an article stating, from Konya Shari'a court registers, that the building was an inn/zawiya"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü hanı tamir etti; temel kalıntıları üzerinde aslına uygun yeniden ayağa kaldırıldı",
+        "en": "Repaired by the General Directorate of Foundations; re-erected on the excavated foundations in accordance with the original"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "258"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-kiziloren-kurucesme-hani",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kitaba göre Elikesik Han, Altınapa, Horozlu ve Kuruçeşme hanlarıyla çağdaştır ve benzer mimari özellikler gösterir.",
+        "en": "According to the book, Elikesik Inn is contemporary with the Altınapa, Horozlu and Kuruçeşme inns and shows similar architectural features."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "259"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-selcuklu-horozlu-han",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kitaba göre Elikesik Han, Horozlu Han ile çağdaştır ve benzer mimari özellikler gösterir.",
+        "en": "According to the book, Elikesik Inn is contemporary with the Horozlu Inn and shows similar architectural features."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "259"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, dağlık bir vadi yolunda, düzgün kesme taştan yapılmış, güney-kuzey doğrultulu uzun bir yapıdır. Taç kapıdan girilen kapalı bölümde, mermerden altı kare ayak mekânı üç koridora ayırır; ortadaki koridor daha geniştir. Avlunun doğu tarafında mihrap izleri olan küçük bir mekân vardır.",
+      "en": "The inn is a long south-north building of smooth cut stone on a mountain valley road. In the closed section entered through the crown gate, six square marble piers divide the space into three aisles, the middle one wider. On the east side of the courtyard is a small space with mihrab traces."
+    },
+    "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-elikesik-han/p131-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "258"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Elikesik Han'ın dıştan görünüşü",
+        "en": "Exterior of Elikesik Han"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremitli çatısı olan, gri taş bloklarla örülü alçak bir yapı. Ön cephede kemerli ahşap bir kapı var; yapı yol kenarında, ağaçlı tepelerin önündeki yeşil bir vadide duruyor.",
+        "en": "A low building of grey stone blocks with a red tiled roof, standing beside a road in a green valley before wooded hills. An arched wooden door is set in its front wall."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-elikesik-han/p131-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "259"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hanın tonozlu iç mekânı",
+        "en": "Vaulted interior of the han"
+      },
+      "alt": {
+        "tr": "Taş kemerlerle bölünmüş, kesme taş tonozlu bir iç mekân. Ortada plastikle örtülmüş ahşap bir masa ve tavandan sarkan küçük bir avize görülüyor.",
+        "en": "A stone-vaulted interior divided by pointed arches. A wooden table covered with plastic sheeting stands in the middle, with a small chandelier hanging from the vault."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-elikesik-han/p131-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "259"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hanın tonozlu koridoru",
+        "en": "Vaulted passage inside the han"
+      },
+      "alt": {
+        "tr": "Kaba kesme taşlardan örülmüş duvarlar ve ardı ardına sıralanan sivri kemerlerle uzanan tonozlu bir koridor. Sol tarafta plastikle örtülü bir seki görülüyor.",
+        "en": "A long passage with rough-cut stone walls and a series of pointed arches under a stone vault. A plastic-covered platform lies along the left side."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-elikesik-han/p131-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "259"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hanın kuşbakışı çatı görünüşü",
+        "en": "Aerial view of the han's roof"
+      },
+      "alt": {
+        "tr": "Yukarıdan çekilmiş kuşbakışı görüntüde kırmızı kiremitli dikdörtgen çatı ve bir kenarında küçük bir ışıklık ya da kule çıkıntısı var. Çevresini taş bir avlu duvarı ve çimenlik alan çeviriyor.",
+        "en": "A top-down view of the rectangular red-tiled roof with a small raised opening or tower on one side. A low stone wall and grass surround the building."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

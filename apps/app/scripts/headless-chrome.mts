@@ -1,7 +1,6 @@
 /**
  * Runs code in headless Chrome (CHROME_PATH, default: the macOS install) for the build
- * scripts that need a browser: MindAR's compiler (./mindar-compiler.mts) and the capsule
- * stand-in sounds (./render-capsule-sounds.mts). No network needed.
+ * scripts that need a browser: MindAR's compiler (./mindar-compiler.mts). No network needed.
  */
 import { spawn } from "node:child_process";
 import { mkdtempSync, rmSync } from "node:fs";
@@ -14,7 +13,8 @@ const PORT = 9339;
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function pageSocketUrl(exited: () => boolean): Promise<string> {
-  for (let i = 0; i < 40 && !exited(); i++) {
+  // Up to 30 s: a Chrome started right after another one closed can take over 10 s to listen.
+  for (let i = 0; i < 120 && !exited(); i++) {
     try {
       const tabs = (await (await fetch(`http://127.0.0.1:${PORT}/json`)).json()) as Array<{ type: string; webSocketDebuggerUrl: string }>;
       const page = tabs.find((tab) => tab.type === "page");

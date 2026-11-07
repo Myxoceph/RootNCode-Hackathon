@@ -1,0 +1,241 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-askan-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 90) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yenileme tarihi 'yakın zamanda' olarak geçiyor; yıl yok.",
+      "Aşkan Baba Türbesi'nin ilçesi/konumu kitapta belirtilmiyor; ilişki kaydı yazılmadı.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Aşkan Camii",
+    "en": "Aşkan Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Aşkan Baba",
+    "1845"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Aşkan Mahallesi",
+    "address": "Aşkan Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "90"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.868722,
+      "lng": 32.469655,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Türkiye İş Bankası, 50A, Yeni Meram Caddesi, Melikşah Mahallesi, Meram, Konya, İç Anadolu Bölgesi, 42090, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1845",
+      "en": "1845"
+    },
+    "start_year": 1845,
+    "end_year": 1845,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap caminin 1845 yılında inşa edildiğini belirtiyor.",
+      "en": "The book states the mosque was built in 1845."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "90"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Yakınındaki Aşkan Baba Türbesi'nden adını alan, 1845'te inşa edilmiş ve yakın zamanda yenilenmiş dikdörtgen planlı, kırma çatılı cami.",
+    "en": "A rectangular, hipped-roof mosque built in 1845 and recently renovated, named after the nearby Tomb of Aşkan Baba."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Meram, Aşkan Mahallesi, Aşkan Caddesi üzerindedir. İsmini yakınındaki Aşkan Baba Türbesi'nden almıştır. Aşkan Baba'nın hangi dönemde yaşadığı ve ne zaman vefat ettiği bilinmemektedir; mahalle sakinleri tarafından ermiş bir kişi olarak kabul edilmiştir. 1845'te inşa edilen cami yakın zamanda yenilenmiştir. Dıştan dikdörtgen planlıdır ve kırma çatıyla örtülüdür.",
+        "en": "The mosque is on Aşkan Street, Aşkan Neighborhood, Meram. It is named after the nearby Tomb of Aşkan Baba. It is not known when Aşkan Baba lived or died; the neighbourhood residents regard him as a saint. Built in 1845, the mosque was recently renovated. It has a rectangular plan outside and a hipped roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "90"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Yapım yılı",
+        "en": "Year built"
+      },
+      "value": 1845,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "90"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Aşkan Baba",
+      "role": {
+        "tr": "Camiye adını veren, yakındaki türbede yatan; mahalle halkınca ermiş sayılır",
+        "en": "Namesake, buried in the nearby tomb; regarded as a saint by the residents"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1845",
+      "year": 1845,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa edildi",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "90"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Aşkan Camii, kırma çatılı, dıştan dikdörtgen planlı bir camidir. Adını yakındaki Aşkan Baba Türbesi'nden alır. 1845'te yapılmış, yakın zamanda yenilenmiştir.",
+      "en": "Aşkan Mosque is a rectangular building with a hipped roof. It takes its name from the nearby Tomb of Aşkan Baba. It was built in 1845 and recently renovated."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 90)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "90-90"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=290",
+        "original_name": "pdf-s47-xref290",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "90"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Aşkan Camii (kitap s. 90)",
+        "en": "Aşkan Mosque (book p. 90)"
+      },
+      "alt": {
+        "tr": "Krem renkli duvarlı, çatısı metal kaplı bir yapı. Ön cephesinde ahşap kaplı bir kısım ve üzerinde kubbeli bir kule var.",
+        "en": "A cream-colored building with a metal roof. Front has a wooden section and a dome-topped tower above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=292",
+        "original_name": "pdf-s47-xref292",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "90"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Aşkan Camii (kitap s. 90)",
+        "en": "Aşkan Mosque (book p. 90)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halı, ahşap kapı, pencere ve merdivenler, tavanın üzerinde büyük bir avize.",
+        "en": "Inside, a red carpet, wooden door, windows, stairs, and a large chandelier on the ceiling."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

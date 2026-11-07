@@ -4,16 +4,18 @@ import { StyleSheet } from "react-native";
 
 import { ScreenPlaceholder } from "@/components/screen-placeholder";
 import { useColors } from "@/theme";
+import { useMessages } from "@/i18n";
 
 export default function NotFoundScreen() {
   const c = useColors();
+  const w = useMessages().shared;
   return (
     <ScreenPlaceholder
-      title="Sayfa bulunamadı"
-      description="Aradığın sayfa taşınmış ya da hiç var olmamış olabilir."
+      title={w.notFoundTitle}
+      description={w.notFoundBody}
     >
       <Link href="/" style={[styles.link, { color: c.primary }]}>
-        Haritaya dön
+        {w.backToMap}
       </Link>
     </ScreenPlaceholder>
   );

@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-emir-halil-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî ve yapım yılı kitapta yok.",
+      "Onarım tarihi belirtilmiyor.",
+      "Era boş bırakıldı (XX. yüzyıl).",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Emir Halil Camii",
+    "en": "Emir Halil Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "mahalle mescidi",
+    "betonarme"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Hoca Faruk Mahallesi",
+    "address": "Abdullah Çavuş Sokak No: 30",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "156"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.863676,
+      "lng": 32.494322,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1555118958 ('Emir Halil Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl (plan ve malzemeye göre)",
+      "en": "20th century (from plan and materials)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "İnşa ve banî hakkında kitabe veya kaynak yok; plan ve malzemeden XX. yüzyıl çıkarılmıştır.",
+      "en": "No inscription or source; 20th century inferred from plan and materials."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "156"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hacı Fettah Mezarlığı'nın batısında, binaların arasına sıkışmış, betonarme, dikdörtgen planlı, kırma çatılı XX. yüzyıl mahalle camisi.",
+    "en": "A 20th-century neighborhood mosque of reinforced concrete west of Hacı Fettah Cemetery, squeezed between buildings, rectangular in plan with a hipped roof."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Tarihçe ve Mimari",
+        "en": "Location, History and Architecture"
+      },
+      "body": {
+        "tr": "Cami, Meram, Hoca Faruk Mahallesi, Abdullah Çavuş Sokak, No. 30'da, Hacı Fettah Mezarlığı'nın batısında yer almaktadır. Caminin inşa ve bânisi ile ilgili kitâbe veya kaynak yoktur; plan ve malzemeden XX. yüzyılda yapıldığı, sonrasında Cumhuriyet döneminde onarım gördüğü anlaşılmaktadır. Mahalle mescidi olarak kullanılan cami binaların arasına sıkışmıştır. Betonarmedir, dikdörtgen planlıdır ve kırma çatıyla örtülüdür. Mihrap ve minberi oldukça sadedir.",
+        "en": "The mosque is at Abdullah Çavuş Street No: 30, Hoca Faruk Neighborhood, Meram, west of Hacı Fettah Cemetery. There is no inscription or source on its construction or builder; from its plan and materials it was built in the 20th century and repaired in the Republican period. Used as a neighborhood masjid, it is squeezed between buildings. It is reinforced concrete, rectangular, with a hipped roof, and a very plain mihrab and minbar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "156"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Binaların arasına sıkışmış, betonarme, dikdörtgen planlı, kırma çatılı bir mahalle camisidir. Mihrap ve minber oldukça sadedir.",
+      "en": "A reinforced-concrete neighborhood mosque squeezed between buildings, rectangular in plan with a hipped roof. The mihrab and minbar are very plain."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "156-156"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=590",
+        "original_name": "pdf-s80-xref590",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "156"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Emir Halil Camii (kitap s. 156)",
+        "en": "Emir Halil Mosque (book p. 156)"
+      },
+      "alt": {
+        "tr": "İki büyük yarım daire şeklinde pencere, bir kapı ve bir minareye sahip, kiremit kaplı bir cami binası.",
+        "en": "A mosque building with two large arched windows, a door, and a tiled roof."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=594",
+        "original_name": "pdf-s80-xref594",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "156"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Emir Halil Camii (kitap s. 156)",
+        "en": "Emir Halil Mosque (book p. 156)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halılar, ahşap merdivenler, kemerli pencereler ve duvarlarda süslemeler var.",
+        "en": "Red carpets, wooden stairs, arched windows, and decorative walls are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=592",
+        "original_name": "pdf-s80-xref592",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "156"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Emir Halil Camii (kitap s. 156)",
+        "en": "Emir Halil Mosque (book p. 156)"
+      },
+      "alt": {
+        "tr": "İki büyük yarım daire şeklinde pencere arasında yer alan, mermerden yapılmış mihrap. Mihrap üstünde geometrik desenli taş işçiliği ve üzerinde kemerli bir kapak var.",
+        "en": "A marble mihrab between two large arched windows. The mihrab has geometric stone carvings above and a keystone-like cover on top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

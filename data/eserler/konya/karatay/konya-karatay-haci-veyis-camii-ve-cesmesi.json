@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-haci-veyis-camii-ve-cesmesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî ve kesin inşa tarihi kitapta yok.",
+      "Mahalle adı metinde belirtilmiyor.",
+      "Çeşme ayrı bir kayıt yerine bu kaydın içinde ele alındı (başlık 'Camii ve Çeşmesi').",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[haci-veyis-efendi]",
+        "note": "İngilizce metin Hacı Veyis Efendi için bir yerde 'her efforts' (dişil) kullanıyor; Türkçe metin erkek şahıstan söz ediyor. Hacı Veyis Efendi'nin yaşadığı dönem metinde 'yakın dönem' dışında yıl olarak verilmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Veyis Camii ve Çeşmesi",
+    "en": "Hacı Veyis Mosque and Fountain"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "cesme"
+  ],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Hacı Veyis Efendi",
+    "dört bölümlü son cemaat yeri",
+    "kesme taş",
+    "sokak çeşmesi",
+    "Üçler Mezarlığı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Aslanlı Kışla Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "187-189"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.870688,
+      "lng": 32.509115,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Aslanlı Kışla Caddesi, Aziziye Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, 42030, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl (tahmini); çeşme XIX. yüzyıl sonları",
+      "en": "19th century (estimated); fountain late 19th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "İnşa tarihi ve banisi bilinmiyor; plan, teknik özellik ve malzemeden XIX. yüzyılda inşa edildiği 'düşünülmektedir'. Çeşmenin de aynı dönemde, XIX. yüzyıl sonlarında yapıldığı düşünülmektedir.",
+      "en": "Date and founder unknown; thought to be 19th century from plan, technique and materials. The fountain is thought to be of the same period, late 19th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "187, 189"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Mevlâna Dergâhı'nın güneydoğusunda, Aslanlı Kışla Caddesi'ndeki kesme taş camii; adını uzun yıllar maaşsız imamlık yapan Hacı Veyis Efendi'den alır. Avluda cami duvarına bitişik bir sokak çeşmesi vardır.",
+    "en": "A cut-stone mosque on Aslanlı Kışla Street southeast of the Mevlâna Dergah, named for Hacı Veyis Efendi who served as imam unsalaried for years. A street fountain adjoins the mosque wall in the courtyard."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami, Karatay, Aslanlı Kışla Caddesi üzerinde, Mevlâna Dergâhı'nın güneydoğusunda yer alır; inşa tarihi ve banisi hakkında bilgi bulunamamıştır. Plan, teknik özellik ve malzemeden XIX. yüzyılda yapıldığı düşünülür. 1949-1950 arasında Hacı Veyiszade Mustafa Efendi tarafından onarılmış, bu onarımda üst örtüsü kırma çatı olarak yenilenmiştir. 2011'de Konya Büyükşehir Belediyesi tarafından tamir edilmiştir. Günümüzde Üçler Mezarlığı'na defnedilecek cenazelerin namazları da bu camide kılınmaktadır.",
+        "en": "The mosque is on Aslanlı Kışla Street, southeast of the Mevlâna Dergah; no information on its date or founder could be found. It is thought to date from the 19th century. Hacı Veyiszade Mustafa Efendi repaired it in 1949-1950, renewing its upper cover as a hipped roof; Konya Metropolitan Municipality repaired it in 2011. Funeral prayers for burials at Üçler Cemetery are also performed here today."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "187"
+        }
+      ]
+    },
+    {
+      "id": "haci-veyis-efendi",
+      "order": 2,
+      "title": {
+        "tr": "Hacı Veyis Efendi",
+        "en": "Hacı Veyis Efendi"
+      },
+      "body": {
+        "tr": "Hacı Veyis Efendi, Konya'nın yakın dönemde yaşamış manevi mimarlarındandır; ömrünü halkın gündelik hayatında ibadet aşkının sürmesi için harcamıştır. Osmanlı şehir örgütlenmesinde önemli işlevi olan imamların son örneklerindendir ve mahallenin dertleriyle ilgilenmiştir. Adliye Medresesi'nde görev yaparken Dolav Mahallesi Ulu Camii'nde yaklaşık elli yıl maaş almadan imamlık yaptığı için cami sonrasında onun adıyla anılır olmuştur. 1909'da kurulan Islah-ı Medaris-i İslamiye'de kıraat dersleri vermiş; medreselerin kapatılmasından sonra Şatır'daki tarlalarının geliriyle geçinmiştir.",
+        "en": "Hacı Veyis Efendi was one of Konya's recent spiritual architects. He was one of the last imams, who had an important role in Ottoman city organization, and cared for the neighborhood's concerns. While working at the Adliye Madrasa he served about fifty years as unsalaried imam at the Dolav Neighborhood Grand Mosque, so the mosque later became known by his name. He gave recitation lessons at Islah-ı Medaris-i İslamiye (founded 1909) and, after the madrasas closed, lived on income from his fields in Şatır."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "187-188"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlı ve kırma çatılıdır; dört bölümlü son cemaat yeri ve kuzeybatı köşede yapıya bitişik minareden oluşur. Genelde düzgün kesme taş kullanılmıştır. Doğu, batı ve güney cephelerde altta geniş, üstte dar düz lentolu pencereler vardır. Son cemaat yeri, ikisi doğu ve batı duvarına bitişik, üçü serbest yuvarlak kemerli taş sütunla dört bölüme ayrılır; doğu köşeden merdivenle mahfile çıkılır, kuzeybatıdaki düz lentolu kapıdan harime geçilir; orta bölümde mihrabiye ve iki yanında pencere vardır. Minare kare kaide, pabuçluk, silindirik gövde, tek şerefe ve külahtan oluşur; kaide kesme taş, gövde tuğladır; şerefe altlığı beş sıra testere dişiyle hareketlendirilmiştir. Harim, mihraba dik iki sıra ahşap sütunla üç sahına ayrılmıştır; üzeri içten düz dam, dıştan kırma çatıdır. Kuzeyde dört ahşap direğin taşıdığı kadınlar mahfilinin ortasında yarım daire taşıntılı balkon vardır. Mihrap yarım daire planlı ve yarım kubbe kavsaralıdır; sağındaki ahşap minber 2000'li yıllarda eklenmiş ve sadedir.",
+        "en": "The mosque has a deeply rectangular plan and hipped roof, a four-section narthex and a minaret adjoining the northwest corner. Smooth cut stone is used throughout. East, west and south facades have two-stage flat-lintel windows, wide below and narrow above. The narthex is divided into four parts by round-arched stone columns (two attached to the side walls, three free); stairs at the east corner lead to the mahfil and a flat-lintel door at the northwest leads to the harim; the middle section has a mihrabiye with a window on each side. The minaret has a square base, shoe holder, cylindrical body, single balcony and cone; the base is cut stone, the body brick, and the balcony base has five rows of saw teeth. The harim is divided into three aisles by two rows of wooden columns; flat roof inside, hipped outside. The north women's mahfil on four wooden posts has a semicircular projecting balcony in the middle. The mihrab is semicircular with a semi-dome; the simple wooden minbar was added in the 2000s."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "188"
+        }
+      ]
+    },
+    {
+      "id": "cesme",
+      "order": 4,
+      "title": {
+        "tr": "Hacı Veyis Camii Çeşmesi",
+        "en": "Hacı Veyis Mosque Fountain"
+      },
+      "body": {
+        "tr": "Cami avlusundaki çeşmenin cami ile aynı dönemde, XIX. yüzyıl sonlarında yapıldığı düşünülmektedir. Düşey dikdörtgen formlu, tek cepheli, cami duvarına bitişik sivri kemerli, bağımlı sokak çeşmesidir. Düzgün kesme taştandır; niş yanlardan kemeri taşıyan ayaklarla sınırlanır. Nişte altta serbest yalak, üstte lüle ve aynalıkta taslık birimleri bulunur. Konyalılar için bu cami, Hacı Veyis (Kurucu) Efendi'nin hatırasını barındıran, manevi değeri yüksek çok önemli bir yapıdır.",
+        "en": "The fountain in the mosque courtyard is thought to be of the same period, the late 19th century. It is a dependent street fountain of vertical rectangular form, single-faced, with a pointed arch adjoining the mosque wall, of smooth cut stone; the niche is bounded by legs carrying the arch and holds a free trough below, a spout and bowl units in the transom. For Konya's people the mosque is a building of high spiritual value that carries the memory of Hacı Veyis (Kurucu) Efendi."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "189"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Hacı Veyis (Kurucu) Efendi",
+      "role": {
+        "tr": "İmam; caminin adını aldığı kişi",
+        "en": "Imam; the person the mosque is named after"
+      }
+    },
+    {
+      "name": "Hacı Veyiszade Mustafa Efendi",
+      "role": {
+        "tr": "1949-1950 onarımını yaptıran kişi",
+        "en": "Person who repaired the mosque in 1949-1950"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1949-1950",
+      "year": 1949,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Hacı Veyiszade Mustafa Efendi onarımı; çatı kırma çatı olarak yenilendi (1949-1950)",
+        "en": "Repair by Hacı Veyiszade Mustafa Efendi; roof renewed as hipped roof (1949-1950)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "187"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı alındı.",
+        "en": "Start year used."
+      }
+    },
+    {
+      "id": "onarim-2011",
+      "year": 2011,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Konya Büyükşehir Belediyesi onarımı",
+        "en": "Repair by Konya Metropolitan Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "187"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-mevlana-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami, Mevlâna Dergâhı'nın güneydoğusunda yer alır.",
+        "en": "The mosque lies southeast of the Mevlâna Dergah."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "187"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kesme taştan yapılmış, kırma çatılı, dört bölümlü son cemaat yerine ve kuzeybatı köşede tek şerefeli tuğla gövdeli minareye sahip bir camidir. Harim ahşap sütunlarla üç sahına ayrılır, kuzeyde ahşap kadınlar mahfili vardır. Avluda cami duvarına bitişik, sivri kemerli, tek cepheli bir sokak çeşmesi bulunur.",
+      "en": "A cut-stone mosque with a hipped roof, a four-section narthex and a single-balcony brick-bodied minaret at the northwest corner. The harim is divided into three aisles by wooden columns, with a wooden women's gallery to the north. In the courtyard a single-faced, pointed-arch street fountain adjoins the mosque wall."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "187-189"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=707",
+        "original_name": "pdf-s95-xref707",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "187"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hacı Veyis Camii ve Çeşmesi (kitap s. 187)",
+        "en": "Hacı Veyis Mosque and Fountain (book p. 187)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halılar, ahşap sütunlar ve tavan, pencere ve merdivenler görülüyor.",
+        "en": "Inside, red carpets, wooden pillars, and ceiling, windows, and stairs are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=712",
+        "original_name": "pdf-s96-xref712",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "188"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Hacı Veyis Camii ve Çeşmesi (kitap s. 188)",
+        "en": "Hacı Veyis Mosque and Fountain (book p. 188)"
+      },
+      "alt": {
+        "tr": "Yeşil ağaçların arasında, kare planlı bir yapı ve yanında sivri kubbeli minare görünüyor.",
+        "en": "A square-plan building and a conical-roofed minaret are visible among green trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=716",
+        "original_name": "pdf-s96-xref716",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "189"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Hacı Veyis Camii ve Çeşmesi (kitap s. 189)",
+        "en": "Hacı Veyis Mosque and Fountain (book p. 189)"
+      },
+      "alt": {
+        "tr": "Yeşil yapraklarla çevrili, kiremit kaplı, sivri kubbeli bir minare. Minarenin orta kısmında kare pencereler ve alt kısmında taşlarla kaplı bir zemin var.",
+        "en": "A brick minaret with a pointed dome, surrounded by green leaves. The middle section has square windows and the base is covered with stone."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=718",
+        "original_name": "pdf-s96-xref718",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "189"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Hacı Veyis Camii ve Çeşmesi (kitap s. 189)",
+        "en": "Hacı Veyis Mosque and Fountain (book p. 189)"
+      },
+      "alt": {
+        "tr": "Ahşap minber, merdiven şeklinde, üst kısmında kubbeli kısım ve yeşil bir perdeyle kaplı yazılar var.",
+        "en": "Wooden minbar with a staircase design, topped with a small dome and covered with a green cloth bearing inscriptions."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=714",
+        "original_name": "pdf-s96-xref714",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "189"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Hacı Veyis Camii ve Çeşmesi (kitap s. 189)",
+        "en": "Hacı Veyis Mosque and Fountain (book p. 189)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış, kemerli bir çeşme. Üst kısmında kemerli bir açıklık ve altta su akışı için bir kuyu var.",
+        "en": "A stone fountain with an arched niche and a basin at the base for water flow."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

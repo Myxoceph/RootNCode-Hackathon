@@ -1,0 +1,294 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-kurkcu-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî ve yapım yılı kitapta yok.",
+      "Onarımın yılı ve yapan kurum belirtilmiyor.",
+      "Era boş bırakıldı (XX. yüzyıl başı).",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kürkçü Mescidi",
+    "en": "Kürkçü Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "kalem işi",
+    "perde motifi",
+    "Alâeddin Tepesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Kürkçü Mahallesi",
+    "address": "Gürcü Hatun Sokak No: 23",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "168-169"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.87124,
+      "lng": 32.495465,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1457883058 ('Kürkçü Mescidi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl başı (tahmini)",
+      "en": "Early 20th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitabe veya vakfiye yok; plan ve mimari ögelerden XX. yüzyıl başında yapıldığı 'düşünülmektedir'.",
+      "en": "No inscription or charter; 'thought' to be early 20th century from plan and architectural elements."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "168"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Alâeddin Tepesi'nin güneyinde, Gürcü Hatun Sokak'ta, XX. yüzyıl başında yapıldığı düşünülen; yakın zamanda onarılıp ibadete açılan, tavanı kalem işiyle süslenmiş mescit.",
+    "en": "A masjid south of Alâeddin Hill on Gürcü Hatun Street, thought to date from the early 20th century; recently repaired and reopened for worship with a pen-work decorated ceiling."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Mescit, Meram, Kürkçü Mahallesi, Gürcü Hatun Sokak, No. 23'te, Alâeddin Tepesi'nin güneyinde yer almaktadır. Yapının inşa tarihi ve banisi hakkında bilgi verecek kitâbe ya da vakfiye yoktur; plan ve mimari ögelerden XX. yüzyıl başında inşa edildiği düşünülmektedir. Yakın zamana kadar harap olan yapı tamir edilerek ibadete açılmıştır; bu onarımda harim tavanı kalem işiyle tezyin edilmiştir.",
+        "en": "The masjid is at Gürcü Hatun Street No: 23, Kürkçü Neighborhood, Meram, south of Alâeddin Hill. There is no inscription or charter on its date or builder; from plan and architectural elements it is thought to date from the early 20th century. Ruined until recently, it was repaired and opened for worship, and its harim ceiling was decorated with pen work during the repair."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "168"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dıştan dörtgen planlıdır ve beşik çatıyla örtülüdür. Kuzey ve batı duvarları sağırdır. Harime batıdaki kapıdan girilir; girişin üstünde mahfil vardır. Kıble duvarı ortasındaki mihrap yarım daire planlıdır; iki yanda sütuncelerle sınırlanan nişi yarım kavsara sonlandırır, yüzeyinde dönemine özgü perde motifi görülür. Mihrabın sağında ahşap minber bulunur.",
+        "en": "The building is quadrangular from outside with a gable roof; the north and west walls are blind. The harim is entered from the west and has a mahfil above the entrance. The semicircular mihrab on the qibla wall is flanked by colonnettes, its niche ends in a half hood, and a curtain motif typical of the period appears on its surface. A wooden minbar stands to its right."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "169"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Alâeddin Tepesi'nin güneyinde, dıştan dörtgen planlı, beşik çatılı bir mescittir; kuzey ve batı duvarlarında pencere yoktur. Batıdaki kapıdan girilir ve girişin üzerinde bir mahfil bulunur. Harim tavanı kalem işi süslemelidir; kıble duvarında perde motifli, yarım daire planlı mihrap ve sağında ahşap bir minber vardır.",
+      "en": "A quadrangular masjid with a gable roof south of Alâeddin Hill; the north and west walls have no windows. It is entered from the west with a gallery above the entrance. The harim ceiling has pen-work decoration; the qibla wall has a semicircular mihrab with a curtain motif and a wooden minbar to its right."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "168-171"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=638",
+        "original_name": "pdf-s86-xref638",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "168"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kürkçü Mescidi (kitap s. 168)",
+        "en": "Kürkçü Masjid (book p. 168)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, ahşap detaylı bir mescit. Çatıda ahşap kirişler, girişte ahşap çatı örtüsü ve camlı pencere var.",
+        "en": "A white-walled mosque with wooden details. Wooden beams on the roof, wooden canopy over the entrance, and a window with glass."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=640",
+        "original_name": "pdf-s86-xref640",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "169"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kürkçü Mescidi (kitap s. 169)",
+        "en": "Kürkçü Masjid (book p. 169)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap pencere, merdiven ve duvar süslemeleri görülüyor. Duvarlarda geometrik desenli çini ve yazılar var.",
+        "en": "Interior shows wooden window, staircase, and wall decorations. Walls have geometric tile patterns and inscriptions."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=644",
+        "original_name": "pdf-s86-xref644",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "169"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kürkçü Mescidi (kitap s. 169)",
+        "en": "Kürkçü Masjid (book p. 169)"
+      },
+      "alt": {
+        "tr": "Ahşap merdivenli, ahşap sütunlu ve ahşap rölyefli bir iç mekandır. Duvarlarda mozaik desenli çinilar ve tavanın üzerinde ahşap kafesli bir yapı vardır.",
+        "en": "A wooden staircase, wooden columns, and a wooden balustrade are visible. Walls have mosaic-patterned tiles, and the ceiling has a wooden lattice structure."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=642",
+        "original_name": "pdf-s86-xref642",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "169"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kürkçü Mescidi (kitap s. 169)",
+        "en": "Kürkçü Masjid (book p. 169)"
+      },
+      "alt": {
+        "tr": "Ahşap sütunlar, merdivenler ve rölyefli duvarlarla süslü iç mekân. Tavan, geometrik desenlerle kaplıdır.",
+        "en": "Interior with wooden pillars, railings, and patterned walls. Ceiling features geometric designs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=648",
+        "original_name": "pdf-s87-xref648",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "171"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Kürkçü Mescidi (kitap s. 171)",
+        "en": "Kürkçü Masjid (book p. 171)"
+      },
+      "alt": {
+        "tr": "Mescidin tavanında, mavi ve beyaz zeminli geometrik desenlerle süslü, ortada yıldızlı bir kubbe detayı yer alıyor.",
+        "en": "A ceiling detail with blue and white geometric patterns, featuring a central star-shaped dome design."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

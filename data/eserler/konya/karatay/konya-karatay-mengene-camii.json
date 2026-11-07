@@ -1,0 +1,267 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-mengene-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 256) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kesin yapım tarihi kitapta yok; XX. yüzyıl başı tahmini.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitapta yalnızca 'XX. yüzyıl başları' deniyor; start_year/end_year uydurulmadı. Era (gec-osmanli) yüzyıl tahminine dayanır; yapı Cumhuriyet'ten sonra da olabilir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Mengene Camii",
+    "en": "Mengene Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "mahalle camii",
+    "20. yüzyıl başı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Kocabekir Mahallesi",
+    "address": "Büyük Kumköprü Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "256"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.845804,
+      "lng": 32.515219,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Adıyla OpenStreetMap Nominatim'de bulundu ('Mengene Kubak Camii, Damat Mustafa Paşa Caddesi, Selimsultan Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, 42020, Türki'); sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl başı (tahmini)",
+      "en": "Early 20th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap yapım tarihi ve bânisi hakkında bilgi bulunamadığını, plan ve mimari özelliklere göre XX. yüzyıl başlarına tarihlenebileceğini belirtiyor; yıl verilmiyor.",
+      "en": "The book says no information on date or founder could be found; by plan and architecture it can be dated to the early 20th century. No year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "256"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Karatay'da Kocabekir Mahallesi'nde, plan ve mimari özelliklerine göre XX. yüzyıl başına tarihlenen, içten bağdâdi kubbeli, 2015'te onarılmış mahalle camisi.",
+    "en": "A neighbourhood mosque in Kocabekir, Karatay, dated by plan and architecture to the early 20th century, with an inner baghdadi dome; repaired in 2015."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Kocabekir Mahallesi, Büyük Kumköprü Caddesi üzerindedir. Yapım tarihi ve bânisi hakkında bilgiye ulaşılamamıştır; plan ve mimari özellikleri göz önüne alındığında XX. yüzyıl başlarına tarihlenebilir. Vakıflar Bölge Müdürlüğü tarafından 2015'te tamir ettirilmiştir.",
+        "en": "The mosque is on Büyük Kumköprü Street, Kocabekir Neighborhood, Karatay. No information could be found about its construction date and founder; considering its plan and architectural features it can be dated to the early 20th century. It was repaired by the Regional Directorate of Foundations in 2015."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "256"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Caminin cephesi iki sıra pencere düzenlemesi şeklindedir. Kuzeye sonradan giriş bölümü eklenmiştir. Harime giriş bölümündeki tek kapıdan girilir. Harim içten bağdâdi kubbeli, dıştan dört yöne eğimli kırma çatılıdır. Kuzey bölümünde mahfil, kıble duvarı üzerinde mihrap ve minber yer alır.",
+        "en": "The facade has two rows of windows. An entrance section was later added to the north. The harim is entered through a single door in this section; it has a baghdadi dome inside and a hipped roof sloping in four directions outside. There is a mahfil in the north, and a mihrab and minbar on the qibla wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "256"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından tamir ettirildi",
+        "en": "Repaired by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "256"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mengene Camii, Kocabekir Mahallesi'nde, Büyük Kumköprü Caddesi üzerinde yer alan mahalle camisidir. Cephesinde iki sıra pencere vardır; kuzeye sonradan bir giriş bölümü eklenmiştir. İçeride bağdâdi kubbe, kuzeyde mahfil, kıble duvarında mihrap ve minber bulunur.",
+      "en": "Mengene Mosque is a neighbourhood mosque on Büyük Kumköprü Street in Kocabekir. Its facade has two rows of windows, and an entrance section was added to the north. Inside are a baghdadi dome, a gallery in the north, and a mihrab and minbar on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 256)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "256-256"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1018",
+        "original_name": "pdf-s130-xref1018",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "256"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mengene Camii (kitap s. 256)",
+        "en": "Mengene Mosque (book p. 256)"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı çatılı, beyaz duvarlı, ahşap kapılı ve pencere çerçeveli bir cami. Girişin üzerinde küçük bir kubbe ve minare yok.",
+        "en": "A mosque with a tiled roof, white walls, wooden door, and window frames. A small dome above the entrance, no minaret."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1022",
+        "original_name": "pdf-s130-xref1022",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "256"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Mengene Camii (kitap s. 256)",
+        "en": "Mengene Mosque (book p. 256)"
+      },
+      "alt": {
+        "tr": "Ahşap merdivenli minber, üzerinde Türk bayrağı ve mavi bir pankart. Duvarlarda kare desenli süslemeler ve camlı pencereler.",
+        "en": "Wooden minbar with staircase, featuring a Turkish flag and a blue banner. Walls have square patterns and windows with glass."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1020",
+        "original_name": "pdf-s130-xref1020",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "256"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Mengene Camii (kitap s. 256)",
+        "en": "Mengene Mosque (book p. 256)"
+      },
+      "alt": {
+        "tr": "Mengene Camii'nin içi, mavi halı, ahşap sütunlar, pencere ve tavan lambasıyla gösteriliyor.",
+        "en": "Interior of Mengene Camii, showing blue carpet, wooden pillars, windows, and a ceiling chandelier."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

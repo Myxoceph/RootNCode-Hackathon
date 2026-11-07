@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-sarayonu-kucuk-alioglu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 467) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kardeşlerin soyadı/ailesi kitapta verilmiyor.",
+      "Kitaptaki 'Küçük Ali Oğlu Köprüsü' yazımı ile 'Küçük Alioğlu' yazımı farklı.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap '1281 AH / 1861 AD' yazıyor; H. 1281 yılı M. 1864-65'e denk gelir (M. 1861 yaklaşık H. 1278). İki değer de saklandı, kayıt 'disputed' işaretlendi. (Hicri-miladi karşılaştırması ekip hesabıdır; kitap bu uyuşmazlığı belirtmiyor, kitaptaki iki değer olduğu gibi saklandı.)"
+      }
+    ]
+  },
+  "name": {
+    "tr": "Küçük Alioğlu Camii",
+    "en": "Küçük Alioğlu Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kardeşler",
+    "1861",
+    "Küçük Ali Oğlu Köprüsü",
+    "ahşap direkli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Sarayönü",
+    "neighborhood": "Hatıp Mahallesi",
+    "address": "Pir Hüseyin Bey Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "467"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1281 / M. 1861",
+      "en": "AH 1281 / AD 1861"
+    },
+    "start_year": 1861,
+    "end_year": 1861,
+    "hijri_year": 1281,
+    "century": 19,
+    "basis": {
+      "tr": "Doğu cephedeki altı satırlık dikdörtgen kitabeye göre H. 1281 / M. 1861'de yapılmıştır; Hicri ve miladi yıl uyuşmuyor.",
+      "en": "According to the six-line rectangular inscription on the east façade it was built in AH 1281 / AD 1861; the Hijri and Gregorian years do not match."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "467"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kadir, Ahmet, Mehmet, Seyyid ve Hüseyin adlı kardeşler",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "467"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sarayönü Hatıp Mahallesi'nde, Kadir, Ahmet, Mehmet, Seyyid ve Hüseyin adlı kardeşlerin 1861'de yaptırdığı, sekiz ahşap direkli, sade mihraplı cami.",
+    "en": "A mosque in Hatıp Neighborhood, Sarayönü, built in 1861 by brothers named Kadir, Ahmet, Mehmet, Seyyid and Hüseyin, with eight wooden poles and a plain mihrab."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami Sarayönü, Hatıp Mahallesi, Pir Hüseyin Bey Caddesi üzerindedir; Karaçayır Deresi ile Şahin Caddesi arasında, Yukarı ve Hatıp Mahallelerini birbirine bağlayan Küçük Ali Oğlu Köprüsü'nün kuzeybatısında yer alır. Banileri Kadir, Ahmet, Mehmet, Seyyid ve Hüseyin adlı kardeşlerdir. Doğu cephedeki altı satırlık dikdörtgen kitâbeden caminin H. 1281 / M. 1861'de yaptırıldığı anlaşılmaktadır.",
+        "en": "The mosque is on Pir Hüseyin Bey Street, Hatıp Neighborhood, Sarayönü, between Karaçayır Stream and Şahin Street, northwest of the Küçük Alioğlu Bridge that connects Yukarı and Hatıp neighborhoods. Its founders are brothers named Kadir, Ahmet, Mehmet, Seyyid and Hüseyin. The six-line rectangular inscription on the east façade shows it was built in 1281 AH / 1861 AD."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "467"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami, harim ile sonradan kapatılarak yazlık bölüm olarak kullanılan son cemaat mahallinden oluşur; iki sıra dörder ahşap direkle üç sahına ayrılmıştır, kuzey ve güneydeki direkler duvarlara bitişiktir. Kıble duvarı ortasındaki mihrap duvara oyulmuş, sade, süslemesiz ve dikdörtgen formludur; niş kemeri dilimlidir. Mihrap köşeliklerinde noktalarla oluşturulmuş dairevi, geometrik süslemeli motifler, niş çevresinde yivli, silmeli, geometrik süslemeli bordürler ile kıvrım dal ve yapraklı bitkisel bordürler vardır. Ahşap minber sonradan yağlı boyayla boyanarak özgün özelliğini kaybetmiştir.",
+        "en": "The mosque consists of the harim and the narthex, later closed and used as a summer section, divided into three naves by four wooden poles in each of two rows; the poles in the north and south adjoin the walls. The mihrab in the middle of the qibla wall is carved into the wall, simple, unadorned and rectangular; its niche arch is segmented. The mihrab corners bear circular geometric motifs made with dots, and the niche is surrounded by grooved, moulded geometric borders and vegetal borders of curved branches and leaves. The wooden minbar was later painted with oil paint and lost its original character."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "467"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "direk",
+      "label": {
+        "tr": "Ahşap direk sayısı",
+        "en": "Number of wooden poles"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "467"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Kadir, Ahmet, Mehmet, Seyyid ve Hüseyin kardeşler",
+      "role": {
+        "tr": "Camiyi yaptıranlar",
+        "en": "Founders of the mosque"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Doğu cephe",
+        "en": "East façade"
+      },
+      "language": "other",
+      "note": {
+        "tr": "Altı satırlık dikdörtgen kitabe; kitap metnini ve dilini vermiyor, yalnızca H. 1281 / M. 1861 tarihini belirtiyor.",
+        "en": "Six-line rectangular inscription; the book gives neither text nor language, only the date AH 1281 / AD 1861."
+      },
+      "date": {
+        "hijri_year": 1281,
+        "gregorian": "1861"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "467"
+        }
+      ],
+      "ar_target_media_id": null,
+      "script": null,
+      "transliteration": null,
+      "translation": null
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1861",
+      "year": 1861,
+      "hijri": "1281",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yaptırıldı",
+        "en": "Mosque built"
+      },
+      "confidence": "disputed",
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "467"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Küçük Alioğlu Camii, Sarayönü'nde bir köprünün yakınında yer alan, harim ve sonradan kapatılmış son cemaat yerinden oluşan bir camidir. İçeride iki sıra halinde sekiz ahşap direk üç sahın oluşturur. Mihrap duvara oyulmuş, sade ve dikdörtgendir; kemeri dilimlidir.",
+      "en": "Küçük Alioğlu Mosque in Sarayönü, near a bridge, consists of a prayer hall and a later-enclosed narthex. Inside, eight wooden poles in two rows form three naves. The mihrab is carved into the wall, plain and rectangular, with a segmented arch."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 467)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "467-467"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2069",
+        "original_name": "pdf-s235-xref2069",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "467"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Küçük Alioğlu Camii (kitap s. 467)",
+        "en": "Küçük Alioğlu Mosque (book p. 467)"
+      },
+      "alt": {
+        "tr": "Bir cami ve minaresi, kare planlı, kahverengi çatılı, beyaz duvarlı, çevresinde evler ve ağaçlar var.",
+        "en": "A mosque with a minaret, square-plan, brown-roofed, white-walled, surrounded by houses and trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2071",
+        "original_name": "pdf-s235-xref2071",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "467"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Küçük Alioğlu Camii (kitap s. 467)",
+        "en": "Küçük Alioğlu Mosque (book p. 467)"
+      },
+      "alt": {
+        "tr": "Ahşap tavan, sütunlar, kırmızı desenli halı ve ahşap merdivenlerle iç mekân.",
+        "en": "Wooden ceiling, pillars, red patterned carpet, and wooden staircase inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

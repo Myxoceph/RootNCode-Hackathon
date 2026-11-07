@@ -16,21 +16,11 @@ export type TrackerFailure =
   | "camera-unsupported"
   /** The bundled MindAR script did not run. */
   | "load-failed"
-  /** The asset's own `.mind` file could not be downloaded (offline). Raised by the app, not the page. */
-  | "target-unavailable"
+  /** The photo to compile on the device could not be downloaded (offline); a `.mind` file that does not download falls back to it. */
+  | "image-unavailable"
   | "unknown";
 
-/** What to tell a person when the tracker cannot start. */
-export const trackerFailureText: Record<TrackerFailure, string> = {
-  "camera-denied": "Kamera izni verilmedi. Telefonun ayarlarından izin verip yeniden dene.",
-  "camera-unavailable": "Kamera açılamadı. Başka bir uygulama kullanıyor olabilir.",
-  "camera-unsupported": "Bu WebView kameraya erişemiyor.",
-  "load-failed": "AR kütüphanesi yüklenemedi.",
-  "target-unavailable": "Kitabenin kamera hedefi indirilemedi; internet bağlantısı gerekiyor.",
-  unknown: "AR başlatılamadı.",
-};
-
-export type TrackerStep = "page" | "library" | "camera" | "video" | "targets";
+export type TrackerStep = "page" | "library" | "compile" | "camera" | "video" | "targets";
 
 /** Messages the tracker page posts to the app. */
 export type TrackerEvent =
@@ -38,11 +28,24 @@ export type TrackerEvent =
   | { type: "ready"; videoWidth: number; videoHeight: number }
   | { type: "found"; target: number }
   | { type: "lost"; target: number }
+  /** Compiling a photo target on the device, 0 to 1. */
+  | { type: "compile"; progress: number }
+  /** The compiled `.mind` file, base64, so the app can keep it and skip compiling next time. */
+  | { type: "compiled"; mind: string }
   /** Start-up progress, so a page that stalls shows where. */
   | { type: "step"; step: TrackerStep }
   /** Tracker frames processed per second over the last two seconds. */
   | { type: "stats"; fps: number }
+  /** Where a found target lies: its corners (top left, top right, bottom right, bottom left) as fractions of the view. */
+  | { type: "pose"; target: number; corners: Array<[number, number]> }
+  /** The frame frozen by `snapshot`, a base64 JPEG; null when it could not be drawn. */
+  | { type: "snapshot"; jpeg: string | null; error?: string }
+  /** The frame frozen by `capture`, searched again: the target it shows, or null; `error` when the search itself failed. */
+  | { type: "captured"; target: number | null; ms: number; error?: string }
   | { type: "error"; reason: TrackerFailure; message: string };
+
+/** What the app asks of the tracker page: freeze a frame and check it, freeze one as a JPEG, or let the camera run on. */
+export type TrackerCommand = "capture" | "snapshot" | "resume";
 
 export function parseTrackerEvent(data: unknown): TrackerEvent | null {
   if (typeof data !== "string") return null;

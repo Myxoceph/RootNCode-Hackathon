@@ -17,6 +17,7 @@
 	encode zstd gzip
 
 	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
 		X-Content-Type-Options nosniff
 		Referrer-Policy strict-origin-when-cross-origin
 		X-Frame-Options DENY
@@ -26,8 +27,10 @@
 
 	# API: /api/assets → api:3000/assets. Swagger UI at /api/docs.
 	handle_path /api/* {
+		# Only a ceiling: the API sets each route's own limit (16 KB unless the route needs more) and refuses
+		# by Content-Length, so a list of routes here would only fall behind. It once cut Taşa Sor, voice and more at 64 KB.
 		request_body {
-			max_size 64KB
+			max_size 16MB
 		}
 		reverse_proxy api:3000
 	}
@@ -41,6 +44,9 @@
 		# page for all of them. Only one rewrite runs: a detail URL skips try_files below.
 		@assetDetail path_regexp ^/monuments/[^/]+/?$
 		rewrite @assetDetail "/monuments/[id].html"
+		# The same card opened over a Profil page (Rotalarım, Notlarım).
+		@assetOver path_regexp ^/asset/[^/]+/?$
+		rewrite @assetOver "/asset/[id].html"
 		try_files {path} {path}.html {path}/index.html /index.html
 		file_server
 	}

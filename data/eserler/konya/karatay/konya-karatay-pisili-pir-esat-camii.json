@@ -1,0 +1,310 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-pisili-pir-esat-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Bani kitapta belirtilmiyor: Dr. A. Rıza Bahadır yalnızca başvuruda bulunan kişi olarak geçiyor, founder null bırakıldı",
+      "Kayıt, kitabın tek başlığı altındaki 1989 camisi için ayrı oluşturuldu; sürekliliği (eski mescit yıkıldı) parent kaydında",
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Pisili (Pir Esat) Camii (1989)",
+    "en": "Pisili (Pir Esat) Mosque (1989)"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "konya-karatay-pisili-pir-esat-kulliyesi",
+  "era": "cumhuriyet",
+  "tags": [
+    "1989",
+    "A tipi proje",
+    "merkezi kubbe",
+    "Pisili Sultan"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Adak Sokak (eski mescidin 30 m batısı)",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "252"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1989",
+      "en": "1989"
+    },
+    "start_year": 1989,
+    "end_year": 1989,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap yeni caminin 1989'da yapıldığını söylüyor.",
+      "en": "The book states the new mosque was built in 1989."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "252"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Eski kerpiç mescidin yıkılması üzerine otuz metre batısına 1989'da yapılan, tek minareli, merkezî kubbeli cami. Vakıflar Genel Müdürlüğü mimarı A. Sami Ülgen'in A tipi projesine göre inşa edilmiştir.",
+    "en": "A single-minaret mosque with a central dome built in 1989 thirty metres west of the demolished adobe masjid, according to the A-type project of Foundations General Directorate architect A. Sami Ülgen."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapılışı ve Mimari",
+        "en": "Construction and Architecture"
+      },
+      "body": {
+        "tr": "Kerpiç mescit 1980'li yıllara kadar kullanılmış; Dr. A. Rıza Bahadır 1982'de yerine yeni cami yaptırmak için Vakıflar Genel Müdürlüğü'ne başvurmuştur. Tescili kaldırılan mescit yıkılmış, otuz metre batısına 1989'da yeni cami yapılmıştır. Cami Vakıflar Genel Müdürlüğü mimarlarından merhum A. Sami Ülgen'in A tipi projesine göre tek minareli inşa edilmiştir. Kuzey cephede yedi bölümlü bir son cemaat yeri vardır. Harim, doğu, batı ve kuzeyde bağımsız, güneyde kıble duvarına bitişik ayaklara oturan merkezî bir kubbeyle örtülüdür.",
+        "en": "The adobe masjid was used until the 1980s; Dr. A. Rıza Bahadır applied in 1982 to the General Directorate of Foundations to have a new mosque built in its place. The registration was lifted, the masjid demolished and a new mosque built thirty metres west in 1989, with a single minaret, according to the A-type project of the late A. Sami Ülgen of the Foundations General Directorate. It has a seven-bay narthex on the north facade. The harim is covered by a central dome that is independent on the east, west and north and rests on piers adjoining the qibla wall on the south."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_bolum",
+      "label": {
+        "tr": "Son cemaat yerinin bölüm sayısı",
+        "en": "Narthex sections"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    },
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Yapım yılı",
+        "en": "Year built"
+      },
+      "value": 1989,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "A. Sami Ülgen",
+      "role": {
+        "tr": "A tipi projenin sahibi, Vakıflar Genel Müdürlüğü mimarı",
+        "en": "Author of the A-type project, architect of the Foundations General Directorate"
+      }
+    },
+    {
+      "name": "Dr. A. Rıza Bahadır",
+      "role": {
+        "tr": "1982'de yeni cami için başvuran, Almanya'da yaşayan kişi",
+        "en": "Person living in Germany who applied in 1982 for a new mosque"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "basvuru-1982",
+      "year": 1982,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Dr. A. Rıza Bahadır yeni cami için başvurdu",
+        "en": "Dr. A. Rıza Bahadır applied for a new mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    },
+    {
+      "id": "yapim-1989",
+      "year": 1989,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Yeni cami yapıldı",
+        "en": "The new mosque was built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-pisili-pir-esat-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Yıkılan Pisili (Pir Esat) mescidinin yerine, 30 m batısında yapılmıştır.",
+        "en": "Built in place of the demolished Pisili (Pir Esat) masjid, thirty metres to its west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tek minareli, merkezî kubbeli, kuzey cephede yedi bölümlü son cemaat yerine sahip bir cami.",
+      "en": "A single-minaret mosque with a central dome and a seven-bay narthex on the north facade."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "252-252"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1006",
+        "original_name": "pdf-s128-xref1006",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "252"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Pisili (Pir Esat) Camii (1989) (kitap s. 252)",
+        "en": "Pisili (Pir Esat) Mosque (1989) (book p. 252)"
+      },
+      "alt": {
+        "tr": "Beyaz mermerden yapılmış, süslü bir minber ve merdiven. Üstünde kubbeli bir kule ve arka planda ahşap bir balkon var.",
+        "en": "A white marble minbar with ornate carvings and stairs. A domed tower above, wooden balcony in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1004",
+        "original_name": "pdf-s128-xref1004",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "252"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Pisili (Pir Esat) Camii (1989) (kitap s. 252)",
+        "en": "Pisili (Pir Esat) Mosque (1989) (book p. 252)"
+      },
+      "alt": {
+        "tr": "Ahşap bir yüzeyde geometrik desenler, beyaz mermer sütun ve altın rengi bir halka.",
+        "en": "Geometric patterns on a wooden surface, a white marble column, and a golden ring."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

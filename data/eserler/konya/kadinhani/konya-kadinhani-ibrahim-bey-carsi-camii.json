@@ -1,0 +1,454 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-kadinhani-ibrahim-bey-carsi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 458-459) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitaptaki 1721 külliye bilgisinin bu camiyle ilişkisi net değil; banî (founder) bu yüzden boş bırakıldı.",
+      "Mahalle adı kitapta verilmiyor.",
+      "1858 yangını / 1859 yapım çelişkisi veri ekibince kontrol edilmeli.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap, vakıf kayıtlarına göre caminin 1859'da yaptırıldığını, 1858'de çıkan yangında tamamen yandığını ve 1859'da halkça yeniden yaptırıldığını söylüyor: 'yaptırıldı 1859' ile 'yandı 1858' birbiriyle çelişiyor. Kaynağa sadık kalındı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Metin 1721'de İbrahim Paşa'nın cami yanına mektep, hamam, dükkân ekleyerek külliye yaptığını söylüyor; bu külliyenin 1859 cami ile aynı yapı olup olmadığı belli değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İbrahim Bey (Çarşı) Camii",
+    "en": "İbrahim Bey (Çarşı) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Çarşı Camii",
+      "en": "Çarşı Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Çarşı Camii",
+    "Hacı Mustafa Vakfı",
+    "Nevşehirli İbrahim Paşa",
+    "1859"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Kadınhanı",
+    "address": "Konya Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "458-459"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.238616,
+      "lng": 32.228593,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Konya Caddesi, Güngören, Kadınhanı, Konya, İç Anadolu Bölgesi, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1859 (yeniden yapım)",
+      "en": "1859 (rebuilt)"
+    },
+    "start_year": 1859,
+    "end_year": 1859,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Vakıf kayıtlarına göre 1859'da yaptırıldı; 1858 yangınından sonra halk tarafından büyütülerek yeniden yapıldı. Kayıtta 1858/1859 çelişkisi var.",
+      "en": "Built in 1859 according to foundation records, rebuilt larger by the public after the 1858 fire; the records contain a 1858/1859 inconsistency."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "458"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": "Hacı Mustafa Vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "1885'te Hacıhasanoğlu Osman Efendi ve 1902'de Hacıhasanoğlu Ahmet Efendi tarafından çarşıdaki 30 dükkân, 1 ev ve 2 kahvehane; cami, mektep ve şadırvan için vakfedilmiştir.",
+      "en": "In 1885 by Hacıhasanoğlu Osman Efendi and in 1902 by Hacıhasanoğlu Ahmet Efendi, 30 shops, 1 house and 2 coffee houses in the bazaar were dedicated for the mosque, school and fountain."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "458-459"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kadınhanı Konya Caddesi üzerindeki, 1858 yangınından sonra 1859'da halk tarafından büyütülerek yeniden yaptırılan, Hacı Mustafa Vakfı'na bağlı çarşı camii.",
+    "en": "A bazaar mosque on Konya Street in Kadınhanı, rebuilt larger by the public in 1859 after a fire in 1858, affiliated with the Hacı Mustafa Foundation."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Vakıf",
+        "en": "History and Foundation"
+      },
+      "body": {
+        "tr": "Cami Kadınhanı, Konya Caddesi üzerinde yer almaktadır. Osmanlı Devleti konar-göçer halkı yerleşik hayata geçirmek için XVIII. yüzyıl başlarında iskân çalışmalarına devam etmiş; Nevşehirli Damat İbrahim Paşa döneminde Saideli'deki han tamir edilmiş ve bölgeye yirmi hane yerleştirilmiştir. 1721'de İbrahim Paşa cami yanına mektep, hamam ve dükkânlar ekleyerek bir külliye meydana getirmiştir. Cami, Hacı Mustafa Vakfı adına Vakıflar Genel Müdürlüğüne bağlıdır. Vakıf kayıtlarına göre 1859'da yaptırılmış, 1858'de çıkan yangında tamamen yanmıştır; yanan cami yerine 1859'da halk tarafından ebatları büyütülerek yeniden yaptırılmıştır. Yazlık bölüm XIX. yüzyıl sonlarında eklenmiştir. 1885'te Hacıhasanoğlu Osman Efendi ve 1902'de Hacıhasanoğlu Ahmet Efendi çarşıdaki 30 dükkân, 1 ev ve 2 kahvehaneyi cami, mektep ve şadırvan için vakfetmiştir.",
+        "en": "The mosque is on Konya Street, Kadınhanı. The Ottoman state continued settlement work in the early 18th century to settle nomadic people; under Nevşehirli Damat İbrahim Paşa the inn in Saideli was repaired and twenty households were settled. In 1721 İbrahim Paşa created a complex by adding a school, bathhouse and shops next to the mosque. The mosque is affiliated with the General Directorate of Foundations in the name of the Hacı Mustafa Foundation. According to foundation records it was built in 1859 and completely burned down in a fire in 1858; in 1859 the public rebuilt it larger. The summer section was added in the late 19th century. In 1885 Hacıhasanoğlu Osman Efendi and in 1902 Hacıhasanoğlu Ahmet Efendi dedicated 30 shops, 1 house and 2 coffee houses in the bazaar for the mosque, school and fountain."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dıştan dikdörtgen planlıdır; harim, yazlık bölüm ve minareden oluşur. Zeminden belirli seviyeye kadar mermer kaplama, beden duvarlarında taş kullanılmıştır; cephelerde süsleme yoktur, üzeri dört yöne eğimli kiremit kaplı kırma çatıdır. H. 1292 / M. 1876'da yaptırılan tek şerefeli minare kuzey cephe ortasındadır. Kuzeybatı cephedeki kapıdan merdivenlerle ayakkabılığa, oradan sonradan eklenen yazlık bölüme geçilir; yazlık bölüm beş ahşap direkle iki sahına ayrılmıştır. Harim, karşılıklı ikişerden on ahşap direkle üç sahına ayrılmıştır; orta sahın daha süslüdür ve tavanda her bölümün ortasında tavan göbekleri vardır. Kıble duvarı ortasında dikdörtgen çerçeveli, yarım daire planlı, yarım kubbe kavsaralı, yuvarlak kemerli mihrap, sağında minber, kuzeyde kadınlar mahfili ve ahşap direklerle taşınan ahşap mahfil bulunur. Cami günümüzde ibadete açıktır.",
+        "en": "The mosque has a rectangular plan and consists of a harim, a summer section and a minaret. Marble is used from the ground to a certain level and stone on the main walls; the façades are undecorated and the roof is a tiled hipped roof sloping in four directions. The single-balcony minaret, built in 1292 AH / 1876 AD, is in the middle of the north façade. Stairs from the door on the northwest façade lead to the shoe store, and from there to the later-added summer section, divided into two naves by five wooden poles. The harim is divided into three aisles by ten wooden poles; the middle nave is more decorated and ceiling hubs mark the middle of each ceiling section. The mihrab in the middle of the qibla wall is in a rectangular frame, with a semicircular plan, semi-dome niche and round arch; a minbar is to its right, a women's gallery to the north, and a wooden gallery on wooden poles above the harim and summer section. The mosque is open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_direk",
+      "label": {
+        "tr": "Harimdeki ahşap direk",
+        "en": "Wooden poles in the harim"
+      },
+      "value": 10,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ]
+    },
+    {
+      "key": "yazlik_direk",
+      "label": {
+        "tr": "Yazlık bölümdeki ahşap direk",
+        "en": "Wooden poles in the summer section"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ]
+    },
+    {
+      "key": "minare_yili",
+      "label": {
+        "tr": "Minare yapım yılı",
+        "en": "Minaret built"
+      },
+      "value": "H. 1292 / M. 1876",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacıhasanoğlu Osman Efendi",
+      "role": {
+        "tr": "1885'te çarşıdaki gelir getiren yapıları vakfetti",
+        "en": "Dedicated bazaar properties as endowment in 1885"
+      }
+    },
+    {
+      "name": "Hacıhasanoğlu Ahmet Efendi",
+      "role": {
+        "tr": "1902'de vakıf yaptı",
+        "en": "Made an endowment in 1902"
+      }
+    },
+    {
+      "name": "Nevşehirli Damat İbrahim Paşa",
+      "role": {
+        "tr": "1721'de cami yanına mektep, hamam ve dükkânlar ekleyen paşa",
+        "en": "Pasha who in 1721 added a school, bathhouse and shops next to the mosque"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kulliye-1721",
+      "year": 1721,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "İbrahim Paşa cami yanına mektep, hamam, dükkân ekledi",
+        "en": "İbrahim Paşa added school, bathhouse and shops next to the mosque"
+      },
+      "confidence": "disputed",
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1858",
+      "year": 1858,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Yangında cami tamamen yandı",
+        "en": "Mosque burned down completely"
+      },
+      "confidence": "disputed",
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-1859",
+      "year": 1859,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Halkça büyütülerek yeniden yaptırıldı",
+        "en": "Rebuilt larger by the public"
+      },
+      "confidence": "disputed",
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ]
+    },
+    {
+      "id": "minare-1876",
+      "year": 1876,
+      "hijri": "1292",
+      "type": "addition",
+      "title": {
+        "tr": "Minare yaptırıldı",
+        "en": "Minaret built"
+      },
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "vakif-1885",
+      "year": 1885,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Osman Efendi'nin vakfı",
+        "en": "Endowment by Osman Efendi"
+      },
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "vakif-1902",
+      "year": 1902,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Ahmet Efendi'nin vakfı",
+        "en": "Endowment by Ahmet Efendi"
+      },
+      "date": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "458-459"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İbrahim Bey Camii, Kadınhanı çarşısında, alt kısmı mermer kaplı, taş duvarlı, süslemesiz cepheli bir camidir. Kuzey cephenin ortasında tek şerefeli bir minare yükselir. İçeride on ahşap direk üç sahın oluşturur, ortadaki sahın daha süslüdür; tavanda tavan göbekleri görülür.",
+      "en": "İbrahim Bey Mosque stands in the Kadınhanı bazaar, with marble cladding at the base, stone walls and plain façades. A single-balcony minaret rises in the middle of the north façade. Inside, ten wooden poles form three aisles, the middle one more decorated, with ceiling hubs on the ceiling."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 458-459)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "458-459"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2025",
+        "original_name": "pdf-s231-xref2025",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "458"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "İbrahim Bey (Çarşı) Camii (kitap s. 458)",
+        "en": "İbrahim Bey (Çarşı) Mosque (book p. 458)"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremit çatılı, kubbeli ve minareli cami, çevresindeki binalarla birlikte havadan görünüyor.",
+        "en": "A mosque with a red-tiled roof, dome, and minaret, seen from above among surrounding buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2027",
+        "original_name": "pdf-s231-xref2027",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "459"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İbrahim Bey (Çarşı) Camii (kitap s. 459)",
+        "en": "İbrahim Bey (Çarşı) Mosque (book p. 459)"
+      },
+      "alt": {
+        "tr": "İç mekanda, ahşap sütunlar, mavi halılar ve kubbeli tavan görülüyor.",
+        "en": "Inside, wooden pillars, blue carpets, and a domed ceiling are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2029",
+        "original_name": "pdf-s231-xref2029",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "459"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "İbrahim Bey (Çarşı) Camii (kitap s. 459)",
+        "en": "İbrahim Bey (Çarşı) Mosque (book p. 459)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap sütunlar, kırmızı halılar ve kemerli pencereler görülüyor.",
+        "en": "Wooden pillars, red carpets, and arched windows are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

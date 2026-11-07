@@ -1,0 +1,270 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-topraklik-hasan-efendi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 272) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mahalle adı kitapta verilmiyor.",
+      "Yeniden yaptıranlar bireysel olarak adlandırılmadığı için founder boş bırakıldı (mahalle halkı ve hayırseverler).",
+      "Kitabe metni kitapta yok; sahada okunup eklenmeli.",
+      "İlk inşa tarihi ve onarım yılı ('yakın zamanda') kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[giris-kitabesi].language",
+        "note": "Kitap kitâbenin dilini söylemiyor, yalnızca celi talik hat olduğunu söylüyor; 'tr-ottoman' bu çıkarımdır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Topraklık Hasan Efendi Camii",
+    "en": "Topraklık Hasan Efendi Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "1947",
+    "celi talik kitabe",
+    "Cumhuriyet dönemi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Kerimler Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "272"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.866353,
+      "lng": 32.510366,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Kerimler Caddesi, Sarıyakup Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, 42030, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "4 Ramazan 1366 / 22 Temmuz 1947 (yeniden yapım)",
+      "en": "4 Ramadan 1366 / 22 July 1947 (rebuilding)"
+    },
+    "start_year": 1947,
+    "end_year": 1947,
+    "hijri_year": 1366,
+    "century": 20,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki kitâbe caminin bu tarihte mahalle halkı ve hayırseverlerce yeniden yaptırıldığını ve minare eklenerek inşa edildiğini bildirir. İlk inşa tarihi kitapta yok.",
+      "en": "The inscription over the entrance door states the mosque was rebuilt on this date by neighbourhood people and philanthropists, with a minaret added. The first construction date is not in the book."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "272"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Kerimler Caddesi'nde, giriş kapısındaki celi talik kitâbeye göre 4 Ramazan 1366 / 22 Temmuz 1947'de mahalle halkı ve hayırseverlerce minareli olarak yeniden yaptırılan, mihrabı çinili mahalle camisi.",
+    "en": "A neighbourhood mosque on Kerimler Street, rebuilt with a minaret on 4 Ramadan 1366 / 22 July 1947 by neighbourhood people and philanthropists according to the celi ta'lik inscription at the entrance; its mihrab is tiled."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Kerimler Caddesi üzerinde yer almaktadır. Giriş kapısı üzerinde celi talik hatla yazılmış dört satırlık kitâbe bulunmaktadır. Kitâbede caminin 4 Ramazan 1366 / 22 Temmuz 1947 tarihinde mahalle halkı ve hayırseverler tarafından yeniden yaptırıldığı, bir minare eklenerek inşa edildiği yazmaktadır. Vakıflar Bölge Müdürlüğü tarafından yakın zamanda onarım geçirmiştir.",
+        "en": "The mosque is on Kerimler Street, Karatay. Over the entrance door is a four-line inscription in celi ta'lik script. It states that the mosque was rebuilt on 4 Ramadan 1366 / 22 July 1947 by the people of the neighbourhood and philanthropists, and built by adding a minaret. It was recently repaired by the Regional Directorate of Foundations."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "272"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlıdır; içten düz tavanlı, dıştan eğimli çatılıdır. Batı duvarının kuzey köşesindeki minare kare kaideli, silindirik gövdeli ve tek şerefelidir. Yapıya kuzey duvarının batı köşesindeki kapıdan girilir. Harim derinlemesine dikdörtgen planlı ve iki sahınlıdır; kuzeyinde ahşap mahfil, güneyde kıble duvarında mihrap ve minber vardır. Mihrap yarım daire planlıdır ve yüzeyi çinilerle kaplıdır. Yapı Cumhuriyet dönemi mahalle camilerindendir.",
+        "en": "The mosque has a deeply rectangular plan with a flat ceiling inside and a sloping roof outside. The minaret at the north corner of the west wall has a square base, cylindrical body and a single balcony. The building is entered through the door at the west corner of the north wall. The harim is deeply rectangular with two aisles, a wooden mahfil in the north, and a mihrab and minbar on the qibla wall in the south. The semicircular mihrab is covered with tiles. It is one of the neighbourhood mosques of the Republican era."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "272"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısının üzeri",
+        "en": "Above the entrance door"
+      },
+      "language": "tr-ottoman",
+      "script": "celi talik",
+      "transliteration": null,
+      "translation": null,
+      "date": {
+        "hijri_year": 1366,
+        "gregorian": "22 Temmuz 1947"
+      },
+      "note": {
+        "tr": "Dört satırlık kitâbe; metni kitapta verilmiyor, yalnızca içeriği özetleniyor. Dil kitapta belirtilmiyor; celi talik yazı nedeniyle 'tr-ottoman' girildi.",
+        "en": "A four-line inscription; its text is not given in the book, only summarised. The language is not stated; 'tr-ottoman' was entered because of the celi ta'lik script."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "272"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yeniden-insa-1947",
+      "year": 1947,
+      "date": "1947-07-22",
+      "hijri": "4 Ramazan 1366",
+      "type": "restoration",
+      "title": {
+        "tr": "Mahalle halkı ve hayırseverlerce minare eklenerek yeniden yaptırıldı",
+        "en": "Rebuilt by neighbourhood people and philanthropists with a minaret added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "272"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Topraklık Hasan Efendi Camii, derinlemesine dikdörtgen planlı bir mahalle camisidir. Batı duvarının kuzey köşesinde kare kaideli, silindirik gövdeli, tek şerefeli bir minare yükselir. Kuzeydeki kapıdan girilen iki sahınlı harimde ahşap mahfil ve çini kaplı yarım daire planlı mihrap vardır.",
+      "en": "Topraklık Hasan Efendi Mosque is a deeply rectangular neighbourhood mosque. A minaret with a square base, cylindrical body and one balcony rises at the north corner of the west wall. The two-aisle prayer hall, entered from the north, has a wooden gallery and a tile-covered semicircular mihrab."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 272)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "272-272"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1112",
+        "original_name": "pdf-s138-xref1112",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "272"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Topraklık Hasan Efendi Camii (kitap s. 272)",
+        "en": "Topraklık Hasan Efendi Mosque (book p. 272)"
+      },
+      "alt": {
+        "tr": "Mavi çinilarla kaplı, kemerli bir mihrap. Üstünde beyaz zeminli koyu renkli arapça yazılar ve \"Allah\" yazan bir daire var.",
+        "en": "A mihrab with blue tiles and an arched niche. Above, a white plaque with dark Arabic script and a circle with \"Allah\"."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1114",
+        "original_name": "pdf-s138-xref1114",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "272"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Topraklık Hasan Efendi Camii (kitap s. 272)",
+        "en": "Topraklık Hasan Efendi Mosque (book p. 272)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı ve pembe halılar, sütunlar, camlı pencereler, çanak şeklindeki avizeler ve mavi kapılı mihrap görülüyor.",
+        "en": "Inside, red and pink carpets, columns, windowed arches, chandeliers, and a blue mihrab are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

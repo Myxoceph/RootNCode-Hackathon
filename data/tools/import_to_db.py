@@ -25,14 +25,14 @@ from psycopg.types.json import Jsonb
 from db_rows import (ASSET_TABLES, DATA, GENERATED, SHARED_TABLES, TABLES, asset_rows_processed_media, load_all, shared_rows)
 
 PK = {"region": ["code"], "city": ["code"], "asset_type": ["code"], "era": ["code"], "relation_type": ["code"],
-      "timeline_event_type": ["code"], "source": ["id"]}
+      "timeline_event_type": ["code"], "source": ["id"], "city_dish": ["id"], "sound": ["key"]}
 # Bir eser yeniden içe aktarılınca silinip yeniden yazılan alt tablolar (FK sırasına göre silme sırası)
 DB_GENERATED = {"asset": {"created_at", "updated_at"}, "media": {"id", "created_at", "updated_at"},
                 "media_variant": {"media_id"}, "asset_media": {"media_id"}, "source_citation": {"id"},
                 "asset_relation": {"id"}, "visitor_tip": {"id"}, "exhibition": {"id"},
                 "contribution": {"id", "created_at"}, "asset_revision": {"version", "changed_at"}}
 CHILD_DELETE_ORDER = ["inscription", "asset_media", "source_citation", "exhibition", "visitor_tip", "asset_relation",
-                      "asset_highlight", "timeline_event", "asset_person", "asset_fact", "asset_legend", "asset_section"]
+                      "asset_highlight", "timeline_event", "asset_person", "asset_fact", "asset_legend", "asset_custom_block", "asset_section"]
 
 
 def ddl_from_readme():
@@ -76,6 +76,9 @@ def import_all(con):
     for table, rows in shared_rows().items():
         for row in rows:
             insert(cur, types, table, row, conflict=PK[table])
+    # Dosyadan çıkarılan lezzet ve ses DB'de de kalmasın (başka tablo onlara bağlı değil).
+    cur.execute("DELETE FROM city_dish WHERE NOT (id = ANY(%s))", ([r["id"] for r in shared_rows()["city_dish"]],))
+    cur.execute("DELETE FROM sound WHERE NOT (key = ANY(%s))", ([r["key"] for r in shared_rows()["sound"]],))
 
     skipped_media = 0
     for a in assets:
@@ -86,7 +89,12 @@ def import_all(con):
         cur.execute("UPDATE asset SET updated_at = now() WHERE id = %s", (aid,))
         for table in CHILD_DELETE_ORDER:
             col = "source_asset_id" if table == "asset_relation" else "asset_id"
-            cur.execute(f"DELETE FROM {table} WHERE {col} = %s", (aid,))
+            # Photos uploaded from the panel are not in the dataset: they stay.
+            keep = " AND NOT panel_upload" if table == "asset_media" else ""
+            cur.execute(f"DELETE FROM {table} WHERE {col} = %s{keep}", (aid,))
+        # One cover per asset: the dataset's, when it names one.
+        if any(r["is_cover"] for r in rows["asset_media"]):
+            cur.execute("UPDATE asset_media SET is_cover = false WHERE asset_id = %s", (aid,))
 
         media_ids = {}  # '$media' yer tutucusu → gerçek uuid
         for row in rows["media"]:
@@ -95,7 +103,7 @@ def import_all(con):
             insert(cur, types, "media_variant", {**row, "media_id": media_ids[row["media_id"]["$media"]]},
                    conflict=["media_id", "format", "width"])
 
-        for table in ["asset_section", "asset_legend", "asset_fact", "asset_person", "timeline_event", "asset_highlight",
+        for table in ["asset_section", "asset_custom_block", "asset_legend", "asset_fact", "asset_person", "timeline_event", "asset_highlight",
                       "asset_relation", "visitor_tip", "exhibition", "source_citation", "asset_media", "inscription"]:
             for row in rows[table]:
                 if table == "asset_media":
@@ -159,11 +167,11 @@ def verify(con):
             # contribution: API'nin yazdığı ziyaretçi katkıları; JSON'da yoktur, satırları karşılaştırılmaz
             if t in ("asset", "media", "media_variant", "asset_relation", "asset_revision", "contribution"):
                 continue
-            compare(t, rows[t], "asset_id = %s", aid)
+            compare(t, rows[t], "asset_id = %s AND NOT panel_upload" if t == "asset_media" else "asset_id = %s", aid)
         compare("asset_relation", rows["asset_relation"], "source_asset_id = %s", aid)
-        compare("media", rows["media"], "id IN (SELECT media_id FROM asset_media WHERE asset_id = %s)", aid)
+        compare("media", rows["media"], "id IN (SELECT media_id FROM asset_media WHERE asset_id = %s AND NOT panel_upload)", aid)
         compare("media_variant", rows["media_variant"],
-                "media_id IN (SELECT media_id FROM asset_media WHERE asset_id = %s)", aid)
+                "media_id IN (SELECT media_id FROM asset_media WHERE asset_id = %s AND NOT panel_upload)", aid)
         # Görüntüleyici geçmişin yalnızca son sürümünü gösterir
         compare("asset_revision", rows["asset_revision"],
                 "asset_id = %s AND version = (SELECT max(version) FROM asset_revision r WHERE r.asset_id = asset_revision.asset_id)", aid)

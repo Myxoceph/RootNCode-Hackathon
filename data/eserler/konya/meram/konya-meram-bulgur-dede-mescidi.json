@@ -1,0 +1,547 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-bulgur-dede-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 75-77) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Binanın tarihi kitapta kesin verilmiyor; yalnızca XIII. yüzyıl (Selçuklu) çıkarımı var.",
+      "Şahide metni kitapta yok; transliterasyon ve meal sonradan eklenebilir.",
+      "Kitap Aziziye Camii'ne konum için atıf yapıyor ama ilçesini söylemiyor; ilişki kaydı yazılmadı.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap tarihi kesin vermiyor; 'XIII. yüzyıl' çıkarımı yapı özelliklerine dayanıyor. start_year/end_year bilerek boş bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Bulgur Dede Mescidi",
+    "en": "Bulgur Dede Masjid"
+  },
+  "alternate_names": [
+    {
+      "tr": "Bulgur Tekkesi",
+      "en": "Bulgur Tekke"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [
+    "tekke",
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "fütüvvet yapısı",
+    "tekke",
+    "zaviye",
+    "firuze çini",
+    "Selçuklu"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Sephavan Mahallesi",
+    "address": "Bulgur Dede Sokak; Aziziye Camii'nin batısında",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "75-77"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.869256,
+      "lng": 32.500133,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/309370932 ('Bulgur Dede (Tekke) Mescidi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl (Selçuklu dönemi)",
+      "en": "13th century (Seljuk period)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitabe yok; inşa tekniği, malzeme ve süslemelerden XIII. yüzyılda Selçuklu devrinde yapıldığı anlaşılmaktadır. Kesin yıl verilmemiştir.",
+      "en": "No inscription; construction technique, materials and decoration indicate the 13th century, Seljuk period. No exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "75"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Anadolu Türk mimarisinde ender rastlanan fütüvvet yapılarından Bulgur Tekkesi'nin mescidi. Kare planlı, tek kubbeli harimin yanında son cemaat yeri, türbe ve zaviye bölümleri bulunur; pencere köşeliklerinde firuze ve patlıcan moru mozaik çiniler görülür.",
+    "en": "The masjid of the Bulgur Tekke, one of the rare futuwwa structures in Anatolian Turkish architecture. Besides the square, single-domed harim it has a narthex, a tomb and a zawiya, and its window spandrels carry turquoise and eggplant-purple mosaic tiles."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Mescit, Meram İlçesi, Sephavan Mahallesi, Bulgur Dede Sokak'ta, Aziziye Camii'nin batısındadır. Anadolu Türk mimarisinde ender rastlanan fütüvvet yapılarından Bulgur Tekkesi'nin bânîsi ve inşa tarihi bilinmemektedir. Mescit üzerinde yaptıranı ve tarihi gösteren bir kitâbe yoktur; inşa tekniği, malzeme ve süslemelerinden XIII. yüzyılda, Selçuklu devrinde yapıldığı anlaşılmaktadır.",
+        "en": "The masjid stands on Bulgur Dede Street, Sephavan Neighborhood, Meram District, west of the Aziziye Mosque. The builder and construction date of the Bulgur Tekke, one of the rare futuwwa structures in Anatolian Turkish architecture, are unknown. There is no inscription; technique, materials and decoration show it was built in the 13th century, in the Seljuk period."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "75"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlıdır; tek kubbeli harim, üç bölümlü son cemaat yeri, türbe ve zaviyeden oluşur. Kuzeydoğudaki silindirik gövdeli ahşap minare sonradan eklenmiştir. Beden duvarlarında altta iri Gödene taşı, üstte ve kubbede tuğla kullanılmıştır. Güney cephede üç, doğu cephede iki adet iki katlı pencere vardır; sivri kemerli pencerelerin köşeliklerinde firuze ve patlıcan moru mozaik çinilerle geometrik süslemeler yapılmıştır. Giriş kapısı kuzeydoğudadır. Son cemaat yerinin orijinal örtüsü yıkılmış, bugün düz damlıdır; kuzeyinde iki serbest, iki duvara bitişik yarım sütun vardır ve başlık ile kaidelerin köşeleri mukarnaslıdır. Doğudaki merdiven harime, batıdaki merdiven türbeye çıkar.",
+        "en": "The masjid has a square plan: a single-domed harim, a three-section narthex, a tomb and a zawiya. The cylindrical wooden minaret in the northeast was added later. Large Gödene stone is used low in the walls, brick above and in the dome. There are three two-storey windows on the south facade and two on the east; geometric decoration in turquoise and eggplant-purple mosaic tiles fills the spandrels of the pointed-arched windows. The entrance is in the northeast. The narthex's original cover has collapsed and it is now flat-roofed; its north side has two free-standing and two engaged half columns with muqarnas-cornered capitals and bases. The east stair leads to the harim, the west stair to the tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "75-76"
+        }
+      ]
+    },
+    {
+      "id": "harim-turbe-zaviye",
+      "order": 3,
+      "title": {
+        "tr": "Harim, Türbe ve Zaviye",
+        "en": "Harim, Tomb and Zawiya"
+      },
+      "body": {
+        "tr": "Son cemaat yerinin güney duvarının ortasında on sıra mukarnas kavsaralı, dikdörtgen formlu anıtsal bir mihrap görülür. Türbe, kuzey-güney yönünde uzanan dikdörtgen planlı ve beşik tonozludur; güney duvarında bir pencere, batı duvarında iki dikdörtgen niş, doğu duvarında harimle bağlantılı bir kapı açıklığı vardır. Harim kare planlı, Türk üçgeni geçişli bir kubbeyle örtülüdür; duvarlar belli yüksekliğe kadar altıgen firuze çinilerle kaplıdır (dökülenler yeniden yapılmıştır). Mihrap nişinin içinde firuze ve patlıcan moru mozaik çinilerle stilize \"Ali\" yazıları ve çok kollu yıldızlar vardır. Harimin batısında beşik tonozlu zaviye, altında kare planlı düz damlı bir zemin kat bulunur; zemin kata harimin kuzeybatısındaki açıklıktan inilir.",
+        "en": "In the middle of the narthex's south wall is a monumental rectangular mihrab with ten rows of muqarnas. The tomb is rectangular, barrel-vaulted, with a window in the south wall, two niches in the west wall and a door to the prayer hall in the east wall. The square harim is covered by a dome on Turkish-triangle transitions; walls are tiled in hexagonal turquoise tiles up to a certain height (fallen tiles were remade). Inside the mihrab niche, stylized \"Ali\" inscriptions and multi-armed stars are made of turquoise and eggplant-purple mosaic tiles. West of the harim is a barrel-vaulted zawiya; under the harim is a square flat-roofed ground floor entered from an opening in the northwest."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "76-77"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "bulgurcuk-hastaligi",
+      "title": {
+        "tr": "Bulgur Tekkesi'nin adı",
+        "en": "Origin of the name Bulgur Tekke"
+      },
+      "body": {
+        "tr": "İbrahim Hakkı Konyalı, halk arasında \"bulgurcuk\" denen kaşıntılı hastalığa yakalananların buraya getirildiğini kaydeder. Hastaların burada şifa bulacağına inanıldığı için \"Bulgur Tekkesi\" adının verildiği rivayet edilir.",
+        "en": "Ibrahim Hakki Konyali records that patients with the itchy disease popularly called \"bulgurcuk\" were brought here. It is rumored that the place was called \"Bulgur Tekke\" because the patients were believed to be healed here."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "75"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "kare",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "75"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Harim kubbe sayısı",
+        "en": "Domes over the harim"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "75"
+        }
+      ]
+    },
+    {
+      "key": "duvar_malzemesi",
+      "label": {
+        "tr": "Duvar malzemesi",
+        "en": "Wall material"
+      },
+      "value": "Alt kısımda iri Gödene taşı; üst kısım ve kubbede tuğla",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "75"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_mukarnas_sirasi",
+      "label": {
+        "tr": "Son cemaat yeri mihrabı mukarnas sırası",
+        "en": "Muqarnas rows of the narthex mihrab"
+      },
+      "value": 10,
+      "unit": "sıra",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "76"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Seyyid Ahmet",
+      "role": {
+        "tr": "Son cemaat yerindeki mezarın sahibi (Şeyh Mahmud oğlu)",
+        "en": "Owner of the grave in the narthex (son of Şeyh Mahmud)"
+      }
+    },
+    {
+      "name": "İbrahim Hakkı Konyalı",
+      "role": {
+        "tr": "Tekkenin adıyla ilgili kaydı aktaran araştırmacı",
+        "en": "Researcher cited for the name of the tekke"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "seyyid-ahmet-sahidesi",
+      "location": {
+        "tr": "Son cemaat yerindeki mezarın şahidesi",
+        "en": "Gravestone of the grave in the narthex"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 847,
+        "gregorian": "1443"
+      },
+      "note": {
+        "tr": "Üç satırlık Arapça şahide; kitap metni vermiyor. Kabir Şeyh Mahmud oğlu Seyyid Ahmet'e aittir ve H. 847 / M. 1443 Şaban ayına tarihlenir.",
+        "en": "Three-line Arabic gravestone; the book gives no text. The grave belongs to Seyyid Ahmet, son of Şeyh Mahmud, and dates to Shaban of AH 847 / AD 1443."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "77"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "seyyid-ahmet-mezari",
+      "year": 1443,
+      "date": null,
+      "hijri": "847",
+      "type": "record",
+      "title": {
+        "tr": "Son cemaat yerindeki Seyyid Ahmet'in mezar tarihi (Şaban)",
+        "en": "Date of Seyyid Ahmet's grave in the narthex (Shaban)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "77"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Çini kaplı harim",
+        "en": "Tiled harim"
+      },
+      "hint": {
+        "tr": "Mihrap nişinin içindeki stilize \"Ali\" yazılarına bakın.",
+        "en": "Look for the stylized \"Ali\" inscriptions inside the mihrab niche."
+      },
+      "section_id": "harim-turbe-zaviye"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Bulgur Dede Mescidi kare planlı, tek kubbeli bir yapıdır. Alt kısımlarda iri taş, üst kısımlarda tuğla görülür. Sivri kemerli pencerelerin köşelerinde firuze ve patlıcan moru mozaik çiniler vardır. Kuzeydoğuda ahşap bir minare yükselir. Önde üç bölümlü, düz damlı bir son cemaat yeri bulunur; iki yanındaki merdivenlerden biri ana mekâna, diğeri türbeye çıkar.",
+      "en": "Bulgur Dede Masjid is a square, single-domed building. Large stone is visible low down and brick higher up. Turquoise and eggplant-purple mosaic tiles decorate the corners of the pointed-arched windows. A wooden minaret rises in the northeast. In front is a three-section flat-roofed narthex; of the two stairs beside it, one leads to the prayer hall and the other to the tomb."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 75-77)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "74-78"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=203",
+        "original_name": "pdf-s39-xref203",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "74"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Bulgur Dede Mescidi (kitap s. 74)",
+        "en": "Bulgur Dede Masjid (book p. 74)"
+      },
+      "alt": {
+        "tr": "Köşesinden görünen, tuğla duvarlı, mescit. Üst katta üç adet kemerli pencere var. Pencerelerin üstünde mavi çinilı süslemeler. Çatıda bir yağmur borusu.",
+        "en": "Corner view of a brick mosque. Three arched windows on the upper floor. Blue tile decorations above the windows. A downspout on the roof."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=205",
+        "original_name": "pdf-s39-xref205",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "75"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Bulgur Dede Mescidi (kitap s. 75)",
+        "en": "Bulgur Dede Masjid (book p. 75)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış sütunun köşesinde geometrik bir süsleme var. Altında mavi ve sarı desenli bir halı.",
+        "en": "Geometric carving on a stone column corner. Blue and yellow patterned carpet below."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=207",
+        "original_name": "pdf-s39-xref207",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "75"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Bulgur Dede Mescidi (kitap s. 75)",
+        "en": "Bulgur Dede Masjid (book p. 75)"
+      },
+      "alt": {
+        "tr": "Mavi ve siyah çinilardan oluşan geometrik bir desen. Yıldız şekilleri ve dikdörtgenlerle oluşturulmuş bir mozaik.",
+        "en": "Geometric pattern made of blue and black tiles. A mosaic of stars and rectangles."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=212",
+        "original_name": "pdf-s40-xref212",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "76"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Bulgur Dede Mescidi (kitap s. 76)",
+        "en": "Bulgur Dede Masjid (book p. 76)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış, kemerli açıklıklar ve geometrik desenlerle süslü bir duvar detayı.",
+        "en": "A stone wall detail with arched openings and geometric patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=216",
+        "original_name": "pdf-s40-xref216",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "76"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Bulgur Dede Mescidi (kitap s. 76)",
+        "en": "Bulgur Dede Masjid (book p. 76)"
+      },
+      "alt": {
+        "tr": "Kiremit duvarın içinde mavi ve beyaz zeminli geometrik desenli çinilarla kaplı bir kemerli pencere.",
+        "en": "A brick wall features an arched window with blue and white geometric tilework above it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=218",
+        "original_name": "pdf-s40-xref218",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "77"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Bulgur Dede Mescidi (kitap s. 77)",
+        "en": "Bulgur Dede Masjid (book p. 77)"
+      },
+      "alt": {
+        "tr": "Kırmızı halılarla kaplı zeminde ahşap merdivenli minber, mavi çinilı duvarlar ve kemerli pencereler.",
+        "en": "Red carpets cover the floor, with a wooden minbar, blue tiled walls, and arched windows."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=230",
+        "original_name": "pdf-s41-xref230",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "78"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Bulgur Dede Mescidi (kitap s. 78)",
+        "en": "Bulgur Dede Masjid (book p. 78)"
+      },
+      "alt": {
+        "tr": "Yeşil boyalı, kemerli bir mihrap, üzerinde yazılar ve süslemeler var. Kırmızı halı, ahşap paneller ve yeşil sütunlar mevcut.",
+        "en": "A green-painted arched mihrab with inscriptions and decorations. Red carpet, wooden panels, and green columns are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

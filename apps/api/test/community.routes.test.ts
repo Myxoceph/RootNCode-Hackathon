@@ -5,17 +5,19 @@
 import "dotenv/config";
 import {
   AnonymousSessionResponseSchema,
+  AppUserSchema,
   ContributionSchema,
   ModerationItemSchema,
   ModerationListResponseSchema,
   MyContributionsResponseSchema,
   PulseResponseSchema,
+  SessionResponseSchema,
 } from "@vagabonds/contracts";
 import { randomUUID } from "node:crypto";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildApp } from "../src/app.ts";
 import { createPrismaClient, type PrismaClient } from "../src/db/prisma.ts";
-import { hashToken, newToken } from "../src/modules/community/auth.ts";
+import { hashPassword, hashToken, newToken } from "../src/modules/community/auth.ts";
 import { CONTRIBUTIONS_PER_HOUR } from "../src/modules/community/community.routes.ts";
 
 const DATABASE_URL = process.env["DATABASE_URL"];
@@ -28,9 +30,11 @@ describe.skipIf(!DATABASE_URL)("Ziyaretçi Nabzı (PostgreSQL)", () => {
   const userIds: string[] = [];
   let moderator: string;
 
-  async function createUser(role: "visitor" | "moderator", nickname = `test-${role}`) {
+  async function createUser(role: "visitor" | "moderator" | "admin", nickname = `test-${role}`) {
     const token = newToken();
-    const user = await prisma.app_user.create({ data: { nickname, role, token_hash: hashToken(token) } });
+    const user = await prisma.app_user.create({
+      data: { nickname, role, sessions: { create: { token_hash: hashToken(token) } } },
+    });
     userIds.push(user.id);
     return { id: user.id, token };
   }
@@ -72,9 +76,9 @@ describe.skipIf(!DATABASE_URL)("Ziyaretçi Nabzı (PostgreSQL)", () => {
       userIds.push(user.id);
       expect(user).toMatchObject({ nickname: "Gezgin Ayşe", role: "visitor" });
 
-      const stored = await prisma.app_user.findUniqueOrThrow({ where: { id: user.id } });
-      expect(stored.token_hash).toBe(hashToken(token));
-      expect(stored.token_hash).not.toContain(token);
+      const sessions = await prisma.user_session.findMany({ where: { user_id: user.id } });
+      expect(sessions.map((s) => s.token_hash)).toEqual([hashToken(token)]);
+      expect(user.username).toBeNull();
 
       const me = await app.inject({ method: "GET", url: "/me", headers: auth(token) });
       expect(me.statusCode).toBe(200);
@@ -92,6 +96,198 @@ describe.skipIf(!DATABASE_URL)("Ziyaretçi Nabzı (PostgreSQL)", () => {
       const unknown = await app.inject({ method: "GET", url: "/me", headers: auth(newToken()) });
       expect(unknown.statusCode).toBe(401);
       expect(unknown.json().error.code).toBe("UNAUTHORIZED");
+    });
+  });
+
+  describe("accounts", () => {
+    // Usernames are unique; a suffix keeps reruns against the same database apart.
+    const suffix = randomUUID().slice(0, 8);
+    const name = (base: string) => `${base}_${suffix}`;
+
+    // Each account needs its own e-mail; one made from the username unless the test gives it.
+    const mail = (username: unknown) => `${String(username).toLowerCase()}@ornek.test`;
+
+    async function register(payload: { username: string } & Record<string, unknown>, status = 201) {
+      const response = await app.inject({ method: "POST", url: "/auth/register", payload: { email: mail(payload.username), ...payload } });
+      expect(response.statusCode, response.body).toBe(status);
+      if (status !== 201) return { error: response.json().error.code as string };
+      const session = SessionResponseSchema.parse(response.json());
+      userIds.push(session.user.id);
+      return session;
+    }
+
+    function login(username: string, password: string) {
+      return app.inject({ method: "POST", url: "/auth/login", payload: { username, password } });
+    }
+
+    it("registers with a lowercase username and stores only a scrypt hash of the password", async () => {
+      const session = await register({ username: name("Ayse.Gezgin").toUpperCase(), password: "kubbe-altinda-42" });
+      if (!("user" in session)) throw new Error("expected a session");
+      expect(session.user).toMatchObject({
+        username: name("ayse.gezgin"),
+        nickname: name("ayse.gezgin"),
+        role: "visitor",
+        email: mail(name("ayse.gezgin")),
+        fullName: null,
+        photoUrl: null,
+      });
+
+      const stored = await prisma.app_user.findUniqueOrThrow({ where: { id: session.user.id } });
+      expect(stored.password_hash).toMatch(/^scrypt\$32768\$8\$1\$/);
+      expect(stored.password_hash).not.toContain("kubbe-altinda-42");
+      expect((await app.inject({ method: "GET", url: "/me", headers: auth(session.token) })).statusCode).toBe(200);
+    });
+
+    it("rejects a taken username, whatever its case, and invalid input", async () => {
+      await register({ username: name("taken"), password: "yeterince-uzun" });
+      expect(await register({ username: name("TAKEN"), password: "baska-bir-parola" }, 409)).toEqual({ error: "USERNAME_TAKEN" });
+      expect(await register({ username: "a", password: "yeterince-uzun" }, 400)).toEqual({ error: "INVALID_BODY" });
+      expect(await register({ username: name("kisa"), password: "1234567" }, 400)).toEqual({ error: "INVALID_BODY" });
+    });
+
+    it("needs an e-mail, keeps it lowercase and gives each address one account", async () => {
+      const session = await register({ username: name("posta"), password: "yeterince-uzun", email: ` ${name("Posta")}@Ornek.TEST ` });
+      if (!("user" in session)) throw new Error("expected a session");
+      expect(session.user.email).toBe(`${name("posta")}@ornek.test`);
+
+      const same = { password: "yeterince-uzun", email: `${name("POSTA")}@ornek.test` };
+      expect(await register({ username: name("posta2"), ...same }, 409)).toEqual({ error: "EMAIL_TAKEN" });
+      expect(await register({ username: name("posta3"), password: "yeterince-uzun", email: "posta-degil" }, 400)).toEqual({ error: "INVALID_BODY" });
+      const without = await app.inject({ method: "POST", url: "/auth/register", payload: { username: name("posta4"), password: "yeterince-uzun" } });
+      expect([without.statusCode, without.json().error.code]).toEqual([400, "INVALID_BODY"]);
+    });
+
+    it("keeps a full name, and changes it or the nickname with PATCH /me", async () => {
+      const session = await register({ username: name("adli"), password: "yeterince-uzun", fullName: "  Ayşe   Yılmaz " });
+      if (!("user" in session)) throw new Error("expected a session");
+      expect(session.user.fullName).toBe("Ayşe Yılmaz");
+
+      const patch = (payload: object) => app.inject({ method: "PATCH", url: "/me", headers: auth(session.token), payload });
+      const renamed = await patch({ nickname: "Kubbe Sever", fullName: "Ayşe Nur Yılmaz" });
+      expect(renamed.statusCode, renamed.body).toBe(200);
+      expect(AppUserSchema.parse(renamed.json())).toMatchObject({ nickname: "Kubbe Sever", fullName: "Ayşe Nur Yılmaz" });
+      expect(AppUserSchema.parse((await patch({ fullName: null })).json())).toMatchObject({ nickname: "Kubbe Sever", fullName: null });
+      expect((await patch({})).statusCode).toBe(400);
+      expect((await patch({ fullName: "<script>" })).statusCode).toBe(400);
+      expect((await app.inject({ method: "PATCH", url: "/me", payload: { fullName: "Ayşe" } })).statusCode).toBe(401);
+    });
+
+    it("signs in with a new token per device and the same answer for a wrong password or an unknown user", async () => {
+      const first = await register({ username: name("iki.cihaz"), password: "dogru-parola-1", nickname: "İki Cihaz" });
+      if (!("token" in first)) throw new Error("expected a session");
+
+      const second = await login(name("IKI.CIHAZ"), "dogru-parola-1");
+      expect(second.statusCode).toBe(200);
+      const { token, user } = SessionResponseSchema.parse(second.json());
+      expect(token).not.toBe(first.token);
+      expect(user).toMatchObject({ nickname: "İki Cihaz" });
+
+      const wrong = await login(name("iki.cihaz"), "yanlis-parola");
+      const unknown = await login(name("hic.yok"), "dogru-parola-1");
+      expect([wrong.statusCode, unknown.statusCode]).toEqual([401, 401]);
+      expect(wrong.json()).toEqual(unknown.json());
+
+      // Signing out ends only this device's session.
+      expect((await app.inject({ method: "POST", url: "/auth/logout", headers: auth(token) })).statusCode).toBe(204);
+      expect((await app.inject({ method: "GET", url: "/me", headers: auth(token) })).statusCode).toBe(401);
+      expect((await app.inject({ method: "GET", url: "/me", headers: auth(first.token) })).statusCode).toBe(200);
+    });
+
+    describe("deleting an account", () => {
+      const remove = (token: string | null, password: unknown) =>
+        app.inject({ method: "POST", url: "/auth/delete-account", ...(token ? { headers: auth(token) } : {}), payload: { password } });
+
+      async function withPassword(role: "visitor" | "moderator" | "admin", password: string) {
+        const user = await createUser(role, `test-silinecek-${role}`);
+        const username = name(`silinecek.${role}`).toLowerCase();
+        await prisma.app_user.update({ where: { id: user.id }, data: { username, email: mail(username), password_hash: await hashPassword(password) } });
+        return user;
+      }
+
+      it("needs the password, then takes the account and what is theirs with it", async () => {
+        const user = await withPassword("visitor", "dogru-parola-1");
+        expect((await contribute(user.token, { kind: "memory", body: "Silinince bu anı da gitmeli." })).statusCode).toBe(201);
+        const page = await app.inject({ method: "POST", url: "/me/journal", headers: auth(user.token), payload: { text: "Defter sayfası" } });
+        expect(page.statusCode).toBe(201);
+
+        expect((await remove(null, "dogru-parola-1")).statusCode).toBe(401);
+        expect((await remove(user.token, 12345)).statusCode).toBe(400);
+        const wrong = await remove(user.token, "yanlis-parola");
+        expect(wrong.statusCode).toBe(403);
+        expect(wrong.json()).toMatchObject({ error: { code: "WRONG_PASSWORD" } });
+        expect((await app.inject({ method: "GET", url: "/me", headers: auth(user.token) })).statusCode).toBe(200);
+
+        expect((await remove(user.token, "dogru-parola-1")).statusCode).toBe(204);
+        expect((await app.inject({ method: "GET", url: "/me", headers: auth(user.token) })).statusCode).toBe(401);
+        expect(await prisma.app_user.count({ where: { id: user.id } })).toBe(0);
+        expect(await prisma.contribution.count({ where: { user_id: user.id } })).toBe(0);
+        expect(await prisma.journal_entry.count({ where: { user_id: user.id } })).toBe(0);
+        expect(await prisma.user_session.count({ where: { user_id: user.id } })).toBe(0);
+      });
+
+      it("refuses staff: a review keeps its reviewer, even after the role is gone", async () => {
+        const admin = await withPassword("admin", "dogru-parola-2");
+        const moderatorUser = await withPassword("moderator", "dogru-parola-3");
+        for (const [token, password] of [[admin.token, "dogru-parola-2"], [moderatorUser.token, "dogru-parola-3"]] as const) {
+          const refused = await remove(token, password);
+          expect(refused.statusCode).toBe(403);
+          expect(refused.json()).toMatchObject({ error: { code: "STAFF_ACCOUNT" } });
+        }
+        expect(await prisma.app_user.count({ where: { id: { in: [admin.id, moderatorUser.id] } } })).toBe(2);
+
+        const author = await createUser("visitor", "test-yazar");
+        expect((await contribute(author.token, { kind: "tip", body: "Sabah erken gidin, kalabalık olmuyor." })).statusCode).toBe(201);
+        await prisma.contribution.updateMany({ where: { user_id: author.id }, data: { reviewed_by: moderatorUser.id, reviewed_at: new Date(), status: "approved" } });
+        await prisma.app_user.update({ where: { id: moderatorUser.id }, data: { role: "visitor" } });
+        expect((await remove(moderatorUser.token, "dogru-parola-3")).statusCode).toBe(403);
+        expect(await prisma.app_user.count({ where: { id: moderatorUser.id } })).toBe(1);
+
+        // The author leaving takes the note with it, reviewed or not; the moderator is untouched.
+        await prisma.app_user.update({ where: { id: author.id }, data: { username: name("yazar"), email: mail(name("yazar")), password_hash: await hashPassword("dogru-parola-4") } });
+        expect((await remove(author.token, "dogru-parola-4")).statusCode).toBe(204);
+        expect(await prisma.contribution.count({ where: { user_id: author.id } })).toBe(0);
+        expect(await prisma.app_user.count({ where: { id: moderatorUser.id } })).toBe(1);
+      });
+
+      it("refuses a visitor with no password", async () => {
+        const anonymous = await createUser("visitor", "test-anonim");
+        expect((await remove(anonymous.token, "ne-olursa-olsun")).statusCode).toBe(403);
+        expect(await prisma.app_user.count({ where: { id: anonymous.id } })).toBe(1);
+      });
+    });
+
+    it("turns an anonymous visitor into an account that keeps its contributions", async () => {
+      const { token } = await createUser("visitor", "Anonim Gezgin");
+      expect((await contribute(token, { kind: "memory", body: "Çocukken burada top oynardık." })).statusCode).toBe(201);
+
+      const upgrade = (payload: object) => app.inject({ method: "POST", url: "/auth/upgrade", headers: auth(token), payload });
+      const upgraded = await upgrade({ username: name("eski.anonim"), password: "artik-hesabim-var", email: mail(name("eski.anonim")) });
+      expect(upgraded.statusCode, upgraded.body).toBe(200);
+      expect(AppUserSchema.parse(upgraded.json())).toMatchObject({
+        username: name("eski.anonim"),
+        nickname: "Anonim Gezgin",
+        email: mail(name("eski.anonim")),
+      });
+
+      const signedIn = SessionResponseSchema.parse((await login(name("eski.anonim"), "artik-hesabim-var")).json());
+      const mine = await app.inject({ method: "GET", url: "/me/contributions", headers: auth(signedIn.token) });
+      expect(mine.json().items).toHaveLength(1);
+
+      const again = await upgrade({ username: name("ikinci.ad"), password: "artik-hesabim-var", email: mail(name("ikinci.ad")) });
+      expect([again.statusCode, again.json().error.code]).toEqual([409, "ALREADY_REGISTERED"]);
+    });
+
+    it("does not let a banned account sign in", async () => {
+      const session = await register({ username: name("yasakli"), password: "yasakli-parola" });
+      if (!("user" in session)) throw new Error("expected a session");
+      await prisma.app_user.update({ where: { id: session.user.id }, data: { banned_at: new Date() } });
+      const response = await login(name("yasakli"), "yasakli-parola");
+      expect([response.statusCode, response.json().error.code]).toEqual([403, "USER_BANNED"]);
+    });
+
+    it("gives an admin the moderator routes", async () => {
+      const { token } = await createUser("admin", "test-admin");
+      expect((await app.inject({ method: "GET", url: "/admin/contributions", headers: auth(token) })).statusCode).toBe(200);
     });
   });
 
@@ -207,6 +403,14 @@ describe.skipIf(!DATABASE_URL)("Ziyaretçi Nabzı (PostgreSQL)", () => {
         (await app.inject({ method: "GET", url: "/me/contributions", headers: auth(token) })).json(),
       );
       expect(mine.items.find((item) => item.id === id)).toMatchObject({ status: "rejected", rejectReason: "Doğrulanamadı" });
+    });
+
+    it("leaves a moderator's own contribution to another moderator", async () => {
+      const author = await createUser("moderator", "test-moderator-yazar");
+      const id = (await contribute(author.token, { kind: "tip", body: "Avlu kapısı sabah 9'da açılıyor." })).json().id;
+      const own = await app.inject({ method: "POST", url: `/admin/contributions/${id}/approve`, headers: auth(author.token) });
+      expect([own.statusCode, own.json().error.code]).toEqual([403, "OWN_CONTRIBUTION"]);
+      expect((await app.inject({ method: "POST", url: `/admin/contributions/${id}/approve`, headers: auth(moderator) })).statusCode).toBe(200);
     });
 
     it("answers 404 for unknown contributions and 400 for malformed ids", async () => {

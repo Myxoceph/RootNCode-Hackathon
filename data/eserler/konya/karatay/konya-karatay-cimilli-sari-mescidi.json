@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-cimilli-sari-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Era kodu atanmadı: kitap yalnızca 'XX. yüzyıl başları' diyor (Geç Osmanlı/Cumhuriyet ayrımı kitapta yok)",
+      "Banisi ve inşa tarihi kitapta yok; vakıf bilgisi yok",
+      "Sayfa düzeninde başlık metinden ayrık; Köprübaşı Caddesi'ndeki bu paragraf sayfa sırasına göre Cimilli (Sarı) Mescidi'ne atandı, teyit edilmeli",
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Cimilli (Sarı) Mescidi",
+    "en": "Cimilli (Sarı) Masjid"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mahalle mescidi",
+    "kırma çatı",
+    "Karatay"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Sırçalı Mescit Mahallesi",
+    "address": "Köprübaşı Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "238"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl başları",
+      "en": "Early 20th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Plan ve mimari özelliklerden hareketle XX. yüzyıl başlarına tarihlendiriliyor; kesin yıl yok.",
+      "en": "Dated to the early 20th century from plan and architectural features; no exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "238"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karatay'da, Köprübaşı Caddesi üzerinde, kare planlı, sade bir mescit. İlk inşası ve banisi hakkında bilgi yoktur; XX. yüzyıl başlarına tarihlendirilir.",
+    "en": "A simple square-plan masjid in Karatay on Köprübaşı Street. There is no information about its first construction or founder; it is dated to the early 20th century."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Mescit Karatay, Sırçalı Mescit Mahallesi, Köprübaşı Caddesi üzerindedir. İlk inşası ve banisi hakkında herhangi bir bilgi yoktur; plan ve mimari özelliklerinden hareketle yapı XX. yüzyıl başlarına tarihlendirilmektedir. Mescit kare planlıdır; üzeri içten düz dam, dıştan dört yöne eğimli kırma çatıyla kaplıdır. Güney ve batı cephelerinde ikişer dikdörtgen pencere vardır. Giriş batıya açılan bir kapıyladır. Harim sade düzenlidir: kuzeyde mahfil, kıble duvarında mihrap ve minber bulunur.",
+        "en": "The masjid is in Karatay, Sırçalı Mescit Neighborhood, on Köprübaşı Street. There is no information about its first construction and founder; from its plan and architectural features it is dated to the beginning of the 20th century. It has a square plan, covered with a flat roof inside and a hipped roof sloping in four directions outside. There are two rectangular windows each on the south and west facades. The entrance is through a door opening to the west. The harim is simple: a mahfil to the north and a mihrab and minbar on the qibla wall."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "238"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare plan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "238"
+        }
+      ]
+    },
+    {
+      "key": "pencere_guney_bati",
+      "label": {
+        "tr": "Güney ve batı cephelerinde pencere (her birinde)",
+        "en": "Windows on each of south and west facades"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "238"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, dıştan dört yöne eğimli çatılı sade bir mescit. Giriş batı cephesindeki kapıdandır; içeride kuzeyde mahfil, kıble duvarında mihrap ve minber vardır.",
+      "en": "A simple square masjid with a hipped roof. The entrance is a door on the west facade; inside there is a mahfil to the north and a mihrab and minbar on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "238-238"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=948",
+        "original_name": "pdf-s121-xref948",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "238"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cimilli (Sarı) Mescidi (kitap s. 238)",
+        "en": "Cimilli (Sarı) Masjid (book p. 238)"
+      },
+      "alt": {
+        "tr": "Köşede duran, kiremit çatılı, krem renkli duvarlı bir yapı. Pencereleri koyu çerçeveli, duvarlarda kiremit kaplamalı bir bölüm var.",
+        "en": "A corner building with a tiled roof and cream-colored walls. It has dark-framed windows and a lower section with tile cladding."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=950",
+        "original_name": "pdf-s121-xref950",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "238"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Cimilli (Sarı) Mescidi (kitap s. 238)",
+        "en": "Cimilli (Sarı) Masjid (book p. 238)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halılar, ahşap paneller, pencere ve ahşap merdivenli minber görülüyor.",
+        "en": "Red carpets, wooden panels, windows, and a wooden minbar with stairs are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

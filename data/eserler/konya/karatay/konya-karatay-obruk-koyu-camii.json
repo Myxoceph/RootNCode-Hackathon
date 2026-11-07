@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-obruk-koyu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Obruk Han'ın kayıt id'si/ilçesi metinde yok; han ile ilişki yalnızca konum olarak anılıyor, relation yazılmadı.",
+      "Banî kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metin ahşap mihrabı 'wooden altar' diye çeviriyor; Türkçe metin esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Obruk Köyü Camii",
+    "en": "Obruk Village Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "köy camii",
+    "ahşap direkli",
+    "bodur minare",
+    "Emin Usta",
+    "Dülgerli Köyü",
+    "tavan göbeği"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Obruk Köyü",
+    "address": "Obruk Köyü merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "195"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl",
+      "en": "19th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitâbe yok; tavandaki göbek süslemesinden Dülgerli Köyü'nden Emin Usta tarafından XIX. yüzyılda yapıldığı 'anlaşılmaktadır'.",
+      "en": "No inscription; from the ceiling medallion decoration it 'is understood' to have been built in the 19th century by Emin Usta of Dülgerli Village."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "195"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Obruk Köyü merkezinde, Obruk Gölü ve Han'ın kuzeybatısındaki, ahşap direkli, dört yöne eğimli çatılı; kuzeybatıda bodur minareli, hâlen ibadete açık köy camii.",
+    "en": "A wooden-pillared village mosque in the center of Obruk Village, northwest of Obruk Lake and the inn, with a hipped roof and a squat northwest minaret; still open for worship."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami, Karatay, Obruk Köyü merkezinde, Obruk Gölü ve Han'ın kuzeybatısında yer alır. İnşa tarihi ya da banisini belirten kitâbe yoktur. Tavandaki göbek süslemesinden hareketle XIX. yüzyılda Dülgerli Köyü'nden Emin Usta tarafından yapıldığı anlaşılmaktadır. Cami günümüzde de ibadete açıktır.",
+        "en": "The mosque is in the center of Obruk Village, northwest of Obruk Lake and the Inn. No inscription states the date or patron. From the ceiling medallion decoration it is understood to have been built in the 19th century by Emin Usta from Dülgerli Village. It is still open for worship."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "195"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Ahşap direkli cami derinlemesine dikdörtgen planlıdır ve dört yöne eğimli kırma çatılıdır; taş yığma beden duvarları sıvalıdır. Harime kuzey cephenin ortasındaki kapıdan girilir. Harim ahşap sütunlarla üç sahına ayrılmıştır; tavan içten ahşap kaplı düz damdır. Ahşap mahfil kuzey duvarına bitişik, iki ahşap direk üzerindedir. Mihrap nişi yarım daire planlı ve yarım kubbe kavsaralıdır; ahşap mihrabın bordürleri ajur tekniğinde geometrik ve bitkisel motiflerle bezelidir. Mihrabın sağında, güneybatı köşede sade ahşap minber bulunur. Kuzeybatı köşede kare prizmal kaideli, silindirik gövdeli, tek şerefeli bodur minare yer alır.",
+        "en": "The wooden-pillared mosque has a deeply rectangular plan and a hipped roof sloping in four directions; its stone masonry walls are plastered. The harim is entered from a door in the middle of the north facade. Wooden columns divide it into three naves; the ceiling is a flat roof with wooden cladding. The wooden mahfil sits on two wooden pillars against the north wall. The mihrab niche is semicircular with a semi-dome; the wooden mihrab's borders are decorated with openwork geometric and floral motifs. A simple wooden minbar stands in the southwest corner. In the northwest corner is a squat single-balcony minaret with a square prismatic base and cylindrical body."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "195"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Emin Usta",
+      "role": {
+        "tr": "Dülgerli Köyü'nden usta; tavan göbeğine göre yapımcı",
+        "en": "Master from Dülgerli Village; builder according to the ceiling medallion"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sıvalı taş yığma duvarlı, ahşap direkli, kırma çatılı köy camisidir. Kuzey cephenin ortasındaki kapıdan girilir; ahşap sütunlar üç sahın oluşturur. Mihrabın bordürleri ajur tekniğinde geometrik ve bitkisel motiflidir. Kuzeybatı köşede kare kaideli, silindirik gövdeli, tek şerefeli bodur bir minare vardır.",
+      "en": "A village mosque of plastered stone masonry with wooden pillars and a hipped roof. Entry is through a door in the middle of the north facade; wooden columns form three naves. The mihrab's borders have openwork geometric and floral motifs. A squat single-balcony minaret with a square base stands in the northwest corner."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "195-195"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=750",
+        "original_name": "pdf-s99-xref750",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "195"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Obruk Köyü Camii (kitap s. 195)",
+        "en": "Obruk Village Mosque (book p. 195)"
+      },
+      "alt": {
+        "tr": "Ahşap sütunlar, kubbeli tavan ve ahşap tavan detayları olan cami içi.",
+        "en": "Interior of a mosque with wooden pillars, a domed ceiling, and wooden ceiling details."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=748",
+        "original_name": "pdf-s99-xref748",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "195"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Obruk Köyü Camii (kitap s. 195)",
+        "en": "Obruk Village Mosque (book p. 195)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kiremit çatılı cami ve yanında minaresi görülmektedir.",
+        "en": "A stone-walled mosque with a tiled roof and a minaret beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

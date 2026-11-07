@@ -1,0 +1,257 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-doganhisar-ayaslar-ulu-yukari-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Kesin yapım yılı ve banî kitapta yok.",
+      "Vakıf/vakfiye bilgisi kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Ayaslar Ulu (Yukarı) Camii",
+    "en": "Ayaslar Grand (Yukarı) Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap direkli",
+    "ahşap tavanlı",
+    "kalem işi",
+    "XVIII-XIX. yüzyıl"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Doğanhisar",
+    "neighborhood": "Ayaslar Mahallesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "414-415"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.118797,
+      "lng": 31.732517,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Ayaslar Mahallesi Aşağı Camii, 42-90, Başköy, Doğanhisar, Konya, İç Anadolu Bölgesi, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XVIII-XIX. yüzyıl",
+      "en": "18th-19th centuries"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitâbe yok; plan, mimari elemanlar ve süsleme özelliklerinden XVIII-XIX. yüzyıl olduğu anlaşılıyor. Kesin yıl verilmiyor.",
+      "en": "No inscription; dated to the 18th-19th centuries from plan, architectural elements and decoration. No exact year given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "414-415"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Ayaslar Mahallesi'nde, kitâbesiz, plan ve süslemesine göre XVIII-XIX. yüzyılda yapıldığı anlaşılan; ahşap direkli, turkuaz-beyaz boyalı, celî sülüs yazı madalyonlu cami.",
+    "en": "A mosque in Ayaslar Neighborhood, without inscription, dated by plan and decoration to the 18th-19th centuries; wooden pillars, turquoise-and-white paint, medallions in Celi Thuluth."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Camiye ait herhangi bir kitâbe yoktur. Yapının planı, mimari elemanları ve süsleme özellikleri göz önüne alındığında XVIII-XIX. yüzyıllarda yapıldığı anlaşılmaktadır. Yakın zamanda batı tarafa camiden bağımsız, iki şerefeli bir minare ve hemen yanına şadırvan eklenmiştir.",
+        "en": "There is no inscription. From its plan, architectural elements and decoration it is understood to date from the 18th-19th centuries. Recently a freestanding two-balcony minaret was added on the west side with a fountain beside it."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "414"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlı, ahşap direkli, ahşap tavanlı ve kırma çatılıdır; cepheler yeşil sıvalıdır. İç mekân güney, batı ve doğu cephelerdeki pencerelerle aydınlanır. Harim ahşap sütunlarla üç sahına ayrılmıştır; giriş kuzeydeki son cemaat yerinden sağlanır. Duvarlar ve direkler altta turkuaz, üstte beyaz boyalıdır.",
+        "en": "Deeply rectangular, with wooden pillars, wooden ceiling and hipped roof; facades are plastered green. Windows on the south, west and east light the interior. The harim is divided into three bays by wooden columns and entered from the northern narthex. Walls and pillars are turquoise below and white above."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "414"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "Mihrap ve süsleme",
+        "en": "Mihrab and decoration"
+      },
+      "body": {
+        "tr": "İç duvarlarda madalyonlar içinde celî sülüs hatla Allah (CC), Muhammed (SAV) ve dört halife isimleri yazılıdır. Giriş ekseninde, yarım daire planlı, mukarnas kavsaralı mihrabın etrafında akant başlıklı sütuncelerle sınırlanan üç sıra bordür vardır; yüzey turkuaz ve altın sarısı yağlı boyalıdır. Doğu duvarındaki vaaz kürsüsü turkuaz renktedir ve minberle benzer teknikte süslüdür.",
+        "en": "Medallions on the interior walls carry the names of Allah, Muhammad and the four caliphs in Celi Thuluth. The semicircular mihrab on the entrance axis has a muqarnas frame and three border rows bounded by acanthus-capital colonnettes; it is painted turquoise and golden yellow in oil. The turquoise sermon pulpit on the east wall is decorated like the minbar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "414-415"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Derinlemesine dikdörtgen planlı, ahşap direkli bir camidir; dış cepheleri yeşil sıvalıdır. İçeride ahşap sütunlar mekânı üç sahına ayırır, duvarlar ve direkler altta turkuaz, üstte beyazdır. Mihrap mukarnas kavsaralıdır ve turkuaz ile altın sarısı boyalıdır.",
+      "en": "A deeply rectangular mosque with wooden pillars and green-plastered facades. Inside, wooden columns divide the space into three bays; walls and pillars are turquoise below and white above. The mihrab has a muqarnas frame and is painted turquoise and golden yellow."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "414-416"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1802",
+        "original_name": "pdf-s209-xref1802",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "414"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ayaslar Ulu (Yukarı) Camii (kitap s. 414)",
+        "en": "Ayaslar Grand (Yukarı) Mosque (book p. 414)"
+      },
+      "alt": {
+        "tr": "İç mekanda, mavi sütunlar, kemerler, kubbeli mihrap ve duvarlarda geometrik desenli mozaikler var.",
+        "en": "Inside, blue pillars, arches, a domed mihrab, and geometric mosaic patterns on walls are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1804",
+        "original_name": "pdf-s209-xref1804",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "415"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Ayaslar Ulu (Yukarı) Camii (kitap s. 415)",
+        "en": "Ayaslar Grand (Yukarı) Mosque (book p. 415)"
+      },
+      "alt": {
+        "tr": "Yüksekten görünüşte, kırmızı kiremit çatılı cami, beyaz minare ve çevresindeki evlerle birlikte yeşil bir arazide yer alıyor.",
+        "en": "An aerial view shows a mosque with a red-tiled roof, a white minaret, and surrounding houses in a green landscape."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1808",
+        "original_name": "pdf-s210-xref1808",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "416"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Ayaslar Ulu (Yukarı) Camii (kitap s. 416)",
+        "en": "Ayaslar Grand (Yukarı) Mosque (book p. 416)"
+      },
+      "alt": {
+        "tr": "Bir cami ve minaresi, kiremit çatılı, taş duvarlı, arka planda dağlık bir yerleşim yerinde.",
+        "en": "A mosque with a minaret, tiled roof, stone walls, and a hillside settlement in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

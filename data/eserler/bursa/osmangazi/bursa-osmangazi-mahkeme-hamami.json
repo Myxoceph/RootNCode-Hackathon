@@ -72,7 +72,14 @@
         "source_id": "vk-bursa-c1",
         "pages": "697"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.180666,
+      "lng": 29.065071,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q131738463 ('Mahkeme Hamamı'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -447,6 +454,9 @@
   "relations": [
     {
       "target_id": "bursa-iznik-ibrahim-pasa-imareti",
+      "target_name": {
+        "tr": "İbrahim Paşa İmareti (İznik)"
+      },
       "type": "waqf_income",
       "description": {
         "tr": "Hamam, yedi köyle birlikte Paşa'nın İznik'teki imaretine vakfedilmiştir.",

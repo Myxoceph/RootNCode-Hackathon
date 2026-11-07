@@ -71,7 +71,11 @@ data/
 ├── enums.json                 # sabit listeler → lookup tabloları
 ├── sources.json               # kaynaklar (kitaplar, foto arşivi) → source tablosu
 ├── schema/eser.schema.json    # eser JSON'unun JSON Schema tanımı
+├── schema/sehir.schema.json   # şehir dosyasının (yöresel lezzetler) JSON Schema tanımı
+├── schema/sound.schema.json   # sounds.json'un JSON Schema tanımı
 ├── eserler/<il>/<ilçe>/<id>.json   # her eser bir dosya → asset + alt tablolar
+├── sehirler/<il>.json         # ilin yöresel lezzetleri, coğrafi işaret tesciliyle → city_dish
+├── sounds.json                # ortam sesi kayıtları (Sesli Zaman Kapsülü) → sound
 ├── tools/
 │   ├── validate.py            # şema + çapraz kontrol (veri ekibi her değişiklikte çalıştırır)
 │   ├── media_pipeline.py      # fotoğrafları indirir, sürümlerini üretir, manifesti yazar
@@ -126,7 +130,7 @@ Kısaltılmış örnek; tamamı [bursa-osmangazi-ulucami.json](eserler/bursa/osm
             "prepared_by": "...", "reviewed_by": null, "from": "Ulucamii", "todos": [], "data_quality_notes": [] },
   "name": { "tr": "Ulucami", "en": "Ulucami (Grand Mosque of Bursa)" },
   "subtitle": { "tr": "...", "en": "..." },
-  "alternate_names": [{ "tr": "Bursa'nın Ayasofyası", "en": "...", "note": "..." }],
+  "alternate_names": [{ "tr": "Bursa'nın Ayasofyası", "en": "...", "note": "...", "note_en": "..." }],
   "type": "cami", "secondary_types": [], "parent_id": null, "era": "erken-osmanli", "tags": ["..."],
   "location": { "region": "marmara", "city": "bursa", "district": "Osmangazi", "neighborhood": "...",
                 "address": "...", "coordinates": { "lat": 40.18417, "lng": 29.06167, "source": "manual",
@@ -187,6 +191,7 @@ region ─< city ─< asset >─ asset_type          (lookup tabloları enums.js
                     │  └── era
                     │
                     ├─< asset_section            tarihçe bölümleri
+                    ├─< asset_custom_block       adminin dosyaya eklediği ana bölümler
                     ├─< asset_legend             rivayetler
                     ├─< asset_fact               sayısal bilgiler
                     ├─< asset_person             kişiler
@@ -255,6 +260,48 @@ CREATE TABLE source (
   extra       jsonb   NOT NULL DEFAULT '{}' -- yazarlar, fotoğrafçılar vb.
 );
 
+-- ─────────────────────────────── Yöresel lezzetler (sehirler/<il>.json)
+CREATE TABLE city_dish (
+  id                     text PRIMARY KEY CHECK (id ~ '^[a-z]+-[a-z0-9]+(-[a-z0-9]+)*$'),  -- 'bursa-pideli-kofte'
+  city_code              text NOT NULL REFERENCES city(code),
+  sort_order             smallint NOT NULL,          -- dosyadaki sıra
+  kind                   text NOT NULL CHECK (kind IN ('main','meze','dessert','street')),
+  name_tr                text NOT NULL,
+  name_en                text,
+  description_tr         text NOT NULL,
+  description_en         text,
+  story_tr               text,                       -- geçmişi / hangi günlerde yapıldığı
+  story_en               text,
+  district               text,                       -- coğrafi sınırı bir ilçeyse
+  gi_portal_id           integer NOT NULL,           -- ci.turkpatent.gov.tr/cografi-isaretler/detay/<id>
+  gi_registration_number text NOT NULL,
+  gi_registered_on       date NOT NULL,
+  gi_type                text NOT NULL CHECK (gi_type IN ('mense','mahrec')),
+  gi_registrant          text NOT NULL,
+  gi_document_url        text NOT NULL,              -- sicil belgesi (PDF)
+  source_id              text NOT NULL REFERENCES source(id),
+  source_url             text,
+  confidence             confidence NOT NULL,
+  status                 text NOT NULL CHECK (status IN ('draft','in_review','published'))
+);
+CREATE INDEX city_dish_city_idx ON city_dish (city_code, sort_order);
+
+-- ─────────────────────────────── Ortam sesleri (sounds.json)
+CREATE TABLE sound (
+  key              text PRIMARY KEY CHECK (key ~ '^[a-z]+(-[a-z]+)*$'),  -- ambient_sound anahtarı, ör. 'hamam'
+  sort_order       smallint NOT NULL,
+  title_tr         text NOT NULL,
+  title_en         text,
+  file_key         text NOT NULL,              -- bucket'taki yol: 'sounds/hamam.mp3'
+  duration_seconds real NOT NULL CHECK (duration_seconds > 0),
+  captions         jsonb NOT NULL DEFAULT '[]', -- [{ "at": 3, "text_tr": "[...]", "text_en": "[...]" }]
+  license          text NOT NULL CHECK (license IN ('CC0-1.0','CC-BY-4.0')),
+  author           text,
+  source_url       text NOT NULL,
+  status           text NOT NULL CHECK (status IN ('draft','in_review','published')),
+  CHECK (license <> 'CC-BY-4.0' OR author IS NOT NULL)
+);
+
 -- ─────────────────────────────── Eser
 CREATE TABLE asset (
   id               text PRIMARY KEY CHECK (id ~ '^[a-z0-9]+(-[a-z0-9]+)*$'),
@@ -299,7 +346,7 @@ CREATE TABLE asset (
   founder_role          text,
   founder_confidence    confidence,
   architect_name        text,                       -- kesin biliniyorsa
-  architect_candidates  jsonb NOT NULL DEFAULT '[]', -- [{name, note}]
+  architect_candidates  jsonb NOT NULL DEFAULT '[]', -- [{name, note, note_en}]
   architect_confidence  confidence,
   waqf_name             text,
   waqf_deed             jsonb,                       -- {date_display, excerpt{tr,en}}
@@ -354,6 +401,18 @@ CREATE INDEX asset_search_idx    ON asset USING gin (
 );
 
 -- ─────────────────────────────── İçerik alt tabloları
+CREATE TABLE asset_custom_block (
+  asset_id    text NOT NULL REFERENCES asset(id) ON DELETE CASCADE,
+  slug        text NOT NULL,
+  sort_order  smallint NOT NULL,
+  after_block text NOT NULL,
+  title_tr    text NOT NULL,
+  title_en    text,
+  body_tr     text NOT NULL,
+  body_en     text,
+  PRIMARY KEY (asset_id, slug)
+);
+
 CREATE TABLE asset_section (
   asset_id    text NOT NULL REFERENCES asset(id) ON DELETE CASCADE,
   slug        text NOT NULL,
@@ -441,6 +500,9 @@ CREATE TABLE asset_relation (
   description_tr   text NOT NULL,
   description_en   text,
   confidence       confidence NOT NULL,
+  -- Hedef veri setinde yoksa adı (kaynaktaki gibi); uygulama bu bağı haritasız, adıyla gösterir.
+  target_name_tr   text,
+  target_name_en   text,
   UNIQUE (source_asset_id, target_asset_id, type_code),
   CHECK (source_asset_id <> target_asset_id)
 );
@@ -535,6 +597,8 @@ CREATE TABLE asset_media (
   sort_order        smallint NOT NULL DEFAULT 0,
   is_cover          boolean NOT NULL DEFAULT false,
   subject           text,                              -- exterior, portal, minber...
+  dossier_after     text,                              -- dosyadaki yeri: timeline, section:<id>, custom:<id>
+  panel_upload      boolean NOT NULL DEFAULT false,    -- panelden yüklendi; içe aktarma dokunmaz
   focal_x           real CHECK (focal_x BETWEEN 0 AND 1),
   focal_y           real CHECK (focal_y BETWEEN 0 AND 1),
   caption_tr        text NOT NULL,
@@ -575,14 +639,22 @@ CREATE TABLE inscription (
 );
 
 -- ─────────────────────────────── Topluluk katkısı ve moderasyon
--- Bu iki tabloyu yalnızca API yazar; içe aktarma bunlara dokunmaz.
-CREATE TABLE app_user (                               -- anonim ziyaretçi (takma ad) ya da moderatör
-  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  nickname    text NOT NULL CHECK (char_length(nickname) BETWEEN 2 AND 32),
-  role        text NOT NULL DEFAULT 'visitor' CHECK (role IN ('visitor','moderator')),
-  token_hash  text NOT NULL UNIQUE CHECK (token_hash ~ '^[0-9a-f]{64}$'),  -- token'ın SHA-256'sı
-  created_at  timestamptz NOT NULL DEFAULT now(),
-  banned_at   timestamptz
+-- Bu tabloları yalnızca API yazar; içe aktarma bunlara dokunmaz.
+CREATE TABLE app_user (                               -- ziyaretçi (anonim ya da hesaplı), moderatör, admin
+  id             uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  nickname       text NOT NULL CHECK (char_length(nickname) BETWEEN 2 AND 32),
+  role           text NOT NULL DEFAULT 'visitor' CHECK (role IN ('visitor','moderator','admin')),
+  created_at     timestamptz NOT NULL DEFAULT now(),
+  banned_at      timestamptz,
+  username       text UNIQUE CHECK (username ~ '^[a-z0-9][a-z0-9_.]{2,31}$'),  -- anonimde NULL
+  password_hash  text CHECK (password_hash LIKE 'scrypt$%'),
+  CHECK ((username IS NULL) = (password_hash IS NULL))
+);
+
+CREATE TABLE user_session (                           -- cihaz başına oturum; çıkış yalnızca onu siler
+  token_hash  text PRIMARY KEY CHECK (token_hash ~ '^[0-9a-f]{64}$'),  -- token'ın SHA-256'sı
+  user_id     uuid NOT NULL REFERENCES app_user(id) ON DELETE CASCADE,
+  created_at  timestamptz NOT NULL DEFAULT now()
 );
 
 CREATE TABLE contribution (
@@ -590,18 +662,27 @@ CREATE TABLE contribution (
   asset_id       text NOT NULL REFERENCES asset(id) ON DELETE CASCADE,
   user_id        uuid NOT NULL REFERENCES app_user(id) ON DELETE CASCADE,
   kind           text NOT NULL CHECK (kind IN ('photo','memory','tip','correction')),
-  media_id       uuid REFERENCES media(id),            -- kind = photo ise
+  media_id       uuid REFERENCES media(id),            -- kullanılmıyor; fotoğraf photo_upload'da
   body           text,
   status         text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected')),
   reviewed_by    uuid REFERENCES app_user(id),         -- moderatör
   reviewed_at    timestamptz,
   reject_reason  text,
   created_at     timestamptz NOT NULL DEFAULT now(),
-  CHECK (kind <> 'photo' OR media_id IS NOT NULL),
   CHECK (status = 'pending' OR (reviewed_by IS NOT NULL AND reviewed_at IS NOT NULL))
 );
 CREATE INDEX contribution_queue_idx ON contribution (created_at) WHERE status = 'pending';
 CREATE INDEX contribution_approved_idx ON contribution (asset_id, created_at DESC) WHERE status = 'approved';
+
+CREATE TABLE photo_upload (                           -- ziyaretçi fotoğrafı (kind = photo), meta verisi silinmiş
+  contribution_id  uuid PRIMARY KEY REFERENCES contribution(id) ON DELETE CASCADE,
+  content_type     text NOT NULL CHECK (content_type IN ('image/jpeg', 'image/png')),
+  bytes            bytea NOT NULL CHECK (octet_length(bytes) BETWEEN 1 AND 5242880),
+  width            integer NOT NULL CHECK (width > 0),
+  height           integer NOT NULL CHECK (height > 0),
+  sha256           text NOT NULL CHECK (sha256 ~ '^[0-9a-f]{64}$'),
+  created_at       timestamptz NOT NULL DEFAULT now()
+);
 CREATE INDEX contribution_user_idx ON contribution (user_id, created_at DESC);
 
 -- ─────────────────────────────── Değişiklik geçmişi (admin panelde her kayıt)
@@ -642,6 +723,8 @@ Bir tabloya sütun eklemek ya da yeni tablo açmak için:
 |---|---|
 | `enums.json` → `regions`, `cities`, `asset_types`, `eras`, `relation_types`, `timeline_event_types` | aynı adlı lookup tabloları (`code`, `label.tr` → `label_tr`…) |
 | `sources.json` → `sources[]` | `source` (tanımsız alanlar `extra` jsonb'ye) |
+| `sounds.json` → `sounds[]` | `sound` (`file` → `file_key`, dizideki sıra → `sort_order`, `captions[]` → jsonb `[{at, text_tr, text_en}]`). Dosyadan çıkarılan ses DB'den silinir. |
+| `sehirler/<il>.json` → `dishes[]` | `city_dish` (`city` → `city_code`, dizideki sıra → `sort_order`, `geographical_indication.*` → `gi_*`, `source_refs[0]` → `source_id`, `source_url`). Taslaklar da içe aktarılır; dosyadan çıkarılan lezzet DB'den silinir. |
 | `id`, `meta.status`, `type`, `era`, `parent_id`, `tags`, `secondary_types` | `asset.id`, `status`, `type_code`, `era_code`, `parent_id`, `tags`, `secondary_types` |
 | `name`, `subtitle`, `summary` | `asset.name_tr/en`, `subtitle_tr/en`, `summary_tr/en` |
 | `alternate_names` | `asset.alternate_names` (jsonb, olduğu gibi) |
@@ -654,6 +737,7 @@ Bir tabloya sütun eklemek ya da yeni tablo açmak için:
 | `ambient_sound.*` | `asset.ambient_sound_key`, `ambient_caption_tr/en` |
 | `media_folder`, `meta.todos`, `meta.data_quality_notes`, `meta.prepared_by`, `meta.reviewed_by` | aynı adlı `asset` sütunları |
 | `sections[]` | `asset_section` (`id` → `slug`, `order` → `sort_order`) |
+| `custom_blocks[]` | `asset_custom_block` (`id` → `slug`, `after` → `after_block`, dizideki sıra → `sort_order`) |
 | `legends[]` | `asset_legend` (dizideki sıra → `sort_order`) |
 | `facts[]` | `asset_fact` (`value` → `value`; sayıysa `value_num`'a da yaz) |
 | `people[]` | `asset_person` |
@@ -679,7 +763,7 @@ Sıra önemlidir; her adım bir öncekine bağlıdır:
 4. Tüm eser JSON'ları TEK transaction içinde:
      her eser için:
        a. asset           upsert (id)  -- parent_id FK'si DEFERRABLE, külliye aynı transaction'da sonra gelebilir
-       b. alt tablolar    o esere ait satırlar silinir, yeniden eklenir (asset_section, asset_legend,
+       b. alt tablolar    o esere ait satırlar silinir, yeniden eklenir (asset_section, asset_custom_block, asset_legend,
                           asset_fact, asset_person, timeline_event, asset_highlight, asset_relation,
                           visitor_tip, exhibition, source_citation, inscription, asset_media)
        c. media           upsert (sha256), media_variant upsert (media_id, format, width)
@@ -699,7 +783,7 @@ Notlar:
 
 `--verify` seçeneği içe aktarmadan sonra iki şeyi kontrol eder:
 - DB'deki her tablonun sütunları `db_rows.TABLES` ile aynı mı? (Şemaya sütun eklenip eşleme unutulursa yakalar.)
-- Her eserin DB'deki satırları `db_rows` çıktısıyla birebir aynı mı? (Görüntüleyicide görünen = DB'de olan.) API'nin yazdığı `contribution` satırları bu karşılaştırmaya girmez; `app_user` hiç denetlenmez.
+- Her eserin DB'deki satırları `db_rows` çıktısıyla birebir aynı mı? (Görüntüleyicide görünen = DB'de olan.) API'nin yazdığı `contribution` satırları bu karşılaştırmaya girmez; `app_user` ve `user_session` hiç denetlenmez.
 
 PostgreSQL 16'da test edildi: iki kez üst üste içe aktarma aynı sonucu verdi. Elle değiştirilmiş bir metin, silinmiş bir satır ve fazladan eklenmiş bir sütun `--verify` ile yakalandı.
 
@@ -800,7 +884,7 @@ Yeni ya da değişen bir fotoğraf olursa manifest güncellenir ve **veri ekibi 
 İçe aktarmada JSON'daki `media[]` kaydı (açıklama, alt metin, telif, kapak) ile manifest kaydı (hash, boyut, sürümler) **`(asset_id, media_key)` üzerinden birleştirilir**:
 - `media`: sha256 üzerinden upsert. `width`, `height`, `aspect_ratio`, `lqip`, `dominant_color`, `original_*` manifestten gelir; `captured_at`, `capture_lat` ve `capture_lng` manifestin `exif` alanından gelir. `credit`, `license`, `photographer` ve `source_id` JSON'dan gelir.
 - `media_variant`: manifestteki `variants[]` listesi.
-- `asset_media`: JSON'daki `id`, `order`, `is_cover`, `subject`, `focal_point`, `caption`, `alt`; arşiv fotoğrafıysa `year`, `year_approx`, `overlay`.
+- `asset_media`: JSON'daki `id`, `order`, `is_cover`, `subject`, `dossier_after`, `focal_point`, `caption`, `alt`; arşiv fotoğrafıysa `year`, `year_approx`, `overlay`.
 
 ### Admin panelden yükleme ve topluluk katkısı
 

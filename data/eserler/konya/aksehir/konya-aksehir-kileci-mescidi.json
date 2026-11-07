@@ -1,0 +1,407 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-kileci-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 354-355) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Banî bilinmiyor; 'hububat işleriyle uğraşan Akşehir eşrafı' yalnızca tahmindir.",
+      "Deprem tarihi kitapta yok.",
+      "Kitâbe yazılarının dili ve özgün metni kitapta verilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kileci Mescidi",
+    "en": "Kileci Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Alâeddin Keykubad dönemi",
+    "Selçuklu ahşap sanatı",
+    "çift başlı kartal",
+    "tek kubbeli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Kileci Mahallesi",
+    "address": "Bayram Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "354-355"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.354497,
+      "lng": 31.413926,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1556781879 ('Kileci Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl, Sultan Alâeddin Keykubad dönemi (tahmini)",
+      "en": "13th century, reign of Sultan Alâeddin Keykubad (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitâbe ve tarih verecek vakfiye yok; plan, malzeme, teknik ve süslemelerinden XIII. yüzyılda Alâeddin Keykubad döneminde inşa edildiği düşünülmektedir.",
+      "en": "No inscription or charter; from plan, materials, technique and decoration it is thought built in the 13th century under Alâeddin Keykubad."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "354-355"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kileci Mahallesi'ndeki tek kubbeli mescit XIII. yüzyılda Alâeddin Keykubad döneminde yapılmış sayılır. Derin oyma ahşap giriş kapısı ve harimdeki ahşap niş kanatları Selçuklu ahşap sanatının şaheserleri arasında anılır.",
+    "en": "The single-domed masjid in Kileci Neighborhood is thought to be of the 13th century, Alâeddin Keykubad's reign. Its deeply carved wooden entrance door and the wooden niche doors inside are cited as masterpieces of Seljuk wood art."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Mescidin kitâbesi ve tarihini verecek bir vakfiyesi yoktur. Plan, malzeme, teknik ve süslemelerinden XIII. yüzyılda Sultan Alâeddin Keykubad döneminde inşa edildiği düşünülmektedir. Depremde hasar gören yapı, aslından farklı olarak kırma çatıyla örtülmüştür. 2007-2008'de Vakıflar Bölge Müdürlüğü tarafından onarılmıştır. Banîsi bilinmemekte, Akşehir eşrafından hububat işleriyle uğraşan biri olabileceği düşünülmektedir.",
+        "en": "There is no inscription or foundation charter. It is thought to have been built in the 13th century under Sultan Alâeddin Keykubad. Damaged in an earthquake, it was covered with a hipped roof unlike the original. It was repaired by the Regional Directorate of Foundations in 2007-2008. The builder is unknown; he may have been an Akşehir notable engaged in the grain trade."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "354-355"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlıdır; kubbeli harim, üç gözlü son cemaat yeri ve hazireden oluşur. Duvarlarda moloz taş ve devşirme malzeme, kubbe ve son cemaat yerinde tuğla kullanılmıştır. Son cemaat yerinin sütun ve başlıkları Bizans dönemine ait devşirmedir; son cemaat yeri 2007-2008'de, cami 2010'da Vakıflar Bölge Müdürlüğü'nce onarılmıştır. Harime son cemaat yerinin ortasındaki tek kapıdan girilir. Giriş kapısının derin oyma ahşap kanatları dikdörtgen panolara ayrılmıştır. Harim kare planlı, trompla geçişli kubbelidir; mihrap nişi tuğla kemerle vurgulanmıştır, güneybatıdaki minber son tamirde eklenmiştir.",
+        "en": "The masjid is square with a domed harim, a three-bay narthex and a burial ground. Walls use rubble stone and spolia; the dome and narthex are brick. The narthex columns and capitals are Byzantine spolia; the narthex was repaired in 2007-2008 and the mosque in 2010. The harim is entered via a single door in the middle of the narthex, with deep-carved wooden leaves divided into rectangular panels. The harim has a squinch dome; the mihrab niche is emphasized by a brick arch and the southwest minbar was added in the last repair."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "354-355"
+        }
+      ]
+    },
+    {
+      "id": "ahsap-nis",
+      "order": 3,
+      "title": {
+        "tr": "Ahşap niş kanatları",
+        "en": "Wooden niche doors"
+      },
+      "body": {
+        "tr": "Harimin doğu duvarındaki nişi kapatan ahşap kanatlar Selçuklu ahşap sanatının şaheserlerindendir. Düz yüzeyli derin oyma tekniğiyle yapılmış kanatlar üç panoya ayrılır; üst panoda 'Kim bir iyilik işlerse, ona on katı sevap vardır' yazar. Orta panolar elips çerçeve içindedir; çerçevede bitkisel süslemeler arasında çift başlı kartal ve ejder figürleri vardır, alt panoda bitkisel süsleme görülür.",
+        "en": "The wooden wings covering the niche in the east wall are masterpieces of Seljuk wood art. Made in flat-surface deep carving, they are divided into three panels; the upper panel reads 'Whoever does a good deed will receive ten times the reward.' The middle panels are in an elliptical frame with double-headed eagle and dragon figures among floral decoration; the lower panel has floral decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "354-355"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "kapi-yazilari",
+      "location": {
+        "tr": "Giriş kapısının ahşap kanatları, üst panolar",
+        "en": "Upper panels of the wooden entrance door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Sağ kanat: 'Mescitler Allah'ındır' (Cin Suresi). Sol kanat: 'Allah'tan başkasından istemeyiniz'",
+        "en": "Right wing: 'Mosques belong to Allah' (Surah al-Jin). Left wing: 'Do not ask from anyone other than Allah'"
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Orijinal yazı dili/metni kitapta verilmiyor; çeviri alanında kitaptaki Türkçe ifade yer alıyor.",
+        "en": "The original script/text is not given; the field holds the book's Turkish rendering."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "354-355"
+        }
+      ]
+    },
+    {
+      "id": "nis-kanat-yazisi",
+      "location": {
+        "tr": "Harimin doğu duvarındaki niş kanatları, üst pano",
+        "en": "Upper panel of the niche wings, east wall of the harim"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Kim bir iyilik işlerse, ona on katı sevap vardır",
+        "en": "Whoever does a good deed will receive ten times the reward"
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Orijinal yazı dili/metni kitapta verilmiyor.",
+        "en": "The original text is not given in the book."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "354-355"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "type": "repair",
+      "title": {
+        "tr": "Son cemaat yeri onarımı (2007-2008)",
+        "en": "Narthex repair (2007-2008)"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "354-355"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "onarim-2010",
+      "year": 2010,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı",
+        "en": "Repair by the Regional Directorate of Foundations"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "354-355"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kileci Mescidi kare planlı, tek kubbeli bir Selçuklu dönemi mescididir. Üç gözlü son cemaat yerinin ortasındaki derin oyma ahşap kapıdan girilir. İçeride doğu duvardaki niş, çift başlı kartal ve ejder figürlü ahşap kanatlarla kapatılmıştır.",
+      "en": "Kileci Masjid is a square, single-domed Seljuk-period masjid. One enters through a deep-carved wooden door in the middle of a three-bay narthex. Inside, a niche in the east wall is closed by wooden doors with double-headed eagle and dragon figures."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 354-355)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "354-355"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1470",
+        "original_name": "pdf-s179-xref1470",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "354"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kileci Mescidi (kitap s. 354)",
+        "en": "Kileci Masjid (book p. 354)"
+      },
+      "alt": {
+        "tr": "Tuğladan yapılmış, üç kemerli bir girişe sahip, çatısında kubbe ve minareye benzer bir yapı bulunan bir mescit.",
+        "en": "A brick-built mosque with three arches, a dome on the roof, and a minaret-like structure."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1472",
+        "original_name": "pdf-s179-xref1472",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "354"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Kileci Mescidi (kitap s. 354)",
+        "en": "Kileci Masjid (book p. 354)"
+      },
+      "alt": {
+        "tr": "Ahşap yüzeydeki karmaşık, döner desenli, kabartmalı bir süslemeye yakın görünüyor.",
+        "en": "A detailed, swirling, carved pattern on a wooden surface."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1478",
+        "original_name": "pdf-s179-xref1478",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "355"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kileci Mescidi (kitap s. 355)",
+        "en": "Kileci Masjid (book p. 355)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halı, ahşap paneller, ahşap merdivenler ve kubbeli tavan görülüyor.",
+        "en": "Red carpet, wooden panels, wooden stairs, and a domed ceiling are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1482",
+        "original_name": "pdf-s179-xref1482",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "355"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kileci Mescidi (kitap s. 355)",
+        "en": "Kileci Masjid (book p. 355)"
+      },
+      "alt": {
+        "tr": "Tuğladan yapılmış, geometrik desenli kubbeli bir tavan.",
+        "en": "A brick vaulted ceiling with geometric patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1484",
+        "original_name": "pdf-s179-xref1484",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "355"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kileci Mescidi (kitap s. 355)",
+        "en": "Kileci Masjid (book p. 355)"
+      },
+      "alt": {
+        "tr": "Kileci Mescidi'nin kubbesi, merkezde bir sütunla çevrili, taş kaplamalı ve radyal desenli.",
+        "en": "The dome of Kileci Mescidi, with a central column, stone cladding, and radial pattern."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

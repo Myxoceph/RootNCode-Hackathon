@@ -44,6 +44,25 @@ export const SourceRefSchema = z.strictObject({
   url: z.url().nullable(),
 });
 
+/** One line of a recording's captions: every sound event in brackets, from second `at`. */
+export const SoundCaptionSchema = z.strictObject({
+  at: z.number().min(0),
+  text: z.string().min(1),
+});
+
+/** A published ambient recording (Sesli Zaman Kapsülü), from data/sounds.json. */
+export const SoundRecordingSchema = z.strictObject({
+  url: z.url(),
+  durationSeconds: z.number().positive(),
+  /** In time order; show them while the sound plays. */
+  captions: z.array(SoundCaptionSchema).min(1),
+  license: z.enum(["CC0-1.0", "CC-BY-4.0"]),
+  /** Show it wherever the recording plays, e.g. "Ses: Ayşe Yılmaz (CC BY 4.0)". */
+  credit: z.string().min(1),
+  /** Where the recording comes from, e.g. its freesound.org page. */
+  sourceUrl: z.url(),
+});
+
 /** Null when the location is not known yet; such assets are left off the map and out of nearby results. */
 export const CoordinatesSchema = z.strictObject({
   lat: z.number().min(35.5).max(42.5),
@@ -51,6 +70,11 @@ export const CoordinatesSchema = z.strictObject({
   /** False for coordinates taken from photo GPS or geocoding that nobody has checked on site. */
   verified: z.boolean(),
   source: z.string().min(1).nullable(),
+  /**
+   * True when the point is only the centre of the asset's neighbourhood or village (`source: "osm_area"`):
+   * show the asset as roughly there, e.g. with a different marker. Visits to it are not position-checked.
+   */
+  approximate: z.boolean().default(false),
 });
 
 export const ImageSourceSchema = z.strictObject({
@@ -58,6 +82,12 @@ export const ImageSourceSchema = z.strictObject({
   width: z.int().positive(),
   height: z.int().positive(),
 });
+
+/** A place in the dossier: a block's name, or `section:<id>` / `custom:<id>`. */
+export const DossierPlaceSchema = z
+  .string()
+  .max(120)
+  .regex(/^[a-z_]+(?::[a-z0-9_-]+)?$/, "must be a block, section:<id> or custom:<id>");
 
 /** One image with responsive variants. The photo's own GPS position is never part of the contract. */
 export const MediaSchema = z.strictObject({
@@ -76,8 +106,18 @@ export const MediaSchema = z.strictObject({
   credit: z.string().min(1),
   photographer: z.string().min(1).nullable(),
   license: z.string().min(1),
-  /** Year of an archive photo (Zaman Perdesi). */
+  /** Year of an archive photo. */
   archiveYear: z.int().nullable(),
+  /**
+   * What the photo shows, from the dataset: `exterior`, `portal`, `inscription`, `mihrab`,
+   * `ornament_detail`… Ziyaret Mührü picks a specific part of the monument by it. Null when unknown.
+   */
+  subject: z.string().min(1).nullable().default(null),
+  /**
+   * Where the admin put the photo in the asset's dossier: under a block (`identity`, `timeline`…), a
+   * chapter (`section:<id>`) or an added block (`custom:<id>`). Null: not placed by hand.
+   */
+  dossierAfter: DossierPlaceSchema.nullable().default(null),
   sources: z.strictObject({
     webp: z.array(ImageSourceSchema),
     jpg: z.array(ImageSourceSchema),
@@ -96,8 +136,25 @@ export const AssetSummarySchema = z.strictObject({
   coordinates: CoordinatesSchema.nullable(),
   summary: z.string().min(1),
   datingDisplay: z.string().min(1).nullable(),
+  /**
+   * When it was built, short, for a card: the Gregorian year the dating names ("1399"), else the
+   * record's start year, else its century ("XV. yüzyıl"); null when the book gives none. Never a
+   * Hijri year or an unrelated date (a founder's death, a rebuilding) the dating also mentions.
+   */
+  yearLabel: z.string().min(1).nullable().default(null),
   /** Null when the asset has no processed photo yet; show a placeholder. */
   cover: MediaSchema.nullable(),
+  /**
+   * The complex (külliye) this asset is a building of; null when it stands on its own or its
+   * complex is not published. The map shows a complex's buildings as the complex alone.
+   */
+  parentId: AssetIdSchema.nullable(),
+  /**
+   * How much the record tells about the asset: its sections, highlights, legends, people,
+   * timeline events and inscriptions, counted. The data has no measure of fame; this stands in
+   * for it, and the map keeps the better-known assets longest as it zooms out.
+   */
+  prominence: z.number().int().min(0),
 });
 
 export const AssetRefSchema = z.strictObject({
@@ -109,6 +166,17 @@ export const AssetRefSchema = z.strictObject({
 export const NamedNoteSchema = z.strictObject({
   name: z.string().min(1),
   note: z.string().min(1).nullable(),
+});
+
+/**
+ * A block the admin added to the dossier. `body` is plain text with a few marks (`## heading`,
+ * `**bold**`, `_italic_`, `- item`, `> quote`), never HTML; the app draws it. `after` is the block it follows.
+ */
+export const CustomBlockSchema = z.strictObject({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  body: z.string().min(1),
+  after: DossierPlaceSchema,
 });
 
 export const AssetSectionSchema = z.strictObject({
@@ -254,6 +322,7 @@ export const AssetDetailSchema = AssetSummarySchema.extend({
     })
     .nullable(),
   sections: z.array(AssetSectionSchema),
+  customBlocks: z.array(CustomBlockSchema).default([]),
   facts: z.array(AssetFactSchema),
   timeline: z.array(TimelineEventSchema),
   legends: z.array(AssetLegendSchema),
@@ -277,6 +346,8 @@ export const AssetDetailSchema = AssetSummarySchema.extend({
     .strictObject({
       key: z.string().min(1),
       caption: z.string().min(1).nullable(),
+      /** The key's published recording; null until the data team adds one (the app plays its own sound for the key). */
+      recording: SoundRecordingSchema.nullable(),
     })
     .nullable(),
   visit: z.strictObject({
@@ -315,13 +386,28 @@ export const AssetRelationSchema = z.strictObject({
   sources: z.array(SourceRefSchema),
 });
 
+/**
+ * A link to a place the dataset has no record of, e.g. the Istanbul complex a Bursa han was built to fund:
+ * shown by the name the source gives, not on the map. Always recorded on this asset.
+ */
+export const OutsideRelationSchema = z.strictObject({
+  type: LabeledCodeSchema,
+  /** As the source names it, e.g. "II. Bayezid Külliyesi (İstanbul)". */
+  name: z.string().min(1),
+  description: z.string().min(1),
+  confidence: ConfidenceSchema,
+  sources: z.array(SourceRefSchema),
+});
+
 /** Response body of `GET /assets/:id/relations`. */
 export const AssetRelationsResponseSchema = z.strictObject({
   version: ContractVersionSchema,
   lang: LangSchema,
   assetId: AssetIdSchema,
   items: z.array(AssetRelationSchema),
-  /** Links whose other asset is not in the dataset or not published yet: counted, never returned. */
+  /** Links to places outside the dataset, by name (Kentsel Ağ beyond the map). */
+  outside: z.array(OutsideRelationSchema),
+  /** Links to assets not published yet, or to outside places the source does not name: counted, never returned. */
   unavailableCount: z.int().min(0),
 });
 
@@ -343,6 +429,27 @@ export const NearbyAssetsResponseSchema = z.strictObject({
   items: z.array(NearbyAssetSchema),
 });
 
+/**
+ * One inscription the camera can find (Taşın Dili), with where it is: enough for the app to pick
+ * the ones near the visitor and fetch their `.mind` files without asking for every asset first.
+ */
+export const ArTargetEntrySchema = z.strictObject({
+  assetId: AssetIdSchema,
+  inscriptionId: z.string().min(1),
+  /** `cities` code of the asset. */
+  city: z.string().min(1),
+  /** The asset's, or for a building without its own its complex's; null when neither has one. */
+  coordinates: z.strictObject({ lat: z.number().min(-90).max(90), lng: z.number().min(-180).max(180) }).nullable(),
+  mindUrl: z.url(),
+  mindarVersion: z.string().min(1),
+});
+
+/** Response body of `GET /ar-targets`: every inscription with a compiled target, in no set order. */
+export const ArTargetsResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  items: z.array(ArTargetEntrySchema),
+});
+
 export type Lang = z.infer<typeof LangSchema>;
 export type LabeledCode = z.infer<typeof LabeledCodeSchema>;
 export type ConfidenceCode = z.infer<typeof ConfidenceCodeSchema>;
@@ -362,6 +469,10 @@ export type AssetFact = z.infer<typeof AssetFactSchema>;
 export type TimelineEvent = z.infer<typeof TimelineEventSchema>;
 export type AssetLegend = z.infer<typeof AssetLegendSchema>;
 export type ArTarget = z.infer<typeof ArTargetSchema>;
+export type ArTargetEntry = z.infer<typeof ArTargetEntrySchema>;
+export type ArTargetsResponse = z.infer<typeof ArTargetsResponseSchema>;
+export type SoundCaption = z.infer<typeof SoundCaptionSchema>;
+export type SoundRecording = z.infer<typeof SoundRecordingSchema>;
 export type InscriptionV2 = z.infer<typeof InscriptionSchemaV2>;
 export type AssetPerson = z.infer<typeof AssetPersonSchema>;
 export type AssetHighlight = z.infer<typeof AssetHighlightSchema>;
@@ -370,6 +481,7 @@ export type AssetDetail = z.infer<typeof AssetDetailSchema>;
 export type AssetListResponse = z.infer<typeof AssetListResponseSchema>;
 export type RelationDirection = z.infer<typeof RelationDirectionSchema>;
 export type AssetRelation = z.infer<typeof AssetRelationSchema>;
+export type OutsideRelation = z.infer<typeof OutsideRelationSchema>;
 export type AssetRelationsResponse = z.infer<typeof AssetRelationsResponseSchema>;
 export type NearbyAsset = z.infer<typeof NearbyAssetSchema>;
 export type NearbyAssetsResponse = z.infer<typeof NearbyAssetsResponseSchema>;

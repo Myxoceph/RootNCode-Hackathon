@@ -1,0 +1,359 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-seydisehir-halife-sultan-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Kitâbedeki eksik (\"…\") ad kitapta boş bırakılmış; okunuşu eklenmeli.",
+      "Seyyid Harun Camii'nin kaydı ids.md'de yok; ilişki yazılmadı.",
+      "Dönem (era) kodu: kitap dönem adı vermiyor; null bırakıldı.",
+      "Seyyid Harun Veli Zaviyesi'nin kaydı ids.md'de yok.",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Hicri 10 Şevval 768 ile verilen 10 Mayıs 1367 uyuşmuyor görünüyor: 10 Şevval 768 yaklaşık Haziran 1367'ye denk gelir (Mayıs'tan yaklaşık bir ay sonra). Yıl (1367) tutarlı; tam gün/ay kaynaktaki hâliyle korundu."
+      },
+      {
+        "field": "name",
+        "note": "İçindekiler sayfasındaki İngilizce ad \"Halise Sultan Tomb\", metinde \"Halife Sultan Tomb\"; İngilizce metinde ayrıca \"Caliph Sultan\" geçiyor. Metindeki \"Halife Sultan\" esas alındı."
+      },
+      {
+        "field": "architecture",
+        "note": "Türkçe metin giriş kapısını önce \"tek kanatlı kapı\", sonra \"basık kemerli tek kanatlı kapı\" diye anıyor; İngilizce ikinci cümlede \"flat arch\" yazıyor. Basık kemer olarak alındı."
+      },
+      {
+        "field": "location",
+        "note": "İngilizce metin cümleyi Seydişehir/Seyitharun adreslerini tekrar ederek veriyor; adres Türkçeden alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Halife Sultan Türbesi",
+    "en": "Halife Sultan Tomb"
+  },
+  "subtitle": {
+    "tr": "Seyyid Harun Veli'nin kızı Halife Sultan'ın H. 768 tarihli türbesi",
+    "en": "The AH 768 tomb of Halife Sultan, daughter of Seyyid Harun Veli"
+  },
+  "alternate_names": [
+    {
+      "tr": "Halise Sultan Türbesi",
+      "en": "Halise Sultan Tomb"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "türbe",
+    "kubbe",
+    "devşirme malzeme",
+    "Halife Sultan",
+    "Seyyid Harun Camii",
+    "kitabe"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Seydişehir",
+    "address": "Seyitharun Mahallesi, 153096 Sokak, Seyyid Harun Camii'nin kuzeydoğu köşesine bitişik",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "203"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.415913,
+      "lng": 31.845171,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Seyitharun Mahallesi, Seydişehir, Konya, İç Anadolu Bölgesi, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 768 / 10 Mayıs 1367",
+      "en": "AH 768 / 10 May 1367"
+    },
+    "start_year": 1367,
+    "end_year": 1367,
+    "hijri_year": 768,
+    "century": 14,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki tek satırlık kitâbeye göre 10 Şevval 768 Cuma günü inşa edilmiştir; kitap bunu 10 Mayıs 1367 olarak verir.",
+      "en": "According to the single-line inscription above the door it was built on Friday 10 Shawwal 768; the book gives this as 10 May 1367."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "203"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Seydişehir'de Seyyid Harun Camii'nin kuzeydoğu köşesine bitişik iki türbeden camii duvarına bitişik olanı. Kitâbesine göre H. 768 / 1367'de yapılmış, 2006'da onarılmıştır; kare planlı, kubbeli, üç sadeli sandukalıdır.",
+    "en": "Of two tombs adjoining the north-east corner of Seyyid Harun Mosque in Seydişehir, the one attached to the mosque wall. Built in AH 768 / 1367 by its inscription and repaired in 2006; square, domed, with three plain sarcophagi."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Türbe Seydişehir, Seyitharun Mahallesi, 153096 Sokak'ta, Seyyid Harun Camii'nin kuzeydoğu köşesine bitişik iki türbeden cami duvarına bitişik olanıdır. Giriş kapısı üzerindeki tek satırlık kitâbede \"Bu mübarek Türbe, … toprağı bol olsun. 10 Şevval 768 Cuma günü inşa edildi\" yazar; buna göre türbe H. 768 / 10 Mayıs 1367'de yapılmıştır. Vakıflar Bölge Müdürlüğü tarafından 2006'da tamir edilmiştir. Halife Sultan, Seyyid Harun Veli'nin kızıdır; Seyyid Harun Veli 1320'de vefat edince yerine geçmiş ve kırk yıldan fazla babasını temsil etmiştir.",
+        "en": "The tomb is, in Seydişehir, Seyitharun Neighborhood, 153096 Street, one of the two tombs adjoining the north-east corner of Seyyid Harun Mosque, the one attached to the mosque wall. The single-line inscription above the entrance door reads \"This blessed Tomb... may its soil be abundant. It was built on Friday, 10 Shawwal 768\"; accordingly it was built in AH 768 / 10 May 1367. It was repaired by the Regional Directorate of Foundations in 2006. Halife Sultan was the daughter of Seyyid Harun Veli; after his death in 1320 she took his place and represented her father for more than forty years."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Türbe kare planlıdır ve kubbe doğrudan beden duvarlarına oturur. Kesme taş ve devşirme malzemeyle yapılmıştır. Giriş kuzey cephedeki tek kanatlı basık kemerli bir kapıdandır; kapı üzerinde mermer bir kitâbe vardır. İçeride kubbeye üçgenlerle geçilir. Üç sanduka bulunur; sadedir, süsleme yoktur. Bazı kaynaklara göre sandukalar üzerinde zamanla silinmiş yazılar vardı. Kitâbeye göre sandukalardan biri Halife Sultan'a ait olmalıdır; diğer ikisinin kime ait olduğu tespit edilememiştir, Seyyit Harun Veli Zaviyesi'nde görev yapanlara ait olmaları gerekir.",
+        "en": "The tomb has a square plan and a dome sitting directly on the body walls. It is built of cut stone and spoliated material. The entrance is a single-winged low-arched door on the north facade, with a marble inscription above it. Inside, triangles provide the transition to the dome. There are three sarcophagi, quite plain and undecorated. Some sources say there were inscriptions on the sarcophagi that disappeared over time. According to the inscription one of them must belong to Halife Sultan; the owners of the other two could not be identified and must belong to those who served at the Seyyit Harun Veli Zawiya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "203-204"
+        }
+      ]
+    },
+    {
+      "id": "onem",
+      "order": 3,
+      "title": {
+        "tr": "Önemi",
+        "en": "Significance"
+      },
+      "body": {
+        "tr": "Halife Sultan Türbesi, Seydişehir'de XIV. yüzyıl türbe mimarisinin uygulandığı önemli türbelerden biridir.",
+        "en": "Halife Sultan Tomb is one of the important tombs in Seydişehir where 14th-century tomb architecture was applied."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "204"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "204"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Halife Sultan",
+      "role": {
+        "tr": "Seyyid Harun Veli'nin kızı; babasının yerine geçip kırk yıldan fazla onu temsil etti",
+        "en": "Daughter of Seyyid Harun Veli; succeeded him and represented him for over forty years"
+      }
+    },
+    {
+      "name": "Seyyid Harun Veli",
+      "role": {
+        "tr": "Halife Sultan'ın babası; 1320'de vefat etti",
+        "en": "Father of Halife Sultan; died 1320"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde, tek satır",
+        "en": "Above the entrance door, single line"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu mübarek Türbe, … toprağı bol olsun. 10 Şevval 768 Cuma günü inşa edildi",
+        "en": "This blessed Tomb... may its soil be abundant. It was built on Friday, 10 Shawwal 768."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 768,
+        "gregorian": "1367-05-10"
+      },
+      "note": {
+        "tr": "Dili ve orijinal okunuşu kitapta verilmiyor; \"…\" kitapta eksik bırakılmış addır. Kapı üstünde mermer kitâbe olduğu s. 204'te belirtilir.",
+        "en": "Language and original reading are not given; the \"...\" is a gap in the book. Page 204 notes a marble inscription over the door."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "203"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1367",
+      "year": 1367,
+      "date": "1367-05-10",
+      "hijri": "768",
+      "type": "construction",
+      "title": {
+        "tr": "Türbe inşa edildi (10 Şevval 768)",
+        "en": "Tomb built (10 Shawwal 768)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "203"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı",
+        "en": "Repair by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "203"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-seydisehir-seyit-harun-veli-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Seyyid Harun Camii'nin kuzeydoğu köşesine bitişik iki türbeden biridir; diğer türbe kitapta adlandırılmaz. Halife Sultan, Seyyid Harun Veli'nin kızıdır.",
+        "en": "One of two tombs adjoining the north-east corner of Seyyid Harun Mosque; the other is not named in this entry. Halife Sultan is Seyyid Harun Veli's daughter."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "203, 205"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, Seyyid Harun Camii'nin kuzeydoğu köşesine, cami duvarına bitişik, kare planlı ve kubbelidir. Kesme taş ve devşirme malzemeden yapılmıştır. Girişi kuzey cephededir; kapının üstünde mermer bir kitâbe vardır. İçeride üç sade sanduka bulunur.",
+      "en": "The tomb is attached to the wall at the north-east corner of Seyyid Harun Mosque; it is square and domed, built of cut stone and spoliated material. The entrance is on the north facade with a marble inscription above the door. Inside are three plain sarcophagi."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-halife-sultan-turbesi/p103-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "203"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cami ve türbeler, havadan",
+        "en": "The mosque and tombs from above"
+      },
+      "alt": {
+        "tr": "Kuşbakışı görüntüde kırmızı kiremit çatılı cami, yanında bir minare ve önünde gri kubbeli küçük yapılar görülüyor. Arkada şehir ve dağlar uzanıyor.",
+        "en": "From above, a mosque with a red tiled roof and a minaret, with small grey-domed buildings in front. The town and mountains stretch behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-seydisehir-halife-sultan-turbesi/p104-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "204"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Mavi külahlı türbe",
+        "en": "Tomb with a blue conical roof"
+      },
+      "alt": {
+        "tr": "Tuğla ve taştan örülü sekizgen türbenin üzeri mavi sivri bir külahla örtülü. Sivri kemerli giriş ve demir şebekeli bir pencere görülüyor; arkada mavi kubbe ve minare var.",
+        "en": "An octagonal tomb of brick and stone with a blue pointed roof, a pointed-arched entrance and a barred window. A blue dome and a minaret are behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

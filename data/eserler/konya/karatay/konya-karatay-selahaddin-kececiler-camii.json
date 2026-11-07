@@ -1,0 +1,308 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-selahaddin-kececiler-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Hacı Hüseyin Keçeci ve Marangoz Mehmet Emin'in dönemleri kitapta yok.",
+      "Kitâbe metni ve mealen kitapta verilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Tarihî kaynaklar ilk yapımı Hacı Hüseyin Keçeci'ye, ikinci yapımı Marangoz Mehmet Emin ve Hafız Ali'ye atfeder; kitâbe ise mevcut camiyi mahalleli yaptırdı diyor. İkisi birlikte aktarıldı, founder 'disputed' işaretlendi."
+      },
+      {
+        "field": "dating",
+        "note": "Kitâbedeki H. 1323 yılı M. 1905-06 ile uyumlu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Selahaddin (Keçeciler) Camii",
+    "en": "Selahaddin (Keçeciler) Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Keçeciler",
+    "celî ta'lik kitâbe",
+    "kerpiç",
+    "sac minare",
+    "yeniden yapım"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Keçeciler Mahallesi",
+    "address": "Keçeciler Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "190-191"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.883788,
+      "lng": 32.498523,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Yakacık Petrol Karatay 2, İstanbul Caddesi, Kalenderhane Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, 42050, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1323 / M. 1905-06",
+      "en": "1323 AH / 1905-06 AD"
+    },
+    "start_year": 1905,
+    "end_year": 1906,
+    "hijri_year": 1323,
+    "century": 20,
+    "basis": {
+      "tr": "Kitâbeye göre mevcut cami H. 1323 / M. 1905-06'da mahalleli tarafından yaptırılmıştır; tarihî kaynaklar ise Hacı Hüseyin Keçeci'nin ilk yapımını ve sonra Marangoz Mehmet Emin ile Hafız Ali'nin yeniden yaptırmasını aktarır, bunların yılı verilmiyor.",
+      "en": "Per the inscription the present mosque was built by the locals in 1323 AH / 1905-06 AD; historical sources mention a first building by Hacı Hüseyin Keçeci and a rebuilding by Carpenter Mehmet Emin and Hafız Ali, with no dates."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "190-191"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mahalle halkı (kitâbeye göre mevcut caminin yaptırıcısı)",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "190-191"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Keçeciler Caddesi'ndeki, H. 1323 / M. 1905-06 tarihli kitâbesiyle mahalleli tarafından yeniden yaptırılan kare planlı kerpiç cami; ilk yapımı Hacı Hüseyin Keçeci'ye atfedilir.",
+    "en": "A square-plan adobe mosque on Keçeciler Street, rebuilt by the locals per its 1323 AH / 1905-06 AD inscription; its first building is attributed to Hacı Hüseyin Keçeci."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami, Karatay, Keçeciler Mahallesi, Keçeciler Caddesi'nde yer alır. Tarihî kaynaklarda caminin ilk defa Hacı Hüseyin Keçeci tarafından yaptırıldığı, harap olması üzerine ikinci defa Marangoz Mehmet Emin ve kardeşi Hafız Ali (Sarıkulak) tarafından yeniden inşa ettirildiği belirtilir. Mermer üzerine celî tâ'lik hatla yazılmış üç satırlık kitâbeye göre cami zamanla harap olup yıkılmış, yerine mevcut cami mahalleli tarafından H. 1323 / M. 1905-06'da yeni tarzda yaptırılmıştır. Kitâbede hattat imzası olarak “Harrerehû Hâlid” okunur. Eser Vakıflar Bölge Müdürlüğü tarafından 2018-2021 arasında tamir ettirilmiştir.",
+        "en": "The mosque is on Keçeciler Street, Keçeciler Neighborhood, Karatay. Historical sources say it was first built by Hacı Hüseyin Keçeci and, after falling into ruin, rebuilt by Carpenter Mehmet Emin and his brother Hafız Ali (Sarıkulak). According to the three-line celî ta'lik inscription on marble, the mosque was demolished due to dilapidation and the present mosque was built in a new style by the locals in 1323 AH / 1905-06 AD. The calligrapher's signature reads “Harrerehû Hâlid”. It was repaired by the Regional Directorate of Foundations in 2018-2021."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "190-191"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kare planlıdır ve iki yöne eğimli kırma çatıyla örtülüdür. Batı cephesine sonradan, harime geçişi sağlayan sundurma biçiminde bir bölüm eklenmiştir. Alt bölümde bir kademeye kadar moloz taş, üst bölümde kerpiç kullanılmıştır. Batıdaki sundurma üzerindeki minare sacdan yapılmış köşk tarzındadır. Harim sadedir; kuzeyde ahşap bir ayağın taşıdığı kadınlar mahfili, kıble duvarında ahşap mihrap ve minber bulunur. Tavan içten çıtalı düz çatılı, dıştan iki yana eğimli kırma çatılıdır. Mihrap, silmelerle sınırlı dikdörtgen çerçevede yarım daire nişlidir; minber sadedir, korkuluk ve aynalığında süslemeler görülür.",
+        "en": "The mosque has a square plan and a hipped roof sloping in two directions. A porch-like section giving access to the harim was later added to the west facade. Rubble stone is used up to a certain level and adobe above. The minaret on the western porch is a pavilion-style minaret of sheet metal. The harim is plain, with a women's mahfil on a wooden pillar to the north and a wooden mihrab and minbar on the qibla wall. The ceiling is a slatted flat roof inside, hipped outside. The mihrab is a semicircular niche in a rectangular frame limited by moldings; the minbar is plain with decoration on railing and transom."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "190-191"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Hacı Hüseyin Keçeci",
+      "role": {
+        "tr": "Tarihî kaynaklara göre caminin ilk yaptırıcısı",
+        "en": "First builder of the mosque according to historical sources"
+      }
+    },
+    {
+      "name": "Marangoz Mehmet Emin",
+      "role": {
+        "tr": "Kaynaklara göre ikinci yapımı yaptıran",
+        "en": "Had it rebuilt the second time according to sources"
+      }
+    },
+    {
+      "name": "Hafız Ali (Sarıkulak)",
+      "role": {
+        "tr": "Marangoz Mehmet Emin'in kardeşi; ikinci yapımda ortak",
+        "en": "Brother of Mehmet Emin; co-patron of the second building"
+      }
+    },
+    {
+      "name": "Hâlid",
+      "role": {
+        "tr": "Kitâbenin hattatı (“Harrerehû Hâlid”)",
+        "en": "Calligrapher of the inscription (“Harrerehû Hâlid”)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Mermer üzerine, caminin kitâbesi",
+        "en": "Marble inscription of the mosque"
+      },
+      "language": "other",
+      "script": "celî tâ'lik",
+      "transliteration": null,
+      "translation": null,
+      "author": "Hâlid (“Harrerehû Hâlid”)",
+      "date": {
+        "hijri_year": 1323,
+        "gregorian": "1905-06"
+      },
+      "note": {
+        "tr": "Kitâbenin dili metinde belirtilmiyor; üç satırdır. Kitap yalnızca içeriği özetliyor, metin/transliterasyon ve mealen yok.",
+        "en": "The inscription's language is not stated; it has three lines. The book only summarizes the content; no transliteration or translation is given."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "190"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yeniden-yapim-1905",
+      "year": 1905,
+      "date": null,
+      "hijri": "1323",
+      "type": "construction",
+      "title": {
+        "tr": "Mahalleli tarafından yeni tarzda yeniden yapım (kitâbe, H. 1323)",
+        "en": "Rebuilt in a new style by the locals (inscription, 1323 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "190"
+        }
+      ],
+      "note": {
+        "tr": "Miladi 1905-06; başlangıç yılı alındı.",
+        "en": "1905-06 AD; start year used."
+      }
+    },
+    {
+      "id": "onarim-2018-2021",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı (2018-2021)",
+        "en": "Repair by the Regional Directorate of Foundations (2018-2021)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "190"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı alındı.",
+        "en": "Start year used."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, alt kısmı moloz taş üst kısmı kerpiç bir camidir; batı yandan sonradan eklenmiş bir sundurmayla girilir. Sundurmanın üzerinde sac malzemeli bir köşk minare vardır. İçerisi sade, mihrap ve minber ahşaptır; kuzeyde tek ahşap ayaklı bir kadınlar mahfili bulunur.",
+      "en": "A square-plan mosque with rubble stone below and adobe above, entered through a later porch on the west. A sheet-metal pavilion minaret stands on the porch. The interior is plain, with a wooden mihrab and minbar and a women's gallery on a single wooden pillar to the north."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "191-191"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=722",
+        "original_name": "pdf-s97-xref722",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "191"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Selahaddin (Keçeciler) Camii (kitap s. 191)",
+        "en": "Selahaddin (Keçeciler) Mosque (book p. 191)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap sütunlar, merdivenler ve pencere çerçeveleri var. Mavi halı, duvarlarda ahşap kaplama ve kemerler görülmektedir.",
+        "en": "Wooden pillars, staircase, and window frames are visible. A blue carpet, wooden wall paneling, and arches are present."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

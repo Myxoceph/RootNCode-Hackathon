@@ -1,4 +1,4 @@
-import { CreateContributionRequestSchema, NicknameSchema, normalizeContributionText } from "@vagabonds/contracts";
+import { AnonymousSessionResponseSchema, CreateContributionRequestSchema, NicknameSchema, normalizeContributionText } from "@vagabonds/contracts";
 import { describe, expect, it } from "vitest";
 import { hashToken, newToken } from "../src/modules/community/auth.ts";
 import { toPulseItems } from "../src/modules/community/community.mapper.ts";
@@ -56,6 +56,7 @@ describe("pulse items", () => {
         created_at: new Date("2026-10-19T08:00:00Z"),
         reviewed_at: new Date("2026-10-19T09:00:00Z"),
         reject_reason: null,
+        photo: null,
         user: { nickname: "Gezgin" },
       },
     ],
@@ -80,5 +81,15 @@ describe("pulse items", () => {
     const lateNight = { ...records.community[0]!, created_at: new Date("2026-10-24T22:51:00Z") };
     const [item] = toPulseItems({ tips: [], community: [lateNight], communityTotal: 1 }, "tr");
     expect(item?.date).toBe("2026-10-25");
+  });
+});
+
+describe("AppUserSchema", () => {
+  it("still reads a session the app stored before accounts (no username)", () => {
+    const stored = {
+      user: { id: "8d3e0b62-1f7a-4c1e-9b1a-2f4e5d6c7b8a", nickname: "Eski Gezgin", role: "visitor", createdAt: "2026-10-20T10:00:00.000Z" },
+      token: `vgb_${"x".repeat(43)}`,
+    };
+    expect(AnonymousSessionResponseSchema.parse(stored).user.username).toBeNull();
   });
 });

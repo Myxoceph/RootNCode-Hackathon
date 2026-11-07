@@ -24,6 +24,15 @@ TABLES = {
     "relation_type": ["code", "label_tr", "label_en"],
     "timeline_event_type": ["code", "label_tr", "label_en"],
     "source": ["id", "type", "title_tr", "title_en", "publisher", "year", "isbn", "url", "is_official", "extra"],
+    "city_dish": [
+        "id", "city_code", "sort_order", "kind", "name_tr", "name_en", "description_tr", "description_en", "story_tr", "story_en",
+        "district", "gi_portal_id", "gi_registration_number", "gi_registered_on", "gi_type", "gi_registrant", "gi_document_url",
+        "source_id", "source_url", "confidence", "status",
+    ],
+    "sound": [
+        "key", "sort_order", "title_tr", "title_en", "file_key", "duration_seconds", "captions", "license", "author",
+        "source_url", "status",
+    ],
     # eser
     "asset": [
         "id", "status", "type_code", "secondary_types", "parent_id", "era_code", "tags",
@@ -43,12 +52,14 @@ TABLES = {
         "created_at", "updated_at",
     ],
     "asset_section": ["asset_id", "slug", "sort_order", "title_tr", "title_en", "body_tr", "body_en", "confidence"],
+    "asset_custom_block": ["asset_id", "slug", "sort_order", "after_block", "title_tr", "title_en", "body_tr", "body_en"],
     "asset_legend": ["asset_id", "slug", "sort_order", "title_tr", "title_en", "body_tr", "body_en", "source_verdict"],
     "asset_fact": ["asset_id", "key", "sort_order", "label_tr", "label_en", "value", "value_num", "unit", "note_tr", "note_en", "confidence"],
     "asset_person": ["asset_id", "sort_order", "name", "role_tr", "role_en"],
     "timeline_event": ["asset_id", "slug", "year", "date", "hijri", "type_code", "title_tr", "title_en", "note_tr", "note_en", "confidence"],
     "asset_highlight": ["asset_id", "sort_order", "feature", "title_tr", "title_en", "hint_tr", "hint_en", "section_slug"],
-    "asset_relation": ["id", "source_asset_id", "target_asset_id", "type_code", "description_tr", "description_en", "confidence"],
+    "asset_relation": ["id", "source_asset_id", "target_asset_id", "type_code", "description_tr", "description_en", "confidence",
+                       "target_name_tr", "target_name_en"],
     "visitor_tip": ["id", "asset_id", "text_tr", "text_en", "origin", "collected_at"],
     "exhibition": ["id", "asset_id", "name_tr", "name_en", "venue", "start_date", "end_date"],
     "source_citation": ["id", "asset_id", "entity", "entity_key", "source_id", "pages"],
@@ -61,7 +72,7 @@ TABLES = {
     "asset_media": [
         "asset_id", "media_key", "media_id", "sort_order", "is_cover", "subject", "focal_x", "focal_y",
         "caption_tr", "caption_en", "alt_tr", "alt_en", "archive_year", "archive_year_approx",
-        "overlay_opacity", "overlay_aspect", "shooting_hint_tr", "shooting_hint_en",
+        "overlay_opacity", "overlay_aspect", "shooting_hint_tr", "shooting_hint_en", "dossier_after", "panel_upload",
     ],
     "inscription": [
         "asset_id", "slug", "sort_order", "location_tr", "location_en", "language", "script", "transliteration",
@@ -75,11 +86,11 @@ TABLES = {
 
 # Bir esere ait tablolar (görüntüleyicide eser sayfasında gösterilir), DDL sırasıyla
 ASSET_TABLES = [
-    "asset", "asset_section", "asset_legend", "asset_fact", "asset_person", "timeline_event",
+    "asset", "asset_section", "asset_custom_block", "asset_legend", "asset_fact", "asset_person", "timeline_event",
     "asset_highlight", "asset_relation", "visitor_tip", "exhibition", "source_citation",
     "media", "media_variant", "asset_media", "inscription", "contribution", "asset_revision",
 ]
-SHARED_TABLES = ["region", "city", "asset_type", "era", "relation_type", "timeline_event_type", "source"]
+SHARED_TABLES = ["region", "city", "asset_type", "era", "relation_type", "timeline_event_type", "source", "city_dish", "sound"]
 
 ENUM_TABLES = {
     "region": "regions", "era": "eras", "relation_type": "relation_types", "timeline_event_type": "timeline_event_types",
@@ -118,7 +129,43 @@ def shared_rows():
         }
         for s in sources
     ]
+    rows["city_dish"] = city_dish_rows()
+    rows["sound"] = sound_rows()
     return {t: rows[t] for t in SHARED_TABLES}
+
+
+def sound_rows():
+    """sounds.json → sound. Altyazılar jsonb'de [{at, text_tr, text_en}] olarak durur."""
+    sounds = json.loads((DATA / "sounds.json").read_text(encoding="utf-8"))["sounds"]
+    return [
+        {
+            "key": s["key"], "sort_order": order, "title_tr": s["title"]["tr"], "title_en": s["title"].get("en"),
+            "file_key": s["file"], "duration_seconds": s["duration_seconds"],
+            "captions": [{"at": c["at"], "text_tr": c["text"]["tr"], "text_en": c["text"].get("en")} for c in s["captions"]],
+            "license": s["license"], "author": s["author"], "source_url": s["source_url"], "status": s["status"],
+        }
+        for order, s in enumerate(sounds)
+    ]
+
+
+def city_dish_rows():
+    """sehirler/<il>.json → city_dish. Taslaklar da girer; API yalnızca görünür durumdakileri verir."""
+    rows = []
+    for path in sorted((DATA / "sehirler").glob("*.json")):
+        city = json.loads(path.read_text(encoding="utf-8"))
+        for order, d in enumerate(city["dishes"]):
+            gi, ref = d["geographical_indication"], d["source_refs"][0]
+            rows.append({
+                "id": d["id"], "city_code": city["city"], "sort_order": order, "kind": d["kind"],
+                "name_tr": d["name"]["tr"], "name_en": d["name"].get("en"),
+                "description_tr": d["description"]["tr"], "description_en": d["description"].get("en"),
+                "story_tr": _t(d["story"], "tr"), "story_en": _t(d["story"], "en"), "district": d["district"],
+                "gi_portal_id": gi["portal_id"], "gi_registration_number": gi["registration_number"],
+                "gi_registered_on": gi["registered_on"], "gi_type": gi["type"], "gi_registrant": gi["registrant"],
+                "gi_document_url": gi["document_url"], "source_id": ref["source_id"], "source_url": ref.get("url"),
+                "confidence": d["confidence"], "status": d["status"],
+            })
+    return rows
 
 
 @lru_cache(maxsize=None)
@@ -204,6 +251,12 @@ def asset_rows(a, manifest):
             "body_tr": s["body"]["tr"], "body_en": s["body"].get("en"), "confidence": s["confidence"],
         })
         cite("section", s["id"], s["source_refs"])
+
+    for i, b in enumerate(a.get("custom_blocks", [])):
+        rows["asset_custom_block"].append({
+            "asset_id": aid, "slug": b["id"], "sort_order": i, "after_block": b["after"], "title_tr": b["title"]["tr"], "title_en": b["title"].get("en"),
+            "body_tr": b["body"]["tr"], "body_en": b["body"].get("en"),
+        })
     for i, g in enumerate(a.get("legends", [])):
         rows["asset_legend"].append({
             "asset_id": aid, "slug": g["id"], "sort_order": i, "title_tr": g["title"]["tr"], "title_en": g["title"].get("en"),
@@ -236,6 +289,7 @@ def asset_rows(a, manifest):
         rows["asset_relation"].append({
             "id": GENERATED, "source_asset_id": aid, "target_asset_id": r["target_id"], "type_code": r["type"],
             "description_tr": r["description"]["tr"], "description_en": r["description"].get("en"), "confidence": r["confidence"],
+            "target_name_tr": r.get("target_name", {}).get("tr"), "target_name_en": r.get("target_name", {}).get("en"),
         })
         cite("relation", f"{r['target_id']}:{r['type']}", r["source_refs"])
     for tip in V.get("visitor_tips", []):
@@ -276,6 +330,7 @@ def asset_rows(a, manifest):
             "archive_year": m.get("year"), "archive_year_approx": m.get("year_approx"),
             "overlay_opacity": ov.get("opacity"), "overlay_aspect": ov.get("aspect_ratio"),
             "shooting_hint_tr": _t(ov.get("shooting_hint"), "tr"), "shooting_hint_en": _t(ov.get("shooting_hint"), "en"),
+            "dossier_after": m.get("dossier_after"), "panel_upload": False,
         })
 
     for i, n in enumerate(a.get("inscriptions", [])):

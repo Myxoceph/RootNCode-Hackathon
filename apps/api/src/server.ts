@@ -1,6 +1,11 @@
+import { createR2MediaStore } from "./modules/admin/media-store.ts";
 import { buildApp } from "./app.ts";
 import { loadEnv } from "./config/env.ts";
 import { createPrismaClient } from "./db/prisma.ts";
+import { createChatModel } from "./modules/assistant/assistant.model.ts";
+import { createOtpClient } from "./modules/transit/otp.client.ts";
+import { createVisionClient } from "./modules/vision/vision.client.ts";
+import { createVoiceClient } from "./modules/voice/voice.client.ts";
 import { createWeatherService } from "./modules/weather/weather.service.ts";
 
 const env = loadEnv();
@@ -12,6 +17,16 @@ const app = buildApp({
   mediaBaseUrl: env.MEDIA_BASE_URL,
   assetVisibility: env.ASSET_VISIBILITY,
   trustProxy: env.TRUST_PROXY,
+  demoUnlock: env.DEMO_UNLOCK,
+  mediaStore:
+    env.MEDIA_S3_ENDPOINT && env.MEDIA_BUCKET && env.MEDIA_S3_ACCESS_KEY_ID && env.MEDIA_S3_SECRET_ACCESS_KEY
+      ? createR2MediaStore({
+          endpoint: env.MEDIA_S3_ENDPOINT,
+          bucket: env.MEDIA_BUCKET,
+          accessKeyId: env.MEDIA_S3_ACCESS_KEY_ID,
+          secretAccessKey: env.MEDIA_S3_SECRET_ACCESS_KEY,
+        })
+      : null,
   rateLimit: env.RATE_LIMIT_MAX === 0 ? false : { max: env.RATE_LIMIT_MAX, timeWindowMs: 60_000 },
   weather: env.OPEN_METEO_URL
     ? createWeatherService({
@@ -19,6 +34,26 @@ const app = buildApp({
         onError: (err) => app.log.warn({ err }, "Weather provider failed; serving without weather"),
       })
     : undefined,
+  assistantModel:
+    env.ASSISTANT_BASE_URL && env.ASSISTANT_MODEL
+      ? createChatModel({ baseUrl: env.ASSISTANT_BASE_URL, model: env.ASSISTANT_MODEL, apiKey: env.ASSISTANT_API_KEY || undefined })
+      : null,
+  voice:
+    env.ASSISTANT_BASE_URL && env.VOICE_ASR_MODEL && env.VOICE_TTS_MODEL
+      ? createVoiceClient({
+          baseUrl: env.ASSISTANT_BASE_URL,
+          asrModel: env.VOICE_ASR_MODEL,
+          ttsModel: env.VOICE_TTS_MODEL,
+          apiKey: env.ASSISTANT_API_KEY || undefined,
+        })
+      : null,
+  vision:
+    env.ASSISTANT_BASE_URL && env.VISION_MODEL
+      ? createVisionClient({ baseUrl: env.ASSISTANT_BASE_URL, model: env.VISION_MODEL, apiKey: env.ASSISTANT_API_KEY || undefined })
+      : null,
+  transitPlanner: env.OTP_URL
+    ? createOtpClient({ baseUrl: env.OTP_URL, onError: (err) => app.log.warn({ err }, "OpenTripPlanner failed; no transit directions") })
+    : null,
 });
 
 async function shutdown(signal: NodeJS.Signals): Promise<void> {

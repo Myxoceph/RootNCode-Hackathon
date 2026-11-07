@@ -1,0 +1,407 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ilgin-pir-huseyin-ulu-cukur-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 448-449) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hicri ve miladi tarihlerin uyuşmazlığı veri ekibince kontrol edilmeli.",
+      "Vakfiyedeki vakıfların ayrıntıları kitapta verilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap '23 Şevval 826 / M. 1422' yazıyor; H. 826 Şevval ayı M. 1423 sonbaharına denk gelir. İki değer de kaynağa sadık kalınarak saklandı, kayıt 'disputed' işaretlendi. (Hicri-miladi karşılaştırması ekip hesabıdır; kitap bu uyuşmazlığı belirtmiyor, kitaptaki iki değer olduğu gibi saklandı.)"
+      }
+    ]
+  },
+  "name": {
+    "tr": "Pir Hüseyin (Ulu - Çukur) Camii",
+    "en": "Pir Hüseyin (Grand - Çukur) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Çukur Camii",
+      "en": "Çukur Mosque",
+      "note": "Zeminden 1,5 m aşağıda kaldığı için halk arasında"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "Karamanoğulları",
+    "Çukur Camii",
+    "Ilgın ulu camisi",
+    "vakfiye 1422"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ilgın",
+    "neighborhood": "Pir Hüseyin Mahallesi (çarşı içi)",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "448-449"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.281618,
+      "lng": 31.918011,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1127962205 ('Çukur Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "23 Şevval 826 / M. 1422",
+      "en": "23 Shawwal 826 AH / 1422 AD"
+    },
+    "start_year": 1422,
+    "end_year": 1422,
+    "hijri_year": 826,
+    "century": 15,
+    "basis": {
+      "tr": "VGM'deki 23 Şevval 826 / M. 1422 tarihli vakfiyeden yapının 1422'de Karamanoğulları döneminde yaptırıldığı anlaşılıyor.",
+      "en": "The foundation charter dated 23 Shawwal 826 / 1422 AD shows that the mosque was built in 1422 in the Karamanid period."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "448"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Turgut oğlu Pir Hüseyin Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "448-449"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Pir Hüseyin Bey Vakfı",
+    "deed": {
+      "date_display": "23 Şevval 826 / M. 1422",
+      "excerpt": {
+        "tr": "VGM'deki 23 Şevval 826 / M. 1422 tarihli vakfiyeden yapının Turgut oğlu Pir Hüseyin Bey tarafından yaptırıldığı anlaşılmaktadır.",
+        "en": "The foundation charter dated 23 Shawwal 826 / 1422 AD in the General Directorate of Foundations shows the building was built by Pir Hüseyin Bey, son of Turgut."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "448"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Vakfiyede cami için Ilgın ve diğer yerlerde pek çok vakıf ihdas edilmiştir.",
+      "en": "According to the charter many endowments were established for the mosque in Ilgın and other places."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "448-449"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Karamanoğulları döneminde 1422'de Turgut oğlu Pir Hüseyin Bey'in yaptırdığı, 2015-2022 restorasyonuyla yeniden inşa edilen Ilgın'ın ulu camisi.",
+    "en": "Ilgın's grand mosque, built in 1422 by Pir Hüseyin Bey, son of Turgut, in the Karamanid period and rebuilt in the 2015-2022 restoration."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Tarihçe",
+        "en": "Overview and History"
+      },
+      "body": {
+        "tr": "Ilgın merkezinde, çarşı içinde kendi ismiyle anılan mahallede bulunan cami, zeminden 1,5 m aşağıda kaldığı için halk tarafından \"Çukur Camii\" adıyla anılmaktadır. Camiye ait herhangi bir kitâbe günümüze ulaşmamıştır. VGM'deki 23 Şevval 826 / M. 1422 tarihli vakfiyeden yapının 1422'de Karamanoğulları döneminde Turgut oğlu Pir Hüseyin Bey tarafından yaptırıldığı anlaşılmaktadır. Vakfiyede cami için Ilgın ve diğer yerlerde pek çok vakıf ihdas edilmiştir.",
+        "en": "Located in the center of Ilgın in the bazaar neighborhood named after it, the mosque is called \"Çukur Mosque\" by the public because it is 1.5 m below ground. No inscription has survived. The foundation charter dated 23 Shawwal 826 / 1422 AD in the General Directorate of Foundations shows that Pir Hüseyin Bey, son of Turgut, built it in 1422 in the Karamanid period. According to the charter many endowments were established for the mosque in Ilgın and other places."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "448"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Restorasyon ve Mimari",
+        "en": "Restoration and Architecture"
+      },
+      "body": {
+        "tr": "Günümüzde eski halinden fazla unsuru kalmayan yapı, Vakıflar Genel Müdürlüğü tarafından 2015-2022 arasında yapılan restorasyonla aslına uygun biçimde yeniden inşa edilmiştir. Cami enine gelişen dikdörtgen planlı ve mihrap önü kubbelidir. Kuzeybatı köşedeki minare kare prizmal kaideli ve silindirik gövdelidir. Konya Alaaddin Camii'nin benzer plan şemasına sahip olan cami aynı zamanda Ilgın'ın ulu camisidir.",
+        "en": "The building, of which little of its former state remains, was rebuilt in accordance with its original state by the General Directorate of Foundations between 2015 and 2022. The mosque has a horizontally developed rectangular plan with a dome in front of the mihrab. The minaret in the northwest corner has a square prismatic base and cylindrical body. With a plan scheme similar to the Alaaddin Mosque in Konya, it is also the grand mosque of Ilgın."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "449"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Turgut oğlu Pir Hüseyin Bey",
+      "role": {
+        "tr": "Camiyi yaptıran",
+        "en": "Builder of the mosque"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1422",
+      "year": 1422,
+      "hijri": "826",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yaptırıldı (vakfiyeye göre)",
+        "en": "Mosque built (according to the foundation charter)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "448"
+        }
+      ],
+      "date": null
+    },
+    {
+      "id": "restorasyon-2015-2022",
+      "year": 2015,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM restorasyonu ile aslına uygun yeniden inşa (2015-2022)",
+        "en": "Rebuilt faithfully to the original in the General Directorate of Foundations restoration (2015-2022)"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "449"
+        }
+      ],
+      "date": null,
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-selcuklu-sultan-alaeddin-ulu-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Kitaba göre Konya Alaaddin Camii'nin benzer plan şemasına sahiptir.",
+        "en": "According to the book it has a plan scheme similar to the Alaaddin Mosque in Konya."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "449"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Pir Hüseyin Camii, Ilgın çarşısında yer alır; zemin seviyesinin 1,5 metre altında kaldığı için halk ona Çukur Camii der. Enine dikdörtgen planlıdır, mihrabın önü kubbelidir ve kuzeybatıda silindirik gövdeli bir minare vardır.",
+      "en": "Pir Hüseyin Mosque stands in the Ilgın bazaar, 1.5 metres below street level, which is why locals call it Çukur Mosque. It has a wide rectangular plan, a dome in front of the mihrab and a cylindrical minaret in the northwest."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 448-449)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "448-449"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1975",
+        "original_name": "pdf-s226-xref1975",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "448"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Pir Hüseyin (Ulu - Çukur) Camii (kitap s. 448)",
+        "en": "Pir Hüseyin (Grand - Çukur) Mosque (book p. 448)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kare planlı bir cami ve yanında sivri kubbeli minare. Caminin cephesinde dikdörtgen pencereler ve ahşap kapısı var.",
+        "en": "Stone-walled, rectangular mosque with a conical-roofed minaret. The mosque has rectangular windows and a wooden door."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1977",
+        "original_name": "pdf-s226-xref1977",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "449"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Pir Hüseyin (Ulu - Çukur) Camii (kitap s. 449)",
+        "en": "Pir Hüseyin (Grand - Çukur) Mosque (book p. 449)"
+      },
+      "alt": {
+        "tr": "İç mekanda, sütunlar, kemerler, taş zemin ve ahşap çerçeveli pencereler görülüyor.",
+        "en": "Inside, columns, arches, stone floor, and wooden-framed windows are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1979",
+        "original_name": "pdf-s226-xref1979",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "449"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Pir Hüseyin (Ulu - Çukur) Camii (kitap s. 449)",
+        "en": "Pir Hüseyin (Grand - Çukur) Mosque (book p. 449)"
+      },
+      "alt": {
+        "tr": "İç mekanda, kemerli tavanlar, sütunlar ve mavi desenli halılar görülüyor.",
+        "en": "Inside, arched ceilings, columns, and blue patterned carpets are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1981",
+        "original_name": "pdf-s226-xref1981",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "449"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Pir Hüseyin (Ulu - Çukur) Camii (kitap s. 449)",
+        "en": "Pir Hüseyin (Grand - Çukur) Mosque (book p. 449)"
+      },
+      "alt": {
+        "tr": "Taş duvarın üzerinde, dikdörtgen bir taş blokta kabartma yazı var.",
+        "en": "A carved inscription on a rectangular stone block set in a stone wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1983",
+        "original_name": "pdf-s226-xref1983",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "449"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Pir Hüseyin (Ulu - Çukur) Camii (kitap s. 449)",
+        "en": "Pir Hüseyin (Grand - Çukur) Mosque (book p. 449)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kubbeli ve sivri kuleli cami, çevresindeki binalarla birlikte görünüyor.",
+        "en": "Stone-walled mosque with a dome and a pointed minaret, seen among surrounding buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

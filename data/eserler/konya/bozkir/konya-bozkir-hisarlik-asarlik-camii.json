@@ -1,0 +1,470 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-bozkir-hisarlik-asarlik-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabından (s. 390-391) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da haritadan doğrulanarak eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "Asıl inşa tarihi ve banî kitapta yok; founder null bırakıldı.",
+      "Bağdatlı İsmail Efendi'nin yapıdaki rolü (mimar/kalem işi ustası) kitapta kesin belirtilmiyor; 'usta ismi' olarak geçiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Üç ayrı tarih (1842-43, 1865-66, 1866-67) yapının farklı yerlerinde kalem işiyle yazılı; hangisinin inşa ya da onarım tarihi olduğu kitapta belirtilmiyor. Hicri/miladi karşılıkları kendi içinde tutarlı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hisarlık Beldesi Asarlık Camii",
+    "en": "Hisarlık Settlement Asarlık Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kalem işi",
+    "ahşap"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Bozkır",
+    "neighborhood": "Hisarlık Mahallesi",
+    "address": "Eski mezarlık içinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "390"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Tek bir inşa tarihi yok; minare kapısı H. 1283 / M. 1866-67, kaide H. 1258 / M. 1842-43, harim kapısı H. 1282 / M. 1865-66",
+      "en": "No single construction date; AH 1283 / AD 1866-67 on minaret door, AH 1258 / AD 1842-43 on base, AH 1282 / AD 1865-66 by the entrance"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Yapıda inşa kitâbesi yok; yalnızca kalem işi ile yazılmış üç tarih var. Bu nedenle başlangıç/bitiş yılı verilmedi.",
+      "en": "No construction inscription; only three hand-painted dates. Start/end years therefore left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "390-391"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Bağdatlı İsmail Efendi",
+    "candidates": [],
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "390"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Bozkır Hisarlık Mahallesi'nde eski mezarlık içinde yer alan, yoğun kalem işi süslemeleriyle önemli sayılan ahşap direkli cami. 1985'e kadar ibadete açıktı; VGM onarımı 2007'de tamamlandı.",
+    "en": "A mosque in the old cemetery of Hisarlık Neighborhood, Bozkır, whose abundant hand-painted decoration is considered highly important. Open for worship until 1985; restoration completed in 2007."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Yapıda inşa kitâbesi yoktur. Minare kapısı üzerinde H. 1283 / M. 1866-67, kaidede H. 1258 / M. 1842-43 tarihleri kalem işiyle yazılmıştır. Harime giriş kapısının sağında H. 1282 / M. 1865-66 tarihi ve usta ismi olarak “Bağdatlı İsmail Efendi” yazar. 1985'e kadar ibadete açık olan cami, yakınına yeni cami yapılınca terk edilmiş; Vakıflar Genel Müdürlüğü onarımı 2007'de tamamlanmıştır.",
+        "en": "There is no construction inscription. AH 1283 / AD 1866-67 is written on the minaret door and AH 1258 / AD 1842-43 on the base. To the right of the harim entrance are the date AH 1282 / AD 1865-66 and the master's name “Bağdatlı İsmail Efendi”. Open for worship until 1985, it was abandoned after a new mosque was built nearby; the General Directorate of Foundations completed its restoration in 2007."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı dikdörtgen planlıdır; beden duvarlarında kaba yonu taş kullanılmıştır. Kuzeybatı köşedeki silindirik gövdeli, tek şerefeli minarenin kaidesi düzgün kesme taştır. Son cemaat yeri dört bağımsız ahşap direkle beş bölüme ayrılmıştır. Harim içten düz tavanlı, dıştan kırma çatılıdır; orta bölüm dört bağımsız kare ahşap direğin taşıdığı ahşap tavanla kaplıdır. Kuzeyde “U” biçimli mahfil, kıble duvarında mihrap ve minber vardır.",
+        "en": "The plan is rectangular, with rough-cut stone walls. The minaret in the northwest corner has a cylindrical body, a single balcony and a smooth cut-stone base. The narthex is divided into five sections by four free-standing wooden pillars. The harim has a flat ceiling inside and a hipped roof outside; its middle part is covered by a wooden ceiling on four square wooden poles. A “U”-shaped mahfil is in the north, the mihrab and minbar on the qibla wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "390-391"
+        }
+      ]
+    },
+    {
+      "id": "kalem-isi",
+      "order": 3,
+      "title": {
+        "tr": "Kalem işi süslemeler",
+        "en": "Hand-painted decoration"
+      },
+      "body": {
+        "tr": "Kapı, pencere, mahfil, mihrap, minber ve diğer bölümlerde yoğun kalem işi süsleme vardır; mahfil tavanında altı kollu yıldızlar, bitkisel süslemeler ve kandiller işlenmiştir. Mihrap yanlardan üç sıra bordürlü ahşap çerçeveyle sınırlanır ve üç dilimli tepelikle biter. Mihrabın sağında, güneybatı köşede beden duvarına bitişik minberin aynalık ve korkuluklarında ajur tekniğinde geometrik şekiller vardır.",
+        "en": "Hand-painted decoration is dense on doors, windows, mahfil, mihrab, minbar and other parts; the mahfil ceiling bears six-pointed stars, floral motifs and oil lamps. The mihrab is framed by a wooden frame with three borders and ends in a three-segmented crown. The minbar, attached to the wall in the southwest corner right of the mihrab, has openwork geometric shapes on its transom and railing."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "391"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sonradan_ibadete_acik_son_yil",
+      "label": {
+        "tr": "İbadete açık olduğu son yıl",
+        "en": "Last year open for worship"
+      },
+      "value": 1985,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "key": "onarim_tamamlanma",
+      "label": {
+        "tr": "VGM onarımının tamamlanma yılı",
+        "en": "Year the VGM restoration was completed"
+      },
+      "value": 2007,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "390"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Bağdatlı İsmail Efendi",
+      "role": {
+        "tr": "Usta (adı harim kapısı yanında yazılı)",
+        "en": "Master (name written beside the harim door)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kaide-tarihi",
+      "year": 1842,
+      "date": null,
+      "hijri": "1258",
+      "type": "record",
+      "title": {
+        "tr": "Minare kaidesinde H. 1258 / M. 1842-43 tarihi",
+        "en": "Date AH 1258 / AD 1842-43 on the minaret base"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "id": "harim-kapi-tarihi",
+      "year": 1865,
+      "date": null,
+      "hijri": "1282",
+      "type": "record",
+      "title": {
+        "tr": "Harim kapısı yanında H. 1282 / M. 1865-66 tarihi ve usta adı",
+        "en": "Date AH 1282 / AD 1865-66 and master's name beside the harim door"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "id": "minare-kapi-tarihi",
+      "year": 1866,
+      "date": null,
+      "hijri": "1283",
+      "type": "record",
+      "title": {
+        "tr": "Minare kapısında H. 1283 / M. 1866-67 tarihi",
+        "en": "Date AH 1283 / AD 1866-67 on the minaret door"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "id": "terk",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "İbadete açık son yıl; yeni cami sonrası terk",
+        "en": "Last year open for worship; abandoned after a new mosque was built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "390"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM onarımı tamamlandı",
+        "en": "VGM restoration completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "390"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kalem-isi",
+      "title": {
+        "tr": "Mahfil tavanı",
+        "en": "Mahfil ceiling"
+      },
+      "hint": {
+        "tr": "Altı kollu yıldızlara ve kandillere bakın.",
+        "en": "Look for the six-pointed stars and oil lamps."
+      },
+      "section_id": "kalem-isi"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, eski bir mezarlığın içinde duran, kaba yonu taştan dikdörtgen bir yapıdır. Kuzeybatı köşesinde tek şerefeli, silindirik gövdeli bir minare yükselir. Önde, dört ahşap direkle beş bölüme ayrılmış bir son cemaat yeri vardır. İçeride kapılar, pencereler, kuzeydeki U biçimli mahfil, mihrap ve minber baştan sona renkli kalem işi süslemelerle kaplıdır; mahfil tavanında altı kollu yıldızlar, bitkisel motifler ve kandiller görülür.",
+      "en": "The mosque stands inside an old cemetery, a rectangular building of rough-cut stone. A single-balcony cylindrical minaret rises at its northwest corner. In front is a narthex divided into five bays by four wooden pillars. Inside, the doors, windows, the U-shaped north gallery, the mihrab and the minbar are covered with painted decoration; the gallery ceiling shows six-pointed stars, floral motifs and oil lamps."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 390-391) derlenmiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "390-391"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1657",
+        "original_name": "pdf-s197-xref1657",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "390"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hisarlık Beldesi Asarlık Camii (kitap s. 390)",
+        "en": "Hisarlık Settlement Asarlık Mosque (book p. 390)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kiremit çatılı cami. Önünde ahşap sütunlar ve kapısı var. Arka planda minare ve ağaçlar.",
+        "en": "White-walled mosque with a tiled roof. Wooden columns and entrance in front. Minaret and trees in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1661",
+        "original_name": "pdf-s197-xref1661",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "391"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Hisarlık Beldesi Asarlık Camii (kitap s. 391)",
+        "en": "Hisarlık Settlement Asarlık Mosque (book p. 391)"
+      },
+      "alt": {
+        "tr": "Ahşap bir kapı yüzeyinde, çiçek ve sarmal desenlerle süslenmiş, döşeme ve kenar detayları görülmektedir.",
+        "en": "Wooden door surface with floral and scroll patterns, decorative panels, and border details."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1659",
+        "original_name": "pdf-s197-xref1659",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "391"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hisarlık Beldesi Asarlık Camii (kitap s. 391)",
+        "en": "Hisarlık Settlement Asarlık Mosque (book p. 391)"
+      },
+      "alt": {
+        "tr": "İç mekanda, duvarlarda desenli mozaikler, bir minber ve kubbeli bir giriş kapısı görülüyor.",
+        "en": "Inside, patterned mosaic walls, a minbar, and a domed entrance arch are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1663",
+        "original_name": "pdf-s197-xref1663",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "391"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Hisarlık Beldesi Asarlık Camii (kitap s. 391)",
+        "en": "Hisarlık Settlement Asarlık Mosque (book p. 391)"
+      },
+      "alt": {
+        "tr": "Kırmızı, yeşil ve siyah boyalı ahşap sütunlardan oluşan bir merdiven korkuluğu. Sütunlar süslü ve yuvarlak kesimlidir.",
+        "en": "A staircase railing with red, green, and black painted wooden balusters. The balusters are ornate and cylindrical."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1665",
+        "original_name": "pdf-s197-xref1665",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "391"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Hisarlık Beldesi Asarlık Camii (kitap s. 391)",
+        "en": "Hisarlık Settlement Asarlık Mosque (book p. 391)"
+      },
+      "alt": {
+        "tr": "Yeşil ve kırmızı renklerde, geometrik desenlerle süslü ahşap bir kütük. Arka planda mavi ve beyaz desenli duvar.",
+        "en": "A green and red wooden cabinet with geometric patterns. A blue and white patterned wall in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

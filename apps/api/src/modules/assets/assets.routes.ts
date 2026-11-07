@@ -1,4 +1,7 @@
 import {
+  AR_MINDAR_VERSION,
+  ArTargetsResponseSchema,
+  arTargetMindKey,
   AssetDetailSchema,
   AssetIdSchema,
   AssetListResponseSchema,
@@ -9,18 +12,24 @@ import {
   type AssetDetail,
   type AssetListResponse,
   type AssetRelationsResponse,
+  type ArTargetsResponse,
   type Lang,
   type NearbyAssetsResponse,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 import { HttpError } from "../../lib/http-error.ts";
-import { resolveLang } from "../../lib/lang.ts";
+import { pick, resolveLang } from "../../lib/lang.ts";
 import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
-import { toAssetDetail, toAssetRelation, toAssetSummary, toCoordinates, type MapperContext } from "./assets.mapper.ts";
+import { toSoundRecording } from "../sounds/sounds.mapper.ts";
+import type { SoundsRepository } from "../sounds/sounds.repository.ts";
+import { ambientKeyOf, APPROXIMATE_SOURCE, toAssetDetail, toAssetRelation, toAssetSummary, toCoordinates, toOutsideRelation, type MapperContext } from "./assets.mapper.ts";
 import { boundingBox, distanceMeters, selectRelations } from "./assets.network.ts";
+import type { CommunityRepository } from "../community/community.repository.ts";
+import { requireUser } from "../community/auth.ts";
 import {
+  ALL_ASSET_STATUSES,
   visibleStatuses,
   type AssetSummaryRecord,
   type AssetsRepository,
@@ -94,11 +103,59 @@ export interface AssetsRoutesOptions {
   repository: AssetsRepository;
   mediaBaseUrl: string;
   visibility: AssetVisibility;
+  /** Ambient recordings for `ambientSound.recording`. */
+  sounds: SoundsRepository;
 }
+
+/** An asset's page, as `GET /assets/:id` serves it, from a repository that sees `statuses`. */
+async function assetDetail(
+  id: string,
+  lang: Lang,
+  { repository, sounds, mediaBaseUrl, statuses }: { repository: AssetsRepository; sounds: SoundsRepository; mediaBaseUrl: string; statuses: string[] },
+): Promise<AssetDetail> {
+  const record = await repository.findById(id);
+  if (!record) throw notFound(id);
+  const soundKey = ambientKeyOf(record);
+  const [media, secondaryTypes, sound] = await Promise.all([
+    repository.findMedia([record.id]),
+    repository.findAssetTypes(record.secondary_types),
+    soundKey ? sounds.findByKey(soundKey) : null,
+  ]);
+  const recording = sound && toSoundRecording(sound, mediaBaseUrl, lang);
+  return AssetDetailSchema.parse(toAssetDetail(record, media, secondaryTypes, { lang, mediaBaseUrl, statuses }, recording));
+}
+
+export interface AdminAssetPreviewOptions {
+  /** A repository made with `ALL_ASSET_STATUSES`, so drafts are found too. */
+  repository: AssetsRepository;
+  sounds: SoundsRepository;
+  mediaBaseUrl: string;
+  community: CommunityRepository;
+}
+
+/** `GET /admin/assets/:id/preview`: the asset's page as the app would show it, drafts included; admins only. */
+export const adminAssetPreviewRoutes: FastifyPluginAsync<AdminAssetPreviewOptions> = async (app, { repository, sounds, mediaBaseUrl, community }) => {
+  const errorSchema = toOpenApiSchema(ErrorResponseSchema);
+  app.get("/admin/assets/:id/preview", {
+    schema: {
+      tags: ["moderation"],
+      summary: "Eserin uygulamadaki sayfası (taslaklar dahil), panelin önizlemesi için",
+      security: [{ bearerAuth: [] }],
+      params: toOpenApiSchema(DetailParamsSchema, "input"),
+      querystring: toOpenApiSchema(DetailQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(AssetDetailSchema), 400: errorSchema, 401: errorSchema, 403: errorSchema, 404: errorSchema },
+    },
+  }, async (request, reply): Promise<AssetDetail> => {
+    await requireUser(request, community, "admin");
+    const { id, query } = parseAssetRequest(request, DetailQuerySchema);
+    reply.header("cache-control", "no-store");
+    return assetDetail(id, requestLang(request, query.lang), { repository, sounds, mediaBaseUrl, statuses: ALL_ASSET_STATUSES });
+  });
+};
 
 export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
   app,
-  { repository, mediaBaseUrl, visibility },
+  { repository, mediaBaseUrl, visibility, sounds },
 ) => {
   const statuses = visibleStatuses(visibility);
   const context = (lang: Lang): MapperContext => ({ lang, mediaBaseUrl, statuses });
@@ -132,6 +189,37 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
     });
   });
 
+  // Taşın Dili: the inscriptions the camera can find, with where they are. Small (a row each),
+  // so the app picks those near the visitor without fetching every asset first.
+  app.get("/ar-targets", {
+    schema: {
+      tags: ["assets"],
+      summary: "Taşın Dili: kamerayla tanınan kitabeler, konumları ve .mind dosyaları",
+      response: { 200: toOpenApiSchema(ArTargetsResponseSchema) },
+    },
+  }, async (_request, reply): Promise<ArTargetsResponse> => {
+    const rows = await repository.findArTargets();
+    const items = rows.flatMap((row) => {
+      const media = row.asset_media?.media;
+      const variant = media?.status === "published" ? media.media_variant[0] : undefined;
+      if (!variant) return [];
+      // Approximate points (a district's middle) are too rough to say the visitor is at the inscription.
+      const located = (point: { lat: number | null; lng: number | null; coord_source: string | null } | null) =>
+        point && point.lat !== null && point.lng !== null && point.coord_source !== APPROXIMATE_SOURCE ? point : null;
+      const at = located(row.asset) ?? located(row.asset.asset);
+      return [{
+        assetId: row.asset_id,
+        inscriptionId: row.slug,
+        city: row.asset.city_code,
+        coordinates: at ? { lat: at.lat!, lng: at.lng! } : null,
+        mindUrl: `${mediaBaseUrl}/${arTargetMindKey(variant.key)}`,
+        mindarVersion: AR_MINDAR_VERSION,
+      }];
+    });
+    reply.header("cache-control", CACHE_CONTROL);
+    return ArTargetsResponseSchema.parse({ version: CONTRACT_VERSION, items });
+  });
+
   app.get("/assets/:id", {
     schema: {
       tags: ["assets"],
@@ -144,15 +232,9 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
     const { id, query } = parseAssetRequest(request, DetailQuerySchema);
     const lang = requestLang(request, query.lang);
 
-    const record = await repository.findById(id);
-    if (!record) throw notFound(id);
-    const [media, secondaryTypes] = await Promise.all([
-      repository.findMedia([record.id]),
-      repository.findAssetTypes(record.secondary_types),
-    ]);
-
+    const detail = await assetDetail(id, lang, { repository, sounds, mediaBaseUrl, statuses });
     setLanguageHeaders(reply, lang);
-    return AssetDetailSchema.parse(toAssetDetail(record, media, secondaryTypes, context(lang)));
+    return detail;
   });
 
   app.get("/assets/:id/relations", {
@@ -172,11 +254,16 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
     const otherIds = new Set(relations.flatMap((r) => [r.source_asset_id, r.target_asset_id]));
     otherIds.delete(id);
     const others = new Map((await repository.findSummaries([...otherIds])).map((other) => [other.id, other]));
-    const { items, unavailableCount } = selectRelations(id, relations, (otherId) => others.has(otherId));
+    const { items, unavailable } = selectRelations(id, relations, (otherId) => others.has(otherId));
+    // A link recorded here to a place with no record at all, named by the source: shown by name.
+    const existing = await repository.findExistingIds(unavailable.map((link) => link.otherId));
+    const outside = unavailable.filter(
+      (link) => link.direction === "outgoing" && !existing.has(link.otherId) && link.relation.target_name_tr,
+    );
 
     const [covers, citations] = await Promise.all([
       repository.findMedia(items.map((item) => item.otherId), { coversOnly: true }),
-      repository.findRelationCitations(items.map((item) => item.relation)),
+      repository.findRelationCitations([...items, ...outside].map((item) => item.relation)),
     ]);
     const coverOf = new Map(covers.map((cover) => [cover.asset_id, cover]));
     const ctx = context(lang);
@@ -193,7 +280,10 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
       lang,
       assetId: id,
       items: mapped,
-      unavailableCount,
+      outside: outside
+        .map((link) => toOutsideRelation(link, pick(link.relation.target_name_tr!, link.relation.target_name_en, lang), citations, ctx))
+        .sort((a, b) => a.type.code.localeCompare(b.type.code) || a.name.localeCompare(b.name, "tr")),
+      unavailableCount: unavailable.length - outside.length,
     });
   });
 

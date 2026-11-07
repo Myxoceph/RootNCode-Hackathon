@@ -1,22 +1,15 @@
-/**
- * Where a capsule's sound comes from (Y17). The CC0 recordings (H9) go into the media
- * bucket as `sounds/<sound key>.mp3`, the address data/README.md §9 gives
- * `ambientSound`; once one is there it plays, with no app change. Until the API returns
- * that URL itself (A14), the app builds it from the key.
- */
-const SOUNDS_URL = "https://media.allbytech.com/sounds";
+import type { CapsuleType } from "@/content/capsules";
 
-export function recordingUrl(soundKey: string): string {
-  return `${SOUNDS_URL}/${encodeURIComponent(soundKey)}.mp3`;
-}
-
-/** Recordings that failed to play in this app run: not tried again, so the stand-in starts at once. */
-const missing = new Set<string>();
-
-export function isMissing(soundKey: string): boolean {
-  return missing.has(soundKey);
-}
-
-export function markMissing(soundKey: string) {
-  missing.add(soundKey);
-}
+/** The capsules' sounds, in the app itself: they start at once, without a connection. */
+export const capsuleSounds: Record<CapsuleType, number> = {
+  cami: require("./capsules/cami.mp3"),
+  turbe: require("./capsules/turbe.mp3"),
+  sifahane: require("./capsules/darussifa.mp3"),
+  kervan: require("./capsules/han.mp3"),
+  medrese: require("./capsules/medrese.mp3"),
+  hamam: require("./capsules/hamam.mp3"),
+  su: require("./capsules/su.mp3"),
+  tekke: require("./capsules/tekke.mp3"),
+  imaret: require("./capsules/imaret.mp3"),
+  carsi: require("./capsules/carsi.mp3"),
+};

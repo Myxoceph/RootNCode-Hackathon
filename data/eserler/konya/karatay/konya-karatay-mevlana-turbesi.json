@@ -1,0 +1,731 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-mevlana-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Türbeyi yaptıranlar s.30-31 ve s.32 arasında farklı verildiği için founder 'disputed'",
+      "Mimar: yalnızca İngilizce metinde 'Bedreddin of Tabriz' geçer, Türkçe metinde yok; kontrol edilmeli",
+      "Güney duvar kitâbesi ve kubbe madalyonu kitâbesinin metni kitapta yok (inscriptions boş)",
+      "Mevlâna ve Sultan Veled sandukalarına ait kitabeler/yazı kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architect",
+        "note": "İngilizce metin 'by the Architect Bedreddin of Tabriz' diyor; Türkçe metinde mimar adı geçmiyor. Kaynağa sadık kalındı, 'disputed' işaretlendi."
+      },
+      {
+        "field": "founder",
+        "note": "s.30-31: 'Gürcü Hatun ile Sultan Veled' yaptırmıştır; s.32: 'Alameddin Kayser, Muinuddin Pervane ve Gürcü Hatun'un gayretleri, Sultan Veled'in izni'. Aynı kişiler tam örtüşmediği için 'disputed'."
+      },
+      {
+        "field": "sections[osmanli-kalemisleri]",
+        "note": "Türkçe metin 'Halepli Mehmed oğlu Mevlevi Abdurrahman' (s.32) ve 'Halepli Abdurrahman isimli nakkaş' (s.31) diyor; İngilizce s.31 'miniaturist', s.32 'Mevlevi Abdurrahman, son of Mehmed of Aleppo'. Aynı kişi kabul edildi. Kalem işleri tarihi (II. Bayezid) güney duvar kitâbesinin son iki satırı kayıp olduğundan kesin değil."
+      },
+      {
+        "field": "sections[karamanoglu-cini]",
+        "note": "'Karamanoğlu Alâeddin Ali Bey' (s.31) ve 'Karamanoğlu Alâeddin Bey' (s.32) aynı kişi olarak okundu; 1386 yalnızca Silifke fethi yılı, yapım yılı değil."
+      },
+      {
+        "field": "sections[sanduka-kafes]",
+        "note": "Türkçe 'padişah köşkü' tırnak içinde bir ad; IV. Murat'ın levhalarla kapatması 'düşünülmektedir' (probable)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hz. Mevlâna Türbesi (Kubbe-i Hadra)",
+    "en": "Mevlâna Tomb (Kubbe-i Hadra)"
+  },
+  "subtitle": {
+    "tr": "Mevlâna Dergâhı'nın ilk yapısı",
+    "en": "The first structure of the Mevlâna Dergah"
+  },
+  "alternate_names": [
+    {
+      "tr": "Kubbe-i Hadra",
+      "en": "Kubbe-i Hadra",
+      "note": "Başlıkta parantez içinde verilen ad (Yeşil Kubbe)"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "konya-karatay-mevlana-kulliyesi",
+  "era": "selcuklu",
+  "tags": [
+    "Mevlâna",
+    "Kubbe-i Hadra",
+    "dilimli gövde",
+    "çini",
+    "kündekâri",
+    "kalem işi",
+    "sanduka"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "32-33"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.870774,
+      "lng": 32.505397,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (konya-karatay-mevlana-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1274 (bahar)",
+      "en": "1274 (spring)"
+    },
+    "start_year": 1274,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Yapım kitâbesi yoktur; 1274'te cevizden kündekâri sandukanın açık alana konamayacağı düşünülerek türbenin de aynı tarihte yapıldığı kabul edilmektedir.",
+      "en": "There is no building inscription; since the walnut kündekâri sarcophagus of 1274 could not stand in the open, the tomb is accepted to be of the same date."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "32-33"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Alâeddin Kayser, Muinüddin Pervane ve eşi Gürcü Hatun (Sultan Veled'in izniyle)",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "30-33"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [
+      {
+        "name": "Tebrizli Mimar Bedreddin",
+        "note": "Yalnızca İngilizce metinde geçer ('Architect Bedreddin of Tabriz'); Türkçe metinde mimar adı yoktur"
+      },
+      {
+        "name": "Abdullah oğlu Ahmed",
+        "note": "Karamanoğlu dönemi dilimli gövde ve külahın yapımcısı olabileceği düşünülmektedir (Akşehir Seyid Mahmud Hayrani Türbesi'ne benzerlik)"
+      }
+    ],
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "32-33"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Külliyenin çekirdeği ve ilk yapısı olan, Hz. Mevlâna'nın 17 Aralık 1273'te vefatının ardından mezarı üzerine 1274'te yapıldığı kabul edilen dört fil ayaklı, kubbeli baldaken tarzda türbe. On altı dilimli çini kaplı gövdesi ve külahıyla tanınır; içinde Mevlâna ve oğlu Sultan Veled'in sandukaları, gümüş kafes ve gümüş eşik vardır.",
+    "en": "The core and first structure of the complex: a domed baldachin-style tomb on four elephant legs, accepted to have been built in 1274 over Mevlâna's grave after his death on 17 December 1273. Known for its sixteen-segmented tile-covered body and cone; inside are the sarcophagi of Mevlâna and his son Sultan Veled, a silver cage and a silver threshold."
+  },
+  "sections": [
+    {
+      "id": "yapim",
+      "order": 1,
+      "title": {
+        "tr": "Yapımı",
+        "en": "Construction"
+      },
+      "body": {
+        "tr": "Hz. Mevlâna 17 Aralık 1273 tarihinde vefat ettiğinde, babasının gül bahçesinde bulunan mezarının yanına defnedilmiştir. Araştırmalara göre mezarının üzerine yaptırılan türbe, 1274 senesinin bahar aylarında Alameddin Kayser, Muinuddin Pervane ve karısı Gürcü Hatun'un gayretleri, Mevlâna oğlu Sultan Veled'in izninden sonra yaptırılmıştır. Türbe dört fil ayağı üzerine, kubbeli baldaken tarzındadır. Türbenin yapım kitâbesi bulunmamaktadır. Ancak Mevlâna için 1274 senesinde cevizden kündekari tekniğinde yaptırılmış olan sandukanın açık alana konulamayacağı düşünülerek türbenin de aynı tarihte yaptırılmış olduğu kabul görmektedir. Türbe Selçuklu türbeleri geleneğinde yapılmıştır; mezar odası, gövde ve kubbe kısmından oluşmaktadır. Türbenin iç kısmının Selçuklu dönemi çinileri ile kaplanmış olabileceği ileri sürülmüşse de restorasyonlarda herhangi bir çini izine rastlanmamıştır.",
+        "en": "When Mevlâna died on December 17, 1273, he was buried next to his father's grave in the rose garden. According to researchers, after the efforts of Alameddin Kayser, Muinüddin Pervane and his wife Gürcü Hatun, and the permission of Mevlâna's son Sultan Veled, a domed baldachin-style tomb was built on his grave by the Architect Bedreddin of Tabriz in the spring of 1274, on four elephant legs. There is no building inscription. However, it is accepted that since the sarcophagus made for Mevlâna in 1274 from walnut using the kundekari technique could not be placed in an open area, the tomb was built on the same date. The tomb follows the Seljuk tomb tradition and consists of burial chamber, body and dome. Although it has been suggested that the interior may have been tiled in the Seljuk period, no traces of tiles have been found in restorations to date."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33"
+        }
+      ]
+    },
+    {
+      "id": "karamanoglu-cini",
+      "order": 2,
+      "title": {
+        "tr": "Dilimli Gövde ve Çiniler",
+        "en": "Segmented Body and Tiles"
+      },
+      "body": {
+        "tr": "Karamanoğlu Alâeddin Bey 1386 yılında Silifke'yi fethetmesinden sonra elde ettiği ganimetlerle Mevlâna Türbesi'nin on altı dilimli gövde ve külahı ile çini kaplamalarını yaptırmıştır. Dilimli gövde ve külah Akşehir'deki Seyid Mahmud Hayrani Türbesi'nin çini mozaik kaplı gövdesi ve külahıyla benzerlik gösterdiği için Abdullah oğlu Ahmed'in yapmış olabileceği düşünülmektedir. Gövde ve külah açık alanda doğa şartları ve depremler nedeniyle yıprandığından Osmanlı ve Cumhuriyet döneminde pek çok kez onarılmış, çiniler değiştirilmiştir. Son olarak 2021'de Kubbe-i Hadra'nın çinileri Konyalı çini sanatçısı Kemal Güler'in geleneksel Selçuklu tarzında imal ettiği çinilerle yenilenmiştir.",
+        "en": "Karamanoğlu Alâeddin Bey had the sixteen-segmented body and cone and tile coverings made with the spoils from his conquest of Silifke in 1386. It is thought that Abdullah's son Ahmed may have built it, as the segmented body and cone resemble the tile-mosaic-covered body and cone of the Seyid Mahmud Hayrani Tomb in Akşehir. Worn by weather and earthquakes in the open, the parts were repaired many times in the Ottoman and Republican periods and the tiles replaced. Finally, in 2021, the tiles of the Kubbe-i Hadra were renewed with tiles made in the traditional Seljuk style by Konya tile artist Kemal Güler."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33, 36-37"
+        }
+      ]
+    },
+    {
+      "id": "osmanli-kalemisleri",
+      "order": 3,
+      "title": {
+        "tr": "Osmanlı Dönemi Onarımları ve Kalem İşleri",
+        "en": "Ottoman Repairs and Hand-Carved Decorations"
+      },
+      "body": {
+        "tr": "Mevlâna Türbesi Osmanlılar döneminde de pek çok defa onarım geçirmiştir. Türbenin iç mekânda fil ayakları ve kubbesi, güney duvarında yer alan kalem işi süslemeleri II. Bayezid döneminde Halepli Mehmed oğlu Mevlevi Abdurrahman'a yaptırılmıştır. Güney duvardaki kitâbenin son iki satırı deprem nedeniyle bilinmeyen bir tarihte yıkıldığı için bu süslemelerin tarihi tam olarak belirlenememiştir. 2018'de Müze Müdürlüğü'nün restorasyonunda kubbedeki bir madalyon içinde, kalem işi süslemelerin 1758'de Kayserili Nakkaş Mevlevi Hacı Derviş Osman tarafından yenilendiğini belirten bir kitâbe bulunmuştur. Nakkaş Semih İrteş ve ekibi yıpranmış süslemeleri raspalamış; II. Bayezid dönemi özgün kalem işleri ve ilk kez görülen, Konya ile ilgili olduğu düşünülen altı minyatürlü duvar süslemesi yeniden onarılmıştır.",
+        "en": "The tomb was repaired many times in the Ottoman period. The elephant feet and dome in the interior and the hand-carved decorations on the south wall were made by Mevlevi Abdurrahman, son of Mehmed of Aleppo, in the reign of Bayezid II. Since the last two lines of the inscription on the south wall were destroyed on an unknown date by an earthquake, the exact date of these decorations cannot be determined. In the 2018 Museum Directorate restoration an inscription in a medallion on the dome was found stating that the decorations were renewed in 1758 by Nakkaş Mevlevi Hacı Derviş Osman from Kayseri. The worn decorations were scraped by Nakkaş Semih İrteş and his team; the original Bayezid II decorations and six miniature wall decorations seen for the first time, thought to relate to Konya, were repaired."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33"
+        }
+      ]
+    },
+    {
+      "id": "sanduka-kafes",
+      "order": 4,
+      "title": {
+        "tr": "Sandukalar, Gümüş Kafes ve Eşik",
+        "en": "Sarcophagi, Silver Cage and Threshold"
+      },
+      "body": {
+        "tr": "Kanuni Sultan Süleyman XVI. yüzyılda Mevlâna ve 1312'de vefat eden oğlu Sultan Veled'in mezarları üzerine beyaz ve gri mermerden, iki kademeli, gülbezek motifli sanduka yaptırmıştır. Mevlâna için 1274'te yaptırılan ahşap sandukanın bu tarihte babasının mezarı üzerine konulduğu düşünülmektedir. Mezar sandukasının kuzey yüzünde, 16. yüzyılda Maraş Mîrimîrânı Mahmud Paşa tarafından 'İlyas' adlı bir sanatçıya yaptırılan gümüş kafes yer alır; kafesin alınlığında Şair Mani'ye ait otuz iki beyitlik şiir, sanatçı Ali Mirza tarafından kazıma tekniğinde yazılmıştır. Kafesin batısında yerden 15 cm yükseltilmiş 'padişah köşkü' adlı dua makamı vardır. Türbe mezar odasının IV. Murat'ın Revan Seferi sırasında kabirleri ziyaret isteğiyle gümüş levhalarla kapattırılmış olabileceği düşünülmektedir. Giriş kapısı önünde iki basamaklı gümüş eşik 'Mirac-ı Simpaye' yer alır. Her yıl 17 Aralık'ta Şeb-i Arus duasından sonra muhipler ve ziyaretçiler, Mevlâna'nın vefat saati olan 16.15'te gümüş eşiği öperek selamlar.",
+        "en": "In the 16th century Suleyman the Magnificent had a two-tiered sarcophagus of white and gray marble, decorated with rosette motifs, built over the graves of Mevlâna and his son Sultan Veled (died 1312). The wooden sarcophagus made for Mevlâna in 1274 is thought to have been placed on his father's grave then. On the north side of the sarcophagus is a silver cage made in the 16th century by an artist named 'İlyas' for Maraş Mîrimîrân Mahmud Paşa; on its pediment a thirty-two couplet poem by the poet Mani was engraved by the artist Ali Mirza. West of the cage is a prayer place called the 'sultan's mansion', raised 15 cm. The tomb chamber may have been covered with silver plates at Murat IV's request to visit the graves during the Revan Campaign. In front of the entrance is a two-step silver threshold called 'Mirac-ı Simpaye'. After the Şeb-i Arus prayer on December 17 every year, visitors kiss the threshold at 16.15, the time Mevlâna passed away."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "36-37"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "babasi-ayaga-kalkti",
+      "title": {
+        "tr": "'Mevlâna vefat edince babası ayağa kalkmıştır'",
+        "en": "'When Mevlâna passed away, his father stood up'"
+      },
+      "body": {
+        "tr": "Mevlâna'nın ahşap sandukasının yüksek olması halk arasında 'Mevlâna vefat edince babası ayağa kalkmıştır.' söylencesinin yayılmasına neden olmuştur.",
+        "en": "The height of Mevlâna's wooden sarcophagus caused the legend to spread among the people: 'When Mevlâna passed away, his father stood up.'"
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "36-37"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "fil_ayagi_sayisi",
+      "label": {
+        "tr": "Fil ayağı sayısı",
+        "en": "Number of elephant legs"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33"
+        }
+      ]
+    },
+    {
+      "key": "dilim_sayisi",
+      "label": {
+        "tr": "Gövde ve külah dilim sayısı",
+        "en": "Number of segments of body and cone"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33"
+        }
+      ]
+    },
+    {
+      "key": "gumus_kafes_siir",
+      "label": {
+        "tr": "Gümüş kafes alınlığındaki şiir (beyit)",
+        "en": "Couplets of poem on silver cage pediment"
+      },
+      "value": 32,
+      "unit": "beyit",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "36-37"
+        }
+      ]
+    },
+    {
+      "key": "padisah_kosku_yukseklik",
+      "label": {
+        "tr": "Padişah köşkü zeminden yükseklik",
+        "en": "Height of sultan's mansion above floor"
+      },
+      "value": 15,
+      "unit": "cm",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "36-37"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hz. Mevlâna (Mevlâna Celâleddin-i Rûmî)",
+      "role": {
+        "tr": "Türbede yatan; 17 Aralık 1273'te vefat etti",
+        "en": "Buried here; died on 17 December 1273"
+      }
+    },
+    {
+      "name": "Sultan Veled",
+      "role": {
+        "tr": "Mevlâna'nın oğlu, 1312'de vefat etti; türbeye izin verdi",
+        "en": "Mevlâna's son, died 1312; gave permission for the tomb"
+      }
+    },
+    {
+      "name": "Karamanoğlu Alâeddin Bey",
+      "role": {
+        "tr": "1386 sonrası dilimli gövde ve çinileri yaptırdı",
+        "en": "Had the segmented body and tiles made after 1386"
+      }
+    },
+    {
+      "name": "Halepli Mehmed oğlu Mevlevi Abdurrahman",
+      "role": {
+        "tr": "II. Bayezid döneminde kalem işi süslemeleri yaptı",
+        "en": "Made the hand-carved decorations in Bayezid II's reign"
+      }
+    },
+    {
+      "name": "Kayserili Nakkaş Mevlevi Hacı Derviş Osman",
+      "role": {
+        "tr": "1758'de kalem işlerini yeniledi",
+        "en": "Renewed the decorations in 1758"
+      }
+    },
+    {
+      "name": "Semih İrteş",
+      "role": {
+        "tr": "2018 restorasyonunda nakkaş",
+        "en": "Nakkaş in the 2018 restoration"
+      }
+    },
+    {
+      "name": "Kemal Güler",
+      "role": {
+        "tr": "2021'de çinileri yenileyen Konyalı çini sanatçısı",
+        "en": "Konya tile artist who renewed the tiles in 2021"
+      }
+    },
+    {
+      "name": "Kanuni Sultan Süleyman",
+      "role": {
+        "tr": "XVI. yüzyılda mermer sandukaları yaptırdı",
+        "en": "Had the marble sarcophagi made in the 16th century"
+      }
+    },
+    {
+      "name": "Maraş Mîrimîrânı Mahmud Paşa",
+      "role": {
+        "tr": "XVI. yüzyılda gümüş kafesi yaptırdı",
+        "en": "Had the silver cage made in the 16th century"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1273",
+      "year": 1273,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mevlâna'nın vefatı (17 Aralık)",
+        "en": "Death of Mevlâna (17 December)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33"
+        }
+      ]
+    },
+    {
+      "id": "turbe-yapimi-1274",
+      "year": 1274,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Türbe yaptırıldı; cevizden kündekâri sanduka yapıldı",
+        "en": "Tomb built; walnut kündekâri sarcophagus made"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33"
+        }
+      ]
+    },
+    {
+      "id": "karamanoglu-cini-1386",
+      "year": 1386,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Silifke ganimetiyle dilimli gövde, külah ve çini kaplamalar yaptırıldı",
+        "en": "Segmented body, cone and tiles made with Silifke spoils"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33"
+        }
+      ],
+      "note": {
+        "tr": "1386 Silifke'nin fethi yılıdır; yapım tarihi tam olarak verilmemiştir.",
+        "en": "1386 is the year of the conquest of Silifke; the exact construction year is not given."
+      }
+    },
+    {
+      "id": "kalemisi-1758",
+      "year": 1758,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Kubbedeki kalem işleri Hacı Derviş Osman tarafından yenilendi",
+        "en": "Dome decorations renewed by Hacı Derviş Osman"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Müze Müdürlüğü restorasyonu; kalem işleri raspalanıp onarıldı",
+        "en": "Museum Directorate restoration; decorations scraped and repaired"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33"
+        }
+      ]
+    },
+    {
+      "id": "cini-2021",
+      "year": 2021,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kubbe-i Hadra çinileri Kemal Güler'in çinileriyle yenilendi",
+        "en": "Kubbe-i Hadra tiles renewed with tiles by Kemal Güler"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "36-37"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "gumus-esik",
+      "title": {
+        "tr": "Mirac-ı Simpaye gümüş eşiği",
+        "en": "Mirac-ı Simpaye silver threshold"
+      },
+      "hint": {
+        "tr": "Giriş kapısı önündeki iki basamaklı gümüş eşiğe bakın.",
+        "en": "Look at the two-step silver threshold before the entrance."
+      },
+      "section_id": "sanduka-kafes"
+    },
+    {
+      "feature": "cini-kubbe",
+      "title": {
+        "tr": "On altı dilimli çinili gövde",
+        "en": "Sixteen-segmented tiled body"
+      },
+      "hint": {
+        "tr": "Dilimli gövde ve külahın çini kaplamasına bakın.",
+        "en": "Look at the tile covering of the segmented body and cone."
+      },
+      "section_id": "karamanoglu-cini"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-karatay-mevlana-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Mevlâna Külliyesi'nin parçasıdır.",
+        "en": "Part of the Mevlâna Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "32-33"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe, fil ayakları üzerine oturan kubbeli bir yapıdır. Dışarıdan on altı dilimli, çini kaplı gövde ve külahıyla seçilir. Girişte iki basamaklı gümüş eşik, içeride gümüş kafesin ardında iki kademeli mermer sandukalar bulunur. Duvar ve kubbedeki kalem işi süslemelerde altı minyatürlü duvar süslemesi vardır.",
+      "en": "The tomb is a domed building resting on elephant legs. From outside it is recognized by its sixteen-segmented tile-covered body and cone. At the entrance is a two-step silver threshold; inside, behind a silver cage, stand two-tiered marble sarcophagi. The hand-carved decorations of walls and dome include six miniature wall decorations."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "32-37"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=65",
+        "original_name": "pdf-s18-xref65",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "32"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hz. Mevlâna Türbesi (Kubbe-i Hadra) (kitap s. 32)",
+        "en": "Mevlâna Tomb (Kubbe-i Hadra) (book p. 32)"
+      },
+      "alt": {
+        "tr": "Hava görüntüsünde, çok sayıda kubbeli, kare planlı bir yapı kompleksi görülüyor. Büyük kubbe ve küçük kubbeler, sütunlar ve duvarlar yer alıyor.",
+        "en": "An aerial view shows a complex of buildings with numerous domes. Large and small domes, columns, and walls are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=67",
+        "original_name": "pdf-s18-xref67",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "33"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Hz. Mevlâna Türbesi (Kubbe-i Hadra) (kitap s. 33)",
+        "en": "Mevlâna Tomb (Kubbe-i Hadra) (book p. 33)"
+      },
+      "alt": {
+        "tr": "Mavi çini kaplı kubbe, alt kısmında mavi ve beyaz yazılarla süslenmiş, üzerinde altın rengi bir sütun var.",
+        "en": "A turquoise tiled dome with a band of blue and white calligraphy, topped with a golden finial."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=71",
+        "original_name": "pdf-s19-xref71",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "34"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Hz. Mevlâna Türbesi (Kubbe-i Hadra) (kitap s. 34)",
+        "en": "Mevlâna Tomb (Kubbe-i Hadra) (book p. 34)"
+      },
+      "alt": {
+        "tr": "Kubbe-i Hadra'nın içi, zengin kâğıt ve kiremit mozaikleriyle kaplı duvarlar, kemerli pencere ve kubbeli tavanla gösteriliyor.",
+        "en": "The interior of the Kubbe-i Hadra, with walls covered in intricate paper and tile mosaics, an arched window, and a domed ceiling."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=75",
+        "original_name": "pdf-s20-xref75",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "36"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hz. Mevlâna Türbesi (Kubbe-i Hadra) (kitap s. 36)",
+        "en": "Mevlâna Tomb (Kubbe-i Hadra) (book p. 36)"
+      },
+      "alt": {
+        "tr": "İç mekanda, kemerli geçitler, sütunlar, duvarlarda kâğıt ve kubbeli tavanlar görülmektedir.",
+        "en": "Inside, arched passageways, columns, paper-covered walls, and a domed ceiling are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=79",
+        "original_name": "pdf-s20-xref79",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "37"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Hz. Mevlâna Türbesi (Kubbe-i Hadra) (kitap s. 37)",
+        "en": "Mevlâna Tomb (Kubbe-i Hadra) (book p. 37)"
+      },
+      "alt": {
+        "tr": "Kırmızı ve siyah zeminli altın işlemeli geometrik ve bitkisel desenlerle kaplı duvar. Sağda kemerli bir pencere ve altın harflerle yazılmış hat.",
+        "en": "Wall covered with red and black geometric and vegetal patterns in gold. On the right, an arched window and calligraphy in gold letters."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=77",
+        "original_name": "pdf-s20-xref77",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "37"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Hz. Mevlâna Türbesi (Kubbe-i Hadra) (kitap s. 37)",
+        "en": "Mevlâna Tomb (Kubbe-i Hadra) (book p. 37)"
+      },
+      "alt": {
+        "tr": "Kubbe-i Hadra'nın içi, süslü mozaik duvarlar, kubbe ve cam sarkıt ile mihrap bölümü.",
+        "en": "Interior of Kubbe-i Hadra, with ornate mosaic walls, dome, and chandelier above the mihrab area."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

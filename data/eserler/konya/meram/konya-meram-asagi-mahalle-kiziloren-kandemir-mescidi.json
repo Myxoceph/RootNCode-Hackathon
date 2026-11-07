@@ -1,0 +1,247 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-asagi-mahalle-kiziloren-kandemir-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî kitapta yok.",
+      "Sokak/cadde adı metinde yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metin 'hand-carved ornaments' diyor; Türkçe 'kalem işi süslemeli' (boyalı/çizili). Türkçe esas alınmış, İngilizce 'hand-drawn' olarak verildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Aşağı Mahalle (Kızılören Kandemir) Mescidi",
+    "en": "Aşağı Mahalle (Kızılören Kandemir) Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "mescit",
+    "mahalle mescidi",
+    "kalem işi",
+    "Kızılören"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Kızılören Kasabası",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "158"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1286 / M. 1869-70",
+      "en": "1286 AH / 1869-70 AD"
+    },
+    "start_year": 1869,
+    "end_year": 1870,
+    "hijri_year": 1286,
+    "century": 19,
+    "basis": {
+      "tr": "Girişin üzerindeki levhada bu tarih yazar.",
+      "en": "The plaque above the entrance bears this date."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "158"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kızılören Kasabası'nda, giriş levhasına göre H. 1286 / M. 1869-70 tarihli, moloz taş duvarlı, kalem işi süslemeli mihraplı XIX. yüzyıl sonu mahalle mescidi; 2001'de Vakıflar Genel Müdürlüğü onarmıştır.",
+    "en": "A late-19th-century neighborhood masjid in Kızılören Town, dated 1286 AH / 1869-70 AD by the plaque over its entrance, with rubble-stone walls and a hand-decorated mihrab; repaired by the General Directorate of Foundations in 2001."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Mescit, Meram, Kızılören Kasabasında yer almaktadır. Yapının girişi üzerindeki levhada H. 1286 / M. 1869-70 tarihi yer almaktadır. Mescit 2001 senesinde Vakıflar Genel Müdürlüğü tarafından onarılmıştır. XIX. yüzyıl sonlarında görülen mahalle mescitleri örneklerindendir.",
+        "en": "The masjid is in Kızılören Town, Meram. The plaque above the entrance bears the date 1286 AH / 1869-70 AD. It was repaired in 2001 by the General Directorate of Foundations and is an example of late-19th-century neighborhood masjids."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "158"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit dikdörtgen planlıdır; içten ahşap kirişlerle, dıştan kırma çatıyla örtülüdür. Moloz taş kagir yapının girişi doğu cephededir; duvarlarda düz lentolu dikdörtgen pencere açıklıkları vardır. Harim üç sahınlıdır. Kuzeyde ahşap mahfil, kıble duvarında mihrap ve minber bulunur. Dikdörtgen formlu, yarım daire planlı mihrap kalem işi süslemelidir. Mihrabın sağında, güneybatı köşede sade ahşap minber yer alır.",
+        "en": "The masjid is rectangular, covered inside by wooden beams and outside by a hipped roof. The rubble-stone masonry building is entered from the east and has flat-lintel rectangular windows. The harim has three naves, a wooden gallery in the north, and a mihrab and minbar on the qibla wall. The rectangular, semicircular-plan mihrab is decorated with hand-drawn ornament; a simple wooden minbar stands in the southwest corner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "158"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "levha-1869",
+      "year": 1869,
+      "date": null,
+      "hijri": "1286",
+      "type": "construction",
+      "title": {
+        "tr": "Giriş levhasındaki tarih (H. 1286)",
+        "en": "Date on the entrance plaque (1286 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "158"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2001",
+      "year": 2001,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "158"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Moloz taştan yapılmış, dikdörtgen planlı, kırma çatılı bir mahalle mescididir. Girişi doğuda, içeride üç sahınlı harim, kuzeyde ahşap mahfil ve kıble duvarında kalem işi süslemeli bir mihrap ile sağında sade ahşap minber vardır.",
+      "en": "A rubble-stone neighborhood masjid, rectangular, with a hipped roof. It is entered from the east; inside are a three-nave prayer hall, a wooden gallery in the north, a hand-decorated mihrab and a simple wooden minbar on the qibla wall."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "158-158"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=604",
+        "original_name": "pdf-s81-xref604",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "158"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Aşağı Mahalle (Kızılören Kandemir) Mescidi (kitap s. 158)",
+        "en": "Aşağı Mahalle (Kızılören Kandemir) Masjid (book p. 158)"
+      },
+      "alt": {
+        "tr": "Aşağı Mahalle (Kızılören Kandemir) Mescidi, kiremit çatılı, taş duvarlı, kubbeli ve minareli bir yapıdır. Arka planda kayalık bir dağ ve diğer binalar görülür.",
+        "en": "A low stone building with a tiled roof, dome, and minaret, surrounded by other structures and a rocky cliff in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=602",
+        "original_name": "pdf-s81-xref602",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "158"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Aşağı Mahalle (Kızılören Kandemir) Mescidi (kitap s. 158)",
+        "en": "Aşağı Mahalle (Kızılören Kandemir) Masjid (book p. 158)"
+      },
+      "alt": {
+        "tr": "Ahşap tavan, kırmızı halı, mavi duvarlar ve kubbeli mihraplı iç mekân. Çeşitli lambalar asılı. Pencere ve minber görünür.",
+        "en": "Wooden ceiling, red carpet, blue walls, and a domed mihrab interior. Various chandeliers hang. Windows and minbar visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

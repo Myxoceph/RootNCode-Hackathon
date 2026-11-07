@@ -1,0 +1,409 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-kucuk-ayasofya-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 356-357) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Kitâbenin dili kitapta belirtilmiyor (language: other); özgün metin/transliterasyon yok.",
+      "Vakfiye kitapta yok.",
+      "'Eski Kale' semt/mahalle adı olarak girildi; resmî mahalle adı metinde yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Küçük Ayasofya Mescidi",
+    "en": "Küçük Ayasofya Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Alâeddin Keykubad",
+    "çini mozaik kubbe",
+    "kûfi bordür",
+    "H. 633"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Eski Kale",
+    "address": "Orta Hamam Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "356-357"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.354849,
+      "lng": 31.40992,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Eskikale Mahallesi, Akşehir, Konya, İç Anadolu Bölgesi, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 633 / M. 1236",
+      "en": "633 AH / 1236 AD"
+    },
+    "start_year": 1236,
+    "end_year": 1236,
+    "hijri_year": 633,
+    "century": 13,
+    "basis": {
+      "tr": "Doğu cephedeki beş satırlık celî sülüs kitâbede H. 633 (Şaban) / M. 1236 tarihi verilir.",
+      "en": "The five-line celi thuluth inscription on the east facade gives Şaban 633 AH / 1236 AD."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "356-357"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şemseddin Hasan bin Ömer",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "356-357"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Eski Kale'deki mescit, H. 633 / M. 1236'da Alâeddin Keykubad döneminde Şemseddin Hasan bin Ömer tarafından yaptırılmıştır. Kubbe içindeki patlıcan moru ve firuze çini mozaikler ile kûfi çini bordürüyle önemli bir Selçuklu eseridir.",
+    "en": "The masjid in the Old Kale was built by Şemseddin Hasan bin Ömer in 633 AH / 1236 AD under Alâeddin Keykubad. Its tile mosaics in eggplant purple and turquoise and its Kufic tile border make it an important Seljuk work."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Doğu cephesindeki beş satırlık celî sülüs kitâbeye göre H. 633 / M. 1236'da Sultan Alâeddin Keykubad döneminde Şemseddin Hasan bin Ömer tarafından yaptırılmıştır. Yapı Vakıflar Bölge Müdürlüğü tarafından 2005'te onarılmıştır.",
+        "en": "According to the five-line celi thuluth inscription on its east facade, it was built by Şemseddin Hasan bin Ömer in 633 AH / 1236 AD under Sultan Alâeddin Keykubad. It was repaired by the Regional Directorate of Foundations in 2005."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "356-357"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlıdır; tek kubbeli harim, giriş bölümü ve minareden oluşur. Tuğla ve moloz taş kullanılmış, beden duvarlarında ahşap hatıllar vardır. Harim Türk üçgeni geçişli kubbeyle örtülüdür. Kubbe eteğinde çini mozaik tekniğiyle yapılmış geniş, kûfi yazılı geometrik bir bordür bulunur; bordürde alt ve üstte firuze kâseler dizisi içinde kûfi harf taklidi şekiller arasında geçmeli daireler yer alır. Kubbe içi, kısa yüzleri dikey yerleştirilmiş tuğlalardan oluşur; çini mozaik zikzak motifleri kubbe merkezinde altı kollu yıldız oluşturur ve patlıcan moru ile firuze renklidir. Bu süslemeler dönemin başkenti Konya'daki örneklere benzer. Kıble duvarındaki mihrap yenilenmiştir.",
+        "en": "The masjid is square, with a single-domed harim, an entrance section and a minaret, built of brick and rubble stone with wooden beams in the walls. The harim has a Turkish-triangle dome. At the dome skirt is a wide geometric tile-mosaic border with Kufic writing: interlocking circles between Kufic-letter-like shapes within rows of turquoise bowls. The dome interior has bricks with short faces set vertically; zigzag tile-mosaic motifs in eggplant purple and turquoise meet at the centre in a six-armed star, similar to examples in Konya, the capital. The mihrab has been renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "356-357"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Şemseddin Hasan bin Ömer",
+      "role": {
+        "tr": "Kitâbeye göre banî",
+        "en": "Founder according to the inscription"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Doğu cephe",
+        "en": "East facade"
+      },
+      "language": "other",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Mescitler Allah içindir. Tanrı ile beraber başka birisine dua etmeyiniz. Bu mübarek mescidin yapılmasını 633 yılı Şaban ayında, Allah'ın rahmetine muhtaç zayıf kulu Ömer oğlu Şemseddin Hasan emretmiştir",
+        "en": "Masjids are for Allah. Do not pray to anyone else along with God. The construction of this holy mosque was ordered by Shamseddin Hasan, son of Omer, a weak servant of Allah in need of His mercy, in the month of Şaban, 633."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 633,
+        "gregorian": "1236"
+      },
+      "note": {
+        "tr": "Beş satırlık celî sülüs kitâbe; kitap dilini adlandırmıyor ve özgün metni vermiyor.",
+        "en": "Five lines; the book does not name the language and does not print the original text."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "356-357"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1236",
+      "year": 1236,
+      "type": "construction",
+      "title": {
+        "tr": "Şemseddin Hasan bin Ömer mescidi yaptırdı",
+        "en": "Mescit built by Şemseddin Hasan bin Ömer"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "356-357"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "onarim-2005",
+      "year": 2005,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı",
+        "en": "Repair by the Regional Directorate of Foundations"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "356-357"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Küçük Ayasofya Mescidi kare planlı, tek kubbeli bir Selçuklu mescididir. Kubbenin eteğinde firuze çini mozaikli kûfi yazılı bir bordür dolanır. Kubbe içinde patlıcan moru ve firuze zikzaklar merkezde altı kollu bir yıldız oluşturur.",
+      "en": "Küçük Ayasofya Masjid is a square, single-domed Seljuk masjid. A Kufic-lettered turquoise tile mosaic border runs around the dome skirt. Inside the dome, eggplant purple and turquoise zigzags form a six-armed star at the centre."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 356-357)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "356-358"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1488",
+        "original_name": "pdf-s180-xref1488",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "356"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Küçük Ayasofya Mescidi (kitap s. 356)",
+        "en": "Küçük Ayasofya Masjid (book p. 356)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kubbeli bir mescit. Dışarıdan görünüşü, kemerli pencereler ve giriş kapısıyla gösteriliyor.",
+        "en": "A stone-walled mosque with a dome. Exterior view showing arched windows and entrance door."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1494",
+        "original_name": "pdf-s180-xref1494",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "357"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Küçük Ayasofya Mescidi (kitap s. 357)",
+        "en": "Küçük Ayasofya Masjid (book p. 357)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap bir minber, ahşap kapılı bir mihrap ve üzerinde hat bulunan ahşap bir kemer görülüyor. Duvarlar beyaz, alt kısmı ahşap kaplama, tavan kiremitli.",
+        "en": "Wooden minbar, wooden mihrab with calligraphy, and a wooden arch are visible. Walls are white with wooden wainscoting, ceiling is brick."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1490",
+        "original_name": "pdf-s180-xref1490",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "357"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Küçük Ayasofya Mescidi (kitap s. 357)",
+        "en": "Küçük Ayasofya Masjid (book p. 357)"
+      },
+      "alt": {
+        "tr": "Havadan görünüşte, kırmızı kiremit çatılı bir mescit ve düzenli bir bahçe kompleksi yer alıyor. Mescidin kubbesi mavi çinilarla kaplı.",
+        "en": "An aerial view shows a mosque with red-tiled roofs and a formal garden. The mosque's dome is covered in blue tiles."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1496",
+        "original_name": "pdf-s180-xref1496",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "357"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Küçük Ayasofya Mescidi (kitap s. 357)",
+        "en": "Küçük Ayasofya Masjid (book p. 357)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış, kemerli bir levhada Arapça hat yazılı metinler var.",
+        "en": "A stone plaque with an arched top, featuring Arabic calligraphy inscriptions."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1492",
+        "original_name": "pdf-s180-xref1492",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "357"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Küçük Ayasofya Mescidi (kitap s. 357)",
+        "en": "Küçük Ayasofya Masjid (book p. 357)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kubbeli bir mescit ve önündeki çimli avluda bir havuz, yürüyüş yolu ve heykeller.",
+        "en": "A stone-walled, domed mosque with a courtyard featuring a pool, walkway, and statues."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1502",
+        "original_name": "pdf-s181-xref1502",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "358"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Küçük Ayasofya Mescidi (kitap s. 358)",
+        "en": "Küçük Ayasofya Masjid (book p. 358)"
+      },
+      "alt": {
+        "tr": "Kırmızı tuğla duvarın üzerinde mavi çini ile süslenmiş geometrik bir desen.",
+        "en": "Geometric pattern with blue tiles on a red brick wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

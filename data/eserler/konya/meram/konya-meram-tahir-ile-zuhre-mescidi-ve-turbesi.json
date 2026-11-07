@@ -1,0 +1,418 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-tahir-ile-zuhre-mescidi-ve-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "XIII. yüzyıl sonu tarihi kesin yıl içermiyor; start_year/end_year null.",
+      "Kitap 'kabul edilmektedir' dediği için founder ve tarihlendirme 'probable'.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni / vakıf şartları kitapta yok (aksi belirtilmedikçe); VGM arşivinden bulunabilir.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Tahir ile Zühre (Dön Baba-Pir Ahi Sultan) Mescit ve Türbesi",
+    "en": "Tahir and Zühre (Dön Baba-Pir Ahi Sultan) Masjid and Tomb"
+  },
+  "subtitle": {
+    "tr": "Sahip Ata Fahreddin Ali'ye atfedilen, mozaik çinili Selçuklu mescidi ve türbesi",
+    "en": "Seljuk masjid and tomb with mosaic tiles, attributed to Sahip Ata Fahreddin Ali"
+  },
+  "type": "mescit",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Sahip Ata",
+    "mozaik çini",
+    "türbe",
+    "Dön Baba",
+    "Tahir ile Zühre",
+    "Arzu ile Kanber"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Beyhekim Mahallesi",
+    "address": "Çukur Meydan",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "112"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.86988,
+      "lng": 32.485478,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/4310450976 ('Tahir ile Zühre Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl sonları",
+      "en": "Late 13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitabesi yoktur; XIII. yüzyıl sonlarında Sahip Ata Fahreddin Ali tarafından yaptırıldığı 'kabul edilmektedir'. Kesin yıl verilmediği için start/end_year null.",
+      "en": "No inscription; it 'is accepted' to have been built by Sahip Ata Fahreddin Ali in the late 13th century. No exact year, so start/end_year are null."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "112-113"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sahip Ata Fahreddin Ali",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "112-113"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Beyhekim Mahallesi'ndeki mescit, halk arasında Tahir ile Zühre Mescidi olarak bilinir; kitabesi olmamakla birlikte XIII. yüzyıl sonlarında Sahip Ata Fahreddin Ali tarafından yaptırıldığı kabul edilir. Tek kubbeli mescit ve türbeden oluşur.",
+    "en": "Known popularly as the Tahir and Zühre Masjid, this masjid in Beyhekim Neighborhood has no inscription but is accepted as built by Sahip Ata Fahreddin Ali in the late 13th century. It consists of a single-domed masjid and a tomb."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Adlar",
+        "en": "Overview and Names"
+      },
+      "body": {
+        "tr": "Mescit Meram'da Beyhekim Mahallesi, Çukur Meydan'dadır. Halk arasında \"Tahir ile Zühre Mescidi\" olarak bilinse de \"Arzu ile Kanber\", \"Dön Baba Mescidi\" ve banisinden dolayı \"Sahip Ata Mescidi\" olarak da anılır. İbrahim Hakkı Konyalı bu adların yeni olduğunu, adları uyduran kişinin yakın zamana kadar sağ olduğunu belirtir.",
+        "en": "The masjid is at Çukur Square, Beyhekim Neighborhood, Meram. Though popularly called the \"Tahir and Zühre Masjid\", it is also named \"Arzu and Kanber\", \"Dön Baba Masjid\" and, after its founder, \"Sahip Ata Masjid\". İbrahim Hakkı Konyalı says these names are new and the person who coined them was alive until recently."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "112-113"
+        }
+      ]
+    },
+    {
+      "id": "tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Yapım ve Onarımlar",
+        "en": "Construction and Repairs"
+      },
+      "body": {
+        "tr": "Yapının kitabesi yoktur; Sahip Ata Fahreddin Ali tarafından XIII. yüzyıl sonlarında yaptırıldığı kabul edilmektedir. Sahip Ata, Anadolu Selçuklu döneminin en uzun siyasi kariyerine sahip yöneticilerinden biridir; yaklaşık kırk yıllık görevinde devletin tüm önemli makamlarında yer almış ve dönemin birçok yapısını yaptırmıştır. Mescit ve türbe 1958'de tamir edilmiş, kazılarda çok sayıda çini parçası çıkmıştır; ayrıca Konya Vakıflar Bölge Müdürlüğü tarafından 1991 ve 2006'da restore edilmiştir. Türbede Sahip Ata'nın torunlarının medfun olduğu tahmin edilmektedir.",
+        "en": "The building has no inscription but is accepted as built by Sahip Ata Fahreddin Ali in the late 13th century. Sahip Ata, one of the longest-serving Anatolian Seljuk rulers, held all major state offices over nearly forty years and built many buildings of the period. The masjid and tomb were repaired in 1958, when many tile pieces were unearthed, and restored by the Konya Regional Directorate of Foundations in 1991 and 2006. Sahip Ata's grandchildren are estimated to be buried in the tomb."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "112-114"
+        }
+      ]
+    },
+    {
+      "id": "dis-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Cepheler",
+        "en": "Plan and Facades"
+      },
+      "body": {
+        "tr": "Mescit türbe ve son cemaat yerinden müteşekkildir; bu yapılar mescidin doğusundadır. Mescit dıştan doğu-batı yönünde dörtgen planlıdır; duvarlar kesme, moloz taş ve tuğladır, cepheler yarı alta taş yarı üstte tuğladır. Kuzey cephede altta düz lentolu sivri kemer alınlık, üstte dörtgen nişli iki sıra sivri kemerli pencere, batı cephede üstte sivri kemerli bir pencere vardır; güney cephede sağır bir sivri ve bir yuvarlak kemer izi görülür. Doğuda güneyde türbe, kuzeyde son cemaat yeri yer alır. Türbeye bakan doğu cephedeki sivri kemerli pencere dörtgen niş içindedir, köşeliklerinde firuze ve patlıcan moru mozaik çiniden geometrik süslemeler vardır. Son cemaat yerine açılan büyük sivri kemerli açıklığın ortasında sivri kemerli giriş kapısı bulunur; kalan izlerden dış bordürün firuze dikdörtgen çini mozaik beşgenlerden ve ortalarında patlıcan moru küçük beşgenlerden oluştuğu anlaşılır.",
+        "en": "The masjid comprises a tomb and a narthex, both east of the masjid. Outside it is a quadrangular east-west plan; walls are cut and rubble stone and brick, stone below and brick above. The north facade has a pointed-arch pediment over a flat lintel and two rows of pointed windows in a rectangular niche; the west facade has a pointed window above; the south shows traces of blind pointed and round arches. To the east the tomb lies south and the narthex north. The tomb-facing pointed window is in a rectangular niche with geometric turquoise and eggplant-purple mosaic tile spandrels. The pointed-arched entrance in the large arched opening of the narthex retains traces of an outer border of pentagons in turquoise tile mosaic with smaller eggplant-purple pentagons."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "113-115"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-yeri",
+      "order": 4,
+      "title": {
+        "tr": "Son Cemaat Yeri",
+        "en": "Narthex"
+      },
+      "body": {
+        "tr": "Son cemaat yeri kuzey-güney yönünde dikdörtgen planlıdır ve aynı yönde basık bir tonozla örtülüdür; tonozda tuğladan zikzaklı düzenleme ve ortasında firuze ile patlıcan moru mozaik çinili eşkenar bir süsleme vardır. Güney duvarında alçı mihrap bulunur; nişin altında dikdörtgen bir pencere, beş sıra mukarnaslı sivri kemerli kavsara vardır ve asli hâlinde çini süslemeli olduğu belirtilir. Kuzeybatıda dama çıkış merdivenleri, batıda biri pencere biri kapı iki kemerli açıklık yer alır.",
+        "en": "The narthex is rectangular on a north-south axis, covered by a low vault in the same direction with brick zigzag work and a rhombic ornament of turquoise and eggplant-purple mosaic tile at its centre. A plaster mihrab on the south wall has a rectangular window below the niche and a five-row muqarnas hood in a pointed arch; it is said to have been originally tile-decorated. Stairs to the roof lie to the northwest and two arched openings (a window and a door) to the west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "113-115"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 5,
+      "title": {
+        "tr": "Harim ve Mihrap",
+        "en": "Harim and Mihrab"
+      },
+      "body": {
+        "tr": "Harim kare planlıdır, Türk üçgeni geçişli tuğla bir kubbeyle örtülüdür; kubbe zikzaklı görünümlüdür. Kubbe göbeğindeki mozaik çinili madalyonda \"Hz. Muhammed (SAV), Ebu Bekir, Ömer, Osman ve Ali\" isimleri firuze ve patlıcan moru çiniyle kûfî hatla yıldız biçiminde istiflenmiştir. Duvarlar sadedir. Kıble duvarındaki yarım beşgen planlı mihrap mozaik çinilerle süslüdür; nişin iç yüzünde ve kavsara köşeliklerinde firuze çini levhalar, bordürlerde firuze ve patlıcan moru çinili çokgenler vardır.",
+        "en": "The square harim is covered by a zigzag brick dome on Turkish triangles. A mosaic-tile medallion at the dome's centre spells the names of Muhammad, Abu Bakr, Omar, Osman and Ali in Kufic in turquoise and eggplant-purple tile, stacked in a star. The walls are plain. The half-pentagonal mihrab on the qibla wall is mosaic-tiled: turquoise panels inside the niche and spandrels, and polygons in turquoise and purple tile on the borders."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "114-115"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "tahir-zuhre-sir-hurshid",
+      "title": {
+        "tr": "Şir ile Hurşid ve sevgilisinin burada medfun olduğu rivayeti",
+        "en": "Rumor that the ruler of the Şir and Hurşid coins and his beloved are buried here"
+      },
+      "body": {
+        "tr": "İbrahim Hakkı Konyalı, Selçuk paralarına Şir ile Hurşid'i koyduran hükümdarla sevgilisinin burada medfun olduğu rivayetini numismat Ahmed Tevhid Bey'den dinlediğini aktarır; 'Tahir ile Zühre' vb. adların yeni olduğunu da belirtir.",
+        "en": "Konyalı reports hearing from the numismatist Ahmed Tevhid Bey the rumor that the ruler who placed Şir and Hurşid on Seljuk coins and his lover are buried here; he adds the names such as 'Tahir and Zühre' are recent."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "112-113"
+        }
+      ]
+    }
+  ],
+  "facts": [],
+  "people": [
+    {
+      "name": "Sahip Ata Fahreddin Ali",
+      "role": {
+        "tr": "Anadolu Selçuklu yöneticisi; yaptıran olarak kabul edilir",
+        "en": "Anatolian Seljuk statesman; accepted as the founder"
+      }
+    },
+    {
+      "name": "İbrahim Hakkı Konyalı",
+      "role": {
+        "tr": "Mescidin adları hakkında kitapta alıntılanan yazar",
+        "en": "Author quoted on the masjid's names"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Mescit ve türbe tamir edildi; kazıda çini parçaları çıktı",
+        "en": "Masjid and tomb repaired; tile pieces unearthed in excavations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1991",
+      "year": 1991,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Konya Vakıflar Bölge Müdürlüğü restorasyonu",
+        "en": "Restoration by Konya Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "114"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Konya Vakıflar Bölge Müdürlüğü restorasyonu",
+        "en": "Restoration by Konya Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "114"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-sahip-ata-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "İki yapıyı da Sahip Ata Fahreddin Ali yaptırmıştır; kitap bu yapının banisini muhtemel olarak verir.",
+        "en": "Both were commissioned by Sahip Ata Fahreddin Ali; the book gives this building's founder as probable."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "112-113"
+        },
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "122-125"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tahir ile Zühre Mescidi, taşın altta, tuğlanın üstte kullanıldığı küçük bir Selçuklu yapısıdır. Doğusunda güneyde türbe, kuzeyde son cemaat yeri bulunur. Son cemaat yeri basık bir tonozla örtülüdür; tonozda tuğladan zikzaklı bir düzen ve ortasında firuze ile patlıcan moru çinilerden eşkenar bir süs görülür. Kare planlı harimin tuğla kubbesi zikzaklıdır; ortasında çini bir madalyon, kıble duvarında çinili yarım beşgen bir mihrap vardır.",
+      "en": "Tahir and Zühre Masjid is a small Seljuk building with stone below and brick above. To its east lie the tomb in the south and a narthex in the north. The narthex has a low vault with brick zigzag work and a rhombic ornament in turquoise and purple tiles. The square harim has a zigzag brick dome with a tile medallion at the centre and a tiled half-pentagonal mihrab on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Konya Vakıf Eserleri I. Cilt) esas alınarak yazılmıştır."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "113-115"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=389",
+        "original_name": "pdf-s58-xref389",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "113"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Tahir ile Zühre (Dön Baba-Pir Ahi Sultan) Mescit ve Türbesi (kitap s. 113)",
+        "en": "Tahir and Zühre (Dön Baba-Pir Ahi Sultan) Masjid and Tomb (book p. 113)"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı, kubbeli bir cami ve türbe. Girişte kemerli kapı, yan duvarda tabela ve çatıda çatı katı var.",
+        "en": "A brick building with a dome. Arched entrance, sign on the wall, and a roof extension above the entrance."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=393",
+        "original_name": "pdf-s59-xref393",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "114"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tahir ile Zühre (Dön Baba-Pir Ahi Sultan) Mescit ve Türbesi (kitap s. 114)",
+        "en": "Tahir and Zühre (Dön Baba-Pir Ahi Sultan) Masjid and Tomb (book p. 114)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halı, ahşap paneller, kemerli pencere, minber, mihrap ve duvarlarda geometrik desenli döşeme var.",
+        "en": "Inside, red carpet, wooden panels, arched windows, minbar, mihrab, and geometric tiled walls are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=395",
+        "original_name": "pdf-s59-xref395",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "115"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Tahir ile Zühre (Dön Baba-Pir Ahi Sultan) Mescit ve Türbesi (kitap s. 115)",
+        "en": "Tahir and Zühre (Dön Baba-Pir Ahi Sultan) Masjid and Tomb (book p. 115)"
+      },
+      "alt": {
+        "tr": "Kırmızı halılarla kaplı zeminde, ahşap çerçeveli iki pencere arasında, taştan bir mihrap yer alıyor.",
+        "en": "A stone mihrab is set into the wall between two wooden-framed windows, on a floor covered with red carpets."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

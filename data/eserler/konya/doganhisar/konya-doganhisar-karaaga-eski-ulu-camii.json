@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-doganhisar-karaaga-eski-ulu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabından (s. 411) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da haritadan doğrulanarak eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "Kitâbenin metni ve okunabilen kısmı kitapta yok.",
+      "Banî kitapta yok (founder null).",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Karaağa Beldesi Eski (Ulu) Camii",
+    "en": "Karaağa Settlement Old (Grand) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap direkli",
+    "kalem işi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Doğanhisar",
+    "neighborhood": "Karaağa Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "411"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.184431,
+      "lng": 31.606284,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/728302427 ('Ulu Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "18.-19. yüzyıl (kitâbenin son rakamı okunamıyor)",
+      "en": "18th-19th century (last digit of the inscription unreadable)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Güney cephedeki kitâbenin son rakamı okunamıyor; yıl verilmedi.",
+      "en": "The last digit of the south facade inscription cannot be read; no year given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "411"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Doğanhisar Karaağa Mahallesi'ndeki, kitâbesine göre 18.-19. yüzyılda yapılan, ahşap direkli, kalem işi süslemeli cami. Minaresi 1959'da eklenmiş, 1969'da büyük ölçüde yenilenmiştir.",
+    "en": "A mosque in Karaağa Neighborhood, Doğanhisar, dated to the 18th-19th century by its inscription, with wooden posts and painted decoration. Its minaret was added in 1959 and it was largely renovated in 1969."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Meyilli arazide inşa edilen cami, güney cephedeki son rakamı okunamayan kitâbesine göre XVIII-XIX. yüzyılda yapılmıştır. Minaresi 1959'da eklenmiş, 1969'da büyük ölçüde yenilenmiştir.",
+        "en": "Built on sloping land, the mosque dates from the 18th-19th century by the inscription on its south facade, whose last digit is unreadable. Its minaret was added in 1959 and it was largely renovated in 1969."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Derinlemesine dikdörtgen planlı, ahşap direkli ve ahşap tavanlı, dıştan kırma çatılıdır. Duvarlar moloz taş, aralarda ahşap hatıllıdır. Harime doğudaki tek kapıdan girilir; doğu cephede altta sivri kemerli üç pencere, üstte biri giriş kapısı üzerinde olmak üzere dört pencere vardır. Harim ahşap sütunlarla üç sahına ayrılmıştır.",
+        "en": "Deeply rectangular, with wooden posts, a wooden ceiling and a hipped roof. Walls are rubble stone with timber beams. The harim is entered by a single door in the east; the east facade has three pointed-arched windows below and four above, one over the entrance. The harim is divided into three aisles by wooden columns."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "id": "kalem-isi",
+      "order": 3,
+      "title": {
+        "tr": "Kalem işi, mihrap ve minber",
+        "en": "Painted decoration, mihrab and minbar"
+      },
+      "body": {
+        "tr": "İç mekân iki bölüm hâlinde kalem işiyle bezelidir; altta sarı zeminde mavi geometrik-bitkisel motifler, ayet ve hadisler vardır; kıble duvarında Kelime-i Tevhit ve ayetler istiflenerek yazılmıştır. Mihrabın iki yanında müsenna yazılarla cami tasvirleri bulunur. Mihrap giriş ekseninde değil, kıble duvarı ortasındadır; yarım dikdörtgen planlı, yarım kubbe kavsaralıdır, nişi perde motifli, üstü kıvrık dallı metal tepeliklidir. Mihrabın sağındaki ahşap minberin yan aynalık ve köşk kısmında bitkisel süsleme, kapı üstünde palmet motifli ahşap tepelik vardır.",
+        "en": "The interior is painted in two sections: blue geometric and floral motifs on a yellow ground with verses and hadiths below; the Kalima Tawhid and verses are stacked on the qibla wall. Mosque depictions in musenna calligraphy flank the mihrab. The mihrab, in the middle of the qibla wall but not on the entrance axis, is semi-rectangular with a half-dome; its niche has a curtain motif and a metal crown of curved branches. The wooden minbar to the right has floral decoration on its side panel and pavilion and a palmette-motif wooden crown over the door."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "411"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sah_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "411"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "minare-1959",
+      "year": 1959,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Minare eklendi",
+        "en": "Minaret added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "411"
+        }
+      ]
+    },
+    {
+      "id": "yenileme-1969",
+      "year": 1969,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Büyük ölçüde yenilendi",
+        "en": "Largely renovated"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "411"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Meyilli bir arazide duran, moloz taş duvarlı ve ahşap hatıllı dikdörtgen bir camidir. Doğu cephedeki tek kapıdan girilir; altta üç sivri kemerli pencere vardır. İçeride ahşap sütunlar üç sahını ayırır; duvarlar sarı zemin üzerinde mavi geometrik ve bitkisel motifler, ayetler ve hadislerle süslüdür. Mihrabın iki yanında cami resimleri yer alır.",
+      "en": "A rectangular mosque on sloping land, with rubble-stone walls and timber beams. It is entered by a single door in the east facade, which has three pointed-arched windows below. Inside, wooden columns divide three aisles; the walls are painted with blue geometric and floral motifs on yellow, with verses and hadiths. Pictures of mosques flank the mihrab."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 411) derlenmiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "411-411"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1788",
+        "original_name": "pdf-s207-xref1788",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "411"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Karaağa Beldesi Eski (Ulu) Camii (kitap s. 411)",
+        "en": "Karaağa Settlement Old (Grand) Mosque (book p. 411)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, ahşap detaylı, kubbeli ve minareli bir cami. Pencereleri kemerli, dış cephesi dik açılıdır.",
+        "en": "Stone-walled mosque with wooden details, a dome, and a minaret. Windows are arched, and the exterior facade is steeply pitched."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

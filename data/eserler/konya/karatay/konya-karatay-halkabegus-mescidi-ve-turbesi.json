@@ -1,0 +1,268 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-halkabegus-mescidi-ve-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 277) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Türbenin kimin adına yapıldığı kitapta bilinmiyor.",
+      "Osmanlı dönemi onarımlarının yılları kitapta verilmiyor.",
+      "Halkabegüş Kapısı'nın bulunduğu surların/Konya Kalesi'nin kaydı için ilişki yazılmadı (kitapta hedef eser belirtilmiyor).",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel]",
+        "note": "Kitap metnin ilk cümlesinde yapıyı 'Cami' diye anıyor; başlık ve içerik mescit-türbe. İngilizce metinde 'Halkabüş Gate' yazılmış, Türkçe metin ve başlıkta 'Halkabegüş'; Türkçe yazım esas alındı."
+      },
+      {
+        "field": "type",
+        "note": "Başlıkta mescit ve türbe birlikte geçiyor; birincil tür mescit, ikincil tür türbe olarak girildi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Halkabegüş Mescidi ve Türbesi",
+    "en": "Halkabegüş Masjid and Tomb"
+  },
+  "type": "mescit",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Selçuklu türbe mimarisi",
+    "13. yüzyıl",
+    "Konya Kalesi",
+    "Halkabegüş Kapısı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Kalenderhâne Mahallesi",
+    "address": "Musalla Mezarlığı ve Konya Kalesi'nin Halkabegüş Kapısı yakını",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "277"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.883599,
+      "lng": 32.49893,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Kalenderhane Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl",
+      "en": "13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitap yapının Selçuklu türbe mimarisi özelliklerine sahip olduğunu ve XIII. yüzyıl eseri olduğunu belirtir; yıl verilmiyor.",
+      "en": "The book says the building has the characteristics of Seljuk tomb architecture and is a 13th-century work; no year is given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "277"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Kalenderhâne Mahallesi'nde, Konya Kalesi'nin Halkabegüş Kapısı yakınında, XIII. yüzyıla ait Selçuklu türbe mimarisi özelliklerini taşıyan; alt katı cenazelik, üst katı mescit olarak kullanılan kubbeli yapı.",
+    "en": "A domed building in Kalenderhâne Neighborhood near the Halkabegüş Gate of Konya Castle, a 13th-century work with Seljuk tomb architecture, with a burial chamber below and a masjid floor above."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Yapı Karatay, Kalenderhâne Mahallesi'nde, Musalla Mezarlığı ve Konya Kalesi'nin Halkabegüş Kapısı yakınında bulunmaktadır. Selçuklu türbe mimarisi özelliklerine sahip olan yapı XIII. yüzyıl eseridir ve kimin adına inşa edildiği bilinmemektedir. Osmanlı döneminde birkaç defa onarım görmüş; 1961'de Anıtlar Derneği, 1998'de Karatay Belediyesi tarafından restore edilmiştir.",
+        "en": "The building is in Kalenderhâne Neighborhood, Karatay, near Musalla Cemetery and the Halkabegüş Gate of Konya Castle. It has the characteristics of Seljuk tomb architecture, is a 13th-century work, and it is not known for whom it was built. It was repaired several times in the Ottoman period and restored by the Monuments Association in 1961 and by Karatay Municipality in 1998."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "277"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "İlk inşasında türbe olarak yapılan eserin batı cephesi düzgün kesme taş, diğer cepheleri kaba yonu taşla örülüdür. Yapı kare planlı ve kubbelidir; tuğla kubbe sonradan kurşunla kaplanmıştır. İçinde sanduka bulunmayan cenazelik bölümü beşik tonozla örtülüdür. Mescit katına batı cephedeki düz lentolu kapı açıklığından geçilir. Mescit bölümü kare planlı ve kubbelidir; kubbeye geçişler Türk üçgenleriyle sağlanmıştır. Kıble duvarındaki mihrap yarım dörtgen planlıdır.",
+        "en": "Originally built as a tomb, the building has a west facade of ashlar and other facades of rough-cut stone. It has a square plan and a dome; the brick dome was later covered with lead. The burial chamber, which contains no sarcophagus, is covered with a barrel vault. The masjid floor is reached through a flat-lintelled door opening on the west facade. The masjid is square and domed, with Turkish triangle transitions; the mihrab on the qibla wall has a semi-rectangular plan."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "277"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "restorasyon-1961",
+      "year": 1961,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Anıtlar Derneği tarafından restore edildi",
+        "en": "Restored by the Monuments Association"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "277"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1998",
+      "year": 1998,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Karatay Belediyesi tarafından restore edildi",
+        "en": "Restored by Karatay Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "277"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Halkabegüş Mescidi ve Türbesi, Konya Kalesi'nin Halkabegüş Kapısı yakınında, kare planlı ve kubbeli bir Selçuklu yapısıdır. Batı cephesi düzgün kesme taştan, diğer cepheler kaba yonu taştandır; tuğla kubbe kurşunla kaplıdır. Alt kat içinde sanduka bulunmayan beşik tonozlu cenazeliktir; üst kat Türk üçgenli kubbeli kare bir mescittir.",
+      "en": "Halkabegüş Masjid and Tomb is a square, domed Seljuk building near the Halkabegüş Gate of Konya Castle. Its west facade is of ashlar, the others of rough-cut stone, and the brick dome is covered with lead. The lower level is a barrel-vaulted burial chamber with no sarcophagus; the upper level is a square domed masjid with Turkish-triangle transitions."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 277)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "277-277"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1137",
+        "original_name": "pdf-s140-xref1137",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "277"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Halkabegüş Mescidi ve Türbesi (kitap s. 277)",
+        "en": "Halkabegüş Masjid and Tomb (book p. 277)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kubbeli bir yapı. Kupola, çatıda küçük pencereler ve üst kısmında çatı çubukları var. Çevresinde ağaçlar ve çalılar.",
+        "en": "A stone-walled structure with a dome. The dome has small windows on the roof and roof ridges. Trees and bushes surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1139",
+        "original_name": "pdf-s140-xref1139",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "277"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Halkabegüş Mescidi ve Türbesi (kitap s. 277)",
+        "en": "Halkabegüş Masjid and Tomb (book p. 277)"
+      },
+      "alt": {
+        "tr": "Kemerli pencere ve tavan lambası olan kubbeli bir iç mekanda tuğla duvarlar ve kubbe.",
+        "en": "A domed interior with brick walls, arched windows, and a hanging lamp."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

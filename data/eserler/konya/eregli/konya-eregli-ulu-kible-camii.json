@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-eregli-ulu-kible-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Kesin yapım tarihi ve banî kitapta çelişkili; uzman teyidi gerekli.",
+      "Vakıf şartları/vakfiye metni kitapta yok.",
+      "Kitâbelerin özgün metni kitapta verilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap yapının hem Anadolu Selçuklu dönemi (ebced: H. 510 / M. 1116, I. Mesut) hem de H. 860 / M. 1455-56'da Mehmet Bey tarafından yaptırıldığını (Vakıflar Defteri) aktarır; ayrıca 'Karamanoğlu İbrahim Bey zamanında tamir' der. Bu görüşler uzlaştırılmadı, kayıt disputed işaretlendi. Banî: yalnızca vakıf defteri Mehmet Bey'i anıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ulu (Kıble) Camii",
+    "en": "Grand (Kıble) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Cami-i Ereğli",
+      "en": "Cami-i Ereğli"
+    },
+    {
+      "tr": "Kıble Camii",
+      "en": "Kıble Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Anadolu Selçuklu",
+    "Karamanoğulları",
+    "minare",
+    "taş minber",
+    "ebced tarihi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ereğli",
+    "neighborhood": "Cami-i Kebir Mahallesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "431"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Anadolu Selçuklu dönemi (H. 510 / M. 1116 ebced hesabı); Karamanoğlu onarımı; H. 860 / M. 1455-56 vakıf defteri kaydı",
+      "en": "Anatolian Seljuk period (510 AH / 1116 AD by abjad); Karamanoğlu repair; 860 AH / 1455-56 AD foundations register"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kaynak birden fazla görüş veriyor: minare kitâbesindeki 'sinetun' kelimesinin ebced değeri H. 510 / M. 1116 (Sultan I. Mesut) tarihini verir; Vakıflar Defteri ise Karamanoğlu İbrahim Bey'in oğlu Mehmet Bey'in H. 860 / M. 1455-56'da yaptırdığını yazar. Tek bir yıl belirlenmedi.",
+      "en": "The source gives multiple views: the abjad value of 'sinetun' in the minaret inscription yields 510 AH / 1116 AD (Sultan Mesud I), while the Foundations Register says Mehmet Bey, son of Karamanoğlu İbrahim Bey, built it in 860 AH / 1455-56 AD. No single year chosen."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "431"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Mehmet Bey (Karamanoğlu İbrahim Bey'in oğlu) — vakıf defterine göre",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "431"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 860 / M. 1455-56 (Kuyud-i Kadime Arşivi, 584 No'lu Karaman Vilâyeti Vakıflar Defteri)",
+      "excerpt": {
+        "tr": "Ereğli Camii'ni, Karamanoğlu İbrahim Bey'in oğlu Mehmet Bey 860/1455-56 yılında yaptırmıştır",
+        "en": "Ereğli Mosque was built by Mehmet Bey, son of Karamanoğlu İbrahim Bey, in 860/1455-56"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "431"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Ereğli ilçe merkezinde, kaynağa göre Anadolu Selçukluları döneminde yapılıp Karamanoğlu İbrahim Bey zamanında onarılan; 1818-19 ve 1890-91 onarım kitâbeleri ve Karamanoğulları minarelerine benzeyen minaresiyle dikkat çeken cami.",
+    "en": "A mosque in Ereğli center, built in the Anatolian Seljuk period per the source and repaired under Karamanoğlu İbrahim Bey; notable for its minaret resembling Karamanid minarets and repair inscriptions of 1818-19 and 1890-91."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Ereğli ilçe merkezinde, Cami-i Kebir Mahallesindedir; 'Cami-i Ereğli' ve 'Kıble Camii' olarak da bilinir. Anadolu Selçukluları döneminde yapılmış, Karamanoğlu İbrahim Bey zamanında tamir edilmiştir. Minare kitâbesindeki Âyet el-Kürsî'de geçen 'sinetun' kelimesinin ebced değeri Sultan I. Mesut devrine (H. 510 / M. 1116) denk gelir. Kuyud-i Kadime Arşivi'ndeki 584 numaralı Karaman Vilâyeti Vakıflar Defteri'nde caminin Karamanoğlu İbrahim Bey'in oğlu Mehmet Bey tarafından H. 860 / M. 1455-56'da yaptırıldığı yazılıdır. Vakıflar Bölge Müdürlüğü 2008'de tamir etmiştir.",
+        "en": "The mosque is in Ereğli center, Cami-i Kebir Neighborhood, and is also known as 'Cami-i Ereğli' and 'Kıble Mosque'. It was built in the Anatolian Seljuk period and repaired under Karamanoğlu İbrahim Bey. The abjad value of 'sinetun' in Ayat al-Kursi on the minaret inscription corresponds to the reign of Sultan Mesud I (510 AH / 1116 AD). The Karaman Province Foundations Register No. 584 in the Kuyud-i Kadime Archive states that Mehmet Bey, son of Karamanoğlu İbrahim Bey, built it in 860/1455-56. The Regional Directorate repaired it in 2008."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami enine dikdörtgen planlı, kırma çatılıdır; beden duvarlarında moloz taş kullanılmıştır. Kuzeydoğu köşedeki minarede düzgün kesme taş ve çini kullanılmıştır; kare kaide üzerindeki sekizgen pabuçluktan uzanan silindirik gövdeli, tek şerefelidir. Caminin en gösterişli bölümü olan minare, teknik özellikleriyle Karamanoğulları minarelerine benzer. Dört sahınlı harim enlemesine dikdörtgendir; içten ahşap kirişler üzerinde düz dam, dıştan kırma çatılıdır. Kuzeyde sekiz ayak üzerinde mahfil vardır. Mihrap yarım daire planlı, nişi sivri kemerli üç sıra silmelidir; sağındaki taş minber betonarme sıvayla kaplıdır ve orijinal değildir.",
+        "en": "A transverse rectangular mosque with a hipped roof and rubble stone walls. The minaret in the northeast corner is of cut stone and tile, with an octagonal transition on a square base, cylindrical body and a single balcony; as the most striking part, it resembles Karamanid minarets in technique. The four-aisled harim is a transverse rectangle, flat-roofed inside on wooden beams. A gallery on eight legs lies in the north. The semicircular mihrab niche is topped with three pointed-arch moldings; the stone minbar to its right is covered with reinforced concrete plaster and is not original."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Karamanoğlu İbrahim Bey",
+      "role": {
+        "tr": "Zamanında cami tamir edildi",
+        "en": "Repair made in his time"
+      }
+    },
+    {
+      "name": "Mehmet Bey",
+      "role": {
+        "tr": "Vakıf defterine göre camiyi yaptıran (İbrahim Bey'in oğlu)",
+        "en": "Per foundations register, builder (son of İbrahim Bey)"
+      }
+    },
+    {
+      "name": "Abdülcabbar Zâde",
+      "role": {
+        "tr": "H. 1234 / M. 1818-19 tamiri",
+        "en": "1818-19 repair"
+      }
+    },
+    {
+      "name": "Emin Bey",
+      "role": {
+        "tr": "H. 1308 / M. 1890-91 yenilemesi",
+        "en": "1890-91 renewal"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "minare-kitabesi",
+      "location": {
+        "tr": "Minare üzerinde",
+        "en": "On the minaret"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 510,
+        "gregorian": "1116"
+      },
+      "note": {
+        "tr": "Bakara Suresi 255. ayet (Âyet el-Kürsî); 'sinetun' kelimesinin ebced değeri H. 510 / M. 1116'yı verir (kitaba göre). Özgün metin kitapta verilmiyor.",
+        "en": "Verse 255 of Al-Baqara (Ayat al-Kursi); the abjad value of 'sinetun' gives 510 AH / 1116 AD (per the book). The original text is not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    },
+    {
+      "id": "tamir-kitabesi-1818",
+      "location": {
+        "tr": "Taç kapının sağında",
+        "en": "To the right of the crown gate"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1234,
+        "gregorian": "1818-19"
+      },
+      "note": {
+        "tr": "Abdülcabbar Zâde tarafından tamir ettirildiği yazar. Özgün metin ve dil kitapta verilmiyor.",
+        "en": "States that it was repaired by Abdülcabbar Zâde. The original text and language are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    },
+    {
+      "id": "yenileme-kitabesi-1890",
+      "location": {
+        "tr": "Taç kapı üzerinde",
+        "en": "Over the crown gate"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1308,
+        "gregorian": "1890-91"
+      },
+      "note": {
+        "tr": "Emin Bey tarafından yenilendiği ifade edilir. Özgün metin ve dil kitapta verilmiyor.",
+        "en": "States that it was renewed by Emin Bey. The original text and language are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "selcuklu-insa",
+      "year": 1116,
+      "date": null,
+      "hijri": "510",
+      "type": "construction",
+      "title": {
+        "tr": "Anadolu Selçuklu dönemi yapımı (minare kitâbesi ebced tarihi)",
+        "en": "Anatolian Seljuk-period construction (abjad date on minaret inscription)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    },
+    {
+      "id": "vakif-defteri-1455",
+      "year": 1455,
+      "date": null,
+      "hijri": "860",
+      "type": "construction",
+      "title": {
+        "tr": "Vakıf defterine göre Mehmet Bey'in yaptırması",
+        "en": "Built by Mehmet Bey according to the foundations register"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    },
+    {
+      "id": "tamir-1818",
+      "year": 1818,
+      "date": null,
+      "hijri": "1234",
+      "type": "repair",
+      "title": {
+        "tr": "Abdülcabbar Zâde tamiri",
+        "en": "Repair by Abdülcabbar Zâde"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    },
+    {
+      "id": "yenileme-1890",
+      "year": 1890,
+      "date": null,
+      "hijri": "1308",
+      "type": "repair",
+      "title": {
+        "tr": "Emin Bey yenilemesi",
+        "en": "Renewal by Emin Bey"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    },
+    {
+      "id": "tamir-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tamiri",
+        "en": "Repair by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "431"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Enine dikdörtgen planlı, kırma çatılı, moloz taştan bir camidir. Kuzeydoğu köşede kesme taş ve çini kullanılmış, tek şerefeli silindirik bir minare yükselir; bu minare Karamanoğulları minarelerine benzer. Harim dört sahınlıdır, kuzeyde sekiz ayaklı mahfil vardır. Mihrap yarım daire nişlidir; yanında taş minber durur.",
+      "en": "A transverse rectangular rubble-stone mosque with a hipped roof. A cylindrical single-balcony minaret of cut stone and tile rises in the northeast corner, resembling Karamanid minarets. The harim has four aisles and a gallery on eight legs in the north. The mihrab has a semicircular niche, with a stone minbar beside it."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "431-431"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1885",
+        "original_name": "pdf-s217-xref1885",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "431"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ulu (Kıble) Camii (kitap s. 431)",
+        "en": "Grand (Kıble) Mosque (book p. 431)"
+      },
+      "alt": {
+        "tr": "İç mekanda, sütunlarla desteklenen kemerler ve kırmızı halılar görülmektedir.",
+        "en": "Inside, arches supported by columns and red carpets are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1887",
+        "original_name": "pdf-s217-xref1887",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "431"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Ulu (Kıble) Camii (kitap s. 431)",
+        "en": "Grand (Kıble) Mosque (book p. 431)"
+      },
+      "alt": {
+        "tr": "Yüksek bir minareye sahip dikdörtgen bir cami. Minare, kare kesitli ve dikey çizgilerle ayrılmış. Caminin çatısı düz, çevresinde ağaçlar ve binalar var.",
+        "en": "A rectangular mosque with a tall minaret. The minaret is square-shaped with vertical divisions. The mosque has a flat roof, surrounded by trees and buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

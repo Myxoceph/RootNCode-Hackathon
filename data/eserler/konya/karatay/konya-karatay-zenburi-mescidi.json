@@ -1,0 +1,303 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-zenburi-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banisi kitapta bilinmiyor (Konyalı'nın iki olasılığı yalnızca anılıyor, founder null bırakıldı)",
+      "Vakıf bilgisi kitapta yok",
+      "Kitapta yer alan alçı raf/çini süslemelerin bugünkü durumu belirtilmiyor",
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Konyalı'ya göre banisi Alâeddin Keykubat'ın arıcıbaşısı ya da Kara Aslan olabilir; kitap kesin bir isim vermediği için founder null bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Zenburi Mescidi",
+    "en": "Zenburi Masjid"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "İplikçi Mescit",
+      "en": "İplikçi Masjid",
+      "note": "Mescitte görev yapan imamın iplikçilik yapmasından"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Selçuklu",
+    "tuğla",
+    "balıksırtı",
+    "tek kubbeli",
+    "İplikçi Mescit"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Zenburi Mahallesi",
+    "address": "Müftüler Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "239-240"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyılın ilk yarısı (tarihlenebilir)",
+      "en": "First half of the 13th century (datable)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitâbe yok; plan, malzeme ve teknik özelliklere göre XIII. yüzyılın ilk yarısına tarihlenebileceği belirtiliyor. Kesin yıl yok.",
+      "en": "No inscription; dated to the first half of the 13th century by plan, material and technique. No exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "239"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Şems Camii ve Türbesi'nin güneydoğusunda, kare planlı, tek kubbeli, tuğla bir mescit. Yazıtı yoktur; planı, malzemesi ve tekniğiyle XIII. yüzyılın ilk yarısına tarihlenebilir. Balıksırtı tuğla motifli minaresi ve kubbesi dikkat çeker.",
+    "en": "A square, single-domed brick masjid southeast of the Şems Mosque and Tomb. It has no inscription; by plan, material and technique it can be dated to the first half of the 13th century. Its minaret and dome feature a herringbone brick motif."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Adlar ve Tarihçe",
+        "en": "Location, Names and History"
+      },
+      "body": {
+        "tr": "Mescit Karatay, Zenburi Mahallesi, Müftüler Sokak üzerindedir. Şems Camii ve Türbesi'nin güneydoğusundaki yapı 'Zenburi' veya 'İplikçi Mescit' olarak da bilinir; mescitte görev yapan imamın iplikçilik yapması üzerine 'İplikçi' adının verildiği söylenir. Üzerinde inşa tarihi ya da banisini belirten kitâbe yoktur; plan, malzeme ve teknik özellikleri bakımından XIII. yüzyılın ilk yarısına tarihlenebilir. İbrahim Hakkı Konyalı eserin Sultan Alâeddin Keykubat'ın arıcıbaşısı ya da Kara Aslan tarafından yaptırılmış olabileceğini söyler. 1990'daki onarımda zengin çini ve alçı süslemeler çıkmış, bunların yan duvarlardaki süslemeli alçı raflar olduğu anlaşılmıştır. 1960'ta Türkiye Anıtlar Derneği Konya Şubesi'nin yardımıyla onarılmıştır; Vakıflar Bölge Müdürlüğü de yakın zamanda tamir ettirmiştir.",
+        "en": "The masjid is in Karatay, Zenburi District, on Müftüler Street. The structure southeast of the Şems Mosque and Tomb is also known as 'Zenburi' or 'İplikçi Masjid'; it is said to be named 'İplikçi' because its imam worked as a spinner. It has no inscription indicating its date or patron; by its plan, materials and technical features it can be dated to the first half of the 13th century. İbrahim Hakkı Konyalı says it may have been built by Sultan Alâeddin Keykubat's chief beekeeper or by Kara Aslan. During the 1990 restoration very rich tile and plaster decorations were found, understood to be decorated plaster shelves on the side walls. It was repaired in 1960 with the help of the Konya Branch of the Turkish Monuments Association, and recently by the Regional Directorate of Foundations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "239-240"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlı ve tek kubbelidir; kubbe üçlü tromplarla geçilen kasnağa oturur. Yapı tuğladandır. Kuzeybatı köşedeki minare sekizgen kaideli, silindirik gövdeli, tek şerefeli ve külahlıdır; gövdesinde tuğlaların farklı dizilmesiyle oluşan balıksırtı motifi görülür. Beden duvarları sadedir; güney, batı ve doğu cephelerinde üstte birer sivri kemerli pencere vardır. Kuzey cephedeki sonradan eklenmiş giriş bölümü bugün camekânla kapatılmış ve meyilli çatıyla örtülmüştür; girişi doğu cephenin kuzeye yakın köşesindeki kapıdır. Bu bölümdeki kapıdan harime geçilir; kubbe içinde de balıksırtı tuğla motifi vardır. Mihrap ve minber yenidir. Kitaba göre mescit klasik Selçuklu dönemi kare planlı, tek kubbeli yapılarındandır.",
+        "en": "The masjid has a square plan and a single dome on a drum reached by triple squinches. It is built of brick. The minaret in the northwest corner has an octagonal base, a cylindrical body, a single balcony and a cone; a herringbone motif formed by arranging bricks differently appears on its body. The walls are simple, with one pointed-arch window above on each of the south, west and east facades. The entrance section on the north facade was added later, is now closed with glass and covered with a sloping roof; it is entered by the door at the north-near corner of the east facade. The harim is reached through the door in this section; inside the dome there is also a herringbone brick motif. The mihrab and minbar are new. According to the book it is one of the classical Seljuk square, single-domed buildings."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "240"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare plan, tek kubbe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "key": "minare_serefe",
+      "label": {
+        "tr": "Minare şerefe sayısı",
+        "en": "Minaret balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "240"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "İbrahim Hakkı Konyalı",
+      "role": {
+        "tr": "Eserin Alâeddin Keykubat'ın arıcıbaşısı ya da Kara Aslan tarafından yaptırılmış olabileceğini söyler",
+        "en": "Suggests it may have been built by Alâeddin Keykubat's chief beekeeper or Kara Aslan"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Türkiye Anıtlar Derneği Konya Şubesi'nin yardımıyla onarıldı",
+        "en": "Repaired with the help of the Konya Branch of the Turkish Monuments Association"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "240"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1990",
+      "year": 1990,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarımda zengin çini ve alçı süslemeler ortaya çıktı",
+        "en": "Rich tile and plaster decorations found during repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "239"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, tek kubbeli tuğla bir mescit. Kuzeybatı köşede sekizgen kaideli silindirik gövdeli, tuğla balıksırtı motifli tek şerefeli minare; kuzeyde camekânla kapalı sonradan eklenmiş giriş bölümü vardır.",
+      "en": "A square, single-domed brick masjid. In the northwest corner is a single-balcony minaret with an octagonal base and cylindrical body with a herringbone brick motif; on the north is a later glass-enclosed entrance section."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "239-240"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=952",
+        "original_name": "pdf-s121-xref952",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "239"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Zenburi Mescidi (kitap s. 239)",
+        "en": "Zenburi Masjid (book p. 239)"
+      },
+      "alt": {
+        "tr": "Bir çatıya sahip, kubbeli ve minareli bir mescit. Yanında ağaçlar ve diğer binalar var.",
+        "en": "A mosque with a dome and minaret. Trees and other buildings are nearby."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=956",
+        "original_name": "pdf-s122-xref956",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "240"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Zenburi Mescidi (kitap s. 240)",
+        "en": "Zenburi Masjid (book p. 240)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap merdivenli minber, duvarlarda ahşap kaplama ve kiremitli zemin görülüyor.",
+        "en": "Inside, a wooden minbar with staircase, wooden wall paneling, and tiled floor are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -32,18 +32,18 @@ datasource db {
 /// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
 /// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
 model asset {
-  id                    String            @id
+  id                    String              @id
   status                String
   type_code             String
-  secondary_types       String[]          @default([])
+  secondary_types       String[]            @default([])
   parent_id             String?
   era_code              String?
-  tags                  String[]          @default([])
+  tags                  String[]            @default([])
   name_tr               String
   name_en               String?
   subtitle_tr           String?
   subtitle_en           String?
-  alternate_names       Json              @default("[]")
+  alternate_names       Json                @default("[]")
   summary_tr            String
   summary_en            String?
   city_code             String
@@ -53,13 +53,13 @@ model asset {
   lat                   Float?
   lng                   Float?
   coord_source          String?
-  coord_verified        Boolean           @default(false)
+  coord_verified        Boolean             @default(false)
   dating_display_tr     String?
   dating_display_en     String?
-  start_year            Int?              @db.SmallInt
-  end_year              Int?              @db.SmallInt
-  hijri_year            Int?              @db.SmallInt
-  century               Int?              @db.SmallInt
+  start_year            Int?                @db.SmallInt
+  end_year              Int?                @db.SmallInt
+  hijri_year            Int?                @db.SmallInt
+  century               Int?                @db.SmallInt
   dating_basis_tr       String?
   dating_basis_en       String?
   dating_confidence     String?
@@ -67,7 +67,7 @@ model asset {
   founder_role          String?
   founder_confidence    String?
   architect_name        String?
-  architect_candidates  Json              @default("[]")
+  architect_candidates  Json                @default("[]")
   architect_confidence  String?
   waqf_name             String?
   waqf_deed             Json?
@@ -77,16 +77,16 @@ model asset {
   waqf_land_note_en     String?
   waqf_confidence       String?
   visit_setting         String?
-  visit_duration_min    Int?              @db.SmallInt
+  visit_duration_min    Int?                @db.SmallInt
   visit_duration_source String?
   entrance_fee          String?
   visit_notes_tr        String?
   visit_notes_en        String?
-  a11y_wheelchair       String            @default("unknown")
-  a11y_step_free        String            @default("unknown")
-  a11y_ramp             String            @default("unknown")
-  a11y_toilet           String            @default("unknown")
-  a11y_verified         Boolean           @default(false)
+  a11y_wheelchair       String              @default("unknown")
+  a11y_step_free        String              @default("unknown")
+  a11y_ramp             String              @default("unknown")
+  a11y_toilet           String              @default("unknown")
+  a11y_verified         Boolean             @default(false)
   a11y_notes_tr         String?
   a11y_notes_en         String?
   audio_description_tr  String?
@@ -97,16 +97,16 @@ model asset {
   media_folder          Json?
   prepared_by           String?
   reviewed_by           String?
-  todos                 Json              @default("[]")
-  data_quality_notes    Json              @default("[]")
+  todos                 Json                @default("[]")
+  data_quality_notes    Json                @default("[]")
   source_json           Json
-  created_at            DateTime          @default(now()) @db.Timestamptz(6)
-  updated_at            DateTime          @default(now()) @db.Timestamptz(6)
-  city                  city              @relation(fields: [city_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
-  era                   era?              @relation(fields: [era_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
-  asset                 asset?            @relation("assetToasset", fields: [parent_id], references: [id], onUpdate: NoAction)
-  other_asset           asset[]           @relation("assetToasset")
-  asset_type            asset_type        @relation(fields: [type_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  created_at            DateTime            @default(now()) @db.Timestamptz(6)
+  updated_at            DateTime            @default(now()) @db.Timestamptz(6)
+  city                  city                @relation(fields: [city_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  era                   era?                @relation(fields: [era_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  asset                 asset?              @relation("assetToasset", fields: [parent_id], references: [id], onUpdate: NoAction)
+  other_asset           asset[]             @relation("assetToasset")
+  asset_type            asset_type          @relation(fields: [type_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
   asset_fact            asset_fact[]
   asset_highlight       asset_highlight[]
   asset_legend          asset_legend[]
@@ -115,12 +115,15 @@ model asset {
   asset_relation        asset_relation[]
   asset_revision        asset_revision[]
   asset_section         asset_section[]
+  asset_custom_block    asset_custom_block[]
   contribution          contribution[]
   exhibition            exhibition[]
   inscription           inscription[]
   source_citation       source_citation[]
   timeline_event        timeline_event[]
+  visit                 visit[]
   visitor_tip           visitor_tip[]
+  chat_conversation     chat_conversation[]
 
   @@index([lat, lng], map: "asset_geo_idx")
   @@index([parent_id], map: "asset_parent_idx")
@@ -182,6 +185,8 @@ model asset_media {
   sort_order          Int           @default(0) @db.SmallInt
   is_cover            Boolean       @default(false)
   subject             String?
+  dossier_after       String?
+  panel_upload        Boolean       @default(false)
   focal_x             Float?        @db.Real
   focal_y             Float?        @db.Real
   caption_tr          String
@@ -222,6 +227,8 @@ model asset_relation {
   description_tr  String
   description_en  String?
   confidence      String
+  target_name_tr  String?
+  target_name_en  String?
   asset           asset         @relation(fields: [source_asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
   relation_type   relation_type @relation(fields: [type_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
 
@@ -238,6 +245,20 @@ model asset_revision {
   asset      asset    @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@id([asset_id, version])
+}
+
+model asset_custom_block {
+  asset_id    String
+  slug        String
+  sort_order  Int     @db.SmallInt
+  after_block String
+  title_tr    String
+  title_en    String?
+  body_tr     String
+  body_en     String?
+  asset       asset   @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([asset_id, slug])
 }
 
 model asset_section {
@@ -264,32 +285,34 @@ model asset_type {
 }
 
 model city {
-  code        String  @id
+  code        String      @id
   region_code String
-  plate       Int?    @db.SmallInt
+  plate       Int?        @db.SmallInt
   label_tr    String
   label_en    String?
   asset       asset[]
-  region      region  @relation(fields: [region_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  region      region      @relation(fields: [region_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  city_dish   city_dish[]
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model contribution {
-  id            String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id            String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   asset_id      String
-  user_id       String    @db.Uuid
+  user_id       String        @db.Uuid
   kind          String
-  media_id      String?   @db.Uuid
+  media_id      String?       @db.Uuid
   body          String?
-  status        String    @default("pending")
-  reviewed_by   String?   @db.Uuid
-  reviewed_at   DateTime? @db.Timestamptz(6)
+  status        String        @default("pending")
+  reviewed_by   String?       @db.Uuid
+  reviewed_at   DateTime?     @db.Timestamptz(6)
   reject_reason String?
-  created_at    DateTime  @default(now()) @db.Timestamptz(6)
-  asset         asset     @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  media         media?    @relation(fields: [media_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  reviewer      app_user? @relation("contribution_reviewed_byToapp_user", fields: [reviewed_by], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  user          app_user  @relation("contribution_user_idToapp_user", fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  created_at    DateTime      @default(now()) @db.Timestamptz(6)
+  asset         asset         @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  media         media?        @relation(fields: [media_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  reviewer      app_user?     @relation("contribution_reviewed_byToapp_user", fields: [reviewed_by], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  user          app_user      @relation("contribution_user_idToapp_user", fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  photo         photo_upload?
 
   @@index([created_at], map: "contribution_queue_idx", where: raw("(status = 'pending'::text)"))
   @@index([asset_id, created_at(sort: Desc)], map: "contribution_approved_idx", where: raw("(status = 'approved'::text)"))
@@ -406,6 +429,7 @@ model source {
   url             String?
   is_official     Boolean           @default(false)
   extra           Json              @default("{}")
+  city_dish       city_dish[]
   media           media[]
   source_citation source_citation[]
 }
@@ -464,12 +488,287 @@ model visitor_tip {
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model app_user {
-  id                    String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id                    String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   nickname              String
-  role                  String         @default("visitor")
-  token_hash            String         @unique
-  created_at            DateTime       @default(now()) @db.Timestamptz(6)
-  banned_at             DateTime?      @db.Timestamptz(6)
-  reviewedContributions contribution[] @relation("contribution_reviewed_byToapp_user")
-  contributions         contribution[] @relation("contribution_user_idToapp_user")
+  role                  String              @default("visitor")
+  created_at            DateTime            @default(now()) @db.Timestamptz(6)
+  banned_at             DateTime?           @db.Timestamptz(6)
+  username              String?             @unique
+  password_hash         String?
+  email                 String?             @unique
+  full_name             String?
+  avatar                user_avatar?
+  reviewedContributions contribution[]      @relation("contribution_reviewed_byToapp_user")
+  contributions         contribution[]      @relation("contribution_user_idToapp_user")
+  redemption            redemption[]
+  user_achievement      user_achievement[]
+  sessions              user_session[]
+  visit                 visit[]
+  chat_conversation     chat_conversation[]
+  user_route            user_route[]
+  journal_entry         journal_entry[]
+  journal_photo         journal_photo[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model city_dish {
+  id                     String   @id
+  city_code              String
+  sort_order             Int      @db.SmallInt
+  kind                   String
+  name_tr                String
+  name_en                String?
+  description_tr         String
+  description_en         String?
+  story_tr               String?
+  story_en               String?
+  district               String?
+  gi_portal_id           Int
+  gi_registration_number String
+  gi_registered_on       DateTime @db.Date
+  gi_type                String
+  gi_registrant          String
+  gi_document_url        String
+  source_id              String
+  source_url             String?
+  confidence             String
+  status                 String
+  city                   city     @relation(fields: [city_code], references: [code], onDelete: NoAction, onUpdate: NoAction)
+  source                 source   @relation(fields: [source_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([city_code, sort_order], map: "city_dish_city_idx")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model sound {
+  key              String  @id
+  sort_order       Int     @db.SmallInt
+  title_tr         String
+  title_en         String?
+  file_key         String
+  duration_seconds Float   @db.Real
+  captions         Json    @default("[]")
+  license          String
+  author           String?
+  source_url       String
+  status           String
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model user_session {
+  token_hash String   @id
+  user_id    String   @db.Uuid
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  user       app_user @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([user_id], map: "user_session_user_idx")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model photo_upload {
+  contribution_id String       @id @db.Uuid
+  content_type    String
+  bytes           Bytes
+  width           Int
+  height          Int
+  sha256          String
+  created_at      DateTime     @default(now()) @db.Timestamptz(6)
+  contribution    contribution @relation(fields: [contribution_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model user_avatar {
+  user_id      String   @id @db.Uuid
+  content_type String
+  bytes        Bytes
+  width        Int
+  height       Int
+  sha256       String
+  updated_at   DateTime @default(now()) @db.Timestamptz(6)
+  user         app_user @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model achievement {
+  code             String             @id
+  title_tr         String
+  title_en         String?
+  description_tr   String
+  description_en   String?
+  badge            String
+  points           Int
+  rule             Json
+  sort_order       Int                @default(1000)
+  active           Boolean            @default(true)
+  created_by       String
+  created_at       DateTime           @default(now()) @db.Timestamptz(6)
+  user_achievement user_achievement[]
+  image            achievement_image?
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model achievement_image {
+  achievement_code String      @id
+  content_type     String
+  bytes            Bytes
+  width            Int
+  height           Int
+  sha256           String
+  updated_at       DateTime    @default(now()) @db.Timestamptz(6)
+  achievement      achievement @relation(fields: [achievement_code], references: [code], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model user_achievement {
+  user_id          String      @db.Uuid
+  achievement_code String
+  earned_at        DateTime    @default(now()) @db.Timestamptz(6)
+  achievement      achievement @relation(fields: [achievement_code], references: [code], onDelete: Cascade, onUpdate: NoAction)
+  app_user         app_user    @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([user_id, achievement_code])
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model visit {
+  user_id      String    @db.Uuid
+  asset_id     String
+  visited_at   DateTime  @default(now()) @db.Timestamptz(6)
+  verified     Boolean
+  distance_m   Int?
+  proven_at    DateTime? @db.Timestamptz(6)
+  proof_method String?
+  asset        asset     @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  app_user     app_user  @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([user_id, asset_id])
+  @@index([user_id, visited_at], map: "visit_user_time_idx")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model redemption {
+  id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id     String      @db.Uuid
+  reward_code String
+  code_id     String      @unique @db.Uuid
+  points      Int
+  created_at  DateTime    @default(now()) @db.Timestamptz(6)
+  issued_code reward_code @relation(fields: [code_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  reward      reward      @relation(fields: [reward_code], references: [code], onDelete: Cascade, onUpdate: NoAction)
+  app_user    app_user    @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([user_id, created_at(sort: Desc)], map: "redemption_user_idx")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model reward {
+  code              String        @id
+  title_tr          String
+  title_en          String?
+  description_tr    String
+  description_en    String?
+  partner           String
+  kind              String
+  /// The drawing picked in the panel (RewardArtSchema); null lets the app pick by code and kind.
+  art               String?
+  cost_points       Int
+  min_proven_visits Int           @default(0)
+  sample            Boolean       @default(false)
+  active            Boolean       @default(true)
+  sort_order        Int           @default(1000)
+  created_by        String
+  created_at        DateTime      @default(now()) @db.Timestamptz(6)
+  redemption        redemption[]
+  reward_code       reward_code[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model reward_code {
+  id          String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  reward_code String
+  code        String
+  created_at  DateTime    @default(now()) @db.Timestamptz(6)
+  redemption  redemption?
+  reward      reward      @relation(fields: [reward_code], references: [code], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([reward_code, code])
+}
+
+/// The partial unique index chat_conversation_open_idx (one open conversation per page) lives only in the migration.
+model chat_conversation {
+  id          String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id     String         @db.Uuid
+  asset_id    String?
+  title       String
+  created_at  DateTime       @default(now()) @db.Timestamptz(6)
+  updated_at  DateTime       @default(now()) @db.Timestamptz(6)
+  archived_at DateTime?      @db.Timestamptz(6)
+  app_user    app_user       @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  asset       asset?         @relation(fields: [asset_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  messages    chat_message[]
+
+  @@index([user_id, updated_at(sort: Desc)], map: "chat_conversation_user_idx")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model chat_message {
+  id              BigInt            @id @default(autoincrement())
+  conversation_id String            @db.Uuid
+  role            String
+  content         String
+  response        Json?
+  created_at      DateTime          @default(now()) @db.Timestamptz(6)
+  conversation    chat_conversation @relation(fields: [conversation_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([conversation_id, id], map: "chat_message_conversation_idx")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model user_route {
+  user_id  String   @db.Uuid
+  id       String
+  key      String
+  kind     String
+  route    Json
+  saved_at DateTime @default(now()) @db.Timestamptz(6)
+  app_user app_user @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([user_id, id])
+  @@unique([user_id, key], map: "user_route_key_unique")
+  @@index([user_id, saved_at(sort: Desc)], map: "user_route_user_time_idx")
+}
+
+/// The visitor's private journal (Profil · Anı Defteri). No route shows it to anyone but its owner.
+model journal_entry {
+  id         String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id    String          @db.Uuid
+  text       String?
+  layout     Json?
+  /// Whether the layout holds any drawing: a page of nothing else is still a page.
+  has_drawing Boolean        @default(false)
+  created_at DateTime        @default(now()) @db.Timestamptz(3)
+  updated_at DateTime        @default(now()) @db.Timestamptz(3)
+  user       app_user        @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  photos     journal_photo[]
+
+  @@index([user_id, created_at(sort: Desc), id(sort: Desc)])
+}
+
+/// Both sizes are held here and not on the public media bucket: see docs/decisions/0004-ani-defteri.md.
+model journal_photo {
+  id             String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  entry_id       String        @db.Uuid
+  user_id        String        @db.Uuid
+  width          Int
+  height         Int
+  lqip           String
+  dominant_color String
+  content_type   String
+  thumb          Bytes
+  full           Bytes
+  created_at     DateTime      @default(now()) @db.Timestamptz(3)
+  entry          journal_entry @relation(fields: [entry_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  user           app_user      @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([entry_id, created_at])
+  @@index([user_id, created_at])
 }

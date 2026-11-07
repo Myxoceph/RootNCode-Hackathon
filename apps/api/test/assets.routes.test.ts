@@ -6,6 +6,7 @@
 import "dotenv/config";
 import {
   AR_MINDAR_VERSION,
+  ArTargetsResponseSchema,
   AssetDetailSchema,
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
@@ -53,6 +54,14 @@ describe.skipIf(!DATABASE_URL)("assets routes (PostgreSQL)", () => {
       const next = await list("?limit=5&offset=5");
       const ids = new Set([...body.items, ...next.items].map((item) => item.id));
       expect(ids.size).toBe(10);
+    });
+
+    it("gives each card a year to show: the dating's own, else the century", async () => {
+      const body = await list("?city=bursa&limit=500");
+      const year = (id: string) => body.items.find((item) => item.id === id)?.yearLabel;
+      expect(year(ULUCAMI)).toBe("1399");
+      expect(year("bursa-yildirim-devlet-hatun-turbesi")).toBe("1413");
+      expect(year("bursa-osmangazi-eyne-bey-subasi-medresesi")).toBe("XV. yüzyıl");
     });
 
     it("filters by type and city", async () => {
@@ -155,6 +164,32 @@ describe.skipIf(!DATABASE_URL)("assets routes (PostgreSQL)", () => {
       }
     });
 
+    it("lists the targets in GET /ar-targets with the same .mind file and the asset's place", async () => {
+      const [inscription] = await prisma.inscription.findMany({ where: { asset_id: ULUCAMI }, orderBy: { sort_order: "asc" }, take: 1 });
+      const cover = await prisma.asset_media.findFirstOrThrow({ where: { asset_id: ULUCAMI, is_cover: true } });
+      await prisma.inscription.update({ where: { asset_id_slug: { asset_id: ULUCAMI, slug: inscription!.slug } }, data: { ar_target_media_key: cover.media_key } });
+      try {
+        const response = await app.inject({ method: "GET", url: "/ar-targets" });
+        expect(response.statusCode).toBe(200);
+        const { items } = ArTargetsResponseSchema.parse(response.json());
+        const asset = AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${ULUCAMI}` })).json());
+        const entry = items.find((item) => item.assetId === ULUCAMI && item.inscriptionId === inscription!.slug);
+        expect(entry).toEqual({
+          assetId: ULUCAMI,
+          inscriptionId: inscription!.slug,
+          city: asset.city.code,
+          coordinates: { lat: asset.coordinates!.lat, lng: asset.coordinates!.lng },
+          mindUrl: asset.inscriptions.find((i) => i.id === inscription!.slug)!.arTarget!.mindUrl,
+          mindarVersion: AR_MINDAR_VERSION,
+        });
+        // Only inscriptions with a target, of published assets.
+        const expected = await prisma.inscription.count({ where: { ar_target_media_key: { not: null }, asset: { status: "published" } } });
+        expect(items).toHaveLength(expected);
+      } finally {
+        await prisma.inscription.update({ where: { asset_id_slug: { asset_id: ULUCAMI, slug: inscription!.slug } }, data: { ar_target_media_key: inscription!.ar_target_media_key } });
+      }
+    });
+
     it("answers in English via ?lang= or Accept-Language", async () => {
       const viaQuery = await app.inject({ method: "GET", url: `/assets/${ULUCAMI}?lang=en` });
       const viaHeader = await app.inject({
@@ -231,6 +266,19 @@ describe.skipIf(!DATABASE_URL)("assets routes (PostgreSQL)", () => {
       } finally {
         await prisma.asset.update({ where: { id: hidden }, data: { status: original.status } });
       }
+    });
+
+    it("names a link to a place outside the dataset, such as the Istanbul complex a han funded", async () => {
+      const body = await relationsOf("bursa-osmangazi-koza-hani");
+      expect(body.outside).toContainEqual(
+        expect.objectContaining({ name: "II. Bayezid Külliyesi (İstanbul)", type: expect.objectContaining({ code: "waqf_income" }) }),
+      );
+      expect(body.outside.every((link) => link.sources.length > 0)).toBe(true);
+
+      // The source does not name this fountain: the link is counted, not shown.
+      const school = await relationsOf("bursa-osmangazi-sitti-hatun-mektebi");
+      expect(school.outside).toEqual([]);
+      expect(school.unavailableCount).toBeGreaterThan(0);
     });
 
     it("returns 404 for unknown assets", async () => {

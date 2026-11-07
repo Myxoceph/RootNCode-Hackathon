@@ -1,0 +1,238 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-bozkir-siristat-buyuk-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabından (s. 392) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da haritadan doğrulanarak eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "İnşa tarihi ve banî bilinmiyor (founder null).",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Ad kitapta Türkçe başlıkta 'Sırıstat (Büyük) Camii', İngilizce başlıkta 'SIRISTAT (GREAT) MOSQUE' biçiminde; metinde mahalle 'Çarşı İçi'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sırıstat (Büyük) Camii",
+    "en": "Sırıstat (Great) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "ahşap direkli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Bozkır",
+    "neighborhood": "Çarşı İçi Mahallesi",
+    "address": "Çarşamba Suyu ve Taş Köprü yakınında",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "392"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.15316,
+      "lng": 32.345078,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Adıyla OpenStreetMap Nominatim'de bulundu ('Hisarlık Mahallesi Büyük Camii, Hisarlık Caddesi, Hisarlık, Bozkır, Konya, İç Anadolu Bölgesi, Türkiye'); sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "İnşa tarihi ve banî bilinmiyor; mihrap süslemelerinde 1872 yazıyor",
+      "en": "Construction date and founder unknown; 1872 is written on the mihrab decoration"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap 1872 tarihinin ilk inşadan sonraki bir döneme ait olduğunu düşünüyor; inşa yılı verilmedi.",
+      "en": "The book thinks 1872 belongs to a period after the first construction; no construction year given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "392"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Bozkır Çarşı İçi Mahallesi'nde, Çarşamba Suyu ve Taş Köprü yakınında bulunan, ahşap direkli, ortada bağdâdi kubbeli cami. İnşa tarihi ve banîsi bilinmez.",
+    "en": "A mosque in Çarşı İçi Neighborhood, Bozkır, near Çarşamba Creek and the Stone Bridge, with wooden posts and a central baghdadi dome. Its date and founder are unknown."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Yapının inşa tarihi ve bânisi hakkında bilgi yoktur. Mihrap süslemeleri üzerinde 1872 tarihi yazar; bu tarihin ilk inşadan sonraki bir sürece ait olduğu düşünülmektedir.",
+        "en": "There is no information on the construction date or founder. The date 1872 is written on the mihrab decoration; it is thought to belong to a period after the first construction."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "392"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı dikdörtgen planlı ve kırma çatılıdır; son cemaat yeri ve kuzeybatı köşedeki minareden oluşur. Moloz taşla inşa edilmiş, kapı ve pencere sövelerinde düzgün kesme taş, mihrap, mahfil ve minberde ahşap kullanılmıştır. Harime son cemaat yerindeki yuvarlak kemerli kapıdan girilir. Harim ahşap direklerle mihraba dik üç sahına ayrılmıştır; içten ortada bağdâdi kubbeli, yanlarda ahşap düz tavanlıdır. Kuzeydeki mahfil doğu-batı yönünde uzanır.",
+        "en": "The plan is rectangular with a hipped roof, consisting of a narthex and a minaret in the northwest corner. Rubble stone was used for construction, smooth cut stone for door and window jambs, and wood for the mihrab, mahfil and minbar. The harim is entered through a round-arched door in the narthex and is divided by wooden poles into three aisles perpendicular to the mihrab; inside it has a baghdadi dome in the centre and flat wooden ceilings at the sides. The northern mahfil extends east-west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "392"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "mihrap-1872",
+      "year": 1872,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Mihrap süslemelerinde 1872 tarihi",
+        "en": "Date 1872 on the mihrab decoration"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "392"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, kırma çatılı, moloz taştan bir camidir. Önünde bir son cemaat yeri, kuzeybatı köşesinde minare vardır. İçeride ahşap direkler üç sahını ayırır; ortada bağdâdi bir kubbe, yanlarda ahşap düz tavan görülür. Mihrap, mahfil ve minber ahşaptır.",
+      "en": "A rectangular rubble-stone mosque with a hipped roof, a narthex in front and a minaret in the northwest corner. Inside, wooden poles divide three aisles; a baghdadi dome covers the centre with flat wooden ceilings at the sides. The mihrab, gallery and minbar are of wood."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 392) derlenmiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "392-392"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1669",
+        "original_name": "pdf-s198-xref1669",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "392"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Sırıstat (Büyük) Camii (kitap s. 392)",
+        "en": "Sırıstat (Great) Mosque (book p. 392)"
+      },
+      "alt": {
+        "tr": "Beyaz bir minare, koyu renkli bir kubbe ile kırmızı kiremit çatılı bir yapıya sahip.",
+        "en": "A white minaret with a dark dome, attached to a building with a red tiled roof."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1671",
+        "original_name": "pdf-s198-xref1671",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "392"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sırıstat (Büyük) Camii (kitap s. 392)",
+        "en": "Sırıstat (Great) Mosque (book p. 392)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap sütunlar, kemerler ve merdivenli balkonlar var. Mavi halılar ve tavanlardaki ahşap yapılar dikkat çekiyor.",
+        "en": "Wooden pillars, arches, and a balcony with stairs are visible. Blue carpets and wooden ceiling structures stand out."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

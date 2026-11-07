@@ -5,9 +5,10 @@ import { AssetIdSchema, ContractVersionSchema, LangSchema } from "./asset.schema
  * Topluluk Ziyaretçi Nabzı (module 6): anonymous sessions, visitor contributions,
  * the per-asset pulse feed and the moderation queue.
  *
- * Visitors are anonymous: they pick a nickname and get an opaque bearer token
- * (`Authorization: Bearer <token>`). Contributions are plain text and appear in
- * the pulse only after a moderator approves them.
+ * Visitors start anonymous: they pick a nickname and get an opaque bearer token
+ * (`Authorization: Bearer <token>`). They may later create an account (username +
+ * password) to sign in on other devices; an anonymous visitor who signs up keeps
+ * their contributions. Contributions appear in the pulse only after a moderator approves them.
  */
 
 /** 2–32 characters: letters, digits, space, `.`, `_`, `-`; starts with a letter or digit. */
@@ -48,13 +49,59 @@ export const ContributionTextSchema = z
       .max(CONTRIBUTION_TEXT_MAX, `at most ${CONTRIBUTION_TEXT_MAX} characters`),
   );
 
-export const UserRoleSchema = z.enum(["visitor", "moderator"]);
+/** `moderator` reviews contributions; `admin` also adds assets and manages roles. */
+export const UserRoleSchema = z.enum(["visitor", "moderator", "admin"]);
+
+/** 3–32 characters: lowercase letters, digits, `_` and `.`, starting with a letter or digit. Sign-in ignores case. */
+export const UsernameSchema = z
+  .string()
+  .trim()
+  .toLowerCase()
+  .regex(/^[a-z0-9][a-z0-9_.]{2,31}$/, "username may contain lowercase letters, digits, '_' and '.' (3-32 characters)");
+
+export const PASSWORD_MIN = 8;
+export const PASSWORD_MAX = 128;
+export const PasswordSchema = z.string().min(PASSWORD_MIN).max(PASSWORD_MAX);
+
+/** Stored lowercase; one account per address. Not verified: there is no mail service. */
+export const EmailSchema = z.string().trim().toLowerCase().max(254).pipe(z.email("not an e-mail address"));
+
+/** The visitor's own name for their card, 2–64 characters: letters, space, `'`, `.` and `-`. */
+export const FullNameSchema = z
+  .string()
+  .trim()
+  .transform((name) => name.normalize("NFC").replace(/\s+/g, " "))
+  .pipe(
+    z
+      .string()
+      .min(2)
+      .max(64)
+      .regex(/^\p{L}[\p{L}\p{M} '.-]*$/u, "name may contain letters, space, \"'\", '.' and '-'"),
+  );
+
+/** Profile photo (`PUT /me/avatar`): JPEG or PNG, at most 2 MB, each side at least 64 px. */
+export const AVATAR_MAX_BYTES = 2 * 1024 * 1024;
+export const AVATAR_MIN_SIDE = 64;
 
 export const AppUserSchema = z.strictObject({
   id: z.uuid(),
   nickname: z.string().min(1),
+  /**
+   * Null for an anonymous visitor who has not created an account. The API always sends it;
+   * the default keeps sessions the app stored before 0.3.6 readable.
+   */
+  username: z.string().min(1).nullable().default(null),
   role: UserRoleSchema,
   createdAt: z.iso.datetime(),
+  /**
+   * The account's own details, sent only to the account itself (sign-in, `/me`). Null for an
+   * anonymous visitor and for accounts opened before 0.3.25 (e-mail); the defaults keep sessions
+   * the app stored before then readable.
+   */
+  email: z.string().nullable().default(null),
+  fullName: z.string().nullable().default(null),
+  /** Signed path of the profile photo, relative to the API's base URL; it expires after a day, `/me` gives a fresh one. */
+  photoUrl: z.string().nullable().default(null),
 });
 
 /** `POST /auth/anonymous` */
@@ -66,14 +113,81 @@ export const AnonymousSessionResponseSchema = z.strictObject({
   token: z.string().min(32),
 });
 
-/** Photo contributions need the upload pipeline (R2) and are not accepted yet. */
-export const ContributionKindSchema = z.enum(["tip", "memory", "correction"]);
+/** `POST /auth/register`: a new account. Without `nickname`, the username is shown as the nickname. */
+export const RegisterRequestSchema = z.strictObject({
+  username: UsernameSchema,
+  password: PasswordSchema,
+  email: EmailSchema,
+  nickname: NicknameSchema.optional(),
+  fullName: FullNameSchema.optional(),
+});
+
+/** `POST /auth/login` */
+export const LoginRequestSchema = z.strictObject({
+  username: z.string().trim().toLowerCase().min(1).max(32),
+  password: z.string().min(1).max(PASSWORD_MAX),
+});
+
+/** `POST /auth/delete-account`: the account's own password, so a device left open cannot erase it. */
+export const DeleteAccountRequestSchema = z.strictObject({
+  password: z.string().min(1).max(PASSWORD_MAX),
+});
+
+/** `POST /auth/upgrade`: the signed-in anonymous visitor becomes an account and keeps their contributions. */
+export const UpgradeAccountRequestSchema = z.strictObject({
+  username: UsernameSchema,
+  password: PasswordSchema,
+  email: EmailSchema,
+});
+
+/** `PATCH /me`: only the fields sent change; `fullName: null` removes the name. */
+export const UpdateProfileRequestSchema = z
+  .strictObject({
+    nickname: NicknameSchema.optional(),
+    fullName: FullNameSchema.nullable().optional(),
+  })
+  .refine((body) => body.nickname !== undefined || body.fullName !== undefined, "send nickname or fullName");
+
+/** Response of register and login: the token is shown once, as for anonymous sessions. */
+export const SessionResponseSchema = AnonymousSessionResponseSchema;
+
+/** `photo` is sent with `POST /assets/:id/photos`; the others are text (`POST /assets/:id/contributions`). */
+export const ContributionKindSchema = z.enum(["tip", "memory", "correction", "photo"]);
+export const TextContributionKindSchema = z.enum(["tip", "memory", "correction"]);
 export const ContributionStatusSchema = z.enum(["pending", "approved", "rejected"]);
 
 /** `POST /assets/:id/contributions` */
 export const CreateContributionRequestSchema = z.strictObject({
-  kind: ContributionKindSchema,
+  kind: TextContributionKindSchema,
   body: ContributionTextSchema,
+});
+
+/** Largest photo upload, in bytes; the API answers 413 above it. */
+export const PHOTO_MAX_BYTES = 5 * 1024 * 1024;
+/** Photos one user may send per day. */
+export const PHOTOS_PER_DAY = 10;
+/** Shorter side of a photo, in pixels: smaller ones are icons or thumbnails. */
+export const PHOTO_MIN_SIDE = 300;
+
+/**
+ * `caption` of `POST /assets/:id/photos` (query parameter): what the photo shows, cleaned
+ * like contribution text. It is also the photo's alt text for screen readers.
+ */
+export const PHOTO_CAPTION_MIN = 3;
+export const PHOTO_CAPTION_MAX = 200;
+export const PhotoCaptionSchema = z
+  .string()
+  .transform(normalizeContributionText)
+  .pipe(z.string().min(PHOTO_CAPTION_MIN).max(PHOTO_CAPTION_MAX));
+
+/**
+ * A visitor photo file. `path` is relative to the API base URL (e.g. `${apiUrl}${path}`);
+ * for photos that are not approved it is signed and expires within a day.
+ */
+export const PhotoFileSchema = z.strictObject({
+  path: z.string().startsWith("/photos/"),
+  width: z.int().positive(),
+  height: z.int().positive(),
 });
 
 /** A contribution as its author sees it (`POST` response, `GET /me/contributions`). */
@@ -81,7 +195,10 @@ export const ContributionSchema = z.strictObject({
   id: z.uuid(),
   assetId: AssetIdSchema,
   kind: ContributionKindSchema,
+  /** The text, or a photo's caption. */
   body: z.string().min(1),
+  /** Set for `kind: "photo"`. The default keeps answers of an API before 0.3.7 readable. */
+  photo: PhotoFileSchema.nullable().default(null),
   status: ContributionStatusSchema,
   createdAt: z.iso.datetime(),
   reviewedAt: z.iso.datetime().nullable(),
@@ -121,6 +238,23 @@ export const PulseResponseSchema = z.strictObject({
   communityTotal: z.int().min(0),
 });
 
+/** An approved visitor photo of an asset. Show it apart from the dataset's gallery, with the author's nickname. */
+export const CommunityPhotoSchema = PhotoFileSchema.extend({
+  id: z.uuid(),
+  /** Also the alt text. */
+  caption: z.string().min(1),
+  author: z.string().min(1),
+  date: z.iso.date(),
+});
+
+/** `GET /assets/:id/photos`: newest first. */
+export const CommunityPhotosResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  assetId: AssetIdSchema,
+  items: z.array(CommunityPhotoSchema),
+  total: z.int().min(0),
+});
+
 export const ModerationItemSchema = ContributionSchema.extend({
   asset: z.strictObject({ id: AssetIdSchema, name: z.string().min(1) }),
   author: z.strictObject({ id: z.uuid(), nickname: z.string().min(1), banned: z.boolean() }),
@@ -143,7 +277,18 @@ export const RejectContributionRequestSchema = z.strictObject({
 export type AppUser = z.infer<typeof AppUserSchema>;
 export type AnonymousSessionRequest = z.infer<typeof AnonymousSessionRequestSchema>;
 export type AnonymousSessionResponse = z.infer<typeof AnonymousSessionResponseSchema>;
+export type UserRole = z.infer<typeof UserRoleSchema>;
+export type RegisterRequest = z.infer<typeof RegisterRequestSchema>;
+export type LoginRequest = z.infer<typeof LoginRequestSchema>;
+export type DeleteAccountRequest = z.infer<typeof DeleteAccountRequestSchema>;
+export type UpgradeAccountRequest = z.infer<typeof UpgradeAccountRequestSchema>;
+export type UpdateProfileRequest = z.input<typeof UpdateProfileRequestSchema>;
+export type SessionResponse = z.infer<typeof SessionResponseSchema>;
 export type ContributionKind = z.infer<typeof ContributionKindSchema>;
+export type TextContributionKind = z.infer<typeof TextContributionKindSchema>;
+export type PhotoFile = z.infer<typeof PhotoFileSchema>;
+export type CommunityPhoto = z.infer<typeof CommunityPhotoSchema>;
+export type CommunityPhotosResponse = z.infer<typeof CommunityPhotosResponseSchema>;
 export type ContributionStatus = z.infer<typeof ContributionStatusSchema>;
 export type CreateContributionRequest = z.input<typeof CreateContributionRequestSchema>;
 export type Contribution = z.infer<typeof ContributionSchema>;

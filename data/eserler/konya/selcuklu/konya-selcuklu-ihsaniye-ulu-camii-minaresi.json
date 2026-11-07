@@ -1,0 +1,215 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-ihsaniye-ulu-camii-minaresi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakıf (vakfiye, gelirler) ayrıntısı kitapta yok.",
+      "Minarenin yapım tarihi ve banisi kitapta yok; dating atlandı, era null (kitap dönem belirtmiyor).",
+      "Minarenin inşa dönemi ve banisi kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "İhsaniye Ulu Camii Minaresi",
+    "en": "İhsaniye Grand Mosque Minaret"
+  },
+  "alternate_names": [],
+  "type": "diger",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "minare",
+    "Selçuklu ilçesi",
+    "İhsaniye",
+    "tescilli minare"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "İhsaniye",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "318"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.872105,
+      "lng": 32.485056,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('İhsaniye Mahallesi, Konya, Selçuklu, Konya, İç Anadolu Bölgesi, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "318"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "İhsaniye Ulu Camii'nin bitişiğinde, önceki yapıdan günümüze kalan tek parça olan, tek şerefeli kesme taş minare.",
+    "en": "The cut-stone single-balcony minaret next to İhsaniye Grand Mosque; the only part that survives from the earlier structure."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Tescil",
+        "en": "History and Registration"
+      },
+      "body": {
+        "tr": "Minare Selçuklu ilçesi İhsaniye Mahallesi'nde İhsaniye Ulu Camii'nin bitişiğindedir. İhsaniye Ulu Camii 1958'de yaptırılmıştır; önceki yapıdan günümüze yalnızca minare ulaşmıştır. İhsaniye Mahallesi Vakfı'na ait caminin tescili 12.04.2013 tarih ve 1278 sayılı kararla iptal edilmiş, minare ise kültür varlığı olarak tescil edilmiştir.",
+        "en": "The minaret is adjacent to İhsaniye Grand Mosque in İhsaniye Neighborhood. The mosque was built in 1958 and only the minaret has survived from the previous structure. The registration of the mosque, owned by the İhsaniye Neighborhood Foundation, was canceled by decision no. 1278 of 12.04.2013, and the minaret was registered as a cultural asset."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "318"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Minare düzgün kesme taştan yapılmıştır; kare kaide üzerinde silindirik gövdeli ve tek şerefelidir. Pabuçluk bölümünde ve şerefe altında birer bilezik vardır; şerefe altı üç sıra silmeyle hareketlendirilmiştir. Şerefenin ve külahın hemen altında iki sıra turkuaz çinili kuşak yer alır.",
+        "en": "The minaret is of cut stone, with a cylindrical body on a square base and a single balcony. There is a bracelet at the shoe and one under the balcony; the underside of the balcony has three rows of molding. Just below the balcony and the cone are two rows of turquoise-tiled bands."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "318"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "cami-1958",
+      "year": 1958,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Yanındaki İhsaniye Ulu Camii yaptırıldı",
+        "en": "The adjoining İhsaniye Grand Mosque was built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "318"
+        }
+      ]
+    },
+    {
+      "id": "tescil-2013",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Caminin tescili iptal edildi, minare tescil edildi (12.04.2013, karar 1278)",
+        "en": "Mosque registration canceled, minaret registered (12.04.2013, decision 1278)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "318"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Düzgün kesme taştan, kare kaideli, silindirik gövdeli ve tek şerefeli bir minaredir. Pabuçluk ve şerefe altında birer bilezik, şerefe altında üç sıra silme, şerefe ve külah altında iki sıra turkuaz çinili kuşak bulunur.",
+      "en": "A cut-stone, single-balcony minaret with a cylindrical body on a square base. It has a bracelet at the shoe and under the balcony, three rows of molding under the balcony, and two turquoise-tiled bands below the balcony and cone."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "318-318"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1302",
+        "original_name": "pdf-s161-xref1302",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "318"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "İhsaniye Ulu Camii Minaresi (kitap s. 318)",
+        "en": "İhsaniye Grand Mosque Minaret (book p. 318)"
+      },
+      "alt": {
+        "tr": "Mavi gökyüzünde silüet halindeki bir minare. Üst kısmında sivri kubbe ve çatı, ortasında kare bir kule ve alt kısmında sütunlar ve kemerler var.",
+        "en": "A minaret against a blue sky. It has a pointed dome and roof at the top, a square tower in the middle, and columns and arches at the base."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

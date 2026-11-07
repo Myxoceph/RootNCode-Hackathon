@@ -1,0 +1,372 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-pisili-pir-esat-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Kitâbenin Arapça metni/transkripsiyonu kitapta yok",
+      "Onarım yılı kitapta yok",
+      "Karamanoğulları ümerâsı Mûsâ Paşa'nın kimliği kitapta açıklanmıyor",
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[basucu-mezar-tasi-kitabesi].date",
+        "note": "Türbe bölümü kitâbeyi H. 662 / M. 1264 verir; ana metin aynı vefatı H. 662 / M. 1263 verir. Her ikisi kaynağın değeri olarak korundu."
+      },
+      {
+        "field": "people[Mûsâ Paşa]",
+        "note": "Türkçe metin 'Karamanoğulları ümerâsından' (emirlerinden), İngilizce metin 'one of the Karamanoğulları sultans' diyor; Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Pisili (Pir Esat) Türbesi",
+    "en": "Pisili (Pir Esat) Tomb"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "konya-karatay-pisili-pir-esat-kulliyesi",
+  "era": "selcuklu",
+  "tags": [
+    "türbe",
+    "Pisili Sultan",
+    "çapraz tonoz",
+    "tuğla",
+    "Arapça kitâbe"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Adak Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "252-253"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Selçuklu dönemi (ilk yapım); H. 844 / M. 1440 yeniden yapım",
+      "en": "Seljuk period (first construction); rebuilt 844 AH / 1440 AD"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 844,
+    "century": 13,
+    "basis": {
+      "tr": "İlk yapım tarihinin Selçuklu dönemi olduğu düşünülüyor; kesin yıl yok. Mûsâ Paşa'nın H. 844 / M. 1440 yeniden yapımı belgeli ama start_year verilmedi çünkü bu ilk yapım değil.",
+      "en": "First construction thought to be Seljuk; no exact year. Mûsâ Paşa's rebuild in 844 AH / 1440 AD is recorded, but not used as start_year since it is not the first construction."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "253"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Pîr Esad'ın türbesi: kareye yakın dikdörtgen planlı, çapraz tonozlu, tamamen tuğladan, kapısı doğuda. İçinde Pîr Esad'ın sandukası ve H. 662 tarihli Arapça başucu kitâbesi, solunda halk inancına göre kedisinin küçük sandukası bulunur. Manzumeden günümüze sağlam gelen tek yapıdır.",
+    "en": "The tomb of Pîr Esad: a near-square rectangular plan, cross vault, entirely brick, with the door to the east. It holds Pîr Esad's sarcophagus with an Arabic headstone dated 662 AH, and, by popular belief, his cat's small sarcophagus on its left. It is the only structure of the complex to survive intact."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Türbenin ilk yapım tarihinin Selçuklu dönemi olduğu düşünülmektedir. İlk inşasından sonra türbe ve zâviye H. 844 / M. 1440'ta Karamanoğulları ümerâsından Mûsâ Paşa tarafından yeniden yaptırılmış ve daha birçok vakıf eklenmiştir. Pir Esat Zaviye ve Türbesi için hem Selçuklu hem de Karamanoğulları döneminde pek çok vakıf tahsis edilmiştir. Türbe sonradan yarıya kadar yıkılmış, Vakıflar Bölge Müdürlüğü tarafından onarılmıştır.",
+        "en": "The first construction date of the tomb is thought to be the Seljuk period. After its initial construction the tomb and zawiya were rebuilt in 844 AH / 1440 AD by Mûsâ Paşa, one of the Karamanid emirs, and many more endowments were added. Many endowments were allocated to the Pir Esat Zawiya and Tomb in both the Seljuk and Karamanid periods. The tomb was later demolished by half and repaired by the Regional Directorate of Foundations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve Sanduka",
+        "en": "Architecture and Sarcophagus"
+      },
+      "body": {
+        "tr": "Türbe kareye yakın dikdörtgen planlı, üzeri çapraz tonozludur. Tamamen tuğladan yapılmıştır; kapısı doğudadır. Batı tarafta alçıdan bir cüz rafı vardır. Ortada Pîr Esad'a ait beyaz sıvalı, üstü hörgüçlü basit bir sanduka ve başucunda H. 662 / M. 1264 tarihli, beş satır Arapça kitâbeli mezar taşı bulunur. Pîr Esad'ın sandukasının sol tarafında ayakucuna yakın küçük sandukada halk inancına göre kedisi medfundur.",
+        "en": "The tomb has a near-square rectangular plan covered with a cross vault. It is built entirely of brick, with the door to the east. On the west side is a plaster shelf for juz volumes. In the middle is Pîr Esad's simple white-plastered sarcophagus with a humped top, and at its head a tombstone with a five-line Arabic inscription dated 662 AH / 1264 AD. According to popular belief, Pîr Esad's cat is buried in the small sarcophagus on the left near the foot end."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "253"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "kedi-sandukasi",
+      "title": {
+        "tr": "Kedinin sandukası",
+        "en": "The cat's sarcophagus"
+      },
+      "body": {
+        "tr": "Halk inancına göre Şeyh Esad'ın kedisi, Pîr'in sandukasının sol tarafındaki, ayakucuna yakın küçük sandukada medfundur.",
+        "en": "According to popular belief, Şeyh Esad's cat is buried in the small sarcophagus on the left of Pîr's sarcophagus, near the foot end."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "253"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kareye yakın dikdörtgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "key": "ortu",
+      "label": {
+        "tr": "Örtü",
+        "en": "Covering"
+      },
+      "value": "Çapraz tonoz",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "253"
+        }
+      ]
+    },
+    {
+      "key": "kapi_yonu",
+      "label": {
+        "tr": "Kapının yönü",
+        "en": "Door direction"
+      },
+      "value": "Doğu",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "253"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Pîr Esad (Pir Esat Sultan)",
+      "role": {
+        "tr": "Sandukası türbede",
+        "en": "His sarcophagus is in the tomb"
+      }
+    },
+    {
+      "name": "Mûsâ Paşa",
+      "role": {
+        "tr": "H. 844 / M. 1440'ta türbe ve zaviyeyi yeniden yaptıran Karamanoğulları ümerâsından",
+        "en": "Karamanid emir who rebuilt the tomb and zawiya in 844 AH / 1440 AD"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "basucu-mezar-tasi-kitabesi",
+      "location": {
+        "tr": "Pîr Esad'ın sandukasının başucundaki mezar taşı",
+        "en": "Tombstone at the head of Pîr Esad's sarcophagus"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Bismillahirrahmanirrahim. Her canlı yok olacaktır. Ancak Allah’ın zatı bakidir. Bu türbe, Büyük ve ulu şeyh ve yüksek hatırlı, yeryüzünde Allah’ın Velisi Şeyh Esad’ın (Allah’ın rahmeti üzerine olsun) türbesidir. Altı yüz altmış iki (662) senesinde vefat etmiştir.",
+        "en": "Bismillahirrahmanirrahim. Every living thing will perish. However, God’s essence is eternal. This tomb is the tomb of Şeyh Esad (may Allah have mercy on him), the great and exalted şeyh and the high-remembered, Guardian of Allah on earth. He passed away in the year six hundred and sixty-two (662)"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 662,
+        "gregorian": "1264"
+      },
+      "note": {
+        "tr": "Beş satır Arapça. Kitap Arapça metni vermiyor, yalnızca Türkçe ve İngilizce okunuşunu aktarıyor; transliterasyon yok. Bu bölümde miladi yıl 1264 verilirken ana metin vefatı M. 1263 veriyor.",
+        "en": "Five lines in Arabic. The book does not print the Arabic, only a Turkish and English rendering; no transliteration. This section gives AD 1264, while the main text gives AD 1263 for the death."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "253"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yeniden-yapim-1440",
+      "year": 1440,
+      "date": null,
+      "hijri": "H. 844",
+      "type": "restoration",
+      "title": {
+        "tr": "Türbe ve zaviye Mûsâ Paşa tarafından yeniden yaptırıldı (H. 844)",
+        "en": "Tomb and zawiya rebuilt by Mûsâ Paşa (844 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "253"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-pisili-pir-esat-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Pisili (Pir Esat) mescit, türbe ve zaviye manzumesinin günümüze sağlam ulaşan parçasıdır.",
+        "en": "The part of the Pisili (Pir Esat) complex that survives intact."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "252-253"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kareye yakın dikdörtgen planlı, tamamen tuğladan, çapraz tonozlu küçük bir türbe; kapısı doğuda. Ortada beyaz sıvalı, üstü hörgüçlü sade bir sanduka ve başucunda Arapça kitâbeli mezar taşı vardır; batıda alçı bir cüz rafı, sol yanda küçük bir sanduka bulunur.",
+      "en": "A small, near-square brick tomb with a cross vault, the door on the east. In the middle is a simple white-plastered humped sarcophagus with an Arabic-inscribed tombstone at its head; a plaster shelf for juz volumes is on the west and a small sarcophagus on the left."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "253-253"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1008",
+        "original_name": "pdf-s128-xref1008",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "253"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Pisili (Pir Esat) Türbesi (kitap s. 253)",
+        "en": "Pisili (Pir Esat) Tomb (book p. 253)"
+      },
+      "alt": {
+        "tr": "Kapalı bir sandukata, yeşil kumaşla örtülü, yüksek bir kubbeli mezar ve arkasında kemerli bir giriş var.",
+        "en": "Inside a chamber, a green-draped tomb with a high dome and an arched entrance behind it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1010",
+        "original_name": "pdf-s128-xref1010",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "253"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Pisili (Pir Esat) Türbesi (kitap s. 253)",
+        "en": "Pisili (Pir Esat) Tomb (book p. 253)"
+      },
+      "alt": {
+        "tr": "Kiremit kaplamalı dikdörtgen bir yapı. Üst katında küçük pencere, alt katında kafesli pencereler ve çelik çit var.",
+        "en": "Rectangular structure with brick cladding. Small windows on the upper floor, latticed windows on the lower floor, and a metal fence."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

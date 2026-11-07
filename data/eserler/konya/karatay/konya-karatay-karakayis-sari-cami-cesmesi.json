@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-karakayis-sari-cami-cesmesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Su Yapıları",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kitabenin mealini kitap vermiyor; translation boş bırakıldı.",
+      "Sarı Camii ids.md tablosunda yok; ilişki yazılmadı.",
+      "Çeşmeyi yaptıran kişi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating / timeline[insa-1675]",
+        "note": "Kitap Rebiülevvel 1086'yı 1675 Mayıs-Haziran'a karşılık getiriyor; kitabede yıl açıkça yazılı değil (tarih manzumesi 'Firuz tarih düşdü' ile verilmiş), yıl kitabın yorumudur."
+      },
+      {
+        "field": "name",
+        "note": "Türkçe başlık 'Karakayış Sarı Cami Çeşmesi'; İngilizce metin cadde adını 'Karatay, Karakayış Street' diye karıştırarak yazıyor ('intersection of Karatay, Karakayış Street and Karacaoğlan Street')."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Karakayış Sarı Cami Çeşmesi",
+    "en": "Karakayış Sarı Mosque Fountain"
+  },
+  "subtitle": {
+    "tr": "1675 tarihli kitabeli, tam kemerli nişli çeşme",
+    "en": "Inscribed fountain of 1675 with full-arch niche"
+  },
+  "alternate_names": [],
+  "type": "cesme",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "çeşme",
+    "kitabeli",
+    "tam kemerli niş",
+    "tarih manzumesi",
+    "taşınmış"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Karakayış Caddesi ile Karacaoğlan Sokağı'nın kesiştiği köşedeki Sarı Camii'nin batısı",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "236"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Rebiülevvel 1086 / 1675 Mayıs-Haziran",
+      "en": "Rebiülevvel 1086 / May-June 1675"
+    },
+    "start_year": 1675,
+    "end_year": 1675,
+    "hijri_year": 1086,
+    "century": 17,
+    "basis": {
+      "tr": "Kitabenin ilk satırı yapının Rebiülevvel ayında tamamlandığını bildirir; kitaba göre bu Hicri 1086'nın üçüncü ayı, 1675'in Mayıs-Haziran ayıdır.",
+      "en": "The first line of the inscription says the building was completed in the month of Rebiülevvel; according to the book this is the third month of Hijri 1086, May-June 1675."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "236"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karakayış Caddesi ile Karacaoğlan Sokağı'nın köşesindeki Sarı Camii'nin batısında, Osmanlı Türkçesi dört satırlık sülüs kitabeli çeşme. Kitabeye göre 1086 / 1675'te inşa edilmiştir; bani belirtilmez. Birkaç kez taşındığı için üst bölümü özgünlüğünü yitirmiş, son onarımda geniş saçaklı beşik çatıyla korunmuştur. Suyu akmakta ve kullanılmaktadır.",
+    "en": "A fountain west of Sarı Mosque at the corner of Karakayış Street and Karacaoğlan Street, with a four-line thuluth inscription in Ottoman Turkish. According to the inscription it was built in 1086 AH / 1675 AD; no patron is named. Having been moved several times, its upper part has lost its originality; in the last repair it was protected by a wide-eaved gable roof. Its water flows and it is in use."
+  },
+  "sections": [
+    {
+      "id": "konum-tasima",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Taşınma",
+        "en": "Location and Relocation"
+      },
+      "body": {
+        "tr": "Çeşme Karatay'da, Karakayış Caddesi ile Karacaoğlan Sokağı'nın kesiştiği köşede yer alan Sarı Camii'nin batısındadır. Yeri daha önce birkaç kez değiştirilmiş, bu taşımalar sırasında özellikle üst bölümünün orijinalliği tamamen kaybolmuştur.",
+        "en": "The fountain is west of Sarı Mosque, which stands at the corner of Karakayış Street and Karacaoğlan Street in Karatay. Its place has been changed several times and during these moves the originality of its upper part was completely lost."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "236"
+        }
+      ]
+    },
+    {
+      "id": "kitabe",
+      "order": 2,
+      "title": {
+        "tr": "Kitabe ve Tarih",
+        "en": "Inscription and Date"
+      },
+      "body": {
+        "tr": "Aynalığın üst kısmında koyu renkli mermer üzerine iki kartuş hâlinde, dört satır, Osmanlı Türkçesiyle, kabartma tekniğinde ve sülüs hatla yazılmış bir kitabe vardır. Kitabede eserin banisiyle ilgili bilgi yoktur; ilk satır yapının Rebiülevvel ayında tamamlandığını bildirir. Kitaba göre eser Hicri 1086'nın üçüncü ayında, 1675'in Mayıs-Haziran ayında inşa edilmiştir.",
+        "en": "On the upper part of the mirror section, on dark marble, is an inscription in two cartouches and four lines, in Ottoman Turkish, in relief and thuluth. It gives no information on the patron; the first line says the building was completed in the month of Rebiülevvel. According to the book the work was built in the third month of Hijri 1086, May-June 1675."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "236"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari ve Durum",
+        "en": "Architecture and Condition"
+      },
+      "body": {
+        "tr": "Çeşme 'bağımsız, tek cepheli ve tam kemerli nişli' tipolojidedir. Son onarımda geniş saçaklı beşik çatıyla koruma altına alınmıştır. Suyu akan çeşme hâlen kullanılmaktadır.",
+        "en": "The fountain is of the 'independent, single-facade, full-arch niche' typology. In the last repair it was protected with a wide-eaved gable roof. The fountain, with flowing water, is still in use."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "236"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "cesme-kitabesi",
+      "location": {
+        "tr": "Aynalığın üst kısmı, koyu mermer üzerinde iki kartuş",
+        "en": "Upper part of the mirror section, two cartouches on dark marble"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs",
+      "transliteration": "Mah-ı rabi’ül- evvelde çeşmeye oldu beyân\nTema’um bilûb avnile ola vakıf revân\nÂbına mâni’ olan ahmak-ı nadân\nFiruz tarih düşdü kul Abdurrahman",
+      "translation": null,
+      "author": "kul Abdurrahman",
+      "date": {
+        "hijri_year": 1086,
+        "gregorian": "1675"
+      },
+      "note": {
+        "tr": "Dört satır, kabartma. Kitap yalnızca okunuşu veriyor, meal vermiyor. Yazar adı son satırdaki 'kul Abdurrahman' ifadesinden alınmıştır; kitap yazarı ayrıca belirtmiyor.",
+        "en": "Four lines, in relief. The book gives only the reading, no translation. The author name is taken from 'kul Abdurrahman' in the last line; the book does not state an author separately."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "236"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1675",
+      "year": 1675,
+      "date": null,
+      "hijri": "Rebiülevvel 1086",
+      "type": "construction",
+      "title": {
+        "tr": "Çeşme Rebiülevvel 1086'da tamamlandı",
+        "en": "Fountain completed in Rebiülevvel 1086"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "236"
+        }
+      ],
+      "note": {
+        "tr": "Kitaba göre Mayıs-Haziran 1675.",
+        "en": "According to the book May-June 1675."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kitabe",
+      "title": {
+        "tr": "Tarih manzumesi",
+        "en": "Chronogram verse"
+      },
+      "hint": {
+        "tr": "Dört satır Osmanlı Türkçesi sülüs kitabe.",
+        "en": "Four-line thuluth inscription in Ottoman Turkish."
+      },
+      "section_id": "kitabe"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-karatay-karakayis-sari-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "Çeşme, Karakayış Caddesi ile Karacaoğlan Sokağı'nın köşesindeki Sarı Camii'nin batısındadır.",
+        "en": "The fountain is west of the Sarı Mosque at the corner of Karakayış Street and Karacaoğlan Lane."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "236"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çeşme Sarı Camii'nin batısındadır. Tek cepheli ve tam kemerli nişlidir. Aynalığın üst kısmında koyu mermer üzerine, iki kartuşta dört satır sülüs kitabe vardır. Üzeri geniş saçaklı beşik çatıyla korunur. Suyu akmaktadır.",
+      "en": "The fountain is west of Sarı Mosque. It is single-facade with a full-arch niche. On the upper part of the mirror section a four-line thuluth inscription in two cartouches is set on dark marble. A wide-eaved gable roof protects it. Its water flows."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-karatay-karakayis-sari-cami-cesmesi/p120-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "236"
+      },
+      "subject": "fountain",
+      "caption": {
+        "tr": "Karakayış Sarı Cami Çeşmesi",
+        "en": "Karakayış Sarı Mosque Fountain"
+      },
+      "alt": {
+        "tr": "Kiremit saçaklı, sıvalı küçük bir yapı içinde yuvarlak kemerli bir çeşme nişi var. Nişin içinde küçük bir kitabe, yanlarda taş bloklar, önde sokak döşemesi görülüyor.",
+        "en": "A round-arched fountain niche in a small plastered structure with a tiled eave. A small plaque is in the niche, with stone blocks at the sides and paving in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

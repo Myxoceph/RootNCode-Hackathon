@@ -1,0 +1,593 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-ilgin-lala-mustafa-pasa-kulliyesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Külliyeler",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Külliyenin yapı listesi s. 54 ve s. 55'te farklı veriliyor (bedesten/kapalı çarşı, iki han, arasta); gözden geçirilmeli.",
+      "Hamam, şadırvan, samanlık ve helalar için ayrı kayıt yok (ids tablosunda yok); gerekirse eklenmeli.",
+      "Bedesten kitapta yalnızca s. 54'teki listede geçiyor; ayrı yapı olup olmadığı belirsiz.",
+      "Külliye adresi (mahalle/cadde) kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "buildings",
+        "note": "S. 54'teki sayım (cami, bedesten, kapalı çarşı, imaret, tabhane odaları, sıbyan mektebi, samanlık, şadırvan, tuvaletler, çifte hamam) ile s. 55'teki sayım (iki bitişik han, açık ve kapalı arasta, cami, tabhane, imaret, sıbyan mektebi, hamam, helalar) birebir örtüşmüyor: bedesten yalnızca birincide, han ise yalnızca ikincide geçiyor. İkisi de olduğu gibi korundu."
+      },
+      {
+        "field": "text-en",
+        "note": "S. 55'teki İngilizce metinde 'a mosque in the center' ifadesi iki kez geçiyor ve 'açık ve kapalı bölümleri' camiye bağlıyor; Türkçe metin bunları arastaya bağlıyor. Türkçe esas alındı."
+      },
+      {
+        "field": "dating.inscription_vs_charter",
+        "note": "Kitabe H. 984 / M. 1576'yı, vakfiye Şevval H. 985 / 12 Aralık 1577'yi verir; çelişki değil, ikisi ayrı olaylar olarak saklandı. Kervansarayın kitabesi ise H. 992 / M. 1584'tür (bkz. kervansaray kaydı); paşa 1580'de ölmüştür."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Lala Mustafa Paşa Külliyesi",
+    "en": "Lala Mustafa Paşa Complex"
+  },
+  "subtitle": {
+    "tr": "Sinan'ın eseri, Eskişehir–Konya hattının en önemli menzil külliyesi",
+    "en": "A Sinan work, the most important manzil complex between Eskişehir and Konya"
+  },
+  "alternate_names": [],
+  "type": "kulliye",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "menzil külliyesi",
+    "Mimar Sinan",
+    "Kıbrıs Fâtihi",
+    "arasta",
+    "han",
+    "imaret",
+    "tabhane",
+    "sıbyan mektebi",
+    "İstanbul–Mekke yolu"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ilgın",
+    "neighborhood": null,
+    "address": "Ilgın şehir merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "53"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.28049,
+      "lng": 31.91626,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (konya-ilgin-lala-mustafa-pasa-arastasi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 984 / M. 1576",
+      "en": "AH 984 / AD 1576"
+    },
+    "start_year": 1576,
+    "end_year": 1576,
+    "hijri_year": 984,
+    "century": 16,
+    "basis": {
+      "tr": "Caminin giriş kapısı üzerindeki celî sülüs kitâbede H. 984 / M. 1576; vakfiye tarihi Şevval H. 985 / 12 Aralık 1577.",
+      "en": "Inscription above the mosque entrance gives AH 984 / AD 1576; the foundation charter is dated Shawwal 985 AH / 12 December 1577."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "53-54"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Lala Mustafa Paşa (Kıbrıs Fâtihi)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "53-54"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Mimar Sinan",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "55"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Ilgın Lala Mustafa Paşa Vakfı",
+    "deed": {
+      "date_display": "Şevval H. 985 / 12 Aralık 1577",
+      "excerpt": {
+        "tr": "Arapça yazılmış vakfiye, Konya Yusuf Ağa Kütüphanesi arşivindeki 7710 numaralı defterde bulunmaktadır.",
+        "en": "The foundation charter, written in Arabic, is in the notebook numbered 7710 in the archive of the Konya Yusuf Ağa Library."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "54"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "54"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan Murad zamanında Kıbrıs Fâtihi Lala Mustafa Paşa'nın H. 984 / M. 1576'da Ilgın'da yaptırdığı, Mimar Sinan eseri menzil külliyesi. İstanbul–Mekke hattında Eskişehir ile Konya arasındaki en önemli menzildir; ticari yapıları ön plandadır. Cami, hanlar, arasta, imaret, tabhane, sıbyan mektebi ve hamamdan oluşur.",
+    "en": "A manzil complex by Mimar Sinan, built in Ilgın in AH 984 / AD 1576 by Lala Mustafa Paşa, the Conqueror of Cyprus, under Sultan Murad. It is the most important manzil between Eskişehir and Konya on the Istanbul–Mecca line, with its commercial buildings in the foreground. It consists of a mosque, inns, bazaar, imarat, tabhane, primary school and bath."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapılışı ve Kitâbe",
+        "en": "Construction and Inscription"
+      },
+      "body": {
+        "tr": "Ilgın şehir merkezindeki külliye, Sultan Murad zamanında Kıbrıs Fâtihi Lala Mustafa Paşa tarafından H. 984 / M. 1576 yılında yaptırılmıştır. Caminin giriş kapısı üzerindeki, mermere kabartma tekniğiyle celî sülüs yazıyla ve Arapça olarak yazılmış üç satırlık kitâbe de yapının Sultan Selim oğlu Sultan Murad zamanında bu tarihte yaptırıldığını bildirir. Külliyenin tamiri 2010 yılında tamamlanmıştır.",
+        "en": "The complex in the city center of Ilgın was built by Lala Mustafa Paşa, the Conqueror of Cyprus, in AH 984 / AD 1576 during the reign of Sultan Murad. The three-line inscription above the mosque's entrance gate, in Arabic Celi Thuluth relief on marble, records that it was built in that year in the reign of Sultan Murad, son of Sultan Selim. The repair of the complex was completed in 2010."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "53-54"
+        }
+      ]
+    },
+    {
+      "id": "bani",
+      "order": 2,
+      "title": {
+        "tr": "Banî Lala Mustafa Paşa",
+        "en": "The Founder Lala Mustafa Paşa"
+      },
+      "body": {
+        "tr": "Lala Mustafa Paşa'nın hayatının ilk yılları hakkında bilgi yoktur. Kaynaklarda Bosna'nın Sokol Köyü'nden olduğu, Yavuz Sultan Selim zamanında (1512-1520) kardeşi Deli Hüsrev Paşa vasıtasıyla saraya alındığı ve bir süre Kanûnî Sultan Süleyman'ın berberbaşılığında bulunduğu belirtilir. Akıllı ve tedbirli bir devlet adamı olarak anılan paşa, Mısır Sultanı Kansu Gavri'nin oğlu Mehmed Bey'in kızı Fatma Hanım'la evlenmiş; oğlu Mehmed Paşa Halep beylerbeyliğine kadar yükselmiştir. Kanûnî'nin oğlu Şehzade Mehmed'in kızı Hümâ Sultan ile evliliği (18 Cemâziye'l-evvel 983 / 25 Ağustos 1575) dolayısıyla hânedana akraba olmuştur. Yetmiş yaşının üzerinde iken 25 Cemâziye'l-âhir 988 / 7 Ağustos 1580'de İstanbul'da vefat etmiştir.",
+        "en": "There is no information about the first years of Lala Mustafa Paşa's life. The sources state that he was from Sokol Village in Bosnia, was taken to the palace through his brother Deli Hüsrev Paşa during the reign of Yavuz Sultan Selim (1512-1520), and was for a while the head barber of Suleyman the Magnificent. Known as an intelligent and cautious statesman, he married Fatma Hanım, daughter of Mehmed Bey, son of the Egyptian Sultan Kansu Gavri; their son Mehmed Paşa rose to the governorship of Aleppo. He became related to the dynasty through his marriage to Hümâ Sultan, daughter of Prince Mehmed, son of Suleyman the Magnificent (18 Cemâziye'l-evvel 983 / 25 August 1575). He died in Istanbul on 25 Cemâziye'l-âhir 988 / 7 August 1580, aged over seventy."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "53-54"
+        }
+      ]
+    },
+    {
+      "id": "yapilar",
+      "order": 3,
+      "title": {
+        "tr": "Külliyenin Yapıları ve Vakfiye",
+        "en": "Buildings of the Complex and the Charter"
+      },
+      "body": {
+        "tr": "Konya Yusuf Ağa Kütüphanesi arşivindeki 7710 numaralı defterde, Şevval H. 985 / 12 Aralık 1577 tarihli, Arapça yazılmış Ilgın Lala Mustafa Paşa Vakfı vakfiyesi bulunmaktadır. Kitabın bu bölümü külliyeyi cami, bedesten, kapalı çarşı, imaret – mutfak, odunluk, fırın, tabhane odaları, sıbyan mektebi, samanlık, şadırvan, tuvaletler ve çifte hamamdan oluşan bir topluluk olarak sayar.",
+        "en": "The foundation charter of the Ilgın Lala Mustafa Paşa Foundation, written in Arabic and dated Shawwal 985 AH / 12 December 1577, is in the notebook numbered 7710 in the archive of the Konya Yusuf Ağa Library. This part of the book lists the complex as a mosque, bedesten, covered bazaar, imarat–kitchen, woodshed, oven, tabhane rooms, primary school, hayloft, shadirvan, toilets and a double bath."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "54"
+        }
+      ]
+    },
+    {
+      "id": "mimar-menzil",
+      "order": 4,
+      "title": {
+        "tr": "Mimar Sinan ve Menzil Külliyesi",
+        "en": "Mimar Sinan and the Manzil Complex"
+      },
+      "body": {
+        "tr": "Birbirine bitişik iki büyük han, açık ve kapalı bölümlerinden oluşan arasta, merkezdeki cami, tabhâne, imâret, sıbyan mektebi, hamam ve helalardan oluşan külliyenin mimarı Mimar Sinan'dır. Menzil külliyeleri tüccarların, hacıların, seyyahların ve askerî nitelikli kişilerin daha rahat ve güvenli barınabilmesi için sultan, şehzâde ve vezir gibi saray çevresince yaptırılmış, bânîleri tarafından vakıflar kurulmuştur. Lala Mustafa Paşa'nın menzil külliyesi, sağ kol güzergâhında İstanbul–Mekke hattında Eskişehir–Konya arasındaki en önemli menzildir; Osmanlı döneminde bölgenin ticarî merkezi olarak görülmüş, yapımında ticarî yapılar ön plana çıkarılmıştır. Kitaba göre bölgede Mimar Sinan'ın inşa ettiği ticari merkezli en önemli ve en büyük menzil külliyesidir.",
+        "en": "Mimar Sinan is the architect of the complex, which consists of two large inns adjacent to each other, a bazaar with open and closed sections, a central mosque, a tabhane, an imarat, a primary school, a bath and toilets. Manzil complexes, where certain services were provided so that merchants, pilgrims, travelers and military personnel could stay more comfortably and safely, were built by the palace entourage such as sultans, princes and viziers, and foundations were established by their patrons. The manzil complex built by Lala Mustafa Paşa is the most important manzil between Eskişehir and Konya on the Istanbul–Mecca line on the right-hand route; it was seen as the commercial center of the region in the Ottoman period, and its commercial buildings were highlighted. According to the book it is the most important and largest commercial manzil complex built by Mimar Sinan in the region."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "55"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "vakfiye_defter_no",
+      "label": {
+        "tr": "Vakfiyenin bulunduğu defter (Konya Yusuf Ağa Kütüphanesi)",
+        "en": "Notebook holding the charter (Konya Yusuf Ağa Library)"
+      },
+      "value": 7710,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "54"
+        }
+      ]
+    },
+    {
+      "key": "onarim_tamam_yili",
+      "label": {
+        "tr": "Onarımın tamamlandığı yıl",
+        "en": "Year the repair was completed"
+      },
+      "value": 2010,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "54"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Lala Mustafa Paşa",
+      "role": {
+        "tr": "Banî; Kıbrıs Fâtihi",
+        "en": "Patron; Conqueror of Cyprus"
+      }
+    },
+    {
+      "name": "Mimar Sinan",
+      "role": {
+        "tr": "Külliyenin mimarı",
+        "en": "Architect of the complex"
+      }
+    },
+    {
+      "name": "Deli Hüsrev Paşa",
+      "role": {
+        "tr": "Lala Mustafa Paşa'nın kardeşi; paşayı saraya aldırdı",
+        "en": "Lala Mustafa Paşa's brother; brought him to the palace"
+      }
+    },
+    {
+      "name": "Fatma Hanım",
+      "role": {
+        "tr": "Lala Mustafa Paşa'nın eşi (Kansu Gavri'nin oğlu Mehmed Bey'in kızı)",
+        "en": "Wife of Lala Mustafa Paşa (daughter of Mehmed Bey, son of Kansu Gavri)"
+      }
+    },
+    {
+      "name": "Hümâ Sultan",
+      "role": {
+        "tr": "Lala Mustafa Paşa'nın eşi (Şehzade Mehmed'in kızı)",
+        "en": "Wife of Lala Mustafa Paşa (daughter of Prince Mehmed)"
+      }
+    },
+    {
+      "name": "Mehmed Paşa",
+      "role": {
+        "tr": "Lala Mustafa Paşa'nın oğlu; Halep beylerbeyliğine yükseldi",
+        "en": "Son of Lala Mustafa Paşa; rose to the governorship of Aleppo"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "cami-giris-kitabesi",
+      "location": {
+        "tr": "Caminin giriş kapısı üzerinde",
+        "en": "Above the mosque's entrance gate"
+      },
+      "language": "ar",
+      "script": "Celî sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 984,
+        "gregorian": "1576"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "54"
+        }
+      ],
+      "note": {
+        "tr": "Üç satırlık kitâbe mermere kabartma tekniğiyle işlenmiştir; kitapta metni ve mealı verilmiyor. Yapıyı Sultan Selim oğlu Sultan Murad zamanında Kıbrıs Fâtihi Lala Mustafa Paşa'nın yaptırdığını bildirir.",
+        "en": "The three-line inscription is worked in relief on marble; its text and translation are not given in the book. It records that Lala Mustafa Paşa, Conqueror of Cyprus, had the building made in the reign of Sultan Murad, son of Sultan Selim."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "evlilik-1575",
+      "year": 1575,
+      "date": "1575-08-25",
+      "hijri": "18 Cemâziye'l-evvel 983",
+      "type": "record",
+      "title": {
+        "tr": "Lala Mustafa Paşa, Hümâ Sultan ile evlendi (18 Cemâziye'l-evvel 983 / 25 Ağustos 1575)",
+        "en": "Lala Mustafa Paşa married Hümâ Sultan (18 Cemâziye'l-evvel 983 / 25 August 1575)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "53"
+        }
+      ]
+    },
+    {
+      "id": "insa-1576",
+      "year": 1576,
+      "date": null,
+      "hijri": "984",
+      "type": "construction",
+      "title": {
+        "tr": "Külliye yaptırıldı (H. 984 / M. 1576)",
+        "en": "The complex was built (AH 984 / AD 1576)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "53-54"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-1577",
+      "year": 1577,
+      "date": "1577-12-12",
+      "hijri": "Şevval 985",
+      "type": "record",
+      "title": {
+        "tr": "Vakfiye düzenlendi (Şevval H. 985 / 12 Aralık 1577)",
+        "en": "The foundation charter was drawn up (Shawwal 985 AH / 12 December 1577)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "54"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1580",
+      "year": 1580,
+      "date": "1580-08-07",
+      "hijri": "25 Cemâziye'l-âhir 988",
+      "type": "record",
+      "title": {
+        "tr": "Lala Mustafa Paşa İstanbul'da vefat etti (25 Cemâziye'l-âhir 988 / 7 Ağustos 1580)",
+        "en": "Lala Mustafa Paşa died in Istanbul (25 Cemâziye'l-âhir 988 / 7 August 1580)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "54"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Külliyenin tamiri tamamlandı",
+        "en": "The repair of the complex was completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "54"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "menzil",
+      "title": {
+        "tr": "Menzil külliyesi",
+        "en": "Manzil complex"
+      },
+      "hint": {
+        "tr": "Eskişehir–Konya arasındaki en önemli menzil; ticari yapılar ön planda.",
+        "en": "The most important manzil between Eskişehir and Konya; commercial buildings in the foreground."
+      },
+      "section_id": "mimar-menzil"
+    },
+    {
+      "feature": "sinan",
+      "title": {
+        "tr": "Mimar Sinan eseri",
+        "en": "A work of Mimar Sinan"
+      },
+      "hint": {
+        "tr": "Kitaba göre bölgedeki en büyük ticari merkezli Sinan külliyesi.",
+        "en": "According to the book, the largest commercially centred Sinan complex in the region."
+      },
+      "section_id": "mimar-menzil"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliye, merkezdeki cami, bitişik iki büyük han, açık ve kapalı bölümlü arasta, imaret, tabhane odaları, sıbyan mektebi, hamam ve helalardan oluşan bir menzil külliyesidir. Ticari yapılar külliyenin yapımında ön plandadır.",
+      "en": "The complex is a manzil complex made up of a central mosque, two adjacent large inns, a bazaar with open and closed sections, an imarat, tabhane rooms, a primary school, a bath and toilets. Commercial buildings are in the foreground."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kulliyesi/p028-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "52-53"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Külliyenin uzun yapıları ve camisi, havadan",
+        "en": "Long buildings and mosque of the complex, aerial"
+      },
+      "alt": {
+        "tr": "Mavi çatılı uzun tonozlu yapılar ve arkasında kubbeli, tek minareli cami; çevrede evler ve uzakta tepeler görülüyor.",
+        "en": "Long vaulted buildings with blue roofs and a domed mosque with one minaret behind them, surrounded by houses, with hills in the distance."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kulliyesi/p029-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "54"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Camiye ve çevre yapılara havadan bakış",
+        "en": "Aerial view of the mosque and surrounding buildings"
+      },
+      "alt": {
+        "tr": "Orta yerde kubbeli ve tek minareli cami, çevresinde kurşun kaplı küçük kubbeler ve uzun çatılı yapılar; arkada kent görülüyor.",
+        "en": "A domed mosque with one minaret at the centre, with small lead-covered domes and long-roofed buildings around it and the town behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kulliyesi/p029-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "55"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cami ve avlunun kuşbakışı görünüşü",
+        "en": "Bird's-eye view of the mosque and courtyard"
+      },
+      "alt": {
+        "tr": "Sağda büyük kubbeli cami ve minare, solda ağaçlı avlu; çevrede küçük kubbeler ve mavi kurşun çatılar yer alıyor.",
+        "en": "A large domed mosque and minaret on the right and a tree-filled courtyard on the left, surrounded by small domes and blue lead roofs."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kulliyesi/p029-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "55"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Caminin son cemaat yeri",
+        "en": "The mosque's portico"
+      },
+      "alt": {
+        "tr": "Taş sütunlara oturan, kırmızı ve beyaz taşlı kemerlerle örtülü son cemaat yeri; arkada ahşap kapılı duvar, önde ahşap banklar var.",
+        "en": "A portico of stone columns carrying arches of red and white stone, with a wall with wooden doors behind and wooden benches in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-ilgin-lala-mustafa-pasa-kulliyesi/p030-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "56"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Mukarnaslı taş bezeme",
+        "en": "Carved stone muqarnas"
+      },
+      "alt": {
+        "tr": "Yukarıdan aşağıya sıralanan sivri uçlu taş mukarnas dolgusu; kabartmalı yüzey gri ve yer yer yeşilimsi.",
+        "en": "Rows of pointed stone muqarnas cells arranged from top to bottom, on a grey, slightly greenish carved surface."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

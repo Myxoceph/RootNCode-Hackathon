@@ -1,0 +1,431 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-kadinhani-haci-mehmetli-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 456-457) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Hicri ve miladi yıl uyuşmazlığı ile vakıf tarla ölçüsü farkı veri ekibince kontrol edilmeli.",
+      "Kitabenin metni kitapta tam transliterasyonla verilmiyor; yalnızca anlamı aktarılıyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap 'H. 932 / M. 1516' yazıyor; H. 932 yılı M. 1525-26'ya denk gelir (M. 1516 yaklaşık H. 922). İki değer de kaynağa sadık kalınarak saklandı, kayıt 'disputed' işaretlendi. (Hicri-miladi karşılaştırması ekip hesabıdır; kitap bu uyuşmazlığı belirtmiyor, kitaptaki iki değer olduğu gibi saklandı.)"
+      },
+      {
+        "field": "waqf.land_note",
+        "note": "Gölyeri'ndeki tarla Türkçe metinde '18 dönüm 1 evlek', İngilizce metinde '118 decare 1 evlek' yazıyor. İki değer de not edildi; Türkçe değer esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Mehmetli Camii",
+    "en": "Hacı Mehmetli Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Topbaşların Camii",
+      "en": "Topbaşlar Mosque",
+      "note": "Topbaşlar ailesinin 1940'larda camiye bakmasından"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "Topbaşlar Camii",
+    "yazlık bölüm",
+    "celî sülüs kitabe",
+    "1516"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Kadınhanı",
+    "neighborhood": "Doğanlar Mahallesi",
+    "address": "Şirin Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "456-457"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 932 / M. 1516",
+      "en": "AH 932 / AD 1516"
+    },
+    "start_year": 1516,
+    "end_year": 1516,
+    "hijri_year": 932,
+    "century": 16,
+    "basis": {
+      "tr": "Yazlık bölümdeki inşa kitabesine göre H. 932 / M. 1516'da yapılmıştır; Hicri ve miladi yıl uyuşmuyor.",
+      "en": "According to the construction inscription in the summer section it was built in AH 932 / AD 1516; the Hijri and Gregorian years do not match."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "456"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kemal oğlu İsmail Fakih",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "456-457"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Hacı Mehmetli Camii vakfı",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Hacı Mehmetli Yaylası civarındaki 3 dönüm 1 evlek tarla ile Gölyeri üstündeki 18 dönüm 1 evlek tarla caminin vakfıdır; XX. yüzyıla kadar gelir getirmiştir. Mütevellisi Mehmet Efendi'dir. (İngilizce metinde ikinci tarla 118 dönüm.)",
+      "en": "The 3-decare 1-evlek field around Hacı Mehmetli Plateau and the field on Gölyeri (18 decares 1 evlek in the Turkish text, 118 in the English text) are the mosque's endowments, contributing until the 20th century. Its trustee is Mehmet Efendi."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "456-457"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kadınhanı çarşısı yakınında, Kemal oğlu İsmail Fakih'in 1516'da yaptırdığı, yazlık bölümünde inşa kitabesi bulunan, Topbaşlar ailesince onarılmış cami.",
+    "en": "A mosque near the Kadınhanı bazaar built by Fakih İsmail, son of Kemal, in 1516, with a construction inscription in its summer section and repaired by the Topbaş family."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Vakıf",
+        "en": "History and Foundation"
+      },
+      "body": {
+        "tr": "Cami Kadınhanı merkezde, Doğanlar Mahallesi, Şirin Sokak üzerindedir. Yazlık bölümündeki inşa kitâbesine göre H. 932 / M. 1516 senesinde Kemal oğlu İsmail Fakih tarafından yaptırılmıştır. Hacı Mehmetli Yaylası civarındaki 3 dönüm 1 evlek tarla ile Gölyeri üstündeki 18 dönüm 1 evlek tarla caminin vakfıdır ve XX. yüzyıla kadar gelir getirmiştir; mütevellisi Mehmet Efendi'dir. Cami çeşitli onarımlar geçirmiş, son halini Topbaşzade Ahmet Hamdi'nin üstlendiği onarımla kazanmıştır. Topbaşlar ailesi 1940'larda caminin her ihtiyacını karşıladığı için \"Topbaşların Camii\" olarak da anılmıştır.",
+        "en": "The mosque is on Şirin Street, Doğanlar District, Kadınhanı Center. According to the construction inscription in the summer section it was built by Fakih İsmail, son of Kemal, in 932 AH / 1516 AD. The field around Hacı Mehmetli Plateau and the field on Gölyeri are its endowments and contributed until the 20th century; its trustee is Mehmet Efendi. It underwent various repairs; Topbaşzade Ahmet Hamdi undertook the repair through which it reached its final form. Because the Topbaş family met all its needs in the 1940s it was also known as the \"Topbaşlar Mosque\"."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "456"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 2,
+      "title": {
+        "tr": "Onarımlar",
+        "en": "Repairs"
+      },
+      "body": {
+        "tr": "Öncesinde çardak olarak kullanılan bölüm 1961'de yazlık bölüme çevrilmiş, aynı yıl yapıya bitişik minare eklenmiştir. Cami 1980'de esaslı onarım geçirmiş; harimdeki özgün olmayan mihrap, minber ve vaaz kürsüsü bu onarımla eklenmiş, orijinal mihrap yazlık bölüme taşınmıştır. Girişteki Türkçe tamir kitâbesine göre 2006'da Ahmet Küçükkınalı tarafından tamir ettirilmiştir; bu onarımlarda pencere, iç-dış sıva ve taban tahtası boyanmıştır.",
+        "en": "The section formerly used as a pergola was converted into a summer section in 1961, and a minaret was added adjacent to the building the same year. The mosque had a major restoration in 1980; the non-original mihrab, minbar and preaching platform in the harim were added then and the original mihrab was moved to the summer section. The Turkish repair inscription at the entrance says it was repaired by Ahmet Küçükkınalı in 2006; windows, plaster and floorboards were painted."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "456-457"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Çarşı merkezi yakınındaki cami harim, kadınlar mahfili ve yazlık bölümden oluşur. Dıştan dikdörtgen planlı, kuzey-güney doğrultulu, kerpiç malzemeyle kâgir inşa edilmiş, iç ve dış duvarları beton sıvalıdır; üzeri dört yöne eğimli kiremit kaplı kırma çatıdır. Kuzeydoğu köşedeki çift kanatlı ahşap kapıdan ayakkabılık bölümüne, onun solundaki tek kanatlı kapıdan yazlık bölüme girilir. Harim ahşap direklerle mihraba dik üç sahına ayrılmıştır. Mihrap özgün değildir, ahşaptandır, yarım daire planlı, yarım kubbeli ve yuvarlak kemerlidir. Minber güneybatı köşededir ve son yıllarda yenilenmiştir; güneydoğudaki ahşap vaaz kürsüsü mihrap ve minberdeki çok kollu yıldızlarla bezenmiştir.",
+        "en": "Near the bazaar center, the mosque consists of a harim, a women's hall and a summer section. It has a rectangular plan, runs north-south, is built of mud brick and masonry, has concrete-plastered walls and a tiled hipped roof sloping in four directions. A double-winged wooden door in the northeast corner leads to the shoe rack section, and a single-winged door to its left to the summer section. The harim is divided into three aisles perpendicular to the mihrab by wooden poles. The mihrab is not original; it is of wood, with a semicircular plan, semi-dome and round arch. The minbar in the southwest corner was renovated in recent years; the wooden sermon platform in the southeast is decorated with the multi-armed stars also seen on the mihrab and minbar."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "456-457"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Kemal oğlu İsmail Fakih",
+      "role": {
+        "tr": "Camiyi yaptıran",
+        "en": "Builder"
+      }
+    },
+    {
+      "name": "Topbaşzade Ahmet Hamdi",
+      "role": {
+        "tr": "Onarımı üstlendi",
+        "en": "Undertook the repair"
+      }
+    },
+    {
+      "name": "Mehmet Efendi",
+      "role": {
+        "tr": "Mütevelli",
+        "en": "Trustee"
+      }
+    },
+    {
+      "name": "Ahmet Küçükkınalı",
+      "role": {
+        "tr": "2006 onarımını yaptırdı",
+        "en": "Commissioned the 2006 repair"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Yazlık bölümde, mihrabın sağındaki nişte",
+        "en": "In the summer section, in the niche to the right of the mihrab"
+      },
+      "language": "tr-ottoman",
+      "script": "celî sülüs",
+      "translation": {
+        "tr": "Fakih İsmail Bin Kemal tarafından Şaban ayında yaptırılmıştır.",
+        "en": "It was built by Fakih Ismail Bin Kemal in the month of Şaban."
+      },
+      "note": {
+        "tr": "Altı satırlık kitabe; kitap yalnızca anlamını aktarıyor, aslî metin verilmiyor. Tarih H. 932 / M. 1516 olarak bildiriliyor.",
+        "en": "Six-line inscription; the book gives only its meaning, not the original text. Date reported as AH 932 / AD 1516."
+      },
+      "date": {
+        "hijri_year": 932,
+        "gregorian": "1516"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "456"
+        }
+      ],
+      "ar_target_media_id": null,
+      "transliteration": null
+    },
+    {
+      "id": "tamir-kitabesi-2006",
+      "location": {
+        "tr": "Cami girişinde",
+        "en": "At the mosque entrance"
+      },
+      "language": "tr",
+      "translation": {
+        "tr": "2006 senesinde Ahmet Küçükkınalı tarafından tamir ettirilmiştir.",
+        "en": "It was repaired by Ahmet Küçükkınalı in 2006."
+      },
+      "note": {
+        "tr": "Kitap yalnızca anlamını aktarıyor.",
+        "en": "The book gives only its meaning."
+      },
+      "date": {
+        "hijri_year": null,
+        "gregorian": "2006"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "457"
+        }
+      ],
+      "ar_target_media_id": null,
+      "script": null,
+      "transliteration": null
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1516",
+      "year": 1516,
+      "hijri": "932",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yaptırıldı",
+        "en": "Mosque built"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "456"
+        }
+      ],
+      "date": null
+    },
+    {
+      "id": "yazlik-minare-1961",
+      "year": 1961,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Çardak yazlık bölüme çevrildi, minare eklendi",
+        "en": "Pergola converted into summer section, minaret added"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "457"
+        }
+      ],
+      "date": null,
+      "confidence": "certain"
+    },
+    {
+      "id": "onarim-1980",
+      "year": 1980,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Esaslı onarım; mihrap, minber, kürsü eklendi",
+        "en": "Major restoration; mihrab, minbar and platform added"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "457"
+        }
+      ],
+      "date": null,
+      "confidence": "certain"
+    },
+    {
+      "id": "onarim-2006",
+      "year": 2006,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Ahmet Küçükkınalı onarımı",
+        "en": "Repair by Ahmet Küçükkınalı"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "457"
+        }
+      ],
+      "date": null,
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hacı Mehmetli Camii, Kadınhanı çarşısının yakınında, kiremit kaplı kırma çatılı, dıştan dikdörtgen planlı bir camidir. Girişte ayakkabılık ve yazlık bölüm yer alır; yazlık bölümde mihrabın sağındaki nişte altı satırlık celî sülüs inşa kitabesi vardır. Harim ahşap direklerle üç sahına ayrılır.",
+      "en": "Hacı Mehmetli Mosque near the Kadınhanı bazaar has a rectangular plan and a tiled hipped roof. A shoe rack area and a summer section lie at the entrance; the summer section has a six-line celi thuluth construction inscription in a niche right of the mihrab. The harim is divided into three aisles by wooden poles."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 456-457)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "456-457"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2019",
+        "original_name": "pdf-s230-xref2019",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "456"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hacı Mehmetli Camii (kitap s. 456)",
+        "en": "Hacı Mehmetli Mosque (book p. 456)"
+      },
+      "alt": {
+        "tr": "Hacı Mehmetli Camii'nin hava görüntüsü. Yüksek minaresi ve kubbesiyle çevresindeki binalar arasında belirgin. Çevresinde ağaçlar ve çatılar.",
+        "en": "Aerial view of Hacı Mehmetli Camii. Its tall minaret and dome stand out among surrounding buildings. Trees and rooftops surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2021",
+        "original_name": "pdf-s230-xref2021",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "457"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hacı Mehmetli Camii (kitap s. 457)",
+        "en": "Hacı Mehmetli Mosque (book p. 457)"
+      },
+      "alt": {
+        "tr": "Mavi boyalı sütunlar, kubbeli tavan ve büyük bir avize ile kaplı cami içi.",
+        "en": "Interior of a mosque with blue-painted columns, a domed ceiling, and a large chandelier."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

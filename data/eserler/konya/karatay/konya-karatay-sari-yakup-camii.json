@@ -1,0 +1,502 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-sari-yakup-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Era kodu atanmadı: ilk inşa XV. yüzyıl, bugünkü yapı 1863 evresi; kitap tek bir dönem vermiyor",
+      "Kapı kitâbesinin metni kitapta yok",
+      "Vakıf bilgisi kitapta yok",
+      "Sarı Yakup'un banisi olması kitapta 'düşünülmektedir' diye geçiyor (probable)",
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Metin önce 'kitâbeye göre 1863'te yapılmıştır' diyor, sonra ilk inşayı XV. yüzyıla (Sarı Yakup'un H. 833 / M. 1429 vefatı), kitâbeyi ise ikinci evreye (1863) bağlıyor. Birbirini dışlamıyor ama kaynakta kesin tek tarih yok; 'disputed' işaretlendi."
+      },
+      {
+        "field": "founder",
+        "note": "Sarı Yakup 'bânisi olduğu düşünülen' kişi olarak geçiyor; ancak 1429'daki ölümü caminin bugünkü yapısından yaklaşık 430 yıl öncedir; kitabın ifadesi korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sarı Yakup Camii",
+    "en": "Sarı Yakup Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "bağdâdi kubbe",
+    "köşk minare",
+    "kalem işi",
+    "Sarı Yakup",
+    "mahalle camii"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Dedemoğlu Mahallesi",
+    "address": "Han Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "245-247"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.863676,
+      "lng": 32.502397,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/282037225 ('Sarı Yakup Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Kitâbeye göre 1863; ilk inşa XV. yüzyıl",
+      "en": "1863 per inscription; first construction 15th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Türkçe metin ilk paragrafta 'kitâbeye göre cami 1863'te yapılmıştır' diyor; sonra Sarı Yakup'un H. 833 / M. 1429'daki vefatından ilk inşanın XV. yüzyıl olduğunu, kitâbenin ikinci evre olan 1863'e ait olması gerektiğini belirtiyor. İki ifade bir arada tutuldu; kesin başlangıç yılı verilmedi.",
+      "en": "The text first says the mosque was built in 1863 per the inscription, then infers a 15th-century first construction from Sarı Yakup's death in 833 AH / 1429 AD and says the inscription belongs to the second phase, 1863. Both kept; no exact start year given."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "245-247"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sarı Yakup",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "245"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karatay'da, Dedemoğlu Mahallesi'nde, enine dikdörtgen planlı, bağdâdi kubbeli cami. Kapı üzerindeki kitâbeye göre 1863'te yapılmıştır; adını verdiği Sarı Yakup'un H. 833 / M. 1429'da vefat etmesinden ilk inşasının XV. yüzyıl olduğu anlaşılır.",
+    "en": "A transverse-rectangular mosque with a baghdadi dome in Dedemoğlu Neighborhood, Karatay. According to the door inscription it was built in 1863; from the death of Sarı Yakup in 833 AH / 1429 AD the first construction is understood to be 15th century."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Banisi ve Tarihçe",
+        "en": "Location, Founder and History"
+      },
+      "body": {
+        "tr": "Cami Karatay, Dedemoğlu Mahallesi, Han Sokak üzerindedir. Giriş kapısı üzerindeki kitâbeye göre cami 1863'te yapılmıştır. Adını veren ve banisi olduğu düşünülen Sarı Yakup, Çelebi Sultan Mehmet Devri âlimlerinden olup Konya'da doğmuştur; doğum tarihi tam bilinmemektedir. İlk eğitimine Konya'da başlamış, sonra İran'a ve Arap ülkelerine gitmiş, Molla Fenâri'den ders almış, altı sene boyunca şeyhülislâmlık, müderrislik ve Bursa Kadılığı yapmıştır; Konya'da çeşitli medreselerde müderrislik yapmış, 'Risale-i Menasıkü'l-Hac' adlı eseri de içinde olan kitaplar yazmıştır. Caminin hemen kuzeyindeki kendi adıyla anılan kabristanda medfundur; vefat yılı H. 833 / M. 1429'dur. Bu tarihten hareketle caminin ilk inşasının XV. yüzyıl olduğu anlaşılır; kapı üzerindeki kitâbe ikinci evre olan 1863'e ait olmalıdır. 1942'de düz toprak dam kaldırılıp bağdâdi kubbe ve çatı yapılmış; 1973, 1975 ve 1993'te hayır sahipleri tarafından tamir ve eklemeler yapılmış; Vakıflar Bölge Müdürlüğü 2016'da tamir ettirmiştir.",
+        "en": "The mosque is in Karatay, Dedemoğlu District, on Han Street. According to the inscription on the entrance door it was built in 1863. Sarı Yakup, who gave his name to the building and is thought to be its founder, was a scholar of the era of Çelebi Sultan Mehmet, born in Konya; his exact birth date is unknown. He began his education in Konya, went to Iran and Arab countries, took lessons from Molla Fenâri, served six years as Şeyhülislam, Muderris and Bursa Kadi, taught in various madrasas in Konya and wrote books including 'Risale-i Menasıkü'l-Hac'. He is buried in the cemetery named after him just north of the mosque; he died in 833 AH / 1429 AD. From this date the first construction is understood to be 15th century; the door inscription must belong to the second phase, 1863. In 1942 the flat earthen roof was removed and replaced by a baghdadi dome and a roof; repairs and additions were made by charitable donors in 1973, 1975 and 1993, and the Regional Directorate of Foundations repaired it in 2016."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "245-247"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami enine dikdörtgen planlıdır; içten bağdâdi kubbe, dıştan kırma çatıyla örtülüdür. Doğu tarafına 1975'te son cemaat yeri eklenmiştir. Cephelerde alt katta batı ve kuzeyde birer, doğu ve güneyde ikişer; üst katta kuzey ve batıda birer, doğuda iki, güneyde üç pencere vardır. Harime doğu cephedeki kapıdan girilir. Son cemaat yerinin kuzey ucunda ahşap köşk tipi minare bulunur. Harim içten ahşap desteklere ve güney kıble duvarına oturtulmuş bağdâdi kubbeyle örtülüdür. Kıble duvarı ortasındaki alçı mihrap yarım daire planlıdır; dikdörtgen formlu yüzeyinde çiçek motifleri, nişinde perde-kandil motifi vardır. Harim duvarları kalem işiyle tezyin edilmiştir.",
+        "en": "The mosque has a transverse rectangular plan with a baghdadi dome inside and a hipped roof outside. The narthex was added to the east in 1975. On the lower floor there is one window on each of the west and north facades and two on each of the east and south; on the upper floor one each on north and west, two on the east and three on the south. The harim is entered through the door on the east facade. A wooden pavilion-type minaret stands at the northern end of the narthex. The harim is covered by a baghdadi dome on wooden supports and the south qibla wall. The plaster mihrab in the middle of the qibla wall is semicircular, with floral motifs on its rectangular surface and a curtain-and-lamp motif in the niche. The harim walls are decorated with hand-drawn work."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "245-247"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Enine dikdörtgen plan",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "246-247"
+        }
+      ]
+    },
+    {
+      "key": "minare_tipi",
+      "label": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "value": "Ahşap, köşk tipi",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "247"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_tarihi",
+      "label": {
+        "tr": "Kapı kitâbesindeki yıl",
+        "en": "Year on door inscription"
+      },
+      "value": 1863,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "245"
+        }
+      ]
+    },
+    {
+      "key": "sari_yakup_vefat",
+      "label": {
+        "tr": "Sarı Yakup'un vefat yılı (Hicri)",
+        "en": "Sarı Yakup death year (Hijri)"
+      },
+      "value": 833,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "246"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sarı Yakup",
+      "role": {
+        "tr": "Adını veren, banisi olduğu düşünülen Çelebi Sultan Mehmet devri âlimi; caminin kuzeyindeki kabristanda medfun",
+        "en": "Scholar of the Çelebi Sultan Mehmet era, thought to be the founder, buried in the cemetery north of the mosque"
+      }
+    },
+    {
+      "name": "Molla Fenâri",
+      "role": {
+        "tr": "Sarı Yakup'un ders aldığı hoca",
+        "en": "Teacher from whom Sarı Yakup took lessons"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1429",
+      "year": 1429,
+      "date": null,
+      "hijri": "H. 833",
+      "type": "record",
+      "title": {
+        "tr": "Sarı Yakup vefat etti (H. 833)",
+        "en": "Sarı Yakup died (833 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "246"
+        }
+      ]
+    },
+    {
+      "id": "kitabe-1863",
+      "year": 1863,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Kapı kitâbesine göre caminin (ikinci evresi) yapıldığı yıl",
+        "en": "Year the mosque (second phase) was built per the door inscription"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "245-246"
+        }
+      ]
+    },
+    {
+      "id": "kubbe-1942",
+      "year": 1942,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Düz toprak dam kaldırılıp bağdâdi kubbe ve çatı yapıldı",
+        "en": "Flat earthen roof replaced by baghdadi dome and roof"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "246"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1973",
+      "year": 1973,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Hayır sahipleri tarafından tamir ve ekleme",
+        "en": "Repairs and additions by donors"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "246"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-1975",
+      "year": 1975,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Doğu tarafına son cemaat yeri eklendi",
+        "en": "Narthex added on the east"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "246"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1993",
+      "year": 1993,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Hayır sahipleri tarafından tamir ve ekleme",
+        "en": "Repairs and additions by donors"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "246"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2016",
+      "year": 2016,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından tamir",
+        "en": "Repaired by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "246"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Enine dikdörtgen planlı, dıştan kırma çatılı, içten bağdâdi kubbeli bir cami. Doğuda sonradan eklenmiş son cemaat yeri ve kuzey ucunda ahşap köşk tipi minare vardır. İçeride alçı, yarım daire planlı mihrap ve kalem işi duvar süslemeleri bulunur.",
+      "en": "A transverse-rectangular mosque with a hipped roof outside and a baghdadi dome inside. On the east is a later-added narthex with a wooden pavilion-type minaret at its north end. Inside are a semicircular plaster mihrab and hand-drawn wall decoration."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "244-247"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=966",
+        "original_name": "pdf-s124-xref966",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "244"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Sarı Yakup Camii (kitap s. 244)",
+        "en": "Sarı Yakup Mosque (book p. 244)"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremit çatılı bir cami ve yanında mavi kubbeli minare. Çevresinde ağaçlar ve binalar var.",
+        "en": "A mosque with a red tiled roof and a minaret with a blue dome. Trees and buildings surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=971",
+        "original_name": "pdf-s125-xref971",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "246"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sarı Yakup Camii (kitap s. 246)",
+        "en": "Sarı Yakup Mosque (book p. 246)"
+      },
+      "alt": {
+        "tr": "Mavi halılarla kaplı iç mekanda ahşap merdivenli minber, kubbeli tavan ve pencere çerçeveleri görülüyor.",
+        "en": "Interior with blue carpets, wooden minbar with staircase, arched ceiling, and window frames."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=979",
+        "original_name": "pdf-s125-xref979",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "247"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Sarı Yakup Camii (kitap s. 247)",
+        "en": "Sarı Yakup Mosque (book p. 247)"
+      },
+      "alt": {
+        "tr": "Ahşap bir minber, merdivenli yapıda, üst kısmında kubbeli bir kule ve alt kısmında kemerli açıklıklar var.",
+        "en": "A wooden minbar with a staircase, a domed tower at the top, and arched openings at the base."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=981",
+        "original_name": "pdf-s125-xref981",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "247"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Sarı Yakup Camii (kitap s. 247)",
+        "en": "Sarı Yakup Mosque (book p. 247)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı bir camiye ait ahşap minare, kubbeli ve kare kesitli, üstünde kupa ve hilal sembolü var.",
+        "en": "A wooden minaret with a domed top and square base, topped with a finial and crescent, attached to a white-walled mosque."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

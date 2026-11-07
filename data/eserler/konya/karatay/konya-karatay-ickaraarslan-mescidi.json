@@ -1,0 +1,354 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-ickaraarslan-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Bulunan çini kitâbenin metni kitapta yok",
+      "Banisi kesin değil (ihtimal yüksek); vakıf bilgisi kitapta yok",
+      "Kitap 'Apalılar Sokak' için Türkçe metinde 'Sokak', İngilizce metinde 'District' yazıyor; adres ayrıca teyit edilmeli",
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap 'ihtimali yüksektir' diyor; kesin banî değil, probable işaretlendi."
+      },
+      {
+        "field": "timeline[onarim-2010]",
+        "note": "Kitap 'tamir edilmiştir' diyor, onarım yıllarını '1990 ve 2010 senesinden sonra' şeklinde veriyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İçkaraarslan Mescidi",
+    "en": "İçkaraarslan Masjid"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Selçuklu",
+    "tuğla",
+    "çini mihrap",
+    "türbe",
+    "balıksırtı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Babasultan Mahallesi",
+    "address": "Apalılar Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "241"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl başları",
+      "en": "Early 13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Çini kitâbede Alâeddin Keykubat adının geçmesi ve zaviye/türbe verilerine dayanarak XIII. yüzyıl başlarına tarihleniyor; kesin yıl yok.",
+      "en": "Dated to the early 13th century based on the tile inscription mentioning Alâeddin Keykubat and the zawiya/tomb evidence; no exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "241"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Ziyaeddin Karaaslan",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "241"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karatay'da, tuğladan yapılmış, kubbeli, kare planlı Selçuklu mescidi; güneyine sonradan bir türbe eklenmiştir. 1990 restorasyonunda 'Alâeddin Keykubat' adı geçen bir çini kitâbe bulunmuş, XIII. yüzyıl başlarına tarihlenmiştir. Banisinin Ziyaeddin Karaaslan olması ihtimali yüksektir.",
+    "en": "A square, domed Seljuk masjid of brick in Karatay with a tomb later added to its south. A tile inscription bearing the name 'Alâeddin Keykubat' was found in the 1990 restoration; it is dated to the early 13th century. It is highly likely to have been built by Ziyaeddin Karaaslan."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Mescit Karatay, Babasultan Mahallesi, Apalılar Sokak üzerindedir. Yapının inşa tarihi veya banisi hakkında kitâbe ve bilgi yoktur; ancak 1990'daki restorasyon sırasında 'Alâeddin Keykubat' isminin geçtiği çini bir kitâbe bulunmuştur. Batı duvarının güneye doğru devam etmesi ve güneyde bir mezar bulunması burada bir de zaviye olduğunu gösterir; bu verilere dayanarak mescit XIII. yüzyıl başlarına tarihlenmektedir. Mescidin Ziyaeddin Karaaslan tarafından yaptırılmış olma ihtimali yüksektir; Ziyaeddin Karaaslan'ın Alâeddin Keykubat zamanında H. 630 / M. 1233'te 'sultanın vekili' sıfatıyla diğer divan üyeleriyle birlikte Erzurum, Ahlat, Adilcevaz ve Van bölgesine gönderildiği ifade edilir. Mescit 1990'dan ve 2010'dan sonra Vakıflar Bölge Müdürlüğü tarafından tamir edilmiştir.",
+        "en": "The masjid is in Karatay, Babasultan Neighborhood, on Apalılar Street. There is no inscription or information about the construction date or patron; however a tile inscription with the name 'Alâeddin Keykubat' was found during the 1990 restoration. The continuation of the west wall to the south and a tomb on the south side indicate a zawiya here as well; on this basis the masjid is dated to the early 13th century. It is likely to have been built by Ziyaeddin Karaaslan, who is said to have been sent to the Erzurum, Ahlat, Adilcevaz and Van region with other council members as 'deputy of the sultan' under Alâeddin Keykubat in 630 AH / 1233 AD. The masjid was repaired by the Regional Directorate of Foundations after 1990 and 2010."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlıdır; kubbeyle örtülü harim ile harimin güneyine sonradan eklenmiş türbeden oluşur. Yapıda tuğla kullanılmıştır. Dıştan kurşunla kaplı kubbe yüksek sekizgen bir kasnağa oturur; cepheler sadedir. Harime batı cephenin kuzey köşesinden girilir; tek kubbe tromplarla geçilir, iç trompların üzerinde küçük dekoratif tromplar görülür, kubbe içinde tuğlaların farklı yönlerde dizilmesiyle balıksırtı motifi oluşmuştur. Kıble duvarı ortasındaki yarım dikdörtgen mihrap mavi-beyaz çinilerle kaplıdır; alınlığında Selçuklu sülüsüyle kelime-i tevhid yazılıdır. Mihrap tepeliği çini levhalar üzerine zemin kazınarak elde edilmiş üç yapraklı büyük palmetler içinde küçük palmetlerle tamamlanır; tahrip olan bölümler son yıllarda tamamlanmıştır. Güney cephede doğu-batı doğrultulu dikdörtgen planlı, üzeri açık bir türbe vardır; içindeki sandukanın kime ait olduğu bilinmemektedir. Kitaba göre mescit Konya'daki Selçuklu mescitlerinin güzel bir örneğidir.",
+        "en": "The masjid has a square plan: a domed prayer hall and a tomb later added to its south; brick was used. The lead-covered dome sits on a high octagonal drum; the facades are simple. The harim is entered from the north corner of the west facade and covered by a single dome on squinches, with small decorative squinches above the inner ones and a herringbone brick motif inside the dome. The semi-rectangular mihrab in the middle of the qibla wall is covered with blue and white tiles; the pediment bears the kalima in Seljuk thuluth. The mihrab top is completed with small palmettes within large three-leaved palmettes obtained by scraping the ground on tile panels; damaged parts were completed in recent years. On the south facade is a rectangular, open-topped tomb in east-west direction with a sarcophagus of unknown identity. According to the book it is a good example of Seljuk masjids in Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "241"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "Kare plan, tek kubbe, güneyde sonradan eklenmiş açık üstlü türbe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "key": "kubbe_kaplama",
+      "label": {
+        "tr": "Kubbe dış kaplaması",
+        "en": "Dome exterior covering"
+      },
+      "value": "Kurşun",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "241"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Ziyaeddin Karaaslan",
+      "role": {
+        "tr": "Banisi olma ihtimali yüksek; H. 630 / M. 1233'te sultanın vekili sıfatıyla Erzurum, Ahlat, Adilcevaz ve Van bölgesine gönderildiği ifade edilir",
+        "en": "Likely founder; said to have been sent in 1233 as the sultan's deputy to Erzurum, Ahlat, Adilcevaz and Van"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mihrap-alinligi-kelime-i-tevhid",
+      "location": {
+        "tr": "Mihrap alınlığı",
+        "en": "Mihrab pediment"
+      },
+      "language": "ar",
+      "script": "Selçuklu sülüsü",
+      "transliteration": "Lâ ilâhe illallahu vahdehu lâ şerîke leh Muhamme -du’r-Rasûlullah",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap yalnızca transliterasyonu verir, meal vermez; transliterasyonda kitaptaki satır sonu bölünmesi ('Muhamme -du’r') aynen korunmuştur.",
+        "en": "The book gives only the transliteration, no translation; the line-break split in the printed transliteration is kept."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "241"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "sultan-vekili-1233",
+      "year": 1233,
+      "date": null,
+      "hijri": "H. 630",
+      "type": "record",
+      "title": {
+        "tr": "Ziyaeddin Karaaslan sultanın vekili olarak Erzurum, Ahlat, Adilcevaz ve Van bölgesine gönderildi",
+        "en": "Ziyaeddin Karaaslan sent to the Erzurum, Ahlat, Adilcevaz and Van region as the sultan's deputy"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1990",
+      "year": 1990,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyonda Alâeddin Keykubat adının geçtiği çini kitâbe bulundu",
+        "en": "Tile inscription naming Alâeddin Keykubat found during restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "241"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2010",
+      "year": 2010,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından 2010'dan sonra tamir edildi",
+        "en": "Repaired by the Regional Directorate of Foundations after 2010"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "241"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, tuğladan, kurşun kaplı kubbesi yüksek sekizgen kasnağa oturan bir mescit. Güney cephede üstü açık küçük bir türbe vardır. İçeride mavi-beyaz çinili bir mihrap bulunur.",
+      "en": "A square brick masjid whose lead-covered dome sits on a high octagonal drum. On the south facade is a small open-topped tomb. Inside is a blue-and-white tiled mihrab."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "241-242"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=958",
+        "original_name": "pdf-s122-xref958",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "241"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "İçkaraarslan Mescidi (kitap s. 241)",
+        "en": "İçkaraarslan Masjid (book p. 241)"
+      },
+      "alt": {
+        "tr": "İçkaraarslan Mescidi'nin dış cephesi, taş duvarlar, kubbeli bir yapı ve küçük bir minareye sahip.",
+        "en": "Exterior of İçkaraarslan Mescidi, with stone walls, a domed structure, and a small minaret."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=962",
+        "original_name": "pdf-s123-xref962",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "242"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "İçkaraarslan Mescidi (kitap s. 242)",
+        "en": "İçkaraarslan Masjid (book p. 242)"
+      },
+      "alt": {
+        "tr": "Köşeli bir desenle kaplı, koyu ve açık tonlarda bir yüzey.",
+        "en": "A surface covered with a zigzag pattern in dark and light tones."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

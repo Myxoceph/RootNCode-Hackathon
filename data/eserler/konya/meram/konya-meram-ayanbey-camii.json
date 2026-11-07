@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-ayanbey-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 89) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mahalle adı kitapta verilmiyor (yalnızca sokak).",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Ayanbey Camii",
+    "en": "Ayanbey Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ayan",
+    "ahşap mihrap",
+    "ajur",
+    "L biçimli mahfil"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": null,
+    "address": "Ayanbey Sokak, No. 2",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "89"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.852567,
+      "lng": 32.427271,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/288630581 ('Ayanbey Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyılın ortaları",
+      "en": "Mid-19th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap caminin XIX. yüzyılın ortalarında yaptırıldığını belirtiyor; kesin yıl yok.",
+      "en": "The book says it was built in the mid-19th century; no exact year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "89"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Süleyman Bey (Ayan üyesi Memiş Paşa'nın oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "89"
+      }
+    ]
+  },
+  "architect": null,
+  "summary": {
+    "tr": "Ayan üyesi Memiş Paşa'nın oğlu Süleyman Bey'in XIX. yüzyıl ortalarında yaptırdığı, ahşap destekli sade cami. Ajur tekniğiyle yapılmış ahşap mihrabı ve oyma bitkisel motifli tavan göbekleri vardır.",
+    "en": "A plain mosque on wooden supports built in the mid-19th century by Süleyman Bey, son of the Ayan member Memiş Paşa. It has a wooden openwork mihrab and carved floral ceiling medallions."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami Meram, Ayanbey Sokak No. 2'dedir. Ayan üyesi Memiş Paşa'nın oğlu Süleyman Bey tarafından XIX. yüzyılın ortalarında yaptırılmıştır. Kuzey-güney yönünde dikdörtgen planlı, içten düz dam, dıştan kırma çatılıdır. Harim, mihraba dik üç sahından oluşur. Cepheler oldukça sadedir; kuzey ve güney cephelerde ikişer, doğuda üç, batıda dört pencere vardır. Kuzey cephenin ortasındaki düz lentolu çift kanatlı demir kapıdan girilir; girişin batısında içeri çekilmiş bir minare yer alır. İki sıra ikişer ahşap destek harimi üç sahına ayırır. Kuzeydeki mahfil batıdaki sahına doğru uzatılarak \"L\" biçimini almıştır. Kıble duvarı ortasındaki yarım daire kesitli mihrap ahşaptan, ajur tekniğiyle yapılmış ve bitkisel motiflerle bezenmiştir. Tavanda oyma tekniğiyle yapılmış bitkisel motifli oval ve madalyon göbekler vardır.",
+        "en": "The mosque is at Ayanbey Street No. 2, Meram. It was built in the mid-19th century by Süleyman Bey, son of Memiş Paşa, a member of the Ayan. It is rectangular, north-south, with a flat ceiling inside and a hipped roof outside. The harim has three aisles perpendicular to the mihrab. The facades are plain: two windows each on the north and south, three on the east, four on the west. The entrance is a flat-lintelled double-winged iron door in the middle of the north facade; a recessed minaret stands west of the entrance. Two rows of two wooden supports divide the harim into three aisles. The north gallery extends toward the west aisle in an L shape. The semicircular mihrab in the middle of the qibla wall is of wood in openwork technique with floral motifs. The ceiling has oval and medallion centrepieces with carved floral motifs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "89"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_sayilari",
+      "label": {
+        "tr": "Pencere sayısı (K/G/D/B)",
+        "en": "Windows (N/S/E/W)"
+      },
+      "value": "2 / 2 / 3 / 4",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "89"
+        }
+      ]
+    },
+    {
+      "key": "ahsap_destek",
+      "label": {
+        "tr": "Ahşap destek",
+        "en": "Wooden supports"
+      },
+      "value": "iki sıra, her sırada iki",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "89"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "89"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Süleyman Bey",
+      "role": {
+        "tr": "Caminin yaptıranı; Memiş Paşa'nın oğlu",
+        "en": "Founder; son of Memiş Paşa"
+      }
+    },
+    {
+      "name": "Memiş Paşa",
+      "role": {
+        "tr": "Ayan üyesi; yaptıranın babası",
+        "en": "Member of the Ayan; father of the founder"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Ayanbey Camii dikdörtgen planlı, sade cepheli, kırma çatılı bir camidir. Kuzey cephenin ortasında çift kanatlı demir bir kapı vardır; girişin batısında içeri çekilmiş bir minare bulunur. İçeride iki sıra ahşap direk üç bölüm oluşturur. Kuzeyde L biçimli bir mahfil uzanır. Kıble duvarındaki ahşap mihrap ince, delikli işçilikle bitkisel motiflerle süslüdür.",
+      "en": "Ayanbey Mosque is a rectangular building with plain facades and a hipped roof. A double-winged iron door sits in the middle of the north facade, with a recessed minaret west of the entrance. Inside, two rows of wooden posts form three aisles. An L-shaped gallery extends along the north. The wooden mihrab in the qibla wall is decorated with floral motifs in fine openwork."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 89)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "89-89"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=284",
+        "original_name": "pdf-s46-xref284",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "89"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Ayanbey Camii (kitap s. 89)",
+        "en": "Ayanbey Mosque (book p. 89)"
+      },
+      "alt": {
+        "tr": "Hava görüntüsünde, kırmızı kiremit çatılı beyaz bir cami ve yanında ince bir minare görülüyor.",
+        "en": "An aerial view shows a white mosque with a red-tiled roof and a slender minaret beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=286",
+        "original_name": "pdf-s46-xref286",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "89"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Ayanbey Camii (kitap s. 89)",
+        "en": "Ayanbey Mosque (book p. 89)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap sütunlar, kemerli kapı ve pencere, kubbeli tavan, çiçek desenli camiye özgü zemin, büyük kristal avize ve ahşap minber görülüyor.",
+        "en": "Interior shows wooden pillars, arched door and windows, domed ceiling, floral patterned floor, large crystal chandelier, and wooden minbar."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

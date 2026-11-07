@@ -1,0 +1,529 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-cumra-karamanoglu-ibrahim-bey-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabından (s. 404-406) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da haritadan doğrulanarak eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "Harim kapısı kitâbesinin metni/meali kitapta yok.",
+      "Karamanoğlu İbrahim Bey'in yaptırdığı ilk yapının tarihi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Latin harfli levha M. 1252 der; harim kapısı kitâbesi H. 1283 / M. 1866-67 der. Kitap 1252'ye ait kitâbe bulunmadığını belirtiyor. İki değer de saklandı, kayıt disputed."
+      },
+      {
+        "field": "founder",
+        "note": "'İlk banîsinin Karamanoğlu İbrahim Bey olduğu zikredilmektedir' ifadesi dolaylı; kitâbeye göre yaptıran Çumra halkı. founder probable işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Karamanoğlu İbrahim Bey Camii",
+    "en": "Karamanoğlu İbrahim Bey Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Karamanoğlu Vakıf Camii",
+      "en": "Karamanoğlu Foundation Mosque"
+    },
+    {
+      "tr": "Paşa Camii",
+      "en": "Paşa Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Karamanoğlu",
+    "taş minber"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Çumra",
+    "neighborhood": "İçeriçumra Köyü, Minarealtı Mahallesi",
+    "address": "Konya yolu üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "404"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1283 / M. 1866-67 (harim kapısı kitâbesi); Latin harfli levhada M. 1252",
+      "en": "AH 1283 / AD 1866-67 (entrance inscription); Latin-letter plaque says AD 1252"
+    },
+    "start_year": 1866,
+    "end_year": 1867,
+    "hijri_year": 1283,
+    "century": 19,
+    "basis": {
+      "tr": "Harim kapısı kitâbesi 1866-67'yi verir; Latin harfli levha 1252 der ama o tarihe ait kitâbe yoktur. Her iki değer saklandı.",
+      "en": "The entrance inscription gives 1866-67; the Latin plaque says 1252 but no inscription of that date exists. Both kept."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "404-406"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Karamanoğlu İbrahim Bey",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "404"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Gümüşhaneli Hristo Ayad",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "404"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Çumra İçeriçumra Köyü'nde, Konya yolu üzerindeki cami. Kitâbesine göre 1866-67'de Çumra halkı tarafından usta Gümüşhaneli Hristo Ayad'a yaptırılmıştır; ilk banîsinin Karamanoğlu İbrahim Bey olduğu söylenir. Taş mihrap ve minberi Karamanoğlu mimarisi özelliği taşır.",
+    "en": "A mosque in İçeriçumra Village, Çumra, on the Konya road. By its inscription it was built in 1866-67 by the people of Çumra through master Hristo Ayad of Gümüşhane; its first founder is said to be Karamanoğlu İbrahim Bey. Its stone mihrab and minbar show Karamanoğlu features."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Üzerindeki Latin harfli kitâbede M. 1252'de inşa edildiği yazar, ancak bu tarihe ait kitâbe yoktur. Harime giriş kapısı üzerindeki kitâbeye göre H. 1283 / M. 1866-67'de Çumra halkı tarafından usta Gümüşhaneli Hristo Ayad'a yaptırılmıştır. İlk banîsinin Karamanoğlu İbrahim Bey olduğu zikredilir. Cami Karamanoğlu Vakıf Camii ve Paşa Camii olarak da anılır; ilk inşada daha küçük olduğu, sonradan eklemelerle bugünkü hâline geldiği bilinir.",
+        "en": "The Latin-letter plaque says it was built in AD 1252, but no inscription of that date exists. The inscription over the harim entrance says it was built in AH 1283 / AD 1866-67 by the people of Çumra for master Hristo Ayad of Gümüşhane. Its first founder is stated to be Karamanoğlu İbrahim Bey. It is also called Karamanoğlu Foundation Mosque and Paşa Mosque; it was smaller at first and reached its present form through additions."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "404"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami enlemesine dikdörtgen planlı, içten ahşap hatıllarla kaplı, dıştan kırma çatılıdır. Kuzey cephede üç bölümlü sivri kemerli son cemaat yeri vardır; minare son cemaat yerinin kuzeydoğu köşesindedir. Beden duvarları düzgün kesme taş, üst örtü ahşaptır. Harime kuzey duvardaki basık kemerli kapıdan girilir; kapı üzerinde mermer, 11 kartuşlu, celî sülüs hatlı Osmanlı Türkçesi kitâbe oyma-kabartma tekniğindedir.",
+        "en": "The mosque is a transverse rectangle, covered inside with wooden beams and outside by a hipped roof. The north façade has a three-part pointed-arched narthex, with the minaret at its northeast corner. Walls are smooth cut stone, the upper cover wood. The harim is entered via a low-arched door in the north wall, above which a marble inscription in 11 cartouches, Ottoman Turkish in Celi Thuluth, is carved in relief."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "404-405"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 3,
+      "title": {
+        "tr": "Harim, mihrap ve minber",
+        "en": "Harim, mihrab and minbar"
+      },
+      "body": {
+        "tr": "Harim enlemesine dikdörtgen ve üç sahınlıdır. Güneyde yapının en özgün birimleri olan mihrap ve minber vardır. Taş mihrap hafif taşıntılı dikdörtgen formda, üstte mukarnas dizili tepeliklidir. Mihrabın sağında güneybatı köşede duvara bitişik taş minber Karamanoğlu Beyliği mimarisi özelliğinde ve sade formdadır. Cami, Karamanoğlu mimarisinde sık görülen mihraba paralel taş sütunlu sivri kemerli düzenlemededir.",
+        "en": "The harim is a transverse rectangle with three aisles. The mihrab and minbar in the south are the building's most original units. The stone mihrab is a slightly projecting rectangle topped by a row of muqarnas. The plain stone minbar attached to the wall in the southwest corner right of the mihrab shows Karamanoğlu Principality features. The mosque has the pointed-arch arrangement on stone columns parallel to the mihrab common in Karamanoğlu architecture."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "405-406"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sah_sayisi",
+      "label": {
+        "tr": "Harim sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "405"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_kartus",
+      "label": {
+        "tr": "Harim kapısı kitâbesinde kartuş sayısı",
+        "en": "Cartouches on the entrance inscription"
+      },
+      "value": 11,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "404-405"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Gümüşhaneli Hristo Ayad",
+      "role": {
+        "tr": "Usta",
+        "en": "Master"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "harim-kapisi-kitabesi",
+      "location": {
+        "tr": "Harime giriş kapısı üzerinde, mermer",
+        "en": "Above the harim entrance door, marble"
+      },
+      "language": "tr-ottoman",
+      "script": "Celî sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1283,
+        "gregorian": "1866-67"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "Kitap metni vermiyor; yalnızca 11 kartuş, celî sülüs, oyma-kabartma ve içeriğini özetliyor.",
+        "en": "The book does not give the text, only the form (11 cartouches, Celi Thuluth, relief) and its gist."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "404-405"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kitabe-1866",
+      "year": 1866,
+      "date": null,
+      "hijri": "1283",
+      "type": "construction",
+      "title": {
+        "tr": "Çumra halkınca usta Hristo Ayad'a yaptırıldı (harim kapısı kitâbesi)",
+        "en": "Built by the people of Çumra through master Hristo Ayad (entrance inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "404"
+        }
+      ]
+    },
+    {
+      "id": "latin-1252",
+      "year": 1252,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Latin harfli levha M. 1252'de inşa edildiğini yazar; bu tarihe ait kitâbe yok",
+        "en": "Latin-letter plaque states construction in AD 1252; no inscription of that date exists"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "404"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-seyh-ebul-vefa-camii",
+      "type": "same_founder",
+      "description": {
+        "tr": "İki yapıyı da Karamanoğlu İbrahim Bey yaptırmıştır; kitap bu yapının banisini muhtemel olarak verir.",
+        "en": "Both were commissioned by Karamanoğlu İbrahim Bey; the book gives this building's founder as probable."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "404"
+        },
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "88"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Enlemesine dikdörtgen planlı, düzgün kesme taştan, kırma çatılı bir camidir. Kuzey cephede üç bölümlü, sivri kemerli bir son cemaat yeri ve onun kuzeydoğu köşesinde minare bulunur. Harime giriş kapısının üstünde mermer bir kitâbe vardır. İçeride üç sahın uzanır; güneyde taşıntılı dikdörtgen taş mihrap, mukarnaslı tepeliği ve sağında sade bir taş minber görülür.",
+      "en": "A transverse rectangular mosque of smooth cut stone with a hipped roof. The north side has a three-part pointed-arched narthex with the minaret at its northeast corner. A marble inscription sits above the door into the harim. Inside are three aisles; in the south stand a slightly projecting rectangular stone mihrab with a muqarnas crown and, to its right, a plain stone minbar."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 404-406) derlenmiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "404-406"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1740",
+        "original_name": "pdf-s204-xref1740",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "404"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Karamanoğlu İbrahim Bey Camii (kitap s. 404)",
+        "en": "Karamanoğlu İbrahim Bey Mosque (book p. 404)"
+      },
+      "alt": {
+        "tr": "Beyaz taştan inşa edilmiş, sivri kubbeli minare ve kemerli girişlerle donatılmış cami.",
+        "en": "A white stone mosque with a pointed minaret and arched entrances."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1742",
+        "original_name": "pdf-s204-xref1742",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "405"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Karamanoğlu İbrahim Bey Camii (kitap s. 405)",
+        "en": "Karamanoğlu İbrahim Bey Mosque (book p. 405)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış bir duvarın detayı. Üstte ve altta dalga şeklinde desenler, ortada yıldız benzeri bir motif bulunuyor.",
+        "en": "A stone wall detail. Wavy patterns above and below, a star-like motif in the center."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1744",
+        "original_name": "pdf-s204-xref1744",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "405"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Karamanoğlu İbrahim Bey Camii (kitap s. 405)",
+        "en": "Karamanoğlu İbrahim Bey Mosque (book p. 405)"
+      },
+      "alt": {
+        "tr": "Kemerlerle desteklenen sütunlar, kırmızı halılar ve mermer duvarlarla kaplı iç mekân.",
+        "en": "Arches supported by columns, red carpets, and marble-walled interior space."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1748",
+        "original_name": "pdf-s205-xref1748",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "406"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Karamanoğlu İbrahim Bey Camii (kitap s. 406)",
+        "en": "Karamanoğlu İbrahim Bey Mosque (book p. 406)"
+      },
+      "alt": {
+        "tr": "Taş duvarın içinde ahşap çerçeveli, metal kafesli dikdörtgen bir pencere.",
+        "en": "A rectangular window with a wooden frame and metal bars set in a stone wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1750",
+        "original_name": "pdf-s205-xref1750",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "406"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Karamanoğlu İbrahim Bey Camii (kitap s. 406)",
+        "en": "Karamanoğlu İbrahim Bey Mosque (book p. 406)"
+      },
+      "alt": {
+        "tr": "İç mekanda beyaz bir kemerin arkasında ahşap çatı kirişleri görünüyor.",
+        "en": "Wooden ceiling beams are visible behind a white arch in the interior."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1752",
+        "original_name": "pdf-s205-xref1752",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "406"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Karamanoğlu İbrahim Bey Camii (kitap s. 406)",
+        "en": "Karamanoğlu İbrahim Bey Mosque (book p. 406)"
+      },
+      "alt": {
+        "tr": "Taş sütun üzerinde ahşap bir kürsü. Kürsünün üst kısmında süslü bir kafes var.",
+        "en": "A stone column supports a wooden pulpit. The pulpit has an ornate railing on top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1754",
+        "original_name": "pdf-s205-xref1754",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "406"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Karamanoğlu İbrahim Bey Camii (kitap s. 406)",
+        "en": "Karamanoğlu İbrahim Bey Mosque (book p. 406)"
+      },
+      "alt": {
+        "tr": "Taş bloklardan yapılmış, kemerli bir mihrap. Üstünde Arapça hat yazılı bir levha var.",
+        "en": "A stone mihrab with a pointed arch. A plaque with Arabic calligraphy is above it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

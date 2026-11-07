@@ -1,0 +1,369 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-seyh-ebul-vefa-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 88) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Külliyenin diğer yapıları (kabristan dışında) kitapta sayılmıyor.",
+      "Vakfiye metni kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Orijinal caminin yapım yılı verilmiyor; yalnızca vakfiye tescil tarihi (1459) ve yeniden inşa tarihi (1850) var. start_year/end_year bilerek boş bırakıldı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Ebul Vefa Camii",
+    "en": "Şeyh Ebul Vefa Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Vefa Camii",
+      "en": "Vefa Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Karamanoğlu İbrahim Bey",
+    "külliye kalıntısı",
+    "Şeyh Vefa",
+    "1850"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Selam Mahallesi",
+    "address": "Dere Caddesi, No. 28",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "88"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.855117,
+      "lng": 32.420912,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Adıyla OpenStreetMap Nominatim'de bulundu ('Şeyh Ebul Vefa Camii, Köyceğiz Caddesi, Köyceğiz Mahallesi, Meram, Konya, İç Anadolu Bölgesi, 42140, Türkiye'); sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 869 / M. 1459 (külliye vakfiyesi tescili); mevcut yapı 1850",
+      "en": "AH 869 / AD 1459 (complex waqf deed registered); present building 1850"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 869,
+    "century": 19,
+    "basis": {
+      "tr": "Külliye vakfiyesinin tescil tarihi H. 869 / M. 1459'dur. Zamanla yalnız cami kalmış, giriş kapısı üstündeki kitâbeye göre 1850'de yeniden inşa edilmiştir. Orijinal caminin yapım yılı verilmiyor.",
+      "en": "The complex's waqf deed was registered in AH 869 / AD 1459. Over time only the mosque remained, rebuilt in 1850 according to the inscription above the entrance. The original mosque's construction year is not given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "88"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Karamanoğlu İbrahim Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "88"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": {
+      "date_display": "H. 869 / M. 1459",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "88"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "88"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Karamanoğlu İbrahim Bey'in Şeyh Vefa adına yaptırdığı külliyeden günümüze yalnızca cami kısmı kalmıştır; giriş kapısı üstündeki kitâbeye göre 1850'de yeniden inşa edilmiştir. Taş ve tuğladan, kubbeli ve kareye yakın dikdörtgen planlıdır.",
+    "en": "Of the complex Karamanoğlu İbrahim Bey had built in the name of Şeyh Vefa, only the mosque survives; according to the inscription above its entrance it was rebuilt in 1850. It is a domed, almost-square building of stone and brick."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Mimari",
+        "en": "History and Architecture"
+      },
+      "body": {
+        "tr": "Cami Meram, Selam Mahallesi, Dere Caddesi No. 28'dedir. Külliyenin bir parçası olarak Karamanoğlu İbrahim Bey tarafından Şeyh Vefa adına yaptırılmıştır; külliye vakfiyesinin tescil tarihi H. 869 / M. 1459'dur. Külliyenin doğusundaki kabristan da sonradan kaldırılmıştır. XVII. yüzyılda Meram'da yalnızca Vefa Camii ve çevresi Şeyh Vefa Mahallesi olarak anılmıştır. Zamanla eserden yalnızca cami kısmı kalmış ve bu kısım giriş kapısı üstündeki kitâbeye göre 1850'de yeniden inşa edilmiştir. Kareye yakın dikdörtgen planlı kubbeli cami taş ve tuğladandır; kubbe dıştan kırma çatıyla örtülüdür. Doğu, batı ve güney cephelerde ikişer pencere vardır. Son cemaat yeri sonradan doğu tarafına eklenmiştir. Kıble duvarı ortasında sade bir mihrap görülür.",
+        "en": "The mosque is at Dere Street No. 28, Selam Neighborhood, Meram. It was built by Karamanoğlu İbrahim Bey in the name of Şeyh Vefa as part of the complex; the complex's waqf deed was registered in AH 869 / AD 1459. The cemetery to its east was also removed later. In the 17th century only the Vefa Mosque and its surroundings were called Şeyh Vefa Neighborhood in Meram. Over time only the mosque remained and, according to the inscription above the entrance, it was rebuilt in 1850. The domed, almost-square building is of stone and brick, its dome covered by a hipped roof outside. Two windows light each of the east, west and south facades. A narthex was later added on the east. A plainly arranged mihrab stands in the middle of the qibla wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "88"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "vakfiye_tescili",
+      "label": {
+        "tr": "Külliye vakfiyesi tescil yılı (M.)",
+        "en": "Waqf deed registration year (AD)"
+      },
+      "value": 1459,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "88"
+        }
+      ]
+    },
+    {
+      "key": "yeniden_insa",
+      "label": {
+        "tr": "Mevcut caminin yeniden inşa yılı",
+        "en": "Year the present mosque was rebuilt"
+      },
+      "value": 1850,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "88"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "taş ve tuğla",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "88"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Karamanoğlu İbrahim Bey",
+      "role": {
+        "tr": "Külliyeyi Şeyh Vefa adına yaptıran",
+        "en": "Had the complex built in the name of Şeyh Vefa"
+      }
+    },
+    {
+      "name": "Şeyh Vefa",
+      "role": {
+        "tr": "Külliyenin adına yapıldığı kişi",
+        "en": "The person in whose name the complex was built"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısının üstünde",
+        "en": "Above the entrance door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1850"
+      },
+      "note": {
+        "tr": "Kitap kitâbenin metnini ve dilini vermiyor; yalnızca caminin 1850'de yeniden inşa edildiğini belirtiyor.",
+        "en": "The book gives neither text nor language; it only says the mosque was rebuilt in 1850."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "88"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vakfiye-1459",
+      "year": 1459,
+      "date": null,
+      "hijri": "869",
+      "type": "record",
+      "title": {
+        "tr": "Külliye vakfiyesi tescil edildi",
+        "en": "The complex's waqf deed was registered"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "88"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1850",
+      "year": 1850,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Cami giriş kitâbesine göre yeniden inşa edildi",
+        "en": "Mosque rebuilt according to the entrance inscription"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "88"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şeyh Ebul Vefa Camii taş ve tuğladan yapılmış, kareye yakın planlı, kubbeli bir camidir. Kubbe dışarıdan kırma çatıyla örtülüdür. Doğu, batı ve güney cephelerinde ikişer pencere bulunur; doğuya sonradan bir son cemaat yeri eklenmiştir. İçeride kıble duvarının ortasında sade bir mihrap vardır.",
+      "en": "Şeyh Ebul Vefa Mosque is a domed, nearly square building of stone and brick, its dome covered by a hipped roof outside. It has two windows on each of the east, west and south facades, and a narthex was later added on the east. Inside, a plain mihrab stands in the middle of the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 88)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "88-88"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=280",
+        "original_name": "pdf-s46-xref280",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "88"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şeyh Ebul Vefa Camii (kitap s. 88)",
+        "en": "Şeyh Ebul Vefa Mosque (book p. 88)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kahverengi çatılı bir cami binası. Girişte merdivenler ve minareye benzer bir yapı var. Pencere ve kapı çerçeveleri siyah.",
+        "en": "A white-walled mosque building with a brown roof. Stairs at the entrance and a minaret-like structure. Black window and door frames."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=282",
+        "original_name": "pdf-s46-xref282",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "88"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeyh Ebul Vefa Camii (kitap s. 88)",
+        "en": "Şeyh Ebul Vefa Mosque (book p. 88)"
+      },
+      "alt": {
+        "tr": "Mavi duvarlı, ahşap pencere ve radyatörlerle donatılmış cami içi. Kırmızı ve beyaz desenli halılar, ahşap kürsü ve tavan lambası var.",
+        "en": "Interior of a mosque with blue walls, wooden windows, and radiators. Red and white patterned carpets, a wooden minbar, and a chandelier are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,429 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-seydisehir-muallimhane-sofuhane-camii-ve-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 472-473) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitabe metni/transliterasyonu kitapta verilmiyor; inscriptions boş bırakıldı.",
+      "Türbe için ayrı kayıt açılmadı; bölüm tek başlık altında (Camii ve Türbesi).",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Vakfiye metni / vakıf bilgisi kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitapta yapı önce 'mektep' olarak yaptırıldığı belirtilirken başlıkta 'Muallimhane (Sofuhane) Camii' adıyla geçer; mektepten camiye dönüşüm kitapta ayrıca anlatılmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Muallimhane (Sofuhane) Camii ve Türbesi",
+    "en": "Muallimhane (Sofuhane) Mosque and Tomb"
+  },
+  "subtitle": {
+    "tr": "1529-30'da mektep olarak yaptırılan cami ve türbe",
+    "en": "Mosque and tomb built as a school in 1529-30"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "ahşap direkli",
+    "mektep",
+    "türbe",
+    "Hacı Recep",
+    "Seydişehir"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Seydişehir",
+    "neighborhood": "Sofuhane Mahallesi",
+    "address": "Hükümet Meydanı'nın güneyi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "472-473"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.418896,
+      "lng": 31.844001,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Sofuhane Mahallesi, Seydişehir, Konya, İç Anadolu Bölgesi, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 936 / M. 1529-30",
+      "en": "AH 936 / AD 1529-30"
+    },
+    "start_year": 1529,
+    "end_year": 1530,
+    "hijri_year": 936,
+    "century": 16,
+    "basis": {
+      "tr": "Giriş kapısından mihrap tepeliğine alınan kitabeye göre yapı H. 936 / M. 1529-30'da yaptırılmıştır.",
+      "en": "According to the inscription now above the mihrab, the building was built in AH 936 / AD 1529-30."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "472-473"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Recep (Pir Mehmed oğlu)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "472-473"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "472-473"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Hükümet Meydanı'nın güneyindeki yapı, kitabeye göre H. 936 / M. 1529-30'da Pir Mehmed oğlu Hacı Recep adına Kur'an eğitimi için mektep olarak yaptırılmıştır; doğusunda minare ve türbe bitişiktir.",
+    "en": "South of Hükümet Square, the building was built according to its inscription in AH 936 / AD 1529-30 as a school for Quran education in the name of Hacı Recep, son of Pir Mehmed; a minaret and a tomb adjoin it on the east."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami Seydişehir, Sofuhane Mahallesi'nde, Hükümet Meydanı'nın güneyinde yer alır. Giriş kapısı üzerindeki kitâbe günümüzde mihrap tepeliğine konmuştur. Kitâbeye göre yapı H. 936 / M. 1529-30'da Pir Mehmed oğlu Hacı Recep adına Kur'an-ı Kerim okutulması ve eğitimi verilmesi için mektep olarak yaptırılmıştır. Caminin güney cephesinde bir kışlaya ait olduğu bilinen H. 1250 / M. 1834-35 tarihli bir kitâbe bulunur.",
+        "en": "The mosque is located in Seydişehir, Sofuhane Neighborhood, south of Hükümet Square. The inscription on the entrance door is now placed on top of the mihrab. According to it, the building was built as a school in 936 AH / 1529-30 AD in the name of Hacı Recep, son of Pir Mehmed, to teach and provide Quran education. On the south facade is an inscription dated 1250 AH / 1834-35 AD, known to belong to a barracks."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "472-473"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Cami Mimarisi",
+        "en": "Mosque Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlı, çok destekli ve kırma çatılıdır; malzeme kesme taş ve moloz taştır. Doğu cephesinde yapıya bitişik minare ve türbe vardır; ikisinin arasındaki minare düzgün kesme taştan, kare kaideli, silindirik gövdeli ve tek şerefelidir. Harime kuzey cephedeki taç kapıdan girilir; harim mihraba dik üç sahına ayrılmıştır. Kuzeyde ahşap mahfil, kıble duvarında sade, dikdörtgen ve yarım daire planlı mihrap ile sonradan eklenmiş ahşap minber bulunur. Cami XVI. yüzyıl Osmanlı dönemi ahşap direkli camilerinin güzel bir örneğidir.",
+        "en": "The mosque has a deeply rectangular plan, is multi-supported with a hipped roof, and uses cut stone and rubble stone. The minaret and a tomb adjoin the east facade; the minaret between them is of smooth cut stone with a square base, cylindrical body and a single balcony. The harim is entered through the crown gate on the north facade and is divided into three naves perpendicular to the mihrab. There is a wooden mahfil in the north, a simple rectangular-semicircular mihrab and a later wooden minbar on the qibla wall. It is a beautiful example of the wooden pillared mosques of the 16th century Ottoman period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "472-473"
+        }
+      ]
+    },
+    {
+      "id": "turbe",
+      "order": 3,
+      "title": {
+        "tr": "Türbe",
+        "en": "Tomb"
+      },
+      "body": {
+        "tr": "Caminin doğusunda minareyle bitişik türbenin camiyle aynı tarihte inşa edildiği düşünülmektedir. Türbe dikdörtgen planlıdır, doğu cephesinde revak bulunur, dıştan kurşunla kaplıdır; içeriye doğu cephedeki basık kemerli kapıdan girilir. İçeride dikdörtgen bir seki üzerinde ikisi büyük, ikisi küçük dört kabir vardır: caminin ve türbenin banisi Hacı Recep, babası Pir Mehmet ve Hacı Recep'in ailesine ait olduğu tahmin edilen iki kişi.",
+        "en": "The tomb adjacent to the minaret in the east is thought to have been built at the same date as the mosque. It is rectangular with a portico on the east facade, covered with lead on the outside, and entered through a low-arched door on the east. Inside, on a rectangular bench, are four graves, two large and two small: Hacı Recep, founder of the mosque and tomb, his father Pir Mehmet, and two people thought to belong to Hacı Recep's family."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "472-473"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "turbe_kabir_sayisi",
+      "label": {
+        "tr": "Türbedeki kabir sayısı",
+        "en": "Number of graves in the tomb"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "472-473"
+        }
+      ]
+    },
+    {
+      "key": "harim_sah_sayisi",
+      "label": {
+        "tr": "Harim sah sayısı",
+        "en": "Number of aisles in harim"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "472-473"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Recep",
+      "role": {
+        "tr": "Banî; türbede medfun",
+        "en": "Founder; buried in the tomb"
+      }
+    },
+    {
+      "name": "Pir Mehmed",
+      "role": {
+        "tr": "Hacı Recep'in babası; türbede medfun",
+        "en": "Father of Hacı Recep; buried in the tomb"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1529",
+      "year": 1529,
+      "date": null,
+      "hijri": "936",
+      "type": "construction",
+      "title": {
+        "tr": "Mektep olarak yaptırıldı",
+        "en": "Built as a school"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "472-473"
+        }
+      ]
+    },
+    {
+      "id": "kislai-1834",
+      "year": 1834,
+      "date": null,
+      "hijri": "1250",
+      "type": "record",
+      "title": {
+        "tr": "Güney cephedeki kışla kitabesi",
+        "en": "Barracks inscription on the south facade"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "472-473"
+        }
+      ],
+      "note": {
+        "tr": "Kitâbenin bir kışlaya ait olduğu bilinmektedir.",
+        "en": "The inscription is known to belong to a barracks."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "turbe",
+      "title": {
+        "tr": "Banî türbesi",
+        "en": "Founder's tomb"
+      },
+      "hint": {
+        "tr": "Dört kabirli türbede Hacı Recep ve babası yatar.",
+        "en": "Hacı Recep and his father lie in the four-grave tomb."
+      },
+      "section_id": "turbe"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "entrance_fee": "unknown",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami derin dikdörtgen planlı, kırma çatılı, kesme ve moloz taştan bir yapıdır. Doğu cephesinde kesme taş, kare kaideli, silindirik gövdeli, tek şerefeli minare ve onun yanında kurşun kaplı dikdörtgen planlı bir türbe yer alır. Harime kuzeydeki taç kapıdan girilir; içeride üç sah, kuzeyde ahşap mahfil ve kıble duvarında sade yarım daire planlı mihrap vardır.",
+      "en": "The mosque is a deeply rectangular stone building, of cut and rubble stone, with a hipped roof. On the east facade stand a cut-stone minaret with a square base, cylindrical body and one balcony, and beside it a rectangular lead-covered tomb. The harim is entered through the crown gate in the north; inside are three aisles, a wooden mahfil in the north and a simple semicircular mihrab on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlenmiştir."
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami ambiyansı]",
+      "en": "[Mosque ambience]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "472-474"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2093",
+        "original_name": "pdf-s238-xref2093",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "472"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Muallimhane (Sofuhane) Camii ve Türbesi (kitap s. 472)",
+        "en": "Muallimhane (Sofuhane) Mosque and Tomb (book p. 472)"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremit çatılı, taştan yapılmış cami ve yanında minaresi olan türbe. Çevresinde ağaçlar ve binalar var.",
+        "en": "A mosque with a red tile roof and stone construction, with a minaret beside it. Trees and buildings surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2095",
+        "original_name": "pdf-s238-xref2095",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "473"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Muallimhane (Sofuhane) Camii ve Türbesi (kitap s. 473)",
+        "en": "Muallimhane (Sofuhane) Mosque and Tomb (book p. 473)"
+      },
+      "alt": {
+        "tr": "Ahşap sütunlar, taş duvarlar ve kiremit kaplı zeminli iç mekanda, ahşap tavan ve çanak şeklindeki avize yer alıyor.",
+        "en": "Wooden pillars, stone walls, and a tiled floor in an interior space with a wooden ceiling and a chandelier."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2097",
+        "original_name": "pdf-s238-xref2097",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "473"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Muallimhane (Sofuhane) Camii ve Türbesi (kitap s. 473)",
+        "en": "Muallimhane (Sofuhane) Mosque and Tomb (book p. 473)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış, dik bir mezar taşı ve etrafında taş merdivenler.",
+        "en": "A tall stone tombstone and surrounding stone steps."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2105",
+        "original_name": "pdf-s239-xref2105",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "474"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Muallimhane (Sofuhane) Camii ve Türbesi (kitap s. 474)",
+        "en": "Muallimhane (Sofuhane) Mosque and Tomb (book p. 474)"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı bir kubbeli yapı ve yanında sivri kuleli minare, çevresinde ağaçlar ve şehir manzarası.",
+        "en": "A tiled-roof domed structure with a pointed minaret, surrounded by trees and a cityscape."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

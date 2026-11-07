@@ -1,0 +1,303 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-eregli-kutoren-eski-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî kitapta belirtilmiyor.",
+      "Vakıf/vakfiye bilgisi kitapta yok.",
+      "Yapım dayanağı (kitâbe) kitapta belirtilmiyor.",
+      "Mahalle adı kitapta yok (kasaba mezarlığı içinde).",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kutören Eski Camii",
+    "en": "Kutören Old Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "köşk minare",
+    "kesme taş",
+    "son cemaat yeri",
+    "geç dönem Osmanlı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ereğli",
+    "neighborhood": "Kutören kasaba mezarlığı içinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "430"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1314 / M. 1896-97",
+      "en": "1314 AH / 1896-97 AD"
+    },
+    "start_year": 1896,
+    "end_year": 1897,
+    "hijri_year": 1314,
+    "century": 19,
+    "basis": {
+      "tr": "Metin yapının H. 1314 / M. 1896-97'de inşa edildiğini söyler.",
+      "en": "The text states the building was built in 1314 AH / 1896-97 AD."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "430"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Ereğli Kutören kasaba mezarlığı içinde, H. 1314 / M. 1896-97'de yapılmış, düzgün kesme taş, köşk tipi minareli, geç dönem Osmanlı camilerinin önemli bir örneği; 2007'de yenilenmiştir.",
+    "en": "A cut-stone mosque with a pavilion-type minaret inside the Kutören town cemetery, Ereğli, built in 1896-97 AD; an important example of late Ottoman mosques; renovated in 2007."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Ereğli, Kutören kasaba mezarlığı içinde yer alır. H. 1314 / M. 1896-97'de inşa edilmiştir. 2007'de Vakıflar Bölge Müdürlüğü tarafından cami ve müştemilat kapsamlı bir tadilattan geçirilerek yenilenmiştir. Avluda su sarnıcı ve imam evi vardır.",
+        "en": "The mosque is inside the Kutören town cemetery in Ereğli. It was built in 1314 AH / 1896-97 AD. In 2007 the mosque and outbuildings were extensively repaired by the Regional Directorate of Foundations. The courtyard also holds a water cistern and an imam's house."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "430"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı derinlemesine dikdörtgen planlı, düz damlı ve düzgün kesme taştandır. Kuzey cephede beş bölümlü son cemaat yeri, kuzeydoğu köşede beden duvarı üzerinde yükselen köşk/çardak tarzında minare vardır; minare kare kaide üzerinde dört sütunun taşıdığı konik külahla biter. Harim enlemesine dikdörtgen planlıdır ve mihraba paralel dört sahından oluşur; içten düz damlıdır. Kuzeyde ahşap mahfil, kıble duvarı ortasında taş mihrap, güneybatı köşede sonradan eklenmiş ahşap minber vardır. Mihrap nişi üzerinde kandil ve perde motifi bulunur.",
+        "en": "Deeply rectangular, flat-roofed, of smooth cut stone. The north facade has a five-section narthex; the minaret in the northeast corner rises from the body wall in pavilion/pergola style, a conical cap on four columns over a square base. The harim is a transverse rectangle with four aisles parallel to the mihrab and a flat roof inside. A wooden gallery lies in the north, a stone mihrab at the middle of the qibla wall and a later wooden minbar in the southwest corner. The mihrab niche bears a lamp and curtain motif."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "430"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_bolum",
+      "label": {
+        "tr": "Son cemaat yeri bölüm sayısı",
+        "en": "Narthex sections"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1896",
+      "year": 1896,
+      "date": null,
+      "hijri": "1314",
+      "type": "construction",
+      "title": {
+        "tr": "İnşa",
+        "en": "Built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "430"
+        }
+      ]
+    },
+    {
+      "id": "tadilat-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM Bölge Müdürlüğü kapsamlı tadilatı",
+        "en": "Extensive renovation by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "430"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kasaba mezarlığı içinde yer alan, düzgün kesme taştan, düz damlı bir camidir. Kuzeyde beş bölümlü son cemaat yeri vardır. Kuzeydoğu köşede, dört sütunlu ve konik külahlı köşk biçiminde bir minare yükselir. Harim enlemesine dikdörtgendir ve dört sahınlıdır; kuzeyde ahşap mahfil, kıble duvarında taş mihrap bulunur.",
+      "en": "A flat-roofed cut-stone mosque inside the town cemetery. A five-section narthex lies on the north. In the northeast corner rises a pavilion-type minaret with four columns and a conical cap. The harim is a transverse rectangle with four aisles; a wooden gallery is in the north and a stone mihrab on the qibla wall."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "430-430"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1877",
+        "original_name": "pdf-s217-xref1877",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "430"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kutören Eski Camii (kitap s. 430)",
+        "en": "Kutören Old Mosque (book p. 430)"
+      },
+      "alt": {
+        "tr": "Kutören Eski Camii, kiremit kaplı çatısı ve taş duvarları ile bir minareye sahip. Çatıda bir kubbe ve duvarlarda bazı açıklıklar var.",
+        "en": "Kutören Eski Camii has a tiled roof, stone walls, and a minaret. A dome is on the roof and there are some openings in the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1879",
+        "original_name": "pdf-s217-xref1879",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "430"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kutören Eski Camii (kitap s. 430)",
+        "en": "Kutören Old Mosque (book p. 430)"
+      },
+      "alt": {
+        "tr": "Taş duvarın ortasında, kemerli girişin üzerinde iki levha ve bir lamba asılı.",
+        "en": "A stone wall with an arched entrance, two plaques, and a lamp above it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1881",
+        "original_name": "pdf-s217-xref1881",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "430"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kutören Eski Camii (kitap s. 430)",
+        "en": "Kutören Old Mosque (book p. 430)"
+      },
+      "alt": {
+        "tr": "İç mekanda, sütunlar, kemerler, pencere ve ahşap bir minber görülüyor. Yerde kırmızı halı var.",
+        "en": "Inside, columns, arches, windows, and a wooden minbar are visible. A red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

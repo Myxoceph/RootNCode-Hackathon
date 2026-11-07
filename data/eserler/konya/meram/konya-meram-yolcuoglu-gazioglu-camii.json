@@ -1,0 +1,254 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-yolcuoglu-gazioglu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî kitapta yok; başlıktaki 'Yolcuoğlu / Gazioğlu' adının kaynağı açıklanmıyor.",
+      "Era boş bırakıldı (XX. yüzyılın ilk yarısı tek kod değil).",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Tanıtım levhası 1929, bitişik çeşme H. 1342 / M. 1923-24 gösteriyor; iki tarih birbirinden farklı, kitap ikisini de aktarıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Yolcuoğlu (Gazioğlu) Camii",
+    "en": "Yolcuoğlu (Gazioğlu) Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "Hacı Fettah Mezarlığı",
+    "ahşap mahfil",
+    "VGM"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Fahrünnisa Mahallesi",
+    "address": "Baruthane Caddesi No: 65",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "153"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.861526,
+      "lng": 32.497759,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/309370929 ('Yolcuoğlu Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyılın ilk yarısı (1923-24 çeşme, 1929 tanıtım levhası)",
+      "en": "First half of the 20th century (fountain 1923-24, plaque 1929)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitabe veya vakfiye yok; tanıtım levhasında 1929, bitişik çeşmede H. 1342 / M. 1923-24 yazar. Mimari özelliklerle XX. yüzyılın ilk yarısına tarihlenir.",
+      "en": "No inscription or charter; plaque says 1929, adjacent fountain 1342 AH / 1923-24 AD; dated to the first half of the 20th century by architecture."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "153"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hacı Fettah Mezarlığı'nın batısında, Baruthane Caddesi'nde, XX. yüzyılın ilk yarısına tarihlenen, Vakıflar Genel Müdürlüğü mülkiyetindeki ibadete açık cami. Toprak damı sonradan kırma çatıyla örtülmüştür.",
+    "en": "A mosque west of Hacı Fettah Cemetery on Baruthane Street, dated to the first half of the 20th century, owned by the General Directorate of Foundations and open for worship. Its flat earthen roof was later covered with a hipped roof."
+  },
+  "sections": [
+    {
+      "id": "konum-tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami, Meram, Fahrunnisa Mahallesi, Baruthane Caddesi, No. 65'te, Hacı Fettah Mezarlığı'nın batı tarafında yer almaktadır. Camiye ait kitâbe veya vakfiye yoktur. Yapının tanıtım levhasında 1929 tarihi, yapıya bitişik çeşmenin üzerinde H. 1342 / M. 1923-24 tarihleri yazmaktadır. Bu veriler ve mimari özellikler ışığında eser XX. yüzyılın ilk yarısına tarihlendirilebilir. Vakıflar Genel Müdürlüğü'nün mülkiyetindedir ve ibadete açıktır.",
+        "en": "The mosque is at Baruthane Street No: 65, Fahrunnisa Neighborhood, Meram, west of Hacı Fettah Cemetery. It has no inscription or charter. The identification plate gives 1929 and the adjoining fountain 1342 AH / 1923-24 AD; from these and its architecture the building can be dated to the first half of the 20th century. It is owned by the General Directorate of Foundations and open for worship."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "153"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Üst örtüsü düz toprak dam olan cami sonradan kırma çatı ile örtülmüştür; saçaklar dışarı taşırılmış ve alttan ahşap çıtalarla kaplanmıştır. Plan kareye yakın dikdörtgendir; cepheler dikdörtgen pencerelerle aydınlanır. Harim duvarları ve ahşap sütunlar sonradan lambri ile kaplanmıştır. Kuzey duvara bitişik kadınlar mahfili ahşaptır ve korkulukları sadedir. Altta camekânla çevrili bir imam odası vardır. Kıble duvarı ortasındaki mihrap yarım daire planlı, dikdörtgen görünümlüdür ve yedi bölüme ayrılmış soyut bitkisel süslemeleri vardır. Mihrabın sağında, güneybatı köşede sade ahşap minber bulunur.",
+        "en": "The roof, originally a flat earthen roof, was later covered with a hipped roof with projecting eaves lined with wooden slats. The plan is a nearly square rectangle lit by rectangular windows. Harim walls and wooden columns were later covered with panelling. The wooden women's gallery adjoins the north wall; a glass-enclosed imam's room lies below. The mihrab is semicircular in plan with a rectangular appearance and has abstract floral decoration in seven sections. A simple wooden minbar stands to its right in the southwest corner."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "153"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "tanitim-levhasi-1929",
+      "year": 1929,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tanıtım levhasındaki tarih",
+        "en": "Date on the identification plate"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "153"
+        }
+      ]
+    },
+    {
+      "id": "cesme-1923",
+      "year": 1923,
+      "date": null,
+      "hijri": "1342",
+      "type": "record",
+      "title": {
+        "tr": "Bitişik çeşmedeki tarih (H. 1342)",
+        "en": "Date on the adjoining fountain (1342 AH)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "153"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kareye yakın dikdörtgen planlı, kırma çatılı bir camidir. İç duvarlar ve ahşap sütunlar lambri ile kaplıdır. Kuzey duvara bitişik ahşap bir kadınlar mahfili, kıble duvarında yedi bölümlü bitkisel süslemeli yarım daire planlı mihrap ve mihrabın sağında sade bir ahşap minber bulunur.",
+      "en": "A nearly square mosque with a hipped roof. Interior walls and wooden columns are panelled. A wooden women's gallery adjoins the north wall; the qibla wall has a semicircular mihrab with floral decoration in seven sections and a plain wooden minbar to its right."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "153-153"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=566",
+        "original_name": "pdf-s78-xref566",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "153"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Yolcuoğlu (Gazioğlu) Camii (kitap s. 153)",
+        "en": "Yolcuoğlu (Gazioğlu) Mosque (book p. 153)"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı çatılı, açık mavi boyalı, iki pencere ve bir minareye sahip küçük bir yapı.",
+        "en": "A small building with a tiled roof, light blue walls, two windows, and a minaret."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=570",
+        "original_name": "pdf-s78-xref570",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "153"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Yolcuoğlu (Gazioğlu) Camii (kitap s. 153)",
+        "en": "Yolcuoğlu (Gazioğlu) Mosque (book p. 153)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halı, ahşap sütunlar, mavi çerçeveli kapı ve pencere, duvarda süslemeler ve tavan lambası görülüyor.",
+        "en": "Inside, red carpet, wooden pillars, blue-framed door and windows, wall decorations, and a ceiling lamp are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

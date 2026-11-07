@@ -1,0 +1,312 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-cataloglu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 271) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Onarım yılı kitapta 'yakın zamanda' diye geçiyor; yıl yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "location.pages",
+        "note": "İçindekiler listesinde Çataloğlu Camii 272, Topraklık Hasan Efendi Camii de 272 olarak verilmiş; metin sırasına göre Çataloğlu s. 271'dedir (s. 270 Sütçü, s. 272 Topraklık)."
+      },
+      {
+        "field": "name",
+        "note": "Başlık 'Çataloğlu Camii'; metinde yapının eski adları 'Pir Mehmet Ağa' ve 'Hacı Cemil Camii' olarak geçiyor, 'Çataloğlu' adı metinde açıklanmıyor."
+      },
+      {
+        "field": "dating",
+        "note": "H. 1181, M. 1767-68 ile uyumludur; çelişki yok."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çataloğlu Camii",
+    "en": "Çataloğlu Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap direkli",
+    "Pir Mehmet Ağa",
+    "Hacı Cemil Camii",
+    "1767-68"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Hacı Cemil Mahallesi",
+    "address": "Hacı Hasan Başı Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "271"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.881402,
+      "lng": 32.517745,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/308734055 ('Çataloğlu Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1181 / M. 1767-68 (giriş kapısı üzerindeki tarih)",
+      "en": "AH 1181 / AD 1767-68 (date on the entrance gate)"
+    },
+    "start_year": 1767,
+    "end_year": 1768,
+    "hijri_year": 1181,
+    "century": 18,
+    "basis": {
+      "tr": "Giriş kapısı üzerinde Türkçe olarak H. 1181 / M. 1767-68 tarihi yazar; ancak kitap ilk inşa tarihi ya da bânisi hakkında kitâbe bulunmadığını söyler. Bu yüzden tarih yapı üzerindeki tarih olarak alınmıştır.",
+      "en": "The date AH 1181 / AD 1767-68 is written in Turkish on the entrance gate, but the book says there is no inscription about the first construction date or builder. It is therefore taken as the date on the building."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "271"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Hacı Cemil Mahallesi'nde, giriş kapısı üzerinde H. 1181 / M. 1767-68 tarihi yazan, 1930'lara dek Pir Mehmet Ağa adıyla anılan, taş yapılı ve ahşap direkli cami.",
+    "en": "A stone, wooden-pillared mosque in Hacı Cemil Neighborhood with the date AH 1181 / AD 1767-68 over its entrance gate, known as Pir Mehmet Ağa until the 1930s."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Hacı Cemil Mahallesi, Hacı Hasan Başı Caddesi üzerinde yer almaktadır. İlk inşa tarihi veya bânisi hakkında kitâbe yoktur; ancak giriş kapısı üzerinde Türkçe olarak H. 1181 / M. 1767-68 tarihi yer almaktadır. Yapı 1930'lu yıllara kadar Pir Mehmet Ağa adıyla anılmış, bir dönem 'Hacı Cemil Camii' olarak da isimlendirilmiştir. Vakıflar Bölge Müdürlüğü tarafından yakın zamanda onarım geçirmiştir.",
+        "en": "The mosque is on Hacı Hasan Başı Street, Hacı Cemil Neighborhood, Karatay. There is no inscription about the first construction date or builder, but the date AH 1181 / AD 1767-68 is written in Turkish on the entrance gate. The building was known as Pir Mehmet Ağa until the 1930s and for a time also as 'Hacı Cemil Mosque'. It was recently repaired by the Regional Directorate of Foundations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlıdır; içten ahşap kirişli, dıştan dört yöne eğimli kırma çatılıdır; yapı malzemesi taştır. Harime kuzey cephedeki son cemaat bölümünde bulunan basık kemerli bir açıklıktan geçilir. Harim, mihraba dik uzanan üçer ahşap direkli iki sıra direkle üç sahına bölünmüştür. Ahşap mihrap yanlardan düz silmelerle sınırlıdır; yarım daire planlı yüzeyinde perde ve kandil motifleri görülür. Mihrabın güneybatısındaki ahşap minberin aynalık ve korkuluğunda süslemeler vardır.",
+        "en": "The mosque has a deeply rectangular plan, with wooden beams inside and a hipped roof sloping in four directions outside; stone is the building material. The harim is entered through a low-arched opening in the north narthex. It is divided into three aisles by two rows of three wooden posts perpendicular to the mihrab. The wooden semicircular mihrab is bordered by flat mouldings and carries curtain and oil-lamp motifs. The wooden minbar southwest of the mihrab is decorated on its transom and railing."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kapi_tarihi_hicri",
+      "label": {
+        "tr": "Giriş kapısındaki Hicri tarih",
+        "en": "Hijri date on the entrance gate"
+      },
+      "value": 1181,
+      "unit": null,
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "giris-kapisi-tarihi",
+      "location": {
+        "tr": "Giriş kapısının üzeri",
+        "en": "Above the entrance gate"
+      },
+      "language": "tr",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "date": {
+        "hijri_year": 1181,
+        "gregorian": "1767-68"
+      },
+      "note": {
+        "tr": "Tarih Türkçe olarak yazılı; kitâbe metni kitapta verilmiyor.",
+        "en": "The date is written in Turkish; the text is not given in the book."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kapi-tarihi-1767",
+      "year": 1767,
+      "date": null,
+      "hijri": "1181",
+      "type": "record",
+      "title": {
+        "tr": "Giriş kapısı üzerinde H. 1181 / M. 1767-68 tarihi yazılıdır",
+        "en": "The date AH 1181 / AD 1767-68 is written over the entrance gate"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "271"
+        }
+      ]
+    },
+    {
+      "id": "ad-1930lar",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "1930'lu yıllara kadar Pir Mehmet Ağa adıyla anıldı",
+        "en": "Known as Pir Mehmet Ağa until the 1930s"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "271"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çataloğlu Camii, taştan yapılmış, ahşap direkli ve kırma çatılı bir camidir. Kuzeydeki son cemaat yerindeki basık kemerli açıklıktan, iki sıra ahşap direkle üç sahına bölünmüş harime girilir. Ahşap mihrapta perde ve kandil motifleri, ahşap minberde süslemeler görülür.",
+      "en": "Çataloğlu Mosque is a stone, wooden-pillared building with a hipped roof. A low-arched opening in the north narthex leads to the prayer hall, divided into three aisles by two rows of wooden posts. The wooden mihrab carries curtain and oil-lamp motifs, and the wooden minbar is decorated."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 271)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "271-271"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1104",
+        "original_name": "pdf-s137-xref1104",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "271"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Çataloğlu Camii (kitap s. 271)",
+        "en": "Çataloğlu Mosque (book p. 271)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kiremit çatılı bir cami. Dört pencere ve bir kapı var. Duvarlar taş temel üzerine kurulmuş.",
+        "en": "A white-walled mosque with a tiled roof. Four windows and one door are visible. The walls rest on a stone foundation."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1106",
+        "original_name": "pdf-s137-xref1106",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "271"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Çataloğlu Camii (kitap s. 271)",
+        "en": "Çataloğlu Mosque (book p. 271)"
+      },
+      "alt": {
+        "tr": "İç mekanda, ahşap kirişli tavan, sütunlar, kubbeli mihrap ve zeminde desenli halılar görülüyor.",
+        "en": "Inside, wooden beam ceiling, columns, domed mihrab, and patterned carpets on the floor are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

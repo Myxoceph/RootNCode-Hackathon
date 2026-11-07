@@ -1,20 +1,25 @@
 {
   "expo": {
-    "name": "Vagabonds",
+    "name": "Vakıfname",
     "slug": "vagabonds",
     "version": "0.1.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash-icon-dark.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D1420"
+    },
     "scheme": "vagabonds",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon",
+      "icon": "./assets/images/icon.png",
       "bundleIdentifier": "com.vagabonds.app"
     },
     "android": {
       "package": "com.vagabonds.app",
       "adaptiveIcon": {
-        "backgroundColor": "#151B28",
+        "backgroundColor": "#0D1420",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -26,30 +31,51 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router",
+      [
+        "expo-router",
+        {
+          "asyncRoutes": {
+            "web": "production"
+          }
+        }
+      ],
       [
         "expo-camera",
         {
-          "cameraPermission": "Kitabeleri tanımak ve Zaman Perdesi için kamera kullanılır. Görüntü cihazdan çıkmaz.",
+          "cameraPermission": "Kitabeleri tanımak, ziyaretini mühürlemek ve Taşa Sor ile bir detayı sormak için kamera kullanılır. Taşa Sor'da çektiğin fotoğraf yalnızca açıklanmak için gönderilir, saklanmaz; diğerlerinde görüntü cihazdan çıkmaz.",
           "microphonePermission": false,
           "recordAudioAndroid": false,
           "barcodeScannerEnabled": false
         }
       ],
       [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Bir eserin yanında olduğunu doğrulamak ve ziyaretini mühürlemek için konumunu kullanıyoruz."
+        }
+      ],
+      [
         "expo-splash-screen",
         {
-          "backgroundColor": "#151B28",
+          "backgroundColor": "#FFFFFF",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 280
         }
       ],
       [
         "expo-audio",
         {
-          "microphonePermission": false,
-          "recordAudioAndroid": false,
+          "microphonePermission": "Rehber'e sesli soru sorabilmen için mikrofon kullanılır. Kayıt yalnızca yazıya çevrilir, saklanmaz.",
+          "recordAudioAndroid": true,
           "enableBackgroundPlayback": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Anı Defteri'ne eklemek için seçtiğin fotoğraflara erişilir. Bu fotoğrafları yalnızca sen görebilirsin.",
+          "cameraPermission": false,
+          "microphonePermission": false
         }
       ],
       [
@@ -57,7 +83,11 @@
         {
           "faceIDPermission": false
         }
-      ]
+      ],
+      "expo-font",
+      "expo-image",
+      "expo-status-bar",
+      "expo-sharing"
     ],
     "experiments": {
       "typedRoutes": true,

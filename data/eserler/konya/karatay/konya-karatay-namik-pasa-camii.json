@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-namik-pasa-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 275-276) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Namık Paşa'nın tam kimliği kitapta ayrıntılı veriliyor ama başka kaynakla teyit edilmedi.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "inscriptions[giris-kitabesi].language",
+        "note": "Kitap kitâbenin dilini söylemiyor, yalnızca celi talik hat olduğunu söylüyor; 'tr-ottoman' bu çıkarımdır."
+      },
+      {
+        "field": "sections[banisi-namik-pasa]",
+        "note": "Kitap Namık Paşa'nın 1816'da Divân-ı Hümâyun'a girdiğini ve 14 yaşına kadar babasından eğitim aldığını söylüyor; doğum yılı verilmiyor. Hicri/miladi tarih uyumludur."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Namık Paşa Camii",
+    "en": "Namık Paşa Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "1888-89",
+    "celi talik kitabe",
+    "kesme taş"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Çelebi Mahallesi",
+    "address": "Dolappare Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "275-276"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.871271,
+      "lng": 32.51261,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/314679415 ('Namık Paşa Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1306 / M. 1888-1889",
+      "en": "AH 1306 / AD 1888-1889"
+    },
+    "start_year": 1888,
+    "end_year": 1889,
+    "hijri_year": 1306,
+    "century": 19,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki üç satırlık celi talik hatlı kitâbeye göre cami bu tarihte Namık Paşa tarafından inşa ettirilmiştir.",
+      "en": "According to the three-line celi ta'lik inscription over the entrance door, the mosque was built by Namık Paşa in this year."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "275-276"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Namık Paşa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "275"
+      }
+    ]
+  },
+  "architect": null,
+  "summary": {
+    "tr": "Çelebi Mahallesi'nde, kitâbeye göre Namık Paşa'nın H. 1306 / M. 1888-1889'da yaptırdığı, düzgün kesme taştan, tek şerefeli minareli ve hâlen ibadete açık cami.",
+    "en": "A mosque in Çelebi Neighborhood built by Namık Paşa in AH 1306 / AD 1888-1889 according to its inscription, of ashlar stone with a single-balcony minaret; still open for worship."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Çelebi Mahallesi, Dolappare Caddesi üzerinde yer almaktadır. Giriş kapısı üzerindeki üç satırlık celi talik hatlı kitâbeye göre Namık Paşa tarafından H. 1306 / M. 1888-1889'da inşa ettirilmiştir. Vakıflar Bölge Müdürlüğü tarafından 2014-2016 yılları arasında tamir edilmiştir. Hâlen ibadete açıktır.",
+        "en": "The mosque is on Dolappare Street, Çelebi Neighborhood, Karatay. According to the three-line celi ta'lik inscription over the entrance door, it was built by Namık Paşa in AH 1306 / AD 1888-1889. It was repaired by the Regional Directorate of Foundations in 2014-2016 and is still open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "275-276"
+        }
+      ]
+    },
+    {
+      "id": "banisi-namik-pasa",
+      "order": 2,
+      "title": {
+        "tr": "Banî: Namık Paşa",
+        "en": "Founder: Namık Paşa"
+      },
+      "body": {
+        "tr": "Namık Paşa, Osmanlı Divanı'ndan öğretmen Halil Ramis Ağa'nın oğlu olarak İstanbul'da doğmuştur; dedesi Konevi sülalesindendir. 14 yaşına kadar babasından eğitim almış, 1816'da Divân-ı Hümâyun'a girmiştir. Mekteb-i Hayriye'yi kurmuş, iki defa Bağdat Valisi olmuştur; ayrıca Irak ve Hicaz ordularına mübaşir olmuş, Ticaret Nâzırı ve Cidde Valisi gibi görevlerde bulunmuştur. 1892'de vefat etmiş, kabri Karacaahmet Mezarlığı'ndadır. Atalarının Konyalı olması dolayısıyla Çelebi Mahallesi'ndeki bu camiyi yaptırmıştır.",
+        "en": "Namık Paşa was born in Istanbul as the son of Halil Ramis Ağa, a teacher from the Ottoman Court; his grandfather was from the Konevi dynasty. He was educated by his father until age 14 and entered the Divan-ı Hümayun in 1816. He founded the Mekteb-i Hayriye and was twice Governor of Baghdad; he also served as usher to the Iraq and Hejaz armies, Minister of Commerce and Governor of Jeddah. He died in 1892 and is buried in Karacaahmet Cemetery. He had this mosque built in Çelebi District because his ancestors were from Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "275-276"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlıdır; içten düz ahşap tavanlı, dıştan beşik çatılıdır. Harim, son cemaat yeri, mahfil ve minare bölümlerinden oluşan yapıda düzgün kesme taş kullanılmıştır. Kuzeybatı köşedeki minare kare kaideli, silindirik gövdeli ve tek şerefelidir. Kuzeydeki son cemaat bölümünden harime geçilir. Harim derinlemesine dikdörtgen planlı ve üç sahınlıdır; kuzeyinde ahşap mahfil vardır. Kıble duvarının ortasındaki mihrap yarım daire planlıdır.",
+        "en": "The mosque has a deeply rectangular plan with a flat wooden ceiling inside and a gable roof outside. The structure, consisting of harim, narthex, mahfil and minaret, is built of ashlar stone. The minaret in the northwest corner has a square base, cylindrical body and a single balcony. The harim is reached from the north narthex; it is deeply rectangular with three aisles and a wooden mahfil in the north. The mihrab in the middle of the qibla wall is semicircular."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "276"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "minare_serefe",
+      "label": {
+        "tr": "Minare şerefe sayısı",
+        "en": "Minaret balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "276"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Namık Paşa",
+      "role": {
+        "tr": "Banî; Divân-ı Hümâyun'a girdi, Bağdat ve Cidde Valisi, Ticaret Nâzırı; 1892'de vefat etti",
+        "en": "Founder; entered the Divan-ı Hümayun, Governor of Baghdad and Jeddah, Minister of Commerce; died 1892"
+      }
+    },
+    {
+      "name": "Halil Ramis Ağa",
+      "role": {
+        "tr": "Namık Paşa'nın babası; Osmanlı Divanı'ndan öğretmen",
+        "en": "Father of Namık Paşa; a teacher from the Ottoman Court"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısının üzeri",
+        "en": "Above the entrance door"
+      },
+      "language": "tr-ottoman",
+      "script": "celi talik",
+      "transliteration": null,
+      "translation": null,
+      "date": {
+        "hijri_year": 1306,
+        "gregorian": "1888-1889"
+      },
+      "note": {
+        "tr": "Üç satırlık kitâbe; metni kitapta verilmiyor, yalnızca Namık Paşa'nın H. 1306 / M. 1888-1889'da camiyi inşa ettirdiğini bildirdiği aktarılıyor. Dil kitapta belirtilmiyor.",
+        "en": "A three-line inscription; its text is not given, only that it records Namık Paşa building the mosque in AH 1306 / AD 1888-1889. The language is not stated."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "275-276"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1888",
+      "year": 1888,
+      "date": null,
+      "hijri": "1306",
+      "type": "construction",
+      "title": {
+        "tr": "Namık Paşa tarafından inşa ettirildi",
+        "en": "Built by Namık Paşa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "275"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından tamir edildi (2014-2016)",
+        "en": "Repaired by the Regional Directorate of Foundations (2014-2016)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "275"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Namık Paşa Camii, düzgün kesme taştan yapılmış, derinlemesine dikdörtgen planlı, beşik çatılı bir camidir. Kuzeybatı köşede kare kaideli, silindirik gövdeli, tek şerefeli bir minare yükselir. Kuzeydeki son cemaat yerinden üç sahınlı harime girilir; kuzeyde ahşap mahfil, kıble duvarında yarım daire planlı mihrap vardır.",
+      "en": "Namık Paşa Mosque is a deeply rectangular ashlar-stone building with a gable roof. A minaret with a square base, cylindrical body and one balcony rises at the northwest corner. The three-aisle prayer hall is entered from the north narthex and has a wooden gallery in the north and a semicircular mihrab on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 275-276)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "275-276"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1125",
+        "original_name": "pdf-s139-xref1125",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "275"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Namık Paşa Camii (kitap s. 275)",
+        "en": "Namık Paşa Mosque (book p. 275)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kiremit kaplı bir cami. Üstünde sivri kubbeli minare ve kemerli pencereler var.",
+        "en": "White-walled mosque with a tiled roof. It has a conical minaret and arched windows."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1133",
+        "original_name": "pdf-s140-xref1133",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "276"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Namık Paşa Camii (kitap s. 276)",
+        "en": "Namık Paşa Mosque (book p. 276)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halılar, ahşap sütunlar, ahşap merdivenler ve yeşil kapılı mihrap görülüyor.",
+        "en": "Inside, red carpets, wooden pillars, wooden stairs, and a green-framed mihrab are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1135",
+        "original_name": "pdf-s140-xref1135",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "276"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Namık Paşa Camii (kitap s. 276)",
+        "en": "Namık Paşa Mosque (book p. 276)"
+      },
+      "alt": {
+        "tr": "Ahşap bir tavanın ortasında, dışarıya doğru yayılan radyal bir desenle çevrili sekizgen bir yapı.",
+        "en": "An octagonal wooden structure with a radial pattern radiating outward, at the center of a wooden ceiling."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-mevlana-ahmet-eflaki-dede-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Yapım yılı ve banî kitapta yok",
+      "Mezar şahidesinin yazısı (altı satır) kitapta yok; inscriptions boş",
+      "Era: Karamanoğlu dönemi 'beylikler' koduyla işaretlendi",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Karamanoğlu dönemi mezar tarihi ve tipolojiden çıkarıldı; yıl aralığı kitapta verilmediği için start_year/end_year null."
+      },
+      {
+        "field": "sections[genel] TR/EN",
+        "note": "İngilizce 'Aflaki' ve 'Eflaki' karışık yazılmış; 'Kadinhanli' Türkçe 'Kadınhanlı'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Ahmet Eflâki Dede Türbesi",
+    "en": "Ahmet Eflaki Dede Tomb"
+  },
+  "subtitle": {
+    "tr": "Gül Bahçesi'ndeki, kısmen günümüze ulaşan eyvanlı türbe",
+    "en": "Partly surviving iwan tomb in the Rose Garden"
+  },
+  "alternate_names": [],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": "konya-karatay-mevlana-kulliyesi",
+  "era": "beylikler",
+  "tags": [
+    "türbe",
+    "Eflâki",
+    "Menâkıbü’l-Arifîn",
+    "Karamanoğlu",
+    "sırlı tuğla",
+    "kazı",
+    "eyvan"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "60-61"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.870774,
+      "lng": 32.505397,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1273346558 ('Ahmed Eflâkî Dede Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Karamanoğlu dönemi (mezar taşı: H. 761 Recep / M. 1360)",
+      "en": "Karamanoğlu period (gravestone: Rajab 761 AH / 1360 AD)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 761,
+    "century": 14,
+    "basis": {
+      "tr": "Mezar şahidesine göre Eflâki H. 761 Recep / M. 1360'ta vefat etmiştir; bu tarihten ve tipolojiyle sırlı tuğla süslemelerden türbenin Karamanoğlu döneminde yapıldığı kabul edilir. Yapım yılı verilmemiştir.",
+      "en": "Per the gravestone Eflâki died in Rajab 761 AH / 1360 AD; from this date, the typology and glazed bricks the tomb is accepted as Karamanoğlu period. No construction year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "60-61"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mevlâna Türbesi'nin batısında, Gül Bahçesi'nde bulunan, 'Menâkıbü'l-Arifîn' yazarı Ahmet Eflâki Dede'ye ait olduğu mezar taşından anlaşılan türbe. Kazılarla ortaya çıkarılan, güneye açılan eyvanlı kare planlı yapının duvarlarının bir kısmı ayaktadır; iç duvarlar çini ve sırlı tuğlayla süslüdür. 2021'de restore edilmiştir.",
+    "en": "A tomb in the Rose Garden west of the Mevlâna Tomb, known from its gravestone as that of Ahmet Eflâki Dede, author of 'Menâkıbü'l-Arifîn'. Parts of the walls of the square, iwan-shaped building opening south, revealed by excavations, survive; the inner walls were decorated with tiles and glazed bricks. Restored in 2021."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Kimlik ve Tarihlendirme",
+        "en": "Identity and Dating"
+      },
+      "body": {
+        "tr": "Türbe Mevlâna Türbesi'nin batısında, Gül Bahçesi içinde yer almaktadır. Türbedeki mezar taşından dolayı 'Menâkıbü'l-Arifîn' adlı eserin yazarı Ahmet Eflâki Dede'nin türbesi olduğu bilinmektedir. Asıl adı Ahmet'tir; 'Eflâkî' sıfatı büyük olasılıkla astronomi âliminden ders almış olduğu için verilmiştir. Mezar şahidesinde H. 761 Recep / M. 1360'ta vefat ettiği yazılıdır; bu tarihten, tipolojisinden ve sırlı tuğla süslemelerinden türbenin Karamanoğlu döneminde yapıldığı kabul edilir. Mevlâna Dergâhı'nın doğusundaki duvara bitişik 'Topbaş Hoca'nın Evi' 1929'da yıkılınca buradaki Eflâki mezar taşı müzeye nakledilmiştir. F. Nafiz Uzluk makalesinde Eflâki'nin Mevlâna Türbesi'nin doğusunda Sipehsâlâr oğlunun mezarı yanında gömüldüğünü, mezarın sonradan Kadınhanlı Topbaş Hoca'nın evinin avlusunda kaldığını ve başına Karamanoğulları dönemi biçiminde altı satırlık bir mezar taşı dikildiğini anlatır.",
+        "en": "The tomb is in the Rose Garden, west of the Mevlâna Tomb. From the gravestone it is known as the tomb of Ahmet Eflâki Dede, author of 'Menâkıbü'l-Arifîn'. His real name is Ahmed; the epithet 'Eflâkî' was probably given because he took lessons from an astronomy scholar. The gravestone says he died in Rajab 761 AH / 1360 AD; from this date, the typology and glazed brick decorations the tomb is accepted as Karamanoğlu period. After 'Topbaş Hoca's House' beside the east wall of the dergah was demolished in 1929, the gravestone was moved to the museum. F. Nafiz Uzluk explains that Eflaki was buried east of the Mevlâna Tomb beside the grave of Sipehsâlar's son, that the grave later remained in the courtyard of Kadınhanlı Topbaş Hoca's house, and that a six-line Karamanoğlu-style gravestone was erected at its head."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "60-61"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Kazılar ve Mimari",
+        "en": "Excavations and Architecture"
+      },
+      "body": {
+        "tr": "Türbede 1965'te Haluk Karamağaralı, 1997'de Müze Müdürlüğü kazı yapmıştır. Kare planlı eyvan biçimli türbenin kuzey, doğu ve batı beden duvarlarının bir kısmı günümüze gelmiştir; kalın duvarlar ve mimari verilerden 'güneye açılan eyvanlı türbe' olduğu anlaşılır, eyvanın açık bölümündeki izlerden güney cephesinde portal olduğu düşünülmektedir. 1997 kazılarında temellerin düzgün kesme taşlarla yapıldığı, köşelerde blok taşların belli yüksekliğe kadar sürdüğü, sonra sille ve moloz taş kullanıldığı görülmüştür. Duvarlar içte çini ve sırlı tuğlalarla süslüdür; sırsız tuğlalarla şaşırtmalı geometrik kompozisyonlarda baklava motifleri arasında kufi yazılı firuze ve mor çinilerin bakiyesi ulaşmıştır. Bu sırlı tuğla yazı kuşakları Kemaliye Medresesi, Sahip Ata Hanikâhı ve İnce Minareli Medrese süslemelerinin Karamanoğulları zamanında sürdürüldüğünü gösterir.",
+        "en": "Excavations were carried out by Haluk Karamağaralı in 1965 and by the Museum Directorate in 1997. Parts of the north, east and west body walls of the square iwan-shaped tomb survive; the thick walls and architectural data show a 'tomb with an iwan opening to the south', and traces suggest a portal on the south façade. The 1997 excavations showed foundations of smooth cut stone, block stones continuing to a certain height at the corners and then sille and rubble stone. The walls were decorated inside with tiles and glazed bricks; remains of turquoise and purple tiles with Kufic inscriptions between diamond motifs survive. These glazed brick bands show that the decorations of the Seljuk Kemaliye Madrasa, Sahip Ata Khanikah and İnce Minareli Madrasa continued in the Karamanoğulları period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "60-61"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Ahmet Eflâki Dede",
+      "role": {
+        "tr": "Menâkıbü'l-Arifîn yazarı; türbenin sahibi",
+        "en": "Author of Menâkıbü'l-Arifîn; occupant of the tomb"
+      }
+    },
+    {
+      "name": "Haluk Karamağaralı",
+      "role": {
+        "tr": "1965 kazısını yapan",
+        "en": "Conducted the 1965 excavation"
+      }
+    },
+    {
+      "name": "Sema Şentürk",
+      "role": {
+        "tr": "Bölümün yazarı, restoratör",
+        "en": "Section author, restorer"
+      }
+    },
+    {
+      "name": "Ali Akkanat",
+      "role": {
+        "tr": "2021 restorasyonunun sponsoru",
+        "en": "Sponsor of the 2021 restoration"
+      }
+    },
+    {
+      "name": "F. Nafiz Uzluk",
+      "role": {
+        "tr": "Mezar yerini makalesinde anlatan araştırmacı",
+        "en": "Researcher who described the grave's location in his article"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vefat-1360",
+      "year": 1360,
+      "date": null,
+      "hijri": "761",
+      "type": "record",
+      "title": {
+        "tr": "Mezar şahidesine göre Eflâki vefat etti (H. 761 Recep)",
+        "en": "Per the gravestone Eflâki died (Rajab 761 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "60-61"
+        }
+      ]
+    },
+    {
+      "id": "mezar-tasi-1929",
+      "year": 1929,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Topbaş Hoca'nın Evi yıkıldı; Eflâki mezar taşı müzeye nakledildi",
+        "en": "Topbaş Hoca's House demolished; Eflaki's gravestone moved to the museum"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "60-61"
+        }
+      ]
+    },
+    {
+      "id": "kazi-1965",
+      "year": 1965,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Haluk Karamağaralı kazısı",
+        "en": "Excavation by Haluk Karamağaralı"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "60-61"
+        }
+      ]
+    },
+    {
+      "id": "kazi-1997",
+      "year": 1997,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Müze Müdürlüğü kazısı",
+        "en": "Museum Directorate excavation"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "60-61"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2021",
+      "year": 2021,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Mevlâna Müzesi tarafından Ali Akkanat'ın sponsorluğunda restore edildi",
+        "en": "Restored by the Mevlâna Museum under the sponsorship of Ali Akkanat"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "60-61"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-mevlana-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Mevlâna Külliyesi'nin parçasıdır.",
+        "en": "Part of the Mevlâna Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "60-61"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kısmen günümüze ulaşmış, kare planlı, güneye açık eyvan biçimli bir türbedir. Kalın taş duvarların izleri ve iç yüzeyde firuze-mor çini ile sırlı tuğla kufi yazı kuşakları görülür.",
+      "en": "A partly surviving square tomb in the form of an iwan open to the south: traces of thick stone walls and, inside, turquoise and purple tile and glazed-brick Kufic bands."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "61-61"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=157",
+        "original_name": "pdf-s32-xref157",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "61"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Ahmet Eflâki Dede Türbesi (kitap s. 61)",
+        "en": "Ahmet Eflaki Dede Tomb (book p. 61)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı bir yapı, camlı bir giriş ve bir kubbe ile bir minare görünüyor.",
+        "en": "A stone building with a glass entrance, a dome, and a minaret is visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

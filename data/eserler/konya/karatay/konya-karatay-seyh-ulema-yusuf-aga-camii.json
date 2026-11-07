@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-seyh-ulema-yusuf-aga-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 279) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kesin yapım tarihi kitapta yok; XIX. yüzyıl sonu / XX. yüzyıl başı tahmini.",
+      "Onarım yılı kitapta 'yakın zamanda' diye geçiyor; yıl yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "toc",
+        "note": "İçindekilerde 'Şeyh Ulema Yusuf Ağa Camii' iki kez geçiyor (s. 279 ve s. 280); metinde s. 280 Aziziye Camii'ne ait olduğundan ikinci giriş muhtemelen yazım hatasıdır. Bu kayıt yalnızca s. 279'u kapsar."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metin minber cümlesini içermiyor (sayfa sonunda kesilmiş); minber bilgisi Türkçe metinden alındı."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "'Kalem işi' İngilizce metinde 'hand-carved' olarak geçiyor ama Türkçe 'kalem işi' boyama süslemedir; Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Ulema Yusuf Ağa Camii",
+    "en": "Şeyh Ulema Yusuf Ağa Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kalem işi tavan",
+    "ahşap minare",
+    "1947 yenileme"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Şeyh Ulema Mahallesi",
+    "address": "Şeyh Alaman Mezarlığı'nın kuzeydoğusu",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "279"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.875194,
+      "lng": 32.514296,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/308734047 ('Şeyh Ulema Yusuf Ağa Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl sonu veya XX. yüzyıl başı (muhtemelen); 1947'de büyük oranda yenilendi",
+      "en": "Late 19th or early 20th century (probably); largely renovated in 1947"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "İlk inşası ve bânisi hakkında bilgi yoktur; mimari özelliklerinden XIX. yüzyıl sonlarına ya da XX. yüzyıl başlarına tarihlendirilmesi muhtemeldir. Yapı 1947'de büyük oranda yenilenmiştir.",
+      "en": "There is no information on the first construction or founder; from architectural features it is likely to date from the late 19th or early 20th century. The building was largely renovated in 1947."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "279"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Şeyh Ulema Mahallesi'nde, XIX. yüzyıl sonu / XX. yüzyıl başına tarihlenmesi muhtemel, 1947'de büyük oranda yenilenen, tavanı bütünüyle kalem işi süslemeli, ahşap minareli cami.",
+    "en": "A mosque in Şeyh Ulema Neighborhood, probably late 19th or early 20th century, largely renovated in 1947, with a fully painted (kalem işi) ceiling and a wooden minaret."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Şeyh Ulema Mahallesi'nde, Şeyh Alaman Mezarlığı'nın kuzeydoğusunda yer almaktadır. İlk inşası ve bânisi hakkında bilgi bulunmayan yapının mimari özelliklerinden hareketle XIX. yüzyıl sonlarına ya da XX. yüzyıl başlarına tarihlendirilmesi muhtemeldir. Yapı 1947'de büyük oranda yenilenmiş, harimdeki süslemeler Gaziantepli Müslim Gökçek isimli usta tarafından yapılmıştır. Vakıflar Bölge Müdürlüğü tarafından yakın zamanda onarılmıştır.",
+        "en": "The mosque is in Şeyh Ulema Neighborhood, Karatay, northeast of Şeyh Alaman Cemetery. There is no information on its first construction and founder; from its architectural features it can probably be dated to the late 19th or early 20th century. It was largely renovated in 1947, and the decorations in the harim were made by a master named Müslim Gökçek from Gaziantep. It was recently repaired by the Regional Directorate of Foundations."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "279"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlıdır; içten düz ahşap tavan, dıştan kırma çatıyla örtülüdür ve cephelerde iki sıra pencere düzeni görülür. Harim, mahfil ve minare bölümlerinden oluşan yapı, alt seviyede kaba yonu taş, üst kısımda kerpiçle inşa edilmiştir. Güneydoğu köşedeki minare ahşaptır; yivli silindirik gövdeli, köşk tipi şerefelidir. Harime batı cephenin kuzey köşesinden girilir. Harim tavanı bütünüyle kalem işi süslemelidir: merkezde çok kollu yıldız motifinden gelişen, ışınlı, daire biçimli, fırfır motifli bir tavan göbeği ve çevresinde beş kuşak vardır; kuşaklarda palmet ve rûmi motifleri, ortadaki daha geniş kuşakta bitkisel motifler görülür. Kıble duvarının ortasındaki mihrap yarım daire planlı, yanlardan düz silmelerle sınırlıdır ve nişinde geç dönemde yaygın perde motifi vardır. Mihrabın güneybatısındaki ahşap minber boyalıdır.",
+        "en": "The mosque has a deeply rectangular plan with a flat wooden ceiling inside and a hipped roof outside; the facades have two rows of windows. The building, of harim, mahfil and minaret, is rough-hewn stone below and adobe above. The wooden minaret in the southeast corner has a fluted cylindrical body and a pavilion-type balcony. The harim is entered from the north corner of the west facade. Its ceiling is entirely decorated with hand-drawn (kalem işi) ornament: at the centre a circular, rayed, frilled ceiling hub developed from a multi-armed star, surrounded by five bands with palmette and rumi motifs and floral motifs on the wider middle band. The semicircular mihrab in the middle of the qibla wall is bordered by flat mouldings and has a curtain motif, widely used in the late period; the wooden minbar in the southwest corner is painted. (The English text of the book breaks off before the minbar sentence.)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "279"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yenileme_yili",
+      "label": {
+        "tr": "Büyük oranda yenilendiği yıl",
+        "en": "Year largely renovated"
+      },
+      "value": 1947,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "279"
+        }
+      ]
+    },
+    {
+      "key": "kusak_sayisi",
+      "label": {
+        "tr": "Tavan göbeğini çevreleyen kalem işi kuşak sayısı",
+        "en": "Painted bands around the ceiling hub"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "279"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Müslim Gökçek",
+      "role": {
+        "tr": "Gaziantepli usta; 1947'de harimdeki süslemeleri yaptı",
+        "en": "Master from Gaziantep; made the harim decorations in 1947"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "yenileme-1947",
+      "year": 1947,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yapı büyük oranda yenilendi; harim süslemeleri Müslim Gökçek tarafından yapıldı",
+        "en": "Largely renovated; harim decorations made by Müslim Gökçek"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "279"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şeyh Ulema Yusuf Ağa Camii, alt kısmı kaba yonu taş, üst kısmı kerpiç olan, kırma çatılı bir camidir. Güneydoğu köşede yivli gövdeli ahşap bir minare yükselir. İçeride tavan bütünüyle kalem işi süslemelidir: ortada ışınlı, fırfırlı bir tavan göbeği ve çevresinde palmet, rûmi ve bitkisel motifli beş kuşak vardır.",
+      "en": "Şeyh Ulema Yusuf Ağa Mosque has rough-hewn stone below, adobe above, and a hipped roof. A wooden minaret with a fluted body rises at the southeast corner. Inside, the ceiling is entirely painted: a rayed, frilled hub in the centre is surrounded by five bands of palmette, rumi and floral motifs."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 279)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "279-279"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1147",
+        "original_name": "pdf-s141-xref1147",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "279"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şeyh Ulema Yusuf Ağa Camii (kitap s. 279)",
+        "en": "Şeyh Ulema Yusuf Ağa Mosque (book p. 279)"
+      },
+      "alt": {
+        "tr": "Sarı duvarlı, kiremit çatılı cami binası, mavi kapılı giriş ve yanında taş bir kemerli geçit.",
+        "en": "Yellow-walled mosque building with a tiled roof, blue doors, and a stone archway beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1149",
+        "original_name": "pdf-s141-xref1149",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "279"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeyh Ulema Yusuf Ağa Camii (kitap s. 279)",
+        "en": "Şeyh Ulema Yusuf Ağa Mosque (book p. 279)"
+      },
+      "alt": {
+        "tr": "İç mekanda iki mavi sütun, kırmızı halılar ve arka planda bir kapı görünüyor.",
+        "en": "Inside, two blue pillars, red carpets, and an arched doorway are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

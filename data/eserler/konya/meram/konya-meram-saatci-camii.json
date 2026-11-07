@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-saatci-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî (yaptıran) kitapta 'bilinmemektedir'; founder null.",
+      "Kitap 'minber ... giriş kapısı üzerinde' diyor; İngilizce metin 'minbar minaret' ibaresini kullanıyor, Türkçe metin 'minber, minare' diyor (olası çeviri/yazım belirsizliği).",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni / vakıf şartları kitapta yok (aksi belirtilmedikçe); VGM arşivinden bulunabilir.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Saatçi Camii",
+    "en": "Saatçi Mosque"
+  },
+  "subtitle": {
+    "tr": "1871'de inşa edilen, ahşap çatılı cami",
+    "en": "Mosque built in 1871 with a timber gable roof"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap çatı",
+    "kadınlar mahfili",
+    "minber"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Hoşhavanata Saatçi Mahallesi",
+    "address": "Baruthane Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "108"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.865693,
+      "lng": 32.496812,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1559300489 ('Saatcı Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1871",
+      "en": "1871"
+    },
+    "start_year": 1871,
+    "end_year": 1871,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap caminin 1871'de inşa edildiğini belirtir.",
+      "en": "The book states the mosque was built in 1871."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "108"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hoşhavanata Saatçi Mahallesi'ndeki, 1871'de inşa edilmiş, enlemesine dikdörtgen planlı ahşap beşik çatılı cami. Banisi bilinmemektedir; bugün ibadete açıktır.",
+    "en": "A transverse rectangular mosque with a timber gable roof built in 1871 in Hoşhavanata Saatçi Neighborhood. Its founder is unknown; it is still in use."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami Hoşhavanata Saatçi Mahallesi, Baruthane Caddesi'ndedir. 1871'de inşa edilen caminin banisi bilinmemektedir. Dikdörtgen planlıdır; üzeri ahşap beşik çatı ve kiremitle kaplıdır. Enlemesine dikdörtgen planlı harim, son cemaat yeri, minber ve minareden oluşur; giriş kapısı üzerinde minber ve minare yer alır. Son cemaat yerine ahşap tavanlı harimden geçilir. Kıble duvarındaki mihrap yarım daire planlıdır. Harimin kuzeyindeki kadınlar mahfili ahşaptır, tavanı yakın zamanda duralitle kaplanmıştır. Cami günümüzde de ibadete açıktır.",
+        "en": "The mosque is on Baruthane Street, Hoşhavanata Saatçi Neighborhood. Built in 1871, its founder is unknown. It has a rectangular plan with a timber gable roof covered with tiles, and consists of a transverse rectangular harim, narthex, minbar and minaret; the minbar and minaret stand over the entrance door. The narthex is reached through the timber-ceilinged harim. The mihrab on the qibla wall is semicircular. The women's gallery in the north of the harim is of wood, its ceiling recently covered with duralite. The mosque is still open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "108"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1871",
+      "year": 1871,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa edildi (banisi bilinmiyor)",
+        "en": "Mosque built (founder unknown)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "108"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Saatçi Camii, enlemesine uzanan dikdörtgen planlı, kiremit kaplı ahşap beşik çatılı bir mahalle camisidir. Giriş kapısının üzerinde minare yükselir. İçeride ahşap tavanlı bir harim, kuzeyde ahşap bir kadınlar mahfili ve kıble duvarında yarım daire planlı bir mihrap bulunur.",
+      "en": "Saatçi Mosque is a neighbourhood mosque with a transverse rectangular plan and a tiled timber gable roof. The minaret rises above the entrance door. Inside are a timber-ceilinged harim, a wooden women's gallery to the north and a semicircular mihrab on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Konya Vakıf Eserleri I. Cilt) esas alınarak yazılmıştır."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "108-108"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=362",
+        "original_name": "pdf-s56-xref362",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "108"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Saatçi Camii (kitap s. 108)",
+        "en": "Saatçi Mosque (book p. 108)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kiremit çatılı iki katlı bir cami. Ön cephesinde ahşap pencere ve kapı, bir balkon ve taş duvarlı bir çit var.",
+        "en": "A two-story mosque with white walls and a tiled roof. It has wooden windows and doors, a balcony, and a stone wall fence."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=364",
+        "original_name": "pdf-s56-xref364",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "108"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Saatçi Camii (kitap s. 108)",
+        "en": "Saatçi Mosque (book p. 108)"
+      },
+      "alt": {
+        "tr": "Ahşap tavan, pencere ve kapı çerçeveleriyle kaplı iç mekanda, zeminde desenli halılar var.",
+        "en": "Wooden ceiling, window and door frames in the interior, patterned carpets on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=366",
+        "original_name": "pdf-s56-xref366",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "108"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Saatçi Camii (kitap s. 108)",
+        "en": "Saatçi Mosque (book p. 108)"
+      },
+      "alt": {
+        "tr": "Büyük ağaçlarla çevrili bir avlu. Yol, çim, bir lamba direği ve bir bina görünüyor.",
+        "en": "A courtyard with large trees, a path, grass, a lamp post, and a building."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

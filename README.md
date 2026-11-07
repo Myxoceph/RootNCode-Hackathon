@@ -12,7 +12,7 @@ deneyimle keşfettirir.
 
 | # | Modül | Ne yapar |
 |---|---|---|
-| 1 | Zaman Perdesi | Kamera üzerinde arşiv fotoğrafı (ghost overlay) ve önce/sonra kaydırıcısı |
+| 1 | Ziyaret Mührü | Eserde belirlenen kısmı kameraya göster; telefon tanıyınca ziyaret mühürlenir (kanıtlanır), rozet ve puan kazanılır |
 | 2 | Taşın Dili | Marker tabanlı AR ile kitabe çözümü: transkripsiyon, meal, vakfiye şartı |
 | 3 | Kentsel Ağ & Sis Açma | Eserler arası gelir, su, vakıf ve mimar ilişkileri; keşfettikçe açılan harita |
 | 4 | Vakıf Travel Planner | Tematik rota dizilimi ve anlık hava durumu |
@@ -93,10 +93,18 @@ curl http://localhost:3000/health               # {"status":"ok","db":"up",...}
 | `GET /assets`, `GET /assets/:id` | Eser listesi (filtre, arama, harita kutusu) ve detayı |
 | `GET /assets/:id/relations`, `GET /assets/:id/nearby` | Eserler arası bağlar ve yakındaki eserler |
 | `GET /meta/enums` | Filtre ve rozet kod listeleri |
-| `GET /routes/plan`, `GET /weather` | Vakıf Travel Planner: tematik yürüyüş rotası ve anlık hava durumu (Open-Meteo) |
+| `GET /routes/plan`, `GET /weather` | Vakıf Travel Planner: tematik yürüyüş rotası, anlık hava durumu ve 7 günlük tahmin (Open-Meteo) |
+| `GET /routes/trip` | Yarım günden beş güne kadar gezi: önemli eserler önce, hava tahminine göre sıralı, öğle ve tatlı molalarında yöresel lezzetlerle |
+| `GET /meta/sounds` | Sesli Zaman Kapsülü: yayındaki ortam sesi kayıtları (altyazı ve lisansla); eser detayında `ambientSound.recording` |
+| `GET /cities/:code/dishes` | Yöresel Kültür & Gastronomi: ilin coğrafi işaret tescilli yöresel lezzetleri, kaynaklı |
 | `POST /auth/anonymous`, `GET /me` | Takma adla anonim oturum (token) |
+| `POST /auth/register`, `/auth/login`, `/auth/logout`, `/auth/upgrade` | Kullanıcı adı + parolayla hesap; anonim ziyaretçi hesap açınca notları kendisinde kalır |
 | `POST /assets/:id/contributions`, `GET /assets/:id/pulse` | Ziyaretçi Nabzı: katkı gönderme ve onaylanmış katkılar |
-| `GET /admin/contributions`, `POST /admin/contributions/:id/approve` | Moderasyon kuyruğu (moderatör token'ı: `npm run moderator:create --workspace @vagabonds/api -- "<ad>"`) |
+| `POST /assets/:id/photos`, `GET /assets/:id/photos`, `GET /photos/:id` | Ziyaretçi fotoğraf önerileri: yükleme (meta verisi silinir), onaylananların listesi ve dosyası |
+| `POST /assets/:id/visit`, `GET /achievements`, `GET /me/achievements`, `GET /me/visits` | Ziyaretler ve başarımlar: rozet ve puan; liste [`docs/achievements.md`](docs/achievements.md) |
+| `GET /rewards`, `GET /me/wallet`, `POST /rewards/:code/redeem`, `POST /assets/:id/visit/proof` | Ödül kataloğu ve cüzdan, Ziyaret Mührü ile kanıtlanmış ziyaret; anlatım [`docs/rewards.md`](docs/rewards.md) |
+| `GET /admin/summary`, `/admin/users`, `/admin/assets` | Yönetim paneli: özet, kullanıcılar ve roller, panelden eser ekleme |
+| `GET /admin/contributions`, `POST /admin/contributions/:id/approve` | Moderasyon kuyruğu (moderatör ya da admin hesabı: `npm run account:create --workspace @vagabonds/api -- <kullanıcı-adı> <moderator\|admin>`) |
 
 Yanıt şemaları ve istemci örnekleri: [`packages/contracts/README.md`](packages/contracts/README.md).
 

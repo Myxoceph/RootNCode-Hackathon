@@ -1,0 +1,340 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-seyh-osman-rumi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 140) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mimari tanım kitapta yok; sahadan ya da başka kaynaktan eklenmeli.",
+      "Banisi kitapta belirtilmiyor.",
+      "Şeyh Hasan Rûmi Türbesi ayrı kayıt olarak yazılmadı (kitapta ayrı bölümü yok); ayrı kayıt gerekirse eklenmeli.",
+      "Yapım yılı 1972 için Hicri/miladi karşılaştırması yok.",
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "people",
+        "note": "Metin hem 'Şeyh Hasan Rûmi Türbesi'nin avluda olduğunu' hem 'Şeyh Osman Rûmi'nin caminin yanındaki türbede medfun olduğunu' söylüyor; türbenin kime ait olduğu (Hasan mı, Osman mı, ikisi mi) açık değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şeyh Osman Rûmi Camii",
+    "en": "Şeyh Osman Rûmi Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "1972",
+    "Şeyh Hasan Rûmi Türbesi",
+    "avlu",
+    "Mevlâna çevresi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Sahip Ata Mahallesi",
+    "address": "Yavuz Selim Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "140"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.868613,
+      "lng": 32.493426,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/366781542 ('Şeyh Osman Rumi Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1972",
+      "en": "1972"
+    },
+    "start_year": 1972,
+    "end_year": 1972,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap caminin 1972'de yapıldığını söylüyor.",
+      "en": "The book states the mosque was built in 1972."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "140"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Şeyh Hasan Rûmi Türbesi'nin de bulunduğu geniş bir avlu içinde yer alan cami 1972'de yapılmıştır. Kitap, Şeyh Osman Rûmi'nin Mevlâna ile aynı medresede bulunan alimlerden biri olduğunu aktarır ve yapı için başka mimari ayrıntı vermez.",
+    "en": "The mosque stands in a large courtyard that also contains the Şeyh Hasan Rûmi Tomb and was built in 1972. The book says Şeyh Osman Rûmi was among the scholars who were with Mevlâna at the same madrasa and gives no further architectural detail."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Cami ve Şeyh Osman Rûmi",
+        "en": "The Mosque and Şeyh Osman Rûmi"
+      },
+      "body": {
+        "tr": "Şeyh Osman Rûmi Camii, Şeyh Hasan Rûmi Türbesi'nin de içinde bulunduğu geniş bir avluda yer alır ve 1972'de yapılmıştır. Şeyh Osman Rûmi'nin doğum yeri ve yılı bilinmemektedir; Hasan Rûmi onun kardeşidir. Osman Rûmi, Mevlâna'nın Şam-Berraniye Medresesi'nde Şems-i Tebrizî, Sadreddin-i Konevi ve Sadreddin-i Hamevi gibi alimlerle bir arada bulunmuş isimlerden biridir. Caminin yanındaki türbede medfundur.",
+        "en": "The Şeyh Osman Rûmi Mosque stands in a large courtyard that also contains the Şeyh Hasan Rûmi Tomb and was built in 1972. The birthplace and year of Şeyh Osman Rûmi are unknown; Hasan Rûmi is his brother. Osman Rûmi is one of the scholars who were with Mevlâna at the Damascus-Berraniye Madrasa alongside Şems-i Tebrizî, Sadreddin-i Konevi and Sadreddin-i Hamevi. He is buried in the tomb next to the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "140"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "niksari-intisabi",
+      "title": {
+        "tr": "Ebubekir Niksari'nin intisabı",
+        "en": "Ebubekir Niksari's affiliation"
+      },
+      "body": {
+        "tr": "Ebubekir Niksari'nin bu dönemde Şeyh Osman Rûmi'ye intisap ettiği rivayet edilmektedir.",
+        "en": "It is rumored that Ebubekir Niksari became affiliated with Şeyh Osman Rûmi during this period."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "140"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "yapim_yili",
+      "label": {
+        "tr": "Yapım yılı",
+        "en": "Year built"
+      },
+      "value": 1972,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "140"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şeyh Osman Rûmi",
+      "role": {
+        "tr": "Adına cami ve türbesi anılan şeyh",
+        "en": "Sheikh after whom the mosque is named; buried in the adjacent tomb"
+      }
+    },
+    {
+      "name": "Şeyh Hasan Rûmi",
+      "role": {
+        "tr": "Osman Rûmi'nin kardeşi; avludaki türbe onun adını taşır",
+        "en": "Brother of Osman Rûmi; the tomb in the courtyard bears his name"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1972,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "140"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-meram-seyh-osman-rumi-turbesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Şeyh Osman Rûmi, caminin yanındaki türbede medfundur.",
+        "en": "Sheikh Osman Rûmi is buried in the tomb next to the mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "140"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-meram-seyh-hasan-i-rumi-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami, Şeyh Hasan Rûmi Türbesi'nin de içinde bulunduğu geniş bir avluda yer alır.",
+        "en": "The mosque stands in a wide courtyard that also holds the tomb of Sheikh Hasan Rûmi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "140"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şeyh Osman Rûmi Camii, Yavuz Selim Caddesi üzerinde, Şeyh Hasan Rûmi Türbesi'ni de içine alan geniş bir avlunun içindedir. 1972'de yapılmış çağdaş bir camidir; kitap iç ve dış mimarisine ilişkin ayrıntı vermez.",
+      "en": "Şeyh Osman Rûmi Mosque stands on Yavuz Selim Street inside a large courtyard that also contains the Şeyh Hasan Rûmi Tomb. It is a modern mosque built in 1972; the book gives no detail about its interior or exterior architecture."
+    }
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]",
+      "en": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "140-140"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=506",
+        "original_name": "pdf-s72-xref506",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "140"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Şeyh Osman Rûmi Camii (kitap s. 140)",
+        "en": "Şeyh Osman Rûmi Mosque (book p. 140)"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı çatılı, krem renkli duvarlı cami. Dört tane kemerli pencere ve yanındaki küçük yapıda da benzer pencere var.",
+        "en": "A mosque with a tiled roof and cream-colored walls. Four arched windows and a similar window on the adjacent small structure."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=508",
+        "original_name": "pdf-s72-xref508",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "140"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeyh Osman Rûmi Camii (kitap s. 140)",
+        "en": "Şeyh Osman Rûmi Mosque (book p. 140)"
+      },
+      "alt": {
+        "tr": "İç mekanda mavi halılar, ahşap minber, kemerli pencereler ve duvarlarda geometrik desenli mozaikler var.",
+        "en": "Inside, there are blue carpets, a wooden minbar, arched windows, and geometric mosaic patterns on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=510",
+        "original_name": "pdf-s72-xref510",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "140"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Şeyh Osman Rûmi Camii (kitap s. 140)",
+        "en": "Şeyh Osman Rûmi Mosque (book p. 140)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı bir odada, yeşil bir örtüyle kaplı, taştan bir sanduka yer alıyor. Sol tarafta ahşap bir kapı var.",
+        "en": "A stone sarcophagus covered with a green cloth stands in a room with white walls. A wooden door is on the left."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

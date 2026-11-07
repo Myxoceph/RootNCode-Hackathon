@@ -1,5 +1,5 @@
 import { palette } from "@vagabonds/ui";
-import { ScrollViewStyleReset } from "expo-router/html";
+import { ScrollViewStyleReset, useServerDocumentContext } from "expo-router/html";
 import type { PropsWithChildren } from "react";
 
 /**
@@ -8,25 +8,28 @@ import type { PropsWithChildren } from "react";
  *
  * - `lang="tr"` makes screen readers pronounce the content as Turkish.
  * - The viewport must allow zooming (WCAG 1.4.4), so no `user-scalable=no`.
- * - The background is set before React loads to avoid a white flash in dark mode.
+ * - The background is set before React loads, in the light theme the app opens with.
+ * - Since SDK 58 the app's scripts, styles and favicon come through `useServerDocumentContext`;
+ *   without `headNodes` and `bodyNodes` the page renders but never loads its JavaScript.
  */
 export default function Root({ children }: PropsWithChildren) {
+  const { htmlAttributes, bodyAttributes, headNodes, bodyNodes } = useServerDocumentContext();
   return (
-    <html lang="tr">
+    <html {...htmlAttributes} lang="tr">
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <ScrollViewStyleReset />
         <style dangerouslySetInnerHTML={{ __html: background }} />
+        {headNodes}
       </head>
-      <body>{children}</body>
+      <body {...bodyAttributes}>
+        {children}
+        {bodyNodes}
+      </body>
     </html>
   );
 }
 
-const background = `
-body { background-color: ${palette.gece950}; }
-@media (prefers-color-scheme: light) {
-  body { background-color: ${palette.gece50}; }
-}`;
+const background = `body { background-color: ${palette.gece50}; }`;

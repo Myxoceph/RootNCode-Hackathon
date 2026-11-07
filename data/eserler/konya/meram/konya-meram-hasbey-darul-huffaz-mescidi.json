@@ -1,0 +1,418 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-hasbey-darul-huffaz-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Kitabe metni kitapta yok; transliterasyon ve meal aranmalı.",
+      "Onarımların yılları kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Kubbe kasnağı Türkçe metinde 'onaltıgen' (16 köşeli), İngilizce metinde 'hexagonal' (altıgen) diye geçer. 'Dört yönde pencere' ifadesiyle Türkçe daha tutarlı görünüyor; Türkçe esas alındı."
+      },
+      {
+        "field": "founder",
+        "note": "Metin kitabede 'Hatıplı Hacı Hasbey oğlu Mehmet' adını bani olarak verir; İngilizce 'Mehmet II' hükümdar adıdır, bani ile karıştırılmamalı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hasbey (Dar'ül Huffaz) Mescidi",
+    "en": "Hasbey (Dar'ul Huffaz) Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "mescit",
+    "dârü'l-huffaz",
+    "Karamanoğulları",
+    "çini mozaik mihrap",
+    "kripta",
+    "kitabeli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Mücellit Mahallesi",
+    "address": "Ayine Sokak No: 2",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "163-165"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.852359,
+      "lng": 32.420236,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/311535718 ('Hasbey Mescidi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 824 / M. 1421",
+      "en": "824 AH / 1421 AD"
+    },
+    "start_year": 1421,
+    "end_year": 1421,
+    "hijri_year": 824,
+    "century": 15,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki iki satırlık kitabede belirtilir.",
+      "en": "Stated in the two-line inscription over the entrance."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "163"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hatıplı Hacı Hasbey oğlu Mehmet",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "163"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Mücellit Mahallesi'nde, kitabesine göre H. 824 / M. 1421'de Karamanoğlu II. Mehmet Bey zamanında yaptırılan, çini mozaik mihrabıyla Anadolu'ya has bu tür mihrapların son örneklerinden biri sayılan, altında kripta bulunan Karamanoğlu dönemi dârü'l huffazı.",
+    "en": "A Karamanoğlu-period dârü'l huffaz in Mücellit Neighborhood, built in 824 AH / 1421 AD per its inscription during the reign of Mehmet II; its tile-mosaic mihrab is among the last of the Anatolian type, and it has a crypt below."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Mescit, Meram, Mücellit Mahallesi, Ayine Sokak, No. 2'de yer almaktadır. Giriş kapısı üzerindeki iki satırlık kitâbeye göre Karamanoğlu Alâeddin Bey'in oğlu II. Mehmet Bey zamanında, Hatıplı Hacı Hasbey oğlu Mehmet tarafından H. 824 / M. 1421 senesinde yaptırılmıştır. Mescit günümüze kadar çeşitli tamiratlar geçirmiştir. Yapının altında cenazelik (kripta) bölümü vardır.",
+        "en": "The masjid is at Ayine Street No: 2, Mücellit Neighborhood, Meram. According to the two-line inscription over the entrance, it was built in 824 AH / 1421 AD by Mehmet, son of Hatıplı Hacı Hasbey, during the reign of Mehmet II, son of Karamanoğlu Alâeddin Bey. It has undergone various repairs. There is a crypt below the building."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "163"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlı ve kubbelidir. Kubbe kasnağı yüksek tutulmuş, kubbeye üçgenlerle geçilen onaltıgen kasnağın dört yönünde pencereler açılmıştır; kubbe yüzeyinde üç sıra üçgen dişler görülür. Cepheler kesme taştır, dökülen kaplama yerleri tuğlayla onarılmıştır. Kuzey, güney ve doğu cepheler saçak ve subasman kotunda dolaşan silme kuşağıyla çerçevelenmiştir. Güney cephe sağırdır; kuzeyde kriptaya giriş sağlayan Bursa kemerli bir kapı vardır. Batıdaki giriş kapısına üç basamaklı merdivenle çıkılır; iki yanındaki bordürler rûmi ve zencerek motiflidir, lento ile alınlık arasında iki satırlık celî sülüs inşa kitâbesi bulunur, iki yanda mermerden tamamlanmamış süslemeler görülür. Alt kattaki kripta çapraz tonozludur ve içinde yeni eklenmiş kitâbesiz bir sanduka vardır.",
+        "en": "The masjid has a square plan with a dome. The dome drum is high; windows open in four directions of the drum, which connects to the dome by triangles, and the dome surface has three rows of triangular teeth. Facades are cut stone, with fallen areas repaired in brick, framed by mouldings at eaves and plinth level. The south facade is blind; on the north a Bursa-arched door gives access to the crypt. The west entrance is reached by a three-step stair; its borders have rumi and guilloche motifs, a two-line celi thuluth inscription lies between lintel and pediment, and unfinished marble ornaments flank the door. The crypt is cross-vaulted and holds a recently added uninscribed sarcophagus."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "163-164"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 3,
+      "title": {
+        "tr": "Çini Mozaik Mihrap",
+        "en": "Tile-Mosaic Mihrab"
+      },
+      "body": {
+        "tr": "Kıble duvarı ortasındaki mihrap çini mozaikle kaplıdır; nişteki ve dört sıra mukarnaslı kavsaradaki çini kaplamalar büyük ölçüde dökülmüştür. Sekiz kenarlı niş geometrik motifler ve mozaik çinilerle kaplıdır. Nişi üç yönden kuşatan bordürler patlıcan moru, turkuaz ve kobalt mavisi zencerek, ağ ve ritmik dizilmiş palmet motiflerinden oluşur. Zar başlıklı sütuncelerin bordürleri firuzedir. Kıble duvarı mihrapla uyumlu turkuaz altıgen plakalar ve mor üçgenlerden altı kollu yıldızlarla kaplıdır. Kavsara köşelerinde kırık çizgiler ve dört kollu çarkıfelekler vardır. Hasbey Dâr'ül Huffâz'ı Karamanoğulları döneminin Konya'daki en nadide eserlerindendir; mihrabı Anadolu'ya has çini mozaik mihrapların son örneklerindendir.",
+        "en": "The mihrab on the qibla wall is covered with tile mosaic, though the coverings of the niche and the four-row muqarnas hood have largely fallen off. The eight-sided niche carries geometric motifs and mosaic tiles; borders on three sides are palmettes in guilloche, web and rhythmic arrangements in aubergine purple, turquoise and cobalt blue; the dice-headed colonnettes have turquoise borders. The qibla wall is covered with turquoise hexagonal plates and purple six-pointed stars. The corners of the hood have broken lines and four-armed passionflowers. Hasbey Dâr'ul Huffâz is one of the rarest Karamanoğlu-period works in Konya, and its mihrab is among the last tile-mosaic mihrabs unique to Anatolia."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "164-165"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kitabe_satir",
+      "label": {
+        "tr": "Kitabe satır sayısı",
+        "en": "Inscription lines"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "163"
+        }
+      ]
+    },
+    {
+      "key": "mihrap_nisi_kenar",
+      "label": {
+        "tr": "Mihrap nişi kenar sayısı",
+        "en": "Mihrab niche sides"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "164"
+        }
+      ]
+    },
+    {
+      "key": "mukarnas_sira",
+      "label": {
+        "tr": "Kavsara mukarnas sırası",
+        "en": "Muqarnas rows in hood"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "165"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mehmet (Hatıplı Hacı Hasbey oğlu)",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "II. Mehmet Bey (Karamanoğlu)",
+      "role": {
+        "tr": "Yapım sırasında hüküm süren Karamanoğlu beyi (Alâeddin Bey'in oğlu)",
+        "en": "Karamanoğlu ruler at the time of construction, son of Alâeddin Bey"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Giriş kapısının lento ile alınlığı arasında",
+        "en": "Between the lintel and pediment of the entrance door"
+      },
+      "language": "ar",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 824,
+        "gregorian": "1421"
+      },
+      "ar_target_media_id": null,
+      "note": {
+        "tr": "İki satırlıktır; metni kitapta verilmemiş, yalnızca bani ve tarih içeriği aktarılmıştır.",
+        "en": null
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "163-164"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1421",
+      "year": 1421,
+      "date": null,
+      "hijri": "824",
+      "type": "construction",
+      "title": {
+        "tr": "Mescidin yapımı",
+        "en": "Construction of the masjid"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "163"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, kesme taş cepheli, kubbeli bir mescittir. Güney cephesi sağırdır; kuzeyde alttaki kripta bölümüne açılan Bursa kemerli bir kapı vardır. Batıdaki girişe üç basamaklı bir merdivenle çıkılır, kapının iki yanındaki bordürlerde rûmi ve zencerek süslemeleri görülür. İçeride kıble duvarındaki sekiz kenarlı mihrap niş ve duvar yüzeyi turkuaz, mor ve kobalt mavisi çini mozaiklerle kaplıdır.",
+      "en": "A square, domed masjid with cut-stone facades. The south facade is blind; on the north a Bursa-arched door leads to the crypt below. The west entrance is reached by a three-step stair, with rumi and guilloche borders on either side. Inside, the eight-sided mihrab niche and the qibla wall are covered in turquoise, purple and cobalt-blue tile mosaic."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "163-165"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=618",
+        "original_name": "pdf-s83-xref618",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "163"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Hasbey (Dar'ül Huffaz) Mescidi (kitap s. 163)",
+        "en": "Hasbey (Dar'ul Huffaz) Masjid (book p. 163)"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı, taştan inşa edilmiş bir yapı. Üstünde kubbe, girişte ahşap kapı ve yanlarında pencereler var. Etrafında taş kalıntıları ve bitkiler var.",
+        "en": "A brick-covered, stone-built structure. It has a dome on top, a wooden door at the entrance, and windows on the sides. Stone fragments and plants surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=622",
+        "original_name": "pdf-s84-xref622",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "164"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Hasbey (Dar'ül Huffaz) Mescidi (kitap s. 164)",
+        "en": "Hasbey (Dar'ul Huffaz) Masjid (book p. 164)"
+      },
+      "alt": {
+        "tr": "Kiremit duvar içinde ahşap kapı, taşla süslenmiş kemerli giriş. Üstte beyaz levha ve arka planda kemerli pencere.",
+        "en": "Wooden door in a stone-arched portal, framed by carved stonework. A white plaque above, brick wall behind."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=626",
+        "original_name": "pdf-s84-xref626",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "165"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Hasbey (Dar'ül Huffaz) Mescidi (kitap s. 165)",
+        "en": "Hasbey (Dar'ul Huffaz) Masjid (book p. 165)"
+      },
+      "alt": {
+        "tr": "Mescidin içinde mavi çinilarla kaplı, kemerli bir mihrap ve yanında ahşap merdivenli bir kürsü yer alıyor.",
+        "en": "A mihrab with blue tiles and an arched niche, next to a wooden minbar with stairs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=624",
+        "original_name": "pdf-s84-xref624",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "165"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Hasbey (Dar'ül Huffaz) Mescidi (kitap s. 165)",
+        "en": "Hasbey (Dar'ul Huffaz) Masjid (book p. 165)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış, kabartmalı arapça yazılar ve geometrik desenler içeren bir levha.",
+        "en": "A stone plaque with raised Arabic inscriptions and geometric patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

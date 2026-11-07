@@ -1,0 +1,866 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-sems-i-tebrizi-camii-ve-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 223-227, 230-231) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "Külliyenin bânîsi kitapta belirtilmiyor; Emir İshak Bey yalnızca 1510 vakfiyesindeki ekleyen olarak people'da.",
+      "İshak Bey Türbesi (caminin 25 m kuzeydoğusu) için ilişki yazıldı; hedef id varsayımsal, ilçesi metinde açıkça yok (Şems Mahallesi, Karatay varsayıldı).",
+      "Mevcut dönem özgün planı kitapta yalnızca varsayımla 'kare planlı tek kubbeli' olarak anlatılıyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architecture.shadirvan",
+        "note": "Kitap s. 227'de 'Cami, türbe ve 1992'de yenilenmiş olan şadırvan günümüze gelebilmiş yapılardır' diyor; s. 230-231'de ise 'Günümüzde mevcut olmayan şadırvan yapıların kuzeyinde yer almaktaydı' diyor. Çelişki işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Şems-i Tebrizi Camii ve Türbesi",
+    "en": "Shams-i Tabrizi Mosque and Tomb"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şems Camii ve Türbesi",
+      "en": "Shams Mosque and Tomb"
+    },
+    {
+      "tr": "Şems-i Tebrizi Külliyesi",
+      "en": "Shams-i Tabrizi Complex"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Şems-i Tebrizî",
+    "Mevlevi geleneği",
+    "Emir İshak Bey",
+    "Şems Mezarlığı",
+    "Hacet Penceresi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Şems Mahallesi",
+    "address": "Şems Caddesi (Şerafeddin Camii'nin kuzeyi)",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "223-227, 230-231"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.87368,
+      "lng": 32.497529,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/4327734312 ('Şems-i Tebrizi Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl (tahmini); vakfiye H. 915 / M. 1510",
+      "en": "13th century (estimated); deed 915 AH / 1510 AD"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Külliyenin inşa tarihi tam bilinmiyor; XIII. yüzyılda yapıldığı düşünülüyor. Karamanoğulları ve Osmanlı dönemlerinde geniş onarım gördü. Kesin yıl yok.",
+      "en": "The construction date of the complex is not exactly known; it is thought to date from the 13th century, with extensive repairs in the Karamanoğulları and Ottoman periods. No exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "223-225"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "H. 915 / M. 1510 tarihli Arapça vakfiyede (Konya Vakıflar Müdürlüğü 4 numaralı defter, s. 106) Emir İshak Bey'in mescidin güneyine yeni bir bina eklediği, dârülhuffâzı genişletip batısına iki oda yaptırdığı, mektep ve dershane inşa ettirdiği ve külliyenin yaşaması için vakıflar kurduğu belirtilir. H. 1088 / M. 1677, H. 1129 / M. 1717 ve H. 1211 / M. 1796 tarihli şer'iyye defterlerinde türbe ve mescidin vakıf yeri, gelirleri ve tayinlerine dair bilgi vardır.",
+      "en": "The Arabic deed dated 915 AH / 1510 AD (Konya Foundations Directorate book 4, p. 106) says Emir İshak Bey added a new building south of the mosque, enlarged the dârülhuffâz with two rooms on its west, built a school and a classroom, and established waqfs so the complex would survive. Shariyya books of 1088 AH / 1677 AD, 1129 AH / 1717 AD and 1211 AH / 1796 AD contain information on the waqf land, revenues and appointments of the tomb and masjid."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "223-227, 230-231"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Mevlâna'nın yakın dostu Şems-i Tebrizî adına yaptırılan, caminin yanındaki türbede onun medfun olduğu belirtilen Şems Külliyesi'nin camisi ve türbesi. Yapılar XIII. yüzyıla tarihlendiriliyor; 1510 vakfiyesine göre Emir İshak Bey eklemeler yaptırdı. 1924'e kadar Mevlâna'yı ziyarete gelen dervişler ilk geceyi burada geçirirdi.",
+    "en": "The mosque and tomb of the Shams Complex, named for Shams-i Tabrizi, close friend of Mevlâna, who is said to be buried in the tomb beside the mosque. The structures are dated to the 13th century; per a 1510 deed Emir İshak Bey made additions. Until 1924, Mevlevi dervishes visiting Mevlâna spent their first night here."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Camiye adını veren Şems-i Tebrizî, Mevlâna Celaleddin-i Rûmi'nin gönül dünyasında etkili olan yakın dostudur ve caminin bitişiğindeki türbede medfun olduğu belirtilir. Türbe, cami ve semahaneden oluşan Şems Külliyesi'nin inşa tarihi tam bilinmemekte, XIII. yüzyılda yapıldığı düşünülmektedir. Karamanoğulları ve Osmanlı dönemlerinde geniş onarım görmüştür. Alan Selçuklu döneminde Âhi Bedreddin Gühertaş'ın bağıydı.",
+        "en": "Shams-i Tabrizi, who gave the mosque its name, was a close friend of Mevlâna Celaleddin-i Rûmi, influential in his spiritual world, and is said to be buried in the tomb adjoining the mosque. The construction date of the Shams Complex, consisting of a tomb, mosque and semahane, is not exactly known; it is thought to date from the 13th century. It was extensively repaired in the Karamanoğulları and Ottoman periods. In the Seljuk period the site was the vineyard of Âhi Bedreddin Gühertaş."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "223"
+        }
+      ]
+    },
+    {
+      "id": "vakfiye-ve-kulliye",
+      "order": 2,
+      "title": {
+        "tr": "Vakfiye ve külliye",
+        "en": "Deed and complex"
+      },
+      "body": {
+        "tr": "H. 915 / M. 1510 tarihli Arapça vakfiyeye göre Emir İshak Bey mescidin güneyine yeni bir bina ekletmiş, dârülhuffâzı genişletip batısına iki oda yaptırmış, Kur'an öğrenimi için mektep ve dershane inşa ettirmiş, külliyenin kıyamete kadar yaşaması için vakıflar kurmuştur. İshak Bey Türbesi caminin 25 m kuzeydoğusundadır. Külliye; mescit, türbe, mektep, dershane, dârülhuffâz, Şems Dedesi Evi, dervişlere mahsus dört hücre ve bir salon, kuyu ve şadırvandan oluşuyordu; çevresinde Osmanlı döneminde oluşmuş büyük bir mezarlık vardı. 1944'e kadar türbenin kuzeyinde dört oda ve sofalı bir türbedar bölümü ile güneyi bahçeli iki katlı türbedar evi bulunuyordu.",
+        "en": "According to the Arabic deed of 915 AH / 1510 AD, Emir İshak Bey had a new building added south of the mosque, enlarged the dârülhuffâz with two rooms on its west, built a school and classroom for Qur'an learning and established waqfs so the complex would live until the end of time. İshak Bey's Tomb is 25 m northeast of the mosque. The complex consisted of a masjid, tomb, school, classroom, dârülhuffâz, Şems Dede house, four dervish cells and a hall, a well and a shadirvan, with a large Ottoman-period cemetery around it. Until 1944 a four-room turbedar section with a sofa lay north of the tomb, and a two-storey turbedar house with a garden to its south."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "224-225"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 3,
+      "title": {
+        "tr": "Onarımlar ve mezarlığın kaldırılması",
+        "en": "Repairs and removal of the cemetery"
+      },
+      "body": {
+        "tr": "Şems Mezarlığı 26.04.1944'te belediye tarafından yol yapımı için yıktırılmış, mezar taşlarının bir kısmı Sırçalı Medrese Mezar Anıtları Müzesi'ne kaldırılmış, alan park yapılmıştır. Cami ve türbe 1944'ten sonra onarım görmüştür: 1954'te Şahabettin Uzluk başkanlığında Türkiye Anıtlar Derneği Konya Şubesi onarmış; 1960 ve 1977 restorasyonlarıyla asli hâlini büyük oranda kaybetmiş; 1992 ve 2000'de onarılmıştır. İ. H. Konyalı mezarlığın bir kısmını yıkımdan önce okumuştur.",
+        "en": "Şems Cemetery was demolished by the municipality on 26.04.1944 for a road; some gravestones were moved to the Sırçalı Madrasa Grave Monuments Museum and the area became a park. The mosque and tomb were repaired after 1944: by the Turkish Monuments Association Konya Branch under Şahabettin Uzluk in 1954; they lost much of their original state in the 1960 and 1977 restorations; repairs in 1992 and 2000. İ. H. Konyalı read part of the cemetery before its demolition."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "224-227, 230"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 4,
+      "title": {
+        "tr": "Cami: mimari özellikler",
+        "en": "Mosque: architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlı, kırma çatılıdır; Selçuklu döneminde kare planlı tek kubbeli olduğu düşünülür. Cepheler sadedir; iki katlı düz lentolu pencereler ve katlar arasında cepheleri dolanan ahşap hatıl vardır. Doğuda altı sütunun taşıdığı, sonradan camekânla kapatılmış bir revak bulunur; İ. H. Konyalı revakta 1320/1902'de vefat eden Şems Dergâhı Postnişini Ahmet Şükrü, Ayni Hüseyin ve Şems Dedesi Mustafa Sabri'nin kabirleri olduğunu belirtir. Kuzeybatıdaki minare yakın zamanda eklenmiş, kare kaideli, tek şerefeli, çokgen gövdelidir. Harim kuzey-güney yönünde dikdörtgendir; ortadaki büyük sivri kemerin taşıdığı ahşap düz dam örtülüdür. Ahşap mihrap ve batısındaki minber sonradan eklenmiştir; özgün mihrap mukarnas kavsaralı ve iki kabaralıdır. Ahşap mahfilin kalem işi süslemeleri klasik Osmanlı anlayışında, sarı, kırmızı ve yeşil yaprak, çiçek ve şakayıklardan oluşur.",
+        "en": "The mosque has a deeply rectangular plan and a hipped roof; it is thought to have been square with a single dome in the Seljuk period. The facades are plain, with two-storey flat-lintel windows and a wooden beam running around all facades between the storeys. East of the mosque is a portico on six columns, later glazed; İ. H. Konyalı says it holds the graves of Ahmet Şükrü (Postnişin of the Şems Dergah, d. 1320/1902), Ayni Hüseyin and Şems Dede Mustafa Sabri. The minaret in the northwest was added recently, with square base, single balcony and polygonal body. The harim extends north-south and has a flat wooden roof carried by a large central pointed arch. The wooden mihrab and the minbar west of it were added later; the original mihrab has a muqarnas hood and two bosses. The wooden mahfil's hand-painted decoration is in classical Ottoman style with yellow, red and green leaves, flowers and peonies."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "226-227"
+        }
+      ]
+    },
+    {
+      "id": "turbe",
+      "order": 5,
+      "title": {
+        "tr": "Türbe",
+        "en": "Tomb"
+      },
+      "body": {
+        "tr": "Harimin batısındaki türbe iki katlı, kare planlı ve eyvan şeklindedir; zemini camiye göre yüksektir ve önü paravanla harimden ayrılmıştır. Zemininde cenazelik katı vardır. Kuzey, güney ve batı duvarlarında düz lentolu, iki katlı birer pencere bulunur; kuzeydeki pencereye 'Hacet Penceresi' denir. Batı duvarında iki dikdörtgen niş vardır. İçten ahşap düz dam, dıştan tuğla sekizgen kasnak üzerinde piramidal külah ile örtülüdür. Ortada yarım silindirik kaide üzerinde ahşap sanduka vardır; üstü puşide ile örtülü, baş tarafında yeşil destarlı sarık bulunur.",
+        "en": "The tomb west of the harim is two-storey, square and arranged as an iwan; its floor is higher than the mosque and its front is separated from the harim by a screen. There is a burial floor below. The north, south and west walls each have a two-storey flat-lintel window; the north one is called the 'Hacet (Wish) Window'. The west wall has two rectangular niches. The roof is flat wood inside and a pyramidal cone on an octagonal brick drum outside. A wooden sarcophagus on a semi-cylindrical base stands in the middle, covered with a cloth and with a green-banded turban at its head."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "230-231"
+        }
+      ]
+    },
+    {
+      "id": "onemi",
+      "order": 6,
+      "title": {
+        "tr": "Külliyenin önemi",
+        "en": "Importance of the complex"
+      },
+      "body": {
+        "tr": "Külliye Konya'nın en önemli eserlerinden biridir. 1924'e kadar Mevlâna'yı ziyarete gelen Mevlevi dervişlerinin ilk gecelerini Şems Külliyesi'nde geçirip ertesi sabah Mevlâna Dergâhı'na geçmeleri önemli bir Mevlevi geleneğiydi. Şadırvan kitâbesine göre H. 1331 / M. 1913 ve H. 1343 / M. 1925'te iki kez tamir edilmiştir; şadırvandan sonra sekizgen ağızlı kuyu vardır.",
+        "en": "The complex is one of Konya's most important works. Until 1924 it was an important Mevlevi tradition for dervishes visiting Mevlâna to stay their first night at the Shams Complex and go to the Mevlâna Dergah next morning. Per its inscription the shadirvan was repaired twice, in 1331 AH / 1913 AD and 1343 AH / 1925 AD; after the shadirvan is a well with an octagonal mouth."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "230-231"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "tigtap-suyu",
+      "title": {
+        "tr": "Tîğ-tâb (tiğtap) suyu",
+        "en": "Tîğ-tâb (tiğtap) water"
+      },
+      "body": {
+        "tr": "Kaynaklarda dergâhlar kapatılıncaya kadar halkın cumartesi günleri Şems Türbesi avlusundaki kuyudan çektiği suyu 'Tîğ-tâb' diyerek içi yazılı sarı bir tastan şifa niyetine içtiği, suyun yürek kalkmasına iyi geldiği belirtilir.",
+        "en": "The sources say that until the dergahs were closed, people drew water from the well in the Shams Tomb courtyard on Saturdays, called it 'Tîğ-tâb', and drank it from a yellow bowl inscribed inside for healing; it was said to be good for the heart."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "225"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "revak_sutun",
+      "label": {
+        "tr": "Revaktaki sütun",
+        "en": "Columns of the portico"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "226-227"
+        }
+      ]
+    },
+    {
+      "key": "cevre_pencere_dogu_kuzey_guney",
+      "label": {
+        "tr": "Cami kuzey, güney ve doğu cephesinde pencere (her cephede)",
+        "en": "Windows on each of the north, south and east facades of the mosque"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "226-227"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şems-i Tebrizî",
+      "role": {
+        "tr": "Mevlâna'nın yakın dostu; türbede medfun olduğu belirtilir",
+        "en": "Close friend of Mevlâna; said to be buried in the tomb"
+      }
+    },
+    {
+      "name": "Emir İshak Bey",
+      "role": {
+        "tr": "1510 vakfiyesine göre ek bina, mektep, dershane yaptıran ve vakıf kuran kişi",
+        "en": "Per the 1510 deed, added a building, school and classroom and established waqfs"
+      }
+    },
+    {
+      "name": "Âhi Bedreddin Gühertaş",
+      "role": {
+        "tr": "Selçuklu döneminde alanın sahibi (bağ)",
+        "en": "Owner of the site's vineyard in the Seljuk period"
+      }
+    },
+    {
+      "name": "Şahabettin Uzluk",
+      "role": {
+        "tr": "1954 onarımını yöneten Türkiye Anıtlar Derneği Konya Şubesi başkanı",
+        "en": "Led the 1954 repair for the Turkish Monuments Association, Konya Branch"
+      }
+    },
+    {
+      "name": "Ahmet Şükrü",
+      "role": {
+        "tr": "Şems Dergâhı Postnişini, 1320/1902'de vefat etti; revakta gömülü",
+        "en": "Postnişin of the Şems Dergah, died 1320/1902; buried in the portico"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "sadirvan-kitabesi",
+      "location": {
+        "tr": "Şadırvan (günümüzde mevcut değil)",
+        "en": "Shadirvan (no longer extant)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1331,
+        "gregorian": "1913; 1925"
+      },
+      "note": {
+        "tr": "Kitâbeye göre şadırvan H. 1331 / M. 1913 ve H. 1343 / M. 1925'te tamir edilmiştir; metin kitapta verilmiyor.",
+        "en": "Per the inscription the shadirvan was repaired in 1331 AH / 1913 AD and 1343 AH / 1925 AD; the text is not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "230-231"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "vakfiye-1510",
+      "year": 1510,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Emir İshak Bey: yeni bina, mektep, dershane ve vakıflar (vakfiye)",
+        "en": "Emir İshak Bey: new building, school, classroom and waqfs (deed)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "224"
+        }
+      ]
+    },
+    {
+      "id": "sicil-1677",
+      "year": 1677,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Şer'iyye defteri: vakıf yeri ve gelir kayıtları",
+        "en": "Shariyya book: waqf land and revenue records"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "224"
+        }
+      ]
+    },
+    {
+      "id": "sicil-1717",
+      "year": 1717,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Şer'iyye defteri kaydı",
+        "en": "Shariyya book record"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "224"
+        }
+      ]
+    },
+    {
+      "id": "sicil-1796",
+      "year": 1796,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Şer'iyye defteri kaydı",
+        "en": "Shariyya book record"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "224"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan-onarim-1913",
+      "year": 1913,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Şadırvan onarımı (H. 1331)",
+        "en": "Shadirvan repair (1331 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "230-231"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan-onarim-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Şadırvan onarımı (H. 1343)",
+        "en": "Shadirvan repair (1343 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "230-231"
+        }
+      ]
+    },
+    {
+      "id": "mezarlik-kaldirildi-1944",
+      "year": 1944,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Şems Mezarlığı belediye tarafından yıktırıldı (26.04.1944)",
+        "en": "Şems Cemetery demolished by the municipality (26.04.1944)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "224-225"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1954",
+      "year": 1954,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Şahabettin Uzluk başkanlığında Türkiye Anıtlar Derneği Konya Şubesi onarımı",
+        "en": "Repair by the Turkish Monuments Association, Konya Branch, under Şahabettin Uzluk"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "226"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1960",
+      "year": 1960,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon",
+        "en": "Restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "226"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1977",
+      "year": 1977,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon",
+        "en": "Restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "226"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1992",
+      "year": 1992,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (şadırvan yenilendi)",
+        "en": "Repair (shadirvan renewed)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "226"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2000",
+      "year": 2000,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "226"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-emir-ishak-bey-turbesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Emir İshak Bey Türbesi caminin 25 metre kuzeydoğusundadır.",
+        "en": "Emir İshak Bey's Tomb is located 25 meters northeast of the mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "223-227, 230-231"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şems-i Tebrizi Camii derinlemesine dikdörtgen planlı, kırma çatılı taş bir camidir; batısında iki katlı, kare planlı, piramidal külahlı türbe bulunur. Doğuda altı sütunlu, camekânlı bir revak, kuzeybatıda tek şerefeli çokgen gövdeli minare vardır. Türbenin ortasında yeşil sarıklı ahşap bir sanduka yer alır.",
+      "en": "Shams-i Tabrizi Mosque is a deeply rectangular stone mosque with a hipped roof; to its west is a two-storey, square tomb with a pyramidal cone. On the east is a glazed portico on six columns and in the northwest a single-balcony minaret with a polygonal body. A wooden sarcophagus with a green turban lies in the middle of the tomb."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 223-227, 230-231)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "224-232"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=900",
+        "original_name": "pdf-s114-xref900",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "224"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şems-i Tebrizi Camii ve Türbesi (kitap s. 224)",
+        "en": "Shams-i Tabrizi Mosque and Tomb (book p. 224)"
+      },
+      "alt": {
+        "tr": "Kırmızı halılarla kaplı, kubbeli tavanlı, sütunlu ve camlı pencereli bir ibadethane içi.",
+        "en": "A prayer hall interior with red carpets, a domed ceiling, columns, and windows with glass panels."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=902",
+        "original_name": "pdf-s114-xref902",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "225"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Şems-i Tebrizi Camii ve Türbesi (kitap s. 225)",
+        "en": "Shams-i Tabrizi Mosque and Tomb (book p. 225)"
+      },
+      "alt": {
+        "tr": "Taş duvarın içinde dikdörtgen bir pencere var. Pencerenin içinde kafes var.",
+        "en": "A rectangular window in a stone wall. The window has a metal grid inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=904",
+        "original_name": "pdf-s114-xref904",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "225"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Şems-i Tebrizi Camii ve Türbesi (kitap s. 225)",
+        "en": "Shams-i Tabrizi Mosque and Tomb (book p. 225)"
+      },
+      "alt": {
+        "tr": "Taş duvarlara oturtulmuş ahşap kapılar ve üzerinde yazı olan siyah bir tabela.",
+        "en": "Wooden doors set in a stone wall, with a black sign bearing text above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=908",
+        "original_name": "pdf-s115-xref908",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "226"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şems-i Tebrizi Camii ve Türbesi (kitap s. 226)",
+        "en": "Shams-i Tabrizi Mosque and Tomb (book p. 226)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap kemerler, sütunlar ve süslü ahşap bir balkon görülüyor. Zeminde kırmızı halı var.",
+        "en": "Inside, wooden arches, columns, and an ornate wooden balcony are visible. A red carpet covers the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=912",
+        "original_name": "pdf-s115-xref912",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "227"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Şems-i Tebrizi Camii ve Türbesi (kitap s. 227)",
+        "en": "Shams-i Tabrizi Mosque and Tomb (book p. 227)"
+      },
+      "alt": {
+        "tr": "Köşede, geometrik desenlerle süslü ahşap bir panel ve mavi çinilar görülmektedir.",
+        "en": "A wooden panel with geometric patterns and blue tiles is visible at the corner."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=910",
+        "original_name": "pdf-s115-xref910",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "227"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Şems-i Tebrizi Camii ve Türbesi (kitap s. 227)",
+        "en": "Shams-i Tabrizi Mosque and Tomb (book p. 227)"
+      },
+      "alt": {
+        "tr": "Ahşap bir minber ve merdiven, duvarda kürsü şeklinde bir levha ve pencere görülüyor.",
+        "en": "A wooden minbar with staircase, a circular wall plaque, and a window are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=916",
+        "original_name": "pdf-s116-xref916",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "228"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Şems-i Tebrizi Camii ve Türbesi (kitap s. 228)",
+        "en": "Shams-i Tabrizi Mosque and Tomb (book p. 228)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış, birkaç musluklu ve kemerli bir musluk. Arka planda bir levha ve yeşil bitkiler var.",
+        "en": "A stone fountain with multiple spouts and an arch. A plaque and green foliage are visible in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=924",
+        "original_name": "pdf-s117-xref924",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "231"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Şems-i Tebrizi Camii ve Türbesi (kitap s. 231)",
+        "en": "Shams-i Tabrizi Mosque and Tomb (book p. 231)"
+      },
+      "alt": {
+        "tr": "Yeşil bir örtüyle kaplı mezar, üzerinde altın işlemeli desenler ve Arapça yazılar var. Arka planda kare bir levha ve camiye ait bir saat.",
+        "en": "A green-covered tomb with gold patterns and Arabic inscriptions. In the background, a rectangular plaque and a clock."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=928",
+        "original_name": "pdf-s118-xref928",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "232"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Şems-i Tebrizi Camii ve Türbesi (kitap s. 232)",
+        "en": "Shams-i Tabrizi Mosque and Tomb (book p. 232)"
+      },
+      "alt": {
+        "tr": "Kemerli bir yapıda, geometrik desenlerle kaplı bir duvar ve üzerinde çiçek motifli süslemeler bulunan bir zemin. Üst kısımda kareli bir tavan.",
+        "en": "An arched structure with a wall covered in geometric patterns and a floor with floral decorations. A tiled ceiling is visible above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

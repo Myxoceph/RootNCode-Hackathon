@@ -7,6 +7,12 @@ import { useSyncExternalStore } from "react";
 let added: readonly string[] = ["pideli-kofte"];
 const listeners = new Set<() => void>();
 
+/** A saved route's food stops, when it is opened again. */
+export function setDishes(ids: readonly string[]) {
+  added = ids;
+  listeners.forEach((listener) => listener());
+}
+
 export function toggleDish(id: string) {
   added = added.includes(id) ? added.filter((d) => d !== id) : [...added, id];
   listeners.forEach((listener) => listener());

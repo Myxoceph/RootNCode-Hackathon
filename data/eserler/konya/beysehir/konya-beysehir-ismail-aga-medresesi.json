@@ -1,0 +1,455 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-beysehir-ismail-aga-medresesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Eğitim Yapıları",
+    "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 113-115 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "İlk yaptıran kitapta belirtilmiyor; founder boş bırakıldı. Eşrefoğlu Süleyman Bey Külliyesi kaydıyla ilişkisi (kitapta külliye içinde sayılıyor, ids.md'de üst eser verilmemiş) gözden geçirilmeli.",
+      "Güneybatıdaki türbe kitapta ayrıca anlatılmıyor; kimin türbesi olduğu bilinmiyor, ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
+      "Taçkapı kitâbesinin metni, dili ve meali kitapta yok; eklenmeli.",
+      "Karşılaştırma örneği Karaman Hatuniye Medresesi (1382) ids.md'de olmadığı için ilişki yazılmadı.",
+      "Medrese için vakfiye bilgisi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap, ilk inşadan 'yaklaşık yarım asır sonra' onarım yapıldığını söyler; ancak cami tarihi 1296-1299 ile onarım tarihi 1369-70 arasında yaklaşık 70-75 yıl vardır. Kitabın ifadesi korundu."
+      },
+      {
+        "field": "sections[konum-ve-yenileme]",
+        "note": "Kitap, 1369-70 onarımının patronunu 'İlhanlı dönemindeki onarım' diye anar (Türkçe ve İngilizce metin); oysa tarih Beylikler çağına denk gelir ve aynı metin yapıyı 'Selçuklu ve Beylikler çağı' medreseleriyle birlikte sayar. Kitaba sadık kalındı, çelişki işaretlendi."
+      },
+      {
+        "field": "era",
+        "note": "Eşrefoğulları beyliğinin başkentinde olduğu ve yenilemenin 1369-70'te yapıldığı için era 'beylikler' seçildi; ilk inşa 1296-1299 çevresi (Selçuklu sonu) olarak düşünülüyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "İsmail Ağa Medresesi",
+    "en": "İsmail Ağa Madrasa"
+  },
+  "alternate_names": [
+    {
+      "tr": "Taş Medrese",
+      "en": "Taş Madrasa"
+    }
+  ],
+  "type": "medrese",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "Eşrefoğulları",
+    "açık avlulu",
+    "iki eyvanlı",
+    "taçkapı",
+    "İçerişehir",
+    "Emir İsmail Ağa"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Beyşehir",
+    "neighborhood": "İçerişehir",
+    "address": "Eşrefoğlu Süleyman Bey Külliyesi içinde, Seyfeddin Süleyman Bey Camii'nin hemen batısında",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "113"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.684334,
+      "lng": 31.717656,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('İçerişehir Mah., Beyşehir, Konya, İç Anadolu Bölgesi, 42700, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk inşa 1296-1299 civarı düşünülür; H. 771 / M. 1369-70 yenileme",
+      "en": "First construction thought to be c. 1296-1299; renovated 771 AH / 1369-70 AD"
+    },
+    "start_year": 1296,
+    "end_year": 1299,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Taçkapı kompozisyonuna göre 1296-1299 tarihli camiyle çağdaş olduğu düşünülmektedir; taçkapıdaki kitâbeye göre H. 771 / M. 1369-70'te yenilenmiştir.",
+      "en": "Thought to be contemporary with the mosque of 1296-1299 on the basis of the portal composition; according to the inscription on its portal it was renovated in 771 AH / 1369-70 AD."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "113, 115"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Beyşehir'de, Eşrefoğulları'nın başkentinde, Eşrefoğlu Süleyman Bey Külliyesi içinde yer alan açık avlulu, iki eyvanlı medrese. Taçkapısındaki kitâbeye göre H. 771 / M. 1369-70'te Halil oğlu Emir İsmail Ağa tarafından yenilenmiş, bu nedenle onun adıyla anılmaktadır.",
+    "en": "An open-courtyard, two-iwan madrasa in Beyşehir, capital of the Eşrefoğulları, within the Eşrefoğlu Süleyman Bey Complex. According to the inscription on its portal it was renovated in 771 AH / 1369-70 AD by Emir İsmail Ağa, son of Halil, and is therefore named after him."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-yenileme",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Yenileme",
+        "en": "Location and Renovation"
+      },
+      "body": {
+        "tr": "Medrese, Selçuklu çağında Pisidya bölgesinde uç beyliği olarak kurulan Eşrefoğulları'nın başkenti Beyşehir'dedir. Bugün yalnız kale kapısı ayakta kalan İçerişehir'in merkezinde, Eşrefoğlu Süleyman Bey Külliyesi içinde, Seyfeddin Süleyman Bey Camii'nin (1299) hemen batısında yer alır. Taçkapısındaki kitâbeye göre Halil oğlu Emir İsmail Ağa (Aka) tarafından H. 771 / M. 1369-70'te yenilenmiştir. Taçkapı kompozisyonuna göre 1296-1299 tarihli camiyle çağdaş olduğu düşünülen medrese, kitâbeye göre ilk inşasından yaklaşık yarım asır sonra onarım görmüş, bugün bu onarımın yaptırıcısı Emir İsmail Ağa'nın adıyla anılmaktadır.",
+        "en": "The madrasa is in Beyşehir, the capital of the Eşrefoğulları, founded as a border principality in the Pisidia region in the Seljuk era. It stands in the centre of İçerişehir, of which only the castle gate remains, within the Eşrefoğlu Süleyman Bey Complex and just west of the Seyfeddin Süleyman Bey Mosque (1299). According to the inscription on its portal it was renovated by Emir İsmail Ağa (Aka), son of Halil, in 771 AH / 1369-70 AD. Thought to be contemporary with the mosque of 1296-1299 by its portal composition, it was repaired about half a century after its first construction according to the inscription, and today bears the name of Emir İsmail Ağa, the patron of that repair."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "113, 115"
+        }
+      ]
+    },
+    {
+      "id": "tackapi-ve-malzeme",
+      "order": 2,
+      "title": {
+        "tr": "Taçkapı ve Malzeme",
+        "en": "Portal and Materials"
+      },
+      "body": {
+        "tr": "Taçkapısı ve güneybatıdaki türbesi dışında kalan kısımlar bugünkü durumlarını restorasyon ve rekonstrüksiyonlardan sonra almıştır. Moloz taş örgülü duvarlar dış cephelerde kesme taşla kaplıdır. Doğu cephedeki taçkapı, orta akstan yaklaşık 1,5 m güneye kaydırılmıştır ve Eşrefoğlu Süleyman Bey Camii taçkapısıyla çerçeve düzeni bakımından benzerlik gösterir: ikisinde de çerçeveyi dörder sıra stilize bitkisel bordür ve sivri formlu kavsara kuşatma kemeri çevreler.",
+        "en": "Apart from the portal and the tomb in the southwest, the parts of the madrasa took their present state after restorations and reconstructions. The rubble stone walls are covered with cut stone on the exterior. The portal on the east façade is shifted about 1.5 m south of the central axis and shows a frame layout similar to that of the Eşrefoğlu Süleyman Bey Mosque portal: both have four rows of stylised vegetal borders around the frame and a pointed enclosing arch."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "113"
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "order": 3,
+      "title": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "body": {
+        "tr": "Doğu-batı doğrultusunda kareye yakın dikdörtgen bir alanı kaplayan medrese tam simetrik bir plan düzeni göstermez. Beşik tonozlu eyvanla girilen avlu üç yönden revaklarla çevrilidir ve ortasında bir su ögesi bulunur. Avlunun kuzey ve güney kanatlarında üçer, doğuda giriş eyvanının iki yanında birer olmak üzere farklı büyüklüklerde sekiz öğrenci hücresi vardır. Selçuklu ve Beylikler çağı medreselerinin genel karakterini yansıtan yapının en yakın benzeri Karaman'daki Hatuniye Medresesi'dir (1382).",
+        "en": "The madrasa covers a rectangular area close to a square in the east-west direction and is not fully symmetrical. The courtyard, entered through a barrel-vaulted iwan, is surrounded by porticoes on three sides and has a water feature in the middle. There are eight student cells of different sizes: three each in the north and south wings and one on each side of the entrance iwan in the east. Reflecting the general character of Seljuk and Beylik era madrasas, its closest parallel is the Hatuniye Madrasa in Karaman (1382)."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "113, 115"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ogrenci_hucresi",
+      "label": {
+        "tr": "Öğrenci hücresi sayısı",
+        "en": "Number of student cells"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "115"
+        }
+      ],
+      "note": {
+        "tr": "Kuzey ve güney kanatlarda üçer, doğuda giriş eyvanının iki yanında birer.",
+        "en": "Three each in the north and south wings and one on each side of the entrance iwan."
+      }
+    },
+    {
+      "key": "eyvan_sayisi",
+      "label": {
+        "tr": "Eyvan sayısı",
+        "en": "Number of iwans"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "113"
+        }
+      ]
+    },
+    {
+      "key": "tackapi_kaymasi",
+      "label": {
+        "tr": "Taçkapının orta akstan güneye kayması",
+        "en": "Portal offset south of the central axis"
+      },
+      "value": 1.5,
+      "unit": "m",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "113"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Emir İsmail Ağa (Aka)",
+      "role": {
+        "tr": "Halil oğlu; 1369-70 yenilemesinin yaptırıcısı",
+        "en": "Son of Halil; patron of the 1369-70 renovation"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "yenileme-kitabesi",
+      "location": {
+        "tr": "Taçkapıda",
+        "en": "On the portal"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 771,
+        "gregorian": "1369-70"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "113"
+        }
+      ],
+      "note": {
+        "tr": "Kitâbe, yenilemeyi Halil oğlu Emir İsmail Ağa (Aka)'ya bağlar; metin ve meal kitapta verilmiyor, yazı dili belirtilmiyor.",
+        "en": "The inscription attributes the renovation to Emir İsmail Ağa (Aka), son of Halil; neither the text nor a translation is given, and the language is not named."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yenileme-1369",
+      "year": 1369,
+      "date": null,
+      "hijri": "771",
+      "type": "repair",
+      "title": {
+        "tr": "Emir İsmail Ağa tarafından yenilendi (1369-70)",
+        "en": "Renovated by Emir İsmail Ağa (1369-70)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "113"
+        }
+      ],
+      "note": {
+        "tr": "Miladi karşılık kitapta 1369-70 olarak verilir.",
+        "en": "The book gives the Gregorian equivalent as 1369-70."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-beysehir-esrefoglu-suleyman-bey-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Medrese, Eşrefoğlu Süleyman Bey Külliyesi içinde yer alır.",
+        "en": "The madrasa lies within the Eşrefoğlu Süleyman Bey Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "113"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-beysehir-esrefoglu-suleyman-bey-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Taçkapı, çerçeve düzeni ve kuşatma kemeri bakımından Eşrefoğlu Süleyman Bey Camii taçkapısına yakın benzerlik gösterir; medresenin camiyle çağdaş olduğu düşünülür.",
+        "en": "The portal closely resembles that of the Eşrefoğlu Süleyman Bey Mosque in frame layout and enclosing arch; the madrasa is thought to be contemporary with the mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "113, 115"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "İsmail Ağa Medresesi, doğu cephesinde kesme taş kaplı, ortası kaydırılmış bir taçkapısı olan, kareye yakın dikdörtgen planlı bir yapıdır. Taçkapıdan beşik tonozlu bir eyvanla, ortasında su ögesi bulunan avluya girilir. Avlu üç yandan revaklarla çevrilidir; kuzey ve güney kanatlarda üçer, giriş eyvanının iki yanında birer olmak üzere sekiz öğrenci hücresi sıralanır. Güneybatıda bir türbe bulunur.",
+      "en": "The İsmail Ağa Madrasa is a nearly square rectangular building whose east façade, clad in cut stone, has an off-centre portal. Through the portal a barrel-vaulted iwan leads into a courtyard with a water feature in the middle. The courtyard is surrounded by porticoes on three sides, with eight student cells: three in each of the north and south wings and one on each side of the entrance iwan. A tomb stands in the southwest."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-ismail-aga-medresesi/p059-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "114"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "İsmail Ağa Medresesi'nin gün batımı görünümü",
+        "en": "Sunset view of İsmail Ağa Madrasa"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, düz çatılı medrese ve önünde taş kubbeli bölümler görünür. Solda minare, arkada dağlar ve gün batımı vardır.",
+        "en": "A stone madrasa with a flat roof and stone domed sections in front. A minaret stands on the left with mountains and a setting sun behind."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-ismail-aga-medresesi/p058-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "112"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Giriş kapısı ve taş kubbeler",
+        "en": "Entrance portal and stone domes"
+      },
+      "alt": {
+        "tr": "Yüksek taş duvarın arkasında kemerli bir kapı çerçevesi ve kesme taş kubbeler görünür. Arka plan siyahtır.",
+        "en": "Behind a high stone wall appear an arched portal frame and cut stone domes. The background is black."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-ismail-aga-medresesi/p058-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "113"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Revaklı avlu ve ortadaki ağaç",
+        "en": "Arcaded courtyard with a tree"
+      },
+      "alt": {
+        "tr": "Gri taş sütunlu, sivri kemerli revakların çevrelediği avlunun ortasında bir ağaç ve küçük bir çukur havuz bulunur.",
+        "en": "An arcade of pointed arches on grey stone columns surrounds a courtyard with a tree and a small sunken pool in the middle."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-ismail-aga-medresesi/p059-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "115"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Sivri kemerli revak ayrıntısı",
+        "en": "Detail of the pointed-arch portico"
+      },
+      "alt": {
+        "tr": "Kesme taştan sivri kemerler kısa sütunlara oturur. Kemerlerin arasında ahşap bir gergi kirişi görülür.",
+        "en": "Pointed arches of cut stone rest on short columns, with a wooden tie beam between them."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-beysehir-ismail-aga-medresesi/p059-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "115"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Taş tonozlu eyvanın içi",
+        "en": "Inside the stone-vaulted iwan"
+      },
+      "alt": {
+        "tr": "Taş kaplı, yarım kubbeli eyvanın arka duvarında iki niş ve küçük bir pencere vardır. Tavandan bir avize sarkar.",
+        "en": "A stone-lined, half-domed iwan with two niches and a small window in the back wall. A chandelier hangs from above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

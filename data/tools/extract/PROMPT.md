@@ -32,12 +32,13 @@ the same id already exists, stop and report it.
 ## Rules
 - Only information stated in the chapter text. No outside knowledge. Unknown → `null` /
   `"unknown"` and a line in `meta.todos`.
-- `confidence`: `certain` when the source states it plainly, `probable` for estimates or links
-  the book implies but does not state, `disputed` when the source gives multiple views or
-  contradicts itself, `legend` only for legends. Legends/folk beliefs go to `legends[]`.
-- Source contradictions — including between the Turkish and English text, and Hijri/Gregorian
-  dates that do not match — keep the source's values, mark `disputed`, and explain in
-  `meta.data_quality_notes` (`[{field, note}]`).
+- `confidence`: `certain` for what the book states, `probable` for estimates or links the book
+  implies but does not state ("tahmin edilmektedir", "olmalıdır"), `legend` only for legends.
+  Legends/folk beliefs go to `legends[]`. Do not use `disputed`: there is no human review step,
+  the book is the source.
+- Dates and numbers exactly as the book prints them. Never convert Hijri/Gregorian dates or check
+  them yourself. If the Turkish and English text disagree, use the Turkish value; a one-line note
+  in `meta.data_quality_notes` (`[{field, note}]`) is enough.
 - Every section/fact/timeline event/inscription/relation needs `source_refs` with printed pages.
 - Text fields are `{ "tr": ..., "en": ... }`; use the book's English translation for `en`
   (condense, do not invent).
@@ -83,11 +84,25 @@ inscriptions, relations), and the points you were least sure about.
   `null` and a todo.
 - **Language of inscriptions.** Use the schema codes; when the text does not name the language
   use `"other"` and explain in `note`.
-- **Dates that disagree** (Hijri vs Gregorian, Turkish vs English text, two pages) → keep both in
-  `data_quality_notes`, set `confidence: disputed`.
+- **Dates that disagree** (Hijri vs Gregorian, Turkish vs English text, two pages) → use the
+  book's (Turkish) value as printed, `confidence: certain`; no conversion, no `disputed`.
 - **`meta.from`** = the chapter PDF name without number and `.pdf` (e.g. `İznik`), directly after
   `reviewed_by`.
 - **District folder.** Write into `data/eserler/<il>/<ilçe-slug>/` and set `location.district`
   to the proper district name (e.g. `İznik`).
 - **Photos.** Do not add media; photos are attached later by `match_photos.py`. Keep
   `media: []`, `media_folder: null`, and the todo.
+
+## Konya Vakıf Eserleri I. Cilt (source `vk-konya-c1`) — differences
+- One single PDF for the whole volume: `data/build/cache/text/konya-1.txt` (not one file per chapter).
+  You get a PDF-page range; handle only buildings whose heading STARTS inside it.
+- A PDF page is a book spread: the text of the left and right page is interleaved, Turkish and
+  English blocks alternate. The printed page number(s) stand alone at the END of the PDF page
+  (`75`, or two numbers like `76 77`). Use the printed numbers of the PDF pages a section spans
+  for `source_refs[].pages` (e.g. `76-77`). Photo-only pages have no text.
+- The table of contents (PDF pages 6-7 of the same file) lists each building's start page; use it
+  to find building boundaries.
+- Region `ic-anadolu`, city `konya`, ids `konya-<ilçe>-<ad>`, folder `data/eserler/konya/<ilçe>/`.
+- There is no Drive photo archive for this volume: keep `media: []`, `media_folder: null`.
+- `meta.from` = `"konya-envanteri-1_cilt-web"`.
+

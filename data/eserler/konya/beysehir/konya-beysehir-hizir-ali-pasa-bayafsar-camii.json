@@ -1,0 +1,415 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-beysehir-hizir-ali-pasa-bayafsar-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 387-388) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Era kitapta belirtilmiyor; tarihe göre gec-osmanli seçildi.",
+      "Hızır Ali Paşa kim? Kitap adını açıklamıyor; founder null.",
+      "İlişki hedefi (Eşrefoğlu Camii) kaydı henüz yok olabilir.",
+      "Kitâbenin metni kitapta verilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[minare-1956]",
+        "note": "Kitap H. 1376 / M. 1956 veriyor; H. 1376 yaklaşık 1956-57'ye denk gelir, kitaptaki değerler aynen korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hızır Ali Paşa (Bayafşar) Camii",
+    "en": "Hızır Ali Paşa (Bayafşar) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Bayafşar Camisi",
+      "en": "Bayafşar Mosque",
+      "note": "Kitapta 'olarak da bilinmektedir'"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Bayafşar Kasabası",
+    "H. 1209",
+    "ahşap direkli",
+    "çok destekli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Beyşehir",
+    "neighborhood": "Bayafşar Kasabası merkezi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "387-388"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.580419,
+      "lng": 31.799599,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q133803238 ('Bayafşar Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1209 / M. 1794-95",
+      "en": "1209 AH / 1794-95 AD"
+    },
+    "start_year": 1794,
+    "end_year": 1795,
+    "hijri_year": 1209,
+    "century": 18,
+    "basis": {
+      "tr": "Doğu cephedeki basık kemerli kapı üzerindeki kitâbeden yalnızca bu tarih okunmaktadır.",
+      "en": "Only this date can be read from the inscription over the low-arched door on the east facade."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "387"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Bayafşar Kasabası merkezindeki cami; banisi bilinmez, kitâbeden yalnızca H. 1209 / M. 1794-95 okunur. Minare 1956'da eklenmiş, yapı 2014-2015'te onarılmıştır; içinde Hacı Abdullah Efendi'ye ait bir mezar vardır.",
+    "en": "The mosque in the center of Bayafşar Town has an unknown founder; only 1209 AH / 1794-95 AD can be read on its inscription. The minaret was added in 1956 and the building repaired in 2014-2015; a tomb of Hacı Abdullah Efendi lies inside."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Beyşehir, Bayafşar Kasabası merkezindedir; 'Bayafşar Camisi' olarak da bilinir. Banisi bilinmemektedir. Doğu cephedeki basık kemerli kapının üzerindeki kitâbeden yalnızca H. 1209 / M. 1794-95 tarihi okunur. Minare giriş kapısı üzerindeki tarihe göre camiye H. 1376 / M. 1956'da eklenmiştir. Yapı Vakıflar Bölge Müdürlüğü tarafından 2014-2015'te tamir edilmiştir.",
+        "en": "The mosque is in the center of Beyşehir, Bayafşar Town, also known as 'Bayafşar Mosque'. Its founder is unknown. Only the date 1209 AH / 1794-95 AD can be read from the inscription on the low-arched door on the east facade. According to the date on the minaret entrance door, the minaret was added in 1376 AH / 1956 AD. The building was repaired by the Regional Directorate of Foundations in 2014-2015."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "387"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlı, ahşap direkli, içten düz tavanlı, dıştan dört yöne eğimli kırma çatılıdır; ahşap hatıllı kaba yonu taştan yapılmıştır. Kuzeydoğu köşedeki minare kare kaideli, silindirik gövdeli ve tek şerefelidir; kaide kesme taş, devamı tuğladır. Harime kuzey cephedeki basık kemerli açıklıktan girilir. Harim mihraba dik üç sıra beşerli ahşap direkle dört sahına ayrılmıştır; sah düzenindeki eğiklik nedeniyle mihrap tam ortaya denk gelmez. Tavan ahşap kirişli düzdür. Kıble duvarındaki ahşap mihrap yarım daire planlıdır; sağındaki (güneybatı) minber yenidir. Harim içinde Hacı Abdullah Efendi'ye ait bir mezar vardır. Cami, Beyşehir Eşrefoğlu Camii'nden itibaren görülen ahşap direkli çok destekli camilerin güzel bir örneğidir.",
+        "en": "The mosque has a deep rectangular plan with wooden pillars, a flat ceiling inside and a four-way hipped roof outside, built of rough-cut stone with wooden beams. The northeast minaret has a square base, cylindrical body and one balcony; the base is cut stone and the rest brick. The harim is entered through the low-arched opening on the north facade and divided into four aisles by three rows of five wooden poles; because of the slant in the layout the mihrab is not exactly central. The wooden mihrab is semicircular; the minbar to its right (southwest) is new. A tomb of Hacı Abdullah Efendi is inside. The mosque is a good example of multi-supported wooden-pillar mosques seen since the Beyşehir Eşrefoğlu Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "387-388"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Hacı Abdullah Efendi",
+      "role": {
+        "tr": "Harim içindeki mezar sahibi",
+        "en": "Person buried in the tomb inside the harim"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kapi-kitabesi",
+      "location": {
+        "tr": "Doğu cephe, basık kemerli kapı üzeri",
+        "en": "Above the low-arched door on the east facade"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1209,
+        "gregorian": "1794-95"
+      },
+      "note": {
+        "tr": "Kitâbeden yalnızca tarih okunmaktadır; metin kitapta verilmiyor.",
+        "en": "Only the date can be read; text not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "387"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "kitabe-1794",
+      "year": 1794,
+      "type": "record",
+      "title": {
+        "tr": "Kapı kitâbesindeki tarih",
+        "en": "Date on the door inscription"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "387"
+        }
+      ],
+      "confidence": "probable",
+      "hijri": "1209"
+    },
+    {
+      "id": "minare-1956",
+      "year": 1956,
+      "type": "addition",
+      "title": {
+        "tr": "Minare eklendi",
+        "en": "Minaret added"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "387"
+        }
+      ],
+      "confidence": "certain",
+      "hijri": "1376"
+    },
+    {
+      "id": "onarim-2014",
+      "year": 2014,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı (2014-2015)",
+        "en": "Repair by the Regional Directorate of Foundations (2014-2015)"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "387"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-beysehir-esrefoglu-camii",
+      "type": "architectural_lineage",
+      "description": {
+        "tr": "Beyşehir Eşrefoğlu Camii'nden itibaren görülen ahşap direkli çok destekli camilerin güzel bir örneğidir.",
+        "en": "A good example of the multi-supported wooden-pillar mosques seen since the Beyşehir Eşrefoğlu Mosque."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "388"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hızır Ali Paşa (Bayafşar) Camii dikdörtgen planlı, kaba yonu taşlı, kırma çatılı bir yapıdır. Kuzeydoğu köşede kaidesi kesme taş, gövdesi tuğla olan tek şerefeli minare yükselir. Kuzeyden girilen harim, üç sıra beşer ahşap direkle dört sahına ayrılır; tavan düzdür ve içeride Hacı Abdullah Efendi'nin mezarı vardır.",
+      "en": "Hızır Ali Paşa (Bayafşar) Mosque is a rectangular rough-cut stone building with a hipped roof. A single-balcony minaret with a cut-stone base and brick body rises in the northeast corner. The harim, entered from the north, is divided into four aisles by three rows of five wooden poles; the ceiling is flat and the tomb of Hacı Abdullah Efendi is inside."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 387-388)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "387-388"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1639",
+        "original_name": "pdf-s195-xref1639",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "387"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hızır Ali Paşa (Bayafşar) Camii (kitap s. 387)",
+        "en": "Hızır Ali Paşa (Bayafşar) Mosque (book p. 387)"
+      },
+      "alt": {
+        "tr": "Hızır Ali Paşa Camii, kırmızı kiremit çatılı, minaresiyle çevresindeki binalar arasında yer alıyor.",
+        "en": "Hızır Ali Paşa Mosque, red-tiled roof, minaret visible among surrounding buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1643",
+        "original_name": "pdf-s196-xref1643",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "388"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hızır Ali Paşa (Bayafşar) Camii (kitap s. 388)",
+        "en": "Hızır Ali Paşa (Bayafşar) Mosque (book p. 388)"
+      },
+      "alt": {
+        "tr": "Ahşap tavan ve sütunlarla kaplı iç mekanda kırmızı halılar serili, duvarlarda pencereler ve saatler var.",
+        "en": "Wooden ceiling and pillars in the interior, red carpets on the floor, windows and clocks on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1647",
+        "original_name": "pdf-s196-xref1647",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "388"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Hızır Ali Paşa (Bayafşar) Camii (kitap s. 388)",
+        "en": "Hızır Ali Paşa (Bayafşar) Mosque (book p. 388)"
+      },
+      "alt": {
+        "tr": "Ahşap bir kapı girişinde, süslü kenarlı, kemerli bir arka plan ve iki yarım daire şeklinde desen bulunuyor.",
+        "en": "A wooden doorway with an ornate frame, arched background, and two semicircular patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1645",
+        "original_name": "pdf-s196-xref1645",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "388"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Hızır Ali Paşa (Bayafşar) Camii (kitap s. 388)",
+        "en": "Hızır Ali Paşa (Bayafşar) Mosque (book p. 388)"
+      },
+      "alt": {
+        "tr": "Yeşil çimde iki büyük kaya parçası. Solundaki dik, sağdaki yuvarlak. Arka planda demir kafesli kapı ve taş duvarlı bina.",
+        "en": "Two large stone fragments on green grass. One upright, one rounded. Behind, a metal gate and stone building."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1649",
+        "original_name": "pdf-s196-xref1649",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "388"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Hızır Ali Paşa (Bayafşar) Camii (kitap s. 388)",
+        "en": "Hızır Ali Paşa (Bayafşar) Mosque (book p. 388)"
+      },
+      "alt": {
+        "tr": "Yeşil bir örtüyle kaplı, beyaz mermer bir sanduka. Arka planda ahşap merdivenler ve sütunlar.",
+        "en": "A marble tomb covered with a green cloth. Wooden stairs and columns in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

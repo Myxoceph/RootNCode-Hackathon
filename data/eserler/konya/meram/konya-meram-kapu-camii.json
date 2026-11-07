@@ -1,0 +1,700 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-kapu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 129-135) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitapta 'Kapu' (başlık) ve 'Kapı' (metin) yazımları karışık; id 'kapu' ile verildi.",
+      "Kuzey kapı manzumesi ve batı kapı kitâbesi için kitapta meal yok; translation null.",
+      "Minare ve kubbe ayrıntıları kitapta anlatılmıyor.",
+      "Ashab-ı Kehf adlarının yazımı kitapta verilmiyor.",
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architecture.shadirvan",
+        "note": "Kitap bir yerde şadırvanın günümüze ulaşamadığını, bir başka yerde ise ahşap kubbeli çokgen şadırvanın restore edildiğini söylüyor; çelişki işaretlendi."
+      },
+      {
+        "field": "founder",
+        "note": "Vakfiyeye göre ilk banî Pir Hüseyin; ikinci banî müftü Eşenlilerzade Seyyit Abdurrahman; 1868'deki bugünkü yapıyı Mahmud Sadrettin ve halk yaptırmıştır. 'founder' alanına ilk banî yazıldı, diğerleri people ve timeline'da."
+      },
+      {
+        "field": "inscriptions.kuzey-kapi-kitabesi",
+        "note": "Kitapta 'Hurrire el-Hasan el-Fahrî 1285' satırı vardır; Fahri adı Hattat Fahri olarak yorumlandı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Meram Kapu (Kapı-İhyaiyye) Camii",
+    "en": "Meram Kapu (Kapı-İhyaiyye) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "İhyaiyye Camii",
+      "en": "İhyaiyye Mosque"
+    },
+    {
+      "tr": "Kapı Camii",
+      "en": "Kapı (Gate) Mosque"
+    },
+    {
+      "tr": "Kapu Camii",
+      "en": "Kapu Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Mevlâna Dergâhı",
+    "Konya Kalesi surları",
+    "son cemaat yeri",
+    "vakıf dükkânları",
+    "1867 Konya yangını",
+    "şadırvan"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Sehpevan Mahallesi",
+    "address": "Kapı Cami Sokağı",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "129"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.869876,
+      "lng": 32.49928,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/265382882 ('Kapu Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1285 / M. 1868 (bugünkü yapı); ilk yapı H. 1060 / M. 1650",
+      "en": "1285 AH / 1868 AD (present building); first building 1060 AH / 1650 AD"
+    },
+    "start_year": 1868,
+    "end_year": 1868,
+    "hijri_year": 1285,
+    "century": 19,
+    "basis": {
+      "tr": "1867 yangınında büyük hasar gören caminin bugünkü hâli 1868'de yaptırılmıştır; kuzey kapı kitâbesinde 1285 tarihi vardır. İlk yapı vakfiyeye göre H. 1060 / M. 1650'dir.",
+      "en": "The present mosque was built in 1868 after severe damage in the 1867 fire; the north gate inscription is dated 1285. The first building dates to 1060 AH / 1650 AD according to the deed."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "129-131"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Pir Hüseyin (Mevlâna Dergâhı postnişini)",
+    "role": "banî (ilk yapı, 1650)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "129-131"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Son cemaat yerinin altında sekiz adet vakıf dükkânı bulunur. Kitap, caminin Arapça yazılmış bir vakfiyesinden söz eder; metni verilmez.",
+      "en": "Eight foundation shops lie under the narthex. The book mentions an Arabic foundation charter of the mosque but does not give its text."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "129-134"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Konya Kalesi'nin At Pazarı ve Telli Kapıları arasında yer aldığı için 'Kapı Camii' diye bilinen cami, asıl adıyla İhyaiyye Camii'dir. Mevlâna Dergâhı postnişini Pir Hüseyin tarafından 1650'de yaptırılmış, 1867 Konya yangınında hasar görünce 1868'de bugünkü hâliyle yeniden yapılmıştır.",
+    "en": "Known as 'Kapı Mosque' because it lies between the At Pazarı and Telli Gates of Konya Castle, the mosque's real name is İhyaiyye. It was built by Pir Hüseyin, postnişin of the Mevlâna Dergah, in 1650 and rebuilt in its present form in 1868 after damage in the 1867 Konya fire."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Caminin Arapça vakfiyesine göre Mevlâna Dergâhı postnişinlerinden Pir Hüseyin tarafından H. 1060 / M. 1650'de yaptırıldığı anlaşılır; ikinci banisi Konya müftüsü Eşenlilerzade Seyyit Abdurrahman'dır. 1867 Konya yangınında büyük hasar gören eser, 1868'de Mevlâna Dergâhı şeyh postnişinlerinden Mahmud Sadrettin ve Konya halkı tarafından bugünkü hâliyle yaptırılmıştır. 1998 onarımında özgün üst örtü değiştirilmiş, 2012'de başlayan 'Bedesten Sağlıklaştırma Projesi' kapsamında dış cepheler ve son cemaat yeri onarılmıştır. Konya halkı için ayrı bir önemi vardır; İbrahim Hakkı Konyalı caminin Alâeddin Camii'nden sonra şehrin en büyük mabetlerinden olduğunu söylemiştir.",
+        "en": "According to the Arabic foundation charter, the mosque was built by Pir Hüseyin, one of the postnişins of the Mevlâna Dergah, in 1060 AH / 1650 AD; its second builder is the Müftü of Konya, Eşenlilerzade Seyyit Abdurrahman. Badly damaged in the 1867 Konya fire, today's mosque was built in 1868 by Mahmud Sadrettin, one of the Şeyh postnişins of the Mevlâna Dergah, and the people of Konya. In the 1998 repair the original top cover was changed; under the 'Bedesten Rehabilitation Project' begun in 2012 the exterior facades and narthex were repaired. It has a special meaning for the people of Konya; İbrahim Hakkı Konyalı called it one of the largest mosques of the city after Alâeddin Mosque."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "129-131"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami enine dikdörtgen planlı bir harim, kuzeyinde son cemaat yeri, doğuda minare ve batıda çokgen planlı şadırvandan oluşur. Cephe duvarlarında Selçuklu döneminde yapılmış dış kale surlarının taşları kullanılmıştır. Son cemaat yerine dokuz basamaklı merdivenle çıkılır; düz tavanlıdır, kuzeye sütunlar üzerinde dokuz sivri kemerli açıklıkla açılır, doğu ve batıda birer açıklığı vardır ve altında sekiz vakıf dükkânı bulunur. Yapıya kuzey, doğu ve batıdan girilir; kuzeydeki giriş daha özenlidir. Harim 1998 onarımında çok kubbeli hâle getirilmiş, üst örtü kalem işi süslemeli düzenlenmiş, sütunlar ahşap lambriyle kaplanmış, yazılar hattat Hüseyin Öksüz, kalem işleri Sinan Hidayetoğlu tarafından yenilenmiş, sade mihrap Kütahya çinileriyle kaplanmıştır. Batıdaki ahşap kubbeli çokgen şadırvan da restore edilmiştir; kitap bir yerde şadırvanın günümüze ulaşamadığını da yazar.",
+        "en": "The mosque consists of a transversely rectangular harim, a narthex to the north, a minaret to the east and a polygonal shadirvan to the west. Stones of the Seljuk-period outer castle walls were used in the facades. The flat-ceilinged narthex is reached by nine steps and opens north with nine pointed-arched openings on columns, with one opening each on the east and west; eight foundation shops lie beneath it. The building is entered from north, east and west, the north entrance being more carefully made. In the 1998 repair the harim was made multi-domed, the cover decorated with hand-carved ornament, the columns clad in wooden panelling, the inscriptions renewed by calligrapher Hüseyin Öksüz and the hand-drawn decoration by Sinan Hidayetoğlu, and the plain mihrab was covered with Kütahya tiles. The polygonal shadirvan with a wooden dome to the west was also restored; elsewhere the book also says the shadirvan has not survived."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "134-135"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "evliyasiz-namaz",
+      "title": {
+        "tr": "Evliyasız kılınmayan namaz",
+        "en": "Prayers not performed without awliya"
+      },
+      "body": {
+        "tr": "Konya halkı arasında 'bu camide bir rivayete göre yatsı ve sabah namazları, bir rivayete göre de sabah namazı evliyasız kılınmaz' denir.",
+        "en": "Among the people of Konya it is said that in this mosque, according to one narrative the night and morning prayers, and according to another the morning prayer, are not performed without awliya."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "129"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "son_cemaat_basamak",
+      "label": {
+        "tr": "Son cemaat yeri basamak sayısı",
+        "en": "Narthex steps"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "134"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_kemer",
+      "label": {
+        "tr": "Son cemaat yeri sivri kemerli açıklık",
+        "en": "Pointed-arched narthex openings"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "134"
+        }
+      ]
+    },
+    {
+      "key": "vakif_dukkan",
+      "label": {
+        "tr": "Son cemaat yerinin altındaki vakıf dükkânı",
+        "en": "Foundation shops under the narthex"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "134"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Pir Hüseyin",
+      "role": {
+        "tr": "Mevlâna Dergâhı postnişini; ilk banî (1650)",
+        "en": "Postnişin of the Mevlâna Dergah; first founder (1650)"
+      }
+    },
+    {
+      "name": "Eşenlilerzade Seyyit Abdurrahman",
+      "role": {
+        "tr": "Konya müftüsü; ikinci banî",
+        "en": "Müftü of Konya; second builder"
+      }
+    },
+    {
+      "name": "Mahmud Sadrettin",
+      "role": {
+        "tr": "Mevlâna Dergâhı şeyh postnişini; 1868 yapımını yaptıran",
+        "en": "Mevlâna Dergah sheikh postnişin; had the 1868 building made"
+      }
+    },
+    {
+      "name": "Hattat Fahri",
+      "role": {
+        "tr": "Kuzey kapı kitâbesinin hattatı",
+        "en": "Calligrapher of the north gate inscription"
+      }
+    },
+    {
+      "name": "Şair Zehri",
+      "role": {
+        "tr": "Kuzey kapı manzumesinin şairi",
+        "en": "Poet of the north gate poem"
+      }
+    },
+    {
+      "name": "Hüseyin Öksüz",
+      "role": {
+        "tr": "1998 onarımında yazıları yenileyen hattat",
+        "en": "Calligrapher who renewed inscriptions in 1998"
+      }
+    },
+    {
+      "name": "Sinan Hidayetoğlu",
+      "role": {
+        "tr": "1998 onarımında kalem işlerini yenileyen",
+        "en": "Renewed the hand-drawn decorations in 1998"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kuzey-kapi-kitabesi",
+      "location": {
+        "tr": "Kuzey kapı üzerinde, celî sülüs, üç satır manzume",
+        "en": "Above the north gate, celi thuluth, three-line poem"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Rızâya minnet-i tecdîd mücrâ kasd edüp Mevlâ\nKazâ-i nâr ile kılmış idi bu mabedi imhâ\nMesâ‘î-i cemîl cümle ile bed olup işte\nBi-lutf-i hazret-i Allah hitâm oldu behişt âsâ\nTavâf edüp sürûşân söyledi târîhini Zehrâ\nSipâs u hamd-ı hâdî et salât eyleyüp îfâ\nHurrire el-Hasan el-Fahrî 1285",
+      "translation": null,
+      "date": {
+        "hijri_year": 1285,
+        "gregorian": "1868"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "131"
+        }
+      ],
+      "note": {
+        "tr": "Hattat Fahri'nin yazdığı, Şair Zehri'nin manzumesi; üzerinde 'Maşallah' yazar, çevresinde Ashab-ı Kehf'in isimleri vardır. Kitap meal vermiyor; metin Osmanlı Türkçesinin kitaptaki yazımıdır.",
+        "en": "Hattat Fahri'nin yazdığı, Şair Zehri'nin manzumesi; üzerinde 'Maşallah' yazar, çevresinde Ashab-ı Kehf'in isimleri vardır. Kitap meal vermiyor; metin Osmanlı Türkçesinin kitaptaki yazımıdır."
+      }
+    },
+    {
+      "id": "bati-kapi-kitabesi",
+      "location": {
+        "tr": "Batı giriş kapısı üzerinde, iki bölümlü, altı satır",
+        "en": "Above the west entrance gate, two parts, six lines"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Pir Hüseyin post Nişin kıldı binanın ibtida\nAnda selam eyledi hakka salat ile dua\nSaniyen müftü oğlu imar eyledi\nHakeza anda nice salat ettiler ferzi eda\nAteşi akı hüda erdi vucuh-i kalbine\nMahv-ı mahz oldu teveccüh eyledi hakdan yana\nEhli hayrat sa’idüp cem oldular bil ittifak\nDöndüler nah-ı ilahiye bu meydanı safa\nKıble gah-ı mü’minim revnak bulup da haşta dek\nçün kıyamette bekâ gösterdi ser’i Mustafa\nŞevki keşşems ûd –duha buldu bu cevher tarihi\nSer furû kılsın reva ehli sücada es-salâ",
+      "translation": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "131"
+        }
+      ],
+      "note": {
+        "tr": "Caminin tarihçesini anlatan manzume; kitap meal vermiyor.",
+        "en": "Caminin tarihçesini anlatan manzume; kitap meal vermiyor."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "ilk-yapi",
+      "year": 1650,
+      "date": null,
+      "hijri": "1060",
+      "type": "construction",
+      "title": {
+        "tr": "Cami Pir Hüseyin tarafından yaptırıldı",
+        "en": "Mosque built by Pir Hüseyin"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "129-131"
+        }
+      ]
+    },
+    {
+      "id": "yangin",
+      "year": 1867,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Konya yangınında cami büyük hasar gördü",
+        "en": "Mosque badly damaged in the Konya fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "131"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa",
+      "year": 1868,
+      "date": null,
+      "hijri": "1285",
+      "type": "construction",
+      "title": {
+        "tr": "Bugünkü cami Mahmud Sadrettin ve Konya halkı tarafından yaptırıldı",
+        "en": "Present mosque built by Mahmud Sadrettin and the people of Konya"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "131"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1998",
+      "year": 1998,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Onarımda üst örtü değiştirildi, harim çok kubbeli yapıldı, mihrap Kütahya çinisiyle kaplandı",
+        "en": "Repair: top cover changed, harim made multi-domed, mihrab tiled with Kütahya tiles"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "131-135"
+        }
+      ]
+    },
+    {
+      "id": "sagliklastirma-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Bedesten Sağlıklaştırma Projesi kapsamında dış cepheler ve son cemaat yeri onarıldı",
+        "en": "Exterior facades and narthex repaired under the Bedesten Rehabilitation Project"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "131"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kapu Camii, Konya'nın eski çarşı bölgesinde, kuzeyindeki dokuz sivri kemerli son cemaat yeriyle tanınır; son cemaat yerine dokuz basamaklı bir merdivenle çıkılır ve altında sekiz küçük dükkân bulunur. Doğuda minare, batıda ahşap kubbeli çokgen bir şadırvan yer alır. İçerideki geniş harim çok kubbelidir; ahşap lambriyle kaplı sütunlar, kalem işi süslü tavan ve Kütahya çinili mihrap dikkat çeker.",
+      "en": "Kapu Mosque is recognised by its narthex with nine pointed arches on the north, reached by nine steps with eight small shops beneath. The minaret is to the east and a polygonal shadirvan with a wooden dome to the west. The broad harim inside is multi-domed, with columns clad in wooden panelling, a ceiling with hand-drawn decoration and a mihrab covered in Kütahya tiles."
+    }
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]",
+      "en": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "128-136"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=459",
+        "original_name": "pdf-s66-xref459",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "128"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Meram Kapu (Kapı-İhyaiyye) Camii (kitap s. 128)",
+        "en": "Meram Kapu (Kapı-İhyaiyye) Mosque (book p. 128)"
+      },
+      "alt": {
+        "tr": "Taşlardan inşa edilmiş bir cami ve yanında minare. Caminin cephesinde pencere ve kemerler var.",
+        "en": "A stone mosque with a minaret. The mosque's facade has windows and arches."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=464",
+        "original_name": "pdf-s67-xref464",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "130"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Meram Kapu (Kapı-İhyaiyye) Camii (kitap s. 130)",
+        "en": "Meram Kapu (Kapı-İhyaiyye) Mosque (book p. 130)"
+      },
+      "alt": {
+        "tr": "Kubbeli tavan, merkezde çapraz kollarla bir lamba ve kırmızı, mavi, beyaz desenlerle süslüdür.",
+        "en": "A domed ceiling with a central chandelier supported by radial arms and decorated with red, blue, and white patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=466",
+        "original_name": "pdf-s67-xref466",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "131"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Meram Kapu (Kapı-İhyaiyye) Camii (kitap s. 131)",
+        "en": "Meram Kapu (Kapı-İhyaiyye) Mosque (book p. 131)"
+      },
+      "alt": {
+        "tr": "Taş duvarın üzerinde yarım daire şeklinde bir kemerin üzerinde, kemerin üstünde arka planı koyu renkli, beyaz harflerle yazılmış bir kitabe var.",
+        "en": "A stone wall features a semi-circular arch with an inscription above it, the background of which is dark and the letters are white."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=470",
+        "original_name": "pdf-s68-xref470",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "132"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Meram Kapu (Kapı-İhyaiyye) Camii (kitap s. 132)",
+        "en": "Meram Kapu (Kapı-İhyaiyye) Mosque (book p. 132)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap sütunlar, mavi zemin, kemerler ve çatıdaki süslemeler görülüyor.",
+        "en": "Wooden pillars, blue floor, arches, and ceiling decorations are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=474",
+        "original_name": "pdf-s69-xref474",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "134"
+      },
+      "subject": "sadirvan",
+      "caption": {
+        "tr": "Meram Kapu (Kapı-İhyaiyye) Camii (kitap s. 134)",
+        "en": "Meram Kapu (Kapı-İhyaiyye) Mosque (book p. 134)"
+      },
+      "alt": {
+        "tr": "Taş duvarın önünde sıralanmış, kare desenli çinilarla kaplı musluk ve üstteki kare süslemeler.",
+        "en": "A row of stone basins in front of a marble wall with square tiled patterns and decorative squares above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=484",
+        "original_name": "pdf-s69-xref484",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "135"
+      },
+      "subject": "minber",
+      "caption": {
+        "tr": "Meram Kapu (Kapı-İhyaiyye) Camii (kitap s. 135)",
+        "en": "Meram Kapu (Kapı-İhyaiyye) Mosque (book p. 135)"
+      },
+      "alt": {
+        "tr": "Koyu ahşap minber, geometrik desenli merdivenleri ve süslü korkulukları ile görülmektedir. Arka planda mavi çinilı duvarlar ve kemerler yer alır.",
+        "en": "A dark wooden minbar with geometrically patterned steps and ornate balustrades is visible. Blue tiled walls and arches are in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=482",
+        "original_name": "pdf-s69-xref482",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "135"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Meram Kapu (Kapı-İhyaiyye) Camii (kitap s. 135)",
+        "en": "Meram Kapu (Kapı-İhyaiyye) Mosque (book p. 135)"
+      },
+      "alt": {
+        "tr": "Mavi zeminli, beyaz hatyle yazılmış dikey bir levha. Yanında desenli çinilar ve bir minber. Üstte şamdanlar ve pencere.",
+        "en": "A vertical plaque with white calligraphy on a blue background. Patterned tiles and a minbar beside it. Chandeliers and a window above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=488",
+        "original_name": "pdf-s70-xref488",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "136"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Meram Kapu (Kapı-İhyaiyye) Camii (kitap s. 136)",
+        "en": "Meram Kapu (Kapı-İhyaiyye) Mosque (book p. 136)"
+      },
+      "alt": {
+        "tr": "Hava görüntüsünde, kare planlı, kubbeli bir cami ve çevresindeki kırmızı çatılı binalar görülüyor.",
+        "en": "An aerial view shows a square-plan mosque with a dome, surrounded by red-roofed buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

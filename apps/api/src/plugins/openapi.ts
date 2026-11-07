@@ -45,7 +45,9 @@ export function registerOpenApi(app: FastifyInstance): void {
         { name: "assets", description: "Vakıf eserleri" },
         { name: "meta", description: "Kod listeleri ve etiketler" },
         { name: "planner", description: "Vakıf Travel Planner: tematik yürüyüş rotası ve hava durumu" },
+        { name: "gastronomy", description: "Yöresel Kültür & Gastronomi: ilin coğrafi işaretli yöresel lezzetleri" },
         { name: "community", description: "Ziyaretçi Nabzı: anonim oturum, katkılar, nabız akışı" },
+        { name: "assistant", description: "AI asistan: veri setinden, kaynaklı cevaplar" },
         { name: "moderation", description: "Katkı moderasyonu (moderatör token'ı gerekir)" },
         { name: "system", description: "Sunucu durumu" },
       ],
@@ -54,7 +56,7 @@ export function registerOpenApi(app: FastifyInstance): void {
           bearerAuth: {
             type: "http",
             scheme: "bearer",
-            description: "`POST /auth/anonymous` ya da `npm run moderator:create` ile alınan token",
+            description: "`POST /auth/anonymous`, `/auth/register` ya da `/auth/login` ile alınan token",
           },
         },
       },

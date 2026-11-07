@@ -1,0 +1,300 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-hidirlik-hizirlik-hidir-dede-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakıf (vakfiye, gelirler) ayrıntısı kitapta yok.",
+      "Banisi bilinmiyor; founder null.",
+      "Zaviye ve hazirenin ayrıntıları kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Hıdırlık (Hızırlık – Hıdır Dede) Mescidi",
+    "en": "Hıdırlık (Hızırlık – Hıdır Dede) Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "mescit",
+    "Akşehir",
+    "Hıdırlık",
+    "mesire yeri",
+    "tek kubbeli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Kızılca Mahalle",
+    "address": "Hıdırlık Mesire Yeri içinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "333"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.348762,
+      "lng": 31.414795,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap node/14169536617 ('Hıdırlık Mescidi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII-XIV. yüzyıl (tahmini)",
+      "en": "13th-14th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitâbe yok; plan, malzeme ve tekniğe göre XIII-XIV. yüzyıla tarihlendirilebilmesi mümkün görülüyor. Kesin yıl yok; century boş.",
+      "en": "No inscription; possibly dated to the 13th-14th century by plan, material and technique. No exact year; century left empty."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "333"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "333"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Akşehir Kızılca Mahalle'de, Hıdırlık mesire yeri içinde asırlık çınarların gölgesindeki, XIII-XIV. yüzyıla tarihlenebilen kare planlı tek kubbeli mescit.",
+    "en": "A square single-domed masjid in the Hıdırlık recreation area, Kızılca Neighborhood, Akşehir, under century-old plane trees, possibly 13th-14th century."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Mescit Akşehir merkez Kızılca Mahalle'de Hıdırlık Mesire Yeri içindedir. İnşa kitâbesi yoktur; plan, malzeme ve tekniğinden XIII-XIV. yüzyıla tarihlendirilebilmesi mümkündür. Mescidin bir zaviyesi ve haziresi olduğu ancak günümüze ulaşmadığı anlaşılmaktadır. Kubbesi 1940'ta Akşehir Belediyesi tarafından yenilenmiş; bölgedeki gazinolar nedeniyle uzun süre kapalı kalmış; 1990, 2000 ve 2015'te Vakıflar Bölge Müdürlüğü tarafından tamir edilmiştir.",
+        "en": "The masjid is inside the Hıdırlık Recreation Area, Kızılca Neighborhood, Akşehir centre. It has no construction inscription and may be dated to the 13th-14th century by plan, material and technique. It also had a zawiya and a hazire that have not survived. Its dome was renewed by Akşehir Municipality in 1940; it remained closed a long time because of nearby clubs and was repaired by the Regional Directorate of Foundations in 1990, 2000 and 2015."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "333"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlı ve tromp geçişli tek kubbelidir; duvarlarda taş, kubbe geçişlerinde ve kubbede tuğla kullanılmıştır. Harime doğu cephedeki tek kapıyla girilir; harim sıvalıdır. Kıble duvarı ortasındaki mihrap yarım dikdörtgen planlıdır; mihrap nişinin iki yanında Bizans dönemine ait geometrik süslemeli mermer levhalar vardır.",
+        "en": "The masjid is square with a single dome on squinches; walls are stone, with brick in the transitions and dome. Entry is by a single door on the east; the harim is plastered. The mihrab is semi-rectangular, flanked by Byzantine-period marble slabs with geometric decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "333"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "kubbe-yenileme-1940",
+      "year": 1940,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Kubbesi Akşehir Belediyesi tarafından yenilendi",
+        "en": "Dome renewed by Akşehir Municipality"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "333"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1990",
+      "year": 1990,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tamiri",
+        "en": "Repair by Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "333"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2000",
+      "year": 2000,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tamiri",
+        "en": "Repair by Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "333"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tamiri",
+        "en": "Repair by Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "333"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, taş duvarlı, tek kubbeli bir mescittir; kubbe ve geçişleri tuğladır. Doğudaki tek kapıdan girilir. Mihrabın iki yanında Bizans dönemine ait geometrik süslemeli mermer levhalar bulunur. Asırlık çınarların gölgesindedir.",
+      "en": "A square stone-walled masjid with a brick dome and transitions, entered by a single east door. Byzantine-period marble slabs with geometric decoration flank the mihrab. It sits in the shade of century-old plane trees."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "333-334"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1382",
+        "original_name": "pdf-s168-xref1382",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "333"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Hıdırlık (Hızırlık – Hıdır Dede) Mescidi (kitap s. 333)",
+        "en": "Hıdırlık (Hızırlık – Hıdır Dede) Masjid (book p. 333)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, mavi kubbeli bir mescit. Çevresinde ağaçlar ve çit var.",
+        "en": "A stone-walled mosque with a blue dome. Trees and a fence surround it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1392",
+        "original_name": "pdf-s169-xref1392",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "334"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hıdırlık (Hızırlık – Hıdır Dede) Mescidi (kitap s. 334)",
+        "en": "Hıdırlık (Hızırlık – Hıdır Dede) Masjid (book p. 334)"
+      },
+      "alt": {
+        "tr": "Havadan çekilmiş görüntüde, kubbeli bir mescit ve yanında minaresi olan yapı, çevresinde ağaçlar ve kırmızı çatılı binalarla birlikte dağlık arazide yer alıyor.",
+        "en": "An aerial view shows a domed mosque with a minaret, surrounded by trees and red-roofed buildings in a mountainous area."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

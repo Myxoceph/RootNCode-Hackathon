@@ -1,0 +1,392 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-hatipoglu-hamami",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Su Yapıları",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kitabenin mealini kitap vermiyor; translation boş bırakıldı.",
+      "Bugünkü lokantanın adı/işletmesi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name / founder",
+        "note": "Hamam 'Karamanoğlu Mehmet Bey Hamamı' diye de anılıyor, ancak kitabeye göre yaptıran Hasbeyoğlu Mehmet'tir (Karamanoğlu İbrahim Bey döneminde). Kitap iki adı birlikte veriyor; kitabe esas alındı."
+      },
+      {
+        "field": "facts[ada]",
+        "note": "Türkçe '645 ada, 1 numaralı parsel'; İngilizce 'island No. 1, parcel No. 645'. Türkçe esas alındı."
+      },
+      {
+        "field": "inscriptions",
+        "note": "Kitabede 'sene seb'a (ah e'lmevt) ve 'işrîne ve semanimie' (827) ifadesindeki parantezli kısım ve sağ şeritteki '…' kitapta okunamamış/şüpheli olarak bırakılmıştır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hatipoğlu (Hasbeyoğlu) Hamamı",
+    "en": "Hatipoğlu (Hasbeyoğlu) Bath"
+  },
+  "subtitle": {
+    "tr": "Kitabeli, üç eyvanlı ve iki köşe halvetli çifte hamam; bugün lokanta",
+    "en": "Inscribed double bath with three iwans and two corner halvets; now a restaurant"
+  },
+  "alternate_names": [
+    {
+      "tr": "Karamanoğlu Mehmet Bey Hamamı",
+      "en": "Karamanoğlu Mehmet Bey Bath"
+    },
+    {
+      "tr": "Hasbeyoğlu Hamamı",
+      "en": "Hasbeyoğlu Bath"
+    }
+  ],
+  "type": "hamam",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "çifte hamam",
+    "üç eyvanlı sıcaklık",
+    "kitabeli",
+    "lokanta",
+    "Karamanoğulları"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Yorgancı Mahallesi",
+    "address": "Meram Köprüsü'nün güney tarafında; 645 ada, 1 parsel",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "214"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.852755,
+      "lng": 32.421275,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Adıyla OpenStreetMap Nominatim'de bulundu ('Karamanoğlu Hasbeyoğlu Hamamı, Konya Meram Köprüsü, Durunday Mahallesi, Meram, Konya, İç Anadolu Bölgesi, 42140, Türkiye'); sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 827 / M. 1423-24",
+      "en": "827 AH / 1423-24 AD"
+    },
+    "start_year": 1423,
+    "end_year": 1424,
+    "hijri_year": 827,
+    "century": 15,
+    "basis": {
+      "tr": "Kitabeye göre H. 827 / M. 1423-24'te İbrahim Bey döneminde inşa edilmiştir.",
+      "en": "According to its inscription it was built in 827 AH / 1423-24 AD in the time of İbrahim Bey."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "214-215"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hasbeyoğlu Mehmet",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "215"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meram Köprüsü'nün güneyindeki, kitabesine göre 1423-24'te Hasbeyoğlu Mehmet tarafından İbrahim Bey döneminde yaptırılan çifte hamam. Sıcaklığı üç eyvanlı ve iki köşe halvetlidir; sağlam durumdadır ancak bugün lokanta olarak kullanılmaktadır.",
+    "en": "A double bath south of Meram Bridge, built according to its inscription by Hasbeyoğlu Mehmet in 1423-24 during the time of İbrahim Bey. Its hot room has three iwans and two corner halvets; it is structurally sound but used as a restaurant today."
+  },
+  "sections": [
+    {
+      "id": "konum-kitabe",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Adlar ve Kitabe",
+        "en": "Location, Names and Inscription"
+      },
+      "body": {
+        "tr": "Hamam Meram'da, Yorgancı Mahallesi'nde, Meram Köprüsü'nün güneyinde 645 ada, 1 parsel üzerindedir. 'Karamanoğlu Mehmet Bey Hamamı' ve 'Hasbeyoğlu Hamamı' adlarıyla da anılır. Özgün kitabesi bugün Konya Taş Eserler Müzesi'ndedir. Kabartma tekniğinde, Selçuklu sülüsüyle yazılmış kitabenin sağ ve sol düşey şeritlerinde Osmanlı Türkçesi, beş satırlık ve serlevhalı orta bölümünde Arapça kullanılmıştır. Kitabeye göre hamam H. 827 / M. 1423-24'te Hasbeyoğlu Mehmet tarafından İbrahim Bey döneminde yaptırılmıştır.",
+        "en": "The bath is in Meram, Yorgancı District, south of Meram Bridge, on island 645, parcel 1. It is also known as 'Karamanoğlu Mehmet Bey Bath' and 'Hasbeyoğlu Bath'. Its original inscription is now in the Konya Stone Works Museum. The inscription, in relief and Seljuk thuluth, uses Ottoman Turkish in the vertical right and left strips and Arabic in the five-line central part with a heading. According to it the bath was built in 827 AH / 1423-24 AD by Hasbeyoğlu Mehmet in the time of İbrahim Bey."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "214-215"
+        }
+      ]
+    },
+    {
+      "id": "erkekler",
+      "order": 2,
+      "title": {
+        "tr": "Erkekler Bölümü",
+        "en": "Men's Section"
+      },
+      "body": {
+        "tr": "Çifte hamamın kuzeyindeki erkekler bölümünün kuzey ve batı cephelerinde iki giriş kapısı vardır. Soğukluk kareye yakın planlı, büyük üçgen geçişli kubbelidir; ortasında sekizgen şadırvan, kubbe eteğinde 12 sivri kemerli niş (dördü pencere) ve kubbe merkezinde aydınlık feneri bulunur. Aralık elips kubbeli olup sonradan bir duvarla ikiye bölünmüş, kuzeydeki kısım tuvalet yapılmıştır. Ilıklık prizmatik üçgen geçişli, içten 12 dilimli kubbeli; güneyinde beş yüzeyli tonozlu bir eyvan, kuzeyinde 12 dilimli kubbeli tıraşlık vardır. Sıcaklık üç eyvanlı ve iki köşe halvetlidir; ortadaki kare mekân Türk üçgeni geçişli, içten 16 dilimli kubbeyle örtülü ve ortasında sekizgen göbek taşı vardır. Doğu eyvanın kuzey ve güneyindeki halvetlerin girişleri pahlı değil düzdür.",
+        "en": "The men's section in the north has two entrance doors on its north and west facades. The frigidarium is almost square with a dome on large triangles, an octagonal fountain in the middle, 12 pointed-arch niches around the dome foot (four are windows) and a lantern at the dome centre. The passage has an elliptical dome and was later divided by a wall, the northern part becoming a toilet. The tepidarium has a prismatic-triangle dome, 12-segmented inside, with an iwan with a five-faced vault to the south and a 12-segmented-dome shaving room to the north. The hot room has three iwans and two corner halvets; the central square has Turkish-triangle transitions and a 16-segment dome, with an octagonal navel stone in the middle. The halvet entrances north and south of the east iwan are flat, not chamfered."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "214-216"
+        }
+      ]
+    },
+    {
+      "id": "kadinlar-su-deposu",
+      "order": 3,
+      "title": {
+        "tr": "Kadınlar Bölümü, Su Deposu ve Bugünkü Kullanım",
+        "en": "Women's Section, Water Tank and Present Use"
+      },
+      "body": {
+        "tr": "Kadınlar bölümü güney kanattadır ve erkekler bölümünün simetriği olarak değerlendirilir; soğukluğa güney cephedeki, kırma çatılı küçük rüzgârlıklı kapıdan girilir. Soyunmalık kuzey ve güneydeki sivri tonozlu eyvanlarla genişletilmiştir. Aralık tam kubbeyle örtülü ve sonradan bölünerek kuzeyine tuvalet eklenmiştir. Sıcaklık erkeklerinkine benzer ama daha sade kubbelidir. Doğudaki dikdörtgen su deposu ortadan kemerle desteklenen beşik tonozludur; doğusunda külhan vardır. Günümüzde yeni işlev gereği iki bölümün soğukluğu ve soyunmalıkları birbirine kapıyla bağlanmış, doğu eyvanın penceresi kapıya dönüştürülmüştür. Hamam sağlam durumdadır ancak lokanta olarak kullanılır.",
+        "en": "The women's section is the southern wing and is considered the symmetry of the men's; the frigidarium is entered from a door on the south facade with a small hipped-roof windbreak. The dressing room is widened by pointed-vaulted iwans to the north and south. The passage is fully domed and was later divided, with a toilet added to the north. The hot room is similar to the men's but with simpler domes. The rectangular water tank to the east is barrel-vaulted on a central arch, with the furnace east of it. Today, as a requirement of the new function, the two sections' frigidariums and dressing rooms are connected by doors and the east iwan window was turned into a door. The bath is structurally sound but used as a restaurant."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "215-216"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ada",
+      "label": {
+        "tr": "Ada",
+        "en": "Block (ada)"
+      },
+      "value": 645,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "214"
+        }
+      ],
+      "note": {
+        "tr": "Türkçe metin '645 ada, 1 parsel' diyor; İngilizce metin ada ile parsel numaralarını ters veriyor.",
+        "en": "Turkish text says 'island 645, parcel 1'; the English text swaps the two numbers."
+      }
+    },
+    {
+      "key": "parsel",
+      "label": {
+        "tr": "Parsel",
+        "en": "Parcel"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "214"
+        }
+      ]
+    },
+    {
+      "key": "sicaklik_kubbe_dilim",
+      "label": {
+        "tr": "Sıcaklık orta kubbesinin dilim sayısı",
+        "en": "Segments of the hot-room central dome"
+      },
+      "value": 16,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "215"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "hamam-kitabesi-orta",
+      "location": {
+        "tr": "Hamam kitabesinin orta bölümü (özgün kitabe Konya Taş Eserler Müzesi'nde)",
+        "en": "Middle part of the bath inscription (original now in the Konya Stone Works Museum)"
+      },
+      "language": "ar",
+      "script": "sülüs",
+      "transliteration": "El-Mülkü li’llâh\nEmera haze’l-hamamü fî eyyâmü devlet\n‘El-sultan İbrahim bin Mehmed Bin ‘Alâe’d-dîn bih Karaman hallede’llahû\nmemleketuhû sene seb’a (ah e’lmevt) ve ‘işrîne ve semanimie.",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 827,
+        "gregorian": "1423-24"
+      },
+      "note": {
+        "tr": "Kitap yalnızca okunuşu veriyor, meal vermiyor. Orta bölüm beş satır ve serlevhalıdır.",
+        "en": "The book gives only the reading, no translation. The middle part is five lines with a heading."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "214-215"
+        }
+      ]
+    },
+    {
+      "id": "hamam-kitabesi-sag",
+      "location": {
+        "tr": "Kitabenin sağ düşey şeridi",
+        "en": "Right vertical strip of the inscription"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs",
+      "transliteration": "Her ki ister … bünyâd eyleye / Gele bende gönlünü şâd eyleye",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Meal verilmiyor; metinde bir sözcük okunamamıştır (…).",
+        "en": "No translation given; one word is unread in the text (…)."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "215"
+        }
+      ]
+    },
+    {
+      "id": "hamam-kitabesi-sol",
+      "location": {
+        "tr": "Kitabenin sol düşey şeridi",
+        "en": "Left vertical strip of the inscription"
+      },
+      "language": "tr-ottoman",
+      "script": "sülüs",
+      "transliteration": "Dileriz ben de girenden(?) hayırla / Hacı Hasbeyoğlunu yâd eyleye",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Meal verilmiyor; 'girenden(?)' okunuşu kitapta şüphelidir.",
+        "en": "No translation given; the reading 'girenden(?)' is uncertain in the book."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "215"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1423",
+      "year": 1423,
+      "date": null,
+      "hijri": "827",
+      "type": "construction",
+      "title": {
+        "tr": "Hasbeyoğlu Mehmet tarafından İbrahim Bey döneminde inşa (H. 827)",
+        "en": "Built by Hasbeyoğlu Mehmet in the time of İbrahim Bey (827 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "214-215"
+        }
+      ],
+      "note": {
+        "tr": "H. 827 yılı M. 1423-24'e denk gelir.",
+        "en": "827 AH corresponds to 1423-24 AD."
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "kitabe",
+      "title": {
+        "tr": "Kitabe",
+        "en": "Inscription"
+      },
+      "hint": {
+        "tr": "Orta bölümde Arapça, yan şeritlerde Osmanlı Türkçesi; özgün kitabe müzededir.",
+        "en": "Arabic in the middle, Ottoman Turkish in side strips; the original is in the museum."
+      },
+      "section_id": "konum-kitabe"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hamam, Meram Köprüsü'nün güneyinde, kuzeyde erkekler güneyde kadınlar bölümü olan çifte yapıdır. Soğukluğun ortasında sekizgen şadırvan vardır. Sıcaklık üç eyvanlı ve iki köşe halvetli olup ortasında sekizgen göbek taşı bulunur. Doğuda dikdörtgen su deposu ve külhan yer alır. Bugün lokanta olarak kullanılmaktadır.",
+      "en": "The bath lies south of Meram Bridge as a double structure with the men's section in the north and the women's in the south. An octagonal fountain stands in the middle of the cold room. The hot room has three iwans and two corner halvets with an octagonal navel stone in the middle. The water tank and furnace lie to the east. It is used as a restaurant today."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-hatipoglu-hamami/p109-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "214"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hatipoğlu Hamamı, havadan görünüm",
+        "en": "Hatipoğlu Bath, aerial view"
+      },
+      "alt": {
+        "tr": "Havadan çekilmiş fotoğrafta hamamın kubbeleri mavi koruma örtüleriyle kaplı, düz çatı kısmı ise açıkta ve yıpranmış. Çevrede ağaçlar, bir taş köprü ve yeşil sulu bir kanal görülüyor.",
+        "en": "Aerial view of the bath with its domes covered by blue protective sheets and an exposed, worn flat roof section. Trees, a stone bridge and a green canal surround it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

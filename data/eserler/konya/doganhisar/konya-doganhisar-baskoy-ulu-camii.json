@@ -1,0 +1,288 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-doganhisar-baskoy-ulu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabından (s. 409-410) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da haritadan doğrulanarak eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "İnşa yılı ve banî kitapta yok (founder null).",
+      "2000'li yıllardaki VGM onarımının kesin yılı kitapta yok; zaman çizelgesine eklenmedi.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Başköy-Ulu Camii",
+    "en": "Başköy Grand Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap direkli",
+    "kalem işi",
+    "devşirme"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Doğanhisar",
+    "neighborhood": "Başköy Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "409"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.141693,
+      "lng": 31.75651,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q139422065 ('Başköy Ulu Cami'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "18.-19. yüzyıl (tahmin)",
+      "en": "18th-19th century (estimate)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Plan, cephe düzeni ve süsleme özelliklerinden çıkarılan tahmin; yıl verilmedi.",
+      "en": "Inferred from plan, facade and decoration; no year given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "409-410"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Doğanhisar Başköy Mahallesi'nin ulu camisi; 18.-19. yüzyılda yapıldığı düşünülen, beş sahınlı, ahşap direkli, 1957 kalem işi süslemeli cami.",
+    "en": "The grand mosque of Başköy Neighborhood, Doğanhisar; thought to date from the 18th-19th century, with five aisles, wooden posts and painted decoration from 1957."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Planı, cephe düzeni ve süsleme özellikleri yapının XVIII-XIX. yüzyılda yapıldığını düşündürmektedir. Cami 1957'de tamir edilmiş, 2000'li yıllarda Vakıflar Genel Müdürlüğü tarafından onarılmıştır.",
+        "en": "Its plan, facade layout and decoration suggest the 18th-19th century. The mosque was repaired in 1957 and again by the General Directorate of Foundations in the 2000s."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "409"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Hafif eğimli arazide, dikdörtgen planlı, ahşap direkli, ahşap tavanlı ve dıştan kırma çatılıdır. Avluya altı basamaklı merdivenle çıkılır; merdivenin iki köşesinde devşirme silindirik sütun vardır. Cepheler taş malzemeli, aralarda ahşap hatıllıdır; duvarlarda yer yer Antik Çağ'a ait devşirme malzeme kullanılmıştır. Kuzeybatıdaki ayrı minare yakın zamanda yapılmıştır.",
+        "en": "On slightly sloping land, rectangular, with wooden posts, a wooden ceiling and a hipped roof. The courtyard is reached by a six-step stair with spolia cylindrical columns at both corners. Facades are stone with wooden beams between; ancient spolia is used in places in the walls. The detached minaret in the northwest corner is recent."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "409"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 3,
+      "title": {
+        "tr": "Harim ve kalem işi",
+        "en": "Harim and painted decoration"
+      },
+      "body": {
+        "tr": "Harim derinlemesine dikdörtgen ve beş sahınlıdır; orta sahın daha geniştir ve alçı ile ahşap levhalarla tekne tonoz biçiminde örtülüdür. Harim ve tavan 1957'de kalem işiyle süslenmiştir. Mihrabın sağındaki çerçevenin ortasında bitkisel madalyon içinde Kâbe tasviri; tavana yakın üstte celî sülüs Haşr Suresi ve palmet, rûmi, bitkisel kuşak vardır. Orta sahın tavanı ahşap çıtalarla eşkenar dörtgene bölünmüş, oval kartuşlarda dört halife isimleri yazılıdır. Kıble duvarındaki yarım daire planlı, yarım kubbe kavsaralı ahşap mihrap nişinin üstü istiridye kabuğu biçiminde dilimli, altı perde motiflidir. Mihrabın sağındaki minber aynı tekniktedir; doğu duvardaki ahşap vaaz kürsüsü stilize bitki motiflidir.",
+        "en": "The harim is deeply rectangular with five aisles; the wider middle aisle is vaulted in trough form with plaster and wooden boards. The harim and ceiling were painted in 1957. To the right of the mihrab, a Kaaba depiction in a floral medallion; near the ceiling a band with Surah Al-Hashr in Celi Thuluth and palmette, rumi and floral motifs. The central ceiling is divided into a rhombus by slats, with the four caliphs' names in oval cartouches. The wooden mihrab on the qibla wall is semicircular with a half-dome; its upper niche is shell-shaped and the lower part has a curtain motif. The minbar to its right matches it; the wooden preaching platform on the east wall bears stylised plant motifs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "409-410"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sah_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "409"
+        }
+      ]
+    },
+    {
+      "key": "avlu_basamak",
+      "label": {
+        "tr": "Avlu merdiveni basamak sayısı",
+        "en": "Steps of the courtyard stair"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "409"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "tamir-1957",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Tamir edildi; harim kalem işiyle süslendi",
+        "en": "Repaired; harim decorated with painted work"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "409"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hafif eğimli bir arazide duran, taş ve ahşap hatıllı cepheli dikdörtgen bir camidir. Avluya altı basamakla çıkılır; basamakların iki yanında eski devirlerden kalma silindirik sütunlar durur. İçeride beş sahın vardır, ortadaki daha geniş ve tekne tonoz örtülüdür. Tavan ve duvarlar renkli kalem işiyle süslüdür; mihrabın yanında Kâbe tasviri, tavana yakın yerde Haşr Suresi yazılıdır.",
+      "en": "A rectangular mosque on gently sloping land, its facades of stone with timber beams. Six steps lead up to the courtyard, flanked by old cylindrical columns. Inside are five aisles, the wider middle one trough-vaulted. The ceiling and walls are covered in colourful painted decoration, with a Kaaba depiction by the mihrab and the Surah Al-Hashr written near the ceiling."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 409-410) derlenmiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "410-410"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1770",
+        "original_name": "pdf-s207-xref1770",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "410"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Başköy-Ulu Camii (kitap s. 410)",
+        "en": "Başköy Grand Mosque (book p. 410)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı desenli halılar, ahşap sütunlar ve duvarlarda geometrik desenlerle süslü tavanlar görülüyor.",
+        "en": "Red patterned carpets, wooden pillars, and decorated ceilings with geometric designs are visible in the interior."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1772",
+        "original_name": "pdf-s207-xref1772",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "410"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Başköy-Ulu Camii (kitap s. 410)",
+        "en": "Başköy Grand Mosque (book p. 410)"
+      },
+      "alt": {
+        "tr": "Kırmızı kumaşla kaplı, yeşil perdeyle çevrili, ahşap bir mihrap. Üstünde hat ve çok detaylı ahşap işçiliği var.",
+        "en": "A wooden mihrab with red fabric covering and green drapery. Calligraphy and intricate wood carving above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

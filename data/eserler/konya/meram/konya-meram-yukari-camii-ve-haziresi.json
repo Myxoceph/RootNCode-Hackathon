@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-yukari-camii-ve-haziresi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 94-95) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kitap 'Yukarı' adının nedenini ve camideki hazirenin mezar sayısını vermiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Yukarı Camii ve Haziresi (Sağlık Beldesi)",
+    "en": "Yukarı Mosque and Graveyard (Sağlık Settlement)"
+  },
+  "type": "cami",
+  "secondary_types": [
+    "hazire"
+  ],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "köy camii",
+    "hazire",
+    "ahşap destekli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Sağlık Köyü",
+    "address": "Sağlık Köyü merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "94-95"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyılın sonları",
+      "en": "Late 19th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitâbe yok; mimari ve süsleme özelliklerinden XIX. yüzyıl sonlarına tarihlendirmek mümkündür. Yıl yok.",
+      "en": "No inscription; it can be dated to the late 19th century from architecture and decoration. No year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "94-95"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Sağlık Köyü'nün merkezinde, üç sahınlı, ahşap destekli ve doğusunda hazire bulunan, XIX. yüzyıl sonlarına tarihlenen cami.",
+    "en": "A three-aisled mosque on wooden supports at the centre of Sağlık Village, with a graveyard to its east, dated to the late 19th century."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami, Meram İlçesi, Sağlık Köyü'nün merkezindedir. Yapı üzerinde yaptıranı ve tarihi gösteren kitâbe yoktur; mimari ve süsleme özelliklerinden XIX. yüzyılın sonlarına tarihlendirilebilir. Caminin doğusunda hazire yer alır; baş ve ayak şahideli mezar taşları dönem özelliklerini yansıtır. Yakın zamanda yol yapımı nedeniyle caminin kuzey ve batısındaki bahçe duvarı yıkılmıştır. Cami kuzey-güney yönünde dikdörtgen planlı ve aynı yönde üç sahınlıdır; cepheler sade, pencerelerle hareketlendirilmiştir. Harime son cemaat yerinin güney duvarındaki kapı açıklığından geçilir. Üç sahın ahşap desteklerle ayrılır; destekler düz ahşap tavanı taşır, tavan dıştan kırma çatıyla örtülüdür. Harimin kuzeyinde alttan ahşap desteklerle taşınan mahfil, kıble duvarı ortasında mihrap vardır.",
+        "en": "The mosque stands at the centre of Sağlık Village, Meram District. No inscription shows who built it or when; its architecture and decoration allow a late 19th-century dating. A graveyard lies east of the mosque, with head-and-foot gravestones reflecting period characteristics. The garden wall on the north and west was recently demolished for road construction. The mosque is rectangular, north-south, with three aisles in the same direction and plain facades enlivened by windows. The harim is entered from a door in the south wall of the narthex. Wooden supports separate the three aisles and carry a flat wooden ceiling under a hipped roof. A gallery on wooden supports lies to the north of the harim and the mihrab is in the middle of the qibla wall."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "94-95"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "94-95"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yukarı Camii, Sağlık Köyü'nün merkezinde, kuzey-güney yönünde uzanan dikdörtgen, sade cepheli bir camidir. Önde bir son cemaat yeri, içeride ahşap direklerle ayrılmış üç bölüm ve düz ahşap tavan vardır. Kuzeyde ahşap bir mahfil bulunur. Doğusundaki hazirede baş ve ayak taşlı eski mezarlar görülür.",
+      "en": "Yukarı Mosque stands at the centre of Sağlık Village: a rectangular building running north-south with plain facades. It has a narthex in front, three aisles separated by wooden posts and a flat wooden ceiling inside, and a wooden gallery to the north. Old graves with head and foot stones lie in the graveyard to its east."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 94-95)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "94-95"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=306",
+        "original_name": "pdf-s49-xref306",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "94"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Yukarı Camii ve Haziresi (Sağlık Beldesi) (kitap s. 94)",
+        "en": "Yukarı Mosque and Graveyard (Sağlık Settlement) (book p. 94)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, çatısı çelikten oluşan bir cami. Önünde sütunlu bir avlu ve kapısı vardır. Yanında ağaçlar ve bir yol görünüyor.",
+        "en": "A white-walled mosque with a metal roof. It has a porch with columns and a main entrance. Trees and a road are visible nearby."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=310",
+        "original_name": "pdf-s49-xref310",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "95"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Yukarı Camii ve Haziresi (Sağlık Beldesi) (kitap s. 95)",
+        "en": "Yukarı Mosque and Graveyard (Sağlık Settlement) (book p. 95)"
+      },
+      "alt": {
+        "tr": "Ahşap sütunlar, mavi duvarlar ve kırmızı mavi halılarla kaplı iç mekân. Ahşap kapı, pencere ve tavan. Tavanın ortasında bir tavan feneri.",
+        "en": "Wooden pillars, blue walls, and a red and blue patterned carpet. Wooden door, windows, and ceiling. A ceiling light fixture in the center."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=308",
+        "original_name": "pdf-s49-xref308",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "95"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Yukarı Camii ve Haziresi (Sağlık Beldesi) (kitap s. 95)",
+        "en": "Yukarı Mosque and Graveyard (Sağlık Settlement) (book p. 95)"
+      },
+      "alt": {
+        "tr": "Toprakta dikilmiş, kireç taşından yapılmış, çeşitli şekillerde mezar taşları ve çöpler.",
+        "en": "Limestone grave markers and debris scattered on the ground in a field."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

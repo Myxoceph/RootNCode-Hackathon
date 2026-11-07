@@ -1,0 +1,322 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-civiloglu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî ve sanatkârlar kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Türkçe başlık 'Cıvıloğlu', İngilizce başlık/içindekiler 'CIVILOĞLU' yazıyor; Türkçe yazım esas alındı."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "Kitap 'ahşap direkli cami geleneğinin son örneklerinden' diyor; yine de mihrap ve minber mermerdir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Cıvıloğlu Camii",
+    "en": "Cıvıloğlu Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "ahşap direkli",
+    "köşk minare",
+    "Cumhuriyet'in ilk yılları",
+    "1930",
+    "renkli mermer mihrap"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Fakıh Dede Mahallesi",
+    "address": "Mengüç Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "196-197"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.867925,
+      "lng": 32.502148,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/282016663 ('Cıvıloğlu Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1930",
+      "en": "1930"
+    },
+    "start_year": 1930,
+    "end_year": 1930,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Kitap, caminin Cumhuriyet'in ilk döneminde 1930'da yapıldığını belirtiyor; dayandığı belge/kitâbe söylenmiyor.",
+      "en": "The book states the mosque was built in 1930, in the early Republic; its basis (document or inscription) is not stated."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "196-197"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Karatay Belediyesi'nin batısında, Fakıh Dede Mahallesi Mengüç Caddesi'nde 1930'da yapılmış, üç sahınlı ahşap direkli, kuzey cephenin doğusunda ahşap köşk minareli cami.",
+    "en": "A three-nave wooden-pillared mosque on Mengüç Street, Fakıh Dede Neighborhood, west of Karatay Municipality, built in 1930, with a wooden pavilion minaret east of the north facade."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami, Karatay ilçesinde Karatay Belediyesi'nin batısında, Fakıh Dede Mahallesi, Mengüç Caddesi üzerindedir. Cumhuriyet'in ilk döneminde, 1930'da yapılmıştır; ancak bâni ve sanatkârları hakkında bilgi yoktur.",
+        "en": "The mosque is on Mengüç Street, Fakıh Dede Neighborhood, west of Karatay Municipality in Karatay district. It was built in 1930 in the first period of the Republic; there is no information about its founder or artisans."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "196-197"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlı, üç sahınlı ve dört yöne eğimli kırma çatılıdır. Kuzey cephenin doğusunda köşk tipi ahşap minare yer alır. Yapı taş yığma tekniğindedir, beden duvarları sıvalıdır. Cephelerde iki kademeli pencere düzeni vardır: altta büyük yuvarlak kemerli, üstte daha küçük yuvarlak kemerli dikdörtgen pencereler. Harime kuzey cephedeki kapıdan girilir; iki sıra ahşap direk üç sahın oluşturur. Kıble duvarı ortasındaki mihrap renkli mermerdendir, dikdörtgen formlu ve yanlardan bordürle sınırlıdır. Sağındaki minber yeni tarzda, mermerden ve iki renklidir. Eser, XVIII-XX. yüzyıllar arasında Konya çevresinde görülen ahşap direkli cami geleneğinin son örneklerindendir.",
+        "en": "The mosque has a deeply rectangular plan, three naves and a hipped roof sloping in four directions. A pavilion-type wooden minaret is east of the north facade. It is stone masonry with plastered walls. Facades have a two-stage window arrangement: large round-arched windows below and smaller round-arched rectangular ones above. The harim is entered by the north facade door; two rows of wooden poles form three aisles. The mihrab is of colored marble, rectangular and bordered at the sides; the minbar to its right is of two-colored marble in the new style. The mosque is one of the last examples of the wooden-pillar mosque tradition seen around Konya between the 18th and 20th centuries."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "196-197"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1930",
+      "year": 1930,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "İnşa",
+        "en": "Construction"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "196-197"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sıvalı taş yığma duvarlı, derinlemesine dikdörtgen planlı, üç sahınlı bir camidir; kuzey cephenin doğusunda ahşap köşk tipi minare bulunur. Harimde iki sıra ahşap direk vardır. Mihrap renkli mermerdendir; minber iki renkli mermerdir.",
+      "en": "A deeply rectangular, three-nave mosque of plastered stone masonry with a wooden pavilion-type minaret east of the north facade. Two rows of wooden poles stand in the harim. The mihrab is of colored marble; the minbar is of two-colored marble."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "196-197"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=759",
+        "original_name": "pdf-s100-xref759",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "196"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Cıvıloğlu Camii (kitap s. 196)",
+        "en": "Cıvıloğlu Mosque (book p. 196)"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremit çatının üzerinde, kubbeli ve sütunlu bir minare görünüyor.",
+        "en": "A minaret with a dome and columns stands on a red tiled roof."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=755",
+        "original_name": "pdf-s100-xref755",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "196"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Cıvıloğlu Camii (kitap s. 196)",
+        "en": "Cıvıloğlu Mosque (book p. 196)"
+      },
+      "alt": {
+        "tr": "Sarı duvarlı, kiremit çatılı cami, ahşap kapısı ve üzerinde çatısı olan girişinin yanında koltuklar var.",
+        "en": "Yellow-walled mosque with a tiled roof, wooden door, and benches beside the entrance with a canopy."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=757",
+        "original_name": "pdf-s100-xref757",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "196"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Cıvıloğlu Camii (kitap s. 196)",
+        "en": "Cıvıloğlu Mosque (book p. 196)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap sütunlar, kubbeli tavan ve mavi halılar görülmektedir. Duvarlarda pencereler ve bir minber yer almaktadır.",
+        "en": "Wooden pillars, a domed ceiling, and blue carpets are visible. Windows and a minbar are on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=761",
+        "original_name": "pdf-s100-xref761",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "197"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Cıvıloğlu Camii (kitap s. 197)",
+        "en": "Cıvıloğlu Mosque (book p. 197)"
+      },
+      "alt": {
+        "tr": "İç mekanda, merdivenlerin yanında yer alan minber, taştan yapılmış, altın işlemeli süslemeleri ve mavi zeminde geometrik desenli halılarla çevrilidir.",
+        "en": "Inside the building, the minbar beside the stairs is made of stone, with golden ornamental patterns and a blue carpet with geometric designs on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=763",
+        "original_name": "pdf-s100-xref763",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "197"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Cıvıloğlu Camii (kitap s. 197)",
+        "en": "Cıvıloğlu Mosque (book p. 197)"
+      },
+      "alt": {
+        "tr": "Beyaz mermer kapılı, altın süslemeli ve kemerli bir mihrap. Üstünde koyu renkli arka planlı Arapça yazılar var.",
+        "en": "A marble mihrab with a golden arch and intricate patterns. Arabic calligraphy on a dark background above the niche."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

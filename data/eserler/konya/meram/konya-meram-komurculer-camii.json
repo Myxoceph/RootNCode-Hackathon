@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-komurculer-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 82) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Taşındığı 1990'lı yıllar kitapta tam yıl olarak verilmediği için zaman çizelgesine yazılmadı; yerin eski konumu da belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kömürcüler Camii",
+    "en": "Kömürcüler Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "taşınmış yapı",
+    "kare plan",
+    "tek kubbeli",
+    "kalem işi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Uluğbey Mahallesi",
+    "address": "Gazezler Sokak, No. 13",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "82"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.866436,
+      "lng": 32.496964,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/312367653 ('Kömürcüler Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Son dönem Osmanlı (tarih bilinmiyor); 1990'larda taşındı",
+      "en": "Late Ottoman (date unknown); relocated in the 1990s"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": null,
+    "basis": {
+      "tr": "Kitap bânî ve tarih hakkında bilgi olmadığını, yapının aslında son dönem Osmanlı eseri olduğunu söylüyor. Yıl verilmiyor.",
+      "en": "The book says there is no information on the founder and date; it is originally a late Ottoman work. No year given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "82"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Aslında son dönem Osmanlı eseri olan, 1990'lı yıllarda taşınarak bugünkü hâlini alan, kare planlı tek kubbeli cami. Kubbe kasnağındaki kalem işi süslemeler Cumhuriyet dönemi özellikleri taşır.",
+    "en": "A square, single-domed mosque, originally a late Ottoman work, which was relocated in the 1990s to reach its present form. The hand-painted decoration on the dome drum has Republican-period characteristics."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami Meram İlçesi, Uluğbey Mahallesi, Gazezler Sokak No. 13'tedir. Yapının bânîsi ve tarihiyle ilgili hiçbir bilgi yoktur; orijinalinde son dönem Osmanlı eseridir. 1990'lı yıllarda taşınarak günümüzdeki hâlini almıştır. Cami kare planlı ve tek kubbelidir, dıştan kırma çatıyla örtülüdür; inşasında taş ve tuğla kullanılmıştır. Cephelerde aynı boyutlarda, iki katlı, düz lentolu pencereler vardır. Kubbe kasnağındaki kalem işi süslemeler Cumhuriyet dönemi özelliklerini taşır.",
+        "en": "The mosque is at Gazezler Street No. 13, Uluğbey Neighborhood, Meram. There is no information about its founder or history; it is originally a late Ottoman work, relocated in the 1990s to its present form. It has a square plan, a single dome and a hipped roof outside; stone and brick were used. The facades have two-storey flat-lintelled windows of equal size. The hand-painted decoration on the dome drum bears Republican-period characteristics."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "82"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "kare, tek kubbeli",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "82"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "taş ve tuğla",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "82"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kömürcüler Camii kare planlı, tek kubbeli, dıştan kırma çatılı bir camidir. Taş ve tuğla ile yapılmıştır. Cephelerinde aynı boyutta, iki katlı pencereler sıralanır. Kubbenin altındaki kasnakta elle yapılmış boyama süslemeler görülür.",
+      "en": "Kömürcüler Mosque is a square, single-domed building with a hipped roof, built of stone and brick. Its facades carry two-storey windows of equal size. The drum under the dome bears hand-painted decoration."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 82)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "82-82"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=253",
+        "original_name": "pdf-s43-xref253",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "82"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kömürcüler Camii (kitap s. 82)",
+        "en": "Kömürcüler Mosque (book p. 82)"
+      },
+      "alt": {
+        "tr": "Yeşil boyalı duvarlı, dört pencere ve çatıda güneş enerjisi paneli bulunan cami binası.",
+        "en": "A green-walled mosque building with four windows and a solar panel on the roof."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=255",
+        "original_name": "pdf-s43-xref255",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "82"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kömürcüler Camii (kitap s. 82)",
+        "en": "Kömürcüler Mosque (book p. 82)"
+      },
+      "alt": {
+        "tr": "Mavi halılarla kaplı iç mekanda ahşap kapı, merdiven ve duvarlar görülmektedir.",
+        "en": "Blue carpets cover the floor, with wooden doors, stairs, and walls visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-dayhane-camii-ve-mustemilati",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 97) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Sokak/adres bilgisi kitapta yok.",
+      "Müştemilat (imam evi) ayrı bir kayıt olarak yazılmadı; kitap ayrı bir anlatım vermiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Dayhane Camii ve Müştemilatı",
+    "en": "Dayhane Mosque and Outbuildings"
+  },
+  "type": "cami",
+  "secondary_types": [
+    "diger"
+  ],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "imam evi",
+    "VGM onarımı 2019",
+    "moloz taş"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Yeşildere Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "97"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.580486,
+      "lng": 32.243175,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Yeşildere Mahallesi Yukarı Camii, Yeşildere - Yaylacık yolu, Yeşildere, Meram, Konya, İç Anadolu Bölgesi, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1266 / M. 1849-50",
+      "en": "AH 1266 / AD 1849-50"
+    },
+    "start_year": 1849,
+    "end_year": 1850,
+    "hijri_year": 1266,
+    "century": 19,
+    "basis": {
+      "tr": "Kitâbe yok; caminin üzerindeki levhada inşa tarihi H. 1266 / M. 1849-50 yazıyor.",
+      "en": "No inscription; a plaque on the mosque gives the construction date AH 1266 / AD 1849-50."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "97"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Eğimli arazide, moloz taş duvarlı, kırma çatılı; üzerindeki levhaya göre H. 1266 / M. 1849-50'de yapılmış ve 2019'da Vakıflar Genel Müdürlüğü'nce onarılmış cami. Bitişik müştemilat imam evi olarak kullanılır.",
+    "en": "A rubble-stone, hipped-roof mosque on sloping land, built in AH 1266 / AD 1849-50 according to a plaque on it and repaired by the General Directorate of Foundations in 2019. The adjoining outbuilding serves as the imam's house."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi ve Mimari",
+        "en": "Overview and Architecture"
+      },
+      "body": {
+        "tr": "Cami Meram, Yeşildere Mahallesi'ndedir. Yapının inşasına ve bânîsine dair kitâbe yoktur; caminin üzerindeki levhada inşa tarihi H. 1266 / M. 1849-50 yazılıdır. Yapı 2019'da Vakıflar Genel Müdürlüğü tarafından onarım görmüştür. Eğimli bir arazide yer alan cami dikdörtgen planlı ve kırma çatılıdır; beden duvarlarında moloz taş kullanılmıştır, cephe düzenlemesi sadedir. Harim, duvarlardaki dikdörtgen pencerelerle aydınlatılır ve mihraba dik üç sahına ayrılmıştır; içten düz ahşap tavanlıdır. Harimin kuzeyinde ahşap mahfil, kıble duvarında mihrap ve minber vardır. Mihrap ahşap kaplamalı, dikdörtgen formlu ve yarım daire planlıdır; sağındaki basit minber sonradan eklenmiştir. Avlunun kuzeyine bitişik müştemilat imam evi olarak kullanılmaktadır.",
+        "en": "The mosque is in Yeşildere Neighborhood, Meram. There is no inscription on its construction or patronage; a plaque on the mosque gives the construction date AH 1266 / AD 1849-50. The General Directorate of Foundations repaired it in 2019. On sloping land, it is rectangular with a hipped roof and rubble-stone walls and a plain facade. The harim, lit by rectangular windows, is divided into three aisles perpendicular to the mihrab, with a flat wooden ceiling. A wooden gallery lies north of the harim; the mihrab and minbar are on the qibla wall. The mihrab is wood-covered, rectangular with a semicircular plan; the simple minbar to its right was added later. The outbuilding adjoining the north of the courtyard is used as the imam's house."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "97"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "onarim_2019",
+      "label": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "value": 2019,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "key": "duvar_malzemesi",
+      "label": {
+        "tr": "Duvar malzemesi",
+        "en": "Wall material"
+      },
+      "value": "moloz taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "97"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1849",
+      "year": 1849,
+      "date": null,
+      "hijri": "1266",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı (levhaya göre)",
+        "en": "Mosque built (according to the plaque)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "97"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2019",
+      "year": 2019,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "97"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dayhane Camii eğimli bir arazide, moloz taştan, kırma çatılı dikdörtgen bir camidir. İçeride mihraba dik üç bölüm ve düz ahşap tavan bulunur. Kuzeyde ahşap bir mahfil, kıble duvarında ahşap kaplamalı bir mihrap ve sağında basit bir minber vardır. Avlunun kuzeyine bitişik yapı imam evi olarak kullanılır.",
+      "en": "Dayhane Mosque is a rectangular rubble-stone building with a hipped roof on sloping land. Inside are three aisles perpendicular to the mihrab and a flat wooden ceiling. There is a wooden gallery to the north, a wood-covered mihrab on the qibla wall and a simple minbar to its right. The building adjoining the north of the courtyard serves as the imam's house."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 97)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "97-97"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=318",
+        "original_name": "pdf-s50-xref318",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "97"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Dayhane Camii ve Müştemilatı (kitap s. 97)",
+        "en": "Dayhane Mosque and Outbuildings (book p. 97)"
+      },
+      "alt": {
+        "tr": "Bir cami ve minaresi, mavi çatılı beyaz bir yapı, etrafında da benzer yapılar ve dağlar.",
+        "en": "A mosque with a minaret, a white building with a blue roof, surrounded by similar structures and mountains."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=320",
+        "original_name": "pdf-s50-xref320",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "97"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Dayhane Camii ve Müştemilatı (kitap s. 97)",
+        "en": "Dayhane Mosque and Outbuildings (book p. 97)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap sütunlar, kiremit kaplı tavan ve kırmızı halılar var. Arka tarafta yeşil renkli mihrap ve yan tarafta merdivenler görülmektedir.",
+        "en": "Wooden pillars, tiled ceiling, and red carpets are visible. A green mihrab is at the back, and stairs are on the side."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

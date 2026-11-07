@@ -17,7 +17,8 @@
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
-    "moderator:create": "tsx src/scripts/create-moderator.ts"
+    "account:create": "tsx src/scripts/create-account.ts",
+    "assistant:eval": "tsx src/scripts/assistant-eval.ts"
   },
   "dependencies": {
     "@fastify/cors": "^11.3.1",
@@ -28,8 +29,10 @@
     "@prisma/adapter-pg": "7.10.0",
     "@prisma/client": "7.10.0",
     "@vagabonds/contracts": "^0.3.0",
+    "aws4fetch": "1.0.20",
     "dotenv": "^17.2.3",
-    "fastify": "^5.12.5",
+    "fastify": "^5.12.7",
+    "sharp": "0.35.5",
     "zod": "^4.6.6"
   },
   "devDependencies": {

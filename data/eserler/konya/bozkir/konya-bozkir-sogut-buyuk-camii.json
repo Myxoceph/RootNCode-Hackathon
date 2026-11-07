@@ -1,0 +1,356 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-bozkir-sogut-buyuk-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabından (s. 393-394) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da haritadan doğrulanarak eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "İnşa yılı ve banî kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Söğüt Büyük Camii",
+    "en": "Söğüt Great Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "geç dönem ahşap direkli cami",
+    "kalem işi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Bozkır",
+    "neighborhood": "Söğüt Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "393"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.097292,
+      "lng": 32.328803,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Söğüt Mahallesi Camii, Bozkır-Hadim Yolu, İğdeören, Bozkır, Konya, İç Anadolu Bölgesi, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "İnşa tarihi tam bilinmiyor; 20. yüzyılda yapıldığı düşünülüyor",
+      "en": "Exact date unknown; thought to be 20th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Mimari özellikler ve stil kritiğine dayanan tahmin; yıl verilmedi.",
+      "en": "Estimate from architectural features and style criticism; no year given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "393-394"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Bozkır Söğüt Mahallesi'ndeki, kitabın “geç dönem ahşap direkli cami” örneği saydığı, 20. yüzyılda yapıldığı düşünülen cami.",
+    "en": "A mosque in Söğüt Neighborhood, Bozkır, thought to date from the 20th century and cited by the book as a “late period wooden pillared mosque”."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve mimari",
+        "en": "History and architecture"
+      },
+      "body": {
+        "tr": "İnşa tarihi tam bilinmeyen cami, mimari özellikleri ve stil kritiği göz önüne alınarak 20. yüzyılda yapılmış sayılmaktadır. Yığma (kagir) teknikte, moloz, kesme, kaba yonu taş, ahşap ve kiremitle inşa edilmiştir. Kuzey-güney doğrultusunda kareye yakın dikdörtgendir; önünde ahşap direkli son cemaat yeri, güneydoğu köşede yapıdan ayrı ve yakın zamanda yapılmış minare, girişin önünde müştemilat bulunur. Cepheler taş görünümlüdür ve aralarda ahşap hatıllar vardır; pencereler yuvarlak kemerli ve dikdörtgendir.",
+        "en": "The exact date is unknown; given its architectural features and style, it is thought to be 20th-century. It is of masonry using rubble, cut and rough-cut stone, wood and tile. It is nearly square in the north-south direction, with a narthex on wooden poles, a recently built detached minaret in the southeast corner and an outbuilding in front of the entrance. Facades look like stone with wooden beams between; windows are round-arched and rectangular."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "393-394"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 2,
+      "title": {
+        "tr": "Harim ve süslemeler",
+        "en": "Harim and decoration"
+      },
+      "body": {
+        "tr": "Harim mihrap duvarına dik iki sıra ahşap sütunla üç sahına ayrılır; orta sahın yan sahınlardan geniştir. Tavan kıble yönünde iki konsolla desteklenir, tahtayla kaplıdır. Kuzeyde kadınlar mahfili ve imam odası, güneydoğu köşede vaaz kürsüsü vardır. Mihrap bordürlerinde çakma tekniğinde geometrik ve iç içe “S” kıvrımlı süslemeler, alınlıkta ajur süslemeler bulunur. Minber korkulukları baklava dilimli çıtalardan, külah altı korkuluklar stilize “S” kıvrımlarından oluşur. Tavan göbeği kare dendanlarla çevrilidir; kadınlar mahfilinin altı da dendanlıdır.",
+        "en": "The harim is divided into three aisles by two rows of wooden columns perpendicular to the mihrab wall; the middle aisle is wider. The ceiling is boarded and supported by two consoles toward the qibla. There is a women's mahfil and imam's room in the north and a preaching platform in the southeast corner. The mihrab borders carry geometric nail-technique decoration with interlocking “S” curves and an openwork pediment. Minbar railings are of diamond-shaped slats; those under the minbar cone are stylised “S” curves. The ceiling hub is ringed by square dentils, as is the underside of the women's mahfil."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "393-394"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sutun_sirasi",
+      "label": {
+        "tr": "Harimdeki ahşap sütun sırası",
+        "en": "Rows of wooden columns in the harim"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "393"
+        }
+      ]
+    },
+    {
+      "key": "sah_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "393"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kareye yakın dikdörtgen planlı, taş görünümlü ve aralarda ahşap hatıllı bir camidir. Önünde ahşap direkli bir son cemaat yeri, güneydoğuda ayrı duran yeni bir minare vardır. İçeride iki sıra ahşap sütun üç sahını ayırır, ortadaki daha geniştir. Kuzeyde kadınlar mahfili, mihrabın sağında minber ve güneydoğuda vaaz kürsüsü yer alır; tavanın ortasında bir göbek bulunur.",
+      "en": "A nearly square mosque whose facades look like stone with timber beams between. In front is a narthex on wooden poles; a new minaret stands apart to the southeast. Inside, two rows of wooden columns divide three aisles, the middle one wider. The women's gallery is in the north, the minbar to the right of the mihrab and the preaching platform in the southeast; the ceiling has a central hub."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 393-394) derlenmiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "393-395"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1681",
+        "original_name": "pdf-s198-xref1681",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "393"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Söğüt Büyük Camii (kitap s. 393)",
+        "en": "Söğüt Great Mosque (book p. 393)"
+      },
+      "alt": {
+        "tr": "Beyaz taştan inşa edilmiş, sivri kubbeli minare, gövdesinde geometrik desenlerle süslenmiş.",
+        "en": "A white stone minaret with a pointed dome, decorated with geometric patterns on its body."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1683",
+        "original_name": "pdf-s198-xref1683",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "393"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Söğüt Büyük Camii (kitap s. 393)",
+        "en": "Söğüt Great Mosque (book p. 393)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı bir caminin giriş kapısı, ahşap bir kubbeli kule ve merdivenle çevrilidir.",
+        "en": "A stone-walled mosque entrance with a wooden domed canopy and staircase."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1687",
+        "original_name": "pdf-s199-xref1687",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "394"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Söğüt Büyük Camii (kitap s. 394)",
+        "en": "Söğüt Great Mosque (book p. 394)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap sütunlar, kubbeli tavan ve mavi halılar görülmektedir.",
+        "en": "Wooden pillars, a domed ceiling, and blue carpets are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1689",
+        "original_name": "pdf-s199-xref1689",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "395"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Söğüt Büyük Camii (kitap s. 395)",
+        "en": "Söğüt Great Mosque (book p. 395)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kiremit çatılı cami ve yanında minare. Caminin cephesinde kemerli pencereler ve ahşap balkon var.",
+        "en": "Stone-walled mosque with a tiled roof and a minaret beside it. The mosque has arched windows and a wooden balcony."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1691",
+        "original_name": "pdf-s199-xref1691",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "395"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Söğüt Büyük Camii (kitap s. 395)",
+        "en": "Söğüt Great Mosque (book p. 395)"
+      },
+      "alt": {
+        "tr": "Ahşap bir tavanın ortasında, merkezde beyaz bir lamba ve etrafında dairesel düzenli ışıklarla süslü bir avize.",
+        "en": "A wooden ceiling features a central chandelier with a white light and surrounding circular lights in a radial pattern."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1693",
+        "original_name": "pdf-s199-xref1693",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "395"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Söğüt Büyük Camii (kitap s. 395)",
+        "en": "Söğüt Great Mosque (book p. 395)"
+      },
+      "alt": {
+        "tr": "Ahşap kapı ve süslemeli ahşap çatı kafesinin bir kısmı.",
+        "en": "Wooden door and a section of carved wooden lattice roof."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

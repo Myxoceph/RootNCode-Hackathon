@@ -1,0 +1,529 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-sarayonu-pir-huseyin-bey-yukari-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 468-471) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kurucu (banî) kitapta belirtilmiyor.",
+      "Dönem (era) kodu kitapta belirtilmediği için null; sahada/uzman görüşüyle belirlenecek.",
+      "Kitabe metni kitapta yok; yapım tarihi kitaptaki ifadeden alındı.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Vakfiye metni / vakıf bilgisi kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mihrap]",
+        "note": "Mihrap tepeliğindeki pano: Türkçe metin 'Bakara Sûresi, 144. ayet', İngilizce metin 'Surah Al-Baqara, Verse 14' diyor. Her iki değer kitapta olduğu gibi korundu; kayıt 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Pir Hüseyin Bey (Yukarı) Camii",
+    "en": "Pir Hüseyin Bey (Yukarı) Mosque"
+  },
+  "subtitle": {
+    "tr": "Sarayönü'nde 1408 tarihli ahşap direkli cami",
+    "en": "Wooden-pillared mosque of 1408 in Sarayönü"
+  },
+  "alternate_names": [
+    {
+      "tr": "Büyük Camii",
+      "en": "Grand Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "ahşap direkli",
+    "alçı mihrap",
+    "hat levhaları",
+    "Sarayönü"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Sarayönü",
+    "neighborhood": "Yukarı Mahalle",
+    "address": "Pir Hüseyin Bey Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "468-469"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.268304,
+      "lng": 32.408642,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/312220170 ('Pir Hüseyin Bey Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 811 / M. 1408",
+      "en": "AH 811 / AD 1408"
+    },
+    "start_year": 1408,
+    "end_year": 1408,
+    "hijri_year": 811,
+    "century": 15,
+    "basis": {
+      "tr": "Kitapta caminin H. 811 / M. 1408 senesinde yaptırıldığı belirtiliyor.",
+      "en": "The book states the mosque was built in AH 811 / AD 1408."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "468-469"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "468-469"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Sarayönü Yukarı Mahalle'deki, 'Büyük Camii' olarak da bilinen cami H. 811 / M. 1408'de yaptırılmış; üç sahınlı harimi, alçı mihrabı ve sekiz hat levhasıyla dikkat çeker.",
+    "en": "Known also as the 'Grand Mosque', this Sarayönü mosque was built in AH 811 / AD 1408; it stands out for its three-aisled harim, plaster mihrab and eight calligraphy panels."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami Sarayönü İlçesi, Yukarı Mahalle, Pir Hüseyin Bey Caddesi'nde yer almaktadır. 'Büyük Camii' olarak da bilinir. H. 811 / M. 1408'de yaptırılmış, H. 1310 / M. 1894'te Sarayönü eşrafından Hacı Abdullah Ağa tarafından tamir ettirilmiştir. 1944'te camiye minare eklenmiştir.",
+        "en": "The mosque is located in Sarayönü District, Yukarı Neighborhood, Pir Hüseyin Bey Street. It is also known as the 'Grand Mosque'. It was built in 811 AH / 1408 AD and repaired by Hacı Abdullah Ağa, one of the Sarayönü notables, in 1310 AH / 1894 AD. A minaret was added in 1944."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "468-469"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlıdır; giriş bölümü, üç sahınlı harim ve avlu bölümlerinden oluşur. Farklı dönemlerde onarım geçiren caminin cepheleri sıvanıp boyanmıştır. Güney ve batı cephesinde bordürler kırmızıyla belirginleştirilmiş, dikdörtgen formlu taşlar cepheyi hareketlendirir. Batı cephenin kuzeyindeki minare kare kaideli, silindirik formlu ve tek şerefelidir.",
+        "en": "The mosque has a deeply rectangular plan consisting of an entrance section, a prayer hall with three aisles and a courtyard section. The facades, repaired in different periods, are plastered and painted. On the south and west facades the borders are highlighted in red and rectangular stones enliven the facade. The minaret in the north of the western facade has a square base, cylindrical form and a single balcony."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "468-469"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 3,
+      "title": {
+        "tr": "Harim ve Hat Levhaları",
+        "en": "Harim and Calligraphy Panels"
+      },
+      "body": {
+        "tr": "Harim mihraba dik, iki sıra beşer ahşap direkle üç sahına ayrılmıştır; orta sah yan sahlardan daha geniş ve yüksektir. Beden duvarları sadedir, yer yer dairesel hat yazılı panolar vardır. Bu panolarda 'Allah (cc)', 'Muhammed (sav)', Dört Halife ile Hz. Hasan ve Hz. Hüseyin isimleri yazılıdır. Levhalar sekiz adettir.",
+        "en": "The harim is divided into three aisles by two rows of five wooden poles placed perpendicular to the mihrab; the middle aisle is wider and higher. The main walls are plain with circular calligraphy panels in places, on which the names of Allah (cc), Muhammad (pbuh), the Four Caliphs and Hz. Hasan and Hz. Huseyin are written. There are eight plates."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "470-471"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 4,
+      "title": {
+        "tr": "Mihrap",
+        "en": "Mihrab"
+      },
+      "body": {
+        "tr": "Kıble duvarı ortasındaki mihrap, süslemesi ve formuyla caminin en dikkat çeken bölümlerindendir. İki bölüm olarak tasarlanmış alçı mihrabın nişi mukarnas kavsaralıdır; niş, celi sülüs hatla yazılmış bordürlerle çevrilidir. Yanındaki sütunceler yivli, başlıkları geometrik süslemelidir. Tepelik turkuaz renklidir ve ortadaki panoda Bakara Sûresi, 144. ayet yazmaktadır. Mihrap yanları bitkisel ve geometrik süslüdür; üstteki pano kırılmış bir kapı kanadını andırır ve iki panoda 'Allah (cc)', 'Muhammed (sav)' yazar. Alçı mihrap sonradan yağlı boyayla boyanarak özgün görselliğini kısmen kaybetmiştir.",
+        "en": "The mihrab in the middle of the qibla wall is among the most striking parts of the mosque. The niche of the two-part plaster mihrab has a muqarnas frame and is surrounded by borders in Celi Thuluth calligraphy. The columns beside it are grooved with geometric capitals. The top is turquoise and the middle panel reads 'Surah Al-Baqara, Verse 14' (English text). Its sides carry floral and geometric ornaments; the panel above resembles a broken door wing, with 'Allah (cc)' and 'Muhammad (pbuh)' on two panels. The plaster mihrab was later painted with oil paint and partially lost its original appearance."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "470-471"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "harim_sah_sayisi",
+      "label": {
+        "tr": "Harim sah sayısı",
+        "en": "Number of aisles in harim"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "470-471"
+        }
+      ]
+    },
+    {
+      "key": "hat_levhasi_sayisi",
+      "label": {
+        "tr": "Dairesel hat levhası sayısı",
+        "en": "Number of circular calligraphy panels"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "470-471"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Abdullah Ağa",
+      "role": {
+        "tr": "1894 onarımını yaptıran, Sarayönü eşrafından",
+        "en": "Had the 1894 repair done; one of the Sarayönü notables"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1408",
+      "year": 1408,
+      "date": null,
+      "hijri": "811",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yaptırıldı",
+        "en": "Mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "468-469"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1894",
+      "year": 1894,
+      "date": null,
+      "hijri": "1310",
+      "type": "repair",
+      "title": {
+        "tr": "Hacı Abdullah Ağa tarafından tamir ettirildi",
+        "en": "Repaired by Hacı Abdullah Ağa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "468-469"
+        }
+      ]
+    },
+    {
+      "id": "minare-1944",
+      "year": 1944,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Camiye minare eklendi",
+        "en": "Minaret added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "468-469"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Alçı mihrap",
+        "en": "Plaster mihrab"
+      },
+      "hint": {
+        "tr": "Mukarnaslı niş ve celi sülüs bordürlere bakın.",
+        "en": "Look for the muqarnas niche and Celi Thuluth borders."
+      },
+      "section_id": "mihrap"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "entrance_fee": "unknown",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cami, derin dikdörtgen planlı, sıvalı ve boyalı cepheli bir yapıdır. Batı cephenin kuzeyinde kare kaideli, silindirik gövdeli, tek şerefeli bir minare bulunur. Harim, ahşap direk sıralarıyla üç sahına ayrılmıştır; ortadaki sah daha geniş ve yüksektir. Duvarlarda sekiz dairesel hat levhası, kıble duvarının ortasında mukarnaslı nişe sahip alçı mihrap yer alır.",
+      "en": "The mosque has a deeply rectangular plan with plastered and painted facades. A minaret with a square base, cylindrical body and a single balcony stands in the north of the west facade. The harim is divided into three aisles by rows of wooden poles, the middle one wider and higher. Eight circular calligraphy panels hang on the walls, and a plaster mihrab with a muqarnas niche stands in the middle of the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlenmiştir."
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami ambiyansı]",
+      "en": "[Mosque ambience]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "468-471"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2075",
+        "original_name": "pdf-s236-xref2075",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "468"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Pir Hüseyin Bey (Yukarı) Camii (kitap s. 468)",
+        "en": "Pir Hüseyin Bey (Yukarı) Mosque (book p. 468)"
+      },
+      "alt": {
+        "tr": "Yüksek bir minare ve kırmızı çatılı binalarla çevrili bir cami kompleksi. Arka planda şehir ve ağaçlar.",
+        "en": "A mosque complex with a tall minaret and red-roofed buildings, surrounded by trees and a town in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2079",
+        "original_name": "pdf-s237-xref2079",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "470"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Pir Hüseyin Bey (Yukarı) Camii (kitap s. 470)",
+        "en": "Pir Hüseyin Bey (Yukarı) Mosque (book p. 470)"
+      },
+      "alt": {
+        "tr": "Kapalı bir avlu, kiremit yoldan oluşmuş, ağaçlar ve çitlerle çevrili. Sağda sütunlu, yeşil bir kiosktan ve arka planda bir cami binasından oluşan bir mekandır.",
+        "en": "An enclosed courtyard with a brick path, surrounded by trees and a fence. On the right, a green kiosk with columns, and a mosque building in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2081",
+        "original_name": "pdf-s237-xref2081",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "470"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Pir Hüseyin Bey (Yukarı) Camii (kitap s. 470)",
+        "en": "Pir Hüseyin Bey (Yukarı) Mosque (book p. 470)"
+      },
+      "alt": {
+        "tr": "Taştan bir levha, üzerinde yazılar ve bir delik var. Yanında iki taş sütun kalıntısı.",
+        "en": "A stone slab with inscriptions and a hole, flanked by two stone pedestal remnants."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2083",
+        "original_name": "pdf-s237-xref2083",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "470"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Pir Hüseyin Bey (Yukarı) Camii (kitap s. 470)",
+        "en": "Pir Hüseyin Bey (Yukarı) Mosque (book p. 470)"
+      },
+      "alt": {
+        "tr": "Taş üzerine kazınmış, kırmızı ve yeşil renklerle boyanmış Arapça hat yazılı bir levha.",
+        "en": "A stone inscription with Arabic calligraphy in red and green paint."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2085",
+        "original_name": "pdf-s237-xref2085",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "470"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Pir Hüseyin Bey (Yukarı) Camii (kitap s. 470)",
+        "en": "Pir Hüseyin Bey (Yukarı) Mosque (book p. 470)"
+      },
+      "alt": {
+        "tr": "Kare bir çerçevede, merkezde piramit şeklinde bir yapı ve etrafında mavi yıldızlar, kenarlarında Arapça hat var.",
+        "en": "In a square frame, a stepped pyramid structure in the center, surrounded by blue stars and Arabic calligraphy along the edges."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2087",
+        "original_name": "pdf-s237-xref2087",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "471"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Pir Hüseyin Bey (Yukarı) Camii (kitap s. 471)",
+        "en": "Pir Hüseyin Bey (Yukarı) Mosque (book p. 471)"
+      },
+      "alt": {
+        "tr": "Mavi zeminli, altın harflerle yazılmış Arapça hat levha. Üstte iki küçük levhada 'Allah' ve 'Muhammed' yazılı. Altta daha büyük levhada 'Fatiha Suresi'nin ilk ayetleri yer alıyor.",
+        "en": "A blue plaque with golden Arabic calligraphy. Two smaller plaques above display 'Allah' and 'Muhammad'. A larger plaque below shows the first verses of Surah Al-Fatiha."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2089",
+        "original_name": "pdf-s237-xref2089",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "471"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Pir Hüseyin Bey (Yukarı) Camii (kitap s. 471)",
+        "en": "Pir Hüseyin Bey (Yukarı) Mosque (book p. 471)"
+      },
+      "alt": {
+        "tr": "Ahşap sütunlar, kiremit kaplı zemin ve tavan, pencere ve duvarlarda geometrik desenler.",
+        "en": "Wooden pillars, tiled floor and ceiling, windows, and geometric patterns on walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

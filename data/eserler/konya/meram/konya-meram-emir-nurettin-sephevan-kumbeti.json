@@ -1,0 +1,390 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-emir-nurettin-sephevan-kumbeti",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 146 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kümbette kimin yattığı kitapta belirtilmiyor; Emir Nurettin ile kitâbedeki Nureddin İbrahim bin Celal arasındaki bağ açıklanmalı.",
+      "Kaynaklarda tekke olarak da geçmesi kitapta açıklanmıyor; hangi kaynaklar olduğu araştırılmalı.",
+      "Kitâbenin Arapça metni ve dili kitapta yok; okunuşu eklenmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitap 'türbe, kimliği tam olarak tespit edilemeyen Celal oğlu İbrahim Nureddin tarafından yaptırılmıştır' diyor; kitâbe metni ise yalnızca onu anıyor (yaptırdığını söylemiyor). Ayrıca yapının adındaki 'Emir Nurettin' ile bu kişinin aynı olup olmadığı belirtilmiyor. Bu yüzden founder 'probable' işaretlendi."
+      },
+      {
+        "field": "name",
+        "note": "Başlıktaki ad 'Emir Nurettin (Sephevan) Kümbeti'; 'Sephevan'ın anlamı kitapta açıklanmıyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Emir Nurettin Kümbeti",
+    "en": "Emir Nurettin Kumbet"
+  },
+  "alternate_names": [
+    {
+      "tr": "Emir Nurettin (Sephevan) Kümbeti",
+      "en": "Emir Nurettin (Sephevan) Kumbet"
+    },
+    {
+      "tr": "Sephevan Kümbeti",
+      "en": "Sephevan Kumbet"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "sekizgen kümbet",
+    "tuğla külah",
+    "kitâbe",
+    "celi sülüs",
+    "iki katlı türbe"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Sahip Ata",
+    "address": "Sahip Ata Mahallesi, Kurs Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "146"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.868321,
+      "lng": 32.497563,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1469823071 ('Emir Nureddin Türbesi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyılın ikinci yarısı (benzer örneklere göre)",
+      "en": "Second half of the 13th century (by comparison with similar examples)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kaynaklarda tekke olarak gösterilen yapı, benzer örneklerine bakılarak XIII. yüzyılın ikinci yarısına tarihlendirilmektedir.",
+      "en": "The building, shown as a tekke in the sources, is dated to the second half of the 13th century by comparison with similar examples."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "146"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Celal oğlu İbrahim Nureddin",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "146"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Meram'da, kaynaklarda tekke olarak da gösterilen sekizgen planlı, tuğla gövdeli ve piramidal külahlı Selçuklu kümbeti. Kuzey kapısı üzerindeki celi sülüs kitâbe Nureddin İbrahim bin Celal'i anar; yapı iki katlıdır: altta cenazelik/kripta katı, üstte mescit ve ziyaretgâh olarak adlandırılan, sembolik sandukalı kat.",
+    "en": "A Seljuk kumbet in Meram with an octagonal plan, brick body and pyramidal cone, shown in the sources also as a tekke. The celi thuluth inscription over its north door names Nureddin İbrahim bin Celal; the building has two floors: a funeral chamber/crypt floor below and, above, a floor called masjid and shrine holding a symbolic sarcophagus."
+  },
+  "sections": [
+    {
+      "id": "konum-ve-tarih",
+      "order": 1,
+      "title": {
+        "tr": "Konum, Tarih ve Yaptıran",
+        "en": "Location, Date and Founder"
+      },
+      "body": {
+        "tr": "Kümbet Meram, Sahip Ata Mahallesi, Kurs Sokak üzerindedir. Kaynaklarda tekke olarak gösterilen yapı, benzer örneklerine bakılarak XIII. yüzyılın ikinci yarısına tarihlendirilir. Emir Nurettin Anadolu Selçuklu döneminde yaşamış bir yöneticidir; türbe, kimliği tam olarak tespit edilemeyen Celal oğlu İbrahim Nureddin tarafından yaptırılmıştır. Kuzeydeki celi sülüs hatlı kitâbede \"Baş kumandan, âlim, âdil, müeyyed, muzaffer, mansur Nureddin İbrahim bin Celal. Allah ona rahmet etsin\" yazar.",
+        "en": "The kumbet is on Kurs Street in Sahip Ata Neighbourhood, Meram. Shown as a tekke in the sources, it is dated to the second half of the 13th century by comparison with similar examples. Emir Nurettin was a ruler who lived in the Anatolian Seljuk period; the tomb was built by İbrahim Nureddin, son of Celal, whose identity has not been fully determined. The celi thuluth inscription in the north reads \"Chief commander, scholar, just, confirmed, victorious, helped by God, Nureddin İbrahim bin Celal. May God have mercy on him.\""
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "146"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı sekizgen planlı, içten kubbeli, dıştan piramidal külahlıdır. Alt kat \"cenazelik, mumyalık, kripta ve asıl mezar hücresi\", üst kat \"gövde, mescit, ziyaretgâh\" olarak adlandırılır ve sembolik sandukayı barındırır. Kaide kesme taştan, gövde ve külah tuğladandır. Cenazelik katı dört kemer üzerinde yükselen basık kubbelidir; ortasında doğu-batı doğrultusunda uzanan bir lahit bulunur. Kuzeye bakan kapının üzerinde kitâbelik, onun üzerinde rozet, rozetin üzerinde sivri kemerli bir pencere yer alır. İç mekânda mihrap nişi vardır.",
+        "en": "The building has an octagonal plan, a dome inside and a pyramidal cone outside. The lower floor is called \"funeral chamber, mummification room, crypt and main grave cell\", the upper floor \"body, masjid, shrine\" and holds the symbolic sarcophagus. The base is cut stone; the body and cone are brick. The funeral floor has a low dome rising on four arches, with a sarcophagus extending east-west in the middle. Above the north-facing door are the inscription panel, a rosette above it and a pointed-arched window above that. The interior has a mihrab niche."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "146"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "plan",
+      "label": {
+        "tr": "Plan",
+        "en": "Plan"
+      },
+      "value": "sekizgen",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "146"
+        }
+      ]
+    },
+    {
+      "key": "cenazelik_ortu",
+      "label": {
+        "tr": "Cenazelik katı örtüsü",
+        "en": "Funeral floor covering"
+      },
+      "value": "dört kemer üzerinde basık kubbe",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "146"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_yonu",
+      "label": {
+        "tr": "Kitâbenin bulunduğu yön",
+        "en": "Direction of the inscription"
+      },
+      "value": "kuzey",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "146"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Celal oğlu İbrahim Nureddin",
+      "role": {
+        "tr": "Türbeyi yaptıran; kimliği tam tespit edilemiyor",
+        "en": "Builder of the tomb; identity not fully determined"
+      }
+    },
+    {
+      "name": "Emir Nurettin",
+      "role": {
+        "tr": "Anadolu Selçuklu döneminde yaşamış yönetici; kümbetin adını verir",
+        "en": "Ruler of the Anatolian Seljuk period; gives the kumbet its name"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "kuzey-kitabe",
+      "location": {
+        "tr": "Yapının kuzeyinde, kapı üzerindeki kitâbelikte",
+        "en": "In the north, on the inscription panel above the door"
+      },
+      "language": "other",
+      "script": "celi sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Baş kumandan, âlim, âdil, müeyyed, muzaffer, mansur Nureddin İbrahim bin Celal. Allah ona rahmet etsin",
+        "en": "Chief commander, scholar, just, confirmed, victorious, helped by God, Nureddin İbrahim bin Celal. May God have mercy on him."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": "m03",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "146"
+        }
+      ],
+      "note": {
+        "tr": "Kitap yazı dilini belirtmiyor, Arapça metni vermiyor; çeviri kitaptaki metindir.",
+        "en": "The book does not name the language or give the original text; the translation is the book's text."
+      }
+    }
+  ],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kümbet, kesme taş kaideli, tuğla gövdeli ve tuğla piramidal külahlı sekizgen bir yapıdır. Kuzey cephedeki kapının üzerinde celi sülüs yazılı kitâbelik, onun üstünde bir rozet ve sivri kemerli bir pencere yer alır. Alt katta dört kemer üzerinde yükselen basık kubbenin altında doğu-batı doğrultusunda bir lahit durur; üst katta mihrap nişi bulunan mescit/ziyaretgâh bölümü vardır.",
+      "en": "The kumbet is an octagonal building with a cut-stone base, brick body and brick pyramidal cone. Over the north door is an inscription panel in celi thuluth, with a rosette above it and a pointed-arched window above that. On the lower floor a sarcophagus lies east-west under a low dome on four arches; the upper floor has the masjid/shrine section with a mihrab niche."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-emir-nurettin-sephevan-kumbeti/p075-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "146"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Emir Nurettin Kümbeti'nin dış görünümü",
+        "en": "Exterior of Emir Nurettin Kumbet"
+      },
+      "alt": {
+        "tr": "Tuğla ve taş örgülü gövdesi üzerinde yüksek piramit çatısı olan kümbet. Köşede kemerli küçük bir giriş ve çevresinde demir korkuluk vardır.",
+        "en": "A brick and stone tomb tower with a tall pyramidal roof. A small arched entrance is at the corner and an iron railing surrounds it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-emir-nurettin-sephevan-kumbeti/p075-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "147"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Kümbetin kemerli girişi",
+        "en": "Arched entrance of the kumbet"
+      },
+      "alt": {
+        "tr": "Taş çerçeveli sivri kemerli kapıda ahşap kapı kanadı, üstünde yazılı bir bölüm ve sivri kemerli küçük pencere vardır.",
+        "en": "A wooden door in a pointed-arch stone frame, with a small pointed-arch window above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-emir-nurettin-sephevan-kumbeti/p075-4.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "147"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kapı kemerinin üzerindeki kitabe",
+        "en": "Inscription above the door arch"
+      },
+      "alt": {
+        "tr": "Kemerin içinde, çiçek biçimli bir rozet ve altında tek satır Arapça yazı bulunan taş yüzey görünür.",
+        "en": "Within the arch is a stone surface with a flower-shaped rosette and a single line of Arabic script beneath it."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-emir-nurettin-sephevan-kumbeti/p075-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "147"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kümbetin içinde sanduka ve ışık",
+        "en": "Sarcophagus and light inside the kumbet"
+      },
+      "alt": {
+        "tr": "Tuğla örgülü duvarlı odada açık renkli bir sanduka durur. Karşıda açık kapıdan ve yukarıdaki pencereden ışık girer.",
+        "en": "A light-coloured sarcophagus in a room with brick walls. Light enters through the open door at the far end and a window above."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-emir-nurettin-sephevan-kumbeti/p075-5.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "147"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Tuğla duvar önündeki taş sanduka",
+        "en": "Stone sarcophagus before a brick wall"
+      },
+      "alt": {
+        "tr": "Tuğla örgülü yuvarlak duvarın önünde, sade, açık renkli bir sanduka yer alır. Zemin ahşaptır.",
+        "en": "A plain light-coloured sarcophagus in front of a round brick wall, on a timber floor."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

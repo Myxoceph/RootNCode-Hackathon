@@ -7,6 +7,9 @@ export function visibleStatuses(visibility: AssetVisibility): string[] {
   return visibility === "preview" ? ["published", "in_review"] : ["published"];
 }
 
+/** Every status, drafts included: only for the admin panel's preview. */
+export const ALL_ASSET_STATUSES = ["draft", "in_review", "published"];
+
 const labelSelect = { code: true, label_tr: true, label_en: true } as const;
 
 export const summarySelect = {
@@ -24,9 +27,16 @@ export const summarySelect = {
   summary_en: true,
   dating_display_tr: true,
   dating_display_en: true,
+  start_year: true,
+  century: true,
   asset_type: { select: labelSelect },
   era: { select: labelSelect },
   city: { select: labelSelect },
+  // The complex this asset belongs to, and whether it may be shown.
+  parent_id: true,
+  asset: { select: { status: true } },
+  // What the record tells about it: the asset's prominence.
+  _count: { select: { asset_section: true, asset_highlight: true, asset_legend: true, asset_person: true, timeline_event: true, inscription: true } },
 } satisfies Prisma.assetSelect;
 
 /**
@@ -45,6 +55,8 @@ export const assetMediaSelect = {
   alt_tr: true,
   alt_en: true,
   archive_year: true,
+  subject: true,
+  dossier_after: true,
   media: {
     select: {
       kind: true,
@@ -80,6 +92,7 @@ function detailArgs(statuses: string[]) {
       asset: { select: { ...assetRefSelect, status: true } },
       other_asset: { where: { status: { in: statuses } }, select: assetRefSelect, orderBy: { name_tr: "asc" } },
       asset_section: { orderBy: { sort_order: "asc" } },
+      asset_custom_block: { orderBy: { sort_order: "asc" } },
       asset_legend: { orderBy: { sort_order: "asc" } },
       asset_fact: { orderBy: { sort_order: "asc" } },
       asset_person: { orderBy: { sort_order: "asc" } },
@@ -106,6 +119,8 @@ const relationSelect = {
   description_tr: true,
   description_en: true,
   confidence: true,
+  target_name_tr: true,
+  target_name_en: true,
   relation_type: { select: labelSelect },
 } satisfies Prisma.asset_relationSelect;
 
@@ -157,10 +172,29 @@ export interface AssetsRepository {
    * status; the caller drops links to assets it cannot show.
    */
   findRelations(id: string): Promise<RelationRecord[]>;
+  /** The ids that have a record in the dataset, whatever their status. */
+  findExistingIds(ids: string[]): Promise<Set<string>>;
   /** Citations of the given relations, keyed in the dataset as `<target id>:<type>` on the source asset. */
   findRelationCitations(relations: RelationRecord[]): Promise<CitationRecord[]>;
   /** Visible assets with coordinates inside the box, except `excludeId`. */
   findLocatedInBox(bbox: [number, number, number, number], excludeId: string): Promise<AssetSummaryRecord[]>;
+  /** Inscriptions of visible assets with an AR target photo, with where they are (`GET /ar-targets`). */
+  findArTargets(): Promise<ArTargetRecord[]>;
+}
+
+export interface ArTargetRecord {
+  asset_id: string;
+  slug: string;
+  /** `asset` inside it is the complex the asset is a building of (Prisma's name for `parent_id`). */
+  asset: {
+    city_code: string;
+    lat: number | null;
+    lng: number | null;
+    coord_source: string | null;
+    asset: { lat: number | null; lng: number | null; coord_source: string | null } | null;
+  };
+  /** The target photo, published: its smallest variant's key names the `.mind` file beside it. */
+  asset_media: { media: { status: string; media_variant: Array<{ key: string }> } } | null;
 }
 
 /** `entity_key` of a relation citation, as written by data/tools/db_rows.py. */
@@ -168,8 +202,11 @@ export function relationCitationKey(relation: Pick<RelationRecord, "target_asset
   return `${relation.target_asset_id}:${relation.relation_type.code}`;
 }
 
-export function createAssetsRepository(prisma: PrismaClient, visibility: AssetVisibility): AssetsRepository {
-  const statuses = visibleStatuses(visibility);
+export function createAssetsRepository(
+  prisma: PrismaClient,
+  visibility: AssetVisibility,
+  statuses: string[] = visibleStatuses(visibility),
+): AssetsRepository {
 
   return {
     async findMany({ city, type, era, q, bbox, limit, offset }) {
@@ -240,6 +277,12 @@ export function createAssetsRepository(prisma: PrismaClient, visibility: AssetVi
       });
     },
 
+    async findExistingIds(ids) {
+      if (ids.length === 0) return new Set();
+      const rows = await prisma.asset.findMany({ where: { id: { in: ids } }, select: { id: true } });
+      return new Set(rows.map((row) => row.id));
+    },
+
     findRelationCitations(relations) {
       if (relations.length === 0) return Promise.resolve([]);
       return prisma.source_citation.findMany({
@@ -252,6 +295,19 @@ export function createAssetsRepository(prisma: PrismaClient, visibility: AssetVi
         },
         select: { ...citationSelect, asset_id: true },
         orderBy: { id: "asc" },
+      });
+    },
+
+    findArTargets() {
+      return prisma.inscription.findMany({
+        where: { ar_target_media_key: { not: null }, asset: { status: { in: statuses } } },
+        select: {
+          asset_id: true,
+          slug: true,
+          asset: { select: { city_code: true, lat: true, lng: true, coord_source: true, asset: { select: { lat: true, lng: true, coord_source: true } } } },
+          asset_media: { select: { media: { select: { status: true, media_variant: { select: { key: true }, orderBy: { width: "asc" }, take: 1 } } } } },
+        },
+        orderBy: [{ asset_id: "asc" }, { sort_order: "asc" }],
       });
     },
 

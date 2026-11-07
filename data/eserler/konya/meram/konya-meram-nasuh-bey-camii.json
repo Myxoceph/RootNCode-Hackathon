@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-nasuh-bey-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Yapım yılı kesin değil; vakfiye aslından teyit edilmeli.",
+      "1315 tarihli vakfiye kaydı doğrulanmalı.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "waqf.deed",
+        "note": "Metin 'Dârü'l-Huffaz'a ait 1315 tarihli vakfiye bulunmaktadır' diyor ve ardından H. 918 / M. 1512 tarihli Pir Ahmed Bey vakfiyesinden söz ediyor. 1315 tarihi yapının XV. yüzyıl tarihiyle bağdaşmıyor (yazım hatası olabilir); iki değer de korundu."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "Türkçe metin 1980'de yıkılmış son cemaat yerinin yenilendiğini söyler; sonraki sayfada 'oldukça yıkılmış vaziyetteki son cemaat yeri 1980 onarımıyla yeniden yapılmıştır' denir."
+      },
+      {
+        "field": "alternate_names",
+        "note": "'Musa Bey Kütüphanesi' metinde camiye verilen Osmanlı dönemi kullanım adı olarak geçer."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Nasuh Bey Camii (Canbazzade Nasuh Bey Dârü'l-Huffazı)",
+    "en": "Nasuh Bey Mosque (Canbazzade Nasuh Bey Dârü'l-Huffaz)"
+  },
+  "alternate_names": [
+    {
+      "tr": "Canbazzade Nasuh Bey Dârü'l-Huffazı",
+      "en": "Canbazzade Nasuh Bey Dârü'l-Huffaz"
+    },
+    {
+      "tr": "Gazhane",
+      "en": "Gazhane"
+    },
+    {
+      "tr": "Musa Bey Kütüphanesi",
+      "en": "Musa Bey Library"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [
+    "diger"
+  ],
+  "parent_id": null,
+  "era": "beylikler",
+  "tags": [
+    "cami",
+    "dârü'l-huffaz",
+    "Karamanoğulları",
+    "tek kubbeli",
+    "Gazhane",
+    "vakfiye"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Abdülaziz Mahallesi",
+    "address": "Abdülmümin Sokak No: 7",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "151-152"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.870151,
+      "lng": 32.489967,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q131741392 ('Nasuh Bey Mescidi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XV. yüzyılın ikinci yarısı",
+      "en": "Second half of the 15th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 15,
+    "basis": {
+      "tr": "Metin 'XV. yüzyılın ikinci yarısında' der; kesin yıl verilmez. H. 918 / M. 1512 vakfiyesi yapıdan sonraki bir belgedir.",
+      "en": "The text says 'second half of the 15th century'; no exact year. The 918 AH / 1512 AD charter is a later document."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "151"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Canbazzade Nasuh Bey",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "151"
+      }
+    ]
+  },
+  "waqf": {
+    "name": "Canbazzade Nasuh Bey Dârü'l-Huffazı vakfı",
+    "deed": {
+      "date_display": "H. 918 / M. 1512 (Pir Ahmed Bey vakfiyesi); metinde ayrıca '1315 tarihli vakfiye' geçer",
+      "excerpt": {
+        "tr": "Vakfiyeye göre caminin bânisi Karamanoğlu II. İbrahim Bey'in kızının oğlu Nasuh Bey'dir; vakfiye cami ve dârü'l huffazın yeri ve bânisi hakkında bilgi verir.",
+        "en": "According to the charter the founder is Nasuh Bey, son of the daughter of Karamanoğlu İbrahim Bey II; it gives information on the location and founder of the mosque and dârü'l huffaz."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "151"
+        }
+      ]
+    },
+    "conditions": null,
+    "land_note": {
+      "tr": "Nasuh Bey çok sayıda toprak gelirine sahip olmuş ve bu gelirleri hayır ve eğitim faaliyetlerinde kullanmıştır.",
+      "en": "Nasuh Bey held many land revenues and used them for charitable and educational activities."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "151"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "XV. yüzyılın ikinci yarısında Karamanoğlu soyundan Canbazzade Nasuh Bey'in yaptırdığı, Karamanoğlu döneminin önemli dârü'l huffazlarından biri; üç gözlü son cemaat yeri ve tek kubbeli harimi vardır. Sonradan kütüphane, depo ve gaz deposu olarak kullanıldığı için halk arasında 'Gazhane' adıyla anılır.",
+    "en": "One of the important dârü'l huffaz buildings of the Karamanoğlu period, built in the second half of the 15th century by Canbazzade Nasuh Bey; single-domed harim with a three-bay narthex. Because it later served as a municipal gas depot it is popularly called 'Gazhane'."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Banî",
+        "en": "History and Founder"
+      },
+      "body": {
+        "tr": "Nasuh Bey (Dârü'l-Huffaz) Camii, XV. yüzyılın ikinci yarısında Canbazzade Nasuh Bey tarafından yaptırılmıştır. Karamanoğulları ailesine mensup Nasuh Bey'in annesi Karaman Bey'i II. İbrahim'in kızı, babası Defterdar Canbaz Kadıoğlu'dur. Nasuh Bey kızı Hüsnüşah Hatun'u Osmanlı Sultanı II. Bayezit'le evlendirmiştir. Osmanlı sistemiyle barışık politika yürüten Nasuh Bey birçok toprak gelirine sahip olmuş, bunları hayır ve eğitim faaliyetlerinde kullanmıştır; Dârü'l-Huffaz bu eserlerden biridir. Cami, Osmanlı döneminde Musa Bey Kütüphanesi, sonra askeri malzeme deposu, uzun yıllar belediyenin gaz deposu, 1950-1977 arasında kitaplık olarak kullanılmış, 1977'de cami olarak ibadete açılmıştır. 1980'de yıkılmış olan son cemaat yeri yenilenmiştir.",
+        "en": "The mosque was built by Canbazzade Nasuh Bey in the second half of the 15th century. A member of the Karamanoğulları family, Nasuh Bey's mother was the daughter of Karaman Bey İbrahim II and his father was Defterdar Canbaz Kadıoğlu. He married his daughter Hüsnüşah Hatun to Ottoman Sultan Bayezid II and used his land revenues for charity and education; the Dârü'l-Huffaz is one such work. In the Ottoman period it served as Musa Bey Library, then as a military depot, for many years as the municipality's gas depot, and as a library in 1950-1977; it opened as a mosque in 1977. The narthex, demolished in 1980, was renovated."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "151"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kare planlı tek kubbeli harim ile üç gözlü son cemaat yerinden oluşur. Beden duvarları düzgün kesme taş, revak sütunları mermer, üst örtü tuğladır. Son cemaat yeri batıdadır; 1980 onarımıyla yeniden yapılmıştır. Harimin batı cephesindeki kemer bingileri ve izleri orijinaldir; bingilerde akant yaprakları arasında stilize lale veya palmet motifleri işlenmiştir. Silindirik gövdeli dört sütuna oturan sivri kemerlerle üç göze ayrılan son cemaat yeri, pandantif geçişli üç kubbeyle örtülüdür. Harim sekizgen kasnağa oturan pandantif geçişli bir kubbeyle örtülüdür; kasnağın her yüzünde daire pencereler vardır. Giriş batı duvarındaki basık kemerli kapıdandır. Kıble duvarındaki yarım daire mihrabın süslemeleri sonradan yapılmıştır.",
+        "en": "The mosque has a square single-domed harim and a three-bay narthex. Walls are cut stone, portico columns marble, upper cover brick. The narthex in the west was rebuilt in 1980; the arch springers and traces on the harim's west facade are original, with stylized tulip or palmette motifs between acanthus leaves. The narthex stands on four cylindrical columns with pointed arches and three domes on pendentives. The harim dome rests on an octagonal drum with circular windows on each face. Entry is by a low-arched door in the west wall. The simple semicircular mihrab's decoration is later."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "152"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kubbe_sayisi_harim",
+      "label": {
+        "tr": "Harim kubbe sayısı",
+        "en": "Harim domes"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "152"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bays"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "152"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Canbazzade Nasuh Bey",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    },
+    {
+      "name": "Hüsnüşah Hatun",
+      "role": {
+        "tr": "Nasuh Bey'in kızı; II. Bayezit ile evlendirildi",
+        "en": "Nasuh Bey's daughter, married to Bayezid II"
+      }
+    },
+    {
+      "name": "Pir Ahmed Bey",
+      "role": {
+        "tr": "H. 918 / M. 1512 vakfiyesini düzenleyen",
+        "en": "Issuer of the 918 AH / 1512 AD charter"
+      }
+    },
+    {
+      "name": "Defterdar Canbaz Kadıoğlu",
+      "role": {
+        "tr": "Nasuh Bey'in babası",
+        "en": "Father of Nasuh Bey"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "vakfiye-1512",
+      "year": 1512,
+      "date": null,
+      "hijri": "918",
+      "type": "record",
+      "title": {
+        "tr": "Pir Ahmed Bey vakfiyesi",
+        "en": "Charter of Pir Ahmed Bey"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "151"
+        }
+      ]
+    },
+    {
+      "id": "ibadete-acilis-1977",
+      "year": 1977,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Cami olarak ibadete açılış",
+        "en": "Opened for worship as a mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "151"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat-1980",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Son cemaat yerinin yenilenmesi",
+        "en": "Renovation of the narthex"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "151-152"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Düzgün kesme taştan yapılmış, sade cepheli bir camidir. Batıda, dört mermer sütun üzerinde sivri kemerlerle üç göze ayrılmış ve üç küçük kubbeyle örtülü bir son cemaat yeri vardır. Alçak kemerli kapıdan girilen kare harim, sekizgen bir kasnağa oturan tek kubbeyle örtülüdür; kasnağın her yüzünde yuvarlak bir pencere bulunur.",
+      "en": "A cut-stone mosque with plain facades. In the west a narthex on four marble columns is divided into three bays by pointed arches and covered by three small domes. The square prayer hall, entered by a low-arched door, has a single dome on an octagonal drum with a round window on each face."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "151-152"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=558",
+        "original_name": "pdf-s77-xref558",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "151"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Nasuh Bey Camii (Canbazzade Nasuh Bey Dârü'l-Huffazı) (kitap s. 151)",
+        "en": "Nasuh Bey Mosque (Canbazzade Nasuh Bey Dârü'l-Huffaz) (book p. 151)"
+      },
+      "alt": {
+        "tr": "Taşdan yapılmış, sütunlu bir revak. Üstünde üç kemerli geçitler ve duvarlarda döşeme taşları var.",
+        "en": "Stone portico with columns. Three arched openings above and stone tiles on walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=560",
+        "original_name": "pdf-s77-xref560",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "151"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Nasuh Bey Camii (Canbazzade Nasuh Bey Dârü'l-Huffazı) (kitap s. 151)",
+        "en": "Nasuh Bey Mosque (Canbazzade Nasuh Bey Dârü'l-Huffaz) (book p. 151)"
+      },
+      "alt": {
+        "tr": "İç mekanda, ahşap sütunlar, mavi halı, kemerli pencereler ve duvarlarda mozaikler var.",
+        "en": "Inside, wooden pillars, a blue carpet, arched windows, and mosaic decorations on the walls are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=564",
+        "original_name": "pdf-s78-xref564",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "152"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Nasuh Bey Camii (Canbazzade Nasuh Bey Dârü'l-Huffazı) (kitap s. 152)",
+        "en": "Nasuh Bey Mosque (Canbazzade Nasuh Bey Dârü'l-Huffaz) (book p. 152)"
+      },
+      "alt": {
+        "tr": "Mermerden yapılmış, dikdörtgen bir mihrap. Üstünde kemerli bir yapı ve iki yanında pencere olan arkalık. Mermerde siyah ve beyaz çizgiler var.",
+        "en": "A marble mihrab with a rectangular niche and an arched top. Flanked by two windows, the marble has black and white stripes."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

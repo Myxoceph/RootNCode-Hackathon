@@ -1,4 +1,4 @@
-import { Platform, Text as NativeText, type TextProps as NativeTextProps } from "react-native";
+import { Platform, StyleSheet, Text as NativeText, type TextProps as NativeTextProps } from "react-native";
 
 import type { ThemeRole } from "../themes";
 import { typography, type TypographyVariant } from "../tokens/typography";
@@ -27,7 +27,8 @@ export interface TextProps extends NativeTextProps {
  * Text in one of the typography variants, in a theme color.
  *
  * Follows the system text size (`allowFontScaling` stays on) and the in-app
- * "Büyük metin" setting.
+ * "Büyük metin" setting, for the variant's size and for a size given in `style` alike: callers
+ * pass sizes unscaled.
  */
 export function Text({ variant = "body", color = "text", colorValue, headingLevel, language, style, ...rest }: TextProps) {
   const { theme, textScale } = useUi();
@@ -37,9 +38,18 @@ export function Text({ variant = "body", color = "text", colorValue, headingLeve
     fontSize: base.fontSize * textScale,
     lineHeight: base.lineHeight * textScale,
   };
+  // A size set by the screen grows with "Büyük metin" too, not only the variant's.
+  const own = textScale === 1 ? null : StyleSheet.flatten(style);
+  const ownScaled =
+    own && (typeof own.fontSize === "number" || typeof own.lineHeight === "number")
+      ? {
+          ...(typeof own.fontSize === "number" ? { fontSize: own.fontSize * textScale } : {}),
+          ...(typeof own.lineHeight === "number" ? { lineHeight: own.lineHeight * textScale } : {}),
+        }
+      : null;
   const heading = headingLevel
     ? { accessibilityRole: "header" as const, ...(Platform.OS === "web" ? ({ "aria-level": headingLevel } as object) : {}) }
     : {};
   const lang = language ? (Platform.OS === "web" ? ({ lang: language } as object) : { accessibilityLanguage: language }) : {};
-  return <NativeText {...heading} {...lang} {...rest} style={[scaled, { color: colorValue ?? theme.colors[color] }, style]} />;
+  return <NativeText {...heading} {...lang} {...rest} style={[scaled, { color: colorValue ?? theme.colors[color] }, style, ownScaled]} />;
 }

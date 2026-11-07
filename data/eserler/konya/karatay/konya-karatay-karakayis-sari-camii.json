@@ -1,0 +1,432 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-karakayis-sari-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 200-201) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "Kitapta bânî/sanatkâr bilgisi yok; founder null.",
+      "'Sarı' adının kaynağı kitapta açıklanmıyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Karakayış Sarı Camii",
+    "en": "Karakayış Sarı Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap minare",
+    "onarım 2008"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Karakayış Mahallesi",
+    "address": "Karakayış Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "200-201"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.907008,
+      "lng": 32.525171,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Türkiye İş Bankası, 258, Karakayış Caddesi, Fevziçakmak Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, 42210, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1257 / M. 1841",
+      "en": "1257 AH / 1841 AD"
+    },
+    "start_year": 1841,
+    "end_year": 1841,
+    "hijri_year": 1257,
+    "century": 19,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki günümüz alfabesiyle yazılmış H. 1257 / M. 1841 tarihine göre 1841'de yapıldığı anlaşılmaktadır.",
+      "en": "Understood to have been built in 1841 from the date 1257 AH / 1841 AD above the entrance door."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "200-201"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karakayış Mahallesi'ndeki cami, giriş kapısı üzerindeki tarihe göre 1841'de yapılmış; 1909-10, 1952 ve 2008'de onarım görmüştür. Derinlemesine dikdörtgen planlı, içten düz dam, dıştan kırma çatılıdır; doğu girişinin üzerinde tek şerefeli ahşap minare bulunur.",
+    "en": "The mosque in Karakayış Neighborhood was built in 1841 according to the date above its entrance door and repaired in 1909-10, 1952 and 2008. It has a deeply rectangular plan, a flat roof inside and a hipped roof outside, with a single-balcony wooden minaret above the east entrance."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve onarımlar",
+        "en": "History and repairs"
+      },
+      "body": {
+        "tr": "Giriş kapısının üzerinde günümüz alfabesi ile H. 1257 / M. 1841 tarihi yazmaktadır. Mahfilin ana taşıyıcılarından birinde Arap harfleriyle 'Yapının imârâtı 1327 (H. 1327 / M. 1909-10)' ibaresi ve aynı kirişte '25.5.1952' tarihi vardır. Buradan yapının 1841'de yapıldığı, 1909-10 ve 1952'de onarım gördüğü anlaşılmaktadır. Cami 2008'de Vakıflar Bölge Müdürlüğü tarafından tamir edilmiştir.",
+        "en": "The date 1257 AH / 1841 AD is written above the entrance door in today's alphabet. On one of the main supports of the mahfil, the phrase 'The construction of the building was completed in 1327 (1327 AH / 1909-10 AD)' appears in Arabic letters, along with the date 25.5.1952. The building was thus built in 1841 and repaired in 1909-10 and 1952. The Regional Directorate of Foundations repaired it in 2008."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami derinlemesine dikdörtgen planlı, içten düz dam, dıştan kırma çatılıdır. Cephelere batı ve kuzeyde birer, doğu ve güneyde ikişer pencere açıklığı eklenmiştir. Doğu cephede yarım daire formlu, 6 sıra taş merdivenle harime geçişi sağlayan bir sundurma vardır; girişin üzerindeki ahşap minare tek şerefeli ve sivri külahlıdır. Harim, mihraba dik iki sıra sütunla üç sahına ayrılmıştır; ahşap mahfil kuzey ve doğu bölümü kaplar. Son onarımda sonradan eklenen ahşap mihrap sökülmüş ve alçı sıvalı özgün mihrap nişi ortaya çıkmıştır. Mihrap yarım daire planlı ve yarım kubbe kavsaralıdır. Güneybatı köşedeki minber sonradan eklenmiştir.",
+        "en": "The mosque has a deeply rectangular plan with a flat roof inside and a hipped roof outside. One window each on the west and north and two each on the east and south were added to the facades. On the east facade a semicircular porch with 6 rows of stone steps gives access to the harim; the wooden minaret above the entrance has a single balcony and a pointed cone. The harim is divided into three aisles by two rows of columns perpendicular to the mihrab, and the wooden mahfil covers its north and east parts. In the latest repairs the later wooden mihrab was removed, revealing the original plaster mihrab niche. The mihrab is semicircular with a semi-dome; the southwest minbar was added later."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "200-201"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "merdiven_sirasi",
+      "label": {
+        "tr": "Taş merdiven sırası",
+        "en": "Rows of stone stairs"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Harimdeki sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "200-201"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "giris-kapisi-tarihi",
+      "location": {
+        "tr": "Giriş kapısının üzeri",
+        "en": "Above the entrance door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1257,
+        "gregorian": "1841"
+      },
+      "note": {
+        "tr": "Günümüz alfabesiyle yazılmış tarih; kitap metnini vermiyor, yalnızca H. 1257 / M. 1841 tarihini veriyor.",
+        "en": "Date written in today's alphabet; the book gives only the date 1257 AH / 1841 AD, not the full text."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "mahfil-kirisi-ibaresi",
+      "location": {
+        "tr": "Mahfilin ana taşıyıcılarından biri",
+        "en": "One of the main supports of the mahfil"
+      },
+      "language": "tr-ottoman",
+      "script": null,
+      "transliteration": "Yapının imârâtı 1327",
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1327,
+        "gregorian": "1909-10"
+      },
+      "note": {
+        "tr": "Arap harfli ibare; aynı kirişte '25.5.1952' tarihi de yazılıdır. Kitap meal vermez.",
+        "en": "Arabic-letter phrase; the same beam also bears the date 25.5.1952. The book gives no separate translation."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "200-201"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1841",
+      "year": 1841,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Cami inşa edildi (giriş kapısı tarihi)",
+        "en": "Mosque built (date above entrance)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1909",
+      "year": 1909,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (mahfil kirişi ibaresi, H. 1327 / M. 1909-10)",
+        "en": "Repair (mahfil beam phrase, 1327 AH / 1909-10 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1952",
+      "year": 1952,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (mahfil kirişi tarihi 25.5.1952)",
+        "en": "Repair (mahfil beam dated 25.5.1952)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "200-201"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2008",
+      "year": 2008,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı",
+        "en": "Repair by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "200-201"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Karakayış Sarı Camii derinlemesine dikdörtgen planlı, kırma çatılı bir camidir. Doğu girişinde yarım daire biçimli bir sundurma ve altı basamaklı taş merdiven, üzerinde tek şerefeli ahşap bir minare bulunur. İçeride iki sıra sütun harimi üç sahına ayırır.",
+      "en": "Karakayış Sarı Mosque is a deeply rectangular building with a hipped roof. At its east entrance are a semicircular porch with a six-step stone stair and a single-balcony wooden minaret above. Inside, two rows of columns divide the harim into three aisles."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 200-201)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "200-201"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=777",
+        "original_name": "pdf-s102-xref777",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "200"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Karakayış Sarı Camii (kitap s. 200)",
+        "en": "Karakayış Sarı Mosque (book p. 200)"
+      },
+      "alt": {
+        "tr": "Kare planlı, kiremit kaplı bir cami ve yanında daha küçük bir yapı, ağaçlarla çevrili.",
+        "en": "A square-plan mosque with a tiled roof and a smaller building beside it, surrounded by trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=779",
+        "original_name": "pdf-s102-xref779",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "201"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Karakayış Sarı Camii (kitap s. 201)",
+        "en": "Karakayış Sarı Mosque (book p. 201)"
+      },
+      "alt": {
+        "tr": "İç mekanda, ahşap sütunlar, taş zemin, kemerli giriş ve pencere çerçeveleri, duvarda saatler ve çanaklar, tavanın ortasında avize ve sağda merdivenli minber görülüyor.",
+        "en": "Inside, wooden pillars, stone floor, arched entrance and window frames, clocks and bowls on the wall, a chandelier in the center of the ceiling, and a minbar with stairs on the right are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=783",
+        "original_name": "pdf-s102-xref783",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "201"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Karakayış Sarı Camii (kitap s. 201)",
+        "en": "Karakayış Sarı Mosque (book p. 201)"
+      },
+      "alt": {
+        "tr": "Ahşap bir kürsü, çapraz desenli bir kafesle çevrili, alt kısmında süslemeli bir kemerle.",
+        "en": "A wooden pulpit with a latticed screen, featuring an ornate arch at the base."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=781",
+        "original_name": "pdf-s102-xref781",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "201"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Karakayış Sarı Camii (kitap s. 201)",
+        "en": "Karakayış Sarı Mosque (book p. 201)"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremit çatılı, beyaz duvarlı cami, sivri kubbeli minare ve ahşap kapıya sahiptir.",
+        "en": "A white-walled mosque with a red tiled roof, a conical minaret, and a wooden door."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

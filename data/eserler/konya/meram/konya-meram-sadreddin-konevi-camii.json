@@ -1,0 +1,445 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-sadreddin-konevi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 98-103) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Taç kapı kitâbelerinin Arapça/Osmanlıca metinleri (transliterasyon) kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "meta.text_origin / konya-envanteri-1_cilt",
+        "note": "Kitabın İngilizce metni 'Manzumeye vakıflar ihdas edilmiş' cümlesini 'Poetry foundations were established' diye vermiş ('manzume' burada yapı topluluğu anlamında); Türkçe metne göre vakıflar külliye için kurulmuştur."
+      },
+      {
+        "field": "sections[kitabeler]",
+        "note": "Birinci kitâbe 'türbe, imaret ve dâru'l-kütüb'ün' yapımını bildirir; cami ayrıca anılmaz. Kitap yine de külliyenin tamamını H. 673 / M. 1274'e tarihler."
+      },
+      {
+        "field": "sections[mihrap]",
+        "note": "İngilizce metin 'kavsara köşelikleri'ni 'the corners of the dome' diye çevirmiş; Türkçe metin esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sadreddin Konevi Camii",
+    "en": "Sadreddin Konevi Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": "konya-meram-sadreddin-konevi-kulliyesi",
+  "era": "selcuklu",
+  "tags": [
+    "Sadreddin Konevi",
+    "çini mihrap",
+    "Bursa kemeri",
+    "kadınlar mahfili",
+    "kapalı avlu"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Şeyh Sadreddin Mahallesi",
+    "address": "Turgutoğlu Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "98-103"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 673 / M. 1274",
+      "en": "AH 673 / AD 1274"
+    },
+    "start_year": 1274,
+    "end_year": 1274,
+    "hijri_year": 673,
+    "century": 13,
+    "basis": {
+      "tr": "Taç kapıdaki birinci (inşa) kitâbesine göre külliye H. 673 / M. 1274'te yapılmıştır.",
+      "en": "According to the first (construction) inscription on the crown gate, the complex was built in AH 673 / AD 1274."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "98"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Külliyenin cami bölümü: kuzey-güney yönünde dikdörtgen planlı, düz damlı; 1899 tamirinde ahşap direkli plana dönüştürülmüş. Firuze zeminde patlıcan moru çinilerle yapılmış mukarnas kavsaralı mihrabı ve taç kapıdaki iki kitâbesiyle dikkat çeker.",
+    "en": "The mosque part of the complex: rectangular, running north-south, flat-roofed, converted to a wooden-pillar plan in 1899. Noted for its tile-mosaic mihrab with muqarnas hood in eggplant purple on turquoise and for the two inscriptions on its crown gate."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Plan ve Dış Görünüm",
+        "en": "Plan and Exterior"
+      },
+      "body": {
+        "tr": "Cami, Meram, Şeyh Sadreddin Mahallesi, Turgutoğlu Sokak üzerindedir. Kuzey-güney yönünde uzanan dikdörtgen planlı cami düz dam örtülüdür. Harime caminin batısına bitişik mekân aracılığıyla ulaşılır. İki giriş kapısından biri güneyde, diğeri kuzeybatıdadır. Cepheler pencerelerle hareketlendirilmiştir. Caminin batısında bitişik nizamda kapalı avlu yer alır; sonradan artan ihtiyaçlar nedeniyle ibadet edilebilir hâle getirilmiş ve cami ile işlevsel olarak bütünleştirilmiştir. Girişin hemen üstünde yarım daire formunda, kurşun kaplı bir ahşap sundurma, güneybatısında minare vardır.",
+        "en": "The mosque is on Turgutoğlu Street, Şeyh Sadreddin Neighborhood, Meram. Rectangular, running north-south, it is flat-roofed. The harim is reached through the space adjoining the mosque on the west. One of the two entrance doors is on the south, the other on the northwest. The facades are animated with windows. West of the mosque and adjoining it is a closed courtyard, later made suitable for worship because of increased need and functionally integrated with the mosque. A semicircular lead-covered wooden porch sits just above the entrance, and the minaret is to the southwest."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98-99, 102"
+        }
+      ]
+    },
+    {
+      "id": "kitabeler",
+      "order": 2,
+      "title": {
+        "tr": "Taç Kapıdaki Kitâbeler",
+        "en": "Crown Gate Inscriptions"
+      },
+      "body": {
+        "tr": "Yapı üzerinde iki kitâbe vardır; ikisi de caminin taç kapısındadır. Birincisi taş üzerine üç satır, kabartma ve celî sülüs hattıyla Arapça yazılmış olup külliyenin (türbe, imaret ve kütüphane) H. 673 / M. 1274'te inşa edildiğini bildirir. İkincisi mermer üzerine üç satır, kabartma ve celî sülüs hattıyla Osmanlı Türkçesiyle yazılmıştır; cami ve türbenin Sultan II. Abdülhamit döneminde vali Mehmed Ferid Paşa tarafından H. 1317 / M. 1899'da imar ve ihya edildiğini söyler.",
+        "en": "There are two inscriptions on the building, both on the crown gate. The first is in Arabic on stone, three lines in relief celi thuluth, recording that the complex (tomb, imarat and library) was built in AH 673 / AD 1274. The second is in Ottoman Turkish on marble, three lines in relief celi thuluth, recording that the mosque and tomb were reconstructed and restored in AH 1317 / AD 1899 by Governor Mehmed Ferid Paşa under Sultan Abdülhamid II."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan-ve-minare",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân ve Minare",
+        "en": "Interior and Minaret"
+      },
+      "body": {
+        "tr": "Cami kapalı avlunun hemen doğusunda ve ona bitişiktir. Büyük Bursa kemeriyle ikiye ayrılmış harimin kuzeyinde kadınlar mahfili bulunur; mahfile kuzeybatıdaki merdivenle çıkılır. İç mekân sade ve pencerelerle aydınlıktır. Tek şerefeli silindirik minare kapalı avlunun güneybatısındadır; kaidesi avlu içinde kalmıştır ve minareye buradan geçilir. Taş kare kaide üzerinde köşeleri pahlanmış pabuç bölümü vardır; silindirik gövde sade ve tuğladandır, gövdenin alt ve üst kısmında kaval silme bulunur; şerefe sadedir ve konik külahlı kısa bir peteği vardır.",
+        "en": "The mosque lies just east of the closed courtyard, adjoining it. North of the harim, which is divided in two by a great Bursa arch, is a women's gallery reached by a staircase in the northwest. The interior is plain and lit by windows. The single-balconied cylindrical minaret is in the southwest of the closed courtyard; its base lies inside the courtyard and the minaret is entered from there. A stone square base carries a chamfered-corner transition; the cylindrical shaft is plain brick with a bowtell at its lower and upper parts; the balcony is plain with a short honeycomb under a conical cap."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "102"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 4,
+      "title": {
+        "tr": "Çini Mihrap",
+        "en": "Tiled Mihrab"
+      },
+      "body": {
+        "tr": "Harimin en hareketli kısmı kıble duvarı ortasındaki mihraptır. Çini mozaik mihrap nişi dikdörtgen planlı ve mukarnas kavsaralıdır; iç mekâna taşıntı yapar. Firuze zemin üzerinde patlıcan moru çiniler kullanılmıştır. Niş, ters \"U\" biçiminde, farklı genişlikte üç bordürle sınırlıdır: en dıştaki geniş bordürde firuze zemin üzerine lacivert yarım altı kollu yıldız ve yarım altıgenler; ardından nişe doğru meyilli ince firuze bordür; üçüncüsünde lacivert rûmiler. Kavsaranın üst kısmında kûfî yazıyı anımsatan bitkisel süslemeler, rûmi ve palmet motifleri vardır; köşelikler çarkıfelek motiflidir. Nişin yanlarındaki sütunceler yarım daire formunda ve zar başlıklıdır. Niş yüzeyinde girift altıgenler içinde üç \"Ali\" ibaresi ile ters ve düz lale motifleri görülür. Kavsara altı sıra mukarnastır; üstünde dönemine ait bir çini levha bulunur.",
+        "en": "The most animated part of the harim is the mihrab in the middle of the qibla wall. The tile-mosaic niche is rectangular with a muqarnas hood and projects into the interior. Eggplant-purple tiles are used on a turquoise ground. The niche is bordered on three sides in an inverted U by borders of differing widths: the outermost wide border has a dark-blue half six-pointed star and half hexagons on turquoise; then a thin turquoise border sloping toward the niche; the third has dark-blue rumis. The upper hood has Kufic-reminiscent floral ornament with rumi and palmette motifs, and the spandrels have passion-flower motifs. The colonnettes beside the niche are semicircular with membrane capitals. On the niche surface are three \"Ali\" phrases in intricate hexagons and upright and inverted tulip motifs. The hood has six rows of muqarnas, with a tile plaque of the period above."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "102-103"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "kavsara_mukarnas",
+      "label": {
+        "tr": "Mihrap kavsarası mukarnas sırası",
+        "en": "Mihrab hood muqarnas rows"
+      },
+      "value": 6,
+      "unit": "sıra",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "103"
+        }
+      ]
+    },
+    {
+      "key": "giris_kapisi",
+      "label": {
+        "tr": "Giriş kapısı sayısı",
+        "en": "Entrance doors"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "99"
+        }
+      ]
+    },
+    {
+      "key": "minare_serefe",
+      "label": {
+        "tr": "Minare şerefe sayısı",
+        "en": "Minaret balconies"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "102"
+        }
+      ]
+    },
+    {
+      "key": "onarim_2004",
+      "label": {
+        "tr": "Son onarım",
+        "en": "Latest repair"
+      },
+      "value": 2004,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Caminin taç kapısında; taş üzerine 3 satır, kabartma, celî sülüs",
+        "en": "On the crown gate of the mosque; stone, 3 lines, relief, celi thuluth"
+      },
+      "language": "ar",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Muhammed oğlu İshak oğlu, şeyh ve âlim Sadreddin Muhammed'in medfun olduğu türbeyle birlikte bu imareti ve kalpleri Allah'a yönelmiş kişilerle birlikte fakir, salih kişiler için vakfiyesinde şart koşulduğu ve beyan edildiği şekliyle vakfedilmiş kitaplar bulunduğu dâru'l-kütüb (kütübhane) H. 673 / M. 1274 yılında inşa edildi.",
+        "en": "Together with the tomb where the sheikh and scholar Sadreddin Muhammad, the son of Ishak, the son of Muhammad, is buried, this imarat and the dâru'l-kutub (library) where there are books dedicated for the poor and righteous people, as stipulated and declared in the foundation deed, are built for those whose hearts are directed towards God in 673 AH / 1274 AD."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 673,
+        "gregorian": "1274"
+      },
+      "note": {
+        "tr": "Kitap transliterasyonu vermiyor; meal yerine kitaptaki 'Kitâbede ... yazmaktadır' aktarımı alındı.",
+        "en": "The book gives no transliteration; the book's rendering of the inscription's content is used as the translation."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    },
+    {
+      "id": "onarim-kitabesi",
+      "location": {
+        "tr": "Caminin taç kapısında; mermer üzerine 3 satır, kabartma, celî sülüs",
+        "en": "On the crown gate of the mosque; marble, 3 lines, relief, celi thuluth"
+      },
+      "language": "tr-ottoman",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Kitâbeye göre cami ve türbe, Sultan Gazi II. Abdülhamit Han'ın hilâfeti zamanında, vilayet valisi Mehmed Ferid Paşa tarafından H. 1317 / M. 1899 yılında imar ve ihya edilmiştir.",
+        "en": "According to the inscription, the mosque and tomb were reconstructed and restored in 1317 AH / 1899 AD by the governor of the province, Mehmed Ferid Paşa, during the caliphate of Sultan Gazi Abdulhamit Han II."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 1317,
+        "gregorian": "1899"
+      },
+      "note": {
+        "tr": "Kitap transliterasyonu vermiyor; çeviri alanı kitabın kitâbe özetidir.",
+        "en": "The book gives no transliteration; the translation field is the book's summary of the inscription."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1274",
+      "year": 1274,
+      "date": null,
+      "hijri": "673",
+      "type": "construction",
+      "title": {
+        "tr": "Kitâbeye göre külliye inşa edildi",
+        "en": "Complex built according to the inscription"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1899",
+      "year": 1899,
+      "date": null,
+      "hijri": "1317",
+      "type": "restoration",
+      "title": {
+        "tr": "Vali Mehmed Ferid Paşa tarafından imar ve ihya; tek kubbeli cami ahşap direkli plana dönüştürüldü",
+        "en": "Reconstruction and restoration by Governor Mehmed Ferid Paşa; the single-domed mosque became a wooden-pillar plan"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2004",
+      "year": 2004,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Cami yeniden tamir ettirildi",
+        "en": "Mosque repaired again"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Çini mozaik mihrap",
+        "en": "Tile-mosaic mihrab"
+      },
+      "hint": {
+        "tr": "Firuze zemindeki lacivert/patlıcan moru çinilerde üç \"Ali\" yazısını arayın.",
+        "en": "Look for the three \"Ali\" inscriptions in the dark tiles on turquoise."
+      },
+      "section_id": "mihrap"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-meram-sadreddin-konevi-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Cami, Sadreddin Konevi Külliyesi'nin bir parçasıdır.",
+        "en": "The mosque is part of the Sadreddin Konevi Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "98"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sadreddin Konevi Camii kuzey-güney yönünde uzanan, düz damlı dikdörtgen bir yapıdır. Batısında kapalı bir avlu, güneybatısında tuğla gövdeli, tek şerefeli bir minare vardır. Girişin üstünde kurşun kaplı yarım daire bir ahşap sundurma görülür. Harim büyük bir Bursa kemeriyle ikiye bölünür; kuzeyinde kadınlar mahfili bulunur. Kıble duvarındaki mihrap, firuze zemin üzerine patlıcan moru ve lacivert çinilerle kaplıdır.",
+      "en": "Sadreddin Konevi Mosque is a rectangular, flat-roofed building running north-south. West of it is a closed courtyard and to the southwest a single-balconied brick minaret. A lead-covered semicircular wooden porch stands above the entrance. The harim is divided in two by a great Bursa arch, with a women's gallery on its north side. The mihrab in the qibla wall is covered in eggplant-purple and dark-blue tiles on a turquoise ground."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 98-103)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "103-103"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=342",
+        "original_name": "pdf-s53-xref342",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "103"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Sadreddin Konevi Camii (kitap s. 103)",
+        "en": "Sadreddin Konevi Mosque (book p. 103)"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı, silindirik bir minare. Üst kısmında kubbe ve ay yıldız sembolü var. Minarenin ortasında ahşap kapı ve küçük pencere var.",
+        "en": "A cylindrical minaret with a tiled conical roof. A crescent and sphere ornament tops the roof. A wooden door and small window are visible on the tower."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

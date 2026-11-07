@@ -27,7 +27,7 @@ Rozetin metni API'nin gönderdiği `confidence.label`'dır (kullanıcının dili
 
 | Kod | Etiket (tr) | İkon | Kenar | Renk rolü | Ne zaman |
 |---|---|---|---|---|---|
-| `certain` | Kaynakta kesin | ✓ halka | yok | `success` (firuze) | Varsayılan olarak **gösterilmez**; `showCertain` ile gösterilir (ör. karşılaştırma ekranları) |
+| `certain` | Kaynakta kesin | ✓ halka | yok | `success` (gül kurusu) | Varsayılan olarak **gösterilmez**; `showCertain` ile gösterilir (ör. karşılaştırma ekranları) |
 | `probable` | Tahmini | ≈ | kesik çizgi | `primary` (kobalt) | Kaynak "düşünülmektedir, muhtemelen" diyor |
 | `disputed` | Tartışmalı | ⇄ | düz çizgi | `warning` (mercan) | Kaynak birden fazla görüş veriyor |
 | `legend` | Rivayet / Halk inancı | ❝ | dolgulu zemin | `highlight` (altın) | Rivayet, söylence; asla kesin bilgi gibi sunulmaz |

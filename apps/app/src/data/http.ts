@@ -1,4 +1,5 @@
 import { DataError, type SchemaParser } from "./errors";
+import { getLang, getMessages } from "@/i18n";
 
 const TIMEOUT_MS = 10_000;
 
@@ -10,10 +11,18 @@ export interface RequestOptions {
   allowNotFound?: boolean;
   /** Sent as JSON in a POST; without it the request is a GET. */
   body?: unknown;
+  /** Sent as it is in a POST (or `method`), e.g. a voice recording; in place of `body`. */
+  rawBody?: { data: Blob; type: string };
+  /** A request without a body that is not a GET (`DELETE`, or a `POST` with nothing to send), or a body sent with `PUT` or `PATCH`. */
+  method?: "POST" | "PUT" | "PATCH" | "DELETE";
   /** Sent as `Authorization: Bearer <token>`. */
   token?: string;
   /** The error for an answer that is not 2xx; `statusError` by default. */
   errorFor?: (status: number, code: string | null, details: string[]) => DataError;
+  /** How long to wait for the answer; 10 s by default. The assistant needs longer. */
+  timeoutMs?: number;
+  /** Cancels the request, e.g. when the visitor clears the conversation it belongs to. */
+  signal?: AbortSignal;
 }
 
 /**
@@ -21,28 +30,41 @@ export interface RequestOptions {
  * an error status, a body that is not JSON (a Wi-Fi login page in between) or one that breaks the contract.
  */
 export async function request<T>(url: string, schema: SchemaParser<T>, options: RequestOptions = {}): Promise<T | null> {
-  const headers: Record<string, string> = { Accept: "application/json" };
+  // The API answers in the app's language wherever a request does not name one (`?lang=`).
+  const headers: Record<string, string> = { Accept: "application/json", "Accept-Language": getLang() };
   if (options.body !== undefined) headers["Content-Type"] = "application/json";
+  if (options.rawBody) headers["Content-Type"] = options.rawBody.type;
   if (options.token) headers.Authorization = `Bearer ${options.token}`;
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  let timedOut = false;
+  const timer = setTimeout(() => {
+    timedOut = true;
+    controller.abort();
+  }, options.timeoutMs ?? TIMEOUT_MS);
+  const cancel = () => controller.abort();
+  if (options.signal?.aborted) cancel();
+  options.signal?.addEventListener("abort", cancel);
 
   let response: Response;
   try {
     response = await fetch(url, {
-      method: options.body === undefined ? "GET" : "POST",
+      method: options.method ?? (options.body === undefined && !options.rawBody ? "GET" : "POST"),
       headers,
-      body: options.body === undefined ? undefined : JSON.stringify(options.body),
+      body: options.rawBody ? options.rawBody.data : options.body === undefined ? undefined : JSON.stringify(options.body),
       signal: controller.signal,
     });
   } catch (error) {
+    if (options.signal?.aborted) throw new DataError("unavailable", getMessages().errors.cancelled, [url]);
+    // The connection works but the answer is late: "check your internet" would send the visitor the wrong way.
+    if (timedOut) throw new DataError("unavailable", getMessages().errors.timeout, [url]);
     throw new DataError(
       "unavailable",
-      "Sunucuya ulaşılamıyor. İnternet bağlantını kontrol edip tekrar dene.",
+      getMessages().errors.unreachable,
       [url, String(error)],
     );
   } finally {
     clearTimeout(timer);
+    options.signal?.removeEventListener("abort", cancel);
   }
 
   if (!response.ok) {
@@ -52,16 +74,19 @@ export async function request<T>(url: string, schema: SchemaParser<T>, options: 
     throw (options.errorFor ?? statusError)(response.status, code, details);
   }
 
+  // Done, nothing to read (archive, delete, sign out).
+  if (response.status === 204) return null;
+
   let body: unknown;
   try {
     body = await response.json();
   } catch {
     // Not JSON at all: most likely not our API but a Wi-Fi login page (hotel, museum) in between.
-    throw new DataError("unavailable", "Sunucuya ulaşılamıyor. Wi-Fi giriş sayfası açıksa önce oturum aç.", [url]);
+    throw new DataError("unavailable", getMessages().errors.wifiLogin, [url]);
   }
 
   const result = schema.safeParse(body);
-  if (!result.success) throw DataError.fromSchema("Sunucudan gelen veri", result.error);
+  if (!result.success) throw DataError.fromSchema("Sunucudan gelen veri", result.error, getMessages().errors.badData);
   return result.data;
 }
 
@@ -75,7 +100,7 @@ async function readErrorCode(response: Response): Promise<string | null> {
 }
 
 export function statusError(status: number, _code: string | null, details: string[]): DataError {
-  if (status === 429) return new DataError("unavailable", "Çok fazla istek gönderildi. Biraz bekleyip tekrar dene.", details);
-  if (status >= 500) return new DataError("unavailable", "Sunucuda bir sorun oluştu. Biraz sonra tekrar dene.", details);
-  return new DataError("unavailable", "İstek tamamlanamadı.", details);
+  if (status === 429) return new DataError("unavailable", getMessages().errors.tooMany, details);
+  if (status >= 500) return new DataError("unavailable", getMessages().errors.server, details);
+  return new DataError("unavailable", getMessages().errors.failed, details);
 }

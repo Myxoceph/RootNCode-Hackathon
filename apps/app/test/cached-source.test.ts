@@ -1,4 +1,4 @@
-import { CONTRACT_VERSION, type AssetDetail } from "@vagabonds/contracts";
+import type { AssetDetail } from "@vagabonds/contracts";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import ulucamiFixture from "../src/data/fixtures/details.json";
@@ -6,7 +6,6 @@ import type { DataSource } from "../src/data/source";
 
 vi.mock("../src/data/offline", () => ({ markStale: vi.fn(), markFresh: vi.fn() }));
 
-const PREFIX = `vagabonds-cache:${CONTRACT_VERSION}:`;
 const ID = "bursa-osmangazi-ulucami";
 const asset = (ulucamiFixture as Record<string, unknown>)[ID] as AssetDetail;
 
@@ -14,6 +13,7 @@ let storage: typeof import("./mocks/async-storage");
 let offline: { markStale: ReturnType<typeof vi.fn>; markFresh: ReturnType<typeof vi.fn> };
 let DataError: typeof import("../src/data/errors").DataError;
 let createCachedSource: typeof import("../src/data/cached-source").createCachedSource;
+let PREFIX: string;
 
 beforeEach(async () => {
   vi.resetModules();
@@ -22,7 +22,7 @@ beforeEach(async () => {
   offline.markStale.mockClear();
   offline.markFresh.mockClear();
   ({ DataError } = await import("../src/data/errors"));
-  ({ createCachedSource } = await import("../src/data/cached-source"));
+  ({ createCachedSource, VERSION_PREFIX: PREFIX } = await import("../src/data/cached-source"));
 });
 
 afterEach(() => {
@@ -31,7 +31,7 @@ afterEach(() => {
 
 function source(getAsset: DataSource["getAsset"]): DataSource {
   const unused = () => Promise.reject(new Error("not used"));
-  return { getAsset, listAssets: unused, getRelations: unused, getPulse: unused, listCities: unused };
+  return { getAsset, listAssets: unused, getRelations: unused, getPulse: unused, listCities: unused, getWeather: unused, getWeatherAt: unused, listArTargets: unused };
 }
 
 function stored(key: string, data: unknown, savedAt = 1000) {

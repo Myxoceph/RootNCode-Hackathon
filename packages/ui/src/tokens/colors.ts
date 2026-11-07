@@ -40,9 +40,11 @@ export const palette = {
   /** İznik kobaltı: primary action. */
   kobalt300: "#7FA3F1",
   kobalt700: "#1E4AA0",
-  /** Firuze: open / confirmed, focus ring. */
-  firuze300: "#4FC6BE",
-  firuze700: "#0A7A76",
+  /** Gül kurusu (dusty rose): open / confirmed, focus ring. */
+  gulkurusu300: "#EAB2BC",
+  gulkurusu700: "#A05568",
+  /** A brighter gül kurusu for map outlines on light land; marks only, not text (3.2:1 on gece50). */
+  gulkurusu500: "#BE7585",
   /** Mercan: local food stops, warnings. */
   mercan300: "#EE7B64",
   mercan700: "#BE3A26",

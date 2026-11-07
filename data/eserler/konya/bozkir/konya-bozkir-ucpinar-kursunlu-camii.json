@@ -1,0 +1,491 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-bozkir-ucpinar-kursunlu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabından (s. 397-399) özetlenmiştir; kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinatlar kitapta yok; sahadan ya da haritadan doğrulanarak eklenmeli (location.coordinates).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye / vakıf bilgisi kitapta yok.",
+      "İlk banî bilinmiyor (founder null).",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "people",
+        "note": "Usta adı bu kayıtta 'Müslüm Gökçek' (s. 399); Doğanhisar Orta Camii bölümünde 'Müslüm Gökçe' (s. 412) yazıyor. Aynı kişi olup olmadığı kitapta söylenmiyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Üçpınar Beldesi Kurşunlu Camii",
+    "en": "Üçpınar Settlement Kurşunlu Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kubbeli",
+    "kalem işi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Bozkır",
+    "neighborhood": "Hocaköy Mahallesi (Üçpınar Kasabası)",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "397"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Kaynaklara göre 1816",
+      "en": "1816 according to the sources"
+    },
+    "start_year": 1816,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Yapıda inşa kitâbesi yok; 'kaynaklarda 1816'da inşa edildiği belirtilmektedir'.",
+      "en": "No inscription; “the sources state it was built in 1816”."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "397-399"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Bozkır Üçpınar Kasabası Hocaköy Mahallesi'ndeki, kaynaklarda 1816'da yapıldığı belirtilen, kurşun kaplı kubbesinden adını alan cami. İç kalem işleri 1949'da yapılmıştır.",
+    "en": "A mosque in Hocaköy Neighborhood, Üçpınar Town, Bozkır, said by the sources to have been built in 1816 and named after its lead-covered dome. Its painted interior dates from 1949."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "İlk inşa tarihi ve bânisi hakkında kitâbe yoktur; kaynaklarda 1816'da inşa edildiği belirtilir. Kuzeydoğudaki minare 1917'de yapılmıştır. 2006 onarımında sonradan yapılan eklemelerden kurtarılmış, 2008-2009'da çevre düzenlemesi, 2014'te son onarımı yapılmıştır. İlk hâlinde düz toprak damlı ahşap bir yapı olduğu, sonradan duvarların kalınlaştırılıp kubbeyle örtüldüğü belirtilir. Kubbenin sonradan kurşunla kaplanmasıyla “Kurşunlu Camii” denmeye başlanmıştır.",
+        "en": "There is no inscription on the first construction or founder; the sources state it was built in 1816. The minaret in the northeast corner dates from 1917. The 2006 repair removed later additions; landscaping was done in 2008-2009 and the last repair in 2014. It is said to have been a wooden structure with a flat earth roof, later thickened and domed. After the dome was covered with lead it became known as “Kurşunlu Mosque”."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kare planlıdır ve kubbeyle örtülüdür; kaba yonu taş ve ahşap kullanılmıştır, üst örtü sekizgen kasnağa oturur. Kuzeydoğudaki minare kaba yonu taştan, kare kaideli, silindirik gövdeli ve tek şerefelidir. Son cemaat yeri yuvarlak kemerli ayaklarla üç bölüme ayrılmıştır; harime basık kemerli kapıdan geçilir. Kubbeye geçiş tromplarla sağlanır.",
+        "en": "The mosque is square and domed, of rough-cut stone and wood, with the cover resting on an octagonal drum. The northeast minaret is rough-cut stone with a square base, cylindrical body and one balcony. The narthex is divided into three by round-arched piers; a low-arched door leads into the harim. Squinches carry the dome."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "397-398"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç mekân ve kalem işi",
+        "en": "Interior and painted decoration"
+      },
+      "body": {
+        "tr": "Kubbe içinde ve kasnakta zengin kalem işi vardır. Kuzeyde “U” biçimli ahşap mahfil; güneyde kıble duvarında taş mihrap ve sağında güneybatı köşede minber bulunur. Mihrap duvardan hafif taşıntılı dikdörtgen formdadır, bitkisel bordürlüdür, nişi yarım daire planlı ve sivri kemer tepeliklidir, üstü üç dilimli tepelikle biter. Kalem işleri 1949'da Gaziantepli usta Müslüm Gökçek tarafından yapılmıştır.",
+        "en": "The dome and drum carry rich painted decoration. A U-shaped wooden mahfil is in the north; a stone mihrab is centred on the qibla wall with the minbar to its right in the southwest corner. The mihrab is a slightly projecting rectangle with floral borders, a semicircular niche with a pointed-arch top and a three-segmented crown. The painting was done in 1949 by Müslüm Gökçek, a master from Gaziantep."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "398-399"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "yumurta-ustasi",
+      "title": {
+        "tr": "Kalem işi ustası ve yumurtalar",
+        "en": "The decorator and the eggs"
+      },
+      "body": {
+        "tr": "Halk arasında ustadan şöyle söz edilir: bedence özürlü usta işe Üçpınar'daki bütün yumurtaları toplayarak başlamış ve süsleme sırasında camiye kimseyi almamıştır.",
+        "en": "Locals say that the master, who was physically disabled, began by collecting all the eggs in Üçpınar and let no one into the mosque while decorating."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "399"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kubbe_sayisi",
+      "label": {
+        "tr": "Kubbe sayısı",
+        "en": "Number of domes"
+      },
+      "value": 1,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "key": "minare_yili",
+      "label": {
+        "tr": "Minarenin yapım yılı",
+        "en": "Year the minaret was built"
+      },
+      "value": 1917,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "397"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Müslüm Gökçek",
+      "role": {
+        "tr": "Gaziantepli kalem işi ustası (1949)",
+        "en": "Master painter from Gaziantep (1949)"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1816",
+      "year": 1816,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Kaynaklara göre inşa edildi",
+        "en": "Built according to the sources"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "id": "minare-1917",
+      "year": 1917,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Minare yapıldı",
+        "en": "Minaret built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "id": "kalem-isi-1949",
+      "year": 1949,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Kalem işi süslemeler yapıldı",
+        "en": "Painted decoration executed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "399"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2006",
+      "year": 2006,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Sonradan eklenenlerden arındıran onarım",
+        "en": "Repair that removed later additions"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "397"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2014",
+      "year": 2014,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Son onarım",
+        "en": "Last repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "397"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kare planlı, kubbeli, kaba yonu taştan küçük bir camidir; kubbe sekizgen bir kasnağa oturur ve kurşunla kaplıdır. Kuzeydoğu köşesinde kare kaideli, tek şerefeli bir minare yükselir. Önde yuvarlak kemerli ayaklarla üçe bölünmüş son cemaat yeri vardır. İçeride kubbe ve kasnak zengin kalem işi süslemelerle kaplıdır; kuzeyde U biçimli ahşap mahfil, güneyde taş mihrap bulunur.",
+      "en": "A small square domed mosque of rough-cut stone; the dome sits on an octagonal drum and is covered in lead. A single-balcony minaret with a square base rises at the northeast corner. In front is a narthex divided into three by round-arched piers. Inside, the dome and drum are covered with rich painted decoration; there is a U-shaped wooden gallery in the north and a stone mihrab in the south."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 397-399) derlenmiştir."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "396-399"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1697",
+        "original_name": "pdf-s200-xref1697",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "396"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Üçpınar Beldesi Kurşunlu Camii (kitap s. 396)",
+        "en": "Üçpınar Settlement Kurşunlu Mosque (book p. 396)"
+      },
+      "alt": {
+        "tr": "Üçpınar Beldesi Kurşunlu Camii'nin havadan görünümü. Taşdan inşa edilmiş, büyük bir kubbe ve minareye sahip. Yanında küçük kubbeler ve kırmızı çatılı binalar var.",
+        "en": "Aerial view of Üçpınar Beldesi Kurşunlu Camii. Built of stone, with a large dome and a minaret. Smaller domes and red-roofed buildings nearby."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1699",
+        "original_name": "pdf-s200-xref1699",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "397"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Üçpınar Beldesi Kurşunlu Camii (kitap s. 397)",
+        "en": "Üçpınar Settlement Kurşunlu Mosque (book p. 397)"
+      },
+      "alt": {
+        "tr": "İç mekanda, kemerli girişin iki yanında sütunlar ve süslü duvarlar var. Tavan, çok renkli mozaiklerle kaplı.",
+        "en": "Inside, arched entrance flanked by columns and decorated walls. Ceiling covered with colorful mosaic patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1704",
+        "original_name": "pdf-s201-xref1704",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "398"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Üçpınar Beldesi Kurşunlu Camii (kitap s. 398)",
+        "en": "Üçpınar Settlement Kurşunlu Mosque (book p. 398)"
+      },
+      "alt": {
+        "tr": "Mavi zeminli daire içinde beyaz Arapça kaligrafi. Altında kırmızı arka planlı dikdörtgen bir levhada kırmızı Arapça yazılar. Çevresinde geometrik ve bitkisel desenler.",
+        "en": "A blue circle with white Arabic calligraphy. Below, a red rectangular plaque with red Arabic text. Surrounded by geometric and floral patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1710",
+        "original_name": "pdf-s201-xref1710",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "399"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Üçpınar Beldesi Kurşunlu Camii (kitap s. 399)",
+        "en": "Üçpınar Settlement Kurşunlu Mosque (book p. 399)"
+      },
+      "alt": {
+        "tr": "Mavi, altın ve kahverengi renklerde süslemeli bir duvar detayı. Çiçek desenleri, geometrik şekiller ve arapça yazılar var.",
+        "en": "A decorated wall detail with blue, gold, and brown patterns. Floral motifs, geometric shapes, and Arabic calligraphy are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1712",
+        "original_name": "pdf-s201-xref1712",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "399"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Üçpınar Beldesi Kurşunlu Camii (kitap s. 399)",
+        "en": "Üçpınar Settlement Kurşunlu Mosque (book p. 399)"
+      },
+      "alt": {
+        "tr": "Taş bloklarla inşa edilmiş, kare kesitli bir minare. Üst kısmında çatı ve seslendirme hoparlörleri var.",
+        "en": "A square-section minaret made of stone blocks. It has a roof and loudspeakers at the top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1708",
+        "original_name": "pdf-s201-xref1708",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "399"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Üçpınar Beldesi Kurşunlu Camii (kitap s. 399)",
+        "en": "Üçpınar Settlement Kurşunlu Mosque (book p. 399)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı bir cami önünde, çiçeklerle kaplı bir sandukata dikdörtgen bir taş mezar ve birkaç mezar taşı yer alıyor.",
+        "en": "A rectangular stone tomb and several gravestones are in a flower-filled cemetery in front of a stone-walled mosque."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

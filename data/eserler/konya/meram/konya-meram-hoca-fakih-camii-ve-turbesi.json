@@ -1,0 +1,389 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-hoca-fakih-camii-ve-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Kitap caminin kimin tarafından yaptırıldığını söylemiyor, yalnızca Fakih Ahmet adına yaptırıldığını belirtiyor; founder bu yüzden 'probable' ve açıklamalı.",
+      "Kitabın transliterasyonu verilmiyor; yalnızca mealen çeviri var, transliteration null bırakıldı.",
+      "Koordinat kitapta yok; sahada ya da harita kaynağından eklenmeli (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni / vakıf şartları kitapta yok (aksi belirtilmedikçe); VGM arşivinden bulunabilir.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Camiye ait kitabe yoktur; tarih türbe kitabesinden yaklaşık olarak ilişkilendirilmiştir. Kitap ayrıca kitabede 618 yazdığını, ancak vefat tarihini 1221 olarak verir."
+      },
+      {
+        "field": "sections[hazire]",
+        "note": "Kitap 'Selçuklu döneminde onarılarak bugüne kadar geldiği' diyor; hangi yapının onarıldığı ve türbenin XVI. yüzyıl Osmanlı kapı panosuyla ilişkisi açık değil."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hoca Fakih (Ahmet Fakih) Camii ve Türbesi",
+    "en": "Hoca Fakih (Ahmet Fakih) Mosque and Tomb"
+  },
+  "subtitle": {
+    "tr": "Selçuklu alimi Fakih Ahmed'in adına 1221'de yaptırılan cami ve türbe",
+    "en": "Mosque and tomb built in 1221 in the name of the Seljuk scholar Fakih Ahmed"
+  },
+  "type": "cami",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Selçuklu alimi",
+    "türbe",
+    "hazire",
+    "çeşme",
+    "sebil",
+    "Alâeddin Keykubat"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Armağan Mahallesi",
+    "address": "Hoca Fakih Caddesi No. 57",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "106"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 618 / M. 1221",
+      "en": "AH 618 / AD 1221"
+    },
+    "start_year": 1221,
+    "end_year": 1221,
+    "hijri_year": 618,
+    "century": 13,
+    "basis": {
+      "tr": "Camiye ait kitabe yoktur; türbe kitabesine göre cami H. 618 / M. 1221'de Sultan I. Alâeddin Keykubat zamanında yaptırılmıştır (yaklaşık ilişkilendirme).",
+      "en": "The mosque has no inscription; per the tomb inscription it was built in 618 AH / 1221 AD under Sultan Alâeddin Keykubat I (association is approximate)."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "106"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Fakih Ahmed (adına yaptırılmıştır; yaptıranın kimliği belirtilmemiştir)",
+    "role": "adına yaptırılan",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "106"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Armağan Mahallesi'nde, yüksek duvarlı bir hazire içinde yer alan cami ve türbe, 1221'de vefat eden Selçuklu alimi Ahmet Fakih adına yaptırılmıştır. Türbe kapısı üstündeki celî sülüs kitabe dokuz satırdır.",
+    "en": "In a walled graveyard in Armağan Neighborhood, the mosque and tomb were built in the name of the Seljuk scholar Ahmet Fakih, who died in 1221. The tomb door bears a nine-line celi thuluth inscription."
+  },
+  "sections": [
+    {
+      "id": "genel-bakis",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bakış",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Meram'da Armağan Mahallesi, Hoca Fakih Caddesi No. 57'dedir. Ahmet Fakih Selçuklu dönemi alimlerindendir; 1221'de vefat ettiği ve buraya defnedildiği türbe kapısı üzerindeki kitabeden anlaşılır. Yüksek bir duvarla çevrili hazirede cami, türbe, çeşme, sebil ve yeni hizmet binaları vardır; türbe kuzeyindeki yüksek duvarın doğusunda sivri kemerli, düz saçaklı çeşme yer alır. Camiye ait kitabe yoktur; türbe kitabesine göre cami H. 618 / M. 1221'de Sultan I. Alâeddin Keykubat zamanında Fakih Ahmet adına yaptırılmıştır.",
+        "en": "The mosque is at Armağan Neighborhood, Hoca Fakih Street No. 57, Meram. Ahmet Fakih was a Seljuk-period scholar; the tomb door inscription shows he died and was buried here in 1221. The walled graveyard holds the mosque, tomb, fountain, public fountain and new service buildings; a pointed-arched fountain with straight eaves stands east of the high wall north of the tomb. The mosque has no inscription; according to the tomb inscription it was built in the name of Fakih Ahmet in 618 AH / 1221 AD under Sultan Alâeddin Keykubat I."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "106-107"
+        }
+      ]
+    },
+    {
+      "id": "cami-yapisi",
+      "order": 2,
+      "title": {
+        "tr": "Cami Yapısı",
+        "en": "The Mosque"
+      },
+      "body": {
+        "tr": "Cami doğu-batı yönünde uzanan dikdörtgen planlıdır; içten düz dam, dıştan kırma çatıyla örtülüdür. Kuzeyinde, dört ahşap destekli ve sonradan eklenmiş son cemaat yeri, batısında türbe vardır. Doğu cephede üç katlı iki sıra, güney cephede iki katlı iki sıra düz lentolu pencereler iç mekânı aydınlatır; ortadaki düz lentolu kapıdan girilir. Harim süslemesizdir. Kıble duvarı ortasındaki taş mihrap dikdörtgen nişli ve üç sıra mukarnas kavsaralıdır; köşelerde silindirik gövdeli, zar başlıklı birer sütunce bulunur.",
+        "en": "The mosque has a rectangular east-west plan, a flat ceiling inside and a hipped roof outside. A later-added narthex on four wooden supports lies to the north and the tomb to the west. Flat-lintelled windows (three storeys in two rows on the east, two storeys on the south) light the interior, which is entered through a flat-lintelled door. The harim is undecorated. The stone mihrab has a rectangular niche with a three-row muqarnas hood and cylindrical corner colonnettes with membrane capitals."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "106-107"
+        }
+      ]
+    },
+    {
+      "id": "turbe",
+      "order": 3,
+      "title": {
+        "tr": "Türbe",
+        "en": "The Tomb"
+      },
+      "body": {
+        "tr": "Türbe camiye batıdan bitişiktir; içten kare planlıdır ve Türk üçgenleriyle geçilir. Giriş kapısı üstündeki kitabe sivri kemerli silmeyle çerçevelenmiştir; siyah beyaz mermer kapı kemeri üzerindeki pano XVI. yüzyıl Osmanlı mimari özelliklerini yansıtır. Sekizgen kasnak oldukça yüksektir; kuzey, güney ve batıda dikdörtgen nişler içinde sivri kemerli birer pencere vardır. Ortadaki sembolik sanduka ahşapla yenilenmiştir. Cenazelik katının varlığı kabul edilmekte ancak girilmemektedir. Türbe 1990'da Vakıflar Genel Müdürlüğü tarafından restore edilmiştir.",
+        "en": "The tomb adjoins the mosque on the west; it is square inside with a dome carried on Turkish triangles. The inscription above the entrance is framed by a pointed-arched moulding, and the panel on the black-and-white marble door arch reflects 16th-century Ottoman features. The octagonal drum is quite high, with a pointed-arched window in rectangular niches on the north, south and west. The symbolic sarcophagus was renewed in wood. A burial floor is accepted to exist but cannot be entered. The tomb was restored by the General Directorate of Foundations in 1990."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "106-107"
+        }
+      ]
+    },
+    {
+      "id": "hazire",
+      "order": 4,
+      "title": {
+        "tr": "Hazire ve Çevre Yapılar",
+        "en": "Graveyard and Surroundings"
+      },
+      "body": {
+        "tr": "Yapıların çevresindeki hazirede Karamanoğulları Beyliği ve Osmanlı dönemlerine ait mezar taşları bulunur. Günümüzde cami, türbe, çeşme, sebil ve dış duvarın köşesinde işlevi bilinmeyen kare planlı kubbeli bir yapı ayakta kalmıştır. Kitapta \"Selçuklu döneminde onarılarak bugüne kadar geldiği\" belirtilir.",
+        "en": "The graveyard around the buildings contains Karamanoğulları and Ottoman gravestones. Today the mosque, tomb, fountain, public fountain and a square domed structure of unknown function at the corner of the outer wall survive. The book says it was repaired in the Seljuk period and has survived to the present."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "106-107"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Ahmet Fakih (Fakih Ahmed)",
+      "role": {
+        "tr": "Selçuklu dönemi alimi; türbede yatan kişi",
+        "en": "Seljuk-period scholar buried in the tomb"
+      }
+    },
+    {
+      "name": "I. Alâeddin Keykubat",
+      "role": {
+        "tr": "Caminin yapıldığı dönemin sultanı",
+        "en": "Sultan during whose reign the mosque was built"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "turbe-kitabesi",
+      "location": {
+        "tr": "Türbe giriş kapısı üstü, kapı çerçevesinin ortasında mezar taşı biçimli",
+        "en": "Above the tomb entrance, gravestone-shaped, centred on the door frame"
+      },
+      "language": "ar",
+      "script": "celî sülüs (kabartma, dokuz satır)",
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu kabir en ulu, en büyük âlim, doğru yolda amel eden, dine bağlı, faziletli kul, gerçeği meydana çıkaran, abdalların meliki, meczupların efendisi, şarkın ve garbın kutbu, Fakih Ahmed'indir. Allah yattığı yeri nurlandırsın. Yazılış tarihi 618'dir.",
+        "en": "This grave belongs to Fakih Ahmed, the grand, the greatest scholar, the one who acts on the right path, the faithful, the virtuous servant, the one who reveals the truth, the king of the abdals, the master of the majzubs, the qutb of the east and west. May God enlighten his resting place. The date of inscription is 618."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 618,
+        "gregorian": "1221"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "106-107"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1221",
+      "year": 1221,
+      "date": null,
+      "hijri": "618",
+      "type": "construction",
+      "title": {
+        "tr": "Fakih Ahmet adına cami yaptırıldı (türbe kitabesine göre)",
+        "en": "Mosque built in the name of Fakih Ahmet (per the tomb inscription)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "106"
+        }
+      ]
+    },
+    {
+      "id": "vefat-1221",
+      "year": 1221,
+      "date": null,
+      "hijri": "618",
+      "type": "record",
+      "title": {
+        "tr": "Ahmet Fakih vefat etti ve türbeye defnedildi",
+        "en": "Ahmet Fakih died and was buried in the tomb"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "106"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1990",
+      "year": 1990,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Türbe Vakıflar Genel Müdürlüğü tarafından restore edildi",
+        "en": "Tomb restored by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "107"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Hoca Fakih Camii, yüksek bir duvarla çevrili bir hazirenin içinde durur. Cami doğu-batı yönünde uzanan dikdörtgen bir yapıdır, üstü kırma çatılıdır ve kuzeyinde dört ahşap direkle taşınan bir son cemaat yeri vardır. Batısında ona bitişik, yüksek sekizgen kasnaklı kare planlı türbe yükselir; kapısının üstünde mezar taşı biçiminde, dokuz satırlık yazılı bir kitabe görülür. Hazirede eski mezar taşları, bir çeşme ve bir sebil bulunur.",
+      "en": "Hoca Fakih Mosque stands inside a graveyard enclosed by a high wall. It is a rectangular east-west building with a hipped roof and a narthex carried on four wooden posts to the north. Attached on its west is the square tomb with a high octagonal drum; above its door is a gravestone-shaped, nine-line inscription. The graveyard holds old gravestones, a fountain and a public fountain."
+    },
+    "audio_description_source": "Kitaptaki mimari tarif (Konya Vakıf Eserleri I. Cilt) esas alınarak yazılmıştır."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "106-107"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=354",
+        "original_name": "pdf-s55-xref354",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "106"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hoca Fakih (Ahmet Fakih) Camii ve Türbesi (kitap s. 106)",
+        "en": "Hoca Fakih (Ahmet Fakih) Mosque and Tomb (book p. 106)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı cami ve türbe, kubbeli, küçük pencere ve minareye sahip.",
+        "en": "Stone-walled mosque and tomb, domed, with small window and minaret."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=358",
+        "original_name": "pdf-s55-xref358",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "107"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Hoca Fakih (Ahmet Fakih) Camii ve Türbesi (kitap s. 107)",
+        "en": "Hoca Fakih (Ahmet Fakih) Mosque and Tomb (book p. 107)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış, kemerli bir mihrap. Üstünde kare çerçeveli hat levhaları ve duvarlarda ahşap paneller var.",
+        "en": "A stone mihrab with an arched niche. Above it are rectangular calligraphy panels, and wooden panels on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=356",
+        "original_name": "pdf-s55-xref356",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "107"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Hoca Fakih (Ahmet Fakih) Camii ve Türbesi (kitap s. 107)",
+        "en": "Hoca Fakih (Ahmet Fakih) Mosque and Tomb (book p. 107)"
+      },
+      "alt": {
+        "tr": "Ağaçlar arasında kırmızı kiremitli bir cami ve mavi kubbeli türbe. Kubbeye doğru eğimli çatılar ve küçük bir minare görünüyor.",
+        "en": "A mosque with red tiled roofs and a blue dome surrounded by trees. Sloped roofs lead to the dome and a small minaret is visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

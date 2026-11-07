@@ -56,7 +56,14 @@
         "source_id": "vk-bursa-c1",
         "pages": "479"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.200814,
+      "lng": 29.04396,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Gaziakdemir, Gaziakdemir Mahallesi, Osmangazi, Bursa, Marmara Bölgesi, 16104, Türkiye'); binanın kendisi değil."
+    }
   },
   "dating": {
     "display": {
@@ -303,6 +310,9 @@
   "relations": [
     {
       "target_id": "bursa-osmangazi-yeni-kaplica-hamami",
+      "target_name": {
+        "tr": "Yeni Kaplıca Hamamı"
+      },
       "type": "urban_context",
       "description": {
         "tr": "Mescit, Yeni Kaplıca Hamamı ile aynı avlu içinde yer alır; cuma günleri hamama gelenlerin namaz kılması için yapılmıştır.",

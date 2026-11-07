@@ -1,0 +1,667 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-sultan-selim-selimiye-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî, mimar ve yapım tarihi kitapta kesinleşmiyor; founder 'disputed' işaretlendi.",
+      "İmaret, iki medrese, kütüphane ve muvakkithane bu bölümde ayrı anlatılmıyor; ayrı kayıt gerekirse başka bölümlerden bakılmalı.",
+      "Yusuf Ağa Kütüphanesi'nin id'si/ilçesi doğrulanmalı (relation hedefi kitaptaki konumdan Karatay varsayıldı).",
+      "Yusuf Ağa Kütüphanesi'nin sekiz satırlık kitâbesinin metni kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kaynak üç görüşü birlikte aktarıyor (Kanuni dönemi belgeleri; Eyice: XVI. yy. ilk yarısı, Yavuz Sultan Selim adına; Konyalı: Süleyman'ın sağlığında başlayıp II. Selim'in tamamlaması). Hiçbirine kesin yıl verilmedi."
+      },
+      {
+        "field": "sections[tarihce]",
+        "note": "İngilizce metinde, Türkçe metinde bulunmayan 'inşaat Kanuni döneminde başladı, II. Selim döneminde tamamlandı' cümlesi var; Türkçe metin esas alındı, bu görüş Konyalı'ya atfedilmiş olarak aktarıldı."
+      },
+      {
+        "field": "sections[manzume]",
+        "note": "Türkçe 'manzume' İngilizce metinde 'mansion' diye çevrilmiş; manzume (külliye grubu) anlamı esas alındı."
+      },
+      {
+        "field": "founder",
+        "note": "Banî konusunda görüş ayrılığı var: Şehzade II. Selim (Konya Sancak Beyi), Yavuz Sultan Selim adına yapıldığı görüşü ya da Kanuni dönemi. Kurucu adı bu yüzden boş; güven düzeyi disputed."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sultan Selim (Selimiye) Camii ve Şadırvanı",
+    "en": "Sultan Selim (Selimiye) Mosque and Shadirvan"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [
+    "cesme"
+  ],
+  "parent_id": null,
+  "era": "klasik-osmanli",
+  "tags": [
+    "selatin camii",
+    "Selimiye",
+    "merkezî kubbe",
+    "yarım kubbe",
+    "şadırvan",
+    "Mevlâna Müzesi yakını"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Müze Alanı Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "176-177"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.870435,
+      "lng": 32.503297,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Müze Alanı Caddesi, Aziziye Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, 42040, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XVI. yüzyıl (II. Selim dönemine uzanan inşa; kesin tarih yok)",
+      "en": "16th century (construction possibly reaching into Selim II's reign; no exact date)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 16,
+    "basis": {
+      "tr": "Kitap, Kanuni Sultan Süleyman devrine ait belgeleri, Eyice'nin XVI. yüzyılın ilk yarısı görüşünü ve Konyalı'nın Süleyman'ın sağlığında başlayıp II. Selim'in tamamladığı görüşünü aktarıyor; kesin yıl verilmiyor.",
+      "en": "The book cites documents from Suleyman the Magnificent's reign, Eyice's first-half-of-16th-century view and Konyalı's view that it was begun in Süleyman's lifetime and finished by Selim II; no exact year is given."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "176-177"
+      }
+    ]
+  },
+  "founder": null,
+  "summary": {
+    "tr": "Mevlâna Müzesi'nin batısında, Müze Alanı Caddesi'ndeki merkezî kubbeli selatin camii. Banisi ve mimarı hakkında farklı görüşler vardır; 2013-2016 meydan düzenlemesinde şadırvanı kuzeye taşınmıştır.",
+    "en": "A central-domed selatin mosque on Müze Alanı Street west of the Mevlâna Museum. Views differ on its founder and architect; its shadirvan was moved north in the 2013-2016 square arrangement."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami, Karatay, Müze Alanı Caddesi üzerinde, Mevlâna Müzesi'nin batısında yer alır; banisi ve mimarı hakkında farklı görüşler vardır. Kanuni Sultan Süleyman devrine ait belgelerde yapımına ilişkin bilgi bulunması eserin bu dönemde yapılmış olabileceği düşüncesini akla getirmiştir. Diğer bir görüş banisinin Konya Sancak Beyi Şehzade II. Selim olabileceği yönündedir. Semavi Eyice yapıyı Mimar Sinan ve takipçileri dönemi içinde ele almış, Yavuz Sultan Selim adına XVI. yüzyılın ilk yarısında yapılmış eserin, Fatih Camii mimarisinde görülen kubbe ve yarım kubbe düzeniyle tekrar inşa edildiğini belirtmiştir. İbrahim Hakkı Konyalı'ya göre inşasına Sultan Süleyman'ın sağlığında başlanmış, vefatından sonra oğlu II. Selim tamamlamıştır. Batı duvarının güneydeki penceresi 1794'te, duvara bitişik Yusuf Ağa Kütüphanesi'ne geçit verecek şekilde kapıya dönüştürülmüş; kütüphanenin sekiz satırlık kitâbesi bu bölüme yerleştirilmiştir. Farklı dönemlerde onarılan cami, son olarak 2015'te Vakıflar Bölge Müdürlüğü tarafından zemin sağlamlaştırması görmüştür.",
+        "en": "The mosque lies on Müze Alanı Street west of the Mevlâna Museum; opinions differ about its founder and architect. Documents of Suleyman the Magnificent's reign suggest it may have been built then; another view is that the founder was Prince Selim II, Sanjak Bey of Konya. Semavi Eyice treats it in the period of Mimar Sinan and his followers: built in the first half of the 16th century in the name of Yavuz Sultan Selim, rebuilt with the dome and half-dome layout first seen in Fatih Mosque. According to İbrahim Hakkı Konyalı, construction began in Süleyman's lifetime and was completed by his son Selim II. In 1794 the southern window of the west wall was converted into a door to the adjacent Yusuf Ağa Library, whose eight-line inscription is placed there. Repaired in different periods, it was last strengthened (ground consolidation) in 2015 by the Regional Directorate of Foundations."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "176-177"
+        }
+      ]
+    },
+    {
+      "id": "manzume",
+      "order": 2,
+      "title": {
+        "tr": "Manzume ve Genel Plan",
+        "en": "Complex and General Plan"
+      },
+      "body": {
+        "tr": "Cami, Mevlâna Dergâhı ile şu anda ayakta olmayan türbe hamamı arasında inşa edilmiş manzumenin parçasıdır; manzume cami, imaret, iki medrese, kütüphane ve muvakkithaneden oluşur. Cami, merkezî kubbeli harim, kuzeyinde yedi bölümlü son cemaat yeri ve iki minareden müteşekkil bir selatin camisidir. Duvarlar ve minare kesme taşla kaplıdır; son cemaat yerinin kemerlerinde ve bazı bölümlerde renkli taş kullanılmıştır. Güney cephede dışa taşıntılı iki paye, doğu ve batı cephelerde harime geçiş sağlayan kapı açıklıkları vardır; en hareketli cephe kuzeydir.",
+        "en": "The mosque belongs to a complex built between the Mevlâna Dergah and the no-longer-standing tomb bath, consisting of a mosque, imaret, two madrasas, library and muvakkithane. It is a selatin mosque with a central-domed harim, a seven-section narthex to the north and two minarets. Walls and minarets are faced with cut stone, with coloured stone in the narthex arches and some other parts. The south facade has two outward-projecting piers; the east and west facades have doors into the harim; the north facade is the most animated."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "177"
+        }
+      ]
+    },
+    {
+      "id": "son-cemaat",
+      "order": 3,
+      "title": {
+        "tr": "Son Cemaat Yeri, Minareler ve Taç Kapı",
+        "en": "Narthex, Minarets and Portal"
+      },
+      "body": {
+        "tr": "Son cemaat yeri yedi bölümlüdür; sivri kemerlerle bağlanan ortadaki bölüm tonozla, diğerleri kubbeyle örtülüdür ve ortadaki bölüm daha yüksektir. Kubbeleri taşıyan mermer sütunların başlıkları mukarnaslıdır, kubbe iç yüzeyleri kalem işiyle süslüdür. Revakın doğu ve batısı sağır duvarla sınırlıdır. Minareler tek şerefelidir; şerefe çıkmaları mukarnaslı, korkuluğu mermer şebekelidir. Taç kapı silme ve bordürlerle sınırlı dikdörtgen formdadır; kapı açıklığı renkli mermerden basık kemerli ve mukarnas kavsaralıdır. Sağ kapı kanadı üzerinde Arapça “mescitte mümin, suda balık gibidir”, sol kanat üzerinde “mescitte münafık; kafeste kuş gibidir” hadisleri yazılıdır.",
+        "en": "The narthex has seven sections; the middle one, linked by pointed arches, is vaulted and higher, the others domed. Marble columns carrying the domes have muqarnas capitals and the dome interiors are decorated with hand drawing (kalem işi). The east and west of the portico end in blind walls. The minarets have a single balcony with muqarnas corbels and marble lattice railings. The rectangular portal has colored marble, a flat arch and a muqarnas hood. Above the right door wing is written in Arabic “A believer in the mosque is like a fish in water”, above the left “A hypocrite in the mosque is like a bird in a cage”."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "177, 180-181"
+        }
+      ]
+    },
+    {
+      "id": "harim",
+      "order": 4,
+      "title": {
+        "tr": "Harim",
+        "en": "Harim"
+      },
+      "body": {
+        "tr": "Harime kuzey, doğu ve batıdaki kapılardan girilir. Harim, bir merkezî kubbe, kıble yönünde bir yarım kubbe ve doğu ile batıda üçer küçük kubbeyle örtülüdür. Orta kubbeyi iki bağımsız fil ayağı ile kuzey duvarına bitişik ayaklar arasındaki ikişer sivri kemerin oturduğu birer sütun taşır; yarım kubbeyi kıble duvarına bitişik payeler ve bağımsız fil payeler taşır. Merkezî kubbe yaklaşık 12 m çapındadır, yarım kubbenin çapı bunun yarısı kadardır; yan birimlerdeki üçer kubbe merkezî kubbenin yarıçapı ölçüsündedir. Payandalarla yan duvarlar arasındaki köşe boşlukları tonozla örtülüdür. Kubbelerin iç kısımları sıva üzerine renkli boyalarla kalem işi tezyin edilmiştir; Osmanlı dönemi motifli süslemeler büyük ölçüde yenilenmiştir.",
+        "en": "The harim is entered from doors on the north, east and west. It is covered by a central dome, a semi-dome toward the qibla and three smaller domes each to east and west. The central dome rests on two free-standing elephant piers and a column carrying two pointed arches between the piers adjacent to the north wall; the semi-dome rests on piers beside the qibla wall and free elephant piers. The central dome is about 12 m in diameter, the semi-dome half of that, and the side domes are the size of the central dome's radius. Corner spaces between buttresses and side walls are vaulted. Dome interiors are decorated with coloured paint on plaster; the Ottoman-period motifs have largely been renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "180-181, 183"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-minber",
+      "order": 5,
+      "title": {
+        "tr": "Mihrap ve Minber",
+        "en": "Mihrab and Minbar"
+      },
+      "body": {
+        "tr": "Mihrap ve minber beyaz mermerdendir. Kıble duvarı ortasındaki mihrap yarım daire planlı ve dikdörtgen formludur; mukarnaslı kavsara nişini farklı motiflerle süslü kuşaklar çevreler: nişin kenarında zikzaklı sütunce, boş silme, rûmi ve gülbezeklerden oluşan kuşak ve daha geniş mukarnaslı kuşak. Mihrabın sağında, kuzeybatıda yer alan mermer minber taç kapı, süpürgelik, aynalık, köşk ve külah bölümlerinden oluşur; köşkün altında sivri kemerli geçit vardır ve korkuluklar ajur tekniğinde geometrik süslüdür. Külah kısmı Mevlâna Türbesi'ne benzer şekilde değiştirilmiş olmalıdır.",
+        "en": "The mihrab and minbar are of white marble. The semicircular, rectangular-form mihrab has a muqarnas niche surrounded by bands: a zigzag colonnette, an empty molding, a band of rumi and rosettes, and a wider muqarnas band. The marble minbar to the mihrab's right (northwest) has crown door, plinth, transom, pavilion and cone, with a pointed-arch passage under the pavilion and openwork geometric railings. The cone must have been changed to resemble the Mevlâna Tomb."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "183"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan",
+      "order": 6,
+      "title": {
+        "tr": "Şadırvan",
+        "en": "Shadirvan"
+      },
+      "body": {
+        "tr": "Şadırvanla ilgili yayınlarda inşa tarihini içeren bir kitâbeye rastlanmamaktadır. Caminin batısındaki şadırvan klasik bir Osmanlı şadırvanı görünümündedir. Tamir keşiflerinde taş kemerli ve havuzlu olduğu belirtilen çeşmeler imaretin çevre duvarı içindeydi; imaret sık onarımlarla ayakta tutulmaya çalışılmıştır. Vakıflar Bölge Müdürlüğü'nün 2013-2016 meydan düzenlemesi kapsamında batıdaki şadırvan kuzeye taşınmış ve bu sırada büyük bölümü yenilenmiştir. Cami, Konya'daki en önemli selatin cami örneklerindendir.",
+        "en": "No inscription with the shadirvan's construction date is found in publications. The shadirvan west of the mosque looks like a classical Ottoman shadirvan. Fountains described in repair surveys as having stone arches and pools lay within the imarat's surrounding wall; the imarat was kept standing by frequent repairs. In the 2013-2016 square arrangement by the Regional Directorate of Foundations the western shadirvan was moved north and most of it renewed. The mosque is one of the most important selatin mosques in Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "183"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "merkezi_kubbe_capi",
+      "label": {
+        "tr": "Merkezî kubbe çapı",
+        "en": "Central dome diameter"
+      },
+      "value": 12,
+      "unit": "m",
+      "note": {
+        "tr": "Kitap 'yaklaşık 12 m' diyor.",
+        "en": "The book says 'approximately 12 m'."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "181"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı",
+        "en": "Number of minarets"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "177"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_bolum_sayisi",
+      "label": {
+        "tr": "Son cemaat yeri bölüm sayısı",
+        "en": "Narthex sections"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "177, 180"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şehzade II. Selim",
+      "role": {
+        "tr": "Konya Sancak Beyi; bir görüşe göre banî",
+        "en": "Sanjak Bey of Konya; founder according to one view"
+      }
+    },
+    {
+      "name": "Semavi Eyice",
+      "role": {
+        "tr": "Araştırmacı; yapıyı XVI. yüzyılın ilk yarısına tarihliyor",
+        "en": "Scholar; dates the building to the first half of the 16th century"
+      }
+    },
+    {
+      "name": "İbrahim Hakkı Konyalı",
+      "role": {
+        "tr": "Araştırmacı; Süleyman'ın sağlığında başlanıp II. Selim'in tamamladığı görüşünü savunuyor",
+        "en": "Scholar; holds that it was begun in Süleyman's lifetime and finished by Selim II"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "tac-kapi-hadisleri",
+      "location": {
+        "tr": "Taç kapı, sağ ve sol kapı kanatlarının üstü",
+        "en": "Portal, above the right and left door wings"
+      },
+      "language": "ar",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Sağ kanat: “mescitte mümin, suda balık gibidir”; sol kanat: “mescitte münafık; kafeste kuş gibidir”.",
+        "en": "Right wing: “A believer in the mosque is like a fish in water”; left wing: “A hypocrite in the mosque is like a bird in a cage”."
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap Arapça metni vermiyor, yalnızca anlamını aktarıyor; çeviri kitaptaki ifadedir.",
+        "en": "The book gives only the meaning, not the Arabic text; translation is the book's wording."
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "181"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yusuf-aga-kutuphanesi-kapisi-1794",
+      "year": 1794,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Batı duvarı penceresi Yusuf Ağa Kütüphanesi'ne geçit için kapıya dönüştürüldü",
+        "en": "West wall window converted into a door to the Yusuf Ağa Library"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "176-177"
+        }
+      ]
+    },
+    {
+      "id": "sadirvan-tasima-2013-2016",
+      "year": 2013,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Şadırvan meydan düzenlemesinde batıdan kuzeye taşındı, büyük bölümü yenilendi (2013-2016)",
+        "en": "Shadirvan moved from west to north in the square arrangement and largely renewed (2013-2016)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "183"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı 2013 alındı; işlem 2013-2016 arası.",
+        "en": "Start year 2013 used; work took place 2013-2016."
+      }
+    },
+    {
+      "id": "zemin-saglamlastirma-2015",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü zemin sağlamlaştırması",
+        "en": "Ground consolidation by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "176-177"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-mevlana-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami, Mevlâna Dergâhı ile artık ayakta olmayan türbe hamamı arasındaki manzumenin parçasıdır ve Mevlâna Müzesi'nin batısındadır.",
+        "en": "The mosque is part of the complex between the Mevlâna Dergah and the vanished tomb bath, west of the Mevlâna Museum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "176-177"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-karatay-yusuf-aga-kutuphanesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Yusuf Ağa Kütüphanesi caminin batı duvarına bitişiktir; 1794'te kapıyla bağlanmıştır.",
+        "en": "The Yusuf Ağa Library adjoins the west wall; connected by a door in 1794."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "176-177"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Mevlâna Müzesi'nin batısındaki bu selatin camisinin duvarları kesme taştır ve iki tek şerefeli minaresi vardır. Kuzeyde yedi bölümlü son cemaat yeri bulunur; ortadaki bölüm tonozlu ve daha yüksek, diğerleri kubbelidir. Taç kapının kanatlarında hadisler yazılıdır. İçeride yaklaşık on iki metre çaplı bir merkezî kubbe, kıble tarafında yarım kubbe, yanlarda üçer küçük kubbe vardır. Mihrap ve minber beyaz mermerdir.",
+      "en": "This selatin mosque west of the Mevlâna Museum has cut-stone walls and two single-balcony minarets. A seven-section narthex lies to the north, its middle part vaulted and higher, the others domed. Hadiths are written on the portal door wings. Inside are a central dome about twelve metres across, a semi-dome on the qibla side and three small domes on each side. The mihrab and minbar are white marble."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "175-183"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=660",
+        "original_name": "pdf-s89-xref660",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "175"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Sultan Selim (Selimiye) Camii ve Şadırvanı (kitap s. 175)",
+        "en": "Sultan Selim (Selimiye) Mosque and Shadirvan (book p. 175)"
+      },
+      "alt": {
+        "tr": "Büyük bir cami kompleksi, kubbeli ana yapı, iki minare ve kemerli girişlerle aydınlatılmış bir meydan önünde.",
+        "en": "A large mosque complex with a domed main structure, two minarets, and arched entrances, illuminated in front of a plaza."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=665",
+        "original_name": "pdf-s90-xref665",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "176"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sultan Selim (Selimiye) Camii ve Şadırvanı (kitap s. 176)",
+        "en": "Sultan Selim (Selimiye) Mosque and Shadirvan (book p. 176)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halılar, sütunlar, kemerler, kubbe ve minber görülüyor.",
+        "en": "Inside, red carpets, columns, arches, dome, and minbar are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=669",
+        "original_name": "pdf-s91-xref669",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "179"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sultan Selim (Selimiye) Camii ve Şadırvanı (kitap s. 179)",
+        "en": "Sultan Selim (Selimiye) Mosque and Shadirvan (book p. 179)"
+      },
+      "alt": {
+        "tr": "Kubbeli tavan, merkezde büyük bir lamba ve dört köşede çapraz kemerlerle ayrılmış döşeme desenleriyle süslü.",
+        "en": "Ceiling with dome, central chandelier, and decorative patterns in four corners separated by intersecting arches."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=673",
+        "original_name": "pdf-s92-xref673",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "180"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Sultan Selim (Selimiye) Camii ve Şadırvanı (kitap s. 180)",
+        "en": "Sultan Selim (Selimiye) Mosque and Shadirvan (book p. 180)"
+      },
+      "alt": {
+        "tr": "Yeşil kubbeli şadırvan, süslü kemerler, kemerlerin üzerindeki geometrik desenler ve kırmızı halılar görülmektedir.",
+        "en": "A green-domed şadırvan, ornate arches, geometric patterns above the arches, and red carpets are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=675",
+        "original_name": "pdf-s92-xref675",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "181"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sultan Selim (Selimiye) Camii ve Şadırvanı (kitap s. 181)",
+        "en": "Sultan Selim (Selimiye) Mosque and Shadirvan (book p. 181)"
+      },
+      "alt": {
+        "tr": "İç mekanda, kemerlerle desteklenen büyük bir kubbe ve altındaki çanak şeklindeki avize görülüyor. Duvarlarda geometrik desenler ve yazılar var.",
+        "en": "Inside, a large dome supported by arches and a chandelier below. Geometric patterns and inscriptions on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=677",
+        "original_name": "pdf-s92-xref677",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "181"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Sultan Selim (Selimiye) Camii ve Şadırvanı (kitap s. 181)",
+        "en": "Sultan Selim (Selimiye) Mosque and Shadirvan (book p. 181)"
+      },
+      "alt": {
+        "tr": "Taştan yapılmış, sütunlarla desteklenen kare bir minber. Minberin etrafında ahşap korkuluklar ve kırmızı halılar var.",
+        "en": "A square minbar made of stone, supported by columns. Wooden railings surround the minbar, with red carpets on the floor."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=681",
+        "original_name": "pdf-s93-xref681",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "182"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sultan Selim (Selimiye) Camii ve Şadırvanı (kitap s. 182)",
+        "en": "Sultan Selim (Selimiye) Mosque and Shadirvan (book p. 182)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halılar, büyük metal avizeler, kemerler ve sütunlar yer alıyor.",
+        "en": "Inside, red carpets, large metal chandeliers, arches, and columns are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=683",
+        "original_name": "pdf-s93-xref683",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "183"
+      },
+      "subject": "portico",
+      "caption": {
+        "tr": "Sultan Selim (Selimiye) Camii ve Şadırvanı (kitap s. 183)",
+        "en": "Sultan Selim (Selimiye) Mosque and Shadirvan (book p. 183)"
+      },
+      "alt": {
+        "tr": "Taş sütunlarla desteklenen kemerlerden oluşan bir revak. Kemerlerin üzerinde geometrik desenler var.",
+        "en": "A portico with arches supported by stone columns. Geometric patterns are on the arches."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

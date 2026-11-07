@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-seyh-ulema-recep-aga-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 263) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Mahalle adı kitapta verilmiyor; yalnızca cadde adı.",
+      "Kesin yapım tarihi kitapta yok; XX. yüzyıl başı tahmini.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Şeyh Ulema Recep Ağa Camii",
+    "en": "Şeyh Ulema Recep Ağa Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "kerpiç",
+    "taş",
+    "20. yüzyıl başı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Şeyh Ulemâ Recep Ağa Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "263"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.874854,
+      "lng": 32.511126,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Şeyh Ulema Recep Ağa Caddesi, Aziziye Mahallesi, Karatay, Konya, İç Anadolu Bölgesi, 42030, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl başı (tahmini)",
+      "en": "Early 20th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Banî ve inşa tarihine dair kitâbe yoktur; plan ve mimari özelliklerinden hareketle XX. yüzyılın başlarına tarihlendirilebilir. Yıl verilmiyor.",
+      "en": "There is no inscription on the builder or date; by plan and architecture it can be dated to the beginning of the 20th century. No year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "263"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Şeyh Ulemâ Recep Ağa Caddesi üzerinde, kerpiç ve taşla yapılmış, enlemesine dikdörtgen planlı, üç sahınlı, XX. yüzyıl başına tarihlenen cami.",
+    "en": "A mosque on Şeyh Ulemâ Recep Ağa Street, built of adobe and stone, with a transverse rectangular plan and three aisles, dated to the early 20th century."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Şeyh Ulemâ Recep Ağa Caddesi üzerinde yer almaktadır. Yapının banisi ve inşa tarihine dair herhangi bir kitâbe bulunmamaktadır; plan ve mimari özelliklerinden hareketle XX. yüzyılın başlarına tarihlendirilebilir.",
+        "en": "The mosque is on Şeyh Ulemâ Recep Ağa Street, Karatay. There is no inscription on its builder or construction date; based on its plan and architectural features it can be dated to the beginning of the 20th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "263"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami enlemesine dikdörtgen planlıdır ve dört yöne eğimli kırma çatıyla örtülüdür; malzeme olarak kerpiç ve taş kullanılmıştır. Harime kuzey cephesi ortasındaki kapıdan girilir. Harim enine dikdörtgen planlı ve üç sahınlıdır; ahşap mahfil kuzey duvarına bitişiktir. Kıble duvarı ortasındaki mihrap yarım daire planlı ve yarım kubbe kavsaralıdır.",
+        "en": "The mosque has a transverse rectangular plan and a hipped roof sloping in four directions, built of adobe and stone. The harim is entered through the door in the middle of the north facade; it has a transverse rectangular plan and three aisles. The wooden mahfil is adjacent to the north wall. The mihrab in the middle of the qibla wall is semicircular with a semi-dome."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "263"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Şeyh Ulema Recep Ağa Camii, kerpiç ve taştan yapılmış, enlemesine dikdörtgen planlı, kırma çatılı bir camidir. Kuzeydeki orta kapıdan üç sahınlı harime girilir; kuzey duvarda ahşap mahfil, kıble duvarında yarım kubbeli yarım daire planlı bir mihrap bulunur.",
+      "en": "Şeyh Ulema Recep Ağa Mosque is a transverse rectangular, hipped-roof building of adobe and stone. A central north door leads into the three-aisle prayer hall, which has a wooden gallery on the north wall and a semicircular semi-domed mihrab on the qibla wall."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 263)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "263-263"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1060",
+        "original_name": "pdf-s133-xref1060",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "263"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Şeyh Ulema Recep Ağa Camii (kitap s. 263)",
+        "en": "Şeyh Ulema Recep Ağa Mosque (book p. 263)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı ve beyaz desenli halılar, ahşap tavan, camlı pencereler ve mermer sütunlar yer alıyor.",
+        "en": "Red and white patterned carpets, wooden ceiling, glass windows, and marble columns are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

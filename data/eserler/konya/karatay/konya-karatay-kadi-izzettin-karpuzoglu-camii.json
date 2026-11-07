@@ -1,0 +1,369 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-kadi-izzettin-karpuzoglu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 216-217) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "Külliyenin türbe, medrese ve dârüşşifa yapılarının kitapta ayrı adı yok; ayrı kayıt oluşturulmadı, parent_id verilmedi.",
+      "Mimar/usta kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "Kitap 'Kadı İzzettin' (başlık), 'Kadı İzzeddin' (metin) yazıyor; yazımlar korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Kadı İzzettin (Karpuzoğlu) Camii",
+    "en": "Kadı İzzettin (Karpuzoğlu) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Karpuzoğlu Camii",
+      "en": "Karpuzoğlu Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Selçuklu vezir",
+    "1925 yeniden inşa",
+    "kayıp külliye"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Çifte Merdiven Mahallesi",
+    "address": "Şerafeddin Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "216-217"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.876757,
+      "lng": 32.494897,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/288630596 ('Kadı İzzettin Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 652 / M. 1254 (Selçuklu camisi); bugünkü yapı 1925",
+      "en": "652 AH / 1254 AD (Seljuk mosque); present building 1925"
+    },
+    "start_year": 1254,
+    "end_year": 1254,
+    "hijri_year": 652,
+    "century": 13,
+    "basis": {
+      "tr": "Kadı İzzeddin tarafından H. 652 / M. 1254'te yaptırılan Selçuklu camisinin yerine 1925'te yeni cami yapılmıştır.",
+      "en": "A new mosque was built in 1925 in place of the Seljuk-period mosque built by Kadı İzzeddin in 652 AH / 1254 AD."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "216-217"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Kadı İzzeddin (Muhammed)",
+    "role": "banî (Selçuklu dönemi camisi, 1254)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "216-217"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Eserin vakfiyesinde cami dışında türbe, medrese ve dârüşşifa gibi yapıların da olduğu kayıtlıdır; külliyeden yalnızca cami (betonarme) ayaktadır.",
+      "en": "The foundation deed records buildings such as a tomb, madrasa and hospice besides the mosque; only the mosque survives, in reinforced concrete."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "216-217"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Çifte Merdiven Mahallesi'ndeki cami, Selçuklu vezirlerinden Kadı İzzeddin'in 1254'te yaptırdığı caminin yerine 1925'te yeniden inşa edilmiştir. Vakfiyeye göre türbe, medrese ve dârüşşifa da içeren külliyenin yalnızca camisi kalmıştır.",
+    "en": "The mosque in Çifte Merdiven Neighborhood was rebuilt in 1925 in place of the mosque built by the Seljuk statesman Kadı İzzeddin in 1254. Of the complex that, per the deed, also had a tomb, madrasa and hospice, only the mosque stands."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve külliye",
+        "en": "History and complex"
+      },
+      "body": {
+        "tr": "Kadı İzzeddin tarafından H. 652 / M. 1254'te yaptırılmış olan Selçuklu dönemi camisinin yerine 1925'te yeni cami inşa edilmiştir. Vakfiyede cami dışında türbe, medrese ve dârüşşifa gibi yapıların da olduğu kayıtlıdır; külliyeden yalnızca cami betonarme olarak ayaktadır. 1970'teki onarımda bugün mevcut olmayan türbeye ait duvar ve sanduka çinileri bulunmuş, bir kısmı Konya Müzesi'ne kaldırılmıştır.",
+        "en": "A new mosque was built in 1925 in place of the Seljuk-period mosque built by Kadı İzzeddin in 652 AH / 1254 AD. The deed records a tomb, madrasa and hospice in addition to the mosque; of the complex only the mosque stands, in reinforced concrete. During the 1970 repair, wall and sarcophagus tiles of the tomb, which no longer exists, were found and some were taken to the Konya Museum."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "216-217"
+        }
+      ]
+    },
+    {
+      "id": "kadi-izzeddin",
+      "order": 2,
+      "title": {
+        "tr": "Kadı İzzeddin",
+        "en": "Kadı İzzeddin"
+      },
+      "body": {
+        "tr": "Kadı İzzeddin Selçuklu döneminin büyük âlim, kadı ve devlet adamlarındandır. İzzeddin Keykâvus 1246'da tahta geçince onu vezirliğe getirmiştir; Muineddin Süleyman, Sahip Fahreddin Ali, Celâleddin Karatayî gibi âlim ve yöneticiler de bu dönemde görev almıştır. Aksaray yakınlarında Moğollarla savaşta şehit düşmüştür. İ. Hakkı Konyalı buradaki türbenin Seyfeddin Karasungur Türbesi gibi olduğunu, Kadı İzzeddin'e ait kıymetli ahşap sandukanın 1900'lü yılların başında çalındığını kaydeder.",
+        "en": "Kadı İzzeddin was one of the great scholars, judges and statesmen of the Seljuk period. After İzzeddin Keykâvus ascended the throne in 1246 he appointed him vizier; scholars and administrators such as Muineddin Süleyman, Sahip Fahreddin Ali and Celâleddin Karatayî served in the same period. He was martyred in battle with the Mongols near Aksaray. İ. Hakkı Konyalı notes the tomb here was like the Seyfeddin Karasungur Tomb and that Kadı İzzeddin's precious wooden sarcophagus was stolen in the early 1900s."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "216-217"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 3,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Bugünkü yapı derinlemesine dikdörtgen planlı ve dört yöne eğimli kırma çatılıdır. Kuzeybatı köşedeki minare kare kaideli, silindirik gövdeli ve tek şerefelidir.",
+        "en": "The present building has a deeply rectangular plan and a hipped roof sloping in four directions. The minaret in the northwest corner has a square base, cylindrical body and single balcony."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "216-217"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Kadı İzzeddin Muhammed",
+      "role": {
+        "tr": "Selçuklu vezir ve kadı; caminin Selçuklu dönemi bânîsi",
+        "en": "Seljuk vizier and judge; builder of the Seljuk-period mosque"
+      }
+    },
+    {
+      "name": "İzzeddin Keykâvus",
+      "role": {
+        "tr": "1246'da tahta geçen ve Kadı İzzeddin'i vezir yapan Selçuklu hükümdarı",
+        "en": "Seljuk ruler who ascended the throne in 1246 and made Kadı İzzeddin vizier"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1254",
+      "year": 1254,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Selçuklu dönemi camisi yaptırıldı",
+        "en": "Seljuk-period mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "216-217"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Yeni cami inşa edildi",
+        "en": "New mosque built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "216-217"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1970",
+      "year": 1970,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım; türbeye ait çiniler bulundu",
+        "en": "Repair; tomb tiles found"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "216-217"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kadı İzzettin (Karpuzoğlu) Camii derinlemesine dikdörtgen planlı, kırma çatılı, 1925'te yeniden yapılmış betonarme bir camidir. Kuzeybatı köşede tek şerefeli bir minare yükselir.",
+      "en": "Kadı İzzettin (Karpuzoğlu) Mosque is a deeply rectangular reinforced-concrete mosque rebuilt in 1925, with a hipped roof. A single-balcony minaret rises at its northwest corner."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 216-217)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "216-217"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=867",
+        "original_name": "pdf-s110-xref867",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "216"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Kadı İzzettin (Karpuzoğlu) Camii (kitap s. 216)",
+        "en": "Kadı İzzettin (Karpuzoğlu) Mosque (book p. 216)"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremit çatılı bir cami ve yanında ince, sivri kubbeli minaresi. Cami etrafında ağaçlar ve diğer binalar var.",
+        "en": "A mosque with a red tile roof and a slender, pointed dome minaret. Trees and other buildings surround the mosque."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=869",
+        "original_name": "pdf-s110-xref869",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "217"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kadı İzzettin (Karpuzoğlu) Camii (kitap s. 217)",
+        "en": "Kadı İzzettin (Karpuzoğlu) Mosque (book p. 217)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halılar, sütunlar, ahşap tavan ve pencereler görülüyor.",
+        "en": "Red carpets, columns, wooden ceiling, and windows are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=875",
+        "original_name": "pdf-s110-xref875",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "217"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Kadı İzzettin (Karpuzoğlu) Camii (kitap s. 217)",
+        "en": "Kadı İzzettin (Karpuzoğlu) Mosque (book p. 217)"
+      },
+      "alt": {
+        "tr": "Beyaz taş bir levhada siyah harflerle yazılmış metin. Levha, yapay bir yapıya monte edilmiş, etrafı ağaçlarla çevrilidir.",
+        "en": "A white stone plaque with black lettering. The plaque is mounted on a structure, surrounded by trees."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

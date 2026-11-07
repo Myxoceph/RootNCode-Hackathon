@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-saksaganlar-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 258-259) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "1805-1825 aralığının dayandığı yayınlar kitapta adlandırılmıyor.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "1805-1825 aralığı kitapta 'bazı yayınlarda' diye aktarılıyor; kitap kendisi kesin tarih vermiyor, bu yüzden 'probable'."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Saksağanlar Camii",
+    "en": "Saksağanlar Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "ahşap direkli",
+    "kerpiç",
+    "19. yüzyıl"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Küçük Kayacık Mahallesi",
+    "address": "Yeni Kayacık Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "258-259"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1805-1825 arası olabilir (bazı yayınlara göre)",
+      "en": "Possibly between 1805 and 1825 (according to some publications)"
+    },
+    "start_year": 1805,
+    "end_year": 1825,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitap, inşa tarihi ve bânisi hakkında bilgi bulunmadığını, ancak bazı yayınlarda 1805-1825 arası olabileceğinin belirtildiğini söyler; ayrıca XIX. yüzyıl ahşap direkli cami örneği olarak anar.",
+      "en": "The book says there is no information on the date or founder, but some publications state it may be between 1805 and 1825; it also calls the mosque a 19th-century wooden-pillared example."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "258-259"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Küçük Kayacık Mahallesi'nde, alt kısmı kaba yontu taş, üst kısmı kerpiç, iki sıra ahşap direkle üç sahına ayrılmış XIX. yüzyıl ahşap direkli camisi.",
+    "en": "A 19th-century wooden-pillared mosque in Küçük Kayacık, with rough-cut stone below and adobe above, divided into three naves by two rows of wooden posts."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Küçük Kayacık Mahallesi, Yeni Kayacık Sokak üzerinde yer almaktadır. İnşa tarihi ve bânisi hakkında kitâbe ya da bilgi yoktur; bazı yayınlarda inşa tarihinin 1805-1825 arasında olabileceği belirtilir. Cami, XIX. yüzyılda Konya ve çevresinde görülen ahşap direkli cami örneklerindendir.",
+        "en": "The mosque is on Yeni Kayacık Street, Küçük Kayacık Neighborhood, Karatay. There is no inscription or information about its date or patron; some publications state it may have been built between 1805 and 1825. It is one of the wooden-pillared mosques seen in Konya and its surroundings in the 19th century."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "258-259"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Yapı derinlemesine dikdörtgen planlıdır; içten ahşap tavan, dıştan eğimli kırma çatıyla örtülüdür. Subasman seviyesine kadar kaba yontu taş, üst kısımda kerpiç kullanılmıştır. Doğu ve kuzey cephede birer, güney ve batı cephelerde ikişer pencere vardır; doğuya sonradan bir müştemilat, kuzeye son cemaat yeri eklenmiştir. Harim ortada iki sıra ahşap direkle üç sahına ayrılır; giriş kuzey cephedeki kapıdandır. Kıble duvarı ortasındaki mihrap yarım daire planlı, yarım kubbe kavsaralıdır ve bordürlerinde geometrik süslemeler vardır. Mihrabın güneybatısındaki ahşap minber sadedir ve geometrik süslemelidir.",
+        "en": "The building has a deeply rectangular plan, with a wooden ceiling inside and a sloping hipped roof outside. Rough-cut stone is used up to basement level and adobe above. There is one window on the east and north facades and two on the south and west; an outbuilding was later added to the east and a narthex to the north. The harim is divided into three naves by two rows of wooden posts and is entered from the north door. The semicircular mihrab with a semi-dome niche has geometric decoration on its borders. The simple wooden minbar in the southwest has geometric decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "258-259"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "direk_sirasi",
+      "label": {
+        "tr": "Ahşap direk sırası",
+        "en": "Rows of wooden posts"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "258-259"
+        }
+      ]
+    },
+    {
+      "key": "saha_sayisi",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of naves"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "258-259"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Saksağanlar Camii, alt kısmı kaba yontu taştan, üst kısmı kerpiçten yapılmış, kırma çatılı bir camidir. İçeride iki sıra ahşap direk harimi üç sahına böler. Kıble duvarının ortasında yarım kubbeli bir mihrap, yanında geometrik süslemeli sade bir ahşap minber vardır.",
+      "en": "Saksağanlar Mosque has rough-cut stone walls below, adobe above, and a hipped roof. Inside, two rows of wooden posts divide the prayer hall into three naves. In the middle of the qibla wall is a semi-domed mihrab, and next to it a simple wooden minbar with geometric decoration."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 258-259)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "258-259"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1032",
+        "original_name": "pdf-s131-xref1032",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "258"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Saksağanlar Camii (kitap s. 258)",
+        "en": "Saksağanlar Mosque (book p. 258)"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı çatılı, pembe duvarlı, yeşil kapı ve pencereye sahip bir cami. Üstünde rüzgar türbüsü var.",
+        "en": "A mosque with a tiled roof, pink walls, green doors and windows, and a wind vane on top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1034",
+        "original_name": "pdf-s131-xref1034",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "259"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Saksağanlar Camii (kitap s. 259)",
+        "en": "Saksağanlar Mosque (book p. 259)"
+      },
+      "alt": {
+        "tr": "İç mekanda iki sütun, kubbeli tavan, kiremit zemin, kubbe altındaki minber ve duvardaki yazılar görülüyor.",
+        "en": "Interior shows two columns, a domed ceiling, tiled floor, mihrab under the dome, and inscriptions on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1036",
+        "original_name": "pdf-s131-xref1036",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "259"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Saksağanlar Camii (kitap s. 259)",
+        "en": "Saksağanlar Mosque (book p. 259)"
+      },
+      "alt": {
+        "tr": "Mavi bir kapı, üzerinde 16 numarası olan beyaz bir levha ve ahşap çerçevesiyle duvara monte edilmiş.",
+        "en": "A blue door with a white plaque marked 16, set in a wooden frame against a wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

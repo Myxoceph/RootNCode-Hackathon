@@ -3,10 +3,21 @@ import {
   CONTRACT_VERSION,
   LangSchema,
   RoutePlanResponseSchema,
+  TripDurationSchema,
+  TripPlanResponseSchema,
   VisitSettingSchema,
   WeatherResponseSchema,
+  TRANSIT_CITY,
+  TransitEntryPointCodeSchema,
+  type TransitEntryPointCode,
+  type TransitItinerary,
+  type TripArrival,
+  type DailyForecast,
   type Lang,
   type RoutePlanResponse,
+  type TripLegTransit,
+  type TripPlanResponse,
+  type TripWeatherNoteCode,
   type WeatherResponse,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
@@ -18,9 +29,18 @@ import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import { toAssetSummary } from "../assets/assets.mapper.ts";
 import { visibleStatuses, type AssetsRepository, type AssetVisibility } from "../assets/assets.repository.ts";
-import { adviceFor, WEATHER_ATTRIBUTION, type WeatherService } from "../weather/weather.service.ts";
-import { DETOUR_FACTOR, planRoute, WALK_METERS_PER_MINUTE, type PlannerCandidate } from "./planner.ts";
+import { adviceFor, FORECAST_DAYS, WEATHER_ATTRIBUTION, type WeatherService } from "../weather/weather.service.ts";
+import { DETOUR_FACTOR, planRoute, WALK_METERS_PER_MINUTE, walkMeters, walkMinutes, type PlannerCandidate } from "./planner.ts";
 import type { CandidateRecord, PlannerRepository } from "./planner.repository.ts";
+import { toCityDish } from "../gastronomy/gastronomy.mapper.ts";
+import type { GastronomyRepository } from "../gastronomy/gastronomy.repository.ts";
+import { pickDish } from "../gastronomy/meals.ts";
+import type { TransitPlanner } from "../transit/otp.client.ts";
+import { ENTRY_POINTS, entryPointName, tramName } from "../transit/transit.places.ts";
+import { bestLegTransit, DAY_START, importanceOf, planTrip, TRANSIT_LEG_METERS, TRIP_SHAPE, weatherNoteCode, withoutPartsOfListed, type ImportanceSignals, type TripPlanDay } from "./trip.ts";
+
+/** How far ahead a trip can start. Beyond the forecast its days are planned without weather. */
+const TRIP_MAX_LEAD_DAYS = 365;
 
 const CodeSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "must be a lowercase code");
 
@@ -51,15 +71,122 @@ const PlanQuerySchema = z.object({
   maxMinutes: z.coerce.number().int().min(15).max(600).default(120).describe("Yürüme + ziyaret süresi bütçesi, dakika"),
 });
 
-const WeatherQuerySchema = z.object({
+const TripThemeSchema = z.string().transform((value, ctx) => {
+  const [kind, ...rest] = value.split(":");
+  const code = rest.join(":");
+  if ((kind === "type" || kind === "era") && CodeSchema.safeParse(code).success) {
+    return { kind: kind as "type" | "era", code };
+  }
+  ctx.addIssue({ code: "custom", message: "theme must be type:<code> or era:<code>" });
+  return z.NEVER;
+});
+
+const TripQuerySchema = z.object({
   lang: LangSchema.optional(),
   city: CodeSchema.describe("İl kodu, ör. bursa"),
+  duration: TripDurationSchema.default("1").describe("half: 09:00–13:30; 1-5: o kadar tam gün, öğle molasıyla"),
+  theme: TripThemeSchema.optional().describe("type:<tür kodu> ya da era:<dönem kodu>; verilmezse bütün eserler"),
+  start: PointSchema.optional().describe("1. günün başlangıç noktası lat,lng; verilmezse her gün en önemli eserden başlar"),
+  arrival: TransitEntryPointCodeSchema.optional().describe("Ziyaretçinin ile geldiği yer (Konya): konya-gari, selcuklu-yht-gari ya da konya-otogari"),
+  date: z.iso.date().optional().describe("1. günün tarihi (YYYY-MM-DD), bugünden en çok bir yıl sonrası; varsayılan bugün"),
 });
+
+/** Any point on Earth, "lat,lng": where the visitor is, which may be outside Turkey. */
+const AnyPointSchema = z
+  .string()
+  .transform((value) => value.split(",").map((part) => Number(part.trim())))
+  .pipe(z.tuple([z.number().min(-90).max(90), z.number().min(-180).max(180)]))
+  .transform(([lat, lng]) => ({ lat, lng }));
+
+const WeatherQuerySchema = z
+  .object({
+    lang: LangSchema.optional(),
+    city: CodeSchema.optional().describe("İl kodu, ör. bursa"),
+    at: AnyPointSchema.optional().describe("Bir noktanın hava durumu lat,lng (ör. ziyaretçinin konumu); verilirse city yerine kullanılır"),
+  })
+  .refine((query) => query.city !== undefined || query.at !== undefined, { message: "city or at is required", path: ["city"] });
+
+/** The place a point's weather is named by: the app names it from the phone, where it can. */
+const HERE: Record<Lang, string> = { tr: "Konumun", en: "Your location" };
 
 const ESTIMATE_NOTE: Record<Lang, string> = {
   tr: `Yürüme süreleri tahminidir: kuş uçuşu mesafe × ${DETOUR_FACTOR}, dakikada ${WALK_METERS_PER_MINUTE} m.`,
   en: `Walking times are estimates: straight-line distance × ${DETOUR_FACTOR} at ${WALK_METERS_PER_MINUTE} m per minute.`,
 };
+
+const MEAL_LABEL: Record<"lunch" | "dessert", Record<Lang, string>> = {
+  lunch: { tr: "Öğle molası", en: "Lunch break" },
+  dessert: { tr: "Tatlı durağı", en: "Dessert stop" },
+};
+
+function weatherNoteText(code: TripWeatherNoteCode, weather: DailyForecast | null, lang: Lang, beyondForecast: boolean): string {
+  if (code === "unavailable" && beyondForecast) {
+    return lang === "tr"
+      ? "Bu gün için henüz hava tahmini yok; plan havaya bakılmadan yapıldı."
+      : "There is no forecast for this day yet; the plan does not take the weather into account.";
+  }
+  const afternoon = weather?.afternoonPrecipitationProbability ?? 0;
+  const chance = weather?.precipitationProbability ?? 0;
+  const high = Math.round(weather?.highC ?? 0);
+  const texts: Record<TripWeatherNoteCode, Record<Lang, string>> = {
+    afternoon_rain: {
+      tr: `Öğleden sonra %${afternoon} yağış ihtimali var. Açık ve avlulu duraklar sabaha, kapalı mekânlar öğleden sonraya alındı.`,
+      en: `${afternoon}% chance of rain in the afternoon. Open-air and courtyard stops come in the morning, indoor ones after noon.`,
+    },
+    heat: {
+      tr: `Hava sıcak (en yüksek ${high}°). Açık hava durakları serin sabah saatlerine alındı.`,
+      en: `A hot day (up to ${high}°). Open-air stops come in the cooler morning.`,
+    },
+    rain_possible: {
+      tr: `Gün içinde %${chance} yağış ihtimali var, öğleden sonra düşük. Avlu durakları için yanınızda şemsiye olsun.`,
+      en: `${chance}% chance of rain during the day, low in the afternoon. Keep an umbrella for the courtyards.`,
+    },
+    clear: {
+      tr: "Hava açık. Avlular ve türbe bahçeleri için iyi bir gün.",
+      en: "Clear weather. A good day for courtyards and tomb gardens.",
+    },
+    unavailable: {
+      tr: "Hava tahmini şu an alınamadı; plan havaya bakılmadan yapıldı.",
+      en: "The forecast is unavailable right now; the plan does not take the weather into account.",
+    },
+  };
+  return texts[code][lang];
+}
+
+// en-CA formats as YYYY-MM-DD.
+const turkeyDay = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Europe/Istanbul",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+/** Today in Türkiye, where all the cities are. */
+export const turkeyToday = () => turkeyDay.format(new Date());
+
+const turkeyHourFormat = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", hourCycle: "h23" });
+
+/** The hour in Türkiye, 0-23. */
+export const turkeyHour = () => Number(turkeyHourFormat.format(new Date()));
+
+/** Trams under the names passengers know, as on the transit route. */
+function namedLines(itineraries: TransitItinerary[], lang: Lang): TransitItinerary[] {
+  return itineraries.map((it) => ({
+    ...it,
+    legs: it.legs.map((leg) => (leg.mode === "tram" && leg.line ? { ...leg, line: { ...leg.line, name: tramName(leg.line.code, lang) } } : leg)),
+  }));
+}
+
+/** The moment `minute` minutes after midnight on this date in Türkiye (UTC+3 all year). */
+function turkeyTime(date: string, minute: number): Date {
+  return new Date(new Date(`${date}T00:00:00+03:00`).getTime() + minute * 60_000);
+}
+
+export function addDays(date: string, days: number): string {
+  const d = new Date(`${date}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
 
 // Weather changes within minutes; plans depend on it.
 const CACHE_CONTROL = "public, max-age=300";
@@ -76,16 +203,20 @@ function toCandidate(record: CandidateRecord): PlannerCandidate {
 }
 
 export interface PlannerRoutesOptions {
+  /** Offers a bus or tram on a trip's long legs; null when OTP_URL is not set. */
+  transitPlanner: TransitPlanner | null;
   repository: PlannerRepository;
   assets: AssetsRepository;
   weather: WeatherService;
   mediaBaseUrl: string;
   visibility: AssetVisibility;
+  /** Local dishes for a trip's lunch and dessert breaks. */
+  gastronomy: GastronomyRepository;
 }
 
 export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
   app,
-  { repository, assets, weather, mediaBaseUrl, visibility },
+  { transitPlanner, repository, assets, weather, mediaBaseUrl, visibility, gastronomy },
 ) => {
   const statuses = visibleStatuses(visibility);
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
@@ -108,21 +239,77 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
     return point ? weather.current(point) : null;
   }
 
+  /** The forecast at the city's centre; empty when unknown. */
+  async function cityForecast(code: string): Promise<DailyForecast[]> {
+    const point = await repository.findCityPoint(code);
+    return (point && (await weather.forecast(point))) ?? [];
+  }
+
+  /** A bus or tram for each long leg, by the stop it leads to. Without an answer the leg stays a walk. */
+  /** How to get from the station or terminal to day 1's first stop, an hour before the day starts. */
+  async function arrivalAt(
+    code: TransitEntryPointCode,
+    city: string,
+    firstStop: CandidateRecord | undefined,
+    date: string,
+    lang: Lang,
+  ): Promise<TripArrival | null> {
+    if (city !== TRANSIT_CITY || !firstStop || firstStop.lat === null || firstStop.lng === null) return null;
+    const entry = ENTRY_POINTS[code];
+    const to = { lat: firstStop.lat, lng: firstStop.lng, name: pick(firstStop.name_tr, firstStop.name_en, lang) };
+    const meters = walkMeters(entry, to);
+    const departure = turkeyTime(date, DAY_START - 60);
+    const itineraries = await transitPlanner?.plan({ lat: entry.lat, lng: entry.lng, name: entry[lang] }, to, departure);
+    const transit = itineraries ? bestLegTransit(namedLines(itineraries, lang), { legMeters: meters, legMinutes: walkMinutes(meters), departure }) : null;
+    return { from: { code, name: entryPointName(code, lang) }, to: to.name, meters, transit };
+  }
+
+  async function longLegTransit(
+    city: string,
+    days: TripPlanDay[],
+    dates: string[],
+    byId: Map<string, CandidateRecord>,
+    lang: Lang,
+  ): Promise<Map<string, TripLegTransit>> {
+    const found = new Map<string, TripLegTransit>();
+    if (!transitPlanner || city !== TRANSIT_CITY) return found;
+    const place = (record: CandidateRecord | undefined) =>
+      record && record.lat !== null && record.lng !== null ? { lat: record.lat, lng: record.lng, name: record.name_tr } : null;
+    await Promise.all(
+      days.flatMap((day, index) => {
+        const stops = day.items.flatMap((item) => (item.kind === "stop" ? [item] : []));
+        return stops.map(async (stop, i) => {
+          const from = place(byId.get(stops[i - 1]?.id ?? ""));
+          const to = place(byId.get(stop.id));
+          if (!from || !to || stop.legMeters < TRANSIT_LEG_METERS) return;
+          const departure = turkeyTime(dates[index] as string, stop.at - stop.legMinutes);
+          const itineraries = await transitPlanner.plan(from, to, departure);
+          const transit = itineraries && bestLegTransit(namedLines(itineraries, lang), { ...stop, departure });
+          if (transit) found.set(stop.id, transit);
+        });
+      }),
+    );
+    return found;
+  }
+
   const langOf = (request: FastifyRequest, queryLang: Lang | undefined) =>
     resolveLang(queryLang, request.headers["accept-language"]);
 
   app.get("/weather", {
     schema: {
       tags: ["planner"],
-      summary: "İlin anlık hava durumu (Open-Meteo); sağlayıcıya ulaşılamazsa available: false",
+      summary: "İlin ya da bir noktanın (at) anlık hava durumu (Open-Meteo); sağlayıcıya ulaşılamazsa available: false",
       querystring: toOpenApiSchema(WeatherQuerySchema, "input"),
       response: { 200: toOpenApiSchema(WeatherResponseSchema), 400: errorSchema, 404: errorSchema },
     },
   }, async (request, reply): Promise<WeatherResponse> => {
     const query = parseWith(WeatherQuerySchema, request.query, "INVALID_QUERY");
     const lang = langOf(request, query.lang);
-    const city = await cityOf(query.city, lang);
-    const current = await cityWeather(city.code);
+    const at = query.at;
+    const city = at ? { code: "here", label: HERE[lang] } : await cityOf(query.city!, lang);
+    const [current, daily] = at
+      ? await Promise.all([weather.current(at), weather.forecast(at).then((days) => days ?? [])])
+      : await Promise.all([cityWeather(city.code), cityForecast(city.code)]);
 
     setHeaders(reply, lang);
     return WeatherResponseSchema.parse({
@@ -131,6 +318,7 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
       city,
       available: current !== null,
       current,
+      daily,
       advice: adviceFor(current),
       attribution: WEATHER_ATTRIBUTION,
     });
@@ -204,6 +392,132 @@ export const plannerRoutes: FastifyPluginAsync<PlannerRoutesOptions> = async (
       skippedWithoutCoordinates: plan.skippedWithoutCoordinates,
       notReachedCount: plan.notReachedCount,
       estimateNote: ESTIMATE_NOTE[lang],
+    });
+  });
+
+  app.get("/routes/trip", {
+    schema: {
+      tags: ["planner"],
+      summary: "Yarım günden beş güne kadar gezi: önemli eserler önce, hava tahminine göre sıralı, öğle ve tatlı molalarıyla",
+      querystring: toOpenApiSchema(TripQuerySchema, "input"),
+      response: { 200: toOpenApiSchema(TripPlanResponseSchema), 400: errorSchema, 404: errorSchema },
+    },
+  }, async (request, reply): Promise<TripPlanResponse> => {
+    const query = parseWith(TripQuerySchema, request.query, "INVALID_QUERY");
+    const lang = langOf(request, query.lang);
+    const city = await cityOf(query.city, lang);
+    const { theme, duration } = query;
+    const dayCount = TRIP_SHAPE[duration].days;
+
+    const today = turkeyToday();
+    const firstDate = query.date ?? today;
+    const lastAllowed = addDays(today, TRIP_MAX_LEAD_DAYS);
+    if (firstDate < today || firstDate > lastAllowed) {
+      throw new HttpError(400, "INVALID_QUERY", `date must be between ${today} and ${lastAllowed}`);
+    }
+    const lastForecast = addDays(today, FORECAST_DAYS - 1);
+    const dates = Array.from({ length: dayCount }, (_, day) => addDays(firstDate, day));
+
+    const [matching, forecast, dishes] = await Promise.all([
+      repository.findCandidates({
+        city: city.code,
+        ...(theme?.kind === "type" && { type: theme.code }),
+        ...(theme?.kind === "era" && { era: theme.code }),
+      }),
+      cityForecast(city.code),
+      gastronomy.findDishes(city.code),
+    ]);
+    const records = withoutPartsOfListed(matching);
+    const signals = await repository.findImportanceSignals(records.map((record) => record.id));
+    const dayWeather = dates.map((date) => forecast.find((day) => day.date === date) ?? null);
+
+    const plan = planTrip({
+      candidates: records.map((record) => ({
+        ...toCandidate(record),
+        importance: importanceOf(signals.get(record.id) as ImportanceSignals),
+      })),
+      start: query.start ?? null,
+      duration,
+      weather: dayWeather,
+    });
+
+    const byId = new Map(records.map((record) => [record.id, record]));
+    const stopIds = plan.days.flatMap((day) => day.items.flatMap((item) => (item.kind === "stop" ? [item.id] : [])));
+    const covers = await assets.findMedia(stopIds, { coversOnly: true });
+    const coverOf = new Map(covers.map((cover) => [cover.asset_id, cover]));
+    const ctx = { lang, mediaBaseUrl, statuses };
+
+    // Each break gets a dish of the district it is in (the previous stop's), not served before on the trip.
+    const served = new Map<string, number>();
+    const mealDishes = plan.days.map((day) => {
+      let district: string | null = null;
+      return day.items.map((item) => {
+        if (item.kind === "stop") {
+          district = byId.get(item.id)?.district ?? null;
+          return null;
+        }
+        const dish = pickDish(dishes, item.meal, district, served);
+        if (dish) served.set(dish.id, (served.get(dish.id) ?? 0) + 1);
+        return dish && toCityDish(dish, lang);
+      });
+    });
+
+    const firstStop = plan.days[0]?.items.find((item) => item.kind === "stop");
+    const [legTransit, arrival] = await Promise.all([
+      longLegTransit(city.code, plan.days, dates, byId, lang),
+      query.arrival ? arrivalAt(query.arrival, city.code, firstStop && byId.get(firstStop.id), firstDate, lang) : null,
+    ]);
+
+    setHeaders(reply, lang);
+    return TripPlanResponseSchema.parse({
+      version: CONTRACT_VERSION,
+      lang,
+      city,
+      theme: theme ?? null,
+      duration: duration === "half" ? duration : String(plan.days.length),
+      arrival,
+      days: plan.days.map((day, index) => {
+        const date = dates[index] as string;
+        const weatherOfDay = dayWeather[index] ?? null;
+        const code = weatherNoteCode(weatherOfDay);
+        return {
+          day: index + 1,
+          date,
+          weather: weatherOfDay,
+          weatherNote: { code, text: weatherNoteText(code, weatherOfDay, lang, date > lastForecast) },
+          items: day.items.map((item, itemIndex) =>
+            item.kind === "stop"
+              ? {
+                  kind: "stop",
+                  at: item.at,
+                  asset: toAssetSummary(byId.get(item.id) as CandidateRecord, coverOf.get(item.id), ctx),
+                  legMeters: item.legMeters,
+                  legMinutes: item.legMinutes,
+                  transit: legTransit.get(item.id) ?? null,
+                  visitMinutes: item.visitMinutes,
+                  visitMinutesEstimated: item.visitMinutesEstimated,
+                  setting: item.setting,
+                  settingEstimated: item.settingEstimated,
+                  importance: item.importance,
+                }
+              : {
+                  kind: "meal",
+                  at: item.at,
+                  meal: item.meal,
+                  label: MEAL_LABEL[item.meal][lang],
+                  minutes: item.minutes,
+                  dish: mealDishes[index]?.[itemIndex] ?? null,
+                },
+          ),
+          outdoorShare: day.outdoorShare,
+          totals: { walkMeters: day.walkMeters, walkMinutes: day.walkMinutes, visitMinutes: day.visitMinutes },
+        };
+      }),
+      candidateCount: records.length,
+      skippedWithoutCoordinates: plan.skippedWithoutCoordinates,
+      notPlannedCount: plan.notPlannedCount,
+      estimateNote: ESTIMATE_NOTE[lang],
+      attribution: WEATHER_ATTRIBUTION,
     });
   });
 };

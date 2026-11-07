@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-mevlana-celebi-evi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Yapım yılı kitapta yok; yalnızca 1835'ten önce",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[genel] TR/EN",
+        "note": "Türkçe 'evin inşaat sezonunda yapılamadığı için ... bütçe bırakıldığı' ifadesinden 1835 öncesi sonucu çıkarılıyor; 'düşünülmektedir' (probable)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çelebi Evi (Misafirhane)",
+    "en": "Çelebi House (Guesthouse)"
+  },
+  "subtitle": {
+    "tr": "Dergâhın kuzeybatı köşesindeki tek katlı konak",
+    "en": "Single-storey mansion in the northwest corner of the dergah"
+  },
+  "alternate_names": [],
+  "type": "sivil",
+  "secondary_types": [],
+  "parent_id": "konya-karatay-mevlana-kulliyesi",
+  "era": "gec-osmanli",
+  "tags": [
+    "Çelebi Evi",
+    "Çelebi Konağı",
+    "misafirhane",
+    "bağdadi",
+    "kalem işi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "54-55"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.870774,
+      "lng": 32.505397,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kendi konumu bulunamadı; bağlı olduğu yapının (konya-karatay-mevlana-kulliyesi) noktası kullanıldı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1835'ten önce",
+      "en": "Before 1835"
+    },
+    "start_year": null,
+    "end_year": 1835,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "II. Mahmut dönemi onarım defterindeki kayıttan hareketle 1835'ten önce yapıldığı düşünülmektedir; bir başlangıç yılı verilmemiştir.",
+      "en": "Based on an entry in the Mahmud II-period repair book, it is thought to have been built before 1835; no start year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "54-55"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mevlâna Dergâhı'nın kuzeybatı köşesindeki, bağdadi teknikte yapılmış, kiremit çatılı tek katlı ev. Orta sofaya açılan dört odası ve manzara resimli büyük bir salonu vardır; 1926'dan sonra müze müdürlerinin lojmanı, bugün protokol misafirlerinin dinlenme alanıdır.",
+    "en": "A single-storey house in baghdadi technique with a tiled roof in the northwest corner of the Mevlâna Dergah. It has four rooms opening to a central hall and a large hall with landscape paintings; after 1926 the museum directors' residence, today a rest area for protocol guests."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapısı, Kullanımı ve Onarımı",
+        "en": "Structure, Use and Repair"
+      },
+      "body": {
+        "tr": "Mevlâna Dergâhı'nın kuzeybatı köşesinde yer alır. Tek katlı bölüm bağdadi tekniğinde yapılmıştır; düz damlıdır, üzeri kiremit çatıyla örtülüdür. Orta sofaya açılan dört odası vardır. Oldukça büyük salonunun tavanındaki kalem işi manzara resimleri Meydan-ı Şerif odasının tavanındakilere benzer. II. Mahmut dönemi onarım defterinde evin inşaat sezonunda yapılamadığı için Çelebi Efendi'ye bir miktar bütçe bırakıldığı bilgisi bulunduğundan, evin 1835'ten önce yapıldığı düşünülmektedir. 1925'te tekke ve zaviyelerin kapatılması üzerine Halep Mevlevihanesi'nde Mevleviliği sürdürmek için giden çelebilerden biri tarafından boşaltılmış olabilir; 1926'dan sonra müze müdürlerince lojman olarak kullanılmıştır. Odalarında ahşap yüklükler ve aynalıklar bulunan ev 1995'te restore edilmiş; tavan askıya alınmış, duvarlar, ahşap kapı-pencereler ve kalem işi süslemeler yenilenmiştir. Bugün müzeye gelen protokol misafirlerinin dinlenme alanı olarak kullanılmaktadır.",
+        "en": "It is in the northwest corner of the Mevlâna Dergah. The single-storey section is in baghdadi technique, with a flat roof under a tiled roof. It has four rooms opening to the central hall. The hand-drawn landscape paintings on the ceiling of its large hall resemble those of the Meydan-ı Şerif room. Since the Mahmud II-period repair book records that some budget was left to Çelebi Efendi because the house could not be built in the construction season, it is thought to have been built before 1835. It may have been vacated by one of the Çelebis who went to continue the Mevlevi order in the Aleppo Mevlevihane in 1925 after the closure of the dergahs and zawiyas; after 1926 it was used as a residence by museum directors. With wooden cabinets and mirrors in its rooms, it underwent a restoration in 1995, when the ceiling was suspended and walls, doors, windows and ceiling decorations renewed. Today it is a rest area for protocol guests."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "54-55"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "oda_sayisi",
+      "label": {
+        "tr": "Orta sofaya açılan oda sayısı",
+        "en": "Rooms opening to the central hall"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "54-55"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "tekke-kapanis-1925",
+      "year": 1925,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Tekke ve zaviyelerin kapatılması; ev çelebilerden biri tarafından boşaltılmış olabilir",
+        "en": "Closure of dergahs; the house may have been vacated by one of the Çelebis"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "54-55"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-1995",
+      "year": 1995,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Restorasyon geçirdi",
+        "en": "Underwent restoration"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "54-55"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-karatay-mevlana-kulliyesi",
+      "type": "same_complex",
+      "description": {
+        "tr": "Mevlâna Külliyesi'nin parçasıdır.",
+        "en": "Part of the Mevlâna Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "54-55"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tek katlı, düz damlı ve kiremit çatılı bir ev. Orta sofanın çevresinde dört oda, tavanı manzara resimli geniş bir salon ve odalarda ahşap yüklük ve aynalıklar bulunur.",
+      "en": "A single-storey house with a flat roof under tiles: four rooms around a central hall, a wide hall with a landscape-painted ceiling, and wooden cabinets and mirrors in the rooms."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "54-55"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=137",
+        "original_name": "pdf-s29-xref137",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "54"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Çelebi Evi (Misafirhane) (kitap s. 54)",
+        "en": "Çelebi House (Guesthouse) (book p. 54)"
+      },
+      "alt": {
+        "tr": "Ahşap kapılar, pencere çerçeveleri ve yatak odası gibi mobilyalar bulunan iç mekanda, tavan süslemeli, kırmızı halı ve duvarlarda resimler var.",
+        "en": "Interior with wooden doors, window frames, and furniture, ornate ceiling, red carpet, and pictures on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=139",
+        "original_name": "pdf-s29-xref139",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "55"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Çelebi Evi (Misafirhane) (kitap s. 55)",
+        "en": "Çelebi House (Guesthouse) (book p. 55)"
+      },
+      "alt": {
+        "tr": "Taştan inşa edilmiş, kubbeli bir yapı. Dairesel pencere ve kemerli girişler var. Duvarlarda taş işçiliği görülüyor.",
+        "en": "Stone structure with a dome. Circular windows and arched entrances. Stone masonry visible on walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=141",
+        "original_name": "pdf-s29-xref141",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "55"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Çelebi Evi (Misafirhane) (kitap s. 55)",
+        "en": "Çelebi House (Guesthouse) (book p. 55)"
+      },
+      "alt": {
+        "tr": "Köşeli bir levhada mavi zemin üzerine altın renkli hat yazılar ve bir güneş deseni yer alıyor.",
+        "en": "A rectangular plaque with blue background, golden calligraphy, and a sun motif."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

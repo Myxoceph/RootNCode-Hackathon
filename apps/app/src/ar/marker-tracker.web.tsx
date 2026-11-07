@@ -1,25 +1,33 @@
 import { cameraColors } from "@vagabonds/ui";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useImperativeHandle, useMemo, useRef } from "react";
 import { StyleSheet, View } from "react-native";
 
-import { loadMindar, useVendored } from "@/vendor";
+import { loadMindar, loadOverlayFont, useVendored } from "@/vendor";
 
 import type { MarkerTrackerProps } from "./marker-tracker";
 import { parseTrackerEvent } from "./mindar";
 import { trackerPageHtml } from "./tracker-page";
+import { useMessages } from "@/i18n";
 
 /**
  * The web version of the tracker: the same page in an iframe. The app's own
  * camera screens keep to their camera-free versions on the web (ADR 0001);
  * this lets the prototype be tried in a phone's browser and on a laptop.
  */
-export function MarkerTracker({ targetsMind, onEvent, style }: MarkerTrackerProps) {
+export function MarkerTracker({ target, overlays, onEvent, style, ref, marks, poses }: MarkerTrackerProps) {
   const mindarScript = useVendored(loadMindar);
+  const overlayFont = useVendored(loadOverlayFont);
   const html = useMemo(
-    () => (mindarScript ? trackerPageHtml({ targetsMind, markColor: cameraColors.gold, mindarScript }) : null),
-    [targetsMind, mindarScript],
+    () =>
+      // The font is optional: "" when it could not be loaded, and the page then draws in a system serif.
+      mindarScript && overlayFont !== null ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript, overlayFont: overlayFont || undefined, marks, poses }) : null,
+    [target, overlays, mindarScript, overlayFont, marks, poses],
   );
   const frame = useRef<HTMLIFrameElement>(null);
+  const title = useMessages().tabs.camera;
+  useImperativeHandle(ref, () => ({
+    send: (command) => frame.current?.contentWindow?.postMessage(JSON.stringify({ command }), "*"),
+  }));
 
   useEffect(() => {
     const listener = (message: MessageEvent) => {
@@ -33,7 +41,7 @@ export function MarkerTracker({ targetsMind, onEvent, style }: MarkerTrackerProp
 
   return (
     <View style={[styles.box, style]} aria-hidden>
-      {html !== null && <iframe ref={frame} srcDoc={html} allow="camera" title="Kamera" tabIndex={-1} style={{ border: 0, width: "100%", height: "100%" }} />}
+      {html !== null && <iframe ref={frame} srcDoc={html} allow="camera" title={title} tabIndex={-1} style={{ border: 0, width: "100%", height: "100%" }} />}
     </View>
   );
 }

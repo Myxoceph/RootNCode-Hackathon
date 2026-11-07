@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-toraman-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 204-205) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Fotoğraf yok; media: [] ve media_folder: null. Bu ciltte Drive fotoğraf arşivi yok, fotoğraflar sonradan eşlenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "Era 'gec-osmanli' XX. yüzyıl başı tahminine göre verildi; teyit edilmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Toraman Mescidi",
+    "en": "Toraman Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "tavan göbeği"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Sarnıç Mahallesi",
+    "address": "Şeyh Ulema Recep Ağa Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "204-205"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.875227,
+      "lng": 32.511402,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/777522255 ('Toraman Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XX. yüzyıl başları (tahmini)",
+      "en": "Early 20th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "İnşa tarihi ve bânîsi bilinmiyor; kitap mimari özelliklerinden XX. yüzyıl başlarında inşa edildiğini düşünür. Kesin yıl yok.",
+      "en": "Construction date and builder unknown; the book thinks it was built in the early 20th century from architectural features. No exact year."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "204-205"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Sarnıç Mahallesi'ndeki mescidin inşa tarihi ve bânîsi bilinmiyor; mimari özelliklerine göre XX. yüzyıl başlarında yapıldığı düşünülmektedir.",
+    "en": "The builder and construction date of this masjid in Sarnıç Neighborhood are unknown; from its architecture it is thought to date from the early 20th century."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Mescit, Sarnıç Mahallesi, Şeyh Ulema Recep Ağa Caddesi üzerindedir. İnşa tarihi ve bânisi hakkında bilgi bulunamamıştır; mimari özelliklerinden XX. yüzyıl başlarında inşa edildiği düşünülmektedir.",
+        "en": "The masjid is on Şeyh Ulema Recep Ağa Street, Sarnıç Neighborhood. No information on its date or builder was found; it is thought to have been built in the early 20th century based on its architecture."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "204-205"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Enlemesine dikdörtgen planlı, içten düz ahşap tavanlı, dıştan dört yöne eğimli kırma çatılıdır. Yapı malzemesi moloz taştır ve sıvalıdır. Dış cephelerin alt kısmında dikdörtgen düz lentolu, üst kısmında daha küçük pencereler vardır. Harime güney cephenin batı köşesindeki kapıdan girilir. Tavanın ortasında renkli fırfır motifli bir tavan göbeği dikkat çeker; kuzeyde ahşap mahfil bulunur. Ahşap mihrap yarım daire planlıdır; ahşap minberin korkuluk ve süpürgelik bölümlerinde süslemeler vardır.",
+        "en": "Transverse rectangular plan, flat wooden ceiling inside, hipped roof outside. Built of rubble stone and plastered. The lower parts of the exterior facades have rectangular flat-lintel windows and the upper parts smaller ones. The harim is entered through the door at the west corner of the south facade. A colorful frill-motif ceiling hub stands out at the center of the ceiling; there is a wooden mahfil in the north. The wooden mihrab is semicircular; the wooden minbar has decorations on its railing and skirting."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "204-205"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Toraman Mescidi enlemesine dikdörtgen planlı, sıvalı moloz taş bir mescittir. İçeride tavanın ortasında renkli bir tavan göbeği, kuzeyde ahşap mahfil, ahşap mihrap ve süslemeli ahşap minber vardır.",
+      "en": "Toraman Masjid is a transversely rectangular, plastered rubble-stone building. Inside are a colorful ceiling hub at the center of the ceiling, a wooden mahfil in the north, a wooden mihrab and a decorated wooden minbar."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 204-205)."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

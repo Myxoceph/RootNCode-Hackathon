@@ -5,18 +5,22 @@ import type {
   AssetSummary,
   Contribution,
   Lang,
+  MyAchievementsResponse,
   PulseResponse,
+  Reward,
+  WalletResponse,
+  WeatherResponse,
 } from "@vagabonds/contracts";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { getLang, getMessages, useLang } from "@/i18n";
+
 import { dataSource } from "./active-source";
-import { fetchMyContributions, useCommunity } from "./community";
+import { fetchMyAchievements, fetchMyContributions, fetchRewards, fetchWallet, useCommunity } from "./community";
 import { DataError } from "./errors";
 import { useRefreshEpoch } from "./offline";
 import type { CityOption } from "./source";
 
-/** Content language. Fixed to Turkish until the language setting lands (Ayarlar). */
-const LANG: Lang = "tr";
 const PAGE_SIZE = 30;
 
 export type Resource<T> =
@@ -28,7 +32,7 @@ export type ResourceWithRetry<T> = Resource<T> & { retry: () => void };
 
 function toDataError(error: unknown): DataError {
   if (error instanceof DataError) return error;
-  return new DataError("unavailable", "Veriye şu an ulaşılamıyor.", [String(error)]);
+  return new DataError("unavailable", getMessages().errors.noData, [String(error)]);
 }
 
 function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
@@ -61,28 +65,77 @@ function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
 
 /** `data` is `null` when no published asset has this id. */
 export function useAsset(id: string): ResourceWithRetry<AssetDetail | null> {
-  const load = useCallback(() => dataSource.getAsset(id, LANG), [id]);
+  const lang = useLang();
+  const load = useCallback(() => dataSource.getAsset(id, lang), [id, lang]);
   return useResource(load);
 }
 
 /** `data` is `null` when no published asset has this id. */
 export function useAssetRelations(id: string): ResourceWithRetry<AssetRelationsResponse | null> {
-  const load = useCallback(() => dataSource.getRelations(id, LANG), [id]);
+  const lang = useLang();
+  const load = useCallback(() => dataSource.getRelations(id, lang), [id, lang]);
   return useResource(load);
 }
 
 /** Ziyaretçi Nabzı of an asset; `data` is `null` when no published asset has this id. */
 export function usePulse(id: string): ResourceWithRetry<PulseResponse | null> {
-  const load = useCallback(() => dataSource.getPulse(id, LANG), [id]);
+  const lang = useLang();
+  const load = useCallback(() => dataSource.getPulse(id, lang), [id, lang]);
   return useResource(load);
 }
 
 /** The visitor's own notes ("Notlarım"); fetched again after each note sent. `null` without a session. */
+/** Today's weather in a city; `null` while there is no city, or when the weather cannot be had. */
+export function useWeather(city: string | null): ResourceWithRetry<WeatherResponse | null> {
+  const lang = useLang();
+  const load = useCallback(() => (city ? dataSource.getWeather(city, lang) : Promise.resolve(null)), [city, lang]);
+  return useResource(load);
+}
+
+/** Today's weather at a point (the visitor's location); `null` without one. */
+export function useWeatherAt(point: { lat: number; lng: number } | null): ResourceWithRetry<WeatherResponse | null> {
+  const lang = useLang();
+  const lat = point?.lat;
+  const lng = point?.lng;
+  const load = useCallback(
+    () => (lat !== undefined && lng !== undefined ? dataSource.getWeatherAt({ lat, lng }, lang) : Promise.resolve(null)),
+    [lat, lng, lang],
+  );
+  return useResource(load);
+}
+
+/** The visitor's badges (Rozetlerim): fetched again for a new session. `null` without a server. */
+export function useMyAchievements(): ResourceWithRetry<MyAchievementsResponse | null> {
+  const { user } = useCommunity();
+  // The language in the key: the badges' words come from the API in it.
+  const lang = useLang();
+  const key = user === undefined ? null : `${user?.id ?? ""}:${lang}`;
+  const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchMyAchievements()), [key]);
+  return useResource(load);
+}
+
+/** The rewards on offer (Ödüllerim); `null` without a server. */
+export function useRewards(): ResourceWithRetry<Reward[] | null> {
+  const lang = useLang();
+  const load = useCallback(() => fetchRewards(lang), [lang]);
+  return useResource(load);
+}
+
+/** The visitor's wallet, fetched again for a new session or after `version` changes (a reward taken). */
+export function useWallet(version = 0): ResourceWithRetry<WalletResponse | null> {
+  const { user } = useCommunity();
+  const lang = useLang();
+  const key = user === undefined ? null : `${user?.id ?? ""}:${version}:${lang}`;
+  const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchWallet()), [key]);
+  return useResource(load);
+}
+
 export function useMyContributions(): ResourceWithRetry<Contribution[] | null> {
   const { user, sent } = useCommunity();
   // A new session or a new note means a new list. Until the stored session has been read
   // (`undefined`), nothing is fetched: that read decides whether there is a list at all.
-  const key = user === undefined ? null : `${user?.id ?? ""}:${sent}`;
+  const lang = useLang();
+  const key = user === undefined ? null : `${user?.id ?? ""}:${sent}:${lang}`;
   const load = useCallback(
     () => (key === null ? new Promise<never>(() => {}) : fetchMyContributions()),
     [key],
@@ -109,20 +162,32 @@ export function useRelationsOf(ids: string[]): RelationsOf {
   const [attempt, setAttempt] = useState(0);
   const epoch = useRefreshEpoch();
   const requested = useRef(new Set<string>());
+  const lang = useLang();
+  // Another language: every link's words again.
+  const askedIn = useRef(lang);
+  if (askedIn.current !== lang) {
+    askedIn.current = lang;
+    requested.current.clear();
+  }
 
   useEffect(() => {
     for (const id of ids) {
       if (requested.current.has(id)) continue;
       requested.current.add(id);
-      dataSource.getRelations(id, LANG).then(
-        (response) => setById((map) => ({ ...map, [id]: response?.items ?? [] })),
+      dataSource.getRelations(id, lang).then(
+        (response) => {
+          // An answer in the language left behind is dropped: the new language's own is on the way.
+          if (askedIn.current !== lang) return;
+          setById((map) => ({ ...map, [id]: response?.items ?? [] }));
+        },
         () => {
+          if (askedIn.current !== lang) return;
           requested.current.delete(id);
           setFailed((list) => (list.includes(id) ? list : [...list, id]));
         },
       );
     }
-  }, [ids, attempt]);
+  }, [ids, attempt, lang]);
 
   const retry = useCallback(() => {
     setFailed([]);
@@ -139,17 +204,50 @@ export function useRelationsOf(ids: string[]): RelationsOf {
   return { byId, loading, failed, retry };
 }
 
+async function loadMapAssets(city: string | undefined, lang: Lang): Promise<{ located: AssetSummary[]; total: number }> {
+  const page = await dataSource.listAssets({ city, limit: 500, offset: 0 }, lang);
+  return { located: page.items.filter((asset) => asset.coordinates !== null), total: page.total };
+}
+
 /** Every published asset that has coordinates, in one request (the API allows 500), for the map. */
 export function useMapAssets(city?: string): ResourceWithRetry<{ located: AssetSummary[]; total: number }> {
-  const load = useCallback(async () => {
-    const page = await dataSource.listAssets({ city, limit: 500, offset: 0 }, LANG);
-    return { located: page.items.filter((asset) => asset.coordinates !== null), total: page.total };
-  }, [city]);
+  const lang = useLang();
+  const load = useCallback(() => loadMapAssets(city, lang), [city, lang]);
+  return useResource(load);
+}
+
+/**
+ * The same for one chosen city; `null` (and no request) while none is chosen. The answer
+ * names its city: right after a new choice the previous answer is still in for a render.
+ */
+export function useCityMapAssets(
+  city: string | null,
+): ResourceWithRetry<{ city: string; located: AssetSummary[]; total: number } | null> {
+  const lang = useLang();
+  const load = useCallback(async () => (city ? { city, ...(await loadMapAssets(city, lang)) } : null), [city, lang]);
+  return useResource(load);
+}
+
+/** Every published asset, located or not, 500 a request (the API's most). */
+export async function loadAllAssets(lang: Lang = getLang()): Promise<AssetSummary[]> {
+  const items: AssetSummary[] = [];
+  for (;;) {
+    const page = await dataSource.listAssets({ limit: 500, offset: items.length }, lang);
+    items.push(...page.items);
+    if (page.items.length === 0 || items.length >= page.total) return items;
+  }
+}
+
+/** Every published asset, for the search on the map; `null` (and no request) until it is `wanted`. */
+export function useSearchableAssets(wanted: boolean): ResourceWithRetry<AssetSummary[] | null> {
+  const lang = useLang();
+  const load = useCallback(async () => (wanted ? loadAllAssets(lang) : null), [wanted, lang]);
   return useResource(load);
 }
 
 export function useCities(): ResourceWithRetry<CityOption[]> {
-  const load = useCallback(() => dataSource.listCities(LANG), []);
+  const lang = useLang();
+  const load = useCallback(() => dataSource.listCities(lang), [lang]);
   return useResource(load);
 }
 
@@ -178,13 +276,16 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
   const knownTotal = useRef(0);
   // A page that arrives after the city changed, or after the list was loaded again
   // ("Yenile"), belongs to the old list and is dropped.
+  const lang = useLang();
   const currentCity = useRef(city);
   currentCity.current = city;
+  const currentLang = useRef(lang);
+  currentLang.current = lang;
   const generation = useRef(0);
 
   // The first page goes through useResource for the loading and error screens.
   const loadFirst = useCallback(async () => {
-    const page = await dataSource.listAssets({ city, limit: PAGE_SIZE, offset: 0 }, LANG);
+    const page = await dataSource.listAssets({ city, limit: PAGE_SIZE, offset: 0 }, lang);
     generation.current++;
     loaded.current = page.items.length;
     knownTotal.current = page.total;
@@ -192,7 +293,7 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
     setTotal(page.total);
     setMoreError(null);
     return page;
-  }, [city]);
+  }, [city, lang]);
   const first = useResource(loadFirst);
 
   const loadMore = useCallback(() => {
@@ -201,9 +302,9 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
     setLoadingMore(true);
     setMoreError(null);
     const started = generation.current;
-    const current = () => currentCity.current === city && generation.current === started;
+    const current = () => currentCity.current === city && currentLang.current === lang && generation.current === started;
     dataSource
-      .listAssets({ city, limit: PAGE_SIZE, offset: loaded.current }, LANG)
+      .listAssets({ city, limit: PAGE_SIZE, offset: loaded.current }, lang)
       .then(
         (page) => {
           if (!current()) return;
@@ -221,7 +322,7 @@ export function useAssetList(city?: string): ResourceWithRetry<AssetListPage> {
         busy.current = false;
         setLoadingMore(false);
       });
-  }, [city, first.status]);
+  }, [city, lang, first.status]);
 
   if (first.status !== "success") return first;
   return { status: "success", data: { items, total, loadingMore, moreError, loadMore }, retry: first.retry };

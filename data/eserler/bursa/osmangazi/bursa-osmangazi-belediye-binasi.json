@@ -70,7 +70,14 @@
         "source_id": "vk-bursa-c1",
         "pages": "727"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.183835,
+      "lng": 29.064549,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Adıyla OpenStreetMap Nominatim'de bulundu ('Bursa Büyükşehir Belediyesi Tarihi Hizmet Binası, 3, 6. Uçak Sokak, Hanlar Bölgesi, Orhanbey, Orhanbey Mahallesi, Osmang'); sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -463,6 +470,9 @@
   "relations": [
     {
       "target_id": "bursa-osmangazi-harir-daru-t-talimi",
+      "target_name": {
+        "tr": "Harîr Dâru't-ta'lîmi (İpekçilik Mektebi)"
+      },
       "type": "architectural_lineage",
       "description": {
         "tr": "Aynı dönemde yapılan Harîr Dâru't-ta'lîmi (İpekçilik Mektebi) ile benzer üslup taşır.",

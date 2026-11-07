@@ -6,9 +6,11 @@ import {
   MediaKindSchema,
   VisitorTipSchemaV2,
   type ArTarget,
+  type SoundRecording,
   type AssetDetail,
   type AssetRef,
   type AssetRelation,
+  type OutsideRelation,
   type AssetSummary,
   type Confidence,
   type Coordinates,
@@ -31,6 +33,9 @@ import {
   type LabelRecord,
 } from "./assets.repository.ts";
 
+/** `coord_source` of a point that is only the neighbourhood's or village's centre (data/tools/geocode.py). */
+export const APPROXIMATE_SOURCE = "osm_area";
+
 export interface MapperContext {
   lang: Lang;
   mediaBaseUrl: string;
@@ -40,9 +45,9 @@ export interface MapperContext {
 
 // JSON columns: shapes come from data/schema/eser.schema.json.
 const AlternateNamesSchema = z.array(
-  z.object({ tr: z.string(), en: z.string().nullish(), note: z.string().nullish() }),
+  z.object({ tr: z.string(), en: z.string().nullish(), note: z.string().nullish(), note_en: z.string().nullish() }),
 );
-const CandidatesSchema = z.array(z.object({ name: z.string(), note: z.string().nullish() }));
+const CandidatesSchema = z.array(z.object({ name: z.string(), note: z.string().nullish(), note_en: z.string().nullish() }));
 const WaqfDeedSchema = z
   .object({
     excerpt: z.object({ tr: z.string().nullish(), en: z.string().nullish() }).nullish(),
@@ -55,7 +60,7 @@ function label(record: LabelRecord, lang: Lang): LabeledCode {
 }
 
 /** Section, fact and timeline rows always carry a confidence (NOT NULL in the schema). */
-function requiredConfidence(code: string, lang: Lang): Confidence {
+export function requiredConfidence(code: string, lang: Lang): Confidence {
   const confidence = toConfidence(code, lang);
   if (!confidence) throw new Error("confidence is required");
   return confidence;
@@ -74,6 +79,7 @@ export function toCoordinates(
     lng: record.lng,
     verified: record.coord_verified,
     source: nonEmpty(record.coord_source),
+    approximate: record.coord_source === APPROXIMATE_SOURCE,
   };
 }
 
@@ -100,6 +106,8 @@ export function toMedia(record: AssetMediaRecord, { lang, mediaBaseUrl }: Mapper
     photographer: nonEmpty(media.photographer),
     license: media.license,
     archiveYear: record.archive_year,
+    subject: nonEmpty(record.subject),
+    dossierAfter: nonEmpty(record.dossier_after),
     sources,
   };
 }
@@ -113,6 +121,24 @@ function toArTarget(mediaKey: string | null, media: AssetMediaRecord[], mediaBas
   const variant = media.find((m) => m.media_key === mediaKey)?.media.media_variant[0];
   if (!variant) return null;
   return { mindUrl: `${mediaBaseUrl}/${arTargetMindKey(variant.key)}`, mindarVersion: AR_MINDAR_VERSION };
+}
+
+const ROMAN: Array<[number, string]> = [[10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]];
+const roman = (n: number) => ROMAN.reduce((out, [value, digits]) => { while (n >= value) { out += digits; n -= value; } return out; }, "");
+/** A dating's Gregorian year this far from the start year still names the same building (built over years). */
+const SAME_BUILDING_YEARS = 10;
+
+/**
+ * The card's year: the first Gregorian year the dating names after "M." ("H. 802 / M. 1399-1400",
+ * "M. Aralık 1413") when it is close to the record's start year, else the start year; without one,
+ * the century. The dating's other numbers (Hijri years, a founder's death, today's rebuilding) never.
+ */
+export function yearLabel(display: string | null, startYear: number | null, century: number | null, lang: Lang): string | null {
+  const named = display?.match(/M\.[^\d/]*?(?:\d{1,2}\s+\p{L}+\s+)?(\d{3,4})/u)?.[1];
+  const gregorian = named ? Number(named) : null;
+  if (startYear !== null) return String(gregorian !== null && Math.abs(gregorian - startYear) <= SAME_BUILDING_YEARS ? gregorian : startYear);
+  if (century !== null) return lang === "en" ? `${century}th century` : `${roman(century)}. yüzyıl`;
+  return null;
 }
 
 export function toAssetSummary(
@@ -132,7 +158,10 @@ export function toAssetSummary(
     coordinates: toCoordinates(record),
     summary: pick(record.summary_tr, record.summary_en, lang),
     datingDisplay: pick(record.dating_display_tr, record.dating_display_en, lang),
+    yearLabel: yearLabel(record.dating_display_tr, record.start_year, record.century, lang),
     cover: cover ? toMedia(cover, context) : null,
+    parentId: record.parent_id && record.asset && context.statuses.includes(record.asset.status) ? record.parent_id : null,
+    prominence: Object.values(record._count).reduce((sum, count) => sum + count, 0),
   };
 }
 
@@ -174,6 +203,25 @@ export function toAssetRelation(
   };
 }
 
+/** A link to a place outside the dataset, named as the source names it. */
+export function toOutsideRelation(
+  { relation }: DirectedRelation,
+  name: string,
+  citations: CitationRecord[],
+  { lang }: MapperContext,
+): OutsideRelation {
+  const key = relationCitationKey(relation);
+  return {
+    type: label(relation.relation_type, lang),
+    name,
+    description: pick(relation.description_tr, relation.description_en, lang),
+    confidence: requiredConfidence(relation.confidence, lang),
+    sources: citations
+      .filter((citation) => citation.asset_id === relation.source_asset_id && citation.entity_key === key)
+      .map((citation) => toSourceRef(citation, lang)),
+  };
+}
+
 /** Citations grouped by the content item they belong to (`entity:entity_key`). */
 function groupCitations(record: AssetDetailRecord, lang: Lang) {
   const byItem = new Map<string, SourceRef[]>();
@@ -190,8 +238,13 @@ function groupCitations(record: AssetDetailRecord, lang: Lang) {
   };
 }
 
-function toNamedNotes(names: { name: string; note?: string | null | undefined }[]): NamedNote[] {
-  return names.map(({ name, note }) => ({ name, note: nonEmpty(note) }));
+function toNamedNotes(names: { name: string; note?: string | null | undefined; note_en?: string | null | undefined }[], lang: Lang): NamedNote[] {
+  return names.map(({ name, note, note_en }) => ({ name, note: pick(note, note_en, lang) }));
+}
+
+/** The asset's ambient sound key: its own, else its type's default. */
+export function ambientKeyOf(record: AssetDetailRecord): string | null {
+  return nonEmpty(record.ambient_sound_key) ?? nonEmpty(record.asset_type.ambient_sound);
 }
 
 export function toAssetDetail(
@@ -199,6 +252,8 @@ export function toAssetDetail(
   media: AssetMediaRecord[],
   secondaryTypes: LabelRecord[],
   context: MapperContext,
+  /** The published recording for the asset's sound key, if any. */
+  recording: SoundRecording | null = null,
 ): AssetDetail {
   const { lang } = context;
   const { sourcesOf, bibliography } = groupCitations(record, lang);
@@ -206,9 +261,9 @@ export function toAssetDetail(
 
   const alternateNames = AlternateNamesSchema.parse(record.alternate_names).map((n) => ({
     name: pick(n.tr, n.en, lang),
-    note: nonEmpty(n.note),
+    note: pick(n.note, n.note_en, lang),
   }));
-  const candidates = toNamedNotes(CandidatesSchema.parse(record.architect_candidates));
+  const candidates = toNamedNotes(CandidatesSchema.parse(record.architect_candidates), lang);
   const deed = WaqfDeedSchema.parse(record.waqf_deed);
 
   const dating = {
@@ -240,12 +295,27 @@ export function toAssetDetail(
   const hasWaqf = [waqf.name, waqf.deedExcerpt, waqf.conditions, waqf.landNote].some((value) => value !== null);
 
   const parent = record.asset && context.statuses.includes(record.asset.status) ? toAssetRef(record.asset, lang) : null;
-  const ambientKey = nonEmpty(record.ambient_sound_key) ?? nonEmpty(record.asset_type.ambient_sound);
+  const ambientKey = ambientKeyOf(record);
   const accessibility = (value: string) => AccessibilityStatusSchema.parse(value);
   const founderName = nonEmpty(record.founder_name);
 
   return {
-    ...toAssetSummary(record, cover, context),
+    // The detail has the lists the summary only counts.
+    ...toAssetSummary(
+      {
+        ...record,
+        _count: {
+          asset_section: record.asset_section.length,
+          asset_highlight: record.asset_highlight.length,
+          asset_legend: record.asset_legend.length,
+          asset_person: record.asset_person.length,
+          timeline_event: record.timeline_event.length,
+          inscription: record.inscription.length,
+        },
+      },
+      cover,
+      context,
+    ),
     alternateNames,
     secondaryTypes: secondaryTypes.map((t) => label(t, lang)),
     tags: record.tags,
@@ -267,6 +337,12 @@ export function toAssetDetail(
         ? { name: architectName, candidates, confidence: architectConfidence, sources: sourcesOf("architect") }
         : null,
     waqf: hasWaqf ? waqf : null,
+    customBlocks: record.asset_custom_block.map((b) => ({
+      id: b.slug,
+      title: pick(b.title_tr, b.title_en, lang),
+      body: pick(b.body_tr, b.body_en, lang),
+      after: b.after_block,
+    })),
     sections: record.asset_section.map((s) => ({
       id: s.slug,
       title: pick(s.title_tr, s.title_en, lang),
@@ -340,7 +416,7 @@ export function toAssetDetail(
       audioDescription: pick(record.audio_description_tr, record.audio_description_en, lang),
     },
     ambientSound: ambientKey
-      ? { key: ambientKey, caption: pick(record.ambient_caption_tr, record.ambient_caption_en, lang) }
+      ? { key: ambientKey, caption: pick(record.ambient_caption_tr, record.ambient_caption_en, lang), recording }
       : null,
     visit: {
       setting: nonEmpty(record.visit_setting),

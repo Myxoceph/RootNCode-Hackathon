@@ -1,0 +1,276 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-kalayci-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 352-353) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Yapılan 'yakın zamanlı' onarımın yılı kitapta yok.",
+      "Bânî ve vakfiye bilgisi yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Kalaycı Mescidi",
+    "en": "Kalaycı Masjid"
+  },
+  "alternate_names": [
+    {
+      "tr": "Ahi Celal Mescidi",
+      "en": "Ahi Celal Masjid"
+    }
+  ],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "Ahi yapısı",
+    "tek kubbeli",
+    "XII. yüzyıl"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Kuşçu Mahallesi",
+    "address": "Kalaycı Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "352-353"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.355687,
+      "lng": 31.412348,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1557833283 ('Kalaycı Mescidi'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XII. yüzyıl (plan, malzeme ve tekniğe göre)",
+      "en": "12th century (based on plan, materials, technique)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 12,
+    "basis": {
+      "tr": "Kitâbe yok; plan, malzeme ve teknik özelliklerinden XII. yüzyıla tarihlendirilebileceği belirtilir. Kesin yıl verilmediği için başlangıç/bitiş yılı boş bırakıldı.",
+      "en": "No inscription; the plan, material and technique allow a 12th-century date. No exact year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "352-353"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Kuşçu Mahallesi'ndeki kare planlı, tek kubbeli mescit XII. yüzyıla tarihlenir; kaynaklara göre yerinde Ahi Celal Mescidi vardı. Akşehir'deki Selçuklu dönemi eserleri arasında önemli bir Ahi yapısıdır.",
+    "en": "The square, single-domed masjid in Kuşçu Neighborhood dates to the 12th century; sources say Ahi Celal Masjid stood on this site. It is an important Ahi structure among Akşehir's Seljuk-period works."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Yapıya ait kitâbe yoktur. Kaynaklarda mescidin bulunduğu yerin Ahi Celal Mahallesi olduğu ve Kalaycı Mescidi'nin yerinde Ahi Celal Mescidi'nin bulunduğu belirtilir. Ahi Celal Mescidi'nin hasar görmesi sonrası yapılan tamirattan sonra adının 'Kalaycı Mescidi'ne dönüşmüş olabileceği düşünülmektedir. Tuğla ve moloz taştan yapılmış mescit yakın zamanda esaslı bir onarım geçirmiştir.",
+        "en": "There is no inscription. Sources state that the location was Ahi Celal Neighborhood and that Ahi Celal Masjid stood where Kalaycı Masjid is. It is thought the name may have changed after repairs made due to damage. Built of brick and rubble, the masjid recently underwent major repairs."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "352-353"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit kare planlıdır ve tek kubbeyle örtülüdür; kubbeye tromplarla geçilir. Kubbe sonradan kırma çatı altına alınmıştır. Doğu cephede harime giriş kapısı ve bir pencere bulunur; cephenin yarısında bir sundurma giriş cephesini vurgular. Harim içinde mihrap yönü düzeltilmiştir.",
+        "en": "The masjid has a square plan with a single dome on squinches; the dome was later placed under a hipped roof. The east facade has the entrance door and a window, with a porch on half of the facade. The mihrab direction inside the harim has been corrected."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "352-353"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Kalaycı Mescidi kare planlı ve tek kubbeli küçük bir mescittir. Kubbe kırma çatı altındadır. Giriş doğu cephededir ve sundurmayla vurgulanmıştır.",
+      "en": "Kalaycı Masjid is a small square masjid with one dome, set under a hipped roof. The entrance is on the east facade, marked by a porch."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 352-353)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "352-353"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1458",
+        "original_name": "pdf-s178-xref1458",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "352"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kalaycı Mescidi (kitap s. 352)",
+        "en": "Kalaycı Masjid (book p. 352)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kubbeli bir mescit. Önünde kiremit çatılı bir avlu ve metal çit var.",
+        "en": "Stone-walled mosque with a dome. A tiled porch and metal fence in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1460",
+        "original_name": "pdf-s178-xref1460",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "352"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Kalaycı Mescidi (kitap s. 352)",
+        "en": "Kalaycı Masjid (book p. 352)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap minber ve kürsü, taş duvarlar, kemerler ve tavan lambası görülüyor.",
+        "en": "Interior shows wooden minbar and pulpit, stone walls, arches, and a ceiling chandelier."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1464",
+        "original_name": "pdf-s178-xref1464",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "353"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kalaycı Mescidi (kitap s. 353)",
+        "en": "Kalaycı Masjid (book p. 353)"
+      },
+      "alt": {
+        "tr": "Kilisenin dış görünümü, ahşap minareli, kubbeli ve taş duvarlı. Arka planda dağ ve evler.",
+        "en": "Exterior view of the mosque with a wooden minaret, dome, and stone walls. Hills and houses in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1466",
+        "original_name": "pdf-s178-xref1466",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "353"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Kalaycı Mescidi (kitap s. 353)",
+        "en": "Kalaycı Masjid (book p. 353)"
+      },
+      "alt": {
+        "tr": "Tuğladan yapılmış, herringbone desenli bir kubbe. Orta kısımda dört ışıklı bir avize asılı.",
+        "en": "A brick dome with a herringbone pattern. A four-light chandelier hangs in the center."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

@@ -1,0 +1,355 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-koprubasi-mustafa-aga-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Kitâbe metni kitapta yok (inscriptions[].transliteration null)",
+      "Vakıf bilgisi kitapta yok",
+      "Başlıktaki 'Hacı Mustafa Ağa' ile metindeki 'Köprübaşı Mustafa Ağa' aynı kişi mi, kitap açıkça belirtmiyor (başlıkta parantez içinde veriliyor)",
+      "Koordinat kitapta yok; eklenmeli (location.coordinates)",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli tuvaleti) kitapta yok; sahada teyit edilmeli",
+      "Ziyaret süresi, giriş ücreti kitapta yok",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "name",
+        "note": "TOC 'Hacı Mustafa Ağa (Köprübaşı Mustafa Ağa) Camii' diyor, metin yalnızca 'Köprübaşı Mustafa Ağa'dan söz ediyor."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap H. 1243 / M. 1826-27 veriyor; H. 1243 yılı normalde M. 1827-28'e denk gelir. Hicri/miladi uyuşmazlığı olabilir; kitaptaki değerler (1826-27, 1243) olduğu gibi korundu, güven düzeyi certain bırakıldı çünkü kitâbe tarihi kesin dille veriliyor, teyit önerilir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Hacı Mustafa Ağa (Köprübaşı Mustafa Ağa) Camii",
+    "en": "Hacı Mustafa Ağa (Köprübaşı Mustafa Ağa) Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [
+    {
+      "tr": "Köprübaşı Mustafa Ağa Camii",
+      "en": "Köprübaşı Mustafa Ağa Mosque"
+    },
+    {
+      "tr": "Hacı Mustafa Ağa Camii",
+      "en": "Hacı Mustafa Ağa Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "XIX. yüzyıl",
+    "mahalle camii",
+    "ahşap direkli",
+    "celî sülüs kitâbe",
+    "Köprübaşı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Aziziye Mahallesi",
+    "address": "Köprübaşı Mevkii",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "248"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.874706,
+      "lng": 32.508732,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q127643397 ('Hacı Mustafa Ağa Camii'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1243 / M. 1826-27",
+      "en": "1243 AH / 1826-27 AD"
+    },
+    "start_year": 1826,
+    "end_year": 1827,
+    "hijri_year": 1243,
+    "century": 19,
+    "basis": {
+      "tr": "Mermer kitâbedeki tarih.",
+      "en": "Date on the marble inscription."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "248"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Köprübaşı Mustafa Ağa",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "248"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Karatay'da, Aziziye Mahallesi Köprübaşı Mevkii'nde, mermer kitâbesine göre H. 1243 / M. 1826-27'de yaptırılan, enine dikdörtgen planlı, ahşap direkli cami. Kitaba göre XIX. yüzyıl mahalle camilerinin güzel bir örneğidir.",
+    "en": "A transverse-rectangular mosque with wooden columns in Aziziye Neighborhood, Köprübaşı area, Karatay, built in 1243 AH / 1826-27 AD according to its marble inscription. The book calls it a good example of 19th-century neighborhood mosques."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Cami Karatay, Aziziye Mahallesi, Köprübaşı Mevkii'nde yer alır. Üzerindeki mermer kitâbeye göre H. 1243 / M. 1826-27'de yaptırılmıştır. Kitâbe mermer üzerine dört satır, sekiz kartuş hâlinde celî sülüs hatla, oyma kabartma tekniğiyle işlenmiştir. Vakıflar Bölge Müdürlüğü 2007'de tamir etmiştir. Banisi Köprübaşı Mustafa Ağa hakkında bilgi bulunmamaktadır.",
+        "en": "The mosque is in Karatay, Aziziye Neighborhood, Köprübaşı area. According to its marble inscription it was built in 1243 AH / 1826-27 AD. The inscription is engraved on marble in four lines and eight cartouches in celi thuluth, carved in relief. It was repaired by the Regional Directorate of Foundations in 2007. There is no information about its builder Köprübaşı Mustafa Ağa."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami enine dikdörtgen planlı ve kırma çatılıdır. Cepheler alt ve üstte iki sıra dikdörtgen pencerelerle hareketlenir. Harime kuzey duvarın ortasındaki kapıdan girilir; harim mihraba dik uzanan dört sıra ahşap direkle beş sahına ayrılmıştır. Doğu, batı ve kuzeyde ahşap direkler üzerine oturan mahfil vardır. Kıble duvarındaki yarım daire planlı, mukarnas kavsaralı mihrap alçı kalıplama tekniğindedir; niş iki yandan sütuncelerle sınırlanır, üç kuşakla çevrilir: dışta altın yaldızla boyanmış yazı kuşağı, ortada altıgenler içinde kabaralar, içte meander motifleri.",
+        "en": "The mosque has a transverse rectangular plan and a hipped roof. The facades are animated by two rows of rectangular windows. The harim is entered by the door in the middle of the north wall; it is divided into five aisles by four rows of wooden columns perpendicular to the mihrab. There is a mahfil on wooden poles on the east, west and north. The semicircular mihrab with a muqarnas frame is made in plaster molding; the niche is flanked by colonnettes and surrounded by three bands: a gilded text band outside, bosses in hexagons in the middle and meander motifs inside."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "saha_sayisi",
+      "label": {
+        "tr": "Harimdeki sahın sayısı",
+        "en": "Number of aisles in the harim"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "key": "direk_sirasi",
+      "label": {
+        "tr": "Ahşap direk sırası",
+        "en": "Rows of wooden columns"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Köprübaşı Mustafa Ağa",
+      "role": {
+        "tr": "Bani; hakkında bilgi yok",
+        "en": "Founder; nothing else is known about him"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "mermer-kitabe",
+      "location": {
+        "tr": "Cami üzerindeki mermer kitâbe",
+        "en": "Marble inscription on the mosque"
+      },
+      "language": "other",
+      "script": "Celî sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1243,
+        "gregorian": "1826-27"
+      },
+      "note": {
+        "tr": "Kitap metni vermiyor; dört satır, sekiz kartuş, celî sülüs, oyma kabartma. Dil kitapta belirtilmiyor.",
+        "en": "The book does not give the text; four lines, eight cartouches, celi thuluth, carved relief. The language is not stated."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "yapim-1826",
+      "year": 1826,
+      "date": null,
+      "hijri": "H. 1243",
+      "type": "construction",
+      "title": {
+        "tr": "Mermer kitâbeye göre yaptırıldı (H. 1243 / M. 1826-27)",
+        "en": "Built according to the marble inscription (1243 AH / 1826-27 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "248"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tamiri",
+        "en": "Repaired by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "248"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "mixed",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Enine dikdörtgen planlı, kırma çatılı bir mahalle camii. Kuzey duvarın ortasından girilir; içeride dört sıra ahşap direk harimi beş sahına böler, üç yanda ahşap mahfil vardır. Kıble duvarında mukarnas kavsaralı alçı bir mihrap bulunur.",
+      "en": "A transverse-rectangular neighborhood mosque with a hipped roof. It is entered through the middle of the north wall; inside, four rows of wooden columns divide the harim into five aisles, with a wooden mahfil on three sides. The qibla wall has a plaster mihrab with a muqarnas frame."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (Konya Vakıf Eserleri I. Cilt) derlendi; yalnızca kitaptaki bilgiler."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "248-248"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=987",
+        "original_name": "pdf-s126-xref987",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "248"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hacı Mustafa Ağa (Köprübaşı Mustafa Ağa) Camii (kitap s. 248)",
+        "en": "Hacı Mustafa Ağa (Köprübaşı Mustafa Ağa) Mosque (book p. 248)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı halı, ahşap sütunlar, ahşap tavan, kubbeli minber ve kubbeli mihrap görülüyor.",
+        "en": "Inside, red carpet, wooden pillars, wooden ceiling, domed minbar, and domed mihrab are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=985",
+        "original_name": "pdf-s126-xref985",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "248"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hacı Mustafa Ağa (Köprübaşı Mustafa Ağa) Camii (kitap s. 248)",
+        "en": "Hacı Mustafa Ağa (Köprübaşı Mustafa Ağa) Mosque (book p. 248)"
+      },
+      "alt": {
+        "tr": "Krem renkli duvarlı, kahverengi ahşap detaylı, çok sayıda pencere ve bir minareye sahip cami.",
+        "en": "Beige-walled mosque with brown wooden details, multiple windows, and a minaret."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

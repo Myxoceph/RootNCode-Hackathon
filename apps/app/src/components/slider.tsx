@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   PanResponder,
   Platform,
@@ -32,14 +32,22 @@ interface SliderProps {
  */
 export function Slider({ value, min, max, step, onChange, label, valueText, trackColor, fillColor, thumbColor, style }: SliderProps) {
   const [width, setWidth] = useState(0);
+  // Read by the drag, which is made once: the newest props, kept after each render.
   const latest = useRef({ width, min, max, step, onChange });
-  latest.current = { width, min, max, step, onChange };
+  useEffect(() => {
+    latest.current = { width, min, max, step, onChange };
+  });
 
+  /** The slider's left edge on the page, at the start of a drag. */
+  const origin = useRef(0);
   const clamp = (v: number) => Math.min(max, Math.max(min, v));
   const fromX = (x: number) => {
     const { width: w, min: lo, max: hi, step: s, onChange: set } = latest.current;
     if (w === 0) return;
-    const raw = lo + (Math.min(w, Math.max(0, x)) / w) * (hi - lo);
+    // The track runs between the thumb's two end positions, so the thumb never leaves the slider.
+    const span = w - THUMB;
+    if (span <= 0) return;
+    const raw = lo + (Math.min(span, Math.max(0, x - THUMB / 2)) / span) * (hi - lo);
     set(Math.round(raw / s) * s);
   };
 
@@ -47,8 +55,13 @@ export function Slider({ value, min, max, step, onChange, label, valueText, trac
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
-      onPanResponderGrant: (e) => fromX(e.nativeEvent.locationX),
-      onPanResponderMove: (e) => fromX(e.nativeEvent.locationX),
+      // `locationX` is measured from whatever view is under the finger, which jumps once the finger
+      // leaves the slider: the drag follows `pageX` from where the slider's left edge was at the touch.
+      onPanResponderGrant: (e) => {
+        origin.current = e.nativeEvent.pageX - e.nativeEvent.locationX;
+        fromX(e.nativeEvent.locationX);
+      },
+      onPanResponderMove: (e) => fromX(e.nativeEvent.pageX - origin.current),
       onPanResponderTerminationRequest: () => false,
     }),
   ).current;
@@ -92,7 +105,7 @@ export function Slider({ value, min, max, step, onChange, label, valueText, trac
       </View>
       <View
         pointerEvents="none"
-        style={[styles.thumb, { left: fraction * width - THUMB / 2, backgroundColor: thumbColor }]}
+        style={[styles.thumb, { left: fraction * Math.max(0, width - THUMB), backgroundColor: thumbColor }]}
       />
     </View>
   );
@@ -104,6 +117,8 @@ const styles = StyleSheet.create({
   hit: {
     minHeight: 44,
     justifyContent: "center",
+    // The thumb's half at each end: at the minimum and the maximum it sits inside the slider.
+    paddingHorizontal: THUMB / 2,
   },
   track: {
     height: 4,

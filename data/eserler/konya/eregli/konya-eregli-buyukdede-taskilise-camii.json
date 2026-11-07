@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-eregli-buyukdede-taskilise-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Era Bizans (sahada era kodu yok); era null bırakıldı.",
+      "Camiye çevrilme yılı kitapta yok ('yaklaşık 9 yüzyıl önce').",
+      "Banî/vakıf bilgisi kitapta yok.",
+      "'Define arayıcıları' ve kalem işi ustası Hidayet Nakkaş'ın dönemi kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Metin '560 yıllarında' diyor; ölçeksiz 'M.' olduğu belirtilmiyor, Bizans dönemi ile uyumlu olduğu için M. 560 alındı. Ayrıca 'yaklaşık 9 yüzyıl önce' camiye çevrilme ifadesi kitabın yazıldığı tarihe göre belirsizdir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Büyükdede (Taşkilise) Camii",
+    "en": "Büyükdede (Taşkilise) Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "kiliseden çevrilme",
+    "Bizans",
+    "kalem işi",
+    "Büyükdede Köyü"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Ereğli",
+    "neighborhood": "Büyükdede Köyü",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "427-429"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.414766,
+      "lng": 34.131978,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Adıyla OpenStreetMap Nominatim'de bulundu ('Büyükdede Mahallesi Camii, 96607. Sokak, Büyükdede Mahallesi, Ereğli, Konya, İç Anadolu Bölgesi, Türkiye'); sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Yaklaşık M. 560 (Bizans kilisesi); yaklaşık 9 yüzyıl önce camiye çevrilmiş",
+      "en": "Around AD 560 (Byzantine church); converted to a mosque about 9 centuries ago"
+    },
+    "start_year": 560,
+    "end_year": 560,
+    "hijri_year": null,
+    "century": 6,
+    "basis": {
+      "tr": "Metin '560 yıllarında inşa edilen' ve 'yaklaşık 9 yüzyıl önce camiye çevrilen' diyor; kesin tarih ve kanıt belirtilmiyor.",
+      "en": "The text says 'built around 560' and 'converted into a mosque approximately 9 centuries ago'; no exact date or evidence given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "427-429"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Ereğli Büyükdede Köyü'nde yüksek bir tepede, Bizans döneminde kilise olarak (yaklaşık M. 560) yapılıp yaklaşık dokuz yüzyıl önce camiye çevrilen; 2007'de Vakıflar tarafından restore edilen yapı.",
+    "en": "A building on a high hill in Büyükdede Village, Ereğli, first built as a Byzantine church (around AD 560) and converted to a mosque about nine centuries ago; restored by the Foundations in 2007."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Ereğli, Büyükdede Köyü'ndedir. Yapı ilk olarak Bizans döneminde kilise olarak inşa edilmiştir. Arazi eğiminden dolayı yüksek bir tepe üzerindedir. 560 yıllarında inşa edilen yapı yaklaşık 9 yüzyıl önce camiye çevrilmiştir. 1970'lerde define arayıcıları dışarıdan tünel kazarak içeri girmiş ve zemine zarar vermiş, yapı kullanılamaz hale gelip terk edilmiştir. Cami 2007'de köylülerin talebiyle Vakıflar Genel Müdürlüğü tarafından restore edilip yeniden kullanıma açılmıştır.",
+        "en": "The mosque is in Büyükdede Village, Ereğli. The building was first built as a church in the Byzantine period, on a high hill due to the slope of the land. Built around 560, it was converted into a mosque approximately 9 centuries ago. In the 1970s treasure seekers tunneled in from outside and damaged the floor; the building became unusable and was abandoned. It was restored and reopened by the General Directorate of Foundations in 2007 at the villagers' request."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "427"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari ve süsleme",
+        "en": "Architecture and decoration"
+      },
+      "body": {
+        "tr": "Cami enlemesine dikdörtgen planlı, kırma çatılıdır; minaresi yoktur ve kaba yonu taştan yapılmıştır. Giriş kapısı üzerinde 'Ustası Hidayet Nakkaş' yazar; kalem işi süslemelerin bu usta tarafından yapıldığı anlaşılmaktadır. Harim dikdörtgen planlıdır. Kıble duvarındaki taş mihrap sade düzenlidir, yarım daire nişlidir; çevresi kalem işi süslemeli üç sıra bordürle hareketlendirilmiştir.",
+        "en": "The mosque has a transverse rectangular plan and a hipped roof; it has no minaret and is built of rough-hewn stone. 'Master Hidayet Nakkaş' is written over the entrance door, from which the hand-drawn decoration is understood to be his work. The harim is rectangular. The stone mihrab on the qibla wall is simply arranged with a semicircular niche, enlivened by three rows of borders with hand-drawn ornament."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "428-429"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Hidayet Nakkaş",
+      "role": {
+        "tr": "Kalem işi süslemelerin ustası (kapı yazısına göre)",
+        "en": "Master of the hand-drawn decoration (per door text)"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "usta-yazisi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde",
+        "en": "Over the entrance door"
+      },
+      "language": "tr",
+      "script": null,
+      "transliteration": "Ustası Hidayet Nakkaş",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap yalnızca bu ifadeyi aktarıyor; yazının biçimi ve tarihi belirtilmiyor.",
+        "en": "The book only quotes this phrase; its form and date are not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "428"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-kilise",
+      "year": 560,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Bizans döneminde kilise olarak inşa (yaklaşık)",
+        "en": "Built as a church in the Byzantine period (approx.)"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "427"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2007",
+      "year": 2007,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "VGM tarafından restore edilip ibadete açıldı",
+        "en": "Restored by the General Directorate of Foundations and reopened"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "427"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Yüksek bir tepede yer alan, enlemesine dikdörtgen planlı, kaba yonu taştan bir camidir; Bizans döneminde kilise olarak yapılmış ve sonradan camiye çevrilmiştir. Minaresi yoktur, üzeri kırma çatıyla örtülüdür. İçeride taş mihrap ve çevresinde kalem işi bordürler görülür.",
+      "en": "A rough-hewn stone mosque with a transverse rectangular plan on a high hill, originally a Byzantine church later converted to a mosque. It has no minaret and a hipped roof. Inside are a stone mihrab and hand-drawn borders around it."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "427-429"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1857",
+        "original_name": "pdf-s215-xref1857",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "427"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Büyükdede (Taşkilise) Camii (kitap s. 427)",
+        "en": "Büyükdede (Taşkilise) Mosque (book p. 427)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kiremit çatılı bir cami. Üst katta iki pencere, alt katta bir pencere ve bir kapı var. Çatının üzerinde küçük bir kubbe ve bir minare var.",
+        "en": "A stone-walled mosque with a tiled roof. Two windows on the upper level, one window and one door on the lower level. A small dome and a minaret on the roof."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1861",
+        "original_name": "pdf-s215-xref1861",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "427"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Büyükdede (Taşkilise) Camii (kitap s. 427)",
+        "en": "Büyükdede (Taşkilise) Mosque (book p. 427)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap merdivenler, duvarlarda bitki desenli boyama ve zeminde halılar var.",
+        "en": "Inside, wooden stairs, plant-patterned wall paintings, and carpets on the floor are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1859",
+        "original_name": "pdf-s215-xref1859",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "427"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Büyükdede (Taşkilise) Camii (kitap s. 427)",
+        "en": "Büyükdede (Taşkilise) Mosque (book p. 427)"
+      },
+      "alt": {
+        "tr": "Duvarın bir bölümünde, çiçekler ve bir vazoda bitkilerle süslü, geometrik desenli bir mozaik detayı yer alıyor.",
+        "en": "A wall section features a mosaic detail with floral patterns, plants in vases, and a geometric design."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1865",
+        "original_name": "pdf-s216-xref1865",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "428"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Büyükdede (Taşkilise) Camii (kitap s. 428)",
+        "en": "Büyükdede (Taşkilise) Mosque (book p. 428)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap sütunlar, duvarlarda bitki desenli boyama ve zeminde halılar var.",
+        "en": "Inside, wooden columns, plant-patterned wall paintings, and carpets on the floor are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1869",
+        "original_name": "pdf-s216-xref1869",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "429"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Büyükdede (Taşkilise) Camii (kitap s. 429)",
+        "en": "Büyükdede (Taşkilise) Mosque (book p. 429)"
+      },
+      "alt": {
+        "tr": "Yeşil zeminli, altın renkli arapça yazılarla süslü, iki yarım ay şeklinde kavisli bir levha. Orta kısımda üç kırmızı ve yeşil top, altta üçgen bir süsleme var.",
+        "en": "Green background with golden Arabic script, two crescent-shaped curved panels. Three red and green spheres in the center, a triangular ornament at the bottom."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1871",
+        "original_name": "pdf-s216-xref1871",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "429"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Büyükdede (Taşkilise) Camii (kitap s. 429)",
+        "en": "Büyükdede (Taşkilise) Mosque (book p. 429)"
+      },
+      "alt": {
+        "tr": "Beyaz zemin üzerine yeşil bir ağaç figürü, mavi çiçekler ve kırmızı çiçeklerle süslenmiş bir duvar resmi.",
+        "en": "A wall painting with a green tree figure, blue flowers, and red flowers on a white background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1867",
+        "original_name": "pdf-s216-xref1867",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "429"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Büyükdede (Taşkilise) Camii (kitap s. 429)",
+        "en": "Büyükdede (Taşkilise) Mosque (book p. 429)"
+      },
+      "alt": {
+        "tr": "Duvarın bir köşesinde yeşil yapraklı, mavi çiçekli bir ağaç resmi var. Yanında büyük bir yaprak deseni ve renkli bordürler bulunuyor.",
+        "en": "A painted tree with green leaves and blue flowers on a wall corner. Next to it, a large leaf design and colorful borders are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1873",
+        "original_name": "pdf-s216-xref1873",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "429"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Büyükdede (Taşkilise) Camii (kitap s. 429)",
+        "en": "Büyükdede (Taşkilise) Mosque (book p. 429)"
+      },
+      "alt": {
+        "tr": "Duvarın bir bölümünde mavi ve yeşil renklerle boyanmış bitki ve kuş desenleri görülmektedir.",
+        "en": "A painted design of plants and birds in blue and green on a wall section."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

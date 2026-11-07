@@ -58,6 +58,9 @@
         },
         "note": {
           "type": "string"
+        },
+        "note_en": {
+          "type": "string"
         }
       },
       "additionalProperties": false
@@ -184,6 +187,11 @@
         "subject": {
           "type": "string",
           "description": "Ne gösterdiği: exterior, portal, minber, calligraphy..."
+        },
+        "dossier_after": {
+          "type": "string",
+          "pattern": "^[a-z_]+(:[a-z0-9_-]+)?$",
+          "description": "Eserin dosyasında altına geleceği yer: identity, timeline, people, waqf, inscriptions, facts, legends, accessibility, section:<konu id> ya da custom:<bölüm id>. Yoksa fotoğraf konulara kendiliğinden dağıtılır."
         },
         "focal_point": {
           "type": "object",
@@ -333,6 +341,9 @@
               },
               "note": {
                 "type": "string"
+              },
+              "note_en": {
+                "type": "string"
               }
             },
             "additionalProperties": false
@@ -449,6 +460,8 @@
                 "gps_field",
                 "photo_exif",
                 "osm",
+                "wikidata",
+                "osm_area",
                 "google_maps",
                 "official"
               ]
@@ -656,6 +669,21 @@
     },
     "summary": {
       "$ref": "#/$defs/i18n"
+    },
+    "custom_blocks": {
+      "type": "array",
+      "description": "Adminin dosyaya eklediği ana bölümler; sıra dizideki sıradır.",
+      "items": {
+        "type": "object",
+        "required": ["id", "after", "title", "body"],
+        "properties": {
+          "id": { "type": "string" },
+          "after": { "type": "string", "pattern": "^[a-z_]+(:[a-z0-9_-]+)?$", "description": "Hangi bölümden sonra: identity, history, timeline, people, waqf, inscriptions, facts, legends, accessibility ya da custom:<id>" },
+          "title": { "$ref": "#/$defs/i18n" },
+          "body": { "$ref": "#/$defs/i18n", "description": "Düz metin ve birkaç işaret: ## başlık, **kalın**, _eğik_, - liste, > alıntı" }
+        },
+        "additionalProperties": false
+      }
     },
     "sections": {
       "type": "array",
@@ -980,6 +1008,10 @@
         "properties": {
           "target_id": {
             "$ref": "#/$defs/slug"
+          },
+          "target_name": {
+            "$ref": "#/$defs/i18n",
+            "description": "Hedef veri setinde yoksa adı, kaynaktaki gibi (ör. 'II. Bayezid Külliyesi (İstanbul)'); uygulama bağı bu adla gösterir."
           },
           "type": {
             "type": "string"

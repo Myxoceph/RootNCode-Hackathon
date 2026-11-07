@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-dolap-battal-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Banî ve kesin inşa tarihi kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mimari]",
+        "note": "Türkçe metin yağlı boyayla boyalı olanın ahşap mihrap olduğunu, İngilizce metin ise minberin yüzeyinin boyalı olduğunu söylüyor. Türkçe metin esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Dolap Battal Mescidi",
+    "en": "Dolap Battal Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "mahalle mescidi",
+    "moloz taş",
+    "kerpiç",
+    "ahşap direk",
+    "tavan göbeği",
+    "güneş tasviri"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Dolap Mektep Mahallesi",
+    "address": "Dolap Mektep Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "185"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.872835,
+      "lng": 32.511022,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1340837650 ('Dolap Battal Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIX. yüzyıl sonları (tahmini)",
+      "en": "Late 19th century (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "İnşa tarihi ve banisi bilinmiyor; plan, yapım tekniği ve malzemeden hareketle XIX. yüzyıl sonlarında yapıldığı 'düşünülmektedir'.",
+      "en": "Construction date and founder are unknown; based on plan, technique and materials it 'is thought' to date from the late 19th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "185"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Dolap Mektep Mahallesi'nde, moloz taş ve kerpiçten yapılmış, kırma çatılı, iki ahşap direkle iki sahına ayrılmış mahalle mescidi; 2015-2016'da Vakıflar Bölge Müdürlüğü onarmıştır.",
+    "en": "A neighborhood masjid in Dolap Mektep Neighborhood of rubble stone and adobe with a hipped roof, divided into two naves by two wooden posts; repaired by the Regional Directorate of Foundations in 2015-2016."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Mescit, Karatay, Dolap Mektep Mahallesi, Dolap Mektep Sokak'ta yer almaktadır. İnşa tarihi ve banisi hakkında bilgi yoktur; plan, yapım tekniği ve malzemeden hareketle XIX. yüzyıl sonlarında yapıldığı düşünülmektedir. Yapı Vakıflar Bölge Müdürlüğü tarafından 2015-2016'da tamir ettirilmiştir.",
+        "en": "The masjid is on Dolap Mektep Street, Dolap Mektep Neighborhood, Karatay. There is no information on its date or founder; it is thought to be from the late 19th century. It was repaired by the Regional Directorate of Foundations in 2015-2016."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "185"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit derinlemesine dikdörtgen planlı ve kırma çatılıdır; alt bölümde moloz taş, üst bölümde kerpiç kullanılmıştır. Cepheler sadedir; güney ve batıda dikdörtgen pencereler, güney ve kuzeyde aydınlatma pencereleri vardır. Kuzey ve batı cephenin kesişimi üstte 5 sıra mukarnas dizisiyle pahlanmıştır. Doğu cephesi yandaki konuta bitişiktir. Harime kuzeybatı köşedeki kapıdan girilir. Harim, ortada taş kaideli iki ahşap direk ve üzerlerindeki doğu-batı kirişlerle iki sahına ayrılmıştır; tavan ahşaptır ve göbeğinde ışınsal doğrular biçiminde güneş tasviri vardır. Kuzeyde ahşap direklerin taşıdığı kadınlar mahfili bulunur. Mihrap yarım daire planlı ve yarım kubbe kavsaralıdır; ahşap mihrabın yüzeyi yağlı boyalıdır. Mihrabın sağında, güneybatı köşede ahşap minber yer alır. Mescit, Konya'da geç dönem Osmanlı mahalle mescitlerinin güzel bir örneğidir.",
+        "en": "The masjid has a deeply rectangular plan and a hipped roof; rubble stone is used below and adobe above. The facades are plain, with rectangular windows on the south and west and lighting windows on the south and north. The north-west corner is chamfered with 5 rows of muqarnas at the top; the east side adjoins a residence. The harim is entered via the northwest corner door. Two wooden posts on stone bases and east-west beams divide the harim into two naves; the ceiling is wooden with a sun depiction of radial lines at its center. A women's gallery on wooden posts lies in the north. The mihrab is semicircular with a semi-dome, its wooden surface painted with oil paint; the wooden minbar stands in the southwest corner. It is a good example of late Ottoman neighborhood masjids in Konya."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "185"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-2015-2016",
+      "year": 2015,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü onarımı (2015-2016)",
+        "en": "Repair by the Regional Directorate of Foundations (2015-2016)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "185"
+        }
+      ],
+      "note": {
+        "tr": "Başlangıç yılı alındı.",
+        "en": "Start year used."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Moloz taş ve kerpiçten yapılmış, kırma çatılı sade bir mahalle mescididir. Kuzeybatı köşedeki kapıdan girilir. İçeride taş kaideli iki ahşap direk mekânı iki sahına böler; ahşap tavanın ortasında ışınsal çizgilerle güneş tasviri vardır. Kuzeyde ahşap kadınlar mahfili, kıble duvarında yağlı boyalı ahşap mihrap bulunur.",
+      "en": "A plain neighborhood masjid of rubble stone and adobe with a hipped roof. Entry is from the northwest corner door. Two wooden posts on stone bases divide the interior into two naves; the wooden ceiling carries a sun depiction in radiating lines. A wooden women's gallery lies to the north and a wooden mihrab painted in oil paint on the qibla wall."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "185-186"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=693",
+        "original_name": "pdf-s94-xref693",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "185"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Dolap Battal Mescidi (kitap s. 185)",
+        "en": "Dolap Battal Masjid (book p. 185)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kiremit kaplı çatılı küçük bir mescit. Ahşap kapı ve pencereleri vardır. Önünde iki bank var.",
+        "en": "A small white-walled mosque with a tiled roof. It has a wooden door and windows. Two benches are in front."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=695",
+        "original_name": "pdf-s94-xref695",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "185"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Dolap Battal Mescidi (kitap s. 185)",
+        "en": "Dolap Battal Masjid (book p. 185)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap tavan, kemerli pencereler, duvarlarda çiniler ve kırmızı desenli halılar var.",
+        "en": "Inside, there is a wooden ceiling, arched windows, tiles on the walls, and red patterned carpets."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=705",
+        "original_name": "pdf-s95-xref705",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "186"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Dolap Battal Mescidi (kitap s. 186)",
+        "en": "Dolap Battal Masjid (book p. 186)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kiremit kaplı bir yapı. Yanında sivri kubbeli minare ve düzenli biçimde kesilmiş çalılar var.",
+        "en": "A white-walled building with a tiled roof. A pointed minaret stands beside it, with neatly trimmed bushes."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

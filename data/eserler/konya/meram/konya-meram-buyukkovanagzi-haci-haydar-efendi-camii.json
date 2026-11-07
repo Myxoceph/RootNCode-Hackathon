@@ -1,0 +1,318 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-buyukkovanagzi-haci-haydar-efendi-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 92-93) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Yakın zamandaki 'önemli tamirat' için yıl kitapta yok.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Kitâbe bânîyi belirtmiyor; Hacı Haydar Efendi bilgisi mahalle halkının ifadesine dayanıyor (probable)."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Büyükkovanağzı (Hacı Haydar Efendi) Camii",
+    "en": "Büyükkovanağzı (Hacı Haydar Efendi) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Hacı Haydar Efendi Camii",
+      "en": "Hacı Haydar Efendi Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "köşk minare",
+    "ahşap destekli",
+    "alçı mihrap",
+    "1889"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Büyük Kovanağzı Mahallesi",
+    "address": "Küçük Kovanağzı Caddesi, No. 16",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "92-93"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1305 / M. 1889-90",
+      "en": "AH 1305 / AD 1889-90"
+    },
+    "start_year": 1889,
+    "end_year": 1890,
+    "hijri_year": 1305,
+    "century": 19,
+    "basis": {
+      "tr": "Giriş kapısının sağındaki Latin harfli kitâbeye göre.",
+      "en": "According to the Latin-letter inscription to the right of the entrance door."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "92-93"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Hacı Haydar Efendi",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "92-93"
+      }
+    ]
+  },
+  "architect": null,
+  "summary": {
+    "tr": "Giriş kapısının sağındaki Latin harfli kitâbeye göre H. 1305 / M. 1889-90'da yapılmış, geç Osmanlı özellikleri taşıyan, ahşap destekli ve ahşap köşk minareli cami. Mahalle halkı bânîsinin Hacı Haydar Efendi olduğunu söyler.",
+    "en": "A late Ottoman mosque on wooden supports with a wooden pavilion minaret, built in AH 1305 / AD 1889-90 according to the Latin-letter inscription beside its entrance. Locals say its founder was Hacı Haydar Efendi."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Meram, Büyük Kovanağzı Mahallesi, Küçük Kovanağzı Caddesi No. 16'dadır. Giriş kapısının sağındaki Latin harfli kitâbeye göre H. 1305 / M. 1889-90'da yapılmıştır. Mahalle efradı bânîsinin Hacı Haydar Efendi olduğunu ifade etmektedir. Yakın zamanda önemli bir tamirat geçiren yapı ibadete açıktır. Cami mimari, süsleme ve üslup özellikleri bakımından geç Osmanlı dönemi özelliklerini yansıtır.",
+        "en": "The mosque is at Küçük Kovanağzı Street No. 16, Büyük Kovanağzı Neighborhood, Meram. According to the Latin-letter inscription on the right of the entrance door it was built in AH 1305 / AD 1889-90. Locals state its founder was Hacı Haydar Efendi. It has recently undergone significant repairs and is open for worship. In architecture, decoration and style it reflects the Late Ottoman period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "92"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami kareye yakın dikdörtgen planlı ve ahşap destekli bir plan şemasına sahiptir; içten ahşap düz tavan, dıştan kırma çatıyla örtülüdür. Kuzeydoğudaki silindirik gövdeli ahşap köşk minare dikkat çeker. Cepheler sadedir: batıda ikişer, kuzey ve doğuda üçer pencere vardır. Kuzeyde ahşap desteklerle taşınan, sonradan camekânla kapatılmış son cemaat yeri bulunur; güney duvarı ortasında düz lentolu giriş kapısı ve iki katlı pencereler yer alır. Harim dikdörtgendir ve iç mekânda süsleme yoktur. Kuzeyde iki ahşap destekli mahfil vardır. Kıble duvarı ortasındaki alçı mihrap nişi yanlarda yivli ahşap sütuncelerle sınırlanır ve perde ile kandil motifleriyle tezyin edilmiştir.",
+        "en": "The mosque is almost square on a wooden-supported plan, with a flat wooden ceiling inside and a hipped roof outside. The cylindrical-bodied wooden pavilion minaret in the northeast stands out. The facades are plain: two windows on the west, three each on the north and east. The narthex in the north, carried on wooden supports and later glazed, has a flat-lintelled entrance door and two-storey windows in its south wall. The harim is rectangular with no interior decoration. A gallery on two wooden supports lies on the north side. The plaster mihrab niche in the qibla wall is flanked by grooved wooden colonnettes and decorated with curtain and oil-lamp motifs."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "92-93"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "yapim_yili_hicri",
+      "label": {
+        "tr": "Yapım yılı (Hicri)",
+        "en": "Year built (Hijri)"
+      },
+      "value": 1305,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "92"
+        }
+      ]
+    },
+    {
+      "key": "minare",
+      "label": {
+        "tr": "Minare",
+        "en": "Minaret"
+      },
+      "value": "ahşap, silindirik gövdeli köşk minare (kuzeydoğu)",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "92"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Hacı Haydar Efendi",
+      "role": {
+        "tr": "Mahalle halkının bânî olarak andığı kişi",
+        "en": "Person named by locals as the founder"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "giris-kitabesi",
+      "location": {
+        "tr": "Giriş kapısının sağında",
+        "en": "Right of the entrance door"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1305,
+        "gregorian": "1889-90"
+      },
+      "note": {
+        "tr": "Latin harfli kitâbe; kitap metni vermiyor, yalnızca H. 1305 / M. 1889-90 tarihini aktarıyor. Dili açıkça belirtilmiyor.",
+        "en": "A Latin-letter inscription; the book gives no text, only the date AH 1305 / AD 1889-90. The language is not stated."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "92"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1889",
+      "year": 1889,
+      "date": null,
+      "hijri": "1305",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yapıldı (Latin harfli kitâbeye göre)",
+        "en": "Mosque built (according to the Latin-letter inscription)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "92"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Büyükkovanağzı Camii kareye yakın dikdörtgen planlı, ahşap destekli bir camidir. Kuzeydoğu köşesinde silindirik gövdeli ahşap bir köşk minare yükselir. Kuzeydeki son cemaat yeri camekânla kapatılmıştır. İçeride süsleme yoktur; kuzeyde ahşap bir mahfil, kıble duvarında ise perde ve kandil motifli alçı bir mihrap görülür.",
+      "en": "Büyükkovanağzı Mosque is an almost-square building on wooden supports. A cylindrical wooden pavilion minaret rises at the northeast corner. The north narthex is closed with glass. The interior is undecorated; a wooden gallery lies to the north and the qibla wall has a plaster mihrab with curtain and oil-lamp motifs."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 92-93)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "92-93"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=300",
+        "original_name": "pdf-s48-xref300",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "92"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Büyükkovanağzı (Hacı Haydar Efendi) Camii (kitap s. 92)",
+        "en": "Büyükkovanağzı (Hacı Haydar Efendi) Mosque (book p. 92)"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremit çatılı bina, üzerinde ahşap kubbeli minare ve büyük camlı pencereler bulunuyor.",
+        "en": "A building with a red tile roof, a wooden minaret with a dome, and large glass windows."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=302",
+        "original_name": "pdf-s48-xref302",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "93"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Büyükkovanağzı (Hacı Haydar Efendi) Camii (kitap s. 93)",
+        "en": "Büyükkovanağzı (Hacı Haydar Efendi) Mosque (book p. 93)"
+      },
+      "alt": {
+        "tr": "Ahşap tavan, kiremit desenli halı, mermer sütunlar ve kubbeli mihrap iç mekânı gösteriyor.",
+        "en": "Wooden ceiling, patterned tile floor, marble columns, and a domed mihrab are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

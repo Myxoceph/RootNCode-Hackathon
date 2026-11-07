@@ -1,0 +1,444 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-dokuzun-hani",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kitâbenin Arapça/Farsça asıl metni ve okunuşu kitapta verilmiyor (transliteration: null).",
+      "Köprü ve çeşmenin ayrı kaydı ids.md'de yok.",
+      "Restorasyon tarihi ve 1990'lı yıllardaki kazının yılı kitapta kesin verilmiyor.",
+      "'İğdişler emiri' ifadesinin anlamı kitapta açıklanmıyor."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder",
+        "note": "Türkçe metin hanın 'Emir Hacı İbrahim bin Ebu Bekir tarafından, Osman bin Abdurrahman'a yaptırıldığını' söyler; kitâbe aktarımı ise sahibi Hacı İbrahim, yapanı Osman bin Abdurrahman olarak verir. İngilizce metin 'by Emir Hacı İbrahim ... by Osman bin Abdurrahman' yazar. Kitâbe aktarımı esas alınıp Hacı İbrahim banî, Osman yapan olarak kaydedildi."
+      },
+      {
+        "field": "inscriptions[insa-kitabesi]",
+        "note": "Kitâbe aktarımında 'iğdişler emiri' İngilizce metinde 'emir of castrated' olarak çevrilmiş; Türkçe ifade korundu, İngilizce çeviri hatalı görünüyor."
+      },
+      {
+        "field": "legends[dokuzun-adi]",
+        "note": "Türkçe rivayet cümlesi belirsizdir ('geçit vermemiştir'); İngilizce metinde 'he did not allow anyone ... for nine days'. Kitaptaki hâli korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Dokuzun Hanı",
+    "en": "Dokuzun Inn"
+  },
+  "subtitle": {
+    "tr": "Şadiye Köyü'nde, 1210 tarihli kitâbeli klasik Selçuklu menzil hanı",
+    "en": "Classical Seljuk waystation inn at Şadiye Village with an inscription dated 1210"
+  },
+  "alternate_names": [
+    {
+      "tr": "Derbent Hanı",
+      "en": "Derbent Inn"
+    },
+    {
+      "tr": "Şadiye Hanı",
+      "en": "Şadiye Inn"
+    },
+    {
+      "tr": "İğdişleri Hanı",
+      "en": "İğdişleri Inn"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "han",
+    "Selçuklu hanı",
+    "menzil hanı",
+    "ribat",
+    "kitâbeli",
+    "kaba yonu taş",
+    "sivri kemer",
+    "Konya-Afyon yolu"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": "Şadiye Köyü",
+    "address": "Konya-Afyon yolu üzerinde, Konya merkeze 24 km",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "260"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.063696,
+      "lng": 32.515417,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OSM'de Dokuzun Han (caravanserai) olarak kayıtlı. Kaynak: https://nominatim.openstreetmap.org/search?format=jsonv2&q=Dokuzun Han Selçuklu"
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Muharrem 607 / Haziran-Temmuz 1210",
+      "en": "Muharram 607 / June-July 1210"
+    },
+    "start_year": 1210,
+    "end_year": 1210,
+    "hijri_year": 607,
+    "century": 13,
+    "basis": {
+      "tr": "Taç kapıdaki ve kapalı bölüme geçiş açıklığı üzerindeki inşa kitâbesi; I. Gıyâseddin Keyhüsrev dönemi.",
+      "en": "Construction inscription on the crown gate and above the passage to the closed section; reign of Gıyâseddin Keyhüsrev I."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "260-261"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Emir Hacı İbrahim bin Ebu Bekir",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "260-261"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Konya-Afyon yolunda, Şadiye Köyü'nde, kitâbesine göre 1210'da Emir Hacı İbrahim bin Ebu Bekir'in yaptırdığı, kapalı bölüm ve açık avludan oluşan klasik Selçuklu menzil hanı. Avlu bölümü günümüze ulaşmamış; kapalı bölüm üç sahınlı ve beşik tonozludur.",
+    "en": "A classical Seljuk waystation inn of closed section and open courtyard at Şadiye Village on the Konya-Afyon road, built according to its inscription in 1210 for Emir Hacı İbrahim bin Ebu Bekir. The courtyard has not survived; the closed section has three aisles under barrel vaults."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Kitâbe",
+        "en": "Location and Inscription"
+      },
+      "body": {
+        "tr": "Yapı, Konya-Afyon yolunda, Konya merkeze 24 km uzaklıkta Şadiye Köyü'ndedir. Taç kapısındaki inşa kitâbesine göre I. Gıyaseddin Keyhüsrev döneminde 1210'da, Emir Hacı İbrahim bin Ebu Bekir tarafından, Osman bin Abdurrahman'a yaptırılmıştır. Kapalı bölüme geçiş açıklığı üzerindeki kitâbenin içeriği genel olarak şöyledir: yapının \"ribat\" olarak 607 Muharreminde (Haziran-Temmuz 1210) yapıldığı, sahibinin iğdişler emiri Ebubekir oğlu Hacı İbrahim, yapanın Abdurrahman oğlu Osman olduğu belirtilir.",
+        "en": "The building is in Şadiye Village on the Konya-Afyon road, 24 km from central Konya. According to the construction inscription on its crown gate it was built in 1210, in the reign of Gıyaseddin Keyhüsrev I, by Emir Hacı İbrahim bin Ebu Bekir by Osman bin Abdurrahman. The inscription over the passage to the closed section says in general that this ribat was made in Muharram 607 (June-July 1210), that its owner is Hacı İbrahim, son of Ebubekir, emir of the iğdişler, and that Osman, son of Abdurrahman, made it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "260-261"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Hanın inşasında kaba yonu taş kullanılmıştır; taşların çoğu erimiş, duvarların biçimi bozulmuştur. Restorasyonda aslına uygun malzemeyle beden duvarları tamamlanmıştır. Kuzey-güney doğrultulu yapı kapalı bölüm ve açık avludan oluşur. Avlu bölümü günümüze ulaşmamıştır; 1990'lı yıllardaki kazılarda avlu girişinin doğusunda bir eyvan, eyvanın arkasında bir oda ve batısında bir oda daha saptanmıştır. Odaların devamının revak biçiminde, beşik tonozlu beşer bölüm hâlinde olduğu düşünülmektedir. Kapalı mekâna giriş doğu cephedeki son derece sade, sivri kemerli taç kapıdan sağlanır. Derinlemesine dikdörtgen planlı, üç sahınlı bu bölüm beşik tonozla örtülüdür; sahınlar 8 ayağın taşıdığı dörder sivri kemerle ayrılır. Orta sahın hem içeride hem cephede diğerlerinden yüksektir ve yapıya abidevi bir görünüm verir. Beden duvarlarında payandalar bulunur. Yapı, açık ve kapalı avlulu plan tipiyle Selçuklu döneminin klasik menzil hanlarındandır.",
+        "en": "Rough-cut stone was used; most of the stones have eroded and the walls are deformed. In restoration the walls were completed with materials true to the original. The north-south building consists of a closed section and an open courtyard. The courtyard has not survived; excavations in the 1990s found an iwan east of the courtyard entrance, a room behind it and another room to its west. The remaining rooms are thought to have been arranged as a portico in five barrel-vaulted sections. The closed space is entered through an extremely plain pointed-arched crown gate on the east façade. This deep rectangular, three-aisled section is barrel-vaulted; the aisles are separated by four pointed arches carried by 8 piers. The middle aisle is higher inside and on the façade, giving the building a monumental look. The walls have buttresses. With its open and closed courtyard plan it is one of the classical waystation inns of the Seljuk period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "id": "cevre",
+      "order": 3,
+      "title": {
+        "tr": "Çevre",
+        "en": "Surroundings"
+      },
+      "body": {
+        "tr": "Yapının güneyinde köprü, batısında çeşme bulunmaktadır.",
+        "en": "There is a bridge south of the building and a fountain to its west."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "dokuzun-adi",
+      "title": {
+        "tr": "\"Dokuzun\" adının kökeni",
+        "en": "Origin of the name \"Dokuzun\""
+      },
+      "body": {
+        "tr": "Rivayete göre han, önünden akan akarsuyu geçmeye çalışan birine dokuz gün geçit vermemiştir; hana bu yüzden \"Dokuzun\" adı verilmiştir.",
+        "en": "According to legend, the inn did not let someone trying to cross the stream flowing in front of it pass for nine days; for this reason it was named \"Dokuzun\"."
+      },
+      "source_verdict": "folk_belief",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "konya_merkeze_uzaklik",
+      "label": {
+        "tr": "Konya merkeze uzaklık",
+        "en": "Distance to central Konya"
+      },
+      "value": 24,
+      "unit": "km",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "260"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Kapalı bölümde sahın sayısı",
+        "en": "Number of aisles in the closed section"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "261"
+        }
+      ]
+    },
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Kapalı bölümde ayak",
+        "en": "Pillars in the closed section"
+      },
+      "value": 8,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "261"
+        }
+      ],
+      "note": {
+        "tr": "Her sıra dört sivri kemerle bağlıdır.",
+        "en": "Four pointed arches in each row."
+      }
+    },
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Kaba yonu taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "261"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Emir Hacı İbrahim bin Ebu Bekir",
+      "role": {
+        "tr": "Kitâbede \"sahibi\" ve iğdişler emiri olarak geçer",
+        "en": "Named in the inscription as the owner and emir of the iğdişler"
+      }
+    },
+    {
+      "name": "Osman bin Abdurrahman",
+      "role": {
+        "tr": "Kitâbeye göre ribatı yapan",
+        "en": "According to the inscription, the maker of the ribat"
+      }
+    },
+    {
+      "name": "I. Gıyâseddin Keyhüsrev",
+      "role": {
+        "tr": "Hanın yapıldığı dönemin sultanı",
+        "en": "Sultan at the time of construction"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Kapalı bölüme geçiş açıklığının üzeri (ayrıca taç kapıdaki inşa kitâbesi)",
+        "en": "Above the passage to the closed section (also a construction inscription on the crown gate)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "“Allah’a tevekkül ediyorum. Bu ribatın yapılışı 607 Muharreminde / Haziran-Temmuz 1210, büyük sultan, müminler emirinin (halifenin) yardımcısı, din ve dünya hizmetlerine koşturan, fetih sahibi, II. Kılıçarslan oğlu Keyhüsrev’in hükümdarlığı günlerindedir. Sahibi Tanrı’nın rahmetine muhtaç, fakir, zayıf kulu, iğdişler emiri Ebubekir oğlu Hacı İbrahim’dir. Ribatı Abdurrahman oğlu Osman yapmıştır.”",
+        "en": "“I trust in Allah. This ribat was made in Muharram 607 / June-July 1210, during the reign of Keyhüsrev, son of Kılıçarslan II, the great sultan, assistant of the emir of believers (caliph), rushing to religious and world services, conqueror. Its owner is Hacı İbrahim, son of Ebubekir, the emir of castrated, a poor, weak servant in need of God’s mercy. Ribat was made by Osman, son of Abdurrahman.”"
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 607,
+        "gregorian": "1210"
+      },
+      "note": {
+        "tr": "Kitap yalnızca 'içeriği genel olarak şöyledir' diyerek Türkçe aktarım verir; Arapça/Farsça asıl metin ve okunuş verilmemiştir, dil belirtilmemiştir.",
+        "en": "The book gives only a Turkish rendering ('the content is generally as follows'); the original text and transliteration are not given, and the language is not named."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "260-261"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1210",
+      "year": 1210,
+      "date": null,
+      "hijri": "607",
+      "type": "construction",
+      "title": {
+        "tr": "Han (ribat) inşa edildi (Muharrem 607 / Haziran-Temmuz 1210)",
+        "en": "Inn (ribat) built (Muharram 607 / June-July 1210)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "260-261"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, düzenli kaba yonu taştan yapılmış, uzun ve alçak bir yapıdır; dış duvarlarda payandalar sıralanır. Doğu yüzündeki sade, sivri kemerli taç kapıdan girilen kapalı bölüm beşik tonozludur ve sekiz ayakla üç koridora ayrılmıştır; ortadaki koridor daha yüksektir. Avlu bölümü günümüze ulaşmamış, yalnızca temel izleri bulunmuştur. Yapının güneyinde bir köprü, batısında bir çeşme vardır.",
+      "en": "The inn is a long, low building of roughly dressed stone with buttresses along its outer walls. The barrel-vaulted closed hall, entered through a plain pointed-arched crown gate on the east face, is divided by eight piers into three aisles, the middle one higher. The courtyard has not survived and only its foundations were found. A bridge lies south of the building and a fountain to its west."
+    },
+    "audio_description_source": "Kitap metninden (tr/en) yazıldı; fotoğraflara bakılmadı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-dokuzun-hani/p132-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "260"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Dokuzun Hanı'nın uzaktan görünüşü",
+        "en": "Distant view of Dokuzun Hanı"
+      },
+      "alt": {
+        "tr": "Bozkırda, çam ağaçları ve çalılıkların arkasında duran alçak taş yapı. Ortasında kemerli bir giriş kapısı var; önünde taş döşeli bir yol uzanıyor, gökyüzü kapalı.",
+        "en": "A low stone building on open steppe behind conifers and shrubs, with an arched entrance in the middle. A paved path leads to it under a cloudy sky."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-dokuzun-hani/p132-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "261"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Hanın sivri kemerli girişi",
+        "en": "The han's pointed-arch entrance"
+      },
+      "alt": {
+        "tr": "Düzgün kesme taş duvarda sivri kemerli bir nişin içinde çift kanatlı koyu renkli ahşap kapı var. Kemerin üstünde dikdörtgen bir taş levha yer alıyor.",
+        "en": "A dark double-leaf wooden door set in a pointed-arch recess in a wall of dressed stone. A rectangular stone panel sits above the door."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-dokuzun-hani/p132-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "261"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Avluda taş bloklar ve duvar",
+        "en": "Stone blocks and wall in the courtyard"
+      },
+      "alt": {
+        "tr": "Kaba taş duvarın önünde, taş döşeli zeminde duran iri dikdörtgen taş bloklar ve kırık mimari parçalar. Taşların arasında ot bitmiş.",
+        "en": "Large rectangular stone blocks and broken architectural fragments on a paved ground in front of a rough stone wall, with weeds growing between the stones."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

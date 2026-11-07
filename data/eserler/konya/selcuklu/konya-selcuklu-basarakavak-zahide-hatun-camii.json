@@ -1,0 +1,329 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-basarakavak-zahide-hatun-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Camiyi yaptıranın kim olduğu kitapta yok (founder null).",
+      "Mahalle adı metinde yok (kasaba içinde).",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Köy halkı 900 yıllık olduğunu söylerken kitap mevcut yapıyı XIX. yüzyıla tahmin ediyor; iki iddia yan yana verildi, kitabın tahmini esas alındı."
+      },
+      {
+        "field": "sections[mimari]",
+        "note": "İngilizce metin 'The minbar to the right of the minbar' diyor (Türkçesi: mihrabın sağındaki minber); Türkçe esas alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "(Başarakavak) Zahide Hatun Camii",
+    "en": "(Başarakavak) Zahide Hatun Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "cami",
+    "Başarakavak",
+    "ahşap direkli",
+    "ahşap mihrap",
+    "kırma çatı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": null,
+    "address": "Başarakavak Kasabası",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "297"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.002623,
+      "lng": 32.237879,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/320053802 ('Zahide Hatun Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Mevcut yapı tahminen XIX. yüzyıl",
+      "en": "Present building estimated 19th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Kitâbe ve vakfiye yoktur; köy halkı 900 yıllık olduğunu söyler, mevcut yapının XIX. yüzyılda yapıldığı tahmin edilir.",
+      "en": "No inscription or deed; villagers say it is 900 years old, the present building is estimated to be 19th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "297"
+      }
+    ]
+  },
+  "founder": null,
+  "summary": {
+    "tr": "Beşare Bey'in at yetiştirmek için kurduğu Başarakavak kasabasındaki, ahşap direkli ve ahşap tavanlı cami; mevcut yapı tahminen XIX. yüzyıldandır.",
+    "en": "A mosque with wooden pillars and a wooden ceiling in Başarakavak, the town founded by Beşare Bey for horse breeding; the present building is estimated to date from the 19th century."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Başarakavak",
+        "en": "History and Başarakavak"
+      },
+      "body": {
+        "tr": "Cami Selçuklu ilçesi Başarakavak Kasabası'ndadır. Başarakavak, Selçuklu Sultanı I. İzzeddin Keykâvus zamanında Emîr-i Âhur Beşare Bey tarafından kaliteli at cinsleri yetiştirmek amacıyla kurulmuş bir kasabadır; Konya'ya yakın ama tepelerin ardında gözden uzak olması, havası, suyu ve bitki örtüsü saray ve ordunun dayanıklı atlarının yetiştirilmesi için elverişli olduğundan tercih edilmiştir. Caminin kitâbesi ve vakfiyesi yoktur. Köy halkı caminin 900 yıllık olduğunu söyler; mevcut yapının XIX. yüzyılda yapıldığı tahmin edilir. Yapı 1980 ve 1996'da onarılmış, 1977'de minare eklenmiştir. Banisi hakkında bilgi yoktur.",
+        "en": "The mosque is in the town of Başarakavak, Selçuklu District. Başarakavak was founded by Emîr-i Âhur Beşare Bey under Seljuk Sultan Izzeddin Keykâvus I to breed quality horses; it was chosen because it is near Konya yet hidden behind the hills, with air, water and vegetation suitable for the durable horses of the palace and army. The mosque has no inscription or deed. Villagers say it is 900 years old; the present building is estimated to be 19th century. It was repaired in 1980 and 1996 and a minaret was added in 1977. Nothing is known about its builder."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "296-297"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dıştan dikdörtgen planlıdır ve kırma çatıyla örtülüdür. Harime batıdaki kapıdan girilir; iç mekân ahşap direkli ve ahşap tavanlıdır. Kıble duvarının ortasındaki yarım daire planlı mihrap ahşaptır ve bitkisel süslemelidir. Mihrabın sağındaki minber yakın zamanda yenilenmiştir.",
+        "en": "The mosque is rectangular from outside with a hipped roof. The harim is entered from the west door; the interior has wooden pillars and a wooden ceiling. The semicircular wooden mihrab in the middle of the qibla wall has floral decoration. The minbar on its right was recently renewed."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "297"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Beşare Bey",
+      "role": {
+        "tr": "Başarakavak kasabasını kuran Emîr-i Âhur",
+        "en": "Emîr-i Âhur who founded the town of Başarakavak"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "minare-1977",
+      "year": 1977,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Minare eklendi",
+        "en": "Minaret added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "297"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1980",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "297"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1996",
+      "year": 1996,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım",
+        "en": "Repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "297"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-selcuklu-besare-bey-mescidi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Caminin bulunduğu Başarakavak kasabası Beşare Bey tarafından kurulmuştur; cami Beşare Bey'in eseri olarak anılmaz.",
+        "en": "The town of Başarakavak, where the mosque stands, was founded by Beşare Bey; the mosque itself is not attributed to him."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "296-297"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dıştan dikdörtgen planlı, kırma çatılı bir köy camisi. Batıdaki kapıdan girilir; içeride ahşap direkler ahşap bir tavanı taşır. Kıble duvarının ortasındaki yarım daire planlı mihrap ahşaptır ve bitkisel motiflerle süslüdür.",
+      "en": "A village mosque, rectangular from outside with a hipped roof. It is entered from the west; inside, wooden pillars carry a wooden ceiling. The semicircular wooden mihrab in the qibla wall is decorated with floral motifs."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "297-297"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1227",
+        "original_name": "pdf-s150-xref1227",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "297"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "(Başarakavak) Zahide Hatun Camii (kitap s. 297)",
+        "en": "(Başarakavak) Zahide Hatun Mosque (book p. 297)"
+      },
+      "alt": {
+        "tr": "İç mekanda, ahşap panellerle kaplı duvarlar, kırmızı halı, büyük bir kubbe ve ahşap mimari detaylar görülüyor.",
+        "en": "Inside, wooden panelled walls, red carpet, a large dome, and wooden architectural details are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1225",
+        "original_name": "pdf-s150-xref1225",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "297"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "(Başarakavak) Zahide Hatun Camii (kitap s. 297)",
+        "en": "(Başarakavak) Zahide Hatun Mosque (book p. 297)"
+      },
+      "alt": {
+        "tr": "Yüksek bir minare, kare bir yapı ve çevresindeki evlerden oluşan bir cami kompleksi.",
+        "en": "A mosque complex with a tall minaret, a square building, and surrounding houses."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1229",
+        "original_name": "pdf-s150-xref1229",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "297"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "(Başarakavak) Zahide Hatun Camii (kitap s. 297)",
+        "en": "(Başarakavak) Zahide Hatun Mosque (book p. 297)"
+      },
+      "alt": {
+        "tr": "Kırmızı zeminli, altın işlemeli bir levhada Arapça hat ve bitki desenleriyle süslenmiş bir yazı levhası.",
+        "en": "A red plaque with gold inlaid Arabic calligraphy and floral patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

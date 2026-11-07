@@ -16,10 +16,12 @@ import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import { requireUser } from "./auth.ts";
 import { toModerationItem } from "./community.mapper.ts";
+import type { PhotoUrls } from "./photo-urls.ts";
 import type { CommunityRepository, ReviewDecision } from "./community.repository.ts";
 
 const QueueQuerySchema = z.object({
   status: ContributionStatusSchema.default("pending"),
+  kind: z.enum(["notes", "photos"]).optional().describe("notes: ipucu, anı, düzeltme; photos: fotoğraf önerileri; verilmezse hepsi"),
   lang: LangSchema.optional(),
   limit: z.coerce.number().int().min(1).max(100).default(50),
   offset: z.coerce.number().int().min(0).default(0),
@@ -31,10 +33,12 @@ const bearer = [{ bearerAuth: [] }];
 
 export interface ModerationRoutesOptions {
   repository: CommunityRepository;
+  /** Signs the paths of photos waiting for review. */
+  photoUrls: PhotoUrls;
 }
 
-/** Moderation queue. Every route requires a moderator token (`npm run moderator:create`). */
-export const moderationRoutes: FastifyPluginAsync<ModerationRoutesOptions> = async (app, { repository }) => {
+/** Moderation queue. Every route requires a moderator or admin (`npm run account:create`). */
+export const moderationRoutes: FastifyPluginAsync<ModerationRoutesOptions> = async (app, { repository, photoUrls }) => {
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
   const authErrors = { 400: errorSchema, 401: errorSchema, 403: errorSchema };
 
@@ -60,7 +64,7 @@ export const moderationRoutes: FastifyPluginAsync<ModerationRoutesOptions> = asy
       total,
       limit: query.limit,
       offset: query.offset,
-      items: items.map((item) => toModerationItem(item, lang)),
+      items: items.map((item) => toModerationItem(item, lang, photoUrls)),
     });
   });
 
@@ -72,10 +76,11 @@ export const moderationRoutes: FastifyPluginAsync<ModerationRoutesOptions> = asy
 
     const result = await repository.review(id, moderator.id, decision);
     if (result === "not_found") throw new HttpError(404, "CONTRIBUTION_NOT_FOUND", `Contribution "${id}" not found`);
+    if (result === "own") throw new HttpError(403, "OWN_CONTRIBUTION", "Another moderator must review your own contribution");
     if (result === "already_reviewed") {
       throw new HttpError(409, "ALREADY_REVIEWED", `Contribution "${id}" has already been reviewed`);
     }
-    return ModerationItemSchema.parse(toModerationItem(result, lang));
+    return ModerationItemSchema.parse(toModerationItem(result, lang, photoUrls));
   }
 
   const reviewResponses = { 200: toOpenApiSchema(ModerationItemSchema), ...authErrors, 404: errorSchema, 409: errorSchema };

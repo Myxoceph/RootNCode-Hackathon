@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-altinkalem-cevlek-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakıf (vakfiye, gelirler) ayrıntısı kitapta yok.",
+      "Önceki onarımların tarihleri kitapta yok.",
+      "Kitapta mescit TOC'de 'Altınşehir' başlığı altında görünüyor; metin başlığı AKŞEHİR olduğundan ilçe Akşehir alındı.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Altınkalem (Cevlek) Mescidi",
+    "en": "Altınkalem (Cevlek) Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "mescit",
+    "Selçuklu",
+    "Akşehir",
+    "kitabeli",
+    "tek kubbeli"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Altınkalem Mahallesi",
+    "address": "Mescit Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "323"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 620 / M. 1223",
+      "en": "620 AH / 1223 AD"
+    },
+    "start_year": 1223,
+    "end_year": 1223,
+    "hijri_year": 620,
+    "century": 13,
+    "basis": {
+      "tr": "Giriş kapısı üzerindeki sekiz satırlık Arapça celî sülüs kitâbeye göre.",
+      "en": "According to the eight-line Arabic celi thuluth inscription over the entrance."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "323-325"
+      }
+    ]
+  },
+  "founder": {
+    "name": "İsfendiyarzade Eminüddin Yusuf",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "323"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "323-325"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Sultan Alaaddin Keykubad döneminde 620 / 1223'te İsfendiyarzade Eminüddin Yusuf'un yaptırdığı, kare planlı tek kubbeli Selçuklu mescidi.",
+    "en": "A square, single-domed Seljuk masjid built in 620 AH / 1223 AD by İsfendiyarzade Eminüddin Yusuf during the reign of Sultan Alaaddin Keykubad."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Mescit Altınkalem Mahallesi Mescit Sokak'tadır. Giriş kapısı üzerindeki celî sülüs hatlı sekiz satırlık Arapça kitâbeye göre Sultan Alaaddin Keykubad zamanında İsfendiyarzade Eminüddin Yusuf tarafından H. 620 / M. 1223'te yapılmıştır. Günümüze dek farklı tarihlerde onarım görmüş; giriş cephesinin alt bölümündeki tuğlalar yapıya uygun yapılmamış, kubbe dıştan betonla sıvanmıştır. Vakıflar Bölge Müdürlüğü 2018'de tamir etmiştir.",
+        "en": "The masjid is on Mescit Street, Altınkalem Neighborhood. According to the eight-line Arabic celi thuluth inscription over the entrance it was built by İsfendiyarzade Eminüddin Yusuf in 620 AH / 1223 AD in the reign of Sultan Alaaddin Keykubad. It has had repairs at various dates: the bricks at the lower entrance facade were not suited to the building and the dome was plastered with concrete. The Regional Directorate of Foundations repaired it in 2018."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "323"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Mescit giriş bölümü ve kare planlı harimden oluşur; temelde taş, üstte tuğla kullanılmıştır. Bazı pencereler özgündür; cephedeki iki pencerenin alınlıklarında çini mozaik geometrik panolar vardır. Doğu penceresinde ahşap üzerine kıvrım dallar arasında palmet motifleri ve ana bordürde natüralist palmetler görülür. Kare planlı, tek kubbeli harimin duvarları sıvalıdır; tuğla kubbeye sivri kemerli tromplarla geçilir, kubbe dıştan beton kaplıdır. Kuzeye sonradan ahşap mahfil, güneybatı köşeye minber eklenmiştir. Mihrap yarım daire planlı ve mukarnas kavsaralıdır.",
+        "en": "The masjid consists of an entrance section and a square harim, with stone foundations and brick above. Some windows are original; the pediments of two facade windows have geometric tile-mosaic panels. The east window has palmette motifs among curved wooden branches, and naturalistic palmettes on the main border. The plastered square harim is single-domed, the brick dome reached by pointed-arch squinches and covered with concrete outside. A wooden mahfil was later added on the north and a minbar at the southwest corner. The mihrab is semicircular with a muqarnas kavsara."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "324-325"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "İsfendiyarzade Eminüddin Yusuf",
+      "role": {
+        "tr": "Banî",
+        "en": "Founder"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "insa-kitabesi",
+      "location": {
+        "tr": "Giriş kapısı üzerinde",
+        "en": "Above the entrance gate"
+      },
+      "language": "ar",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 620,
+        "gregorian": "1223"
+      },
+      "note": {
+        "tr": "Sekiz satırdır; metni ve çevirisi kitapta verilmemiştir.",
+        "en": "Eight lines; text and translation are not given in the book."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "323"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1223",
+      "year": 1223,
+      "date": null,
+      "hijri": "620",
+      "type": "construction",
+      "title": {
+        "tr": "İsfendiyarzade Eminüddin Yusuf tarafından yapıldı",
+        "en": "Built by İsfendiyarzade Eminüddin Yusuf"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "323"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2018",
+      "year": 2018,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Bölge Müdürlüğü tarafından tamir edildi",
+        "en": "Repaired by the Regional Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "323"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Giriş bölümü ve kare planlı, tek kubbeli harimden oluşan küçük bir Selçuklu mescididir. Alt kısmı taş, üstü tuğladır; cephedeki iki pencerenin alınlığında çini mozaik geometrik panolar vardır. Kapı üzerinde sekiz satırlık kitâbe bulunur. İçeride tuğla kubbe sivri kemerli tromplara oturur; mihrap mukarnas kavsaralıdır.",
+      "en": "A small Seljuk masjid with an entrance section and a square single-domed harim, stone below and brick above. Two facade windows have geometric tile-mosaic pediments, and an eight-line inscription is over the door. Inside, a brick dome sits on pointed-arch squinches; the mihrab has a muqarnas hood."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "323-325"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1324",
+        "original_name": "pdf-s163-xref1324",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "323"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Altınkalem (Cevlek) Mescidi (kitap s. 323)",
+        "en": "Altınkalem (Cevlek) Masjid (book p. 323)"
+      },
+      "alt": {
+        "tr": "Tuğladan yapılmış bir cami, kubbesi ve ahşap kapısıyla, duvarlarında mavi ve beyaz zeminli geometrik süslemeleri olan kemerli pencereleri var.",
+        "en": "A brick mosque with a dome and wooden door, featuring arched windows with blue and white geometric patterns on the walls."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1330",
+        "original_name": "pdf-s164-xref1330",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "324"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Altınkalem (Cevlek) Mescidi (kitap s. 324)",
+        "en": "Altınkalem (Cevlek) Masjid (book p. 324)"
+      },
+      "alt": {
+        "tr": "Küçük beyaz lambalarla süslü, bronz renkli metal bir avize, kemerli bir tavanın ortasında asılı.",
+        "en": "A bronze metal chandelier with small white lamps hangs in the center of a vaulted ceiling."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1328",
+        "original_name": "pdf-s164-xref1328",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "324"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Altınkalem (Cevlek) Mescidi (kitap s. 324)",
+        "en": "Altınkalem (Cevlek) Masjid (book p. 324)"
+      },
+      "alt": {
+        "tr": "Kiremit duvarlı, kemerli tavanlı iç mekanda ahşap merdivenli minber ve mescit halısı yer alıyor.",
+        "en": "Brick-walled interior with arched ceiling, wooden minbar, and prayer rug."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1332",
+        "original_name": "pdf-s164-xref1332",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "324"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Altınkalem (Cevlek) Mescidi (kitap s. 324)",
+        "en": "Altınkalem (Cevlek) Masjid (book p. 324)"
+      },
+      "alt": {
+        "tr": "Taş sütunlarla çevrili ahşap bir kapı. Kapının üst kısmında yarım daire şeklinde bir pencere var.",
+        "en": "A wooden door framed by stone pillars. The door has a semicircular window at the top."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1334",
+        "original_name": "pdf-s164-xref1334",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "324"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Altınkalem (Cevlek) Mescidi (kitap s. 324)",
+        "en": "Altınkalem (Cevlek) Masjid (book p. 324)"
+      },
+      "alt": {
+        "tr": "Köşede ahşap bir mihrap, üzerinde altın renkli bir hilal ve yıldız sembolü var. Arka planda kiremit duvar.",
+        "en": "A wooden mihrab in the corner, topped with a golden crescent and star. Brick wall in the background."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1336",
+        "original_name": "pdf-s164-xref1336",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "325"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Altınkalem (Cevlek) Mescidi (kitap s. 325)",
+        "en": "Altınkalem (Cevlek) Masjid (book p. 325)"
+      },
+      "alt": {
+        "tr": "Kiremit duvarın içinde, mavi çinilarla süslü dikdörtgen bir levha. Levhanın üzerinde Arapça hat yazılı metin var.",
+        "en": "A rectangular stone plaque with Arabic calligraphy, framed by blue tiles, set in a brick wall."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

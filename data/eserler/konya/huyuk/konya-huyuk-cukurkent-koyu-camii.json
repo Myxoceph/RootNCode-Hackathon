@@ -1,0 +1,356 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-huyuk-cukurkent-koyu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "İlk yapım tarihi ve banî kitapta yok.",
+      "Vakıf/vakfiye bilgisi kitapta yok.",
+      "era alanı (gec-osmanli) yalnızca 1800 ve 1893-94 tarihlerine dayalı tahmindir; teyit edilmeli.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Giriş levhasında M. 1800, kapıda H. 1311 / M. 1893-94 ve M. 1972 yazar; kitap ilk yapım tarihinin bilinmediğini, son iki tarihin onarım olabileceğini söyler. Hicri-miladi karşılığı tutarlıdır. Dönem (era) kesin olmadığından gec-osmanli yalnızca olası bir yaklaşımdır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Çukurkent Köyü Camii",
+    "en": "Çukurkent Village Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "köy camii",
+    "moloz taş",
+    "betonarme minare",
+    "son cemaat yeri sonradan eklendi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Hüyük",
+    "neighborhood": "Çukurkent Köyü, Köyiçi Mevkii",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "438-439"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk yapım tarihi bilinmiyor; giriş levhasında M. 1800, kapıda H. 1311 / M. 1893-94 ve M. 1972",
+      "en": "First construction date unknown; entrance plate 1800 AD, harim door 1311 AH / 1893-94 AD and 1972 AD"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 1311,
+    "century": null,
+    "basis": {
+      "tr": "İlk yapım tarihi bilinmiyor; 1893-94 ve 1972 tarihlerinin onarım tarihleri olabileceği düşünülüyor. Yıl aralığı atanmadı.",
+      "en": "First construction date unknown; the 1893-94 and 1972 dates may be repair dates. No year range assigned."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "438-439"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Hüyük Çukurkent Köyü'nde, ilk yapım tarihi bilinmeyen; girişte M. 1800, kapıda H. 1311 / M. 1893-94 ve M. 1972 tarihleri bulunan, 2003'te onarılan, 1989 tarihli betonarme minareli moloz taş cami.",
+    "en": "A rubble-stone mosque in Çukurkent Village, Hüyük, with an unknown first construction date, dates 1800, 1893-94 and 1972 on its plate and door, repaired in 2003, with a reinforced-concrete minaret of 1989."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Hüyük, Çukurkent Köyü, Köyiçi Mevkii'ndedir. Giriş levhasında M. 1800, harime giriş kapısı üzerinde H. 1311 / M. 1893-94 ve M. 1972 tarihleri yer alır. İlk inşa tarihi bilinmemekle birlikte 1893-94 ve 1972 tarihlerinin onarım tarihleri olabileceği düşünülmektedir. Cami 2003'te Vakıflar Genel Müdürlüğü tarafından tamir edilmiştir.",
+        "en": "The mosque is in Çukurkent Village, Köyiçi locality, Hüyük. The entrance plate bears 1800 AD and the harim entrance door bears 1311 AH / 1893-94 AD and 1972 AD. The first construction date is unknown, but 1893-94 and 1972 may be restoration dates. The General Directorate of Foundations repaired it in 2003."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dikdörtgen planlıdır; içten düz damlı, dıştan dört yöne eğimli kırma çatılıdır. Onarımlarda kuzeye son cemaat yeri eklenmiştir. Kagir yapıda moloz taş ve ahşap, minarede betonarme kullanılmıştır. Minarenin pabuçluk kısmındaki kitâbeye göre 1989'da yapılmıştır; kare kaideli, silindirik gövdeli, tek şerefeli ve külahlıdır. Harime son cemaat yerindeki kapıdan geçilir. Harim mihraba dik üç sahına ayrılmıştır; kuzeyde mahfil, güneyde mihrap ve minber vardır. Ahşap kaplamalı dikdörtgen formdaki mihrabın yanlarında üç sıra bordür vardır, içi çokgen yüzeylidir. Güneybatı köşedeki sade minber taç kapı, aynalık ve köşkten oluşur; mihrap ve minberde bitkisel süsleme vardır.",
+        "en": "Rectangular, flat-roofed inside and with a four-way hipped roof outside. A narthex was added to the north during repairs. Rubble stone and wood were used in the masonry building, reinforced concrete in the minaret, which per its inscription on the base was built in 1989; it has a square base, cylindrical body, single balcony and cone. The harim is entered through the narthex door and divided into three aisles perpendicular to the mihrab, with a gallery in the north and mihrab and minbar in the south. The wood-covered rectangular mihrab has three border rows on the sides and a polygonal interior. The simple minbar in the southwest corner consists of crown door, transom and pavilion; both carry floral decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "438-439"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "minare-kitabesi-1989",
+      "location": {
+        "tr": "Minarenin pabuçluk bölümünde",
+        "en": "On the base of the minaret"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1989"
+      },
+      "note": {
+        "tr": "Minarenin 1989'da yapıldığını bildirir. Özgün metin kitapta verilmiyor.",
+        "en": "States the minaret was built in 1989. Original text not given."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "438"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "levha-1800",
+      "year": 1800,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Giriş levhasındaki tarih (M. 1800)",
+        "en": "Date on the entrance plate (1800)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "id": "kapi-1893",
+      "year": 1893,
+      "date": null,
+      "hijri": "1311",
+      "type": "record",
+      "title": {
+        "tr": "Harim kapısındaki tarih (H. 1311 / M. 1893-94); onarım olabilir",
+        "en": "Date on the harim door (1311 AH / 1893-94 AD); may be a repair"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "id": "kapi-1972",
+      "year": 1972,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Harim kapısındaki tarih (M. 1972); onarım olabilir",
+        "en": "Date on the harim door (1972); may be a repair"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "id": "minare-1989",
+      "year": 1989,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Betonarme minarenin yapılması",
+        "en": "Reinforced-concrete minaret built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "438"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2003",
+      "year": 2003,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "VGM tamiri",
+        "en": "GDF repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "438"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, moloz taş ve ahşap kullanılmış bir köy camisidir; içten düz, dıştan dört yöne eğimli kırma çatılıdır. Kuzeyde sonradan eklenmiş son cemaat yeri bulunur. Tek şerefeli, külahlı, betonarme bir minaresi vardır. Harim üç sahınlıdır, kuzeyde mahfil, güneyde ahşap kaplamalı mihrap ve sade bir minber yer alır.",
+      "en": "A rectangular village mosque of rubble stone and wood, flat inside with a four-way hipped roof outside. A later-added narthex lies on the north. It has a single-balcony reinforced-concrete minaret with a cone. The harim has three aisles, a gallery in the north, and a wood-covered mihrab and simple minbar in the south."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "438-439"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1919",
+        "original_name": "pdf-s221-xref1919",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "438"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Çukurkent Köyü Camii (kitap s. 438)",
+        "en": "Çukurkent Village Mosque (book p. 438)"
+      },
+      "alt": {
+        "tr": "Yüksek bir minare, kırmızı çatılı evler ve tarım arazileriyle çevrili bir köyde yer alıyor.",
+        "en": "A tall minaret stands in a village surrounded by red-roofed houses and farmland."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1921",
+        "original_name": "pdf-s221-xref1921",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "438"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Çukurkent Köyü Camii (kitap s. 438)",
+        "en": "Çukurkent Village Mosque (book p. 438)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap sütunlar, kirişler ve tavan var. Duvarlarda ahşap kapılı minber ve kubbeli giriş, çatıya asılı kristal avize, pencereler ve zeminde halı görünüyor.",
+        "en": "Wooden pillars, beams, and ceiling in the interior. A wooden minbar and arched entrance, a crystal chandelier hanging from the ceiling, windows, and a carpet on the floor are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1923",
+        "original_name": "pdf-s221-xref1923",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "439"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Çukurkent Köyü Camii (kitap s. 439)",
+        "en": "Çukurkent Village Mosque (book p. 439)"
+      },
+      "alt": {
+        "tr": "Ahşap sütunlar ve wicker dolgu ile kaplı bir duvar detayı.",
+        "en": "A wall detail with wooden posts and wicker infill."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

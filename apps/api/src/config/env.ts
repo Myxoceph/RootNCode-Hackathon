@@ -53,6 +53,33 @@ const EnvSchema = z.object({
   RATE_LIMIT_MAX: z.coerce.number().int().min(0).default(120),
   // Open-Meteo base URL for current weather (no API key); empty turns weather off.
   OPEN_METEO_URL: z.union([z.literal(""), z.url()]).default("https://api.open-meteo.com"),
+  // AI assistant: an OpenAI-compatible endpoint (Ollama: http://<host>:11434/v1) and its model name.
+  // Empty turns the assistant off; GET /chat/status then reports it unavailable.
+  ASSISTANT_BASE_URL: z.union([z.literal(""), z.url()]).default(""),
+  ASSISTANT_MODEL: z.string().default(""),
+  // Only for hosted providers; Ollama needs none. Never logged.
+  ASSISTANT_API_KEY: z.string().default(""),
+  // Sesli Rehber, on the assistant's provider (its /audio/transcriptions and /audio/speech):
+  // speech-to-text and text-to-speech models, e.g. EVREN's qwen3-asr-1.7b and voxcpm2.
+  // Either empty turns voice off; POST /voice/* then answer 503.
+  VOICE_ASR_MODEL: z.string().default(""),
+  VOICE_TTS_MODEL: z.string().default(""),
+  // Taşa Sor, on the assistant's provider: a model that sees images (EVREN's qwen3-vl-30b).
+  // Empty turns it off; POST /vision/ask then answers 503.
+  VISION_MODEL: z.string().default(""),
+  // OpenTripPlanner serving the Konya graph (deploy/otp/prepare.sh), e.g. http://otp:8080; empty turns
+  // transit directions off and GET /transit/plan answers 503.
+  OTP_URL: z.union([z.literal(""), z.url()]).default(""),
+  // Photos uploaded from the panel: an R2 token allowed to write only this bucket. Any of them empty
+  // turns uploads off; POST /admin/assets/:id/media then answers 503. Never logged.
+  MEDIA_S3_ENDPOINT: z.union([z.literal(""), z.url()]).default(""),
+  MEDIA_BUCKET: z.string().default(""),
+  MEDIA_S3_ACCESS_KEY_ID: z.string().default(""),
+  MEDIA_S3_SECRET_ACCESS_KEY: z.string().default(""),
+  // The app's "Kilidi aç": POST /assets/:id/visit/unlock records a visit without position or photo,
+  // and POST /assets/:id/visit/proof takes no position, so a printed photo can stand in for the site.
+  // On until visits must happen on site; then "false".
+  DEMO_UNLOCK: z.enum(["true", "false"]).default("true").transform((value) => value === "true"),
 });
 
 export type Env = z.infer<typeof EnvSchema>;

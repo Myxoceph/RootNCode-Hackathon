@@ -48,9 +48,27 @@ services:
       LOG_LEVEL: info
       CORS_ORIGINS: ${PUBLIC_URL:-http://localhost}
       MEDIA_BASE_URL: ${MEDIA_BASE_URL:-https://media.allbytech.com}
+      # Photos uploaded from the panel; empty turns uploads off.
+      MEDIA_S3_ENDPOINT: ${MEDIA_S3_ENDPOINT:-}
+      MEDIA_BUCKET: ${MEDIA_BUCKET:-}
+      MEDIA_S3_ACCESS_KEY_ID: ${MEDIA_S3_ACCESS_KEY_ID:-}
+      MEDIA_S3_SECRET_ACCESS_KEY: ${MEDIA_S3_SECRET_ACCESS_KEY:-}
       ASSET_VISIBILITY: published
       # Only Caddy reaches the API (private Docker network); the rate limit keys on the client IP it forwards.
       TRUST_PROXY: uniquelocal
+      # AI assistant; empty turns it off. Ollama on the same machine: http://host.docker.internal:11434/v1
+      ASSISTANT_BASE_URL: ${ASSISTANT_BASE_URL:-}
+      ASSISTANT_MODEL: ${ASSISTANT_MODEL:-}
+      ASSISTANT_API_KEY: ${ASSISTANT_API_KEY:-}
+      # Sesli Rehber on the same provider; EVREN's models by default, empty turns voice off.
+      VOICE_ASR_MODEL: ${VOICE_ASR_MODEL-qwen3-asr-1.7b}
+      VOICE_TTS_MODEL: ${VOICE_TTS_MODEL-voxcpm2}
+      VISION_MODEL: ${VISION_MODEL-qwen3-vl-30b}
+      # Konya transit pilot (the otp service below).
+      OTP_URL: http://otp:8080
+    # Lets the container reach a model served on the host (Docker Desktop has it already; Linux needs this).
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     read_only: true
     tmpfs:
       - /tmp
@@ -59,6 +77,25 @@ services:
         condition: service_healthy
       seed:
         condition: service_completed_successfully
+      otp:
+        condition: service_healthy
+
+  # Konya transit pilot: OpenTripPlanner serves the graph deploy/otp/prepare.sh built (docs/deploy.md).
+  otp:
+    image: opentripplanner/opentripplanner:2.10.0
+    restart: unless-stopped
+    command: ["--load", "--serve"]
+    environment:
+      JAVA_TOOL_OPTIONS: -Xmx2g
+    volumes:
+      - ./otp/data:/var/opentripplanner:ro
+    # The image has no curl; the port opens once the graph is loaded.
+    healthcheck:
+      test: ["CMD", "bash", "-c", "exec 3<>/dev/tcp/127.0.0.1/8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
 
   web:
     build:

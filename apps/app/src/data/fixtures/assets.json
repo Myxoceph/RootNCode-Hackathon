@@ -1,5 +1,5 @@
 {
-  "version": "0.3.1",
+  "version": "0.3.37",
   "lang": "tr",
   "total": 24,
   "limit": 24,
@@ -26,10 +26,12 @@
         "lat": 40.18417,
         "lng": 29.06167,
         "verified": true,
-        "source": "manual"
+        "source": "manual",
+        "approximate": false
       },
       "summary": "Osmanlıların Bursa'da yaptırdığı ilk büyük cami. Yıldırım Bayezid'in 1399'da tamamlattığı yirmi kubbeli yapı, yaklaşık 170 hat levhasıyla bir hat müzesini, kündekâri minberiyle Osmanlı ahşap işçiliğinin en nadide örneklerinden birini barındırır.",
       "datingDisplay": "H. 802 / M. 1399-1400",
+      "yearLabel": "1399",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -49,6 +51,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -85,7 +88,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 56
     },
     {
       "id": "bursa-osmangazi-orhan-bey-camii",
@@ -108,10 +113,12 @@
         "lat": 40.183933,
         "lng": 29.064113,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Orhan Bey'in külliyesi bünyesinde 1339-40'ta yapılan, simetrik planlı tabhaneli/zaviyeli cami. Beş gözlü son cemaat yeri, mihrap duvarındaki ileri düzey alçı işçilikli mihrabı ve çok sayıda onarım geçirmiş yapısıyla erken Osmanlı mimarisinin karakteristik örneklerinden biridir.",
       "datingDisplay": "H. 740 / M. 1339-40",
+      "yearLabel": "1339",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -128,6 +135,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -154,7 +162,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": "bursa-osmangazi-orhan-bey-kulliyesi",
+      "prominence": 44
     },
     {
       "id": "bursa-osmangazi-emir-hani",
@@ -177,10 +187,12 @@
         "lat": 40.184506,
         "lng": 29.062328,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Gazi Orhan Bey'in külliyesinin parçası olarak 1339-40'ta At Pazarı bölgesinde yaptırılan, Bursa'nın ilk ticari yapısı ve ilk bedesteni sayılan iki katlı han. Yaklaşık 45 × 45 m ölçüsünde, 650 m² civarında orta avlulu, 74 odalıdır; kantariye geliri hanın mali kaynağıdır.",
       "datingDisplay": "H. 740 / M. 1339-40",
+      "yearLabel": "1339",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -197,6 +209,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "courtyard",
         "sources": {
           "webp": [
             {
@@ -233,7 +246,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": "bursa-osmangazi-orhan-bey-kulliyesi",
+      "prominence": 20
     },
     {
       "id": "bursa-osmangazi-koza-hani",
@@ -256,10 +271,12 @@
         "lat": 40.184379,
         "lng": 29.063538,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Sultan II. Bayezid'in İstanbul'daki külliyesine gelir sağlamak için 1489-1491 arasında yaptırdığı han. Orhan Camii ile Ulucami arasında yer alır; doğusuna bitişik tek katlı ahır-depo bölümü (İç Koza Hanı) Osmanlı'dan kalan nadir ahırlardandır. Bugün Bursa Çarşısı'nın en yoğun ticaret alanlarından biridir.",
       "datingDisplay": "Mart 1489 - 30 Eylül 1491",
+      "yearLabel": "1489",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -276,6 +293,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -312,7 +330,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 15
     },
     {
       "id": "bursa-osmangazi-yildirim-bayezid-bedesteni",
@@ -334,6 +354,7 @@
       "coordinates": null,
       "summary": "Osmanlı Devleti'nin inşa edilen ilk bedesteni; XIV. yüzyılda Yıldırım Bayezid yaptırmıştır. Çarşı dokusunun çekirdeğini oluşturur, sonraki bedestenlere örnek olmuştur. 14 kubbeli, 15,00 × 56,50 m'lik merkezi mekânı bugün Kapalıçarşı'nın kuyumcu çarşısı olarak kullanılır.",
       "datingDisplay": "XIV. yüzyıl",
+      "yearLabel": "XIV. yüzyıl",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -350,6 +371,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "interior",
         "sources": {
           "webp": [
             {
@@ -376,7 +398,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 12
     },
     {
       "id": "bursa-osmangazi-muradiye-kulliyesi",
@@ -399,11 +423,15 @@
         "lat": 40.190911,
         "lng": 29.046998,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Bursa'daki son selatin külliyesi: Sultan II. Murad'ın 1425-1426'da yaptırdığı cami, medrese, hamam, imaret, sıbyan mektebi, çeşme ve on üç hanedan türbesinden oluşan topluluk. Mahalleye adını veren külliye 2014'te UNESCO Dünya Miras Alanı olarak tescillenmiştir.",
       "datingDisplay": "H. 828-830 / M. 1425-1426",
-      "cover": null
+      "yearLabel": "1425",
+      "cover": null,
+      "parentId": null,
+      "prominence": 17
     },
     {
       "id": "bursa-osmangazi-abdal-mehmet-camii",
@@ -426,10 +454,12 @@
         "lat": 40.18671,
         "lng": 29.068119,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Sultan II. Murad döneminde Başçı İbrahim adlı hayırsever tarafından Abdal Mehmed adına yaptırılan, yan yana iki kubbeli ve üç kubbeli son cemaat yerli küçük bir Bursa camisi. Türbesiyle birlikte sağlam ve bakımlı durumdadır.",
       "datingDisplay": "H. Cemaziyelevvel 854 / M. Temmuz 1450 (türbedeki tarihe göre, II. Murad dönemi)",
+      "yearLabel": "1450",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -446,6 +476,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "aerial",
         "sources": {
           "webp": [
             {
@@ -482,7 +513,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 12
     },
     {
       "id": "bursa-osmangazi-abdal-mehmet-turbesi",
@@ -505,10 +538,12 @@
         "lat": 40.186992,
         "lng": 29.068257,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Giriş kapısı üzerindeki kitabeye göre Sultan II. Murad'ın 1450'de yaptırdığı, sekizgen kasnaklı ve kubbeli türbe. İçinde Abdal Mehmed'e ait tek sanduka vardır.",
       "datingDisplay": "H. Cemaziyelevvel 854 / M. Haziran-Temmuz 1450",
+      "yearLabel": "1450",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -525,6 +560,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "aerial",
         "sources": {
           "webp": [
             {
@@ -551,7 +587,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 9
     },
     {
       "id": "bursa-yildirim-abdullatif-kudsi-turbesi",
@@ -574,10 +612,12 @@
         "lat": 40.180323,
         "lng": 29.083383,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Zeyniyye tarikatının Anadolu'daki ilk temsilcisi Abdüllatîf el-Kudsî için Sultan II. Murad tarafından yaptırılan, kare planlı, tek kubbeli türbe. Bugün çoğunlukla ziyarete kapalıdır.",
       "datingDisplay": "Yapım yılı belirtilmemiş; Abdüllatîf el-Kudsî H. 856 / M. 1452'de vefat etmiş, türbeye defnedilmiştir",
+      "yearLabel": null,
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -594,6 +634,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "tomb",
         "sources": {
           "webp": [
             {
@@ -620,7 +661,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 16
     },
     {
       "id": "bursa-osmangazi-acem-reis-camii",
@@ -643,10 +686,12 @@
         "lat": 40.18745,
         "lng": 29.073538,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Fatih döneminde yaşamış Tebrizli tüccar Hoca Bedreddin Mahmud (Acem Reis) tarafından Atpazarı civarında yaptırılan, 1493'te tamamlanan tek kubbeli cami. 1950'lerde harap hâldeyken restore edilerek 1958'de yeniden ibadete açıldı; bahçesindeki hazirede bugün tek mezar taşı kalmıştır.",
       "datingDisplay": "1493'te tamamlandı",
+      "yearLabel": "XV. yüzyıl",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -663,6 +708,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -699,7 +745,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 21
     },
     {
       "id": "bursa-osmangazi-acemler-camii",
@@ -722,10 +770,12 @@
         "lat": 40.188286,
         "lng": 29.064028,
         "verified": false,
-        "source": "photo_exif"
+        "source": "photo_exif",
+        "approximate": false
       },
       "summary": "Sultan II. Murad'ın harem ağalarından Reyhan Paşa'nın 15. yüzyılda yaptırdığı, ahşap çatılı dikdörtgen planlı cami. Acemlerin Muharrem ayinlerini yaptığı hanenin aynı mahallede olması nedeniyle halk arasında 'Acemler Camii' diye anılmıştır.",
       "datingDisplay": "15. yüzyıl",
+      "yearLabel": "1401",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -742,6 +792,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -768,7 +819,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 4
     },
     {
       "id": "bursa-gemlik-adliye-koyu-camii",
@@ -787,9 +840,16 @@
         "label": "Bursa"
       },
       "district": "Gemlik",
-      "coordinates": null,
+      "coordinates": {
+        "lat": 40.387697,
+        "lng": 29.205424,
+        "verified": false,
+        "source": "osm_area",
+        "approximate": true
+      },
       "summary": "Gemlik Adliye Mahallesi'nde, iç mekânı baştan sona Kütahya çinisiyle kaplı, cümle kapısında 1890 tarihi bulunan ahşap cami.",
       "datingDisplay": "1890 (cümle kapısı üzerindeki tarih)",
+      "yearLabel": "1890",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -806,6 +866,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -842,7 +903,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 3
     },
     {
       "id": "bursa-osmangazi-ahmet-dai-camii",
@@ -865,10 +928,12 @@
         "lat": 40.184729,
         "lng": 29.072599,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Fatih Sultan Mehmed döneminde Edincikli Yahşi Bey'in H. 876 / M. 1471'de yaptırdığı, kitabesi günümüze ulaşan tek kubbeli cami. Banisinin değil, mahalleye adını veren Germiyanlı Ahmed Dâî'nin adıyla anılır.",
       "datingDisplay": "H. Muharrem 876 / M. Temmuz 1471",
+      "yearLabel": "1471",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -885,6 +950,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -921,7 +987,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 14
     },
     {
       "id": "bursa-osmangazi-ahmet-pasa-camii",
@@ -944,10 +1012,12 @@
         "lat": 40.190609,
         "lng": 29.058473,
         "verified": false,
-        "source": "photo_exif"
+        "source": "photo_exif",
+        "approximate": false
       },
       "summary": "Sadrazam Fenârî Ahmed Paşa tarafından 1475'te yaptırıldığı belirtilen cami. Bir dönem Halvetî dergâhı olarak kullanıldı; 1803 yangını, 1855 depremi ve 1911'deki büyük onarımla büyük ölçüde yenilendi. Batısındaki hazirede Fethiye Hanım ve dergâh şeyhleri medfundur.",
       "datingDisplay": "1475",
+      "yearLabel": "1475",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -964,6 +1034,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -990,7 +1061,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 13
     },
     {
       "id": "bursa-osmangazi-ahmet-vefik-pasa-tiyatrosu",
@@ -1009,9 +1082,16 @@
         "label": "Bursa"
       },
       "district": "Osmangazi",
-      "coordinates": null,
+      "coordinates": {
+        "lat": 40.183287,
+        "lng": 29.067251,
+        "verified": false,
+        "source": "osm",
+        "approximate": false
+      },
       "summary": "Bugün Bursa Devlet Tiyatrosu tarafından kullanılan yapı, 1938'de Vali Şefik Soyer'in öncülüğünde düzenlenen yarışmada Münevver Belen'in projesi seçilerek Halkevi olarak tasarlanmıştır. 1950-1951'de genişletilip bugünkü biçimini almış, üst katı bir süre Marmara Sineması olarak kullanılmış ve 28 Eylül 1957'de Ahmet Vefik Paşa Tiyatrosu adıyla açılmıştır.",
       "datingDisplay": "1938 (proje) / 1940 (kısmen tamamlanma) / 1950-1951 (genişletme) / 28 Eylül 1957 (tiyatro olarak açılış)",
+      "yearLabel": "1938",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -1028,6 +1108,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "interior",
         "sources": {
           "webp": [
             {
@@ -1064,7 +1145,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 16
     },
     {
       "id": "bursa-osmangazi-akbiyik-camii",
@@ -1087,10 +1170,12 @@
         "lat": 40.181544,
         "lng": 29.062938,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Fatih döneminde tüccar İpekoğlu Hoca Dursun'un Akbıyık Sultan adına yaptırdığı, derzlerindeki çeşitli tuğla-taş süslemeleriyle dikkat çeken, Fatih devrinden ahşap kapısı korunmuş cami. Aynı alanda Akbıyık Sultan'ın türbesi ve haziresi bulunur.",
       "datingDisplay": "Fatih Sultan Mehmed dönemi",
+      "yearLabel": "XV. yüzyıl",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -1107,6 +1192,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -1143,7 +1229,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 14
     },
     {
       "id": "bursa-osmangazi-akbiyik-sultan-turbesi",
@@ -1166,10 +1254,12 @@
         "lat": 40.182197,
         "lng": 29.062442,
         "verified": false,
-        "source": "photo_exif"
+        "source": "photo_exif",
+        "approximate": false
       },
       "summary": "Hacı Bayrâm-ı Velî'nin müritlerinden Akbıyık Sultan'ın, ahşap çatılı türbesi ve haziresi. Dergâh ortadan kalkmış, türbe ve hazire günümüze ulaşmıştır; türbe en son 2006'da restore edilmiştir.",
       "datingDisplay": "XV. yüzyıl (Akbıyık Sultan H. 860 / M. 1456'da vefat etti)",
+      "yearLabel": "XV. yüzyıl",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -1186,6 +1276,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -1212,7 +1303,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 9
     },
     {
       "id": "bursa-kestel-aksu-camii-haziresi",
@@ -1231,6 +1324,7 @@
       "coordinates": null,
       "summary": "Aksu Köyü Camii'nin bahçesindeki hazire. Eskiden çeşitli mezar taşları bulunan alandan bugüne yalnızca H. 998 / M. 1590'da vefat eden Hacı Murad'ın mezar taşı ulaşmıştır.",
       "datingDisplay": null,
+      "yearLabel": null,
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -1247,6 +1341,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "tomb",
         "sources": {
           "webp": [
             {
@@ -1273,7 +1368,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 5
     },
     {
       "id": "bursa-kestel-aksu-koyu-camii",
@@ -1292,6 +1389,7 @@
       "coordinates": null,
       "summary": "Kestel Aksu Mahallesi'nde, yatay dikdörtgen planlı, kırma çatılı moloz taş bir köy camii. İnşa tarihi ve banisi kesin bilinmez; köyün iskân sürecine bağlı olarak XIV. yüzyıl sonu veya XV. yüzyıl başında yapılmış olabileceği değerlendirilmektedir.",
       "datingDisplay": "Kesin tarih bilinmiyor; XIV. yüzyıl sonu ya da XV. yüzyıl başı olabileceği değerlendirilmektedir",
+      "yearLabel": null,
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -1308,6 +1406,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -1334,7 +1433,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 5
     },
     {
       "id": "bursa-kestel-aksu-koyu-hamami",
@@ -1354,10 +1455,12 @@
         "lat": 40.167112,
         "lng": 29.316532,
         "verified": false,
-        "source": "photo_exif"
+        "source": "photo_exif",
+        "approximate": false
       },
       "summary": "Kuzey-güney doğrultulu dikdörtgen planlı köy hamamı; kim tarafından ve ne zaman yapıldığı kesin bilinmez, muhtarlık tabelası 1460 der. 2013'te restore edilmiş ve köy müzesi olarak hizmet vermektedir.",
       "datingDisplay": "1460 (muhtarlık tabelasına göre)",
+      "yearLabel": "1460",
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -1374,6 +1477,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -1390,7 +1494,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 3
     },
     {
       "id": "bursa-osmangazi-alaaddin-bey-cesmesi",
@@ -1413,10 +1519,12 @@
         "lat": 40.185358,
         "lng": 29.049525,
         "verified": false,
-        "source": "photo_exif"
+        "source": "photo_exif",
+        "approximate": false
       },
       "summary": "Kentteki en eski çeşme olarak kabul edilen, Alaaddin Bey Camii'nin avlu duvarına bitişik erken Osmanlı çeşmesi. Almaşık duvarı, sivri kemerli nişi ve kirpi saçağıyla Osmanlı şehir çeşmelerinin ilk örneklerinden sayılır.",
       "datingDisplay": null,
+      "yearLabel": null,
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -1433,6 +1541,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "aerial",
         "sources": {
           "webp": [
             {
@@ -1459,7 +1568,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 2
     },
     {
       "id": "bursa-iznik-alaaddin-i-misri-turbesi",
@@ -1478,7 +1589,10 @@
       "coordinates": null,
       "summary": "Osmanlı'nın ilk müderrislerinden Alâaddin-i Mısrî'nin defnedildiği alanda yer alan, çatısı bulunmayan ve açık alan olarak korunan duvarlı mezarlık türbesi.",
       "datingDisplay": null,
-      "cover": null
+      "yearLabel": null,
+      "cover": null,
+      "parentId": null,
+      "prominence": 7
     },
     {
       "id": "bursa-osmangazi-alacahirka-camii",
@@ -1501,10 +1615,12 @@
         "lat": 40.183693,
         "lng": 29.047986,
         "verified": false,
-        "source": "osm"
+        "source": "osm",
+        "approximate": false
       },
       "summary": "Buhara'dan gelip Bursa'ya yerleşen Alacahırkalı'nın yaptırdığı mescide dayanan, 1585 ve 1635'te onarılan, bahçesinde küçük bir hazire bulunan dikdörtgen planlı cami.",
       "datingDisplay": null,
+      "yearLabel": null,
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -1521,6 +1637,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "exterior",
         "sources": {
           "webp": [
             {
@@ -1537,7 +1654,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 12
     },
     {
       "id": "bursa-osmangazi-alanyeri-mescidi",
@@ -1556,9 +1675,16 @@
         "label": "Bursa"
       },
       "district": "Osmangazi",
-      "coordinates": null,
+      "coordinates": {
+        "lat": 40.186409,
+        "lng": 29.066143,
+        "verified": false,
+        "source": "osm_area",
+        "approximate": true
+      },
       "summary": "Fatih Sultan Mehmed döneminde inşa edildiği düşünülen, 'Tekke Mescit' adıyla da anılan, son cemaat yeri olmayan, ayrık minareli mescit. Eskiden haziresi vardı.",
       "datingDisplay": "Fatih Sultan Mehmed dönemi (tahmini)",
+      "yearLabel": null,
       "cover": {
         "key": "m01",
         "kind": "photo",
@@ -1575,6 +1701,7 @@
         "photographer": null,
         "license": "vakif-katilim-hackathon",
         "archiveYear": null,
+        "subject": "aerial",
         "sources": {
           "webp": [
             {
@@ -1591,7 +1718,9 @@
             }
           ]
         }
-      }
+      },
+      "parentId": null,
+      "prominence": 8
     }
   ]
 }

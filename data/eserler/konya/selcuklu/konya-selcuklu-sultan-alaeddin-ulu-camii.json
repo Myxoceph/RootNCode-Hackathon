@@ -1,0 +1,1333 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-sultan-alaeddin-ulu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Kitâbelerin tam Arapça metni ve çevirileri kitapta yok (yalnızca dört kitâbenin okunuşu verilmiş); 22 kitâbenin diğerleri kitapta yok.",
+      "Minare (kitap 'harimin kuzeydoğusundaki minare' diye geçiyor) tarihi ve mevcut durumu kitapta yok.",
+      "Kılıçaslan Köşkü ve avludaki türbe ayrı kayıt olarak kitapta anlatılmıyor; gerekirse sonradan ayrı eser olarak eklenmeli.",
+      "Yapım yılı: taç kapı kitâbesindeki 'sene 61' ibaresi çözümlenemedi.",
+      "Eflatun Mescidi, Medrese-i Sultani, hanikah, hamam: İç Kale'de bulunduğu belirtilen ancak kayıp yapılar; ilişki yazılmadı.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "sections[mihrap]",
+        "note": "Kitap s. 314-315'te batı kanadındaki mihrabın 1899 onarımında mermerle yeniden yapıldığını, ikinci mermer mihrabın ise 1889'da asıl mihrabın ortasına konduğunu söylüyor. 1889 ve 1899 tarihleri ile iki mihrabın hangisinin hangisi olduğu net değil; 1889 Sururi Paşa onarımıyla örtüşüyor. Kaynağa sadık kalınarak ikisi de yazıldı, kayıt disputed işaretlendi."
+      },
+      {
+        "field": "inscriptions[tac-kapi-bani-kitabesi]",
+        "note": "Kitabede tarih 'sene 61' diye basılmıştır; eksik/hatalı basım olabilir (üç hane beklenir). Tarih çıkarılamadı."
+      },
+      {
+        "field": "founder",
+        "note": "Metin ilk evreyi I. Mesud'a (minber kitâbesi, H. 550), ana yapıyı I. Alâeddin Keykubad'a bağlıyor ve taç kapı kitâbesinde Keykubad'ın banî olarak geçtiğini söylüyor. Tek bir banî belirtilmediği için founder 'probable' işaretlendi, diğer sultanlar people'a yazıldı."
+      },
+      {
+        "field": "sections[cephe-tac-kapilar]",
+        "note": "Metin avludaki 'on kenarlı türbe'yi II. Kılıç Arslan'a bağlıyor, ardından 'yarım türbenin Selçukluların son zamanlarında inşa edilmiş olması muhtemeldir' diyor; iki cümlenin ilişkisi ve 'yarım türbe' ifadesi açık değil. Aynı anlatımda 'minare' için Alâeddin Keykubad dönemindeki tuğla minarenin yerinde bulunduğu belirtilir ama mevcut minarenin tarihi verilmez."
+      },
+      {
+        "field": "dating",
+        "note": "Kitap hem 'doğudaki yedi sütunlu mekân en eski kısım, I. Mesud (1116-1155)' hem de 'cami ve minberin II. Kılıç Arslan zamanında tamamlandığı tahmin edilmektedir' diyor; bu ikinci bilgi tahmindir. start_year minber tarihine (1155), end_year ana yapının son şeklini aldığı yıla (1220) dayanır."
+      },
+      {
+        "field": "sections[ic-kale]",
+        "note": "Bu bölümün ilk sayfaları (s. 302-305, 316) Alâeddin Camii'ne değil İç Kale/Konya surlarına ait tarihçedir; kale ayrı bir kayıt olmadığı için bağlam olarak bu kayda konuldu. Kitap 1896'da surların tamamen yıkıldığını söylerken bugün batı eteklerinde yer yer kalıntı olduğunu da belirtir."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sultan Alâeddin (Ulu) Camii",
+    "en": "Sultan Alâeddin (Grand) Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Konya İç Kale (Alâeddin) Camii",
+      "en": "Konya Citadel (Alâeddin) Mosque",
+      "note": "Kitapta metin içinde bu adla geçer"
+    },
+    {
+      "tr": "Alâeddin Camisi",
+      "en": "Alâeddin Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "cami",
+    "Anadolu Selçuklu",
+    "kündekâri minber",
+    "çini mihrap",
+    "taç kapı",
+    "kitabeli",
+    "İç Kale",
+    "Alâeddin Tepesi",
+    "devşirme sütun"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": null,
+    "address": "İç Kale, Alâeddin Tepesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "302-305"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.873007,
+      "lng": 32.49316,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap 'Alaeddin Keykubad Camii' (Alâeddin Tepesi); kitap camiyi İç Kale'de, Alâeddin Tepesi'nde tarif ediyor. Otomatik eşleştirici ilçedeki başka bir 'Ulu Cami'yi seçmişti. Sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "İlk evre H. 550 / M. 1155 (minber); ana yapı 1219-1220",
+      "en": "First phase 550 AH / 1155 AD (minbar); main building 1219-1220"
+    },
+    "start_year": 1155,
+    "end_year": 1220,
+    "hijri_year": 550,
+    "century": 12,
+    "basis": {
+      "tr": "Doğudaki yedi sahınlı bölüm ve minber H. 550 (1155) tarihli kitâbeye göre en eski evredir; orta kubbeli bölüm ve batı kanadı I. İzzettin Keykavus döneminde (1211-1219) başlanıp I. Alâeddin Keykubad emriyle tamamlanmış, cami 1220'de son şeklini almıştır.",
+      "en": "The seven-aisled eastern section and the minbar are the oldest phase per the 550 AH (1155 AD) inscription; the domed middle part and west wing were begun under Izzettin Keykavus I (1211-1219) and completed on Alâeddin Keykubad I's order, the mosque taking its final form in 1220."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "304-305, 308-309"
+      }
+    ]
+  },
+  "founder": {
+    "name": "I. Alâeddin Keykubad",
+    "role": "banî (taç kapı kitâbesine göre; ilk evre I. Mesud dönemine aittir)",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "310-311"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Muhammed b. Havlan el-Dımışki",
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "308-309, 310-311"
+      }
+    ]
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "H. 881 / M. 1476-77 tarihli Konya Evkâf Defteri'nden caminin Konya ile civar köy ve kasabalardaki vakıfları tespit edilmiştir; ayrıntılar kitapta verilmemiştir.",
+      "en": "The mosque's foundations in Konya and surrounding villages and towns were identified from the Konya Evkâf Register of 881 AH / 1476-77 AD; details are not given."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "308-309"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Konya İç Kalesi'nde, Anadolu Selçuklu mimarisinin en önemli yapılarından biri; I. Mesud döneminde başlayan, I. Alâeddin Keykubad zamanında 1220'de son şeklini alan cami, kündekâri minberi, çinili mihrap kalıntıları ve taç kapılarıyla tanınır.",
+    "en": "One of the most important buildings of Anatolian Seljuk architecture, in the Konya Citadel; begun under Mesud I and given its final form in 1220 under Alâeddin Keykubad I, it is known for its kündekâri minbar, remains of a tiled mihrab and crown gates."
+  },
+  "sections": [
+    {
+      "id": "ic-kale",
+      "order": 1,
+      "title": {
+        "tr": "İç Kale ve Alâeddin Tepesi",
+        "en": "The Citadel and Alâeddin Hill"
+      },
+      "body": {
+        "tr": "Cami, Konya'nın ortasında Alâeddin Tepesi denilen höyük üzerindeki İç Kale'nin kuzeydoğusundadır. Kale doğudan batıya 330 m, kuzeyden güneye 450 m uzunluğunda, 20 m yüksekliğinde oval planlıdır ve etrafını sulu hendek çevirir. Kazılarda kale tarihinin MÖ 2000'e uzandığı, Frig, Helenistik, Roma, Bizans ve Selçuklu katmanları bulunduğu anlaşılmıştır. Roma ve Bizans devrinde yapılan kale, II. Kılıç Arslan (H. 569 / M. 1173) ve III. Kılıç Arslan'ın (H. 600 / M. 1203) onarım ve eklemeleriyle son şeklini almıştır; 1190'daki Haçlı kuşatmasında alınamamıştır. I. Alâeddin Keykubad H. 618 / M. 1221'de dış kalenin yapımını emretmiş, aynı yıl 140 bey 140 burç yaptırmıştır. Dış kale sonradan Baycu Noyan tarafından yıktırılmış, Karamanoğlu Mehmed Bey 1276'da yedi kulesini yıktırıp yeniden yaptırmış, Fatih ve III. Murad (H. 998 / M. 1589) onarmıştır. XVIII. yüzyılda önemini yitiren kale yıkılmaya başlamış, 1882'de fazla iz kalmamış, 1896'da iç kale surları tamamen yıkılmıştır. Kale içinde Alâeddin Camii, Eflatun Mescidi, Medrese-i Sultani, köşk, hanikah ve hamam bulunmaktaydı; günümüze yalnızca Alâeddin Camii ile Kılıçaslan Köşkü'nün bir bölümü ulaşmıştır. Bugün Alâeddin Tepesi mesire yeridir.",
+        "en": "The mosque is in the northeast of the Inner Castle on the mound called Alâeddin Hill in the middle of Konya. The citadel is oval, 330 m east-west, 450 m north-south, 20 m high, and surrounded by a water-filled moat. Excavations show its history reaches back to 2000 BC, with Phrygian, Hellenistic, Roman, Byzantine and Seljuk layers. Built in the Roman and Byzantine periods, it took its final shape with repairs and additions by Kılıç Arslan II (569 AH / 1173 AD) and III (600 AH / 1203 AD); it was not taken in the 1190 Crusader siege. Alâeddin Keykubad I ordered the outer castle in 618 AH / 1221 AD, with 140 bastions built by 140 beys that year. The outer castle was later destroyed by Baycu Noyan, seven towers rebuilt by Karamanoğlu Mehmed Bey in 1276, and repaired by Fatih and by Murad III (998 AH / 1589 AD). It lost importance in the 18th century and began to collapse; by 1882 little remained, and in 1896 the inner walls were completely destroyed. Within the citadel were the Alâeddin Mosque, Eflatun Masjid, Medrese-i Sultani, a pavilion, khanikah and bath; only the Alâeddin Mosque and part of the Kılıçaslan Mansion survive. Today the hill is a recreation area."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "302-305, 316-317"
+        }
+      ]
+    },
+    {
+      "id": "yapim-evreleri",
+      "order": 2,
+      "title": {
+        "tr": "Yapım Evreleri",
+        "en": "Building Phases"
+      },
+      "body": {
+        "tr": "Cami birkaç yapı evresine sahiptir. Mihrap duvarına paralel, doğudaki yedi sütunlu (yedi sahınlı) bölüm kalenin en eski kısmıdır ve minberdeki H. 550 (1155) tarihli kitâbeye göre I. Mesud zamanında (1116-1155) yaptırılmıştır; cami ve minberin II. Kılıç Arslan zamanında (1155-1192) tamamlandığı tahmin edilmektedir. Ortadaki mihrap önü kubbeli bölümün ve batısındaki çok bölümlü kısmın yapımına I. İzzettin Keykavus zamanında (1211-1219) başlanmış; İzzettin Keykavus'un ölümüyle yarım kalan inşaat, kitâbedeki mimar ve mütevelli isimlerinin aynı yerde bulunmasından anlaşıldığı üzere I. Alâeddin Keykubad'ın (1219-1237) emriyle tamamlanmıştır. 1220'de son şeklini alan caminin inşaatını Atabek Ayaz yönetmiş, mimarı Muhammed b. Havlan el-Dımışki'dir; çini mihrabı ve diğer çini süslemeleri Kerimüddin Erdişah yapmıştır. Orta kubbeli bölüm ve batı kanadı 1219-1220'de eklenerek bugünkü hâli almıştır. Asli hâlinde üst örtü düz toprak damdır.",
+        "en": "The mosque has several building phases. The seven-aisled section in the east, parallel to the mihrab wall, is the oldest part and, from the inscription of 550 AH (1155 AD) on the minbar, was built under Mesud I (1116-1155); the mosque and minbar are estimated to have been completed under Kılıç Arslan II (1155-1192). Construction of the domed section in front of the mihrab and the multi-part section west of it began under Izzettin Keykavus I (1211-1219); left unfinished at his death, it was completed on the order of Alâeddin Keykubad I (1219-1237), as the architects' and trustees' names in the same inscription show. Construction of the mosque, which took its final form in 1220, was supervised by Atabek Ayaz; the architect was Muhammed b. Havlan el-Dımışki, and the tile mihrab and other tile decoration are by Kerimüddin Erdişah. The domed middle section and west wing were added in 1219-1220. Its original roof is a flat earthen roof."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "304-305, 308-309, 310-311"
+        }
+      ]
+    },
+    {
+      "id": "onarimlar",
+      "order": 3,
+      "title": {
+        "tr": "Vakıflar ve Onarımlar",
+        "en": "Foundations and Repairs"
+      },
+      "body": {
+        "tr": "H. 881 / M. 1476-77 tarihli Konya Evkâf Defteri'nden caminin vakıfları tespit edilmiştir. 1685-1687 onarımında doğu bölüm yenilenmiş, sütunların iki metre çaplı kargir temellere oturtulduğu tahmin edilmektedir. Cami XIX. yüzyıl sonundaki II. Abdülhamit albümünde harap görünür; Konya Valisi Sururi Paşa 1889'da iç mekânı, mihrabı, toprak örtülü çatıyı ve cepheleri onartmış, doğudaki sundurmalı kapıyı açtırıp üzerine onarım kitâbesi koydurmuştur. Dünya savaşları sırasında (1914-1918, 1920-1923, 1940-1945) cami ibadete kapatılmış; 1944'te Millî Eğitim Bakanlığı'na, 1952'de Vakıflar Genel Müdürlüğü'ne devredilerek ibadete açılmıştır. Aynı tarihte avlu batı duvarı önüne yapılan abdest musluklarının akıntısı avlu duvarını çatlatmış, caminin yıkılmaya yüz tutması üzerine çatlayan kısımlar 1957'de yeniden yapılmıştır. 1960'larda tepe ağaçlandırılmaya başlanmış, 1966-1976 arasında yapıya müdahaleler yapılmış, 1980'de cami yeniden ibadete kapatılmıştır. 1980-1995 arasında Vakıflar Genel Müdürlüğü ve DSİ zemini güçlendirmiş, batı bölümü, güney yönü, 1. ve 2. destek sıraları, ezilen tuğlalar, kuzey avlu duvarı kapıları ile doğu, güney ve kuzey cepheleri onarılmıştır. Cami günümüzde ibadete açıktır.",
+        "en": "The mosque's foundations were identified from the Konya Evkâf Register of 881 AH / 1476-77 AD. The east section was renewed in the 1685-1687 repair, when the columns are estimated to have been set on two-metre-diameter masonry foundations. It appears in ruins in the Abdulhamid II album of the late 19th century; Governor Sururi Paşa had the interior, mihrab, earth-covered roof and facades repaired in 1889, opened the porched east door and placed a repair inscription over it. It was closed for worship during the world wars (1914-1918, 1920-1923, 1940-1945), transferred to the Ministry of National Education in 1944 and to the General Directorate of Foundations in 1952, and opened for worship. Water from ablution taps built against the courtyard's west wall cracked the courtyard wall and nearly caused collapse; the cracked parts were rebuilt in 1957. The hill was afforested from the 1960s, interventions were made in 1966-1976, and the mosque closed again in 1980. In 1980-1995 the Foundations and DSI strengthened the ground and repaired the west part, south side, 1st and 2nd support rows, crushed bricks, north courtyard gates and east, south and north facades. It is open for worship today."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "id": "cephe-tac-kapilar",
+      "order": 4,
+      "title": {
+        "tr": "Avlu Cephesi ve Taç Kapılar",
+        "en": "Courtyard Facade and Crown Gates"
+      },
+      "body": {
+        "tr": "Kuzeydeki avlunun cephesi yapının en görkemli bölümü olarak düzenlenmiştir ve üç taç kapısı vardır. Batıdaki taç kapı düzgün kesme taştandır, dışa taşıntılıdır ve eyvan özelliği gösterir; alınlığındaki dikdörtgen çerçeveli taşın ortasında, çini ustası Kerimüddin Erdişah'ın adının bulunduğu dairesel çini madalyon yer alır; dış halkada Alâeddin'in adı vardır. Camiye yakın ortadaki asıl taç kapıya yedi basamaklı merdivenle çıkılır; iki yandan sütuncelerle sınırlı sivri kemerli eyvan tipindedir, kemeri gök ve açık renkli mermer silmelerin birbirini kesmesiyle düğümlenmiştir; sütuncelerin gövdeleri zikzak yivli, kaideleri küp, başlıkları akantus biçimlidir. Doğu uçtaki üçüncü taç kapı iki bölümlüdür: iki sıra mukarnas bordürlü alt giriş kapısı ve üstte iki renkli mermerle geçmeli atkı taşı ile dıştan kare, içten sekiz köşeli yıldız biçimli kitâbelik. Gök renkli mermer kitâbe taşının üzerinde dört konsollu bir saçak vardır. Cephenin üst kısmı sivri kemerli galeriyle ortadaki taç kapının iki yanında yirmi bir bölüme ayrılmıştır. Alâeddin Keykubad zamanında harimin kuzeydoğusundaki minare yerinde tuğla bir minare bulunduğu belirtilir. Son cemaat yeri, yapının ilk kurulduğu bölümde dokuz ahşap sütunun taşıdığı eğimli çatılı kısımdadır; cepheleri son tamirde yenilenmiştir. Avluda on kenarlı bir türbe vardır; kitap bunu II. Kılıç Arslan'ın yaptırdığını söyler ve 'yarım türbenin' Selçukluların son zamanlarında yapılmış olması muhtemel olduğunu ekler.",
+        "en": "The courtyard facade to the north is designed as the most magnificent part of the building and has three crown gates. The west gate is of smooth cut stone, projecting and iwan-like; the circular tile medallion in the middle of the pediment stone bears the name of the tile master Kerimüddin Erdişah, with Alâeddin's name on the outer ring. The main gate near the middle is reached by seven steps; it is an iwan type with a pointed arch between colonnettes, its arch knotted by intersecting sky-blue and light marble mouldings; the colonnettes have zigzag-grooved shafts, cube bases and acanthus capitals. The third gate at the east end has two parts: a lower door framed by two rows of muqarnas and, above a two-coloured marble lintel, a square-outside, eight-pointed-star inscription panel under a four-console eave. The upper facade is divided into twenty-one bays by a pointed-arched gallery. A brick minaret is said to have stood in the harim's northeast in Alâeddin Keykubad's time. The narthex lies in the first-built part, carried by nine wooden columns under a sloping roof; its facades were renewed in the last repair. A ten-sided tomb in the courtyard is said to have been built by Kılıç Arslan II, and the 'half tomb' is probably from the late Seljuk period."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "310-311, 314-315"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 5,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "İç mekâna doğu, kuzeydoğu ve kuzeybatıdaki üç kapıdan girilir; düzgün bir planı yoktur. Orta bölümde mihrap önü kubbeli bölüm ile iki yanda kıble duvarına paralel sahınların üzerini sivri kemerlerin taşıdığı düz dam örter; kemerler tuğladır. Doğu kanadında devşirme sütunlar üzerine tuğla sivri kemerler oturur; sütunlar kalın silindirik gövdeli, İyon ve Dor başlıklıdır. Orta bölümde tuğla yalnızca geçişte ve kubbededir, yüzeyler sonradan çiniyle kaplanmıştır; sütunlar silindirik ve yassıdır, payeler vardır. Mihrap önü kubbesine geçişi sağlayan üçgenlerin çinili olması kubbenin aslında çiniyle kaplı olduğunu gösterir. Kubbenin içi bugün kalem işiyle süslüdür; ortada sekiz kollu yıldızdan gelişen çiçek motifleri görülür. Mahfil batı kanadındadır, payeler üzerine oturur; yüzeyinde tuğla kullanılmış ve alçı sıvayla kaplanmıştır.",
+        "en": "The interior is entered through three doors in the east, northeast and northwest and has no regular plan. In the middle, the domed section before the mihrab and the aisles parallel to the qibla wall on both sides are covered by a flat roof carried on brick pointed arches. In the east wing brick pointed arches rest on spolia columns of varied form, with Ionic and Doric capitals. In the middle section brick is used only for the transition and dome, with surfaces later tiled; columns are cylindrical and flat, with piers. The tiled pendentives show that the mihrab dome was originally tiled. The dome interior now has hand-drawn painted decoration with floral motifs growing from an eight-pointed star. The mahfil is in the west wing on piers, of brick covered with gypsum plaster."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "310-311, 314-317"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 6,
+      "title": {
+        "tr": "Mihraplar",
+        "en": "Mihrabs"
+      },
+      "body": {
+        "tr": "Caminin iki mihrabı vardır. Doğu kanadındaki asıl bölümün ortasında yer alan mihrap XX. yüzyıl başında ortadan kaldırılmıştır. Kıble duvarının batı kanadındaki mihrap, 1899 onarımında asıl mihrap nişinin içine yerleştirilen mermerle yeniden oluşturulmuştur. Asıl mihrap mozaik çini tekniğindeydi ve dikdörtgen görünümlüydü; bugün orijinalinden üç yönde dolanan çerçeve ile kitâbelik kalmıştır. Çerçeve beş bordürlüdür: dıştaki düz yüzeyli çift rûmi geçmeli; ikincisi içbükey olup celî sülüs hatla Besmele ve Ayete'l-Kürsi yazılı, zemini helezonik rûmi dolu; üçüncüsü ters ve düz yarım onikigenlerden geometrik; beşincisi beş kollu yıldızlardan gelişen geometrik kompozisyonludur. 1889'da yapılan ikinci mermer mihrap asıl mihrabın tam ortasına yerleştirilmiştir; iki yandan sütuncelerle sınırlı, çerçeve, oturtmalık, yarım daire plânlı niş, kademeli kavsara, kitâbelik ve taç kısımlarından oluşur.",
+        "en": "The mosque has two mihrabs. The first, in the middle of the main section in the east wing, was removed in the early 20th century. The mihrab in the west wing of the qibla wall was reconstructed from marble placed in the main mihrab niche during the 1899 repair. The original mihrab was in mosaic-tile technique with a rectangular look; only the frame wrapping three sides and the inscription panel remain. The frame has five borders: a flat outer double-rûmi border; a concave second border with Besmele and Ayat al-Kursi in Celi Thuluth on a spiral-rûmi ground; a third geometric border of inverted and upright half-dodecagons; and a fifth geometric border from five-pointed stars. The second marble mihrab, built in 1889, was placed in the exact middle of the main mihrab; it has colonnettes, frame, seating, semicircular niche, stepped hood, inscription panel and crown."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "314-315"
+        }
+      ]
+    },
+    {
+      "id": "minber",
+      "order": 7,
+      "title": {
+        "tr": "Kündekâri Minber",
+        "en": "Kündekâri Minbar"
+      },
+      "body": {
+        "tr": "Mihrabın sağındaki minber orta boy minberlerdendir ve abanoz ağacından hakiki kündekâri tekniğiyle yapılmıştır. Kapı kısmı dikdörtgen çerçeveli, köşelerden sütuncelerle sınırlı dilimli kemerlidir; kapı kanatları yoktur. Kapı iki yanda fistolu rûmi motiflerle, üstte kûfî hatla yazılmış I. Mesud kitâbesiyle doludur; içte içbükey kısımda sülüs hatlı inşa kitâbesi bulunur. Silindirik sütunceler S kıvrımlı çizgilerle oval yüzeylere bölünmüştür. Kemer on yedi dilimlidir, köşeliklerde ortadaki bağdan gelişen simetrik rûmi kompozisyonlar vardır. Kapının tacı ikiye bölünmüştür: alttaki bölüm rûmi bordürlü dikdörtgen çerçevede altı kollu yıldızlarla doludur; üstteki bölüm üçgen alınlık biçiminde yükseltilmiş bordür ve ortasında lotus ve palmet motifli yarım sekizgen pano ile çiçekli kûfî kitâbeden oluşur. Kapı köşelerinde kare prizmal söveler ve ajur süslü babalar, yanlarda sekizgen ve eşkenar dörtgenlerden gelişen kafes tekniğinde geometrik korkuluklar vardır. Köşk kısmı dilimli kemerli açıklığa sahiptir, sekizgen kasnak üzerinde piramidal külahla biter; doğu yüzü rûmi dolgulu bordürle çevrili dikdörtgen panodur, batı yüzünün alt kesiminde iki kanatlı bir dolap bulunur.",
+        "en": "The minbar to the right of the mihrab is a medium-sized one, made of ebony in genuine kündekâri technique. The door part has a rectangular frame and a lobed arch bordered by corner colonnettes; there are no door leaves. The door is filled with scalloped rûmi motifs on both sides and the Mesud I inscription in Kufic above; inside, on the concave part, is a thuluth construction inscription. Cylindrical colonnettes are divided into oval surfaces by S-curved lines. The arch has seventeen segments with symmetrical rûmi compositions in the spandrels. The door's crown is in two parts: a lower part with six-armed stars within a rûmi-bordered rectangle and an upper part with a raised triangular-pediment border and a half-octagonal panel of lotus and palmette motifs with a floral Kufic inscription. The door corners have square prismatic jambs and openwork finials, with lattice geometric balustrades of octagons and rhombuses. The kiosk has a lobed-arch opening and ends in a pyramidal cone on an octagonal drum; its east face is a rectangular panel with a rûmi-filled border and the lower west face holds a two-leaf cabinet."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "314-317"
+        }
+      ]
+    },
+    {
+      "id": "degerlendirme",
+      "order": 8,
+      "title": {
+        "tr": "Değerlendirme",
+        "en": "Assessment"
+      },
+      "body": {
+        "tr": "Konya Alâeddin Camii çok sayıda onarım görmüş, ilk planı değişmiş olsa da Anadolu Selçuklu döneminin en önemli yapılarından biri olma özelliğini korumuştur. Anadolu Selçuklu Devleti'nin yönetim merkezi İç Kale, Alâeddin Camii, Kılıçaslan Köşkü ve Selçuklu sultanlarının medfun olduğu türbeyle birlikte çok değerli bir mirastır; caminin cephe düzenlemesi, mihrabı, kündekâri minberi ve çinileri yapıldıkları dönemin en nadide eserleri arasındadır.",
+        "en": "Konya's Alâeddin Mosque has undergone many repairs and its first plan has changed, but it remains one of the most important buildings of the Anatolian Seljuk period. With the Kılıçaslan Mansion and the tomb where Seljuk sultans are buried, the citadel is a very valuable legacy; the mosque's facade arrangement, mihrab, kündekâri minbar and tiles are among the rarest works of their time."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "316-317"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "toplam_kitabe_sayisi",
+      "label": {
+        "tr": "Camideki toplam kitâbe sayısı",
+        "en": "Total number of inscriptions in the mosque"
+      },
+      "value": 22,
+      "unit": null,
+      "note": {
+        "tr": "Kitapta yalnızca banî, mimar ve inşa kitâbelerine yer verilmiştir.",
+        "en": "The book includes only the founder, architect and construction inscriptions."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "key": "ilk_evre_sahin_sayisi",
+      "label": {
+        "tr": "İlk yapım evresinde derinlemesine sahın sayısı",
+        "en": "Number of deep aisles in the first phase"
+      },
+      "value": 7,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "310-311"
+        }
+      ]
+    },
+    {
+      "key": "tac_kapi_sayisi",
+      "label": {
+        "tr": "Avlu cephesindeki taç kapı sayısı",
+        "en": "Crown gates on the courtyard facade"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "310-311"
+        }
+      ]
+    },
+    {
+      "key": "ana_tac_kapi_basamak",
+      "label": {
+        "tr": "Ana taç kapıya çıkan merdiven basamağı",
+        "en": "Steps to the main crown gate"
+      },
+      "value": 7,
+      "unit": "basamak",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "310-311"
+        }
+      ]
+    },
+    {
+      "key": "minber_kemer_dilimi",
+      "label": {
+        "tr": "Minber kapı kemerindeki dilim sayısı",
+        "en": "Segments in the minbar door arch"
+      },
+      "value": 17,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "314-317"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "I. Mesud",
+      "role": {
+        "tr": "Minberdeki H. 550 kitâbesinde adı geçen; en eski bölümü yaptıran sultan (1116-1155)",
+        "en": "Sultan (1116-1155) named in the 550 AH minbar inscription; had the oldest part built"
+      }
+    },
+    {
+      "name": "II. Kılıç Arslan",
+      "role": {
+        "tr": "Cami ve minberin tamamlandığı tahmin edilen dönemin sultanı; avludaki on kenarlı türbeyi yaptırdığı belirtilir",
+        "en": "Sultan in whose reign the mosque and minbar are estimated to have been completed; said to have built the ten-sided courtyard tomb"
+      }
+    },
+    {
+      "name": "I. İzzettin Keykavus",
+      "role": {
+        "tr": "Orta kubbeli bölüm ve batı kanadının yapımına başlanan sultan",
+        "en": "Sultan under whom the domed middle part and west wing were begun"
+      }
+    },
+    {
+      "name": "I. Alâeddin Keykubad",
+      "role": {
+        "tr": "Yarım kalan inşaatı tamamlatan sultan; taç kapı kitâbesindeki banî",
+        "en": "Sultan who had the unfinished construction completed; the founder named on the crown-gate inscription"
+      }
+    },
+    {
+      "name": "Atabek Ayaz",
+      "role": {
+        "tr": "İnşaatı yöneten mütevelli",
+        "en": "Trustee who supervised construction"
+      }
+    },
+    {
+      "name": "Muhammed b. Havlan el-Dımışki",
+      "role": {
+        "tr": "Mimar",
+        "en": "Architect"
+      }
+    },
+    {
+      "name": "Kerimüddin Erdişah",
+      "role": {
+        "tr": "Çini mihrabı ve çini süslemeleri yapan usta",
+        "en": "Master who made the tile mihrab and tile decoration"
+      }
+    },
+    {
+      "name": "Hacı Mekkî Usta (Bertî oğlu, Ahlatlı)",
+      "role": {
+        "tr": "Minberin ustası",
+        "en": "Master of the minbar"
+      }
+    },
+    {
+      "name": "Sururi Paşa",
+      "role": {
+        "tr": "1889'da camiyi onartan Konya Valisi",
+        "en": "Governor of Konya who had the mosque repaired in 1889"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "minber-kapisi-kitabesi",
+      "location": {
+        "tr": "Minber kapısı üzerinde",
+        "en": "Above the minbar door"
+      },
+      "language": "other",
+      "script": "kûfî",
+      "transliteration": "İzzu’d-dünya ve’d-dîn Ebu’l-feth Mes’ûd b. Kılıç Arslan nâsıru emiri’l-mü’minîn",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Kitap kitâbenin 'Arapça ve Osmanlıca yazıldığını' söylüyor; çevirisi verilmemiştir. I. Mesud'un adını taşır.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309, 314-315"
+        }
+      ]
+    },
+    {
+      "id": "minber-usta-kitabesi",
+      "location": {
+        "tr": "Minber şerefesinin sağ tarafı",
+        "en": "Right side of the minbar balcony"
+      },
+      "language": "other",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": {
+        "tr": "Bu minberi Bertî oğlu Ahlatlı Hacı Mekkî Usta yaptı ve 550 senesinin Recep ayında bitirdi.",
+        "en": "This mimbar was made by Hacı Mekkî Usta from Ahlat, son of Bertî, and he finished it in the month of Rajab in the year 550."
+      },
+      "author": "Hacı Mekkî Usta (Bertî oğlu, Ahlatlı)",
+      "date": {
+        "hijri_year": 550,
+        "gregorian": "1155"
+      },
+      "note": {
+        "tr": "Kitap yalnızca Türkçe okunuşunu verir, Arapça metin verilmemiştir; dil belirtilmemiştir.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309, 310-311"
+        }
+      ]
+    },
+    {
+      "id": "tac-kapi-bani-kitabesi",
+      "location": {
+        "tr": "Mihrabın karşısındaki taç kapının alınlığı",
+        "en": "Pediment of the crown gate opposite the mihrab"
+      },
+      "language": "ar",
+      "script": "celî sülüs",
+      "transliteration": "Bismillah ve’s-selam a’la Resulallah temme haza beytillahi es-Sultanu’l-Mu’azzam alü’d-dünya ve’d-dîn Ebu’l-Feth Keykubad b. es-Sultanu’s-Seîdu’s-Şehîd Keyhusrev b. Kılıç Arslan b. Mes’ud nasıru Emiri’l-mü’minîn ‘ala yedi’l-âbdi’l-fakir el-muhtac ile rahmetillah Ayaz mütevelli el-Atabekî sene 61",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Üç satırdır; banî, tarih ve mütevelli adı geçer. Kitapta yıl 'sene 61' diye eksik basılmıştır; çeviri verilmemiştir. Dil kitapta belirtilmemiş, metin Arapçadır.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "310-311"
+        }
+      ]
+    },
+    {
+      "id": "mutevelli-usta-kitabesi",
+      "location": {
+        "tr": "Kuzey cephenin doğu tarafındaki üçüncü taç kapının batısı",
+        "en": "West of the third crown gate on the east side of the north facade"
+      },
+      "language": "ar",
+      "script": "celî sülüs",
+      "transliteration": "El-mütevelli Ayaz Atabekî, ‘amele Muhammed b. Havlan ed-Dımışkî",
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "İki satırdır; mütevelli ve usta kitâbesi. Çeviri verilmemiştir.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "310-311"
+        }
+      ]
+    },
+    {
+      "id": "dogu-tac-kapi-kitabesi",
+      "location": {
+        "tr": "Doğu uçtaki üçüncü taç kapının sekiz köşeli yıldız biçimli kitâbeliği",
+        "en": "Eight-pointed star inscription panel of the third crown gate at the east end"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Sultan Alâeddin caminin tamamlanmasını emretti.",
+        "en": "Sultan Alâeddin ordered the completion of the mosque."
+      },
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Dört satırdır, gök renkli mermer üzerinedir; kitap yalnızca Türkçe anlamı verir, özgün metin ve yazı türü belirtilmemiştir.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "310-311"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-bordur-yazisi",
+      "location": {
+        "tr": "Asıl mihrap çerçevesinin ikinci bordürü",
+        "en": "Second border of the original mihrab frame"
+      },
+      "language": "ar",
+      "script": "celî sülüs",
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": null,
+      "note": {
+        "tr": "Besmele ve Ayete'l-Kürsi yazılıdır; kitap metni ve çevirisini vermez.",
+        "en": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "314-315"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "minber-1155",
+      "year": 1155,
+      "date": null,
+      "hijri": "550",
+      "type": "construction",
+      "title": {
+        "tr": "Minber ve doğudaki yedi sahınlı ilk bölüm (minber kitâbesi H. 550)",
+        "en": "Minbar and first seven-aisled eastern section (minbar inscription 550 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "304-305, 308-309"
+        }
+      ]
+    },
+    {
+      "id": "son-hal-1220",
+      "year": 1220,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Orta kubbeli bölüm ve batı kanadı tamamlandı; cami son şeklini aldı",
+        "en": "Domed middle section and west wing completed; mosque takes its final form"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309, 310-311"
+        }
+      ]
+    },
+    {
+      "id": "evkaf-defteri-1476",
+      "year": 1476,
+      "date": null,
+      "hijri": "881",
+      "type": "record",
+      "title": {
+        "tr": "Konya Evkâf Defteri'nde caminin vakıfları kayıtlıdır (H. 881 / M. 1476-77)",
+        "en": "The mosque's foundations are recorded in the Konya Evkâf Register (881 AH / 1476-77 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1685",
+      "year": 1685,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım; doğu bölümü yenilendi (1685-1687)",
+        "en": "Repair; the east section was renewed (1685-1687)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1889",
+      "year": 1889,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vali Sururi Paşa onarımı; iç mekân, mihrap, çatı ve cepheler elden geçti, doğu kapıya onarım kitâbesi kondu",
+        "en": "Repair by Governor Sururi Paşa; interior, mihrab, roof and facades overhauled, repair inscription placed on the east door"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "id": "mihrap-1899",
+      "year": 1899,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarımda batı kanadındaki mihrap mermerle yeniden oluşturuldu",
+        "en": "In a repair the west-wing mihrab was reconstructed in marble"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "314-315"
+        }
+      ]
+    },
+    {
+      "id": "ibadete-kapali-1914",
+      "year": 1914,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Dünya savaşları sırasında cami ibadete kapatıldı (1914-1918, 1920-1923, 1940-1945)",
+        "en": "Mosque closed for worship during the world wars (1914-1918, 1920-1923, 1940-1945)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "id": "devir-1944",
+      "year": 1944,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Millî Eğitim Bakanlığı'na devredildi",
+        "en": "Transferred to the Ministry of National Education"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "id": "vgm-1952",
+      "year": 1952,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü'ne devredildi ve ibadete açıldı",
+        "en": "Transferred to the General Directorate of Foundations and opened for worship"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "id": "avlu-duvari-1957",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Abdest musluklarının çatlattığı avlu duvarı kısımları yeniden yapıldı",
+        "en": "Courtyard wall parts cracked by the ablution taps were rebuilt"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "id": "mudahale-1966",
+      "year": 1966,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Yapıya müdahaleler (1966-1976)",
+        "en": "Interventions on the building (1966-1976)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "id": "kapanis-1980",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Cami yeniden ibadete kapatıldı",
+        "en": "Mosque closed to worship again"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    },
+    {
+      "id": "zemin-guclendirme-1980",
+      "year": 1980,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü ve DSİ zemini güçlendirdi, batı bölüm, cepheler ve avlu kapıları onarıldı (1980-1995)",
+        "en": "Foundations and DSI strengthened the ground; west part, facades and courtyard gates repaired (1980-1995)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "308-309"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "minber",
+      "title": {
+        "tr": "Abanoz kündekâri minber",
+        "en": "Ebony kündekâri minbar"
+      },
+      "hint": {
+        "tr": "Kapıdaki on yedi dilimli kemere ve kûfî I. Mesud kitâbesine bakın.",
+        "en": "Look at the seventeen-segment arch and the Kufic Mesud I inscription on the door."
+      },
+      "section_id": "minber"
+    },
+    {
+      "feature": "tac-kapi",
+      "title": {
+        "tr": "Eyvan tipi taç kapılar",
+        "en": "Iwan-type crown gates"
+      },
+      "hint": {
+        "tr": "Ana taç kapıya yedi basamakla çıkılır; kemer mermer silmelerle düğümlenmiştir.",
+        "en": "The main gate is reached by seven steps; its arch is knotted with marble mouldings."
+      },
+      "section_id": "cephe-tac-kapilar"
+    },
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Çini mozaik mihrap çerçevesi",
+        "en": "Tile-mosaic mihrab frame"
+      },
+      "hint": {
+        "tr": "Orijinal mihraptan kalan beş bordürlü çerçeve ve Ayete'l-Kürsi yazısı.",
+        "en": "The five-border frame surviving from the original mihrab, with the Ayat al-Kursi inscription."
+      },
+      "section_id": "mihrap"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Konya İç Kalesi'nin kuzeydoğusunda, Alâeddin Tepesi'nde bir Anadolu Selçuklu camisidir. Kuzeydeki avlu cephesinde üç taç kapı vardır; ortadaki eyvan biçimli kapıya yedi basamakla çıkılır, kemeri gök ve açık renkli mermer silmelerle düğümlüdür. İçerisi düzgün bir plana sahip değildir: doğuda devşirme sütunlar üzerinde tuğla sivri kemerler, ortada çinili geçişli mihrap önü kubbesi vardır. Mihrabın sağında abanoz ağacından kündekâri minber yer alır; mihrabın orijinalinden yalnızca beş bordürlü çerçeve kalmıştır.",
+      "en": "An Anatolian Seljuk mosque on Alâeddin Hill in the northeast of the Konya Citadel. The courtyard facade to the north has three crown gates; the middle iwan-shaped gate is reached by seven steps and its arch is knotted with sky-blue and light marble mouldings. The interior has no regular plan: brick pointed arches on spolia columns in the east and a tiled-transition mihrab dome in the middle. To the right of the mihrab is a kündekâri minbar of ebony; only a five-border frame survives of the original mihrab."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "302-317"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1255",
+        "original_name": "pdf-s153-xref1255",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "302"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 302)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 302)"
+      },
+      "alt": {
+        "tr": "Dış görünümde, bir minare, kubbeli yapılar ve taş duvarlar bulunan cami.",
+        "en": "Exterior view showing a minaret, domed structures, and stone walls of the mosque."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1257",
+        "original_name": "pdf-s153-xref1257",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "303"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 303)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 303)"
+      },
+      "alt": {
+        "tr": "Kemerli girişten görünen cami içi, kemerler, sütunlar, mozaik kaplı duvarlar ve kubbe.",
+        "en": "Interior view through an arch, showing arches, columns, tiled walls, and a dome."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1262",
+        "original_name": "pdf-s154-xref1262",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "304"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 304)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 304)"
+      },
+      "alt": {
+        "tr": "Taştan bir sütunun kapiteli, iki sarmal ve döner desenlerle süslü.",
+        "en": "A stone column capital with two spirals and scroll patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1264",
+        "original_name": "pdf-s154-xref1264",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "304"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 304)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 304)"
+      },
+      "alt": {
+        "tr": "Mavi ve siyah zemin üzerine geometrik yıldız desenleriyle süslü, beyaz kenarlı bir mozaik detayı.",
+        "en": "A mosaic detail with geometric star patterns on a blue and black background, bordered in white."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1266",
+        "original_name": "pdf-s154-xref1266",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "305"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 305)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 305)"
+      },
+      "alt": {
+        "tr": "Tuğladan yapılmış bir kemerli giriş. Kemer, kemerin üstünde bir taş şerit ile ayrılmıştır.",
+        "en": "A brick archway entrance. The arch is separated by a stone band above it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1270",
+        "original_name": "pdf-s155-xref1270",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "306"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 306)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 306)"
+      },
+      "alt": {
+        "tr": "Bir cami kompleksi, kubbeli yapılar, bir minare ve çevresindeki ağaçlarla birlikte gün batımında şehir manzarasında yer alıyor.",
+        "en": "A mosque complex with domed structures, a minaret, and surrounding trees in a cityscape at sunset."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1274",
+        "original_name": "pdf-s156-xref1274",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "308"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 308)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 308)"
+      },
+      "alt": {
+        "tr": "İç mekanda, sütunlar, kemerler, ahşap tavan ve mavi halılar görülüyor.",
+        "en": "Inside, columns, arches, wooden ceiling, and blue carpets are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1276",
+        "original_name": "pdf-s156-xref1276",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "309"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 309)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 309)"
+      },
+      "alt": {
+        "tr": "Koyu mavi mermer bir sütun ve yanında süslemeli bir duvar parçası görülüyor. Sütun, yassı dişli bir kapitele sahip.",
+        "en": "A dark blue marble column and an adjacent decorated wall section are visible. The column has a fluted capital."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1278",
+        "original_name": "pdf-s156-xref1278",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "309"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 309)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 309)"
+      },
+      "alt": {
+        "tr": "Mavi ve siyah zeminli döşeme desenleri, geometrik ve bitkisel motiflerle süslüdür.",
+        "en": "Blue and black tiled patterns with geometric and floral motifs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1282",
+        "original_name": "pdf-s157-xref1282",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "311"
+      },
+      "subject": "minaret",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 311)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 311)"
+      },
+      "alt": {
+        "tr": "Kiremit kaplı bir binanın yanında, sivri kubbeli, taştan minare yükseliyor.",
+        "en": "A pointed, stone minaret rises beside a brick building."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m11",
+      "type": "photo",
+      "is_cover": false,
+      "order": 11,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1286",
+        "original_name": "pdf-s158-xref1286",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "312"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 312)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 312)"
+      },
+      "alt": {
+        "tr": "Köşeli bir yapıda, geometrik desenlerle süslü ahşap bir kapının detayı.",
+        "en": "A wooden door detail with geometric patterns on a corner structure."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m12",
+      "type": "photo",
+      "is_cover": false,
+      "order": 12,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1290",
+        "original_name": "pdf-s159-xref1290",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "314"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 314)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 314)"
+      },
+      "alt": {
+        "tr": "İç mekanda, taş sütunlar, kemerler ve kubbeli tavanlar görülmektedir. Mavi halılar ve duvarlardaki tuğla detayları var.",
+        "en": "Inside, stone columns, arches, and a domed ceiling are visible. Blue carpets and brick details on walls are present."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m13",
+      "type": "photo",
+      "is_cover": false,
+      "order": 13,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1292",
+        "original_name": "pdf-s159-xref1292",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "315"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 315)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 315)"
+      },
+      "alt": {
+        "tr": "Mihrap, taştan yapılmış, kemerli bir giriş ve üzerinde kubbe şeklinde bir yapı var. Çevresi mavi ve beyaz zeminli, siyah hat ve geometrik desenlerle süslüdür.",
+        "en": "The mihrab is a stone niche with an arched entrance and a dome-shaped structure above. It is surrounded by blue and white tiles with black calligraphy and geometric patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m14",
+      "type": "photo",
+      "is_cover": false,
+      "order": 14,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1294",
+        "original_name": "pdf-s159-xref1294",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "315"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 315)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 315)"
+      },
+      "alt": {
+        "tr": "Bir camiye ait metal bir kemer detayı, süslü bitkisel desenlerle kaplı, çokgen bir yapıya sahip.",
+        "en": "A metal arch detail from a mosque, intricately decorated with floral patterns, featuring a polygonal structure."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m15",
+      "type": "photo",
+      "is_cover": false,
+      "order": 15,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1298",
+        "original_name": "pdf-s160-xref1298",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "317"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Sultan Alâeddin (Ulu) Camii (kitap s. 317)",
+        "en": "Sultan Alâeddin (Grand) Mosque (book p. 317)"
+      },
+      "alt": {
+        "tr": "Merkezde çapraz kemerlerle ayrılmış beyaz bir kubbe. İçte mavi ve altın renkli geometrik desenlerle süslü bir çember. Dışta mavi zemin üzerine beyaz geometrik desenler.",
+        "en": "A white dome with radial ribs dividing the surface. A central circular medallion with blue and gold geometric patterns. Outer band with blue background and white geometric designs."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

@@ -1,9 +1,8 @@
 /**
  * Typography tokens, in density-independent pixels (React Native units).
  *
- * Four families, each with one job:
- * - Marcellus: headings, the feel of letters carved in stone
- * - Hanken Grotesk: interface and body text
+ * Three families, each with one job:
+ * - Hanken Grotesk: headings (semibold), interface and body text
  * - Amiri: Arabic calligraphy and the inscription layer
  * - IBM Plex Mono: years, times, coordinates
  *
@@ -16,7 +15,7 @@
  * Nothing goes below 14: secondary text is still read on the move, outdoors.
  */
 export const fontFamily = {
-  display: "Marcellus_400Regular",
+  display: "HankenGrotesk_600SemiBold",
   sans: "HankenGrotesk_400Regular",
   sansMedium: "HankenGrotesk_500Medium",
   sansSemiBold: "HankenGrotesk_600SemiBold",

@@ -1,0 +1,841 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-aziziye-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 280-287) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Mahalle ve açık adres kitapta verilmiyor.",
+      "Mimar/usta adı kitapta verilmiyor; architect null.",
+      "Vakfiye ve vakıf bilgisi kitapta yok; sadece eski mabedin gelirlerinden söz ediliyor.",
+      "Mihrap ve kapı üzerindeki ayet kitâbelerinin metni ve meali kitapta verilmiyor; inscriptions boş bırakıldı.",
+      "Kapu Camii'nin ilçesi bu bölümde belirtilmiyor; ilişki hedefi mevcut kayıt 'konya-meram-kapu-camii' olarak varsayıldı, teyit edilmeli.",
+      "Basılı sayfa 283 metinde ayrı numaralanmamış (PDF s.143 yalnızca '282' taşıyor); sayfa aralığı '282' olarak verildi.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap 'ilk inşa' tarihini H. 1082-1087 / M. 1671-1676 verir; bugünkü yapı 1872'de başlayıp 1874'te tamamlanmıştır. Hicri/Miladi aralık birbirini tutuyor; display ikisini de içeriyor, start/end_year bugünkü yapıyı gösterir."
+      },
+      {
+        "field": "sections.tarihce",
+        "note": "Metin ilk yapıdan söz etmeden 1867 yangınında Aziziye ve Kapu camilerinin yandığını söyler; eski mabedin 1671-1676 yapısıyla aynı olduğu açıkça yazılmıyor, ima ediliyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Aziziye Camii",
+    "en": "Aziziye Mosque"
+  },
+  "alternate_names": [
+    {
+      "tr": "Şeyh Ahmet Efendi Camii",
+      "en": "Şeyh Ahmet Efendi Mosque"
+    },
+    {
+      "tr": "Yüksek Camii",
+      "en": "Yüksek Mosque"
+    }
+  ],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "1867 Konya yangını",
+    "Pertevniyal Valide Sultan",
+    "eklektik üslup",
+    "son cemaat yeri",
+    "iki minare",
+    "arkeolojik sit"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": null,
+    "address": "Mevlâna Külliyesi'nin batısında, Konya tarihi kent merkezi; III. derece arkeolojik sit alanı",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "280"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.869981,
+      "lng": 32.500798,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/264414101 ('Aziziye Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Bugünkü yapı M. 1872-1874; ilk inşa H. 1082-1087 / M. 1671-1676",
+      "en": "Present building 1872-1874 AD; first construction 1082-1087 AH / 1671-1676 AD"
+    },
+    "start_year": 1872,
+    "end_year": 1874,
+    "hijri_year": null,
+    "century": 19,
+    "basis": {
+      "tr": "Bugünkü yapının inşasına 1872'de başlanmış, 1874'te tamamlanmıştır. İlk inşa H. 1082-1087 / M. 1671-1676'dır.",
+      "en": "Construction of the present building began in 1872 and was completed in 1874. The first construction date is 1082-1087 AH / 1671-1676 AD."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "280-281"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Mevlâna Külliyesi'nin batısındaki Aziziye Camii, 1867 Konya Çarşısı yangınında yanan eski caminin yerine Pertevniyal Valide Sultan'ın yardımı, eski mabedin gelirleri ve halkın katkılarıyla 1872-1874'te yapılmıştır. Osmanlı döneminde Konya'da inşa edilen büyük ölçekli son yapıdır; barok, ampir ve rokoko etkili eklektik bir üslubu vardır.",
+    "en": "The Aziziye Mosque, west of the Mevlâna Complex, was built in 1872-1874 after the 1867 Konya Bazaar fire with the help of Pertevniyal Valide Sultan, the revenues of the old temple and public contributions. It is the last large-scale structure built in Konya in the Ottoman period, with an eclectic style influenced by baroque, empire and rococo."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Konya tarihi kent merkezindeki cami III. derece arkeolojik sit alanı içindedir; 'Şeyh Ahmet Efendi Camii' ve 'Yüksek Camii' adlarıyla da anılır. İlk inşa tarihi H. 1082-1087 / M. 1671-1676'dır. 1867'de Konya Çarşısı'nda çıkan yangında Aziziye ve Kapu camileri yanmış, Konya Valisi Burdurlu Ahmet Tevfik Paşa İstanbul'a gidip sadrazamdan yardım istemiştir. Padişahın annesi Valide Sultan'ın rüyasında 'Konya'da bir hayra delalet et ki felah bulasın' denmiş, bunun üzerine valiye 28.000 lira verilmiş ve bu parayla inşaat gerçekleştirilmiştir. Pertevniyal Valide Sultan'ın yardımları, eski mabedin gelirleri ve halkın katkılarıyla yapının inşasına 1872'de başlanmış, 1874'te tamamlanmıştır. Cami 2001-2002 ve 2012-2014'te onarım görmüş, bugün ibadete açıktır.",
+        "en": "The mosque in Konya's historical centre lies within a 3rd grade archaeological protected area and is also known as 'Şeyh Ahmet Efendi Mosque' and 'Yüksek Mosque'. Its first construction date is 1082-1087 AH / 1671-1676 AD. In 1867 the Aziziye and Kapu mosques burned in a fire in the Konya Bazaar and Governor Burdurlu Ahmet Tevfik Paşa went to Istanbul to ask the grand vizier for help. The sultan's mother, the Valide Sultan, dreamed she was told 'Build something good in Konya so that you may prosper'; 28,000 liras were then given to the governor and the mosque was built with this money. With the help of Pertevniyal Valide Sultan, the revenues of the old temple and public contributions, construction began in 1872 and was completed in 1874. The mosque was repaired in 2001-2002 and 2012-2014 and is open for worship."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "280-281"
+        }
+      ]
+    },
+    {
+      "id": "dis-mimari",
+      "order": 2,
+      "title": {
+        "tr": "Dış mimari",
+        "en": "Exterior architecture"
+      },
+      "body": {
+        "tr": "Cami kare planlı ve tek kubbelidir; düzgün Gödene taşı ve mermerden yapılmıştır. Kuzeyde son cemaat yeri ve tek şerefeli iki minare dikkat çeker. Cephelerdeki her pencere ve kapı açıklığı yarım silindirik gövdeli, korint başlıklı sütuncelerle sınırlanmıştır. Yapıya kuzeydeki son cemaat yeri ile doğu ve batı cephelerinin ortasındaki üç kapıdan girilir; kapılar yuvarlak kemerlidir, kilit taşında akant yaprağı, üzerinde çelenkli madalyon ve dikdörtgen pano vardır. Güney cephede yarım daire mihrap çıkıntısı görülür. Örtü sisteminde köşelerde kare prizma biçimli ağırlık kuleleri, sekizgen kubbe kasnağının köşelerinde çokgen ağırlık kuleleri bulunur. Kuzeybatı ve kuzeydoğu köşelerindeki taş minarelerin kaidesi kare, gövdesi yivlidir; şerefe altında akant yapraklı kuşak ve konsollar, üstünde altı sütun ve çok dilimli kemerler vardır. Minare kaidelerine bitişik birer mermer çeşme yapılmıştır. Son cemaat yeri beş gözlüdür; girişin önü ve köşeler kubbeli, aradaki iki bölüm tonozludur, altı mermer sütunla taşınır; beş kemerli açıklık Konya'da tek örnektir. Anıtsal taç kapı yuvarlak kemerli ve batılılaşma dönemi bezemelidir; 'S' ve 'C' kıvrımlı bitkisel süsleme ile girlandlı madalyon içerir.",
+        "en": "The mosque has a square plan with a single dome, built from smooth Gödene stone and marble. The narthex in the north and two single-balcony minarets stand out. Each window and door opening is flanked by half-cylindrical colonnettes with Corinthian capitals. It is entered through three doors: the narthex in the north and the openings in the middle of the east and west facades; the doors are round-arched, with an acanthus leaf on the keystone, a wreath medallion above and a rectangular panel. There is a semicircular mihrab protrusion on the south facade. The cover has square prism weight towers at the corners and polygonal weight towers at the corners of the octagonal dome drum. The stone minarets at the northwest and northeast corners have square bases and grooved shafts; under the balcony are an acanthus-leaf belt and consoles, with six columns and multi-lobed arches above. A marble fountain is attached to each minaret base. The narthex has five bays; the entrance front and corners are domed and the two between are vaulted, carried by six marble columns; the five-arched opening is the only example in Konya. The monumental round-arched crown gate has westernization-period decoration, with 'S' and 'C' curved floral ornament and a garlanded medallion."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "282-284"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Harim kare planlıdır ve sekizgen kasnağa oturan kubbeyle örtülüdür; geçişler tromplarladır. Büyük pencere ve kapı açıklıkları iç mekânı ferah kılar. Kıble duvarının ortasındaki anıtsal mermer mihrabın nişi yarım daire biçimlidir; içinde askılı kandil, bitkisel süsleme ve ayet kitâbesi, kavsarada istiridye yivini anımsatan ışınsal düzenleme vardır. Nişin iki yanında iki katlı, yivli ikiz sütunceler; üstte girlandlı madalyon içinde celî sülüs hatlı ayet kitâbesi bulunur. Harimdeki kemer köşelerinde bitkisel bezemeli madalyonlar içinde 'Allah', 'Muhammed' ve dört halifenin adları celî sülüs hatla yazılmıştır. Kubbede yıldız motifleri vardır. Minber mermerdir; süpürgelik kısmı sivri kemerli galeri biçimindedir, korkuluklar ajur tekniğinde geometrik motiflidir, köşkü dört sütun üzerinde baldaken tarzındadır. Harimin kuzeyinde dört mermer sütuna oturan yuvarlak kemerli bir mahfil vardır; orta kısmı harime doğru yarım daire biçiminde taşar. Giriş kapısı, mihrap, minber ve kemer alınlıkları altın yaldızla süslenmiştir.",
+        "en": "The harim is square and covered by a dome on an octagonal drum, with squinches for the transition. The large window and door openings make the interior spacious. The monumental marble mihrab has a semicircular niche containing a hanging lamp, vegetal decoration and a verse inscription, and a rayed oyster-groove-like arrangement in the hood. Two-storey grooved twin colonnettes flank the niche; above is a verse inscription in Celi Thuluth in a garlanded medallion. At the arch corners in the harim, 'Allah', 'Muhammad' and the names of the four caliphs are written in Celi Thuluth in vegetal medallions. The dome has star motifs. The minbar is of marble; the skirting is a pointed-arched gallery, the railings have openwork geometric motifs and the kiosk is baldachin-style on four columns. North of the harim is a mahfil with round arches on four marble columns, its middle projecting semicircularly toward the harim. The entrance door, mihrab, minbar and arch pediments are decorated with gold gilding."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "284-287"
+        }
+      ]
+    },
+    {
+      "id": "uslup",
+      "order": 4,
+      "title": {
+        "tr": "Üslup",
+        "en": "Style"
+      },
+      "body": {
+        "tr": "Aziziye Camii geç dönem Osmanlı camisidir. Lale Devri'nden sonra Avrupa etkisinde kalan Türk mimarisinin canlı örneği olup barok, ampir ve rokoko üslubunun karışımıdır; ağırlıklı olarak eklektik üsluplar gösterir. Osmanlı döneminde Konya'da inşa edilen büyük ölçekli son yapıdır ve XIX. yüzyılda Türk sanatını etkileyen çeşitli sanat akımlarının sentezidir.",
+        "en": "Aziziye Mosque is a late Ottoman mosque, a living example of Turkish architecture influenced by Europe after the Tulip Era, a mixture of baroque, empire and rococo styles with mainly eclectic styles. It is the last large-scale building built in Konya during the Ottoman period, a synthesis of various art movements that influenced Turkish art in the 19th century."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "280-281, 286-287"
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "id": "valide-sultan-ruyasi",
+      "title": {
+        "tr": "Valide Sultan'ın rüyası",
+        "en": "The Valide Sultan's dream"
+      },
+      "body": {
+        "tr": "Padişahın annesi Valide Sultan bir rüya görmüş, rüyasında kendisine 'Konya'da bir hayra delalet et ki felah bulasın' denmiştir; bunun üzerine camiye yardım edilmiştir.",
+        "en": "The sultan's mother, the Valide Sultan, had a dream in which she was told 'Build something good in Konya so that you may prosper'; she then helped with the mosque."
+      },
+      "source_verdict": "unverified",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "280-281"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "key": "kapi_sayisi",
+      "label": {
+        "tr": "Giriş kapısı sayısı",
+        "en": "Number of entrance doors"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "key": "minare_sayisi",
+      "label": {
+        "tr": "Minare sayısı (tek şerefeli)",
+        "en": "Number of minarets (single balcony)"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_goz",
+      "label": {
+        "tr": "Son cemaat yeri göz sayısı",
+        "en": "Narthex bays"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "key": "son_cemaat_sutun",
+      "label": {
+        "tr": "Son cemaat yeri mermer sütun sayısı",
+        "en": "Narthex marble columns"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "282"
+        }
+      ]
+    },
+    {
+      "key": "mahfil_sutun",
+      "label": {
+        "tr": "Mahfil mermer sütun sayısı",
+        "en": "Mahfil marble columns"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "286"
+        }
+      ]
+    },
+    {
+      "key": "yardim_tutari",
+      "label": {
+        "tr": "Konya valisine verilen para",
+        "en": "Sum given to the governor of Konya"
+      },
+      "value": 28000,
+      "unit": "lira",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "280-281"
+        }
+      ]
+    },
+    {
+      "key": "yapi_malzemesi",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "Gödene taşı ve mermer",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "282"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Burdurlu Ahmet Tevfik Paşa",
+      "role": {
+        "tr": "Konya Valisi; yeniden imar için sadrazamdan yardım isteyen",
+        "en": "Governor of Konya; asked the grand vizier for help for the reconstruction"
+      }
+    },
+    {
+      "name": "Pertevniyal Valide Sultan",
+      "role": {
+        "tr": "Yapının inşasına yardım eden padişah annesi",
+        "en": "Sultan's mother who helped with the construction"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "ilk-insa",
+      "year": 1671,
+      "date": null,
+      "hijri": "1082-1087",
+      "type": "construction",
+      "title": {
+        "tr": "İlk inşa (H. 1082-1087 / M. 1671-1676)",
+        "en": "First construction (1082-1087 AH / 1671-1676 AD)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "id": "yangin-1867",
+      "year": 1867,
+      "date": null,
+      "hijri": null,
+      "type": "damage",
+      "title": {
+        "tr": "Konya Çarşısı yangınında Aziziye ve Kapu camileri yandı",
+        "en": "Aziziye and Kapu mosques burned in the Konya Bazaar fire"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "id": "insa-1872",
+      "year": 1872,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Bugünkü yapının inşasına başlandı",
+        "en": "Construction of the present building began"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "281"
+        }
+      ]
+    },
+    {
+      "id": "tamam-1874",
+      "year": 1874,
+      "date": null,
+      "hijri": null,
+      "type": "opening",
+      "title": {
+        "tr": "Yapı tamamlandı",
+        "en": "Building completed"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "281"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2001",
+      "year": 2001,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (2001-2002)",
+        "en": "Repair (2001-2002)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "281"
+        }
+      ]
+    },
+    {
+      "id": "onarim-2012",
+      "year": 2012,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Onarım (2012-2014)",
+        "en": "Repair (2012-2014)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "281"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Anıtsal mermer mihrap",
+        "en": "Monumental marble mihrab"
+      },
+      "hint": {
+        "tr": "Askılı kandil ve ayet kitâbeli nişi inceleyin.",
+        "en": "Look at the niche with its hanging lamp and verse inscription."
+      },
+      "section_id": "ic-mekan"
+    },
+    {
+      "feature": "son-cemaat-yeri",
+      "title": {
+        "tr": "Beş gözlü son cemaat yeri",
+        "en": "Five-bay narthex"
+      },
+      "hint": {
+        "tr": "Konya'da tek örnek olan beş kemerli açıklık.",
+        "en": "The five-arched opening is the only example in Konya."
+      },
+      "section_id": "dis-mimari"
+    }
+  ],
+  "relations": [
+    {
+      "target_id": "konya-meram-kapu-camii",
+      "type": "urban_context",
+      "description": {
+        "tr": "1867 Konya Çarşısı yangınında Aziziye ile birlikte yanan cami.",
+        "en": "The mosque that burned together with Aziziye in the 1867 Konya Bazaar fire."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "280"
+        }
+      ]
+    },
+    {
+      "target_id": "konya-karatay-mevlana-kulliyesi",
+      "type": "urban_context",
+      "description": {
+        "tr": "Cami, Mevlâna Külliyesi'nin batısında yer alır.",
+        "en": "The mosque lies west of the Mevlâna Complex."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "280"
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Aziziye Camii kare planlı, tek kubbeli bir yapıdır. Kuzeyinde beş gözlü, mermer sütunlu bir son cemaat yeri ve iki köşede tek şerefeli taş minareler yükselir; minare kaidelerine bitişik mermer çeşmeler vardır. İçeride sekizgen kasnaklı kubbe, altın yaldızlı mermer mihrap ve minber, kuzeyde dört mermer sütunlu mahfil görülür.",
+      "en": "Aziziye Mosque is a square single-domed building. On its north is a five-bay narthex with marble columns, and stone minarets with a single balcony rise at two corners, with marble fountains beside their bases. Inside are a dome on an octagonal drum, a gilded marble mihrab and minbar, and a mahfil on four marble columns to the north."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden (s. 282-287)"
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]",
+      "en": "[Mosque interior ambience: soft recitation and footsteps on carpet]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "280-288"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1155",
+        "original_name": "pdf-s142-xref1155",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "280"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 280)",
+        "en": "Aziziye Mosque (book p. 280)"
+      },
+      "alt": {
+        "tr": "Beyaz taştan inşa edilmiş cami, büyük kemerli pencereler, giriş kapısı ve yanında minare ile görülmektedir.",
+        "en": "A stone mosque with large arched windows, a main entrance, and a minaret beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1157",
+        "original_name": "pdf-s142-xref1157",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "281"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 281)",
+        "en": "Aziziye Mosque (book p. 281)"
+      },
+      "alt": {
+        "tr": "İç mekanda kırmızı ve sarı desenli halılar, büyük çanak lambalar, kemerli pencere ve ahşap kapılar var.",
+        "en": "Red and yellow patterned carpets, large chandeliers, arched windows, and a wooden door are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1162",
+        "original_name": "pdf-s143-xref1162",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "283"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 283)",
+        "en": "Aziziye Mosque (book p. 283)"
+      },
+      "alt": {
+        "tr": "İki minare ve bir kubbe, kiremit çatılarla çevrili bir cami kompleksi.",
+        "en": "Two minarets and a dome, surrounded by tiled roofs of a mosque complex."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1168",
+        "original_name": "pdf-s144-xref1168",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "284"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 284)",
+        "en": "Aziziye Mosque (book p. 284)"
+      },
+      "alt": {
+        "tr": "Koyu renkli sütunun üst kısmında altın rengi, sarmal ve yaprak desenleriyle süslü bir kapite.",
+        "en": "A dark column capital with golden spiral and leaf patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1166",
+        "original_name": "pdf-s144-xref1166",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "284"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 284)",
+        "en": "Aziziye Mosque (book p. 284)"
+      },
+      "alt": {
+        "tr": "Koyu renkli mermer sütunlar ve altın rengi süslemelerle kaplı, yapay bitki desenleri olan detaylar.",
+        "en": "Dark marble columns with golden ornate carvings featuring artificial plant patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1170",
+        "original_name": "pdf-s144-xref1170",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "285"
+      },
+      "subject": "other",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 285)",
+        "en": "Aziziye Mosque (book p. 285)"
+      },
+      "alt": {
+        "tr": "Koyu renkli ahşap minber, altın işlemeli, merdivenli ve kemerli. Arka planda kemerli pencere ve süslü duvarlar. Kırmızı ve sarı halılar.",
+        "en": "Dark wooden minbar with gold inlays, staircase, and arches. Arched window and decorated walls in background. Red and yellow carpets."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1174",
+        "original_name": "pdf-s145-xref1174",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "286"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 286)",
+        "en": "Aziziye Mosque (book p. 286)"
+      },
+      "alt": {
+        "tr": "Kapıda ahşap paneller, altın işlemeli süslemeler ve taş sütunlar var.",
+        "en": "Wooden panels, gold embellishments, and stone columns on the portal."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1180",
+        "original_name": "pdf-s145-xref1180",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "287"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 287)",
+        "en": "Aziziye Mosque (book p. 287)"
+      },
+      "alt": {
+        "tr": "Mavi taştan bir duvarda altın renkli süslemelerle çevrili, merkezde mavi zeminli bir daire içinde beyaz bir yazı var.",
+        "en": "A blue stone wall features a central circular design with white writing, surrounded by golden ornate patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1176",
+        "original_name": "pdf-s145-xref1176",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "287"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 287)",
+        "en": "Aziziye Mosque (book p. 287)"
+      },
+      "alt": {
+        "tr": "Koyu gri mermerde altın renkli, çiçek ve yaprak desenli süslemeler. Üstte delikli ahşap bir yapı.",
+        "en": "Golden floral and leaf patterns on dark grey marble. Above, a latticed wooden structure."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m10",
+      "type": "photo",
+      "is_cover": false,
+      "order": 10,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1178",
+        "original_name": "pdf-s145-xref1178",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "287"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 287)",
+        "en": "Aziziye Mosque (book p. 287)"
+      },
+      "alt": {
+        "tr": "Ahşap kapı, altın renkli süslemeli çerçeveler ve bronz bir kilit halkasıyla kapalı.",
+        "en": "Wooden door with gold-colored decorative frames and a bronze ring handle."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m11",
+      "type": "photo",
+      "is_cover": false,
+      "order": 11,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1184",
+        "original_name": "pdf-s146-xref1184",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "288"
+      },
+      "subject": "mihrab",
+      "caption": {
+        "tr": "Aziziye Camii (kitap s. 288)",
+        "en": "Aziziye Mosque (book p. 288)"
+      },
+      "alt": {
+        "tr": "Kemerli bir yapıda, altın işlemeli, koyu renkli taştan mihrap. Üstünde güneş benzeri bir desen ve arka planda hat var.",
+        "en": "An arched structure, a dark stone mihrab with gold ornamentation. A sun-like design and calligraphy are visible above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

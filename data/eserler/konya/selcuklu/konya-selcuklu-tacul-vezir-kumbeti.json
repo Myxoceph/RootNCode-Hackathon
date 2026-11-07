@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-tacul-vezir-kumbeti",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "todos": [
+      "Tacül Vezir Külliyesi'nin medrese, zaviye ve mescit yapıları ids.md'de kayıtlı değil; ilişki yazılmadı.",
+      "Türbenin kesin yapım yılı kitapta yok; yalnızca medresenin H. 637 / M. 1239 tarihi ve \"aynı zamanda\" bilgisi var.",
+      "Tacül Vezir'in vefat tarihi kitapta verilmiyor.",
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Türbe doğrudan tarihlenmiyor; 1239 medrese tarihidir ve türbenin aynı zamanda yapıldığı bilgisine dayanılarak probable işaretlendi. Başlıkta \"Defter - Hakani\" yazımı Türkçe/İngilizce metinde \"Defter-Hakani\" olarak geçer."
+      },
+      {
+        "field": "founder",
+        "note": "Türkçe metin \"Hacı Veziri\", İngilizce \"Hacı Vezir\" yazıyor; halk adı olarak korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tacül Vezir Kümbeti",
+    "en": "Tacül Vezir Kumbet"
+  },
+  "subtitle": {
+    "tr": "Medresesiyle bitişik yapılmış Selçuklu vezir türbesi",
+    "en": "Seljuk vizier's tomb built adjoining its madrasa"
+  },
+  "alternate_names": [
+    {
+      "tr": "Tacül Vezir Türbesi",
+      "en": "Tacül Vezir Tomb"
+    },
+    {
+      "tr": "Hacı Veziri",
+      "en": "Hacı Vezir"
+    }
+  ],
+  "type": "turbe",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "kümbet",
+    "vezir",
+    "Anadolu Selçuklu",
+    "devşirme malzeme",
+    "Tacül Vezir Külliyesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "address": "Ferhuniye Mahallesi, Sultanşah Caddesi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "184"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.876851,
+      "lng": 32.490665,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "Kitaptaki adres OpenStreetMap Nominatim'de bulundu ('Ferhuniye (22), Sultanşah Caddesi, Ferhuniye Mahallesi, Konya, Selçuklu, Konya, İç Anadolu Bölgesi, 42200, Türkiye'); cadde düzeyinde yaklaşık, sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "XIII. yüzyıl (medrese: H. 637 / M. 1239)",
+      "en": "13th century (madrasa: AH 637 / AD 1239)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": 637,
+    "century": 13,
+    "basis": {
+      "tr": "Defter-Hakani kayıtlarında medrese bölümünün H. 637 / M. 1239'da yapıldığı yazar; türbe medreseyle aynı zamanda yapıldı. Plan, üst örtü ve malzemeden XIII. yüzyıl.",
+      "en": "Defter-Hakani records give the madrasa as built in AH 637 / AD 1239; the tomb was built at the same time. 13th century from plan, cover and material."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "184"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Tacül Vezir (Taceddin Ahmet)",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "184"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Tacül Vezir Külliyesi'nin parçası olarak medreseyle aynı zamanda yaptırılan, klasik Anadolu Selçuklu türbesi. Medrese yıkılmış, yalnızca izleri türbenin bitişiğinde kalmıştır.",
+    "en": "A classical Anatolian Seljuk tomb built at the same time as its madrasa as part of the Tacül Vezir Complex. The madrasa is destroyed; only traces remain next to the tomb."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Yapı ve Tarihçe",
+        "en": "Building and History"
+      },
+      "body": {
+        "tr": "Tacül Vezir Türbesi Selçuklu, Ferhuniye Mahallesi, Sultanşah Caddesi üzerindedir. Tacül Vezir Külliyesi'nde medrese, zaviye, mescit ve türbe yer almış, türbe külliyenin parçası olarak inşa edilmiştir. Konya Vakıflar Müdürlüğü'ndeki Defter-Hakani kayıtlarına göre medrese bölümü H. 637 / M. 1239'da yapılmıştır. Asıl adı Taceddin Ahmet olan Tacül Vezir, Alâeddin Keykubat ve II. Gıyasettin Keyhüsrev döneminde vezirlik yapmış önemli bir devlet adamıdır; türbeyi medreseyle aynı zamanda yaptırmıştır. Medrese harap olmuş ve XX. yüzyıl başında tamamen yıkılmıştır; türbenin bitişiğinde izleri durmaktadır. Türbe halk arasında \"Hacı Veziri\" diye anılır.",
+        "en": "Tacül Vezir Tomb is in Selçuklu, Ferhuniye District, Sultanşah Street. The Tacül Vezir Complex had a madrasa, a zawiya, a masjid and a tomb, the tomb being built as part of the complex. According to the Defter-Hakani records in the Konya Foundations Directorate, the madrasa section was built in AH 637 / AD 1239. Tacül Vezir, whose real name was Taceddin Ahmet, was an important statesman who served as vizier under Alâeddin Keykubat and Gıyasettin Keyhüsrev II; he had the tomb built at the same time as the madrasa. The madrasa fell into ruin and was completely destroyed in the early 20th century; traces remain next to the tomb. The tomb is popularly called \"Hacı Vezir\"."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "184"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Plan, üst örtü ve malzemeden hareketle XIII. yüzyılda yapılmış klasik bir Anadolu Selçuklu türbesidir. Alt kat cenazelik katıdır; üzeri sekizgen gövdeli, dıştan piramidal külahlı, içten kubbelidir. Temellerde taş, diğer bölümlerde tuğla kullanılmıştır. Özellikle giriş cephesinde malzeme farkı göze çarpar; kapı ve lentolardaki farklılık Bizans dönemine ait devşirme malzemeden kaynaklanır. Kapının solundaki pencere eyvana açılır. İçeride dört mezar vardır: bir mezar taşı Tacül Vezir'in 1337'de ölen torunu Celalüddin Kasım Bey'e, bir diğeri bir başka torunu Kasım Bey ile kardeşi Şeyh Sureti'ye aittir; Tacül Vezir'e ait sanılan mezar taşında ölüm tarihi yoktur.",
+        "en": "Judging by plan, cover and materials it is a classical Anatolian Seljuk tomb of the 13th century. The lower floor is the funeral floor, with an octagonal body above, a pyramidal cone outside and a dome inside. Stone was used in the foundations and brick elsewhere. The difference in materials is noticeable on the entrance facade; the differing doors and lintels are due to spoliated Byzantine-period material. The window to the left of the door opens to the iwan. Inside are four graves: one tombstone belongs to Tacül Vezir's grandson Celalüddin Kasım Bey, who died in 1337, another to another grandson Kasım Bey and his brother Şeyh Sureti; the tombstone thought to be Tacül Vezir's carries no death date."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "184"
+        }
+      ]
+    },
+    {
+      "id": "onem",
+      "order": 3,
+      "title": {
+        "tr": "Önemi",
+        "en": "Significance"
+      },
+      "body": {
+        "tr": "Tacül Vezir Türbesi, Konya'daki Anadolu Selçuklu külliyeleri içinde medrese ve türbenin bitişik yapıldığı bir eser olarak önemli bir yere sahiptir.",
+        "en": "Tacül Vezir Tomb has an important place among Anatolian Seljuk complexes in Konya as a work in which madrasa and tomb are adjacent."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "184"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "mezar_sayisi",
+      "label": {
+        "tr": "Mezar sayısı",
+        "en": "Number of graves"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "184"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Tacül Vezir (Taceddin Ahmet)",
+      "role": {
+        "tr": "Türbeyi yaptıran vezir; Alâeddin Keykubat ve II. Gıyasettin Keyhüsrev döneminde vezirlik yaptı",
+        "en": "Founder, vizier under Alâeddin Keykubat and Gıyasettin Keyhüsrev II"
+      }
+    },
+    {
+      "name": "Celalüddin Kasım Bey",
+      "role": {
+        "tr": "Tacül Vezir'in torunu; 1337'de öldü",
+        "en": "Grandson of Tacül Vezir; died 1337"
+      }
+    },
+    {
+      "name": "Kasım Bey",
+      "role": {
+        "tr": "Tacül Vezir'in bir başka torunu",
+        "en": "Another grandson of Tacül Vezir"
+      }
+    },
+    {
+      "name": "Şeyh Sureti",
+      "role": {
+        "tr": "Kasım Bey'in kardeşi",
+        "en": "Brother of Kasım Bey"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "medrese-1239",
+      "year": 1239,
+      "date": null,
+      "hijri": "637",
+      "type": "construction",
+      "title": {
+        "tr": "Medrese bölümü inşa edildi (Defter-Hakani kayıtları); türbe aynı zamanda yaptırıldı",
+        "en": "Madrasa section built (Defter-Hakani records); the tomb was built at the same time"
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "184"
+        }
+      ]
+    },
+    {
+      "id": "torun-vefat-1337",
+      "year": 1337,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Torun Celalüddin Kasım Bey vefat etti",
+        "en": "Grandson Celalüddin Kasım Bey died"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "184"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mimari",
+      "title": {
+        "tr": "Bitişik medrese ve türbe",
+        "en": "Adjoining madrasa and tomb"
+      },
+      "hint": {
+        "tr": "Medrese ve türbenin bitişik yapıldığı Selçuklu külliyesi; medrese yıkılmıştır.",
+        "en": "A Seljuk complex where madrasa and tomb are adjacent; the madrasa is destroyed."
+      },
+      "section_id": "onem"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Türbe Ferhuniye Mahallesi'nde, Sultanşah Caddesi üzerindedir. Sekizgen gövdeli, içten kubbeli, dıştan piramidal külahlı bir yapıdır. Temeller taş, üst kısımlar tuğladır; giriş cephesinde Bizans dönemine ait devşirme malzeme görülür. Bitişiğinde yıkılmış medresenin izleri bulunur.",
+      "en": "The tomb stands in Ferhuniye District on Sultanşah Street. It has an octagonal body, a dome inside and a pyramidal cone outside. The foundations are of stone and the upper parts of brick; spoliated Byzantine material is visible on the entrance facade. Traces of the destroyed madrasa lie next to it."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-tacul-vezir-kumbeti/p094-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "185"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Kümbetin dıştan görünüşü",
+        "en": "Exterior of the kumbet"
+      },
+      "alt": {
+        "tr": "Ağaçların arkasında, tuğla örgülü sivri külahlı kümbet kısmen görülüyor. Önde demir parmaklık ve çimlik üzerinde dikilmiş taş sütun parçaları duruyor.",
+        "en": "A brick kumbet with a pointed roof, partly hidden by trees. An iron fence and stone column fragments stand on the lawn in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

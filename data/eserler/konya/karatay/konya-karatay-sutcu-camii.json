@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-sutcu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 270) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Kesin yapım tarihi kitapta yok; Cumhuriyet'in erken dönemi tahmini.",
+      "Banî (yaptıran) kitapta belirtilmiyor.",
+      "Mimar kitapta belirtilmiyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Vakfiye/vakıf bilgisi kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Sütçü Camii",
+    "en": "Sütçü Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "kerpiç",
+    "Cumhuriyet'in erken dönemi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Sütçü Mahallesi",
+    "address": "Sütçü Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "270"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "Cumhuriyetin erken dönemleri (tahmini)",
+      "en": "Early Republic period (estimated)"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "İnşa tarihi ve bânisi hakkında bilgi yoktur; plan ve mimari özelliklerinden Cumhuriyetin erken dönemlerinde inşa edildiği düşünülmektedir. Yıl verilmiyor.",
+      "en": "There is no information about the date or builder; from plan and architecture it is thought to have been built in the early Republic period. No year is given."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "270"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "summary": {
+    "tr": "Sütçü Mahallesi'nde, kerpiç yığma, enlemesine dikdörtgen planlı, harim, son cemaat yeri ve mahfilden oluşan, Cumhuriyetin erken dönemine ait olduğu düşünülen cami.",
+    "en": "A mosque in Sütçü Neighborhood, of adobe masonry with a transverse rectangular plan, comprising harim, narthex and mahfil, thought to date from the early Republic."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Genel Bilgi",
+        "en": "Overview"
+      },
+      "body": {
+        "tr": "Cami Karatay, Sütçü Mahallesi, Sütçü Sokak üzerinde yer almaktadır. İnşâ tarihi ve bânisi hakkında bilgi bulunmayan yapının, plan ve mimari özelliklerinden hareketle Cumhuriyetin erken dönemlerinde inşa edildiği düşünülmektedir.",
+        "en": "The mosque is on Sütçü Street, Sütçü Neighborhood, Karatay. There is no information about its date or builder; from plan and architectural features it is thought to have been built in the early Republic period."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "270"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dıştan enlemesine dikdörtgen planlı, dört yöne eğimli kırma çatılıdır; harim, son cemaat yeri ve mahfilden oluşur. Kerpiç malzemeden yığma teknikle yapılmıştır. İçeriye giriş doğu cephedeki son cemaat yerinden sağlanır; bu bölümün kıble duvarında yarım daire planlı bir mihrap nişi vardır. Kuzeydeki kapıdan harime geçilir. Harim kareye yakın dikdörtgen planlı, ahşap tavanlıdır; kuzeyde ahşap mahfil bulunur. Kıble duvarı ortasındaki mihrap yarım daire planlı, yanlardan hafif taşıntılı sütuncelerle sınırlıdır. Sade minber yapıya sonradan eklenmiştir.",
+        "en": "The mosque has a transverse rectangular plan from the outside and a hipped roof sloping in four directions; it consists of harim, narthex and mahfil. It is built of adobe in masonry. Entrance is through the narthex on the east, which has a semicircular mihrab niche on its qibla wall. The harim is entered through the north door; it is near-square rectangular with a wooden ceiling and a wooden mahfil in the north. The semicircular mihrab in the middle of the qibla wall is bounded by slightly projecting colonnettes. The simple minbar was added later."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "270"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Sütçü Camii, kerpiçten yapılmış, enlemesine dikdörtgen planlı ve kırma çatılı bir camidir. Doğu cephesindeki son cemaat yerinden girilir; kuzeydeki kapıdan ahşap tavanlı harime geçilir. İçeride kuzeyde ahşap mahfil, kıble duvarında yarım daire planlı mihrap ve sade bir minber bulunur.",
+      "en": "Sütçü Mosque is an adobe building with a transverse rectangular plan and a hipped roof. Entrance is through the narthex on the east facade, and a north door leads to the wooden-ceilinged prayer hall. Inside are a wooden gallery in the north, a semicircular mihrab and a simple minbar."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 270)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "270-270"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1098",
+        "original_name": "pdf-s137-xref1098",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "270"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Sütçü Camii (kitap s. 270)",
+        "en": "Sütçü Mosque (book p. 270)"
+      },
+      "alt": {
+        "tr": "Beyaz duvarlı, kiremit çatılı bir bina. Üst katta üç pencere, alt katta iki kapı ve iki bank var. Pencerelerde kare ve yuvarlak desenli camlar.",
+        "en": "A white-walled building with a tiled roof. Three windows on the upper floor, two doors and two benches on the lower floor. Windows have square and circular patterned glass."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1100",
+        "original_name": "pdf-s137-xref1100",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "270"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Sütçü Camii (kitap s. 270)",
+        "en": "Sütçü Mosque (book p. 270)"
+      },
+      "alt": {
+        "tr": "İç mekanda, kemerli bir giriş kapısı, duvarlarda kitaplık ve yazılar, zeminde mavi halı ve lambalar görülüyor.",
+        "en": "Inside, an arched entrance, bookshelves and calligraphy on walls, blue carpet and lamps on the floor are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

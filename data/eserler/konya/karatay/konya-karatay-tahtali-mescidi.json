@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-karatay-tahtali-mescidi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 202-203) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Fotoğraf yok; media: [] ve media_folder: null. Bu ciltte Drive fotoğraf arşivi yok, fotoğraflar sonradan eşlenecek.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Vakfiye metni kitapta verilmiyor; VGM arşivinden bulunursa waqf alanı doldurulacak.",
+      "Bânî kitapta belirtilmiyor.",
+      "Giriş lentosundaki tarih (R. 1243 / M. 1927) kontrol edilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap 'R. 1243 / M. 1927' (Türkçe metin) ve '1243 AH / 1927 AD' (İngilizce metin) yazıyor. Aynı kaynaktaki Rûmî/Hicrî yıl ile Miladi yıl birbirini tutmuyor görünüyor; kaynağın değerleri korundu."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Tahtalı Mescidi",
+    "en": "Tahtalı Masjid"
+  },
+  "alternate_names": [],
+  "type": "mescit",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "cumhuriyet",
+  "tags": [
+    "geometrik saçak süslemesi"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Karatay",
+    "neighborhood": "Hocahabib (Aziziye) Mahallesi",
+    "address": "Kadılar Sokak (Sırçalı Mescit'in güneyi)",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "202-203"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.873311,
+      "lng": 32.502152,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1555116134 ('Tahtalı Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "R. 1243 / M. 1927",
+      "en": "1243 AH / 1927 AD (as printed)"
+    },
+    "start_year": 1927,
+    "end_year": 1927,
+    "hijri_year": 1243,
+    "century": 20,
+    "basis": {
+      "tr": "Giriş kapısı lentosunda '(R. 1243 / M. 1927)' tarihi yazar. Rûmî 1243 ile Miladi 1927 birbirini tutmuyor olabilir; kitaptaki değerler korundu.",
+      "en": "The entrance lintel bears '(1243 / 1927)'. The two values may not match; the book's values are kept."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "202-203"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hocahabib (Aziziye) Mahallesi'nde, Sırçalı Mescit'in güneyindeki küçük mescit. Giriş lentosunda 1927 tarihi yazar; yakın zamanda Vakıflar Bölge Müdürlüğü tarafından onarılmıştır. Bânîsi bilinmiyor.",
+    "en": "A small masjid in Hocahabib (Aziziye) Neighborhood, south of Sırçalı Masjid. The entrance lintel is dated 1927; it was recently repaired by the Regional Directorate of Foundations. Its builder is unknown."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Mescit, Sırçalı Mescit'in güneyinde, Hocahabib (Aziziye) Mahallesi, Kadılar Sokak'tadır. Giriş kapısı lentosunda (R. 1243 / M. 1927) tarihi bulunur. Vakıflar Bölge Müdürlüğü tarafından yakın zamanda tamir edilmiştir. Bânisiyle ilgili bilgi yoktur.",
+        "en": "The masjid is south of Sırçalı Masjid on Kadılar Street, Hocahabib (Aziziye) Neighborhood. The date (1243 AH / 1927 AD) is written on the entrance lintel. It was recently repaired by the Regional Directorate of Foundations. There is no information on its builder."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kareye yakın dikdörtgen planlı, dıştan kırma çatılıdır; saçak iç kısımlarında geometrik süsleme vardır. Kesme taş malzemeyle yığma tekniğinde yapılmıştır. Güney ve batı cephelerde ikişer pencere vardır; kuzey ve doğu cepheler bitişik konutlar nedeniyle sağırdır. Giriş batı cephenin kuzeyindeki sivri kemerli kapıdandır. Harim kare planlı, içten ahşap tavanlı, dıştan geniş saçaklı kırma çatılıdır. Mihrap yarım daire planlı ve yarım kubbe kavsaralıdır; mihrabın sağındaki sade ahşap minberde geometrik süslemeler bulunur.",
+        "en": "Nearly square rectangular plan with a hipped roof; the inner eaves have geometric decoration. Built of cut stone in masonry technique. The south and west facades have two windows each; the north and east facades are blind because they abut houses. Entry is through a pointed-arch door in the north of the west facade. The harim is square with a wooden ceiling inside and a wide-eaved hipped roof outside. The mihrab is semicircular with a semi-dome; the simple wooden minbar to its right carries geometric decoration."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_guney_bati",
+      "label": {
+        "tr": "Güney ve batı cephedeki pencere (her cephede)",
+        "en": "Windows on each of south and west facades"
+      },
+      "value": 2,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "giris-lentosu-tarihi",
+      "location": {
+        "tr": "Giriş kapısı lentosu",
+        "en": "Entrance door lintel"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 1243,
+        "gregorian": "1927"
+      },
+      "note": {
+        "tr": "Kitap yalnızca '(R. 1243 / M. 1927)' tarihini veriyor; yazı dili ve metni belirtilmiyor.",
+        "en": "The book gives only the date '(1243 / 1927)'; language and text are not stated."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa-1927",
+      "year": 1927,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Giriş lentosundaki tarih (M. 1927)",
+        "en": "Date on the entrance lintel (1927 AD)"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "202-203"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Tahtalı Mescidi kareye yakın dikdörtgen planlı, kırma çatılı, kesme taş bir mescittir. Giriş, batı cephedeki sivri kemerli kapıdandır. İçeride ahşap tavan, yarım daire planlı mihrap ve ahşap minber bulunur.",
+      "en": "Tahtalı Masjid is a nearly square cut-stone building with a hipped roof. Entry is through a pointed-arch door on the west facade. Inside are a wooden ceiling, a semicircular mihrab and a wooden minbar."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 202-203)."
+  },
+  "ambient_sound": null,
+  "media_folder": null,
+  "media": [],
+  "archive_media": [],
+  "exhibitions": []
+}

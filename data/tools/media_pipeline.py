@@ -53,7 +53,32 @@ except ImportError:
     SSL_CTX = ssl.create_default_context()
 
 
+# Drive'da fotoğraf klasörü olmayan ciltler: fotoğraf PDF'in içinden çıkarılır (extract/pdf_photos.py)
+LOCAL_PDFS = {"konya-envanteri-1_cilt-web.pdf": ("konya-1.pdf", "https://www.vakifkatilim.com.tr/documents/KurumsalIletisim/yayinlarimiz/konya-envanteri-1_cilt-web.pdf")}
+
+
+def extract_from_pdf(source):
+    import pymupdf  # yalnızca PDF kaynaklı görseller için gerekir
+    name, _, xref = source["path"].partition("#xref=")
+    target = CACHE / f"{name}-xref{xref}"
+    if target.exists():
+        return target.read_bytes()
+    local, url = LOCAL_PDFS[name]
+    pdf_path = BUILD / "cache" / "pdf" / local
+    if not pdf_path.exists():
+        pdf_path.parent.mkdir(parents=True, exist_ok=True)
+        with urllib.request.urlopen(url, timeout=300, context=SSL_CTX) as resp:
+            pdf_path.write_bytes(resp.read())
+    doc = pymupdf.open(pdf_path)
+    data = doc.extract_image(int(xref))["image"]
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(data)
+    return data
+
+
 def download(source):
+    if source["provider"] == "local" and "#xref=" in source.get("path", ""):
+        return extract_from_pdf(source)
     if source["provider"] == "local":
         # Depo köküne göre yol; ör. hatay_book.py'nin kitaptan çıkardığı fotoğraflar
         # (data/build/cache/hatay/images/…). Dosya yoksa önce o araç çalıştırılmalı.

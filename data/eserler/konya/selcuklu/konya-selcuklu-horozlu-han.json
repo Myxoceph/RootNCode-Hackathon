@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-selcuklu-horozlu-han",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Ticari Yapılar",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Hanın bânisi ve tarihi kitâbe olmadığı için kesin değil; Emir Câmedâr Esedüddin Rûzbe bilgisi kitapta \"düşünülmektedir\" ile verilmiş (probable).",
+      "Kitap hanın bu adla 'Rûzbe' ve 'Horozlu' olarak iki yazımını kullanıyor; adın gösterim biçimi gözden geçirilmeli.",
+      "Mimar bilgisi kitapta yok."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "timeline[onarim-1970]",
+        "note": "Türkçe metin \"1970'te\" derken İngilizce metin \"in the 1970s\" diyor; Türkçe esas alındı."
+      },
+      {
+        "field": "timeline[onarim-1956]",
+        "note": "Türkçe metinde \"1956 yılında yılında\" yazım hatası var; yıl 1956 olarak alındı."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Horozlu (Rûzbe) Han",
+    "en": "Horozlu (Rûzbe) Inn"
+  },
+  "subtitle": {
+    "tr": "Konya'ya en yakın han; Selçuklu karma planlı hanı",
+    "en": "The inn closest to Konya; a Seljuk inn of mixed plan"
+  },
+  "alternate_names": [
+    {
+      "tr": "Rûzbe Hanı",
+      "en": "Rûzbe Inn",
+      "note": "Başlıktaki ad; kitap hanın adının Eflakî'de \"Rûzbih\" geçtiğini söyler"
+    }
+  ],
+  "type": "han",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "han",
+    "Selçuklu",
+    "karma plan",
+    "Konya-Ankara yolu",
+    "restoran",
+    "boş kitabe"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Selçuklu",
+    "neighborhood": null,
+    "address": "Şehrin kuzeyinde, Rûzbe Ovası Mevkii, Konya-Ankara yolu üzerinde",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "268"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.929945,
+      "lng": 32.527535,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/177322879 ('Horozlu Han'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "1246-1249 (tahmini); XIII. yüzyıl ikinci yarısı",
+      "en": "1246-1249 (estimated); second half of the 13th century"
+    },
+    "start_year": 1246,
+    "end_year": 1249,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitabe levhası boştur; kitap hanın 1246-1249 arasında Emir Câmedâr Esedüddin Rûzbe tarafından yaptırıldığını \"düşünmektedir\". Sonda yapı XIII. yüzyıl ikinci yarısına tarihlenir.",
+      "en": "The inscription plate is blank; the book says the inn is \"thought\" to have been built by Emir Câmedâr Esedüddin Rûzbe in 1246-1249. At the end the building is dated to the second half of the 13th century."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "268-269"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Emir Câmedâr Esedüddin Rûzbe",
+    "role": "banî",
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "268"
+      }
+    ]
+  },
+  "architect": {
+    "name": null,
+    "candidates": [],
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "268"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Konya'nın kuzeyinde, Konya-Ankara yolu üzerindeki Selçuklu hanı. Açık avlu ve kapalı bölümden oluşan karma plandan yalnızca beş sahınlı kapalı bölüm sağlam kalmıştır; han 1985'te restoran hâline getirilmiştir.",
+    "en": "A Seljuk inn north of Konya on the Konya-Ankara road. Of its mixed plan of open courtyard and closed section only the five-nave closed section survives intact; it was converted into a restaurant in 1985."
+  },
+  "sections": [
+    {
+      "id": "genel",
+      "order": 1,
+      "title": {
+        "tr": "Konum ve Tarihçe",
+        "en": "Location and History"
+      },
+      "body": {
+        "tr": "Han Konya'ya en yakın handır; şehrin kuzeyinde Rûzbe Ovası Mevkiinde, Konya-Ankara yolu üzerindedir. Taç kapının üzerindeki üç dilimli mermer kitâbe levhası yazısızdır; bu yüzden yapının ne zaman ve kim tarafından inşa edildiği bilinmemektedir. Hanın 1246-1249 arasında Emir Câmedâr Esedüddin Rûzbe tarafından yaptırıldığı, yapı tamamlanmak üzereyken öldürüldüğü için kitâbe taşının boş bırakıldığı düşünülmektedir. Eflakî Dede'nin \"Menâkıbü'l-Arifîn\" adlı eserinde \"Rûzbih\" olarak anılan hanın adı zamanla \"Horozlu\" hâline gelmiştir.",
+        "en": "The inn is the closest inn to Konya, on the Konya-Ankara road in the Rûzbe Plain location north of the city. The three-segmented marble inscription plate above the crown gate is blank, so it is not known when and by whom the building was built. It is thought to have been built by Emir Câmedâr Esedüddin Rûzbe in 1246-1249, with the inscription stone left empty because he was killed as the building was about to be completed. The name, mentioned as \"Rûzbih\" in Eflakî Dede's \"Menâkıbü'l-'Arifîn\", changed over time into \"Horozlu\"."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "268"
+        }
+      ]
+    },
+    {
+      "id": "onarim",
+      "order": 2,
+      "title": {
+        "tr": "Onarımlar ve Kullanım",
+        "en": "Repairs and Use"
+      },
+      "body": {
+        "tr": "Avlu kısmı yıkılan ve çeşitli kısımları oldukça harap hâle gelen han ilk olarak 1956'da onarılmıştır. Sonra sırasıyla 1970'te ve 1980'li yıllarda Vakıflar Genel Müdürlüğü tarafından onarılmıştır. 1985'te restoran hâline getirilen hanın bünyesine yeni birimler eklenmiş, kapalı kısmın kuzey sahını mutfağa dönüştürülmüştür.",
+        "en": "The courtyard part was destroyed and various parts became very dilapidated; the inn was first repaired in 1956, then by the General Directorate of Foundations in the 1970s and 1980s. Converted into a restaurant in 1985, it received new units, and the northern aisle of the closed part was turned into a kitchen."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "id": "plan-mimari",
+      "order": 3,
+      "title": {
+        "tr": "Plan ve Mimari",
+        "en": "Plan and Architecture"
+      },
+      "body": {
+        "tr": "Han doğu-batı doğrultusunda açık avlu ve kapalı bölümden oluşan karma plana sahiptir; yalnızca kapalı bölüm sağlam gelebilmiştir. Avlu ve çevresindeki mekânlar asli şekliyle temel üzerinde yaklaşık bir metre yükseklikte dondurulmuştur. Yapı düzgün kesme taştandır, bazı yerlerde iki renkli taş işçiliği görülür. Cephede aralıklarla çokgen ve silindirik yüzeyli payandalar ile aralarında mazgal pencereler vardır. Doğu cephedeki taç kapı cepheden taşıntılı ve yüksektir; iki yanında süslemesiz sütunceler ve mihrabiyeler bulunur. Kapalı kısım, taç kapıya dik uzanan dörderli dört sıra ayakla beş sahına ayrılmıştır. Taç kapı ekseninde orta sahını örten kaburgalı beşik tonoz oldukça yüksektir; diğer sahınlar enine beşik tonozludur. Giriş aksındaki sahının ortasında içeriden yüksek kasnaklı bir kubbe vardır; dışarıdan kubbenin üzerinde sekizgen, mazgal pencereli kasnaklı, kurşun kaplı bir külah yükselir.",
+        "en": "The inn has a mixed plan of an open courtyard and a closed section in the east-west direction; only the closed section has survived intact. The courtyard and the spaces around it are left in their original form, frozen at about one meter high on the foundation. It is built of smooth cut stone, with two-color stonework in places. The facade has polygonal and cylindrical buttresses at intervals with loophole windows between them. The crown gate on the eastern facade projects and is high, flanked by undecorated colonnettes and mihrabiyes. The closed part is divided into five naves by four rows of four pillars perpendicular to the crown gate. The ribbed barrel vault over the middle nave on the gate axis is quite high; the other naves have transverse barrel vaults. A dome on a high drum covers the middle of the entrance-axis nave from inside; outside, a lead-covered cone with a high octagonal drum with loophole windows rises above it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "269"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Kapalı bölümdeki sahın sayısı",
+        "en": "Number of naves in the closed section"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "key": "ayak_duzeni",
+      "label": {
+        "tr": "Ayak düzeni",
+        "en": "Pillar arrangement"
+      },
+      "value": "4 sıra × 4 ayak",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "key": "kitabe_levhasi",
+      "label": {
+        "tr": "Taç kapıdaki kitâbe levhası",
+        "en": "Inscription plate on the crown gate"
+      },
+      "value": "Üç dilimli mermer levha; yazısız",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "268"
+        }
+      ]
+    },
+    {
+      "key": "restoran_donusum",
+      "label": {
+        "tr": "Restorana dönüştürülme yılı",
+        "en": "Year converted into a restaurant"
+      },
+      "value": 1985,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "269"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Eflakî Dede",
+      "role": {
+        "tr": "\"Menâkıbü'l-Arifîn\"de hanı \"Rûzbih\" adıyla anan Mevlevî dedesi",
+        "en": "Mevlevi dede who mentions the inn as \"Rûzbih\" in Menâkıbü'l-'Arifîn"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onarim-1956",
+      "year": 1956,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "İlk onarım",
+        "en": "First repair"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "269"
+        }
+      ]
+    },
+    {
+      "id": "onarim-1970",
+      "year": 1970,
+      "date": null,
+      "hijri": null,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "269"
+        }
+      ],
+      "note": {
+        "tr": "Türkçe metin \"1970'te\", İngilizce metin \"1970s\" der.",
+        "en": "Turkish text says \"in 1970\", English text says \"1970s\"."
+      }
+    },
+    {
+      "id": "restoran-1985",
+      "year": 1985,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Restoran hâline getirildi, yeni birimler eklendi",
+        "en": "Converted into a restaurant, new units added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "269"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "bos-kitabe",
+      "title": {
+        "tr": "Yazısız kitâbe levhası",
+        "en": "Blank inscription plate"
+      },
+      "hint": {
+        "tr": "Taç kapının üzerindeki üç dilimli mermer levha hiç yazılmadan bırakılmıştır.",
+        "en": "The three-segmented marble plate above the crown gate was left unwritten."
+      },
+      "section_id": "genel"
+    }
+  ],
+  "relations": [],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Han, Konya'nın kuzeyinde, düzgün kesme taştan yapılmış, yüksek kapalı bir bölümdür. Doğudaki taç kapı cepheden öne taşar; iki yanında süslemesiz ince sütunlar ve mihrabiyeler vardır. İçeride dörderli dört sıra ayak yapıyı beş sahına böler; ortadaki sahın en yüksektir ve ortasında yüksek kasnaklı bir kubbe bulunur. Avlu yıkılmış, yalnızca yaklaşık bir metre yüksekliğindeki temel izleri kalmıştır; han bugün restoran olarak kullanılmaktadır.",
+      "en": "The inn, north of Konya, is a tall closed hall of smooth cut stone. The crown gate on the east projects from the facade, with plain slender columns and mihrabiyes on both sides. Inside, four rows of four pillars divide it into five naves; the middle nave is highest and has a dome on a high drum at its center. The courtyard is gone, leaving only foundation traces about one meter high; the inn is used as a restaurant today."
+    },
+    "audio_description_source": "Kitap metninden (yalnızca metindeki betimlemeler) yazıldı."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-horozlu-han/p136-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "268"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Horozlu Han'ın kuşbakışı görünüşü",
+        "en": "Aerial view of Horozlu Han"
+      },
+      "alt": {
+        "tr": "Şehir içinde, çevresi yapılarla çevrili taş han. Önde geniş bir avlu, ortada kemerli giriş cephesi ve arkasında küçük bir kule gibi çıkıntı var; yan taraflarda kırmızı ve gri çatılar görülüyor.",
+        "en": "A stone han surrounded by buildings in a city, with a wide courtyard in front and an arched entrance façade in the centre. Red and grey roofs stand on both sides."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-horozlu-han/p136-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "269"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Hanın içi, kemerler ve masalar",
+        "en": "Interior arches and tables"
+      },
+      "alt": {
+        "tr": "Taş kemerli ve tonozlu bir iç mekânda, duvar lambalarıyla aydınlatılmış masalar ve katlanmış kumaşlar görülüyor. Kemerler iri kesme taşlardan yapılmış.",
+        "en": "An interior with stone arches and vaults lit by wall lamps. Tables with folded cloths stand in the foreground, and the arches are of large cut stone."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-selcuklu-horozlu-han/p136-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "269"
+      },
+      "subject": "window",
+      "caption": {
+        "tr": "Tonozlu duvarda dar pencere",
+        "en": "Narrow window in the vaulted wall"
+      },
+      "alt": {
+        "tr": "Kesme taş tonozlu bir duvarın ortasında, sivri kemerli, dar ve uzun bir pencere açıklığı var. Pencereden dışarıdan gelen beyaz ışık içeri vuruyor.",
+        "en": "A narrow, tall arched window opening in the middle of a cut-stone vaulted wall, letting in bright white light."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

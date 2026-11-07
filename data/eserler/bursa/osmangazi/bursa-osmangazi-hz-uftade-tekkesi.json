@@ -51,7 +51,7 @@
   "secondary_types": [
     "mescit"
   ],
-  "parent_id": null,
+  "parent_id": "bursa-osmangazi-hz-uftade-tekke-camii",
   "era": "klasik-osmanli",
   "tags": [
     "tekke",
@@ -75,7 +75,14 @@
         "source_id": "vk-bursa-c1",
         "pages": "621"
       }
-    ]
+    ],
+    "coordinates": {
+      "lat": 40.178021,
+      "lng": 29.054342,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q134615539 ('Üftade Tekkesi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
   },
   "dating": {
     "display": {
@@ -589,6 +596,9 @@
     },
     {
       "target_id": "bursa-osmangazi-doganbey-mescidi",
+      "target_name": {
+        "tr": "Doğan Bey Mescidi"
+      },
       "type": "urban_context",
       "description": {
         "tr": "Üftâde burada müezzinlik ve imamlık yapmıştır.",

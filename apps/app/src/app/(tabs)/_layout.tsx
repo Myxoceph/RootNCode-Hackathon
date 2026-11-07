@@ -1,89 +1,63 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { fontFamily, touchTarget, typography, useUi } from "@vagabonds/ui";
+import { fontFamily, palette } from "@vagabonds/ui";
 import { Tabs } from "expo-router/js-tabs";
-import type { ComponentProps } from "react";
-import { StyleSheet, useWindowDimensions, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Platform } from "react-native";
 
-type IconName = ComponentProps<typeof Ionicons>["name"];
+import { TabBar, type TabItem } from "@/components/tab-bar";
+import { WebNavBar } from "@/components/web-nav-bar";
+import { useMessages } from "@/i18n";
 
 /**
- * The five sections of the Hayrat design. Each tab is its own URL on the web:
- * `/`, `/route`, `/camera`, `/capsule`, `/settings`. The monument list and
- * card (`/monuments`) live under the tabs too, so the bar stays visible there,
- * but have no tab of their own: the map and the routes lead to them.
+ * The five sections in the bar. Each tab is its own URL on the web:
+ * `/map`, `/rehber`, `/camera`, `/monuments`, `/settings`. The app opens on a greeting at `/` that goes on to the map. The monument list and its
+ * cards share the Eserler tab's stack. Kapsül (`/capsule`) and Rotalar (`/route`) have
+ * no tab any more but stay screens under the tabs: asset cards still play their sound
+ * capsules, and the map and the assistant's answers still open the planner.
  *
- * Screen readers announce the tab title; the icons only repeat it visually.
+ * Screen readers announce the tab title; the bar (`TabBar`) shows the open tab's name and the others' icons.
+ *
+ * The web has no camera (ADR 0001): there is no Kamera tab, and `/camera` goes to the map (`camera.web.tsx`).
+ * On the web the tabs sit in a bar across the top of the page (`WebNavBar`), as a website's navigation does.
  */
-const tabs: Array<{ name: string; title: string; icon: IconName; iconFocused: IconName; ownHeader?: boolean }> = [
-  { name: "index", title: "Harita", icon: "map-outline", iconFocused: "map", ownHeader: true },
-  // Has its own stack (planner → food stops), which draws the header.
-  { name: "route", title: "Rotalar", icon: "git-branch-outline", iconFocused: "git-branch", ownHeader: true },
-  { name: "camera", title: "Kamera", icon: "camera-outline", iconFocused: "camera", ownHeader: true },
-  { name: "capsule", title: "Kapsül", icon: "pulse-outline", iconFocused: "pulse", ownHeader: true },
-  { name: "settings", title: "Profil", icon: "person-outline", iconFocused: "person", ownHeader: true },
+const WEB = Platform.OS === "web";
+type TabName = "map" | "rehber" | "camera" | "monuments" | "settings";
+const allTabs: Array<Omit<TabItem, "title"> & { name: TabName; ownHeader?: boolean }> = [
+  { name: "map", icon: "map-outline", iconFocused: "map", ownHeader: true },
+  // The general conversation of `/assistant`, which draws its own header.
+  { name: "rehber", icon: "sparkles-outline", iconFocused: "sparkles", ownHeader: true },
+  { name: "camera", icon: "camera-outline", iconFocused: "camera", ownHeader: true },
+  // Has its own stack (list → asset card), which draws the header.
+  { name: "monuments", icon: "library-outline", iconFocused: "library", ownHeader: true },
+  { name: "settings", icon: "person-outline", iconFocused: "person", ownHeader: true },
 ];
 
-const TAB_ICON_SIZE = 24;
-const TAB_VERTICAL_PADDING = 16;
-/** The camera tab is a raised round button in the middle of the bar. */
-const CAMERA_BUTTON_SIZE = 48;
-
 export default function TabLayout() {
-  const { theme, textScale } = useUi();
-  const c = theme.colors;
-  const { fontScale } = useWindowDimensions();
-  const insets = useSafeAreaInsets();
-  // The default bar is a fixed 49pt, which clips our 14pt labels, and clips any label once the
-  // user raises the system text size. Grow the bar with the label instead.
-  const tabBarHeight =
-    TAB_ICON_SIZE + typography.caption.lineHeight * fontScale * textScale + TAB_VERTICAL_PADDING + insets.bottom;
-
+  const m = useMessages();
+  const titles: Record<TabName, string> = { map: m.tabs.map, rehber: m.tabs.rehber, camera: m.tabs.camera, monuments: m.tabs.monuments, settings: m.tabs.profile };
+  const tabs = (WEB ? allTabs.filter((tab) => tab.name !== "camera") : allTabs).map((tab) => ({ ...tab, title: titles[tab.name] }));
+  // The site's bar starts with the home page (`index`, the landing page on the web); it is no tab of its own.
+  const webLinks: TabItem[] = [{ name: "index", icon: "home-outline", iconFocused: "home", title: m.tabs.home }, ...tabs];
   return (
     <Tabs
-      screenOptions={{
-        headerTitleStyle: { fontFamily: fontFamily.display },
-        tabBarActiveTintColor: c.primary,
-        tabBarInactiveTintColor: c.textSecondary,
-        tabBarStyle: { height: tabBarHeight, backgroundColor: c.surface, borderTopColor: c.border },
-        tabBarLabelStyle: {
-          fontFamily: fontFamily.sansSemiBold,
-          fontSize: typography.caption.fontSize * textScale,
-          lineHeight: typography.caption.lineHeight * textScale,
-        },
-        tabBarItemStyle: { minHeight: touchTarget.min },
-      }}
+      tabBar={(props) => (WEB ? <WebNavBar {...props} items={webLinks} /> : <TabBar {...props} items={tabs} />)}
+      screenOptions={{ headerTitleStyle: { fontFamily: fontFamily.display }, tabBarPosition: WEB ? "top" : "bottom" }}
     >
-      {tabs.map(({ name, title, icon, iconFocused, ownHeader }) => (
+      {tabs.map(({ name, title, ownHeader }) => (
         <Tabs.Screen
           key={name}
           name={name}
-          options={{
-            title,
-            headerShown: !ownHeader,
-            tabBarIcon: ({ color, focused }) =>
-              name === "camera" ? (
-                <View style={[styles.cameraButton, { backgroundColor: c.primary }]}>
-                  <Ionicons name={focused ? iconFocused : icon} size={TAB_ICON_SIZE} color={c.onPrimary} />
-                </View>
-              ) : (
-                <Ionicons name={focused ? iconFocused : icon} size={TAB_ICON_SIZE} color={color} />
-              ),
-          }}
+          // The map is night in every theme: while its screen loads (the site loads each page's code when
+          // first opened) its place is night blue too, going on into its veil, not the page grey.
+          options={{ title, headerShown: !ownHeader, ...(name === "map" ? { sceneStyle: { backgroundColor: palette.gece950 } } : {}) }}
         />
       ))}
-      <Tabs.Screen name="monuments" options={{ href: null, headerShown: false, title: "Eserler" }} />
+      {/* An array, not `WEB && …`: a `false` child makes the layout warn that it is not a Screen. */}
+      {WEB ? [<Tabs.Screen key="camera" name="camera" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: m.tabs.camera }} />] : []}
+      {/* The opening greeting, which goes on to the map. */}
+      <Tabs.Screen name="index" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false }} />
+      {/* No tab button, but still a tab: since expo-router 58, `href: null` hides the screen and redirects away from it. */}
+      <Tabs.Screen name="capsule" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: m.tabs.capsule }} />
+      {/* Has its own stack (planner → food stops), which draws the header. */}
+      <Tabs.Screen name="route" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: m.tabs.routes }} />
     </Tabs>
   );
 }
-
-const styles = StyleSheet.create({
-  cameraButton: {
-    width: CAMERA_BUTTON_SIZE,
-    height: CAMERA_BUTTON_SIZE,
-    borderRadius: CAMERA_BUTTON_SIZE / 2,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: -CAMERA_BUTTON_SIZE / 2,
-  },
-});

@@ -3,6 +3,7 @@ import { cameraColors, cameraGlass, fontFamily, radius, spacing, Text, touchTarg
 import { useRouter } from "expo-router";
 import type { ComponentProps, ReactNode } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
+import { useMessages } from "@/i18n";
 
 /** A round glass icon button over the camera image. */
 export function GlassIconButton({
@@ -26,12 +27,51 @@ export function GlassIconButton({
   );
 }
 
+/**
+ * A rounded icon-and-word button over the camera image: gold for the main action, glass for the
+ * others. `spoken` is read out after the visible word, so a voice command with the word finds it.
+ */
+export function GlassPill({
+  icon,
+  label,
+  spoken,
+  onPress,
+  gold = false,
+  disabled = false,
+}: {
+  icon: ComponentProps<typeof Ionicons>["name"];
+  label: string;
+  spoken?: string;
+  onPress: () => void;
+  gold?: boolean;
+  disabled?: boolean;
+}) {
+  const ink = gold ? cameraColors.onGold : cameraColors.text;
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={spoken ? `${label}, ${spoken}` : label}
+      accessibilityState={{ disabled }}
+      disabled={disabled}
+      onPress={onPress}
+      hitSlop={6}
+      style={({ pressed }) => [styles.pill, gold ? styles.pillGold : styles.pillGlass, (pressed || disabled) && styles.pressed]}
+    >
+      <Ionicons name={icon} size={16} color={ink} />
+      <Text variant="label" colorValue={ink} style={styles.pillText}>
+        {label}
+      </Text>
+    </Pressable>
+  );
+}
+
 /** Top bar of a camera screen: back, a title card, and optional extra buttons. */
 export function CameraTopBar({ title, subtitle, children }: { title: string; subtitle: string; children?: ReactNode }) {
   const router = useRouter();
+  const m = useMessages();
   return (
     <View style={styles.topBar}>
-      <GlassIconButton icon="chevron-back" label="Geri" onPress={() => (router.canGoBack() ? router.back() : router.navigate("/camera"))} />
+      <GlassIconButton icon="chevron-back" label={m.common.back} onPress={() => (router.canGoBack() ? router.back() : router.navigate("/camera"))} />
       <View style={styles.title}>
         <Text variant="heading" colorValue={cameraColors.text} headingLevel={1} numberOfLines={1}>
           {title}
@@ -63,6 +103,26 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.7,
+  },
+  pill: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing.xxs,
+    minHeight: touchTarget.min,
+    paddingHorizontal: spacing.md,
+    borderRadius: radius.full,
+  },
+  pillGold: {
+    backgroundColor: cameraColors.gold,
+  },
+  pillGlass: {
+    backgroundColor: cameraGlass,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.16)",
+  },
+  pillText: {
+    fontFamily: fontFamily.sansSemiBold,
   },
   title: {
     flex: 1,

@@ -34,3 +34,14 @@ olarak geliştirilecek (`apps/app`). Web çıktısı `react-native-web` ile üre
 - MindAR bir tarayıcı kütüphanesi olduğu için mobil AR yaklaşımı ayrıca kararlaştırılacak
   (bkz. Hafta 1, görev Y5).
 - Backend, web istemcisi için CORS desteği sağlar.
+
+## Güncelleme (2026-11-05): Web'de kamera deneyimi yok
+
+Web sitesinde kamerayla ilgili hiçbir şey sunulmaz; sade alternatifler de kaldırıldı:
+
+- Kamera sekmesi yalnızca mobilde. `/camera`, `/visit-seal`, `/inscription` ve `/stone-ask`
+  web'de haritaya yönlenir (`*.web.tsx` rota dosyaları); kamera kodu web paketine girmez.
+- Eser sayfasında ve haritanın düğmelerinde Taşın Dili, Ziyaret Mührü ve Taşa Sor web'de yok;
+  dosyadaki "Kamerayla oku" bağlantısı da gösterilmez.
+- Haritada "Kilidini aç" web'de bir uyarı açar: kilit yalnızca mobil uygulamada, Ziyaret Mührü ile açılır.
+- Harita turu web'de kamera örneğini ve Kamera sekmesi adımını atlar.

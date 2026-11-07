@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-kadinhani-cavundur-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 454-455) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Vakıf tarlalarının kitapta verilen ölçüleri (dönüm/evlek) olduğu gibi aktarıldı.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş) sahada teyit edilmeli.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Çavundur Camii",
+    "en": "Çavundur Mosque"
+  },
+  "subtitle": null,
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Çavundur Boyu",
+    "1764",
+    "ahşap mihrap",
+    "vaaz kürsüsü"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Kadınhanı",
+    "neighborhood": "Ünveren Mahallesi",
+    "address": "Menekşe Sokak",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "454-455"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.235686,
+      "lng": 32.211399,
+      "source": "osm_area",
+      "verified": false,
+      "verification_note": "YAKLAŞIK: kitaptaki mahalle/köyün merkezi ('Ünveren Mahallesi, Kadınhanı, Konya, İç Anadolu Bölgesi, Türkiye'); binanın kendisi değil."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1178 / M. 1764",
+      "en": "AH 1178 / AD 1764"
+    },
+    "start_year": 1764,
+    "end_year": 1764,
+    "hijri_year": 1178,
+    "century": 18,
+    "basis": {
+      "tr": "Kitap caminin H. 1178 / M. 1764'te yaptırıldığını söylüyor.",
+      "en": "The book says the mosque was built in 1178 AH / 1764 AD."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "454"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Çavundur Boyu",
+    "role": "banî (Kadınhanı'na yerleşen boy)",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "454-455"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": "Çavundur Camii vakıfları",
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Kadınhanı Özel İdare Müdürlüğü arşiv kayıtlarına göre camiye gelir getiren vakıflar: Tarlabaşı Mevkii'nde 20 dönüm 1 evlek tarla, Gökbayır Mevkii'nde 136 dönüm tarla, Kafur Çeşmesi Mevkii'nde 1 dönüm 3 evlek harap bağ.",
+      "en": "According to Kadınhanı Special Administration Directorate records the endowments that bring income to the mosque are a 20-decare 1-evlek field in Tarlabaşı, a 136-decare field in Gökbayır and a dilapidated 1-decare 3-evlek vineyard in Kafur Çeşmesi."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "454-455"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Kadınhanı'na yerleşen Çavundur Boyu'nun 1764'te yaptırdığı, kerpiçten, ahşap direkli, ajur tekniğinde renkli mihraplı cami.",
+    "en": "A mosque built in 1764 by the Çavundur tribe who settled in Kadınhanı; adobe, with wooden poles and a coloured openwork mihrab."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Vakıf",
+        "en": "History and Foundation"
+      },
+      "body": {
+        "tr": "Cami Kadınhanı, Ünveren Mahallesi, Menekşe Sokak'tadır. Kadınhanı'na yerleştirilen Çavundur Boyu tarafından H. 1178 / M. 1764 senesinde yaptırılmıştır. Kadınhanı Özel İdare Müdürlüğü arşiv kayıtlarına göre camiye gelir getiren vakıflar Tarlabaşı Mevkii'nde 20 dönüm 1 evlek tarla, Gökbayır Mevkii'nde 136 dönüm tarla ve Kafur Çeşmesi Mevkii'nde 1 dönüm 3 evlek harap bağdır.",
+        "en": "The mosque is on Menekşe Street, Ünveren Neighborhood, Kadınhanı. It was built in 1178 AH / 1764 AD by the Çavundur tribe settled in Kadınhanı. According to the Kadınhanı Special Administration Directorate archive records, the endowments bringing income to the mosque are a 20-decare 1-evlek field at Tarlabaşı, a 136-decare field at Gökbayır and a dilapidated 1-decare 3-evlek vineyard at Kafur Çeşmesi."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "454"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Çeşitli onarımlar geçiren cami kâgir kerpiç malzemeden inşa edilmiş, sonra içten ve dıştan çimentoyla sıvanmış, pencereleri PVC ile değiştirilmiştir; üzeri dört yöne eğimli kiremit kaplı kırma çatıdır. Harime kuzeydoğu ve kuzeybatıdaki kapılardan girilir (kuzeydoğudaki kapı son dönemde kapatılmıştır). Harim, mihraba dik karşılıklı ikişerden altı ayakla üç sahına ayrılmıştır; orta sahın diğerlerinden geniş ve yüksektir. Ahşap direkler profilli yastıklıdır, üst katta kalın çam ağaçları kullanılmıştır.",
+        "en": "After various repairs the mosque, built of masonry adobe, was plastered with cement inside and out and its windows replaced with PVC; it has a tiled hipped roof sloping in four directions. The harim is entered through doors in the northeast and northwest (the northeast one was recently closed). Six legs, two opposite each other, divide it into three aisles perpendicular to the mihrab; the middle nave is wider and higher. The wooden poles have profiled cushions and thick pine trees were used for the upper floor."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "454-455"
+        }
+      ]
+    },
+    {
+      "id": "mihrap",
+      "order": 3,
+      "title": {
+        "tr": "Mihrap, Mahfil ve Kürsü",
+        "en": "Mihrab, Gallery and Pulpit"
+      },
+      "body": {
+        "tr": "Kıble duvarında iki pencere arasındaki mihrap dikdörtgen çerçeve içinde, yarım daire planlı, yarım kubbeli ve yuvarlak kemerlidir; ajur tekniğindeki parçaların ahşap üzerine çakılmasıyla yapılmış, beyaz, kırmızı, mavi ve sarıyla renklendirilmiştir. Mihrabın sağında minber, kuzeyde kadınlar mahfili vardır. Mahfil iki ahşap direkle taşınır, doğu-batı yönündeki küçük ayaklar Bursa kemerleriyle geçiş yapıp duvarlara oturur; çıkış iki pencere arasındaki ahşap merdivenledir. Mihrabın doğu köşesindeki ahşap vaaz kürsüsü kare panolara bölünmüş, ortada çarkıfelek motifi ve çevresinde kıvrım dallarla süslenmiştir.",
+        "en": "The mihrab on the qibla wall between two windows is enclosed in a rectangular frame with a semicircular plan, semi-dome and round arch; it was made by nailing openwork pieces onto wood and coloured white, red, blue and yellow. A minbar stands to its right and a women's gallery to the north. The gallery is carried by two wooden poles and small legs in the east-west direction sit on the walls via Bursa arches; it is reached by wooden stairs between two windows. The wooden sermon platform in the eastern corner of the mihrab is divided into square panels decorated with a passion-flower motif in the middle and curved branches around it."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "454-455"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ayak_sayisi",
+      "label": {
+        "tr": "Harimdeki ahşap ayak",
+        "en": "Wooden legs in the harim"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "454-455"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "insa-1764",
+      "year": 1764,
+      "hijri": "1178",
+      "type": "construction",
+      "title": {
+        "tr": "Cami yaptırıldı",
+        "en": "Mosque built"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "454"
+        }
+      ],
+      "date": null,
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Çavundur Camii, Kadınhanı'nda dıştan dikdörtgen planlı, kiremit kaplı kırma çatılı bir camidir. İçeride altı ahşap ayak üç sahın oluşturur; ahşap üzerine ajur parçalarla yapılmış, beyaz, kırmızı, mavi ve sarıya boyalı bir mihrap ve çarkıfelek motifli ahşap bir vaaz kürsüsü vardır.",
+      "en": "Çavundur Mosque in Kadınhanı has a rectangular plan and a tiled hipped roof. Inside, six wooden legs form three aisles; there is a mihrab of openwork pieces on wood painted white, red, blue and yellow, and a wooden sermon platform with a passion-flower motif."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 454-455)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "454-455"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2009",
+        "original_name": "pdf-s229-xref2009",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "454"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Çavundur Camii (kitap s. 454)",
+        "en": "Çavundur Mosque (book p. 454)"
+      },
+      "alt": {
+        "tr": "Hava görüntüsünde, kiremit çatılı, açık renkli duvarlı bir cami ve çevresindeki binalar görülüyor.",
+        "en": "An aerial view shows a mosque with a tiled roof and light-colored walls, surrounded by other buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2011",
+        "original_name": "pdf-s229-xref2011",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "454"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Çavundur Camii (kitap s. 454)",
+        "en": "Çavundur Mosque (book p. 454)"
+      },
+      "alt": {
+        "tr": "İç mekanda ahşap tavan, beyaz süslemeli bariyer ve kırmızı perdeler görülüyor.",
+        "en": "Wooden ceiling, white decorative railing, and red curtains are visible inside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=2015",
+        "original_name": "pdf-s229-xref2015",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "455"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Çavundur Camii (kitap s. 455)",
+        "en": "Çavundur Mosque (book p. 455)"
+      },
+      "alt": {
+        "tr": "Mecidiye kubbesi altında mavi halı, kırmızı duvarlar, sütunlar ve süslü mihrap.",
+        "en": "Blue carpet under a domed ceiling, red walls, columns, and an ornate mihrab."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

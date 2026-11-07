@@ -1,19 +1,31 @@
 import { cameraColors } from "@vagabonds/ui";
 import { useCameraPermissions } from "expo-camera";
-import { useEffect, useMemo } from "react";
+import { useEffect, useImperativeHandle, useMemo, useRef, type ComponentRef, type Ref } from "react";
 import { StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 import { WebView } from "react-native-webview";
 
-import { loadMindar, useVendored } from "@/vendor";
+import { loadMindar, loadOverlayFont, useVendored } from "@/vendor";
 
-import { parseTrackerEvent, type TrackerEvent } from "./mindar";
-import { trackerPageHtml } from "./tracker-page";
+import { parseTrackerEvent, type TrackerCommand, type TrackerEvent } from "./mindar";
+import { trackerPageHtml, type TrackerTarget } from "./tracker-page";
 
 export interface MarkerTrackerProps {
-  /** A compiled `.mind` file, base64. */
-  targetsMind: string;
+  /** A compiled `.mind` file, or a photo compiled on the device. Keep it stable (memoised): a new one restarts the page. */
+  target: TrackerTarget;
+  /** Text drawn over each target while it is in view, by target index. Keep it stable too. */
+  overlays?: readonly (string | null)[];
   onEvent: (event: TrackerEvent) => void;
   style?: StyleProp<ViewStyle>;
+  /** Gold corners on a found target; on unless the screen shows its own sign. */
+  marks?: boolean;
+  /** Post the target's place on the view ("pose" events). */
+  poses?: boolean;
+  /** Sends the page a command (`capture`, `resume`); its answer comes as an event. */
+  ref?: Ref<MarkerTrackerHandle>;
+}
+
+export interface MarkerTrackerHandle {
+  send: (command: TrackerCommand) => void;
 }
 
 /**
@@ -24,13 +36,20 @@ export interface MarkerTrackerProps {
  * The page is given an https base URL so it is a secure context: WebViews only
  * offer getUserMedia to those.
  */
-export function MarkerTracker({ targetsMind, onEvent, style }: MarkerTrackerProps) {
+export function MarkerTracker({ target, overlays, onEvent, style, ref, marks, poses }: MarkerTrackerProps) {
   const mindarScript = useVendored(loadMindar);
+  const overlayFont = useVendored(loadOverlayFont);
   const html = useMemo(
-    () => (mindarScript ? trackerPageHtml({ targetsMind, markColor: cameraColors.gold, mindarScript }) : null),
-    [targetsMind, mindarScript],
+    () =>
+      // The font is optional: "" when it could not be loaded, and the page then draws in a system serif.
+      mindarScript && overlayFont !== null ? trackerPageHtml({ target, overlays, markColor: cameraColors.gold, mindarScript, overlayFont: overlayFont || undefined, marks, poses }) : null,
+    [target, overlays, mindarScript, overlayFont, marks, poses],
   );
   const permission = useCameraPermission();
+  const view = useRef<ComponentRef<typeof WebView>>(null);
+  useImperativeHandle(ref, () => ({
+    send: (command) => view.current?.injectJavaScript(`window.__trackerCommand && window.__trackerCommand(${JSON.stringify(command)}); true;`),
+  }));
 
   useEffect(() => {
     if (permission === "denied") onEvent({ type: "error", reason: "camera-denied", message: "Camera permission denied" });
@@ -40,6 +59,7 @@ export function MarkerTracker({ targetsMind, onEvent, style }: MarkerTrackerProp
     <View style={[styles.box, style]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
       {permission === "granted" && html !== null && (
         <WebView
+          ref={view}
           source={{ html, baseUrl: "https://localhost/" }}
           originWhitelist={["*"]}
           onError={(e) => onEvent({ type: "error", reason: "unknown", message: `WebView: ${e.nativeEvent.description}` })}

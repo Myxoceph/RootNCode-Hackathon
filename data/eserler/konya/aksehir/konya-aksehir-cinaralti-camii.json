@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-aksehir-cinaralti-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "todos": [
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenecek (location.coordinates atlandı).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakıf (vakfiye, gelirler) ayrıntısı kitapta yok.",
+      "Mevcut caminin yapım tarihi ve banisi kitapta yok; founder null.",
+      "Seyyid Mahmut Hayrani ile bağ (Ferruhşah/Seyit Mahmut Hayrani Mescidi) kitapta açıkça kurulmuyor; ilişki yazılmadı.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Çınaraltı Camii",
+    "en": "Çınaraltı Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "cami",
+    "Akşehir",
+    "Anıt Mahallesi",
+    "çınar"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Akşehir",
+    "neighborhood": "Anıt Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "326"
+      }
+    ],
+    "coordinates": {
+      "lat": 38.355489,
+      "lng": 31.40865,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/1556781351 ('Çınaraltı Camii'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": null,
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "326"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Akşehir Anıt Mahallesi'nde, önündeki büyük çınardan adını alan; Seyyid Necmeddin'in yaptırdığı eski caminin yerine mahalle halkınca yaptırılan cami.",
+    "en": "A mosque in Anıt Neighborhood, Akşehir, named after the large plane tree before it, built by locals on the site of an earlier mosque founded by Seyyid Necmeddin."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Akşehir Merkez Anıt Mahallesi'ndedir; adını önünde yükselen büyük çınardan alır. Mevcut kaynaklardan ve III. Murad zamanındaki H. 992 / M. 1584 tarihli vakıf defteri kayıtlarından caminin yerinde Seyyid Mahmut Hayrani'nin oğlu Seyyid Necmeddin'in yaptırdığı bir cami bulunduğu anlaşılmaktadır. Zamanla harap olan yapı mahalle sakinlerince yıkılarak Çınaraltı Camii yaptırılmıştır; yakın zamanda minare eklenmiştir.",
+        "en": "The mosque is in Anıt Neighborhood, Akşehir centre, and is named after the large plane tree in front. Sources and the foundation register of 992 AH / 1584 AD (Murad III) show that an earlier mosque built by Seyyid Necmeddin, son of Seyyid Mahmut Hayrani, stood on the site. It decayed, was demolished by the residents and the Çınaraltı Mosque was built; a minaret was added recently."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "326"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari Özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Cami dıştan dikdörtgen planlı ve kırma çatılıdır; duvarlarda taş, tuğla ve ahşap kullanılmıştır. Sokağa bakan batı cephenin altında taş, üstte yer yer tuğla görülür; altta dikdörtgen dört pencere vardır, üstte güneybatı kısım sivri kemerli sağır nişlerle hareketlendirilmiştir. Harim derinlemesine dikdörtgen planlıdır; kıble duvarı ortasındaki mihrap sadedir.",
+        "en": "The mosque is rectangular outside with a hipped roof; walls use stone, brick and wood. The street-facing west facade is stone below, brick in places above, with four rectangular windows below and blind pointed-arch niches on the upper southwest part. The harim is deeply rectangular; the mihrab is plain."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "326"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [],
+  "people": [
+    {
+      "name": "Seyyid Necmeddin",
+      "role": {
+        "tr": "Önceki camiyi yaptıran; Seyyid Mahmut Hayrani'nin oğlu",
+        "en": "Builder of the earlier mosque; son of Seyyid Mahmut Hayrani"
+      }
+    }
+  ],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "onceki-cami-kayit-1584",
+      "year": 1584,
+      "date": null,
+      "hijri": "992",
+      "type": "record",
+      "title": {
+        "tr": "Vakıf defterinde yerinde Seyyid Necmeddin'in yaptırdığı cami kayıtlı",
+        "en": "Foundation register records an earlier mosque built by Seyyid Necmeddin on the site"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "326"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Dikdörtgen planlı, kırma çatılı bir camidir. Sokağa bakan batı cephenin altında taş, üstünde yer yer tuğla vardır; altta dört dikdörtgen pencere, üstte sivri kemerli sağır nişler görülür. Önünde büyük bir çınar bulunur.",
+      "en": "A rectangular mosque with a hipped roof. The west facade is stone below with brick above, four rectangular windows at the bottom and blind pointed-arch niches above. A large plane tree stands before it."
+    },
+    "audio_description_source": "Kitap metnindeki mimari tarifinden yazıldı."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "326-326"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1346",
+        "original_name": "pdf-s165-xref1346",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "326"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Çınaraltı Camii (kitap s. 326)",
+        "en": "Çınaraltı Mosque (book p. 326)"
+      },
+      "alt": {
+        "tr": "Yamaçlarda uzanan kırmızı çatılı binalar arasında, uzun ince bir minare ve çevresindeki ağaçlar görülüyor.",
+        "en": "A tall slender minaret stands among red-roofed buildings and trees in a valley setting."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1340",
+        "original_name": "pdf-s165-xref1340",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "326"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Çınaraltı Camii (kitap s. 326)",
+        "en": "Çınaraltı Mosque (book p. 326)"
+      },
+      "alt": {
+        "tr": "Taş duvarlı, kiremit çatılı bir cami. Yanında bir minare ve ahşap çerçeveli pencereler var.",
+        "en": "A stone-walled mosque with a tiled roof. A minaret stands beside it, and wooden-framed windows are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1342",
+        "original_name": "pdf-s165-xref1342",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "326"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Çınaraltı Camii (kitap s. 326)",
+        "en": "Çınaraltı Mosque (book p. 326)"
+      },
+      "alt": {
+        "tr": "Kırmızı halılarla kaplı, sütunlar ve ahşap balkonlu iç mekân.",
+        "en": "Interior with red carpets, columns, and a wooden balcony."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1344",
+        "original_name": "pdf-s165-xref1344",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "326"
+      },
+      "subject": "courtyard",
+      "caption": {
+        "tr": "Çınaraltı Camii (kitap s. 326)",
+        "en": "Çınaraltı Mosque (book p. 326)"
+      },
+      "alt": {
+        "tr": "Büyük bir çınar ağacının yanında, taş zeminli bir avlu. Arka planda, ahşap kapılı ve kiremit çatılı bir bina.",
+        "en": "A courtyard with a large plane tree. In the background, a building with wooden doors and a tiled roof."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": []
+}

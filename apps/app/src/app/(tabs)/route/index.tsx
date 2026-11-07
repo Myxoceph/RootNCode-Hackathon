@@ -1,13 +1,14 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Button, Card, fontFamily, radius, spacing, Text, useTheme } from "@vagabonds/ui";
-import { Link, useRouter } from "expo-router";
+import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
-import { useState } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { useEffect, useMemo, useState } from "react";
+import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { visuallyHidden } from "@/lib/visually-hidden";
 import { Segmented } from "@/components/segmented";
-import { bursaDishes } from "@/content/food";
+import { bursaDishesIn } from "@/content/food";
 import {
   formatClock,
   planRoute,
@@ -17,7 +18,10 @@ import {
   type PlanItem,
   type Region,
 } from "@/content/routes";
-import { useAddedDishes } from "@/lib/route-plan";
+import { announce } from "@/lib/announce";
+import { setDishes, useAddedDishes } from "@/lib/route-plan";
+import { useLang, useMessages } from "@/i18n";
+import { routeKey, saveRoute, useSavedRoutes } from "@/lib/saved-routes";
 
 const regions = [
   { value: "bursa", label: "Bursa" },
@@ -25,28 +29,39 @@ const regions = [
   { value: "both", label: "Bursa & Edirne" },
 ] as const;
 
-const durations = [
-  { value: "half", label: "Yarım gün" },
-  { value: "1", label: "1 gün" },
-  { value: "2", label: "2 gün" },
-] as const;
+const DURATIONS = ["half", "1", "2"] as const;
 
 /**
  * Rota Planla (module 4): pick a region and a length, get a themed waqf route
- * ordered by importance and fitted to the weather.
+ * ordered by importance and fitted to the weather. "Rotayı kaydet" keeps it in Profil ·
+ * Rotalarım, which opens it here again (`/route?region=…&duration=…&dishes=…`).
  */
 export default function RouteScreen() {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const m = useMessages();
+  const w = m.planner;
+  const lang = useLang();
+  const durations = DURATIONS.map((value) => ({ value, label: w.durations[value] }));
+  const params = useLocalSearchParams<{ region?: string; duration?: string; dishes?: string }>();
   const [region, setRegion] = useState<Region>("bursa");
   const [duration, setDuration] = useState<Duration>("half");
   const addedIds = useAddedDishes();
+  const saved = useSavedRoutes();
 
-  const plan = planRoute(region, duration);
+  // A saved route opened from Rotalarım.
+  useEffect(() => {
+    if (params.region === "bursa" || params.region === "edirne" || params.region === "both") setRegion(params.region);
+    if (params.duration === "half" || params.duration === "1" || params.duration === "2") setDuration(params.duration);
+    if (params.dishes !== undefined) setDishes(params.dishes ? params.dishes.split(",") : []);
+  }, [params.region, params.duration, params.dishes]);
+
+  const plan = useMemo(() => planRoute(region, duration, lang), [region, duration, lang]);
   const [firstDay] = plan.days;
   const stopCount = plan.days.reduce((n, d) => n + d.stops.length, 0);
-  const added = bursaDishes.filter((d) => addedIds.includes(d.id));
+  const added = useMemo(() => bursaDishesIn(lang).filter((d) => addedIds.includes(d.id)), [addedIds, lang]);
+  const isSaved = saved.some((route) => routeKey(route) === routeKey({ region, duration, dishes: [...addedIds] }));
 
   return (
     <ScrollView
@@ -54,15 +69,16 @@ export default function RouteScreen() {
       contentContainerStyle={[styles.content, { paddingTop: insets.top + spacing.lg }]}
     >
       <Head>
-        <title>Rota Planla · Vagabonds</title>
+        <title>{m.common.title(m.screens.planRoute)}</title>
       </Head>
-      <Text variant="title" headingLevel={1}>
-        Rota Planla
+      {/* The tab bar names the page: the title is for screen readers only. */}
+      <Text variant="title" headingLevel={1} style={visuallyHidden}>
+        {m.screens.planRoute}
       </Text>
-      <Text color="textSecondary">Bölge ve süre seç, vakıf güzergâhını biz dizelim.</Text>
+      <Text color="textSecondary">{w.intro}</Text>
 
-      <Segmented label="Bölge" options={regions} value={region} onChange={setRegion} />
-      <Segmented label="Süre" options={durations} value={duration} onChange={setDuration} look="track" />
+      <Segmented label={w.region} options={regions} value={region} onChange={setRegion} />
+      <Segmented label={w.duration} options={durations} value={duration} onChange={setDuration} look="track" />
 
       <View accessibilityLiveRegion="polite" style={styles.content}>
         {plan.notice && (
@@ -75,14 +91,14 @@ export default function RouteScreen() {
             <WeatherCard day={firstDay} />
             <Balance share={firstDay.outdoorShare} />
             <View style={[styles.advice, { backgroundColor: c.surfaceRaised }]}>
-              <Text variant="caption">{weatherAdvice(firstDay)}</Text>
+              <Text variant="caption">{weatherAdvice(firstDay, w)}</Text>
             </View>
           </>
         )}
 
         <Card>
           <Text variant="overline" color="textSecondary">
-            {`VAKIF GÜZERGÂHI · ${stopCount} ESER`}
+            {w.routeHead(stopCount)}
           </Text>
           <Text variant="heading" headingLevel={2}>
             {plan.title}
@@ -91,7 +107,7 @@ export default function RouteScreen() {
             <View key={`${day.city}-${i}`} style={styles.day}>
               {plan.days.length > 1 && (
                 <Text variant="overline" color="primary">
-                  {`${i + 1}. GÜN · ${day.city.toLocaleUpperCase("tr-TR")} · ${day.weather.day.toLocaleUpperCase("tr-TR")}`}
+                  {w.dayHead(i + 1, day.city.toLocaleUpperCase(lang), day.weather.day.toLocaleUpperCase(lang))}
                 </Text>
               )}
               <Timeline items={day.items} />
@@ -100,18 +116,37 @@ export default function RouteScreen() {
           {added.length > 0 && (
             <View style={styles.day}>
               <Text variant="overline" color="warning">
-                EKLEDİĞİN LEZZET DURAKLARI
+                {w.addedFood}
               </Text>
               <Timeline
-                items={added.map((d) => ({ kind: "food", minutes: -1, label: "Lezzet durağı", name: d.name, where: d.where }))}
+                items={added.map((d) => ({ kind: "food", minutes: -1, label: w.foodStop, name: d.name, where: d.where }))}
               />
             </View>
           )}
-          <Button label="Haritada başlat" onPress={() => router.navigate("/")} />
+          <View style={styles.actions}>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityState={{ disabled: isSaved }}
+              disabled={isSaved}
+              onPress={() => {
+                void saveRoute({ region, duration, dishes: [...addedIds], title: plan.title, stops: stopCount });
+                announce(w.savedSaid);
+              }}
+              style={({ pressed }) => [styles.save, { borderColor: isSaved ? c.border : c.highlightMark }, pressed && styles.pressed]}
+            >
+              <Ionicons name={isSaved ? "bookmark" : "bookmark-outline"} size={18} color={isSaved ? c.textSecondary : c.highlight} />
+              <Text variant="label" colorValue={isSaved ? c.textSecondary : c.highlight}>
+                {isSaved ? w.saved : w.save}
+              </Text>
+            </Pressable>
+            <View style={styles.flex}>
+              <Button label={w.startOnMap} onPress={() => router.navigate("/map")} />
+            </View>
+          </View>
         </Card>
 
         <Link href="/route/food" asChild>
-          <Button label="Lezzet duraklarını gör" variant="ghost" accessibilityRole="link" />
+          <Button label={w.seeFood} variant="ghost" accessibilityRole="link" />
         </Link>
       </View>
     </ScrollView>
@@ -120,6 +155,7 @@ export default function RouteScreen() {
 
 function WeatherCard({ day }: { day: DayPlan }) {
   const { colors: c } = useTheme();
+  const words = useMessages().planner;
   const w = day.weather;
   return (
     <Card style={styles.weather}>
@@ -131,14 +167,14 @@ function WeatherCard({ day }: { day: DayPlan }) {
         importantForAccessibility="no"
       />
       <View style={styles.flex}>
-        <Text variant="title" accessibilityLabel={`${w.high} derece`}>{`${w.high}°`}</Text>
+        <Text variant="title" accessibilityLabel={words.degrees(w.high)}>{`${w.high}°`}</Text>
         <Text variant="caption" color="textSecondary">{`${day.city} · ${w.day} · ${w.sky}`}</Text>
         <Text variant="caption" color="textSecondary">
-          {`En düşük ${w.low}° · yağış %${w.rain}${w.afternoonRain ? " (öğleden sonra)" : ""}`}
+          {words.low(w.low, w.rain, w.afternoonRain)}
         </Text>
       </View>
       <View style={[styles.chip, { backgroundColor: c.surfaceRaised }]}>
-        <Text variant="caption">Tahmin</Text>
+        <Text variant="caption">{words.forecast}</Text>
       </View>
     </Card>
   );
@@ -147,16 +183,17 @@ function WeatherCard({ day }: { day: DayPlan }) {
 /** Outdoor vs indoor share of the day, as a bar and in words. */
 function Balance({ share }: { share: number }) {
   const { colors: c } = useTheme();
+  const w = useMessages().planner;
   const pct = Math.round(share * 100);
   return (
-    <View accessible accessibilityLabel={`Açık hava yüzde ${pct}, kapalı mekân yüzde ${100 - pct}`}>
+    <View accessible accessibilityLabel={w.balanceLabel(pct)}>
       <View style={[styles.bar, { backgroundColor: c.surfaceRaised }]}>
         <View style={{ width: `${pct}%`, backgroundColor: c.success }} />
         <View style={[styles.flex, { backgroundColor: c.primary }]} />
       </View>
       <View style={styles.barLegend}>
-        <Text variant="caption" color="textSecondary">{`Açık hava %${pct}`}</Text>
-        <Text variant="caption" color="textSecondary">{`Kapalı mekân %${100 - pct}`}</Text>
+        <Text variant="caption" color="textSecondary">{w.outdoor(pct)}</Text>
+        <Text variant="caption" color="textSecondary">{w.indoor(100 - pct)}</Text>
       </View>
     </View>
   );
@@ -164,6 +201,7 @@ function Balance({ share }: { share: number }) {
 
 function Timeline({ items }: { items: PlanItem[] }) {
   const { colors: c } = useTheme();
+  const w = useMessages().planner;
   return (
     <View accessibilityRole="list">
       {items.map((item, i) => {
@@ -173,7 +211,7 @@ function Timeline({ items }: { items: PlanItem[] }) {
         const title = food ? `${item.label} · ${item.name}` : item.stop.name;
         const detail = food
           ? item.where
-          : `${Math.round(item.stop.hours * 60)} dk · ${item.stop.tag}${item.stop.outdoor >= 0.6 ? " · açık hava" : ""}`;
+          : `${w.minutes(Math.round(item.stop.hours * 60))} · ${item.stop.tag}${item.stop.outdoor >= 0.6 ? w.openAir : ""}`;
         return (
           <View key={`${title}-${i}`} style={styles.stop} accessible accessibilityLabel={`${time}${title}, ${detail}`}>
             <Text variant="caption" color="textSecondary" style={styles.time}>
@@ -204,6 +242,23 @@ function Timeline({ items }: { items: PlanItem[] }) {
 }
 
 const styles = StyleSheet.create({
+  pressed: {
+    opacity: 0.75,
+  },
+  actions: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+  },
+  save: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+    minHeight: 48,
+    paddingHorizontal: spacing.lg,
+    borderRadius: radius.full,
+    borderWidth: 1.5,
+  },
   content: {
     padding: spacing.lg,
     gap: spacing.md,

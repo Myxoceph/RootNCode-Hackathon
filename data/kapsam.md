@@ -43,6 +43,21 @@ Fotoğraflar 2023 depremlerinden önce çekilmiştir.
 | 47–63 | Türbeler / Ziyaretler | 17 (eser başına 1 sayfa) | 404–441 | 18 | Ahmet (ajan) | published (fotoğraflar bağlı) |
 | 64–78 | Kiliseler, İş Yeri ve Diğerleri, Eski Evler ve Konaklar | 14 kayıt + Kurşunlu Han'ın 2 alt yapısı (#69 eser değil: ticari iş yerleri listesi) | 444–487 | 20 | Ahmet (ajan) | published (fotoğraflar bağlı) |
 
+## Konya II. Cilt (tek kitap, 93 eser)
+
+Kaynak: `vk-konya-c2`. Kitap tek PDF; eser metinleri ve fotoğraflar `konya_book.py` ile çıkarılır
+([`tools/extract/README.md`](tools/extract/README.md#konya-ii-cilt-tek-pdf)). `#` sütunu
+`data/build/cache/konya-c2/index.md` dizinindeki sıra numaralarıdır. I. Cilt (`vk-konya-c1`) henüz işlenmedi.
+
+| # | Bölüm | Kayıtlar | Basılı s. | Foto | Kim | Durum |
+|---|---|---|---|---|---|---|
+| 1–19 | Külliyeler | 19 kayıt: 3 külliye + alt yapıları (Eşrefoğlu Süleyman Bey 5, Sultan II. Selim 7, Lala Mustafa Paşa 7) | 11–72 | sırada | Ahmet (ajan) | published |
+| 20–27 | Eğitim Yapıları | 8 medrese ve mektep | 75–116 | sırada | Ahmet (ajan) | published |
+| 28–60 | Türbeler | 33 türbe, kümbet ve zaviye | 119–210 | sırada | Ahmet (ajan) | published |
+| 61–73 | Su Yapıları | 13 hamam, çeşme ve sarnıç | 212–240 | sırada | Ahmet (ajan) | published |
+| 74–91 | Ticari Yapılar | 18 han, kervansaray, bedesten ve iş yeri | 242–286 | sırada | Ahmet (ajan) | published |
+| 92–93 | Sivil Mimari | Yusuf Ağa Kütüphanesi, Akşehir'de bir konut | 288–296 | sırada | Ahmet (ajan) | published |
+
 ### Cilt 2: Yıldırım (`vk-bursa-c2`)
 
 | # | Bölük | Sayfa | Kayıtlar | Kim | Durum |
@@ -73,3 +88,32 @@ Bölük numaraları her ciltte 1'den başlar; bu yüzden `#` sütununda cilt de 
 | C3-10 | Nilüfer | 627-647 | 5 | `bursa-nilufer-demirci-koyu-camii`, `-golyazi-camii`, `-golyazi-hamami`, `-golyazi-sur-duvarlari`, `-ozluce-kilisesi-camii` | Hüseyin (ajan) | published |
 | C3-11 | Orhangazi | 653-663 | 3 | `bursa-orhangazi-muradiye-camii`, `-orhan-gazi-camii-gurle`, `-gurle-koyu-hamami` | Hüseyin (ajan) | published |
 | C3-12 | Yenişehir | 667-717 | 17 | `bursa-yenisehir-*` (17 kayıt): `bali-bey-camii`, `carsi-hamami`, `cinarli-camii`, `ethem-pasa-camii`, `haci-hasan-camii`, `kursunlu-han`, `murat-pasa-camii`, `orhan-gazi-camii`, `orhan-gazi-hamami`, `postinpus-camii`, `semakizade-haci-huseyin-efendi-camii`, `sinan-pasa-arastasi`, `sinan-pasa-camii`, `sinan-pasa-imareti`, `sinan-pasa-kulliyesi`, `sinan-pasa-medresesi`, `yarhisar-koyu-cesmesi` | Hüseyin (ajan) | published |
+
+
+## Konya (`vk-konya-c1`: Konya Vakıf Eserleri I. Cilt, tek PDF)
+
+Kaynak: `konya-envanteri-1_cilt-web.pdf`; metin `build/cache/text/konya-1.txt` (246 PDF sayfası = çift sayfa; her PDF sayfasının sonunda basılı sayfa numarası). Bölükler PDF sayfa aralığıdır. Drive fotoğraf arşivi yok (media boş).
+
+| # | Bölük | PDF sayfa | Kayıtlar | Kim | Durum |
+|---|---|---|---|---|---|
+| K1-1 | Mevlâna Külliyesi (Karatay) | 16-37 | 15 kayıt: `konya-karatay-mevlana-*` (külliye + 14 alt kayıt) | Hüseyin (ajan) | published |
+| K1-2 | Meram I | 38-51 | 19 kayıt: `anber-reis-feridiye-camii`, `askan-camii`, `ayanbey-camii`, `bulgur-dede-mescidi`, `buyukkovanagzi-haci-haydar-efendi-camii`, `dayhane-camii-ve-mustemilati`, `ekmekkocu-mescidi`, `furgan-dede-mescidi`, `gazezler-camii`, `karaagac-koyu-camii`, `karakurt-camii`, `komurculer-camii`, `sadreddin-konevi-camii`, `sadreddin-konevi-kulliyesi`, `sadreddin-konevi-kutuphanesi`, `sadreddin-konevi-turbesi`, `seyh-ebul-vefa-camii`, `sukran-mescidi`, `yukari-camii-ve-haziresi` | Hüseyin (ajan) | published |
+| K1-3 | Meram II | 52-60 | 7 kayıt: `abdulaziz-camii`, `hoca-fakih-camii-ve-turbesi`, `hoca-hasan-camii`, `karatay-mescidi`, `saatci-camii`, `tahir-ile-zuhre-mescidi-ve-turbesi`, `tahir-pasa-camii` | Hüseyin (ajan) | published |
+| K1-4 | Meram III | 61-73 | 9 kayıt: `abdulmumin-mescidi`, `gokyurt-koyu-camii`, `haci-hasan-camii`, `ihtiyarettin-mescidi`, `iplikci-camii`, `kapu-camii`, `sahip-ata-camii`, `seyh-osman-rumi-camii`, `tellioglu-camii` | Hüseyin (ajan) | published |
+| K1-5 | Meram IV | 74-88 | 16 kayıt: `aksinne-kumbetli-gunbentli-mescidi`, `asagi-mahalle-kiziloren-kandemir-mescidi`, `emir-halil-camii`, `erdemsah-kale-i-cerp-mescidi`, `fahrunnisa-caybasi-mescit-ve-turbesi`, `gurb-i-cedidi-kosova-mescidi`, `hasbey-darul-huffaz-mescidi`, `kadi-mursel-camii`, `kalecik-mescidi`, `kurkcu-mescidi`, `nasuh-bey-camii`, `salih-pasa-dedemoglu-camii`, `tahtatepen-haci-adil-camii`, `tarhana-mescidi`, `veznedar-huseyin-efendi-asri-camii`, `yolcuoglu-gazioglu-camii` | Hüseyin (ajan) | published |
+| K1-6 | Karatay I | 89-101 | 12 kayıt: `sultan-selim-selimiye-camii`, `nuriye-camii`, `dolap-battal-mescidi`, `haci-veyis-camii-ve-cesmesi`, `selahaddin-kececiler-camii`, `karacihan-camii`, `garip-nasrullah-camii`, `haci-omerler-camii`, `obruk-koyu-camii`, `civiloglu-camii`, `burhan-dede-camii`, `igdeli-sultan-camii` | Hüseyin (ajan) | published |
+| K1-7 | Karatay II | 102-114 | 16 kayıt: `karakayis-sari-camii`, `tahtali-mescidi`, `durak-fakih-camii`, `cukur-camii`, `toraman-mescidi`, `sarnic-camii`, `araplar-ak-camii`, `bagevliya-cami-ve-cesmesi`, `muftu-abdullah-mescidi`, `ovaloglu-celik-mehmet-pasa-camii`, `kinaci-camii`, `meydan-i-ahmet-camii`, `kadi-izzettin-karpuzoglu-camii`, `sitte-i-banu-mescidi`, `hatuniye-mescidi`, `sems-i-tebrizi-camii-ve-turbesi` | Hüseyin (ajan) | published |
+| K1-8 | Karatay III | 115-128 | 10 kayıt: `sircali-demirci-haci-mescidi`, `cimilli-sari-mescidi`, `zenburi-mescidi`, `ickaraarslan-mescidi`, `sari-yakup-camii`, `koprubasi-mustafa-aga-camii`, `asmali-hatip-sultan-camii`, `pisili-pir-esat-kulliyesi`, `pisili-pir-esat-turbesi`, `pisili-pir-esat-camii` | Hüseyin (ajan) | published |
+| K1-9 | Karatay IV | 129-141 | 20 kayıt: `mengene-camii`, `alemdar-camii`, `saksaganlar-camii`, `dolap-mektep-mescidi`, `polatlar-haci-cemal-hatip-camii`, `seyh-ulema-recep-aga-camii`, `yanik-sedirler-kenan-dede-camii`, `digin-camii`, `hamzaoglu-camii`, `hanedan-camii`, `cayir-camii`, `haci-ivaz-camii`, `sutcu-camii`, `cataloglu-camii`, `topraklik-hasan-efendi-camii`, `cavusoglu-camii`, `namik-pasa-camii`, `halkabegus-mescidi-ve-turbesi`, `tolluoglu-camii`, `seyh-ulema-yusuf-aga-camii` | Hüseyin (ajan) | published |
+| K1-10 | Karatay V | 142-146 | 1 kayıt: `aziziye-camii` | Hüseyin (ajan) | published |
+| K1-11 | Selçuklu I | 147-159 | 8 kayıt: `besare-bey-mescidi`, `ak-sazi-bey-camii`, `sakahane-hidir-ilyas-davut-aga-mescidi`, `zevle-sultan-mescidi`, `basarakavak-zahide-hatun-camii`, `tatkoy-merkez-camii`, `beyhekim-mescit-ve-turbesi`, `sultan-alaeddin-ulu-camii` | Hüseyin (ajan) | published |
+| K1-12 | Selçuklu II / Akşehir | 160-170 | 12 kayıt (`eserler/konya/{selcuklu, ahirli, akoren, aksehir}/`) | Hüseyin (ajan) | published |
+| K1-13 | Akşehir / Altınekin / Beyşehir | 171-192 | 10 kayıt (`eserler/konya/{aksehir, altinekin, beysehir}/`) | Hüseyin (ajan) | published |
+| K1-14 | Bozkır / Çeltik / Çumra / Derbent / Doğanhisar | 193-207 | 10 kayıt (`eserler/konya/{bozkir, celtik, cumra, derbent, doganhisar}/`) | Hüseyin (ajan) | published |
+| K1-15 | Doğanhisar / Ereğli / Hüyük / Ilgın | 208-223 | 12 kayıt (`eserler/konya/{doganhisar, eregli, huyuk, ilgin}/`) | Hüseyin (ajan) | published |
+| K1-16 | Kadınhanı / Karapınar / Sarayönü / Seydişehir | 224-235 | 16 kayıt (`eserler/konya/{ilgin, kadinhani, karapinar, sarayonu}/`) | Hüseyin (ajan) | published |
+| K1-17 | Taşkent / Yunak ve sonu | 236-246 | 5 kayıt (`eserler/konya/{sarayonu, seydisehir, taskent, yunak}/`) | Hüseyin (ajan) | published |
+| K1-13b | Beyşehir (ek, boşluk) | 190-197 | 7 kayıt (`eserler/konya/beysehir/`) | Hüseyin (ajan) | published |
+
+Konya I. Cilt tamamlandı: 205 kayıt (Karatay 74, Meram 51, Akşehir 16, Selçuklu 9, Beyşehir 8, Doğanhisar 7, Ilgın 7, Kadınhanı 6, Ereğli 5, Bozkır 4, Karapınar 3, Sarayönü 2, Seydişehir 2, Akören 2, Hüyük 2, Ahırlı/Altınekin/Çeltik/Çumra/Derbent/Taşkent/Yunak 1).
+Not: dev'de Konya II. Cilt kayıtları (Ahmet) aynı ilçe klasörlerinde; id çakışması yok.

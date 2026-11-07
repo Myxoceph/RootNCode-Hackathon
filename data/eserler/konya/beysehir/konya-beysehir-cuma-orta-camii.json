@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-beysehir-cuma-orta-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 382) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) kitapta yok; sahada teyit edilmeli.",
+      "Era kitapta belirtilmiyor; era boş bırakıldı.",
+      "Banî ve usta kitapta yok.",
+      "Cami adı ile Hacıarmağan Mahallesi eşleşmesi: kitapta sayfa düzeni gereği 'Cuma (Orta) Camii' başlığı metnin ardından geliyor; metin bu başlığa atfedildi, teyit edilmeli.",
+      "Cami adresi (sokak) kitapta yok.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": []
+  },
+  "name": {
+    "tr": "Cuma (Orta) Camii",
+    "en": "Cuma (Orta) Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": null,
+  "tags": [
+    "Hacıarmağan Mahallesi",
+    "ahşap direkli",
+    "çok onarımlı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Beyşehir",
+    "neighborhood": "Hacıarmağan Mahallesi",
+    "address": null,
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "382"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.678487,
+      "lng": 31.723825,
+      "source": "osm",
+      "verified": false,
+      "verification_note": "OpenStreetMap way/852069728 ('Cuma Cami'), ad ve ilçe eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Kesin tarih bilinmiyor; XIII. yüzyılın ilk yarısı olabileceği düşünülüyor",
+      "en": "Construction date unknown; possibly first half of the 13th century"
+    },
+    "start_year": null,
+    "end_year": null,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Kitap kesin tarih vermiyor; 'XIII. yüzyılın ilk yarısında yapılmış olabileceği düşünülmektedir'.",
+      "en": "The book gives no firm date; 'it is thought that it may have been built in the first half of the 13th century'."
+    },
+    "confidence": "probable",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "382"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Hacıarmağan Mahallesi'nde yer alan cami, XIII. yüzyılın ilk yarısında yapılmış olabileceği düşünülen ancak çok onarım görerek özgünlüğünü yitirmiş bir yapıdır.",
+    "en": "The mosque in Hacıarmağan Neighborhood may have been built in the first half of the 13th century but has undergone many repairs and generally lost its originality."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe",
+        "en": "History"
+      },
+      "body": {
+        "tr": "Cami Beyşehir, Hacıarmağan Mahallesi'ndedir. İnşa tarihi hakkında net bilgi yoktur; XIII. yüzyılın ilk yarısında yapılmış olabileceği düşünülmektedir. Mevcut yapı birçok onarım görmüştür. 1956'da minare eklenmiş, cami 2003'te Vakıflar Genel Müdürlüğü tarafından onarılmıştır. Yapı genel olarak özgünlüğünü yitirmiştir.",
+        "en": "The mosque is in Beyşehir, Hacıarmağan Neighborhood. There is no clear information about its construction date; it may have been built in the first half of the 13th century. The existing structure has undergone many repairs. The minaret was added in 1956 and the mosque was repaired by the General Directorate of Foundations in 2003. The building has generally lost its originality."
+      },
+      "confidence": "probable",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "382"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Mimari özellikler",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Kuzeybatı köşedeki minare kare kaideli, silindirik gövdeli ve tek şerefelidir. Harim, 12 ahşap direğin taşıdığı ahşap tavanla örtülüdür ve dört sahına ayrılmıştır.",
+        "en": "The minaret in the northwest corner has a square base, cylindrical body and a single balcony. The harim is covered with a wooden ceiling supported by 12 wooden poles and divided into four aisles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "382"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "ahsap_direk_sayisi",
+      "label": {
+        "tr": "Harimdeki ahşap direk sayısı",
+        "en": "Number of wooden poles in the harim"
+      },
+      "value": 12,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "382"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [],
+  "timeline": [
+    {
+      "id": "minare-1956",
+      "year": 1956,
+      "type": "addition",
+      "title": {
+        "tr": "Minare eklendi",
+        "en": "Minaret added"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "382"
+        }
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "onarim-2003",
+      "year": 2003,
+      "type": "repair",
+      "title": {
+        "tr": "Vakıflar Genel Müdürlüğü onarımı",
+        "en": "Repair by the General Directorate of Foundations"
+      },
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "382"
+        }
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Cuma (Orta) Camii'nin kuzeybatı köşesinde kare kaideli, silindirik gövdeli, tek şerefeli bir minare vardır. Harim, on iki ahşap direğin taşıdığı ahşap tavanla örtülüdür ve dört sahına ayrılır.",
+      "en": "The Cuma (Orta) Mosque has a minaret in its northwest corner with a square base, cylindrical body and one balcony. The harim has a wooden ceiling carried by twelve wooden poles and is divided into four aisles."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 382)."
+  },
+  "ambient_sound": null,
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "382-382"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1606",
+        "original_name": "pdf-s193-xref1606",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "382"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Cuma (Orta) Camii (kitap s. 382)",
+        "en": "Cuma (Orta) Mosque (book p. 382)"
+      },
+      "alt": {
+        "tr": "Yüksekten çekilmiş bir görüntüde, kırmızı kiremit çatılı binalar arasında beyaz bir minare ve kubbeli yapılar yer alıyor.",
+        "en": "An aerial view shows a white minaret and domed structures among red-tiled buildings."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1608",
+        "original_name": "pdf-s193-xref1608",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "382"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Cuma (Orta) Camii (kitap s. 382)",
+        "en": "Cuma (Orta) Mosque (book p. 382)"
+      },
+      "alt": {
+        "tr": "Ahşap sütunlar ve kemerlerle desteklenen iç mekanda kırmızı halılar ve bir minber görülüyor.",
+        "en": "Wooden pillars and arches support the interior with red carpets and a minbar visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=1610",
+        "original_name": "pdf-s193-xref1610",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "382"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Cuma (Orta) Camii (kitap s. 382)",
+        "en": "Cuma (Orta) Mosque (book p. 382)"
+      },
+      "alt": {
+        "tr": "Kubbe ve iki daire içinde Arapça yazılarla süslenmiş, geometrik desenlerle kaplı mozaik bir duvar.",
+        "en": "A dome and two circles with Arabic inscriptions on a wall covered in geometric mosaic patterns."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

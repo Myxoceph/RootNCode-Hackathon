@@ -1,0 +1,582 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-anber-reis-feridiye-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Konya Vakıf Eserleri I. Cilt kitabındaki ilgili bölümden (s. 84-87) özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Pir Hüseyin Bey'in 1422'de tesis ettiği vakıfların içeriği kitapta yok.",
+      "Anber türbesinin ayrı kaydı yok (yıkılmış); Sırçalı Medrese müzesi kitabesi ayrıca incelenmeli.",
+      "'Feridiye' adının nedeni kitapta açıklanmıyor.",
+      "Koordinat kitapta yok; sahada ya da resmi kayıttan eklenmeli (location.coordinates eklenmedi).",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, tuvalet) kitapta yok; sahada teyit edilmeli.",
+      "Ziyaret bilgileri (süre, ücret, saatler) kitapta yok.",
+      "Mimar kitapta belirtilmiyor.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "founder / people",
+        "note": "Kitap bir yerde 'Şerafeddin Anber', başka yerde caminin yaptıranı olarak 'Şehabeddin Anber' diyor; iki adın aynı kişi mi olduğu belli değil. Caminin bânîsi olarak 'Şehabeddin Anber' yazıldı, confidence disputed."
+      },
+      {
+        "field": "timeline[seyfeddin-1264]",
+        "note": "Anber'in türbesi anlatılırken türbe kitâbesine göre 1264'te ölen kişi 'Seyfeddin Süleyman Bey' olarak geçiyor (Anber değil); Anber'in II. Kılıçarslan (XII. yüzyıl) zamanında yaşadığı söyleniyor. Çelişki açıklanmıyor; olduğu gibi bırakıldı."
+      },
+      {
+        "field": "dating",
+        "note": "Metin Selçuklu döneminde yapıldığını söylüyor ama kitabe/tarih vermiyor; 1911 yeniden inşa tarihi esas alındı. Cami 'XX. yüzyılın önemli turkuaz çinilerine' sahip deniyor."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Anber Reis (Feridiye) Camii",
+    "en": "Anber Reis (Feridiye) Mosque"
+  },
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "Anber Reis",
+    "Arifi Paşa",
+    "turkuaz çini",
+    "Anıt Meydanı",
+    "vakıflar"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Şeyh Sadrettin Mahallesi",
+    "address": "Anıt Meydanı, Ferit Paşa Caddesi, No. 2",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "84-87"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "1911 (yeniden inşa); aslı Selçuklu dönemi",
+      "en": "1911 (rebuilt); original Seljuk period"
+    },
+    "start_year": 1911,
+    "end_year": 1911,
+    "hijri_year": null,
+    "century": 20,
+    "basis": {
+      "tr": "Yıkılan cami 1911'de Konya Valisi Arifi Paşa tarafından yeniden yaptırılmıştır. Orijinal yapı Selçuklu dönemine bağlanıyor ama yıl verilmiyor.",
+      "en": "The ruined mosque was rebuilt in 1911 by Konya Governor Arifi Paşa. The original is linked to the Seljuk period, but no year is given."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "84-87"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Şehabeddin Anber",
+    "role": "banî",
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "84-87"
+      }
+    ]
+  },
+  "architect": null,
+  "waqf": {
+    "name": null,
+    "deed": null,
+    "conditions": null,
+    "land_note": {
+      "tr": "Caminin birçok vakfı vardır; Turgutoğullarından Pir Hüseyin Bey 1422'de bazı vakıflar tesis etmiştir. Vakıfların içeriği kitapta verilmiyor.",
+      "en": "The mosque has many endowments; Pir Hüseyin Bey of the Turgutoğulları established some in 1422. Their content is not given in the book."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "84"
+      }
+    ]
+  },
+  "summary": {
+    "tr": "Selçuklu saray ağalarından Anber'e bağlanan, harap olunca 1911'de Konya Valisi Arifi Paşa'nın yeniden yaptırdığı kesme taş cami. Birçok vakfı vardır; XX. yüzyıl turkuaz çinileriyle bezeli mihrabı ve çini mozaikli cephe süslemeleriyle dikkat çeker.",
+    "en": "A cut-stone mosque linked to Anber, a lord of the Seljuk palace, rebuilt in 1911 by Konya Governor Arifi Paşa after falling into ruin. It has many endowments and is noted for its tiled mihrab and 20th-century turquoise tiles."
+  },
+  "sections": [
+    {
+      "id": "tarihce",
+      "order": 1,
+      "title": {
+        "tr": "Tarihçe ve Vakıflar",
+        "en": "History and Endowments"
+      },
+      "body": {
+        "tr": "Cami, Meram'da Anıt Meydanı, Şeyh Sadrettin Mahallesi, Ferit Paşa Caddesi No. 2'dedir. Şerafeddin Anber, II. Kılıçarslan zamanında yaşamış saray ağalarındandır; türbesi bulunduğu meydanı genişletmek bahanesiyle 1927'de yıkılmıştır. Türbe kitâbesi Sırçalı Medrese Mezar Anıtları Müzesi'ndedir; kitâbeye göre Seyfeddin Süleyman Bey 1264'te vefat etmiştir. Türbenin yanındaki, Şehabeddin Anber tarafından yaptırılmış ve harap olmuş cami 1911'de Konya Valisi Arifi Paşa tarafından yeniden inşa ettirilmiştir. Caminin birçok vakfı vardır; Turgutoğullarından Pir Hüseyin Bey 1422'de Anber Reis Camii'ne bazı vakıflar tesis etmiştir.",
+        "en": "The mosque is in Anıt Square, Şeyh Sadrettin Neighborhood, Ferit Paşa Street No. 2, Meram. Şerafeddin Anber was one of the palace lords under Kılıçarslan II; his mausoleum was demolished in 1927 under the pretext of widening the square. The tomb inscription is in the Sırçalı Madrasa Grave Monuments Museum; according to it, Seyfeddin Süleyman Bey died in 1264. The ruined mosque beside the tomb, built by Şehabeddin Anber, was rebuilt in 1911 by Konya Governor Arifi Paşa. The mosque has many endowments; Pir Hüseyin Bey of the Turgutoğulları established some in 1422."
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "84"
+        }
+      ]
+    },
+    {
+      "id": "mimari",
+      "order": 2,
+      "title": {
+        "tr": "Dış Görünüm ve Plan",
+        "en": "Exterior and Plan"
+      },
+      "body": {
+        "tr": "Cami kuzey-güney yönünde uzanan dikdörtgen planlıdır; kuzeyinde son cemaat yeri, kuzeydoğusunda minare vardır. İçten düz dam, dıştan kırma çatıyla örtülüdür. Düzgün kesme taştan inşa edilmiştir ve bugün ibadete açıktır. Doğu ve batı cephelerde dörder, kuzey ve güney cephelerde ikişer pencere vardır; pencereler iki katlıdır (altta düz lentolu, üstte sivri kemerli). Kuzey cephede oldukça yüksek tutulmuş sivri kemerli giriş kapısı dikkat çeker; pencerelerin üstünde ve kemer köşeliklerinde firuze kare mozaik çiniler görülür. Tek şerefeli taş minare son cemaat yerinin doğusuna bitişiktir; kare kaideli, sade silindirik gövdelidir ve kısa silindirik, petek konik külahla örtülüdür.",
+        "en": "The mosque is rectangular, running north-south, with the narthex to the north and the minaret in the northeast. It has a flat roof inside and a hipped roof outside, is built of smooth cut stone and is open for worship today. There are four windows each on the east and west facades and two each on the north and south, all two-storey (flat lintels below, pointed arches above). The very tall pointed-arched entrance in the north facade stands out; turquoise square mosaic tiles appear above the windows and in the arch spandrels. The single-balconied stone minaret adjoins the east of the narthex, with a square base, plain cylindrical shaft and a short conical cap."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "84-86"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 3,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Son cemaat yeri doğu-batı yönünde dikdörtgen planlı, ahşap çıtalı tavanlıdır; güney duvarındaki sade sivri kemerli kapıdan harime geçilir. Harimin kuzeyi ikinci bir son cemaat yeri gibi tasarlanmış, iki dikdörtgen paye üzerinde üç sivri kemerle harime açılan bu bölüm mahfil olarak değerlendirilmiştir; kuzeybatı köşedeki merdivenle çıkılır. Harim, ortadaki çokgen formlu iki sıra dört metal ayakla üç sahına bölünmüştür. Tavan ahşapla geometrik kompozisyonlarla süslenmiştir. Kıble duvarı ortasındaki çini kaplı mihrabın kenar bordürlerinin alt kısmında geometrik, diğer kısımlarda bitkisel süsleme ve yazı bulunur; dikdörtgen niş yüzeyi, sütunceler ve sekiz sıra mukarnas kavsara lacivert sade çini levhalarla kaplıdır. Güneybatıdaki ahşap minber sadedir, aynalığında eğri kesim tekniğiyle kıvrık dal motifleri vardır. Cami XX. yüzyılın önemli turkuaz çinilerine sahiptir.",
+        "en": "The narthex is rectangular, running east-west, with a wooden slatted ceiling; the harim is entered through a plain pointed-arched door in its south wall. The north of the harim is designed like a second narthex, opening onto the harim through three pointed arches on two rectangular piers, and was used as a gallery reached by a staircase in the northwest corner. The harim is divided into three aisles by four polygonal metal posts in two rows. The ceiling is decorated with wooden geometric compositions. The tiled mihrab has geometric ornament on the lower borders and floral ornament and writing elsewhere; the niche surface, colonnettes and an eight-row muqarnas hood are covered in plain dark-blue tiles. The simple wooden minbar in the southwest has curved branch motifs on its backboard. The mosque has important 20th-century turquoise tiles."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "86-87"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere_dogu_bati",
+      "label": {
+        "tr": "Doğu ve batı cephe pencere sayısı",
+        "en": "Windows on east and west facades"
+      },
+      "value": 4,
+      "unit": "adet (her cephe)",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "84"
+        }
+      ]
+    },
+    {
+      "key": "pencere_kuzey_guney",
+      "label": {
+        "tr": "Kuzey ve güney cephe pencere sayısı",
+        "en": "Windows on north and south facades"
+      },
+      "value": 2,
+      "unit": "adet (her cephe)",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "84"
+        }
+      ]
+    },
+    {
+      "key": "malzeme",
+      "label": {
+        "tr": "Yapı malzemesi",
+        "en": "Building material"
+      },
+      "value": "düzgün kesme taş",
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "84"
+        }
+      ]
+    },
+    {
+      "key": "mukarnas_sirasi",
+      "label": {
+        "tr": "Mihrap kavsarası mukarnas sırası",
+        "en": "Mihrab hood muqarnas rows"
+      },
+      "value": 8,
+      "unit": "sıra",
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "87"
+        }
+      ]
+    },
+    {
+      "key": "sahin_sayisi",
+      "label": {
+        "tr": "Harim sahın sayısı",
+        "en": "Harim aisles"
+      },
+      "value": 3,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "87"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Şerafeddin Anber",
+      "role": {
+        "tr": "II. Kılıçarslan zamanında yaşamış saray ağası; türbesi 1927'de yıkıldı",
+        "en": "Palace lord under Kılıçarslan II; his mausoleum was demolished in 1927"
+      }
+    },
+    {
+      "name": "Şehabeddin Anber",
+      "role": {
+        "tr": "Türbenin yanındaki camiyi yaptıran",
+        "en": "Builder of the mosque beside the tomb"
+      }
+    },
+    {
+      "name": "Seyfeddin Süleyman Bey",
+      "role": {
+        "tr": "Türbe kitâbesine göre 1264'te vefat etti",
+        "en": "Died in 1264 according to the tomb inscription"
+      }
+    },
+    {
+      "name": "Arifi Paşa",
+      "role": {
+        "tr": "Konya Valisi; camiyi 1911'de yeniden yaptırdı",
+        "en": "Governor of Konya; had the mosque rebuilt in 1911"
+      }
+    },
+    {
+      "name": "Pir Hüseyin Bey",
+      "role": {
+        "tr": "Turgutoğullarından; 1422'de camiye vakıflar tesis etti",
+        "en": "Of the Turgutoğulları; established endowments for the mosque in 1422"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "turbe-kitabesi",
+      "location": {
+        "tr": "Anber türbesine ait kitâbe (bugün Sırçalı Medrese Mezar Anıtları Müzesi'nde)",
+        "en": "Inscription of the Anber tomb (now in the Sırçalı Madrasa Grave Monuments Museum)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1264"
+      },
+      "note": {
+        "tr": "Kitap metni vermiyor, dilini de belirtmiyor. Kitâbeye göre Seyfeddin Süleyman Bey 1264'te vefat etmiştir.",
+        "en": "The book gives neither the text nor the language. According to it, Seyfeddin Süleyman Bey died in 1264."
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "84"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "seyfeddin-1264",
+      "year": 1264,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Türbe kitâbesine göre Seyfeddin Süleyman Bey'in vefatı",
+        "en": "Death of Seyfeddin Süleyman Bey according to the tomb inscription"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "84"
+        }
+      ]
+    },
+    {
+      "id": "vakif-1422",
+      "year": 1422,
+      "date": null,
+      "hijri": null,
+      "type": "record",
+      "title": {
+        "tr": "Pir Hüseyin Bey camiye bazı vakıflar tesis etti",
+        "en": "Pir Hüseyin Bey established some endowments for the mosque"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "84"
+        }
+      ]
+    },
+    {
+      "id": "yeniden-insa-1911",
+      "year": 1911,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Harap cami Konya Valisi Arifi Paşa tarafından yeniden inşa ettirildi",
+        "en": "The ruined mosque was rebuilt by Governor Arifi Paşa"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "84"
+        }
+      ]
+    },
+    {
+      "id": "turbe-yikim-1927",
+      "year": 1927,
+      "date": null,
+      "hijri": null,
+      "type": "removal",
+      "title": {
+        "tr": "Anber türbesi meydanı genişletme gerekçesiyle yıkıldı",
+        "en": "The Anber mausoleum was demolished to widen the square"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "84"
+        }
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "feature": "mihrap",
+      "title": {
+        "tr": "Çini kaplı mihrap",
+        "en": "Tiled mihrab"
+      },
+      "hint": {
+        "tr": "Lacivert çinili mukarnas kavsaraya ve geometrik bordürlere bakın.",
+        "en": "Look at the dark-blue tiled muqarnas hood and the geometric borders."
+      },
+      "section_id": "ic-mekan"
+    }
+  ],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Anber Reis Camii düzgün kesme taştan yapılmış dikdörtgen bir camidir. Kuzey cephede çok yüksek sivri kemerli bir giriş kapısı ve doğuda tek şerefeli taş bir minare bulunur. Pencerelerin üstünde firuze çini mozaikler görülür. İçeride dört metal ayak mekânı üç bölüme ayırır; ahşap tavan geometrik desenlidir. Kıble duvarındaki mihrap renkli çinilerle, nişi lacivert çinilerle kaplıdır.",
+      "en": "Anber Reis Mosque is a rectangular building of smooth cut stone. The north facade has a very tall pointed-arched doorway and a single-balconied stone minaret stands to the east. Turquoise mosaic tiles appear above the windows. Inside, four metal posts divide the hall into three aisles under a geometrically patterned wooden ceiling. The mihrab in the qibla wall is tiled in several colours, its niche in dark blue."
+    },
+    "audio_description_source": "Kitaptaki mimari betimlemeden özetlenmiştir (s. 84-87)."
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "84-87"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=265",
+        "original_name": "pdf-s44-xref265",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "84"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Anber Reis (Feridiye) Camii (kitap s. 84)",
+        "en": "Anber Reis (Feridiye) Mosque (book p. 84)"
+      },
+      "alt": {
+        "tr": "Kırmızı kiremit çatılı, kiremit duvarlı cami. Mavi çinilı pencere çerçeveleri ve yanındaki sivri kule.",
+        "en": "A mosque with a red tile roof and brick walls. Blue tile window frames and a pointed minaret on the side."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=269",
+        "original_name": "pdf-s44-xref269",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "85"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Anber Reis (Feridiye) Camii (kitap s. 85)",
+        "en": "Anber Reis (Feridiye) Mosque (book p. 85)"
+      },
+      "alt": {
+        "tr": "Mavi çini kaplı duvar, kemerli pencereler ve yanındaki minareyle bir cami görünüyor.",
+        "en": "A mosque with blue tiled walls, arched windows, and a minaret beside it."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=267",
+        "original_name": "pdf-s44-xref267",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "85"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Anber Reis (Feridiye) Camii (kitap s. 85)",
+        "en": "Anber Reis (Feridiye) Mosque (book p. 85)"
+      },
+      "alt": {
+        "tr": "İç mekanda, ahşap tavan, sütunlar, camiye özgü kubbeli pencere ve büyük kristal avize yer alıyor.",
+        "en": "Inside, wooden ceiling, columns, mosque-style arched windows, and a large crystal chandelier are visible."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=274",
+        "original_name": "pdf-s45-xref274",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "86"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Anber Reis (Feridiye) Camii (kitap s. 86)",
+        "en": "Anber Reis (Feridiye) Mosque (book p. 86)"
+      },
+      "alt": {
+        "tr": "Havadan çekilmiş bir görüntüde, kiremit çatılı, mavi duvarlı cami ve yanında ince bir minare görülüyor.",
+        "en": "An aerial view shows a mosque with a tiled roof, blue walls, and a slender minaret."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=276",
+        "original_name": "pdf-s45-xref276",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "87"
+      },
+      "subject": "portal",
+      "caption": {
+        "tr": "Anber Reis (Feridiye) Camii (kitap s. 87)",
+        "en": "Anber Reis (Feridiye) Mosque (book p. 87)"
+      },
+      "alt": {
+        "tr": "Mavi çini kaplamalı, taş sütunlarla desteklenen üç kemerli bir giriş. Orta kemer daha büyük, camlı ve ahşap kapılar var.",
+        "en": "Three arched entrances with blue tiles and stone columns. The central arch is larger, with glass windows and wooden doors."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

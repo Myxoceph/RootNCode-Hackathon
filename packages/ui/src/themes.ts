@@ -30,6 +30,10 @@ const roles = [
   "mapBackground",
   "mapRoad",
   "mapRoadEdge",
+  /** Outline of a province with assets on the Turkey map. */
+  "mapProvince",
+  /** Every other province border on the Turkey map: quiet, for orientation only. */
+  "mapBorder",
 ] as const;
 
 export type ThemeRole = (typeof roles)[number];
@@ -44,15 +48,17 @@ const lightSpec: ThemeSpec = {
   border: "gece200",
   primary: "kobalt700",
   onPrimary: "white",
-  success: "firuze700",
+  success: "gulkurusu700",
   warning: "mercan700",
   highlight: "altin700",
   highlightMark: "altin600",
-  focusRing: "firuze700",
+  focusRing: "gulkurusu700",
   fog: "gece200",
   mapBackground: "gece50",
   mapRoad: "white",
   mapRoadEdge: "gece200",
+  mapProvince: "gulkurusu500",
+  mapBorder: "gece300",
 };
 
 const darkSpec: ThemeSpec = {
@@ -64,27 +70,29 @@ const darkSpec: ThemeSpec = {
   border: "gece700",
   primary: "kobalt300",
   onPrimary: "gece950",
-  success: "firuze300",
+  success: "gulkurusu300",
   warning: "mercan300",
   highlight: "altin300",
   highlightMark: "altin300",
-  focusRing: "firuze300",
+  focusRing: "gulkurusu300",
   fog: "gece800",
   mapBackground: "gece950",
   mapRoad: "gece700",
   mapRoadEdge: "gece1000",
+  mapProvince: "altin300",
+  mapBorder: "gece600",
 };
 
 /** High contrast: secondary text and borders take the full text color. */
-function highContrast(spec: ThemeSpec): ThemeSpec {
-  return { ...spec, textSecondary: spec.text, border: spec.text };
+function highContrast(spec: ThemeSpec, overrides: Partial<ThemeSpec> = {}): ThemeSpec {
+  return { ...spec, textSecondary: spec.text, border: spec.text, ...overrides };
 }
 
 export const themeSpecs = {
   light: lightSpec,
   dark: darkSpec,
-  lightHighContrast: highContrast(lightSpec),
-  darkHighContrast: highContrast(darkSpec),
+  lightHighContrast: highContrast(lightSpec, { mapProvince: "gulkurusu700", mapBorder: "gece600" }),
+  darkHighContrast: highContrast(darkSpec, { mapBorder: "gece400" }),
 } as const;
 
 export type ThemeName = keyof typeof themeSpecs;
@@ -116,7 +124,7 @@ export function getTheme(scheme: "light" | "dark", highContrastOn: boolean): The
 }
 
 /**
- * Camera screens (Zaman Perdesi, Taşın Dili, Ses Kapsülü) stay dark in every
+ * Camera screens (Ziyaret Mührü, Taşın Dili, Ses Kapsülü) stay dark in every
  * theme, so the viewfinder reads the same in daylight and at night.
  */
 const cameraSpec = {
@@ -161,6 +169,7 @@ const nonTextOn: Array<[ThemeRole, ThemeRole, string]> = [
   ["focusRing", "surface", "Focus ring on cards"],
   ["highlightMark", "surface", "Star, tab underline"],
   ["highlightMark", "mapBackground", "Star on the map"],
+  ["mapProvince", "mapBackground", "Province with assets on the Turkey map"],
   ["primary", "surface", "Icons, switch thumb track"],
   ["success", "surfaceRaised", "Switch on"],
   ["textSecondary", "surface", "Control borders"],

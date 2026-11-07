@@ -18,7 +18,7 @@ npm install                                  # kökten; tüm workspace'ler
 npm run app                                  # Expo geliştirme sunucusu
 ```
 
-- **Telefon:** Expo Go uygulamasıyla terminaldeki QR kodu okut (SDK 57).
+- **Telefon:** Expo Go uygulamasıyla terminaldeki QR kodu okut (SDK 58).
 - **Tarayıcı:** sunucu açıkken `w` tuşu, ya da `npm run web --workspace @vagabonds/app`.
 - **Kontrol:** `npm run typecheck --workspace @vagabonds/app` ve
   `npm run export --workspace @vagabonds/app` (üç platformun paketini derler).
@@ -75,7 +75,7 @@ sade alternatifler gösterilir:
 
 | Modül | Mobil | Web |
 |---|---|---|
-| 1. Zaman Perdesi | Kamera ghost overlay + slider | Önce/sonra slider |
+| 1. Ziyaret Mührü | Eserin belirlenen kısmı kamerada tanınır, ziyaret mühürlenir | Hangi kısmın çekileceği gösterilir; mühür telefonda |
 | 2. Taşın Dili | Marker AR ile kitabe tarama | Kitabe okuma modu |
 | 3-8 | Tam | Tam |
 
@@ -122,7 +122,7 @@ const asset = useAsset("bursa-osmangazi-ulucami");
   "Not bırak" ilk gönderimde takma ad sorar ve anonim oturum açar (`src/data/community.ts`); token telefonda
   `expo-secure-store`'da, web'de tarayıcı deposunda durur. Notlar moderatör onayından sonra görünür; durumları
   Profil → "Notlarım"da. Not göndermek her zaman API ister (mock'ta da). Yerelde onaylamak için:
-  `npm run moderator:create -w @vagabonds/api -- "Ad"` ve `POST /admin/contributions/:id/approve`
+  `npm run account:create -w @vagabonds/api -- <kullanıcı-adı> moderator`, `POST /auth/login` ve `POST /admin/contributions/:id/approve`
   (API'nin `/docs` sayfası).
 - Her kaynak veriyi sözleşmeyle doğrular; uymazsa `DataError` fırlatır. `ResourceView` bunu
   "Tekrar dene" düğmeli bir hata ekranı olarak gösterir (geliştirmede hangi adresin ya da

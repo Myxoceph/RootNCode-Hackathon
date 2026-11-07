@@ -4,7 +4,7 @@ import {
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
   CONTRACT_VERSION,
-  CountedCodeSchema,
+  MetaEnumsResponseSchema,
   PulseResponseSchema,
 } from "@vagabonds/contracts";
 
@@ -14,7 +14,7 @@ import type { CityOption, DataSource } from "./source";
 
 /** Answers of another contract version are never read; they are cleared on the first save. */
 const PREFIX = "vagabonds-cache:";
-const VERSION_PREFIX = `${PREFIX}${CONTRACT_VERSION}:`;
+export const VERSION_PREFIX = `${PREFIX}${CONTRACT_VERSION}:`;
 const INDEX_KEY = `${VERSION_PREFIX}index`;
 /**
  * Kept by size, not count: the fog map stores a small relations answer per found asset, and a
@@ -31,7 +31,9 @@ interface Entry {
 }
 
 /** `listCities` returns the cities of `/meta/enums` cut down to these fields. */
-const CitiesSchema: SchemaParser<CityOption[]> = CountedCodeSchema.array();
+const CitiesSchema: SchemaParser<CityOption[]> = MetaEnumsResponseSchema.shape.cities.element
+  .pick({ code: true, label: true, assetCount: true, plate: true })
+  .array();
 
 /**
  * The API, with every answer kept on the device. When the network fails,
@@ -43,14 +45,22 @@ const CitiesSchema: SchemaParser<CityOption[]> = CountedCodeSchema.array();
 export function createCachedSource(source: DataSource): DataSource {
   return {
     listAssets: (query, lang) =>
-      cached(`assets:${lang}:${query.city ?? ""}:${query.limit}:${query.offset}`, AssetListResponseSchema, () =>
-        source.listAssets(query, lang),
-      ),
+      // A box is where the visitor stands: an answer for another place is no answer.
+      query.bbox
+        ? source.listAssets(query, lang)
+        : cached(`assets:${lang}:${query.city ?? ""}:${query.limit}:${query.offset}`, AssetListResponseSchema, () =>
+            source.listAssets(query, lang),
+          ),
     getAsset: (id, lang) => cached(`asset:${lang}:${id}`, AssetDetailSchema, () => source.getAsset(id, lang)),
     getRelations: (id, lang) =>
       cached(`relations:${lang}:${id}`, AssetRelationsResponseSchema, () => source.getRelations(id, lang)),
     getPulse: (id, lang) => cached(`pulse:${lang}:${id}`, PulseResponseSchema, () => source.getPulse(id, lang)),
     listCities: (lang) => cached(`cities:${lang}`, CitiesSchema, () => source.listCities(lang)),
+    // Not stored: yesterday's weather would mislead.
+    getWeather: (city, lang) => source.getWeather(city, lang),
+    getWeatherAt: (point, lang) => source.getWeatherAt(point, lang),
+    // Kept by its own module (ar/ar-targets.ts), which shows the stored list at once.
+    listArTargets: () => source.listArTargets(),
   };
 }
 

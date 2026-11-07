@@ -1,0 +1,362 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-gokyurt-koyu-camii",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-11-01",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan",
+    "from": "konya-envanteri-1_cilt-web",
+    "text_origin": "Metinler 'Konya Vakıf Eserleri I. Cilt' kitabındaki ilgili bölümden (s. 120-121) özetlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Banisi kitapta belirtilmiyor.",
+      "Kitâbenin metni ve yeri kitapta verilmiyor.",
+      "Koordinat kitapta yok; sahadan ya da harita kaynağından eklenmeli.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş vb.) sahada teyit edilmeli.",
+      "Vakfiye metni kitapta yok; VGM arşivinden bulunursa waqf.deed alanına eklenecek.",
+      "Fotoğraflar kitap PDF'inden sayfa konumuna göre otomatik eşlenerek eklendi (düşük çözünürlüklü web baskısı); başlık ve alt metinler genel. Her fotoğrafa bakılıp caption/alt yazılmalı, subject ve kapak seçimi yapılmalı; yanlış eşleşme varsa silinmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "dating",
+        "note": "Kitap kitâbeye göre 'H. 1289 / M. 1874' diyor; H. 1289 yılı M. 1872-73'e denk gelir. İngilizce metinde 'H11289 AH' yazım hatası var. Kaynağa sadık kalınarak iki değer de saklandı, kayıt 'disputed' işaretlendi."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Gökyurt Köyü Camii",
+    "en": "Gökyurt Village Mosque"
+  },
+  "alternate_names": [],
+  "type": "cami",
+  "secondary_types": [],
+  "parent_id": null,
+  "era": "gec-osmanli",
+  "tags": [
+    "köy camii",
+    "ahşap hatıl",
+    "beş sahınlı",
+    "ahşap mahfil"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Gökyurt Köyü",
+    "address": "Gökyurt Köyü merkezi",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "120"
+      }
+    ]
+  },
+  "dating": {
+    "display": {
+      "tr": "H. 1289 / M. 1874 (minare 1957)",
+      "en": "1289 AH / 1874 AD (minaret 1957)"
+    },
+    "start_year": 1874,
+    "end_year": 1874,
+    "hijri_year": 1289,
+    "century": 19,
+    "basis": {
+      "tr": "Kitâbeye göre H. 1289 / M. 1874; minare 1957'de eklenmiştir. Hicri ve miladi yıl birbirini tutmuyor (bkz. data_quality_notes).",
+      "en": "Per the inscription 1289 AH / 1874 AD; minaret added in 1957. The Hijri and Gregorian years do not match (see data_quality_notes)."
+    },
+    "confidence": "disputed",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c1",
+        "pages": "120-121"
+      }
+    ]
+  },
+  "founder": null,
+  "architect": null,
+  "waqf": null,
+  "summary": {
+    "tr": "Gökyurt Köyü'nün merkezindeki cami, kitâbesine göre H. 1289 / M. 1874'te inşa edilmiş, minaresi 1957'de eklenmiştir. Eğimli arazide, düzgün kesme taştan, mihraba dikey beş sahınlı ve ahşap hatıllı bir yapıdır.",
+    "en": "The mosque in the centre of Gökyurt Village was built in 1289 AH / 1874 AD according to its inscription; its minaret was added in 1957. It is a smooth cut stone building with five aisles perpendicular to the mihrab and wooden beams on its facades, on sloping land."
+  },
+  "sections": [
+    {
+      "id": "mimari",
+      "order": 1,
+      "title": {
+        "tr": "Mimari",
+        "en": "Architecture"
+      },
+      "body": {
+        "tr": "Doğu-batı doğrultusunda uzanan dikdörtgen planlı cami, mihraba dikey uzanan beş sahından oluşur. Eğimli bir arazide düzgün kesme taştan inşa edilmiştir; cephelerdeki ahşap hatıllar dikkat çeker. Doğu ve batı cephelerinde iki katın her birinde üçer, güney cephede mihrabın doğusunda ve batısında dörder, mihrap aksında ve üstte birer olmak üzere toplam dokuz pencere vardır. Üst kat pencereleri arasındaki siyah madalyonlarda, sarı zemin üzerine dört halifenin isimleri yazılıdır. Kuzeydoğu ve kuzeybatı cephelerinde giriş kapısı bulunur.",
+        "en": "The rectangular mosque extending east-west consists of five aisles perpendicular to the mihrab. It is built of smooth cut stone on sloping land; the wooden beams on the facades stand out. There are nine windows in total: three on each of the two floors on the east and west facades, four on each side of the mihrab on the south facade, and one on the mihrab axis and one at the top. The names of the four caliphs are written on a yellow background in black medallions between the upper-floor windows. There are entrance doors on the northeast and northwest facades."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120-121"
+        }
+      ]
+    },
+    {
+      "id": "ic-mekan",
+      "order": 2,
+      "title": {
+        "tr": "İç Mekân",
+        "en": "Interior"
+      },
+      "body": {
+        "tr": "Harim, her sırada üç destek olacak şekilde dört sıra ahşap destekle ayrılan, kıble duvarına dik uzanan beş sahından oluşur; orta sahın diğerlerinden daha geniş ve yüksektir. Kuzeyde ahşap bir mahfil vardır ve korkuluğunda levhalar asılıdır. Kıble duvarının ortasındaki taş mihrap nişi üçgen biçimlidir ve altı sıra mukarnas kavsaralıdır. Nişin iki yanındaki yarım silindirik gövdeli sütuncelerin kaideleri profilli, başlıkları palmet dizilidir.",
+        "en": "The harim consists of five aisles perpendicular to the qibla wall, separated by four rows of wooden supports with three supports per row; the middle nave is wider and higher. There is a wooden mahfil in the north with panels hung on its railing. The stone mihrab niche in the middle of the qibla wall is triangular with six rows of muqarnas kavsara. The half-cylindrical colonnettes on either side have profiled bases and palmette-row capitals."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120-121"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "pencere",
+      "label": {
+        "tr": "Pencere sayısı",
+        "en": "Number of windows"
+      },
+      "value": 9,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120"
+        }
+      ]
+    },
+    {
+      "key": "saha",
+      "label": {
+        "tr": "Sahın sayısı",
+        "en": "Number of aisles"
+      },
+      "value": 5,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120"
+        }
+      ]
+    },
+    {
+      "key": "minare_eki",
+      "label": {
+        "tr": "Minarenin eklenme yılı",
+        "en": "Year minaret was added"
+      },
+      "value": 1957,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "inscriptions": [
+    {
+      "id": "kitabe",
+      "location": {
+        "tr": "Kitâbe (yeri kitapta belirtilmiyor)",
+        "en": "Inscription (location not given in the book)"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "date": {
+        "hijri_year": 1289,
+        "gregorian": "1874"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120"
+        }
+      ],
+      "note": {
+        "tr": "Kitap kitâbenin metnini ve dilini vermiyor; yalnızca tarihine atıf yapıyor.",
+        "en": "Kitap kitâbenin metnini ve dilini vermiyor; yalnızca tarihine atıf yapıyor."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "insa",
+      "year": 1874,
+      "date": null,
+      "hijri": "1289",
+      "type": "construction",
+      "title": {
+        "tr": "Cami kitâbesine göre inşa edildi",
+        "en": "Mosque built according to its inscription"
+      },
+      "confidence": "disputed",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120-121"
+        }
+      ]
+    },
+    {
+      "id": "minare",
+      "year": 1957,
+      "date": null,
+      "hijri": null,
+      "type": "addition",
+      "title": {
+        "tr": "Minare eklendi",
+        "en": "Minaret added"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c1",
+          "pages": "120-121"
+        }
+      ]
+    }
+  ],
+  "highlights": [],
+  "relations": [],
+  "visit": {
+    "setting": "indoor",
+    "estimated_duration_min": null,
+    "estimated_duration_source": "team_estimate",
+    "entrance_fee": "unknown",
+    "notes": null,
+    "notes_source": "team_estimate",
+    "visitor_tips": []
+  },
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Gökyurt Köyü Camii, köy merkezinde eğimli bir arazide yükselen, düzgün kesme taştan dikdörtgen bir yapıdır. Cephelerde ahşap hatıllar görülür; üst kat pencereleri arasındaki siyah madalyonlarda dört halifenin adları sarı yazıyla işlenmiştir. İçeride dört sıra ahşap direk mekânı beş sahına böler; kuzeyde ahşap mahfil, kıble duvarında mukarnaslı taş mihrap bulunur.",
+      "en": "Gökyurt Village Mosque is a rectangular smooth cut stone building rising on sloping land in the village centre. Wooden beams are visible on the facades, and black medallions between the upper-floor windows bear the names of the four caliphs in yellow. Inside, four rows of wooden posts divide the space into five aisles; there is a wooden mahfil in the north and a muqarnas stone mihrab on the qibla wall."
+    }
+  },
+  "ambient_sound": {
+    "sound_key": "cami",
+    "caption": {
+      "tr": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]",
+      "en": "[Cami içi ambiyans: alçak sesli kıraat ve halı üzerinde ayak sesleri]"
+    }
+  },
+  "media_folder": {
+    "provider": "local",
+    "path": "konya-envanteri-1_cilt-web.pdf",
+    "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+    "book_pages": "120-121"
+  },
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=413",
+        "original_name": "pdf-s62-xref413",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "120"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Gökyurt Köyü Camii (kitap s. 120)",
+        "en": "Gökyurt Village Mosque (book p. 120)"
+      },
+      "alt": {
+        "tr": "Köy camii, kubbeli ana yapı ve çevresindeki kırmızı çatılı binalarla birlikte havadan görünüyor.",
+        "en": "The mosque with a dome and surrounding red-roofed buildings is visible from above."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=417",
+        "original_name": "pdf-s62-xref417",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "121"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Gökyurt Köyü Camii (kitap s. 121)",
+        "en": "Gökyurt Village Mosque (book p. 121)"
+      },
+      "alt": {
+        "tr": "Ahşap kirişlerle çatılı, büyük ahşap sütunlar ve desenli halılarla donatılmış cami içi.",
+        "en": "Wooden beams support the ceiling, with large wooden pillars and patterned carpets in the mosque interior."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "konya-envanteri-1_cilt-web.pdf#xref=415",
+        "original_name": "pdf-s62-xref415",
+        "book_pdf_name": "konya-envanteri-1_cilt-web.pdf",
+        "book_page": "121"
+      },
+      "subject": "aerial",
+      "caption": {
+        "tr": "Gökyurt Köyü Camii (kitap s. 121)",
+        "en": "Gökyurt Village Mosque (book p. 121)"
+      },
+      "alt": {
+        "tr": "Yamaçta yer alan taş yapılar arasında kırmızı çatılı cami ve minaresi yer alıyor.",
+        "en": "A mosque with a red-tiled roof and a minaret stands among stone buildings on a hillside."
+      },
+      "credit": "Vakıf Katılım – Vakıf Eserleri Envanteri",
+      "photographer": null,
+      "captured_at": null,
+      "license": "vakif-katilim-hackathon",
+      "source_id": "vk-konya-c1"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

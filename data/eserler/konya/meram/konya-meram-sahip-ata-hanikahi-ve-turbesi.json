@@ -1,0 +1,790 @@
+{
+  "schema_version": "1.0",
+  "id": "konya-meram-sahip-ata-hanikahi-ve-turbesi",
+  "meta": {
+    "status": "published",
+    "created_at": "2026-10-29",
+    "updated_at": "2026-10-30",
+    "prepared_by": "ai-draft:sonnet",
+    "reviewed_by": "Ahmet Bakırcan, Hüseyin Öztürk",
+    "from": "Konya II. Cilt – Türbeler",
+    "text_origin": "Konya Vakıf Eserleri II. Cilt, s. 134-142 metninden özetlenerek derlenmiştir. Kaynakta olmayan bilgi eklenmemiştir.",
+    "todos": [
+      "Koordinat kitapta verilmiyor; sahadan ya da haritadan doğrulanmalı.",
+      "Erişilebilirlik bilgileri (rampa, düzayak giriş, engelli erişimi) kitapta yok; sahada teyit edilmeli.",
+      "Kayıt iki yapıyı birlikte anlatıyor; ayrı kayıt gerekip gerekmediği gözden geçirilmeli.",
+      "Külliyenin cami, çeşme ve dükkânları kitapta bu bölümde anlatılmıyor; ids.md'de cami ve çeşme yok. Çifte hamamın Sahip Ata (Sultan) Hamamı olup olmadığı doğrulanmalı.",
+      "Kitâbelerin Arapça metinleri ve dilleri kitapta verilmiyor; okunuşları eklenmeli.",
+      "Türbe ve hanikahın ayrı yapı olarak ayrı kayıt gerektirip gerektirmediği gözden geçirilmeli."
+    ],
+    "data_quality_notes": [
+      {
+        "field": "architect",
+        "note": "Kitap önce külliyenin 'mimar Kelük Bin Abdullah'a' yaptırıldığını, sonra aynı bölümde 'Türbenin mimarı hakkında kesin bir bilgi bulunmamaktadır' diye yazıyor; mimar 'disputed' işaretlendi."
+      },
+      {
+        "field": "facts[sanduka_sayisi]",
+        "note": "Türbede altı sanduka olduğu söyleniyor, ancak metin yalnızca beş kişiyi sayıyor (Sahip Ata, iki oğlu, kızı (muhtemelen), torunu). Külliyenin 'eşi için' de yaptırıldığı belirtilmesine karşın eşin sandukası anılmıyor."
+      },
+      {
+        "field": "founder",
+        "note": "Hanikah taçkapı kitâbesi yaptıranı 'Hacı Ebubekir oğlu Hüseyin oğlu Ali' olarak verir; kitap külliyeyi Sahip Ata Fahreddin Ali'ye bağlar (sanduka kitâbesinde 'Hüseyin oğlu Fahreddin Ali'). İkisinin aynı kişi olduğu kitapta açıkça yazılmıyor."
+      },
+      {
+        "field": "dating",
+        "note": "Türbenin 1279'da inşa edildiği ve 1283'te yenilendiği, hanikahın da 1283'te yaptırıldığı belirtiliyor; çelişki yok, ancak Sahip Ata'nın ölüm tarihi (H. 684 Şevval sonu) türbenin yenilenmesinden sonradır."
+      }
+    ]
+  },
+  "name": {
+    "tr": "Sahip Ata Hanikahı ve Türbesi",
+    "en": "Sahip Ata Khanikah and Tomb"
+  },
+  "alternate_names": [
+    {
+      "tr": "Sahip Ata Hanikahı",
+      "en": "Sahip Ata Khanikah"
+    },
+    {
+      "tr": "Sahip Ata Türbesi",
+      "en": "Sahip Ata Tomb"
+    },
+    {
+      "tr": "Sahip Ata Külliyesi",
+      "en": "Sahip Ata Complex"
+    },
+    {
+      "tr": "Vakıf Eserler Müzesi",
+      "en": "Foundation Works Museum"
+    }
+  ],
+  "type": "tekke",
+  "secondary_types": [
+    "turbe"
+  ],
+  "parent_id": null,
+  "era": "selcuklu",
+  "tags": [
+    "hanikah",
+    "Sahip Ata",
+    "çini",
+    "kümbet-eyvan türbe",
+    "Kelük bin Abdullah",
+    "Vakıf Eserler Müzesi",
+    "sur dışı"
+  ],
+  "location": {
+    "region": "ic-anadolu",
+    "city": "konya",
+    "district": "Meram",
+    "neighborhood": "Sahibiata",
+    "address": "Sahibiata Mahallesi, Taşcami Uzunharmanlar Caddesi; Larende'ye açılan sur kapısının karşısında",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "134"
+      }
+    ],
+    "coordinates": {
+      "lat": 37.867561,
+      "lng": 32.494247,
+      "source": "wikidata",
+      "verified": false,
+      "verification_note": "Wikidata Q131391828 ('Sahip Ata Türbesi'), ad ve il eşleşmesiyle; sahada doğrulanmalı."
+    }
+  },
+  "dating": {
+    "display": {
+      "tr": "Türbe 1279 (H. 682 / M. 1283'te yenilendi); hanikah 1283",
+      "en": "Tomb 1279 (renewed 682 AH / 1283 AD); khanikah 1283"
+    },
+    "start_year": 1279,
+    "end_year": 1283,
+    "hijri_year": null,
+    "century": 13,
+    "basis": {
+      "tr": "Türbe 1279'da inşa edilmiş, dehlizden kubbeli bölüme açılan kemerdeki kitâbeye göre H. 682 / M. 1283'te yenilenmiştir; hanikah taçkapısındaki kitâbeye göre 1283'te yaptırılmıştır.",
+      "en": "The tomb was built in 1279 and, per the inscription on the arch from the corridor to the domed section, renewed in 682 AH / 1283 AD; the khanikah was built in 1283 according to the inscription on its crown gate."
+    },
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "135, 142"
+      }
+    ]
+  },
+  "founder": {
+    "name": "Sahip Ata Fahreddin Ali",
+    "role": "banî",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "135"
+      }
+    ]
+  },
+  "architect": {
+    "name": "Kelük bin Abdullah",
+    "confidence": "certain",
+    "source_refs": [
+      {
+        "source_id": "vk-konya-c2",
+        "pages": "135"
+      }
+    ]
+  },
+  "waqf": null,
+  "summary": {
+    "tr": "Anadolu Selçuklu veziri Sahip Ata Fahreddin Ali'nin kendisi, eşi ve çocukları için yaptırdığı külliyenin hanikah ve türbesi. Türbe, Anadolu'nun en zengin çinili Selçuklu mezar anıtlarından biridir; Orta Asya geleneğini yansıtan dört eyvanlı hanikah, bilinen XIII. yüzyıl Selçuklu hanikahlarının en büyüğüdür ve 2005'ten beri Vakıf Eserler Müzesi'dir.",
+    "en": "The khanikah and tomb of the complex that the Anatolian Seljuk vizier Sahip Ata Fahreddin Ali had built for himself, his wife and children. The tomb has some of the richest tile decoration among Anatolian Seljuk funerary monuments; the four-iwan khanikah, reflecting the Central Asian tradition, is the largest of the known 13th-century Seljuk khanikahs and has been the Foundation Works Museum since 2005."
+  },
+  "sections": [
+    {
+      "id": "kulliye",
+      "order": 1,
+      "title": {
+        "tr": "Külliye",
+        "en": "The Complex"
+      },
+      "body": {
+        "tr": "Sahip Ata Külliyesi Meram, Sahibiata Mahallesi, Taşcami Uzunharmanlar Caddesi üzerindedir; Konya'nın \"sur dışı\" denilen bölümünde, Larende'ye açılan sur kapısının karşısında yer alır. Külliye cami, hanikah, türbe, çifte hamam, çeşme ve dükkânlardan oluşur. Anadolu Selçuklu Devleti'nin ünlü vezirlerinden Sahip Ata Fahreddin Ali tarafından kendisi, eşi ve çocukları için yaptırılmıştır; kitap mimarını Kelük bin Abdullah olarak verir, ancak aynı sayfada türbenin mimarı hakkında kesin bilgi bulunmadığını da belirtir.",
+        "en": "The Sahip Ata Complex is on Taşcami Uzunharmanlar Street in Sahibata Neighbourhood, in the part of Konya called \"outside the walls\", opposite the city-wall gate opening to Larende. The complex consists of a mosque, khanikah, tomb, double bath, fountain and shops. It was built by Sahip Ata Fahreddin Ali, one of the famous viziers of the Anatolian Seljuk State, for himself, his wife and children; the book names the architect as Kelük bin Abdullah, yet on the same page also says there is no definitive information about the tomb's architect."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "134-135"
+        }
+      ]
+    },
+    {
+      "id": "turbe-tarihce",
+      "order": 2,
+      "title": {
+        "tr": "Türbe: Tarihçe ve Plan",
+        "en": "Tomb: History and Plan"
+      },
+      "body": {
+        "tr": "Türbe külliyede caminin güney duvarına bitişiktir ve cami ile hanikah arasında yer alır. 1279'da inşa edilmiş; dehlizden kubbeli bölüme açılan kemerdeki kitâbe H. 682 / M. 1283'te yenilendiğini belirtir. 2005-2006'da hanikahla birlikte restore edilmiş, bugün müze olarak kullanılmaktadır. Hanikahın kuzey eyvanı ile cami arasına yerleştirilmiş kare planlı türbenin doğusunda, kemerle ayrılan kısım yıldız tonozludur. Asıl giriş hanikah içindeki dehlizden sağlanır; camiden türbeye geçen bir kapı da vardır. Hanikahın iç avlusu türbe eyvanıyla birlikte üç eyvanlıdır.",
+        "en": "The tomb adjoins the south wall of the mosque in the complex, between the mosque and the khanikah. It was built in 1279; the inscription on the arch opening from the corridor to the domed section states it was renewed in 682 AH / 1283 AD. It was restored with the khanikah in 2005-2006 and is still used as a museum. The square-plan tomb sits between the north iwan of the khanikah and the mosque; the part east of it, separated by an arch, is covered with a star vault. The main entrance is through the corridor inside the khanikah, and a door also leads from the mosque to the tomb. The inner courtyard of the khanikah has three iwans together with the tomb iwan."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "135"
+        }
+      ]
+    },
+    {
+      "id": "turbe-ici",
+      "order": 3,
+      "title": {
+        "tr": "Türbe: İç Mekân ve Sandukalar",
+        "en": "Tomb: Interior and Sarcophagi"
+      },
+      "body": {
+        "tr": "Türbe, alt katta cenazelikten ve geniş bir sivri kemerle açılan, Türk üçgenleriyle kubbeye geçilen kare planlı kubbeli ziyaretgâhtan oluşur. Ziyaretgâhta üçü önde, üçü arkada altı çinili sanduka bulunur; sandukaların Sahip Ata Fahreddin Ali'ye, büyük oğlu Tâceddin Hüseyin'e, küçük oğlu Nusretüddin Hasan'a, kızı Melike Hatun'a (muhtemelen) ve torunu Şemseddin Mehmed'e ait olduğu belirtilir. Duvarlar tepe pencerelerinin alt kısmına kadar mavi altıgen çini panolarla kaplıdır; Türk üçgenlerinde çini çerçeveli tuğla üçgen bingiler, bitkisel motifli kufi yazı kuşağı ve madalyonlar vardır. İçteki sivri kemer tamamen çinilidir (sarı, lacivert, turkuaz, yeşil). Hazırlık bölümünün doğu duvarında sırlı tuğla ve çiniden kufi \"Ali\" kuşakları pencereler arasına yerleştirilmiştir. Sandukalar geometrik ve bitkisel süslemeli, kabartma yazılı ve altın yaldız ayrıntılı çini levhalarla kaplıdır; bazıları daha büyük, yüksek ve zengin süslüdür. Türbe, \"kümbetle eyvanın terkibinden meydana gelen türbeler\" grubundadır ve Anadolu Selçuklu mezar anıtları arasında Anadolu'nun en zengin çinili süslemesine sahip eserlerin başındadır.",
+        "en": "The tomb consists of a funeral section on the lower floor and a domed, square-plan shrine opened by a wide pointed arch, with Turkish triangles for the transition to the dome. The shrine has six tiled sarcophagi, three in front and three behind; they are said to belong to Sahip Ata Fahreddin Ali, his elder son Tâceddin Hüseyin, his younger son Nusretüddin Hasan, his daughter Melike Hatun (probably) and his grandson Şemseddin Mehmed. The walls are covered with blue hexagonal tile panels up to the bottom of the skylights; the Turkish triangles have brick triangular pendants in tile frames, a floral Kufic band and circular medallions. The pointed arch inside is entirely tiled (yellow, dark blue, turquoise, green). On the east wall of the preparation section, Kufic \"Ali\" bands of glazed brick and tile are set between the windows. The sarcophagi are covered with tile sheets with geometric and floral decoration, relief writing and gold gilding; some are larger, higher and richer. The tomb belongs to the group of \"tombs combining a kumbet and an iwan\" and has the richest tiled decoration in Anatolia among Anatolian Seljuk tomb monuments."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "138-139"
+        }
+      ]
+    },
+    {
+      "id": "hanikah",
+      "order": 4,
+      "title": {
+        "tr": "Hanikah",
+        "en": "Khanikah"
+      },
+      "body": {
+        "tr": "Taçkapısındaki kitâbeye göre hanikah, Kılıçaslan oğlu Keyhüsrev zamanında, Hacı Ebubekir oğlu Hüseyin oğlu Ali tarafından 1283'te yaptırılmıştır. Karamanoğlu döneminde güney eyvanına mihrap yerleştirilmiş, avludaki sekizgen planlı piramidal külahlı aydınlık feneri XIX. yüzyılda yapılmıştır. 2005'te kapsamlı tadilat geçirip Vakıf Eserler Müzesi olarak hizmete girmiştir. Girişi doğudaki dükkânlar arasına yerleştirilmiş klasik Anadolu Selçuklu tarzı taçkapıdan sağlanır; bir koridorla iç avluya ulaşılır. Kare planlı hanikahın iç avlusu, türbe eyvanı ve diğer yönlerdeki üç eyvandan oluşur; türbe kuzey eyvanındadır. İç avlu, köşe hücreleri, kubbe ve eyvanlar tonozla örtülüdür, kubbeye geçişte Türk üçgeni kullanılmıştır, kubbe kasnağında çini mozaik süslemeler vardır ve eyvanlar belirli seviyeye kadar altıgen çini plakalarla kaplıdır. Plan şemasıyla bilinen XIII. yüzyıl Selçuklu tekke ve hanikahları arasında en büyüğüdür ve Orta Asya geleneğinin Anadolu'daki en iyi temsilcilerindendir.",
+        "en": "According to the inscription on its crown gate the khanikah was built in 1283 by Ali, son of Hüseyin, son of Hacı Ebubekir, in the time of Keyhüsrev, son of Kılıçaslan. A mihrab was placed in its south iwan in the Karamanoğlu period, and the octagonal, pyramidal-coned light lantern in the courtyard was built in the 19th century. After a thorough renovation in 2005 it began operating as the Foundation Works Museum. Entry is through the classical Anatolian Seljuk crown gate set between shops on the east; a corridor leads to the inner courtyard. The square-plan khanikah has an inner courtyard of the tomb iwan and three iwans in other directions; the tomb is in the north iwan. The courtyard, corner cells, dome and iwans are vaulted, Turkish triangles are used in the transitions to the dome, tile mosaic decorates the dome drum, and the iwans are covered with hexagonal plate tiles up to a certain level. By its plan it is the largest of the known 13th-century Seljuk tekkes and khanikahs and one of the best representatives of the Central Asian tradition in Anatolia."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "142"
+        }
+      ]
+    }
+  ],
+  "legends": [],
+  "facts": [
+    {
+      "key": "sanduka_sayisi",
+      "label": {
+        "tr": "Sanduka sayısı",
+        "en": "Number of sarcophagi"
+      },
+      "value": 6,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "138"
+        }
+      ],
+      "note": {
+        "tr": "Üçü önde, üçü arkada; metin beş kişinin adını sayar.",
+        "en": "Three in front, three behind; the text names five people."
+      }
+    },
+    {
+      "key": "eyvan_sayisi",
+      "label": {
+        "tr": "Hanikah eyvan sayısı",
+        "en": "Number of khanikah iwans"
+      },
+      "value": 4,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "135, 142"
+        }
+      ],
+      "note": {
+        "tr": "Üç eyvan ve türbe eyvanı.",
+        "en": "Three iwans and the tomb iwan."
+      }
+    },
+    {
+      "key": "insa_tarihi_turbe",
+      "label": {
+        "tr": "Türbe inşa yılı",
+        "en": "Tomb construction year"
+      },
+      "value": 1279,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "135"
+        }
+      ]
+    },
+    {
+      "key": "insa_tarihi_hanikah",
+      "label": {
+        "tr": "Hanikah inşa yılı",
+        "en": "Khanikah construction year"
+      },
+      "value": 1283,
+      "unit": null,
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "142"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Sahip Ata Fahreddin Ali",
+      "role": {
+        "tr": "Banî; Anadolu Selçuklu veziri, türbede yatıyor",
+        "en": "Founder; Anatolian Seljuk vizier, buried in the tomb"
+      }
+    },
+    {
+      "name": "Kelük bin Abdullah",
+      "role": {
+        "tr": "Kitaba göre mimar",
+        "en": "Architect according to the book"
+      }
+    },
+    {
+      "name": "Tâceddin Hüseyin",
+      "role": {
+        "tr": "Sahip Ata'nın büyük oğlu; sandukası türbede",
+        "en": "Sahip Ata's elder son; sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Nusretüddin Hasan",
+      "role": {
+        "tr": "Sahip Ata'nın küçük oğlu; sandukası türbede",
+        "en": "Sahip Ata's younger son; sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Melike Hatun",
+      "role": {
+        "tr": "Muhtemelen Sahip Ata'nın kızı; sandukası türbede",
+        "en": "Probably Sahip Ata's daughter; sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Şemseddin Mehmed",
+      "role": {
+        "tr": "Sahip Ata'nın torunu; sandukası türbede",
+        "en": "Sahip Ata's grandson; sarcophagus in the tomb"
+      }
+    },
+    {
+      "name": "Ali (Hacı Ebubekir oğlu Hüseyin oğlu)",
+      "role": {
+        "tr": "Hanikah taçkapı kitâbesinde yaptıran olarak anılan kişi",
+        "en": "Person named as builder in the khanikah crown-gate inscription"
+      }
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "turbe-yenileme-kitabesi",
+      "location": {
+        "tr": "Dehlizden kubbeli bölüme açılan kemerde",
+        "en": "On the arch opening from the corridor to the domed section"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": 682,
+        "gregorian": "1283"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "135"
+        }
+      ],
+      "note": {
+        "tr": "Kitâbe türbenin H. 682 / M. 1283'te yenilendiğini bildirir; metin ve dil kitapta verilmiyor.",
+        "en": "The inscription states the tomb was renewed in 682 AH / 1283 AD; text and language are not given in the book."
+      }
+    },
+    {
+      "id": "sahip-ata-sanduka-ayak",
+      "location": {
+        "tr": "Sahip Ata Fahreddin Ali'nin sandukasının ayakucunda, turkuaz plaka çini üzerinde mor kabartma yazı",
+        "en": "At the foot of Sahip Ata Fahreddin Ali's sarcophagus, purple relief writing on turquoise plate tiles"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "Merhum ve mağfur Hüseyin oğlu, Sahib-i muazzam Fahreddin Ali 684 yılı Şevval’inin sonlarında, fena dârından beka mülküne göçtü. Allah kabrini nurla doldursun",
+        "en": "The son of the late and honored Hüseyin, Sahib-i muazzam Fahreddin Ali, passed away at the end of Shawwal, 684, from this corporal world to the realm of eternity. May God fill his grave with light."
+      },
+      "author": null,
+      "date": {
+        "hijri_year": 684,
+        "gregorian": null
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "139"
+        }
+      ],
+      "note": {
+        "tr": "Kitap Arapça metni vermiyor ve dili belirtmiyor; çeviri kitaptaki Türkçe metindir.",
+        "en": "The book gives no original text and does not name the language; the translation is the book's Turkish text."
+      }
+    },
+    {
+      "id": "sahip-ata-sanduka-bas-hadis",
+      "location": {
+        "tr": "Aynı sandukanın baş tarafında",
+        "en": "At the head of the same sarcophagus"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": {
+        "tr": "İnsanoğlu ölünce ameli kesilir. Yalnız devam eden sadakası, faydalanılan ilmi ve kendisine dua eden salih evlat bundan istisnadır.",
+        "en": "When a human being dies, his deeds cease. The only exceptions are his continued alms, benefited knowledge, and a righteous child who prays for him."
+      },
+      "author": null,
+      "date": null,
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "139"
+        }
+      ],
+      "note": {
+        "tr": "Hadis-i şerif olarak verilir; Arapça metin kitapta yok.",
+        "en": "Given as a hadith; the Arabic text is not in the book."
+      }
+    },
+    {
+      "id": "hanikah-tackapi-kitabesi",
+      "location": {
+        "tr": "Hanikahın taçkapısında",
+        "en": "On the crown gate of the khanikah"
+      },
+      "language": "other",
+      "script": null,
+      "transliteration": null,
+      "translation": null,
+      "author": null,
+      "date": {
+        "hijri_year": null,
+        "gregorian": "1283"
+      },
+      "ar_target_media_id": null,
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "142"
+        }
+      ],
+      "note": {
+        "tr": "Kitâbe, hanikahın Kılıçaslan oğlu Keyhüsrev zamanında Hacı Ebubekir oğlu Hüseyin oğlu Ali tarafından 1283'te yaptırıldığını bildirir; metin ve dil kitapta verilmiyor.",
+        "en": "The inscription says the khanikah was built in 1283 by Ali, son of Hüseyin, son of Hacı Ebubekir, in the time of Keyhüsrev, son of Kılıçaslan; text and language are not given."
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "turbe-1279",
+      "year": 1279,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Türbe inşa edildi",
+        "en": "Tomb built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "135"
+        }
+      ]
+    },
+    {
+      "id": "turbe-yenileme-1283",
+      "year": 1283,
+      "date": null,
+      "hijri": "682",
+      "type": "repair",
+      "title": {
+        "tr": "Türbe yenilendi (H. 682)",
+        "en": "Tomb renewed (682 AH)"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "135"
+        }
+      ]
+    },
+    {
+      "id": "hanikah-1283",
+      "year": 1283,
+      "date": null,
+      "hijri": null,
+      "type": "construction",
+      "title": {
+        "tr": "Hanikah yaptırıldı",
+        "en": "Khanikah built"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "142"
+        }
+      ]
+    },
+    {
+      "id": "restorasyon-2005",
+      "year": 2005,
+      "date": null,
+      "hijri": null,
+      "type": "restoration",
+      "title": {
+        "tr": "Hanikah ve türbe restorasyonu (2005-2006); hanikah Vakıf Eserler Müzesi olarak açıldı",
+        "en": "Restoration of khanikah and tomb (2005-2006); khanikah opened as the Foundation Works Museum"
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "135, 142"
+        }
+      ],
+      "note": {
+        "tr": "Türbe restorasyonu 2005 ve 2006'da yapıldı.",
+        "en": "The tomb restoration took place in 2005 and 2006."
+      }
+    }
+  ],
+  "highlights": [],
+  "relations": [
+    {
+      "target_id": "konya-selcuklu-ince-minareli-medrese",
+      "type": "same_founder",
+      "description": {
+        "tr": "Her iki yapıyı da vezir Sahip Ata Fahreddin Ali yaptırmıştır.",
+        "en": "Both buildings were built by the vizier Sahip Ata Fahreddin Ali."
+      },
+      "confidence": "certain",
+      "source_refs": [
+        {
+          "source_id": "vk-konya-c2",
+          "pages": "102, 135"
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "wheelchair_access": "unknown",
+    "step_free_entrance": "unknown",
+    "ramp": "unknown",
+    "accessible_toilet": "unknown",
+    "verified": false,
+    "notes": null,
+    "audio_description": {
+      "tr": "Külliyenin hanikahı kare planlı, ortasında avlusu ve dört yönde eyvanları olan bir yapıdır; doğudaki dükkânlar arasından geçen Selçuklu taçkapısıyla girilir. Kuzey eyvanında türbe vardır. Türbe, alt katta cenazelikten ve üstte kubbeli ziyaretgâhtan oluşur; duvarlar mavi altıgen çini panolarla kaplıdır, kubbeye geçiş Türk üçgenleriyle sağlanır. Ziyaretgâhta altı çinili sanduka, ikisi daha büyük ve süslü olarak yan yana sıralanır. Avludaki sekizgen planlı, piramidal külahlı aydınlık feneri XIX. yüzyıldandır.",
+      "en": "The khanikah of the complex is a square-plan building with a central courtyard and iwans on four sides, entered through a Seljuk crown gate set between shops on the east. The tomb is in its north iwan. The tomb has a funeral section below and a domed shrine above; the walls are covered with blue hexagonal tile panels and the transition to the dome is by Turkish triangles. In the shrine six tiled sarcophagi stand in two rows, some larger and more ornate. The octagonal, pyramidal-coned light lantern in the courtyard dates from the 19th century."
+    },
+    "audio_description_source": "Kitap metnindeki mimari betimlemeden yazıldı; metinde olmayan bilgi eklenmedi."
+  },
+  "media_folder": null,
+  "media": [
+    {
+      "id": "m01",
+      "type": "photo",
+      "is_cover": true,
+      "order": 1,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p069-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "134"
+      },
+      "subject": "exterior",
+      "caption": {
+        "tr": "Hanikâhın giriş cephesi",
+        "en": "Entrance facade of the hanikah"
+      },
+      "alt": {
+        "tr": "Dikdörtgen çerçeveli taş portalın ortasında kemerli bir giriş vardır. İki yanında kemerli, camlı tuğla ve taş cephe bölümleri uzanır.",
+        "en": "A rectangular-framed stone portal with an arched entrance in the middle, flanked by brick and stone wall sections with glazed arches."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m02",
+      "type": "photo",
+      "is_cover": false,
+      "order": 2,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p069-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "135"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Çinili sandukalar ve turkuaz duvarlar",
+        "en": "Tiled sarcophagi and turquoise walls"
+      },
+      "alt": {
+        "tr": "Turkuaz ve lacivert çinilerle kaplı odada, çini kaplı birkaç sanduka sıralanır. Duvarlarda altıgen çiniler ve bir pencere görünür.",
+        "en": "In a room covered with turquoise and dark blue tiles, several tile-clad sarcophagi stand in a row. Hexagonal tiles and a window are on the walls."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m03",
+      "type": "photo",
+      "is_cover": false,
+      "order": 3,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p073-3.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "143"
+      },
+      "subject": "interior",
+      "caption": {
+        "tr": "Altıgen çinili duvarlı iç mekân",
+        "en": "Interior with hexagonal tile walls"
+      },
+      "alt": {
+        "tr": "Tuğla tonozlu mekânın duvarlarında altıgen turkuaz çiniler ve üstte çini kafes süslemeli bir pencere vardır. Önde saatler ve sergi eşyaları durur.",
+        "en": "A brick-vaulted space with hexagonal turquoise tiles on the walls and a tiled lattice window above. Clocks and display items stand in front."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m04",
+      "type": "photo",
+      "is_cover": false,
+      "order": 4,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p070-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "136-137"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Altıgen çiniler ve geometrik çini şeridi",
+        "en": "Hexagonal tiles and a geometric tile band"
+      },
+      "alt": {
+        "tr": "Soldaki yeşil-mavi altıgen çinilerin yanında, sağda yıldız motifli koyu mavi ve turkuaz çini kuşağı uzanır.",
+        "en": "Green-blue hexagonal tiles on the left, beside a dark blue and turquoise tile band with star motifs on the right."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m05",
+      "type": "photo",
+      "is_cover": false,
+      "order": 5,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p073-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "142"
+      },
+      "subject": "ornament_detail",
+      "caption": {
+        "tr": "Mavi ve yeşil tonlarda altıgen çiniler",
+        "en": "Hexagonal tiles in blue and green"
+      },
+      "alt": {
+        "tr": "Birbirine bitişik altıgen çinilerin tonları mavi ile yeşil arasında değişir. Yüzeyde ince parlak noktalar vardır.",
+        "en": "Closely set hexagonal tiles in shades from blue to green, with fine glints across the surface."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m06",
+      "type": "photo",
+      "is_cover": false,
+      "order": 6,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p071-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "138"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Sandukanın kitabeli çini yüzü",
+        "en": "Inscribed tile end of a sarcophagus"
+      },
+      "alt": {
+        "tr": "Altıgen biçimli sanduka başında, lacivert zeminde kabartma Arapça yazılar bulunur. Çerçevesi turkuaz çinidir.",
+        "en": "The end of a sarcophagus with raised Arabic script on a dark blue ground inside a turquoise tile frame."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m07",
+      "type": "photo",
+      "is_cover": false,
+      "order": 7,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p071-2.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "138"
+      },
+      "subject": "tomb",
+      "caption": {
+        "tr": "Sandukanın yazılı yan yüzü",
+        "en": "Inscribed side of a sarcophagus"
+      },
+      "alt": {
+        "tr": "Sandukanın yan yüzeyinde koyu renkli çini üzerinde kabartma Arapça yazı kuşakları görünür. Kenarlar turkuaz çinilidir.",
+        "en": "Bands of raised Arabic script on dark tile along the side of a sarcophagus, with turquoise tile edges."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m08",
+      "type": "photo",
+      "is_cover": false,
+      "order": 8,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p072-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "140-141"
+      },
+      "subject": "dome",
+      "caption": {
+        "tr": "Tuğla örgülü kubbe ve çini kuşak",
+        "en": "Brick dome with a tile band"
+      },
+      "alt": {
+        "tr": "Ortasında küçük bir çini madalyon bulunan, balıksırtı tuğla örgülü kubbe. Çevresini turkuaz çini kuşak ve üçgen geçişler sarar.",
+        "en": "A herringbone brick dome with a small tile medallion at the centre, ringed by a turquoise tile band and triangular transitions."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    },
+    {
+      "id": "m09",
+      "type": "photo",
+      "is_cover": false,
+      "order": 9,
+      "source": {
+        "provider": "local",
+        "path": "data/build/cache/konya-c2/images/konya-meram-sahip-ata-hanikahi-ve-turbesi/p073-1.jpg",
+        "book_pdf_name": "konya-envanteri-2_cilt-web.pdf",
+        "book_page": "142"
+      },
+      "subject": "inscription",
+      "caption": {
+        "tr": "Taş üzerine oyulmuş kitabe",
+        "en": "Inscription carved in stone"
+      },
+      "alt": {
+        "tr": "Sivri kemerli bir nişte, taşa oyulmuş çok satırlı Arapça yazı levhası yer alır. Levhanın üst bölümü dar ve yüksektir.",
+        "en": "A multi-line Arabic inscription carved in stone and set in a pointed-arch niche. The upper part of the plaque is narrow and tall."
+      },
+      "credit": "Vakıf Katılım – Konya Vakıf Eserleri II. Cilt (fotoğraflar: Mirkan Tunç, Ekrem Serdar, İbrahim Gedik)",
+      "photographer": null,
+      "license": "vakif-katilim-hackathon"
+    }
+  ],
+  "archive_media": [],
+  "exhibitions": []
+}

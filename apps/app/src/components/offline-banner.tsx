@@ -6,6 +6,7 @@ import { SafeAreaInsetsContext, useSafeAreaInsets } from "react-native-safe-area
 
 import { refreshData, useOfflineSince } from "@/data";
 import { announce } from "@/lib/announce";
+import { useMessages } from "@/i18n";
 
 function clock(time: number): string {
   const date = new Date(time);
@@ -23,7 +24,8 @@ export function OfflineBanner({ children }: { children: ReactNode }) {
   const { colors: c } = useTheme();
   const insets = useSafeAreaInsets();
   const since = useOfflineSince();
-  const text = since === null ? null : `Çevrimdışı · veriler ${clock(since)} itibarıyla`;
+  const w = useMessages().shared;
+  const text = since === null ? null : w.offline(clock(since));
 
   useEffect(() => {
     if (text) announce(text);
@@ -42,9 +44,9 @@ export function OfflineBanner({ children }: { children: ReactNode }) {
           <Text variant="caption" style={styles.fill}>
             {text}
           </Text>
-          <Pressable accessibilityRole="button" accessibilityLabel="Verileri yenile" onPress={refreshData} style={styles.refresh}>
+          <Pressable accessibilityRole="button" accessibilityLabel={w.refreshData} onPress={refreshData} style={styles.refresh}>
             <Text variant="label" color="primary">
-              Yenile
+              {w.refresh}
             </Text>
           </Pressable>
         </View>
