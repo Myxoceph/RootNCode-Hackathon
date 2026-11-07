@@ -272,8 +272,10 @@ function memberSince(createdAt: string | null): string | null {
 
 /** The night of the reward tiles. */
 const HERO_BG = "#0A1126";
+/** A featured tile: low, its words beside the drawing. */
+const TILE_HEIGHT = 160;
 /** The reward's drawing on a featured tile, at its top right. */
-const TILE_ART = 84;
+const TILE_ART = 80;
 
 /** Vakıf Katılım's VKart, whose rewards these are. */
 const VK_CARD = require("../../../assets/images/rewards/vk-kart.jpg") as number;
@@ -573,8 +575,7 @@ function FeaturedTile({
   const balance = wallet?.balance ?? 0;
   const share = Math.min(1, balance / reward.costPoints);
   const ready = block.kind === null;
-  // Tall enough that a two-line title stays under the drawing, not over it.
-  const height = 212;
+  const height = TILE_HEIGHT;
 
   useEffect(() => {
     if (reduced) return;
@@ -629,10 +630,10 @@ function FeaturedTile({
           <Rect width={width} height={height} fill={`url(#${tileId})`} />
         </Svg>
         <View style={styles.tileArt} pointerEvents="none">
-          <RewardArt code={reward.code} kind={reward.kind} tone={look.dark} size={TILE_ART} />
+          <RewardArt code={reward.code} kind={reward.kind} size={TILE_ART} />
         </View>
 
-        <View style={styles.tileTop}>
+        <View style={[styles.tileTop, styles.tileBeside]}>
           <Text colorValue="rgba(255,255,255,0.72)" style={styles.tileKind}>
             {w.kinds[reward.kind].toLocaleUpperCase(lang)}
           </Text>
@@ -646,12 +647,12 @@ function FeaturedTile({
         </View>
 
         <View style={styles.tileBottom}>
-          <Text colorValue="#FFFFFF" style={styles.tileTitle} numberOfLines={2}>
+          <Text colorValue="#FFFFFF" style={[styles.tileTitle, styles.tileBeside]} numberOfLines={2}>
             {reward.title}
           </Text>
           <Text
             colorValue="rgba(255,255,255,0.72)"
-            style={styles.tilePartner}
+            style={[styles.tilePartner, styles.tileBeside]}
             numberOfLines={1}
           >
             {reward.partner}
@@ -851,7 +852,7 @@ function RewardCard({
             <Circle cx="82%" cy="18%" r={46} fill={hue} fillOpacity={0.08} />
             <Circle cx="12%" cy="100%" r={34} fill={hue} fillOpacity={0.08} />
           </Svg>
-          <RewardArt code={reward.code} kind={reward.kind} tone={hue} size={108} />
+          <RewardArt code={reward.code} kind={reward.kind} size={108} />
           {reward.sample && (
             <View style={[styles.tag, { backgroundColor: c.surface }]}>
               <Text colorValue={c.textSecondary} style={styles.tagText}>
@@ -980,7 +981,7 @@ function Ticket({
       ]}
     >
       <View style={[styles.stub, { backgroundColor: `${hue}1A` }]}>
-        <RewardArt code={redemption.reward.code} kind={redemption.reward.kind} tone={hue} size={56} />
+        <RewardArt code={redemption.reward.code} kind={redemption.reward.kind} size={56} />
       </View>
       <View style={styles.perforation} aria-hidden>
         <View
@@ -1096,7 +1097,7 @@ function RewardSheet({
     <Sheet visible={reward !== null} onClose={onClose}>
         <View style={[styles.grabber, { backgroundColor: c.border }]} />
         <View style={[styles.sheetIcon, { backgroundColor: `${hue}1A` }]}>
-          <RewardArt code={shown.code} kind={shown.kind} tone={hue} size={128} />
+          <RewardArt code={shown.code} kind={shown.kind} size={128} />
         </View>
         <View style={styles.sheetHead}>
           <Text variant="caption" color="textSecondary" style={styles.centered}>
@@ -1487,10 +1488,15 @@ const styles = StyleSheet.create({
     top: spacing.xs,
     right: spacing.sm,
   },
+  /** The words keep clear of the drawing at the top right; the points line runs the whole width under it. */
+  tileBeside: {
+    paddingRight: TILE_ART - spacing.sm,
+  },
   tileTop: {
     flexDirection: "row",
+    flexWrap: "wrap",
     alignItems: "center",
-    justifyContent: "space-between",
+    gap: spacing.sm,
   },
   tileKind: {
     fontFamily: fontFamily.monoMedium,
@@ -1516,8 +1522,8 @@ const styles = StyleSheet.create({
   // Sans: the display face draws its zero as a ring ("%20").
   tileTitle: {
     fontFamily: fontFamily.sansBold,
-    fontSize: 20,
-    lineHeight: 26,
+    fontSize: 18,
+    lineHeight: 23,
     letterSpacing: -0.2,
   },
   tilePartner: {
