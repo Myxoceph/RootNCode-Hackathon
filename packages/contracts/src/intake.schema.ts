@@ -203,6 +203,14 @@ export const IntakeDraftSchema = z.strictObject({
   updatedAt: Timestamp,
   reviewedAt: Timestamp.nullable(),
   reviewNote: z.string().max(1000).nullable(),
+  /**
+   * Approval and publishing are two steps: the API records the approval, the data pipeline then
+   * writes the record into the dataset and the database the team's way (data/eserler file,
+   * media_pipeline.py, import_to_db.py) and sets this. Until then an approved draft is not on the map.
+   */
+  appliedAt: Timestamp.nullable(),
+  /** Why publishing an approved draft failed (validate.py, a photo…); it stays in the queue until fixed. */
+  applyError: z.string().max(4000).nullable(),
 });
 export type IntakeDraft = z.infer<typeof IntakeDraftSchema>;
 
@@ -221,7 +229,10 @@ export const IntakeDraftListResponseSchema = z.strictObject({
   items: z.array(IntakeDraftSchema),
 });
 
-/** `POST /admin/intake/drafts/:id/review`: approve (with the record as corrected) or reject. */
+/**
+ * `POST /admin/intake/drafts/:id/review`: approve (with the record as corrected) or reject. A draft
+ * whose record has validation errors is approved only with a corrected record; publishing checks it again.
+ */
 export const IntakeReviewRequestSchema = z.discriminatedUnion("decision", [
   z.strictObject({
     decision: z.literal("approve"),
