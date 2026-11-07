@@ -3,13 +3,12 @@ import { fontFamily, palette, Text } from "@vagabonds/ui";
 import { usePathname, useRouter, type Href } from "expo-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from "react-native";
-import Svg, { Defs, RadialGradient, Rect, Stop } from "react-native-svg";
 
 import { fetchAdminSummary } from "@/data/admin";
-import { login, logout, useCommunity } from "@/data";
+import { logout, useCommunity } from "@/data";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
-import { Avatar, Button, Empty, errorText, Field, useAdminColors, type IconName } from "./kit";
+import { Avatar, Empty, useAdminColors, type IconName } from "./kit";
 import { Panel, usePanel, type PanelContext, type PanelRole } from "./panel";
 
 export { usePanel, type PanelRole };
@@ -76,8 +75,8 @@ export function AdminShell({ children }: { children: ReactNode }) {
     };
   }, [role, round]);
 
-  if (user === undefined) return <View style={[styles.fill, { backgroundColor: a.page }]} />;
-  if (!user?.username || !role) return <SignIn signedInAs={user?.username ? user.nickname : null} />;
+  // Signed in at the app's own sign-in page, as every account is; a hand-made link without the role goes to the map.
+  if (user === undefined || !user?.username || !role) return <Away signedIn={Boolean(user?.username)} />;
 
   const context: PanelContext = { role, pending, refreshPending: () => setRound((n) => n + 1) };
   return (
@@ -90,6 +89,23 @@ export function AdminShell({ children }: { children: ReactNode }) {
       </View>
     </Panel.Provider>
   );
+}
+
+/**
+ * The panel has no sign-in page of its own: signed out, the app's sign-in opens and comes back here
+ * once signed in (`next`); an account without the moderator's or admin's role goes to the map.
+ */
+function Away({ signedIn }: { signedIn: boolean }) {
+  const a = useAdminColors();
+  const router = useRouter();
+  const pathname = usePathname();
+  const { user } = useCommunity();
+  useEffect(() => {
+    if (user === undefined) return;
+    if (signedIn) router.replace("/map");
+    else router.replace({ pathname: "/auth", params: { mode: "login", next: pathname } });
+  }, [user, signedIn, pathname, router]);
+  return <View style={[styles.fill, { backgroundColor: a.page }]} />;
 }
 
 function BrandMark({ size = 30 }: { size?: number }) {
@@ -311,119 +327,6 @@ function TopStrip({ role, pending }: { role: PanelRole; pending: number | null }
   );
 }
 
-/**
- * The sign-in screen, split in two: the brand on a navy panel with a gold glow, and a plain form.
- * Someone signed in without the panel's role is told so and can sign in with another account.
- */
-function SignIn({ signedInAs }: { signedInAs: string | null }) {
-  const a = useAdminColors();
-  const router = useRouter();
-  const { width } = useWindowDimensions();
-  const split = width >= 900;
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
-
-  const submit = async () => {
-    if (!username.trim() || !password) return;
-    setError(null);
-    setBusy(true);
-    try {
-      const user = await login({ username: username.trim(), password });
-      if (user.role !== "admin" && user.role !== "moderator") setError("Bu hesabın yönetim paneline erişimi yok.");
-    } catch (failure) {
-      setError(errorText(failure));
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  return (
-    <View style={[styles.fill, { backgroundColor: split ? a.page : a.frame, padding: split ? 16 : 0 }]}>
-    <View style={[styles.fill, split && styles.frame, { flexDirection: "row", backgroundColor: a.frame }]}>
-      {split && (
-        <View style={styles.hero}>
-          <Svg style={StyleSheet.absoluteFill} width="100%" height="100%" aria-hidden>
-            <Defs>
-              <RadialGradient id="glow" cx="78%" cy="18%" r="70%">
-                <Stop offset="0" stopColor={GOLD} stopOpacity={0.32} />
-                <Stop offset="0.5" stopColor={GOLD} stopOpacity={0.06} />
-                <Stop offset="1" stopColor={GOLD} stopOpacity={0} />
-              </RadialGradient>
-              <RadialGradient id="blue" cx="10%" cy="100%" r="60%">
-                <Stop offset="0" stopColor={palette.kobalt300} stopOpacity={0.18} />
-                <Stop offset="1" stopColor={palette.kobalt300} stopOpacity={0} />
-              </RadialGradient>
-            </Defs>
-            <Rect width="100%" height="100%" fill={palette.gece950} />
-            <Rect width="100%" height="100%" fill="url(#glow)" />
-            <Rect width="100%" height="100%" fill="url(#blue)" />
-          </Svg>
-          <View style={styles.brand}>
-            <BrandMark size={34} />
-            <Text colorValue={palette.gece50} style={[styles.brandName, { fontSize: 22 }]}>
-              Vakıfname
-            </Text>
-          </View>
-          <View style={{ gap: 16, maxWidth: 460 }}>
-            <Text colorValue={GOLD} style={styles.heroKicker}>
-              YÖNETİM PANELİ
-            </Text>
-            <Text colorValue={palette.gece50} style={styles.heroTitle}>
-              Vakıf eserlerinin topluluğunu ve içeriğini tek yerden yönet.
-            </Text>
-            <Text colorValue={palette.gece300} style={styles.heroBody}>
-              Ziyaretçi notlarını incele, kullanıcıları yönet, yeni eserler, başarımlar ve ödüller ekle.
-            </Text>
-          </View>
-          <Text colorValue={palette.gece400} style={{ fontSize: 13 }}>
-            KÖK&KOD · Vakıfname
-          </Text>
-        </View>
-      )}
-      <View style={[styles.fill, styles.formSide]}>
-        <View style={styles.form}>
-          {!split && <BrandMark size={40} />}
-          <View style={{ gap: 6 }}>
-            <Text headingLevel={1} style={styles.formTitle}>
-              Giriş yap
-            </Text>
-            <Text color="textSecondary" style={{ fontSize: 14, lineHeight: 21 }}>
-              {signedInAs ? `${signedInAs} hesabının panel yetkisi yok. Moderatör ya da admin hesabınla giriş yap.` : "Moderatör ya da admin hesabınla devam et."}
-            </Text>
-          </View>
-          <Field label="Kullanıcı adı" value={username} onChangeText={setUsername} autoCapitalize="none" autoComplete="username" placeholder="kullanici.adi" />
-          <Field
-            label="Parola"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
-            autoComplete="current-password"
-            placeholder="Parolan"
-            onSubmitEditing={() => void submit()}
-          />
-          {error && (
-            <View style={[styles.error, { backgroundColor: a.redSoft }]}>
-              <Ionicons name="alert-circle-outline" size={16} color={a.warning} aria-hidden />
-              <Text colorValue={a.warning} style={{ fontSize: 13, flex: 1 }}>
-                {error}
-              </Text>
-            </View>
-          )}
-          <Button label="Giriş yap" kind="primary" busy={busy} disabled={!username.trim() || !password} onPress={() => void submit()} />
-          <Pressable accessibilityRole="link" onPress={() => router.replace("/map")} style={{ alignSelf: "center", padding: 6 }}>
-            <Text color="textSecondary" style={{ fontSize: 13 }}>
-              ← Uygulamaya dön
-            </Text>
-          </Pressable>
-        </View>
-      </View>
-    </View>
-    </View>
-  );
-}
-
 /** A page's scrolling body, centred and capped in width. */
 export function PageBody({ children }: { children: ReactNode }) {
   const { width } = useWindowDimensions();
@@ -469,14 +372,6 @@ const styles = StyleSheet.create({
   iconButton: { width: 34, height: 34, borderRadius: 17, alignItems: "center", justifyContent: "center" },
   strip: { borderBottomWidth: 1 },
   stripHead: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 8 },
-  hero: { flex: 1, maxWidth: 640, overflow: "hidden", margin: 12, borderRadius: 22, padding: 44, justifyContent: "space-between" },
-  heroKicker: { fontFamily: fontFamily.monoMedium, fontSize: 12, letterSpacing: 2 },
-  heroTitle: { fontFamily: fontFamily.display, fontSize: 40, lineHeight: 50 },
-  heroBody: { fontSize: 16, lineHeight: 25 },
-  formSide: { alignItems: "center", justifyContent: "center", padding: 24 },
-  form: { width: 360, maxWidth: "100%", gap: 18 },
-  formTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 28, lineHeight: 36, letterSpacing: -0.6 },
-  error: { flexDirection: "row", alignItems: "center", gap: 8, paddingHorizontal: 14, paddingVertical: 10, borderRadius: 14 },
   body: { flexGrow: 1 },
   bodyInner: { width: "100%", maxWidth: 1320, alignSelf: "center" },
 });
