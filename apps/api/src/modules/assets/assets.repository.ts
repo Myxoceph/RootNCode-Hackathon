@@ -178,6 +178,23 @@ export interface AssetsRepository {
   findRelationCitations(relations: RelationRecord[]): Promise<CitationRecord[]>;
   /** Visible assets with coordinates inside the box, except `excludeId`. */
   findLocatedInBox(bbox: [number, number, number, number], excludeId: string): Promise<AssetSummaryRecord[]>;
+  /** Inscriptions of visible assets with an AR target photo, with where they are (`GET /ar-targets`). */
+  findArTargets(): Promise<ArTargetRecord[]>;
+}
+
+export interface ArTargetRecord {
+  asset_id: string;
+  slug: string;
+  /** `asset` inside it is the complex the asset is a building of (Prisma's name for `parent_id`). */
+  asset: {
+    city_code: string;
+    lat: number | null;
+    lng: number | null;
+    coord_source: string | null;
+    asset: { lat: number | null; lng: number | null; coord_source: string | null } | null;
+  };
+  /** The target photo, published: its smallest variant's key names the `.mind` file beside it. */
+  asset_media: { media: { status: string; media_variant: Array<{ key: string }> } } | null;
 }
 
 /** `entity_key` of a relation citation, as written by data/tools/db_rows.py. */
@@ -278,6 +295,19 @@ export function createAssetsRepository(
         },
         select: { ...citationSelect, asset_id: true },
         orderBy: { id: "asc" },
+      });
+    },
+
+    findArTargets() {
+      return prisma.inscription.findMany({
+        where: { ar_target_media_key: { not: null }, asset: { status: { in: statuses } } },
+        select: {
+          asset_id: true,
+          slug: true,
+          asset: { select: { city_code: true, lat: true, lng: true, coord_source: true, asset: { select: { lat: true, lng: true, coord_source: true } } } },
+          asset_media: { select: { media: { select: { status: true, media_variant: { select: { key: true }, orderBy: { width: "asc" }, take: 1 } } } } },
+        },
+        orderBy: [{ asset_id: "asc" }, { sort_order: "asc" }],
       });
     },
 
