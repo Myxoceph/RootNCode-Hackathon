@@ -7,8 +7,8 @@
 
 const tr = {
   common: {
-    appName: "Vagabonds",
-    title: (page: string) => `${page} · Vagabonds`,
+    appName: "Vakıfname",
+    title: (page: string) => `${page} · Vakıfname`,
     back: "Geri",
     close: "Kapat",
     retry: "Tekrar dene",
@@ -383,11 +383,11 @@ const tr = {
     adminNote: "Moderasyon ve içerik",
   },
   web: {
-    home: "Vagabonds ana sayfa",
+    home: "Vakıfname ana sayfa",
     backTo: (page: string) => `${page} sayfasına dön`,
   },
   landing: {
-    homeLabel: "Vagabonds, ana sayfa",
+    homeLabel: "Vakıfname, ana sayfa",
     account: "Hesap",
     overline: "Vakıf eserleri · KÖK&KOD",
     heading: ["Vakıf eserlerini ", "keşfet"] as string[],
@@ -398,14 +398,14 @@ const tr = {
     appLabel: "Mobil uygulama: telefonuna al",
     app: "Mobil uygulama",
     appOverline: "MOBİL UYGULAMA",
-    appTitle: "Vagabonds'u telefonuna al",
+    appTitle: "Vakıfname'yi telefonuna al",
     qr: "Uygulamayı Expo Go ile açan QR kod",
     qrText: ["Telefonunun kamerasıyla okut; uygulama ", " ile açılır. Telefondan bakıyorsan ", "buradan aç", "."] as string[],
     soon: "Uygulama yakında mağazalarda. Yayınlandığında buradan indirebileceksin.",
     download: "İndir",
     comingSoon: "Yakında",
     storeSoon: (name: string) => `${name}: yakında`,
-    pageTitle: "Vagabonds · Vakıf eserlerini keşfet",
+    pageTitle: "Vakıfname · Vakıf eserlerini keşfet",
     description: "Vakıf eserlerini haritada keşfet, kitabelerini oku, seslerini dinle. Web sitesinde ve mobil uygulamada.",
     otherLanguage: "English",
   },
@@ -1319,8 +1319,8 @@ export type Messages = typeof tr;
 
 const en: Messages = {
   common: {
-    appName: "Vagabonds",
-    title: (page) => `${page} · Vagabonds`,
+    appName: "Vakıfname",
+    title: (page) => `${page} · Vakıfname`,
     back: "Back",
     close: "Close",
     retry: "Try again",
@@ -1694,11 +1694,11 @@ const en: Messages = {
     adminNote: "Moderation and content",
   },
   web: {
-    home: "Vagabonds home page",
+    home: "Vakıfname home page",
     backTo: (page) => `Back to ${page}`,
   },
   landing: {
-    homeLabel: "Vagabonds, home page",
+    homeLabel: "Vakıfname, home page",
     account: "Account",
     overline: "Waqf heritage · KÖK&KOD",
     heading: ["Discover waqf ", "heritage"],
@@ -1709,14 +1709,14 @@ const en: Messages = {
     appLabel: "Mobile app: get it on your phone",
     app: "Mobile app",
     appOverline: "MOBILE APP",
-    appTitle: "Get Vagabonds on your phone",
+    appTitle: "Get Vakıfname on your phone",
     qr: "QR code that opens the app with Expo Go",
     qrText: ["Scan it with your phone's camera; the app opens with ", ". On your phone already? ", "Open it here", "."],
     soon: "The app is coming to the stores soon. Once it is out, you can download it here.",
     download: "Download",
     comingSoon: "Coming soon",
     storeSoon: (name) => `${name}: coming soon`,
-    pageTitle: "Vagabonds · Discover waqf heritage",
+    pageTitle: "Vakıfname · Discover waqf heritage",
     description: "Discover waqf heritage sites on the map, read their inscriptions, hear their sounds. On the website and in the mobile app.",
     otherLanguage: "Türkçe",
   },

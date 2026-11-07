@@ -154,7 +154,7 @@ function SideBar({ name, username, role, pending, folded, onFold }: { name: stri
     <View style={styles.side}>
       <View style={styles.brand}>
         <BrandMark />
-        <Text style={[styles.brandName, { flex: 1 }]}>Vagabonds</Text>
+        <Text style={[styles.brandName, { flex: 1 }]}>Vakıfname</Text>
         {fold}
       </View>
       <ScrollView style={{ flex: 1 }} contentContainerStyle={{ gap: 4, paddingTop: 22 }}>
@@ -289,7 +289,7 @@ function TopStrip({ role, pending }: { role: PanelRole; pending: number | null }
       <View style={styles.stripHead}>
         <View style={[styles.brand, { paddingVertical: 12 }]}>
           <BrandMark size={26} />
-          <Text style={styles.brandName}>Vagabonds</Text>
+          <Text style={styles.brandName}>Vakıfname</Text>
         </View>
         <Pressable accessibilityRole="button" accessibilityLabel="Çıkış yap" onPress={() => void logout()} style={styles.iconButton}>
           <Ionicons name="log-out-outline" size={19} color={a.textSecondary} aria-hidden />
@@ -363,7 +363,7 @@ function SignIn({ signedInAs }: { signedInAs: string | null }) {
           <View style={styles.brand}>
             <BrandMark size={34} />
             <Text colorValue={palette.gece50} style={[styles.brandName, { fontSize: 22 }]}>
-              Vagabonds
+              Vakıfname
             </Text>
           </View>
           <View style={{ gap: 16, maxWidth: 460 }}>
@@ -378,7 +378,7 @@ function SignIn({ signedInAs }: { signedInAs: string | null }) {
             </Text>
           </View>
           <Text colorValue={palette.gece400} style={{ fontSize: 13 }}>
-            KÖK&KOD · Vagabonds
+            KÖK&KOD · Vakıfname
           </Text>
         </View>
       )}

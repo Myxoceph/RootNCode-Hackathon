@@ -52,8 +52,8 @@ export function LandingPage() {
 
       <header className="vg-nav vg-rise">
         <a className="vg-brand" href="/" aria-label={m.landing.homeLabel}>
-          <span className="vg-mark" aria-hidden />
-          Vagabonds
+          {/* The link's name says where it goes (aria-label); the logo is its picture. */}
+          <img className="vg-logo" src={LOGO} alt="" />
         </a>
         <nav className="vg-nav-actions" aria-label={m.landing.account}>
           {/* The other language, named in itself: one tap turns the page and the site. */}
@@ -242,6 +242,8 @@ function qrPath(content: string): { size: number; path: string } {
 
 /** What the screens show: the website's map, and an asset's story in the app. */
 const WEB_SHOT = Asset.fromModule(require("@/assets/images/landing/web-map.jpg")).uri;
+/** The logo in light gold: the page is night in every theme. */
+const LOGO = Asset.fromModule(require("@/assets/images/brand/logo-light.png")).uri;
 const APP_SHOT = Asset.fromModule(require("@/assets/images/landing/app-asset.jpg")).uri;
 
 /** The scene's own size, before it is scaled to fit: the laptop, and the phone over its right edge. */
@@ -268,7 +270,7 @@ const CSS = `
 
 .vg-nav { position: relative; z-index: 2; flex: none; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 22px 26px 22px 34px; }
 .vg-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_600SemiBold, system-ui, sans-serif; font-size: calc(23px * var(--vg-text, 1)); letter-spacing: 0.2px; }
-.vg-mark { width: 9px; height: 9px; border-radius: 50%; background: #E7C26A; box-shadow: 0 0 14px rgba(231, 194, 106, 0.7); }
+.vg-logo { display: block; height: calc(40px * var(--vg-text, 1)); width: auto; }
 .vg-nav-link { display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 9px 18px; border: 0; border-radius: 999px; background: transparent; cursor: pointer; white-space: nowrap; color: var(--ink); text-decoration: none; font-family: HankenGrotesk_500Medium, sans-serif; font-size: calc(14px * var(--vg-text, 1));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16); transition: background 0.25s, box-shadow 0.25s; }
 .vg-nav-link:hover { background: rgba(255, 255, 255, 0.06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28); }
@@ -365,6 +367,7 @@ const CSS = `
   /* When the words are larger than the row ("Büyük metin"), the links go under the name, not over it. */
   .vg-nav { padding: 16px 14px; gap: 8px; flex-wrap: wrap; row-gap: 10px; }
   .vg-brand { font-size: calc(20px * var(--vg-text, 1)); flex: none; }
+  .vg-logo { height: calc(32px * var(--vg-text, 1)); }
   .vg-nav-actions { gap: 4px; }
   .vg-nav-link { padding: 8px 11px; font-size: calc(13.5px * var(--vg-text, 1)); }
   .vg-button { height: 46px; padding: 0 18px; font-size: calc(15px * var(--vg-text, 1)); }

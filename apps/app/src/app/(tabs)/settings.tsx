@@ -119,7 +119,7 @@ export default function SettingsScreen() {
     >
       <StatusBar style={scheme === "dark" ? "light" : "dark"} />
       <Head>
-        <title>{`${m.tabs.profile} · Vagabonds`}</title>
+        <title>{m.common.title(m.tabs.profile)}</title>
       </Head>
 
       {wide ? (

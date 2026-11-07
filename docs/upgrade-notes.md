@@ -7,6 +7,20 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-07 · Yeni ad, logo ve ikon: Vakıfname
+
+Kimler: **uygulamayı derleyenler**
+
+1. Yeni APK al: ikon, açılış ekranı ve telefonda görünen ad yerel derlemeye girer (`npm run android:apk -w apps/app`). Expo Go'da açılış ekranı da yenilenir.
+
+Değişenler:
+
+- Görünen ad **Vakıfname**: sekme başlıkları, web sitesi, tanıtım sayfası, yönetim paneli ve telefonda ikonun altı. Paket kimliği (`com.vagabonds.app`), slug ve `vagabonds://` bağlantı şeması değişmedi; kurulu uygulamalar güncellenir, bağlantılar çalışmaya devam eder.
+- Uygulama ikonu, Android uyarlanabilir ikonu, favicon ve açılış ekranı yeni sembolle. Açılış ekranı açık temada beyaz üstüne koyu altın, koyu temada lacivert üstüne açık altın sembol gösterir.
+- Logo ve sembolün temiz, şeffaf halleri: `apps/app/assets/images/brand/`.
+
+---
+
 ## 2026-11-07 · Hesap silme (sözleşme 0.3.34)
 
 Kimler: **API'yi yerelde çalıştıranlar**

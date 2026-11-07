@@ -1,29 +1,29 @@
 {
   "expo": {
-    "name": "Vagabonds",
+    "name": "Vakıfname",
     "slug": "vagabonds",
     "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "splash": {
-      "image": "./assets/images/splash-blank.png",
+      "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#FFFFFF",
       "dark": {
-        "image": "./assets/images/splash-blank.png",
+        "image": "./assets/images/splash-icon-dark.png",
         "backgroundColor": "#0D1420"
       }
     },
     "scheme": "vagabonds",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon",
+      "icon": "./assets/images/icon.png",
       "bundleIdentifier": "com.vagabonds.app"
     },
     "android": {
       "package": "com.vagabonds.app",
       "adaptiveIcon": {
-        "backgroundColor": "#151B28",
+        "backgroundColor": "#0D1420",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -55,11 +55,11 @@
         "expo-splash-screen",
         {
           "backgroundColor": "#FFFFFF",
-          "image": "./assets/images/splash-blank.png",
-          "imageWidth": 1,
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 180,
           "dark": {
             "backgroundColor": "#0D1420",
-            "image": "./assets/images/splash-blank.png"
+            "image": "./assets/images/splash-icon-dark.png"
           }
         }
       ],

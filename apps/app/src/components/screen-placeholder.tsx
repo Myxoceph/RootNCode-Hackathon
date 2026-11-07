@@ -3,6 +3,8 @@ import Head from "expo-router/head";
 import type { PropsWithChildren } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 
+import { useMessages } from "@/i18n";
+
 interface ScreenPlaceholderProps {
   title: string;
   description: string;
@@ -11,6 +13,7 @@ interface ScreenPlaceholderProps {
 /** Stand-in body for screens whose content lands in a later task. */
 export function ScreenPlaceholder({ title, description, children }: PropsWithChildren<ScreenPlaceholderProps>) {
   const { colors: c } = useTheme();
+  const m = useMessages();
   return (
     <ScrollView
       style={{ backgroundColor: c.background }}
@@ -19,7 +22,7 @@ export function ScreenPlaceholder({ title, description, children }: PropsWithChi
     >
       {/* Rendered into the static web HTML, so every URL has a page title (WCAG 2.4.2). */}
       <Head>
-        <title>{`${title} · Vagabonds`}</title>
+        <title>{m.common.title(title)}</title>
       </Head>
       <Text variant="title" headingLevel={1}>
         {title}
