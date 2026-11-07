@@ -88,8 +88,6 @@ const manifest = JSON.parse(readFileSync(join(DATA, "build/media-manifest.json")
 const previous: ArTargetsFile | null = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, "utf8")) as ArTargetsFile) : null;
 const reusable = previous?.mindar_version === AR_MINDAR_VERSION ? previous : null;
 const result: ArTargetsFile = { mindar_version: AR_MINDAR_VERSION, targets: {}, seals: {} };
-// Mühürlerin bir kısmını derleyen bir çalıştırma, öbürlerini silmez.
-if (reusable?.seals) result.seals = { ...reusable.seals };
 const missing: string[] = [];
 
 /** Derlenmiş ve hâlâ geçerli hedefler, `.mind` anahtarına göre: bir fotoğraf bir kez derlenir. */
@@ -115,6 +113,8 @@ const assets = files.map((file) => ({
   record: JSON.parse(readFileSync(file, "utf8")) as AssetRecord,
 }));
 
+/** Bu çalıştırmada mührüne bakılan eserler; öbürlerinin önceki mühür hedefi olduğu gibi kalır. */
+const sealScope = new Set<string>();
 /** Derlenecekler: kitabe hedefleri ve (istenirse) mühür fotoğrafları. */
 const jobs: Array<{ assetId: string; mediaId: string; label: string; seal: boolean; inscription: boolean }> = [];
 for (const { city, record } of assets) {
@@ -123,6 +123,7 @@ for (const { city, record } of assets) {
     if (mediaId) jobs.push({ assetId: record.id, mediaId, label: `${record.id} / ${inscription.id}`, seal: false, inscription: true });
   }
   if (!withSeals || (sealCities && !sealCities.includes(city)) || (sealAssets && !sealAssets.includes(record.id))) continue;
+  sealScope.add(record.id);
   // Uygulamanın gördüğü fotoğraflar: manifestte olanlar, API'nin verdiği boyutla (özgün fotoğrafınki).
   const candidates = (record.media ?? []).flatMap((m) => {
     const original = manifest[record.id]?.[m.id]?.original;
@@ -132,9 +133,21 @@ for (const { city, record } of assets) {
   if (picked) jobs.push({ assetId: record.id, mediaId: picked.photo.id, label: `${record.id} / mühür (${picked.subject ?? "kapak"})`, seal: true, inscription: false });
 }
 
+// Mühürlerin bir kısmını derleyen bir çalıştırma, öbürlerini silmez (dosyası hâlâ diskteyse).
+for (const [assetId, seal] of Object.entries(reusable?.seals ?? {})) {
+  if (!sealScope.has(assetId) && known.has(seal.key)) result.seals![assetId] = seal;
+}
+
 const started = Date.now();
 let compiledNow = 0;
-const save = () => writeFileSync(OUT, `${JSON.stringify(result, null, 2)}\n`);
+/**
+ * Ara kayıtta henüz sırası gelmemiş kitabe hedefleri önceki dosyadan korunur: yarıda kesilen bir
+ * çalıştırma db_rows.py'nin okuduğu `targets`'ı eksiltmez. Son kayıt yalnızca bu çalıştırmanınkini yazar.
+ */
+const save = (final: boolean) => {
+  const targets = final ? result.targets : { ...(reusable?.targets ?? {}), ...result.targets };
+  writeFileSync(OUT, `${JSON.stringify({ ...result, targets }, null, 2)}\n`);
+};
 
 await withMindCompiler(async (compile) => {
   for (const [index, job] of jobs.entries()) {
@@ -146,7 +159,14 @@ await withMindCompiler(async (compile) => {
     const key = arTargetMindKey(found.variant.key);
     let compiled = known.get(key);
     if (!compiled || compiled.sha256 !== found.entry.sha256) {
-      const mind = await compile([`data:image/jpeg;base64,${(await photo(found.variant)).toString("base64")}`]);
+      let mind: Buffer;
+      try {
+        mind = await compile([`data:image/jpeg;base64,${(await photo(found.variant)).toString("base64")}`]);
+      } catch (error) {
+        // Bir fotoğraf (geçici bir ağ hatası, MindAR'ın derleyemediği bir resim) ötekileri durdurmaz.
+        missing.push(`${job.label}: derlenemedi (${error instanceof Error ? error.message.split("\n")[0] : String(error)})`);
+        continue;
+      }
       mkdirSync(dirname(join(MEDIA, key)), { recursive: true });
       writeFileSync(join(MEDIA, key), mind);
       compiled = { sha256: found.entry.sha256, key, bytes: mind.length };
@@ -158,11 +178,11 @@ await withMindCompiler(async (compile) => {
     }
     if (job.inscription) (result.targets[job.assetId] ??= {})[job.mediaId] = compiled;
     if (job.seal) result.seals![job.assetId] = { ...compiled, media_id: job.mediaId };
-    if ((index + 1) % SAVE_EVERY === 0) save();
+    if ((index + 1) % SAVE_EVERY === 0) save(false);
   }
 });
 
-save();
+save(true);
 const inscriptions = Object.values(result.targets).reduce((n, targets) => n + Object.keys(targets).length, 0);
 const seals = Object.keys(result.seals ?? {}).length;
 console.log(`${OUT}: ${inscriptions} kitabe, ${seals} mühür hedefi (MindAR ${AR_MINDAR_VERSION}); bu çalıştırmada ${compiledNow} derlendi`);

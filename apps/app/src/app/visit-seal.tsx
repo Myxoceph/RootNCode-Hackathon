@@ -33,6 +33,9 @@ import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { localeTag, useLang, useMessages } from "@/i18n";
 
+/** How long the seal's ready `.mind` file is waited for before the phone compiles the photo itself. */
+const MIND_WAIT_MS = 4000;
+
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
 /** How much of the monument's photo shows over the camera, in percent: the visitor sets it, from the start as much as lines up with it. */
 const GHOST = { start: 40, min: 10, max: 80, step: 5 };
@@ -276,7 +279,13 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
     }
     let active = true;
     const image = compileSource(photo);
-    loadMind(mindUrlBeside(image)).then(
+    // A download that stalls (weak signal at the monument) must not hold the camera: after a few
+    // seconds the photo is compiled here instead, and the download goes on to be kept for next time.
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const late = new Promise<never>((_, reject) => {
+      timer = setTimeout(() => reject(new Error("slow")), MIND_WAIT_MS);
+    });
+    Promise.race([loadMind(mindUrlBeside(image)), late]).then(
       (ready) => {
         if (!active) return;
         compiled.set(key, ready);
@@ -287,6 +296,7 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
     );
     return () => {
       active = false;
+      clearTimeout(timer);
     };
     // `photo` follows `key`.
     // eslint-disable-next-line react-hooks/exhaustive-deps

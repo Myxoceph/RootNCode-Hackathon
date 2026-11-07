@@ -1,4 +1,4 @@
-import type { ArTargetEntry, AssetDetail, AssetSummary, InscriptionV2 } from "@vagabonds/contracts";
+import { arTargetMindKey, type ArTargetEntry, type AssetDetail, type AssetSummary, type InscriptionV2 } from "@vagabonds/contracts";
 import { useEffect, useState } from "react";
 
 import { kmBetween } from "@/map/dense-area";
@@ -45,7 +45,7 @@ export function overlayText(inscription: InscriptionV2): string | null {
  * variants (`arTargetMindKey`, packages/contracts), from the same ~1280 px JPEG the phone compiles.
  */
 export function mindUrlBeside(photoUrl: string): string {
-  return `${photoUrl.slice(0, photoUrl.lastIndexOf("/"))}/target-mindar-${MINDAR_VERSION}.mind`;
+  return arTargetMindKey(photoUrl);
 }
 
 /** The ~1280 px JPEG of the photo: big enough to recognise, small enough to compile in seconds. */
