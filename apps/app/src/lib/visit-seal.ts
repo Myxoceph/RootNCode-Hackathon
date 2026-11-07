@@ -1,33 +1,6 @@
-import type { AssetDetail, Lang, Media } from "@vagabonds/contracts";
+import { pickSealPhoto, type AssetDetail, type Lang, type Media } from "@vagabonds/contracts";
 
-import { messages, type Messages } from "@/i18n/messages";
-
-/**
- * The parts of a monument that can carry its seal, best first, with their names. A specific part is
- * best: one a visitor has to walk up to and frame. A view of the building comes after them, for the
- * many monuments whose photos show no such part; the cover photo is last, when no photo says what it
- * shows (book photos not yet sorted), as it is most often the building from outside.
- */
-const SEAL_PARTS: ReadonlyArray<Exclude<keyof Messages["seal"]["parts"], "general">> = [
-  "portal",
-  "inscription",
-  "ornament_detail",
-  "fountain",
-  "mihrab",
-  "minber",
-  "window",
-  "engraving",
-  "interior",
-  "portico",
-  "courtyard",
-  "exterior",
-  "minaret",
-  "dome",
-  "tomb",
-  "sadirvan",
-];
-/** Photos nobody has sorted yet; one from above (`aerial`) cannot be framed on the spot and is never used. */
-const UNSORTED = new Set<string | null>(["photo", "other", null]);
+import { messages } from "@/i18n/messages";
 
 export interface VisitSealTarget {
   photo: Media;
@@ -35,23 +8,15 @@ export interface VisitSealTarget {
   part: string;
 }
 
-/** The photo with the most pixels: the camera has the most detail to recognise in it. The first on a tie. */
-function sharpest(photos: Media[]): Media | undefined {
-  return photos.reduce<Media | undefined>((best, m) => (!best || m.width * m.height > best.width * best.height ? m : best), undefined);
-}
-
 /**
  * The part of the monument the visitor shows the camera for Ziyaret Mührü: the photo of its most
- * telling detail, by the dataset's `subject`, and of several such photos the sharpest. `null` when
- * the asset has no photo to use.
+ * telling detail, by the dataset's `subject`, and of several such photos the sharpest
+ * (`pickSealPhoto`, shared with the data pipeline that compiles it ahead). `null` when the asset
+ * has no photo to use.
  */
 export function visitSealTarget(asset: AssetDetail, lang: Lang): VisitSealTarget | null {
+  const picked = pickSealPhoto(asset.media);
+  if (!picked) return null;
   const parts = messages[lang].seal.parts;
-  for (const subject of SEAL_PARTS) {
-    const photo = sharpest(asset.media.filter((m) => m.kind === "photo" && m.subject === subject));
-    if (photo) return { photo, part: parts[subject] };
-  }
-  const photos = asset.media.filter((m) => m.kind === "photo" && UNSORTED.has(m.subject));
-  const cover = photos.find((m) => m.isCover) ?? photos[0];
-  return cover ? { photo: cover, part: parts.general } : null;
+  return { photo: picked.photo, part: picked.subject ? parts[picked.subject] : parts.general };
 }

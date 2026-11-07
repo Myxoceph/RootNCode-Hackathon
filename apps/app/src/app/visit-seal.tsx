@@ -3,11 +3,12 @@ import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vaga
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ActivityIndicator, Animated, Easing, Modal, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { compileSource } from "@/ar/inscription-targets";
+import { compileSource, mindUrlBeside } from "@/ar/inscription-targets";
+import { loadMind } from "@/ar/mind-store";
 import { MarkerTracker, type MarkerTrackerHandle } from "@/ar/marker-tracker";
 import type { TrackerEvent } from "@/ar/mindar";
 import type { TrackerTarget } from "@/ar/tracker-page";
@@ -31,6 +32,9 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
 import { localeTag, useLang, useMessages } from "@/i18n";
+
+/** How long the seal's ready `.mind` file is waited for before the phone compiles the photo itself. */
+const MIND_WAIT_MS = 4000;
 
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
 /** How much of the monument's photo shows over the camera, in percent: the visitor sets it, from the start as much as lines up with it. */
@@ -260,10 +264,41 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
     setPhaseState(next);
   }, []);
 
-  // The cached .mind file once compiled; the photo before. Fixed per run, so the page is not rebuilt.
-  const target = useMemo<TrackerTarget>(() => {
+  // What the tracker looks for, fixed per run so the page is not rebuilt: the .mind file compiled
+  // here before; else the one the data pipeline compiled beside the photo (kept on the phone once
+  // fetched, ar/mind-store.ts); else, where there is none yet, the photo, compiled on the phone.
+  const [target, setTarget] = useState<{ run: number; target: TrackerTarget } | null>(() => {
     const mind = compiled.get(key);
-    return mind ? { mind } : { image: compileSource(photo) };
+    return mind ? { run, target: { mind } } : null;
+  });
+  useEffect(() => {
+    const mind = compiled.get(key);
+    if (mind) {
+      setTarget({ run, target: { mind } });
+      return;
+    }
+    let active = true;
+    const image = compileSource(photo);
+    // A download that stalls (weak signal at the monument) must not hold the camera: after a few
+    // seconds the photo is compiled here instead, and the download goes on to be kept for next time.
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const late = new Promise<never>((_, reject) => {
+      timer = setTimeout(() => reject(new Error("slow")), MIND_WAIT_MS);
+    });
+    Promise.race([loadMind(mindUrlBeside(image)), late]).then(
+      (ready) => {
+        if (!active) return;
+        compiled.set(key, ready);
+        if (phaseRef.current.name === "preparing") go({ name: "starting" });
+        setTarget({ run, target: { mind: ready } });
+      },
+      () => active && setTarget({ run, target: { image } }),
+    );
+    return () => {
+      active = false;
+      clearTimeout(timer);
+    };
+    // `photo` follows `key`.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key, run]);
 
@@ -400,7 +435,9 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
 
   return (
     <View style={styles.fill} onLayout={(e) => (screen.current = { width: e.nativeEvent.layout.width, height: e.nativeEvent.layout.height })}>
-      <MarkerTracker key={run} ref={tracker} target={target} onEvent={onEvent} marks={false} poses style={StyleSheet.absoluteFill} />
+      {target?.run === run && (
+        <MarkerTracker key={run} ref={tracker} target={target.target} onEvent={onEvent} marks={false} poses style={StyleSheet.absoluteFill} />
+      )}
 
       {/* Over the camera as a ghost, for the visitor to line up with the monument; the tracker sees only the camera. */}
       <View
