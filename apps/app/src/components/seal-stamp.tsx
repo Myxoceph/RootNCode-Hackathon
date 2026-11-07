@@ -25,14 +25,16 @@ const WET = 0.4;
 /** The middle's words keep inside the inner ring. */
 const MIDDLE_WIDTH = 96;
 
-/** Where the seal's one animated value stands as it hangs over the page, and as it strikes. */
-const STAMP_HANGS = 0.6;
-const STAMP_STRIKES = 0.8;
-const FALL_MS = 760;
-const HANG_MS = 170;
-const DROP_MS = 120;
-/** How long after it starts falling the seal strikes the page. */
-const STRIKE_MS = FALL_MS + HANG_MS + DROP_MS;
+/** The seal shows above the page, draws back a little, and comes down hard. */
+const APPEAR_MS = 260;
+const DRAW_BACK_MS = 300;
+const SLAM_MS = 130;
+/** How long after it starts the seal strikes the page. */
+const STRIKE_MS = APPEAR_MS + DRAW_BACK_MS + SLAM_MS;
+/** Above the page: larger, turned further and higher. */
+const HOVER = { scale: 1.45, turn: -15, lift: -16 };
+const DRAWN_BACK = { scale: 1.56, turn: -17, lift: -26 };
+const PRESSED_TURN = -8;
 /** The ink soaks past the edge in this long, and dries in this long. */
 const SOAK_MS = 520;
 const DRY_MS = 1400;
@@ -45,10 +47,11 @@ const EDGE_PATH = scallopPath(MID, MID, EDGE, 40);
 const WORDS_PATH = `M${MID - WORDS_RING} ${MID}a${WORDS_RING} ${WORDS_RING} 0 1 1 ${WORDS_RING * 2} 0a${WORDS_RING} ${WORDS_RING} 0 1 1 ${-WORDS_RING * 2} 0`;
 
 /**
- * Ziyaret Mührü's seal: one red seal from start to end. It comes down large and turning, hangs over the
- * page for a beat, and strikes; the page jolts, a ring of ink spreads, the ink soaks just past the bumpy
- * edge and dries from dark and wet to its colour. Its words run round the ring, the monument's name and
- * the day in the middle. Felt as two short taps.
+ * Ziyaret Mührü's seal: one red seal from start to end. It shows above the page with its ink still wet and
+ * dark, draws back a little and comes down hard. It stops dead, as a pressed seal does: no bounce. The
+ * page jolts, a ring of ink spreads, its shadow is gone under it, and the ink soaks just past the bumpy
+ * edge and dries to its colour. Its words run round the ring, the monument's name and the day in the
+ * middle. Felt as two short taps.
  *
  * With reduced motion the seal is simply there, dry; the taps stay, as they move nothing on screen.
  * `reveal` is run with the strike, for what the screen shows under the seal.
@@ -68,7 +71,9 @@ export const SealStamp = memo(function SealStamp({
   reveal: Animated.Value;
 }) {
   const start = reduceMotion ? 1 : 0;
-  const stamp = useRef(new Animated.Value(start)).current;
+  const appear = useRef(new Animated.Value(start)).current;
+  const drawBack = useRef(new Animated.Value(start)).current;
+  const slam = useRef(new Animated.Value(start)).current;
   const strike = useRef(new Animated.Value(start)).current;
   const soak = useRef(new Animated.Value(start)).current;
   const dry = useRef(new Animated.Value(start)).current;
@@ -86,34 +91,39 @@ export const SealStamp = memo(function SealStamp({
 
   useEffect(() => {
     if (reduceMotion) {
-      for (const value of [stamp, strike, soak, dry, reveal]) value.setValue(1);
+      for (const value of [appear, drawBack, slam, strike, soak, dry, reveal]) value.setValue(1);
       return;
     }
     const ease = Easing.out(Easing.cubic);
     const animation = Animated.sequence([
-      Animated.timing(stamp, { toValue: STAMP_HANGS, duration: FALL_MS, easing: ease, useNativeDriver: true }),
-      Animated.delay(HANG_MS),
-      Animated.timing(stamp, { toValue: STAMP_STRIKES, duration: DROP_MS, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
+      Animated.timing(appear, { toValue: 1, duration: APPEAR_MS, easing: ease, useNativeDriver: true }),
+      Animated.timing(drawBack, { toValue: 1, duration: DRAW_BACK_MS, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
+      Animated.timing(slam, { toValue: 1, duration: SLAM_MS, easing: Easing.in(Easing.quad), useNativeDriver: true }),
       Animated.parallel([
-        Animated.spring(stamp, { toValue: 1, damping: 10, stiffness: 180, mass: 0.7, useNativeDriver: true }),
-        Animated.timing(strike, { toValue: 1, duration: 760, easing: ease, useNativeDriver: true }),
+        Animated.timing(strike, { toValue: 1, duration: 700, easing: ease, useNativeDriver: true }),
         Animated.timing(soak, { toValue: 1, duration: SOAK_MS, easing: Easing.out(Easing.quad), useNativeDriver: true }),
-        Animated.timing(dry, { toValue: 1, duration: DRY_MS, delay: 200, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
+        Animated.timing(dry, { toValue: 1, duration: DRY_MS, delay: 250, easing: Easing.inOut(Easing.quad), useNativeDriver: true }),
         Animated.timing(reveal, { toValue: 1, duration: 520, delay: 300, easing: ease, useNativeDriver: true }),
       ]),
     ]);
     animation.start();
     return () => animation.stop();
-  }, [reduceMotion, stamp, strike, soak, dry, reveal]);
+  }, [reduceMotion, appear, drawBack, slam, strike, soak, dry, reveal]);
 
-  const clamp = { extrapolate: "clamp" } as const;
-  const scale = stamp.interpolate({ inputRange: [0, STAMP_HANGS, STAMP_STRIKES, 1], outputRange: [2.4, 1.26, 0.92, 1] });
-  const rotate = stamp.interpolate({ inputRange: [0, STAMP_HANGS, 1], outputRange: ["-22deg", "-8deg", "-8deg"], ...clamp });
-  const opacity = stamp.interpolate({ inputRange: [0, STAMP_HANGS * 0.6, 1], outputRange: [0, 1, 1], ...clamp });
-  // Its shadow on the page: wide and faint while it is high, small and dark as it comes down; gone once pressed.
-  const shadowScale = stamp.interpolate({ inputRange: [0, STAMP_STRIKES], outputRange: [1.5, 0.98], ...clamp });
-  const shadowOpacity = stamp.interpolate({ inputRange: [0, STAMP_HANGS, STAMP_STRIKES, 1], outputRange: [0, 0.35, 0.6, 0], ...clamp });
-  const jolt = strike.interpolate({ inputRange: [0, 0.06, 0.14, 0.24, 0.36, 1], outputRange: [0, 5, -3, 2, -1, 0] });
+  // Hovering, drawn back, pressed: each step from the one before.
+  const between = (from: number, to: number, value: Animated.Value) => value.interpolate({ inputRange: [0, 1], outputRange: [from, to] });
+  const hover = { scale: between(HOVER.scale, DRAWN_BACK.scale, drawBack), lift: between(HOVER.lift, DRAWN_BACK.lift, drawBack), turn: between(HOVER.turn, DRAWN_BACK.turn, drawBack) };
+  const scale = Animated.add(Animated.multiply(hover.scale, Animated.subtract(1, slam)), slam);
+  const lift = Animated.multiply(hover.lift, Animated.subtract(1, slam));
+  const turn = Animated.add(Animated.multiply(hover.turn, Animated.subtract(1, slam)), Animated.multiply(slam, PRESSED_TURN));
+  const rotate = turn.interpolate({ inputRange: [-180, 180], outputRange: ["-180deg", "180deg"] });
+  // Its shadow on the page: wide and soft while it is high, tight and dark as it comes down; gone once pressed.
+  const shadowScale = Animated.add(between(1.18, 1.26, drawBack), Animated.multiply(slam, -0.24));
+  const shadowOpacity = Animated.multiply(
+    Animated.multiply(appear, Animated.add(between(0.3, 0.24, drawBack), Animated.multiply(slam, 0.3))),
+    strike.interpolate({ inputRange: [0, 0.12], outputRange: [1, 0], extrapolate: "clamp" }),
+  );
+  const jolt = strike.interpolate({ inputRange: [0, 0.05, 0.12, 0.22, 0.34, 1], outputRange: [0, 6, -3, 2, -1, 0] });
 
   return (
     <Animated.View style={[styles.stage, { transform: [{ translateY: jolt }] }]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
@@ -128,7 +138,7 @@ export const SealStamp = memo(function SealStamp({
         ]}
       />
 
-      <Animated.View style={[styles.fill, { opacity, transform: [{ scale }, { rotate }] }]}>
+      <Animated.View style={[styles.fill, { opacity: appear, transform: [{ translateY: lift }, { scale }, { rotate }] }]}>
         <Animated.View style={[styles.fill, { opacity: soak, transform: [{ scale: soak.interpolate({ inputRange: [0, 1], outputRange: [0.96, 1] }) }] }]}>
           <Bleed seed={name} />
         </Animated.View>
