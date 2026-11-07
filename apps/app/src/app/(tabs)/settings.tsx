@@ -429,17 +429,22 @@ function Passport() {
       </Animated.View>
     </Pressable>
     {/* Over the card and not in it: the card is a button, and a button cannot hold another. On the photo's corner, while the back is up. */}
-    {signedIn && flipped && photoAt && (
-      <AvatarEditor
-        hasPhoto={holder.photoUrl !== null}
-        open={photoOpen}
-        onOpenChange={setPhotoOpen}
+    {/* It comes in once the back has turned all the way, and goes as it starts to turn away. */}
+    {signedIn && photoAt && (
+      <Animated.View
+        pointerEvents={flipped ? "box-none" : "none"}
+        accessibilityElementsHidden={!flipped}
+        importantForAccessibility={flipped ? "auto" : "no-hide-descendants"}
+        aria-hidden={!flipped}
         style={{
           position: "absolute",
           left: spacing.xl + photoAt.x + PHOTO_W - (AVATAR_BADGE * 2) / 3,
           top: backBodyY + photoAt.y + PHOTO_H - (AVATAR_BADGE * 2) / 3,
+          opacity: turn.interpolate({ inputRange: [0, 0.9, 1], outputRange: [0, 0, 1], extrapolate: "clamp" }),
         }}
-      />
+      >
+        <AvatarEditor hasPhoto={holder.photoUrl !== null} open={photoOpen} onOpenChange={setPhotoOpen} />
+      </Animated.View>
     )}
     </View>
   );
