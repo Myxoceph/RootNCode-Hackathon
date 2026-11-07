@@ -2,6 +2,7 @@ export { dataSource } from "./active-source";
 export {
   avatarUri,
   communityAvailable,
+  deleteAccount,
   login,
   logout,
   redeemReward,

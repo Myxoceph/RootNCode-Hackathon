@@ -174,6 +174,19 @@ export async function logout(): Promise<void> {
   await forgetSession(current ?? "");
 }
 
+/**
+ * Erases the account (`POST /auth/delete-account`) and signs out here. Unlike signing out this must
+ * reach the API: on any failure nothing has been deleted and the session stays.
+ */
+export async function deleteAccount(password: string): Promise<void> {
+  await loadSession();
+  const current = token;
+  if (!current) throw new DataError("rejected", getMessages().profile.deleteAccount.failed);
+  // Answers 204: the schema is never read.
+  await call("/auth/delete-account", AppUserSchema, { body: { password }, token: current, messages: authMessages() });
+  await forgetSession(current);
+}
+
 /** The API no longer knows `rejected` (revoked, database reset): signed out, the app asks to sign in again. */
 async function forgetSession(rejected: string) {
   // A 401 that arrives after a new session was opened is about the old token: keep the new one.

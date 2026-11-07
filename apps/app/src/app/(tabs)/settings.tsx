@@ -37,6 +37,7 @@ import Svg, {
   Stop,
 } from "react-native-svg";
 
+import { DeleteAccount } from "@/components/delete-account";
 import { OpenBookLink } from "@/components/journal/open-book";
 import {
   avatarUri,
@@ -106,8 +107,13 @@ export default function SettingsScreen() {
     </Pressable>
   );
 
+  // A moderator's or admin's account cannot be deleted (the API refuses it), so it is not offered.
+  const deleteAccount = signedIn && user?.role === "visitor" && <DeleteAccount />;
+
   return (
     <ScrollView
+      keyboardShouldPersistTaps="handled"
+      automaticallyAdjustKeyboardInsets
       style={{ backgroundColor: c.background }}
       contentContainerStyle={{ paddingBottom: tabBarHeight + spacing.xl }}
     >
@@ -143,6 +149,7 @@ export default function SettingsScreen() {
             </View>
             <View style={styles.wideMain}>
               <Sections />
+              {deleteAccount}
             </View>
           </View>
         </View>
@@ -157,6 +164,7 @@ export default function SettingsScreen() {
           <Passport />
           <Sections />
           {signOut}
+          {deleteAccount}
         </View>
       )}
     </ScrollView>
