@@ -38,6 +38,8 @@ const GHOST_RECOGNISED = 0.15;
 const HOLD_MS = 1000;
 /** How long a seal that needs the position waits for a fix. */
 const POSITION_WAIT_MS = 5000;
+/** Room left for the top bar over the sealed screen. */
+const TOP_BAR_ROOM = 72;
 /** The sequence's window is closing for this long: iOS refuses to open another (the badges) meanwhile. */
 const WINDOW_CLOSES_MS = 500;
 
@@ -427,6 +429,13 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
   const reduceMotion = useReducedMotion();
   const reveal = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
   const [stage, setStage] = useState<"offer" | "sequence" | "result">(result.firstVisit ? "offer" : "result");
+  // Watched without its sound: the sequence starts muted, its switch still there.
+  const [muted, setMuted] = useState(false);
+  const hasSound = capsuleForSoundKey(asset.ambientSound?.key ?? "") !== undefined;
+  const watch = (withSound: boolean) => {
+    setMuted(!withSound);
+    setStage("sequence");
+  };
 
   const windowOpened = useRef(false);
   useEffect(() => {
@@ -439,7 +448,8 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
   const date = new Date().toLocaleDateString(localeTag(lang), { day: "numeric", month: "long", year: "numeric" });
 
   return (
-    <ScrollView contentContainerStyle={[styles.sealed, { paddingTop: insets.top + 96, paddingBottom: insets.bottom + spacing.xl }]}>
+    // Set in the middle of the screen, under the top bar: the seal and what it says read as one.
+    <ScrollView contentContainerStyle={[styles.sealed, { paddingTop: insets.top + TOP_BAR_ROOM, paddingBottom: insets.bottom + spacing.xl }]}>
       <SealStamp name={asset.name} ring={`${w.stamp} • ${m.profile.issuer.toLocaleUpperCase(lang)}`} date={date.toLocaleUpperCase(lang)} reduceMotion={reduceMotion} reveal={reveal} />
 
       <Animated.View style={[styles.sealedText, { opacity: reveal, transform: [{ translateY: reveal.interpolate({ inputRange: [0, 1], outputRange: [16, 0] }) }] }]}>
@@ -451,9 +461,39 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
           {result.firstVisit ? w.firstVisit : w.againVisit}
         </Text>
 
-        {stage !== "result" && (
+        {stage !== "result" && hasSound && (
+          <View style={styles.offer}>
+            {/* Says there is a sound before the choice; the buttons say it again for a screen reader. */}
+            <View style={styles.soundCue} aria-hidden>
+              <Ionicons name="musical-notes" size={15} color={cameraColors.gold} />
+              <Text variant="caption" colorValue={cameraColors.gold} style={styles.soundCueText}>
+                {w.soundHere}
+              </Text>
+            </View>
+            <View style={styles.watchRow}>
+              <Button
+                label={w.watchWithSound}
+                accessibilityHint={w.watchWithSoundHint}
+                icon={<Ionicons name="volume-high" size={20} color={cameraColors.onGold} />}
+                onPress={() => watch(true)}
+                colors={[cameraColors.gold, cameraColors.onGold]}
+                style={styles.watch}
+              />
+              <Button
+                label={w.watchMuted}
+                accessibilityHint={w.watchMutedHint}
+                icon={<Ionicons name="volume-mute" size={20} color={cameraColors.text} />}
+                onPress={() => watch(false)}
+                colors={[cameraGlass, cameraColors.text, "rgba(255,255,255,0.22)"]}
+                style={styles.watch}
+              />
+            </View>
+          </View>
+        )}
+        {/* No sound to choose about: the sequence runs on its words, and can be left out. */}
+        {stage !== "result" && !hasSound && (
           <>
-            <Button label={w.openTime} accessibilityHint={capsuleForSoundKey(asset.ambientSound?.key ?? "") ? w.openTimeHintSound : w.openTimeHint} onPress={() => setStage("sequence")} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
+            <Button label={w.openTime} accessibilityHint={w.openTimeHint} onPress={() => watch(true)} colors={[cameraColors.gold, cameraColors.onGold]} style={styles.done} />
             <Button
               label={w.skipTime}
               accessibilityHint={w.skipTimeHint}
@@ -493,7 +533,7 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
 
       {/* Over the screen's top bar too; the system's back gesture ends it as "Geç" does. */}
       <Modal visible={stage === "sequence"} animationType="fade" statusBarTranslucent navigationBarTranslucent onRequestClose={() => setStage("result")}>
-        {stage === "sequence" && <SealSequence asset={asset} onDone={() => setStage("result")} />}
+        {stage === "sequence" && <SealSequence asset={asset} muted={muted} onDone={() => setStage("result")} />}
       </Modal>
     </ScrollView>
   );
@@ -591,6 +631,8 @@ const styles = StyleSheet.create({
     borderColor: cameraColors.gold,
   },
   sealed: {
+    flexGrow: 1,
+    justifyContent: "center",
     alignItems: "center",
     gap: spacing.md,
     paddingHorizontal: spacing.lg,
@@ -602,6 +644,31 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "center",
     gap: spacing.md,
+  },
+  offer: {
+    alignSelf: "stretch",
+    alignItems: "center",
+    gap: spacing.sm,
+    marginTop: spacing.md,
+  },
+  soundCue: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+  },
+  soundCueText: {
+    fontFamily: fontFamily.sansSemiBold,
+    letterSpacing: 0.3,
+  },
+  watchRow: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.sm,
+  },
+  watch: {
+    flexGrow: 1,
+    flexBasis: 150,
   },
   badges: {
     alignSelf: "stretch",

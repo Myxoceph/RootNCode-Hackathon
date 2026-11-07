@@ -32,7 +32,7 @@ const LARGE_TEXT = 1.3;
  * With a screen reader it does not move on by itself: each line is read, and "Sonraki" goes on.
  * Leaving the app stops the sound (audio/capsule-player.ts); coming back starts the sequence again.
  */
-export function SealSequence({ asset, onDone }: { asset: AssetDetail; onDone: () => void }) {
+export function SealSequence({ asset, muted = false, onDone }: { asset: AssetDetail; /** Starts with its sound off; the switch still brings it back. */ muted?: boolean; onDone: () => void }) {
   const lang = useLang();
   const w = useMessages().seal;
   const insets = useSafeAreaInsets();
@@ -64,9 +64,15 @@ export function SealSequence({ asset, onDone }: { asset: AssetDetail; onDone: ()
   // Set once this sequence has asked for its sound: until then the player may hold another capsule's state.
   const [asked, setAsked] = useState(false);
 
+  // Asked for muted: only the first start is, so a sound the visitor brought back stays on after a return to the app.
+  const startMuted = useRef(muted);
   useEffect(() => {
     if (away) return;
-    if (type) playCapsule(type);
+    if (type) {
+      playCapsule(type);
+      if (startMuted.current) setCapsuleMuted(true);
+      startMuted.current = false;
+    }
     setAsked(true);
     return stopCapsule;
   }, [type, away]);
