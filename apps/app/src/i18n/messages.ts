@@ -698,6 +698,7 @@ const tr = {
   rewards: {
     canRedeem: "Alabilirsin",
     vkartLabel: (holder: string | null, balance: number) => `Vakıf Katılım VKart, Gezgin Kartı${holder ? `, ${holder}` : ""}: ${balance} puan harcanabilir`,
+    vkartHint: "Kartın üzerinden bir ışık geçer",
     memberSince: (since: string) => `ÜYE ${since}`,
     traveller: "Gezgin",
     cardHead: "GEZGİN KARTI",
@@ -2063,6 +2064,7 @@ const en: Messages = {
   rewards: {
     canRedeem: "You can redeem this",
     vkartLabel: (holder, balance) => `Vakıf Katılım VKart, Traveller's Card${holder ? `, ${holder}` : ""}: ${balance} points to spend`,
+    vkartHint: "Sends a light across the card",
     memberSince: (since) => `MEMBER ${since}`,
     traveller: "Traveller",
     cardHead: "TRAVELLER'S CARD",
