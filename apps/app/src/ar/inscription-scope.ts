@@ -1,16 +1,23 @@
 import type { AssetDetail } from "@vagabonds/contracts";
 import { useEffect, useState } from "react";
 
-import { dataSource, loadAllAssets } from "@/data";
-import { getLang, useLang } from "@/i18n";
-import { currentPosition, type Position } from "@/lib/current-position";
+import * as Location from "expo-location";
 
-import { hasReadableInscription, INSCRIPTION_ASSET, isTrackable, nearbyAssets } from "./inscription-targets";
+import { dataSource } from "@/data";
+import { getLang, useLang } from "@/i18n";
+import type { Position } from "@/lib/current-position";
+
+import { arTargets } from "./ar-targets";
+import { hasReadableInscription, INSCRIPTION_ASSET, isTrackable, NEARBY_METERS, nearbyAssets, targetsNear } from "./inscription-targets";
 
 /** The nearest assets whose records are fetched to find their inscriptions. */
 const NEARBY_ASSETS = 8;
-/** How long to wait for a location fix before opening the sample asset instead. */
-const POSITION_TIMEOUT_MS = 8_000;
+/** How long to wait for a fresh location fix before opening the sample asset instead. */
+const POSITION_TIMEOUT_MS = 3_000;
+/** A position the phone already knows is used at once while it is this fresh: a visitor walks 300 m in minutes. */
+const KNOWN_MAX_AGE_MS = 2 * 60_000;
+/** Degrees of latitude in 1 m, for the box the nearby assets are asked for in. */
+const DEGREES_PER_METER = 1 / 111_320;
 
 export type InscriptionScope =
   | { status: "loading" }
@@ -35,21 +42,49 @@ async function withBuildings(id: string): Promise<AssetDetail[]> {
   return trackable.length > 0 ? trackable : [all.find(hasReadableInscription) ?? asset];
 }
 
-/** The visitor's position, or `null` when it is refused or takes longer than `POSITION_TIMEOUT_MS` (indoors). */
-function positionInTime(): Promise<Position | null> {
-  return Promise.race([currentPosition(), new Promise<null>((resolve) => setTimeout(() => resolve(null), POSITION_TIMEOUT_MS))]);
+/**
+ * The visitor's position: the one the phone knows when it is fresh, else a new fix within
+ * `POSITION_TIMEOUT_MS` (indoors there may be none). The permission is asked for first, outside
+ * that time, so the visitor's moment of reading the question does not use it up. `null` when refused.
+ */
+async function positionInTime(): Promise<Position | null> {
+  try {
+    const { granted } = await Location.requestForegroundPermissionsAsync();
+    if (!granted) return null;
+    const known = await Location.getLastKnownPositionAsync({ maxAge: KNOWN_MAX_AGE_MS }).catch(() => null);
+    if (known) return { lat: known.coords.latitude, lng: known.coords.longitude };
+    const fix = await Promise.race([
+      Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced }).catch(() => null),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), POSITION_TIMEOUT_MS)),
+    ]);
+    return fix ? { lat: fix.coords.latitude, lng: fix.coords.longitude } : null;
+  } catch {
+    return null;
+  }
+}
+
+/** The ids of the assets within `NEARBY_METERS` of `position`, nearest first: those in a box around it, not every asset. */
+async function assetsAround(position: Position): Promise<string[]> {
+  const dLat = NEARBY_METERS * DEGREES_PER_METER;
+  const dLng = dLat / Math.max(0.2, Math.cos((position.lat * Math.PI) / 180));
+  const box: [number, number, number, number] = [position.lng - dLng, position.lat - dLat, position.lng + dLng, position.lat + dLat];
+  const page = await dataSource.listAssets({ bbox: box, limit: 50, offset: 0 }, getLang()).catch(() => null);
+  return page ? nearbyAssets(page.items, position).map((asset) => asset.id) : [];
 }
 
 /**
- * The nearest assets with an inscription: those the camera can find; else, for the reading
- * mode, the nearest with a text to read. `null` when nothing near has one, or the list is out of reach.
+ * The nearest assets with an inscription: those the camera can find, picked from the short list of
+ * targets (ar/ar-targets.ts, at once when it is stored); else, for the reading mode, the nearest
+ * with a text to read, from the assets in a box around the visitor. `null` when nothing near has one.
  */
 async function nearbyInscriptions(position: Position): Promise<AssetDetail[] | null> {
-  const all = await loadAllAssets().catch(() => null);
-  if (!all) return null;
-  const near = await fetchAll(nearbyAssets(all, position).slice(0, NEARBY_ASSETS).map((asset) => asset.id));
-  const trackable = near.filter(isTrackable);
-  if (trackable.length > 0) return trackable;
+  const targets = await arTargets();
+  const withTargets = [...new Set(targetsNear(targets ?? [], position).map((t) => t.assetId))].slice(0, NEARBY_ASSETS);
+  if (withTargets.length > 0) {
+    const trackable = (await fetchAll(withTargets)).filter(isTrackable);
+    if (trackable.length > 0) return trackable;
+  }
+  const near = await fetchAll((await assetsAround(position)).slice(0, NEARBY_ASSETS));
   const readable = near.find(hasReadableInscription);
   return readable ? [readable] : null;
 }

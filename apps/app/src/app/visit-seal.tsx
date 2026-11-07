@@ -2,10 +2,9 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { VISIT_RADIUS_METERS, type AssetDetail, type VisitResponse } from "@vagabonds/contracts";
 import { Button, cameraColors, cameraGlass, fontFamily, radius, spacing, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import * as Haptics from "expo-haptics";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ActivityIndicator, Animated, Easing, Modal, Platform, Pressable, ScrollView, StyleSheet, Vibration, View } from "react-native";
+import { ActivityIndicator, Animated, Easing, Modal, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { compileSource } from "@/ar/inscription-targets";
@@ -24,6 +23,7 @@ import { communityAvailable, DataError, sendVisitProof, useAsset } from "@/data"
 import { holdBadges } from "@/data/new-badges";
 import { alignment, ghostRect, type AlignHint, type Size } from "@/lib/seal-alignment";
 import { announce } from "@/lib/announce";
+import { cue, haptic } from "@/lib/feedback";
 import { currentPosition, type Position } from "@/lib/current-position";
 import { isAssetUnlocked } from "@/lib/related-assets";
 import { unlockAsset, unlockForDemo, useUnlockedAssets } from "@/lib/unlocked-assets";
@@ -367,12 +367,12 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
     if (now !== "searching" && now !== "recognised") return;
     // Lining up is the task: until it lines up the shutter only says what is missing.
     if (!relaxed && !(now === "recognised" && fitRef.current?.aligned)) {
-      void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning).catch(() => {});
+      haptic("warning");
       announce(fitRef.current?.hint ? w.align[fitRef.current.hint] : w.alignHead);
       return;
     }
     go({ name: "verifying" });
-    void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
+    cue("shutter");
     if (!reduceMotion) {
       flash.setValue(0.85);
       Animated.timing(flash, { toValue: 0, duration: 260, easing: Easing.out(Easing.quad), useNativeDriver: true }).start();
@@ -465,14 +465,9 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
   );
 }
 
-/**
- * The moment it lines up, felt as two short taps. On Android expo-haptics plays its patterns at a
- * fraction of the motor's strength (a selection at about an eighth), too faint to notice on many
- * phones: the system's own vibration runs at full strength.
- */
+/** The moment it lines up: two short taps and a small stone tap (lib/feedback.ts). */
 function feelAligned() {
-  if (Platform.OS === "android") Vibration.vibrate([0, 35, 70, 35]);
-  else void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
+  cue("sealFit");
 }
 
 /** How much of the photo shows: as set while lining up, none once a photo is taken. */

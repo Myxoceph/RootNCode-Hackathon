@@ -20,6 +20,7 @@ import { InscriptionReading } from "@/components/inscription-reading";
 import { DataError, type ResourceWithRetry } from "@/data";
 import { useLang, useMessages, type Messages } from "@/i18n";
 import { announce } from "@/lib/announce";
+import { cue } from "@/lib/feedback";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
@@ -71,6 +72,9 @@ export default function InscriptionScreen() {
   // sample asset opened when nothing near is known: an answer from the wrong record is worse than
   // none, so then it answers from the photo alone.
   const askAsset = id ?? (scope.status === "ready" && scope.nearby ? (scope.assets[0]?.id ?? null) : null);
+  // Opened from the camera tab, and nothing near the visitor: the camera still knows the sample
+  // inscriptions, but the reading does not show the sample asset as if it were here.
+  const sampleOnly = id === undefined && scope.status === "ready" && !scope.nearby;
   const askAbout = (asset: string | null) => {
     const name = scope.status === "ready" ? scope.assets.find((a) => a.id === asset)?.name : undefined;
     router.push({ pathname: "/stone-ask", params: asset ? { asset, ...(name && { name }) } : {} });
@@ -115,6 +119,7 @@ export default function InscriptionScreen() {
       </Head>
       {mode === "reading" && (
         <InscriptionReading
+          empty={sampleOnly ? { message: w.noneNearby, onRetry: retry } : null}
           inscription={inscriptionOf(asset, null, lang)}
           notice={untrackable && asset.status === "success" ? w.noTarget : notice}
           onAsk={web ? null : () => askAbout(askAsset)}
@@ -260,11 +265,13 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
       setTracked(set?.targets[index] ?? null);
       clearTimeout(revealTimer.current);
       if (reduceMotion) {
+        cue("inscriptionFound");
         reveal();
         return;
       }
       go("locked");
       announce(w.foundSaid);
+      cue("inscriptionFound");
       revealTimer.current = setTimeout(reveal, REVEAL_MS);
     },
     [go, set, reduceMotion, reveal, w],

@@ -5,6 +5,7 @@ import { BottomTabBarHeightCallbackContext, type BottomTabBarProps } from "expo-
 import { useContext, useRef, type ComponentProps } from "react";
 import { Pressable, StyleSheet, View, type PressableInstance } from "react-native";
 
+import { haptic } from "@/lib/feedback";
 import { setTabSpot, useTabSpotlight } from "@/lib/tab-bar-spots";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
@@ -71,6 +72,8 @@ export function TabBar({ state, descriptors, emitter, navigateToTab, insets, ite
             if (!route) return null;
             const focused = route.key === state.routes[state.index]?.key;
             const onPress = () => {
+              // A light tick on the way to another tab, none on the open one.
+              if (!focused) haptic("selection");
               const event = emitter.emit({ type: "tabPress", target: route.key, canPreventDefault: true });
               if (!focused && !event.defaultPrevented) navigateToTab(route.key);
             };

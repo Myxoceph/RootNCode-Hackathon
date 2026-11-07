@@ -10,6 +10,7 @@ import { BadgeArt } from "@/components/badge-art";
 import { dismissAllBadges, dismissBadge, useNewBadges, type NewBadge } from "@/data/new-badges";
 import { useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
+import { cue } from "@/lib/feedback";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 /**
@@ -77,6 +78,11 @@ function Scene({ badge, left }: { badge: NewBadge; left: number }) {
   useEffect(() => {
     announce(w.newBadgeSaid(badge.title, badge.points, left));
   }, [badge, left]);
+
+  // Once a badge, not again for the "left" count changing under it.
+  useEffect(() => {
+    cue("badge");
+  }, [badge]);
 
   useEffect(() => {
     if (reduced) {

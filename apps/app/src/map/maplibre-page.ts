@@ -54,6 +54,8 @@ export type MapPageEvent =
   | { type: "leaveCity" }
   /** The camera has landed on the chosen city, its flight over. */
   | { type: "cityLanded"; plate: number }
+  /** The opening's fog starts to part (its sound cue). */
+  | { type: "fogParting" }
   /** The opening is over: the fog has parted and the provinces are drawn (or a city cut it short). */
   | { type: "introEnd" }
   /** The open city is all there: its fog whole, its seals and clouds drawn, its streets loaded. */
@@ -3268,6 +3270,8 @@ function start() {
     const begin = () => {
       if (!intro || intro.start !== Infinity) return;
       intro.start = performance.now();
+      // The fog parts from 30% of the opening (drawIntro): the app plays its sound then.
+      setTimeout(() => intro && post({ type: "fogParting" }), INTRO_MS * 0.3);
       // The provinces show as the fog parts; the ones with assets light up a moment later.
       setTimeout(() => map.setPaintProperty("province-borders", "line-opacity", 1), INTRO_MS * 0.42);
       setTimeout(() => {

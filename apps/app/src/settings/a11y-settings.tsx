@@ -11,6 +11,8 @@ import {
 } from "@/theme";
 import { useMessages } from "@/i18n";
 
+import { setFeedbackOptions } from "@/lib/feedback";
+
 import { readA11ySettings, writeA11ySettings } from "./a11y-storage";
 import { applyFocusRing } from "./focus-ring";
 
@@ -23,6 +25,10 @@ export interface A11ySettings {
   largeText: boolean;
   highContrast: boolean;
   strongFocusRing: boolean;
+  /** Short sounds at moments of reward (a seal, an inscription found, a badge). Phones only. */
+  soundEffects: boolean;
+  /** Vibration with them and with other taps. Phones only. */
+  haptics: boolean;
 }
 
 export const defaultA11ySettings: A11ySettings = {
@@ -31,6 +37,8 @@ export const defaultA11ySettings: A11ySettings = {
   largeText: false,
   highContrast: false,
   strongFocusRing: true,
+  soundEffects: true,
+  haptics: true,
 };
 
 /** "Büyük metin" makes every text 14% larger, on top of the system text size. */
@@ -114,6 +122,10 @@ export function A11ySettingsProvider({ storedThemePreference, children }: A11ySe
   useEffect(() => {
     if (Platform.OS === "web") applyFocusRing(ringColor, settings.strongFocusRing);
   }, [ringColor, settings.strongFocusRing]);
+  // The sound cues are played outside React: they read the two switches from here.
+  useEffect(() => {
+    setFeedbackOptions({ sound: settings.soundEffects, haptics: settings.haptics });
+  }, [settings.soundEffects, settings.haptics]);
   const value = useMemo(
     () => ({ settings, setSetting, themePreference, setThemePreference }),
     [settings, setSetting, themePreference, setThemePreference],

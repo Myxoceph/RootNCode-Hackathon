@@ -171,45 +171,15 @@ export default function SystemSettingsScreen() {
             </Pressable>
           </View>
 
-          <View style={styles.grid}>
-            {tiles.map(({ key, icon, title, detail }) => {
-              const on = settings[key];
-              return (
-                <Pressable
-                  key={key}
-                  accessibilityRole="switch"
-                  accessibilityState={{ checked: on }}
-                  accessibilityLabel={title}
-                  accessibilityHint={detail}
-                  onPress={() => setSetting(key, !on)}
-                  style={({ pressed }) => [
-                    styles.tile,
-                    wide && styles.tileWide,
-                    tileLook(on, c.surface, dark ? "transparent" : c.border),
-                    pressed && styles.pressed,
-                  ]}
-                >
-                  <View style={styles.tileTop}>
-                    <TileIcon name={icon} on={on} />
-                    <Check on={on} />
-                  </View>
-                  <View>
-                    <Text variant="label" style={styles.tileTitle}>
-                      {title}
-                    </Text>
-                    <Text
-                      variant="caption"
-                      color="textSecondary"
-                      numberOfLines={2}
-                    >
-                      {detail}
-                    </Text>
-                  </View>
-                </Pressable>
-              );
-            })}
-          </View>
+          <SwitchTiles tiles={tiles} wide={wide} />
         </Section>
+
+        {/* No haptics on the web, and its browsers keep sounds back until a tap. */}
+        {Platform.OS !== "web" && (
+          <Section title={m.settings.feedback}>
+            <SwitchTiles tiles={feedbackTilesFor(m)} wide={wide} />
+          </Section>
+        )}
 
         {Platform.OS === "web" && (
           <Text variant="caption" color="textSecondary" style={styles.center}>
@@ -224,6 +194,71 @@ export default function SystemSettingsScreen() {
         )}
       </View>
     </ScrollView>
+  );
+}
+
+type SwitchTile = ReturnType<typeof tilesFor>[number];
+
+/** Sound and vibration, phones only. */
+const feedbackTilesFor = (m: Messages): SwitchTile[] => [
+  {
+    key: "soundEffects",
+    icon: "musical-notes-outline",
+    title: m.settings.soundEffects,
+    detail: m.settings.soundEffectsDetail,
+  },
+  {
+    key: "haptics",
+    icon: "phone-portrait-outline",
+    title: m.settings.haptics,
+    detail: m.settings.hapticsDetail,
+  },
+];
+
+/** Switches as tiles, two to a row. */
+function SwitchTiles({ tiles, wide }: { tiles: SwitchTile[]; wide: boolean }) {
+  const { colors: c, scheme } = useTheme();
+  const dark = scheme === "dark";
+  const { settings, setSetting } = useA11ySettings();
+  return (
+    <View style={styles.grid}>
+      {tiles.map(({ key, icon, title, detail }) => {
+        const on = settings[key];
+        return (
+          <Pressable
+            key={key}
+            accessibilityRole="switch"
+            accessibilityState={{ checked: on }}
+            accessibilityLabel={title}
+            accessibilityHint={detail}
+            onPress={() => setSetting(key, !on)}
+            style={({ pressed }) => [
+              styles.tile,
+              wide && styles.tileWide,
+              tileLook(on, c.surface, dark ? "transparent" : c.border),
+              pressed && styles.pressed,
+            ]}
+          >
+            <View style={styles.tileTop}>
+              <TileIcon name={icon} on={on} />
+              <Check on={on} />
+            </View>
+            <View>
+              <Text variant="label" style={styles.tileTitle}>
+                {title}
+              </Text>
+              <Text
+                variant="caption"
+                color="textSecondary"
+                numberOfLines={2}
+              >
+                {detail}
+              </Text>
+            </View>
+          </Pressable>
+        );
+      })}
+    </View>
   );
 }
 

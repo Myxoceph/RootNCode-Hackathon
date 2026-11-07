@@ -11,6 +11,7 @@ import { DataError } from "@/data/errors";
 import { askStone } from "@/data/vision";
 import { useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
+import { cue } from "@/lib/feedback";
 import { answerParts } from "@/lib/chat";
 import { useVoiceQuestion } from "@/lib/use-voice-question";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
@@ -68,6 +69,9 @@ export function AskPanel({ assetId, takePhoto, ready, defaultQuestion, showPhoto
   async function capture(question: string | null) {
     if (busy.current || phase.kind === "looking" || !ready) return;
     busy.current = true;
+    // An answer still being read stops first, or the shutter would keep quiet under it.
+    stopAnswer();
+    cue("shutter");
     try {
       await ask(question);
     } finally {
