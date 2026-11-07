@@ -49,7 +49,9 @@ export function useAccountGate() {
       Object.entries(params).flatMap(([key, value]) => (typeof value === "string" ? [[key, value]] : (value ?? []).map((one) => [key, one]))),
     ).toString();
     const next = pathname === "/" ? undefined : `${pathname}${query ? `?${query}` : ""}`;
-    router.replace({ pathname: "/auth", params: { mode: hadAccount ? "login" : "register", ...(next && { next }) } });
+    // The panel is for accounts that exist already: it opens on "Giriş yap".
+    const login = hadAccount || pathname.startsWith("/admin");
+    router.replace({ pathname: "/auth", params: { mode: login ? "login" : "register", ...(next && { next }) } });
     // The page asked for is read when the gate closes, not followed as it changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted, closed, hadAccount, router]);

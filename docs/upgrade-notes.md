@@ -11,14 +11,30 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 Kimler: **veri hattını çalıştıranlar** (R2'ye yükleme)
 
-1. Mühür hedeflerini derle (Chrome gerekir; 685 eser ~3 saat, kesilirse kaldığı yerden sürer): `npm run data:ar-targets`
-2. R2'ye yükle (data/README.md §8): `rclone copy data/build/media r2:kok-kod-media-public --checksum --transfers 16 --header-upload "Cache-Control: public, max-age=31536000, immutable"`
-3. `data/build/ar-targets.json` değişir; commit'le. API'de ve veritabanında değişiklik yok.
+1. Mühür hedeflerini derle (Chrome gerekir; 643 hedef ~1 saat; Chrome her 30 derlemede yeniden açılır, takılan fotoğraf atlanır, kesilirse kaldığı yerden sürer): `npm run data:ar-targets`. Bu PR'da derlenmiş hâli var (`data/build/ar-targets.json`: 11 kitabe, 632 mühür).
+2. **R2'ye yükleme şimdilik askıda** (sunuma kadar R2'ye dokunulmuyor). Dosyalar yüklenene kadar uygulama mühür fotoğrafını eskisi gibi telefonda derler; hiçbir şey bozulmaz. Yüklenirken yalnızca `.mind` dosyaları, silmeyen ve üzerine yazmayan biçimde; önce deneme modu (`--dry-run`) ve öncesi/sonrası `rclone size` karşılaştırması:
+   `rclone copy data/build/media r2:kok-kod-media-public --include "*.mind" --immutable --checksum --transfers 16 --header-upload "Cache-Control: public, max-age=31536000, immutable"`
+3. API'de ve veritabanında değişiklik yok.
 
 Değişenler:
 
 - Ziyaret Mührü, eserin mühür fotoğrafının sunucuda derlenmiş `.mind` dosyasını indirip telefonda saklıyor; "Eser hazırlanıyor" beklemesi kalkıyor. Dosya yoksa eskisi gibi telefonda derleniyor.
 - Mühür fotoğrafını seçen kural ortak pakette (`pickSealPhoto`); uygulama ve veri hattı aynı fotoğrafı seçiyor.
+
+---
+
+## 2026-11-07 · Ödüllere panelden görsel (sözleşme 0.3.37)
+
+Kimler: **API'yi çalıştıranlar** (sunum sunucusu dahil), **uygulama ekibi**
+
+1. Migration'ı uygula: yerelde `npm run db:deploy -w @vagabonds/api`, sunucuda güncellemeyle birlikte (`deploy/demo.sh up`).
+2. API'yi yeniden başlat; yeni paket yok.
+
+Değişenler:
+
+- `reward` tablosuna `art` sütunu (boş olabilir). Panelde ödül eklerken ya da düzenlerken **Görsel** seçilir: kupa, defter, şapka, tişört, bilet, çay, hediye, müze, etiket, fener ya da **Otomatik**.
+- Otomatik (boş) bırakılırsa uygulama eskisi gibi ödülün kodundaki kelimeden (`kupa`, `defter`, `muze`…), o da yoksa türünden seçer. Mevcut ödüller değişmeden aynı görünür.
+- `Reward` ve `Redemption.reward` yanıtlarında `art` alanı; eski API yanıtları için varsayılanı `null`.
 
 ---
 

@@ -164,6 +164,13 @@ describe.skipIf(!DATABASE_URL)("visit proof, wallet and rewards (PostgreSQL)", (
     // Turkish alone keeps the English.
     const renamed = await call("PATCH", `/admin/rewards/${empty}`, admin.token, { title: { tr: "Boş ödül" } });
     expect(AdminRewardSchema.parse(renamed.json())).toMatchObject({ title: "Boş ödül", titleEn: "Empty" });
+    // Made without a drawing, it has none (the app picks one); one is picked, then taken away again.
+    expect(AdminRewardSchema.parse(made.json()).art).toBeNull();
+    const drawn = await call("PATCH", `/admin/rewards/${empty}`, admin.token, { art: "lantern" });
+    expect(AdminRewardSchema.parse(drawn.json()).art).toBe("lantern");
+    expect((await call("PATCH", `/admin/rewards/${empty}`, admin.token, { art: "rocket" })).statusCode).toBe(400);
+    const plain = await call("PATCH", `/admin/rewards/${empty}`, admin.token, { art: null });
+    expect(AdminRewardSchema.parse(plain.json()).art).toBeNull();
     await grantPoints(visitor.id, 5);
     const out = await call("POST", `/rewards/${empty}/redeem`, visitor.token);
     expect([out.statusCode, out.json().error.code]).toEqual([409, "OUT_OF_STOCK"]);

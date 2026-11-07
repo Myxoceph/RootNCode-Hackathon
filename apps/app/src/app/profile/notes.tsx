@@ -1,6 +1,6 @@
-import { radius, spacing, useTheme } from "@vagabonds/ui";
+import { spacing, useTheme } from "@vagabonds/ui";
 import Head from "expo-router/head";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { MyContributions } from "@/components/my-contributions";
@@ -8,7 +8,7 @@ import { useMessages } from "@/i18n";
 import { bottomInset } from "@/lib/bottom-inset";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
-/** Profil · Bıraktığım Notlar: the visitor's notes and their moderation, on a card of their own. */
+/** Profil · Bıraktığım Notlar: the visitor's notes and their moderation, each on a card of its own. */
 export default function MyNotesScreen() {
   const m = useMessages();
   const { colors: c } = useTheme();
@@ -27,9 +27,7 @@ export default function MyNotesScreen() {
       <Head>
         <title>{m.common.title(m.screens.notes)}</title>
       </Head>
-      <View style={[styles.card, { backgroundColor: c.surface }]}>
-        <MyContributions title={null} />
-      </View>
+      <MyContributions title={m.screens.notes} />
     </ScrollView>
   );
 }
@@ -40,9 +38,5 @@ const styles = StyleSheet.create({
     maxWidth: 560,
     alignSelf: "center",
     padding: spacing.lg,
-  },
-  card: {
-    padding: spacing.lg,
-    borderRadius: radius.xl + spacing.xs,
   },
 });

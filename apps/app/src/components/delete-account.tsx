@@ -115,12 +115,14 @@ const styles = StyleSheet.create({
   opener: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.sm,
+    gap: spacing.xs,
     minHeight: touchTarget.min,
-    borderRadius: radius.xl,
+    paddingHorizontal: spacing.md,
+    borderRadius: radius.full,
   },
   panel: {
+    // Opened, it takes the account row's whole width.
+    width: "100%",
     gap: spacing.md,
     padding: spacing.lg,
     borderRadius: radius.xl,

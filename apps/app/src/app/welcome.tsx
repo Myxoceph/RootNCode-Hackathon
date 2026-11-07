@@ -1,14 +1,15 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { WeatherCondition, WeatherResponse } from "@vagabonds/contracts";
-import { fontFamily, palette, radius, spacing, Text, useTheme } from "@vagabonds/ui";
+import { fontFamily, palette, spacing, Text, useTheme } from "@vagabonds/ui";
 import { useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useRef, useState, type ComponentProps } from "react";
-import { Animated, Easing, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { Animated, Easing, Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Circle, Defs, LinearGradient, Path, RadialGradient, Rect, Stop } from "react-native-svg";
 
+import { RecentPages } from "@/components/journal/recent-pages";
 import { useCities, useCommunity, useWeather, useWeatherAt } from "@/data";
 import { announce } from "@/lib/announce";
 import { useHere } from "@/lib/here";
@@ -40,6 +41,7 @@ function usePageColors() {
     goldMark: dark ? palette.altin200 : palette.altin600,
     /** The button's soft shadow: on the white only. */
     lift: !dark,
+    button: dark ? BUTTON.dark : BUTTON.light,
     /** The weather card's sky, top to bottom, and its edge. */
     sky: dark ? ["#1D3A6E", "#122A52"] : ["#E3EDFB", "#F4F8FE"],
     skyEdge: dark ? "rgba(255, 255, 255, 0.12)" : "#D6E2F3",
@@ -48,8 +50,14 @@ function usePageColors() {
   };
 }
 
-/** The button's gold, lighter at the top. */
-const GOLD = ["#F3D88F", "#DDB55C"] as const;
+/**
+ * The button's gold, lighter at its top corner, as the page's other golds are: deep gold with white
+ * words on the white page (4.5:1 at its lightest), light gold with dark words on the navy one.
+ */
+const BUTTON = {
+  light: { gold: ["#94701F", palette.altin700], text: palette.white, arrow: palette.altin200, circle: "rgba(27, 20, 8, 0.28)" },
+  dark: { gold: ["#F3D88F", palette.altin300], text: palette.altin950, arrow: "#F3D88F", circle: NAVY },
+} as const;
 
 /** The weather's icon: the sun by day, the moon by night when it is clear or cloudy. */
 function weatherIcon(condition: WeatherCondition, isDay: boolean): IconName {
@@ -61,9 +69,9 @@ function weatherIcon(condition: WeatherCondition, isDay: boolean): IconName {
 /**
  * `/welcome`: the page the app opens on. At the top the date and "Hoş geldin, <ad>" in the display
  * face, under a faint gold eight-pointed star (the map's mark for a monument); under them the
- * weather where the visitor is (without the location, in the city last opened on the map): now,
- * in large, and the next three days. Nothing here needs the visitor; the page
- * stays until "Devam et" opens the map.
+ * newest pages of the Anı Defteri on a strip, then the weather where the visitor is (without the
+ * location, in the city last opened on the map), small: now and the next three days. All of it fits
+ * one phone screen; the page stays until "Devam et" opens the map.
  */
 export default function WelcomePage() {
   const router = useRouter();
@@ -75,6 +83,8 @@ export default function WelcomePage() {
   const reduced = useReducedMotion();
   const ink = usePageColors();
   const [today] = useState(() => new Date());
+  // A short phone (an SE): the parts sit closer, so all of it still fits its screen.
+  const short = useWindowDimensions().height < 740;
 
   // The first name when the account has a full name, else the nickname.
   const name = user?.fullName?.trim().split(/\s+/)[0] || user?.nickname || null;
@@ -129,14 +139,13 @@ export default function WelcomePage() {
       <Star color={ink.goldMark} top={insets.top} />
 
       <ScrollView
-        contentContainerStyle={[styles.scroll, { paddingTop: insets.top + spacing.xxl * 2, paddingBottom: footerHeight + spacing.md }]}
+        contentContainerStyle={[styles.scroll, { paddingTop: insets.top + spacing.xl, paddingBottom: footerHeight + spacing.md }]}
         showsVerticalScrollIndicator={false}
         bounces={false}
       >
         <View style={styles.column}>
           <Animated.View style={rise(0)}>
             <View style={styles.dateRow}>
-              <View style={[styles.dateRule, { backgroundColor: ink.gold }]} />
               <Text colorValue={ink.gold} style={styles.overline}>
                 {date}
               </Text>
@@ -150,13 +159,18 @@ export default function WelcomePage() {
             </Text>
           </Animated.View>
 
-          {/* Told by screen readers when it arrives: it may come a moment after the greeting. */}
-          <View accessibilityLiveRegion="polite" style={styles.cardSlot}>
-            {forecast?.available && forecast.current && (
-              <Animated.View style={rise(0.25)}>
-                <WeatherCard forecast={forecast} place={place} located={here != null} today={today} />
-              </Animated.View>
-            )}
+          {/* The newest pages of the Anı Defteri, then the weather: told by screen readers when it arrives, a moment after the greeting. */}
+          <View style={[styles.cardSlot, short && styles.cardSlotShort]}>
+            <Animated.View style={rise(0.25)}>
+              <RecentPages edge={spacing.lg} gold={ink.gold} />
+            </Animated.View>
+            <View accessibilityLiveRegion="polite" style={short ? styles.weatherSlotShort : styles.weatherSlot}>
+              {forecast?.available && forecast.current && (
+                <Animated.View style={rise(0.4)}>
+                  <WeatherCard forecast={forecast} place={place} located={here != null} today={today} />
+                </Animated.View>
+              )}
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -173,18 +187,18 @@ export default function WelcomePage() {
             <Svg width="100%" height="100%">
               <Defs>
                 <LinearGradient id="welcome-gold" x1="0" y1="0" x2="1" y2="1">
-                  <Stop offset="0" stopColor={GOLD[0]} />
-                  <Stop offset="1" stopColor={GOLD[1]} />
+                  <Stop offset="0" stopColor={ink.button.gold[0]} />
+                  <Stop offset="1" stopColor={ink.button.gold[1]} />
                 </LinearGradient>
               </Defs>
               <Rect width="100%" height="100%" rx={30} fill="url(#welcome-gold)" />
             </Svg>
           </View>
-          <Text variant="label" colorValue={palette.altin950} style={styles.startText}>
+          <Text variant="label" colorValue={ink.button.text} style={styles.startText}>
             {w.start}
           </Text>
-          <View style={styles.startArrow}>
-            <Ionicons name="arrow-forward" size={20} color={GOLD[0]} />
+          <View style={[styles.startArrow, { backgroundColor: ink.button.circle }]}>
+            <Ionicons name="arrow-forward" size={20} color={ink.button.arrow} />
           </View>
         </Pressable>
       </View>
@@ -248,27 +262,21 @@ function WeatherCard({ forecast, place, located, today }: { forecast: WeatherRes
         </Svg>
       </View>
 
-      <View style={styles.cardTop}>
-        <View style={[styles.place, { backgroundColor: ink.chip }]}>
-          <Ionicons name={located ? "navigate" : "location"} size={13} color={ink.goldMark} />
-          <Text colorValue={ink.text} style={styles.placeText}>
-            {place}
-          </Text>
-        </View>
-        <Text colorValue={ink.textSecondary} style={styles.nowLabel}>
-          {w.now.toLocaleUpperCase(localeTag(lang))}
-        </Text>
-      </View>
-
       <View style={styles.nowRow} accessible accessibilityLabel={w.nowLabel(place, degrees, w.conditions[now.condition])}>
+        <Ionicons name={weatherIcon(now.condition, now.isDay)} size={34} color={ink.goldMark} />
         <Text colorValue={ink.text} style={styles.degrees}>
           {w.degrees(degrees)}
         </Text>
         <View style={styles.nowSide}>
-          <Ionicons name={weatherIcon(now.condition, now.isDay)} size={40} color={ink.goldMark} />
-          <Text colorValue={ink.text} style={styles.condition}>
+          <Text colorValue={ink.text} style={styles.condition} numberOfLines={1}>
             {w.conditions[now.condition]}
           </Text>
+          <View style={styles.place}>
+            <Ionicons name={located ? "navigate" : "location"} size={12} color={ink.goldMark} />
+            <Text colorValue={ink.textSecondary} style={styles.placeText} numberOfLines={1}>
+              {place}
+            </Text>
+          </View>
         </View>
       </View>
 
@@ -292,24 +300,16 @@ function WeatherCard({ forecast, place, located, today }: { forecast: WeatherRes
                 accessible
                 accessibilityLabel={w.dayLabel(label, w.conditions[day.condition], high, low, rain)}
               >
-                <Text colorValue={ink.textSecondary} style={styles.dayName}>
+                <Text colorValue={ink.textSecondary} style={styles.dayName} numberOfLines={1}>
                   {label}
                 </Text>
-                <Ionicons name={weatherIcon(day.condition, true)} size={22} color={ink.goldMark} />
-                <Text colorValue={ink.text} style={styles.dayTemps}>
+                <Ionicons name={weatherIcon(day.condition, true)} size={14} color={ink.goldMark} />
+                <Text colorValue={ink.text} style={styles.dayTemps} numberOfLines={1}>
                   {w.degrees(high)}
                   <Text colorValue={ink.textSecondary} style={styles.dayLow}>
-                    {w.slashLow(low)}
+                    {`/${w.degrees(low)}`}
                   </Text>
                 </Text>
-                {rain !== null && rain >= 20 && (
-                  <View style={styles.rain}>
-                    <Ionicons name="water" size={11} color={ink.textSecondary} />
-                    <Text colorValue={ink.textSecondary} style={styles.rainText}>
-                      {w.percent(rain)}
-                    </Text>
-                  </View>
-                )}
               </View>
             );
           })}
@@ -326,6 +326,8 @@ function WeatherCard({ forecast, place, located, today }: { forecast: WeatherRes
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    // The star in the corner reaches past the screen's edge.
+    overflow: "hidden",
   },
   star: {
     position: "absolute",
@@ -345,12 +347,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.sm,
-    marginBottom: spacing.md,
-  },
-  dateRule: {
-    width: 24,
-    height: 2,
-    borderRadius: 1,
+    marginBottom: spacing.sm,
   },
   overline: {
     fontFamily: fontFamily.sansBold,
@@ -359,81 +356,78 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: fontFamily.display,
-    fontSize: 52,
-    lineHeight: 58,
+    fontSize: 40,
+    lineHeight: 46,
     letterSpacing: -0.5,
   },
   cardSlot: {
     flex: 1,
     justifyContent: "center",
-    paddingTop: spacing.xxl,
+    paddingTop: spacing.lg,
+  },
+  weatherSlot: {
+    marginTop: spacing.xl,
+  },
+  weatherSlotShort: {
+    marginTop: spacing.xs,
+  },
+  cardSlotShort: {
+    paddingTop: spacing.sm,
   },
   card: {
-    borderRadius: 28,
+    borderRadius: 22,
     borderWidth: 1,
     overflow: "hidden",
-    padding: spacing.lg,
-  },
-  cardTop: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
   },
   place: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 5,
-    paddingHorizontal: spacing.md,
-    height: 30,
-    borderRadius: radius.full,
+    gap: 4,
   },
   placeText: {
     fontFamily: fontFamily.sansSemiBold,
     fontSize: 13,
   },
-  nowLabel: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 11,
-    letterSpacing: 1.8,
-  },
   nowRow: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    marginTop: spacing.md,
+    gap: spacing.sm,
   },
   degrees: {
     fontFamily: fontFamily.display,
-    fontSize: 88,
-    lineHeight: 96,
+    fontSize: 40,
+    lineHeight: 46,
     letterSpacing: -2,
   },
   nowSide: {
-    alignItems: "flex-end",
-    gap: 4,
+    flex: 1,
+    marginLeft: spacing.xs,
   },
   condition: {
     fontFamily: fontFamily.sansSemiBold,
-    fontSize: 18,
-    lineHeight: 24,
+    fontSize: 16,
+    lineHeight: 22,
   },
   verdictText: {
     marginTop: spacing.xs,
     fontFamily: fontFamily.sansMedium,
-    fontSize: 15,
-    lineHeight: 22,
+    fontSize: 14,
+    lineHeight: 20,
   },
   days: {
     flexDirection: "row",
-    marginTop: spacing.lg,
-    paddingTop: spacing.md,
+    marginTop: spacing.sm,
+    paddingTop: spacing.sm,
     borderTopWidth: 1,
   },
   day: {
     flex: 1,
+    flexDirection: "row",
     alignItems: "center",
-    gap: 6,
-    paddingVertical: 2,
+    justifyContent: "center",
+    gap: 3,
   },
   dayName: {
     fontFamily: fontFamily.sansSemiBold,
@@ -441,24 +435,15 @@ const styles = StyleSheet.create({
   },
   dayTemps: {
     fontFamily: fontFamily.sansBold,
-    fontSize: 15,
+    fontSize: 13,
   },
   dayLow: {
     fontFamily: fontFamily.sansMedium,
-    fontSize: 15,
-  },
-  rain: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 2,
-  },
-  rainText: {
-    fontFamily: fontFamily.sansMedium,
-    fontSize: 11.5,
+    fontSize: 13,
   },
   credit: {
-    marginTop: spacing.md,
-    fontSize: 11,
+    marginTop: spacing.xs,
+    fontSize: 10,
     opacity: 0.8,
     textAlign: "right",
   },
@@ -498,7 +483,6 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: NAVY,
   },
   pressed: {
     opacity: 0.85,

@@ -1,8 +1,8 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { fontFamily, palette, radius, spacing, Text, touchTarget, useTheme } from "@vagabonds/ui";
 import * as ImagePicker from "expo-image-picker";
-import { useState, type ComponentProps, type ReactNode } from "react";
-import { ActivityIndicator, Modal, Pressable, StyleSheet, View } from "react-native";
+import { useState, type ComponentProps } from "react";
+import { ActivityIndicator, Modal, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { DataError, removeAvatar, uploadPickedAvatar } from "@/data";
@@ -12,24 +12,28 @@ import { announce } from "@/lib/announce";
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
 /** The badge on the photo's corner: large enough to tap (with its slop), small enough to sit on the frame. */
-const BADGE = 34;
+export const AVATAR_BADGE = 34;
+const BADGE = AVATAR_BADGE;
 
 /**
- * The profile photo with a way to change it: a gold camera badge on its corner opens a sheet to pick
- * a photo from the library or remove the one there. Shown while it is saved; what went wrong is said in
- * the sheet and aloud. The photo is the passport's, so only its owner sees it (`PUT /me/avatar`).
+ * A way to change the profile photo: a gold camera badge, laid by the screen on the photo's corner,
+ * opens a sheet to pick a photo from the library or remove the one there. It turns while the photo is
+ * saved; what went wrong is said in the sheet and aloud. The photo is the passport's, so only its owner
+ * sees it (`PUT /me/avatar`). The badge is not inside the photo's card: the card is a button itself,
+ * and a button inside a button is not allowed on the web.
  */
 export function AvatarEditor({
   hasPhoto,
   open,
   onOpenChange,
-  children,
+  style,
 }: {
   hasPhoto: boolean;
   /** Whether the sheet is up; held by the screen, so it can open it too (a screen reader's action). */
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  children: ReactNode;
+  /** Where the badge lies. */
+  style?: StyleProp<ViewStyle>;
 }) {
   const w = useMessages().profile.photo;
   const setOpen = onOpenChange;
@@ -72,21 +76,16 @@ export function AvatarEditor({
   };
 
   return (
-    <View>
-      {children}
-      {busy && (
-        <View style={styles.busy} pointerEvents="none">
-          <ActivityIndicator color={palette.altin200} accessibilityLabel={w.saving} />
-        </View>
-      )}
+    <>
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={hasPhoto ? w.change : w.add}
+        accessibilityState={{ busy }}
         hitSlop={8}
         onPress={() => setOpen(true)}
-        style={({ pressed }) => [styles.badge, pressed && styles.pressed]}
+        style={({ pressed }) => [styles.badge, style, pressed && styles.pressed]}
       >
-        <Ionicons name="camera" size={17} color={palette.altin950} />
+        {busy ? <ActivityIndicator size="small" color={palette.altin950} accessibilityLabel={w.saving} /> : <Ionicons name="camera" size={17} color={palette.altin950} />}
       </Pressable>
 
       <Modal visible={open} transparent animationType="fade" statusBarTranslucent onRequestClose={close}>
@@ -99,7 +98,7 @@ export function AvatarEditor({
           onClose={close}
         />
       </Modal>
-    </View>
+    </>
   );
 }
 
@@ -187,9 +186,6 @@ function Option({ icon, label, onPress, disabled, danger = false }: { icon: Icon
 
 const styles = StyleSheet.create({
   badge: {
-    position: "absolute",
-    right: -BADGE / 3,
-    bottom: -BADGE / 3,
     width: BADGE,
     height: BADGE,
     borderRadius: BADGE / 2,
@@ -198,17 +194,6 @@ const styles = StyleSheet.create({
     backgroundColor: palette.altin200,
     borderWidth: 2,
     borderColor: "#582A37",
-  },
-  busy: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 14,
-    backgroundColor: "rgba(0, 0, 0, 0.45)",
   },
   pressed: {
     opacity: 0.8,

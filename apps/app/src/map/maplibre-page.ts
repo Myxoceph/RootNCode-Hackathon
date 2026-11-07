@@ -182,6 +182,9 @@ export function mapPageHtml({
   .unlock.pop { animation: unlock-pop 0.38s cubic-bezier(0.2, 1.4, 0.4, 1) both; }
   /* Three branches out of the asset; the marker has no size of its own, its parts stand around its middle (layoutOpenActions). */
   .open-actions { position: relative; width: 0; height: 0; pointer-events: none; }
+  /* Zoomed out from the chosen asset: its options step away, and come back as the map comes close again. */
+  .near-only { transition: opacity 0.18s ease-out, visibility 0s; }
+  .near-only.far { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.18s ease-out, visibility 0s 0.18s; }
   .open-actions > svg { position: absolute; left: 0; top: 0; width: 1px; height: 1px; overflow: visible; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5)); }
   .open-actions line { stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1; }
   .open-actions line[hidden] { display: none; }
@@ -2593,7 +2596,7 @@ function start() {
 
   /** Whether a tap at this map point fell on "Kilidini aç". */
   function onUnlockButton(point) {
-    if (!unlock || !unlockFor) return false;
+    if (!unlock || !unlockFor || optionsAway()) return false;
     const button = unlock.getElement().firstChild.getBoundingClientRect();
     const frame = map.getContainer().getBoundingClientRect();
     const x = frame.left + point.x;
@@ -2633,12 +2636,18 @@ function start() {
         fireUnlock();
       });
       wrap.appendChild(button);
+      wrap.className = "near-only";
       unlock = new maplibregl.Marker({ element: wrap, anchor: "bottom" });
-      map.on("zoom", () => unlockFor && unlock.setOffset(unlockOffset()));
+      map.on("zoom", () => {
+        if (!unlockFor) return;
+        unlock.setOffset(unlockOffset());
+        nearOnly(unlock);
+      });
     }
     const button = unlock.getElement().firstChild;
     button.setAttribute("aria-label", asset.title + ": " + WORDS.unlockLabel);
     unlock.setLngLat([asset.lng, asset.lat]).setOffset(unlockOffset()).addTo(map);
+    nearOnly(unlock);
     if (unlockFor !== asset.id && motion) {
       // Pops up again for each newly chosen asset.
       button.classList.remove("pop");
@@ -2796,7 +2805,7 @@ function start() {
 
   /** Which option a tap at this map point fell on. */
   function openActionAt(point) {
-    if (!openActions || !openActionsFor) return null;
+    if (!openActions || !openActionsFor || optionsAway()) return null;
     const frame = map.getContainer().getBoundingClientRect();
     const x = frame.left + point.x;
     const y = frame.top + point.y;
@@ -2885,8 +2894,13 @@ function start() {
       const lines = OPEN_OPTIONS.map((option) => '<line pathLength="1" data-branch="' + option.type + '"/>').join("");
       row.insertAdjacentHTML("afterbegin", '<svg aria-hidden="true">' + lines + "</svg>");
       wrap.appendChild(row);
+      wrap.className = "near-only";
       openActions = new maplibregl.Marker({ element: wrap, anchor: "center" });
-      map.on("zoom", () => openActionsFor && layoutOpenActions());
+      map.on("zoom", () => {
+        if (!openActionsFor) return;
+        layoutOpenActions();
+        nearOnly(openActions);
+      });
     }
     const row = openActions.getElement().firstChild;
     // An asset with nothing related to it on the map offers only the note.
@@ -2896,6 +2910,7 @@ function start() {
     showListen(row, asset);
     layoutOpenActions();
     openActions.setLngLat([asset.lng, asset.lat]).addTo(map);
+    nearOnly(openActions);
     if (openActionsFor !== asset.id && motion) {
       row.classList.remove("pop");
       void row.offsetWidth;
@@ -2940,6 +2955,13 @@ function start() {
   const NAMES_ZOOM = 15;
   /** Choosing an asset brings the camera at least this close. */
   const SELECT_ZOOM = 15.5;
+  /** Further out than this the chosen asset's options ("Kilidini aç", the branches) are put away; closer, they are back. */
+  const OPTIONS_ZOOM = 14;
+  const optionsAway = () => map.getZoom() < OPTIONS_ZOOM;
+  /** Hides or shows a marker of options as the zoom stands. */
+  function nearOnly(marker) {
+    marker.getElement().classList.toggle("far", optionsAway());
+  }
 
   /**
    * A locked asset (with locked false, an unlocked one: gold all over, no padlock): a night-blue disc in a navy ring, the kind of place drawn in gold inside and a
@@ -3695,7 +3717,7 @@ function start() {
     const asset = cityPlate !== null && cityLanded && !flying ? cityAssets.find((candidate) => candidate.id === citySelected) : null;
     const point = asset ? map.project([asset.lng, asset.lat]) : null;
     let button = null;
-    if (unlock && unlockFor) {
+    if (unlock && unlockFor && !optionsAway()) {
       const rect = unlock.getElement().firstChild.getBoundingClientRect();
       const frame = map.getContainer().getBoundingClientRect();
       button = { x: Math.round(rect.left - frame.left), y: Math.round(rect.top - frame.top), width: Math.round(rect.width), height: Math.round(rect.height) };
