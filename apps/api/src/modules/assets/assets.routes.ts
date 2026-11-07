@@ -1,4 +1,7 @@
 import {
+  AR_MINDAR_VERSION,
+  ArTargetsResponseSchema,
+  arTargetMindKey,
   AssetDetailSchema,
   AssetIdSchema,
   AssetListResponseSchema,
@@ -9,6 +12,7 @@ import {
   type AssetDetail,
   type AssetListResponse,
   type AssetRelationsResponse,
+  type ArTargetsResponse,
   type Lang,
   type NearbyAssetsResponse,
 } from "@vagabonds/contracts";
@@ -20,7 +24,7 @@ import { ErrorResponseSchema } from "../../plugins/error-handler.ts";
 import { toOpenApiSchema } from "../../plugins/openapi.ts";
 import { toSoundRecording } from "../sounds/sounds.mapper.ts";
 import type { SoundsRepository } from "../sounds/sounds.repository.ts";
-import { ambientKeyOf, toAssetDetail, toAssetRelation, toAssetSummary, toCoordinates, toOutsideRelation, type MapperContext } from "./assets.mapper.ts";
+import { ambientKeyOf, APPROXIMATE_SOURCE, toAssetDetail, toAssetRelation, toAssetSummary, toCoordinates, toOutsideRelation, type MapperContext } from "./assets.mapper.ts";
 import { boundingBox, distanceMeters, selectRelations } from "./assets.network.ts";
 import type { CommunityRepository } from "../community/community.repository.ts";
 import { requireUser } from "../community/auth.ts";
@@ -183,6 +187,37 @@ export const assetsRoutes: FastifyPluginAsync<AssetsRoutesOptions> = async (
       offset: filters.offset,
       items: items.map((item) => toAssetSummary(item, coverOf.get(item.id), context(lang))),
     });
+  });
+
+  // Taşın Dili: the inscriptions the camera can find, with where they are. Small (a row each),
+  // so the app picks those near the visitor without fetching every asset first.
+  app.get("/ar-targets", {
+    schema: {
+      tags: ["assets"],
+      summary: "Taşın Dili: kamerayla tanınan kitabeler, konumları ve .mind dosyaları",
+      response: { 200: toOpenApiSchema(ArTargetsResponseSchema) },
+    },
+  }, async (_request, reply): Promise<ArTargetsResponse> => {
+    const rows = await repository.findArTargets();
+    const items = rows.flatMap((row) => {
+      const media = row.asset_media?.media;
+      const variant = media?.status === "published" ? media.media_variant[0] : undefined;
+      if (!variant) return [];
+      // Approximate points (a district's middle) are too rough to say the visitor is at the inscription.
+      const located = (point: { lat: number | null; lng: number | null; coord_source: string | null } | null) =>
+        point && point.lat !== null && point.lng !== null && point.coord_source !== APPROXIMATE_SOURCE ? point : null;
+      const at = located(row.asset) ?? located(row.asset.asset);
+      return [{
+        assetId: row.asset_id,
+        inscriptionId: row.slug,
+        city: row.asset.city_code,
+        coordinates: at ? { lat: at.lat!, lng: at.lng! } : null,
+        mindUrl: `${mediaBaseUrl}/${arTargetMindKey(variant.key)}`,
+        mindarVersion: AR_MINDAR_VERSION,
+      }];
+    });
+    reply.header("cache-control", CACHE_CONTROL);
+    return ArTargetsResponseSchema.parse({ version: CONTRACT_VERSION, items });
   });
 
   app.get("/assets/:id", {

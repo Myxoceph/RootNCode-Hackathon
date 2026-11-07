@@ -6,6 +6,7 @@
 import "dotenv/config";
 import {
   AR_MINDAR_VERSION,
+  ArTargetsResponseSchema,
   AssetDetailSchema,
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
@@ -158,6 +159,32 @@ describe.skipIf(!DATABASE_URL)("assets routes (PostgreSQL)", () => {
           mindarVersion: AR_MINDAR_VERSION,
         });
         expect(asset.inscriptions.filter((i) => i.arTarget)).toHaveLength(1);
+      } finally {
+        await prisma.inscription.update({ where: { asset_id_slug: { asset_id: ULUCAMI, slug: inscription!.slug } }, data: { ar_target_media_key: inscription!.ar_target_media_key } });
+      }
+    });
+
+    it("lists the targets in GET /ar-targets with the same .mind file and the asset's place", async () => {
+      const [inscription] = await prisma.inscription.findMany({ where: { asset_id: ULUCAMI }, orderBy: { sort_order: "asc" }, take: 1 });
+      const cover = await prisma.asset_media.findFirstOrThrow({ where: { asset_id: ULUCAMI, is_cover: true } });
+      await prisma.inscription.update({ where: { asset_id_slug: { asset_id: ULUCAMI, slug: inscription!.slug } }, data: { ar_target_media_key: cover.media_key } });
+      try {
+        const response = await app.inject({ method: "GET", url: "/ar-targets" });
+        expect(response.statusCode).toBe(200);
+        const { items } = ArTargetsResponseSchema.parse(response.json());
+        const asset = AssetDetailSchema.parse((await app.inject({ method: "GET", url: `/assets/${ULUCAMI}` })).json());
+        const entry = items.find((item) => item.assetId === ULUCAMI && item.inscriptionId === inscription!.slug);
+        expect(entry).toEqual({
+          assetId: ULUCAMI,
+          inscriptionId: inscription!.slug,
+          city: asset.city.code,
+          coordinates: { lat: asset.coordinates!.lat, lng: asset.coordinates!.lng },
+          mindUrl: asset.inscriptions.find((i) => i.id === inscription!.slug)!.arTarget!.mindUrl,
+          mindarVersion: AR_MINDAR_VERSION,
+        });
+        // Only inscriptions with a target, of published assets.
+        const expected = await prisma.inscription.count({ where: { ar_target_media_key: { not: null }, asset: { status: "published" } } });
+        expect(items).toHaveLength(expected);
       } finally {
         await prisma.inscription.update({ where: { asset_id_slug: { asset_id: ULUCAMI, slug: inscription!.slug } }, data: { ar_target_media_key: inscription!.ar_target_media_key } });
       }

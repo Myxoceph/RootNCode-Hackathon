@@ -7,6 +7,22 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-07 · Taşın Dili hızlı açılıyor (sözleşme 0.3.36)
+
+Kimler: **uygulamayı çalıştıranlar**, **API'yi çalıştıranlar** (sunum sunucusu dahil)
+
+1. `npm install` (yeni paket: `expo-network`; Expo Go'da hazır, kendi derlemesini kullananlar yeniden derler).
+2. API'yi yeniden başlat (sunum makinesinde `deploy/demo.sh up`); migration yok.
+
+Değişenler:
+
+- Yeni uç nokta `GET /ar-targets`: kamerayla tanınan kitabeler, konumları ve `.mind` dosyalarının adresleri (bir kitabe bir satır).
+- Taşın Dili yakındaki kitabeyi bu listeden buluyor; 770 eserin listesini ve 8 eserin ayrıntısını artık indirmiyor. Liste telefonda saklanıyor, sonraki açılışta beklemeden kullanılıyor.
+- `.mind` dosyaları telefonda kalıcı saklanıyor; uygulama açılınca Wi-Fi'daysa son açılan şehrin ve örnek kitabenin dosyaları arka planda iniyor.
+- Konum: telefonun bildiği son konum (2 dakikadan yeniyse) hemen kullanılıyor; taze konum en çok 3 saniye bekleniyor (önce 8).
+
+---
+
 ## 2026-11-07 · Yeni ad, logo ve ikon: Vakıfname
 
 Kimler: **uygulamayı derleyenler**

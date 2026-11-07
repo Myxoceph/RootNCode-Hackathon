@@ -9,6 +9,11 @@ export function rememberCity(code: string): void {
   void AsyncStorage.setItem(KEY, code).catch(() => {});
 }
 
+/** The city last opened on the map, read once; `null` when none was or it cannot be read. */
+export async function readLastCity(): Promise<string | null> {
+  return AsyncStorage.getItem(KEY).catch(() => null);
+}
+
 /** The city last opened on the map; `null` when none was, `undefined` while it is being read. */
 export function useLastCity(): string | null | undefined {
   return useStoredCity(KEY);

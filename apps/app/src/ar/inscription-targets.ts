@@ -1,4 +1,4 @@
-import type { AssetDetail, AssetSummary, InscriptionV2 } from "@vagabonds/contracts";
+import type { ArTargetEntry, AssetDetail, AssetSummary, InscriptionV2 } from "@vagabonds/contracts";
 import { useEffect, useState } from "react";
 
 import { kmBetween } from "@/map/dense-area";
@@ -88,6 +88,15 @@ export function nearbyAssets(assets: readonly AssetSummary[], position: { lat: n
     .map(({ asset }) => asset);
 }
 
+/** The targets (`GET /ar-targets`) within `meters` of `position`, nearest first. */
+export function targetsNear(items: readonly ArTargetEntry[], position: { lat: number; lng: number }, meters = NEARBY_METERS): ArTargetEntry[] {
+  return items
+    .flatMap((item) => (item.coordinates ? [{ item, distance: kmBetween(position, item.coordinates) * 1000 }] : []))
+    .filter(({ distance }) => distance <= meters)
+    .sort((a, b) => a.distance - b.distance)
+    .map(({ item }) => item);
+}
+
 /** What a recognized target stands for, by its index in the tracked set. */
 export type TrackedTarget = CameraInscription;
 
@@ -124,7 +133,13 @@ export function useTargetSet(assets: readonly AssetDetail[] | null): TargetSet |
     }
     let active = true;
     Promise.all(
-      targets.map((t) => (t.mindUrl ? downloadBase64(t.mindUrl).then((mind) => ({ mind }), () => ({ image: t.image })) : { image: t.image })),
+      // From the phone when fetched before, else downloaded and kept (ar/mind-store.ts, loaded only
+      // here: the helpers above stay free of native modules).
+      targets.map((t) => {
+        const url = t.mindUrl;
+        if (!url) return { image: t.image };
+        return import("./mind-store").then(({ loadMind }) => loadMind(url)).then((mind) => ({ mind }), () => ({ image: t.image }));
+      }),
     ).then((sources) => active && setSet({ key, target: { sources }, targets }));
     return () => {
       active = false;
@@ -134,13 +149,4 @@ export function useTargetSet(assets: readonly AssetDetail[] | null): TargetSet |
   }, [key]);
 
   return set?.key === key ? set : null;
-}
-
-async function downloadBase64(url: string): Promise<string> {
-  const response = await fetch(url);
-  if (!response.ok) throw new Error(`${response.status} ${url}`);
-  const bytes = new Uint8Array(await response.arrayBuffer());
-  let binary = "";
-  for (let i = 0; i < bytes.length; i += 0x8000) binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
-  return btoa(binary);
 }

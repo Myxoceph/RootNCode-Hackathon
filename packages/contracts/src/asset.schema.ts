@@ -429,6 +429,27 @@ export const NearbyAssetsResponseSchema = z.strictObject({
   items: z.array(NearbyAssetSchema),
 });
 
+/**
+ * One inscription the camera can find (Taşın Dili), with where it is: enough for the app to pick
+ * the ones near the visitor and fetch their `.mind` files without asking for every asset first.
+ */
+export const ArTargetEntrySchema = z.strictObject({
+  assetId: AssetIdSchema,
+  inscriptionId: z.string().min(1),
+  /** `cities` code of the asset. */
+  city: z.string().min(1),
+  /** The asset's, or for a building without its own its complex's; null when neither has one. */
+  coordinates: z.strictObject({ lat: z.number().min(-90).max(90), lng: z.number().min(-180).max(180) }).nullable(),
+  mindUrl: z.url(),
+  mindarVersion: z.string().min(1),
+});
+
+/** Response body of `GET /ar-targets`: every inscription with a compiled target, in no set order. */
+export const ArTargetsResponseSchema = z.strictObject({
+  version: ContractVersionSchema,
+  items: z.array(ArTargetEntrySchema),
+});
+
 export type Lang = z.infer<typeof LangSchema>;
 export type LabeledCode = z.infer<typeof LabeledCodeSchema>;
 export type ConfidenceCode = z.infer<typeof ConfidenceCodeSchema>;
@@ -448,6 +469,8 @@ export type AssetFact = z.infer<typeof AssetFactSchema>;
 export type TimelineEvent = z.infer<typeof TimelineEventSchema>;
 export type AssetLegend = z.infer<typeof AssetLegendSchema>;
 export type ArTarget = z.infer<typeof ArTargetSchema>;
+export type ArTargetEntry = z.infer<typeof ArTargetEntrySchema>;
+export type ArTargetsResponse = z.infer<typeof ArTargetsResponseSchema>;
 export type SoundCaption = z.infer<typeof SoundCaptionSchema>;
 export type SoundRecording = z.infer<typeof SoundRecordingSchema>;
 export type InscriptionV2 = z.infer<typeof InscriptionSchemaV2>;
