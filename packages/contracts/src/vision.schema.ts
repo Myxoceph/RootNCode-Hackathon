@@ -17,8 +17,11 @@ export const VISION_DEFAULT_QUESTION = "Bu ne?";
 
 /** Query of `POST /vision/ask`. */
 export const VisionAskQuerySchema = z.strictObject({
-  /** The asset the photo is taken at: its record grounds the answer. */
-  assetId: AssetIdSchema,
+  /**
+   * The asset the photo is taken at: its record grounds the answer. Without it (the visitor is
+   * near no known asset) the answer comes from the photo alone, with no citation.
+   */
+  assetId: AssetIdSchema.optional(),
   /** Spoken or typed; without it, `VISION_DEFAULT_QUESTION`. */
   question: z.string().trim().min(1).max(500).optional(),
   lang: LangSchema.optional(),
