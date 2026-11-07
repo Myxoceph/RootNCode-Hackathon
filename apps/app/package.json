@@ -17,7 +17,8 @@
     "vendor": "tsx scripts/vendor-web-libs.mts && tsx scripts/vendor-overlay-font.mts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "lint": "expo lint"
   },
   "dependencies": {
     "@expo-google-fonts/amiri": "^0.4.1",
@@ -68,6 +69,8 @@
   "devDependencies": {
     "@types/react": "~19.3.0",
     "esbuild": "0.28.2",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "^58.0.4",
     "tsx": "^4.20.0",
     "typescript": "~6.0.3",
     "vitest": "^5.0.4"
