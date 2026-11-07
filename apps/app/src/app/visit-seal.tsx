@@ -4,7 +4,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import * as Haptics from "expo-haptics";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ActivityIndicator, Animated, Easing, Modal, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { ActivityIndicator, Animated, Easing, Modal, Platform, Pressable, ScrollView, StyleSheet, Vibration, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { compileSource } from "@/ar/inscription-targets";
@@ -20,6 +20,7 @@ import { SealSequence } from "@/components/seal-sequence";
 import { capsuleForSoundKey } from "@/content/capsules";
 import { communityAvailable, DataError, sendVisitProof, useAsset } from "@/data";
 import { holdBadges } from "@/data/new-badges";
+import { alignment, ghostRect, type AlignHint, type Size } from "@/lib/seal-alignment";
 import { announce } from "@/lib/announce";
 import { currentPosition, type Position } from "@/lib/current-position";
 import { isAssetUnlocked } from "@/lib/related-assets";
@@ -32,8 +33,8 @@ import { localeTag, useLang, useMessages } from "@/i18n";
 const DEFAULT_ASSET = "bursa-osmangazi-ulucami";
 /** How much of the monument's photo shows over the camera, in percent: the visitor sets it, from the start as much as lines up with it. */
 const GHOST = { start: 40, min: 10, max: 80, step: 5 };
-/** Once recognised the gold corners take over; the photo steps back to this, or stays fainter if set so. */
-const GHOST_RECOGNISED = 15;
+/** Past this long with the camera open, recognising the part is enough: a photo taken from a spot that cannot be reached locks no one out. */
+const ALIGN_FOR_MS = 20000;
 /** A frozen frame that has not been checked by then counts as not showing the part. */
 const VERIFY_TIMEOUT_MS = 8000;
 /** The shutter's size: a camera's round button, well over the 44 pt minimum. */
@@ -238,6 +239,20 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
   const phaseRef = useRef(phase);
   const verifyTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const tracker = useRef<MarkerTrackerHandle>(null);
+  const screenReaderOn = useScreenReaderStatus() === true;
+  // The tracked monument against the ghost: lined up, or the move that helps; null when not in view.
+  const [fit, setFit] = useState<{ aligned: boolean; hint: AlignHint | null } | null>(null);
+  const fitRef = useRef(fit);
+  const screen = useRef<Size>({ width: 0, height: 0 });
+  const [searchingSince, setSearchingSince] = useState<number | null>(null);
+  const [timeUp, setTimeUp] = useState(false);
+  // With a screen reader, or once the time is up, recognising the part is enough.
+  const relaxed = screenReaderOn || timeUp;
+  useEffect(() => {
+    if (searchingSince === null) return;
+    const timer = setTimeout(() => setTimeUp(true), ALIGN_FOR_MS);
+    return () => clearTimeout(timer);
+  }, [searchingSince]);
   const flash = useRef(new Animated.Value(0)).current;
   const reduceMotion = useReducedMotion();
 
@@ -293,6 +308,7 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
         case "ready":
           if (now === "preparing" || now === "starting") {
             go({ name: "searching" });
+            setSearchingSince(Date.now());
             // Guidance for a visitor who cannot see the image; nothing is said without a screen reader.
             announce(w.cameraOpenSaid(part));
           }
@@ -303,8 +319,27 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
           announce(w.recognisedSaid);
           break;
         case "lost":
+          fitRef.current = null;
+          setFit(null);
           if (now === "recognised") go({ name: "searching" });
           break;
+        case "pose": {
+          if (now !== "recognised" && now !== "searching") break;
+          const { width, height } = screen.current;
+          if (width === 0) break;
+          const next = alignment(
+            event.corners.map(([x, y]) => [x * width, y * height] as const),
+            ghostRect(screen.current, photo),
+            screen.current,
+          );
+          // Felt once, as it lines up: the hand knows to stop there.
+          if (next.aligned && !fitRef.current?.aligned) feelAligned();
+          if (next.aligned !== fitRef.current?.aligned || next.hint !== fitRef.current?.hint) {
+            fitRef.current = { aligned: next.aligned, hint: next.hint };
+            setFit(fitRef.current);
+          }
+          break;
+        }
         case "captured":
           if (now !== "verifying") break;
           clearTimeout(verifyTimer.current);
@@ -321,7 +356,7 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
           break;
       }
     },
-    [go, key, seal, part, w],
+    [go, key, seal, part, w, photo],
   );
 
   useEffect(() => () => clearTimeout(verifyTimer.current), []);
@@ -331,6 +366,12 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
   const shoot = () => {
     const now = phaseRef.current.name;
     if (now !== "searching" && now !== "recognised") return;
+    // Lining up is the task: until it lines up the shutter only says what is missing.
+    if (!relaxed && !(now === "recognised" && fitRef.current?.aligned)) {
+      void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning).catch(() => {});
+      announce(fitRef.current?.hint ? w.align[fitRef.current.hint] : w.alignHead);
+      return;
+    }
     go({ name: "verifying" });
     void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
     if (!reduceMotion) {
@@ -359,8 +400,8 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
   if (phase.name === "sealed") return <Sealed asset={asset} result={phase.result} onSettled={onSettled} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/camera"))} />;
 
   return (
-    <View style={styles.fill}>
-      <MarkerTracker key={run} ref={tracker} target={target} onEvent={onEvent} style={StyleSheet.absoluteFill} />
+    <View style={styles.fill} onLayout={(e) => (screen.current = { width: e.nativeEvent.layout.width, height: e.nativeEvent.layout.height })}>
+      <MarkerTracker key={run} ref={tracker} target={target} onEvent={onEvent} marks={false} poses style={StyleSheet.absoluteFill} />
 
       {/* Over the camera as a ghost, for the visitor to line up with the monument; the tracker sees only the camera. */}
       <View
@@ -369,15 +410,23 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
         accessible
         accessibilityLabel={w.findLabel(part, photo.alt)}
       >
-        <AssetImage media={photo} fill decorative />
+        <AssetImage media={photo} fill fit="contain" decorative />
       </View>
+      {/* The sign it lines up: the screen's edge turns gold, where the visitor is already looking. */}
+      {phase.name === "recognised" && (fit?.aligned || relaxed) && <View pointerEvents="none" style={[StyleSheet.absoluteFill, styles.alignedEdge]} />}
       <Animated.View pointerEvents="none" style={[StyleSheet.absoluteFill, styles.flash, { opacity: flash }]} />
 
       <View style={[styles.panel, { paddingBottom: insets.bottom + spacing.lg }]} accessibilityLiveRegion="polite">
         {onUnlock && <UnlockButton onPress={onUnlock} />}
-        <PanelBody phase={phase} part={part} onRetry={retry} onRetake={retake} />
+        <PanelBody phase={phase} part={part} fit={fit} relaxed={relaxed} onRetry={retry} onRetake={retake} />
         {(phase.name === "searching" || phase.name === "recognised") && (
-          <View style={styles.row}>
+          // Once recognised the hand is busy lining up: the slider steps aside, its room kept so the panel does not jump.
+          <View
+            style={[styles.row, phase.name === "recognised" && styles.stepAside]}
+            pointerEvents={phase.name === "recognised" ? "none" : "auto"}
+            accessibilityElementsHidden={phase.name === "recognised"}
+            importantForAccessibility={phase.name === "recognised" ? "no-hide-descendants" : "auto"}
+          >
             <Text variant="caption" colorValue={cameraColors.textSecondary} style={styles.ghostLabel}>
               {w.ghost}
             </Text>
@@ -407,7 +456,7 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
             accessibilityState={{ disabled: phase.name === "verifying" }}
             disabled={phase.name === "verifying"}
             onPress={shoot}
-            style={({ pressed }) => [styles.shutter, phase.name === "recognised" && styles.shutterReady, pressed && styles.shutterPressed]}
+            style={({ pressed }) => [styles.shutter, phase.name === "recognised" && (fit?.aligned || relaxed) && styles.shutterReady, pressed && styles.shutterPressed]}
           >
             {phase.name === "verifying" ? <ActivityIndicator color={cameraColors.onGold} /> : <View style={styles.shutterCore} />}
           </Pressable>
@@ -417,21 +466,34 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
   );
 }
 
-/** How much of the photo shows: as set while framing, fainter once recognised, none once a photo is taken. */
+/**
+ * The moment it lines up, felt as two short taps. On Android expo-haptics plays its patterns at a
+ * fraction of the motor's strength (a selection at about an eighth), too faint to notice on many
+ * phones: the system's own vibration runs at full strength.
+ */
+function feelAligned() {
+  if (Platform.OS === "android") Vibration.vibrate([0, 35, 70, 35]);
+  else void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
+}
+
+/** How much of the photo shows: as set while lining up, none once a photo is taken. */
 function ghostShown(phase: Phase, ghost: number): number {
-  if (phase.name === "recognised") return Math.min(ghost, GHOST_RECOGNISED);
-  if (phase.name === "searching" || phase.name === "preparing" || phase.name === "starting") return ghost;
+  if (phase.name === "searching" || phase.name === "recognised" || phase.name === "preparing" || phase.name === "starting") return ghost;
   return 0;
 }
 
 function PanelBody({
   phase,
   part,
+  fit,
+  relaxed,
   onRetry,
   onRetake,
 }: {
   phase: Phase;
   part: string;
+  fit: { aligned: boolean; hint: AlignHint | null } | null;
+  relaxed: boolean;
   onRetry: () => void;
   onRetake: () => void;
 }) {
@@ -475,15 +537,19 @@ function PanelBody({
           <Text colorValue={cameraColors.textSecondary}>{w.frameHint}</Text>
         </>
       );
-    case "recognised":
+    case "recognised": {
+      const ready = relaxed || fit?.aligned === true;
       return (
         <>
-          <Text variant="heading" colorValue={cameraColors.gold}>
-            {w.recognised}
+          <Text variant="heading" colorValue={ready ? cameraColors.gold : cameraColors.text}>
+            {fit?.aligned ? w.alignedHead : ready ? w.recognised : w.alignHead}
           </Text>
-          <Text colorValue={cameraColors.textSecondary}>{w.recognisedHint}</Text>
+          <Text colorValue={cameraColors.textSecondary}>
+            {fit?.aligned ? w.recognisedHint : relaxed ? w.alignRelaxed : fit?.hint ? w.align[fit.hint] : w.frameHint}
+          </Text>
         </>
       );
+    }
     case "verifying":
       return (
         <Text variant="heading" colorValue={cameraColors.text}>
@@ -726,6 +792,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "rgba(255,255,255,0.12)",
+  },
+  stepAside: {
+    opacity: 0,
+  },
+  alignedEdge: {
+    borderWidth: 4,
+    borderColor: cameraColors.gold,
   },
   shutterReady: {
     borderColor: cameraColors.gold,
