@@ -5,6 +5,8 @@
     python3 data/pipeline/dev.py confirm <iş-id>              # uzmanın yerine haritayı onayla
     python3 data/pipeline/dev.py drafts [<iş-id>]             # taslaklar
     python3 data/pipeline/dev.py remove <iş-id>               # işi ve taslaklarını sil (PDF'i de)
+    python3 data/pipeline/dev.py chat --city bursa --text-file anlatim.txt [--photo a.jpg …] [--out taslak.json]
+                                                              # sohbet adımı, kuru: EVREN çağrılır, hiçbir tabloya yazılmaz
 
 Tablolar Yiğit'in migration'ıyla gelir (`npm run db:deploy -w @vagabonds/api`). Hepsi yalnızca yerel
 veritabanında çalışır (`db.connect`); tablo kurmaz, silmez.
@@ -51,6 +53,38 @@ def remove(conn, job_id: str) -> bool:
     return row is not None
 
 
+def dry_chat(env, conn, args) -> int:
+    """Sohbet adımını veritabanına yazmadan çalıştırır: panelin göndereceği iş burada taklit edilir."""
+    import json
+    import uuid
+
+    from PIL import Image
+
+    from chat import ChatStages, known_assets_from_db
+    from llm import Evren, LlmConfig
+
+    texts = args.text or [path.read_text(encoding="utf-8") for path in args.text_file]
+    files = []
+    for path in args.photo:
+        with Image.open(path) as image:
+            width, height = image.size
+        files.append({"path": str(path.resolve()), "name": path.name, "mime": "image/jpeg", "key": f"dry-run/{path.name}", "width": width, "height": height, "message": 0})
+    job = {"id": str(uuid.uuid4()), "kind": "chat", "title": args.title, "city": args.city,
+           "input": {"messages": [{"text": text, "at": None, "by": None} for text in texts], "files": files, "assetId": None}}
+    stages = ChatStages(Evren(LlmConfig.from_env(env)), known=lambda: known_assets_from_db(conn))
+    draft = stages.draft_chat(job)
+    result = {"asset_id": draft.asset_id, "duplicate_of": draft.duplicate_of, "validation": draft.validation, "source_refs": draft.source_refs, "ai": draft.ai, "media": draft.media, "record": draft.record}
+    text = json.dumps(result, ensure_ascii=False, indent=2)
+    if args.out:
+        args.out.write_text(text + "\n", encoding="utf-8")
+        print(f"Yazıldı: {args.out}")
+    else:
+        print(text)
+    errors, warnings = len(draft.validation["errors"]), len(draft.validation["warnings"])
+    print(f"{draft.asset_id}: {errors} hata, {warnings} uyarı, {draft.ai['ms']} ms, düzeltme: {draft.ai['repaired']}", file=sys.stderr)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     commands = parser.add_subparsers(dest="command", required=True)
@@ -66,6 +100,14 @@ def main(argv: list[str] | None = None) -> int:
     gone.add_argument("job_id")
     drafts = commands.add_parser("drafts")
     drafts.add_argument("job_id", nargs="?")
+    talk = commands.add_parser("chat")
+    talk.add_argument("--city", required=True)
+    talk.add_argument("--title", default="Sohbet denemesi")
+    source = talk.add_mutually_exclusive_group(required=True)
+    source.add_argument("--text", action="append", help="bir mesaj; birden çok kez verilebilir")
+    source.add_argument("--text-file", type=Path, action="append", help="bir mesaj dosyası; birden çok kez verilebilir")
+    talk.add_argument("--photo", type=Path, action="append", default=[])
+    talk.add_argument("--out", type=Path)
     args = parser.parse_args(argv)
 
     env = load_env()
@@ -75,6 +117,8 @@ def main(argv: list[str] | None = None) -> int:
         print(f"Durdu: {error}", file=sys.stderr)
         return 2
     with conn:
+        if args.command == "chat":
+            return dry_chat(env, conn, args)
         if args.command == "enqueue":
             if not args.pdf.is_file():
                 sys.exit(f"PDF bulunamadı: {args.pdf}")

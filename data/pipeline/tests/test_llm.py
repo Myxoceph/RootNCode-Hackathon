@@ -34,7 +34,7 @@ class Chat(unittest.TestCase):
         self.sleeps = []
 
     def client(self, transport):
-        return Evren(CONFIG, transport=transport, sleep=self.sleeps.append)
+        return Evren(CONFIG, transport=transport, sleep=self.sleeps.append, on_retry=lambda message: None)
 
     def test_sends_model_messages_and_key(self):
         transport = FakeTransport(ok("merhaba"))
@@ -48,6 +48,26 @@ class Chat(unittest.TestCase):
         self.assertEqual(call["body"]["max_tokens"], 50)
         self.assertEqual(call["body"]["temperature"], 0.0)
         self.assertNotIn("response_format", call["body"])
+        self.assertEqual(call["body"]["chat_template_kwargs"], {"enable_thinking": False})
+
+    def test_thinking_can_be_allowed(self):
+        transport = FakeTransport(ok("x"))
+        config = LlmConfig(**{**CONFIG.__dict__, "thinking": True})
+        Evren(config, transport=transport, sleep=self.sleeps.append).chat([{"role": "user", "content": "x"}])
+        self.assertNotIn("chat_template_kwargs", transport.calls[0]["body"])
+
+    def test_empty_answer_says_why(self):
+        reply = (200, {}, json.dumps({"choices": [{"message": {"content": ""}}], "usage": {"completion_tokens_details": {"reasoning_tokens": 6000}}}).encode())
+        with self.assertRaises(LlmError) as caught:
+            self.client(FakeTransport(reply)).chat([{"role": "user", "content": "x"}])
+        self.assertIn("6000", str(caught.exception))
+
+    def test_retries_are_reported(self):
+        said = []
+        client = Evren(CONFIG, transport=FakeTransport((503, {}, b"busy"), ok("x")), sleep=self.sleeps.append, on_retry=said.append)
+        client.chat([{"role": "user", "content": "x"}])
+        self.assertEqual(len(said), 1)
+        self.assertIn("503", said[0])
 
     def test_retries_temporary_errors_then_succeeds(self):
         transport = FakeTransport((503, {}, b"busy"), TimeoutError(), (429, {"Retry-After": "7"}, b"slow down"), ok("tamam"))

@@ -38,16 +38,22 @@ CLAIMABLE = ("queued", "mapping", "map_confirmed", "drafting")
 # Kilit anahtarının ilk yarısı: başka bir advisory lock kullanımıyla karışmasın diye bu hatta özgü.
 LOCK_SPACE = 8140
 ERROR_LIMIT = 2000
-JOB_COLUMNS = "id, kind, status, title, city, source_id, file_path, layout, book_map, progress_done, progress_total"
+CHAT_ENTRY = "chat"
+JOB_COLUMNS = ["id", "kind", "status", "title", "city", "source_id", "file_path", "layout", "book_map", "progress_done", "progress_total"]
+# Sohbetten Kabul (yigit-veri-dongusu.md §1.2): `input` sütunu Yiğit'in migration'ıyla gelir.
+CHAT_COLUMNS = ["input"]
 
 
 def log(message: str) -> None:
     print(f"[worker {time.strftime('%H:%M:%S')}] {message}", flush=True)
 
 
-def _job(row: tuple) -> dict[str, Any]:
-    keys = [column.strip() for column in JOB_COLUMNS.split(",")]
-    return dict(zip(keys, row))
+def job_columns(conn) -> list[str]:
+    """`intake_job`'ın bu veritabanındaki sütunları: `input` yoksa sohbet işi de yoktur."""
+    present = {row[0] for row in conn.execute(
+        """select attname from pg_attribute where attrelid = 'intake_job'::regclass and attnum > 0 and not attisdropped"""
+    )}
+    return JOB_COLUMNS + [column for column in CHAT_COLUMNS if column in present]
 
 
 def claim(conn) -> dict[str, Any] | None:
@@ -57,9 +63,12 @@ def claim(conn) -> dict[str, Any] | None:
         if not conn.execute("select pg_try_advisory_lock(%s, hashtext(%s::text))", (LOCK_SPACE, str(job_id))).fetchone()[0]:
             continue
         # Kilit alınırken durumu değişmiş olabilir (ör. uzman bu arada onayladı ya da iş bitti).
-        row = conn.execute(f"select {JOB_COLUMNS} from intake_job where id = %s", (job_id,)).fetchone()
+        columns = job_columns(conn)
+        row = conn.execute(f"select {', '.join(columns)} from intake_job where id = %s", (job_id,)).fetchone()
         if row and row[2] in CLAIMABLE:
-            return _job(row)
+            job = dict(zip(columns, row))
+            job.setdefault("input", None)
+            return job
         release(conn, job_id)
     return None
 
@@ -85,6 +94,8 @@ def run_job(conn, job: dict[str, Any], stages: Stages) -> str:
     from psycopg.types.json import Jsonb
 
     job_id = job["id"]
+    if job["kind"] == "chat":
+        return run_chat(conn, job, stages)
     if job["status"] in ("queued", "mapping"):
         set_status(conn, job_id, "mapping", error=None)
         log(f"{job_id} haritalanıyor: {job['title']}")
@@ -109,27 +120,49 @@ def run_job(conn, job: dict[str, Any], stages: Stages) -> str:
         # Taslak ve ilerleme birlikte: ikisinden biri yazılıp öbürü kalmaz.
         with conn.transaction():
             if draft is not None:
-                save_draft(conn, job_id, entry["key"], draft, Jsonb)
+                save_draft(conn, job_id, entry["key"], draft, Jsonb, kind="book_asset")
             conn.execute("update intake_job set progress_done = %s, updated_at = now() where id = %s", (index + 1, job_id))
     set_status(conn, job_id, "done")
     log(f"{job_id} bitti: {len(entries)} eser")
     return "done"
 
 
-def save_draft(conn, job_id, entry_key: str, draft, Jsonb) -> None:
-    """Kitap satırının taslağı: yoksa eklenir, varsa üzerine yazılır (`intake_draft_entry_idx`).
+def run_chat(conn, job: dict[str, Any], stages: Stages) -> str:
+    """Sohbet işi: harita yok; mesajlar ve fotoğraflar tek taslağa (`entry_key = 'chat'`).
+
+    Yetkili sohbete yeni mesaj yazınca API işi yeniden `queued` yapar; taslak (hâlâ `pending` ise) yenilenir.
+    """
+    from psycopg.types.json import Jsonb
+
+    job_id = job["id"]
+    set_status(conn, job_id, "drafting", error=None, progress_done=0, progress_total=1)
+    log(f"{job_id} sohbet düzenleniyor: {job['title']}")
+    draft = stages.draft_chat(job)
+    check_draft(draft.asset_id, draft.media, draft.source_refs, draft.validation, draft.ai)
+    with conn.transaction():
+        save_draft(conn, job_id, CHAT_ENTRY, draft, Jsonb, kind="field_asset")
+        conn.execute("update intake_job set progress_done = 1, updated_at = now() where id = %s", (job_id,))
+    set_status(conn, job_id, "done")
+    errors, warnings = len(draft.validation.get("errors", [])), len(draft.validation.get("warnings", []))
+    log(f"{job_id} taslak hazır: {draft.asset_id} ({errors} hata, {warnings} uyarı)")
+    return "done"
+
+
+def save_draft(conn, job_id, entry_key: str, draft, Jsonb, kind: str) -> None:
+    """Bir işin satırının taslağı: yoksa eklenir, varsa üzerine yazılır (`intake_draft_entry_idx`).
 
     Bir kişinin onayladığı ya da reddettiği taslağa dokunulmaz: yalnızca `pending` olan yenilenir.
     """
     conn.execute(
         """insert into intake_draft (kind, status, job_id, entry_key, asset_id, record, media, source_refs, validation, ai, duplicate_of)
-           values ('book_asset', 'pending', %s, %s, %s, %s, %s, %s, %s, %s, %s)
+           values (%s, 'pending', %s, %s, %s, %s, %s, %s, %s, %s, %s)
            on conflict (job_id, entry_key) where job_id is not null do update set
              asset_id = excluded.asset_id, record = excluded.record, media = excluded.media,
              source_refs = excluded.source_refs, validation = excluded.validation, ai = excluded.ai,
              duplicate_of = excluded.duplicate_of, updated_at = now()
            where intake_draft.status = 'pending'""",
         (
+            kind,
             job_id,
             entry_key,
             draft.asset_id,
@@ -141,6 +174,26 @@ def save_draft(conn, job_id, entry_key: str, draft, Jsonb) -> None:
             draft.duplicate_of,
         ),
     )
+
+
+class PipelineStages(SkeletonStages):
+    """Worker'ın gerçek adımları: kitap (H2, H4 gelene kadar iskelet) ve sohbet (`chat.py`).
+
+    EVREN istemcisi ilk sohbet işinde kurulur: ayarı eksikse yalnızca o iş `failed` olur, worker sürer.
+    """
+
+    def __init__(self, env, conn):
+        self.env = env
+        self.conn = conn
+        self._chat = None
+
+    def draft_chat(self, job):
+        if self._chat is None:
+            from chat import ChatStages, known_assets_from_db
+            from llm import Evren, LlmConfig
+
+            self._chat = ChatStages(Evren(LlmConfig.from_env(self.env)), known=lambda: known_assets_from_db(self.conn))
+        return self._chat.draft_chat(job)
 
 
 def work_once(conn, stages: Stages) -> bool:
@@ -170,12 +223,12 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     env = load_env()
-    stages: Stages = SkeletonStages()
     try:
         conn = connect(env)
     except LocalOnlyError as error:
         print(f"Durdu: {error}", file=sys.stderr)
         return 2
+    stages = PipelineStages(env, conn)
 
     stopping = False
 

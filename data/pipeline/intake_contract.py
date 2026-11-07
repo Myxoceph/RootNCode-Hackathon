@@ -51,6 +51,25 @@ def photo_subjects() -> list[str]:
     return list(_schemas()["photoSubjects"])
 
 
+def supports_message_refs() -> bool:
+    """Sözleşme sohbet kaynaklarını (`{field, message, quote}`) kabul ediyor mu (yigit-veri-dongusu.md §1.1 c)."""
+    return "message" in json.dumps(_schemas()["columns"]["intake_draft.source_refs"])
+
+
+def supports_missing() -> bool:
+    """Sözleşmede `validation.missing` var mı (yigit-veri-dongusu.md §1.1 d)."""
+    return "missing" in _schemas()["columns"]["intake_draft.validation"].get("properties", {})
+
+
+def has_column(column: str) -> bool:
+    return column in _schemas()["columns"]
+
+
+def clip_validation(validation: dict[str, Any], limit: int = 500, most: int = 200) -> dict[str, Any]:
+    """Sözleşmenin sınırları: her ileti en çok 500 karakter, her liste en çok 200 öğe."""
+    return {key: [text if len(text) <= limit else text[: limit - 1] + "…" for text in value][:most] if isinstance(value, list) else value for key, value in validation.items()}
+
+
 def check(column: str, value: Any) -> None:
     """`value`, sözleşmedeki `column` biçimine uymuyorsa `ContractError`."""
     problems = [
