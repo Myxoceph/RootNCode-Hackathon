@@ -13,7 +13,7 @@ import { useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useRef, useState, type ComponentProps } from "react";
+import { useEffect, useRef, useState, type ComponentProps, type ReactNode } from "react";
 import {
   Animated,
   Easing,
@@ -38,6 +38,7 @@ import Svg, {
 } from "react-native-svg";
 
 import { DeleteAccount } from "@/components/delete-account";
+import { AvatarEditor } from "@/components/avatar-editor";
 import { OpenBookLink } from "@/components/journal/open-book";
 import {
   avatarUri,
@@ -208,6 +209,8 @@ function Passport() {
   const reduced = useReducedMotion();
   const [flipped, setFlipped] = useState(false);
   const turn = useRef(new Animated.Value(0)).current;
+  // The profile photo's sheet: from the badge on the photo, or a screen reader's action on the card.
+  const [photoOpen, setPhotoOpen] = useState(false);
 
   const flip = () => {
     const next = !flipped;
@@ -265,6 +268,11 @@ function Passport() {
           : m.profile.passport(name, account, points, earned, visits)
       }
       accessibilityHint={m.profile.flipHint}
+      // The badge on the photo is inside the card, which a screen reader reads as one button: the card offers it too.
+      accessibilityActions={signedIn ? [{ name: "changePhoto", label: m.profile.photo.change }] : undefined}
+      onAccessibilityAction={({ nativeEvent }) => {
+        if (nativeEvent.actionName === "changePhoto") setPhotoOpen(true);
+      }}
       onPress={flip}
     >
       <Animated.View
@@ -331,6 +339,7 @@ function Passport() {
         >
           <Cover width={size.width} height={size.height} />
           <View style={styles.backBody}>
+            <MaybeAvatarEditor editable={signedIn} hasPhoto={holder.photoUrl !== null} open={photoOpen} onOpenChange={setPhotoOpen}>
             <View style={styles.photo}>
               <Svg
                 width={PHOTO_W}
@@ -376,6 +385,7 @@ function Passport() {
                 />
               )}
             </View>
+            </MaybeAvatarEditor>
             <View style={[styles.flex, styles.backFields]}>
               <View>
                 <Text colorValue={palette.altin200} style={styles.backLabel}>
@@ -411,6 +421,11 @@ function Passport() {
       </Animated.View>
     </Pressable>
   );
+}
+
+/** The photo, with its camera badge for an account; as it is for a visitor without one. */
+function MaybeAvatarEditor({ editable, children, ...editor }: { editable: boolean; hasPhoto: boolean; open: boolean; onOpenChange: (open: boolean) => void; children: ReactNode }) {
+  return editable ? <AvatarEditor {...editor}>{children}</AvatarEditor> : <>{children}</>;
 }
 
 /** The "Çevir" tag on both faces: the card is something to tap. */

@@ -1,4 +1,5 @@
 import { AppUserSchema, type AppUser } from "@vagabonds/contracts";
+import { ImageManipulator, SaveFormat } from "expo-image-manipulator";
 import { Platform } from "react-native";
 
 import { keepUser, sessionRejected, signedInToken } from "./community";
@@ -38,4 +39,27 @@ export async function uploadAvatar(uri: string, type: "image/jpeg" | "image/png"
   }
   await keepUser(user, token);
   return user;
+}
+
+/** A picked photo is sent at most this long on its longer side, as a JPEG: well under the 2 MB limit. */
+const SEND_SIDE = 900;
+const SEND_QUALITY = 0.85;
+
+/** Puts a photo picked on this device as the profile photo, made smaller first. */
+export async function uploadPickedAvatar(uri: string, width: number, height: number): Promise<AppUser> {
+  let prepared: string;
+  try {
+    const context = ImageManipulator.manipulate(uri);
+    if (Math.max(width, height) > SEND_SIDE) context.resize(width >= height ? { width: SEND_SIDE } : { height: SEND_SIDE });
+    const rendered = await context.renderAsync();
+    try {
+      prepared = (await rendered.saveAsync({ format: SaveFormat.JPEG, compress: SEND_QUALITY })).uri;
+    } finally {
+      rendered.release();
+      context.release();
+    }
+  } catch (error) {
+    throw new DataError("rejected", words().unreadable, [uri, String(error)]);
+  }
+  return uploadAvatar(prepared, "image/jpeg");
 }

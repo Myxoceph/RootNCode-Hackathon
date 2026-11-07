@@ -15,6 +15,7 @@ export {
   useCommunity,
   type CommunityState,
 } from "./community";
+export { uploadAvatar, uploadPickedAvatar } from "./avatar";
 export { DataError, type DataErrorKind } from "./errors";
 export { refreshData, useOfflineSince } from "./offline";
 export {
