@@ -41,6 +41,20 @@ const SAVE_EVERY = 25;
  * (tek Chrome'la yüzlerce fotoğrafta 14 GB'a çıkıp makineyi takasa düşürdü).
  */
 const COMPILES_PER_CHROME = 30;
+/** Bir fotoğrafın indirilmesi ve derlenmesi en çok bu kadar sürer; aşan atlanır, Chrome yeniden açılır. */
+const FETCH_TIMEOUT_MS = 60_000;
+const COMPILE_TIMEOUT_MS = 180_000;
+
+class CompileTimeout extends Error {}
+
+/** `promise`, `ms` içinde bitmezse CompileTimeout fırlatır. */
+function within<T>(promise: Promise<T>, ms: number): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const late = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new CompileTimeout(`${ms / 1000} sn'de bitmedi`)), ms);
+  });
+  return Promise.race([promise, late]).finally(() => clearTimeout(timer));
+}
 
 const args = process.argv.slice(2);
 const sealCities = args.find((a) => a.startsWith("--cities="))?.slice("--cities=".length).split(",").filter(Boolean) ?? null;
@@ -84,7 +98,7 @@ function records(dir: string): string[] {
 async function photo(variant: Variant): Promise<Buffer> {
   const local = join(MEDIA, variant.key);
   if (existsSync(local)) return readFileSync(local);
-  const response = await fetch(`${MEDIA_BASE_URL}/${variant.key}`);
+  const response = await fetch(`${MEDIA_BASE_URL}/${variant.key}`, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
   if (!response.ok) throw new Error(`${response.status} ${MEDIA_BASE_URL}/${variant.key}`);
   return Buffer.from(await response.arrayBuffer());
 }
@@ -172,8 +186,15 @@ while (next < jobs.length) {
       if (!compiled || compiled.sha256 !== found.entry.sha256) {
         let mind: Buffer;
         try {
-          mind = await compile([`data:image/jpeg;base64,${(await photo(found.variant)).toString("base64")}`]);
+          const image = (await photo(found.variant)).toString("base64");
+          mind = await within(compile([`data:image/jpeg;base64,${image}`]), COMPILE_TIMEOUT_MS);
         } catch (error) {
+          if (error instanceof CompileTimeout) {
+            // Takılan sayfa bir sonrakini de bekletir: bu Chrome kapanır, iş yenisiyle sürer.
+            missing.push(`${job.label}: derlenemedi (${error.message})`);
+            next++;
+            return;
+          }
           // Bir fotoğraf (geçici bir ağ hatası, MindAR'ın derleyemediği bir resim) ötekileri durdurmaz.
           missing.push(`${job.label}: derlenemedi (${error instanceof Error ? error.message.split("\n")[0] : String(error)})`);
           continue;
