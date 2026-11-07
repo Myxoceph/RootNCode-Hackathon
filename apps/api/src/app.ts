@@ -17,6 +17,8 @@ import { createCommunityRepository } from "./modules/community/community.reposit
 import { adminMediaRoutes } from "./modules/admin/media.routes.ts";
 import type { MediaStore } from "./modules/admin/media-store.ts";
 import { localMediaRoutes, type LocalMediaRoutesOptions } from "./modules/intake/local-media.routes.ts";
+import { createIntakeRepository } from "./modules/intake/intake.repository.ts";
+import { intakeRoutes } from "./modules/intake/intake.routes.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
 import { moderationRoutes } from "./modules/community/moderation.routes.ts";
 import { createJournalRepository } from "./modules/journal/journal.repository.ts";
@@ -75,6 +77,8 @@ export interface BuildAppOptions {
   mediaStore?: MediaStore | null;
   /** `GET /local-media/*` for Veri Döngüsü's development (INTAKE_LOCAL_ONLY); without it there is no such route. */
   localMedia?: LocalMediaRoutesOptions | null;
+  /** Veri Döngüsü's routes (INTAKE_ENABLED): where uploaded PDFs go. Without it there are no /admin/intake routes. */
+  intake?: { root: string; dir: string } | null;
   /** `POST /assets/:id/visit/unlock` for the app's "Kilidi aç" (see achievementsRoutes); off by default. */
   demoUnlock?: boolean;
 }
@@ -106,6 +110,7 @@ export function buildApp({
   demoUnlock = false,
   mediaStore = null,
   localMedia = null,
+  intake = null,
 }: BuildAppOptions): FastifyInstance {
   const app = Fastify({ logger, trustProxy, bodyLimit: BODY_LIMIT_BYTES });
 
@@ -138,6 +143,7 @@ export function buildApp({
   app.register(adminRoutes, { repository: adminRepository, community: communityRepository });
   app.register(adminMediaRoutes, { repository: adminRepository, community: communityRepository, store: mediaStore, mediaBaseUrl });
   if (localMedia) app.register(localMediaRoutes, localMedia);
+  if (intake) app.register(intakeRoutes, { repository: createIntakeRepository(prisma), community: communityRepository, ...intake });
   app.register(adminAssetPreviewRoutes, {
     repository: createAssetsRepository(prisma, assetVisibility, ALL_ASSET_STATUSES),
     sounds: soundsRepository,

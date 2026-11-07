@@ -44,6 +44,8 @@ const app = buildApp({
       : null,
   // Reads what the local store has, and sends the rest to the shared media host (read only).
   localMedia: localMediaDir ? { dir: localMediaDir, fallbackBaseUrl: env.MEDIA_BASE_URL } : null,
+  // Uploaded PDFs, where the worker (data/pipeline) reads them; not in git.
+  intake: env.INTAKE_ENABLED ? { root: REPO_ROOT, dir: "data/build/cache/intake" } : null,
   rateLimit: env.RATE_LIMIT_MAX === 0 ? false : { max: env.RATE_LIMIT_MAX, timeWindowMs: 60_000 },
   weather: env.OPEN_METEO_URL
     ? createWeatherService({
