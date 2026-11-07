@@ -3,6 +3,7 @@ import type {
   AssetRelation,
   AssetRelationsResponse,
   AssetSummary,
+  CityDishesResponse,
   Contribution,
   Lang,
   MyAchievementsResponse,
@@ -93,6 +94,13 @@ export function usePulse(id: string): ResourceWithRetry<PulseResponse | null> {
 export function useWeather(city: string | null): ResourceWithRetry<WeatherResponse | null> {
   const lang = useLang();
   const load = useCallback(() => (city ? dataSource.getWeather(city, lang) : Promise.resolve(null)), [city, lang]);
+  return useResource(load);
+}
+
+/** A city's dishes; `data` is `null` without a city, or for one the API does not know. */
+export function useCityDishes(city: string | null): ResourceWithRetry<CityDishesResponse | null> {
+  const lang = useLang();
+  const load = useCallback(() => (city ? dataSource.getCityDishes(city, lang) : Promise.resolve(null)), [city, lang]);
   return useResource(load);
 }
 

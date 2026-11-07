@@ -30,6 +30,7 @@ export {
   useMyContributions,
   usePulse,
   useWeather,
+  useCityDishes,
   useWeatherAt,
   useRelationsOf,
   useRewards,

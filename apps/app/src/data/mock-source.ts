@@ -103,6 +103,8 @@ export function createMockSource(load: () => Promise<MockFixtures> = loadBundled
       return { version: CONTRACT_VERSION, items };
     },
     // The fixtures have no weather.
+    // The sample data has no dishes: the list needs the API.
+    getCityDishes: async () => null,
     getWeather: async () => null,
     getWeatherAt: async () => null,
     async listCities() {

@@ -3,6 +3,7 @@ import {
   AssetDetailSchema,
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
+  CityDishesResponseSchema,
   CONTRACT_VERSION,
   MetaEnumsResponseSchema,
   PulseResponseSchema,
@@ -55,6 +56,7 @@ export function createCachedSource(source: DataSource): DataSource {
     getRelations: (id, lang) =>
       cached(`relations:${lang}:${id}`, AssetRelationsResponseSchema, () => source.getRelations(id, lang)),
     getPulse: (id, lang) => cached(`pulse:${lang}:${id}`, PulseResponseSchema, () => source.getPulse(id, lang)),
+    getCityDishes: (city, lang) => cached(`dishes:${lang}:${city}`, CityDishesResponseSchema, () => source.getCityDishes(city, lang)),
     listCities: (lang) => cached(`cities:${lang}`, CitiesSchema, () => source.listCities(lang)),
     // Not stored: yesterday's weather would mislead.
     getWeather: (city, lang) => source.getWeather(city, lang),
