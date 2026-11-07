@@ -7,6 +7,21 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-07 · Anı Defteri: hikâye olarak paylaşma
+
+Kimler: **uygulamayı çalıştıranlar**, **uygulamayı derleyenler**
+
+1. `npm install` (yeni paketler: `expo-sharing`, `react-native-view-shot`).
+2. Expo Go'da başka bir şey gerekmez. Kendi derlemesini (APK, dev client) kullananlar yeniden derler: iki paket de yerel modül.
+
+Değişenler:
+
+- Anı Defteri'nde her sayfanın altında paylaş düğmesi. Sayfa 1080×1920 bir hikâye görseline dönüşür, önce önizlemesi gösterilir, sonra sistemin paylaşım menüsü açılır (WhatsApp, Instagram hikâyesi…).
+- Yeni bir anı kaydedilince birkaç saniye "Paylaş" önerisi çıkar.
+- Yalnızca iOS ve Android'de. Web'de düğme gösterilmez (`src/lib/share-image.ts`).
+
+---
+
 ## 2026-11-07 · Hesap silme (sözleşme 0.3.34)
 
 Kimler: **API'yi yerelde çalıştıranlar**
