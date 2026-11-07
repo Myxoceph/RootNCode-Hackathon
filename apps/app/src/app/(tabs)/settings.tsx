@@ -74,6 +74,7 @@ const STAR_SQUARE = "M22 22 H78 V78 H22 Z";
  */
 export default function SettingsScreen() {
   const m = useMessages();
+  const lang = useLang();
   const { colors: c, scheme } = useTheme();
   const { user } = useCommunity();
   const insets = useSafeAreaInsets();
@@ -98,18 +99,29 @@ export default function SettingsScreen() {
         hovered?: boolean;
       }) => [
         styles.signOut,
+        { borderColor: c.border },
         (pressed || hovered) && { backgroundColor: c.surfaceRaised },
       ]}
     >
-      <Ionicons name="log-out-outline" size={18} color={c.warning} />
-      <Text variant="label" color="warning">
-        {m.profile.signOut}
-      </Text>
+      <Ionicons name="log-out-outline" size={17} color={c.text} />
+      <Text variant="label">{m.profile.signOut}</Text>
     </Pressable>
   );
 
   // A moderator's or admin's account cannot be deleted (the API refuses it), so it is not offered.
   const deleteAccount = signedIn && user?.role === "visitor" && <DeleteAccount />;
+  // Last on the page and quiet: they are there when looked for, not what the page is about.
+  const account = signedIn && (
+    <View style={[styles.accountFoot, { borderTopColor: c.border }]}>
+      <Text variant="caption" color="textSecondary" style={styles.accountHead}>
+        {m.profile.accountHead.toLocaleUpperCase(lang)}
+      </Text>
+      <View style={styles.accountRow}>
+        {signOut}
+        {deleteAccount}
+      </View>
+    </View>
+  );
 
   return (
     <ScrollView
@@ -137,11 +149,6 @@ export default function SettingsScreen() {
                 {m.profile.lead}
               </Text>
             </View>
-            {signOut && (
-              <View style={[styles.heroAction, { borderColor: c.border }]}>
-                {signOut}
-              </View>
-            )}
           </View>
           <View style={styles.wideRow}>
             <View style={styles.wideSide}>
@@ -150,7 +157,7 @@ export default function SettingsScreen() {
             </View>
             <View style={styles.wideMain}>
               <Sections />
-              {deleteAccount}
+              {account}
             </View>
           </View>
         </View>
@@ -164,8 +171,7 @@ export default function SettingsScreen() {
           <OpenBookLink />
           <Passport />
           <Sections />
-          {signOut}
-          {deleteAccount}
+          {account}
         </View>
       )}
     </ScrollView>
@@ -914,12 +920,6 @@ const styles = StyleSheet.create({
     lineHeight: 52,
     marginBottom: spacing.xxs,
   },
-  heroAction: {
-    minWidth: 150,
-    borderWidth: 1,
-    borderRadius: radius.full,
-    overflow: "hidden",
-  },
   wideRow: {
     flexDirection: "row",
     alignItems: "flex-start",
@@ -1200,12 +1200,29 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 18,
   },
+  accountFoot: {
+    gap: spacing.sm,
+    marginTop: spacing.xl,
+    paddingTop: spacing.lg,
+    borderTopWidth: StyleSheet.hairlineWidth,
+  },
+  accountHead: {
+    fontFamily: fontFamily.sansSemiBold,
+    letterSpacing: 1.6,
+  },
+  accountRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    gap: spacing.sm,
+  },
   signOut: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.sm,
-    minHeight: touchTarget.min + 8,
-    borderRadius: radius.xl,
+    gap: spacing.xs,
+    minHeight: touchTarget.min,
+    paddingHorizontal: spacing.md,
+    borderWidth: 1,
+    borderRadius: radius.full,
   },
 });

@@ -335,6 +335,7 @@ const tr = {
     signOutHint: "Bu cihazdaki oturumu kapatır",
     signedOut: "Çıkış yapıldı.",
     signOut: "Çıkış yap",
+    accountHead: "Hesap",
     deleteAccount: {
       open: "Hesabımı sil",
       hint: "Hesabını silmek için onay ister",
@@ -1692,6 +1693,7 @@ const en: Messages = {
     signOutHint: "Signs out on this device",
     signedOut: "Signed out.",
     signOut: "Sign out",
+    accountHead: "Account",
     deleteAccount: {
       open: "Delete my account",
       hint: "Asks for confirmation before deleting your account",
