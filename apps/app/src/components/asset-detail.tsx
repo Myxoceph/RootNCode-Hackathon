@@ -1017,6 +1017,7 @@ function PageCopy({
               </Editable>
             )}
             <DossierButton asset={asset} />
+            <DescribeButton asset={asset} />
           </View>
           <RelatedButton asset={asset} />
           <ScrollHint />
@@ -1579,6 +1580,51 @@ function End({
   );
 }
 
+/**
+ * The asset's spoken architectural description, read in EVREN's voice as Rehber's answers (the phone's voice
+ * when it cannot be reached). Offered only while "Sesli mimari betimleme" is on in Sistem ayarları. The first
+ * page and the experiences share one reading: started on one, the other shows it playing and stops it.
+ */
+function useAssetDescription(asset: AssetDetail) {
+  const { settings } = useA11ySettings();
+  const key = `description:${asset.id}`;
+  const describing = useSpeaking() === key;
+  // Leaving the page ends its description (its Durdur button goes with it), not another screen's reading.
+  useEffect(() => () => stopAnswerOf((reading) => reading === key), [key]);
+  // Turned off while it reads: the reading stops with its button.
+  useEffect(() => {
+    if (!settings.audioDescription) stopAnswerOf((reading) => reading === key);
+  }, [settings.audioDescription, key]);
+  const description = settings.audioDescription ? asset.accessibility.audioDescription : null;
+  const toggleDescription = () => {
+    if (!description) return;
+    if (describing) stopAnswer();
+    else void speakAnswer(key, description);
+  };
+  return { description, describing, toggleDescription };
+}
+
+/** The spoken description on the first page, beside the dossier: there from the start, not only at the end. */
+function DescribeButton({ asset }: { asset: AssetDetail }) {
+  const m = useMessages();
+  const { description, describing, toggleDescription } = useAssetDescription(asset);
+  if (!description) return null;
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={describing ? m.asset.stopDescribing : `${m.asset.describe}: ${m.asset.describeHint}`}
+      accessibilityState={{ selected: describing }}
+      onPress={toggleDescription}
+      style={({ pressed }) => [styles.dossier, pressed && styles.pressed]}
+    >
+      <Ionicons name={describing ? "stop-outline" : "ear-outline"} size={18} color={ink.gold} />
+      <Text variant="caption" colorValue={ink.text} style={styles.bold}>
+        {describing ? m.common.stop : m.asset.describe}
+      </Text>
+    </Pressable>
+  );
+}
+
 /** The camera experiences, sound, spoken description and the assistant, a row each under hairlines. */
 function Experiences({
   asset,
@@ -1591,24 +1637,11 @@ function Experiences({
   const m = useMessages();
   const { settings } = useA11ySettings();
   const player = useCapsulePlayer();
-  // Read in EVREN's voice, as Rehber's answers; the phone's voice when it cannot be reached.
-  const descriptionKey = `description:${asset.id}`;
-  const describing = useSpeaking() === descriptionKey;
-  // Leaving the page ends its description (its Durdur button goes with it), not another screen's reading.
-  useEffect(
-    () => () => stopAnswerOf((key) => key === descriptionKey),
-    [descriptionKey],
-  );
-  // Turned off while it reads: the reading stops with its button.
-  useEffect(() => {
-    if (!settings.audioDescription) stopAnswerOf((key) => key === descriptionKey);
-  }, [settings.audioDescription, descriptionKey]);
+  const { description, describing, toggleDescription } = useAssetDescription(asset);
   const soundKey = asset.ambientSound?.key ?? null;
   const capsuleType = soundKey ? capsuleForSoundKey(soundKey) : undefined;
   const playing =
     capsuleType !== undefined && player?.type === capsuleType ? player : null;
-  // Offered only while "Sesli mimari betimleme" is on in Sistem ayarları.
-  const description = settings.audioDescription ? asset.accessibility.audioDescription : null;
   const opened = isAssetUnlocked(asset, useUnlockedAssets());
   const inscriptions = useHasInscriptions(asset);
 
@@ -1678,10 +1711,7 @@ function Experiences({
       spoken: describing
         ? m.asset.stopDescribing
         : `${m.asset.describe}: ${m.asset.describeHint}`,
-      onPress: () => {
-        if (describing) stopAnswer();
-        else void speakAnswer(descriptionKey, description);
-      },
+      onPress: toggleDescription,
       on: describing,
     });
   }
