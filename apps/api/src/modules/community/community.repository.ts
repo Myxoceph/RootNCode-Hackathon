@@ -120,6 +120,12 @@ export interface CommunityRepository {
   createSession(userId: string, tokenHash: string): Promise<void>;
   /** Ends one session (sign-out on this device). */
   deleteSession(tokenHash: string): Promise<void>;
+  /** The user's password hash; null for an anonymous visitor or an unknown id. */
+  findPasswordHash(userId: string): Promise<string | null>;
+  /** Whether the user has reviewed a contribution: the review keeps its reviewer, so they cannot be deleted. */
+  hasReviewed(userId: string): Promise<boolean>;
+  /** Removes the user and all that is theirs (the foreign keys cascade). */
+  deleteUser(userId: string): Promise<void>;
   /** Gives an anonymous visitor a username and password; "has_account" when it already has one. */
   addCredentials(userId: string, credentials: Credentials): Promise<UserRecord | TakenField | "has_account">;
   /** Changes only the fields given; `fullName: null` removes the name. */
@@ -211,6 +217,19 @@ export function createCommunityRepository(prisma: PrismaClient): CommunityReposi
 
     async deleteSession(tokenHash) {
       await prisma.user_session.deleteMany({ where: { token_hash: tokenHash } });
+    },
+
+    async findPasswordHash(userId) {
+      const user = await prisma.app_user.findUnique({ where: { id: userId }, select: { password_hash: true } });
+      return user?.password_hash ?? null;
+    },
+
+    async hasReviewed(userId) {
+      return (await prisma.contribution.count({ where: { reviewed_by: userId }, take: 1 })) > 0;
+    },
+
+    async deleteUser(userId) {
+      await prisma.app_user.delete({ where: { id: userId } });
     },
 
     async addCredentials(userId, { username, passwordHash, email }) {

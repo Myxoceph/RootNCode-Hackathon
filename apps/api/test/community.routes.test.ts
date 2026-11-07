@@ -17,7 +17,7 @@ import { randomUUID } from "node:crypto";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { buildApp } from "../src/app.ts";
 import { createPrismaClient, type PrismaClient } from "../src/db/prisma.ts";
-import { hashToken, newToken } from "../src/modules/community/auth.ts";
+import { hashPassword, hashToken, newToken } from "../src/modules/community/auth.ts";
 import { CONTRIBUTIONS_PER_HOUR } from "../src/modules/community/community.routes.ts";
 
 const DATABASE_URL = process.env["DATABASE_URL"];
@@ -191,6 +191,69 @@ describe.skipIf(!DATABASE_URL)("Ziyaretçi Nabzı (PostgreSQL)", () => {
       expect((await app.inject({ method: "POST", url: "/auth/logout", headers: auth(token) })).statusCode).toBe(204);
       expect((await app.inject({ method: "GET", url: "/me", headers: auth(token) })).statusCode).toBe(401);
       expect((await app.inject({ method: "GET", url: "/me", headers: auth(first.token) })).statusCode).toBe(200);
+    });
+
+    describe("deleting an account", () => {
+      const remove = (token: string | null, password: unknown) =>
+        app.inject({ method: "POST", url: "/auth/delete-account", ...(token ? { headers: auth(token) } : {}), payload: { password } });
+
+      async function withPassword(role: "visitor" | "moderator" | "admin", password: string) {
+        const user = await createUser(role, `test-silinecek-${role}`);
+        const username = name(`silinecek.${role}`).toLowerCase();
+        await prisma.app_user.update({ where: { id: user.id }, data: { username, email: mail(username), password_hash: await hashPassword(password) } });
+        return user;
+      }
+
+      it("needs the password, then takes the account and what is theirs with it", async () => {
+        const user = await withPassword("visitor", "dogru-parola-1");
+        expect((await contribute(user.token, { kind: "memory", body: "Silinince bu anı da gitmeli." })).statusCode).toBe(201);
+        const page = await app.inject({ method: "POST", url: "/me/journal", headers: auth(user.token), payload: { text: "Defter sayfası" } });
+        expect(page.statusCode).toBe(201);
+
+        expect((await remove(null, "dogru-parola-1")).statusCode).toBe(401);
+        expect((await remove(user.token, 12345)).statusCode).toBe(400);
+        const wrong = await remove(user.token, "yanlis-parola");
+        expect(wrong.statusCode).toBe(403);
+        expect(wrong.json()).toMatchObject({ error: { code: "WRONG_PASSWORD" } });
+        expect((await app.inject({ method: "GET", url: "/me", headers: auth(user.token) })).statusCode).toBe(200);
+
+        expect((await remove(user.token, "dogru-parola-1")).statusCode).toBe(204);
+        expect((await app.inject({ method: "GET", url: "/me", headers: auth(user.token) })).statusCode).toBe(401);
+        expect(await prisma.app_user.count({ where: { id: user.id } })).toBe(0);
+        expect(await prisma.contribution.count({ where: { user_id: user.id } })).toBe(0);
+        expect(await prisma.journal_entry.count({ where: { user_id: user.id } })).toBe(0);
+        expect(await prisma.user_session.count({ where: { user_id: user.id } })).toBe(0);
+      });
+
+      it("refuses staff: a review keeps its reviewer, even after the role is gone", async () => {
+        const admin = await withPassword("admin", "dogru-parola-2");
+        const moderatorUser = await withPassword("moderator", "dogru-parola-3");
+        for (const [token, password] of [[admin.token, "dogru-parola-2"], [moderatorUser.token, "dogru-parola-3"]] as const) {
+          const refused = await remove(token, password);
+          expect(refused.statusCode).toBe(403);
+          expect(refused.json()).toMatchObject({ error: { code: "STAFF_ACCOUNT" } });
+        }
+        expect(await prisma.app_user.count({ where: { id: { in: [admin.id, moderatorUser.id] } } })).toBe(2);
+
+        const author = await createUser("visitor", "test-yazar");
+        expect((await contribute(author.token, { kind: "tip", body: "Sabah erken gidin, kalabalık olmuyor." })).statusCode).toBe(201);
+        await prisma.contribution.updateMany({ where: { user_id: author.id }, data: { reviewed_by: moderatorUser.id, reviewed_at: new Date(), status: "approved" } });
+        await prisma.app_user.update({ where: { id: moderatorUser.id }, data: { role: "visitor" } });
+        expect((await remove(moderatorUser.token, "dogru-parola-3")).statusCode).toBe(403);
+        expect(await prisma.app_user.count({ where: { id: moderatorUser.id } })).toBe(1);
+
+        // The author leaving takes the note with it, reviewed or not; the moderator is untouched.
+        await prisma.app_user.update({ where: { id: author.id }, data: { username: name("yazar"), email: mail(name("yazar")), password_hash: await hashPassword("dogru-parola-4") } });
+        expect((await remove(author.token, "dogru-parola-4")).statusCode).toBe(204);
+        expect(await prisma.contribution.count({ where: { user_id: author.id } })).toBe(0);
+        expect(await prisma.app_user.count({ where: { id: moderatorUser.id } })).toBe(1);
+      });
+
+      it("refuses a visitor with no password", async () => {
+        const anonymous = await createUser("visitor", "test-anonim");
+        expect((await remove(anonymous.token, "ne-olursa-olsun")).statusCode).toBe(403);
+        expect(await prisma.app_user.count({ where: { id: anonymous.id } })).toBe(1);
+      });
     });
 
     it("turns an anonymous visitor into an account that keeps its contributions", async () => {

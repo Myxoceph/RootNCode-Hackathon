@@ -7,6 +7,7 @@ import {
   ContributionSchema,
   CreateContributionRequestSchema,
   LangSchema,
+  DeleteAccountRequestSchema,
   LoginRequestSchema,
   MyContributionsResponseSchema,
   PulseResponseSchema,
@@ -149,6 +150,31 @@ export const communityRoutes: FastifyPluginAsync<CommunityRoutesOptions> = async
   }, async (request, reply) => {
     await requireUser(request, repository);
     await repository.deleteSession(hashToken(bearerToken(request)!));
+    return reply.code(204).send();
+  });
+
+  app.post("/auth/delete-account", {
+    // As for signing in: a stolen token must not be a way to guess the password.
+    config: { rateLimit: LOGIN_RATE_LIMIT },
+    schema: {
+      tags: ["community"],
+      summary: "Hesabı parolayla doğrulayıp kalıcı olarak sil: notlar, ziyaretler, rozetler, Rehber konuşmaları ve Anı Defteri de silinir",
+      security: bearer,
+      body: toOpenApiSchema(DeleteAccountRequestSchema, "input"),
+      response: { 204: { type: "null" }, 400: errorSchema, 401: errorSchema, 403: errorSchema, 429: errorSchema },
+    },
+  }, async (request, reply) => {
+    const user = await requireUser(request, repository);
+    const { password } = parseWith(DeleteAccountRequestSchema, request.body, "INVALID_BODY");
+    // Staff stay: a review must name its reviewer, and an admin leaving could leave no one to manage the app.
+    if (user.role !== "visitor" || (await repository.hasReviewed(user.id))) {
+      throw new HttpError(403, "STAFF_ACCOUNT", "A moderator or admin account cannot be deleted");
+    }
+    // 403, not 401: the session is good, and a 401 would sign the app out on a mistyped password.
+    if (!(await verifyPassword(password, await repository.findPasswordHash(user.id)))) {
+      throw new HttpError(403, "WRONG_PASSWORD", "Wrong password");
+    }
+    await repository.deleteUser(user.id);
     return reply.code(204).send();
   });
 
