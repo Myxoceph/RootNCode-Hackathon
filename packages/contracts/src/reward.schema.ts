@@ -12,6 +12,12 @@ const CodeSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "must be a low
 /** `merch` (picked up at a branch), `museum` (entry), `discount`, `experience`. */
 export const RewardKindSchema = z.enum(["merch", "museum", "discount", "experience"]);
 
+/**
+ * The drawing the app shows for a reward, picked in the admin panel. `null`: the app picks one by
+ * the reward's code ("kupa", "defter"…) and failing that by its kind.
+ */
+export const RewardArtSchema = z.enum(["mug", "notebook", "cap", "shirt", "ticket", "tea", "gift", "museum", "tag", "lantern"]);
+
 export const RewardSchema = z.strictObject({
   code: CodeSchema,
   title: z.string().min(1),
@@ -19,6 +25,8 @@ export const RewardSchema = z.strictObject({
   /** The institution that gives the reward, e.g. "Vakıf Katılım". */
   partner: z.string().min(1),
   kind: RewardKindSchema,
+  /** The default keeps answers of an API before 0.3.36 readable. */
+  art: RewardArtSchema.nullable().default(null),
   costPoints: z.int().positive(),
   /** Proven visits (position plus recognition of the site) needed before redeeming; 0 for none. */
   minProvenVisits: z.int().min(0),
@@ -42,6 +50,7 @@ export const RedemptionSchema = z.strictObject({
     title: z.string().min(1),
     partner: z.string().min(1),
     kind: RewardKindSchema,
+    art: RewardArtSchema.nullable().default(null),
   }),
   /** The single-use code to show at the branch, museum or café. */
   code: z.string().min(1),
@@ -79,6 +88,7 @@ const RewardFields = {
   description: I18n,
   partner: z.string().trim().min(1).max(120),
   kind: RewardKindSchema,
+  art: RewardArtSchema.nullable(),
   costPoints: z.int().min(1).max(100_000),
   minProvenVisits: z.int().min(0).max(1000),
   sample: z.boolean(),
@@ -90,6 +100,7 @@ const RewardFields = {
 export const AdminRewardInputSchema = z.strictObject({
   ...RewardFields,
   code: CodeSchema.max(60),
+  art: RewardFields.art.default(null),
   minProvenVisits: RewardFields.minProvenVisits.default(0),
   sample: RewardFields.sample.default(false),
   sortOrder: RewardFields.sortOrder.default(1000),
@@ -132,6 +143,7 @@ export const AddRewardCodesResponseSchema = z.strictObject({
 });
 
 export type RewardKind = z.infer<typeof RewardKindSchema>;
+export type RewardArt = z.infer<typeof RewardArtSchema>;
 export type Reward = z.infer<typeof RewardSchema>;
 export type RewardsResponse = z.infer<typeof RewardsResponseSchema>;
 export type Redemption = z.infer<typeof RedemptionSchema>;
