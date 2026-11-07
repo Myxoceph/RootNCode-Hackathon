@@ -84,7 +84,7 @@ export interface Step {
   More?: (props: StepProps) => ReactNode;
 }
 
-export const SECTION_TITLE: Record<Section, string> = { pages: "Kaydırmalı sayfalar", dossier: "Eserin dosyası" };
+export const SECTION_TITLE: Record<Section, string> = { pages: "Kaydırmalı sayfalar", dossier: "Eser bilgileri" };
 
 const has = (text: string | null | undefined) => !!text && text.trim() !== "";
 const tr = (pair: Pair | null) => pair?.tr ?? "";
@@ -233,7 +233,7 @@ export const STEPS: Step[] = [
     ),
     More: ({ record, set, assets, meta }) => (
       <>
-        <Box icon="home-outline" title="Adresi" phone="address" note="Eserin dosyasında, künyede görünür.">
+        <Box icon="home-outline" title="Adresi" phone="address" note="Eser bilgilerinde, künyede görünür.">
           <Row>
             <Cell>
               <TextField label="Mahalle" value={record.neighborhood} onChange={(neighborhood) => set({ neighborhood })} placeholder="ör. Tayakadın" />
@@ -244,7 +244,7 @@ export const STEPS: Step[] = [
           </Row>
         </Box>
         <Coordinates value={record.coordinates} onChange={(coordinates) => set({ coordinates })} />
-        <Box icon="git-network-outline" title="Külliyesi" phone="parent" note="Bir külliyenin parçasıysa, dosyada külliyesine bağlanır.">
+        <Box icon="git-network-outline" title="Külliyesi" phone="parent" note="Bir külliyenin parçasıysa, eser bilgilerinde külliyesine bağlanır.">
           <View nativeID={fieldId("parent")} />
           <Picker
             label="Bir külliyenin parçası mı?"
@@ -325,7 +325,7 @@ export const STEPS: Step[] = [
             onChange={(display) => set({ dating: { ...record.dating, display } })}
             placeholder="ör. H. 802 / M. 1399-1400"
             placeholderEn="ör. AH 802 / AD 1399-1400"
-            hint="Yazılırsa dosyada yıl yerine bu görünür."
+            hint="Yazılırsa eser bilgilerinde yıl yerine bu görünür."
           />
           <PairField
             label="Bu tarih nereden biliniyor?"
@@ -605,10 +605,10 @@ export const STEPS: Step[] = [
     section: "dossier",
     fields: [],
     phone: { dossier: "year" },
-    title: "Eserin dosyası nedir?",
-    question: "Şimdi sıra eserin dosyasında.",
-    shows: [{ in: "dossier", place: "Eserin dosyası" }],
-    help: "Bundan sonraki sorular kaydırmalı sayfalarda değil, eserin dosyasında görünür.",
+    title: "Eser bilgileri nedir?",
+    question: "Şimdi sıra eser bilgilerinde.",
+    shows: [{ in: "dossier", place: "Eser bilgileri" }],
+    help: "Bundan sonraki sorular kaydırmalı sayfalarda değil, eser bilgilerinde görünür.",
     intro: true,
     done: () => true,
     Body: () => <DossierIntro />,
@@ -834,7 +834,7 @@ export const STEPS: Step[] = [
     fields: ["custom"],
     phone: { dossier: "custom" },
     title: "Yeni bölümler",
-    question: "Dosyaya kendi bölümünü eklemek ister misin?",
+    question: "Eser bilgilerine kendi bölümünü eklemek ister misin?",
     shows: [{ in: "dossier", place: "Seçtiğin bölümden sonra, ayrı bir bölüm olarak" }],
     help: "Tarihçe, Zaman çizelgesi gibi ana bir bölüm olur. Metni alt başlık, kalın yazı, liste ve alıntıyla düzenleyebilirsin.",
     done: (r) => r.customBlocks.length > 0,
@@ -845,8 +845,8 @@ export const STEPS: Step[] = [
     section: "dossier",
     fields: ["photo-in"],
     phone: { dossier: "photo-in" },
-    title: "Dosyadaki fotoğraflar",
-    question: "Dosyada bölümlerin arasına fotoğraf koymak ister misin?",
+    title: "Eser bilgilerindeki fotoğraflar",
+    question: "Eser bilgilerinde bölümlerin arasına fotoğraf koymak ister misin?",
     shows: [{ in: "dossier", place: "Seçtiğin bölümün hemen altı" }],
     help: "Bir yer seç, oraya koyacağın fotoğrafı seç. Bir yere birden çok fotoğraf koyabilirsin.",
     when: (r) => r.media.length > 0,
@@ -892,19 +892,19 @@ function DossierIntro() {
         <View style={styles.introArrow}>
           <Ionicons name="arrow-forward" size={20} color={a.textSecondary} aria-hidden />
           <Text color="textSecondary" style={{ fontSize: 11.5, textAlign: "center" }}>
-            “Eserin dosyası” düğmesi
+            “Eser bilgileri” düğmesi
           </Text>
         </View>
         <View style={[styles.introBox, { backgroundColor: a.blueSoft }]}>
           <Ionicons name="document-text-outline" size={22} color={a.primary} aria-hidden />
-          <Text style={styles.introTitle}>Eserin dosyası</Text>
+          <Text style={styles.introTitle}>Eser bilgileri</Text>
           <Text color="textSecondary" style={styles.note}>
             Merak edenler için uzun okuma: tarihler, kişiler, kitabeler, vakıf, rivayetler.
           </Text>
         </View>
       </View>
       <Text style={{ fontSize: 14, lineHeight: 21 }}>
-        Ziyaretçi kaydırmalı sayfalardaki “Eserin dosyası” düğmesine basınca bu bölüm açılır. Sağdaki telefon da şimdi dosyayı gösteriyor; yazdıkların orada görünecek. Bu soruların hepsi isteğe bağlı.
+        Ziyaretçi kaydırmalı sayfalardaki “Eser bilgileri” düğmesine basınca bu bölüm açılır. Sağdaki telefon da şimdi eser bilgilerini gösteriyor; yazdıkların orada görünecek. Bu soruların hepsi isteğe bağlı.
       </Text>
     </View>
   );
@@ -1482,7 +1482,7 @@ function CustomBlocks({ customBlocks, setCustomBlocks, showPlace }: StepProps) {
               </Cell>
               <Cell>
                 <Picker
-                  label="Dosyada nereye gelsin?"
+                  label="Eser bilgilerinde nereye gelsin?"
                   value={b.after}
                   options={after(b)}
                   onChange={(place) => {
