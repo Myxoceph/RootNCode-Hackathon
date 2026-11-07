@@ -80,7 +80,7 @@ Hedef: **veri setinin, kod yazmadan ve kalite kaybetmeden büyümesi.** Üç gir
    PDF yükle ─────────▶ │ GET  /admin/intake/jobs/:id    ← ilerleme, kitap haritası│
    haritayı onayla ───▶ │ POST /admin/intake/jobs/:id/map → map_confirmed          │
    kuyruk ────────────▶ │ GET  /admin/intake/drafts      (+ eski katkılar)         │
-   onayla/reddet ─────▶ │ POST /admin/intake/drafts/:id/approve|reject             │
+   onayla/reddet ─────▶ │ POST /admin/intake/drafts/:id/review  (approve|reject)   │
  Uygulama (ziyaretçi)   │ POST /assets/:id/inscription-proposals → intake_draft    │
    kitabe fotoğrafı ──▶ │   (görüntü modeli taslağı API'de yazar)                  │
                        └───────────────┬──────────────────────────────────────────┘
@@ -92,8 +92,18 @@ Hedef: **veri setinin, kod yazmadan ve kalite kaybetmeden büyümesi.** Üç gir
                        │  3 taslak kayıt (LLM) → şema doğrulama → 1 kez onarım    │
                        │  4 fotoğraf konusu (VLM), konum, tekrar uyarısı          │
                        │  5 intake_draft satırı (kind=book_asset)                 │
+                       │  6 YAYIN: onaylanan taslak → data/eserler dosyası +      │
+                       │    media_pipeline + import_to_db → applied_at            │
                        └──────────────────────────────────────────────────────────┘
 ```
+
+**Onay ve yayın ayrı adımlar.** API yalnızca onayı kaydeder (düzeltilmiş kayıt, kim, ne zaman).
+Onaylanan taslağı worker ekibin bugünkü resmi yoluyla yayınlar: `data/eserler/<il>/<ilçe>/<id>.json` dosyası,
+`media_pipeline.py`, `import_to_db.py`; sonra `applied_at`'i yazar. Yayın hata verirse (`validate.py`, fotoğraf…)
+`apply_error`'a yazar ve taslak kuyrukta görünür. Neden: panelin yazma yolu (`asset-record.ts`) kaynak
+atıflarını taşımıyor; kitaptan gelen verinin en değerli yanı her bilginin kitaptaki kaynağı. Bu yolla
+eser aynı anda git'e girebilecek bir veri dosyası da olur. **Onay = yayın kararı:** API onaylanan yeni
+eserin kaydında `status`'u `published` yapar; ayrı bir "incelemede" adımı yok, bu kuyruk o adımın kendisi.
 
 **Neden iki dil?** PDF işleme ve veri araçları Python'da (pymupdf, `validate.py`, `geocode.py`) ve
 Hüseyin'in alanı. API ve ekranlar TypeScript'te. Aralarındaki tek sözleşme **veritabanı tabloları**
@@ -212,7 +222,7 @@ Yük yaklaşık eşit: Yiğit API + ekranlar + uygulama akışı; Hüseyin worke
 | # | İş | Bağımlılık | Bitti sayılır |
 |---|---|---|---|
 | Y0 | Sözleşmeler (§5.1-5.2) + migration + yerel-yalnız koruması (§5.5) + yerel fotoğraf deposu (§5.4) | yok | `npm test` ve tip denetimi geçiyor; uzak `DATABASE_URL` ile API açılmıyor; panelden yerelde fotoğraf yüklenebiliyor  ✓ 2026-11-08 |
-| Y1 | Intake API: iş oluştur (PDF yükleme, ≤200 MB, diske), iş durumu, haritayı onayla, taslak listesi, onayla/reddet | Y0 | API testleri; onay `book_asset` taslağını `asset` + medya olarak yazıyor (yeni eserler `published` değil `in_review` başlar, sonra yayına alınır) |
+| Y1 | Intake API (`INTAKE_ENABLED`; moderatör ve admin): `POST /admin/intake/jobs` (PDF, ≤200 MB, `data/build/cache/intake/<id>/source.pdf`), `GET /admin/intake/jobs[/:id]`, `POST /admin/intake/jobs/:id/map` (yalnızca `needs_map`'ten; anahtarlar ve önerilen id'ler benzersiz, üst eser haritada), `GET /admin/intake/drafts[/:id]` (en eskisi önce), `POST /admin/intake/drafts/:id/review` (yalnızca `pending`'den; doğrulama hatası varsa ancak düzeltilmiş kayıtla; yeni eserin id'si veri setinde varsa 409; onayda `status: published`). Migration `…110000_intake_apply`: `applied_at`, `apply_error` | Y0 | `test/intake.routes.test.ts` (9) ✓ 2026-11-08 |
 | Y2 | Panel: PDF Kabul ekranları (yükle, ilerleme, kitap haritası tablosu düzenle/onayla) | Y1 | Hatay PDF'iyle harita onaylanıp iş `drafting`'e geçiyor |
 | Y3 | Panel: birleşik onay kuyruğu (eski katkılar + `intake_draft`), yan yana inceleme (PDF sayfası görüntüsü + alanlar + kaynak sayfa işaretleri + doğrulama + tekrar uyarısı) | Y1 | Bir taslak düzeltilip onaylanınca eser haritada görünüyor |
 | Y4 | Kitabe Gönüllüleri, API: `POST /assets/:id/inscription-proposals` (hesap zorunlu, saatte 5) → fotoğrafı işle → `inscription-read.md` ile taslak → `intake_draft(kind=inscription)`; onayda esere kitabe + `ar_target_media_key` | Y0, H3 (istem; o gelene kadar sahte taslak) | Onaylanan kitabe `/ar-targets`'ta |
@@ -229,7 +239,7 @@ Yük yaklaşık eşit: Yiğit API + ekranlar + uygulama akışı; Hüseyin worke
 | H3 | İstemler (§5.3): `asset-record.md` (PROMPT.md'den), `photo-subject.md`, `inscription-read.md`; her biri H1 ile ölçülür | H1 | Her istem için ölçüm sonucu bu dosyada (§7) |
 | H4 | Eser başına hat: metin dilimi + fotoğraf + açıklama eşleme → taslak kayıt → JSON Schema doğrulama → hata varsa 1 onarım → konum (`geocode.py`) → tekrar uyarısı → `intake_draft` | H2, H3 | Hatay PDF'i uçtan uca: tüm eserler kuyrukta, `validate.py` hatası yok |
 | H5 | EVREN modelleriyle ayar: EVREN'deki metin modelleri (asistanın kullandığı `qwen3.8-flash-next` ve varsa diğerleri) ve görüntü modeli (`qwen3-vl-30b`) aynı altın sette karşılaştırılır; istemler ölçüme göre iyileştirilir. Uzun bölümler modelin bağlamına sığmazsa metin parçalanır. Sonuç §7'ye yazılır | H1, H3 | Tablo + seçilen EVREN modelleri + istem sürümleri |
-| H6 | Dışa aktarma: onaylanan `book_asset` taslaklarını `data/eserler/<il>/<ilçe>/<id>.json` olarak yaz (`export_panel_assets.py` genişler) + `data/README.md`'ye bölüm | Y1 | Onaylanan bir eser `validate.py`'den geçen bir dosya oluyor |
+| H6 | **Yayın adımı** (worker): `status = 'approved' AND applied_at IS NULL` taslakları sırayla al → kaydı `data/eserler/<il>/<ilçe>/<id>.json` olarak yaz → `validate.py` → fotoğrafları `media_pipeline.py` ile işle (yerel depoya, §5.4) → `import_to_db.py` ile o eseri yerel veritabanına aktar → `applied_at = now()`. Hata olursa dosyayı geri al, `apply_error`'a yaz. **`import_to_db.py` kendi bağlantısını açar: çağırmadan önce `db.py`'nin yerel-yalnız denetimi aynı `DATABASE_URL` için çalışmalı (§0.1).** `inscription` taslakları için de: kitabeyi eserin dosyasına ekle, aynı yol (Y4 ile birlikte). `data/README.md`'ye bölüm | Y1 | Onaylanan bir kitap taslağı birkaç saniye içinde haritada; dosyası `validate.py`'den geçiyor |
 
 ### Ortak
 
