@@ -78,8 +78,12 @@ export interface BuildAppOptions {
   mediaStore?: MediaStore | null;
   /** `GET /local-media/*` for Veri Döngüsü's development (INTAKE_LOCAL_ONLY); without it there is no such route. */
   localMedia?: LocalMediaRoutesOptions | null;
-  /** Veri Döngüsü's routes (INTAKE_ENABLED): where uploaded PDFs go. Without it there are no /admin/intake routes. */
-  intake?: { root: string; dir: string } | null;
+  /**
+   * Veri Döngüsü's routes (INTAKE_ENABLED): where uploaded PDFs and chat photos go, and the store chat
+   * photos are processed into (default: mediaStore; null: uploads answer 503). Without it there are no
+   * /admin/intake routes.
+   */
+  intake?: { root: string; dir: string; store?: MediaStore | null } | null;
   /** `POST /assets/:id/visit/unlock` for the app's "Kilidi aç" (see achievementsRoutes); off by default. */
   demoUnlock?: boolean;
 }
@@ -146,8 +150,9 @@ export function buildApp({
   if (localMedia) app.register(localMediaRoutes, localMedia);
   if (intake) {
     const intakeRepository = createIntakeRepository(prisma);
-    app.register(intakeRoutes, { repository: intakeRepository, community: communityRepository, ...intake });
-    app.register(intakeChatRoutes, { repository: intakeRepository, community: communityRepository, store: mediaStore, ...intake });
+    const { root, dir, store = mediaStore ?? null } = intake;
+    app.register(intakeRoutes, { repository: intakeRepository, community: communityRepository, root, dir });
+    app.register(intakeChatRoutes, { repository: intakeRepository, community: communityRepository, store, root, dir });
   }
   app.register(adminAssetPreviewRoutes, {
     repository: createAssetsRepository(prisma, assetVisibility, ALL_ASSET_STATUSES),

@@ -297,6 +297,8 @@ Hepsi sağlanmadan `feat/veri-dongusu` → `dev` PR'ı açılmaz:
 - [ ] Migration'ın adı `dev`'deki son migration'dan sonra geliyor; gelmiyorsa yeniden adlandırıldı
 - [ ] `INTAKE_ENABLED` kapalıyken uygulama ve API eskisiyle birebir aynı davranıyor
 - [ ] Yerel-yalnız koruması ve yerel fotoğraf deposu üretimde devre dışı (yalnızca bayrakla)
+- [ ] Sohbet fotoğrafları bu dalda yalnızca yerel depoya yazılıyor (`server.ts`, `intake.store`); üretimde R2'ye
+      yazılması isteniyorsa bilerek açıldı
 - [ ] Demo senaryosu (§2) yerelde baştan sona çalışıyor
 - [ ] `docs/upgrade-notes.md`'ye kurulum notu (yeni tablolar, Python bağımlılıkları, ortam değişkenleri)
 - [ ] Üretimde açmak (migration + bayrak) ayrı bir karar; Ahmet'in deploy'una kadar kapalı kalır

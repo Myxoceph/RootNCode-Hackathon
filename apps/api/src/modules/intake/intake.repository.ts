@@ -110,16 +110,24 @@ export function createIntakeRepository(prisma: PrismaClient) {
     },
 
     /**
-     * A chat's input with a new message, queued again for the worker. Only if the job is as it was
-     * read (`updatedAt`) and not being drafted: false when the worker took it up meanwhile, so a
-     * message is never lost under a draft written from the older input.
+     * A chat's input with a new message, queued again for the worker, in one statement that holds
+     * only if, at that moment, the input is still the one read (`before`: no other message came in
+     * between), the worker is not drafting it, and its draft is still open. The input is compared, not
+     * `updated_at`: the worker writes that with now()'s microseconds, which a JS Date cannot hold.
+     *
+     * "closed": the draft was decided meanwhile. "changed": another message or the worker came first.
+     * The worker has its half to keep (yigit-veri-dongusu.md §1.6): it marks a chat done only if the
+     * input it drafted from is still there, so a message that lands as it starts is not lost.
      */
-    async appendChat(id: string, input: IntakeChatInput, readAt: Date): Promise<boolean> {
-      const { count } = await prisma.intake_job.updateMany({
-        where: { id, kind: "chat", updated_at: readAt, status: { in: ["queued", "done", "failed"] } },
-        data: { input: input as Prisma.InputJsonValue, status: "queued", error: null, updated_at: new Date() },
-      });
-      return count === 1;
+    async appendChat(id: string, before: unknown, input: IntakeChatInput): Promise<"ok" | "closed" | "changed"> {
+      const count = await prisma.$executeRaw`
+        UPDATE intake_job SET input = ${JSON.stringify(input)}::jsonb, status = 'queued', error = NULL, updated_at = now()
+        WHERE id = ${id}::uuid AND kind = 'chat' AND status IN ('queued', 'done', 'failed')
+          AND input = ${JSON.stringify(before)}::jsonb
+          AND NOT EXISTS (SELECT 1 FROM intake_draft d WHERE d.job_id = intake_job.id AND d.status <> 'pending')`;
+      if (count === 1) return "ok";
+      const decided = await prisma.intake_draft.count({ where: { job_id: id, status: { not: "pending" } } });
+      return decided > 0 ? "closed" : "changed";
     },
 
     /** The one draft of a chat (entry_key 'chat'), or of nothing. */
