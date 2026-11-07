@@ -17,7 +17,7 @@ from stages import Draft, MapResult  # noqa: E402
 
 import worker  # noqa: E402
 
-MIGRATION = REPO / "apps" / "api" / "prisma" / "migrations" / "20261108090000_intake" / "migration.sql"
+MIGRATIONS = sorted((REPO / "apps" / "api" / "prisma" / "migrations").glob("2026*_intake*/migration.sql"))
 
 
 def entry(key, pages, parent=None):
@@ -61,7 +61,7 @@ class WorkerOnLocalDb(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         env = load_env()
-        if not MIGRATION.exists():
+        if not MIGRATIONS:
             raise unittest.SkipTest("intake migration yok")
         cls.schema = f"intake_test_{uuid.uuid4().hex[:8]}"
         try:
@@ -71,7 +71,8 @@ class WorkerOnLocalDb(unittest.TestCase):
         except Exception as error:  # noqa: BLE001
             raise unittest.SkipTest(f"yerel veritabanı yok: {type(error).__name__}")
         cls.conn.execute(f'create schema "{cls.schema}"')
-        cls.conn.execute(MIGRATION.read_text(encoding="utf-8"))
+        for migration in MIGRATIONS:
+            cls.conn.execute(migration.read_text(encoding="utf-8"))
 
     @classmethod
     def tearDownClass(cls):

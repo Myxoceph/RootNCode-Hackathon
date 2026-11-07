@@ -116,11 +116,11 @@ class Chat(unittest.TestCase):
 
     def test_config_from_env(self):
         config = LlmConfig.from_env({"ASSISTANT_BASE_URL": "https://e/v1/", "ASSISTANT_MODEL": "chat-m", "ASSISTANT_API_KEY": "k"})
-        self.assertEqual((config.base_url, config.text_model, config.vision_model), ("https://e/v1", "chat-m", "qwen3-vl-30b"))
+        self.assertEqual((config.base_url, config.text_model, config.vision_model), ("https://e/v1", "gemma-4-31b", "qwen3-vl-30b"), "asistanın modeli worker'ı etkilemez")
         config = LlmConfig.from_env({"ASSISTANT_BASE_URL": "https://e/v1", "ASSISTANT_MODEL": "chat-m", "INTAKE_TEXT_MODEL": "big-m", "VISION_MODEL": "v"})
         self.assertEqual((config.text_model, config.vision_model, config.api_key), ("big-m", "v", None))
         with self.assertRaises(LlmError):
-            LlmConfig.from_env({"ASSISTANT_MODEL": "m"})
+            LlmConfig.from_env({"ASSISTANT_MODEL": "m"})  # adres yok
 
 
 class ParseJson(unittest.TestCase):

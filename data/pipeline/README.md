@@ -20,7 +20,7 @@ Ayarlar `apps/api/.env`'den okunur (API ile aynı dosya); ortama verilen değer 
 |---|---|
 | `DATABASE_URL` | Yerel PostgreSQL (`localhost`, `127.0.0.1`, `::1` ya da unix soketi) |
 | `ASSISTANT_BASE_URL`, `ASSISTANT_API_KEY` | EVREN: adres ve anahtar (API'nin asistanıyla aynı) |
-| `INTAKE_TEXT_MODEL` | Taslak kayıt ve kitap haritası modeli; yoksa `ASSISTANT_MODEL` |
+| `INTAKE_TEXT_MODEL` | Taslak kayıt ve kitap haritası modeli; yoksa `gemma-4-31b` (EVREN; aşağıda neden) |
 | `VISION_MODEL` | Fotoğraf konusu, kitabe okuma; yoksa `qwen3-vl-30b` |
 | `INTAKE_LLM_TIMEOUT`, `INTAKE_LLM_INTERVAL` | İstek süresi (120 sn) ve iki istek arası en az süre (1 sn) |
 | `INTAKE_LLM_THINKING` | `true`: modelin düşünmesine izin ver. Varsayılan kapalı (aşağıda neden) |
@@ -87,4 +87,7 @@ metinden tahmin etti; denetim yakalayıp boş bıraktı.
 - **Düşünme kapalı.** `qwen3.8-flash-next` düşünmeye bırakılınca uzun bir istekte 6000 token'ın hepsini
   düşünmeye harcayıp boş cevap verdi (136 sn, `reasoning_budget_exhausted`). EVREN bunu yalnızca
   `chat_template_kwargs: {"enable_thinking": false}` ile kapatıyor; istemci bunu her istekte gönderir.
-- Cevabın `usage.evren.credits_remaining_cr` alanı kalan krediyi gösterir; model karşılaştırması (H5) bu bütçeyle yapılır.
+- **Model:** aynı sohbet (Ördekli Hamam, iki mesaj) EVREN'in dört metin modelinde aynı alanları verdi, uydurma yok;
+  süreler `gemma-4-31b` 14 sn, `qwen3.8-flash-next` 46-48 sn, `glm-5.3` 72 sn, `deepseek-v4.1-flash` 395 sn.
+  Plan §7'nin 30 sn sınırı yüzünden varsayılan `gemma-4-31b`. Asıl karşılaştırma ölçümle (H1/H5) yapılacak.
+- **Kredi:** EVREN'in bütün modelleri 2026-12-01'e kadar ücretsiz (`/models`: fiyat 0 CR, `free_until`); kalan kredi düşmüyor.

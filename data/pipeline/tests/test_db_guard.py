@@ -80,6 +80,16 @@ class CheckServer(unittest.TestCase):
             with self.subTest(address=address), self.assertRaises(LocalOnlyError):
                 check_server(address)
 
+    def test_docker_on_this_machine_through_localhost(self):
+        # docker compose'daki PostgreSQL, localhost:5432 üzerinden: sunucu konteyner adresini söyler.
+        for address in ("172.18.0.2", "172.17.0.3", "172.31.255.1"):
+            with self.subTest(address=address):
+                check_server(address, via_local_name=True)
+        # Yerel adla bile Docker dışındaki özel ağlar ve dış adresler kabul edilmez.
+        for address in ("10.0.0.5", "192.168.1.20", "172.32.0.1", "8.8.8.8", "2001:db8::1"):
+            with self.subTest(address=address), self.assertRaises(LocalOnlyError):
+                check_server(address, via_local_name=True)
+
 
 if __name__ == "__main__":
     unittest.main()
