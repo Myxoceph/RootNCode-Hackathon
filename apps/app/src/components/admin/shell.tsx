@@ -4,7 +4,7 @@ import { usePathname, useRouter, type Href } from "expo-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Image, Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from "react-native";
 
-import { fetchAdminSummary, fetchChats } from "@/data/admin";
+import { fetchAdminSummary, fetchChats, fetchDrafts } from "@/data/admin";
 import { logout, useCommunity } from "@/data";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -66,6 +66,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
   const wide = width >= 960;
   const [pending, setPending] = useState<number | null>(null);
   const [intake, setIntake] = useState(false);
+  const [draftsPending, setDraftsPending] = useState(0);
   const [round, setRound] = useState(0);
   const [folded, toggleFolded] = useFolded();
   const role = user?.role === "admin" || user?.role === "moderator" ? user.role : null;
@@ -81,6 +82,20 @@ export function AdminShell({ children }: { children: ReactNode }) {
       active = false;
     };
   }, [role, round]);
+
+  // Drafts waiting for this person (new assets are an admin's), beside the notes in the side bar's count.
+  useEffect(() => {
+    if (!role || !intake) return;
+    let active = true;
+    const kinds = role === "admin" ? (["field_asset", "book_asset", "inscription"] as const) : (["inscription"] as const);
+    Promise.all(kinds.map((kind) => fetchDrafts({ status: "pending", kind, limit: 1 }))).then(
+      (pages) => active && setDraftsPending(pages.reduce((n, p) => n + p.total, 0)),
+      () => {},
+    );
+    return () => {
+      active = false;
+    };
+  }, [role, intake, round]);
 
   // Sohbetten Kabul is only on an API with Veri Döngüsü's routes (INTAKE_ENABLED). Asked once; a
   // failed answer (the API starting, a timeout) is asked again a little later, not taken as "off".
@@ -105,12 +120,13 @@ export function AdminShell({ children }: { children: ReactNode }) {
   // Signed in at the app's own sign-in page, as every account is.
   if (user === undefined || !user?.username || !role) return <Away />;
 
-  const context: PanelContext = { role, pending, refreshPending: () => setRound((n) => n + 1), intake };
+  const waiting = pending === null ? null : pending + draftsPending;
+  const context: PanelContext = { role, pending: waiting, refreshPending: () => setRound((n) => n + 1), intake };
   return (
     <Panel.Provider value={context}>
       <View style={[styles.fill, { backgroundColor: wide ? a.page : a.frame, padding: wide ? 16 : 0 }]}>
         <View style={[styles.fill, wide && styles.frame, { flexDirection: wide ? "row" : "column", backgroundColor: a.frame }]}>
-          {wide ? <SideBar name={user.nickname} username={user.username} role={role} pending={pending} folded={folded} onFold={toggleFolded} /> : <TopStrip role={role} pending={pending} />}
+          {wide ? <SideBar name={user.nickname} username={user.username} role={role} pending={waiting} folded={folded} onFold={toggleFolded} /> : <TopStrip role={role} pending={waiting} />}
           <View style={styles.fill}>{children}</View>
         </View>
       </View>

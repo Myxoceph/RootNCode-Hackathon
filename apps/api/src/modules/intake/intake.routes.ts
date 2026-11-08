@@ -239,6 +239,9 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
     const input = parseWith(IntakeReviewRequestSchema, request.body, "INVALID_BODY");
     const draft = await repository.findDraft(id);
     if (!draft) throw draftNotFound();
+    // A new asset is published by its approval: that is an admin's call, as editing assets is. A
+    // visitor's inscription stays with moderators, as visitors' notes do.
+    if (NEW_ASSET_KINDS.has(draft.kind) && user.role !== "admin") throw new HttpError(403, "FORBIDDEN", "Only an admin decides on a new asset");
     if (draft.status !== "pending") throw new HttpError(409, "ALREADY_REVIEWED", `The draft is already ${draft.status}`);
 
     let decided: "ok" | "decided" | "taken";
@@ -259,8 +262,14 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
         if (!parsed.success) throw new HttpError(400, "INVALID_ID", "The record's id must be lowercase kebab-case");
         assetId = parsed.data;
         if (await repository.assetExists(assetId)) throw new HttpError(409, "ASSET_EXISTS", `An asset "${assetId}" already exists; give the record another id`);
-        // Approval is the review: the asset is published once the worker has written it.
-        record = { ...record, id: assetId, status: "published" };
+        // Approval is the review: the asset is published once the worker has written it. The dataset
+        // keeps a record's state in its meta (data/schema/eser.schema.json; no other field may be added).
+        const meta = record["meta"] && typeof record["meta"] === "object" && !Array.isArray(record["meta"]) ? (record["meta"] as Record<string, unknown>) : {};
+        record = {
+          ...record,
+          id: assetId,
+          meta: { ...meta, status: "published", reviewed_by: user.username ?? user.nickname, updated_at: new Date().toISOString().slice(0, 10) },
+        };
       } else if (!(await repository.assetExists(assetId))) {
         throw new HttpError(409, "ASSET_GONE", `The asset "${assetId}" this draft adds to no longer exists`);
       }
