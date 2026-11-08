@@ -51,6 +51,11 @@ def photo_subjects() -> list[str]:
     return list(_schemas()["photoSubjects"])
 
 
+def field_names() -> dict[str, str]:
+    """Taslak alanlarının panelde görünen adları, JSON pointer'ına göre (INTAKE_FIELD_NAMES)."""
+    return dict(_schemas().get("fieldNames", {}))
+
+
 def supports_message_refs() -> bool:
     """Sözleşme sohbet kaynaklarını (`{field, message, quote}`) kabul ediyor mu (yigit-veri-dongusu.md §1.1 c)."""
     return "message" in json.dumps(_schemas()["columns"]["intake_draft.source_refs"])

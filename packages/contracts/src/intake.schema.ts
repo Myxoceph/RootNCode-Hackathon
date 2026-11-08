@@ -354,6 +354,34 @@ export const IntakeChatMessageRequestSchema = withMessageRules(z.strictObject(Ch
 /** `POST /admin/intake/chats`: the first message, and the city the asset is in (the worker reads districts and places within it). */
 export const IntakeChatCreateRequestSchema = withMessageRules(z.strictObject({ ...ChatMessageFields, city: CityCodeSchema }));
 
+/**
+ * What a draft's field is called, by its JSON pointer: on the panel's card and in its questions
+ * ("Mimar yazılmamış"), and at the start of an answer ("Mimar: Bilinmiyor"), which the worker reads
+ * back to the field (data/pipeline/chat.py, through intake.schema.json). One table for both sides.
+ * An inscription is "Kitabe <n>" (n from 1).
+ */
+export const INTAKE_FIELD_NAMES: Record<string, string> = {
+  "/name/tr": "Ad",
+  "/type": "Tür",
+  "/era": "Dönem",
+  "/location/district": "İlçe",
+  "/location/neighborhood": "Mahalle",
+  "/location/address": "Adres",
+  "/location/coordinates": "Konum",
+  "/dating": "Tarih",
+  "/dating/start_year": "Yapım yılı",
+  "/dating/end_year": "Bitiş yılı",
+  "/dating/hijri_year": "Hicri yıl",
+  "/dating/century": "Yüzyıl",
+  "/founder": "Bani (yaptıran)",
+  "/founder/name": "Bani (yaptıran)",
+  "/architect": "Mimar",
+  "/architect/name": "Mimar",
+  "/summary": "Özet",
+  "/sections": "Anlatı bölümleri",
+  "/inscriptions": "Kitabeler",
+};
+
 /** Most messages and photos one chat holds (IntakeChatInputSchema). */
 export const INTAKE_CHAT_MAX_MESSAGES = 200;
 export const INTAKE_CHAT_MAX_FILES = 60;
