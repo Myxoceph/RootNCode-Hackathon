@@ -82,7 +82,7 @@ export function bookMapProblems(entries: BookMapEntry[]): string[] {
 }
 
 /**
- * Veri Döngüsü's review queue and book intake (docs/plans/veri-dongusu.md §4-5), for moderators and
+ * Veri Döngüsü's review queue and book intake (docs/veri-dongusu.md §4-5), for moderators and
  * admins. Registered only with INTAKE_ENABLED. The Python worker does the work in between: it reads
  * jobs and writes drafts in the same tables, and publishes what is approved here.
  */

@@ -1,7 +1,7 @@
 # data/pipeline: Veri Döngüsü worker'ı
 
 Kitap PDF'lerini onay kuyruğuna taslak eser olarak getiren Python hattı. Plan ve iş bölümü:
-[`docs/plans/veri-dongusu.md`](../../docs/plans/veri-dongusu.md) (bu klasör Hüseyin şeridi, H0-H7).
+[`docs/veri-dongusu.md`](../../docs/veri-dongusu.md) (bu klasör Hüseyin şeridi, H0-H7).
 
 > **Yalnızca yerel veritabanı.** Hat, `DATABASE_URL` bu bilgisayarı göstermiyorsa ya da R2 yazma
 > ayarları (`MEDIA_S3_*`) tanımlıysa hiçbir şeye bağlanmadan durur (`db.py`). Bu korumanın kapatma

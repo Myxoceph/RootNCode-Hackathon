@@ -34,14 +34,14 @@ Tek Expo (React Native + Expo Router) kod tabanından iOS, Android ve Web. Kamer
 - Zod ile katı şema doğrulaması uygula.
 
 ## Git Branch Stratejisi
+Final sürümü (2026-11-08) `main`'de; geliştirme bitti, bundan sonra yalnızca düzeltme girer.
 ```
-main ◄── dev ◄── feat/<özellik>
+main ◄── fix/<konu>
 ```
-- `main`: Her zaman çalışan, demo edilebilir sürüm. Yalnızca `dev`'den PR ile güncellenir.
-- `dev`: Varsayılan dal ve entegrasyon dalı. Tüm feature PR'ları buraya birleşir.
-- `feat/<özellik>`: Her yeni özellik `dev`'den açılır ve PR ile `dev`'e döner (ör. `feat/monuments-api`). Hata düzeltmeleri için `fix/<konu>`, doküman için `docs/<konu>`.
-- `main` ve `dev`'e doğrudan push yapılmaz; her değişiklik PR üzerinden gelir.
-- Dal açmadan önce `dev`'i güncelle: `git switch dev && git pull && git switch -c feat/<özellik>`.
+- `main`: Varsayılan dal; canlı sürüm (Oracle sunucusu) `main`'i izler. Her zaman çalışan, demo edilebilir sürüm.
+- Düzeltmeler güncel `main`'den açılan `fix/<konu>` (doküman için `docs/<konu>`) dalında yapılır ve PR ile `main`'e döner: `git switch main && git pull && git switch -c fix/<konu>`.
+- `dev` geliştirme dönemindeki entegrasyon dalıydı; artık kullanılmıyor.
+- `main`'e doğrudan push yapılmaz; her değişiklik PR üzerinden gelir.
 - Commit mesajları Conventional Commits formatında: `feat(api): ...`, `fix(mobile): ...`, `docs: ...`, `chore: ...`.
 - PR'lar "Create a merge commit" ile birleştirilir; adım adım commit geçmişi korunur.
 - Bir PR ekipten bir kurulum adımı gerektiriyorsa (paket, ortam değişkeni, migration, veri içe aktarma) `docs/upgrade-notes.md` dosyasının en üstüne tarihli bir madde eklenir.

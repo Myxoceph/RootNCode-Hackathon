@@ -1,6 +1,6 @@
 /**
  * Integration tests: real PostgreSQL (DATABASE_URL). The intake tables' constraints, which the Python
- * worker relies on as much as the API (docs/plans/veri-dongusu.md §5.2).
+ * worker relies on as much as the API (docs/veri-dongusu.md §5.2).
  */
 import "dotenv/config";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";

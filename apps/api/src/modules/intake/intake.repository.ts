@@ -17,7 +17,7 @@ import { z } from "zod";
 import type { Prisma, PrismaClient } from "../../generated/prisma/client.ts";
 
 /**
- * Veri Döngüsü's tables (docs/plans/veri-dongusu.md §5.2). The Python worker writes the jsonb
+ * Veri Döngüsü's tables (docs/veri-dongusu.md §5.2). The Python worker writes the jsonb
  * columns too: what it wrote is read leniently, so one bad row shows as empty in the panel instead
  * of breaking the whole list.
  */

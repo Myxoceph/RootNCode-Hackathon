@@ -8,10 +8,10 @@ Taslağı Claude Code'da bir **Sonnet** alt ajanı yazar; bir insan kaynağa gö
 > olarak daha çok token harcadı; kullanılmıyor. Yine de **insan kontrolü zorunlu**: iki model de
 > Türkçe-İngilizce metin arasındaki bir çelişkiyi kaçırdı.
 
-> Hüseyin için kurulumdan yayına kadar ayrıntılı rehber: [`HUSEYIN.md`](../../../HUSEYIN.md)
+> Hüseyin için kurulumdan yayına kadar ayrıntılı rehber: [`HUSEYIN.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/HUSEYIN.md)
 
 ## Kim, ne zaman
-- Bölükler [`data/kapsam.md`](../../kapsam.md) üzerinden paylaşılır. **İşe başlamadan önce
+- Bölükler [`data/kapsam.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/data/kapsam.md) üzerinden paylaşılır. **İşe başlamadan önce
   bölüğü kendi adınıza yazın**, bitince durumunu güncelleyin.
 - Günde ~5 bölük/kişi. Kod geliştirdiğiniz oturumdan **ayrı** bir oturumda çalışın; bir bölük
   5 saatlik kullanım penceresinin yaklaşık %5-7'sini harcıyor.

@@ -1,5 +1,5 @@
 /**
- * Veri Döngüsü's development guard (docs/plans/veri-dongusu.md §0, §5.4-5.5): with INTAKE_LOCAL_ONLY
+ * Veri Döngüsü's development guard (docs/veri-dongusu.md §0, §5.4-5.5): with INTAKE_LOCAL_ONLY
  * nothing is written off this machine, and photos go to a local store served at /local-media.
  */
 import { mkdtempSync, readFileSync, rmSync, writeFileSync, mkdirSync, existsSync } from "node:fs";

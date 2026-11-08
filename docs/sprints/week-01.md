@@ -39,7 +39,7 @@ hazır olur, veri hattı ilk gerçek eserleri üretir ve backend ilk API uçlar�
 
 ## Hüseyin Öztürk · Veri & ETL
 
-> **14 Ekim güncellemesi:** Kaynak veri hazır JSON olarak değil, envanter kitapları (PDF) ve fotoğraf arşivi olarak geldi. Hüseyin veri modelini, görsel hattını ve içe aktarma araçlarını `data/` altında kurdu ([PR #7](https://github.com/Myxoceph/RootNCode-Hackathon/pull/7)). H3 bu şekilde karşılandı; H1, H2 ve H4'ün devamı [`data/eksikler.md`](../../data/eksikler.md) üzerinden takip ediliyor. H5 ve H6, mock sözleşmesi ve `CitySchema` yeni veri modeline bırakıldığı için geçersiz.
+> **14 Ekim güncellemesi:** Kaynak veri hazır JSON olarak değil, envanter kitapları (PDF) ve fotoğraf arşivi olarak geldi. Hüseyin veri modelini, görsel hattını ve içe aktarma araçlarını `data/` altında kurdu ([PR #7](https://github.com/Myxoceph/RootNCode-Hackathon/pull/7)). H3 bu şekilde karşılandı; H1, H2 ve H4'ün devamı [`data/eksikler.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/data/eksikler.md) üzerinden takip ediliyor. H5 ve H6, mock sözleşmesi ve `CitySchema` yeni veri modeline bırakıldığı için geçersiz.
 
 | # | Görev | Dal | Tamamlanma kriteri |
 |---|---|---|---|

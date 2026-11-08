@@ -67,7 +67,6 @@ Uygulama özellikleri ve kullandıkları veri:
 ```
 data/
 ├── README.md                  # bu belge
-├── eksikler.md                # eksikler ve yapılacaklar
 ├── enums.json                 # sabit listeler → lookup tabloları
 ├── sources.json               # kaynaklar (kitaplar, foto arşivi) → source tablosu
 ├── schema/eser.schema.json    # eser JSON'unun JSON Schema tanımı

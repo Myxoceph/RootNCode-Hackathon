@@ -13,7 +13,7 @@ import { Badge, Button, Card, CardHeader, errorText, Field, formatDate, useAdmin
 import { pickChatPhotos, type PickedPhoto } from "./pick-image";
 
 /**
- * Sohbetten Kabul's pieces (docs/plans/yigit-veri-dongusu.md §1.4): the messages of a chat, the box
+ * Sohbetten Kabul's pieces (docs/veri-dongusu.md): the messages of a chat, the box
  * a message is written in, and the draft the worker (data/pipeline) wrote from them.
  */
 

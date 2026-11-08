@@ -1,10 +1,10 @@
 # Veri Döngüsü: PDF Kabul + Kitabe Gönüllüleri + Saha Defteri
 
-> **Bu dosya Yiğit'in ve Hüseyin'in Claude Code oturumlarının ortak planıdır.** Bir oturuma
-> başlarken önce bu dosyayı baştan sona oku. Sonra yalnızca kendi şeridindeki (§6) işlere dokun.
-> Plan değişirse bu dosyayı da güncelle; plan ile kod arasında çelişki kalmasın.
+Veri Döngüsü'nün tasarım belgesi: mimari, tablolar, iş bölümü ve geliştirme boyunca uyulan kurallar.
 
-Durum: geliştirme · Dal: `feat/veri-dongusu` · Başlangıç: 2026-11-08
+> **Durum (2026-11-08):** Kod `main`'de; yerelde uçtan uca çalışıyor. Sunucuda `INTAKE_ENABLED` kapalı.
+> Canlıya almak için kalan işler: [README, Yarım kalan işler](../README.md#yarım-kalan-işler).
+> Aşağıdaki kırmızı çizgiler (§0) geliştirme dönemine aittir; canlıya alma kararıyla birlikte yeniden değerlendirilir.
 
 ---
 

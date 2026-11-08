@@ -1,5 +1,5 @@
 /**
- * Integration tests: real PostgreSQL (DATABASE_URL). Sohbetten Kabul (docs/plans/yigit-veri-dongusu.md
+ * Integration tests: real PostgreSQL (DATABASE_URL). Sohbetten Kabul (docs/veri-dongusu.md
  * §1.3): photo uploads, starting a chat, adding to it. The worker's part is played by writing the
  * tables directly, as it would.
  */

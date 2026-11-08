@@ -43,7 +43,7 @@ eserleri listelenir, Ulucami detayında kaynak sayfaları, güven rozetleri ve i
 | # | Görev | Dal | Tamamlanma kriteri |
 |---|---|---|---|
 | H2 | (H1'den) Medya lisans takibi: arşiv fotoğrafı ve ses dosyaları için kaynak + lisans tablosu | `docs/data-sources` | Her medya dosyası için lisans bilgisi var; telif durumu belirsiz olanlar işaretli |
-| H4 | (H1'den, yeni haliyle) Demo kümesini `in_review`'a almak: Orhan Bey Camii, Emir Hanı, Yıldırım Külliyesi, Yeşil Camii, Bedesten, Muradiye Külliyesi ([`data/eksikler.md`](../../data/eksikler.md) §3) | `feat/data-demo-set` | Kayıtlar kaynakla kontrol edildi, koordinat ve en az bir fotoğrafı var, `validate.py` geçiyor |
+| H4 | (H1'den, yeni haliyle) Demo kümesini `in_review`'a almak: Orhan Bey Camii, Emir Hanı, Yıldırım Külliyesi, Yeşil Camii, Bedesten, Muradiye Külliyesi ([`data/eksikler.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/data/eksikler.md) §3) | `feat/data-demo-set` | Kayıtlar kaynakla kontrol edildi, koordinat ve en az bir fotoğrafı var, `validate.py` geçiyor |
 | H7 | Ulucami minber kapısı kitabesinin AR görseli: Drive'dan net, önden çekilmiş fotoğraf `media[]`'ya eklenir ve `ar_target_media_id`'ye bağlanır | `feat/data-ulucami-ar` | Yiğit AR prototipinde bu görseli kullanabiliyor |
 | H8 | Zaman Perdesi için en az bir eserin arşiv fotoğrafı (SALT, Wikimedia Commons, VGM) | `feat/data-archive-photo` | Fotoğraf `archive_photo` olarak kayıtta; lisansı yazılı |
 | H9 | Ses kütüphanesi: `ambient_sound` anahtarları için CC0 ses dosyaları ve `sounds.json` | `feat/data-sounds` | En az cami, hamam ve çarşı sesleri var; her birinin lisansı yazılı |
@@ -63,7 +63,7 @@ eserleri listelenir, Ulucami detayında kaynak sayfaları, güven rozetleri ve i
 
 | # | Görev | Sorumlu | Tamamlanma kriteri |
 |---|---|---|---|
-| E1 | Kitap metinleri ve Drive fotoğraflarının kullanım izni için organizasyona yazılı soru ([`data/eksikler.md`](../../data/eksikler.md) §1) | Ahmet + Hüseyin | E-posta gönderildi; yanıt geldiğinde `data/eksikler.md`'ye işlendi |
+| E1 | Kitap metinleri ve Drive fotoğraflarının kullanım izni için organizasyona yazılı soru ([`data/eksikler.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/data/eksikler.md) §1) | Ahmet + Hüseyin | E-posta gönderildi; yanıt geldiğinde [`eksikler.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/data/eksikler.md)'ye işlendi |
 | E2 ✅ | Namazgâh ve köprü için `asset_types` kodu eklenip eklenmeyeceği (şimdilik `diger`) | Hüseyin + Ahmet | Karar verildi; gerekiyorsa `enums.json` ve ilgili kayıtlar güncellendi · 7 yeni tür (`makam`, `kilise`, `kutuphane`, `namazgah`, `kopru`, `degirmen`, `hoyuk`), 18 kayıt yeniden sınıflandırıldı |
 
 ---
