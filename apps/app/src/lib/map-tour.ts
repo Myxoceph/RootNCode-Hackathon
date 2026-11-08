@@ -36,8 +36,12 @@ export function isTabStep(step: MapTourStep | null): step is TabStep {
 /** The steps counted on the card's dots; `done` stands outside the count. */
 export const COUNTED_STEPS: MapTourStep[] = WEB ? ["city", "choose", "unlock", "opened", ...TAB_STEPS] : ["city", "choose", "unlock", "scan", "opened", ...TAB_STEPS];
 
-/** The map's own opening (the fog lifting) plays out before the tour starts. */
-const START_AFTER_MS = 5200;
+/**
+ * A breath after the map's opening before the tour starts. The driver is `ready` only once the
+ * opening is over (the fog parted, the search bar in), so this no longer waits for the fog itself:
+ * waiting the opening's length again held a new account's tour back for over five seconds.
+ */
+const START_AFTER_MS = 700;
 const START_AFTER_STILL_MS = 800;
 /** "Sıra sende" stays this long over the map once it is back as it was. */
 const DONE_MS = 4500;
@@ -155,7 +159,7 @@ export function useMapTour(driver: MapTourDriver): MapTour {
     [],
   );
 
-  // Starts once, when the map is ready and the opening fog has lifted.
+  // Starts once, when the map is ready: its opening is over and the fog has lifted.
   const canStart = due && driver.ready;
   useEffect(() => {
     if (!canStart) return;
