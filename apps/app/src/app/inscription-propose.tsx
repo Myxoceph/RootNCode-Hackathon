@@ -136,15 +136,14 @@ function Propose({ asset }: { asset: AssetDetail }) {
         <Text color="textSecondary">{w.needsServer}</Text>
       </View>
     );
-  } else if (signedIn && volunteers !== "on") {
-    body =
-      volunteers === "off" ? (
-        <View style={card}>
-          <Text color="textSecondary">{w.off}</Text>
-        </View>
-      ) : (
-        <ActivityIndicator color={c.textSecondary} accessibilityLabel={w.checking} style={styles.checking} />
-      );
+  } else if (signedIn && volunteers === "off") {
+    // Only a server known not to take them closes the form: while it is unknown (no network yet) the
+    // visitor may still try, and the send says what went wrong.
+    body = (
+      <View style={card}>
+        <Text color="textSecondary">{w.off}</Text>
+      </View>
+    );
   } else if (sent) {
     body = (
       <View style={[card, styles.sent]} accessibilityRole="alert">
@@ -328,7 +327,6 @@ const styles = StyleSheet.create({
   center: { textAlign: "center" },
   semibold: { fontFamily: fontFamily.sansSemiBold },
   missing: { flex: 1, alignItems: "center", justifyContent: "center" },
-  checking: { marginTop: spacing.xl },
   column: { gap: spacing.lg, width: "100%", maxWidth: 640, alignSelf: "center", padding: spacing.md },
   intro: { gap: spacing.xs, paddingTop: spacing.sm },
   card: { gap: spacing.md, padding: spacing.md, borderRadius: radius.xl, borderWidth: StyleSheet.hairlineWidth },

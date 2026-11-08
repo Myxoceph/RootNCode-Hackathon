@@ -31,15 +31,24 @@ const SEND_QUALITY = 0.9;
 
 const words = () => getMessages().moreErrors.inscription;
 
+/** A small store: its listeners are told when its value changes. */
+function signal() {
+  const listeners = new Set<() => void>();
+  return {
+    notify: () => listeners.forEach((listener) => listener()),
+    subscribe: (listener: () => void) => {
+      listeners.add(listener);
+      return () => listeners.delete(listener);
+    },
+  };
+}
+
+/** Bumped on each inscription sent, so Kitabelerim asks again. */
 let sent = 0;
-const listeners = new Set<() => void>();
+const sentSignal = signal();
 const bump = () => {
   sent += 1;
-  listeners.forEach((listener) => listener());
-};
-const subscribe = (listener: () => void) => {
-  listeners.add(listener);
-  return () => listeners.delete(listener);
+  sentSignal.notify();
 };
 
 function errorFor(token: string) {
@@ -106,11 +115,22 @@ export async function sendInscriptionProposal(
 /**
  * Whether this server takes inscriptions: the routes are there only with Veri Döngüsü on
  * (INTAKE_ENABLED), so where they are not the app offers nothing and stays as it was. Learnt once per
- * account from its list (`/me/inscription-proposals`); a 404 means off. A request that fails for
- * another reason (no network) is asked again a little later.
+ * account from its list (`/me/inscription-proposals`): an answer means on, a 404 off. Any other
+ * failure (no network) leaves it `unknown` and is asked again after PROBE_RETRY_MS, once for all
+ * the screens that use it. The list the answer brought is kept for Kitabelerim's first look.
  */
 export type VolunteersState = "unknown" | "on" | "off";
-const probe: { user: string | null; state: VolunteersState; asking: boolean; attempt: number } = { user: null, state: "unknown", asking: false, attempt: 0 };
+const probe = {
+  user: null as string | null,
+  state: "unknown" as VolunteersState,
+  asking: false,
+  /** No new question before this time (after a failure). */
+  waitUntil: 0,
+  timer: null as ReturnType<typeof setTimeout> | null,
+  /** The list the last answer brought, with the `sent` it was for; taken once. */
+  items: null as { sent: number; items: InscriptionProposal[] } | null,
+};
+const probeSignal = signal();
 const OFF = "INSCRIPTION_VOLUNTEERS_OFF";
 const PROBE_RETRY_MS = 30_000;
 
@@ -126,48 +146,51 @@ export async function fetchMyInscriptionProposals(): Promise<InscriptionProposal
   return answer!.items;
 }
 
-const notify = () => listeners.forEach((listener) => listener());
-
 function ask(user: string) {
-  if (probe.asking) return;
+  if (probe.asking || Date.now() < probe.waitUntil) return;
   probe.asking = true;
+  const askedAt = sent;
   const settle = (state: VolunteersState) => {
     if (probe.user !== user) return;
     probe.asking = false;
     probe.state = state;
-    notify();
+    probeSignal.notify();
+  };
+  const later = () => {
+    if (probe.user !== user) return;
+    probe.asking = false;
+    probe.waitUntil = Date.now() + PROBE_RETRY_MS;
+    if (probe.timer) clearTimeout(probe.timer);
+    probe.timer = setTimeout(() => {
+      probe.timer = null;
+      if (probe.user === user && probe.state === "unknown") ask(user);
+    }, PROBE_RETRY_MS);
   };
   fetchMyInscriptionProposals().then(
-    () => settle("on"),
-    (error: unknown) => {
-      if (error instanceof DataError && error.code === OFF) return settle("off");
-      if (probe.user !== user) return;
-      probe.asking = false;
-      setTimeout(() => {
-        if (probe.user !== user || probe.state !== "unknown") return;
-        probe.attempt += 1;
-        notify();
-      }, PROBE_RETRY_MS);
+    (items) => {
+      // No token after all (signing in or out): nothing was asked, so nothing is known.
+      if (items === null) return later();
+      if (probe.user === user) probe.items = { sent: askedAt, items };
+      settle("on");
     },
+    (error: unknown) => (error instanceof DataError && error.code === OFF ? settle("off") : later()),
   );
 }
 
-/** Whether this server takes inscriptions from the signed-in account; `unknown` while it is being asked. */
+/** Whether this server takes inscriptions from the signed-in account; `unknown` until it has said. */
 export function useInscriptionVolunteersState(): VolunteersState {
   const { user } = useCommunity();
   const id = communityAvailable && user?.username ? user.id : null;
-  const attempt = useSyncExternalStore(subscribe, () => probe.attempt, () => 0);
-  useSyncExternalStore(subscribe, () => `${probe.user}:${probe.state}`, () => "");
+  useSyncExternalStore(probeSignal.subscribe, () => `${probe.user}:${probe.state}`, () => "");
   useEffect(() => {
     if (id === null) return;
     if (probe.user !== id) {
       // Another account: what the last one was told does not hold, and its answer is dropped.
-      probe.user = id;
-      probe.state = "unknown";
-      probe.asking = false;
+      if (probe.timer) clearTimeout(probe.timer);
+      Object.assign(probe, { user: id, state: "unknown", asking: false, waitUntil: 0, timer: null, items: null });
     }
     if (probe.state === "unknown") ask(id);
-  }, [id, attempt]);
+  }, [id]);
   if (id === null) return "off";
   return probe.user === id ? probe.state : "unknown";
 }
@@ -175,12 +198,19 @@ export function useInscriptionVolunteersState(): VolunteersState {
 /** True once the server is known to take inscriptions from this account. */
 export const useInscriptionVolunteers = () => useInscriptionVolunteersState() === "on";
 
-/** Profil · Kitabelerim: fetched again for a new account and after each one sent. */
+/** Profil · Kitabelerim: fetched again for a new account and after each one sent; the probe's list first. */
 export function useMyInscriptionProposals(): ResourceWithRetry<InscriptionProposal[] | null> {
   const { user } = useCommunity();
-  const count = useSyncExternalStore(subscribe, () => sent, () => sent);
+  const count = useSyncExternalStore(sentSignal.subscribe, () => sent, () => sent);
   const key = user === undefined ? null : `${user?.id ?? ""}:${count}`;
-  const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchMyInscriptionProposals()), [key]);
+  // `key` stands for the account and the count read here.
+  const load = useCallback(() => {
+    if (key === null) return new Promise<never>(() => {});
+    const kept = probe.items;
+    probe.items = null;
+    if (kept && probe.user === user?.id && kept.sent === count) return Promise.resolve(kept.items);
+    return fetchMyInscriptionProposals();
+  }, [key]);
   return useResource(load);
 }
 
