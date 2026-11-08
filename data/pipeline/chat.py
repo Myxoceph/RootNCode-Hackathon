@@ -33,7 +33,7 @@ from pathlib import Path
 from typing import Any
 
 from config import PROMPTS, REPO
-from intake_contract import clip_validation, photo_subjects, supports_message_refs, supports_missing
+from intake_contract import clip_validation, field_names, photo_subjects, supports_message_refs, supports_missing
 from llm import Evren, LlmError, parse_json
 from stages import Draft
 
@@ -52,16 +52,17 @@ CITY_REGION = {item["code"]: item["region"] for item in ENUMS["cities"]}
 # Bölüm/özet: olgular (sayılar, özel adlar) mesajlarda birebir geçmeli; öbür kelimelerin en az bu payı.
 # Model cümleyi yeniden kurunca "yer almaktadır", "bulunmaktadır" gibi dolgular eklenir: düz oran (eski
 # %85) gerçek sohbetlerde bölümlerin çoğunu atıyordu (Muradiye denemesi: dört bölümden üçü, %62-81).
-COVERAGE_MIN = 0.6
-# Bölüm metninde olgu sayılmayan, dilin kendi dolgusu: oranın dışında tutulur.
+COVERAGE_MIN = 0.7
+# Bölüm metninde olgu sayılmayan, dilin kendi dolgusu (bağlaçlar, "yer almaktadır"): orana ve özel ad
+# denetimine girmez. Yalnızca dil bilgisi: "yapı", "iç", "günümüzde" gibi bir şey söyleyen kelimeler değil.
 FILLER = set("""
-yer almaktadır almaktadır bulunmaktadır bulunur bulunan bulunuyor yer alır yer alan olarak olan olup olmuştur
-olmaktadır sahiptir sahip dikkat çeker çekmektedir çeken oluşur oluşmaktadır yapılmıştır inşa edilmiştir
-edilmiştir eden etmektedir ayrıca ancak ise ile için gibi kadar sonra önce daha çok bir bu şu o bunun
-şekilde biçimde yapı yapının yapıda yapıdır eser eserin eserdir günümüzde bugün içinde iç dış mekan mekân
+yer almaktadır almaktadır alır alan bulunmaktadır bulunur bulunan bulunuyor olarak olan olup olmuştur
+olmaktadır sahiptir sahip dikkat çeker çekmektedir çeken oluşur oluşmaktadır edilmiştir eden etmektedir
+ayrıca ancak ise ile için gibi kadar daha çok bir bu şu o bunun şekilde biçimde ve de da ki ne hem
 """.split())
 # Bir kişinin işin yalnızca bir kısmını yaptığını gösteren sözler (alıntıda).
-PARTIAL = re.compile(r"\b(planı|planını|tasarımı|projesi|onar\w*|tamir\w*|başlat\w*|tamamla\w*|birlikte|başka mimar\w*|yardım\w*|katkı\w*)\b")
+# Yalnızca mimar için: binanın değil kişinin işini anlatan etken fiiller ("tamamlandı" değil "tamamladı").
+PARTIAL = re.compile(r"\b(planı|planını|tasarımı|projesi|başlattı|başlatmış|tamamladı|tamamlamış|başka mimar\w*|birlikte yaptı\w*)\b")
 # Görüntü modeli bundan az eminse konu "other" yazılır: mühür ve kapak seçimi yanlış bir konuya dayanmasın.
 PHOTO_SUBJECT_MIN = 0.5
 DUPLICATE_NAME = 0.86
@@ -237,17 +238,13 @@ def check_quote(name: str, pointer: str, item: dict[str, Any], messages: list[st
     return True
 
 
-_SENTENCE_START = re.compile(r"(^|[.!?:;]\s+|\n)$")
-
-
 def facts(text: str) -> list[str]:
-    """Metnin olguları: sayılar ve cümle başında olmayan büyük harfli kelimeler (özel adlar)."""
+    """Metnin olguları: sayılar ve büyük harfle başlayan bütün kelimeler (cümle başındakiler de: bir
+    özel ad Türkçede çoğu zaman cümleyi açar), dolgu kelimeleri dışında."""
     found: list[str] = []
-    for match in re.finditer(r"[\w']+", text or ""):
-        word = match.group(0).split("'")[0]
-        if not word:
-            continue
-        if word.isdigit() or (word[0].isupper() and not _SENTENCE_START.search(text[: match.start()])):
+    for match in re.finditer(r"\w+", text or ""):
+        word = match.group(0)
+        if word.isdigit() or (word[0].isupper() and norm(word) not in FILLER):
             found.append(word)
     return found
 
@@ -256,7 +253,8 @@ def grounded_text(name: str, text: str, source: str, found: Findings) -> bool:
     """Bölüm ya da özet: sayıları ve özel adları mesajlarda geçmeli (yeni yıl, kişi, yer eklenemez);
     öbür kelimelerin (dolgu dışında) en az %60'ı mesajlarda olmalı. Değilse taslağa girmez."""
     pool = set(words(source, least=1))
-    new = [word for word in facts(text) if not _word_found(norm(word), pool)]
+    # Kısa bir kelime ("İç") mesajda ekiyle geçer ("İçi"): kök eşleşmesi 4 harften kısa kelimelere bakmaz.
+    new = [word for word in facts(text) if not (_word_found(norm(word), pool) or (len(norm(word)) < 4 and any(other.startswith(norm(word)) for other in pool)))]
     if new:
         shown = ", ".join(dict.fromkeys(new))
         found.warnings.append(f"kaynaksız: {name}, mesajlarda olmayan ad ya da sayı var ({shown[:120]}); taslağa eklenmedi")
@@ -273,7 +271,9 @@ def _without_title(text: str) -> str:
     """İlk satır noktalamasız bir başlıksa (eserin adı) onsuz metin."""
     text = text.strip()
     lines = text.split("\n", 1)
-    if len(lines) == 2 and not re.search(r"[.!?]", lines[0]) and lines[1].strip():
+    first = lines[0].strip()
+    # Bir başlık: kısa, noktalamasız, sayısız ("Muradiye Camii"). "Cami 1583'te yapıldı" bir cümledir.
+    if len(lines) == 2 and lines[1].strip() and len(first) <= 60 and len(first.split()) <= 6 and not re.search(r"[.!?,;:\d]", first):
         return lines[1].strip()
     return text
 
@@ -283,32 +283,47 @@ def told_text(messages: list[str], limit: int = 6000) -> str:
     parts = []
     for index, text in enumerate(messages):
         text = _without_title(text) if index == 0 else text.strip()
-        lines = [line.strip() for line in text.split("\n") if line.strip() and not ANSWER_LINE.match(line.strip())]
+        lines = [line.strip() for line in text.split("\n") if line.strip() and not is_answer_line(line.strip())]
         if lines:
             parts.append(" ".join(lines))
     return "\n\n".join(parts)[:limit].strip()
 
 
-# Panelin sorusuna verilen cevap satırı: "Mimar: …" (panel soruyu böyle başlatır).
-ANSWER_LINE = re.compile(r"^(mimar|bani|bani \(yaptıran\)|yaptıran|dönem|mahalle|adres|ilçe|konum|tarih|kitabe|özet)\s*:", re.I)
 UNKNOWN = re.compile(r"^\s*(bilinmiyor|bilinmemektedir|belli değil|belirsiz|yok|bilgi yok)\b", re.I)
-# Cevap satırının başlığı → taslaktaki alan (panel, apps/app/src/components/admin/intake-chat.tsx FIELD_NAMES).
-ANSWER_FIELDS = {
-    "mimar": "/architect", "bani": "/founder", "bani (yaptıran)": "/founder", "yaptıran": "/founder", "dönem": "/era",
-    "mahalle": "/location/neighborhood", "adres": "/location/address", "ilçe": "/location/district",
-    "konum": "/location/coordinates", "tarih": "/dating", "kitabe": "/inscriptions", "özet": "/summary",
-}
+INSCRIPTION_LABEL = re.compile(r"^kitabe (\d+)$")
+
+
+def answer_field(head: str) -> str | None:
+    """Bir cevap satırının başlığı ("Mimar", "Kitabeler", "Kitabe 2") → taslaktaki alan. Adlar panelle aynı
+    tablodan (sözleşmenin INTAKE_FIELD_NAMES'i); "Mimar" hem /architect hem /architect/name'dir, kısası seçilir."""
+    key = norm(head)
+    match = INSCRIPTION_LABEL.match(key)
+    if match:
+        return f"/inscriptions/{int(match.group(1)) - 1}"
+    pointers = [pointer for pointer, label in field_names().items() if norm(label) == key]
+    return min(pointers, key=len) if pointers else None
+
+
+def is_answer_line(line: str) -> bool:
+    head, sep, _ = line.partition(":")
+    return bool(sep) and answer_field(head) is not None
 
 
 def told_unknown(messages: list[str]) -> list[tuple[str, str]]:
-    """Yetkilinin "bilinmiyor" dediği alanlar ("Mimar: Bilinmiyor; kitabede adı geçmiyor."): soru kapanır."""
+    """Yetkilinin "bilinmiyor" dediği alanlar ("Mimar: Bilinmiyor; kitabede adı geçmiyor."): soru kapanır.
+    Sonraki bir mesaj o alanı yeniden anıyorsa (adıyla ya da "Mimar: …" cevabıyla) kapanmaz: yeni bilgi
+    gelmiş olabilir, model onu alıntılayamadıysa soru durmalı."""
     found: list[tuple[str, str]] = []
-    for text in messages:
+    for index, text in enumerate(messages):
         for line in text.split("\n"):
             head, sep, rest = line.strip().partition(":")
-            key = head.strip().translate(_TR_UPPER).lower()
-            if sep and key in ANSWER_FIELDS and UNKNOWN.match(rest):
-                found.append((ANSWER_FIELDS[key], head.strip()))
+            pointer = answer_field(head) if sep else None
+            if not pointer or not UNKNOWN.match(rest):
+                continue
+            word = norm(head).split()[0]
+            later = any(word in norm(other) for other in messages[index + 1 :])
+            if not later:
+                found.append((pointer, head.strip()))
     return found
 
 
@@ -532,12 +547,13 @@ class ChatStages:
             people[key] = None
             # "Mimar Sinan, Mimar Mahmud Ağa, Mimar Davud Ağa": bir alanda bir kişi. İlki ad, öbürleri aday.
             if key == "architect" and item and isinstance(item.get("name"), str) and ", " in item["name"]:
-                first, *rest = [part.strip() for part in item["name"].split(",") if part.strip()]
-                item = {**item, "name": first, "others": [*(item.get("others") or []), *({"name": n, "message": item.get("message"), "quote": item.get("quote")} for n in rest)]}
+                parts = [part.strip() for part in item["name"].split(",") if part.strip()]
+                if parts:
+                    item = {**item, "name": parts[0], "others": [*(item.get("others") or []), *({"name": n, "message": item.get("message"), "quote": item.get("quote")} for n in parts[1:])]}
             if item and check_quote(key, f"/{key}/name", item, messages, [item["name"]], found):
                 confidence = item["confidence"]
                 # "Planı Sinan'ın; inşaatı başka mimarlar yürüttü": işin bir kısmı. Kesin denemez.
-                if confidence == "certain" and PARTIAL.search(qnorm(item.get("quote") or "")):
+                if key == "architect" and confidence == "certain" and PARTIAL.search(qnorm(item.get("quote") or "")):
                     confidence = "probable"
                     found.warnings.append(f"{key}: alıntı işin yalnızca bir kısmını söylüyor; güven 'probable' yapıldı")
                 person = {"name": item["name"], "confidence": confidence, "source_refs": ref(item)}

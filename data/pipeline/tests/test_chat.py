@@ -153,9 +153,24 @@ class Draft(unittest.TestCase):
             self.assertFalse(grounded_text("sections[Tarihçe]", body, source, found), body)
             self.assertIn("mesajlarda olmayan ad ya da sayı", found.warnings[0])
 
+    def test_a_new_name_opening_a_sentence_is_caught(self):
+        found = Findings()
+        self.assertFalse(grounded_text("sections[Tarihçe]", "Cami 1583'te yapıldı. Kemaleddin yaptırdı.", "Cami 1583'te yapıldı.", found))
+
+    def test_new_lowercase_facts_are_too_much(self):
+        source = "Tek kubbeli bir camidir. Avlusunda şadırvan var."
+        body = "Tek kubbeli bir camidir, avlusunda şadırvan var; depremde yıkılmış, ahşap minaresi yenilenmiş."
+        self.assertFalse(grounded_text("sections[Mimari]", body, source, Findings()))
+
+    def test_a_connective_opening_a_sentence_is_not_a_name(self):
+        source = "Tek kubbeli bir camidir. Avlusunda şadırvan var."
+        self.assertTrue(grounded_text("sections[Mimari]", "Tek kubbeli bir camidir. Ayrıca avlusunda şadırvan var.", source, Findings()))
+
     def test_first_sentence_skips_a_title_line(self):
         self.assertEqual(first_sentence(["Muradiye Camii\nManisa'da, Şehzadeler ilçesinde. Tek kubbeli."]), "Manisa'da, Şehzadeler ilçesinde.")
         self.assertEqual(first_sentence(["Cami 1490'da yapıldı. Tek kubbeli."]), "Cami 1490'da yapıldı.")
+        # Noktasız ama bir cümle olan ilk satır atılmaz.
+        self.assertEqual(first_sentence(["Muradiye Camii 1583'te Mimar Sinan planıyla yapıldı\nİçi çinili."]), "Muradiye Camii 1583'te Mimar Sinan planıyla yapıldı\nİçi çinili.")
 
     def test_several_architects_are_one_name_and_candidates(self):
         messages = [*MESSAGES, "Planı Mimar Sinan'ın. İnşaatı Mimar Mahmud Ağa başlattı, Mimar Davud Ağa tamamladı."]
@@ -189,6 +204,30 @@ class Draft(unittest.TestCase):
         self.assertNotIn("/architect", draft.validation["missing"])
         self.assertIn("/architect", stages(GOOD).draft_chat(job()).validation["missing"], "cevaplanmadıkça soru durur")
         self.assertTrue(any("bilinmediğini" in w for w in draft.validation["warnings"]))
+
+    def test_answers_close_questions_by_the_panels_own_names(self):
+        answer = copy.deepcopy(GOOD)
+        answer["missing"] = ["architect", "inscriptions", "start_year"]
+        messages = [*MESSAGES, "Kitabeler: Bilinmiyor.\nYapım yılı: belli değil"]
+        missing = stages(answer).draft_chat(job(messages=messages)).validation["missing"]
+        self.assertNotIn("/inscriptions", missing)
+        self.assertNotIn("/dating/start_year", missing)
+        self.assertIn("/architect", missing)
+
+    def test_a_later_message_about_the_field_keeps_the_question(self):
+        messages = [*MESSAGES, "Mimar: Bilinmiyor.", "Mimarının Sinan olduğu vakfiyede yazıyor."]
+        self.assertIn("/architect", stages(GOOD).draft_chat(job(messages=messages)).validation["missing"])
+
+    def test_a_certain_founder_stays_certain(self):
+        answer = copy.deepcopy(GOOD)
+        answer["founder"]["quote"] = "Cami 1490 yılında Hacı Ahmed Bey tarafından yaptırılmıştır."
+        messages = [MESSAGES[0].replace("yaptırılmıştır.", "yaptırılmıştır. Yapım 1492'de tamamlandı."), MESSAGES[1]]
+        self.assertEqual(stages(answer).draft_chat(job(messages=messages)).record["founder"]["confidence"], "certain")
+
+    def test_a_name_of_only_commas_does_not_break_the_draft(self):
+        answer = copy.deepcopy(GOOD)
+        answer["architect"] = {"name": " , ", "confidence": "certain", "message": 1, "quote": "Cami 1490 yılında Hacı Ahmed Bey tarafından yaptırılmıştır."}
+        stages(answer).draft_chat(job())
 
     def test_an_ungrounded_name_blocks_approval(self):
         answer = copy.deepcopy(GOOD)
