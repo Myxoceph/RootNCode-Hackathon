@@ -4,7 +4,7 @@ export type PanelRole = "moderator" | "admin";
 
 export interface PanelContext {
   role: PanelRole;
-  /** Pending notes, for the side bar's count; pages bump it after a review. */
+  /** Pending notes and drafts for this person, for the side bar's count; pages bump it after a review. */
   pending: number | null;
   refreshPending: () => void;
   /** Whether this API has Veri Döngüsü's routes (INTAKE_ENABLED): only then is Sohbetten Kabul shown. */

@@ -212,7 +212,7 @@ export function PageHeader({ overline, title, hint, actions, tools = true }: { o
       <View style={[kit.row, { flexWrap: "wrap", gap: 10 }]}>
         {tools && (
           <>
-            <IconButton icon="notifications-outline" label={pending ? `${pending} not bekliyor` : "İnceleme"} dot={!!pending} onPress={() => router.push("/admin/review")} />
+            <IconButton icon="notifications-outline" label={pending ? `${pending} inceleme bekliyor` : "İnceleme"} dot={!!pending} onPress={() => router.push("/admin/review")} />
             <IconButton icon="map-outline" label="Uygulamaya dön" onPress={() => router.replace("/map")} />
           </>
         )}
