@@ -211,9 +211,9 @@ adresini değiştirmeden (`https://vagabonds.allbytech.com/api`) dener. Mac ayn�
 
 - **Aynı yapı:** `deploy/compose.yml` ve `deploy/demo.sh` sunucuda aynen çalışıyor; bütün imajların ARM sürümü
   var. Konya'nın OTP grafiği (`deploy/otp/data/graph.obj`) Mac'ten kopyalandı, sunucuda yeniden derlenmez.
-- **Kendini günceller:** `vagabonds-update.timer` 5 dakikada bir `dev`'e bakar; dal ilerlediyse çeker, `demo.sh up`
+- **Kendini günceller:** `vagabonds-update.timer` 5 dakikada bir `main`'e bakar; dal ilerlediyse çeker, `demo.sh up`
   ile yalnızca değişeni derler, ön kontrolü çalıştırır ve eski imajları siler (`deploy/oracle/update.sh`). Kayıt:
-  `journalctl -u vagabonds-update -n 50`. Final için `main`'i izlesin: servise `Environment=VAGABONDS_BRANCH=main`.
+  `journalctl -u vagabonds-update -n 50`. Başka bir dalı izlemek için: servise `Environment=VAGABONDS_BRANCH=<dal>`.
 - **Tünel:** `vagabonds-tunnel.service` (`demo.sh tunnel`) sunucu açılınca başlar, koparsa 5 sn sonra yeniden
   bağlanır. Kayıt: `journalctl -u vagabonds-tunnel -f`.
 - **Erişim:** `ssh -i ~/.ssh/vagabonds_oracle ubuntu@130.61.26.125` (Ahmet'in Mac'inde). Dışarıya yalnızca SSH
@@ -339,7 +339,7 @@ karşılaştırarak gör.
 `deploy/demo.sh tunnel`, sonra `deploy/demo.sh check https://vagabonds.allbytech.com`: hepsi ✓ olmalı.
 
 **Asistanı ısıt:** sunumdan en çok 30 dakika önce sahnede soracağın soruları uygulamadan, bir hesapla giriş
-yapıp aynı kelimelerle bir kez sor (sorular ve sıra: [demo.md](demo.md)). API, geçmişi olmayan ilk soruyu (aynı
+yapıp aynı kelimelerle bir kez sor (sorular ve sıra: [demo.md](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/docs/demo.md)). API, geçmişi olmayan ilk soruyu (aynı
 kelimeler, aynı eser sayfası, aynı dil) 30 dakika boyunca bellekten anında cevaplar; model 5–30 sn, yoğunken daha
 uzun sürüyor. Gezi planı ve toplu taşıma cevapları saate bağlı: yalnızca aynı saat içinde bellekten gelir, onları
 sahnede soracağın saatte ısıt. Takip soruları her zaman modele gider. API yeniden başlarsa (`deploy/demo.sh up`)
