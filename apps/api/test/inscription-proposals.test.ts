@@ -8,7 +8,7 @@ import { randomUUID } from "node:crypto";
 import { existsSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
-import { InscriptionDraftSchema, IntakeReviewRequestSchema } from "@vagabonds/contracts";
+import { InscriptionDraftSchema, InscriptionProposalListResponseSchema, InscriptionProposalResponseSchema, IntakeReviewRequestSchema } from "@vagabonds/contracts";
 import type { FastifyInstance } from "fastify";
 import sharp from "sharp";
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
@@ -17,8 +17,6 @@ import { createPrismaClient, type PrismaClient } from "../src/db/prisma.ts";
 import { createLocalMediaStore } from "../src/modules/admin/media-store.ts";
 import { hashToken, newToken } from "../src/modules/community/auth.ts";
 import {
-  InscriptionProposalListResponseSchema,
-  InscriptionProposalResponseSchema,
   PROPOSALS_PER_HOUR,
   parsePrompt,
   toDraft,

@@ -6,9 +6,14 @@ import {
   CONTRACT_VERSION,
   INTAKE_UPLOAD_MAX_BYTES,
   INTAKE_UPLOAD_TYPES,
+  INSCRIPTION_PROPOSALS_PER_HOUR,
   InscriptionDraftSchema,
-  IntakeDraftStatusSchema,
+  InscriptionProposalListResponseSchema,
+  InscriptionProposalQuerySchema,
+  InscriptionProposalResponseSchema,
+  InscriptionProposalSchema,
   type InscriptionDraft,
+  type InscriptionProposal,
   type IntakeDraftMedia,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync } from "fastify";
@@ -43,44 +48,13 @@ import { VisionError, type VisionClient } from "../vision/vision.client.ts";
  * A visitor's photo is never lost to the model: when the model cannot be reached the draft goes in all
  * the same.
  *
- * Request and response shapes are kept here until Yiğit moves them into @vagabonds/contracts
- * (contract changes are his; docs/plans/yigit-veri-dongusu.md).
+ * Request and response shapes are the contract's (`@vagabonds/contracts`, intake.schema.ts).
  */
-
-// ── Shapes (to move into packages/contracts/src/intake.schema.ts) ─────────────────────────────
-
-/** `POST /assets/:id/inscription-proposals`: the body is the photo itself; these go in the query. */
-export const InscriptionProposalQuerySchema = z.object({
-  /** Where on the asset, in the visitor's words ("taç kapının üstü"). */
-  location: z.string().trim().min(1).max(300).optional(),
-  /** Anything the visitor wants the expert to know. */
-  note: z.string().trim().min(1).max(1000).optional(),
-});
-
-/** What the visitor sees of a proposal: its state only. */
-export const InscriptionProposalSchema = z.strictObject({
-  id: z.uuid(),
-  assetId: AssetIdSchema,
-  assetName: z.string(),
-  status: IntakeDraftStatusSchema,
-  /** Approved and in the app (Taşın Dili can scan it). */
-  published: z.boolean(),
-  /** The expert's note when it was turned down. */
-  reviewNote: z.string().nullable(),
-  /** The visitor's photo, as the media host serves it. */
-  photo: z.string(),
-  createdAt: z.iso.datetime({ offset: true }),
-  reviewedAt: z.iso.datetime({ offset: true }).nullable(),
-});
-export type InscriptionProposal = z.infer<typeof InscriptionProposalSchema>;
-
-export const InscriptionProposalResponseSchema = z.strictObject({ version: z.string(), proposal: InscriptionProposalSchema });
-export const InscriptionProposalListResponseSchema = z.strictObject({ version: z.string(), items: z.array(InscriptionProposalSchema) });
 
 // ── Limits ────────────────────────────────────────────────────────────────────────────────────
 
 /** Proposals one account may send in an hour (plan H7): each is a photo to keep and a model call. */
-export const PROPOSALS_PER_HOUR = 5;
+export const PROPOSALS_PER_HOUR = INSCRIPTION_PROPOSALS_PER_HOUR;
 /** A look takes 2 to 8 s; a second call joins one still out at 12 s. The app waits up to 45 s. */
 export const TRIAGE_HEDGE_MS = [0, 12_000];
 export const TRIAGE_DEADLINE_MS = 35_000;
