@@ -1,7 +1,7 @@
 # data/pipeline: Veri Döngüsü worker'ı
 
 Kitap PDF'lerini onay kuyruğuna taslak eser olarak getiren Python hattı. Plan ve iş bölümü:
-[`docs/plans/veri-dongusu.md`](../../docs/plans/veri-dongusu.md) (bu klasör Hüseyin şeridi, H0-H6).
+[`docs/plans/veri-dongusu.md`](../../docs/plans/veri-dongusu.md) (bu klasör Hüseyin şeridi, H0-H7).
 
 > **Yalnızca yerel veritabanı.** Hat, `DATABASE_URL` bu bilgisayarı göstermiyorsa ya da R2 yazma
 > ayarları (`MEDIA_S3_*`) tanımlıysa hiçbir şeye bağlanmadan durur (`db.py`). Bu korumanın kapatma
@@ -37,6 +37,8 @@ python3 data/pipeline/dev.py jobs
 python3 data/pipeline/dev.py confirm <iş-id>       # kitap haritasını uzmanın yerine onayla
 python3 data/pipeline/dev.py drafts <iş-id>
 python3 data/pipeline/dev.py remove <iş-id>
+python3 data/pipeline/dev.py approve <taslak-id> --by "Ad Soyad"   # panelin onayının yerine; worker yayınlar
+python3 data/pipeline/dev.py retry-apply <taslak-id>               # yayın hatası düzeltildikten sonra
 
 # Sohbet adımını tabloya yazmadan dene (gerçek EVREN çağrılır):
 python3 data/pipeline/dev.py chat --city bursa --text-file mesaj1.txt --text-file mesaj2.txt [--photo a.jpg] --out taslak.json
@@ -54,6 +56,7 @@ reddedilmiş bir taslağın üzerine yazılmaz.
 |---|---|
 | `worker.py` | Kuyruk döngüsü, iş kilidi (oturum süren advisory lock), durum ve ilerleme |
 | `stages.py` | Bir işin adımları: `map_book` (H2), `draft_entry` (H4), `draft_chat`. Kitap adımları bugün iskelet |
+| `publish.py` | Yayın (H6): onaylı taslak → `data/eserler/…json` → `validate.py` → fotoğraflar → yalnızca o eser veritabanına → `applied_at`. Hata olursa geri alır, `apply_error`. Konum zorunlu değil. Kitabe taslağı (H7) var olan eserin dosyasına eklenir |
 | `chat.py` | Sohbetten Kabul: mesajlar → alanlar ve bölümler, alıntı denetimi, fotoğraf konusu ve EXIF konumu, tekrar uyarısı, `validate.py` |
 | `prompts/` | İstemler; ilk satır `version: …` (taslağın `ai.promptVersion`'ı) |
 | `db.py` | Yerel-yalnız bağlantı: adres ve bağlanılan sunucu iki kez denetlenir |

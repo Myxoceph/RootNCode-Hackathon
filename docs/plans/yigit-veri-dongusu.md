@@ -224,3 +224,20 @@ Sözleşme `packages/contracts/src/intake.schema.ts`, migration `20261108130000_
   yeni eser yerine var olan esere değişiklik olarak yazılır; Y1'in onay akışını etkiler.
 - Bir sohbet birden çok eser getirebilir mi (ör. bir külliye ve yapıları)? Bugünkü öneri: **bir sohbet = bir eser.**
   Külliyenin her yapısı ayrı sohbet, `parent_id` admin'in yazdığından.
+
+## 5. Kitabe Gönüllüleri (H7) hazır: Y5 için (2026-11-09)
+
+Ayrıntılar planın §10'unda ("Hüseyin → Yiğit (H7, Y5 için)"). Kısaca:
+
+- **Uçlar:** `POST /assets/:id/inscription-proposals` (hesap zorunlu; gövde fotoğrafın kendisi, `?location=&note=`; saatte 5, aşan
+  429 `TOO_MANY_PROPOSALS`) ve `GET /me/inscription-proposals` (Profil'deki durum). Kod:
+  `apps/api/src/modules/intake/inscription-proposals.routes.ts`.
+- **Sözleşme senin:** istek ve cevap şemaları şimdilik o dosyada. `packages/contracts/src/intake.schema.ts`'e taşı; route'u ben
+  oradan alacak şekilde düzeltirim (ya da sen düzelt, tek import).
+- **Model kitabe okumaz** (plan §7): denemelerde metni uydurdu. Taslağın `record`'unda dil, okuma ve çeviri boş gelir; uzman
+  fotoğraftan doldurur. Modelin ipuçları (alfabe, satır sayısı, okunaklılık, Taşın Dili'ne uygunluk) `validation.warnings`'te.
+  Onay ekranında fotoğrafı büyük göster.
+- **Rozet** ("Kitabe Gönüllüsü"): `published: true` olan ilk gönderimde.
+- **Taşın Dili:** onaylanan kitabe eser sayfasında hemen görünür; fotoğraf AR'a uygunsa worker derleyip yeniden aktarır,
+  birkaç saniye içinde `/ar-targets`'ta. Uygulamada ek bir iş gerekmiyor.
+

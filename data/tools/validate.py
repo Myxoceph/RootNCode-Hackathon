@@ -128,9 +128,12 @@ def cross_check(rec, path, all_ids):
     if rec["meta"]["status"] == "published":
         if not rec["meta"].get("reviewed_by"):
             errors.append("published kayıtta meta.reviewed_by dolu olmalı")
+        # Yönetim panelindeki sohbetten gelen kayıt (Veri Döngüsü): metin yetkilinin yazdığıdır, model çeviri
+        # yapmaz. İngilizcesi onaydan sonra eklenir; o zamana kadar uygulama Türkçesini gösterir (API: pick).
+        from_chat = rec["meta"].get("from") == "panel-sohbet"
         for s in rec["sections"]:
             if not s["body"].get("en"):
-                errors.append(f"published kayıtta sections[{s['id']}] İngilizce metin eksik")
+                (warnings if from_chat else errors).append(f"published kayıtta sections[{s['id']}] İngilizce metin eksik")
 
     return errors, warnings
 

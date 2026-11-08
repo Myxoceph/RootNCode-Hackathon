@@ -47,7 +47,7 @@ const app = buildApp({
   localMedia: localMediaDir ? { dir: localMediaDir, fallbackBaseUrl: env.MEDIA_BASE_URL } : null,
   // Uploaded PDFs and chat photos, where the worker (data/pipeline) reads them; not in git. Chat photos
   // are processed into the local store only: until Veri Döngüsü reaches dev (plan §9), never into R2.
-  intake: env.INTAKE_ENABLED ? { root: REPO_ROOT, dir: "data/build/cache/intake", store: localMediaDir ? mediaStore : null } : null,
+  intake: env.INTAKE_ENABLED ? { root: REPO_ROOT, dir: "data/build/cache/intake", store: localMediaDir ? mediaStore : null, visionModel: env.VISION_MODEL } : null,
   rateLimit: env.RATE_LIMIT_MAX === 0 ? false : { max: env.RATE_LIMIT_MAX, timeWindowMs: 60_000 },
   weather: env.OPEN_METEO_URL
     ? createWeatherService({

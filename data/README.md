@@ -871,7 +871,7 @@ Depolamaya yükleme:
   npm run data:ar-targets
   ```
   Betik (`tools/compile_ar_targets.mts`, Chrome gerekir) fotoğrafın 1280 px JPEG sürümünden `target-mindar-<sürüm>.mind` dosyasını sürümlerin yanına yazar ve `build/ar-targets.json`'u günceller. Hedef fotoğraf önden, net ve kitabeyi dolduracak biçimde çekilmiş olmalı; MindAR kitabenin desenini tanır. İçe aktarma, derlenmemiş (ya da fotoğrafı değişmiş) hedefi boş bırakır.
-- **Ziyaret mührü hedefleri:** Aynı betik her eserin mühür fotoğrafını da derler (`build/ar-targets.json` → `seals`). Fotoğrafı uygulamayla aynı kural seçer (`pickSealPhoto`, packages/contracts). Uygulama dosyanın adresini fotoğrafınkinden kurar; dosya yoksa fotoğrafı telefonda derler ("Eser hazırlanıyor"), yani derlenmemiş eser de çalışır. Fotoğraf başına ~15-20 sn: 685 eserin hepsi ~3 saat. Değişmemiş hedef yeniden derlenmez, yarıda kesilen çalıştırma kaldığı yerden sürer. Seçenekler: `-- --cities=bursa,konya`, `-- --no-seals`, `-- --assets=<id>,<id>`. Derlenenler yukarıdaki `rclone copy` ile yüklenir.
+- **Ziyaret mührü hedefleri:** Aynı betik her eserin mühür fotoğrafını da derler (`build/ar-targets.json` → `seals`). Fotoğrafı uygulamayla aynı kural seçer (`pickSealPhoto`, packages/contracts). Uygulama dosyanın adresini fotoğrafınkinden kurar; dosya yoksa fotoğrafı telefonda derler ("Eser hazırlanıyor"), yani derlenmemiş eser de çalışır. Fotoğraf başına ~15-20 sn: 685 eserin hepsi ~3 saat. Değişmemiş hedef yeniden derlenmez, yarıda kesilen çalıştırma kaldığı yerden sürer. Seçenekler: `-- --cities=bursa,konya`, `-- --no-seals`, `-- --assets=<id>,<id>`, `-- --inscriptions-of=<id>` (yalnızca o eserin kitabeleri; dosyadaki öbür hedefler ve mühürler olduğu gibi kalır, Veri Döngüsü'nün yayın adımı bunu kullanır). Derlenenler yukarıdaki `rclone copy` ile yüklenir.
 - Kontrol ederken tarayıcı user-agent'ı kullanın: `r2.dev` adresi Python'un varsayılan istemcisine (`Python-urllib`) 403 döner, tarayıcı ve uygulama etkilenmez.
 
 **Git'e ne girer?**
@@ -1017,6 +1017,46 @@ Adımlar:
 **Koordinatlar.** `geocode.py` koordinatı olmayan kayda sırasıyla şunları dener: eserin fotoğraflarındaki EXIF GPS'in medyanı (`source: photo_exif`; kayda bağlı fotoğraf yoksa `drive_photo_map.py`'nin kitap sayfası eşleşmesiyle esere bağladığı Drive fotoğrafları kullanılır; GPS'ler 500 m'den fazla dağılıyorsa nokta yazılmaz; drone konumu olabilir, binadan birkaç on metre sapar), OpenStreetMap'te aynı ilçede adı ve türü tutan tek aday (`source: osm`; Hatay'da 2023 depremleri öncesi OSM verisi de sorgulanır) ve son olarak bağlı olduğu yapının noktası. Elle girilmiş koordinata dokunmaz; yazdığı her nokta `verified: false`'tur ve `verification_note` nereden geldiğini söyler. Ad tam tutmadığı için elle teyit edilen eşleşmeler araçtaki `OSM_PICK` listesindedir. `drive_photo_map.py` her bölüğün Drive "Links" klasöründeki fotoğrafların yalnızca ilk 64 KB'ını (EXIF) indirir, küçük resimlerini bölük PDF'indeki sayfa görselleriyle karşılaştırır (`match_photos.py` yöntemi, skor ≥ 0,90) ve basılı sayfayı kaydın `source_refs` sayfalarıyla eşler; sonuç `build/cache/drive/photo-map.json`'dadır. Bölük PDF'leri (~6 GB) ilk çalıştırmada `build/cache/pdf/` altına indirilir. OSM'den gelen noktalar © OpenStreetMap katkıcıları, ODbL lisanslıdır; uygulamada atıf gösterilmelidir.
 
 ---
+
+## 11a. Veri Döngüsü: sohbetten gelen eserin yayını
+
+Yönetim panelindeki sohbetten (Sohbetten Kabul) gelen bir eser, uzman onayladıktan sonra worker'ın yayın adımıyla
+(`data/pipeline/publish.py`, plan H6) bu veri setine girer. Elle eklenen eserle aynı yolu izler:
+
+1. Kayıt `data/eserler/<il>/<ilçe>/<id>.json` olarak yazılır; ilçesi bilinmeyen eser `<il>/ilcesi-belirsiz/` altına.
+   `meta.status = published`, `meta.reviewed_by` = onaylayan, `meta.from = "panel-sohbet"`.
+2. `validate.py` ile denetlenir. Sohbet kaydında bölümlerin İngilizcesi yoksa bu **uyarıdır, hata değil**: metni
+   yetkili yazdı, model çeviri yapmaz. İngilizce sonradan eklenir; o zamana kadar uygulama Türkçesini gösterir.
+3. Fotoğraflar `media_pipeline.py` ile işlenir (`assets/<eser>/<medya>-<sha>/…`), manifest güncellenir. Bu dalda
+   yalnızca yerel depoya; R2'ye yükleme ayrı ve bilinçli bir adımdır (§8, yalnızca `rclone copy`).
+4. Yalnızca o eser veritabanına aktarılır (`import_to_db.import_all(con, only={id})`).
+
+Bir adım hata verirse dosya ve manifest geri alınır, hata taslağın `apply_error`'ında görünür. Aynı id veri setinde
+ya da veritabanında zaten varsa üzerine yazılmaz.
+
+**Konum zorunlu değildir.** Koordinatı olmayan eser yayınlanır; Eserler listesinde, aramada ve kendi sayfasında
+görünür, haritada ve "yakındakiler"de görünmez (API `coordinates: null` döner). `location.coordinates`
+eklenip yeniden içe aktarılınca haritaya kendiliğinden çıkar. Veri setinde bugün böyle 117 eser var.
+
+Sohbet kaynağı `sources.json`'da `vagabonds-panel`; `source_refs[].pages` sayfa değil mesaj numarasıdır ("mesaj 2").
+
+### Ziyaretçinin kitabesi (Kitabe Gönüllüleri)
+
+Bir ziyaretçi uygulamadan bir eserde listede olmayan bir kitabenin fotoğrafını gönderir
+(`POST /assets/:id/inscription-proposals`); fotoğraf konum bilgisi silinmiş olarak yerel depoya yazılır ve onay
+kuyruğuna bir taslak düşer. **Kitabeyi uzman okur**: görüntü modeli denemelerde kitabe metnini uydurduğu için yalnızca
+ön eleme yapar (kitabe var mı, alfabe, satır sayısı, okunaklılık, Taşın Dili'ne uygunluk; `data/pipeline/prompts/inscription-read.md`).
+Uzman dili, okunuşu ve Türkçe çeviriyi yazıp onaylar. Yayın adımı:
+
+1. Eserin dosyasına `inscriptions[]` girdisi eklenir: id `gonullu-<taslağın ilk 8 hanesi>`, kaynak `vagabonds-kitabe-gonulluleri`,
+   notunda okuyan uzmanın adı. Ziyaretçi belirtmediyse `location.tr` "Eserin üzerinde (yeri belirtilmedi)".
+2. Fotoğraf eserin `media[]`'sına eklenir (sıradaki `mNN`, `subject: inscription`, `license: ziyaretci-katkisi`), `media_pipeline.py` ile
+   işlenir. Model fotoğrafı düz ve net bulduysa kitabenin `ar_target_media_id`'si olur.
+3. Eser yeniden içe aktarılır (yalnızca o eser). Kitabe eser sayfasında hemen görünür.
+4. Model fotoğrafı AR'a uygun bulduysa worker yalnızca o eserin kitabelerini derler
+   (`npm run data:ar-targets -- --inscriptions-of=<id>`, öbür hedeflere ve mühürlere dokunmaz) ve eseri yeniden aktarır:
+   kitabe birkaç saniye içinde Taşın Dili'nde taranabilir. Chrome yoksa Playwright'ın Chromium'u kullanılır (`CHROME_PATH`).
+   Derleme olmazsa kitabe yine yayındadır; günlük, elle çalıştırılacak komutu yazar.
 
 ## 12. Veri görüntüleyici
 
