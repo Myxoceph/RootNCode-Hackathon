@@ -1,6 +1,6 @@
 import type { IntakeDraft, IntakeDraftKind, ModerationItem } from "@vagabonds/contracts";
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
 import { DraftRow } from "@/components/admin/draft-row";
@@ -31,24 +31,55 @@ export default function Review() {
   const { toast, show } = useToast();
   const summary = useLoad(fetchAdminSummary);
 
+  // The selection the newest request was for: an older answer that lands later is dropped.
+  const asked = useRef("");
+  // How far each draft kind's list has been read, and how long it is.
+  const read = useRef<Partial<Record<IntakeDraftKind, { offset: number; total: number }>>>({});
+
+  const sortedByAge = (all: IntakeDraft[]) => [...all].sort((x, y) => x.createdAt.localeCompare(y.createdAt));
+
   const list = useLoad(async () => {
+    const key = `${queue}|${status}`;
+    asked.current = key;
     if (queue !== "notes") {
       // A kind at a time: the API filters by one; new assets come from chats and books.
-      const pages = await Promise.all(DRAFT_KINDS[queue].map((kind) => fetchDrafts({ status, kind, limit: 200 })));
-      const all = pages.flatMap((p) => p.items).sort((x, y) => x.createdAt.localeCompare(y.createdAt));
-      setDrafts(all);
-      setMore(false);
-      return { total: pages.reduce((n, p) => n + p.total, 0), items: [] as ModerationItem[] };
+      const kinds = DRAFT_KINDS[queue];
+      const pages = await Promise.all(kinds.map((kind) => fetchDrafts({ status, kind, limit: PAGE })));
+      const total = pages.reduce((n, p) => n + p.total, 0);
+      if (asked.current === key) {
+        read.current = Object.fromEntries(kinds.map((kind, i) => [kind, { offset: pages[i]!.items.length, total: pages[i]!.total }]));
+        setDrafts(sortedByAge(pages.flatMap((p) => p.items)));
+        setMore(pages.some((p) => p.items.length < p.total));
+      }
+      return { total, items: [] as ModerationItem[] };
     }
     const page = await fetchQueue({ status, limit: PAGE });
-    setItems(page.items);
-    setMore(page.items.length < page.total);
+    if (asked.current === key) {
+      setItems(page.items);
+      setMore(page.items.length < page.total);
+    }
     return page;
   }, [status, queue]);
 
   const loadMore = async () => {
+    const key = asked.current;
     try {
+      if (queue !== "notes") {
+        const kinds = DRAFT_KINDS[queue].filter((kind) => {
+          const at = read.current[kind];
+          return at && at.offset < at.total;
+        });
+        const pages = await Promise.all(kinds.map((kind) => fetchDrafts({ status, kind, limit: PAGE, offset: read.current[kind]!.offset })));
+        if (asked.current !== key) return;
+        kinds.forEach((kind, i) => {
+          read.current[kind] = { offset: read.current[kind]!.offset + pages[i]!.items.length, total: pages[i]!.total };
+        });
+        setDrafts((now) => sortedByAge([...now, ...pages.flatMap((p) => p.items)]));
+        setMore(Object.values(read.current).some((at) => at && at.offset < at.total));
+        return;
+      }
       const page = await fetchQueue({ status, limit: PAGE, offset: items.length });
+      if (asked.current !== key) return;
       const next = [...items, ...page.items];
       setItems(next);
       setMore(next.length < page.total);
@@ -144,6 +175,11 @@ export default function Review() {
               {drafts.map((draft) => (
                 <DraftRow key={draft.id} draft={draft} onOpen={() => router.push(`/admin/review/drafts/${draft.id}`)} />
               ))}
+              {more && (
+                <View style={{ alignItems: "center", paddingTop: 8 }}>
+                  <Button label="Daha fazla göster" icon="chevron-down" onPress={() => void loadMore()} />
+                </View>
+              )}
             </View>
           )
         ) : list.loading && items.length === 0 ? (

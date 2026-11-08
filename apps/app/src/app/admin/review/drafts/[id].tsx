@@ -4,8 +4,10 @@ import { useState } from "react";
 import { Platform, StyleSheet, useWindowDimensions, View, type ViewStyle } from "react-native";
 
 import { DraftReview, PublishState } from "@/components/admin/draft-review";
+import { InscriptionReview } from "@/components/admin/inscription-review";
 import { ChatMessages, Notice, type Ref } from "@/components/admin/intake-chat";
 import { Button, Card, Empty, Failed, formatDate, Loading, PageHeader, Toast, useLoad, useToast } from "@/components/admin/kit";
+import { textAt } from "@/components/admin/record-path";
 import { PageBody, usePanel } from "@/components/admin/shell";
 import { fetchChat, fetchDraft, fetchMetaEnums } from "@/data/admin";
 
@@ -38,12 +40,26 @@ export default function DraftScreen() {
   }
 
   const d = draft.data;
-  const name = typeof (d.record["name"] as { tr?: unknown } | undefined)?.tr === "string" ? String((d.record["name"] as { tr: string }).tr) : d.assetId;
+  const decided = (next: typeof d, message: string) => {
+    draft.setData(next);
+    refreshPending();
+    show(message);
+  };
+  const name = textAt(d.record, ["name", "tr"]) ?? (d.kind === "inscription" ? `Kitabe · ${d.assetId}` : d.assetId);
   const job = chat.data?.job ?? null;
   const newAsset = d.kind !== "inscription";
   const source = (
     <View style={[styles.side, wide && styles.sideWide, wide && STICKY]}>
-      {job?.kind === "chat" ? (
+      {!newAsset ? (
+        <Card>
+          <Empty
+            icon="document-text-outline"
+            title="Bir ziyaretçinin kitabesi"
+            body={`${d.assetId} eserine eklenmek için gönderildi. Fotoğrafı sağda; eserin sayfasındaki kitabelerle karşılaştır.`}
+            action={<Button label="Eserin sayfası" icon="open-outline" onPress={() => router.push(`/asset/${d.assetId}`)} />}
+          />
+        </Card>
+      ) : job?.kind === "chat" ? (
         <>
           <Text style={styles.sourceTitle}>{`Sohbet · ${job.input?.messages.length ?? 0} mesaj`}</Text>
           <ChatMessages job={job} highlight={shown} />
@@ -89,18 +105,11 @@ export default function DraftScreen() {
         <View style={[styles.columns, { flexDirection: wide ? "row" : "column" }]}>
           {source}
           <View style={[styles.side, wide && styles.sideWide]}>
-            <DraftReview
-              key={d.updatedAt}
-              draft={d}
-              enums={enums.data}
-              canDecide={!newAsset || role === "admin"}
-              onShowQuote={setShown}
-              onDecided={(next, message) => {
-                draft.setData(next);
-                refreshPending();
-                show(message);
-              }}
-            />
+            {newAsset ? (
+              <DraftReview key={d.updatedAt} draft={d} enums={enums.data} canDecide={role === "admin"} onShowQuote={setShown} onDecided={decided} />
+            ) : (
+              <InscriptionReview key={d.updatedAt} draft={d} onDecided={decided} />
+            )}
           </View>
         </View>
       </PageBody>

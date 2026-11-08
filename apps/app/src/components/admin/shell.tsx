@@ -87,9 +87,9 @@ export function AdminShell({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!role || !intake) return;
     let active = true;
-    const kinds = role === "admin" ? (["field_asset", "book_asset", "inscription"] as const) : (["inscription"] as const);
-    Promise.all(kinds.map((kind) => fetchDrafts({ status: "pending", kind, limit: 1 }))).then(
-      (pages) => active && setDraftsPending(pages.reduce((n, p) => n + p.total, 0)),
+    // One request: an admin's are all of them, a moderator's the inscriptions. A failed count keeps the last.
+    fetchDrafts({ status: "pending", limit: 1, ...(role === "admin" ? {} : { kind: "inscription" as const }) }).then(
+      (page) => active && setDraftsPending(page.total),
       () => {},
     );
     return () => {

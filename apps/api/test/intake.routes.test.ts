@@ -90,7 +90,7 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
         job_id: jobId,
         entry_key: key,
         asset_id: data.assetId ?? `bursa-osmangazi-intake-${tag}-${key}`,
-        record: { id: data.assetId ?? `bursa-osmangazi-intake-${tag}-${key}`, name: { tr: `Eser ${key}` }, meta: { status: "draft", created_at: "2026-11-08", updated_at: "2026-11-08" } },
+        record: { id: data.assetId ?? `bursa-osmangazi-intake-${tag}-${key}`, name: { tr: `Eser ${key}` }, meta: { status: "draft", created_at: "2026-11-08", updated_at: "2026-11-08", todos: ["Sohbetten düzenlendi"] } },
         validation: { errors: data.errors ?? [], warnings: [] },
       },
     });
@@ -207,12 +207,16 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
     const renamed = `bursa-osmangazi-duzeltilmis-${tag}`;
     const response = await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, {
       decision: "approve",
-      record: { id: renamed, name: { tr: "Düzeltilmiş Eser" }, dating: { year: 1399 } },
+      record: { id: renamed, name: { tr: "Düzeltilmiş Eser" }, dating: { year: 1399 }, status: "published" },
     });
     expect(response.statusCode).toBe(200);
     const { draft } = IntakeDraftResponseSchema.parse(response.json());
     expect(draft.assetId).toBe(renamed);
-    expect(draft.record).toMatchObject({ id: renamed, name: { tr: "Düzeltilmiş Eser" }, dating: { year: 1399 }, meta: { status: "published" } });
+    // The corrected record dropped its meta and kept the old top-level status: the dates come back
+    // from the worker's record, the status goes, the to-dos were for the reviewer.
+    expect(draft.record).toMatchObject({ id: renamed, name: { tr: "Düzeltilmiş Eser" }, dating: { year: 1399 }, meta: { status: "published", created_at: "2026-11-08" } });
+    expect(draft.record).not.toHaveProperty("status");
+    expect(draft.record["meta"]).not.toHaveProperty("todos");
   });
 
   it("approves one draft per new asset id, even when two drafts carry the same one", async () => {

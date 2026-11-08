@@ -5,21 +5,16 @@ import { Pressable, StyleSheet, View } from "react-native";
 
 import { PublishState } from "./draft-review";
 import { Badge, timeAgo, useAdminColors } from "./kit";
+import { textAt } from "./record-path";
 
 const KIND: Record<IntakeDraft["kind"], string> = { field_asset: "Sohbet", book_asset: "Kitap", inscription: "Kitabe" };
-
-const str = (value: unknown) => (typeof value === "string" && value.trim() ? value : null);
-const part = (record: Record<string, unknown>, ...path: string[]) => {
-  let at: unknown = record;
-  for (const key of path) at = at && typeof at === "object" ? (at as Record<string, unknown>)[key] : undefined;
-  return str(at);
-};
 
 /** One draft in the review queue: what and where it is, what the checks found, how long it waited. */
 export function DraftRow({ draft, onOpen }: { draft: IntakeDraft; onOpen: () => void }) {
   const a = useAdminColors();
-  const name = part(draft.record, "name", "tr") ?? draft.assetId;
-  const place = [part(draft.record, "location", "city"), part(draft.record, "location", "district")].filter(Boolean).join(" / ");
+  // An inscription's record is not an asset's: its place is on the asset it adds to (the id).
+  const name = textAt(draft.record, ["name", "tr"]) ?? (draft.kind === "inscription" ? (textAt(draft.record, ["location"]) ?? "Kitabe") : draft.assetId);
+  const place = [textAt(draft.record, ["location", "city"]), textAt(draft.record, ["location", "district"])].filter(Boolean).join(" / ");
   const { errors, warnings, missing } = draft.validation;
   return (
     <Pressable
