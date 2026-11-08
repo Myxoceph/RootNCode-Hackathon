@@ -23,6 +23,19 @@ export function InscriptionSource({ draft, onOpenAsset }: { draft: IntakeDraft; 
   const shown = errors.filter((line) => !line.startsWith("Kitabeyi uzman okur"));
   return (
     <>
+      {/* Above the photo: a tall photo would push them out of sight, and the expert reads with them. */}
+      {(shown.length > 0 || warnings.length > 0) && (
+        <Card>
+          <Section title="Modelin gördüğü (okumaz, yalnızca ipucu)">
+            {shown.map((line, i) => (
+              <Line key={`e${i}`} tone="red" text={line} />
+            ))}
+            {warnings.map((line, i) => (
+              <Line key={`w${i}`} tone="gold" text={line} />
+            ))}
+          </Section>
+        </Card>
+      )}
       {draft.media.length === 0 ? (
         <Card>
           <Text colorValue={a.warning}>Bu gönderimin fotoğrafı yok; okunamaz, reddedin.</Text>
@@ -42,18 +55,6 @@ export function InscriptionSource({ draft, onOpenAsset }: { draft: IntakeDraft; 
         <Card>
           <CardHeader title="Gönderenin notu" />
           <Text>{draft.note}</Text>
-        </Card>
-      )}
-      {(shown.length > 0 || warnings.length > 0) && (
-        <Card>
-          <Section title="Modelin gördüğü (okumaz, yalnızca ipucu)">
-            {shown.map((line, i) => (
-              <Line key={`e${i}`} tone="red" text={line} />
-            ))}
-            {warnings.map((line, i) => (
-              <Line key={`w${i}`} tone="gold" text={line} />
-            ))}
-          </Section>
         </Card>
       )}
       <View style={styles.row}>
@@ -157,7 +158,7 @@ export function InscriptionReview({ draft, onDecided }: { draft: IntakeDraft; on
 
 const styles = StyleSheet.create({
   small: { fontSize: 13, lineHeight: 19 },
-  photo: { width: "100%", maxHeight: 720, borderRadius: 16 },
+  photo: { width: "100%", maxHeight: 560, borderRadius: 16 },
   decision: { borderTopWidth: StyleSheet.hairlineWidth, marginTop: 18, paddingTop: 16, gap: 12 },
   row: { flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 8 },
 });

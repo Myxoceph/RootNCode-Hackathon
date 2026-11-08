@@ -34,7 +34,8 @@ const GOOD = JSON.stringify({
   hasInscription: true,
   alphabet: "arabic",
   lines: 4,
-  legible: true,
+  legibility: "clear",
+  rephotographed: false,
   problems: ["sol alt köşe kırık"],
   arTarget: true,
   confidence: 0.7,
@@ -46,7 +47,8 @@ describe("toTriage", () => {
       hasInscription: true,
       alphabet: "arabic",
       lines: 4,
-      legible: true,
+      legibility: "clear",
+      rephotographed: false,
       problems: ["sol alt köşe kırık"],
       arTarget: true,
       confidence: 0.7,
@@ -54,10 +56,14 @@ describe("toTriage", () => {
   });
 
   it("leaves out what is off instead of guessing", () => {
-    const triage = toTriage(JSON.stringify({ hasInscription: true, alphabet: "ottoman", lines: 2.5, legible: "evet", problems: "x", arTarget: true, confidence: 7 }))!;
-    expect(triage).toEqual({ hasInscription: true, alphabet: null, lines: null, legible: false, problems: [], arTarget: false, confidence: null });
-    expect(toTriage(JSON.stringify({ hasInscription: false, alphabet: "arabic", legible: true, arTarget: true }))).toMatchObject({ alphabet: null, legible: false, arTarget: false });
+    const triage = toTriage(JSON.stringify({ hasInscription: true, alphabet: "ottoman", lines: 2.5, legibility: "evet", rephotographed: "yes", problems: "x", arTarget: true, confidence: 7 }))!;
+    expect(triage).toEqual({ hasInscription: true, alphabet: null, lines: null, legibility: null, rephotographed: false, problems: [], arTarget: false, confidence: null });
+    expect(toTriage(JSON.stringify({ hasInscription: false, alphabet: "arabic", legibility: "clear", arTarget: true }))).toMatchObject({ alphabet: null, legibility: null, arTarget: false });
     expect(toTriage("Bu bir kitabe.")).toBeNull();
+  });
+
+  it("takes a partly legible photo as no camera target", () => {
+    expect(toTriage(JSON.stringify({ hasInscription: true, legibility: "partly", arTarget: true }))).toMatchObject({ legibility: "partly", arTarget: false });
   });
 });
 
@@ -82,6 +88,13 @@ describe("triageChecks", () => {
     expect(checks.errors[0]).toMatch(/uzman okur/);
     expect(checks.missing).toEqual(["/language", "/script", "/transliteration", "/translationTr", "/translationEn"]);
     expect(checks.warnings.join(" ")).toMatch(/doğrulayın.*Arap harfli.*4 satır.*sol alt köşe/s);
+  });
+
+  it("says how much of it the model could make out, and when the photo is of a screen or a print", () => {
+    const partly = triageChecks(toTriage(JSON.stringify({ hasInscription: true, legibility: "partly", rephotographed: true })), null, 0, null);
+    expect(partly.warnings.join(" ")).toMatch(/bir kısmını zor seçti.*ekrandan ya da basılı/s);
+    expect(triageChecks(toTriage(JSON.stringify({ hasInscription: true, legibility: "unreadable" })), null, 0, null).warnings.join(" ")).toMatch(/okunamayacak durumda/);
+    expect(triageChecks(toTriage(GOOD), null, 0, null).warnings.join(" ")).not.toMatch(/zor seçti|okunamayacak|ekrandan/);
   });
 
   it("says when the model saw no inscription, could not look, or the asset has some already", () => {
