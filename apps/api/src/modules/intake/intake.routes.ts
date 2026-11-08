@@ -225,6 +225,25 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
     return IntakeDraftResponseSchema.parse({ version: CONTRACT_VERSION, draft: toIntakeDraft(draft) });
   });
 
+  app.post("/admin/intake/drafts/:id/retry", {
+    schema: {
+      tags: ["moderation"],
+      summary: "Yayınlanamayan onaylı taslağı yeniden dene: hata silinir, worker sıradaki turunda yeniden yayınlamayı dener",
+      security: bearer,
+      params: toOpenApiSchema(IdParamsSchema, "input"),
+      response: { 200: toOpenApiSchema(IntakeDraftResponseSchema), 400: errorSchema, 404: errorSchema, 409: errorSchema, ...denied },
+    },
+  }, async (request) => {
+    const user = await requireUser(request, community, "moderator");
+    const { id } = parseWith(IdParamsSchema, request.params, "INVALID_ID");
+    const draft = await repository.findDraft(id);
+    if (!draft) throw draftNotFound();
+    // Whoever may decide on the draft may send it again: a new asset is an admin's.
+    if (NEW_ASSET_KINDS.has(draft.kind) && user.role !== "admin") throw new HttpError(403, "FORBIDDEN", "Only an admin decides on a new asset");
+    if (!(await repository.retryApply(id))) throw new HttpError(409, "NOTHING_TO_RETRY", "Only an approved draft whose publishing failed can be retried");
+    return IntakeDraftResponseSchema.parse({ version: CONTRACT_VERSION, draft: toIntakeDraft((await repository.findDraft(id))!) });
+  });
+
   app.post("/admin/intake/drafts/:id/review", {
     bodyLimit: REVIEW_BODY_LIMIT,
     schema: {

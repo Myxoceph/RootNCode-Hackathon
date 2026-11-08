@@ -280,6 +280,27 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
     expect(IntakeDraftResponseSchema.parse(approved.json()).draft).toMatchObject({ status: "approved", assetId: EXISTING, record: read });
   });
 
+  it("sends an approved draft that failed to publish back to the worker, and nothing else", async () => {
+    const id = await jobNeedingMap();
+    const draftId = await bookDraft(id, "retry");
+    const retry = (user: typeof admin) => json("POST", `/admin/intake/drafts/${draftId}/retry`, user);
+    // Pending: there is nothing to retry yet.
+    expect((await retry(admin)).statusCode).toBe(409);
+    expect((await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, { decision: "approve" })).statusCode).toBe(200);
+    await prisma.intake_draft.update({ where: { id: draftId }, data: { apply_error: "validate.py: konum eksik" } });
+    // A new asset is an admin's, its retry too.
+    expect((await retry(moderator)).statusCode).toBe(403);
+    const retried = await retry(admin);
+    expect(retried.statusCode).toBe(200);
+    expect(IntakeDraftResponseSchema.parse(retried.json()).draft).toMatchObject({ status: "approved", applyError: null, appliedAt: null });
+    // Cleared once: the worker has it now.
+    expect((await retry(admin)).statusCode).toBe(409);
+    // Published meanwhile: nothing to retry either.
+    await prisma.intake_draft.update({ where: { id: draftId }, data: { apply_error: "x", applied_at: new Date() } });
+    expect((await retry(admin)).statusCode).toBe(409);
+    expect((await json("POST", `/admin/intake/drafts/00000000-0000-4000-8000-000000000000/retry`, admin)).statusCode).toBe(404);
+  });
+
   it("is for moderators only, and not there without INTAKE_ENABLED", async () => {
     expect((await json("GET", "/admin/intake/drafts", visitor)).statusCode).toBe(403);
     const plain = buildApp({ prisma, rateLimit: false });

@@ -52,6 +52,7 @@ import {
   formatSeconds,
 } from "@/content/capsules";
 import { useAssetRelations } from "@/data";
+import { useInscriptionVolunteers } from "@/data/inscription-proposals";
 import { yearOfDating } from "@/lib/dating";
 import { announce } from "@/lib/announce";
 import {
@@ -1650,6 +1651,7 @@ function Experiences({
     capsuleType !== undefined && player?.type === capsuleType ? player : null;
   const opened = isAssetUnlocked(asset, useUnlockedAssets());
   const inscriptions = useHasInscriptions(asset);
+  const volunteers = useInscriptionVolunteers();
 
   const actions: Action[] = [];
   // Taşın Dili and Ziyaret Mührü need the camera: phone features (ADR 0001).
@@ -1667,6 +1669,18 @@ function Experiences({
       href: inscriptions
         ? { pathname: "/inscription", params: { asset: asset.id } }
         : { pathname: "/stone-ask", params: { asset: asset.id, name: asset.name } },
+    });
+  }
+  // Kitabe Gönüllüleri: an inscription that is not in the list goes to an expert from its photo
+  // (on the web chosen from the files). Only where the server takes them (Veri Döngüsü on).
+  if (volunteers) {
+    actions.push({
+      key: "propose",
+      icon: "document-text-outline",
+      title: m.asset.propose,
+      hint: m.asset.proposeHint,
+      spoken: `${m.asset.propose}: ${m.asset.proposeHint}`,
+      href: { pathname: "/inscription-propose", params: { asset: asset.id } },
     });
   }
   // An unlocked asset needs no seal.

@@ -98,6 +98,8 @@ const MESSAGES: Record<string, string> = {
   HAS_ERRORS: "Taslakta doğrulama hataları var: önce düzelt, sonra onayla.",
   ASSET_GONE: "Bu taslağın eklendiği eser artık yok.",
   INVALID_RECORD: "Kayıt kurallara uymuyor; alanları kontrol et.",
+  NOT_READ: "Kitabe okunmadan onaylanamaz: dil, transkripsiyon ve Türkçe çeviriyi yaz.",
+  NOTHING_TO_RETRY: "Bu taslak zaten yeniden sırada ya da yayınlandı; sayfayı yenile.",
 };
 
 /** A void schema for answers with nothing to read (204). */
@@ -353,6 +355,10 @@ export const fetchDrafts = (params: { status: IntakeDraftStatus; kind?: IntakeDr
 export const fetchDraft = async (id: string): Promise<IntakeDraft> => (await admin(`/admin/intake/drafts/${id}`, IntakeDraftResponseSchema)).draft;
 
 /** Approve (with the reviewer's corrected record, when anything was changed) or reject with a reason. */
+/** Sends an approved draft whose publishing failed back to the worker (its error is cleared). */
+export const retryDraft = async (id: string): Promise<IntakeDraft> =>
+  (await admin(`/admin/intake/drafts/${id}/retry`, IntakeDraftResponseSchema, { method: "POST" })).draft;
+
 export const reviewDraft = async (
   id: string,
   decision: { decision: "approve"; record?: Record<string, unknown>; note?: string } | { decision: "reject"; note: string },
