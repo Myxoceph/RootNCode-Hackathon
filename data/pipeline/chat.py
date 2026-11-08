@@ -13,7 +13,7 @@ doğruluğunu kanıtlayacak bir kaynak olmadığından, burada her değer mesaj�
 5. Yerel veritabanındaki eserlerle benzer ad ya da 300 m içinde: "zaten var olabilir".
 6. Kayıt `validate.py`'nin şemasıyla ve çapraz kontrolleriyle denetlenir; hatalar onayı engeller.
 
-Ayrıntılar: docs/plans/yigit-veri-dongusu.md §1.
+Ayrıntılar: docs/veri-dongusu.md
 """
 
 from __future__ import annotations

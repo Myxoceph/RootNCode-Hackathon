@@ -1,5 +1,5 @@
 /**
- * Kitabe Gönüllüleri (docs/plans/veri-dongusu.md H7). The model's answer is turned into a draft by
+ * Kitabe Gönüllüleri (docs/veri-dongusu.md H7). The model's answer is turned into a draft by
  * pure functions (tested first); the route runs on real PostgreSQL (DATABASE_URL) with a fake vision
  * model and a local media store in a temporary folder.
  */

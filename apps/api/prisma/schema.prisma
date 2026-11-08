@@ -777,7 +777,7 @@ model journal_photo {
   @@index([user_id, created_at])
 }
 
-/// Veri Döngüsü: a book PDF the data pipeline splits into drafts (docs/plans/veri-dongusu.md).
+/// Veri Döngüsü: a book PDF the data pipeline splits into drafts (docs/veri-dongusu.md).
 /// jsonb shapes: packages/contracts/src/intake.schema.ts. The Python worker (data/pipeline) writes here too.
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model intake_job {

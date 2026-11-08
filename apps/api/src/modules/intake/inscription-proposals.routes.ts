@@ -31,7 +31,7 @@ import type { CommunityRepository } from "../community/community.repository.ts";
 import { VisionError, type VisionClient } from "../vision/vision.client.ts";
 
 /**
- * Kitabe Gönüllüleri (docs/plans/veri-dongusu.md H7): a visitor photographs an inscription on an asset
+ * Kitabe Gönüllüleri (docs/veri-dongusu.md H7): a visitor photographs an inscription on an asset
  * that is not in the app yet. It waits in the review queue (`intake_draft`, kind `inscription`) for an
  * expert, who reads it from the photo. Once approved, the data pipeline adds it to the asset
  * (data/pipeline/publish.py), and Taşın Dili can scan it.

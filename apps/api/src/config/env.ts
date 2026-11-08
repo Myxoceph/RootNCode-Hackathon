@@ -80,7 +80,7 @@ const EnvSchema = z.object({
   // and POST /assets/:id/visit/proof takes no position, so a printed photo can stand in for the site.
   // On until visits must happen on site; then "false".
   DEMO_UNLOCK: z.enum(["true", "false"]).default("true").transform((value) => value === "true"),
-  // Veri Döngüsü's development (docs/plans/veri-dongusu.md §0): "true" refuses to start unless the
+  // Veri Döngüsü's development (docs/veri-dongusu.md §0): "true" refuses to start unless the
   // database is on this machine and no R2 credentials are set; photos then go to LOCAL_MEDIA_DIR,
   // served at /local-media. Never on a server.
   INTAKE_LOCAL_ONLY: z.enum(["true", "false", "1", "0"]).default("false").transform((value) => value === "true" || value === "1"),

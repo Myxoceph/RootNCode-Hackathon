@@ -295,7 +295,7 @@ export const updateReward = (code: string, patch: AdminRewardPatch): Promise<Adm
 export const addRewardCodes = (code: string, codes: string[]): Promise<AddRewardCodesResponse> =>
   admin(`/admin/rewards/${code}/codes`, AddRewardCodesResponseSchema, { body: { codes } });
 
-// Sohbetten Kabul (Veri Döngüsü, docs/plans/yigit-veri-dongusu.md §1.4): an admin tells about a new
+// Sohbetten Kabul (Veri Döngüsü, docs/veri-dongusu.md): an admin tells about a new
 // asset in a chat, the worker (data/pipeline) writes its draft. Only on an API with INTAKE_ENABLED.
 
 export type ChatJob = IntakeJob & { kind: "chat" };

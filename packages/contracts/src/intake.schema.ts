@@ -4,7 +4,7 @@ import { AssetIdSchema, ContractVersionSchema } from "./asset.schema";
 import { ADMIN_PHOTO_MAX_BYTES, ADMIN_PHOTO_TYPES, InscriptionLanguageSchema } from "./admin.schema";
 
 /**
- * Veri Döngüsü (docs/plans/veri-dongusu.md): data that comes in to be reviewed before it is
+ * Veri Döngüsü (docs/veri-dongusu.md): data that comes in to be reviewed before it is
  * published. A book PDF becomes a job (`intake_job`) that the data pipeline (data/pipeline, Python)
  * splits into drafts; a visitor's inscription photo becomes a draft of its own. Every draft waits
  * in one review queue (`intake_draft`) until a moderator approves or rejects it: nothing a model

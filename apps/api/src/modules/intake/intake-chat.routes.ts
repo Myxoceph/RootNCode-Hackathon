@@ -61,7 +61,7 @@ export function chatTitle(text: string): string {
 }
 
 /**
- * Sohbetten Kabul (docs/plans/yigit-veri-dongusu.md §1.3): an admin tells about one new asset in a
+ * Sohbetten Kabul (docs/veri-dongusu.md): an admin tells about one new asset in a
  * chat; the worker (data/pipeline) turns it into a draft in the review queue. The API only keeps and
  * serves the messages: no model is called here.
  *

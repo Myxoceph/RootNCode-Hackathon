@@ -1,6 +1,6 @@
 /**
  * Integration tests: real PostgreSQL (DATABASE_URL) with the dataset imported. Veri Döngüsü's book
- * intake and review queue (docs/plans/veri-dongusu.md, Y1); the worker's part is played by writing
+ * intake and review queue (docs/veri-dongusu.md, Y1); the worker's part is played by writing
  * the tables directly, as it would.
  */
 import "dotenv/config";

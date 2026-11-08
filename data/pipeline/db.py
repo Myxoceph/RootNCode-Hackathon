@@ -1,4 +1,4 @@
-"""Yerel PostgreSQL bağlantısı ve yerel-yalnız koruması (docs/plans/veri-dongusu.md §0, §5.5).
+"""Yerel PostgreSQL bağlantısı ve yerel-yalnız koruması (docs/veri-dongusu.md §0, §5.5).
 
 Bu hat **yalnızca bu bilgisayardaki** veritabanına bağlanır. `DATABASE_URL` başka bir sunucuyu
 gösteriyorsa ya da R2 yazma anahtarları (`MEDIA_S3_*`) tanımlıysa bağlanmadan durur. Koruma

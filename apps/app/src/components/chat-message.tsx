@@ -35,7 +35,7 @@ function citationTarget(citation: ChatCitation, m: Messages, savedTrip: string |
         ? { href: { pathname: "/profile/trip", params: { id: savedTrip } }, action: m.rehber.openTripSource }
         : { href: { pathname: "/map", params: { city: citation.id } }, action: m.rehber.openCityMap };
     case "weather":
-    // The route map opens from the answer's transit attachment (YIGIT.md §11).
+    // The route map opens from the answer's transit attachment.
     case "transit":
       return null;
   }

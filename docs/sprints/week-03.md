@@ -63,7 +63,7 @@ kitabesine (H7 görseli) kamerayla bakınca okunuşu ve meali açılır.
 
 | # | Görev | Sorumlu | Tamamlanma kriteri |
 |---|---|---|---|
-| E1 | (H2'den) Kitap metinleri ve Drive fotoğraflarının kullanım izni | Ahmet + Hüseyin | Yanıt geldiğinde `data/eksikler.md`'ye işlendi |
+| E1 | (H2'den) Kitap metinleri ve Drive fotoğraflarının kullanım izni | Ahmet + Hüseyin | Yanıt geldiğinde [`eksikler.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/data/eksikler.md)'ye işlendi |
 | E3 | Demo provası: demo sunucusunda telefon ve tarayıcıyla uçtan uca geçiş | Herkes | Demo akışı yazıldı; prova yapıldı |
 
 ---
