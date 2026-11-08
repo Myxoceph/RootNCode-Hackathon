@@ -82,16 +82,23 @@ export function AdminShell({ children }: { children: ReactNode }) {
     };
   }, [role, round]);
 
-  // Sohbetten Kabul is only on an API with Veri Döngüsü's routes (INTAKE_ENABLED); asked once.
+  // Sohbetten Kabul is only on an API with Veri Döngüsü's routes (INTAKE_ENABLED). Asked once; a
+  // failed answer (the API starting, a timeout) is asked again a little later, not taken as "off".
   useEffect(() => {
     if (!role) return;
     let active = true;
-    fetchChats().then(
-      (chats) => active && setIntake(chats !== null),
-      () => {},
-    );
+    let retry: ReturnType<typeof setTimeout> | undefined;
+    const ask = () =>
+      fetchChats().then(
+        (chats) => active && setIntake(chats !== null),
+        () => {
+          if (active) retry = setTimeout(ask, 15_000);
+        },
+      );
+    void ask();
     return () => {
       active = false;
+      clearTimeout(retry);
     };
   }, [role]);
 

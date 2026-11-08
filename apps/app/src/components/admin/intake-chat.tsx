@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { IntakeDraft, IntakeJob, MetaEnumsResponse } from "@vagabonds/contracts";
+import { INTAKE_MESSAGE_MAX_CHARS, INTAKE_MESSAGE_MAX_UPLOADS, type IntakeDraft, type IntakeJob, type MetaEnumsResponse } from "@vagabonds/contracts";
 import { fontFamily, Text } from "@vagabonds/ui";
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ActivityIndicator, Image, Pressable, StyleSheet, View } from "react-native";
 
 import { localMediaUrl, uploadChatPhoto } from "@/data/admin";
@@ -114,6 +114,13 @@ export function ChatComposer({
   const [photos, setPhotos] = useState<Attached[]>([]);
   const [sending, setSending] = useState(false);
   const [problem, setProblem] = useState<string | null>(null);
+  // The photos' object URLs are let go when they leave the box, and when the screen closes.
+  const shown = useRef(new Set<string>());
+  const release = (uris: string[]) => uris.forEach((uri) => {
+    URL.revokeObjectURL(uri);
+    shown.current.delete(uri);
+  });
+  useEffect(() => () => release([...shown.current]), []);
 
   const upload = (photo: Attached) => {
     uploadChatPhoto(photo).then(
@@ -126,8 +133,13 @@ export function ChatComposer({
     setProblem(null);
     try {
       const { photos: picked, refused } = await pickChatPhotos();
+      const room = INTAKE_MESSAGE_MAX_UPLOADS - photos.length;
+      const over = picked.slice(Math.max(0, room));
+      release(over.map((p) => p.uri));
+      if (over.length > 0) refused.push(`${over.length} fotoğraf: bir mesajla en çok ${INTAKE_MESSAGE_MAX_UPLOADS} fotoğraf gider, kalanları sonraki mesajla gönder`);
       if (refused.length > 0) setProblem(`Eklenmedi: ${refused.join("; ")}`);
-      const fresh = picked.map((p) => ({ ...p, id: null, error: null }));
+      const fresh = picked.slice(0, Math.max(0, room)).map((p) => ({ ...p, id: null, error: null }));
+      fresh.forEach((p) => shown.current.add(p.uri));
       setPhotos((now) => [...now, ...fresh]);
       fresh.forEach(upload);
     } catch (error) {
@@ -135,7 +147,10 @@ export function ChatComposer({
     }
   };
 
-  const remove = (uri: string) => setPhotos((now) => now.filter((p) => p.uri !== uri));
+  const remove = (uri: string) => {
+    release([uri]);
+    setPhotos((now) => now.filter((p) => p.uri !== uri));
+  };
   const retry = (photo: Attached) => {
     setPhotos((now) => now.map((p) => (p.uri === photo.uri ? { ...p, error: null } : p)));
     upload(photo);
@@ -144,11 +159,13 @@ export function ChatComposer({
   const going = photos.some((p) => p.id === null && p.error === null);
   const failed = photos.some((p) => p.error !== null);
   const empty = draftText.trim().length === 0 && photos.length === 0;
+  const tooLong = draftText.trim().length > INTAKE_MESSAGE_MAX_CHARS;
   const send = async () => {
     setSending(true);
     setProblem(null);
     try {
       await onSend(draftText.trim(), photos.map((p) => p.id!));
+      release(photos.map((p) => p.uri));
       setPhotos([]);
       onDraftText("");
     } catch (error) {
@@ -196,6 +213,11 @@ export function ChatComposer({
           {problem ?? photos.find((p) => p.error)?.error}
         </Text>
       )}
+      {tooLong && (
+        <Text colorValue={a.warning} style={styles.small}>
+          {`Metin bir mesaj için çok uzun (${draftText.trim().length.toLocaleString("tr-TR")} / ${INTAKE_MESSAGE_MAX_CHARS.toLocaleString("tr-TR")} karakter). İkiye bölüp ayrı mesajlarla gönder.`}
+        </Text>
+      )}
       {closed && (
         <Text color="textSecondary" style={styles.small}>
           {closed}
@@ -210,7 +232,7 @@ export function ChatComposer({
           kind="primary"
           onPress={() => void send()}
           busy={sending}
-          disabled={empty || going || failed || closed !== null}
+          disabled={empty || tooLong || going || failed || closed !== null}
         />
       </View>
     </View>
@@ -289,7 +311,8 @@ export function DraftCard({ draft, job, enums, onAsk }: { draft: IntakeDraft; jo
     return p ? [text(p["name"]), text(p["role"])].filter(Boolean).join(", ") || null : null;
   };
   const sections = Array.isArray(record["sections"]) ? (record["sections"] as unknown[]).map(obj).filter((s) => s !== null) : [];
-  const inscriptions = Array.isArray(record["inscriptions"]) ? (record["inscriptions"] as unknown[]).map(obj).filter((s) => s !== null) : [];
+  // Kept at their places in the record: the quotes point at them by index (/inscriptions/2).
+  const inscriptions = Array.isArray(record["inscriptions"]) ? (record["inscriptions"] as unknown[]).map(obj) : [];
   const badge = draftBadge(draft);
   const open = draft.status === "pending";
 
@@ -300,7 +323,7 @@ export function DraftCard({ draft, job, enums, onAsk }: { draft: IntakeDraft; jo
     ["/location/district", "İlçe", [label(enums?.cities, location?.["city"]), text(location?.["district"])].filter(Boolean).join(" / ") || null],
     ["/location/neighborhood", "Mahalle", text(location?.["neighborhood"])],
     ["/location/address", "Adres", text(location?.["address"])],
-    ["/location/coordinates", "Konum", coordinates ? `${coordinates["lat"]}, ${coordinates["lng"]} (fotoğrafın konum bilgisinden, doğrulanmadı)` : null],
+    ["/location/coordinates", "Konum", typeof coordinates?.["lat"] === "number" && typeof coordinates["lng"] === "number" ? `${coordinates["lat"]}, ${coordinates["lng"]}${coordinates["source"] === "photo_exif" ? " (fotoğrafın konum bilgisinden)" : ""}${coordinates["verified"] === true ? "" : ", doğrulanmadı"}` : null],
     ["/dating", "Tarih", tr(dating?.["display"])],
     ["/founder/name", "Bani (yaptıran)", person(record["founder"])],
     ["/architect/name", "Mimar", person(record["architect"])],
@@ -393,14 +416,16 @@ export function DraftCard({ draft, job, enums, onAsk }: { draft: IntakeDraft; jo
 
       {inscriptions.length > 0 && (
         <Section title="Kitabeler">
-          {inscriptions.map((item, i) => (
+          {inscriptions.map((item, i) =>
+            item === null ? null : (
             <View key={i} style={styles.block}>
               <Text style={styles.blockTitle}>{`${tr(item["location"]) ?? "Kitabe"} · ${languageName(text(item["language"]))}`}</Text>
               {text(item["transliteration"]) && <Text style={[styles.body, { fontStyle: "italic" }]}>{text(item["transliteration"])}</Text>}
               {tr(item["translation"]) && <Text style={styles.body}>{tr(item["translation"])}</Text>}
               <Quotes refs={quotes.get(`/inscriptions/${i}`)} />
             </View>
-          ))}
+            ),
+          )}
         </Section>
       )}
 
