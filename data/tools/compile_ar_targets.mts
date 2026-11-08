@@ -6,6 +6,9 @@
  *   npm run data:ar-targets -- --cities=bursa,konya   (mühürler yalnızca bu illerde)
  *   npm run data:ar-targets -- --no-seals             (yalnızca kitabeler)
  *   npm run data:ar-targets -- --assets=<id>,<id>     (mühürler yalnızca bu eserlerde; deneme için)
+ *   npm run data:ar-targets -- --inscriptions-of=<id> (yalnızca bu eserlerin kitabeleri; öbür hedefler ve
+ *                                                       mühürler olduğu gibi kalır. Veri Döngüsü'nün yayın adımı
+ *                                                       onaylanan bir kitabeden sonra bunu çağırır, H7)
  *
  * Her hedef için fotoğrafın 1280 px JPEG sürümünü alır (önce data/build/media/, yoksa
  * MEDIA_BASE_URL; varsayılan https://media.allbytech.com), headless Chrome'da derler
@@ -60,6 +63,8 @@ const args = process.argv.slice(2);
 const sealCities = args.find((a) => a.startsWith("--cities="))?.slice("--cities=".length).split(",").filter(Boolean) ?? null;
 const withSeals = !args.includes("--no-seals");
 const sealAssets = args.find((a) => a.startsWith("--assets="))?.slice("--assets=".length).split(",").filter(Boolean) ?? null;
+/** Yalnızca bu eserlerin kitabeleri derlenir; mühür derlenmez, dosyadaki öbür her şey korunur. */
+const inscriptionAssets = args.find((a) => a.startsWith("--inscriptions-of="))?.slice("--inscriptions-of=".length).split(",").filter(Boolean) ?? null;
 
 interface Variant {
   key: string;
@@ -107,6 +112,20 @@ const manifest = JSON.parse(readFileSync(join(DATA, "build/media-manifest.json")
 const previous: ArTargetsFile | null = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, "utf8")) as ArTargetsFile) : null;
 const reusable = previous?.mindar_version === AR_MINDAR_VERSION ? previous : null;
 const result: ArTargetsFile = { mindar_version: AR_MINDAR_VERSION, targets: {}, seals: {} };
+if (inscriptionAssets && previous && !reusable) {
+  // Öbür eserlerin hedefleri ve mühürler önceki dosyadan gelir; başka sürümde onlar kullanılamaz ve
+  // dar çalıştırma dosyayı tek eserle yazıp hepsini silerdi. Önce tam derleme.
+  console.error(`ar-targets.json MindAR ${previous.mindar_version} ile derlenmiş, bu sürüm ${AR_MINDAR_VERSION}: --inscriptions-of çalışmaz, önce tam derleme (npm run data:ar-targets).`);
+  process.exit(1);
+}
+if (inscriptionAssets) {
+  // Dar çalıştırma: öbür eserlerin kitabe hedefleri ve bütün mühürler, `.mind` dosyaları bu diskte olmasa da
+  // (R2'de dururlar) önceki dosyadan aynen kalır.
+  for (const [assetId, byMedia] of Object.entries(reusable?.targets ?? {})) {
+    if (!inscriptionAssets.includes(assetId)) result.targets[assetId] = byMedia;
+  }
+  Object.assign(result.seals!, reusable?.seals ?? {});
+}
 const missing: string[] = [];
 
 /** Derlenmiş ve hâlâ geçerli hedefler, `.mind` anahtarına göre: bir fotoğraf bir kez derlenir. */
@@ -115,7 +134,9 @@ for (const entry of [
   ...Object.values(reusable?.targets ?? {}).flatMap((byMedia) => Object.values(byMedia)),
   ...Object.values(reusable?.seals ?? {}),
 ]) {
-  if (existsSync(join(MEDIA, entry.key))) known.set(entry.key, { sha256: entry.sha256, key: entry.key, bytes: entry.bytes });
+  // Dar çalıştırmada `.mind` bu diskte olmayabilir (R2'de durur): aynı fotoğrafın hedefi yeniden derlenmez, derleme
+  // düşerse eserin eski kitabesi hedefsiz kalırdı.
+  if (inscriptionAssets || existsSync(join(MEDIA, entry.key))) known.set(entry.key, { sha256: entry.sha256, key: entry.key, bytes: entry.bytes });
 }
 
 /** Bir eserin bir fotoğrafının 1280 px JPEG'i ve manifest kaydı; yoksa null. */
@@ -137,11 +158,12 @@ const sealScope = new Set<string>();
 /** Derlenecekler: kitabe hedefleri ve (istenirse) mühür fotoğrafları. */
 const jobs: Array<{ assetId: string; mediaId: string; label: string; seal: boolean; inscription: boolean }> = [];
 for (const { city, record } of assets) {
+  if (inscriptionAssets && !inscriptionAssets.includes(record.id)) continue;
   for (const inscription of record.inscriptions ?? []) {
     const mediaId = inscription.ar_target_media_id;
     if (mediaId) jobs.push({ assetId: record.id, mediaId, label: `${record.id} / ${inscription.id}`, seal: false, inscription: true });
   }
-  if (!withSeals || (sealCities && !sealCities.includes(city)) || (sealAssets && !sealAssets.includes(record.id))) continue;
+  if (inscriptionAssets || !withSeals || (sealCities && !sealCities.includes(city)) || (sealAssets && !sealAssets.includes(record.id))) continue;
   sealScope.add(record.id);
   // Uygulamanın gördüğü fotoğraflar: manifestte olanlar, API'nin verdiği boyutla (özgün fotoğrafınki).
   const candidates = (record.media ?? []).flatMap((m) => {
@@ -154,7 +176,7 @@ for (const { city, record } of assets) {
 
 // Mühürlerin bir kısmını derleyen bir çalıştırma, öbürlerini silmez (dosyası hâlâ diskteyse).
 for (const [assetId, seal] of Object.entries(reusable?.seals ?? {})) {
-  if (!sealScope.has(assetId) && known.has(seal.key)) result.seals![assetId] = seal;
+  if (!inscriptionAssets && !sealScope.has(assetId) && known.has(seal.key)) result.seals![assetId] = seal;
 }
 
 const started = Date.now();
@@ -163,8 +185,12 @@ let compiledNow = 0;
  * Ara kayıtta henüz sırası gelmemiş kitabe hedefleri önceki dosyadan korunur: yarıda kesilen bir
  * çalıştırma db_rows.py'nin okuduğu `targets`'ı eksiltmez. Son kayıt yalnızca bu çalıştırmanınkini yazar.
  */
+/** Hedefler veri setinin dosya sırasıyla: dar bir çalıştırma dosyada gereksiz bir sıra farkı bırakmaz. */
+const fileOrder = new Map(assets.map(({ record }, index) => [record.id, index]));
+const inFileOrder = (targets: ArTargetsFile["targets"]) =>
+  Object.fromEntries(Object.entries(targets).sort(([a], [b]) => (fileOrder.get(a) ?? Infinity) - (fileOrder.get(b) ?? Infinity)));
 const save = (final: boolean) => {
-  const targets = final ? result.targets : { ...(reusable?.targets ?? {}), ...result.targets };
+  const targets = inFileOrder(final ? result.targets : { ...(reusable?.targets ?? {}), ...result.targets });
   writeFileSync(OUT, `${JSON.stringify({ ...result, targets }, null, 2)}\n`);
 };
 

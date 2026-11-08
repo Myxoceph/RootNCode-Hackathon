@@ -42,7 +42,7 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Kitabeleri tanımak, ziyaretini mühürlemek ve Taşa Sor ile bir detayı sormak için kamera kullanılır. Taşa Sor'da çektiğin fotoğraf yalnızca açıklanmak için gönderilir, saklanmaz; diğerlerinde görüntü cihazdan çıkmaz.",
+          "cameraPermission": "Kitabeleri tanımak, ziyaretini mühürlemek, Taşa Sor ile bir detayı sormak ve listede olmayan bir kitabeyi uzmana göndermek için kamera kullanılır. Taşa Sor'da çektiğin fotoğraf yalnızca açıklanmak için gönderilir, saklanmaz; gönderdiğin kitabe fotoğrafı uzman okusun diye saklanır; diğerlerinde görüntü cihazdan çıkmaz.",
           "microphonePermission": false,
           "recordAudioAndroid": false,
           "barcodeScannerEnabled": false
@@ -73,7 +73,7 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Anı Defteri'ne eklemek için seçtiğin fotoğraflara erişilir. Bu fotoğrafları yalnızca sen görebilirsin.",
+          "photosPermission": "Anı Defteri'ne eklemek ya da bir kitabeyi uzmana göndermek için seçtiğin fotoğraflara erişilir. Anı Defteri'ndekileri yalnızca sen görebilirsin; gönderdiğin kitabe fotoğrafını uzman görür.",
           "cameraPermission": false,
           "microphonePermission": false
         }

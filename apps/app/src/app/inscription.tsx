@@ -1,9 +1,10 @@
 import { Button, cameraColors, cameraGlass, fontFamily, palette, radius, spacing, Text } from "@vagabonds/ui";
-import { File, Paths } from "expo-file-system";
+import { Directory, File, Paths } from "expo-file-system";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { ActivityIndicator, Animated, Easing, Platform, ScrollView, StyleSheet, View } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { ActivityIndicator, Animated, Easing, Platform, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import type { AssetDetail } from "@vagabonds/contracts";
@@ -18,8 +19,10 @@ import { CameraTopBar, GlassIconButton, GlassPill } from "@/components/camera-ch
 import { GlassFill } from "@/components/city-asset-cards";
 import { InscriptionReading } from "@/components/inscription-reading";
 import { DataError, type ResourceWithRetry } from "@/data";
+import { useInscriptionVolunteers } from "@/data/inscription-proposals";
 import { useLang, useMessages, type Messages } from "@/i18n";
 import { announce } from "@/lib/announce";
+import { cameraFrameName, isCameraFrameName } from "@/lib/camera-frame";
 import { cue } from "@/lib/feedback";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
@@ -155,8 +158,10 @@ export default function InscriptionScreen() {
   );
 }
 
-/** Scanning this long without an inscription in view offers the assistant. */
-const ASK_AFTER_MS = 10_000;
+/** Scanning this long without an inscription in view offers the assistant, and sending the inscription. */
+const ASK_AFTER_MS = 6_000;
+/** The visitor closed the card offering to send an unknown inscription: not offered again until the app restarts. */
+let proposeCardClosed = false;
 /** The tracker page answers a snapshot within this, or the photo counts as not taken. */
 const SNAPSHOT_TIMEOUT_MS = 5_000;
 
@@ -190,6 +195,8 @@ function lookingFor(assets: AssetDetail[], targets: TrackedTarget[], nearby: boo
 function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadAsText }: InscriptionCameraProps) {
   const lang = useLang();
   const m = useMessages();
+  const router = useRouter();
+  const volunteers = useInscriptionVolunteers();
   const w = m.reading;
   const insets = useSafeAreaInsets();
   const set = useTargetSet(assets);
@@ -230,6 +237,18 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
   const frozen = useRef(false);
   // Counts the scans after asking: each one offers the assistant again after its own wait.
   const [scanRound, setScanRound] = useState(0);
+  const [cardClosed, setCardClosed] = useState(proposeCardClosed);
+  const [capturing, setCapturing] = useState(false);
+  // The card offers to send it: with an asset known, or without (the sending screen then asks which).
+  const proposing = volunteers && !cardClosed;
+  // A capture can take seconds: where the visitor has got to by its end decides whether the screen opens.
+  const mounted = useRef(true);
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
 
   useEffect(() => {
     if (phase !== "scanning") return;
@@ -321,8 +340,8 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
     [go, lock, onFailure, set],
   );
 
-  // The frame in view, frozen, as a JPEG file for the assistant.
-  const takePhoto = async (): Promise<string> => {
+  // The frame in view, frozen, as a JPEG file: for the assistant, or for an inscription to send.
+  const takePhoto = async (name = "inscription-ask.jpg"): Promise<string> => {
     if (snapshot.current) throw new Error("a snapshot is already on its way");
     const jpeg = await new Promise<string>((resolve, reject) => {
       const timer = setTimeout(() => {
@@ -336,8 +355,8 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
     const binary = atob(jpeg);
     const bytes = new Uint8Array(binary.length);
     for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-    // One file, written over by each question: the photos are not kept.
-    const file = new File(Paths.cache, "inscription-ask.jpg");
+    // One file each, written over by the next: the photos are not kept.
+    const file = new File(Paths.cache, name);
     file.create({ overwrite: true });
     await file.write(bytes);
     return file.uri;
@@ -346,6 +365,42 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
   const ask = () => {
     clearTimeout(revealTimer.current);
     setAsking(true);
+  };
+
+  // Kitabe Gönüllüleri from the camera: the frame in view goes to the sending screen, so the visitor
+  // need not take the photo again. No frame in time: the screen opens without one and asks for it.
+  const propose = async () => {
+    if (capturing) return;
+    setCapturing(true);
+    let photo: string | undefined;
+    try {
+      // The frames before, from earlier runs of the app too, are deleted: one stays at most.
+      for (const item of new Directory(Paths.cache).list()) {
+        if (item instanceof File && isCameraFrameName(item.name)) item.delete();
+      }
+    } catch {
+      // Left for the system to clear.
+    }
+    try {
+      photo = await takePhoto(cameraFrameName());
+    } catch {
+      photo = undefined;
+    }
+    if (!mounted.current) return; // left the camera meanwhile: the sending screen is not theirs to see
+    setCapturing(false);
+    if (phaseRef.current !== "scanning") {
+      // It recognised an inscription meanwhile: that is what the visitor is shown.
+      resumeCamera();
+      return;
+    }
+    // The camera closes under the next screen and starts afresh on the way back (InscriptionScreen).
+    // Near no known asset (opened from the camera tab, far from any): the sending screen asks which.
+    router.push({ pathname: "/inscription-propose", params: { ...(askAsset && { asset: askAsset }), ...(photo && { photo }) } });
+  };
+
+  const closeCard = () => {
+    proposeCardClosed = true;
+    setCardClosed(true);
   };
 
   // The camera runs on. After a snapshot the tracker posts `found` again for what it sees.
@@ -448,9 +503,60 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
 
       {!asking && (
       <View style={[styles.bottom, { bottom: insets.bottom + spacing.sm }]} pointerEvents="box-none">
-        {phase === "scanning" && offered && (
+        {phase === "scanning" && offered && proposing && (
+          // Kitabe Gönüllüleri: the camera finds none of the listed ones; this may be one that is not.
+          <View style={styles.propose} accessibilityRole="alert">
+            <GlassFill />
+            <View style={styles.proposeHead}>
+              <View style={styles.proposeMark}>
+                <Ionicons name="document-text-outline" size={18} color={cameraColors.gold} aria-hidden />
+              </View>
+              <View style={styles.flex}>
+                <Text variant="label" colorValue={cameraColors.text} style={styles.name}>
+                  {m.propose.cardTitle}
+                </Text>
+                <Text variant="caption" colorValue={cameraColors.textSecondary}>
+                  {m.propose.cardBody}
+                </Text>
+              </View>
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel={m.propose.cardClose}
+                onPress={closeCard}
+                disabled={capturing}
+                hitSlop={12}
+                style={({ pressed }) => [styles.proposeClose, pressed && styles.dimmed]}
+              >
+                <Ionicons name="close" size={16} color={cameraColors.textSecondary} />
+              </Pressable>
+            </View>
+            <View style={styles.proposeActions}>
+              <View style={styles.flex}>
+                <GlassPill
+                  gold
+                  icon={capturing ? "hourglass-outline" : "camera"}
+                  label={capturing ? m.propose.cardCapturing : m.propose.cardSend}
+                  spoken={m.propose.cardSendSpoken}
+                  disabled={capturing}
+                  onPress={() => void propose()}
+                />
+              </View>
+              <GlassPill icon="sparkles" label={w.askAssistant} spoken={w.askAssistantSpoken} onPress={ask} disabled={capturing} />
+            </View>
+          </View>
+        )}
+        {phase === "scanning" && offered && !proposing && (
           <View style={styles.offer}>
             <GlassPill gold icon="sparkles" label={w.askAssistant} spoken={w.askAssistantSpoken} onPress={ask} />
+            {/* Kitabe Gönüllüleri: the camera finds none of the listed ones; this may be one that is not. */}
+            {askAsset && volunteers && (
+              <GlassPill
+                icon="document-text-outline"
+                label={m.propose.offer}
+                spoken={m.propose.offerSpoken}
+                onPress={() => router.push({ pathname: "/inscription-propose", params: { asset: askAsset } })}
+              />
+            )}
           </View>
         )}
         <View style={styles.status} accessibilityRole="text" accessibilityLiveRegion="polite">
@@ -621,8 +727,49 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     gap: spacing.sm,
   },
+  propose: {
+    borderRadius: radius.xl,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.16)",
+    overflow: "hidden",
+    padding: spacing.md,
+    gap: spacing.md,
+  },
+  proposeHead: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.sm,
+  },
+  proposeMark: {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.08)",
+  },
+  proposeClose: {
+    width: 26,
+    height: 26,
+    borderRadius: 13,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.08)",
+  },
+  proposeActions: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+  },
+  dimmed: {
+    opacity: 0.6,
+  },
   offer: {
     alignSelf: "center",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: spacing.sm,
   },
   status: {
     alignSelf: "center",

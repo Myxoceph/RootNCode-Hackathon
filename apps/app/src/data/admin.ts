@@ -12,6 +12,11 @@ import {
   AdminSummaryResponseSchema,
   AdminUserSchema,
   AdminUsersResponseSchema,
+  IntakeDraftListResponseSchema,
+  IntakeDraftResponseSchema,
+  IntakeJobListResponseSchema,
+  IntakeJobResponseSchema,
+  IntakeUploadResponseSchema,
   MetaEnumsResponseSchema,
   ModerationItemSchema,
   ModerationListResponseSchema,
@@ -25,6 +30,11 @@ import {
   type AdminPhotoUploadQuery,
   type AdminPhotoUploadResponse,
   type AssetDetail,
+  type IntakeDraft,
+  type IntakeDraftKind,
+  type IntakeDraftStatus,
+  type IntakeJob,
+  type IntakeUpload,
   type AdminAssetInput,
   type AdminAssetPatch,
   type AdminReward,
@@ -58,7 +68,7 @@ const MESSAGES: Record<string, string> = {
   FORBIDDEN: "Bu işlem için yetkin yok.",
   OWN_ROLE: "Kendi rolünü değiştiremezsin.",
   OWN_CONTRIBUTION: "Kendi notunu inceleyemezsin.",
-  ALREADY_REVIEWED: "Bu not zaten incelenmiş.",
+  ALREADY_REVIEWED: "Bu zaten incelenmiş; listeyi yenile.",
   UNKNOWN_CODE: "Tür, il, dönem, olay türü ya da külliye tanınmadı.",
   PAYLOAD_TOO_LARGE: "Kayıt çok büyük; metinleri kısaltıp tekrar dene.",
   ASSET_EXISTS: "Bu adla ve ilçede bir eser zaten var.",
@@ -76,6 +86,20 @@ const MESSAGES: Record<string, string> = {
   IMAGE_NOT_SQUARE: "Görsel kareye yakın olmalı; rozet dairenin içinde çizilir.",
   PAYLOAD_TOO_LARGE_IMAGE: "Görsel çok büyük: en çok 2 MB olabilir.",
   INVALID_QUERY: "Arama kurallara uymuyor.",
+  JOB_NOT_FOUND: "Sohbet bulunamadı; silinmiş olabilir.",
+  DRAFTING: "Taslak şu an yazılıyor. Bitince mesajını yeniden gönder.",
+  CHAT_CLOSED: "Bu sohbetin taslağı onaylandı ya da reddedildi; yeni mesaj alınmıyor.",
+  CHAT_CHANGED: "Sohbet bu arada değişti (başka bir mesaj geldi ya da taslak yazılmaya başladı). Mesajını yeniden gönder.",
+  CHAT_UNREADABLE: "Sohbetin kayıtlı mesajları okunamıyor.",
+  UNKNOWN_UPLOAD: "Fotoğraflardan biri bulunamadı ya da zaten gönderildi. Kaldırıp yeniden ekle.",
+  TOO_MANY_MESSAGES: "Bir sohbette en çok 200 mesaj olabilir.",
+  TOO_MANY_PHOTOS: "Bir sohbette en çok 60 fotoğraf olabilir.",
+  DRAFT_NOT_FOUND: "Taslak bulunamadı; silinmiş olabilir.",
+  HAS_ERRORS: "Taslakta doğrulama hataları var: önce düzelt, sonra onayla.",
+  ASSET_GONE: "Bu taslağın eklendiği eser artık yok.",
+  INVALID_RECORD: "Kayıt kurallara uymuyor; alanları kontrol et.",
+  NOT_READ: "Kitabe okunmadan onaylanamaz: dil, transkripsiyon ve Türkçe çeviriyi yaz.",
+  NOTHING_TO_RETRY: "Bu taslak zaten yeniden sırada ya da yayınlandı; sayfayı yenile.",
 };
 
 /** A void schema for answers with nothing to read (204). */
@@ -90,7 +114,10 @@ async function admin<T>(path: string, schema: SchemaParser<T>, init: { body?: un
     errorFor: (status, code, details) => {
       if (status === 401) sessionRejected(token);
       const message = code ? MESSAGES[code] : undefined;
-      return message ? new DataError("rejected", message, details, code) : statusError(status, code, details);
+      if (message) return new DataError("rejected", message, details, code);
+      // The generic text, with the API's code kept for a caller that acts on it (fetchChats: NOT_FOUND).
+      const generic = statusError(status, code, details);
+      return new DataError(generic.kind, generic.message, details, code);
     },
   });
   return result as T;
@@ -267,3 +294,72 @@ export const updateReward = (code: string, patch: AdminRewardPatch): Promise<Adm
 
 export const addRewardCodes = (code: string, codes: string[]): Promise<AddRewardCodesResponse> =>
   admin(`/admin/rewards/${code}/codes`, AddRewardCodesResponseSchema, { body: { codes } });
+
+// Sohbetten Kabul (Veri Döngüsü, docs/veri-dongusu.md): an admin tells about a new
+// asset in a chat, the worker (data/pipeline) writes its draft. Only on an API with INTAKE_ENABLED.
+
+export type ChatJob = IntakeJob & { kind: "chat" };
+
+/** The chats, newest first; null when this API has no intake routes (INTAKE_ENABLED off). */
+export async function fetchChats(): Promise<IntakeJob[] | null> {
+  try {
+    return (await admin("/admin/intake/jobs", IntakeJobListResponseSchema)).items.filter((job) => job.kind === "chat");
+  } catch (error) {
+    if (error instanceof DataError && error.code === "NOT_FOUND") return null;
+    throw error;
+  }
+}
+
+/** A chat with its messages and, once the worker wrote it, its draft: polled while the worker works. */
+export const fetchChat = (id: string) => admin(`/admin/intake/jobs/${id}`, IntakeJobResponseSchema);
+
+export const startChat = (body: { city: string; text: string; uploads: string[] }) => admin("/admin/intake/chats", IntakeJobResponseSchema, { body });
+
+export const addChatMessage = (id: string, body: { text: string; uploads: string[] }) =>
+  admin(`/admin/intake/chats/${id}/messages`, IntakeJobResponseSchema, { body });
+
+/**
+ * A photo for a chat message (`POST /admin/intake/uploads`): sent before the message, which then
+ * names it. The API keeps the original as sent (the worker reads where it was taken from its EXIF).
+ */
+export async function uploadChatPhoto(file: { uri: string; type: string; name: string }): Promise<IntakeUpload> {
+  const token = await accountToken();
+  if (!token) throw new DataError("rejected", "Panel için yönetici hesabıyla giriş yapmalısın.", [], "ACCOUNT_REQUIRED");
+  const url = `${resolveApiUrl()}/admin/intake/uploads${query({ name: file.name.slice(0, 200) })}`;
+  const photoErrorFor = photoError(token);
+  const errorFor = (status: number, code: string | null, details: string[]) =>
+    code === "MEDIA_UPLOAD_OFF"
+      ? new DataError("rejected", "Sohbet fotoğrafları yalnızca yerel geliştirmede (INTAKE_LOCAL_ONLY) yüklenebilir.", details, code)
+      : code === "INVALID_IMAGE"
+        ? new DataError("rejected", "Bu dosya kullanılamıyor: resim değil ya da çok küçük.", details, code)
+        : code === "INVALID_QUERY"
+          ? new DataError("rejected", "Dosyanın adı okunamadı; yeniden adlandırıp tekrar dene.", details, code)
+          : photoErrorFor(status, code, details);
+  let data: Blob;
+  try {
+    data = await (await fetch(file.uri)).blob();
+  } catch (error) {
+    throw new DataError("rejected", "Fotoğraf okunamadı. Tekrar dene.", [file.uri, String(error)]);
+  }
+  return (await request(url, IntakeUploadResponseSchema, { rawBody: { data, type: file.type }, method: "POST", token, timeoutMs: 120_000, errorFor }))!.upload;
+}
+
+/** A photo the API keeps in its local media store (INTAKE_LOCAL_ONLY), by its key. */
+export const localMediaUrl = (key: string) => `${resolveApiUrl()}/local-media/${key.split("/").map(encodeURIComponent).join("/")}`;
+
+// The review queue's drafts (Veri Döngüsü): new assets from chats and books, visitors' inscriptions.
+
+export const fetchDrafts = (params: { status: IntakeDraftStatus; kind?: IntakeDraftKind; limit?: number; offset?: number }) =>
+  admin(`/admin/intake/drafts${query(params)}`, IntakeDraftListResponseSchema);
+
+export const fetchDraft = async (id: string): Promise<IntakeDraft> => (await admin(`/admin/intake/drafts/${id}`, IntakeDraftResponseSchema)).draft;
+
+/** Sends an approved draft whose publishing failed back to the worker (its error is cleared). */
+export const retryDraft = async (id: string): Promise<IntakeDraft> =>
+  (await admin(`/admin/intake/drafts/${id}/retry`, IntakeDraftResponseSchema, { method: "POST" })).draft;
+
+/** Approve (with the reviewer's corrected record, when anything was changed) or reject with a reason. */
+export const reviewDraft = async (
+  id: string,
+  decision: { decision: "approve"; record?: Record<string, unknown>; note?: string } | { decision: "reject"; note: string },
+): Promise<IntakeDraft> => (await admin(`/admin/intake/drafts/${id}/review`, IntakeDraftResponseSchema, { body: decision })).draft;

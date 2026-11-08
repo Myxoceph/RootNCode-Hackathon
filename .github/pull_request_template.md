@@ -4,7 +4,7 @@
 
 ## Genel kontroller
 
-- [ ] Dal güncel `dev`'den açıldı, PR `dev`'e gidiyor
+- [ ] Dal güncel `main`'den açıldı, PR `main`'e gidiyor (yalnızca düzeltme)
 - [ ] Commit mesajları Conventional Commits formatında (`feat(ui): ...`, `docs: ...`)
 - [ ] Ekibin yapması gereken bir kurulum adımı varsa `docs/upgrade-notes.md`'ye eklendi
 - [ ] Görev bittiyse haftalık planda ✅ ile işaretlendi

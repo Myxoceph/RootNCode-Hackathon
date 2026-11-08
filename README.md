@@ -1,6 +1,6 @@
 # Vakıfname
 
-[![CI](https://github.com/Myxoceph/RootNCode-Hackathon/actions/workflows/ci.yml/badge.svg?branch=dev)](https://github.com/Myxoceph/RootNCode-Hackathon/actions/workflows/ci.yml)
+[![CI](https://github.com/Myxoceph/RootNCode-Hackathon/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Myxoceph/RootNCode-Hackathon/actions/workflows/ci.yml)
 
 **Vakıf eserlerini ziyaret edilen, sorulan ve birbirine bağlanan bir deneyime dönüştüren mobil ve web uygulaması.**
 Takım Vagabonds · KÖK&KOD Hackathonu (Vakıf Katılım × 42 Türkiye)
@@ -35,6 +35,7 @@ Canlı sürüm: **https://vagabonds.allbytech.com** · API dokümantasyonu: [`/a
 | Anı Defteri | Ziyaret sonrası fotoğraflı not sayfaları ve paylaşım şablonu. |
 | Ödüllerim | Puan cüzdanı ve örnek ödül kataloğu. Puan paraya çevrilmez; sadakat programı gibi çalışır. |
 | Yönetim Paneli | Eser ekleme ve düzenleme, fotoğraf yükleme, moderasyon, kullanıcı ve rol yönetimi, rozet ve ödül kataloğu. |
+| Veri Döngüsü *(yerelde)* | Sohbetten Kabul: yetkili yeni bir eseri panelde anlatır, EVREN taslak kaydı yazar. Kitabe Gönüllüleri: ziyaretçi bilinmeyen bir kitabeyi fotoğraflayıp gönderir. Her taslak uzman onayıyla yayına girer. Canlıda kapalı, bkz. [Yarım kalan işler](#yarım-kalan-işler). |
 
 ## Mimari
 
@@ -130,6 +131,7 @@ Kurulum: [`deploy/otp/prepare.sh`](deploy/otp/prepare.sh).
 │   ├── eserler/          770 eser kaydı (il/ilçe/eser.json)
 │   ├── schema/           JSON Schema
 │   ├── sehirler/         İl kayıtları
+│   ├── pipeline/         Veri Döngüsü worker'ı (Python, EVREN)
 │   └── tools/            Doğrulama, içe aktarma, görsel hattı, AR hedef derleme
 ├── deploy/               compose.yml, Caddyfile, oracle/ (güncelleme, yedek, tünel servisleri),
 │                         otp/, media-worker/, tiles-worker/, failover.sh, preflight.mjs
@@ -221,7 +223,8 @@ Her PR'da GitHub Actions şu adımları çalıştırıyor ([`ci.yml`](.github/wo
 3. Mock verinin sözleşmeye uyumu
 4. Tasarım token'larının WCAG 2.1 AA kontrast denetimi
 5. Prisma şeması, migration'lar ve veri setinin içe aktarılması
-6. Testler: API'de 320 (gerçek PostgreSQL'e karşı birim ve entegrasyon), uygulamada 270, paketlerde 10. Toplam yaklaşık 600.
+6. Veri Döngüsü worker'ının Python testleri
+7. Testler: API'de 374 (gerçek PostgreSQL'e karşı birim ve entegrasyon), uygulamada 277, paketlerde 10. Toplam 661.
 
 Yerelde:
 
@@ -233,12 +236,30 @@ npm run typecheck && npm run ui:contrast && npm test
 
 Canlı sürüm Oracle Cloud ARM sunucusunda Docker Compose ile çalışıyor (web, API, PostgreSQL, OTP).
 
-- **Güncelleme:** `vagabonds-update.timer` `dev`'i beş dakikada bir çekip yeniden kuruyor.
+- **Güncelleme:** `vagabonds-update.timer` `main`'i beş dakikada bir çekip yeniden kuruyor.
 - **Yedek:** `vagabonds-backup.timer` veritabanını saatte bir yedekliyor.
 - **Yedek makine:** Mac bu yedekleri alıyor. Gerekirse yayını yaklaşık bir dakikada devralıyor (`deploy/failover.sh`).
 - **Sahne öncesi kontrol:** `npm run demo:check` canlı sistemi uçtan uca yokluyor.
 
 Ayrıntılar: [`docs/deploy.md`](docs/deploy.md).
+
+## Yarım kalan işler
+
+### Veri Döngüsü'nü canlıya almak
+
+Veri Döngüsü (Sohbetten Kabul ve Kitabe Gönüllüleri) kodda tamam ve yerelde uçtan uca çalışıyor: panelde anlatılan eser taslağa, onaydan sonra veri setine ve haritaya giriyor; gönderilen kitabe onaylanınca esere ekleniyor, kamera hedefi derleniyor, gönüllü rozetini alıyor. Geliştirme boyunca canlı veritabanına ve R2'ye yazmamak için kod bilerek yerele kilitlendi. Sunucuda `INTAKE_ENABLED` kapalı: yeni uçlar 404 dönüyor, uygulama özelliği gizliyor, geri kalan her şey etkilenmiyor. Migration'lar canlıda uygulandı; yalnızca boş `intake_*` tablolarını ve kapalı "Kitabe Gönüllüsü" rozetini ekliyorlar.
+
+Canlıya almak için yapılması gerekenler:
+
+1. **Yerel kilidi kontrollü açmak.** `data/pipeline/db.py` uzak veritabanını ve R2 ayarlarını koşulsuz reddediyor; API'de de `INTAKE_LOCAL_ONLY` aynı işi yapıyor. Kilit, açıkça verilen bir sunucu ayarıyla kalkmalı; kapatma seçeneği gizli kalmamalı.
+2. **Fotoğraf deposunu R2'ye bağlamak.** Sohbet ve kitabe yüklemelerinin deposu bugün yalnızca `INTAKE_LOCAL_ONLY` ile kuruluyor (`apps/api/src/server.ts`); yoksa uçlar 503 dönüyor. Panel fotoğraflarının kullandığı R2 yolu (`aws4fetch`) bu yüklemelere de bağlanmalı.
+3. **Compose'a eklemek.** `deploy/compose.yml` API'ye `INTAKE_ENABLED` ve ilgili ayarları geçirmeli; Python worker (`data/pipeline/worker.py`) için ayrı bir servis kurulmalı (EVREN anahtarı `deploy/.env`'den).
+4. **Yazma alanları.** API konteyneri salt okunur. Yüklemeler `data/build/cache/intake` altına, worker'ın yayın adımı `data/eserler` ve `data/build` altına yazıyor. Bunlar kalıcı bir Docker volume'üne taşınmalı.
+5. **Kitabe hedefini sunucuda derlemek.** Worker onaylanan kitabenin hedefini `compile_ar_targets.mts` ile derliyor. Bu adım sunucuda çalışmalı ve çıkan `.mind` dosyası R2'ye yüklenmeli.
+6. **Kalıcılık.** Yayınlanan kayıtlar git'e girmiyor. Her deploy'da çalışan içe aktarma (`db:import`) veri setini depodan yeniden kurduğu için, panelden gelen kayıtların ve dosyaların silinmediği doğrulanmalı (panel fotoğraflarındaki `panel_upload` gibi ayrı tutulabilir).
+7. **Canlı veriyle deneme.** Yerelde onaylanan kayıtlar (ör. Ulucami kitabesi) yalnızca yerel veritabanında; sunucuda baştan gönderilip onaylanmalı. Açılmadan önce bir hesapla uçtan uca denenmeli, yedek alınmış olmalı.
+
+Bu sürümde olmayanlar: **PDF Kabul** (kitap PDF'inden toplu taslak; uçlar bayrağın arkasında, panelde ekranı yok) ve **Saha Defteri** (saha ekibinin toplu fotoğrafı). Tasarım, tablolar ve iş bölümü: [`docs/veri-dongusu.md`](docs/veri-dongusu.md); worker: [`data/pipeline/README.md`](data/pipeline/README.md).
 
 ## Belgeler
 
@@ -246,6 +267,7 @@ Ayrıntılar: [`docs/deploy.md`](docs/deploy.md).
 |---|---|
 | [`docs/decisions/`](docs/decisions) | Mimari kararlar: tek Expo uygulaması, MindAR, MapLibre, Anı Defteri |
 | [`docs/deploy.md`](docs/deploy.md) | Sunucu, tünel, yedek, OTP, yapay zekâ kurulumu |
+| [`docs/veri-dongusu.md`](docs/veri-dongusu.md) | Veri Döngüsü'nün tasarımı (yarım, yerelde) |
 | [`docs/achievements.md`](docs/achievements.md), [`docs/rewards.md`](docs/rewards.md) | Rozetler, puan ve ödül kuralları |
 | [`docs/accessibility-checklist.md`](docs/accessibility-checklist.md) | Erişilebilirlik kontrol listesi |
 | [`packages/contracts/README.md`](packages/contracts/README.md) | Cevap şemaları ve istemci örnekleri |
@@ -253,7 +275,7 @@ Ayrıntılar: [`docs/deploy.md`](docs/deploy.md).
 
 ## Git akışı
 
-`feat/*`, `fix/*` ve `docs/*` dalları `dev`'e, `dev` de `main`'e PR ile birleşiyor. Doğrudan push yapılmıyor. Commit'ler Conventional Commits biçiminde. Kurulum adımı gerektiren PR'lar [`docs/upgrade-notes.md`](docs/upgrade-notes.md) dosyasına not düşüyor.
+Ana dal `main`; canlı sürüm de `main`'den çalışıyor. Geliştirme boyunca `feat/*`, `fix/*` ve `docs/*` dalları `dev`'e, `dev` de `main`'e PR ile birleşti. Final sürümünden (2026-11-08) sonra yalnızca düzeltmeler, `fix/*` dalından doğrudan `main`'e PR ile giriyor. Doğrudan push yapılmıyor. Commit'ler Conventional Commits biçiminde. Kurulum adımı gerektiren PR'lar [`docs/upgrade-notes.md`](docs/upgrade-notes.md) dosyasına not düşüyor.
 
 ## Ekip
 

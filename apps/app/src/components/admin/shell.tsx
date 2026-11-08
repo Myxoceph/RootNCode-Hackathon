@@ -4,7 +4,7 @@ import { usePathname, useRouter, type Href } from "expo-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { Image, Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from "react-native";
 
-import { fetchAdminSummary } from "@/data/admin";
+import { fetchAdminSummary, fetchChats, fetchDrafts } from "@/data/admin";
 import { logout, useCommunity } from "@/data";
 import { useA11ySettings } from "@/settings/a11y-settings";
 
@@ -21,15 +21,22 @@ export { usePanel, type PanelRole };
  * Only moderators and admins get in; anyone else gets the sign-in screen.
  */
 
-const SECTIONS: Array<{ href: Href; path: string; icon: IconName; label: string; adminOnly?: boolean; counted?: boolean }> = [
+const SECTIONS: Array<{ href: Href; path: string; icon: IconName; label: string; adminOnly?: boolean; counted?: boolean; intake?: boolean }> = [
   { href: "/admin", path: "/admin", icon: "grid-outline", label: "Genel bakış" },
   { href: "/admin/review", path: "/admin/review", icon: "checkmark-done-outline", label: "İnceleme", counted: true },
+  { href: "/admin/intake", path: "/admin/intake", icon: "chatbubbles-outline", label: "Sohbetten Kabul", intake: true },
   { href: "/admin/ranking", path: "/admin/ranking", icon: "trophy-outline", label: "Popüler eserler" },
   { href: "/admin/users", path: "/admin/users", icon: "people-outline", label: "Kullanıcılar" },
   { href: "/admin/assets", path: "/admin/assets", icon: "business-outline", label: "Eserler", adminOnly: true },
   { href: "/admin/achievements", path: "/admin/achievements", icon: "ribbon-outline", label: "Başarımlar", adminOnly: true },
   { href: "/admin/rewards", path: "/admin/rewards", icon: "gift-outline", label: "Ödüller", adminOnly: true },
 ];
+
+/** The sections this person sees: admins' own only to admins, Sohbetten Kabul only where the API has it. */
+function useSections(role: PanelRole) {
+  const { intake } = usePanel();
+  return SECTIONS.filter((section) => (role === "admin" || !section.adminOnly) && (intake || !section.intake));
+}
 
 const FOLDED_KEY = "vagabonds-admin-menu-folded";
 
@@ -58,6 +65,8 @@ export function AdminShell({ children }: { children: ReactNode }) {
   const { width } = useWindowDimensions();
   const wide = width >= 960;
   const [pending, setPending] = useState<number | null>(null);
+  const [intake, setIntake] = useState(false);
+  const [draftsPending, setDraftsPending] = useState(0);
   const [round, setRound] = useState(0);
   const [folded, toggleFolded] = useFolded();
   const role = user?.role === "admin" || user?.role === "moderator" ? user.role : null;
@@ -74,15 +83,50 @@ export function AdminShell({ children }: { children: ReactNode }) {
     };
   }, [role, round]);
 
+  // Drafts waiting for this person (new assets are an admin's), beside the notes in the side bar's count.
+  useEffect(() => {
+    if (!role || !intake) return;
+    let active = true;
+    // One request: an admin's are all of them, a moderator's the inscriptions. A failed count keeps the last.
+    fetchDrafts({ status: "pending", limit: 1, ...(role === "admin" ? {} : { kind: "inscription" as const }) }).then(
+      (page) => active && setDraftsPending(page.total),
+      () => {},
+    );
+    return () => {
+      active = false;
+    };
+  }, [role, intake, round]);
+
+  // Sohbetten Kabul is only on an API with Veri Döngüsü's routes (INTAKE_ENABLED). Asked once; a
+  // failed answer (the API starting, a timeout) is asked again a little later, not taken as "off".
+  useEffect(() => {
+    if (!role) return;
+    let active = true;
+    let retry: ReturnType<typeof setTimeout> | undefined;
+    const ask = () =>
+      fetchChats().then(
+        (chats) => active && setIntake(chats !== null),
+        () => {
+          if (active) retry = setTimeout(ask, 15_000);
+        },
+      );
+    void ask();
+    return () => {
+      active = false;
+      clearTimeout(retry);
+    };
+  }, [role]);
+
   // Signed in at the app's own sign-in page, as every account is.
   if (user === undefined || !user?.username || !role) return <Away />;
 
-  const context: PanelContext = { role, pending, refreshPending: () => setRound((n) => n + 1) };
+  const waiting = pending === null ? null : pending + draftsPending;
+  const context: PanelContext = { role, pending: waiting, refreshPending: () => setRound((n) => n + 1), intake };
   return (
     <Panel.Provider value={context}>
       <View style={[styles.fill, { backgroundColor: wide ? a.page : a.frame, padding: wide ? 16 : 0 }]}>
         <View style={[styles.fill, wide && styles.frame, { flexDirection: wide ? "row" : "column", backgroundColor: a.frame }]}>
-          {wide ? <SideBar name={user.nickname} username={user.username} role={role} pending={pending} folded={folded} onFold={toggleFolded} /> : <TopStrip role={role} pending={pending} />}
+          {wide ? <SideBar name={user.nickname} username={user.username} role={role} pending={waiting} folded={folded} onFold={toggleFolded} /> : <TopStrip role={role} pending={waiting} />}
           <View style={styles.fill}>{children}</View>
         </View>
       </View>
@@ -139,6 +183,7 @@ function SideBar({ name, username, role, pending, folded, onFold }: { name: stri
   const router = useRouter();
   const active = useActive();
   const a = useAdminColors();
+  const sections = useSections(role);
   const fold = (
     <Pressable
       accessibilityRole="button"
@@ -155,7 +200,7 @@ function SideBar({ name, username, role, pending, folded, onFold }: { name: stri
         <BrandMark symbol height={30} />
         {fold}
         <ScrollView style={{ flex: 1, alignSelf: "stretch" }} contentContainerStyle={{ gap: 4, paddingTop: 10, alignItems: "center" }}>
-          {SECTIONS.filter((section) => role === "admin" || !section.adminOnly).map((section) => (
+          {sections.map((section) => (
             <SideLink
               key={section.path}
               icon={section.icon}
@@ -189,7 +234,7 @@ function SideBar({ name, username, role, pending, folded, onFold }: { name: stri
         {fold}
       </View>
       <ScrollView style={{ flex: 1 }} contentContainerStyle={{ gap: 4, paddingTop: 22 }}>
-        {SECTIONS.filter((section) => role === "admin" || !section.adminOnly).map((section) => (
+        {sections.map((section) => (
           <SideLink
             key={section.path}
             icon={section.icon}
@@ -315,6 +360,7 @@ function TopStrip({ role, pending }: { role: PanelRole; pending: number | null }
   const router = useRouter();
   const active = useActive();
   const a = useAdminColors();
+  const sections = useSections(role);
   return (
     <View style={[styles.strip, { borderBottomColor: a.line }]}>
       <View style={styles.stripHead}>
@@ -326,7 +372,7 @@ function TopStrip({ role, pending }: { role: PanelRole; pending: number | null }
         </Pressable>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 4, paddingHorizontal: 12, paddingBottom: 10 }}>
-        {SECTIONS.filter((section) => role === "admin" || !section.adminOnly).map((section) => (
+        {sections.map((section) => (
           <SideLink
             key={section.path}
             icon={section.icon}

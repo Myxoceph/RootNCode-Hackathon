@@ -69,8 +69,11 @@ def insert(cur, types, table, row, conflict=None, returning=None):
     return cur.fetchone()[0] if returning else None
 
 
-def import_all(con):
+def import_all(con, only=None):
+    """Veri setini aktarır. `only`: yalnızca bu id'lerdeki eserler (Veri Döngüsü'nün yayın adımı, tek eser)."""
     assets, manifest = load_all()
+    if only is not None:
+        assets = [a for a in assets if a["id"] in only]
     cur = con.cursor()
     types = column_types(cur)
     for table, rows in shared_rows().items():

@@ -105,6 +105,30 @@ describe("capsule player", () => {
     expect(player.getPlayerState()?.type).toBe("medrese");
   });
 
+  it("on iOS starts a new sound only after the stopped one's audio session has closed", () => {
+    player.playCapsule("hamam");
+    const first = last();
+    first.emit(playing);
+    player.stopCapsule();
+    player.playCapsule("hamam");
+    expect(last()).toBe(first);
+
+    vi.advanceTimersByTime(150);
+    expect(last()).not.toBe(first);
+    expect(audio.log).toContainEqual(["play", last()]);
+  });
+
+  it("does not start a sound stopped while it waits for the session", () => {
+    player.playCapsule("hamam");
+    const first = last();
+    first.emit(playing);
+    player.playCapsule("medrese");
+    player.stopCapsule();
+
+    vi.advanceTimersByTime(150);
+    expect(last()).toBe(first);
+  });
+
   it("drops a late start of a capsule that was already replaced", () => {
     player.playCapsule("hamam");
     const first = last();

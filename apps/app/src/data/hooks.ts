@@ -36,7 +36,7 @@ function toDataError(error: unknown): DataError {
   return new DataError("unavailable", getMessages().errors.noData, [String(error)]);
 }
 
-function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
+export function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
   const [state, setState] = useState<Resource<T>>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);
   // "Yenile" on the offline banner refetches every resource on screen.
@@ -116,12 +116,12 @@ export function useWeatherAt(point: { lat: number; lng: number } | null): Resour
   return useResource(load);
 }
 
-/** The visitor's badges (Rozetlerim): fetched again for a new session. `null` without a server. */
+/** The visitor's badges (Rozetlerim): fetched again for a new session and after a visit. `null` without a server. */
 export function useMyAchievements(): ResourceWithRetry<MyAchievementsResponse | null> {
-  const { user } = useCommunity();
+  const { user, visited } = useCommunity();
   // The language in the key: the badges' words come from the API in it.
   const lang = useLang();
-  const key = user === undefined ? null : `${user?.id ?? ""}:${lang}`;
+  const key = user === undefined ? null : `${user?.id ?? ""}:${visited}:${lang}`;
   const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchMyAchievements()), [key]);
   return useResource(load);
 }
@@ -133,11 +133,11 @@ export function useRewards(): ResourceWithRetry<Reward[] | null> {
   return useResource(load);
 }
 
-/** The visitor's wallet, fetched again for a new session or after `version` changes (a reward taken). */
+/** The visitor's wallet, fetched again for a new session, after a visit or after `version` changes (a reward taken). */
 export function useWallet(version = 0): ResourceWithRetry<WalletResponse | null> {
-  const { user } = useCommunity();
+  const { user, visited } = useCommunity();
   const lang = useLang();
-  const key = user === undefined ? null : `${user?.id ?? ""}:${version}:${lang}`;
+  const key = user === undefined ? null : `${user?.id ?? ""}:${visited}:${version}:${lang}`;
   const load = useCallback(() => (key === null ? new Promise<never>(() => {}) : fetchWallet()), [key]);
   return useResource(load);
 }

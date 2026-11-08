@@ -1,6 +1,6 @@
 import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from "expo-audio";
 import { useSyncExternalStore } from "react";
-import { AppState } from "react-native";
+import { AppState, Platform } from "react-native";
 
 import { CAPSULE_SECONDS, type CapsuleType } from "@/content/capsules";
 
@@ -25,6 +25,11 @@ export interface PlayerState {
 const START_TIMEOUT_MS = 4000;
 /** The sound rises from silence and sinks back into it, whatever the file itself does. */
 const FADE_SECONDS = 2;
+/**
+ * iOS: expo-audio closes the audio session 100 ms after a pause unless a player is already sounding. A
+ * sound started inside that time is still loading, so the session goes from under it: it waits this long.
+ */
+const SESSION_SETTLE_MS = 150;
 
 /** How loud the capsule is at a moment of its length, 0 to 1. */
 export function capsuleGain(seconds: number): number {
@@ -39,6 +44,8 @@ let timer: ReturnType<typeof setInterval> | null = null;
 /** Bumped on every start and stop, so callbacks of an earlier start are dropped. */
 let run = 0;
 let audioModeReady = false;
+/** When a player was last paused for good. */
+let releasedAt = 0;
 const listeners = new Set<() => void>();
 
 /**
@@ -63,6 +70,7 @@ function release(player: AudioPlayer) {
   // `remove` alone releases the player later on phones, so the sound would run on: pause first.
   player.pause();
   player.remove();
+  releasedAt = Date.now();
 }
 
 export function stopCapsule() {
@@ -88,7 +96,16 @@ export function playCapsule(type: CapsuleType) {
   state = { type, elapsed: 0, audible: false, loading: true, muted: false };
   emit();
 
-  startSound(id, type);
+  const settle = Platform.OS === "ios" ? SESSION_SETTLE_MS - (Date.now() - releasedAt) : 0;
+  if (settle <= 0) {
+    startSound(id, type);
+    return;
+  }
+  const wait = setTimeout(() => {
+    cancelStart = null;
+    startSound(id, type);
+  }, settle);
+  cancelStart = () => clearTimeout(wait);
 }
 
 /** `begin`s once the sound is audible, or without it on an error or a timeout. */

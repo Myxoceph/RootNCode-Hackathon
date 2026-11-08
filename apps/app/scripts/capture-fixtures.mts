@@ -15,7 +15,7 @@ const API_URL = (process.env.API_URL ?? "http://localhost:3000").replace(/\/+$/,
 const OUT_DIR = fileURLToPath(new URL("../src/data/fixtures/", import.meta.url));
 const LIST_LIMIT = 24;
 
-/** Ulucami and the assets it is linked to (data/eksikler.md §3). */
+/** Ulucami and the assets it is linked to. */
 const DEMO_IDS = [
   "bursa-osmangazi-ulucami",
   "bursa-osmangazi-orhan-bey-camii",

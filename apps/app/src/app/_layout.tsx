@@ -220,6 +220,11 @@ function ThemedStack() {
             name="inscription"
             options={{ headerShown: false, title: m.screens.inscription }}
           />
+          {/* Kitabe Gönüllüleri: the phone's own header; the web page draws its own. */}
+          <Stack.Screen
+            name="inscription-propose"
+            options={{ headerShown: Platform.OS !== "web", title: m.propose.title, headerBackTitle: m.common.back }}
+          />
           <Stack.Screen
             name="stone-ask"
             options={{ headerShown: false, title: m.screens.stoneAsk }}
