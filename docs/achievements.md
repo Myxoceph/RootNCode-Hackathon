@@ -110,6 +110,7 @@ Toplam: **36 başarım**, rozetlerden en çok **1530 puan** (etkinlik puanı har
 | 🤝 | **Katkıcı**<br>5 notun ya da fotoğrafın onaylansın. | 5 onaylanan not ya da fotoğraf | 50 | `katkici` |
 | 📝 | **Not Defteri**<br>10 ziyaretçi notun onaylansın. | 10 onaylanan not | 60 | `on-not` |
 | 🖋️ | **Rehber Kalem**<br>25 ziyaretçi notun onaylansın. | 25 onaylanan not | 120 | `rehber-kalem` |
+| 📜 | **Kitabe Gönüllüsü**<br>Gönderdiğin bir kitabe uzman tarafından okunup uygulamaya eklensin. | 1 yayınlanan kitabe (Kitabe Gönüllüleri) | 20 | `kitabe-gonullusu` |
 
 ## Kanıtlanmış ziyaretler
 
@@ -144,7 +145,7 @@ Yeni başarım eklerken `rule` alanı aşağıdakilerden biridir. Doğrulanmayan
 | `within` | `level` (`district` ya da `city`), `count` (2–20), `hours` (1–720), isteğe bağlı `city` | `hours` saat içinde `count` farklı ilçe ya da il gez |
 | `complex` | `parentId` (külliye id'si) | Külliyenin bütün alt yapılarını ziyaret et |
 | `proven_visits` | `count`, isteğe bağlı `city` | `count` ziyaretini Ziyaret Mührü ile kanıtla |
-| `contributions` | `count`, `contribution` (`notes`, `photos`, `any`) | `count` katkın onaylansın |
+| `contributions` | `count`, `contribution` (`notes`, `photos`, `any`: not ya da fotoğraf, `inscriptions`: yayınlanan kitabe) | `count` katkın onaylansın |
 
 Örnek:
 

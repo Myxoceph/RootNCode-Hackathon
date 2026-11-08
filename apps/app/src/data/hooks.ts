@@ -35,7 +35,7 @@ function toDataError(error: unknown): DataError {
   return new DataError("unavailable", getMessages().errors.noData, [String(error)]);
 }
 
-function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
+export function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
   const [state, setState] = useState<Resource<T>>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);
   // "Yenile" on the offline banner refetches every resource on screen.

@@ -140,7 +140,7 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
     },
 
     async facts(userId, complexIds) {
-      const [visits, contributions, children] = await Promise.all([
+      const [visits, contributions, children, inscriptions] = await Promise.all([
         prisma.visit.findMany({
           where: { user_id: userId, asset: { status: { in: statuses } } },
           select: {
@@ -160,7 +160,13 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
               where: { parent_id: { in: complexIds }, status: { in: statuses } },
               select: { id: true, parent_id: true },
             }),
+        // Kitabe Gönüllüleri: an inscription counts once the pipeline has published it (applied_at).
+        Promise.all([
+          prisma.intake_draft.count({ where: { kind: "inscription", created_by: userId, status: "approved", applied_at: { not: null } } }),
+          prisma.intake_draft.count({ where: { kind: "inscription", created_by: userId, status: "pending" } }),
+        ]),
       ]);
+      const [published, waiting] = inscriptions;
       const count = (status: string, photo: boolean) =>
         contributions
           .filter((group) => group.status === status && (group.kind === "photo") === photo)
@@ -180,8 +186,8 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
           at: visited_at,
           proven: proven_at !== null,
         })),
-        approved: { notes: count("approved", false), photos: count("approved", true) },
-        pending: { notes: count("pending", false), photos: count("pending", true) },
+        approved: { notes: count("approved", false), photos: count("approved", true), inscriptions: published },
+        pending: { notes: count("pending", false), photos: count("pending", true), inscriptions: waiting },
         complexChildren,
       };
     },
