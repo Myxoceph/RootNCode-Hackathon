@@ -26,7 +26,7 @@ import { announce } from "@/lib/announce";
 import { cue, haptic } from "@/lib/feedback";
 import { currentPosition, type Position } from "@/lib/current-position";
 import { isAssetUnlocked } from "@/lib/related-assets";
-import { unlockAsset, unlockForDemo, useUnlockedAssets } from "@/lib/unlocked-assets";
+import { unlockAsset, useUnlockedAssets } from "@/lib/unlocked-assets";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useScreenReaderStatus } from "@/lib/use-screen-reader";
 import { visitSealTarget } from "@/lib/visit-seal";
@@ -87,8 +87,6 @@ export default function VisitSealScreen() {
   const web = Platform.OS === "web";
   const asset = resource.status === "success" ? resource.data : null;
   const target = asset ? visitSealTarget(asset, lang) : null;
-  const router = useRouter();
-  const [unlocked, setUnlocked] = useState<VisitResponse | null | false>(false);
   // With a screen reader on the screen opens on the guide; the visitor may still ask for the camera.
   const [cameraAnyway, setCameraAnyway] = useState(false);
   // Sealed on this screen, the camera's own "sealed" step is still to show; only one unlocked before needs no seal.
@@ -99,20 +97,8 @@ export default function VisitSealScreen() {
   useEffect(() => (settled ? undefined : holdBadges()), [settled]);
   const allUnlocked = useUnlockedAssets();
   const alreadyOpen = asset !== null && !sealedHere && isAssetUnlocked(asset, allUnlocked);
-  // A try-out away from the sites: "Kilidi aç" records the visit, with its badges, as a sealed one would.
-  const unlock = asset
-    ? () => {
-        void unlockForDemo(asset.id).then((result) => {
-          announce(w.unlockedSaid(asset.name));
-          setUnlocked(result);
-        });
-      }
-    : undefined;
-
   let body;
-  if (asset && unlocked !== false) {
-    body = <Sealed asset={asset} result={unlocked ?? { verified: false, firstVisit: true, newAchievements: [] }} onSettled={onSettled} onDone={() => (router.canGoBack() ? router.back() : router.navigate("/map"))} />;
-  } else if (alreadyOpen) {
+  if (alreadyOpen) {
     body = (
       <View style={styles.center}>
         <Text colorValue={cameraColors.text} style={styles.centerText}>
@@ -138,22 +124,16 @@ export default function VisitSealScreen() {
         <Text colorValue={cameraColors.text} style={styles.centerText}>
           {asset ? w.noPhoto : w.notFound}
         </Text>
-        {unlock && <UnlockButton onPress={unlock} />}
       </View>
     );
   } else if (web || (screenReader && !cameraAnyway)) {
     body = (
       <>
         <SealGuide asset={asset} onUseCamera={web ? undefined : () => setCameraAnyway(true)} />
-        {unlock && (
-          <View style={[styles.unlockFloat, { bottom: insets.bottom + spacing.lg }]}>
-            <UnlockButton onPress={unlock} />
-          </View>
-        )}
       </>
     );
   } else {
-    body = <SealCamera asset={asset} onUnlock={unlock} onSealed={() => setSealedHere(true)} onSettled={onSettled} />;
+    body = <SealCamera asset={asset} onSealed={() => setSealedHere(true)} onSettled={onSettled} />;
   }
 
   return (
@@ -170,29 +150,6 @@ export default function VisitSealScreen() {
   );
 }
 
-/** Height of the floating "Kilidi aç" and its gap. */
-const UNLOCK_ROOM = 72;
-
-/** "Kilidi aç", for testing: seals the visit at once, standing in for recognising the part (a demo simulation). */
-function UnlockButton({ onPress }: { onPress: () => void }) {
-  const w = useMessages().seal;
-  return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityLabel={w.unlock}
-      // A demo simulation, and the screen reader must say so: it does not check the visit.
-      accessibilityHint={w.unlockHint}
-      onPress={onPress}
-      style={({ pressed }) => [styles.unlock, pressed && { opacity: 0.85, transform: [{ scale: 0.98 }] }]}
-    >
-      <Ionicons name="lock-open" size={18} color={cameraColors.onGold} />
-      <Text variant="label" colorValue={cameraColors.onGold} style={styles.unlockText}>
-        {w.unlock}
-      </Text>
-    </Pressable>
-  );
-}
-
 /** Without a camera: the part to find, and how sealing works on site. */
 function SealGuide({ asset, onUseCamera }: { asset: AssetDetail; onUseCamera?: () => void }) {
   const lang = useLang();
@@ -200,8 +157,7 @@ function SealGuide({ asset, onUseCamera }: { asset: AssetDetail; onUseCamera?: (
   const { photo, part } = visitSealTarget(asset, lang)!;
   const w = useMessages().seal;
   return (
-    // Room at the end for the floating "Kilidi aç", so the last button is not under it.
-    <ScrollView contentContainerStyle={[styles.guide, { paddingTop: insets.top + 80, paddingBottom: insets.bottom + spacing.xl + UNLOCK_ROOM }]}>
+    <ScrollView contentContainerStyle={[styles.guide, { paddingTop: insets.top + 80, paddingBottom: insets.bottom + spacing.xl }]}>
       <Text variant="overline" colorValue={cameraColors.gold}>
         {w.partHead(part.toLocaleUpperCase(lang))}
       </Text>
@@ -227,7 +183,7 @@ function SealGuide({ asset, onUseCamera }: { asset: AssetDetail; onUseCamera?: (
   );
 }
 
-function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDetail; onUnlock?: () => void; onSealed: () => void; onSettled: () => void }) {
+function SealCamera({ asset, onSealed, onSettled }: { asset: AssetDetail; onSealed: () => void; onSettled: () => void }) {
   const lang = useLang();
   const w = useMessages().seal;
   const insets = useSafeAreaInsets();
@@ -452,7 +408,6 @@ function SealCamera({ asset, onUnlock, onSealed, onSettled }: { asset: AssetDeta
       <Animated.View pointerEvents="none" style={[StyleSheet.absoluteFill, styles.flash, { opacity: flash }]} />
 
       <View style={[styles.panel, { paddingBottom: insets.bottom + spacing.lg }]} accessibilityLiveRegion="polite">
-        {onUnlock && <UnlockButton onPress={onUnlock} />}
         <PanelBody phase={phase} part={part} fit={fit} relaxed={relaxed} onRetry={retry} onRetake={retake} />
         {(phase.name === "searching" || phase.name === "recognised") && (
           // Once recognised the hand is busy lining up: the slider steps aside, its room kept so the panel does not jump.
@@ -710,25 +665,6 @@ const styles = StyleSheet.create({
   },
   flex: {
     flex: 1,
-  },
-  unlock: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    alignSelf: "stretch",
-    gap: spacing.sm,
-    minHeight: 52,
-    borderRadius: radius.full,
-    backgroundColor: "#FFFFFF",
-  },
-  unlockText: {
-    fontFamily: fontFamily.sansBold,
-    fontSize: 17,
-  },
-  unlockFloat: {
-    position: "absolute",
-    left: spacing.lg,
-    right: spacing.lg,
   },
   center: {
     flex: 1,
