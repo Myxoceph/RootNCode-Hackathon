@@ -274,6 +274,15 @@ export function fieldName(pointer: string): string {
 
 type Ref = { message: number; quote: string };
 
+/** How sure the chat is of a value (the dataset's confidence), shown beside it: "kesin" stays quiet. */
+type Confidence = { tone: Tone; label: string };
+const CONFIDENCE: Record<string, Confidence> = {
+  certain: { tone: "grey", label: "kesin" },
+  probable: { tone: "gold", label: "olası" },
+  disputed: { tone: "red", label: "tartışmalı" },
+  legend: { tone: "blue", label: "rivayet" },
+};
+
 /** The quoted sentence behind each field (`{field, message, quote}`), by its pointer. */
 function quotesOf(draft: IntakeDraft): Map<string, Ref[]> {
   const map = new Map<string, Ref[]>();
@@ -316,7 +325,12 @@ export function DraftCard({ draft, job, enums, onAsk }: { draft: IntakeDraft; jo
   const badge = draftBadge(draft);
   const open = draft.status === "pending";
 
-  const rows: Array<[string, string, string | null]> = [
+  const confidence = (value: unknown) => CONFIDENCE[text(obj(value)?.["confidence"]) ?? ""] ?? null;
+  const candidates = (value: unknown) => {
+    const list = obj(value)?.["candidates"];
+    return Array.isArray(list) ? list.map(obj).filter((c) => c !== null && text(c["name"])).map((c) => (text(c!["note"]) ? `${c!["name"]} (${c!["note"]})` : String(c!["name"]))) : [];
+  };
+  const rows: Array<[string, string, string | null, Confidence | null, string[]]> = [
     ["/name/tr", "Ad", [tr(record["name"]), text(obj(record["name"])?.["en"])].filter(Boolean).join(" · ") || null],
     ["/type", "Tür", label(enums?.assetTypes, record["type"])],
     ["/era", "Dönem", label(enums?.eras, record["era"])],
@@ -324,10 +338,10 @@ export function DraftCard({ draft, job, enums, onAsk }: { draft: IntakeDraft; jo
     ["/location/neighborhood", "Mahalle", text(location?.["neighborhood"])],
     ["/location/address", "Adres", text(location?.["address"])],
     ["/location/coordinates", "Konum", typeof coordinates?.["lat"] === "number" && typeof coordinates["lng"] === "number" ? `${coordinates["lat"]}, ${coordinates["lng"]}${coordinates["source"] === "photo_exif" ? " (fotoğrafın konum bilgisinden)" : ""}${coordinates["verified"] === true ? "" : ", doğrulanmadı"}` : null],
-    ["/dating", "Tarih", tr(dating?.["display"])],
-    ["/founder/name", "Bani (yaptıran)", person(record["founder"])],
-    ["/architect/name", "Mimar", person(record["architect"])],
-  ];
+    ["/dating", "Tarih", tr(dating?.["display"]), confidence(dating), []],
+    ["/founder/name", "Bani (yaptıran)", person(record["founder"]), confidence(record["founder"]), []],
+    ["/architect/name", "Mimar", person(record["architect"]), confidence(record["architect"]), candidates(record["architect"])],
+  ].map((row) => [row[0], row[1], row[2], row[3] ?? null, row[4] ?? []] as [string, string, string | null, Confidence | null, string[]]);
 
   return (
     <Card>
@@ -385,8 +399,8 @@ export function DraftCard({ draft, job, enums, onAsk }: { draft: IntakeDraft; jo
       )}
 
       <Section title="Alanlar">
-        {rows.map(([pointer, name, value]) => (
-          <FieldRow key={pointer} name={name} value={value} refs={quotes.get(pointer) ?? (pointer === "/founder/name" || pointer === "/architect/name" ? quotes.get(pointer.replace("/name", "")) : undefined)} />
+        {rows.map(([pointer, name, value, sure, others]) => (
+          <FieldRow key={pointer} name={name} value={value} sure={sure} others={others} refs={quotes.get(pointer) ?? (pointer === "/founder/name" || pointer === "/architect/name" ? quotes.get(pointer.replace("/name", "")) : undefined)} />
         ))}
       </Section>
 
@@ -482,7 +496,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
   );
 }
 
-function FieldRow({ name, value, refs }: { name: string; value: string | null; refs: Ref[] | undefined }) {
+function FieldRow({ name, value, refs, sure = null, others = [] }: { name: string; value: string | null; refs: Ref[] | undefined; sure?: Confidence | null; others?: string[] }) {
   const a = useAdminColors();
   return (
     <View style={[styles.fieldRow, { borderBottomColor: a.line }]}>
@@ -490,7 +504,15 @@ function FieldRow({ name, value, refs }: { name: string; value: string | null; r
         {name}
       </Text>
       <View style={{ flex: 1, minWidth: 0, gap: 4 }}>
-        <Text style={[styles.body, value === null && { color: a.textSecondary }]}>{value ?? "—"}</Text>
+        <View style={styles.valueRow}>
+          <Text style={[styles.body, { flexShrink: 1 }, value === null && { color: a.textSecondary }]}>{value ?? "—"}</Text>
+          {value !== null && sure && <Badge tone={sure.tone} label={sure.label} />}
+        </View>
+        {others.length > 0 && (
+          <Text color="textSecondary" style={styles.small}>
+            {`Öbürleri: ${others.join("; ")}`}
+          </Text>
+        )}
         <Quotes refs={refs} />
       </View>
     </View>
@@ -559,6 +581,7 @@ const styles = StyleSheet.create({
   sectionTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 14 },
   questions: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
   question: { flexDirection: "row", alignItems: "center", gap: 6, borderWidth: StyleSheet.hairlineWidth, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 6 },
+  valueRow: { flexDirection: "row", alignItems: "center", flexWrap: "wrap", gap: 8 },
   fieldRow: { flexDirection: "row", gap: 12, paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth },
   fieldName: { width: 130, fontSize: 13, lineHeight: 21 },
   quote: { borderLeftWidth: 2, paddingLeft: 8 },

@@ -1,7 +1,7 @@
 import { fontFamily, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
-import { StyleSheet, useWindowDimensions, View } from "react-native";
+import { Platform, StyleSheet, useWindowDimensions, View, type ViewStyle } from "react-native";
 
 import { ChatComposer, ChatMessages, DraftCard, fieldName, isWorking, jobBadge, Notice } from "@/components/admin/intake-chat";
 import { Badge, Button, Card, Empty, Failed, Loading, PageHeader, useLoad } from "@/components/admin/kit";
@@ -88,7 +88,7 @@ export default function Chat() {
   const city = enums.data?.cities.find((c) => c.code === job!.city)?.label ?? job!.city;
 
   const conversation = (
-    <View style={[styles.side, wide && styles.sideWide]}>
+    <View style={[styles.side, wide && styles.sideWide, wide && STICKY]}>
       <ChatMessages job={job!} />
       <ChatComposer onSend={send} closed={closed} placeholder="Ekle ya da düzelt: taslak bütün sohbetten yeniden yazılır." draftText={text} onDraftText={setText} />
     </View>
@@ -141,6 +141,13 @@ export default function Chat() {
     </View>
   );
 }
+
+/**
+ * Beside a long draft, the chat stays in view (the web's sticky position, within the page's scroll):
+ * an answer to a question at the draft's bottom is written without scrolling back up. A long chat
+ * scrolls in its own column.
+ */
+const STICKY = (Platform.OS === "web" ? { position: "sticky", top: 0, maxHeight: "calc(100vh - 140px)", overflowY: "auto", paddingRight: 4 } : {}) as ViewStyle;
 
 const styles = StyleSheet.create({
   fill: { flex: 1 },

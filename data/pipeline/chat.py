@@ -49,8 +49,21 @@ ERAS = {item["code"] for item in ENUMS["eras"]}
 CONFIDENCE = {"certain", "probable", "disputed", "legend"}
 LANGUAGES = {"ar", "fa", "tr-ottoman", "tr", "el", "la", "hy", "other"}
 CITY_REGION = {item["code"]: item["region"] for item in ENUMS["cities"]}
-# Bölüm/özet kelimelerinin en az bu payı mesajlarda geçmeli.
-COVERAGE_MIN = 0.85
+# Bölüm/özet: olgular (sayılar, özel adlar) mesajlarda birebir geçmeli; öbür kelimelerin en az bu payı.
+# Model cümleyi yeniden kurunca "yer almaktadır", "bulunmaktadır" gibi dolgular eklenir: düz oran (eski
+# %85) gerçek sohbetlerde bölümlerin çoğunu atıyordu (Muradiye denemesi: dört bölümden üçü, %62-81).
+COVERAGE_MIN = 0.6
+# Bölüm metninde olgu sayılmayan, dilin kendi dolgusu: oranın dışında tutulur.
+FILLER = set("""
+yer almaktadır almaktadır bulunmaktadır bulunur bulunan bulunuyor yer alır yer alan olarak olan olup olmuştur
+olmaktadır sahiptir sahip dikkat çeker çekmektedir çeken oluşur oluşmaktadır yapılmıştır inşa edilmiştir
+edilmiştir eden etmektedir ayrıca ancak ise ile için gibi kadar sonra önce daha çok bir bu şu o bunun
+şekilde biçimde yapı yapının yapıda yapıdır eser eserin eserdir günümüzde bugün içinde iç dış mekan mekân
+""".split())
+# Bir kişinin işin yalnızca bir kısmını yaptığını gösteren sözler (alıntıda).
+PARTIAL = re.compile(r"\b(planı|planını|tasarımı|projesi|onar\w*|tamir\w*|başlat\w*|tamamla\w*|birlikte|başka mimar\w*|yardım\w*|katkı\w*)\b")
+# Görüntü modeli bundan az eminse konu "other" yazılır: mühür ve kapak seçimi yanlış bir konuya dayanmasın.
+PHOTO_SUBJECT_MIN = 0.5
 DUPLICATE_NAME = 0.86
 DUPLICATE_NEAR_M = 300
 DUPLICATE_NEAR_NAME = 0.6
@@ -159,7 +172,7 @@ STRUCTURE_SCHEMA = {
             },
         },
         "founder": {"type": ["object", "null"], "required": ["name", "confidence", "message", "quote"], "properties": {"name": {"type": "string", "minLength": 1}, "role": {"type": ["string", "null"]}, "confidence": {"enum": sorted(CONFIDENCE)}, **_REF}},
-        "architect": {"type": ["object", "null"], "required": ["name", "confidence", "message", "quote"], "properties": {"name": {"type": "string", "minLength": 1}, "confidence": {"enum": sorted(CONFIDENCE)}, **_REF}},
+        "architect": {"type": ["object", "null"], "required": ["name", "confidence", "message", "quote"], "properties": {"name": {"type": "string", "minLength": 1}, "confidence": {"enum": sorted(CONFIDENCE)}, "others": {"type": "array", "items": {"type": "object", "required": ["name", "message", "quote"], "properties": {"name": {"type": "string", "minLength": 1}, "note": {"type": ["string", "null"]}, **_REF}}}, **_REF}},
         "summary": {"type": "object", "required": ["tr"], "properties": {"tr": {"type": "string"}, "en": {"type": ["string", "null"]}}},
         "sections": {"type": "array", "items": {"type": "object", "required": ["title", "body"], "properties": {"title": {"type": "string", "minLength": 1}, "body": {"type": "string", "minLength": 1}, "messages": {"type": "array", "items": {"type": "integer"}}}}},
         "inscriptions": {"type": "array", "items": {"type": "object", "required": ["language", "message", "quote"], "properties": {"location": {"type": ["string", "null"]}, "language": {"enum": sorted(LANGUAGES)}, "transliteration": {"type": ["string", "null"]}, "translation_tr": {"type": ["string", "null"]}, **_REF}}},
@@ -224,18 +237,85 @@ def check_quote(name: str, pointer: str, item: dict[str, Any], messages: list[st
     return True
 
 
+_SENTENCE_START = re.compile(r"(^|[.!?:;]\s+|\n)$")
+
+
+def facts(text: str) -> list[str]:
+    """Metnin olguları: sayılar ve cümle başında olmayan büyük harfli kelimeler (özel adlar)."""
+    found: list[str] = []
+    for match in re.finditer(r"[\w']+", text or ""):
+        word = match.group(0).split("'")[0]
+        if not word:
+            continue
+        if word.isdigit() or (word[0].isupper() and not _SENTENCE_START.search(text[: match.start()])):
+            found.append(word)
+    return found
+
+
 def grounded_text(name: str, text: str, source: str, found: Findings) -> bool:
-    """Bölüm ya da özet: kelimelerinin en az %85'i mesajlarda olmalı; değilse taslağa girmez."""
-    share = coverage(text, source)
+    """Bölüm ya da özet: sayıları ve özel adları mesajlarda geçmeli (yeni yıl, kişi, yer eklenemez);
+    öbür kelimelerin (dolgu dışında) en az %60'ı mesajlarda olmalı. Değilse taslağa girmez."""
+    pool = set(words(source, least=1))
+    new = [word for word in facts(text) if not _word_found(norm(word), pool)]
+    if new:
+        shown = ", ".join(dict.fromkeys(new))
+        found.warnings.append(f"kaynaksız: {name}, mesajlarda olmayan ad ya da sayı var ({shown[:120]}); taslağa eklenmedi")
+        return False
+    prose = " ".join(word for word in norm(text).split() if word not in FILLER)
+    share = coverage(prose, source)
     if share < COVERAGE_MIN:
         found.warnings.append(f"kaynaksız: {name}, kelimelerin yalnızca %{round(share * 100)}'i mesajlarda var; taslağa eklenmedi")
         return False
     return True
 
 
-def first_sentence(messages: list[str], limit: int = 400) -> str:
+def _without_title(text: str) -> str:
+    """İlk satır noktalamasız bir başlıksa (eserin adı) onsuz metin."""
+    text = text.strip()
+    lines = text.split("\n", 1)
+    if len(lines) == 2 and not re.search(r"[.!?]", lines[0]) and lines[1].strip():
+        return lines[1].strip()
+    return text
+
+
+def told_text(messages: list[str], limit: int = 6000) -> str:
+    """Mesajların kendisi, başlık satırı ve "Alan: …" cevapları dışında: modelin bölümleri kalmadığında."""
+    parts = []
+    for index, text in enumerate(messages):
+        text = _without_title(text) if index == 0 else text.strip()
+        lines = [line.strip() for line in text.split("\n") if line.strip() and not ANSWER_LINE.match(line.strip())]
+        if lines:
+            parts.append(" ".join(lines))
+    return "\n\n".join(parts)[:limit].strip()
+
+
+# Panelin sorusuna verilen cevap satırı: "Mimar: …" (panel soruyu böyle başlatır).
+ANSWER_LINE = re.compile(r"^(mimar|bani|bani \(yaptıran\)|yaptıran|dönem|mahalle|adres|ilçe|konum|tarih|kitabe|özet)\s*:", re.I)
+UNKNOWN = re.compile(r"^\s*(bilinmiyor|bilinmemektedir|belli değil|belirsiz|yok|bilgi yok)\b", re.I)
+# Cevap satırının başlığı → taslaktaki alan (panel, apps/app/src/components/admin/intake-chat.tsx FIELD_NAMES).
+ANSWER_FIELDS = {
+    "mimar": "/architect", "bani": "/founder", "bani (yaptıran)": "/founder", "yaptıran": "/founder", "dönem": "/era",
+    "mahalle": "/location/neighborhood", "adres": "/location/address", "ilçe": "/location/district",
+    "konum": "/location/coordinates", "tarih": "/dating", "kitabe": "/inscriptions", "özet": "/summary",
+}
+
+
+def told_unknown(messages: list[str]) -> list[tuple[str, str]]:
+    """Yetkilinin "bilinmiyor" dediği alanlar ("Mimar: Bilinmiyor; kitabede adı geçmiyor."): soru kapanır."""
+    found: list[tuple[str, str]] = []
     for text in messages:
-        text = text.strip()
+        for line in text.split("\n"):
+            head, sep, rest = line.strip().partition(":")
+            key = head.strip().translate(_TR_UPPER).lower()
+            if sep and key in ANSWER_FIELDS and UNKNOWN.match(rest):
+                found.append((ANSWER_FIELDS[key], head.strip()))
+    return found
+
+
+def first_sentence(messages: list[str], limit: int = 400) -> str:
+    """İlk mesajın ilk cümlesi. İlk satır noktalamasız bir başlıksa (eserin adı) o atlanır."""
+    for text in messages:
+        text = _without_title(text)
         if text:
             match = re.match(r"(.+?[.!?])(\s|$)", text, re.S)
             return (match.group(1) if match else text)[:limit].strip()
@@ -345,6 +425,10 @@ class ChatStages:
         duplicate = self._duplicate(record, city, chat.get("assetId"), found)
         errors, warnings = self._validate(record)
         validation: dict[str, Any] = {"errors": found.errors + errors, "warnings": found.warnings + [w for w in warnings if w not in found.warnings]}
+        for pointer, label in told_unknown(messages):
+            if any(m == pointer or m.startswith(pointer + "/") for m in found.missing):
+                found.missing = [m for m in found.missing if not (m == pointer or m.startswith(pointer + "/"))]
+                validation["warnings"].append(f"{label}: yetkili bilinmediğini yazdı; boş kalıyor")
         if supports_missing():
             validation["missing"] = found.missing
         else:
@@ -446,10 +530,26 @@ class ChatStages:
         for key in ("founder", "architect"):
             item = answer.get(key)
             people[key] = None
+            # "Mimar Sinan, Mimar Mahmud Ağa, Mimar Davud Ağa": bir alanda bir kişi. İlki ad, öbürleri aday.
+            if key == "architect" and item and isinstance(item.get("name"), str) and ", " in item["name"]:
+                first, *rest = [part.strip() for part in item["name"].split(",") if part.strip()]
+                item = {**item, "name": first, "others": [*(item.get("others") or []), *({"name": n, "message": item.get("message"), "quote": item.get("quote")} for n in rest)]}
             if item and check_quote(key, f"/{key}/name", item, messages, [item["name"]], found):
-                person = {"name": item["name"], "confidence": item["confidence"], "source_refs": ref(item)}
+                confidence = item["confidence"]
+                # "Planı Sinan'ın; inşaatı başka mimarlar yürüttü": işin bir kısmı. Kesin denemez.
+                if confidence == "certain" and PARTIAL.search(qnorm(item.get("quote") or "")):
+                    confidence = "probable"
+                    found.warnings.append(f"{key}: alıntı işin yalnızca bir kısmını söylüyor; güven 'probable' yapıldı")
+                person = {"name": item["name"], "confidence": confidence, "source_refs": ref(item)}
                 if key == "founder" and item.get("role"):
                     person["role"] = item["role"]
+                if key == "architect":
+                    others = []
+                    for other in item.get("others") or []:
+                        if isinstance(other, dict) and other.get("name") and check_quote(f"architect[{other['name']}]", "/architect/candidates", other, messages, [other["name"]], found):
+                            others.append({"name": other["name"], **({"note": other["note"]} if other.get("note") else {})})
+                    if others:
+                        person["candidates"] = others
                 people[key] = person
 
         summary = (answer.get("summary") or {}).get("tr", "").strip()
@@ -482,7 +582,21 @@ class ChatStages:
                 "source_refs": [{"source_id": CHAT_SOURCE, "pages": "mesaj " + ", ".join(map(str, sorted(set(numbers))))}],
             })
         if not sections:
-            found.missing.append("/sections")
+            # Bölümlerin hiçbiri denetimden geçmedi: mesajların kendisi tek bölüm olur (kaynağı belli, şema
+            # boş bölüm listesini kabul etmez). Uzman onaylarken bölümlere ayırır.
+            told = told_text(messages)
+            if told:
+                sections.append({
+                    "id": "genel-bakis",
+                    "order": 1,
+                    "title": {"tr": "Genel Bakış", "en": None},
+                    "body": {"tr": told, "en": None},
+                    "confidence": "certain",
+                    "source_refs": [{"source_id": CHAT_SOURCE, "pages": "mesaj " + ", ".join(str(i + 1) for i, t in enumerate(messages) if t.strip())}],
+                })
+                found.warnings.append("sections: modelin bölümleri kullanılmadı; mesajların kendisi tek bölüm olarak yazıldı")
+            else:
+                found.missing.append("/sections")
 
         inscriptions = []
         for item in answer.get("inscriptions", []):
@@ -546,6 +660,8 @@ class ChatStages:
                 seen = parse_json(reply.text)
                 subject = seen.get("subject") if seen.get("subject") in subjects else "other"
                 confidence = min(1.0, max(0.0, float(seen.get("confidence") or 0)))
+                if seen.get("building") is False or confidence < PHOTO_SUBJECT_MIN:
+                    subject = "other"
                 alt = (seen.get("alt_tr") or "").strip()[:600] or None
                 inscription = bool(seen.get("inscription"))
             except (LlmError, OSError, ValueError, TypeError) as error:
