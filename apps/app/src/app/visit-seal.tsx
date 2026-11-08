@@ -19,6 +19,7 @@ import { Slider } from "@/components/slider";
 import { SealSequence } from "@/components/seal-sequence";
 import { SealStamp } from "@/components/seal-stamp";
 import { capsuleForSoundKey } from "@/content/capsules";
+import { playCapsule, setCapsuleMuted, stopCapsule } from "@/audio/capsule-player";
 import { communityAvailable, DataError, sendVisitProof, useAsset } from "@/data";
 import { holdBadges } from "@/data/new-badges";
 import { alignment, ghostRect, type AlignHint, type Size } from "@/lib/seal-alignment";
@@ -564,9 +565,8 @@ function PanelBody({
 
 /**
  * The seal is stamped (`SealStamp`): one red seal comes down, strikes and its ink soaks into the page. A first
- * visit then offers its sequence with one tap, "Eserin sesini dinle" ("Zamanı aç" for a site with no sound; a tap, as many seals are struck inside a mosque
- * or a tomb, where a sound must not start by itself), its sound switched off beside it in one touch, or
- * "Geç". Either way the screen then goes by itself; the badges the visit earned open over what is next.
+ * visit then plays the site's sound at once, switched off beside it in one touch, and offers its sequence
+ * with one tap, "Slayt eşliğinde dinle" ("Zamanı aç" for a site with no sound), or "Geç". Either way the screen then goes by itself; the badges the visit earned open over what is next.
  * A visit sealed again has no sequence: only "Tamam".
  */
 function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; result: Pick<VisitResponse, "verified" | "firstVisit" | "newAchievements">; onDone: () => void; onSettled: () => void }) {
@@ -577,9 +577,26 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
   const reduceMotion = useReducedMotion();
   const reveal = useRef(new Animated.Value(reduceMotion ? 1 : 0)).current;
   const [stage, setStage] = useState<"offer" | "sequence" | "result">(result.firstVisit ? "offer" : "result");
-  // Switched off beside "Eserin sesini dinle": the sequence starts muted, its own switch still there.
+  // Switched off beside "Slayt eşliğinde dinle": the sound here and the sequence's start muted, its own switch still there.
   const [muted, setMuted] = useState(false);
-  const hasSound = capsuleForSoundKey(asset.ambientSound?.key ?? "") !== undefined;
+  const capsule = capsuleForSoundKey(asset.ambientSound?.key ?? "");
+  const hasSound = capsule !== undefined;
+
+  // A first seal plays the site's sound at once, its switch beside it (WCAG 1.4.2). The sequence
+  // starts it again from the beginning, with its photos; leaving or skipping stops it.
+  const mutedRef = useRef(muted);
+  mutedRef.current = muted;
+  useEffect(() => {
+    if (stage !== "offer" || !capsule) return;
+    playCapsule(capsule);
+    if (mutedRef.current) setCapsuleMuted(true);
+    return stopCapsule;
+  }, [stage, capsule]);
+  const switchSound = () => {
+    const next = !muted;
+    setMuted(next);
+    setCapsuleMuted(next);
+  };
   // After the sequence (or "Geç") the screen goes, no "Tamam" to tap: what the visit earned opens over
   // what is next (BadgeCelebration), held until now so it never covers the stamp.
   const leave = () => {
@@ -613,8 +630,8 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
 
         {stage === "offer" && (
           <View style={styles.offer}>
-            {/* One tap opens the sequence (never by itself: many seals are struck inside a mosque or a tomb).
-                Its sound is on unless switched off here, in one touch beside it; the sequence keeps the switch. */}
+            {/* The sound already plays; one tap opens the sequence with the photos. The switch beside it
+                silences the sound here and in the sequence, which keeps it. */}
             <View style={styles.openRow}>
               <Button
                 label={hasSound ? w.listenToSite : w.openTime}
@@ -629,7 +646,7 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
                   accessibilityRole="switch"
                   accessibilityLabel={w.sequenceSound}
                   accessibilityState={{ checked: !muted }}
-                  onPress={() => setMuted((now) => !now)}
+                  onPress={switchSound}
                   style={({ pressed }) => [styles.soundSwitch, pressed && styles.pressed]}
                 >
                   <Ionicons name={muted ? "volume-mute" : "volume-high"} size={22} color={cameraColors.text} />
