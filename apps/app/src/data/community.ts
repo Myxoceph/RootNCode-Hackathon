@@ -59,6 +59,8 @@ export interface CommunityState {
   user: AppUser | null | undefined;
   /** Bumped on every note sent, so "Notlarım" fetches again. */
   sent: number;
+  /** Bumped on every visit recorded, so the badges, points and wallet fetch again. */
+  visited: number;
   /**
    * Names of the assets the visitor's notes are on, kept when sending: a session lives on one
    * device, so every note of it was sent from here, and the list needs no asset requests.
@@ -66,7 +68,7 @@ export interface CommunityState {
   assetNames: Readonly<Record<string, string>>;
 }
 
-let state: CommunityState = { user: undefined, sent: 0, assetNames: {} };
+let state: CommunityState = { user: undefined, sent: 0, visited: 0, assetNames: {} };
 let token: string | null = null;
 let loaded: Promise<void> | null = null;
 const listeners = new Set<() => void>();
@@ -282,6 +284,7 @@ export async function sendVisitProof(assetId: string, proof: Omit<VisitProofRequ
     body: { ...proof, method: "device_recognition" },
     token: sendWith,
   });
+  set({ visited: state.visited + 1 });
   void celebrateEarned(state.user?.id ?? null, result.newAchievements);
   return result;
 }
@@ -295,6 +298,7 @@ export async function sendDemoUnlock(assetId: string): Promise<VisitResponse | n
   const sendWith = await accountToken();
   if (sendWith === null) return null;
   const result = await call(`/assets/${encodeURIComponent(assetId)}/visit/unlock`, VisitResponseSchema, { method: "POST", token: sendWith });
+  set({ visited: state.visited + 1 });
   void celebrateEarned(state.user?.id ?? null, result.newAchievements);
   return result;
 }
