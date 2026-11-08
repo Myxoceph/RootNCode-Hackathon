@@ -181,11 +181,6 @@ export function createIntakeRepository(prisma: PrismaClient) {
     },
 
     /**
-     * Decides a pending draft. `decided`: someone else decided it first (only `pending` moves), so two
-     * reviewers never both approve. `taken`: another draft is already approved as this new asset
-     * (intake_draft_new_asset_idx), even when both approvals arrive at once.
-     */
-    /**
      * Clears why publishing failed, so the worker tries the approved draft again on its next round
      * (data/pipeline/publish.py takes approved drafts with neither `applied_at` nor `apply_error`).
      * False when it is not an approved draft that failed (published meanwhile, or already cleared).
@@ -198,6 +193,11 @@ export function createIntakeRepository(prisma: PrismaClient) {
       return count === 1;
     },
 
+    /**
+     * Decides a pending draft. `decided`: someone else decided it first (only `pending` moves), so two
+     * reviewers never both approve. `taken`: another draft is already approved as this new asset
+     * (intake_draft_new_asset_idx), even when both approvals arrive at once.
+     */
     async review(
       id: string,
       decision: { status: "approved"; assetId: string; record: Record<string, unknown> } | { status: "rejected" },

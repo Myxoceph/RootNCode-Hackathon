@@ -354,11 +354,11 @@ export const fetchDrafts = (params: { status: IntakeDraftStatus; kind?: IntakeDr
 
 export const fetchDraft = async (id: string): Promise<IntakeDraft> => (await admin(`/admin/intake/drafts/${id}`, IntakeDraftResponseSchema)).draft;
 
-/** Approve (with the reviewer's corrected record, when anything was changed) or reject with a reason. */
 /** Sends an approved draft whose publishing failed back to the worker (its error is cleared). */
 export const retryDraft = async (id: string): Promise<IntakeDraft> =>
   (await admin(`/admin/intake/drafts/${id}/retry`, IntakeDraftResponseSchema, { method: "POST" })).draft;
 
+/** Approve (with the reviewer's corrected record, when anything was changed) or reject with a reason. */
 export const reviewDraft = async (
   id: string,
   decision: { decision: "approve"; record?: Record<string, unknown>; note?: string } | { decision: "reject"; note: string },

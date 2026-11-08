@@ -161,12 +161,8 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
               select: { id: true, parent_id: true },
             }),
         // Kitabe Gönüllüleri: an inscription counts once the pipeline has published it (applied_at).
-        Promise.all([
-          prisma.intake_draft.count({ where: { kind: "inscription", created_by: userId, status: "approved", applied_at: { not: null } } }),
-          prisma.intake_draft.count({ where: { kind: "inscription", created_by: userId, status: "pending" } }),
-        ]),
+        prisma.intake_draft.count({ where: { kind: "inscription", created_by: userId, status: "approved", applied_at: { not: null } } }),
       ]);
-      const [published, waiting] = inscriptions;
       const count = (status: string, photo: boolean) =>
         contributions
           .filter((group) => group.status === status && (group.kind === "photo") === photo)
@@ -186,8 +182,8 @@ export function createAchievementsRepository(prisma: PrismaClient, statuses: str
           at: visited_at,
           proven: proven_at !== null,
         })),
-        approved: { notes: count("approved", false), photos: count("approved", true), inscriptions: published },
-        pending: { notes: count("pending", false), photos: count("pending", true), inscriptions: waiting },
+        approved: { notes: count("approved", false), photos: count("approved", true), inscriptions },
+        pending: { notes: count("pending", false), photos: count("pending", true) },
         complexChildren,
       };
     },
