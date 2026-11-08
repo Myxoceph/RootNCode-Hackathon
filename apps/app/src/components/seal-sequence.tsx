@@ -142,7 +142,8 @@ export function SealSequence({ asset, muted = false, onDone }: { asset: AssetDet
       </View>
 
       <View style={[styles.controls, { top: insets.top + spacing.sm }]}>
-        {sounding && player && (
+        {/* There from the moment the sound is asked for, not only once it is heard. */}
+        {player && (player.audible || player.loading) && (
           <Pressable
             accessibilityRole="button"
             accessibilityLabel={player.muted ? w.unmute : w.mute}
