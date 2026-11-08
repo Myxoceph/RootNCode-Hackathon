@@ -6,6 +6,7 @@ import { Image, Pressable, StyleSheet, TextInput, View } from "react-native";
 
 import { localMediaUrl, reviewDraft } from "@/data/admin";
 
+import { getIn, obj, setIn, type Path, type Rec } from "./record-path";
 import { CONFIDENCE, Line, Notice, Quotes, quotesOf, Section, SUBJECTS, type Ref } from "./intake-chat";
 import { Badge, Button, Card, CardHeader, errorText, Field, Picker, Segments, Toggle, useAdminColors } from "./kit";
 
@@ -15,35 +16,14 @@ import { Badge, Button, Card, CardHeader, errorText, Field, Picker, Segments, To
  * record as corrected; the worker publishes it (H6), validate.py checks it then.
  */
 
-type Rec = Record<string, unknown>;
-type Path = Array<string | number>;
-
-const obj = (value: unknown): Rec | null => (value && typeof value === "object" && !Array.isArray(value) ? (value as Rec) : null);
-
-function getIn(record: unknown, path: Path): unknown {
-  let at: unknown = record;
-  for (const key of path) {
-    if (at === null || typeof at !== "object") return undefined;
-    at = (at as Rec)[key as string];
-  }
-  return at;
-}
-
-/** A copy of `record` with `value` at `path`; the objects on the way are made when missing. */
-function setIn(record: unknown, path: Path, value: unknown): Rec {
-  const [key, ...rest] = path;
-  const base: Rec | unknown[] = Array.isArray(record) ? [...record] : { ...(obj(record) ?? {}) };
-  const next = rest.length === 0 ? value : setIn((base as Rec)[key as string], rest, value);
-  (base as Rec)[key as string] = next;
-  return base as Rec;
-}
-
 const text = (value: unknown) => (typeof value === "string" ? value : value === null || value === undefined ? "" : String(value));
 const orNull = (value: string) => (value.trim() === "" ? null : value);
 const intOrNull = (value: string) => (/^-?\d+$/.test(value.trim()) ? Number(value.trim()) : null);
 
 const CONFIDENCE_OPTIONS = Object.entries(CONFIDENCE).map(([value, c]) => ({ value, label: c.label }));
 const SUBJECT_OPTIONS = PHOTO_SUBJECTS.map((value) => ({ value, label: SUBJECTS[value] ?? value }));
+/** What the worker writes as a chat photo's credit until the reviewer names who took it (chat.py). */
+const PANEL_CREDIT = "Vagabonds yönetim paneli";
 const ASSET_ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const REASONS = ["Veri setinde zaten var", "Vakıf eseri değil", "Bilgiler doğrulanamıyor", "Kaynak yetersiz"];
 
@@ -63,6 +43,10 @@ function problems(record: Rec): string[] {
     if (typeof lat !== "number" || typeof lng !== "number" || lat < 35.5 || lat > 42.5 || lng < 25.5 || lng > 45) {
       found.push("Konum Türkiye içinde bir enlem (35,5-42,5) ve boylam (25,5-45) olmalı; bilinmiyorsa JSON'da kaldır.");
     }
+  }
+  const media = getIn(record, ["media"]);
+  if (Array.isArray(media) && media.some((m) => !text(getIn(m, ["credit"])).trim() || text(getIn(m, ["credit"])) === PANEL_CREDIT)) {
+    found.push("Fotoğrafların çekenini (ya da kaynağını) yaz: veri setine lisanssız fotoğraf girmez.");
   }
   for (const key of ["founder", "architect"] as const) {
     const person = obj(record[key]);
@@ -101,7 +85,10 @@ export function DraftReview({
   const open = draft.status === "pending";
   const left = problems(record);
   const errorsLeft = draft.validation.errors.length > 0 && !changed;
-  const set = (path: Path, value: unknown) => setRecord((now) => setIn(now, path, value));
+  // A decided draft is shown as it was decided: nothing on it changes.
+  const set = (path: Path, value: unknown) => {
+    if (open) setRecord((now) => setIn(now, path, value));
+  };
   const refs = (...pointers: string[]) => pointers.flatMap((p) => quotes.get(p) ?? []);
 
   const toJson = () => {
@@ -123,14 +110,40 @@ export function DraftReview({
     }
   };
 
+  /** The record as it stands now: from the JSON being edited (not yet in state), or the form's. */
+  const current = (): Rec | null => {
+    if (tab !== "json") return record;
+    try {
+      const parsed: unknown = JSON.parse(json);
+      if (!obj(parsed)) throw new Error("Kayıt bir JSON nesnesi olmalı.");
+      setRecord(parsed as Rec);
+      setJsonError(null);
+      return parsed as Rec;
+    } catch (error) {
+      setJsonError(error instanceof Error ? error.message : "JSON okunamadı.");
+      return null;
+    }
+  };
+
   const decide = async (decision: "approve" | "reject") => {
-    if (decision === "approve" && tab === "json" && !fromJson(null)) return;
-    setBusy(decision);
     setFailure(null);
+    let sent: Rec | undefined;
+    if (decision === "approve") {
+      const now = current();
+      if (!now) return;
+      const blockers = problems(now);
+      const isChanged = JSON.stringify(now) !== JSON.stringify(draft.record);
+      if (blockers.length > 0 || (draft.validation.errors.length > 0 && !isChanged)) {
+        setFailure(blockers[0] ?? "Taslakta doğrulama hataları var: ilgili alanı düzelt, onay düzeltilmiş kayıtla gider.");
+        return;
+      }
+      sent = isChanged ? now : undefined;
+    }
+    setBusy(decision);
     try {
       const done =
         decision === "approve"
-          ? await reviewDraft(draft.id, { decision: "approve", ...(changed && { record }), ...(note.trim() && { note: note.trim() }) })
+          ? await reviewDraft(draft.id, { decision: "approve", ...(sent && { record: sent }), ...(note.trim() && { note: note.trim() }) })
           : await reviewDraft(draft.id, { decision: "reject", note: reason.trim() });
       onDecided(done, decision === "approve" ? "Onaylandı; worker eseri veri setine yazıp yayınlayacak." : "Reddedildi.");
     } catch (error) {
@@ -388,7 +401,7 @@ export function DraftReview({
 
       {open && canDecide && (
         <View style={[styles.decision, { borderTopColor: a.line }]}>
-          {left.length > 0 && (
+          {tab === "form" && left.length > 0 && (
             <Section title="Onaydan önce">
               {left.map((line, i) => (
                 <Line key={i} tone="red" text={line} />
@@ -429,7 +442,7 @@ export function DraftReview({
                   label={changed ? "Düzeltilmiş hâliyle onayla" : "Onayla"}
                   icon="checkmark"
                   kind="primary"
-                  disabled={busy !== null || left.length > 0 || errorsLeft}
+                  disabled={busy !== null || (tab === "form" && (left.length > 0 || errorsLeft))}
                   busy={busy === "approve"}
                   onPress={() => void decide("approve")}
                 />
