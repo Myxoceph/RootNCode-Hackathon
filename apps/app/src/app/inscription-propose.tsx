@@ -345,6 +345,9 @@ function Propose({ asset, cameraPhoto }: { asset: AssetDetail; cameraPhoto: stri
   );
 }
 
+/** Matches shown at most: more than the map's, since the visitor must be able to reach a little-known asset. */
+const CHOICES = 20;
+
 /** "Bu kitabe hangi eserde?": the assets searched by name, as the map's search ranks them. */
 function ChooseAsset({ onChoose }: { onChoose: (asset: string) => void }) {
   const { colors: c } = useTheme();
@@ -356,7 +359,7 @@ function ChooseAsset({ onChoose }: { onChoose: (asset: string) => void }) {
   const [query, setQuery] = useState("");
   const all = assets.status === "success" ? (assets.data ?? []) : null;
   const typedEnough = query.trim().length >= 2;
-  const matches = useMemo(() => (all && typedEnough ? searchAssets(query, all, []).assets : []), [all, query, typedEnough]);
+  const matches = useMemo(() => (all && typedEnough ? searchAssets(query, all, [], undefined, CHOICES).assets : []), [all, query, typedEnough]);
   const typed = { color: c.text, fontSize: typography.body.fontSize * textScale, lineHeight: typography.body.lineHeight * textScale };
 
   return (

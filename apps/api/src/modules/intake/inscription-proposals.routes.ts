@@ -328,6 +328,7 @@ export const inscriptionProposalRoutes: FastifyPluginAsync<InscriptionProposalRo
       const jpgs = photo.variants.filter((v) => v.format === "jpg");
       const shown = jpgs.find((v) => v.width === 1280) ?? jpgs.at(-1)!;
 
+      let row: DraftRow | null = null;
       try {
         // Every write finished before the cleanup below, so none lands after it.
         const written = await Promise.allSettled(photo.variants.map((v, i) => store.put(keys[i]!, v.bytes, CONTENT_TYPE[v.format])));
@@ -375,21 +376,22 @@ export const inscriptionProposalRoutes: FastifyPluginAsync<InscriptionProposalRo
           pdfPage: null,
           arTargetCandidate: triage?.arTarget ?? false,
         };
-        const row = await repository.create({
+        row = await repository.create({
           id: draftId,
           kind: "inscription",
           asset_id: asset.id,
           record: draft as unknown as Prisma.InputJsonValue,
           media: [media] as unknown as Prisma.InputJsonValue,
           validation: triageChecks(triage, location, asset._count.inscription, failure) as unknown as Prisma.InputJsonValue,
-          ai: vision ? { model: visionModel, promptVersion: version, confidence: triage?.confidence ?? null, repaired: false, ms: Date.now() - started } : Prisma.DbNull,
+          ai: vision && prompt ? { model: visionModel, promptVersion: version, confidence: triage?.confidence ?? null, repaired: false, ms: Date.now() - started } : Prisma.DbNull,
           note: query.note ?? null,
           created_by: user.id,
         });
         reply.code(201);
         return InscriptionProposalResponseSchema.parse({ version: CONTRACT_VERSION, proposal: toProposal(row) });
       } catch (error) {
-        await Promise.all(keys.map((key) => store.remove(key).catch(() => {})));
+        // A draft already saved keeps its photo: the expert still needs it.
+        if (row === null) await Promise.all(keys.map((key) => store.remove(key).catch(() => {})));
         throw error;
       }
     } finally {

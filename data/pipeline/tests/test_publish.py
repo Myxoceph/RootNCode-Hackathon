@@ -366,10 +366,16 @@ class PublishQueue(unittest.TestCase):
         self.assertFalse(publish_once(self.conn, {}, self.said.append, self.paths, importer=lambda _id: None), "aynı taslak yeniden alınmaz")
 
     def test_the_local_only_guard_still_stops_the_worker(self):
-        self.approved()
-        with mock.patch("publish.publish", side_effect=LocalOnlyError("uzak veritabanı")):
-            with self.assertRaises(LocalOnlyError):
-                publish_once(self.conn, {}, self.said.append, self.paths, importer=lambda _id: None)
+        # Gerçek akıştaki gibi: koruma aktarma sırasında, yayının içinde patlar.
+        draft_id = self.approved()
+
+        def guarded(_id):
+            raise LocalOnlyError("uzak veritabanı")
+
+        with self.assertRaises(LocalOnlyError):
+            publish_once(self.conn, {}, self.said.append, self.paths, importer=guarded)
+        self.assertEqual(self.state(draft_id), (False, None), "taslak suçlu değil: hata yazılmaz")
+        self.assertEqual(self.conn.execute("select count(*) from pg_locks where locktype = 'advisory' and pid = pg_backend_pid()").fetchone()[0], 0, "kilit bırakıldı")
 
     def test_a_failure_is_written_and_not_retried_on_its_own(self):
         draft_id = self.approved()
