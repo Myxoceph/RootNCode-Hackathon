@@ -1,18 +1,18 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { AssetDetail } from "@vagabonds/contracts";
+import type { AssetDetail, AssetSummary } from "@vagabonds/contracts";
 import { fontFamily, radius, spacing, Text, touchTarget, typography, useTheme, useUi } from "@vagabonds/ui";
 import * as ImagePicker from "expo-image-picker";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
-import { useState, type ComponentProps } from "react";
+import { useEffect, useMemo, useState, type ComponentProps } from "react";
 import { ActivityIndicator, Image, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ResourceView } from "@/components/resource-view";
 import { WebPageHeader } from "@/components/web-nav-bar";
-import { communityAvailable, DataError, useAsset, useCommunity } from "@/data";
+import { communityAvailable, DataError, dataSource, useAsset, useCommunity } from "@/data";
 import { sendInscriptionProposal, useInscriptionVolunteersState } from "@/data/inscription-proposals";
-import { useMessages } from "@/i18n";
+import { useLang, useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
@@ -33,10 +33,23 @@ const NOTE_MAX = 1000;
 export default function InscriptionProposeScreen() {
   const m = useMessages();
   const w = m.propose;
-  const { asset: id } = useLocalSearchParams<{ asset?: string }>();
+  const { asset: id, photo } = useLocalSearchParams<{ asset?: string; photo?: string }>();
   const resource = useAsset(id ?? "");
   const { colors: c } = useTheme();
   const name = resource.status === "success" && resource.data ? resource.data.name : null;
+  const router = useRouter();
+  // Sent from Taşın Dili's camera near no known asset: which one it is on is asked first.
+  if (!id) {
+    return (
+      <View style={[styles.flex, { backgroundColor: c.background }]}>
+        <Head>
+          <title>{m.common.title(w.title)}</title>
+        </Head>
+        {WEB && <WebPageHeader title={w.title} section="monuments" back={{ label: m.note.site, href: "/monuments" }} />}
+        <ChooseAsset onChoose={(asset) => router.setParams({ asset })} />
+      </View>
+    );
+  }
   return (
     <View style={[styles.flex, { backgroundColor: c.background }]}>
       <Head>
@@ -52,7 +65,7 @@ export default function InscriptionProposeScreen() {
       <ResourceView resource={resource}>
         {(asset) =>
           asset ? (
-            <Propose asset={asset} />
+            <Propose asset={asset} cameraPhoto={photo ?? null} />
           ) : (
             <View style={styles.missing}>
               <Text>{w.notFound}</Text>
@@ -64,7 +77,11 @@ export default function InscriptionProposeScreen() {
   );
 }
 
-function Propose({ asset }: { asset: AssetDetail }) {
+/**
+ * `cameraPhoto`: the frame Taşın Dili's camera held when the visitor chose to send an inscription it
+ * did not know (a file in the app's cache). Shown ready to send; the system camera can replace it.
+ */
+function Propose({ asset, cameraPhoto }: { asset: AssetDetail; cameraPhoto: string | null }) {
   const { colors: c } = useTheme();
   const { textScale } = useUi();
   const insets = useSafeAreaInsets();
@@ -81,6 +98,25 @@ function Propose({ asset }: { asset: AssetDetail }) {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [focused, setFocused] = useState<"location" | "note" | null>(null);
+  // Whether the photo shown is still the camera's frame (its note goes once another is chosen).
+  const [fromCamera, setFromCamera] = useState(false);
+
+  useEffect(() => {
+    if (!cameraPhoto) return;
+    let live = true;
+    Image.getSize(
+      cameraPhoto,
+      (width, height) => {
+        if (!live) return;
+        setPhoto({ uri: cameraPhoto, width, height });
+        setFromCamera(true);
+      },
+      () => {}, // Unreadable: the visitor takes one as usual.
+    );
+    return () => {
+      live = false;
+    };
+  }, [cameraPhoto]);
 
   const fail = (message: string) => {
     setError(message);
@@ -97,7 +133,10 @@ function Propose({ asset }: { asset: AssetDetail }) {
       const options: ImagePicker.ImagePickerOptions = { mediaTypes: ["images"], quality: 1, exif: false };
       const result = from === "camera" ? await ImagePicker.launchCameraAsync(options) : await ImagePicker.launchImageLibraryAsync(options);
       const picked = result.canceled ? null : result.assets[0];
-      if (picked) setPhoto({ uri: picked.uri, width: picked.width, height: picked.height });
+      if (picked) {
+        setPhoto({ uri: picked.uri, width: picked.width, height: picked.height });
+        setFromCamera(false);
+      }
     } catch {
       fail(w.failed);
     }
@@ -186,7 +225,20 @@ function Propose({ asset }: { asset: AssetDetail }) {
               resizeMode="contain"
               accessibilityLabel={w.photoLabel}
             />
-            <Secondary label={w.retake} icon="refresh" onPress={() => setPhoto(null)} disabled={sending} />
+            {fromCamera && (
+              <Text variant="caption" color="textSecondary">
+                {w.fromCamera}
+              </Text>
+            )}
+            <Secondary
+              label={w.retake}
+              icon="refresh"
+              onPress={() => {
+                setPhoto(null);
+                setFromCamera(false);
+              }}
+              disabled={sending}
+            />
           </View>
         ) : (
           <View style={[styles.empty, { borderColor: c.border, backgroundColor: c.background }]}>
@@ -270,7 +322,11 @@ function Propose({ asset }: { asset: AssetDetail }) {
 
   return (
     <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={styles.flex}>
-      <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={[styles.column, wide && wideColumn, { paddingBottom: insets.bottom + spacing.xxxl }]}>
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        contentInsetAdjustmentBehavior="automatic"
+        contentContainerStyle={[styles.column, wide && wideColumn, { paddingBottom: insets.bottom + spacing.xxxl }]}
+      >
         <View style={styles.intro}>
           <Text variant="overline" color="highlight">
             {w.overline}
@@ -283,6 +339,129 @@ function Propose({ asset }: { asset: AssetDetail }) {
         {body}
       </ScrollView>
     </KeyboardAvoidingView>
+  );
+}
+
+/** Lower case without Turkish letters, so "ulu cami" finds "Ulu Câmii" and "sehzade" "Şehzade". */
+function fold(text: string): string {
+  return text
+    .toLocaleLowerCase("tr")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "") // the marks of ç, ğ, ö, ş, ü, â, î, û
+    .replace(/\u0131/g, "i"); // dotless i, which has no mark to drop
+}
+
+/** Matches shown at most: the visitor types more rather than scrolls a long list. */
+const CHOICES = 20;
+
+/** "Bu kitabe hangi eserde?": the assets searched by name, all of them fetched once. */
+function ChooseAsset({ onChoose }: { onChoose: (asset: string) => void }) {
+  const { colors: c } = useTheme();
+  const { textScale } = useUi();
+  const insets = useSafeAreaInsets();
+  const wide = useWideWeb();
+  const lang = useLang();
+  const w = useMessages().propose;
+  const [all, setAll] = useState<AssetSummary[] | null>(null);
+  const [failed, setFailed] = useState(false);
+  const [query, setQuery] = useState("");
+  const [attempt, setAttempt] = useState(0);
+
+  useEffect(() => {
+    let live = true;
+    setFailed(false);
+    void (async () => {
+      try {
+        const items: AssetSummary[] = [];
+        for (let offset = 0, total = 1; offset < total; ) {
+          const page = await dataSource.listAssets({ limit: 500, offset }, lang);
+          items.push(...page.items);
+          total = page.total;
+          if (page.items.length === 0) break;
+          offset += page.items.length;
+        }
+        if (live) setAll(items);
+      } catch {
+        if (live) setFailed(true);
+      }
+    })();
+    return () => {
+      live = false;
+    };
+  }, [lang, attempt]);
+
+  // Spaces left out on both sides as well: "ulu cami" finds Bursa's "Ulucami".
+  const key = fold(query.trim());
+  const matches = useMemo(() => {
+    if (!all || key.length < 2) return [];
+    const bare = key.replace(/\s+/g, "");
+    return all.filter((asset) => fold(asset.name).includes(key) || fold(asset.name).replace(/\s+/g, "").includes(bare)).slice(0, CHOICES);
+  }, [all, key]);
+  const typed = { color: c.text, fontSize: typography.body.fontSize * textScale, lineHeight: typography.body.lineHeight * textScale };
+
+  return (
+    // "automatic": iOS's see-through header lies over the page, which starts below it this way.
+    <ScrollView
+      keyboardShouldPersistTaps="handled"
+      contentInsetAdjustmentBehavior="automatic"
+      contentContainerStyle={[styles.column, wide && wideColumn, { paddingBottom: insets.bottom + spacing.xxxl }]}
+    >
+      <View style={styles.intro}>
+        <Text variant="overline" color="highlight">
+          {w.overline}
+        </Text>
+        <Text variant="title" headingLevel={1}>
+          {w.chooseTitle}
+        </Text>
+        <Text color="textSecondary">{w.chooseIntro}</Text>
+      </View>
+      <View style={[styles.field, styles.search, { backgroundColor: c.surface, borderColor: c.border }]}>
+        <Ionicons name="search" size={18} color={c.textSecondary} />
+        <TextInput
+          accessibilityLabel={w.chooseTitle}
+          value={query}
+          onChangeText={setQuery}
+          placeholder={w.choosePlaceholder}
+          placeholderTextColor={c.textSecondary}
+          autoFocus
+          autoCorrect={false}
+          returnKeyType="search"
+          style={[styles.input, styles.flex, typed, WEB ? ({ outlineStyle: "none" } as object) : null]}
+        />
+      </View>
+      {failed ? (
+        <View style={styles.group}>
+          <Text color="textSecondary">{w.chooseFailed}</Text>
+          <Secondary label={w.chooseRetry} icon="refresh" onPress={() => setAttempt((n) => n + 1)} />
+        </View>
+      ) : all === null ? (
+        <ActivityIndicator color={c.highlightMark} />
+      ) : key.length >= 2 && matches.length === 0 ? (
+        <Text color="textSecondary">{w.chooseNone}</Text>
+      ) : matches.length === 0 ? null : (
+        <View style={[styles.list, { borderColor: c.border }]} accessibilityLiveRegion="polite">
+          {matches.map((asset, i) => (
+            <Pressable
+              key={asset.id}
+              accessibilityRole="button"
+              accessibilityLabel={`${asset.name}, ${asset.district}, ${asset.city.label}`}
+              onPress={() => onChoose(asset.id)}
+              style={({ pressed }) => [styles.choice, i > 0 && { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: c.border }, pressed && styles.pressed]}
+            >
+              <View style={styles.flex}>
+                <Text variant="label" style={styles.semibold}>
+                  {asset.name}
+                </Text>
+                <Text variant="caption" color="textSecondary">
+                  {`${asset.district}, ${asset.city.label}`}
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={18} color={c.textSecondary} />
+            </Pressable>
+          ))}
+        </View>
+      )}
+    </ScrollView>
   );
 }
 
@@ -345,4 +524,7 @@ const styles = StyleSheet.create({
   sent: { alignItems: "center", paddingVertical: spacing.xl },
   sentMark: { width: 60, height: 60, borderRadius: 30, alignItems: "center", justifyContent: "center" },
   again: { minHeight: touchTarget.min, justifyContent: "center" },
+  search: { flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingLeft: spacing.md },
+  list: { borderRadius: radius.lg, borderWidth: StyleSheet.hairlineWidth, overflow: "hidden" },
+  choice: { flexDirection: "row", alignItems: "center", gap: spacing.sm, minHeight: touchTarget.min, paddingHorizontal: spacing.md, paddingVertical: spacing.sm },
 });
