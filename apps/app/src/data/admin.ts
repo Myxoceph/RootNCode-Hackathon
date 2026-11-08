@@ -12,6 +12,8 @@ import {
   AdminSummaryResponseSchema,
   AdminUserSchema,
   AdminUsersResponseSchema,
+  IntakeDraftListResponseSchema,
+  IntakeDraftResponseSchema,
   IntakeJobListResponseSchema,
   IntakeJobResponseSchema,
   IntakeUploadResponseSchema,
@@ -28,6 +30,9 @@ import {
   type AdminPhotoUploadQuery,
   type AdminPhotoUploadResponse,
   type AssetDetail,
+  type IntakeDraft,
+  type IntakeDraftKind,
+  type IntakeDraftStatus,
   type IntakeJob,
   type IntakeUpload,
   type AdminAssetInput,
@@ -63,7 +68,7 @@ const MESSAGES: Record<string, string> = {
   FORBIDDEN: "Bu işlem için yetkin yok.",
   OWN_ROLE: "Kendi rolünü değiştiremezsin.",
   OWN_CONTRIBUTION: "Kendi notunu inceleyemezsin.",
-  ALREADY_REVIEWED: "Bu not zaten incelenmiş.",
+  ALREADY_REVIEWED: "Bu zaten incelenmiş; listeyi yenile.",
   UNKNOWN_CODE: "Tür, il, dönem, olay türü ya da külliye tanınmadı.",
   PAYLOAD_TOO_LARGE: "Kayıt çok büyük; metinleri kısaltıp tekrar dene.",
   ASSET_EXISTS: "Bu adla ve ilçede bir eser zaten var.",
@@ -89,6 +94,10 @@ const MESSAGES: Record<string, string> = {
   UNKNOWN_UPLOAD: "Fotoğraflardan biri bulunamadı ya da zaten gönderildi. Kaldırıp yeniden ekle.",
   TOO_MANY_MESSAGES: "Bir sohbette en çok 200 mesaj olabilir.",
   TOO_MANY_PHOTOS: "Bir sohbette en çok 60 fotoğraf olabilir.",
+  DRAFT_NOT_FOUND: "Taslak bulunamadı; silinmiş olabilir.",
+  HAS_ERRORS: "Taslakta doğrulama hataları var: önce düzelt, sonra onayla.",
+  ASSET_GONE: "Bu taslağın eklendiği eser artık yok.",
+  INVALID_RECORD: "Kayıt kurallara uymuyor; alanları kontrol et.",
 };
 
 /** A void schema for answers with nothing to read (204). */
@@ -335,3 +344,16 @@ export async function uploadChatPhoto(file: { uri: string; type: string; name: s
 
 /** A photo the API keeps in its local media store (INTAKE_LOCAL_ONLY), by its key. */
 export const localMediaUrl = (key: string) => `${resolveApiUrl()}/local-media/${key.split("/").map(encodeURIComponent).join("/")}`;
+
+// The review queue's drafts (Veri Döngüsü): new assets from chats and books, visitors' inscriptions.
+
+export const fetchDrafts = (params: { status: IntakeDraftStatus; kind?: IntakeDraftKind; limit?: number; offset?: number }) =>
+  admin(`/admin/intake/drafts${query(params)}`, IntakeDraftListResponseSchema);
+
+export const fetchDraft = async (id: string): Promise<IntakeDraft> => (await admin(`/admin/intake/drafts/${id}`, IntakeDraftResponseSchema)).draft;
+
+/** Approve (with the reviewer's corrected record, when anything was changed) or reject with a reason. */
+export const reviewDraft = async (
+  id: string,
+  decision: { decision: "approve"; record?: Record<string, unknown>; note?: string } | { decision: "reject"; note: string },
+): Promise<IntakeDraft> => (await admin(`/admin/intake/drafts/${id}/review`, IntakeDraftResponseSchema, { body: decision })).draft;

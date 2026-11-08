@@ -46,7 +46,7 @@ export function draftBadge(draft: IntakeDraft): { tone: Tone; label: string } {
 // ── Messages ────────────────────────────────────────────────────────────────────────────────
 
 /** The chat as it was told: numbered as the draft's sources number them ("Mesaj 2"), each with its photos. */
-export function ChatMessages({ job }: { job: IntakeJob }) {
+export function ChatMessages({ job, highlight }: { job: IntakeJob; /** A quote to mark in its message (the review screen). */ highlight?: Ref | null }) {
   const a = useAdminColors();
   const input = job.input;
   if (!input) return null;
@@ -62,7 +62,11 @@ export function ChatMessages({ job }: { job: IntakeJob }) {
                 {formatDate(message.at, true)}
               </Text>
             </View>
-            {message.text.length > 0 && <Text style={styles.messageText} selectable>{message.text}</Text>}
+            {message.text.length > 0 && (
+              <Text style={styles.messageText} selectable>
+                <Marked text={message.text} quote={highlight && highlight.message === index ? highlight.quote : null} />
+              </Text>
+            )}
             {photos.length > 0 && (
               <View style={styles.thumbs}>
                 {photos.map((file) =>
@@ -80,6 +84,20 @@ export function ChatMessages({ job }: { job: IntakeJob }) {
         );
       })}
     </View>
+  );
+}
+
+/** A message's text with a quote from it marked; the quote is found as written, case aside. */
+function Marked({ text, quote }: { text: string; quote: string | null }) {
+  const a = useAdminColors();
+  const at = quote ? text.toLocaleLowerCase("tr").indexOf(quote.toLocaleLowerCase("tr")) : -1;
+  if (!quote || at < 0) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, at)}
+      <Text style={[styles.messageText, { backgroundColor: a.goldSoft, color: a.text, fontFamily: fontFamily.sansMedium }]}>{text.slice(at, at + quote.length)}</Text>
+      {text.slice(at + quote.length)}
+    </>
   );
 }
 
@@ -250,11 +268,11 @@ export function fieldName(pointer: string): string {
   return pointer;
 }
 
-type Ref = { message: number; quote: string };
+export type Ref = { message: number; quote: string };
 
 /** How sure the chat is of a value (the dataset's confidence), shown beside it: "kesin" stays quiet. */
-type Confidence = { tone: Tone; label: string };
-const CONFIDENCE: Record<string, Confidence> = {
+export type Confidence = { tone: Tone; label: string };
+export const CONFIDENCE: Record<string, Confidence> = {
   certain: { tone: "grey", label: "kesin" },
   probable: { tone: "gold", label: "olası" },
   disputed: { tone: "red", label: "tartışmalı" },
@@ -262,7 +280,7 @@ const CONFIDENCE: Record<string, Confidence> = {
 };
 
 /** The quoted sentence behind each field (`{field, message, quote}`), by its pointer. */
-function quotesOf(draft: IntakeDraft): Map<string, Ref[]> {
+export function quotesOf(draft: IntakeDraft): Map<string, Ref[]> {
   const map = new Map<string, Ref[]>();
   for (const ref of draft.sourceRefs) {
     if (!("message" in ref)) continue;
@@ -272,7 +290,7 @@ function quotesOf(draft: IntakeDraft): Map<string, Ref[]> {
 }
 
 /** A photo's subject as the seal screen names it ("Taçkapı"); "aerial" and "other" are the draft's own. */
-const SUBJECTS: Record<string, string> = { ...messages.tr.seal.parts, aerial: "Havadan", other: "Diğer" };
+export const SUBJECTS: Record<string, string> = { ...messages.tr.seal.parts, aerial: "Havadan", other: "Diğer" };
 const languageName = (code: string | null) => (code ? (LANGUAGES.find((l) => l.value === code)?.label ?? code) : "Dili yazılmamış");
 
 const text = (value: unknown): string | null => (typeof value === "string" && value.trim() ? value : null);
@@ -464,7 +482,7 @@ function sourcePages(refs: unknown): string {
   return pages.length > 0 ? `Kaynak: ${pages.join("; ")}` : "Kaynak yok";
 }
 
-function Section({ title, children }: { title: string; children: ReactNode }) {
+export function Section({ title, children }: { title: string; children: ReactNode }) {
   const a = useAdminColors();
   return (
     <View style={[styles.section, { borderTopColor: a.line }]}>
@@ -498,24 +516,31 @@ function FieldRow({ name, value, refs, sure = null, others = [] }: { name: strin
 }
 
 /** The sentences a value was taken from, word for word, with the message they are in. */
-function Quotes({ refs }: { refs: Ref[] | undefined }) {
+export function Quotes({ refs, onShow }: { refs: Ref[] | undefined; /** Shows the quote in its message (the review screen). */ onShow?: (ref: Ref) => void }) {
   const a = useAdminColors();
   if (!refs || refs.length === 0) return null;
   return (
     <>
       {refs.map((ref, i) => (
-        <View key={i} style={[styles.quote, { borderLeftColor: a.goldMark }]}>
+        <Pressable
+          key={i}
+          disabled={!onShow}
+          onPress={() => onShow?.(ref)}
+          accessibilityRole={onShow ? "button" : undefined}
+          accessibilityLabel={onShow ? `Mesaj ${ref.message + 1}'de göster` : undefined}
+          style={[styles.quote, { borderLeftColor: a.goldMark }]}
+        >
           <Text color="textSecondary" style={styles.small}>
             <Text style={[styles.small, { color: a.gold, fontFamily: fontFamily.sansMedium }]}>{`Mesaj ${ref.message + 1}: `}</Text>
             {`“${ref.quote}”`}
           </Text>
-        </View>
+        </Pressable>
       ))}
     </>
   );
 }
 
-function Line({ tone, text: line }: { tone: "red" | "gold"; text: string }) {
+export function Line({ tone, text: line }: { tone: "red" | "gold"; text: string }) {
   const a = useAdminColors();
   return (
     <View style={styles.line}>
