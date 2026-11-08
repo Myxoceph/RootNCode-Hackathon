@@ -9,6 +9,11 @@ API onayı kaydeder (`status = 'approved'`), yayını worker yapar (plan §7 "On
     5. Yalnızca bu eser yerel veritabanına aktarılır (`import_to_db.import_all(only=…)`), tek işlemde.
     6. `applied_at = now()`.
 
+**Kitabe (Kitabe Gönüllüleri, H7).** Onaylanan kitabe var olan eserin dosyasına eklenir (`inscriptions[]`),
+ziyaretçinin fotoğrafı eserin fotoğraflarına (`media[]`, kitabenin AR hedefi olarak), sonra eser yeniden
+içe aktarılır. Okumayı uzman yazdı (model kitabe okumaz; `inscription-proposals.routes.ts`). Taşın Dili'nde
+taranması için `.mind` dosyası gerekir: `npm run data:ar-targets -- --no-seals` ve eserin yeniden aktarılması.
+
 Bir adım hata verirse dosya ve manifest eski hâline döner, hata `apply_error`'a yazılır, taslak kuyrukta
 görünür. Aynı taslak, `apply_error` temizlenene kadar yeniden denenmez (`dev.py retry-apply`).
 
@@ -29,13 +34,17 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from config import REPO
+from config import INTAKE_CACHE, REPO
 
 DATA = REPO / "data"
 sys.path.insert(0, str(DATA / "tools"))
 
 # Kitap ve sohbet taslakları yeni eser getirir; ziyaretçinin kitabesi (inscription) var olan esere eklenir (H7).
 NEW_ASSET_KINDS = ("book_asset", "field_asset")
+PUBLISHED_KINDS = (*NEW_ASSET_KINDS, "inscription")
+INSCRIPTION_SOURCE = "vagabonds-kitabe-gonulluleri"
+INSCRIPTION_CREDIT = "Kitabe Gönüllüleri – Vagabonds ziyaretçisi"
+INSCRIPTION_LICENSE = "ziyaretci-katkisi"
 LOCK_SPACE = 8141  # worker'ın iş kilidinden (8140) ayrı
 ERROR_LIMIT = 2000
 NO_DISTRICT = "ilcesi-belirsiz"
@@ -157,6 +166,126 @@ def publish(
     return path
 
 
+# ── Kitabe ──────────────────────────────────────────────────────────────────────────────────
+
+
+def asset_file(asset_id: str, paths: Paths) -> Path:
+    found = sorted(paths.eserler.rglob(f"{asset_id}.json"))
+    if not found:
+        raise PublishError(f"'{asset_id}' eserinin dosyası veri setinde yok (data/eserler)")
+    return found[0]
+
+
+def visitor_photo(media: list[dict[str, Any]], draft_id: str, paths: Paths) -> Path:
+    """Ziyaretçinin fotoğrafının yerel depodaki en büyük JPEG'i (`intake/<taslak>/<genişlik>.jpg`)."""
+    if not media:
+        raise PublishError("taslakta fotoğraf yok")
+    folder = paths.media / Path(media[0]["key"]).parent
+    jpgs = sorted(folder.glob("*.jpg"), key=lambda path: int(path.stem) if path.stem.isdigit() else 0)
+    if not jpgs:
+        raise PublishError(f"ziyaretçinin fotoğrafı yerel depoda yok ({folder})")
+    return jpgs[-1]
+
+
+def next_media_id(record: dict[str, Any]) -> str:
+    numbers = [int(item["id"][1:]) for item in record.get("media", []) if item["id"].startswith("m") and item["id"][1:].isdigit()]
+    return f"m{max(numbers, default=0) + 1:02d}"
+
+
+def inscription_entry(draft: dict[str, Any], slug: str, media_id: str | None, reviewer: str | None) -> dict[str, Any]:
+    """Uzmanın onayladığı okuma, veri setinin kitabe biçiminde (eser.schema.json `inscriptions[]`)."""
+    if not draft.get("language"):
+        raise PublishError("kitabenin dili (language) boş; uzman onaylarken yazmalı")
+    if not (draft.get("transliteration") or "").strip() and not (draft.get("translationTr") or "").strip():
+        raise PublishError("kitabenin okuması da çevirisi de boş; uzman onaylarken yazmalı")
+    translation = None
+    if (draft.get("translationTr") or "").strip():
+        translation = {"tr": draft["translationTr"].strip(), "en": (draft.get("translationEn") or "").strip() or None}
+    note = "Kitabe Gönüllüleri: bir ziyaretçi fotoğrafladı" + (f", {reviewer} okudu." if reviewer else ", uzman okudu.")
+    return {
+        "id": slug,
+        "location": {"tr": (draft.get("location") or "").strip() or "Eserin üzerinde (yeri belirtilmedi)", "en": None},
+        "language": draft["language"],
+        "script": (draft.get("script") or "").strip() or None,
+        "transliteration": (draft.get("transliteration") or "").strip() or None,
+        "translation": translation,
+        "note": {"tr": note, "en": None},
+        "ar_target_media_id": media_id,
+        "source_refs": [{"source_id": INSCRIPTION_SOURCE}],
+    }
+
+
+def publish_inscription(
+    draft: dict[str, Any],
+    media: list[dict[str, Any]],
+    draft_id: str,
+    asset_id: str,
+    reviewer: str | None,
+    import_asset: Callable[[str], None],
+    paths: Paths = Paths(),
+    today: dt.date | None = None,
+) -> Path:
+    """Onaylanan kitabeyi eserin dosyasına ekler; döndürdüğü, eserin dosyası. Hata olursa her şey geri alınır."""
+    path = asset_file(asset_id, paths)
+    before = path.read_text(encoding="utf-8")
+    record = json.loads(before)
+    slug = f"gonullu-{draft_id.replace('-', '')[:8]}"
+    if any(item["id"] == slug for item in record.get("inscriptions", [])):
+        raise PublishError(f"'{slug}' kitabesi eserde zaten var (bu taslak daha önce yayınlanmış)")
+    photo = visitor_photo(media, draft_id, paths)
+    media_id = next_media_id(record)
+    entry = inscription_entry(draft, slug, media_id, reviewer)
+    if not (media[0].get("arTargetCandidate") or False):
+        # Fotoğraf yine eserin fotoğraflarına girer; Taşın Dili hedefi yalnızca model düz ve net bulduysa.
+        entry["ar_target_media_id"] = None
+    # media_pipeline yerel kaynağı depo içinden okur: fotoğraf işin klasörüne kopyalanır (git'e girmez).
+    held = INTAKE_CACHE / draft_id / "kitabe.jpg"
+    order = max((item.get("order", 0) for item in record.get("media", [])), default=0) + 1
+    label = entry["location"]["tr"]
+    record.setdefault("media", []).append({
+        "id": media_id,
+        "type": "photo",
+        "order": order,
+        "subject": "inscription",
+        "dossier_after": "inscriptions",
+        "source": {"provider": "local", "path": str(held.relative_to(REPO)), "original_name": "kitabe.jpg"},
+        "caption": {"tr": f"Kitabe ({label})", "en": None},
+        "alt": {"tr": "Bir ziyaretçinin çektiği kitabe fotoğrafı.", "en": None},
+        "credit": INSCRIPTION_CREDIT,
+        "license": INSCRIPTION_LICENSE,
+    })
+    record.setdefault("inscriptions", []).append(entry)
+    record.setdefault("meta", {})["updated_at"] = (today or dt.date.today()).isoformat()
+
+    manifest_before = paths.manifest.read_text(encoding="utf-8") if paths.manifest.exists() else None
+    try:
+        held.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(photo, held)
+        path.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        errors = validate_file(record, path, existing_ids(paths))
+        if errors:
+            raise PublishError("validate.py: " + "; ".join(errors[:6]))
+        processed = process_media({"id": asset_id, "media": [record["media"][-1]]}, paths)
+        manifest = json.loads(manifest_before) if manifest_before else {}
+        manifest.setdefault(asset_id, {}).update(processed)
+        paths.manifest.parent.mkdir(parents=True, exist_ok=True)
+        paths.manifest.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+        import_asset(asset_id)
+    except Exception as error:
+        path.write_text(before, encoding="utf-8")
+        if manifest_before is None:
+            paths.manifest.unlink(missing_ok=True)
+        else:
+            paths.manifest.write_text(manifest_before, encoding="utf-8")
+        for folder in (paths.media / "assets" / asset_id).glob(f"{media_id}-*"):
+            shutil.rmtree(folder, ignore_errors=True)
+        shutil.rmtree(held.parent, ignore_errors=True)
+        if isinstance(error, PublishError):
+            raise
+        raise PublishError(f"{type(error).__name__}: {error}") from error
+    return path
+
+
 # ── Kuyruk ──────────────────────────────────────────────────────────────────────────────────
 
 
@@ -165,19 +294,19 @@ def claim_approved(conn) -> dict[str, Any] | None:
     rows = conn.execute(
         """select id from intake_draft where status = 'approved' and applied_at is null and apply_error is null
            and kind = any(%s) order by reviewed_at""",
-        (list(NEW_ASSET_KINDS),),
+        (list(PUBLISHED_KINDS),),
     ).fetchall()
     for (draft_id,) in rows:
         if not conn.execute("select pg_try_advisory_lock(%s, hashtext(%s::text))", (LOCK_SPACE, str(draft_id))).fetchone()[0]:
             continue
         row = conn.execute(
-            """select d.id, d.kind, d.asset_id, d.record, coalesce(u.full_name, u.nickname, u.username)
+            """select d.id, d.kind, d.asset_id, d.record, d.media, coalesce(u.full_name, u.nickname, u.username)
                from intake_draft d left join public.app_user u on u.id = d.reviewed_by
                where d.id = %s and d.status = 'approved' and d.applied_at is null and d.apply_error is null""",
             (draft_id,),
         ).fetchone()
         if row:
-            return dict(zip(("id", "kind", "asset_id", "record", "reviewer"), row))
+            return dict(zip(("id", "kind", "asset_id", "record", "media", "reviewer"), row))
         release(conn, draft_id)
     return None
 
@@ -206,11 +335,16 @@ def publish_once(conn, env, log: Callable[[str], None], paths: Paths = Paths(), 
     if draft is None:
         return False
     try:
-        in_db = lambda asset_id: conn.execute("select 1 from public.asset where id = %s", (asset_id,)).fetchone() is not None  # noqa: E731
-        path = publish(draft["record"], draft["asset_id"], draft["reviewer"], in_db, importer or db_importer(env), paths)
+        import_asset = importer or db_importer(env)
+        if draft["kind"] == "inscription":
+            path = publish_inscription(draft["record"], draft["media"] or [], str(draft["id"]), draft["asset_id"], draft["reviewer"], import_asset, paths)
+            detail = "kitabe eklendi"
+        else:
+            in_db = lambda asset_id: conn.execute("select 1 from public.asset where id = %s", (asset_id,)).fetchone() is not None  # noqa: E731
+            path = publish(draft["record"], draft["asset_id"], draft["reviewer"], in_db, import_asset, paths)
+            detail = "koordinatlı" if (draft["record"].get("location") or {}).get("coordinates") else "koordinatsız: listede ve aramada, haritada değil"
         conn.execute("update intake_draft set applied_at = now(), apply_error = null, updated_at = now() where id = %s", (draft["id"],))
-        located = "koordinatlı" if (draft["record"].get("location") or {}).get("coordinates") else "koordinatsız: listede ve aramada, haritada değil"
-        log(f"yayınlandı: {draft['asset_id']} → {path.relative_to(REPO) if path.is_relative_to(REPO) else path} ({located})")
+        log(f"yayınlandı: {draft['asset_id']} → {path.relative_to(REPO) if path.is_relative_to(REPO) else path} ({detail})")
     except PublishError as error:
         message = str(error)[:ERROR_LIMIT]
         conn.execute("update intake_draft set apply_error = %s, updated_at = now() where id = %s", (message, draft["id"]))

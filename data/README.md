@@ -1040,6 +1040,21 @@ eklenip yeniden içe aktarılınca haritaya kendiliğinden çıkar. Veri setinde
 
 Sohbet kaynağı `sources.json`'da `vagabonds-panel`; `source_refs[].pages` sayfa değil mesaj numarasıdır ("mesaj 2").
 
+### Ziyaretçinin kitabesi (Kitabe Gönüllüleri)
+
+Bir ziyaretçi uygulamadan bir eserde listede olmayan bir kitabenin fotoğrafını gönderir
+(`POST /assets/:id/inscription-proposals`); fotoğraf konum bilgisi silinmiş olarak yerel depoya yazılır ve onay
+kuyruğuna bir taslak düşer. **Kitabeyi uzman okur**: görüntü modeli denemelerde kitabe metnini uydurduğu için yalnızca
+ön eleme yapar (kitabe var mı, alfabe, satır sayısı, okunaklılık, Taşın Dili'ne uygunluk; `data/pipeline/prompts/inscription-read.md`).
+Uzman dili, okunuşu ve Türkçe çeviriyi yazıp onaylar. Yayın adımı:
+
+1. Eserin dosyasına `inscriptions[]` girdisi eklenir: id `gonullu-<taslağın ilk 8 hanesi>`, kaynak `vagabonds-kitabe-gonulluleri`,
+   notunda okuyan uzmanın adı. Ziyaretçi belirtmediyse `location.tr` "Eserin üzerinde (yeri belirtilmedi)".
+2. Fotoğraf eserin `media[]`'sına eklenir (sıradaki `mNN`, `subject: inscription`, `license: ziyaretci-katkisi`), `media_pipeline.py` ile
+   işlenir. Model fotoğrafı düz ve net bulduysa kitabenin `ar_target_media_id`'si olur.
+3. Eser yeniden içe aktarılır (yalnızca o eser). Kitabe eser sayfasında hemen görünür.
+4. Taşın Dili'nde taranması için `.mind` gerekir: `npm run data:ar-targets -- --no-seals`, sonra eser yeniden aktarılır.
+
 ## 12. Veri görüntüleyici
 
 `data/viewer/index.html`: elimizdeki verinin tamamını tarayıcıda gösteren statik site (HTML + CSS + JS; sunucu gerekmez, dosyayı açmak yeterli).

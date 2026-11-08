@@ -20,6 +20,7 @@ import { localMediaRoutes, type LocalMediaRoutesOptions } from "./modules/intake
 import { createIntakeRepository } from "./modules/intake/intake.repository.ts";
 import { intakeRoutes } from "./modules/intake/intake.routes.ts";
 import { intakeChatRoutes } from "./modules/intake/intake-chat.routes.ts";
+import { inscriptionProposalRoutes } from "./modules/intake/inscription-proposals.routes.ts";
 import { communityRoutes } from "./modules/community/community.routes.ts";
 import { moderationRoutes } from "./modules/community/moderation.routes.ts";
 import { createJournalRepository } from "./modules/journal/journal.repository.ts";
@@ -83,7 +84,7 @@ export interface BuildAppOptions {
    * photos are processed into (default: mediaStore; null: uploads answer 503). Without it there are no
    * /admin/intake routes.
    */
-  intake?: { root: string; dir: string; store?: MediaStore | null } | null;
+  intake?: { root: string; dir: string; store?: MediaStore | null; visionModel?: string } | null;
   /** `POST /assets/:id/visit/unlock` for the app's "Kilidi aç" (see achievementsRoutes); off by default. */
   demoUnlock?: boolean;
 }
@@ -150,9 +151,19 @@ export function buildApp({
   if (localMedia) app.register(localMediaRoutes, localMedia);
   if (intake) {
     const intakeRepository = createIntakeRepository(prisma);
-    const { root, dir, store = mediaStore ?? null } = intake;
+    const { root, dir, store = mediaStore ?? null, visionModel = "" } = intake;
     app.register(intakeRoutes, { repository: intakeRepository, community: communityRepository, root, dir });
     app.register(intakeChatRoutes, { repository: intakeRepository, community: communityRepository, store, root, dir });
+    // Kitabe Gönüllüleri: a visitor's inscription photo, read by the vision model into a draft for review.
+    app.register(inscriptionProposalRoutes, {
+      prisma,
+      community: communityRepository,
+      store,
+      vision,
+      visionModel,
+      root,
+      mediaUrl: (key) => `${mediaBaseUrl.replace(/\/+$/, "")}/${key}`,
+    });
   }
   app.register(adminAssetPreviewRoutes, {
     repository: createAssetsRepository(prisma, assetVisibility, ALL_ASSET_STATUSES),
