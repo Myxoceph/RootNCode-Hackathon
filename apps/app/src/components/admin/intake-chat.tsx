@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { INTAKE_MESSAGE_MAX_CHARS, INTAKE_MESSAGE_MAX_UPLOADS, type IntakeDraft, type IntakeJob, type MetaEnumsResponse } from "@vagabonds/contracts";
+import { INTAKE_FIELD_NAMES, INTAKE_MESSAGE_MAX_CHARS, INTAKE_MESSAGE_MAX_UPLOADS, type IntakeDraft, type IntakeJob, type MetaEnumsResponse } from "@vagabonds/contracts";
 import { fontFamily, Text } from "@vagabonds/ui";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ActivityIndicator, Image, Pressable, StyleSheet, View } from "react-native";
@@ -241,31 +241,9 @@ export function ChatComposer({
 
 // ── The draft ───────────────────────────────────────────────────────────────────────────────
 
-/** What a field is called on the card and in its questions, by the draft's JSON pointer. */
-const FIELD_NAMES: Record<string, string> = {
-  "/name/tr": "Ad",
-  "/type": "Tür",
-  "/era": "Dönem",
-  "/location/district": "İlçe",
-  "/location/neighborhood": "Mahalle",
-  "/location/address": "Adres",
-  "/location/coordinates": "Konum",
-  "/dating": "Tarih",
-  "/dating/start_year": "Yapım yılı",
-  "/dating/end_year": "Bitiş yılı",
-  "/dating/hijri_year": "Hicri yıl",
-  "/dating/century": "Yüzyıl",
-  "/founder": "Bani (yaptıran)",
-  "/founder/name": "Bani (yaptıran)",
-  "/architect": "Mimar",
-  "/architect/name": "Mimar",
-  "/summary": "Özet",
-  "/sections": "Anlatı bölümleri",
-  "/inscriptions": "Kitabeler",
-};
-
+/** What a field is called on the card and in its questions (INTAKE_FIELD_NAMES, shared with the worker). */
 export function fieldName(pointer: string): string {
-  const known = FIELD_NAMES[pointer];
+  const known = INTAKE_FIELD_NAMES[pointer];
   if (known) return known;
   const inscription = /^\/inscriptions\/(\d+)/.exec(pointer);
   if (inscription) return `Kitabe ${Number(inscription[1]) + 1}`;

@@ -21,6 +21,27 @@
     "aerial",
     "other"
   ],
+  "fieldNames": {
+    "/name/tr": "Ad",
+    "/type": "Tür",
+    "/era": "Dönem",
+    "/location/district": "İlçe",
+    "/location/neighborhood": "Mahalle",
+    "/location/address": "Adres",
+    "/location/coordinates": "Konum",
+    "/dating": "Tarih",
+    "/dating/start_year": "Yapım yılı",
+    "/dating/end_year": "Bitiş yılı",
+    "/dating/hijri_year": "Hicri yıl",
+    "/dating/century": "Yüzyıl",
+    "/founder": "Bani (yaptıran)",
+    "/founder/name": "Bani (yaptıran)",
+    "/architect": "Mimar",
+    "/architect/name": "Mimar",
+    "/summary": "Özet",
+    "/sections": "Anlatı bölümleri",
+    "/inscriptions": "Kitabeler"
+  },
   "columns": {
     "intake_job.status": {
       "$schema": "https://json-schema.org/draft/2020-12/schema",
