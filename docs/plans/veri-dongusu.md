@@ -47,13 +47,17 @@ Hedef: **veri setinin, kod yazmadan ve kalite kaybetmeden büyümesi.** Üç gir
 
 ## 2. Demo senaryosu (hedef)
 
-1. Panel → "PDF Kabul": bir şehir kitabının PDF'i yüklenir. Model içindekilerden eser listesini önerir,
-   uzman tek ekranda onaylar.
-2. Birkaç dakika sonra kuyrukta onlarca taslak eser görünür. Her alanın yanında kitaptaki sayfası durur;
-   solda PDF sayfası, sağda taslak alanlar. Uzman bir eseri düzeltip onaylar ve eser haritada çıkar.
-3. Ekranda ölçüm: "Otomatik hat, insan eliyle hazırlanmış 770 kayda göre alanların %X'ini doğru buluyor" (§7).
-4. Ziyaretçi bir eserde listede olmayan bir kitabeyi fotoğraflar. Model taslak okuma ve çeviri üretir,
-   taslak kuyruğa düşer. Uzman onaylar, kamera kitabeyi tanır ve Taşın Dili çeviriyi taşın üstüne yerleştirir.
+Kapsam 2026-11-08'de daraltıldı (§7): PDF'ten kitap aktarma yok. İlk hedef senaryo (PDF yükle, kitap haritası,
+onlarca taslak, ölçüm) bu yüzden çıkarıldı.
+
+1. **Sohbetten Kabul:** Panel → "Sohbetten Kabul"da uzman bir eseri birkaç mesajla anlatır, fotoğraf ekler. Worker
+   (EVREN) taslak kaydı yazar; her alanın yanında alındığı cümle durur, mesajlarda geçmeyen bilgi taslağa girmez.
+2. Uzman İnceleme → Yeni eserler'de taslağı sohbetle yan yana görür, düzeltir, onaylar. Worker veri setine yazıp
+   yayınlar; eser uygulamada (konumu varsa haritada) çıkar.
+3. **Kitabe Gönüllüleri:** Ziyaretçi bir eserde listede olmayan bir kitabeyi fotoğraflar ve gönderir. Model okumaz,
+   yalnızca ön eler (kitabe var mı, okunaklı mı, ekrandan mı çekilmiş). Uzman fotoğraftan okur, onaylar.
+4. Worker kitabeyi esere ekler ve fotoğraf uygunsa kamera hedefini derler: Taşın Dili kitabeyi tanır, ziyaretçi
+   Profil'de "Eklendi"yi ve "Kitabe Gönüllüsü" rozetini görür.
 
 ## 3. Mevcut altyapı (yeniden kullanılacak)
 
@@ -227,11 +231,11 @@ Yük yaklaşık eşit: Yiğit API + ekranlar + uygulama akışı; Hüseyin worke
 | Y1 | Intake API (`INTAKE_ENABLED`; moderatör ve admin): `POST /admin/intake/jobs` (PDF, ≤200 MB, `data/build/cache/intake/<id>/source.pdf`), `GET /admin/intake/jobs[/:id]`, `POST /admin/intake/jobs/:id/map` (yalnızca `needs_map`'ten; anahtarlar ve önerilen id'ler benzersiz, üst eser haritada), `GET /admin/intake/drafts[/:id]` (en eskisi önce), `POST /admin/intake/drafts/:id/review` (yalnızca `pending`'den; doğrulama hatası varsa ancak düzeltilmiş kayıtla; yeni eserin id'si veri setinde varsa 409; onayda `status: published`). Migration `…110000_intake_apply`: `applied_at`, `apply_error` | Y0 | `test/intake.routes.test.ts` (9) ✓ 2026-11-08 |
 | Y2 | **Sohbetten Kabul, sözleşme + migration + API** ([`yigit-veri-dongusu.md`](yigit-veri-dongusu.md) §1.1-1.3, §7 kararları): `kind = chat`, `input`, kaynak alıntısı, `validation.missing`; `POST /admin/intake/uploads`, `POST /admin/intake/chats`, `POST /admin/intake/chats/:id/messages`; iş yanıtında sohbetin taslağı | Y1 | API testleri; JSON Schema'da `intake_job.input`; Hüseyin'in testleri yeni migration'la geçiyor  ✓ 2026-11-08 (Hüseyin'in testleri onda doğrulanacak) |
 | Y2b | **Sohbet ekranı** (panel): mesajlar, uzun metin, fotoğraf ekleme, taslak kartı (alanlar, alıntılar, eksik alan soruları), ilerleme | Y2 | Panelde metin + fotoğraf gönderilip worker'ın taslağı görülüyor ✓ 2026-11-08 (`/admin/intake`; worker yerine elle yazılmış taslakla denendi; menüde yalnızca `INTAKE_ENABLED` açık API'de görünür) |
-| Y2c | (sonra) Panel: PDF Kabul ekranları (yükle, ilerleme, kitap haritası tablosu düzenle/onayla) | Y1 | Hatay PDF'iyle harita onaylanıp iş `drafting`'e geçiyor |
+| Y2c | (sonra) Panel: PDF Kabul ekranları (yükle, ilerleme, kitap haritası tablosu düzenle/onayla) | Y1 | Hatay PDF'iyle harita onaylanıp iş `drafting`'e geçiyor **Kapsam dışı** (2026-11-08, §7) |
 | Y3 | Panel: birleşik onay kuyruğu (eski katkılar + `intake_draft`), yan yana inceleme (PDF sayfası görüntüsü + alanlar + kaynak sayfa işaretleri + doğrulama + tekrar uyarısı) | Y1 | Bir taslak düzeltilip onaylanınca eser haritada görünüyor. ◐ 2026-11-08: sohbet taslakları için kuyruk (`/admin/review`, Yeni eserler / Kitabeler sekmeleri) ve inceleme ekranı (`/admin/review/drafts/:id`: solda sohbet, alıntı vurgusu; sağda form + JSON, onay/ret) hazır, onay uçtan uca denendi. Yeni eser kararı yalnızca admin'de. Haritada görünmesi H6'yı bekliyor; kitap sayfa görüntüleri PDF hattıyla (Y2c) |
 | Y4 | ~~Kitabe Gönüllüleri, API~~ → **Hüseyin'e geçti (H7)**, §7 | — | — |
-| Y5 | Kitabe Gönüllüleri, uygulama: eser sayfasında ve Taşın Dili'nde "Bu kitabe listede yok mu?" → kamera → gönder → "taslak, onay bekliyor" + Profil'de durum; onayda "Kitabe Gönüllüsü" rozeti | Y4 | Telefonda uçtan uca: gönder → onayla → kamera tanıyor ◐ 2026-11-08: gönderim ekranı (`/inscription-propose`; telefonda sistem kamerası, web'de dosya), eser sayfası ve Taşın Dili'nden giriş, Notlarım'da "Kitabelerim", `kitabe-gonullusu` rozeti (kural `contributions: inscriptions`, yayınlanınca sayılır). Web'de H7/H6 dalıyla yerelde uçtan uca denendi: gönder → onayla → yayınla → "Eklendi" + rozet. Telefonda ve kamerada tanıma, H7 birleşince |
-| Y6 | (zaman kalırsa) Saha Defteri: toplu fotoğraf yükleme + konum okuma (fotoğraf işlenmeden önce) + konu önerisi | Y0, H3 | — |
+| Y5 | Kitabe Gönüllüleri, uygulama: eser sayfasında ve Taşın Dili'nde "Bu kitabe listede yok mu?" → kamera → gönder → "taslak, onay bekliyor" + Profil'de durum; onayda "Kitabe Gönüllüsü" rozeti | Y4 | Telefonda uçtan uca: gönder → onayla → kamera tanıyor ✓ 2026-11-08: gönderim ekranı (`/inscription-propose`; telefonda sistem kamerası, web'de dosya), eser sayfası ve Taşın Dili'nden giriş, Notlarım'da "Kitabelerim", `kitabe-gonullusu` rozeti (kural `contributions: inscriptions`, yayınlanınca sayılır). Web'de H7/H6 dalıyla yerelde uçtan uca denendi: gönder → onayla → yayınla → "Eklendi" + rozet. Telefonda uçtan uca da denendi: galeriden seçilen net bir fotoğraf onaylanınca worker hedefi derledi, Taşın Dili tanıdı; ekrandan çekilen fotoğraf (tasarım gereği) hedef olmadı |
+| Y6 | (zaman kalırsa) Saha Defteri: toplu fotoğraf yükleme + konum okuma (fotoğraf işlenmeden önce) + konu önerisi | Y0, H3 | — **Kapsam dışı** (2026-11-08, §7) |
 
 ### Hüseyin şeridi (Python ve veri: `data/pipeline/`, `data/tools/`, istemler)
 
@@ -278,6 +282,7 @@ Kararlar ve ölçümler buraya yazılır (tarih + kim).
 | 2026-11-09 | Sohbet kaydında İngilizce | `validate.py`'de `meta.from = panel-sohbet` olan yayınlanmış kayıtta bölümlerin İngilizcesi eksikse uyarı, hata değil (öbür kayıtlarda hata kalır). Model çeviri yapmaz; uygulama Türkçesini gösterir (`pick`) | Hüseyin |
 | 2026-11-09 | Kitabe Gönüllüleri: model kitabe okumaz | `qwen3-vl-30b`'ye veri setindeki 3 gerçek kitabe fotoğrafı okutuldu (Üftade Türbesi, Küçük Ayasofya Çeşmesi, Azeb Bey Türbesi). Üçünde de akıcı ama uydurma bir metin yazdı: Osmanlıca kitabelere Arapça dedi, içerik bambaşkaydı, güveni 0,4-0,6; biri döngüye girip kesildi. Dil ve hat türü tahmini de tutmadı (hepsine "ar", "sülüs"; istemdeki örneği kopyalıyordu). Uzmanı yanlış yönlendireceği için model **yalnızca ön eler**: kitabe var mı, alfabe, satır sayısı, okunaklı mı, ne engelliyor, Taşın Dili'ne uygun mu (3/3 alfabe doğru, 1-2 sn). Bunlar taslağa değil uyarılara yazılır; dil, okuma ve çeviri uzmanın, taslak olduğu gibi onaylanamaz. §12'deki B yolu | Hüseyin (ölçüm) |
 | 2026-11-08 | EVREN ücretsiz | 1 Aralık 2026'ya kadar EVREN ücretsiz; deneme ve ölçümler için kredi kısıtı yok | Yiğit |
+| 2026-11-08 | Kapsam daraltıldı (süre) | **PDF'ten kitap aktarma (Y2c, H1, H2, H4, H5 ve H3'ün kitap istemi) ve Saha Defteri (Y6) yapılmayacak.** Veri Döngüsü sunuma iki akışla gider: Sohbetten Kabul (panelde anlatarak yeni eser) ve Kitabe Gönüllüleri (ziyaretçi kitabesi, uzman okur). Y1'in PDF uçları (`/admin/intake/jobs`) `INTAKE_ENABLED` arkasında kalır, panelde ekranı yok. Demo senaryosu (§2) buna göre yazıldı | Yiğit (kullanıcı kararı) |
 | 2026-11-08 | Sohbet denetimleri, uçtan uca denemeden sonra | Muradiye Camii (Manisa) panelden worker'a gerçek EVREN'le denendi. Değişenler (`chat.py`, istemler; Yiğit yazdı, Hüseyin'in şeridi): **bölüm/özet** artık olgularla denetleniyor: sayılar ve büyük harfli bütün kelimeler (cümle başındakiler de) mesajlarda geçmeli, öbür kelimelerin (yalnızca dil bilgisi dolgusu dışında) %70'i; #252 incelemesinden sonra sıkılaştırıldı (eski düz %85 kuralı dört bölümden üçünü atıyordu, %62-81). **Özet yedeği** başlık satırını atlıyor. **Bir alan bir kişi:** mimarlar virgülle birleşmiyor, öbürleri `architect.candidates`'a notlarıyla; "planı", "başlattı", "tamamladı" gibi kısmi iş `probable`. **Cevaplar:** "Mimar: Bilinmiyor" soruyu kapatır; alan adları panelle ortak tablodan (`INTAKE_FIELD_NAMES` → `intake.schema.json` `fieldNames`); sonraki bir mesaj alanı yeniden anarsa kapanmaz. **Fotoğraf:** model önce betimliyor, sonra `building`, en son konu (örnek JSON'daki `portal` kopyalanıyordu); yapı yoksa ya da güven <0,5 ise `other`. İstemler `asset-structure-2`, `photo-subject-2` | Yiğit |
 
 ## 8. Aşamalar ve kontrol noktaları
@@ -297,12 +302,14 @@ Bir aşama bitmeden sonrakine geçilebilir; kontrol noktaları birleşme anları
 Hepsi sağlanmadan `feat/veri-dongusu` → `dev` PR'ı açılmaz:
 
 - [ ] `npm test`, `npm run typecheck` ve Python testleri geçiyor; CI yeşil
-- [ ] Migration yalnızca ekleme yapıyor; mevcut tablolar ve veriler değişmiyor
+      (2026-11-08, `dev` ile deneme birleşmesi: tek çakışma `packages/contracts/package.json`, iki script de tutulur; sözleşme
+      10/10, API 371/372 (düşen AR testi yerel test verisine bağlı, §10), uygulama 270/270)
+- [x] Migration yalnızca ekleme yapıyor; mevcut tablolar ve veriler değişmiyor (2026-11-08: yalnızca `intake_*` tabloları ve bir rozet satırı; `ALTER`'lar yalnızca bu tablolarda)
 - [ ] Sözleşme sürümü (`CONTRACT_VERSION`, `packages/contracts/package.json`) `dev`'in o anki sürümünden bir üste
       çıkarıldı. Bu dalda bilerek artırılmıyor: `dev` her sürüm artırdığında çakışma çıkmasın diye
-- [ ] Migration'ın adı `dev`'deki son migration'dan sonra geliyor; gelmiyorsa yeniden adlandırıldı
-- [ ] `INTAKE_ENABLED` kapalıyken uygulama ve API eskisiyle birebir aynı davranıyor
-- [ ] Yerel-yalnız koruması ve yerel fotoğraf deposu üretimde devre dışı (yalnızca bayrakla)
+- [x] Migration'ın adı `dev`'deki son migration'dan sonra geliyor; gelmiyorsa yeniden adlandırıldı (2026-11-08: `dev`'in sonuncusu `20261107180000`, bizimkiler `20261108…`)
+- [x] `INTAKE_ENABLED` kapalıyken uygulama ve API eskisiyle birebir aynı davranıyor (2026-11-08: intake uçları kaydedilmiyor; uygulama Kitabe Gönüllüleri'ni yalnızca sunucu kitabe alıyorsa gösteriyor, denendi; rozet kapalı gelir)
+- [x] Yerel-yalnız koruması ve yerel fotoğraf deposu üretimde devre dışı (yalnızca bayrakla) (`INTAKE_LOCAL_ONLY` varsayılanı `false`)
 - [ ] Sohbet fotoğrafları bu dalda yalnızca yerel depoya yazılıyor (`server.ts`, `intake.store`); üretimde R2'ye
       yazılması isteniyorsa bilerek açıldı
 - [ ] Demo senaryosu (§2) yerelde baştan sona çalışıyor
@@ -364,6 +371,13 @@ dev ──► feat/veri-dongusu (ortak, uzun ömürlü; PR ile beslenir)
   8. Yayınlanan kitabenin fotoğraf kaynağı git'te olmayan `data/build/cache/intake/...`; başka makinede `media_pipeline.py` onu bulamaz.
   9. `dev.py approve` kitabe taslağını hiç onaylayamaz (taslakta her zaman bir hata var); `meta` olmayan kayıtta `reviewed_by` yazılmıyor.
   10. Küçük: talimat dosyası her istekte okunuyor; AR derlemesi worker döngüsünü 300 sn'ye kadar tutabiliyor.
+- **Yiğit → Hüseyin (kapsam ve bir bulgu daha, 2026-11-08):** (1) Kapsam daraltıldı (§7): PDF hattı yok; H1, H2, H4, H5'i ve
+  H3'ün kitap istemini tablonda "kapsam dışı" diye işaretler misin? (2) Yayın, eser dosyasının biçimini baştan yazıyor: Ulu Cami'ye
+  bir kitabe eklenince `bursa-osmangazi-ulucami.json`'un diff'i 1.556 satır (boş satırlar gidiyor, tek satırlık `name`/`subtitle`
+  açılıyor). Gerçek bir yayında inceleyen kişi neyin eklendiğini göremez. Öneri: dosyanın kendi biçimini koru (en azından
+  `json.dumps(..., indent=2, ensure_ascii=False)` yerine yalnızca eklenen kısmı yaz) ya da veri setini bir kez bu biçime çevir.
+  (3) `test/assets.routes.test.ts`'deki AR testi Ulu Cami'de hiç hedef olmadığını varsayıyor; yerelde Ulu Cami'ye hedefli bir
+  gönüllü kitabesi yayınlanınca düşüyor (kod hatası değil, test verisine bağlı).
 
 ## 11. Yerel kurulum (bir kez)
 
