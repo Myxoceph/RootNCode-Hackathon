@@ -238,6 +238,6 @@ Ayrıntılar planın §10'unda ("Hüseyin → Yiğit (H7, Y5 için)"). Kısaca:
   fotoğraftan doldurur. Modelin ipuçları (alfabe, satır sayısı, okunaklılık, Taşın Dili'ne uygunluk) `validation.warnings`'te.
   Onay ekranında fotoğrafı büyük göster.
 - **Rozet** ("Kitabe Gönüllüsü"): `published: true` olan ilk gönderimde.
-- **Taşın Dili:** onaylanan kitabe eser sayfasında hemen görünür; AR'da taranması için `npm run data:ar-targets -- --no-seals`
-  ve eserin yeniden aktarılması gerekir.
+- **Taşın Dili:** onaylanan kitabe eser sayfasında hemen görünür; fotoğraf AR'a uygunsa worker derleyip yeniden aktarır,
+  birkaç saniye içinde `/ar-targets`'ta. Uygulamada ek bir iş gerekmiyor.
 

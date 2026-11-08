@@ -12,7 +12,9 @@ API onayı kaydeder (`status = 'approved'`), yayını worker yapar (plan §7 "On
 **Kitabe (Kitabe Gönüllüleri, H7).** Onaylanan kitabe var olan eserin dosyasına eklenir (`inscriptions[]`),
 ziyaretçinin fotoğrafı eserin fotoğraflarına (`media[]`, kitabenin AR hedefi olarak), sonra eser yeniden
 içe aktarılır. Okumayı uzman yazdı (model kitabe okumaz; `inscription-proposals.routes.ts`). Taşın Dili'nde
-taranması için `.mind` dosyası gerekir: `npm run data:ar-targets -- --no-seals` ve eserin yeniden aktarılması.
+taranması için `.mind` dosyası gerekir: model fotoğrafı hedefe uygun bulduysa worker yayından hemen sonra yalnızca o
+eserin kitabelerini derler (`compile_ar_targets.mts --inscriptions-of=<id>`, ~20 sn, headless Chrome) ve eseri yeniden
+aktarır. Derleme olmazsa kitabe yine yayındadır, yalnızca kamerada taranmaz; günlükte elle çalıştırılacak komut yazar.
 
 Bir adım hata verirse dosya ve manifest eski hâline döner, hata `apply_error`'a yazılır, taslak kuyrukta
 görünür. Aynı taslak, `apply_error` temizlenene kadar yeniden denenmez (`dev.py retry-apply`).
@@ -27,7 +29,9 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 import shutil
+import subprocess
 import sys
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -61,6 +65,7 @@ class Paths:
     eserler: Path = DATA / "eserler"
     manifest: Path = DATA / "build" / "media-manifest.json"
     media: Path = DATA / "build" / "media"
+    ar_targets: Path = DATA / "build" / "ar-targets.json"
 
 
 def prepare(record: dict[str, Any], asset_id: str, reviewer: str | None, today: dt.date) -> dict[str, Any]:
@@ -286,6 +291,67 @@ def publish_inscription(
     return path
 
 
+# ── Taşın Dili hedefi ──────────────────────────────────────────────────────────────────────
+
+AR_TIMEOUT = 300
+DEFAULT_CHROME = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+
+
+def find_chrome(env) -> str | None:
+    """Derleyicinin Chrome'u: `CHROME_PATH`, yoksa macOS'taki Chrome, o da yoksa Playwright'ın indirdiği Chromium."""
+    if env.get("CHROME_PATH") or os.environ.get("CHROME_PATH"):
+        return env.get("CHROME_PATH") or os.environ["CHROME_PATH"]
+    if DEFAULT_CHROME.exists():
+        return str(DEFAULT_CHROME)
+    found = sorted(Path.home().glob("Library/Caches/ms-playwright/chromium-*/chrome-mac*/*.app/Contents/MacOS/*"))
+    return str(found[-1]) if found else None
+
+
+def ar_compiler(env) -> Callable[[str], str | None]:
+    """Bir eserin kitabe hedeflerini derleyen; döndürdüğü, derlenemediyse nedeni (başarıda None)."""
+
+    def run(asset_id: str) -> str | None:
+        chrome = find_chrome(env)
+        if chrome is None:
+            return "Chrome bulunamadı (CHROME_PATH)"
+        try:
+            done = subprocess.run(
+                ["npx", "tsx", "data/tools/compile_ar_targets.mts", f"--inscriptions-of={asset_id}"],
+                cwd=REPO, env={**os.environ, "CHROME_PATH": chrome}, capture_output=True, text=True, timeout=AR_TIMEOUT,
+            )
+        except (OSError, subprocess.TimeoutExpired) as error:
+            return f"{type(error).__name__}: {error}"
+        warnings = [line for line in done.stderr.splitlines() if line.startswith("⚠")]
+        if done.returncode != 0:
+            return (done.stderr.strip().splitlines() or ["çıkış kodu " + str(done.returncode)])[-1][:300]
+        return "; ".join(warnings)[:300] or None
+
+    return run
+
+
+def ar_target_ready(asset_id: str, media_id: str, path: Path) -> bool:
+    """`build/ar-targets.json`'da bu fotoğrafın derlenmiş hedefi var mı (db_rows yalnızca onu içe aktarır)."""
+    targets = json.loads(path.read_text(encoding="utf-8")).get("targets", {}) if path.exists() else {}
+    return media_id in targets.get(asset_id, {})
+
+
+def make_scannable(
+    asset_id: str, media_id: str, compile_ar: Callable[[str], str | None], import_asset: Callable[[str], None], paths: Paths = Paths()
+) -> str | None:
+    """Yayınlanan kitabeyi Taşın Dili'ne hazırlar: derler, eseri yeniden aktarır. Döndürdüğü, olmadıysa nedeni."""
+    problem = compile_ar(asset_id)
+    if not ar_target_ready(asset_id, media_id, paths.ar_targets):
+        return problem or "hedef derlenmedi"
+    import db_rows
+
+    db_rows._ar_targets.cache_clear()  # aynı süreçte önceki ar-targets.json okunmuş olabilir
+    try:
+        import_asset(asset_id)
+    except Exception as error:  # noqa: BLE001
+        return f"yeniden aktarılamadı: {type(error).__name__}: {error}"
+    return None
+
+
 # ── Kuyruk ──────────────────────────────────────────────────────────────────────────────────
 
 
@@ -329,7 +395,14 @@ def db_importer(env) -> Callable[[str], None]:
     return run
 
 
-def publish_once(conn, env, log: Callable[[str], None], paths: Paths = Paths(), importer: Callable[[str], None] | None = None) -> bool:
+def publish_once(
+    conn,
+    env,
+    log: Callable[[str], None],
+    paths: Paths = Paths(),
+    importer: Callable[[str], None] | None = None,
+    compile_ar: Callable[[str], str | None] | None = None,
+) -> bool:
     """Onaylı bir taslağı yayınlar. Bekleyen yoksa False."""
     draft = claim_approved(conn)
     if draft is None:
@@ -339,12 +412,21 @@ def publish_once(conn, env, log: Callable[[str], None], paths: Paths = Paths(), 
         if draft["kind"] == "inscription":
             path = publish_inscription(draft["record"], draft["media"] or [], str(draft["id"]), draft["asset_id"], draft["reviewer"], import_asset, paths)
             detail = "kitabe eklendi"
+            target = json.loads(path.read_text(encoding="utf-8"))["inscriptions"][-1].get("ar_target_media_id")
         else:
             in_db = lambda asset_id: conn.execute("select 1 from public.asset where id = %s", (asset_id,)).fetchone() is not None  # noqa: E731
             path = publish(draft["record"], draft["asset_id"], draft["reviewer"], in_db, import_asset, paths)
+            target = None
             detail = "koordinatlı" if (draft["record"].get("location") or {}).get("coordinates") else "koordinatsız: listede ve aramada, haritada değil"
         conn.execute("update intake_draft set applied_at = now(), apply_error = null, updated_at = now() where id = %s", (draft["id"],))
         log(f"yayınlandı: {draft['asset_id']} → {path.relative_to(REPO) if path.is_relative_to(REPO) else path} ({detail})")
+        if target:
+            # Kitabe yayında; kamerada taranması ayrı ve isteğe bağlı bir adım: olmazsa yayını geri almaz.
+            problem = make_scannable(draft["asset_id"], target, compile_ar or ar_compiler(env), import_asset, paths)
+            if problem:
+                log(f"Taşın Dili hedefi derlenemedi ({problem}); elle: npm run data:ar-targets -- --inscriptions-of={draft['asset_id']}")
+            else:
+                log(f"Taşın Dili'nde taranabilir: {draft['asset_id']} / {target}")
     except PublishError as error:
         message = str(error)[:ERROR_LIMIT]
         conn.execute("update intake_draft set apply_error = %s, updated_at = now() where id = %s", (message, draft["id"]))

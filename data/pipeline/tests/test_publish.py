@@ -238,7 +238,7 @@ class PublishQueue(unittest.TestCase):
     def setUp(self):
         self.conn.execute("delete from intake_job")
         self.folder = Path(tempfile.mkdtemp())
-        self.paths = Paths(eserler=self.folder / "eserler", manifest=self.folder / "m.json", media=self.folder / "media")
+        self.paths = Paths(eserler=self.folder / "eserler", manifest=self.folder / "m.json", media=self.folder / "media", ar_targets=self.folder / "ar-targets.json")
         self.paths.eserler.mkdir()
         self.said = []
 
@@ -292,12 +292,58 @@ class PublishQueue(unittest.TestCase):
         )
         imported = []
         try:
-            self.assertTrue(publish_once(self.conn, {}, self.said.append, self.paths, importer=imported.append))
+            self.assertTrue(publish_once(self.conn, {}, self.said.append, self.paths, importer=imported.append, compile_ar=self.never))
         finally:
             shutil.rmtree(INTAKE_CACHE / draft_id, ignore_errors=True)
         self.assertEqual(self.state(draft_id), (True, None))
         self.assertEqual(imported, [ASSET])
         self.assertIn("kitabe eklendi", self.said[-1])
+
+    def never(self, asset_id):
+        self.fail(f"AR'a uygun olmayan fotoğraf derlenmemeli ({asset_id})")
+
+    def inscription_draft(self, ar_target):
+        from psycopg.types.json import Jsonb
+        from PIL import Image
+
+        source = next((REPO / "data" / "eserler").rglob(f"{ASSET}.json"))
+        target = self.paths.eserler / source.relative_to(REPO / "data" / "eserler")
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, target)
+        draft_id = str(uuid.uuid4())
+        self.addCleanup(shutil.rmtree, INTAKE_CACHE / draft_id, True)
+        (self.paths.media / "intake" / draft_id).mkdir(parents=True)
+        Image.new("RGB", (900, 600), (150, 130, 110)).save(self.paths.media / "intake" / draft_id / "1280.jpg", "JPEG")
+        media = [{"key": f"intake/{draft_id}/1280.jpg", "width": 900, "height": 600, "subject": "inscription", "arTargetCandidate": ar_target}]
+        self.conn.execute(
+            "insert into intake_draft (id, kind, status, asset_id, record, media, reviewed_at) values (%s, 'inscription', 'approved', %s, %s, %s, now())",
+            (draft_id, ASSET, Jsonb(expert_reading()), Jsonb(media)),
+        )
+        return draft_id
+
+    def test_a_scannable_inscription_is_compiled_and_imported_again(self):
+        draft_id = self.inscription_draft(ar_target=True)
+        imported, compiled = [], []
+
+        def compile_ar(asset_id):
+            compiled.append(asset_id)
+            media_id = json.loads(next(self.paths.eserler.rglob(f"{asset_id}.json")).read_text(encoding="utf-8"))["inscriptions"][-1]["ar_target_media_id"]
+            self.paths.ar_targets.write_text(json.dumps({"targets": {asset_id: {media_id: {"sha256": "x", "key": "k", "bytes": 1}}}}), encoding="utf-8")
+
+        publish_once(self.conn, {}, self.said.append, self.paths, importer=imported.append, compile_ar=compile_ar)
+        self.assertEqual(self.state(draft_id), (True, None))
+        self.assertEqual(compiled, [ASSET])
+        self.assertEqual(imported, [ASSET, ASSET], "derlemeden sonra eser yeniden aktarılır")
+        self.assertIn("taranabilir", self.said[-1])
+
+    def test_a_failed_compile_keeps_the_inscription_published(self):
+        draft_id = self.inscription_draft(ar_target=True)
+        imported = []
+        publish_once(self.conn, {}, self.said.append, self.paths, importer=imported.append, compile_ar=lambda _id: "Chrome bulunamadı")
+        self.assertEqual(self.state(draft_id), (True, None), "kitabe yayında kalır")
+        self.assertEqual(imported, [ASSET])
+        self.assertIn("Chrome bulunamadı", self.said[-1])
+        self.assertIn(f"--inscriptions-of={ASSET}", self.said[-1])
 
     def test_a_failure_is_written_and_not_retried_on_its_own(self):
         draft_id = self.approved()
