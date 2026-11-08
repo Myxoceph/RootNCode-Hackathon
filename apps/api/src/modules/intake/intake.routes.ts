@@ -264,11 +264,19 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
         if (await repository.assetExists(assetId)) throw new HttpError(409, "ASSET_EXISTS", `An asset "${assetId}" already exists; give the record another id`);
         // Approval is the review: the asset is published once the worker has written it. The dataset
         // keeps a record's state in its meta (data/schema/eser.schema.json; no other field may be added).
-        const meta = record["meta"] && typeof record["meta"] === "object" && !Array.isArray(record["meta"]) ? (record["meta"] as Record<string, unknown>) : {};
+        const asObject = (value: unknown) => (value && typeof value === "object" && !Array.isArray(value) ? (value as Record<string, unknown>) : {});
+        const written = asObject(current.record["meta"]);
+        const meta = asObject(record["meta"]);
+        const today = new Date().toISOString().slice(0, 10);
+        // The worker's to-dos were for the reviewer; the approval is their answer. A record whose
+        // meta was dropped in the JSON keeps the dates the worker wrote (created_at is required).
+        const { todos: _todos, ...kept } = { ...written, ...meta };
+        // A top-level status (as approvals wrote before) is not a dataset field.
+        const { status: _status, ...rest } = record;
         record = {
-          ...record,
+          ...rest,
           id: assetId,
-          meta: { ...meta, status: "published", reviewed_by: user.username ?? user.nickname, updated_at: new Date().toISOString().slice(0, 10) },
+          meta: { ...kept, status: "published", reviewed_by: user.username ?? user.nickname, created_at: kept["created_at"] ?? draft.created_at.toISOString().slice(0, 10), updated_at: today },
         };
       } else if (!(await repository.assetExists(assetId))) {
         throw new HttpError(409, "ASSET_GONE", `The asset "${assetId}" this draft adds to no longer exists`);
