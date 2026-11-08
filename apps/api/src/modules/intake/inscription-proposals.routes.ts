@@ -98,12 +98,22 @@ const AlphabetSchema = z.enum(["arabic", "latin", "greek", "armenian", "other"])
 type Alphabet = z.infer<typeof AlphabetSchema>;
 const ALPHABET_TR: Record<Alphabet, string> = { arabic: "Arap harfli", latin: "Latin harfli", greek: "Yunan harfli", armenian: "Ermeni harfli", other: "başka bir alfabe" };
 
+/**
+ * How well an expert could read the photo: `clear` all of it, `partly` most of it with some letters hard
+ * to make out, `unreadable` too blurred, far or covered. Three steps: a yes or no called a slightly
+ * shaded, slightly angled but readable photo illegible.
+ */
+const LegibilitySchema = z.enum(["clear", "partly", "unreadable"]);
+type Legibility = z.infer<typeof LegibilitySchema>;
+
 /** The model's look at the photo, for the expert. Never a reading. */
 export interface Triage {
   hasInscription: boolean;
   alphabet: Alphabet | null;
   lines: number | null;
-  legible: boolean;
+  legibility: Legibility | null;
+  /** The photo is of a screen or a print, not of the stone: maybe not taken on site, maybe someone else's. */
+  rephotographed: boolean;
   problems: string[];
   arTarget: boolean;
   confidence: number | null;
@@ -130,18 +140,21 @@ export function toTriage(answer: string): Triage | null {
   const raw = parsed.data;
   const alphabet = AlphabetSchema.safeParse(raw["alphabet"]);
   const hasInscription = raw.hasInscription === true;
-  const legible = hasInscription && raw["legible"] === true;
+  const legibility = LegibilitySchema.safeParse(raw["legibility"]);
+  const read = hasInscription && legibility.success ? legibility.data : null;
   const lines = raw["lines"];
   const confidence = raw["confidence"];
   return {
     hasInscription,
     alphabet: hasInscription && alphabet.success ? alphabet.data : null,
     lines: typeof lines === "number" && Number.isInteger(lines) && lines > 0 && lines < 200 ? lines : null,
-    legible,
+    legibility: read,
+    rephotographed: raw["rephotographed"] === true,
     problems: Array.isArray(raw["problems"])
       ? raw["problems"].map((item) => text(item, 200)).filter((item): item is string => item !== null).slice(0, 10)
       : [],
-    arTarget: legible && raw["arTarget"] === true,
+    // The camera learns the target from this photo: only a clear one.
+    arTarget: read === "clear" && raw["arTarget"] === true,
     confidence: typeof confidence === "number" && confidence >= 0 && confidence <= 1 ? confidence : null,
   };
 }
@@ -176,7 +189,11 @@ export function triageChecks(triage: Triage | null, location: string | null, kno
     else {
       const guess = [triage.alphabet && ALPHABET_TR[triage.alphabet], triage.lines && `${triage.lines} satır`].filter(Boolean);
       if (guess.length > 0) warnings.push(`Modelin gördüğü (doğrulayın): ${guess.join(", ")}.`);
-      if (!triage.legible) warnings.push("Model yazıyı okunaksız buldu (bulanık, eğik ya da kısmen görünüyor).");
+      if (triage.legibility === "partly") warnings.push("Model yazının bir kısmını zor seçti: o kısmı fotoğrafta dikkatle okuyun.");
+      if (triage.legibility === "unreadable") warnings.push("Model yazıyı okunamayacak durumda buldu (çok bulanık, uzak ya da büyük kısmı kapalı): yeni fotoğraf gerekebilir.");
+    }
+    if (triage.rephotographed) {
+      warnings.push("Fotoğraf bir ekrandan ya da basılı bir görselden çekilmiş görünüyor: sahada çekilmemiş, başkasına ait olabilir.");
     }
     for (const problem of triage.problems) warnings.push(`Model: ${problem}`);
     if (triage.confidence !== null && triage.confidence < 0.5) warnings.push(`Modelin güveni düşük (${triage.confidence.toFixed(2)}).`);
