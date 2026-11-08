@@ -39,6 +39,7 @@ from pathlib import Path
 from typing import Any
 
 from config import INTAKE_CACHE, REPO
+from db import LocalOnlyError
 
 DATA = REPO / "data"
 sys.path.insert(0, str(DATA / "tools"))
@@ -420,17 +421,28 @@ def publish_once(
             detail = "koordinatlı" if (draft["record"].get("location") or {}).get("coordinates") else "koordinatsız: listede ve aramada, haritada değil"
         conn.execute("update intake_draft set applied_at = now(), apply_error = null, updated_at = now() where id = %s", (draft["id"],))
         log(f"yayınlandı: {draft['asset_id']} → {path.relative_to(REPO) if path.is_relative_to(REPO) else path} ({detail})")
+    except LocalOnlyError:
+        raise  # yerel-yalnız koruması: worker durmalı, taslağın kusuru değil
+    except Exception as error:  # noqa: BLE001 — yazılmazsa worker düşer, yeniden açılınca aynı taslakta yine düşer
+        text = str(error) if isinstance(error, PublishError) else f"{type(error).__name__}: {error}"
+        message = text[:ERROR_LIMIT]
+        conn.execute("update intake_draft set apply_error = %s, updated_at = now() where id = %s", (message, draft["id"]))
+        log(f"yayınlanamadı: {draft['asset_id']}: {message}")
+        release(conn, draft["id"])
+        return True
+    try:
         if target:
             # Kitabe yayında; kamerada taranması ayrı ve isteğe bağlı bir adım: olmazsa yayını geri almaz.
-            problem = make_scannable(draft["asset_id"], target, compile_ar or ar_compiler(env), import_asset, paths)
+            try:
+                problem = make_scannable(draft["asset_id"], target, compile_ar or ar_compiler(env), import_asset, paths)
+            except LocalOnlyError:
+                raise
+            except Exception as error:  # noqa: BLE001
+                problem = f"{type(error).__name__}: {error}"
             if problem:
                 log(f"Taşın Dili hedefi derlenemedi ({problem}); elle: npm run data:ar-targets -- --inscriptions-of={draft['asset_id']}")
             else:
                 log(f"Taşın Dili'nde taranabilir: {draft['asset_id']} / {target}")
-    except PublishError as error:
-        message = str(error)[:ERROR_LIMIT]
-        conn.execute("update intake_draft set apply_error = %s, updated_at = now() where id = %s", (message, draft["id"]))
-        log(f"yayınlanamadı: {draft['asset_id']}: {message}")
     finally:
         release(conn, draft["id"])
     return True

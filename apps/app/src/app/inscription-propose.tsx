@@ -1,6 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import type { AssetDetail, AssetSummary } from "@vagabonds/contracts";
+import type { AssetDetail } from "@vagabonds/contracts";
 import { fontFamily, radius, spacing, Text, touchTarget, typography, useTheme, useUi } from "@vagabonds/ui";
+import { Paths } from "expo-file-system";
 import * as ImagePicker from "expo-image-picker";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
@@ -10,11 +11,13 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ResourceView } from "@/components/resource-view";
 import { WebPageHeader } from "@/components/web-nav-bar";
-import { communityAvailable, DataError, dataSource, useAsset, useCommunity } from "@/data";
+import { communityAvailable, DataError, useAsset, useCommunity, useSearchableAssets } from "@/data";
 import { sendInscriptionProposal, useInscriptionVolunteersState } from "@/data/inscription-proposals";
-import { useLang, useMessages } from "@/i18n";
+import { useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
+import { isCameraFrame } from "@/lib/camera-frame";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
+import { searchAssets } from "@/search/asset-search";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 type Photo = { uri: string; width: number; height: number };
@@ -27,16 +30,15 @@ const NOTE_MAX = 1000;
  * Kitabe Gönüllüleri (Veri Döngüsü Y5): a visitor sends the photo of an inscription on `asset` that is
  * not in the app yet. An expert reads it from the photo (the model only sorts it, H7); once approved
  * and published, Taşın Dili shows it and the visitor earns the Kitabe Gönüllüsü badge. The photo is
- * taken with the system camera (sharper and better focused than the AR camera's frame); on the web it
- * is chosen from the files (ADR 0001).
+ * taken with the system camera (sharper and better focused than the AR camera's frame, which comes
+ * here from Taşın Dili only as a draft, with the system camera offered first); on the web it is chosen
+ * from the files (ADR 0001).
  */
 export default function InscriptionProposeScreen() {
   const m = useMessages();
   const w = m.propose;
   const { asset: id, photo } = useLocalSearchParams<{ asset?: string; photo?: string }>();
-  const resource = useAsset(id ?? "");
   const { colors: c } = useTheme();
-  const name = resource.status === "success" && resource.data ? resource.data.name : null;
   const router = useRouter();
   // Sent from Taşın Dili's camera near no known asset: which one it is on is asked first.
   if (!id) {
@@ -50,6 +52,15 @@ export default function InscriptionProposeScreen() {
       </View>
     );
   }
+  return <ForAsset id={id} photo={photo} />;
+}
+
+function ForAsset({ id, photo }: { id: string; photo: string | undefined }) {
+  const m = useMessages();
+  const w = m.propose;
+  const resource = useAsset(id);
+  const { colors: c } = useTheme();
+  const name = resource.status === "success" && resource.data ? resource.data.name : null;
   return (
     <View style={[styles.flex, { backgroundColor: c.background }]}>
       <Head>
@@ -59,13 +70,13 @@ export default function InscriptionProposeScreen() {
         <WebPageHeader
           title={name ? w.titleFor(name) : w.title}
           section="monuments"
-          back={{ label: name ?? m.note.site, href: id ? { pathname: "/monuments/[id]", params: { id } } : "/monuments" }}
+          back={{ label: name ?? m.note.site, href: { pathname: "/monuments/[id]", params: { id } } }}
         />
       )}
       <ResourceView resource={resource}>
         {(asset) =>
           asset ? (
-            <Propose asset={asset} cameraPhoto={photo ?? null} />
+            <Propose asset={asset} cameraPhoto={!WEB && photo && isCameraFrame(photo, Paths.cache.uri) ? photo : null} />
           ) : (
             <View style={styles.missing}>
               <Text>{w.notFound}</Text>
@@ -98,8 +109,8 @@ function Propose({ asset, cameraPhoto }: { asset: AssetDetail; cameraPhoto: stri
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [focused, setFocused] = useState<"location" | "note" | null>(null);
-  // Whether the photo shown is still the camera's frame (its note goes once another is chosen).
-  const [fromCamera, setFromCamera] = useState(false);
+  // Still the camera's frame: a draft, low in resolution for an expert to read from.
+  const fromCamera = cameraPhoto !== null && photo?.uri === cameraPhoto;
 
   useEffect(() => {
     if (!cameraPhoto) return;
@@ -108,8 +119,8 @@ function Propose({ asset, cameraPhoto }: { asset: AssetDetail; cameraPhoto: stri
       cameraPhoto,
       (width, height) => {
         if (!live) return;
-        setPhoto({ uri: cameraPhoto, width, height });
-        setFromCamera(true);
+        // A photo the visitor already chose stays.
+        setPhoto((now) => now ?? { uri: cameraPhoto, width, height });
       },
       () => {}, // Unreadable: the visitor takes one as usual.
     );
@@ -133,10 +144,7 @@ function Propose({ asset, cameraPhoto }: { asset: AssetDetail; cameraPhoto: stri
       const options: ImagePicker.ImagePickerOptions = { mediaTypes: ["images"], quality: 1, exif: false };
       const result = from === "camera" ? await ImagePicker.launchCameraAsync(options) : await ImagePicker.launchImageLibraryAsync(options);
       const picked = result.canceled ? null : result.assets[0];
-      if (picked) {
-        setPhoto({ uri: picked.uri, width: picked.width, height: picked.height });
-        setFromCamera(false);
-      }
+      if (picked) setPhoto({ uri: picked.uri, width: picked.width, height: picked.height });
     } catch {
       fail(w.failed);
     }
@@ -226,19 +234,14 @@ function Propose({ asset, cameraPhoto }: { asset: AssetDetail; cameraPhoto: stri
               accessibilityLabel={w.photoLabel}
             />
             {fromCamera && (
-              <Text variant="caption" color="textSecondary">
-                {w.fromCamera}
-              </Text>
+              <>
+                <Text variant="caption" color="warning">
+                  {w.fromCamera}
+                </Text>
+                <Primary label={w.sharper} icon="camera" onPress={() => void choose("camera")} disabled={sending} />
+              </>
             )}
-            <Secondary
-              label={w.retake}
-              icon="refresh"
-              onPress={() => {
-                setPhoto(null);
-                setFromCamera(false);
-              }}
-              disabled={sending}
-            />
+            <Secondary label={w.retake} icon="refresh" onPress={() => setPhoto(null)} disabled={sending} />
           </View>
         ) : (
           <View style={[styles.empty, { borderColor: c.border, backgroundColor: c.background }]}>
@@ -342,61 +345,18 @@ function Propose({ asset, cameraPhoto }: { asset: AssetDetail; cameraPhoto: stri
   );
 }
 
-/** Lower case without Turkish letters, so "ulu cami" finds "Ulu Câmii" and "sehzade" "Şehzade". */
-function fold(text: string): string {
-  return text
-    .toLocaleLowerCase("tr")
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "") // the marks of ç, ğ, ö, ş, ü, â, î, û
-    .replace(/\u0131/g, "i"); // dotless i, which has no mark to drop
-}
-
-/** Matches shown at most: the visitor types more rather than scrolls a long list. */
-const CHOICES = 20;
-
-/** "Bu kitabe hangi eserde?": the assets searched by name, all of them fetched once. */
+/** "Bu kitabe hangi eserde?": the assets searched by name, as the map's search ranks them. */
 function ChooseAsset({ onChoose }: { onChoose: (asset: string) => void }) {
   const { colors: c } = useTheme();
   const { textScale } = useUi();
   const insets = useSafeAreaInsets();
   const wide = useWideWeb();
-  const lang = useLang();
   const w = useMessages().propose;
-  const [all, setAll] = useState<AssetSummary[] | null>(null);
-  const [failed, setFailed] = useState(false);
+  const assets = useSearchableAssets(true);
   const [query, setQuery] = useState("");
-  const [attempt, setAttempt] = useState(0);
-
-  useEffect(() => {
-    let live = true;
-    setFailed(false);
-    void (async () => {
-      try {
-        const items: AssetSummary[] = [];
-        for (let offset = 0, total = 1; offset < total; ) {
-          const page = await dataSource.listAssets({ limit: 500, offset }, lang);
-          items.push(...page.items);
-          total = page.total;
-          if (page.items.length === 0) break;
-          offset += page.items.length;
-        }
-        if (live) setAll(items);
-      } catch {
-        if (live) setFailed(true);
-      }
-    })();
-    return () => {
-      live = false;
-    };
-  }, [lang, attempt]);
-
-  // Spaces left out on both sides as well: "ulu cami" finds Bursa's "Ulucami".
-  const key = fold(query.trim());
-  const matches = useMemo(() => {
-    if (!all || key.length < 2) return [];
-    const bare = key.replace(/\s+/g, "");
-    return all.filter((asset) => fold(asset.name).includes(key) || fold(asset.name).replace(/\s+/g, "").includes(bare)).slice(0, CHOICES);
-  }, [all, key]);
+  const all = assets.status === "success" ? (assets.data ?? []) : null;
+  const typedEnough = query.trim().length >= 2;
+  const matches = useMemo(() => (all && typedEnough ? searchAssets(query, all, []).assets : []), [all, query, typedEnough]);
   const typed = { color: c.text, fontSize: typography.body.fontSize * textScale, lineHeight: typography.body.lineHeight * textScale };
 
   return (
@@ -429,14 +389,14 @@ function ChooseAsset({ onChoose }: { onChoose: (asset: string) => void }) {
           style={[styles.input, styles.flex, typed, WEB ? ({ outlineStyle: "none" } as object) : null]}
         />
       </View>
-      {failed ? (
+      {assets.status === "error" ? (
         <View style={styles.group}>
           <Text color="textSecondary">{w.chooseFailed}</Text>
-          <Secondary label={w.chooseRetry} icon="refresh" onPress={() => setAttempt((n) => n + 1)} />
+          <Secondary label={w.chooseRetry} icon="refresh" onPress={assets.retry} />
         </View>
       ) : all === null ? (
         <ActivityIndicator color={c.highlightMark} />
-      ) : key.length >= 2 && matches.length === 0 ? (
+      ) : typedEnough && matches.length === 0 ? (
         <Text color="textSecondary">{w.chooseNone}</Text>
       ) : matches.length === 0 ? null : (
         <View style={[styles.list, { borderColor: c.border }]} accessibilityLiveRegion="polite">

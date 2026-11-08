@@ -127,8 +127,8 @@ export function toTriage(answer: string): Triage | null {
     problems: Array.isArray(raw["problems"])
       ? raw["problems"].map((item) => text(item, 200)).filter((item): item is string => item !== null).slice(0, 10)
       : [],
-    // The camera learns the target from this photo: only a clear one.
-    arTarget: read === "clear" && raw["arTarget"] === true,
+    // The camera learns the target from this photo: only a clear one, of the stone itself.
+    arTarget: read === "clear" && raw["rephotographed"] !== true && raw["arTarget"] === true,
     confidence: typeof confidence === "number" && confidence >= 0 && confidence <= 1 ? confidence : null,
   };
 }
@@ -245,6 +245,8 @@ export const inscriptionProposalRoutes: FastifyPluginAsync<InscriptionProposalRo
   const errorSchema = toOpenApiSchema(ErrorResponseSchema);
   const bearer = [{ bearerAuth: [] }];
   const promptPath = resolve(root, PROMPT_FILE);
+  /** Proposals of each account now being processed (one API process serves them). */
+  const inFlight = new Map<string, number>();
 
   function toProposal(row: DraftRow): InscriptionProposal {
     const media = Array.isArray(row.media) ? (row.media as IntakeDraftMedia[]) : [];
@@ -299,77 +301,99 @@ export const inscriptionProposalRoutes: FastifyPluginAsync<InscriptionProposalRo
     }
     const asset = await repository.asset(id);
     if (!asset) throw new HttpError(404, "ASSET_NOT_FOUND", `No asset with id "${id}"`);
-    if ((await repository.sentInLastHour(user.id)) >= PROPOSALS_PER_HOUR) {
-      throw new HttpError(429, "TOO_MANY_PROPOSALS", `At most ${PROPOSALS_PER_HOUR} inscriptions an hour; try again later`);
-    }
-
-    let photo;
+    // Those still being processed count too: the row is written only after the model's answer. Reserved
+    // before the first await that could let another request of this account through.
+    const reserved = inFlight.get(user.id) ?? 0;
+    inFlight.set(user.id, reserved + 1);
+    const done = () => {
+      const left = (inFlight.get(user.id) ?? 1) - 1;
+      if (left > 0) inFlight.set(user.id, left);
+      else inFlight.delete(user.id);
+    };
     try {
-      photo = await processPhoto(request.body);
-    } catch (error) {
-      if (error instanceof InvalidPhotoError) throw new HttpError(400, "INVALID_IMAGE", error.message);
-      throw error;
-    }
-    const draftId = randomUUID();
-    // The processed photo only: the original's EXIF may hold where the visitor stood.
-    const keys = photo.variants.map((v) => `intake/${draftId}/${v.width}.${v.format}`);
-    await Promise.all(photo.variants.map((v, i) => store.put(keys[i]!, v.bytes, CONTENT_TYPE[v.format])));
-    const jpgs = photo.variants.filter((v) => v.format === "jpg");
-    const shown = jpgs.find((v) => v.width === 1280) ?? jpgs.at(-1)!;
-
-    try {
-      const location = query.location ?? null;
-      let triage: Triage | null = null;
-      let failure: string | null = null;
-      let version = "unknown";
-      const started = Date.now();
-      if (vision) {
-        try {
-          const prompt = parsePrompt(await readFile(promptPath, "utf8"));
-          version = prompt.version;
-          const system = prompt.body.replace("{name}", asset.name_tr).replace("{type}", asset.type_code).replace("{city}", asset.city_code);
-          const answer = await hedge(
-            (signal) => vision.look({ image: shown.bytes, type: "image/jpeg", system, question: "Bu fotoğrafı uzman için değerlendir.", signal, maxTokens: TRIAGE_MAX_TOKENS }),
-            { starts: TRIAGE_HEDGE_MS, deadlineMs: TRIAGE_DEADLINE_MS, retryable: (err) => err instanceof VisionError, timedOut: () => new VisionError("Vision call timed out") },
-          );
-          triage = toTriage(answer);
-          if (!triage) failure = "cevabı JSON değildi";
-        } catch (error) {
-          if (!(error instanceof VisionError)) throw error;
-          request.log.warn({ reason: error.message }, "Inscription triage failed; the draft goes in without it");
-          failure = "model şu an yanıt vermiyor";
-        }
-      } else {
-        failure = "görüntü modeli tanımlı değil";
+      if ((await repository.sentInLastHour(user.id)) + reserved >= PROPOSALS_PER_HOUR) {
+        throw new HttpError(429, "TOO_MANY_PROPOSALS", `At most ${PROPOSALS_PER_HOUR} inscriptions an hour; try again later`);
       }
-      const draft = toDraft(location);
-      const media: IntakeDraftMedia = {
-        key: `intake/${draftId}/${shown.width}.jpg`,
-        width: photo.width,
-        height: photo.height,
-        subject: "inscription",
-        subjectConfidence: null,
-        alt: null,
-        caption: null,
-        pdfPage: null,
-        arTargetCandidate: triage?.arTarget ?? false,
-      };
-      const row = await repository.create({
-        id: draftId,
-        kind: "inscription",
-        asset_id: asset.id,
-        record: draft as unknown as Prisma.InputJsonValue,
-        media: [media] as unknown as Prisma.InputJsonValue,
-        validation: triageChecks(triage, location, asset._count.inscription, failure) as unknown as Prisma.InputJsonValue,
-        ai: vision ? { model: visionModel, promptVersion: version, confidence: triage?.confidence ?? null, repaired: false, ms: Date.now() - started } : Prisma.DbNull,
-        note: query.note ?? null,
-        created_by: user.id,
-      });
-      reply.code(201);
-      return InscriptionProposalResponseSchema.parse({ version: CONTRACT_VERSION, proposal: toProposal(row) });
-    } catch (error) {
-      await Promise.all(keys.map((key) => store.remove(key).catch(() => {})));
-      throw error;
+
+      let photo;
+      try {
+        photo = await processPhoto(request.body);
+      } catch (error) {
+        if (error instanceof InvalidPhotoError) throw new HttpError(400, "INVALID_IMAGE", error.message);
+        throw error;
+      }
+      const draftId = randomUUID();
+      // The processed photo only: the original's EXIF may hold where the visitor stood.
+      const keys = photo.variants.map((v) => `intake/${draftId}/${v.width}.${v.format}`);
+      const jpgs = photo.variants.filter((v) => v.format === "jpg");
+      const shown = jpgs.find((v) => v.width === 1280) ?? jpgs.at(-1)!;
+
+      try {
+        // Every write finished before the cleanup below, so none lands after it.
+        const written = await Promise.allSettled(photo.variants.map((v, i) => store.put(keys[i]!, v.bytes, CONTENT_TYPE[v.format])));
+        const failed = written.find((one) => one.status === "rejected");
+        if (failed) throw failed.reason;
+        const location = query.location ?? null;
+        let triage: Triage | null = null;
+        let failure: string | null = null;
+        let version = "unknown";
+        const started = Date.now();
+        // The prompt is not the visitor's concern: without it the draft goes in unsorted, like without the model.
+        const prompt = vision
+          ? await readFile(promptPath, "utf8").then(parsePrompt).catch((error: unknown) => {
+              request.log.error({ err: error, promptPath }, "Inscription prompt unreadable; the draft goes in without triage");
+              return null;
+            })
+          : null;
+        if (vision && prompt) {
+          try {
+            version = prompt.version;
+            const system = prompt.body.replace("{name}", asset.name_tr).replace("{type}", asset.type_code).replace("{city}", asset.city_code);
+            const answer = await hedge(
+              (signal) => vision.look({ image: shown.bytes, type: "image/jpeg", system, question: "Bu fotoğrafı uzman için değerlendir.", signal, maxTokens: TRIAGE_MAX_TOKENS }),
+              { starts: TRIAGE_HEDGE_MS, deadlineMs: TRIAGE_DEADLINE_MS, retryable: (err) => err instanceof VisionError, timedOut: () => new VisionError("Vision call timed out") },
+            );
+            triage = toTriage(answer);
+            if (!triage) failure = "cevabı JSON değildi";
+          } catch (error) {
+            if (!(error instanceof VisionError)) throw error;
+            request.log.warn({ reason: error.message }, "Inscription triage failed; the draft goes in without it");
+            failure = "model şu an yanıt vermiyor";
+          }
+        } else {
+          failure = vision ? "talimat dosyası okunamadı" : "görüntü modeli tanımlı değil";
+        }
+        const draft = toDraft(location);
+        const media: IntakeDraftMedia = {
+          key: `intake/${draftId}/${shown.width}.jpg`,
+          width: photo.width,
+          height: photo.height,
+          subject: "inscription",
+          subjectConfidence: null,
+          alt: null,
+          caption: null,
+          pdfPage: null,
+          arTargetCandidate: triage?.arTarget ?? false,
+        };
+        const row = await repository.create({
+          id: draftId,
+          kind: "inscription",
+          asset_id: asset.id,
+          record: draft as unknown as Prisma.InputJsonValue,
+          media: [media] as unknown as Prisma.InputJsonValue,
+          validation: triageChecks(triage, location, asset._count.inscription, failure) as unknown as Prisma.InputJsonValue,
+          ai: vision ? { model: visionModel, promptVersion: version, confidence: triage?.confidence ?? null, repaired: false, ms: Date.now() - started } : Prisma.DbNull,
+          note: query.note ?? null,
+          created_by: user.id,
+        });
+        reply.code(201);
+        return InscriptionProposalResponseSchema.parse({ version: CONTRACT_VERSION, proposal: toProposal(row) });
+      } catch (error) {
+        await Promise.all(keys.map((key) => store.remove(key).catch(() => {})));
+        throw error;
+      }
+    } finally {
+      done();
     }
   });
 
