@@ -1581,8 +1581,33 @@ function End({
         </Pressable>
 
         <DossierButton asset={asset} wide />
+        <ListenButton asset={asset} />
       </View>
     </ScrollView>
+  );
+}
+
+/** The very end of the pages, on a phone: a sealed asset's sequence again, its photos with its sound. */
+function ListenButton({ asset }: { asset: AssetDetail }) {
+  const m = useMessages();
+  const opened = isAssetUnlocked(asset, useUnlockedAssets());
+  if (Platform.OS === "web" || !opened) return null;
+  const hasSound = capsuleForSoundKey(asset.ambientSound?.key ?? "") !== undefined;
+  const label = hasSound ? m.seal.listenToSite : m.asset.relive;
+  return (
+    <FrameLink href={{ pathname: "/seal-sequence", params: { asset: asset.id } }}>
+      {/* One flat style object: `Link asChild` takes neither a style function nor an array. */}
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel={`${label}: ${hasSound ? m.asset.reliveHintSound : m.asset.reliveHint}`}
+        style={styles.listen}
+      >
+        <Ionicons name="play" size={18} color={ink.onGold} />
+        <Text variant="label" colorValue={ink.onGold} style={styles.bold}>
+          {label}
+        </Text>
+      </Pressable>
+    </FrameLink>
   );
 }
 
@@ -1681,19 +1706,9 @@ function Experiences({
       href: { pathname: "/visit-seal", params: { asset: asset.id } },
     });
   }
-  // On a phone the sound is earned: the sealed asset opens its sequence again, an unsealed one offers the seal above.
+  // On a phone the sound is earned: the sealed asset opens its sequence from the page's last button (`ListenButton`), an unsealed one offers the seal above.
   const sealable = phone && visitSealTarget(asset, lang) !== null;
-  if (phone && opened) {
-    const hint = capsuleType ? m.asset.reliveHintSound : m.asset.reliveHint;
-    actions.push({
-      key: "relive",
-      icon: "hourglass-outline",
-      title: m.asset.relive,
-      hint,
-      spoken: `${m.asset.relive}: ${hint}`,
-      href: { pathname: "/seal-sequence", params: { asset: asset.id } },
-    });
-  } else if (capsuleType && !sealable) {
+  if (!(phone && opened) && capsuleType && !sealable) {
     // Only captions are announced; a counter that ticks every second would talk over everything.
     const hint = playing
       ? settings.captions
@@ -2354,6 +2369,17 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.display,
     fontSize: 44,
     lineHeight: 50,
+  },
+  listen: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "stretch",
+    gap: spacing.sm,
+    minHeight: 56,
+    paddingHorizontal: spacing.lg,
+    borderRadius: radius.full,
+    backgroundColor: ink.gold,
   },
   directions: {
     flexDirection: "row",

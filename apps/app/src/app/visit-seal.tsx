@@ -18,8 +18,8 @@ import { DataErrorView } from "@/components/resource-view";
 import { Slider } from "@/components/slider";
 import { SealSequence } from "@/components/seal-sequence";
 import { SealStamp } from "@/components/seal-stamp";
-import { capsuleForSoundKey } from "@/content/capsules";
-import { playCapsule, setCapsuleMuted, stopCapsule } from "@/audio/capsule-player";
+import { CAPSULE_SECONDS, capsuleForSoundKey, capsuleWords, type CapsuleType } from "@/content/capsules";
+import { getPlayerState, playCapsule, setCapsuleMuted, stopCapsule, useCapsulePlayer } from "@/audio/capsule-player";
 import { communityAvailable, DataError, sendVisitProof, useAsset } from "@/data";
 import { holdBadges } from "@/data/new-badges";
 import { alignment, ghostRect, type AlignHint, type Size } from "@/lib/seal-alignment";
@@ -623,36 +623,27 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
         <Text variant="title" colorValue={cameraColors.text} style={styles.centerText} headingLevel={2}>
           {w.sealedTitle}
         </Text>
-        <Text colorValue={cameraColors.textSecondary} style={styles.centerText}>
-          {result.verified ? w.verified : ""}
-          {result.firstVisit ? w.firstVisit : w.againVisit}
-        </Text>
+        <View style={styles.sealedNote}>
+          <Ionicons name="checkmark-circle" size={18} color={cameraColors.gold} />
+          <Text colorValue={cameraColors.textSecondary} style={styles.sealedNoteText}>
+            {result.verified ? w.verified : ""}
+            {result.firstVisit ? w.firstVisit : w.againVisit}
+          </Text>
+        </View>
 
         {stage === "offer" && (
           <View style={styles.offer}>
-            {/* The sound already plays; one tap opens the sequence with the photos. The switch beside it
+            {/* The sound already plays; one tap opens the sequence with the photos. The card's switch
                 silences the sound here and in the sequence, which keeps it. */}
-            <View style={styles.openRow}>
-              <Button
-                label={hasSound ? w.listenToSite : w.openTime}
-                accessibilityHint={hasSound ? (muted ? w.openTimeHint : w.openTimeHintSound) : w.openTimeHint}
-                icon={<Ionicons name="play" size={18} color={cameraColors.onGold} />}
-                onPress={() => setStage("sequence")}
-                colors={[cameraColors.gold, cameraColors.onGold]}
-                style={styles.open}
-              />
-              {hasSound && (
-                <Pressable
-                  accessibilityRole="switch"
-                  accessibilityLabel={w.sequenceSound}
-                  accessibilityState={{ checked: !muted }}
-                  onPress={switchSound}
-                  style={({ pressed }) => [styles.soundSwitch, pressed && styles.pressed]}
-                >
-                  <Ionicons name={muted ? "volume-mute" : "volume-high"} size={22} color={cameraColors.text} />
-                </Pressable>
-              )}
-            </View>
+            {capsule && <SoundNow capsule={capsule} muted={muted} onSwitch={switchSound} />}
+            <Button
+              label={hasSound ? w.listenToSite : w.openTime}
+              accessibilityHint={hasSound ? (muted ? w.openTimeHint : w.openTimeHintSound) : w.openTimeHint}
+              icon={<Ionicons name="play" size={18} color={cameraColors.onGold} />}
+              onPress={() => setStage("sequence")}
+              colors={[cameraColors.gold, cameraColors.onGold]}
+              style={styles.open}
+            />
             <Pressable accessibilityRole="button" accessibilityHint={w.skipTimeHint} onPress={leave} hitSlop={8} style={({ pressed }) => [styles.skipLink, pressed && styles.pressed]}>
               <Text variant="label" colorValue={cameraColors.textSecondary}>
                 {w.skipSequence}
@@ -669,6 +660,56 @@ function Sealed({ asset, result, onDone, onSettled }: { asset: AssetDetail; resu
         {stage === "sequence" && <SealSequence asset={asset} muted={muted} onDone={leave} />}
       </Modal>
     </ScrollView>
+  );
+}
+
+/** What is sounding under the seal: its name, how far it has run and its switch. On its own, as the player ticks. */
+function SoundNow({ capsule, muted, onSwitch }: { capsule: CapsuleType; muted: boolean; onSwitch: () => void }) {
+  const lang = useLang();
+  const w = useMessages().seal;
+  const player = useCapsulePlayer();
+  const sounding = player?.type === capsule && player.audible;
+  const run = useRef(new Animated.Value(0)).current;
+  // One steady run to the end of the sound, not a jump at each of the player's ticks.
+  useEffect(() => {
+    if (!sounding) {
+      run.setValue(0);
+      return;
+    }
+    const from = Math.min(1, (getPlayerState()?.elapsed ?? 0) / CAPSULE_SECONDS);
+    run.setValue(from);
+    const animation = Animated.timing(run, { toValue: 1, duration: (1 - from) * CAPSULE_SECONDS * 1000, easing: Easing.linear, useNativeDriver: true });
+    animation.start();
+    return () => animation.stop();
+  }, [sounding, run]);
+  return (
+    <View style={styles.soundCard}>
+      <View style={styles.row}>
+        <View style={styles.soundIcon}>
+          <Ionicons name="musical-notes" size={20} color={cameraColors.gold} />
+        </View>
+        <View style={styles.flex}>
+          <Text variant="overline" colorValue={cameraColors.gold}>
+            {w.siteSound}
+          </Text>
+          <Text variant="label" colorValue={cameraColors.text} numberOfLines={2}>
+            {capsuleWords(capsule, lang).name}
+          </Text>
+        </View>
+        <Pressable
+          accessibilityRole="switch"
+          accessibilityLabel={w.sequenceSound}
+          accessibilityState={{ checked: !muted }}
+          onPress={onSwitch}
+          style={({ pressed }) => [styles.soundSwitch, pressed && styles.pressed]}
+        >
+          <Ionicons name={muted ? "volume-mute" : "volume-high"} size={20} color={cameraColors.text} />
+        </Pressable>
+      </View>
+      <View style={styles.track} aria-hidden accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+        <Animated.View style={[styles.soundBar, { transform: [{ scaleX: run }] }]} />
+      </View>
+    </View>
   );
 }
 
@@ -798,33 +839,58 @@ const styles = StyleSheet.create({
   sealedText: {
     alignSelf: "stretch",
     alignItems: "center",
-    gap: spacing.md,
+    gap: spacing.sm,
+  },
+  sealedNote: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing.xs,
+  },
+  sealedNoteText: {
+    flexShrink: 1,
   },
   offer: {
     alignSelf: "stretch",
     alignItems: "center",
-    gap: spacing.sm,
-    marginTop: spacing.md,
+    gap: spacing.md,
+    marginTop: spacing.lg,
   },
-  openRow: {
+  soundCard: {
     alignSelf: "stretch",
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.sm,
-  },
-  open: {
-    flex: 1,
-  },
-  // As tall and as round as the button beside it.
-  soundSwitch: {
-    width: 56,
-    height: touchTarget.min,
-    borderRadius: radius.lg,
-    alignItems: "center",
-    justifyContent: "center",
-    borderWidth: 1,
+    gap: spacing.md,
+    padding: spacing.md,
+    borderRadius: radius.xl,
+    borderWidth: StyleSheet.hairlineWidth,
     borderColor: "rgba(255,255,255,0.22)",
     backgroundColor: cameraGlass,
+  },
+  soundBar: {
+    width: "100%",
+    height: "100%",
+    transformOrigin: "left center",
+    backgroundColor: cameraColors.gold,
+  },
+  soundIcon: {
+    width: touchTarget.min,
+    height: touchTarget.min,
+    borderRadius: radius.full,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.08)",
+  },
+  soundSwitch: {
+    width: touchTarget.min,
+    height: touchTarget.min,
+    borderRadius: radius.full,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.12)",
+  },
+  open: {
+    alignSelf: "stretch",
+    minHeight: 56,
+    borderRadius: radius.full,
   },
   pressed: {
     opacity: 0.7,
