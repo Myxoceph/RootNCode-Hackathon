@@ -1,4 +1,4 @@
-import { ACHIEVEMENT_IMAGE_MAX_BYTES, ACHIEVEMENT_IMAGE_MIN_SIDE } from "@vagabonds/contracts";
+import { ACHIEVEMENT_IMAGE_MAX_BYTES, ACHIEVEMENT_IMAGE_MIN_SIDE, INTAKE_UPLOAD_MAX_BYTES, INTAKE_UPLOAD_TYPES } from "@vagabonds/contracts";
 import { Platform } from "react-native";
 
 export interface PickedImage {
@@ -51,8 +51,7 @@ export interface PickedPhoto {
   name: string;
 }
 
-const PHOTO_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
-const PHOTO_MAX_BYTES = 15 * 1024 * 1024;
+const PHOTO_TYPES = new Set<string>(INTAKE_UPLOAD_TYPES);
 
 /**
  * Asks for a chat message's photos: JPEGs, PNGs or WebPs of at most 15 MB each, several at once.
@@ -72,7 +71,7 @@ export function pickChatPhotos(): Promise<{ photos: PickedPhoto[]; refused: stri
       const refused: string[] = [];
       for (const file of Array.from(input.files ?? [])) {
         if (!PHOTO_TYPES.has(file.type)) refused.push(`${file.name}: JPEG, PNG ya da WebP olmalı`);
-        else if (file.size > PHOTO_MAX_BYTES) refused.push(`${file.name}: en çok 15 MB olabilir`);
+        else if (file.size > INTAKE_UPLOAD_MAX_BYTES) refused.push(`${file.name}: en çok ${Math.round(INTAKE_UPLOAD_MAX_BYTES / 1024 / 1024)} MB olabilir`);
         else photos.push({ uri: URL.createObjectURL(file), type: file.type as PickedPhoto["type"], name: file.name });
       }
       resolve({ photos, refused });

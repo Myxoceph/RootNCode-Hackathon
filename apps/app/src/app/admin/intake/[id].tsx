@@ -1,10 +1,10 @@
 import { fontFamily, Text } from "@vagabonds/ui";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StyleSheet, useWindowDimensions, View } from "react-native";
 
 import { ChatComposer, ChatMessages, DraftCard, fieldName, isWorking, jobBadge, Notice } from "@/components/admin/intake-chat";
-import { Badge, Button, Card, Failed, Loading, PageHeader, useLoad } from "@/components/admin/kit";
+import { Badge, Button, Card, Empty, Failed, Loading, PageHeader, useLoad } from "@/components/admin/kit";
 import { PageBody } from "@/components/admin/shell";
 import { addChatMessage, fetchChat, fetchMetaEnums } from "@/data/admin";
 
@@ -24,6 +24,8 @@ export default function Chat() {
   const chat = useLoad(() => fetchChat(id), [id]);
   const enums = useLoad(fetchMetaEnums);
   const [text, setText] = useState("");
+  // Bumped by every message sent: a poll asked before it is older than what the send brought back.
+  const sent = useRef(0);
 
   const job = chat.data?.job ?? null;
   const draft = chat.data?.draft ?? null;
@@ -33,8 +35,9 @@ export default function Chat() {
     if (!working) return;
     let active = true;
     const timer = setInterval(() => {
+      const asked = sent.current;
       fetchChat(id).then(
-        (fresh) => active && chat.setData(fresh),
+        (fresh) => active && asked === sent.current && chat.setData(fresh),
         () => {},
       );
     }, POLL_MS);
@@ -55,6 +58,18 @@ export default function Chat() {
     );
   }
 
+  if (job!.kind !== "chat") {
+    return (
+      <View style={styles.fill}>
+        <PageBody>
+          <Card>
+            <Empty icon="document-text-outline" title="Bu bir sohbet değil" body="Bu iş bir PDF kitabının işi; PDF Kabul ekranları daha gelmedi." action={<Button label="Sohbetler" icon="chevron-back" onPress={() => router.push("/admin/intake")} />} />
+          </Card>
+        </PageBody>
+      </View>
+    );
+  }
+
   const badge = jobBadge(job!);
   const closed =
     job!.status === "drafting"
@@ -64,7 +79,11 @@ export default function Chat() {
         : null;
   const ask = (pointer: string) => setText((now) => `${now.trim() ? `${now.trimEnd()}\n` : ""}${fieldName(pointer)}: `);
   const send = async (message: string, uploads: string[]) => {
-    chat.setData(await addChatMessage(id, { text: message, uploads }));
+    sent.current += 1;
+    const fresh = await addChatMessage(id, { text: message, uploads });
+    // Again: a poll sent while the message was on its way may still answer from before it.
+    sent.current += 1;
+    chat.setData(fresh);
   };
   const city = enums.data?.cities.find((c) => c.code === job!.city)?.label ?? job!.city;
 

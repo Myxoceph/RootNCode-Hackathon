@@ -81,7 +81,6 @@ const MESSAGES: Record<string, string> = {
   IMAGE_NOT_SQUARE: "Görsel kareye yakın olmalı; rozet dairenin içinde çizilir.",
   PAYLOAD_TOO_LARGE_IMAGE: "Görsel çok büyük: en çok 2 MB olabilir.",
   INVALID_QUERY: "Arama kurallara uymuyor.",
-  NOT_FOUND: "Bu işlem bu sunucuda yok.",
   JOB_NOT_FOUND: "Sohbet bulunamadı; silinmiş olabilir.",
   DRAFTING: "Taslak şu an yazılıyor. Bitince mesajını yeniden gönder.",
   CHAT_CLOSED: "Bu sohbetin taslağı onaylandı ya da reddedildi; yeni mesaj alınmıyor.",
@@ -104,7 +103,10 @@ async function admin<T>(path: string, schema: SchemaParser<T>, init: { body?: un
     errorFor: (status, code, details) => {
       if (status === 401) sessionRejected(token);
       const message = code ? MESSAGES[code] : undefined;
-      return message ? new DataError("rejected", message, details, code) : statusError(status, code, details);
+      if (message) return new DataError("rejected", message, details, code);
+      // The generic text, with the API's code kept for a caller that acts on it (fetchChats: NOT_FOUND).
+      const generic = statusError(status, code, details);
+      return new DataError(generic.kind, generic.message, details, code);
     },
   });
   return result as T;
@@ -319,7 +321,9 @@ export async function uploadChatPhoto(file: { uri: string; type: string; name: s
       ? new DataError("rejected", "Sohbet fotoğrafları yalnızca yerel geliştirmede (INTAKE_LOCAL_ONLY) yüklenebilir.", details, code)
       : code === "INVALID_IMAGE"
         ? new DataError("rejected", "Bu dosya kullanılamıyor: resim değil ya da çok küçük.", details, code)
-        : photoErrorFor(status, code, details);
+        : code === "INVALID_QUERY"
+          ? new DataError("rejected", "Dosyanın adı okunamadı; yeniden adlandırıp tekrar dene.", details, code)
+          : photoErrorFor(status, code, details);
   let data: Blob;
   try {
     data = await (await fetch(file.uri)).blob();
