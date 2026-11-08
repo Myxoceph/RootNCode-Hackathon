@@ -1,9 +1,19 @@
 # Güncelleme Notları
 
-`dev`'i çektikten sonra **bir kez** yapılması gereken adımlar. En yeni not en üstte.
+`main`'i çektikten sonra **bir kez** yapılması gereken adımlar. En yeni not en üstte.
 Yeni bir kurulum gerekiyorsa (paket, ortam değişkeni, migration…) PR'ı açan kişi buraya bir madde ekler.
 
 Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten yeni bir not var mı?
+
+---
+
+## 2026-11-08 · Final sürümü: ana dal `main`
+
+Kimler: **herkes**
+
+1. `git switch main && git pull`. Varsayılan dal artık `main`; `dev` kullanılmıyor.
+2. Düzeltmeler `main`'den açılan `fix/<konu>` dalından PR ile `main`'e gider. Sunucu `main`'i beş dakikada bir çeker.
+3. Kişiye özel görev belgeleri (`Ahmet.md`, `HUSEYIN.md`, `KUBRA.md`, `YIGIT.md`, `data/eksikler.md`, `data/kapsam.md`, `docs/demo.md`, Veri Döngüsü görev listesi) kaldırıldı; son hâlleri `bb0a868` commit'inde. Veri Döngüsü'nün planı `docs/veri-dongusu.md`'ye taşındı.
 
 ---
 
@@ -221,7 +231,7 @@ Kimler: **API'yi yerelde çalıştıranlar**, **sunucuyu yöneten**, **Kübra (p
 1. API'yi yerelde çalıştıranlar: `npm install` (yeni paketler: `sharp`, `aws4fetch`), `npm run db:deploy -w apps/api`,
    `npm run prisma:generate -w apps/api`, API'yi yeniden başlat. Yerelde R2 anahtarı yoksa yükleme 503 döner, normaldir.
 2. Sunucuyu yöneten: R2 yazma anahtarı ve `deploy/.env`: `docs/deploy.md`, "Panelden fotoğraf yükleme".
-3. Kübra: "Fotoğraflar" adımı, `KUBRA.md` §1.
+3. Kübra: "Fotoğraflar" adımı, [`KUBRA.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/KUBRA.md) §1.
 
 Değişenler:
 - `POST /admin/assets/:id/media` (yalnızca admin; gövde JPEG, PNG ya da WebP, en çok 15 MB, kenar ≥ 300 px) ve
@@ -339,7 +349,7 @@ Değişenler:
   Daha önce açılmış hesapların e-postası boş kalır, giriş etkilenmez.
 - Yeni uçlar: `PATCH /me` (takma ad, ad soyad), `PUT /me/avatar` ve `DELETE /me/avatar` (profil fotoğrafı),
   `GET /avatars/:userId` (yalnızca `/me`'nin verdiği imzalı adresle).
-- Uygulama: kayıt formunda e-posta alanı; Profil'deki kart fotoğrafı ve adı hesaptan alıyor. Ekranlar için `KUBRA.md` §6.
+- Uygulama: kayıt formunda e-posta alanı; Profil'deki kart fotoğrafı ve adı hesaptan alıyor. Ekranlar için [`KUBRA.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/KUBRA.md) §6.
 
 ---
 
@@ -441,7 +451,7 @@ Kimler: **uygulama ekibi** (kurulum adımı yok)
 Değişenler:
 - Yeni uç `GET /me/connections`: kullanıcının keşfettiği (ziyaret ettiği) eserlerin bağları. Karşı eser keşfedilene
   kadar yalnızca konumu gelir (`revealed: false`); ikisi de keşfedilince türü, açıklaması ve adı (`revealed: true`).
-  "Aynı külliye" ve "hemen yanında" bağları listede yok. Uygulamada nasıl kullanılacağı: `KUBRA.md` 5. bölüm.
+  "Aynı külliye" ve "hemen yanında" bağları listede yok. Uygulamada nasıl kullanılacağı: [`KUBRA.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/KUBRA.md) 5. bölüm.
 
 ---
 
@@ -479,7 +489,7 @@ Kimler: **uygulama ekibi** (kurulum adımı yok)
 
 Değişenler:
 - Eser listesinde (`AssetSummary`) yeni alan `yearLabel`: kartta gösterilecek yıl ("1399", "XV. yüzyıl" ya da
-  `null`). Tarih metnindeki hicri yılları, ölüm ve onarım tarihlerini almaz. Kart bunu kullanmalı (`KUBRA.md` 4.1).
+  `null`). Tarih metnindeki hicri yılları, ölüm ve onarım tarihlerini almaz. Kart bunu kullanmalı ([`KUBRA.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/KUBRA.md) 4.1).
 - Uygulamanın fixture'ları API'den yeniden alındı.
 
 ---
@@ -571,7 +581,7 @@ Değişenler:
 
 ## 2026-11-01 · Veri seti dışındaki yerlere bağlar (migration, sözleşme 0.3.15)
 
-Kimler: **API'yi yerelde çalıştıranlar**, **veri ekibi**, **uygulama ekibi** ([`YIGIT.md`](../YIGIT.md) 12. madde)
+Kimler: **API'yi yerelde çalıştıranlar**, **veri ekibi**, **uygulama ekibi** ([`YIGIT.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/YIGIT.md) 12. madde)
 
 1. `npm run db:deploy --workspace @vagabonds/api` (`asset_relation`'a `target_name_tr`, `target_name_en`).
 2. `npm run db:import`.
@@ -591,7 +601,7 @@ Değişenler:
 
 ## 2026-11-01 · Konya'da toplu taşıma rotası (OpenTripPlanner, sözleşme 0.3.14)
 
-Kimler: **demo yığınını çalıştıran** (Ahmet), **uygulama ekibi** (yapılacaklar [`YIGIT.md`](../YIGIT.md) 11. madde)
+Kimler: **demo yığınını çalıştıran** (Ahmet), **uygulama ekibi** (yapılacaklar [`YIGIT.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/YIGIT.md) 11. madde)
 
 1. Demo yığını: `deploy/otp/prepare.sh` bir kez, sonra `deploy/demo.sh up` ([`deploy.md`](deploy.md), "Toplu taşıma").
 2. Yerelde API: bir şey gerekmez; `OTP_URL` boşken `GET /transit/plan` 503 döner, gerisi aynı. Denemek için `deploy.md`'deki `docker run` satırı ve `OTP_URL`.
@@ -619,14 +629,14 @@ Kimler: **herkes** (yerel PostgreSQL), **API'yi yerelde çalıştıranlar**, **u
 2. `npm install` (API'de `fastify` 5.12.7: başlık doğrulamasındaki bir açık kapandı).
 
 Değişenler:
-- Anonim kullanıcı ödül kodu alamaz: `POST /rewards/:code/redeem` → `403 ACCOUNT_REQUIRED`. Puan kazanmaya devam eder; `POST /auth/upgrade` ile hesap açınca puanlar korunur ([`YIGIT.md`](../YIGIT.md) 4. madde).
+- Anonim kullanıcı ödül kodu alamaz: `POST /rewards/:code/redeem` → `403 ACCOUNT_REQUIRED`. Puan kazanmaya devam eder; `POST /auth/upgrade` ile hesap açınca puanlar korunur ([`YIGIT.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/YIGIT.md) 4. madde).
 - Moderatör kendi notunu ya da fotoğrafını onaylayamaz ve reddedemez: `403 OWN_CONTRIBUTION`; başka bir moderatör ya da admin karar verir.
 - CORS artık `PATCH` ve `DELETE`'e izin veriyor: Expo web'deki yönetim paneli (`localhost:8081`) başarım, ödül ve eser düzenleyebiliyor.
 - Yeni test (`route-guards.test.ts`): bütün `/admin` ve `/me` rotaları oturumsuz isteğe 401, ziyaretçiye 403 vermeli; yeni bir rota korumayı unutursa CI kırılır.
 
 ## 2026-10-31 · Ziyaret edilen eserler: `GET /me/visits` (sözleşme 0.3.13)
 
-Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi** (yapılacaklar [`YIGIT.md`](../YIGIT.md) 10. madde)
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi** (yapılacaklar [`YIGIT.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/YIGIT.md) 10. madde)
 
 1. API'yi yeniden başlat. Migration ya da veri içe aktarma gerekmez.
 
@@ -675,7 +685,7 @@ Değişenler:
 
 ## 2026-10-31 · Ödüller, cüzdan ve kanıtlanmış ziyaret (migration, sözleşme 0.3.11)
 
-Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi** (yapılacaklar [`YIGIT.md`](../YIGIT.md))
+Kimler: **API'yi yerelde çalıştıranlar**, **uygulama ekibi** (yapılacaklar [`YIGIT.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/YIGIT.md))
 
 1. `npm run db:deploy --workspace @vagabonds/api`. Migration'lar 6 örnek ödülü, 120 örnek kodu ve 2 yeni başarımı ekler.
 
@@ -1259,7 +1269,7 @@ Kimler: **veri girişi yapanlar** (Ahmet, Hüseyin)
    ```bash
    python3 -m pip install -r data/requirements.txt
    ```
-2. Süreç: [`data/tools/extract/README.md`](../data/tools/extract/README.md) · kim hangi bölükte: [`data/kapsam.md`](../data/kapsam.md)
+2. Süreç: [`data/tools/extract/README.md`](../data/tools/extract/README.md) · kim hangi bölükte: [`data/kapsam.md`](https://github.com/Myxoceph/RootNCode-Hackathon/blob/bb0a868/data/kapsam.md)
 
 Değişenler:
 - `data/eserler/` artık `draft` kayıtları da içerebilir: koordinat ve fotoğraf taslaklarda zorunlu değil, `in_review` öncesi eklenir. `npm run db:import` taslakları atlar.
