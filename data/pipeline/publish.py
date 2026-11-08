@@ -168,6 +168,8 @@ def publish(
         shutil.rmtree(paths.media / "assets" / asset_id, ignore_errors=True)
         if isinstance(error, PublishError):
             raise
+        if isinstance(error, LocalOnlyError):
+            raise  # koruma taslağın kusuru değil: dosyalar geri alındı, worker durur
         raise PublishError(f"{type(error).__name__}: {error}") from error
     return path
 
@@ -288,6 +290,8 @@ def publish_inscription(
         shutil.rmtree(held.parent, ignore_errors=True)
         if isinstance(error, PublishError):
             raise
+        if isinstance(error, LocalOnlyError):
+            raise  # koruma taslağın kusuru değil: dosyalar geri alındı, worker durur
         raise PublishError(f"{type(error).__name__}: {error}") from error
     return path
 
@@ -348,6 +352,8 @@ def make_scannable(
     db_rows._ar_targets.cache_clear()  # aynı süreçte önceki ar-targets.json okunmuş olabilir
     try:
         import_asset(asset_id)
+    except LocalOnlyError:
+        raise
     except Exception as error:  # noqa: BLE001
         return f"yeniden aktarılamadı: {type(error).__name__}: {error}"
     return None
@@ -410,27 +416,27 @@ def publish_once(
         return False
     try:
         import_asset = importer or db_importer(env)
-        if draft["kind"] == "inscription":
-            path = publish_inscription(draft["record"], draft["media"] or [], str(draft["id"]), draft["asset_id"], draft["reviewer"], import_asset, paths)
-            detail = "kitabe eklendi"
-            target = json.loads(path.read_text(encoding="utf-8"))["inscriptions"][-1].get("ar_target_media_id")
-        else:
-            in_db = lambda asset_id: conn.execute("select 1 from public.asset where id = %s", (asset_id,)).fetchone() is not None  # noqa: E731
-            path = publish(draft["record"], draft["asset_id"], draft["reviewer"], in_db, import_asset, paths)
-            target = None
-            detail = "koordinatlı" if (draft["record"].get("location") or {}).get("coordinates") else "koordinatsız: listede ve aramada, haritada değil"
+        try:
+            if draft["kind"] == "inscription":
+                path = publish_inscription(draft["record"], draft["media"] or [], str(draft["id"]), draft["asset_id"], draft["reviewer"], import_asset, paths)
+                detail = "kitabe eklendi"
+                target = json.loads(path.read_text(encoding="utf-8"))["inscriptions"][-1].get("ar_target_media_id")
+            else:
+                in_db = lambda asset_id: conn.execute("select 1 from public.asset where id = %s", (asset_id,)).fetchone() is not None  # noqa: E731
+                path = publish(draft["record"], draft["asset_id"], draft["reviewer"], in_db, import_asset, paths)
+                target = None
+                detail = "koordinatlı" if (draft["record"].get("location") or {}).get("coordinates") else "koordinatsız: listede ve aramada, haritada değil"
+        except LocalOnlyError:
+            raise  # yerel-yalnız koruması: worker durmalı, taslağın kusuru değil
+        except Exception as error:  # noqa: BLE001 — yazılmazsa worker düşer, yeniden açılınca aynı taslakta yine düşer
+            text = str(error) if isinstance(error, PublishError) else f"{type(error).__name__}: {error}"
+            message = text[:ERROR_LIMIT]
+            conn.execute("update intake_draft set apply_error = %s, updated_at = now() where id = %s", (message, draft["id"]))
+            log(f"yayınlanamadı: {draft['asset_id']}: {message}")
+            return True
+        # Yayın bitti: buradan sonraki hata taslağı "yayınlanamadı" diye işaretlemez.
         conn.execute("update intake_draft set applied_at = now(), apply_error = null, updated_at = now() where id = %s", (draft["id"],))
         log(f"yayınlandı: {draft['asset_id']} → {path.relative_to(REPO) if path.is_relative_to(REPO) else path} ({detail})")
-    except LocalOnlyError:
-        raise  # yerel-yalnız koruması: worker durmalı, taslağın kusuru değil
-    except Exception as error:  # noqa: BLE001 — yazılmazsa worker düşer, yeniden açılınca aynı taslakta yine düşer
-        text = str(error) if isinstance(error, PublishError) else f"{type(error).__name__}: {error}"
-        message = text[:ERROR_LIMIT]
-        conn.execute("update intake_draft set apply_error = %s, updated_at = now() where id = %s", (message, draft["id"]))
-        log(f"yayınlanamadı: {draft['asset_id']}: {message}")
-        release(conn, draft["id"])
-        return True
-    try:
         if target:
             # Kitabe yayında; kamerada taranması ayrı ve isteğe bağlı bir adım: olmazsa yayını geri almaz.
             try:

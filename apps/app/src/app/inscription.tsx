@@ -22,6 +22,7 @@ import { DataError, type ResourceWithRetry } from "@/data";
 import { useInscriptionVolunteers } from "@/data/inscription-proposals";
 import { useLang, useMessages, type Messages } from "@/i18n";
 import { announce } from "@/lib/announce";
+import { cameraFrameName, isCameraFrameName } from "@/lib/camera-frame";
 import { cue } from "@/lib/feedback";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { speakAnswer, stopAnswer, stopAnswerOf, useSpeaking } from "@/lib/voice";
@@ -248,8 +249,6 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
       mounted.current = false;
     };
   }, []);
-  const phaseNow = useRef(phase);
-  phaseNow.current = phase;
 
   useEffect(() => {
     if (phase !== "scanning") return;
@@ -375,22 +374,21 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
     setCapturing(true);
     let photo: string | undefined;
     try {
-      // A new name each time: the image cache would show the last frame for the same file. Those
-      // before, from earlier runs of the app too, are deleted, so one stays at most.
+      // The frames before, from earlier runs of the app too, are deleted: one stays at most.
       for (const item of new Directory(Paths.cache).list()) {
-        if (item instanceof File && item.name.startsWith("inscription-propose-")) item.delete();
+        if (item instanceof File && isCameraFrameName(item.name)) item.delete();
       }
     } catch {
       // Left for the system to clear.
     }
     try {
-      photo = await takePhoto(`inscription-propose-${Date.now()}.jpg`);
+      photo = await takePhoto(cameraFrameName());
     } catch {
       photo = undefined;
     }
     if (!mounted.current) return; // left the camera meanwhile: the sending screen is not theirs to see
     setCapturing(false);
-    if (phaseNow.current !== "scanning") {
+    if (phaseRef.current !== "scanning") {
       // It recognised an inscription meanwhile: that is what the visitor is shown.
       resumeCamera();
       return;
