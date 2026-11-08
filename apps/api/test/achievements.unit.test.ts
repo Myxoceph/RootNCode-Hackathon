@@ -14,7 +14,7 @@ const visit = (assetId: string, city: string, district: string, type = "cami", e
 const facts = (visits: VisitFact[], extra: Partial<UserFacts> = {}): UserFacts => ({
   visits,
   approved: { notes: 0, photos: 0, inscriptions: 0 },
-  pending: { notes: 0, photos: 0, inscriptions: 0 },
+  pending: { notes: 0, photos: 0 },
   complexChildren: new Map(),
   ...extra,
 });
@@ -78,7 +78,7 @@ describe("activityPoints", () => {
     const sealed = { ...visit("a", "konya", "Meram", "cami", null, 0), proven: true };
     const f = facts([sealed, visit("b", "konya", "Meram", "cami", null, 1)], {
       approved: { notes: 3, photos: 1, inscriptions: 1 },
-      pending: { notes: 4, photos: 2, inscriptions: 1 },
+      pending: { notes: 4, photos: 2 },
     });
     expect(activityPoints(f)).toBe(2 * 10 + 10 + 3 * 5 + 10);
     expect(activityPoints(facts([]))).toBe(0);

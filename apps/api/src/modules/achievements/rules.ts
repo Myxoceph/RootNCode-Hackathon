@@ -22,7 +22,7 @@ export interface UserFacts {
   /** An inscription (Kitabe Gönüllüleri) counts once it is published, not when approved. */
   approved: { notes: number; photos: number; inscriptions: number };
   /** Waiting for a moderator: shown, but they earn nothing yet. */
-  pending: { notes: number; photos: number; inscriptions: number };
+  pending: { notes: number; photos: number };
   /** Visible children of each complex a `complex` rule names. */
   complexChildren: Map<string, string[]>;
 }

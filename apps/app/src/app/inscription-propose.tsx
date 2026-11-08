@@ -11,7 +11,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ResourceView } from "@/components/resource-view";
 import { WebPageHeader } from "@/components/web-nav-bar";
 import { communityAvailable, DataError, useAsset, useCommunity } from "@/data";
-import { sendInscriptionProposal } from "@/data/inscription-proposals";
+import { sendInscriptionProposal, useInscriptionVolunteersState } from "@/data/inscription-proposals";
 import { useMessages } from "@/i18n";
 import { announce } from "@/lib/announce";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
@@ -72,6 +72,8 @@ function Propose({ asset }: { asset: AssetDetail }) {
   const router = useRouter();
   const w = useMessages().propose;
   const { user } = useCommunity();
+  // A shared link may open this where the server takes no inscriptions: say so before a photo is taken.
+  const volunteers = useInscriptionVolunteersState();
   const [photo, setPhoto] = useState<Photo | null>(null);
   const [location, setLocation] = useState("");
   const [note, setNote] = useState("");
@@ -134,6 +136,15 @@ function Propose({ asset }: { asset: AssetDetail }) {
         <Text color="textSecondary">{w.needsServer}</Text>
       </View>
     );
+  } else if (signedIn && volunteers !== "on") {
+    body =
+      volunteers === "off" ? (
+        <View style={card}>
+          <Text color="textSecondary">{w.off}</Text>
+        </View>
+      ) : (
+        <ActivityIndicator color={c.textSecondary} accessibilityLabel={w.checking} style={styles.checking} />
+      );
   } else if (sent) {
     body = (
       <View style={[card, styles.sent]} accessibilityRole="alert">
@@ -317,6 +328,7 @@ const styles = StyleSheet.create({
   center: { textAlign: "center" },
   semibold: { fontFamily: fontFamily.sansSemiBold },
   missing: { flex: 1, alignItems: "center", justifyContent: "center" },
+  checking: { marginTop: spacing.xl },
   column: { gap: spacing.lg, width: "100%", maxWidth: 640, alignSelf: "center", padding: spacing.md },
   intro: { gap: spacing.xs, paddingTop: spacing.sm },
   card: { gap: spacing.md, padding: spacing.md, borderRadius: radius.xl, borderWidth: StyleSheet.hairlineWidth },

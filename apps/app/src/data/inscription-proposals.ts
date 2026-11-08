@@ -55,12 +55,16 @@ function errorFor(token: string) {
 async function prepare(uri: string, width: number, height: number): Promise<string> {
   try {
     const context = ImageManipulator.manipulate(uri);
-    if (Math.max(width, height) > SEND_SIDE) context.resize(width >= height ? { width: SEND_SIDE } : { height: SEND_SIDE });
-    const rendered = await context.renderAsync();
+    // Released however the work ends: a photo that cannot be decoded must not keep its native context.
     try {
-      return (await rendered.saveAsync({ format: SaveFormat.JPEG, compress: SEND_QUALITY })).uri;
+      if (Math.max(width, height) > SEND_SIDE) context.resize(width >= height ? { width: SEND_SIDE } : { height: SEND_SIDE });
+      const rendered = await context.renderAsync();
+      try {
+        return (await rendered.saveAsync({ format: SaveFormat.JPEG, compress: SEND_QUALITY })).uri;
+      } finally {
+        rendered.release();
+      }
     } finally {
-      rendered.release();
       context.release();
     }
   } catch (error) {
@@ -80,7 +84,9 @@ export async function sendInscriptionProposal(
   const query = new URLSearchParams();
   if (extra.location?.trim()) query.set("location", extra.location.trim());
   if (extra.note?.trim()) query.set("note", extra.note.trim());
-  const url = `${resolveApiUrl()}/assets/${encodeURIComponent(assetId)}/inscription-proposals${query.size > 0 ? `?${query}` : ""}`;
+  // `toString`, not `size`: React Native's URLSearchParams may not have the newer `size`.
+  const search = query.toString();
+  const url = `${resolveApiUrl()}/assets/${encodeURIComponent(assetId)}/inscription-proposals${search ? `?${search}` : ""}`;
   let answer;
   if (Platform.OS !== "web") {
     answer = await uploadFile(prepared, url, InscriptionProposalResponseSchema, { type: "image/jpeg", token, errorFor: errorFor(token), timeoutMs: TIMEOUT_MS });
@@ -100,10 +106,13 @@ export async function sendInscriptionProposal(
 /**
  * Whether this server takes inscriptions: the routes are there only with Veri Döngüsü on
  * (INTAKE_ENABLED), so where they are not the app offers nothing and stays as it was. Learnt once per
- * account from its list (`/me/inscription-proposals`); a 404 means off.
+ * account from its list (`/me/inscription-proposals`); a 404 means off. A request that fails for
+ * another reason (no network) is asked again a little later.
  */
-const probe: { user: string | null; on: boolean | null } = { user: null, on: null };
+export type VolunteersState = "unknown" | "on" | "off";
+const probe: { user: string | null; state: VolunteersState; asking: boolean; attempt: number } = { user: null, state: "unknown", asking: false, attempt: 0 };
 const OFF = "INSCRIPTION_VOLUNTEERS_OFF";
+const PROBE_RETRY_MS = 30_000;
 
 /** The inscriptions the account sent, newest first; null without an account. */
 export async function fetchMyInscriptionProposals(): Promise<InscriptionProposal[] | null> {
@@ -117,32 +126,54 @@ export async function fetchMyInscriptionProposals(): Promise<InscriptionProposal
   return answer!.items;
 }
 
-function settle(user: string, on: boolean) {
-  if (probe.user !== user || probe.on === on) return;
-  probe.on = on;
-  listeners.forEach((listener) => listener());
+const notify = () => listeners.forEach((listener) => listener());
+
+function ask(user: string) {
+  if (probe.asking) return;
+  probe.asking = true;
+  const settle = (state: VolunteersState) => {
+    if (probe.user !== user) return;
+    probe.asking = false;
+    probe.state = state;
+    notify();
+  };
+  fetchMyInscriptionProposals().then(
+    () => settle("on"),
+    (error: unknown) => {
+      if (error instanceof DataError && error.code === OFF) return settle("off");
+      if (probe.user !== user) return;
+      probe.asking = false;
+      setTimeout(() => {
+        if (probe.user !== user || probe.state !== "unknown") return;
+        probe.attempt += 1;
+        notify();
+      }, PROBE_RETRY_MS);
+    },
+  );
 }
 
-/** True once the server is known to take inscriptions from this account; false until then and when it does not. */
-export function useInscriptionVolunteers(): boolean {
+/** Whether this server takes inscriptions from the signed-in account; `unknown` while it is being asked. */
+export function useInscriptionVolunteersState(): VolunteersState {
   const { user } = useCommunity();
-  const id = user?.username ? user.id : null;
-  useSyncExternalStore(subscribe, () => `${probe.user}:${probe.on}`, () => "");
+  const id = communityAvailable && user?.username ? user.id : null;
+  const attempt = useSyncExternalStore(subscribe, () => probe.attempt, () => 0);
+  useSyncExternalStore(subscribe, () => `${probe.user}:${probe.state}`, () => "");
   useEffect(() => {
-    if (!communityAvailable || id === null || probe.user === id) return;
-    probe.user = id;
-    probe.on = null;
-    fetchMyInscriptionProposals().then(
-      () => settle(id, true),
-      // Only a missing route says off; a failed request is asked again with the next account or start.
-      (error: unknown) => {
-        if (error instanceof DataError && error.code === OFF) settle(id, false);
-        else if (probe.user === id) probe.user = null;
-      },
-    );
-  }, [id]);
-  return id !== null && probe.user === id && probe.on === true;
+    if (id === null) return;
+    if (probe.user !== id) {
+      // Another account: what the last one was told does not hold, and its answer is dropped.
+      probe.user = id;
+      probe.state = "unknown";
+      probe.asking = false;
+    }
+    if (probe.state === "unknown") ask(id);
+  }, [id, attempt]);
+  if (id === null) return "off";
+  return probe.user === id ? probe.state : "unknown";
 }
+
+/** True once the server is known to take inscriptions from this account. */
+export const useInscriptionVolunteers = () => useInscriptionVolunteersState() === "on";
 
 /** Profil · Kitabelerim: fetched again for a new account and after each one sent. */
 export function useMyInscriptionProposals(): ResourceWithRetry<InscriptionProposal[] | null> {

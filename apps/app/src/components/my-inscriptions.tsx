@@ -5,7 +5,7 @@ import { Link } from "expo-router";
 import { useState } from "react";
 import { Image, StyleSheet, View } from "react-native";
 
-import { proposalPhotoUri, useMyInscriptionProposals } from "@/data/inscription-proposals";
+import { proposalPhotoUri, useInscriptionVolunteers, useMyInscriptionProposals } from "@/data/inscription-proposals";
 import { useLang, useMessages } from "@/i18n";
 import { formatDate } from "@/lib/format-date";
 
@@ -18,9 +18,14 @@ const shownOf = (item: InscriptionProposal): Shown => (item.published ? "publish
 
 /**
  * Profil · Kitabelerim (Kitabe Gönüllüleri, Y5): the inscriptions the visitor sent and where each
- * stands. Nothing shows for a visitor who has sent none, so the notes page stays as it was.
+ * stands. Nothing shows for a visitor who has sent none, nor where the server takes no inscriptions
+ * (whose list is then not asked for), so the notes page stays as it was.
  */
 export function MyInscriptions() {
+  return useInscriptionVolunteers() ? <Sent /> : null;
+}
+
+function Sent() {
   const w = useMessages().propose;
   const mine = useMyInscriptionProposals();
   const items = mine.status === "success" ? (mine.data ?? []) : [];
