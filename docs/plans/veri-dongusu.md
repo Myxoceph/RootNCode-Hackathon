@@ -342,6 +342,28 @@ dev ──► feat/veri-dongusu (ortak, uzun ömürlü; PR ile beslenir)
   `InscriptionDraft`; dil, okuma ve çeviri **boş gelir**, uzman doldurur (taslakta her zaman bir hata var, olduğu gibi onaylanamaz). Modelin
   ipuçları `validation.warnings`'te, fotoğraf `media[0]`. Onay ekranında fotoğrafı büyük göster, uzman ondan okuyacak. (4) Rozet
   ("Kitabe Gönüllüsü") Y5'te: `published: true` olan ilk gönderimde. (5) `VISION_MODEL` boşsa gönderim yine kabul edilir, ön eleme olmadan.
+- **Yiğit → Hüseyin (H7 cevabı, ✓ 2026-11-08):** (1) Şemalar sözleşmede (`intake.schema.ts`: `InscriptionProposal*`,
+  `INSCRIPTION_PROPOSALS_PER_HOUR`); route ve testi artık oradan alıyor. (3) Onay ekranı fotoğrafı büyük gösteriyor; ayrıca API
+  okunmamış kitabeyi onaylamıyor (`409 NOT_READ`: dil, transkripsiyon, Türkçe çeviri dolu olmalı). (4) Y5 hazır: gönderim ekranı,
+  Notlarım'da "Kitabelerim", `kitabe-gonullusu` rozeti (kapalı gelir, özellik açılınca panelden açılır). Panelde "Yeniden dene"
+  (`POST /admin/intake/drafts/:id/retry`) `apply_error`'u siler; `dev.py retry-apply` ile aynı iş.
+- **Yiğit → Hüseyin (#261/#262 code-review, 2026-11-08; senin şeridin, düzeltmeyi sana bırakıyorum):**
+  1. **Worker düşebilir:** `publish_once` yalnızca `PublishError`'u yakalıyor, `worker.main` de yalnızca `KeyboardInterrupt`'u.
+     `make_scannable`'daki bir hata (ör. `ar_target_ready`'de bozuk JSON), kitabe dosyasını okurken `KeyError` ya da bağlantı kopması
+     worker'ı kapatır; yayından önceki hatalarda taslak `apply_error`'suz kaldığı için yeniden açılınca aynı taslağı alıp yine
+     düşer, kuyruktaki işler de bekler. Öneri: geri kalan hataları da `apply_error`'a yaz (yayından sonrakileri yalnızca logla).
+  2. **Dar AR derlemesi hedefleri silebilir:** `compile_ar_targets.mts`, `--inscriptions-of` ile çalışınca öbür eserlerin hedeflerini ve
+     mühürleri yalnızca `reusable`'dan alıyor; `ar-targets.json` başka bir `mindar_version`'daysa `reusable` boş, dosya tek eserin
+     hedefleriyle ve mühürsüz yazılıyor. Öneri: dar derlemede sürüm uyuşmuyorsa dur (tam derleme iste).
+  3. Aynı eserin `.mind`'ı yalnızca R2'de olan eski kitabesi dar derlemede yeniden derleniyor; derleme düşerse o kitabe hedefsiz aktarılır.
+  4. Talimat dosyası okunamazsa (yok ya da `version:` satırı yok) gönderim 500 dönüyor ve fotoğraf siliniyor; dosyadaki
+     "fotoğraf kaybolmaz" sözüyle çelişiyor. Öneri: bunu da `VisionError` gibi say, taslak ön elemesiz girsin.
+  5. `rephotographed: true` olan fotoğraf yine `arTarget` olabiliyor (yalnızca `legibility` bakılıyor); ekrandan çekilmiş görüntü AR hedefi olur.
+  6. Saatlik sınır önce sayıp çok sonra (fotoğraf işleme + model) yazıyor; aynı anda gönderilen istekler sınırı aşabilir.
+  7. Varyantlar `try`'dan önce yazılıyor; biri düşerse yazılanlar silinmiyor.
+  8. Yayınlanan kitabenin fotoğraf kaynağı git'te olmayan `data/build/cache/intake/...`; başka makinede `media_pipeline.py` onu bulamaz.
+  9. `dev.py approve` kitabe taslağını hiç onaylayamaz (taslakta her zaman bir hata var); `meta` olmayan kayıtta `reviewed_by` yazılmıyor.
+  10. Küçük: talimat dosyası her istekte okunuyor; AR derlemesi worker döngüsünü 300 sn'ye kadar tutabiliyor.
 
 ## 11. Yerel kurulum (bir kez)
 
