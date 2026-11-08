@@ -5,6 +5,7 @@
     python3 data/pipeline/worker.py --drain    # kuyruk boşalana kadar, sonra çıkar
 
 Durumlar (§5.1): queued → mapping → needs_map (insan haritayı onaylar) → map_confirmed → drafting → done.
+Onaylanan taslakları da yayınlar (`publish.py`, H6): her turda önce yayın, sonra sıradaki iş.
 Hata olursa `failed` ve `error`. Worker yalnızca yerel veritabanına bağlanır (`db.connect`).
 
 Bir işi aynı anda tek worker işler: iş, oturum süren bir PostgreSQL kilidiyle (advisory lock) tutulur.
@@ -31,6 +32,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from config import load_env  # noqa: E402
 from db import LocalOnlyError, connect  # noqa: E402
 from intake_contract import check_book_map, check_draft, check_layout  # noqa: E402
+from publish import publish_once  # noqa: E402
 from stages import SkeletonStages, Stages  # noqa: E402
 
 # İnsan beklemeyen, worker'ın alabileceği durumlar. `needs_map` uzmanın onayını bekler.
@@ -257,7 +259,8 @@ def main(argv: list[str] | None = None) -> int:
     log(f"yerel veritabanı, şema {schema}; kuyruk bekleniyor")
     try:
         while not stopping:
-            worked = work_once(conn, stages)
+            # Önce onaylananları yayınla (kısa sürer, uzman sonucu bekliyor), sonra sıradaki işi al.
+            worked = publish_once(conn, env, log) or work_once(conn, stages)
             if args.once and worked:
                 break
             if not worked:

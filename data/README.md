@@ -1018,6 +1018,28 @@ Adımlar:
 
 ---
 
+## 11a. Veri Döngüsü: sohbetten gelen eserin yayını
+
+Yönetim panelindeki sohbetten (Sohbetten Kabul) gelen bir eser, uzman onayladıktan sonra worker'ın yayın adımıyla
+(`data/pipeline/publish.py`, plan H6) bu veri setine girer. Elle eklenen eserle aynı yolu izler:
+
+1. Kayıt `data/eserler/<il>/<ilçe>/<id>.json` olarak yazılır; ilçesi bilinmeyen eser `<il>/ilcesi-belirsiz/` altına.
+   `meta.status = published`, `meta.reviewed_by` = onaylayan, `meta.from = "panel-sohbet"`.
+2. `validate.py` ile denetlenir. Sohbet kaydında bölümlerin İngilizcesi yoksa bu **uyarıdır, hata değil**: metni
+   yetkili yazdı, model çeviri yapmaz. İngilizce sonradan eklenir; o zamana kadar uygulama Türkçesini gösterir.
+3. Fotoğraflar `media_pipeline.py` ile işlenir (`assets/<eser>/<medya>-<sha>/…`), manifest güncellenir. Bu dalda
+   yalnızca yerel depoya; R2'ye yükleme ayrı ve bilinçli bir adımdır (§8, yalnızca `rclone copy`).
+4. Yalnızca o eser veritabanına aktarılır (`import_to_db.import_all(con, only={id})`).
+
+Bir adım hata verirse dosya ve manifest geri alınır, hata taslağın `apply_error`'ında görünür. Aynı id veri setinde
+ya da veritabanında zaten varsa üzerine yazılmaz.
+
+**Konum zorunlu değildir.** Koordinatı olmayan eser yayınlanır; Eserler listesinde, aramada ve kendi sayfasında
+görünür, haritada ve "yakındakiler"de görünmez (API `coordinates: null` döner). `location.coordinates`
+eklenip yeniden içe aktarılınca haritaya kendiliğinden çıkar. Veri setinde bugün böyle 117 eser var.
+
+Sohbet kaynağı `sources.json`'da `vagabonds-panel`; `source_refs[].pages` sayfa değil mesaj numarasıdır ("mesaj 2").
+
 ## 12. Veri görüntüleyici
 
 `data/viewer/index.html`: elimizdeki verinin tamamını tarayıcıda gösteren statik site (HTML + CSS + JS; sunucu gerekmez, dosyayı açmak yeterli).

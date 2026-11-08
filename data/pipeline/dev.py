@@ -5,6 +5,8 @@
     python3 data/pipeline/dev.py confirm <iş-id>              # uzmanın yerine haritayı onayla
     python3 data/pipeline/dev.py drafts [<iş-id>]             # taslaklar
     python3 data/pipeline/dev.py remove <iş-id>               # işi ve taslaklarını sil (PDF'i de)
+    python3 data/pipeline/dev.py approve <taslak-id> --by "Ad Soyad"   # panelin onayını taklit et (worker yayınlar)
+    python3 data/pipeline/dev.py retry-apply <taslak-id>      # yayın hatasını sil, worker yeniden dener
     python3 data/pipeline/dev.py chat --city bursa --text-file anlatim.txt [--photo a.jpg …] [--out taslak.json]
                                                               # sohbet adımı, kuru: EVREN çağrılır, hiçbir tabloya yazılmaz
 
@@ -100,6 +102,11 @@ def main(argv: list[str] | None = None) -> int:
     gone.add_argument("job_id")
     drafts = commands.add_parser("drafts")
     drafts.add_argument("job_id", nargs="?")
+    yes = commands.add_parser("approve")
+    yes.add_argument("draft_id")
+    yes.add_argument("--by", required=True, help="kayda meta.reviewed_by olarak yazılır")
+    again = commands.add_parser("retry-apply")
+    again.add_argument("draft_id")
     talk = commands.add_parser("chat")
     talk.add_argument("--city", required=True)
     talk.add_argument("--title", default="Sohbet denemesi")
@@ -127,6 +134,21 @@ def main(argv: list[str] | None = None) -> int:
             if not confirm(conn, args.job_id):
                 sys.exit("Onaylanamadı: iş yok ya da harita onayı beklemiyor (needs_map değil)")
             print("Harita onaylandı; worker taslakları yazacak")
+        elif args.command == "approve":
+            row = conn.execute(
+                """update intake_draft set status = 'approved', reviewed_at = now(), updated_at = now(),
+                     record = jsonb_set(record, '{meta,reviewed_by}', to_jsonb(%s::text), true)
+                   where id = %s and status = 'pending' and jsonb_array_length(validation->'errors') = 0 returning asset_id""",
+                (args.by, args.draft_id),
+            ).fetchone()
+            if row is None:
+                sys.exit("Onaylanamadı: taslak yok, bekleyen değil ya da doğrulama hatası var")
+            print(f"Onaylandı: {row[0]}; worker yayınlayacak")
+        elif args.command == "retry-apply":
+            row = conn.execute("update intake_draft set apply_error = null, updated_at = now() where id = %s and status = 'approved' and applied_at is null returning asset_id", (args.draft_id,)).fetchone()
+            if row is None:
+                sys.exit("Yeniden denenemez: taslak onaylı değil ya da zaten yayında")
+            print(f"Yeniden denenecek: {row[0]}")
         elif args.command == "remove":
             if not remove(conn, args.job_id):
                 sys.exit("Böyle bir iş yok")
@@ -138,14 +160,15 @@ def main(argv: list[str] | None = None) -> int:
             if not rows:
                 print("İş yok")
         elif args.command == "drafts":
-            query = "select id, status, entry_key, asset_id, jsonb_array_length(validation->'errors') from intake_draft"
+            query = "select id, status, entry_key, asset_id, jsonb_array_length(validation->'errors'), applied_at is not null, coalesce(apply_error, '') from intake_draft"
             params: tuple = ()
             if args.job_id:
                 query += " where job_id = %s"
                 params = (args.job_id,)
             rows = conn.execute(query + " order by created_at", params).fetchall()
-            for draft_id, status, entry_key, asset_id, errors in rows:
-                print(f"{draft_id}  {status:<8} {entry_key or '-'}  {asset_id}  hata: {errors or 0}")
+            for draft_id, status, entry_key, asset_id, errors, applied, apply_error in rows:
+                state = "yayında" if applied else (f"yayın hatası: {apply_error[:80]}" if apply_error else "")
+                print(f"{draft_id}  {status:<8} {entry_key or '-'}  {asset_id}  hata: {errors or 0}  {state}")
             if not rows:
                 print("Taslak yok")
     return 0
