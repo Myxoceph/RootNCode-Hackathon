@@ -105,7 +105,7 @@ export default function DraftScreen() {
             {(newAsset ? role === "admin" : true) && (
               <View style={styles.failedRow}>
                 <Text color="textSecondary" style={styles.failedHint}>
-                  Sorunu giderdiysen (ör. eksik fotoğraf, veri setindeki dosya) taslağı worker'a geri gönder.
+                  {"Sorunu giderdiysen (ör. eksik fotoğraf, veri setindeki dosya) taslağı worker'a geri gönder."}
                 </Text>
                 <Button small label="Yeniden dene" icon="refresh" busy={retrying} disabled={retrying} onPress={() => void retry()} />
               </View>

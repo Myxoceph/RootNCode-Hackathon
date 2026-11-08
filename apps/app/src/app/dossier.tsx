@@ -62,7 +62,8 @@ import {
 import { RichText } from "@/lib/rich-text";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
-import { useLang, useMessages, type Messages } from "@/i18n";
+import { getLang, useLang, useMessages, type Messages } from "@/i18n";
+import { dataLanguage } from "@/lib/text-lang";
 
 const WEB = Platform.OS === "web";
 /** The wide web page's contents list, at the left of the text. */
@@ -638,13 +639,14 @@ function Intro({
 /** Long text set for reading: short paragraphs, the opening sentence a little stronger to skim by. */
 function Prose({ text, lead = false }: { text: string; lead?: boolean }) {
   const size = { fontSize: 17, lineHeight: 28 };
+  const lang = useLang();
   return (
     <View style={styles.prose}>
       {paragraphsOf(text).map((paragraph, index) => {
         const first =
           lead && index === 0 ? sentencesOf(paragraph)[0] : undefined;
         return (
-          <Text key={index} style={size}>
+          <Text key={index} style={size} language={dataLanguage(paragraph, lang)}>
             {first ? (
               <>
                 <Text style={[size, styles.semibold]}>{first}</Text>
@@ -670,6 +672,7 @@ function Info({
   children: ReactNode;
 }) {
   const { colors: c } = useTheme();
+  const lang = useLang();
   return (
     <View style={styles.info}>
       <Ionicons
@@ -683,7 +686,9 @@ function Info({
           {label}
         </Text>
         {typeof children === "string" ? (
-          <Text variant="label">{children}</Text>
+          <Text variant="label" language={dataLanguage(children, lang)}>
+            {children}
+          </Text>
         ) : (
           children
         )}
@@ -770,7 +775,7 @@ function identity(asset: AssetDetail, w: DossierWords): ReactNode | null {
               <View key={one.name}>
                 <Text variant="label">{one.name}</Text>
                 {one.note && (
-                  <Text variant="caption" color="textSecondary">
+                  <Text variant="caption" color="textSecondary" language={dataLanguage(one.note, getLang())}>
                     {one.note}
                   </Text>
                 )}
@@ -790,7 +795,7 @@ function identity(asset: AssetDetail, w: DossierWords): ReactNode | null {
               <View key={one.name}>
                 <Text variant="label">{one.name}</Text>
                 {one.note && (
-                  <Text variant="caption" color="textSecondary">
+                  <Text variant="caption" color="textSecondary" language={dataLanguage(one.note, getLang())}>
                     {one.note}
                   </Text>
                 )}

@@ -3,6 +3,7 @@ import type {
   AssetDetail,
   AssetListResponse,
   AssetRelationsResponse,
+  CityDishesResponse,
   Lang,
   PulseResponse,
   WeatherResponse,
@@ -47,6 +48,8 @@ export interface DataSource {
   getWeather(city: string, lang: Lang): Promise<WeatherResponse | null>;
   /** Today's weather at a point (the visitor's location); `null` when it cannot be had. Never stored either. */
   getWeatherAt(point: { lat: number; lng: number }, lang: Lang): Promise<WeatherResponse | null>;
+  /** A city's dishes (module 5, `GET /cities/:code/dishes`); `null` when there is no such city. */
+  getCityDishes(city: string, lang: Lang): Promise<CityDishesResponse | null>;
   /** Taşın Dili: every inscription the camera can find, with where it is (`GET /ar-targets`). */
   listArTargets(): Promise<ArTargetsResponse>;
 }

@@ -6,6 +6,7 @@ import Head from "expo-router/head";
 import { useBottomTabBarHeight } from "expo-router/js-tabs";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
+  ActivityIndicator,
   Animated,
   BackHandler,
   Easing,
@@ -139,7 +140,8 @@ export default function MapScreen() {
   // The visitor may fold the list away for more map; it stays folded from city to city.
   const [listOpen, setListOpen] = useState(true);
   const [listIn] = useState(() => new Animated.Value(0));
-  const listLook = LIST_LOOKS[useTheme().scheme];
+  const { scheme: themeScheme, colors: c } = useTheme();
+  const listLook = LIST_LOOKS[themeScheme];
   const reduceMotion = useReducedMotion();
   const router = useRouter();
   const allUnlocked = useUnlockedAssets();
@@ -386,6 +388,11 @@ export default function MapScreen() {
   // The search bar waits for the opening: it comes in once the fog has parted and the provinces are
   // drawn (or after SEARCH_WAIT_LIMIT_MS, should the map never say so).
   const [introOver, setIntroOver] = useState(false);
+  // Until something of the map is seen (the fog parting, or the map drawn for an opening without
+  // it), a quiet "Harita hazırlanıyor" over the fog: the first seconds are not a frozen screen.
+  const [fogParting, setFogParting] = useState(false);
+  const [mapDrawn, setMapDrawn] = useState(false);
+  const [preparingTimeUp, setPreparingTimeUp] = useState(false);
   const searchWaits = provinces.reveal && !introOver;
   const searchIn = useRef(new Animated.Value(searchWaits ? 0 : 1)).current;
   useEffect(() => {
@@ -433,6 +440,17 @@ export default function MapScreen() {
       };
     }, [restored, veilGone]),
   );
+  const preparing =
+    mapShown && !restored && selectedCity === null && mapError === null && !preparingTimeUp &&
+    !(fogParting || introOver || (mapDrawn && !provinces.reveal));
+  // Said once; and never left up for good, whatever the page says.
+  useEffect(() => {
+    if (!preparing) return;
+    announce(m.map.preparing);
+    const limit = setTimeout(() => setPreparingTimeUp(true), PREPARING_LIMIT_MS);
+    return () => clearTimeout(limit);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [preparing]);
   const veilLifts = restored && !veilGone && veilHeld && (veilTimeUp || (readyPlate !== null && readyPlate === selectedPlate));
   useEffect(() => {
     if (!veilLifts) return;
@@ -709,6 +727,8 @@ export default function MapScreen() {
           onCityLanded={onCityLanded}
           onCityReady={setReadyPlate}
           onIntroEnd={() => setIntroOver(true)}
+          onFogParting={() => setFogParting(true)}
+          onReady={() => setMapDrawn(true)}
           onUnlock={unlockAsset}
           onInspect={(id) =>
             router.push({ pathname: "/monuments/[id]", params: { id } })
@@ -897,6 +917,20 @@ export default function MapScreen() {
           onSkip={tour.skip}
         />
       )}
+      {preparing && (
+        <View pointerEvents="none" style={[styles.preparing, { bottom: tabBarHeight + spacing.xxl }]}>
+          <View style={[styles.preparingPill, { backgroundColor: c.surface, borderColor: c.border }]}>
+            {reduceMotion ? (
+              <Ionicons name="hourglass-outline" size={16} color={c.textSecondary} aria-hidden />
+            ) : (
+              <ActivityIndicator size="small" color={c.textSecondary} aria-hidden />
+            )}
+            <Text variant="caption" color="textSecondary">
+              {m.map.preparing}
+            </Text>
+          </View>
+        </View>
+      )}
       {restored && !veilGone && (
         <Animated.View
           pointerEvents="none"
@@ -917,8 +951,28 @@ const VEIL_HOLD_MS = 700;
 const SEARCH_WAIT_LIMIT_MS = 7000;
 const VEIL_LIMIT_MS = 6000;
 const VEIL_FADE_MS = 450;
+/** "Harita hazırlanıyor" goes after this however the map is doing. */
+const PREPARING_LIMIT_MS = 20000;
 
 const styles = StyleSheet.create({
+  preparing: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    alignItems: "center",
+    // Over the map's page, which the web draws in a layer of its own.
+    zIndex: 10,
+    elevation: 10,
+  },
+  preparingPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
+    borderRadius: 999,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
   veil: {
     position: "absolute",
     top: 0,

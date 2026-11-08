@@ -7,6 +7,44 @@ Her `git pull` sonrası kısa kontrol: aşağıda kendi son çektiğin tarihten 
 
 ---
 
+## 2026-11-08 · Veri Döngüsü (sözleşme 0.3.38)
+
+Kimler: **herkes** (migration); Veri Döngüsü'nü yerelde çalıştıranlar (geri kalanı)
+
+1. `npm install`, sonra `npm run db:deploy --workspace @vagabonds/api` (yalnızca `intake_*` tablolarını ve kapalı gelen bir rozeti ekler; mevcut tablolar değişmez).
+2. `INTAKE_ENABLED` varsayılan olarak kapalı: kapalıyken API ve uygulama eskisi gibi çalışır, başka bir şey yapmak gerekmez.
+
+Veri Döngüsü'nü yerelde açmak için (uzak veritabanına ve R2'ye yazmaz):
+
+1. `apps/api/.env`: `INTAKE_ENABLED=true`, `INTAKE_LOCAL_ONLY=true`, yerel `DATABASE_URL`. EVREN için `ASSISTANT_BASE_URL` ve `ASSISTANT_API_KEY`, görüntü için `VISION_MODEL`.
+2. Telefondan bağlanılacaksa `LOCAL_MEDIA_BASE_URL=http://<Mac'in IP'si>:3000/local-media`. `.env` değişince API yeniden başlatılmalı; IP değişirse bu satır da güncellenmeli.
+3. `python3 -m pip install -r data/requirements.txt`, sonra ayrı terminalde `python3 data/pipeline/worker.py`.
+4. "Kitabe Gönüllüsü" rozeti kapalı gelir; panelde Başarımlar'dan açılır.
+
+Değişenler:
+
+- Panelde Sohbetten Kabul (anlatarak yeni eser) ve İnceleme'de yeni eser / kitabe kuyrukları.
+- Taşın Dili'nde Kitabe Gönüllüleri: kamera kitabe bulamayınca uzmana gönderme kartı; durum Profil → Notlarım'da.
+- Worker yayın sırasında `data/eserler`, `media-manifest.json` ve `ar-targets.json` dosyalarını yazar: deneme yaptıysan bunları commit'leme (`git restore`).
+- PDF'ten kitap aktarma ve Saha Defteri bu sürümde yok; PDF uçları bayrağın arkasında durur, panelde ekranı yoktur.
+
+---
+
+## 2026-11-08 · Expo yama sürümleri, ESLint, sözleşme testleri
+
+Kimler: **uygulamayı çalıştıranlar**, **uygulamayı derleyenler**
+
+1. `npm install` (Expo 58.0.23 ve beş paketin yama sürümü; sözleşme paketine `vitest`; uygulamaya `eslint` ve `eslint-config-expo`).
+2. Kendi derlemesini (APK) kullananlar yeniden derler: `react-native-safe-area-context` 5.11'e çıktı ve yerel kod içeriyor (`npm run android:apk -w apps/app`). Expo Go'da ek adım yok.
+
+Değişenler:
+
+- `npx expo install --check` temiz: expo, expo-audio, expo-linking, expo-router, expo-splash-screen, react-native-safe-area-context.
+- Uygulamada ESLint var: `npm run lint -w apps/app` (CI'da da çalışıyor). Hook kuralı ihlali hata; React Compiler'ın denetimleri şimdilik uyarı.
+- `packages/contracts` kendi testlerini çalıştırıyor (`npm test -w @vagabonds/contracts`), `pickSealPhoto` testleri de artık orada; kökteki `npm test` ve CI bunları da çalıştırır.
+
+---
+
 ## 2026-11-07 · Ziyaret Mührü: hazır hedefler
 
 Kimler: **veri hattını çalıştıranlar** (R2'ye yükleme)

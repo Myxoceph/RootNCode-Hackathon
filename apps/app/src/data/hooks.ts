@@ -3,6 +3,7 @@ import type {
   AssetRelation,
   AssetRelationsResponse,
   AssetSummary,
+  CityDishesResponse,
   Contribution,
   Lang,
   MyAchievementsResponse,
@@ -13,7 +14,7 @@ import type {
 } from "@vagabonds/contracts";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { getLang, getMessages, useLang } from "@/i18n";
+import { getLang, getMessages, useLang, useLangSettled } from "@/i18n";
 
 import { dataSource } from "./active-source";
 import { fetchMyAchievements, fetchMyContributions, fetchRewards, fetchWallet, useCommunity } from "./community";
@@ -41,8 +42,12 @@ export function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
   // "Yenile" on the offline banner refetches every resource on screen.
   const epoch = useRefreshEpoch();
   const lastEpoch = useRef(epoch);
+  // Nothing is asked before the visitor's language is known: a web page is first drawn in Turkish and
+  // turns to the visitor's language a moment later, and each request would otherwise go once in each.
+  const langSettled = useLangSettled();
 
   useEffect(() => {
+    if (!langSettled) return;
     let active = true;
     // A refresh keeps what is on screen until the new answer is in: no spinner, and a
     // failed refresh leaves the data shown rather than replacing it with an error.
@@ -57,7 +62,7 @@ export function useResource<T>(load: () => Promise<T>): ResourceWithRetry<T> {
     return () => {
       active = false;
     };
-  }, [load, attempt, epoch]);
+  }, [load, attempt, epoch, langSettled]);
 
   const retry = useCallback(() => setAttempt((n) => n + 1), []);
   return { ...state, retry };
@@ -89,6 +94,13 @@ export function usePulse(id: string): ResourceWithRetry<PulseResponse | null> {
 export function useWeather(city: string | null): ResourceWithRetry<WeatherResponse | null> {
   const lang = useLang();
   const load = useCallback(() => (city ? dataSource.getWeather(city, lang) : Promise.resolve(null)), [city, lang]);
+  return useResource(load);
+}
+
+/** A city's dishes; `data` is `null` without a city, or for one the API does not know. */
+export function useCityDishes(city: string | null): ResourceWithRetry<CityDishesResponse | null> {
+  const lang = useLang();
+  const load = useCallback(() => (city ? dataSource.getCityDishes(city, lang) : Promise.resolve(null)), [city, lang]);
   return useResource(load);
 }
 

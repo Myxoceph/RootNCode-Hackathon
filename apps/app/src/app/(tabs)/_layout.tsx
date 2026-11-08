@@ -57,7 +57,6 @@ export default function TabLayout() {
       {/* No tab button, but still a tab: since expo-router 58, `href: null` hides the screen and redirects away from it. */}
       <Tabs.Screen name="capsule" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: m.tabs.capsule }} />
       {/* Has its own stack (planner → food stops), which draws the header. */}
-      <Tabs.Screen name="route" options={{ tabBarButton: () => null, tabBarItemStyle: { display: "none" }, headerShown: false, title: m.tabs.routes }} />
     </Tabs>
   );
 }

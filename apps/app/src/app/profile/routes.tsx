@@ -32,7 +32,6 @@ import Svg, {
 import type { Lang } from "@vagabonds/contracts";
 
 import { FoodAdviceList, TransitAdviceList } from "@/components/saved-advice";
-import { planRoute } from "@/content/routes";
 import { announce } from "@/lib/announce";
 import { bottomInset } from "@/lib/bottom-inset";
 import { inkFor } from "@/lib/route-ink";
@@ -42,7 +41,6 @@ import {
   routeKey,
   useSavedRoutes,
   type FoodAdvice,
-  type PlannerRoute,
   type TransitAdvice,
   type TripRoute,
 } from "@/lib/saved-routes";
@@ -50,56 +48,31 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 import { localeTag, useLang, useMessages, type Messages } from "@/i18n";
 
-const regionLabel: Record<PlannerRoute["region"], string> = {
-  bursa: "Bursa",
-  edirne: "Edirne",
-  both: "Bursa & Edirne",
-};
-
-type RouteEntry = PlannerRoute | TripRoute;
+type RouteEntry = TripRoute;
 type Tab = "routes" | "food" | "transit";
 
 const TABS: ReadonlyArray<Tab> = ["routes", "food", "transit"];
 
 /** What a ticket shows: the city, the title, how long, from where, the stops and their ends. */
-function ticketOf(route: RouteEntry, m: Messages, lang: Lang) {
+function ticketOf(route: RouteEntry, m: Messages) {
   const w = m.saved;
-  if (route.kind === "trip") {
-    const stops = route.trip.days.flatMap((day) =>
-      day.items.flatMap((item) =>
-        item.kind === "stop" ? [item.asset.name] : [],
-      ),
-    );
-    return {
-      city: route.trip.city.label,
-      code: route.trip.city.code,
-      title: m.shared.tripTitle(route.trip.city.label),
-      duration: w.durations[route.trip.duration],
-      fromRehber: true,
-      ends:
-        stops.length > 1
-          ? `${stops[0]} → ${stops[stops.length - 1]}`
-          : (stops[0] ?? null),
-    };
-  }
+  const stops = route.trip.days.flatMap((day) =>
+    day.items.flatMap((item) => (item.kind === "stop" ? [item.asset.name] : [])),
+  );
   return {
-    city: regionLabel[route.region],
-    code: route.region,
-    title: planRoute(route.region, route.duration, lang).title,
-    duration: w.durations[route.duration],
-    fromRehber: false,
-    ends:
-      route.dishes.length > 0
-        ? w.withFood(route.dishes.length)
-        : null,
+    city: route.trip.city.label,
+    code: route.trip.city.code,
+    title: m.shared.tripTitle(route.trip.city.label),
+    duration: w.durations[route.trip.duration],
+    fromRehber: true,
+    ends: stops.length > 1 ? `${stops[0]} → ${stops[stops.length - 1]}` : (stops[0] ?? null),
   };
 }
 
 /**
- * Profil · Kaydettiklerim, one tab each for what is kept. Rotalar: the routes saved from the planner
- * ("Rotayı kaydet") and the trips Rehber planned, newest first, each as a ticket: the city on its
- * own ink, the stops as dots on a dashed line. A planner ticket opens its route in the planner
- * again, a Rehber ticket its plan day by day (./trip.tsx). New routes are planned with Rehber, where
+ * Profil · Kaydettiklerim, one tab each for what is kept. Rotalar:
+ * the trips Rehber planned, newest first, each as a ticket: the city on its own ink, the stops as
+ * dots on a dashed line; a ticket opens its plan day by day (./trip.tsx). New routes are planned with Rehber, where
  * "Yeni" leads. Yemek and Ulaşım: what Rehber suggested in the chat (components/saved-advice.tsx).
  */
 export default function MyRoutesScreen() {
@@ -239,7 +212,7 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
   const rise = useRef(new Animated.Value(reduced ? 1 : 0)).current;
   const m = useMessages();
   const w = m.saved;
-  const ticket = ticketOf(route, m, lang);
+  const ticket = ticketOf(route, m);
   const [light, deep] = inkFor(ticket.code);
   const [size, setSize] = useState({ width: 0, height: 0 });
   const saved = new Date(route.savedAt).toLocaleDateString(localeTag(lang), {
@@ -273,17 +246,7 @@ function Ticket({ route, index }: { route: RouteEntry; index: number }) {
     }).start();
   }, [index, reduced, rise]);
 
-  const open = () =>
-    route.kind === "trip"
-      ? router.push({ pathname: "/profile/trip", params: { id: route.id } })
-      : router.push({
-          pathname: "/route",
-          params: {
-            region: route.region,
-            duration: route.duration,
-            dishes: route.dishes.join(","),
-          },
-        });
+  const open = () => router.push({ pathname: "/profile/trip", params: { id: route.id } });
 
   return (
     <Animated.View

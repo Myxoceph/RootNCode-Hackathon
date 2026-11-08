@@ -311,16 +311,19 @@ function WalletCard({
   return (
     <View style={[styles.walletBlock, wide && styles.walletBlockWide]}>
       <View style={wide ? styles.walletCardWide : undefined}>
+        {/* A touch sends the light across it again: a button that says so. With reduced motion there is no light, so it is only the card's picture. */}
         <Pressable
-          onPress={sweep}
+          onPress={reduced ? undefined : sweep}
+          disabled={reduced}
           style={({ pressed }) => [
             styles.wallet,
             pressed && !reduced && styles.walletPressed,
           ]}
           onLayout={(e) => setWidth(e.nativeEvent.layout.width)}
           accessible
-          accessibilityRole="image"
+          accessibilityRole={reduced ? "image" : "button"}
           accessibilityLabel={w.vkartLabel(holder, balance)}
+          accessibilityHint={reduced ? undefined : w.vkartHint}
         >
           <Image
             source={VK_CARD}

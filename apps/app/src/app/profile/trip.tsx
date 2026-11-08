@@ -29,7 +29,7 @@ import Svg, {
 } from "react-native-svg";
 
 import { AssetImage } from "@/components/asset-image";
-import { formatClock } from "@/content/routes";
+import { formatClock } from "@/lib/format-clock";
 import { RouteAdvice } from "@/components/saved-advice";
 import { announce } from "@/lib/announce";
 import { bottomInset } from "@/lib/bottom-inset";
