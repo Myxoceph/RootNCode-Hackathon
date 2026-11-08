@@ -1,4 +1,4 @@
-import { ACHIEVEMENT_IMAGE_MAX_BYTES, ACHIEVEMENT_IMAGE_MIN_SIDE } from "@vagabonds/contracts";
+import { ACHIEVEMENT_IMAGE_MAX_BYTES, ACHIEVEMENT_IMAGE_MIN_SIDE, INTAKE_UPLOAD_MAX_BYTES, INTAKE_UPLOAD_TYPES } from "@vagabonds/contracts";
 import { Platform } from "react-native";
 
 export interface PickedImage {
@@ -39,6 +39,42 @@ export function pickBadgeImage(): Promise<PickedImage | null> {
       };
       image.onerror = () => reject(new Error("Görsel açılamadı; başka bir dosya dene."));
       image.src = uri;
+    };
+    input.click();
+  });
+}
+
+export interface PickedPhoto {
+  /** An object URL of the file: shown as the thumbnail and read again to upload it. */
+  uri: string;
+  type: "image/jpeg" | "image/png" | "image/webp";
+  name: string;
+}
+
+const PHOTO_TYPES = new Set<string>(INTAKE_UPLOAD_TYPES);
+
+/**
+ * Asks for a chat message's photos: JPEGs, PNGs or WebPs of at most 15 MB each, several at once.
+ * The panel's file dialog on the web. Files that do not fit are left out and named in `refused`.
+ */
+export function pickChatPhotos(): Promise<{ photos: PickedPhoto[]; refused: string[] }> {
+  if (Platform.OS !== "web" || typeof document === "undefined") {
+    return Promise.reject(new Error("Fotoğrafları panelin web sürümünden ekle."));
+  }
+  return new Promise((resolve) => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.multiple = true;
+    input.accept = "image/jpeg,image/png,image/webp";
+    input.onchange = () => {
+      const photos: PickedPhoto[] = [];
+      const refused: string[] = [];
+      for (const file of Array.from(input.files ?? [])) {
+        if (!PHOTO_TYPES.has(file.type)) refused.push(`${file.name}: JPEG, PNG ya da WebP olmalı`);
+        else if (file.size > INTAKE_UPLOAD_MAX_BYTES) refused.push(`${file.name}: en çok ${Math.round(INTAKE_UPLOAD_MAX_BYTES / 1024 / 1024)} MB olabilir`);
+        else photos.push({ uri: URL.createObjectURL(file), type: file.type as PickedPhoto["type"], name: file.name });
+      }
+      resolve({ photos, refused });
     };
     input.click();
   });

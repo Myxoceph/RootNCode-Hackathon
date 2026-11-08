@@ -25,6 +25,7 @@ import {
   IntakeLayoutSchema,
   IntakeSourceRefSchema,
   IntakeValidationSchema,
+  INTAKE_FIELD_NAMES,
   PHOTO_SUBJECTS,
 } from "../src/intake.schema";
 
@@ -50,6 +51,7 @@ const document = {
   $schema: "https://json-schema.org/draft/2020-12/schema",
   $comment: "Generated from packages/contracts/src/intake.schema.ts; do not edit by hand.",
   photoSubjects: PHOTO_SUBJECTS,
+  fieldNames: INTAKE_FIELD_NAMES,
   columns: Object.fromEntries(Object.entries(shapes).map(([column, schema]) => [column, z.toJSONSchema(schema, { io: "input" })])),
 };
 

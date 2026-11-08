@@ -49,11 +49,14 @@ export const AchievementRuleSchema = z.discriminatedUnion("kind", [
   z.strictObject({ kind: z.literal("complex"), parentId: AssetIdSchema }),
   /** Prove `count` visits (position plus recognising the site in Ziyaret Mührü), in `city` when given. */
   z.strictObject({ kind: z.literal("proven_visits"), count: Count, city: CodeSchema.optional() }),
-  /** Have `count` contributions approved: `notes` (tips, memories, corrections), `photos` or `any`. */
+  /**
+   * Have `count` contributions approved: `notes` (tips, memories, corrections), `photos`, `any` (notes
+   * or photos), or `inscriptions` (Kitabe Gönüllüleri: an inscription counts once it is in the app).
+   */
   z.strictObject({
     kind: z.literal("contributions"),
     count: Count,
-    contribution: z.enum(["notes", "photos", "any"]),
+    contribution: z.enum(["notes", "photos", "any", "inscriptions"]),
   }),
 ]);
 

@@ -13,7 +13,9 @@ import {
   IntakeJobResponseSchema,
   IntakeMapConfirmRequestSchema,
   IntakeReviewRequestSchema,
+  INSCRIPTION_READING_FIELDS,
   InscriptionDraftSchema,
+  unreadInscriptionFields,
   type BookMapEntry,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync } from "fastify";
@@ -223,6 +225,25 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
     return IntakeDraftResponseSchema.parse({ version: CONTRACT_VERSION, draft: toIntakeDraft(draft) });
   });
 
+  app.post("/admin/intake/drafts/:id/retry", {
+    schema: {
+      tags: ["moderation"],
+      summary: "Yayınlanamayan onaylı taslağı yeniden dene: hata silinir, worker sıradaki turunda yeniden yayınlamayı dener",
+      security: bearer,
+      params: toOpenApiSchema(IdParamsSchema, "input"),
+      response: { 200: toOpenApiSchema(IntakeDraftResponseSchema), 400: errorSchema, 404: errorSchema, 409: errorSchema, ...denied },
+    },
+  }, async (request) => {
+    const user = await requireUser(request, community, "moderator");
+    const { id } = parseWith(IdParamsSchema, request.params, "INVALID_ID");
+    const draft = await repository.findDraft(id);
+    if (!draft) throw draftNotFound();
+    // Whoever may decide on the draft may send it again: a new asset is an admin's.
+    if (NEW_ASSET_KINDS.has(draft.kind) && user.role !== "admin") throw new HttpError(403, "FORBIDDEN", "Only an admin decides on a new asset");
+    if (!(await repository.retryApply(id))) throw new HttpError(409, "NOTHING_TO_RETRY", "Only an approved draft whose publishing failed can be retried");
+    return IntakeDraftResponseSchema.parse({ version: CONTRACT_VERSION, draft: toIntakeDraft((await repository.findDraft(id))!) });
+  });
+
   app.post("/admin/intake/drafts/:id/review", {
     bodyLimit: REVIEW_BODY_LIMIT,
     schema: {
@@ -239,6 +260,9 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
     const input = parseWith(IntakeReviewRequestSchema, request.body, "INVALID_BODY");
     const draft = await repository.findDraft(id);
     if (!draft) throw draftNotFound();
+    // A new asset is published by its approval: that is an admin's call, as editing assets is. A
+    // visitor's inscription stays with moderators, as visitors' notes do.
+    if (NEW_ASSET_KINDS.has(draft.kind) && user.role !== "admin") throw new HttpError(403, "FORBIDDEN", "Only an admin decides on a new asset");
     if (draft.status !== "pending") throw new HttpError(409, "ALREADY_REVIEWED", `The draft is already ${draft.status}`);
 
     let decided: "ok" | "decided" | "taken";
@@ -251,7 +275,13 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
       }
       let record = input.record ?? current.record;
       // A corrected inscription is held to its contract; a dataset record is checked by validate.py when published.
-      if (draft.kind === "inscription" && input.record) record = parseWith(InscriptionDraftSchema, input.record, "INVALID_RECORD");
+      if (draft.kind === "inscription") {
+        if (input.record) record = parseWith(InscriptionDraftSchema, input.record, "INVALID_RECORD");
+        // The model does not read inscriptions (H7): nothing is approved before an expert has.
+        const read = InscriptionDraftSchema.safeParse(record);
+        const unread = read.success ? unreadInscriptionFields(read.data) : [...INSCRIPTION_READING_FIELDS];
+        if (unread.length > 0) throw new HttpError(409, "NOT_READ", `Read the inscription before approving it: ${unread.join(", ")} missing`);
+      }
       let assetId = draft.asset_id;
       if (NEW_ASSET_KINDS.has(draft.kind)) {
         // The reviewer may have renamed the asset: its id is the record's.
@@ -259,8 +289,22 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
         if (!parsed.success) throw new HttpError(400, "INVALID_ID", "The record's id must be lowercase kebab-case");
         assetId = parsed.data;
         if (await repository.assetExists(assetId)) throw new HttpError(409, "ASSET_EXISTS", `An asset "${assetId}" already exists; give the record another id`);
-        // Approval is the review: the asset is published once the worker has written it.
-        record = { ...record, id: assetId, status: "published" };
+        // Approval is the review: the asset is published once the worker has written it. The dataset
+        // keeps a record's state in its meta (data/schema/eser.schema.json; no other field may be added).
+        const asObject = (value: unknown) => (value && typeof value === "object" && !Array.isArray(value) ? (value as Record<string, unknown>) : {});
+        const written = asObject(current.record["meta"]);
+        const meta = asObject(record["meta"]);
+        const today = new Date().toISOString().slice(0, 10);
+        // The worker's to-dos were for the reviewer; the approval is their answer. A record whose
+        // meta was dropped in the JSON keeps the dates the worker wrote (created_at is required).
+        const { todos: _todos, ...kept } = { ...written, ...meta };
+        // A top-level status (as approvals wrote before) is not a dataset field.
+        const { status: _status, ...rest } = record;
+        record = {
+          ...rest,
+          id: assetId,
+          meta: { ...kept, status: "published", reviewed_by: user.username ?? user.nickname, created_at: kept["created_at"] ?? draft.created_at.toISOString().slice(0, 10), updated_at: today },
+        };
       } else if (!(await repository.assetExists(assetId))) {
         throw new HttpError(409, "ASSET_GONE", `The asset "${assetId}" this draft adds to no longer exists`);
       }

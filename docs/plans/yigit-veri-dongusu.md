@@ -171,8 +171,8 @@ Sözleşme `packages/contracts/src/intake.schema.ts`, migration `20261108130000_
 - **Kısıtlar:** kitap ve sohbet taslağı bir işe ve satıra bağlı (`entry_key`, sohbette `'chat'`); ziyaretçinin
   kitabesi ikisine de değil. Kitabın `file_path`'i var, sohbetin `input`'u var.
 - **Bayraklar** `1`/`0`'ı da kabul ediyor.
-- **Doğrulanamadı:** worker testlerin benim makinemde Docker yüzünden (planın §10'u) açılmıyor; yeni
-  migration'la geçtiklerini sen doğrula.
+- **Doğrulandı (2026-11-08, Yiğit):** Docker düzeltmesinden ve `run_chat`'in girdiyi `drafting`'e geçerken
+  okumasından (#249) sonra worker'ın 54 testi Yiğit'in makinesinde, Docker'daki PostgreSQL'de geçiyor.
 
 ## 2. Daha önceki ihtiyaç notları (planın §10'unda da var)
 

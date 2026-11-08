@@ -57,6 +57,7 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
   const draftIds: string[] = [];
   const tag = randomUUID().slice(0, 6);
   let moderator: string;
+  let admin: string;
   let visitor: string;
 
   async function createUser(role: "visitor" | "moderator" | "admin") {
@@ -89,7 +90,7 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
         job_id: jobId,
         entry_key: key,
         asset_id: data.assetId ?? `bursa-osmangazi-intake-${tag}-${key}`,
-        record: { id: data.assetId ?? `bursa-osmangazi-intake-${tag}-${key}`, name: { tr: `Eser ${key}` }, status: "draft" },
+        record: { id: data.assetId ?? `bursa-osmangazi-intake-${tag}-${key}`, name: { tr: `Eser ${key}` }, meta: { status: "draft", created_at: "2026-11-08", updated_at: "2026-11-08", todos: ["Sohbetten düzenlendi"] } },
         validation: { errors: data.errors ?? [], warnings: [] },
       },
     });
@@ -100,6 +101,7 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
     prisma = createPrismaClient(DATABASE_URL as string);
     app = buildApp({ prisma, rateLimit: false, intake: { root, dir: "data/build/cache/intake" } });
     moderator = await createUser("moderator");
+    admin = await createUser("admin");
     visitor = await createUser("visitor");
   });
 
@@ -173,14 +175,22 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
   it("approves a book draft as a published record for the worker, and only once", async () => {
     const id = await jobNeedingMap();
     const draftId = await bookDraft(id, "ok");
-    const response = await json("POST", `/admin/intake/drafts/${draftId}/review`, moderator, { decision: "approve", note: "kitapla karşılaştırıldı" });
+    // A new asset is an admin's call; a moderator is turned away either way.
+    for (const decision of [{ decision: "approve" }, { decision: "reject", note: "kitapta yok" }]) {
+      const refused = await json("POST", `/admin/intake/drafts/${draftId}/review`, moderator, decision);
+      expect(refused.statusCode).toBe(403);
+    }
+    const response = await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, { decision: "approve", note: "kitapla karşılaştırıldı" });
     expect(response.statusCode).toBe(200);
     const { draft } = IntakeDraftResponseSchema.parse(response.json());
     expect(draft).toMatchObject({ status: "approved", reviewNote: "kitapla karşılaştırıldı", appliedAt: null });
-    expect(draft.record).toMatchObject({ status: "published", id: draft.assetId });
+    // The dataset keeps a record's state in its meta, beside who reviewed it and when.
+    expect(draft.record).toMatchObject({ id: draft.assetId, meta: { status: "published", reviewed_by: `intake admin ${tag}` } });
+    expect(draft.record).not.toHaveProperty("status");
+    expect((draft.record["meta"] as { updated_at: string }).updated_at).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     expect(draft.reviewedAt).not.toBeNull();
 
-    expect((await json("POST", `/admin/intake/drafts/${draftId}/review`, moderator, { decision: "reject", note: "geç kaldım" })).statusCode).toBe(409);
+    expect((await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, { decision: "reject", note: "geç kaldım" })).statusCode).toBe(409);
   });
 
   it("takes the reviewer's corrected record and new id, but not an id already in the dataset", async () => {
@@ -188,21 +198,25 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
     const draftId = await bookDraft(id, "fix", { errors: ["dating: year missing"] });
 
     // Errors: approved only with the record corrected.
-    expect((await json("POST", `/admin/intake/drafts/${draftId}/review`, moderator, { decision: "approve" })).statusCode).toBe(409);
+    expect((await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, { decision: "approve" })).statusCode).toBe(409);
     // The corrected record names an asset that exists.
-    const taken = await json("POST", `/admin/intake/drafts/${draftId}/review`, moderator, { decision: "approve", record: { id: EXISTING } });
+    const taken = await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, { decision: "approve", record: { id: EXISTING } });
     expect(taken.statusCode).toBe(409);
     expect(taken.json().error.code).toBe("ASSET_EXISTS");
 
     const renamed = `bursa-osmangazi-duzeltilmis-${tag}`;
-    const response = await json("POST", `/admin/intake/drafts/${draftId}/review`, moderator, {
+    const response = await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, {
       decision: "approve",
-      record: { id: renamed, name: { tr: "Düzeltilmiş Eser" }, dating: { year: 1399 } },
+      record: { id: renamed, name: { tr: "Düzeltilmiş Eser" }, dating: { year: 1399 }, status: "published" },
     });
     expect(response.statusCode).toBe(200);
     const { draft } = IntakeDraftResponseSchema.parse(response.json());
     expect(draft.assetId).toBe(renamed);
-    expect(draft.record).toEqual({ id: renamed, name: { tr: "Düzeltilmiş Eser" }, dating: { year: 1399 }, status: "published" });
+    // The corrected record dropped its meta and kept the old top-level status: the dates come back
+    // from the worker's record, the status goes, the to-dos were for the reviewer.
+    expect(draft.record).toMatchObject({ id: renamed, name: { tr: "Düzeltilmiş Eser" }, dating: { year: 1399 }, meta: { status: "published", created_at: "2026-11-08" } });
+    expect(draft.record).not.toHaveProperty("status");
+    expect(draft.record["meta"]).not.toHaveProperty("todos");
   });
 
   it("approves one draft per new asset id, even when two drafts carry the same one", async () => {
@@ -210,8 +224,8 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
     const shared = `bursa-osmangazi-ayni-${tag}`;
     const first = await bookDraft(id, "s1", { assetId: shared });
     const second = await bookDraft(id, "s2", { assetId: shared });
-    expect((await json("POST", `/admin/intake/drafts/${first}/review`, moderator, { decision: "approve" })).statusCode).toBe(200);
-    const again = await json("POST", `/admin/intake/drafts/${second}/review`, moderator, { decision: "approve" });
+    expect((await json("POST", `/admin/intake/drafts/${first}/review`, admin, { decision: "approve" })).statusCode).toBe(200);
+    const again = await json("POST", `/admin/intake/drafts/${second}/review`, admin, { decision: "approve" });
     expect(again.statusCode).toBe(409);
     expect(again.json().error.code).toBe("ASSET_EXISTS");
     // Still waiting, for a reviewer to rename it or reject it.
@@ -222,7 +236,7 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
     const id = await jobNeedingMap();
     const draftId = await bookDraft(id, "big");
     const sections = Array.from({ length: 40 }, (_, i) => ({ id: `b${i}`, title: { tr: `Bölüm ${i}` }, body: { tr: "Taş ".repeat(200) } }));
-    const response = await json("POST", `/admin/intake/drafts/${draftId}/review`, moderator, {
+    const response = await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, {
       decision: "approve",
       record: { id: `bursa-osmangazi-buyuk-${tag}`, sections },
     });
@@ -243,19 +257,48 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
   it("rejects with a reason, and keeps a visitor's inscription on the asset it adds to", async () => {
     const id = await jobNeedingMap();
     const draftId = await bookDraft(id, "no");
-    expect((await json("POST", `/admin/intake/drafts/${draftId}/review`, moderator, { decision: "reject" })).statusCode).toBe(400);
-    const rejected = await json("POST", `/admin/intake/drafts/${draftId}/review`, moderator, { decision: "reject", note: "kitapta yok" });
+    expect((await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, { decision: "reject" })).statusCode).toBe(400);
+    const rejected = await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, { decision: "reject", note: "kitapta yok" });
     expect(IntakeDraftResponseSchema.parse(rejected.json()).draft).toMatchObject({ status: "rejected", reviewNote: "kitapta yok" });
 
-    const inscription = await prisma.intake_draft.create({
-      data: { kind: "inscription", asset_id: EXISTING, record: { transliteration: "…", uncertain: [] } },
-    });
+    // As a visitor's inscription comes in (H7): only where it is, the reading is the expert's.
+    const unread = { language: null, script: null, transliteration: null, translationTr: null, translationEn: null, uncertain: [], location: "taç kapının üstü" };
+    const inscription = await prisma.intake_draft.create({ data: { kind: "inscription", asset_id: EXISTING, record: unread } });
     draftIds.push(inscription.id);
+    const review = (record?: object) => json("POST", `/admin/intake/drafts/${inscription.id}/review`, moderator, { decision: "approve", ...(record && { record }) });
     // A corrected reading is held to the inscription's contract.
-    expect((await json("POST", `/admin/intake/drafts/${inscription.id}/review`, moderator, { decision: "approve", record: { foo: 1 } })).statusCode).toBe(400);
-    const approved = await json("POST", `/admin/intake/drafts/${inscription.id}/review`, moderator, { decision: "approve" });
+    expect((await review({ foo: 1 })).statusCode).toBe(400);
+    // Nothing is approved unread: not as it came, nor with the place alone corrected or a blank reading.
+    for (const attempt of [undefined, { ...unread, location: "avlu kapısı" }, { ...unread, language: "ar", transliteration: " ", translationTr: "…" }]) {
+      const refused = await review(attempt);
+      expect(refused.statusCode).toBe(409);
+      expect(refused.json().error.code).toBe("NOT_READ");
+    }
+    const read = { ...unread, language: "ar", transliteration: "Bismillâhirrahmânirrahîm", translationTr: "Rahmân ve Rahîm olan Allah'ın adıyla" };
+    const approved = await review(read);
     expect(approved.statusCode).toBe(200);
-    expect(IntakeDraftResponseSchema.parse(approved.json()).draft).toMatchObject({ status: "approved", assetId: EXISTING });
+    expect(IntakeDraftResponseSchema.parse(approved.json()).draft).toMatchObject({ status: "approved", assetId: EXISTING, record: read });
+  });
+
+  it("sends an approved draft that failed to publish back to the worker, and nothing else", async () => {
+    const id = await jobNeedingMap();
+    const draftId = await bookDraft(id, "retry");
+    const retry = (user: typeof admin) => json("POST", `/admin/intake/drafts/${draftId}/retry`, user);
+    // Pending: there is nothing to retry yet.
+    expect((await retry(admin)).statusCode).toBe(409);
+    expect((await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, { decision: "approve" })).statusCode).toBe(200);
+    await prisma.intake_draft.update({ where: { id: draftId }, data: { apply_error: "validate.py: konum eksik" } });
+    // A new asset is an admin's, its retry too.
+    expect((await retry(moderator)).statusCode).toBe(403);
+    const retried = await retry(admin);
+    expect(retried.statusCode).toBe(200);
+    expect(IntakeDraftResponseSchema.parse(retried.json()).draft).toMatchObject({ status: "approved", applyError: null, appliedAt: null });
+    // Cleared once: the worker has it now.
+    expect((await retry(admin)).statusCode).toBe(409);
+    // Published meanwhile: nothing to retry either.
+    await prisma.intake_draft.update({ where: { id: draftId }, data: { apply_error: "x", applied_at: new Date() } });
+    expect((await retry(admin)).statusCode).toBe(409);
+    expect((await json("POST", `/admin/intake/drafts/00000000-0000-4000-8000-000000000000/retry`, admin)).statusCode).toBe(404);
   });
 
   it("is for moderators only, and not there without INTAKE_ENABLED", async () => {

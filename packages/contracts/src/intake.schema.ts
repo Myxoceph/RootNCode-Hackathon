@@ -335,9 +335,13 @@ export const IntakeUploadResponseSchema = z.strictObject({ version: ContractVers
  * `POST /admin/intake/chats` (starts a chat) and `POST /admin/intake/chats/:id/messages` (adds to one):
  * a message, with the photos uploaded for it. Either may be empty, not both.
  */
+/** Most characters one message's text holds, and most photos sent with one message. */
+export const INTAKE_MESSAGE_MAX_CHARS = 50_000;
+export const INTAKE_MESSAGE_MAX_UPLOADS = 20;
+
 const ChatMessageFields = {
-  text: z.string().trim().max(50_000).default(""),
-  uploads: z.array(z.uuid()).max(20).default([]),
+  text: z.string().trim().max(INTAKE_MESSAGE_MAX_CHARS).default(""),
+  uploads: z.array(z.uuid()).max(INTAKE_MESSAGE_MAX_UPLOADS).default([]),
 };
 /** The rules every message keeps, whether it starts a chat or adds to one. */
 const withMessageRules = <T extends z.ZodType<{ text: string; uploads: string[] }>>(schema: T) =>
@@ -350,6 +354,85 @@ export const IntakeChatMessageRequestSchema = withMessageRules(z.strictObject(Ch
 /** `POST /admin/intake/chats`: the first message, and the city the asset is in (the worker reads districts and places within it). */
 export const IntakeChatCreateRequestSchema = withMessageRules(z.strictObject({ ...ChatMessageFields, city: CityCodeSchema }));
 
+/**
+ * What a draft's field is called, by its JSON pointer: on the panel's card and in its questions
+ * ("Mimar yazılmamış"), and at the start of an answer ("Mimar: Bilinmiyor"), which the worker reads
+ * back to the field (data/pipeline/chat.py, through intake.schema.json). One table for both sides.
+ * An inscription is "Kitabe <n>" (n from 1).
+ */
+export const INTAKE_FIELD_NAMES: Record<string, string> = {
+  "/name/tr": "Ad",
+  "/type": "Tür",
+  "/era": "Dönem",
+  "/location/district": "İlçe",
+  "/location/neighborhood": "Mahalle",
+  "/location/address": "Adres",
+  "/location/coordinates": "Konum",
+  "/dating": "Tarih",
+  "/dating/start_year": "Yapım yılı",
+  "/dating/end_year": "Bitiş yılı",
+  "/dating/hijri_year": "Hicri yıl",
+  "/dating/century": "Yüzyıl",
+  "/founder": "Bani (yaptıran)",
+  "/founder/name": "Bani (yaptıran)",
+  "/architect": "Mimar",
+  "/architect/name": "Mimar",
+  "/summary": "Özet",
+  "/sections": "Anlatı bölümleri",
+  "/inscriptions": "Kitabeler",
+};
+
 /** Most messages and photos one chat holds (IntakeChatInputSchema). */
 export const INTAKE_CHAT_MAX_MESSAGES = 200;
 export const INTAKE_CHAT_MAX_FILES = 60;
+
+// ── Kitabe Gönüllüleri (H7) ────────────────────────────────────────────────────────────────
+
+/**
+ * What an expert must have read before an inscription is approved. The model only sorts a
+ * visitor's photo (it made readings up when asked), so a visitor's draft comes in without these.
+ */
+export const INSCRIPTION_READING_FIELDS = ["language", "transliteration", "translationTr"] as const;
+
+/** The reading fields an inscription draft still lacks; approval waits for none. */
+export function unreadInscriptionFields(record: InscriptionDraft): (typeof INSCRIPTION_READING_FIELDS)[number][] {
+  return INSCRIPTION_READING_FIELDS.filter((field) => {
+    const value = record[field];
+    return value === null || (typeof value === "string" && value.trim() === "");
+  });
+}
+
+/** Inscriptions one account may send in an hour: each is a photo to keep and a model call. */
+export const INSCRIPTION_PROPOSALS_PER_HOUR = 5;
+
+/** `POST /assets/:id/inscription-proposals`: the body is the photo itself; these go in the query. */
+export const InscriptionProposalQuerySchema = z.object({
+  /** Where on the asset, in the visitor's words ("taç kapının üstü"). */
+  location: z.string().trim().min(1).max(300).optional(),
+  /** Anything the visitor wants the expert to know. */
+  note: z.string().trim().min(1).max(1000).optional(),
+});
+export type InscriptionProposalQuery = z.infer<typeof InscriptionProposalQuerySchema>;
+
+/** What the visitor sees of an inscription they sent: its state only, never the expert's draft. */
+export const InscriptionProposalSchema = z.strictObject({
+  id: z.uuid(),
+  assetId: AssetIdSchema,
+  assetName: z.string(),
+  status: IntakeDraftStatusSchema,
+  /** Approved and in the app (Taşın Dili can scan it once its target is built). */
+  published: z.boolean(),
+  /** The expert's reason when it was turned down. */
+  reviewNote: z.string().nullable(),
+  /** The visitor's photo, as the media host serves it. */
+  photo: z.string(),
+  createdAt: Timestamp,
+  reviewedAt: Timestamp.nullable(),
+});
+export type InscriptionProposal = z.infer<typeof InscriptionProposalSchema>;
+
+/** `POST /assets/:id/inscription-proposals` */
+export const InscriptionProposalResponseSchema = z.strictObject({ version: ContractVersionSchema, proposal: InscriptionProposalSchema });
+
+/** `GET /me/inscription-proposals`, newest first. */
+export const InscriptionProposalListResponseSchema = z.strictObject({ version: ContractVersionSchema, items: z.array(InscriptionProposalSchema) });

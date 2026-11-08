@@ -4,11 +4,15 @@ import { ScrollView, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { MyContributions } from "@/components/my-contributions";
+import { MyInscriptions } from "@/components/my-inscriptions";
 import { useMessages } from "@/i18n";
 import { bottomInset } from "@/lib/bottom-inset";
 import { useWideWeb, wideColumn } from "@/lib/use-wide-web";
 
-/** Profil · Bıraktığım Notlar: the visitor's notes and their moderation, each on a card of its own. */
+/**
+ * Profil · Bıraktığım Notlar: the visitor's notes and their moderation, each on a card of its own;
+ * below them the inscriptions they sent (Kitabe Gönüllüleri), when there are any.
+ */
 export default function MyNotesScreen() {
   const m = useMessages();
   const { colors: c } = useTheme();
@@ -28,6 +32,7 @@ export default function MyNotesScreen() {
         <title>{m.common.title(m.screens.notes)}</title>
       </Head>
       <MyContributions title={m.screens.notes} />
+      <MyInscriptions />
     </ScrollView>
   );
 }
