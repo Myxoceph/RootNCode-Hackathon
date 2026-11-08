@@ -335,9 +335,13 @@ export const IntakeUploadResponseSchema = z.strictObject({ version: ContractVers
  * `POST /admin/intake/chats` (starts a chat) and `POST /admin/intake/chats/:id/messages` (adds to one):
  * a message, with the photos uploaded for it. Either may be empty, not both.
  */
+/** Most characters one message's text holds, and most photos sent with one message. */
+export const INTAKE_MESSAGE_MAX_CHARS = 50_000;
+export const INTAKE_MESSAGE_MAX_UPLOADS = 20;
+
 const ChatMessageFields = {
-  text: z.string().trim().max(50_000).default(""),
-  uploads: z.array(z.uuid()).max(20).default([]),
+  text: z.string().trim().max(INTAKE_MESSAGE_MAX_CHARS).default(""),
+  uploads: z.array(z.uuid()).max(INTAKE_MESSAGE_MAX_UPLOADS).default([]),
 };
 /** The rules every message keeps, whether it starts a chat or adds to one. */
 const withMessageRules = <T extends z.ZodType<{ text: string; uploads: string[] }>>(schema: T) =>
