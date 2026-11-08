@@ -11,7 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from chat import ChatStages, KnownAsset, coverage, exif_location, norm, slug  # noqa: E402
+from chat import ChatStages, Findings, KnownAsset, coverage, exif_location, first_sentence, grounded_text, norm, slug  # noqa: E402
 from config import REPO, load_env  # noqa: E402
 from db import LocalOnlyError, connect  # noqa: E402
 from llm import Reply  # noqa: E402
@@ -90,7 +90,7 @@ class Draft(unittest.TestCase):
         self.assertEqual(record["meta"]["status"], "draft")
         self.assertEqual(draft.validation["errors"], [])
         self.assertFalse([w for w in draft.validation["warnings"] if "uydurma" in w or "mesajlarda var" in w], draft.validation["warnings"])
-        self.assertEqual(draft.ai["promptVersion"], "asset-structure-1")
+        self.assertEqual(draft.ai["promptVersion"], "asset-structure-2")
         self.assertFalse(draft.ai["repaired"])
 
     def test_invented_year_never_enters_the_draft(self):
@@ -138,6 +138,57 @@ class Draft(unittest.TestCase):
         draft = stages(answer).draft_chat(job())
         self.assertEqual([section["title"]["tr"] for section in draft.record["sections"]], ["Genel Bakış"])
         self.assertTrue(any(w.startswith("kaynaksız: sections[Mimari]") for w in draft.validation["warnings"]), draft.validation["warnings"])
+
+    def test_a_section_retold_in_plain_turkish_stays(self):
+        # Muradiye denemesi (2026-11-08): model mesajı dolgu kelimelerle yeniden kurdu, eski %85 kuralı bölümü attı.
+        source = "Muradiye Camii\nManisa'da, Şehzadeler ilçesinde, şehir merkezinde. Tek kubbeli, son cemaat yeri revaklı bir camidir. İçi İznik çinileriyle süslü. Avlusunda bir şadırvan var."
+        body = "Muradiye Camii, Manisa'nın Şehzadeler ilçesinde, şehir merkezinde yer almaktadır. Tek kubbeli, son cemaat yeri revaklı bir camidir. İç mekan İznik çinileriyle süslüdür ve avlusunda bir şadırvan bulunmaktadır."
+        found = Findings()
+        self.assertTrue(grounded_text("sections[Genel Bakış]", body, source, found), found.warnings)
+
+    def test_a_new_name_or_year_in_a_section_throws_it_out(self):
+        source = "Muradiye Camii\nYapımı 1583'te başladı, 1586'da bitti. Planı Mimar Sinan'ın."
+        for body in ("Yapımı 1583'te başladı, 1586'da bitti; 1590'da onarıldı.", "Planı Mimar Sinan'ın, kalfası Mimar Davud Ağa'dır."):
+            found = Findings()
+            self.assertFalse(grounded_text("sections[Tarihçe]", body, source, found), body)
+            self.assertIn("mesajlarda olmayan ad ya da sayı", found.warnings[0])
+
+    def test_first_sentence_skips_a_title_line(self):
+        self.assertEqual(first_sentence(["Muradiye Camii\nManisa'da, Şehzadeler ilçesinde. Tek kubbeli."]), "Manisa'da, Şehzadeler ilçesinde.")
+        self.assertEqual(first_sentence(["Cami 1490'da yapıldı. Tek kubbeli."]), "Cami 1490'da yapıldı.")
+
+    def test_several_architects_are_one_name_and_candidates(self):
+        messages = [*MESSAGES, "Planı Mimar Sinan'ın. İnşaatı Mimar Mahmud Ağa başlattı, Mimar Davud Ağa tamamladı."]
+        quote = "Planı Mimar Sinan'ın. İnşaatı Mimar Mahmud Ağa başlattı, Mimar Davud Ağa tamamladı."
+        joined = copy.deepcopy(GOOD)
+        joined["architect"] = {"name": "Mimar Sinan, Mimar Mahmud Ağa, Mimar Davud Ağa", "confidence": "certain", "message": 3, "quote": quote}
+        apart = copy.deepcopy(GOOD)
+        apart["architect"] = {"name": "Mimar Sinan", "confidence": "certain", "message": 3, "quote": quote, "others": [
+            {"name": "Mimar Mahmud Ağa", "note": "inşaatı başlattı", "message": 3, "quote": quote},
+            {"name": "Mimar Davud Ağa", "note": "tamamladı", "message": 3, "quote": quote},
+        ]}
+        for answer in (joined, apart):
+            architect = stages(answer).draft_chat(job(messages=messages)).record["architect"]
+            self.assertEqual(architect["name"], "Mimar Sinan")
+            self.assertEqual(architect["confidence"], "probable", "yalnızca planı: kesin değil")
+            self.assertEqual([c["name"] for c in architect["candidates"]], ["Mimar Mahmud Ağa", "Mimar Davud Ağa"])
+
+    def test_no_section_left_keeps_the_messages_as_one(self):
+        # Kayhan Hamamı denemesi: tek satırlık sohbet, bölüm kalmadı, şema "sections boş olamaz" dedi.
+        answer = copy.deepcopy(GOOD)
+        answer["sections"] = [{"title": "Genel Bakış", "body": "Osmanlı mimarisinin muhteşem bir örneği olan bu yapı Mimar Sinan eseridir.", "messages": [1]}]
+        draft = stages(answer).draft_chat(job())
+        self.assertEqual([s["title"]["tr"] for s in draft.record["sections"]], ["Genel Bakış"])
+        self.assertIn("Hacı Ahmed Bey", draft.record["sections"][0]["body"]["tr"])
+        self.assertNotIn("/sections", draft.validation["missing"])
+        self.assertFalse([e for e in draft.validation["errors"] if "sections" in e], draft.validation["errors"])
+
+    def test_an_answered_unknown_closes_the_question(self):
+        messages = [*MESSAGES, "Mimar: Bilinmiyor; kitabede mimar adı geçmiyor."]
+        draft = stages(GOOD).draft_chat(job(messages=messages))
+        self.assertNotIn("/architect", draft.validation["missing"])
+        self.assertIn("/architect", stages(GOOD).draft_chat(job()).validation["missing"], "cevaplanmadıkça soru durur")
+        self.assertTrue(any("bilinmediğini" in w for w in draft.validation["warnings"]))
 
     def test_an_ungrounded_name_blocks_approval(self):
         answer = copy.deepcopy(GOOD)
@@ -233,6 +284,14 @@ class Photos(unittest.TestCase):
         self.assertEqual([m["is_cover"] for m in draft.record["media"]], [True, False])
         self.assertTrue(any("c.jpg" in w and "işlenmedi" in w for w in draft.validation["warnings"]))
         self.assertEqual(draft.validation["errors"], [])
+
+    def test_a_photo_without_a_building_has_no_subject(self):
+        with tempfile.TemporaryDirectory() as folder:
+            files = [{"path": str(self.photo(folder)), "name": "a.jpg", "mime": "image/jpeg", "key": "k", "width": 640, "height": 480, "message": 0}]
+            for seen in ('{"building": false, "subject": "portal", "confidence": 0.8, "alt_tr": "Düz renk üzerinde yazı.", "inscription": false}',
+                         '{"building": true, "subject": "portal", "confidence": 0.2, "alt_tr": "Bulanık.", "inscription": false}'):
+                draft = stages(GOOD, vision=seen).draft_chat(job(files=files))
+                self.assertEqual(draft.media[0]["subject"], "other", seen)
 
     def test_duplicate_close_by(self):
         with tempfile.TemporaryDirectory() as folder:
