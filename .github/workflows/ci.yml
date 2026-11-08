@@ -64,6 +64,9 @@ jobs:
       - name: Typecheck all workspaces
         run: npm run typecheck
 
+      - name: Lint the app (rules of hooks)
+        run: npm run lint --workspace @vagabonds/app
+
       - name: Validate the dataset (JSON Schema + cross-checks)
         run: python data/tools/validate.py
 

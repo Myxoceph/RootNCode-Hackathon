@@ -32,4 +32,13 @@ export default function Root({ children }: PropsWithChildren) {
   );
 }
 
-const background = `body { background-color: ${palette.gece50}; }`;
+/**
+ * The browser's autofill paints a filled field white (or pale yellow) with dark text, which breaks
+ * the glass fields on the dark sign-in screen. Holding its colours back with an endless transition
+ * keeps each field's own look in either theme.
+ */
+const autofill = `input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+  transition: background-color 9999999s ease-out 0s, color 9999999s ease-out 0s;
+}`;
+
+const background = `body { background-color: ${palette.gece50}; }\n${autofill}`;

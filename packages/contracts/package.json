@@ -1,6 +1,6 @@
 {
   "name": "@vagabonds/contracts",
-  "version": "0.3.37",
+  "version": "0.3.38",
   "private": true,
   "description": "Shared API data contract (Zod schemas and TypeScript types) between the Vagabonds backend and client.",
   "type": "module",
@@ -12,7 +12,8 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "validate": "tsx scripts/validate-fixtures.ts",
-    "intake-schema": "tsx scripts/intake-json-schema.ts"
+    "intake-schema": "tsx scripts/intake-json-schema.ts",
+    "test": "vitest run"
   },
   "dependencies": {
     "zod": "^4.1.0"
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@types/node": "^22.0.0",
     "tsx": "^4.20.0",
-    "typescript": "^5.9.0"
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.4"
   }
 }

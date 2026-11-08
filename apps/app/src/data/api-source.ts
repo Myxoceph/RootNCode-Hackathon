@@ -3,6 +3,7 @@ import {
   AssetDetailSchema,
   AssetListResponseSchema,
   AssetRelationsResponseSchema,
+  CityDishesResponseSchema,
   MetaEnumsResponseSchema,
   PulseResponseSchema,
   WeatherResponseSchema,
@@ -38,6 +39,9 @@ export function createApiSource(baseUrl: string): DataSource {
     },
     getPulse(id, lang) {
       return request(`/assets/${encodeURIComponent(id)}/pulse?lang=${lang}`, PulseResponseSchema, { allowNotFound: true });
+    },
+    getCityDishes(city, lang) {
+      return request(`/cities/${encodeURIComponent(city)}/dishes?lang=${lang}`, CityDishesResponseSchema, { allowNotFound: true });
     },
     async getWeather(city, lang) {
       // The weather is a nicety: without it the app goes on.

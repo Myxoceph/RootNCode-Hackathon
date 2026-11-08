@@ -27,9 +27,13 @@ export type FoodAdvice = Extract<SavedRoute, { kind: "food" }>;
 /** Bus and tram directions Rehber gave in the chat. */
 export type TransitAdvice = Extract<SavedRoute, { kind: "transit" }>;
 
-/** The kept entries that are routes to walk, as Kaydettiklerim's Rotalar tab lists them. */
-export function isRoute(route: SavedRoute): route is PlannerRoute | TripRoute {
-  return route.kind === "planner" || route.kind === "trip";
+/**
+ * The kept entries that are routes to walk, as Kaydettiklerim's Rotalar tab lists them: Rehber's
+ * trips. Routes saved from the old sample planner (its stops and cities were a design sample, not
+ * the data) are no longer shown.
+ */
+export function isRoute(route: SavedRoute): route is TripRoute {
+  return route.kind === "trip";
 }
 
 /** Longest `key` the API accepts (`SaveRouteRequestSchema`). */
@@ -119,10 +123,6 @@ async function keep(route: SavedRoute): Promise<void> {
   } catch {
     if (routes[0]?.id === route.id) set(before);
   }
-}
-
-export function saveRoute(route: Omit<PlannerRoute, "id" | "savedAt" | "kind">): Promise<void> {
-  return keep({ ...route, kind: "planner", id: newId(), savedAt: new Date().toISOString() });
 }
 
 const tripTitle = (trip: TripPlanResponse) => getMessages().shared.tripTitle(trip.city.label);
