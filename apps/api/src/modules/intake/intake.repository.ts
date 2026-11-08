@@ -185,6 +185,19 @@ export function createIntakeRepository(prisma: PrismaClient) {
      * reviewers never both approve. `taken`: another draft is already approved as this new asset
      * (intake_draft_new_asset_idx), even when both approvals arrive at once.
      */
+    /**
+     * Clears why publishing failed, so the worker tries the approved draft again on its next round
+     * (data/pipeline/publish.py takes approved drafts with neither `applied_at` nor `apply_error`).
+     * False when it is not an approved draft that failed (published meanwhile, or already cleared).
+     */
+    async retryApply(id: string): Promise<boolean> {
+      const { count } = await prisma.intake_draft.updateMany({
+        where: { id, status: "approved", applied_at: null, apply_error: { not: null } },
+        data: { apply_error: null, updated_at: new Date() },
+      });
+      return count === 1;
+    },
+
     async review(
       id: string,
       decision: { status: "approved"; assetId: string; record: Record<string, unknown> } | { status: "rejected" },

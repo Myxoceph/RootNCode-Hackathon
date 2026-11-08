@@ -6,10 +6,10 @@ import { Platform, StyleSheet, useWindowDimensions, View, type ViewStyle } from 
 import { DraftReview, PublishState } from "@/components/admin/draft-review";
 import { InscriptionReview, InscriptionSource } from "@/components/admin/inscription-review";
 import { ChatMessages, Notice, type Ref } from "@/components/admin/intake-chat";
-import { Button, Card, Empty, Failed, formatDate, Loading, PageHeader, Toast, useLoad, useToast } from "@/components/admin/kit";
+import { Button, Card, Empty, errorText, Failed, formatDate, Loading, PageHeader, Toast, useLoad, useToast } from "@/components/admin/kit";
 import { textAt } from "@/components/admin/record-path";
 import { PageBody, usePanel } from "@/components/admin/shell";
-import { fetchChat, fetchDraft, fetchMetaEnums } from "@/data/admin";
+import { fetchChat, fetchDraft, fetchMetaEnums, retryDraft } from "@/data/admin";
 
 /**
  * `/admin/review/drafts/:id`: one draft of the review queue (Y3). Its source on the left (a chat's
@@ -28,6 +28,7 @@ export default function DraftScreen() {
   const chat = useLoad(async () => (jobId ? fetchChat(jobId) : null), [jobId]);
   const enums = useLoad(fetchMetaEnums);
   const [shown, setShown] = useState<Ref | null>(null);
+  const [retrying, setRetrying] = useState(false);
 
   if (!draft.data) {
     return (
@@ -44,6 +45,16 @@ export default function DraftScreen() {
     draft.setData(next);
     refreshPending();
     show(message);
+  };
+  const retry = async () => {
+    setRetrying(true);
+    try {
+      decided(await retryDraft(d.id), "Worker'a geri gönderildi; sıradaki turunda yeniden yayınlamayı dener.");
+    } catch (error) {
+      show(errorText(error), "error");
+    } finally {
+      setRetrying(false);
+    }
   };
   const name = textAt(d.record, ["name", "tr"]) ?? (d.kind === "inscription" ? `Kitabe · ${d.assetId}` : d.assetId);
   const job = chat.data?.job ?? null;
@@ -86,9 +97,20 @@ export default function DraftScreen() {
           }
         />
         {d.applyError && (
-          <Notice tone="red" icon="alert-circle-outline">
-            {`Worker yayınlayamadı: ${d.applyError}`}
-          </Notice>
+          <View style={styles.failed}>
+            <Notice tone="red" icon="alert-circle-outline">
+              {`Worker yayınlayamadı: ${d.applyError}`}
+            </Notice>
+            {/* The worker does not try a failed draft again on its own: once the cause is fixed, it is sent back. */}
+            {(newAsset ? role === "admin" : true) && (
+              <View style={styles.failedRow}>
+                <Text color="textSecondary" style={styles.failedHint}>
+                  Sorunu giderdiysen (ör. eksik fotoğraf, veri setindeki dosya) taslağı worker'a geri gönder.
+                </Text>
+                <Button small label="Yeniden dene" icon="refresh" busy={retrying} disabled={retrying} onPress={() => void retry()} />
+              </View>
+            )}
+          </View>
         )}
         {d.status === "approved" && d.appliedAt && (
           <View style={{ marginBottom: 14 }}>
@@ -120,4 +142,7 @@ const styles = StyleSheet.create({
   side: { width: "100%", gap: 12 },
   sideWide: { flex: 1, minWidth: 0, width: "auto" },
   sourceTitle: { fontFamily: fontFamily.sansSemiBold, fontSize: 15 },
+  failed: { gap: 8, marginBottom: 14 },
+  failedRow: { flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 10 },
+  failedHint: { flex: 1, minWidth: 240, fontSize: 13, lineHeight: 19 },
 });
