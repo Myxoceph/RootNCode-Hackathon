@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Platform, StyleSheet, useWindowDimensions, View, type ViewStyle } from "react-native";
 
 import { DraftReview, PublishState } from "@/components/admin/draft-review";
-import { InscriptionReview } from "@/components/admin/inscription-review";
+import { InscriptionReview, InscriptionSource } from "@/components/admin/inscription-review";
 import { ChatMessages, Notice, type Ref } from "@/components/admin/intake-chat";
 import { Button, Card, Empty, Failed, formatDate, Loading, PageHeader, Toast, useLoad, useToast } from "@/components/admin/kit";
 import { textAt } from "@/components/admin/record-path";
@@ -51,14 +51,7 @@ export default function DraftScreen() {
   const source = (
     <View style={[styles.side, wide && styles.sideWide, wide && STICKY]}>
       {!newAsset ? (
-        <Card>
-          <Empty
-            icon="document-text-outline"
-            title="Bir ziyaretçinin kitabesi"
-            body={`${d.assetId} eserine eklenmek için gönderildi. Fotoğrafı sağda; eserin sayfasındaki kitabelerle karşılaştır.`}
-            action={<Button label="Eserin sayfası" icon="open-outline" onPress={() => router.push(`/asset/${d.assetId}`)} />}
-          />
-        </Card>
+        <InscriptionSource draft={d} onOpenAsset={() => router.push(`/asset/${d.assetId}`)} />
       ) : job?.kind === "chat" ? (
         <>
           <Text style={styles.sourceTitle}>{`Sohbet · ${job.input?.messages.length ?? 0} mesaj`}</Text>

@@ -261,15 +261,23 @@ describe.skipIf(!DATABASE_URL)("intake routes (PostgreSQL)", () => {
     const rejected = await json("POST", `/admin/intake/drafts/${draftId}/review`, admin, { decision: "reject", note: "kitapta yok" });
     expect(IntakeDraftResponseSchema.parse(rejected.json()).draft).toMatchObject({ status: "rejected", reviewNote: "kitapta yok" });
 
-    const inscription = await prisma.intake_draft.create({
-      data: { kind: "inscription", asset_id: EXISTING, record: { transliteration: "…", uncertain: [] } },
-    });
+    // As a visitor's inscription comes in (H7): only where it is, the reading is the expert's.
+    const unread = { language: null, script: null, transliteration: null, translationTr: null, translationEn: null, uncertain: [], location: "taç kapının üstü" };
+    const inscription = await prisma.intake_draft.create({ data: { kind: "inscription", asset_id: EXISTING, record: unread } });
     draftIds.push(inscription.id);
+    const review = (record?: object) => json("POST", `/admin/intake/drafts/${inscription.id}/review`, moderator, { decision: "approve", ...(record && { record }) });
     // A corrected reading is held to the inscription's contract.
-    expect((await json("POST", `/admin/intake/drafts/${inscription.id}/review`, moderator, { decision: "approve", record: { foo: 1 } })).statusCode).toBe(400);
-    const approved = await json("POST", `/admin/intake/drafts/${inscription.id}/review`, moderator, { decision: "approve" });
+    expect((await review({ foo: 1 })).statusCode).toBe(400);
+    // Nothing is approved unread: not as it came, nor with the place alone corrected or a blank reading.
+    for (const attempt of [undefined, { ...unread, location: "avlu kapısı" }, { ...unread, language: "ar", transliteration: " ", translationTr: "…" }]) {
+      const refused = await review(attempt);
+      expect(refused.statusCode).toBe(409);
+      expect(refused.json().error.code).toBe("NOT_READ");
+    }
+    const read = { ...unread, language: "ar", transliteration: "Bismillâhirrahmânirrahîm", translationTr: "Rahmân ve Rahîm olan Allah'ın adıyla" };
+    const approved = await review(read);
     expect(approved.statusCode).toBe(200);
-    expect(IntakeDraftResponseSchema.parse(approved.json()).draft).toMatchObject({ status: "approved", assetId: EXISTING });
+    expect(IntakeDraftResponseSchema.parse(approved.json()).draft).toMatchObject({ status: "approved", assetId: EXISTING, record: read });
   });
 
   it("is for moderators only, and not there without INTAKE_ENABLED", async () => {
