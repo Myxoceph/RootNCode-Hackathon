@@ -5,7 +5,7 @@ import {
   type InscriptionProposalQuery,
 } from "@vagabonds/contracts";
 import { ImageManipulator, SaveFormat } from "expo-image-manipulator";
-import { useCallback, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useSyncExternalStore } from "react";
 import { Platform } from "react-native";
 
 import { getMessages } from "@/i18n";
@@ -97,12 +97,51 @@ export async function sendInscriptionProposal(
   return answer.proposal;
 }
 
+/**
+ * Whether this server takes inscriptions: the routes are there only with Veri Döngüsü on
+ * (INTAKE_ENABLED), so where they are not the app offers nothing and stays as it was. Learnt once per
+ * account from its list (`/me/inscription-proposals`); a 404 means off.
+ */
+const probe: { user: string | null; on: boolean | null } = { user: null, on: null };
+const OFF = "INSCRIPTION_VOLUNTEERS_OFF";
+
 /** The inscriptions the account sent, newest first; null without an account. */
 export async function fetchMyInscriptionProposals(): Promise<InscriptionProposal[] | null> {
   const token = await accountToken();
   if (token === null) return null;
-  const answer = await request(`${resolveApiUrl()}/me/inscription-proposals`, InscriptionProposalListResponseSchema, { token, errorFor: errorFor(token) });
+  const errors = errorFor(token);
+  const answer = await request(`${resolveApiUrl()}/me/inscription-proposals`, InscriptionProposalListResponseSchema, {
+    token,
+    errorFor: (status, code, details) => (status === 404 ? new DataError("unavailable", words().needsServer, details, OFF) : errors(status, code, details)),
+  });
   return answer!.items;
+}
+
+function settle(user: string, on: boolean) {
+  if (probe.user !== user || probe.on === on) return;
+  probe.on = on;
+  listeners.forEach((listener) => listener());
+}
+
+/** True once the server is known to take inscriptions from this account; false until then and when it does not. */
+export function useInscriptionVolunteers(): boolean {
+  const { user } = useCommunity();
+  const id = user?.username ? user.id : null;
+  useSyncExternalStore(subscribe, () => `${probe.user}:${probe.on}`, () => "");
+  useEffect(() => {
+    if (!communityAvailable || id === null || probe.user === id) return;
+    probe.user = id;
+    probe.on = null;
+    fetchMyInscriptionProposals().then(
+      () => settle(id, true),
+      // Only a missing route says off; a failed request is asked again with the next account or start.
+      (error: unknown) => {
+        if (error instanceof DataError && error.code === OFF) settle(id, false);
+        else if (probe.user === id) probe.user = null;
+      },
+    );
+  }, [id]);
+  return id !== null && probe.user === id && probe.on === true;
 }
 
 /** Profil · Kitabelerim: fetched again for a new account and after each one sent. */

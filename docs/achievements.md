@@ -110,7 +110,7 @@ Toplam: **36 başarım**, rozetlerden en çok **1530 puan** (etkinlik puanı har
 | 🤝 | **Katkıcı**<br>5 notun ya da fotoğrafın onaylansın. | 5 onaylanan not ya da fotoğraf | 50 | `katkici` |
 | 📝 | **Not Defteri**<br>10 ziyaretçi notun onaylansın. | 10 onaylanan not | 60 | `on-not` |
 | 🖋️ | **Rehber Kalem**<br>25 ziyaretçi notun onaylansın. | 25 onaylanan not | 120 | `rehber-kalem` |
-| 📜 | **Kitabe Gönüllüsü**<br>Gönderdiğin bir kitabe uzman tarafından okunup uygulamaya eklensin. | 1 yayınlanan kitabe (Kitabe Gönüllüleri) | 20 | `kitabe-gonullusu` |
+| 📜 | **Kitabe Gönüllüsü**<br>Gönderdiğin bir kitabe uzman tarafından okunup uygulamaya eklensin. | 1 yayınlanan kitabe (Kitabe Gönüllüleri; kapalı gelir, özellik açılınca panelden açılır) | 20 | `kitabe-gonullusu` |
 
 ## Kanıtlanmış ziyaretler
 

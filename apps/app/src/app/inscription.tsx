@@ -17,7 +17,8 @@ import { AskPanel } from "@/components/ask-panel";
 import { CameraTopBar, GlassIconButton, GlassPill } from "@/components/camera-chrome";
 import { GlassFill } from "@/components/city-asset-cards";
 import { InscriptionReading } from "@/components/inscription-reading";
-import { communityAvailable, DataError, type ResourceWithRetry } from "@/data";
+import { DataError, type ResourceWithRetry } from "@/data";
+import { useInscriptionVolunteers } from "@/data/inscription-proposals";
 import { useLang, useMessages, type Messages } from "@/i18n";
 import { announce } from "@/lib/announce";
 import { cue } from "@/lib/feedback";
@@ -191,6 +192,7 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
   const lang = useLang();
   const m = useMessages();
   const router = useRouter();
+  const volunteers = useInscriptionVolunteers();
   const w = m.reading;
   const insets = useSafeAreaInsets();
   const set = useTargetSet(assets);
@@ -453,7 +455,7 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
           <View style={styles.offer}>
             <GlassPill gold icon="sparkles" label={w.askAssistant} spoken={w.askAssistantSpoken} onPress={ask} />
             {/* Kitabe Gönüllüleri: the camera finds none of the listed ones; this may be one that is not. */}
-            {askAsset && communityAvailable && (
+            {askAsset && volunteers && (
               <GlassPill
                 icon="document-text-outline"
                 label={m.propose.offer}
