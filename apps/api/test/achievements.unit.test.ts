@@ -13,7 +13,7 @@ const visit = (assetId: string, city: string, district: string, type = "cami", e
 });
 const facts = (visits: VisitFact[], extra: Partial<UserFacts> = {}): UserFacts => ({
   visits,
-  approved: { notes: 0, photos: 0 },
+  approved: { notes: 0, photos: 0, inscriptions: 0 },
   pending: { notes: 0, photos: 0 },
   complexChildren: new Map(),
   ...extra,
@@ -57,9 +57,11 @@ describe("achievement rules", () => {
   });
 
   it("counts approved notes and photos", () => {
-    const f = facts([], { approved: { notes: 2, photos: 1 } });
+    const f = facts([], { approved: { notes: 2, photos: 1, inscriptions: 1 } });
     expect(progressOf({ kind: "contributions", count: 1, contribution: "photos" }, f).current).toBe(1);
+    // "any" is notes or photos, as its badge says; an inscription has its own.
     expect(progressOf({ kind: "contributions", count: 5, contribution: "any" }, f).current).toBe(3);
+    expect(progressOf({ kind: "contributions", count: 1, contribution: "inscriptions" }, f)).toEqual({ current: 1, target: 1 });
   });
 });
 
@@ -75,7 +77,7 @@ describe("activityPoints", () => {
   it("counts each visit, each seal on top, and approved notes and photos, never pending ones", () => {
     const sealed = { ...visit("a", "konya", "Meram", "cami", null, 0), proven: true };
     const f = facts([sealed, visit("b", "konya", "Meram", "cami", null, 1)], {
-      approved: { notes: 3, photos: 1 },
+      approved: { notes: 3, photos: 1, inscriptions: 1 },
       pending: { notes: 4, photos: 2 },
     });
     expect(activityPoints(f)).toBe(2 * 10 + 10 + 3 * 5 + 10);

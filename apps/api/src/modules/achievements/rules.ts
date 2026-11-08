@@ -19,7 +19,8 @@ export interface VisitFact {
 export interface UserFacts {
   /** First visits only, one per asset. */
   visits: VisitFact[];
-  approved: { notes: number; photos: number };
+  /** An inscription (Kitabe Gönüllüleri) counts once it is published, not when approved. */
+  approved: { notes: number; photos: number; inscriptions: number };
   /** Waiting for a moderator: shown, but they earn nothing yet. */
   pending: { notes: number; photos: number };
   /** Visible children of each complex a `complex` rule names. */
@@ -84,8 +85,8 @@ export function progressOf(rule: AchievementRule, facts: UserFacts): Progress {
       return capped(proven.length, rule.count);
     }
     case "contributions": {
-      const { notes, photos } = facts.approved;
-      const current = rule.contribution === "notes" ? notes : rule.contribution === "photos" ? photos : notes + photos;
+      const { notes, photos, inscriptions } = facts.approved;
+      const current = { notes, photos, inscriptions, any: notes + photos }[rule.contribution];
       return capped(current, rule.count);
     }
   }

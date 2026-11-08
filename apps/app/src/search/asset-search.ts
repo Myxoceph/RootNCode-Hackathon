@@ -39,7 +39,7 @@ function nameScore(name: string, query: string): number {
  * district or city ("hamam", "osmangazi"); the better match and the better-known asset come first.
  * With `inCity`, only that city's assets, and no cities.
  */
-export function searchAssets(text: string, assets: AssetSummary[], cities: CityOption[], inCity?: string): SearchResults {
+export function searchAssets(text: string, assets: AssetSummary[], cities: CityOption[], inCity?: string, limit = MAX_ASSETS): SearchResults {
   const query = foldTurkish(text);
   if (query.length === 0) return { cities: [], assets: [] };
 
@@ -53,7 +53,7 @@ export function searchAssets(text: string, assets: AssetSummary[], cities: CityO
     })
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score || b.asset.prominence - a.asset.prominence || a.asset.name.localeCompare(b.asset.name, "tr"))
-    .slice(0, MAX_ASSETS)
+    .slice(0, limit)
     .map(({ asset }) => asset);
 
   return { cities: foundCities, assets: foundAssets };

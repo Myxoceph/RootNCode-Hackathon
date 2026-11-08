@@ -82,7 +82,9 @@ function ruleText(rule: AchievementRule, meta: MetaEnumsResponse | null): string
     case "complex":
       return `Külliyenin bütün yapılarını gez (${rule.parentId})`;
     case "contributions":
-      return `${rule.count} ${"notu"} onaylansın`;
+      return rule.contribution === "inscriptions"
+        ? `${rule.count} kitabesi uzman okuyup eklesin (Kitabe Gönüllüleri)`
+        : `${rule.count} ${{ notes: "notu", photos: "fotoğrafı", any: "notu ya da fotoğrafı" }[rule.contribution]} onaylansın`;
   }
 }
 

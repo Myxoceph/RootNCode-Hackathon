@@ -1,0 +1,722 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Generated from packages/contracts/src/intake.schema.ts; do not edit by hand.",
+  "photoSubjects": [
+    "portal",
+    "inscription",
+    "ornament_detail",
+    "fountain",
+    "mihrab",
+    "minber",
+    "window",
+    "engraving",
+    "interior",
+    "portico",
+    "courtyard",
+    "exterior",
+    "minaret",
+    "dome",
+    "tomb",
+    "sadirvan",
+    "aerial",
+    "other"
+  ],
+  "fieldNames": {
+    "/name/tr": "Ad",
+    "/type": "Tür",
+    "/era": "Dönem",
+    "/location/district": "İlçe",
+    "/location/neighborhood": "Mahalle",
+    "/location/address": "Adres",
+    "/location/coordinates": "Konum",
+    "/dating": "Tarih",
+    "/dating/start_year": "Yapım yılı",
+    "/dating/end_year": "Bitiş yılı",
+    "/dating/hijri_year": "Hicri yıl",
+    "/dating/century": "Yüzyıl",
+    "/founder": "Bani (yaptıran)",
+    "/founder/name": "Bani (yaptıran)",
+    "/architect": "Mimar",
+    "/architect/name": "Mimar",
+    "/summary": "Özet",
+    "/sections": "Anlatı bölümleri",
+    "/inscriptions": "Kitabeler"
+  },
+  "columns": {
+    "intake_job.status": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "string",
+      "enum": [
+        "queued",
+        "mapping",
+        "needs_map",
+        "map_confirmed",
+        "drafting",
+        "done",
+        "failed"
+      ]
+    },
+    "intake_job.layout": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "spread": {
+          "type": "boolean"
+        },
+        "columns": {
+          "minItems": 1,
+          "maxItems": 2,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "tr",
+              "en"
+            ]
+          }
+        },
+        "pageOffset": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "spread",
+        "columns",
+        "pageOffset"
+      ],
+      "additionalProperties": false
+    },
+    "intake_job.book_map": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "maxItems": 500,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "maxLength": 120,
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "titleTr": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "titleEn": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "district": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "printedPages": {
+            "anyOf": [
+              {
+                "type": "array",
+                "prefixItems": [
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  }
+                ],
+                "items": false,
+                "minItems": 2,
+                "maxItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pdfPages": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "parentKey": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 120,
+                "pattern": "^[a-z0-9-]+$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "proposedId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "key",
+          "titleTr",
+          "titleEn",
+          "district",
+          "printedPages",
+          "pdfPages",
+          "parentKey",
+          "proposedId"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "intake_job.input": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "messages": {
+          "minItems": 1,
+          "maxItems": 200,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "maxLength": 50000
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+              },
+              "by": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "text",
+              "at",
+              "by"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "files": {
+          "maxItems": 60,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 400
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 200
+              },
+              "mime": {
+                "type": "string",
+                "maxLength": 80
+              },
+              "key": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "maxLength": 400
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "width": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "height": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "message": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "path",
+              "name",
+              "mime",
+              "key",
+              "width",
+              "height",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "assetId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "messages",
+        "files",
+        "assetId"
+      ],
+      "additionalProperties": false
+    },
+    "intake_job.kind": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "string",
+      "enum": [
+        "pdf",
+        "chat"
+      ]
+    },
+    "intake_draft.kind": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "string",
+      "enum": [
+        "book_asset",
+        "inscription",
+        "field_asset"
+      ]
+    },
+    "intake_draft.status": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    },
+    "intake_draft.media": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "subject": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "portal",
+                  "inscription",
+                  "ornament_detail",
+                  "fountain",
+                  "mihrab",
+                  "minber",
+                  "window",
+                  "engraving",
+                  "interior",
+                  "portico",
+                  "courtyard",
+                  "exterior",
+                  "minaret",
+                  "dome",
+                  "tomb",
+                  "sadirvan",
+                  "aerial",
+                  "other"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "subjectConfidence": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "alt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 600
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "caption": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 600
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pdfPage": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "arTargetCandidate": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "key",
+          "width",
+          "height",
+          "subject",
+          "subjectConfidence",
+          "alt",
+          "caption",
+          "pdfPage"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "intake_draft.source_refs": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "pages": {
+                "minItems": 1,
+                "maxItems": 40,
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                }
+              }
+            },
+            "required": [
+              "field",
+              "pages"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "message": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              }
+            },
+            "required": [
+              "field",
+              "message",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "intake_draft.validation": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "errors": {
+          "maxItems": 200,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "warnings": {
+          "maxItems": 200,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "missing": {
+          "default": [],
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 200
+          }
+        }
+      },
+      "required": [
+        "errors",
+        "warnings"
+      ],
+      "additionalProperties": false
+    },
+    "intake_draft.ai": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "promptVersion": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "repaired": {
+          "type": "boolean"
+        },
+        "ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "model",
+        "promptVersion",
+        "confidence",
+        "repaired",
+        "ms"
+      ],
+      "additionalProperties": false
+    },
+    "intake_draft.record (kind=inscription)": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "language": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "ar",
+                "fa",
+                "tr-ottoman",
+                "tr",
+                "el",
+                "la",
+                "hy",
+                "other"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "script": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 80
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "transliteration": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 12000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "translationTr": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 12000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "translationEn": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 12000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "uncertain": {
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 200
+          }
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 300
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "language",
+        "script",
+        "transliteration",
+        "translationTr",
+        "translationEn",
+        "uncertain",
+        "location"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

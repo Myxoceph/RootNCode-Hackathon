@@ -80,6 +80,23 @@ const EnvSchema = z.object({
   // and POST /assets/:id/visit/proof takes no position, so a printed photo can stand in for the site.
   // On until visits must happen on site; then "false".
   DEMO_UNLOCK: z.enum(["true", "false"]).default("true").transform((value) => value === "true"),
+  // Veri Döngüsü's development (docs/plans/veri-dongusu.md §0): "true" refuses to start unless the
+  // database is on this machine and no R2 credentials are set; photos then go to LOCAL_MEDIA_DIR,
+  // served at /local-media. Never on a server.
+  INTAKE_LOCAL_ONLY: z.enum(["true", "false", "1", "0"]).default("false").transform((value) => value === "true" || value === "1"),
+  // Veri Döngüsü's routes (book intake, the review queue's new kinds, inscription proposals). Off by
+  // default: merged code changes nothing on a server until this is turned on.
+  INTAKE_ENABLED: z.enum(["true", "false", "1", "0"]).default("false").transform((value) => value === "true" || value === "1"),
+  // Where the local media store writes with INTAKE_LOCAL_ONLY; empty: the repo's data/build/media.
+  LOCAL_MEDIA_DIR: z.string().default(""),
+  // With INTAKE_LOCAL_ONLY, the media URLs the API gives (instead of MEDIA_BASE_URL, which stays the
+  // shared host the local route falls back to). A phone needs the computer's address, not localhost.
+  // Kept apart from MEDIA_BASE_URL so the same .env works on branches without the local route.
+  // Empty: http://localhost:<PORT>/local-media (localMediaBaseUrl).
+  LOCAL_MEDIA_BASE_URL: z
+    .union([z.literal(""), z.url()])
+    .default("")
+    .transform((url) => url.replace(/\/+$/, "")),
 });
 
 export type Env = z.infer<typeof EnvSchema>;
@@ -92,5 +109,46 @@ export function loadEnv(source: NodeJS.ProcessEnv = process.env): Env {
       .join("\n");
     throw new Error(`Invalid environment configuration:\n${details}`);
   }
+  const problems = localOnlyProblems(result.data);
+  if (problems.length > 0) {
+    throw new Error(`INTAKE_LOCAL_ONLY is on, so nothing may be written off this machine:\n${problems.map((p) => `  - ${p}`).join("\n")}`);
+  }
   return result.data;
+}
+
+const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "[::1]", "::1"]);
+
+/**
+ * Why the environment would write off this machine although INTAKE_LOCAL_ONLY is on: a database
+ * elsewhere, or R2 credentials (photos would go to the shared bucket). Empty when it is off.
+ */
+export function localOnlyProblems(
+  env: Pick<Env, "INTAKE_LOCAL_ONLY" | "DATABASE_URL" | "MEDIA_BASE_URL" | "MEDIA_S3_ENDPOINT" | "MEDIA_BUCKET" | "MEDIA_S3_ACCESS_KEY_ID" | "MEDIA_S3_SECRET_ACCESS_KEY">,
+): string[] {
+  if (!env.INTAKE_LOCAL_ONLY) return [];
+  const problems: string[] = [];
+  let url: URL | null = null;
+  try {
+    url = new URL(env.DATABASE_URL);
+  } catch {
+    problems.push("DATABASE_URL could not be read; only a localhost address is allowed");
+  }
+  if (url) {
+    // A Unix socket (`postgresql:///db?host=/tmp`) is on this machine too.
+    const socket = url.hostname === "" && (url.searchParams.get("host") ?? "").startsWith("/");
+    if (!socket && !LOCAL_HOSTS.has(url.hostname)) problems.push(`DATABASE_URL points at "${url.hostname}"; only localhost is allowed`);
+  }
+  // MEDIA_BASE_URL is where /local-media sends what it does not have: pointed at /local-media itself,
+  // every such photo would redirect to itself forever. LOCAL_MEDIA_BASE_URL is the local one.
+  if (/\/local-media(\/|$)/.test(env.MEDIA_BASE_URL)) {
+    problems.push("MEDIA_BASE_URL points at /local-media; keep it the shared media host and set LOCAL_MEDIA_BASE_URL instead");
+  }
+  const r2 = (["MEDIA_S3_ENDPOINT", "MEDIA_BUCKET", "MEDIA_S3_ACCESS_KEY_ID", "MEDIA_S3_SECRET_ACCESS_KEY"] as const).filter((key) => env[key] !== "");
+  if (r2.length > 0) problems.push(`${r2.join(", ")} set; remove them (photos go to the local store)`);
+  return problems;
+}
+
+/** The media URLs the API gives with INTAKE_LOCAL_ONLY: LOCAL_MEDIA_BASE_URL, else this API's own /local-media. */
+export function localMediaBaseUrl(env: Pick<Env, "LOCAL_MEDIA_BASE_URL" | "PORT">): string {
+  return env.LOCAL_MEDIA_BASE_URL || `http://localhost:${env.PORT}/local-media`;
 }

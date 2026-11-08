@@ -13,6 +13,8 @@ export interface VisionLook {
   system: string;
   question: string;
   signal: AbortSignal;
+  /** Longest answer; Taşa Sor's short one by default. A whole inscription's reading needs more. */
+  maxTokens?: number;
 }
 
 export interface VisionClient {
@@ -48,7 +50,7 @@ export function createVisionClient({ baseUrl, model, apiKey, fetchImpl = fetch }
   if (apiKey) headers.authorization = `Bearer ${apiKey}`;
 
   return {
-    async look({ image, type, system, question, signal }) {
+    async look({ image, type, system, question, signal, maxTokens = MAX_TOKENS }) {
       let response: Response;
       try {
         response = await fetchImpl(`${root}/chat/completions`, {
@@ -57,7 +59,7 @@ export function createVisionClient({ baseUrl, model, apiKey, fetchImpl = fetch }
           signal,
           body: JSON.stringify({
             model,
-            max_tokens: MAX_TOKENS,
+            max_tokens: maxTokens,
             temperature: 0.2,
             messages: [
               { role: "system", content: system },
