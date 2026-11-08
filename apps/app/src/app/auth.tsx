@@ -1,7 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { EmailSchema, PASSWORD_MIN, UsernameSchema } from "@vagabonds/contracts";
 import { cameraColors, fontFamily, palette, radius, spacing, Text, useUi } from "@vagabonds/ui";
-import { useLocalSearchParams, useRouter, type Href } from "expo-router";
+import { Redirect, useLocalSearchParams, useRouter, type Href } from "expo-router";
 import Head from "expo-router/head";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useRef, useState, type ComponentProps, type RefObject } from "react";
@@ -26,7 +26,7 @@ import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 import { AssetImage } from "@/components/asset-image";
 import { communityAvailable, login, register, useAsset, useCommunity } from "@/data";
 import { DataError } from "@/data/errors";
-import { afterSignIn } from "@/lib/account-gate";
+import { afterSignIn, isAccount } from "@/lib/account-gate";
 import { announce } from "@/lib/announce";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { LanguageSwitch } from "@/components/language-switch";
@@ -134,6 +134,13 @@ export default function AuthScreen() {
     } finally {
       setBusy(false);
     }
+  }
+
+  // Signed in already: another account is signed in to after this one signs out, so the form is
+  // not offered; the page asked for opens instead. The panel's way here is the exception: an account
+  // without its role signs in with another one.
+  if (isAccount(user) && !busy && !params.next?.startsWith("/admin")) {
+    return <Redirect href={afterSignIn(params.next, Platform.OS === "web" ? "/map" : "/") as Href} />;
   }
 
   return (
@@ -300,18 +307,30 @@ export default function AuthScreen() {
 
 /** The photo's lower part sinks into the night blue, so the title sits on it. */
 function Fade() {
+  // Drawn at the box's measured size: a "100%" Svg keeps its first size on iOS, so after the
+  // keyboard shrinks the photo and lets it grow back, the fade covered only its top and left a
+  // hard edge across the photo. Two points taller, so a rounded size never leaves the photo's last
+  // row of pixels showing as a line under the title.
+  const [size, setSize] = useState({ width: 0, height: 0 });
   return (
-    <View pointerEvents="none" style={StyleSheet.absoluteFill}>
-      <Svg width="100%" height="100%">
-        <Defs>
-          <LinearGradient id="auth-fade" x1="0" y1="0" x2="0" y2="1">
-            <Stop offset="0" stopColor={ink.background} stopOpacity={0.35} />
-            <Stop offset="0.45" stopColor={ink.background} stopOpacity={0.15} />
-            <Stop offset="1" stopColor={ink.background} stopOpacity={1} />
-          </LinearGradient>
-        </Defs>
-        <Rect width="100%" height="100%" fill="url(#auth-fade)" />
-      </Svg>
+    <View
+      pointerEvents="none"
+      style={StyleSheet.absoluteFill}
+      onLayout={({ nativeEvent }) => setSize({ width: nativeEvent.layout.width, height: nativeEvent.layout.height })}
+    >
+      {size.height > 0 && (
+        <Svg key={`${size.width}x${size.height}`} width={size.width} height={size.height + 2} style={styles.fade}>
+          <Defs>
+            <LinearGradient id="auth-fade" x1="0" y1="0" x2="0" y2="1">
+              <Stop offset="0" stopColor={ink.background} stopOpacity={0.35} />
+              <Stop offset="0.45" stopColor={ink.background} stopOpacity={0.15} />
+              <Stop offset="0.94" stopColor={ink.background} stopOpacity={1} />
+              <Stop offset="1" stopColor={ink.background} stopOpacity={1} />
+            </LinearGradient>
+          </Defs>
+          <Rect width={size.width} height={size.height + 2} fill="url(#auth-fade)" />
+        </Svg>
+      )}
     </View>
   );
 }
@@ -469,6 +488,11 @@ const styles = StyleSheet.create({
   hero: {
     flexGrow: 1,
     flexBasis: 0,
+  },
+  fade: {
+    position: "absolute",
+    top: 0,
+    left: 0,
   },
   column: {
     width: "100%",

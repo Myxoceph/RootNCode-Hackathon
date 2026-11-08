@@ -7,6 +7,9 @@ import { toQR } from "toqr";
 
 import { LandingSkyline } from "@/components/landing-skyline";
 import { appLinks, expoGoLink } from "@/content/app-links";
+import { logout, useCommunity } from "@/data";
+import { announce } from "@/lib/announce";
+import { isAccount } from "@/lib/account-gate";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { setLang, useLang, useMessages } from "@/i18n";
 
@@ -18,6 +21,8 @@ import { setLang, useLang, useMessages } from "@/i18n";
  * (a QR code for Expo Go, the stores "yakında").
  *
  * Web only: plain DOM and CSS. Open without an account. Always dark, as a night over the map.
+ * Signed in, the bar offers the profile and signing out instead of signing in or up: another
+ * account is signed in to after this one has signed out.
  */
 export function LandingPage() {
   const router = useRouter();
@@ -30,6 +35,9 @@ export function LandingPage() {
   // Where the laptop stands: the skyline's shore is drawn there, the water under it.
   const shore = useRef<HTMLDivElement>(null);
   const [appOpen, setAppOpen] = useState(false);
+  const { user } = useCommunity();
+  const signedIn = isAccount(user);
+  const signOut = () => void logout().then(() => announce(m.profile.signedOut));
 
   const openSite = (event: MouseEvent<HTMLAnchorElement>) => {
     // A plain click stays in the app's router; a modified one (new tab) keeps the browser's own.
@@ -63,12 +71,25 @@ export function LandingPage() {
               {m.landing.otherLanguageShort}
             </span>
           </button>
-          <a className="vg-nav-link" href="/auth?mode=login">
-            {m.auth.login}
-          </a>
-          <a className="vg-nav-link vg-nav-primary vg-nav-register" href="/auth?mode=register">
-            {m.auth.register}
-          </a>
+          {signedIn ? (
+            <>
+              <button type="button" className="vg-nav-link" onClick={signOut}>
+                {m.profile.signOut}
+              </button>
+              <a className="vg-nav-link vg-nav-primary" href="/settings">
+                {m.landing.myProfile}
+              </a>
+            </>
+          ) : (
+            <>
+              <a className="vg-nav-link" href="/auth?mode=login">
+                {m.auth.login}
+              </a>
+              <a className="vg-nav-link vg-nav-primary vg-nav-register" href="/auth?mode=register">
+                {m.auth.register}
+              </a>
+            </>
+          )}
         </nav>
       </header>
 
@@ -90,10 +111,12 @@ export function LandingPage() {
             </button>
           </div>
           {/* On a phone the bar keeps only "Giriş yap": signing up is offered here, under the buttons. */}
-          <p className="vg-new-here vg-rise vg-d4">
-            {m.landing.newHere[0]}
-            <a href="/auth?mode=register">{m.landing.newHere[1]}</a>
-          </p>
+          {!signedIn && (
+            <p className="vg-new-here vg-rise vg-d4">
+              {m.landing.newHere[0]}
+              <a href="/auth?mode=register">{m.landing.newHere[1]}</a>
+            </p>
+          )}
         </section>
 
         <Scene onSite={openSite} onApp={openApp} shore={shore} />

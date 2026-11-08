@@ -101,13 +101,16 @@ describe("saved routes", () => {
     expect(routes.routeKey({ kind: "food", dishes: [{ id: "a", title: "A" }], about: { kind: "route", key: "trip|bursa", title: "Bursa" } })).toBe("food|trip|bursa|a");
   });
 
+  /** As much of a Rehber trip as keeping it reads. */
+  const trip = { city: { code: "bursa", label: "Bursa" }, duration: "half", theme: null, days: [{ date: "2026-11-08", items: [{ kind: "stop" }, { kind: "meal" }] }] };
+
   it("come from the account, and a new one is sent there", async () => {
     const calls = fakeApi({ "GET /me/routes": { version: "0.3.21", items: [] } });
     // Rehber saves a trip before Rotalarım was ever opened: the account's list is loaded first.
-    await routes.saveRoute({ region: "bursa", duration: "half", dishes: ["pideli-kofte"], title: "Bursa yarım gün", stops: 5 });
+    await routes.saveTrip(trip as never);
     expect(calls.map((c) => `${c.init.method ?? "GET"} ${c.url.slice(API.length)}`)).toEqual(["GET /me/routes", "POST /me/routes"]);
     const sent = JSON.parse(calls[1]!.init.body as string) as { key: string; route: { kind: string } };
-    expect(sent).toMatchObject({ key: "bursa|half|pideli-kofte", route: { kind: "planner" } });
+    expect(sent).toMatchObject({ key: "trip|bursa|half||2026-11-08", route: { kind: "trip", stops: 1 } });
     expect((calls[1]!.init.headers as Record<string, string>).Authorization).toMatch(/^Bearer vgb_alice/);
   });
 
@@ -121,7 +124,7 @@ describe("saved routes", () => {
   it("signed out: kept for this run only, nothing sent", async () => {
     await load(false);
     const calls = fakeApi({});
-    await routes.saveRoute({ region: "bursa", duration: "1", dishes: [], title: "Bursa bir gün", stops: 8 });
+    await routes.saveTrip(trip as never);
     expect(calls).toEqual([]);
     expect([...storage.keys()].some((key) => key.startsWith("vagabonds-saved-routes"))).toBe(false);
   });
