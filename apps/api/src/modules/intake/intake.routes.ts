@@ -13,7 +13,9 @@ import {
   IntakeJobResponseSchema,
   IntakeMapConfirmRequestSchema,
   IntakeReviewRequestSchema,
+  INSCRIPTION_READING_FIELDS,
   InscriptionDraftSchema,
+  unreadInscriptionFields,
   type BookMapEntry,
 } from "@vagabonds/contracts";
 import type { FastifyPluginAsync } from "fastify";
@@ -254,7 +256,13 @@ export const intakeRoutes: FastifyPluginAsync<IntakeRoutesOptions> = async (app,
       }
       let record = input.record ?? current.record;
       // A corrected inscription is held to its contract; a dataset record is checked by validate.py when published.
-      if (draft.kind === "inscription" && input.record) record = parseWith(InscriptionDraftSchema, input.record, "INVALID_RECORD");
+      if (draft.kind === "inscription") {
+        if (input.record) record = parseWith(InscriptionDraftSchema, input.record, "INVALID_RECORD");
+        // The model does not read inscriptions (H7): nothing is approved before an expert has.
+        const read = InscriptionDraftSchema.safeParse(record);
+        const unread = read.success ? unreadInscriptionFields(read.data) : [...INSCRIPTION_READING_FIELDS];
+        if (unread.length > 0) throw new HttpError(409, "NOT_READ", `Read the inscription before approving it: ${unread.join(", ")} missing`);
+      }
       let assetId = draft.asset_id;
       if (NEW_ASSET_KINDS.has(draft.kind)) {
         // The reviewer may have renamed the asset: its id is the record's.
