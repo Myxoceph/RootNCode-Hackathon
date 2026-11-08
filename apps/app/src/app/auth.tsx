@@ -64,8 +64,8 @@ function copyFor(m: Messages, mode: Mode): { title: string; lead: string; action
  * visitor who already left notes or seals under a nickname is told they move to the account.
  *
  * With a server the app is for accounts (`useAccountGate`): this screen has no way past it but
- * signing up or in. Done, the page a shared link asked for opens (`next`), or else the greeting
- * ("Merhaba, <ad>") and the map after it.
+ * signing up or in. Signed in, the page a shared link asked for opens (`next`), or else the greeting
+ * ("Merhaba, <ad>") and the map after it. A new account on a phone always opens on the greeting.
  */
 export default function AuthScreen() {
   const params = useLocalSearchParams<{ mode?: string; next?: string }>();
@@ -82,6 +82,7 @@ export default function AuthScreen() {
   const [nickname, setNickname] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [newAccount, setNewAccount] = useState(false);
   const emailField = useRef<TextInputInstance>(null);
   const passwordField = useRef<TextInputInstance>(null);
   const nicknameField = useRef<TextInputInstance>(null);
@@ -104,6 +105,12 @@ export default function AuthScreen() {
   const short = height < SHORT_SCREEN;
   const tight = registering && short;
 
+  // A new account on a phone: the greeting, whatever page the gate closed on. Otherwise the page a shared
+  // link asked for; else the web's `/` is the home page, so an account goes straight to the map there,
+  // and the app opens on its greeting, which goes on to the map.
+  const destination = (created: boolean) =>
+    (created && Platform.OS !== "web" ? "/welcome" : afterSignIn(params.next, Platform.OS === "web" ? "/map" : "/")) as Href;
+
   function switchTo(next: Mode) {
     if (next === mode) return;
     setMode(next);
@@ -124,9 +131,8 @@ export default function AuthScreen() {
           })
         : await login({ username: username.trim().toLowerCase(), password });
       announce(registering ? m.auth.created(signedIn.nickname) : m.auth.welcomeBack(signedIn.nickname));
-      // The page a shared link asked for. Otherwise the web's `/` is the home page, so an account goes
-      // straight to the map there; the app opens on its greeting, which goes on to the map.
-      router.replace(afterSignIn(params.next, Platform.OS === "web" ? "/map" : "/") as Href);
+      setNewAccount(registering);
+      router.replace(destination(registering));
     } catch (err) {
       const message = err instanceof DataError ? err.message : m.common.somethingWrong;
       setError(message);
@@ -140,7 +146,7 @@ export default function AuthScreen() {
   // not offered; the page asked for opens instead. The panel's way here is the exception: an account
   // without its role signs in with another one.
   if (isAccount(user) && !busy && !params.next?.startsWith("/admin")) {
-    return <Redirect href={afterSignIn(params.next, Platform.OS === "web" ? "/map" : "/") as Href} />;
+    return <Redirect href={destination(newAccount)} />;
   }
 
   return (
