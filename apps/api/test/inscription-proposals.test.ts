@@ -62,6 +62,8 @@ describe("toTriage", () => {
 
   it("takes a partly legible photo as no camera target", () => {
     expect(toTriage(JSON.stringify({ hasInscription: true, legibility: "partly", arTarget: true }))).toMatchObject({ legibility: "partly", arTarget: false });
+    // A clear photo of a screen or a print is still not the stone.
+    expect(toTriage(JSON.stringify({ hasInscription: true, legibility: "clear", rephotographed: true, arTarget: true }))).toMatchObject({ rephotographed: true, arTarget: false });
   });
 });
 
@@ -198,6 +200,22 @@ describe.skipIf(!DATABASE_URL)("inscription proposal routes (PostgreSQL)", () =>
     expect(seen[0]!.system).toContain(assetId.split("-")[0]);
   });
 
+  it("keeps the photo when the prompt file cannot be read", async () => {
+    const empty = mkdtempSync(join(tmpdir(), "no-prompt-"));
+    const without = buildApp({ prisma, rateLimit: false, vision, intake: { root: empty, dir: "data/build/cache/intake", visionModel: "fake-vl" }, mediaStore: createLocalMediaStore(media), mediaBaseUrl: "http://media.test/" });
+    try {
+      const response = await without.inject({ method: "POST", url: `/assets/${assetId}/inscription-proposals`, headers: { authorization: `Bearer ${account}`, "content-type": "image/jpeg" }, payload: photo });
+      expect(response.statusCode).toBe(201);
+      const { proposal } = InscriptionProposalResponseSchema.parse(response.json());
+      expect(existsSync(join(media, `intake/${proposal.id}/1280.jpg`))).toBe(true);
+      const row = await prisma.intake_draft.findUniqueOrThrow({ where: { id: proposal.id } });
+      expect((row.validation as { warnings: string[] }).warnings[0]).toMatch(/talimat dosyası/);
+    } finally {
+      await without.close();
+      rmSync(empty, { recursive: true, force: true });
+    }
+  });
+
   it("keeps the photo when the model fails, as a draft for the expert to read", async () => {
     answer = async () => {
       throw new VisionError("Vision provider returned HTTP 502");
@@ -229,6 +247,12 @@ describe.skipIf(!DATABASE_URL)("inscription proposal routes (PostgreSQL)", () =>
     expect((await app.inject({ method: "POST", url: `/assets/${assetId}/inscription-proposals`, headers: { "content-type": "image/jpeg" }, payload: photo })).statusCode).toBe(401);
     expect((await send(account, "", "boyle-bir-eser-yok")).statusCode).toBe(404);
     expect((await send(account, "", assetId, Buffer.from("not a photo"))).statusCode).toBe(400);
+  });
+
+  it("holds the hourly limit against requests sent at the same moment", async () => {
+    const answers = await Promise.all(Array.from({ length: PROPOSALS_PER_HOUR + 3 }, () => send(account, "")));
+    expect(answers.filter((r) => r.statusCode === 201)).toHaveLength(PROPOSALS_PER_HOUR);
+    expect(answers.filter((r) => r.statusCode === 429)).toHaveLength(3);
   });
 
   it(`takes at most ${PROPOSALS_PER_HOUR} an hour from one account`, async () => {

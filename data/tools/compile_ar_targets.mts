@@ -112,6 +112,12 @@ const manifest = JSON.parse(readFileSync(join(DATA, "build/media-manifest.json")
 const previous: ArTargetsFile | null = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, "utf8")) as ArTargetsFile) : null;
 const reusable = previous?.mindar_version === AR_MINDAR_VERSION ? previous : null;
 const result: ArTargetsFile = { mindar_version: AR_MINDAR_VERSION, targets: {}, seals: {} };
+if (inscriptionAssets && previous && !reusable) {
+  // Öbür eserlerin hedefleri ve mühürler önceki dosyadan gelir; başka sürümde onlar kullanılamaz ve
+  // dar çalıştırma dosyayı tek eserle yazıp hepsini silerdi. Önce tam derleme.
+  console.error(`ar-targets.json MindAR ${previous.mindar_version} ile derlenmiş, bu sürüm ${AR_MINDAR_VERSION}: --inscriptions-of çalışmaz, önce tam derleme (npm run data:ar-targets).`);
+  process.exit(1);
+}
 if (inscriptionAssets) {
   // Dar çalıştırma: öbür eserlerin kitabe hedefleri ve bütün mühürler, `.mind` dosyaları bu diskte olmasa da
   // (R2'de dururlar) önceki dosyadan aynen kalır.
@@ -128,7 +134,9 @@ for (const entry of [
   ...Object.values(reusable?.targets ?? {}).flatMap((byMedia) => Object.values(byMedia)),
   ...Object.values(reusable?.seals ?? {}),
 ]) {
-  if (existsSync(join(MEDIA, entry.key))) known.set(entry.key, { sha256: entry.sha256, key: entry.key, bytes: entry.bytes });
+  // Dar çalıştırmada `.mind` bu diskte olmayabilir (R2'de durur): aynı fotoğrafın hedefi yeniden derlenmez, derleme
+  // düşerse eserin eski kitabesi hedefsiz kalırdı.
+  if (inscriptionAssets || existsSync(join(MEDIA, entry.key))) known.set(entry.key, { sha256: entry.sha256, key: entry.key, bytes: entry.bytes });
 }
 
 /** Bir eserin bir fotoğrafının 1280 px JPEG'i ve manifest kaydı; yoksa null. */

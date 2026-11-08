@@ -6,6 +6,7 @@ import shutil
 import sys
 import tempfile
 import unittest
+from unittest import mock
 import uuid
 from pathlib import Path
 
@@ -344,6 +345,31 @@ class PublishQueue(unittest.TestCase):
         self.assertEqual(imported, [ASSET])
         self.assertIn("Chrome bulunamadı", self.said[-1])
         self.assertIn(f"--inscriptions-of={ASSET}", self.said[-1])
+
+    def test_a_crashing_compile_neither_stops_the_worker_nor_undoes_the_publish(self):
+        draft_id = self.inscription_draft(ar_target=True)
+
+        def crash(_id):
+            raise ValueError("bozuk ar-targets.json")
+
+        self.assertTrue(publish_once(self.conn, {}, self.said.append, self.paths, importer=lambda _id: None, compile_ar=crash))
+        self.assertEqual(self.state(draft_id), (True, None))
+        self.assertIn("bozuk ar-targets.json", self.said[-1])
+
+    def test_an_unexpected_error_is_written_so_the_queue_goes_on(self):
+        draft_id = self.approved()
+        with mock.patch("publish.publish", side_effect=KeyError("id")):
+            self.assertTrue(publish_once(self.conn, {}, self.said.append, self.paths, importer=lambda _id: None))
+        applied, error = self.state(draft_id)
+        self.assertFalse(applied)
+        self.assertIn("KeyError", error)
+        self.assertFalse(publish_once(self.conn, {}, self.said.append, self.paths, importer=lambda _id: None), "aynı taslak yeniden alınmaz")
+
+    def test_the_local_only_guard_still_stops_the_worker(self):
+        self.approved()
+        with mock.patch("publish.publish", side_effect=LocalOnlyError("uzak veritabanı")):
+            with self.assertRaises(LocalOnlyError):
+                publish_once(self.conn, {}, self.said.append, self.paths, importer=lambda _id: None)
 
     def test_a_failure_is_written_and_not_retried_on_its_own(self):
         draft_id = self.approved()

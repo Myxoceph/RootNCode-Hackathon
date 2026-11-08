@@ -1,5 +1,5 @@
 import { Button, cameraColors, cameraGlass, fontFamily, palette, radius, spacing, Text } from "@vagabonds/ui";
-import { File, Paths } from "expo-file-system";
+import { Directory, File, Paths } from "expo-file-system";
 import { useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import Head from "expo-router/head";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
@@ -161,8 +161,6 @@ export default function InscriptionScreen() {
 const ASK_AFTER_MS = 6_000;
 /** The visitor closed the card offering to send an unknown inscription: not offered again until the app restarts. */
 let proposeCardClosed = false;
-/** The last frame handed to the sending screen, deleted when the next one is taken. */
-let lastProposeFile: string | null = null;
 /** The tracker page answers a snapshot within this, or the photo counts as not taken. */
 const SNAPSHOT_TIMEOUT_MS = 5_000;
 
@@ -242,6 +240,16 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
   const [capturing, setCapturing] = useState(false);
   // The card offers to send it: with an asset known, or without (the sending screen then asks which).
   const proposing = volunteers && !cardClosed;
+  // A capture can take seconds: where the visitor has got to by its end decides whether the screen opens.
+  const mounted = useRef(true);
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
+  const phaseNow = useRef(phase);
+  phaseNow.current = phase;
 
   useEffect(() => {
     if (phase !== "scanning") return;
@@ -367,19 +375,26 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
     setCapturing(true);
     let photo: string | undefined;
     try {
-      // A new name each time: the image cache would show the last frame for the same file. The one
-      // before is deleted, so one stays at most.
-      if (lastProposeFile) new File(lastProposeFile).delete();
+      // A new name each time: the image cache would show the last frame for the same file. Those
+      // before, from earlier runs of the app too, are deleted, so one stays at most.
+      for (const item of new Directory(Paths.cache).list()) {
+        if (item instanceof File && item.name.startsWith("inscription-propose-")) item.delete();
+      }
     } catch {
-      // Already gone.
+      // Left for the system to clear.
     }
     try {
       photo = await takePhoto(`inscription-propose-${Date.now()}.jpg`);
-      lastProposeFile = photo;
     } catch {
       photo = undefined;
     }
+    if (!mounted.current) return; // left the camera meanwhile: the sending screen is not theirs to see
     setCapturing(false);
+    if (phaseNow.current !== "scanning") {
+      // It recognised an inscription meanwhile: that is what the visitor is shown.
+      resumeCamera();
+      return;
+    }
     // The camera closes under the next screen and starts afresh on the way back (InscriptionScreen).
     // Near no known asset (opened from the camera tab, far from any): the sending screen asks which.
     router.push({ pathname: "/inscription-propose", params: { ...(askAsset && { asset: askAsset }), ...(photo && { photo }) } });
@@ -510,6 +525,7 @@ function InscriptionCamera({ assets, nearby, asked, askAsset, onFailure, onReadA
                 accessibilityRole="button"
                 accessibilityLabel={m.propose.cardClose}
                 onPress={closeCard}
+                disabled={capturing}
                 hitSlop={12}
                 style={({ pressed }) => [styles.proposeClose, pressed && styles.dimmed]}
               >
