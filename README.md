@@ -3,7 +3,7 @@
 [![CI](https://github.com/Myxoceph/RootNCode-Hackathon/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Myxoceph/RootNCode-Hackathon/actions/workflows/ci.yml)
 
 **Vakıf eserlerini ziyaret edilen, sorulan ve birbirine bağlanan bir deneyime dönüştüren mobil ve web uygulaması.**
-Takım Vagabonds · KÖK&KOD Hackathonu (Vakıf Katılım × 42 Türkiye)
+Takım Vagabonds · **42 Türkiye x Vakıf Katılım KÖK&KOD Hackathon** 🏆 **Birincilik** (8 Kasım 2026)
 
 Canlı sürüm: **https://vagabonds.allbytech.com** · API dokümantasyonu: [`/api/docs`](https://vagabonds.allbytech.com/api/docs)
 
